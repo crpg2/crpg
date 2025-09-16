@@ -1,10 +1,10 @@
 import { getPatchNotes } from '~/services/patch-note-service'
 
-export const usePatchNotes = () => {
+export const usePatchNotes = (immediate = true) => {
   const {
     execute: loadPatchNotes,
     state: patchNotes,
-  } = useAsyncState(() => getPatchNotes(), [], { immediate: false })
+  } = useAsyncState(() => getPatchNotes(), [], { immediate })
 
   return {
     loadPatchNotes,

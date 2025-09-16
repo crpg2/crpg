@@ -14,39 +14,32 @@ const refreshPage = () => navigateTo({
     }"
   >
     <template #body>
-      <div class="prose">
-        <p class="">
-          {{ $t('character.create.guide.intro') }}
-        </p>
-        <ol>
-          <li>{{ $t('character.create.guide.step.install') }}</li>
-          <li>{{ $t('character.create.guide.step.join') }}</li>
-          <li>{{ $t('character.create.guide.step.joined') }}</li>
+      <UiTextView variant="p" tag="p" margin-bottom>
+        {{ $t('character.create.guide.intro') }}
+      </UiTextView>
+      <UiListView variant="number">
+        <UiListViewItem :label="$t('character.create.guide.step.install')" />
+        <UiListViewItem :label="$t('character.create.guide.step.join')" />
+        <UiListViewItem :label="$t('character.create.guide.step.joined')" />
+        <UiListViewItem>
           <i18n-t
             scope="global"
             keypath="character.create.guide.step.refresh"
-            tag="li"
           >
             <template #refresh>
-              <span
-                class="
-                  cursor-pointer text-primary
-                  hover:underline
-                "
-                @click="refreshPage"
-              >
+              <ULink @click="refreshPage">
                 {{ $t('action.refresh', 1) }}
-              </span>
+              </ULink>
             </template>
           </i18n-t>
-        </ol>
-      </div>
+        </UiListViewItem>
+      </UiListView>
     </template>
 
     <template #footer>
-      <p class="text-warning">
+      <UiTextView variant="p" tag="p" class="text-warning">
         {{ $t('character.create.guide.outro') }}
-      </p>
+      </UiTextView>
     </template>
   </UModal>
 </template>

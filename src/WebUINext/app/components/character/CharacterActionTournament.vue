@@ -40,17 +40,17 @@ const canSetCharacterForTournament = computed(() => canSetCharacterForTournament
             v-if="!canSetCharacterForTournament"
             scope="global"
             keypath="character.settings.tournament.tooltip.required"
-            class="font-bold text-warning"
-            tag="p"
+            class="text-warning"
+            tag="h4"
           >
             <template #requiredLevel>
               <span>{{ `<${tournamentLevelThreshold}` }}</span>
             </template>
           </i18n-t>
 
-          <h5>
+          <h3>
             {{ $t('character.settings.tournament.tooltip.title') }}
-          </h5>
+          </h3>
 
           <i18n-t
             scope="global"

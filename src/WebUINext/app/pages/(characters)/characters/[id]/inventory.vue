@@ -8,51 +8,46 @@ import type { UserItem } from '~/models/user'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useMainHeader } from '~/composables/app/use-main-header'
-import { usePageLoading } from '~/composables/app/use-page-loading'
+import { useCharacterInventory } from '~/composables/character/inventory/use-character-inventory'
 import { useInventoryDnD } from '~/composables/character/inventory/use-inventory-dnd'
 import { useInventoryQuickEquip } from '~/composables/character/inventory/use-inventory-quick-equip'
 import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
 import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
 import { useCharacterItems } from '~/composables/character/use-character-items'
-import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import {
-  checkUpkeepIsHigh,
-  validateItemNotMeetRequirement,
-} from '~/services/character-service'
-import {
-  addItemToClanArmory,
-  getClanArmoryItemLender,
-  getClanMembers,
-  removeItemFromClanArmory,
-  returnItemToClanArmory,
-} from '~/services/clan-service'
+import { validateItemNotMeetRequirement } from '~/services/character-service'
+import { getClanArmoryItemLender, getClanMembers } from '~/services/clan-service'
 import { getAggregationsConfig } from '~/services/item-search-service'
 import { createItemIndex } from '~/services/item-search-service/indexator'
-import { extractItem, getCompareItemsResult, getLinkedSlots, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
-import { reforgeUserItem, repairUserItem, sellUserItem, upgradeUserItem } from '~/services/user-service'
+import { extractItem, getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
 
 const { t } = useI18n()
-const toast = useToast()
+const { mainHeaderHeight } = useMainHeader()
 
 const userStore = useUserStore()
 const { clan, user, userItems } = toRefs(userStore)
+userStore.fetchUserItems() // TODO: FIXME:
 
-const { mainHeaderHeight } = useMainHeader()
+const {
+  onSellUserItem,
+  onRepairUserItem,
+  onUpgradeUserItem,
+  onReforgeUserItem,
+  onAddItemToClanArmory,
+  onRemoveFromClanArmory,
+  onReturnToClanArmory,
+} = useCharacterInventory()
 
 const {
   equippedItemsBySlot,
   itemsOverallStats,
   equippedItemIds,
-  characterItems,
-  loadCharacterItems,
-  updateCharacterItems,
+  upkeepIsHigh,
 } = useCharacterItems()
 
 const { characterCharacteristics, healthPoints } = useCharacterCharacteristic()
 
-const { onDragEnd, onDragStart, dragging } = useInventoryDnD(equippedItemsBySlot)
-
-const { onQuickEquip } = useInventoryQuickEquip(equippedItemsBySlot)
+const { onDragEnd, onDragStart, dragging } = useInventoryDnD()
+const { onQuickEquip } = useInventoryQuickEquip()
 
 const hasArmoryItems = computed(() => userItems.value.some(ui => ui.isArmoryItem))
 
@@ -63,124 +58,9 @@ const {
   toggleItemDetail,
 } = useItemDetail()
 
-const upkeepIsHigh = computed(() => checkUpkeepIsHigh(user.value!.gold, itemsOverallStats.value.averageRepairCostByHour))
-
-const refreshData = () => Promise.all([
-  userStore.fetchUser(),
-  userStore.fetchUserItems(),
-  loadCharacterItems(),
-])
-
-const {
-  execute: onSellUserItem,
-  isLoading: sellingUserItem,
-} = useAsyncCallback(async (userItemId: number) => {
-  // unEquip linked slots
-  const characterItem = characterItems.value.find(ci => ci.userItem.id === userItemId)
-  if (characterItem !== undefined) {
-    const linkedItems = getLinkedSlots(characterItem.slot, equippedItemsBySlot.value)
-      .map(ls => ({
-        slot: ls,
-        userItemId: null,
-      }))
-
-    if (linkedItems.length) {
-      await updateCharacterItems(linkedItems)
-    }
-  }
-
-  await sellUserItem(userItemId)
-  refreshData()
-
-  toast.add({
-    title: t('character.inventory.item.sell.notify.success'),
-    color: 'success',
-    close: false,
-  })
-})
-
-const {
-  execute: onRepairUserItem,
-  isLoading: repairingUserItem,
-} = useAsyncCallback(async (userItemId: number) => {
-  await repairUserItem(userItemId)
-  refreshData()
-  toast.add({
-    title: t('character.inventory.item.repair.notify.success'),
-    color: 'success',
-    close: false,
-  })
-})
-
-const {
-  execute: onUpgradeUserItem,
-  isLoading: upgradingUserItem,
-} = useAsyncCallback(async (userItemId: number) => {
-  await upgradeUserItem(userItemId)
-  refreshData()
-  toast.add({
-    title: t('character.inventory.item.upgrade.notify.success'),
-    color: 'success',
-    close: false,
-  })
-})
-
-const {
-  execute: onReforgeUserItem,
-  isLoading: reforgingUserItem,
-} = useAsyncCallback(async (userItemId: number) => {
-  await reforgeUserItem(userItemId)
-  refreshData()
-  toast.add({
-    title: t('character.inventory.item.reforge.notify.success'),
-    color: 'success',
-    close: false,
-  })
-})
-
-const {
-  execute: onAddItemToClanArmory,
-  isLoading: addingItemToClanArmory,
-} = useAsyncCallback(async (userItemId: number) => {
-  await addItemToClanArmory(clan.value!.id, userItemId)
-  refreshData()
-  toast.add({
-    title: t('clan.armory.item.add.notify.success'),
-    color: 'success',
-    close: false,
-  })
-})
-
-const {
-  execute: onReturnToClanArmory,
-  isLoading: returningItemToClanArmory,
-} = useAsyncCallback(async (userItemId: number) => {
-  await returnItemToClanArmory(clan.value!.id, userItemId)
-  refreshData()
-  toast.add({
-    title: t('clan.armory.item.return.notify.success'),
-    color: 'success',
-    close: false,
-  })
-})
-
-const {
-  execute: onRemoveFromClanArmory,
-  isLoading: removingItemToClanArmory,
-} = useAsyncCallback(async (userItemId: number) => {
-  await removeItemFromClanArmory(clan.value!.id, userItemId)
-  refreshData()
-  toast.add({
-    title: t('clan.armory.item.remove.notify.success'),
-    color: 'success',
-    close: false,
-  })
-})
-
 const onClickInventoryItem = (e: PointerEvent, userItem: UserItem) => {
   if (e.ctrlKey) {
-    onQuickEquip(userItem)
-    return
+    return onQuickEquip(userItem)
   }
   toggleItemDetail(e.target as HTMLElement, {
     id: userItem.item.id,
@@ -194,13 +74,13 @@ const sortingConfig: SortingConfig = {
   rank_desc: { field: 'rank', order: 'desc' },
   type_asc: { field: 'type', order: 'asc' },
 }
+
 const sortingModel = useStorage<string>('character-inventory-sorting', 'rank_desc')
 
 // TODO: FIXME: to composable
 const compareItemsResult = computed(() => {
   // find the open items TODO: spec
   return groupItemsByTypeAndWeaponClass(
-
     // TODO: ....
     createItemIndex(
       userItems.value
@@ -221,30 +101,10 @@ const compareItemsResult = computed(() => {
 
 const {
   state: clanMembers,
-  execute: loadClanMembers,
 } = useAsyncState(
-  (clanId: number) => getClanMembers(clanId),
+  async () => clan.value ? getClanMembers(clan.value.id) : [],
   [],
-  {
-    immediate: false,
-  },
 )
-
-const fetchPageData = () => {
-  const promises: Promise<any>[] = [userStore.fetchUserItems()]
-  if (clan.value) {
-    promises.push(loadClanMembers(0, clan.value.id))
-  }
-  Promise.all(promises)
-}
-
-fetchPageData()
-
-// const { togglePageLoading } = usePageLoading()
-// watchEffect(() => {
-// TODO: FIXME:
-// togglePageLoading(updatingCharacterItems.value)
-// })
 
 const hideInArmoryItemsModel = useStorage<boolean>('character-inventory-in-armory-items', true)
 const additionalFilteritems = computed<DropdownMenuItem[]>(() => [
@@ -424,8 +284,8 @@ const items = computed(() => {
 
             <!-- TODO: design -->
             <template v-if="upkeepIsHigh" #tooltip-content>
-              <div class="prose-invert prose">
-                <h4 class="text-status-warning">
+              <div class="prose prose-invert">
+                <h4 class="text-warning">
                   {{ $t('character.highUpkeepWarning.title') }}
                 </h4>
                 <div v-html="$t('character.highUpkeepWarning.desc')" />

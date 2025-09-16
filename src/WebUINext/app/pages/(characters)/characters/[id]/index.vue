@@ -1,110 +1,22 @@
 <script setup lang="ts">
-import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useCharacter } from '~/composables/character/use-character'
-import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
 import { useCharacterRespec } from '~/composables/character/use-character-respec'
-import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { usePollInterval } from '~/composables/utils/use-poll-interval'
-import { getCharacterStatistics, retireCharacter, setCharacterForTournament } from '~/services/character-service'
+import { useCharacterRetire } from '~/composables/character/use-character-retire'
+import { useCharacterStatisticsProvider } from '~/composables/character/use-character-statistic'
+import { useCharacterTournament } from '~/composables/character/use-character-tournament'
 
 const userStore = useUserStore()
-const route = useRoute('characters-id')
-const { t } = useI18n()
-const toast = useToast()
 
 const { character } = useCharacter()
-const { loadCharacterCharacteristics } = useCharacterCharacteristic()
+const { characterStatistics } = useCharacterStatisticsProvider(() => character.value.id)
 
-const {
-  state: characterStatistics,
-  execute: loadCharacterStatistics,
-} = useAsyncState(
-  (id: number) => getCharacterStatistics(id),
-  {},
-  { immediate: false, resetOnExecute: false },
-)
-
-const {
-  execute: onRetireCharacter,
-  isLoading: retiringCharacter,
-} = useAsyncCallback(async () => {
-  await retireCharacter(character.value.id)
-
-  await Promise.all([
-    userStore.fetchUser(), // update user
-    userStore.fetchCharacters(), // update char
-    loadCharacterCharacteristics(),
-  ])
-
-  toast.add({
-    title: t('character.settings.retire.notify.success'),
-    close: false,
-    color: 'success',
-  })
-})
-
-const {
-  execute: onSetCharacterForTournament,
-  isLoading: settingCharacterForTournament,
-} = useAsyncCallback(async () => {
-  await setCharacterForTournament(character.value.id)
-
-  await Promise.all([
-    userStore.fetchCharacters(),
-    loadCharacterCharacteristics(),
-  ])
-
-  toast.add({
-    title: t('character.settings.tournament.notify.success'),
-    close: false,
-    color: 'success',
-  })
-})
-
-const { subscribe, unsubscribe } = usePollInterval()
-
-const {
-  loadCharacterLimitations,
-  respecCapability,
-  respecializingCharacter,
-  onRespecializeCharacter,
-} = useCharacterRespec()
-
-const fetchPageData = (characterId: number) => Promise.all([
-  loadCharacterStatistics(0, characterId),
-  loadCharacterLimitations(0, characterId),
-])
-
-const loadCharacterStatisticsKey = Symbol('loadCharacterStatistics')
-
-onBeforeRouteUpdate((to, from) => {
-  if (to.name === from.name && 'id' in to.params) {
-    const characterId = Number(to.params.id)
-    unsubscribe(loadCharacterStatisticsKey)
-    subscribe(loadCharacterStatisticsKey, () => {
-      loadCharacterStatistics(0, characterId)
-    })
-    fetchPageData(characterId)
-  }
-})
-
-fetchPageData(Number(route.params.id))
-
-const { togglePageLoading } = usePageLoading()
-
-watchEffect(() => {
-  togglePageLoading(respecializingCharacter.value || retiringCharacter.value || settingCharacterForTournament.value)
-})
+const { onRetireCharacter } = useCharacterRetire()
+const { respecCapability, onRespecializeCharacter } = useCharacterRespec()
+const { onSetCharacterForTournament } = useCharacterTournament()
 </script>
 
 <template>
   <div class="mx-auto max-w-2xl space-y-12">
-    <div class="prose">
-      <p>
-        Lorem ipsum dolor sit amet consectetur <CharacterMedia :character="{ class: 'Archer', id: 1, level: 33, name: 'Orle Shieldman' }" /> adipisicing elit. Ad, eos voluptatem explicabo nemo dolorum molestiae odit beatae sapiente assumenda? <AppCoin :value="1000" />
-        Soluta accusantium assumenda recusandae aspernatur accusamus explicabo voluptatem asperiores eveniet, laborum, nobis atque eaque, dolorem facere impedit doloribus <AppLoom :point="11" /> autem quaerat distinctio saepe sapiente quidem voluptas magni repellat cupiditate! Sunt, eius odit.
-      </p>
-    </div>
     <UCard
       :ui="{
         body: 'space-y-6',
@@ -127,7 +39,7 @@ watchEffect(() => {
         <CharacterActionRespec
           :character
           :respec-capability
-          @respec="() => onRespecializeCharacter(character.id)"
+          @respec="onRespecializeCharacter"
         />
 
         <template v-if="!character.forTournament">

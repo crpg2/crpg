@@ -1,6 +1,6 @@
 import { useToggle } from '@vueuse/core'
 
-import type { EquippedItemId, EquippedItemsBySlot } from '~/models/character'
+import type { EquippedItemId } from '~/models/character'
 import type { ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
@@ -14,13 +14,12 @@ const availableSlots = ref<ItemSlot[]>([])
 const fromSlot = ref<ItemSlot | null>(null)
 const toSlot = ref<ItemSlot | null>(null)
 
-export const useInventoryDnD = (equippedItemsBySlot: MaybeRefOrGetter<EquippedItemsBySlot>) => {
+export const useInventoryDnD = () => {
   const [dragging, toggleDragging] = useToggle()
   const toast = useToast()
   const { t } = useI18n()
 
-  const { updateCharacterItems } = useCharacterItems()
-
+  const { updateCharacterItems, equippedItemsBySlot } = useCharacterItems()
   const { getUnEquipItemsLinked, isEquipItemAllowed } = useInventoryEquipment()
 
   const onDragStart = (item: UserItem | null = null, slot: ItemSlot | null = null) => {

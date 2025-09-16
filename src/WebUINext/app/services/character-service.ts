@@ -95,8 +95,11 @@ export const updateCharacter = (
 
 export const activateCharacter = (
   characterId: number,
-  active: boolean,
-) => putUsersSelfCharactersByIdActive({ path: { id: characterId }, body: { active } })
+) => putUsersSelfCharactersByIdActive({ path: { id: characterId }, body: { active: true } })
+
+export const deactivateCharacter = (
+  characterId: number,
+) => putUsersSelfCharactersByIdActive({ path: { id: characterId }, body: { active: false } })
 
 export const deleteCharacter = (
   characterId: number,

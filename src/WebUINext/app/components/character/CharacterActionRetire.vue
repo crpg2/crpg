@@ -69,17 +69,15 @@ const columns: TableColumn<HeirloomPointByLevelAggregation>[] = [
             v-if="!canRetire"
             scope="global"
             keypath="character.settings.retire.tooltip.required"
-            class="font-bold text-warning"
-            tag="p"
+            class="text-warning"
+            tag="h4"
           >
             <template #requiredLevel>
               <span>{{ minimumRetirementLevel }}+</span>
             </template>
           </i18n-t>
 
-          <h5>
-            {{ $t('character.settings.retire.tooltip.title') }}
-          </h5>
+          <h3>{{ $t('character.settings.retire.tooltip.title') }}</h3>
 
           <i18n-t
             scope="global"

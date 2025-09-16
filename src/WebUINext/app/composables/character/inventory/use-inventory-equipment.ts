@@ -42,7 +42,7 @@ export const useInventoryEquipment = () => {
   }
 
   return {
-    getUnEquipItemsLinked,
     isEquipItemAllowed,
+    getUnEquipItemsLinked,
   }
 }

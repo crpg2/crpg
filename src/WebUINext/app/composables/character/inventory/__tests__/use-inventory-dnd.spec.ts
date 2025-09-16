@@ -1,10 +1,11 @@
 import type { PartialDeep } from 'type-fest'
 
 import { createTestingPinia } from '@pinia/testing'
+import { describe, expect, it, vi } from 'vitest'
 
 import type { UserItem, UserItemsBySlot } from '~/models/user'
 
-import { ItemSlot, ItemType } from '~/models/item'
+import { ITEM_SLOT, ITEM_TYPE } from '~/models/item'
 import { useUserStore } from '~/stores/user'
 
 import { useInventoryDnD } from '../use-inventory-dnd'
@@ -43,16 +44,16 @@ vi.mock('~/composables/character/use-inventory-equipment', () => ({
 }))
 
 const userItemsBySlot: PartialDeep<UserItemsBySlot> = {
-  [ItemSlot.Head]: {
+  [ITEM_SLOT.Head]: {
     id: 4,
     item: {
-      type: ItemType.HeadArmor,
+      type: ITEM_TYPE.HeadArmor,
     },
   },
-  [ItemSlot.Weapon0]: {
+  [ITEM_SLOT.Weapon0]: {
     id: 3,
     item: {
-      type: ItemType.OneHandedWeapon,
+      type: ITEM_TYPE.OneHandedWeapon,
     },
   },
 }

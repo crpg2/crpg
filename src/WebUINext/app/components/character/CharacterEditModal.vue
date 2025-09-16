@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useVuelidate } from '@vuelidate/core'
+import { AppConfirmActionDialog } from '#components'
 
 import type { Character } from '~/models/character'
 
@@ -19,9 +20,9 @@ const nameModel = ref<string>(character.name)
 const $v = useVuelidate(
   {
     nameModel: {
-      maxLength: maxLength(32),
-      minLength: minLength(2),
       required: required(),
+      minLength: minLength(2),
+      maxLength: maxLength(32),
     },
   },
   { nameModel },
@@ -35,105 +36,104 @@ const onConfirm = async () => {
   emit('update', nameModel.value)
 }
 
-const wasChange = computed(() => nameModel.value !== character.name)
+const isDirty = computed(() => nameModel.value !== character.name)
+const { t } = useI18n()
 
 const characterNameMaxLength = 32
 
-const [shownConfirmDeleteDialog, toggleConfirmDeleteDialog] = useToggle()
+const overlay = useOverlay()
+
+const confirmDeleteDialog = overlay.create(AppConfirmActionDialog, {
+  props: {
+    title: t('character.settings.delete.dialog.title'),
+    description: t('character.settings.delete.dialog.desc'),
+    confirm: `${character.name} - ${character.level}`,
+    confirmLabel: t('action.delete'),
+    onClose: () => confirmDeleteDialog.close(),
+    onConfirm: () => {
+      emit('delete')
+      confirmDeleteDialog.close()
+    },
+  },
+})
 </script>
 
 <template>
-  <div>
-    <UModal
-      :title="$t('character.settings.update.title')"
-      :ui="{
-        content: 'max-w-xl',
-        body: 'space-y-6',
-        footer: 'flex justify-center',
-      }"
-    >
-      <UTooltip :text="$t('character.settings.update.title')">
-        <UButton
-          size="xl"
-          icon="crpg:edit"
-          color="neutral"
-          variant="outline"
-        />
-      </UTooltip>
+  <UModal
+    :title="$t('character.settings.update.title')"
+    :ui="{
+      content: 'max-w-xl',
+      body: 'space-y-6',
+      footer: 'flex justify-center',
+    }"
+  >
+    <UTooltip :text="$t('character.settings.update.title')">
+      <UButton
+        size="xl"
+        icon="crpg:edit"
+        color="neutral"
+        variant="outline"
+      />
+    </UTooltip>
 
-      <template #body="{ close }">
-        <UFormField
-          :label="$t('character.settings.update.form.field.name')"
-          :error="errorMessagesToString($v.nameModel.$errors) || false"
+    <template #body="{ close }">
+      <UFormField
+        :label="$t('character.settings.update.form.field.name')"
+        :error="errorMessagesToString($v.nameModel.$errors)"
+      >
+        <UInput
+          v-model="nameModel"
+          :maxlength="characterNameMaxLength"
+          aria-describedby="character-name-count"
+          class="w-full"
         >
-          <UInput
-            v-model="nameModel"
-            :maxlength="characterNameMaxLength"
-            aria-describedby="character-name-count"
-            class="w-full"
-          >
-            <template #trailing>
-              <div
-                id="character-name-count"
-                class="text-2xs text-muted tabular-nums"
-                aria-live="polite"
-                role="status"
-              >
-                {{ nameModel.length }}/{{ characterNameMaxLength }}
-              </div>
-            </template>
-          </UInput>
-        </UFormField>
-
-        <div class="flex items-center justify-center gap-4">
-          <UButton
-            variant="outline"
-            size="xl"
-            :label="$t('action.cancel')"
-            @click="close"
-          />
-          <UButton
-            :disabled="$v.nameModel.$invalid || !wasChange"
-            size="xl"
-            :label="$t('action.save')"
-            @click="onConfirm"
-          />
-        </div>
-      </template>
-
-      <template #footer>
-        <i18n-t
-          scope="global"
-          keypath="character.settings.delete.title"
-          tag="div"
-        >
-          <template #link>
-            <ULink
-              class="
-                cursor-pointer text-error
-                hover:text-error/80
-              "
-              @click="toggleConfirmDeleteDialog(true)"
+          <template #trailing>
+            <div
+              id="character-name-count"
+              class="text-xs text-muted tabular-nums"
+              aria-live="polite"
+              role="status"
             >
-              {{ $t('character.settings.delete.link') }}
-            </ULink>
+              {{ nameModel.length }}/{{ characterNameMaxLength }}
+            </div>
           </template>
-        </i18n-t>
-      </template>
-    </UModal>
+        </UInput>
+      </UFormField>
 
-    <AppConfirmActionDialog
-      :open="shownConfirmDeleteDialog"
-      :title="$t('character.settings.delete.dialog.title')"
-      :description="$t('character.settings.delete.dialog.desc')"
-      :confirm="`${character.name} - ${character.level}`"
-      :confirm-label="$t('action.delete')"
-      @cancel="toggleConfirmDeleteDialog(false);"
-      @confirm="() => {
-        $emit('delete')
-        toggleConfirmDeleteDialog(false);
-      }"
-      @update:open="toggleConfirmDeleteDialog(false)"
-    />
-  </div>
+      <div class="flex items-center justify-center gap-4">
+        <UButton
+          variant="outline"
+          size="xl"
+          :label="$t('action.cancel')"
+          @click="close"
+        />
+        <UButton
+          :disabled="!isDirty"
+          size="xl"
+          :label="$t('action.save')"
+          @click="onConfirm"
+        />
+      </div>
+    </template>
+
+    <template #footer>
+      <i18n-t
+        scope="global"
+        keypath="character.settings.delete.title"
+        tag="div"
+      >
+        <template #link>
+          <ULink
+            class="
+              cursor-pointer text-error
+              hover:text-error/80
+            "
+            @click="confirmDeleteDialog.open"
+          >
+            {{ $t('character.settings.delete.link') }}
+          </ULink>
+        </template>
+      </i18n-t>
+    </template>
+  </UModal>
 </template>

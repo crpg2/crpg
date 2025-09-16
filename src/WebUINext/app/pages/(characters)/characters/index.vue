@@ -8,7 +8,7 @@ definePageMeta({
      * @description
      * redirect to active character
      */
-    async () => {
+    () => {
       const userStore = useUserStore()
       if (userStore.activeCharacterId) {
         return navigateTo({
@@ -25,14 +25,14 @@ definePageMeta({
   <div class="flex min-h-[500px] items-center justify-center">
     <div class="space-y-8">
       <UiDecorSeparator />
-
-      <div class="prose text-center">
-        <h3>
+      <div class="text-center">
+        <UiTextView variant="h3" tag="h3" margin-bottom>
           {{ $t('character.empty.title') }}
-        </h3>
-        <p>{{ $t('character.empty.desc') }}</p>
+        </UiTextView>
+        <UiTextView variant="p" tag="p">
+          {{ $t('character.empty.desc') }}
+        </UiTextView>
       </div>
-
       <UiDecorSeparator />
     </div>
   </div>

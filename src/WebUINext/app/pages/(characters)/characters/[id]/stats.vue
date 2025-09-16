@@ -113,6 +113,14 @@ const {
   },
 )
 
+watch(
+  () => route.params.id,
+  () => {
+    loadCharacterEarningStatistics(0, Number(route.params.id))
+  },
+  { immediate: true },
+)
+
 const statTypeModel = ref<CharacterEarningType>(CHARACTER_EARNING_TYPE.Exp)
 const characterEarningStatistics = computed(() => convertCharacterEarningStatisticsToTimeSeries(rawEarningStatistics.value, statTypeModel.value))
 
@@ -194,8 +202,7 @@ const onLegendSelectChanged = (e: LegendSelectEvent) => {
     .map(([legend]) => legend)
 }
 
-const { execute: onUpdate } = useAsyncCallback(async (characterId: number) => {
-  await loadCharacterEarningStatistics(0, characterId)
+watch(characterEarningStatistics, () => {
   option.value = {
     ...option.value,
     legend: {
@@ -206,11 +213,10 @@ const { execute: onUpdate } = useAsyncCallback(async (characterId: number) => {
   }
   activeSeries.value = characterEarningStatistics.value.map(extractTSName)
 })
-
-watch(statTypeModel, () => onUpdate(character.value.id))
+watch(statTypeModel, () => loadCharacterEarningStatistics(0, character.value.id))
 watch(zoomModel, () => {
   setZoom()
-  onUpdate(character.value.id)
+  loadCharacterEarningStatistics(0, character.value.id)
   setDataZoom(start.value.getTime(), end.value.getTime())
 })
 
@@ -273,20 +279,8 @@ const columns: TableColumn<CharacterEarnedDataWithGameMode>[] = [
       h('span', {
         class: row.original.gold < 0 ? 'text-error' : 'text-success',
       }, `${n(row.original.gold)}${row.original.timeEffort ? ` (${n(row.original.gold / row.original.timeEffort)}/s)` : ''}`),
-
   },
 ]
-
-const fetchPageData = (characterId: number) => Promise.all([onUpdate(characterId)])
-
-onBeforeRouteUpdate(async (to, from) => {
-  if (to.name === from.name && to.name === 'characters-id-stats') {
-    const characterId = Number(to.params.id)
-    fetchPageData(characterId)
-  }
-})
-
-fetchPageData(Number(route.params.id))
 </script>
 
 <template>

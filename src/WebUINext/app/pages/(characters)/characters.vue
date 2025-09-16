@@ -1,12 +1,17 @@
 <script setup lang="ts">
+import { LazyCharacterCreateModal, LazyCharacterEditModal } from '#components'
+
 import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
+import { usePollInterval } from '~/composables/utils/use-poll-interval'
 import { SomeRole } from '~/models/role'
 import {
   activateCharacter,
+  deactivateCharacter,
   deleteCharacter,
   updateCharacter,
 } from '~/services/character-service'
+import { pollUserCharactersSymbol } from '~/symbols'
 
 definePageMeta({
   roles: SomeRole,
@@ -17,7 +22,7 @@ definePageMeta({
      */
     async () => {
       const userStore = useUserStore()
-      if (userStore.characters.length === 0) {
+      if (!userStore.characters.length) {
         await userStore.fetchCharacters()
       }
     },
@@ -29,35 +34,51 @@ const toast = useToast()
 
 const userStore = useUserStore()
 const { characters, user } = toRefs(userStore)
-const { togglePageLoading } = usePageLoading()
+
+usePollInterval({
+  key: pollUserCharactersSymbol,
+  fn: userStore.fetchCharacters,
+})
 
 const route = useRoute('characters-id')
+const overlay = useOverlay()
 
 const currentCharacterId = computed(() =>
   route.params.id ? Number(route.params.id) : null,
 )
 
-const currentCharacter = computed(() => characters.value.find(char => char.id === currentCharacterId.value))
+const currentCharacter = computed(() => characters.value.find(char => char.id === currentCharacterId.value) ?? null)
 
-// create
-const [shownCreateCharacterGuideModal, toggleCreateCharacterGuideModal] = useToggle()
+const characterCreateModal = overlay.create(LazyCharacterCreateModal)
 
-const { execute: onCreateNewCharacter } = useAsyncCallback(async () => {
-  if (user.value!.activeCharacterId) {
-    await activateCharacter(user.value!.activeCharacterId, false)
+const { execute: onCreateNewCharacter, isLoading: creatingNewCharacter } = useAsyncCallback(async () => {
+  if (!user.value) {
+    return
+  }
+
+  if (user.value.activeCharacterId) {
+    await deactivateCharacter(user.value.activeCharacterId)
     await userStore.fetchUser()
   }
-  toggleCreateCharacterGuideModal(true)
+
+  characterCreateModal.open()
 })
 
-// update name
-const { execute: onUpdateCharacter, isLoading: updatingCharacter } = useAsyncCallback(
+const {
+  execute: onUpdateCharacter,
+  isLoading: updatingCharacter,
+} = useAsyncCallback(
   async (name: string) => {
     if (!currentCharacter.value) {
       return
     }
+
     await updateCharacter(currentCharacter.value.id, { name })
     await userStore.fetchCharacters()
+
+    // eslint-disable-next-line ts/no-use-before-define
+    characterEditModal.close()
+
     toast.add({
       title: t('character.settings.update.notify.success'),
       close: false,
@@ -66,10 +87,12 @@ const { execute: onUpdateCharacter, isLoading: updatingCharacter } = useAsyncCal
   },
 )
 
-// activate
-const { execute: onActivateCharacter, isLoading: activatingCharacter } = useAsyncCallback(
+const {
+  execute: onActivateCharacter,
+  isLoading: activatingCharacter,
+} = useAsyncCallback(
   async (id: number, status: boolean) => {
-    await activateCharacter(id, status)
+    status ? await activateCharacter(id) : await deactivateCharacter(id)
     await userStore.fetchUser()
     toast.add({
       title: t('character.settings.update.notify.success'),
@@ -79,15 +102,18 @@ const { execute: onActivateCharacter, isLoading: activatingCharacter } = useAsyn
   },
 )
 
-// TODO: spec
-const { execute: onDeleteCharacter, isLoading: deletingCharacter } = useAsyncCallback(
+const {
+  execute: onDeleteCharacter,
+  isLoading: deletingCharacter,
+} = useAsyncCallback(
   async () => {
-    if (!currentCharacter.value) {
+    if (!user.value || !currentCharacter.value) {
       return
     }
 
-    if (currentCharacter.value.id === userStore.user!.activeCharacterId) {
-      await activateCharacter(currentCharacter.value.id, false)
+    // TODO: deactivate char FIXME: move to backend
+    if (currentCharacter.value.id === user.value.activeCharacterId) {
+      await deactivateCharacter(currentCharacter.value.id)
       await userStore.fetchUser()
     }
 
@@ -104,12 +130,20 @@ const { execute: onDeleteCharacter, isLoading: deletingCharacter } = useAsyncCal
       return navigateTo({ name: 'characters' })
     }
 
-    return navigateTo({ name: 'characters-id', params: { id: userStore.user!.activeCharacterId || userStore.characters[0]!.id } })
+    return navigateTo({ name: 'characters-id', params: { id: user.value.activeCharacterId || userStore.characters[0]!.id } })
   },
 )
 
-watchEffect(() => {
-  togglePageLoading(updatingCharacter.value || activatingCharacter.value || deletingCharacter.value)
+usePageLoading({
+  watch: [creatingNewCharacter, updatingCharacter, activatingCharacter, deletingCharacter],
+})
+
+const characterEditModal = overlay.create(LazyCharacterEditModal, {
+  props: {
+    character: currentCharacter.value!,
+    onUpdate: onUpdateCharacter,
+    onDelete: onDeleteCharacter,
+  },
 })
 </script>
 
@@ -119,9 +153,8 @@ watchEffect(() => {
       data-teleport-target="character-navbar"
       class="mb-16 grid grid-cols-3 items-center justify-between gap-4"
     >
-      <div class="order-1 flex items-center gap-4">
+      <div v-if="user && currentCharacter" class="order-1 flex items-center gap-4">
         <CharacterSelect
-          v-if="user && currentCharacter"
           :characters
           :current-character
           :active-character-id="user.activeCharacterId"
@@ -129,21 +162,20 @@ watchEffect(() => {
           @create="onCreateNewCharacter"
         />
 
-        <CharacterEditModal
-          v-if="currentCharacter"
-          :key="currentCharacter.id"
-          :character="currentCharacter"
-          @update="onUpdateCharacter"
-          @delete="onDeleteCharacter"
-        />
+        <UTooltip
+          :text="$t('character.settings.update.title')"
+        >
+          <UButton
+            size="xl"
+            icon="crpg:edit"
+            color="neutral"
+            variant="outline"
+            @click="() => characterEditModal.open()"
+          />
+        </UTooltip>
       </div>
     </div>
 
     <NuxtPage />
-
-    <CharacterCreateModal
-      :open="shownCreateCharacterGuideModal"
-      @update:open="toggleCreateCharacterGuideModal(false)"
-    />
   </UContainer>
 </template>

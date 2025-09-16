@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { timeout } from 'es-toolkit'
 
-import type { CharacterCharacteristics, CharacteristicConversion } from '~/models/character'
+import type { CharacteristicConversion } from '~/models/character'
 
 import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useCharacter } from '~/composables/character/use-character'
@@ -15,18 +15,12 @@ import {
   updateCharacterCharacteristics,
 } from '~/services/character-service'
 
-const route = useRoute('characters-id-characteristic')
 const { t } = useI18n()
 const toast = useToast()
 
 const { character } = useCharacter()
-
-const { characterCharacteristics, loadCharacterCharacteristics, healthPoints } = useCharacterCharacteristic()
+const { characterCharacteristics, loadCharacterCharacteristics, loadingCharacterCharacteristics, setCharacterCharacteristicsSync, healthPoints } = useCharacterCharacteristic()
 const { itemsOverallStats } = useCharacterItems()
-
-const setCharacterCharacteristicsSync = (characteristic: CharacterCharacteristics) => {
-  characterCharacteristics.value = characteristic
-}
 
 const {
   characteristics,
@@ -59,9 +53,7 @@ const {
   setCharacterCharacteristicsSync(
     await updateCharacterCharacteristics(character.value.id, characteristics.value),
   )
-
-  resetCharacterCharacteristicBuilder() // TODO:
-
+  resetCharacterCharacteristicBuilder()
   toast.add({
     title: t('character.characteristic.commit.notify'),
     close: false,
@@ -76,25 +68,11 @@ const {
   isLoading: respecializingCharacter,
 } = useAsyncCallback(async () => {
   await respecializeCharacter(character.value.id)
-  loadCharacterCharacteristics()
+  await loadCharacterCharacteristics()
 })
 
-const fetchPageData = (characterId: number) => Promise.all([
-  loadCharacterCharacteristics(),
-])
-
-onBeforeRouteUpdate((to, from) => {
-  if (to.name === from.name && 'id' in to.params) {
-    fetchPageData(Number(to.params.id))
-  }
-})
-
-fetchPageData(Number(route.params.id))
-
-const { togglePageLoading } = usePageLoading()
-
-watchEffect(() => {
-  togglePageLoading(commitingCharacterCharacteristics.value || respecializingCharacter.value)
+usePageLoading({
+  watch: [loadingCharacterCharacteristics, commitingCharacterCharacteristics, convertingCharacterCharacteristics, respecializingCharacter],
 })
 </script>
 

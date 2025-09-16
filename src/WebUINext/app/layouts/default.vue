@@ -4,24 +4,17 @@ import { useMainHeaderProvider } from '~/composables/app/use-main-header'
 const route = useRoute()
 const userStore = useUserStore()
 
-const { loadPatchNotes, patchNotes } = usePatchNotes()
-const { gameServerStats, loadGameServerStats } = useGameServerStats()
+const { patchNotes } = usePatchNotes()
+const { gameServerStats } = useGameServerStats()
 const settingsStore = useSettingsStore()
 const { HHEvent, HHEventRemaining, HHPollId, isHHCountdownEnded } = useHappyHours()
 
-await Promise.all([
-  loadPatchNotes(),
-  loadGameServerStats(),
-  settingsStore.loadSettings(),
-  userStore.fetchUserRestriction(),
-])
+settingsStore.loadSettings()
+userStore.fetchUserRestriction()
 
 // TODO: FIXME:
 useWelcome()
-
-const mainHeader = useTemplateRef('mainHeader')
-const { height: mainHeaderHeight } = useElementSize(mainHeader, { height: 0, width: 0 }, { box: 'border-box' })
-useMainHeaderProvider(mainHeaderHeight)
+useMainHeaderProvider(useTemplateRef('mainHeader'))
 </script>
 
 <template>

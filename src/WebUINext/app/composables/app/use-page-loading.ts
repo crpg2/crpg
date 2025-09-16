@@ -23,17 +23,11 @@ interface PageLoadingOptions {
 export const usePageLoading = (options?: PageLoadingOptions) => {
   const { state, toggle } = injectStrict(pageLoadingKey)
 
-  const hasScope = getCurrentScope()
+  const unsubscribeExecute = watch(options?.watch || [], states => toggle(states.some(Boolean)))
 
-  const unsubExecute = watch(options?.watch || [], (states) => {
-    toggle(states.some(Boolean))
-  }, { flush: 'sync' })
-
-  if (hasScope) {
-    onScopeDispose(() => {
-      unsubExecute()
-    })
-  }
+  onBeforeUnmount(() => {
+    unsubscribeExecute()
+  })
 
   return {
     state,

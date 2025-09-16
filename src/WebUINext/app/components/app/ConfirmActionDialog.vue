@@ -4,7 +4,6 @@ import { useVuelidate } from '@vuelidate/core'
 import { errorMessagesToString, sameAs } from '~/services/validators-service'
 
 const props = withDefaults(defineProps<{
-  open?: boolean
   title?: string
   description?: string
 
@@ -19,7 +18,7 @@ const props = withDefaults(defineProps<{
 })
 
 const emit = defineEmits<{
-  cancel: []
+  close: []
   confirm: []
 }>()
 
@@ -37,7 +36,7 @@ const $v = useVuelidate(
 const onCancel = () => {
   confirmModel.value = ''
   $v.value.$reset()
-  emit('cancel')
+  emit('close')
 }
 
 const onConfirm = async () => {
@@ -51,13 +50,11 @@ const onConfirm = async () => {
 
 <template>
   <UModal
-    :open
     :title
     :ui="{
       body: 'space-y-6 text-center',
       footer: 'flex items-center justify-center gap-4',
     }"
-    @update:open="onCancel"
   >
     <slot />
 
@@ -68,14 +65,14 @@ const onConfirm = async () => {
         icon="crpg:alert-circle"
       >
         <template #description>
-          <div class="flex flex-col gap-3">
+          <div class="space-y-1">
             <slot name="description">
               {{ description }}
             </slot>
             <template v-if="undone">
-              <h5 class="text-sm text-error">
+              <UiTextView variant="h5" class="text-error">
                 {{ $t('action-undone') }}
-              </h5>
+              </UiTextView>
             </template>
           </div>
         </template>
@@ -98,7 +95,7 @@ const onConfirm = async () => {
         </i18n-t>
 
         <UFormField
-          :error="errorMessagesToString($v.confirmModel.$errors) || false"
+          :error="errorMessagesToString($v.confirmModel.$errors)"
           data-aq-confirm-field
         >
           <UInput

@@ -1,8 +1,10 @@
+import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { getCharacterLimitations, getRespecCapability, respecializeCharacter } from '~/services/character-service'
+import { getRespecCapability, respecializeCharacter } from '~/services/character-service'
 import { useUserStore } from '~/stores/user'
 
 import { useCharacter } from './use-character'
+import { useCharacterLimitations } from './use-character-limitations'
 
 export const useCharacterRespec = () => {
   const toast = useToast()
@@ -10,18 +12,7 @@ export const useCharacterRespec = () => {
 
   const userStore = useUserStore()
   const { character } = useCharacter()
-
-  const {
-    state: characterLimitations,
-    execute: loadCharacterLimitations,
-  } = useAsyncState(
-    (id: number) => getCharacterLimitations(id),
-    { lastRespecializeAt: new Date() },
-    {
-      immediate: false,
-      resetOnExecute: false,
-    },
-  )
+  const { characterLimitations, loadCharacterLimitations } = useCharacterLimitations()
 
   const respecCapability = computed(() => getRespecCapability(
     character.value,
@@ -34,13 +25,13 @@ export const useCharacterRespec = () => {
     execute: onRespecializeCharacter,
     isLoading: respecializingCharacter,
   } = useAsyncCallback(
-    async (characterId: number) => {
-      await respecializeCharacter(characterId)
+    async () => {
+      await respecializeCharacter(character.value.id)
 
       await Promise.all([
         userStore.fetchUser(), // update gold
         userStore.fetchCharacters(), // update characters
-        loadCharacterLimitations(0, characterId),
+        loadCharacterLimitations(),
       ])
 
       toast.add({
@@ -50,6 +41,10 @@ export const useCharacterRespec = () => {
       })
     },
   )
+
+  usePageLoading({
+    watch: [respecializingCharacter],
+  })
 
   return {
     characterLimitations,

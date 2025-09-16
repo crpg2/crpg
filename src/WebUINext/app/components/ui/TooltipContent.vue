@@ -10,9 +10,14 @@ const slots = useSlots()
 <template>
   <div class="prose">
     <slot name="title">
-      <h5 v-if="title" :class="{ '!mb-4': description || slots.description }">
+      <UiTextView
+        v-if="title"
+        variant="h4"
+        tag="h4"
+        :class="{ '!mb-4': description || slots.description }"
+      >
         {{ title }}
-      </h5>
+      </UiTextView>
     </slot>
     <slot name="description">
       <div

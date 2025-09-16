@@ -153,9 +153,9 @@ const onShare = () => {
       <div
         class="mx-auto max-w-4xl"
       >
-        <h1 class="mb-14 text-center text-xl">
+        <UiTextView variant="h1" tag="h1" class="text-center" margin-bottom>
           {{ $t('builder.title') }}
-        </h1>
+        </UiTextView>
 
         <div class="relative space-y-8">
           <div class="space-y-5">
@@ -207,15 +207,15 @@ const onShare = () => {
               />
 
               <div class="mt-2 flex justify-between">
-                <div class="text-2xs text-muted">
+                <UiTextView variant="caption-xs">
                   {{ $n(minimumLevel) }}
-                </div>
-                <div class="text-center text-2xs text-muted">
+                </UiTextView>
+                <UiTextView variant="caption-xs" class="text-center">
                   {{ $t('builder.levelChangeAttention') }}
-                </div>
-                <div class="text-2xs text-muted">
+                </UiTextView>
+                <UiTextView variant="caption-xs">
                   {{ $n(maximumLevel) }}
-                </div>
+                </UiTextView>
               </div>
             </div>
           </div>
@@ -247,8 +247,9 @@ const onShare = () => {
                 >
                   <UInputNumber
                     v-model="weight"
-                    size="xs"
                     class="max-w-24"
+                    color="neutral"
+                    size="sm"
                   />
                 </UiSimpleTableRow>
 
@@ -261,8 +262,9 @@ const onShare = () => {
                 >
                   <UInputNumber
                     v-model="weaponLength"
-                    size="xs"
                     class="max-w-24"
+                    size="sm"
+                    color="neutral"
                   />
                 </UiSimpleTableRow>
               </template>
@@ -279,7 +281,7 @@ const onShare = () => {
     >
       <UButton
         variant="outline"
-        color="secondary"
+        color="neutral"
         size="lg"
         icon="crpg:reset"
         :label="$t('action.reset')"

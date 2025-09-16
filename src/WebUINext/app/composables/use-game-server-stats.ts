@@ -1,7 +1,8 @@
 import { usePollInterval } from '~/composables/utils/use-poll-interval'
 import { getGameServerStats } from '~/services/game-server-statistics-service'
+import { pollGameServerStatsSymbol } from '~/symbols'
 
-export const useGameServerStats = () => {
+export const useGameServerStats = (immediate = true) => {
   const {
     state: gameServerStats,
     execute: loadGameServerStats,
@@ -12,21 +13,16 @@ export const useGameServerStats = () => {
       total: { playingCount: 0 },
     },
     {
-      immediate: false,
+      immediate,
     },
   )
 
-  // TODO: nuxt plugin
-  const { subscribe, unsubscribe } = usePollInterval()
-  const id = Symbol('loadGameServerStats')
-
-  onMounted(() => {
-    subscribe(id, loadGameServerStats)
-  })
-
-  onBeforeUnmount(() => {
-    unsubscribe(id)
-  })
+  usePollInterval(
+    {
+      key: pollGameServerStatsSymbol,
+      fn: loadGameServerStats,
+    },
+  )
 
   return {
     gameServerStats,

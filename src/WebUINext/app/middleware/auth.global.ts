@@ -37,7 +37,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
   if (routeHasAnyRoles(to)) {
     // (4)
     if (userStore.user === null || !userAllowedAccess(to, userStore.user.role)) {
-      navigateTo({ name: 'index' }, { replace: true })
+      return navigateTo({ name: 'index' }, { replace: true })
     }
   }
 })

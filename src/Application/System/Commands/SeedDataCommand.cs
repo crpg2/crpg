@@ -1062,6 +1062,11 @@ public record SeedDataCommand : IMediatorRequest
                 Character = orleCharacter0,
                 LastRespecializeAt = DateTime.UtcNow.AddDays(-8),
             };
+            CharacterLimitations orleCharacter1Limitations = new()
+            {
+                Character = orleCharacter1,
+                LastRespecializeAt = DateTime.UtcNow.AddDays(-1).AddMinutes(-30),
+            };
             CharacterLimitations orleCharacter2Limitations = new()
             {
                 Character = orleCharacter2,
@@ -1079,7 +1084,7 @@ public record SeedDataCommand : IMediatorRequest
             };
             CharacterLimitations[] newCharactersLimitations =
             {
-                takeoCharacter0Limitations, takeoCharacter1Limitations, takeoCharacter2Limitations, orleCharacter0Limitations,
+                takeoCharacter0Limitations, takeoCharacter1Limitations, takeoCharacter2Limitations, orleCharacter0Limitations, orleCharacter1Limitations,
                 orleCharacter2Limitations, kadseCharacter0Limitations, droobCharacter0Limitations,
             };
 

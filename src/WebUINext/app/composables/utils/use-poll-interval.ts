@@ -1,28 +1,36 @@
-type SubscriptionFn = () => Promise<any> | any
+import type { WatchSource, WatchStopHandle } from 'vue'
 
-const INTERVAL = 1000 * 60 * 2 // 2 min
+interface PollOption {
+  key: symbol
+  fn: () => Promise<any> | any
+  watch?: WatchSource
+}
 
-// global state
-const subscriptions = new Map<symbol, SubscriptionFn>()
+export const usePollInterval = (options: PollOption | PollOption[]) => {
+  const { $poll } = useNuxtApp()
+  const unsubscribes: (() => boolean)[] = []
+  const stopWatches: WatchStopHandle[] = []
 
-// TODO: FIXME: to nuxt plugin
-setInterval(() => {
-  for (const fn of subscriptions.values()) {
-    fn()
-  }
-}, INTERVAL)
+  const _options = Array.isArray(options) ? options : [options]
 
-export const usePollInterval = () => {
-  const subscribe = (id: symbol, fn: SubscriptionFn) => {
-    subscriptions.set(id, fn)
-  }
+  onMounted(() => {
+    for (const { key, fn, watch: watchSource } of _options) {
+      if (watchSource) {
+        stopWatches.push(watch(
+          watchSource,
+          () => {
+            unsubscribes.push($poll.subscribe(key, fn))
+          },
+        ))
+      }
+      else {
+        unsubscribes.push($poll.subscribe(key, fn))
+      }
+    }
+  })
 
-  const unsubscribe = (id: symbol) => {
-    subscriptions.delete(id)
-  }
-
-  return {
-    subscribe,
-    unsubscribe,
-  }
+  onBeforeUnmount(() => {
+    unsubscribes.forEach(unsubscribe => unsubscribe())
+    stopWatches.forEach(stop => stop())
+  })
 }

@@ -9,15 +9,72 @@ import type {
   SkillKey,
 } from '~/models/character'
 
+import { usePageLoading } from '~/composables/app/use-page-loading'
+import { usePollInterval } from '~/composables/utils/use-poll-interval'
 import {
   computeHealthPoints,
   createDefaultCharacteristic,
   createEmptyCharacteristic,
+  getCharacterCharacteristics,
   wppForAgility,
   wppForWeaponMaster,
 } from '~/services/character-service'
+import { pollCharacterCharacteristicsSymbol } from '~/symbols'
 import { applyPolynomialFunction } from '~/utils/math'
 import { mergeObjectWithSum } from '~/utils/object'
+
+const characterCharacteristicsKey: InjectionKey<CharacterCharacteristicsContext> = Symbol('CharacterCharacteristics')
+
+export const useCharacterCharacteristicProvider = (characterId: MaybeRefOrGetter<number>) => {
+  const {
+    state: characterCharacteristics,
+    execute: loadCharacterCharacteristics,
+    isLoading: loadingCharacterCharacteristics,
+  } = useAsyncState(
+    () => getCharacterCharacteristics(toValue(characterId)),
+    createEmptyCharacteristic(),
+    { immediate: true },
+  )
+
+  usePollInterval(
+    {
+      key: pollCharacterCharacteristicsSymbol,
+      fn: loadCharacterCharacteristics,
+    },
+  )
+
+  usePageLoading({
+    watch: [loadingCharacterCharacteristics],
+  })
+
+  provide(characterCharacteristicsKey, {
+    characterCharacteristics,
+    loadCharacterCharacteristics,
+    loadingCharacterCharacteristics,
+    setCharacterCharacteristicsSync: (characteristic: CharacterCharacteristics) => {
+      characterCharacteristics.value = characteristic
+    },
+  })
+
+  return {
+    loadCharacterCharacteristics,
+    loadingCharacterCharacteristics,
+  }
+}
+
+export const useCharacterCharacteristic = () => {
+  const { characterCharacteristics, loadCharacterCharacteristics, loadingCharacterCharacteristics, setCharacterCharacteristicsSync } = injectStrict(characterCharacteristicsKey)
+
+  const healthPoints = computed(() => computeHealthPoints(characterCharacteristics.value.skills.ironFlesh, characterCharacteristics.value.attributes.strength))
+
+  return {
+    characterCharacteristics,
+    loadCharacterCharacteristics,
+    loadingCharacterCharacteristics,
+    setCharacterCharacteristicsSync,
+    healthPoints,
+  }
+}
 
 const characteristicCost = (
   characteristicSectionKey: CharacteristicSectionKey,
@@ -78,24 +135,8 @@ const characteristicRequirementsSatisfied = (
 interface CharacterCharacteristicsContext {
   characterCharacteristics: Ref<CharacterCharacteristics>
   loadCharacterCharacteristics: () => void
-}
-
-const characterCharacteristicsKey: InjectionKey<CharacterCharacteristicsContext> = Symbol('CharacterCharacteristics')
-
-export const useCharacterCharacteristicProvider = (ctx: CharacterCharacteristicsContext) => {
-  provide(characterCharacteristicsKey, ctx)
-}
-
-export const useCharacterCharacteristic = () => {
-  const { characterCharacteristics, loadCharacterCharacteristics } = injectStrict(characterCharacteristicsKey)
-
-  const healthPoints = computed(() => computeHealthPoints(characterCharacteristics.value.skills.ironFlesh, characterCharacteristics.value.attributes.strength))
-
-  return {
-    characterCharacteristics,
-    loadCharacterCharacteristics,
-    healthPoints,
-  }
+  loadingCharacterCharacteristics: Ref<boolean>
+  setCharacterCharacteristicsSync: (characteristic: CharacterCharacteristics) => void
 }
 
 export const useCharacterCharacteristicBuilder = (

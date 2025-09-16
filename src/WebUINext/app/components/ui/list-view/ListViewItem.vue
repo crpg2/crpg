@@ -5,14 +5,12 @@ const { label } = defineProps<{
 </script>
 
 <template>
-  <li class="ps-2">
-    <div>
-      <slot name="label">
-        <p v-if="label">
-          {{ label }}
-        </p>
-      </slot>
-    </div>
-    <slot />
+  <li
+    class="ps-2"
+  >
+    <UiTextView v-if="label" variant="p" tag="p">
+      {{ label }}
+    </UiTextView>
+    <slot v-else />
   </li>
 </template>

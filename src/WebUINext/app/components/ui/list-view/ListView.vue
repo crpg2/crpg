@@ -12,7 +12,10 @@ const {
 }>()
 
 const variants = tv({
-  base: 'm-0 space-y-2 p-0 ps-7',
+  base: `
+    m-0 space-y-2 p-0 ps-7
+    marker:text-toned
+  `,
   variants: {
     variant: {
       bullet: 'list-disc',

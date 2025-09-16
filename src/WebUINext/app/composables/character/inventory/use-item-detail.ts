@@ -81,9 +81,8 @@ export const useItemDetail = (setListeners: boolean = false) => {
       openedItems.value.length !== 0 && closeItemDetail(openedItems.value[openedItems.value.length - 1]!)
     })
 
-    onBeforeRouteLeave(() => {
+    onBeforeUnmount(() => {
       closeAll()
-      return true
     })
   }
 
