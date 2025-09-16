@@ -240,6 +240,13 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
 
         _inventoryVm.Movie = _inventoryMovie;
 
+        var rootWidget = _inventoryVm?.Movie?.RootWidget;
+        if (_inventoryVm != null && rootWidget != null && _inventoryLayer != null)
+        {
+            _inventoryVm.SetRootWidget(rootWidget);
+            _inventoryVm.SetContext(_inventoryLayer.UIContext);
+        }
+
         // Fetch items from server
         var loadout = Mission.Current.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         loadout?.RequestGetUpdatedEquipmentAndItems();

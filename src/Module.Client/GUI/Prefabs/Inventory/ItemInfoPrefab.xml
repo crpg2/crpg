@@ -4,16 +4,25 @@
     <Parameter Name="Height" DefaultValue="430"/>
   </Parameters>
   <Window>
+  <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+  <Children>
+    <!-- Transparent overlay (clickable) -->
+    <ButtonWidget Id="Overlay" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                 Color="#ffffff00"
+                 DoNotAcceptEvents="false"
+                 Brush="ItemInfo.ClickOverlay"
+                 DoNotPassEventsToChildren="true"
+                 Command.Click="OnOverlayClick"/>  
     <!-- Frame -->
     <BrushWidget Id="ItemInfo.Frame" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="*Width" SuggestedHeight="*Height"
-            HorizontalAlignment="Center" VerticalAlignment="Center" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff"
-            Padding="5,10,5,10">
+            PositionXOffset="@PositionX" PositionYOffset="@PositionY"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
      <Children>
         <!-- Background -->
-        <BrushWidget Id="UserAndCharacterInfo.Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
-          HorizontalAlignment="Center" VerticalAlignment="Center" Brush="Crpg.Generic.Panel.Background"
-          MarginTop="9" MarginBottom="9" MarginLeft="9" MarginRight="9"/>
+        <BrushWidget Id="ItemInfo.Background.Brush" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+          HorizontalAlignment="Center" VerticalAlignment="Center" Brush="ItemInfo.Background"
+          MarginTop="9" MarginBottom="9" MarginLeft="9" MarginRight="9" />
         <!-- Close Button -->
         <!-- Vertical ListPanel Holding all -->
         <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
@@ -53,5 +62,7 @@
         </ListPanel>
      </Children>
     </BrushWidget>
+  </Children>
+  </Widget>
   </Window>
 </Prefab>

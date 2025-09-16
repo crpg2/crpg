@@ -25,8 +25,12 @@ public class EquipmentSlotVM : ViewModel
 
     public event Action<EquipmentSlotVM, ViewModel>? OnItemDropped;
     public event Action<EquipmentSlotVM>? OnSlotAlternateClicked;
+    public event Action<EquipmentSlotVM>? OnSlotClicked;
+    public event Action<EquipmentSlotVM>? OnHoverBegin;
+    public event Action<EquipmentSlotVM>? OnHoverEnd;
     public event Action<ItemObject>? OnItemDragBegin;
     public event Action<ItemObject>? OnItemDragEnd;
+
 
     public EquipmentSlotVM(CrpgItemSlot crpgSlot)
     {
@@ -41,6 +45,23 @@ public class EquipmentSlotVM : ViewModel
         OnSlotAlternateClicked?.Invoke(this);
     }
 
+    public void ExecuteClick()
+    {
+        InformationManager.DisplayMessage(new InformationMessage($"[EquipmentSlotVM] ExecuteHoverBegin()"));
+        OnSlotClicked?.Invoke(this);
+    }
+
+    public void ExecuteHoverBegin()
+    {
+        OnHoverBegin?.Invoke(this);
+        // InformationManager.DisplayMessage(new InformationMessage($"ExecuteHoverBegin()"));
+    }
+
+    public void ExecuteHoverEnd()
+    {
+        OnHoverEnd?.Invoke(this);
+        // InformationManager.DisplayMessage(new InformationMessage($"ExecuteHoverEnd()"));
+    }
     public void ExecuteDragBegin()
     {
         IsDragging = true;

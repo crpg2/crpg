@@ -90,12 +90,14 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
             NakedSpeed = $"{charSpeedStats.NakedSpeed:F3}";
             CurrentSpeed = $"{charSpeedStats.CurrentSpeed:F3}";
             MaxWeaponLength = $"{charSpeedStats.MaxWeaponLength:F3}";
-            MovementSpeedPenaltyWhenAttacking = $"{charSpeedStats.MovementSpeedPenaltyWhenAttacking}%";
+            MovementSpeedPenaltyWhenAttacking = $"{charSpeedStats.MovementSpeedPenaltyWhenAttacking:F2}%";
 
             if (!mount.IsEmpty) // has a horse
             {
                 MountSpeedPenalty = $"{mountSpeedStats.SpeedReduction:F3}";
-                AdditionalMountSpeedPenalty = $"{mountWeaponLengthPenalty:F2}%";
+                // Turn multiplier into penalty percent
+                double penaltyPercent = (mountWeaponLengthPenalty - 1.0) * 100.0;
+                AdditionalMountSpeedPenalty = $"{penaltyPercent:F2}%";
             }
             else
             {

@@ -34,8 +34,9 @@
         </BrushWidget>
         <ButtonWidget Id="Button" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center"
                 SuggestedWidth="!Button.Width" SuggestedHeight="!Button.Height" AcceptDrag="@CanAcceptDrag" DoNotPassEventsToChildren="true"
-                ClipContents="true" DoNotAcceptEvents="False" IsEnabled="@IsButtonEnabled"
-                Command.AlternateClick="ExecuteAlternateClick" Command.DragBegin="ExecuteDragBegin" Command.DragEnd="ExecuteDragEnd" Brush="EquipmentSlot.Button"
+                ClipContents="true" DoNotAcceptEvents="False" IsEnabled="@IsButtonEnabled" Brush="EquipmentSlot.Button"
+                Command.AlternateClick="ExecuteAlternateClick" Command.Click="ExecuteClick"
+                Command.DragBegin="ExecuteDragBegin" Command.DragEnd="ExecuteDragEnd" 
                 AcceptDrop="true" Command.Drop="ExecuteTryEquipItem" Command.HoverBegin="ExecuteHoverBegin" Command.HoverEnd="ExecuteHoverEnd" AllowHoverWhileDragging="true" >
           <Children>
             <!-- Equipped item icon -->

@@ -7,6 +7,8 @@ namespace Crpg.Module.GUI.Inventory;
 public class InventoryGridVM : ViewModel
 {
     internal event Action<InventorySlotVM>? OnInventorySlotClicked;
+    internal event Action<InventorySortTypeVM>? OnInventorySortTypeClicked;
+    internal event Action<InventorySlotVM>? OnInventorySlotHoverEnd;
     private List<InventorySlotVM> _availableItems;
     private List<InventorySortTypeVM> _activeFilters = new();
     private MBBindingList<InventorySlotVM> _filteredItems;
@@ -27,7 +29,7 @@ public class InventoryGridVM : ViewModel
         _availableItems = new List<InventorySlotVM>();
         foreach (var (item, quantity, userItemId) in inventory)
         {
-            _availableItems.Add(new InventorySlotVM(item, slot => OnItemClicked(slot), quantity, userItemId));
+            _availableItems.Add(new InventorySlotVM(item, slot => OnItemClicked(slot), slot => OnItemHoverEnd(slot), quantity, userItemId));
         }
     }
 
@@ -52,7 +54,7 @@ public class InventoryGridVM : ViewModel
             }
             else
             {
-                _availableItems.Add(new InventorySlotVM(item, slot => OnItemClicked(slot), quantity, userItemId));
+                _availableItems.Add(new InventorySlotVM(item, slot => OnItemClicked(slot), slot => OnItemHoverEnd(slot), quantity, userItemId));
             }
         }
 
@@ -66,6 +68,14 @@ public class InventoryGridVM : ViewModel
         {
             InformationManager.DisplayMessage(new InformationMessage($"Clicked: {slot.ItemName}"));
             OnInventorySlotClicked?.Invoke(slot);
+        }
+    }
+
+    private void OnItemHoverEnd(InventorySlotVM? slot)
+    {
+        if (slot?.ItemObj != null)
+        {
+            OnInventorySlotHoverEnd?.Invoke(slot);
         }
     }
 
@@ -155,6 +165,11 @@ public class InventoryGridVM : ViewModel
 
         // TODO: Apply filtering logic here and refresh visible items.
         RefreshFilteredItemsFast();
+
+        if (clickedSort != null)
+        {
+            OnInventorySortTypeClicked?.Invoke(clickedSort);
+        }
     }
 
     private bool PassesFilters(InventorySlotVM slot)

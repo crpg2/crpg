@@ -23,6 +23,28 @@ public class ItemInfoVM : ViewModel
     private ItemObject? _itemObj;
     private ImageIdentifierVM? _imageIdentifier;
 
+    private float _positionX;
+    [DataSourceProperty]
+    public float PositionX
+    {
+        get => _positionX;
+        set => SetField(ref _positionX, value, nameof(PositionX));
+    }
+
+    private float _positionY;
+    [DataSourceProperty]
+    public float PositionY
+    {
+        get => _positionY;
+        set => SetField(ref _positionY, value, nameof(PositionY));
+    }
+
+    public void OnOverlayClick()
+    {
+        InformationManager.DisplayMessage(new InformationMessage("OnOverlayClick()", Colors.Red));
+        // Close the popup
+        IsVisible = false;
+    }
     [DataSourceProperty]
     public MBBindingList<ItemInfoTupleVM> Tuples { get => _tuples; set => SetField(ref _tuples, value, nameof(Tuples)); }
 
@@ -41,7 +63,7 @@ public class ItemInfoVM : ViewModel
     [DataSourceProperty]
     public bool IsVisible { get => _isVisible; set => SetField(ref _isVisible, value, nameof(IsVisible)); }
 
-    public ItemInfoVM(ItemObject? item)
+    public ItemInfoVM(ItemObject? item, int userItemId = -1)
     {
         if (item == null)
         {
@@ -49,6 +71,7 @@ public class ItemInfoVM : ViewModel
             _imageIdentifier = new ImageIdentifierVM(ImageIdentifierType.Item);
             _itemObj = null;
             Name = string.Empty;
+            IsVisible = false;
         }
         else
         {

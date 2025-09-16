@@ -19,6 +19,26 @@
       </Style>
     </Styles>
   </Brush>
+  <Brush Name="ItemInfo.Background">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#202020FF" AlphaFactor="1" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="1"/>
+      </Style>
+    </Styles>
+  </Brush>
+  <Brush Name="ItemInfo.ClickOverlay">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#918f8fb9" AlphaFactor="1" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor=".03"/>
+      </Style>
+    </Styles>
+  </Brush>   
   <Brush Name="CrpgInventory.EquipmentButton">
     <Layers>
       <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#2E2E2EFF" AlphaFactor="1" />

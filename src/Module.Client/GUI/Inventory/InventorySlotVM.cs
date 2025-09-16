@@ -3,8 +3,10 @@ using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using Messages.FromClient.ToLobbyServer;
 using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.Information;
 using TaleWorlds.GauntletUI.BaseTypes;
 using TaleWorlds.Library;
+using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.GUI.Inventory;
@@ -12,6 +14,7 @@ namespace Crpg.Module.GUI.Inventory;
 public class InventorySlotVM : ViewModel
 {
     private readonly Action<InventorySlotVM> _onClick;
+    private readonly Action<InventorySlotVM> _onHoverEnd;
 
     private string _itemName;
     private string _defaultSprite;
@@ -33,7 +36,7 @@ public class InventorySlotVM : ViewModel
     public event Action<ItemObject>? OnItemDragEnd;
     public event Action<ItemObject>? OnItemClick;
 
-    public InventorySlotVM(ItemObject item, Action<InventorySlotVM> onClick, int quantity = 1, int userItemId = -1)
+    public InventorySlotVM(ItemObject item, Action<InventorySlotVM> onClick, Action<InventorySlotVM> onHoverEnd, int quantity = 1, int userItemId = -1)
     {
         ItemObj = item;
         if (item != null)
@@ -47,6 +50,7 @@ public class InventorySlotVM : ViewModel
             _userItemId = userItemId;
             _itemRank = 0;
             _onClick = onClick;
+            _onHoverEnd = onHoverEnd;
 
             var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
             if (behavior == null || behavior.UserInventoryItems == null)
@@ -79,6 +83,7 @@ public class InventorySlotVM : ViewModel
             _userItemId = -1;
             _itemRank = 0;
             _onClick = _ => { }; // no-op
+            _onHoverEnd = _ => { }; // no-op
         }
     }
 
@@ -185,6 +190,20 @@ public class InventorySlotVM : ViewModel
             _onClick?.Invoke(this);
         }
     }
+
+    public void ExecuteHoverBegin()
+    {
+        // _onHoverEnd?.Invoke(this);
+        // InformationManager.DisplayMessage(new InformationMessage($"ExecuteHoverBegin()"));
+    }
+
+    public void ExecuteHoverEnd()
+    {
+        InformationManager.DisplayMessage(new InformationMessage($"ExecuteHoverEnd()"));
+        _onHoverEnd?.Invoke(this);
+
+    }
+
 
     private void SetItemRankIconsVisible(int rank)
     {

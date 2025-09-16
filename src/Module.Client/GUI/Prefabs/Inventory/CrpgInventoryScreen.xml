@@ -21,7 +21,7 @@
         <!-- Centering Wrapper -->
         <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
                 HorizontalAlignment="Center" VerticalAlignment="Center" MarginLeft="10" MarginTop="10" MarginRight="10" MarginBottom="10" AcceptDrop="true" Command.Drop="ExecuteDropDiscard">
-          <Children>  
+          <Children> 
             <BrushWidget Id="Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
               <Children>
                 <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="CrpgInventory.EquipmentSlot.BackGround">
@@ -34,7 +34,7 @@
                 <!-- Character Info Panel -->
                 <CharacterInfoPrefab DataSource="{CharacterInfo}" />
                 <!-- Inventory Selection -->
-                <InventoryGridPrefab Parameter.NumColumns="5" DataSource="{InventoryGrid}" HorizontalAlignment="Center" VerticalAlignment="Center" MarginTop="10" MarginLeft="10"/>
+                <InventoryGridPrefab Id="UserInventoryGrid" Parameter.NumColumns="5" DataSource="{InventoryGrid}" HorizontalAlignment="Center" VerticalAlignment="Center" MarginTop="10" MarginLeft="10"/>
 
                 <!-- Equipped Items Panel -->
                 <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquippedPanel.Width" SuggestedHeight="!EquippedPanel.Height" HorizontalAlignment="Center" VerticalAlignment="Center" MarginTop="10" MarginLeft="10">
@@ -90,6 +90,9 @@
                         </ListPanel>
                         <!-- End Horizontal Layout Container -->
                         <!-- <ItemInfoPrefab DataSource="{ItemInfo}" HeightSizePolicy="Fixed" WidthSizePolicy="Fixed" SuggestedWidth="220" SuggestedHeight="430" IsVisible="true"/> -->
+                        <CrpgButtonPrefab Parameter.ButtonText="Edit Characteristics" Parameter.ButtonId="ButtonOpenCharacteristicsEditor"
+                            Parameter.Width="130" Parameter.Height="40"
+                            Parameter.CommandClick="ExecuteClickOpenCharacteristicsEditor"/>
                       </Children>
                     </ListPanel>
                     <!-- End Vertical Panel Wrapper -->
@@ -98,12 +101,13 @@
                 <!-- End Equipped Items Panel -->
 
                 <CharacterInfoBuildEquipStats DataSource="{CharacterInfoBuildEquipStatsVm}" />
-                <ItemInfoPrefab DataSource="{ItemInfo}" HeightSizePolicy="Fixed" WidthSizePolicy="Fixed" SuggestedWidth="220" SuggestedHeight="430" IsVisible="true"/>
+                
               </Children>
             </ListPanel>
             <!-- End Wrapper Panel -->
           </Children>
         </Widget> <!-- End Centering Widget -->
+        <ItemInfoPrefab DataSource="{ItemInfo}" Id="ItemInfoId" HeightSizePolicy="StretchToParent" WidthSizePolicy="StretchToParent" IsVisible="@IsVisible" />
       </Children>
     </Widget>
   </Window>

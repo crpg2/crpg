@@ -103,7 +103,7 @@ public class CrpgInventoryMissionView : MissionView
 
         try
         {
-            _dataSource = new CrpgInventoryViewModel();
+            // _dataSource = new CrpgInventoryViewModel();
             _gauntletLayer = new GauntletLayer(150)
             {
                 IsFocusLayer = true,

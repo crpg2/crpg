@@ -13,7 +13,8 @@
         <ButtonWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center"
                   SuggestedWidth="75" SuggestedHeight="75" AcceptDrag="true" DoNotPassEventsToChildren="true"
                   ClipContents="true" DoNotAcceptEvents="False" 
-                  Command.DragBegin="ExecuteDragBegin" Command.DragEnd="ExecuteDragEnd" Command.Click="ExecuteClick">
+                  Command.DragBegin="ExecuteDragBegin" Command.DragEnd="ExecuteDragEnd" Command.Click="ExecuteClick" 
+                  Command.HoverBegin="ExecuteHoverBegin" Command.HoverEnd="ExecuteHoverEnd" >
           <Children>
 
             <!-- Default fallback icon -->

@@ -6,7 +6,11 @@ using Crpg.Module.Helpers;
 using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection;
 using TaleWorlds.Engine;
+using TaleWorlds.Engine.GauntletUI;
+using TaleWorlds.GauntletUI;
+using TaleWorlds.GauntletUI.BaseTypes;
 using TaleWorlds.GauntletUI.Data;
+using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.ObjectSystem;
@@ -16,6 +20,9 @@ namespace Crpg.Module.GUI.Inventory;
 public class CrpgInventoryViewModel : ViewModel
 {
     public IGauntletMovie? Movie { get; set; }
+    public GauntletLayer? Layer { get; set; }
+    private UIContext? _context;
+    public Widget? RootWidget { get; set; }
     private readonly List<EquipmentSlotVM> _equipmentSlots;
     private bool _isVisible;
     private CharacterViewModel _characterPreview;
@@ -104,8 +111,6 @@ public class CrpgInventoryViewModel : ViewModel
 
     public CrpgInventoryViewModel()
     {
-        LogDebug("[CrpgInventoryVM] Initializing CrpgInventoryViewModel");
-
         _characterInfo = new CharacterInfoVM();
         _characterInfoBuildEquipStatsVm = new CharacterInfoBuildEquipStatsVM();
 
@@ -151,6 +156,8 @@ public class CrpgInventoryViewModel : ViewModel
         }
 
         InventoryGrid.OnInventorySlotClicked += HandleInventorySlotClicked;
+        InventoryGrid.OnInventorySortTypeClicked += HandleInventorySortTypeClicked;
+        InventoryGrid.OnInventorySlotHoverEnd += HandleInventorySlotHoverEnd;
     }
 
     public override void OnFinalize()
@@ -168,6 +175,8 @@ public class CrpgInventoryViewModel : ViewModel
         }
 
         InventoryGrid.OnInventorySlotClicked -= HandleInventorySlotClicked;
+        InventoryGrid.OnInventorySortTypeClicked -= HandleInventorySortTypeClicked;
+        InventoryGrid.OnInventorySlotHoverEnd -= HandleInventorySlotHoverEnd;
     }
 
     public void ExecuteDropDiscard(ViewModel draggedItem, int index)
@@ -179,6 +188,19 @@ public class CrpgInventoryViewModel : ViewModel
             GameNetwork.WriteMessage(new UserRequestEquipCharacterItem { Slot = eqSlot.CrpgItemSlotIndex, UserItemId = -1 });
             GameNetwork.EndModuleEventAsClient();
         }
+    }
+
+    public void SetRootWidget(Widget rootWidget)
+    {
+        RootWidget = rootWidget;
+        LogDebug("[CrpgInventoryVM] RootWidget set");
+
+    }
+
+    public void SetContext(UIContext context)
+    {
+        _context = context;
+        MakeItemInfo();
     }
 
     internal void RefreshCharacterPreview(Equipment? useEquipment = null)
@@ -213,6 +235,7 @@ public class CrpgInventoryViewModel : ViewModel
         vm.OnSlotAlternateClicked += HandleAlternateClick;
         vm.OnItemDragBegin += HandleItemDragBegin;
         vm.OnItemDragEnd += HandleItemDragEnd;
+        vm.OnSlotClicked += HandleItemClick;
         LogDebug($"[CrpgInventoryVM] Created equipment slot: {slot}");
         return vm;
     }
@@ -223,14 +246,145 @@ public class CrpgInventoryViewModel : ViewModel
         InformationManager.DisplayMessage(new InformationMessage(message));
     }
 
+    private void HandleInventorySortTypeClicked(InventorySortTypeVM sortType)
+    {
+        LogDebug($"[CrpgInventoryVM] HandleInventorySortTypeClicked");
+        if (ItemInfo.IsVisible)
+        {
+            ItemInfo.IsVisible = false;
+        }
+    }
+
+    private void ExecuteClickOpenCharacteristicsEditor()
+    {
+        LogDebug($"[CrpgInventoryVM] ExecuteClickOpenCharacteristicsEditor");
+
+    }
+
+    private void ShowCharacteristicsEditor(bool show)
+    {
+        if (!show)
+        {
+
+        }
+    }
+
+    private void ShowItemInfoPopup(bool show, ItemObject? itemObj, int? userItemId = null)
+    {
+        if (!show)
+        {
+            ItemInfo = new ItemInfoVM(null)
+            {
+                IsVisible = false,
+            };
+            return;
+        }
+
+        if (userItemId != null)
+        {
+            var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+
+            if (behavior == null)
+                return;
+
+            var item = behavior.UserInventoryItems
+                .FirstOrDefault(x => x.Id == userItemId.Value);
+
+            if (!userItemId.HasValue || item == null)
+            {
+                LogDebug($"[CrpgInventoryVM] No item found for userItemId={userItemId.Value}");
+                return;
+            }
+
+            if (itemObj == null)
+            {
+                LogDebug($"[CrpgInventoryVM] ItemObj is null");
+                return;
+            }
+
+            ItemInfo = new ItemInfoVM(itemObj, (int)userItemId);
+            ItemInfo.GenerateItemInfo(itemObj);
+
+            var mousePos = Input.MousePositionPixel; // vec2
+
+            ItemInfo.PositionX = mousePos.X + 25;
+            ItemInfo.PositionY = mousePos.Y - 100;
+            ItemInfo.IsVisible = true;
+
+            LogDebug($"[CrpgInventoryVM] ShowItemInfoPopup at ({mousePos.X}, {mousePos.Y}) for {itemObj?.Name}");
+        }
+    }
+
     private void HandleInventorySlotClicked(InventorySlotVM slot)
     {
         InformationManager.DisplayMessage(new InformationMessage($"[CrpgInventoryViewModel] HandleInventorySlotClicked() {slot.ItemName} "));
-        ItemInfo = new ItemInfoVM(slot.ItemObj);
-        ItemInfo.GenerateItemInfo(slot.ItemObj);
-        ItemInfo.IsVisible = true;
+        ShowItemInfoPopup(true, slot.ItemObj, slot.UserItemId);
+
+        /*
+
+                if (RootWidget != null)
+                {
+                    var itemInfoWidget = FindChildById(RootWidget, "ItemInfoId");
+                    if (itemInfoWidget != null)
+                    {
+                        InformationManager.DisplayMessage(new InformationMessage($"[CrpgInventoryViewModel] ITEMINFOWIDGET FOUND!!!"));
+                    }
+                }
+
+
+                ItemInfo.PositionX = mousePos.X + 25;
+                ItemInfo.PositionY = mousePos.Y - 100;
+                ItemInfo.IsVisible = true;
+
+                LogDebug($"[CrpgInventoryVM] Showing ItemInfo at ({mousePos.X}, {mousePos.Y}) for {slot.ItemName}");
+            */
     }
 
+    private void HandleInventorySlotHoverEnd(InventorySlotVM slot)
+    {
+        if (ItemInfo.IsVisible)
+        {
+            // ItemInfo.IsVisible = false;
+        }
+    }
+
+    public static Widget? FindChildById(Widget parent, string id)
+    {
+        if (parent == null)
+        {
+            return null;
+        }
+
+        if (parent.Id == id)
+        {
+            return parent;
+        }
+
+        foreach (var child in parent.Children)
+        {
+            var result = FindChildById(child, id);
+            if (result != null)
+            {
+                return result;
+            }
+        }
+
+        return null;
+    }
+    private Vec2 ConvertScreenToWidgetCoordinates(Vec2 screenPos)
+    {
+        if (Movie == null || Layer == null)
+            return screenPos; // fallback
+
+        float layerWidth = Layer.UsableArea.X;
+        float layerHeight = Layer.UsableArea.Y;
+
+        // Convert pixel coordinates to relative (0..1)
+        float x = screenPos.X; // / layerWidth;
+        float y = screenPos.Y; // / layerHeight;
+
+        return new Vec2(x, y);
+    }
     private void HandleItemDrop(EquipmentSlotVM targetSlot, ViewModel draggedItem)
     {
         int userItemId = 0;
@@ -347,6 +501,11 @@ public class CrpgInventoryViewModel : ViewModel
         GameNetwork.EndModuleEventAsClient();
     }
 
+    private void HandleItemClick(EquipmentSlotVM slot)
+    {
+        InformationManager.DisplayMessage(new InformationMessage($"[CrpgInventoryViewModel] HandleItemClick() "));
+        ShowItemInfoPopup(true, slot.ItemObj, slot.UserItemId);
+    }
     private void HandleSlotUpdated(CrpgItemSlot updatedSlot)
     {
         LogDebug($"[CrpgInventoryVM] HandleSlotUpdated called for slot {updatedSlot}");
@@ -518,5 +677,27 @@ public class CrpgInventoryViewModel : ViewModel
         AmountHorseArmor.ArmorAmount = (int)equipment.GetHorseArmorSum();
 
         LogDebug("[CrpgInventoryVM] Calculated armor values from equipment");
+    }
+
+    private void MakeItemInfo()
+    {
+        if (RootWidget == null)
+        {
+            LogDebug("[CrpgInventoryVM] Widget is NULL");
+            return;
+        }
+
+        Widget userInventoryGridWidget = RootWidget.FindChild("UserInventoryGrid");
+
+        if (userInventoryGridWidget != null)
+        {
+            LogDebug("[CrpgInventoryVM] userInventoryGridWidget found");
+        }
+        else
+        {
+            LogDebug("[CrpgInventoryVM] userInventoryGridWidget NOT FOUND");
+        }
+
+
     }
 }
