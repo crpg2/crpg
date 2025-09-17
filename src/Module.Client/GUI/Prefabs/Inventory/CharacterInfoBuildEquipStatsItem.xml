@@ -9,6 +9,7 @@
     <Parameter Name="ImgSprite" DefaultValue="" /> <!-- SPGeneral\SPCoin -->
     <Parameter Name="ShouldShowGold" DefaultValue="false" />
     <Parameter Name="ValueText" DefaultValue="" />
+    <Parameter Name="TextDisabledState" DefaultValue="false" />
   </Parameters> 
   <Window>   
     <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -30,7 +31,7 @@
             <BrushWidget Id="GoldIcon" Brush="Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
               SuggestedWidth="15" SuggestedHeight="15" IsVisible="*ShouldShowGold" PositionYOffset="2" />
           <!-- Value Right-Aligned-->
-            <TextWidget Text="*ValueText" 
+            <TextWidget Text="*ValueText" IsDisabled="*TextDisabledState"
                 WidthSizePolicy="CoverChildren" SuggestedWidth="70" HeightSizePolicy="Fixed" SuggestedHeight="20" 
                 HorizontalAlignment="Right" 
                 Brush="!Value.Brush" />

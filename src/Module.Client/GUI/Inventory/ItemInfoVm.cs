@@ -45,6 +45,7 @@ public class ItemInfoVM : ViewModel
         // Close the popup
         IsVisible = false;
     }
+
     [DataSourceProperty]
     public MBBindingList<ItemInfoTupleVM> Tuples { get => _tuples; set => SetField(ref _tuples, value, nameof(Tuples)); }
 

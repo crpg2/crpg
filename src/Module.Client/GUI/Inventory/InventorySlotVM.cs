@@ -34,7 +34,6 @@ public class InventorySlotVM : ViewModel
     public ItemObject ItemObj { get; }
     public event Action<ItemObject>? OnItemDragBegin;
     public event Action<ItemObject>? OnItemDragEnd;
-    public event Action<ItemObject>? OnItemClick;
 
     public InventorySlotVM(ItemObject item, Action<InventorySlotVM> onClick, Action<InventorySlotVM> onHoverEnd, int quantity = 1, int userItemId = -1)
     {
@@ -194,16 +193,14 @@ public class InventorySlotVM : ViewModel
     public void ExecuteHoverBegin()
     {
         // _onHoverEnd?.Invoke(this);
-        // InformationManager.DisplayMessage(new InformationMessage($"ExecuteHoverBegin()"));
+        // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteHoverBegin()"));
     }
 
     public void ExecuteHoverEnd()
     {
-        InformationManager.DisplayMessage(new InformationMessage($"ExecuteHoverEnd()"));
+        // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteHoverEnd()"));
         _onHoverEnd?.Invoke(this);
-
     }
-
 
     private void SetItemRankIconsVisible(int rank)
     {

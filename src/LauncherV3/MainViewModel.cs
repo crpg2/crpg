@@ -143,7 +143,8 @@ public partial class MainViewModel : ObservableObject
         return CanUpdate;
     }
 
-    public ICommand StartUpdateCrpgCommand => IsGameUpToDate ? StartCrpgCommand : UpdateGameFilesCommand;
+    //public ICommand StartUpdateCrpgCommand => IsGameUpToDate ? StartCrpgCommand : UpdateGameFilesCommand;
+    public ICommand StartUpdateCrpgCommand => StartCrpgCommand;
 
     [RelayCommand(CanExecute = nameof(CanStartCrpg))]
     private void StartCrpg()
@@ -415,7 +416,7 @@ public partial class MainViewModel : ObservableObject
                     string tempPath = Path.Combine(Path.GetTempPath(), fileToDownload);
                     IProgress<double> currentProgress = new Progress<double>(p =>
                     {
-                       Progress = p * 100;
+                        Progress = p * 100;
                     });
                     await chunkedRequest.DownloadAsync(tempPath, currentProgress);
 
@@ -594,7 +595,7 @@ public partial class MainViewModel : ObservableObject
     }
     private async void ExtractAndDeleteFile(string inputPath, string outputPath)
     {
-        using (var stream = new FileStream(inputPath, FileMode.Open, FileAccess.Read,FileShare.None, bufferSize: 4096, useAsync: true))
+        using (var stream = new FileStream(inputPath, FileMode.Open, FileAccess.Read, FileShare.None, bufferSize: 4096, useAsync: true))
         {
             using (var gzipStream = new GZipStream(stream, CompressionMode.Decompress))
             {
@@ -630,7 +631,7 @@ public partial class MainViewModel : ObservableObject
         UpdateGameLocation(value);
     }
 
-    public void UpdateGameLocation(Platform platform,bool force = false)
+    public void UpdateGameLocation(Platform platform, bool force = false)
     {
         if (Config.GameLocations.ContainsKey(platform) && !force)
         {
@@ -709,7 +710,7 @@ public partial class MainViewModel : ObservableObject
 
     private string DetermineUpdateButtonText(bool value)
     {
-        if(value)
+        if (value)
         {
             return "Update cRPG";
         }

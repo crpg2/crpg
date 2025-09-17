@@ -23,49 +23,27 @@ public class CrpgInventoryViewModel : ViewModel
     public GauntletLayer? Layer { get; set; }
     private UIContext? _context;
     public Widget? RootWidget { get; set; }
-    private readonly List<EquipmentSlotVM> _equipmentSlots;
     private bool _isVisible;
-    private CharacterViewModel _characterPreview;
-    private ItemInfoVM _itemInfo;
 
+    private EquipmentPanelVM _equipmentPanel = default!;
+    private CharacterInfoVM _characterInfo;
+    private CharacterInfoBuildEquipStatsVM _characterInfoBuildEquipStatsVm;
+    private ItemInfoVM _itemInfo;
 
     [DataSourceProperty]
     public InventoryGridVM InventoryGrid { get; set; }
 
-    public EquipmentSlotVM HeadArmor { get; private set; }
-    public EquipmentSlotVM CapeArmor { get; private set; }
-    public EquipmentSlotVM BodyArmor { get; private set; }
-    public EquipmentSlotVM HandArmor { get; private set; }
-    public EquipmentSlotVM LegArmor { get; private set; }
-    public EquipmentSlotVM Weapon0 { get; private set; }
-    public EquipmentSlotVM Weapon1 { get; private set; }
-    public EquipmentSlotVM Weapon2 { get; private set; }
-    public EquipmentSlotVM Weapon3 { get; private set; }
-    public EquipmentSlotVM ExtraWeaponSlot { get; private set; }
-    public EquipmentSlotVM Horse { get; private set; }
-    public EquipmentSlotVM HorseArmor { get; private set; }
+    [DataSourceProperty]
+    public ItemInfoVM ItemInfo { get => _itemInfo; set => SetField(ref _itemInfo, value, nameof(ItemInfo)); }
 
     [DataSourceProperty]
-    public ItemInfoVM ItemInfo
-    {
-        get => _itemInfo;
-        set => SetField(ref _itemInfo, value, nameof(ItemInfo));
-    }
+    public EquipmentPanelVM EquipmentPanel { get => _equipmentPanel; set => SetField(ref _equipmentPanel, value, nameof(EquipmentPanel)); }
 
     [DataSourceProperty]
-    public ArmorAmountVM AmountHeadArmor { get; set; }
+    public CharacterInfoVM CharacterInfo { get => _characterInfo; set => SetField(ref _characterInfo, value, nameof(CharacterInfo)); }
 
     [DataSourceProperty]
-    public ArmorAmountVM AmountBodyArmor { get; set; }
-
-    [DataSourceProperty]
-    public ArmorAmountVM AmountLegArmor { get; set; }
-
-    [DataSourceProperty]
-    public ArmorAmountVM AmountHandArmor { get; set; }
-
-    [DataSourceProperty]
-    public ArmorAmountVM AmountHorseArmor { get; set; }
+    public CharacterInfoBuildEquipStatsVM CharacterInfoBuildEquipStatsVm { get => _characterInfoBuildEquipStatsVm; set => SetField(ref _characterInfoBuildEquipStatsVm, value, nameof(CharacterInfoBuildEquipStatsVm)); }
 
     [DataSourceProperty]
     public bool IsVisible
@@ -82,66 +60,30 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
-    private CharacterInfoVM _characterInfo;
-    [DataSourceProperty]
-    public CharacterInfoVM CharacterInfo
-    {
-        get => _characterInfo;
-        set => SetField(ref _characterInfo, value, nameof(CharacterInfo));
-    }
-
-    private CharacterInfoBuildEquipStatsVM _characterInfoBuildEquipStatsVm;
-    [DataSourceProperty]
-    public CharacterInfoBuildEquipStatsVM CharacterInfoBuildEquipStatsVm { get => _characterInfoBuildEquipStatsVm; set => SetField(ref _characterInfoBuildEquipStatsVm, value, nameof(CharacterInfoBuildEquipStatsVm)); }
-
-    [DataSourceProperty]
-    public CharacterViewModel CharacterPreview
-    {
-        get => _characterPreview;
-        set
-        {
-            if (_characterPreview != value)
-            {
-                _characterPreview = value;
-                OnPropertyChangedWithValue(value, nameof(CharacterPreview));
-                LogDebug("[CrpgInventoryVM] CharacterPreview updated");
-            }
-        }
-    }
-
     public CrpgInventoryViewModel()
     {
         _characterInfo = new CharacterInfoVM();
         _characterInfoBuildEquipStatsVm = new CharacterInfoBuildEquipStatsVM();
-
-        _characterPreview = new CharacterViewModel();
+        _equipmentPanel = new EquipmentPanelVM();
         InventoryGrid = new InventoryGridVM();
 
-        _equipmentSlots = new List<EquipmentSlotVM>();
-
-        HeadArmor = CreateSlot(CrpgItemSlot.Head);
-        CapeArmor = CreateSlot(CrpgItemSlot.Shoulder);
-        BodyArmor = CreateSlot(CrpgItemSlot.Body);
-        HandArmor = CreateSlot(CrpgItemSlot.Hand);
-        LegArmor = CreateSlot(CrpgItemSlot.Leg);
-
-        Weapon0 = CreateSlot(CrpgItemSlot.Weapon0);
-        Weapon1 = CreateSlot(CrpgItemSlot.Weapon1);
-        Weapon2 = CreateSlot(CrpgItemSlot.Weapon2);
-        Weapon3 = CreateSlot(CrpgItemSlot.Weapon3);
-        ExtraWeaponSlot = CreateSlot(CrpgItemSlot.WeaponExtra);
-
-        Horse = CreateSlot(CrpgItemSlot.Mount);
-        HorseArmor = CreateSlot(CrpgItemSlot.MountHarness);
-
-        AmountHeadArmor = new ArmorAmountVM(0);
-        AmountBodyArmor = new ArmorAmountVM(0);
-        AmountLegArmor = new ArmorAmountVM(0);
-        AmountHandArmor = new ArmorAmountVM(0);
-        AmountHorseArmor = new ArmorAmountVM(0);
-
         _itemInfo = new ItemInfoVM(null);
-        InitializeCharacterPreview();
+        _equipmentPanel.InitializeCharacterPreview();
+
+        // Subscribe to EquipmentPanel events
+        _equipmentPanel.OnItemDropped += HandleItemDrop;
+        _equipmentPanel.OnItemDragBegin += slot =>
+        {
+            if (slot.ItemObj != null)
+                HandleItemDragBegin(slot.ItemObj);
+        };
+        _equipmentPanel.OnItemDragEnd += slot =>
+        {
+            if (slot.ItemObj != null)
+                HandleItemDragEnd(slot.ItemObj);
+        };
+        EquipmentPanel.OnSlotAlternateClicked += HandleAlternateClick;
+        _equipmentPanel.OnSlotClicked += HandleItemClick;
 
         LogDebug("[CrpgInventoryVM] Subscribing to CrpgCharacterLoadoutBehaviorClient events");
         var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
@@ -163,6 +105,11 @@ public class CrpgInventoryViewModel : ViewModel
     public override void OnFinalize()
     {
         LogDebug("[CrpgInventoryVM] Finalizing CrpgInventoryViewModel");
+
+        _equipmentPanel.OnItemDropped -= HandleItemDrop;
+        EquipmentPanel.OnSlotAlternateClicked -= HandleAlternateClick;
+        _equipmentPanel.OnSlotClicked -= HandleItemClick;
+
         var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (behavior != null)
         {
@@ -179,17 +126,6 @@ public class CrpgInventoryViewModel : ViewModel
         InventoryGrid.OnInventorySlotHoverEnd -= HandleInventorySlotHoverEnd;
     }
 
-    public void ExecuteDropDiscard(ViewModel draggedItem, int index)
-    {
-        LogDebug("[CrpgInventoryVM] ExecuteDropDiscard");
-        if (draggedItem is EquipmentSlotVM eqSlot)
-        {
-            GameNetwork.BeginModuleEventAsClient();
-            GameNetwork.WriteMessage(new UserRequestEquipCharacterItem { Slot = eqSlot.CrpgItemSlotIndex, UserItemId = -1 });
-            GameNetwork.EndModuleEventAsClient();
-        }
-    }
-
     public void SetRootWidget(Widget rootWidget)
     {
         RootWidget = rootWidget;
@@ -203,62 +139,9 @@ public class CrpgInventoryViewModel : ViewModel
         MakeItemInfo();
     }
 
-    internal void RefreshCharacterPreview(Equipment? useEquipment = null)
-    {
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        var characteristics = behavior?.UserCharacter.Characteristics;
-        if (behavior != null && useEquipment == null)
-        {
-            useEquipment = behavior.GetCrpgUserCharacterEquipment();
-        }
-        if (useEquipment != null && characteristics != null)
-        {
-            CharacterPreview.EquipmentCode = useEquipment.CalculateEquipmentCode();
-            CalculateArmorFromEquipment(useEquipment);
-            CharacterInfoBuildEquipStatsVm.UpdateCharacterBuildEquipmentStatDisplay(useEquipment, characteristics);
-
-            LogDebug("[CrpgInventoryVM] Refreshed character preview and recalculated armor");
-
-            LogDebug("[CrpgInventoryVM] UpdateCharacterInfo() in refreshcharacterpreview");
-        }
-        else
-        {
-            LogDebug("[CrpgInventoryVM] No equipment available to refresh character preview");
-        }
-    }
-
-    private EquipmentSlotVM CreateSlot(CrpgItemSlot slot)
-    {
-        var vm = new EquipmentSlotVM(slot);
-        _equipmentSlots.Add(vm);
-        vm.OnItemDropped += HandleItemDrop;
-        vm.OnSlotAlternateClicked += HandleAlternateClick;
-        vm.OnItemDragBegin += HandleItemDragBegin;
-        vm.OnItemDragEnd += HandleItemDragEnd;
-        vm.OnSlotClicked += HandleItemClick;
-        LogDebug($"[CrpgInventoryVM] Created equipment slot: {slot}");
-        return vm;
-    }
-
-    private void LogDebug(string message)
-    {
-        Debug.Print(message);
-        InformationManager.DisplayMessage(new InformationMessage(message));
-    }
-
-    private void HandleInventorySortTypeClicked(InventorySortTypeVM sortType)
-    {
-        LogDebug($"[CrpgInventoryVM] HandleInventorySortTypeClicked");
-        if (ItemInfo.IsVisible)
-        {
-            ItemInfo.IsVisible = false;
-        }
-    }
-
     private void ExecuteClickOpenCharacteristicsEditor()
     {
         LogDebug($"[CrpgInventoryVM] ExecuteClickOpenCharacteristicsEditor");
-
     }
 
     private void ShowCharacteristicsEditor(bool show)
@@ -285,20 +168,22 @@ public class CrpgInventoryViewModel : ViewModel
             var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
 
             if (behavior == null)
+            {
                 return;
+            }
 
             var item = behavior.UserInventoryItems
                 .FirstOrDefault(x => x.Id == userItemId.Value);
 
             if (!userItemId.HasValue || item == null)
             {
-                LogDebug($"[CrpgInventoryVM] No item found for userItemId={userItemId.Value}");
+                LogDebugError($"[CrpgInventoryVM] No item found for userItemId={userItemId.Value}");
                 return;
             }
 
             if (itemObj == null)
             {
-                LogDebug($"[CrpgInventoryVM] ItemObj is null");
+                LogDebugError($"[CrpgInventoryVM] ItemObj is null");
                 return;
             }
 
@@ -312,6 +197,26 @@ public class CrpgInventoryViewModel : ViewModel
             ItemInfo.IsVisible = true;
 
             LogDebug($"[CrpgInventoryVM] ShowItemInfoPopup at ({mousePos.X}, {mousePos.Y}) for {itemObj?.Name}");
+        }
+    }
+
+    public void ExecuteDropDiscard(ViewModel draggedItem, int index)
+    {
+        LogDebug("[CrpgInventoryVM] ExecuteDropDiscard");
+        if (draggedItem is EquipmentSlotVM eqSlot)
+        {
+            GameNetwork.BeginModuleEventAsClient();
+            GameNetwork.WriteMessage(new UserRequestEquipCharacterItem { Slot = eqSlot.CrpgItemSlotIndex, UserItemId = -1 });
+            GameNetwork.EndModuleEventAsClient();
+        }
+    }
+
+    private void HandleInventorySortTypeClicked(InventorySortTypeVM sortType)
+    {
+        LogDebug($"[CrpgInventoryVM] HandleInventorySortTypeClicked");
+        if (ItemInfo.IsVisible)
+        {
+            ItemInfo.IsVisible = false;
         }
     }
 
@@ -348,43 +253,6 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
-    public static Widget? FindChildById(Widget parent, string id)
-    {
-        if (parent == null)
-        {
-            return null;
-        }
-
-        if (parent.Id == id)
-        {
-            return parent;
-        }
-
-        foreach (var child in parent.Children)
-        {
-            var result = FindChildById(child, id);
-            if (result != null)
-            {
-                return result;
-            }
-        }
-
-        return null;
-    }
-    private Vec2 ConvertScreenToWidgetCoordinates(Vec2 screenPos)
-    {
-        if (Movie == null || Layer == null)
-            return screenPos; // fallback
-
-        float layerWidth = Layer.UsableArea.X;
-        float layerHeight = Layer.UsableArea.Y;
-
-        // Convert pixel coordinates to relative (0..1)
-        float x = screenPos.X; // / layerWidth;
-        float y = screenPos.Y; // / layerHeight;
-
-        return new Vec2(x, y);
-    }
     private void HandleItemDrop(EquipmentSlotVM targetSlot, ViewModel draggedItem)
     {
         int userItemId = 0;
@@ -415,13 +283,13 @@ public class CrpgInventoryViewModel : ViewModel
         }
         else
         {
-            LogDebug("[CrpgInventoryVM] Dropped unknown item type");
+            LogDebug("[CrpgInventoryVM] Dropped unknown item type", Colors.Red);
             return;
         }
 
         if (draggedItemObject == null)
         {
-            LogDebug("[CrpgInventoryVM] No Object to drag");
+            LogDebug("[CrpgInventoryVM] No Object to drag", Colors.Red);
             return;
         }
 
@@ -472,7 +340,7 @@ public class CrpgInventoryViewModel : ViewModel
                 return;
             }
 
-            foreach (var slotVm in _equipmentSlots)
+            foreach (var slotVm in EquipmentPanel.EquipmentSlots)
             {
                 // Disable equipment slots where the item **cannot** be equipped
                 if (!Equipment.IsItemFitsToSlot(EquipmentSlotVM.ConvertToEquipmentIndex(slotVm.CrpgItemSlotIndex), itemObj))
@@ -487,7 +355,7 @@ public class CrpgInventoryViewModel : ViewModel
     {
         LogDebug("[CrpgInventoryVM] HandleItemDragEnd - resetting equipment slot states");
 
-        foreach (var slotVm in _equipmentSlots)
+        foreach (var slotVm in EquipmentPanel.EquipmentSlots)
         {
             slotVm.IsButtonEnabled = true;
         }
@@ -506,6 +374,24 @@ public class CrpgInventoryViewModel : ViewModel
         InformationManager.DisplayMessage(new InformationMessage($"[CrpgInventoryViewModel] HandleItemClick() "));
         ShowItemInfoPopup(true, slot.ItemObj, slot.UserItemId);
     }
+
+    private void HandleClick(ViewModel viewModel)
+    {
+        if (viewModel is EquipmentSlotVM)
+        {
+
+        }
+        else if (viewModel is InventorySlotVM)
+        {
+
+        }
+        else if (viewModel is InventorySortTypeVM)
+        {
+
+        }
+    }
+
+    // Gui Updates because of behavior (API usage)
     private void HandleSlotUpdated(CrpgItemSlot updatedSlot)
     {
         LogDebug($"[CrpgInventoryVM] HandleSlotUpdated called for slot {updatedSlot}");
@@ -513,14 +399,14 @@ public class CrpgInventoryViewModel : ViewModel
         var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (behavior == null)
         {
-            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found");
+            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found", Colors.Red);
             return;
         }
 
-        var slotVm = _equipmentSlots.FirstOrDefault(s => s.CrpgItemSlotIndex == updatedSlot);
+        var slotVm = EquipmentPanel.EquipmentSlots.FirstOrDefault(s => s.CrpgItemSlotIndex == updatedSlot);
         if (slotVm == null)
         {
-            LogDebug("[CrpgInventoryVM] No matching EquipmentSlotVM found for updated slot");
+            LogDebug("[CrpgInventoryVM] No matching EquipmentSlotVM found for updated slot", Colors.Red);
             return;
         }
 
@@ -537,7 +423,12 @@ public class CrpgInventoryViewModel : ViewModel
             LogDebug($"[CrpgInventoryVM] Slot {updatedSlot} cleared");
         }
 
-        RefreshCharacterPreview(behavior.GetCrpgUserCharacterEquipment());
+        var equipment = behavior.GetCrpgUserCharacterEquipment();
+        EquipmentPanel.RefreshCharacterPreview(equipment);
+
+        var characteristics = behavior.UserCharacter.Characteristics;
+        CharacterInfoBuildEquipStatsVm.UpdateCharacterBuildEquipmentStatDisplay(equipment, characteristics);
+        // RefreshCharacterPreview(behavior.GetCrpgUserCharacterEquipment());
     }
 
     private void HandleInventoryUpdated()
@@ -547,7 +438,7 @@ public class CrpgInventoryViewModel : ViewModel
         var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (behavior == null)
         {
-            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found");
+            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found", Colors.Red);
             return;
         }
 
@@ -584,37 +475,41 @@ public class CrpgInventoryViewModel : ViewModel
         var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (behavior == null)
         {
-            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found");
+            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found", Colors.Red);
             return;
         }
 
-        foreach (var slotVm in _equipmentSlots)
+        foreach (var slotVm in EquipmentPanel.EquipmentSlots)
         {
             var equippedItem = behavior.EquippedItems.FirstOrDefault(e => e.Slot == slotVm.CrpgItemSlotIndex);
             if (equippedItem != null)
             {
                 var itemObj = MBObjectManager.Instance.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
-                slotVm.SetItem(new ImageIdentifierVM(itemObj), itemObj, equippedItem.UserItem.Id);
-                LogDebug($"[CrpgInventoryVM] Updated slot {slotVm.CrpgItemSlotIndex} with item {itemObj?.Name}");
+                slotVm.SetItem(new ImageIdentifierVM(itemObj), itemObj, equippedItem.UserItem.Id, equippedItem.UserItem);
+                // LogDebug($"[CrpgInventoryVM] Updated slot {slotVm.CrpgItemSlotIndex} with item {itemObj?.Name}");
             }
             else
             {
                 slotVm.ClearItem();
-                LogDebug($"[CrpgInventoryVM] Cleared slot {slotVm.CrpgItemSlotIndex}");
+                // LogDebug($"[CrpgInventoryVM] Cleared slot {slotVm.CrpgItemSlotIndex}");
             }
         }
 
-        RefreshCharacterPreview(behavior.GetCrpgUserCharacterEquipment());
+        var equipment = behavior.GetCrpgUserCharacterEquipment();
+        EquipmentPanel.RefreshCharacterPreview(equipment);
+
+        var characteristics = behavior.UserCharacter.Characteristics;
+        CharacterInfoBuildEquipStatsVm.UpdateCharacterBuildEquipmentStatDisplay(equipment, characteristics);
     }
 
     private void HandleUserCharacterBasicUpdated()
     {
-        LogDebug("[CprgInventoryVM] HandleUserCharacterBasicUpdated called");
+        // LogDebug("[CprgInventoryVM] HandleUserCharacterBasicUpdated called");
 
         var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (behavior == null)
         {
-            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found");
+            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found", Colors.Red);
             return;
         }
 
@@ -628,7 +523,7 @@ public class CrpgInventoryViewModel : ViewModel
         var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (behavior == null)
         {
-            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found");
+            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found", Colors.Red);
             return;
         }
 
@@ -643,7 +538,7 @@ public class CrpgInventoryViewModel : ViewModel
         var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (behavior == null)
         {
-            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found");
+            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found", Colors.Red);
             return;
         }
 
@@ -652,31 +547,6 @@ public class CrpgInventoryViewModel : ViewModel
             behavior.UserCharacter.Characteristics.Skills.Points);
 
         LogDebug("[CrpgInventoryVM] HandleUserCharacteristicsConverted finished.");
-    }
-
-    private void InitializeCharacterPreview()
-    {
-        var basicCharacter = MBObjectManager.Instance.GetObject<BasicCharacterObject>("mp_character");
-        if (basicCharacter != null)
-        {
-            CharacterPreview.FillFrom(basicCharacter);
-            LogDebug("[CrpgInventoryVM] Initialized character preview with mp_character");
-        }
-        else
-        {
-            LogDebug("[CrpgInventoryVM] Failed to find mp_character for preview");
-        }
-    }
-
-    private void CalculateArmorFromEquipment(Equipment equipment)
-    {
-        AmountHeadArmor.ArmorAmount = (int)equipment.GetHeadArmorSum();
-        AmountBodyArmor.ArmorAmount = (int)equipment.GetHumanBodyArmorSum();
-        AmountHandArmor.ArmorAmount = (int)equipment.GetArmArmorSum();
-        AmountLegArmor.ArmorAmount = (int)equipment.GetLegArmorSum();
-        AmountHorseArmor.ArmorAmount = (int)equipment.GetHorseArmorSum();
-
-        LogDebug("[CrpgInventoryVM] Calculated armor values from equipment");
     }
 
     private void MakeItemInfo()
@@ -695,9 +565,66 @@ public class CrpgInventoryViewModel : ViewModel
         }
         else
         {
-            LogDebug("[CrpgInventoryVM] userInventoryGridWidget NOT FOUND");
+            LogDebug("[CrpgInventoryVM] userInventoryGridWidget NOT FOUND", Colors.Red);
+        }
+    }
+
+    public static Widget? FindChildById(Widget parent, string id)
+    {
+        if (parent == null)
+        {
+            return null;
         }
 
+        if (parent.Id == id)
+        {
+            return parent;
+        }
 
+        foreach (var child in parent.Children)
+        {
+            var result = FindChildById(child, id);
+            if (result != null)
+            {
+                return result;
+            }
+        }
+
+        return null;
+    }
+
+    private Vec2 ConvertScreenToWidgetCoordinates(Vec2 screenPos)
+    {
+        if (Movie == null || Layer == null)
+            return screenPos; // fallback
+
+        float layerWidth = Layer.UsableArea.X;
+        float layerHeight = Layer.UsableArea.Y;
+
+        // Convert pixel coordinates to relative (0..1)
+        float x = screenPos.X; // / layerWidth;
+        float y = screenPos.Y; // / layerHeight;
+
+        return new Vec2(x, y);
+    }
+
+    private readonly bool _debugOn = false;
+    private void LogDebug(string message)
+    {
+        if (_debugOn)
+        {
+            LogDebug(message, Color.White);
+        }
+    }
+
+    private void LogDebugError(string message)
+    {
+        LogDebug($"{GetType().Name} {message}", Colors.Red);
+    }
+
+    private void LogDebug(string message, Color color)
+    {
+        Debug.Print(message);
+        InformationManager.DisplayMessage(new InformationMessage(message, color));
     }
 }

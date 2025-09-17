@@ -1,11 +1,8 @@
 using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Common;
-using Crpg.Module.Common.Models;
-using Crpg.Module.Common;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
-using System.Drawing.Text;
 
 namespace Crpg.Module.GUI.Inventory;
 
@@ -30,6 +27,9 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
     private string _movementSpeedPenaltyWhenAttacking = string.Empty;
     private string _mountSpeedPenalty = string.Empty;
     private string _additionalMountSpeedPenalty = string.Empty;
+    private bool _moveSpeedTextDisabledState = false;
+    private bool _mountSpeedTextDisabledState = false;
+    private bool _addMountSpeedTextDisabledState = false;
 
     public CharacterInfoBuildEquipStatsVM()
     {
@@ -56,9 +56,6 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
                 InformationManager.DisplayMessage(new InformationMessage("CrpgCharacterLoadoutBehaviorClient is required but not found in current mission", Colors.Red));
                 return false;
             }
-
-            // var equipment = behavior.GetCrpgUserCharacterEquipment();
-            // var characteristics = behavior.UserCharacter.Characteristics;
 
             var charSpeedStats = CrpgCharacterStatCalculations.ComputeSpeedStats(characteristics.Attributes.Strength,
                 characteristics.Skills.Athletics,
@@ -92,20 +89,29 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
             MaxWeaponLength = $"{charSpeedStats.MaxWeaponLength:F3}";
             MovementSpeedPenaltyWhenAttacking = $"{charSpeedStats.MovementSpeedPenaltyWhenAttacking:F2}%";
 
+            MoveSpeedTextDisabledState = charSpeedStats.MovementSpeedPenaltyWhenAttacking < 0;
+
+            double penaltyPercent = 0;
             if (!mount.IsEmpty) // has a horse
             {
-                MountSpeedPenalty = $"{mountSpeedStats.SpeedReduction:F3}";
+                penaltyPercent = mountSpeedStats.SpeedReduction * 100.0;
+                MountSpeedPenalty = $"{penaltyPercent:F2}%";
+                MountSpeedTextDisabledState = mountSpeedStats.SpeedReduction < 0;
+
                 // Turn multiplier into penalty percent
-                double penaltyPercent = (mountWeaponLengthPenalty - 1.0) * 100.0;
+                penaltyPercent = (mountWeaponLengthPenalty - 1.0) * 100.0;
                 AdditionalMountSpeedPenalty = $"{penaltyPercent:F2}%";
+                AddMountSpeedTextDisabledState = penaltyPercent < 0;
             }
             else
             {
                 MountSpeedPenalty = "--";
                 AdditionalMountSpeedPenalty = "0.00%";
+                MountSpeedTextDisabledState = false;
+                AddMountSpeedTextDisabledState = false;
             }
 
-            InformationManager.DisplayMessage(new InformationMessage("UpdateCharacterBuildEquipmentStatDisplay() FINISHED", Colors.Red));
+            InformationManager.DisplayMessage(new InformationMessage("UpdateCharacterBuildEquipmentStatDisplay() FINISHED"));
         }
         catch (Exception ex)
         {
@@ -115,8 +121,6 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
 
         return true;
     }
-
-
 
     [DataSourceProperty]
     public string Cost { get => _cost; set => SetField(ref _cost, value, nameof(Cost)); }
@@ -157,4 +161,13 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
 
     [DataSourceProperty]
     public string AdditionalMountSpeedPenalty { get => _additionalMountSpeedPenalty; set => SetField(ref _additionalMountSpeedPenalty, value, nameof(AdditionalMountSpeedPenalty)); }
+
+    [DataSourceProperty]
+    public bool MoveSpeedTextDisabledState { get => _moveSpeedTextDisabledState; set => SetField(ref _moveSpeedTextDisabledState, value, nameof(MoveSpeedTextDisabledState)); }
+
+    [DataSourceProperty]
+    public bool MountSpeedTextDisabledState { get => _mountSpeedTextDisabledState; set => SetField(ref _mountSpeedTextDisabledState, value, nameof(MountSpeedTextDisabledState)); }
+
+    [DataSourceProperty]
+    public bool AddMountSpeedTextDisabledState { get => _addMountSpeedTextDisabledState; set => SetField(ref _addMountSpeedTextDisabledState, value, nameof(AddMountSpeedTextDisabledState)); }
 }

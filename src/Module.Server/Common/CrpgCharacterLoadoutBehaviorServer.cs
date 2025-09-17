@@ -110,13 +110,13 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
 
             if (crpgUser == null || crpgCharacter == null)
             {
-                Debug.Print($"[TryConvertCharacterCharacteristicsAsync] No user/character data found for peer {networkPeer.UserName}");
+                Debug.Print($"[TryConvertCharacterCharacteristicsAsync] No user/character data found for peer {networkPeer.UserName}", 0, Debug.DebugColor.Red);
                 return;
             }
 
             if (apiRequest.Equals == null)
             {
-                Debug.Print("[TryConvertCharacterCharacteristicsAsync] No Conversion provided in the request");
+                Debug.Print("[TryConvertCharacterCharacteristicsAsync] No Conversion provided in the request", 0, Debug.DebugColor.Red);
                 return;
             }
 
@@ -128,7 +128,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         }
         catch (Exception ex)
         {
-            Debug.Print($"[TryConvertCharacterCharacteristicsAsync] Exception for peer {networkPeer.UserName}: {ex}");
+            Debug.Print($"[TryConvertCharacterCharacteristicsAsync] Exception for peer {networkPeer.UserName}: {ex}", 0, Debug.DebugColor.Red);
         }
     }
 
@@ -142,13 +142,13 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
 
             if (crpgUser == null || crpgCharacter == null)
             {
-                Debug.Print($"[TryUpdateCharacterCharacteristicsAsync] No user/character data found for peer {networkPeer.UserName}");
+                Debug.Print($"[TryUpdateCharacterCharacteristicsAsync] No user/character data found for peer {networkPeer.UserName}", 0, Debug.DebugColor.Red);
                 return;
             }
 
             if (apiRequest?.Characteristics == null)
             {
-                Debug.Print("[TryUpdateCharacterCharacteristicsAsync] No characteristics provided in the request");
+                Debug.Print("[TryUpdateCharacterCharacteristicsAsync] No characteristics provided in the request", 0, Debug.DebugColor.Red);
                 return;
             }
 
@@ -160,7 +160,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         }
         catch (Exception ex)
         {
-            Debug.Print($"[TryUpdateCharacterCharacteristicsAsync] Exception for peer {networkPeer.UserName}: {ex}");
+            Debug.Print($"[TryUpdateCharacterCharacteristicsAsync] Exception for peer {networkPeer.UserName}: {ex}", 0, Debug.DebugColor.Red);
         }
     }
 
@@ -170,7 +170,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
 
         if (crpgPeer?.User == null || crpgPeer?.User?.Character == null)
         {
-            Debug.Print($"[GetUserCharacterBasicAsync] No user data or character found for peer {networkPeer.UserName}");
+            Debug.Print($"[GetUserCharacterBasicAsync] No user data or character found for peer {networkPeer.UserName}", 0, Debug.DebugColor.Red);
             return;
         }
 
@@ -182,7 +182,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
             var characterRes = await _crpgClient.GetUserCharacterBasicAsync(crpgUser.Id, crpgUser.Character.Id);
             if (characterRes.Errors != null)
             {
-                Debug.Print($"Errors in response");
+                Debug.Print($"Errors in response", 0, Debug.DebugColor.Red);
             }
 
             if (characterRes.Data != null)
@@ -194,12 +194,12 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
             }
             else
             {
-                Debug.Print($"characterRes.Data was null");
+                Debug.Print($"characterRes.Data was null", 0, Debug.DebugColor.Red);
             }
         }
         catch (Exception e)
         {
-            Debug.Print($"Error fetching character basic for peer {networkPeer.UserName} character {crpgUser.Character.Name}: {e}");
+            Debug.Print($"Error fetching character basic for peer {networkPeer.UserName} character {crpgUser.Character.Name}: {e}", 0, Debug.DebugColor.Red);
         }
     }
 
@@ -256,7 +256,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         }
         catch (Exception ex)
         {
-            Debug.Print($"Failed to equip/unequip user items for {networkPeer.UserName}: {ex}");
+            Debug.Print($"Failed to equip/unequip user items for {networkPeer.UserName}: {ex}", 0, Debug.DebugColor.Red);
         }
 
         return true;
@@ -291,13 +291,13 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
 
             if (crpgUser == null || crpgCharacter == null)
             {
-                Debug.Print($"[TryEquipCharacterItemsAsync] No user/character data found for peer {networkPeer.UserName}");
+                Debug.Print($"[TryEquipCharacterItemsAsync] No user/character data found for peer {networkPeer.UserName}", 0, Debug.DebugColor.Red);
                 return;
             }
 
             if (apiRequest?.Items == null || apiRequest.Items.Count == 0)
             {
-                Debug.Print("[TryEquipCharacterItemsAsync] No items provided in the request");
+                Debug.Print("[TryEquipCharacterItemsAsync] No items provided in the request", 0, Debug.DebugColor.Red);
                 return;
             }
 
@@ -309,7 +309,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         }
         catch (Exception ex)
         {
-            Debug.Print($"[TryEquipCharacterItemsAsync] Exception for peer {networkPeer.UserName}: {ex}");
+            Debug.Print($"[TryEquipCharacterItemsAsync] Exception for peer {networkPeer.UserName}: {ex}", 0, Debug.DebugColor.Red);
         }
     }
 
@@ -325,7 +325,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
 
         if (crpgPeer?.User == null || crpgPeer?.User?.Character == null)
         {
-            Debug.Print($"[GetUserEquippedItemsAsync] No user data or character found for peer {networkPeer.UserName}");
+            Debug.Print($"[GetUserEquippedItemsAsync] No user data or character found for peer {networkPeer.UserName}", 0, Debug.DebugColor.Red);
             return;
         }
 
@@ -353,12 +353,12 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
             }
             else
             {
-                Debug.Print($"equippedItemsRes.Data was null");
+                Debug.Print($"equippedItemsRes.Data was null", 0, Debug.DebugColor.Red);
             }
         }
         catch (Exception e)
         {
-            Debug.Print($"Error fetching equipped items for peer {networkPeer.UserName} character {crpgUser.Character.Name}: {e}");
+            Debug.Print($"Error fetching equipped items for peer {networkPeer.UserName} character {crpgUser.Character.Name}: {e}", 0, Debug.DebugColor.Red);
         }
     }
 
@@ -376,7 +376,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
 
         if (crpgPeer?.User == null)
         {
-            Debug.Print($"[UpdateUserItemsAsync] No user data found for peer {networkPeer.UserName}");
+            Debug.Print($"[UpdateUserItemsAsync] No user data found for peer {networkPeer.UserName}", 0, Debug.DebugColor.Red);
             return;
         }
 
@@ -406,12 +406,12 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
             }
             else
             {
-                Debug.Print($"Failed to fetch items for user {crpgUser.Id}");
+                Debug.Print($"Failed to fetch items for user {crpgUser.Id}", 0, Debug.DebugColor.Red);
             }
         }
         catch (Exception e)
         {
-            Debug.Print($"Error fetching items for peer {networkPeer.UserName}: {e}");
+            Debug.Print($"Error fetching items for peer {networkPeer.UserName}: {e}", 0, Debug.DebugColor.Red);
         }
     }
 
@@ -428,7 +428,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
 
             if (networkPeer == null || items == null)
             {
-                Debug.Print("networkPeer or items is null");
+                Debug.Print("networkPeer or items is null", 0, Debug.DebugColor.Red);
                 return;
             }
 
@@ -440,7 +440,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         }
         catch (Exception ex)
         {
-            Debug.Print($"SynchronizeUserInventoryItemsToPeer() exception: {ex}");
+            Debug.Print($"SynchronizeUserInventoryItemsToPeer() exception: {ex}", 0, Debug.DebugColor.Red);
             Console.WriteLine($"SynchronizeUserInventoryItemsToPeer() exception: {ex}");
         }
     }
@@ -470,7 +470,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         }
         catch (Exception ex)
         {
-            Debug.Print($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}");
+            Debug.Print($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}", 0, Debug.DebugColor.Red);
             Console.WriteLine($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}");
         }
     }
@@ -486,7 +486,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
 
             if (networkPeer == null || crpgCharacter == null)
             {
-                Debug.Print("networkPeer or crpgCharacter is null");
+                Debug.Print("networkPeer or crpgCharacter is null", 0, Debug.DebugColor.Red);
                 return;
             }
 
@@ -503,13 +503,11 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
                 GameNetwork.BeginModuleEventAsServer(networkPeer);
                 GameNetwork.WriteMessage(new ServerSendUserCharacterStatistics { CharacterStatistics = crpgPeer.User.Character.Statistics });
                 GameNetwork.EndModuleEventAsServer();
-
             }
-
         }
         catch (Exception ex)
         {
-            Debug.Print($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}");
+            Debug.Print($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}", 0, Debug.DebugColor.Red);
             Console.WriteLine($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}");
         }
     }
@@ -534,7 +532,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
 
             if (apiRes.Data == null)
             {
-                Debug.Print("Characteristics Data was null");
+                Debug.Print("Characteristics Data was null", 0, Debug.DebugColor.Red);
                 apiRes.Data = new CrpgCharacterCharacteristics(); // create safe default
                 wasSuccess = false;
                 newErrorMessage = "apiRes Data was null";
@@ -558,7 +556,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
             {
                 foreach (var error in apiRes.Errors)
                 {
-                    Debug.Print($"Converting points of Characteristics failed. Error: {error?.Detail}");
+                    Debug.Print($"Converting points of Characteristics failed. Error: {error?.Detail}", 0, Debug.DebugColor.Red);
                 }
 
                 var firstError = apiRes.Errors.FirstOrDefault();
@@ -600,7 +598,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
 
             if (apiRes.Data == null)
             {
-                Debug.Print("Characteristics Data was null");
+                Debug.Print("Characteristics Data was null", 0, Debug.DebugColor.Red);
                 apiRes.Data = new CrpgCharacterCharacteristics(); // create safe default
                 wasSuccess = false;
                 newErrorMessage = "apiRes Data was null";
@@ -623,7 +621,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
             {
                 foreach (var error in apiRes.Errors)
                 {
-                    Debug.Print($"Characteristics failed to update. Error: {error?.Detail}");
+                    Debug.Print($"Characteristics failed to update. Error: {error?.Detail}", 0, Debug.DebugColor.Red);
                 }
 
                 var firstError = apiRes.Errors.FirstOrDefault();
@@ -685,7 +683,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
 
             foreach (var error in apiRes.Errors)
             {
-                Debug.Print($"Slot {failedSlot} failed to update. Error: {error.Detail}");
+                Debug.Print($"Slot {failedSlot} failed to update. Error: {error.Detail}", 0, Debug.DebugColor.Red);
             }
 
             GameNetwork.BeginModuleEventAsServer(networkPeer);

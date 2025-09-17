@@ -3,7 +3,7 @@ namespace Crpg.Module.Api.Models.Items;
 /// <summary>
 /// Copy of Crpg.Application.Items.Models.GameUserItemExtendedViewModel.
 /// </summary>
-internal class CrpgUserItemExtended
+public class CrpgUserItemExtended
 {
     public int Id { get; set; }
     public int UserId { get; set; }

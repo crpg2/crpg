@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Crpg.Module.Api.Models.Items;
+using Crpg.Module.Common;
 using Crpg.Module.Common.Network;
 using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection.Information;
@@ -31,7 +32,6 @@ public class EquipmentSlotVM : ViewModel
     public event Action<ItemObject>? OnItemDragBegin;
     public event Action<ItemObject>? OnItemDragEnd;
 
-
     public EquipmentSlotVM(CrpgItemSlot crpgSlot)
     {
         _crpgItemSlotIndex = crpgSlot;
@@ -42,26 +42,28 @@ public class EquipmentSlotVM : ViewModel
 
     public void ExecuteAlternateClick()
     {
+        LogDebug($"EquipmentSlotVM: ExecuteAlternateClick()");
         OnSlotAlternateClicked?.Invoke(this);
     }
 
     public void ExecuteClick()
     {
-        InformationManager.DisplayMessage(new InformationMessage($"[EquipmentSlotVM] ExecuteHoverBegin()"));
+        LogDebug($"EquipmentSlotVM: ExecuteClick()");
         OnSlotClicked?.Invoke(this);
     }
 
     public void ExecuteHoverBegin()
     {
         OnHoverBegin?.Invoke(this);
-        // InformationManager.DisplayMessage(new InformationMessage($"ExecuteHoverBegin()"));
+        LogDebug($"EquipmentSlotVM: ExecuteHoverBegin()");
     }
 
     public void ExecuteHoverEnd()
     {
         OnHoverEnd?.Invoke(this);
-        // InformationManager.DisplayMessage(new InformationMessage($"ExecuteHoverEnd()"));
+        LogDebug($"EquipmentSlotVM: ExecuteHoverEnd()");
     }
+
     public void ExecuteDragBegin()
     {
         IsDragging = true;
@@ -85,20 +87,44 @@ public class EquipmentSlotVM : ViewModel
         OnItemDropped?.Invoke(this, draggedItem);
     }
 
-    public void SetItem(ImageIdentifierVM? newIdentifier, ItemObject? itemObj = null, int? userItemId = null)
+    public void SetItem(ImageIdentifierVM? newIdentifier, ItemObject? itemObj = null, int? userItemId = null, CrpgUserItemExtended? userItemExtended = null)
     {
         ImageIdentifier = newIdentifier;
         ItemObj = itemObj;
         UserItemId = userItemId ?? 0;
+        ItemRank = userItemExtended?.Rank ?? 0;
 
         OnPropertyChanged(nameof(ItemObj));
         OnPropertyChanged(nameof(CanAcceptDrag));
+        OnPropertyChanged(nameof(ItemRank));
+
+        SetItemRankIconsVisible(ItemRank);
     }
 
     public void ClearItem()
     {
         SetItem(new ImageIdentifierVM(ImageIdentifierType.Item));
     }
+
+    [DataSourceProperty]
+    public bool ShouldShowDefaultIcon => (_imageIdentifier == null || !_imageIdentifier.IsValid) || _isDragging;
+    [DataSourceProperty]
+    public bool CanAcceptDrag => ItemObj != null;
+    [DataSourceProperty]
+    public int UserItemId { get => _userItemId; set => SetField(ref _userItemId, value, nameof(UserItemId)); }
+    [DataSourceProperty]
+    public string DefaultSprite { get => _defaultSprite; set => SetField(ref _defaultSprite, value, nameof(DefaultSprite)); }
+    [DataSourceProperty]
+    public ItemObject? ItemObj { get => _itemObj; set => SetField(ref _itemObj, value, nameof(ItemObj)); }
+    [DataSourceProperty]
+    public bool IsButtonEnabled { get => _isButtonEnabled; set => SetField(ref _isButtonEnabled, value, nameof(IsButtonEnabled)); }
+    public int ItemRank { get => _itemRank; set => SetField(ref _itemRank, value, nameof(ItemRank)); }
+    [DataSourceProperty]
+    public bool Rank1Visible { get => _rank1Visible; set => SetField(ref _rank1Visible, value, nameof(Rank1Visible)); }
+    [DataSourceProperty]
+    public bool Rank2Visible { get => _rank2Visible; set => SetField(ref _rank2Visible, value, nameof(Rank2Visible)); }
+    [DataSourceProperty]
+    public bool Rank3Visible { get => _rank3Visible; set => SetField(ref _rank3Visible, value, nameof(Rank3Visible)); }
 
     [DataSourceProperty]
     public ImageIdentifierVM? ImageIdentifier
@@ -116,36 +142,16 @@ public class EquipmentSlotVM : ViewModel
         }
     }
 
-    [DataSourceProperty]
-    public bool ShouldShowDefaultIcon => (_imageIdentifier == null || !_imageIdentifier.IsValid) || _isDragging;
-
-    [DataSourceProperty]
-    public bool CanAcceptDrag => ItemObj != null;
-
-    [DataSourceProperty]
-    public int UserItemId
+    public bool IsDragging
     {
-        get => _userItemId;
+        get => _isDragging;
         set
         {
-            if (_userItemId != value)
+            if (_isDragging != value)
             {
-                _userItemId = value;
-                OnPropertyChanged(nameof(UserItemId));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public string DefaultSprite
-    {
-        get => _defaultSprite;
-        set
-        {
-            if (_defaultSprite != value)
-            {
-                _defaultSprite = value;
-                OnPropertyChanged(nameof(DefaultSprite));
+                _isDragging = value;
+                OnPropertyChanged(nameof(IsDragging));
+                OnPropertyChanged(nameof(ShouldShowDefaultIcon));
             }
         }
     }
@@ -161,56 +167,6 @@ public class EquipmentSlotVM : ViewModel
                 _crpgItemSlotIndex = value;
                 DefaultSprite = GetDefaultSpriteForSlot(_crpgItemSlotIndex);
                 OnPropertyChanged(nameof(CrpgItemSlotIndex));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public ItemObject? ItemObj
-    {
-        get => _itemObj;
-        private set
-        {
-            if (_itemObj != value)
-            {
-                _itemObj = value;
-                OnPropertyChanged(nameof(ItemObj));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public bool IsButtonEnabled
-    {
-        get => _isButtonEnabled;
-        set
-        {
-            if (_isButtonEnabled != value)
-            {
-                _isButtonEnabled = value;
-                OnPropertyChanged(nameof(IsButtonEnabled));
-            }
-        }
-    }
-
-    public int ItemRank { get => _itemRank; set => SetField(ref _itemRank, value, nameof(ItemRank)); }
-    [DataSourceProperty]
-    public bool Rank1Visible { get => _rank1Visible; set => SetField(ref _rank1Visible, value, nameof(Rank1Visible)); }
-    [DataSourceProperty]
-    public bool Rank2Visible { get => _rank2Visible; set => SetField(ref _rank2Visible, value, nameof(Rank2Visible)); }
-    [DataSourceProperty]
-    public bool Rank3Visible { get => _rank3Visible; set => SetField(ref _rank3Visible, value, nameof(Rank3Visible)); }
-
-    public bool IsDragging
-    {
-        get => _isDragging;
-        set
-        {
-            if (_isDragging != value)
-            {
-                _isDragging = value;
-                OnPropertyChanged(nameof(IsDragging));
-                OnPropertyChanged(nameof(ShouldShowDefaultIcon));
             }
         }
     }
@@ -262,6 +218,33 @@ public class EquipmentSlotVM : ViewModel
     public static EquipmentIndex ConvertToEquipmentIndex(CrpgItemSlot slot)
         => CrpgToEquipIndex.TryGetValue(slot, out var result) ? result : EquipmentIndex.None;
 
+    public void RefreshFromEquipment(Equipment equipment)
+    {
+        EquipmentIndex eqIndex = ConvertToEquipmentIndex(CrpgItemSlotIndex);
+
+        // Get the EquipmentElement for this slot
+        EquipmentElement element = equipment[eqIndex];
+
+        // Extract the ItemObject from the element
+        ItemObject? item = element.Item;
+
+        // Update the slot VM
+        SetItem(item != null ? new ImageIdentifierVM(ImageIdentifierType.Item) : null, item);
+
+        // Update rank visuals if needed
+
+        if (item != null)
+        {
+            // ItemRank = item.Level; // or custom rank logic
+            // Optionally call SetItemRankIconsVisible(ItemRank);
+        }
+        else
+        {
+            // ItemRank = 0;
+            // Optionally call SetItemRankIconsVisible(0);
+        }
+    }
+
     private string GetDefaultSpriteForSlot(CrpgItemSlot slot) => slot switch
     {
         CrpgItemSlot.Head => "ui_crpg_icon_white_headarmor",
@@ -278,4 +261,24 @@ public class EquipmentSlotVM : ViewModel
         CrpgItemSlot.MountHarness => "ui_crpg_icon_white_mountharness",
         _ => "ui_crpg_icon_white_weaponslot",
     };
+
+    private readonly bool _debugOn = false;
+    private void LogDebug(string message)
+    {
+        if (_debugOn)
+        {
+            LogDebug(message, Color.White);
+        }
+    }
+
+    private void LogDebugError(string message)
+    {
+        LogDebug($"{GetType().Name} {message}", Colors.Red);
+    }
+
+    private void LogDebug(string message, Color color)
+    {
+        Debug.Print(message);
+        InformationManager.DisplayMessage(new InformationMessage(message, color));
+    }
 }

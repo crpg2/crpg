@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
-using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models;
+using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Common;
 using Crpg.Module.Common.Models;
 using Crpg.Module.Helpers;

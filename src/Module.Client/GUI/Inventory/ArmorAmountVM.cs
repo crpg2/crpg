@@ -21,7 +21,7 @@ public class ArmorAmountVM : ViewModel
         }
     }
 
-    public ArmorAmountVM(int armorAmount)
+    public ArmorAmountVM(int armorAmount = 0)
     {
         ArmorAmount = armorAmount;
     }

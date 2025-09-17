@@ -219,7 +219,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 
     private void OnMyClientSynchronized()
     {
-        InformationManager.DisplayMessage(new InformationMessage("OnMyClientSynchronized:"));
+        LogDebug("OnMyClientSynchronized:");
         RequestGetUpdatedEquipmentAndItems();
     }
 
@@ -230,15 +230,11 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     /// <param name="message">The server message containing equipped items.</param>
     private void HandleUpdateCrpgCharacterEquippedItems(ServerSendUserCharacterEquippedItems message)
     {
-        string debugString = $"HandleUpdateCrpgCharacterEquippedItems";
-        InformationManager.DisplayMessage(new InformationMessage(debugString));
-        Debug.Print(debugString);
+        LogDebug($"[CrpgCharacterLoadoutBehavior] HandleUpdateCrpgCharacterEquippedItems");
 
         if (message.Items == null)
         {
-            debugString = $"Error in HandleUpdateCrpgCharacterEquippedItems: message.Items was null";
-            InformationManager.DisplayMessage(new InformationMessage(debugString));
-            Debug.Print(debugString);
+            LogDebugError($"[CrpgCharacterLoadoutBehavior] Error in HandleUpdateCrpgCharacterEquippedItems: message.Items was null");
             return;
         }
 
@@ -255,23 +251,17 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     /// <param name="message">The server message containing inventory items.</param>
     private void HandleUpdateCrpgUserInventory(ServerSendUserInventoryItems message)
     {
-        string debugString = $"HandleUpdateCrpgUserInventory";
-        InformationManager.DisplayMessage(new InformationMessage(debugString));
-        Debug.Print(debugString);
+        LogDebug($"[CrpgCharacterLoadoutBehavior] HandleUpdateCrpgUserInventory()");
 
         if (message.Items == null)
         {
-            debugString = $"Error in HandleUpdateCrpgUserInventory: message.Items was null";
-            InformationManager.DisplayMessage(new InformationMessage(debugString));
-            Debug.Print(debugString);
+            LogDebugError($"[CrpgCharacterLoadoutBehavior] Error in HandleUpdateCrpgUserInventory: message.Items was null");
             return;
         }
 
         SetUserInventoryItems(message.Items);
 
-        debugString = $"HandleUpdateCrpgUserInventory: items found: {message.Items.Count}";
-        InformationManager.DisplayMessage(new InformationMessage(debugString));
-        Debug.Print(debugString);
+        LogDebug($"[CrpgCharacterLoadoutBehavior] HandleUpdateCrpgUserInventory: items found: {message.Items.Count}");
 
         // Trigger event for gui to listen to to know to update
         OnUserInventoryUpdated?.Invoke();
@@ -279,15 +269,11 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 
     private void HandleUpdateCrpgUserCharacterBasic(ServerSendUserCharacterBasic msg)
     {
-        string debugString = $"HandleUpdateCrpgUserCharacterBasic";
-        InformationManager.DisplayMessage(new InformationMessage(debugString));
-        Debug.Print(debugString);
+        LogDebug("HandleUpdateCrpgUserCharacterBasic");
 
         if (msg.Character == null)
         {
-            debugString = $"Error in HandleUpdateCrpgUserCharacterBasic: message.Character was null";
-            InformationManager.DisplayMessage(new InformationMessage(debugString));
-            Debug.Print(debugString);
+            LogDebugError("Error in HandleUpdateCrpgUserCharacterBasic: message.Character was null");
             return;
         }
 
@@ -314,7 +300,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     {
         if (!msg.Success)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"Equip failed: {msg.ErrorMessage}"));
+            LogDebugError($"Equip failed: {msg.ErrorMessage}");
             return;
         }
 
@@ -350,36 +336,34 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     {
         if (!message.Success)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"Update Characteristics Failed: {message.ErrorMessage}"));
+            LogDebugError($"Update Characteristics Failed: {message.ErrorMessage}");
             return;
         }
 
         if (message.Characteristics == null)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"Update Characteristics Failed: Characteristics was null"));
+            LogDebugError($"Update Characteristics Failed: Characteristics was null");
             return;
         }
 
         UserCharacter.Characteristics = message.Characteristics;
 
-
         UISoundsHelper.PlayUISound("event:/ui/panels/upgrade");
         // Trigger event for gui to listen to to know to update
         OnUserCharacteristicsUpdated?.Invoke();
-
     }
 
     private void HandleConvertCharacteristicsResult(ServerSendConvertCharacteristicsResult message)
     {
         if (!message.Success)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"Convert Characteristics Failed: {message.ErrorMessage}"));
+            LogDebugError($"Convert Characteristics Failed: {message.ErrorMessage}");
             return;
         }
 
         if (message.AttributesPoints < 0 || message.SkillPoints < 0)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"Convert Characteristics Failed: AttributePoints or SkillPoints < 0"));
+            LogDebugError($"Convert Characteristics Failed: AttributePoints or SkillPoints < 0");
             return;
         }
 
@@ -387,6 +371,25 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         UserCharacter.Characteristics.Skills.Points = message.SkillPoints;
 
         OnUserCharacteristicsConverted?.Invoke();
+    }
 
+    private bool _debugOn = false;
+    private void LogDebug(string message)
+    {
+        if (_debugOn)
+        {
+            LogDebug(message, Color.White);
+        }
+    }
+
+    private void LogDebugError(string message)
+    {
+        LogDebug($"{GetType().Name} {message}", Colors.Red);
+    }
+
+    private void LogDebug(string message, Color color)
+    {
+        Debug.Print(message);
+        InformationManager.DisplayMessage(new InformationMessage(message, color));
     }
 }

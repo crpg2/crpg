@@ -1,0 +1,95 @@
+<Prefab Name="EquipmentPanelPrefab">
+  <Constants>
+    <Constant Name="ArmorPanel.Width" Value="110"/>
+    <Constant Name="ArmorPanel.Height" Value="400"/>
+    <Constant Name="CharacterPreview.Width" Value="160"/>
+    <Constant Name="CharacterPreview.Height" Value="400"/>
+    <Constant Name="EquippedPanel.Width" Value="395"/>
+    <Constant Name="EquippedPanel.Height" Value="465"/>    
+    <Constant Name="WeaponPanel.Width" Value="110"/>
+    <Constant Name="WeaponPanel.Height" Value="400"/>
+  </Constants>
+  <Window>
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+            SuggestedWidth="!EquippedPanel.Width" SuggestedHeight="!EquippedPanel.Height"
+            HorizontalAlignment="Center" VerticalAlignment="Center">
+      <Children>
+        <!-- Frame -->
+        <BrushWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                    Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+          <Children>
+            <BrushWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                      MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10"
+                      Brush="CrpgInventory.EquipmentSlot.BackGround" />
+          </Children>
+        </BrushWidget>
+
+        <!-- Armor Values -->
+        <ArmorAmountPrefab DataSource="{AmountHeadArmor}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                          SuggestedWidth="40" SuggestedHeight="40"
+                          HorizontalAlignment="Left" VerticalAlignment="Top"
+                          PositionYOffset="60" PositionXOffset="75"/>
+        <ArmorAmountPrefab DataSource="{AmountBodyArmor}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                          SuggestedWidth="40" SuggestedHeight="40"
+                          HorizontalAlignment="Left" VerticalAlignment="Top"
+                          PositionYOffset="135" PositionXOffset="75"/>
+        <ArmorAmountPrefab DataSource="{AmountHandArmor}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                          SuggestedWidth="40" SuggestedHeight="40"
+                          HorizontalAlignment="Left" VerticalAlignment="Top"
+                          PositionYOffset="200" PositionXOffset="75"/>
+        <ArmorAmountPrefab DataSource="{AmountLegArmor}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                          SuggestedWidth="40" SuggestedHeight="40"
+                          HorizontalAlignment="Left" VerticalAlignment="Top"
+                          PositionYOffset="275" PositionXOffset="75"/>
+        <ArmorAmountPrefab DataSource="{AmountHorseArmor}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                          SuggestedWidth="40" SuggestedHeight="40"
+                          HorizontalAlignment="Left" VerticalAlignment="Top"
+                          PositionYOffset="345" PositionXOffset="75"/>
+
+        <!-- Slots & Preview -->
+        <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
+                  WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                  MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" Spacing="5">
+          <Children>
+            <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight"
+                      WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Spacing="5">
+              <Children>
+                <!-- Armor Slots -->
+                <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop"
+                          SuggestedWidth="!ArmorPanel.Width" SuggestedHeight="!ArmorPanel.Height"
+                          WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" Spacing="15">
+                  <Children>
+                    <EquipmentSlotPrefab DataSource="{HeadArmor}" />
+                    <EquipmentSlotPrefab DataSource="{CapeArmor}" />
+                    <EquipmentSlotPrefab DataSource="{BodyArmor}" />
+                    <EquipmentSlotPrefab DataSource="{HandArmor}" />
+                    <EquipmentSlotPrefab DataSource="{LegArmor}" />
+                    <EquipmentSlotPrefab DataSource="{HorseArmor}" />
+                  </Children>
+                </ListPanel>
+
+                <!-- Character Preview -->
+                <CharacterPreview WidthSizePolicy="Fixed" SuggestedWidth="!CharacterPreview.Width"
+                                  HeightSizePolicy="Fixed" SuggestedHeight="!CharacterPreview.Height" />
+
+                <!-- Weapons -->
+                <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop"
+                          SuggestedWidth="!WeaponPanel.Width" SuggestedHeight="!WeaponPanel.Height"
+                          WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" Spacing="15">
+                  <Children>
+                    <EquipmentSlotPrefab DataSource="{Weapon0}" />
+                    <EquipmentSlotPrefab DataSource="{Weapon1}" />
+                    <EquipmentSlotPrefab DataSource="{Weapon2}" />
+                    <EquipmentSlotPrefab DataSource="{Weapon3}" />
+                    <EquipmentSlotPrefab DataSource="{ExtraWeaponSlot}" />
+                    <EquipmentSlotPrefab DataSource="{Horse}" />
+                  </Children>
+                </ListPanel>
+              </Children>
+            </ListPanel>
+          </Children>
+        </ListPanel>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

@@ -36,9 +36,9 @@
                 <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Naked speed" Parameter.ImgSprite="" Parameter.ValueText="@NakedSpeed" />
                 <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Current speed" Parameter.ImgSprite="" Parameter.ValueText="@CurrentSpeed" />
                 <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Max weapon length" Parameter.ImgSprite="" Parameter.ValueText="@MaxWeaponLength" />
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Mov. speed penalty" Parameter.ImgSprite="" Parameter.ValueText="@MovementSpeedPenaltyWhenAttacking" />
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Mount speed penalty" Parameter.ImgSprite="" Parameter.ValueText="@MountSpeedPenalty" />
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Mount stats penalty" Parameter.ImgSprite="" Parameter.ValueText="@AdditionalMountSpeedPenalty" />
+                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Mov. speed penalty" Parameter.ImgSprite="" Parameter.ValueText="@MovementSpeedPenaltyWhenAttacking" Parameter.TextDisabledState="@MoveSpeedTextDisabledState"/>
+                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Mount speed penalty" Parameter.ImgSprite="" Parameter.ValueText="@MountSpeedPenalty" Parameter.TextDisabledState="@MountSpeedTextDisabledState"/>
+                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Mount stats penalty" Parameter.ImgSprite="" Parameter.ValueText="@AdditionalMountSpeedPenalty" Parameter.TextDisabledState="@AddMountSpeedTextDisabledState"/>
               </Children>
             </ListPanel>
           </Children>
