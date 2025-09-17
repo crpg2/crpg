@@ -16,7 +16,6 @@ import { useCharacterCharacteristicBuilder } from '~/composables/character/use-c
 import { CHARACTERISTIC_CONVERSION } from '~/models/character'
 import {
   attributePointsForLevel,
-  computeHealthPoints,
   createCharacteristics,
   createDefaultCharacteristic,
   getExperienceForLevel,
@@ -52,6 +51,7 @@ const {
   getInputProps,
   onInput,
   reset: resetCharacterBuilderState,
+  healthPoints,
 } = useCharacterCharacteristicBuilder(initialCharacteristics)
 
 const level = useRouteQuery('level', minimumLevel, { mode: 'replace' })
@@ -115,13 +115,6 @@ const convertCharacteristics = (conversion: CharacteristicConversion) => {
 
   convertSkillsToAttribute()
 }
-
-const healthPoints = computed(() =>
-  computeHealthPoints(
-    characteristics.value.skills.ironFlesh,
-    characteristics.value.attributes.strength,
-  ),
-)
 
 const onReset = async () => {
   initialCharacteristics.value = createDefaultCharacteristic()

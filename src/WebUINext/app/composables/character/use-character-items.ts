@@ -1,11 +1,9 @@
-import type { CharacterOverallItemsStats, EquippedItem, EquippedItemId } from '~/models/character'
+import type { CharacterOverallItemsStats, EquippedItemId } from '~/models/character'
 import type { UserItemsBySlot } from '~/models/user'
 
-import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { usePollInterval } from '~/composables/utils/use-poll-interval'
+import { useAsyncStateWithPoll } from '~/composables/utils/use-async-state'
 import {
-  updateCharacterItems as _updateCharacterItems,
   checkUpkeepIsHigh,
   computeLongestWeaponLength,
   computeOverallArmor,
@@ -13,75 +11,34 @@ import {
   computeOverallPrice,
   computeOverallWeight,
   getCharacterItems,
+  updateCharacterItems,
 } from '~/services/character-service'
 import { pollCharacterItemsSymbol } from '~/symbols'
 
-interface CharacterItemsContext {
-  characterItems: Ref<EquippedItem[]>
-  loadCharacterItems: () => Promise<EquippedItem[]>
-  loadingCharacterItems: Ref<boolean>
-  updateCharacterItems: (data: EquippedItemId[]) => Promise<void>
-  updatingCharacterItems: Ref<boolean>
-}
+export const useCharacterItems = (characterId: MaybeRefOrGetter<number>) => {
+  const userStore = useUserStore()
 
-const characterItemsKey: InjectionKey<CharacterItemsContext> = Symbol('CharacterItems')
-
-export const useCharacterItemsProvider = (characterId: MaybeRefOrGetter<number>) => {
   const {
     state: characterItems,
     execute: loadCharacterItems,
     isLoading: loadingCharacterItems,
-  } = useAsyncState(
+  } = useAsyncStateWithPoll(
     () => getCharacterItems(toValue(characterId)),
     [],
-    { immediate: true },
+    { pollKey: pollCharacterItemsSymbol, pageLoading: true },
   )
-
-  usePollInterval(
-    {
-      key: pollCharacterItemsSymbol,
-      fn: loadCharacterItems,
-    },
-  )
-
-  usePageLoading({
-    watch: [loadingCharacterItems],
-  })
 
   const {
-    execute: updateCharacterItems,
+    execute: onUpdateCharacterItems,
     isLoading: updatingCharacterItems,
   } = useAsyncCallback(
     async (itemIds: EquippedItemId[]) => {
-      characterItems.value = await _updateCharacterItems(toValue(characterId), itemIds)
+      characterItems.value = await updateCharacterItems(toValue(characterId), itemIds)
+    },
+    {
+      pageLoading: true,
     },
   )
-
-  provide(characterItemsKey, {
-    characterItems,
-    loadCharacterItems,
-    loadingCharacterItems,
-    updateCharacterItems,
-    updatingCharacterItems,
-  })
-
-  return {
-    loadCharacterItems,
-    updateCharacterItems,
-    loadingCharacterItems,
-  }
-}
-
-export const useCharacterItems = () => {
-  const userStore = useUserStore()
-
-  const {
-    characterItems,
-    loadCharacterItems,
-    updateCharacterItems,
-    loadingCharacterItems,
-    updatingCharacterItems,
-  } = injectStrict(characterItemsKey)
 
   const equippedItemsBySlot = computed<UserItemsBySlot>(() =>
     characterItems.value.reduce((out, ei) => {
@@ -114,7 +71,7 @@ export const useCharacterItems = () => {
 
     loadCharacterItems,
     loadingCharacterItems,
-    updateCharacterItems,
+    onUpdateCharacterItems,
     updatingCharacterItems,
 
     upkeepIsHigh,

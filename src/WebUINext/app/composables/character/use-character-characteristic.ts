@@ -1,21 +1,21 @@
-import type { Ref } from 'vue'
-
 import { weaponProficiencyCostCoefs } from '~root/data/constants.json'
+import { timeout } from 'es-toolkit'
 
 import type {
   CharacterCharacteristics,
+  CharacteristicConversion,
   CharacteristicKey,
   CharacteristicSectionKey,
   SkillKey,
 } from '~/models/character'
 
-import { usePageLoading } from '~/composables/app/use-page-loading'
-import { usePollInterval } from '~/composables/utils/use-poll-interval'
 import {
   computeHealthPoints,
+  convertCharacterCharacteristics,
   createDefaultCharacteristic,
   createEmptyCharacteristic,
   getCharacterCharacteristics,
+  updateCharacterCharacteristics,
   wppForAgility,
   wppForWeaponMaster,
 } from '~/services/character-service'
@@ -23,47 +23,54 @@ import { pollCharacterCharacteristicsSymbol } from '~/symbols'
 import { applyPolynomialFunction } from '~/utils/math'
 import { mergeObjectWithSum } from '~/utils/object'
 
-const characterCharacteristicsKey: InjectionKey<CharacterCharacteristicsContext> = Symbol('CharacterCharacteristics')
+import { useAsyncCallback } from '../utils/use-async-callback'
+import { useAsyncStateWithPoll } from '../utils/use-async-state'
 
-export const useCharacterCharacteristicProvider = (characterId: MaybeRefOrGetter<number>) => {
+export const useCharacterCharacteristic = (characterId: MaybeRefOrGetter<number>) => {
+  const { t } = useI18n()
+
   const {
     state: characterCharacteristics,
     execute: loadCharacterCharacteristics,
     isLoading: loadingCharacterCharacteristics,
-  } = useAsyncState(
+  } = useAsyncStateWithPoll(
     () => getCharacterCharacteristics(toValue(characterId)),
     createEmptyCharacteristic(),
-    { immediate: true },
-  )
-
-  usePollInterval(
     {
-      key: pollCharacterCharacteristicsSymbol,
-      fn: loadCharacterCharacteristics,
+      pollKey: pollCharacterCharacteristicsSymbol,
+      pageLoading: true,
+      resetOnExecute: false,
     },
   )
 
-  usePageLoading({
-    watch: [loadingCharacterCharacteristics],
-  })
-
-  provide(characterCharacteristicsKey, {
-    characterCharacteristics,
-    loadCharacterCharacteristics,
-    loadingCharacterCharacteristics,
-    setCharacterCharacteristicsSync: (characteristic: CharacterCharacteristics) => {
-      characterCharacteristics.value = characteristic
-    },
-  })
-
-  return {
-    loadCharacterCharacteristics,
-    loadingCharacterCharacteristics,
+  function setCharacterCharacteristicsSync(characteristic: CharacterCharacteristics) {
+    characterCharacteristics.value = characteristic
   }
-}
 
-export const useCharacterCharacteristic = () => {
-  const { characterCharacteristics, loadCharacterCharacteristics, loadingCharacterCharacteristics, setCharacterCharacteristicsSync } = injectStrict(characterCharacteristicsKey)
+  const {
+    execute: onConvertCharacterCharacteristics,
+    isLoading: convertingCharacterCharacteristics,
+  } = useAsyncCallback(async (conversion: CharacteristicConversion) => {
+    await Promise.all([
+      setCharacterCharacteristicsSync(
+        await convertCharacterCharacteristics(toValue(characterId), conversion),
+      ),
+      timeout(500),
+    ])
+  }, {
+    pageLoading: true,
+  })
+
+  const {
+    execute: onCommitCharacterCharacteristics,
+  } = useAsyncCallback(async (characteristics: CharacterCharacteristics) => {
+    setCharacterCharacteristicsSync(
+      await updateCharacterCharacteristics(toValue(characterId), characteristics),
+    )
+  }, {
+    successMessage: t('character.characteristic.commit.notify'),
+    pageLoading: true,
+  })
 
   const healthPoints = computed(() => computeHealthPoints(characterCharacteristics.value.skills.ironFlesh, characterCharacteristics.value.attributes.strength))
 
@@ -71,8 +78,11 @@ export const useCharacterCharacteristic = () => {
     characterCharacteristics,
     loadCharacterCharacteristics,
     loadingCharacterCharacteristics,
-    setCharacterCharacteristicsSync,
     healthPoints,
+
+    onConvertCharacterCharacteristics,
+    onCommitCharacterCharacteristics,
+    convertingCharacterCharacteristics,
   }
 }
 
@@ -130,13 +140,6 @@ const characteristicRequirementsSatisfied = (
     default:
       return true
   }
-}
-
-interface CharacterCharacteristicsContext {
-  characterCharacteristics: Ref<CharacterCharacteristics>
-  loadCharacterCharacteristics: () => void
-  loadingCharacterCharacteristics: Ref<boolean>
-  setCharacterCharacteristicsSync: (characteristic: CharacterCharacteristics) => void
 }
 
 export const useCharacterCharacteristicBuilder = (
@@ -275,6 +278,13 @@ export const useCharacterCharacteristicBuilder = (
     characteristicsDelta.value = createEmptyCharacteristic()
   }
 
+  const healthPoints = computed(() =>
+    computeHealthPoints(
+      characteristics.value.skills.ironFlesh,
+      characteristics.value.attributes.strength,
+    ),
+  )
+
   return {
     canConvertAttributesToSkills,
     canConvertSkillsToAttributes,
@@ -289,5 +299,6 @@ export const useCharacterCharacteristicBuilder = (
     onResetField,
     reset,
     wasChangeMade,
+    healthPoints,
   }
 }

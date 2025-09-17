@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import type { RouteLocationNormalizedLoaded, RouteLocationRaw } from 'vue-router'
+import type { RouteLocationNormalizedLoaded } from 'vue-router'
+import type { RouteNamedMap } from 'vue-router/auto-routes'
+
+import { LazyCharacterCreateModal, LazyCharacterEditModal } from '#components'
 
 import { useCharacterProvider } from '~/composables/character/use-character'
-import { useCharacterCharacteristicProvider } from '~/composables/character/use-character-characteristic'
-import { useCharacterItemsProvider } from '~/composables/character/use-character-items'
-import { useCharacterLimitationsProvider } from '~/composables/character/use-character-limitations'
+import { useAsyncCallback } from '~/composables/utils/use-async-callback'
+import { activateCharacter, deactivateCharacter, deleteCharacter, updateCharacter } from '~/services/character-service'
 
 definePageMeta({
   middleware: [
@@ -22,16 +24,88 @@ definePageMeta({
   ],
 })
 
+const { t } = useI18n()
 const route = useRoute('characters-id')
 
-const { characterId } = useCharacterProvider(() => Number(route.params.id))
-useCharacterItemsProvider(characterId)
-useCharacterCharacteristicProvider(characterId)
-useCharacterLimitationsProvider(characterId)
+const userStore = useUserStore()
 
-const { t } = useI18n()
+const character = computed(() => userStore.getCurrentCharacterById(Number(route.params.id)))
+useCharacterProvider(character)
 
-const links = [
+const overlay = useOverlay()
+
+const characterCreateModal = overlay.create(LazyCharacterCreateModal)
+const characterEditModal = overlay.create(LazyCharacterEditModal)
+
+const {
+  execute: onCreateNewCharacter,
+} = useAsyncCallback(async () => {
+  if (userStore.user!.activeCharacterId) {
+    await deactivateCharacter(userStore.user!.activeCharacterId)
+    await userStore.fetchUser()
+  }
+
+  characterCreateModal.open()
+}, {
+  pageLoading: true,
+})
+
+const {
+  execute: onUpdateCharacter,
+} = useAsyncCallback(
+  async (name: string) => {
+    await updateCharacter(character.value.id, { name })
+    await userStore.fetchCharacters()
+
+    characterEditModal.close()
+  },
+  {
+    successMessage: t('character.settings.update.notify.success'),
+    pageLoading: true,
+  },
+)
+
+const {
+  execute: onActivateCharacter,
+} = useAsyncCallback(
+  async (characterId: number, status: boolean) => {
+    status ? await activateCharacter(characterId) : await deactivateCharacter(characterId)
+    await userStore.fetchUser() // update activeCharacterId
+  },
+  {
+    successMessage: t('character.settings.update.notify.success'),
+    pageLoading: true,
+  },
+)
+
+const {
+  execute: onDeleteCharacter,
+} = useAsyncCallback(
+  async () => {
+    characterEditModal.close()
+
+    // TODO: deactivate char FIXME: move to backend
+    if (character.value.id === userStore.user!.activeCharacterId) {
+      await deactivateCharacter(character.value.id)
+      await userStore.fetchUser()
+    }
+
+    await deleteCharacter(character.value.id)
+    await userStore.fetchCharacters()
+
+    if (userStore.activeCharacterId) {
+      return navigateTo({ name: 'characters-id', params: { id: userStore.activeCharacterId } })
+    }
+
+    return navigateTo({ name: 'characters' })
+  },
+  {
+    successMessage: t('character.settings.delete.notify.success'),
+    pageLoading: true,
+  },
+)
+
+const nav = [
   {
     name: 'characters-id',
     label: t('character.nav.overview'),
@@ -48,30 +122,55 @@ const links = [
     name: 'characters-id-stats',
     label: t('character.nav.stats'),
   },
-]
+] satisfies Array<{
+  name: keyof RouteNamedMap
+  label: string
+}>
 </script>
 
 <template>
   <div>
-    <Teleport to="[data-teleport-target='character-navbar']" defer>
-      <div class="order-2 flex items-center justify-center gap-2">
+    <div
+      class="mb-10 grid grid-cols-3 items-center gap-4"
+    >
+      <div class="flex items-center gap-4">
+        <CharacterSelect
+          :characters="userStore.characters"
+          :current-character="character"
+          :active-character-id="userStore.activeCharacterId"
+          @activate="onActivateCharacter"
+          @create="onCreateNewCharacter"
+        />
+
+        <UTooltip :text="$t('character.settings.update.title')">
+          <UButton
+            size="xl"
+            icon="crpg:edit"
+            color="neutral"
+            variant="outline"
+            @click="characterEditModal.open({ character, onUpdate: onUpdateCharacter, onDelete: onDeleteCharacter })"
+          />
+        </UTooltip>
+      </div>
+
+      <nav class="flex items-center justify-center gap-2">
         <NuxtLink
-          v-for="{ name, label } in links"
+          v-for="{ name, label } in nav"
           :key="name"
           v-slot="{ isExactActive }"
-          :to="({ name, params: { id: characterId } } as RouteLocationRaw)"
+          :to="({ name })"
         >
           <UButton
             color="neutral"
             variant="ghost"
             active-variant="soft"
             :active="isExactActive"
-            size="lg"
+            size="xl"
             :label
           />
         </NuxtLink>
-      </div>
-    </Teleport>
+      </nav>
+    </div>
 
     <NuxtPage />
   </div>

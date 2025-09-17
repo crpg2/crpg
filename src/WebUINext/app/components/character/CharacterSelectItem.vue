@@ -18,8 +18,8 @@ const modelValue = defineModel<boolean>({ default: false })
       <template #content>
         <UiTooltipContent :title="$t('character.settings.active.tooltip.title')">
           <template #description>
-            <p v-for="(item, idx) in $tm('character.settings.active.tooltip.desc')" :key="idx">
-              {{ $rt(item) }}
+            <p v-for="(p, idx) in $tm('character.settings.active.tooltip.desc')" :key="idx">
+              {{ $rt(p) }}
             </p>
           </template>
         </UiTooltipContent>

@@ -2,16 +2,28 @@
 import { useCharacter } from '~/composables/character/use-character'
 import { useCharacterRespec } from '~/composables/character/use-character-respec'
 import { useCharacterRetire } from '~/composables/character/use-character-retire'
-import { useCharacterStatisticsProvider } from '~/composables/character/use-character-statistic'
 import { useCharacterTournament } from '~/composables/character/use-character-tournament'
+import { useAsyncStateWithPoll } from '~/composables/utils/use-async-state'
+import { getCharacterStatistics } from '~/services/character-service'
+import { pollCharacterStatisticsSymbol } from '~/symbols'
 
 const userStore = useUserStore()
 
-const { character } = useCharacter()
-const { characterStatistics } = useCharacterStatisticsProvider(() => character.value.id)
+const { character, characterId } = useCharacter()
 
-const { onRetireCharacter } = useCharacterRetire()
+const {
+  state: characterStatistics,
+} = useAsyncStateWithPoll(
+  () => getCharacterStatistics(characterId.value),
+  {},
+  {
+    pollKey: pollCharacterStatisticsSymbol,
+    pageLoading: true,
+  },
+)
+
 const { respecCapability, onRespecializeCharacter } = useCharacterRespec()
+const { onRetireCharacter } = useCharacterRetire()
 const { onSetCharacterForTournament } = useCharacterTournament()
 </script>
 

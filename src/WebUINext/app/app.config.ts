@@ -27,6 +27,12 @@ export default defineAppConfig({
       plus: 'crpg:plus',
       search: 'crpg:search',
     },
+    alert: {
+      slots: {
+        title: 'text-base font-semibold',
+        description: 'text-base font-semibold',
+      },
+    },
     table: {
       slots: {
         th: 'text-default',

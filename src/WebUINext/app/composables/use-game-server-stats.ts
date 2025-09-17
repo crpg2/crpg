@@ -1,12 +1,13 @@
-import { usePollInterval } from '~/composables/utils/use-poll-interval'
 import { getGameServerStats } from '~/services/game-server-statistics-service'
 import { pollGameServerStatsSymbol } from '~/symbols'
+
+import { useAsyncStateWithPoll } from './utils/use-async-state'
 
 export const useGameServerStats = (immediate = true) => {
   const {
     state: gameServerStats,
     execute: loadGameServerStats,
-  } = useAsyncState(
+  } = useAsyncStateWithPoll(
     () => getGameServerStats(),
     {
       regions: {},
@@ -14,13 +15,8 @@ export const useGameServerStats = (immediate = true) => {
     },
     {
       immediate,
-    },
-  )
-
-  usePollInterval(
-    {
-      key: pollGameServerStatsSymbol,
-      fn: loadGameServerStats,
+      resetOnExecute: false,
+      pollKey: pollGameServerStatsSymbol,
     },
   )
 

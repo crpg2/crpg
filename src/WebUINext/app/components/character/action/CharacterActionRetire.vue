@@ -54,7 +54,7 @@ const columns: TableColumn<HeirloomPointByLevelAggregation>[] = [
     <UButton
       variant="outline"
       :disabled="!canRetire"
-      size="lg"
+      size="xl"
       block
       icon="crpg:child"
       data-aq-character-action="retire"

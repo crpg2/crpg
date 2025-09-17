@@ -1,4 +1,3 @@
-import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { getRespecCapability, respecializeCharacter } from '~/services/character-service'
 import { useUserStore } from '~/stores/user'
@@ -6,13 +5,12 @@ import { useUserStore } from '~/stores/user'
 import { useCharacter } from './use-character'
 import { useCharacterLimitations } from './use-character-limitations'
 
-export const useCharacterRespec = () => {
-  const toast = useToast()
+export const useCharacterRespec = (onSuccess?: () => void) => {
   const { t } = useI18n()
 
   const userStore = useUserStore()
-  const { character } = useCharacter()
-  const { characterLimitations, loadCharacterLimitations } = useCharacterLimitations()
+  const { character, characterId } = useCharacter()
+  const { characterLimitations, loadCharacterLimitations } = useCharacterLimitations(characterId)
 
   const respecCapability = computed(() => getRespecCapability(
     character.value,
@@ -26,25 +24,20 @@ export const useCharacterRespec = () => {
     isLoading: respecializingCharacter,
   } = useAsyncCallback(
     async () => {
-      await respecializeCharacter(character.value.id)
+      await respecializeCharacter(characterId.value)
 
       await Promise.all([
         userStore.fetchUser(), // update gold
-        userStore.fetchCharacters(), // update characters
+        userStore.fetchCharacters(),
         loadCharacterLimitations(),
       ])
-
-      toast.add({
-        title: t('character.settings.respecialize.notify.success'),
-        close: false,
-        color: 'success',
-      })
+    },
+    {
+      pageLoading: true,
+      successMessage: t('character.settings.respecialize.notify.success'),
+      onSuccess,
     },
   )
-
-  usePageLoading({
-    watch: [respecializingCharacter],
-  })
 
   return {
     characterLimitations,

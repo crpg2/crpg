@@ -16,15 +16,12 @@ export const usePageLoadingProvider = () => {
   }
 }
 
-interface PageLoadingOptions {
-  watch?: MultiWatchSources
-}
-
-export const usePageLoading = (options?: PageLoadingOptions) => {
+export const usePageLoading = (watches: MultiWatchSources) => {
   const { state, toggle } = injectStrict(pageLoadingKey)
 
-  const unsubscribeExecute = watch(options?.watch || [], states => toggle(states.some(Boolean)))
+  const unsubscribeExecute = watch(watches, states => toggle(states.some(Boolean)))
 
+  // TODO: scope dispose
   onBeforeUnmount(() => {
     unsubscribeExecute()
   })

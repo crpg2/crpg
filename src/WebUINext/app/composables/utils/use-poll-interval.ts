@@ -13,6 +13,7 @@ export const usePollInterval = (options: PollOption | PollOption[]) => {
 
   const _options = Array.isArray(options) ? options : [options]
 
+  // TODO: FIXME: исследовать, убрать onMounted
   onMounted(() => {
     for (const { key, fn, watch: watchSource } of _options) {
       if (watchSource) {
@@ -29,6 +30,7 @@ export const usePollInterval = (options: PollOption | PollOption[]) => {
     }
   })
 
+  // TODO: scope sispose
   onBeforeUnmount(() => {
     unsubscribes.forEach(unsubscribe => unsubscribe())
     stopWatches.forEach(stop => stop())

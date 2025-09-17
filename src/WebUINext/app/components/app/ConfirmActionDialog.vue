@@ -18,8 +18,7 @@ const props = withDefaults(defineProps<{
 })
 
 const emit = defineEmits<{
-  close: []
-  confirm: []
+  close: [boolean]
 }>()
 
 const confirmModel = ref<string>('')
@@ -34,9 +33,7 @@ const $v = useVuelidate(
 )
 
 const onCancel = () => {
-  confirmModel.value = ''
-  $v.value.$reset()
-  emit('close')
+  emit('close', false)
 }
 
 const onConfirm = async () => {
@@ -44,15 +41,16 @@ const onConfirm = async () => {
     return
   }
 
-  emit('confirm')
+  emit('close', true)
 }
 </script>
 
 <template>
   <UModal
     :title
+    :dismissible="false"
     :ui="{
-      body: 'space-y-6 text-center',
+      body: 'space-y-4 text-center',
       footer: 'flex items-center justify-center gap-4',
     }"
   >
@@ -63,21 +61,18 @@ const onConfirm = async () => {
         color="warning"
         variant="subtle"
         icon="crpg:alert-circle"
+        title="dwd"
       >
-        <template #description>
-          <div class="space-y-1">
-            <slot name="description">
-              <UiTextView variant="p">
-                {{ description }}
-              </UiTextView>
-            </slot>
+        <template #title>
+          <slot name="title">
+            {{ title }}
+          </slot>
+        </template>
 
-            <template v-if="undone">
-              <UiTextView variant="h5" class="text-error">
-                {{ $t('action-undone') }}
-              </UiTextView>
-            </template>
-          </div>
+        <template v-if="undone" #description>
+          <UiTextView variant="h5" class="text-error">
+            {{ $t('action-undone') }}
+          </UiTextView>
         </template>
       </UAlert>
 

@@ -12,6 +12,7 @@ import { useCharacterInventory } from '~/composables/character/inventory/use-cha
 import { useInventoryDnD } from '~/composables/character/inventory/use-inventory-dnd'
 import { useInventoryQuickEquip } from '~/composables/character/inventory/use-inventory-quick-equip'
 import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
+import { useCharacter } from '~/composables/character/use-character'
 import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
 import { useCharacterItems } from '~/composables/character/use-character-items'
 import { validateItemNotMeetRequirement } from '~/services/character-service'
@@ -20,12 +21,13 @@ import { getAggregationsConfig } from '~/services/item-search-service'
 import { createItemIndex } from '~/services/item-search-service/indexator'
 import { extractItem, getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
 
+const userStore = useUserStore()
+userStore.fetchUserItems() // TODO: FIXME:
+const { clan, user, userItems } = toRefs(userStore)
+
 const { t } = useI18n()
 const { mainHeaderHeight } = useMainHeader()
-
-const userStore = useUserStore()
-const { clan, user, userItems } = toRefs(userStore)
-userStore.fetchUserItems() // TODO: FIXME:
+const { characterId } = useCharacter()
 
 const {
   onSellUserItem,
@@ -42,9 +44,9 @@ const {
   itemsOverallStats,
   equippedItemIds,
   upkeepIsHigh,
-} = useCharacterItems()
+} = useCharacterItems(characterId)
 
-const { characterCharacteristics, healthPoints } = useCharacterCharacteristic()
+const { characterCharacteristics, healthPoints } = useCharacterCharacteristic(characterId)
 
 const { onDragEnd, onDragStart, dragging } = useInventoryDnD()
 const { onQuickEquip } = useInventoryQuickEquip()

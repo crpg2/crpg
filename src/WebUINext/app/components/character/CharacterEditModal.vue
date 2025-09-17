@@ -49,13 +49,18 @@ const confirmDeleteDialog = overlay.create(LazyAppConfirmActionDialog, {
     description: t('character.settings.delete.dialog.desc'),
     confirm: `${character.name} - ${character.level}`,
     confirmLabel: t('action.delete'),
-    onClose: () => confirmDeleteDialog.close(),
-    onConfirm: () => {
-      emit('delete')
-      confirmDeleteDialog.close()
-    },
   },
 })
+
+async function deleteCharacter() {
+  const confirm = await confirmDeleteDialog.open()
+
+  if (!confirm) {
+    return
+  }
+
+  emit('delete')
+}
 </script>
 
 <template>
@@ -67,19 +72,11 @@ const confirmDeleteDialog = overlay.create(LazyAppConfirmActionDialog, {
       footer: 'flex justify-center',
     }"
   >
-    <UTooltip :text="$t('character.settings.update.title')">
-      <UButton
-        size="xl"
-        icon="crpg:edit"
-        color="neutral"
-        variant="outline"
-      />
-    </UTooltip>
-
     <template #body="{ close }">
       <UFormField
         :label="$t('character.settings.update.form.field.name')"
         :error="errorMessagesToString($v.nameModel.$errors)"
+        size="xl"
       >
         <UInput
           v-model="nameModel"
@@ -88,14 +85,11 @@ const confirmDeleteDialog = overlay.create(LazyAppConfirmActionDialog, {
           class="w-full"
         >
           <template #trailing>
-            <div
+            <UiInputCounter
               id="character-name-count"
-              class="text-xs text-muted tabular-nums"
-              aria-live="polite"
-              role="status"
-            >
-              {{ nameModel.length }}/{{ characterNameMaxLength }}
-            </div>
+              :max="characterNameMaxLength"
+              :current="nameModel.length "
+            />
           </template>
         </UInput>
       </UFormField>
@@ -128,7 +122,7 @@ const confirmDeleteDialog = overlay.create(LazyAppConfirmActionDialog, {
               cursor-pointer text-error
               hover:text-error/80
             "
-            @click="confirmDeleteDialog.open"
+            @click="deleteCharacter"
           >
             {{ $t('character.settings.delete.link') }}
           </ULink>

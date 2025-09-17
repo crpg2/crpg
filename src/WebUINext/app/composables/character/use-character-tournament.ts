@@ -4,37 +4,25 @@ import { setCharacterForTournament } from '~/services/character-service'
 import { useUserStore } from '~/stores/user'
 
 import { useCharacter } from './use-character'
-import { useCharacterCharacteristic } from './use-character-characteristic'
 
-export const useCharacterTournament = () => {
-  const toast = useToast()
+export const useCharacterTournament = (onSuccess?: () => void) => {
   const { t } = useI18n()
 
   const userStore = useUserStore()
-  const { character } = useCharacter()
-  const { loadCharacterCharacteristics } = useCharacterCharacteristic()
+  const { characterId } = useCharacter()
 
   const {
     execute: onSetCharacterForTournament,
     isLoading: settingCharacterForTournament,
   } = useAsyncCallback(async () => {
-    await setCharacterForTournament(character.value.id)
-
-    await Promise.all([
-      userStore.fetchCharacters(),
-      loadCharacterCharacteristics(),
-    ])
-
-    toast.add({
-      title: t('character.settings.tournament.notify.success'),
-      close: false,
-      color: 'success',
-    })
+    await setCharacterForTournament(characterId.value)
+    await userStore.fetchCharacters()
+  }, {
+    onSuccess,
+    successMessage: t('character.settings.tournament.notify.success'),
   })
 
-  usePageLoading({
-    watch: [settingCharacterForTournament],
-  })
+  usePageLoading([settingCharacterForTournament])
 
   return {
     onSetCharacterForTournament,

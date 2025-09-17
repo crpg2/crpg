@@ -24,7 +24,7 @@ const canSetCharacterForTournament = computed(() => canSetCharacterForTournament
       }"
     >
       <UButton
-        size="lg"
+        size="xl"
         variant="outline"
         block
         icon="crpg:member"

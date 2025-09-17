@@ -1,6 +1,6 @@
 type SubscriptionFn = () => Promise<any> | any
-const INTERVAL = 1000 * 60 // 1 min
-// const INTERVAL = 5000
+// const INTERVAL = 1000 * 60 // 1 min
+const INTERVAL = 5000
 
 export default defineNuxtPlugin(() => {
   const subscriptions = new Map<symbol, SubscriptionFn>()

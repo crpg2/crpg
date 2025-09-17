@@ -1,26 +1,21 @@
 <script setup lang="ts">
-import { timeout } from 'es-toolkit'
-
-import type { CharacteristicConversion } from '~/models/character'
-
-import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useCharacter } from '~/composables/character/use-character'
 import { useCharacterCharacteristic, useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic'
 import { useCharacterItems } from '~/composables/character/use-character-items'
 import { useCharacterRespec } from '~/composables/character/use-character-respec'
-import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { CHARACTERISTIC_CONVERSION } from '~/models/character'
-import {
-  convertCharacterCharacteristics,
-  updateCharacterCharacteristics,
-} from '~/services/character-service'
 
-const { t } = useI18n()
-const toast = useToast()
+const { character, characterId } = useCharacter()
 
-const { character } = useCharacter()
-const { characterCharacteristics, loadCharacterCharacteristics, loadingCharacterCharacteristics, setCharacterCharacteristicsSync, healthPoints } = useCharacterCharacteristic()
-const { itemsOverallStats } = useCharacterItems()
+const {
+  characterCharacteristics,
+  loadCharacterCharacteristics,
+  convertingCharacterCharacteristics,
+  onCommitCharacterCharacteristics,
+  onConvertCharacterCharacteristics,
+} = useCharacterCharacteristic(characterId)
+
+const { itemsOverallStats } = useCharacterItems(characterId)
 
 const {
   characteristics,
@@ -32,48 +27,10 @@ const {
   getInputProps,
   onInput,
   reset: resetCharacterCharacteristicBuilder,
+  healthPoints,
 } = useCharacterCharacteristicBuilder(characterCharacteristics)
 
-const {
-  execute: onConvertCharacterCharacteristics,
-  isLoading: convertingCharacterCharacteristics,
-} = useAsyncCallback(async (conversion: CharacteristicConversion) => {
-  await Promise.all([
-    setCharacterCharacteristicsSync(
-      await convertCharacterCharacteristics(character.value.id, conversion),
-    ),
-    timeout(500),
-  ])
-})
-
-const {
-  execute: onCommitCharacterCharacteristics,
-  isLoading: commitingCharacterCharacteristics,
-} = useAsyncCallback(async () => {
-  setCharacterCharacteristicsSync(
-    await updateCharacterCharacteristics(character.value.id, characteristics.value),
-  )
-  resetCharacterCharacteristicBuilder()
-  toast.add({
-    title: t('character.characteristic.commit.notify'),
-    close: false,
-    color: 'success',
-  })
-})
-
-const { respecCapability, onRespecializeCharacter: respecializeCharacter } = useCharacterRespec()
-
-const {
-  execute: onRespecializeCharacter,
-  isLoading: respecializingCharacter,
-} = useAsyncCallback(async () => {
-  await respecializeCharacter(character.value.id)
-  await loadCharacterCharacteristics()
-})
-
-usePageLoading({
-  watch: [loadingCharacterCharacteristics, commitingCharacterCharacteristics, convertingCharacterCharacteristics, respecializingCharacter],
-})
+const { respecCapability, onRespecializeCharacter } = useCharacterRespec(loadCharacterCharacteristics)
 </script>
 
 <template>
@@ -109,16 +66,21 @@ usePageLoading({
         :disabled="!wasChangeMade"
         color="neutral"
         variant="outline"
-        size="lg"
+        size="xl"
         icon="crpg:reset"
         :label="$t('action.reset')"
         data-aq-reset-action
         @click="resetCharacterCharacteristicBuilder"
       />
 
-      <AppConfirmActionPopover @confirm="onCommitCharacterCharacteristics">
+      <AppConfirmActionPopover
+        @confirm="() => {
+          onCommitCharacterCharacteristics(characteristics)
+          resetCharacterCharacteristicBuilder()
+        }"
+      >
         <UButton
-          size="lg"
+          size="xl"
           icon="crpg:check"
           :disabled="!wasChangeMade || !isChangeValid"
           :label="$t('action.commit')"
@@ -128,11 +90,13 @@ usePageLoading({
 
       <USeparator orientation="vertical" class="h-8" />
 
-      <CharacterActionRespec
-        :character
-        :respec-capability
-        @respec="onRespecializeCharacter"
-      />
+      <div>
+        <CharacterActionRespec
+          :character
+          :respec-capability
+          @respec="onRespecializeCharacter"
+        />
+      </div>
     </div>
   </div>
 </template>

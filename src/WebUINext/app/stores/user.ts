@@ -11,6 +11,7 @@ import {
   getUserRestriction,
 } from '~/services/user-service'
 
+// TODO: add userProvider
 export const useUserStore = defineStore('user', () => {
   const {
     state: user,
@@ -43,6 +44,14 @@ export const useUserStore = defineStore('user', () => {
   const activeCharacterId = computed(() => user.value?.activeCharacterId || characters.value?.[0]?.id || null)
 
   const validateCharacter = (id: number) => characters.value.some(c => c.id === id)
+
+  const getCurrentCharacterById = (characterId: number) => {
+    const character = characters.value.find(c => c.id === characterId)
+    if (!character) {
+      throw new Error('character not found')
+    }
+    return character
+  }
 
   // // TODO: mby to backend?
   const isRecentUser = computed(() => {
@@ -92,6 +101,7 @@ export const useUserStore = defineStore('user', () => {
     fetchingCharacters,
     activeCharacterId,
     validateCharacter,
+    getCurrentCharacterById,
 
     userItems,
     fetchUserItems,
