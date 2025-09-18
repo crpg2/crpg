@@ -127,7 +127,8 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
         // Priority: If inventory is open and Escape hotkey is pressed, close inventory
         if (inventoryOpen && escapePressed)
         {
-            HideInventory();
+            // HideInventory();
+            CloseInventory();
             return;
         }
 

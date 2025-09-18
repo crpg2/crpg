@@ -13,18 +13,20 @@
         <!-- Centering Wrapper -->
         <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
                 HorizontalAlignment="Center" VerticalAlignment="Center" MarginLeft="10" MarginTop="10" MarginRight="10" MarginBottom="10" AcceptDrop="true" Command.Drop="ExecuteDropDiscard">
-          <Children> 
+          <Children>
+            <!--
             <BrushWidget Id="Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
               <Children>
                 <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="CrpgInventory.EquipmentSlot.BackGround">
                 </BrushWidget>
               </Children>
-            </BrushWidget>    
+            </BrushWidget>
+            -->
             <!-- Wrapper Panel -->
             <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Spacing="5">
               <Children>
                 <!-- Character Info Panel -->
-                <CharacterInfoPrefab DataSource="{CharacterInfo}" />
+                <CharacteristicsEditorPrefab DataSource="{CharacteristicsEditor}" />
                 <!-- Inventory Selection -->
                 <InventoryGridPrefab Id="UserInventoryGrid" Parameter.NumColumns="5" DataSource="{InventoryGrid}" HorizontalAlignment="Center" VerticalAlignment="Center" MarginTop="10" MarginLeft="10"/>
 

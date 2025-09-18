@@ -26,7 +26,7 @@ public class CrpgInventoryViewModel : ViewModel
     private bool _isVisible;
 
     private EquipmentPanelVM _equipmentPanel = default!;
-    private CharacterInfoVM _characterInfo;
+    private CharacteristicsEditorVM _characteristicsEditor;
     private CharacterInfoBuildEquipStatsVM _characterInfoBuildEquipStatsVm;
     private ItemInfoVM _itemInfo;
 
@@ -40,7 +40,7 @@ public class CrpgInventoryViewModel : ViewModel
     public EquipmentPanelVM EquipmentPanel { get => _equipmentPanel; set => SetField(ref _equipmentPanel, value, nameof(EquipmentPanel)); }
 
     [DataSourceProperty]
-    public CharacterInfoVM CharacterInfo { get => _characterInfo; set => SetField(ref _characterInfo, value, nameof(CharacterInfo)); }
+    public CharacteristicsEditorVM CharacteristicsEditor { get => _characteristicsEditor; set => SetField(ref _characteristicsEditor, value, nameof(CharacteristicsEditor)); }
 
     [DataSourceProperty]
     public CharacterInfoBuildEquipStatsVM CharacterInfoBuildEquipStatsVm { get => _characterInfoBuildEquipStatsVm; set => SetField(ref _characterInfoBuildEquipStatsVm, value, nameof(CharacterInfoBuildEquipStatsVm)); }
@@ -62,7 +62,7 @@ public class CrpgInventoryViewModel : ViewModel
 
     public CrpgInventoryViewModel()
     {
-        _characterInfo = new CharacterInfoVM();
+        _characteristicsEditor = new CharacteristicsEditorVM();
         _characterInfoBuildEquipStatsVm = new CharacterInfoBuildEquipStatsVM();
         _equipmentPanel = new EquipmentPanelVM();
         InventoryGrid = new InventoryGridVM();
@@ -513,7 +513,7 @@ public class CrpgInventoryViewModel : ViewModel
             return;
         }
 
-        CharacterInfo.SetCrpgCharacterBasic(behavior.UserCharacter);
+        CharacteristicsEditor.SetCrpgCharacterBasic(behavior.UserCharacter);
     }
 
     private void HandleUserCharacteristicsUpdated()
@@ -527,7 +527,7 @@ public class CrpgInventoryViewModel : ViewModel
             return;
         }
 
-        CharacterInfo.SetInitialCharacteristics(behavior.UserCharacter.Characteristics);
+        CharacteristicsEditor.SetInitialCharacteristics(behavior.UserCharacter.Characteristics);
         LogDebug("[CrpgInventoryVm] Updated CHaracterInfoVM with new characteristics");
     }
 
@@ -542,7 +542,7 @@ public class CrpgInventoryViewModel : ViewModel
             return;
         }
 
-        CharacterInfo.UpdateCharacteristicsPointsAfterConversion(
+        CharacteristicsEditor.UpdateCharacteristicsPointsAfterConversion(
             behavior.UserCharacter.Characteristics.Attributes.Points,
             behavior.UserCharacter.Characteristics.Skills.Points);
 

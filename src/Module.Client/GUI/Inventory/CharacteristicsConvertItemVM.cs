@@ -2,15 +2,15 @@ using TaleWorlds.Library;
 
 namespace Crpg.Module.GUI.Inventory;
 
-public class CharacterInfoConvertItemVM : ViewModel
+public class CharacteristicsConvertItemVM : ViewModel
 {
     private string _itemLabel;
     private int _itemValue;
     private bool _isButtonEnabled;
 
-    public event Action<CharacterInfoConvertItemVM>? OnConvertClickedEvent;
+    public event Action<CharacteristicsConvertItemVM>? OnConvertClickedEvent;
 
-    public CharacterInfoConvertItemVM(string label, int value, bool isEnabled)
+    public CharacteristicsConvertItemVM(string label, int value, bool isEnabled)
     {
         _itemLabel = label;
         _itemValue = value;

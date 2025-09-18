@@ -1,4 +1,4 @@
-<Prefab Name="CharacterInfoConvertItem">
+<Prefab Name="CharacteristicsConvertItem">
     <!-- @ItemLabel @ItemValue @IsButtonEnabled-->
   <Window>
     <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" 

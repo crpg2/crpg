@@ -3,17 +3,17 @@ using TaleWorlds.Library;
 
 namespace Crpg.Module.GUI.Inventory;
 
-public class CharacterInfoPlusMinusItemVM : ViewModel
+public class CharacteristicsPlusMinusItemVM : ViewModel
 {
     private string _itemLabel = string.Empty;
     private int _itemValue;
     private bool _isButtonMinusEnabled;
     private bool _isButtonPlusEnabled;
 
-    public event Action<CharacterInfoPlusMinusItemVM>? OnPlusClickedEvent;
-    public event Action<CharacterInfoPlusMinusItemVM>? OnMinusClickedEvent;
+    public event Action<CharacteristicsPlusMinusItemVM>? OnPlusClickedEvent;
+    public event Action<CharacteristicsPlusMinusItemVM>? OnMinusClickedEvent;
 
-    public CharacterInfoPlusMinusItemVM(string label, int value)
+    public CharacteristicsPlusMinusItemVM(string label, int value)
     {
         _itemLabel = label;
         _itemValue = value;

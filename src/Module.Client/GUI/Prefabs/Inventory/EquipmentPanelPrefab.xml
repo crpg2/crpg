@@ -2,7 +2,7 @@
   <Constants>
     <Constant Name="ArmorPanel.Width" Value="110"/>
     <Constant Name="ArmorPanel.Height" Value="400"/>
-    <Constant Name="CharacterPreview.Width" Value="160"/>
+    <Constant Name="CharacterPreview.Width" Value="200"/>
     <Constant Name="CharacterPreview.Height" Value="400"/>
     <Constant Name="EquippedPanel.Width" Value="395"/>
     <Constant Name="EquippedPanel.Height" Value="465"/>    
@@ -19,7 +19,7 @@
                     Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
           <Children>
             <BrushWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
-                      MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10"
+                      MarginLeft="9" MarginRight="9" MarginTop="9" MarginBottom="9"
                       Brush="CrpgInventory.EquipmentSlot.BackGround" />
           </Children>
         </BrushWidget>
@@ -49,15 +49,16 @@
         <!-- Slots & Preview -->
         <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
                   WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
-                  MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" Spacing="5">
+                  MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="5" Spacing="5">
           <Children>
-            <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight"
+            <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center"
                       WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Spacing="5">
               <Children>
                 <!-- Armor Slots -->
                 <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop"
-                          SuggestedWidth="!ArmorPanel.Width" SuggestedHeight="!ArmorPanel.Height"
-                          WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" Spacing="15">
+                          SuggestedHeight="!ArmorPanel.Height"
+                          WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" Spacing="15"
+                          HorizontalAlignment="Left">
                   <Children>
                     <EquipmentSlotPrefab DataSource="{HeadArmor}" />
                     <EquipmentSlotPrefab DataSource="{CapeArmor}" />
@@ -70,12 +71,13 @@
 
                 <!-- Character Preview -->
                 <CharacterPreview WidthSizePolicy="Fixed" SuggestedWidth="!CharacterPreview.Width"
-                                  HeightSizePolicy="Fixed" SuggestedHeight="!CharacterPreview.Height" />
+                                  HeightSizePolicy="Fixed" SuggestedHeight="!CharacterPreview.Height"
+                                  HorizontalAlignment="Left" />
 
                 <!-- Weapons -->
                 <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop"
-                          SuggestedWidth="!WeaponPanel.Width" SuggestedHeight="!WeaponPanel.Height"
-                          WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" Spacing="15">
+                          SuggestedHeight="!WeaponPanel.Height"
+                          WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" Spacing="15" MarginLeft="5">
                   <Children>
                     <EquipmentSlotPrefab DataSource="{Weapon0}" />
                     <EquipmentSlotPrefab DataSource="{Weapon1}" />

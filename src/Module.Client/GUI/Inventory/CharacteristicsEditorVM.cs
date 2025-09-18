@@ -18,11 +18,11 @@ using TaleWorlds.MountAndBlade.View;
 
 namespace Crpg.Module.GUI.Inventory;
 
-public class CharacterInfoVM : ViewModel
+public class CharacteristicsEditorVM : ViewModel
 {
     private readonly CrpgConstants _constants = default!;
-    private readonly Dictionary<string, CharacterInfoPlusMinusItemVM> _skillMap = new();
-    private readonly Dictionary<string, CharacterInfoPlusMinusItemVM> _weaponMap = new();
+    private readonly Dictionary<string, CharacteristicsPlusMinusItemVM> _skillMap = new();
+    private readonly Dictionary<string, CharacteristicsPlusMinusItemVM> _weaponMap = new();
     private readonly TimeSpan _apiUsageClickCooldown = TimeSpan.FromSeconds(5);
 
     private bool _isVisible;
@@ -32,58 +32,58 @@ public class CharacterInfoVM : ViewModel
     private int _weaponProficiencyPoints;
 
     private UserAndCharacterInfoVM _userAndCharacterInfoVm;
-    private MBBindingList<CharacterInfoPlusMinusItemVM> _weaponProficiencies = new();
-    private MBBindingList<CharacterInfoPlusMinusItemVM> _skills = new();
-    private CharacterInfoPlusMinusItemVM _strengthVm;
-    private CharacterInfoPlusMinusItemVM _agilityVm;
-    private CharacterInfoConvertItemVM _convertAttributeVm;
-    private CharacterInfoConvertItemVM _convertSkillVm;
+    private MBBindingList<CharacteristicsPlusMinusItemVM> _weaponProficiencies = new();
+    private MBBindingList<CharacteristicsPlusMinusItemVM> _skills = new();
+    private CharacteristicsPlusMinusItemVM _strengthVm;
+    private CharacteristicsPlusMinusItemVM _agilityVm;
+    private CharacteristicsConvertItemVM _convertAttributeVm;
+    private CharacteristicsConvertItemVM _convertSkillVm;
     private CrpgCharacterCharacteristics _initialCharacteristics = new();
 
     private DateTime _lastApiCharacteristicsRefreshClick = DateTime.MinValue;
     private DateTime _lastApiCharacteristicsApplyClick = DateTime.MinValue;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="CharacterInfoVM"/> class.
+    /// Initializes a new instance of the <see cref="CharacteristicsEditorVM"/> class.
     /// with default values for attributes, skills, and weapon proficiencies.
     /// Also wires event handlers and builds internal lookup dictionaries.
     /// </summary>
-    public CharacterInfoVM()
+    public CharacteristicsEditorVM()
     {
         _userAndCharacterInfoVm = new UserAndCharacterInfoVM();
 
         // Initialize attribute VMs
-        _strengthVm = new CharacterInfoPlusMinusItemVM("Strength", 0);
-        _agilityVm = new CharacterInfoPlusMinusItemVM("Agility", 0);
+        _strengthVm = new CharacteristicsPlusMinusItemVM("Strength", 0);
+        _agilityVm = new CharacteristicsPlusMinusItemVM("Agility", 0);
 
         // skillpoints
         _skillPoints = 0;
 
         // Convert buttons
-        _convertAttributeVm = new CharacterInfoConvertItemVM("Attributes - ", 0, true);
-        _convertSkillVm = new CharacterInfoConvertItemVM("Skills - ", 0, true);
+        _convertAttributeVm = new CharacteristicsConvertItemVM("Attributes - ", 0, true);
+        _convertSkillVm = new CharacteristicsConvertItemVM("Skills - ", 0, true);
 
         // Wpf points
         _weaponProficiencyPoints = 0;
 
         // Wpf PlusMinus
-        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("One-Handed", 0));
-        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Two-Handed", 0));
-        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Polearm", 0));
-        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Bow", 0));
-        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Crossbow", 0));
-        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Throwing", 0));
+        _weaponProficiencies.Add(new CharacteristicsPlusMinusItemVM("One-Handed", 0));
+        _weaponProficiencies.Add(new CharacteristicsPlusMinusItemVM("Two-Handed", 0));
+        _weaponProficiencies.Add(new CharacteristicsPlusMinusItemVM("Polearm", 0));
+        _weaponProficiencies.Add(new CharacteristicsPlusMinusItemVM("Bow", 0));
+        _weaponProficiencies.Add(new CharacteristicsPlusMinusItemVM("Crossbow", 0));
+        _weaponProficiencies.Add(new CharacteristicsPlusMinusItemVM("Throwing", 0));
 
         // Skill PlusMinus
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Iron Flesh", 0));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Power Strike", 0));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Power Draw", 0));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Power Throw", 0));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Athletics", 0));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Riding", 0));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Weapon Master", 0));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Mounted Archery", 0));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Shield", 0));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Iron Flesh", 0));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Power Strike", 0));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Power Draw", 0));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Power Throw", 0));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Athletics", 0));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Riding", 0));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Weapon Master", 0));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Mounted Archery", 0));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Shield", 0));
 
         // Subscribe clicks
         WireAllEvents(true);
@@ -453,9 +453,9 @@ public class CharacterInfoVM : ViewModel
 
     /// <summary>
     /// Attaches or detaches plus/minus click event handlers for a given
-    /// <see cref="CharacterInfoPlusMinusItemVM"/> instance.
+    /// <see cref="CharacteristicsPlusMinusItemVM"/> instance.
     /// </summary>
-    private void WirePlusMinusEvents(CharacterInfoPlusMinusItemVM item, bool subscribe)
+    private void WirePlusMinusEvents(CharacteristicsPlusMinusItemVM item, bool subscribe)
     {
         if (item == null)
         {
@@ -482,7 +482,7 @@ public class CharacterInfoVM : ViewModel
     /// </list>
     /// Updates skills, weapon proficiencies, and button states accordingly.
     /// </summary>
-    private void OnConvertClicked(CharacterInfoConvertItemVM vm)
+    private void OnConvertClicked(CharacteristicsConvertItemVM vm)
     {
         InformationManager.DisplayMessage(new InformationMessage($"OnConvertClicked: {vm.ItemLabel} : {vm.ItemValue}"));
         if (vm.Equals(ConvertAttribute))
@@ -518,7 +518,7 @@ public class CharacterInfoVM : ViewModel
     /// or weapon proficiencies. Increases values if requirements and available
     /// points are satisfied, and updates all related states.
     /// </summary>
-    private void OnPlusClicked(CharacterInfoPlusMinusItemVM item)
+    private void OnPlusClicked(CharacteristicsPlusMinusItemVM item)
     {
         if (!item.IsButtonPlusEnabled)
         {
@@ -568,7 +568,7 @@ public class CharacterInfoVM : ViewModel
     /// or weapon proficiencies. Decreases values down to their initial minimums,
     /// refunds points, and updates all related states.
     /// </summary>
-    private void OnMinusClicked(CharacterInfoPlusMinusItemVM item)
+    private void OnMinusClicked(CharacteristicsPlusMinusItemVM item)
     {
         if (!item.IsButtonMinusEnabled)
         {
@@ -791,18 +791,10 @@ public class CharacterInfoVM : ViewModel
     public bool IsVisible { get => _isVisible; set => SetField(ref _isVisible, value, nameof(IsVisible)); }
 
     [DataSourceProperty]
-    public CharacterInfoConvertItemVM ConvertAttribute
-    {
-        get => _convertAttributeVm;
-        set => SetField(ref _convertAttributeVm, value, nameof(ConvertAttribute));
-    }
+    public CharacteristicsConvertItemVM ConvertAttribute { get => _convertAttributeVm; set => SetField(ref _convertAttributeVm, value, nameof(ConvertAttribute)); }
 
     [DataSourceProperty]
-    public CharacterInfoConvertItemVM ConvertSkill
-    {
-        get => _convertSkillVm;
-        set => SetField(ref _convertSkillVm, value, nameof(ConvertSkill));
-    }
+    public CharacteristicsConvertItemVM ConvertSkill { get => _convertSkillVm; set => SetField(ref _convertSkillVm, value, nameof(ConvertSkill)); }
 
     [DataSourceProperty]
     public int AttributePoints
@@ -846,13 +838,13 @@ public class CharacterInfoVM : ViewModel
     }
 
     [DataSourceProperty]
-    public CharacterInfoPlusMinusItemVM StrengthVm { get => _strengthVm; set => SetField(ref _strengthVm, value, nameof(StrengthVm)); }
+    public CharacteristicsPlusMinusItemVM StrengthVm { get => _strengthVm; set => SetField(ref _strengthVm, value, nameof(StrengthVm)); }
     [DataSourceProperty]
-    public CharacterInfoPlusMinusItemVM AgilityVm { get => _agilityVm; set => SetField(ref _agilityVm, value, nameof(AgilityVm)); }
+    public CharacteristicsPlusMinusItemVM AgilityVm { get => _agilityVm; set => SetField(ref _agilityVm, value, nameof(AgilityVm)); }
     [DataSourceProperty]
-    public MBBindingList<CharacterInfoPlusMinusItemVM> Skills { get => _skills; set => SetField(ref _skills, value, nameof(Skills)); }
+    public MBBindingList<CharacteristicsPlusMinusItemVM> Skills { get => _skills; set => SetField(ref _skills, value, nameof(Skills)); }
     [DataSourceProperty]
-    public MBBindingList<CharacterInfoPlusMinusItemVM> WeaponProficiencies { get => _weaponProficiencies; set => SetField(ref _weaponProficiencies, value, nameof(WeaponProficiencies)); }
+    public MBBindingList<CharacteristicsPlusMinusItemVM> WeaponProficiencies { get => _weaponProficiencies; set => SetField(ref _weaponProficiencies, value, nameof(WeaponProficiencies)); }
     [DataSourceProperty]
     public UserAndCharacterInfoVM UserAndCharacterInfoVm { get => _userAndCharacterInfoVm; set => SetField(ref _userAndCharacterInfoVm, value, nameof(UserAndCharacterInfoVm)); }
 }

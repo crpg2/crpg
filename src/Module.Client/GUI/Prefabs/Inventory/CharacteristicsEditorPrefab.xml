@@ -1,9 +1,9 @@
-<Prefab Name="CharacterInfoPrefab">
+<Prefab Name="CharacteristicsEditorPrefab">
   <Constants>
-    <Constant Name="CharacterInfo.MainContainer.Width" Value="460"/>
-    <Constant Name="CharacterInfo.MainContainer.Height" Value="540"/>
-    <Constant Name="CharacterInfo.Frame.Width" Value="250"/>
-    <Constant Name="CharacterInfo.Frame.Height" Value="150"/>
+    <Constant Name="CharacteristicsEditor.MainContainer.Width" Value="460"/>
+    <Constant Name="CharacteristicsEditor.MainContainer.Height" Value="540"/>
+    <Constant Name="CharacteristicsEditor.Frame.Width" Value="250"/>
+    <Constant Name="CharacteristicsEditor.Frame.Height" Value="150"/>
     <Constant Name="AttributesAndWpf.Frame.Width" Value="220"/>
     <Constant Name="AttributesAndWpf.Frame.Height" Value="325"/>
     <Constant Name="Skills.Frame.Width" Value="220"/>
@@ -11,7 +11,7 @@
   </Constants>
   <Window>
     <Widget Id="MainContainer" 
-            WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!CharacterInfo.MainContainer.Width" SuggestedHeight="!CharacterInfo.MainContainer.Height"
+            WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!CharacteristicsEditor.MainContainer.Width" SuggestedHeight="!CharacteristicsEditor.MainContainer.Height"
             HorizontalAlignment="Center" VerticalAlignment="Center">
       <Children>
         <!-- Frame -->
@@ -19,7 +19,7 @@
                   Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
           <Children>
             <!-- Background -->
-            <BrushWidget Id="CharacterInfo.Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+            <BrushWidget Id="CharacteristicsEditor.Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
                 HorizontalAlignment="Center" VerticalAlignment="Center" Brush="Crpg.Generic.Panel.Background"
                 MarginTop="9" MarginBottom="9" MarginLeft="9" MarginRight="9"/>
             <!-- Close Button -->
@@ -44,7 +44,7 @@
                         DoNotAcceptEvents="true" DoNotPassEventsToChildren="false" >
                   <Children>
                     <!-- Attributes and Wpf Frame-->             
-                    <BrushWidget Id="CharacterInfo.AttributesAndWpf.Frame" 
+                    <BrushWidget Id="CharacteristicsEditor.AttributesAndWpf.Frame" 
                               HorizontalAlignment="Center" 
                               WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!AttributesAndWpf.Frame.Width" SuggestedHeight="!AttributesAndWpf.Frame.Height" 
                               Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
@@ -53,9 +53,9 @@
                                 WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" 
                                 MarginTop="5" MarginBottom="5" MarginLeft="10" MarginRight="10">
                           <Children>
-                            <CharacterInfoConvertItem DataSource="{ConvertAttribute}"/>
-                            <CharacterInfoPlusMinusItem DataSource="{StrengthVm}"/>
-                            <CharacterInfoPlusMinusItem DataSource="{AgilityVm}"/> 
+                            <CharacteristicsConvertItem DataSource="{ConvertAttribute}"/>
+                            <CharacteristicsPlusMinusItem DataSource="{StrengthVm}"/>
+                            <CharacteristicsPlusMinusItem DataSource="{AgilityVm}"/> 
                             <!-- Spacer -->
                             <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="10" />
                             <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Center" 
@@ -76,7 +76,7 @@
                                     WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren"
                                     DataSource="{WeaponProficiencies}" Spacing="5">
                               <ItemTemplate>
-                                <CharacterInfoPlusMinusItem DataSource="{.}" MarginBottom="5" /> 
+                                <CharacteristicsPlusMinusItem DataSource="{.}" MarginBottom="5" /> 
                               </ItemTemplate>      
                             </ListPanel>      
                                  
@@ -85,7 +85,7 @@
                       </Children>
                     </BrushWidget>
                     <!-- Skills Frame -->
-                    <BrushWidget Id="CharacterInfo.Skills.Frame"
+                    <BrushWidget Id="CharacteristicsEditor.Skills.Frame"
                               HorizontalAlignment="Center"
                               WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!Skills.Frame.Width" SuggestedHeight="!Skills.Frame.Height"
                               Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
@@ -94,12 +94,12 @@
                                 WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" 
                                 MarginTop="5" MarginBottom="5" MarginLeft="10" MarginRight="10">
                           <Children>
-                            <CharacterInfoConvertItem DataSource="{ConvertSkill}"/> 
+                            <CharacteristicsConvertItem DataSource="{ConvertSkill}"/> 
                             <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" VerticalAlignment="Top" 
                                     WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" 
                                     DataSource="{Skills}" Spacing="5">
                               <ItemTemplate>
-                                <CharacterInfoPlusMinusItem DataSource="{.}" MarginBottom="5" /> 
+                                <CharacteristicsPlusMinusItem DataSource="{.}" MarginBottom="5" /> 
                               </ItemTemplate>      
                             </ListPanel>     
                           </Children>

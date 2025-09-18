@@ -1,4 +1,4 @@
-<Prefab Name="CharacterInfoPlusMinusItem">
+<Prefab Name="CharacteristicsPlusMinusItem">
   <Window>
     <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight"
                WidthSizePolicy="StretchToParent"

@@ -373,7 +373,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         OnUserCharacteristicsConverted?.Invoke();
     }
 
-    private bool _debugOn = false;
+    private readonly bool _debugOn = false;
     private void LogDebug(string message)
     {
         if (_debugOn)

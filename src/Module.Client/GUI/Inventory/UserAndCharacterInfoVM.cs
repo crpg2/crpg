@@ -26,7 +26,7 @@ public class UserAndCharacterInfoVM : ViewModel
     private string _assists = string.Empty;
     private string _playTimeText = string.Empty;
 
-    public static string FormatPlayTime(TimeSpan timeSpan)
+    private static string FormatPlayTime(TimeSpan timeSpan)
     {
         List<string> parts = new();
 

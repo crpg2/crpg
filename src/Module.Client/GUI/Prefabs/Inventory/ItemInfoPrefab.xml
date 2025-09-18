@@ -22,7 +22,7 @@
         <!-- Background -->
         <BrushWidget Id="ItemInfo.Background.Brush" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
           HorizontalAlignment="Center" VerticalAlignment="Center" Brush="ItemInfo.Background"
-          MarginTop="9" MarginBottom="9" MarginLeft="9" MarginRight="9" />
+          MarginTop="8" MarginBottom="8" MarginLeft="8" MarginRight="8" />
         <!-- Close Button -->
         <!-- Vertical ListPanel Holding all -->
         <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
