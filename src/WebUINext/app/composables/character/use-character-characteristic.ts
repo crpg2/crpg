@@ -9,6 +9,8 @@ import type {
   SkillKey,
 } from '~/models/character'
 
+import { useAsyncCallback } from '~/composables/utils/use-async-callback'
+import { useAsyncStateWithPoll } from '~/composables/utils/use-async-state'
 import {
   computeHealthPoints,
   convertCharacterCharacteristics,
@@ -23,11 +25,11 @@ import { pollCharacterCharacteristicsSymbol } from '~/symbols'
 import { applyPolynomialFunction } from '~/utils/math'
 import { mergeObjectWithSum } from '~/utils/object'
 
-import { useAsyncCallback } from '../utils/use-async-callback'
-import { useAsyncStateWithPoll } from '../utils/use-async-state'
+import { useCharacter } from './use-character'
 
-export const useCharacterCharacteristic = (characterId: MaybeRefOrGetter<number>) => {
+export const useCharacterCharacteristic = () => {
   const { t } = useI18n()
+  const { characterId } = useCharacter()
 
   const {
     state: characterCharacteristics,

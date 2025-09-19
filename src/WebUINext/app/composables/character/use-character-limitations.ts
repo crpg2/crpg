@@ -1,13 +1,15 @@
 import { getCharacterLimitations } from '~/services/character-service'
 
-import { useAsyncStateWithPoll } from '../utils/use-async-state'
+import { useCharacter } from './use-character'
 
-export const useCharacterLimitations = (characterId: MaybeRefOrGetter<number>) => {
+export const useCharacterLimitations = () => {
+  const { characterId } = useCharacter()
+
   const {
     state: characterLimitations,
     execute: loadCharacterLimitations,
     isLoading: loadingCharacterLimitations,
-  } = useAsyncStateWithPoll(
+  } = useAsyncState(
     () => getCharacterLimitations(toValue(characterId)),
     { lastRespecializeAt: new Date() },
   )

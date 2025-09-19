@@ -1,4 +1,3 @@
-// ref https://github.com/vueuse/vueuse/issues/2890
 import { makeDestructurable, noop } from '@vueuse/shared'
 
 import { usePageLoading } from '~/composables/app/use-page-loading'
@@ -6,24 +5,10 @@ import { usePageLoading } from '~/composables/app/use-page-loading'
 export type AnyPromiseFn = (...args: any[]) => Promise<any>
 
 export interface UseAsyncCallbackOptions {
-  /**
-   * Callback when error is caught.
-   */
   onError?: (e: unknown) => void
-
-  /**
-   * Callback when success is caught.
-   */
   onSuccess?: () => void
-
-  successMessage?: string
-
-  /**
-   * An error is thrown when executing the execute function
-   * @default false
-   */
   throwError?: boolean
-
+  successMessage?: string
   pageLoading?: boolean
 }
 
@@ -37,12 +22,6 @@ export type UseAsyncCallbackReturn<Fn extends AnyPromiseFn> = readonly [
   error: Ref<any>
 }
 
-/**
- * Using async functions
- *
- * @see https://vueuse.org/useAsyncCallback
- * @param fn
- */
 export function useAsyncCallback<T extends AnyPromiseFn>(fn: T, options?: UseAsyncCallbackOptions): UseAsyncCallbackReturn<T> {
   const {
     onError = noop,
@@ -52,15 +31,15 @@ export function useAsyncCallback<T extends AnyPromiseFn>(fn: T, options?: UseAsy
     successMessage,
   } = options ?? {}
 
-  const error = ref()
-  const isLoading = ref(false)
+  const error = shallowRef()
+  const isLoading = shallowRef(false)
   const toast = useToast()
 
   const execute = (async (...args: any[]) => {
+    isLoading.value = true
+
     try {
-      isLoading.value = true
       await fn(...args)
-      isLoading.value = false
 
       if (successMessage) {
         toast.add({
@@ -69,24 +48,27 @@ export function useAsyncCallback<T extends AnyPromiseFn>(fn: T, options?: UseAsy
           color: 'success',
         })
       }
+
       onSuccess()
     }
     catch (e) {
-      isLoading.value = false
       error.value = e
       onError(e)
       if (throwError) {
         throw e
       }
     }
+    finally {
+      isLoading.value = false
+    }
   }) as T
 
   if (pageLoading) {
-    usePageLoading([isLoading])
+    usePageLoading(isLoading)
   }
 
   return makeDestructurable(
-    { error, execute, isLoading } as const,
+    { execute, isLoading, error } as const,
     [execute, isLoading, error] as const,
   )
 }

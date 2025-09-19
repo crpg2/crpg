@@ -1,4 +1,4 @@
-import type { MultiWatchSources, Ref } from 'vue'
+import type { MultiWatchSources, Ref, WatchSource } from 'vue'
 
 const pageLoadingKey: InjectionKey<{
   state: Ref<boolean>
@@ -10,24 +10,21 @@ export const usePageLoadingProvider = () => {
 
   provide(pageLoadingKey, { state, toggle })
 
-  return {
-    state,
-    toggle,
-  }
+  return makeDestructurable(
+    { state, toggle } as const,
+    [state, toggle] as const,
+  )
 }
 
-export const usePageLoading = (watches: MultiWatchSources) => {
+export const usePageLoading = (watchSource: WatchSource | MultiWatchSources) => {
   const { state, toggle } = injectStrict(pageLoadingKey)
 
-  const unsubscribeExecute = watch(watches, states => toggle(states.some(Boolean)))
+  const _watchs = Array.isArray(watchSource) ? watchSource : [watchSource]
 
-  // TODO: scope dispose
-  onBeforeUnmount(() => {
-    unsubscribeExecute()
-  })
+  tryOnScopeDispose(watch(_watchs, states => toggle(states.some(Boolean))))
 
-  return {
-    state,
-    togglePageLoading: toggle,
-  }
+  return makeDestructurable(
+    { state, toggle } as const,
+    [state, toggle] as const,
+  )
 }

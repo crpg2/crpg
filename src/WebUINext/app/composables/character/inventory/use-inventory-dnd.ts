@@ -19,7 +19,7 @@ export const useInventoryDnD = () => {
   const toast = useToast()
   const { t } = useI18n()
 
-  const { updateCharacterItems, equippedItemsBySlot } = useCharacterItems()
+  const { onUpdateCharacterItems, equippedItemsBySlot } = useCharacterItems()
   const { getUnEquipItemsLinked, isEquipItemAllowed } = useInventoryEquipment()
 
   const onDragStart = (item: UserItem | null = null, slot: ItemSlot | null = null) => {
@@ -58,7 +58,7 @@ export const useInventoryDnD = () => {
   const onDragEnd = (_e: DragEvent | null = null, slot: ItemSlot | null = null) => {
     if (slot && !toSlot.value) {
       const items: EquippedItemId[] = getUnEquipItemsLinked(slot, toValue(equippedItemsBySlot))
-      updateCharacterItems(items)
+      onUpdateCharacterItems(items)
     }
 
     focusedItemId.value = null
@@ -83,7 +83,7 @@ export const useInventoryDnD = () => {
       })
     }
 
-    updateCharacterItems(items)
+    onUpdateCharacterItems(items)
   }
 
   return {

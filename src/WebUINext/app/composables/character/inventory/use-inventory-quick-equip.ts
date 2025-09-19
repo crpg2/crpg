@@ -1,4 +1,3 @@
-import type { EquippedItemsBySlot } from '~/models/character'
 import type { ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
@@ -10,7 +9,7 @@ export const useInventoryQuickEquip = () => {
   const toast = useToast()
   const { t } = useI18n()
 
-  const { updateCharacterItems, equippedItemsBySlot } = useCharacterItems()
+  const { onUpdateCharacterItems, equippedItemsBySlot } = useCharacterItems()
   const { getUnEquipItemsLinked, isEquipItemAllowed } = useInventoryEquipment()
 
   const getTargetSlot = (slots: ItemSlot[]): ItemSlot | undefined => slots
@@ -35,12 +34,12 @@ export const useInventoryQuickEquip = () => {
     const targetSlot = getTargetSlot(slots)
 
     if (targetSlot) {
-      updateCharacterItems([{ slot: targetSlot, userItemId: item.id }])
+      onUpdateCharacterItems([{ slot: targetSlot, userItemId: item.id }])
     }
   }
 
   const onQuickUnEquip = (slot: ItemSlot) => {
-    updateCharacterItems(getUnEquipItemsLinked(slot, toValue(equippedItemsBySlot)))
+    onUpdateCharacterItems(getUnEquipItemsLinked(slot, toValue(equippedItemsBySlot)))
   }
 
   return {

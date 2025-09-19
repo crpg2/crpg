@@ -72,15 +72,6 @@ const items = computed(() => [
           </UButton>
         </UTooltip>
 
-        <UTooltip :text="$t('nav.main.Community')">
-          <UButton
-            variant="outline"
-            icon="crpg:discord"
-            :to="settings.discord"
-            target="_blank"
-          />
-        </UTooltip>
-
         <AppInstallationGuide>
           <UTooltip :text="$t('nav.main.Installation')">
             <UButton
@@ -89,6 +80,15 @@ const items = computed(() => [
             />
           </UTooltip>
         </AppInstallationGuide>
+
+        <UTooltip :text="$t('nav.main.Community')">
+          <UButton
+            variant="outline"
+            icon="crpg:discord"
+            :to="settings.discord"
+            target="_blank"
+          />
+        </UTooltip>
 
         <UTooltip :text="$t('help.title')">
           <UButton

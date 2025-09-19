@@ -20,12 +20,13 @@ const [open, toggle] = useToggle()
     <slot />
 
     <template #content>
-      <div>{{ title ?? $t('confirmAction') }}</div>
+      <UiTextView variant="h5">
+        {{ title ?? $t('confirmAction') }}
+      </UiTextView>
 
       <div class="flex items-center gap-2">
         <UButton
           variant="soft"
-          size="sm"
           icon="crpg:close"
           :label="$t('action.cancel')"
           @click="() => {
@@ -35,7 +36,6 @@ const [open, toggle] = useToggle()
         />
 
         <UButton
-          size="sm"
           icon="crpg:check"
           :label="confirmLabel ?? $t('action.confirm')"
           @click="() => {

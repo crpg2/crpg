@@ -31,7 +31,6 @@ import type { TimeSeries } from '~/models/time-series'
 
 import theme from '~/assets/echart-theme.json'
 import { useCharacter } from '~/composables/character/use-character'
-import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { CHARACTER_EARNING_TYPE } from '~/models/character'
 import {
   convertCharacterEarningStatisticsToTimeSeries,
@@ -284,69 +283,71 @@ const columns: TableColumn<CharacterEarnedDataWithGameMode>[] = [
 </script>
 
 <template>
-  <UContainer>
-    <div class="flex min-w-[56rem] flex-col pt-8 pr-10 pl-5">
-      <div class="flex items-center justify-center gap-3">
-        <UTabs
-          v-model="zoomModel"
-          :items="zoomItems"
-          variant="pill"
-          :content="false"
-        />
+  <div class="relative mx-auto max-w-4xl space-y-5">
+    <div class="flex items-center justify-center gap-3">
+      <UTabs
+        v-model="zoomModel"
+        :items="zoomItems"
+        variant="pill"
+        color="neutral"
+        size="xl"
+        :content="false"
+      />
 
-        <UTabs
-          v-model="statTypeModel"
-          :items="statTypeItems"
-          variant="pill"
-          :content="false"
-        />
+      <UTabs
+        v-model="statTypeModel"
+        :items="statTypeItems"
+        variant="pill"
+        color="neutral"
+        size="xl"
+        :content="false"
+      />
 
-        <div class="min-w-[140px]">
-          <AppCoin
-            v-if="statTypeModel === CHARACTER_EARNING_TYPE.Gold"
-            size="lg"
-            :class="total < 0 ? '!text-error' : '!text-success'"
-          >
-            <NumberFlow
-              :value="total"
-              locales="en-US"
-            />
-          </AppCoin>
+      <div class="min-w-[140px]">
+        <AppCoin
+          v-if="statTypeModel === CHARACTER_EARNING_TYPE.Gold"
+          size="lg"
+          :class="total < 0 ? '!text-error' : '!text-success'"
+        >
+          <NumberFlow
+            :value="total"
+            locales="en-US"
+          />
+        </AppCoin>
 
-          <AppExperience
-            v-else
-            size="lg"
-          >
-            <NumberFlow
-              :value="total"
-              locales="en-US"
-            />
-          </AppExperience>
-        </div>
+        <AppExperience
+          v-else
+          size="lg"
+        >
+          <NumberFlow
+            :value="total"
+            locales="en-US"
+          />
+        </AppExperience>
       </div>
-
-      <div class="mb-6 h-[30rem]">
-        <VChart
-          ref="chart"
-          theme="crpg"
-          :option="option"
-          :loading="loading"
-          :loading-options="loadingOptions"
-          @legendselectchanged="onLegendSelectChanged"
-          @datazoom="onDataZoomChanged"
-        />
-      </div>
-
-      <UTable
-        class="rounded-md border border-muted"
-        :loading="loadingEarningStatistics"
-        :data="summary"
-        :columns
-      >
-        <template #empty>
-          <UiResultNotFound />
-        </template>
-      </UTable>
     </div>
-  </UContainer>
+
+    <div class="h-[30rem]">
+      <VChart
+        ref="chart"
+        theme="crpg"
+        :option="option"
+        :loading="loading"
+        :loading-options="loadingOptions"
+        @legendselectchanged="onLegendSelectChanged"
+        @datazoom="onDataZoomChanged"
+      />
+    </div>
+
+    <UTable
+      class="rounded-md border border-muted"
+      :loading="loadingEarningStatistics"
+      :data="summary"
+      :columns
+    >
+      <template #empty>
+        <UiResultNotFound />
+      </template>
+    </UTable>
+  </div>
 </template>

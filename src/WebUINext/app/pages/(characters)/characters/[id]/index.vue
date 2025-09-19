@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { useCharacter } from '~/composables/character/use-character'
 import { useCharacterRespec } from '~/composables/character/use-character-respec'
-import { useCharacterRetire } from '~/composables/character/use-character-retire'
-import { useCharacterTournament } from '~/composables/character/use-character-tournament'
+import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { useAsyncStateWithPoll } from '~/composables/utils/use-async-state'
-import { getCharacterStatistics } from '~/services/character-service'
+import { getCharacterStatistics, retireCharacter, setCharacterForTournament } from '~/services/character-service'
 import { pollCharacterStatisticsSymbol } from '~/symbols'
 
 const userStore = useUserStore()
+const { t } = useI18n()
 
 const { character, characterId } = useCharacter()
 
@@ -23,8 +23,25 @@ const {
 )
 
 const { respecCapability, onRespecializeCharacter } = useCharacterRespec()
-const { onRetireCharacter } = useCharacterRetire()
-const { onSetCharacterForTournament } = useCharacterTournament()
+
+const [onRetireCharacter] = useAsyncCallback(async () => {
+  await retireCharacter(characterId.value)
+  await Promise.all([
+    userStore.fetchUser(), // update experienceMultiplier
+    userStore.fetchCharacters(),
+  ])
+}, {
+  successMessage: t('character.settings.retire.notify.success'),
+  pageLoading: true,
+})
+
+const [onSetCharacterForTournament] = useAsyncCallback(async () => {
+  await setCharacterForTournament(characterId.value)
+  await userStore.fetchCharacters()
+}, {
+  successMessage: t('character.settings.tournament.notify.success'),
+  pageLoading: true,
+})
 </script>
 
 <template>

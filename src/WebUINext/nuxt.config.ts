@@ -108,11 +108,7 @@ export default defineNuxtConfig({
   ],
   // https://ui.nuxt.com/getting-started/installation/nuxt#options
   ui: {
-    // TODO:
     fonts: false,
-    theme: {
-      // colors: ['primary', 'secondary', 'neutral'],
-    },
   },
   runtimeConfig: {
     public: {
@@ -223,10 +219,10 @@ export default defineNuxtConfig({
               ]
             },
             ItemType: (schema) => {
-              schema.enum = [...schema.enum || [], 'Ranged', 'Ammo']
+              schema.enum = [...(schema.enum || []), 'Ranged', 'Ammo']
             },
             WeaponFlags: (schema) => {
-              schema.enum = [...schema.enum || [], 'CanReloadOnHorseback', 'CantUseOnHorseback']
+              schema.enum = [...(schema.enum || []), 'CanReloadOnHorseback', 'CantUseOnHorseback']
             },
             ItemMountComponentViewModel: (schema) => {
               // @ts-expect-error ///
@@ -286,7 +282,6 @@ export default defineNuxtConfig({
   },
 })
 
-// convert date-time format to timestamp
 function convertDateTimeToTimestamp(schema: OpenApiSchemaObject.V2_0_X | OpenApiSchemaObject.V3_0_X | OpenApiSchemaObject.V3_1_X, key: string) {
   // @ts-expect-error ///
   delete schema.properties[key].format

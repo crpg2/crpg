@@ -162,8 +162,9 @@ const nav = [
         >
           <UButton
             color="neutral"
-            variant="ghost"
+            variant="link"
             active-variant="soft"
+            active-color="primary"
             :active="isExactActive"
             size="xl"
             :label

@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import { usePageLoadingProvider } from '~/composables/app/use-page-loading'
 
-const { state: activePageLoading } = usePageLoadingProvider()
+const [activePageLoading] = usePageLoadingProvider()
+
+const { start, finish } = useLoadingIndicator()
+const { $poll } = useNuxtApp()
+
+watch(activePageLoading, () => {
+  activePageLoading.value ? start() : finish()
+})
 </script>
 
 <template>
@@ -14,6 +21,9 @@ const { state: activePageLoading } = usePageLoadingProvider()
       delayDuration: 300,
     }"
   >
+    {{ $poll.keys }}
+    {{ activePageLoading }}
+
     <NuxtLoadingIndicator color="rgb(210 187 138)" />
 
     <NuxtRouteAnnouncer />
@@ -46,5 +56,6 @@ const { state: activePageLoading } = usePageLoadingProvider()
     </NuxtErrorBoundary> -->
 
     <AppBundledSprite />
+    <PiniaColadaDevtools />
   </UApp>
 </template>

@@ -20,13 +20,13 @@ const timeAgo = useLocaleTimeAgo(latestPatch.value?.createdAt || new Date())
       <UCard
         variant="soft"
         :ui="{
-          root: 'bg-muted rounded-full backdrop-blur group shadow-xl hover:shadow-none',
-          body: 'sm:p-4',
+          root: 'bg-muted  backdrop-blur group shadow-xl hover:shadow-none',
+          body: 'sm:p-2.5',
         }"
       >
         <UiDataCell>
           <template #leftContent>
-            <UIcon name="crpg:trumpet" class="size-8 text-primary" />
+            <UIcon name="crpg:trumpet" class="size-10 text-primary" />
           </template>
 
           <UiDataContent

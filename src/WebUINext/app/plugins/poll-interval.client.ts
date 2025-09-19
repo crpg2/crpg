@@ -1,12 +1,13 @@
-type SubscriptionFn = () => Promise<any> | any
+type SubscriptionFn = () => Promise<unknown> | unknown
 // const INTERVAL = 1000 * 60 // 1 min
-const INTERVAL = 5000
+const INTERVAL = 3000
 
 export default defineNuxtPlugin(() => {
-  const subscriptions = new Map<symbol, SubscriptionFn>()
+  const subscriptions = ref(new Map<symbol, SubscriptionFn>())
 
+  const keys = computed(() => [...subscriptions.value.keys()])
   const timer = setInterval(async () => {
-    for (const [id, fn] of subscriptions) {
+    for (const [id, fn] of subscriptions.value) {
       Promise.resolve()
         .then(fn)
         .catch((err) => {
@@ -23,19 +24,16 @@ export default defineNuxtPlugin(() => {
     provide: {
       poll: {
         subscribe: (id: symbol, fn: SubscriptionFn) => {
-          subscriptions.delete(id)
-          subscriptions.set(id, fn)
-
-          return () => subscriptions.delete(id)
+          subscriptions.value.delete(id)
+          subscriptions.value.set(id, fn)
+          return () => subscriptions.value.delete(id)
         },
 
         unsubscribe: (id: symbol) => {
-          subscriptions.delete(id)
+          subscriptions.value.delete(id)
         },
 
-        getAll: () => {
-          return [...subscriptions.keys()]
-        },
+        keys,
       },
     },
   }

@@ -15,41 +15,44 @@ import {
 } from '~/services/character-service'
 import { pollCharacterItemsSymbol } from '~/symbols'
 
-export const useCharacterItems = (characterId: MaybeRefOrGetter<number>) => {
+import { useCharacter } from './use-character'
+
+export const useCharacterItems = () => {
+  const { characterId } = useCharacter()
   const userStore = useUserStore()
 
   const {
     state: characterItems,
     execute: loadCharacterItems,
     isLoading: loadingCharacterItems,
-  } = useAsyncStateWithPoll(
+  } = useAsyncState(
     () => getCharacterItems(toValue(characterId)),
     [],
-    { pollKey: pollCharacterItemsSymbol, pageLoading: true },
-  )
-
-  const {
-    execute: onUpdateCharacterItems,
-    isLoading: updatingCharacterItems,
-  } = useAsyncCallback(
-    async (itemIds: EquippedItemId[]) => {
-      characterItems.value = await updateCharacterItems(toValue(characterId), itemIds)
-    },
     {
-      pageLoading: true,
+      // pollKey: pollCharacterItemsSymbol,
+      // pageLoading: true,
     },
   )
 
-  const equippedItemsBySlot = computed<UserItemsBySlot>(() =>
-    characterItems.value.reduce((out, ei) => {
+  const equippedItemsBySlot = computed(() => {
+    return characterItems.value.reduce((out, ei) => {
       out[ei.slot] = ei.userItem
       return out
-    }, {} as UserItemsBySlot),
+    }, {} as UserItemsBySlot)
+  })
+
+  const [onUpdateCharacterItems, updatingCharacterItems] = useAsyncCallback(
+    async (itemIds: EquippedItemId[]) => {
+      await updateCharacterItems(toValue(characterId), itemIds)
+      await loadCharacterItems()
+    },
+    {
+      // pageLoading: true,
+    },
   )
 
-  const itemsOverallStats = computed((): CharacterOverallItemsStats => {
+  const itemsOverallStats = computed<CharacterOverallItemsStats>(() => {
     const items = characterItems.value.map(ei => ei.userItem.item)
-
     return {
       averageRepairCostByHour: computeOverallAverageRepairCostByHour(items),
       longestWeaponLength: computeLongestWeaponLength(items),

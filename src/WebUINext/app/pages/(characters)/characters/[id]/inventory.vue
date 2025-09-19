@@ -15,7 +15,8 @@ import { useItemDetail } from '~/composables/character/inventory/use-item-detail
 import { useCharacter } from '~/composables/character/use-character'
 import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
 import { useCharacterItems } from '~/composables/character/use-character-items'
-import { validateItemNotMeetRequirement } from '~/services/character-service'
+import { useAsyncStateWithPoll } from '~/composables/utils/use-async-state'
+import { getCharacterItems, validateItemNotMeetRequirement } from '~/services/character-service'
 import { getClanArmoryItemLender, getClanMembers } from '~/services/clan-service'
 import { getAggregationsConfig } from '~/services/item-search-service'
 import { createItemIndex } from '~/services/item-search-service/indexator'
@@ -27,7 +28,29 @@ const { clan, user, userItems } = toRefs(userStore)
 
 const { t } = useI18n()
 const { mainHeaderHeight } = useMainHeader()
-const { characterId } = useCharacter()
+
+// const {
+//   state: characterItems,
+//   execute: loadCharacterItems,
+//   isLoading: loadingCharacterItems,
+// } = useAsyncStateWithPoll(
+//   () => getCharacterItems(toValue(characterId)),
+//   [],
+//   {
+//     // pollKey: pollCharacterItemsSymbol,
+//     // pageLoading: true,
+//   },
+// )
+
+const {
+  characterItems,
+  equippedItemsBySlot,
+  itemsOverallStats,
+  equippedItemIds,
+  upkeepIsHigh,
+} = useCharacterItems()
+
+//
 
 const {
   onSellUserItem,
@@ -39,14 +62,7 @@ const {
   onReturnToClanArmory,
 } = useCharacterInventory()
 
-const {
-  equippedItemsBySlot,
-  itemsOverallStats,
-  equippedItemIds,
-  upkeepIsHigh,
-} = useCharacterItems(characterId)
-
-const { characterCharacteristics, healthPoints } = useCharacterCharacteristic(characterId)
+const { characterCharacteristics, healthPoints } = useCharacterCharacteristic()
 
 const { onDragEnd, onDragStart, dragging } = useInventoryDnD()
 const { onQuickEquip } = useInventoryQuickEquip()
@@ -135,6 +151,9 @@ const items = computed(() => {
 <template>
   <div class="relative grid grid-cols-12 gap-5">
     <div class="col-span-5">
+      {{ characterItems }}
+      {{ Object.keys(equippedItemsBySlot) }}
+
       <ItemGrid
         v-if="Boolean(userItems.length)"
         v-model:sorting="sortingModel"
@@ -241,7 +260,6 @@ const items = computed(() => {
         style="grid-area: footer"
         variant="soft"
         class="mt-3"
-
         :ui="{ body: 'justify-center flex', root: 'backdrop-blur-lg' }"
       >
         <UiKbdCombination

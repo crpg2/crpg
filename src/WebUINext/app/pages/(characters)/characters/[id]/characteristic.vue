@@ -88,8 +88,6 @@ const { respecCapability, onRespecializeCharacter } = useCharacterRespec(loadCha
         />
       </AppConfirmActionPopover>
 
-      <USeparator orientation="vertical" class="h-8" />
-
       <div>
         <CharacterActionRespec
           :character

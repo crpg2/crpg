@@ -3,8 +3,7 @@ import type { UseAsyncStateOptions, UseAsyncStateReturn } from '@vueuse/core'
 import { useAsyncState as _useAsyncState } from '@vueuse/core'
 
 import { usePageLoading } from '~/composables/app/use-page-loading'
-
-import { usePollInterval } from './use-poll-interval'
+import { usePollInterval } from '~/composables/utils/use-poll-interval'
 
 type UseAsyncStateWithPollOptions<Shallow extends boolean, Data = any> = UseAsyncStateOptions<Shallow, Data> & {
   pollKey?: symbol
@@ -34,7 +33,7 @@ export function useAsyncStateWithPoll<Data, Params extends any[] = any[], Shallo
   }
 
   if (pageLoading) {
-    usePageLoading([isLoading])
+    usePageLoading(isLoading)
   }
 
   return {

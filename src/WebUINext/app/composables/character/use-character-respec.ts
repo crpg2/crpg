@@ -5,12 +5,12 @@ import { useUserStore } from '~/stores/user'
 import { useCharacter } from './use-character'
 import { useCharacterLimitations } from './use-character-limitations'
 
-export const useCharacterRespec = (onSuccess?: () => void) => {
+export const useCharacterRespec = (onSuccessRespecializeCharacter?: () => void) => {
   const { t } = useI18n()
 
   const userStore = useUserStore()
   const { character, characterId } = useCharacter()
-  const { characterLimitations, loadCharacterLimitations } = useCharacterLimitations(characterId)
+  const { characterLimitations, loadCharacterLimitations } = useCharacterLimitations()
 
   const respecCapability = computed(() => getRespecCapability(
     character.value,
@@ -35,7 +35,7 @@ export const useCharacterRespec = (onSuccess?: () => void) => {
     {
       pageLoading: true,
       successMessage: t('character.settings.respecialize.notify.success'),
-      onSuccess,
+      onSuccess: onSuccessRespecializeCharacter,
     },
   )
 
