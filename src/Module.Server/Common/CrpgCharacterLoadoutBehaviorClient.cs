@@ -8,6 +8,7 @@ using Crpg.Module.Api.Models.Restrictions;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common.Network;
 using Messages.FromClient.ToLobbyServer;
+using TaleWorlds.CampaignSystem.Extensions;
 using TaleWorlds.Core;
 using TaleWorlds.Diamond;
 using TaleWorlds.Engine;
@@ -23,6 +24,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 {
     private readonly List<CrpgEquippedItemExtended> _equippedItems = new();
     private readonly List<CrpgUserItemExtended> _userInventoryItems = new();
+    private readonly List<CrpgClanArmoryItem> _clanArmoryItems = new();
     private MissionNetworkComponent? _missionNetworkComponent;
 
     // Public read-only access
@@ -33,6 +35,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     public CrpgConstants Constants { get; }
 
     internal event Action? OnUserInventoryUpdated;
+    internal event Action? OnClanArmoryUpdated;
     internal event Action? OnUserCharacterEquippedItemsUpdated;
     internal event Action? OnUserCharacterBasicUpdated;
     internal event Action? OnUserCharacteristicsUpdated;
@@ -195,6 +198,12 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         _userInventoryItems.AddRange(items);
     }
 
+    internal void SetClanArmoryItems(IEnumerable<CrpgClanArmoryItem> armoryItems)
+    {
+        _clanArmoryItems.Clear();
+        _clanArmoryItems.AddRange(armoryItems);
+    }
+
     internal void SetUserCharacterBasic(CrpgCharacter crpgCharacter)
     {
         UserCharacter = crpgCharacter;
@@ -215,12 +224,89 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         registerer.Register<ServerSendUpdateCharacteristicsResult>(HandleUpdateCharacteristicsResult); // recieve result of attempt to update character characteristics on api from server
         registerer.Register<ServerSendConvertCharacteristicsResult>(HandleConvertCharacteristicsResult);
         registerer.Register<ServerSendUserCharacterStatistics>(HandleUpdateCharacterStatistics);
+        registerer.Register<ServerSendArmoryActionResult>(HandleRecieveArmoryActionResult);
     }
 
     private void OnMyClientSynchronized()
     {
         LogDebug("OnMyClientSynchronized:");
         RequestGetUpdatedEquipmentAndItems();
+    }
+
+    private void HandleRecieveArmoryActionResult(ServerSendArmoryActionResult message)
+    {
+        LogDebug($"[CrpgCharacterLoadoutBehavior] HandleRecieveArmoryActionResult");
+        if (!message.Success)
+        {
+            LogDebugError($"Armory:{message.ActionType} failed: {message.ErrorMessage}");
+            return;
+        }
+
+        switch (message.ActionType)
+        {
+            case ClanArmoryActionType.Add:
+                {
+                    LogDebugError($"userItem: {message.UserItemId} added to clanId: {message.ClanId} armory successfully!");
+                    //TODO update item for gui with event
+                }
+
+                break;
+
+            case ClanArmoryActionType.Remove:
+                {
+                    LogDebugError($"userItem: {message.UserItemId} removed from clanId: {message.ClanId} armory successfully!");
+                    //TODO update item for gui with event
+                }
+
+                break;
+
+            case ClanArmoryActionType.Borrow:
+                {
+                    LogDebugError($"userItem: {message.UserItemId} borrowed from clanId: {message.ClanId} armory successfully!");
+                    //TODO update item for gui with event
+                }
+
+                break;
+
+            case ClanArmoryActionType.Return:
+                {
+                    LogDebugError($"userItem: {message.UserItemId} returned to clanId: {message.ClanId} armory successfully!");
+                    //TODO update item for gui with event
+                }
+
+                break;
+
+            case ClanArmoryActionType.Get:
+                {
+                    LogDebugError($"userItem: {message.UserItemId} got clanId: {message.ClanId} armory list successfully!");
+                    if (message.ArmoryItems != null)
+                    {
+                        foreach (var armoryItem in message.ArmoryItems)
+                        {
+                            if (armoryItem.UserItem != null)
+                            {
+                                Debug.Print($"Armory Item Id: {armoryItem.UserItem.ItemId}, Rank: {armoryItem.UserItem.Rank}");
+                            }
+                            else if (armoryItem.BorrowedItem != null)
+                            {
+                                Debug.Print($"Borrowed Item Id: {armoryItem.BorrowedItem.UserItemId} by UserId: {armoryItem.BorrowedItem.BorrowerUserId}");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Debug.Print("No items in armory.");
+                    }
+                    //TODO Handle list of items for gui with event
+                }
+
+                break;
+
+            default:
+                message.ErrorMessage = "Unknown action type.";
+                LogDebugError($"HandleUserRequestClanArmoryActionAsync-- Unknown Action: {message.ActionType}");
+                break;
+        }
     }
 
     /// <summary>

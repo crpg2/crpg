@@ -143,8 +143,7 @@ public partial class MainViewModel : ObservableObject
         return CanUpdate;
     }
 
-    //public ICommand StartUpdateCrpgCommand => IsGameUpToDate ? StartCrpgCommand : UpdateGameFilesCommand;
-    public ICommand StartUpdateCrpgCommand => StartCrpgCommand;
+    public ICommand StartUpdateCrpgCommand => IsGameUpToDate ? StartCrpgCommand : UpdateGameFilesCommand;
 
     [RelayCommand(CanExecute = nameof(CanStartCrpg))]
     private void StartCrpg()

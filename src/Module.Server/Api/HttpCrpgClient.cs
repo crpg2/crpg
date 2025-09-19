@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Http.Headers;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using Crpg.Module.Api.Exceptions;
 using Crpg.Module.Api.Models;
@@ -135,6 +136,33 @@ internal class HttpCrpgClient : ICrpgClient
         return Get<CrpgClan>("games/clans/" + clanId, null, cancellationToken);
     }
 
+    public Task<CrpgResult<IList<CrpgClanArmoryItem>>> GetClanArmoryAsync(int clanId, CancellationToken cancellationToken = default)
+    {
+        return Get<IList<CrpgClanArmoryItem>>("games/clans/" + clanId + "/armory", null, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgClanArmoryItem>> ClanArmoryAddItemAsync(int clanId, CrpgGameClanArmoryAddItemRequest req, CancellationToken cancellationToken = default)
+    {
+        return Put<CrpgGameClanArmoryAddItemRequest, CrpgClanArmoryItem>("games/clans/" + clanId + "/armory", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<object>> RemoveClanArmoryItemAsync(int clanId, int userItemId, int userId,
+        CancellationToken cancellationToken = default)
+    {
+        var req = new { UserId = userId }; // anonymous type for JSON body
+        return Delete<object, object>($"games/clans/{clanId}/armory/{userItemId}", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgClanArmoryBorrowedItem>> ClanArmoryBorrowItemAsync(int clanId, int userItemId, CrpgGameBorrowClanArmoryItemRequest req, CancellationToken cancellationToken = default)
+    {
+        return Put<CrpgGameBorrowClanArmoryItemRequest, CrpgClanArmoryBorrowedItem>($"games/clans/{clanId}/armory/{userItemId}/borrow", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgClanArmoryBorrowedItem>> ClanArmoryReturnItemAsync(int clanId, int userItemId, CrpgGameBorrowClanArmoryItemRequest req, CancellationToken cancellationToken = default)
+    {
+        return Put<CrpgGameBorrowClanArmoryItemRequest, CrpgClanArmoryBorrowedItem>($"games/clans/{clanId}/armory/{userItemId}/borrow", req, cancellationToken);
+    }
+
     public Task<CrpgResult<CrpgUsersUpdateResponse>> UpdateUsersAsync(CrpgGameUsersUpdateRequest req, CancellationToken cancellationToken = default)
     {
         return Put<CrpgGameUsersUpdateRequest, CrpgUsersUpdateResponse>("games/users", req, cancellationToken);
@@ -180,6 +208,21 @@ internal class HttpCrpgClient : ICrpgClient
 
         return Send<TResponse>(msg, cancellationToken);
     }
+
+    private Task<CrpgResult<TResponse>> Delete<TRequest, TResponse>(string requestUri, TRequest? payload,
+        CancellationToken cancellationToken) where TResponse : class
+    {
+        HttpRequestMessage msg = new(HttpMethod.Delete, requestUri);
+
+        if (payload != null)
+        {
+            string json = JsonConvert.SerializeObject(payload, _serializerSettings);
+            msg.Content = new StringContent(json, Encoding.UTF8, "application/json");
+        }
+
+        return Send<TResponse>(msg, cancellationToken);
+    }
+
 
     private async Task<CrpgResult<TResponse>> Send<TResponse>(HttpRequestMessage msg, CancellationToken cancellationToken) where TResponse : class
     {

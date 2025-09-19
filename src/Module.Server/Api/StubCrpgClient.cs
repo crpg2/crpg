@@ -112,6 +112,32 @@ internal class StubCrpgClient : ICrpgClient
         throw new NotImplementedException();
     }
 
+    public Task<CrpgResult<IList<CrpgClanArmoryItem>>> GetClanArmoryAsync(int clanId, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<CrpgClanArmoryItem>> ClanArmoryAddItemAsync(int clanId, CrpgGameClanArmoryAddItemRequest req, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<object>> RemoveClanArmoryItemAsync(int clanId, int userItemId, int userId,
+        CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<CrpgClanArmoryBorrowedItem>> ClanArmoryBorrowItemAsync(int clanId, int userItemId, CrpgGameBorrowClanArmoryItemRequest req, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<CrpgClanArmoryBorrowedItem>> ClanArmoryReturnItemAsync(int clanId, int userItemId, CrpgGameBorrowClanArmoryItemRequest req, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task<CrpgResult<CrpgUsersUpdateResponse>> UpdateUsersAsync(CrpgGameUsersUpdateRequest req, CancellationToken cancellationToken = default)
     {
         return Task.FromResult(new CrpgResult<CrpgUsersUpdateResponse>

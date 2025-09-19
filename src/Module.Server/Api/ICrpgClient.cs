@@ -20,6 +20,18 @@ internal interface ICrpgClient : IDisposable
 
     Task<CrpgResult<CrpgClan>> GetClanAsync(int clanId, CancellationToken cancellationToken = default);
 
+    Task<CrpgResult<IList<CrpgClanArmoryItem>>> GetClanArmoryAsync(int clanId,
+        CancellationToken cancellationToken = default);
+
+    Task<CrpgResult<CrpgClanArmoryItem>> ClanArmoryAddItemAsync(int clanId, CrpgGameClanArmoryAddItemRequest req,
+        CancellationToken cancellationToken = default);
+
+    Task<CrpgResult<object>> RemoveClanArmoryItemAsync(int clanId, int userItemId, int userId,
+       CancellationToken cancellationToken = default);
+
+    Task<CrpgResult<CrpgClanArmoryBorrowedItem>> ClanArmoryBorrowItemAsync(int clanId, int userItemId, CrpgGameBorrowClanArmoryItemRequest req, CancellationToken cancellationToken = default);
+
+    Task<CrpgResult<CrpgClanArmoryBorrowedItem>> ClanArmoryReturnItemAsync(int clanId, int userItemId, CrpgGameBorrowClanArmoryItemRequest req, CancellationToken cancellationToken = default);
     Task<CrpgResult<CrpgUsersUpdateResponse>> UpdateUsersAsync(CrpgGameUsersUpdateRequest req,
         CancellationToken cancellationToken = default);
 

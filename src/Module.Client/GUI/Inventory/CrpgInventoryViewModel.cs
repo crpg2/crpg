@@ -91,6 +91,7 @@ public class CrpgInventoryViewModel : ViewModel
         {
             behavior.OnSlotUpdated += HandleSlotUpdated;
             behavior.OnUserInventoryUpdated += HandleInventoryUpdated;
+            behavior.OnClanArmoryUpdated += HandleClanArmoryUpdated;
             behavior.OnUserCharacterEquippedItemsUpdated += HandleEquippedItemsUpdated;
             behavior.OnUserCharacterBasicUpdated += HandleUserCharacterBasicUpdated;
             behavior.OnUserCharacteristicsUpdated += HandleUserCharacteristicsUpdated;
@@ -115,6 +116,7 @@ public class CrpgInventoryViewModel : ViewModel
         {
             behavior.OnSlotUpdated -= HandleSlotUpdated;
             behavior.OnUserInventoryUpdated -= HandleInventoryUpdated;
+            behavior.OnClanArmoryUpdated += HandleClanArmoryUpdated;
             behavior.OnUserCharacterEquippedItemsUpdated -= HandleEquippedItemsUpdated;
             behavior.OnUserCharacterBasicUpdated -= HandleUserCharacterBasicUpdated;
             behavior.OnUserCharacteristicsUpdated -= HandleUserCharacteristicsUpdated;
@@ -466,6 +468,18 @@ public class CrpgInventoryViewModel : ViewModel
 
         OnPropertyChanged(nameof(InventoryGrid));
         LogDebug($"[CrpgInventoryVM] Inventory updated with {items.Count} items");
+    }
+
+    private void HandleClanArmoryUpdated()
+    {
+        LogDebug("[CrpgInventoryVM] HandleClanArmoryUpdated called");
+
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (behavior == null)
+        {
+            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found", Colors.Red);
+            return;
+        }
     }
 
     private void HandleEquippedItemsUpdated()
