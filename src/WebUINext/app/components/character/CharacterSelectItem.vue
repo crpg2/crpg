@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { Character } from '~/models/character'
 
-const { character } = defineProps<{
+defineProps<{
   character: Character
+  isSelected: boolean
 }>()
 
 const modelValue = defineModel<boolean>({ default: false })
@@ -26,6 +27,6 @@ const modelValue = defineModel<boolean>({ default: false })
       </template>
     </UTooltip>
 
-    <CharacterMedia :character />
+    <CharacterMedia :character :class="{ 'text-primary': isSelected }" />
   </div>
 </template>

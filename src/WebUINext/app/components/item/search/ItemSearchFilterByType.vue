@@ -62,6 +62,11 @@ const weaponClassOptions = computed(() => {
       leadingIcon: 'size-7',
     }"
   >
+    <template #leading="{ item }">
+      <UTooltip :text="$t(`item.type.${item.value}`)">
+        <UIcon v-if="item.icon" :name="item.icon" class="size-7 outline-0 select-none" />
+      </UTooltip>
+    </template>
     <template
       v-if="hasWeaponClassesByItemType(itemType) && Boolean(weaponClassOptions.length)"
       #default="{ item }"

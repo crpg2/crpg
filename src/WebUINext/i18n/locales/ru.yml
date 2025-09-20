@@ -430,7 +430,7 @@ character:
           loomsPoints: Очки
       dialog:
         title: Отставка персонажа
-        desc: Вы уверены что хотите отправить персонажа в отставку?
+        desc: Вы уверены что хотите отправить персонажа {character} в отставку?
         reward: 'Вы получите: {heirloom}, {multiplierBonus} к модификатору опыта.'
       notify:
         success: Персонаж в отставке

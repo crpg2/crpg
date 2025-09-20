@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { TabsItem } from '@nuxt/ui'
+
 import type { CharacterStatistics } from '~/models/character'
 import type { GameMode } from '~/models/game-mode'
 
@@ -10,6 +12,8 @@ import { msToHours } from '~/utils/date'
 const { characterStatistics } = defineProps<{
   characterStatistics: Partial<Record<GameMode, CharacterStatistics>>
 }>()
+
+const { t } = useI18n()
 
 const gameMode = ref<GameMode>(GAME_MODE.CRPGBattle)
 const isRankedGameMode = computed(() => checkIsRankedGameMode(gameMode.value))
@@ -25,23 +29,23 @@ const kdaRatio = computed(() =>
     ? '∞'
     : getCharacterKDARatio(gameModeCharacterStatistics.value),
 )
+
+const GameModeItems = computed(() => Object.values(ACTUAL_GAME_MODES).map<TabsItem>(gm => ({
+  icon: `crpg:${gameModeToIcon[gm]}`,
+  label: t(`game-mode.${gm}`),
+  value: gm,
+})))
 </script>
 
 <template>
   <div class="space-y-6">
-    <div class="flex flex-wrap gap-2">
-      <UButton
-        v-for="gm in Object.values(ACTUAL_GAME_MODES)"
-        :key="gm"
-        color="neutral"
-        variant="ghost"
-        active-variant="soft"
-        :active="gm === gameMode"
-        :icon="`crpg:${gameModeToIcon[gm]}`"
-        :label="$t(`game-mode.${gm}`, 0)"
-        @click="gameMode = gm"
-      />
-    </div>
+    <UTabs
+      v-model="gameMode"
+      :items="GameModeItems"
+      :content="false"
+      color="neutral"
+      size="xl"
+    />
 
     <div class="grid grid-cols-2 gap-2">
       <UiSimpleTableRow

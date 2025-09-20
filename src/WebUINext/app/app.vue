@@ -55,8 +55,8 @@ watch(activePageLoading, () => {
 
     <AppBundledSprite />
 
-    <Teleport to="body">
+    <!-- <Teleport to="body">
       <UiLoading :active="activePageLoading" full-page />
-    </Teleport>
+    </Teleport> -->
   </UApp>
 </template>

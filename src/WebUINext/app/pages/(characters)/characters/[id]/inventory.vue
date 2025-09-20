@@ -150,6 +150,7 @@ const items = computed(() => {
           <UDropdownMenu
             :items="additionalFilteritems"
             :modal="false"
+            size="xl"
           >
             <UChip
               inset
@@ -229,8 +230,8 @@ const items = computed(() => {
     </div>
 
     <div
-      class="sticky top-0 left-0 col-span-5 self-start"
-      :style="{ top: `calc(${mainHeaderHeight}px + 1rem)` }"
+      class="sticky left-0 col-span-5 self-start"
+      :style="{ top: `calc(${mainHeaderHeight}px + 2rem)` }"
     >
       <CharacterInventoryDoll
         :character-characteristics="characterCharacteristics"

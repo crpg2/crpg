@@ -39,9 +39,11 @@ export const useCharacters = () => {
 }
 
 export const useCharacterProvider = (character: MaybeRefOrGetter<Character>) => {
+  console.log('useCharacterProvideruseCharacterProvideruseCharacterProvideruseCharacterProvider', toValue(character))
+
   provide(characterKey, {
     character: computed(() => toValue(character)),
-    characterId: computed(() => toValue(character).id),
+    characterId: computed(() => toValue(character)?.id),
   })
 }
 

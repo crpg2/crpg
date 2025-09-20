@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
 
+import { CharacterActionRetireConfirmDialog } from '#components'
 import {
   experienceMultiplierByGeneration,
   maxExperienceMultiplierForGeneration,
@@ -11,27 +12,24 @@ import {
 import type { Character } from '~/models/character'
 import type { HeirloomPointByLevelAggregation } from '~/services/character-service'
 
-import { canRetireValidate, getExperienceMultiplierBonus, getHeirloomPointByLevel, getHeirloomPointByLevelAggregation } from '~/services/character-service'
+import { canRetireValidate, getHeirloomPointByLevel, getHeirloomPointByLevelAggregation } from '~/services/character-service'
 
-const props = defineProps<{
+const { character, userExperienceMultiplier } = defineProps<{
   character: Character
   userExperienceMultiplier: number
 }>()
 
-defineEmits<{
+const emit = defineEmits<{
   retire: []
 }>()
 
 const { t } = useI18n()
 
-const canRetire = computed(() => canRetireValidate(props.character.level))
-
-const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
+const canRetire = computed(() => canRetireValidate(character.level))
 
 const retireTableData = computed(() => getHeirloomPointByLevelAggregation())
-const heirloomPointByLevel = computed(() => getHeirloomPointByLevel(props.character.level))
 
-const experienceMultiplierBonus = computed(() => getExperienceMultiplierBonus(props.userExperienceMultiplier))
+const heirloomPointByLevel = computed(() => getHeirloomPointByLevel(character.level))
 
 const columns: TableColumn<HeirloomPointByLevelAggregation>[] = [
   {
@@ -41,25 +39,41 @@ const columns: TableColumn<HeirloomPointByLevelAggregation>[] = [
   {
     accessorKey: 'points',
     header: t('character.settings.retire.loomPointsTable.cols.loomsPoints'),
+    cell: (cellProps) => {
+      const points = cellProps.getValue()
+      return `${points}${points === heirloomPointByLevel.value ? ' (you here)' : ''}`
+    },
   },
 ]
+
+const overlay = useOverlay()
+
+const confirmDialog = overlay.create(CharacterActionRetireConfirmDialog)
+
+async function retire() {
+  if (!(await confirmDialog.open({ character, userExperienceMultiplier }))) {
+    return
+  }
+
+  emit('retire')
+}
 </script>
 
 <template>
   <UTooltip
+    :content="{ side: 'right' }"
     :ui="{
-      content: 'max-w-96',
+      content: 'max-w-96 max-h-[480px] overflow-y-auto block',
     }"
   >
     <UButton
       variant="outline"
       :disabled="!canRetire"
       size="xl"
-      block
       icon="crpg:child"
       data-aq-character-action="retire"
       :label="$t('character.settings.retire.title')"
-      @click="toggleConfirmDialog(true)"
+      @click="retire"
     />
 
     <template #content>
@@ -121,40 +135,4 @@ const columns: TableColumn<HeirloomPointByLevelAggregation>[] = [
       </div>
     </template>
   </UTooltip>
-
-  <AppConfirmActionDialog
-    :open="shownConfirmDialog"
-    :title="$t('character.settings.respecialize.dialog.title')"
-    :confirm="character.name"
-    :confirm-label="$t('action.confirm')"
-    @cancel="toggleConfirmDialog(false);"
-    @confirm="() => {
-      $emit('retire');
-      toggleConfirmDialog(false);
-    }"
-    @update:open="toggleConfirmDialog(false)"
-  >
-    <template #description>
-      <div>
-        <p>{{ $t('character.settings.retire.dialog.desc') }}</p>
-        <i18n-t
-          scope="global"
-          keypath="character.settings.retire.dialog.reward"
-          tag="p"
-        >
-          <template #heirloom>
-            <AppLoom :point="heirloomPointByLevel" />
-          </template>
-          <template #multiplierBonus>
-            <span class="font-bold text-success">
-              +{{ $n(experienceMultiplierBonus, 'percent', { minimumFractionDigits: 0 }) }}
-            </span>
-          </template>
-          <template #resetLevel>
-            <span class="font-bold">{{ minimumLevel }}</span>
-          </template>
-        </i18n-t>
-      </div>
-    </template>
-  </AppConfirmActionDialog>
 </template>

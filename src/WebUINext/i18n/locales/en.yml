@@ -465,7 +465,7 @@ character:
           loomsPoints: Points
       dialog:
         title: Retire character
-        desc: Are you sure you want to retire your character?
+        desc: Are you sure you want to retire your character {character}?
         reward: 'You will get: {heirloom}, {multiplierBonus} exp. multiplier. The char will be reset to level {resetLevel}'
       notify:
         success: Character retired

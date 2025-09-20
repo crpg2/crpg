@@ -48,9 +48,8 @@ const onConfirm = async () => {
 <template>
   <UModal
     :title
-    :dismissible="false"
     :ui="{
-      body: 'space-y-4 text-center',
+      body: 'space-y-5 text-center',
       footer: 'flex items-center justify-center gap-4',
     }"
   >
@@ -59,9 +58,10 @@ const onConfirm = async () => {
     <template #body>
       <UAlert
         color="warning"
-        variant="subtle"
-        icon="crpg:alert-circle"
-        title="dwd"
+        variant="outline"
+        :ui="{
+          root: 'ring-5',
+        }"
       >
         <template #title>
           <slot name="title">

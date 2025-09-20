@@ -100,7 +100,7 @@ const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, ro
   <div class="itemGrid grid h-full items-start gap-x-3 gap-y-4">
     <div
       ref="aside"
-      style="grid-area: filter"
+      style="grid-area: aside"
       class="sticky top-0 left-0 flex flex-col items-center justify-center space-y-2"
       :style="{ top: `${stickySidebarTop}px` }"
     >
@@ -112,45 +112,35 @@ const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, ro
       />
     </div>
 
-    <div
-      style="grid-area: sort"
-      class="
-        grid grid-cols-3 gap-4
-        2xl:grid-cols-4
-      "
-    >
-      <div
-        class="
-          col-span-2 flex gap-4
-          2xl:col-span-2
-        "
+    <div style="grid-area: topbar" class="grid grid-cols-5 gap-3">
+      <UInput
+        v-model="filterByNameModel"
+        :placeholder="$t('action.search')"
+        icon="crpg:search"
+        variant="subtle"
+        class="col-span-3 w-full"
+        size="xl"
       >
-        <slot name="filter-leading" />
+        <template v-if="filterByNameModel?.length" #trailing>
+          <UiInputClear @click="filterByNameModel = ''" />
+        </template>
+      </UInput>
 
-        <UInput
-          v-model="filterByNameModel"
-          :placeholder="$t('action.search')"
-          icon="crpg:search"
-          variant="subtle"
-          class="w-full"
+      <div class="col-span-2 flex gap-3">
+        <USelect
+          v-model="sortingModel"
+          class="col-span-2 w-full"
+          :items="sortingItems"
           size="xl"
-        >
-          <template v-if="filterByNameModel?.length" #trailing>
-            <UiInputClear @click="filterByNameModel = ''" />
-          </template>
-        </UInput>
-      </div>
+          trailing-icon="crpg:arrow-up-down"
+        />
 
-      <USelect
-        v-model="sortingModel"
-        class="col-span-2 w-full"
-        :items="sortingItems"
-        trailing-icon="crpg:arrow-up-down"
-      />
+        <slot name="filter-leading" />
+      </div>
     </div>
 
     <div
-      style="grid-area: items"
+      style="grid-area: result"
       class="
         grid grid-cols-3 gap-2
         2xl:grid-cols-4
@@ -187,9 +177,9 @@ const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, ro
 <style lang="css">
 .itemGrid {
   grid-template-areas:
-    'sort sort'
-    'filter items'
-    'filter footer';
+    'topbar topbar'
+    'aside result'
+    'aside footer';
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto;
 }

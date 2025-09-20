@@ -18,17 +18,10 @@ const emit = defineEmits<{
 
 const overlay = useOverlay()
 
-const confirmDialog = overlay.create(LazyCharacterActionRespecConfirmDialog, {
-  props: {
-    character,
-    respecCapability,
-  },
-})
+const confirmDialog = overlay.create(LazyCharacterActionRespecConfirmDialog)
 
 async function respec() {
-  const confirm = await confirmDialog.open()
-
-  if (!confirm) {
+  if (!(await confirmDialog.open({ character, respecCapability }))) {
     return
   }
 
@@ -45,7 +38,6 @@ async function respec() {
     <UButton
       size="xl"
       variant="outline"
-      block
       :disabled="!respecCapability.enabled"
       icon="crpg:chevron-down-double"
       data-aq-character-action="respecialize"

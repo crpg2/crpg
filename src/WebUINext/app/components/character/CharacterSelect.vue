@@ -51,9 +51,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
       variant="outline"
       size="xl"
     >
-      <CharacterMedia
-        :character="currentCharacter"
-      />
+      <CharacterMedia :character="currentCharacter" />
 
       <UTooltip
         v-if="!activeCharacterId"
@@ -103,8 +101,9 @@ const items = computed<DropdownMenuItem[][]>(() => [
 
     <template #character="{ item }: { item: { character: Character } }">
       <CharacterSelectItem
-        :model-value="activeCharacterId === item.character.id"
         :character="item.character"
+        :is-selected="currentCharacter.id === item.character.id"
+        :model-value="activeCharacterId === item.character.id"
         @update:model-value="(val) => $emit('activate', item.character.id, val)"
       />
     </template>

@@ -2,7 +2,6 @@
 import type { RouteNamedMap } from 'vue-router/auto-routes'
 
 import { LazyCharacterCreateModal, LazyCharacterEditModal } from '#components'
-import { delay } from 'es-toolkit'
 
 import { useCharacterProvider, useCharacters } from '~/composables/character/use-character'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
@@ -12,13 +11,13 @@ const { t } = useI18n()
 const route = useRoute('characters-id')
 
 const userStore = useUserStore()
-const { characters, refreshCharacters, fallbackCharacterId, activeCharacterId } = useCharacters()
+const { characters, refreshCharacters, activeCharacterId } = useCharacters()
 
-const _character = characters.value.find(c => c.id === Number(route.params.id))
-if (!_character) {
-  await navigateTo({ name: 'characters' })
+if (!characters.value.find(c => c.id === Number(route.params.id))) {
+  throw createError({ statusCode: 404, statusMessage: 'Character not found' })
 }
-const character = computed(() => _character!)
+
+const character = computed(() => characters.value.find(c => c.id === Number(route.params.id))!)
 useCharacterProvider(character)
 
 const overlay = useOverlay()
@@ -67,13 +66,10 @@ const [onDeleteCharacter] = useAsyncCallback(
     }
 
     await deleteCharacter(character.value.id)
-    await refreshCharacters()
 
-    if (fallbackCharacterId.value) {
-      return navigateTo({ name: 'characters-id', params: { id: fallbackCharacterId.value } })
-    }
-
-    return navigateTo({ name: 'characters' })
+    return navigateTo({ name: 'characters' }, {
+      external: true,
+    })
   },
   {
     successMessage: t('character.settings.delete.notify.success'),
@@ -106,6 +102,7 @@ const nav = [
 <template>
   <div>
     <div
+      v-if="character"
       class="mb-12 grid grid-cols-3 items-center gap-4"
     >
       <div class="flex items-center gap-4">
@@ -133,7 +130,7 @@ const nav = [
           v-for="{ name, label } in nav"
           :key="name"
           v-slot="{ isExactActive }"
-          :to="({ name })"
+          :to="({ name, params: { id: character.id } })"
         >
           <UButton
             color="neutral"
