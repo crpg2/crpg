@@ -20,12 +20,12 @@ export const useInventoryDnD = () => {
   const { t } = useI18n()
 
   const { onUpdateCharacterItems, equippedItemsBySlot } = useCharacterItems()
-  const { getUnEquipItemsLinked, isEquipItemAllowed } = useInventoryEquipment()
+  const { getUnEquipItemsLinked, validateIsEquipItemAllowed } = useInventoryEquipment()
 
   const onDragStart = (item: UserItem | null = null, slot: ItemSlot | null = null) => {
     toggleDragging(true)
 
-    if (!item || !isEquipItemAllowed(item)) {
+    if (!item || !validateIsEquipItemAllowed(item)) {
       return
     }
 

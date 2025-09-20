@@ -2,12 +2,14 @@
 import type { Item } from '~/models/item'
 
 import { useItem } from '~/composables/item/use-item'
+import { getRankColor } from '~/services/item-service'
 
 const { item } = defineProps<{
   item: Item
 }>()
 
 const { thumb } = useItem(() => item)
+const rankColor = computed(() => getRankColor(item.rank))
 </script>
 
 <template>
@@ -16,6 +18,13 @@ const { thumb } = useItem(() => item)
       relative h-24 items-center justify-center rounded-md bg-elevated ring-2 ring-transparent
       hover:ring-accented
     "
+    :style="[
+      {
+        ...(item.rank > 0 && {
+          backgroundColor: `color-mix(in srgb, #000 100%, ${rankColor} 25%)`,
+        }),
+      },
+    ]"
   >
     <ItemThumb :thumb :name="item.name" />
 

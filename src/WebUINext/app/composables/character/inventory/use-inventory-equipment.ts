@@ -4,14 +4,12 @@ import type { UserItem } from '~/models/user'
 
 import { getLinkedSlots } from '~/services/item-service'
 
-// TODO: rename
 export const useInventoryEquipment = () => {
   const { t } = useI18n()
   const toast = useToast()
   const userStore = useUserStore()
 
-  // TODO: rename  validate
-  const isEquipItemAllowed = (item: UserItem) => {
+  const validateIsEquipItemAllowed = (item: UserItem) => {
     if (item.isBroken) {
       toast.add({
         title: t('character.inventory.item.broken.notify.warning'),
@@ -44,7 +42,7 @@ export const useInventoryEquipment = () => {
   }
 
   return {
-    isEquipItemAllowed,
+    validateIsEquipItemAllowed,
     getUnEquipItemsLinked,
   }
 }

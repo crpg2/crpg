@@ -32,7 +32,7 @@ const error = ref<boolean>(false)
         name="crpg:error"
         class="size-8"
       />
-      <div class="w-full truncate text-2xs">
+      <div class="w-full truncate text-xs">
         {{ name }}
       </div>
     </div>

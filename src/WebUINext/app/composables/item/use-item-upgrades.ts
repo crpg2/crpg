@@ -20,21 +20,15 @@ export const useItemUpgrades = ({
 }: ItemUpgradesOptions) => {
   const userStore = useUserStore()
 
-  const {
-    state: itemUpgrades,
-    isLoading,
-  } = useAsyncState(() => getItemUpgrades(item.baseId), [])
+  // TODO:
+  const { state: itemUpgrades, isLoading } = useAsyncState(() => getItemUpgrades(item.baseId), [])
 
-  const baseItem = computed(() => itemUpgrades.value.find(iu => iu.rank === 0)!)
+  const baseItem = computed(() => itemUpgrades.value.find(iu => iu.rank === 0))
 
-  const nextItem = computed(() => itemUpgrades.value[
-    clamp(
-      itemUpgrades.value.findIndex(iu => iu.id === item.id) + 1,
-      0,
-      3,
-    )])
+  const nextItem = computed(() => itemUpgrades.value[clamp(itemUpgrades.value.findIndex(iu => iu.id === item.id) + 1, 0, 3)])
 
-  const relativeEntries = computed(() => getRelativeEntries(baseItem.value, aggregationConfig))
+  // TODO: Что это
+  const relativeEntries = computed(() => baseItem.value ? getRelativeEntries(baseItem.value, aggregationConfig) : {})
 
   const validation = computed(() => ({
     maxRank: item.rank !== 3,

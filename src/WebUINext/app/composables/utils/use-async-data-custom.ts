@@ -7,7 +7,7 @@ type AsyncDataCustomOptions<
   PickKeys extends KeysOf<DataT> = KeysOf<DataT>,
   DefaultT = undefined,
 > = Omit<AsyncDataOptions<ResT, DataT, PickKeys, DefaultT>, 'getCachedData'> & {
-  poll?: symbol
+  poll?: boolean
   loadingIndicator?: boolean
 }
 

@@ -13,11 +13,11 @@ const {
 <template>
   <Teleport to="body">
     <Draggable
-      v-for="oi in openedItems"
-      :key="oi.id"
+      v-for="item in openedItems"
+      :key="item.id"
       :initial-value="{
-        x: oi.bound.x + oi.bound.width + 8,
-        y: computeDetailCardYPosition(oi.bound.y),
+        x: item.bound.x + item.bound.width + 8,
+        y: computeDetailCardYPosition(item.bound.y),
       }"
       class="
         fixed cursor-move rounded-md bg-default shadow-lg ring-muted select-none
@@ -25,14 +25,15 @@ const {
       "
     >
       <UButton
-        class="!absolute -top-3 -right-3 z-10 cursor-pointer"
+        class="!absolute top-0 right-0 z-10 translate-x-1/2 -translate-y-1/2 cursor-pointer"
         icon="crpg:close"
-        size="sm"
+        size="xl"
         color="neutral"
-        variant="soft"
-        @click="closeItemDetail(oi)"
+        variant="subtle"
+        @click="closeItemDetail(item)"
       />
-      <slot v-bind="oi" />
+
+      <slot v-bind="item" />
     </Draggable>
   </Teleport>
 </template>

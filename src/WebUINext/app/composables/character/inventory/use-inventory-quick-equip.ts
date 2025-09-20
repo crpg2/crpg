@@ -10,14 +10,14 @@ export const useInventoryQuickEquip = () => {
   const { t } = useI18n()
 
   const { onUpdateCharacterItems, equippedItemsBySlot } = useCharacterItems()
-  const { getUnEquipItemsLinked, isEquipItemAllowed } = useInventoryEquipment()
+  const { getUnEquipItemsLinked, validateIsEquipItemAllowed } = useInventoryEquipment()
 
   const getTargetSlot = (slots: ItemSlot[]): ItemSlot | undefined => slots
     .filter(slot => isWeaponBySlot(slot) ? !toValue(equippedItemsBySlot)[slot] : true)
     .at(0)
 
   const onQuickEquip = (item: UserItem) => {
-    if (!isEquipItemAllowed(item)) {
+    if (!validateIsEquipItemAllowed(item)) {
       return
     }
 

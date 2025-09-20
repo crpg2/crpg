@@ -10,7 +10,7 @@ import type {
 } from '~/models/character'
 
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { useAsyncStateWithPoll } from '~/composables/utils/use-async-state'
+import { CHARACTER_QUERY_KEYS } from '~/queries'
 import {
   computeHealthPoints,
   convertCharacterCharacteristics,
@@ -21,9 +21,6 @@ import {
   wppForAgility,
   wppForWeaponMaster,
 } from '~/services/character-service'
-import { pollCharacterCharacteristicsSymbol } from '~/symbols'
-import { applyPolynomialFunction } from '~/utils/math'
-import { mergeObjectWithSum } from '~/utils/object'
 
 import { useCharacter } from './use-character'
 
@@ -32,15 +29,13 @@ export const useCharacterCharacteristic = () => {
   const { characterId } = useCharacter()
 
   const {
-    state: characterCharacteristics,
-    execute: loadCharacterCharacteristics,
-    isLoading: loadingCharacterCharacteristics,
-  } = useAsyncStateWithPoll(
+    data: characterCharacteristics,
+    refresh: loadCharacterCharacteristics,
+  } = useAsyncDataCustom(
+    CHARACTER_QUERY_KEYS.characteristics(toValue(characterId)),
     () => getCharacterCharacteristics(toValue(characterId)),
-    createEmptyCharacteristic(),
     {
-      pollKey: pollCharacterCharacteristicsSymbol,
-      pageLoading: true,
+      default: createEmptyCharacteristic,
     },
   )
 
@@ -52,15 +47,12 @@ export const useCharacterCharacteristic = () => {
     execute: onConvertCharacterCharacteristics,
     isLoading: convertingCharacterCharacteristics,
   } = useAsyncCallback(async (conversion: CharacteristicConversion) => {
-    await Promise.all([
-      setCharacterCharacteristicsSync(
-        await convertCharacterCharacteristics(toValue(characterId), conversion),
-      ),
-      // TODO: to composable
-      timeout(500),
-    ])
+    setCharacterCharacteristicsSync(
+      await convertCharacterCharacteristics(toValue(characterId), conversion),
+    )
   }, {
     pageLoading: true,
+    delay: 500,
   })
 
   const {
@@ -79,7 +71,6 @@ export const useCharacterCharacteristic = () => {
   return {
     characterCharacteristics,
     loadCharacterCharacteristics,
-    loadingCharacterCharacteristics,
     healthPoints,
 
     onConvertCharacterCharacteristics,

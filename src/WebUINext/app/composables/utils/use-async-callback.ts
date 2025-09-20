@@ -1,4 +1,5 @@
 import { makeDestructurable, noop } from '@vueuse/shared'
+import { delay } from 'es-toolkit'
 
 import { usePageLoading } from '~/composables/app/use-page-loading'
 
@@ -10,6 +11,7 @@ export interface UseAsyncCallbackOptions {
   throwError?: boolean
   successMessage?: string
   pageLoading?: boolean
+  delay?: number
 }
 
 export type UseAsyncCallbackReturn<Fn extends AnyPromiseFn> = readonly [
@@ -29,6 +31,7 @@ export function useAsyncCallback<T extends AnyPromiseFn>(fn: T, options?: UseAsy
     throwError = false,
     pageLoading = true,
     successMessage,
+    delay: _delay,
   } = options ?? {}
 
   const error = shallowRef()
@@ -39,7 +42,13 @@ export function useAsyncCallback<T extends AnyPromiseFn>(fn: T, options?: UseAsy
     isLoading.value = true
 
     try {
-      await fn(...args)
+      const promises = [fn(...args)]
+
+      if (_delay) {
+        promises.push(delay(_delay))
+      }
+
+      await Promise.all(promises)
 
       if (successMessage) {
         toast.add({

@@ -230,8 +230,8 @@ const items = computed(() => {
     </div>
 
     <div
+      :style="{ top: `calc(${mainHeaderHeight}px + 1rem)` }"
       class="sticky left-0 col-span-5 self-start"
-      :style="{ top: `calc(${mainHeaderHeight}px + 2rem)` }"
     >
       <CharacterInventoryDoll
         :character-characteristics="characterCharacteristics"
@@ -288,7 +288,7 @@ const items = computed(() => {
 
             <!-- TODO: design -->
             <template v-if="upkeepIsHigh" #tooltip-content>
-              <div class="prose prose-invert">
+              <div class="prose-invert prose">
                 <h4 class="text-warning">
                   {{ $t('character.highUpkeepWarning.title') }}
                 </h4>

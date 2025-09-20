@@ -2,6 +2,7 @@
 defineProps<{
   title: string
   description?: string
+  validation?: string
 }>()
 
 const slots = useSlots()
@@ -9,6 +10,12 @@ const slots = useSlots()
 
 <template>
   <div class="prose">
+    <slot name="validation">
+      <UiTextView v-if="validation" variant="p" class="text-warning">
+        {{ validation }}
+      </UiTextView>
+    </slot>
+
     <slot name="title">
       <UiTextView
         v-if="title"
@@ -19,6 +26,7 @@ const slots = useSlots()
         {{ title }}
       </UiTextView>
     </slot>
+
     <slot name="description">
       <div
         v-if="description"

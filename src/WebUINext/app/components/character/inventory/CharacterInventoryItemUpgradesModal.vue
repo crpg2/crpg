@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
 
-import { AppCoin, AppLoom } from '#components'
+import { AppCoin, AppLoom, LazyCharacterInventoryActionItemReforgeConfirmDialog, LazyCharacterInventoryActionItemUpgradeConfirmDialog } from '#components'
 
 import type { ReforgeCost } from '~/composables/item/use-item-reforge'
 import type { UserItem } from '~/models/user'
@@ -13,12 +13,10 @@ import { getItemAggregations, getRankColor } from '~/services/item-service'
 import { useUserStore } from '~/stores/user'
 
 const { userItem } = defineProps<{
-  open: boolean
   userItem: UserItem
 }>()
 
 const emit = defineEmits<{
-  close: []
   upgrade: []
   reforge: []
 }>()
@@ -27,8 +25,8 @@ const userStore = useUserStore()
 const { t } = useI18n()
 
 // TODO:
-const item = computed(() => createItemIndex([userItem.item])[0]!)
-const aggregationConfig = computed(() => getItemAggregations(item.value!, false))
+const item = computed(() => createItemIndex([userItem.item]).at(0)!)
+const aggregationConfig = computed(() => getItemAggregations(item.value, false))
 
 const {
   baseItem,
@@ -39,11 +37,7 @@ const {
   relativeEntries,
   validation: upgradeValidation,
 } = useItemUpgrades({
-  item: {
-    baseId: userItem.item.baseId,
-    id: userItem.item.id,
-    rank: userItem.item.rank,
-  },
+  item: { baseId: userItem.item.baseId, id: userItem.item.id, rank: userItem.item.rank },
   aggregationConfig: aggregationConfig.value,
 })
 
@@ -73,219 +67,124 @@ const reforgeTableInfoColumns: TableColumn<ReforgeCost>[] = [
   },
 ]
 
-const [shownConfirmUpgradeDialog, toggleConfirmUpgradeDialog] = useToggle()
-const [shownConfirmReforgeDialog, toggleConfirmReforgeDialog] = useToggle()
+const overlay = useOverlay()
+
+const upgradeItemConfirm = overlay.create(LazyCharacterInventoryActionItemUpgradeConfirmDialog)
+
+async function upgrade() {
+  if (!(await upgradeItemConfirm.open({
+    item: item.value,
+    nextItem: nextItem.value,
+  }))) {
+    return
+  }
+
+  emit('upgrade')
+}
+
+const reforgeItemConfirm = overlay.create(LazyCharacterInventoryActionItemReforgeConfirmDialog)
+
+async function reforge() {
+  if (!baseItem.value) {
+    return
+  }
+
+  if (!(await reforgeItemConfirm.open({
+    item: item.value,
+    newItem: baseItem.value,
+    reforgeCost: reforgeCost.value,
+  }))) {
+    return
+  }
+
+  emit('reforge')
+}
 </script>
 
 <template>
   <UModal
-    :open
     :ui="{
       content: 'max-w-5/6',
-      body: 'pt-4',
-      header: 'pb-4',
-      title: 'flex items-center justify-between gap-4',
+      title: 'flex items-center justify-center gap-4',
     }"
-    @close="$emit('close')"
-    @update:open="$emit('close')"
   >
     <template #title>
-      <div class="flex items-center gap-4">
-        <h3 class="text-xl font-semibold">
-          {{ $t('character.inventory.item.upgrade.upgradesTitle') }}
-        </h3>
-        <AppLoom :point="userStore.user!.heirloomPoints" />
-        <AppCoin :value="userStore.user!.gold" />
-      </div>
+      <UiTextView variant="h3">
+        {{ $t('character.inventory.item.upgrade.upgradesTitle') }}
+      </UiTextView>
 
-      <div class="flex items-center gap-4">
-        <UTooltip>
-          <UButton
-            variant="subtle"
-            size="lg"
-            :disabled="!canUpgrade"
-            @click="() => { toggleConfirmUpgradeDialog(true) }"
-          >
-            {{ $t('action.upgrade') }}
-            <AppLoom :point="1" />
-          </UButton>
+      <AppLoom :point="userStore.user!.heirloomPoints" />
+      <AppCoin :value="userStore.user!.gold" />
 
-          <template #content>
-            <div class="prose prose-invert">
-              <h5>
-                {{ $t('character.inventory.item.upgrade.tooltip.title') }}
-              </h5>
-              <p>
-                {{ $t('character.inventory.item.upgrade.tooltip.description') }}
-              </p>
-              <i18n-t
-                v-if="!upgradeValidation.maxRank"
-                scope="global"
-                keypath="character.inventory.item.upgrade.validation.maxRank"
-                class="text-error"
-                tag="p"
-              />
-              <i18n-t
-                v-else-if="!upgradeValidation.points"
-                scope="global"
-                keypath="character.inventory.item.upgrade.validation.loomPoints"
-                class="text-error"
-                tag="p"
-              />
-            </div>
-          </template>
-        </UTooltip>
+      <UTooltip>
+        <UButton
+          variant="subtle"
+          size="lg"
+          :disabled="!canUpgrade"
+          @click="upgrade"
+        >
+          {{ $t('action.upgrade') }}
+          <AppLoom :point="1" />
+        </UButton>
 
-        <UTooltip>
-          <UButton
-            variant="subtle"
-            size="lg"
-            :disabled="!canReforge"
-            @click="() => { toggleConfirmReforgeDialog(true) }"
-          >
-            {{ $t('action.reforge') }}
-            <AppCoin
-              v-if="reforgeValidation.rank"
-              :value="reforgeCost"
+        <template #content>
+          <UiTooltipContent
+            :title="$t('character.inventory.item.upgrade.tooltip.title')"
+            :description="$t('character.inventory.item.upgrade.tooltip.description')"
+            :validation="!upgradeValidation.maxRank
+              ? $t('character.inventory.item.upgrade.validation.maxRank')
+              : !upgradeValidation.points
+                ? $t('character.inventory.item.upgrade.validation.loomPoints')
+                : undefined
+            "
+          />
+        </template>
+      </UTooltip>
+
+      <UTooltip>
+        <UButton
+          variant="subtle"
+          size="lg"
+          :disabled="!canReforge"
+          @click="reforge"
+        >
+          {{ $t('action.reforge') }}
+          <AppCoin
+            v-if="reforgeValidation.rank"
+            :value="reforgeCost"
+          />
+        </UButton>
+
+        <template #content>
+          <div class="space-y-4">
+            <UiTooltipContent
+              :title="$t('character.inventory.item.reforge.tooltip.title')"
+              :description="$t('character.inventory.item.reforge.tooltip.description')"
+              :validation="!reforgeValidation.rank
+                ? $t('character.inventory.item.reforge.validation.rank')
+                : !reforgeValidation.gold
+                  ? $t('character.inventory.item.reforge.validation.gold')
+                  : undefined
+              "
             />
-          </UButton>
-
-          <template #content>
-            <div class="space-y-4">
-              <div class="prose prose-invert">
-                <h5>{{ $t('character.inventory.item.reforge.tooltip.title') }}</h5>
-                <p>{{ $t('character.inventory.item.reforge.tooltip.description') }}</p>
-              </div>
-
-              <UTable
-                class="rounded-md border border-muted"
-                :data="reforgeCostTable"
-                :columns="reforgeTableInfoColumns"
-              />
-
-              <div class="prose prose-invert">
-                <i18n-t
-                  v-if="!reforgeValidation.rank"
-                  scope="global"
-                  keypath="character.inventory.item.reforge.validation.rank"
-                  class="text-error"
-                  tag="p"
-                >
-                  <template #minimumRank>
-                    <span class="font-bold">0</span>
-                  </template>
-                </i18n-t>
-                <i18n-t
-                  v-else-if="!reforgeValidation.gold"
-                  scope="global"
-                  keypath="character.inventory.item.reforge.validation.gold"
-                  class="text-error"
-                  tag="p"
-                />
-              </div>
-            </div>
-          </template>
-        </UTooltip>
-      </div>
+            <UTable
+              class="rounded-md border border-muted"
+              :data="reforgeCostTable"
+              :columns="reforgeTableInfoColumns"
+            />
+          </div>
+        </template>
+      </UTooltip>
     </template>
 
     <template #body>
-      <div class="relative space-y-6">
-        <UiLoading :active="isLoading" />
-
-        <ItemTableUpgrades
-          v-if="!isLoading && itemUpgrades.length"
-          with-header
-          :items="itemUpgrades"
-          :aggregation-config
-          :compare-items-result="relativeEntries"
-        />
-
-        <!-- UPGRADE CONFIRM -->
-        <AppConfirmActionDialog
-          :open="shownConfirmUpgradeDialog"
-          :title="$t('action.confirmation')"
-          confirm="Upgrade item"
-          @confirm="() => {
-            emit('upgrade');
-            toggleConfirmUpgradeDialog(false)
-          }"
-          @cancel="toggleConfirmUpgradeDialog(false);"
-          @update:open="toggleConfirmUpgradeDialog(false)"
-        >
-          <template #description>
-            <i18n-t
-              scope="global"
-              keypath="character.inventory.item.upgrade.confirm.description"
-              tag="div"
-            >
-              <template #loomPoints>
-                <AppLoom :point="1" />
-              </template>
-              <template #oldItem>
-                <span
-                  class="font-bold"
-                  :style="{ color: getRankColor(item.rank) }"
-                >
-                  {{ item.name }}
-                </span>
-              </template>
-              <template #newItem>
-                <span
-                  class="font-bold"
-                  :style="{ color: getRankColor(nextItem!.rank) }"
-                >
-                  {{ nextItem!.name }}
-                </span>
-              </template>
-            </i18n-t>
-          </template>
-        </AppConfirmActionDialog>
-
-        <!-- REFORGE CONFIRM -->
-        <AppConfirmActionDialog
-          :open="shownConfirmReforgeDialog"
-          :title="$t('action.confirmation')"
-          confirm="Reforge item"
-          @confirm="() => {
-            emit('reforge');
-            toggleConfirmReforgeDialog(false)
-          }"
-          @cancel="toggleConfirmReforgeDialog(false);"
-          @update:open="toggleConfirmReforgeDialog(false)"
-        >
-          <template #description>
-            <i18n-t
-              scope="global"
-              keypath="character.inventory.item.reforge.confirm.description"
-              tag="div"
-            >
-              <template #gold>
-                <AppCoin :value="reforgeCost" />
-              </template>
-              <template #loomPoints>
-                <AppLoom :point="item.rank" />
-              </template>
-              <template #oldItem>
-                <span
-                  class="font-bold"
-                  :style="{ color: getRankColor(item.rank) }"
-                >
-                  {{ item.name }}
-                </span>
-              </template>
-              <template #newItem>
-                <span
-                  class="font-bold"
-                  :style="{ color: getRankColor(baseItem.rank) }"
-                >
-                  {{ baseItem.name }}
-                </span>
-              </template>
-            </i18n-t>
-          </template>
-        </AppConfirmActionDialog>
-      </div>
+      <ItemTableUpgrades
+        with-header
+        :loading="isLoading"
+        :items="itemUpgrades"
+        :aggregation-config
+        :compare-items-result="relativeEntries"
+      />
     </template>
   </UModal>
 </template>

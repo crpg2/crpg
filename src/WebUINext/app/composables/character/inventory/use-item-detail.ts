@@ -13,14 +13,6 @@ interface OpenedItem {
   bound: ElementBound
 }
 
-// TODO:
-// const itemDetailKey: InjectionKey<Ref<OpenedItem[]>> = Symbol('ItemDetail')
-
-// export const useItemDetailProvider = (openedItems: Ref<OpenedItem[]>) => {
-//   provide(itemDetailKey, openedItems)
-// }
-
-// const provider
 // shared state
 const openedItems = ref<OpenedItem[]>([])
 
@@ -32,8 +24,6 @@ const getElementBounds = (el: HTMLElement) => {
 }
 
 export const useItemDetail = (setListeners: boolean = false) => {
-  // const openedItems = injectStrict(itemDetailKey)
-
   const openItemDetail = (item: OpenedItem) => {
     if (!openedItems.value.some(oi => oi.uniqueId === item.uniqueId)) {
       openedItems.value.push({ ...item, uniqueId: getUniqueId(item.id, item.userItemId) })
@@ -77,11 +67,12 @@ export const useItemDetail = (setListeners: boolean = false) => {
   const { escape } = useMagicKeys()
 
   if (setListeners) {
-    whenever(escape!, () => {
+    const unsubscribe = whenever(escape!, () => {
       openedItems.value.length !== 0 && closeItemDetail(openedItems.value[openedItems.value.length - 1]!)
     })
 
-    onBeforeUnmount(() => {
+    tryOnScopeDispose(() => {
+      unsubscribe()
       closeAll()
     })
   }

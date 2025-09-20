@@ -56,17 +56,17 @@ const weaponClassOptions = computed(() => {
       list: 'w-auto',
       root: 'flex-row',
       trigger: [
-        'min-w-12 h-12 p-2',
+        'size-13 p-0',
         orientation === 'vertical' ? 'flex justify-center' : '',
       ],
-      leadingIcon: 'size-7',
     }"
   >
     <template #leading="{ item }">
       <UTooltip :text="$t(`item.type.${item.value}`)">
-        <UIcon v-if="item.icon" :name="item.icon" class="size-7 outline-0 select-none" />
+        <UIcon v-if="item.icon" :name="item.icon" class="size-[60%] outline-0 select-none" />
       </UTooltip>
     </template>
+
     <template
       v-if="hasWeaponClassesByItemType(itemType) && Boolean(weaponClassOptions.length)"
       #default="{ item }"

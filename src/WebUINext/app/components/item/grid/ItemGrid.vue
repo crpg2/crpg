@@ -22,7 +22,7 @@ const { t } = useI18n()
 
 const { mainHeaderHeight } = useMainHeader()
 const aside = useTemplateRef('aside')
-const { top: stickySidebarTop } = useStickySidebar(aside, mainHeaderHeight.value + 16, 16)
+const { top: stickySidebarTop } = useStickySidebar(aside, mainHeaderHeight.value + 16, 16 /** 1rem */)
 
 const itemTypes = computed(() => getFacetsByItemType(items.map(wrapper => wrapper.item.type)))
 const itemType = ref<ItemType>(ITEM_TYPE.Undefined)
@@ -129,10 +129,9 @@ const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, ro
       <div class="col-span-2 flex gap-3">
         <USelect
           v-model="sortingModel"
-          class="col-span-2 w-full"
+          class="flex-1"
           :items="sortingItems"
           size="xl"
-          trailing-icon="crpg:arrow-up-down"
         />
 
         <slot name="filter-leading" />

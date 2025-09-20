@@ -1,16 +1,15 @@
+import { useUserItems } from '~/composables/user/use-user-items'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { addItemToClanArmory, removeItemFromClanArmory, returnItemToClanArmory } from '~/services/clan-service'
 import { getLinkedSlots } from '~/services/item-service'
 import { reforgeUserItem, repairUserItem, sellUserItem, upgradeUserItem } from '~/services/user-service'
 
 import { useCharacterItems } from '../use-character-items'
-import { useInventoryEquipment } from './use-inventory-equipment'
 
 export const useCharacterInventory = () => {
   const { t } = useI18n()
   const userStore = useUserStore()
   const { clan } = toRefs(userStore)
-  const { getUnEquipItemsLinked, isEquipItemAllowed } = useInventoryEquipment()
 
   const {
     equippedItemsBySlot,
@@ -19,10 +18,12 @@ export const useCharacterInventory = () => {
     loadCharacterItems,
   } = useCharacterItems()
 
+  const { refreshUserItems } = useUserItems()
+
   function _refreshData() {
     return Promise.all([
       userStore.fetchUser(), // update gold
-      userStore.fetchUserItems(),
+      refreshUserItems(),
       loadCharacterItems(),
     ])
   }

@@ -8,14 +8,16 @@ const characterKey: InjectionKey<{
   character: ComputedRef<Character>
 }> = Symbol('Character')
 
-export const useCharactersProvider = () => useAsyncDataCustom(
-  CHARACTER_QUERY_KEYS.root,
-  getCharacters,
-  {
-    default: () => [],
-    immediate: false, // you need to manually request data using await execute()
-  },
-)
+export const useCharactersProvider = () => {
+  return useAsyncDataCustom(
+    CHARACTER_QUERY_KEYS.root,
+    getCharacters,
+    {
+      default: () => [],
+      immediate: false, // you need to manually request data using await execute()
+    },
+  )
+}
 
 export const useCharacters = () => {
   const userStore = useUserStore()
@@ -39,8 +41,6 @@ export const useCharacters = () => {
 }
 
 export const useCharacterProvider = (character: MaybeRefOrGetter<Character>) => {
-  console.log('useCharacterProvideruseCharacterProvideruseCharacterProvideruseCharacterProvider', toValue(character))
-
   provide(characterKey, {
     character: computed(() => toValue(character)),
     characterId: computed(() => toValue(character)?.id),

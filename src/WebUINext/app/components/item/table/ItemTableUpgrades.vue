@@ -14,10 +14,12 @@ const {
   aggregationConfig,
   withHeader = false,
   compareItemsResult,
+  loading = false,
 } = defineProps<{
   items: ItemFlat[]
   aggregationConfig: AggregationConfig
   compareItemsResult: CompareItemsResult
+  loading?: boolean
   withHeader?: boolean
 }>()
 
@@ -95,6 +97,7 @@ const columnVisibility = computed<VisibilityState>(() => {
     v-model:column-visibility="columnVisibility"
     class="rounded-md border border-muted"
     :data="items"
+    :loading
     :columns
     :ui="{
       ...(!withHeader && {

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { LazyCharacterInventoryItemUpgradesModal } from '#components'
 import { itemSellCostPenalty } from '~root/data/constants.json'
 
 import type { CompareItemsResult } from '~/models/item'
@@ -54,14 +55,22 @@ const isSellable = computed(
 const isUpgradable = computed(() => canUpgrade(userItem.item.type) && !userItem.isArmoryItem)
 const isCanAddedToClanArmory = computed(() => canAddedToClanArmory(userItem.item.type) && !userItem.isPersonal)
 
-const [shownUpgradesModal, toggleUpgradesModal] = useToggle()
+const overlay = useOverlay()
+
+const itemUpgradesModal = overlay.create(LazyCharacterInventoryItemUpgradesModal, {
+  props: {
+    userItem,
+    onReforge: () => emit('reforge'),
+    onUpgrade: () => emit('upgrade'),
+  },
+})
 </script>
 
 <template>
   <ItemDetail
     :item="userItem.item"
     :compare-result="compareResult"
-    :class="{ 'bg-primary/25': userItem.isPersonal }"
+    :class="{ 'bg-gold/25': userItem.isPersonal }"
   >
     <template #badges-bottom-right>
       <UTooltip v-if="equipped" :text="$t('character.inventory.item.equipped')">
@@ -186,7 +195,7 @@ const [shownUpgradesModal, toggleUpgradesModal] = useToggle()
         variant="subtle"
         :label="$t('character.inventory.item.upgrade.upgradesTitle')"
         icon="crpg:blacksmith"
-        @click="() => { toggleUpgradesModal(true) }"
+        @click="itemUpgradesModal.open()"
       />
 
       <template v-if="clan && isCanAddedToClanArmory">
@@ -227,15 +236,6 @@ const [shownUpgradesModal, toggleUpgradesModal] = useToggle()
           />
         </template>
       </template>
-
-      <CharacterInventoryItemUpgradesModal
-        v-if="shownUpgradesModal"
-        open
-        :user-item="userItem"
-        @upgrade="emit('upgrade')"
-        @reforge="emit('reforge')"
-        @close="toggleUpgradesModal(false)"
-      />
     </template>
   </ItemDetail>
 </template>

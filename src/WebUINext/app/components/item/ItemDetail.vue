@@ -38,8 +38,8 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
     :ui="{
       root: 'w-80',
       header: 'relative !p-0 h-40',
-      body: '',
-      footer: '!p-2',
+      body: '!p-3',
+      footer: '!p-3',
     }"
   >
     <template #header>
@@ -48,6 +48,7 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
         :name="item.name"
         class="pointer-events-none h-full"
       />
+
       <div class="absolute top-4 left-4 z-10 flex items-center gap-1">
         <ItemRankIcon v-if="item.rank > 0" :rank="item.rank" />
         <slot name="badges-top-left" />
@@ -67,7 +68,7 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
     </template>
 
     <template #default>
-      <h3 class="mb-6 font-bold" :style="{ color: rankColor }">
+      <UiTextView variant="h4" class="mb-4" :style="{ color: rankColor }">
         {{ item.name }}
 
         <UTooltip :text="$t('action.copy')">
@@ -80,9 +81,9 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
             @click="onNameCopy"
           />
         </UTooltip>
-      </h3>
+      </UiTextView>
 
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid grid-cols-2 gap-2.5">
         <ItemParam
           v-for="(_agg, field) in aggregationConfig"
           :key="field"

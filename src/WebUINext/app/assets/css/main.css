@@ -9,8 +9,6 @@
 
     --container-8xl: 96rem; /* 1536px */
 
-    --text-base--line-height: calc(1.75 / 1);
-
     --color-black: #000;
     --color-white: #fff;
     --color-current: 'currentColor';

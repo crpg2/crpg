@@ -46,7 +46,7 @@ const {
       v-if="userItem !== undefined"
       :item="userItem.item"
       class="h-full w-full cursor-grab !ring-0"
-      :class="{ 'bg-primary/25': userItem.isPersonal }"
+      :class="{ '!bg-gold/25': userItem.isPersonal }"
       data-aq-character-slot-item-thumb
     >
       <template #badges-top-right>

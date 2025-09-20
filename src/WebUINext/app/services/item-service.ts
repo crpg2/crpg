@@ -747,11 +747,17 @@ export const canUpgrade = (type: ItemType) => type !== ITEM_TYPE.Banner
 
 export const canAddedToClanArmory = (type: ItemType) => type !== ITEM_TYPE.Banner
 
+const _fallbackReforgeCost = 0
+
 export const reforgeCostByRank: Record<number, number> = {
-  0: itemReforgeCostPerRank[0] ?? 0,
-  1: itemReforgeCostPerRank[1] ?? 0,
-  2: itemReforgeCostPerRank[2] ?? 0,
-  3: itemReforgeCostPerRank[3] ?? 0,
+  0: itemReforgeCostPerRank[0] ?? _fallbackReforgeCost,
+  1: itemReforgeCostPerRank[1] ?? _fallbackReforgeCost,
+  2: itemReforgeCostPerRank[2] ?? _fallbackReforgeCost,
+  3: itemReforgeCostPerRank[3] ?? _fallbackReforgeCost,
+}
+
+export const getReforgeCostByRank = (rank: number) => {
+  return reforgeCostByRank[rank] ?? _fallbackReforgeCost
 }
 
 export const itemIsNewDays = 14
