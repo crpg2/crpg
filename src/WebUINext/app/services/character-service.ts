@@ -47,7 +47,7 @@ import {
   weaponProficiencyPointsForWeaponMasterCoefs,
 } from '~root/data/constants.json'
 import { defu } from 'defu'
-import { clamp } from 'es-toolkit'
+import { clamp, delay } from 'es-toolkit'
 
 import type { ActivityLog } from '~/models/activity-logs'
 import type {
@@ -82,7 +82,10 @@ import { armorTypes, computeAverageRepairCostPerHour } from '~/services/item-ser
 import { getIndexToIns, range } from '~/utils/array'
 import { applyPolynomialFunction, roundFLoat } from '~/utils/math'
 
-export const getCharacters = async (): Promise<Character[]> => (await getUsersSelfCharacters({})).data!
+export const getCharacters = async (): Promise<Character[]> => {
+  await delay(500)
+  return (await getUsersSelfCharacters({})).data!
+}
 
 export const getCharactersByUserId = async (
   userId: number,

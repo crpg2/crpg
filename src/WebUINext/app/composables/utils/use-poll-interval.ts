@@ -1,7 +1,7 @@
 // import type { WatchSource, WatchStopHandle } from 'vue'
 
 interface PollOption {
-  key: symbol
+  key: symbol | string
   fn: () => Promise<any> | any
   // watch?: WatchSource
 }

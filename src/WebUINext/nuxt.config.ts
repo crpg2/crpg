@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
   ],
   ssr: false,
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   app: {
     head: {
       title: 'cRPG: Multiplayer Mod for Mount & Blade Bannerlord',

@@ -1,9 +1,9 @@
 type SubscriptionFn = () => Promise<unknown> | unknown
 // const INTERVAL = 1000 * 60 // 1 min
-const INTERVAL = 3000
+const INTERVAL = 100000
 
 export default defineNuxtPlugin(() => {
-  const subscriptions = ref(new Map<symbol, SubscriptionFn>())
+  const subscriptions = ref(new Map<symbol | string, SubscriptionFn>())
 
   const keys = computed(() => [...subscriptions.value.keys()])
   const timer = setInterval(async () => {
@@ -11,7 +11,7 @@ export default defineNuxtPlugin(() => {
       Promise.resolve()
         .then(fn)
         .catch((err) => {
-          console.error(`[poll:${String(id.description ?? id)}]`, err)
+          // console.error(`[poll:${String(id.description ?? id)}]`, err)
         })
     }
   }, INTERVAL)

@@ -27,7 +27,7 @@ export function useAsyncCallback<T extends AnyPromiseFn>(fn: T, options?: UseAsy
     onError = noop,
     onSuccess = noop,
     throwError = false,
-    pageLoading = false,
+    pageLoading = true,
     successMessage,
   } = options ?? {}
 

@@ -4,11 +4,13 @@ import { getLinkedSlots } from '~/services/item-service'
 import { reforgeUserItem, repairUserItem, sellUserItem, upgradeUserItem } from '~/services/user-service'
 
 import { useCharacterItems } from '../use-character-items'
+import { useInventoryEquipment } from './use-inventory-equipment'
 
 export const useCharacterInventory = () => {
   const { t } = useI18n()
   const userStore = useUserStore()
   const { clan } = toRefs(userStore)
+  const { getUnEquipItemsLinked, isEquipItemAllowed } = useInventoryEquipment()
 
   const {
     equippedItemsBySlot,
@@ -30,6 +32,7 @@ export const useCharacterInventory = () => {
   } = useAsyncCallback(async (userItemId: number) => {
     // unEquip linked slots TODO: move to backend
     const characterItem = characterItems.value.find(ci => ci.userItem.id === userItemId)
+
     if (characterItem !== undefined) {
       const linkedItems = getLinkedSlots(characterItem.slot, equippedItemsBySlot.value)
         .map(ls => ({

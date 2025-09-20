@@ -29,7 +29,7 @@ defineEmits<{
 const slotsSchema = getCharacterSlotsSchema()
 const { toggleItemDetail } = useItemDetail()
 
-const { onQuickUnEquip } = useInventoryQuickEquip(() => props.equippedItems)
+const { onQuickUnEquip } = useInventoryQuickEquip()
 
 const onClickInventoryDollSlot = (e: PointerEvent, slot: ItemSlot) => {
   if (props.equippedItems[slot] === undefined) {
@@ -57,7 +57,7 @@ const {
   onDragStart,
   onDrop,
   toSlot,
-} = useInventoryDnD(() => props.equippedItems)
+} = useInventoryDnD()
 </script>
 
 <template>

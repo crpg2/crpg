@@ -1,8 +1,8 @@
-import type { CharacterOverallItemsStats, EquippedItemId } from '~/models/character'
+import type { CharacterOverallItemsStats, EquippedItem, EquippedItemId } from '~/models/character'
 import type { UserItemsBySlot } from '~/models/user'
 
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { useAsyncStateWithPoll } from '~/composables/utils/use-async-state'
+import { CHARACTER_QUERY_KEYS } from '~/queries'
 import {
   checkUpkeepIsHigh,
   computeLongestWeaponLength,
@@ -13,26 +13,28 @@ import {
   getCharacterItems,
   updateCharacterItems,
 } from '~/services/character-service'
-import { pollCharacterItemsSymbol } from '~/symbols'
 
+import { useAsyncDataCustom } from '../utils/use-async-data-custom'
 import { useCharacter } from './use-character'
 
-export const useCharacterItems = () => {
+export const useCharacterItemsProvider = () => {
   const { characterId } = useCharacter()
-  const userStore = useUserStore()
-
-  const {
-    state: characterItems,
-    execute: loadCharacterItems,
-    isLoading: loadingCharacterItems,
-  } = useAsyncState(
-    () => getCharacterItems(toValue(characterId)),
-    [],
+  return useAsyncDataCustom(
+    CHARACTER_QUERY_KEYS.items(characterId.value),
+    () => getCharacterItems(characterId.value),
     {
-      // pollKey: pollCharacterItemsSymbol,
-      // pageLoading: true,
+      default: () => [],
     },
   )
+}
+
+export const useCharacterItems = () => {
+  const userStore = useUserStore()
+  const { characterId } = useCharacter()
+
+  const _key = CHARACTER_QUERY_KEYS.items(characterId.value)
+  const characterItems = getAsyncData<EquippedItem[]>(_key)
+  const loadCharacterItems = refreshAsyncData(_key)
 
   const equippedItemsBySlot = computed(() => {
     return characterItems.value.reduce((out, ei) => {
@@ -47,7 +49,7 @@ export const useCharacterItems = () => {
       await loadCharacterItems()
     },
     {
-      // pageLoading: true,
+      pageLoading: true,
     },
   )
 
@@ -73,7 +75,6 @@ export const useCharacterItems = () => {
     equippedItemIds,
 
     loadCharacterItems,
-    loadingCharacterItems,
     onUpdateCharacterItems,
     updatingCharacterItems,
 

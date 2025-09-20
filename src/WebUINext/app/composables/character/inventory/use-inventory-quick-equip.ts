@@ -34,11 +34,13 @@ export const useInventoryQuickEquip = () => {
     const targetSlot = getTargetSlot(slots)
 
     if (targetSlot) {
+      // TODO:
       onUpdateCharacterItems([{ slot: targetSlot, userItemId: item.id }])
     }
   }
 
   const onQuickUnEquip = (slot: ItemSlot) => {
+    // TODO:
     onUpdateCharacterItems(getUnEquipItemsLinked(slot, toValue(equippedItemsBySlot)))
   }
 

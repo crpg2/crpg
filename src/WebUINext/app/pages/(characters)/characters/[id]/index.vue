@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import { useCharacter } from '~/composables/character/use-character'
 import { useCharacterRespec } from '~/composables/character/use-character-respec'
-import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { useAsyncStateWithPoll } from '~/composables/utils/use-async-state'
 import { getCharacterStatistics, retireCharacter, setCharacterForTournament } from '~/services/character-service'
-import { pollCharacterStatisticsSymbol } from '~/symbols'
 
 const userStore = useUserStore()
 const { t } = useI18n()
 
 const { character, characterId } = useCharacter()
 
-const {
-  state: characterStatistics,
-} = useAsyncStateWithPoll(
+const CHARACTER_QUERY_KEYS = {
+  root: ['character'] as const,
+  byId: (id: number) => [...CHARACTER_QUERY_KEYS.root, id] as const,
+  statistics: (id: number) => [...CHARACTER_QUERY_KEYS.byId(id), { statistics: true }] as const,
+}
+
+const { data: characterStatistics } = useAsyncDataCustom(
+  () => CHARACTER_QUERY_KEYS.statistics(characterId.value),
   () => getCharacterStatistics(characterId.value),
-  {},
   {
-    pollKey: pollCharacterStatisticsSymbol,
-    pageLoading: true,
+    default: () => [],
   },
 )
 

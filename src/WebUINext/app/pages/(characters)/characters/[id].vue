@@ -1,107 +1,82 @@
 <script setup lang="ts">
-import type { RouteLocationNormalizedLoaded } from 'vue-router'
 import type { RouteNamedMap } from 'vue-router/auto-routes'
 
 import { LazyCharacterCreateModal, LazyCharacterEditModal } from '#components'
+import { delay } from 'es-toolkit'
 
-import { useCharacterProvider } from '~/composables/character/use-character'
+import { useCharacterProvider, useCharacters } from '~/composables/character/use-character'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { activateCharacter, deactivateCharacter, deleteCharacter, updateCharacter } from '~/services/character-service'
-
-definePageMeta({
-  middleware: [
-    /**
-     * @description Validate character
-     */
-    (to) => {
-      const userStore = useUserStore()
-      if (!userStore.validateCharacter(Number((to as RouteLocationNormalizedLoaded<'characters-id'>).params.id))) {
-        return navigateTo({
-          name: 'characters',
-        })
-      }
-    },
-  ],
-})
 
 const { t } = useI18n()
 const route = useRoute('characters-id')
 
 const userStore = useUserStore()
+const { characters, refreshCharacters, fallbackCharacterId, activeCharacterId } = useCharacters()
 
-const character = computed(() => userStore.getCurrentCharacterById(Number(route.params.id)))
+const _character = characters.value.find(c => c.id === Number(route.params.id))
+if (!_character) {
+  await navigateTo({ name: 'characters' })
+}
+const character = computed(() => _character!)
 useCharacterProvider(character)
 
 const overlay = useOverlay()
 
 const characterCreateModal = overlay.create(LazyCharacterCreateModal)
-const characterEditModal = overlay.create(LazyCharacterEditModal)
 
-const {
-  execute: onCreateNewCharacter,
-} = useAsyncCallback(async () => {
-  if (userStore.user!.activeCharacterId) {
-    await deactivateCharacter(userStore.user!.activeCharacterId)
+const [onCreateNewCharacter] = useAsyncCallback(async () => {
+  if (activeCharacterId.value) {
+    await deactivateCharacter(activeCharacterId.value)
     await userStore.fetchUser()
   }
-
   characterCreateModal.open()
-}, {
-  pageLoading: true,
 })
 
-const {
-  execute: onUpdateCharacter,
-} = useAsyncCallback(
+const characterEditModal = overlay.create(LazyCharacterEditModal)
+
+const [onUpdateCharacter] = useAsyncCallback(
   async (name: string) => {
     await updateCharacter(character.value.id, { name })
-    await userStore.fetchCharacters()
-
+    await refreshCharacters()
     characterEditModal.close()
   },
   {
     successMessage: t('character.settings.update.notify.success'),
-    pageLoading: true,
   },
 )
 
-const {
-  execute: onActivateCharacter,
-} = useAsyncCallback(
+const [onActivateCharacter] = useAsyncCallback(
   async (characterId: number, status: boolean) => {
     status ? await activateCharacter(characterId) : await deactivateCharacter(characterId)
     await userStore.fetchUser() // update activeCharacterId
   },
   {
     successMessage: t('character.settings.update.notify.success'),
-    pageLoading: true,
   },
 )
 
-const {
-  execute: onDeleteCharacter,
-} = useAsyncCallback(
+const [onDeleteCharacter] = useAsyncCallback(
   async () => {
     characterEditModal.close()
 
     // TODO: deactivate char FIXME: move to backend
-    if (character.value.id === userStore.user!.activeCharacterId) {
+    if (character.value.id === activeCharacterId.value) {
       await deactivateCharacter(character.value.id)
       await userStore.fetchUser()
     }
 
     await deleteCharacter(character.value.id)
-    await userStore.fetchCharacters()
+    await refreshCharacters()
 
-    if (userStore.activeCharacterId) {
-      return navigateTo({ name: 'characters-id', params: { id: userStore.activeCharacterId } })
+    if (fallbackCharacterId.value) {
+      return navigateTo({ name: 'characters-id', params: { id: fallbackCharacterId.value } })
     }
 
     return navigateTo({ name: 'characters' })
   },
   {
     successMessage: t('character.settings.delete.notify.success'),
-    pageLoading: true,
   },
 )
 
@@ -131,13 +106,13 @@ const nav = [
 <template>
   <div>
     <div
-      class="mb-10 grid grid-cols-3 items-center gap-4"
+      class="mb-12 grid grid-cols-3 items-center gap-4"
     >
       <div class="flex items-center gap-4">
         <CharacterSelect
-          :characters="userStore.characters"
+          :characters
           :current-character="character"
-          :active-character-id="userStore.activeCharacterId"
+          :active-character-id="userStore.user!.activeCharacterId"
           @activate="onActivateCharacter"
           @create="onCreateNewCharacter"
         />

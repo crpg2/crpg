@@ -4,11 +4,13 @@ import type { UserItem } from '~/models/user'
 
 import { getLinkedSlots } from '~/services/item-service'
 
+// TODO: rename
 export const useInventoryEquipment = () => {
   const { t } = useI18n()
   const toast = useToast()
   const userStore = useUserStore()
 
+  // TODO: rename  validate
   const isEquipItemAllowed = (item: UserItem) => {
     if (item.isBroken) {
       toast.add({
@@ -27,10 +29,10 @@ export const useInventoryEquipment = () => {
       })
       return false
     }
-
     return true
   }
 
+  // TODO: need a name
   const getUnEquipItemsLinked = (slot: ItemSlot, equippedItemsBySlot: EquippedItemsBySlot) => {
     return [
       { slot, userItemId: null },

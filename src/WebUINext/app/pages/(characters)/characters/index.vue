@@ -1,24 +1,20 @@
 <script setup lang="ts">
+import { useCharacters } from '~/composables/character/use-character'
+
 definePageMeta({
   layoutOptions: {
     bg: 'background-2.webp',
   },
-  middleware: [
-    /**
-     * @description
-     * redirect to active character
-     */
-    () => {
-      const userStore = useUserStore()
-      if (userStore.activeCharacterId) {
-        return navigateTo({
-          name: 'characters-id-inventory',
-          params: { id: userStore.activeCharacterId },
-        })
-      }
-    },
-  ],
 })
+
+const { fallbackCharacterId } = useCharacters()
+
+if (fallbackCharacterId.value) {
+  await navigateTo({
+    name: 'characters-id-inventory',
+    params: { id: fallbackCharacterId.value },
+  })
+}
 </script>
 
 <template>

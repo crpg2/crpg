@@ -20,11 +20,16 @@ const slots = useSlots()
   >
     <UiDataCell
       class="
-        group px-3 py-2.5
+        group rounded px-3 py-2.5
         hover:bg-muted
       "
     >
-      <div class="text-muted">
+      <div
+        class="
+          text-sm text-muted
+          group-hover:text-default
+        "
+      >
         <slot name="label">
           {{ label }}
         </slot>
@@ -33,7 +38,7 @@ const slots = useSlots()
       <template #rightContent>
         <div
           class="
-            font-bold
+            font-semibold
             group-hover:text-highlighted
           "
         >

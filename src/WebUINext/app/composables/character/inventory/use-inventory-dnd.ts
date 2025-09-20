@@ -58,6 +58,8 @@ export const useInventoryDnD = () => {
   const onDragEnd = (_e: DragEvent | null = null, slot: ItemSlot | null = null) => {
     if (slot && !toSlot.value) {
       const items: EquippedItemId[] = getUnEquipItemsLinked(slot, toValue(equippedItemsBySlot))
+
+      // TODO:
       onUpdateCharacterItems(items)
     }
 
@@ -83,6 +85,7 @@ export const useInventoryDnD = () => {
       })
     }
 
+    // TODO:
     onUpdateCharacterItems(items)
   }
 

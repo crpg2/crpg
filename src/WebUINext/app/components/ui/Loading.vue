@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<{
 
 const variants = tv({
   slots: {
-    root: 'inset-0 flex items-center justify-center overflow-hidden',
+    root: 'flex items-center justify-center overflow-hidden',
     overlay: 'absolute inset-0 bg-elevated/25',
     icon: 'animate-spin',
   },
@@ -24,7 +24,7 @@ const variants = tv({
     },
     fullPage: {
       true: {
-        root: 'fixed z-50',
+        root: 'pointer-events-auto fixed inset-0 z-[50]',
       },
       false: {
         root: 'absolute z-30',
@@ -50,7 +50,8 @@ const classes = computed(() => variants({
   >
     <div
       v-if="active"
-      :class="[classes.root()]" v-bind="{ ...(fullPage && { role: 'dialog' }) }"
+      :class="[classes.root()]"
+      v-bind="{ ...(fullPage && { role: 'dialog' }) }"
     >
       <div :class="[classes.overlay()]" :tabindex="-1" />
       <UIcon name="crpg:loading" :class="[classes.icon()]" />

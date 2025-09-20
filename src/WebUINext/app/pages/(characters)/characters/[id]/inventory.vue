@@ -12,45 +12,33 @@ import { useCharacterInventory } from '~/composables/character/inventory/use-cha
 import { useInventoryDnD } from '~/composables/character/inventory/use-inventory-dnd'
 import { useInventoryQuickEquip } from '~/composables/character/inventory/use-inventory-quick-equip'
 import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
-import { useCharacter } from '~/composables/character/use-character'
 import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
-import { useCharacterItems } from '~/composables/character/use-character-items'
-import { useAsyncStateWithPoll } from '~/composables/utils/use-async-state'
-import { getCharacterItems, validateItemNotMeetRequirement } from '~/services/character-service'
+import { useCharacterItems, useCharacterItemsProvider } from '~/composables/character/use-character-items'
+import { useUserItemsProvider } from '~/composables/user/use-user-items'
+import { validateItemNotMeetRequirement } from '~/services/character-service'
 import { getClanArmoryItemLender, getClanMembers } from '~/services/clan-service'
 import { getAggregationsConfig } from '~/services/item-search-service'
 import { createItemIndex } from '~/services/item-search-service/indexator'
 import { extractItem, getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
 
 const userStore = useUserStore()
-userStore.fetchUserItems() // TODO: FIXME:
-const { clan, user, userItems } = toRefs(userStore)
+const { clan, user } = toRefs(userStore)
+
+const { data: userItems, pending: loadingUserItems } = useUserItemsProvider()
+useCharacterItemsProvider()
 
 const { t } = useI18n()
 const { mainHeaderHeight } = useMainHeader()
 
-// const {
-//   state: characterItems,
-//   execute: loadCharacterItems,
-//   isLoading: loadingCharacterItems,
-// } = useAsyncStateWithPoll(
-//   () => getCharacterItems(toValue(characterId)),
-//   [],
-//   {
-//     // pollKey: pollCharacterItemsSymbol,
-//     // pageLoading: true,
-//   },
-// )
-
 const {
-  characterItems,
   equippedItemsBySlot,
   itemsOverallStats,
   equippedItemIds,
   upkeepIsHigh,
 } = useCharacterItems()
 
-//
+const { onDragEnd, onDragStart, dragging } = useInventoryDnD()
+const { onQuickEquip } = useInventoryQuickEquip()
 
 const {
   onSellUserItem,
@@ -63,9 +51,6 @@ const {
 } = useCharacterInventory()
 
 const { characterCharacteristics, healthPoints } = useCharacterCharacteristic()
-
-const { onDragEnd, onDragStart, dragging } = useInventoryDnD()
-const { onQuickEquip } = useInventoryQuickEquip()
 
 const hasArmoryItems = computed(() => userItems.value.some(ui => ui.isArmoryItem))
 
@@ -151,9 +136,6 @@ const items = computed(() => {
 <template>
   <div class="relative grid grid-cols-12 gap-5">
     <div class="col-span-5">
-      {{ characterItems }}
-      {{ Object.keys(equippedItemsBySlot) }}
-
       <ItemGrid
         v-if="Boolean(userItems.length)"
         v-model:sorting="sortingModel"
@@ -241,7 +223,7 @@ const items = computed(() => {
         </template>
       </ItemGrid>
 
-      <UCard v-else>
+      <UCard v-else-if="!loadingUserItems">
         <UiResultNotFound :message="$t('character.inventory.empty')" />
       </UCard>
     </div>

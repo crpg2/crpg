@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useCharacter } from '~/composables/character/use-character'
 import { useCharacterCharacteristic, useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic'
-import { useCharacterItems } from '~/composables/character/use-character-items'
+import { useCharacterItems, useCharacterItemsProvider } from '~/composables/character/use-character-items'
 import { useCharacterRespec } from '~/composables/character/use-character-respec'
 import { CHARACTERISTIC_CONVERSION } from '~/models/character'
 
@@ -13,9 +13,11 @@ const {
   convertingCharacterCharacteristics,
   onCommitCharacterCharacteristics,
   onConvertCharacterCharacteristics,
-} = useCharacterCharacteristic(characterId)
+} = useCharacterCharacteristic()
 
-const { itemsOverallStats } = useCharacterItems(characterId)
+useCharacterItemsProvider()
+
+const { itemsOverallStats } = useCharacterItems()
 
 const {
   characteristics,

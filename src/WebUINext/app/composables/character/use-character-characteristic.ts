@@ -41,7 +41,6 @@ export const useCharacterCharacteristic = () => {
     {
       pollKey: pollCharacterCharacteristicsSymbol,
       pageLoading: true,
-      resetOnExecute: false,
     },
   )
 
@@ -57,6 +56,7 @@ export const useCharacterCharacteristic = () => {
       setCharacterCharacteristicsSync(
         await convertCharacterCharacteristics(toValue(characterId), conversion),
       ),
+      // TODO: to composable
       timeout(500),
     ])
   }, {

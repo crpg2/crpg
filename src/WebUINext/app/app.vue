@@ -28,8 +28,6 @@ watch(activePageLoading, () => {
 
     <NuxtRouteAnnouncer />
 
-    <UiLoading :active="activePageLoading" full-page />
-
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -56,6 +54,9 @@ watch(activePageLoading, () => {
     </NuxtErrorBoundary> -->
 
     <AppBundledSprite />
-    <PiniaColadaDevtools />
+
+    <Teleport to="body">
+      <UiLoading :active="activePageLoading" full-page />
+    </Teleport>
   </UApp>
 </template>
