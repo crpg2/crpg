@@ -1,20 +1,22 @@
 type SubscriptionFn = () => Promise<unknown> | unknown
-// const INTERVAL = 1000 * 60 // 1 min
-const INTERVAL = 5000
+
+type Key = string
 
 export default defineNuxtPlugin(() => {
-  const subscriptions = ref(new Map<symbol | string, SubscriptionFn>())
+  const { pollIntevalMs } = useAppConfig()
+  const subscriptions = ref(new Map<Key, SubscriptionFn>())
 
   const keys = computed(() => [...subscriptions.value.keys()])
+
   const timer = setInterval(async () => {
     for (const [id, fn] of subscriptions.value) {
       Promise.resolve()
         .then(fn)
         .catch((err) => {
-          // console.error(`[poll:${String(id.description ?? id)}]`, err)
+          console.error(`[poll:${String(id)}]`, err)
         })
     }
-  }, INTERVAL)
+  }, pollIntevalMs)
 
   if (import.meta.hot) {
     import.meta.hot.dispose(() => clearInterval(timer))
@@ -23,13 +25,13 @@ export default defineNuxtPlugin(() => {
   return {
     provide: {
       poll: {
-        subscribe: (id: symbol, fn: SubscriptionFn) => {
+        subscribe: (id: Key, fn: SubscriptionFn) => {
           subscriptions.value.delete(id)
           subscriptions.value.set(id, fn)
           return () => subscriptions.value.delete(id)
         },
 
-        unsubscribe: (id: symbol) => {
+        unsubscribe: (id: Key) => {
           subscriptions.value.delete(id)
         },
 

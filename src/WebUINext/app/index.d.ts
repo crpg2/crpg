@@ -17,6 +17,7 @@ declare module 'nuxt/schema' {
   }
 
   interface AppConfigInput {
+    pollIntevalMs: number
     settings: Settings
     links: {
       tipsTricksHelpThread: string
