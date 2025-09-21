@@ -3,13 +3,8 @@ definePageMeta({
   layout: 'empty',
 })
 
-const { loadPatchNotes, patchNotes } = usePatchNotes()
-const { gameServerStats, loadGameServerStats } = useGameServerStats()
-const { loadSettings } = useSettingsStore()
-
-loadPatchNotes()
-loadGameServerStats()
-loadSettings()
+const { data: patchNotes } = usePatchNotes()
+const { data: gameServerStats } = useGameServerStats()
 </script>
 
 <template>

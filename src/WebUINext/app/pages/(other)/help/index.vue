@@ -4,16 +4,16 @@ const router = useRouter()
 
 <template>
   <div class="prose">
-    <h3 class="text-center">
+    <h2 class="text-center">
       {{ $t('help.overview.title') }}
-    </h3>
+    </h2>
 
     <div
       v-html="
         $t(
           'help.overview.intro',
           {
-            buildSupportLink: `<a href='${router.resolve({ name: 'help-build-support' }).path}'> ${$t('help.buildSupport.navTitle')}</a>`,
+            buildSupportLink: router.resolve({ name: 'help-build-support' }).path,
           },
         )"
     />

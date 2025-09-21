@@ -3,7 +3,7 @@ import type { SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
 import type { ColumnFiltersState, SortingState } from '@tanstack/table-core'
 
 import { useRouteQuery } from '@vueuse/router'
-import { CompetitiveRank, CompetitiveRankTable, UButton, UIcon, UInput, UiTableColumnHeader, UiTableColumnHeaderLabel, UModal, USelect, UserMedia, UTooltip } from '#components'
+import { CompetitiveRank, LazyCompetitiveRankTable, UButton, UIcon, UInput, UiTableColumnHeader, UiTableColumnHeaderLabel, UModal, USelect, UserMedia, UTooltip } from '#components'
 import { h, tw } from '#imports'
 
 import type { CharacterClass } from '~/models/character'
@@ -105,7 +105,7 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
           square: true,
           icon: 'crpg:help-circle',
         }),
-        body: () => h(CompetitiveRankTable, { rankTable: rankTable.value }),
+        body: () => h(LazyCompetitiveRankTable, { rankTable: rankTable.value }),
       }),
     }),
     cell: ({ row }) => h(CompetitiveRank, {
@@ -208,32 +208,29 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
         md:py-10
       "
     >
-      <div class="mb-14">
-        <div class="mb-5 flex justify-center">
+      <UiHeading class="mb-14" :title="$t('leaderboard.title')">
+        <template #icon>
           <UIcon
             name="crpg:trophy-cup"
             class="size-12 text-gold"
           />
-        </div>
-        <UiHeading :title="$t('leaderboard.title')" />
-      </div>
+        </template>
+      </UiHeading>
 
-      <div class="mb-4 flex items-center gap-6">
+      <div class="mb-4 flex gap-6">
         <UTabs
           v-model="regionModel"
           :items="regionItems"
           size="xl"
-          variant="pill"
+          color="neutral"
           :content="false"
         />
-
-        <USeparator orientation="vertical" class="h-8" />
 
         <UTabs
           v-model="gameModeModel"
           :items="gameModeItems"
           size="xl"
-          variant="pill"
+          color="neutral"
           :content="false"
         />
       </div>

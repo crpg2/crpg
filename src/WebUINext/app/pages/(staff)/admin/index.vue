@@ -1,49 +1,37 @@
 <script setup lang="ts">
 import type { Settings } from '~/models/setting'
 
-import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { ROLE } from '~/models/role'
-import { editSettings } from '~/services/settings-service'
-import { useSettingsStore } from '~/stores/settings'
+import { editSettings, getSettings } from '~/services/settings-service'
 
-const { togglePageLoading } = usePageLoading()
+const { settings } = useAppConfig()
 
 definePageMeta({
   roles: [ROLE.Admin],
 })
 
-const settingStore = useSettingsStore()
-
-const {
-  execute: onEditSettings,
-  isLoading: editingSetting,
-} = useAsyncCallback(
+const [onEditSettings, editingSetting] = useAsyncCallback(
   async (settings: Partial<Settings>) => {
     await editSettings(settings)
-    await settingStore.loadSettings()
+    updateAppConfig({ settings: await getSettings() })
   },
 )
-
-watchEffect(() => {
-  togglePageLoading(settingStore.isLoadingSettings || editingSetting.value)
-})
 </script>
 
 <template>
-  <UContainer class="py-12">
-    <h1 class="mb-14 text-center text-xl text-content-100">
+  <UContainer class="space-y-12 py-12">
+    <UiTextView variant="h1" tag="h1" class="text-center">
       {{ $t('nav.main.Admin') }}
-    </h1>
+    </UiTextView>
 
     <AdminSettingsForm
       class="
         mx-auto
         xl:w-1/2
       "
-      :settings="settingStore.settings"
+      :settings
       :loading="editingSetting"
-      @reset="settingStore.loadSettings"
       @submit="onEditSettings"
     />
   </UContainer>

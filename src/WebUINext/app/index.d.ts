@@ -13,7 +13,16 @@ declare module '#app' {
 }
 
 declare module 'nuxt/schema' {
-  interface AppConfig { }
+  interface AppConfig {
+  }
+
+  interface AppConfigInput {
+    settings: Settings
+    links: {
+      tipsTricksHelpThread: string
+      buildSupportThread: string
+    }
+  }
 
   interface RuntimeConfig { }
 

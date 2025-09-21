@@ -125,7 +125,7 @@ const nav = [
         </UTooltip>
       </div>
 
-      <nav class="flex items-center justify-center gap-2">
+      <nav class="flex justify-center gap-2">
         <NuxtLink
           v-for="{ name, label } in nav"
           :key="name"

@@ -1,12 +1,16 @@
 <script setup lang="ts">
-defineProps<{
+import type { CardProps } from '@nuxt/ui'
+
+const { icon, label, ...props } = withDefaults(defineProps<{
   icon?: string
   label: string
-}>()
+} & CardProps>(), {
+  variant: 'outline',
+})
 </script>
 
 <template>
-  <UCard variant="outline">
+  <UCard v-bind="props">
     <template #header>
       <UiDataMedia
         :icon
@@ -15,5 +19,9 @@ defineProps<{
       />
     </template>
     <slot />
+
+    <template v-if="$slots.footer" #footer>
+      <slot name="footer" />
+    </template>
   </UCard>
 </template>

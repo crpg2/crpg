@@ -1,19 +1,22 @@
 <script setup lang="ts">
 const router = useRouter()
+
+const { links } = useAppConfig()
 </script>
 
 <template>
   <div class="prose">
-    <h3 class="text-center">
+    <h2 class="text-center">
       {{ $t('help.buildSupport.title') }}
-    </h3>
+    </h2>
 
     <div
       v-html="
         $t(
           'help.buildSupport.content',
           {
-            bulderLink: `<a href='${router.resolve({ name: 'builder' }).path}'> ${$t('nav.main.Builder', 1)}</a>`,
+            bulderLink: router.resolve({ name: 'builder' }).path,
+            discordLink: links.buildSupportThread,
           },
         )"
     />

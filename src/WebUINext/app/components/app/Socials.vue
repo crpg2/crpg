@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { ButtonProps } from '@nuxt/ui'
 
-import { useSettingsStore } from '~/stores/settings'
-
 const props = withDefaults(
   defineProps<{
     patreonExpanded?: boolean
@@ -14,7 +12,7 @@ const props = withDefaults(
   },
 )
 
-const { settings } = storeToRefs(useSettingsStore())
+const { settings } = useAppConfig()
 
 interface SocialLink {
   id: string
@@ -26,37 +24,37 @@ interface SocialLink {
 const socialsLinks = computed<SocialLink[]>(() => {
   return [
     {
-      href: settings.value.patreon,
+      href: settings.patreon,
       icon: 'patreon',
       id: 'patreon',
       title: 'Patreon',
     },
     {
-      href: settings.value.discord,
+      href: settings.discord,
       icon: 'discord',
       id: 'discord',
       title: 'Discord',
     },
     {
-      href: settings.value.reddit,
+      href: settings.reddit,
       icon: 'reddit',
       id: 'reddit',
       title: 'Reddit',
     },
     {
-      href: settings.value.modDb,
+      href: settings.modDb,
       icon: 'moddb',
       id: 'moddb',
       title: 'Moddb',
     },
     {
-      href: settings.value.steam,
+      href: settings.steam,
       icon: 'steam',
       id: 'steam',
       title: 'Steam',
     },
     {
-      href: settings.value.github,
+      href: settings.github,
       icon: 'github',
       id: 'github',
       title: 'Github',

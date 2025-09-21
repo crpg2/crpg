@@ -17,7 +17,7 @@ const scrollToTop = () =>
 
 <template>
   <footer
-    class="relative mt-auto flex flex-wrap items-center justify-between px-6 py-5 text-2xs"
+    class="relative mt-auto flex flex-wrap items-center justify-between px-6 py-5 text-xs"
   >
     <AppSocials
       patreon-expanded
@@ -25,25 +25,24 @@ const scrollToTop = () =>
     />
 
     <div class="flex items-center gap-5">
-      <AppHHTooltip
-        v-if="userStore.user"
-        :region="userStore.user!.region"
-      >
-        <UiDataCell class="hover:text-highlighted">
-          <template #leftContent>
-            <UIcon
-              name="crpg:gift"
-              class="size-6"
-            />
-          </template>
-          {{ $t('hh.tooltip-trigger', { region: $t(`region.${userStore.user!.region}`, 1) }) }}
-          <template #rightContent>
-            {{ $d(HHEvent.start, 'time') }} - {{ $d(HHEvent.end, 'time') }}
-          </template>
-        </UiDataCell>
-      </AppHHTooltip>
+      <template v-if="userStore.user">
+        <AppHHTooltip :region="userStore.user!.region">
+          <UiDataCell class="hover:text-highlighted">
+            <template #leftContent>
+              <UIcon
+                name="crpg:gift"
+                class="size-6"
+              />
+            </template>
+            {{ $t('hh.tooltip-trigger', { region: $t(`region.${userStore.user!.region}`, 1) }) }}
+            <template #rightContent>
+              {{ $d(HHEvent.start, 'time') }} - {{ $d(HHEvent.end, 'time') }}
+            </template>
+          </UiDataCell>
+        </AppHHTooltip>
 
-      <USeparator orientation="vertical" class="h-8" />
+        <USeparator orientation="vertical" class="h-8" />
+      </template>
 
       <UButton
         size="xl"

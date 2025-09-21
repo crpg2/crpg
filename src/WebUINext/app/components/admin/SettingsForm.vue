@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { capitalize } from 'es-toolkit'
+import { capitalize, isEqual } from 'es-toolkit'
 
 import type { Settings } from '~/models/setting'
 
@@ -10,32 +10,25 @@ const props = defineProps<{
 
 defineEmits<{
   submit: [settings: Settings]
-  reset: []
 }>()
 
 const settingModel = ref<Settings>({ ...props.settings })
 
-watch(() => props.settings, () => {
+const isDirty = computed(() => !isEqual(settingModel.value, props.settings))
+
+const reset = () => {
   settingModel.value = { ...props.settings }
-})
+}
 </script>
 
 <template>
-  <UCard
+  <UiCard
     :ui="{
       footer: 'flex items-center justify-center gap-4',
     }"
+    label="Site Settings"
+    icon="crpg:settings"
   >
-    <template #header>
-      <UiDataCell>
-        <template #leftContent>
-          <UIcon name="crpg:settings" class="size-6" />
-        </template>
-        <div class="text-md">
-          Site Settings
-        </div>
-      </UiDataCell>
-    </template>
     <div class="space-y-6">
       <UFormField
         v-for="(_, key) in settingModel" :key
@@ -44,6 +37,7 @@ watch(() => props.settings, () => {
         <UInput
           v-model="settingModel[key]"
           type="text"
+          size="xl"
           color="neutral"
           variant="outline"
           class="w-full"
@@ -54,21 +48,22 @@ watch(() => props.settings, () => {
     <template #footer>
       <UButton
         variant="outline"
-        size="lg"
+        size="xl"
         :label="$t('action.reset')"
-        @click="$emit('reset')"
+        @click="reset"
       />
-      <ConfirmActionPopover
+      <AppConfirmActionPopover
         :confirm-label="$t('action.ok')"
         title="Are you sure you want to remove the setting?"
         @confirm="$emit('submit', settingModel)"
       >
         <UButton
-          size="lg"
+          size="xl"
+          :disabled="!isDirty"
           :loading
           :label="$t('action.save')"
         />
-      </ConfirmActionPopover>
+      </AppConfirmActionPopover>
     </template>
-  </UCard>
+  </UiCard>
 </template>

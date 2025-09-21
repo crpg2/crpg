@@ -4,12 +4,12 @@ import { useMainHeaderProvider } from '~/composables/app/use-main-header'
 const route = useRoute()
 const userStore = useUserStore()
 
-const { patchNotes } = usePatchNotes()
-const { gameServerStats } = useGameServerStats()
-const settingsStore = useSettingsStore()
+const { data: patchNotes } = usePatchNotes()
+const { data: gameServerStats } = useGameServerStats()
+
 const { HHEvent, HHEventRemaining, HHPollId, isHHCountdownEnded } = useHappyHours()
 
-settingsStore.loadSettings()
+// TODO:
 userStore.fetchUserRestriction()
 
 // TODO: FIXME:

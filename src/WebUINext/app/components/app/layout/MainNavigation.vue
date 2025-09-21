@@ -3,15 +3,14 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 
 import type { PatchNote } from '~/models/patch-note'
 
-import { useSettingsStore } from '~/stores/settings'
 import { useUserStore } from '~/stores/user'
 
 defineProps<{ latestPatch?: PatchNote }>()
 
+const { settings } = useAppConfig()
+
 const userStore = useUserStore()
 const { t } = useI18n()
-
-const { settings } = storeToRefs(useSettingsStore())
 
 const items = computed(() => [
   [

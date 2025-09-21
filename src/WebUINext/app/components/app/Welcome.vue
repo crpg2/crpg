@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { defaultGold, newUserStartingCharacterLevel } from '~root/data/constants.json'
 
-import { useSettingsStore } from '~/stores/settings'
-
 defineEmits<{
   close: []
 }>()
 
-const { settings } = storeToRefs(useSettingsStore())
+const { settings } = useAppConfig()
 </script>
 
 <template>

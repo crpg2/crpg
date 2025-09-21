@@ -39,7 +39,7 @@ const helpHubNavigation: { name: keyof RouteNamedMap, label: string }[] = [
   >
     <UiHeading :title="$t('help.title')" />
 
-    <div class="flex items-center justify-center gap-2">
+    <div class="flex justify-center gap-2">
       <NuxtLink
         v-for="{ name, label } in helpHubNavigation" :key="name"
         v-slot="{ isExactActive }"
@@ -47,8 +47,11 @@ const helpHubNavigation: { name: keyof RouteNamedMap, label: string }[] = [
       >
         <UButton
           color="neutral"
-          :variant="isExactActive ? 'soft' : 'ghost'"
-          size="lg"
+          variant="link"
+          active-variant="soft"
+          active-color="primary"
+          :active="isExactActive"
+          size="xl"
           :label
         />
       </NuxtLink>

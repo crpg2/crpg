@@ -6,14 +6,13 @@ definePageMeta({
 
 <template>
   <div class="flex w-full items-center justify-center py-12">
-    <div class="mx-auto max-w-3xl rounded-xl border border-border-200 px-6 py-10">
-      <div class="prose prose-invert">
-        <h1 class="text-center">
+    <UCard class="mx-auto max-w-3xl">
+      <template #header>
+        <UiTextView variant="h1" tag="h1" class="text-center">
           Privacy Policy
-        </h1>
-
-        <UiDivider />
-
+        </UiTextView>
+      </template>
+      <div class="prose">
         <p>
           We respect your privacy and are committed to protecting your personal information. This
           Privacy Policy explains how we collect, use, and disclose the information you provide to
@@ -72,6 +71,6 @@ definePageMeta({
           </li>
         </ol>
       </div>
-    </div>
+    </UCard>
   </div>
 </template>

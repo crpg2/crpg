@@ -1,25 +1,24 @@
 <script setup lang="ts">
 import type { UserRestrictionPublic } from '~/models/user'
 
-import { useSettingsStore } from '~/stores/settings'
 import { computeLeftMs, parseTimestamp } from '~/utils/date'
 
 const props = defineProps<{
   restriction: UserRestrictionPublic
 }>()
 
+const { settings } = useAppConfig()
+
 const joinRestrictionRemainingDuration = computed(() =>
   parseTimestamp(computeLeftMs(props.restriction.createdAt, Number(props.restriction.duration))),
 )
-
-const { settings } = storeToRefs(useSettingsStore())
 </script>
 
 <template>
   <div
     class="flex items-center justify-center gap-3 bg-error px-8 py-1.5 text-center text-highlighted"
   >
-    {{ $t('user.restriction.notification', { duration: $t('dateTimeFormat.dd:hh:mm', joinRestrictionRemainingDuration) }) }}
+    {{ $t('user.restriction.notification', { duration: $t('dateTimeFormat.dd:hh:mm', { ...joinRestrictionRemainingDuration }) }) }}
 
     <USeparator
       orientation="vertical" class="h-4"
@@ -48,7 +47,7 @@ const { settings } = storeToRefs(useSettingsStore())
           class="text-center text-lg font-bold text-error"
         >
           <template #duration>
-            {{ $t('dateTimeFormat.dd:hh:mm', joinRestrictionRemainingDuration) }}
+            {{ $t('dateTimeFormat.dd:hh:mm', { ...joinRestrictionRemainingDuration }) }}
           </template>
         </i18n-t>
       </template>

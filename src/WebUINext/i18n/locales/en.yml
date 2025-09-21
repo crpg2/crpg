@@ -37,7 +37,7 @@ help:
     title: Welcome to cRPG!
     intro: '
       <p>If you''re new you''ve probably found this page looking for some help, you''ve come to the right place! This will serve as a ''welcome pack'' of sorts to help you out with basic questions.</p>
-      <p>We recommend checking out {buildSupportLink} to start with, it''s the best way to learn our building system and to get started in being creative with your character!</p>'
+      <p>We recommend checking out <a href=''{buildSupportLink}''>build support</a> to start with, it''s the best way to learn our building system and to get started in being creative with your character!</p>'
 
   buildSupport:
     navTitle: Build support
@@ -52,7 +52,7 @@ help:
       <li>add 3 points and bring it to level 6 and you can now put in 2 points</li>
       <li>rinse and repeat until you reach your desired level!</li>
       </ul>
-      <p>You can experiment with the build with the help of {bulderLink} and also ask questions in the <a href=''https://discord.com/channels/279063743839862805/1036085650849550376'' target=''_blank''>specialized Discord chat</a></p>'
+      <p>You can experiment with the build with the help of <a href=''{bulderLink}'' target=''_blank''>this tool</a> and also ask questions in the <a href=''{discordLink}'' target=''_blank''>specialized Discord chat</a></p>'
 
   joinClan:
     title: Joining a Clan
@@ -68,7 +68,7 @@ help:
     title: Frequently Asked Questions
     navTitle: FAQ
     intro: '
-      <p>You''ll find a list of common questions here. Ask your question <a href=''https://discord.com/channels/279063743839862805/1044686358066778112'' target=''_blank''>in our Discord</a></p>'
+      <p>You''ll find a list of common questions here. Ask your question <a href=''{discordLink}'' target=''_blank''>in our Discord</a></p>'
     list:
       - q: How do strength requirements work?
         a: You can wear whatever you like, however, if you do not hold the requirement to wield said item you will face <strong>penalties</strong>.
