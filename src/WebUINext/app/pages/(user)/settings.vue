@@ -1,34 +1,50 @@
 <script setup lang="ts">
+import { LazyAppConfirmActionDialog } from '#components'
+
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'
 import { logout } from '~/services/auth-service'
-import { deleteUser } from '~/services/user-service'
+import { getCharacters } from '~/services/character-service'
+import { deleteUser as _deleteUser } from '~/services/user-service'
 import { useUserStore } from '~/stores/user'
 
 definePageMeta({
   roles: SomeRole,
 })
 
-const { t } = useI18n()
-const toast = useToast()
-
 const userStore = useUserStore()
 
-const canDeleteUser = computed(() => !userStore.characters.length)
+const { state: characters, isLoading: loadingCharacters } = useAsyncState(() => getCharacters(), [])
+const canDeleteUser = computed(() => !characters.value.length)
 
-const { execute: onDeleteUser } = useAsyncCallback(async () => {
-  await deleteUser()
-  toast.add({
-    title: t('user.settings.delete.notify.success'),
-    color: 'success',
-    close: false,
-  })
-  logout()
+const { t, n } = useI18n()
+const overlay = useOverlay()
+const confirmDeleteDialog = overlay.create(LazyAppConfirmActionDialog, {
+  props: {
+    title: t('user.settings.delete.dialog.title'),
+    description: t('user.settings.delete.dialog.desc'),
+    confirm: t('user.settings.delete.dialog.enterToConfirm', {
+      userName: userStore.user!.name,
+      heirloomPoints: userStore.user!.heirloomPoints,
+      gold: n(userStore.user!.gold),
+    }),
+  },
 })
 
-userStore.fetchCharacters()
+const [onDeleteUser] = useAsyncCallback(async () => {
+  await _deleteUser()
+  logout()
+}, {
+  successMessage: 'user.settings.delete.notify.success',
+})
 
-const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
+async function deleteUser() {
+  if (!(await confirmDeleteDialog.open())) {
+    return
+  }
+
+  onDeleteUser()
+}
 </script>
 
 <template>
@@ -46,19 +62,12 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
     >
       <UiHeading :title="$t('user.settings.title')" class="mb-14 text-center" />
 
-      <UCard :ui="{ body: 'relative min-h-24' }" variant="outline">
-        <template #header>
-          <UiDataCell class="w-full text-sm text-error">
-            <template #leftContent>
-              <UIcon name="crpg:alert-circle" class="size-7" />
-            </template>
-            <h4 class="text-lg font-bold">
-              {{ $t('user.settings.dangerZone') }}
-            </h4>
-          </UiDataCell>
-        </template>
-
-        <UiLoading v-if="userStore.fetchingCharacters" active />
+      <UiCard
+        :ui="{ body: 'relative min-h-24', header: 'text-error' }"
+        icon="crpg:alert-circle"
+        :label="$t('user.settings.dangerZone')"
+      >
+        <UiLoading v-if="loadingCharacters" active />
 
         <template v-else>
           <div
@@ -72,54 +81,24 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
           <i18n-t
             scope="global"
             keypath="user.settings.delete.title"
-            tag="div"
-            class="prose leading-relaxed"
-            :class="{ 'pointer-events-none opacity-30': !canDeleteUser }"
             data-aq-delete-user-group
+            tag="div"
+            :class="{ 'pointer-events-none opacity-30': !canDeleteUser }"
           >
             <template #link>
-              <span
+              <ULink
                 class="
-                  cursor-pointer border-b border-dashed text-error
-                  hover:border-0
+                  cursor-pointer text-error
+                  hover:text-error/80
                 "
-                @click="() => toggleConfirmDialog()"
+                @click="deleteUser"
               >
                 {{ $t('user.settings.delete.link') }}
-              </span>
+              </ULink>
             </template>
           </i18n-t>
         </template>
-      </UCard>
+      </UiCard>
     </div>
-
-    <AppConfirmActionDialog
-      v-if="shownConfirmDialog"
-      open
-      :confirm="$t('user.settings.delete.dialog.enterToConfirm', { user: userStore.user!.name })"
-      :confirm-label="$t('action.delete')"
-      @cancel="toggleConfirmDialog(false);"
-      @confirm="() => {
-        onDeleteUser();
-        toggleConfirmDialog(false);
-      }"
-      @update:open="toggleConfirmDialog(false)"
-    >
-      <template #title>
-        <div
-          class="
-            prose-h4:text-status-danger
-            prose-h5:text-status-danger
-            prose
-          "
-          v-html="$t('user.settings.delete.dialog.title')"
-        />
-      </template>
-      <template #description>
-        <p class="text-status-warning leading-relaxed">
-          {{ $t('user.settings.delete.dialog.desc') }}
-        </p>
-      </template>
-    </AppConfirmActionDialog>
   </UContainer>
 </template>

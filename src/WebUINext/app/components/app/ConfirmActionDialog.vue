@@ -47,13 +47,18 @@ const onConfirm = async () => {
 
 <template>
   <UModal
-    :title
     :ui="{
       body: 'space-y-5 text-center',
       footer: 'flex items-center justify-center gap-4',
     }"
   >
     <slot />
+
+    <template #title>
+      <slot name="title">
+        {{ title }}
+      </slot>
+    </template>
 
     <template #body>
       <UAlert
@@ -63,16 +68,16 @@ const onConfirm = async () => {
           root: 'ring-5',
         }"
       >
-        <template #title>
-          <slot name="title">
-            {{ title }}
+        <template #description>
+          <slot name="description">
+            {{ description }}
           </slot>
-        </template>
 
-        <template v-if="undone" #description>
-          <UiTextView variant="h5" class="text-error">
-            {{ $t('action-undone') }}
-          </UiTextView>
+          <template v-if="undone">
+            <UiTextView variant="h5" class="text-error">
+              {{ $t('action-undone') }}
+            </UiTextView>
+          </template>
         </template>
       </UAlert>
 

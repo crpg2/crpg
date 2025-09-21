@@ -10,7 +10,7 @@ definePageMeta({
   },
 })
 
-const helpHubNavigation: { name: keyof RouteNamedMap, label: string }[] = [
+const helpHubNavigation = computed<{ name: keyof RouteNamedMap, label: string }[]>(() => [
   {
     label: t('help.overview.navTitle'),
     name: 'help',
@@ -27,7 +27,7 @@ const helpHubNavigation: { name: keyof RouteNamedMap, label: string }[] = [
     label: t('help.FAQ.navTitle'),
     name: 'help-faq',
   },
-]
+])
 </script>
 
 <template>

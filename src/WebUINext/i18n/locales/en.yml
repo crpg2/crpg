@@ -68,7 +68,8 @@ help:
     title: Frequently Asked Questions
     navTitle: FAQ
     intro: '
-      <p>You''ll find a list of common questions here. Ask your question <a href=''{discordLink}'' target=''_blank''>in our Discord</a></p>'
+      <p>You''ll find a list of common questions here.</p>
+      <p>Ask your question <a href=''{discordLink}'' target=''_blank''>in our Discord</a></p>'
     list:
       - q: How do strength requirements work?
         a: You can wear whatever you like, however, if you do not hold the requirement to wield said item you will face <strong>penalties</strong>.
@@ -969,12 +970,9 @@ user:
       validation:
         hasChar: You cannot delete your account as long as you have at least 1 character.
       dialog:
-        title: '
-          <h5>WARNING</h5>
-          <h4>You are about to delete your account</h4>
-          <h5>WARNING</h5>'
+        title: You are about to delete your account
         desc: 'FINAL WARNING: This process CANNOT BE UNDONE - Deleting your account means it is GONE PERMANENTLY. Any and all data relating to your time in cRPG, characters, items, levels and more WILL be PERMANENTLY erased. We CANNOT recover data once this is actioned.'
-        enterToConfirm: 'Delete my account {user}'
+        enterToConfirm: 'Delete my account {userName} with {heirloomPoints} loom points and {gold} gold'
       notify:
         success: Your account has now been deleted.
   restriction:

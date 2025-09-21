@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface FaqItem { q: string, a: string }
 
-const faqList = $tm('help.FAQ.list') as FaqItem[]
+const faqList = computed(() => $tm('help.FAQ.list') as FaqItem[])
 
 const { links } = useAppConfig()
 </script>

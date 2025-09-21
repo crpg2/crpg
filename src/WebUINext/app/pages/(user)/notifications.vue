@@ -16,6 +16,8 @@ const {
   deleteNotification,
   deleteAllNotifications,
 } = useUsersNotifications()
+
+// TODO: pagination, filter by type
 </script>
 
 <template>
@@ -28,7 +30,6 @@ const {
           :disabled="!hasUnreadNotifications"
           variant="ghost"
           color="neutral"
-          size="sm"
           :label="$t('user.notifications.action.readAll.title')"
           @click="readAllNotifications"
         />
@@ -41,7 +42,6 @@ const {
           <UButton
             variant="ghost"
             color="error"
-            size="sm"
             icon="crpg:close"
             :label="$t('user.notifications.action.deleteAll.title')"
           />

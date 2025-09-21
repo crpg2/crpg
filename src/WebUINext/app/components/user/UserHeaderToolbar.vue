@@ -111,7 +111,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
         <UChip
           :show="Boolean(user.unreadNotificationsCount)"
           inset
-          size="xl"
+          size="2xl"
           :ui="{ base: 'bg-[var(--color-notification)]' }"
         >
           <UButton
@@ -120,6 +120,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
             icon="crpg:dots"
             active-variant="subtle"
             :active="open"
+            size="xl"
           />
         </UChip>
       </template>
@@ -128,6 +129,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
         <UChip
           :show="Boolean(user.unreadNotificationsCount)"
           inset
+          size="lg"
           :ui="{ base: 'bg-[var(--color-notification)]' }"
         >
           <UIcon name="crpg:carillon" class="size-[1.125rem]" />
