@@ -1,5 +1,6 @@
 <script setup lang="ts" generic="T extends { item: Item }">
 import type { SelectItem, TableColumn } from '@nuxt/ui'
+// import type { FilterFn, SortingFn } from '@tanstack/table-core'
 import type { ColumnFiltersState } from '@tanstack/vue-table'
 
 import { getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useVueTable } from '@tanstack/vue-table'
@@ -59,6 +60,10 @@ const columns: TableColumn<T>[] = [
   {
     accessorFn: row => row.item.rank,
     id: 'rank',
+  },
+  {
+    accessorFn: row => row.item.name,
+    id: 'name',
   },
 ]
 

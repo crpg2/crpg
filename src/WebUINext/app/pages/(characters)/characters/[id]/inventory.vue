@@ -119,9 +119,6 @@ const additionalFilteritems = computed<DropdownMenuItem[]>(() => [
     onUpdateChecked(checked: boolean) {
       hideInArmoryItemsModel.value = checked
     },
-    onSelect(e: Event) {
-      e.preventDefault()
-    },
   },
 ])
 
