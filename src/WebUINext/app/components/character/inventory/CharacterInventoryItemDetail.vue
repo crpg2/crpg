@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { DropdownMenuItem } from '@nuxt/ui'
+
 import { LazyCharacterInventoryItemUpgradesModal } from '#components'
 import { itemSellCostPenalty } from '~root/data/constants.json'
 
@@ -7,6 +9,7 @@ import type { UserItem, UserPublic } from '~/models/user'
 
 import {
   canAddedToClanArmory,
+  canSell,
   canUpgrade,
   computeBrokenItemRepairCost,
   computeSalePrice,
@@ -40,8 +43,7 @@ const { clan, user } = toRefs(useUserStore())
 const userItemToReplaceSalePrice = computed(() => {
   const { graceTimeEnd, price } = computeSalePrice(userItem)
   return {
-    graceTimeEnd:
-      graceTimeEnd === null ? null : parseTimestamp(graceTimeEnd.valueOf() - new Date().valueOf()),
+    graceTimeEnd: graceTimeEnd ? parseTimestamp(graceTimeEnd.valueOf() - new Date().valueOf()) : null,
     price,
   }
 })
@@ -49,11 +51,9 @@ const userItemToReplaceSalePrice = computed(() => {
 const repairCost = computed(() => computeBrokenItemRepairCost(userItem.item.price))
 
 const isOwnArmoryItem = computed(() => userItem.isArmoryItem && userItem.userId === user.value!.id)
-const isSellable = computed(
-  () => userItem.item.rank <= 0 && !userItem.isArmoryItem && !userItem.isPersonal,
-)
-const isUpgradable = computed(() => canUpgrade(userItem.item.type) && !userItem.isArmoryItem)
-const isCanAddedToClanArmory = computed(() => canAddedToClanArmory(userItem.item.type) && !userItem.isPersonal)
+const isSellable = computed(() => canSell(userItem))
+const isUpgradable = computed(() => canUpgrade(userItem))
+const isCanAddedToClanArmory = computed(() => canAddedToClanArmory(userItem))
 
 const overlay = useOverlay()
 
@@ -63,6 +63,79 @@ const itemUpgradesModal = overlay.create(LazyCharacterInventoryItemUpgradesModal
     onReforge: () => emit('reforge'),
     onUpgrade: () => emit('upgrade'),
   },
+})
+
+const { t } = useI18n()
+
+const itemActions = computedEager(() => {
+  const result: DropdownMenuItem[] = []
+
+  if (isSellable.value) {
+    result.push({
+      slot: 'sell' as const,
+      onSelect: () => {
+        emit('sell')
+      },
+    })
+  }
+
+  if (userItem.isBroken) {
+    result.push({
+      slot: 'repair' as const,
+      icon: 'crpg:repair',
+      onSelect: () => {
+        emit('repair')
+      },
+    })
+  }
+
+  if (isUpgradable.value) {
+    result.push({
+      slot: 'upgrades' as const,
+      icon: 'crpg:blacksmith',
+      label: t('character.inventory.item.upgrade.upgradesTitle'),
+      onSelect: () => {
+        itemUpgradesModal.open()
+      },
+    })
+  }
+
+  if (clan.value && isCanAddedToClanArmory.value) {
+    if (userItem.isArmoryItem) {
+      result.push({
+        slot: 'armory-add' as const,
+        icon: 'crpg:armory',
+        label: t('clan.armory.item.add.title'),
+        onSelect: () => {
+          emit('addToClanArmory')
+        },
+      })
+    }
+    else {
+      if (isOwnArmoryItem.value) {
+        result.push({
+          slot: 'armory-remove' as const,
+          icon: 'crpg:armory',
+          label: t('clan.armory.item.remove.title'),
+          onSelect: () => {
+            emit('removeFromClanArmory')
+          },
+        })
+      }
+      else {
+        result.push({
+          slot: 'armory-return' as const,
+          icon: 'crpg:armory',
+          label: t('clan.armory.item.return.title'),
+          onSelect: () => {
+            emit('returnToClanArmory')
+          },
+        })
+      }
+    }
+  }
+
+  return result
 })
 </script>
 
@@ -76,16 +149,18 @@ const itemUpgradesModal = overlay.create(LazyCharacterInventoryItemUpgradesModal
       <UTooltip v-if="equipped" :text="$t('character.inventory.item.equipped')">
         <UBadge
           icon="crpg:check"
-          variant="soft"
+          variant="subtle"
           color="success"
+          size="lg"
         />
       </UTooltip>
 
       <UTooltip v-if="userItem.isBroken" :text="$t('character.inventory.item.broken.tooltip.title')">
         <UBadge
           icon="crpg:error"
-          variant="soft"
+          variant="subtle"
           color="error"
+          size="lg"
         />
       </UTooltip>
 
@@ -97,145 +172,85 @@ const itemUpgradesModal = overlay.create(LazyCharacterInventoryItemUpgradesModal
         <UTooltip v-else :text="$t('character.inventory.item.clanArmory.inArmory.title')">
           <UBadge
             icon="crpg:armory"
-            variant="soft"
+            variant="subtle"
+            size="lg"
           />
         </UTooltip>
       </template>
     </template>
 
-    <template #actions>
-      <div class="flex flex-wrap items-center gap-2" />
+    <template #some>
+      <div class="absolute top-8 right-0 translate-x-1/2">
+        <UDropdownMenu :items="itemActions" size="xl">
+          <UButton variant="subtle" color="neutral" size="xl" icon="crpg:dots" />
 
-      <AppConfirmActionPopover
-        v-if="isSellable"
-        :confirm-label="$t('action.sell')"
-        :title="$t('character.inventory.item.sell.confirm')"
-        @confirm="emit('sell')"
-      >
-        <UButton
-          variant="subtle"
-        >
-          <i18n-t
-            scope="global"
-            keypath="character.inventory.item.sell.title"
-          >
-            <template #price>
-              <AppCoin :value="userItemToReplaceSalePrice.price" />
-            </template>
-          </i18n-t>
-
-          <UTooltip>
-            <UBadge
-              v-if="userItemToReplaceSalePrice.graceTimeEnd !== null"
-              size="sm"
-              variant="solid"
-              color="success"
-              :label="$n(1, 'percent', { minimumFractionDigits: 0 })"
-            />
-            <UBadge
-              v-else
-              size="sm"
-              color="error"
-              variant="solid"
-              :label="$n(itemSellCostPenalty, 'percent', { minimumFractionDigits: 0 })"
-            />
-
-            <template #content>
+          <template #sell-label>
+            <div class="flex items-center gap-2">
               <i18n-t
-                v-if="userItemToReplaceSalePrice.graceTimeEnd !== null"
                 scope="global"
-                keypath="character.inventory.item.sell.freeRefund"
-                tag="div"
+                keypath="character.inventory.item.sell.title"
               >
-                <template #dateTime>
-                  <span class="font-bold">
-                    {{ $t('dateTimeFormat.mm', { ...userItemToReplaceSalePrice.graceTimeEnd }) }}
-                  </span>
+                <template #price>
+                  <AppCoin :value="userItemToReplaceSalePrice.price" />
                 </template>
               </i18n-t>
-              <i18n-t
-                v-else
-                scope="global"
-                keypath="character.inventory.item.sell.penaltyRefund"
-                tag="div"
-              >
-                <template #penalty>
-                  <span class="font-bold text-error">
-                    {{ $n(itemSellCostPenalty, 'percent', { minimumFractionDigits: 0 }) }}
-                  </span>
+
+              <UTooltip v-if="userItemToReplaceSalePrice.graceTimeEnd !== null">
+                <UBadge
+                  size="sm"
+                  color="success"
+                  :label="$n(1, 'percent', { minimumFractionDigits: 0 })"
+                />
+                <template #content>
+                  <i18n-t
+                    scope="global"
+                    keypath="character.inventory.item.sell.freeRefund"
+                    tag="div"
+                  >
+                    <template #dateTime>
+                      <span class="font-bold">
+                        {{ $t('dateTimeFormat.mm', { ...userItemToReplaceSalePrice.graceTimeEnd }) }}
+                      </span>
+                    </template>
+                  </i18n-t>
                 </template>
-              </i18n-t>
-            </template>
-          </UTooltip>
-        </UButton>
-      </AppConfirmActionPopover>
+              </UTooltip>
 
-      <AppConfirmActionPopover
-        v-if="userItem.isBroken"
-        @confirm="emit('repair')"
-      >
-        <UButton
-          icon="crpg:repair"
-          color="error"
-          variant="subtle"
-        >
-          <i18n-t
-            scope="global"
-            keypath="character.inventory.item.repair.title"
-          >
-            <template #price>
-              <AppCoin :value="repairCost" />
-            </template>
-          </i18n-t>
-        </UButton>
-      </AppConfirmActionPopover>
+              <UTooltip v-else>
+                <UBadge
+                  size="sm"
+                  color="error"
+                  :label="$n(itemSellCostPenalty, 'percent', { minimumFractionDigits: 0 })"
+                />
+                <template #content>
+                  <i18n-t
+                    scope="global"
+                    keypath="character.inventory.item.sell.penaltyRefund"
+                    tag="div"
+                  >
+                    <template #penalty>
+                      <span class="font-bold text-error">
+                        {{ $n(itemSellCostPenalty, 'percent', { minimumFractionDigits: 0 }) }}
+                      </span>
+                    </template>
+                  </i18n-t>
+                </template>
+              </UTooltip>
+            </div>
+          </template>
 
-      <UButton
-        v-if="isUpgradable"
-        variant="subtle"
-        :label="$t('character.inventory.item.upgrade.upgradesTitle')"
-        icon="crpg:blacksmith"
-        @click="itemUpgradesModal.open()"
-      />
-
-      <template v-if="clan && isCanAddedToClanArmory">
-        <AppConfirmActionPopover
-          v-if="!userItem.isArmoryItem"
-          :confirm-label="$t('action.ok')"
-          :title="$t('clan.armory.item.add.confirm.description')"
-          @confirm="$emit('addToClanArmory')"
-        >
-          <UButton
-            variant="subtle"
-            icon="crpg:armory"
-            :label="$t('clan.armory.item.add.title')"
-          />
-        </AppConfirmActionPopover>
-
-        <template v-else>
-          <AppConfirmActionPopover
-            v-if="isOwnArmoryItem"
-            :confirm-label="$t('action.ok')"
-            :title="$t('clan.armory.item.remove.confirm.description')"
-            @confirm="$emit('removeFromClanArmory')"
-          >
-            <UButton
-              color="warning"
-              variant="subtle"
-              icon="crpg:armory"
-              :label="$t('clan.armory.item.remove.title')"
-            />
-          </AppConfirmActionPopover>
-
-          <UButton
-            v-else
-            variant="subtle"
-            icon="crpg:armory"
-            :label="$t('clan.armory.item.return.title')"
-            @click="$emit('returnToClanArmory')"
-          />
-        </template>
-      </template>
+          <template #repair-label>
+            <i18n-t
+              scope="global"
+              keypath="character.inventory.item.repair.title"
+            >
+              <template #price>
+                <AppCoin :value="repairCost" />
+              </template>
+            </i18n-t>
+          </template>
+        </UDropdownMenu>
+      </div>
     </template>
   </ItemDetail>
 </template>

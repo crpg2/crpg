@@ -24,9 +24,9 @@ const variants = tv({
       'p-sm': 'text-sm',
       'p-xs': 'text-xs',
       //
-      'caption': 'text-dimmed',
-      'caption-sm': 'text-sm text-dimmed',
-      'caption-xs': 'text-xs text-dimmed',
+      'caption': 'text-muted',
+      'caption-sm': 'text-sm text-muted',
+      'caption-xs': 'text-xs text-muted',
     },
     marginTop: {
       true: '',

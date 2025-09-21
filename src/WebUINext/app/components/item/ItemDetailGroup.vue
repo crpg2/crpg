@@ -19,13 +19,10 @@ const {
         x: item.bound.x + item.bound.width + 8,
         y: computeDetailCardYPosition(item.bound.y),
       }"
-      class="
-        fixed cursor-move rounded-md bg-default shadow-lg ring-muted select-none
-        active:ring-2
-      "
+      class="fixed cursor-move rounded-md bg-default shadow-lg select-none"
     >
       <UButton
-        class="!absolute top-0 right-0 z-10 translate-x-1/2 -translate-y-1/2 cursor-pointer"
+        class="absolute top-0 right-0 z-10 translate-x-1/2 -translate-y-1/2 cursor-pointer"
         icon="crpg:close"
         size="xl"
         color="neutral"

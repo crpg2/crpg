@@ -288,7 +288,7 @@ const items = computed(() => {
 
             <!-- TODO: design -->
             <template v-if="upkeepIsHigh" #tooltip-content>
-              <div class="prose-invert prose">
+              <div class="prose prose-invert">
                 <h4 class="text-warning">
                   {{ $t('character.highUpkeepWarning.title') }}
                 </h4>
@@ -301,39 +301,39 @@ const items = computed(() => {
     </div>
 
     <ItemDetailGroup>
-      <template #default="di">
+      <template #default="item">
         <CharacterInventoryItemDetail
-          :user-item="userItems.find(ui => ui.id === di.userItemId)!"
-          :equipped="equippedItemIds.includes(di.userItemId)"
-          :lender="getClanArmoryItemLender(userItems.find(ui => ui.id === di.userItemId)!.userId, clanMembers)"
-          :compare-result="compareItemsResult.find(cr => cr.type === userItems.find(fi => fi.item.id === di.id)!.item.type)?.compareResult"
+          :user-item="userItems.find(ui => ui.id === item.userItemId)!"
+          :equipped="equippedItemIds.includes(item.userItemId)"
+          :lender="getClanArmoryItemLender(userItems.find(ui => ui.id === item.userItemId)!.userId, clanMembers)"
+          :compare-result="compareItemsResult.find(cr => cr.type === userItems.find(fi => fi.item.id === item.id)!.item.type)?.compareResult"
           @sell="() => {
-            closeItemDetail(di); // TODO: copy pasta
-            onSellUserItem(di.userItemId);
+            closeItemDetail(item); // TODO: copy pasta
+            onSellUserItem(item.userItemId);
           }"
           @repair="() => {
-            closeItemDetail(di);
-            onRepairUserItem(di.userItemId);
+            closeItemDetail(item);
+            onRepairUserItem(item.userItemId);
           }"
           @upgrade="() => {
-            closeItemDetail(di);
-            onUpgradeUserItem(di.userItemId);
+            closeItemDetail(item);
+            onUpgradeUserItem(item.userItemId);
           }"
           @reforge="() => {
-            closeItemDetail(di);
-            onReforgeUserItem(di.userItemId);
+            closeItemDetail(item);
+            onReforgeUserItem(item.userItemId);
           }"
           @add-to-clan-armory="() => {
-            closeItemDetail(di);
-            onAddItemToClanArmory(di.userItemId);
+            closeItemDetail(item);
+            onAddItemToClanArmory(item.userItemId);
           }"
           @remove-from-clan-armory="() => {
-            closeItemDetail(di);
-            onRemoveFromClanArmory(di.userItemId);
+            closeItemDetail(item);
+            onRemoveFromClanArmory(item.userItemId);
           }"
           @return-to-clan-armory=" () => {
-            closeItemDetail(di);
-            onReturnToClanArmory(di.userItemId);
+            closeItemDetail(item);
+            onReturnToClanArmory(item.userItemId);
           }"
         />
       </template>

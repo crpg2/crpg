@@ -104,27 +104,21 @@ const fieldStyle = computed(() => {
 </script>
 
 <template>
-  <div class="space-y-1">
+  <div class="items-center space-y-1.5 py-1.5">
     <UTooltip
-      v-if="showLabel" :ui="{
-        content: 'max-w-sm',
-      }"
+      v-if="showLabel"
+      :disabled="!$t(`item.aggregations.${field}.description`)"
+      :ui="{ content: 'max-w-sm' }"
     >
-      <div class="text-xs text-muted">
+      <UiTextView variant="caption-xs">
         {{ $t(`item.aggregations.${field}.title`) }}
-      </div>
+      </UiTextView>
 
       <template #content>
-        <div class="space-y-5">
-          <h5 class="text-md font-bold text-highlighted">
-            {{ $t(`item.aggregations.${field}.title`) }}
-          </h5>
-          <div v-if="$t(`item.aggregations.${field}.description`)" class="prose">
-            <p>
-              {{ $t(`item.aggregations.${field}.description`) }}
-            </p>
-          </div>
-        </div>
+        <UiTooltipContent
+          :title="$t(`item.aggregations.${field}.title`)"
+          :description="$t(`item.aggregations.${field}.description`)"
+        />
       </template>
     </UTooltip>
 
@@ -138,9 +132,7 @@ const fieldStyle = computed(() => {
       >
         <slot v-bind="{ rawBuckets, formattedValue, diffStr }">
           <UTooltip
-            :ui="{
-              content: 'max-w-sm',
-            }"
+            :ui="{ content: 'max-w-sm' }"
             :disabled="!formattedValue.tooltip"
           >
             <UIcon
@@ -160,10 +152,7 @@ const fieldStyle = computed(() => {
               variant="subtle"
             />
 
-            <div
-              v-else
-              class="font-bold"
-            >
+            <div v-else class="font-bold">
               {{ formattedValue.label }}
             </div>
 
@@ -178,7 +167,7 @@ const fieldStyle = computed(() => {
 
         <div
           v-if="diffStr !== null"
-          class="text-xs font-bold"
+          class="text-sm font-bold"
         >
           {{ diffStr }}
         </div>

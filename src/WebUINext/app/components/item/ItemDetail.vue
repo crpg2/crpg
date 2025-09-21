@@ -34,56 +34,67 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
 
 <template>
   <UCard
-    variant="soft"
+    variant="subtle"
     :ui="{
-      root: 'w-80',
-      header: 'relative !p-0 h-40',
+      root: 'w-80 overflow-visible',
+      header: 'relative !p-0 h-40 border-0',
       body: '!p-3',
       footer: '!p-3',
     }"
   >
     <template #header>
+      <slot name="some" />
+
       <ItemThumb
         :thumb
         :name="item.name"
-        class="pointer-events-none h-full"
+        class="pointer-events-none"
       />
 
-      <div class="absolute top-4 left-4 z-10 flex items-center gap-1">
+      <div class="absolute top-3 left-3 z-10 flex items-center gap-1">
         <ItemRankIcon v-if="item.rank > 0" :rank="item.rank" />
         <slot name="badges-top-left" />
       </div>
 
-      <div class="absolute top-4 right-48 z-10 flex items-center gap-1">
+      <div class="absolute top-3 right-3 z-10 flex items-center gap-1">
         <slot name="badges-top-right" />
       </div>
 
-      <div class="absolute bottom-4 left-4 z-10 flex items-center gap-1">
+      <div class="absolute bottom-3 left-3 z-10 flex items-center gap-1">
         <slot name="badges-bottom-left" />
       </div>
 
-      <div class="absolute right-4 bottom-4 z-10 flex items-center gap-1">
+      <div class="absolute right-3 bottom-3 z-10 flex items-center gap-1">
         <slot name="badges-bottom-right" />
       </div>
     </template>
 
     <template #default>
-      <UiTextView variant="h4" class="mb-4" :style="{ color: rankColor }">
-        {{ item.name }}
+      <div class="mb-4 flex gap-2">
+        <UiTextView
+          variant="h4"
+          class="truncate text-ellipsis"
+          :style="{ color: rankColor }"
+        >
+          {{ item.name }}
+        </UiTextView>
 
-        <UTooltip :text="$t('action.copy')">
-          <UBadge
-            class="cursor-pointer"
-            icon="crpg:copy"
-            variant="subtle"
-            size="sm"
-            square
-            @click="onNameCopy"
-          />
-        </UTooltip>
-      </UiTextView>
+        <div>
+          <UTooltip :text="`${$t('action.copy')} - ${item.name}`">
+            <UBadge
+              class="cursor-pointer"
+              icon="crpg:copy"
+              variant="subtle"
+              size="sm"
+              square
+              @click="onNameCopy"
+            />
+          </UTooltip>
+        </div>
+      </div>
 
       <div class="grid grid-cols-2 gap-2.5">
+        <!-- TODO: to ItemParamGrid -->
         <ItemParam
           v-for="(_agg, field) in aggregationConfig"
           :key="field"
@@ -98,15 +109,17 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
             v-if="field === 'price'"
             #default="{ rawBuckets }"
           >
-            <AppCoin size="lg" :value="(rawBuckets as number)" />
+            <AppCoin :value="(rawBuckets as number)" />
           </template>
 
           <template
             v-else-if="field === 'upkeep'"
             #default="{ rawBuckets }"
           >
-            <AppCoin size="lg">
-              {{ $t('item.format.upkeep', { upkeep: $n((rawBuckets as number)) }) }}
+            <AppCoin>
+              <template #default="{ classes }">
+                <span :class="classes()">{{ $t('item.format.upkeep', { upkeep: $n((rawBuckets as number)) }) }}</span>
+              </template>
             </AppCoin>
           </template>
         </ItemParam>

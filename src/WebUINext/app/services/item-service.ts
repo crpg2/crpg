@@ -743,9 +743,11 @@ export const getRankColor = (rank: number) => {
   }
 }
 
-export const canUpgrade = (type: ItemType) => type !== ITEM_TYPE.Banner
+export const canUpgrade = (userItem: UserItem) => userItem.item.type !== ITEM_TYPE.Banner && !userItem.isArmoryItem
 
-export const canAddedToClanArmory = (type: ItemType) => type !== ITEM_TYPE.Banner
+export const canSell = (userItem: UserItem) => userItem.item.rank <= 0 && !userItem.isArmoryItem && !userItem.isPersonal
+
+export const canAddedToClanArmory = (userItem: UserItem) => userItem.item.type !== ITEM_TYPE.Banner && !userItem.isPersonal
 
 const _fallbackReforgeCost = 0
 

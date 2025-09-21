@@ -12,6 +12,7 @@ defineProps<{
     <template #icon="{ classes }">
       <UiSpriteSymbol name="coin" viewBox="0 0 18 18" :class="classes()" />
     </template>
+
     <template #default="{ classes }">
       <slot v-bind="{ classes }">
         <span
