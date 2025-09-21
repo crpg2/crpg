@@ -9,7 +9,6 @@ export default defineVitestConfig({
     //   reporter: ['json', 'text', 'html'],
     // },
     environment: 'happy-dom',
-    globals: true,
     include: ['./app/**/*.spec.ts'],
     // setupFiles: ['./src/__test__/unit/setup.ts'],
   },

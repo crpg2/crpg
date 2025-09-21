@@ -1,28 +1,59 @@
-import type { ItemFlat } from '~/models/item'
-import type { FiltersModel } from '~/models/item-search'
+import { expect, it } from 'vitest'
 
-import { applyFilters, excludeRangeFilters } from '~/services/item-search-service/helpers'
+import { getMaxRange, getMinRange, getStepRange } from '~/services/item-search-service/helpers'
 
-it.each<[FiltersModel<number[] | string[]>, FiltersModel<number[] | string[]>]>([
-  [{ price: [0, 1] }, {}],
-  [{ weaponClass: ['test'] }, { weaponClass: ['test'] }],
-])('excludeRangeFilters - model: %j', (filtersModel, expectation) => {
-  expect(excludeRangeFilters(filtersModel)).toEqual(expectation)
+it.each([
+  [[], 0],
+  [[1, 2, 3], 1],
+  [[1.1], 1],
+  [[1.1, 1.05], 1],
+  [[1.2, 1.001], 1],
+  [[2.2, 100.001], 2],
+])('getMinRange - values: %j', (values, expectation) => {
+  expect(getMinRange(values)).toEqual(expectation)
 })
 
-it.each<[FiltersModel<number[] | string[]>, string[], boolean]>([
-  [{ price: [999, 1001], tier: [6, 9] }, [], true],
-  [{ price: [999, 1001], tier: [9, 9] }, [], false],
-  [{ price: [1001, 1002], tier: [9, 9] }, [], false],
-  [{ price: [999, 1002], tier: [] }, [], true],
-  [{ price: [0, 1000], weaponClass: ['oneHandedSword'] }, [], true],
-  [{ price: [0, 1000], weaponClass: ['oneHandedSword'] }, ['Fluttershy'], false],
-])('applyFilters - filterModel: %j, userItemsIds: %j', (filterModel, userItemsIds, expectation) => {
-  expect(
-    applyFilters(
-      { id: 'Fluttershy', price: 1000, tier: 8.45 } as ItemFlat,
-      filterModel,
-      userItemsIds,
-    ),
-  ).toEqual(expectation)
+it.each([
+  [[], 0],
+  [[1, 2, 3], 3],
+  [[1.1], 2],
+  [[1.1, 1.05], 2],
+  [[1.2, 1.001], 2],
+  [[2.2, 100.001], 101],
+])('getMaxRange - values: %j', (values, expectation) => {
+  expect(getMaxRange(values)).toEqual(expectation)
+})
+
+it.each<[number[], number]>([
+  [[1, 2, 3], 1],
+  [[1.5, 1.6, 0.8, 1.12, 1.2], 0.1],
+  [[120, 130, 30, 125, 135, 145, 20, 21, 22, 22.5, 23], 1],
+  [
+    [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1,
+      1.1,
+      1.2,
+      1.3,
+      1.4,
+      1.5,
+      1.6,
+      1.7,
+      1.8,
+      1.9,
+      2,
+      2.1,
+    ],
+    0.1,
+  ],
+])('getStepRange - values: %j', (values, expectation) => {
+  expect(getStepRange(values)).toEqual(expectation)
 })

@@ -1,4 +1,4 @@
-// copy from https://github.com/hey-api/openapi-ts/blob/main/packages/nuxt/src/module.ts
+// TODO: FIXME: copy from https://github.com/hey-api/openapi-ts/blob/main/packages/nuxt/src/module.ts
 // ISSUE: https://github.com/hey-api/openapi-ts/issues/2282
 
 import type { UserConfig } from '@hey-api/openapi-ts'

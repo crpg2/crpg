@@ -1,3 +1,5 @@
+import type { Item } from '~/models/item'
+
 export const Longsword = {
   armor: null,
   baseId: 'crpg_sentinel_2hsword_abearirl',
@@ -69,7 +71,7 @@ export const Longsword = {
     },
   ],
   weight: 2.17,
-}
+} satisfies Item
 
 export const WoodenSword = {
   armor: null,
@@ -106,7 +108,7 @@ export const WoodenSword = {
     },
   ],
   weight: 1.42,
-}
+} satisfies Item
 
 export const NobleCavalryLance = {
   armor: null,
@@ -179,7 +181,7 @@ export const NobleCavalryLance = {
     },
   ],
   weight: 2.03,
-}
+} satisfies Item
 
 export const BecDeCorbin = {
   armor: null,
@@ -216,7 +218,7 @@ export const BecDeCorbin = {
     },
   ],
   weight: 2.11,
-}
+} satisfies Item
 
 export const SimpleShortSpear = {
   armor: null,
@@ -289,7 +291,7 @@ export const SimpleShortSpear = {
     },
   ],
   weight: 1.08,
-}
+} satisfies Item
 
 export const Pike = {
   armor: null,
@@ -344,7 +346,7 @@ export const Pike = {
     },
   ],
   weight: 1.07,
-}
+} satisfies Item
 
 export const Hoe = {
   armor: null,
@@ -417,7 +419,7 @@ export const Hoe = {
     },
   ],
   weight: 1.27,
-}
+} satisfies Item
 
 export const Shield = {
   armor: null,
@@ -454,7 +456,7 @@ export const Shield = {
     },
   ],
   weight: 11.6,
-}
+} satisfies Item
 
 export const Bow = {
   armor: null,
@@ -499,7 +501,7 @@ export const Bow = {
     },
   ],
   weight: 0.4,
-}
+} satisfies Item
 
 export const Bolts = {
   armor: null,
@@ -536,7 +538,7 @@ export const Bolts = {
     },
   ],
   weight: 0.3,
-}
+} satisfies Item
 
 export const ThrowingAxe = {
   armor: null,
@@ -598,7 +600,7 @@ export const ThrowingAxe = {
     },
   ],
   weight: 1.25,
-}
+} satisfies Item
 
 export const MountHarness = {
   armor: {
@@ -623,7 +625,7 @@ export const MountHarness = {
   type: 'MountHarness',
   weapons: [],
   weight: 20,
-}
+} satisfies Item
 
 export const Mount = {
   armor: null,
@@ -648,7 +650,7 @@ export const Mount = {
   type: 'Mount',
   weapons: [],
   weight: 450,
-}
+} satisfies Item
 
 export const Helmet = {
   armor: {
@@ -673,4 +675,4 @@ export const Helmet = {
   type: 'HeadArmor',
   weapons: [],
   weight: 4.64,
-}
+} satisfies Item
