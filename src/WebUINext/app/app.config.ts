@@ -99,12 +99,13 @@ export default defineAppConfig({
     },
     popover: {
       slots: {
-        content: 'text-sm text-default rounded-md px-4 py-3.5 h-auto',
+        content: 'text-sm text-default rounded-md px-3.5 py-3.5 h-auto',
       },
     },
     tooltip: {
       slots: {
-        content: 'text-sm text-default rounded-md px-4 py-3.5 h-auto',
+        content: 'text-sm text-default rounded-md px-3.5 py-3.5 h-auto max-w-80',
+        text: 'overflow-auto whitespace-normal',
       },
     },
     slider: {

@@ -77,6 +77,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
       icon="crpg:gift"
       :label="$t('welcome.shortTitle')"
     />
+
     <!-- TODO: FIXME: condition -->
 
     <UTooltip :text="$t('user.field.gold')">

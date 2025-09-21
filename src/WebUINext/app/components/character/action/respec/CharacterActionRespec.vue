@@ -30,11 +30,7 @@ async function respec() {
 </script>
 
 <template>
-  <UTooltip
-    :ui="{
-      content: 'max-w-96',
-    }"
-  >
+  <UTooltip>
     <UButton
       size="xl"
       variant="outline"

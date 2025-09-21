@@ -117,7 +117,7 @@ async function reforge() {
       <AppLoom :point="userStore.user!.heirloomPoints" />
       <AppCoin :value="userStore.user!.gold" />
 
-      <UTooltip :ui="{ content: 'max-w-96' }">
+      <UTooltip>
         <!-- This extra div fixes a bug where this popover opens itself when the parent modal window opens. -->
         <div>
           <UButton
@@ -145,7 +145,7 @@ async function reforge() {
         </template>
       </UTooltip>
 
-      <UTooltip :ui="{ content: 'max-w-96' }">
+      <UTooltip>
         <div>
           <UButton
             variant="subtle"

@@ -64,7 +64,10 @@ const isNew = computed(() => !isGraceTimeExpired(getItemGraceTimeEnd(userItem)))
     </template>
 
     <template #badges-bottom-right>
-      <UTooltip v-if="notMeetRequirement" :text="$t('character.inventory.item.requirement.tooltip.title')">
+      <UTooltip
+        v-if="notMeetRequirement"
+        :text="$t('character.inventory.item.requirement.tooltip.title')"
+      >
         <UBadge
           variant="soft"
           color="error"
@@ -72,7 +75,10 @@ const isNew = computed(() => !isGraceTimeExpired(getItemGraceTimeEnd(userItem)))
         />
       </UTooltip>
 
-      <UTooltip v-if="equipped" :text="$t('character.inventory.item.equipped')">
+      <UTooltip
+        v-if="equipped"
+        :text="$t('character.inventory.item.equipped')"
+      >
         <UBadge
           variant="soft"
           color="success"

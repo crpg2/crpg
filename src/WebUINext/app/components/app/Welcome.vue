@@ -59,19 +59,22 @@ const { settings } = storeToRefs(useSettingsStore())
 
     <template #body="{ close }">
       <div
-        class="prose text-center prose-invert prose-p:my-1.5 prose-p:text-xs"
+        class="
+          prose text-center prose-invert
+          prose-p:my-1.5 prose-p:text-xs
+        "
         v-html="$t('welcome.intro')"
       />
 
       <UCard variant="outline" class="relative py-7">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-base-100 px-3">
+        <div class="bg-base-100 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3">
           <h4 class="text-lg font-bold text-primary">
             {{ $t('welcome.bonusTitle') }}
           </h4>
         </div>
 
         <div class="flex flex-wrap items-center justify-center gap-4 px-20">
-          <UTooltip :ui="{ content: 'max-w-80' }">
+          <UTooltip>
             <AppCoin :value="defaultGold" />
             <template #content>
               <div
@@ -81,7 +84,7 @@ const { settings } = storeToRefs(useSettingsStore())
             </template>
           </UTooltip>
 
-          <UTooltip :ui="{ content: 'max-w-80' }">
+          <UTooltip>
             <UBadge
               icon="crpg:member"
               color="primary"
@@ -99,7 +102,7 @@ const { settings } = storeToRefs(useSettingsStore())
             </template>
           </UTooltip>
 
-          <UTooltip :ui="{ content: 'max-w-80' }">
+          <UTooltip>
             <UBadge
               icon="crpg:chevron-down-double"
               color="primary"
@@ -118,7 +121,12 @@ const { settings } = storeToRefs(useSettingsStore())
           </UTooltip>
         </div>
 
-        <div class="absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-1/2 justify-center bg-base-100 px-3">
+        <div
+          class="
+            bg-base-100 absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-1/2
+            justify-center px-3
+          "
+        >
           <UButton
             size="xl"
             class="w-24 justify-center"

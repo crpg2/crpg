@@ -108,7 +108,6 @@ const fieldStyle = computed(() => {
     <UTooltip
       v-if="showLabel"
       :disabled="!$t(`item.aggregations.${field}.description`)"
-      :ui="{ content: 'max-w-sm' }"
     >
       <UiTextView variant="caption-xs">
         {{ $t(`item.aggregations.${field}.title`) }}
@@ -131,10 +130,7 @@ const fieldStyle = computed(() => {
         :key="idx"
       >
         <slot v-bind="{ rawBuckets, formattedValue, diffStr }">
-          <UTooltip
-            :ui="{ content: 'max-w-sm' }"
-            :disabled="!formattedValue.tooltip"
-          >
+          <UTooltip :disabled="!formattedValue.tooltip">
             <UIcon
               v-if="formattedValue.icon !== null"
               :name="`crpg:${formattedValue.icon}`"

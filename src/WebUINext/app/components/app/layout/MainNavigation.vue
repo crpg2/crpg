@@ -113,10 +113,7 @@ const items = computed(() => [
     </template>
 
     <template v-if="!userStore.clan" #clans-leading>
-      <UTooltip
-        data-aq-main-nav-link-tooltip="Explanation"
-        :ui="{ content: 'w-72' }"
-      >
+      <UTooltip data-aq-main-nav-link-tooltip="Explanation">
         <UBadge
           icon="crpg:tag"
           variant="soft"

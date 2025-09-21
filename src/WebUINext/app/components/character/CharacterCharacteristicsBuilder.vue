@@ -206,7 +206,6 @@ const SKILLS_TO_ATTRIBUTES = 2
       "
     >
       <UTooltip
-        :ui="{ content: 'max-w-72' }"
         :content="{
           side: 'top',
         }"

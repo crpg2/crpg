@@ -18,11 +18,9 @@ const { rankColor, thumb } = useItem(() => item)
     <div class="relative h-16 w-32 min-w-32">
       <UTooltip
         :content="{ side: 'right' }"
-        :ui="{ content: 'p-2 h-auto w-[512px] flex-col gap-2' }"
+        :ui="{ content: 'p-5 h-auto w-[512px] flex-col gap-2' }"
       >
-        <div class="size-full">
-          <ItemThumb :thumb :name="item.name" />
-        </div>
+        <ItemThumb :thumb :name="item.name" />
 
         <template #content>
           <div class="h-[240px] w-full">
@@ -110,7 +108,6 @@ const { rankColor, thumb } = useItem(() => item)
         <UTooltip
           v-if="showTier"
           :content="{ side: 'right' }"
-          :ui="{ content: 'max-w-96' }"
         >
           <UBadge
             :label="String(item.tier)"

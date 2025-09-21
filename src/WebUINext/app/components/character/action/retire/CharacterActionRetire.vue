@@ -63,7 +63,7 @@ async function retire() {
   <UTooltip
     :content="{ side: 'right' }"
     :ui="{
-      content: 'max-w-96 max-h-[480px] overflow-y-auto block',
+      content: 'max-h-[480px] overflow-y-auto block',
     }"
   >
     <UButton

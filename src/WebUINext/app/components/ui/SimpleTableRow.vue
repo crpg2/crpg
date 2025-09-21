@@ -12,12 +12,7 @@ const slots = useSlots()
 </script>
 
 <template>
-  <UTooltip
-    :disabled="!tooltip && !slots['tooltip-content']"
-    :ui="{
-      content: 'max-w-sm',
-    }"
-  >
+  <UTooltip :disabled="!tooltip && !slots['tooltip-content']">
     <UiDataCell
       class="
         group rounded px-3 py-2.5
