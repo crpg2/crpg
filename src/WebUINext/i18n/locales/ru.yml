@@ -464,7 +464,7 @@ character:
         tooltip: Конвертировать {skill} очка умений в {attribute} очко атрибутов
 
     requires:
-      title: Требования
+      title: 'Требования: {text}'
       linked:
         oneAttrs: 1 очко атрибутов
         threeStr: 3 очка силы за каждый уровень

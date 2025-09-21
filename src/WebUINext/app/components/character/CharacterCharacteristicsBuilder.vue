@@ -205,18 +205,16 @@ const SKILLS_TO_ATTRIBUTES = 2
         hover:bg-muted
       "
     >
-      <UTooltip
-        :content="{
-          side: 'top',
-        }"
-      >
+      <UTooltip :content="{ side: 'top' }">
         <div
           class="flex items-center gap-1 text-sm"
           :class="{
             'text-error': fieldGroupKey === 'skills' && !checkCurrentSkillRequirementsSatisfied(fieldKey as SkillKey),
           }"
         >
-          {{ $t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.title`) }}
+          <UiTextView variant="caption">
+            {{ $t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.title`) }}
+          </UiTextView>
 
           <UIcon
             v-if="fieldGroupKey === 'skills' && !checkCurrentSkillRequirementsSatisfied(fieldKey as SkillKey)"
@@ -226,30 +224,29 @@ const SKILLS_TO_ATTRIBUTES = 2
         </div>
 
         <template #content>
-          <UiTooltipContent :title="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.title`)">
-            <template #description>
+          <UiTooltipContent
+            :title="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.title`)"
+          >
+            <template v-if="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.requires`)" #validation>
+              <UiTextView variant="p" class="text-warning">
+                {{ $t('character.characteristic.requires.title', { text: $t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.requires`) }) }}
+              </UiTextView>
+            </template>
+
+            <template v-if="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.desc`)" #description>
               <i18n-t
                 scope="global"
                 :keypath="`character.characteristic.${fieldGroupKey}.children.${fieldKey}.desc`"
-                tag="p"
               >
                 <template
-                  v-if="fieldKey in characteristicBonusByKey"
+                  v-if="characteristicBonusByKey[fieldKey]"
                   #value
                 >
-                  <span class="font-bold text-highlighted">
-                    {{ $n(characteristicBonusByKey[fieldKey]!.value, { style: characteristicBonusByKey[fieldKey]!.style, minimumFractionDigits: 0 }) }}
+                  <span class="font-bold text-success">
+                    {{ $n(characteristicBonusByKey[fieldKey].value, { style: characteristicBonusByKey[fieldKey].style, minimumFractionDigits: 0 }) }}
                   </span>
                 </template>
               </i18n-t>
-
-              <p
-                v-if="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.requires`)"
-                class="text-warning"
-              >
-                {{ $t('character.characteristic.requires.title') }}:
-                {{ $t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.requires`) }}
-              </p>
             </template>
           </UiTooltipContent>
         </template>

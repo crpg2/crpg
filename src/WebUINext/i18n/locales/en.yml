@@ -499,7 +499,7 @@ character:
         tooltip: Convert {skill} skill points to {attribute} attribute point
 
     requires:
-      title: Requires
+      title: 'Requires: {text}'
       linked:
         oneAttrs: 1 attributes
         threeStr: 3 strength per level
