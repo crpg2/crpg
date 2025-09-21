@@ -10,7 +10,7 @@ import { getItemAggregations } from '~/services/item-service'
 
 const { compareResult, item } = defineProps<{
   item: Item
-  compareResult?: CompareItemsResult // TODO: hmm // from provide/inject
+  compareResult?: CompareItemsResult
 }>()
 
 const toast = useToast()
@@ -28,7 +28,7 @@ const onNameCopy = () => {
   })
 }
 
-const flatItem = computed(() => createItemIndex([item])[0]!)
+const flatItem = computed(() => createItemIndex([item]).at(0)!) // TODO:
 const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
 </script>
 
@@ -124,10 +124,6 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
           </template>
         </ItemParam>
       </div>
-    </template>
-
-    <template #footer>
-      <slot name="actions" />
     </template>
   </UCard>
 </template>

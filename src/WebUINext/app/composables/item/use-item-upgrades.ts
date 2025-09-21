@@ -20,8 +20,10 @@ export const useItemUpgrades = ({
 }: ItemUpgradesOptions) => {
   const userStore = useUserStore()
 
-  // TODO:
-  const { state: itemUpgrades, isLoading } = useAsyncState(() => getItemUpgrades(item.baseId), [])
+  const {
+    state: itemUpgrades,
+    isLoading: isLoadingitemUpgrades,
+  } = useAsyncState(() => getItemUpgrades(item.baseId), [])
 
   const baseItem = computed(() => itemUpgrades.value.find(iu => iu.rank === 0))
 
@@ -40,7 +42,7 @@ export const useItemUpgrades = ({
   return {
     baseItem,
     canUpgrade,
-    isLoading,
+    isLoadingitemUpgrades,
     itemUpgrades,
     nextItem,
     relativeEntries,

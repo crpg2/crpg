@@ -5,6 +5,10 @@ defineProps<{
   value?: number
   size?: DataMediaSize
 }>()
+
+defineSlots<{
+  default: (props: { classes: () => string }) => any
+}>()
 </script>
 
 <template>

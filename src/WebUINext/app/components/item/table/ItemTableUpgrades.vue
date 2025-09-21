@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
-import type { VisibilityState } from '@tanstack/vue-table'
+import type { RowSelectionState, VisibilityState } from '@tanstack/vue-table'
 
 import { AppCoin, ItemParam, ItemTableMedia } from '#components'
 
@@ -15,12 +15,14 @@ const {
   withHeader = false,
   compareItemsResult,
   loading = false,
+  currentRank,
 } = defineProps<{
   items: ItemFlat[]
   aggregationConfig: AggregationConfig
   compareItemsResult: CompareItemsResult
   loading?: boolean
   withHeader?: boolean
+  currentRank?: number
 }>()
 
 const { t, n } = useI18n()
@@ -38,7 +40,7 @@ function createTableColumn(key: keyof ItemFlat): TableColumn<ItemFlat> {
     }, {
       ...(key === 'upkeep' && {
         default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, null, {
-          default: () => t('item.format.upkeep', { upkeep: n(rawBuckets) }),
+          default: ({ classes }: { classes: () => string }) => h('span', { class: classes() }, t('item.format.upkeep', { upkeep: n(rawBuckets) })),
         }),
       }),
       ...(key === 'price' && {
@@ -55,6 +57,7 @@ function createTableColumn(key: keyof ItemFlat): TableColumn<ItemFlat> {
 }
 
 const columns = computed<TableColumn<ItemFlat>[]>(() => [
+  // TODO: FIXME:
   // {
   //   id: 'fill',
   //   meta: {
@@ -72,8 +75,9 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => [
     }),
     meta: {
       class: {
-        td: 'w-[40%]',
-        th: 'w-[40%]',
+        // TODO:
+        // td: 'w-[40%]',
+        // th: 'w-[40%]',
       },
     },
   },
@@ -90,12 +94,18 @@ const columnVisibility = computed<VisibilityState>(() => {
       }, {} as VisibilityState),
   }
 })
+
+const rowSelection = ref<RowSelectionState>({
+  ...(currentRank !== undefined && {
+    [currentRank]: true,
+  }),
+})
 </script>
 
 <template>
   <UTable
     v-model:column-visibility="columnVisibility"
-    class="rounded-md border border-muted"
+    v-model:row-selection="rowSelection"
     :data="items"
     :loading
     :columns

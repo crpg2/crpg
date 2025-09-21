@@ -23,24 +23,17 @@ defineEmits<{
       <i18n-t
         scope="global"
         keypath="character.inventory.item.upgrade.confirm.description"
-        tag="div"
       >
         <template #loomPoints>
           <AppLoom :point="1" />
         </template>
         <template #oldItem>
-          <span
-            class="font-bold"
-            :style="{ color: getRankColor(item.rank) }"
-          >
+          <span :style="{ color: getRankColor(item.rank) }">
             {{ item.name }}
           </span>
         </template>
         <template v-if="nextItem" #newItem>
-          <span
-            class="font-bold"
-            :style="{ color: getRankColor(nextItem.rank) }"
-          >
+          <span :style="{ color: getRankColor(nextItem.rank) }">
             {{ nextItem.name }}
           </span>
         </template>

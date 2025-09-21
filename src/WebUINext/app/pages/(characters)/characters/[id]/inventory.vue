@@ -312,15 +312,12 @@ const items = computed(() => {
             onSellUserItem(item.userItemId);
           }"
           @repair="() => {
-            closeItemDetail(item);
             onRepairUserItem(item.userItemId);
           }"
           @upgrade="() => {
-            closeItemDetail(item);
             onUpgradeUserItem(item.userItemId);
           }"
           @reforge="() => {
-            closeItemDetail(item);
             onReforgeUserItem(item.userItemId);
           }"
           @add-to-clan-armory="() => {

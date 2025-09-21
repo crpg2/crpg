@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
 
-import { AppCoin, AppLoom, LazyCharacterInventoryActionItemReforgeConfirmDialog, LazyCharacterInventoryActionItemUpgradeConfirmDialog } from '#components'
+import { AppCoin, AppLoom, LazyCharacterInventoryItemReforgeConfirmDialog, LazyCharacterInventoryItemUpgradeConfirmDialog } from '#components'
 
 import type { ReforgeCost } from '~/composables/item/use-item-reforge'
 import type { UserItem } from '~/models/user'
@@ -29,10 +29,10 @@ const item = computed(() => createItemIndex([userItem.item]).at(0)!)
 const aggregationConfig = computed(() => getItemAggregations(item.value, false))
 
 const {
+  itemUpgrades,
+  isLoadingitemUpgrades,
   baseItem,
   canUpgrade,
-  isLoading,
-  itemUpgrades,
   nextItem,
   relativeEntries,
   validation: upgradeValidation,
@@ -69,7 +69,7 @@ const reforgeTableInfoColumns: TableColumn<ReforgeCost>[] = [
 
 const overlay = useOverlay()
 
-const upgradeItemConfirm = overlay.create(LazyCharacterInventoryActionItemUpgradeConfirmDialog)
+const upgradeItemConfirm = overlay.create(LazyCharacterInventoryItemUpgradeConfirmDialog)
 
 async function upgrade() {
   if (!(await upgradeItemConfirm.open({
@@ -82,7 +82,7 @@ async function upgrade() {
   emit('upgrade')
 }
 
-const reforgeItemConfirm = overlay.create(LazyCharacterInventoryActionItemReforgeConfirmDialog)
+const reforgeItemConfirm = overlay.create(LazyCharacterInventoryItemReforgeConfirmDialog)
 
 async function reforge() {
   if (!baseItem.value) {
@@ -106,6 +106,7 @@ async function reforge() {
     :ui="{
       content: 'max-w-5/6',
       title: 'flex items-center justify-center gap-4',
+      body: '!p-0',
     }"
   >
     <template #title>
@@ -116,16 +117,19 @@ async function reforge() {
       <AppLoom :point="userStore.user!.heirloomPoints" />
       <AppCoin :value="userStore.user!.gold" />
 
-      <UTooltip>
-        <UButton
-          variant="subtle"
-          size="lg"
-          :disabled="!canUpgrade"
-          @click="upgrade"
-        >
-          {{ $t('action.upgrade') }}
-          <AppLoom :point="1" />
-        </UButton>
+      <UTooltip :ui="{ content: 'max-w-96' }">
+        <!-- This extra div fixes a bug where this popover opens itself when the parent modal window opens. -->
+        <div>
+          <UButton
+            variant="subtle"
+            size="xl"
+            :disabled="!canUpgrade"
+            @click="upgrade"
+          >
+            {{ $t('action.upgrade') }}
+            <AppLoom :point="1" />
+          </UButton>
+        </div>
 
         <template #content>
           <UiTooltipContent
@@ -141,19 +145,21 @@ async function reforge() {
         </template>
       </UTooltip>
 
-      <UTooltip>
-        <UButton
-          variant="subtle"
-          size="lg"
-          :disabled="!canReforge"
-          @click="reforge"
-        >
-          {{ $t('action.reforge') }}
-          <AppCoin
-            v-if="reforgeValidation.rank"
-            :value="reforgeCost"
-          />
-        </UButton>
+      <UTooltip :ui="{ content: 'max-w-96' }">
+        <div>
+          <UButton
+            variant="subtle"
+            size="xl"
+            :disabled="!canReforge"
+            @click="reforge"
+          >
+            {{ $t('action.reforge') }}
+            <AppCoin
+              v-if="reforgeValidation.rank"
+              :value="reforgeCost"
+            />
+          </UButton>
+        </div>
 
         <template #content>
           <div class="space-y-4">
@@ -161,14 +167,13 @@ async function reforge() {
               :title="$t('character.inventory.item.reforge.tooltip.title')"
               :description="$t('character.inventory.item.reforge.tooltip.description')"
               :validation="!reforgeValidation.rank
-                ? $t('character.inventory.item.reforge.validation.rank')
+                ? $t('character.inventory.item.reforge.validation.rank', { minimumRank: 0 })
                 : !reforgeValidation.gold
                   ? $t('character.inventory.item.reforge.validation.gold')
                   : undefined
               "
             />
             <UTable
-              class="rounded-md border border-muted"
               :data="reforgeCostTable"
               :columns="reforgeTableInfoColumns"
             />
@@ -180,7 +185,8 @@ async function reforge() {
     <template #body>
       <ItemTableUpgrades
         with-header
-        :loading="isLoading"
+        :current-rank="userItem.item.rank"
+        :loading="isLoadingitemUpgrades"
         :items="itemUpgrades"
         :aggregation-config
         :compare-items-result="relativeEntries"

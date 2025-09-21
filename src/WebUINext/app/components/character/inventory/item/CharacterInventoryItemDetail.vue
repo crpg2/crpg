@@ -60,8 +60,14 @@ const overlay = useOverlay()
 const itemUpgradesModal = overlay.create(LazyCharacterInventoryItemUpgradesModal, {
   props: {
     userItem,
-    onReforge: () => emit('reforge'),
-    onUpgrade: () => emit('upgrade'),
+    onReforge: () => {
+      itemUpgradesModal.close()
+      emit('reforge')
+    },
+    onUpgrade: () => {
+      itemUpgradesModal.close()
+      emit('upgrade')
+    },
   },
 })
 
@@ -95,13 +101,15 @@ const itemActions = computedEager(() => {
       icon: 'crpg:blacksmith',
       label: t('character.inventory.item.upgrade.upgradesTitle'),
       onSelect: () => {
-        itemUpgradesModal.open()
+        itemUpgradesModal.open({
+          userItem,
+        })
       },
     })
   }
 
   if (clan.value && isCanAddedToClanArmory.value) {
-    if (userItem.isArmoryItem) {
+    if (!userItem.isArmoryItem) {
       result.push({
         slot: 'armory-add' as const,
         icon: 'crpg:armory',
