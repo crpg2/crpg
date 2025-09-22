@@ -2224,6 +2224,15 @@ public record SeedDataCommand : IMediatorRequest
                     item.Enabled = false;
                 }
 
+                // for testing filter by 'isNew' (shop page)
+                if (_appEnv.Environment == HostingEnvironment.Development)
+                {
+                    if (item.Name == "Wooden Twohander")
+                    {
+                        item.CreatedAt = DateTime.UtcNow.AddDays(-15);
+                    }
+                }
+
                 _db.Items.Add(item);
             }
         }

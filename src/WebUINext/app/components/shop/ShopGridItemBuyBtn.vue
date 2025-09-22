@@ -33,7 +33,7 @@ const [open, toggle] = useToggle()
       side: 'left',
     }"
     :ui="{
-      content: 'p-0 ring-0 max-w-sm',
+      content: 'p-0 ring-0 max-w-xs',
     }"
   >
     <UButton
@@ -61,62 +61,70 @@ const [open, toggle] = useToggle()
     </UButton>
 
     <template #content>
-      <UCard
-        :ui="{ footer: 'flex  items-center gap-2', header: 'prose' }"
+      <UiCard
+        :ui="{
+          header: 'prose',
+          body: 'prose space-y-4',
+          footer: 'flex justify-center items-center gap-2',
+        }"
+        :label="$t('shop.item.buy.tooltip.buy')"
       >
-        <template #header>
-          <h5>{{ $t('shop.item.buy.tooltip.buy') }}</h5>
-        </template>
-
-        <div class="prose space-y-4">
-          <div class="flex items-center gap-2">
-            {{ $t('item.aggregations.upkeep.title') }}:
-            <AppCoin>{{ $t('item.format.upkeep', { upkeep: $n(upkeep) }) }}</AppCoin>
-          </div>
-
-          <i18n-t
-            v-if="inInventoryItems.length"
-            scope="global"
-            keypath="shop.item.buy.tooltip.inInventory"
-            tag="p"
-            class="leading-relaxed"
-          >
-            <template #items>
-              <div
-                v-for="(items, group, idx) in groupedByRankInventoryItems" :key="group"
-                class="inline"
-              >
-                <span
-                  class="font-semibold"
-                  :style="{ color: getRankColor(items[0]!.item.rank) }"
-                >
-                  {{ items[0]!.item.name }} ({{ items.length }})</span>
-                <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
-                <template v-if="idx + 1 < Object.keys(groupedByRankInventoryItems).length">, </template>
-              </div>
+        <div class="space-y-2">
+          <UiDataCell>
+            <template #leftContent>
+              {{ $t('item.aggregations.upkeep.title') }}:
             </template>
-          </i18n-t>
+            <AppCoin :value="$t('item.format.upkeep', { upkeep: $n(upkeep) })" />
+          </UiDataCell>
 
-          <p
-            v-if="notEnoughGold"
-            class="text-error"
-          >
-            {{ $t('shop.item.buy.tooltip.notEnoughGold') }}
-          </p>
-
-          <p
-            v-else-if="isExpensive"
-            class="text-warning"
-          >
-            {{ $t('shop.item.expensive') }}
-          </p>
+          <UiDataCell>
+            <template #leftContent>
+              {{ $t('item.aggregations.price.title') }}:
+            </template>
+            <AppCoin :value="price" />
+          </UiDataCell>
         </div>
+
+        <i18n-t
+          v-if="inInventoryItems.length"
+          scope="global"
+          keypath="shop.item.buy.tooltip.inInventory"
+          tag="p"
+          class="leading-relaxed"
+        >
+          <template #items>
+            <div
+              v-for="(items, group, idx) in groupedByRankInventoryItems" :key="group"
+              class="inline"
+            >
+              <span
+                class="font-semibold"
+                :style="{ color: getRankColor(items[0]!.item.rank) }"
+              >
+                {{ items[0]!.item.name }} ({{ items.length }})</span>
+              <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
+              <template v-if="idx + 1 < Object.keys(groupedByRankInventoryItems).length">, </template>
+            </div>
+          </template>
+        </i18n-t>
+
+        <p
+          v-if="notEnoughGold"
+          class="text-error"
+        >
+          {{ $t('shop.item.buy.tooltip.notEnoughGold') }}
+        </p>
+
+        <p
+          v-else-if="isExpensive"
+          class="text-warning"
+        >
+          {{ $t('shop.item.expensive') }}
+        </p>
 
         <template #footer>
           <UButton
             variant="soft"
-            size="sm"
-            block
             icon="crpg:close"
             :label="$t('action.cancel')"
             @click="() => {
@@ -125,8 +133,6 @@ const [open, toggle] = useToggle()
           />
 
           <UButton
-            size="sm"
-            block
             icon="crpg:check"
             :label="$t('shop.item.buy.tooltip.buy')"
             @click="() => {
@@ -135,7 +141,7 @@ const [open, toggle] = useToggle()
             }"
           />
         </template>
-      </UCard>
+      </UiCard>
     </template>
   </UPopover>
 </template>

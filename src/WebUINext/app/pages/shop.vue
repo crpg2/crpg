@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import type { SelectItem, TableColumn } from '@nuxt/ui'
+import type { DropdownMenuItem, SelectItem, TableColumn } from '@nuxt/ui'
 import type {
   ColumnFiltersState,
+  FilterFnOption,
   RowSelectionState,
   SortingState,
   VisibilityState,
@@ -38,9 +39,7 @@ import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { ITEM_TYPE } from '~/models/item'
 import { SomeRole } from '~/models/role'
 import { getAggregationsConfig, getFacetsByItemType, getFacetsByWeaponClass } from '~/services/item-search-service'
-import {
-  AggregationView,
-} from '~/services/item-search-service/aggregations'
+import { AggregationView } from '~/services/item-search-service/aggregations'
 import { getStepRange } from '~/services/item-search-service/helpers'
 import { createItemIndex } from '~/services/item-search-service/indexator'
 import {
@@ -61,7 +60,6 @@ definePageMeta({
 })
 
 const { t, n } = useI18n()
-const toast = useToast()
 
 const router = useRouter()
 const route = useRoute()
@@ -77,6 +75,7 @@ usePageLoading(loadingItems)
 
 const [buyItem] = useAsyncCallback(async (item: ItemFlat) => {
   await buyUserItem(item.id)
+  await refreshUserItems()
   await userStore.fetchUser() // update gold
 }, {
   successMessage: t('shop.item.buy.notify.success'),
@@ -158,6 +157,7 @@ const weaponClasses = computed(() => {
   return getFacetsByWeaponClass(flatItems.value.map(item => item.weaponClass).filter(wc => wc !== null), itemType.value)
 })
 
+// TODO: нужен свой типизированный объект
 function getInitialColumnFiltersState(): ColumnFiltersState {
   return [
     { id: 'type', value: itemType.value },
@@ -193,9 +193,33 @@ const compareItemsResult = computed(() => isCompareMode.value
   ? getCompareItemsResult(table.value?.tableApi.getFilteredRowModel().rows.map(row => row.original) ?? [], currentAggregations.value)
   : null)
 
+// TODO: to cfgs
+function getFilterFn(key: keyof ItemFlat, options: AggregationOptions): FilterFnOption<any> {
+  if (options.view === AggregationView.Range) {
+    return 'inNumberRange'
+  }
+
+  if (options.view === AggregationView.Checkbox) {
+    return includesSome
+  }
+
+  // TODO: не помню зачем это
+  if (key === 'modId') {
+    return 'arrIncludesSome'
+  }
+
+  return 'auto'
+}
+
 function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
   return {
     accessorKey: key,
+    meta: {
+      class: {
+        td: 'min-w-[140px]',
+        th: 'min-w-[140px]',
+      },
+    },
     cell: ({ row }) => h(ItemParam, {
       field: key,
       item: row.original,
@@ -217,26 +241,12 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
         }),
       }),
     }),
-    meta: {
-      class: {
-        td: 'min-w-[140px]',
-        th: 'min-w-[140px]',
-      },
-    },
-    ...(options.view === AggregationView.Range) && {
-      filterFn: 'inNumberRange',
-    },
-    ...(options.view === AggregationView.Checkbox) && {
-      filterFn: includesSome,
-    },
-    ...(key === 'type' || key === 'weaponClass') && {
-      filterFn: 'equals',
-    },
+
+    filterFn: getFilterFn(key, options),
     header: ({ header, column }) => {
-      // TODO: FIXME:
-      const description = t(`item.aggregations.${header.id}.description`)
       return h(UiTableColumnHeader, {
         label: t(`item.aggregations.${header.id}.title`),
+        description: t(`item.aggregations.${header.id}.description`),
         withSort: options.view === AggregationView.Range,
         sorted: column.getIsSorted(),
         withFilter: true,
@@ -259,8 +269,8 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
         }),
         filter: () => {
           if (options.view === AggregationView.Checkbox) {
-            const buckets: string[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())].filter(Boolean)
-            // @ts-expect-error TODO:
+            const buckets: any[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
+            // @ts-expect-error TODO: https://github.com/nuxt/ui/issues/2968
             return h(USelect, {
               'class': 'w-full',
               'multiple': true,
@@ -292,29 +302,12 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
           return undefined
         },
       })
-      // return h(UTooltip, {
-      //   delayDuration: 600,
-      //   disabled: !description,
-      //   ui: {
-      //     content: 'max-w-sm',
-      //   },
-      // }, {
-      //   default: () => h('div', null, t(`item.aggregations.${header.id}.title`)),
-      //   content: () => h('div', { class: 'prose prose-invert' }, [
-      //     h('h4', null, t(`item.aggregations.${header.id}.title`)),
-      //     h('div', { innerHTML: description }),
-      //   ]),
-      // })
     },
   }
 }
 
 const columns = computed<TableColumn<ItemFlat>[]>(() => {
   return [
-    {
-      accessorKey: 'modId',
-      filterFn: 'arrIncludesSome',
-    },
     {
       id: 'expand',
       meta: {
@@ -383,6 +376,22 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
     ...Object.entries(currentAggregations.value).map(([key, config]) => createTableColumn(key as keyof ItemFlat, config)),
   ]
 })
+
+const onlyNewItemsFilter = (): DropdownMenuItem => {
+  const _column = table.value?.tableApi.getColumn('isNew')
+  const newItemsCount = _column?.getFacetedUniqueValues().get(true)
+
+  return {
+    label: `${t(`item.aggregations.isNew.title`)}${newItemsCount ? ` (${newItemsCount})` : ''}`,
+    type: 'checkbox' as const,
+    ...(_column && {
+      checked: (_column.getFilterValue() as [boolean, boolean])?.at(0) || false,
+      onUpdateChecked(checked: boolean) {
+        _column.setFilterValue(checked ? [checked] : [])
+      },
+    }),
+  }
+}
 </script>
 
 <template>
@@ -395,13 +404,36 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
     <!-- <pre> {{ table?.tableApi.getState() }}</pre> -->
     <!-- {{ columnFilters }} -->
 
-    <ItemSearchFilterByType
-      v-if="itemTypes.length"
-      v-model:item-type="itemType"
-      v-model:weapon-class="weaponClass"
-      :item-types="itemTypes"
-      :weapon-classes="weaponClasses"
-    />
+    <div class="flex h-[60px] items-center gap-4">
+      <UDropdownMenu
+        :items="[onlyNewItemsFilter()]"
+        :modal="false"
+        size="xl"
+      >
+        <!-- :show="hideInArmoryItemsModel" -->
+        <UChip
+          inset
+          size="2xl"
+          :ui="{ base: 'bg-[var(--color-notification)]' }"
+        >
+          <UButton
+            variant="outline"
+            color="neutral"
+            size="xl"
+            icon="crpg:dots"
+          />
+        </UChip>
+      </UDropdownMenu>
+
+      <!-- TODO: skeleton -->
+      <ItemSearchFilterByType
+        v-if="itemTypes.length"
+        v-model:item-type="itemType"
+        v-model:weapon-class="weaponClass"
+        :item-types="itemTypes"
+        :weapon-classes="weaponClasses"
+      />
+    </div>
 
     <UTable
       ref="table"
@@ -413,7 +445,6 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
       class="relative rounded-md border border-muted"
       :data="flatItems"
       :columns
-      :loading="loadingItems"
       :faceted-options="{
         getFacetedRowModel: getFacetedRowModel(),
         getFacetedUniqueValues: getFacetedUniqueValues(),
@@ -424,7 +455,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
       }"
       @update:column-filters="() => { resetPagination() }"
     >
-      <template v-if="!loadingItems" #empty>
+      <template #empty>
         <UiResultNotFound />
       </template>
 
@@ -443,19 +474,9 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
       "
     >
       <div>
-        <UPagination
-          v-if="table?.tableApi.getCanNextPage() || table?.tableApi.getCanPreviousPage()"
-          variant="soft"
-          active-variant="solid"
-          active-color="primary"
-          :page="pagination.pageIndex + 1"
-          :show-controls="false"
-          show-edges
-          size="xl"
-          :default-page="(table?.tableApi?.initialState.pagination.pageIndex || 0) + 1"
-          :items-per-page="table?.tableApi?.initialState.pagination.pageSize"
-          :total="table?.tableApi?.getFilteredRowModel().rows.length"
-          @update:page="(p) => table?.tableApi?.setPageIndex(p - 1)"
+        <UiGridPagination
+          v-if="table?.tableApi"
+          :table-api="table!.tableApi"
         />
       </div>
 

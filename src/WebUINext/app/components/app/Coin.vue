@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { isString } from 'es-toolkit'
+
 import type { DataMediaSize } from '~/components/ui/data/DataMedia.vue'
 
 defineProps<{
-  value?: number
+  value?: number | string
   size?: DataMediaSize
 }>()
 
@@ -23,7 +25,7 @@ defineSlots<{
           v-if="value !== undefined"
           :class="classes()"
         >
-          {{ $n(value) }}
+          {{ isString(value) ? value : $n(value) }}
         </span>
       </slot>
     </template>

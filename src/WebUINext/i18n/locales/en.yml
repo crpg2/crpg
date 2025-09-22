@@ -123,6 +123,14 @@ dateTimeFormat:
   hh: '{hours} @:dateTime.hours.short'
   'dd:hh:mm': '{days}@:dateTime.days.short {hours}@:dateTime.hours.short {minutes}@:dateTime.minutes.short'
 
+pagination:
+  counter: '{from}-{to} of {total}'
+
+sort:
+  directions:
+    asc: Sort by ascending
+    desc: Sort by descending
+
 nav:
   main:
     Characters: Characters
@@ -204,11 +212,6 @@ validations:
   clanTagPattern: Value should contain only integer and alphabetical
   clanBannerKeyPattern: Value should contain only integer and dots
   discordLinkPattern: Value must be a valid Discord link, ex. https://discord.gg/example
-
-sort:
-  directions:
-    asc: Sort by ascending
-    desc: Sort by descending
 
 error:
   title: Something went wrong...
@@ -796,8 +799,6 @@ shop:
     expensive: You can't afford the upkeep of this item
   filter:
     reset: Reset filter
-  pagination:
-    perPage: Items on the page
   sort:
     asc: Sort by ascending
     desc: Sort by descending
@@ -1317,7 +1318,6 @@ item:
     weight:
       title: Weight
       description: ''
-
     armorMaterialType:
       title: Material
       description: ''
@@ -1387,7 +1387,6 @@ item:
     swingDamageType:
       title: Swing damage type
       description: ''
-
     accuracy:
       title: Accuracy
       description: ''
@@ -1400,7 +1399,6 @@ item:
     aimSpeed:
       title: Aim speed
       description: ''
-
     damage:
       title: Damage
       description: ''
@@ -1413,7 +1411,6 @@ item:
     stackWeight:
       title: Stack Weight
       description: ''
-
     shieldSpeed:
       title: Speed
       description: ''
@@ -1423,12 +1420,10 @@ item:
     shieldArmor:
       title: Armor
       description: ''
-
     rank:
       title: Rank
       description: ''
-
-    new:
+    isNew:
       title: New items only
       description: 'Show items added or reworked within the last {days} days'
 

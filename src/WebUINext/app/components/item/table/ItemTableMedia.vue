@@ -128,7 +128,7 @@ const { rankColor, thumb } = useItem(() => item)
       <!-- top-right -->
       <div class="absolute top-0 right-0 flex items-center gap-1.5">
         <UBadge
-          v-if="item.new === 1 && item.rank === 0"
+          v-if="item.isNew && item.rank === 0"
           color="success"
           label="new"
           size="sm"

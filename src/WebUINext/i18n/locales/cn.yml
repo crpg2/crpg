@@ -1405,7 +1405,7 @@ item:
       title: 段位
       description: ''
 
-    new:
+    isNew:
       title: 仅显示新物品
       description: '显示最近 {days} 天内添加或重铸的物品'
 

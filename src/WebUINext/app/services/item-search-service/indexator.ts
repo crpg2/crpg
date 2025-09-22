@@ -244,7 +244,7 @@ const itemToFlat = (item: Item): ItemFlat => {
     flags,
     modId: generateModId(item, weaponProps?.weaponClass ?? undefined),
     name: item.name,
-    new: new Date(item.createdAt).getTime() > newItemDateThreshold ? 1 : 0,
+    isNew: new Date(item.createdAt).getTime() > newItemDateThreshold,
     price: item.price,
     rank: item.rank,
     requirement: item.requirement,

@@ -239,7 +239,7 @@ export type WeaponUsage = ValueOf<typeof WEAPON_USAGE>
 
 export interface ItemFlat {
   id: string
-  new: number
+  isNew: boolean
   name: string
   tier: number
   modId: string

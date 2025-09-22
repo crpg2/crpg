@@ -1,6 +1,6 @@
 export default defineAppConfig({
-  pollIntevalMs: 5000,
-  // pollIntevalMs: 1000 * 60 // 1 min,
+  // pollIntevalMs: 5000,
+  pollIntevalMs: 1000 * 60, // 1 min,
   settings: {
     discord: '',
     steam: '',

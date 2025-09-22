@@ -119,6 +119,14 @@ dateTimeFormat:
   hh: '{hours} @:dateTime.hours.short'
   'dd:hh:mm': '{days}@:dateTime.days.short {hours}@:dateTime.hours.short {minutes}@:dateTime.minutes.short'
 
+pagination:
+  counter: '{from}-{to} из {total}'
+
+sort:
+  directions:
+    asc: Сортировать по возврастанию
+    desc: Сортировать по убыванию
+
 nav:
   main:
     Characters: Персонаж
@@ -197,11 +205,6 @@ validations:
   clanTagPattern: Значение должно содержать только целые числа и латинские символы
   clanBannerKeyPattern: Значение должно содержать только целые числа и точки
   discordLinkPattern: Значение должно быть валидной Дискорд ссылкой, например. https://discord.gg/example
-
-sort:
-  directions:
-    asc: Сортировать по возврастанию
-    desc: Сортировать по убыванию
 
 error:
   title: Что то пошло не так
@@ -760,13 +763,6 @@ shop:
       secondary: 'Текущий режим (второстепенный): {weaponClass}'
       primary: 'Основной режим: {weaponClass}'
     expensive: Сейчас вы не можете позволить себе содержание этого предмете
-  filter:
-    reset: Сбросить фильтр
-  pagination:
-    perPage: Предметов на странице
-  sort:
-    asc: Сортировать по возрастанию
-    desc: Сортировать по убыванию
   compare:
     add: Добавить в сравнение
     addAll: Добавить все товары в сравнение
@@ -1264,7 +1260,6 @@ item:
     weight:
       title: Вес
       description: ''
-
     armorMaterialType:
       title: Материал
       description: ''
@@ -1307,7 +1302,6 @@ item:
     mountArmorFamilyType:
       title: Тип
       description: ''
-
     weaponUsage:
       title: Не основной режим использования
       description: 'TODO:'
@@ -1338,7 +1332,6 @@ item:
     swingDamageType:
       title: Тип режущего урона
       description: ''
-
     accuracy:
       title: Точность
       description: ''
@@ -1351,7 +1344,6 @@ item:
     aimSpeed:
       title: Скорость прицеливания
       description: ''
-
     damage:
       title: Урон
       description: ''
@@ -1364,7 +1356,6 @@ item:
     stackWeight:
       title: Вес
       description: ''
-
     shieldSpeed:
       title: Скорость
       description: ''
@@ -1374,12 +1365,10 @@ item:
     shieldArmor:
       title: Броня
       description: ''
-
     rank:
       title: Ранг
       description: ''
-
-    new:
+    isNew:
       title: Только новые предметы
       description: 'Показывать предметы добавленные или обновленные не позднее {days} дней'
 

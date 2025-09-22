@@ -1,0 +1,39 @@
+<script setup lang="ts">
+import type { Table } from '@tanstack/table-core'
+
+const { tableApi } = defineProps<{
+  tableApi: Table<any>
+}>()
+
+const total = computed(() => tableApi.getRowCount())
+const page = computed(() => tableApi.getState().pagination.pageIndex + 1)
+const pageSize = computed(() => tableApi.getState().pagination.pageSize)
+
+const counter = computed(() => [
+  Math.min(pageSize.value * (page.value - 1) + 1, total.value),
+  Math.min(pageSize.value * page.value, total.value),
+])
+</script>
+
+<template>
+  <div class="flex items-center gap-4">
+    <!-- v-if="table?.tableApi.getCanNextPage() || table?.tableApi.getCanPreviousPage()" -->
+    <UPagination
+      variant="soft"
+      active-variant="solid"
+      active-color="primary"
+      :page
+      :show-controls="false"
+      show-edges
+      size="xl"
+      :default-page="tableApi.initialState.pagination.pageIndex + 1"
+      :items-per-page="pageSize"
+      :total
+      @update:page="(value) => tableApi.setPageIndex(value - 1)"
+    />
+
+    <div>
+      {{ total !== 0 && total !== Infinity && $t('pagination.counter', { from: counter[0], to: counter[1], total }) }}
+    </div>
+  </div>
+</template>

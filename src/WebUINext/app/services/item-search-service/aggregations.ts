@@ -38,7 +38,7 @@ export const aggregationsConfig: AggregationConfig = {
     view: AggregationView.Checkbox,
     hidden: true,
   },
-  new: {
+  isNew: {
     view: AggregationView.Checkbox,
     hidden: true,
   },
@@ -365,15 +365,15 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'price',
   ],
   [ITEM_TYPE.TwoHandedWeapon]: [
-    'flags',
-    'weight',
-    'length',
+    // 'flags',
+    // 'weight',
+    // 'length',
     'handling',
-    'thrustDamage',
-    'thrustSpeed',
-    'swingDamage',
-    'swingSpeed',
-    'upkeep',
+    // 'thrustDamage',
+    // 'thrustSpeed',
+    // 'swingDamage',
+    // 'swingSpeed',
+    // 'upkeep',
     'price',
   ],
   // banners are all the same, no need for aggregation

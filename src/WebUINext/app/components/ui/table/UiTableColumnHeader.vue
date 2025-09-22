@@ -3,6 +3,7 @@ type SortDirection = 'asc' | 'desc'
 
 withDefaults(defineProps<{
   label: string
+  description?: string
   withSort?: boolean
   sorted?: false | SortDirection
   withFilter?: boolean
@@ -42,7 +43,7 @@ defineEmits<{
             content: 'max-w-76',
           }"
         >
-          <UiTableColumnHeaderLabel :with-filter :label />
+          <UiTableColumnHeaderLabel :with-filter :label :description />
 
           <template #content>
             <slot name="filter-content" />
@@ -55,15 +56,14 @@ defineEmits<{
       <UiTableColumnHeaderLabel
         :with-filter="false"
         :label
+        :description
       />
       <slot name="label-trailing" />
     </template>
 
     <UTooltip
       v-if="withSort"
-      :text="$t(sorted === 'asc'
-        ? 'shop.sort.desc'
-        : 'shop.sort.asc')"
+      :text="$t(sorted === 'asc' ? 'sort.directions.desc' : 'sort.directions.asc')"
     >
       <UButton
         square
