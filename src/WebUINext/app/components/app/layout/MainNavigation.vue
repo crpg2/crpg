@@ -12,7 +12,7 @@ const { settings } = useAppConfig()
 const userStore = useUserStore()
 const { t } = useI18n()
 
-const items = computed(() => [
+const items = computed<NavigationMenuItem[]>(() => [
   [
     ...(userStore.user
       ? [
@@ -34,6 +34,7 @@ const items = computed(() => [
               name: 'clans',
             },
             slot: 'clans' as const,
+
           },
         ]
       : []),
@@ -90,19 +91,35 @@ const items = computed(() => [
         </UTooltip>
 
         <UTooltip :text="$t('help.title')">
-          <UButton
-            variant="outline"
-            icon="crpg:help-circle"
+          <NuxtLink
+            v-slot="{ isExactActive, isActive }"
             :to="{ name: 'help' }"
-          />
+            custom
+          >
+            <UButton
+              icon="crpg:help-circle"
+              variant="outline"
+              active-variant="subtle"
+              :active="isExactActive || isActive"
+              :to="{ name: 'help' }"
+            />
+          </NuxtLink>
         </UTooltip>
 
         <UTooltip :text="$t('nav.main.Builder')">
-          <UButton
-            variant="outline"
-            icon="crpg:calculator"
+          <NuxtLink
+            v-slot="{ isExactActive }"
             :to="{ name: 'builder' }"
-          />
+            custom
+          >
+            <UButton
+              icon="crpg:calculator"
+              variant="outline"
+              active-variant="subtle"
+              :active="isExactActive "
+              :to="{ name: 'builder' }"
+            />
+          </NuxtLink>
         </UTooltip>
       </UFieldGroup>
     </template>

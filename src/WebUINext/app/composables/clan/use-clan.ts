@@ -1,31 +1,20 @@
-import { useAsyncState } from '@vueuse/core'
+import type { Clan, ClanUpdate } from '~/models/clan'
 
-import type { ClanUpdate } from '~/models/clan'
+import { CLAN_QUERY_KEYS } from '~/queries'
+import { updateClan as _updateClan } from '~/services/clan-service'
 
-import {
-  updateClan as _updateClan,
-  getClan,
-} from '~/services/clan-service'
+export const useClan = () => {
+  const route = useRoute('clans-id')
+  const _key = CLAN_QUERY_KEYS.byId(Number(route.params.id))
 
-export const useClan = (clanId: MaybeRefOrGetter<number>) => {
-  const {
-    state: clan,
-    execute: loadClan,
-    isLoading: loadingClan,
-  } = useAsyncState(
-    () => getClan(toValue(clanId)),
-    null,
-    {
-      immediate: false,
-    },
-  )
+  const clan = getAsyncData<Clan>(_key)
+  const refreshClan = refreshAsyncData(_key)
 
-  const updateClan = (clan: ClanUpdate) => _updateClan(toValue(clanId), clan)
+  const updateClan = (data: ClanUpdate) => _updateClan(clan.value.id, data)
 
   return {
     clan,
-    loadClan,
-    loadingClan,
+    refreshClan,
     updateClan,
   }
 }

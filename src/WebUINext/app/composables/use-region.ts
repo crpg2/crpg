@@ -4,24 +4,7 @@ import { REGION } from '~/models/region'
 import { useUserStore } from '~/stores/user'
 
 export const useRegionQuery = () => {
-  const route = useRoute()
-  const router = useRouter()
-  const { user } = toRefs(useUserStore())
-
-  const regionModel = computed({
-    get() {
-      return (route.query?.region as Region) || user.value?.region || REGION.Eu
-    },
-
-    set(region: Region) {
-      router.replace({
-        query: {
-          ...route.query,
-          region,
-        },
-      })
-    },
-  })
+  const regionModel = useRouteQuery<Region>('region', useUserStore().user?.region || REGION.Eu)
 
   const regions = Object.values(REGION)
 

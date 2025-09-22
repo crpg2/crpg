@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useCharacter, useCharacters } from '~/composables/character/use-character'
+import { CHARACTER_QUERY_KEYS } from '~/queries'
 import { getCharacterStatistics, retireCharacter } from '~/services/character-service'
 
 const userStore = useUserStore()
@@ -7,12 +8,6 @@ const { t } = useI18n()
 
 const { character, characterId } = useCharacter()
 const { refreshCharacters } = useCharacters()
-
-const CHARACTER_QUERY_KEYS = {
-  root: ['character'] as const,
-  byId: (id: number) => [...CHARACTER_QUERY_KEYS.root, id] as const,
-  statistics: (id: number) => [...CHARACTER_QUERY_KEYS.byId(id), { statistics: true }] as const,
-}
 
 const { data: characterStatistics, refresh: refreshCharacterStatistics } = useAsyncDataCustom(
   () => CHARACTER_QUERY_KEYS.statistics(characterId.value),

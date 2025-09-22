@@ -7,21 +7,16 @@ import { UButton, UserMedia } from '#components'
 
 import type { ClanInvitation } from '~/models/clan'
 
-import { usePageLoading } from '~/composables/app/use-page-loading'
+import { useClan } from '~/composables/clan/use-clan'
 import { useClanApplications } from '~/composables/clan/use-clan-applications'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'
 import { canManageApplicationsValidate } from '~/services/clan-service'
 
-const props = defineProps<{
-  id: string
-}>()
-
 definePageMeta({
   props: true,
   roles: SomeRole,
   middleware: [
-    'clan-id-param-validate',
     'clan-foreign-validate',
     /**
      * @description clan role check
@@ -35,24 +30,18 @@ definePageMeta({
   ],
 })
 
-const clanId = computed(() => Number(props.id))
-
 const toast = useToast()
 const { t } = useI18n()
+const { clan } = useClan()
 
 const {
   applications,
   loadClanApplications,
   loadingClanApplications,
   respondToClanInvitation,
-} = useClanApplications(clanId)
+} = useClanApplications()
 
-loadClanApplications()
-
-const {
-  execute: respond,
-  isLoading: responding,
-} = useAsyncCallback(
+const [onRespond, responding] = useAsyncCallback(
   async (application: ClanInvitation, status: boolean) => {
     await respondToClanInvitation(application.id, status)
     await loadClanApplications()
@@ -64,6 +53,9 @@ const {
       color: 'success',
     })
   },
+  {
+    pageLoading: true,
+  },
 )
 
 const table = useTemplateRef('table')
@@ -73,7 +65,7 @@ const pagination = ref<PaginationState>(getInitialPaginationState())
 function getInitialPaginationState(): PaginationState {
   return {
     pageIndex: 0,
-    pageSize: 10, // TODO: FIXME:
+    pageSize: 10,
   }
 }
 
@@ -91,27 +83,24 @@ const columns: TableColumn<ClanInvitation>[] = [
     cell: ({ row }) => h('div', { class: 'flex items-center justify-end gap-2' }, [
       h(UButton, {
         'label': t('action.decline'),
-        'size': 'sm',
         'variant': 'subtle',
         'color': 'error',
         'icon': 'crpg:close',
         'data-aq-clan-application-action': 'decline',
-        'onClick': () => respond(row.original, false),
+        'onClick': () => onRespond(row.original, false),
       }),
       h(UButton, {
         'label': t('action.accept'),
         'icon': 'crpg:check',
-        'size': 'sm',
         'variant': 'subtle',
         'color': 'success',
         'data-aq-clan-application-action': 'accept',
-        'onClick': () => respond(row.original, true),
+        'onClick': () => onRespond(row.original, true),
       }),
     ]),
     meta: {
       class: {
         th: tw`text-right`,
-        td: tw``,
       },
     },
   },
@@ -122,7 +111,7 @@ const columns: TableColumn<ClanInvitation>[] = [
   <UContainer class="space-y-12 py-6">
     <AppPageHeaderGroup
       :title="$t('clan.application.page.title')"
-      :back-to="{ name: 'clans-id', params: { id: clanId } }"
+      :back-to="{ name: 'clans-id', params: { id: clan.id } }"
     />
 
     <div class="mx-auto max-w-2xl space-y-10">

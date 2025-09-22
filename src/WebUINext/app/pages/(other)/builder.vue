@@ -143,12 +143,8 @@ const onShare = () => {
     "
   >
     <UContainer>
-      <div
-        class="mx-auto max-w-4xl"
-      >
-        <UiTextView variant="h1" tag="h1" class="text-center" margin-bottom>
-          {{ $t('builder.title') }}
-        </UiTextView>
+      <div class="mx-auto max-w-4xl">
+        <UiHeading :title="$t('builder.title')" class="mb-6" />
 
         <div class="relative space-y-8">
           <div class="space-y-5">
@@ -200,13 +196,13 @@ const onShare = () => {
               />
 
               <div class="mt-2 flex justify-between">
-                <UiTextView variant="caption-xs">
+                <UiTextView variant="caption-sm">
                   {{ $n(minimumLevel) }}
                 </UiTextView>
-                <UiTextView variant="caption-xs" class="text-center">
+                <UiTextView variant="caption-sm" class="text-center">
                   {{ $t('builder.levelChangeAttention') }}
                 </UiTextView>
-                <UiTextView variant="caption-xs">
+                <UiTextView variant="caption-sm">
                   {{ $n(maximumLevel) }}
                 </UiTextView>
               </div>
@@ -275,13 +271,13 @@ const onShare = () => {
       <UButton
         variant="outline"
         color="neutral"
-        size="lg"
+        size="xl"
         icon="crpg:reset"
         :label="$t('action.reset')"
         @click="onReset"
       />
       <UButton
-        size="lg"
+        size="xl"
         icon="crpg:share"
         :label="$t('action.share')"
         @click="onShare"

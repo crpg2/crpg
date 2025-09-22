@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import type { SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
-import type { ColumnFiltersState, SortingState } from '@tanstack/table-core'
+import type { SortingState } from '@tanstack/table-core'
 
 import { useRouteQuery } from '@vueuse/router'
 import { CompetitiveRank, LazyCompetitiveRankTable, UButton, UIcon, UInput, UiTableColumnHeader, UiTableColumnHeaderLabel, UModal, USelect, UserMedia, UTooltip } from '#components'
-import { h, tw } from '#imports'
 
 import type { CharacterClass } from '~/models/character'
 import type { CharacterCompetitiveNumbered } from '~/models/competitive'
@@ -50,26 +49,13 @@ watch(
 
 const { rankTable } = useRankTable()
 
-const regionItems = Object.values(REGION).map<TabsItem>(region => ({
-  label: t(`region.${region}`),
-  value: region,
-}))
-
-const gameModeItems = rankedGameModes.map<TabsItem>(mode => ({
-  label: t(`game-mode.${mode}`),
-  icon: `crpg:${gameModeToIcon[mode]}`,
-  value: mode,
-}))
-
-const columnFilters = ref<ColumnFiltersState>([])
-
 const sorting = ref<SortingState>([
   { id: 'position', desc: false },
 ])
 
-const globalFilter = ref<string | undefined>(undefined)
+const globalFilter = ref<string>('')
 
-const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
+const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
   {
     accessorKey: 'position',
     enableGlobalFilter: false,
@@ -101,7 +87,6 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
         default: () => h(UButton, {
           color: 'neutral',
           variant: 'ghost',
-          size: 'xs',
           square: true,
           icon: 'crpg:help-circle',
         }),
@@ -120,11 +105,9 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
   },
   {
     accessorKey: 'user.name',
-    // @ts-expect-error TODO:  https://github.com/nuxt/ui/issues/2968
+    // @ts-expect-error TODO: https://github.com/nuxt/ui/issues/2968
     header: () => h(UInput, {
       'icon': 'crpg:search',
-      'variant': 'soft',
-      'size': 'xs',
       'placeholder': t('leaderboard.table.cols.player'),
       'modelValue': globalFilter.value,
       'onUpdate:modelValue': (val: string) => globalFilter.value = val,
@@ -146,9 +129,10 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
         filtered: column.getIsFiltered(),
         onResetFilter: () => column.setFilterValue(undefined),
       }, {
-        filter: () =>
-          // @ts-expect-error TODO:  https://github.com/nuxt/ui/issues/2968
-          h(USelect, {
+        filter() {
+          // TODO: use facets
+          // @ts-expect-error TODO: https://github.com/nuxt/ui/issues/2968
+          return h(USelect, {
             'variant': 'none',
             'multiple': false,
             'trailing-icon': '',
@@ -169,7 +153,8 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
               label: t('leaderboard.table.cols.class'),
               withFilter: true,
             }),
-          }),
+          })
+        },
       })
     },
     cell: ({ row }) => h(UTooltip, { text: t(`character.class.${row.original.class}`) }, () => h(UIcon, {
@@ -197,7 +182,7 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
       },
     },
   },
-]
+])
 </script>
 
 <template>
@@ -220,7 +205,10 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
       <div class="mb-4 flex gap-6">
         <UTabs
           v-model="regionModel"
-          :items="regionItems"
+          :items="Object.values(REGION).map<TabsItem>(region => ({
+            label: $t(`region.${region}`),
+            value: region,
+          }))"
           size="xl"
           color="neutral"
           :content="false"
@@ -228,7 +216,11 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
 
         <UTabs
           v-model="gameModeModel"
-          :items="gameModeItems"
+          :items="rankedGameModes.map<TabsItem>(mode => ({
+            label: $t(`game-mode.${mode}`),
+            icon: `crpg:${gameModeToIcon[mode]}`,
+            value: mode,
+          }))"
           size="xl"
           color="neutral"
           :content="false"
@@ -237,7 +229,6 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
 
       <UTable
         v-model:global-filter="globalFilter"
-        v-model:column-filters="columnFilters"
         v-model:sorting="sorting"
         class="relative rounded-md border border-muted"
         :loading="leaderBoardLoading"

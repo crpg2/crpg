@@ -1,31 +1,27 @@
 import { useAsyncState } from '@vueuse/core'
 
-import { CLAN_INVITATION_STATUS, CLAN_INVITATION_TYPE } from '~/models/clan'
 import {
   inviteToClan as _inviteToClan,
   respondToClanInvitation as _respondToClanInvitation,
   getClanInvitations,
 } from '~/services/clan-service'
 
-export const useClanApplications = (clanId: MaybeRefOrGetter<number>) => {
+import { useClan } from './use-clan'
+
+export const useClanApplications = (immediate = true) => {
+  const { clan } = useClan()
+
   const {
     state: applications,
     execute: loadClanApplications,
     isLoading: loadingClanApplications,
-  } = useAsyncState(
-    () => getClanInvitations(toValue(clanId), [CLAN_INVITATION_TYPE.Request], [CLAN_INVITATION_STATUS.Pending]),
-    [],
-    {
-      immediate: false,
-      resetOnExecute: false,
-    },
-  )
-
-  const respondToClanInvitation = (invitationId: number, accept: boolean) => _respondToClanInvitation(toValue(clanId), invitationId, accept)
+  } = useAsyncState(() => getClanInvitations(clan.value.id), [], { immediate, resetOnExecute: false })
 
   const applicationsCount = computed(() => applications.value.length)
 
-  const inviteToClan = (inviteeId: number) => _inviteToClan(toValue(clanId), inviteeId)
+  const respondToClanInvitation = (invitationId: number, accept: boolean) => _respondToClanInvitation(clan.value.id, invitationId, accept)
+
+  const inviteToClan = (inviteeId: number) => _inviteToClan(clan.value.id, inviteeId)
 
   return {
     applications,

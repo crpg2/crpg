@@ -3,7 +3,6 @@ import { LazyAppConfirmActionDialog } from '#components'
 
 import type { ClanUpdate } from '~/models/clan'
 
-import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanMembers } from '~/composables/clan/use-clan-members'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
@@ -11,13 +10,10 @@ import { SomeRole } from '~/models/role'
 import { canUpdateClanValidate } from '~/services/clan-service'
 import { useUserStore } from '~/stores/user'
 
-const props = defineProps<{ id: string }>()
-
 definePageMeta({
   props: true,
   roles: SomeRole,
   middleware: [
-    'clan-id-param-validate',
     'clan-foreign-validate',
     /**
      * @description clan role check
@@ -34,21 +30,15 @@ definePageMeta({
 const toast = useToast()
 const { t } = useI18n()
 
-const clanId = computed(() => Number(props.id))
-
 const userStore = useUserStore()
-
-const { clan, loadClan, loadingClan, updateClan } = useClan(clanId)
-const { isLastMember, loadClanMembers, kickClanMember } = useClanMembers(clanId)
+const { clan, updateClan } = useClan()
+const { isLastMember, kickClanMember } = useClanMembers()
 
 function backToClanPage() {
-  navigateTo({ name: 'clans-id', params: { id: clanId.value } })
+  return navigateTo({ name: 'clans-id', params: { id: clan.value.id } })
 }
 
-const {
-  execute: onUpdateClan,
-  isLoading: updatingClan,
-} = useAsyncCallback(
+const [onUpdateClan] = useAsyncCallback(
   async (data: ClanUpdate) => {
     await updateClan(data)
     await userStore.fetchUser() // update clan info
@@ -59,32 +49,23 @@ const {
     })
     backToClanPage()
   },
-  { throwError: true },
-)
-
-const {
-  execute: onDeleteClan,
-  isLoading: deletingClan,
-} = useAsyncCallback(
-  async () => {
-    await kickClanMember(userStore.user!.id) // delete yourself from the clan as the only member === delete the clan
-    await userStore.fetchUser() // update clan info
-    toast.add({
-      title: t('clan.delete.notify.success'),
-      close: false,
-      color: 'success',
-    })
-    navigateTo({ name: 'clans' })
+  {
+    throwError: true,
+    successMessage: t('clan.update.notify.success'),
+    onSuccess: backToClanPage,
   },
 )
 
-usePageLoading({
-  watch: [loadingClan, updatingClan, deletingClan],
-})
-
-// TODO:
-await loadClan() // provider
-loadClanMembers()
+const [onDeleteClan] = useAsyncCallback(
+  async () => {
+    await kickClanMember(userStore.user!.id) // delete yourself from the clan as the only member === delete the clan
+    await userStore.fetchUser() // update clan info
+  },
+  {
+    onSuccess: () => navigateTo({ name: 'clans' }),
+    successMessage: t('clan.delete.notify.success'),
+  },
+)
 
 const overlay = useOverlay()
 
@@ -92,27 +73,30 @@ const confirmDeleteDialog = overlay.create(LazyAppConfirmActionDialog, {
   props: {
     title: t('clan.delete.dialog.title'),
     description: t('clan.delete.dialog.desc'),
-    confirm: clan.value?.name || 'TODO: FIXME:',
+    confirm: clan.value.name,
     confirmLabel: t('action.delete'),
-    onClose: () => confirmDeleteDialog.close(),
-    onConfirm: onDeleteClan,
   },
 })
+
+async function deleteClan() {
+  if (!(await confirmDeleteDialog.open())) {
+    return
+  }
+
+  onDeleteClan()
+}
 </script>
 
 <template>
-  <UContainer
-    class="space-y-12 py-6"
-  >
+  <UContainer class="space-y-12 py-6">
     <AppPageHeaderGroup
       :title="$t('clan.update.page.title')"
-      :back-to="{ name: 'clans-id', params: { id: clanId } }"
+      :back-to="{ name: 'clans-id', params: { id: clan.id } }"
     />
 
     <div class="mx-auto max-w-2xl space-y-4">
       <ClanForm
-        v-if="clan"
-        :clan-id="clanId"
+        :clan-id="clan.id"
         :clan="clan"
         @submit="onUpdateClan"
       />
@@ -129,16 +113,19 @@ const confirmDeleteDialog = overlay.create(LazyAppConfirmActionDialog, {
         <i18n-t
           scope="global"
           keypath="clan.delete.title"
+          :class="{ 'pointer-events-none opacity-30': !isLastMember }"
           tag="div"
-          :class="{ 'pointer-events-none opacity-30': isLastMember }"
         >
           <template #link>
-            <span
-              class="cursor-pointer text-error"
-              @click="() => confirmDeleteDialog.open()"
+            <ULink
+              class="
+                cursor-pointer text-error
+                hover:text-error/80
+              "
+              @click="deleteClan"
             >
               {{ $t('clan.delete.link') }}
-            </span>
+            </ULink>
           </template>
         </i18n-t>
       </div>

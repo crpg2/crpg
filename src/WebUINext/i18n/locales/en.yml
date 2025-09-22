@@ -203,7 +203,7 @@ validations:
   maxValue: 'The maximum value allowed is {max}'
   clanTagPattern: Value should contain only integer and alphabetical
   clanBannerKeyPattern: Value should contain only integer and dots
-  discordLinkPattern: Value must be a valid Discord link
+  discordLinkPattern: Value must be a valid Discord link, ex. https://discord.gg/example
 
 sort:
   directions:
@@ -897,7 +897,7 @@ clan:
       title: Leave the clan
       dialog:
         title: Leave the clan
-        desc: Are you sure you want to leave the {clanName} clan? The action cannot be undone
+        desc: Are you sure you want to leave the {clan} clan?
       notify:
         success: You have left the clan
   application:

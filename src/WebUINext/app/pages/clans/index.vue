@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
-import type { ColumnFiltersState, PaginationState, VisibilityState } from '@tanstack/vue-table'
+import type { ColumnFiltersState, VisibilityState } from '@tanstack/vue-table'
 
 import { getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
 import { ClanTagIcon, UBadge, UButton, UInput, UiTableColumnHeader, UiTableColumnHeaderLabel, USelect, UTooltip } from '#components'
@@ -8,8 +8,7 @@ import { navigateTo, tw } from '#imports'
 
 import type { ClanWithMemberCount } from '~/models/clan'
 
-import { useRegionQuery } from '~/composables/use-region'
-import { REGION } from '~/models/region'
+import { LANGUAGE } from '~/models/language'
 import { SomeRole } from '~/models/role'
 import { getClans } from '~/services/clan-service'
 import { useUserStore } from '~/stores/user'
@@ -21,47 +20,36 @@ definePageMeta({
 const userStore = useUserStore()
 const { t } = useI18n()
 
-const globalFilterByName = useRouteQuery<string | undefined>('searchModel', undefined)
+const globalFilterByName = ref<string>('')
 
-// TODO: region as query, pagination - improve REST API
-const {
-  state: clans,
-  execute: loadClans,
-  isLoading: loadingClans,
-} = useAsyncState(() => getClans(), [])
+// TODO: region & pagination as query params - improve API
+const { state: clans, isLoading: loadingClans } = useAsyncState(() => getClans(), [])
 
 const { regionModel, regions } = useRegionQuery()
 const table = useTemplateRef('table')
 
+// // TODO: это не синхронизированно, т.к. нет onFilterCHange
 const columnFilters = ref<ColumnFiltersState>([
   {
     id: 'clan_region',
-    value: REGION.Eu,
+    value: regionModel.value,
   },
 ])
 
-function getInitialPaginationState(): PaginationState {
-  return {
-    pageIndex: 0,
-    pageSize: 10, // TODO: FIXME:
-  }
-}
-
-const pagination = ref<PaginationState>(getInitialPaginationState())
+const { getInitialPaginationState, pagination } = usePagination()
 
 watch(regionModel, () => {
-  table.value?.tableApi.setColumnFilters([
+  columnFilters.value = [
     {
       id: 'clan_region',
       value: regionModel.value,
     },
-  ])
+  ]
 
   // TODO: на search и сортировку тоже сбрасывать? сделать обертку мб с бызовым поведением
   table.value?.tableApi.resetPagination()
 })
 
-// TODO: to cmp
 const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
   {
     accessorKey: 'clan.tag',
@@ -74,7 +62,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
     ]),
     meta: {
       class: {
-        td: tw`w-32`,
+        th: tw`w-32`,
       },
     },
   },
@@ -83,8 +71,6 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
     // @ts-expect-error TODO:
     header: () => h(UInput, {
       'icon': 'crpg:search',
-      'variant': 'soft',
-      'size': 'xs',
       'placeholder': t('clan.table.column.name'),
       'modelValue': globalFilterByName.value,
       'onUpdate:modelValue': (val: string) => globalFilterByName.value = val,
@@ -99,7 +85,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
     ]),
     meta: {
       class: {
-        td: tw`w-64`,
+        th: tw`w-64`,
       },
     },
   },
@@ -108,7 +94,10 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
     accessorKey: 'clan.languages',
     enableGlobalFilter: false,
     header: ({ column }) => {
+      // TODO: fix facets in UTable
       const uniqueKeys: string[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
+      // TODO: рефакторинг UiTableColumnHeader
+
       return h(UiTableColumnHeader, {
         label: t('clan.table.column.languages'),
         withFilter: true,
@@ -116,7 +105,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
         onResetFilter: () => column.setFilterValue(undefined),
       }, {
         filter: () =>
-          // @ts-expect-error TODO:
+          // @ts-expect-error TODO: https://github.com/nuxt/ui/issues/2968
           h(USelect, {
             'variant': 'none',
             'multiple': true,
@@ -124,9 +113,9 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
             'size': 'xl',
             'ui': {
               content: 'min-w-fit',
-              base: 'px-0 py-0',
+              base: 'px-0 py-0', // TODO:
             },
-            'items': uniqueKeys.map<SelectItem>(l => ({
+            'items': Object.values(LANGUAGE).map<SelectItem>(l => ({
               value: l,
               label: `${t(`language.${l}`)} - ${l}`,
             })),
@@ -146,8 +135,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
     }, row.original.clan.languages.map(l =>
       h(UTooltip, { text: t(`language.${l}`) }, () => h(UBadge, {
         color: 'primary',
-        variant: 'soft',
-        size: 'sm',
+        variant: 'subtle',
         label: l,
       })))),
   },
@@ -162,6 +150,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
     }),
     meta: {
       class: {
+        th: tw`w-24 text-right`,
         td: tw`w-24 text-right`,
       },
     },
@@ -197,7 +186,8 @@ const regionItems = regions.map<TabsItem>(region => ({
           <UTabs
             v-model="regionModel"
             :items="regionItems"
-            variant="pill"
+            size="xl"
+            color="neutral"
             :content="false"
           />
 
@@ -207,6 +197,7 @@ const regionItems = regions.map<TabsItem>(region => ({
               :to="{ name: 'clans-id', params: { id: userStore.clan.id } }"
               icon="crpg:member"
               variant="subtle"
+              size="xl"
               :label="$t('clan.action.goToMyClan')"
               data-aq-my-clan-button
             />
@@ -216,6 +207,7 @@ const regionItems = regions.map<TabsItem>(region => ({
               :to="{ name: 'clans-create' }"
               icon="crpg:add"
               variant="subtle"
+              size="xl"
               :label="$t('clan.action.create')"
               data-aq-create-clan-button
             />
@@ -224,8 +216,8 @@ const regionItems = regions.map<TabsItem>(region => ({
 
         <UTable
           ref="table"
-          v-model:pagination="pagination"
           v-model:column-filters="columnFilters"
+          v-model:pagination="pagination"
           v-model:global-filter="globalFilterByName"
           v-model:column-visibility="columnVisibility"
           class="relative rounded-md border border-muted"

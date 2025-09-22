@@ -9,6 +9,7 @@ import { useItemDetail } from '~/composables/character/inventory/use-item-detail
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanArmory } from '~/composables/clan/use-clan-armory'
 import { useClanMembers } from '~/composables/clan/use-clan-members'
+import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'
 import {
@@ -26,7 +27,6 @@ definePageMeta({
   props: true,
   roles: SomeRole,
   middleware: [
-    'clan-id-param-validate',
     'clan-foreign-validate',
   ],
 })
@@ -38,9 +38,11 @@ const { t } = useI18n()
 
 const userStore = useUserStore()
 
-const { clan, loadClan, loadingClan } = useClan(clanId)
+const { data: userItems } = useUserItemsProvider()
 
-const { clanMembers, loadClanMembers, getClanMember } = useClanMembers(clanId)
+const { clan } = useClan()
+
+const { clanMembers, loadClanMembers, getClanMember } = useClanMembers()
 
 const {
   borrowItem,
@@ -54,7 +56,7 @@ const {
 
 const refreshData = () => Promise.all([
   userStore.fetchUser(),
-  userStore.fetchUserItems(),
+  // userStore.fetchUserItems(),
   loadClanArmory(),
 ])
 
@@ -130,7 +132,7 @@ const items = computed(() => {
       if (
         armoryItem.borrowerUserId
         || isOwnClanArmoryItem(armoryItem, userStore.user!.id)
-        || isClanArmoryItemInInventory(armoryItem, userStore.userItems)
+        || isClanArmoryItemInInventory(armoryItem, userItems.value)
       ) {
         return false
       }
@@ -147,12 +149,10 @@ const sortingModel = ref<string>('rank_desc')
 
 const { closeItemDetail, toggleItemDetail } = useItemDetail()
 
-Promise.all([
-  userStore.fetchUserItems(),
-  loadClan(),
-  loadClanArmory(),
-  loadClanMembers(),
-])
+// userStore.fetchUserItems(),
+// loadClan(),
+loadClanArmory()
+loadClanMembers()
 </script>
 
 <template>

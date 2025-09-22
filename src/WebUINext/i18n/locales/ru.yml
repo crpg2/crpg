@@ -196,7 +196,7 @@ validations:
   minValue: Значение должно быть не менее {min}
   clanTagPattern: Значение должно содержать только целые числа и латинские символы
   clanBannerKeyPattern: Значение должно содержать только целые числа и точки
-  discordLinkPattern: Значение должно быть валидной Дискорд ссылкой
+  discordLinkPattern: Значение должно быть валидной Дискорд ссылкой, например. https://discord.gg/example
 
 sort:
   directions:
@@ -863,7 +863,7 @@ clan:
       title: Выйти из клана
       dialog:
         title: Выйти из клана
-        desc: Вы уверены что хотите выйти из клана {clanName}? Действие нельзя будет отменить.
+        desc: Вы уверены что хотите выйти из клана {clan}?
       notify:
         success: Вы покинули клан
   application:

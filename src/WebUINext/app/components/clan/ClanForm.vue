@@ -2,7 +2,6 @@
 import type { RadioGroupItem, SelectItem } from '@nuxt/ui'
 
 import { useVuelidate } from '@vuelidate/core'
-import { UiDataMedia } from '#components'
 import {
   clanBannerKeyMaxLength,
   clanDescriptionMaxLength,
@@ -128,10 +127,7 @@ const onSubmit = async () => {
 </script>
 
 <template>
-  <form
-    data-aq-clan-form
-    @submit.prevent="onSubmit"
-  >
+  <form data-aq-clan-form @submit.prevent="onSubmit">
     <div class="mb-6 space-y-6">
       <UiCard icon="crpg:hash" :label="$t('clan.update.form.field.mainInfo')">
         <div class="grid grid-cols-2 gap-4">
@@ -140,6 +136,7 @@ const onSubmit = async () => {
             :error="errorMessagesToString($v.name.$errors)"
             data-aq-clan-form-field="name"
             size="xl"
+            required
           >
             <UInput
               v-model="clanFormModel.name"
@@ -164,6 +161,7 @@ const onSubmit = async () => {
             :error="errorMessagesToString($v.tag.$errors)"
             data-aq-clan-form-field="tag"
             size="xl"
+            required
           >
             <UInput
               v-model="clanFormModel.tag"
@@ -243,6 +241,7 @@ const onSubmit = async () => {
             :label="$t('clan.update.form.field.bannerKey')"
             data-aq-clan-form-field="bannerKey"
             size="xl"
+            required
           >
             <template #help>
               <i18n-t

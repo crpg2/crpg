@@ -20,8 +20,6 @@ import type {
   Clan,
   ClanArmoryItem,
   ClanInvitation,
-  ClanInvitationStatus,
-  ClanInvitationType,
   ClanMember,
   ClanMemberRole,
   ClanUpdate,
@@ -29,7 +27,7 @@ import type {
 } from '~/models/clan'
 import type { UserItem } from '~/models/user'
 
-import { CLAN_MEMBER_ROLE } from '~/models/clan'
+import { CLAN_INVITATION_STATUS, CLAN_INVITATION_TYPE, CLAN_MEMBER_ROLE } from '~/models/clan'
 
 export const getClans = async (): Promise<ClanWithMemberCount[]> => (await _getClans({ })).data!
 
@@ -74,9 +72,7 @@ export const inviteToClan = (
 
 export const getClanInvitations = async (
   clanId: number,
-  types: ClanInvitationType[],
-  statuses: ClanInvitationStatus[],
-): Promise<ClanInvitation[]> => (await getClansByClanIdInvitations({ path: { clanId }, query: { 'status[]': statuses, 'type[]': types } })).data!
+): Promise<ClanInvitation[]> => (await getClansByClanIdInvitations({ path: { clanId }, query: { 'status[]': [CLAN_INVITATION_STATUS.Pending], 'type[]': [CLAN_INVITATION_TYPE.Request] } })).data!
 
 export const respondToClanInvitation = (
   clanId: number,

@@ -6,28 +6,26 @@ import {
   getClanMembers,
 } from '~/services/clan-service'
 
-export const useClanMembers = (clanId: MaybeRefOrGetter<number>) => {
+import { useClan } from './use-clan'
+
+export const useClanMembers = () => {
+  const { clan } = useClan()
+
   const {
     state: clanMembers,
     execute: loadClanMembers,
     isLoading: loadingClanMembers,
-  } = useAsyncState(
-    () => getClanMembers(toValue(clanId)),
-    [],
-    {
-      immediate: false,
-    },
-  )
+  } = useAsyncState(() => getClanMembers(clan.value.id), [], { resetOnExecute: false })
 
   const clanMembersCount = computed(() => clanMembers.value.length)
 
   const isLastMember = computed(() => clanMembersCount.value <= 1)
 
-  const getClanMember = (userId: number) => clanMembers.value.find(m => m.user.id === userId) || null
+  const getClanMember = (userId: number) => clanMembers.value.find(m => m.user.id === userId) ?? null
 
-  const updateClanMember = (memberId: number, role: ClanMemberRole) => _updateClanMember(toValue(clanId), memberId, role)
+  const updateClanMember = (memberId: number, role: ClanMemberRole) => _updateClanMember(clan.value.id, memberId, role)
 
-  const kickClanMember = (memberId: number) => _kickClanMember(toValue(clanId), memberId)
+  const kickClanMember = (memberId: number) => _kickClanMember(clan.value.id, memberId)
 
   return {
     clanMembers,

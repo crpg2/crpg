@@ -9,12 +9,16 @@ const { data: gameServerStats } = useGameServerStats()
 
 const { HHEvent, HHEventRemaining, HHPollId, isHHCountdownEnded } = useHappyHours()
 
-// TODO:
 userStore.fetchUserRestriction()
 
-// TODO: FIXME:
-useWelcome()
+usePollInterval({
+  key: 'user',
+  fn: userStore.fetchUser,
+})
+
 useMainHeaderProvider(useTemplateRef('mainHeader'))
+
+useWelcome()// TODO: FIXME:
 </script>
 
 <template>
