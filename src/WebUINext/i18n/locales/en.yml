@@ -929,9 +929,6 @@ clan:
           title: Lender {user}
       borrow:
         title: Borrow from {user}
-        validation:
-          borrowed: The item has already been borrowed
-          isInInventory: The same item is already in your inventory
         notify:
           success: The item successfully borrowed from the armory
       borrowed:
@@ -941,14 +938,10 @@ clan:
           title: Borrower {user}
       add:
         title: Add to armory
-        confirm:
-          description: Are you sure you want to add the item to the armory?
         notify:
           success: The item has been successfully added to the clan armory
       remove:
         title: Remove from armory
-        confirm:
-          description: Are you sure you want your item back from the armory?
         notify:
           success: The item has been successfully returned to the clan armory
       return:

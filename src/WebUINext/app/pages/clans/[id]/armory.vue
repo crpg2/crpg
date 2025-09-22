@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { DropdownMenuItem } from '@nuxt/ui'
-
 import { useStorage } from '@vueuse/core'
 
 import type { SortingConfig } from '~/services/item-search-service'
@@ -9,19 +7,13 @@ import { useItemDetail } from '~/composables/character/inventory/use-item-detail
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanArmory } from '~/composables/clan/use-clan-armory'
 import { useClanMembers } from '~/composables/clan/use-clan-members'
-import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'
 import {
   getClanArmoryItemBorrower,
   getClanArmoryItemLender,
-  isClanArmoryItemInInventory,
   isOwnClanArmoryItem,
 } from '~/services/clan-service'
-
-const props = defineProps<{
-  id: string
-}>()
 
 definePageMeta({
   props: true,
@@ -31,91 +23,49 @@ definePageMeta({
   ],
 })
 
-const clanId = computed(() => Number(props.id))
-
-const toast = useToast()
 const { t } = useI18n()
 
 const userStore = useUserStore()
 
-const { data: userItems } = useUserItemsProvider()
-
 const { clan } = useClan()
 
-const { clanMembers, loadClanMembers, getClanMember } = useClanMembers()
+const { clanMembers, getClanMember } = useClanMembers()
 
 const {
   borrowItem,
   clanArmory,
-  isLoadingClanArmory,
   loadClanArmory,
   removeItem,
   returnItem,
   getClanArmoryItem,
-} = useClanArmory(clanId)
+} = useClanArmory()
 
-const refreshData = () => Promise.all([
-  userStore.fetchUser(),
-  // userStore.fetchUserItems(),
-  loadClanArmory(),
-])
-
-const {
-  execute: onBorrowFromClanArmory,
-} = useAsyncCallback(async (userItemId: number) => {
+const [onBorrowFromClanArmory] = useAsyncCallback(async (userItemId: number) => {
   await borrowItem(userItemId)
-  await refreshData()
-  toast.add({
-    title: t('clan.armory.item.borrow.notify.success'),
-    close: false,
-    color: 'success',
-  })
+  await loadClanArmory()
+}, {
+  successMessage: t('clan.armory.item.borrow.notify.success'),
+  pageLoading: true,
 })
 
-const {
-  execute: onRemoveFromClanArmory,
-} = useAsyncCallback(async (userItemId: number) => {
+const [onRemoveFromClanArmory] = useAsyncCallback(async (userItemId: number) => {
   await removeItem(userItemId)
-  await refreshData()
-  toast.add({
-    title: t('clan.armory.item.remove.notify.success'),
-    close: false,
-    color: 'success',
-  })
+  await loadClanArmory()
+}, {
+  successMessage: t('clan.armory.item.remove.notify.success'),
+  pageLoading: true,
 })
 
-const {
-  execute: onReturnFromClanArmory,
-} = useAsyncCallback(async (userItemId: number) => {
+const [onReturnFromClanArmory] = useAsyncCallback(async (userItemId: number) => {
   await returnItem(userItemId)
-  await refreshData()
-  toast.add({
-    title: t('clan.armory.item.return.notify.success'),
-    close: false,
-    color: 'success',
-  })
+  await loadClanArmory()
+}, {
+  successMessage: t('clan.armory.item.return.notify.success'),
+  pageLoading: true,
 })
 
 const hideOwnedItemsModel = useStorage<boolean>('clan-armory-hide-owned-items', true)
 const showOnlyAvailableItems = useStorage<boolean>('clan-armory-show-only-available-items', true)
-const additionalFilteritems = computed<DropdownMenuItem[]>(() => [
-  {
-    label: t('clan.armory.filter.hideOwned'),
-    type: 'checkbox' as const,
-    checked: hideOwnedItemsModel.value,
-    onUpdateChecked(checked: boolean) {
-      hideOwnedItemsModel.value = checked
-    },
-  },
-  {
-    label: t('clan.armory.filter.showOnlyAvailable'),
-    type: 'checkbox' as const,
-    checked: showOnlyAvailableItems.value,
-    onUpdateChecked(checked: boolean) {
-      showOnlyAvailableItems.value = checked
-    },
-  },
-])
 
 const items = computed(() => {
   if (!clanArmory.value.length || !userStore.user) {
@@ -130,9 +80,7 @@ const items = computed(() => {
     if (showOnlyAvailableItems.value) {
       // Item is available if not borrowed, not owned, and not in user's inventory
       if (
-        armoryItem.borrowerUserId
-        || isOwnClanArmoryItem(armoryItem, userStore.user!.id)
-        || isClanArmoryItemInInventory(armoryItem, userItems.value)
+        armoryItem.borrowerUserId || isOwnClanArmoryItem(armoryItem, userStore.user!.id)
       ) {
         return false
       }
@@ -148,23 +96,16 @@ const sortingConfig: SortingConfig = {
 const sortingModel = ref<string>('rank_desc')
 
 const { closeItemDetail, toggleItemDetail } = useItemDetail()
-
-// userStore.fetchUserItems(),
-// loadClan(),
-loadClanArmory()
-loadClanMembers()
 </script>
 
 <template>
-  <UContainer class="space-y-6 py-6">
-    <AppBackButton :to="{ name: 'clans-id', params: { id: clanId } }" data-aq-link="back-to-clan" />
+  <UContainer class="space-y-12 py-6">
+    <AppPageHeaderGroup
+      :title="$t('clan.armory.title')"
+      :back-to="{ name: 'clans-id', params: { id: clan.id } }"
+    />
 
     <div class="mx-auto max-w-2xl">
-      <UiHeading
-        :title="$t('clan.armory.title')"
-        class="mb-14"
-      />
-
       <ItemGrid
         v-if="Boolean(items.length)"
         v-model:sorting="sortingModel"
@@ -174,7 +115,24 @@ loadClanMembers()
         <template #filter-leading>
           <UDropdownMenu
             size="xl"
-            :items="additionalFilteritems"
+            :items="[
+              {
+                label: t('clan.armory.filter.hideOwned'),
+                type: 'checkbox',
+                checked: hideOwnedItemsModel,
+                onUpdateChecked(checked) {
+                  hideOwnedItemsModel = checked
+                },
+              },
+              {
+                label: t('clan.armory.filter.showOnlyAvailable'),
+                type: 'checkbox',
+                checked: showOnlyAvailableItems,
+                onUpdateChecked(checked) {
+                  showOnlyAvailableItems = checked
+                },
+              },
+            ]"
             :modal="false"
           >
             <UChip
@@ -217,17 +175,17 @@ loadClanMembers()
           :clan-armory-item="getClanArmoryItem(di.userItemId)!"
           :lender="getClanArmoryItemLender(getClanArmoryItem(di.userItemId)!.userId, clanMembers)!"
           :borrower="getClanArmoryItemBorrower(getClanArmoryItem(di.userItemId)!.borrowerUserId, clanMembers)"
-          @borrow="(id) => {
+          @borrow="() => {
             closeItemDetail(di);
-            onBorrowFromClanArmory(id);
+            onBorrowFromClanArmory(di.userItemId);
           }"
-          @remove="(id) => {
+          @remove="() => {
             closeItemDetail(di);
-            onRemoveFromClanArmory(id);
+            onRemoveFromClanArmory(di.userItemId);
           }"
-          @return="(id) => {
+          @return="() => {
             closeItemDetail(di);
-            onReturnFromClanArmory(id);
+            onReturnFromClanArmory(di.userItemId);
           }"
         />
       </template>

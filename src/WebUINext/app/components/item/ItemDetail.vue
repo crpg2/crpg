@@ -43,7 +43,9 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
     }"
   >
     <template #header>
-      <slot name="some" />
+      <div class="absolute top-8 right-0 translate-x-1/2">
+        <slot name="actions" />
+      </div>
 
       <ItemThumb
         :thumb

@@ -63,7 +63,7 @@ const weaponClassOptions = computed(() => {
   >
     <template #leading="{ item }">
       <UTooltip
-        :content="{ side: 'top' }"
+        :content="{ side: 'left' }"
         :text="$t(`item.type.${item.value}`)"
       >
         <UIcon v-if="item.icon" :name="item.icon" class="size-[60%] outline-0 select-none" />

@@ -1,6 +1,5 @@
 <script setup lang="ts" generic="T extends { item: Item }">
 import type { SelectItem, TableColumn } from '@nuxt/ui'
-// import type { FilterFn, SortingFn } from '@tanstack/table-core'
 import type { ColumnFiltersState } from '@tanstack/vue-table'
 
 import { getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useVueTable } from '@tanstack/vue-table'
@@ -13,10 +12,11 @@ import { useStickySidebar } from '~/composables/use-sticky-sidebar'
 import { ITEM_TYPE } from '~/models/item'
 import { getFacetsByItemType } from '~/services/item-search-service'
 
-const { sortingConfig, items, withPagination = true } = defineProps<{
+const { sortingConfig, items, withPagination = true, loading = false } = defineProps<{
   items: T[]
   sortingConfig: SortingConfig
   withPagination?: boolean
+  loading?: boolean
 }>()
 
 const { t } = useI18n()
@@ -86,6 +86,11 @@ const grid = useVueTable({
       return columnFilters.value
     },
   },
+  initialState: {
+    pagination: {
+      pageSize: 20,
+    },
+  },
   ...(withPagination && {
     getPaginationRowModel: getPaginationRowModel(),
   }),
@@ -102,79 +107,87 @@ const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, ro
 </script>
 
 <template>
-  <div class="itemGrid grid h-full items-start gap-x-3 gap-y-4">
-    <div
-      ref="aside"
-      style="grid-area: aside"
-      class="sticky top-0 left-0 flex flex-col items-center justify-center space-y-2"
-      :style="{ top: `${stickySidebarTop}px` }"
-    >
-      <ItemSearchFilterByType
-        v-model:item-type="itemType"
-        :item-types="itemTypes"
-        orientation="vertical"
-        with-all-categories
-      />
-    </div>
+  <div class="relative">
+    <UiLoading :active="loading" />
 
-    <div style="grid-area: topbar" class="grid grid-cols-5 gap-3">
-      <UInput
-        v-model="filterByNameModel"
-        :placeholder="$t('action.search')"
-        icon="crpg:search"
-        variant="subtle"
-        class="col-span-3 w-full"
-        size="xl"
+    <div v-if="items.length" class="itemGrid grid h-full items-start gap-x-3 gap-y-4">
+      <div
+        ref="aside"
+        style="grid-area: aside"
+        class="sticky top-0 left-0 flex flex-col items-center justify-center space-y-2"
+        :style="{ top: `${stickySidebarTop}px` }"
       >
-        <template v-if="filterByNameModel?.length" #trailing>
-          <UiInputClear @click="filterByNameModel = ''" />
-        </template>
-      </UInput>
+        <ItemSearchFilterByType
+          v-model:item-type="itemType"
+          :item-types="itemTypes"
+          orientation="vertical"
+          with-all-categories
+        />
+      </div>
 
-      <div class="col-span-2 flex gap-3">
-        <USelect
-          v-model="sortingModel"
-          class="flex-1"
-          :items="sortingItems"
+      <div style="grid-area: topbar" class="grid grid-cols-5 gap-3">
+        <UInput
+          v-model="filterByNameModel"
+          :placeholder="$t('action.search')"
+          icon="crpg:search"
+          variant="subtle"
+          class="col-span-3 w-full"
           size="xl"
+        >
+          <template v-if="filterByNameModel?.length" #trailing>
+            <UiInputClear @click="filterByNameModel = ''" />
+          </template>
+        </UInput>
+
+        <div class="col-span-2 flex gap-3">
+          <USelect
+            v-model="sortingModel"
+            class="flex-1"
+            :items="sortingItems"
+            size="xl"
+          />
+
+          <slot name="filter-leading" />
+        </div>
+      </div>
+
+      <div
+        style="grid-area: result"
+        class="
+          grid grid-cols-3 gap-2
+          2xl:grid-cols-4
+        "
+      >
+        <template v-for="item in grid.getRowModel().rows" :key="item.id">
+          <slot name="item" v-bind="item.original" />
+        </template>
+      </div>
+
+      <div style="grid-area: footer" class="sticky bottom-4 z-10 space-y-3">
+        <UPagination
+          v-if="withPagination && grid.getCanNextPage() || grid.getCanPreviousPage()"
+          :ui="{
+            list: 'justify-center',
+          }"
+          :page="grid.getState().pagination.pageIndex + 1"
+          variant="soft"
+          active-variant="solid"
+          active-color="primary"
+          :show-controls="false"
+          show-edges
+          :total="grid.getFilteredRowModel().rows.length"
+          :default-page="(grid.initialState.pagination.pageIndex || 0) + 1"
+          :items-per-page="grid.initialState.pagination.pageSize"
+          @update:page="(p) => grid.setPageIndex(p - 1)"
         />
 
-        <slot name="filter-leading" />
+        <slot name="footer" v-bind="{ filteredItemsCost, filteredItemsCount: grid.getRowModel().rows.length, totalItemsCount: grid.getFilteredRowModel().rows.length }" />
       </div>
     </div>
 
-    <div
-      style="grid-area: result"
-      class="
-        grid grid-cols-3 gap-2
-        2xl:grid-cols-4
-      "
-    >
-      <template v-for="item in grid.getRowModel().rows" :key="item.id">
-        <slot name="item" v-bind="item.original" />
-      </template>
-    </div>
-
-    <div style="grid-area: footer" class="sticky bottom-4 z-10 space-y-3">
-      <UPagination
-        v-if="withPagination && grid.getCanNextPage() || grid.getCanPreviousPage()"
-        :ui="{
-          list: 'justify-center',
-        }"
-        :page="grid.getState().pagination.pageIndex + 1"
-        variant="soft"
-        active-variant="solid"
-        active-color="primary"
-        :show-controls="false"
-        show-edges
-        :total="grid.getFilteredRowModel().rows.length"
-        :default-page="(grid.initialState.pagination.pageIndex || 0) + 1"
-        :items-per-page="grid.initialState.pagination.pageSize"
-        @update:page="(p) => grid.setPageIndex(p - 1)"
-      />
-
-      <slot name="footer" v-bind="{ filteredItemsCost, filteredItemsCount: grid.getRowModel().rows.length, totalItemsCount: grid.getFilteredRowModel().rows.length }" />
-    </div>
+    <UCard v-else-if="!loading">
+      <UiResultNotFound :message="$t('character.inventory.empty')" />
+    </UCard>
   </div>
 </template>
 

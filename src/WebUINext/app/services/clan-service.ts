@@ -144,8 +144,3 @@ export const isOwnClanArmoryItem = (
   item: ClanArmoryItem,
   userId: number,
 ) => item.userId === userId
-
-export const isClanArmoryItemInInventory = (
-  item: ClanArmoryItem,
-  userItems: UserItem[],
-) => userItems.some(ui => ui.item.id === item.item.id)

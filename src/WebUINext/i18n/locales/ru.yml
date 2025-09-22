@@ -895,9 +895,6 @@ clan:
           title: Владелец {user}
       borrow:
         title: Одолжить у {user}
-        validation:
-          borrowed: Предмет занят
-          isInInventory: Такой же предмет у вас уже есть
         notify:
           success: Предмет, успешно взят из оружейной комнаты
       borrowed:
@@ -907,14 +904,10 @@ clan:
           title: Взял {user}
       add:
         title: Добавить в оружейную
-        confirm:
-          description: Вы уверены, что хотите добавить предмет в оружейную?
         notify:
           success: Предмет успешно добавлен в клановую оружейную
       remove:
         title: Удалить из оружейной
-        confirm:
-          description: Вы уверены, что хотите вернуть свой предмет из оружейной?
         notify:
           success: Предмет успешно возвращен в клановую оружейную
       return:

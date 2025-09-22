@@ -49,7 +49,7 @@ const { user } = toRefs(useUserStore())
         hidden-title
         hidden-clan
         size="sm"
-        class="relative z-10 -ml-2.5"
+        class="relative z-10 -ml-3.5"
         :is-self="user!.id === borrower.id"
       />
       <template #content>

@@ -8,26 +8,26 @@ import {
   returnItemToClanArmory,
 } from '~/services/clan-service'
 
-export const useClanArmory = (clanId: MaybeRefOrGetter<number>) => {
+import { useClan } from './use-clan'
+
+export const useClanArmory = () => {
+  const { clan } = useClan()
+
   const {
     state: clanArmory,
     execute: loadClanArmory,
     isLoading: isLoadingClanArmory,
-  } = useAsyncState(() => getClanArmory(toValue(clanId)), [], {
-    immediate: false,
-    resetOnExecute: false,
-    throwError: true,
-  })
+  } = useAsyncState(() => getClanArmory(clan.value.id), [], { resetOnExecute: false })
 
   const getClanArmoryItem = (userItemId: number) => clanArmory.value.find(ca => ca.userItemId === userItemId)
 
-  const addItem = (itemId: number) => addItemToClanArmory(toValue(clanId), itemId)
+  const addItem = (itemId: number) => addItemToClanArmory(clan.value.id, itemId)
 
-  const removeItem = (itemId: number) => removeItemFromClanArmory(toValue(clanId), itemId)
+  const removeItem = (itemId: number) => removeItemFromClanArmory(clan.value.id, itemId)
 
-  const borrowItem = (itemId: number) => borrowItemFromClanArmory(toValue(clanId), itemId)
+  const borrowItem = (itemId: number) => borrowItemFromClanArmory(clan.value.id, itemId)
 
-  const returnItem = (itemId: number) => returnItemToClanArmory(toValue(clanId), itemId)
+  const returnItem = (itemId: number) => returnItemToClanArmory(clan.value.id, itemId)
 
   return {
     clanArmory,

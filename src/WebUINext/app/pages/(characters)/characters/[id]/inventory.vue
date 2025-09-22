@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { DropdownMenuItem } from '@nuxt/ui'
-
 import { vOnLongPress } from '@vueuse/components'
 import { useStorage } from '@vueuse/core'
 
@@ -77,9 +75,9 @@ const sortingConfig: SortingConfig = {
   rank_desc: { field: 'rank', order: 'desc' },
   type_asc: { field: 'type', order: 'asc' },
 }
-
 const sortingModel = useStorage<string>('character-inventory-sorting', 'rank_desc')
 
+// TODO: FIXME: to provide
 // TODO: FIXME: to composable
 const compareItemsResult = computed(() => {
   // find the open items TODO: spec
@@ -87,8 +85,8 @@ const compareItemsResult = computed(() => {
     // TODO: ....
     createItemIndex(
       userItems.value
-        .filter(ui => openedItems.value.some(oi => oi.uniqueId === getUniqueId(ui.item.id, ui.id)),
-        ).map(extractItem),
+        .filter(ui => openedItems.value.some(oi => oi.uniqueId === getUniqueId(ui.item.id, ui.id)))
+        .map(extractItem),
     ),
   )
     .filter(group => group.items.length >= 2) // there is no point in comparing 1 item
@@ -102,30 +100,17 @@ const compareItemsResult = computed(() => {
     }))
 })
 
-const {
-  state: clanMembers,
-} = useAsyncState(
+const { state: clanMembers } = useAsyncState(
   async () => clan.value ? getClanMembers(clan.value.id) : [],
   [],
 )
 
 const hideInArmoryItemsModel = useStorage<boolean>('character-inventory-in-armory-items', true)
-const additionalFilteritems = computed<DropdownMenuItem[]>(() => [
-  {
-    label: t('character.inventory.filter.hideInArmory'),
-    type: 'checkbox' as const,
-    icon: 'crpg:armory',
-    checked: hideInArmoryItemsModel.value,
-    onUpdateChecked(checked: boolean) {
-      hideInArmoryItemsModel.value = checked
-    },
-  },
-])
-
 const items = computed(() => {
   if (!hideInArmoryItemsModel.value) {
     return userItems.value
   }
+  // filter by isArmoryItem
   return userItems.value.filter(ui => ui.isArmoryItem ? ui.userId !== user.value!.id : true)
 })
 </script>
@@ -134,9 +119,9 @@ const items = computed(() => {
   <div class="relative grid grid-cols-12 gap-5">
     <div class="col-span-5">
       <ItemGrid
-        v-if="Boolean(userItems.length)"
         v-model:sorting="sortingModel"
         :items
+        :loading="loadingUserItems"
         :sorting-config="sortingConfig"
         :with-pagination="false"
       >
@@ -145,7 +130,17 @@ const items = computed(() => {
           #filter-leading
         >
           <UDropdownMenu
-            :items="additionalFilteritems"
+            :items="[
+              {
+                label: t('character.inventory.filter.hideInArmory'),
+                type: 'checkbox',
+                icon: 'crpg:armory',
+                checked: hideInArmoryItemsModel,
+                onUpdateChecked(checked: boolean) {
+                  hideInArmoryItemsModel = checked
+                },
+              },
+            ]"
             :modal="false"
             size="xl"
           >
@@ -220,10 +215,6 @@ const items = computed(() => {
           </UCard>
         </template>
       </ItemGrid>
-
-      <UCard v-else-if="!loadingUserItems">
-        <UiResultNotFound :message="$t('character.inventory.empty')" />
-      </UCard>
     </div>
 
     <div

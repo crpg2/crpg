@@ -73,7 +73,7 @@ const itemUpgradesModal = overlay.create(LazyCharacterInventoryItemUpgradesModal
 
 const { t } = useI18n()
 
-const itemActions = computedEager(() => {
+const itemActions = computed(() => {
   const result: DropdownMenuItem[] = []
 
   if (isSellable.value) {
@@ -187,78 +187,76 @@ const itemActions = computedEager(() => {
       </template>
     </template>
 
-    <template #some>
-      <div class="absolute top-8 right-0 translate-x-1/2">
-        <UDropdownMenu :items="itemActions" size="xl">
-          <UButton variant="subtle" color="neutral" size="xl" icon="crpg:dots" />
+    <template #actions>
+      <UDropdownMenu :items="itemActions" size="xl">
+        <UButton variant="subtle" color="neutral" size="xl" icon="crpg:dots" />
 
-          <template #sell-label>
-            <div class="flex items-center gap-2">
-              <i18n-t
-                scope="global"
-                keypath="character.inventory.item.sell.title"
-              >
-                <template #price>
-                  <AppCoin :value="userItemToReplaceSalePrice.price" />
-                </template>
-              </i18n-t>
-
-              <UTooltip v-if="userItemToReplaceSalePrice.graceTimeEnd !== null">
-                <UBadge
-                  size="sm"
-                  color="success"
-                  :label="$n(1, 'percent', { minimumFractionDigits: 0 })"
-                />
-                <template #content>
-                  <i18n-t
-                    scope="global"
-                    keypath="character.inventory.item.sell.freeRefund"
-                    tag="div"
-                  >
-                    <template #dateTime>
-                      <span class="font-bold">
-                        {{ $t('dateTimeFormat.mm', { ...userItemToReplaceSalePrice.graceTimeEnd }) }}
-                      </span>
-                    </template>
-                  </i18n-t>
-                </template>
-              </UTooltip>
-
-              <UTooltip v-else>
-                <UBadge
-                  size="sm"
-                  color="error"
-                  :label="$n(itemSellCostPenalty, 'percent', { minimumFractionDigits: 0 })"
-                />
-                <template #content>
-                  <i18n-t
-                    scope="global"
-                    keypath="character.inventory.item.sell.penaltyRefund"
-                    tag="div"
-                  >
-                    <template #penalty>
-                      <span class="font-bold text-error">
-                        {{ $n(itemSellCostPenalty, 'percent', { minimumFractionDigits: 0 }) }}
-                      </span>
-                    </template>
-                  </i18n-t>
-                </template>
-              </UTooltip>
-            </div>
-          </template>
-
-          <template #repair-label>
+        <template #sell-label>
+          <div class="flex items-center gap-2">
             <i18n-t
               scope="global"
-              keypath="character.inventory.item.repair.title"
+              keypath="character.inventory.item.sell.title"
             >
               <template #price>
-                <AppCoin :value="repairCost" />
+                <AppCoin :value="userItemToReplaceSalePrice.price" />
               </template>
             </i18n-t>
-          </template>
-        </UDropdownMenu>
-      </div>
+
+            <UTooltip v-if="userItemToReplaceSalePrice.graceTimeEnd !== null">
+              <UBadge
+                size="sm"
+                color="success"
+                :label="$n(1, 'percent', { minimumFractionDigits: 0 })"
+              />
+              <template #content>
+                <i18n-t
+                  scope="global"
+                  keypath="character.inventory.item.sell.freeRefund"
+                  tag="div"
+                >
+                  <template #dateTime>
+                    <span class="font-bold">
+                      {{ $t('dateTimeFormat.mm', { ...userItemToReplaceSalePrice.graceTimeEnd }) }}
+                    </span>
+                  </template>
+                </i18n-t>
+              </template>
+            </UTooltip>
+
+            <UTooltip v-else>
+              <UBadge
+                size="sm"
+                color="error"
+                :label="$n(itemSellCostPenalty, 'percent', { minimumFractionDigits: 0 })"
+              />
+              <template #content>
+                <i18n-t
+                  scope="global"
+                  keypath="character.inventory.item.sell.penaltyRefund"
+                  tag="div"
+                >
+                  <template #penalty>
+                    <span class="font-bold text-error">
+                      {{ $n(itemSellCostPenalty, 'percent', { minimumFractionDigits: 0 }) }}
+                    </span>
+                  </template>
+                </i18n-t>
+              </template>
+            </UTooltip>
+          </div>
+        </template>
+
+        <template #repair-label>
+          <i18n-t
+            scope="global"
+            keypath="character.inventory.item.repair.title"
+          >
+            <template #price>
+              <AppCoin :value="repairCost" />
+            </template>
+          </i18n-t>
+        </template>
+      </UDropdownMenu>
     </template>
   </ItemDetail>
 </template>

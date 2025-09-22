@@ -95,7 +95,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
     enableGlobalFilter: false,
     header: ({ column }) => {
       // TODO: fix facets in UTable
-      const uniqueKeys: string[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
+      // const uniqueKeys: string[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
       // TODO: рефакторинг UiTableColumnHeader
 
       return h(UiTableColumnHeader, {
