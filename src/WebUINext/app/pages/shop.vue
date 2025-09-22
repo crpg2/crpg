@@ -2,7 +2,6 @@
 import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type {
   ColumnFiltersState,
-  PaginationState,
   RowSelectionState,
   SortingState,
   VisibilityState,
@@ -34,6 +33,7 @@ import type { ItemFlat, ItemType, WeaponClass } from '~/models/item'
 import type { AggregationOptions } from '~/services/item-search-service/aggregations'
 
 import { usePageLoading } from '~/composables/app/use-page-loading'
+import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { ITEM_TYPE } from '~/models/item'
 import { SomeRole } from '~/models/role'
@@ -44,12 +44,13 @@ import {
 import { getStepRange } from '~/services/item-search-service/helpers'
 import { createItemIndex } from '~/services/item-search-service/indexator'
 import {
-  canUpgrade,
+  canUpgradeItem,
   getCompareItemsResult,
   getItems,
   getWeaponClassesByItemType,
   humanizeBucket,
 } from '~/services/item-service'
+import { buyUserItem } from '~/services/user-service'
 import { includesSome } from '~/utils/grid'
 
 definePageMeta({
@@ -62,42 +63,36 @@ definePageMeta({
 const { t, n } = useI18n()
 const toast = useToast()
 
-const userStore = useUserStore()
-userStore.fetchUserItems()
 const router = useRouter()
 const route = useRoute()
+const userStore = useUserStore()
+
+const { data: userItems, refresh: refreshUserItems } = useUserItemsProvider()
 
 const {
   state: items,
   isLoading: loadingItems,
 } = useAsyncState(() => getItems(), [])
+usePageLoading(loadingItems)
+
+const [buyItem] = useAsyncCallback(async (item: ItemFlat) => {
+  await buyUserItem(item.id)
+  await userStore.fetchUser() // update gold
+}, {
+  successMessage: t('shop.item.buy.notify.success'),
+  pageLoading: true,
+})
 
 const flatItems = computed(() => createItemIndex(items.value, true))
 
-const {
-  execute: buyItem,
-} = useAsyncCallback(async (item: ItemFlat) => {
-  await userStore.buyItem(item.id)
-  toast.add({
-    title: t('shop.item.buy.notify.success'),
-    close: false,
-    color: 'success',
-  })
-})
-
 const getInInventoryItems = (baseId: string) => {
-  return userStore.userItems.filter(ui => ui.item.baseId === baseId)
+  return userItems.value.filter(ui => ui.item.baseId === baseId)
 }
 
 const table = useTemplateRef('table')
 
-function getInitialPaginationState(): PaginationState {
-  return {
-    pageIndex: 0,
-    pageSize: 10,
-  }
-}
-const pagination = ref<PaginationState>(getInitialPaginationState())
+const { pagination } = usePagination()
+
 function resetPagination() {
   table.value?.tableApi.setPageIndex(0)
 }
@@ -135,11 +130,9 @@ const itemType = computed({
     resetSorting()
   },
 })
-const itemTypes = computed(() => {
-  return getFacetsByItemType(flatItems.value.map(item => item.type))
-})
+const itemTypes = computed(() => getFacetsByItemType(flatItems.value.map(item => item.type)))
 
-const isUpgradableItemType = computed(() => canUpgrade(itemType.value))
+const isUpgradableItemType = computed(() => canUpgradeItem(itemType.value))
 
 const weaponClass = computed({
   get() {
@@ -231,7 +224,7 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
       },
     },
     ...(options.view === AggregationView.Range) && {
-      filterFn: '',
+      filterFn: 'inNumberRange',
     },
     ...(options.view === AggregationView.Checkbox) && {
       filterFn: includesSome,
@@ -372,7 +365,6 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
       header: ({ column }) => h(UInput, {
         'icon': 'crpg:search',
         'variant': 'soft',
-        'size': 'xs',
         'placeholder': t('action.search'),
         'modelValue': column.getFilterValue(),
         'onUpdate:modelValue': column.setFilterValue,
@@ -391,12 +383,6 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
     ...Object.entries(currentAggregations.value).map(([key, config]) => createTableColumn(key as keyof ItemFlat, config)),
   ]
 })
-
-const { togglePageLoading } = usePageLoading()
-
-watchEffect(() => {
-  togglePageLoading(loadingItems.value)
-})
 </script>
 
 <template>
@@ -406,11 +392,9 @@ watchEffect(() => {
     <!-- <pre>{{ columnFilters }}</pre> -->
     <!-- <pre>{{ columnVisibility }}</pre> -->
     <!-- <pre>{{ table?.tableApi.getState().columnFilters }}</pre> -->
-    <!-- <pre>
-      {{ table?.tableApi.getState() }}
-    </pre> -->
+    <!-- <pre> {{ table?.tableApi.getState() }}</pre> -->
+    <!-- {{ columnFilters }} -->
 
-    {{ columnFilters }}
     <ItemSearchFilterByType
       v-if="itemTypes.length"
       v-model:item-type="itemType"
@@ -440,7 +424,7 @@ watchEffect(() => {
       }"
       @update:column-filters="() => { resetPagination() }"
     >
-      <template #empty>
+      <template v-if="!loadingItems" #empty>
         <UiResultNotFound />
       </template>
 
@@ -467,6 +451,7 @@ watchEffect(() => {
           :page="pagination.pageIndex + 1"
           :show-controls="false"
           show-edges
+          size="xl"
           :default-page="(table?.tableApi?.initialState.pagination.pageIndex || 0) + 1"
           :items-per-page="table?.tableApi?.initialState.pagination.pageSize"
           :total="table?.tableApi?.getFilteredRowModel().rows.length"
@@ -477,7 +462,7 @@ watchEffect(() => {
       <div class="flex justify-center">
         <UButton
           v-if="Object.keys(rowSelection).length >= 2"
-          size="lg"
+          size="xl"
           variant="subtle"
           :icon="isCompareMode ? 'crpg:close' : undefined"
           data-aq-shop-handler="toggle-compare"
@@ -486,6 +471,7 @@ watchEffect(() => {
         />
       </div>
     </div>
+
     <!--
           <DropdownItem>
             <Tooltip

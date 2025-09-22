@@ -10,7 +10,7 @@ import type { UserItem, UserPublic } from '~/models/user'
 import {
   canAddedToClanArmory,
   canSell,
-  canUpgrade,
+  canUpgradeUserItem,
   computeBrokenItemRepairCost,
   computeSalePrice,
 } from '~/services/item-service'
@@ -52,7 +52,7 @@ const repairCost = computed(() => computeBrokenItemRepairCost(userItem.item.pric
 
 const isOwnArmoryItem = computed(() => userItem.isArmoryItem && userItem.userId === user.value!.id)
 const isSellable = computed(() => canSell(userItem))
-const isUpgradable = computed(() => canUpgrade(userItem))
+const isUpgradable = computed(() => canUpgradeUserItem(userItem))
 const isCanAddedToClanArmory = computed(() => canAddedToClanArmory(userItem))
 
 const overlay = useOverlay()

@@ -41,10 +41,10 @@ const classes = computed(() => variants({
 
 <template>
   <Transition
-    enter-active-class="transition-opacity duration-600 ease-out"
+    enter-active-class="transition-opacity duration-300 ease-out"
     enter-from-class="opacity-0"
     enter-to-class="opacity-100"
-    leave-active-class="transition-opacity duration-400 ease-in"
+    leave-active-class="transition-opacity duration-200 ease-in"
     leave-from-class="opacity-100"
     leave-to-class="opacity-0"
   >
@@ -53,7 +53,7 @@ const classes = computed(() => variants({
       :class="[classes.root()]"
       v-bind="{ ...(fullPage && { role: 'dialog' }) }"
     >
-      <div :class="[classes.overlay()]" :tabindex="-1" />
+      <div v-if="fullPage" :class="[classes.overlay()]" :tabindex="-1" />
       <UIcon name="crpg:loading" :class="[classes.icon()]" />
     </div>
   </Transition>

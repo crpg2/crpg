@@ -1,5 +1,10 @@
 import type { FilterFn } from '@tanstack/table-core'
 
+declare module '@tanstack/vue-table' {
+  interface FilterFns {
+    includesSome: FilterFn<unknown>
+  }
+}
 export const includesSome: FilterFn<any> = (
   row,
   columnId: string,

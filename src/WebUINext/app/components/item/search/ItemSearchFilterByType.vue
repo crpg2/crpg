@@ -56,17 +56,21 @@ const weaponClassOptions = computed(() => {
       list: 'w-auto',
       root: 'flex-row',
       trigger: [
-        'size-13 p-0',
+        'min-w-13 h-13 p-2',
         orientation === 'vertical' ? 'flex justify-center' : '',
       ],
     }"
   >
-    <template #leading="{ item }">
+    <template #leading="{ item: _item }">
       <UTooltip
-        :content="{ side: 'left' }"
-        :text="$t(`item.type.${item.value}`)"
+        v-if="_item.icon"
+        :content="{ side: orientation === 'horizontal' ? 'bottom' : 'right' }"
+        :text="$t(`item.type.${_item.value}`)"
       >
-        <UIcon v-if="item.icon" :name="item.icon" class="size-[60%] outline-0 select-none" />
+        <UIcon
+          :name="_item.icon"
+          class="size-9 cursor-pointer outline-0 select-none"
+        />
       </UTooltip>
     </template>
 
@@ -75,7 +79,8 @@ const weaponClassOptions = computed(() => {
       #default="{ item }"
     >
       <div v-if="item.value === itemType && weaponClass" class="flex items-center">
-        <UIcon name="crpg:chevron-right" />
+        <UIcon name="crpg:chevron-right" class="size-4" />
+
         <UTabs
           v-model="weaponClass"
           :items="weaponClassOptions"
@@ -86,11 +91,23 @@ const weaponClassOptions = computed(() => {
           :ui="{
             list: 'w-auto',
             root: 'flex-row',
-            leadingIcon: 'size-7',
-            trigger: 'p-2',
+            trigger: 'min-w-13 h-13 p-0',
             indicator: 'hidden',
           }"
-        />
+        >
+          <template #leading="{ item: _item }">
+            <UTooltip
+              v-if="_item.icon"
+              :content="{ side: orientation === 'horizontal' ? 'bottom' : 'right' }"
+              :text="$t(`item.weaponClass.${_item.value}`)"
+            >
+              <UIcon
+                :name="_item.icon"
+                class="size-9 cursor-pointer outline-0 select-none"
+              />
+            </UTooltip>
+          </template>
+        </UTabs>
       </div>
     </template>
   </UTabs>

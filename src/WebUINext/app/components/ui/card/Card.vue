@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import type { CardProps } from '@nuxt/ui'
 
-const { icon, label, ...props } = withDefaults(defineProps<{
+const { icon, label, variant = 'outline', ...props } = defineProps<{
   icon?: string
   label: string
-} & CardProps>(), {
-  variant: 'outline',
-})
+} & CardProps>()
 </script>
 
 <template>
-  <UCard v-bind="props">
+  <UCard v-bind="{ ...props, variant }">
     <template #header>
       <UiDataMedia
         :icon

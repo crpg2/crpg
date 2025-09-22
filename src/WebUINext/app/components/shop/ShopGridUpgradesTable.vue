@@ -13,7 +13,7 @@ const {
 }>()
 
 const {
-  isLoading,
+  isLoadingitemUpgrades,
   itemUpgrades,
   relativeEntries,
 } = useItemUpgrades({
@@ -27,10 +27,10 @@ const {
 </script>
 
 <template>
-  <div class="relative">
-    <UiLoading :active="isLoading" />
+  <div class="relative min-h-[200px]">
+    <UiLoading :active="isLoadingitemUpgrades" />
     <ItemTableUpgrades
-      v-if="!isLoading && itemUpgrades.length"
+      v-if="!isLoadingitemUpgrades && itemUpgrades.length"
       :items="itemUpgrades"
       :aggregation-config
       :compare-items-result="relativeEntries"
