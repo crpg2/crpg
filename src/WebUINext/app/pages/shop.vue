@@ -37,7 +37,7 @@ import type { AggregationOptions } from '~/services/item-search-service/aggregat
 import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { ITEM_TYPE } from '~/models/item'
+import { ITEM_FIELD_FORMAT, ITEM_TYPE } from '~/models/item'
 import { SomeRole } from '~/models/role'
 import { getAggregationsConfig, getFacetsByItemType, getFacetsByWeaponClass } from '~/services/item-search-service'
 import { AggregationView } from '~/services/item-search-service/aggregations'
@@ -206,7 +206,7 @@ function getFilterFn(key: keyof ItemFlat, options: AggregationOptions): FilterFn
   }
 
   if (options.view === AggregationView.Checkbox) {
-    if (options.format === 'List') {
+    if (options.format === ITEM_FIELD_FORMAT.List) {
       return 'arrIncludesSome'
     }
 
@@ -216,7 +216,7 @@ function getFilterFn(key: keyof ItemFlat, options: AggregationOptions): FilterFn
   return 'auto'
 }
 
-// TODO: to utils
+// TODO: to utils, cpec
 function getFacets(rawFacets: Map<any, number>): Record<string, number> {
   return [...rawFacets]
     .reduce((out, [bucket, count]: [number | undefined | null | string | string[], number]) => {
@@ -238,26 +238,32 @@ function getFacets(rawFacets: Map<any, number>): Record<string, number> {
 }
 
 function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
+  const widthPx = options.width || 140
   return {
     accessorKey: key,
     meta: {
-      class: {
-        td: 'min-w-[140px]',
-        th: 'min-w-[140px]',
+      // class: {
+      //   td: 'w-[140px]',
+      //   th: 'w-[140px]',
+      // },
+      style: {
+        th: {
+          width: `${widthPx}px`,
+        },
+        td: {
+          width: `${widthPx}px`,
+        },
       },
-      style: {},
     },
     cell: ({ row }) => h(ItemParam, {
       field: key,
       item: row.original,
-      class: 'w-[140px]',
+      // class: 'w-[140px]',
       bestValue: compareItemsResult.value !== null ? compareItemsResult.value[key] : undefined,
       isCompare: isCompareMode.value,
     }, {
       ...(key === 'upkeep' && {
-        default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, null, {
-          default: () => t('item.format.upkeep', { upkeep: n(rawBuckets) }),
-        }),
+        default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, { value: t('item.format.upkeep', { upkeep: n(rawBuckets) }) }),
       }),
       ...(key === 'price' && {
         default: ({ rawBuckets }: { rawBuckets: number }) => h(ShopGridItemBuyBtn, {
@@ -272,7 +278,7 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
     filterFn: getFilterFn(key, options),
     header: ({ header, column }) => {
       return h(UiTableColumnHeader, {
-        class: 'w-[140px]',
+        // class: 'w-[140px]',
         label: t(`item.aggregations.${header.id}.title`),
         description: t(`item.aggregations.${header.id}.description`),
         withSort: options.view === AggregationView.Range,
@@ -283,7 +289,7 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
         onResetFilter: () => column.setFilterValue(undefined),
       }, {
         ...(options.view === AggregationView.Range && {
-          // TODO:
+          // TODO: FIXME: пересмотреть компонент
           'filter-content': () => {
             const [min, max] = column.getFacetedMinMaxValues() ?? [0, 1]
             const buckets = [...new Set([...column.getFacetedUniqueValues().keys()].flat())] as number[]
@@ -299,7 +305,6 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
         filter: () => {
           if (options.view === AggregationView.Checkbox) {
             const _facets = Object.entries(getFacets(column.getFacetedUniqueValues()))
-
             // @ts-expect-error TODO: https://github.com/nuxt/ui/issues/2968
             return h(USelect, {
               'class': 'w-full',
@@ -307,7 +312,7 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
               'variant': 'none',
               'disabled': !_facets.length,
               'size': 'xl',
-              'trailing-icon': '',
+              'trailing-icon': '', // TODO:
               'ui': {
                 content: 'min-w-fit',
                 base: 'px-0 py-0',
@@ -336,6 +341,26 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
   }
 }
 
+// <UDropdownMenu
+//             :items="[onlyNewItemsFilter()]"
+//             :modal="false"
+//             size="xl"
+//           >
+//             <UChip
+//               inset
+//               size="2xl"
+//               :show="Boolean(table?.tableApi.getColumn('isNew')?.getIsFiltered())"
+//               :ui="{ base: 'bg-[var(--color-notification)]' }"
+//             >
+//               <UButton
+//                 variant="outline"
+//                 color="neutral"
+//                 size="xl"
+//                 icon="crpg:dots"
+//               />
+//             </UChip>
+//           </UDropdownMenu>
+
 const columns = computed<TableColumn<ItemFlat>[]>(() => {
   return [
     {
@@ -346,6 +371,11 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
           td: 'px-0 w-[36px]',
         },
       },
+      // header: () => h(UButton, {
+      //   variant: 'outline',
+      //   color: 'neutral',
+      //   icon: 'crpg:dots',
+      // }),
       cell: ({ row }) => {
         const _isExpanded = row.getIsExpanded()
         return h('div', { class: 'w-[36px] flex justify-center' }, [
@@ -403,18 +433,14 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
       header: ({ column }) => h(UInput, {
         'icon': 'crpg:search',
         'variant': 'soft',
-        'class': 'w-[328px]',
+        'size': 'lg',
+        'class': 'w-[280px]',
         'placeholder': t('action.search'),
         'modelValue': column.getFilterValue(),
         'onUpdate:modelValue': column.setFilterValue,
       }),
-      cell: ({ row }) => h(ItemTableMedia, { class: 'w-[328px]', item: row.original, showTier: true }),
-      meta: {
-        class: {
-          td: 'w-[328px]',
-          th: 'w-[328px]',
-        },
-      },
+      cell: ({ row }) => h(ItemTableMedia, { item: row.original, showTier: true }),
+
     },
     ...Object.entries(currentAggregations.value).map(([key, config]) => createTableColumn(key as keyof ItemFlat, config)),
   ]
@@ -423,14 +449,13 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
 const onlyNewItemsFilter = (): DropdownMenuItem => {
   const _column = table.value?.tableApi.getColumn('isNew')
   const newItemsCount = _column?.getFacetedUniqueValues().get(true)
-
   return {
     label: `${t(`item.aggregations.isNew.title`)}${newItemsCount ? ` (${newItemsCount})` : ''}`,
     type: 'checkbox' as const,
     ...(_column && {
-      checked: (_column.getFilterValue() as [boolean, boolean])?.at(0) || false,
-      onUpdateChecked(checked: boolean) {
-        _column.setFilterValue(checked ? [checked] : [])
+      checked: (_column.getFilterValue() as boolean) || false,
+      onUpdateChecked(value) {
+        _column.setFilterValue(value || undefined)
       },
     }),
   }
@@ -445,7 +470,7 @@ const onlyNewItemsFilter = (): DropdownMenuItem => {
     <!-- <pre>{{ columnVisibility }}</pre> -->
     <!-- <pre>{{ table?.tableApi.getState().columnFilters }}</pre> -->
     <!-- <pre> {{ table?.tableApi.getState() }}</pre> -->
-    {{ columnFilters }}
+    <!-- {{ columnFilters }} -->
 
     <UCard
       :ui="{
@@ -454,7 +479,16 @@ const onlyNewItemsFilter = (): DropdownMenuItem => {
       }"
     >
       <template #header>
-        <div class="flex h-[60px] items-center gap-4">
+        <div class="flex h-[60px] items-center justify-between gap-4">
+          <!-- TODO: skeleton -->
+          <ItemSearchFilterByType
+            v-if="itemTypes.length"
+            v-model:item-type="itemType"
+            v-model:weapon-class="weaponClass"
+            :item-types="itemTypes"
+            :weapon-classes="weaponClasses"
+          />
+
           <UDropdownMenu
             :items="[onlyNewItemsFilter()]"
             :modal="false"
@@ -474,15 +508,6 @@ const onlyNewItemsFilter = (): DropdownMenuItem => {
               />
             </UChip>
           </UDropdownMenu>
-
-          <!-- TODO: skeleton -->
-          <ItemSearchFilterByType
-            v-if="itemTypes.length"
-            v-model:item-type="itemType"
-            v-model:weapon-class="weaponClass"
-            :item-types="itemTypes"
-            :weapon-classes="weaponClasses"
-          />
         </div>
       </template>
 
@@ -496,6 +521,8 @@ const onlyNewItemsFilter = (): DropdownMenuItem => {
         :data="flatItems"
         :ui="{
           root: 'overflow-visible',
+          td: 'px-2 py-2',
+          th: 'px-2 py-2',
         }"
         :loading="loadingItems"
         sticky
@@ -516,7 +543,7 @@ const onlyNewItemsFilter = (): DropdownMenuItem => {
 
         <template #expanded="{ row }">
           <ShopGridUpgradesTable
-            class="-m-4 bg-elevated"
+            class="-m-2 bg-elevated"
             :aggregation-config="currentAggregations"
             :item="row.original"
           />
@@ -540,27 +567,6 @@ const onlyNewItemsFilter = (): DropdownMenuItem => {
         </UiGridPagination>
       </template>
     </UCard>
-
-    <!-- <div
-      class="sticky bottom-0 left-0 z-[1] bg-default/75 py-4 backdrop-blur"
-    >
-      <div>
-        <UiGridPagination
-          v-if="table?.tableApi"
-          :table-api="table!.tableApi"
-        >
-          <UButton
-            v-if="Object.keys(rowSelection).length >= 2"
-            size="xl"
-            variant="subtle"
-            :icon="isCompareMode ? 'crpg:close' : undefined"
-            data-aq-shop-handler="toggle-compare"
-            :label="$t('shop.compare.title')"
-            @click="() => { toggleCompareMode() }"
-          />
-        </UiGridPagination>
-      </div>
-    </div> -->
 
     <!--
     <DropdownItem v-if="'weaponUsage' in filterModel">

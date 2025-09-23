@@ -177,6 +177,7 @@ const itemActions = computed(() => {
           v-if="lender && lender.id !== user!.id"
           :lender
         />
+
         <UTooltip v-else :text="$t('character.inventory.item.clanArmory.inArmory.title')">
           <UBadge
             icon="crpg:armory"

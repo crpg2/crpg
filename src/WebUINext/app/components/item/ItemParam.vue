@@ -104,7 +104,7 @@ const fieldStyle = computed(() => {
 </script>
 
 <template>
-  <div class="items-center space-y-1.5 py-1.5">
+  <div class="space-y-1.5">
     <UTooltip
       v-if="showLabel"
       :disabled="!$t(`item.aggregations.${field}.description`)"
@@ -163,7 +163,7 @@ const fieldStyle = computed(() => {
 
         <div
           v-if="diffStr !== null"
-          class="text-sm font-bold"
+          class="text-xs font-semibold"
         >
           {{ diffStr }}
         </div>

@@ -1184,13 +1184,13 @@ item:
     Vlandia: Вландия
 
   familyType:
-    Horse:
+    1:
       title: Лошадь
       description: ''
-    Camel:
+    2:
       title: Верблюд
       description: ''
-    EBA:
+    3:
       title: EBA
       description: 'Чтобы экипировать доспех из набора EBA, необходимо сначала надеть совместимую защиту ног из набора EBA'
 

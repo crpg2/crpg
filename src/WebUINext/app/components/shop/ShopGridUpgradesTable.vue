@@ -27,7 +27,7 @@ const {
 </script>
 
 <template>
-  <div class="relative min-h-[280px]">
+  <div class="relative">
     <UiLoading :active="isLoadingitemUpgrades" />
     <ItemTableUpgrades
       v-if="!isLoadingitemUpgrades && itemUpgrades.length"

@@ -12,6 +12,7 @@ export interface AggregationOptions {
   format?: ItemFieldFormat
   hidden?: boolean
   compareRule?: ItemFieldCompareRule
+  width?: number // px
 }
 
 export type AggregationConfig = Partial<Record<keyof ItemFlat, AggregationOptions>>
@@ -19,7 +20,7 @@ export type AggregationConfig = Partial<Record<keyof ItemFlat, AggregationOption
 export enum AggregationView {
   Range = 'Range',
   Checkbox = 'Checkbox',
-  Radio = 'Radio',
+  Toggle = 'Toggle',
 }
 
 export const aggregationsConfig: AggregationConfig = {
@@ -29,6 +30,7 @@ export const aggregationsConfig: AggregationConfig = {
   flags: {
     format: ITEM_FIELD_FORMAT.List,
     view: AggregationView.Checkbox,
+    width: 160,
   },
   id: {
     view: AggregationView.Checkbox,
@@ -39,13 +41,14 @@ export const aggregationsConfig: AggregationConfig = {
     hidden: true,
   },
   isNew: {
-    view: AggregationView.Checkbox,
+    view: AggregationView.Toggle,
     hidden: true,
   },
   price: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Less,
     format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
+    width: 200,
   },
   requirement: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Less,
@@ -58,7 +61,7 @@ export const aggregationsConfig: AggregationConfig = {
     view: AggregationView.Range,
   },
   type: {
-    view: AggregationView.Radio,
+    view: AggregationView.Toggle,
     hidden: true,
   },
   upkeep: {
@@ -79,7 +82,7 @@ export const aggregationsConfig: AggregationConfig = {
     view: AggregationView.Range,
   },
   armorFamilyType: {
-    format: ITEM_FIELD_FORMAT.List,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Checkbox,
   },
   armorMaterialType: {
@@ -124,6 +127,7 @@ export const aggregationsConfig: AggregationConfig = {
   },
   mountFamilyType: {
     view: AggregationView.Checkbox,
+    format: ITEM_FIELD_FORMAT.Number,
   },
   speed: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
@@ -179,7 +183,7 @@ export const aggregationsConfig: AggregationConfig = {
     view: AggregationView.Range,
   },
   weaponClass: {
-    view: AggregationView.Radio,
+    view: AggregationView.Toggle,
     hidden: true,
   },
   weaponUsage: {

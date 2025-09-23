@@ -39,35 +39,7 @@ import { cultureToIcon } from './culture-service'
 import { getAggregationsConfig, getVisibleAggregationsConfig } from './item-search-service'
 import { aggregationsConfig } from './item-search-service/aggregations'
 
-function _mapArmorFamilyType(familyType: 0 | 1 | 2 | 3): ItemFamilyType {
-  return {
-    0: ITEM_FAMILY_TYPE.Undefined,
-    1: ITEM_FAMILY_TYPE.Horse,
-    2: ITEM_FAMILY_TYPE.Camel,
-    3: ITEM_FAMILY_TYPE.EBA,
-  }[familyType]
-}
-
-// TODO: FIXME: ItemViewModel - не верно генерит, mount и armor на самом деле nullable TODO: FIXME:
-function _mapItem(item: ItemViewModel): Item {
-  return {
-    ...item,
-    ...(item.armor && {
-      armor: {
-        ...item.armor,
-        familyType: _mapArmorFamilyType(item.armor.familyType),
-      },
-    }),
-    ...(item.mount && {
-      mount: {
-        ...item.mount,
-        familyType: _mapArmorFamilyType(item.mount.familyType),
-      },
-    }),
-  }
-}
-
-export const getItems = async (): Promise<Item[]> => (await _getItems({ })).data!.map(_mapItem)
+export const getItems = async (): Promise<Item[]> => (await _getItems({ })).data!
 
 export const extractItem = <T extends { item: Item }>(wrapper: T): Item => wrapper.item
 
@@ -75,7 +47,7 @@ export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 
 export const getItemUpgrades = async (baseId: string): Promise<ItemFlat[]> => {
   const { data } = await getItemsUpgradesByBaseId({ path: { baseId } })
-  return createItemIndex(data!.map(_mapItem))
+  return createItemIndex(data!)
   // TODO: FIXME: изучить
   //  hotfix, avoid duplicate items with multiply weaponClass
   // .filter(el => el?.weaponClass === item?.weaponClass)
@@ -790,7 +762,7 @@ export const getReforgeCostByRank = (rank: number) => {
   return reforgeCostByRank[rank] ?? _fallbackReforgeCost
 }
 
-export const itemIsNewDays = 14
+export const itemIsNewDays = 14 // TODO: to cfg/env
 
 const itemParamIsEmpty = (field: keyof ItemFlat, itemFlat: ItemFlat) => {
   const value = itemFlat[field]

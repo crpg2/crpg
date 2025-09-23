@@ -19,10 +19,11 @@ defineEmits<{
     confirm="Upgrade item"
     @close="(res) => $emit('close', res)"
   >
-    <template #title>
+    <template #description>
       <i18n-t
         scope="global"
         keypath="character.inventory.item.upgrade.confirm.description"
+        tag="div"
       >
         <template #loomPoints>
           <AppLoom :point="1" />

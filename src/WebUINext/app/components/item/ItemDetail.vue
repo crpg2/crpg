@@ -74,15 +74,14 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
     <template #default>
       <div class="mb-4 flex gap-2">
         <UiTextView
-          variant="h4"
-          class="truncate text-ellipsis"
+          variant="h5"
           :style="{ color: rankColor }"
         >
           {{ item.name }}
         </UiTextView>
 
         <div>
-          <UTooltip :text="`${$t('action.copy')} - ${item.name}`">
+          <UTooltip :text="$t('action.copy')">
             <UBadge
               class="cursor-pointer"
               icon="crpg:copy"

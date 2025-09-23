@@ -296,30 +296,15 @@ const items = computed(() => {
           :lender="getClanArmoryItemLender(userItems.find(ui => ui.id === item.userItemId)!.userId, clanMembers)"
           :compare-result="compareItemsResult.find(cr => cr.type === userItems.find(fi => fi.item.id === item.id)!.item.type)?.compareResult"
           @sell="() => {
-            closeItemDetail(item); // TODO: copy pasta
+            closeItemDetail(item);
             onSellUserItem(item.userItemId);
           }"
-          @repair="() => {
-            onRepairUserItem(item.userItemId);
-          }"
-          @upgrade="() => {
-            onUpgradeUserItem(item.userItemId);
-          }"
-          @reforge="() => {
-            onReforgeUserItem(item.userItemId);
-          }"
-          @add-to-clan-armory="() => {
-            closeItemDetail(item);
-            onAddItemToClanArmory(item.userItemId);
-          }"
-          @remove-from-clan-armory="() => {
-            closeItemDetail(item);
-            onRemoveFromClanArmory(item.userItemId);
-          }"
-          @return-to-clan-armory=" () => {
-            closeItemDetail(item);
-            onReturnToClanArmory(item.userItemId);
-          }"
+          @repair="() => onRepairUserItem(item.userItemId)"
+          @upgrade="() => onUpgradeUserItem(item.userItemId)"
+          @reforge="() => onReforgeUserItem(item.userItemId)"
+          @add-to-clan-armory="() => onAddItemToClanArmory(item.userItemId)"
+          @remove-from-clan-armory="() => onRemoveFromClanArmory(item.userItemId)"
+          @return-to-clan-armory="() => onReturnToClanArmory(item.userItemId)"
         />
       </template>
     </ItemDetailGroup>

@@ -606,7 +606,7 @@ export const MountHarness = {
   armor: {
     armArmor: 0,
     bodyArmor: 6,
-    familyType: 'Horse',
+    familyType: 1,
     headArmor: 0,
     legArmor: 0,
     materialType: 'Leather',
@@ -637,7 +637,7 @@ export const Mount = {
   mount: {
     bodyLength: 105,
     chargeDamage: 1,
-    familyType: 'Horse',
+    familyType: 1,
     hitPoints: 172,
     maneuver: 66,
     speed: 40,
@@ -656,7 +656,7 @@ export const Helmet = {
   armor: {
     armArmor: 0,
     bodyArmor: 0,
-    familyType: 'Undefined',
+    familyType: 0,
     headArmor: 64,
     legArmor: 0,
     materialType: 'Plate',

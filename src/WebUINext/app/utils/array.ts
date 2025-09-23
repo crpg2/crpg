@@ -1,4 +1,4 @@
-import { xor } from 'es-toolkit/array'
+import { xor } from 'es-toolkit'
 
 export const range = (start: number, end: number) =>
   Array.from({ length: end - start + 1 })

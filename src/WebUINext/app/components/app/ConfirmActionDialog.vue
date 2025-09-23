@@ -66,6 +66,7 @@ const onConfirm = async () => {
         variant="outline"
         :ui="{
           root: 'ring-5',
+          description: 'space-y-2',
         }"
       >
         <template #description>
@@ -74,7 +75,7 @@ const onConfirm = async () => {
           </slot>
 
           <template v-if="undone">
-            <UiTextView variant="h5" class="text-error">
+            <UiTextView variant="h4" class="text-error">
               {{ $t('action-undone') }}
             </UiTextView>
           </template>

@@ -2,10 +2,10 @@
 import type { TableColumn } from '@nuxt/ui'
 import type { RowSelectionState, VisibilityState } from '@tanstack/vue-table'
 
-import { AppCoin, ItemParam, ItemTableMedia } from '#components'
+import { ItemParam, ItemTableMedia } from '#components'
 
 import type { CompareItemsResult, ItemFlat } from '~/models/item'
-import type { AggregationConfig } from '~/services/item-search-service/aggregations'
+import type { AggregationConfig, AggregationOptions } from '~/services/item-search-service/aggregations'
 
 import { ITEM_COMPARE_MODE } from '~/models/item'
 
@@ -27,33 +27,29 @@ const {
   currentRank?: number
 }>()
 
-const { t, n } = useI18n()
+const { t } = useI18n()
 
-function createTableColumn(key: keyof ItemFlat): TableColumn<ItemFlat> {
+function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
+  const widthPx = options.width || 140
   return {
     accessorKey: key,
     meta: {
-      class: {
-        td: 'min-w-[140px]',
-        th: 'min-w-[140px]',
+      style: {
+        th: {
+          width: `${widthPx}px`,
+        },
+        td: {
+          width: `${widthPx}px`,
+        },
       },
-      style: {},
     },
-    header: ({ header }) => h('div', { class: 'w-[140px]' }, t(`item.aggregations.${header.id}.title`)),
+    header: ({ header }) => t(`item.aggregations.${header.id}.title`),
     cell: ({ row }) => h(ItemParam, {
       field: key,
       item: row.original,
-      class: 'w-[140px]',
       isCompare: true,
       compareMode: ITEM_COMPARE_MODE.Relative,
       relativeValue: compareItemsResult[key]!,
-    }, {
-      ...(key === 'upkeep' && {
-        default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, { value: t('item.format.upkeep', { upkeep: n(rawBuckets) }) }),
-      }),
-      ...(key === 'price' && {
-        default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, { value: rawBuckets }),
-      }),
     }),
   }
 }
@@ -65,8 +61,17 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => [
           id: 'fill',
           meta: {
             class: {
-              td: 'px-0 w-[72px]',
-              th: 'px-0 w-[72px]',
+              td: 'px-0 w-[32px]',
+              th: 'px-0 w-[32px]',
+            },
+          },
+        },
+        {
+          id: 'fill2',
+          meta: {
+            class: {
+              td: 'px-0 w-[32px]',
+              th: 'px-0 w-[32px]',
             },
           },
         },
@@ -78,16 +83,9 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => [
     cell: ({ row }) => h(ItemTableMedia, {
       item: row.original,
       showTier: true,
-      class: 'w-[328px]',
     }),
-    meta: {
-      class: {
-        th: 'w-[328px]',
-        td: 'w-[328px]',
-      },
-    },
   },
-  ...Object.keys(aggregationConfig).map(key => createTableColumn(key as keyof ItemFlat)),
+  ...Object.entries(aggregationConfig).map(([key, config]) => createTableColumn(key as keyof ItemFlat, config)),
 ])
 
 const columnVisibility = computed<VisibilityState>(() => {
@@ -116,6 +114,9 @@ const rowSelection = ref<RowSelectionState>({
     :loading
     :columns
     :ui="{
+      root: 'overflow-visible',
+      td: 'px-2 py-2',
+      th: 'px-2 py-2',
       ...(!withHeader && {
         thead: 'hidden',
       }),
