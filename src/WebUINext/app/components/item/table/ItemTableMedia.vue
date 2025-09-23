@@ -2,8 +2,8 @@
 import type { ItemFlat } from '~/models/item'
 
 import { useItem } from '~/composables/item/use-item'
-// import { WeaponUsage } from '~/models/item'
-// import { weaponClassToIcon } from '~/services/item-service'
+import { WEAPON_USAGE } from '~/models/item'
+import { weaponClassToIcon } from '~/services/item-service'
 
 const { item, showTier = false } = defineProps<{
   item: ItemFlat
@@ -45,27 +45,22 @@ const { rankColor, thumb } = useItem(() => item)
           :rank="item.rank"
         />
 
-        <!-- TODO: FIXME: -->
-        <!-- <VTooltip
-          v-if="item.weaponUsage.includes(WeaponUsage.Secondary)"
-          placement="auto"
+        <UTooltip
+          v-if="item.weaponUsage.includes(WEAPON_USAGE.Secondary)"
         >
-          <Tag
-            variant="warning"
-            rounded
-            icon="alert"
-            size="sm"
+          <UBadge
+            color="warning"
+            variant="subtle"
+            icon="crpg:alert"
           />
 
-          <template #popper>
+          <template #content>
             <div class="prose prose-invert">
-              <h5 class="text-status-warning">
-                {{ $t(`shop.item.weaponUsage.title`) }}
-              </h5>
+              <h3 class="text-warning">
+                {{ $t('shop.item.weaponUsage.title') }}
+              </h3>
 
-              <p>
-                {{ $t(`shop.item.weaponUsage.desc`) }}
-              </p>
+              <p>{{ $t('shop.item.weaponUsage.desc') }}</p>
 
               <i18n-t
                 scope="global"
@@ -73,13 +68,7 @@ const { rankColor, thumb } = useItem(() => item)
                 tag="p"
               >
                 <template #weaponClass>
-                  <div class="flex items-center gap-1 font-bold text-content-100">
-                    <OIcon
-                      size="lg"
-                      :icon="weaponClassToIcon[item.weaponClass!]"
-                    />
-                    <span>{{ $t(`item.weaponClass.${item.weaponClass}`) }}</span>
-                  </div>
+                  <UiDataMedia size="lg" :label="$t(`item.weaponClass.${item.weaponClass}`)" :icon="`crpg:${weaponClassToIcon[item.weaponClass!]}`" />
                 </template>
               </i18n-t>
 
@@ -89,18 +78,12 @@ const { rankColor, thumb } = useItem(() => item)
                 tag="p"
               >
                 <template #weaponClass>
-                  <div class="flex items-center gap-1 font-bold text-content-100">
-                    <OIcon
-                      size="lg"
-                      :icon="weaponClassToIcon[item.weaponPrimaryClass!]"
-                    />
-                    <span>{{ $t(`item.weaponClass.${item.weaponPrimaryClass}`) }}</span>
-                  </div>
+                  <UiDataMedia size="lg" :label="$t(`item.weaponClass.${item.weaponPrimaryClass}`)" :icon="`crpg:${weaponClassToIcon[item.weaponPrimaryClass!]}`" />
                 </template>
               </i18n-t>
             </div>
           </template>
-        </VTooltip> -->
+        </UTooltip>
 
         <slot name="top-left" />
       </div>

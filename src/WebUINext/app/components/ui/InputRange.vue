@@ -45,18 +45,18 @@ const change = (from: number, to: number) => {
 
 <template>
   <div class="space-y-3">
-    <div>
+    <div class="pt-2">
       <USlider
         v-model="localValue"
         :min
         :max
         :step
       />
-      <div class="mt-3 flex justify-between">
-        <div class="text-2xs text-muted">
+      <div class="mt-2.5 flex justify-between">
+        <div class="text-xs text-muted">
           {{ $n(min) }}
         </div>
-        <div class="text-2xs text-muted">
+        <div class="text-xs text-muted">
           {{ $n(max) }}
         </div>
       </div>
@@ -68,7 +68,6 @@ const change = (from: number, to: number) => {
         :min
         :max
         :step
-        color="neutral"
         :model-value="localValue[0]"
         @update:model-value="(value) => change(value, localValue[1])"
       />
@@ -77,7 +76,6 @@ const change = (from: number, to: number) => {
         :min
         :max
         :step
-        color="neutral"
         :model-value="localValue[1]"
         @update:model-value="(value) => change(localValue[0], value)"
       />

@@ -30,7 +30,7 @@ const {
 const { t } = useI18n()
 
 function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
-  const widthPx = options.width || 140
+  const widthPx = options.width || 160
   return {
     accessorKey: key,
     meta: {
@@ -115,8 +115,6 @@ const rowSelection = ref<RowSelectionState>({
     :columns
     :ui="{
       root: 'overflow-visible',
-      td: 'px-2 py-2',
-      th: 'px-2 py-2',
       ...(!withHeader && {
         thead: 'hidden',
       }),

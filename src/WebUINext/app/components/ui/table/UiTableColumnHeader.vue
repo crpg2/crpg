@@ -20,6 +20,34 @@ defineEmits<{
 </script>
 
 <template>
+  <!-- <UFieldGroup>
+    <UButton
+      v-if="withFilter"
+      variant="soft"
+      color="neutral"
+      icon="crpg:chevron-down"
+      @click="$emit('resetFilter')"
+    />
+
+    <UButton
+      variant="soft"
+      color="neutral"
+      :label
+    />
+
+    <UButton
+      v-if="withSort"
+      variant="soft"
+      color="neutral"
+      :icon="sorted
+        ? (sorted === 'asc'
+          ? 'crpg:arrow-up-narrow-wide'
+          : 'crpg:arrow-down-narrow-wide')
+        : 'crpg:arrow-up-down'"
+      @click="$emit('sort')"
+    />
+  </UFieldGroup> -->
+
   <div class="relative flex items-center gap-1">
     <UTooltip
       v-if="withFilter && filtered"
@@ -39,9 +67,7 @@ defineEmits<{
     <template v-if="withFilter">
       <slot name="filter">
         <UPopover
-          :ui="{
-            content: 'max-w-76',
-          }"
+          :ui="{ content: 'max-w-76' }"
         >
           <UiTableColumnHeaderLabel :with-filter :label :description />
 
@@ -69,12 +95,13 @@ defineEmits<{
         square
         color="neutral"
         variant="ghost"
-        size="xs"
+        size="sm"
         :icon="sorted
           ? (sorted === 'asc'
             ? 'crpg:arrow-up-narrow-wide'
             : 'crpg:arrow-down-narrow-wide')
           : 'crpg:arrow-up-down'"
+
         @click="$emit('sort')"
       />
     </UTooltip>

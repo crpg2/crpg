@@ -188,7 +188,7 @@ export const aggregationsConfig: AggregationConfig = {
   },
   weaponUsage: {
     view: AggregationView.Checkbox,
-    hidden: true,
+    // hidden: true,
   },
 
   // Throw/Bow/Xbow

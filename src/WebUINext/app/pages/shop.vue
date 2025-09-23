@@ -196,11 +196,6 @@ const compareItemsResult = computed(() => isCompareMode.value
 
 // TODO: to cfgs
 function getFilterFn(key: keyof ItemFlat, options: AggregationOptions): FilterFnOption<any> {
-  // TODO: не помню зачем это
-  if (key === 'modId') {
-    return 'arrIncludesSome'
-  }
-
   if (options.view === AggregationView.Range) {
     return 'inNumberRange'
   }
@@ -238,14 +233,10 @@ function getFacets(rawFacets: Map<any, number>): Record<string, number> {
 }
 
 function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
-  const widthPx = options.width || 140
+  const widthPx = options.width || 160
   return {
     accessorKey: key,
     meta: {
-      // class: {
-      //   td: 'w-[140px]',
-      //   th: 'w-[140px]',
-      // },
       style: {
         th: {
           width: `${widthPx}px`,
@@ -258,7 +249,6 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
     cell: ({ row }) => h(ItemParam, {
       field: key,
       item: row.original,
-      // class: 'w-[140px]',
       bestValue: compareItemsResult.value !== null ? compareItemsResult.value[key] : undefined,
       isCompare: isCompareMode.value,
     }, {
@@ -278,7 +268,6 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
     filterFn: getFilterFn(key, options),
     header: ({ header, column }) => {
       return h(UiTableColumnHeader, {
-        // class: 'w-[140px]',
         label: t(`item.aggregations.${header.id}.title`),
         description: t(`item.aggregations.${header.id}.description`),
         withSort: options.view === AggregationView.Range,
@@ -341,26 +330,6 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
   }
 }
 
-// <UDropdownMenu
-//             :items="[onlyNewItemsFilter()]"
-//             :modal="false"
-//             size="xl"
-//           >
-//             <UChip
-//               inset
-//               size="2xl"
-//               :show="Boolean(table?.tableApi.getColumn('isNew')?.getIsFiltered())"
-//               :ui="{ base: 'bg-[var(--color-notification)]' }"
-//             >
-//               <UButton
-//                 variant="outline"
-//                 color="neutral"
-//                 size="xl"
-//                 icon="crpg:dots"
-//               />
-//             </UChip>
-//           </UDropdownMenu>
-
 const columns = computed<TableColumn<ItemFlat>[]>(() => {
   return [
     {
@@ -371,11 +340,6 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
           td: 'px-0 w-[36px]',
         },
       },
-      // header: () => h(UButton, {
-      //   variant: 'outline',
-      //   color: 'neutral',
-      //   icon: 'crpg:dots',
-      // }),
       cell: ({ row }) => {
         const _isExpanded = row.getIsExpanded()
         return h('div', { class: 'w-[36px] flex justify-center' }, [
@@ -440,7 +404,6 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
         'onUpdate:modelValue': column.setFilterValue,
       }),
       cell: ({ row }) => h(ItemTableMedia, { item: row.original, showTier: true }),
-
     },
     ...Object.entries(currentAggregations.value).map(([key, config]) => createTableColumn(key as keyof ItemFlat, config)),
   ]
@@ -464,31 +427,24 @@ const onlyNewItemsFilter = (): DropdownMenuItem => {
 
 <template>
   <UContainer class="max-w-full space-y-3 !p-0">
-    <!-- {{ allTypes }} -->
+    <!-- <pre>{{ allTypes }}</pre> -->
     <!-- <pre>{{ { itemType, weaponClass } }}</pre> -->
     <!-- <pre>{{ columnFilters }}</pre> -->
     <!-- <pre>{{ columnVisibility }}</pre> -->
     <!-- <pre>{{ table?.tableApi.getState().columnFilters }}</pre> -->
-    <!-- <pre> {{ table?.tableApi.getState() }}</pre> -->
-    <!-- {{ columnFilters }} -->
+    <!-- <pre>{{ table?.tableApi.getState() }}</pre> -->
+    <!-- <pre>{{ columnFilters }}</pre> -->
 
+    <!-- TODO: skeleton -->
     <UCard
+      v-if="!loadingItems"
       :ui="{
-        root: '!overflow-visible rounded-none',
+        root: 'overflow-visible rounded-none',
         footer: 'sticky bottom-0 left-0 z-[1] bg-default/75 py-4 backdrop-blur',
       }"
     >
       <template #header>
-        <div class="flex h-[60px] items-center justify-between gap-4">
-          <!-- TODO: skeleton -->
-          <ItemSearchFilterByType
-            v-if="itemTypes.length"
-            v-model:item-type="itemType"
-            v-model:weapon-class="weaponClass"
-            :item-types="itemTypes"
-            :weapon-classes="weaponClasses"
-          />
-
+        <div class="flex items-center gap-4">
           <UDropdownMenu
             :items="[onlyNewItemsFilter()]"
             :modal="false"
@@ -508,6 +464,14 @@ const onlyNewItemsFilter = (): DropdownMenuItem => {
               />
             </UChip>
           </UDropdownMenu>
+
+          <ItemSearchFilterByType
+            v-if="itemTypes.length"
+            v-model:item-type="itemType"
+            v-model:weapon-class="weaponClass"
+            :item-types="itemTypes"
+            :weapon-classes="weaponClasses"
+          />
         </div>
       </template>
 
@@ -521,10 +485,7 @@ const onlyNewItemsFilter = (): DropdownMenuItem => {
         :data="flatItems"
         :ui="{
           root: 'overflow-visible',
-          td: 'px-2 py-2',
-          th: 'px-2 py-2',
         }"
-        :loading="loadingItems"
         sticky
         :columns
         :faceted-options="{
@@ -543,7 +504,7 @@ const onlyNewItemsFilter = (): DropdownMenuItem => {
 
         <template #expanded="{ row }">
           <ShopGridUpgradesTable
-            class="-m-2 bg-elevated"
+            class="-m-4 bg-elevated"
             :aggregation-config="currentAggregations"
             :item="row.original"
           />
@@ -568,7 +529,7 @@ const onlyNewItemsFilter = (): DropdownMenuItem => {
       </template>
     </UCard>
 
-    <!--
+    <!-- TODO: FIXME:
     <DropdownItem v-if="'weaponUsage' in filterModel">
       <Tooltip
         :title="$t('shop.nonPrimaryWeaponMode.tooltip.title')"
@@ -583,7 +544,6 @@ const onlyNewItemsFilter = (): DropdownMenuItem => {
           {{ $t('shop.nonPrimaryWeaponMode.title') }}
         </OCheckbox>
       </Tooltip>
-    </DropdownItem>
-    -->
+    </DropdownItem> -->
   </UContainer>
 </template>
