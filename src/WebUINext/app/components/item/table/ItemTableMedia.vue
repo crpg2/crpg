@@ -14,7 +14,7 @@ const { rankColor, thumb } = useItem(() => item)
 </script>
 
 <template>
-  <div class="flex items-center gap-4">
+  <div class="flex items-center gap-2.5">
     <div class="relative h-16 w-32 min-w-32">
       <UTooltip
         :content="{ side: 'right' }"
@@ -138,8 +138,8 @@ const { rankColor, thumb } = useItem(() => item)
       </div>
     </div>
 
-    <span :style="{ color: rankColor }" class="whitespace-pre-wrap">
+    <UiTextView variant="p-sm" :style="{ color: rankColor }" class="truncate whitespace-pre-wrap">
       {{ item.name }}
-    </span>
+    </UiTextView>
   </div>
 </template>

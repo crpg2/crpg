@@ -27,11 +27,11 @@ const {
 </script>
 
 <template>
-  <div class="relative min-h-[200px]">
+  <div class="relative min-h-[280px]">
     <UiLoading :active="isLoadingitemUpgrades" />
     <ItemTableUpgrades
       v-if="!isLoadingitemUpgrades && itemUpgrades.length"
-      :items="itemUpgrades"
+      :items="itemUpgrades.toSpliced(0, 1)"
       :aggregation-config
       :compare-items-result="relativeEntries"
     />

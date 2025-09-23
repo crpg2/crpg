@@ -16,12 +16,14 @@ const {
   compareItemsResult,
   loading = false,
   currentRank,
+  withFiller = true,
 } = defineProps<{
   items: ItemFlat[]
   aggregationConfig: AggregationConfig
   compareItemsResult: CompareItemsResult
   loading?: boolean
   withHeader?: boolean
+  withFiller?: boolean // offset
   currentRank?: number
 }>()
 
@@ -30,54 +32,58 @@ const { t, n } = useI18n()
 function createTableColumn(key: keyof ItemFlat): TableColumn<ItemFlat> {
   return {
     accessorKey: key,
-    header: ({ header }) => t(`item.aggregations.${header.id}.title`),
-    cell: ({ row }) => h(ItemParam, {
-      field: key,
-      item: row.original,
-      isCompare: true,
-      compareMode: ITEM_COMPARE_MODE.Relative,
-      relativeValue: compareItemsResult[key]!,
-    }, {
-      ...(key === 'upkeep' && {
-        default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, null, {
-          default: ({ classes }: { classes: () => string }) => h('span', { class: classes() }, t('item.format.upkeep', { upkeep: n(rawBuckets) })),
-        }),
-      }),
-      ...(key === 'price' && {
-        default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, { value: rawBuckets }),
-      }),
-    }),
     meta: {
       class: {
         td: 'min-w-[140px]',
         th: 'min-w-[140px]',
       },
+      style: {},
     },
+    header: ({ header }) => h('div', { class: 'w-[140px]' }, t(`item.aggregations.${header.id}.title`)),
+    cell: ({ row }) => h(ItemParam, {
+      field: key,
+      item: row.original,
+      class: 'w-[140px]',
+      isCompare: true,
+      compareMode: ITEM_COMPARE_MODE.Relative,
+      relativeValue: compareItemsResult[key]!,
+    }, {
+      ...(key === 'upkeep' && {
+        default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, { value: t('item.format.upkeep', { upkeep: n(rawBuckets) }) }),
+      }),
+      ...(key === 'price' && {
+        default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, { value: rawBuckets }),
+      }),
+    }),
   }
 }
 
 const columns = computed<TableColumn<ItemFlat>[]>(() => [
-  // TODO: FIXME:
-  // {
-  //   id: 'fill',
-  //   meta: {
-  //     class: {
-  //       td: 'w-[80px]',
-  //     },
-  //   },
-  // },
+  ...(withFiller
+    ? [
+        {
+          id: 'fill',
+          meta: {
+            class: {
+              td: 'px-0 w-[72px]',
+              th: 'px-0 w-[72px]',
+            },
+          },
+        },
+      ]
+    : []),
   {
     accessorKey: 'name',
     header: '',
     cell: ({ row }) => h(ItemTableMedia, {
       item: row.original,
       showTier: true,
+      class: 'w-[328px]',
     }),
     meta: {
       class: {
-        // TODO:
-        // td: 'w-[40%]',
-        // th: 'w-[40%]',
+        th: 'w-[328px]',
+        td: 'w-[328px]',
       },
     },
   },

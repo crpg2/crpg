@@ -204,10 +204,10 @@ export const ITEM_USAGE = {
 export type ItemUsage = ValueOf<typeof ITEM_USAGE>
 
 export const ITEM_FAMILY_TYPE = {
-  Undefined: 0,
-  Horse: 1,
-  Camel: 2,
-  EBA: 3,
+  Undefined: 'Undefined',
+  Horse: 'Horse',
+  Camel: 'Camel',
+  EBA: 'EBA',
 } as const
 
 export type ItemFamilyType = ValueOf<typeof ITEM_FAMILY_TYPE>

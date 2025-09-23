@@ -16,24 +16,31 @@ const counter = computed(() => [
 </script>
 
 <template>
-  <div class="flex items-center gap-4">
-    <!-- v-if="table?.tableApi.getCanNextPage() || table?.tableApi.getCanPreviousPage()" -->
-    <UPagination
-      variant="soft"
-      active-variant="solid"
-      active-color="primary"
-      :page
-      :show-controls="false"
-      show-edges
-      size="xl"
-      :default-page="tableApi.initialState.pagination.pageIndex + 1"
-      :items-per-page="pageSize"
-      :total
-      @update:page="(value) => tableApi.setPageIndex(value - 1)"
-    />
-
+  <div class="grid grid-cols-3 items-center gap-4">
     <div>
-      {{ total !== 0 && total !== Infinity && $t('pagination.counter', { from: counter[0], to: counter[1], total }) }}
+      <UPagination
+        variant="soft"
+        active-variant="subtle"
+        active-color="primary"
+        :page
+        :show-controls="false"
+        show-edges
+        size="xl"
+        :default-page="tableApi.initialState.pagination.pageIndex + 1"
+        :items-per-page="pageSize"
+        :total
+        @update:page="(value) => tableApi.setPageIndex(value - 1)"
+      />
+    </div>
+
+    <div class="flex justify-center">
+      <slot />
+    </div>
+
+    <div class="flex justify-end">
+      <UiTextView variant="caption">
+        {{ total !== 0 && total !== Infinity && $t('pagination.counter', { from: counter[0], to: counter[1], total }) }}
+      </UiTextView>
     </div>
   </div>
 </template>

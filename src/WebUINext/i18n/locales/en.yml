@@ -797,17 +797,15 @@ shop:
       secondary: 'Current mode (secondary): {weaponClass}'
       primary: 'Primary mode: {weaponClass}'
     expensive: You can't afford the upkeep of this item
-  filter:
-    reset: Reset filter
-  sort:
-    asc: Sort by ascending
-    desc: Sort by descending
   compare:
-    add: Add to Compare
-    addAll: Add all to Compare
+    add: Add to compare
+    addAll: Add all to compare
     remove: Remove from comparison
     removeAll: Remove all from comparison
     title: Compare mode
+  upgrades:
+    expand: Show item upgrades
+    collapse: Close item upgrades
   nonPrimaryWeaponMode:
     title: Show additional items
     tooltip:
@@ -815,8 +813,6 @@ shop:
       desc:
         <p>Some items have multiple weapon modes, for example a throwing axe can be used in melee combat as a one-handed axe.</p>
         <p>This option will show such weapons in the store list</p>
-  hideOwnedItems:
-    title: Hide owned items
 
 clan:
   action:
@@ -1240,13 +1236,13 @@ item:
     Vlandia: Vlandia
 
   familyType:
-    1:
+    Horse:
       title: Horse
       description: ''
-    2:
+    Camel:
       title: Camel
       description: ''
-    3:
+    EBA:
       title: EBA
       description: 'To equip body armor from the EBA Pack, you must first wear compatible leg armor from the EBA Pack'
 
