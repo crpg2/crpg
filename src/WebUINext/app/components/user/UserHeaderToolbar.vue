@@ -44,7 +44,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
             onSelect: () => {
               emit('showWelcome')
             },
-          },
+          } as DropdownMenuItem,
         ]
       : []),
   ],

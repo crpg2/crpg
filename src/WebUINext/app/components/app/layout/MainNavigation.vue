@@ -34,7 +34,6 @@ const items = computed<NavigationMenuItem[]>(() => [
               name: 'clans',
             },
             slot: 'clans' as const,
-
           },
         ]
       : []),

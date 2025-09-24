@@ -12,7 +12,7 @@ internal interface IUserService
 {
     void SetDefaultValuesForUser(User user);
 
-    Task<bool> CheckIsRecentUser(ICrpgDbContext db, User user);
+    Task<bool> CheckIsRecentUser(ICrpgDbContext db, int userId, CancellationToken cancellationToken);
 }
 
 /// <inheritdoc />
@@ -37,15 +37,17 @@ internal class UserService : IUserService
         user.ExperienceMultiplier = _constants.DefaultExperienceMultiplier;
     }
 
-    public async Task<bool> CheckIsRecentUser(ICrpgDbContext db, User user)
+    public async Task<bool> CheckIsRecentUser(ICrpgDbContext db, int userId, CancellationToken cancellationToken)
     {
+        var user = await db.Users.FirstOrDefaultAsync(u => u.Id == userId, cancellationToken);
+
         var characters = await db.Characters
-            .Where(c => c.UserId == user.Id)
-            .ToArrayAsync();
+            .Where(c => c.UserId == user!.Id)
+            .ToArrayAsync(cancellationToken);
 
         bool hasHighLevelCharacter = characters.Any(c => c.Level > _constants.NewUserStartingCharacterLevel);
         double totalExperience = characters.Sum(c => c.Experience);
-        bool wasRetired = user.ExperienceMultiplier > _constants.DefaultExperienceMultiplier;
+        bool wasRetired = user!.ExperienceMultiplier > _constants.DefaultExperienceMultiplier;
         return
             !wasRetired &&
             !hasHighLevelCharacter &&

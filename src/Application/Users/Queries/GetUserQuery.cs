@@ -1,4 +1,5 @@
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
@@ -27,19 +28,18 @@ public record GetUserQuery : IMediatorRequest<UserViewModel>
 
         public async Task<Result<UserViewModel>> Handle(GetUserQuery req, CancellationToken cancellationToken)
         {
-            var user = await _db.Users.FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
+            var user = await _db.Users
+               .ProjectTo<UserViewModel>(_mapper.ConfigurationProvider)
+               .FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
 
             if (user == null)
             {
                 return new(CommonErrors.UserNotFound(req.UserId));
             }
 
-            bool isRecent = await _userService.CheckIsRecentUser(_db, user);
+            user.IsRecent = await _userService.CheckIsRecentUser(_db, user.Id, cancellationToken);
 
-            var userVm = _mapper.Map<UserViewModel>(user);
-            userVm.IsRecent = isRecent;
-
-            return new(userVm);
+            return new(user);
         }
     }
 }
