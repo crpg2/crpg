@@ -6,17 +6,17 @@ defineProps<{ region: Region }>()
 
 <template>
   <UTooltip>
-    <slot name="default" />
+    <slot />
 
     <template #content>
       <i18n-t
         scope="global"
         keypath="hh.tooltip-content.template"
         tag="div"
-        class="prose max-w-xs pr-6 prose-invert"
+        class="prose prose-invert"
       >
         <template #title>
-          <h5>🎉 {{ $t('hh.tooltip-content.title') }} 🎉</h5>
+          <h3>🎉 {{ $t('hh.tooltip-content.title') }} 🎉</h3>
         </template>
 
         <template #desc>
@@ -26,7 +26,7 @@ defineProps<{ region: Region }>()
             tag="p"
           >
             <template #descHighlight>
-              <span class="text-content-100">
+              <span class="text-primary">
                 {{ $t('hh.tooltip-content.descHighlight') }}
               </span>
             </template>
@@ -40,11 +40,19 @@ defineProps<{ region: Region }>()
             tag="p"
           >
             <template #currentRegion>
-              <span class="text-content-100">
+              <span class="text-primary">
                 {{ $t(`region.${region}`, 0) }}
               </span>
             </template>
           </i18n-t>
+        </template>
+
+        <template #regionDetect>
+          <i18n-t
+            scope="global"
+            keypath="hh.tooltip-content.regionDetect"
+            tag="p"
+          />
         </template>
       </i18n-t>
     </template>

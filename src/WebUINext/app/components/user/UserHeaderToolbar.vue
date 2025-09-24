@@ -20,19 +20,7 @@ const { t, locale, availableLocales, setLocale } = useI18n()
 
 const items = computed<DropdownMenuItem[][]>(() => [
   [
-    {
-      label: `${t('setting.language')} | ${locale.value.toUpperCase()}`,
-      icon: `crpg:${locale.value}`,
-      children: availableLocales.map(l => ({
-        label: t(`locale.${l}`),
-        type: 'checkbox' as const,
-        icon: `crpg:${l}`,
-        checked: l === locale.value,
-        onUpdateChecked() {
-          setLocale(l)
-        },
-      })),
-    },
+
     {
       label: t('setting.notifications'),
       icon: 'crpg:carillon',
@@ -43,6 +31,15 @@ const items = computed<DropdownMenuItem[][]>(() => [
       label: t('setting.settings'),
       icon: 'crpg:settings',
       to: { name: 'settings' },
+    },
+    // TODO: FIXME: condition
+    {
+      label: t('welcome.shortTitle'),
+      icon: 'crpg:gift',
+      color: 'primary',
+      onSelect: () => {
+
+      },
     },
   ],
   [
@@ -61,25 +58,30 @@ const items = computed<DropdownMenuItem[][]>(() => [
   ],
   [
     {
+      label: `${t('setting.language')} | ${locale.value.toUpperCase()}`,
+      icon: `crpg:${locale.value}`,
+      children: availableLocales.map(l => ({
+        label: t(`locale.${l}`),
+        type: 'checkbox' as const,
+        icon: `crpg:${l}`,
+        checked: l === locale.value,
+        onUpdateChecked() {
+          setLocale(l)
+        },
+      })),
+    },
+    {
       label: t('setting.logout'),
       icon: 'crpg:logout',
       onSelect: logout,
     },
   ],
+
 ])
 </script>
 
 <template>
   <div class="flex items-center gap-3">
-    <!-- TODO: FIXME: condition -->
-    <UButton
-      variant="subtle"
-      icon="crpg:gift"
-      :label="$t('welcome.shortTitle')"
-    />
-
-    <!-- TODO: FIXME: condition -->
-
     <UTooltip :text="$t('user.field.gold')">
       <AppCoin>
         <NumberFlow

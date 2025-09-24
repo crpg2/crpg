@@ -37,16 +37,15 @@ useWelcome()// TODO: FIXME:
         ` : `bg-default`]"
     >
       <template v-if="userStore.user">
-        <!-- TODO: тест -->
-        <UserRestrictionNotification
-          v-if="userStore.restriction !== null"
+        <UserRestrictionBanner
+          v-if="userStore.restriction"
           :restriction="userStore.restriction"
         />
 
         <!-- v-if="userStore.user && !isHHCountdownEnded && HHEventRemaining !== 0" -->
         <!-- TODO: тест -->
-        <AppLayoutHHHeaderNotification
-          :region="userStore.user!.region"
+        <AppHHBanner
+          v-if="userStore.user" :region="userStore.user.region"
         />
       </template>
 
@@ -81,5 +80,6 @@ useWelcome()// TODO: FIXME:
     <AppLayoutFooter :HHEvent class="ring ring-default" />
     <!-- :open="shownWelcomeMessage" -->
     <!-- TODO: FIXME: -->
+    <AppWelcome />
   </div>
 </template>

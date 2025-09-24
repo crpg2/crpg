@@ -12,6 +12,7 @@ export default defineAppConfig({
   links: {
     tipsTricksHelpThread: 'https://discord.com/channels/279063743839862805/1044686358066778112',
     buildSupportThread: 'https://discord.com/channels/279063743839862805/1036085650849550376',
+    modMail: 'https://discord.com/channels/279063743839862805/1127605585727205456',
   },
   ui: {
     colors: {

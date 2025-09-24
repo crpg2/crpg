@@ -968,6 +968,7 @@ user:
   restriction:
     notification: 'You are banned for: {duration}'
     guide:
+      reason: 'Reason: {reason}'
       intro: 'If you''d like to discuss your punishment further, please follow the below steps:'
       step:
         join: Join our {discordLink}
@@ -1077,11 +1078,13 @@ patreon: '
 hh:
   tooltip-trigger: 'Happy hours for {region}:'
   tooltip-content:
-    template: '{title}{desc}{region}'
+    template: '{title}{desc}{region}{regionDetect}'
     title: Happy hours!
     desc: 'Happy Hours is a daily promotion during which {descHighlight}'
     descHighlight: your entire experience will be increased by 50%.
-    region: The promotion lasts for the time specified for your region - {currentRegion}. Region is automatically detected.
+    region: The promotion lasts for the time specified for your region - {currentRegion}
+    regionDetect: Region is automatically detected
+
   notify:
     started: The happy hours have begun 🙂
     ended: The happy hours are over 😭

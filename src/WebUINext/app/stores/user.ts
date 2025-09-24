@@ -74,7 +74,7 @@ export const useUserStore = defineStore('user', () => {
 
   const hasUnreadNotifications = computed(() => Boolean(user.value?.unreadNotificationsCount))
 
-  // TODO:
+  // TODO: to composable
   const {
     state: restriction,
     execute: fetchUserRestriction,

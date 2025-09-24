@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import NumberFlow, { NumberFlowGroup } from '@number-flow/vue'
 import { useCountdown } from '@vueuse/core'
+import { AppHHTooltip } from '#components'
 
 import type { Region } from '~/models/region'
 
-import { useHappyHours } from '~/composables/use-hh'
 import { getHHEventRemaining } from '~/services/hh-service'
 
 defineProps<{ region: Region }>()
 
+//
 const {
   HHEvent,
   // HHEventRemaining,
@@ -26,14 +27,15 @@ const ss = computed(() => remaining.value % 60)
 </script>
 
 <template>
-  <div class="bg-success px-8 py-1">
-    <AppHHTooltip :region>
-      <div
-        class="
-          flex cursor-pointer items-center justify-center gap-2 text-sm font-semibold
-          text-highlighted
-        "
-      >
+  <UBanner
+    id="hh"
+    :ui="{
+      title: 'text-highlighted text-lg flex gap-3 items-center',
+    }"
+    color="success"
+  >
+    <template #title>
+      <AppHHTooltip :region>
         🎉
         <NumberFlowGroup>
           <div
@@ -62,7 +64,7 @@ const ss = computed(() => remaining.value % 60)
           </div>
         </NumberFlowGroup>
         🎉
-      </div>
-    </AppHHTooltip>
-  </div>
+      </AppHHTooltip>
+    </template>
+  </UBanner>
 </template>
