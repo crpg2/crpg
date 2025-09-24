@@ -6,7 +6,7 @@ import { usePageLoading } from '~/composables/app/use-page-loading'
 import { usePollInterval } from '~/composables/utils/use-poll-interval'
 
 type UseAsyncStateWithPollOptions<Shallow extends boolean, Data = any> = UseAsyncStateOptions<Shallow, Data> & {
-  pollKey?: symbol
+  pollKey?: EntryKey
   pageLoading?: boolean
 }
 
@@ -26,7 +26,7 @@ export function useAsyncStateWithPoll<Data, Params extends any[] = any[], Shallo
   if (pollKey) {
     usePollInterval(
       {
-        key: pollKey,
+        key: toCacheKey(pollKey),
         fn: executeImmediate,
       },
     )

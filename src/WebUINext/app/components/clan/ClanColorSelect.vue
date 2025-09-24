@@ -29,7 +29,9 @@ defineModel<string>('secondary')
           :value="primary"
           variant="none"
           type="color"
-          @input="$emit('update:primary', ($event.target as HTMLInputElement).value)"
+          @input="
+            // eslint-disable-next-line vue/require-explicit-emits https://github.com/vuejs/eslint-plugin-vue/issues/2544
+            $emit('update:primary', ($event.target as HTMLInputElement).value)"
         >
       </UFormField>
 
@@ -47,7 +49,9 @@ defineModel<string>('secondary')
           :value="secondary"
           variant="none"
           type="color"
-          @input="$emit('update:secondary', ($event.target as HTMLInputElement).value)"
+          @input="
+            // eslint-disable-next-line vue/require-explicit-emits https://github.com/vuejs/eslint-plugin-vue/issues/2544
+            $emit('update:secondary', ($event.target as HTMLInputElement).value)"
         >
       </UFormField>
     </div>

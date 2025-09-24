@@ -308,7 +308,7 @@ export const createItemIndex = (items: Item[], cloneMultipleUsageWeapon = false)
     if (item.weapons.length > 1
     // TODO: bows have 2 loading modes, so there are several objects in the weapons data structure
       && item.type !== ITEM_TYPE.Bow) {
-      item.weapons.forEach((w, _idx) => {
+      item.weapons.forEach((w) => {
         const weaponClass = normalizeWeaponClass(item.type, w)
 
         const isPrimaryUsage = checkWeaponIsPrimaryUsage(item.type, w, item.weapons)

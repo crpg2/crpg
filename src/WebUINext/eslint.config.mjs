@@ -7,6 +7,7 @@ import eslintParserVue from 'vue-eslint-parser'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
+  { ignores: ['./app/api'] },
   antfu({
     lessOpinionated: true,
     vue: true,
@@ -56,6 +57,7 @@ export default withNuxt(
         entryPoint: fileURLToPath(new URL('./app/assets/css/main.css', import.meta.url)),
       },
     },
+
   },
 ).overrideRules({
   '@typescript-eslint/no-unused-vars': ['warn'],

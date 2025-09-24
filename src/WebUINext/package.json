@@ -8,7 +8,8 @@
     "preview": "nuxt preview",
     "postinstall": "patch-package && nuxt prepare",
     "openapi-ts": "openapi-ts",
-    "test:unit": "vitest"
+    "test:unit": "vitest",
+    "lint": "eslint"
   },
   "dependencies": {
     "@antfu/eslint-config": "^5.4.1",

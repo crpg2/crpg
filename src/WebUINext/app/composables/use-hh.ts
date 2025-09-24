@@ -9,7 +9,7 @@ export const useHappyHours = () => {
   const HHPollId = Symbol('hh')
 
   const userStore = useUserStore()
-  const { t } = useI18n()
+  // const { t } = useI18n()
   const { $config } = useNuxtApp()
 
   const source = ref()
@@ -36,16 +36,6 @@ export const useHappyHours = () => {
     // $notify(t('hh.notify.ended'))
   }
 
-  // https://fengyuanchen.github.io/vue-countdown/
-  // const transformSlotProps = (props: Record<string, number>) =>
-  //   Object.entries(props).reduce(
-  //     (out, [key, value]) => {
-  //       out[key] = value < 10 ? `0${value}` : String(value)
-  //       return out
-  //     },
-  //     {} as Record<string, string>,
-  //   )
-
   return {
     HHEvent,
     HHEventRemaining,
@@ -53,6 +43,5 @@ export const useHappyHours = () => {
     isHHCountdownEnded,
     onEndHHCountdown,
     onStartHHCountdown,
-    // transformSlotProps,
   }
 }

@@ -1,3 +1,5 @@
+import type { FetchResponse } from 'ofetch'
+
 import { delay } from 'es-toolkit'
 
 import type { CreateClientConfig } from '~/api/client.gen'
@@ -51,7 +53,7 @@ export const createClientConfig: CreateClientConfig = (config) => {
         }
       }
 
-      const [error] = response._data?.errors as CrpgApiError[]
+      const [error] = (response as FetchResponse<{ errors: CrpgApiError[] }>)._data?.errors ?? []
 
       if (error) {
         toast.add({

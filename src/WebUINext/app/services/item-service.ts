@@ -1,5 +1,3 @@
-import type { ItemViewModel } from '#hey-api/types.gen'
-
 import {
   getItems as _getItems,
   getItemsUpgradesByBaseId,

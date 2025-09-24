@@ -66,10 +66,10 @@ export const getHHEventRemaining = (event: HHEvent): number => {
   const now = new Date()
 
   // TODO: FIXME:
-  console.log({ start, end, now })
+  // console.log({ start, end, now })
 
   if (!isBetween(now, start, end)) {
-    console.log('!isBetween')
+    // console.log('!isBetween')
     return 0
   }
 

@@ -25,7 +25,6 @@ import type {
   ClanUpdate,
   ClanWithMemberCount,
 } from '~/models/clan'
-import type { UserItem } from '~/models/user'
 
 import { CLAN_INVITATION_STATUS, CLAN_INVITATION_TYPE, CLAN_MEMBER_ROLE } from '~/models/clan'
 

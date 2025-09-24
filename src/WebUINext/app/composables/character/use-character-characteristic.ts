@@ -1,5 +1,4 @@
 import { weaponProficiencyCostCoefs } from '~root/data/constants.json'
-import { timeout } from 'es-toolkit'
 
 import type {
   CharacterCharacteristics,

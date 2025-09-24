@@ -42,7 +42,7 @@ const items = computed(() =>
       @click="loginUser"
     >
       <div class="flex flex-col text-left leading-tight">
-        <span class="text-3xs">{{ $t('login.label') }}</span>
+        <span class="text-xs">{{ $t('login.label') }}</span>
         <span>{{ $t(`platform.${platform}`) }}</span>
       </div>
     </UButton>

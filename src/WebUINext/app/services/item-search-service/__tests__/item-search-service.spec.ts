@@ -5,8 +5,8 @@ import type { ItemFlat, ItemType, WeaponClass } from '~/models/item'
 import { ITEM_TYPE, WEAPON_CLASS } from '~/models/item'
 import {
   getAggregationsConfig,
-  getFacetsByItemType, // TODO: FIXME:
-  getFacetsByWeaponClass, // TODO: FIXME:
+  // getFacetsByItemType, // TODO: FIXME:
+  // getFacetsByWeaponClass, // TODO: FIXME:
   getVisibleAggregationsConfig,
 } from '~/services/item-search-service'
 
