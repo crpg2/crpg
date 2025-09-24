@@ -136,14 +136,19 @@ internal class HttpCrpgClient : ICrpgClient
         return Get<CrpgClan>("games/clans/" + clanId, null, cancellationToken);
     }
 
-    public Task<CrpgResult<IList<CrpgClanArmoryItem>>> GetClanArmoryAsync(int clanId, CancellationToken cancellationToken = default)
+    public Task<CrpgResult<IList<CrpgClanArmoryItem>>> GetClanArmoryAsync(int clanId, int userId, CancellationToken cancellationToken = default)
     {
-        return Get<IList<CrpgClanArmoryItem>>("games/clans/" + clanId + "/armory", null, cancellationToken);
+        var queryParameters = new Dictionary<string, string>(StringComparer.Ordinal)
+        {
+            ["userId"] = userId.ToString()
+        };
+
+        return Get<IList<CrpgClanArmoryItem>>("games/clans/" + clanId + "/armory", queryParameters, cancellationToken);
     }
 
     public Task<CrpgResult<CrpgClanArmoryItem>> ClanArmoryAddItemAsync(int clanId, CrpgGameClanArmoryAddItemRequest req, CancellationToken cancellationToken = default)
     {
-        return Put<CrpgGameClanArmoryAddItemRequest, CrpgClanArmoryItem>("games/clans/" + clanId + "/armory", req, cancellationToken);
+        return Post<CrpgGameClanArmoryAddItemRequest, CrpgClanArmoryItem>("games/clans/" + clanId + "/armory", req, cancellationToken);
     }
 
     public Task<CrpgResult<object>> RemoveClanArmoryItemAsync(int clanId, int userItemId, int userId,
@@ -160,7 +165,7 @@ internal class HttpCrpgClient : ICrpgClient
 
     public Task<CrpgResult<CrpgClanArmoryBorrowedItem>> ClanArmoryReturnItemAsync(int clanId, int userItemId, CrpgGameBorrowClanArmoryItemRequest req, CancellationToken cancellationToken = default)
     {
-        return Put<CrpgGameBorrowClanArmoryItemRequest, CrpgClanArmoryBorrowedItem>($"games/clans/{clanId}/armory/{userItemId}/borrow", req, cancellationToken);
+        return Put<CrpgGameBorrowClanArmoryItemRequest, CrpgClanArmoryBorrowedItem>($"games/clans/{clanId}/armory/{userItemId}/return", req, cancellationToken);
     }
 
     public Task<CrpgResult<CrpgUsersUpdateResponse>> UpdateUsersAsync(CrpgGameUsersUpdateRequest req, CancellationToken cancellationToken = default)

@@ -21,6 +21,7 @@ public record GameUserItemExtendedViewModel : IMapFrom<UserItem>
     {
         profile.CreateMap<UserItem, GameUserItemExtendedViewModel>()
             // .ForMember(ui => ui.ItemId, config => config.MapFrom(src => src.Item != null ? src.Item.Id : "not found"));
-            .ForMember(ui => ui.Rank, config => config.MapFrom(src => src.Item != null ? src.Item.Rank : 0));
+            .ForMember(ui => ui.Rank, config => config.MapFrom(src => src.Item != null ? src.Item.Rank : 0))
+            .ForMember(ui => ui.IsArmoryItem, config => config.MapFrom(src => src.ClanArmoryItem != null ? true : false));
     }
 }

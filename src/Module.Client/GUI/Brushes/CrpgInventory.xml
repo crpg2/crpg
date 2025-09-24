@@ -193,6 +193,66 @@
       </Style>
     </Styles>
   </Brush>
+  <Brush Name="Item.Armory.Icon">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_armory" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#ebeeecff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Item.Armory.Icon_Yours_Available">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_armory" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#ebeeecff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Item.Armory.Icon_Yours_Borrowed">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_armory" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#ccb90aff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Item.Armory.Icon_NotYours_Available">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_armory" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#19ac4aff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Item.Armory.Icon_NotYours_Borrowed">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_armory" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#c50c0cff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Item.Armory.Icon_BorrowedByYou">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_armory" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#142fc5ff" />
+      </Style>       
+    </Styles>
+  </Brush>      
   <Brush Name="Item.Rank.Icon">
     <Layers>
       <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_diamond" Color="#ffffffff" />

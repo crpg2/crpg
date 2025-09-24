@@ -50,13 +50,12 @@
                             HorizontalAlignment="Center" VerticalAlignment="Center"
                             Margin="4" 
                             DoNotAcceptEvents="True" PassEventsToParent="True" />
+            <!-- Armory item icon -->
+            <ItemArmoryIconPrefab DataSource="{ItemArmoryIcon}" HorizontalAlignment="Right" VerticalAlignment="Top"
+                            PositionYOffset="0" />
             <!-- Item rank icon (heirlooms)-->
-            <BrushWidget Id="ItemRank1" Brush="Item.Rank.Icon_1" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-              SuggestedWidth="15" SuggestedHeight="15" IsVisible="@Rank1Visible" />
-            <BrushWidget Id="ItemRank2" Brush="Item.Rank.Icon_2" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-              SuggestedWidth="15" SuggestedHeight="15" IsVisible="@Rank2Visible" />   
-            <BrushWidget Id="ItemRank3" Brush="Item.Rank.Icon_3" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-              SuggestedWidth="15" SuggestedHeight="15" IsVisible="@Rank3Visible" />                            
+            <ItemRankIconPrefab DataSource="{ItemRankIcon}" />
+
           </Children>
         </ButtonWidget>
       </Children>

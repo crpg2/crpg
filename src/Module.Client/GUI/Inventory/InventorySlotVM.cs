@@ -1,6 +1,8 @@
+using System.Security;
 using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
+using Crpg.Module.Common.Network;
 using Messages.FromClient.ToLobbyServer;
 using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection.Information;
@@ -24,19 +26,27 @@ public class InventorySlotVM : ViewModel
     private int _userItemId;
     private bool _isEquipped;
     private int _itemRank = 0;
-    private bool _rank1Visible = false;
-    private bool _rank2Visible = false;
-    private bool _rank3Visible = false;
+    private bool _isArmoryItem;
+    private bool _isDraggable = true;
+
+    private CrpgUserItemExtended? _userItemEx;
 
     private ImageIdentifierVM _imageIdentifier;
+
+    private ItemRankIconVM _itemRankIcon;
+    private ItemArmoryIconVM? _itemArmoryIcon;
     private string _id;
 
     public ItemObject ItemObj { get; }
+    internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
+
     public event Action<ItemObject>? OnItemDragBegin;
     public event Action<ItemObject>? OnItemDragEnd;
 
-    public InventorySlotVM(ItemObject item, Action<InventorySlotVM> onClick, Action<InventorySlotVM> onHoverEnd, int quantity = 1, int userItemId = -1)
+    public InventorySlotVM(ItemObject item, Action<InventorySlotVM> onClick, Action<InventorySlotVM> onHoverEnd, int quantity = 1, CrpgUserItemExtended? userItemExtended = null)
     {
+        UserLoadoutBehavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+
         ItemObj = item;
         if (item != null)
         {
@@ -46,28 +56,37 @@ public class InventorySlotVM : ViewModel
             _showDefaultIcon = false;
             _quantityText = quantity > 1 ? quantity.ToString() : string.Empty;
             _defaultSprite = string.Empty;
-            _userItemId = userItemId;
-            _itemRank = 0;
+            UserItemEx = userItemExtended;
+            _userItemId = userItemExtended?.Id ?? -1;
+            _itemRank = userItemExtended?.Rank ?? 0;
+            _itemRankIcon = new ItemRankIconVM(_itemRank);
+            _itemArmoryIcon = new ItemArmoryIconVM();
+            _isArmoryItem = userItemExtended?.IsArmoryItem ?? false;
+            _isDraggable = true;
             _onClick = onClick;
             _onHoverEnd = onHoverEnd;
 
-            var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-            if (behavior == null || behavior.UserInventoryItems == null)
+            if (UserLoadoutBehavior is null)
             {
+                InformationManager.DisplayMessage(new InformationMessage("CrpgCharacterLoadoutBehaviorClient is required but not found in current mission", Colors.Red));
                 return;
             }
 
-            var userItem = behavior.UserInventoryItems.FirstOrDefault(x => x.Id == _userItemId);
-            if (userItem != null)
+            if (UserLoadoutBehavior is not null)
             {
-                _itemRank = userItem.Rank;
+                UserLoadoutBehavior.OnEquipmentSlotUpdated += HandleUpdateEvent;
+                UserLoadoutBehavior.OnUserInventoryUpdated += HandleUpdateEvent;
+                UserLoadoutBehavior.OnUserCharacterEquippedItemsUpdated += HandleUpdateEvent;
+                UserLoadoutBehavior.OnClanArmoryUpdated += HandleUpdateEvent;
+                UserLoadoutBehavior.OnArmoryActionUpdated += HandleUpdateEvent;
+
+                if (_isArmoryItem)
+                {
+                    IsDraggable = !UserLoadoutBehavior.IsArmoryItemOwner(_userItemId); // dont let equip if armory item and owner
+                    _itemArmoryIcon?.UpdateItemArmoyIconFromItem(_userItemId);
+                }
             }
-
-            behavior.OnSlotUpdated += HandleUpdateEvent;
-            behavior.OnUserInventoryUpdated += HandleUpdateEvent;
-            behavior.OnUserCharacterEquippedItemsUpdated += HandleUpdateEvent;
-
-            SetItemRankIconsVisible(_itemRank);
+            // SetItemRankIconsVisible(_itemRank);
 
             CheckItemEquipped();
         }
@@ -75,12 +94,16 @@ public class InventorySlotVM : ViewModel
         {
             _itemName = string.Empty;
             _imageIdentifier = new ImageIdentifierVM(); // empty
+            _itemRankIcon = new ItemRankIconVM();
+            _itemArmoryIcon = new ItemArmoryIconVM();
             _id = string.Empty;
             _showDefaultIcon = true;
             _quantityText = string.Empty;
             _defaultSprite = "general_placeholder";
             _userItemId = -1;
             _itemRank = 0;
+            _isArmoryItem = false;
+            _isDraggable = false;
             _onClick = _ => { }; // no-op
             _onHoverEnd = _ => { }; // no-op
         }
@@ -88,12 +111,13 @@ public class InventorySlotVM : ViewModel
 
     public override void OnFinalize()
     {
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior != null)
+        if (UserLoadoutBehavior is not null)
         {
-            behavior.OnSlotUpdated -= HandleUpdateEvent;
-            behavior.OnUserInventoryUpdated -= HandleUpdateEvent;
-            behavior.OnUserCharacterEquippedItemsUpdated -= HandleUpdateEvent;
+            UserLoadoutBehavior.OnEquipmentSlotUpdated -= HandleUpdateEvent;
+            UserLoadoutBehavior.OnUserInventoryUpdated -= HandleUpdateEvent;
+            UserLoadoutBehavior.OnUserCharacterEquippedItemsUpdated -= HandleUpdateEvent;
+            UserLoadoutBehavior.OnClanArmoryUpdated -= HandleUpdateEvent;
+            UserLoadoutBehavior.OnArmoryActionUpdated += HandleUpdateEvent;
         }
     }
 
@@ -102,9 +126,102 @@ public class InventorySlotVM : ViewModel
         HandleUpdateEvent();
     }
 
+    public void HandleUpdateEvent(ClanArmoryActionType action, int userItemId)
+    {
+        HandleUpdateEvent();
+    }
+
     public void HandleUpdateEvent()
     {
-        CheckItemEquipped();
+        HandleUpdateEvent(UserItemId);
+        /*
+        if (UserLoadoutBehavior is not null)
+        {
+            // Check user inventory item
+            var uItem = UserLoadoutBehavior.FindUserInventoryItemByUserItemId(_userItemId);
+            if (uItem is not null)
+            {
+                IsEquipped = UserLoadoutBehavior.IsItemEquipped(uItem.Id);
+            }
+
+            // Check clan armory item
+            CheckItemArmoryStatus();
+        }
+        */
+    }
+
+    internal void HandleUpdateEvent(int userItemId)
+    {
+        InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: HandleUpdateEvent({userItemId})"));
+        if (UserLoadoutBehavior is not null)
+        {
+            // Try to fetch the latest version of this item from client behavior, not API
+            var latestItem = UserLoadoutBehavior.GetCrpgUserItem(userItemId);
+
+            // If it doesn’t exist anymore, clear it
+            if (latestItem == null)
+            {
+                InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: HandleUpdateEvent({userItemId}) -- latestItem is null", Colors.Red));
+                UserItemEx = null;
+                return;
+            }
+
+            // If this slot is tracking the same item, update it
+            if (UserItemEx?.Id == userItemId)
+            {
+                InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: HandleUpdateEvent({userItemId}) setting UserItemEx"));
+                UserItemEx = latestItem;
+            }
+        }
+    }
+
+    private void ApplyUserItemEx(CrpgUserItemExtended? uItem)
+    {
+        InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ApplyUserItemEx() {uItem?.ItemId}"));
+        if (uItem == null)
+        {
+            UserItemId = -1;
+            ItemRank = 0;
+            IsArmoryItem = false;
+            IsEquipped = false;
+            IsDraggable = true;
+            QuantityText = string.Empty;
+            // SetItemRankIconsVisible(0);
+            ItemRankIcon = new ItemRankIconVM(_itemRank);
+            ItemArmoryIcon = new ItemArmoryIconVM();
+            return;
+        }
+
+        UserItemId = uItem.Id;
+        ItemRank = uItem.Rank;
+        IsArmoryItem = uItem.IsArmoryItem;
+        IsDraggable = !(IsArmoryItem && UserLoadoutBehavior?.IsArmoryItemOwner(_userItemId) == true);
+        IsEquipped = UserLoadoutBehavior?.IsItemEquipped(uItem.Id) ?? false;
+
+        // If you have a stack amount
+        // ItemQuantity = uItem.Quantity;
+        // QuantityText = ItemQuantity > 1 ? ItemQuantity.ToString() : string.Empty;
+        ItemRankIcon = new ItemRankIconVM(_itemRank);
+        ItemArmoryIcon?.UpdateItemArmoyIconFromItem(uItem.Id);
+
+    }
+
+    [DataSourceProperty]
+    public CrpgUserItemExtended? UserItemEx
+    {
+        get => _userItemEx;
+        set
+        {
+            if (SetField(ref _userItemEx, value, nameof(UserItemEx)))
+            {
+                ApplyUserItemEx(_userItemEx);
+            }
+            else
+            {
+                // Optional: still run if same object was assigned
+                ApplyUserItemEx(_userItemEx);
+            }
+        }
     }
 
     [DataSourceProperty]
@@ -121,15 +238,14 @@ public class InventorySlotVM : ViewModel
     }
 
     [DataSourceProperty]
+    public bool IsDraggable { get => _isDraggable; set => SetField(ref _isDraggable, value, nameof(IsDraggable)); }
+    [DataSourceProperty]
+    public bool IsArmoryItem { get => _isArmoryItem; set => SetField(ref _isArmoryItem, value, nameof(IsArmoryItem)); }
+    [DataSourceProperty]
     public bool IsEquipped { get => _isEquipped; set => SetField(ref _isEquipped, value, nameof(IsEquipped)); }
     [DataSourceProperty]
     public int ItemRank { get => _itemRank; set => SetField(ref _itemRank, value, nameof(ItemRank)); }
-    [DataSourceProperty]
-    public bool Rank1Visible { get => _rank1Visible; set => SetField(ref _rank1Visible, value, nameof(Rank1Visible)); }
-    [DataSourceProperty]
-    public bool Rank2Visible { get => _rank2Visible; set => SetField(ref _rank2Visible, value, nameof(Rank2Visible)); }
-    [DataSourceProperty]
-    public bool Rank3Visible { get => _rank3Visible; set => SetField(ref _rank3Visible, value, nameof(Rank3Visible)); }
+
     [DataSourceProperty]
     public string ItemName { get => _itemName; set => SetField(ref _itemName, value, nameof(ItemName)); }
 
@@ -147,6 +263,12 @@ public class InventorySlotVM : ViewModel
 
     [DataSourceProperty]
     public string Id { get => _id; set => SetField(ref _id, value, nameof(Id)); }
+
+    [DataSourceProperty]
+    public ItemRankIconVM ItemRankIcon { get => _itemRankIcon; set => SetField(ref _itemRankIcon, value, nameof(ItemRankIcon)); }
+
+    [DataSourceProperty]
+    public ItemArmoryIconVM? ItemArmoryIcon { get => _itemArmoryIcon; set => SetField(ref _itemArmoryIcon, value, nameof(ItemArmoryIcon)); }
 
     [DataSourceProperty]
     public int ItemQuantity
@@ -202,43 +324,15 @@ public class InventorySlotVM : ViewModel
         _onHoverEnd?.Invoke(this);
     }
 
-    private void SetItemRankIconsVisible(int rank)
-    {
-        InformationManager.DisplayMessage(new InformationMessage($"ItemRank set to {rank}"));
-        switch (rank)
-        {
-            case 1:
-                Rank1Visible = true;
-                Rank2Visible = false;
-                Rank3Visible = false;
-                break;
-            case 2:
-                Rank1Visible = false;
-                Rank2Visible = true;
-                Rank3Visible = false;
-                break;
-            case 3:
-                Rank1Visible = false;
-                Rank2Visible = false;
-                Rank3Visible = true;
-                break;
-            default:
-                Rank1Visible = false;
-                Rank2Visible = false;
-                Rank3Visible = false;
-                break;
-        }
-    }
-
     private void CheckItemEquipped()
     {
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior == null || behavior.UserInventoryItems == null)
+        UserLoadoutBehavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (UserLoadoutBehavior == null || UserLoadoutBehavior.UserInventoryItems == null)
         {
             return;
         }
 
-        var equipped = behavior.EquippedItems
+        var equipped = UserLoadoutBehavior.EquippedItems
         .FirstOrDefault(e => e.UserItem.Id == _userItemId);
 
         if (equipped != null)

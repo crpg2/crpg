@@ -39,7 +39,7 @@ public record GetGameUserItemsQuery : IMediatorRequest<IList<GameUserItemExtende
             var userItems = await _db.UserItems
                 .Include(ui => ui.Item)
                 .Include(ui => ui.User)
-                // .Include(ui => ui.ClanArmoryItem) // TODO: FIXME:
+                .Include(ui => ui.ClanArmoryItem) // TODO: FIXME:
                 .Include(ui => ui.PersonalItem)
                 .Include(ui => ui.ClanArmoryBorrowedItem)
                 .Where(ui =>

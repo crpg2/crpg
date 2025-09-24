@@ -24,6 +24,7 @@ public class CharacteristicsEditorVM : ViewModel
     private readonly Dictionary<string, CharacteristicsPlusMinusItemVM> _skillMap = new();
     private readonly Dictionary<string, CharacteristicsPlusMinusItemVM> _weaponMap = new();
     private readonly TimeSpan _apiUsageClickCooldown = TimeSpan.FromSeconds(5);
+    internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
 
     private bool _isVisible;
 
@@ -99,9 +100,9 @@ public class CharacteristicsEditorVM : ViewModel
             _weaponMap[wp.ItemLabel] = wp;
         }
 
-        var behavior = Mission.Current.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>()
+        UserLoadoutBehavior = Mission.Current.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>()
             ?? throw new InvalidOperationException("CrpgCharacterLoadoutBehaviorClient is required");
-        _constants = behavior.Constants;
+        _constants = UserLoadoutBehavior.Constants;
 
         // UpdateAllButtonStates();
     }
@@ -118,8 +119,7 @@ public class CharacteristicsEditorVM : ViewModel
 
         _lastApiCharacteristicsApplyClick = now;
 
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        behavior?.RequestUpdateCharacterCharacteristics(GetCrpgCharacteristicsFromVM());
+        UserLoadoutBehavior?.RequestUpdateCharacterCharacteristics(GetCrpgCharacteristicsFromVM());
         InformationManager.DisplayMessage(new InformationMessage("Requesting to update API characteristics.", Colors.Cyan));
     }
 
@@ -141,8 +141,7 @@ public class CharacteristicsEditorVM : ViewModel
         }
 
         _lastApiCharacteristicsRefreshClick = now;
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        behavior?.RequestGetUpdatedCharacterBasic();
+        UserLoadoutBehavior?.RequestGetUpdatedCharacterBasic();
         InformationManager.DisplayMessage(new InformationMessage("Requesting to refresh character from API.", Colors.Cyan));
         UISoundsHelper.PlayUISound("event:/ui/notification/trait_change");
     }
@@ -490,8 +489,7 @@ public class CharacteristicsEditorVM : ViewModel
             // 1 attribute point = 2 skill points
             if (AttributePoints >= 1)
             {
-                var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-                behavior?.RequestConvertCharacterCharacteristic(CrpgGameCharacteristicConversionRequest.AttributesToSkills);
+                UserLoadoutBehavior?.RequestConvertCharacterCharacteristic(CrpgGameCharacteristicConversionRequest.AttributesToSkills);
                 // AttributePoints--;
                 // SkillPoints += 2;
             }
@@ -501,8 +499,7 @@ public class CharacteristicsEditorVM : ViewModel
             // 2 skill points = 1 attribute point
             if (SkillPoints >= 2)
             {
-                var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-                behavior?.RequestConvertCharacterCharacteristic(CrpgGameCharacteristicConversionRequest.SkillsToAttributes);
+                UserLoadoutBehavior?.RequestConvertCharacterCharacteristic(CrpgGameCharacteristicConversionRequest.SkillsToAttributes);
                 // SkillPoints -= 2;
                 // AttributePoints++;
             }

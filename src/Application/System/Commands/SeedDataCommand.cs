@@ -124,9 +124,9 @@ public record SeedDataCommand : IMediatorRequest
             };
             User orle = new()
             {
-                PlatformUserId = "76561198016876889",
+                PlatformUserId = "76561197973076266",
                 Platform = Platform.Steam,
-                Name = "orle",
+                Name = "vick.",
                 Role = Role.Admin,
                 Gold = 1000000,
                 HeirloomPoints = 12,

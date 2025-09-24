@@ -3,6 +3,8 @@ using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using Crpg.Module.Common.Network;
 using Crpg.Module.Helpers;
+using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.ComponentInterfaces;
 using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection;
 using TaleWorlds.Engine;
@@ -23,12 +25,15 @@ public class CrpgInventoryViewModel : ViewModel
     public GauntletLayer? Layer { get; set; }
     private UIContext? _context;
     public Widget? RootWidget { get; set; }
+    internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
+
     private bool _isVisible;
 
     private EquipmentPanelVM _equipmentPanel = default!;
     private CharacteristicsEditorVM _characteristicsEditor;
     private CharacterInfoBuildEquipStatsVM _characterInfoBuildEquipStatsVm;
     private ItemInfoVM _itemInfo;
+
 
     [DataSourceProperty]
     public InventoryGridVM InventoryGrid { get; set; }
@@ -86,16 +91,17 @@ public class CrpgInventoryViewModel : ViewModel
         _equipmentPanel.OnSlotClicked += HandleItemClick;
 
         LogDebug("[CrpgInventoryVM] Subscribing to CrpgCharacterLoadoutBehaviorClient events");
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior != null)
+        UserLoadoutBehavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (UserLoadoutBehavior != null)
         {
-            behavior.OnSlotUpdated += HandleSlotUpdated;
-            behavior.OnUserInventoryUpdated += HandleInventoryUpdated;
-            behavior.OnClanArmoryUpdated += HandleClanArmoryUpdated;
-            behavior.OnUserCharacterEquippedItemsUpdated += HandleEquippedItemsUpdated;
-            behavior.OnUserCharacterBasicUpdated += HandleUserCharacterBasicUpdated;
-            behavior.OnUserCharacteristicsUpdated += HandleUserCharacteristicsUpdated;
-            behavior.OnUserCharacteristicsConverted += HandleUserCharacteristicsConverted;
+            UserLoadoutBehavior.OnEquipmentSlotUpdated += HandleEquipmentSlotUpdated;
+            UserLoadoutBehavior.OnUserInventoryUpdated += HandleInventoryUpdated;
+            UserLoadoutBehavior.OnClanArmoryUpdated += HandleClanArmoryUpdated;
+            UserLoadoutBehavior.OnUserCharacterEquippedItemsUpdated += HandleEquippedItemsUpdated;
+            UserLoadoutBehavior.OnUserCharacterBasicUpdated += HandleUserCharacterBasicUpdated;
+            UserLoadoutBehavior.OnUserCharacteristicsUpdated += HandleUserCharacteristicsUpdated;
+            UserLoadoutBehavior.OnUserCharacteristicsConverted += HandleUserCharacteristicsConverted;
+            UserLoadoutBehavior.OnArmoryActionUpdated += HandleArmoryUserItemUpdated;
         }
 
         InventoryGrid.OnInventorySlotClicked += HandleInventorySlotClicked;
@@ -111,16 +117,17 @@ public class CrpgInventoryViewModel : ViewModel
         EquipmentPanel.OnSlotAlternateClicked -= HandleAlternateClick;
         _equipmentPanel.OnSlotClicked -= HandleItemClick;
 
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior != null)
+        UserLoadoutBehavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (UserLoadoutBehavior != null)
         {
-            behavior.OnSlotUpdated -= HandleSlotUpdated;
-            behavior.OnUserInventoryUpdated -= HandleInventoryUpdated;
-            behavior.OnClanArmoryUpdated += HandleClanArmoryUpdated;
-            behavior.OnUserCharacterEquippedItemsUpdated -= HandleEquippedItemsUpdated;
-            behavior.OnUserCharacterBasicUpdated -= HandleUserCharacterBasicUpdated;
-            behavior.OnUserCharacteristicsUpdated -= HandleUserCharacteristicsUpdated;
-            behavior.OnUserCharacteristicsConverted -= HandleUserCharacteristicsConverted;
+            UserLoadoutBehavior.OnEquipmentSlotUpdated -= HandleEquipmentSlotUpdated;
+            UserLoadoutBehavior.OnUserInventoryUpdated -= HandleInventoryUpdated;
+            UserLoadoutBehavior.OnClanArmoryUpdated += HandleClanArmoryUpdated;
+            UserLoadoutBehavior.OnUserCharacterEquippedItemsUpdated -= HandleEquippedItemsUpdated;
+            UserLoadoutBehavior.OnUserCharacterBasicUpdated -= HandleUserCharacterBasicUpdated;
+            UserLoadoutBehavior.OnUserCharacteristicsUpdated -= HandleUserCharacteristicsUpdated;
+            UserLoadoutBehavior.OnUserCharacteristicsConverted -= HandleUserCharacteristicsConverted;
+            UserLoadoutBehavior.OnArmoryActionUpdated -= HandleArmoryUserItemUpdated;
         }
 
         InventoryGrid.OnInventorySlotClicked -= HandleInventorySlotClicked;
@@ -154,7 +161,7 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
-    private void ShowItemInfoPopup(bool show, ItemObject? itemObj, int? userItemId = null)
+    private void ShowItemInfoPopup(bool show, ItemObject? itemObj, int userItemId = -1)
     {
         if (!show)
         {
@@ -165,32 +172,19 @@ public class CrpgInventoryViewModel : ViewModel
             return;
         }
 
-        if (userItemId != null)
+        // Check for userItem
+        var userItemExtended = UserLoadoutBehavior?.GetCrpgUserItem(userItemId);
+
+        if (userItemExtended != null)
         {
-            var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-
-            if (behavior == null)
-            {
-                return;
-            }
-
-            var item = behavior.UserInventoryItems
-                .FirstOrDefault(x => x.Id == userItemId.Value);
-
-            if (!userItemId.HasValue || item == null)
-            {
-                LogDebugError($"[CrpgInventoryVM] No item found for userItemId={userItemId.Value}");
-                return;
-            }
-
             if (itemObj == null)
             {
                 LogDebugError($"[CrpgInventoryVM] ItemObj is null");
                 return;
             }
 
-            ItemInfo = new ItemInfoVM(itemObj, (int)userItemId);
-            ItemInfo.GenerateItemInfo(itemObj);
+            ItemInfo = new ItemInfoVM(itemObj, userItemId);
+            ItemInfo.GenerateItemInfo(itemObj, userItemId);
 
             var mousePos = Input.MousePositionPixel; // vec2
 
@@ -199,6 +193,10 @@ public class CrpgInventoryViewModel : ViewModel
             ItemInfo.IsVisible = true;
 
             LogDebug($"[CrpgInventoryVM] ShowItemInfoPopup at ({mousePos.X}, {mousePos.Y}) for {itemObj?.Name}");
+        }
+        else
+        {
+            LogDebugError($"[CrpgInventoryVM] userItemExtended is null");
         }
     }
 
@@ -211,6 +209,41 @@ public class CrpgInventoryViewModel : ViewModel
             GameNetwork.WriteMessage(new UserRequestEquipCharacterItem { Slot = eqSlot.CrpgItemSlotIndex, UserItemId = -1 });
             GameNetwork.EndModuleEventAsClient();
         }
+    }
+
+    private void HandleArmoryUserItemUpdated(ClanArmoryActionType action, int uItemId)
+    {
+        InformationManager.DisplayMessage(new InformationMessage($"[CrpgInventoryViewModel] HandleArmoryUserItemUpdated() mode: {action} userItemId:{uItemId} "));
+
+        if (ItemInfo?.ItemObj is not null) // update the popup ItemInfoVM
+        {
+            if (ItemInfo?.UserItemExtended?.Id == uItemId)
+            {
+                ItemInfo.GenerateItemInfo(ItemInfo.ItemObj, uItemId);
+            }
+        }
+
+        // update equipmentpanel/slots
+        if (UserLoadoutBehavior != null && UserLoadoutBehavior.IsItemEquipped(uItemId))
+        {
+            foreach (var eSlot in EquipmentPanel.EquipmentSlots)
+            {
+                if (eSlot.UserItemId == uItemId)
+                {
+                    // Do something special for this one
+                    // eSlot.
+                }
+            }
+        }
+
+        // update inventory slots
+        if (UserLoadoutBehavior != null)
+        {
+
+        }
+
+        // update inventorygrid/slots
+        // if (UserLoadoutBehavior != null &)
     }
 
     private void HandleInventorySortTypeClicked(InventorySortTypeVM sortType)
@@ -394,7 +427,7 @@ public class CrpgInventoryViewModel : ViewModel
     }
 
     // Gui Updates because of behavior (API usage)
-    private void HandleSlotUpdated(CrpgItemSlot updatedSlot)
+    private void HandleEquipmentSlotUpdated(CrpgItemSlot updatedSlot)
     {
         LogDebug($"[CrpgInventoryVM] HandleSlotUpdated called for slot {updatedSlot}");
 
@@ -416,7 +449,7 @@ public class CrpgInventoryViewModel : ViewModel
         if (equippedItem != null)
         {
             var itemObj = MBObjectManager.Instance.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
-            slotVm.SetItem(new ImageIdentifierVM(itemObj), itemObj, equippedItem.UserItem.Id);
+            slotVm.SetItem(new ImageIdentifierVM(itemObj), itemObj, equippedItem.UserItem);
             LogDebug($"[CrpgInventoryVM] Slot {updatedSlot} set to item {itemObj?.Name} (UserItemId: {equippedItem.UserItem.Id})");
         }
         else
@@ -449,7 +482,7 @@ public class CrpgInventoryViewModel : ViewModel
             .Select(ui =>
             {
                 var obj = MBObjectManager.Instance.GetObject<ItemObject>(ui.ItemId);
-                return obj != null ? (obj, 1, ui.Id) : default;
+                return obj != null ? (obj, 1, ui) : default;
             })
             .Where(t => t.obj != null)
             .ToList();
@@ -499,8 +532,9 @@ public class CrpgInventoryViewModel : ViewModel
             if (equippedItem != null)
             {
                 var itemObj = MBObjectManager.Instance.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
-                slotVm.SetItem(new ImageIdentifierVM(itemObj), itemObj, equippedItem.UserItem.Id, equippedItem.UserItem);
+                slotVm.SetItem(new ImageIdentifierVM(itemObj), itemObj, equippedItem.UserItem);
                 // LogDebug($"[CrpgInventoryVM] Updated slot {slotVm.CrpgItemSlotIndex} with item {itemObj?.Name}");
+                InformationManager.DisplayMessage(new InformationMessage($"{equippedItem.UserItem.ItemId} - IsArmoryItem:{equippedItem.UserItem.IsArmoryItem}", Colors.Cyan));
             }
             else
             {

@@ -4,35 +4,37 @@
     <Parameter Name="Height" DefaultValue="430"/>
   </Parameters>
   <Window>
-  <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
-  <Children>
-    <!-- Transparent overlay (clickable) -->
-    <ButtonWidget Id="Overlay" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+      <Children>
+        <!-- Transparent overlay (clickable) -->
+        <ButtonWidget Id="Overlay" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
                  Color="#ffffff00"
                  DoNotAcceptEvents="false"
                  Brush="ItemInfo.ClickOverlay"
                  DoNotPassEventsToChildren="true"
                  Command.Click="OnOverlayClick"/>  
-    <!-- Frame -->
-    <BrushWidget Id="ItemInfo.Frame" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-            SuggestedWidth="*Width" SuggestedHeight="*Height"
-            PositionXOffset="@PositionX" PositionYOffset="@PositionY"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
-     <Children>
-        <!-- Background -->
-        <BrushWidget Id="ItemInfo.Background.Brush" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
-          HorizontalAlignment="Center" VerticalAlignment="Center" Brush="ItemInfo.Background"
-          MarginTop="8" MarginBottom="8" MarginLeft="8" MarginRight="8" />
-        <!-- Close Button -->
-        <!-- Vertical ListPanel Holding all -->
-        <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
-                WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-                SuggestedWidth="*Width" SuggestedHeight="*Height" Spacing="2"
+        <!-- Frame -->
+        <BrushWidget Id="ItemInfo.Frame" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                SuggestedWidth="*Width" SuggestedHeight="*Height"
+                PositionXOffset="@PositionX" PositionYOffset="@PositionY"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+          <Children>
+            <!-- Background -->
+            <BrushWidget Id="ItemInfo.Background.Brush" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Brush="ItemInfo.Background"
+                MarginTop="8" MarginBottom="8" MarginLeft="8" MarginRight="8" />
+            <!-- Close Button? -->
+            <!-- Vertical ListPanel Holding all -->
+            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
+                WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren"
+                SuggestedWidth="*Width" Spacing="2"
                 MarginTop="10"
                 DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
                 
-          <Children>
-            <ImageIdentifierWidget DataSource="{ImageIdentifier}"
+              <Children>
+                <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" VerticalAlignment="Top"> <!-- Container for item image and userItem icons -->
+                  <Children>
+                    <ImageIdentifierWidget DataSource="{ImageIdentifier}"
                         ImageId="@Id"
                         AdditionalArgs="@AdditionalArgs"
                         ImageTypeCode="@ImageTypeCode"
@@ -41,28 +43,40 @@
                         HorizontalAlignment="Center" VerticalAlignment="Center"
                         Margin="4"
                         DoNotAcceptEvents="True" IsVisible="true"/>
-            <TextWidget Id="ItemName" Text="@Name" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20"
-                HorizontalAlignment = "Center"
-                Brush="ItemInfo.ItemName.Text" />
-            <!--
-            <ItemInfoTuple DataSource="{TestTuple}" />
-            <ItemInfoRow DataSource="{TestRow}" />
-            -->
-            <ListPanel DataSource="{Rows}" StackLayout.LayoutMethod="VerticalBottomToTop"
-                WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-                SuggestedWidth="*Width" SuggestedHeight="*Height"
-                HorizontalAlignment="Center" VerticalAlignment="Top" Spacing="2"
-                MarginLeft="25">
-              <ItemTemplate>
-                <ItemInfoRow DataSource="{.}"/>
-              </ItemTemplate>
+                    <!-- item rank icon -->
+                    <ItemRankIconPrefab DataSource="{ItemRankIcon}" />
+                    <!-- Armory item icon -->
+                    <ItemArmoryIconPrefab DataSource="{ItemArmoryIcon}" HorizontalAlignment="Right" VerticalAlignment="Top"
+                        PositionYOffset="0" />
+                    <!--
+                    <BrushWidget Id="ItemArmory" Brush="Item.Armory.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                        SuggestedWidth="15" SuggestedHeight="15" HorizontalAlignment="Right" VerticalAlignment="Top"
+                        PositionYOffset="0" IsVisible="@IsArmoryItem" />
+                    -->                                                        
+                  </Children>
+                </Widget>
+                <TextWidget Id="ItemName" Text="@Name" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20"
+                      HorizontalAlignment = "Center"
+                      Brush="ItemInfo.ItemName.Text" />
+                <ListPanel DataSource="{Rows}" StackLayout.LayoutMethod="VerticalBottomToTop"
+                      WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                      SuggestedWidth="*Width" SuggestedHeight="*Height"
+                      HorizontalAlignment="Center" VerticalAlignment="Top" Spacing="2"
+                      MarginLeft="25">
+                  <ItemTemplate>
+                    <ItemInfoRow DataSource="{.}"/>
+                  </ItemTemplate> 
+                </ListPanel>
+              </Children>                
             </ListPanel>
+                <CrpgButtonPrefab HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                  Parameter.ButtonText="@ArmoryButtonText" Parameter.ButtonId="ArmoryButton"
+                  Parameter.Width="180" Parameter.Height="40" Parameter.ButtonIsEnabled="true"
+                  Parameter.CommandClick="ArmoryButtonClick" Parameter.ButtonIsVisible="true"
+                  Parameter.ButtonBrushImage="Item.Armory.Icon" />      
           </Children>
-        
-        </ListPanel>
-     </Children>
-    </BrushWidget>
-  </Children>
-  </Widget>
+        </BrushWidget>
+      </Children>
+    </Widget>
   </Window>
 </Prefab>

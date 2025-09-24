@@ -35,27 +35,7 @@
                     HorizontalAlignment="Left" VerticalAlignment="Center"
                     DoNotAcceptEvents="True" />
               </ItemTemplate>
-            </ListPanel>
-            <!--
-            <ImageWidget Id="IconOne" Sprite="@IconOne"
-                    IsVisible="@IsIconOneVisible"
-                    WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-                    SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height" UseAlphaAsMask="True"
-                    HorizontalAlignment="Left" VerticalAlignment="Center"
-                    DoNotAcceptEvents="True" />
-            <ImageWidget Id="IconTwo" Sprite="@IconTwo"
-                    IsVisible="@IsIconTwoVisible"
-                    WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-                    SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height" UseAlphaAsMask="True"
-                    HorizontalAlignment="Left" VerticalAlignment="Center"
-                    DoNotAcceptEvents="True" />
-            <ImageWidget Id="IconThree" Sprite="@IconThree"
-                    IsVisible="@IsIconThreeVisible"
-                    WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-                    SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height" UseAlphaAsMask="True"
-                    HorizontalAlignment="Left" VerticalAlignment="Center"
-                    DoNotAcceptEvents="True" />
-            -->                         
+            </ListPanel>                      
             <BrushWidget Brush="Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
                 SuggestedWidth="!Gold.Icon.Width" SuggestedHeight="!Gold.Icon.Height"
                 IsVisible="@IsGoldVisible" PositionYOffset="2"/>

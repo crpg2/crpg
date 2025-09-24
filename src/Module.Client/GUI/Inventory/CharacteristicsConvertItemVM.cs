@@ -18,25 +18,13 @@ public class CharacteristicsConvertItemVM : ViewModel
     }
 
     [DataSourceProperty]
-    public string ItemLabel
-    {
-        get => _itemLabel;
-        set => SetField(ref _itemLabel, value, nameof(ItemLabel));
-    }
+    public string ItemLabel { get => _itemLabel; set => SetField(ref _itemLabel, value, nameof(ItemLabel)); }
 
     [DataSourceProperty]
-    public int ItemValue
-    {
-        get => _itemValue;
-        set => SetField(ref _itemValue, value, nameof(ItemValue));
-    }
+    public int ItemValue { get => _itemValue; set => SetField(ref _itemValue, value, nameof(ItemValue)); }
 
     [DataSourceProperty]
-    public bool IsButtonEnabled
-    {
-        get => _isButtonEnabled;
-        set => SetField(ref _isButtonEnabled, value, nameof(IsButtonEnabled));
-    }
+    public bool IsButtonEnabled { get => _isButtonEnabled; set => SetField(ref _isButtonEnabled, value, nameof(IsButtonEnabled)); }
 
     public void ExecuteClick()
     {

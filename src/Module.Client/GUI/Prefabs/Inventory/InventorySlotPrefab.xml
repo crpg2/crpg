@@ -11,7 +11,7 @@
           -->
         </BrushWidget>
         <ButtonWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center"
-                  SuggestedWidth="75" SuggestedHeight="75" AcceptDrag="true" DoNotPassEventsToChildren="true"
+                  SuggestedWidth="75" SuggestedHeight="75" AcceptDrag="@IsDraggable" DoNotPassEventsToChildren="true"
                   ClipContents="true" DoNotAcceptEvents="False" 
                   Command.DragBegin="ExecuteDragBegin" Command.DragEnd="ExecuteDragEnd" Command.Click="ExecuteClick" 
                   Command.HoverBegin="ExecuteHoverBegin" Command.HoverEnd="ExecuteHoverEnd" >
@@ -37,17 +37,21 @@
                 DoNotAcceptEvents="True" PassEventsToParent="True" />
             
             <!-- Item rank icon (heirlooms)-->
-            <BrushWidget Id="ItemRank1" Brush="Item.Rank.Icon_1" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-              SuggestedWidth="15" SuggestedHeight="15" IsVisible="@Rank1Visible" />
-            <BrushWidget Id="ItemRank2" Brush="Item.Rank.Icon_2" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-              SuggestedWidth="15" SuggestedHeight="15" IsVisible="@Rank2Visible" />   
-            <BrushWidget Id="ItemRank3" Brush="Item.Rank.Icon_3" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-              SuggestedWidth="15" SuggestedHeight="15" IsVisible="@Rank3Visible" />
+            <ItemRankIconPrefab DataSource="{ItemRankIcon}" />
 
             <!-- Item is Currently Equipped check mark -->
             <BrushWidget Id="ItemEquipped" Brush="Item.Equipped.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
               SuggestedWidth="15" SuggestedHeight="15" HorizontalAlignment="Right" VerticalAlignment="Top"
               PositionYOffset="30" IsVisible="@IsEquipped" />                                
+
+            <!-- Armory item icon -->
+            <ItemArmoryIconPrefab DataSource="{ItemArmoryIcon}" HorizontalAlignment="Right" VerticalAlignment="Top"
+                 PositionYOffset="0" />
+            <!-- 
+            <BrushWidget Id="ItemArmory" Brush="Item.Armory.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+              SuggestedWidth="15" SuggestedHeight="15" HorizontalAlignment="Right" VerticalAlignment="Top"
+              PositionYOffset="0" IsVisible="@IsArmoryItem" />
+            -->
 
             <!-- Quantity text (e.g., "12") -->
             <TextWidget Text="@QuantityText"

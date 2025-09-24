@@ -181,7 +181,7 @@ public class GamesController : BaseController
     /// <returns>List of clan armory items.</returns>
     /// <response code="200">Ok.</response>
     /// <response code="404">Clan was not found.</response>
-    [HttpGet("{clanId}/armory")]
+    [HttpGet("clans/{clanId}/armory")]
     public Task<ActionResult<Result<IList<GameClanArmoryItemViewModel>>>> GetClanArmory(
         [FromRoute] int clanId,
         [FromQuery] GetGameClanArmoryQuery req)
@@ -198,7 +198,7 @@ public class GamesController : BaseController
     /// <response code="201">Item added to clan armory.</response>
     /// <response code="400">Bad request.</response>
     /// <response code="409">Conflict.</response>
-    [HttpPost("{clanId}/armory")]
+    [HttpPost("clans/{clanId}/armory")]
     public Task<ActionResult<Result<GameClanArmoryItemViewModel>>> AddClanArmoryItem(
         [FromRoute] int clanId,
         [FromBody] GameAddItemToClanArmoryCommand req)
@@ -219,8 +219,8 @@ public class GamesController : BaseController
     /// <param name="req">contains userId.</param>"
     /// <response code="204">Item removed from clan armory.</response>
     /// <response code="400">Bad request.</response>
-    [HttpDelete("{clanId}/armory/{userItemId}")]
-    public Task<ActionResult> RemoveClanArmoryItem([FromRoute] int clanId, [FromRoute] int userItemId, [FromQuery] GameRemoveItemFromClanArmoryCommand req)
+    [HttpDelete("clans/{clanId}/armory/{userItemId}")]
+    public Task<ActionResult> RemoveClanArmoryItem([FromRoute] int clanId, [FromRoute] int userItemId, [FromBody] GameRemoveItemFromClanArmoryCommand req)
     {
         return ResultToActionAsync(Mediator.Send(new GameRemoveItemFromClanArmoryCommand
         {
@@ -239,7 +239,7 @@ public class GamesController : BaseController
     /// <returns> Borrowed item.</returns>
     /// <response code="200">Ok.</response>
     /// <response code="400">Bad request.</response>
-    [HttpPut("{clanId}/armory/{userItemId}/borrow")]
+    [HttpPut("clans/{clanId}/armory/{userItemId}/borrow")]
     public Task<ActionResult<Result<ClanArmoryBorrowedItemViewModel>>> BorrowClanArmoryItem([FromRoute] int clanId, [FromRoute] int userItemId, [FromBody] GameBorrowItemFromClanArmoryCommand req)
     {
         return ResultToActionAsync(Mediator.Send(new GameBorrowItemFromClanArmoryCommand
@@ -258,7 +258,7 @@ public class GamesController : BaseController
     /// <param name="req">contains userId.</param>
     /// <response code="200">Ok.</response>
     /// <response code="400">Bad request.</response>
-    [HttpPut("{clanId}/armory/{userItemId}/return")]
+    [HttpPut("clans/{clanId}/armory/{userItemId}/return")]
     public Task<ActionResult> ReturnClanArmoryItem([FromRoute] int clanId, [FromRoute] int userItemId, [FromBody] GameReturnItemToClanArmoryCommand req)
     {
         return ResultToActionAsync(Mediator.Send(new GameReturnItemToClanArmoryCommand

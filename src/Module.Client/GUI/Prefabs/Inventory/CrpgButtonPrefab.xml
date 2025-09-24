@@ -5,6 +5,9 @@
     <Parameter Name="CommandClick" DefaultValue="ExecuteClick" />
     <Parameter Name="ButtonIsEnabled" DefaultValue="true"/>
     <Parameter Name="ButtonIsVisible" DefaultValue="true"/>
+    <Parameter Name="ButtonBrushImage" DefaultValue=""/>
+    <Parameter Name="ImagePositionYOffset" DefaultValue="0"/>
+    <Parameter Name="ImagePositionXOffset" DefaultValue="0"/>
     <Parameter Name="Width"  DefaultValue="120" />
     <Parameter Name="Height" DefaultValue="40" />
   </Parameters>
@@ -29,6 +32,9 @@
                   Command.Click="*CommandClick" DoNotPassEventsToChildren="true"
                   IsEnabled="*ButtonIsEnabled" >
               <Children>
+                <BrushWidget Id="ButtonBrushImageId" Brush="*ButtonBrushImage" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                    SuggestedWidth="18" SuggestedHeight="18" HorizontalAlignment="Left" VerticalAlignment="Center"
+                    PositionYOffset="*ImagePositionYOffset" PositionXOffset="*ImagePositionXOffset" IsVisible="true" />  
                 <TextWidget Text="*ButtonText" 
                     WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed"
                     SuggestedWidth="100" SuggestedHeight="30"

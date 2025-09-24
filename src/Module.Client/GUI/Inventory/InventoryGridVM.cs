@@ -1,3 +1,4 @@
+using Crpg.Module.Api.Models.Items;
 using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection;
 using TaleWorlds.Library;
@@ -24,42 +25,13 @@ public class InventoryGridVM : ViewModel
         InitializeFilteredItemsList();
     }
 
-    public void SetAvailableItems(IEnumerable<(ItemObject item, int quantity, int userItemId)> inventory)
+    public void SetAvailableItems(IEnumerable<(ItemObject item, int quantity, CrpgUserItemExtended userItemExtended)> inventory)
     {
         _availableItems = new List<InventorySlotVM>();
-        foreach (var (item, quantity, userItemId) in inventory)
+        foreach (var (item, quantity, userItemExtended) in inventory)
         {
-            _availableItems.Add(new InventorySlotVM(item, slot => OnItemClicked(slot), slot => OnItemHoverEnd(slot), quantity, userItemId));
+            _availableItems.Add(new InventorySlotVM(item, slot => OnItemClicked(slot), slot => OnItemHoverEnd(slot), quantity, userItemExtended));
         }
-    }
-
-    public void UpdateAvailableItems(IEnumerable<(ItemObject item, int quantity)> newInventory)
-    {
-        var newItemsDict = newInventory.ToDictionary(x => x.item, x => x.quantity);
-
-        // Remove items not in new inventory
-        _availableItems.RemoveAll(vm => !newItemsDict.ContainsKey(vm.ItemObj));
-
-        // Update quantities and add new items
-        foreach (var kvp in newItemsDict) // kvp is KeyValuePair<ItemObject, int>
-        {
-            var item = kvp.Key;
-            int quantity = kvp.Value;
-            int userItemId = -1; // TODO Fix this
-
-            var existingVm = _availableItems.FirstOrDefault(vm => vm.ItemObj == item);
-            if (existingVm != null)
-            {
-                existingVm.ItemQuantity = quantity;
-            }
-            else
-            {
-                _availableItems.Add(new InventorySlotVM(item, slot => OnItemClicked(slot), slot => OnItemHoverEnd(slot), quantity, userItemId));
-            }
-        }
-
-        // Update the filtered list based on current filters
-        RefreshFilteredItemsFast();
     }
 
     private void OnItemClicked(InventorySlotVM? slot)

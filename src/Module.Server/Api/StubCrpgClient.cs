@@ -112,7 +112,7 @@ internal class StubCrpgClient : ICrpgClient
         throw new NotImplementedException();
     }
 
-    public Task<CrpgResult<IList<CrpgClanArmoryItem>>> GetClanArmoryAsync(int clanId, CancellationToken cancellationToken = default)
+    public Task<CrpgResult<IList<CrpgClanArmoryItem>>> GetClanArmoryAsync(int clanId, int userId, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }

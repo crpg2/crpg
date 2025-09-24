@@ -3,6 +3,8 @@ using System.Runtime.Remoting.Messaging;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using Crpg.Module.Common.HotConstants;
+using Crpg.Module.Common.Network;
+using Messages.FromClient.ToLobbyServer;
 using NetworkMessages.FromServer;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
@@ -16,12 +18,23 @@ namespace Crpg.Module.GUI.Inventory;
 public class ItemInfoVM : ViewModel
 {
     private readonly CrpgConstants? _constants;
+    internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
+
     private bool _isVisible;
+    private bool _isArmoryItem;
+    private bool _isArmoryButtonEnabled;
+
+    private int _userItemId = -1;
+    private string _armoryButtonText = string.Empty;
     private string _name = string.Empty;
     private MBBindingList<ItemInfoTupleVM> _tuples = new();
     private MBBindingList<ItemInfoRowVM> _rows = new();
     private ItemObject? _itemObj;
     private ImageIdentifierVM? _imageIdentifier;
+    private ItemRankIconVM? _itemRankIcon;
+    private ItemArmoryIconVM? _itemArmoryIcon;
+
+    public CrpgUserItemExtended? UserItemExtended { get; set; } = default!;
 
     private float _positionX;
     [DataSourceProperty]
@@ -39,11 +52,44 @@ public class ItemInfoVM : ViewModel
         set => SetField(ref _positionY, value, nameof(PositionY));
     }
 
+    public void ArmoryUpdateInfo()
+    {
+
+    }
+
     public void OnOverlayClick()
     {
-        InformationManager.DisplayMessage(new InformationMessage("OnOverlayClick()", Colors.Red));
+        InformationManager.DisplayMessage(new InformationMessage("OnOverlayClick()", Colors.White));
         // Close the popup
         IsVisible = false;
+    }
+
+    public void ArmoryButtonClick()
+    {
+        if (UserLoadoutBehavior == null)
+        {
+            InformationManager.DisplayMessage(new InformationMessage("CrpgCharacterLoadoutBehaviorClient is required but not found in current mission", Colors.Red));
+            return;
+        }
+
+        if (IsArmoryItem)
+        {
+            if (UserLoadoutBehavior.IsArmoryItemOwner(_userItemId))
+            {
+                // ArmoryButtonText = "Remove from armory";
+                UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Remove, UserItemExtended);
+            }
+            else
+            {
+                // ArmoryButtonText = "Return to armory";
+                UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Return, UserItemExtended);
+            }
+        }
+        else
+        {
+            // ArmoryButtonText = "Add to armory";
+            UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Add, UserItemExtended);
+        }
     }
 
     [DataSourceProperty]
@@ -62,71 +108,67 @@ public class ItemInfoVM : ViewModel
     public string Name { get => _name; set => SetField(ref _name, value, nameof(Name)); }
 
     [DataSourceProperty]
+    public bool IsArmoryItem { get => _isArmoryItem; set => SetField(ref _isArmoryItem, value, nameof(IsArmoryItem)); }
+
+    [DataSourceProperty]
+    public bool IsArmoryButtonEnabled { get => _isArmoryButtonEnabled; set => SetField(ref _isArmoryButtonEnabled, value, nameof(IsArmoryButtonEnabled)); }
+    [DataSourceProperty]
+    public string ArmoryButtonText { get => _armoryButtonText; set => SetField(ref _armoryButtonText, value, nameof(ArmoryButtonText)); }
+    [DataSourceProperty]
+    public ItemRankIconVM? ItemRankIcon { get => _itemRankIcon; set => SetField(ref _itemRankIcon, value, nameof(ItemRankIcon)); }
+    [DataSourceProperty]
+    public ItemArmoryIconVM? ItemArmoryIcon { get => _itemArmoryIcon; set => SetField(ref _itemArmoryIcon, value, nameof(ItemArmoryIcon)); }
+    [DataSourceProperty]
     public bool IsVisible { get => _isVisible; set => SetField(ref _isVisible, value, nameof(IsVisible)); }
 
     public ItemInfoVM(ItemObject? item, int userItemId = -1)
     {
-        if (item == null)
-        {
-            InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM Constructed; item == null", Colors.Yellow));
-            _imageIdentifier = new ImageIdentifierVM(ImageIdentifierType.Item);
-            _itemObj = null;
-            Name = string.Empty;
-            IsVisible = false;
-        }
-        else
-        {
-            InformationManager.DisplayMessage(new InformationMessage($"ItemInfoVM Constructed; item is not null {item.Id}", Colors.Yellow));
-            ItemObj = item;
-            ImageIdentifier = new ImageIdentifierVM(ItemObj);
-            Name = item.Name.ToString();
-        }
-
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior == null)
+        UserLoadoutBehavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (UserLoadoutBehavior == null)
         {
             InformationManager.DisplayMessage(new InformationMessage("CrpgCharacterLoadoutBehaviorClient is required but not found in current mission", Colors.Red));
             return;
         }
+        _constants = UserLoadoutBehavior.Constants;
 
-        /*
-        TestTuple = new ItemInfoTupleVM
+        _userItemId = userItemId;
+        var userItemExtended = UserLoadoutBehavior.GetCrpgUserItem(userItemId);
+
+        if (item == null)
         {
-            CategoryName = "Test",
-            ValueText = "Success",
-            IconOne = "ui_crpg_icon_white_crushthrough",
-        };
-
-        TestRow = new ItemInfoRowVM
+            InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM Constructed; item == null", Colors.Yellow));
+            _imageIdentifier = new ImageIdentifierVM(ImageIdentifierType.Item);
+            _itemRankIcon = new ItemRankIconVM();
+            _itemArmoryIcon = new ItemArmoryIconVM();
+            _itemObj = null;
+            Name = string.Empty;
+            IsVisible = false;
+            IsArmoryItem = false;
+            IsArmoryButtonEnabled = false;
+            UserItemExtended = userItemExtended;
+        }
+        else
         {
-            Left = new ItemInfoTupleVM
-            {
-                CategoryName = "Test1",
-                ValueText = "Success",
-                IconOne = "ui_crpg_icon_white_crushthrough",
-            },
-            Right = new ItemInfoTupleVM
-            {
-                CategoryName = "Test1",
-                ValueText = "Success",
-                IconOne = "ui_crpg_icon_white_crushthrough",
-            },
-        };
+            InformationManager.DisplayMessage(new InformationMessage($"ItemInfoVM Constructed {item.Id}", Colors.Yellow));
+            ItemObj = item;
+            ImageIdentifier = new ImageIdentifierVM(ItemObj);
+            Name = item.Name.ToString();
+            UserItemExtended = userItemExtended;
+            IsArmoryItem = userItemExtended?.IsArmoryItem ?? false;
+            IsArmoryButtonEnabled = userItemExtended != null;
 
-        Rows = new MBBindingList<ItemInfoRowVM>
-        {
-            new ItemInfoRowVM(
-                new ItemInfoTupleVM { CategoryName = "Damage", ValueText = "45"},
-                new ItemInfoTupleVM { CategoryName = "Speed", ValueText = "90", IconOne = "ui_crpg_icon_white_crushthrough"}
-            ),
-            new ItemInfoRowVM(
-                new ItemInfoTupleVM { CategoryName = "Weight", ValueText = "3.5"},
-                new ItemInfoTupleVM { CategoryName = "Value", ValueText = "250", IconOne = "ui_crpg_icon_white_crushthrough" }
-            ),
-        };
-        */
+            ItemRankIcon = new ItemRankIconVM(userItemExtended?.Rank ?? 0);
 
-        _constants = behavior.Constants;
+            ItemArmoryIcon = new ItemArmoryIconVM();
+            ItemArmoryIcon.UpdateItemArmoyIconFromItem(userItemExtended?.Id ?? -1);
+
+            ArmoryButtonText = string.Empty;
+        }
+    }
+
+    public override void RefreshValues()
+    {
+        base.RefreshValues();
     }
 
     private ItemInfoTupleVM? _testTuple;
@@ -145,23 +187,81 @@ public class ItemInfoVM : ViewModel
         set => SetField(ref _testRow, value, nameof(TestRow));
     }
 
-    internal void GenerateItemInfo(ItemObject item)
+    internal void GenerateItemInfo(ItemObject item, int userItemId = -1)
     {
         InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateItemInfo", Colors.Yellow));
-        ItemObj = item;
+
         if (item == null)
         {
             InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateItemInfo: item is null!!!", Colors.Yellow));
             return;
         }
 
-        Name = item.Name.ToString();
-        ImageIdentifier = new ImageIdentifierVM(item);
+        if (UserLoadoutBehavior == null)
+        {
+            InformationManager.DisplayMessage(new InformationMessage("CrpgCharacterLoadoutBehaviorClient is required but not found in current mission", Colors.Red));
+            return;
+        }
 
-        InformationManager.DisplayMessage(new InformationMessage($"ImageIdentifier Id={ImageIdentifier.Id}, Type={ImageIdentifier.ImageTypeCode}", Colors.Yellow));
+        var userItemEx = UserLoadoutBehavior?.GetCrpgUserItem(userItemId);
+        _userItemId = userItemId;
+
+        ItemObj = item;
+        ImageIdentifier = new ImageIdentifierVM(item);
+        Name = item.Name.ToString();
+        IsVisible = _isVisible;
 
         GenerateTuplesFromItem();
         GenerateRowsFromTuples();
+
+        if (userItemEx is not null)
+        {
+            UserItemExtended = userItemEx;
+            userItemId = userItemEx.Id;
+            IsArmoryItem = userItemEx?.IsArmoryItem ?? false;
+            IsArmoryButtonEnabled = userItemEx != null;
+            IsArmoryItem = userItemEx?.IsArmoryItem ?? false;
+            IsArmoryButtonEnabled = userItemEx is not null;
+
+            ItemRankIcon = new ItemRankIconVM(userItemEx?.Rank ?? 0);
+
+            if (IsArmoryItem)
+            {
+                if (UserLoadoutBehavior is not null && UserLoadoutBehavior.GetCrpgUserItemArmoryStatus(userItemId, out var itemArmoryStatus))
+                {
+                    switch (itemArmoryStatus)
+                    {
+                        case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursAvailable:
+                            ArmoryButtonText = "Remove from armory";
+                            break;
+                        case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursBorrowed:
+                            ArmoryButtonText = "Remove from armory";
+                            break;
+                        case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursAvailible:
+                            ArmoryButtonText = "Borrow from armory";
+                            break;
+                        case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursBorrowed:
+                            ArmoryButtonText = "Unavailable--hide";
+                            // maybe check clan rank for option to return to armory
+                            break;
+                        case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.BorrowedByYou:
+                            ArmoryButtonText = "Return to armory";
+                            break;
+                        default:
+                            ArmoryButtonText = "ArmoryStatusInvalid";
+                            break;
+                    }
+
+                    ItemArmoryIcon = new ItemArmoryIconVM((int)itemArmoryStatus);
+                }
+
+            }
+            else
+            {
+                ItemArmoryIcon = new ItemArmoryIconVM();
+                ArmoryButtonText = "Add to armory";
+            }
+        }
     }
 
     private void GenerateTuplesFromItem()
@@ -181,8 +281,6 @@ public class ItemInfoVM : ViewModel
         var tup = new ItemInfoTupleVM
         {
             CategoryName = "Type/Class",
-            // IconOne = GetItemTypeIconString(crpgItem),
-            // IconTwo = GetItemWeaponClassIconString(crpgItem),
         };
         tup.Icons.Add(new ItemInfoIconVM { IconSprite = GetItemTypeIconString(crpgItem) });
         tup.Icons.Add(new ItemInfoIconVM { IconSprite = GetItemWeaponClassIconString(crpgItem) });

@@ -12,6 +12,7 @@ namespace Crpg.Module.GUI.Inventory;
 
 public class EquipmentSlotVM : ViewModel
 {
+    internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
     private ImageIdentifierVM? _imageIdentifier;
     private bool _isDragging;
     private string _defaultSprite;
@@ -20,9 +21,9 @@ public class EquipmentSlotVM : ViewModel
     private int _userItemId;
     private bool _isButtonEnabled;
     private int _itemRank = 0;
-    private bool _rank1Visible = false;
-    private bool _rank2Visible = false;
-    private bool _rank3Visible = false;
+    private ItemRankIconVM _itemRankIcon;
+    private ItemArmoryIconVM? _itemArmoryIcon;
+    private bool _isArmoryItem;
 
     public event Action<EquipmentSlotVM, ViewModel>? OnItemDropped;
     public event Action<EquipmentSlotVM>? OnSlotAlternateClicked;
@@ -32,12 +33,16 @@ public class EquipmentSlotVM : ViewModel
     public event Action<ItemObject>? OnItemDragBegin;
     public event Action<ItemObject>? OnItemDragEnd;
 
+    public CrpgUserItemExtended? UserItemEx { get; set; } = default!;
+
     public EquipmentSlotVM(CrpgItemSlot crpgSlot)
     {
         _crpgItemSlotIndex = crpgSlot;
         _defaultSprite = GetDefaultSpriteForSlot(_crpgItemSlotIndex);
         _imageIdentifier = new ImageIdentifierVM(ImageIdentifierType.Item);
         _isButtonEnabled = true;
+        _itemRankIcon = new ItemRankIconVM();
+        _itemArmoryIcon = new ItemArmoryIconVM();
     }
 
     public void ExecuteAlternateClick()
@@ -87,25 +92,33 @@ public class EquipmentSlotVM : ViewModel
         OnItemDropped?.Invoke(this, draggedItem);
     }
 
-    public void SetItem(ImageIdentifierVM? newIdentifier, ItemObject? itemObj = null, int? userItemId = null, CrpgUserItemExtended? userItemExtended = null)
+    public void SetItem(ImageIdentifierVM? newIdentifier, ItemObject? itemObj = null, CrpgUserItemExtended? userItemExtended = null)
     {
         ImageIdentifier = newIdentifier;
         ItemObj = itemObj;
-        UserItemId = userItemId ?? 0;
+        UserItemEx = userItemExtended;
+        UserItemId = userItemExtended?.Id ?? -1;
         ItemRank = userItemExtended?.Rank ?? 0;
+        IsArmoryItem = userItemExtended?.IsArmoryItem ?? false;
+        ItemRankIcon = new ItemRankIconVM(_itemRank);
+        ItemArmoryIcon = new ItemArmoryIconVM();
+        ItemArmoryIcon.UpdateItemArmoyIconFromItem(UserItemId);
 
         OnPropertyChanged(nameof(ItemObj));
         OnPropertyChanged(nameof(CanAcceptDrag));
         OnPropertyChanged(nameof(ItemRank));
 
-        SetItemRankIconsVisible(ItemRank);
+        // SetItemRankIconsVisible(ItemRank);
     }
+
 
     public void ClearItem()
     {
         SetItem(new ImageIdentifierVM(ImageIdentifierType.Item));
     }
 
+    [DataSourceProperty]
+    public bool IsArmoryItem { get => _isArmoryItem; set => SetField(ref _isArmoryItem, value, nameof(IsArmoryItem)); }
     [DataSourceProperty]
     public bool ShouldShowDefaultIcon => (_imageIdentifier == null || !_imageIdentifier.IsValid) || _isDragging;
     [DataSourceProperty]
@@ -120,11 +133,9 @@ public class EquipmentSlotVM : ViewModel
     public bool IsButtonEnabled { get => _isButtonEnabled; set => SetField(ref _isButtonEnabled, value, nameof(IsButtonEnabled)); }
     public int ItemRank { get => _itemRank; set => SetField(ref _itemRank, value, nameof(ItemRank)); }
     [DataSourceProperty]
-    public bool Rank1Visible { get => _rank1Visible; set => SetField(ref _rank1Visible, value, nameof(Rank1Visible)); }
+    public ItemRankIconVM ItemRankIcon { get => _itemRankIcon; set => SetField(ref _itemRankIcon, value, nameof(ItemRankIcon)); }
     [DataSourceProperty]
-    public bool Rank2Visible { get => _rank2Visible; set => SetField(ref _rank2Visible, value, nameof(Rank2Visible)); }
-    [DataSourceProperty]
-    public bool Rank3Visible { get => _rank3Visible; set => SetField(ref _rank3Visible, value, nameof(Rank3Visible)); }
+    public ItemArmoryIconVM? ItemArmoryIcon { get => _itemArmoryIcon; set => SetField(ref _itemArmoryIcon, value, nameof(ItemArmoryIcon)); }
 
     [DataSourceProperty]
     public ImageIdentifierVM? ImageIdentifier
@@ -171,34 +182,6 @@ public class EquipmentSlotVM : ViewModel
         }
     }
 
-    private void SetItemRankIconsVisible(int rank)
-    {
-        InformationManager.DisplayMessage(new InformationMessage($"ItemRank set to {rank}"));
-        switch (rank)
-        {
-            case 1:
-                Rank1Visible = true;
-                Rank2Visible = false;
-                Rank3Visible = false;
-                break;
-            case 2:
-                Rank1Visible = false;
-                Rank2Visible = true;
-                Rank3Visible = false;
-                break;
-            case 3:
-                Rank1Visible = false;
-                Rank2Visible = false;
-                Rank3Visible = true;
-                break;
-            default:
-                Rank1Visible = false;
-                Rank2Visible = false;
-                Rank3Visible = false;
-                break;
-        }
-    }
-
     private static readonly Dictionary<CrpgItemSlot, EquipmentIndex> CrpgToEquipIndex = new()
     {
         [CrpgItemSlot.Head] = EquipmentIndex.Head,
@@ -230,19 +213,6 @@ public class EquipmentSlotVM : ViewModel
 
         // Update the slot VM
         SetItem(item != null ? new ImageIdentifierVM(ImageIdentifierType.Item) : null, item);
-
-        // Update rank visuals if needed
-
-        if (item != null)
-        {
-            // ItemRank = item.Level; // or custom rank logic
-            // Optionally call SetItemRankIconsVisible(ItemRank);
-        }
-        else
-        {
-            // ItemRank = 0;
-            // Optionally call SetItemRankIconsVisible(0);
-        }
     }
 
     private string GetDefaultSpriteForSlot(CrpgItemSlot slot) => slot switch
