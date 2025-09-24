@@ -8,10 +8,7 @@ export const useWelcome = () => {
 
   const userStore = useUserStore()
 
-  const isNewUser = computed(() => userStore.user !== null,
-  // TODO:
-  // && userStore.isRecentUser
-  )
+  const isNewUser = computed(() => userStore.user?.isRecent)
 
   const overlay = useOverlay()
 

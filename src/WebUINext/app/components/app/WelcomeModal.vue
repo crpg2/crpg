@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { defaultGold, newUserStartingCharacterLevel } from '~root/data/constants.json'
 
+defineEmits<{
+  close: []
+}>()
+
 const { settings } = useAppConfig()
 </script>
 

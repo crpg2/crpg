@@ -24,7 +24,6 @@ const { t, locale, availableLocales, setLocale } = useI18n()
 
 const items = computed<DropdownMenuItem[][]>(() => [
   [
-
     {
       label: t('setting.notifications'),
       icon: 'crpg:carillon',
@@ -36,15 +35,18 @@ const items = computed<DropdownMenuItem[][]>(() => [
       icon: 'crpg:settings',
       to: { name: 'settings' },
     },
-    // TODO: FIXME: condition
-    {
-      label: t('welcome.shortTitle'),
-      icon: 'crpg:gift',
-      color: 'primary',
-      onSelect: () => {
-        emit('showWelcome')
-      },
-    },
+    ...(userStore.user!.isRecent
+      ? [
+          {
+            label: t('welcome.shortTitle'),
+            icon: 'crpg:gift',
+            color: 'primary',
+            onSelect: () => {
+              emit('showWelcome')
+            },
+          },
+        ]
+      : []),
   ],
   [
     ...(([ROLE.Moderator, ROLE.Admin] as Role[]).includes(userStore.user!.role))

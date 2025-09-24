@@ -20,10 +20,9 @@ public record UserViewModel : IMapFrom<User>
     public Role Role { get; init; }
     public Region Region { get; init; }
     public bool IsDonor { get; init; }
-
+    public bool IsRecent { get; set; }
     [JsonRequired]
     public Uri? Avatar { get; init; }
-
     [JsonRequired]
     public int? ActiveCharacterId { get; init; }
     public int UnreadNotificationsCount { get; init; }

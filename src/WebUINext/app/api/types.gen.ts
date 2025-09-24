@@ -1334,6 +1334,7 @@ export type UserViewModel = {
     role: Role;
     region: Region;
     isDonor: boolean;
+    isRecent: boolean;
     avatar: string | null;
     activeCharacterId: number | null;
     unreadNotificationsCount: number;

@@ -45,10 +45,10 @@ internal class UserService : IUserService
 
         bool hasHighLevelCharacter = characters.Any(c => c.Level > _constants.NewUserStartingCharacterLevel);
         double totalExperience = characters.Sum(c => c.Experience);
-        bool wasRetired = user.ExperienceMultiplier != _constants.DefaultExperienceMultiplier;
+        bool wasRetired = user.ExperienceMultiplier > _constants.DefaultExperienceMultiplier;
         return
             !wasRetired &&
             !hasHighLevelCharacter &&
-            totalExperience < 12000000; // protection against abusers of free re-specialization mechanics
+            totalExperience < 12_000_000; // protection against abusers of free re-specialization mechanics
     }
 }

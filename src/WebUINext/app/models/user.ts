@@ -18,6 +18,7 @@ export interface User {
   avatar: string | null
   region: Region
   isDonor: boolean
+  isRecent: boolean
   role: Role
   heirloomPoints: number
   experienceMultiplier: number
