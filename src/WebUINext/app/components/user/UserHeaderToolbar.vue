@@ -14,6 +14,10 @@ const { user } = defineProps<{
   user: User
 }>()
 
+const emit = defineEmits<{
+  showWelcome: []
+}>()
+
 const userStore = useUserStore()
 
 const { t, locale, availableLocales, setLocale } = useI18n()
@@ -38,7 +42,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
       icon: 'crpg:gift',
       color: 'primary',
       onSelect: () => {
-
+        emit('showWelcome')
       },
     },
   ],

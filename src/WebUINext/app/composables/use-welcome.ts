@@ -1,41 +1,33 @@
 import { useStorage } from '@vueuse/core'
-import { AppWelcome } from '#components'
+import { LazyAppWelcomeModal } from '#components'
 
 import { useUserStore } from '~/stores/user'
 
-const showedWelcomeMessage = useStorage<boolean>('user-welcome-message-showed', false)
-
-// TODO: FIXME: notification center https://github.com/namidaka/crpg/issues/186
 export const useWelcome = () => {
-  // TOOD: FIXME:
+  const showedWelcomeMessage = useStorage<boolean>('user-welcome-message-showed', false)
+
   const userStore = useUserStore()
 
-  const shownWelcomeMessage = computed(() => userStore.user !== null && userStore.isRecentUser)
-
-  const onCloseWelcomeMessage = () => {
-    showedWelcomeMessage.value = true
-  }
-
-  const showWelcomeMessage = () => {
-    showedWelcomeMessage.value = false
-  }
+  const isNewUser = computed(() => userStore.user !== null,
+  // TODO:
+  // && userStore.isRecentUser
+  )
 
   const overlay = useOverlay()
 
-  const modal = overlay.create(AppWelcome, {
+  const modal = overlay.create(LazyAppWelcomeModal, {
     props: {
-      onClose: () => onCloseWelcomeMessage(),
+      onClose: () => {
+        showedWelcomeMessage.value = true
+      },
     },
   })
 
-  // TODO: FIXME:
-  // modal.open()
-
-  // watch(shownWelcomeMessage, () => {
-  //   shownWelcomeMessage.value ? modal.open() : modal.close()
-  // }, { immediate: true })
+  if (isNewUser.value && !showedWelcomeMessage.value) {
+    modal.open()
+  }
 
   return {
-    showWelcomeMessage,
+    showWelcomeMessage: modal.open,
   }
 }

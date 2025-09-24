@@ -1,9 +1,9 @@
 <script setup lang="ts">
-defineProps<{ bg: string }>()
+const { strategy = 'fixed' } = defineProps<{ bg: string, strategy?: 'absolute' | 'fixed' }>()
 </script>
 
 <template>
-  <div class="fixed inset-0">
+  <div class="inset-0" :class="strategy === 'fixed' ? 'fixed' : 'absolute'">
     <NuxtImg
       class="size-full object-cover opacity-15"
       :src="`/images/bg/${bg}`"

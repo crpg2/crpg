@@ -291,27 +291,35 @@ welcome:
   intro: '
     <p>Welcome to one of the most popular online modifications in Bannerlord!</p>
     <p>To start you out on the smoothest path possible, we''ve given you a lvl 30 Starter Character with some added bonuses to help you out</p>
-    <p>Remember, cRPG has lots of seasoned players, so it''s totally normal to face challenges initially. Don''t let this intimidate you! Any questions, join our <a href=''https://discord.gg/c-rpg'' target=''_blank''>Discord</a></p>'
+    <p>Remember, cRPG has lots of seasoned players, so it''s totally normal to face challenges initially. Don''t let this intimidate you! Any questions, join our <a href=''{discordLink}'' target=''_blank''>Discord</a></p>'
   bonusTitle: Your start bonus
   bonusHint: '* bonus is active until reaching {level} level (~1-2 weeks of play)'
   bonus:
     gold: '
-      <h5>Starting gold</h5>
+      <h3>Starting gold</h3>
       <p>Gold is needed to <strong>buy</strong>, <strong>upkeep</strong>, and <strong>reforge</strong> items, as well as to reset character skills</p>
       <p>For gold to accumulate, keep track of the cost of upkeep your gear on your <strong>character''s @:character.nav.inventory page</strong></p>
       <p>While the starting bonus is in effect, resetting your character''s skills is <strong>free</strong> for you</p>'
     newUserStartingCharacter: '
-      <h5>Starting character</h5>
+      <h3>Starting character</h3>
       <p>You get a starting character: a warrior with a <strong>{level} level</strong> one-handed sword and shield and <strong>medium equipment</strong><p>
-      <p>You can change a character''s class using the skill reset feature on the <strong>@:character.nav.overview character</strong> page<p>'
+      <p>You can change a character''s class using the skill reset feature on the <strong>@:character.nav.overview character</strong> page</p>'
     freeRespec: '
-      <h5>Re-specialization</h5>
+      <h3>Re-specialization</h3>
       <p>Re-specialization is the resetting of a character''s skills</p>
       <p>You have an <strong>unlimited</strong> number of <strong>free</strong> re-specializations available to you to try different builds</p>
       <p>The bonus is valid until you reach <strong>{level} level</strong></p>
-      <p>You can change the character class on the <strong>@:character.nav.overview character page</strong><p>'
+      <p>You can change the character class on the <strong>@:character.nav.overview character page</strong></p>'
   helpfulLinks:
     label: Helpful links
+    links:
+      community: Community (Discord)
+      newPlayerReadme: New players readme (en)
+      infBeginnersGuide: Infantry Beginners Guide (en)
+      faq: FAQ (en)
+      clans: Clans hall
+      charBuild: Character builds
+      techSupport: Tech support
 
 character:
   nav:

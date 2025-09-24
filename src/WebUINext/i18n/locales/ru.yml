@@ -270,15 +270,23 @@ welcome:
     newUserStartingCharacter: '
       <h5>Стартовый персонаж</h5>
       <p>Вы получаете стартового персонажа: воин с одноручным мечём и щитом <strong>{level} уровня</strong> и <strong>среднее снаряжение</strong><p>
-      <p>Вы можете изменить класс персонажа с помощью функции сброса навыков на странице <strong>@:character.nav.overview персонажа</strong><p>'
+      <p>Вы можете изменить класс персонажа с помощью функции сброса навыков на странице <strong>@:character.nav.overview персонажа</strong></p>'
     freeRespec: '
       <h5>Сброс навыков</h5>
       <p>Переспециализация - это сброс навыков персонажа</p>
       <p>Вам доступно <strong>неограниченное</strong> количество <strong>бесплатных</strong> переспециализаций, чтобы попробовать разные билды</p>
       <p>Бонус действует до тех пор, пока вы не достигнете <strong>{level} уровня</strong></p>
-      <p>Изменить класс персонажа можно на странице <strong>@:character.nav.overview персонажа</strong><p>'
+      <p>Изменить класс персонажа можно на странице <strong>@:character.nav.overview персонажа</strong></p>'
   helpfulLinks:
     label: Полезные ссылки
+    links:
+      community: Сообщество (Discord)
+      newPlayerReadme: Инструкция для новых игроков (en)
+      infBeginnersGuide: Руководство для пехотинцев (en)
+      faq: FAQ (en)
+      clans: Кланы
+      charBuild: Билды персонажей
+      techSupport: Тех. поддержка
 
 character:
   nav:

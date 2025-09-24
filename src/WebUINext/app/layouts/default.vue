@@ -18,7 +18,7 @@ usePollInterval({
 
 useMainHeaderProvider(useTemplateRef('mainHeader'))
 
-useWelcome()// TODO: FIXME:
+const { showWelcomeMessage } = useWelcome()
 </script>
 
 <template>
@@ -37,14 +37,14 @@ useWelcome()// TODO: FIXME:
         ` : `bg-default`]"
     >
       <template v-if="userStore.user">
-        <UserRestrictionBanner
+        <LazyUserRestrictionBanner
           v-if="userStore.restriction"
           :restriction="userStore.restriction"
         />
 
         <!-- v-if="userStore.user && !isHHCountdownEnded && HHEventRemaining !== 0" -->
         <!-- TODO: тест -->
-        <AppHHBanner
+        <LazyAppHHBanner
           v-if="userStore.user" :region="userStore.user.region"
         />
       </template>
@@ -66,6 +66,7 @@ useWelcome()// TODO: FIXME:
         <UserHeaderToolbar
           v-if="userStore.user"
           :user="userStore.user"
+          @show-welcome="showWelcomeMessage"
         />
 
         <AppLayoutPublicHeaderToolbar v-else />
@@ -76,10 +77,7 @@ useWelcome()// TODO: FIXME:
       <slot />
     </main>
 
-    <!-- TODO: v-if="!route.meta.noFooter" -->
+    <!-- TODO: FIXME: - Стратегус v-if="!route.meta.noFooter" -->
     <AppLayoutFooter :HHEvent class="ring ring-default" />
-    <!-- :open="shownWelcomeMessage" -->
-    <!-- TODO: FIXME: -->
-    <AppWelcome />
   </div>
 </template>
