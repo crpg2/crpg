@@ -4,7 +4,7 @@ export const usePagination = () => {
   function getInitialPaginationState(): PaginationState {
     return {
       pageIndex: 0,
-      pageSize: 10,
+      pageSize: 2,
     }
   }
 

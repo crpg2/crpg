@@ -38,8 +38,8 @@ const counter = computed(() => [
     </div>
 
     <div class="flex justify-end">
-      <UiTextView variant="caption">
-        {{ total !== 0 && total !== Infinity && $t('pagination.counter', { from: counter[0], to: counter[1], total }) }}
+      <UiTextView v-if="total !== 0 && total !== Infinity" variant="caption">
+        {{ $t('pagination.counter', { from: counter[0], to: counter[1], total }) }}
       </UiTextView>
     </div>
   </div>

@@ -2,13 +2,7 @@
 import { usePageLoadingProvider } from '~/composables/app/use-page-loading'
 
 const [activePageLoading] = usePageLoadingProvider()
-
-const { start, finish } = useLoadingIndicator()
-const { $poll } = useNuxtApp()
-
-watch(activePageLoading, () => {
-  activePageLoading.value ? start() : finish()
-})
+// const { $poll } = useNuxtApp()
 </script>
 
 <template>
@@ -21,8 +15,9 @@ watch(activePageLoading, () => {
       delayDuration: 300,
     }"
   >
-    {{ $poll.keys }}
-    {{ activePageLoading }}
+    <!-- TODO: -->
+    <!-- {{ $poll.keys }}
+    {{ activePageLoading }} -->
 
     <NuxtLoadingIndicator color="rgb(210 187 138)" />
 

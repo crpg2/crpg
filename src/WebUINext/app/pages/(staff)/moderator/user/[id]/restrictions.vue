@@ -6,7 +6,6 @@ import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { getUserRestrictions, restrictUser } from '~/services/restriction-service'
 
 const { t } = useI18n()
-const toast = useToast()
 const { moderationUser } = useModerationUser()
 
 const {
@@ -24,39 +23,30 @@ const {
     restrictedUserId: moderationUser.value.id,
   })
   await loadRestrictions()
-
-  toast.add({
-    title: t('restriction.create.notify.success'),
-    color: 'success',
-    close: false,
-  })
+}, {
+  pageLoading: true,
+  successMessage: t('restriction.create.notify.success'),
 })
 </script>
 
 <template>
   <div>
     <div class="mb-8 flex items-center gap-4">
-      <h2 class="text-lg">
+      <UiTextView variant="h2" tag="h2">
         {{ $t('restriction.user.history') }}
-      </h2>
+      </UiTextView>
 
-      <UModal
-        :title="$t('restriction.create.form.title')"
-        :close="{
-          size: 'sm',
-          color: 'secondary',
-          variant: 'solid',
-        }"
-      >
+      <USeparator orientation="vertical" class="h-6" />
+
+      <UModal :title="$t('restriction.create.form.title')">
         <UButton
-          size="sm"
           variant="subtle"
           icon="crpg:plus"
           :label="$t('restriction.create.form.title')"
         />
 
         <template #body="{ close }">
-          <ModeratorCreateRestrictionForm
+          <LazyModeratorCreateRestrictionForm
             :loading="restrictingUser"
             @submit="(data) => {
               onRestrictUser(data);

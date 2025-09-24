@@ -55,6 +55,11 @@ export default defineAppConfig({
         tbody: '[&>tr]:data-[selectable=true]:cursor-pointer',
       },
     },
+    pagination: {
+      slots: {
+        item: 'leading-[1.25]',
+      },
+    },
     tabs: {
       compoundVariants: [
         {

@@ -19,14 +19,7 @@ const { hiddenRestrictedUser = false } = defineProps<{
 
 const { t, d } = useI18n()
 
-function getInitialPaginationState(): PaginationState {
-  return {
-    pageIndex: 0,
-    pageSize: 10, // TODO: FIXME:
-  }
-}
-
-const pagination = ref<PaginationState>(getInitialPaginationState())
+const { getInitialPaginationState, pagination } = usePagination()
 
 const table = useTemplateRef('table')
 
@@ -214,19 +207,9 @@ const sorting = ref<SortingState>([
       </template>
     </UTable>
 
-    <UPagination
-      v-if="table?.tableApi.getCanNextPage() || table?.tableApi.getCanPreviousPage()"
-      class="flex justify-center"
-      variant="soft"
-      color="secondary"
-      active-variant="solid"
-      active-color="primary"
-      :page="pagination.pageIndex + 1"
-      :show-controls="false"
-      :default-page="(table?.tableApi?.initialState.pagination.pageIndex || 0) + 1"
-      :items-per-page="table?.tableApi?.initialState.pagination.pageSize"
-      :total="table?.tableApi?.getFilteredRowModel().rows.length"
-      @update:page="(p) => table?.tableApi?.setPageIndex(p - 1)"
+    <UiGridPagination
+      v-if="table?.tableApi"
+      :table-api="table!.tableApi"
     />
   </div>
 </template>

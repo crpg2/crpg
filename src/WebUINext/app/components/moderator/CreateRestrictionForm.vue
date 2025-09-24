@@ -47,6 +47,7 @@ const onSubmit = () => {
           value: rt,
         }))"
         class="w-full"
+        size="xl"
       />
     </UFormField>
 
@@ -56,6 +57,7 @@ const onSubmit = () => {
           <UInputNumber
             v-model="durationModel.days"
             :min="0"
+            size="xl"
           />
         </UFormField>
 
@@ -63,6 +65,7 @@ const onSubmit = () => {
           <UInputNumber
             v-model="durationModel.hours"
             :min="0"
+            size="xl"
           />
         </UFormField>
 
@@ -70,6 +73,7 @@ const onSubmit = () => {
           <UInputNumber
             v-model="durationModel.minutes"
             :min="0"
+            size="xl"
           />
         </UFormField>
       </div>
@@ -81,6 +85,7 @@ const onSubmit = () => {
         class="w-full"
         required
         autoresize
+        size="xl"
       />
     </UFormField>
 
@@ -89,11 +94,14 @@ const onSubmit = () => {
         v-model="newRestrictionModel.publicReason"
         class="w-full"
         autoresize
+        size="xl"
       />
     </UFormField>
 
     <UButton
       :loading
+      size="xl"
+
       type="submit"
       variant="subtle"
       icon="crpg:plus"

@@ -2,10 +2,10 @@
 import type { ZonedDateTime } from '@internationalized/date'
 
 import { DateFormatter, getLocalTimeZone, now, parseZonedDateTime } from '@internationalized/date'
+import { LazyModeratorUserFinder } from '#components'
 
 import type { ActivityLogType } from '~/models/activity-logs'
 
-import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useModerationUser } from '~/composables/moderator/use-moderation-user'
 import { SORT, useSort } from '~/composables/utils/use-sort' // TODO:
 import { ACTIVITY_LOG_TYPE } from '~/models/activity-logs'
@@ -19,9 +19,11 @@ const { moderationUser } = useModerationUser()
 
 const { t } = useI18n()
 
+const getInitialFrom = () => now(getLocalTimeZone()).subtract({ minutes: 5 })
+
 const from = useRouteQuery(
   'from',
-  now(getLocalTimeZone()).subtract({ minutes: 5 }).toString(), // Show logs for the last 5 minutes by default
+  getInitialFrom().toString(), // Show logs for the last 5 minutes by default
   {
     transform: {
       set: (value: ZonedDateTime) => value.toString(),
@@ -30,9 +32,11 @@ const from = useRouteQuery(
   },
 )
 
+const getInitialTo = () => now(getLocalTimeZone())
+
 const to = useRouteQuery(
   'to',
-  now(getLocalTimeZone()).toString(),
+  getInitialTo().toString(),
   {
     transform: {
       set: (value: ZonedDateTime) => value.toString(),
@@ -53,13 +57,19 @@ const toggleAdditionalUser = (userId: number) => {
   additionalUsers.value = toggle(additionalUsers.value, userId)
 }
 
+const reset = () => {
+  types.value = []
+  additionalUsers.value = []
+  from.value = getInitialFrom()
+  to.value = getInitialTo()
+}
+
 const { sort, toggleSort } = useSort('createdAt')
 
 const {
   state: activityLogs,
   execute: fetchActivityLogs,
-  isLoading: isLoadingActivityLogs,
-} = useAsyncState(
+} = useAsyncStateWithPoll(
   () => getActivityLogs({
     from: from.value.toDate(),
     to: to.value.toDate(),
@@ -75,9 +85,9 @@ const {
     },
   },
   {
-    immediate: true,
     resetOnExecute: false,
     throwError: true,
+    pageLoading: true,
   },
 )
 
@@ -90,21 +100,15 @@ const sortedActivityLogs = computed(() => activityLogs.value.activityLogs.toSort
 watch([types, to, from, additionalUsers], () => {
   fetchActivityLogs()
 })
-
-const { togglePageLoading } = usePageLoading()
-
-watchEffect(() => {
-  togglePageLoading(isLoadingActivityLogs.value)
-})
 </script>
 
 <template>
-  <div class="mx-auto max-w-3xl space-y-4 pb-8">
+  <div class="mx-auto max-w-4xl space-y-4 pb-8">
     <div class="flex justify-between gap-4">
-      <UFieldGroup>
+      <UFieldGroup size="xl">
         <USelectMenu
           v-model="types"
-          class="max-w-64"
+          class="w-64"
           color="neutral"
           variant="subtle"
           :placeholder="$t('activityLog.form.type')"
@@ -143,14 +147,26 @@ watchEffect(() => {
         </UPopover>
       </UFieldGroup>
 
-      <UButton
-        :icon="sort === SORT.ASC ? 'crpg:chevron-up' : 'crpg:chevron-down'"
-        color="neutral"
-        variant="subtle"
-        :label="$t('activityLog.sort.createdAt')"
-        data-aq-activityLogs-sort-btn
-        @click="toggleSort"
-      />
+      <UFieldGroup>
+        <UButton
+          :icon="sort === SORT.ASC ? 'crpg:chevron-up' : 'crpg:chevron-down'"
+          color="neutral"
+          variant="subtle"
+          size="xl"
+          :label="$t('activityLog.sort.createdAt')"
+          data-aq-activityLogs-sort-btn
+          @click="toggleSort"
+        />
+
+        <UButton
+          icon="crpg:close"
+          color="neutral"
+          variant="subtle"
+          size="xl"
+          :label="$t('action.reset')"
+          @click="reset"
+        />
+      </UFieldGroup>
     </div>
 
     <div class="flex flex-wrap items-center gap-4">
@@ -178,11 +194,6 @@ watchEffect(() => {
       </div>
 
       <UModal
-        :close="{
-          size: 'sm',
-          color: 'secondary',
-          variant: 'solid',
-        }"
         :title="t('findUser.title')"
         :ui="{
           content: 'min-w-[720px]',
@@ -197,7 +208,7 @@ watchEffect(() => {
         />
 
         <template #body="{ close }">
-          <ModeratorUserFinder>
+          <LazyModeratorUserFinder>
             <template #user-prepend="userData">
               <UButton
                 size="xs"
@@ -212,7 +223,7 @@ watchEffect(() => {
                 }"
               />
             </template>
-          </ModeratorUserFinder>
+          </LazyModeratorUserFinder>
         </template>
       </UModal>
     </div>

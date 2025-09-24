@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { SelectItem, TabsItem } from '@nuxt/ui'
+import type { ValueOf } from 'type-fest'
 
 import type { Platform } from '~/models/platform'
 
@@ -7,15 +8,16 @@ import { PLATFORM } from '~/models/platform'
 import { platformToIcon } from '~/services/platform-service'
 import { getUserById, searchUser } from '~/services/restriction-service'
 
-enum SearchMode {
-  Name = 'Name',
-  Platform = 'Platform',
-  Id = 'Id',
-}
+const SEARCH_MODE = {
+  Name: 'Name',
+  Platform: 'Platform',
+  Id: 'Id',
+} as const
+type SearchMode = ValueOf<typeof SEARCH_MODE>
 
 const { t } = useI18n()
 
-const activeSearchMode = ref<SearchMode>(SearchMode.Name)
+const activeSearchMode = ref<SearchMode>(SEARCH_MODE.Name)
 
 const searchByNameModel = ref<string>('')
 const searchByIdModel = ref<number | null>(null)
@@ -31,11 +33,11 @@ const {
   isReady: loadedUsers,
 } = useAsyncState(
   async () => {
-    if (activeSearchMode.value === SearchMode.Id && searchByIdModel.value) {
+    if (activeSearchMode.value === SEARCH_MODE.Id && searchByIdModel.value) {
       return [await getUserById(searchByIdModel.value)]
     }
 
-    const payload = activeSearchMode.value === SearchMode.Name
+    const payload = activeSearchMode.value === SEARCH_MODE.Name
       ? { name: searchByNameModel.value }
       : {
           platform: searchByPlatformModel.value.platform,
@@ -53,7 +55,7 @@ const clearUsers = () => {
   loadedUsers.value = false
 }
 
-const searchModeItems = Object.keys(SearchMode).map<TabsItem>(mode => ({
+const searchModeItems = Object.keys(SEARCH_MODE).map<TabsItem>(mode => ({
   label: t(`findUser.mode.${mode}.label`),
   value: mode,
   slot: `${mode}` as const,
@@ -68,117 +70,116 @@ const platformItems = computed(() => Object.values(PLATFORM).map<SelectItem>(p =
 
 <template>
   <div class="space-y-6">
-    <UTabs
-      v-model="activeSearchMode"
-      :items="searchModeItems"
-      size="xl"
-      variant="pill"
-    >
-      <template #Name>
-        <UCard>
-          <UForm :state="searchByNameModel" @submit="() => { search() }">
-            <UFieldGroup>
-              <UInput
-                v-model="searchByNameModel"
-                :placeholder="$t('findUser.mode.Name.field.name.placeholder')"
-                size="lg"
-                color="neutral"
-                icon="crpg:search"
-                variant="outline"
-                @input="clearUsers"
-              />
-              <UButton
-                size="lg"
-                color="neutral"
-                variant="subtle"
-                :label="$t('action.find')"
-                type="submit"
-              />
-            </UFieldGroup>
-          </UForm>
-        </UCard>
+    <UCard>
+      <template #header>
+        <UTabs
+          v-model="activeSearchMode"
+          :items="searchModeItems"
+          color="neutral"
+          :content="false"
+        />
       </template>
 
-      <template #Platform>
-        <UCard>
-          <UForm :state="searchByPlatformModel" @submit="() => { search() }">
-            <UFieldGroup>
-              <USelect
-                v-model="searchByPlatformModel.platform"
-                size="lg"
-                :items="platformItems"
-                :icon="`crpg:${platformToIcon[searchByPlatformModel.platform]}`"
-                :ui="{
-                  content: 'w-auto',
-                }"
-              />
-              <UInput
-                v-model="searchByPlatformModel.platformUserId"
-                :placeholder="$t('findUser.mode.Platform.field.platformId.placeholder')"
-                size="lg"
-                color="neutral"
-                icon="crpg:search"
-                variant="outline"
-                @input="clearUsers"
-              />
-              <UButton
-                size="lg"
-                color="neutral"
-                variant="subtle"
-                :label="$t('action.find')"
-                @click="() => { search() }"
-              />
-            </UFieldGroup>
-          </UForm>
-        </UCard>
-      </template>
+      <UForm
+        v-if="activeSearchMode === SEARCH_MODE.Name"
+        :state="searchByNameModel"
+        @submit="() => { search() }"
+      >
+        <UFieldGroup class="w-full" size="xl">
+          <UInput
+            v-model="searchByNameModel"
+            :placeholder="$t('findUser.mode.Name.field.name.placeholder')"
+            color="neutral"
+            class="w-full"
+            icon="crpg:search"
+            :loading="searching"
+            variant="outline"
+            @input="clearUsers"
+          />
+          <UButton
+            color="neutral"
+            variant="subtle"
+            :label="$t('action.find')"
+            type="submit"
+          />
+        </UFieldGroup>
+      </UForm>
 
-      <template #Id>
-        <UCard>
-          <UForm :state="searchByIdModel" @submit="() => { search() }">
-            <UFieldGroup>
-              <UInput
-                v-model="searchByIdModel"
-                :placeholder="$t('findUser.mode.Id.field.id.placeholder')"
-                size="lg"
-                color="neutral"
-                icon="crpg:search"
-                variant="outline"
-                type="number"
-                @input="clearUsers"
-              />
-              <UButton
-                size="lg"
-                color="neutral"
-                variant="subtle"
-                :label="$t('action.find')"
-                @click="() => { search() }"
-              />
-            </UFieldGroup>
-          </UForm>
-        </UCard>
-      </template>
-    </UTabs>
+      <UForm
+        v-else-if="activeSearchMode === SEARCH_MODE.Platform"
+        :state="searchByPlatformModel"
+        @submit="() => { search() }"
+      >
+        <UFieldGroup class="w-full" size="xl">
+          <USelect
+            v-model="searchByPlatformModel.platform"
+            color="neutral"
+            :items="platformItems"
+            :icon="`crpg:${platformToIcon[searchByPlatformModel.platform]}`"
+            :ui="{
+              content: 'w-auto',
+            }"
+          />
+          <UInput
+            v-model="searchByPlatformModel.platformUserId"
+            :placeholder="$t('findUser.mode.Platform.field.platformId.placeholder')"
+            color="neutral"
+            icon="crpg:search"
+            :loading="searching"
+            variant="outline"
+            class="w-full"
+            @input="clearUsers"
+          />
+          <UButton
+            color="neutral"
+            variant="subtle"
+            :label="$t('action.find')"
+            @click="() => { search() }"
+          />
+        </UFieldGroup>
+      </UForm>
 
-    <UiLoading :active="searching" />
+      <UForm
+        v-else-if="activeSearchMode === SEARCH_MODE.Id"
+        :state="searchByIdModel"
+        @submit="() => { search() }"
+      >
+        <UFieldGroup class="w-full" size="xl">
+          <UInput
+            v-model="searchByIdModel"
+            :placeholder="$t('findUser.mode.Id.field.id.placeholder')"
+            color="neutral"
+            icon="crpg:search"
+            :loading="searching"
+            variant="outline"
+            class="w-full"
+            type="number"
+            @input="clearUsers"
+          />
+          <UButton
+            color="neutral"
+            variant="subtle"
+            :label="$t('action.find')"
+            @click="() => { search() }"
+          />
+        </UFieldGroup>
+      </UForm>
+    </UCard>
 
     <div v-if="users.length">
-      <h4 class="mb-4">
+      <UiTextView variant="h4" margin-bottom>
         {{ $t('findUser.result.title') }}
-      </h4>
+      </UiTextView>
 
-      <div class="max-h-[480px] space-y-6 overflow-y-auto">
+      <div class="grid max-h-[480px] grid-cols-2 gap-x-8 gap-y-6 overflow-y-auto">
         <div
           v-for="user in users"
           :key="user.id"
-          class="flex items-center gap-2"
+          class="flex items-center justify-between gap-2"
         >
           <NuxtLink
             :to="{ name: 'moderator-user-id-restrictions', params: { id: user.id } }"
-            class="
-              hover:text-content-100
-              inline-block
-            "
+            class="inline-block"
           >
             <UserMedia :user="user" />
           </NuxtLink>

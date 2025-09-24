@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { RouteLocationRaw } from 'vue-router'
 import type { RouteNamedMap } from 'vue-router/auto-routes'
 
 import { ROLE } from '~/models/role'
@@ -10,7 +9,7 @@ definePageMeta({
 
 const { t } = useI18n()
 
-const links: { name: keyof RouteNamedMap, label: string }[] = [
+const links = [
   {
     name: 'moderator',
     label: t('restriction.title'),
@@ -19,28 +18,32 @@ const links: { name: keyof RouteNamedMap, label: string }[] = [
     name: 'moderator-find-user',
     label: t('findUser.title'),
   },
-]
+] satisfies Array<{
+  name: keyof RouteNamedMap
+  label: string
+}>
 </script>
 
 <template>
-  <div class="py-6">
-    <div class="mb-12 flex items-center justify-center gap-2">
+  <div class="space-y-8 py-6">
+    <nav class="flex items-center justify-center gap-2">
       <NuxtLink
         v-for="{ name, label } in links"
         :key="name"
         v-slot="{ isExactActive }"
-        :to="({ name } as RouteLocationRaw)"
+        :to="({ name })"
       >
         <UButton
           color="neutral"
-          :active="isExactActive"
+          variant="link"
           active-variant="soft"
-          variant="ghost"
-          size="lg"
+          active-color="primary"
+          :active="isExactActive "
+          size="xl"
           :label
         />
       </NuxtLink>
-    </div>
+    </nav>
 
     <NuxtPage />
   </div>
