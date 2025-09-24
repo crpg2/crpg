@@ -129,6 +129,11 @@ builder.Services.AddOpenIddict()
             webProviderAdded = true;
         }
 
+        if (!webProviderAdded)
+        {
+            return;
+        }
+
         options.AllowAuthorizationCodeFlow();
 
         options.AddDevelopmentEncryptionCertificate()
