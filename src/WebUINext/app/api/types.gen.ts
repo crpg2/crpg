@@ -14,7 +14,7 @@ export type ActivityLogMetadataEntitiesDictViewModel = {
     characters: Array<CharacterPublicViewModel>;
 };
 
-export type ActivityLogType = 'UserCreated' | 'UserDeleted' | 'UserRenamed' | 'UserRewarded' | 'ItemBought' | 'ItemSold' | 'ItemBroke' | 'ItemReforged' | 'ItemRepaired' | 'ItemUpgraded' | 'ItemReturned' | 'CharacterCreated' | 'CharacterDeleted' | 'CharacterRatingReset' | 'CharacterRespecialized' | 'CharacterRetired' | 'CharacterRewarded' | 'CharacterEarned' | 'ServerJoined' | 'ChatMessageSent' | 'TeamHit' | 'ClanCreated' | 'ClanDeleted' | 'ClanApplicationCreated' | 'ClanApplicationDeclined' | 'ClanApplicationAccepted' | 'ClanMemberKicked' | 'ClanMemberLeaved' | 'ClanMemberRoleEdited' | 'ClanArmoryAddItem' | 'ClanArmoryRemoveItem' | 'ClanArmoryReturnItem' | 'ClanArmoryBorrowItem';
+export type ActivityLogType = 'UserCreated' | 'UserDeleted' | 'UserRenamed' | 'UserRewarded' | 'ItemBought' | 'ItemSold' | 'ItemBroke' | 'ItemReforged' | 'ItemRepaired' | 'ItemUpgraded' | 'ItemReturned' | 'CharacterCreated' | 'CharacterDeleted' | 'CharacterRatingReset' | 'CharacterRespecialized' | 'CharacterRetired' | 'CharacterRewarded' | 'CharacterEarned' | 'ServerJoined' | 'ChatMessageSent' | 'TeamHit' | 'ClanCreated' | 'ClanDeleted' | 'ClanApplicationCreated' | 'ClanApplicationDeclined' | 'ClanApplicationAccepted' | 'ClanMemberKicked' | 'ClanMemberLeaved' | 'ClanMemberRoleEdited' | 'ClanArmoryAddItem' | 'ClanArmoryRemoveItem' | 'ClanArmoryReturnItem' | 'ClanArmoryBorrowItem' | 'TeamHitReported' | 'TeamHitReportedUserKicked';
 
 export type ActivityLogViewModel = {
     id: number;
@@ -461,6 +461,10 @@ export type EditSettingsCommand = {
     modDb?: string | null;
 };
 
+export type ElevationModel = {
+    extent: Envelope;
+};
+
 export type EnableItemCommand = {
     itemId: string;
     enable: boolean;
@@ -703,10 +707,15 @@ export type GeometryFactory = {
     precisionModel: PrecisionModel;
     coordinateSequenceFactory: CoordinateSequenceFactory;
     readonly srid: number;
+    elevationModel: ElevationModel;
     geometryServices: NtsGeometryServices;
 };
 
 export type GeometryOverlay = {
+    [key: string]: never;
+};
+
+export type GeometryRelate = {
     [key: string]: never;
 };
 
@@ -871,10 +880,12 @@ export type NotificationType = 'UserRewardedToUser' | 'CharacterRewardedToUser' 
 
 export type NtsGeometryServices = {
     geometryOverlay: GeometryOverlay;
+    geometryRelate: GeometryRelate;
     coordinateEqualityComparer: CoordinateEqualityComparer;
     readonly defaultSRID: number;
     defaultCoordinateSequenceFactory: CoordinateSequenceFactory;
     defaultPrecisionModel: PrecisionModel;
+    defaultElevationModel: ElevationModel;
 };
 
 export type OgcGeometryType = 'Point' | 'LineString' | 'Polygon' | 'MultiPoint' | 'MultiLineString' | 'MultiPolygon' | 'GeometryCollection' | 'CircularString' | 'CompoundCurve' | 'CurvePolygon' | 'MultiCurve' | 'MultiSurface' | 'Curve' | 'Surface' | 'PolyhedralSurface' | 'TIN';
@@ -1510,6 +1521,7 @@ export type GeometryWritable = {
 export type GeometryFactoryWritable = {
     precisionModel: PrecisionModelWritable;
     coordinateSequenceFactory: CoordinateSequenceFactory;
+    elevationModel: ElevationModel;
     geometryServices: NtsGeometryServicesWritable;
 };
 
@@ -1567,9 +1579,11 @@ export type LinearRingWritable = {
 
 export type NtsGeometryServicesWritable = {
     geometryOverlay: GeometryOverlay;
+    geometryRelate: GeometryRelate;
     coordinateEqualityComparer: CoordinateEqualityComparer;
     defaultCoordinateSequenceFactory: CoordinateSequenceFactory;
     defaultPrecisionModel: PrecisionModelWritable;
+    defaultElevationModel: ElevationModel;
 };
 
 export type PartyViewModelResultWritable = {

@@ -47,6 +47,7 @@ const battleDetailedViewModelSchemaResponseTransformer = (data: any) => {
 };
 
 const pointSchemaResponseTransformer = (data: any) => {
+    data.factory = geometryFactorySchemaResponseTransformer(data.factory);
     data.centroid = pointSchemaResponseTransformer(data.centroid);
     data.interiorPoint = pointSchemaResponseTransformer(data.interiorPoint);
     data.pointOnSurface = pointSchemaResponseTransformer(data.pointOnSurface);
@@ -63,7 +64,34 @@ const pointSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
+const geometryFactorySchemaResponseTransformer = (data: any) => {
+    data.elevationModel = elevationModelSchemaResponseTransformer(data.elevationModel);
+    data.geometryServices = ntsGeometryServicesSchemaResponseTransformer(data.geometryServices);
+    return data;
+};
+
+const elevationModelSchemaResponseTransformer = (data: any) => {
+    data.extent = envelopeSchemaResponseTransformer(data.extent);
+    return data;
+};
+
+const envelopeSchemaResponseTransformer = (data: any) => {
+    data.centre = coordinateSchemaResponseTransformer(data.centre);
+    return data;
+};
+
+const coordinateSchemaResponseTransformer = (data: any) => {
+    data.coordinateValue = coordinateSchemaResponseTransformer(data.coordinateValue);
+    return data;
+};
+
+const ntsGeometryServicesSchemaResponseTransformer = (data: any) => {
+    data.defaultElevationModel = elevationModelSchemaResponseTransformer(data.defaultElevationModel);
+    return data;
+};
+
 const geometrySchemaResponseTransformer = (data: any) => {
+    data.factory = geometryFactorySchemaResponseTransformer(data.factory);
     data.coordinate = coordinateSchemaResponseTransformer(data.coordinate);
     if (data.coordinates) {
         data.coordinates = data.coordinates.map((item: any) => {
@@ -76,16 +104,6 @@ const geometrySchemaResponseTransformer = (data: any) => {
     data.boundary = geometrySchemaResponseTransformer(data.boundary);
     data.envelope = geometrySchemaResponseTransformer(data.envelope);
     data.envelopeInternal = envelopeSchemaResponseTransformer(data.envelopeInternal);
-    return data;
-};
-
-const coordinateSchemaResponseTransformer = (data: any) => {
-    data.coordinateValue = coordinateSchemaResponseTransformer(data.coordinateValue);
-    return data;
-};
-
-const envelopeSchemaResponseTransformer = (data: any) => {
-    data.centre = coordinateSchemaResponseTransformer(data.centre);
     return data;
 };
 
@@ -454,6 +472,7 @@ const terrainViewModelSchemaResponseTransformer = (data: any) => {
 };
 
 const polygonSchemaResponseTransformer = (data: any) => {
+    data.factory = geometryFactorySchemaResponseTransformer(data.factory);
     data.centroid = pointSchemaResponseTransformer(data.centroid);
     data.interiorPoint = pointSchemaResponseTransformer(data.interiorPoint);
     data.pointOnSurface = pointSchemaResponseTransformer(data.pointOnSurface);
@@ -482,6 +501,7 @@ const polygonSchemaResponseTransformer = (data: any) => {
 };
 
 const lineStringSchemaResponseTransformer = (data: any) => {
+    data.factory = geometryFactorySchemaResponseTransformer(data.factory);
     data.centroid = pointSchemaResponseTransformer(data.centroid);
     data.interiorPoint = pointSchemaResponseTransformer(data.interiorPoint);
     data.pointOnSurface = pointSchemaResponseTransformer(data.pointOnSurface);
@@ -501,6 +521,7 @@ const lineStringSchemaResponseTransformer = (data: any) => {
 };
 
 const linearRingSchemaResponseTransformer = (data: any) => {
+    data.factory = geometryFactorySchemaResponseTransformer(data.factory);
     data.centroid = pointSchemaResponseTransformer(data.centroid);
     data.interiorPoint = pointSchemaResponseTransformer(data.interiorPoint);
     data.pointOnSurface = pointSchemaResponseTransformer(data.pointOnSurface);

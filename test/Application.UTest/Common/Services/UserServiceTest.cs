@@ -70,10 +70,11 @@ public class UserServiceTest : TestBase
 
     [TestCase(1.0f, 29, 1000, true)]
     [TestCase(1.1f, 30, 1000, false)]
-
     public async Task VeteranUserWithSingleHighLevelCharacterNotBeConsiderRecent(float experienceMultiplier, int characterLevel, int characterExperience, bool expectedResult)
     {
+        User user = new() { Id = 1, ExperienceMultiplier = experienceMultiplier };
         Character character = new() { UserId = 1, Level = characterLevel, Experience = characterExperience };
+        ArrangeDb.Users.Add(user);
         ArrangeDb.Characters.Add(character);
         await ArrangeDb.SaveChangesAsync();
 
@@ -82,21 +83,22 @@ public class UserServiceTest : TestBase
 
         UserService userService = new(dateTimeMock.Object, Constants);
 
-        User user = new() { Id = 1, ExperienceMultiplier = experienceMultiplier };
-
-        Assert.That(await userService.CheckIsRecentUser(ActDb, user), Is.EqualTo(expectedResult));
+        Assert.That(await userService.CheckIsRecentUser(ActDb, user.Id, CancellationToken.None), Is.EqualTo(expectedResult));
     }
 
     [Test]
     public async Task VeteranUserWithMultiplyHighLevelCharactersNotBeConsiderRecent()
     {
+        User user = new() { Id = 1, ExperienceMultiplier = 1 };
         Character[] characters =
         {
             new() { UserId = 1, Level = 29, Experience = 4000000 },
             new() { UserId = 1, Level = 29, Experience = 4000000 },
             new() { UserId = 1, Level = 29, Experience = 4000001 },
         };
+        ArrangeDb.Users.Add(user);
         ArrangeDb.Characters.AddRange(characters);
+
         await ArrangeDb.SaveChangesAsync();
 
         Mock<IDateTime> dateTimeMock = new();
@@ -104,8 +106,6 @@ public class UserServiceTest : TestBase
 
         UserService userService = new(dateTimeMock.Object, Constants);
 
-        User user = new() { Id = 1, ExperienceMultiplier = 1 };
-
-        Assert.That(await userService.CheckIsRecentUser(ActDb, user), Is.False);
+        Assert.That(await userService.CheckIsRecentUser(ActDb, user.Id, CancellationToken.None), Is.False);
     }
 }

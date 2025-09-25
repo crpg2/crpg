@@ -194,7 +194,7 @@ public class RespecializeCharacterCommandTest : TestBase
 
         Mock<IUserService> userServiceMock = new();
         userServiceMock
-            .Setup(us => us.CheckIsRecentUser(It.IsAny<CrpgDbContext>(), It.IsAny<User>()))
+            .Setup(us => us.CheckIsRecentUser(It.IsAny<CrpgDbContext>(), It.IsAny<int>(), It.IsAny<CancellationToken>()))
             .Returns(Task.FromResult(true));
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
 
@@ -211,7 +211,7 @@ public class RespecializeCharacterCommandTest : TestBase
             .FirstAsync(c => c.Id == character.Id);
 
         Assert.That(character.User!.Gold, Is.EqualTo(500));
-        userServiceMock.Verify(cs => cs.CheckIsRecentUser(It.IsAny<CrpgDbContext>(), It.IsAny<User>()));
+        userServiceMock.Verify(cs => cs.CheckIsRecentUser(It.IsAny<CrpgDbContext>(), It.IsAny<int>(), It.IsAny<CancellationToken>()));
         characterServiceMock.Verify(cs => cs.ResetCharacterCharacteristics(It.IsAny<Character>(), true));
     }
 
