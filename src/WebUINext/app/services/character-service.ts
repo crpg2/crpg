@@ -480,7 +480,7 @@ export const computeSpeedStats = (
     1.5,
   )
   const maxWeaponLength = Math.min(
-    22 + (strength - 3) * 7.5 + (Math.min(strength - 3, 24) * 0.133352143) ** 8,
+    22 + (strength - 3) * 7.5 + (Math.min(strength - 3, 24) * 0.115) ** 7.75,
     650,
   )
   const timeToMaxSpeedWeaponLenghthTerm = Math.max(

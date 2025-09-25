@@ -36,6 +36,8 @@ export const ACTIVITY_LOG_TYPE = {
   ClanArmoryRemoveItem: 'ClanArmoryRemoveItem',
   ClanArmoryReturnItem: 'ClanArmoryReturnItem',
   ClanArmoryBorrowItem: 'ClanArmoryBorrowItem',
+  TeamHitReported: 'TeamHitReported',
+  TeamHitReportedUserKicked: 'TeamHitReportedUserKicked',
 } as const satisfies Record<_ActivityLogType, _ActivityLogType>
 
 export type ActivityLogType = ValueOf<typeof ACTIVITY_LOG_TYPE>
