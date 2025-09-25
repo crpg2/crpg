@@ -72,22 +72,36 @@ public class ItemInfoVM : ViewModel
             return;
         }
 
-        if (IsArmoryItem)
+
+        if (IsArmoryItem && UserItemExtended is not null)
         {
-            if (UserLoadoutBehavior.IsArmoryItemOwner(_userItemId))
+            if (UserLoadoutBehavior is not null && UserLoadoutBehavior.GetCrpgUserItemArmoryStatus(UserItemExtended.Id, out var itemArmoryStatus))
             {
-                // ArmoryButtonText = "Remove from armory";
-                UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Remove, UserItemExtended);
-            }
-            else
-            {
-                // ArmoryButtonText = "Return to armory";
-                UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Return, UserItemExtended);
+                switch (itemArmoryStatus)
+                {
+                    case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursAvailable:
+                        UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Remove, UserItemExtended);
+                        break;
+                    case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursBorrowed:
+                        UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Remove, UserItemExtended);
+                        break;
+                    case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursAvailible:
+                        UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Borrow, UserItemExtended);
+                        break;
+                    case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursBorrowed:
+                        // maybe check clan rank for option to return to armory
+                        break;
+                    case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.BorrowedByYou:
+                        UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Return, UserItemExtended);
+                        break;
+                    default:
+                        ArmoryButtonText = "ArmoryStatusInvalid";
+                        break;
+                }
             }
         }
         else
         {
-            // ArmoryButtonText = "Add to armory";
             UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Add, UserItemExtended);
         }
     }
@@ -149,7 +163,7 @@ public class ItemInfoVM : ViewModel
         }
         else
         {
-            InformationManager.DisplayMessage(new InformationMessage($"ItemInfoVM Constructed {item.Id}", Colors.Yellow));
+            InformationManager.DisplayMessage(new InformationMessage($"ItemInfoVM Constructed userItemId: {userItemExtended?.Id} itemid: {item.Id}", Colors.Yellow));
             ItemObj = item;
             ImageIdentifier = new ImageIdentifierVM(ItemObj);
             Name = item.Name.ToString();
@@ -189,7 +203,7 @@ public class ItemInfoVM : ViewModel
 
     internal void GenerateItemInfo(ItemObject item, int userItemId = -1)
     {
-        InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateItemInfo", Colors.Yellow));
+        // InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateItemInfo", Colors.Yellow));
 
         if (item == null)
         {
@@ -266,7 +280,7 @@ public class ItemInfoVM : ViewModel
 
     private void GenerateTuplesFromItem()
     {
-        InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateTuplesFromItem", Colors.Yellow));
+        // InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateTuplesFromItem", Colors.Yellow));
         Tuples.Clear();
         if (ItemObj == null)
         {
@@ -585,7 +599,7 @@ public class ItemInfoVM : ViewModel
             IsGoldVisible = true,
         });
 
-        InformationManager.DisplayMessage(new InformationMessage($"Tuples Generated: {Tuples.Count} ", Colors.Yellow));
+        // InformationManager.DisplayMessage(new InformationMessage($"Tuples Generated: {Tuples.Count} ", Colors.Yellow));
     }
 
     private int ComputeAverageRepairCostPerHour(int price)
@@ -624,7 +638,7 @@ public class ItemInfoVM : ViewModel
             });
         }
 
-        InformationManager.DisplayMessage(new InformationMessage($"Rows Generated: {Rows.Count} ", Colors.Yellow));
+        // InformationManager.DisplayMessage(new InformationMessage($"Rows Generated: {Rows.Count} ", Colors.Yellow));
     }
 
     private void AddWeaponStat(string category, int value, CrpgDamageType? damageType = null, bool skipIfZero = true)

@@ -67,31 +67,12 @@
                   </Children>
                 </Widget>
                 <!-- end scrolling item grid -->
-                <CrpgButtonPrefab Parameter.ButtonText="Refresh API"/>
-                <!--
-                <BrushWidget Id="ButtonBackgroundFrame" 
-                            WidthSizePolicy="Fixed" SuggestedWidth="120"
-                            HeightSizePolicy="Fixed" SuggestedHeight="40"
-                            VerticalAlignment="Center" HorizontalAlignment="Center"
-                            MarginBottom="5"
-                            PassEventsToParent="false"
-                            Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+                <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod="HorizontalLeftToRight" Spacing="2">
                   <Children>
-                    <ButtonWidget Id="ButtonRefreshFromApi" Brush="CharacterEdit.Button"
-                              WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
-                              MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10"
-                              AcceptDrag="false"
-                              DoNotPassEventsToChildren="true"
-                              Command.Click="ExecuteClick"
-                              IsEnabled="true" />
-                    <TextWidget Text="Refresh API" WidthSizePolicy="Fixed" SuggestedWidth="100" HeightSizePolicy="Fixed" SuggestedHeight="30"
-                      MarginTop="5"
-                      DoNotAcceptEvents="true"
-                      HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
+                    <CrpgButtonPrefab Parameter.ButtonText="User Inventory" Parameter.ButtonIsSelected="@UserInventorySelected" Parameter.CommandClick="ExecuteClickUserInventory"/>
+                    <CrpgButtonPrefab Parameter.ButtonText="Armory" Parameter.ButtonIsSelected="@ArmorySelected" Parameter.CommandClick="ExecuteClickArmory"/>
                   </Children>
-                </BrushWidget>
-                -->
-
+                </ListPanel>
               </Children>
             </ListPanel>
           </Children>           

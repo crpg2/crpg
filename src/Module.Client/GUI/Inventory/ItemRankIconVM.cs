@@ -36,7 +36,7 @@ public class ItemRankIconVM : ViewModel
 
     private void SetItemRankIconsVisible(int rank)
     {
-        InformationManager.DisplayMessage(new InformationMessage($"ItemRankIconVM set to {rank}"));
+        // InformationManager.DisplayMessage(new InformationMessage($"ItemRankIconVM set to {rank}"));
         // Rank 0 no image
         Rank1Visible = false;
         Rank2Visible = false;

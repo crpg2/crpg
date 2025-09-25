@@ -79,6 +79,11 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
                         }
                         else
                         {
+                            if (apiRes?.Data != null)
+                            {
+                                result.ArmoryItems.Add(apiRes.Data);
+                            }
+
                             result.Success = true;
                             Debug.Print($"Added item {request.UserItemId} to clan {request.ClanId}");
                         }

@@ -72,21 +72,18 @@ public class InventorySlotVM : ViewModel
                 return;
             }
 
-            if (UserLoadoutBehavior is not null)
-            {
-                UserLoadoutBehavior.OnEquipmentSlotUpdated += HandleUpdateEvent;
-                UserLoadoutBehavior.OnUserInventoryUpdated += HandleUpdateEvent;
-                UserLoadoutBehavior.OnUserCharacterEquippedItemsUpdated += HandleUpdateEvent;
-                UserLoadoutBehavior.OnClanArmoryUpdated += HandleUpdateEvent;
-                UserLoadoutBehavior.OnArmoryActionUpdated += HandleUpdateEvent;
+            UserLoadoutBehavior.OnEquipmentSlotUpdated += HandleUpdateEvent;
+            UserLoadoutBehavior.OnUserInventoryUpdated += HandleUpdateEvent;
+            UserLoadoutBehavior.OnUserCharacterEquippedItemsUpdated += HandleUpdateEvent;
+            UserLoadoutBehavior.OnClanArmoryUpdated += HandleUpdateEvent;
+            UserLoadoutBehavior.OnArmoryActionUpdated += HandleUpdateEvent;
 
-                if (_isArmoryItem)
-                {
-                    IsDraggable = !UserLoadoutBehavior.IsArmoryItemOwner(_userItemId); // dont let equip if armory item and owner
-                    _itemArmoryIcon?.UpdateItemArmoyIconFromItem(_userItemId);
-                }
+            if (_isArmoryItem)
+            {
+                //IsDraggable = !UserLoadoutBehavior.IsArmoryItemOwner(_userItemId); // dont let equip if armory item and owner
+                IsDraggable = CanDragSlot();
+                _itemArmoryIcon?.UpdateItemArmoyIconFromItem(_userItemId);
             }
-            // SetItemRankIconsVisible(_itemRank);
 
             CheckItemEquipped();
         }
@@ -111,14 +108,16 @@ public class InventorySlotVM : ViewModel
 
     public override void OnFinalize()
     {
-        if (UserLoadoutBehavior is not null)
+        if (UserLoadoutBehavior is null)
         {
-            UserLoadoutBehavior.OnEquipmentSlotUpdated -= HandleUpdateEvent;
-            UserLoadoutBehavior.OnUserInventoryUpdated -= HandleUpdateEvent;
-            UserLoadoutBehavior.OnUserCharacterEquippedItemsUpdated -= HandleUpdateEvent;
-            UserLoadoutBehavior.OnClanArmoryUpdated -= HandleUpdateEvent;
-            UserLoadoutBehavior.OnArmoryActionUpdated += HandleUpdateEvent;
+            return;
         }
+
+        UserLoadoutBehavior.OnEquipmentSlotUpdated -= HandleUpdateEvent;
+        UserLoadoutBehavior.OnUserInventoryUpdated -= HandleUpdateEvent;
+        UserLoadoutBehavior.OnUserCharacterEquippedItemsUpdated -= HandleUpdateEvent;
+        UserLoadoutBehavior.OnClanArmoryUpdated -= HandleUpdateEvent;
+        UserLoadoutBehavior.OnArmoryActionUpdated -= HandleUpdateEvent;
     }
 
     public void HandleUpdateEvent(CrpgItemSlot slot)
@@ -134,25 +133,11 @@ public class InventorySlotVM : ViewModel
     public void HandleUpdateEvent()
     {
         HandleUpdateEvent(UserItemId);
-        /*
-        if (UserLoadoutBehavior is not null)
-        {
-            // Check user inventory item
-            var uItem = UserLoadoutBehavior.FindUserInventoryItemByUserItemId(_userItemId);
-            if (uItem is not null)
-            {
-                IsEquipped = UserLoadoutBehavior.IsItemEquipped(uItem.Id);
-            }
-
-            // Check clan armory item
-            CheckItemArmoryStatus();
-        }
-        */
     }
 
     internal void HandleUpdateEvent(int userItemId)
     {
-        InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: HandleUpdateEvent({userItemId})"));
+        // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: HandleUpdateEvent({userItemId})"));
         if (UserLoadoutBehavior is not null)
         {
             // Try to fetch the latest version of this item from client behavior, not API
@@ -161,7 +146,7 @@ public class InventorySlotVM : ViewModel
             // If it doesn’t exist anymore, clear it
             if (latestItem == null)
             {
-                InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: HandleUpdateEvent({userItemId}) -- latestItem is null", Colors.Red));
+                // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: HandleUpdateEvent({userItemId}) -- latestItem is null", Colors.Red));
                 UserItemEx = null;
                 return;
             }
@@ -169,7 +154,7 @@ public class InventorySlotVM : ViewModel
             // If this slot is tracking the same item, update it
             if (UserItemEx?.Id == userItemId)
             {
-                InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: HandleUpdateEvent({userItemId}) setting UserItemEx"));
+                // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: HandleUpdateEvent({userItemId}) setting UserItemEx"));
                 UserItemEx = latestItem;
             }
         }
@@ -177,7 +162,7 @@ public class InventorySlotVM : ViewModel
 
     private void ApplyUserItemEx(CrpgUserItemExtended? uItem)
     {
-        InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ApplyUserItemEx() {uItem?.ItemId}"));
+        // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ApplyUserItemEx() {uItem?.ItemId}"));
         if (uItem == null)
         {
             UserItemId = -1;
@@ -195,7 +180,7 @@ public class InventorySlotVM : ViewModel
         UserItemId = uItem.Id;
         ItemRank = uItem.Rank;
         IsArmoryItem = uItem.IsArmoryItem;
-        IsDraggable = !(IsArmoryItem && UserLoadoutBehavior?.IsArmoryItemOwner(_userItemId) == true);
+        IsDraggable = CanDragSlot();
         IsEquipped = UserLoadoutBehavior?.IsItemEquipped(uItem.Id) ?? false;
 
         // If you have a stack amount
@@ -203,7 +188,28 @@ public class InventorySlotVM : ViewModel
         // QuantityText = ItemQuantity > 1 ? ItemQuantity.ToString() : string.Empty;
         ItemRankIcon = new ItemRankIconVM(_itemRank);
         ItemArmoryIcon?.UpdateItemArmoyIconFromItem(uItem.Id);
+    }
 
+    private bool CanDragSlot()
+    {
+        if (!IsArmoryItem || UserItemEx is null || UserLoadoutBehavior is null)
+        {
+            return true;
+        }
+
+        if (!UserLoadoutBehavior.GetCrpgUserItemArmoryStatus(UserItemEx.Id, out var status))
+        {
+            return true;
+        }
+
+        return status switch
+        {
+            CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursAvailable => false,
+            CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursBorrowed => false,
+            CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursAvailible => false,
+            CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursBorrowed => false,
+            _ => true,
+        };
     }
 
     [DataSourceProperty]
@@ -287,7 +293,7 @@ public class InventorySlotVM : ViewModel
     {
         if (ItemObj != null)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteDragBegin()"));
+            // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteDragBegin()"));
             OnItemDragBegin?.Invoke(ItemObj);
         }
     }
@@ -296,8 +302,7 @@ public class InventorySlotVM : ViewModel
     {
         if (ItemObj != null)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteDragdEnd()"));
-
+            // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteDragdEnd()"));
             OnItemDragEnd?.Invoke(ItemObj);
         }
     }
@@ -326,19 +331,18 @@ public class InventorySlotVM : ViewModel
 
     private void CheckItemEquipped()
     {
-        UserLoadoutBehavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (UserLoadoutBehavior == null || UserLoadoutBehavior.UserInventoryItems == null)
+        if (UserLoadoutBehavior is null || UserLoadoutBehavior.UserInventoryItems is null || UserLoadoutBehavior.EquippedItems is null)
         {
             return;
         }
 
-        var equipped = UserLoadoutBehavior.EquippedItems
+        var equipped = UserLoadoutBehavior?.EquippedItems
         .FirstOrDefault(e => e.UserItem.Id == _userItemId);
 
         if (equipped != null)
         {
             // Item is equipped
-            InformationManager.DisplayMessage(new InformationMessage($"Item {_itemName} is equipped in slot {equipped.Slot}"));
+            // InformationManager.DisplayMessage(new InformationMessage($"Item {_itemName} is equipped in slot {equipped.Slot}"));
 
             // Example: you could set a flag for UI
             IsEquipped = true;

@@ -244,8 +244,8 @@ public class GamesController : BaseController
     {
         return ResultToActionAsync(Mediator.Send(new GameBorrowItemFromClanArmoryCommand
         {
-            UserId = req.UserId,
             UserItemId = userItemId,
+            UserId = req.UserId,
             ClanId = clanId,
         }));
     }

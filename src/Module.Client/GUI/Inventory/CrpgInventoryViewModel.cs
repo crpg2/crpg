@@ -122,7 +122,7 @@ public class CrpgInventoryViewModel : ViewModel
         {
             UserLoadoutBehavior.OnEquipmentSlotUpdated -= HandleEquipmentSlotUpdated;
             UserLoadoutBehavior.OnUserInventoryUpdated -= HandleInventoryUpdated;
-            UserLoadoutBehavior.OnClanArmoryUpdated += HandleClanArmoryUpdated;
+            UserLoadoutBehavior.OnClanArmoryUpdated -= HandleClanArmoryUpdated;
             UserLoadoutBehavior.OnUserCharacterEquippedItemsUpdated -= HandleEquippedItemsUpdated;
             UserLoadoutBehavior.OnUserCharacterBasicUpdated -= HandleUserCharacterBasicUpdated;
             UserLoadoutBehavior.OnUserCharacteristicsUpdated -= HandleUserCharacteristicsUpdated;
@@ -230,16 +230,19 @@ public class CrpgInventoryViewModel : ViewModel
             {
                 if (eSlot.UserItemId == uItemId)
                 {
+                    // unequip the item?
                     // Do something special for this one
                     // eSlot.
                 }
             }
         }
 
+        // remove from armory or add?
         // update inventory slots
         if (UserLoadoutBehavior != null)
         {
-
+            HandleClanArmoryUpdated();
+            HandleInventoryUpdated();
         }
 
         // update inventorygrid/slots
@@ -299,7 +302,7 @@ public class CrpgInventoryViewModel : ViewModel
         {
             userItemId = inv.UserItemId;
             draggedItemObject = inv.ItemObj;
-            LogDebug($"[CrpgInventoryVM] Inventory item dropped: {inv.ItemName} (UserItemId: {userItemId}) into slot {targetSlot.CrpgItemSlotIndex}");
+            LogDebugError($"[CrpgInventoryVM] Inventory item dropped: {inv.ItemName} (UserItemId: {userItemId}) into slot {targetSlot.CrpgItemSlotIndex}");
         }
         else if (draggedItem is EquipmentSlotVM eq)
         {
@@ -318,13 +321,13 @@ public class CrpgInventoryViewModel : ViewModel
         }
         else
         {
-            LogDebug("[CrpgInventoryVM] Dropped unknown item type", Colors.Red);
+            LogDebugError("[CrpgInventoryVM] Dropped unknown item type");
             return;
         }
 
         if (draggedItemObject == null)
         {
-            LogDebug("[CrpgInventoryVM] No Object to drag", Colors.Red);
+            LogDebugError("[CrpgInventoryVM] No Object to drag");
             return;
         }
 
@@ -479,15 +482,23 @@ public class CrpgInventoryViewModel : ViewModel
 
         var items = behavior.UserInventoryItems
             .Where(ui => !string.IsNullOrEmpty(ui.ItemId))
-            .Select(ui =>
-            {
-                var obj = MBObjectManager.Instance.GetObject<ItemObject>(ui.ItemId);
-                return obj != null ? (obj, 1, ui) : default;
-            })
-            .Where(t => t.obj != null)
+            .Select(ui => (MBObjectManager.Instance.GetObject<ItemObject>(ui.ItemId), 1, ui))
+            .Where(t => t.Item1 != null)
             .ToList();
 
-        InventoryGrid.SetAvailableItems(items);
+        InventoryGrid.SetInventoryItems(items);
+        /*
+                var items = behavior.UserInventoryItems
+                    .Where(ui => !string.IsNullOrEmpty(ui.ItemId))
+                    .Select(ui =>
+                    {
+                        var obj = MBObjectManager.Instance.GetObject<ItemObject>(ui.ItemId);
+                        return obj != null ? (obj, 1, ui) : default;
+                    })
+                    .Where(t => t.obj != null)
+                    .ToList();
+        */
+        // InventoryGrid.SetAvailableItems(items);
         InventoryGrid.InitializeFilteredItemsList();
 
         foreach (var slot in InventoryGrid.AvailableItems)
@@ -513,6 +524,39 @@ public class CrpgInventoryViewModel : ViewModel
             LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found", Colors.Red);
             return;
         }
+
+        if (behavior.ClanArmoryItems == null || behavior.ClanArmoryItems.Count == 0)
+        {
+            LogDebug("[CrpgInventoryVM] No clan armory items available.");
+            InventoryGrid.SetArmoryItems(Array.Empty<(ItemObject, int, CrpgUserItemExtended)>());
+            return;
+        }
+
+        var items = behavior.ClanArmoryItems
+            // keep only entries with a valid UserItem and ItemId
+            .Where(ai => ai.UserItem is { ItemId: { Length: > 0 } })
+            // now we can safely use ai.UserItem without null-forgiving
+            .Select(ai =>
+            {
+                var userItem = ai.UserItem!; // safe because of pattern above
+                var itemObj = MBObjectManager.Instance.GetObject<ItemObject>(userItem.ItemId);
+                return (itemObj, 1, userItem);
+            })
+            // drop anything where the ItemObject lookup failed
+            .Where(t => t.itemObj != null)
+            .ToList();
+
+        InventoryGrid.SetArmoryItems(items);
+        InventoryGrid.InitializeFilteredItemsList();
+
+        foreach (var slot in InventoryGrid.AvailableItems)
+        {
+            slot.OnItemDragBegin -= HandleItemDragBegin;
+            slot.OnItemDragEnd -= HandleItemDragEnd;
+
+            slot.OnItemDragBegin += HandleItemDragBegin;
+            slot.OnItemDragEnd += HandleItemDragEnd;
+        }
     }
 
     private void HandleEquippedItemsUpdated()
@@ -534,7 +578,7 @@ public class CrpgInventoryViewModel : ViewModel
                 var itemObj = MBObjectManager.Instance.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
                 slotVm.SetItem(new ImageIdentifierVM(itemObj), itemObj, equippedItem.UserItem);
                 // LogDebug($"[CrpgInventoryVM] Updated slot {slotVm.CrpgItemSlotIndex} with item {itemObj?.Name}");
-                InformationManager.DisplayMessage(new InformationMessage($"{equippedItem.UserItem.ItemId} - IsArmoryItem:{equippedItem.UserItem.IsArmoryItem}", Colors.Cyan));
+                //InformationManager.DisplayMessage(new InformationMessage($"{equippedItem.UserItem.ItemId} - IsArmoryItem:{equippedItem.UserItem.IsArmoryItem}", Colors.Cyan));
             }
             else
             {
@@ -586,7 +630,7 @@ public class CrpgInventoryViewModel : ViewModel
         var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (behavior == null)
         {
-            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found", Colors.Red);
+            LogDebugError("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found");
             return;
         }
 

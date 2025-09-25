@@ -33,6 +33,8 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     // Public read-only access
     public IReadOnlyList<CrpgEquippedItemExtended> EquippedItems => _equippedItems;
     public IReadOnlyList<CrpgUserItemExtended> UserInventoryItems => _userInventoryItems;
+    public IReadOnlyList<CrpgClanArmoryItem> ClanArmoryItems => _clanArmoryItems;
+
     public CrpgCharacter UserCharacter { get; private set; } = new();
     public CrpgCharacterStatistics UserCharacterStatistics { get; private set; } = new();
     public CrpgConstants Constants { get; }
@@ -167,6 +169,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         // Determine clan ID and user ID if needed
         int clanId = crpgPeer?.Clan?.Id ?? -1;
         int userId = crpgPeer?.User?.Id ?? -1;
+        int uItemId = uItem?.Id ?? -1;
 
         if (clanId < 0)
         {
@@ -178,7 +181,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         {
             ActionType = action,
             ClanId = clanId,
-            UserItemId = uItem?.Id ?? -1,
+            UserItemId = uItemId,
             UserId = userId,
         };
 
@@ -261,6 +264,21 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         }
     }
 
+    internal void RemoveClanArmoryItem(int userItemId)
+    {
+        var itemToRemove = _clanArmoryItems
+            .FirstOrDefault(e => e.UserItem?.Id == userItemId);
+
+        if (itemToRemove != null)
+        {
+            _clanArmoryItems.Remove(itemToRemove);
+        }
+    }
+
+
+    /*        return UserInventoryItems.FirstOrDefaultQ(item =>
+                item.Id >= 0 && item.Id == uItemId);
+                */
     internal bool IsItemEquipped(int userItemId)
     {
         return EquippedItems.Any(e => e.UserItem.Id == userItemId);
@@ -279,16 +297,6 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 
         return userItemEx?.UserId == currentUserId;
         //        return _clanArmoryItems.Any(e => e.UserItem?.Id == userItemId && e.UserItem?.UserId == currentUserId);
-    }
-
-    internal bool IsArmoryItemOwner(CrpgUserItemExtended item)
-    {
-        if (item == null)
-        {
-            return false;
-        }
-
-        return _clanArmoryItems.Any(e => e.UserItem?.Id == item.Id && e.UserItem?.UserId == item.UserId);
     }
 
     internal bool IsArmoryItemBorrower(int itemId)
@@ -333,7 +341,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         if (userItemEx is null || !userItemEx.IsArmoryItem)
         {
             // Not an armory item, nothing to do
-            LogDebugError($"GetCrpgUserItemArmoryStatus: userItemEx null or not armoryItem");
+            // LogDebugError($"GetCrpgUserItemArmoryStatus: userItemEx null or not armoryItem");
             return false;
         }
 
@@ -341,7 +349,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         if (clanArmoryItem is null)
         {
             // It's flagged as armory item, but not found in clan armory
-            LogDebugError($"GetCrpgUserItemArmoryStatus: userItemId not found in clan armory");
+            // LogDebugError($"GetCrpgUserItemArmoryStatus: userItemId not found in clan armory");
             return false;
         }
 
@@ -355,21 +363,21 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
             armoryStatus = isBorrowed
                 ? CrpgGameArmoryItemStatus.YoursBorrowed
                 : CrpgGameArmoryItemStatus.YoursAvailable;
-            LogDebugError($"armoryStatus: {armoryStatus}");
+            // LogDebugError($"armoryStatus: {armoryStatus}");
             return true;
         }
 
         if (isBorrower)
         {
             armoryStatus = CrpgGameArmoryItemStatus.BorrowedByYou;
-            LogDebugError($"armoryStatus: {armoryStatus}");
+            // LogDebugError($"armoryStatus: {armoryStatus}");
             return true;
         }
 
         armoryStatus = isBorrowed
             ? CrpgGameArmoryItemStatus.NotYoursBorrowed
             : CrpgGameArmoryItemStatus.NotYoursAvailible;
-        LogDebugError($"armoryStatus: {armoryStatus}");
+        // LogDebugError($"armoryStatus: {armoryStatus}");
         return true;
     }
 
@@ -403,6 +411,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         _clanArmoryItems.Clear();
         _clanArmoryItems.AddRange(armoryItems);
     }
+
 
     internal CrpgUserItemExtended? GetCrpgUserItem(int uItemId)
     {
@@ -554,13 +563,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
                     // remove if equipped
                     RemoveEquippedItem(userInventoryItem.Id);
                     // Not in the list yet → add it
-                    var newArmoryItem = new CrpgClanArmoryItem
-                    {
-                        UserItem = userInventoryItem,
-                        BorrowedItem = null,
-                    };
-                    _clanArmoryItems.Add(newArmoryItem);
-
+                    _clanArmoryItems.Add(message.ArmoryItems[0]);
                     userInventoryItem.IsArmoryItem = true;
 
                     LogDebugError($"userItem: {message.UserItemId} added to clanId: {message.ClanId} armory successfully!");
@@ -599,6 +602,12 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
                     if (userInventoryItem != null)
                     {
                         userInventoryItem.IsArmoryItem = true;
+                    }
+                    else
+                    {
+                        // Add the borrowed item to user inventory
+                        _userInventoryItems.Add(clanArmoryItem.UserItem);
+                        userInventoryItem = clanArmoryItem.UserItem;
                     }
 
                     LogDebugError($"userItem: {message.UserItemId} borrowed from clanId: {message.ClanId} armory successfully!");
@@ -646,7 +655,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
                 {
                     Debug.Print("No items in armory.");
                 }
-
+                OnClanArmoryUpdated?.Invoke();
                 break;
 
             default:
@@ -746,6 +755,17 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 
         if (msg.UserItemId != -1)
         {
+            // First try to find in user inventory
+            userItem = _userInventoryItems.FirstOrDefault(i => i.Id == msg.UserItemId);
+
+            // If not found, maybe it’s a borrowed armory item
+            if (userItem == null)
+            {
+                userItem = _clanArmoryItems
+                    .FirstOrDefault(a => a.UserItem?.Id == msg.UserItemId)
+                    ?.UserItem;
+            }
+            /*
             // Find inventory entry to populate ItemId
             var inv = _userInventoryItems.FirstOrDefault(i => i.Id == msg.UserItemId);
             if (inv != null)
@@ -762,6 +782,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
                     IsPersonal = inv.IsPersonal,
                 };
             }
+            */
         }
 
         // Update only the affected slot

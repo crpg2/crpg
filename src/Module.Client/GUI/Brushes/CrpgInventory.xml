@@ -239,7 +239,7 @@
     </Layers>
     <Styles>
       <Style Name="Default">
-        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#c50c0cff" />
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#b83939ff" />
       </Style>       
     </Styles>
   </Brush>
@@ -249,7 +249,7 @@
     </Layers>
     <Styles>
       <Style Name="Default">
-        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#142fc5ff" />
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#3a4ec2ff" />
       </Style>       
     </Styles>
   </Brush>      

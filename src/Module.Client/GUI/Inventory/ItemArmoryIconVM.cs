@@ -60,7 +60,7 @@ public class ItemArmoryIconVM : ViewModel
     private void SetArmoryIconsVisible(int status)
     {
         var converted = (CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus)status;
-        InformationManager.DisplayMessage(new InformationMessage($"ItemArmoryIconVM set to {converted}"));
+        // InformationManager.DisplayMessage(new InformationMessage($"ItemArmoryIconVM set to {converted}"));
         // status 0 no image
         YoursAvailable = false;
         YoursBorrowed = false;
