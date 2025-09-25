@@ -31,6 +31,7 @@ public record UserViewModel : IMapFrom<User>
     public void Mapping(Profile profile)
     {
         profile.CreateMap<User, UserViewModel>()
-            .ForMember(u => u.UnreadNotificationsCount, opt => opt.MapFrom(u => u.Notifications.Where(un => un.State == NotificationState.Unread).Count()));
+            .ForMember(u => u.UnreadNotificationsCount, opt => opt.MapFrom(u => u.Notifications.Where(un => un.State == NotificationState.Unread).Count()))
+            .ForMember(dest => dest.IsRecent, opt => opt.Ignore());
     }
 }
