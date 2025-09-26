@@ -1,3 +1,6 @@
+import type { FilterFnOption } from '@tanstack/vue-table'
+import type { ValueOf } from 'type-fest'
+
 import type { ItemFieldCompareRule, ItemFieldFormat, ItemFlat, ItemType, WeaponClass } from '~/models/item'
 
 import {
@@ -17,239 +20,243 @@ export interface AggregationOptions {
 
 export type AggregationConfig = Partial<Record<keyof ItemFlat, AggregationOptions>>
 
-export enum AggregationView {
-  Range = 'Range',
-  Checkbox = 'Checkbox',
-  Toggle = 'Toggle',
-}
+export const AGGREGATION_VIEW = {
+  Range: 'Range',
+  Checkbox: 'Checkbox',
+  Toggle: 'Toggle',
+} as const
+
+export type AggregationView = ValueOf<typeof AGGREGATION_VIEW>
 
 export const aggregationsConfig: AggregationConfig = {
   culture: {
-    view: AggregationView.Checkbox,
+    view: AGGREGATION_VIEW.Checkbox,
   },
   flags: {
     format: ITEM_FIELD_FORMAT.List,
-    view: AggregationView.Checkbox,
+    view: AGGREGATION_VIEW.Checkbox,
     width: 160,
   },
   id: {
-    view: AggregationView.Checkbox,
+    view: AGGREGATION_VIEW.Checkbox,
     hidden: true,
   },
   modId: {
-    view: AggregationView.Checkbox,
+    view: AGGREGATION_VIEW.Checkbox,
     hidden: true,
   },
   isNew: {
-    view: AggregationView.Toggle,
+    view: AGGREGATION_VIEW.Toggle,
     hidden: true,
   },
   price: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Less,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
     width: 200,
   },
   requirement: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Less,
     format: ITEM_FIELD_FORMAT.Requirement,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   tier: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   type: {
-    view: AggregationView.Toggle,
+    view: AGGREGATION_VIEW.Toggle,
+    format: ITEM_FIELD_FORMAT.String,
     hidden: true,
   },
   upkeep: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Less,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   weight: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Less,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
 
   // Armor
   armArmor: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   armorFamilyType: {
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Checkbox,
+    view: AGGREGATION_VIEW.Checkbox,
   },
   armorMaterialType: {
     format: ITEM_FIELD_FORMAT.List,
-    view: AggregationView.Checkbox,
+    view: AGGREGATION_VIEW.Checkbox,
   },
   bodyArmor: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   headArmor: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   legArmor: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
 
   // Mount
   bodyLength: {
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   chargeDamage: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   hitPoints: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   maneuver: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   mountFamilyType: {
-    view: AggregationView.Checkbox,
     format: ITEM_FIELD_FORMAT.Number,
+    view: AGGREGATION_VIEW.Checkbox,
   },
   speed: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
 
   // Mount armor
   mountArmor: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   mountArmorFamilyType: {
-    view: AggregationView.Checkbox,
+    view: AGGREGATION_VIEW.Checkbox,
   },
 
   // Weapon
   handling: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   length: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   swingDamage: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Damage,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   swingDamageType: {
-    view: AggregationView.Checkbox,
+    view: AGGREGATION_VIEW.Checkbox,
   },
   swingSpeed: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   thrustDamage: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Damage,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   thrustDamageType: {
-    view: AggregationView.Checkbox,
+    view: AGGREGATION_VIEW.Checkbox,
   },
   thrustSpeed: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   weaponClass: {
-    view: AggregationView.Toggle,
+    view: AGGREGATION_VIEW.Toggle,
+    format: ITEM_FIELD_FORMAT.String,
     hidden: true,
   },
   weaponUsage: {
-    view: AggregationView.Checkbox,
-    // hidden: true,
+    view: AGGREGATION_VIEW.Checkbox,
+    // hidden: true, // TODO: FIXME:
   },
 
   // Throw/Bow/Xbow
   accuracy: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   missileSpeed: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
 
   // Bow/Xbow
   aimSpeed: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   reloadSpeed: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
 
   // Arrows/Bolts/Thrown
   damage: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Damage,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   damageType: {
-    view: AggregationView.Checkbox,
+    view: AGGREGATION_VIEW.Checkbox,
   },
   stackAmount: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   stackWeight: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Less,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
 
   // SHIELD
   shieldArmor: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   shieldDurability: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
   shieldSpeed: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
     format: ITEM_FIELD_FORMAT.Number,
-    view: AggregationView.Range,
+    view: AGGREGATION_VIEW.Range,
   },
 }
 
@@ -373,6 +380,13 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'swingSpeed',
     ..._tail,
   ],
+  [ITEM_TYPE.Ammo]: [
+    'damageType',
+    'damage',
+    'stackWeight',
+    'stackAmount',
+    ..._tail,
+  ],
   // banners are all the same, no need for aggregation
   [ITEM_TYPE.Banner]: [
     'flags',
@@ -383,27 +397,6 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
 }
 
 export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<keyof ItemFlat>>> = {
-  [WEAPON_CLASS.Arrow]: [
-    'damageType',
-    'damage',
-    'stackWeight',
-    'stackAmount',
-    ..._tail,
-  ],
-  [WEAPON_CLASS.Bolt]: [
-    'damageType',
-    'damage',
-    'stackWeight',
-    'stackAmount',
-    ..._tail,
-  ],
-  [WEAPON_CLASS.Cartridge]: [
-    'damageType',
-    'damage',
-    'weight',
-    'stackAmount',
-    ..._tail,
-  ],
   [WEAPON_CLASS.Bow]: [
     'flags',
     'weight',
@@ -531,4 +524,24 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'swingSpeed',
     ..._tail,
   ],
+}
+
+export function getFilterFn(options: AggregationOptions): FilterFnOption<any> {
+  if (options.view === AGGREGATION_VIEW.Toggle && options.format === ITEM_FIELD_FORMAT.String) {
+    return 'equalsString'
+  }
+
+  if (options.view === AGGREGATION_VIEW.Range) {
+    return 'inNumberRange'
+  }
+
+  if (options.view === AGGREGATION_VIEW.Checkbox) {
+    if (options.format === ITEM_FIELD_FORMAT.List) {
+      return 'arrIncludesSome'
+    }
+
+    return includesSome
+  }
+
+  return 'auto'
 }

@@ -55,6 +55,7 @@ export const WEAPON_CLASS = {
   Arrow: 'Arrow',
   Bolt: 'Bolt',
   Cartridge: 'Cartridge',
+  Bullets: 'Bullets',
   Bow: 'Bow',
   Crossbow: 'Crossbow',
   Boulder: 'Boulder',
@@ -337,6 +338,7 @@ export const ITEM_FIELD_FORMAT = {
   Damage: 'Damage',
   Requirement: 'Requirement',
   Number: 'Number',
+  String: 'String',
 } as const
 
 export type ItemFieldFormat = ValueOf<typeof ITEM_FIELD_FORMAT>

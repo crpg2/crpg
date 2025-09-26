@@ -2,7 +2,7 @@
 import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState } from '@tanstack/vue-table'
 
-import { getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useVueTable } from '@tanstack/vue-table'
+import { functionalUpdate, getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useVueTable } from '@tanstack/vue-table'
 
 import type { Item, ItemType } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
@@ -11,6 +11,7 @@ import { useMainHeader } from '~/composables/app/use-main-header'
 import { useStickySidebar } from '~/composables/use-sticky-sidebar'
 import { ITEM_TYPE } from '~/models/item'
 import { getFacetsByItemType } from '~/services/item-search-service'
+import { aggregationsConfig, getFilterFn } from '~/services/item-search-service/aggregations'
 
 const { sortingConfig, items, withPagination = true, loading = false } = defineProps<{
   items: T[]
@@ -25,8 +26,17 @@ const { mainHeaderHeight } = useMainHeader()
 const aside = useTemplateRef('aside')
 const { top: stickySidebarTop } = useStickySidebar(aside, mainHeaderHeight.value + 16, 16 /** 1rem */)
 
-const itemTypes = computed(() => getFacetsByItemType(items.map(wrapper => wrapper.item.type)))
 const itemType = ref<ItemType>(ITEM_TYPE.Undefined)
+const itemTypes = computed(() => getFacetsByItemType(items.map(wrapper => wrapper.item.type)))
+
+watch(itemType, () => {
+  window.scrollTo({
+    behavior: 'smooth',
+    top: 0,
+  })
+})
+
+const { pagination, setPagination } = usePagination({ pageSize: 20 })
 
 const sortingItems = computed(() => Object.keys(sortingConfig).map<SelectItem>(key => ({
   label: t(`item.sort.${key}`),
@@ -52,6 +62,7 @@ const columns: TableColumn<T>[] = [
   {
     accessorFn: row => row.item.type,
     id: 'type',
+    filterFn: getFilterFn(aggregationsConfig.type!),
   },
   {
     accessorFn: row => row.item.price,
@@ -85,14 +96,15 @@ const grid = useVueTable({
     get columnFilters() {
       return columnFilters.value
     },
-  },
-  initialState: {
-    pagination: {
-      pageSize: 20,
+    get pagination() {
+      return pagination.value
     },
   },
   ...(withPagination && {
     getPaginationRowModel: getPaginationRowModel(),
+    onPaginationChange: (updater) => {
+      setPagination(functionalUpdate(updater, pagination.value))
+    },
   }),
 })
 
@@ -164,24 +176,18 @@ const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, ro
       </div>
 
       <div style="grid-area: footer" class="sticky bottom-4 z-10 space-y-3">
-        <UPagination
-          v-if="withPagination && grid.getCanNextPage() || grid.getCanPreviousPage()"
-          :ui="{
-            list: 'justify-center',
-          }"
-          :page="grid.getState().pagination.pageIndex + 1"
-          variant="soft"
-          active-variant="solid"
-          active-color="primary"
-          :show-controls="false"
-          show-edges
-          :total="grid.getFilteredRowModel().rows.length"
-          :default-page="(grid.initialState.pagination.pageIndex || 0) + 1"
-          :items-per-page="grid.initialState.pagination.pageSize"
-          @update:page="(p) => grid.setPageIndex(p - 1)"
+        <UiGridPagination
+          v-if="withPagination"
+          :table-api="toRef(() => grid)"
         />
 
-        <slot name="footer" v-bind="{ filteredItemsCost, filteredItemsCount: grid.getRowModel().rows.length, totalItemsCount: grid.getFilteredRowModel().rows.length }" />
+        <slot
+          name="footer"
+          v-bind="{
+            filteredItemsCost,
+            filteredItemsCount: grid.getRowModel().rows.length,
+            totalItemsCount: grid.getFilteredRowModel().rows.length }"
+        />
       </div>
     </div>
 

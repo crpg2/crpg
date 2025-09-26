@@ -106,6 +106,7 @@ const { state: clanMembers } = useAsyncState(
 )
 
 const hideInArmoryItemsModel = useStorage<boolean>('character-inventory-in-armory-items', true)
+
 const items = computed(() => {
   if (!hideInArmoryItemsModel.value) {
     return userItems.value
@@ -219,18 +220,16 @@ const items = computed(() => {
 
     <div
       :style="{ top: `calc(${mainHeaderHeight}px + 1rem)` }"
-      class="sticky left-0 col-span-5 self-start"
+      class="sticky left-0 col-span-5 space-y-3 self-start"
     >
       <CharacterInventoryDoll
         :character-characteristics="characterCharacteristics"
         :equipped-items="equippedItemsBySlot"
         :items-stats-overall="itemsOverallStats"
       />
-
       <UCard
         style="grid-area: footer"
         variant="soft"
-        class="mt-3"
         :ui="{ body: 'justify-center flex', root: 'backdrop-blur-lg' }"
       >
         <UiKbdCombination
@@ -246,8 +245,7 @@ const items = computed(() => {
     >
       <CharacterStats
         :characteristics="characterCharacteristics"
-        :weight="itemsOverallStats.weight"
-        :longest-weapon-length="itemsOverallStats.longestWeaponLength"
+        :items-overall-stats="itemsOverallStats"
         :health-points="healthPoints"
       >
         <template #leading>

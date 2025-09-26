@@ -71,17 +71,17 @@ const items = computed(() => {
   if (!clanArmory.value.length || !userStore.user) {
     return []
   }
+
   return clanArmory.value.filter((armoryItem) => {
     // Hide owned items if enabled
     if (hideOwnedItemsModel.value && isOwnClanArmoryItem(armoryItem, userStore.user!.id)) {
       return false
     }
+
     // Show only available items if enabled
     if (showOnlyAvailableItems.value) {
       // Item is available if not borrowed, not owned, and not in user's inventory
-      if (
-        armoryItem.borrowerUserId || isOwnClanArmoryItem(armoryItem, userStore.user!.id)
-      ) {
+      if (armoryItem.borrowerUserId || isOwnClanArmoryItem(armoryItem, userStore.user!.id)) {
         return false
       }
     }

@@ -61,31 +61,40 @@ export const armorTypes: ItemType[] = [
 
 export const itemTypeByWeaponClass: Record<WeaponClass, ItemType> = {
   [WEAPON_CLASS.Arrow]: ITEM_TYPE.Ammo,
-  [WEAPON_CLASS.Banner]: ITEM_TYPE.Banner,
   [WEAPON_CLASS.Bolt]: ITEM_TYPE.Ammo,
-  [WEAPON_CLASS.Boulder]: ITEM_TYPE.Thrown,
-  [WEAPON_CLASS.Bow]: ITEM_TYPE.Ranged,
   [WEAPON_CLASS.Cartridge]: ITEM_TYPE.Ammo,
-  [WEAPON_CLASS.Crossbow]: ITEM_TYPE.Ranged,
-  [WEAPON_CLASS.Dagger]: ITEM_TYPE.OneHandedWeapon,
+  [WEAPON_CLASS.Bullets]: ITEM_TYPE.Ammo,
+
+  [WEAPON_CLASS.Boulder]: ITEM_TYPE.Thrown,
   [WEAPON_CLASS.Javelin]: ITEM_TYPE.Thrown,
-  [WEAPON_CLASS.LargeShield]: ITEM_TYPE.Shield,
-  [WEAPON_CLASS.LowGripPolearm]: ITEM_TYPE.Polearm,
-  [WEAPON_CLASS.Mace]: ITEM_TYPE.OneHandedWeapon,
-  [WEAPON_CLASS.Musket]: ITEM_TYPE.Ranged,
-  [WEAPON_CLASS.OneHandedAxe]: ITEM_TYPE.OneHandedWeapon,
-  [WEAPON_CLASS.OneHandedPolearm]: ITEM_TYPE.Polearm,
-  [WEAPON_CLASS.OneHandedSword]: ITEM_TYPE.OneHandedWeapon,
-  [WEAPON_CLASS.Pick]: ITEM_TYPE.TwoHandedWeapon,
-  [WEAPON_CLASS.Pistol]: ITEM_TYPE.Ranged,
-  [WEAPON_CLASS.SmallShield]: ITEM_TYPE.Shield,
-  [WEAPON_CLASS.Stone]: ITEM_TYPE.Thrown,
   [WEAPON_CLASS.ThrowingAxe]: ITEM_TYPE.Thrown,
   [WEAPON_CLASS.ThrowingKnife]: ITEM_TYPE.Thrown,
+  [WEAPON_CLASS.Stone]: ITEM_TYPE.Thrown,
+
+  [WEAPON_CLASS.Bow]: ITEM_TYPE.Ranged,
+  [WEAPON_CLASS.Crossbow]: ITEM_TYPE.Ranged,
+  [WEAPON_CLASS.Musket]: ITEM_TYPE.Ranged,
+  [WEAPON_CLASS.Pistol]: ITEM_TYPE.Ranged,
+
+  [WEAPON_CLASS.Dagger]: ITEM_TYPE.OneHandedWeapon,
+  [WEAPON_CLASS.Mace]: ITEM_TYPE.OneHandedWeapon,
+  [WEAPON_CLASS.OneHandedAxe]: ITEM_TYPE.OneHandedWeapon,
+  [WEAPON_CLASS.OneHandedSword]: ITEM_TYPE.OneHandedWeapon,
+
+  [WEAPON_CLASS.Pick]: ITEM_TYPE.TwoHandedWeapon,
   [WEAPON_CLASS.TwoHandedAxe]: ITEM_TYPE.TwoHandedWeapon,
   [WEAPON_CLASS.TwoHandedMace]: ITEM_TYPE.TwoHandedWeapon,
-  [WEAPON_CLASS.TwoHandedPolearm]: ITEM_TYPE.Polearm,
   [WEAPON_CLASS.TwoHandedSword]: ITEM_TYPE.TwoHandedWeapon,
+
+  [WEAPON_CLASS.LowGripPolearm]: ITEM_TYPE.Polearm,
+  [WEAPON_CLASS.OneHandedPolearm]: ITEM_TYPE.Polearm,
+  [WEAPON_CLASS.TwoHandedPolearm]: ITEM_TYPE.Polearm,
+
+  [WEAPON_CLASS.LargeShield]: ITEM_TYPE.Shield,
+  [WEAPON_CLASS.SmallShield]: ITEM_TYPE.Shield,
+
+  [WEAPON_CLASS.Banner]: ITEM_TYPE.Banner,
+
   [WEAPON_CLASS.Undefined]: ITEM_TYPE.Undefined,
 }
 
@@ -125,14 +134,14 @@ const WeaponClassByItemType: Partial<Record<ItemType, WeaponClass[]>> = {
   [ITEM_TYPE.Ammo]: [
     WEAPON_CLASS.Arrow,
     WEAPON_CLASS.Bolt,
+    WEAPON_CLASS.Bullets,
+    WEAPON_CLASS.Cartridge,
   ],
 }
 
-export const hasWeaponClassesByItemType = (type: ItemType) =>
-  Object.keys(WeaponClassByItemType).includes(type)
+export const hasWeaponClassesByItemType = (type: ItemType) => Object.keys(WeaponClassByItemType).includes(type)
 
-export const getWeaponClassesByItemType = (type: ItemType): WeaponClass[] =>
-  WeaponClassByItemType?.[type] || []
+export const getWeaponClassesByItemType = (type: ItemType): WeaponClass[] => WeaponClassByItemType?.[type] || []
 
 const WEAPON_TYPES: ItemType[] = [
   ITEM_TYPE.Shield,
@@ -347,6 +356,7 @@ export const weaponClassToIcon: Record<WeaponClass, string> = {
   [WEAPON_CLASS.OneHandedSword]: 'weapon-class-one-handed-sword',
   [WEAPON_CLASS.Pick]: '',
   [WEAPON_CLASS.Pistol]: 'item-type-pistol',
+  [WEAPON_CLASS.Bullets]: 'item-type-bullet',
   [WEAPON_CLASS.SmallShield]: 'weapon-class-shield-small',
   [WEAPON_CLASS.Stone]: 'weapon-class-throwing-stone',
   [WEAPON_CLASS.ThrowingAxe]: 'weapon-class-throwing-axe',

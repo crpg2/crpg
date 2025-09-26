@@ -6,6 +6,8 @@ import { CHARACTER_QUERY_KEYS } from '~/queries'
 import {
   checkUpkeepIsHigh,
   computeLongestWeaponLength,
+  computeMountHarnessWeight,
+  computeMountSpeedBase,
   computeOverallArmor,
   computeOverallAverageRepairCostByHour,
   computeOverallPrice,
@@ -60,6 +62,8 @@ export const useCharacterItems = () => {
       longestWeaponLength: computeLongestWeaponLength(items),
       price: computeOverallPrice(items),
       weight: computeOverallWeight(items),
+      mountSpeedBase: computeMountSpeedBase(items),
+      mountHarnessWeight: computeMountHarnessWeight(items),
       ...computeOverallArmor(items),
     }
   })

@@ -360,20 +360,7 @@ const columns: TableColumn<ClanMember>[] = [
         </template>
       </UTable>
 
-      <UPagination
-        v-if="table?.tableApi.getCanNextPage() || table?.tableApi.getCanPreviousPage()"
-        class="flex justify-center"
-        variant="soft"
-        color="secondary"
-        active-variant="solid"
-        active-color="primary"
-        :page="pagination.pageIndex + 1"
-        :show-controls="false"
-        :default-page="(table?.tableApi.initialState.pagination.pageIndex || 0) + 1"
-        :items-per-page="table?.tableApi.initialState.pagination.pageSize"
-        :total="table?.tableApi.getFilteredRowModel().rows.length"
-        @update:page="(p) => table?.tableApi.setPageIndex(p - 1)"
-      />
+      <UiGridPagination v-if="table?.tableApi" :table-api="toRef(() => table!.tableApi)" />
     </div>
   </UContainer>
 </template>

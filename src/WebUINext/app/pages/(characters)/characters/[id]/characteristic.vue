@@ -19,7 +19,6 @@ const {
 } = useCharacterCharacteristic()
 
 useCharacterItemsProvider()
-
 const { itemsOverallStats } = useCharacterItems()
 
 const {
@@ -86,8 +85,7 @@ const [onRespecializeCharacter] = useAsyncCallback(
       <CharacterStats
         style="grid-area: stats"
         :characteristics
-        :weight="itemsOverallStats.weight"
-        :longest-weapon-length="itemsOverallStats.longestWeaponLength"
+        :items-overall-stats="itemsOverallStats"
         :health-points="healthPoints"
       />
     </div>

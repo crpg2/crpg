@@ -93,6 +93,10 @@ const mapWeaponProps = (item: Item) => {
   }
 
   if (item.type === ITEM_TYPE.Shield) {
+    if (isLargeShield(item)) {
+      weapon.weaponFlags.push(WEAPON_FLAG.CantUseOnHorseback)
+    }
+
     return {
       ...weapon,
       shieldArmor: originalWeapon.bodyArmor,
@@ -167,7 +171,7 @@ const mapArmorProps = (item: Item) => {
 }
 
 const mapWeight = (item: Item) => {
-  if (([ITEM_TYPE.Thrown, ITEM_TYPE.Bolts, ITEM_TYPE.Arrows] as ItemType[]).includes(item.type)) {
+  if (([ITEM_TYPE.Thrown, ITEM_TYPE.Bolts, ITEM_TYPE.Arrows, ITEM_TYPE.Bullets] as ItemType[]).includes(item.type)) {
     const [weapon] = item.weapons
 
     return {
@@ -231,18 +235,13 @@ const itemToFlat = (item: Item): ItemFlat => {
     ...weaponProps.itemUsage.filter(iu => VISIBLE_ITEM_USAGE.includes(iu)),
   ]
 
-  // Banning the use of large shields on horseback
-  if (isLargeShield(item)) {
-    flags.push(WEAPON_FLAG.CantUseOnHorseback)
-  }
-
   return {
     id: item.id,
     type: mapItemType(item.type),
     baseId: item.baseId,
     culture: item.culture,
     flags,
-    modId: generateModId(item, weaponProps?.weaponClass ?? undefined),
+    modId: generateModId(item, weaponProps.weaponClass ?? undefined),
     name: item.name,
     isNew: new Date(item.createdAt).getTime() > newItemDateThreshold,
     price: item.price,

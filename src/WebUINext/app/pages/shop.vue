@@ -2,7 +2,6 @@
 import type { DropdownMenuItem, SelectItem, TableColumn } from '@nuxt/ui'
 import type {
   ColumnFiltersState,
-  FilterFnOption,
   RowSelectionState,
   SortingState,
   VisibilityState,
@@ -37,10 +36,10 @@ import type { AggregationOptions } from '~/services/item-search-service/aggregat
 import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { ITEM_FIELD_FORMAT, ITEM_TYPE } from '~/models/item'
+import { ITEM_TYPE } from '~/models/item'
 import { SomeRole } from '~/models/role'
 import { getAggregationsConfig, getFacetsByItemType, getFacetsByWeaponClass } from '~/services/item-search-service'
-import { AggregationView } from '~/services/item-search-service/aggregations'
+import { AGGREGATION_VIEW, getFilterFn } from '~/services/item-search-service/aggregations'
 import { getStepRange } from '~/services/item-search-service/helpers'
 import { createItemIndex } from '~/services/item-search-service/indexator'
 import {
@@ -51,7 +50,6 @@ import {
   humanizeBucket,
 } from '~/services/item-service'
 import { buyUserItem } from '~/services/user-service'
-import { includesSome } from '~/utils/grid'
 
 definePageMeta({
   roles: SomeRole,
@@ -139,11 +137,10 @@ const weaponClass = computed({
     if (route.query?.weaponClass) {
       return route.query.weaponClass as WeaponClass
     }
-    const weaponClasses = getWeaponClassesByItemType(itemType.value)
-    return weaponClasses.length !== 0 ? weaponClasses[0]! : null
+    return getWeaponClassesByItemType(itemType.value).at(0) ?? null
   },
   set(weaponClass: WeaponClass | null) {
-    table.value?.tableApi?.getColumn('weaponClass')?.setFilterValue(weaponClass ?? undefined)
+    table.value?.tableApi.setColumnFilters([{ id: 'weaponClass', value: weaponClass }])
     router.replace({
       query: {
         type: itemType.value,
@@ -154,8 +151,11 @@ const weaponClass = computed({
     resetSorting()
   },
 })
+
 const weaponClasses = computed(() => {
-  return getFacetsByWeaponClass(flatItems.value.map(item => item.weaponClass).filter(wc => wc !== null), itemType.value)
+  return getFacetsByWeaponClass(flatItems.value
+    .map(item => item.weaponClass)
+    .filter(item => item !== null), itemType.value)
 })
 
 // TODO: нужен свой типизированный объект
@@ -165,8 +165,8 @@ function getInitialColumnFiltersState(): ColumnFiltersState {
     ...(weaponClass.value ? [{ id: 'weaponClass', value: weaponClass.value }] : []),
   ]
 }
-
 const columnFilters = ref<ColumnFiltersState>(getInitialColumnFiltersState())
+
 const currentAggregations = computed(() => getAggregationsConfig(itemType.value, weaponClass.value))
 
 const columnVisibility = computed<VisibilityState>(() => {
@@ -193,23 +193,6 @@ watch(isCompareMode, () => {
 const compareItemsResult = computed(() => isCompareMode.value
   ? getCompareItemsResult(table.value?.tableApi.getFilteredRowModel().rows.map(row => row.original) ?? [], currentAggregations.value)
   : null)
-
-// TODO: to cfgs
-function getFilterFn(key: keyof ItemFlat, options: AggregationOptions): FilterFnOption<any> {
-  if (options.view === AggregationView.Range) {
-    return 'inNumberRange'
-  }
-
-  if (options.view === AggregationView.Checkbox) {
-    if (options.format === ITEM_FIELD_FORMAT.List) {
-      return 'arrIncludesSome'
-    }
-
-    return includesSome
-  }
-
-  return 'auto'
-}
 
 // TODO: to utils, cpec
 function getFacets(rawFacets: Map<any, number>): Record<string, number> {
@@ -265,19 +248,19 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
         }),
       }),
     }),
-    filterFn: getFilterFn(key, options),
+    filterFn: getFilterFn(options),
     header: ({ header, column }) => {
       return h(UiTableColumnHeader, {
         label: t(`item.aggregations.${header.id}.title`),
         description: t(`item.aggregations.${header.id}.description`),
-        withSort: options.view === AggregationView.Range,
+        withSort: options.view === AGGREGATION_VIEW.Range,
         sorted: column.getIsSorted(),
         withFilter: true,
         filtered: column.getIsFiltered(),
         onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
         onResetFilter: () => column.setFilterValue(undefined),
       }, {
-        ...(options.view === AggregationView.Range && {
+        ...(options.view === AGGREGATION_VIEW.Range && {
           // TODO: FIXME: пересмотреть компонент
           'filter-content': () => {
             const [min, max] = column.getFacetedMinMaxValues() ?? [0, 1]
@@ -292,7 +275,7 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
           },
         }),
         filter: () => {
-          if (options.view === AggregationView.Checkbox) {
+          if (options.view === AGGREGATION_VIEW.Checkbox) {
             const _facets = Object.entries(getFacets(column.getFacetedUniqueValues()))
             // @ts-expect-error TODO: https://github.com/nuxt/ui/issues/2968
             return h(USelect, {
@@ -514,7 +497,7 @@ const onlyNewItemsFilter = (): DropdownMenuItem => {
       <template #footer>
         <UiGridPagination
           v-if="table?.tableApi"
-          :table-api="table!.tableApi"
+          :table-api="toRef(() => table!.tableApi)"
         >
           <UButton
             v-if="Object.keys(rowSelection).length >= 2"

@@ -5,7 +5,6 @@ import type { Platform as _Platform } from '~/api'
 export const PLATFORM = {
   Steam: 'Steam',
   EpicGames: 'EpicGames',
-  Microsoft: 'Microsoft',
-} as const satisfies Record<_Platform, _Platform>
+} as const satisfies Record<Exclude<_Platform, 'Microsoft'>, _Platform>
 
 export type Platform = ValueOf<typeof PLATFORM>

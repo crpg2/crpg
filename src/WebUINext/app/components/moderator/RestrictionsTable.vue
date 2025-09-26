@@ -209,7 +209,7 @@ const sorting = ref<SortingState>([
 
     <UiGridPagination
       v-if="table?.tableApi"
-      :table-api="table!.tableApi"
+      :table-api="toRef(() => table!.tableApi)"
     />
   </div>
 </template>

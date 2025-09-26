@@ -2,12 +2,12 @@
 import type { Table } from '@tanstack/table-core'
 
 const { tableApi } = defineProps<{
-  tableApi: Table<any>
+  tableApi: Ref<Table<any>> // TODO: нужно убрать ref
 }>()
 
-const total = computed(() => tableApi.getRowCount())
-const page = computed(() => tableApi.getState().pagination.pageIndex + 1)
-const pageSize = computed(() => tableApi.getState().pagination.pageSize)
+const total = computed(() => tableApi.value.getRowCount())
+const page = computed(() => tableApi.value.getState().pagination.pageIndex + 1)
+const pageSize = computed(() => tableApi.value.getState().pagination.pageSize)
 
 const counter = computed(() => [
   Math.min(pageSize.value * (page.value - 1) + 1, total.value),
@@ -26,10 +26,10 @@ const counter = computed(() => [
         :show-controls="false"
         show-edges
         size="xl"
-        :default-page="tableApi.initialState.pagination.pageIndex + 1"
+        :default-page="tableApi.value.initialState.pagination.pageIndex + 1"
         :items-per-page="pageSize"
         :total
-        @update:page="(value) => tableApi.setPageIndex(value - 1)"
+        @update:page="(value) => tableApi.value.setPageIndex(value - 1)"
       />
     </div>
 

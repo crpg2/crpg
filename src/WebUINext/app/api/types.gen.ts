@@ -1357,7 +1357,7 @@ export type UserViewModelResult = {
     data: UserViewModel;
 };
 
-export type WeaponClass = 'Undefined' | 'Dagger' | 'OneHandedSword' | 'TwoHandedSword' | 'OneHandedAxe' | 'TwoHandedAxe' | 'Mace' | 'Pick' | 'TwoHandedMace' | 'OneHandedPolearm' | 'TwoHandedPolearm' | 'LowGripPolearm' | 'Arrow' | 'Bolt' | 'Cartridge' | 'Bow' | 'Crossbow' | 'Stone' | 'Boulder' | 'ThrowingAxe' | 'ThrowingKnife' | 'Javelin' | 'Pistol' | 'Musket' | 'SmallShield' | 'LargeShield' | 'Banner';
+export type WeaponClass = 'Undefined' | 'Dagger' | 'OneHandedSword' | 'TwoHandedSword' | 'OneHandedAxe' | 'TwoHandedAxe' | 'Mace' | 'Pick' | 'TwoHandedMace' | 'OneHandedPolearm' | 'TwoHandedPolearm' | 'LowGripPolearm' | 'Arrow' | 'Bolt' | 'Cartridge' | 'Bow' | 'Crossbow' | 'Stone' | 'Boulder' | 'ThrowingAxe' | 'ThrowingKnife' | 'Javelin' | 'Pistol' | 'Musket' | 'SmallShield' | 'LargeShield' | 'Banner' | 'Bullets';
 
 export type WeaponFlags = 'MeleeWeapon' | 'RangedWeapon' | 'FirearmAmmo' | 'NotUsableWithOneHand' | 'NotUsableWithTwoHand' | 'WideGrip' | 'AttachAmmoToVisual' | 'Consumable' | 'HasHitPoints' | 'HasString' | 'StringHeldByHand' | 'UnloadWhenSheathed' | 'AffectsArea' | 'AffectsAreaBig' | 'Burning' | 'BonusAgainstShield' | 'CanPenetrateShield' | 'CantReloadOnHorseback' | 'AutoReload' | 'TwoHandIdleOnMount' | 'NoBlood' | 'PenaltyWithShield' | 'CanDismount' | 'CanHook' | 'CanKnockDown' | 'CanCrushThrough' | 'CanBlockRanged' | 'MissileWithPhysics' | 'MultiplePenetration' | 'LeavesTrail' | 'UseHandAsThrowBase' | 'AmmoBreaksOnBounceBack' | 'AmmoCanBreakOnBounceBack' | 'AmmoSticksWhenShot' | 'CanReloadOnHorseback' | 'CantUseOnHorseback';
 

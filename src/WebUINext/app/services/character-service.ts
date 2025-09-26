@@ -60,6 +60,7 @@ import type {
   CharacteristicConversion,
   CharacteristicKey,
   CharacterLimitations,
+  CharacterMountSpeedStats,
   CharacterOverallItemsStats,
   CharacterSpeedStats,
   CharacterStatistics,
@@ -454,13 +455,14 @@ export const characteristicBonusByKey: Partial<Record<CharacteristicKey, Charact
 export const computeHealthPoints = (ironFlesh: number, strength: number): number =>
   defaultHealthPoints + ironFlesh * healthPointsForIronFlesh + strength * healthPointsForStrength
 
-// TODO: to backend?
-export const computeSpeedStats = (
-  strength: number,
-  athletics: number,
-  agility: number,
-  totalEncumbrance: number,
-  longestWeaponLength: number,
+// copy from Module.Server/Common/Models/CrpgAgentStatCalculateModel.cs
+export const computeSpeedStats = ({
+  strength,
+  athletics,
+  agility,
+  totalEncumbrance,
+  longestWeaponLength,
+}: { strength: number, athletics: number, agility: number, totalEncumbrance: number, longestWeaponLength: number },
 ): CharacterSpeedStats => {
   const awfulScaler = 3231477.548
   const weightReductionPolynomialFactor = [
@@ -506,6 +508,48 @@ export const computeSpeedStats = (
     timeToMaxSpeed,
     weightReductionFactor,
   }
+}
+
+// copy from Module.Server/Common/Models/CrpgAgentStatCalculateModel.cs
+export function computeMountSpeedStats(
+  baseSpeed: number,
+  harnessWeight: number,
+  riderPerceivedWeight: number,
+): CharacterMountSpeedStats {
+  const totalEffectiveLoad = harnessWeight + riderPerceivedWeight
+  const maxLoadReference = 50 // to const?
+  const loadPercentage = Math.min(totalEffectiveLoad / maxLoadReference, 1)
+
+  const weightImpactOnSpeed = 1 / (1 + 0.333 * loadPercentage) // Cap at 1.0
+
+  const effectiveSpeed = (baseSpeed + 1) * 0.209 * weightImpactOnSpeed
+  const unmodifiedSpeed = (baseSpeed + 1) * 0.209
+
+  const speedReduction = (effectiveSpeed / unmodifiedSpeed) - 1 // e.g. -0.28 means 28% slower
+  const acceleration = 1 / (2 + 8 * loadPercentage)
+
+  return {
+    speedReduction,
+    mountAcceleration: acceleration,
+    effectiveSpeed,
+    weightImpactOnSpeed,
+    loadPercentage,
+  }
+}
+
+// copy from src/Module.Server/Common/Models/CrpgAgentStatCalculateModel.cs
+export function computeWeaponLengthMountPenalty(
+  weaponLength: number,
+  strength: number,
+): number {
+  if (!weaponLength || !strength) {
+    return 1 // No penalty
+  }
+
+  const maxLength = 22 + (strength - 3) * 7.5 + (Math.min(strength - 3, 24) * 0.115) ** 7.75
+  const ratio = Math.min(maxLength / weaponLength, 1)
+  const penaltyFactor = 0.8 + 0.2 * ratio
+  return penaltyFactor // 1 = no penalty, <1 = reduction
 }
 
 export const getCharacterItems = async (
@@ -566,12 +610,31 @@ export const computeLongestWeaponLength = (items: Item[]) => {
     .reduce((total, item) => (total += Math.max(total, item.weapons[0]?.length ?? 0)), 0)
 }
 
-// // TODO: handle upgrade items. ??
-// // TODO: SPEC
-export const computeOverallAverageRepairCostByHour = (
-  items: Item[],
-) => Math.floor(items.reduce((total, item) => total + computeAverageRepairCostPerHour(item.price), 0))
+export const computeOverallAverageRepairCostByHour = (items: Item[]) => Math.floor(items.reduce((total, item) => total + computeAverageRepairCostPerHour(item.price), 0))
 
+export const computeMountSpeedBase = (items: Item[]): number => {
+  return items.find(item => item.type === ITEM_TYPE.Mount)?.mount?.speed ?? 0
+}
+
+export const computeMountHarnessWeight = (items: Item[]): number => {
+  return items.find(item => item.type === ITEM_TYPE.MountHarness)?.weight ?? 0
+}
+
+export const getCharacterOverallItemsStats = (): CharacterOverallItemsStats => ({
+  armArmor: 0,
+  averageRepairCostByHour: 0,
+  bodyArmor: 0,
+  headArmor: 0,
+  legArmor: 0,
+  longestWeaponLength: 0,
+  mountArmor: 0,
+  mountHarnessWeight: 0,
+  mountSpeedBase: 0,
+  price: 0,
+  weight: 0,
+})
+
+//
 export const getHeirloomPointByLevel = (
   level: number,
 ) => level < minimumRetirementLevel ? 0 : 2 ** (level - minimumRetirementLevel)
@@ -593,13 +656,7 @@ export const getHeirloomPointByLevelAggregation = () =>
     return out
   }, [] as HeirloomPointByLevelAggregation[])
 
-export const getExperienceMultiplierBonus = (multiplier: number) => {
-  if (multiplier < maxExperienceMultiplierForGeneration) {
-    return experienceMultiplierByGeneration
-  }
-
-  return 0
-}
+export const getExperienceMultiplierBonus = (multiplier: number) => multiplier < maxExperienceMultiplierForGeneration ? experienceMultiplierByGeneration : 0
 
 // TODO: Spec
 export const getExperienceMultiplierBonusByRetireCount = (retireCount: number) => {

@@ -248,7 +248,7 @@ const regionItems = regions.map<TabsItem>(region => ({
 
         <UiGridPagination
           v-if="table?.tableApi"
-          :table-api="table!.tableApi"
+          :table-api="toRef(() => table!.tableApi)"
         />
       </div>
     </div>

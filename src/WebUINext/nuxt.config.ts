@@ -221,6 +221,9 @@ export default defineNuxtConfig({
             ItemType: (schema) => {
               schema.enum = [...(schema.enum || []), 'Ranged', 'Ammo']
             },
+            WeaponClass: (schema) => {
+              schema.enum = [...(schema.enum || []), 'Bullets']
+            },
             WeaponFlags: (schema) => {
               schema.enum = [...(schema.enum || []), 'CanReloadOnHorseback', 'CantUseOnHorseback']
             },

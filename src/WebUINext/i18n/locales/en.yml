@@ -628,6 +628,12 @@ character:
     currentSpeed:
       title: Current speed
       desc: ''
+    mountSpeedPenalty:
+      title: Mount speed penalty
+      desc: 'Reduces mount speed based on rider''s perceived weight and harness weight'
+    mountedWeaponPenalty:
+      title: Additional mount stats penalty
+      desc: Penalty to mount speed, maneuver, acceleration, and charge damage due to using a weapon too long for your strength
     maxWeaponLength:
       title: Max weapon length
       desc: '
@@ -788,6 +794,10 @@ builder:
   weaponLength:
     title: Weapon length
     description: Enter the length of the primary weapon to calculate the character's stats
+  mountSpeed:
+    title: Mount speed
+  mountHarnessWeight:
+    title: Mount harness weight
 
 shop:
   item:

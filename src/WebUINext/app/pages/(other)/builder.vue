@@ -18,6 +18,7 @@ import {
   attributePointsForLevel,
   createCharacteristics,
   createDefaultCharacteristic,
+  getCharacterOverallItemsStats,
   getExperienceForLevel,
   skillPointsForLevel,
   wppForLevel,
@@ -91,6 +92,8 @@ const experienceForNextLevel = computed(() => getExperienceForLevel(level.value 
 
 const weight = useRouteQuery('weight', 0, { mode: 'replace' })
 const weaponLength = useRouteQuery('weaponLength', 0, { mode: 'replace' })
+const mountSpeed = useRouteQuery('mountSpeed', 0, { mode: 'replace' })
+const mountHarnessWeight = useRouteQuery('mountHarnessWeight', 0, { mode: 'replace' })
 
 // TODO: unit
 const convertCharacteristics = (conversion: CharacteristicConversion) => {
@@ -224,8 +227,13 @@ const onShare = () => {
             <CharacterStats
               style="grid-area: stats"
               :characteristics="characteristics"
-              :weight="weight"
-              :longest-weapon-length="weaponLength"
+              :items-overall-stats="{
+                ...getCharacterOverallItemsStats(),
+                weight,
+                longestWeaponLength: weaponLength,
+                mountSpeedBase: mountSpeed,
+                mountHarnessWeight,
+              }"
               :hidden-rows="['weight']"
               :health-points="healthPoints"
             >
@@ -238,7 +246,7 @@ const onShare = () => {
                     v-model="weight"
                     class="max-w-24"
                     color="neutral"
-                    size="sm"
+                    :min="0"
                   />
                 </UiSimpleTableRow>
 
@@ -252,7 +260,31 @@ const onShare = () => {
                   <UInputNumber
                     v-model="weaponLength"
                     class="max-w-24"
-                    size="sm"
+                    color="neutral"
+                    :min="0"
+                  />
+                </UiSimpleTableRow>
+
+                <UiSimpleTableRow
+                  :label="$t('builder.mountSpeed.title')"
+                  :tooltip="{ title: $t('builder.mountSpeed.title') }"
+                >
+                  <UInputNumber
+                    v-model="mountSpeed"
+                    class="max-w-24"
+                    color="neutral"
+                    :min="0"
+                  />
+                </UiSimpleTableRow>
+
+                <UiSimpleTableRow
+                  :label="$t('builder.mountHarnessWeight.title')"
+                  :tooltip="{ title: $t('builder.mountHarnessWeight.title') }"
+                >
+                  <UInputNumber
+                    v-model="mountHarnessWeight"
+                    class="max-w-24"
+                    :min="0"
                     color="neutral"
                   />
                 </UiSimpleTableRow>

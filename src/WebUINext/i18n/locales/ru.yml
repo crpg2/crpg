@@ -593,6 +593,12 @@ character:
     currentSpeed:
       title: Текущая скорость
       desc: ''
+    mountSpeedPenalty:
+      title: Штраф к скорости верхом
+      desc: Снижает скорость езды верхом в зависимости от веса всадника и веса доспеха лошади
+    mountedWeaponPenalty:
+      title: Дополнительный штраф к езде верхом
+      desc: Штраф к скорости, маневренности, ускорению и урону из-за использования оружия, которое не соответствует вашей силе
     maxWeaponLength:
       title: Макс. длина оружия
       desc: '
@@ -754,6 +760,10 @@ builder:
   weaponLength:
     title: Длина оружия
     description: Введите длину основного оружия для расчета характеристик персонажа
+  mountSpeed:
+    title: Скорость лошади
+  mountHarnessWeight:
+    title: Вес брони лошади
 
 shop:
   item:
