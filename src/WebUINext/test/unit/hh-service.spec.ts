@@ -1,6 +1,6 @@
 import { expect, it } from 'vitest'
 
-import { getHHEventByRegion, getHHEventRemaining, getHHScheduleConfig } from '../hh-service'
+import { getHHScheduleConfig } from '../../app/services/hh-service'
 
 // see: .env.test
 it('getHHScheduleConfig', () => {

@@ -1,15 +1,24 @@
-import { defineVitestConfig } from '@nuxt/test-utils/config'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { defineConfig } from 'vitest/config'
 
-export default defineVitestConfig({
-  // test: {
-  //   clearMocks: true,
-  //   // coverage: {
-  //   //   exclude: ['node_modules/', './src/__test__/unit/index.ts', '**/*.spec.ts'],
-  //   //   provider: 'v8',
-  //   //   reporter: ['json', 'text', 'html'],
-  //   // },
-  //   environment: 'happy-dom',
-  //   include: ['./app/**/*.spec.ts'],
-  //   // setupFiles: ['./src/__test__/unit/setup.ts'],
-  // },
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+export default defineConfig({
+  test: {
+    projects: [
+      {
+        resolve: {
+          alias: {
+            '~': path.resolve(__dirname, './app'),
+          },
+        },
+        test: {
+          name: 'unit',
+          include: ['test/unit/**/*.{spec}.ts'],
+          environment: 'node',
+        },
+      },
+    ],
+  },
 })
