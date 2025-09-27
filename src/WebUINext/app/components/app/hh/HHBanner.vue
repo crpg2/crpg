@@ -4,22 +4,18 @@ import { useCountdown } from '@vueuse/core'
 import { AppHHTooltip } from '#components'
 
 import type { Region } from '~/models/region'
+import type { HHEvent } from '~/services/hh-service'
 
 import { getHHEventRemaining } from '~/services/hh-service'
 
-defineProps<{ region: Region }>()
+const { hHEvent } = defineProps<{ region: Region, hHEvent: HHEvent }>()
 
-//
-const {
-  HHEvent,
-  // HHEventRemaining,
-  onEndHHCountdown,
-  onStartHHCountdown,
-} = useHappyHours()
-
-const { remaining } = useCountdown(() => getHHEventRemaining(HHEvent.value), {
-  immediate: true,
-})
+const { remaining } = useCountdown(
+  () => getHHEventRemaining(hHEvent),
+  {
+    immediate: true,
+  },
+)
 
 const hh = computed(() => Math.floor(remaining.value / 3600))
 const mm = computed(() => Math.floor((remaining.value % 3600) / 60))
@@ -30,40 +26,42 @@ const ss = computed(() => remaining.value % 60)
   <UBanner
     id="hh"
     :ui="{
-      title: 'text-highlighted text-lg flex gap-3 items-center',
+      title: 'text-highlighted text-lg',
     }"
     color="success"
   >
     <template #title>
       <AppHHTooltip :region>
-        🎉
-        <NumberFlowGroup>
-          <div
-            style="font-variant-numeric: tabular-nums; --number-flow-char-height: 0.85em"
-            class="font-semibold"
-          >
-            <NumberFlow
-              :trend="-1"
-              :value="hh"
-              :format="{ minimumIntegerDigits: 2 }"
-            />
-            <NumberFlow
-              prefix=":"
-              :trend="-1"
-              :value="mm"
-              :digits="{ 1: { max: 5 } }"
-              :format="{ minimumIntegerDigits: 2 }"
-            />
-            <NumberFlow
-              prefix=":"
-              :trend="-1"
-              :value="ss"
-              :digits="{ 1: { max: 5 } }"
-              :format="{ minimumIntegerDigits: 2 }"
-            />
-          </div>
-        </NumberFlowGroup>
-        🎉
+        <div class="flex items-center gap-2">
+          🎉
+          <NumberFlowGroup>
+            <div
+              style="--number-flow-char-height: 1.85em"
+              class="font-semibold tabular-nums"
+            >
+              <NumberFlow
+                :trend="-1"
+                :value="hh"
+                :format="{ minimumIntegerDigits: 2 }"
+              />
+              <NumberFlow
+                prefix=":"
+                :trend="-1"
+                :value="mm"
+                :digits="{ 1: { max: 5 } }"
+                :format="{ minimumIntegerDigits: 2 }"
+              />
+              <NumberFlow
+                prefix=":"
+                :trend="-1"
+                :value="ss"
+                :digits="{ 1: { max: 5 } }"
+                :format="{ minimumIntegerDigits: 2 }"
+              />
+            </div>
+          </NumberFlowGroup>
+          🎉
+        </div>
       </AppHHTooltip>
     </template>
   </UBanner>

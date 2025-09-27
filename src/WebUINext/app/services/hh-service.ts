@@ -14,7 +14,7 @@ interface HHScheduleConfig {
   end: HHScheduleTime
 }
 
-const getHHScheduleConfig = (config: string) => {
+export const getHHScheduleConfig = (config: string) => {
   // TODO: FIXME: error handling
   return config.split(',').reduce(
     (out, cur) => {
@@ -50,6 +50,7 @@ export const getHHEventByRegion = (config: string, region: Region): HHEvent => {
 
   const startDt = now(tz).set({ hour: start.hours, minute: start.minutes })
   const endDt = now(tz).set({ hour: end.hours, minute: end.minutes })
+  console.log('getHHEventByRegion', { start, end, tz, startDt, endDt })
 
   return {
     start: toLocalTimeZone(startDt).toDate(),
@@ -65,11 +66,7 @@ export const getHHEventRemaining = (event: HHEvent): number => {
 
   const now = new Date()
 
-  // TODO: FIXME:
-  // console.log({ start, end, now })
-
   if (!isBetween(now, start, end)) {
-    // console.log('!isBetween')
     return 0
   }
 

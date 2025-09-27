@@ -171,7 +171,7 @@ export default defineNuxtConfig({
       input: 'https://localhost:8000/swagger/v1/swagger.json', // TODO: to env
       output: {
         path: './app/api',
-        // clean: false,
+        clean: false,
         format: false,
         // format: 'prettier',
         lint: false,

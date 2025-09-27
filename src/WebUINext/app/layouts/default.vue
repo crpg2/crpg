@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useIntervalFn } from '@vueuse/core'
+
 import { useMainHeaderProvider } from '~/composables/app/use-main-header'
 
 const route = useRoute()
@@ -7,7 +9,7 @@ const userStore = useUserStore()
 const { data: patchNotes } = usePatchNotes()
 const { data: gameServerStats } = useGameServerStats()
 
-const { HHEvent, HHEventRemaining, HHPollId, isHHCountdownEnded } = useHappyHours()
+const { hHEvent, HHEventRemaining, isHHCountdownEnded } = useHappyHours()
 
 userStore.fetchUserRestriction()
 
@@ -19,6 +21,10 @@ usePollInterval({
 useMainHeaderProvider(useTemplateRef('mainHeader'))
 
 const { showWelcomeMessage } = useWelcome()
+
+const { pause, resume, isActive } = useIntervalFn(() => {
+  hHEvent.trigger()
+}, 1000)
 </script>
 
 <template>
@@ -42,10 +48,18 @@ const { showWelcomeMessage } = useWelcome()
           :restriction="userStore.restriction"
         />
 
-        <!-- v-if="userStore.user && !isHHCountdownEnded && HHEventRemaining !== 0" -->
-        <!-- TODO: тест -->
+        <pre>
+          {{ {
+            hHEvent,
+            HHEventRemaining,
+            isHHCountdownEnded,
+          } }}
+        </pre>
+
         <LazyAppHHBanner
-          v-if="userStore.user" :region="userStore.user.region"
+          v-if="!isHHCountdownEnded && HHEventRemaining !== 0"
+          :region="userStore.user.region"
+          :h-h-event
         />
       </template>
 
@@ -78,6 +92,6 @@ const { showWelcomeMessage } = useWelcome()
     </main>
 
     <!-- TODO: FIXME: - Стратегус v-if="!route.meta.noFooter" -->
-    <AppLayoutFooter :HHEvent class="ring ring-default" />
+    <AppLayoutFooter :h-h-event class="ring ring-default" />
   </div>
 </template>

@@ -4,28 +4,31 @@ import { REGION } from '~/models/region'
 import { getHHEventByRegion, getHHEventRemaining } from '~/services/hh-service'
 import { useUserStore } from '~/stores/user'
 
-// TODO: FIXME:
 export const useHappyHours = () => {
-  const HHPollId = Symbol('hh')
-
-  const userStore = useUserStore()
-  // const { t } = useI18n()
   const { $config } = useNuxtApp()
+  const userStore = useUserStore()
+  const { t } = useI18n()
+  const toast = useToast()
 
   const source = ref()
-  const HHEvent = computedWithControl(
+
+  const hHEvent = computedWithControl(
     () => source.value,
     () => getHHEventByRegion($config.public.HH, userStore.user?.region || REGION.Eu),
   )
 
-  const HHEventRemaining = computed(() => getHHEventRemaining(HHEvent.value))
+  const HHEventRemaining = computed(() => getHHEventRemaining(hHEvent.value))
 
   const isHHCountdownEnded = ref<boolean>(false)
-  const alreadyShownHHStartedNotification = useLocalStorage('hh-start-notification-shown', false)
+  const alreadyShownHHStartedNotification = useLocalStorage<boolean>('hh-start-notification-shown', false)
 
   const onStartHHCountdown = () => {
     if (!alreadyShownHHStartedNotification.value) {
-      // $notify(t('hh.notify.started'))
+      toast.add({
+        title: t('hh.notify.started'),
+        close: false,
+        color: 'success',
+      })
       alreadyShownHHStartedNotification.value = true
     }
   }
@@ -33,13 +36,16 @@ export const useHappyHours = () => {
   const onEndHHCountdown = () => {
     isHHCountdownEnded.value = true
     alreadyShownHHStartedNotification.value = false
-    // $notify(t('hh.notify.ended'))
+    toast.add({
+      title: t('hh.notify.ended'),
+      close: false,
+      color: 'success',
+    })
   }
 
   return {
-    HHEvent,
+    hHEvent,
     HHEventRemaining,
-    HHPollId,
     isHHCountdownEnded,
     onEndHHCountdown,
     onStartHHCountdown,

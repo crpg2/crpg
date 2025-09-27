@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import type { HHEvent as HHEventType } from '~/services/hh-service'
+import type { HHEvent } from '~/services/hh-service'
 
 import { useUserStore } from '~/stores/user'
 
-// eslint-disable-next-line vue/prop-name-casing
-defineProps<{ HHEvent: HHEventType }>() // TODO: provide/inject
+defineProps<{ hHEvent: HHEvent }>()
 
 const userStore = useUserStore()
 
@@ -36,7 +35,7 @@ const scrollToTop = () =>
             </template>
             {{ $t('hh.tooltip-trigger', { region: $t(`region.${userStore.user.region}`, 1) }) }}
             <template #rightContent>
-              {{ $d(HHEvent.start, 'time') }} - {{ $d(HHEvent.end, 'time') }}
+              {{ $d(hHEvent.start, 'time') }} - {{ $d(hHEvent.end, 'time') }}
             </template>
           </UiDataCell>
         </AppHHTooltip>
