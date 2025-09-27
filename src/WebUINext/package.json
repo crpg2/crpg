@@ -37,6 +37,7 @@
     "eslint-plugin-better-tailwindcss": "3.7.9",
     "happy-dom": "^18.0.1",
     "json5": "^2.2.3",
+    "motion-v": "^1.7.1",
     "nuxt": "^4.1.2",
     "oidc-client-ts": "^3.3.0",
     "patch-package": "^8.0.0",

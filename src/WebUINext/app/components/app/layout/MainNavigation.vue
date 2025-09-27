@@ -12,41 +12,33 @@ const { settings } = useAppConfig()
 const userStore = useUserStore()
 const { t } = useI18n()
 
-const items = computed<NavigationMenuItem[]>(() => [
-  [
-    ...(userStore.user
-      ? [
-          {
-            label: t('nav.main.Characters'),
-            to: {
-              name: 'characters',
-            },
-          },
-          {
-            label: t('nav.main.Shop'),
-            to: {
-              name: 'shop',
-            },
-          },
-          {
-            label: t('nav.main.Clans'),
-            to: {
-              name: 'clans',
-            },
-            slot: 'clans' as const,
-          },
-        ]
-      : []),
+const items = computed(() => {
+  const common: NavigationMenuItem[] = [
+
     {
       label: t('nav.main.Leaderboard'),
       icon: 'crpg:trophy-cup',
-      to: {
-        name: 'leaderboard',
-      },
-      slot: 'leaderboard' as const,
+      to: { name: 'leaderboard' },
+      slot: 'leaderboard',
     },
-  ],
-] satisfies NavigationMenuItem[])
+    {
+      label: t('nav.main.Credits'),
+      to: { name: 'credits' },
+    },
+  ]
+
+  if (!userStore.user) {
+    return common
+  }
+
+  const authed: NavigationMenuItem[] = [
+    { label: t('nav.main.Characters'), to: { name: 'characters' } },
+    { label: t('nav.main.Shop'), to: { name: 'shop' } },
+    { label: t('nav.main.Clans'), to: { name: 'clans' }, slot: 'clans' },
+  ]
+
+  return [...authed, ...common]
+})
 </script>
 
 <template>
