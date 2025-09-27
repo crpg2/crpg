@@ -167,12 +167,10 @@ const filteredContributors = computed<Contributor[]>(() => {
     <div class="mx-auto max-w-4xl space-y-8">
       <UiHeading class="mb-14" :title="$t('credits.pageTitle')">
         <template #icon>
-          <div class="flex-2">
-            <UIcon
-              name="crpg:sparkles"
-              class="size-12 text-gold"
-            />
-          </div>
+          <UIcon
+            name="crpg:sparkles"
+            class="size-12 text-gold"
+          />
         </template>
       </UiHeading>
 

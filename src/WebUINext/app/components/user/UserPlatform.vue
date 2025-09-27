@@ -26,14 +26,4 @@ defineProps<{
     v-else-if="platform === PLATFORM.EpicGames"
     name="crpg:epic-games"
   />
-
-  <a
-    v-else-if="platform === PLATFORM.Microsoft"
-    :href="`https://account.xbox.com/en-us/profile?gamertag=${userName}`"
-    class="hover:opacity-80"
-    target="_blank"
-    @click.stop
-  >
-    <UIcon name="crpg:xbox" class="size-full" />
-  </a>
 </template>

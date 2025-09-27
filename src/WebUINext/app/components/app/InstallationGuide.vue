@@ -42,10 +42,6 @@ const items = ref<TabsItem[]>([
               class="size-6"
             />
             <UIcon
-              :name="`crpg:${platformToIcon[PLATFORM.Microsoft]}`"
-              class="size-6"
-            />
-            <UIcon
               :name="`crpg:${platformToIcon[PLATFORM.EpicGames]}`"
               class="size-6"
             />

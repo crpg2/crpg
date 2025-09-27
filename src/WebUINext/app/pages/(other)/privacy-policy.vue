@@ -22,7 +22,7 @@ definePageMeta({
         <ol>
           <li>
             Information we collect: When you use our website, we collect your user ID from the
-            Steam, EpicGames, or Xbox login provider you use to access the website. We do not
+            Steam, EpicGames, login provider you use to access the website. We do not
             collect or store any other personal information, such as your name, address, or email
             address.
           </li>
@@ -41,7 +41,7 @@ definePageMeta({
 
           <li>
             Third-party links: Our website may contain links to third-party websites, such as the
-            Steam, EpicGames, or Xbox websites. We are not responsible for the privacy practices or
+            Steam, EpicGames websites. We are not responsible for the privacy practices or
             content of these third-party websites.
           </li>
 

@@ -14,12 +14,10 @@ const { t } = useI18n()
 
 const items = computed(() => {
   const common: NavigationMenuItem[] = [
-
     {
       label: t('nav.main.Leaderboard'),
-      icon: 'crpg:trophy-cup',
       to: { name: 'leaderboard' },
-      slot: 'leaderboard',
+      slot: 'leaderboard' as const,
     },
     {
       label: t('nav.main.Credits'),

@@ -188,10 +188,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
 <template>
   <UContainer>
     <div
-      class="
-        mx-auto max-w-4xl py-6
-        md:py-10
-      "
+      class="mx-auto max-w-4xl py-6"
     >
       <UiHeading class="mb-14" :title="$t('leaderboard.title')">
         <template #icon>
