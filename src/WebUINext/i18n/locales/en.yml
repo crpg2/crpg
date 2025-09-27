@@ -1531,6 +1531,19 @@ rankTable:
 
 credits:
   pageTitle: Project Credits
+  description: This channel serves to credit our <strong>developers, contributors, creators, artists, and everyone else</strong> for their role in helping to build our mod. We appreciate everything given to keep this mod alive no matter how small.
+  subtitle: Without you, this mod would not have been possible!
+  role:
+    All: All
+    Developer: Developer
+    3DArtist: 3D-Artist
+    Balancer: Balancer
+    MapDesigner: Map Designer
+    ItemCrafter: Item Crafter
+    CommunityManager: Community Manager
+    Moderator: Moderator
+    QA: QA
+    Contributor: Contributor
 
 patchNotes:
   showAllPatches: '+ {count} patch | + {count} patches'

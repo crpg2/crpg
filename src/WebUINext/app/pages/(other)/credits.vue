@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { TabsItem } from '@nuxt/ui'
+import type { ValueOf } from 'type-fest'
 
 definePageMeta({
   layoutOptions: {
@@ -7,145 +8,163 @@ definePageMeta({
   },
 })
 
+const ROLE = {
+  'All': 'All',
+  'Developer': 'Developer',
+  '3DArtist': '3DArtist',
+  'Balancer': 'Balancer',
+  'MapDesigner': 'MapDesigner',
+  'ItemCrafter': 'ItemCrafter',
+  'CommunityManager': 'CommunityManager',
+  'Moderator': 'Moderator',
+  'QA': 'QA',
+  'Contributor': 'Contributor',
+} as const
+
+type Role = ValueOf<typeof ROLE>
+
+const IconByRole: Record<Role, string> = {
+  [ROLE.All]: '',
+  [ROLE.Developer]: 'lucide:code',
+  [ROLE['3DArtist']]: 'lucide:box',
+  [ROLE.Balancer]: 'lucide:scale',
+  [ROLE.MapDesigner]: 'lucide:palette',
+  [ROLE.ItemCrafter]: 'lucide:hammer',
+  [ROLE.CommunityManager]: 'lucide:users',
+  [ROLE.Moderator]: 'lucide:shield-check',
+  [ROLE.QA]: 'lucide:check-circle',
+  [ROLE.Contributor]: 'lucide:sparkles',
+}
+
 interface Contributor {
   name: string
-  role: string
+  roles: Role[]
+  description?: string
   github?: string
 }
 
-const mainDevelopers: Contributor[] = [
-  { name: 'takeo', role: 'Lead Developer (2020 - 2023)', github: 'verdie-g' },
-  { name: 'Namidaka', role: 'Lead Developer (2023 - 2024)', github: 'namidaka' },
-  { name: 'Droob', role: 'Lead Developer (Current)', github: 'Muparadzi' },
-  { name: 'orle', role: 'Lead Web Developer', github: 'or2e' },
-  { name: 'Meowkov', role: 'Lead 3D Artist, Lead Item Manager, Lead Item Crafter', github: 'Meowkov' },
-  { name: 'Yeldur', role: 'Community Manager, Lead Balancer, Lead Item Crafter', github: 'Yeldur' },
-  { name: 'Salt', role: 'Lead Balancer, Lead Item Crafter, Moderator', github: 'Erdertus' },
-]
-
 const contributors: Contributor[] = [
-  // { name: 'takeo', role: 'Lead Developer (2020 - 2023)', github: 'verdie-g' },
-  // { name: 'Namidaka', role: 'Lead Developer (2023 - 2024)', github: 'namidaka' },
-  // { name: 'Droob', role: 'Lead Developer (Current)', github: 'Muparadzi' },
-  // { name: 'orle', role: 'Lead Web Developer', github: 'or2e' },
-  { name: 'Wasch Kadse', role: 'Developer', github: 'MrMendo' },
-  { name: 'Gotha', role: 'Developer', github: 'GerGotha' },
-  { name: 'Norr', role: 'Developer, Item Crafter, QA', github: 'Norr2' },
-  // { name: 'Meowkov', role: 'Lead 3D Artist, Lead Item Manager, Lead Item Crafter', github: 'Meowkov' },
-  // { name: 'Yeldur', role: 'Community Manager, Lead Balancer, Lead Item Crafter', github: 'Yeldur' },
-  // { name: 'Salt', role: 'Lead Balancer, Lead Item Crafter, Moderator', github: 'Erdertus' },
-  { name: 'James of Acre', role: 'Community Manager' },
-  { name: 'Lemon', role: 'Community Manager' },
-  { name: 'rfl', role: 'Map Design Lead, Map Designer', github: 'rf-l' },
-  { name: 'Telford', role: 'Item Crafter', github: 'Telfordski' },
-  { name: 'Truthful', role: 'Item Crafter', github: 'Truthful33' },
-  { name: 'Diggles', role: 'Item Crafter', github: 'Diggles27' },
-  { name: 'AngryMob', role: 'Item Crafter', github: 'AngryMob010' },
-  { name: 'kaikaikai', role: 'Item Crafter', github: 'kaikaikaia' },
-  { name: 'abearirl', role: 'Item Crafter', github: 'abearirlcrpg' },
-  { name: 'AppleTruce', role: 'Item Crafter, 3D Artist', github: 'AppleTruce' },
-  { name: 'ADamnSexyName', role: '3D Artist' },
-  { name: 'gp', role: '3D Artist' },
-  { name: 'Cabs', role: '3D Artist' },
-  { name: 'Eba', role: '3D Artist' },
-  { name: 'Ikarooz', role: '3D Artist, Map Designer' },
-  { name: 'Judie', role: '3D Artist, Map Design Lead, Map Designer' },
-  { name: 'Nemerius', role: '3D Artist' },
-  { name: 'rhkt', role: '3D Artist' },
-  { name: 'ronin', role: '3D Artist' },
-  { name: 'tv', role: '3D Artist' },
-  { name: 'LizardWizard', role: 'Map Design Lead, Map Designer' },
-  { name: 'LowLifeLarry', role: 'Map Design Lead, Map Designer' },
-  { name: 'Lars', role: 'Map Design Lead, Map Designer' },
-  { name: 'Bullero', role: 'Map Design Lead, Map Designer' },
-  { name: 'Reginald', role: 'Map Designer' },
-  { name: 'Radsvid', role: 'Map Designer' },
-  { name: 'PloKoon', role: 'Map Designer' },
-  { name: 'Firunien', role: 'Map Designer' },
-  { name: 'Aragon', role: 'Map Designer' },
-  { name: 'TruthfulLies', role: 'Map Designer' },
-  { name: 'DannyD', role: 'Map Designer' },
-  { name: 'Asda', role: 'Map Designer' },
-  { name: 'MattyG', role: 'Map Designer' },
-  { name: 'Nordwolf', role: 'Map Designer' },
-  { name: 'Legion', role: 'Map Designer' },
-  { name: 'mickwilliams', role: 'Map Designer' },
-  { name: 'Wened', role: 'Map Designer' },
-  { name: 'JayJRod', role: 'Map Designer' },
-  { name: 'Eloquin', role: 'Map Designer' },
-  { name: 'polluxo', role: 'Map Designer' },
-  { name: 'Wese', role: 'Map Designer' },
-  { name: 'Havoc', role: 'Map Designer' },
-  { name: 'Korhum', role: 'Map Designer' },
-  { name: 'ICEMAN1779', role: 'Map Designer' },
-  { name: 'Giraffe', role: 'Map Designer' },
-  { name: 'Axthenon', role: 'Item Crafter, Moderator', github: 'axeltt012' },
-  { name: 'Slyve', role: 'Item Crafter', github: 'S1yve' },
-  { name: 'Caverus', role: 'Item Crafter', github: 'Caver16' },
-  { name: 'Lubu', role: 'Item Crafter', github: 'MKVuong' },
-  { name: 'Queuexx', role: 'Item Crafter', github: 'Queuexx' },
-  { name: 'Lokiphur', role: 'Item Crafter', github: 'Lokiphur' },
-  { name: 'GEEKILLER', role: 'Item Crafter', github: 'GEEKILLER95' },
-  { name: 'MaxParks', role: 'Item Crafter', github: 'MaxParks' },
-  { name: 'Zorglubz', role: 'Item Crafter', github: 'Zorglubz' },
-  { name: 'LastKaze', role: 'Item Crafter', github: 'LastKaze' },
-  { name: 'Lexxe', role: 'Item Crafter', github: 'SuperLexxe' },
-  { name: 'Steve', role: 'Item Crafter', github: 'Steve1833' },
-  { name: 'Dupre', role: 'Consultant/Server Host' },
-  { name: 'Redinb', role: 'Moderator' },
-  { name: '081233468', role: 'Contributor ', github: '081233468' },
-  { name: 'Cajun', role: 'Moderator' },
-  { name: 'Caver', role: 'Moderator' },
-  { name: 'Demochi', role: 'Moderator ' },
-  { name: 'Dill Pickle', role: 'Moderator ' },
-  { name: 'Elindor', role: 'Moderator ' },
-  { name: 'evilmagic', role: 'Moderator ' },
-  { name: 'Gallonigher', role: 'Moderator ' },
-  { name: 'IZA', role: 'Moderator ' },
-  { name: 'Jimzy', role: 'Moderator ' },
-  { name: 'Kadeth', role: 'Moderator ' },
-  { name: 'ChesterOtab', role: 'Moderator ' },
-  { name: 'Unrated', role: 'Contributor ', github: 'Unrated' },
-  { name: 'kschulz90', role: 'Contributor ', github: 'kschulz90' },
-  { name: 'Falcom', role: 'Contributor ', github: 'Falcomfr' },
-  { name: 'mewtlu', role: 'Contributor ', github: 'mewtlu' },
-  { name: 'Rogerdin13', role: 'Contributor ', github: 'Rogerdin13' },
-  { name: 'thbolijn', role: 'Contributor ', github: 'thbolijn' },
-  { name: 'petro-poroshenko', role: 'Contributor ', github: 'petro-poroshenko' },
-  { name: 'Thradok', role: 'Contributor ', github: 'Thradok' },
-  { name: 'kmiestmoore', role: 'Contributor ', github: 'kmiestmoore' },
-  { name: 'winnie1069667084', role: 'Contributor ', github: 'winnie1069667084' },
-  { name: 'grughub', role: 'Contributor ', github: 'grughub' },
-  { name: 'EckoM89', role: 'Contributor ', github: 'EckoM89' },
-  { name: 'havena', role: 'Contributor ', github: 'havena' },
-  { name: 'Brainbirb', role: 'Contributor ', github: 'Brainbirb' },
-  { name: 'Peeky', role: 'Contributor ', github: 'Peeky' },
-  { name: 'Swagathor', role: 'QA ' },
-  { name: 'Summer', role: 'QA ' },
-  { name: 'Zee', role: 'QA ' },
-  { name: 'Suleyk', role: 'QA ' },
-  { name: 'HawtMiniBoss', role: 'QA ' },
-  { name: 'DelroWanep', role: 'QA ' },
-  { name: 'Phoenix', role: 'Balancer ' },
-  { name: 'Dionysus', role: 'Balancer ' },
-  { name: 'Yoshie', role: 'Balancer' },
+  { name: 'takeo', description: 'Lead Developer (2020 - 2023)', roles: [ROLE.Developer], github: 'verdie-g' },
+  { name: 'Namidaka', description: 'Lead Developer (2023 - 2024)', roles: [ROLE.Developer], github: 'namidaka' },
+  { name: 'Droob', description: 'Lead Developer (Current)', roles: [ROLE.Developer], github: 'Muparadzi' },
+  { name: 'orle', description: 'Lead Web Developer', roles: [ROLE.Developer], github: 'or2e' },
+  { name: 'Meowkov', description: 'Lead 3D Artist, Lead Item Manager, Lead Item Crafter', roles: [ROLE['3DArtist'], ROLE.ItemCrafter], github: 'Meowkov' },
+  { name: 'Salt', description: 'Lead Balancer, Lead Item Crafter', roles: [ROLE.Balancer, ROLE.ItemCrafter, ROLE.Moderator], github: 'Erdertus' },
+  { name: 'Yeldur', description: 'Lead Balancer, Lead Item Crafter', roles: [ROLE.CommunityManager, ROLE.ItemCrafter], github: 'Yeldur' },
+  { name: 'vick', roles: [ROLE.Developer], github: 'its-vick' },
+  { name: 'Wasch Kadse', roles: [ROLE.Developer], github: 'MrMendo' },
+  { name: 'Gotha', roles: [ROLE.Developer], github: 'GerGotha' },
+  { name: 'Norr', roles: [ROLE.Developer, ROLE.ItemCrafter, ROLE.QA], github: 'Norr2' },
+  { name: 'James of Acre', roles: [ROLE.CommunityManager] },
+  { name: 'Lemon', roles: [ROLE.CommunityManager] },
+  { name: 'rfl', description: 'Map Design Lead', roles: [ROLE.MapDesigner], github: 'rf-l' },
+  { name: 'Telford', roles: [ROLE.ItemCrafter], github: 'Telfordski' },
+  { name: 'Truthful', roles: [ROLE.ItemCrafter], github: 'Truthful33' },
+  { name: 'Diggles', roles: [ROLE.ItemCrafter], github: 'Diggles27' },
+  { name: 'AngryMob', roles: [ROLE.ItemCrafter], github: 'AngryMob010' },
+  { name: 'kaikaikai', roles: [ROLE.ItemCrafter], github: 'kaikaikaia' },
+  { name: 'abearirl', roles: [ROLE.ItemCrafter], github: 'abearirlcrpg' },
+  { name: 'AppleTruce', roles: [ROLE['3DArtist'], ROLE.ItemCrafter], github: 'AppleTruce' },
+  { name: 'ADamnSexyName', roles: [ROLE['3DArtist']] },
+  { name: 'gp', roles: [ROLE['3DArtist']] },
+  { name: 'Cabs', roles: [ROLE['3DArtist']] },
+  { name: 'Eba', roles: [ROLE['3DArtist']] },
+  { name: 'Ikarooz', roles: [ROLE['3DArtist'], ROLE.MapDesigner] },
+  { name: 'Judie', description: 'Map Design Lead', roles: [ROLE['3DArtist'], ROLE.MapDesigner] },
+  { name: 'Nemerius', roles: [ROLE['3DArtist']] },
+  { name: 'rhkt', roles: [ROLE['3DArtist']] },
+  { name: 'ronin', roles: [ROLE['3DArtist']] },
+  { name: 'tv', roles: [ROLE['3DArtist']] },
+  { name: 'Phoenix', roles: [ROLE.Balancer] },
+  { name: 'Dionysus', roles: [ROLE.Balancer] },
+  { name: 'Yoshie', roles: [ROLE.Balancer] },
+  { name: 'LizardWizard', description: 'Map Design Lead', roles: [ROLE.MapDesigner] },
+  { name: 'LowLifeLarry', description: 'Map Design Lead', roles: [ROLE.MapDesigner] },
+  { name: 'Lars', description: 'Map Design Lead', roles: [ROLE.MapDesigner] },
+  { name: 'Bullero', description: 'Map Design Lead', roles: [ROLE.MapDesigner] },
+  { name: 'Reginald', roles: [ROLE.MapDesigner] },
+  { name: 'Radsvid', roles: [ROLE.MapDesigner] },
+  { name: 'PloKoon', roles: [ROLE.MapDesigner] },
+  { name: 'Firunien', roles: [ROLE.MapDesigner] },
+  { name: 'Aragon', roles: [ROLE.MapDesigner] },
+  { name: 'TruthfulLies', roles: [ROLE.MapDesigner] },
+  { name: 'DannyD', roles: [ROLE.MapDesigner] },
+  { name: 'Asda', roles: [ROLE.MapDesigner] },
+  { name: 'MattyG', roles: [ROLE.MapDesigner] },
+  { name: 'Nordwolf', roles: [ROLE.MapDesigner] },
+  { name: 'Legion', roles: [ROLE.MapDesigner] },
+  { name: 'mickwilliams', roles: [ROLE.MapDesigner] },
+  { name: 'Wened', roles: [ROLE.MapDesigner] },
+  { name: 'JayJRod', roles: [ROLE.MapDesigner] },
+  { name: 'Eloquin', roles: [ROLE.MapDesigner] },
+  { name: 'polluxo', roles: [ROLE.MapDesigner] },
+  { name: 'Wese', roles: [ROLE.MapDesigner] },
+  { name: 'Havoc', roles: [ROLE.MapDesigner] },
+  { name: 'Korhum', roles: [ROLE.MapDesigner] },
+  { name: 'ICEMAN1779', roles: [ROLE.MapDesigner] },
+  { name: 'Giraffe', roles: [ROLE.MapDesigner] },
+  { name: 'Axthenon', roles: [ROLE.ItemCrafter, ROLE.Moderator], github: 'axeltt012' },
+  { name: 'Slyve', roles: [ROLE.ItemCrafter], github: 'S1yve' },
+  { name: 'Caverus', roles: [ROLE.ItemCrafter], github: 'Caver16' },
+  { name: 'Lubu', roles: [ROLE.ItemCrafter], github: 'MKVuong' },
+  { name: 'Queuexx', roles: [ROLE.ItemCrafter], github: 'Queuexx' },
+  { name: 'Lokiphur', roles: [ROLE.ItemCrafter], github: 'Lokiphur' },
+  { name: 'GEEKILLER', roles: [ROLE.ItemCrafter], github: 'GEEKILLER95' },
+  { name: 'MaxParks', roles: [ROLE.ItemCrafter], github: 'MaxParks' },
+  { name: 'Zorglubz', roles: [ROLE.ItemCrafter], github: 'Zorglubz' },
+  { name: 'LastKaze', roles: [ROLE.ItemCrafter], github: 'LastKaze' },
+  { name: 'Lexxe', roles: [ROLE.ItemCrafter], github: 'SuperLexxe' },
+  { name: 'Steve', roles: [ROLE.ItemCrafter], github: 'Steve1833' },
+  { name: 'Dupre', description: 'Consultant/Server Host', roles: [] },
+  { name: 'Redinb', roles: [ROLE.Moderator] },
+  { name: 'Cajun', roles: [ROLE.Moderator] },
+  { name: 'Caver', roles: [ROLE.Moderator] },
+  { name: 'Demochi', roles: [ROLE.Moderator] },
+  { name: 'Dill Pickle', roles: [ROLE.Moderator] },
+  { name: 'Elindor', roles: [ROLE.Moderator] },
+  { name: 'evilmagic', roles: [ROLE.Moderator] },
+  { name: 'Gallonigher', roles: [ROLE.Moderator] },
+  { name: 'IZA', roles: [ROLE.Moderator] },
+  { name: 'Jimzy', roles: [ROLE.Moderator] },
+  { name: 'Kadeth', roles: [ROLE.Moderator] },
+  { name: 'ChesterOtab', roles: [ROLE.Moderator] },
+  { name: 'Unrated', roles: [ROLE.Contributor], github: 'Unrated' },
+  { name: '081233468', roles: [ROLE.Contributor], github: '081233468' },
+  { name: 'kschulz90', roles: [ROLE.Contributor], github: 'kschulz90' },
+  { name: 'Falcom', roles: [ROLE.Contributor], github: 'Falcomfr' },
+  { name: 'mewtlu', roles: [ROLE.Contributor], github: 'mewtlu' },
+  { name: 'Rogerdin13', roles: [ROLE.Contributor], github: 'Rogerdin13' },
+  { name: 'thbolijn', roles: [ROLE.Contributor], github: 'thbolijn' },
+  { name: 'petro-poroshenko', roles: [ROLE.Contributor], github: 'petro-poroshenko' },
+  { name: 'Thradok', roles: [ROLE.Contributor], github: 'Thradok' },
+  { name: 'kmiestmoore', roles: [ROLE.Contributor], github: 'kmiestmoore' },
+  { name: 'winnie1069667084', roles: [ROLE.Contributor], github: 'winnie1069667084' },
+  { name: 'grughub', roles: [ROLE.Contributor], github: 'grughub' },
+  { name: 'EckoM89', roles: [ROLE.Contributor], github: 'EckoM89' },
+  { name: 'havena', roles: [ROLE.Contributor], github: 'havena' },
+  { name: 'Brainbirb', roles: [ROLE.Contributor], github: 'Brainbirb' },
+  { name: 'Peeky', roles: [ROLE.Contributor], github: 'Peeky' },
+  { name: 'Swagathor', roles: [ROLE.QA] },
+  { name: 'Summer', roles: [ROLE.QA] },
+  { name: 'Zee', roles: [ROLE.QA] },
+  { name: 'Suleyk', roles: [ROLE.QA] },
+  { name: 'HawtMiniBoss', roles: [ROLE.QA] },
+  { name: 'DelroWanep', roles: [ROLE.QA] },
 ]
 
-const roles = ['All', 'Lead Developer', '3D Artist', 'Community Manager', 'Item Crafter']
+const currentFilter = ref<Role>(ROLE.All)
 
-const currentFilter = ref('All')
-
-const filteredPeople = computed<Contributor[]>(() => {
-  if (currentFilter.value === 'All') {
-    return [...mainDevelopers, ...contributors]
+const filteredContributors = computed<Contributor[]>(() => {
+  if (currentFilter.value === ROLE.All) {
+    return contributors
   }
-  return [...mainDevelopers, ...contributors].filter(p => p.role.includes(currentFilter.value))
+  return contributors.filter(p => p.roles.includes(currentFilter.value))
 })
 </script>
 
 <template>
   <UContainer class="py-6">
-    <div class="mx-auto max-w-3xl space-y-6">
+    <div class="mx-auto max-w-4xl space-y-8">
       <UiHeading class="mb-14" :title="$t('credits.pageTitle')">
         <template #icon>
           <div class="flex-2">
@@ -158,67 +177,94 @@ const filteredPeople = computed<Contributor[]>(() => {
       </UiHeading>
 
       <div class="space-y-8 text-center">
-        <UiTextView variant="p" class="mx-auto max-w-xl">
-          This channel serves to credit our <span class="font-bold text-primary">developers, contributors, creators, artists, and everyone else</span> for their role in helping to build our mod. We appreciate everything given to keep this mod alive no matter how small.
-        </UiTextView>
-
-        <UiTextView variant="h3" class="font-extrabold text-gold">
-          Without you, this mod would not have been possible!
-        </UiTextView>
+        <div
+          class="
+            mx-auto prose max-w-xl
+            prose-strong:font-bold prose-strong:text-primary
+          "
+        >
+          <p v-html="$t('credits.description')" />
+          <h3 class="font-extrabold text-gold" v-html="$t('credits.subtitle')" />
+        </div>
       </div>
 
       <UTabs
         v-model="currentFilter"
-        :items="roles.map<TabsItem>((role) => ({
-          label: role,
+        :items="Object.values(ROLE).map<TabsItem>((role) => ({
+          label: $t(`credits.role.${role}`),
           value: role,
+          icon: IconByRole[role],
         }))"
         :content="false"
         color="neutral"
         size="xl"
+        :ui="{
+          list: 'flex-wrap gap-4 bg-transparent',
+          indicator: 'hidden',
+          trigger: 'data-[state=active]:bg-accented bg-elevated data-[state=active]:text-accented grow-0',
+        }"
       />
 
       <div class="flex flex-wrap items-center justify-center gap-5">
         <Motion
-          v-for="(user, index) in filteredPeople"
-          :key="`${user.name}-${currentFilter}`"
+          v-for="contributor in filteredContributors"
+          :key="`${contributor.name}-${currentFilter}`"
           :initial="{
-            y: 100,
+            y: 50,
             opacity: 0,
           }"
-          :animate="{
+          :in-view="{
             y: 0,
             opacity: 1,
           }"
           :transition="{
             type: 'spring',
             stiffness: 350,
-            damping: 20,
-            delay: index * 0.05,
+            damping: 30,
           }"
         >
           <UUser
             :ui="{
               description: 'max-w-[160px]',
               avatar: 'rounded-none squircle',
-              name: 'truncate max-w-[110px]',
+              name: 'truncate max-w-[140px]',
             }"
             class="rounded-lg px-3 py-2.5 ring-1 ring-muted"
-            :name="user.name"
-            size="lg"
-            :description="user.role"
-            v-bind="{ ...(user.github ? {
-              to: `https://github.com/${user.github}`,
+            :name="contributor.name"
+            size="xl"
+            v-bind="{ ...(contributor.github ? {
+              to: `https://github.com/${contributor.github}`,
               target: '_blank',
+              // TODO: steam avatar
               avatar: {
-                src: `https://github.com/${user.github}.png`,
+                src: `https://github.com/${contributor.github}.png`,
               },
             } : {
               avatar: {
-                text: user.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase(),
+                text: contributor.name.at(0)?.toUpperCase(),
               },
             }) }"
-          />
+          >
+            <template #description>
+              <UiTextView
+                v-if="contributor.description"
+                variant="caption-xs"
+              >
+                {{ contributor.description }}
+              </UiTextView>
+              <div class="mt-2 flex flex-wrap items-center gap-1.5">
+                <div
+                  v-for="role in contributor.roles"
+                  :key="role"
+                >
+                  <UBadge
+                    variant="subtle"
+                    :label="$t(`credits.role.${role}`)"
+                  />
+                </div>
+              </div>
+            </template>
+          </UUser>
         </Motion>
       </div>
     </div>
@@ -231,15 +277,5 @@ const filteredPeople = computed<Contributor[]>(() => {
   mask-size: contain;
   mask-position: center;
   mask-repeat: no-repeat;
-}
-
-.credits-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  /* display: grid; */
-  /* grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); */
-  gap: 1rem;
 }
 </style>
