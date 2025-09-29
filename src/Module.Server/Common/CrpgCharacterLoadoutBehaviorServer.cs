@@ -9,6 +9,7 @@ using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Restrictions;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common.Network;
+using Crpg.Module.Common.Network.Armory;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -24,6 +25,13 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
     public CrpgCharacterLoadoutBehaviorServer(ICrpgClient crpgClient)
     {
         _crpgClient = crpgClient;
+
+    }
+
+    public override void OnBehaviorInitialize()
+    {
+        base.OnBehaviorInitialize();
+
     }
 
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
@@ -34,164 +42,6 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         registerer.Register<UserRequestGetCharacterBasic>(HandleUserRequestGetCharacterBasic);
         registerer.Register<UserRequestUpdateCharacterCharacteristics>(HandleUserRequestUpdateCharacterCharacteristics);
         registerer.Register<UserRequestConvertCharacteristics>(HandleUserRequestConvertCharacteristics);
-        registerer.Register<UserRequestClanArmoryAction>(HandleUserRequestClanArmoryAction);
-    }
-
-    private bool HandleUserRequestClanArmoryAction(NetworkCommunicator networkPeer, UserRequestClanArmoryAction message)
-    {
-        if (message == null)
-            return false;
-
-        // Fire-and-forget async call
-        _ = HandleUserRequestClanArmoryActionAsync(networkPeer, message);
-
-        return true;
-    }
-
-    private async Task HandleUserRequestClanArmoryActionAsync(NetworkCommunicator networkPeer, UserRequestClanArmoryAction message)
-    {
-        var request = message.Request;
-
-        var result = new ServerSendArmoryActionResult
-        {
-            ActionType = request.ActionType,
-            ClanId = request.ClanId,
-            UserItemId = request.UserItemId,
-            UserId = request.UserId,
-            Success = false,
-            ErrorMessage = string.Empty,
-            ArmoryItems = new List<CrpgClanArmoryItem>(),
-        };
-
-        try
-        {
-            switch (request.ActionType)
-            {
-                case ClanArmoryActionType.Add:
-                    {
-                        var apiRes = await _crpgClient.ClanArmoryAddItemAsync(request.ClanId,
-                            new CrpgGameClanArmoryAddItemRequest { UserItemId = request.UserItemId, UserId = request.UserId });
-
-                        if (apiRes?.Errors?.Count > 0)
-                        {
-                            result.ErrorMessage = string.Join("; ", apiRes.Errors.Select(e => e.Detail));
-                            Debug.Print($"Add Failed: {result.ErrorMessage}");
-                        }
-                        else
-                        {
-                            if (apiRes?.Data != null)
-                            {
-                                result.ArmoryItems.Add(apiRes.Data);
-                            }
-
-                            result.Success = true;
-                            Debug.Print($"Added item {request.UserItemId} to clan {request.ClanId}");
-                        }
-                    }
-
-                    break;
-
-                case ClanArmoryActionType.Remove:
-                    {
-                        var apiRes = await _crpgClient.RemoveClanArmoryItemAsync(request.ClanId, request.UserItemId, request.UserId);
-
-                        if (apiRes?.Errors?.Count > 0)
-                        {
-                            result.ErrorMessage = string.Join("; ", apiRes.Errors.Select(e => e.Detail));
-                            Debug.Print($"Remove Failed: {result.ErrorMessage}");
-                        }
-                        else
-                        {
-                            result.Success = true;
-                            Debug.Print($"Removed item {request.UserItemId} from clan {request.ClanId}");
-                        }
-                    }
-
-                    break;
-
-                case ClanArmoryActionType.Borrow:
-                    {
-                        var apiRes = await _crpgClient.ClanArmoryBorrowItemAsync(request.ClanId, request.UserItemId,
-                            new CrpgGameBorrowClanArmoryItemRequest { UserId = request.UserId });
-
-                        if (apiRes?.Errors?.Count > 0)
-                        {
-                            result.ErrorMessage = string.Join("; ", apiRes.Errors.Select(e => e.Detail));
-                            Debug.Print($"Borrow Failed: {result.ErrorMessage}");
-                        }
-                        else
-                        {
-                            result.Success = true;
-                            Debug.Print($"Borrowed item {request.UserItemId} from clan {request.ClanId}");
-                        }
-                    }
-
-                    break;
-
-                case ClanArmoryActionType.Return:
-                    {
-                        var apiRes = await _crpgClient.ClanArmoryReturnItemAsync(request.ClanId, request.UserItemId,
-                            new CrpgGameBorrowClanArmoryItemRequest { UserId = request.UserId });
-
-                        if (apiRes?.Errors?.Count > 0)
-                        {
-                            result.ErrorMessage = string.Join("; ", apiRes.Errors.Select(e => e.Detail));
-                            Debug.Print($"Return Failed: {result.ErrorMessage}");
-                        }
-                        else
-                        {
-                            result.Success = true;
-                            Debug.Print($"Returned item {request.UserItemId} to clan {request.ClanId}");
-                        }
-                    }
-
-                    break;
-
-                case ClanArmoryActionType.Get:
-                    {
-                        var apiRes = await _crpgClient.GetClanArmoryAsync(request.ClanId, request.UserId);
-
-                        if (apiRes?.Errors?.Count > 0)
-                        {
-                            result.ErrorMessage = string.Join("; ", apiRes.Errors.Select(e => e.Detail));
-                            Debug.Print($"Get Failed: {result.ErrorMessage}");
-                        }
-                        else if (apiRes?.Data != null)
-                        {
-                            result.Success = true;
-                            result.ArmoryItems = apiRes.Data.ToList();
-
-                            Debug.Print($"Fetch armory items for clan {request.ClanId}, count: {result.ArmoryItems.Count}");
-                            foreach (var item in result.ArmoryItems)
-                            {
-                                Debug.Print($"- userItemId: {item.UserItem?.Id}, borrowerUserId: {item?.BorrowedItem?.BorrowerUserId}, rank: {item?.UserItem?.Rank}");
-                            }
-                        }
-                        else
-                        {
-                            Debug.Print("Armory is empty.");
-                        }
-                    }
-
-                    break;
-
-                default:
-                    result.ErrorMessage = "Unknown action type.";
-                    Debug.Print($"Unknown Action: {request.ActionType}");
-                    break;
-            }
-        }
-        catch (Exception ex)
-        {
-            result.Success = false;
-            result.ErrorMessage = ex.Message;
-            Debug.Print($"HandleUserRequestClanArmoryActionAsync exception for peer {networkPeer.UserName}: {ex}");
-        }
-
-        // Send the result to the client
-        GameNetwork.BeginModuleEventAsServer(networkPeer);
-        GameNetwork.WriteMessage(result);
-        GameNetwork.EndModuleEventAsServer();
     }
 
     /// <summary>

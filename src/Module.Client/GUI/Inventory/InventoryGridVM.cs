@@ -1,9 +1,6 @@
-using System.Diagnostics;
 using Crpg.Module.Api.Models.Items;
 using TaleWorlds.Core;
-using TaleWorlds.Core.ViewModelCollection;
 using TaleWorlds.Library;
-using TaleWorlds.ObjectSystem;
 
 namespace Crpg.Module.GUI.Inventory;
 
@@ -62,19 +59,19 @@ public class InventoryGridVM : ViewModel
 
     public void ExecuteClickArmory()
     {
-        InformationManager.DisplayMessage(new InformationMessage($"Clicked Armory: (2)"));
+        LogDebug($"Clicked Armory: (2)");
         OnInventoryChangeType?.Invoke(2);
         ActiveSection = InventorySection.Armory;
     }
 
     public void ExecuteClickUserInventory()
     {
-        InformationManager.DisplayMessage(new InformationMessage($"Clicked User Inventory: (1)"));
+        LogDebug($"Clicked User Inventory: (1)");
         OnInventoryChangeType?.Invoke(1);
         ActiveSection = InventorySection.Inventory;
     }
 
-    public void SetInventoryItems(IEnumerable<(ItemObject item, int quantity, CrpgUserItemExtended userItemExtended)> items)
+    internal void SetInventoryItems(IEnumerable<(ItemObject item, int quantity, CrpgUserItemExtended userItemExtended)> items)
     {
         _inventoryItems.Clear();
         foreach (var slot in BuildSlots(items))
@@ -88,7 +85,7 @@ public class InventoryGridVM : ViewModel
         }
     }
 
-    public void SetArmoryItems(IEnumerable<(ItemObject item, int quantity, CrpgUserItemExtended userItemExtended)> items)
+    internal void SetArmoryItems(IEnumerable<(ItemObject item, int quantity, CrpgUserItemExtended userItemExtended)> items)
     {
         _armoryItems.Clear();
         foreach (var slot in BuildSlots(items))
@@ -102,7 +99,7 @@ public class InventoryGridVM : ViewModel
         }
     }
 
-    public void SetAvailableItems(IEnumerable<(ItemObject itemObj, int count, CrpgUserItemExtended userItem)> items)
+    internal void SetAvailableItems(IEnumerable<(ItemObject itemObj, int count, CrpgUserItemExtended userItem)> items)
     {
         AvailableItems.Clear();
 
@@ -131,7 +128,7 @@ public class InventoryGridVM : ViewModel
     {
         if (slot?.ItemObj != null)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"Clicked: {slot.ItemName}"));
+            LogDebug($"Clicked: {slot.ItemName}");
             OnInventorySlotClicked?.Invoke(slot);
         }
     }
@@ -231,7 +228,7 @@ public class InventoryGridVM : ViewModel
     [DataSourceProperty]
     public MBBindingList<InventorySortTypeVM> InventorySortTypesTop { get => _inventorySortTypesTop; set => SetField(ref _inventorySortTypesTop, value, nameof(InventorySortTypesTop)); }
 
-    public void InitializeFilteredItemsList()
+    internal void InitializeFilteredItemsList()
     {
         _filteredItems.Clear();
 
@@ -283,7 +280,7 @@ public class InventoryGridVM : ViewModel
 
     private void OnSortTypeClicked(InventorySortTypeVM clickedSort)
     {
-        InformationManager.DisplayMessage(new InformationMessage($"Clicked sort icon: {clickedSort.IconSprite}"));
+        LogDebug($"Clicked sort icon: {clickedSort.IconSprite}");
 
         // TODO: Apply filtering logic here and refresh visible items.
         RefreshFilteredItemsFast();
@@ -332,5 +329,26 @@ public class InventoryGridVM : ViewModel
         {
             FilteredItems.Add(item);
         }
+    }
+
+    private readonly bool _debugOn = false;
+    private void LogDebug(string message)
+    {
+        if (_debugOn)
+        {
+            LogDebug(message, Color.White);
+        }
+    }
+
+    private void LogDebugError(string message)
+    {
+        LogDebug(message, Colors.Red);
+    }
+
+    private void LogDebug(string message, Color color)
+    {
+        message = $"{GetType().Name} {message}";
+        Debug.Print(message);
+        InformationManager.DisplayMessage(new InformationMessage(message, color));
     }
 }

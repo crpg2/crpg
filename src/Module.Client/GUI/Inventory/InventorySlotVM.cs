@@ -1,8 +1,10 @@
 using System.Security;
+using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using Crpg.Module.Common.Network;
+using Crpg.Module.Common.Network.Armory;
 using Messages.FromClient.ToLobbyServer;
 using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection.Information;
@@ -39,6 +41,7 @@ public class InventorySlotVM : ViewModel
 
     public ItemObject ItemObj { get; }
     internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
+    private readonly CrpgClanArmoryClient? _clanArmory;
 
     public event Action<ItemObject>? OnItemDragBegin;
     public event Action<ItemObject>? OnItemDragEnd;
@@ -46,6 +49,12 @@ public class InventorySlotVM : ViewModel
     public InventorySlotVM(ItemObject item, Action<InventorySlotVM> onClick, Action<InventorySlotVM> onHoverEnd, int quantity = 1, CrpgUserItemExtended? userItemExtended = null)
     {
         UserLoadoutBehavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        _clanArmory = Mission.Current?.GetMissionBehavior<CrpgClanArmoryClient>();
+        if (_clanArmory is null)
+        {
+            _clanArmory = new CrpgClanArmoryClient();
+            Mission.Current?.AddMissionBehavior(_clanArmory);
+        }
 
         ItemObj = item;
         if (item != null)
@@ -75,14 +84,14 @@ public class InventorySlotVM : ViewModel
             UserLoadoutBehavior.OnEquipmentSlotUpdated += HandleUpdateEvent;
             UserLoadoutBehavior.OnUserInventoryUpdated += HandleUpdateEvent;
             UserLoadoutBehavior.OnUserCharacterEquippedItemsUpdated += HandleUpdateEvent;
-            UserLoadoutBehavior.OnClanArmoryUpdated += HandleUpdateEvent;
-            UserLoadoutBehavior.OnArmoryActionUpdated += HandleUpdateEvent;
+            _clanArmory.OnClanArmoryUpdated += HandleUpdateEvent;
+            _clanArmory.OnArmoryActionUpdated += HandleUpdateEvent;
 
             if (_isArmoryItem)
             {
-                //IsDraggable = !UserLoadoutBehavior.IsArmoryItemOwner(_userItemId); // dont let equip if armory item and owner
+                // IsDraggable = !UserLoadoutBehavior.IsArmoryItemOwner(_userItemId); // dont let equip if armory item and owner
                 IsDraggable = CanDragSlot();
-                _itemArmoryIcon?.UpdateItemArmoyIconFromItem(_userItemId);
+                _itemArmoryIcon?.UpdateItemArmoryIconFromItem(_userItemId);
             }
 
             CheckItemEquipped();
@@ -108,16 +117,19 @@ public class InventorySlotVM : ViewModel
 
     public override void OnFinalize()
     {
-        if (UserLoadoutBehavior is null)
+        base.OnFinalize();
+        if (UserLoadoutBehavior is not null)
         {
-            return;
+            UserLoadoutBehavior.OnEquipmentSlotUpdated -= HandleUpdateEvent;
+            UserLoadoutBehavior.OnUserInventoryUpdated -= HandleUpdateEvent;
+            UserLoadoutBehavior.OnUserCharacterEquippedItemsUpdated -= HandleUpdateEvent;
         }
 
-        UserLoadoutBehavior.OnEquipmentSlotUpdated -= HandleUpdateEvent;
-        UserLoadoutBehavior.OnUserInventoryUpdated -= HandleUpdateEvent;
-        UserLoadoutBehavior.OnUserCharacterEquippedItemsUpdated -= HandleUpdateEvent;
-        UserLoadoutBehavior.OnClanArmoryUpdated -= HandleUpdateEvent;
-        UserLoadoutBehavior.OnArmoryActionUpdated -= HandleUpdateEvent;
+        if (_clanArmory is not null)
+        {
+            _clanArmory.OnClanArmoryUpdated -= HandleUpdateEvent;
+            _clanArmory.OnArmoryActionUpdated -= HandleUpdateEvent;
+        }
     }
 
     public void HandleUpdateEvent(CrpgItemSlot slot)
@@ -187,7 +199,7 @@ public class InventorySlotVM : ViewModel
         // ItemQuantity = uItem.Quantity;
         // QuantityText = ItemQuantity > 1 ? ItemQuantity.ToString() : string.Empty;
         ItemRankIcon = new ItemRankIconVM(_itemRank);
-        ItemArmoryIcon?.UpdateItemArmoyIconFromItem(uItem.Id);
+        ItemArmoryIcon?.UpdateItemArmoryIconFromItem(uItem.Id);
     }
 
     private bool CanDragSlot()
@@ -197,19 +209,24 @@ public class InventorySlotVM : ViewModel
             return true;
         }
 
-        if (!UserLoadoutBehavior.GetCrpgUserItemArmoryStatus(UserItemEx.Id, out var status))
+        if (_clanArmory is not null)
         {
-            return true;
+            if (!_clanArmory.GetCrpgUserItemArmoryStatus(UserItemEx.Id, out var status))
+            {
+                return true;
+            }
+
+            return status switch
+            {
+                CrpgGameArmoryItemStatus.YoursAvailable => false,
+                CrpgGameArmoryItemStatus.YoursBorrowed => false,
+                CrpgGameArmoryItemStatus.NotYoursAvailible => false,
+                CrpgGameArmoryItemStatus.NotYoursBorrowed => false,
+                _ => true,
+            };
         }
 
-        return status switch
-        {
-            CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursAvailable => false,
-            CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursBorrowed => false,
-            CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursAvailible => false,
-            CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursBorrowed => false,
-            _ => true,
-        };
+        return true;
     }
 
     [DataSourceProperty]

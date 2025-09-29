@@ -47,26 +47,26 @@ public class EquipmentSlotVM : ViewModel
 
     public void ExecuteAlternateClick()
     {
-        LogDebug($"EquipmentSlotVM: ExecuteAlternateClick()");
+        LogDebug($"ExecuteAlternateClick()");
         OnSlotAlternateClicked?.Invoke(this);
     }
 
     public void ExecuteClick()
     {
-        LogDebug($"EquipmentSlotVM: ExecuteClick()");
+        LogDebug($"ExecuteClick()");
         OnSlotClicked?.Invoke(this);
     }
 
     public void ExecuteHoverBegin()
     {
         OnHoverBegin?.Invoke(this);
-        LogDebug($"EquipmentSlotVM: ExecuteHoverBegin()");
+        LogDebug($"ExecuteHoverBegin()");
     }
 
     public void ExecuteHoverEnd()
     {
         OnHoverEnd?.Invoke(this);
-        LogDebug($"EquipmentSlotVM: ExecuteHoverEnd()");
+        LogDebug($"ExecuteHoverEnd()");
     }
 
     public void ExecuteDragBegin()
@@ -102,15 +102,12 @@ public class EquipmentSlotVM : ViewModel
         IsArmoryItem = userItemExtended?.IsArmoryItem ?? false;
         ItemRankIcon = new ItemRankIconVM(_itemRank);
         ItemArmoryIcon = new ItemArmoryIconVM();
-        ItemArmoryIcon.UpdateItemArmoyIconFromItem(UserItemId);
+        ItemArmoryIcon.UpdateItemArmoryIconFromItem(UserItemId);
 
         OnPropertyChanged(nameof(ItemObj));
         OnPropertyChanged(nameof(CanAcceptDrag));
         OnPropertyChanged(nameof(ItemRank));
-
-        // SetItemRankIconsVisible(ItemRank);
     }
-
 
     public void ClearItem()
     {
@@ -243,11 +240,12 @@ public class EquipmentSlotVM : ViewModel
 
     private void LogDebugError(string message)
     {
-        LogDebug($"{GetType().Name} {message}", Colors.Red);
+        LogDebug(message, Colors.Red);
     }
 
     private void LogDebug(string message, Color color)
     {
+        message = $"{GetType().Name} {message}";
         Debug.Print(message);
         InformationManager.DisplayMessage(new InformationMessage(message, color));
     }

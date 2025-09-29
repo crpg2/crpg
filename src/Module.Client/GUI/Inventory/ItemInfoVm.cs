@@ -1,9 +1,11 @@
 using System.Drawing;
 using System.Runtime.Remoting.Messaging;
+using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using Crpg.Module.Common.HotConstants;
 using Crpg.Module.Common.Network;
+using Crpg.Module.Common.Network.Armory;
 using Messages.FromClient.ToLobbyServer;
 using NetworkMessages.FromServer;
 using TaleWorlds.Core;
@@ -18,6 +20,7 @@ namespace Crpg.Module.GUI.Inventory;
 public class ItemInfoVM : ViewModel
 {
     private readonly CrpgConstants? _constants;
+    private readonly CrpgClanArmoryClient? _clanArmory;
     internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
 
     private bool _isVisible;
@@ -52,11 +55,6 @@ public class ItemInfoVM : ViewModel
         set => SetField(ref _positionY, value, nameof(PositionY));
     }
 
-    public void ArmoryUpdateInfo()
-    {
-
-    }
-
     public void OnOverlayClick()
     {
         InformationManager.DisplayMessage(new InformationMessage("OnOverlayClick()", Colors.White));
@@ -66,33 +64,32 @@ public class ItemInfoVM : ViewModel
 
     public void ArmoryButtonClick()
     {
-        if (UserLoadoutBehavior == null)
+        if (_clanArmory == null)
         {
-            InformationManager.DisplayMessage(new InformationMessage("CrpgCharacterLoadoutBehaviorClient is required but not found in current mission", Colors.Red));
+            InformationManager.DisplayMessage(new InformationMessage("_clanArmory is required but not found in current mission", Colors.Red));
             return;
         }
 
-
         if (IsArmoryItem && UserItemExtended is not null)
         {
-            if (UserLoadoutBehavior is not null && UserLoadoutBehavior.GetCrpgUserItemArmoryStatus(UserItemExtended.Id, out var itemArmoryStatus))
+            if (_clanArmory is not null && _clanArmory.GetCrpgUserItemArmoryStatus(UserItemExtended.Id, out var itemArmoryStatus))
             {
                 switch (itemArmoryStatus)
                 {
-                    case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursAvailable:
-                        UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Remove, UserItemExtended);
+                    case CrpgGameArmoryItemStatus.YoursAvailable:
+                        _clanArmory.RequestArmoryAction(ClanArmoryActionType.Remove, UserItemExtended);
                         break;
-                    case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursBorrowed:
-                        UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Remove, UserItemExtended);
+                    case CrpgGameArmoryItemStatus.YoursBorrowed:
+                        _clanArmory.RequestArmoryAction(ClanArmoryActionType.Remove, UserItemExtended);
                         break;
-                    case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursAvailible:
-                        UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Borrow, UserItemExtended);
+                    case CrpgGameArmoryItemStatus.NotYoursAvailible:
+                        _clanArmory.RequestArmoryAction(ClanArmoryActionType.Borrow, UserItemExtended);
                         break;
-                    case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursBorrowed:
+                    case CrpgGameArmoryItemStatus.NotYoursBorrowed:
                         // maybe check clan rank for option to return to armory
                         break;
-                    case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.BorrowedByYou:
-                        UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Return, UserItemExtended);
+                    case CrpgGameArmoryItemStatus.BorrowedByYou:
+                        _clanArmory.RequestArmoryAction(ClanArmoryActionType.Return, UserItemExtended);
                         break;
                     default:
                         ArmoryButtonText = "ArmoryStatusInvalid";
@@ -102,7 +99,7 @@ public class ItemInfoVM : ViewModel
         }
         else
         {
-            UserLoadoutBehavior.RequestArmoryAction(ClanArmoryActionType.Add, UserItemExtended);
+            _clanArmory.RequestArmoryAction(ClanArmoryActionType.Add, UserItemExtended);
         }
     }
 
@@ -143,7 +140,9 @@ public class ItemInfoVM : ViewModel
             InformationManager.DisplayMessage(new InformationMessage("CrpgCharacterLoadoutBehaviorClient is required but not found in current mission", Colors.Red));
             return;
         }
+
         _constants = UserLoadoutBehavior.Constants;
+        _clanArmory = Mission.Current?.GetMissionBehavior<CrpgClanArmoryClient>();
 
         _userItemId = userItemId;
         var userItemExtended = UserLoadoutBehavior.GetCrpgUserItem(userItemId);
@@ -174,7 +173,7 @@ public class ItemInfoVM : ViewModel
             ItemRankIcon = new ItemRankIconVM(userItemExtended?.Rank ?? 0);
 
             ItemArmoryIcon = new ItemArmoryIconVM();
-            ItemArmoryIcon.UpdateItemArmoyIconFromItem(userItemExtended?.Id ?? -1);
+            ItemArmoryIcon.UpdateItemArmoryIconFromItem(userItemExtended?.Id ?? -1);
 
             ArmoryButtonText = string.Empty;
         }
@@ -241,24 +240,24 @@ public class ItemInfoVM : ViewModel
 
             if (IsArmoryItem)
             {
-                if (UserLoadoutBehavior is not null && UserLoadoutBehavior.GetCrpgUserItemArmoryStatus(userItemId, out var itemArmoryStatus))
+                if (_clanArmory is not null && _clanArmory.GetCrpgUserItemArmoryStatus(userItemId, out var itemArmoryStatus))
                 {
                     switch (itemArmoryStatus)
                     {
-                        case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursAvailable:
+                        case CrpgGameArmoryItemStatus.YoursAvailable:
                             ArmoryButtonText = "Remove from armory";
                             break;
-                        case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursBorrowed:
+                        case CrpgGameArmoryItemStatus.YoursBorrowed:
                             ArmoryButtonText = "Remove from armory";
                             break;
-                        case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursAvailible:
+                        case CrpgGameArmoryItemStatus.NotYoursAvailible:
                             ArmoryButtonText = "Borrow from armory";
                             break;
-                        case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursBorrowed:
+                        case CrpgGameArmoryItemStatus.NotYoursBorrowed:
                             ArmoryButtonText = "Unavailable--hide";
                             // maybe check clan rank for option to return to armory
                             break;
-                        case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.BorrowedByYou:
+                        case CrpgGameArmoryItemStatus.BorrowedByYou:
                             ArmoryButtonText = "Return to armory";
                             break;
                         default:
@@ -268,7 +267,6 @@ public class ItemInfoVM : ViewModel
 
                     ItemArmoryIcon = new ItemArmoryIconVM((int)itemArmoryStatus);
                 }
-
             }
             else
             {

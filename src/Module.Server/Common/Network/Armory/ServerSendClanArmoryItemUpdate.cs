@@ -3,20 +3,16 @@ using Crpg.Module.Api.Models.Items;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Network.Messages;
 
-namespace Crpg.Module.Common.Network;
+namespace Crpg.Module.Common.Network.Armory;
 
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromServer)]
-internal sealed class ServerSendArmoryActionResult : GameNetworkMessage
+internal sealed class ServerSendClanArmoryItemUpdate : GameNetworkMessage
 {
     private static readonly CompressionInfo.Integer PacketLengthCompressionInfo = new(0, int.MaxValue, true);
 
-    public ClanArmoryActionType ActionType { get; set; }
-    public bool Success { get; set; }
-    public string ErrorMessage { get; set; } = string.Empty;
     public int ClanId { get; set; }
-    public int UserItemId { get; set; }
-    public int UserId { get; set; }
-    public IList<CrpgClanArmoryItem> ArmoryItems { get; set; } = Array.Empty<CrpgClanArmoryItem>();
+    public ClanArmoryActionType ActionType { get; set; }
+    public CrpgClanArmoryItem? ArmoryItem { get; set; }
 
     protected override void OnWrite()
     {
@@ -24,43 +20,37 @@ internal sealed class ServerSendArmoryActionResult : GameNetworkMessage
         using (GZipStream gZipStream = new(stream, CompressionMode.Compress, leaveOpen: true))
         using (BinaryWriter writer = new(gZipStream))
         {
-            // Basic info
-            writer.Write((int)ActionType);
-            writer.Write(Success);
-            writer.Write(ErrorMessage ?? string.Empty);
             writer.Write(ClanId);
-            writer.Write(UserItemId);
-            writer.Write(UserId);
+            writer.Write((int)ActionType);
 
-            // Armory items
-            writer.Write(ArmoryItems.Count);
-            foreach (var item in ArmoryItems)
+            writer.Write(ArmoryItem != null);
+            if (ArmoryItem != null)
             {
                 // UserItem
-                writer.Write(item.UserItem != null);
-                if (item.UserItem != null)
+                writer.Write(ArmoryItem.UserItem != null);
+                if (ArmoryItem.UserItem != null)
                 {
-                    writer.Write(item.UserItem.Id);
-                    writer.Write(item.UserItem.UserId);
-                    writer.Write(item.UserItem.Rank);
-                    writer.Write(item.UserItem.ItemId ?? string.Empty);
-                    writer.Write(item.UserItem.IsBroken);
-                    writer.Write(item.UserItem.IsArmoryItem);
-                    writer.Write(item.UserItem.IsPersonal);
-                    writer.Write(item.UserItem.CreatedAt.ToBinary());
+                    writer.Write(ArmoryItem.UserItem.Id);
+                    writer.Write(ArmoryItem.UserItem.UserId);
+                    writer.Write(ArmoryItem.UserItem.Rank);
+                    writer.Write(ArmoryItem.UserItem.ItemId ?? string.Empty);
+                    writer.Write(ArmoryItem.UserItem.IsBroken);
+                    writer.Write(ArmoryItem.UserItem.IsArmoryItem);
+                    writer.Write(ArmoryItem.UserItem.IsPersonal);
+                    writer.Write(ArmoryItem.UserItem.CreatedAt.ToBinary());
                 }
 
                 // BorrowedItem
-                writer.Write(item.BorrowedItem != null);
-                if (item.BorrowedItem != null)
+                writer.Write(ArmoryItem.BorrowedItem != null);
+                if (ArmoryItem.BorrowedItem != null)
                 {
-                    writer.Write(item.BorrowedItem.BorrowerUserId);
-                    writer.Write(item.BorrowedItem.UserItemId);
-                    writer.Write(item.BorrowedItem.UpdatedAt.ToBinary());
+                    writer.Write(ArmoryItem.BorrowedItem.BorrowerUserId);
+                    writer.Write(ArmoryItem.BorrowedItem.UserItemId);
+                    writer.Write(ArmoryItem.BorrowedItem.UpdatedAt.ToBinary());
                 }
 
                 // UpdatedAt
-                writer.Write(item.UpdatedAt.ToBinary());
+                writer.Write(ArmoryItem.UpdatedAt.ToBinary());
             }
         }
 
@@ -83,17 +73,10 @@ internal sealed class ServerSendArmoryActionResult : GameNetworkMessage
         using GZipStream gZipStream = new(stream, CompressionMode.Decompress);
         using BinaryReader reader = new(gZipStream);
 
-        ActionType = (ClanArmoryActionType)reader.ReadInt32();
-        Success = reader.ReadBoolean();
-        ErrorMessage = reader.ReadString();
         ClanId = reader.ReadInt32();
-        UserItemId = reader.ReadInt32();
-        UserId = reader.ReadInt32();
+        ActionType = (ClanArmoryActionType)reader.ReadInt32();
 
-        int count = reader.ReadInt32();
-        List<CrpgClanArmoryItem> items = new(count);
-
-        for (int i = 0; i < count; i++)
+        if (reader.ReadBoolean())
         {
             var armoryItem = new CrpgClanArmoryItem();
 
@@ -127,16 +110,16 @@ internal sealed class ServerSendArmoryActionResult : GameNetworkMessage
             // UpdatedAt
             armoryItem.UpdatedAt = DateTime.FromBinary(reader.ReadInt64());
 
-            items.Add(armoryItem);
+            ArmoryItem = armoryItem;
         }
 
-        ArmoryItems = items;
         return true;
     }
 
     protected override MultiplayerMessageFilter OnGetLogFilter() => MultiplayerMessageFilter.GameMode;
+
     protected override string OnGetLogFormat() =>
-        $"ArmoryActionResult (Action={ActionType}, ClanId={ClanId}, UserItemId={UserItemId}, UserId={UserId}, ArmoryItems={ArmoryItems.Count}, Success={Success}, Error='{ErrorMessage}')";
+        $"ClanArmoryItemUpdate (ClanId={ClanId}, Action={ActionType}, HasItem={ArmoryItem != null})";
 
     private byte[]? ReadDynamicByteArrayFromPacket(ref bool bufferReadValid)
     {

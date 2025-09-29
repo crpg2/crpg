@@ -1,3 +1,4 @@
+using Crpg.Module.Api.Models;
 using Crpg.Module.Common;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -6,7 +7,7 @@ namespace Crpg.Module.GUI.Inventory;
 
 public class ItemArmoryIconVM : ViewModel
 {
-    internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
+    private readonly CrpgClanArmoryClient? _clanArmory;
     private int _itemArmoryStatus = -1;
     private bool _yoursAvailable;
     private bool _yoursBorrowed;
@@ -40,14 +41,20 @@ public class ItemArmoryIconVM : ViewModel
 
     public ItemArmoryIconVM(int initialStatus = -1)
     {
-        UserLoadoutBehavior = Mission.Current!.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        _clanArmory = Mission.Current?.GetMissionBehavior<CrpgClanArmoryClient>();
+        if (_clanArmory is null)
+        {
+            _clanArmory = new CrpgClanArmoryClient();
+            Mission.Current?.AddMissionBehavior(_clanArmory);
+        }
+
         ItemArmoryStatus = initialStatus;
         SetArmoryIconsVisible(initialStatus);
     }
 
-    internal void UpdateItemArmoyIconFromItem(int userItemId)
+    internal void UpdateItemArmoryIconFromItem(int userItemId)
     {
-        if (UserLoadoutBehavior is not null && UserLoadoutBehavior.GetCrpgUserItemArmoryStatus(userItemId, out var itemArmoryStatus))
+        if (_clanArmory is not null && _clanArmory.GetCrpgUserItemArmoryStatus(userItemId, out var itemArmoryStatus))
         {
             SetArmoryIconsVisible((int)itemArmoryStatus);
         }
@@ -59,9 +66,9 @@ public class ItemArmoryIconVM : ViewModel
 
     private void SetArmoryIconsVisible(int status)
     {
-        var converted = (CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus)status;
+        var converted = (CrpgGameArmoryItemStatus)status;
         // InformationManager.DisplayMessage(new InformationMessage($"ItemArmoryIconVM set to {converted}"));
-        // status 0 no image
+        // status -1 no image
         YoursAvailable = false;
         YoursBorrowed = false;
         NotYoursAvailible = false;
@@ -70,19 +77,19 @@ public class ItemArmoryIconVM : ViewModel
 
         switch (converted)
         {
-            case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursAvailable:
+            case CrpgGameArmoryItemStatus.YoursAvailable:
                 YoursAvailable = true;
                 break;
-            case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.YoursBorrowed:
+            case CrpgGameArmoryItemStatus.YoursBorrowed:
                 YoursBorrowed = true;
                 break;
-            case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursAvailible:
+            case CrpgGameArmoryItemStatus.NotYoursAvailible:
                 NotYoursAvailible = true;
                 break;
-            case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.NotYoursBorrowed:
+            case CrpgGameArmoryItemStatus.NotYoursBorrowed:
                 NotYoursBorrowed = true;
                 break;
-            case CrpgCharacterLoadoutBehaviorClient.CrpgGameArmoryItemStatus.BorrowedByYou:
+            case CrpgGameArmoryItemStatus.BorrowedByYou:
                 BorrowedByYou = true;
                 break;
         }

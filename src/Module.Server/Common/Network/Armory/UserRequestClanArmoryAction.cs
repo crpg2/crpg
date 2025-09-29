@@ -3,7 +3,7 @@ using Crpg.Module.Api.Models.Items;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Network.Messages;
 
-namespace Crpg.Module.Common.Network;
+namespace Crpg.Module.Common.Network.Armory;
 
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromClient)]
 public sealed class UserRequestClanArmoryAction : GameNetworkMessage

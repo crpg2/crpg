@@ -140,7 +140,7 @@ internal class HttpCrpgClient : ICrpgClient
     {
         var queryParameters = new Dictionary<string, string>(StringComparer.Ordinal)
         {
-            ["userId"] = userId.ToString()
+            ["userId"] = userId.ToString(),
         };
 
         return Get<IList<CrpgClanArmoryItem>>("games/clans/" + clanId + "/armory", queryParameters, cancellationToken);
@@ -227,7 +227,6 @@ internal class HttpCrpgClient : ICrpgClient
 
         return Send<TResponse>(msg, cancellationToken);
     }
-
 
     private async Task<CrpgResult<TResponse>> Send<TResponse>(HttpRequestMessage msg, CancellationToken cancellationToken) where TResponse : class
     {
