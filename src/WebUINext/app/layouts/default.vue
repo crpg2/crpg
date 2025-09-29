@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useIntervalFn } from '@vueuse/core'
-
 import { useMainHeaderProvider } from '~/composables/app/use-main-header'
 
 const route = useRoute()
@@ -9,7 +7,7 @@ const userStore = useUserStore()
 const { data: patchNotes } = usePatchNotes()
 const { data: gameServerStats } = useGameServerStats()
 
-const { hHEvent, HHEventRemaining, isHHCountdownEnded } = useHappyHours()
+const { hHEvent, isHhEventActive, onEndHH } = useHappyHours()
 
 userStore.fetchUserRestriction()
 
@@ -19,12 +17,7 @@ usePollInterval({
 })
 
 useMainHeaderProvider(useTemplateRef('mainHeader'))
-
 const { showWelcomeMessage } = useWelcome()
-
-const { pause, resume, isActive } = useIntervalFn(() => {
-  hHEvent.trigger()
-}, 1000)
 </script>
 
 <template>
@@ -47,19 +40,11 @@ const { pause, resume, isActive } = useIntervalFn(() => {
           v-if="userStore.restriction"
           :restriction="userStore.restriction"
         />
-
-        <pre>
-          {{ {
-            hHEvent,
-            HHEventRemaining,
-            isHHCountdownEnded,
-          } }}
-        </pre>
-
         <LazyAppHHBanner
-          v-if="!isHHCountdownEnded && HHEventRemaining !== 0"
+          v-if="isHhEventActive"
           :region="userStore.user.region"
           :h-h-event
+          @complete="onEndHH"
         />
       </template>
 

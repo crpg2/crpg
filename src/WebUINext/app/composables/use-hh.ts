@@ -1,7 +1,7 @@
-import { computedWithControl, useLocalStorage } from '@vueuse/core'
+import { computedWithControl, useIntervalFn, useLocalStorage } from '@vueuse/core'
 
 import { REGION } from '~/models/region'
-import { getHHEventByRegion, getHHEventRemaining } from '~/services/hh-service'
+import { getHHEventByRegion, getHHEventRemainingSeconds } from '~/services/hh-service'
 import { useUserStore } from '~/stores/user'
 
 export const useHappyHours = () => {
@@ -17,37 +17,45 @@ export const useHappyHours = () => {
     () => getHHEventByRegion($config.public.HH, userStore.user?.region || REGION.Eu),
   )
 
-  const HHEventRemaining = computed(() => getHHEventRemaining(hHEvent.value))
+  const isHhEventActive = computed(() => getHHEventRemainingSeconds(hHEvent.value) !== 0)
 
-  const isHHCountdownEnded = ref<boolean>(false)
-  const alreadyShownHHStartedNotification = useLocalStorage<boolean>('hh-start-notification-shown', false)
+  const showedHHStartedNotification = useLocalStorage<boolean>('hh-start-notification-shown', false)
 
-  const onStartHHCountdown = () => {
-    if (!alreadyShownHHStartedNotification.value) {
-      toast.add({
-        title: t('hh.notify.started'),
-        close: false,
-        color: 'success',
-      })
-      alreadyShownHHStartedNotification.value = true
+  const onStartHH = () => {
+    if (showedHHStartedNotification.value) {
+      return
     }
+    toast.add({
+      title: t('hh.notify.started'),
+      close: false,
+      color: 'success',
+      duration: 7000,
+    })
+    showedHHStartedNotification.value = true
   }
 
-  const onEndHHCountdown = () => {
-    isHHCountdownEnded.value = true
-    alreadyShownHHStartedNotification.value = false
+  const onEndHH = () => {
     toast.add({
       title: t('hh.notify.ended'),
       close: false,
       color: 'success',
+      duration: 7000,
     })
   }
 
+  const { pause } = useIntervalFn(() => {
+    hHEvent.trigger()
+
+    if (isHhEventActive.value) {
+      onStartHH()
+    }
+  }, 5000)
+
+  tryOnScopeDispose(pause)
+
   return {
     hHEvent,
-    HHEventRemaining,
-    isHHCountdownEnded,
-    onEndHHCountdown,
-    onStartHHCountdown,
+    isHhEventActive,
+    onEndHH,
   }
 }

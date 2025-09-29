@@ -6,14 +6,18 @@ import { AppHHTooltip } from '#components'
 import type { Region } from '~/models/region'
 import type { HHEvent } from '~/services/hh-service'
 
-import { getHHEventRemaining } from '~/services/hh-service'
+import { getHHEventRemainingSeconds } from '~/services/hh-service'
 
 const { hHEvent } = defineProps<{ region: Region, hHEvent: HHEvent }>()
+const emit = defineEmits<{ complete: [] }>()
 
 const { remaining } = useCountdown(
-  () => getHHEventRemaining(hHEvent),
+  () => getHHEventRemainingSeconds(hHEvent),
   {
     immediate: true,
+    onComplete: () => {
+      emit('complete')
+    },
   },
 )
 
