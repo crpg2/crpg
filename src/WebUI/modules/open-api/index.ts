@@ -72,7 +72,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.alias[options.alias!] = folder
 
     nuxt.hooks.hookOnce('app:templates', async () => {
-      await createClient(config)
+      // await createClient(config) // TODO: FIXME: TODO: FIXME: learn how to start the module manually
     })
 
     // auto-import enabled

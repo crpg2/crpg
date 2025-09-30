@@ -12,13 +12,13 @@
   become: false
 
 - name: Build locally cRPG Web UI
-  command: "npm --prefix {{ playbook_dir | dirname }}/src/WebUI run build -- --outDir /tmp/{{ crpg_ui_path | basename }}_new"
+  command: "OUT_DIR=/tmp/{{ crpg_ui_path | basename }}_new npm {{ playbook_dir | dirname }}/src/WebUI run build"
   delegate_to: localhost
   become: false
 
 - name: Compress locally cRPG Web UI
   archive:
-    path: "/tmp/{{ crpg_ui_path | basename }}_new"
+    path: "/tmp/{{ crpg_ui_path | basename }}_new/public"
     dest: "/tmp/{{ crpg_ui_path | basename }}_new.tgz"
   delegate_to: localhost
   become: false

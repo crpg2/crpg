@@ -58,7 +58,7 @@ export default defineNuxtConfig({
         {
           rel: '#0f0f0e',
           color: 'image/png',
-          href: '//safari-pinned-tab.svg',
+          href: '/safari-pinned-tab.svg',
         },
         {
           rel: 'manifest',
@@ -112,7 +112,15 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: '2025-07-15',
-  nitro: { compressPublicAssets: true },
+  nitro: {
+    compressPublicAssets: {
+      gzip: true,
+      brotli: false,
+    },
+    output: {
+      dir: import.meta.env.OUT_DIR || '.output',
+    },
+  },
   vite: {
     optimizeDeps: {
       include: [
