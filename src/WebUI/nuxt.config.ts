@@ -5,31 +5,6 @@ import tailwindcss from '@tailwindcss/vite'
 import json5 from 'json5'
 import { fileURLToPath } from 'node:url'
 
-function JSON5(): Plugin {
-  const fileRegex = /\.json$/
-
-  return {
-    enforce: 'pre', // before vite-json
-    name: 'vite-plugin-json5',
-    transform(src, id) {
-      if (fileRegex.test(id)) {
-        let value
-
-        try {
-          value = json5.parse(src)
-        }
-        catch (error) {
-          console.error(error)
-        }
-
-        return {
-          code: value ? JSON.stringify(value) : src,
-          map: null,
-        }
-      }
-    },
-  }
-}
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -156,7 +131,6 @@ export default defineNuxtConfig({
       tailwindcss(),
       JSON5(),
     ],
-    envPrefix: ['VITE_', 'NUXT_PUBLIC_'],
   },
   eslint: {
     config: {
@@ -167,20 +141,14 @@ export default defineNuxtConfig({
   heyApi: {
     autoImport: false,
     config: {
-      input: 'https://localhost:8000/swagger/v1/swagger.json', // TODO: to env
+      input: `${import.meta.env.NUXT_PUBLIC_API_BASE_URL}/swagger/v1/swagger.json`,
       output: {
         path: './app/api',
-        clean: false,
         format: false,
-        // format: 'prettier',
         lint: false,
-        // lint: 'eslint',
       },
       plugins: [
-        {
-          name: '@hey-api/client-nuxt',
-          runtimeConfigPath: '../app/api.config.ts',
-        },
+
         {
           name: '@hey-api/typescript',
           enums: false,
@@ -189,10 +157,15 @@ export default defineNuxtConfig({
           name: '@hey-api/sdk',
           transformer: '@hey-api/transformers',
           auth: false,
+          client: '@hey-api/client-nuxt',
         },
         {
           name: '@hey-api/transformers',
           dates: true,
+        },
+        {
+          name: '@hey-api/client-nuxt',
+          runtimeConfigPath: '../app/api.config.ts',
         },
       ],
       parser: {
@@ -252,7 +225,6 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
-    // debug: true,
     compilation: {
       strictMessage: false,
     },
@@ -290,4 +262,30 @@ function convertDateTimeToTimestamp(schema: OpenApiSchemaObject.V2_0_X | OpenApi
   delete schema.properties[key].format
   // @ts-expect-error ///
   schema.properties[key].type = 'number'
+}
+
+function JSON5(): Plugin {
+  const fileRegex = /\.json$/
+
+  return {
+    enforce: 'pre', // before vite-json
+    name: 'vite-plugin-json5',
+    transform(src, id) {
+      if (fileRegex.test(id)) {
+        let value
+
+        try {
+          value = json5.parse(src)
+        }
+        catch (error) {
+          console.error(error)
+        }
+
+        return {
+          code: value ? JSON.stringify(value) : src,
+          map: null,
+        }
+      }
+    },
+  }
 }

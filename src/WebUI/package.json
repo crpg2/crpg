@@ -3,11 +3,10 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --no-fork",
+    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --no-fork",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "patch-package && nuxt prepare",
-    "openapi-ts": "openapi-ts",
+    "postinstall": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt prepare",
     "test:unit": "vitest",
     "lint": "eslint"
   },
@@ -41,7 +40,6 @@
     "motion-v": "^1.7.2",
     "nuxt": "^4.1.2",
     "oidc-client-ts": "^3.3.0",
-    "patch-package": "^8.0.1",
     "pinia": "^3.0.3",
     "qs": "^6.14.0",
     "tailwind-merge": "^3.3.1",

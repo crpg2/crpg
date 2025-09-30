@@ -1,5 +1,6 @@
 // TODO: FIXME: copy from https://github.com/hey-api/openapi-ts/blob/main/packages/nuxt/src/module.ts
-// ISSUE: https://github.com/hey-api/openapi-ts/issues/2282
+// TODO: ISSUE: https://github.com/hey-api/openapi-ts/issues/2282
+// TODO: MR: https://github.com/hey-api/openapi-ts/pull/2618
 
 import type { UserConfig } from '@hey-api/openapi-ts'
 import type {} from '@nuxt/schema'
