@@ -5,4 +5,5 @@ export interface Settings {
   github: string
   reddit: string
   modDb: string
+  happyHours: string
 }

@@ -16,7 +16,6 @@ public record RestrictCommand : IMediatorRequest<RestrictionViewModel>
 {
     [JsonIgnore]
     public int RestrictedByUserId { get; init; }
-
     public int RestrictedUserId { get; init; }
     public TimeSpan Duration { get; init; }
     public RestrictionType Type { get; init; }

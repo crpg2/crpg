@@ -27,9 +27,7 @@ declare module 'nuxt/schema' {
 
   interface RuntimeConfig { }
 
-  interface PublicRuntimeConfig {
-    HH: string
-  }
+  interface PublicRuntimeConfig { }
 }
 
 export {}

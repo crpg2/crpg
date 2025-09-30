@@ -113,7 +113,6 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      HH: import.meta.env.NUXT_PUBLIC_HH,
       api: {
         baseUrl: import.meta.env.NUXT_PUBLIC_API_BASE_URL,
       },

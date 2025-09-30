@@ -459,6 +459,7 @@ export type EditSettingsCommand = {
     github?: string | null;
     reddit?: string | null;
     modDb?: string | null;
+    happyHours?: string | null;
 };
 
 export type ElevationModel = {
@@ -1098,6 +1099,7 @@ export type SettingsViewModel = {
     github: string;
     reddit: string;
     modDb: string;
+    happyHours: string;
 };
 
 export type SettingsViewModelResult = {

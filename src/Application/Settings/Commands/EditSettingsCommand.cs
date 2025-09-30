@@ -3,6 +3,7 @@ using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Settings.Models;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 namespace Crpg.Application.Settings.Commands;
@@ -15,6 +16,56 @@ public record EditSettingsCommand : IMediatorRequest<SettingsViewModel>
     public string? Github { get; set; }
     public string? Reddit { get; set; }
     public string? ModDb { get; set; }
+    public string? HappyHours { get; set; }
+
+    public class Validator : AbstractValidator<EditSettingsCommand>
+    {
+        public Validator()
+        {
+            RuleFor(x => x.HappyHours)
+                .Must((d, c) => BeValidHappyHoursFormat(c))
+                .When(x => !string.IsNullOrWhiteSpace(x.HappyHours))
+                .WithMessage("HappyHours must be in the format: Region|HH:mm|HH:mm|TimeZone,...");
+        }
+
+        private bool BeValidHappyHoursFormat(string? happyHours)
+        {
+            if (string.IsNullOrWhiteSpace(happyHours))
+            {
+                return true;
+            }
+
+            string[] entries = happyHours.Split(',', StringSplitOptions.RemoveEmptyEntries);
+            foreach (string entry in entries)
+            {
+                string[] parts = entry.Split('|');
+                if (parts.Length != 4)
+                {
+                    return false;
+                }
+
+                // Validate region
+                if (string.IsNullOrWhiteSpace(parts[0]))
+                {
+                    return false;
+                }
+
+                // Validate time format
+                if (!TimeSpan.TryParse(parts[1], out _) || !TimeSpan.TryParse(parts[2], out _))
+                {
+                    return false;
+                }
+
+                // Validate timezone (basic check)
+                if (string.IsNullOrWhiteSpace(parts[3]))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    }
 
     internal class Handler : IMediatorRequestHandler<EditSettingsCommand, SettingsViewModel>
     {
@@ -42,6 +93,7 @@ public record EditSettingsCommand : IMediatorRequest<SettingsViewModel>
             existingSettings.Github = req.Github ?? existingSettings.Github;
             existingSettings.Reddit = req.Reddit ?? existingSettings.Reddit;
             existingSettings.ModDb = req.ModDb ?? existingSettings.ModDb;
+            existingSettings.HappyHours = req.HappyHours ?? existingSettings.HappyHours;
 
             await _db.SaveChangesAsync(cancellationToken);
 

@@ -5,7 +5,8 @@ import { getHHEventByRegion, getHHEventRemainingSeconds } from '~/services/hh-se
 import { useUserStore } from '~/stores/user'
 
 export const useHappyHours = () => {
-  const { $config } = useNuxtApp()
+  const { settings } = useAppConfig()
+
   const userStore = useUserStore()
   const { t } = useI18n()
   const toast = useToast()
@@ -14,7 +15,7 @@ export const useHappyHours = () => {
 
   const hHEvent = computedWithControl(
     () => source.value,
-    () => getHHEventByRegion($config.public.HH, userStore.user?.region || REGION.Eu),
+    () => getHHEventByRegion(settings.happyHours, userStore.user?.region || REGION.Eu),
   )
 
   const isHhEventActive = computed(() => getHHEventRemainingSeconds(hHEvent.value) !== 0)

@@ -8,6 +8,7 @@ export default defineAppConfig({
     github: '',
     reddit: '',
     modDb: '',
+    happyHours: '',
   },
   links: {
     tipsTricksHelpThread: 'https://discord.com/channels/279063743839862805/1044686358066778112',
