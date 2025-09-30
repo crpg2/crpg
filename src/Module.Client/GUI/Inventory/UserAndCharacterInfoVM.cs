@@ -90,9 +90,9 @@ public class UserAndCharacterInfoVM : ViewModel
         var character = user?.Character;
         var stats = behavior.UserCharacterStatistics;
 
-        UserName = user?.Name ?? "Unknown";
+        UserName = behavior.User?.Name ?? "Unknown";
         ClanName = crpgPeer?.Clan?.Name ?? "No Clan";
-        Gold = (user?.Gold ?? 0).ToString("N0");
+        Gold = (behavior.User?.Gold ?? 0).ToString("N0");
 
         CharacterName = behavior.UserCharacter?.Name ?? "Unknown";
         CharacterClassText = character?.Class.ToString() ?? "Unknown";

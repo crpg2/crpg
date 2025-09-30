@@ -22,22 +22,29 @@
               </Children>
             </BrushWidget>
             -->
-            <!-- Wrapper Panel -->
-            <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Spacing="5">
+            <!-- Vertical panel container-->
+            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Spacing="10">
               <Children>
-                <!-- Character Info Panel -->
-                <CharacteristicsEditorPrefab DataSource="{CharacteristicsEditor}" />
-                <!-- Inventory Selection -->
-                <InventoryGridPrefab Id="UserInventoryGrid" Parameter.NumColumns="5" DataSource="{InventoryGrid}" HorizontalAlignment="Center" VerticalAlignment="Center" MarginTop="10" MarginLeft="10"/>
+                <!-- Bar above -->
+                <InventoryNavBar HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                <!-- Horizontal Panel -->
+                <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Spacing="5">
+                  <Children>
+                    <!-- Character Info Panel -->
+                    <CharacteristicsEditorPrefab DataSource="{CharacteristicsEditor}" />
+                    <!-- Inventory Selection -->
+                    <InventoryGridPrefab Id="UserInventoryGrid" Parameter.NumColumns="5" DataSource="{InventoryGrid}" HorizontalAlignment="Center" VerticalAlignment="Center" MarginTop="10" MarginLeft="10"/>
 
-                <!-- Equipped Items Panel -->
-                <EquipmentPanelPrefab DataSource="{EquipmentPanel}" />
+                    <!-- Equipped Items Panel -->
+                    <EquipmentPanelPrefab DataSource="{EquipmentPanel}" />
 
-                <CharacterInfoBuildEquipStats DataSource="{CharacterInfoBuildEquipStatsVm}" />
-                
+                    <CharacterInfoBuildEquipStats DataSource="{CharacterInfoBuildEquipStatsVm}" />
+                    
+                  </Children>
+                </ListPanel>
+                <!-- End Horizontal Panel -->
               </Children>
             </ListPanel>
-            <!-- End Wrapper Panel -->
           </Children>
         </Widget> <!-- End Centering Widget -->
         <ItemInfoPrefab DataSource="{ItemInfo}" Id="ItemInfoId" HeightSizePolicy="StretchToParent" WidthSizePolicy="StretchToParent" IsVisible="@IsVisible" />

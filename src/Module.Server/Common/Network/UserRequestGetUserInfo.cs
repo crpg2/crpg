@@ -5,9 +5,9 @@ using TaleWorlds.MountAndBlade.Network.Messages;
 namespace Crpg.Module.Common.Network;
 
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromClient)]
-internal sealed class UserRequestGetCharacterBasic : GameNetworkMessage
+internal sealed class UserRequestGetUserInfo : GameNetworkMessage
 {
-    // No payload needed; client just requests their Character basic
+    // No payload needed; client just requests their user info
 
     protected override void OnWrite()
     {
@@ -17,5 +17,5 @@ internal sealed class UserRequestGetCharacterBasic : GameNetworkMessage
 
     protected override MultiplayerMessageFilter OnGetLogFilter() => MultiplayerMessageFilter.GameMode;
 
-    protected override string OnGetLogFormat() => "Request cRPG User Character";
+    protected override string OnGetLogFormat() => "Request cRPG User Info";
 }

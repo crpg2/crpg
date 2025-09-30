@@ -45,6 +45,10 @@
                         DoNotAcceptEvents="True" IsVisible="true"/>
                     <!-- item rank icon -->
                     <ItemRankIconPrefab DataSource="{ItemRankIcon}" />
+                    <!-- Item is Currently Equipped check mark -->
+                    <BrushWidget Id="ItemEquipped" Brush="Item.Equipped.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                        SuggestedWidth="15" SuggestedHeight="15" HorizontalAlignment="Right" VerticalAlignment="Top"
+                        PositionYOffset="30" IsVisible="@IsEquipped" />                        
                     <!-- Armory item icon -->
                     <ItemArmoryIconPrefab DataSource="{ItemArmoryIcon}" HorizontalAlignment="Right" VerticalAlignment="Top"
                         PositionYOffset="0" />

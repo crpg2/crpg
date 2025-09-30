@@ -9,7 +9,7 @@ namespace Crpg.Module.Common;
 internal class CrpgClanArmoryClient : MissionNetwork
 {
     private readonly List<CrpgClanArmoryItem> _clanArmoryItems = new();
-    private MissionNetworkComponent? _missionNetworkComponent;
+    private bool _hasRecievedFullUpdate;
 
     public IReadOnlyList<CrpgClanArmoryItem> ClanArmoryItems => _clanArmoryItems;
 
@@ -18,17 +18,6 @@ internal class CrpgClanArmoryClient : MissionNetwork
 
     public CrpgClanArmoryClient()
     {
-    }
-
-    public override void OnBehaviorInitialize()
-    {
-        base.OnBehaviorInitialize();
-        _missionNetworkComponent = Mission.GetMissionBehavior<MissionNetworkComponent>();
-        if (_missionNetworkComponent != null)
-        {
-            // _missionNetworkComponent.OnMyClientSynchronized += OnMyClientSynchronized;
-            RequestArmoryAction(ClanArmoryActionType.Get, null);
-        }
     }
 
     internal void RequestArmoryAction(ClanArmoryActionType action, CrpgUserItemExtended? uItem)
@@ -67,6 +56,8 @@ internal class CrpgClanArmoryClient : MissionNetwork
     {
         _clanArmoryItems.Clear();
         _clanArmoryItems.AddRange(items);
+        _hasRecievedFullUpdate = true;
+
         OnClanArmoryUpdated?.Invoke();
     }
 
@@ -181,6 +172,12 @@ internal class CrpgClanArmoryClient : MissionNetwork
         if (userItemId < 0)
         {
             LogDebugError($"HandleClanArmoryItemUpdate: userItemId < 0");
+            return;
+        }
+
+        // user hasnt fetched armory list yet? doesnt need to update it
+        if (!_hasRecievedFullUpdate)
+        {
             return;
         }
 

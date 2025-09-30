@@ -24,7 +24,7 @@
         <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" StackLayout.LayoutMethod="HorizontalLeftToRight" Spacing="0">
           <Children>
             <!-- Vertical Item Categories/Filter -->
-            <ListPanel PositionYOffset="60" MarginLeft="15" MarginRight="0" MarginTop="15" MarginBottom="0" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod="VerticalBottomToTop" Spacing="2" DataSource="{InventorySortTypesLeft}">
+            <ListPanel PositionYOffset="0" MarginLeft="15" MarginRight="0" MarginTop="15" MarginBottom="0" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod="VerticalBottomToTop" Spacing="2" DataSource="{InventorySortTypesLeft}">
               <ItemTemplate>
                 <InventorySortTypePrefab DataSource="." MarginBottom="10"/>
               </ItemTemplate>

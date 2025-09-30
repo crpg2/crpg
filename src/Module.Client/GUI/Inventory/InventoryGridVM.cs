@@ -1,6 +1,8 @@
 using Crpg.Module.Api.Models.Items;
+using Crpg.Module.Common;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
+using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.GUI.Inventory;
 
@@ -28,6 +30,7 @@ public class InventoryGridVM : ViewModel
     private MBBindingList<InventorySortTypeVM> _inventorySortTypesTop = new();
 
     private InventorySection _activeSection = InventorySection.Inventory;
+    private CrpgClanArmoryClient? _clanArmory;
 
     private bool _userInventorySelected;
     private bool _armorySelected;
@@ -119,6 +122,7 @@ public class InventoryGridVM : ViewModel
     public InventoryGridVM()
     {
         _filteredItems = new MBBindingList<InventorySlotVM>();
+        _clanArmory = Mission.Current?.GetMissionBehavior<CrpgClanArmoryClient>();
 
         InitializeSortTypes();
         InitializeFilteredItemsList();
@@ -167,7 +171,25 @@ public class InventoryGridVM : ViewModel
         {
             if (!currentSet.Contains(item))
             {
-                AvailableItems.Add(item);
+
+                // check if source is inventory and omit armory items not borrowed by you
+                if (source == _inventoryItems && item.IsArmoryItem)
+                {
+                    if (item?.UserItemEx?.Id is not null && _clanArmory?.GetCrpgUserItemArmoryStatus(item.UserItemEx.Id, out var armoryStatus) == true)
+                    {
+                        if (armoryStatus == Api.Models.CrpgGameArmoryItemStatus.BorrowedByYou)
+                        {
+                            AvailableItems.Add(item);
+                        }
+                    }
+                }
+                else
+                {
+                    AvailableItems.Add(item);
+                }
+
+                // AvailableItems.Add(item);
+
             }
         }
 
@@ -247,34 +269,34 @@ public class InventoryGridVM : ViewModel
     {
         InventorySortTypesLeft = new MBBindingList<InventorySortTypeVM>
         {
-            new("ui_crpg_icon_white_onehanded", item => item.ItemType == ItemObject.ItemTypeEnum.OneHandedWeapon, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_twohanded", item => item.ItemType == ItemObject.ItemTypeEnum.TwoHandedWeapon, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_polearm", item => item.ItemType == ItemObject.ItemTypeEnum.Polearm, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_shield", item => item.ItemType == ItemObject.ItemTypeEnum.Shield, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_thrown", item => item.ItemType == ItemObject.ItemTypeEnum.Thrown, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_bow", item => item.ItemType == ItemObject.ItemTypeEnum.Bow, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_crossbow", item => item.ItemType == ItemObject.ItemTypeEnum.Crossbow, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_musket", item =>
-                item.ItemType == ItemObject.ItemTypeEnum.Musket ||
-                item.ItemType == ItemObject.ItemTypeEnum.Pistol,
+            new("onehanded", "ui_crpg_icon_white_onehanded", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.OneHandedWeapon, true, OnSortTypeClicked),
+            new("twohanded", "ui_crpg_icon_white_twohanded", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.TwoHandedWeapon, true, OnSortTypeClicked),
+            new("polearm", "ui_crpg_icon_white_polearm", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.Polearm, true, OnSortTypeClicked),
+            new("shield", "ui_crpg_icon_white_shield", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.Shield, true, OnSortTypeClicked),
+            new("thrown", "ui_crpg_icon_white_thrown", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.Thrown, true, OnSortTypeClicked),
+            new("bow", "ui_crpg_icon_white_bow", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.Bow, true, OnSortTypeClicked),
+            new("crossbow", "ui_crpg_icon_white_crossbow", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.Crossbow, true, OnSortTypeClicked),
+            new("gun", "ui_crpg_icon_white_musket", slot =>
+                slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.Musket ||
+                slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.Pistol,
                 true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_arrow", item =>
-                item.ItemType == ItemObject.ItemTypeEnum.Arrows ||
-                item.ItemType == ItemObject.ItemTypeEnum.Bolts ||
-                item.ItemType == ItemObject.ItemTypeEnum.Bullets,
+            new("ammo", "ui_crpg_icon_white_arrow", slot =>
+                slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.Arrows ||
+                slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.Bolts ||
+                slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.Bullets,
                 true, OnSortTypeClicked),
         };
 
         InventorySortTypesTop = new MBBindingList<InventorySortTypeVM>
         {
-            new("ui_crpg_icon_white_headarmor", item => item.ItemType == ItemObject.ItemTypeEnum.HeadArmor, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_cape", item => item.ItemType == ItemObject.ItemTypeEnum.Cape, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_chestarmor", item => item.ItemType == ItemObject.ItemTypeEnum.BodyArmor, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_handarmor", item => item.ItemType == ItemObject.ItemTypeEnum.HandArmor, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_legarmor", item => item.ItemType == ItemObject.ItemTypeEnum.LegArmor, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_mount", item => item.ItemType == ItemObject.ItemTypeEnum.Horse, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_mountharness", item => item.ItemType == ItemObject.ItemTypeEnum.HorseHarness, true, OnSortTypeClicked),
-            new("ui_crpg_icon_white_flag", item => item.ItemType == ItemObject.ItemTypeEnum.Banner, true, OnSortTypeClicked),
+            new("headarmor", "ui_crpg_icon_white_headarmor", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.HeadArmor, true, OnSortTypeClicked),
+            new("cape", "ui_crpg_icon_white_cape", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.Cape, true, OnSortTypeClicked),
+            new("chestarmor", "ui_crpg_icon_white_chestarmor", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.BodyArmor, true, OnSortTypeClicked),
+            new("handarmor", "ui_crpg_icon_white_handarmor", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.HandArmor, true, OnSortTypeClicked),
+            new("legarmor", "ui_crpg_icon_white_legarmor", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.LegArmor, true, OnSortTypeClicked),
+            new("mount", "ui_crpg_icon_white_mount", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.Horse, true, OnSortTypeClicked),
+            new("mountarmor", "ui_crpg_icon_white_mountharness", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.HorseHarness, true, OnSortTypeClicked),
+            new("banner", "ui_crpg_icon_white_flag", slot => slot.ItemObj?.ItemType == ItemObject.ItemTypeEnum.Banner, true, OnSortTypeClicked),
         };
     }
 
@@ -298,14 +320,12 @@ public class InventoryGridVM : ViewModel
             return true;
         }
 
-        var item = slot.ItemObj;
-        return item != null && item.ItemType != ItemObject.ItemTypeEnum.Invalid
-            && _activeFilters.Any(f => MatchesFilter(item, f));
+        return _activeFilters.Any(f => MatchesFilter(slot, f));
     }
 
-    private bool MatchesFilter(ItemObject item, InventorySortTypeVM filter)
+    private bool MatchesFilter(InventorySlotVM slot, InventorySortTypeVM filter)
     {
-        return filter?.Predicate?.Invoke(item) ?? false;
+        return filter?.Predicate?.Invoke(slot) ?? false;
     }
 
     private void RefreshFilteredItemsFast()

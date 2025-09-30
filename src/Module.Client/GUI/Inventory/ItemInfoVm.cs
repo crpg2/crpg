@@ -26,6 +26,7 @@ public class ItemInfoVM : ViewModel
     private bool _isVisible;
     private bool _isArmoryItem;
     private bool _isArmoryButtonEnabled;
+    private bool _isEquipped;
 
     private int _userItemId = -1;
     private string _armoryButtonText = string.Empty;
@@ -87,6 +88,11 @@ public class ItemInfoVM : ViewModel
                         break;
                     case CrpgGameArmoryItemStatus.NotYoursBorrowed:
                         // maybe check clan rank for option to return to armory
+                        if (UserLoadoutBehavior?.User?.ClanMembership?.Role > 0)
+                        {
+                            _clanArmory.RequestArmoryAction(ClanArmoryActionType.Return, UserItemExtended);
+                        }
+
                         break;
                     case CrpgGameArmoryItemStatus.BorrowedByYou:
                         _clanArmory.RequestArmoryAction(ClanArmoryActionType.Return, UserItemExtended);
@@ -129,6 +135,8 @@ public class ItemInfoVM : ViewModel
     public ItemRankIconVM? ItemRankIcon { get => _itemRankIcon; set => SetField(ref _itemRankIcon, value, nameof(ItemRankIcon)); }
     [DataSourceProperty]
     public ItemArmoryIconVM? ItemArmoryIcon { get => _itemArmoryIcon; set => SetField(ref _itemArmoryIcon, value, nameof(ItemArmoryIcon)); }
+    [DataSourceProperty]
+    public bool IsEquipped { get => _isEquipped; set => SetField(ref _isEquipped, value, nameof(IsEquipped)); }
     [DataSourceProperty]
     public bool IsVisible { get => _isVisible; set => SetField(ref _isVisible, value, nameof(IsVisible)); }
 
@@ -254,8 +262,13 @@ public class ItemInfoVM : ViewModel
                             ArmoryButtonText = "Borrow from armory";
                             break;
                         case CrpgGameArmoryItemStatus.NotYoursBorrowed:
-                            ArmoryButtonText = "Unavailable--hide";
+                            ArmoryButtonText = "Unavailable";
                             // maybe check clan rank for option to return to armory
+                            if (UserLoadoutBehavior?.User?.ClanMembership?.Role > 0)
+                            {
+                                ArmoryButtonText = "Force Return";
+                            }
+
                             break;
                         case CrpgGameArmoryItemStatus.BorrowedByYou:
                             ArmoryButtonText = "Return to armory";
@@ -274,6 +287,8 @@ public class ItemInfoVM : ViewModel
                 ArmoryButtonText = "Add to armory";
             }
         }
+
+        IsEquipped = UserLoadoutBehavior?.IsItemEquipped(userItemId) ?? false;
     }
 
     private void GenerateTuplesFromItem()

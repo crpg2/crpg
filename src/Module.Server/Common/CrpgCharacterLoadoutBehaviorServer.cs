@@ -25,13 +25,11 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
     public CrpgCharacterLoadoutBehaviorServer(ICrpgClient crpgClient)
     {
         _crpgClient = crpgClient;
-
     }
 
     public override void OnBehaviorInitialize()
     {
         base.OnBehaviorInitialize();
-
     }
 
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
@@ -76,6 +74,16 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
     {
         Debug.Print("HandleUserRequestGetCharacterBasic()");
         _ = GetUserCharacterBasicAsync(networkPeer);
+
+        _ = GetUserInfoAsync(networkPeer); // temp test
+        return true;
+    }
+
+    private bool HandleUserRequestGetUserInfo(NetworkCommunicator networkPeer, UserRequestGetUserInfo message)
+    {
+        Debug.Print("HandleUserRequestGetUserInfo()");
+
+        _ = GetUserInfoAsync(networkPeer); // temp test
         return true;
     }
 
@@ -208,6 +216,34 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         catch (Exception e)
         {
             Debug.Print($"Error fetching character basic for peer {networkPeer.UserName} character {crpgUser.Character.Name}: {e}", 0, Debug.DebugColor.Red);
+        }
+    }
+
+    private async Task GetUserInfoAsync(NetworkCommunicator networkPeer)
+    {
+        var crpgUser = networkPeer.GetComponent<CrpgPeer>()?.User;
+        if (crpgUser == null)
+        {
+            return;
+        }
+
+        try
+        {
+            Debug.Print($"[GetUserInfoAsync] Sending Api Request");
+            var apiRes = await _crpgClient.GetUserAsync(crpgUser.Platform, crpgUser.PlatformUserId, crpgUser.Region);
+            if (apiRes.Errors != null)
+            {
+                Debug.Print($"Errors in response", 0, Debug.DebugColor.Red);
+            }
+
+            if (apiRes.Data != null)
+            {
+                SynchronizeUserInfoToPeer(networkPeer, apiRes.Data);
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Print($"Error fetching character info for peer {networkPeer.UserName} {e}", 0, Debug.DebugColor.Red);
         }
     }
 
@@ -517,6 +553,29 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         {
             Debug.Print($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}", 0, Debug.DebugColor.Red);
             Console.WriteLine($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}");
+        }
+    }
+
+    private void SynchronizeUserInfoToPeer(NetworkCommunicator networkPeer, CrpgUser crpgUser)
+    {
+        try
+        {
+            Debug.Print("SynchronizeUserInfoToPeer()");
+            if (networkPeer == null || crpgUser == null)
+            {
+                Debug.Print("networkPeer or crpgUser is null", 0, Debug.DebugColor.Red);
+                return;
+            }
+
+            Debug.Print($"Sending crpgUser ({crpgUser.Id}) to peer {networkPeer.Index}");
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+            GameNetwork.WriteMessage(new ServerSendUserInfo { User = crpgUser });
+            GameNetwork.EndModuleEventAsServer();
+        }
+        catch (Exception ex)
+        {
+            Debug.Print($"SynchronizeUserInfoToPeer() exception: {ex}", 0, Debug.DebugColor.Red);
+            Console.WriteLine($"SynchronizeUserInfoToPeer() exception: {ex}");
         }
     }
 

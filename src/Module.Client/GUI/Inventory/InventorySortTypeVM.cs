@@ -11,12 +11,14 @@ public class InventorySortTypeVM : ViewModel
 {
     private readonly Action<InventorySortTypeVM>? _onClick;
     private bool _showInventoryTypeIcon;
-    public Func<ItemObject, bool> Predicate { get; }
+    public Func<InventorySlotVM, bool> Predicate { get; }
     private bool _isSelected;
     private string _iconSprite;
+    public string Id { get; }
 
-    public InventorySortTypeVM(string iconSprite, Func<ItemObject, bool> predicate, bool isIconVisible = true, Action<InventorySortTypeVM>? handleClick = null)
+    public InventorySortTypeVM(string id, string iconSprite, Func<InventorySlotVM, bool> predicate, bool isIconVisible = true, Action<InventorySortTypeVM>? handleClick = null)
     {
+        Id = id;
         _showInventoryTypeIcon = isIconVisible;
         _iconSprite = iconSprite;
         _onClick = handleClick;
