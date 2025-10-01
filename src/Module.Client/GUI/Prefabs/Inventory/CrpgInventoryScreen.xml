@@ -1,54 +1,71 @@
 <Prefab Name="CrpgInventoryScreen">
   <Constants>
-      <Constant Name="InventoryPanel.Width" Value="600"/>
-      <Constant Name="InventoryPanel.Height" Value="650"/>
-      <Constant Name="ExtraPanel.Width" Value="600"/>
-      <Constant Name="BuildEquipStatsPanel.Width" Value="200"/>
-      <Constant Name="BuildEquipStatsPanel.Height" Value="450"/>
+    <Constant Name="Background.Width" Value="800"/>
+    <Constant Name= "Background.Height" Value="800"/>
+    <Constant Name="InventoryPanel.Width" Value="600"/>
+    <Constant Name="InventoryPanel.Height" Value="650"/>
+    <Constant Name="ExtraPanel.Width" Value="600"/>
+    <Constant Name="BuildEquipStatsPanel.Width" Value="200"/>
+    <Constant Name="BuildEquipStatsPanel.Height" Value="450"/>
+    <Constant Name="CrpgLogo.Width" Value="48"/>
+    <Constant Name="CrpgLogo.Height" Value="48"/>
   </Constants>
   <Window>
-    <!-- Main Container -->
-    <Widget IsVisible="@IsVisible" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginTop="10" MarginBottom="60" MarginLeft="10" MarginRight="10">
+    <!-- Main Container -->           
+    <Widget IsVisible="@IsVisible" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" 
+          MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10"
+          AcceptDrop="true" Command.Drop="ExecuteDropDiscard">
       <Children>
-        <!-- Centering Wrapper -->
-        <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
-                HorizontalAlignment="Center" VerticalAlignment="Center" MarginLeft="10" MarginTop="10" MarginRight="10" MarginBottom="10" AcceptDrop="true" Command.Drop="ExecuteDropDiscard">
+        <!-- Frame -->
+        <BrushWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" SuggestedWidth="!Background.Width" SuggestedHeight="!Background.Height"
+                    Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff" PositionYOffset="200" HorizontalAlignment="Center">
           <Children>
-            <!--
-            <BrushWidget Id="Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+            <BrushWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                      MarginLeft="9" MarginRight="9" MarginTop="9" MarginBottom="9"
+                      Brush="CrpgInventory.EquipmentSlot.BackGround">
+                      <Children>
+<BrushWidget Id="CrpgLogo" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!CrpgLogo.Width" SuggestedHeight="!CrpgLogo.Height"
+                Sprite="ui_crpg_icon_white_crpg_logo" Color="#ffffffff"
+                HorizontalAlignment="Left" VerticalAlignment="Top" MarginLeft="5" MarginTop="5"
+                PositionXOffset="0" PositionYOffset="0"/>                      
+    <!-- Vertical panel container-->
+        <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Spacing="5"
+                HorizontalAlignment="Center" VerticalAlignment="Top" >
+          <Children>
+            <!-- Bar above -->
+            <CharacterEquipNavBar DataSource="{NavBar}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <!-- Horizontal Panel -->
+            <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                    VerticalAlignment="Top" Spacing="5">
               <Children>
-                <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="CrpgInventory.EquipmentSlot.BackGround">
-                </BrushWidget>
-              </Children>
-            </BrushWidget>
-            -->
-            <!-- Vertical panel container-->
-            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Spacing="10">
-              <Children>
-                <!-- Bar above -->
-                <InventoryNavBar HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-                <!-- Horizontal Panel -->
-                <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Spacing="5">
-                  <Children>
-                    <!-- Character Info Panel -->
-                    <CharacteristicsEditorPrefab DataSource="{CharacteristicsEditor}" />
-                    <!-- Inventory Selection -->
-                    <InventoryGridPrefab Id="UserInventoryGrid" Parameter.NumColumns="5" DataSource="{InventoryGrid}" HorizontalAlignment="Center" VerticalAlignment="Center" MarginTop="10" MarginLeft="10"/>
-
-                    <!-- Equipped Items Panel -->
-                    <EquipmentPanelPrefab DataSource="{EquipmentPanel}" />
-
-                    <CharacterInfoBuildEquipStats DataSource="{CharacterInfoBuildEquipStatsVm}" />
-                    
-                  </Children>
-                </ListPanel>
-                <!-- End Horizontal Panel -->
+                <!-- Character Info Panel -->
+                <CharacteristicsEditorPrefab DataSource="{CharacteristicsEditor}" />
+                <!-- Inventory Selection -->
+                <InventoryGridPrefab Id="UserInventoryGrid" Parameter.NumColumns="5" DataSource="{InventoryGrid}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <!-- Equipped Items Panel -->
+                <EquipmentPanelPrefab DataSource="{EquipmentPanel}" VerticalAlignment="Top"/>
+                <CharacterInfoBuildEquipStats DataSource="{CharacterInfoBuildEquipStatsVm}" VerticalAlignment="Top"/>
               </Children>
             </ListPanel>
+            <!-- End Horizontal Panel -->
           </Children>
-        </Widget> <!-- End Centering Widget -->
+        </ListPanel>
+        </Children>
+        </BrushWidget>                    
+          </Children>
+        </BrushWidget>      
+    
         <ItemInfoPrefab DataSource="{ItemInfo}" Id="ItemInfoId" HeightSizePolicy="StretchToParent" WidthSizePolicy="StretchToParent" IsVisible="@IsVisible" />
       </Children>
     </Widget>
   </Window>
 </Prefab>
+
+
+<!--            
+
+<BrushWidget Id="CrpgLogo" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!CrpgLogo.Width" SuggestedHeight="!CrpgLogo.Height"
+                Sprite="ui_crpg_icon_white_crpg_logo" Color="#ffffffff"
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                PositionXOffset="0" PositionYOffset="0"/>
+-->

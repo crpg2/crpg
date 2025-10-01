@@ -17,7 +17,8 @@
         <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" />
         <CrpgButtonPrefab Parameter.ButtonText="-" Parameter.ButtonId="ButtonMinus"
                     Parameter.Width="30" Parameter.Height="30" Parameter.ButtonIsEnabled="@IsButtonMinusEnabled"
-                    Parameter.CommandClick="ExecuteMinusClick" Parameter.ButtonIsVisible="@IsButtonMinusEnabled"/>
+                    Parameter.CommandClick="ExecuteMinusClick" Parameter.ButtonIsVisible="@IsButtonMinusEnabled"
+                    Parameter.CommandAlternateClick="ExecuteMinusAlternateClick" />
         <TextWidget IntText="@ItemValue"
                     WidthSizePolicy="Fixed" SuggestedWidth="20"
                     HeightSizePolicy="Fixed" SuggestedHeight="20"
@@ -26,7 +27,8 @@
                     IsDisabled="@TextStateDisabled" />
         <CrpgButtonPrefab Parameter.ButtonText="+" Parameter.ButtonId="ButtonPlus"
                     Parameter.Width="30" Parameter.Height="30" Parameter.ButtonIsEnabled="@IsButtonPlusEnabled"
-                    Parameter.CommandClick="ExecutePlusClick" Parameter.ButtonIsVisible="@IsButtonPlusEnabled"/>
+                    Parameter.CommandClick="ExecutePlusClick" Parameter.ButtonIsVisible="@IsButtonPlusEnabled"
+                    Parameter.CommandAlternateClick="ExecutePlusAlternateClick"/>
       </Children>
     </ListPanel>
   </Window>

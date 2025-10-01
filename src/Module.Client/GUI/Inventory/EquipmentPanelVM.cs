@@ -8,6 +8,10 @@ namespace Crpg.Module.GUI.Inventory;
 
 public class EquipmentPanelVM : ViewModel
 {
+    private bool _isVisible;
+    [DataSourceProperty]
+    public bool IsVisible { get => _isVisible; set => SetField(ref _isVisible, value, nameof(IsVisible)); }
+
     private MBBindingList<EquipmentSlotVM> _equipmentSlots = new();
 
     // Slots

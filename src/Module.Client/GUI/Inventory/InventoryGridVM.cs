@@ -14,6 +14,10 @@ public class InventoryGridVM : ViewModel
         Armory,
     }
 
+    private bool _isVisible;
+    [DataSourceProperty]
+    public bool IsVisible { get => _isVisible; set => SetField(ref _isVisible, value, nameof(IsVisible)); }
+
     internal event Action<InventorySlotVM>? OnInventorySlotClicked;
     internal event Action<InventorySortTypeVM>? OnInventorySortTypeClicked;
     internal event Action<InventorySlotVM>? OnInventorySlotHoverEnd;
@@ -172,7 +176,7 @@ public class InventoryGridVM : ViewModel
             if (!currentSet.Contains(item))
             {
 
-                // check if source is inventory and omit armory items not borrowed by you
+                // check if source is inventory and omit armory items not borrowed by you. TODO: add a button to toggle this later
                 if (source == _inventoryItems && item.IsArmoryItem)
                 {
                     if (item?.UserItemEx?.Id is not null && _clanArmory?.GetCrpgUserItemArmoryStatus(item.UserItemEx.Id, out var armoryStatus) == true)

@@ -35,6 +35,11 @@ public class CrpgInventoryViewModel : ViewModel
     private CharacterInfoBuildEquipStatsVM _characterInfoBuildEquipStatsVm;
     private ItemInfoVM _itemInfo;
 
+    private CharacterEquipNavBar _navBar;
+
+    [DataSourceProperty]
+    public CharacterEquipNavBar NavBar { get => _navBar; set => SetField(ref _navBar, value, nameof(NavBar)); }
+
     [DataSourceProperty]
     public InventoryGridVM InventoryGrid { get; set; }
 
@@ -67,6 +72,7 @@ public class CrpgInventoryViewModel : ViewModel
 
     public CrpgInventoryViewModel()
     {
+        _navBar = new CharacterEquipNavBar();
         _characteristicsEditor = new CharacteristicsEditorVM();
         _characterInfoBuildEquipStatsVm = new CharacterInfoBuildEquipStatsVM();
         _equipmentPanel = new EquipmentPanelVM();
@@ -74,6 +80,35 @@ public class CrpgInventoryViewModel : ViewModel
 
         _itemInfo = new ItemInfoVM(null);
         _equipmentPanel.InitializeCharacterPreview();
+
+        // defaults
+        _navBar.EquipmentSelected = true;
+        EquipmentPanel.IsVisible = true;
+        InventoryGrid.IsVisible = true;
+        CharacteristicsEditor.IsVisible = false;
+        _navBar.EquipmentSelected = true;
+        _navBar.CharacteristicsSelected = false;
+
+        _navBar.OnEquipNavButtonClicked += (string button) =>
+        {
+            LogDebug($"NavBar button clicked: {button}");
+            if (button == "Equipment")
+            {
+                EquipmentPanel.IsVisible = true;
+                InventoryGrid.IsVisible = true;
+                CharacteristicsEditor.IsVisible = false;
+                _navBar.EquipmentSelected = true;
+                _navBar.CharacteristicsSelected = false;
+            }
+            else if (button == "Characteristics")
+            {
+                EquipmentPanel.IsVisible = false;
+                InventoryGrid.IsVisible = false;
+                CharacteristicsEditor.IsVisible = true;
+                _navBar.EquipmentSelected = false;
+                _navBar.CharacteristicsSelected = true;
+            }
+        };
 
         // Subscribe to EquipmentPanel events
         _equipmentPanel.OnItemDropped += HandleItemDrop;

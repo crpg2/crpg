@@ -3,6 +3,7 @@
     <Parameter Name="ButtonText" DefaultValue="Button" />
     <Parameter Name="ButtonId" DefaultValue="" />
     <Parameter Name="CommandClick" DefaultValue="ExecuteClick" />
+    <Parameter Name="CommandAlternateClick" DefaultValue="ExecuteAlternateClick" />
     <Parameter Name="ButtonIsEnabled" DefaultValue="true"/>
     <Parameter Name="ButtonIsVisible" DefaultValue="true"/>
     <Parameter Name="ButtonIsSelected" DefaultValue="false"/>
@@ -30,7 +31,8 @@
                   Brush="CharacterEdit.Button"
                   WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
                   MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10"
-                  Command.Click="*CommandClick" DoNotPassEventsToChildren="true"
+                  Command.Click="*CommandClick" Command.AlternateClick="*CommandAlternateClick"
+                  DoNotPassEventsToChildren="true"
                   IsEnabled="*ButtonIsEnabled" IsSelected="*ButtonIsSelected">
               <Children>
                 <BrushWidget Id="ButtonBrushImageId" Brush="*ButtonBrushImage" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"

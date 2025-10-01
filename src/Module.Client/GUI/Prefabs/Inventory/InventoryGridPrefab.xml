@@ -2,7 +2,7 @@
   <Parameters>
     <Parameter Name="NumColumns" DefaultValue="4" />
     <Parameter Name="Width" DefaultValue="500"/>
-    <Parameter Name="Height" DefaultValue="550"/>
+    <Parameter Name="Height" DefaultValue="510"/>
   </Parameters>
   <Constants>
     <Constant Name="Background.Width" Value="510"/>
@@ -11,7 +11,7 @@
   </Constants>
 
   <Window>
-    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="*Width" SuggestedHeight="*Height">
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@IsVisible">
       <Children>
         <!-- Main Background -->
         <BrushWidget Id="Inventory.Frame" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">

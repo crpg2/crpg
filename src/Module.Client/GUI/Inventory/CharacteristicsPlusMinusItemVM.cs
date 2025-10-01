@@ -10,8 +10,8 @@ public class CharacteristicsPlusMinusItemVM : ViewModel
     private bool _isButtonMinusEnabled;
     private bool _isButtonPlusEnabled;
 
-    public event Action<CharacteristicsPlusMinusItemVM>? OnPlusClickedEvent;
-    public event Action<CharacteristicsPlusMinusItemVM>? OnMinusClickedEvent;
+    public event Action<CharacteristicsPlusMinusItemVM, bool>? OnPlusClickedEvent;
+    public event Action<CharacteristicsPlusMinusItemVM, bool>? OnMinusClickedEvent;
 
     public CharacteristicsPlusMinusItemVM(string label, int value)
     {
@@ -60,11 +60,21 @@ public class CharacteristicsPlusMinusItemVM : ViewModel
 
     public void ExecutePlusClick()
     {
-        OnPlusClickedEvent?.Invoke(this);
+        OnPlusClickedEvent?.Invoke(this, false);
     }
 
     public void ExecuteMinusClick()
     {
-        OnMinusClickedEvent?.Invoke(this);
+        OnMinusClickedEvent?.Invoke(this, false);
+    }
+
+    public void ExecutePlusAlternateClick()
+    {
+        OnPlusClickedEvent?.Invoke(this, true);
+    }
+
+    public void ExecuteMinusAlternateClick()
+    {
+        OnMinusClickedEvent?.Invoke(this, true);
     }
 }

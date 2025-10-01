@@ -1,0 +1,32 @@
+ <Prefab Name="CharacterEquipNavBar">
+  <Parameters>
+    <Parameter Name="Width" DefaultValue="580"/>
+    <Parameter Name="Height" DefaultValue="50"/>
+  </Parameters>
+  <Constants>
+    <Constant Name="Background.Width" Value="510"/>
+    <Constant Name="Background.Height" Value="410"/>
+  </Constants>
+  <Window>
+    <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" SuggestedWidth="*Width" SuggestedHeight="*Height" HorizontalAlignment="Center" VerticalAlignment="Center">
+      <Children>
+        <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" SuggestedWidth="*Width" SuggestedHeight="*Height"
+                MarginTop="3" MarginLeft="2" MarginBottom="2" MarginRight="2"
+                HorizontalAlignment="Center">
+            <Children>
+            <CrpgButtonPrefab Parameter.ButtonText="Equipment"
+                              Parameter.ButtonId="EquipmentButton"
+                              Parameter.CommandClick="ExecuteClickEquipment"
+                              Parameter.ButtonIsSelected="@EquipmentSelected"/>
+            <CrpgButtonPrefab Parameter.ButtonText="Characteristics" 
+                              Parameter.CommandClick="ExecuteClickCharacteristics"
+                              Parameter.ButtonId="CharacteristicsButton"
+                              Parameter.ButtonIsSelected="@CharacteristicsSelected"/>
+            <!-- character name, user name, gold, clan-->
+            
+            </Children>
+        </ListPanel>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

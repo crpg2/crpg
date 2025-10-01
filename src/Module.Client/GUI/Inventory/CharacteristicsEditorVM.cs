@@ -513,16 +513,16 @@ public class CharacteristicsEditorVM : ViewModel
     /// <summary>
     /// Handles logic when the plus button is clicked for attributes, skills,
     /// or weapon proficiencies. Increases values if requirements and available
-    /// points are satisfied, and updates all related states.
+    /// points are satisfied, and updates all related states. Also handles alternate clicks (+10) for WPF.
     /// </summary>
-    private void OnPlusClicked(CharacteristicsPlusMinusItemVM item)
+    private void OnPlusClicked(CharacteristicsPlusMinusItemVM item, bool wasAlternateClick)
     {
         if (!item.IsButtonPlusEnabled)
         {
             return;
         }
 
-        if (item == StrengthVm)
+        if (item == StrengthVm && !wasAlternateClick)
         {
             if (AttributePoints > 0)
             {
@@ -530,7 +530,7 @@ public class CharacteristicsEditorVM : ViewModel
                 AttributePoints--;
             }
         }
-        else if (item == AgilityVm)
+        else if (item == AgilityVm && !wasAlternateClick)
         {
             if (AttributePoints > 0)
             {
@@ -538,7 +538,7 @@ public class CharacteristicsEditorVM : ViewModel
                 AttributePoints--;
             }
         }
-        else if (Skills.Contains(item))
+        else if (Skills.Contains(item) && !wasAlternateClick)
         {
             if (SkillPoints > 0 && CheckSkillRequirement(item.ItemLabel, item.ItemValue + 1))
             {
@@ -548,10 +548,36 @@ public class CharacteristicsEditorVM : ViewModel
         }
         else if (WeaponProficiencies.Contains(item))
         {
-            int nextCost = WeaponProficiencyCost(item.ItemValue + 1) - WeaponProficiencyCost(item.ItemValue);
-            if (WeaponProficiencyPointsRemaining >= nextCost)
+            if (wasAlternateClick)
             {
-                item.ItemValue++;
+                int maxIncrease = 10;
+                int increase = 1;
+
+                for (int i = 1; i < maxIncrease; i++)
+                {
+                    int nextCost = WeaponProficiencyCost(item.ItemValue + 1) - WeaponProficiencyCost(item.ItemValue);
+                    if (WeaponProficiencyPointsRemaining >= nextCost)
+                    {
+                        item.ItemValue++;
+                        increase++;
+                        UpdateWeaponProficiencyTextStates();
+                        // UpdateAllButtonStates();
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                Debug.Print($"Increased {item.ItemLabel} by {increase} (alt-click). Remaining points: {WeaponProficiencyPointsRemaining}");
+            }
+            else
+            {
+                int nextCost = WeaponProficiencyCost(item.ItemValue + 1) - WeaponProficiencyCost(item.ItemValue);
+                if (WeaponProficiencyPointsRemaining >= nextCost)
+                {
+                    item.ItemValue++;
+                }
             }
         }
 
@@ -563,16 +589,16 @@ public class CharacteristicsEditorVM : ViewModel
     /// <summary>
     /// Handles logic when the minus button is clicked for attributes, skills,
     /// or weapon proficiencies. Decreases values down to their initial minimums,
-    /// refunds points, and updates all related states.
+    /// refunds points, and updates all related states. Also handles alternate clicks (-10) for WPF.
     /// </summary>
-    private void OnMinusClicked(CharacteristicsPlusMinusItemVM item)
+    private void OnMinusClicked(CharacteristicsPlusMinusItemVM item, bool wasAlternateClick)
     {
         if (!item.IsButtonMinusEnabled)
         {
             return;
         }
 
-        if (item == StrengthVm)
+        if (item == StrengthVm && !wasAlternateClick)
         {
             if (item.ItemValue > _initialCharacteristics.Attributes.Strength && item.ItemValue > 0)
             {
@@ -580,7 +606,7 @@ public class CharacteristicsEditorVM : ViewModel
                 AttributePoints++;
             }
         }
-        else if (item == AgilityVm)
+        else if (item == AgilityVm && !wasAlternateClick)
         {
             if (item.ItemValue > _initialCharacteristics.Attributes.Agility)
             {
@@ -588,7 +614,7 @@ public class CharacteristicsEditorVM : ViewModel
                 AttributePoints++;
             }
         }
-        else if (Skills.Contains(item))
+        else if (Skills.Contains(item) && !wasAlternateClick)
         {
             int minValue = GetInitialSkillValue(item.ItemLabel);
             if (item.ItemValue > minValue)
@@ -600,7 +626,17 @@ public class CharacteristicsEditorVM : ViewModel
         else if (WeaponProficiencies.Contains(item))
         {
             int minValue = GetInitialWeaponProficiencyValue(item.ItemLabel);
-            if (item.ItemValue > minValue)
+
+            if (wasAlternateClick)
+            {
+                int decrease = Math.Min(10, item.ItemValue - minValue);
+                if (decrease > 0)
+                {
+                    item.ItemValue -= decrease;
+                    // Points auto-recalculate from getter, nothing to assign here
+                }
+            }
+            else if (item.ItemValue > minValue)
             {
                 item.ItemValue--;
             }

@@ -12,7 +12,8 @@
   <Window>
     <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="!EquippedPanel.Width" SuggestedHeight="!EquippedPanel.Height"
-            HorizontalAlignment="Center" VerticalAlignment="Center">
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            IsVisible="@IsVisible">
       <Children>
         <!-- Frame -->
         <BrushWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"

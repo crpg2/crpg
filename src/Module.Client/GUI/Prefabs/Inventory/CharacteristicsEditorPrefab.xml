@@ -1,7 +1,7 @@
 <Prefab Name="CharacteristicsEditorPrefab">
   <Constants>
     <Constant Name="CharacteristicsEditor.MainContainer.Width" Value="460"/>
-    <Constant Name="CharacteristicsEditor.MainContainer.Height" Value="540"/>
+    <Constant Name="CharacteristicsEditor.MainContainer.Height" Value="430"/>
     <Constant Name="CharacteristicsEditor.Frame.Width" Value="250"/>
     <Constant Name="CharacteristicsEditor.Frame.Height" Value="150"/>
     <Constant Name="AttributesAndWpf.Frame.Width" Value="220"/>
@@ -12,7 +12,8 @@
   <Window>
     <Widget Id="MainContainer" 
             WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!CharacteristicsEditor.MainContainer.Width" SuggestedHeight="!CharacteristicsEditor.MainContainer.Height"
-            HorizontalAlignment="Center" VerticalAlignment="Center">
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            IsVisible="@IsVisible">
       <Children>
         <!-- Frame -->
         <BrushWidget Id="MainContainer.Frame" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
@@ -22,12 +23,6 @@
             <BrushWidget Id="CharacteristicsEditor.Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
                 HorizontalAlignment="Center" VerticalAlignment="Center" Brush="Crpg.Generic.Panel.Background"
                 MarginTop="9" MarginBottom="9" MarginLeft="9" MarginRight="9"/>
-            <!-- Close Button -->
-            <CrpgButtonPrefab Parameter.ButtonText="X" Parameter.ButtonId="ButtonClose"
-                  Parameter.Width="50" Parameter.Height="45" Parameter.ButtonIsEnabled="true"
-                  Parameter.CommandClick="ExecuteClickClose" Parameter.ButtonIsVisible="true"
-                  HorizontalAlignment="Right" VerticalAlignment="Top"/>
-            <!-- maybe put the status text here, left aligned -->                  
 
             <!-- Vertical Layout Container -->
             <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
@@ -35,7 +30,7 @@
                     MarginLeft="5" MarginRight="5" MarginTop="10" MarginBottom="10" Spacing="5"
                     DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
               <Children>
-                <UserAndCharacterInfo DataSource="{UserAndCharacterInfoVm}"/>
+                <!-- <UserAndCharacterInfo DataSource="{UserAndCharacterInfoVm}"/> -->
 
                 <!-- Horizontal layout container -->
                 <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Center" 
