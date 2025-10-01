@@ -18,6 +18,9 @@ jobs:
     - name: Lint
       run: npm run lint
       working-directory: ${{env.dir}}
+    - name: Typecheck
+      run: npm run typecheck
+      working-directory: ${{env.dir}}
     - name: Unit
       run: npm run test:unit
       working-directory: ${{env.dir}}

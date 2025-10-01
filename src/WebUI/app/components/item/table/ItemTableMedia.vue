@@ -20,7 +20,9 @@ const { rankColor, thumb } = useItem(() => item)
         :content="{ side: 'right' }"
         :ui="{ content: 'p-5 h-auto w-[512px] flex-col gap-2' }"
       >
-        <ItemThumb :thumb :name="item.name" />
+        <div class="size-full">
+          <ItemThumb :thumb :name="item.name" />
+        </div>
 
         <template #content>
           <div class="h-[240px] w-full">

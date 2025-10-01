@@ -188,7 +188,7 @@ const filteredContributors = computed<Contributor[]>(() => {
 
       <UTabs
         v-model="currentFilter"
-        :items="Object.values(ROLE).map<TabsItem>((role) => ({
+        :items="Object.keys(ROLE).map<TabsItem>((role) => ({
           label: $t(`credits.role.${role}`),
           value: role,
           icon: IconByRole[role],
@@ -197,7 +197,7 @@ const filteredContributors = computed<Contributor[]>(() => {
         color="neutral"
         size="xl"
         :ui="{
-          list: 'flex-wrap gap-4 bg-transparent',
+          list: 'flex-wrap justify-center gap-2.5 bg-transparent',
           indicator: 'hidden',
           trigger: 'data-[state=active]:bg-accented bg-elevated data-[state=active]:text-accented grow-0',
         }"
