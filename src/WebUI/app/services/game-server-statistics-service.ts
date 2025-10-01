@@ -1,4 +1,4 @@
-import { getGameServerStatistics } from '#hey-api/sdk.gen'
+import { getGameServerStatistics } from '#api/sdk.gen'
 
 import type { GameServerModeStats, GameServerRegionStats, GameServerStats } from '~/models/game-server-stats'
 

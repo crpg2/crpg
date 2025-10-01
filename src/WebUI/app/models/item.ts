@@ -1,5 +1,3 @@
-import type { ValueOf } from 'type-fest'
-
 import type {
   ArmorMaterialType as _ArmorMaterialType,
   DamageType as _DamageType,
@@ -8,7 +6,9 @@ import type {
   ItemType as _ItemType,
   WeaponClass as _WeaponClass,
   WeaponFlags as _WeaponFlags,
-} from '~/api'
+} from '#api'
+import type { ValueOf } from 'type-fest'
+
 import type { Culture } from '~/models/culture'
 
 export const ARMOR_MATERIAL_TYPE = {
@@ -125,6 +125,7 @@ export type DamageType = ValueOf<typeof DAMAGE_TYPE>
 export interface ItemWeaponComponent {
   length: number
   accuracy: number
+  balance: number
   handling: number
   bodyArmor: number
   class: WeaponClass

@@ -17,7 +17,7 @@ import {
   putUsersSelfCharactersByIdRespecialize,
   putUsersSelfCharactersByIdRetire,
   putUsersSelfCharactersByIdTournament,
-} from '#hey-api/sdk.gen'
+} from '#api/sdk.gen'
 import {
   attributePointsPerLevel,
   damageFactorForPowerDraw,

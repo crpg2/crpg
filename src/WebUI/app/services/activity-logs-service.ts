@@ -1,4 +1,4 @@
-import { getActivityLogs as _getActivityLogs } from '#hey-api/sdk.gen'
+import { getActivityLogs as _getActivityLogs } from '#api/sdk.gen'
 
 import type { ActivityLog, ActivityLogType } from '~/models/activity-logs'
 import type { MetadataDict } from '~/models/metadata'

@@ -13,7 +13,7 @@ import {
   putUsersSelfItemsByIdUpgrade,
   putUsersSelfNotificationsById,
   putUsersSelfNotificationsReadAll,
-} from '#hey-api/sdk.gen'
+} from '#api/sdk.gen'
 import { pick } from 'es-toolkit'
 
 import type { MetadataDict } from '~/models/metadata'

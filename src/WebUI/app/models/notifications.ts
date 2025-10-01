@@ -1,6 +1,5 @@
+import type { NotificationState as _NotificationState } from '#api'
 import type { ValueOf } from 'type-fest'
-
-import type { NotificationState as _NotificationState } from '~/api'
 
 export const NOTIFICATION_STATE = {
   Unread: 'Unread',

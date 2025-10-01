@@ -1,4 +1,4 @@
-import { getSettings as _getSettings, patchSettings } from '#hey-api/sdk.gen'
+import { getSettings as _getSettings, patchSettings } from '#api/sdk.gen'
 
 import type { Settings } from '~/models/setting'
 

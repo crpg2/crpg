@@ -1,6 +1,6 @@
 import type { Item } from '~/models/item'
 
-export const Longsword = {
+export const Longsword: Item = {
   armor: null,
   baseId: 'crpg_sentinel_2hsword_abearirl',
   createdAt: new Date('2023-05-13T21:43:44.0741909Z'),
@@ -22,6 +22,7 @@ export const Longsword = {
       class: 'OneHandedSword',
       flags: ['MeleeWeapon'],
       handling: 64,
+      // @ts-expect-error ///
       itemUsage: 'onehanded_block_rshield_swing_thrust',
       length: 107,
       missileSpeed: 0,
@@ -40,6 +41,7 @@ export const Longsword = {
       class: 'TwoHandedSword',
       flags: ['MeleeWeapon', 'NotUsableWithOneHand'],
       handling: 76,
+      // @ts-expect-error ///
       itemUsage: 'twohanded_block_swing_thrust',
       length: 107,
       missileSpeed: 0,
@@ -58,6 +60,7 @@ export const Longsword = {
       class: 'OneHandedSword',
       flags: ['MeleeWeapon'],
       handling: 64,
+      // @ts-expect-error ///
       itemUsage: 'onehanded_block_swing_thrust',
       length: 107,
       missileSpeed: 0,
@@ -71,9 +74,9 @@ export const Longsword = {
     },
   ],
   weight: 2.17,
-} satisfies Item
+}
 
-export const WoodenSword = {
+export const WoodenSword: Item = {
   armor: null,
   baseId: 'crpg_wooden_sword_t1',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
@@ -95,6 +98,7 @@ export const WoodenSword = {
       class: 'OneHandedSword',
       flags: ['MeleeWeapon', 'NoBlood'],
       handling: 95,
+      // @ts-expect-error ///
       itemUsage: 'onehanded_block_shield_swing_thrust',
       length: 95,
       missileSpeed: 0,
@@ -108,9 +112,9 @@ export const WoodenSword = {
     },
   ],
   weight: 1.42,
-} satisfies Item
+}
 
-export const NobleCavalryLance = {
+export const NobleCavalryLance: Item = {
   armor: null,
   baseId: 'crpg_khuzait_lance_3_t5',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
@@ -132,6 +136,7 @@ export const NobleCavalryLance = {
       class: 'OneHandedPolearm',
       flags: ['MeleeWeapon', 'WideGrip'],
       handling: 62,
+      // @ts-expect-error ///
       itemUsage: 'onehanded_polearm_block_long_rshield_thrust',
       length: 200,
       missileSpeed: 0,
@@ -150,6 +155,7 @@ export const NobleCavalryLance = {
       class: 'TwoHandedPolearm',
       flags: ['MeleeWeapon', 'NotUsableWithOneHand', 'WideGrip', 'TwoHandIdleOnMount'],
       handling: 58,
+      // @ts-expect-error ///
       itemUsage: 'polearm_block_long_shield_thrust',
       length: 200,
       missileSpeed: 0,
@@ -181,9 +187,9 @@ export const NobleCavalryLance = {
     },
   ],
   weight: 2.03,
-} satisfies Item
+}
 
-export const BecDeCorbin = {
+export const BecDeCorbin: Item = {
   armor: null,
   baseId: 'crpg_bec_de_corbin',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
@@ -205,6 +211,7 @@ export const BecDeCorbin = {
       class: 'TwoHandedPolearm',
       flags: ['MeleeWeapon', 'NotUsableWithOneHand', 'WideGrip', 'TwoHandIdleOnMount'],
       handling: 70,
+      // @ts-expect-error ///
       itemUsage: 'polearm_block_long_shield_swing_thrust',
       length: 139,
       missileSpeed: 0,
@@ -218,9 +225,9 @@ export const BecDeCorbin = {
     },
   ],
   weight: 2.11,
-} satisfies Item
+}
 
-export const SimpleShortSpear = {
+export const SimpleShortSpear: Item = {
   armor: null,
   baseId: 'crpg_western_spear_2_t2',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
@@ -242,6 +249,7 @@ export const SimpleShortSpear = {
       class: 'OneHandedPolearm',
       flags: ['MeleeWeapon', 'WideGrip'],
       handling: 72,
+      // @ts-expect-error ///
       itemUsage: 'onehanded_polearm_block_long_rshield_thrust',
       length: 156,
       missileSpeed: 0,
@@ -260,6 +268,7 @@ export const SimpleShortSpear = {
       class: 'TwoHandedPolearm',
       flags: ['MeleeWeapon', 'NotUsableWithOneHand', 'WideGrip', 'TwoHandIdleOnMount'],
       handling: 70,
+      // @ts-expect-error ///
       itemUsage: 'polearm_block_long_shield_swing_thrust',
       length: 156,
       missileSpeed: 0,
@@ -278,6 +287,7 @@ export const SimpleShortSpear = {
       class: 'TwoHandedPolearm',
       flags: ['MeleeWeapon', 'NotUsableWithOneHand', 'WideGrip', 'TwoHandIdleOnMount'],
       handling: 70,
+      // @ts-expect-error ///
       itemUsage: 'polearm_block_long_shield_thrust',
       length: 156,
       missileSpeed: 0,
@@ -291,14 +301,14 @@ export const SimpleShortSpear = {
     },
   ],
   weight: 1.08,
-} satisfies Item
+}
 
-export const Pike = {
+export const Pike: Item = {
   armor: null,
   baseId: 'crpg_vlandia_pike_1_t5',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
   culture: 'Vlandia',
-  flags: ['DropOnWeaponChange', 'TestFlag'],
+  flags: ['DropOnWeaponChange'],
   id: 'crpg_vlandia_pike_1_t5',
   mount: null,
   name: 'Pike',
@@ -313,7 +323,7 @@ export const Pike = {
       balance: 0,
       bodyArmor: 0,
       class: 'TwoHandedPolearm',
-      flags: ['MeleeWeapon', 'NotUsableWithOneHand', 'WideGrip', 'TwoHandIdleOnMount', 'TestFlag'],
+      flags: ['MeleeWeapon', 'NotUsableWithOneHand', 'WideGrip', 'TwoHandIdleOnMount'],
       handling: 34,
       itemUsage: 'polearm_pike',
       length: 501,
@@ -346,9 +356,9 @@ export const Pike = {
     },
   ],
   weight: 1.07,
-} satisfies Item
+}
 
-export const Hoe = {
+export const Hoe: Item = {
   armor: null,
   baseId: 'crpg_peasant_2haxe_1_t1',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
@@ -370,6 +380,7 @@ export const Hoe = {
       class: 'OneHandedAxe',
       flags: ['MeleeWeapon', 'BonusAgainstShield'],
       handling: 77,
+      // @ts-expect-error ///
       itemUsage: 'onehanded_rshield_axe',
       length: 92,
       missileSpeed: 0,
@@ -388,6 +399,7 @@ export const Hoe = {
       class: 'TwoHandedAxe',
       flags: ['MeleeWeapon', 'NotUsableWithOneHand', 'BonusAgainstShield', 'TwoHandIdleOnMount'],
       handling: 85,
+      // @ts-expect-error ///
       itemUsage: 'twohanded_axe',
       length: 92,
       missileSpeed: 0,
@@ -406,6 +418,7 @@ export const Hoe = {
       class: 'OneHandedAxe',
       flags: ['MeleeWeapon', 'BonusAgainstShield'],
       handling: 77,
+      // @ts-expect-error ///
       itemUsage: 'onehanded_axe',
       length: 92,
       missileSpeed: 0,
@@ -419,9 +432,9 @@ export const Hoe = {
     },
   ],
   weight: 1.27,
-} satisfies Item
+}
 
-export const Shield = {
+export const Shield: Item = {
   armor: null,
   baseId: 'crpg_oval_shield',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
@@ -443,6 +456,7 @@ export const Shield = {
       class: 'LargeShield',
       flags: ['HasHitPoints', 'CanBlockRanged'],
       handling: 82,
+      // @ts-expect-error ///
       itemUsage: 'shield',
       length: 132,
       missileSpeed: 0,
@@ -456,9 +470,9 @@ export const Shield = {
     },
   ],
   weight: 11.6,
-} satisfies Item
+}
 
-export const Bow = {
+export const Bow: Item = {
   armor: null,
   baseId: 'crpg_noble_bow',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
@@ -501,9 +515,9 @@ export const Bow = {
     },
   ],
   weight: 0.4,
-} satisfies Item
+}
 
-export const Bolts = {
+export const Bolts: Item = {
   armor: null,
   baseId: 'crpg_bolt_f',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
@@ -525,6 +539,7 @@ export const Bolts = {
       class: 'Bolt',
       flags: ['AttachAmmoToVisual', 'Consumable'],
       handling: 0,
+      // @ts-expect-error ///
       itemUsage: '',
       length: 37,
       missileSpeed: 10,
@@ -538,9 +553,9 @@ export const Bolts = {
     },
   ],
   weight: 0.3,
-} satisfies Item
+}
 
-export const ThrowingAxe = {
+export const ThrowingAxe: Item = {
   armor: null,
   baseId: 'crpg_western_throwing_axe_1_t1',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
@@ -562,6 +577,7 @@ export const ThrowingAxe = {
       class: 'OneHandedAxe',
       flags: ['MeleeWeapon', 'BonusAgainstShield'],
       handling: 108,
+      // @ts-expect-error ///
       itemUsage: 'onehanded_shield_axe',
       length: 38,
       missileSpeed: 0,
@@ -587,6 +603,7 @@ export const ThrowingAxe = {
         'AmmoBreaksOnBounceBack',
       ],
       handling: 108,
+      // @ts-expect-error ///
       itemUsage: 'throwing_axe',
       length: 38,
       missileSpeed: 25,
@@ -600,9 +617,9 @@ export const ThrowingAxe = {
     },
   ],
   weight: 1.25,
-} satisfies Item
+}
 
-export const MountHarness = {
+export const MountHarness: Item = {
   armor: {
     armArmor: 0,
     bodyArmor: 6,
@@ -625,9 +642,9 @@ export const MountHarness = {
   type: 'MountHarness',
   weapons: [],
   weight: 20,
-} satisfies Item
+}
 
-export const Mount = {
+export const Mount: Item = {
   armor: null,
   baseId: 'crpg_mount_balanced_5',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
@@ -650,9 +667,9 @@ export const Mount = {
   type: 'Mount',
   weapons: [],
   weight: 450,
-} satisfies Item
+}
 
-export const Helmet = {
+export const Helmet: Item = {
   armor: {
     armArmor: 0,
     bodyArmor: 0,
@@ -675,4 +692,4 @@ export const Helmet = {
   type: 'HeadArmor',
   weapons: [],
   weight: 4.64,
-} satisfies Item
+}

@@ -1,6 +1,5 @@
+import type { Languages as _Languages } from '#api'
 import type { ValueOf } from 'type-fest'
-
-import type { Languages as _Languages } from '~/api'
 
 // https://en.wikipedia.org/wiki/List_of_languages_by_number_of_speakers_in_Europe
 export const LANGUAGE = {

@@ -1,10 +1,9 @@
-import type { ValueOf } from 'type-fest'
-
 import type {
   CharacterCharacteristicConversion as _CharacterCharacteristicConversion,
   CharacterClass as _CharacterClass,
+} from '#api'
+import type { ValueOf } from 'type-fest'
 
-} from '~/api'
 import type { GameMode } from '~/models/game-mode'
 import type { ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'

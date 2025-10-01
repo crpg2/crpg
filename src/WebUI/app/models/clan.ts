@@ -1,10 +1,10 @@
-import type { ValueOf } from 'type-fest'
-
 import type {
   ClanInvitationStatus as _ClanInvitationStatus,
   ClanInvitationType as _ClanInvitationType,
   ClanMemberRole as _ClanMemberRole,
-} from '~/api'
+} from '#api'
+import type { ValueOf } from 'type-fest'
+
 import type { Language } from '~/models/language'
 import type { Region } from '~/models/region'
 import type { UserPublic } from '~/models/user'

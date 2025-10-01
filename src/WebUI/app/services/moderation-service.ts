@@ -1,7 +1,7 @@
 import {
   putUsersByIdRewards,
   putUsersByUserIdCharactersByCharacterIdRewards,
-} from '#hey-api/sdk.gen'
+} from '#api/sdk.gen'
 
 interface RewardUser {
   gold: number

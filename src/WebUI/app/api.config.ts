@@ -1,8 +1,7 @@
+import type { CreateClientConfig } from '#api/client.gen'
 import type { FetchResponse } from 'ofetch'
 
 import { delay } from 'es-toolkit'
-
-import type { CreateClientConfig } from '~/api/client.gen'
 
 import { getToken, login } from '~/services/auth-service'
 

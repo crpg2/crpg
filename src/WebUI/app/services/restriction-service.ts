@@ -1,3 +1,5 @@
+import type { RestrictionViewModel } from '#api'
+
 import {
   getRestrictions as _getRestrictions,
   getUsersByIdRestrictions,
@@ -5,9 +7,8 @@ import {
   getUsersSearch,
   postRestrictions,
   putUsersByUserIdNote,
-} from '#hey-api/sdk.gen'
+} from '#api/sdk.gen'
 
-import type { RestrictionViewModel } from '~/api'
 import type { Platform } from '~/models/platform'
 import type { UserPrivate, UserPublic, UserRestriction, UserRestrictionCreation } from '~/models/user'
 

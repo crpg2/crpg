@@ -1,7 +1,7 @@
 import {
   getItems as _getItems,
   getItemsUpgradesByBaseId,
-} from '#hey-api/sdk.gen'
+} from '#api/sdk.gen'
 import {
   brokenItemRepairPenaltySeconds,
   itemBreakChance,

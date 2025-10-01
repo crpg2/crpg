@@ -1,4 +1,4 @@
-import { getLeaderboardLeaderboard } from '#hey-api/sdk.gen'
+import { getLeaderboardLeaderboard } from '#api/sdk.gen'
 import { inRange } from 'es-toolkit'
 
 import type { CharacterClass } from '~/models/character'

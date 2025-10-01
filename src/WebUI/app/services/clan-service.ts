@@ -14,7 +14,7 @@ import {
   putClansByClanIdArmoryByUserItemIdReturn,
   putClansByClanIdInvitationsByInvitationIdResponse,
   putClansByClanIdMembersByUserId,
-} from '#hey-api/sdk.gen'
+} from '#api/sdk.gen'
 
 import type {
   Clan,

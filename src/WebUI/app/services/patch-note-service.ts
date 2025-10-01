@@ -1,4 +1,4 @@
-import { getPatchNotes as _getPatchNotes } from '#hey-api/sdk.gen'
+import { getPatchNotes as _getPatchNotes } from '#api/sdk.gen'
 
 import type { PatchNote } from '~/models/patch-note'
 

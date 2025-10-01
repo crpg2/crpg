@@ -49,6 +49,7 @@ const defaultPathSerializer = ({ path, url: _url }: PathSerializer) => {
         style = 'matrix';
       }
 
+      // @ts-expect-error
       const value = toValue(toValue(path)[name]);
 
       if (value === undefined || value === null) {
@@ -159,6 +160,7 @@ const checkForExistence = (
   }
   if (
     options.headers.has(name) ||
+    // @ts-expect-error
     toValue(options.query)?.[name] ||
     options.headers.get('Cookie')?.includes(`${name}=`)
   ) {
@@ -191,6 +193,7 @@ export const setAuthParams = async ({
         if (!options.query) {
           options.query = {};
         }
+        // @ts-expect-error
         toValue(options.query)[name] = token;
         break;
       case 'cookie':

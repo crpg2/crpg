@@ -2,7 +2,7 @@
 
 import { type ClientOptions, type Config, createClient, createConfig } from './client';
 import type { ClientOptions as ClientOptions2 } from './types.gen';
-import { createClientConfig } from '../api.config';
+import { createClientConfig } from '../../app/api.config';
 
 /**
  * The `createClientConfig()` function will be called on client initialization

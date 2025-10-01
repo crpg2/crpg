@@ -1,6 +1,5 @@
+import type { Region as _Region } from '#api'
 import type { ValueOf } from 'type-fest'
-
-import type { Region as _Region } from '~/api'
 
 export const REGION = {
   Eu: 'Eu',

@@ -1,7 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import type { Item } from '~/models/item'
-
 import { WEAPON_USAGE } from '~/models/item'
 
 import { createItemIndex } from '../indexator'
@@ -41,7 +39,7 @@ describe('createItemIndex', () => {
   })
 
   it('weapons > 1, same weaponClass', () => {
-    const index = createItemIndex([Pike as Item], true)
+    const index = createItemIndex([Pike], true)
 
     expect(index.length).toEqual(1)
     const [item] = index
@@ -56,7 +54,7 @@ describe('createItemIndex', () => {
   })
 
   it('weapons > 1, diff weaponClass - it is necessary to clone the item', () => {
-    const index = createItemIndex([Hoe as Item], true)
+    const index = createItemIndex([Hoe], true)
 
     expect(index.length).toEqual(2)
     const [item1, item2] = index
@@ -76,7 +74,7 @@ describe('createItemIndex', () => {
 
   it('shield', () => {
     mockedIsLargeShield.mockReturnValueOnce(true)
-    const index = createItemIndex([Shield as Item])
+    const index = createItemIndex([Shield])
     const [item] = index
 
     expect(item?.shieldDurability).toEqual(70)
@@ -89,7 +87,7 @@ describe('createItemIndex', () => {
 
   it('shield - CantUseOnHorseback', () => {
     mockedIsLargeShield.mockReturnValueOnce(false)
-    const index = createItemIndex([Shield as Item])
+    const index = createItemIndex([Shield])
     const [item] = index
 
     expect(item?.flags).not.contains('CantUseOnHorseback')
@@ -97,14 +95,14 @@ describe('createItemIndex', () => {
 
   it('shield - upkeep', () => {
     mockedIsLargeShield.mockReturnValueOnce(true)
-    const index = createItemIndex([Shield as Item])
+    const index = createItemIndex([Shield])
     const [item] = index
 
     expect(item?.upkeep).toEqual(item!.price * 2)
   })
 
   it('bow', () => {
-    const index = createItemIndex([Bow as Item])
+    const index = createItemIndex([Bow])
     const [item] = index
 
     expect(item?.reloadSpeed).toEqual(98)
@@ -113,7 +111,7 @@ describe('createItemIndex', () => {
   })
 
   it('bolts', () => {
-    const index = createItemIndex([Bolts as Item])
+    const index = createItemIndex([Bolts])
     const [item] = index
 
     expect(item?.damage).toEqual(14)
@@ -123,7 +121,7 @@ describe('createItemIndex', () => {
   })
 
   it('throwing axe', () => {
-    const index = createItemIndex([ThrowingAxe as Item], true)
+    const index = createItemIndex([ThrowingAxe], true)
     const [item1, item2] = index
 
     expect(item1?.type).toEqual('OneHandedWeapon')
@@ -139,7 +137,7 @@ describe('createItemIndex', () => {
   })
 
   it('mount harness', () => {
-    const index = createItemIndex([MountHarness as Item])
+    const index = createItemIndex([MountHarness])
     const [item] = index
 
     expect(item?.mountArmor).toEqual(6)
@@ -147,7 +145,7 @@ describe('createItemIndex', () => {
   })
 
   it('mount', () => {
-    const index = createItemIndex([Mount as Item])
+    const index = createItemIndex([Mount])
     const [item] = index
 
     expect(item?.bodyLength).toEqual(105)
@@ -159,7 +157,7 @@ describe('createItemIndex', () => {
   })
 
   it('helmet', () => {
-    const index = createItemIndex([Helmet as Item])
+    const index = createItemIndex([Helmet])
     const [item] = index
 
     expect(item?.mountArmor).toEqual(null)
@@ -168,10 +166,10 @@ describe('createItemIndex', () => {
   })
 
   it('isNew', () => {
-    const index = createItemIndex([Helmet, Longsword] as Item[])
+    const index = createItemIndex([Helmet, Longsword])
     const [item1, item2] = index
 
-    expect(item1!.new).toEqual(1)
-    expect(item2!.new).toEqual(0)
+    expect(item1!.isNew).toBeTruthy()
+    expect(item2!.isNew).toBeFalsy()
   })
 })

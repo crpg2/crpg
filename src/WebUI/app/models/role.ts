@@ -1,6 +1,5 @@
+import type { Role as _Role } from '#api'
 import type { ValueOf } from 'type-fest'
-
-import type { Role as _Role } from '~/api'
 
 export const ROLE = {
   User: 'User',
