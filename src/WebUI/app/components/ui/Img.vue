@@ -36,7 +36,7 @@ onMounted(() => {
     }
 
     img.onload = (event) => {
-      // placeholderLoaded.value = true
+      placeholderLoaded.value = true
       emit('load', event)
     }
 

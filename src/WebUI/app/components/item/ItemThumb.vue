@@ -17,7 +17,7 @@ const error = ref<boolean>(false)
     @error="error = true"
   >
     <img
-      v-if="!isLoaded"
+      v-if="isLoaded"
       v-bind="imgAttrs"
       class="size-full object-contain select-none"
       :src
