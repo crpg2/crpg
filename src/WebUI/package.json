@@ -8,8 +8,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "test:unit": "vitest",
-    "lint": "eslint --concurrency=4",
-    "typecheck": "vue-tsc --noEmit -p tsconfig.json"
+    "lint": "eslint . --concurrency=4",
+    "typecheck": "nuxt prepare && vue-tsc -b --noEmit"
   },
   "dependencies": {
     "@antfu/eslint-config": "^5.4.1",

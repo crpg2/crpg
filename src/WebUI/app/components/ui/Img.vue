@@ -22,7 +22,6 @@ defineSlots<{ default: (props: {
 
 const placeholderLoaded = ref(false)
 
-// @ts-expect-error TODO:
 const imgEl = useTemplateRef('imgEl')
 
 const imgAttrs = useAttrs() as ImgHTMLAttributes
@@ -51,11 +50,11 @@ onMounted(() => {
     return
   }
 
-  imgEl.value.onload = (event: Event) => {
+  imgEl.value.onload = (event) => {
     emit('load', event)
   }
 
-  imgEl.value.onerror = (event: Event) => {
+  imgEl.value.onerror = (event) => {
     emit('error', event)
   }
 })

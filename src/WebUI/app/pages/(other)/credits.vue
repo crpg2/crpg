@@ -188,7 +188,7 @@ const filteredContributors = computed<Contributor[]>(() => {
 
       <UTabs
         v-model="currentFilter"
-        :items="Object.keys(ROLE).map<TabsItem>((role) => ({
+        :items="Object.values(ROLE).map<TabsItem>((role) => ({
           label: $t(`credits.role.${role}`),
           value: role,
           icon: IconByRole[role],
