@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { SelectItem, TableColumn } from '@nuxt/ui'
-import type { PaginationState, SortingState, VisibilityState } from '@tanstack/vue-table'
+import type { SortingState, VisibilityState } from '@tanstack/vue-table'
 
 import { getPaginationRowModel } from '@tanstack/vue-table'
 import { navigateTo } from '#app'

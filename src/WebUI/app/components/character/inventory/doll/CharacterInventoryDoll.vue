@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { PointerEvent } from 'happy-dom'
-
 import { vOnLongPress } from '@vueuse/components'
 
 import type { CharacterCharacteristics, CharacterOverallItemsStats, EquippedItemId } from '~/models/character'

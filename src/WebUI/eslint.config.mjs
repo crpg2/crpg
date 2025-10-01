@@ -7,7 +7,9 @@ import eslintParserVue from 'vue-eslint-parser'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
-  { ignores: ['./app/api'] },
+  {
+    ignores: ['./app/api'],
+  },
   antfu({
     lessOpinionated: true,
     vue: true,

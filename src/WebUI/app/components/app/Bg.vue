@@ -4,7 +4,7 @@ const { strategy = 'fixed' } = defineProps<{ bg: string, strategy?: 'absolute' |
 
 <template>
   <div class="inset-0" :class="strategy === 'fixed' ? 'fixed' : 'absolute'">
-    <NuxtImg
+    <UiImg
       class="size-full object-cover opacity-15"
       :src="`/images/bg/${bg}`"
     />

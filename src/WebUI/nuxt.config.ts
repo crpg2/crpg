@@ -15,7 +15,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'motion-v/nuxt',
     '@nuxtjs/i18n',
-    '@nuxt/image',
   ],
   ssr: false,
   devtools: { enabled: true },
@@ -122,23 +121,11 @@ export default defineNuxtConfig({
     },
   },
   vite: {
-    optimizeDeps: {
-      include: [
-        /**
-         * in development mode we make a bundle of modules at once, so that we don't expect JIT bundling when switching between different pages where there are unbundled new modules.
-         */
-        '@vuelidate/core',
-        '@vuelidate/validators',
-        'tailwind-variants',
-        '@tanstack/vue-table',
-        '@number-flow/vue',
-        '@internationalized/date',
-      ],
-    },
     plugins: [
       tailwindcss(),
       JSON5(),
     ],
+    envPrefix: ['NUXT_PUBLIC_'],
   },
   eslint: {
     config: {

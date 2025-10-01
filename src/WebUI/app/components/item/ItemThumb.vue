@@ -8,18 +8,19 @@ const error = ref<boolean>(false)
 </script>
 
 <template>
-  <NuxtImg
+  <UiImg
     v-slot="{ src, isLoaded, imgAttrs }"
     :src="thumb"
     :alt="name"
-    :custom="true"
+    custom
+    class="size-full"
     @error="error = true"
   >
     <img
-      v-if="isLoaded"
+      v-if="!isLoaded"
       v-bind="imgAttrs"
       class="size-full object-contain select-none"
-      :src="src"
+      :src
     >
     <div
       v-else-if="error"
@@ -36,7 +37,6 @@ const error = ref<boolean>(false)
         {{ name }}
       </div>
     </div>
-
     <USkeleton v-else class="size-full" />
-  </NuxtImg>
+  </UiImg>
 </template>
