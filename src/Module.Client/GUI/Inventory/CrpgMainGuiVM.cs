@@ -1,4 +1,3 @@
-using TaleWorlds.Core.ViewModelCollection;
 using TaleWorlds.Library;
 
 namespace Crpg.Module.GUI.Inventory;

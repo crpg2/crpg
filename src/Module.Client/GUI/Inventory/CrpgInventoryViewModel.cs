@@ -2,6 +2,7 @@ using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using Crpg.Module.Common.Network;
 using Crpg.Module.Common.Network.Armory;
+using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.GauntletUI;
@@ -32,7 +33,6 @@ public class CrpgInventoryViewModel : ViewModel
     private CharacteristicsEditorVM _characteristicsEditor;
     private CharacterInfoBuildEquipStatsVM _characterInfoBuildEquipStatsVm;
     private ItemInfoVM _itemInfo;
-
     private CharacterEquipNavBar _navBar;
 
     [DataSourceProperty]
@@ -140,6 +140,12 @@ public class CrpgInventoryViewModel : ViewModel
             MissionPeer? missionPeer = GameNetwork.MyPeer.GetComponent<MissionPeer>();
             CrpgPeer? crpgPeer = missionPeer?.GetComponent<CrpgPeer>();
             string clanTag = crpgPeer?.Clan?.Tag ?? string.Empty;
+
+            if (clanTag != string.Empty)
+            {
+                clanTag = $"[{clanTag}]";
+            }
+
             _userName = $"{clanTag} {UserLoadoutBehavior?.User?.Name ?? string.Empty}";
             _goldAmount = UserLoadoutBehavior?.User?.Gold.ToString("N0") ?? "0";
         }
@@ -158,7 +164,7 @@ public class CrpgInventoryViewModel : ViewModel
 
     public override void OnFinalize()
     {
-        LogDebug("CrpgInventoryViewModel-- OnFinalize()");
+        LogDebug("OnFinalize()");
 
         _equipmentPanel.OnItemDropped -= HandleItemDrop;
         EquipmentPanel.OnSlotAlternateClicked -= HandleAlternateClick;
@@ -437,58 +443,55 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
-    // Gui Updates because of behavior (API usage)
+    // Gui Updates because of UserLoadoutBehavior (API usage)
     private void HandleEquipmentSlotUpdated(CrpgItemSlot updatedSlot)
     {
-        LogDebug($"[CrpgInventoryVM] HandleSlotUpdated called for slot {updatedSlot}");
+        LogDebug($"HandleSlotUpdated called for slot {updatedSlot}");
 
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior == null)
+        if (UserLoadoutBehavior == null)
         {
-            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found", Colors.Red);
+            LogDebug("No CrpgCharacterLoadoutBehaviorClient found", Colors.Red);
             return;
         }
 
         var slotVm = EquipmentPanel.EquipmentSlots.FirstOrDefault(s => s.CrpgItemSlotIndex == updatedSlot);
         if (slotVm == null)
         {
-            LogDebug("[CrpgInventoryVM] No matching EquipmentSlotVM found for updated slot", Colors.Red);
+            LogDebug("No matching EquipmentSlotVM found for updated slot", Colors.Red);
             return;
         }
 
-        var equippedItem = behavior.EquippedItems.FirstOrDefault(e => e.Slot == updatedSlot);
+        var equippedItem = UserLoadoutBehavior.EquippedItems.FirstOrDefault(e => e.Slot == updatedSlot);
         if (equippedItem != null)
         {
             var itemObj = MBObjectManager.Instance.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
             slotVm.SetItem(new ImageIdentifierVM(itemObj), itemObj, equippedItem.UserItem);
-            LogDebug($"[CrpgInventoryVM] Slot {updatedSlot} set to item {itemObj?.Name} (UserItemId: {equippedItem.UserItem.Id})");
+            LogDebug($"Slot {updatedSlot} set to item {itemObj?.Name} (UserItemId: {equippedItem.UserItem.Id})");
         }
         else
         {
             slotVm.ClearItem();
-            LogDebug($"[CrpgInventoryVM] Slot {updatedSlot} cleared");
+            LogDebug($"Slot {updatedSlot} cleared");
         }
 
-        var equipment = behavior.GetCrpgUserCharacterEquipment();
+        var equipment = UserLoadoutBehavior.GetCrpgUserCharacterEquipment();
         EquipmentPanel.RefreshCharacterPreview(equipment);
 
-        var characteristics = behavior.UserCharacter.Characteristics;
+        var characteristics = UserLoadoutBehavior.UserCharacter.Characteristics;
         CharacterInfoBuildEquipStatsVm.UpdateCharacterBuildEquipmentStatDisplay(equipment, characteristics);
-        // RefreshCharacterPreview(behavior.GetCrpgUserCharacterEquipment());
+        // RefreshCharacterPreview(UserLoadoutBehavior.GetCrpgUserCharacterEquipment());
     }
 
     private void HandleInventoryUpdated()
     {
         LogDebug("HandleInventoryUpdated called");
-
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior == null)
+        if (UserLoadoutBehavior == null)
         {
             LogDebugError("No CrpgCharacterLoadoutBehaviorClient found");
             return;
         }
 
-        var items = behavior.UserInventoryItems
+        var items = UserLoadoutBehavior.UserInventoryItems
             .Where(ui => !string.IsNullOrEmpty(ui.ItemId))
             .Select(ui => (MBObjectManager.Instance.GetObject<ItemObject>(ui.ItemId), 1, ui))
             .Where(t => t.Item1 != null)
@@ -496,7 +499,7 @@ public class CrpgInventoryViewModel : ViewModel
 
         InventoryGrid.SetInventoryItems(items);
         /*
-                var items = behavior.UserInventoryItems
+                var items = UserLoadoutBehavior.UserInventoryItems
                     .Where(ui => !string.IsNullOrEmpty(ui.ItemId))
                     .Select(ui =>
                     {
@@ -519,15 +522,14 @@ public class CrpgInventoryViewModel : ViewModel
         }
 
         OnPropertyChanged(nameof(InventoryGrid));
-        LogDebug($"[CrpgInventoryVM] Inventory updated with {items.Count} items");
+        LogDebug($"Inventory updated with {items.Count} items");
     }
 
     private void HandleClanArmoryUpdated()
     {
         LogDebug("HandleClanArmoryUpdated()");
 
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior == null)
+        if (UserLoadoutBehavior == null)
         {
             LogDebugError("No CrpgCharacterLoadoutBehaviorClient found");
             return;
@@ -571,8 +573,7 @@ public class CrpgInventoryViewModel : ViewModel
     {
         LogDebug("HandleEquippedItemsUpdated()");
 
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior == null)
+        if (UserLoadoutBehavior == null)
         {
             LogDebugError("No CrpgCharacterLoadoutBehaviorClient found");
             return;
@@ -580,7 +581,7 @@ public class CrpgInventoryViewModel : ViewModel
 
         foreach (var slotVm in EquipmentPanel.EquipmentSlots)
         {
-            var equippedItem = behavior.EquippedItems.FirstOrDefault(e => e.Slot == slotVm.CrpgItemSlotIndex);
+            var equippedItem = UserLoadoutBehavior.EquippedItems.FirstOrDefault(e => e.Slot == slotVm.CrpgItemSlotIndex);
             if (equippedItem != null)
             {
                 var itemObj = MBObjectManager.Instance.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
@@ -592,10 +593,10 @@ public class CrpgInventoryViewModel : ViewModel
             }
         }
 
-        var equipment = behavior.GetCrpgUserCharacterEquipment();
+        var equipment = UserLoadoutBehavior.GetCrpgUserCharacterEquipment();
         EquipmentPanel.RefreshCharacterPreview(equipment);
 
-        var characteristics = behavior.UserCharacter.Characteristics;
+        var characteristics = UserLoadoutBehavior.UserCharacter.Characteristics;
         CharacterInfoBuildEquipStatsVm.UpdateCharacterBuildEquipmentStatDisplay(equipment, characteristics);
     }
 
@@ -603,28 +604,26 @@ public class CrpgInventoryViewModel : ViewModel
     {
         LogDebug("HandleUserCharacterBasicUpdated called");
 
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior == null)
+        if (UserLoadoutBehavior == null)
         {
             LogDebug("No CrpgCharacterLoadoutBehaviorClient found", Colors.Red);
             return;
         }
 
-        CharacteristicsEditor.SetCrpgCharacterBasic(behavior.UserCharacter);
+        CharacteristicsEditor.SetCrpgCharacterBasic(UserLoadoutBehavior.UserCharacter);
     }
 
     private void HandleUserCharacteristicsUpdated()
     {
         LogDebug("HandleUserCharacteristicsUpdated()");
 
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior == null)
+        if (UserLoadoutBehavior == null)
         {
             LogDebugError("No CrpgCharacterLoadoutBehaviorClient found");
             return;
         }
 
-        CharacteristicsEditor.SetInitialCharacteristics(behavior.UserCharacter.Characteristics);
+        CharacteristicsEditor.SetInitialCharacteristics(UserLoadoutBehavior.UserCharacter.Characteristics);
         LogDebug("Updated CHaracterInfoVM with new characteristics");
     }
 
@@ -632,16 +631,15 @@ public class CrpgInventoryViewModel : ViewModel
     {
         LogDebug("HandleUserCharacteristicsConverted called");
 
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior == null)
+        if (UserLoadoutBehavior == null)
         {
             LogDebugError("No CrpgCharacterLoadoutBehaviorClient found");
             return;
         }
 
         CharacteristicsEditor.UpdateCharacteristicsPointsAfterConversion(
-            behavior.UserCharacter.Characteristics.Attributes.Points,
-            behavior.UserCharacter.Characteristics.Skills.Points);
+            UserLoadoutBehavior.UserCharacter.Characteristics.Attributes.Points,
+            UserLoadoutBehavior.UserCharacter.Characteristics.Skills.Points);
 
         LogDebug("HandleUserCharacteristicsConverted finished.");
     }
@@ -706,6 +704,7 @@ public class CrpgInventoryViewModel : ViewModel
             }
         }
     }
+
     private void MakeItemInfo()
     {
         if (RootWidget == null)

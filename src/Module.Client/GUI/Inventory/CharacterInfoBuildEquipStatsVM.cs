@@ -34,14 +34,14 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
 
     public CharacterInfoBuildEquipStatsVM()
     {
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior == null)
+        UserLoadoutBehavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (UserLoadoutBehavior == null)
         {
             InformationManager.DisplayMessage(new InformationMessage("CrpgCharacterLoadoutBehaviorClient is required but not found in current mission", Colors.Red));
             return;
         }
 
-        _constants = behavior.Constants;
+        _constants = UserLoadoutBehavior.Constants;
 
         _statCalcInstance = new CrpgCharacterStatCalculations(_constants);
     }
@@ -51,8 +51,7 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
         try
         {
             // InformationManager.DisplayMessage(new InformationMessage("UpdateCharacterBuildEquipmentStatDisplay()", Colors.Red));
-            var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-            if (behavior == null)
+            if (UserLoadoutBehavior == null)
             {
                 InformationManager.DisplayMessage(new InformationMessage("CrpgCharacterLoadoutBehaviorClient is required but not found in current mission", Colors.Red));
                 return false;

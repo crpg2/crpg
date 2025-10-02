@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
-using Crpg.Module.Common.Network;
 using TaleWorlds.Core;
-using TaleWorlds.Core.ViewModelCollection.Information;
 using TaleWorlds.Library;
-using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.GUI.Inventory;
 
@@ -14,26 +9,27 @@ public class EquipmentSlotVM : ViewModel
 {
     internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
     private ImageIdentifierVM? _imageIdentifier;
-    private bool _isDragging;
-    private string _defaultSprite;
     private CrpgItemSlot _crpgItemSlotIndex;
     private ItemObject? _itemObj;
+    private ItemRankIconVM _itemRankIcon;
+    private ItemArmoryIconVM? _itemArmoryIcon;
+
+    private bool _isDragging;
+    private string _defaultSprite;
     private int _userItemId;
     private bool _isButtonEnabled;
     private int _itemRank = 0;
-    private ItemRankIconVM _itemRankIcon;
-    private ItemArmoryIconVM? _itemArmoryIcon;
     private bool _isArmoryItem;
 
-    public event Action<EquipmentSlotVM, ViewModel>? OnItemDropped;
-    public event Action<EquipmentSlotVM>? OnSlotAlternateClicked;
-    public event Action<EquipmentSlotVM>? OnSlotClicked;
-    public event Action<EquipmentSlotVM>? OnHoverBegin;
-    public event Action<EquipmentSlotVM>? OnHoverEnd;
-    public event Action<ItemObject>? OnItemDragBegin;
-    public event Action<ItemObject>? OnItemDragEnd;
+    internal event Action<EquipmentSlotVM, ViewModel>? OnItemDropped;
+    internal event Action<EquipmentSlotVM>? OnSlotAlternateClicked;
+    internal event Action<EquipmentSlotVM>? OnSlotClicked;
+    internal event Action<EquipmentSlotVM>? OnHoverBegin;
+    internal event Action<EquipmentSlotVM>? OnHoverEnd;
+    internal event Action<ItemObject>? OnItemDragBegin;
+    internal event Action<ItemObject>? OnItemDragEnd;
 
-    public CrpgUserItemExtended? UserItemEx { get; set; } = default!;
+    internal CrpgUserItemExtended? UserItemEx { get; set; } = default!;
 
     public EquipmentSlotVM(CrpgItemSlot crpgSlot)
     {
@@ -45,54 +41,12 @@ public class EquipmentSlotVM : ViewModel
         _itemArmoryIcon = new ItemArmoryIconVM();
     }
 
-    public void ExecuteAlternateClick()
-    {
-        LogDebug($"ExecuteAlternateClick()");
-        OnSlotAlternateClicked?.Invoke(this);
-    }
-
-    public void ExecuteClick()
-    {
-        LogDebug($"ExecuteClick()");
-        OnSlotClicked?.Invoke(this);
-    }
-
-    public void ExecuteHoverBegin()
-    {
-        OnHoverBegin?.Invoke(this);
-        LogDebug($"ExecuteHoverBegin()");
-    }
-
-    public void ExecuteHoverEnd()
-    {
-        OnHoverEnd?.Invoke(this);
-        LogDebug($"ExecuteHoverEnd()");
-    }
-
-    public void ExecuteDragBegin()
-    {
-        IsDragging = true;
-        if (ItemObj != null)
-        {
-            OnItemDragBegin?.Invoke(ItemObj);
-        }
-    }
-
-    public void ExecuteDragEnd()
-    {
-        IsDragging = false;
-        if (ItemObj != null)
-        {
-            OnItemDragEnd?.Invoke(ItemObj);
-        }
-    }
-
-    public void ExecuteTryEquipItem(ViewModel draggedItem, int index)
+    internal void ExecuteTryEquipItem(ViewModel draggedItem, int index)
     {
         OnItemDropped?.Invoke(this, draggedItem);
     }
 
-    public void SetItem(ImageIdentifierVM? newIdentifier, ItemObject? itemObj = null, CrpgUserItemExtended? userItemExtended = null)
+    internal void SetItem(ImageIdentifierVM? newIdentifier, ItemObject? itemObj = null, CrpgUserItemExtended? userItemExtended = null)
     {
         ImageIdentifier = newIdentifier;
         ItemObj = itemObj;
@@ -109,9 +63,66 @@ public class EquipmentSlotVM : ViewModel
         OnPropertyChanged(nameof(ItemRank));
     }
 
-    public void ClearItem()
+    internal void ClearItem()
     {
         SetItem(new ImageIdentifierVM(ImageIdentifierType.Item));
+    }
+
+    internal void RefreshFromEquipment(Equipment equipment)
+    {
+        EquipmentIndex eqIndex = ConvertToEquipmentIndex(CrpgItemSlotIndex);
+
+        // Get the EquipmentElement for this slot
+        EquipmentElement element = equipment[eqIndex];
+
+        // Extract the ItemObject from the element
+        ItemObject? item = element.Item;
+
+        // Update the slot VM
+        SetItem(item != null ? new ImageIdentifierVM(ImageIdentifierType.Item) : null, item);
+    }
+
+    // ===== Event handlers for UI actions =====
+    private void ExecuteAlternateClick()
+    {
+        LogDebug($"ExecuteAlternateClick()");
+        OnSlotAlternateClicked?.Invoke(this);
+    }
+
+    private void ExecuteClick()
+    {
+        LogDebug($"ExecuteClick()");
+        OnSlotClicked?.Invoke(this);
+    }
+
+    private void ExecuteHoverBegin()
+    {
+        OnHoverBegin?.Invoke(this);
+        LogDebug($"ExecuteHoverBegin()");
+    }
+
+    private void ExecuteHoverEnd()
+    {
+        OnHoverEnd?.Invoke(this);
+        LogDebug($"ExecuteHoverEnd()");
+    }
+
+    private void ExecuteDragBegin()
+    {
+        IsDragging = true;
+        if (ItemObj != null)
+        {
+            OnItemDragBegin?.Invoke(ItemObj);
+        }
+    }
+
+    private void ExecuteDragEnd()
+    {
+        IsDragging = false;
+        if (ItemObj != null)
+        {
+            OnItemDragEnd?.Invoke(ItemObj);
+        }
     }
 
     [DataSourceProperty]
@@ -150,6 +161,7 @@ public class EquipmentSlotVM : ViewModel
         }
     }
 
+    [DataSourceProperty]
     public bool IsDragging
     {
         get => _isDragging;
@@ -195,22 +207,8 @@ public class EquipmentSlotVM : ViewModel
         [CrpgItemSlot.WeaponExtra] = EquipmentIndex.ExtraWeaponSlot,
     };
 
-    public static EquipmentIndex ConvertToEquipmentIndex(CrpgItemSlot slot)
+    internal static EquipmentIndex ConvertToEquipmentIndex(CrpgItemSlot slot)
         => CrpgToEquipIndex.TryGetValue(slot, out var result) ? result : EquipmentIndex.None;
-
-    public void RefreshFromEquipment(Equipment equipment)
-    {
-        EquipmentIndex eqIndex = ConvertToEquipmentIndex(CrpgItemSlotIndex);
-
-        // Get the EquipmentElement for this slot
-        EquipmentElement element = equipment[eqIndex];
-
-        // Extract the ItemObject from the element
-        ItemObject? item = element.Item;
-
-        // Update the slot VM
-        SetItem(item != null ? new ImageIdentifierVM(ImageIdentifierType.Item) : null, item);
-    }
 
     private string GetDefaultSpriteForSlot(CrpgItemSlot slot) => slot switch
     {

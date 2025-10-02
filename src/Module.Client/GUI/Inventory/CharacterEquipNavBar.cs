@@ -1,4 +1,3 @@
-using TaleWorlds.GauntletUI.BaseTypes;
 using TaleWorlds.Library;
 
 namespace Crpg.Module.GUI.Inventory;
@@ -13,12 +12,12 @@ public class CharacterEquipNavBar : ViewModel
     {
     }
 
-    public void ExecuteClickEquipment()
+    internal void ExecuteClickEquipment()
     {
         OnEquipNavButtonClicked?.Invoke("Equipment");
     }
 
-    public void ExecuteClickCharacteristics()
+    internal void ExecuteClickCharacteristics()
     {
         OnEquipNavButtonClicked?.Invoke("Characteristics");
     }

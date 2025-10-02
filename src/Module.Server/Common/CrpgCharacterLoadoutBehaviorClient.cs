@@ -31,14 +31,11 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     private readonly List<CrpgEquippedItemExtended> _equippedItems = new();
     private readonly List<CrpgUserItemExtended> _userInventoryItems = new();
     private CrpgClanArmoryClient? _clanArmory;
-
-    // private readonly List<CrpgClanArmoryItem> _clanArmoryItems = new();
     private MissionNetworkComponent? _missionNetworkComponent;
 
     // Public read-only access
     public IReadOnlyList<CrpgEquippedItemExtended> EquippedItems => _equippedItems;
     public IReadOnlyList<CrpgUserItemExtended> UserInventoryItems => _userInventoryItems;
-    // public IReadOnlyList<CrpgClanArmoryItem> ClanArmoryItems => _clanArmoryItems;
 
     public CrpgUser User { get; private set; } = new(); // will only contain some of CrpgUser data
     public CrpgCharacter UserCharacter { get; private set; } = new();

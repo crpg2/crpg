@@ -1,4 +1,3 @@
-using System;
 using TaleWorlds.Library;
 
 namespace Crpg.Module.GUI.Inventory;

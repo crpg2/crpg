@@ -1,20 +1,11 @@
-using System.Runtime.InteropServices;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Common;
-using Crpg.Module.Common.Models;
 using Crpg.Module.Helpers;
-using TaleWorlds.CampaignSystem.ComponentInterfaces;
-using TaleWorlds.CampaignSystem.Extensions;
-using TaleWorlds.Core;
+
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View;
-
-// item rank colors
-// 1 = #4ade80
-// 2 = #60a5fa
-// 3 = #c084fc
 
 namespace Crpg.Module.GUI.Inventory;
 
