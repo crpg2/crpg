@@ -11,6 +11,7 @@ namespace Crpg.Module.GUI.Inventory;
 // If there any changes in either, they will need to be reflected here as well.
 public class CharacterInfoBuildEquipStatsVM : ViewModel
 {
+    private CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
     private readonly CrpgConstants _constants = default!;
     private readonly CrpgCharacterStatCalculations _statCalcInstance = default!;
     private string _cost = string.Empty;
@@ -49,7 +50,7 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
     {
         try
         {
-            InformationManager.DisplayMessage(new InformationMessage("UpdateCharacterBuildEquipmentStatDisplay()", Colors.Red));
+            // InformationManager.DisplayMessage(new InformationMessage("UpdateCharacterBuildEquipmentStatDisplay()", Colors.Red));
             var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
             if (behavior == null)
             {
@@ -80,7 +81,7 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
             AvgRepairCost = $"{_statCalcInstance.ComputeAverageRepairCostPerHour(totalCost):N0} / h";
             HealthPoints = $"{_statCalcInstance.ComputeHealthPoints(characteristics)}";
             Weight = $"{_statCalcInstance.ComputeOverallWeight(equipment):F3}";
-            FreeWeight = $"{Math.Min(_statCalcInstance.ComputeOverallWeight(equipment), charSpeedStats.FreeWeight):F2}/{charSpeedStats.FreeWeight}";
+            FreeWeight = $"{Math.Min(_statCalcInstance.ComputeOverallWeight(equipment), charSpeedStats.FreeWeight):F2}/{charSpeedStats.FreeWeight:F2}";
             WeightReduction = $"{(charSpeedStats.WeightReductionFactor - 1) * 100:F2}%";
             PerceivedWeight = $"{charSpeedStats.PerceivedWeight:F3}";
             TimeToMaxSpeed = $"{charSpeedStats.TimeToMaxSpeed:F3}s";
@@ -111,7 +112,7 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
                 AddMountSpeedTextDisabledState = false;
             }
 
-            InformationManager.DisplayMessage(new InformationMessage("UpdateCharacterBuildEquipmentStatDisplay() FINISHED"));
+            // InformationManager.DisplayMessage(new InformationMessage("UpdateCharacterBuildEquipmentStatDisplay() FINISHED"));
         }
         catch (Exception ex)
         {

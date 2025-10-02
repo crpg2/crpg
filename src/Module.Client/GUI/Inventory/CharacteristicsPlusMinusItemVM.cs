@@ -10,8 +10,8 @@ public class CharacteristicsPlusMinusItemVM : ViewModel
     private bool _isButtonMinusEnabled;
     private bool _isButtonPlusEnabled;
 
-    public event Action<CharacteristicsPlusMinusItemVM, bool>? OnPlusClickedEvent;
-    public event Action<CharacteristicsPlusMinusItemVM, bool>? OnMinusClickedEvent;
+    internal event Action<CharacteristicsPlusMinusItemVM, bool>? OnPlusClickedEvent;
+    internal event Action<CharacteristicsPlusMinusItemVM, bool>? OnMinusClickedEvent;
 
     public CharacteristicsPlusMinusItemVM(string label, int value)
     {
@@ -30,10 +30,7 @@ public class CharacteristicsPlusMinusItemVM : ViewModel
     public int ItemValue
     {
         get => _itemValue;
-        set
-        {
-            SetField(ref _itemValue, value, nameof(ItemValue));
-        }
+        set => SetField(ref _itemValue, value, nameof(ItemValue));
     }
 
     [DataSourceProperty]
@@ -58,22 +55,22 @@ public class CharacteristicsPlusMinusItemVM : ViewModel
         set => SetField(ref _textStateDisabled, value, nameof(TextStateDisabled));
     }
 
-    public void ExecutePlusClick()
+    private void ExecutePlusClick()
     {
         OnPlusClickedEvent?.Invoke(this, false);
     }
 
-    public void ExecuteMinusClick()
+    private void ExecuteMinusClick()
     {
         OnMinusClickedEvent?.Invoke(this, false);
     }
 
-    public void ExecutePlusAlternateClick()
+    private void ExecutePlusAlternateClick()
     {
         OnPlusClickedEvent?.Invoke(this, true);
     }
 
-    public void ExecuteMinusAlternateClick()
+    private void ExecuteMinusAlternateClick()
     {
         OnMinusClickedEvent?.Invoke(this, true);
     }

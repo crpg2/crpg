@@ -24,7 +24,7 @@ public class CharacteristicsEditorVM : ViewModel
     private readonly Dictionary<string, CharacteristicsPlusMinusItemVM> _skillMap = new();
     private readonly Dictionary<string, CharacteristicsPlusMinusItemVM> _weaponMap = new();
     private readonly TimeSpan _apiUsageClickCooldown = TimeSpan.FromSeconds(5);
-    internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
+    private CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
 
     private bool _isVisible;
 
@@ -43,6 +43,8 @@ public class CharacteristicsEditorVM : ViewModel
 
     private DateTime _lastApiCharacteristicsRefreshClick = DateTime.MinValue;
     private DateTime _lastApiCharacteristicsApplyClick = DateTime.MinValue;
+
+    internal event Action? OnEditCharacteristicsChanged; // event to notify parent VM to update CharacterInfoBuildEquipStatsVM (before API call)
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CharacteristicsEditorVM"/> class.
@@ -100,50 +102,11 @@ public class CharacteristicsEditorVM : ViewModel
             _weaponMap[wp.ItemLabel] = wp;
         }
 
-        UserLoadoutBehavior = Mission.Current.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>()
+        UserLoadoutBehavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>()
             ?? throw new InvalidOperationException("CrpgCharacterLoadoutBehaviorClient is required");
         _constants = UserLoadoutBehavior.Constants;
 
         // UpdateAllButtonStates();
-    }
-
-    public void ExecuteClickApplyChanges()
-    {
-        var now = DateTime.UtcNow;
-        if (now - _lastApiCharacteristicsApplyClick < _apiUsageClickCooldown)
-        {
-            InformationManager.DisplayMessage(new InformationMessage("Please wait to send another API request.", Colors.Yellow));
-            // too soon display msg or play sound
-            return;
-        }
-
-        _lastApiCharacteristicsApplyClick = now;
-
-        UserLoadoutBehavior?.RequestUpdateCharacterCharacteristics(GetCrpgCharacteristicsFromVM());
-        InformationManager.DisplayMessage(new InformationMessage("Requesting to update API characteristics.", Colors.Cyan));
-    }
-
-    public void ExecuteClickReset()
-    {
-        InformationManager.DisplayMessage(new InformationMessage("Resetting to initial characteristics.", Colors.Cyan));
-        ResetToInitialCharacteristics();
-    }
-
-    public void ExecuteClickRefreshApi()
-    {
-        var now = DateTime.UtcNow;
-        if (now - _lastApiCharacteristicsRefreshClick < _apiUsageClickCooldown)
-        {
-            // too soon display msg or play sound
-            InformationManager.DisplayMessage(new InformationMessage("Please wait to send another API request.", Colors.Yellow));
-            UISoundsHelper.PlayUISound("event:/ui/persuasion/critical_fail");
-            return;
-        }
-
-        _lastApiCharacteristicsRefreshClick = now;
-        UserLoadoutBehavior?.RequestGetUpdatedCharacterBasic();
-        InformationManager.DisplayMessage(new InformationMessage("Requesting to refresh character from API.", Colors.Cyan));
-        UISoundsHelper.PlayUISound("event:/ui/notification/trait_change");
     }
 
     /// <summary>
@@ -240,51 +203,6 @@ public class CharacteristicsEditorVM : ViewModel
         _initialCharacteristics.Skills.Points = skillPoints;
     }
 
-    /// <summary>
-    /// Resets the VM to the initial characteristics stored in _initialCharacteristics.
-    /// Restores attributes, skills, weapon proficiencies, and available points.
-    /// </summary>
-    internal void ResetToInitialCharacteristics()
-    {
-        if (_initialCharacteristics == null)
-        {
-            InformationManager.DisplayMessage(new InformationMessage($"ResetToInitialCharacteristics(): _initialCharacteristics is null.", Colors.Yellow));
-            return;
-        }
-
-        // Restore attributes
-        StrengthVm.ItemValue = _initialCharacteristics.Attributes.Strength;
-        AgilityVm.ItemValue = _initialCharacteristics.Attributes.Agility;
-        AttributePoints = _initialCharacteristics.Attributes.Points;
-
-        // Restore skills
-        foreach (var skill in Skills)
-        {
-            skill.ItemValue = GetInitialSkillValue(skill.ItemLabel);
-        }
-
-        SkillPoints = _initialCharacteristics.Skills.Points;
-
-        // Restore weapon proficiencies
-        foreach (var wp in WeaponProficiencies)
-        {
-            wp.ItemValue = GetInitialWeaponProficiencyValue(wp.ItemLabel);
-        }
-
-        WeaponProficiencyPoints = _initialCharacteristics.WeaponProficiencies.Points;
-
-        // Optionally, update convert buttons
-        ConvertAttribute.ItemValue = _initialCharacteristics.Attributes.Points;
-        ConvertSkill.ItemValue = _initialCharacteristics.Skills.Points;
-
-        // Refresh button states and text states
-        UpdateAllButtonStates();
-        ValidateAndUpdateAllSkills();
-        UpdateWeaponProficiencyTextStates();
-
-        InformationManager.DisplayMessage(new InformationMessage($"ResetToInitialCharacteristics():  completed.", Colors.Cyan));
-    }
-
     internal CrpgCharacterCharacteristics GetCrpgCharacteristicsFromVM()
     {
         var characteristics = new CrpgCharacterCharacteristics
@@ -326,6 +244,92 @@ public class CharacteristicsEditorVM : ViewModel
         };
 
         return characteristics;
+    }
+
+    /// <summary>
+    /// Resets the VM to the initial characteristics stored in _initialCharacteristics.
+    /// Restores attributes, skills, weapon proficiencies, and available points.
+    /// </summary>
+    private void ResetToInitialCharacteristics()
+    {
+        if (_initialCharacteristics == null)
+        {
+            InformationManager.DisplayMessage(new InformationMessage($"ResetToInitialCharacteristics(): _initialCharacteristics is null.", Colors.Yellow));
+            return;
+        }
+
+        // Restore attributes
+        StrengthVm.ItemValue = _initialCharacteristics.Attributes.Strength;
+        AgilityVm.ItemValue = _initialCharacteristics.Attributes.Agility;
+        AttributePoints = _initialCharacteristics.Attributes.Points;
+
+        // Restore skills
+        foreach (var skill in Skills)
+        {
+            skill.ItemValue = GetInitialSkillValue(skill.ItemLabel);
+        }
+
+        SkillPoints = _initialCharacteristics.Skills.Points;
+
+        // Restore weapon proficiencies
+        foreach (var wp in WeaponProficiencies)
+        {
+            wp.ItemValue = GetInitialWeaponProficiencyValue(wp.ItemLabel);
+        }
+
+        WeaponProficiencyPoints = _initialCharacteristics.WeaponProficiencies.Points;
+
+        // Optionally, update convert buttons
+        ConvertAttribute.ItemValue = _initialCharacteristics.Attributes.Points;
+        ConvertSkill.ItemValue = _initialCharacteristics.Skills.Points;
+
+        // Refresh button states and text states
+        UpdateAllButtonStates();
+        ValidateAndUpdateAllSkills();
+        UpdateWeaponProficiencyTextStates();
+
+        OnEditCharacteristicsChanged?.Invoke();
+
+        InformationManager.DisplayMessage(new InformationMessage($"ResetToInitialCharacteristics():  completed.", Colors.Cyan));
+    }
+
+    private void ExecuteClickApplyChanges()
+    {
+        var now = DateTime.UtcNow;
+        if (now - _lastApiCharacteristicsApplyClick < _apiUsageClickCooldown)
+        {
+            InformationManager.DisplayMessage(new InformationMessage("Please wait to send another API request.", Colors.Yellow));
+            // too soon display msg or play sound
+            return;
+        }
+
+        _lastApiCharacteristicsApplyClick = now;
+
+        UserLoadoutBehavior?.RequestUpdateCharacterCharacteristics(GetCrpgCharacteristicsFromVM());
+        InformationManager.DisplayMessage(new InformationMessage("Requesting to update API characteristics.", Colors.Cyan));
+    }
+
+    private void ExecuteClickReset()
+    {
+        InformationManager.DisplayMessage(new InformationMessage("Resetting to initial characteristics.", Colors.Cyan));
+        ResetToInitialCharacteristics();
+    }
+
+    private void ExecuteClickRefreshApi()
+    {
+        var now = DateTime.UtcNow;
+        if (now - _lastApiCharacteristicsRefreshClick < _apiUsageClickCooldown)
+        {
+            // too soon display msg or play sound
+            InformationManager.DisplayMessage(new InformationMessage("Please wait to send another API request.", Colors.Yellow));
+            UISoundsHelper.PlayUISound("event:/ui/persuasion/critical_fail");
+            return;
+        }
+
+        _lastApiCharacteristicsRefreshClick = now;
+        UserLoadoutBehavior?.RequestGetUpdatedCharacterBasic();
+        InformationManager.DisplayMessage(new InformationMessage("Requesting to refresh character from API.", Colors.Cyan));
+        UISoundsHelper.PlayUISound("event:/ui/notification/trait_change");
     }
 
     /// <summary>
@@ -508,6 +512,8 @@ public class CharacteristicsEditorVM : ViewModel
         ValidateAndUpdateAllSkills();
         UpdateWeaponProficiencyTextStates();
         UpdateAllButtonStates();
+
+        OnEditCharacteristicsChanged?.Invoke();
     }
 
     /// <summary>
@@ -584,6 +590,8 @@ public class CharacteristicsEditorVM : ViewModel
         ValidateAndUpdateAllSkills();
         UpdateWeaponProficiencyTextStates();
         UpdateAllButtonStates();
+
+        OnEditCharacteristicsChanged?.Invoke();
     }
 
     /// <summary>
@@ -645,6 +653,8 @@ public class CharacteristicsEditorVM : ViewModel
         ValidateAndUpdateAllSkills();
         UpdateWeaponProficiencyTextStates();
         UpdateAllButtonStates();
+
+        OnEditCharacteristicsChanged?.Invoke();
     }
 
     /// <summary>
@@ -830,6 +840,21 @@ public class CharacteristicsEditorVM : ViewModel
     public CharacteristicsConvertItemVM ConvertSkill { get => _convertSkillVm; set => SetField(ref _convertSkillVm, value, nameof(ConvertSkill)); }
 
     [DataSourceProperty]
+    public CharacteristicsPlusMinusItemVM StrengthVm { get => _strengthVm; set => SetField(ref _strengthVm, value, nameof(StrengthVm)); }
+
+    [DataSourceProperty]
+    public CharacteristicsPlusMinusItemVM AgilityVm { get => _agilityVm; set => SetField(ref _agilityVm, value, nameof(AgilityVm)); }
+
+    [DataSourceProperty]
+    public MBBindingList<CharacteristicsPlusMinusItemVM> Skills { get => _skills; set => SetField(ref _skills, value, nameof(Skills)); }
+
+    [DataSourceProperty]
+    public MBBindingList<CharacteristicsPlusMinusItemVM> WeaponProficiencies { get => _weaponProficiencies; set => SetField(ref _weaponProficiencies, value, nameof(WeaponProficiencies)); }
+
+    [DataSourceProperty]
+    public UserAndCharacterInfoVM UserAndCharacterInfoVm { get => _userAndCharacterInfoVm; set => SetField(ref _userAndCharacterInfoVm, value, nameof(UserAndCharacterInfoVm)); }
+
+    [DataSourceProperty]
     public int AttributePoints
     {
         get => _attributePoints;
@@ -869,15 +894,4 @@ public class CharacteristicsEditorVM : ViewModel
             }
         }
     }
-
-    [DataSourceProperty]
-    public CharacteristicsPlusMinusItemVM StrengthVm { get => _strengthVm; set => SetField(ref _strengthVm, value, nameof(StrengthVm)); }
-    [DataSourceProperty]
-    public CharacteristicsPlusMinusItemVM AgilityVm { get => _agilityVm; set => SetField(ref _agilityVm, value, nameof(AgilityVm)); }
-    [DataSourceProperty]
-    public MBBindingList<CharacteristicsPlusMinusItemVM> Skills { get => _skills; set => SetField(ref _skills, value, nameof(Skills)); }
-    [DataSourceProperty]
-    public MBBindingList<CharacteristicsPlusMinusItemVM> WeaponProficiencies { get => _weaponProficiencies; set => SetField(ref _weaponProficiencies, value, nameof(WeaponProficiencies)); }
-    [DataSourceProperty]
-    public UserAndCharacterInfoVM UserAndCharacterInfoVm { get => _userAndCharacterInfoVm; set => SetField(ref _userAndCharacterInfoVm, value, nameof(UserAndCharacterInfoVm)); }
 }

@@ -9,9 +9,6 @@ namespace Crpg.Module.GUI.Inventory;
 public class EquipmentPanelVM : ViewModel
 {
     private bool _isVisible;
-    [DataSourceProperty]
-    public bool IsVisible { get => _isVisible; set => SetField(ref _isVisible, value, nameof(IsVisible)); }
-
     private MBBindingList<EquipmentSlotVM> _equipmentSlots = new();
 
     // Slots
@@ -70,6 +67,9 @@ public class EquipmentPanelVM : ViewModel
     public event Action<EquipmentSlotVM>? OnSlotAlternateClicked;
     public event Action<EquipmentSlotVM>? OnItemDragBegin;
     public event Action<EquipmentSlotVM>? OnItemDragEnd;
+
+    [DataSourceProperty]
+    public bool IsVisible { get => _isVisible; set => SetField(ref _isVisible, value, nameof(IsVisible)); }
 
     // ===== Exposed Slots =====
     [DataSourceProperty]

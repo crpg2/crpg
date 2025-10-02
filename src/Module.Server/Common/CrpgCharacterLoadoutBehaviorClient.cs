@@ -319,7 +319,6 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         registerer.Register<ServerSendConvertCharacteristicsResult>(HandleConvertCharacteristicsResult);
         registerer.Register<ServerSendUserCharacterStatistics>(HandleUpdateCharacterStatistics);
         registerer.Register<ServerSendUserInfo>(HandleUpdateUserInfo);
-        // registerer.Register<ServerSendArmoryActionResult>(HandleRecieveArmoryActionResult);
     }
 
     private void OnMyClientSynchronized()
@@ -339,7 +338,6 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         {
             User = new CrpgUser();
         }
-
 
         User.Platform = message.User.Platform;
         User.PlatformUserId = message.User.PlatformUserId;
@@ -365,8 +363,6 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         }
 
         User.ClanMembership = message.User.ClanMembership;
-
-        LogDebugError($"ClanMemberShip: Clan: {User.ClanMembership?.ClanId}  Role: {User.ClanMembership?.Role}");
     }
 
     private void HandleArmoryActionUpdated(ClanArmoryActionType action, int uItemId)

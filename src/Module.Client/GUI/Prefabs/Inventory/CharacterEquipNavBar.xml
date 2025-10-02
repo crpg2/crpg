@@ -11,7 +11,6 @@
     <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" SuggestedWidth="*Width" SuggestedHeight="*Height" HorizontalAlignment="Center" VerticalAlignment="Center">
       <Children>
         <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" SuggestedWidth="*Width" SuggestedHeight="*Height"
-                MarginTop="3" MarginLeft="2" MarginBottom="2" MarginRight="2"
                 HorizontalAlignment="Center">
             <Children>
             <CrpgButtonPrefab Parameter.ButtonText="Equipment"
@@ -21,9 +20,7 @@
             <CrpgButtonPrefab Parameter.ButtonText="Characteristics" 
                               Parameter.CommandClick="ExecuteClickCharacteristics"
                               Parameter.ButtonId="CharacteristicsButton"
-                              Parameter.ButtonIsSelected="@CharacteristicsSelected"/>
-            <!-- character name, user name, gold, clan-->
-            
+                              Parameter.ButtonIsSelected="@CharacteristicsSelected"/>           
             </Children>
         </ListPanel>
       </Children>

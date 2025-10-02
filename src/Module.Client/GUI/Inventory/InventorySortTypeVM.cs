@@ -1,9 +1,4 @@
-using System;
-using JetBrains.Annotations;
-using TaleWorlds.Core;
-using TaleWorlds.Core.ViewModelCollection;
 using TaleWorlds.Library;
-using TaleWorlds.MountAndBlade.GauntletUI.Widgets;
 
 namespace Crpg.Module.GUI.Inventory;
 
@@ -11,7 +6,7 @@ public class InventorySortTypeVM : ViewModel
 {
     private readonly Action<InventorySortTypeVM>? _onClick;
     private bool _showInventoryTypeIcon;
-    public Func<InventorySlotVM, bool> Predicate { get; }
+    internal Func<InventorySlotVM, bool> Predicate { get; }
     private bool _isSelected;
     private string _iconSprite;
     public string Id { get; }
@@ -27,7 +22,7 @@ public class InventorySortTypeVM : ViewModel
         RefreshValues();
     }
 
-    public void ExecuteClick()
+    private void ExecuteClick()
     {
         IsSelected = !IsSelected;
         _onClick?.Invoke(this);

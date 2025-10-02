@@ -26,6 +26,7 @@ public class InventoryGridVM : ViewModel
     // Two item sources
     private readonly MBBindingList<InventorySlotVM> _inventoryItems = new();
     private readonly MBBindingList<InventorySlotVM> _armoryItems = new();
+    private readonly CrpgClanArmoryClient? _clanArmory;
 
     private List<InventorySortTypeVM> _activeFilters = new();
     private MBBindingList<InventorySlotVM> _filteredItems;
@@ -33,12 +34,25 @@ public class InventoryGridVM : ViewModel
     private MBBindingList<InventorySortTypeVM> _inventorySortTypesLeft = new();
     private MBBindingList<InventorySortTypeVM> _inventorySortTypesTop = new();
 
-    private InventorySection _activeSection = InventorySection.Inventory;
-    private CrpgClanArmoryClient? _clanArmory;
+    private InventorySection _activeSection;
 
     private bool _userInventorySelected;
     private bool _armorySelected;
 
+    public InventoryGridVM()
+    {
+        _filteredItems = new MBBindingList<InventorySlotVM>();
+        _clanArmory = Mission.Current?.GetMissionBehavior<CrpgClanArmoryClient>();
+
+        // Default to user inventory
+        _activeSection = InventorySection.Inventory;
+        UserInventorySelected = true;
+
+        InitializeSortTypes();
+        InitializeFilteredItemsList();
+    }
+
+    [DataSourceProperty]
     public InventorySection ActiveSection
     {
         get => _activeSection;
@@ -62,20 +76,6 @@ public class InventoryGridVM : ViewModel
                 }
             }
         }
-    }
-
-    public void ExecuteClickArmory()
-    {
-        LogDebug($"Clicked Armory: (2)");
-        OnInventoryChangeType?.Invoke(2);
-        ActiveSection = InventorySection.Armory;
-    }
-
-    public void ExecuteClickUserInventory()
-    {
-        LogDebug($"Clicked User Inventory: (1)");
-        OnInventoryChangeType?.Invoke(1);
-        ActiveSection = InventorySection.Inventory;
     }
 
     internal void SetInventoryItems(IEnumerable<(ItemObject item, int quantity, CrpgUserItemExtended userItemExtended)> items)
@@ -123,13 +123,33 @@ public class InventoryGridVM : ViewModel
         }
     }
 
-    public InventoryGridVM()
+    internal void InitializeFilteredItemsList()
     {
-        _filteredItems = new MBBindingList<InventorySlotVM>();
-        _clanArmory = Mission.Current?.GetMissionBehavior<CrpgClanArmoryClient>();
+        _filteredItems.Clear();
 
-        InitializeSortTypes();
-        InitializeFilteredItemsList();
+        var sortedItems = AvailableItems
+            .OrderBy(item => item.ItemObj?.ItemType ?? ItemObject.ItemTypeEnum.Invalid)
+            .ThenBy(item => item.ItemName)
+            .ToList();
+
+        foreach (var slot in sortedItems)
+        {
+            _filteredItems.Add(slot);
+        }
+    }
+
+    private void ExecuteClickArmory()
+    {
+        LogDebug($"Clicked Armory: (2)");
+        OnInventoryChangeType?.Invoke(2);
+        ActiveSection = InventorySection.Armory;
+    }
+
+    private void ExecuteClickUserInventory()
+    {
+        LogDebug($"Clicked User Inventory: (1)");
+        OnInventoryChangeType?.Invoke(1);
+        ActiveSection = InventorySection.Inventory;
     }
 
     private void OnItemClicked(InventorySlotVM? slot)
@@ -175,7 +195,6 @@ public class InventoryGridVM : ViewModel
         {
             if (!currentSet.Contains(item))
             {
-
                 // check if source is inventory and omit armory items not borrowed by you. TODO: add a button to toggle this later
                 if (source == _inventoryItems && item.IsArmoryItem)
                 {
@@ -191,9 +210,6 @@ public class InventoryGridVM : ViewModel
                 {
                     AvailableItems.Add(item);
                 }
-
-                // AvailableItems.Add(item);
-
             }
         }
 
@@ -211,62 +227,6 @@ public class InventoryGridVM : ViewModel
 
         // Refresh filters after updating available items
         RefreshFilteredItemsFast();
-    }
-
-    private List<InventorySlotVM> BuildSlots(IEnumerable<(ItemObject item, int quantity, CrpgUserItemExtended userItemExtended)> items)
-    {
-        return items
-            .Select(tuple => new InventorySlotVM(
-                tuple.item,
-                slot => OnItemClicked(slot),
-                slot => OnItemHoverEnd(slot),
-                tuple.quantity,
-                tuple.userItemExtended))
-            .ToList();
-    }
-
-    [DataSourceProperty]
-    public MBBindingList<InventorySlotVM> AvailableItems
-    {
-        get => _availableItems;
-        set
-        {
-            if (value != _availableItems)
-            {
-                _availableItems = value;
-                OnPropertyChangedWithValue(value, nameof(AvailableItems));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public MBBindingList<InventorySlotVM> FilteredItems { get => _filteredItems; set => SetField(ref _filteredItems, value, nameof(FilteredItems)); }
-
-    [DataSourceProperty]
-    public bool UserInventorySelected { get => _userInventorySelected; set => SetField(ref _userInventorySelected, value, nameof(UserInventorySelected)); }
-
-    [DataSourceProperty]
-    public bool ArmorySelected { get => _armorySelected; set => SetField(ref _armorySelected, value, nameof(ArmorySelected)); }
-
-    [DataSourceProperty]
-    public MBBindingList<InventorySortTypeVM> InventorySortTypesLeft { get => _inventorySortTypesLeft; set => SetField(ref _inventorySortTypesLeft, value, nameof(InventorySortTypesLeft)); }
-
-    [DataSourceProperty]
-    public MBBindingList<InventorySortTypeVM> InventorySortTypesTop { get => _inventorySortTypesTop; set => SetField(ref _inventorySortTypesTop, value, nameof(InventorySortTypesTop)); }
-
-    internal void InitializeFilteredItemsList()
-    {
-        _filteredItems.Clear();
-
-        var sortedItems = AvailableItems
-            .OrderBy(item => item.ItemObj?.ItemType ?? ItemObject.ItemTypeEnum.Invalid)
-            .ThenBy(item => item.ItemName)
-            .ToList();
-
-        foreach (var slot in sortedItems)
-        {
-            _filteredItems.Add(slot);
-        }
     }
 
     private void InitializeSortTypes()
@@ -307,8 +267,6 @@ public class InventoryGridVM : ViewModel
     private void OnSortTypeClicked(InventorySortTypeVM clickedSort)
     {
         LogDebug($"Clicked sort icon: {clickedSort.IconSprite}");
-
-        // TODO: Apply filtering logic here and refresh visible items.
         RefreshFilteredItemsFast();
 
         if (clickedSort != null)
@@ -354,6 +312,47 @@ public class InventoryGridVM : ViewModel
             FilteredItems.Add(item);
         }
     }
+
+    private List<InventorySlotVM> BuildSlots(IEnumerable<(ItemObject item, int quantity, CrpgUserItemExtended userItemExtended)> items)
+    {
+        return items
+            .Select(tuple => new InventorySlotVM(
+                tuple.item,
+                slot => OnItemClicked(slot),
+                slot => OnItemHoverEnd(slot),
+                tuple.quantity,
+                tuple.userItemExtended))
+            .ToList();
+    }
+
+    [DataSourceProperty]
+    public MBBindingList<InventorySlotVM> AvailableItems
+    {
+        get => _availableItems;
+        set
+        {
+            if (value != _availableItems)
+            {
+                _availableItems = value;
+                OnPropertyChangedWithValue(value, nameof(AvailableItems));
+            }
+        }
+    }
+
+    [DataSourceProperty]
+    public MBBindingList<InventorySlotVM> FilteredItems { get => _filteredItems; set => SetField(ref _filteredItems, value, nameof(FilteredItems)); }
+
+    [DataSourceProperty]
+    public bool UserInventorySelected { get => _userInventorySelected; set => SetField(ref _userInventorySelected, value, nameof(UserInventorySelected)); }
+
+    [DataSourceProperty]
+    public bool ArmorySelected { get => _armorySelected; set => SetField(ref _armorySelected, value, nameof(ArmorySelected)); }
+
+    [DataSourceProperty]
+    public MBBindingList<InventorySortTypeVM> InventorySortTypesLeft { get => _inventorySortTypesLeft; set => SetField(ref _inventorySortTypesLeft, value, nameof(InventorySortTypesLeft)); }
+
+    [DataSourceProperty]
+    public MBBindingList<InventorySortTypeVM> InventorySortTypesTop { get => _inventorySortTypesTop; set => SetField(ref _inventorySortTypesTop, value, nameof(InventorySortTypesTop)); }
 
     private readonly bool _debugOn = false;
     private void LogDebug(string message)

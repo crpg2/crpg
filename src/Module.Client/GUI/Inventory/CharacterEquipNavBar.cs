@@ -11,18 +11,15 @@ public class CharacterEquipNavBar : ViewModel
 
     public CharacterEquipNavBar()
     {
-
     }
 
     public void ExecuteClickEquipment()
     {
-        InformationManager.DisplayMessage(new InformationMessage("Clicked Equipment"));
         OnEquipNavButtonClicked?.Invoke("Equipment");
     }
 
     public void ExecuteClickCharacteristics()
     {
-        InformationManager.DisplayMessage(new InformationMessage("Clicked Characteristics"));
         OnEquipNavButtonClicked?.Invoke("Characteristics");
     }
 
@@ -30,5 +27,4 @@ public class CharacterEquipNavBar : ViewModel
     public bool EquipmentSelected { get => _equipmentSelected; set => SetField(ref _equipmentSelected, value, nameof(EquipmentSelected)); }
     [DataSourceProperty]
     public bool CharacteristicsSelected { get => _characteristicsSelected; set => SetField(ref _characteristicsSelected, value, nameof(CharacteristicsSelected)); }
-
 }

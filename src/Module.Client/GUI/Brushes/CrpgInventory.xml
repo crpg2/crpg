@@ -75,6 +75,13 @@
     <Styles>
       <Style Name="Default" FontColor="#e9e7e7ff" FontSize="18" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
     </Styles>
+  </Brush>
+  <Brush Name="CrpgInventory.UserName.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="18" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
   </Brush>  
   <Brush Name="InventorySort.Button">
     <Layers>

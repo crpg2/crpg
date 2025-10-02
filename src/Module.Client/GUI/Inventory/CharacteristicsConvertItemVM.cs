@@ -8,7 +8,7 @@ public class CharacteristicsConvertItemVM : ViewModel
     private int _itemValue;
     private bool _isButtonEnabled;
 
-    public event Action<CharacteristicsConvertItemVM>? OnConvertClickedEvent;
+    internal event Action<CharacteristicsConvertItemVM>? OnConvertClickedEvent;
 
     public CharacteristicsConvertItemVM(string label, int value, bool isEnabled)
     {
@@ -26,7 +26,7 @@ public class CharacteristicsConvertItemVM : ViewModel
     [DataSourceProperty]
     public bool IsButtonEnabled { get => _isButtonEnabled; set => SetField(ref _isButtonEnabled, value, nameof(IsButtonEnabled)); }
 
-    public void ExecuteClick()
+    private void ExecuteClick()
     {
         OnConvertClickedEvent?.Invoke(this);
     }

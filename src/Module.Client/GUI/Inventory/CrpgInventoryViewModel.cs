@@ -1,14 +1,8 @@
-using System.Runtime.InteropServices;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using Crpg.Module.Common.Network;
 using Crpg.Module.Common.Network.Armory;
-using Crpg.Module.Helpers;
-using TaleWorlds.CampaignSystem;
-using TaleWorlds.CampaignSystem.ComponentInterfaces;
 using TaleWorlds.Core;
-using TaleWorlds.Core.ViewModelCollection;
-using TaleWorlds.Engine;
 using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.GauntletUI;
 using TaleWorlds.GauntletUI.BaseTypes;
@@ -29,6 +23,10 @@ public class CrpgInventoryViewModel : ViewModel
     internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
     private readonly CrpgClanArmoryClient? _clanArmory;
     private bool _isVisible;
+
+    private string _characterName = string.Empty;
+    private string _userName = string.Empty;
+    private string _goldAmount = string.Empty;
 
     private EquipmentPanelVM _equipmentPanel = default!;
     private CharacteristicsEditorVM _characteristicsEditor;
@@ -70,6 +68,15 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
+    [DataSourceProperty]
+    public string CharacterName { get => _characterName; set => SetField(ref _characterName, value, nameof(CharacterName)); }
+
+    [DataSourceProperty]
+    public string UserName { get => _userName; set => SetField(ref _userName, value, nameof(UserName)); }
+
+    [DataSourceProperty]
+    public string GoldAmount { get => _goldAmount; set => SetField(ref _goldAmount, value, nameof(GoldAmount)); }
+
     public CrpgInventoryViewModel()
     {
         _navBar = new CharacterEquipNavBar();
@@ -89,25 +96,12 @@ public class CrpgInventoryViewModel : ViewModel
         _navBar.EquipmentSelected = true;
         _navBar.CharacteristicsSelected = false;
 
-        _navBar.OnEquipNavButtonClicked += (string button) =>
+        // Events
+        _navBar.OnEquipNavButtonClicked += HandleEquipNavButtonClicked;
+
+        _characteristicsEditor.OnEditCharacteristicsChanged += () =>
         {
-            LogDebug($"NavBar button clicked: {button}");
-            if (button == "Equipment")
-            {
-                EquipmentPanel.IsVisible = true;
-                InventoryGrid.IsVisible = true;
-                CharacteristicsEditor.IsVisible = false;
-                _navBar.EquipmentSelected = true;
-                _navBar.CharacteristicsSelected = false;
-            }
-            else if (button == "Characteristics")
-            {
-                EquipmentPanel.IsVisible = false;
-                InventoryGrid.IsVisible = false;
-                CharacteristicsEditor.IsVisible = true;
-                _navBar.EquipmentSelected = false;
-                _navBar.CharacteristicsSelected = true;
-            }
+            UpdateCharacterBuildEquipmentStatDisplayFromNavbarSelection();
         };
 
         // Subscribe to EquipmentPanel events
@@ -140,6 +134,14 @@ public class CrpgInventoryViewModel : ViewModel
             UserLoadoutBehavior.OnUserCharacterBasicUpdated += HandleUserCharacterBasicUpdated;
             UserLoadoutBehavior.OnUserCharacteristicsUpdated += HandleUserCharacteristicsUpdated;
             UserLoadoutBehavior.OnUserCharacteristicsConverted += HandleUserCharacteristicsConverted;
+
+            _characterName = $"{UserLoadoutBehavior.UserCharacter?.Name ?? string.Empty} ({UserLoadoutBehavior.UserCharacter?.Level ?? 0})";
+
+            MissionPeer? missionPeer = GameNetwork.MyPeer.GetComponent<MissionPeer>();
+            CrpgPeer? crpgPeer = missionPeer?.GetComponent<CrpgPeer>();
+            string clanTag = crpgPeer?.Clan?.Tag ?? string.Empty;
+            _userName = $"{clanTag} {UserLoadoutBehavior?.User?.Name ?? string.Empty}";
+            _goldAmount = UserLoadoutBehavior?.User?.Gold.ToString("N0") ?? "0";
         }
 
         _clanArmory = Mission.Current?.GetMissionBehavior<CrpgClanArmoryClient>();
@@ -151,7 +153,6 @@ public class CrpgInventoryViewModel : ViewModel
         }
 
         InventoryGrid.OnInventorySlotClicked += HandleInventorySlotClicked;
-        InventoryGrid.OnInventorySortTypeClicked += HandleInventorySortTypeClicked;
         InventoryGrid.OnInventorySlotHoverEnd += HandleInventorySlotHoverEnd;
     }
 
@@ -181,7 +182,6 @@ public class CrpgInventoryViewModel : ViewModel
         }
 
         InventoryGrid.OnInventorySlotClicked -= HandleInventorySlotClicked;
-        InventoryGrid.OnInventorySortTypeClicked -= HandleInventorySortTypeClicked;
         InventoryGrid.OnInventorySlotHoverEnd -= HandleInventorySlotHoverEnd;
     }
 
@@ -195,19 +195,6 @@ public class CrpgInventoryViewModel : ViewModel
     {
         _context = context;
         MakeItemInfo();
-    }
-
-    private void ExecuteClickOpenCharacteristicsEditor()
-    {
-        LogDebug($"ExecuteClickOpenCharacteristicsEditor");
-    }
-
-    private void ShowCharacteristicsEditor(bool show)
-    {
-        if (!show)
-        {
-
-        }
     }
 
     private void ShowItemInfoPopup(bool show, ItemObject? itemObj, int userItemId = -1)
@@ -298,38 +285,10 @@ public class CrpgInventoryViewModel : ViewModel
         // if (UserLoadoutBehavior != null &)
     }
 
-    private void HandleInventorySortTypeClicked(InventorySortTypeVM sortType)
-    {
-        LogDebug($"[CrpgInventoryVM] HandleInventorySortTypeClicked");
-        if (ItemInfo.IsVisible)
-        {
-            ItemInfo.IsVisible = false;
-        }
-    }
-
     private void HandleInventorySlotClicked(InventorySlotVM slot)
     {
         LogDebug($"HandleInventorySlotClicked() {slot.ItemName} ");
         ShowItemInfoPopup(true, slot.ItemObj, slot.UserItemId);
-
-        /*
-
-                if (RootWidget != null)
-                {
-                    var itemInfoWidget = FindChildById(RootWidget, "ItemInfoId");
-                    if (itemInfoWidget != null)
-                    {
-                        InformationManager.DisplayMessage(new InformationMessage($"[CrpgInventoryViewModel] ITEMINFOWIDGET FOUND!!!"));
-                    }
-                }
-
-
-                ItemInfo.PositionX = mousePos.X + 25;
-                ItemInfo.PositionY = mousePos.Y - 100;
-                ItemInfo.IsVisible = true;
-
-                LogDebug($"[CrpgInventoryVM] Showing ItemInfo at ({mousePos.X}, {mousePos.Y}) for {slot.ItemName}");
-            */
     }
 
     private void HandleInventorySlotHoverEnd(InventorySlotVM slot)
@@ -687,6 +646,66 @@ public class CrpgInventoryViewModel : ViewModel
         LogDebug("HandleUserCharacteristicsConverted finished.");
     }
 
+    private void HandleEquipNavButtonClicked(string button)
+    {
+        LogDebug($"HandleEquipNavButtonClicked() {button} ");
+
+        if (button == "Equipment")
+        {
+            EquipmentPanel.IsVisible = true;
+            InventoryGrid.IsVisible = true;
+            CharacteristicsEditor.IsVisible = false;
+            _navBar.EquipmentSelected = true;
+            _navBar.CharacteristicsSelected = false;
+        }
+        else if (button == "Characteristics")
+        {
+            EquipmentPanel.IsVisible = false;
+            InventoryGrid.IsVisible = false;
+            CharacteristicsEditor.IsVisible = true;
+            _navBar.EquipmentSelected = false;
+            _navBar.CharacteristicsSelected = true;
+        }
+        else
+        {
+            LogDebugError($"Unknown button: {button}");
+        }
+
+        UpdateCharacterBuildEquipmentStatDisplayFromNavbarSelection();
+    }
+
+    private void UpdateCharacterBuildEquipmentStatDisplayFromNavbarSelection()
+    {
+        if (_navBar.EquipmentSelected)
+        {
+            // Update CharacterInfoBuildEquipStatsVM to use userLoadoutBehavior characteristics data
+            var characteristics = UserLoadoutBehavior?.UserCharacter.Characteristics;
+            var equipment = UserLoadoutBehavior?.GetCrpgUserCharacterEquipment();
+            if (characteristics != null && equipment != null)
+            {
+                CharacterInfoBuildEquipStatsVm.UpdateCharacterBuildEquipmentStatDisplay(equipment, characteristics);
+            }
+            else
+            {
+                LogDebugError("Failed to update CharacterInfoBuildEquipStatsVm: characteristics or equipment is null");
+            }
+        }
+        else if (_navBar.CharacteristicsSelected)
+        {
+            // Update CharacterInfoBuildEquipStatsVM to use CharacteristicsEditorVM data
+            var characteristics = CharacteristicsEditor.GetCrpgCharacteristicsFromVM();
+            var equipment = UserLoadoutBehavior?.GetCrpgUserCharacterEquipment();
+
+            if (characteristics != null && equipment != null)
+            {
+                CharacterInfoBuildEquipStatsVm.UpdateCharacterBuildEquipmentStatDisplay(equipment, characteristics);
+            }
+            else
+            {
+                LogDebugError("Failed to update CharacterInfoBuildEquipStatsVm: characteristics or equipment is null");
+            }
+        }
+    }
     private void MakeItemInfo()
     {
         if (RootWidget == null)
