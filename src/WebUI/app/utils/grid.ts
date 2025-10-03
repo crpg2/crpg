@@ -1,6 +1,6 @@
 import type { FilterFn } from '@tanstack/table-core'
 
-export const includesSome: FilterFn<any> = (
+export const includesSome: FilterFn<unknown> = (
   row,
   columnId: string,
   filterValue: unknown[],

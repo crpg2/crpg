@@ -9,15 +9,15 @@ export default defineConfig({
   test: {
     projects: [
       {
+        test: {
+          name: 'unit',
+          // include: ['test/unit/**/*.{spec,test}.ts'],
+          environment: 'node',
+        },
         resolve: {
           alias: {
             '~': path.resolve(__dirname, './app'),
           },
-        },
-        test: {
-          name: 'unit',
-          include: ['test/unit/**/*.{spec,test}.ts'],
-          environment: 'node',
         },
       },
     ],

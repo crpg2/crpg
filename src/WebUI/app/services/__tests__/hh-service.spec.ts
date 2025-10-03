@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import type { Region } from '../../../app/models/region'
+import type { Region } from '~/models/region'
 
-import { getHHEventByRegion, getHHEventRemainingSeconds, parseHHScheduleConfig } from '../../../app/services/hh-service'
+import { getHHEventByRegion, getHHEventRemainingSeconds, parseHHScheduleConfig } from '~/services/hh-service'
 
 it('parseHHScheduleConfig', () => {
   expect(parseHHScheduleConfig('Eu|19:30|21:30|Europe/Paris,Na|20:00|22:00|America/Chicago')).toEqual({

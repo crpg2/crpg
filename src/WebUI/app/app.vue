@@ -15,9 +15,10 @@ const [activePageLoading] = usePageLoadingProvider()
       delayDuration: 300,
     }"
   >
-    <!-- TODO: -->
-    <!-- {{ $poll.keys }}
-    {{ activePageLoading }} -->
+    <!--
+    {{ $poll.keys }}
+    {{ activePageLoading }}
+     -->
 
     <NuxtLoadingIndicator color="rgb(210 187 138)" />
 

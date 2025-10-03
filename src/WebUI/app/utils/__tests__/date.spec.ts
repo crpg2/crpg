@@ -10,7 +10,7 @@ import {
   msToMinutes,
   msToSeconds,
   parseTimestamp,
-} from '../../../app/utils/date'
+} from '~/utils/date'
 
 describe('msToHours', () => {
   it.each([

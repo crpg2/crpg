@@ -30,4 +30,10 @@ declare module 'nuxt/schema' {
   interface PublicRuntimeConfig { }
 }
 
+declare module '@tanstack/table-core' {
+  interface FilterFns {
+    includesSome: FilterFn<unknown>
+  }
+}
+
 export {}

@@ -3,6 +3,7 @@ import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState, RowSelectionState, SortingState } from '@tanstack/vue-table'
 
 import {
+  filterFns,
   getFacetedMinMaxValues,
   getFacetedRowModel,
   getFacetedUniqueValues,
@@ -31,7 +32,7 @@ import type { AggregationOptions } from '~/services/item-search-service/aggregat
 import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { ITEM_COMPARE_MODE, ITEM_TYPE, WEAPON_USAGE } from '~/models/item'
+import { ITEM_COMPARE_MODE, ITEM_TYPE } from '~/models/item'
 import { SomeRole } from '~/models/role'
 import { getAggregationsConfig, getBuckets, getColumnVisibility, getFacetsByItemType, getFacetsByWeaponClass, getFilterFn } from '~/services/item-search-service'
 import { AGGREGATION_VIEW } from '~/services/item-search-service/aggregations'
@@ -504,6 +505,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
           },
         }"
         :column-filters-options="{
+          filterFns: { includesSome },
           maxLeafRowFilterDepth: 0,
         }"
         :pagination-options="{
