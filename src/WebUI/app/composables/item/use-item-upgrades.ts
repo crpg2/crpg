@@ -2,6 +2,7 @@ import { clamp } from 'es-toolkit'
 
 import type { AggregationConfig } from '~/services/item-search-service/aggregations'
 
+import { createItemIndex } from '~/services/item-search-service/indexator'
 import { getItemUpgrades, getRelativeEntries } from '~/services/item-service'
 import { useUserStore } from '~/stores/user'
 
@@ -23,7 +24,7 @@ export const useItemUpgrades = ({
   const {
     state: itemUpgrades,
     isLoading: isLoadingitemUpgrades,
-  } = useAsyncState(() => getItemUpgrades(item.baseId), [])
+  } = useAsyncState(async () => createItemIndex(await getItemUpgrades(item.baseId)), [])
 
   const baseItem = computed(() => itemUpgrades.value.find(iu => iu.rank === 0))
 

@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { WEAPON_USAGE } from '~/models/item'
 
+import mockConstants from '../../../../mocks/constants.json'
 import { createItemIndex } from '../indexator'
 import {
   Bolts,
@@ -16,10 +17,14 @@ import {
   ThrowingAxe,
 } from './mocks'
 
+vi.mock('~root/data/constants.json', vi.fn().mockImplementation(() => mockConstants))
+
 const { mockedComputeAverageRepairCostPerHour, mockedIsLargeShield } = vi.hoisted(() => ({
   mockedComputeAverageRepairCostPerHour: vi.fn((price: number) => price * 2),
   mockedIsLargeShield: vi.fn(),
 }))
+
+vi.mock('#api/sdk.gen')
 
 vi.mock(
   import('~/services/item-service'),

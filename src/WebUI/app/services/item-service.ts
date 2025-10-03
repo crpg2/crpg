@@ -1,7 +1,7 @@
-// import {
-//   getItems as _getItems,
-//   getItemsUpgradesByBaseId,
-// } from '#api/sdk.gen'
+import {
+  getItems as _getItems,
+  getItemsUpgradesByBaseId,
+} from '#api/sdk.gen'
 import {
   brokenItemRepairPenaltySeconds,
   itemBreakChance,
@@ -37,19 +37,19 @@ import { cultureToIcon } from './culture-service'
 import { getAggregationsConfig, getVisibleAggregationsConfig } from './item-search-service'
 import { aggregationsConfig } from './item-search-service/aggregations'
 
-// export const getItems = async (): Promise<Item[]> => (await _getItems({ })).data!
+export const getItems = async (): Promise<Item[]> => (await _getItems({ })).data!
 
 export const extractItem = <T extends { item: Item }>(wrapper: T): Item => wrapper.item
 
 export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 
-// export const getItemUpgrades = async (baseId: string): Promise<ItemFlat[]> => {
-//   const { data } = await getItemsUpgradesByBaseId({ path: { baseId } })
-//   return createItemIndex(data!)
-//   // TODO: FIXME: изучить
-//   //  hotfix, avoid duplicate items with multiply weaponClass
-//   // .filter(el => el?.weaponClass === item?.weaponClass)
-// }
+export const getItemUpgrades = async (baseId: string): Promise<Item[]> => {
+  const { data } = await getItemsUpgradesByBaseId({ path: { baseId } })
+  return data!
+  // return createItemIndex(data!)
+  //  hotfix, avoid duplicate items with multiply weaponClass
+  // .filter(el => el?.weaponClass === item?.weaponClass)
+}
 
 export const armorTypes: ItemType[] = [
   ITEM_TYPE.HeadArmor,

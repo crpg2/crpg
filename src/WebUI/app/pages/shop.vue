@@ -357,7 +357,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
               },
               onClick: async () => {
                 if (!row.original.children.length) {
-                  row.original.children.push(...(await getItemUpgrades(row.original.baseId)).toSpliced(0, 1))
+                  row.original.children.push(...(createItemIndex(await getItemUpgrades(row.original.baseId))).toSpliced(0, 1))
                 }
                 row.toggleExpanded()
               },

@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+
 import type { User } from 'oidc-client-ts'
 
 import {
@@ -21,7 +23,7 @@ export const parseJwt = (token: string) =>
 export const userManager = new UserManager({
   authority: import.meta.env.NUXT_PUBLIC_API_BASE_URL,
   client_id: 'crpg-web-ui',
-  post_logout_redirect_uri: window.location.origin,
+  post_logout_redirect_uri: globalThis.location.origin,
   redirect_uri: `${window.location.origin}/signin-callback`,
   response_type: 'code',
   scope: 'openid offline_access user_api',
