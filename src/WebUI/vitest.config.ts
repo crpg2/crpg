@@ -9,7 +9,6 @@ export default defineConfig({
   test: {
     projects: [
       {
-
         test: {
           setupFiles: path.resolve(__dirname, './test/setup.ts'),
           name: 'unit',

@@ -61,14 +61,14 @@ vi.mock(
   }),
 )
 
-it.each<[ItemType, WeaponClass | null, string[]]>([
-  [ITEM_TYPE.Banner, null, ['modId', 'new', 'price']],
-  [ITEM_TYPE.OneHandedWeapon, WEAPON_CLASS.OneHandedSword, ['modId', 'new', 'price']],
-  [ITEM_TYPE.OneHandedWeapon, WEAPON_CLASS.OneHandedAxe, ['modId', 'new', 'thrustDamage']],
+it.each<[ItemType, WeaponClass | null, Array<keyof ItemFlat>]>([
+  [ITEM_TYPE.Banner, null, ['price']],
+  [ITEM_TYPE.OneHandedWeapon, WEAPON_CLASS.OneHandedSword, ['price']],
+  [ITEM_TYPE.OneHandedWeapon, WEAPON_CLASS.OneHandedAxe, ['thrustDamage']],
 ])(
   'getAggregationsConfig - itemType: %s, weaponClass: %s',
   (itemType, weaponClass, expectation) => {
-    expect(Object.keys(getAggregationsConfig(itemType, weaponClass))).toEqual(expectation)
+    expect(Object.keys(getAggregationsConfig(itemType, weaponClass))).toEqual(['type', 'weaponClass', 'modId', 'isNew', ...expectation])
   },
 )
 

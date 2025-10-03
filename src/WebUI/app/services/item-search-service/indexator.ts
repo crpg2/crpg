@@ -299,11 +299,10 @@ const getPrimaryWeaponClass = (item: Item) => {
 
 // TODO: FIXME: SPEC cloneMultipleUsageWeapon param
 export const createItemIndex = (items: Item[], cloneMultipleUsageWeapon = false): ItemFlat[] => {
-  // TODO: try to remove cloneDeep
-
   const newItemDateThreshold = new Date().setDate(new Date().getDate() - itemIsNewDays)
 
-  const result = items.reduce<ItemFlat[]>((out, item) => {
+  // TODO: try to remove cloneDeep
+  const result = structuredClone(items).reduce<ItemFlat[]>((out, item) => {
     // TODO: bows have 2 loading modes, so there are several objects in the weapons data structure
     if (item.weapons.length > 1 && item.type !== ITEM_TYPE.Bow) {
       item.weapons.forEach((w) => {
