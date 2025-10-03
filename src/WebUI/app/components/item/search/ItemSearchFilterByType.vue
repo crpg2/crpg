@@ -87,6 +87,7 @@ const weaponClassOptions = computed(() => {
           :content="false"
           size="xl"
           variant="link"
+          color="neutral"
           :orientation
           :ui="{
             list: 'w-auto',

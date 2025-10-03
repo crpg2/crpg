@@ -126,6 +126,8 @@ const itemType = computed({
     })
     resetPagination()
     resetSorting()
+    resetSelection()
+    resetCompareMode()
   },
 })
 const itemTypes = computed(() => getFacetsByItemType(flatItems.value.map(item => item.type)))
@@ -149,6 +151,8 @@ const weaponClass = computed({
     })
     resetPagination()
     resetSorting()
+    resetSelection()
+    resetCompareMode()
   },
 })
 
@@ -170,7 +174,13 @@ const currentAggregations = computed(() => getAggregationsConfig(itemType.value,
 const columnVisibility = computed(() => getColumnVisibility(currentAggregations.value))
 
 const rowSelection = ref<RowSelectionState>({})
+function resetSelection() {
+  table.value?.tableApi.resetRowSelection()
+}
 const [isCompareMode, toggleCompareMode] = useToggle()
+function resetCompareMode() {
+  toggleCompareMode(false)
+}
 watch(isCompareMode, () => {
   table.value?.tableApi.getColumn('modId')?.setFilterValue(
     isCompareMode.value
@@ -233,8 +243,8 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
     ...(['upkeep', 'price'].includes(key) && {
       meta: {
         class: {
-          th: 'w-[200px]',
-          td: 'w-[200px]',
+          th: 'w-[180px]',
+          td: 'w-[180px]',
         },
       },
     }),
@@ -420,7 +430,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
                   label: `New (${_count})`,
                   color: 'success',
                   size: 'xl',
-                  variant: 'subtle',
+                  variant: 'soft',
                   activeVariant: 'solid',
                   active: _value,
                   onClick: () => {
