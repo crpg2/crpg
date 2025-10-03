@@ -9,7 +9,9 @@ export default defineConfig({
   test: {
     projects: [
       {
+
         test: {
+          setupFiles: path.resolve(__dirname, './test/setup.ts'),
           name: 'unit',
           // include: ['test/unit/**/*.{spec,test}.ts'],
           environment: 'node',
@@ -17,6 +19,7 @@ export default defineConfig({
         resolve: {
           alias: {
             '~': path.resolve(__dirname, './app'),
+            '#api': path.resolve(__dirname, './generated/api'),
           },
         },
       },

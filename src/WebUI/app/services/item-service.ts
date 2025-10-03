@@ -1,7 +1,7 @@
-import {
-  getItems as _getItems,
-  getItemsUpgradesByBaseId,
-} from '#api/sdk.gen'
+// import {
+//   getItems as _getItems,
+//   getItemsUpgradesByBaseId,
+// } from '#api/sdk.gen'
 import {
   brokenItemRepairPenaltySeconds,
   itemBreakChance,
@@ -29,7 +29,7 @@ import {
   WEAPON_CLASS,
   WEAPON_FLAG,
 } from '~/models/item'
-import { createItemIndex } from '~/services/item-search-service/indexator'
+// import { createItemIndex } from '~/services/item-search-service/indexator'
 
 import type { AggregationConfig } from './item-search-service/aggregations'
 
@@ -37,19 +37,19 @@ import { cultureToIcon } from './culture-service'
 import { getAggregationsConfig, getVisibleAggregationsConfig } from './item-search-service'
 import { aggregationsConfig } from './item-search-service/aggregations'
 
-export const getItems = async (): Promise<Item[]> => (await _getItems({ })).data!
+// export const getItems = async (): Promise<Item[]> => (await _getItems({ })).data!
 
 export const extractItem = <T extends { item: Item }>(wrapper: T): Item => wrapper.item
 
 export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 
-export const getItemUpgrades = async (baseId: string): Promise<ItemFlat[]> => {
-  const { data } = await getItemsUpgradesByBaseId({ path: { baseId } })
-  return createItemIndex(data!)
-  // TODO: FIXME: изучить
-  //  hotfix, avoid duplicate items with multiply weaponClass
-  // .filter(el => el?.weaponClass === item?.weaponClass)
-}
+// export const getItemUpgrades = async (baseId: string): Promise<ItemFlat[]> => {
+//   const { data } = await getItemsUpgradesByBaseId({ path: { baseId } })
+//   return createItemIndex(data!)
+//   // TODO: FIXME: изучить
+//   //  hotfix, avoid duplicate items with multiply weaponClass
+//   // .filter(el => el?.weaponClass === item?.weaponClass)
+// }
 
 export const armorTypes: ItemType[] = [
   ITEM_TYPE.HeadArmor,
@@ -639,21 +639,10 @@ export const groupItemsByTypeAndWeaponClass = (items: ItemFlat[]) => {
   }, [] as GroupedItems[])
 }
 
-// // TODO: FIXME: spec + desc
-// export const getCompareItemsResult = (items: ItemFlat[], aggregationsConfig: AggregationConfig): CompareItemsResult => {
-//   return (Object.keys(aggregationsConfig) as Array<keyof ItemFlat>)
-//     .filter(k => aggregationsConfig[k]?.compareRule !== undefined)
-//     .reduce((out, k) => {
-//       const values = items.map(fi => fi[k]).filter(v => typeof v === 'number') as number[]
-//       out[k] = aggregationsConfig[k]!.compareRule === ITEM_FIELD_COMPARE_RULE.Less ? Math.min(...values) : Math.max(...values)
-//       return out
-//     }, {} as CompareItemsResult)
-// }
-
 // TODO: FIXME: spec + desc
 function aggregateByCompareRule(
   items: ItemFlat[],
-  aggregationsConfig: Partial<Record<keyof ItemFlat, { compareRule?: ItemFieldCompareRule }>>,
+  aggregationsConfig: AggregationConfig,
   aggregator: (values: number[], key: keyof ItemFlat) => number,
 ): CompareItemsResult {
   return Object.fromEntries(
@@ -791,7 +780,7 @@ export const getReforgeCostByRank = (rank: number) => {
   return reforgeCostByRank[rank] ?? _fallbackReforgeCost
 }
 
-export const itemIsNewDays = 14 // TODO: to cfg/env
+export const itemIsNewDays: number = 14 // TODO: to cfg/env
 
 // spec
 const itemParamIsEmpty = (field: keyof ItemFlat, itemFlat: ItemFlat) => {

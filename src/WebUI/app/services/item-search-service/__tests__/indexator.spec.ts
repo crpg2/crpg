@@ -21,12 +21,15 @@ const { mockedComputeAverageRepairCostPerHour, mockedIsLargeShield } = vi.hoiste
   mockedIsLargeShield: vi.fn(),
 }))
 
-vi.mock('~/services/item-service', async () => ({
-  ...(await vi.importActual<typeof import('~/services/item-service')>('~/services/item-service')),
-  computeAverageRepairCostPerHour: mockedComputeAverageRepairCostPerHour,
-  isLargeShield: mockedIsLargeShield,
-  itemIsNewDays: 30,
-}))
+vi.mock(
+  import('~/services/item-service'),
+  async importOriginal => ({
+    ...(await importOriginal()),
+    computeAverageRepairCostPerHour: mockedComputeAverageRepairCostPerHour,
+    isLargeShield: mockedIsLargeShield,
+    itemIsNewDays: 30,
+  }),
+)
 
 describe('createItemIndex', () => {
   beforeEach(() => {
@@ -131,7 +134,7 @@ describe('createItemIndex', () => {
     expect(item2?.weaponClass).toEqual('ThrowingAxe')
 
     expect(item2?.damage).toEqual(32)
-    expect(item2?.damageType).toEqual(undefined) // TODO:
+    expect(item2?.damageType).toEqual(undefined)
     expect(item2?.weight).toEqual(null)
     expect(item2?.stackWeight).toEqual(3.75)
   })
@@ -169,7 +172,7 @@ describe('createItemIndex', () => {
     const index = createItemIndex([Helmet, Longsword])
     const [item1, item2] = index
 
-    expect(item1!.isNew).toBeTruthy()
-    expect(item2!.isNew).toBeFalsy()
+    expect(item1?.isNew).toBeTruthy()
+    expect(item2?.isNew).toBeFalsy()
   })
 })
