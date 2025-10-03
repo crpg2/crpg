@@ -10,8 +10,8 @@ import type { SortingConfig } from '~/services/item-search-service'
 import { useMainHeader } from '~/composables/app/use-main-header'
 import { useStickySidebar } from '~/composables/use-sticky-sidebar'
 import { ITEM_TYPE } from '~/models/item'
-import { getFacetsByItemType } from '~/services/item-search-service'
-import { aggregationsConfig, getFilterFn } from '~/services/item-search-service/aggregations'
+import { getFacetsByItemType, getFilterFn } from '~/services/item-search-service'
+import { aggregationsConfig } from '~/services/item-search-service/aggregations'
 
 const { sortingConfig, items, withPagination = true, loading = false } = defineProps<{
   items: T[]

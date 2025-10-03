@@ -4,7 +4,7 @@ import type { ValueOf } from 'type-fest'
 
 import type { Platform } from '~/models/platform'
 
-import { PLATFORM } from '~/models/platform'
+import { AVAILABLE_PLATFORM, PLATFORM } from '~/models/platform'
 import { platformToIcon } from '~/services/platform-service'
 import { getUserById, searchUser } from '~/services/restriction-service'
 
@@ -61,7 +61,7 @@ const searchModeItems = Object.keys(SEARCH_MODE).map<TabsItem>(mode => ({
   slot: `${mode}` as const,
 }))
 
-const platformItems = computed(() => Object.values(PLATFORM).map<SelectItem>(p => ({
+const platformItems = computed(() => AVAILABLE_PLATFORM.map<SelectItem>(p => ({
   value: p,
   label: t(`platform.${p}`),
   icon: `crpg:${platformToIcon[p]}`,

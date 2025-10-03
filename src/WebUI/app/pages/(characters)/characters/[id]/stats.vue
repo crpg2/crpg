@@ -283,7 +283,7 @@ const columns: TableColumn<CharacterEarnedDataWithGameMode>[] = [
 </script>
 
 <template>
-  <div class="relative mx-auto max-w-4xl space-y-5">
+  <div class="mx-auto max-w-4xl space-y-5">
     <div class="flex items-center justify-center gap-3">
       <UTabs
         v-model="zoomModel"
@@ -331,9 +331,9 @@ const columns: TableColumn<CharacterEarnedDataWithGameMode>[] = [
       <VChart
         ref="chart"
         theme="crpg"
-        :option="option"
-        :loading="loading"
-        :loading-options="loadingOptions"
+        :option
+        :loading
+        :loading-options
         @legendselectchanged="onLegendSelectChanged"
         @datazoom="onDataZoomChanged"
       />

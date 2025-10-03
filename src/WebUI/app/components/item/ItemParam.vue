@@ -63,7 +63,6 @@ const formattedBuckets = computed(() => {
   return [humanizeBucket(field, rawBuckets, item)]
 })
 
-// TODO: to tailwind cfg
 const colorPositive = '#34d399'
 const colorNegative = '#ef4444'
 

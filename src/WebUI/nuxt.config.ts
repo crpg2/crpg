@@ -151,7 +151,7 @@ export default defineNuxtConfig({
   icon: {
     mode: 'svg',
     class: 'fill-current',
-    provider: 'none',
+    // provider: 'none', // TODO:
     customCollections: [
       {
         prefix: 'crpg',

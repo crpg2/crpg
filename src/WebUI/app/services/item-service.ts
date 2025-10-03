@@ -639,28 +639,49 @@ export const groupItemsByTypeAndWeaponClass = (items: ItemFlat[]) => {
   }, [] as GroupedItems[])
 }
 
-// TODO: FIXME: spec + desc
-export const getCompareItemsResult = (items: ItemFlat[], aggregationsConfig: AggregationConfig): CompareItemsResult => {
-  return (Object.keys(aggregationsConfig) as Array<keyof ItemFlat>)
-    .filter(k => aggregationsConfig[k]?.compareRule !== undefined)
-    .reduce((out, k) => {
-      const values = items.map(fi => fi[k]).filter(v => typeof v === 'number') as number[]
-      out[k] = aggregationsConfig[k]!.compareRule === ITEM_FIELD_COMPARE_RULE.Less ? Math.min(...values) : Math.max(...values)
-      return out
-    }, {} as CompareItemsResult)
-}
+// // TODO: FIXME: spec + desc
+// export const getCompareItemsResult = (items: ItemFlat[], aggregationsConfig: AggregationConfig): CompareItemsResult => {
+//   return (Object.keys(aggregationsConfig) as Array<keyof ItemFlat>)
+//     .filter(k => aggregationsConfig[k]?.compareRule !== undefined)
+//     .reduce((out, k) => {
+//       const values = items.map(fi => fi[k]).filter(v => typeof v === 'number') as number[]
+//       out[k] = aggregationsConfig[k]!.compareRule === ITEM_FIELD_COMPARE_RULE.Less ? Math.min(...values) : Math.max(...values)
+//       return out
+//     }, {} as CompareItemsResult)
+// }
 
 // TODO: FIXME: spec + desc
-export const getRelativeEntries = (item: ItemFlat, aggregationsConfig: AggregationConfig): CompareItemsResult => {
-  return (Object.keys(aggregationsConfig) as Array<keyof ItemFlat>)
-    .filter(k => aggregationsConfig[k]?.compareRule !== undefined)
-    .reduce((out, k) => {
-      if (typeof item[k] === 'number') {
-        out[k] = item[k] as number
-      }
-      return out
-    }, {} as CompareItemsResult)
+function aggregateByCompareRule(
+  items: ItemFlat[],
+  aggregationsConfig: Partial<Record<keyof ItemFlat, { compareRule?: ItemFieldCompareRule }>>,
+  aggregator: (values: number[], key: keyof ItemFlat) => number,
+): CompareItemsResult {
+  return Object.fromEntries(
+    objectKeys(aggregationsConfig)
+      .filter(key => aggregationsConfig[key]?.compareRule)
+      .map((key) => {
+        const values = items
+          .map(item => item[key])
+          .filter((v): v is number => typeof v === 'number')
+        return [key, aggregator(values, key)]
+      }),
+  )
 }
+
+// TODO: FIXME: Конкретная функция для сравнения всех элементов
+export const getCompareItemsResult = (
+  items: ItemFlat[],
+  aggregationsConfig: AggregationConfig,
+): CompareItemsResult => aggregateByCompareRule(items, aggregationsConfig, (values, key) =>
+  aggregationsConfig[key]!.compareRule === ITEM_FIELD_COMPARE_RULE.Less
+    ? Math.min(...values)
+    : Math.max(...values))
+
+// TODO: FIXME: Конкретная функция для одного элемента (item)
+export const getRelativeEntries = (
+  item: ItemFlat,
+  aggregationsConfig: AggregationConfig,
+): CompareItemsResult => aggregateByCompareRule([item], aggregationsConfig, values => values[0]!)
 
 // TODO: description, spec
 export const getItemFieldAbsoluteDiffStr = (
@@ -772,6 +793,7 @@ export const getReforgeCostByRank = (rank: number) => {
 
 export const itemIsNewDays = 14 // TODO: to cfg/env
 
+// spec
 const itemParamIsEmpty = (field: keyof ItemFlat, itemFlat: ItemFlat) => {
   const value = itemFlat[field]
 
@@ -779,20 +801,20 @@ const itemParamIsEmpty = (field: keyof ItemFlat, itemFlat: ItemFlat) => {
     return true
   }
 
-  if (value === 0) {
+  if (!value) {
     return true
   }
 
   return false
 }
 
-// // TODO: spec
 export const getItemAggregations = (itemFlat: ItemFlat, omitEmpty = true): AggregationConfig => {
   const aggsConfig = getVisibleAggregationsConfig(
     getAggregationsConfig(itemFlat.type, itemFlat.weaponClass),
     ['type', 'weaponClass'],
   )
 
+  // // TODO: spec
   return omitEmpty
     ? omitBy(aggsConfig, (_value, field) => itemParamIsEmpty(field as keyof ItemFlat, itemFlat))
     : aggsConfig

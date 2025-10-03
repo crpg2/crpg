@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import type { ButtonProps, DropdownMenuItem } from '@nuxt/ui'
 
+import { useStorage } from '@vueuse/core'
+
+import type { Platform } from '~/models/platform'
+
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { PLATFORM } from '~/models/platform'
+import { AVAILABLE_PLATFORM, PLATFORM } from '~/models/platform'
 import { login } from '~/services/auth-service'
 import { platformToIcon } from '~/services/platform-service'
 import { useUserStore } from '~/stores/user'
@@ -10,7 +14,9 @@ import { useUserStore } from '~/stores/user'
 const { size = 'xl' } = defineProps<{ size?: ButtonProps['size'] }>()
 const userStore = useUserStore()
 const { user } = toRefs(userStore)
-const { platform, changePlatform } = usePlatform()
+
+const platform = useStorage<Platform>('user-platform', PLATFORM.Steam) // Steam by default
+
 const { t } = useI18n()
 
 const {
@@ -18,17 +24,15 @@ const {
   isLoading: logging,
 } = useAsyncCallback(() => login(platform.value))
 
-const items = computed(() =>
-  Object.values(PLATFORM).map(p => ({
-    label: t(`platform.${p}`),
-    icon: `crpg:${platformToIcon[p]}`,
-    type: 'checkbox' as const,
-    checked: p === platform.value,
-    onUpdateChecked() {
-      changePlatform(p)
-    },
-  })) satisfies DropdownMenuItem[],
-)
+const items = AVAILABLE_PLATFORM.map(p => ({
+  label: t(`platform.${p}`),
+  icon: `crpg:${platformToIcon[p]}`,
+  type: 'checkbox' as const,
+  checked: p === platform.value,
+  onUpdateChecked() {
+    platform.value = p
+  },
+})) satisfies DropdownMenuItem[]
 </script>
 
 <template>

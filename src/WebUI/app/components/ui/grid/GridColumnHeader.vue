@@ -69,7 +69,7 @@ defineEmits<{
         <UPopover
           :ui="{ content: 'max-w-76' }"
         >
-          <UiTableColumnHeaderLabel :with-filter :label :description />
+          <UiGridColumnHeaderLabel :with-filter :label :description />
 
           <template #content>
             <slot name="filter-content" />
@@ -79,7 +79,7 @@ defineEmits<{
     </template>
 
     <template v-else>
-      <UiTableColumnHeaderLabel
+      <UiGridColumnHeaderLabel
         :with-filter="false"
         :label
         :description

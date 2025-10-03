@@ -17,21 +17,22 @@ const counter = computed(() => [
 
 <template>
   <div class="grid grid-cols-3 items-center gap-4">
-    <div>
-      <UPagination
-        variant="soft"
-        active-variant="subtle"
-        active-color="primary"
-        :page
-        :show-controls="false"
-        show-edges
-        size="xl"
-        :default-page="tableApi.value.initialState.pagination.pageIndex + 1"
-        :items-per-page="pageSize"
-        :total
-        @update:page="(value) => tableApi.value.setPageIndex(value - 1)"
-      />
-    </div>
+    <UPagination
+      variant="soft"
+      active-variant="subtle"
+      active-color="primary"
+      :page
+      :show-controls="false"
+      show-edges
+      size="xl"
+      :default-page="tableApi.value.initialState.pagination.pageIndex + 1"
+      :items-per-page="pageSize"
+      :total
+      :ui="{
+        root: 'py-2',
+      }"
+      @update:page="(value) => tableApi.value.setPageIndex(value - 1)"
+    />
 
     <div class="flex justify-center">
       <slot />

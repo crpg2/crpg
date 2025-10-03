@@ -3,7 +3,7 @@ import type { SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
 import type { ColumnFiltersState, VisibilityState } from '@tanstack/vue-table'
 
 import { getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
-import { ClanTagIcon, UBadge, UButton, UInput, UiTableColumnHeader, UiTableColumnHeaderLabel, USelect, UTooltip } from '#components'
+import { ClanTagIcon, UBadge, UButton, UiGridColumnHeader, UiGridColumnHeaderLabel, UInput, USelect, UTooltip } from '#components'
 import { navigateTo, tw } from '#imports'
 
 import type { ClanWithMemberCount } from '~/models/clan'
@@ -98,7 +98,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
       // const uniqueKeys: string[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
       // TODO: рефакторинг UiTableColumnHeader
 
-      return h(UiTableColumnHeader, {
+      return h(UiGridColumnHeader, {
         label: t('clan.table.column.languages'),
         withFilter: true,
         filtered: column.getIsFiltered(),
@@ -122,7 +122,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
             'modelValue': column.getFilterValue(),
             'onUpdate:modelValue': column.setFilterValue,
           }, {
-            default: () => h(UiTableColumnHeaderLabel, {
+            default: () => h(UiGridColumnHeaderLabel, {
               label: t('clan.table.column.languages'),
               withFilter: true,
             }),
@@ -142,7 +142,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
   {
     accessorKey: 'memberCount',
     enableGlobalFilter: false,
-    header: ({ column }) => h(UiTableColumnHeader, {
+    header: ({ column }) => h(UiGridColumnHeader, {
       label: t('clan.table.column.members'),
       withSort: true,
       sorted: column.getIsSorted(),

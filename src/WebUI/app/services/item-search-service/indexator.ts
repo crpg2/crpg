@@ -1,5 +1,3 @@
-import { cloneDeep } from 'es-toolkit'
-
 import type {
   Item,
   ItemFlat,
@@ -224,9 +222,7 @@ const mapItemType = (type: ItemType): ItemType => {
   return type
 }
 
-const itemToFlat = (item: Item): ItemFlat => {
-  const newItemDateThreshold = new Date().setDate(new Date().getDate() - itemIsNewDays)
-
+const itemToFlat = (item: Item, newItemDateThreshold: number): ItemFlat => {
   const weaponProps = mapWeaponProps(item)
 
   const flags = [
@@ -236,6 +232,7 @@ const itemToFlat = (item: Item): ItemFlat => {
   ]
 
   return {
+    children: [],
     id: item.id,
     type: mapItemType(item.type),
     baseId: item.baseId,
@@ -303,15 +300,15 @@ const getPrimaryWeaponClass = (item: Item) => {
 // TODO: FIXME: SPEC cloneMultipleUsageWeapon param
 export const createItemIndex = (items: Item[], cloneMultipleUsageWeapon = false): ItemFlat[] => {
   // TODO: try to remove cloneDeep
-  const result = cloneDeep(items).reduce((out, item) => {
-    if (item.weapons.length > 1
+
+  const newItemDateThreshold = new Date().setDate(new Date().getDate() - itemIsNewDays)
+
+  const result = items.reduce<ItemFlat[]>((out, item) => {
     // TODO: bows have 2 loading modes, so there are several objects in the weapons data structure
-      && item.type !== ITEM_TYPE.Bow) {
+    if (item.weapons.length > 1 && item.type !== ITEM_TYPE.Bow) {
       item.weapons.forEach((w) => {
         const weaponClass = normalizeWeaponClass(item.type, w)
-
         const isPrimaryUsage = checkWeaponIsPrimaryUsage(item.type, w, item.weapons)
-
         // fixes a duplicate class, ex. Hoe: 1h/2h/1h
         const itemTypeAlreadyExistIdx = out.findIndex((fi) => {
           // console.table({
@@ -323,10 +320,8 @@ export const createItemIndex = (items: Item[], cloneMultipleUsageWeapon = false)
           //     fi.modId ===
           //     generateModId({ ...item, type: itemTypeByWeaponClass[w.class] }, w.class),
           // });
-
           return (
-            fi.modId
-            === generateModId({ ...item, type: itemTypeByWeaponClass[weaponClass] }, weaponClass)
+            fi.modId === generateModId({ ...item, type: itemTypeByWeaponClass[weaponClass] }, weaponClass)
           )
         })
 
@@ -346,7 +341,6 @@ export const createItemIndex = (items: Item[], cloneMultipleUsageWeapon = false)
           if (VISIBLE_ITEM_USAGE.includes(w.itemUsage)) {
             out[itemTypeAlreadyExistIdx]?.flags.push(w.itemUsage)
           }
-
           return
         }
 
@@ -356,7 +350,7 @@ export const createItemIndex = (items: Item[], cloneMultipleUsageWeapon = false)
               ...item,
               type: itemTypeByWeaponClass[weaponClass],
               weapons: [{ ...w, class: weaponClass }], // TODO:
-            }),
+            }, newItemDateThreshold),
             weaponPrimaryClass: isPrimaryUsage ? weaponClass : getPrimaryWeaponClass(item),
             weaponUsage: [isPrimaryUsage ? WEAPON_USAGE.Primary : WEAPON_USAGE.Secondary],
           })
@@ -365,11 +359,11 @@ export const createItemIndex = (items: Item[], cloneMultipleUsageWeapon = false)
     }
     //
     else {
-      out.push(itemToFlat(item))
+      out.push(itemToFlat(item, newItemDateThreshold))
     }
 
     return out
-  }, [] as ItemFlat[])
+  }, [])
 
   // console.log(result);
 

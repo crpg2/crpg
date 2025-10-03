@@ -18,7 +18,7 @@ defineEmits<{
     :confirm="character.name"
     @close="(res) => $emit('close', res)"
   >
-    <template #title>
+    <template #description>
       <i18n-t
         scope="global"
         keypath="character.settings.respecialize.dialog.desc"

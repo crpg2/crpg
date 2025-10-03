@@ -3,7 +3,7 @@ import type { SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
 import type { SortingState } from '@tanstack/table-core'
 
 import { useRouteQuery } from '@vueuse/router'
-import { CompetitiveRank, LazyCompetitiveRankTable, UButton, UIcon, UInput, UiTableColumnHeader, UiTableColumnHeaderLabel, UModal, USelect, UserMedia, UTooltip } from '#components'
+import { CompetitiveRank, LazyCompetitiveRankTable, UButton, UIcon, UiGridColumnHeader, UiGridColumnHeaderLabel, UInput, UModal, USelect, UserMedia, UTooltip } from '#components'
 
 import type { CharacterClass } from '~/models/character'
 import type { CharacterCompetitiveNumbered } from '~/models/competitive'
@@ -60,7 +60,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
     accessorKey: 'position',
     enableGlobalFilter: false,
     id: 'position',
-    header: ({ column }) => h(UiTableColumnHeader, {
+    header: ({ column }) => h(UiGridColumnHeader, {
       label: t('leaderboard.table.cols.top'),
       withSort: true,
       sorted: column.getIsSorted(),
@@ -75,7 +75,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
   {
     accessorKey: 'statistics',
     enableGlobalFilter: false,
-    header: () => h(UiTableColumnHeader, {
+    header: () => h(UiGridColumnHeader, {
       label: t('leaderboard.table.cols.rank'),
     }, {
       'label-trailing': () => h(UModal, {
@@ -123,7 +123,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
     accessorKey: 'class',
     enableGlobalFilter: false,
     header: ({ column }) => {
-      return h(UiTableColumnHeader, {
+      return h(UiGridColumnHeader, {
         label: t('leaderboard.table.cols.class'),
         withFilter: true,
         filtered: column.getIsFiltered(),
@@ -149,7 +149,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
             'modelValue': column.getFilterValue(),
             'onUpdate:modelValue': column.setFilterValue,
           }, {
-            default: () => h(UiTableColumnHeaderLabel, {
+            default: () => h(UiGridColumnHeaderLabel, {
               label: t('leaderboard.table.cols.class'),
               withFilter: true,
             }),
@@ -170,7 +170,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
   {
     accessorKey: 'level',
     enableGlobalFilter: false,
-    header: ({ column }) => h(UiTableColumnHeader, {
+    header: ({ column }) => h(UiGridColumnHeader, {
       label: t('leaderboard.table.cols.level'),
       withSort: true,
       sorted: column.getIsSorted(),

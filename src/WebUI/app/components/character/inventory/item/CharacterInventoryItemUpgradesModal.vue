@@ -184,8 +184,6 @@ async function reforge() {
 
     <template #body>
       <ItemTableUpgrades
-        with-header
-        :with-filler="false"
         :current-rank="userItem.item.rank"
         :loading="isLoadingitemUpgrades"
         :items="itemUpgrades"

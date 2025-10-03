@@ -4,7 +4,7 @@ import type { SortingState, VisibilityState } from '@tanstack/vue-table'
 
 import { getPaginationRowModel } from '@tanstack/vue-table'
 import { navigateTo } from '#app'
-import { NuxtLink, UBadge, UiCollapsibleText, UInput, UiTableColumnHeader, UiTableColumnHeaderLabel, USelect, UserMedia, UTooltip } from '#components'
+import { NuxtLink, UBadge, UiCollapsibleText, UiGridColumnHeader, UiGridColumnHeaderLabel, UInput, USelect, UserMedia, UTooltip } from '#components'
 
 import type { UserRestriction } from '~/models/user'
 
@@ -37,7 +37,7 @@ const columns: TableColumn<UserRestriction>[] = [
   {
     accessorKey: 'status',
     header: ({ column }) => {
-      return h(UiTableColumnHeader, {
+      return h(UiGridColumnHeader, {
         label: t('restriction.table.column.status'),
         withFilter: true,
         filtered: column.getIsFiltered(),
@@ -61,7 +61,7 @@ const columns: TableColumn<UserRestriction>[] = [
             'modelValue': column.getFilterValue(),
             'onUpdate:modelValue': column.setFilterValue,
           }, {
-            default: () => h(UiTableColumnHeaderLabel, {
+            default: () => h(UiGridColumnHeaderLabel, {
               label: t('restriction.table.column.status'),
               withFilter: true,
             }),
@@ -78,7 +78,7 @@ const columns: TableColumn<UserRestriction>[] = [
   {
     accessorKey: 'type',
     header: ({ column }) => {
-      return h(UiTableColumnHeader, {
+      return h(UiGridColumnHeader, {
         label: t('restriction.table.column.type'),
         withFilter: true,
         filtered: column.getIsFiltered(),
@@ -102,7 +102,7 @@ const columns: TableColumn<UserRestriction>[] = [
             'modelValue': column.getFilterValue(),
             'onUpdate:modelValue': column.setFilterValue,
           }, {
-            default: () => h(UiTableColumnHeaderLabel, {
+            default: () => h(UiGridColumnHeaderLabel, {
               label: t('restriction.table.column.type'),
               withFilter: true,
             }),

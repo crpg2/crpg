@@ -1,28 +1,16 @@
-export const getMinRange = (buckets: number[]): number => {
-  if (buckets.length === 0) {
-    return 0
-  }
-  return Math.floor(Math.min(...buckets))
-}
+export const getMinRange = (buckets: number[]): number =>
+  Math.floor(buckets.length ? Math.min(...buckets) : 0)
 
-export const getMaxRange = (buckets: number[]): number => {
-  if (buckets.length === 0) {
-    return 0
-  }
-  return Math.ceil(Math.max(...buckets))
-}
+export const getMaxRange = (buckets: number[]): number =>
+  Math.ceil(buckets.length ? Math.max(...buckets) : 0)
 
 export const getStepRange = (values: number[]): number => {
   if (values.every(Number.isInteger)) {
-    return 1
-  } // Ammo, stackAmount
-
-  const [min, max] = [getMinRange(values), getMaxRange(values)]
-  const diff = max - min
-
-  if ((values.length < 20 && diff < 10) || (values.length > 20 && diff < 5)) {
-    return 0.1
+    return 1 // Ammo, StackAmount...
   }
 
-  return 1
+  const diff = getMaxRange(values) - getMinRange(values)
+  return (values.length < 20 && diff < 10) || (values.length >= 20 && diff < 5)
+    ? 0.1
+    : 1
 }

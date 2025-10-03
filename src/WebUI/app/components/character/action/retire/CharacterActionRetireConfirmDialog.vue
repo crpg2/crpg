@@ -26,7 +26,7 @@ const experienceMultiplierBonus = computed(() => getExperienceMultiplierBonus(us
     :confirm-label="$t('action.confirm')"
     @close="(res) => $emit('close', res)"
   >
-    <template #title>
+    <template #description>
       <div class="space-y-2">
         <i18n-t
           scope="global"

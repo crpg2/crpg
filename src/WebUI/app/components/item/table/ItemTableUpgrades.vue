@@ -1,48 +1,34 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
-import type { RowSelectionState, VisibilityState } from '@tanstack/vue-table'
+import type { RowSelectionState } from '@tanstack/vue-table'
 
-import { ItemParam, ItemTableMedia } from '#components'
+import { AppCoin, ItemParam, ItemTableMedia } from '#components'
 
 import type { CompareItemsResult, ItemFlat } from '~/models/item'
-import type { AggregationConfig, AggregationOptions } from '~/services/item-search-service/aggregations'
+import type { AggregationConfig } from '~/services/item-search-service/aggregations'
 
 import { ITEM_COMPARE_MODE } from '~/models/item'
+import { getColumnVisibility } from '~/services/item-search-service'
 
 const {
   items,
   aggregationConfig,
-  withHeader = false,
   compareItemsResult,
   loading = false,
   currentRank,
-  withFiller = true,
 } = defineProps<{
   items: ItemFlat[]
   aggregationConfig: AggregationConfig
   compareItemsResult: CompareItemsResult
   loading?: boolean
-  withHeader?: boolean
-  withFiller?: boolean // offset
   currentRank?: number
 }>()
 
-const { t } = useI18n()
+const { t, n } = useI18n()
 
-function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
-  const widthPx = options.width || 160
+function createTableColumn(key: keyof ItemFlat): TableColumn<ItemFlat> {
   return {
     accessorKey: key,
-    meta: {
-      style: {
-        th: {
-          width: `${widthPx}px`,
-        },
-        td: {
-          width: `${widthPx}px`,
-        },
-      },
-    },
     header: ({ header }) => t(`item.aggregations.${header.id}.title`),
     cell: ({ row }) => h(ItemParam, {
       field: key,
@@ -50,33 +36,14 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
       isCompare: true,
       compareMode: ITEM_COMPARE_MODE.Relative,
       relativeValue: compareItemsResult[key]!,
+    }, {
+      ...(key === 'upkeep' && { default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, { value: t('item.format.upkeep', { upkeep: n(rawBuckets) }) }) }),
+      ...(key === 'price' && { default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, { value: rawBuckets }) }),
     }),
   }
 }
 
 const columns = computed<TableColumn<ItemFlat>[]>(() => [
-  ...(withFiller
-    ? [
-        {
-          id: 'fill',
-          meta: {
-            class: {
-              td: 'px-0 w-[32px]',
-              th: 'px-0 w-[32px]',
-            },
-          },
-        },
-        {
-          id: 'fill2',
-          meta: {
-            class: {
-              td: 'px-0 w-[32px]',
-              th: 'px-0 w-[32px]',
-            },
-          },
-        },
-      ]
-    : []),
   {
     accessorKey: 'name',
     header: '',
@@ -85,19 +52,10 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => [
       showTier: true,
     }),
   },
-  ...Object.entries(aggregationConfig).map(([key, config]) => createTableColumn(key as keyof ItemFlat, config)),
+  ...objectKeys(aggregationConfig).map(createTableColumn),
 ])
 
-const columnVisibility = computed<VisibilityState>(() => {
-  return {
-    ...Object.entries(aggregationConfig)
-      .filter(([_, value]) => value.hidden)
-      .reduce((out, [key]) => {
-        out[key] = false
-        return out
-      }, {} as VisibilityState),
-  }
-})
+const columnVisibility = computed(() => getColumnVisibility(aggregationConfig))
 
 const rowSelection = ref<RowSelectionState>({
   ...(currentRank !== undefined && {
@@ -115,9 +73,6 @@ const rowSelection = ref<RowSelectionState>({
     :columns
     :ui="{
       root: 'overflow-visible',
-      ...(!withHeader && {
-        thead: 'hidden',
-      }),
     }"
   >
     <template #empty>

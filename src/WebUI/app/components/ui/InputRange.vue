@@ -1,46 +1,59 @@
 <script setup lang="ts">
+import { refDebounced } from '@vueuse/core'
 import { clamp } from 'es-toolkit'
 
-const { step = 1, min, max } = defineProps<{
+const {
+  min,
+  max,
+  step = 1,
+  debounce = 300,
+} = defineProps<{
   min: number
   max: number
   step?: number
+  debounce?: number
 }>()
 
 const modelValue = defineModel<[number, number]>({ default: () => [] })
 
-const localValue = computed<[number, number]>({
-  get() {
-    let [from, to] = modelValue.value
-
-    const hasFrom = from != null
-    const hasTo = to != null
-
-    if (!hasFrom && !hasTo) {
-      return [min, max]
-    }
-
-    from = hasFrom ? Math.max(from!, min) : min
-    to = hasTo ? Math.min(to!, max) : max
-
-    return [from, to]
-  },
-
-  set([rawFrom, rawTo]) {
-    let from = clamp(rawFrom, min, max)
-    let to = clamp(rawTo, min, max)
-
-    if (from > to) {
-      [from, to] = [to, from]
-    }
-
-    modelValue.value = [from, to]
-  },
-})
+const localValue = ref<[number, number]>([min, max])
 
 const change = (from: number, to: number) => {
   localValue.value = [from, to]
 }
+
+const debouncedValue = refDebounced(localValue, debounce)
+
+// sync debouncedValue -> modelValue
+watch(debouncedValue, (val) => {
+  let [from, to] = val
+  from = clamp(from, min, max)
+  to = clamp(to, min, max)
+  if (from > to) {
+    [from, to] = [to, from]
+  }
+  modelValue.value = [from, to]
+}, { deep: true })
+
+// sync modelValue -> localValue
+watchEffect(() => {
+  let [from, to] = modelValue.value
+  const hasFrom = from != null
+  const hasTo = to != null
+
+  if (!hasFrom && !hasTo) {
+    localValue.value = [min, max]
+    return
+  }
+
+  from = hasFrom ? Math.max(from!, min) : min
+  to = hasTo ? Math.min(to!, max) : max
+  if (from > to) {
+    [from, to] = [to, from]
+  }
+
+  localValue.value = [from, to]
+})
 </script>
 
 <template>

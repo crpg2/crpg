@@ -18,6 +18,3 @@ RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/commandhisto
 
 # [Optional] Uncomment this line to install global node packages.
 RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm update -g" 2>&1
-
-# https://heyapi.dev/openapi-ts/configuration#input
-RUN 'export NODE_TLS_REJECT_UNAUTHORIZED=0'

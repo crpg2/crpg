@@ -193,7 +193,7 @@ const totalRewardValues = computed(() => {
         :state="rewardFormModel"
         @submit.prevent
       >
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-2 gap-x-4 gap-y-6">
           <UFormField>
             <template #label>
               <UiDataCell>
@@ -210,7 +210,7 @@ const totalRewardValues = computed(() => {
             <UInputNumber
               v-model="rewardFormModel.gold"
               placeholder="Gold"
-              size="lg"
+              size="xl"
               class="w-full"
             />
           </UFormField>
@@ -230,17 +230,17 @@ const totalRewardValues = computed(() => {
             <UInputNumber
               v-model="rewardFormModel.heirloomPoints"
               placeholder="Heirloom points"
-              size="lg"
+              size="xl"
               class="w-full"
             />
           </UFormField>
 
-          <div class="col-span-2 space-y-4">
+          <div class="col-span-1 space-y-4">
             <UFormField label="Personal item">
               <UInput
                 v-model="rewardFormModel.itemId"
                 placeholder="crpg_"
-                size="lg"
+                size="xl"
                 class="w-full"
               />
             </UFormField>
@@ -255,16 +255,14 @@ const totalRewardValues = computed(() => {
           </div>
         </div>
 
-        <USeparator />
-
-        <div v-if="selectedCharacter" class="grid grid-cols-3 gap-4">
+        <div v-if="selectedCharacter" class="grid grid-cols-3 items-end gap-4">
           <UFormField
             class="col-span-1"
             label="Character"
           >
             <USelect
               v-model="rewardFormModel.characterId"
-              size="lg"
+              size="xl"
               :items="characters.map<SelectItem>((character) => ({
                 label: character.name,
                 value: character.id,
@@ -289,18 +287,20 @@ const totalRewardValues = computed(() => {
             <UInputNumber
               v-model="rewardFormModel.experience"
               placeholder="Experience"
-              size="lg"
+              size="xl"
               class="w-full"
             />
           </UFormField>
 
-          <UFormField label="Auto retire">
-            <USwitch v-model="rewardFormModel.autoRetire" />
-          </UFormField>
+          <div>
+            <UCheckbox
+              v-model="rewardFormModel.autoRetire"
+              label="Auto retire"
+              variant="card"
+            />
+          </div>
 
-          <USeparator class="col-span-3" />
-
-          <div class="col-span-3 space-y-4">
+          <div class="col-span-2 space-y-4">
             <!-- TODO: to cmp -->
             <div
               v-if="rewardFormModel.heirloomPoints"

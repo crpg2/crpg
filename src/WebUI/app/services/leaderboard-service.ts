@@ -11,7 +11,6 @@ import type { GameMode } from '~/models/game-mode'
 import type { Region } from '~/models/region'
 
 import { RANK_GROUP } from '~/models/competitive'
-import { getEntries } from '~/utils/object'
 
 export const getLeaderBoard = async ({
   characterClass,
@@ -58,7 +57,7 @@ const createRank = (baseRank: [RankGroup, string]) =>
   }))
 
 export const createRankTable = (): Rank[] =>
-  getEntries<Record<RankGroup, string>>(rankColors)
+  objectEntries<Record<RankGroup, string>>(rankColors)
     .flatMap(createRank)
     .map((baseRank, idx) => ({ ...baseRank, max: idx * step + step, min: idx * step }))
 

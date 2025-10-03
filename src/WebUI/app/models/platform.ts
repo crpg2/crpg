@@ -11,3 +11,8 @@ export const PLATFORM = {
 } as const satisfies Record<_Platform, _Platform>
 
 export type Platform = ValueOf<typeof PLATFORM>
+
+export const AVAILABLE_PLATFORM = [
+  PLATFORM.Steam,
+  PLATFORM.EpicGames,
+]

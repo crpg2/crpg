@@ -1,4 +1,3 @@
-import type { FilterFnOption } from '@tanstack/vue-table'
 import type { ValueOf } from 'type-fest'
 
 import type { ItemFieldCompareRule, ItemFieldFormat, ItemFlat, ItemType, WeaponClass } from '~/models/item'
@@ -15,7 +14,6 @@ export interface AggregationOptions {
   format?: ItemFieldFormat
   hidden?: boolean
   compareRule?: ItemFieldCompareRule
-  width?: number // px
 }
 
 export type AggregationConfig = Partial<Record<keyof ItemFlat, AggregationOptions>>
@@ -35,7 +33,6 @@ export const aggregationsConfig: AggregationConfig = {
   flags: {
     format: ITEM_FIELD_FORMAT.List,
     view: AGGREGATION_VIEW.Checkbox,
-    width: 160,
   },
   id: {
     view: AGGREGATION_VIEW.Checkbox,
@@ -53,7 +50,6 @@ export const aggregationsConfig: AggregationConfig = {
     compareRule: ITEM_FIELD_COMPARE_RULE.Less,
     format: ITEM_FIELD_FORMAT.Number,
     view: AGGREGATION_VIEW.Range,
-    width: 200,
   },
   requirement: {
     compareRule: ITEM_FIELD_COMPARE_RULE.Less,
@@ -195,7 +191,7 @@ export const aggregationsConfig: AggregationConfig = {
   },
   weaponUsage: {
     view: AGGREGATION_VIEW.Checkbox,
-    // hidden: true, // TODO: FIXME:
+    hidden: true,
   },
 
   // Throw/Bow/Xbow
@@ -524,24 +520,4 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'swingSpeed',
     ..._tail,
   ],
-}
-
-export function getFilterFn(options: AggregationOptions): FilterFnOption<any> {
-  if (options.view === AGGREGATION_VIEW.Toggle && options.format === ITEM_FIELD_FORMAT.String) {
-    return 'equalsString'
-  }
-
-  if (options.view === AGGREGATION_VIEW.Range) {
-    return 'inNumberRange'
-  }
-
-  if (options.view === AGGREGATION_VIEW.Checkbox) {
-    if (options.format === ITEM_FIELD_FORMAT.List) {
-      return 'arrIncludesSome'
-    }
-
-    return includesSome
-  }
-
-  return 'auto'
 }
