@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { DropdownMenuItem, SelectItem, TableColumn } from '@nuxt/ui'
+import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState, RowSelectionState, SortingState } from '@tanstack/vue-table'
 
 import {
@@ -71,7 +71,7 @@ usePageLoading(loadingItems)
 
 const flatItems = ref<ItemFlat[]>([])
 watch(items, () => {
-  flatItems.value = createItemIndex(items.value, true)
+  flatItems.value = createItemIndex(items.value, false)
 })
 
 const [buyItem] = useAsyncCallback(async (item: ItemFlat) => {
@@ -130,6 +130,7 @@ const itemType = computed({
     resetCompareMode()
   },
 })
+
 const itemTypes = computed(() => getFacetsByItemType(flatItems.value.map(item => item.type)))
 
 const isUpgradableItemType = computed(() => canUpgradeItem(itemType.value))
@@ -142,7 +143,9 @@ const weaponClass = computed({
     return getWeaponClassesByItemType(itemType.value).at(0) ?? null
   },
   set(weaponClass: WeaponClass | null) {
-    table.value?.tableApi.setColumnFilters([{ id: 'weaponClass', value: weaponClass }])
+    table.value?.tableApi.setColumnFilters([
+      { id: 'weaponClass', value: weaponClass },
+    ])
     router.replace({
       query: {
         type: itemType.value,
@@ -163,7 +166,7 @@ const weaponClasses = computed(() => getFacetsByWeaponClass(flatItems.value
 function getInitialColumnFiltersState(): ColumnFiltersState {
   return [
     { id: 'type', value: itemType.value },
-    { id: 'weaponUsage', value: [WEAPON_USAGE.Primary] }, // TODO: FIXME:
+    // { id: 'weaponUsage', value: [WEAPON_USAGE.Primary] }, // TODO: FIXME:
     ...(weaponClass.value ? [{ id: 'weaponClass', value: weaponClass.value }] : []),
   ]
 }
@@ -429,7 +432,6 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
                 h(UButton, {
                   label: `New (${_count})`,
                   color: 'success',
-                  size: 'xl',
                   variant: 'soft',
                   activeVariant: 'solid',
                   active: _value,
@@ -446,24 +448,6 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
     ...objectEntries(currentAggregations.value).map(([key, options]) => createTableColumn(key, options!)),
   ]
 })
-
-// const nonPrimaryWeaponModeFilter = computed((): DropdownMenuItem | null => {
-//   const _column = table.value?.tableApi.getColumn('weaponUsage')
-//   const _count = _column ? getFacets(_column.getFacetedUniqueValues())?.[WEAPON_USAGE.Secondary] || 0 : 0
-//   // if (!_count) {
-//   //   return null
-//   // }
-//   return {
-//     label: `${t(`shop.nonPrimaryWeaponMode.title`)}${_count ? ` (${_count})` : ''}`,
-//     type: 'checkbox' as const,
-//     ...(_column && {
-//       checked: isEqual((_column.getFilterValue() || []), [WEAPON_USAGE.Secondary, WEAPON_USAGE.Primary]),
-//       onUpdateChecked(value) {
-//         _column.setFilterValue(value ? [WEAPON_USAGE.Secondary, WEAPON_USAGE.Primary] : [WEAPON_USAGE.Primary])
-//       },
-//     }),
-//   }
-// })
 </script>
 
 <template>
