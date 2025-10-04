@@ -80,7 +80,7 @@ import {
 import { GAME_MODE } from '~/models/game-mode'
 import { ITEM_SLOT, ITEM_TYPE } from '~/models/item'
 import { armorTypes, computeAverageRepairCostPerHour } from '~/services/item-service'
-import { getIndexToIns, range } from '~/utils/array'
+import { getIndexToInsert, range } from '~/utils/array'
 import { applyPolynomialFunction, roundFLoat } from '~/utils/math'
 
 export const getCharacters = async (): Promise<Character[]> => {
@@ -305,7 +305,7 @@ export const getLevelByExperience = (
   exp: number,
   expTable: number[] = computeExperienceTable(),
 ): number => {
-  return getIndexToIns(expTable, exp)
+  return getIndexToInsert(expTable, exp)
 }
 
 // TODO: spec

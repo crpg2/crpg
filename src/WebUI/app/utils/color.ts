@@ -1,4 +1,4 @@
-export function rgbHexColorToArgbInt(hexColor: string): number {
+export function rgbHexColorToArgbInt(hexColor: string) {
   return Number.parseInt(`FF${hexColor.substring(1)}`, 16)
 }
 

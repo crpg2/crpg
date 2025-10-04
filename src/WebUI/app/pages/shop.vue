@@ -3,7 +3,6 @@ import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState, RowSelectionState, SortingState } from '@tanstack/vue-table'
 
 import {
-  filterFns,
   getFacetedMinMaxValues,
   getFacetedRowModel,
   getFacetedUniqueValues,
@@ -72,7 +71,7 @@ usePageLoading(loadingItems)
 
 const flatItems = ref<ItemFlat[]>([])
 watch(items, () => {
-  flatItems.value = createItemIndex(items.value, false)
+  flatItems.value = createItemIndex(items.value, true)
 })
 
 const [buyItem] = useAsyncCallback(async (item: ItemFlat) => {

@@ -6,7 +6,7 @@ import type { Item, ItemFieldFormat, ItemFlat, ItemType, WeaponClass } from '~/m
 
 import { ITEM_FIELD_FORMAT, ITEM_TYPE, WEAPON_CLASS } from '~/models/item'
 import { getWeaponClassesByItemType } from '~/services/item-service'
-import { objectEntries, objectKeys } from '~/utils/object'
+import { objectEntries } from '~/utils/object'
 
 import type { AggregationConfig, AggregationOptions, AggregationView } from './aggregations'
 
