@@ -71,7 +71,7 @@ usePageLoading(loadingItems)
 
 const flatItems = ref<ItemFlat[]>([])
 watch(items, () => {
-  flatItems.value = createItemIndex(items.value, true)
+  flatItems.value = createItemIndex(items.value, false) // TODO: weaponUsage next iteration
 })
 
 const [buyItem] = useAsyncCallback(async (item: ItemFlat) => {

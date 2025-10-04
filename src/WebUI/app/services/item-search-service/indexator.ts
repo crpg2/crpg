@@ -1,3 +1,5 @@
+import { cloneDeep } from 'es-toolkit'
+
 import type {
   Item,
   ItemFlat,
@@ -302,7 +304,7 @@ export const createItemIndex = (items: Item[], cloneMultipleUsageWeapon = false)
   const newItemDateThreshold = new Date().setDate(new Date().getDate() - itemIsNewDays)
 
   // TODO: try to remove cloneDeep
-  const result = structuredClone(items).reduce<ItemFlat[]>((out, item) => {
+  const result = cloneDeep(items).reduce<ItemFlat[]>((out, item) => {
     // TODO: bows have 2 loading modes, so there are several objects in the weapons data structure
     if (item.weapons.length > 1 && item.type !== ITEM_TYPE.Bow) {
       item.weapons.forEach((w) => {
