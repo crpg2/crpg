@@ -25,6 +25,12 @@ export type Options<TComposable extends Composable = '$fetch', TData extends TDa
 export const getActivityLogs = <TComposable extends Composable = '$fetch', DefaultT extends GetActivityLogsResponse = GetActivityLogsResponse>(options: Options<TComposable, GetActivityLogsData, GetActivityLogsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetActivityLogsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getActivityLogsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/activity-logs',
         ...options
     });
@@ -36,6 +42,12 @@ export const getActivityLogs = <TComposable extends Composable = '$fetch', Defau
 export const getBattles = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesResponse = GetBattlesResponse>(options: Options<TComposable, GetBattlesData, GetBattlesResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetBattlesResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getBattlesResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Battles',
         ...options
     });
@@ -47,6 +59,12 @@ export const getBattles = <TComposable extends Composable = '$fetch', DefaultT e
 export const getBattlesByBattleId = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesByBattleIdResponse = GetBattlesByBattleIdResponse>(options: Options<TComposable, GetBattlesByBattleIdData, GetBattlesByBattleIdResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetBattlesByBattleIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getBattlesByBattleIdResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Battles/{battleId}',
         ...options
     });
@@ -58,6 +76,12 @@ export const getBattlesByBattleId = <TComposable extends Composable = '$fetch', 
 export const getBattlesByBattleIdFighters = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesByBattleIdFightersResponse = GetBattlesByBattleIdFightersResponse>(options: Options<TComposable, GetBattlesByBattleIdFightersData, GetBattlesByBattleIdFightersResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetBattlesByBattleIdFightersResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getBattlesByBattleIdFightersResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Battles/{battleId}/fighters',
         ...options
     });
@@ -69,6 +93,12 @@ export const getBattlesByBattleIdFighters = <TComposable extends Composable = '$
 export const postBattlesByBattleIdFighters = <TComposable extends Composable = '$fetch', DefaultT extends PostBattlesByBattleIdFightersResponse = PostBattlesByBattleIdFightersResponse>(options: Options<TComposable, PostBattlesByBattleIdFightersData, PostBattlesByBattleIdFightersResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostBattlesByBattleIdFightersResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postBattlesByBattleIdFightersResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Battles/{battleId}/fighters',
         ...options
     });
@@ -80,6 +110,12 @@ export const postBattlesByBattleIdFighters = <TComposable extends Composable = '
 export const getBattlesByBattleIdFighterApplications = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesByBattleIdFighterApplicationsResponse = GetBattlesByBattleIdFighterApplicationsResponse>(options: Options<TComposable, GetBattlesByBattleIdFighterApplicationsData, GetBattlesByBattleIdFighterApplicationsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetBattlesByBattleIdFighterApplicationsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getBattlesByBattleIdFighterApplicationsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Battles/{battleId}/fighter-applications',
         ...options
     });
@@ -91,6 +127,12 @@ export const getBattlesByBattleIdFighterApplications = <TComposable extends Comp
 export const putBattlesByBattleIdFighterApplicationsByApplicationIdResponse = <TComposable extends Composable = '$fetch', DefaultT extends PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse = PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse>(options: Options<TComposable, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseData, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Battles/{battleId}/fighter-applications/{applicationId}/response',
         ...options,
         headers: {
@@ -105,6 +147,12 @@ export const putBattlesByBattleIdFighterApplicationsByApplicationIdResponse = <T
  */
 export const getBattlesByBattleIdMercenaries = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesByBattleIdMercenariesResponse = GetBattlesByBattleIdMercenariesResponse>(options: Options<TComposable, GetBattlesByBattleIdMercenariesData, GetBattlesByBattleIdMercenariesResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetBattlesByBattleIdMercenariesResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Battles/{battleId}/mercenaries',
         ...options
     });
@@ -115,6 +163,12 @@ export const getBattlesByBattleIdMercenaries = <TComposable extends Composable =
  */
 export const getBattlesByBattleIdMercenaryApplications = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesByBattleIdMercenaryApplicationsResponse = GetBattlesByBattleIdMercenaryApplicationsResponse>(options: Options<TComposable, GetBattlesByBattleIdMercenaryApplicationsData, GetBattlesByBattleIdMercenaryApplicationsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetBattlesByBattleIdMercenaryApplicationsResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Battles/{battleId}/mercenary-applications',
         ...options
     });
@@ -125,6 +179,12 @@ export const getBattlesByBattleIdMercenaryApplications = <TComposable extends Co
  */
 export const postBattlesByBattleIdMercenaryApplications = <TComposable extends Composable = '$fetch', DefaultT extends PostBattlesByBattleIdMercenaryApplicationsResponse = PostBattlesByBattleIdMercenaryApplicationsResponse>(options: Options<TComposable, PostBattlesByBattleIdMercenaryApplicationsData, PostBattlesByBattleIdMercenaryApplicationsResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostBattlesByBattleIdMercenaryApplicationsResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Battles/{battleId}/mercenary-applications',
         ...options,
         headers: {
@@ -139,6 +199,12 @@ export const postBattlesByBattleIdMercenaryApplications = <TComposable extends C
  */
 export const putBattlesByBattleIdMercenaryApplicationsByApplicationIdResponse = <TComposable extends Composable = '$fetch', DefaultT extends PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse = PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse>(options: Options<TComposable, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseData, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Battles/{battleId}/mercenary-applications/{applicationId}/response',
         ...options,
         headers: {
@@ -153,6 +219,12 @@ export const putBattlesByBattleIdMercenaryApplicationsByApplicationIdResponse = 
  */
 export const getClansById = <TComposable extends Composable = '$fetch', DefaultT extends GetClansByIdResponse = GetClansByIdResponse>(options: Options<TComposable, GetClansByIdData, GetClansByIdResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetClansByIdResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans/{id}',
         ...options
     });
@@ -163,6 +235,12 @@ export const getClansById = <TComposable extends Composable = '$fetch', DefaultT
  */
 export const getClansByIdMembers = <TComposable extends Composable = '$fetch', DefaultT extends GetClansByIdMembersResponse = GetClansByIdMembersResponse>(options: Options<TComposable, GetClansByIdMembersData, GetClansByIdMembersResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetClansByIdMembersResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans/{id}/members',
         ...options
     });
@@ -173,6 +251,12 @@ export const getClansByIdMembers = <TComposable extends Composable = '$fetch', D
  */
 export const deleteClansByClanIdMembersByUserId = <TComposable extends Composable = '$fetch', DefaultT extends DeleteClansByClanIdMembersByUserIdResponse = DeleteClansByClanIdMembersByUserIdResponse>(options: Options<TComposable, DeleteClansByClanIdMembersByUserIdData, DeleteClansByClanIdMembersByUserIdResponse, DefaultT>) => {
     return (options.client ?? client).delete<TComposable, DeleteClansByClanIdMembersByUserIdResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans/{clanId}/members/{userId}',
         ...options
     });
@@ -183,6 +267,12 @@ export const deleteClansByClanIdMembersByUserId = <TComposable extends Composabl
  */
 export const putClansByClanIdMembersByUserId = <TComposable extends Composable = '$fetch', DefaultT extends PutClansByClanIdMembersByUserIdResponse = PutClansByClanIdMembersByUserIdResponse>(options: Options<TComposable, PutClansByClanIdMembersByUserIdData, PutClansByClanIdMembersByUserIdResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutClansByClanIdMembersByUserIdResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans/{clanId}/members/{userId}',
         ...options,
         headers: {
@@ -197,6 +287,12 @@ export const putClansByClanIdMembersByUserId = <TComposable extends Composable =
  */
 export const getClans = <TComposable extends Composable = '$fetch', DefaultT extends GetClansResponse = GetClansResponse>(options: Options<TComposable, GetClansData, GetClansResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetClansResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans',
         ...options
     });
@@ -207,6 +303,12 @@ export const getClans = <TComposable extends Composable = '$fetch', DefaultT ext
  */
 export const postClans = <TComposable extends Composable = '$fetch', DefaultT extends PostClansResponse = PostClansResponse>(options: Options<TComposable, PostClansData, PostClansResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostClansResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans',
         ...options,
         headers: {
@@ -221,6 +323,12 @@ export const postClans = <TComposable extends Composable = '$fetch', DefaultT ex
  */
 export const putClansByClanId = <TComposable extends Composable = '$fetch', DefaultT extends PutClansByClanIdResponse = PutClansByClanIdResponse>(options: Options<TComposable, PutClansByClanIdData, PutClansByClanIdResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutClansByClanIdResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans/{clanId}',
         ...options,
         headers: {
@@ -235,6 +343,12 @@ export const putClansByClanId = <TComposable extends Composable = '$fetch', Defa
  */
 export const getClansByClanIdInvitations = <TComposable extends Composable = '$fetch', DefaultT extends GetClansByClanIdInvitationsResponse = GetClansByClanIdInvitationsResponse>(options: Options<TComposable, GetClansByClanIdInvitationsData, GetClansByClanIdInvitationsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetClansByClanIdInvitationsResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans/{clanId}/invitations',
         ...options
     });
@@ -245,6 +359,12 @@ export const getClansByClanIdInvitations = <TComposable extends Composable = '$f
  */
 export const postClansByClanIdInvitations = <TComposable extends Composable = '$fetch', DefaultT extends PostClansByClanIdInvitationsResponse = PostClansByClanIdInvitationsResponse>(options: Options<TComposable, PostClansByClanIdInvitationsData, PostClansByClanIdInvitationsResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostClansByClanIdInvitationsResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans/{clanId}/invitations',
         ...options,
         headers: {
@@ -259,6 +379,12 @@ export const postClansByClanIdInvitations = <TComposable extends Composable = '$
  */
 export const putClansByClanIdInvitationsByInvitationIdResponse = <TComposable extends Composable = '$fetch', DefaultT extends PutClansByClanIdInvitationsByInvitationIdResponseResponse = PutClansByClanIdInvitationsByInvitationIdResponseResponse>(options: Options<TComposable, PutClansByClanIdInvitationsByInvitationIdResponseData, PutClansByClanIdInvitationsByInvitationIdResponseResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutClansByClanIdInvitationsByInvitationIdResponseResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans/{clanId}/invitations/{invitationId}/response',
         ...options,
         headers: {
@@ -274,6 +400,12 @@ export const putClansByClanIdInvitationsByInvitationIdResponse = <TComposable ex
 export const getClansByClanIdArmory = <TComposable extends Composable = '$fetch', DefaultT extends GetClansByClanIdArmoryResponse = GetClansByClanIdArmoryResponse>(options: Options<TComposable, GetClansByClanIdArmoryData, GetClansByClanIdArmoryResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetClansByClanIdArmoryResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getClansByClanIdArmoryResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans/{clanId}/armory',
         ...options
     });
@@ -284,6 +416,12 @@ export const getClansByClanIdArmory = <TComposable extends Composable = '$fetch'
  */
 export const postClansByClanIdArmory = <TComposable extends Composable = '$fetch', DefaultT extends PostClansByClanIdArmoryResponse = PostClansByClanIdArmoryResponse>(options: Options<TComposable, PostClansByClanIdArmoryData, PostClansByClanIdArmoryResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostClansByClanIdArmoryResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans/{clanId}/armory',
         ...options,
         headers: {
@@ -298,6 +436,12 @@ export const postClansByClanIdArmory = <TComposable extends Composable = '$fetch
  */
 export const deleteClansByClanIdArmoryByUserItemId = <TComposable extends Composable = '$fetch', DefaultT extends DeleteClansByClanIdArmoryByUserItemIdResponse = DeleteClansByClanIdArmoryByUserItemIdResponse>(options: Options<TComposable, DeleteClansByClanIdArmoryByUserItemIdData, DeleteClansByClanIdArmoryByUserItemIdResponse, DefaultT>) => {
     return (options.client ?? client).delete<TComposable, DeleteClansByClanIdArmoryByUserItemIdResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans/{clanId}/armory/{userItemId}',
         ...options
     });
@@ -308,6 +452,12 @@ export const deleteClansByClanIdArmoryByUserItemId = <TComposable extends Compos
  */
 export const putClansByClanIdArmoryByUserItemIdBorrow = <TComposable extends Composable = '$fetch', DefaultT extends PutClansByClanIdArmoryByUserItemIdBorrowResponse = PutClansByClanIdArmoryByUserItemIdBorrowResponse>(options: Options<TComposable, PutClansByClanIdArmoryByUserItemIdBorrowData, PutClansByClanIdArmoryByUserItemIdBorrowResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutClansByClanIdArmoryByUserItemIdBorrowResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans/{clanId}/armory/{userItemId}/borrow',
         ...options
     });
@@ -318,6 +468,12 @@ export const putClansByClanIdArmoryByUserItemIdBorrow = <TComposable extends Com
  */
 export const putClansByClanIdArmoryByUserItemIdReturn = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PutClansByClanIdArmoryByUserItemIdReturnData, unknown, DefaultT>) => {
     return (options.client ?? client).put<TComposable, unknown | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Clans/{clanId}/armory/{userItemId}/return',
         ...options
     });
@@ -325,6 +481,12 @@ export const putClansByClanIdArmoryByUserItemIdReturn = <TComposable extends Com
 
 export const getConnectAuthorize = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, GetConnectAuthorizeData, unknown, DefaultT>) => {
     return (options.client ?? client).get<TComposable, unknown | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Connect/authorize',
         ...options
     });
@@ -332,6 +494,12 @@ export const getConnectAuthorize = <TComposable extends Composable = '$fetch', D
 
 export const postConnectAuthorize = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PostConnectAuthorizeData, unknown, DefaultT>) => {
     return (options.client ?? client).post<TComposable, unknown | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Connect/authorize',
         ...options
     });
@@ -339,6 +507,12 @@ export const postConnectAuthorize = <TComposable extends Composable = '$fetch', 
 
 export const postConnectToken = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PostConnectTokenData, unknown, DefaultT>) => {
     return (options.client ?? client).post<TComposable, unknown | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Connect/token',
         ...options
     });
@@ -346,6 +520,12 @@ export const postConnectToken = <TComposable extends Composable = '$fetch', Defa
 
 export const getConnectCallbackEpicGames = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, GetConnectCallbackEpicGamesData, unknown, DefaultT>) => {
     return (options.client ?? client).get<TComposable, unknown | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Connect/callback-epic-games',
         ...options
     });
@@ -353,6 +533,12 @@ export const getConnectCallbackEpicGames = <TComposable extends Composable = '$f
 
 export const getConnectCallbackMicrosoft = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, GetConnectCallbackMicrosoftData, unknown, DefaultT>) => {
     return (options.client ?? client).get<TComposable, unknown | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Connect/callback-microsoft',
         ...options
     });
@@ -360,6 +546,12 @@ export const getConnectCallbackMicrosoft = <TComposable extends Composable = '$f
 
 export const getConnectLogout = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, GetConnectLogoutData, unknown, DefaultT>) => {
     return (options.client ?? client).get<TComposable, unknown | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Connect/logout',
         ...options
     });
@@ -367,6 +559,12 @@ export const getConnectLogout = <TComposable extends Composable = '$fetch', Defa
 
 export const getGameServerStatistics = <TComposable extends Composable = '$fetch', DefaultT extends GetGameServerStatisticsResponse = GetGameServerStatisticsResponse>(options: Options<TComposable, GetGameServerStatisticsData, GetGameServerStatisticsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetGameServerStatisticsResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/game-server-statistics',
         ...options
     });
@@ -378,6 +576,12 @@ export const getGameServerStatistics = <TComposable extends Composable = '$fetch
 export const getGamesUsers = <TComposable extends Composable = '$fetch', DefaultT extends GetGamesUsersResponse = GetGamesUsersResponse>(options: Options<TComposable, GetGamesUsersData, GetGamesUsersResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetGamesUsersResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getGamesUsersResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Games/users',
         ...options
     });
@@ -389,6 +593,12 @@ export const getGamesUsers = <TComposable extends Composable = '$fetch', Default
 export const putGamesUsers = <TComposable extends Composable = '$fetch', DefaultT extends PutGamesUsersResponse = PutGamesUsersResponse>(options: Options<TComposable, PutGamesUsersData, PutGamesUsersResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutGamesUsersResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putGamesUsersResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Games/users',
         ...options,
         headers: {
@@ -404,6 +614,12 @@ export const putGamesUsers = <TComposable extends Composable = '$fetch', Default
 export const getGamesTournamentUsers = <TComposable extends Composable = '$fetch', DefaultT extends GetGamesTournamentUsersResponse = GetGamesTournamentUsersResponse>(options: Options<TComposable, GetGamesTournamentUsersData, GetGamesTournamentUsersResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetGamesTournamentUsersResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getGamesTournamentUsersResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Games/tournament-users',
         ...options
     });
@@ -414,6 +630,12 @@ export const getGamesTournamentUsers = <TComposable extends Composable = '$fetch
  */
 export const postGamesActivityLogs = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PostGamesActivityLogsData, unknown, DefaultT>) => {
     return (options.client ?? client).post<TComposable, unknown | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Games/activity-logs',
         ...options,
         headers: {
@@ -428,6 +650,12 @@ export const postGamesActivityLogs = <TComposable extends Composable = '$fetch',
  */
 export const getGamesClansById = <TComposable extends Composable = '$fetch', DefaultT extends GetGamesClansByIdResponse = GetGamesClansByIdResponse>(options: Options<TComposable, GetGamesClansByIdData, GetGamesClansByIdResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetGamesClansByIdResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Games/clans/{id}',
         ...options
     });
@@ -436,6 +664,12 @@ export const getGamesClansById = <TComposable extends Composable = '$fetch', Def
 export const postGamesRestrictions = <TComposable extends Composable = '$fetch', DefaultT extends PostGamesRestrictionsResponse = PostGamesRestrictionsResponse>(options: Options<TComposable, PostGamesRestrictionsData, PostGamesRestrictionsResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostGamesRestrictionsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postGamesRestrictionsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Games/restrictions',
         ...options,
         headers: {
@@ -451,6 +685,12 @@ export const postGamesRestrictions = <TComposable extends Composable = '$fetch',
 export const getItems = <TComposable extends Composable = '$fetch', DefaultT extends GetItemsResponse = GetItemsResponse>(options: Options<TComposable, GetItemsData, GetItemsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getItemsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Items',
         ...options
     });
@@ -459,6 +699,12 @@ export const getItems = <TComposable extends Composable = '$fetch', DefaultT ext
 export const getItemsUpgradesByBaseId = <TComposable extends Composable = '$fetch', DefaultT extends GetItemsUpgradesByBaseIdResponse = GetItemsUpgradesByBaseIdResponse>(options: Options<TComposable, GetItemsUpgradesByBaseIdData, GetItemsUpgradesByBaseIdResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetItemsUpgradesByBaseIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getItemsUpgradesByBaseIdResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Items/upgrades/{baseId}',
         ...options
     });
@@ -469,6 +715,12 @@ export const getItemsUpgradesByBaseId = <TComposable extends Composable = '$fetc
  */
 export const putItemsByIdEnable = <TComposable extends Composable = '$fetch', DefaultT extends PutItemsByIdEnableResponse = PutItemsByIdEnableResponse>(options: Options<TComposable, PutItemsByIdEnableData, PutItemsByIdEnableResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutItemsByIdEnableResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Items/{id}/enable',
         ...options,
         headers: {
@@ -483,6 +735,12 @@ export const putItemsByIdEnable = <TComposable extends Composable = '$fetch', De
  */
 export const postItemsByIdRefund = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PostItemsByIdRefundData, unknown, DefaultT>) => {
     return (options.client ?? client).post<TComposable, unknown | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Items/{id}/refund',
         ...options,
         headers: {
@@ -497,6 +755,12 @@ export const postItemsByIdRefund = <TComposable extends Composable = '$fetch', D
  */
 export const getLeaderboardLeaderboard = <TComposable extends Composable = '$fetch', DefaultT extends GetLeaderboardLeaderboardResponse = GetLeaderboardLeaderboardResponse>(options: Options<TComposable, GetLeaderboardLeaderboardData, GetLeaderboardLeaderboardResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetLeaderboardLeaderboardResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Leaderboard/leaderboard',
         ...options
     });
@@ -508,6 +772,12 @@ export const getLeaderboardLeaderboard = <TComposable extends Composable = '$fet
 export const getPartiesSelfUpdate = <TComposable extends Composable = '$fetch', DefaultT extends GetPartiesSelfUpdateResponse = GetPartiesSelfUpdateResponse>(options: Options<TComposable, GetPartiesSelfUpdateData, GetPartiesSelfUpdateResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetPartiesSelfUpdateResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getPartiesSelfUpdateResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Parties/self/update',
         ...options
     });
@@ -519,6 +789,12 @@ export const getPartiesSelfUpdate = <TComposable extends Composable = '$fetch', 
 export const postParties = <TComposable extends Composable = '$fetch', DefaultT extends PostPartiesResponse = PostPartiesResponse>(options: Options<TComposable, PostPartiesData, PostPartiesResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostPartiesResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postPartiesResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Parties',
         ...options,
         headers: {
@@ -534,6 +810,12 @@ export const postParties = <TComposable extends Composable = '$fetch', DefaultT 
 export const putPartiesSelfStatus = <TComposable extends Composable = '$fetch', DefaultT extends PutPartiesSelfStatusResponse = PutPartiesSelfStatusResponse>(options: Options<TComposable, PutPartiesSelfStatusData, PutPartiesSelfStatusResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutPartiesSelfStatusResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putPartiesSelfStatusResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Parties/self/status',
         ...options,
         headers: {
@@ -549,6 +831,12 @@ export const putPartiesSelfStatus = <TComposable extends Composable = '$fetch', 
 export const postPartiesSelfItems = <TComposable extends Composable = '$fetch', DefaultT extends PostPartiesSelfItemsResponse = PostPartiesSelfItemsResponse>(options: Options<TComposable, PostPartiesSelfItemsData, PostPartiesSelfItemsResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostPartiesSelfItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postPartiesSelfItemsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Parties/self/items',
         ...options,
         headers: {
@@ -561,6 +849,12 @@ export const postPartiesSelfItems = <TComposable extends Composable = '$fetch', 
 export const getPatchNotes = <TComposable extends Composable = '$fetch', DefaultT extends GetPatchNotesResponse = GetPatchNotesResponse>(options: Options<TComposable, GetPatchNotesData, GetPatchNotesResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetPatchNotesResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getPatchNotesResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/patch-notes',
         ...options
     });
@@ -572,6 +866,12 @@ export const getPatchNotes = <TComposable extends Composable = '$fetch', Default
 export const getRestrictions = <TComposable extends Composable = '$fetch', DefaultT extends GetRestrictionsResponse = GetRestrictionsResponse>(options: Options<TComposable, GetRestrictionsData, GetRestrictionsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetRestrictionsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getRestrictionsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Restrictions',
         ...options
     });
@@ -583,6 +883,12 @@ export const getRestrictions = <TComposable extends Composable = '$fetch', Defau
  */
 export const postRestrictions = <TComposable extends Composable = '$fetch', DefaultT extends PostRestrictionsResponse = PostRestrictionsResponse>(options: Options<TComposable, PostRestrictionsData, PostRestrictionsResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostRestrictionsResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Restrictions',
         ...options,
         headers: {
@@ -597,6 +903,12 @@ export const postRestrictions = <TComposable extends Composable = '$fetch', Defa
  */
 export const getSettings = <TComposable extends Composable = '$fetch', DefaultT extends GetSettingsResponse = GetSettingsResponse>(options: Options<TComposable, GetSettingsData, GetSettingsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetSettingsResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Settings',
         ...options
     });
@@ -607,6 +919,12 @@ export const getSettings = <TComposable extends Composable = '$fetch', DefaultT 
  */
 export const patchSettings = <TComposable extends Composable = '$fetch', DefaultT extends PatchSettingsResponse = PatchSettingsResponse>(options: Options<TComposable, PatchSettingsData, PatchSettingsResponse, DefaultT>) => {
     return (options.client ?? client).patch<TComposable, PatchSettingsResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Settings',
         ...options,
         headers: {
@@ -622,6 +940,12 @@ export const patchSettings = <TComposable extends Composable = '$fetch', Default
 export const getSettlements = <TComposable extends Composable = '$fetch', DefaultT extends GetSettlementsResponse = GetSettlementsResponse>(options: Options<TComposable, GetSettlementsData, GetSettlementsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetSettlementsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getSettlementsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Settlements',
         ...options
     });
@@ -633,6 +957,12 @@ export const getSettlements = <TComposable extends Composable = '$fetch', Defaul
 export const getSettlementsBySettlementId = <TComposable extends Composable = '$fetch', DefaultT extends GetSettlementsBySettlementIdResponse = GetSettlementsBySettlementIdResponse>(options: Options<TComposable, GetSettlementsBySettlementIdData, GetSettlementsBySettlementIdResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetSettlementsBySettlementIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getSettlementsBySettlementIdResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Settlements/{settlementId}',
         ...options
     });
@@ -644,6 +974,12 @@ export const getSettlementsBySettlementId = <TComposable extends Composable = '$
 export const postSettlementsBySettlementId = <TComposable extends Composable = '$fetch', DefaultT extends PostSettlementsBySettlementIdResponse = PostSettlementsBySettlementIdResponse>(options: Options<TComposable, PostSettlementsBySettlementIdData, PostSettlementsBySettlementIdResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostSettlementsBySettlementIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postSettlementsBySettlementIdResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Settlements/{settlementId}',
         ...options,
         headers: {
@@ -659,6 +995,12 @@ export const postSettlementsBySettlementId = <TComposable extends Composable = '
 export const getSettlementsBySettlementIdItems = <TComposable extends Composable = '$fetch', DefaultT extends GetSettlementsBySettlementIdItemsResponse = GetSettlementsBySettlementIdItemsResponse>(options: Options<TComposable, GetSettlementsBySettlementIdItemsData, GetSettlementsBySettlementIdItemsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetSettlementsBySettlementIdItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getSettlementsBySettlementIdItemsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Settlements/{settlementId}/items',
         ...options
     });
@@ -670,6 +1012,12 @@ export const getSettlementsBySettlementIdItems = <TComposable extends Composable
 export const postSettlementsBySettlementIdItems = <TComposable extends Composable = '$fetch', DefaultT extends PostSettlementsBySettlementIdItemsResponse = PostSettlementsBySettlementIdItemsResponse>(options: Options<TComposable, PostSettlementsBySettlementIdItemsData, PostSettlementsBySettlementIdItemsResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostSettlementsBySettlementIdItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postSettlementsBySettlementIdItemsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Settlements/{settlementId}/items',
         ...options,
         headers: {
@@ -685,6 +1033,12 @@ export const postSettlementsBySettlementIdItems = <TComposable extends Composabl
 export const getSettlementsBySettlementIdShopItems = <TComposable extends Composable = '$fetch', DefaultT extends GetSettlementsBySettlementIdShopItemsResponse = GetSettlementsBySettlementIdShopItemsResponse>(options: Options<TComposable, GetSettlementsBySettlementIdShopItemsData, GetSettlementsBySettlementIdShopItemsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetSettlementsBySettlementIdShopItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getSettlementsBySettlementIdShopItemsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Settlements/{settlementId}/shop/items',
         ...options
     });
@@ -696,6 +1050,12 @@ export const getSettlementsBySettlementIdShopItems = <TComposable extends Compos
 export const getTerrains = <TComposable extends Composable = '$fetch', DefaultT extends GetTerrainsResponse = GetTerrainsResponse>(options: Options<TComposable, GetTerrainsData, GetTerrainsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetTerrainsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getTerrainsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Terrains',
         ...options
     });
@@ -707,6 +1067,12 @@ export const getTerrains = <TComposable extends Composable = '$fetch', DefaultT 
 export const postTerrains = <TComposable extends Composable = '$fetch', DefaultT extends PostTerrainsResponse = PostTerrainsResponse>(options: Options<TComposable, PostTerrainsData, PostTerrainsResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostTerrainsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postTerrainsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Terrains',
         ...options,
         headers: {
@@ -721,6 +1087,12 @@ export const postTerrains = <TComposable extends Composable = '$fetch', DefaultT
  */
 export const deleteTerrainsById = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, DeleteTerrainsByIdData, unknown, DefaultT>) => {
     return (options.client ?? client).delete<TComposable, unknown | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Terrains/{id}',
         ...options
     });
@@ -732,6 +1104,12 @@ export const deleteTerrainsById = <TComposable extends Composable = '$fetch', De
 export const putTerrainsById = <TComposable extends Composable = '$fetch', DefaultT extends PutTerrainsByIdResponse = PutTerrainsByIdResponse>(options: Options<TComposable, PutTerrainsByIdData, PutTerrainsByIdResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutTerrainsByIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putTerrainsByIdResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Terrains/{id}',
         ...options,
         headers: {
@@ -748,6 +1126,12 @@ export const putTerrainsById = <TComposable extends Composable = '$fetch', Defau
 export const getUsersSearch = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSearchResponse = GetUsersSearchResponse>(options: Options<TComposable, GetUsersSearchData, GetUsersSearchResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersSearchResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSearchResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/search',
         ...options
     });
@@ -758,6 +1142,12 @@ export const getUsersSearch = <TComposable extends Composable = '$fetch', Defaul
  */
 export const deleteUsersSelf = <TComposable extends Composable = '$fetch', DefaultT extends DeleteUsersSelfResponse = DeleteUsersSelfResponse>(options: Options<TComposable, DeleteUsersSelfData, DeleteUsersSelfResponse, DefaultT>) => {
     return (options.client ?? client).delete<TComposable, DeleteUsersSelfResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self',
         ...options
     });
@@ -768,6 +1158,12 @@ export const deleteUsersSelf = <TComposable extends Composable = '$fetch', Defau
  */
 export const getUsersSelf = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfResponse = GetUsersSelfResponse>(options: Options<TComposable, GetUsersSelfData, GetUsersSelfResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersSelfResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self',
         ...options
     });
@@ -778,6 +1174,12 @@ export const getUsersSelf = <TComposable extends Composable = '$fetch', DefaultT
  */
 export const putUsersSelf = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfResponse = PutUsersSelfResponse>(options: Options<TComposable, PutUsersSelfData, PutUsersSelfResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self',
         ...options,
         headers: {
@@ -793,6 +1195,12 @@ export const putUsersSelf = <TComposable extends Composable = '$fetch', DefaultT
 export const getUsersByUserId = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersByUserIdResponse = GetUsersByUserIdResponse>(options: Options<TComposable, GetUsersByUserIdData, GetUsersByUserIdResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersByUserIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersByUserIdResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/{userId}',
         ...options
     });
@@ -804,6 +1212,12 @@ export const getUsersByUserId = <TComposable extends Composable = '$fetch', Defa
 export const putUsersByUserIdNote = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersByUserIdNoteResponse = PutUsersByUserIdNoteResponse>(options: Options<TComposable, PutUsersByUserIdNoteData, PutUsersByUserIdNoteResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersByUserIdNoteResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putUsersByUserIdNoteResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/{userId}/note',
         ...options,
         headers: {
@@ -818,6 +1232,12 @@ export const putUsersByUserIdNote = <TComposable extends Composable = '$fetch', 
  */
 export const getUsersByUserIdCharacters = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersByUserIdCharactersResponse = GetUsersByUserIdCharactersResponse>(options: Options<TComposable, GetUsersByUserIdCharactersData, GetUsersByUserIdCharactersResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersByUserIdCharactersResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/{userId}/characters',
         ...options
     });
@@ -829,6 +1249,12 @@ export const getUsersByUserIdCharacters = <TComposable extends Composable = '$fe
 export const getUsers = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersResponse = GetUsersResponse>(options: Options<TComposable, GetUsersData, GetUsersResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users',
         ...options
     });
@@ -840,6 +1266,12 @@ export const getUsers = <TComposable extends Composable = '$fetch', DefaultT ext
 export const getUsersByIdRestrictions = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersByIdRestrictionsResponse = GetUsersByIdRestrictionsResponse>(options: Options<TComposable, GetUsersByIdRestrictionsData, GetUsersByIdRestrictionsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersByIdRestrictionsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersByIdRestrictionsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/{id}/restrictions',
         ...options
     });
@@ -851,6 +1283,12 @@ export const getUsersByIdRestrictions = <TComposable extends Composable = '$fetc
 export const getUsersSelfRestriction = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfRestrictionResponse = GetUsersSelfRestrictionResponse>(options: Options<TComposable, GetUsersSelfRestrictionData, GetUsersSelfRestrictionResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersSelfRestrictionResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSelfRestrictionResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/restriction',
         ...options
     });
@@ -861,6 +1299,12 @@ export const getUsersSelfRestriction = <TComposable extends Composable = '$fetch
  */
 export const putUsersByIdRewards = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersByIdRewardsResponse = PutUsersByIdRewardsResponse>(options: Options<TComposable, PutUsersByIdRewardsData, PutUsersByIdRewardsResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersByIdRewardsResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/{id}/rewards',
         ...options,
         headers: {
@@ -875,6 +1319,12 @@ export const putUsersByIdRewards = <TComposable extends Composable = '$fetch', D
  */
 export const deleteUsersSelfCharactersById = <TComposable extends Composable = '$fetch', DefaultT extends DeleteUsersSelfCharactersByIdResponse = DeleteUsersSelfCharactersByIdResponse>(options: Options<TComposable, DeleteUsersSelfCharactersByIdData, DeleteUsersSelfCharactersByIdResponse, DefaultT>) => {
     return (options.client ?? client).delete<TComposable, DeleteUsersSelfCharactersByIdResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}',
         ...options
     });
@@ -885,6 +1335,12 @@ export const deleteUsersSelfCharactersById = <TComposable extends Composable = '
  */
 export const getUsersSelfCharactersById = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersByIdResponse = GetUsersSelfCharactersByIdResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdData, GetUsersSelfCharactersByIdResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersSelfCharactersByIdResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}',
         ...options
     });
@@ -895,6 +1351,12 @@ export const getUsersSelfCharactersById = <TComposable extends Composable = '$fe
  */
 export const putUsersSelfCharactersById = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdResponse = PutUsersSelfCharactersByIdResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdData, PutUsersSelfCharactersByIdResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfCharactersByIdResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}',
         ...options,
         headers: {
@@ -909,6 +1371,12 @@ export const putUsersSelfCharactersById = <TComposable extends Composable = '$fe
  */
 export const getUsersSelfCharacters = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersResponse = GetUsersSelfCharactersResponse>(options: Options<TComposable, GetUsersSelfCharactersData, GetUsersSelfCharactersResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersSelfCharactersResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters',
         ...options
     });
@@ -919,6 +1387,12 @@ export const getUsersSelfCharacters = <TComposable extends Composable = '$fetch'
  */
 export const getUsersSelfCharactersByIdCharacteristics = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersByIdCharacteristicsResponse = GetUsersSelfCharactersByIdCharacteristicsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdCharacteristicsData, GetUsersSelfCharactersByIdCharacteristicsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersSelfCharactersByIdCharacteristicsResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}/characteristics',
         ...options
     });
@@ -929,6 +1403,12 @@ export const getUsersSelfCharactersByIdCharacteristics = <TComposable extends Co
  */
 export const putUsersSelfCharactersByIdCharacteristics = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdCharacteristicsResponse = PutUsersSelfCharactersByIdCharacteristicsResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdCharacteristicsData, PutUsersSelfCharactersByIdCharacteristicsResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfCharactersByIdCharacteristicsResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}/characteristics',
         ...options,
         headers: {
@@ -943,6 +1423,12 @@ export const putUsersSelfCharactersByIdCharacteristics = <TComposable extends Co
  */
 export const putUsersCharactersCompetitiveRatings = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PutUsersCharactersCompetitiveRatingsData, unknown, DefaultT>) => {
     return (options.client ?? client).put<TComposable, unknown | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/characters/competitive-ratings',
         ...options
     });
@@ -953,6 +1439,12 @@ export const putUsersCharactersCompetitiveRatings = <TComposable extends Composa
  */
 export const putUsersCharactersRespecialize = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PutUsersCharactersRespecializeData, unknown, DefaultT>) => {
     return (options.client ?? client).put<TComposable, unknown | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/characters/respecialize',
         ...options
     });
@@ -963,6 +1455,12 @@ export const putUsersCharactersRespecialize = <TComposable extends Composable = 
  */
 export const putUsersSelfCharactersByIdCharacteristicsConvert = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdCharacteristicsConvertResponse = PutUsersSelfCharactersByIdCharacteristicsConvertResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdCharacteristicsConvertData, PutUsersSelfCharactersByIdCharacteristicsConvertResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfCharactersByIdCharacteristicsConvertResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}/characteristics/convert',
         ...options,
         headers: {
@@ -978,6 +1476,12 @@ export const putUsersSelfCharactersByIdCharacteristicsConvert = <TComposable ext
 export const getUsersSelfCharactersByIdItems = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersByIdItemsResponse = GetUsersSelfCharactersByIdItemsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdItemsData, GetUsersSelfCharactersByIdItemsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersSelfCharactersByIdItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSelfCharactersByIdItemsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}/items',
         ...options
     });
@@ -989,6 +1493,12 @@ export const getUsersSelfCharactersByIdItems = <TComposable extends Composable =
 export const putUsersSelfCharactersByIdItems = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdItemsResponse = PutUsersSelfCharactersByIdItemsResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdItemsData, PutUsersSelfCharactersByIdItemsResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfCharactersByIdItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putUsersSelfCharactersByIdItemsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}/items',
         ...options,
         headers: {
@@ -1003,6 +1513,12 @@ export const putUsersSelfCharactersByIdItems = <TComposable extends Composable =
  */
 export const putUsersSelfCharactersByIdActive = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdActiveResponse = PutUsersSelfCharactersByIdActiveResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdActiveData, PutUsersSelfCharactersByIdActiveResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfCharactersByIdActiveResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}/active',
         ...options,
         headers: {
@@ -1017,6 +1533,12 @@ export const putUsersSelfCharactersByIdActive = <TComposable extends Composable 
  */
 export const getUsersSelfCharactersByIdStatistics = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersByIdStatisticsResponse = GetUsersSelfCharactersByIdStatisticsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdStatisticsData, GetUsersSelfCharactersByIdStatisticsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersSelfCharactersByIdStatisticsResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}/statistics',
         ...options
     });
@@ -1028,6 +1550,12 @@ export const getUsersSelfCharactersByIdStatistics = <TComposable extends Composa
 export const getUsersSelfCharactersByIdEarningStatistics = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersByIdEarningStatisticsResponse = GetUsersSelfCharactersByIdEarningStatisticsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdEarningStatisticsData, GetUsersSelfCharactersByIdEarningStatisticsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersSelfCharactersByIdEarningStatisticsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSelfCharactersByIdEarningStatisticsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}/earning-statistics',
         ...options
     });
@@ -1039,6 +1567,12 @@ export const getUsersSelfCharactersByIdEarningStatistics = <TComposable extends 
 export const getUsersSelfCharactersByIdLimitations = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersByIdLimitationsResponse = GetUsersSelfCharactersByIdLimitationsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdLimitationsData, GetUsersSelfCharactersByIdLimitationsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersSelfCharactersByIdLimitationsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSelfCharactersByIdLimitationsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}/limitations',
         ...options
     });
@@ -1049,6 +1583,12 @@ export const getUsersSelfCharactersByIdLimitations = <TComposable extends Compos
  */
 export const putUsersByUserIdCharactersByIdRetire = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersByUserIdCharactersByIdRetireResponse = PutUsersByUserIdCharactersByIdRetireResponse>(options: Options<TComposable, PutUsersByUserIdCharactersByIdRetireData, PutUsersByUserIdCharactersByIdRetireResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersByUserIdCharactersByIdRetireResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/{userId}/characters/{id}/retire',
         ...options
     });
@@ -1059,6 +1599,12 @@ export const putUsersByUserIdCharactersByIdRetire = <TComposable extends Composa
  */
 export const putUsersSelfCharactersByIdRetire = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdRetireResponse = PutUsersSelfCharactersByIdRetireResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdRetireData, PutUsersSelfCharactersByIdRetireResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfCharactersByIdRetireResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}/retire',
         ...options
     });
@@ -1069,6 +1615,12 @@ export const putUsersSelfCharactersByIdRetire = <TComposable extends Composable 
  */
 export const putUsersSelfCharactersByIdRespecialize = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdRespecializeResponse = PutUsersSelfCharactersByIdRespecializeResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdRespecializeData, PutUsersSelfCharactersByIdRespecializeResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfCharactersByIdRespecializeResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}/respecialize',
         ...options
     });
@@ -1079,6 +1631,12 @@ export const putUsersSelfCharactersByIdRespecialize = <TComposable extends Compo
  */
 export const putUsersSelfCharactersByIdTournament = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdTournamentResponse = PutUsersSelfCharactersByIdTournamentResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdTournamentData, PutUsersSelfCharactersByIdTournamentResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfCharactersByIdTournamentResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/characters/{id}/tournament',
         ...options
     });
@@ -1089,6 +1647,12 @@ export const putUsersSelfCharactersByIdTournament = <TComposable extends Composa
  */
 export const putUsersByUserIdCharactersByCharacterIdRewards = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersByUserIdCharactersByCharacterIdRewardsResponse = PutUsersByUserIdCharactersByCharacterIdRewardsResponse>(options: Options<TComposable, PutUsersByUserIdCharactersByCharacterIdRewardsData, PutUsersByUserIdCharactersByCharacterIdRewardsResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersByUserIdCharactersByCharacterIdRewardsResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/{userId}/characters/{characterId}/rewards',
         ...options,
         headers: {
@@ -1104,6 +1668,12 @@ export const putUsersByUserIdCharactersByCharacterIdRewards = <TComposable exten
 export const getUsersSelfItems = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfItemsResponse = GetUsersSelfItemsResponse>(options: Options<TComposable, GetUsersSelfItemsData, GetUsersSelfItemsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersSelfItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSelfItemsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/items',
         ...options
     });
@@ -1115,6 +1685,12 @@ export const getUsersSelfItems = <TComposable extends Composable = '$fetch', Def
 export const postUsersSelfItems = <TComposable extends Composable = '$fetch', DefaultT extends PostUsersSelfItemsResponse = PostUsersSelfItemsResponse>(options: Options<TComposable, PostUsersSelfItemsData, PostUsersSelfItemsResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostUsersSelfItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postUsersSelfItemsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/items',
         ...options,
         headers: {
@@ -1130,6 +1706,12 @@ export const postUsersSelfItems = <TComposable extends Composable = '$fetch', De
 export const putUsersSelfItemsByIdReforge = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfItemsByIdReforgeResponse = PutUsersSelfItemsByIdReforgeResponse>(options: Options<TComposable, PutUsersSelfItemsByIdReforgeData, PutUsersSelfItemsByIdReforgeResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfItemsByIdReforgeResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putUsersSelfItemsByIdReforgeResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/items/{id}/reforge',
         ...options
     });
@@ -1141,6 +1723,12 @@ export const putUsersSelfItemsByIdReforge = <TComposable extends Composable = '$
 export const putUsersSelfItemsByIdRepair = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfItemsByIdRepairResponse = PutUsersSelfItemsByIdRepairResponse>(options: Options<TComposable, PutUsersSelfItemsByIdRepairData, PutUsersSelfItemsByIdRepairResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfItemsByIdRepairResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putUsersSelfItemsByIdRepairResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/items/{id}/repair',
         ...options
     });
@@ -1152,6 +1740,12 @@ export const putUsersSelfItemsByIdRepair = <TComposable extends Composable = '$f
 export const putUsersSelfItemsByIdUpgrade = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfItemsByIdUpgradeResponse = PutUsersSelfItemsByIdUpgradeResponse>(options: Options<TComposable, PutUsersSelfItemsByIdUpgradeData, PutUsersSelfItemsByIdUpgradeResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfItemsByIdUpgradeResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putUsersSelfItemsByIdUpgradeResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/items/{id}/upgrade',
         ...options
     });
@@ -1162,6 +1756,12 @@ export const putUsersSelfItemsByIdUpgrade = <TComposable extends Composable = '$
  */
 export const deleteUsersSelfItemsById = <TComposable extends Composable = '$fetch', DefaultT extends DeleteUsersSelfItemsByIdResponse = DeleteUsersSelfItemsByIdResponse>(options: Options<TComposable, DeleteUsersSelfItemsByIdData, DeleteUsersSelfItemsByIdResponse, DefaultT>) => {
     return (options.client ?? client).delete<TComposable, DeleteUsersSelfItemsByIdResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/items/{id}',
         ...options
     });
@@ -1172,6 +1772,12 @@ export const deleteUsersSelfItemsById = <TComposable extends Composable = '$fetc
  */
 export const getUsersSelfClan = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfClanResponse = GetUsersSelfClanResponse>(options: Options<TComposable, GetUsersSelfClanData, GetUsersSelfClanResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersSelfClanResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/clan',
         ...options
     });
@@ -1179,6 +1785,12 @@ export const getUsersSelfClan = <TComposable extends Composable = '$fetch', Defa
 
 export const getUsersRewardRecent = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, GetUsersRewardRecentData, unknown, DefaultT>) => {
     return (options.client ?? client).get<TComposable, unknown | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/users/reward-recent',
         ...options
     });
@@ -1190,6 +1802,12 @@ export const getUsersRewardRecent = <TComposable extends Composable = '$fetch', 
 export const getUsersSelfNotifications = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfNotificationsResponse = GetUsersSelfNotificationsResponse>(options: Options<TComposable, GetUsersSelfNotificationsData, GetUsersSelfNotificationsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetUsersSelfNotificationsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSelfNotificationsResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/notifications',
         ...options
     });
@@ -1200,6 +1818,12 @@ export const getUsersSelfNotifications = <TComposable extends Composable = '$fet
  */
 export const deleteUsersSelfNotificationsById = <TComposable extends Composable = '$fetch', DefaultT extends DeleteUsersSelfNotificationsByIdResponse = DeleteUsersSelfNotificationsByIdResponse>(options: Options<TComposable, DeleteUsersSelfNotificationsByIdData, DeleteUsersSelfNotificationsByIdResponse, DefaultT>) => {
     return (options.client ?? client).delete<TComposable, DeleteUsersSelfNotificationsByIdResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/notifications/{id}',
         ...options
     });
@@ -1211,6 +1835,12 @@ export const deleteUsersSelfNotificationsById = <TComposable extends Composable 
 export const putUsersSelfNotificationsById = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfNotificationsByIdResponse = PutUsersSelfNotificationsByIdResponse>(options: Options<TComposable, PutUsersSelfNotificationsByIdData, PutUsersSelfNotificationsByIdResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfNotificationsByIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putUsersSelfNotificationsByIdResponseTransformer,
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/notifications/{id}',
         ...options
     });
@@ -1221,6 +1851,12 @@ export const putUsersSelfNotificationsById = <TComposable extends Composable = '
  */
 export const putUsersSelfNotificationsReadAll = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfNotificationsReadAllResponse = PutUsersSelfNotificationsReadAllResponse>(options: Options<TComposable, PutUsersSelfNotificationsReadAllData, PutUsersSelfNotificationsReadAllResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutUsersSelfNotificationsReadAllResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/notifications/readAll',
         ...options
     });
@@ -1231,6 +1867,12 @@ export const putUsersSelfNotificationsReadAll = <TComposable extends Composable 
  */
 export const deleteUsersSelfNotificationsDeleteAll = <TComposable extends Composable = '$fetch', DefaultT extends DeleteUsersSelfNotificationsDeleteAllResponse = DeleteUsersSelfNotificationsDeleteAllResponse>(options: Options<TComposable, DeleteUsersSelfNotificationsDeleteAllData, DeleteUsersSelfNotificationsDeleteAllResponse, DefaultT>) => {
     return (options.client ?? client).delete<TComposable, DeleteUsersSelfNotificationsDeleteAllResponse | DefaultT, unknown, DefaultT>({
+        security: [
+            {
+                scheme: 'bearer',
+                type: 'http'
+            }
+        ],
         url: '/Users/self/notifications/deleteAll',
         ...options
     });

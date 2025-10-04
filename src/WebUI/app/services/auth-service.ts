@@ -1,7 +1,3 @@
-// @vitest-environment jsdom
-
-import type { User } from 'oidc-client-ts'
-
 import {
   // Log,
   UserManager,
@@ -12,9 +8,6 @@ import type { Platform } from '~/models/platform'
 
 // Log.setLogger(console)
 // Log.setLevel(Log.DEBUG)
-
-export const extractToken = (user: User | null): string | null =>
-  user !== null ? user.access_token : null
 
 export const parseJwt = (token: string) =>
   // eslint-disable-next-line node/prefer-global/buffer
@@ -41,4 +34,4 @@ export const login = (platform: Platform) => userManager.signinRedirect({
 
 export const logout = () => userManager.signoutRedirect()
 
-export const getToken = async () => extractToken(await getUser())
+export const getToken = async () => (await getUser())?.access_token

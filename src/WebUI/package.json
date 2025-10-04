@@ -7,7 +7,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "openapi-ts": "export NODE_TLS_REJECT_UNAUTHORIZED=0 openapi-ts",
+    "openapi-ts": "export NODE_TLS_REJECT_UNAUTHORIZED=0 && openapi-ts",
     "test:unit": "vitest",
     "test:unit:coverage": "vitest --coverage",
     "lint": "eslint",

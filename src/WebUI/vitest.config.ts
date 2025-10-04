@@ -13,7 +13,7 @@ export default defineConfig({
           setupFiles: path.resolve(__dirname, './test/setup.ts'),
           name: 'unit',
           // include: ['test/unit/**/*.{spec,test}.ts'],
-          environment: 'jsdom',
+          environment: 'node',
         },
         resolve: {
           alias: {

@@ -9,30 +9,26 @@ import type { Platform } from './models/platform'
 
 import { PLATFORM } from './models/platform'
 
+export interface Result<TData> {
+  data: TData | null
+  errors: Error[] | null
+}
+
 interface CrpgApiError {
   code: string
-  type: CrpgApiErrorType
+  type: 'InternalError' | 'Forbidden' | 'Conflict' | 'NotFound' | 'Validation'
   title: string | null
   detail: string | null
   traceId: string | null
   stackTrace: string | null
 }
 
-enum CrpgApiErrorType {
-  InternalError = 'InternalError',
-  Forbidden = 'Forbidden',
-  Conflict = 'Conflict',
-  NotFound = 'NotFound',
-  Validation = 'Validation',
-}
-
 export const createClientConfig: CreateClientConfig = (config) => {
   return ({
     ...config,
     baseURL: import.meta.env.NUXT_PUBLIC_API_BASE_URL,
-    async onRequest({ options }) {
-      options.headers.set('Authorization', `Bearer ${await getToken()}`)
-    },
+    auth: () => getToken(),
+
     async onResponseError({ response }) {
       const toast = useToast()
       const route = useRoute()

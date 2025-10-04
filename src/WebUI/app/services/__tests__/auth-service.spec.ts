@@ -1,10 +1,9 @@
-import type { User } from 'oidc-client-ts'
-
+// @vitest-environment jsdom
 import { describe, expect, it, vi } from 'vitest'
 
 import { PLATFORM } from '~/models/platform'
 
-import { extractToken, getToken, getUser, login, logout, parseJwt } from '../auth-service'
+import { getToken, getUser, login, logout, parseJwt } from '../auth-service'
 
 const { mockedGetUser, mockedSigninRedirect, mockedSignoutRedirect } = vi.hoisted(() => ({
   mockedGetUser: vi.fn(),
@@ -12,8 +11,7 @@ const { mockedGetUser, mockedSigninRedirect, mockedSignoutRedirect } = vi.hoiste
   mockedSignoutRedirect: vi.fn(),
 }))
 
-const JWT_TOKEN
-  = 'eyJhbGciOiJSUzI1NiIsImtpZCI6IkUyMUZDMEIzMUYwRkUxOEQwM0I2ODUzNzAxQkRFQUIyIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2NjU5NDk4NjUsImV4cCI6MTY2NTk1MDQ2NSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6ODAwMCIsImNsaWVudF9pZCI6ImNycGctd2ViLXVpIiwic3ViIjoiMiIsImF1dGhfdGltZSI6MTY2NTk0OTg1MiwiaWRwIjoibG9jYWwiLCJyb2xlIjoiVXNlciIsImp0aSI6IjY2N0RFMzZDOTg0RUFDRENBMDZBNUVDQkVGNTBDRDBEIiwic2lkIjoiOTAxRTFBNUNEQUVBRjMxMjRBMjZCODJDRDUzNjM2RTYiLCJpYXQiOjE2NjU5NDk4NTMsInNjb3BlIjpbIm9wZW5pZCIsInVzZXJfYXBpIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.Js5ze2JNSew0m5UD86HyA62cMvPxnFJACa8IhQW59vzTABticqtdo8070soza-11JJyT_zHAI97SWSQRUoQ4w1pCdPmMsh5HyMueMx-OO_cFpkZg6PkpQlaSYB_Z_916k5nhCRVkNK7X4H2MByhkMd1rh0yFFGvYKVAnWKNYZFYL2y9VPv510b8RV0JyfjZvwLRN-cU2n7xVHkSzSE7WYz6X3D9l4MS-cOZRt3Y62EqjuHbBY3sJk-VIJCAuc0puGmms69_-9KV5cMLNfwoHOihYctSB7JVh-oSlXxuvkZHz_23eQnvsW5DLCgrOKnxMQBj44TRBwqHmrLl89UV3GQ'
+const JWT_TOKEN = 'eyJhbGciOiJSUzI1NiIsImtpZCI6IkUyMUZDMEIzMUYwRkUxOEQwM0I2ODUzNzAxQkRFQUIyIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2NjU5NDk4NjUsImV4cCI6MTY2NTk1MDQ2NSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6ODAwMCIsImNsaWVudF9pZCI6ImNycGctd2ViLXVpIiwic3ViIjoiMiIsImF1dGhfdGltZSI6MTY2NTk0OTg1MiwiaWRwIjoibG9jYWwiLCJyb2xlIjoiVXNlciIsImp0aSI6IjY2N0RFMzZDOTg0RUFDRENBMDZBNUVDQkVGNTBDRDBEIiwic2lkIjoiOTAxRTFBNUNEQUVBRjMxMjRBMjZCODJDRDUzNjM2RTYiLCJpYXQiOjE2NjU5NDk4NTMsInNjb3BlIjpbIm9wZW5pZCIsInVzZXJfYXBpIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.Js5ze2JNSew0m5UD86HyA62cMvPxnFJACa8IhQW59vzTABticqtdo8070soza-11JJyT_zHAI97SWSQRUoQ4w1pCdPmMsh5HyMueMx-OO_cFpkZg6PkpQlaSYB_Z_916k5nhCRVkNK7X4H2MByhkMd1rh0yFFGvYKVAnWKNYZFYL2y9VPv510b8RV0JyfjZvwLRN-cU2n7xVHkSzSE7WYz6X3D9l4MS-cOZRt3Y62EqjuHbBY3sJk-VIJCAuc0puGmms69_-9KV5cMLNfwoHOihYctSB7JVh-oSlXxuvkZHz_23eQnvsW5DLCgrOKnxMQBj44TRBwqHmrLl89UV3GQ'
 
 const DECODED_TOKEN = {
   amr: ['pwd'],
@@ -41,14 +39,6 @@ vi.mock('oidc-client-ts', () => ({
 }))
 
 describe('utils', () => {
-  it('extractToken', () => {
-    const payload = {
-      access_token: JWT_TOKEN,
-    }
-
-    expect(extractToken(payload as User)).toEqual(JWT_TOKEN)
-  })
-
   it('parseJwt', () => {
     expect(parseJwt(JWT_TOKEN)).toEqual(DECODED_TOKEN)
   })

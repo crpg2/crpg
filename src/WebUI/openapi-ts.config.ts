@@ -14,7 +14,6 @@ export default defineConfig({
     {
       name: '@hey-api/sdk',
       transformer: '@hey-api/transformers',
-      auth: false,
       client: '@hey-api/client-nuxt',
     },
     {

@@ -20,7 +20,6 @@ import type { MetadataDict } from '~/models/metadata'
 import type {
   User,
   UserItem,
-  UserItemsByType,
   UserNotification,
   UserPublic,
   UserRestrictionPublic,
@@ -51,26 +50,6 @@ export const upgradeUserItem = (userItemId: number) =>
 
 export const reforgeUserItem = (userItemId: number) =>
   putUsersSelfItemsByIdReforge({ path: { id: userItemId } })
-
-export const groupUserItemsByType = (items: UserItem[]) =>
-  items
-    .reduce((itemsGroup, ui) => {
-      const type = ui.item.type
-      const currentGroup = itemsGroup.find(item => item.type === type)
-
-      if (currentGroup) {
-        currentGroup.items.push(ui)
-      }
-      else {
-        itemsGroup.push({
-          items: [ui],
-          type,
-        })
-      }
-
-      return itemsGroup
-    }, [] as UserItemsByType[])
-    .sort((a, b) => a.type.localeCompare(b.type))
 
 export const getUserRestriction = async (): Promise<UserRestrictionPublic> =>
   (await getUsersSelfRestriction({ })).data
