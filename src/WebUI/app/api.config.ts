@@ -28,9 +28,8 @@ export const createClientConfig: CreateClientConfig = (config) => {
     ...config,
     baseURL: import.meta.env.NUXT_PUBLIC_API_BASE_URL,
     auth: () => getToken(),
+    // TODO: spec
     async onResponseError({ response }) {
-      console.log('ddd', 'ddd')
-
       const route = useRoute()
       const toast = useToast()
 
