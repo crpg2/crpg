@@ -91,7 +91,7 @@ describe('useHappyHours', () => {
     expect(mockedUseToastAdd).not.toHaveBeenCalled()
   })
 
-  it('показывает toast при завершении Happy Hours', () => {
+  it('displays a toast when Happy Hours ends', () => {
     const { onEndHH } = useHappyHours()
     onEndHH()
     expect(mockedUseToastAdd).toHaveBeenCalledWith(expect.objectContaining({ title: 'hh.notify.ended' }))

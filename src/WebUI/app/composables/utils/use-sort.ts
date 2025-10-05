@@ -7,28 +7,18 @@ export const SORT = {
 
 export type Sort = ValueOf<typeof SORT>
 
-const encodeValue = (key: string, value: Sort) => `${key}_${value}`
+const encodeValue = (key: string, value: Sort) => `${key}_${value}` as Sort
 const decodeValue = (key: string, value: string) => value.replace(`${key}_`, '') as Sort
 
-// TODO:
 export const useSort = (key: string) => {
-  const route = useRoute()
-  const router = useRouter()
-
-  const sort = computed({
-    get() {
-      return route.query?.sort !== undefined
-        ? decodeValue(key, route.query?.sort as string)
-        : SORT.ASC
-    },
-
-    set(val: Sort) {
-      router.push({
-        query: {
-          ...route.query,
-          sort: val === SORT.ASC ? undefined : encodeValue(key, val),
-        },
-      })
+  const sort = useRouteQuery<Sort>('sort', SORT.ASC, {
+    transform: {
+      get(value) {
+        return decodeValue(key, value)
+      },
+      set(value) {
+        return encodeValue(key, value)
+      },
     },
   })
 
@@ -37,7 +27,7 @@ export const useSort = (key: string) => {
   }
 
   return {
-    sort: readonly(sort),
+    sort,
     toggleSort,
   }
 }

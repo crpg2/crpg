@@ -1,4 +1,5 @@
-// TODO: SPEC
+import { computed, onBeforeUnmount, onMounted, readonly, ref } from 'vue'
+
 export const useStickySidebar = (
   el: Ref<HTMLDivElement | null>,
   paddingTop = 0,
@@ -60,7 +61,6 @@ export const useStickySidebar = (
     _updateElHeight()
 
     if (elHeight.value > screenHeight.value - paddingTop) {
-      // events with the same parameters aren't duplicated, there's no point in checking
       window.addEventListener('scroll', _onScroll, {
         capture: false,
         passive: true,
@@ -73,7 +73,6 @@ export const useStickySidebar = (
 
   const _onResize = () => {
     screenHeight.value = window.innerHeight
-
     _handleScrollEventListener()
   }
 
@@ -89,18 +88,15 @@ export const useStickySidebar = (
   onMounted(() => {
     if (el.value !== null) {
       window.addEventListener('resize', _onResize)
-      resizeObserver.observe(el.value!)
-
+      resizeObserver.observe(el.value)
       _handleScrollEventListener()
     }
   })
 
   onBeforeUnmount(() => {
-    if (el.value !== null) {
-      window.removeEventListener('resize', _onResize)
-      window.removeEventListener('scroll', _onScroll)
-      resizeObserver.unobserve(el.value)
-    }
+    window.removeEventListener('resize', _onResize)
+    window.removeEventListener('scroll', _onScroll)
+    resizeObserver.disconnect()
   })
 
   return {
