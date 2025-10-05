@@ -1,4 +1,5 @@
 import { weaponProficiencyCostCoefs } from '~root/data/constants.json'
+import { computed, ref, toValue } from 'vue'
 
 import type {
   CharacterCharacteristics,
@@ -105,11 +106,11 @@ const skillRequirementsSatisfied = (
     case 'athletics':
     case 'riding':
     case 'weaponMaster':
-      return skill <= Math.floor(characteristics.attributes.agility / 3)
+      return skill <= Math.floor(characteristics.attributes.agility / 3) // TODO: move "3" to constants.json
 
     case 'mountedArchery':
     case 'shield':
-      return skill <= Math.floor(characteristics.attributes.agility / 6)
+      return skill <= Math.floor(characteristics.attributes.agility / 6) // TODO: move "6" to constants.json
 
     default:
       return false
@@ -209,9 +210,8 @@ export const useCharacterCharacteristicBuilder = (
   const getInputProps = (
     characteristicSectionKey: CharacteristicSectionKey,
     characteristicKey: CharacteristicKey,
-    noLimit = false, // TODO: FIXME: need a name, for builder
+    noLimit = false, // TODO: FIXME: need a name, for builder page
   ): { modelValue: number, min: number, max: number } => {
-    //
     const initialValue = noLimit
       ? (characteristicDefault.value[characteristicSectionKey] as any)[characteristicKey]
       : (toValue(characteristicsInitial)[characteristicSectionKey] as any)[characteristicKey]
@@ -236,25 +236,25 @@ export const useCharacterCharacteristicBuilder = (
   }
 
   // TODO: FIXME iter count, unit
-  const onResetField = (
-    characteristicSectionKey: CharacteristicSectionKey,
-    characteristicKey: CharacteristicKey,
-  ) => {
-    for (let i = 1; i <= 300; i++) {
-      const inputProps = getInputProps(characteristicSectionKey, characteristicKey)
-      onInput(characteristicSectionKey, characteristicKey, inputProps.min!)
-    }
-  }
+  // const onResetField = (
+  //   characteristicSectionKey: CharacteristicSectionKey,
+  //   characteristicKey: CharacteristicKey,
+  // ) => {
+  //   for (let i = 1; i <= 300; i++) {
+  //     const inputProps = getInputProps(characteristicSectionKey, characteristicKey)
+  //     onInput(characteristicSectionKey, characteristicKey, inputProps.min!)
+  //   }
+  // }
 
-  const onFullFillField = (
-    characteristicSectionKey: CharacteristicSectionKey,
-    characteristicKey: CharacteristicKey,
-  ) => {
-    for (let i = 1; i <= 300; i++) {
-      const inputProps = getInputProps(characteristicSectionKey, characteristicKey)
-      onInput(characteristicSectionKey, characteristicKey, inputProps.max)
-    }
-  }
+  // const onFullFillField = (
+  //   characteristicSectionKey: CharacteristicSectionKey,
+  //   characteristicKey: CharacteristicKey,
+  // ) => {
+  //   for (let i = 1; i <= 300; i++) {
+  //     const inputProps = getInputProps(characteristicSectionKey, characteristicKey)
+  //     onInput(characteristicSectionKey, characteristicKey, inputProps.max)
+  //   }
+  // }
 
   const convertAttributeToSkills = () => {
     toValue(characteristicsInitial).attributes.points -= 1
@@ -270,12 +270,10 @@ export const useCharacterCharacteristicBuilder = (
     characteristicsDelta.value = createEmptyCharacteristic()
   }
 
-  const healthPoints = computed(() =>
-    computeHealthPoints(
-      characteristics.value.skills.ironFlesh,
-      characteristics.value.attributes.strength,
-    ),
-  )
+  const healthPoints = computed(() => computeHealthPoints(
+    characteristics.value.skills.ironFlesh,
+    characteristics.value.attributes.strength,
+  ))
 
   return {
     canConvertAttributesToSkills,
@@ -286,9 +284,9 @@ export const useCharacterCharacteristicBuilder = (
     currentSkillRequirementsSatisfied,
     getInputProps,
     isChangeValid,
-    onFullFillField,
+    // onFullFillField,
     onInput,
-    onResetField,
+    // onResetField,
     reset,
     wasChangeMade,
     healthPoints,
