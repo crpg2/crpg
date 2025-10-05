@@ -1,3 +1,5 @@
+import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
+
 import type { Clan, ClanUpdate } from '~/models/clan'
 
 import { CLAN_QUERY_KEYS } from '~/queries'

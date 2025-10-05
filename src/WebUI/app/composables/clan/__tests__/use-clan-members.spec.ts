@@ -1,5 +1,5 @@
 import { flushPromises } from '@vue/test-utils'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import { useClanMembers } from '../use-clan-members'
 
@@ -29,10 +29,6 @@ vi.mock('~/composables/clan/use-clan', () => ({
 }))
 
 describe('useClanMembers', () => {
-  beforeEach(() => {
-    vi.clearAllMocks()
-  })
-
   it('initial state and loads members', async () => {
     const { clanMembers, clanMembersCount, isLastMember } = useClanMembers()
 

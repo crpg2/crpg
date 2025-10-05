@@ -15,7 +15,7 @@ export const useClanArmory = () => {
 
   const {
     state: clanArmory,
-    execute: loadClanArmory,
+    executeImmediate: loadClanArmory,
     isLoading: isLoadingClanArmory,
   } = useAsyncState(() => getClanArmory(clan.value.id), [], { resetOnExecute: false })
 
