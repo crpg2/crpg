@@ -2,20 +2,18 @@
 import type { UserItem, UserPublic } from '~/models/user'
 
 import { getItemGraceTimeEnd, isGraceTimeExpired } from '~/services/item-service'
-import { useUserStore } from '~/stores/user'
 
 const {
   equipped = false,
   notMeetRequirement = false,
   userItem,
 } = defineProps<{
+  userId: number
   userItem: UserItem
   equipped?: boolean
   notMeetRequirement?: boolean
   lender?: UserPublic | null
 }>()
-
-const { user } = toRefs(useUserStore())
 
 const isNew = computed(() => !isGraceTimeExpired(getItemGraceTimeEnd(userItem)))
 </script>
@@ -37,8 +35,8 @@ const isNew = computed(() => !isGraceTimeExpired(getItemGraceTimeEnd(userItem)))
 
       <template v-if="userItem.isArmoryItem">
         <ClanArmoryItemRelationBadge
-          v-if="lender && lender.id !== user!.id"
-          :lender="lender"
+          v-if="lender && lender.id !== userId"
+          :lender
           class="cursor-default"
         />
 

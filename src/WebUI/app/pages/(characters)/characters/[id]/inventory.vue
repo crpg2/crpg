@@ -12,6 +12,7 @@ import { useInventoryQuickEquip } from '~/composables/character/inventory/use-in
 import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
 import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
 import { useCharacterItems, useCharacterItemsProvider } from '~/composables/character/use-character-items'
+import { useUser } from '~/composables/user/use-user'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { validateItemNotMeetRequirement } from '~/services/character-service'
 import { getClanArmoryItemLender, getClanMembers } from '~/services/clan-service'
@@ -19,8 +20,7 @@ import { getAggregationsConfig } from '~/services/item-search-service'
 import { createItemIndex } from '~/services/item-search-service/indexator'
 import { extractItem, getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
 
-const userStore = useUserStore()
-const { clan, user } = toRefs(userStore)
+const { clan, user } = useUser()
 
 const { data: userItems, pending: loadingUserItems } = useUserItemsProvider()
 useCharacterItemsProvider()
@@ -165,7 +165,8 @@ const items = computed(() => {
           <CharacterInventoryItemCard
             v-on-long-press="[() => !dragging && onQuickEquip(userItem), { delay: 500 }]"
             class="cursor-grab"
-            :user-item="userItem"
+            :user-item
+            :user-id="user!.id"
             :equipped="equippedItemIds.includes(userItem.id)"
             :not-meet-requirement="validateItemNotMeetRequirement(userItem.item, characterCharacteristics)"
             :lender="userItem.isArmoryItem ? getClanArmoryItemLender(userItem.userId, clanMembers) : null"

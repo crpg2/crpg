@@ -1,5 +1,5 @@
+import { useUser } from '~/composables/user/use-user'
 import { getReforgeCostByRank, reforgeCostByRank } from '~/services/item-service'
-import { useUserStore } from '~/stores/user'
 
 export interface ReforgeCost {
   points: number
@@ -7,7 +7,7 @@ export interface ReforgeCost {
 }
 
 export const useItemReforge = (itemRank: MaybeRefOrGetter<number>) => {
-  const userStore = useUserStore()
+  const { user } = useUser()
 
   const reforgeCost = computed(() => getReforgeCostByRank(toValue(itemRank)))
 
@@ -19,7 +19,7 @@ export const useItemReforge = (itemRank: MaybeRefOrGetter<number>) => {
     })))
 
   const validation = computed(() => ({
-    gold: userStore.user!.gold > (reforgeCost.value ?? 0),
+    gold: user.value!.gold > (reforgeCost.value ?? 0),
     rank: itemRank !== 0,
   }))
 

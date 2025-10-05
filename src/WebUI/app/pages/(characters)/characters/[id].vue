@@ -4,13 +4,14 @@ import type { RouteNamedMap } from 'vue-router/auto-routes'
 import { LazyCharacterCreateModal, LazyCharacterEditModal } from '#components'
 
 import { useCharacterProvider, useCharacters } from '~/composables/character/use-character'
+import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { activateCharacter, deactivateCharacter, deleteCharacter, updateCharacter } from '~/services/character-service'
 
 const { t } = useI18n()
 const route = useRoute('characters-id')
 
-const userStore = useUserStore()
+const { user, fetchUser } = useUser()
 const { characters, refreshCharacters, activeCharacterId } = useCharacters()
 
 if (!characters.value.find(c => c.id === Number(route.params.id))) {
@@ -27,7 +28,7 @@ const characterCreateModal = overlay.create(LazyCharacterCreateModal)
 const [onCreateNewCharacter] = useAsyncCallback(async () => {
   if (activeCharacterId.value) {
     await deactivateCharacter(activeCharacterId.value)
-    await userStore.fetchUser()
+    await fetchUser()
   }
   characterCreateModal.open()
 })
@@ -48,7 +49,7 @@ const [onUpdateCharacter] = useAsyncCallback(
 const [onActivateCharacter] = useAsyncCallback(
   async (characterId: number, status: boolean) => {
     status ? await activateCharacter(characterId) : await deactivateCharacter(characterId)
-    await userStore.fetchUser() // update activeCharacterId
+    await fetchUser() // update activeCharacterId
   },
   {
     successMessage: t('character.settings.update.notify.success'),
@@ -62,7 +63,7 @@ const [onDeleteCharacter] = useAsyncCallback(
     // TODO: deactivate char FIXME: move to backend
     if (character.value.id === activeCharacterId.value) {
       await deactivateCharacter(character.value.id)
-      await userStore.fetchUser()
+      await fetchUser()
     }
 
     await deleteCharacter(character.value.id)
@@ -109,7 +110,7 @@ const nav = [
         <CharacterSelect
           :characters
           :current-character="character"
-          :active-character-id="userStore.user!.activeCharacterId"
+          :active-character-id="user!.activeCharacterId"
           @activate="onActivateCharacter"
           @create="onCreateNewCharacter"
         />

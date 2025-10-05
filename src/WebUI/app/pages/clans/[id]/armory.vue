@@ -7,6 +7,7 @@ import { useItemDetail } from '~/composables/character/inventory/use-item-detail
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanArmory } from '~/composables/clan/use-clan-armory'
 import { useClanMembers } from '~/composables/clan/use-clan-members'
+import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'
 import {
@@ -25,10 +26,8 @@ definePageMeta({
 
 const { t } = useI18n()
 
-const userStore = useUserStore()
-
+const { user } = useUser()
 const { clan } = useClan()
-
 const { clanMembers, getClanMember } = useClanMembers()
 
 const {
@@ -68,20 +67,20 @@ const hideOwnedItemsModel = useStorage<boolean>('clan-armory-hide-owned-items', 
 const showOnlyAvailableItems = useStorage<boolean>('clan-armory-show-only-available-items', true)
 
 const items = computed(() => {
-  if (!clanArmory.value.length || !userStore.user) {
+  if (!clanArmory.value.length) {
     return []
   }
 
   return clanArmory.value.filter((armoryItem) => {
     // Hide owned items if enabled
-    if (hideOwnedItemsModel.value && isOwnClanArmoryItem(armoryItem, userStore.user!.id)) {
+    if (hideOwnedItemsModel.value && isOwnClanArmoryItem(armoryItem, user.value!.id)) {
       return false
     }
 
     // Show only available items if enabled
     if (showOnlyAvailableItems.value) {
       // Item is available if not borrowed, not owned, and not in user's inventory
-      if (armoryItem.borrowerUserId || isOwnClanArmoryItem(armoryItem, userStore.user!.id)) {
+      if (armoryItem.borrowerUserId || isOwnClanArmoryItem(armoryItem, user.value!.id)) {
         return false
       }
     }

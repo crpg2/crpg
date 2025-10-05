@@ -4,9 +4,9 @@ import type { DropdownMenuItem } from '@nuxt/ui'
 import type { ClanArmoryItem } from '~/models/clan'
 import type { UserPublic } from '~/models/user'
 
+import { useUser } from '~/composables/user/use-user'
 import { CLAN_MEMBER_ROLE } from '~/models/clan'
 import { isOwnClanArmoryItem } from '~/services/clan-service'
-import { useUserStore } from '~/stores/user'
 
 const { borrower, clanArmoryItem, lender } = defineProps<{
   clanArmoryItem: ClanArmoryItem
@@ -20,7 +20,7 @@ const emit = defineEmits<{
   return: []
 }>()
 
-const { clanMemberRole, user } = toRefs(useUserStore())
+const { clanMemberRole, user } = useUser()
 
 const { t } = useI18n()
 

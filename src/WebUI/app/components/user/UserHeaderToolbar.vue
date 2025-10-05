@@ -18,8 +18,6 @@ const emit = defineEmits<{
   showWelcome: []
 }>()
 
-const userStore = useUserStore()
-
 const { t, locale, availableLocales, setLocale } = useI18n()
 
 const items = computed<DropdownMenuItem[][]>(() => [
@@ -35,7 +33,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
       icon: 'crpg:settings',
       to: { name: 'settings' },
     },
-    ...(userStore.user!.isRecent
+    ...(user.isRecent
       ? [
           {
             label: t('welcome.shortTitle'),
@@ -49,13 +47,13 @@ const items = computed<DropdownMenuItem[][]>(() => [
       : []),
   ],
   [
-    ...(([ROLE.Moderator, ROLE.Admin] as Role[]).includes(userStore.user!.role))
+    ...(([ROLE.Moderator, ROLE.Admin] as Role[]).includes(user.role))
       ? [{
           label: t('nav.main.Moderator'),
           to: { name: 'moderator' },
         } as DropdownMenuItem]
       : [],
-    ...(userStore.user!.role === ROLE.Admin)
+    ...(user.role === ROLE.Admin)
       ? [{
           label: t('nav.main.Admin'),
           to: { name: 'admin' },

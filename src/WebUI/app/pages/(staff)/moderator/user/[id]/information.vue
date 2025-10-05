@@ -2,6 +2,7 @@
 import type { SelectItem } from '@nuxt/ui'
 
 import { useModerationUser } from '~/composables/moderator/use-moderation-user'
+import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { ROLE } from '~/models/role'
 import {
@@ -14,7 +15,6 @@ import {
 import { getItemImage } from '~/services/item-service'
 import { rewardCharacter, rewardUser } from '~/services/moderation-service'
 import { updateUserNote } from '~/services/restriction-service'
-import { useUserStore } from '~/stores/user'
 
 const emit = defineEmits<{
   update: []
@@ -22,7 +22,7 @@ const emit = defineEmits<{
 
 const toast = useToast()
 
-const userStore = useUserStore()
+const { user } = useUser()
 const { moderationUser } = useModerationUser()
 
 const {
@@ -51,7 +51,7 @@ const { execute: onUpdateNote, isLoading: updatingNote } = useAsyncCallback(asyn
 //
 
 // TODO: Reward - refactoring, spec
-const canReward = computed(() => userStore.user!.role === ROLE.Admin) // TODO: to service
+const canReward = computed(() => user.value!.role === ROLE.Admin) // TODO: to service
 
 interface RewardForm {
   gold: number
@@ -63,18 +63,12 @@ interface RewardForm {
 }
 
 const getDefaultRewardForm = (): RewardForm => ({
-  // TODO: FIXME:
-  autoRetire: true,
   characterId: characters.value[0]?.id,
-  experience: 111_111_111,
-  gold: 111_111_111,
-  heirloomPoints: 111,
-  itemId: 'crpg_basic_imperial_leather_armor_v2',
-  // autoRetire: false,
-  // experience: 0,
-  // gold: 0,
-  // heirloomPoints: 0,
-  // itemId: '',
+  autoRetire: false,
+  experience: 0,
+  gold: 0,
+  heirloomPoints: 0,
+  itemId: '',
 })
 
 const rewardFormModel = ref<RewardForm>(getDefaultRewardForm())

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { Clan } from '~/models/clan'
 
+import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'
 import { createClan } from '~/services/clan-service'
-import { useUserStore } from '~/stores/user'
 
 definePageMeta({
   roles: SomeRole,
@@ -13,11 +13,11 @@ definePageMeta({
      * @description If you have a clan, you can't create a new one
      */
     () => {
-      const userStore = useUserStore()
-      if (userStore.clan) {
+      const { clan } = useUser()
+      if (clan.value) {
         return navigateTo({
           name: 'clans-id',
-          params: { id: userStore.clan.id },
+          params: { id: clan.value.id },
         })
       }
     },
@@ -27,12 +27,12 @@ definePageMeta({
 const toast = useToast()
 const { t } = useI18n()
 
-const userStore = useUserStore()
+const { fetchUser } = useUser()
 
 const [onCreateClan] = useAsyncCallback(
   async (form: Omit<Clan, 'id'>) => {
     const clan = await createClan(form)
-    await userStore.fetchUser()
+    await fetchUser()
     toast.add({ title: t('clan.create.notify.success'), close: false, color: 'success' })
     navigateTo({ name: 'clans-id', params: { id: clan.id } }, { replace: true })
   },

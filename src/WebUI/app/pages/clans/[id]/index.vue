@@ -10,6 +10,7 @@ import type { ClanMember, ClanMemberRole } from '~/models/clan'
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanApplications } from '~/composables/clan/use-clan-applications'
 import { useClanMembers } from '~/composables/clan/use-clan-members'
+import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'
 import {
@@ -18,7 +19,6 @@ import {
   canUpdateClanValidate,
   canUpdateMemberValidate,
 } from '~/services/clan-service'
-import { useUserStore } from '~/stores/user'
 
 definePageMeta({
   layoutOptions: {
@@ -30,7 +30,7 @@ definePageMeta({
 const { t } = useI18n()
 const overlay = useOverlay()
 
-const userStore = useUserStore()
+const { user, fetchUser, clan: userClan } = useUser()
 const { clan } = useClan()
 const {
   clanMembers,
@@ -43,7 +43,7 @@ const {
   getClanMember,
 } = useClanMembers()
 
-const selfMember = computed(() => getClanMember(userStore.user!.id))
+const selfMember = computed(() => getClanMember(user.value!.id))
 
 const {
   applicationsCount,
@@ -69,7 +69,7 @@ const applicationSent = ref<boolean>(false)
 
 function apply() {
   applicationSent.value = true
-  inviteToClan(userStore.user!.id)
+  inviteToClan(user.value!.id)
 }
 
 const [onLeaveClan] = useAsyncCallback(async () => {
@@ -78,8 +78,10 @@ const [onLeaveClan] = useAsyncCallback(async () => {
   }
 
   await kickClanMember(selfMember.value.user.id)
-  await loadClanMembers()
-  await userStore.fetchUser() // update user clan info
+  await Promise.all([
+    loadClanMembers(),
+    fetchUser(), // update user clan info
+  ])
 }, {
   successMessage: t('clan.member.leave.notify.success'),
   pageLoading: true,
@@ -305,7 +307,7 @@ const columns: TableColumn<ClanMember>[] = [
         />
       </template>
 
-      <template v-else-if="!userStore.clan">
+      <template v-else-if="!userClan">
         <UButton
           v-if="applicationSent"
           color="success"

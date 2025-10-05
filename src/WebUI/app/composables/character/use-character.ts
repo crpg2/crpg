@@ -1,5 +1,6 @@
 import type { Character } from '~/models/character'
 
+import { useUser } from '~/composables/user/use-user'
 import { CHARACTER_QUERY_KEYS } from '~/queries'
 import { getCharacters } from '~/services/character-service'
 
@@ -20,14 +21,14 @@ export const useCharactersProvider = () => {
 }
 
 export const useCharacters = () => {
-  const userStore = useUserStore()
+  const { user } = useUser()
 
   const characters = getAsyncData<Character[]>(CHARACTER_QUERY_KEYS.root)
   const refreshCharacters = refreshAsyncData(CHARACTER_QUERY_KEYS.root)
 
-  const activeCharacterId = computed(() => userStore.user!.activeCharacterId)
+  const activeCharacterId = computed(() => user.value!.activeCharacterId)
 
-  const fallbackCharacterId = computed(() => userStore.user!.activeCharacterId || characters.value?.[0]?.id || null)
+  const fallbackCharacterId = computed(() => user.value!.activeCharacterId || characters.value?.[0]?.id || null)
 
   const validateCharacter = (id: number) => characters.value.some(c => c.id === id)
 

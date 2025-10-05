@@ -9,6 +9,7 @@ import type { ClanInvitation } from '~/models/clan'
 
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanApplications } from '~/composables/clan/use-clan-applications'
+import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'
 import { canManageApplicationsValidate } from '~/services/clan-service'
@@ -22,8 +23,8 @@ definePageMeta({
      * @description clan role check
      */
     () => {
-      const userStore = useUserStore()
-      if (userStore.clanMemberRole && !canManageApplicationsValidate(userStore.clanMemberRole)) {
+      const { clanMemberRole } = useUser()
+      if (clanMemberRole.value && !canManageApplicationsValidate(clanMemberRole.value)) {
         return navigateTo({ name: 'clans' })
       }
     },

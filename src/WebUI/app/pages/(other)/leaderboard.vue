@@ -8,15 +8,13 @@ import { CompetitiveRank, LazyCompetitiveRankTable, UButton, UIcon, UiGridColumn
 import type { CharacterClass } from '~/models/character'
 import type { CharacterCompetitiveNumbered } from '~/models/competitive'
 import type { GameMode } from '~/models/game-mode'
-import type { Region } from '~/models/region'
 
+import { useUser } from '~/composables/user/use-user'
 import { CHARACTER_CLASS } from '~/models/character'
 import { GAME_MODE } from '~/models/game-mode'
-import { REGION } from '~/models/region'
 import { characterClassToIcon, getCompetitiveValueByGameMode } from '~/services/character-service'
 import { gameModeToIcon, rankedGameModes } from '~/services/game-mode-service'
 import { getLeaderBoard } from '~/services/leaderboard-service'
-import { useUserStore } from '~/stores/user'
 
 definePageMeta({
   layoutOptions: {
@@ -25,12 +23,12 @@ definePageMeta({
 })
 
 const { t } = useI18n()
-const userStore = useUserStore()
+const { user } = useUser()
 const route = useRoute('leaderboard')
 
 const gameModeModel = useRouteQuery<GameMode>('gameMode', GAME_MODE.CRPGBattle)
 const characterClassModel = useRouteQuery<CharacterClass | undefined>('class', undefined)
-const regionModel = useRouteQuery<Region>('region', REGION.Eu)
+const { regionModel, regions } = useRegionQuery()
 
 const {
   execute: loadLeaderBoard,
@@ -202,7 +200,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
       <div class="mb-4 flex gap-6">
         <UTabs
           v-model="regionModel"
-          :items="Object.values(REGION).map<TabsItem>(region => ({
+          :items="regions.map<TabsItem>(region => ({
             label: $t(`region.${region}`),
             value: region,
           }))"
@@ -233,7 +231,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
         :columns
         :meta="{
           class: {
-            tr: (row) => row.original.user.id === userStore.user?.id ? tw`text-primary` : '',
+            tr: (row) => row.original.user.id === user?.id ? tw`text-primary` : '',
           },
         }"
       >

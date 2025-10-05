@@ -2,10 +2,11 @@
 import { useCharacter, useCharacters } from '~/composables/character/use-character'
 import { useCharacterCharacteristic, useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic'
 import { useCharacterItems, useCharacterItemsProvider } from '~/composables/character/use-character-items'
+import { useUser } from '~/composables/user/use-user'
 import { CHARACTERISTIC_CONVERSION } from '~/models/character'
 import { getCharacterLimitations, getRespecCapability, respecializeCharacter } from '~/services/character-service'
 
-const userStore = useUserStore()
+const { user, fetchUser } = useUser()
 const { character, characterId } = useCharacter()
 const { refreshCharacters } = useCharacters()
 const { t } = useI18n()
@@ -45,9 +46,8 @@ const {
 const respecCapability = computed(() => getRespecCapability(
   character.value,
   characterLimitations.value,
-  userStore.user!.gold,
-  // userStore.isRecentUser, // TODO: FIXME:
-  false,
+  user.value!.gold,
+  user.value!.isRecent,
 ))
 
 const [onRespecializeCharacter] = useAsyncCallback(
@@ -55,7 +55,7 @@ const [onRespecializeCharacter] = useAsyncCallback(
     await respecializeCharacter(characterId.value)
 
     await Promise.all([
-      userStore.fetchUser(), // update gold
+      fetchUser(), // update gold
       refreshCharacters(),
       loadCharacterLimitations(),
       loadCharacterCharacteristics(),

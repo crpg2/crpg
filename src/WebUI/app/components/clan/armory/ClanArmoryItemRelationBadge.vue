@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import type { UserPublic } from '~/models/user'
 
-import { useUserStore } from '~/stores/user'
+import { useUser } from '~/composables/user/use-user'
 
 const { borrower, lender } = defineProps<{
   lender: UserPublic
   borrower?: UserPublic | null
 }>()
 
-const { user } = toRefs(useUserStore())
+const { user } = useUser()
 </script>
 
 <template>

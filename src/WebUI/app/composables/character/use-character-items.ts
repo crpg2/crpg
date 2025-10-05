@@ -1,6 +1,7 @@
 import type { CharacterOverallItemsStats, EquippedItem, EquippedItemId } from '~/models/character'
 import type { UserItemsBySlot } from '~/models/user'
 
+import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { CHARACTER_QUERY_KEYS } from '~/queries'
 import {
@@ -31,7 +32,7 @@ export const useCharacterItemsProvider = () => {
 }
 
 export const useCharacterItems = () => {
-  const userStore = useUserStore()
+  const { user } = useUser()
   const { characterId } = useCharacter()
 
   const _key = CHARACTER_QUERY_KEYS.items(characterId.value)
@@ -70,7 +71,7 @@ export const useCharacterItems = () => {
 
   const equippedItemIds = computed(() => characterItems.value.map(ei => ei.userItem.id))
 
-  const upkeepIsHigh = computed(() => checkUpkeepIsHigh(userStore.user!.gold, itemsOverallStats.value.averageRepairCostByHour))
+  const upkeepIsHigh = computed(() => checkUpkeepIsHigh(user.value!.gold, itemsOverallStats.value.averageRepairCostByHour))
 
   return {
     characterItems,

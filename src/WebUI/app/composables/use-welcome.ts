@@ -1,14 +1,14 @@
 import { useStorage } from '@vueuse/core'
 import { LazyAppWelcomeModal } from '#components'
 
-import { useUserStore } from '~/stores/user'
+import { useUser } from './user/use-user'
 
 export const useWelcome = () => {
   const showedWelcomeMessage = useStorage<boolean>('user-welcome-message-showed', false)
 
-  const userStore = useUserStore()
+  const { user } = useUser()
 
-  const isNewUser = computed(() => userStore.user?.isRecent)
+  const isNewUser = computed(() => user.value?.isRecent)
 
   const overlay = useOverlay()
 

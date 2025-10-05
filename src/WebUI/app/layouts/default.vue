@@ -1,23 +1,27 @@
 <script setup lang="ts">
 import { useMainHeaderProvider } from '~/composables/app/use-main-header'
+import { useUser } from '~/composables/user/use-user'
+import { useUserRestriction } from '~/composables/user/use-user-restriction'
 
 const route = useRoute()
-const userStore = useUserStore()
 
 const { data: patchNotes } = usePatchNotes()
 const { data: gameServerStats } = useGameServerStats()
 
 const { hHEvent, isHhEventActive, onEndHH } = useHappyHours()
 
-userStore.fetchUserRestriction()
+const { restriction, fetchUserRestriction } = useUserRestriction()
+const { user, fetchUser } = useUser()
 
 usePollInterval({
   key: 'user',
-  fn: userStore.fetchUser,
+  fn: fetchUser,
 })
 
 useMainHeaderProvider(useTemplateRef('mainHeader'))
 const { showWelcomeMessage } = useWelcome()
+
+fetchUserRestriction()
 </script>
 
 <template>
@@ -35,14 +39,14 @@ const { showWelcomeMessage } = useWelcome()
           sticky top-0 z-20 bg-default/10 backdrop-blur-sm
         ` : `bg-default`]"
     >
-      <template v-if="userStore.user">
+      <template v-if="user">
         <LazyUserRestrictionBanner
-          v-if="userStore.restriction"
-          :restriction="userStore.restriction"
+          v-if="restriction"
+          :restriction
         />
         <LazyAppHHBanner
           v-if="isHhEventActive"
-          :region="userStore.user.region"
+          :region="user.region"
           :h-h-event
           @complete="onEndHH"
         />
@@ -63,8 +67,8 @@ const { showWelcomeMessage } = useWelcome()
         </div>
 
         <UserHeaderToolbar
-          v-if="userStore.user"
-          :user="userStore.user"
+          v-if="user"
+          :user
           @show-welcome="showWelcomeMessage"
         />
 

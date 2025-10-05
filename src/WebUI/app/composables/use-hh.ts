@@ -2,12 +2,13 @@ import { computedWithControl, useIntervalFn, useLocalStorage } from '@vueuse/cor
 
 import { REGION } from '~/models/region'
 import { getHHEventByRegion, getHHEventRemainingSeconds } from '~/services/hh-service'
-import { useUserStore } from '~/stores/user'
+
+import { useUser } from './user/use-user'
 
 export const useHappyHours = () => {
   const { settings } = useAppConfig()
 
-  const userStore = useUserStore()
+  const { user } = useUser()
   const { t } = useI18n()
   const toast = useToast()
 
@@ -15,7 +16,7 @@ export const useHappyHours = () => {
 
   const hHEvent = computedWithControl(
     () => source.value,
-    () => getHHEventByRegion(settings.happyHours, userStore.user?.region || REGION.Eu),
+    () => getHHEventByRegion(settings.happyHours, user.value?.region || REGION.Eu),
   )
 
   const isHhEventActive = computed(() => getHHEventRemainingSeconds(hHEvent.value) !== 0)

@@ -9,10 +9,11 @@ import {
   readAllUserNotifications,
   readUserNotification,
 } from '~/services/user-service'
-import { useUserStore } from '~/stores/user'
+
+import { useUser } from './use-user'
 
 export const useUsersNotifications = () => {
-  const userStore = useUserStore()
+  const { fetchUser } = useUser()
 
   const {
     state: notifications,
@@ -38,31 +39,31 @@ export const useUsersNotifications = () => {
   )
 
   function updateState() {
-    return Promise.all([loadNotifications(), userStore.fetchUser()])
+    return Promise.all([loadNotifications(), fetchUser()])
   }
 
-  const { execute: readNotification, isLoading: readingNotification } = useAsyncCallback(
+  const [readNotification, readingNotification] = useAsyncCallback(
     async (id: number) => {
       await readUserNotification(id)
       updateState()
     },
   )
 
-  const { execute: readAllNotifications, isLoading: readingAllNotification } = useAsyncCallback(
+  const [readAllNotifications, readingAllNotification] = useAsyncCallback(
     async () => {
       await readAllUserNotifications()
       updateState()
     },
   )
 
-  const { execute: deleteNotification, isLoading: deletingNotification } = useAsyncCallback(
+  const [deleteNotification, deletingNotification] = useAsyncCallback(
     async (id: number) => {
       await deleteUserNotification(id)
       updateState()
     },
   )
 
-  const { execute: deleteAllNotifications, isLoading: deletingAllNotification } = useAsyncCallback(
+  const [deleteAllNotifications, deletingAllNotification] = useAsyncCallback(
     async () => {
       await deleteAllUserNotifications()
       updateState()

@@ -3,13 +3,13 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 
 import type { PatchNote } from '~/models/patch-note'
 
-import { useUserStore } from '~/stores/user'
+import { useUser } from '~/composables/user/use-user'
 
 defineProps<{ latestPatch?: PatchNote }>()
 
 const { settings } = useAppConfig()
 
-const userStore = useUserStore()
+const { user, clan } = useUser()
 const { t } = useI18n()
 
 const items = computed(() => {
@@ -25,7 +25,7 @@ const items = computed(() => {
     },
   ]
 
-  if (!userStore.user) {
+  if (!user.value) {
     return common
   }
 
@@ -117,7 +117,7 @@ const items = computed(() => {
       <UIcon name="crpg:trophy-cup" class="size-6 text-gold" />
     </template>
 
-    <template v-if="!userStore.clan" #clans-leading>
+    <template v-if="!clan" #clans-leading>
       <UTooltip data-aq-main-nav-link-tooltip="Explanation">
         <UBadge
           icon="crpg:tag"

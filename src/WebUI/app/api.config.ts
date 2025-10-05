@@ -28,24 +28,21 @@ export const createClientConfig: CreateClientConfig = (config) => {
     ...config,
     baseURL: import.meta.env.NUXT_PUBLIC_API_BASE_URL,
     auth: () => getToken(),
-
     async onResponseError({ response }) {
       const toast = useToast()
       const route = useRoute()
 
-      if (route.meta.roles) {
-        if (response.status === 401) {
-          toast.add({
-            title: 'Session expired',
-            color: 'error',
-            duration: 3000,
-            icon: 'crpg:error',
-            close: false,
-          })
-          await delay(1000)
-          await login(globalThis.localStorage.getItem('user-platform') as Platform ?? PLATFORM.Steam)
-          return
-        }
+      if (route.meta.roles && response.status === 401) {
+        toast.add({
+          title: 'Session expired',
+          color: 'error',
+          duration: 3000,
+          icon: 'crpg:error',
+          close: false,
+        })
+        await delay(1000)
+        await login(globalThis.localStorage.getItem('user-platform') as Platform ?? PLATFORM.Steam)
+        return
       }
 
       const [error] = (response as FetchResponse<{ errors: CrpgApiError[] }>)._data?.errors ?? []

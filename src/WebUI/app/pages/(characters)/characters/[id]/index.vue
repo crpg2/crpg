@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { useCharacter, useCharacters } from '~/composables/character/use-character'
+import { useUser } from '~/composables/user/use-user'
 import { CHARACTER_QUERY_KEYS } from '~/queries'
 import { getCharacterStatistics, retireCharacter } from '~/services/character-service'
 
-const userStore = useUserStore()
+const { user, fetchUser } = useUser()
 const { t } = useI18n()
 
 const { character, characterId } = useCharacter()
@@ -20,7 +21,7 @@ const { data: characterStatistics, refresh: refreshCharacterStatistics } = useAs
 const [onRetireCharacter] = useAsyncCallback(async () => {
   await retireCharacter(characterId.value)
   await Promise.all([
-    userStore.fetchUser(), // update experienceMultiplier
+    fetchUser(), // update experienceMultiplier
     refreshCharacters(),
     refreshCharacterStatistics(),
   ])
@@ -40,13 +41,13 @@ const [onRetireCharacter] = useAsyncCallback(async () => {
     >
       <CharacterOverview
         :character
-        :user-experience-multiplier="userStore.user!.experienceMultiplier"
+        :user-experience-multiplier="user!.experienceMultiplier"
       />
 
       <div v-if="!character.forTournament" class="flex justify-center">
         <CharacterActionRetire
           :character
-          :user-experience-multiplier="userStore.user!.experienceMultiplier"
+          :user-experience-multiplier="user!.experienceMultiplier"
           @retire="onRetireCharacter"
         />
       </div>

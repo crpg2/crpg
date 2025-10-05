@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { LazyAppConfirmActionDialog } from '#components'
 
+import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'
 import { logout } from '~/services/auth-service'
 import { getCharacters } from '~/services/character-service'
 import { deleteUser as _deleteUser } from '~/services/user-service'
-import { useUserStore } from '~/stores/user'
 
 definePageMeta({
   roles: SomeRole,
 })
 
-const userStore = useUserStore()
+const { user } = useUser()
 
 const { state: characters, isLoading: loadingCharacters } = useAsyncState(() => getCharacters(), [])
 const canDeleteUser = computed(() => !characters.value.length)
@@ -24,9 +24,9 @@ const confirmDeleteDialog = overlay.create(LazyAppConfirmActionDialog, {
     title: t('user.settings.delete.dialog.title'),
     description: t('user.settings.delete.dialog.desc'),
     confirm: t('user.settings.delete.dialog.enterToConfirm', {
-      userName: userStore.user!.name,
-      heirloomPoints: userStore.user!.heirloomPoints,
-      gold: n(userStore.user!.gold),
+      userName: user.value!.name,
+      heirloomPoints: user.value!.heirloomPoints,
+      gold: n(user.value!.gold),
     }),
   },
 })

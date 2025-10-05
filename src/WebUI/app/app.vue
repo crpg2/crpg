@@ -2,7 +2,6 @@
 import { usePageLoadingProvider } from '~/composables/app/use-page-loading'
 
 const [activePageLoading] = usePageLoadingProvider()
-// const { $poll } = useNuxtApp()
 </script>
 
 <template>
@@ -15,39 +14,12 @@ const [activePageLoading] = usePageLoadingProvider()
       delayDuration: 300,
     }"
   >
-    <!--
-    {{ $poll.keys }}
-    {{ activePageLoading }}
-     -->
-
     <NuxtLoadingIndicator color="rgb(210 187 138)" />
-
     <NuxtRouteAnnouncer />
 
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-
-    <!-- TODO: FIXME: -->
-    <!-- <NuxtErrorBoundary>
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
-
-      <template #error="{ error, clearError }">
-        <UModal
-          open
-          :title="$t('error.title')"
-        >
-          <template #body>
-            <p>An error occurred: {{ error }}</p>
-            <button @click="clearError">
-              Clear error
-            </button>
-          </template>
-        </UModal>
-      </template>
-    </NuxtErrorBoundary> -->
 
     <AppBundledSprite />
 

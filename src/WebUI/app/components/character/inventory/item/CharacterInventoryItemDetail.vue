@@ -7,6 +7,7 @@ import { itemSellCostPenalty } from '~root/data/constants.json'
 import type { CompareItemsResult } from '~/models/item'
 import type { UserItem, UserPublic } from '~/models/user'
 
+import { useUser } from '~/composables/user/use-user'
 import {
   canAddedToClanArmory,
   canSell,
@@ -14,13 +15,12 @@ import {
   computeBrokenItemRepairCost,
   computeSalePrice,
 } from '~/services/item-service'
-import { useUserStore } from '~/stores/user'
 import { parseTimestamp } from '~/utils/date'
 
 const {
+  userItem,
   compareResult,
   equipped = false,
-  userItem,
 } = defineProps<{
   userItem: UserItem
   compareResult?: CompareItemsResult
@@ -38,7 +38,7 @@ const emit = defineEmits<{
   returnToClanArmory: []
 }>()
 
-const { clan, user } = toRefs(useUserStore())
+const { user, clan } = useUser()
 
 const userItemToReplaceSalePrice = computed(() => {
   const { graceTimeEnd, price } = computeSalePrice(userItem)
@@ -57,19 +57,7 @@ const isCanAddedToClanArmory = computed(() => canAddedToClanArmory(userItem))
 
 const overlay = useOverlay()
 
-const itemUpgradesModal = overlay.create(LazyCharacterInventoryItemUpgradesModal, {
-  props: {
-    userItem,
-    onReforge: () => {
-      itemUpgradesModal.close()
-      emit('reforge')
-    },
-    onUpgrade: () => {
-      itemUpgradesModal.close()
-      emit('upgrade')
-    },
-  },
-})
+const itemUpgradesModal = overlay.create(LazyCharacterInventoryItemUpgradesModal)
 
 const { t } = useI18n()
 
@@ -103,12 +91,22 @@ const itemActions = computed(() => {
       onSelect: () => {
         itemUpgradesModal.open({
           userItem,
+          gold: user.value!.gold,
+          heirloomPoints: user.value!.heirloomPoints,
+          onReforge: () => {
+            itemUpgradesModal.close()
+            emit('reforge')
+          },
+          onUpgrade: () => {
+            itemUpgradesModal.close()
+            emit('upgrade')
+          },
         })
       },
     })
   }
 
-  if (clan.value && isCanAddedToClanArmory.value) {
+  if (!!clan.value && isCanAddedToClanArmory.value) {
     if (!userItem.isArmoryItem) {
       result.push({
         slot: 'armory-add' as const,

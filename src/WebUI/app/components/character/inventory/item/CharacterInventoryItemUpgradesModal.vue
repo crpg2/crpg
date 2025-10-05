@@ -10,10 +10,11 @@ import { useItemReforge } from '~/composables/item/use-item-reforge'
 import { useItemUpgrades } from '~/composables/item/use-item-upgrades'
 import { createItemIndex } from '~/services/item-search-service/indexator'
 import { getItemAggregations, getRankColor } from '~/services/item-service'
-import { useUserStore } from '~/stores/user'
 
 const { userItem } = defineProps<{
   userItem: UserItem
+  gold: number
+  heirloomPoints: number
 }>()
 
 const emit = defineEmits<{
@@ -21,7 +22,6 @@ const emit = defineEmits<{
   reforge: []
 }>()
 
-const userStore = useUserStore()
 const { t } = useI18n()
 
 // TODO:
@@ -114,8 +114,8 @@ async function reforge() {
         {{ $t('character.inventory.item.upgrade.upgradesTitle') }}
       </UiTextView>
 
-      <AppLoom :point="userStore.user!.heirloomPoints" />
-      <AppCoin :value="userStore.user!.gold" />
+      <AppLoom :point="heirloomPoints" />
+      <AppCoin :value="gold" />
 
       <UTooltip>
         <!-- This extra div fixes a bug where this popover opens itself when the parent modal window opens. -->

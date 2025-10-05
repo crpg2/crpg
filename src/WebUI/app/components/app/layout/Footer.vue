@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { HHEvent } from '~/services/hh-service'
 
-import { useUserStore } from '~/stores/user'
+import { useUser } from '~/composables/user/use-user'
 
 defineProps<{ hHEvent: HHEvent }>()
 
-const userStore = useUserStore()
+const { user } = useUser()
 
 const scrollToTop = () =>
   window.scrollTo({
@@ -24,8 +24,8 @@ const scrollToTop = () =>
     />
 
     <div class="flex items-center gap-5">
-      <template v-if="userStore.user">
-        <AppHHTooltip :region="userStore.user.region">
+      <template v-if="user">
+        <AppHHTooltip :region="user.region">
           <UiDataCell class="hover:text-highlighted">
             <template #leftContent>
               <UIcon
@@ -33,7 +33,7 @@ const scrollToTop = () =>
                 class="size-6"
               />
             </template>
-            {{ $t('hh.tooltip-trigger', { region: $t(`region.${userStore.user.region}`, 1) }) }}
+            {{ $t('hh.tooltip-trigger', { region: $t(`region.${user.region}`, 1) }) }}
             <template #rightContent>
               {{ $d(hHEvent.start, 'time') }} - {{ $d(hHEvent.end, 'time') }}
             </template>

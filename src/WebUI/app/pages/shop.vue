@@ -29,6 +29,7 @@ import type { ItemFlat, ItemType, WeaponClass } from '~/models/item'
 import type { AggregationOptions } from '~/services/item-search-service/aggregations'
 
 import { usePageLoading } from '~/composables/app/use-page-loading'
+import { useUser } from '~/composables/user/use-user'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { ITEM_COMPARE_MODE, ITEM_TYPE } from '~/models/item'
@@ -59,7 +60,7 @@ const { t, n } = useI18n()
 
 const router = useRouter()
 const route = useRoute()
-const userStore = useUserStore()
+const { user, fetchUser } = useUser()
 
 const { data: userItems, refresh: refreshUserItems } = useUserItemsProvider()
 
@@ -76,8 +77,10 @@ watch(items, () => {
 
 const [buyItem] = useAsyncCallback(async (item: ItemFlat) => {
   await buyUserItem(item.id)
-  await refreshUserItems()
-  await userStore.fetchUser() // update gold
+  await Promise.all([
+    refreshUserItems(),
+    fetchUser(), // update gold
+  ])
 }, {
   successMessage: t('shop.item.buy.notify.success'),
   pageLoading: true,
@@ -237,7 +240,7 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
             price: rawBuckets,
             upkeep: row.original.upkeep,
             inInventoryItems: getInInventoryItems(row.original.baseId),
-            notEnoughGold: userStore.user!.gold < row.original.price,
+            notEnoughGold: user.value!.gold < row.original.price,
             onBuy: () => buyItem(row.original),
           }),
         }),

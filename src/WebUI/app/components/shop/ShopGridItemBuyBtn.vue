@@ -3,8 +3,8 @@ import { groupBy } from 'es-toolkit'
 
 import type { UserItem } from '~/models/user'
 
+import { useUser } from '~/composables/user/use-user'
 import { getRankColor } from '~/services/item-service'
-import { useUserStore } from '~/stores/user'
 
 const { inInventoryItems, notEnoughGold, price, upkeep } = defineProps<{
   price: number
@@ -17,7 +17,7 @@ defineEmits<{
   buy: []
 }>()
 
-const { user } = toRefs(useUserStore())
+const { user } = useUser()
 
 const groupedByRankInventoryItems = computed(() => groupBy(inInventoryItems, ui => ui.item.rank))
 

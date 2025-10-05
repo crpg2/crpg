@@ -2,12 +2,13 @@ import type { EquippedItemsBySlot } from '~/models/character'
 import type { ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
+import { useUser } from '~/composables/user/use-user'
 import { getLinkedSlots } from '~/services/item-service'
 
 export const useInventoryEquipment = () => {
   const { t } = useI18n()
   const toast = useToast()
-  const userStore = useUserStore()
+  const { user } = useUser()
 
   const validateIsEquipItemAllowed = (item: UserItem) => {
     if (item.isBroken) {
@@ -19,7 +20,7 @@ export const useInventoryEquipment = () => {
       return false
     }
 
-    if (item.isArmoryItem && userStore.user?.id === item.userId) {
+    if (item.isArmoryItem && user.value?.id === item.userId) {
       toast.add({
         title: t('character.inventory.item.clanArmory.inArmory.notify.warning'),
         color: 'warning',

@@ -8,16 +8,16 @@ import { navigateTo, tw } from '#imports'
 
 import type { ClanWithMemberCount } from '~/models/clan'
 
+import { useUser } from '~/composables/user/use-user'
 import { LANGUAGE } from '~/models/language'
 import { SomeRole } from '~/models/role'
 import { getClans } from '~/services/clan-service'
-import { useUserStore } from '~/stores/user'
 
 definePageMeta({
   roles: SomeRole,
 })
 
-const userStore = useUserStore()
+const { clan } = useUser()
 const { t } = useI18n()
 
 const globalFilterByName = ref<string>('')
@@ -28,7 +28,7 @@ const { state: clans, isLoading: loadingClans } = useAsyncState(() => getClans()
 const { regionModel, regions } = useRegionQuery()
 const table = useTemplateRef('table')
 
-// // TODO: это не синхронизированно, т.к. нет onFilterCHange
+// TODO: это не синхронизированно, т.к. нет onFilterCHange
 const columnFilters = ref<ColumnFiltersState>([
   {
     id: 'clan_region',
@@ -68,7 +68,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
   },
   {
     accessorKey: 'clan.name',
-    // @ts-expect-error TODO:
+    // @ts-expect-error TODO: https://github.com/nuxt/ui/issues/2968
     header: () => h(UInput, {
       'icon': 'crpg:search',
       'placeholder': t('clan.table.column.name'),
@@ -79,7 +79,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
       class: 'flex items-center gap-2',
     }, [
       h('span', row.original.clan.name),
-      ...(userStore.clan?.id === row.original.clan.id
+      ...(clan.value?.id === row.original.clan.id
         ? [h('span', { 'data-aq-clan-row': 'self-clan' }, `(${t('you')})`)]
         : []),
     ]),
@@ -193,8 +193,8 @@ const regionItems = regions.map<TabsItem>(region => ({
 
           <div class="flex items-center gap-2">
             <UButton
-              v-if="userStore.clan"
-              :to="{ name: 'clans-id', params: { id: userStore.clan.id } }"
+              v-if="clan"
+              :to="{ name: 'clans-id', params: { id: clan.id } }"
               icon="crpg:member"
               variant="subtle"
               size="xl"
@@ -226,7 +226,7 @@ const regionItems = regions.map<TabsItem>(region => ({
           :columns
           :meta="{
             class: {
-              tr: (row) => userStore.clan?.id === row.original.clan.id ? tw`text-primary` : '',
+              tr: (row) => clan?.id === row.original.clan.id ? tw`text-primary` : '',
             },
           }"
           :initial-state="{

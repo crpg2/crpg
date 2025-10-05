@@ -1,8 +1,10 @@
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
+import { useUser } from '~/composables/user/use-user'
+
 export default defineNuxtRouteMiddleware(async (to) => {
-  const userStore = useUserStore()
-  if (userStore.clan?.id !== Number((to as RouteLocationNormalizedLoaded<'clans-id'>).params.id)) {
+  const { clan } = useUser()
+  if (clan.value?.id !== Number((to as RouteLocationNormalizedLoaded<'clans-id'>).params.id)) {
     return navigateTo({ name: 'clans' })
   }
 })

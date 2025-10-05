@@ -5,10 +5,10 @@ import type { ClanUpdate } from '~/models/clan'
 
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanMembers } from '~/composables/clan/use-clan-members'
+import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'
 import { canUpdateClanValidate } from '~/services/clan-service'
-import { useUserStore } from '~/stores/user'
 
 definePageMeta({
   props: true,
@@ -19,8 +19,8 @@ definePageMeta({
      * @description clan role check
      */
     () => {
-      const userStore = useUserStore()
-      if (userStore.clanMemberRole && !canUpdateClanValidate(userStore.clanMemberRole)) {
+      const { clanMemberRole } = useUser()
+      if (clanMemberRole.value && !canUpdateClanValidate(clanMemberRole.value)) {
         return navigateTo({ name: 'clans' })
       }
     },
@@ -30,7 +30,8 @@ definePageMeta({
 const toast = useToast()
 const { t } = useI18n()
 
-const userStore = useUserStore()
+const { user, fetchUser } = useUser()
+
 const { clan, updateClan } = useClan()
 const { isLastMember, kickClanMember } = useClanMembers()
 
@@ -41,7 +42,7 @@ function backToClanPage() {
 const [onUpdateClan] = useAsyncCallback(
   async (data: ClanUpdate) => {
     await updateClan(data)
-    await userStore.fetchUser() // update clan info
+    await fetchUser() // update clan info
     toast.add({
       title: t('clan.update.notify.success'),
       close: false,
@@ -58,8 +59,8 @@ const [onUpdateClan] = useAsyncCallback(
 
 const [onDeleteClan] = useAsyncCallback(
   async () => {
-    await kickClanMember(userStore.user!.id) // delete yourself from the clan as the only member === delete the clan
-    await userStore.fetchUser() // update clan info
+    await kickClanMember(user.value!.id) // delete yourself from the clan as the only member === delete the clan
+    await fetchUser() // update clan info
   },
   {
     onSuccess: () => navigateTo({ name: 'clans' }),
