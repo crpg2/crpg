@@ -1,9 +1,11 @@
-import { computedWithControl, useIntervalFn, useLocalStorage } from '@vueuse/core'
+import { computedWithControl, tryOnScopeDispose, useIntervalFn, useLocalStorage } from '@vueuse/core'
+import { useAppConfig } from '#app'
+import { useI18n, useToast } from '#imports'
+import { computed, ref } from 'vue'
 
+import { useUser } from '~/composables/user/use-user'
 import { REGION } from '~/models/region'
 import { getHHEventByRegion, getHHEventRemainingSeconds } from '~/services/hh-service'
-
-import { useUser } from './user/use-user'
 
 export const useHappyHours = () => {
   const { settings } = useAppConfig()
@@ -47,7 +49,6 @@ export const useHappyHours = () => {
 
   const { pause } = useIntervalFn(() => {
     hHEvent.trigger()
-
     if (isHhEventActive.value) {
       onStartHH()
     }
