@@ -1,6 +1,6 @@
 import type { PartialDeep } from 'type-fest'
 
-import { describe, expect, it, vi } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { ref } from 'vue'
 
 import { useHappyHours } from '../use-hh'
@@ -8,7 +8,7 @@ import { useHappyHours } from '../use-hh'
 const {
   mockedUseAppConfig,
   mockedUseToastAdd,
-  mockedUseUSer,
+  mockedUseUser,
   mockedGetHHEventByRegion,
   mockedGetHHEventRemainingSeconds,
   mockedUseLocalStorage,
@@ -16,9 +16,9 @@ const {
 } = vi.hoisted(() => ({
   mockedUseAppConfig: vi.fn<() => PartialDeep<ReturnType<typeof import('#app')['useAppConfig']>>>()
     .mockReturnValue({ settings: { happyHours: '' } }),
-  mockedUseToastAdd: vi.fn(() => {}),
+  mockedUseToastAdd: vi.fn(),
 
-  mockedUseUSer: vi.fn<() => PartialDeep<ReturnType<typeof import('~/composables/user/use-user')['useUser']>>>().mockReturnValue({ user: { value: { region: 'Eu' } } }),
+  mockedUseUser: vi.fn<() => PartialDeep<ReturnType<typeof import('~/composables/user/use-user')['useUser']>>>().mockReturnValue({ user: { value: { region: 'Eu' } } }),
 
   mockedGetHHEventByRegion: vi.fn<() => ReturnType<typeof import('~/services/hh-service')['getHHEventByRegion']>>()
     .mockReturnValue({ start: new Date('2000-02-01T00:00:00.000Z'), end: new Date('2000-02-02T00:00:00.000Z') }),
@@ -57,7 +57,7 @@ vi.mock('~/services/hh-service', () => ({
 }))
 
 vi.mock('~/composables/user/use-user', () => ({
-  useUser: mockedUseUSer,
+  useUser: mockedUseUser,
 }))
 
 describe('useHappyHours', () => {
@@ -74,7 +74,7 @@ describe('useHappyHours', () => {
 
   it('notify about the start of Happy Hours, if it has not been shown yet', () => {
     const storageRef = ref(false)
-    mockedUseLocalStorage.mockReturnValue(storageRef)
+    mockedUseLocalStorage.mockReturnValueOnce(storageRef)
 
     useHappyHours()
 
@@ -84,7 +84,7 @@ describe('useHappyHours', () => {
 
   it('does not show the notification about the start again if it has already been shown', () => {
     const storageRef = ref(true)
-    mockedUseLocalStorage.mockReturnValue(storageRef)
+    mockedUseLocalStorage.mockReturnValueOnce(storageRef)
 
     useHappyHours()
 

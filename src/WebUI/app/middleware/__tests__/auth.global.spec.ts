@@ -1,7 +1,9 @@
+import type { User as oidcUser } from 'oidc-client-ts'
 import type { RouteLocationNormalized } from 'vue-router'
 
 import { navigateTo } from '#app'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { ref } from 'vue'
 
 import type { User } from '~/models/user'
 
@@ -26,77 +28,89 @@ vi.mock('#app', () => ({
 const makeRoute = (
   routePart: Partial<RouteLocationNormalized> = {},
 ): RouteLocationNormalized => ({
-  fullPath: '',
-  hash: '',
-  matched: [],
   meta: {},
-  // @ts-expect-error ///
-  name: '',
-  params: {},
-  path: '',
-  query: {},
-  redirectedFrom: undefined,
   ...routePart,
-})
+} as RouteLocationNormalized)
 
 describe('auth middleware', () => {
   const fetchUser = vi.fn().mockResolvedValue(undefined)
-  const mockUser: { value: Partial<User> | null } = { value: null }
+  const mockUser = ref<Partial<User> | null>(null)
+
+  vi.mocked(useUser).mockReturnValue({
+    user: mockUser,
+    fetchUser,
+  } as unknown as ReturnType<typeof useUser>)
+
+  vi.mocked(getUser).mockResolvedValue(null)
+
   const from = makeRoute()
+  const to = makeRoute()
 
   beforeEach(() => {
-    vi.clearAllMocks();
-    (useUser as any).mockReturnValue({
-      user: mockUser,
-      fetchUser,
+    mockUser.value = null
+  })
+
+  describe('authentication', () => {
+    it('skip route validation with meta.skipAuth', async () => {
+      const to = makeRoute({ meta: { skipAuth: true } })
+
+      expect(await authMiddleware(to, from)).toBe(true)
+      expect(navigateTo).not.toHaveBeenCalled()
+      expect(fetchUser).not.toHaveBeenCalled()
     })
-  })
 
-  it('skip route validation with meta.skipAuth', async () => {
-    const route = makeRoute({ meta: { skipAuth: true } })
-    expect(await authMiddleware(route, from)).toBe(true)
-    expect(navigateTo).not.toHaveBeenCalled()
-    expect(fetchUser).not.toBeCalled()
-  })
+    it('calls getUser if no user and token invalid', async () => {
+      await authMiddleware(to, from)
 
-  describe('route not requires any role', () => {
-    const route = makeRoute()
-
-    it('!user && !isSignIn - should be call getUser', async () => {
-      (getUser as any).mockResolvedValue(null)
-      await authMiddleware(route, from)
       expect(getUser).toHaveBeenCalled()
       expect(fetchUser).not.toHaveBeenCalled()
     })
 
-    it('!user && isSignIn - should be call fetchUser', async () => {
-      (getUser as any).mockResolvedValue({ id: 1 })
-      await authMiddleware(route, from)
+    it('fetches user if token valid', async () => {
+      vi.mocked(getUser).mockResolvedValueOnce({ access_token: '123' } as unknown as oidcUser)
+
+      await authMiddleware(to, from)
+
       expect(fetchUser).toHaveBeenCalled()
+    })
+
+    it('does not throw if fetchUser() fails and does not redirect', async () => {
+      vi.mocked(getUser).mockResolvedValueOnce({ access_token: '123' } as unknown as oidcUser)
+
+      fetchUser.mockRejectedValueOnce(new Error('fetch failed'))
+
+      await expect(authMiddleware(to, from)).resolves.not.toThrow()
+      expect(navigateTo).not.toHaveBeenCalled()
     })
   })
 
-  describe('route requires role', () => {
-    it('user with role:User -> validation passed', async () => {
-      const route = makeRoute({
-        meta: {
-          roles: ['User'],
-        },
-      })
+  describe('authorization (roles)', () => {
+    it('passes if user has required role', async () => {
+      const to = makeRoute({ meta: { roles: ['User'] } })
       mockUser.value = { role: 'User' }
-      expect(await authMiddleware(route, from)).toBeUndefined()
+
+      expect(await authMiddleware(to, from)).toBe(true)
       expect(navigateTo).not.toHaveBeenCalled()
     })
 
-    it('user with role:User, admin route -> go to index page', async () => {
-      const route = makeRoute({
-        meta: {
-          roles: ['Admin'],
-        },
-      })
+    it('redirects to index if user role insufficient', async () => {
+      const to = makeRoute({ meta: { roles: ['Admin'] } })
       mockUser.value = { role: 'User' }
-      await authMiddleware(route, from)
-      expect(navigateTo).toHaveBeenCalledWith({ name: 'index' }, { replace: true })
+
+      await authMiddleware(to, from)
+
+      expect(navigateTo).toHaveBeenCalledWith(
+        expect.objectContaining({ name: 'index' }),
+        expect.objectContaining({ replace: true }),
+      )
+    })
+
+    it('skips role validation if skipAuth is true', async () => {
+      const to = makeRoute({ meta: { skipAuth: true, roles: ['Admin'] } })
+      mockUser.value = { role: 'User' }
+
+      expect(await authMiddleware(to, from)).toBe(true)
+      expect(navigateTo).not.toHaveBeenCalled()
     })
   })
 })

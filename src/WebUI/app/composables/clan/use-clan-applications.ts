@@ -1,4 +1,5 @@
 import { useAsyncState } from '@vueuse/core'
+import { computed } from 'vue'
 
 import {
   inviteToClan as _inviteToClan,
@@ -13,7 +14,7 @@ export const useClanApplications = (immediate = true) => {
 
   const {
     state: applications,
-    execute: loadClanApplications,
+    executeImmediate: loadClanApplications,
     isLoading: loadingClanApplications,
   } = useAsyncState(() => getClanInvitations(clan.value.id), [], { immediate, resetOnExecute: false })
 

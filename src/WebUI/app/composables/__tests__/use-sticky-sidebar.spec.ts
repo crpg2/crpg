@@ -16,7 +16,9 @@ describe('useStickySidebar', () => {
     return shallowMount(defineComponent({
       setup() {
         const el = document.createElement('div')
+
         vi.spyOn(el, 'offsetHeight', 'get').mockReturnValue(height)
+
         const { top } = useStickySidebar(ref(el), offsetTop, offsetBottom)
         return { top }
       },

@@ -10,6 +10,7 @@ export default defineConfig({
     projects: [
       {
         test: {
+          clearMocks: true,
           setupFiles: path.resolve(__dirname, './test/setup.ts'),
           name: 'unit',
           // include: ['test/unit/**/*.{spec,test}.ts'],

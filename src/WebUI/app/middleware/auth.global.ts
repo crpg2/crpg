@@ -45,4 +45,6 @@ export default defineNuxtRouteMiddleware(async (to) => {
       return navigateTo({ name: 'index' }, { replace: true })
     }
   }
+
+  return true
 })

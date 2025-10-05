@@ -1,4 +1,6 @@
+import { useAsyncState } from '@vueuse/core'
 import { clamp } from 'es-toolkit'
+import { computed } from 'vue'
 
 import type { AggregationConfig } from '~/services/item-search-service/aggregations'
 
@@ -30,7 +32,6 @@ export const useItemUpgrades = ({
 
   const nextItem = computed(() => itemUpgrades.value[clamp(itemUpgrades.value.findIndex(iu => iu.id === item.id) + 1, 0, 3)])
 
-  // TODO: Что это
   const relativeEntries = computed(() => baseItem.value ? getRelativeEntries(baseItem.value, aggregationConfig) : {})
 
   const validation = computed(() => ({

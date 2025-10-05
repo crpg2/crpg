@@ -1,3 +1,6 @@
+import { useAsyncState } from '@vueuse/core'
+import { computed } from 'vue'
+
 import type { ClanMemberRole } from '~/models/clan'
 
 import {
@@ -13,7 +16,7 @@ export const useClanMembers = () => {
 
   const {
     state: clanMembers,
-    execute: loadClanMembers,
+    executeImmediate: loadClanMembers,
     isLoading: loadingClanMembers,
   } = useAsyncState(() => getClanMembers(clan.value.id), [], { resetOnExecute: false })
 

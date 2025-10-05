@@ -774,7 +774,7 @@ export const reforgeCostByRank: Record<number, number> = {
   1: itemReforgeCostPerRank[1] ?? _fallbackReforgeCost,
   2: itemReforgeCostPerRank[2] ?? _fallbackReforgeCost,
   3: itemReforgeCostPerRank[3] ?? _fallbackReforgeCost,
-}
+} as const
 
 export const getReforgeCostByRank = (rank: number) => {
   return reforgeCostByRank[rank] ?? _fallbackReforgeCost
