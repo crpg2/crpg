@@ -59,50 +59,6 @@ export const armorTypes: ItemType[] = [
   ITEM_TYPE.LegArmor,
 ]
 
-export const itemTypeByWeaponClass: Record<WeaponClass, ItemType> = {
-  [WEAPON_CLASS.Arrow]: ITEM_TYPE.Ammo,
-  [WEAPON_CLASS.Bolt]: ITEM_TYPE.Ammo,
-  [WEAPON_CLASS.Cartridge]: ITEM_TYPE.Ammo,
-  [WEAPON_CLASS.Bullets]: ITEM_TYPE.Ammo,
-
-  [WEAPON_CLASS.Boulder]: ITEM_TYPE.Thrown,
-  [WEAPON_CLASS.Javelin]: ITEM_TYPE.Thrown,
-  [WEAPON_CLASS.ThrowingAxe]: ITEM_TYPE.Thrown,
-  [WEAPON_CLASS.ThrowingKnife]: ITEM_TYPE.Thrown,
-  [WEAPON_CLASS.Stone]: ITEM_TYPE.Thrown,
-
-  [WEAPON_CLASS.Bow]: ITEM_TYPE.Ranged,
-  [WEAPON_CLASS.Crossbow]: ITEM_TYPE.Ranged,
-  [WEAPON_CLASS.Musket]: ITEM_TYPE.Ranged,
-  [WEAPON_CLASS.Pistol]: ITEM_TYPE.Ranged,
-
-  [WEAPON_CLASS.Dagger]: ITEM_TYPE.OneHandedWeapon,
-  [WEAPON_CLASS.Mace]: ITEM_TYPE.OneHandedWeapon,
-  [WEAPON_CLASS.OneHandedAxe]: ITEM_TYPE.OneHandedWeapon,
-  [WEAPON_CLASS.OneHandedSword]: ITEM_TYPE.OneHandedWeapon,
-
-  [WEAPON_CLASS.Pick]: ITEM_TYPE.TwoHandedWeapon,
-  [WEAPON_CLASS.TwoHandedAxe]: ITEM_TYPE.TwoHandedWeapon,
-  [WEAPON_CLASS.TwoHandedMace]: ITEM_TYPE.TwoHandedWeapon,
-  [WEAPON_CLASS.TwoHandedSword]: ITEM_TYPE.TwoHandedWeapon,
-
-  [WEAPON_CLASS.LowGripPolearm]: ITEM_TYPE.Polearm,
-  [WEAPON_CLASS.OneHandedPolearm]: ITEM_TYPE.Polearm,
-  [WEAPON_CLASS.TwoHandedPolearm]: ITEM_TYPE.Polearm,
-
-  [WEAPON_CLASS.LargeShield]: ITEM_TYPE.Shield,
-  [WEAPON_CLASS.SmallShield]: ITEM_TYPE.Shield,
-
-  [WEAPON_CLASS.Banner]: ITEM_TYPE.Banner,
-
-  [WEAPON_CLASS.Undefined]: ITEM_TYPE.Undefined,
-}
-
-export const WeaponClassByItemUsage: Partial<Record<ItemUsage, WeaponClass>> = {
-  [ITEM_USAGE.Polearm]: WEAPON_CLASS.OneHandedPolearm, // jousting lances
-  [ITEM_USAGE.PolearmCouch]: WEAPON_CLASS.OneHandedPolearm,
-}
-
 const WeaponClassByItemType: Partial<Record<ItemType, WeaponClass[]>> = {
   [ITEM_TYPE.OneHandedWeapon]: [
     WEAPON_CLASS.OneHandedSword,
@@ -280,36 +236,6 @@ export const getLinkedSlots = (slot: ItemSlot, equippedItems: EquippedItemsBySlo
 
   return []
 }
-
-export const VISIBLE_ITEM_FLAGS: ItemFlag[] = [
-  ITEM_FLAG.DropOnWeaponChange,
-  ITEM_FLAG.DropOnAnyAction,
-  ITEM_FLAG.UseTeamColor,
-]
-
-export const VISIBLE_WEAPON_FLAGS: WeaponFlag[] = [
-  WEAPON_FLAG.BonusAgainstShield,
-  WEAPON_FLAG.CanCrushThrough,
-  WEAPON_FLAG.CanDismount,
-  WEAPON_FLAG.CanHook,
-  WEAPON_FLAG.CanKnockDown,
-  WEAPON_FLAG.CanPenetrateShield,
-  WEAPON_FLAG.CantReloadOnHorseback,
-  WEAPON_FLAG.CanReloadOnHorseback,
-  WEAPON_FLAG.MultiplePenetration,
-  WEAPON_FLAG.CantUseOnHorseback,
-]
-
-export const VISIBLE_ITEM_USAGE: ItemUsage[] = [
-  ITEM_USAGE.LongBow,
-  ITEM_USAGE.Bow,
-  ITEM_USAGE.Crossbow,
-  ITEM_USAGE.CrossbowLight,
-  ITEM_USAGE.PolearmCouch,
-  ITEM_USAGE.PolearmBracing,
-  ITEM_USAGE.PolearmPike,
-  ITEM_USAGE.Polearm,
-]
 
 export const itemTypeToIcon: Record<ItemType, string> = {
   [ITEM_TYPE.Arrows]: 'item-type-arrow',

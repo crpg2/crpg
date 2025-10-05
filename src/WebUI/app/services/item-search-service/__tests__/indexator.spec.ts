@@ -26,15 +26,13 @@ const { mockedComputeAverageRepairCostPerHour, mockedIsLargeShield } = vi.hoiste
 
 vi.mock('#api/sdk.gen')
 
-vi.mock(
-  import('~/services/item-service'),
-  async importOriginal => ({
-    ...(await importOriginal()),
-    computeAverageRepairCostPerHour: mockedComputeAverageRepairCostPerHour,
-    isLargeShield: mockedIsLargeShield,
-    itemIsNewDays: 30,
-  }),
-)
+// itemTypeByWeaponClass,
+
+vi.mock('~/services/item-service', () => ({
+  computeAverageRepairCostPerHour: mockedComputeAverageRepairCostPerHour,
+  isLargeShield: mockedIsLargeShield,
+  itemIsNewDays: 30,
+}))
 
 describe('createItemIndex', () => {
   beforeEach(() => {
