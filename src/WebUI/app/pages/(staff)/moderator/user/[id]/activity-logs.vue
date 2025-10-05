@@ -10,6 +10,7 @@ import { useModerationUser } from '~/composables/moderator/use-moderation-user'
 import { SORT, useSort } from '~/composables/utils/use-sort' // TODO:
 import { ACTIVITY_LOG_TYPE } from '~/models/activity-logs'
 import { getActivityLogs } from '~/services/activity-logs-service'
+import { toggle } from '~/utils/array'
 
 const dateFormatter = new DateFormatter('en-US', {
   dateStyle: 'medium',

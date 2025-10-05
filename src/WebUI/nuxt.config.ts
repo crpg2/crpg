@@ -8,10 +8,8 @@ import { fileURLToPath } from 'node:url'
 export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
-    '@nuxt/test-utils/module',
     '@nuxt/eslint',
     '@vueuse/nuxt',
-    'motion-v/nuxt',
     '@nuxtjs/i18n',
   ],
   ssr: false,

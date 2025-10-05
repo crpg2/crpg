@@ -31,7 +31,9 @@ export default defineNuxtRouteMiddleware(async (to) => {
 
   // (2)
   if (!user.value && (await getUser()) !== null) {
-    await fetchUser()
+    await fetchUser().catch((e) => {
+      console.error(e)
+    })
   }
 
   // (3)

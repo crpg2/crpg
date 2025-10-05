@@ -30,10 +30,7 @@ const itemType = ref<ItemType>(ITEM_TYPE.Undefined)
 const itemTypes = computed(() => getFacetsByItemType(items.map(wrapper => wrapper.item.type)))
 
 watch(itemType, () => {
-  window.scrollTo({
-    behavior: 'smooth',
-    top: 0,
-  })
+  window.scrollTo({ behavior: 'smooth', top: 0 })
 })
 
 const { pagination, setPagination } = usePagination({ pageSize: 20 })
@@ -86,6 +83,9 @@ const grid = useVueTable({
   getCoreRowModel: getCoreRowModel(),
   getFilteredRowModel: getFilteredRowModel(),
   getSortedRowModel: getSortedRowModel(),
+  filterFns: {
+    includesSome,
+  },
   state: {
     get sorting() {
       return sorting.value

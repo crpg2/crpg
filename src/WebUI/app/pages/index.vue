@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { NavigationMenuItem } from '@nuxt/ui'
-
 definePageMeta({
   layout: 'empty',
 })
@@ -8,18 +6,6 @@ definePageMeta({
 const { data: patchNotes } = usePatchNotes()
 const { data: gameServerStats } = useGameServerStats()
 const { t } = useI18n()
-
-const items: NavigationMenuItem[] = [
-  {
-    label: t('nav.main.Leaderboard'),
-    to: { name: 'leaderboard' },
-    slot: 'leaderboard' as const,
-  },
-  {
-    label: t('nav.main.Credits'),
-    to: { name: 'credits' },
-  },
-]
 </script>
 
 <template>
@@ -57,7 +43,19 @@ const items: NavigationMenuItem[] = [
           show-label
         />
 
-        <UNavigationMenu color="neutral" variant="link" :items>
+        <UNavigationMenu
+          color="neutral" variant="link" :items="[
+            {
+              label: t('nav.main.Leaderboard'),
+              to: { name: 'leaderboard' },
+              slot: 'leaderboard',
+            },
+            {
+              label: t('nav.main.Credits'),
+              to: { name: 'credits' },
+            },
+          ]"
+        >
           <template #leaderboard-leading>
             <UIcon name="crpg:trophy-cup" class="size-6 text-gold" />
           </template>

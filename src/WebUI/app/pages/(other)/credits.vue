@@ -2,6 +2,8 @@
 import type { TabsItem } from '@nuxt/ui'
 import type { ValueOf } from 'type-fest'
 
+import { MotionGroupComponent as MotionGroup } from '@vueuse/motion'
+
 definePageMeta({
   layoutOptions: {
     bg: 'background-2.webp',
@@ -204,24 +206,26 @@ const filteredContributors = computed<Contributor[]>(() => {
       />
 
       <div class="flex flex-wrap items-center justify-center gap-5">
-        <Motion
-          v-for="contributor in filteredContributors"
-          :key="`${contributor.name}-${currentFilter}`"
+        <MotionGroup
           :initial="{
-            y: 50,
             opacity: 0,
+            y: 100,
           }"
-          :in-view="{
-            y: 0,
+          :visible-once="{
             opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 350,
+              damping: 20,
+              delay: 100,
+            },
           }"
-          :transition="{
-            type: 'spring',
-            stiffness: 350,
-            damping: 30,
-          }"
+          :duration="300"
         >
           <UUser
+            v-for="contributor in filteredContributors"
+            :key="`${currentFilter}-${contributor.name}`"
             :ui="{
               description: 'max-w-[160px]',
               avatar: 'rounded-none squircle',
@@ -263,7 +267,7 @@ const filteredContributors = computed<Contributor[]>(() => {
               </div>
             </template>
           </UUser>
-        </Motion>
+        </MotionGroup>
       </div>
     </div>
   </UContainer>

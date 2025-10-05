@@ -29,8 +29,10 @@ export const createClientConfig: CreateClientConfig = (config) => {
     baseURL: import.meta.env.NUXT_PUBLIC_API_BASE_URL,
     auth: () => getToken(),
     async onResponseError({ response }) {
-      const toast = useToast()
+      console.log('ddd', 'ddd')
+
       const route = useRoute()
+      const toast = useToast()
 
       if (route.meta.roles && response.status === 401) {
         toast.add({

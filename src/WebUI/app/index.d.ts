@@ -32,7 +32,7 @@ declare module 'nuxt/schema' {
 
 declare module '@tanstack/table-core' {
   interface FilterFns {
-    includesSome: FilterFn<unknown>
+    includesSome?: FilterFn<unknown>
   }
 }
 
