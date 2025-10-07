@@ -3,6 +3,7 @@ import type { Plugin } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import json5 from 'json5'
 import { fileURLToPath } from 'node:url'
+import { defineNuxtConfig } from 'nuxt/config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({

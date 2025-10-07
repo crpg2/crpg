@@ -1,36 +1,37 @@
-import { useToggle } from '@vueuse/core'
+import { createSharedComposable, useToggle } from '@vueuse/core'
+import { useI18n, useToast } from '#imports'
+import { readonly, ref } from 'vue'
 
 import type { EquippedItemId } from '~/models/character'
 import type { ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
-import { useInventoryEquipment } from '~/composables/character/inventory/use-inventory-equipment'
 import { useCharacterItems } from '~/composables/character/use-character-items'
-import { getAvailableSlotsByItem } from '~/services/item-service'
+import { useUser } from '~/composables/user/use-user'
+import { getAvailableSlotsByItem, getUnEquipItemsLinked } from '~/services/item-service'
 
-// Shared state
-const focusedItemId = ref<number | null>(null)
-const availableSlots = ref<ItemSlot[]>([])
-const fromSlot = ref<ItemSlot | null>(null)
-const toSlot = ref<ItemSlot | null>(null)
+const _useInventoryDnD = () => {
+  const { user } = useUser()
 
-export const useInventoryDnD = () => {
+  const focusedItemId = ref<number | null>(null)
+  const availableSlots = ref<ItemSlot[]>([])
+  const fromSlot = ref<ItemSlot | null>(null)
+  const toSlot = ref<ItemSlot | null>(null)
+
   const [dragging, toggleDragging] = useToggle()
   const toast = useToast()
   const { t } = useI18n()
 
   const { onUpdateCharacterItems, equippedItemsBySlot } = useCharacterItems()
-  const { getUnEquipItemsLinked, validateIsEquipItemAllowed } = useInventoryEquipment()
 
   const onDragStart = (item: UserItem | null = null, slot: ItemSlot | null = null) => {
     toggleDragging(true)
 
-    if (!item || !validateIsEquipItemAllowed(item)) {
+    if (!item) {
       return
     }
 
-    focusedItemId.value = item.id
-    const { slots, warning } = getAvailableSlotsByItem(item.item, toValue(equippedItemsBySlot))
+    const { slots, warning } = getAvailableSlotsByItem(item, user.value!.id, equippedItemsBySlot.value)
 
     if (warning) {
       toast.add({
@@ -38,8 +39,10 @@ export const useInventoryDnD = () => {
         color: 'warning',
         close: false,
       })
+      return
     }
 
+    focusedItemId.value = item.id
     availableSlots.value = slots
 
     if (slot) {
@@ -57,9 +60,7 @@ export const useInventoryDnD = () => {
 
   const onDragEnd = (_e: DragEvent | null = null, slot: ItemSlot | null = null) => {
     if (slot && !toSlot.value) {
-      const items: EquippedItemId[] = getUnEquipItemsLinked(slot, toValue(equippedItemsBySlot))
-
-      // TODO:
+      const items = getUnEquipItemsLinked(slot, equippedItemsBySlot.value)
       onUpdateCharacterItems(items)
     }
 
@@ -81,11 +82,10 @@ export const useInventoryDnD = () => {
     if (fromSlot.value) {
       items.push({
         slot: fromSlot.value,
-        userItemId: toValue(equippedItemsBySlot)[slot]?.id ?? null,
+        userItemId: equippedItemsBySlot.value[slot]?.id ?? null,
       })
     }
 
-    // TODO:
     onUpdateCharacterItems(items)
   }
 
@@ -94,11 +94,13 @@ export const useInventoryDnD = () => {
     availableSlots: readonly(availableSlots),
     focusedItemId: readonly(focusedItemId),
     fromSlot: readonly(fromSlot),
+    toSlot: readonly(toSlot),
     onDragEnd,
     onDragEnter,
     onDragLeave,
     onDragStart,
     onDrop,
-    toSlot: readonly(toSlot),
   }
 }
+
+export const useInventoryDnD = createSharedComposable(_useInventoryDnD)

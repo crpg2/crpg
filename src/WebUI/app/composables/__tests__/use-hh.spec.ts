@@ -1,6 +1,6 @@
 import type { PartialDeep } from 'type-fest'
 
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { ref } from 'vue'
 
 import { useHappyHours } from '../use-hh'

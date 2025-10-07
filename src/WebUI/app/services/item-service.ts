@@ -167,9 +167,20 @@ export const isLargeShield = (item: Item) =>
   item.type === ITEM_TYPE.Shield && item.weapons[0]?.class === WEAPON_CLASS.LargeShield
 
 export const getAvailableSlotsByItem = (
-  item: Item,
+  userItem: UserItem,
+  userId: number,
   equippedItems: EquippedItemsBySlot,
 ): { slots: ItemSlot[], warning: string | null } => {
+  if (userItem.isBroken) {
+    return { slots: [], warning: 'character.inventory.item.broken.notify.warning' }
+  }
+
+  if (userItem.isArmoryItem && userId === userItem.userId) {
+    return { slots: [], warning: 'character.inventory.item.clanArmory.inArmory.notify.warning' }
+  }
+
+  const { item } = userItem
+
   // family type: compatibility with mount and mountHarness
   if (
     item.type === ITEM_TYPE.MountHarness
@@ -235,6 +246,13 @@ export const getLinkedSlots = (slot: ItemSlot, equippedItems: EquippedItemsBySlo
   }
 
   return []
+}
+
+export const getUnEquipItemsLinked = (slot: ItemSlot, equippedItemsBySlot: EquippedItemsBySlot) => {
+  return [
+    { slot, userItemId: null },
+    ...getLinkedSlots(slot, equippedItemsBySlot).map(ls => ({ slot: ls, userItemId: null })),
+  ]
 }
 
 export const itemTypeToIcon: Record<ItemType, string> = {
