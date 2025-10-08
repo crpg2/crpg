@@ -248,9 +248,10 @@ export const getLinkedSlots = (slot: ItemSlot, equippedItems: EquippedItemsBySlo
   return []
 }
 
-export const getUnEquipItemsLinked = (slot: ItemSlot, equippedItemsBySlot: EquippedItemsBySlot) => {
+export const getUnEquipItems = (slot: ItemSlot, equippedItemsBySlot: EquippedItemsBySlot) => {
   return [
     { slot, userItemId: null },
+    // add linked items
     ...getLinkedSlots(slot, equippedItemsBySlot).map(ls => ({ slot: ls, userItemId: null })),
   ]
 }

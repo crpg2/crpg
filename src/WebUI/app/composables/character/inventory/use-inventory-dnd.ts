@@ -8,9 +8,9 @@ import type { UserItem } from '~/models/user'
 
 import { useCharacterItems } from '~/composables/character/use-character-items'
 import { useUser } from '~/composables/user/use-user'
-import { getAvailableSlotsByItem, getUnEquipItemsLinked } from '~/services/item-service'
+import { getAvailableSlotsByItem, getUnEquipItems } from '~/services/item-service'
 
-const _useInventoryDnD = () => {
+export const _useInventoryDnD = () => {
   const { user } = useUser()
 
   const focusedItemId = ref<number | null>(null)
@@ -60,8 +60,7 @@ const _useInventoryDnD = () => {
 
   const onDragEnd = (_e: DragEvent | null = null, slot: ItemSlot | null = null) => {
     if (slot && !toSlot.value) {
-      const items = getUnEquipItemsLinked(slot, equippedItemsBySlot.value)
-      onUpdateCharacterItems(items)
+      onUpdateCharacterItems(getUnEquipItems(slot, equippedItemsBySlot.value))
     }
 
     focusedItemId.value = null

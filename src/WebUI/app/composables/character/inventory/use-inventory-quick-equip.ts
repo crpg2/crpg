@@ -3,7 +3,7 @@ import type { UserItem } from '~/models/user'
 
 import { useCharacterItems } from '~/composables/character/use-character-items'
 import { useUser } from '~/composables/user/use-user'
-import { getAvailableSlotsByItem, getUnEquipItemsLinked, isWeaponBySlot } from '~/services/item-service'
+import { getAvailableSlotsByItem, getUnEquipItems, isWeaponBySlot } from '~/services/item-service'
 
 export const useInventoryQuickEquip = () => {
   const { user } = useUser()
@@ -32,14 +32,12 @@ export const useInventoryQuickEquip = () => {
     const targetSlot = getTargetSlot(slots)
 
     if (targetSlot) {
-      // TODO:
       onUpdateCharacterItems([{ slot: targetSlot, userItemId: item.id }])
     }
   }
 
   const onQuickUnEquip = (slot: ItemSlot) => {
-    // TODO:
-    onUpdateCharacterItems(getUnEquipItemsLinked(slot, equippedItemsBySlot.value))
+    onUpdateCharacterItems(getUnEquipItems(slot, equippedItemsBySlot.value))
   }
 
   return {
