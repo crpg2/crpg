@@ -13,6 +13,8 @@ public class InventorySlotVM : ViewModel
 {
     private readonly Action<InventorySlotVM> _onClick;
     private readonly Action<InventorySlotVM> _onHoverEnd;
+    private readonly Action<InventorySlotVM>? _onDragBegin;
+    private readonly Action<InventorySlotVM>? _onDragEnd;
 
     private string _itemName;
     private string _defaultSprite;
@@ -37,18 +39,23 @@ public class InventorySlotVM : ViewModel
     internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
     private readonly CrpgClanArmoryClient? _clanArmory;
 
-    public event Action<ItemObject>? OnItemDragBegin;
-    public event Action<ItemObject>? OnItemDragEnd;
-
-    public InventorySlotVM(ItemObject item, Action<InventorySlotVM> onClick, Action<InventorySlotVM> onHoverEnd, int quantity = 1, CrpgUserItemExtended? userItemExtended = null)
+    public InventorySlotVM(ItemObject item,
+         Action<InventorySlotVM> onClick,
+         Action<InventorySlotVM> onHoverEnd,
+         Action<InventorySlotVM> onDragBegin,
+         Action<InventorySlotVM> onDragEnd,
+         int quantity = 1,
+         CrpgUserItemExtended? userItemExtended = null)
     {
         UserLoadoutBehavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         _clanArmory = Mission.Current?.GetMissionBehavior<CrpgClanArmoryClient>();
+        /*
         if (_clanArmory is null)
         {
             _clanArmory = new CrpgClanArmoryClient();
             Mission.Current?.AddMissionBehavior(_clanArmory);
         }
+        */
 
         ItemObj = item;
         if (item != null)
@@ -68,6 +75,8 @@ public class InventorySlotVM : ViewModel
             _isDraggable = true;
             _onClick = onClick;
             _onHoverEnd = onHoverEnd;
+            _onDragBegin = onDragBegin;
+            _onDragEnd = onDragEnd;
 
             if (UserLoadoutBehavior is null)
             {
@@ -78,8 +87,12 @@ public class InventorySlotVM : ViewModel
             UserLoadoutBehavior.OnEquipmentSlotUpdated += HandleUpdateEvent;
             UserLoadoutBehavior.OnUserInventoryUpdated += HandleUpdateEvent;
             UserLoadoutBehavior.OnUserCharacterEquippedItemsUpdated += HandleUpdateEvent;
-            _clanArmory.OnClanArmoryUpdated += HandleUpdateEvent;
-            _clanArmory.OnArmoryActionUpdated += HandleUpdateEvent;
+
+            if (_clanArmory is not null)
+            {
+                _clanArmory.OnClanArmoryUpdated += HandleUpdateEvent;
+                _clanArmory.OnArmoryActionUpdated += HandleUpdateEvent;
+            }
 
             if (_isArmoryItem)
             {
@@ -106,6 +119,8 @@ public class InventorySlotVM : ViewModel
             _isDraggable = false;
             _onClick = _ => { }; // no-op
             _onHoverEnd = _ => { }; // no-op
+            _onDragBegin = _ => { }; // no-op;
+            _onDragEnd = _ => { }; // no-op;
         }
     }
 
@@ -304,8 +319,9 @@ public class InventorySlotVM : ViewModel
     {
         if (ItemObj != null)
         {
-            // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteDragBegin()"));
-            OnItemDragBegin?.Invoke(ItemObj);
+            InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteDragBegin()"));
+            // OnItemDragBegin?.Invoke(ItemObj);
+            _onDragBegin?.Invoke(this);
         }
     }
 
@@ -313,8 +329,7 @@ public class InventorySlotVM : ViewModel
     {
         if (ItemObj != null)
         {
-            // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteDragdEnd()"));
-            OnItemDragEnd?.Invoke(ItemObj);
+            _onDragEnd?.Invoke(this);
         }
     }
 
@@ -322,8 +337,6 @@ public class InventorySlotVM : ViewModel
     {
         if (ItemObj != null)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteClick()"));
-            // OnItemClick?.Invoke(ItemObj);
             _onClick?.Invoke(this);
         }
     }
@@ -336,7 +349,6 @@ public class InventorySlotVM : ViewModel
 
     public void ExecuteHoverEnd()
     {
-        // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteHoverEnd()"));
         _onHoverEnd?.Invoke(this);
     }
 

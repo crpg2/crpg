@@ -77,9 +77,9 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
 
             // Debug hotkey registration
             var category = HotKeyManager.GetCategory("GenericPanelGameKeyCategory");
-            string hotkeyMessage = $"Hotkeys in GenericPanelGameKeyCategory: {string.Join(", ", category.RegisteredHotKeys.Select(h => h.Id))}";
-            InformationManager.DisplayMessage(new InformationMessage(hotkeyMessage));
-            Debug.Print(hotkeyMessage, 0, Debug.DebugColor.DarkBlue);
+            // string hotkeyMessage = $"Hotkeys in GenericPanelGameKeyCategory: {string.Join(", ", category.RegisteredHotKeys.Select(h => h.Id))}";
+            // InformationManager.DisplayMessage(new InformationMessage(hotkeyMessage));
+            // Debug.Print(hotkeyMessage, 0, Debug.DebugColor.DarkBlue);
         }
         catch (Exception ex)
         {

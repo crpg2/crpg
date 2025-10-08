@@ -1,6 +1,7 @@
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.Information;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
@@ -21,6 +22,8 @@ public class InventoryGridVM : ViewModel
     internal event Action<InventorySlotVM>? OnInventorySlotClicked;
     internal event Action<InventorySortTypeVM>? OnInventorySortTypeClicked;
     internal event Action<InventorySlotVM>? OnInventorySlotHoverEnd;
+    internal event Action<InventorySlotVM>? OnInventorySlotDragStart;
+    internal event Action<InventorySlotVM>? OnInventorySlotDragEnd;
     internal event Action<int>? OnInventoryChangeType;
 
     // Two item sources
@@ -39,12 +42,16 @@ public class InventoryGridVM : ViewModel
     private bool _userInventorySelected;
     private bool _armorySelected;
 
+    private bool _isUserInventoryButtonVisible;
+    private bool _isArmoryButtonVisible;
+
     public InventoryGridVM()
     {
         _filteredItems = new MBBindingList<InventorySlotVM>();
         _clanArmory = Mission.Current?.GetMissionBehavior<CrpgClanArmoryClient>();
 
         // Default to user inventory
+        _isUserInventoryButtonVisible = true; // TODO: make configurable (ie strategus or events)
         _activeSection = InventorySection.Inventory;
         UserInventorySelected = true;
 
@@ -104,6 +111,9 @@ public class InventoryGridVM : ViewModel
         {
             RefreshDisplayedItems();
         }
+
+        // Show armory button if there are any armory items
+        IsArmoryButtonVisible = _armoryItems.Count > 0;
     }
 
     internal void SetAvailableItems(IEnumerable<(ItemObject itemObj, int count, CrpgUserItemExtended userItem)> items)
@@ -116,6 +126,8 @@ public class InventoryGridVM : ViewModel
                 itemObj,
                 slot => OnInventorySlotClicked?.Invoke(slot),   // forward click
                 slot => OnInventorySlotHoverEnd?.Invoke(slot), // forward hover end
+                slot => OnInventorySlotDragStart?.Invoke(slot), // forward drag start
+                slot => OnInventorySlotDragEnd?.Invoke(slot),   // forward drag end
                 count,
                 userItem);
 
@@ -166,6 +178,22 @@ public class InventoryGridVM : ViewModel
         if (slot?.ItemObj != null)
         {
             OnInventorySlotHoverEnd?.Invoke(slot);
+        }
+    }
+
+    private void OnItemDragStart(InventorySlotVM? slot)
+    {
+        if (slot?.ItemObj != null)
+        {
+            OnInventorySlotDragStart?.Invoke(slot);
+        }
+    }
+
+    private void OnItemDragEnd(InventorySlotVM? slot)
+    {
+        if (slot?.ItemObj != null)
+        {
+            OnInventorySlotDragEnd?.Invoke(slot);
         }
     }
 
@@ -320,6 +348,8 @@ public class InventoryGridVM : ViewModel
                 tuple.item,
                 slot => OnItemClicked(slot),
                 slot => OnItemHoverEnd(slot),
+                slot => OnItemDragStart(slot), // forward drag start
+                slot => OnItemDragEnd(slot),   // forward drag end
                 tuple.quantity,
                 tuple.userItemExtended))
             .ToList();
@@ -353,6 +383,11 @@ public class InventoryGridVM : ViewModel
 
     [DataSourceProperty]
     public MBBindingList<InventorySortTypeVM> InventorySortTypesTop { get => _inventorySortTypesTop; set => SetField(ref _inventorySortTypesTop, value, nameof(InventorySortTypesTop)); }
+
+    [DataSourceProperty]
+    public bool IsUserInventoryButtonVisible { get => _isUserInventoryButtonVisible; set => SetField(ref _isUserInventoryButtonVisible, value, nameof(IsUserInventoryButtonVisible)); }
+    [DataSourceProperty]
+    public bool IsArmoryButtonVisible { get => _isArmoryButtonVisible; set => SetField(ref _isArmoryButtonVisible, value, nameof(IsArmoryButtonVisible)); }
 
     private readonly bool _debugOn = false;
     private void LogDebug(string message)

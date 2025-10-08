@@ -65,6 +65,7 @@ internal class CrpgClanArmoryServer : MissionNetwork
     private async Task HandleUserRequestClanArmoryActionAsync(NetworkCommunicator peer, UserRequestClanArmoryAction message)
     {
         var request = message.Request;
+        request.UserId = peer.GetComponent<CrpgPeer>()?.User?.Id ?? -1;
 
         var result = CreateDefaultResult(request);
 
@@ -100,7 +101,7 @@ internal class CrpgClanArmoryServer : MissionNetwork
         catch (Exception ex)
         {
             Debug.Print($"[ArmoryServer] Exception: {ex}", 0, Debug.DebugColor.Red);
-            result.ErrorMessage = ex.Message;
+            result.ErrorMessage = ex.ToString();
         }
 
         // Always reply to the requesting peer with result

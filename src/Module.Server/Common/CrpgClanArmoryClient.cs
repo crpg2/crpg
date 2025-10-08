@@ -9,9 +9,13 @@ namespace Crpg.Module.Common;
 internal class CrpgClanArmoryClient : MissionNetwork
 {
     private readonly List<CrpgClanArmoryItem> _clanArmoryItems = new();
+    private readonly TimeSpan _requestCooldown = TimeSpan.FromSeconds(2); // adjust as needed
+    private DateTime _lastRequestTime = DateTime.MinValue;
     private bool _hasRecievedFullUpdate;
+    private bool _outstandingRequest;
 
     public IReadOnlyList<CrpgClanArmoryItem> ClanArmoryItems => _clanArmoryItems;
+    public int UserClanId { get; private set; } = -1;
 
     internal event Action? OnClanArmoryUpdated;
     internal event Action<ClanArmoryActionType, int>? OnArmoryActionUpdated;
@@ -27,19 +31,30 @@ internal class CrpgClanArmoryClient : MissionNetwork
             return;
         }
 
-        int clanId = GameNetwork.MyPeer?.GetComponent<MissionPeer>()?.GetComponent<CrpgPeer>()?.Clan?.Id ?? -1;
+        var now = DateTime.UtcNow;
+        if (now - _lastRequestTime < _requestCooldown || _outstandingRequest)
+        {
+            // LogDebugError("RequestArmoryAction called too soon after the last request. Please wait before trying again.");
+            InformationManager.DisplayMessage(new InformationMessage("Armory-- Please wait before trying again.", Colors.Red));
+            return;
+        }
+
+        UserClanId = GameNetwork.MyPeer?.GetComponent<MissionPeer>()?.GetComponent<CrpgPeer>()?.Clan?.Id ?? -1;
         int userId = GameNetwork.MyPeer?.GetComponent<MissionPeer>()?.GetComponent<CrpgPeer>()?.User?.Id ?? -1;
 
-        if (clanId < 0 || userId < 0)
+        if (UserClanId < 0 || userId < 0)
         {
             LogDebugError("RequestArmoryAction clanId or userId is invalid");
             return;
         }
 
+        _lastRequestTime = now;
+        _outstandingRequest = true;
+
         var request = new ClanArmoryActionRequest
         {
             ActionType = action,
-            ClanId = clanId,
+            ClanId = UserClanId,
             UserId = userId,
             UserItemId = uItem?.Id ?? -1,
         };
@@ -153,16 +168,15 @@ internal class CrpgClanArmoryClient : MissionNetwork
 
     private void HandleArmoryActionResult(ServerSendArmoryActionResult message)
     {
-        // Update local list as needed
+        _outstandingRequest = false;
         if (!message.Success)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"{message.ActionType} was unsuccessful."));
-            InformationManager.DisplayMessage(new InformationMessage($"{message.ErrorMessage}", Colors.Red));
+            // InformationManager.DisplayMessage(new InformationMessage($"ArmoryActionResult: {message.ActionType} was unsuccessful. Error: {message.ErrorMessage}", Colors.Red));
+            LogDebugError($"ArmoryActionResult: ({message.ActionType}) was unsuccessful. Error: {message.ErrorMessage}");
             return;
         }
 
-        InformationManager.DisplayMessage(new InformationMessage($"{message.ActionType} success!!.", Colors.Yellow));
-        // OnArmoryActionUpdated?.Invoke(message.ActionType, message.UserItemId);
+        InformationManager.DisplayMessage(new InformationMessage($"ArmoryActionResult: {message.ActionType} was successful!!.", Colors.Yellow));
     }
 
     private void HandleClanArmoryItemUpdate(ServerSendClanArmoryItemUpdate message)
@@ -242,7 +256,6 @@ internal class CrpgClanArmoryClient : MissionNetwork
 
                     existingItem.BorrowedItem = null;
                     existingItem.UpdatedAt = message.ArmoryItem.UpdatedAt;
-
                 }
                 else
                 {
@@ -256,8 +269,6 @@ internal class CrpgClanArmoryClient : MissionNetwork
         }
 
         OnArmoryActionUpdated?.Invoke(message.ActionType, userItemId);
-
-        // OnClanArmoryUpdated?.Invoke();
     }
 
     private void HandleClanArmoryCompleteUpdate(ServerSendClanArmoryCompleteUpdate message)

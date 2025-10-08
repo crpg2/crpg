@@ -284,8 +284,9 @@ public class ItemInfoVM : ViewModel
         {
             CategoryName = "Type/Class",
         };
-        tup.Icons.Add(new ItemInfoIconVM { IconSprite = GetItemTypeIconString(crpgItem) });
-        tup.Icons.Add(new ItemInfoIconVM { IconSprite = GetItemWeaponClassIconString(crpgItem) });
+        tup.Icons.Add(new ItemInfoIconVM { IconSprite = GetItemTypeIconString(crpgItem), HintText = crpgItem.Type.ToString() });
+        tup.Icons.Add(new ItemInfoIconVM { IconSprite = GetItemWeaponClassIconString(crpgItem), HintText = crpgItem.Weapons?.FirstOrDefault()?.Class.ToString() ?? string.Empty });
+
         Tuples.Add(tup);
 
         // Armor Only
@@ -322,9 +323,8 @@ public class ItemInfoVM : ViewModel
                 tup = new ItemInfoTupleVM
                 {
                     CategoryName = "Features",
-                    // IconOne = "ui_crpg_icon_white_useteamcolor",
                 };
-                tup.Icons.Add(new ItemInfoIconVM { IconSprite = "ui_crpg_icon_white_useteamcolor" });
+                tup.Icons.Add(new ItemInfoIconVM { IconSprite = "ui_crpg_icon_white_useteamcolor", HintText = "Use team color" });
                 Tuples.Add(tup);
             }
 
@@ -367,18 +367,19 @@ public class ItemInfoVM : ViewModel
         // Mount only
         if (crpgItem.Mount != null)
         {
+            string familyText = "Horse";
             string familyIcon = "ui_crpg_icon_white_mount";
             if (crpgItem.Mount.FamilyType == 2) // camel
             {
                 familyIcon = "ui_crpg_icon_white_camel";
+                familyText = "Camel";
             }
 
             tup = new ItemInfoTupleVM
             {
                 CategoryName = "Mount type",
-                // IconOne = familyIcon,
             };
-            tup.Icons.Add(new ItemInfoIconVM { IconSprite = familyIcon });
+            tup.Icons.Add(new ItemInfoIconVM { IconSprite = familyIcon, HintText = familyText });
             Tuples.Add(tup);
 
             var mountStats = new (string label, int value)[]
@@ -403,17 +404,21 @@ public class ItemInfoVM : ViewModel
         // Weapons
         if (crpgItem.Weapons != null && crpgItem.Weapons.Count > 0)
         {
-            // Features for weapons?
-            List<string> wFeats = GetWeaponFeatures(crpgItem, ItemObj);
-            if (wFeats.Count > 0)
+            var weaponFeatures = GetWeaponFeatures(crpgItem, ItemObj);
+            if (weaponFeatures.Count > 0)
             {
                 tup = new ItemInfoTupleVM
                 {
                     CategoryName = "Features",
                 };
-                foreach (string feat in wFeats)
+
+                foreach (var feat in weaponFeatures)
                 {
-                    tup.Icons.Add(new ItemInfoIconVM { IconSprite = feat });
+                    tup.Icons.Add(new ItemInfoIconVM
+                    {
+                        IconSprite = feat.icon,
+                        HintText = feat.name, // <-- tooltip text
+                    });
                 }
 
                 Tuples.Add(tup);
@@ -449,11 +454,11 @@ public class ItemInfoVM : ViewModel
             var weapon = crpgItem.Weapons[0];
 
             // Map damage type to brush and suffix
-            (string sprite, string suffix) = weapon.ThrustDamageType switch
+            (string sprite, string suffix, string name) = weapon.ThrustDamageType switch
             {
-                CrpgDamageType.Cut => ("ui_crpg_icon_white_cut", "c"),
-                CrpgDamageType.Pierce => ("ui_crpg_icon_white_pierce", "p"),
-                _ => (string.Empty, string.Empty),
+                CrpgDamageType.Cut => ("ui_crpg_icon_white_cut", "c", "Cut"),
+                CrpgDamageType.Pierce => ("ui_crpg_icon_white_pierce", "p", "Pierce"),
+                _ => (string.Empty, string.Empty, string.Empty),
             };
 
             tup = new ItemInfoTupleVM
@@ -461,7 +466,7 @@ public class ItemInfoVM : ViewModel
                 CategoryName = "Damage type",
             };
 
-            tup.Icons.Add(new ItemInfoIconVM { IconSprite = sprite });
+            tup.Icons.Add(new ItemInfoIconVM { IconSprite = sprite, HintText = name });
             Tuples.Add(tup);
 
             Tuples.Add(new ItemInfoTupleVM
@@ -686,49 +691,49 @@ public class ItemInfoVM : ViewModel
         };
     }
 
-    private List<string> GetWeaponFeatures(CrpgItem crpgItem, ItemObject item)
+    private List<(string icon, string name)> GetWeaponFeatures(CrpgItem crpgItem, ItemObject item)
     {
-        var features = new HashSet<string>();
+        var features = new Dictionary<string, string>(); // icon → name
 
         if (crpgItem.Weapons == null || crpgItem.Weapons.Count == 0)
         {
-            return new List<string>();
+            return new List<(string, string)>();
         }
 
         if (crpgItem.Flags.HasFlag(CrpgItemFlags.DropOnWeaponChange))
         {
-            features.Add("ui_crpg_icon_white_droponchange");
+            features["ui_crpg_icon_white_droponchange"] = "Drop on weapon change";
         }
 
-        // Map CrpgWeaponFlags → feature icons
-        var crpgWeaponFlagMap = new Dictionary<CrpgWeaponFlags, string>
+        // CrpgWeaponFlags → (icon, name)
+        var crpgWeaponFlagMap = new Dictionary<CrpgWeaponFlags, (string icon, string name)>
     {
-        { CrpgWeaponFlags.CanCrushThrough, "ui_crpg_icon_white_crushthrough" },
-        { CrpgWeaponFlags.BonusAgainstShield, "ui_crpg_icon_white_bonusagainstshield" },
-        { CrpgWeaponFlags.CanPenetrateShield, "ui_crpg_icon_white_penetratesshield" },
-        { CrpgWeaponFlags.CanDismount, "ui_crpg_icon_white_candismount" },
-        { CrpgWeaponFlags.CanKnockDown, "ui_crpg_icon_white_knockdown" },
-        { CrpgWeaponFlags.CantReloadOnHorseback, "ui_crpg_icon_white_cantreloadonhorseback" },
+        { CrpgWeaponFlags.CanCrushThrough, ("ui_crpg_icon_white_crushthrough", "Crush Through") },
+        { CrpgWeaponFlags.BonusAgainstShield, ("ui_crpg_icon_white_bonusagainstshield", "Bonus vs Shield") },
+        { CrpgWeaponFlags.CanPenetrateShield, ("ui_crpg_icon_white_penetratesshield", "Penetrates Shield") },
+        { CrpgWeaponFlags.CanDismount, ("ui_crpg_icon_white_candismount", "Can Dismount") },
+        { CrpgWeaponFlags.CanKnockDown, ("ui_crpg_icon_white_knockdown", "Knock Down") },
+        { CrpgWeaponFlags.CantReloadOnHorseback, ("ui_crpg_icon_white_cantreloadonhorseback", "Can't Reload on Horseback") },
     };
 
-        // Map ItemUsage → feature icons
-        var itemUsageMap = new Dictionary<string, string>
+        // ItemUsage → (icon, name)
+        var itemUsageMap = new Dictionary<string, (string icon, string name)>
     {
-        { "crossbow_light", "ui_crpg_icon_white_crossbow_light" },
-        { "crossbow", "ui_crpg_icon_white_crossbow_heavy" },
-        { "long_bow", "ui_crpg_icon_white_bow_longbow" },
-        { "bow", "ui_crpg_icon_white_bow" },
-        { "polearm_bracing", "ui_crpg_icon_white_brace" },
-        { "polearm_pike", "ui_crpg_icon_white_pike" },
+        { "crossbow_light", ("ui_crpg_icon_white_crossbow_light", "Light Crossbow") },
+        { "crossbow", ("ui_crpg_icon_white_crossbow_heavy", "Heavy Crossbow") },
+        { "long_bow", ("ui_crpg_icon_white_bow_longbow", "Longbow") },
+        { "bow", ("ui_crpg_icon_white_bow", "Bow") },
+        { "polearm_bracing", ("ui_crpg_icon_white_brace", "Brace") },
+        { "polearm_pike", ("ui_crpg_icon_white_pike", "Pike") },
     };
 
-        // Map native WeaponFlags / WeaponClass → feature icons
-        var nativeWeaponCheck = new List<Func<WeaponComponentData, string?>>
+        // Native checks → icon + name
+        var nativeWeaponCheck = new List<Func<WeaponComponentData, (string? icon, string? name)>>
     {
-        w => w.WeaponFlags.HasFlag(WeaponFlags.CanHook) ? "ui_crpg_icon_white_candismount" : null,
-        w => w.WeaponFlags.HasFlag(WeaponFlags.CanCrushThrough) ? "ui_crpg_icon_white_crushthrough" : null,
-        w => w.WeaponFlags.HasFlag(WeaponFlags.CanKnockDown) ? "ui_crpg_icon_white_knockdown" : null,
-        w => w.WeaponClass == WeaponClass.LargeShield ? "ui_crpg_icon_white_cantuseonhorseback" : null,
+        w => w.WeaponFlags.HasFlag(WeaponFlags.CanHook) ? ("ui_crpg_icon_white_candismount", "Can Dismount") : default,
+        w => w.WeaponFlags.HasFlag(WeaponFlags.CanCrushThrough) ? ("ui_crpg_icon_white_crushthrough", "Crush Through") : default,
+        w => w.WeaponFlags.HasFlag(WeaponFlags.CanKnockDown) ? ("ui_crpg_icon_white_knockdown", "Knock Down") : default,
+        w => w.WeaponClass == WeaponClass.LargeShield ? ("ui_crpg_icon_white_cantuseonhorseback", "Can't Use on Horseback") : default,
     };
 
         // Process CrpgItem weapons
@@ -738,13 +743,13 @@ public class ItemInfoVM : ViewModel
             {
                 if (weapon.Flags.HasFlag(kvp.Key))
                 {
-                    features.Add(kvp.Value);
+                    features[kvp.Value.icon] = kvp.Value.name;
                 }
             }
 
-            if (!string.IsNullOrEmpty(weapon.ItemUsage) && itemUsageMap.TryGetValue(weapon.ItemUsage, out string icon))
+            if (!string.IsNullOrEmpty(weapon.ItemUsage) && itemUsageMap.TryGetValue(weapon.ItemUsage, out var usage))
             {
-                features.Add(icon);
+                features[usage.icon] = usage.name;
             }
         }
 
@@ -753,15 +758,15 @@ public class ItemInfoVM : ViewModel
         {
             foreach (var check in nativeWeaponCheck)
             {
-                string? icon = check(weapon);
+                var (icon, name) = check(weapon);
                 if (icon != null)
                 {
-                    features.Add(icon);
+                    features[icon] = name ?? icon;
                 }
             }
         }
 
-        return features.ToList();
+        return features.Select(kvp => (kvp.Key, kvp.Value)).ToList();
     }
 
     private string GetItemWeaponClassIconString(CrpgItem crpgItem)

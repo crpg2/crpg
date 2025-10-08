@@ -106,23 +106,10 @@ public class CrpgInventoryViewModel : ViewModel
 
         // Subscribe to EquipmentPanel events
         _equipmentPanel.OnItemDropped += HandleItemDrop;
-        _equipmentPanel.OnItemDragBegin += slot =>
-        {
-            if (slot.ItemObj != null)
-            {
-                HandleItemDragBegin(slot.ItemObj);
-            }
-        };
-
-        _equipmentPanel.OnItemDragEnd += slot =>
-        {
-            if (slot.ItemObj != null)
-            {
-                HandleItemDragEnd(slot.ItemObj);
-            }
-        };
-        EquipmentPanel.OnSlotAlternateClicked += HandleAlternateClick;
-        _equipmentPanel.OnSlotClicked += HandleItemClick;
+        _equipmentPanel.OnItemDragBegin += HandleItemDragBegin;
+        _equipmentPanel.OnItemDragEnd += HandleItemDragEnd;
+        _equipmentPanel.OnSlotAlternateClicked += HandleAlternateClick;
+        _equipmentPanel.OnSlotClicked += HandleClick;
 
         UserLoadoutBehavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (UserLoadoutBehavior != null)
@@ -134,6 +121,7 @@ public class CrpgInventoryViewModel : ViewModel
             UserLoadoutBehavior.OnUserCharacterBasicUpdated += HandleUserCharacterBasicUpdated;
             UserLoadoutBehavior.OnUserCharacteristicsUpdated += HandleUserCharacteristicsUpdated;
             UserLoadoutBehavior.OnUserCharacteristicsConverted += HandleUserCharacteristicsConverted;
+            UserLoadoutBehavior.OnUserInfoUpdated += HandleUserInfoUpdated;
 
             _characterName = $"{UserLoadoutBehavior.UserCharacter?.Name ?? string.Empty} ({UserLoadoutBehavior.UserCharacter?.Level ?? 0})";
 
@@ -141,7 +129,7 @@ public class CrpgInventoryViewModel : ViewModel
             CrpgPeer? crpgPeer = missionPeer?.GetComponent<CrpgPeer>();
             string clanTag = crpgPeer?.Clan?.Tag ?? string.Empty;
 
-            if (clanTag != string.Empty)
+            if (clanTag.Length > 0)
             {
                 clanTag = $"[{clanTag}]";
             }
@@ -158,17 +146,25 @@ public class CrpgInventoryViewModel : ViewModel
             _clanArmory.OnClanArmoryUpdated += HandleClanArmoryUpdated;
         }
 
-        InventoryGrid.OnInventorySlotClicked += HandleInventorySlotClicked;
+        InventoryGrid.OnInventorySlotClicked += HandleClick;
         InventoryGrid.OnInventorySlotHoverEnd += HandleInventorySlotHoverEnd;
+        InventoryGrid.OnInventorySlotDragStart += HandleItemDragBegin;
+        InventoryGrid.OnInventorySlotDragEnd += HandleItemDragEnd;
+        InventoryGrid.OnInventoryChangeType += HandleInventoryChangeType;
+
+        // HandleInventoryChangeType(0); // Initialize drag events
     }
 
     public override void OnFinalize()
     {
+        base.OnFinalize();
         LogDebug("OnFinalize()");
 
         _equipmentPanel.OnItemDropped -= HandleItemDrop;
+        _equipmentPanel.OnItemDragBegin -= HandleItemDragBegin;
+        _equipmentPanel.OnItemDragEnd -= HandleItemDragEnd;
         EquipmentPanel.OnSlotAlternateClicked -= HandleAlternateClick;
-        _equipmentPanel.OnSlotClicked -= HandleItemClick;
+        _equipmentPanel.OnSlotClicked -= HandleClick;
 
         UserLoadoutBehavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (UserLoadoutBehavior != null)
@@ -179,6 +175,7 @@ public class CrpgInventoryViewModel : ViewModel
             UserLoadoutBehavior.OnUserCharacterBasicUpdated -= HandleUserCharacterBasicUpdated;
             UserLoadoutBehavior.OnUserCharacteristicsUpdated -= HandleUserCharacteristicsUpdated;
             UserLoadoutBehavior.OnUserCharacteristicsConverted -= HandleUserCharacteristicsConverted;
+            UserLoadoutBehavior.OnUserInfoUpdated -= HandleUserInfoUpdated;
         }
 
         if (_clanArmory is not null)
@@ -187,8 +184,18 @@ public class CrpgInventoryViewModel : ViewModel
             _clanArmory.OnArmoryActionUpdated -= HandleArmoryUserItemUpdated;
         }
 
-        InventoryGrid.OnInventorySlotClicked -= HandleInventorySlotClicked;
+        /*
+                foreach (var slot in InventoryGrid.AvailableItems)
+                {
+                    slot.OnItemDragBegin -= HandleItemDragBegin;
+                    slot.OnItemDragEnd -= HandleItemDragEnd;
+                }
+        */
+        InventoryGrid.OnInventorySlotClicked -= HandleClick;
         InventoryGrid.OnInventorySlotHoverEnd -= HandleInventorySlotHoverEnd;
+        InventoryGrid.OnInventorySlotDragStart += HandleItemDragBegin;
+        InventoryGrid.OnInventorySlotDragEnd += HandleItemDragEnd;
+        InventoryGrid.OnInventoryChangeType -= HandleInventoryChangeType;
     }
 
     public void SetRootWidget(Widget rootWidget)
@@ -200,6 +207,16 @@ public class CrpgInventoryViewModel : ViewModel
     public void SetContext(UIContext context)
     {
         _context = context;
+
+        _context.Root.FindChild("InventoryGridPrefab");
+        if (_context.Root != null)
+        {
+            LogDebug("UIContext Root found");
+        }
+        else
+        {
+            LogDebugError("UIContext Root NOT found");
+        }
         MakeItemInfo();
     }
 
@@ -253,48 +270,19 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
-    private void HandleArmoryUserItemUpdated(ClanArmoryActionType action, int uItemId)
+    private void HandleInventoryChangeType(int type)
     {
-        LogDebugError($"HandleArmoryUserItemUpdated() mode: {action} userItemId:{uItemId} ");
-
-        if (ItemInfo?.ItemObj is not null) // update the popup ItemInfoVM
-        {
-            if (ItemInfo?.UserItemExtended?.Id == uItemId)
-            {
-                ItemInfo.GenerateItemInfo(ItemInfo.ItemObj, uItemId);
-            }
-        }
-
-        // update equipmentpanel/slots
-        if (UserLoadoutBehavior != null && UserLoadoutBehavior.IsItemEquipped(uItemId))
-        {
-            foreach (var eSlot in EquipmentPanel.EquipmentSlots)
-            {
-                if (eSlot.UserItemId == uItemId)
+        LogDebug($"HandleInventoryChangeType: {type}");
+        /*
+                foreach (var slot in InventoryGrid.AvailableItems)
                 {
-                    // unequip the item?
-                    // Do something special for this one
-                    // eSlot.
+                    slot.OnItemDragBegin -= HandleItemDragBegin;
+                    slot.OnItemDragEnd -= HandleItemDragEnd;
+
+                    slot.OnItemDragBegin += HandleItemDragBegin;
+                    slot.OnItemDragEnd += HandleItemDragEnd;
                 }
-            }
-        }
-
-        // remove from armory or add?
-        // update inventory slots
-        if (UserLoadoutBehavior != null)
-        {
-            HandleClanArmoryUpdated();
-            HandleInventoryUpdated();
-        }
-
-        // update inventorygrid/slots
-        // if (UserLoadoutBehavior != null &)
-    }
-
-    private void HandleInventorySlotClicked(InventorySlotVM slot)
-    {
-        LogDebug($"HandleInventorySlotClicked() {slot.ItemName} ");
-        ShowItemInfoPopup(true, slot.ItemObj, slot.UserItemId);
+                */
     }
 
     private void HandleInventorySlotHoverEnd(InventorySlotVM slot)
@@ -382,12 +370,14 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
-    private void HandleItemDragBegin(ItemObject itemObj)
+    private void HandleItemDragBegin(ViewModel viewModel)
     {
+        LogDebugError("HandleItemDragBegin - updating equipment slot states");
+        if (viewModel is InventorySlotVM inv)
         {
-            LogDebug($"HandleItemDragBegin for item: {itemObj?.Name}");
+            LogDebugError($"HandleItemDragBegin for item: {inv.ItemObj?.Name}");
 
-            if (itemObj == null)
+            if (inv.ItemObj == null)
             {
                 return;
             }
@@ -395,7 +385,25 @@ public class CrpgInventoryViewModel : ViewModel
             foreach (var slotVm in EquipmentPanel.EquipmentSlots)
             {
                 // Disable equipment slots where the item **cannot** be equipped
-                if (!Equipment.IsItemFitsToSlot(EquipmentSlotVM.ConvertToEquipmentIndex(slotVm.CrpgItemSlotIndex), itemObj))
+                if (!Equipment.IsItemFitsToSlot(EquipmentSlotVM.ConvertToEquipmentIndex(slotVm.CrpgItemSlotIndex), inv.ItemObj))
+                {
+                    slotVm.IsButtonEnabled = false;
+                }
+            }
+        }
+        else if (viewModel is EquipmentSlotVM eq)
+        {
+            LogDebugError($"HandleItemDragBegin for item: {eq.ItemObj?.Name}");
+
+            if (eq.ItemObj == null)
+            {
+                return;
+            }
+
+            foreach (var slotVm in EquipmentPanel.EquipmentSlots)
+            {
+                // Disable equipment slots where the item **cannot** be equipped
+                if (!Equipment.IsItemFitsToSlot(EquipmentSlotVM.ConvertToEquipmentIndex(slotVm.CrpgItemSlotIndex), eq.ItemObj))
                 {
                     slotVm.IsButtonEnabled = false;
                 }
@@ -403,13 +411,23 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
-    private void HandleItemDragEnd(ItemObject itemObj)
+    private void HandleItemDragEnd(ViewModel viewModel)
     {
         LogDebug("HandleItemDragEnd - resetting equipment slot states");
 
-        foreach (var slotVm in EquipmentPanel.EquipmentSlots)
+        if (viewModel is InventorySlotVM inv)
         {
-            slotVm.IsButtonEnabled = true;
+            foreach (var slotVm in EquipmentPanel.EquipmentSlots)
+            {
+                slotVm.IsButtonEnabled = true;
+            }
+        }
+        else if (viewModel is EquipmentSlotVM eq)
+        {
+            foreach (var slotVm in EquipmentPanel.EquipmentSlots)
+            {
+                slotVm.IsButtonEnabled = true;
+            }
         }
     }
 
@@ -421,25 +439,23 @@ public class CrpgInventoryViewModel : ViewModel
         GameNetwork.EndModuleEventAsClient();
     }
 
-    private void HandleItemClick(EquipmentSlotVM slot)
-    {
-        LogDebug($"HandleItemClick() ");
-        ShowItemInfoPopup(true, slot.ItemObj, slot.UserItemId);
-    }
-
     private void HandleClick(ViewModel viewModel)
     {
-        if (viewModel is EquipmentSlotVM)
+        switch (viewModel)
         {
+            case EquipmentSlotVM eq when eq.ItemObj != null:
+                ShowItemInfoPopup(true, eq.ItemObj, eq.UserItemId);
+                break;
 
-        }
-        else if (viewModel is InventorySlotVM)
-        {
+            case InventorySlotVM inv when inv.ItemObj != null:
+                ShowItemInfoPopup(true, inv.ItemObj, inv.UserItemId);
+                break;
 
-        }
-        else if (viewModel is InventorySortTypeVM)
-        {
-
+            case InventorySortTypeVM sortVm:
+                break;
+            default:
+                LogDebugError("Clicked unknown ViewModel type");
+                break;
         }
     }
 
@@ -512,6 +528,7 @@ public class CrpgInventoryViewModel : ViewModel
         // InventoryGrid.SetAvailableItems(items);
         InventoryGrid.InitializeFilteredItemsList();
 
+        /*
         foreach (var slot in InventoryGrid.AvailableItems)
         {
             slot.OnItemDragBegin -= HandleItemDragBegin;
@@ -520,6 +537,8 @@ public class CrpgInventoryViewModel : ViewModel
             slot.OnItemDragBegin += HandleItemDragBegin;
             slot.OnItemDragEnd += HandleItemDragEnd;
         }
+
+        */
 
         OnPropertyChanged(nameof(InventoryGrid));
         LogDebug($"Inventory updated with {items.Count} items");
@@ -559,14 +578,54 @@ public class CrpgInventoryViewModel : ViewModel
         InventoryGrid.SetArmoryItems(items);
         InventoryGrid.InitializeFilteredItemsList();
 
-        foreach (var slot in InventoryGrid.AvailableItems)
-        {
-            slot.OnItemDragBegin -= HandleItemDragBegin;
-            slot.OnItemDragEnd -= HandleItemDragEnd;
+        /*
+                foreach (var slot in InventoryGrid.AvailableItems)
+                {
+                    slot.OnItemDragBegin -= HandleItemDragBegin;
+                    slot.OnItemDragEnd -= HandleItemDragEnd;
 
-            slot.OnItemDragBegin += HandleItemDragBegin;
-            slot.OnItemDragEnd += HandleItemDragEnd;
+                    slot.OnItemDragBegin += HandleItemDragBegin;
+                    slot.OnItemDragEnd += HandleItemDragEnd;
+                }
+            */
+    }
+
+    private void HandleArmoryUserItemUpdated(ClanArmoryActionType action, int uItemId)
+    {
+        LogDebug($"HandleArmoryUserItemUpdated() mode: {action} userItemId:{uItemId} ");
+
+        if (ItemInfo?.ItemObj is not null) // update the popup ItemInfoVM
+        {
+            if (ItemInfo?.UserItemExtended?.Id == uItemId)
+            {
+                ItemInfo.GenerateItemInfo(ItemInfo.ItemObj, uItemId);
+            }
         }
+
+        // update equipmentpanel/slots
+        if (UserLoadoutBehavior != null && UserLoadoutBehavior.IsItemEquipped(uItemId))
+        {
+            foreach (var eSlot in EquipmentPanel.EquipmentSlots)
+            {
+                if (eSlot.UserItemId == uItemId)
+                {
+                    // unequip the item?
+                    // Do something special for this one
+                    // eSlot.
+                }
+            }
+        }
+
+        // remove from armory or add?
+        // update inventory slots
+        if (UserLoadoutBehavior != null)
+        {
+            HandleClanArmoryUpdated();
+            HandleInventoryUpdated();
+        }
+
+        // update inventorygrid/slots
+        // if (UserLoadoutBehavior != null &)
     }
 
     private void HandleEquippedItemsUpdated()
@@ -672,6 +731,31 @@ public class CrpgInventoryViewModel : ViewModel
         UpdateCharacterBuildEquipmentStatDisplayFromNavbarSelection();
     }
 
+    private void HandleUserInfoUpdated()
+    {
+        LogDebug("HandleUserInfoUpdated()");
+
+        if (UserLoadoutBehavior == null)
+        {
+            LogDebugError("No CrpgCharacterLoadoutBehaviorClient found");
+            return;
+        }
+
+        CharacterName = $"{UserLoadoutBehavior.UserCharacter?.Name ?? string.Empty} ({UserLoadoutBehavior.UserCharacter?.Level ?? 0})";
+
+        MissionPeer? missionPeer = GameNetwork.MyPeer.GetComponent<MissionPeer>();
+        CrpgPeer? crpgPeer = missionPeer?.GetComponent<CrpgPeer>();
+        string clanTag = crpgPeer?.Clan?.Tag ?? string.Empty;
+
+        if (clanTag.Length > 0)
+        {
+            clanTag = $"[{clanTag}]";
+        }
+
+        UserName = $"{clanTag} {UserLoadoutBehavior?.User?.Name ?? string.Empty}";
+        GoldAmount = UserLoadoutBehavior?.User?.Gold.ToString("N0") ?? "0";
+    }
+
     private void UpdateCharacterBuildEquipmentStatDisplayFromNavbarSelection()
     {
         if (_navBar.EquipmentSelected)
@@ -713,15 +797,17 @@ public class CrpgInventoryViewModel : ViewModel
             return;
         }
 
-        Widget userInventoryGridWidget = RootWidget.FindChild("UserInventoryGrid");
+
+
+        Widget? userInventoryGridWidget = FindChildById(RootWidget, "InventoryGridRoot");
 
         if (userInventoryGridWidget != null)
         {
-            LogDebug("userInventoryGridWidget found");
+            LogDebug("InventoryGridPrefab found");
         }
         else
         {
-            LogDebug("userInventoryGridWidget NOT FOUND", Colors.Red);
+            LogDebug("InventoryGridPrefab NOT FOUND", Colors.Red);
         }
     }
 

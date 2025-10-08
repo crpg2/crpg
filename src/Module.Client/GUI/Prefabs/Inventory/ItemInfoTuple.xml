@@ -30,10 +30,18 @@
                 WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="25"
                 HorizontalAlignment="Left" Spacing="5">
               <ItemTemplate>
-                <ImageWidget Sprite="@IconSprite" IsVisible="true" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-                    SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height" UseAlphaAsMask="True"
-                    HorizontalAlignment="Left" VerticalAlignment="Center"
-                    DoNotAcceptEvents="True" />
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                    SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height">
+                  <Children>
+                    <ImageWidget Sprite="@IconSprite" IsVisible="true" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                        SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height" UseAlphaAsMask="True"
+                        HorizontalAlignment="Left" VerticalAlignment="Center"
+                        DoNotAcceptEvents="True" />
+                    <BasicTooltipViewModel DataSource="{ItemHint}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                        SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height"
+                        Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" />                        
+                  </Children>
+                </Widget>
               </ItemTemplate>
             </ListPanel>                      
             <BrushWidget Brush="Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"

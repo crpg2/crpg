@@ -11,7 +11,8 @@
   </Constants>
 
   <Window>
-    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@IsVisible">
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@IsVisible"
+            Id="InventoryGridRoot">
       <Children>
         <!-- Main Background -->
         <BrushWidget Id="Inventory.Frame" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
@@ -69,8 +70,8 @@
                 <!-- end scrolling item grid -->
                 <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod="HorizontalLeftToRight" Spacing="2">
                   <Children>
-                    <CrpgButtonPrefab Parameter.ButtonText="User Inventory" Parameter.ButtonIsSelected="@UserInventorySelected" Parameter.CommandClick="ExecuteClickUserInventory"/>
-                    <CrpgButtonPrefab Parameter.ButtonText="Armory" Parameter.ButtonIsSelected="@ArmorySelected" Parameter.CommandClick="ExecuteClickArmory"/>
+                    <CrpgButtonPrefab Parameter.ButtonText="User Inventory" Parameter.ButtonIsSelected="@UserInventorySelected" Parameter.CommandClick="ExecuteClickUserInventory" Parameter.ButtonIsVisible="@IsUserInventoryButtonVisible" />
+                    <CrpgButtonPrefab Parameter.ButtonText="Armory" Parameter.ButtonIsSelected="@ArmorySelected" Parameter.CommandClick="ExecuteClickArmory" Parameter.ButtonIsVisible="@IsArmoryButtonVisible"/>
                   </Children>
                 </ListPanel>
               </Children>

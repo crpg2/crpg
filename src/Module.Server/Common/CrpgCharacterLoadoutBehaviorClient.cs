@@ -43,13 +43,12 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     public CrpgConstants Constants { get; }
 
     internal event Action? OnUserInventoryUpdated;
-    internal event Action? OnClanArmoryUpdated;
+    internal event Action? OnUserInfoUpdated;
     internal event Action? OnUserCharacterEquippedItemsUpdated;
     internal event Action? OnUserCharacterBasicUpdated;
     internal event Action? OnUserCharacteristicsUpdated;
     internal event Action? OnUserCharacteristicsConverted;
     internal event Action<CrpgItemSlot>? OnEquipmentSlotUpdated;
-    internal event Action<ClanArmoryActionType, int>? OnArmoryActionUpdated;
 
     public override void OnBehaviorInitialize()
     {
@@ -86,28 +85,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         Constants = constants;
     }
 
-    /// <summary>
-    /// Builds a TaleWorlds Equipment object from the current equipped items.
-    /// </summary>
-    /// <returns>An <see cref="Equipment"/> object representing the user's equipped items.</returns>
-    public Equipment GetCrpgUserCharacterEquipment()
-    {
-        // Convert extended equipped items to base CrpgEquippedItem
-        var baseEquippedItems = EquippedItems
-            .Select(e => new CrpgEquippedItem
-            {
-                Slot = e.Slot,
-                UserItem = new CrpgUserItem
-                {
-                    Id = e.UserItem.Id,
-                    ItemId = e.UserItem.ItemId,
-                },
-            })
-            .ToList();
-
-        // Build Equipment using CrpgCharacterBuilder
-        return CrpgCharacterBuilder.CreateCharacterEquipment(baseEquippedItems);
-    }
+    // ===== API METHODS =====
 
     /// <summary>
     /// Requests the latest user inventory and equipped items from the server.
@@ -168,6 +146,29 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
             ConversionRequest = conversionType,
         });
         GameNetwork.EndModuleEventAsClient();
+    }
+
+    /// <summary>
+    /// Builds a TaleWorlds Equipment object from the current equipped items.
+    /// </summary>
+    /// <returns>An <see cref="Equipment"/> object representing the user's equipped items.</returns>
+    internal Equipment GetCrpgUserCharacterEquipment()
+    {
+        // Convert extended equipped items to base CrpgEquippedItem
+        var baseEquippedItems = EquippedItems
+            .Select(e => new CrpgEquippedItem
+            {
+                Slot = e.Slot,
+                UserItem = new CrpgUserItem
+                {
+                    Id = e.UserItem.Id,
+                    ItemId = e.UserItem.ItemId,
+                },
+            })
+            .ToList();
+
+        // Build Equipment using CrpgCharacterBuilder
+        return CrpgCharacterBuilder.CreateCharacterEquipment(baseEquippedItems);
     }
 
     /// <summary>
@@ -313,15 +314,15 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         registerer.Register<ServerSendEquipItemResult>(HandleEquipItemResult); // recieve result of attempt to equip item in slot on api from server
         registerer.Register<ServerSendUserCharacterBasic>(HandleUpdateCrpgUserCharacterBasic); // recieve character basic from server
         registerer.Register<ServerSendUpdateCharacteristicsResult>(HandleUpdateCharacteristicsResult); // recieve result of attempt to update character characteristics on api from server
-        registerer.Register<ServerSendConvertCharacteristicsResult>(HandleConvertCharacteristicsResult);
-        registerer.Register<ServerSendUserCharacterStatistics>(HandleUpdateCharacterStatistics);
-        registerer.Register<ServerSendUserInfo>(HandleUpdateUserInfo);
+        registerer.Register<ServerSendConvertCharacteristicsResult>(HandleConvertCharacteristicsResult); // recieve result of attempt to convert character characteristics on api from server
+        registerer.Register<ServerSendUserCharacterStatistics>(HandleUpdateCharacterStatistics); // recieve character statistics from server
+        registerer.Register<ServerSendUserInfo>(HandleUpdateUserInfo); // recieve user info from server
     }
 
     private void OnMyClientSynchronized()
     {
         LogDebug("OnMyClientSynchronized:");
-        RequestGetUpdatedEquipmentAndItems();
+        // RequestGetUpdatedEquipmentAndItems();
     }
 
     private void HandleUpdateUserInfo(ServerSendUserInfo message)
@@ -360,6 +361,8 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         }
 
         User.ClanMembership = message.User.ClanMembership;
+
+        OnUserInfoUpdated?.Invoke();
     }
 
     private void HandleArmoryActionUpdated(ClanArmoryActionType action, int uItemId)
@@ -392,8 +395,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
                 {
                     // remove if equipped
                     RemoveEquippedItem(userInventoryItem.Id);
-                    // Not in the list yet → add it
-                    // _clanArmoryItems.Add(message.ArmoryItems[0]);
+
                     userInventoryItem.IsArmoryItem = true;
 
                     LogDebugError($"userItem: {uItemId} added to clan armory successfully!");
@@ -412,18 +414,6 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
                     LogDebugError($"userItem: {uItemId} removed from clan armory successfully!");
                 }
 
-                /*
-                    if (clanArmoryItem != null)
-                    {
-                        // _clanArmoryItems.Remove(clanArmoryItem);
-                        if (userInventoryItem != null)
-                        {
-                            userInventoryItem.IsArmoryItem = false;
-                        }
-
-                        LogDebugError($"userItem: {uItemId} removed from clan armory successfully!");
-                    }
-                */
                 break;
 
             case ClanArmoryActionType.Borrow:
@@ -471,33 +461,8 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
                 }
 
                 break;
-
-            /*
-                        case ClanArmoryActionType.Get:
-                            LogDebugError($"Fetched clanId: {message.ClanId} armory list successfully!");
-                            if (message.ArmoryItems != null)
-                            {
-                                SetClanArmoryItems(message.ArmoryItems);
-                                foreach (var armoryItem in message.ArmoryItems)
-                                {
-                                    if (armoryItem.UserItem != null)
-                                    {
-                                        Debug.Print($"Armory Item Id: {armoryItem.UserItem.ItemId}, Rank: {armoryItem.UserItem.Rank}");
-                                    }
-                                    else if (armoryItem.BorrowedItem != null)
-                                    {
-                                        Debug.Print($"Borrowed Item Id: {armoryItem.BorrowedItem.UserItemId} by UserId: {armoryItem.BorrowedItem.BorrowerUserId}");
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                Debug.Print("No items in armory.");
-                            }
-                            OnClanArmoryUpdated?.Invoke();
-                            break;
-            */
             default:
+                LogDebugError($"HandleArmoryActionUpdated: unknown action {action}");
                 break;
         }
     }
@@ -546,27 +511,27 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         OnUserInventoryUpdated?.Invoke();
     }
 
-    private void HandleUpdateCrpgUserCharacterBasic(ServerSendUserCharacterBasic msg)
+    private void HandleUpdateCrpgUserCharacterBasic(ServerSendUserCharacterBasic message)
     {
         LogDebug("HandleUpdateCrpgUserCharacterBasic");
 
-        if (msg.Character == null)
+        if (message.Character == null)
         {
             LogDebugError("Error in HandleUpdateCrpgUserCharacterBasic: message.Character was null");
             return;
         }
 
-        SetUserCharacterBasic(msg.Character);
+        SetUserCharacterBasic(message.Character);
 
         // Trigger event for gui to listen to to know to update
         OnUserCharacterBasicUpdated?.Invoke();
     }
 
-    private void HandleUpdateCharacterStatistics(ServerSendUserCharacterStatistics msg)
+    private void HandleUpdateCharacterStatistics(ServerSendUserCharacterStatistics message)
     {
-        if (msg.CharacterStatistics != null)
+        if (message.CharacterStatistics != null)
         {
-            SetUserCharacterStatistics(msg.CharacterStatistics);
+            SetUserCharacterStatistics(message.CharacterStatistics);
         }
     }
 
@@ -574,33 +539,33 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     /// Handles a message from the server confirming the result of an equip/unequip action.
     /// Updates the affected slot in local equipped items state.
     /// </summary>
-    /// <param name="msg">The server message containing the equip result.</param>
-    private void HandleEquipItemResult(ServerSendEquipItemResult msg)
+    /// <param name="message">The server message containing the equip result.</param>
+    private void HandleEquipItemResult(ServerSendEquipItemResult message)
     {
-        if (!msg.Success)
+        if (!message.Success)
         {
-            LogDebugError($"Equip failed: {msg.ErrorMessage}");
+            LogDebugError($"Equip failed: {message.ErrorMessage}");
             return;
         }
 
-        var slot = (CrpgItemSlot)msg.SlotIndex;
+        var slot = (CrpgItemSlot)message.SlotIndex;
 
         CrpgUserItemExtended? userItem = null;
 
-        if (msg.UserItemId != -1)
+        if (message.UserItemId != -1)
         {
             // First try to find in user inventory
-            userItem = _userInventoryItems.FirstOrDefault(i => i.Id == msg.UserItemId);
+            userItem = _userInventoryItems.FirstOrDefault(i => i.Id == message.UserItemId);
 
             // If not found, maybe it’s a borrowed armory item
             if (userItem == null)
             {
-                userItem = _clanArmory?.FindArmoryItem(msg.UserItemId)?.UserItem;
+                userItem = _clanArmory?.FindArmoryItem(message.UserItemId)?.UserItem;
             }
 
             /*
             // Find inventory entry to populate ItemId
-            var inv = _userInventoryItems.FirstOrDefault(i => i.Id == msg.UserItemId);
+            var inv = _userInventoryItems.FirstOrDefault(i => i.Id == message.UserItemId);
             if (inv != null)
             {
                 userItem = new CrpgUserItemExtended
