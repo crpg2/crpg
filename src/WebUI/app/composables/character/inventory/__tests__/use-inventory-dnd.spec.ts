@@ -1,6 +1,6 @@
 import type { PartialDeep } from 'type-fest'
 
-import { describe, expect, it, vi } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import type { UserItem, UserItemsBySlot } from '~/models/user'
 
@@ -30,7 +30,7 @@ const {
     mockedOnUpdateCharacterItems,
     mockedEquippedItemsBySlot,
     mockedUseToastAdd: vi.fn(),
-    mockedUseUser: vi.fn<() => PartialDeep<ReturnType<typeof import('~/composables/user/use-user')['useUser']>>>().mockReturnValue({ user: { value: { id: 1 } } }),
+    mockedUseUser: vi.fn().mockReturnValue({ user: { value: { id: 1 } } }),
   }
 })
 
@@ -55,6 +55,10 @@ vi.mock('~/composables/character/use-character-items', () => ({
 }))
 
 describe('useInventoryDnD', () => {
+  afterEach(() => {
+    vi.spyOn(mockedEquippedItemsBySlot, 'value', 'get').mockReturnValue({})
+  })
+
   describe('onDragStart', () => {
     const userItem: PartialDeep<UserItem> = {
       id: 1,
@@ -258,8 +262,6 @@ describe('useInventoryDnD', () => {
         { slot: ITEM_SLOT.Weapon0, userItemId: 1 },
         { slot: ITEM_SLOT.Weapon1, userItemId: 4 },
       ])
-
-      vi.spyOn(mockedEquippedItemsBySlot, 'value', 'get').mockReturnValue({}) // reset mock
     })
   })
 

@@ -1,3 +1,5 @@
+import { useI18n, useToast } from '#imports'
+
 import type { ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
@@ -7,29 +9,20 @@ import { getAvailableSlotsByItem, getUnEquipItems, isWeaponBySlot } from '~/serv
 
 export const useInventoryQuickEquip = () => {
   const { user } = useUser()
-
   const toast = useToast()
   const { t } = useI18n()
 
   const { onUpdateCharacterItems, equippedItemsBySlot } = useCharacterItems()
 
-  const getTargetSlot = (slots: ItemSlot[]): ItemSlot | undefined => slots
-    .filter(slot => isWeaponBySlot(slot) ? !equippedItemsBySlot.value[slot] : true)
-    .at(0)
-
   const onQuickEquip = (item: UserItem) => {
     const { slots, warning } = getAvailableSlotsByItem(item, user.value!.id, equippedItemsBySlot.value)
 
     if (warning) {
-      toast.add({
-        title: t(warning),
-        color: 'warning',
-        close: false,
-      })
+      toast.add({ title: t(warning), color: 'warning', close: false })
       return
     }
 
-    const targetSlot = getTargetSlot(slots)
+    const targetSlot = slots.find(slot => !isWeaponBySlot(slot) || !(slot in equippedItemsBySlot.value))
 
     if (targetSlot) {
       onUpdateCharacterItems([{ slot: targetSlot, userItemId: item.id }])
@@ -37,7 +30,10 @@ export const useInventoryQuickEquip = () => {
   }
 
   const onQuickUnEquip = (slot: ItemSlot) => {
-    onUpdateCharacterItems(getUnEquipItems(slot, equippedItemsBySlot.value))
+    const unEquipItems = getUnEquipItems(slot, equippedItemsBySlot.value)
+    if (unEquipItems.length) {
+      onUpdateCharacterItems(unEquipItems)
+    }
   }
 
   return {

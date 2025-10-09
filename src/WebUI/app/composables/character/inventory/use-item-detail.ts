@@ -64,9 +64,9 @@ export const useItemDetail = (setListeners: boolean = false) => {
     return y + yDiff - cardHeight
   }
 
-  const { escape } = useMagicKeys()
-
   if (setListeners) {
+    const { escape } = useMagicKeys()
+
     const unsubscribe = whenever(escape!, () => {
       openedItems.value.length !== 0 && closeItemDetail(openedItems.value[openedItems.value.length - 1]!)
     })

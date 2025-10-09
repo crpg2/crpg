@@ -123,12 +123,9 @@ export const useCharacterInventory = () => {
 
   return {
     onSellUserItem,
-
     onRepairUserItem,
-
     onUpgradeUserItem,
     onReforgeUserItem,
-
     onAddItemToClanArmory,
     onReturnToClanArmory,
     onRemoveFromClanArmory,
