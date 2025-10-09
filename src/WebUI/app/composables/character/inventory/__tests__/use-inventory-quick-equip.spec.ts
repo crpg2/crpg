@@ -124,7 +124,7 @@ describe('useInventoryQuickEquip', () => {
       const { onQuickEquip } = useInventoryQuickEquip()
       onQuickEquip({ id: 1, item: { type: ITEM_TYPE.BodyArmor } } as UserItem)
 
-      expect(mockedUseToastAdd).toHaveBeenCalledWith({ title: 'no_slots', color: 'warning', close: false })
+      expect(mockedUseToastAdd).toHaveBeenCalledWith(expect.objectContaining({ title: 'no_slots' }))
       expect(mockedOnUpdateCharacterItems).not.toHaveBeenCalled()
     })
 

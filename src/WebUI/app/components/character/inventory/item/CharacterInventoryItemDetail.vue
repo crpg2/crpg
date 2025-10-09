@@ -203,8 +203,8 @@ const itemActions = computed(() => {
 
             <UTooltip v-if="userItemToReplaceSalePrice.graceTimeEnd !== null">
               <UBadge
-                size="sm"
                 color="success"
+                variant="subtle"
                 :label="$n(1, 'percent', { minimumFractionDigits: 0 })"
               />
               <template #content>
@@ -224,8 +224,8 @@ const itemActions = computed(() => {
 
             <UTooltip v-else>
               <UBadge
-                size="sm"
                 color="error"
+                variant="subtle"
                 :label="$n(itemSellCostPenalty, 'percent', { minimumFractionDigits: 0 })"
               />
               <template #content>

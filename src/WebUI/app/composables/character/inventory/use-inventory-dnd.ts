@@ -34,7 +34,7 @@ export const _useInventoryDnD = () => {
     const { slots, warning } = getAvailableSlotsByItem(item, user.value!.id, equippedItemsBySlot.value)
 
     if (warning) {
-      toast.add({ title: t(warning), color: 'warning', close: false })
+      toast.add({ title: t(warning), color: 'warning', duration: 2000, close: false })
       return
     }
 

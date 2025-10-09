@@ -13,11 +13,17 @@ defineProps<{
       class="flex items-center gap-2"
     >
       <UKbd :value="kbd" />
-      <span
+
+      <UiTextView
         v-if="index + 1 !== keys.length"
-        class="text-2xs"
-      >+</span>
+        variant="caption-xs"
+      >
+        +
+      </UiTextView>
     </div>
-    <span v-if="label" class="text-2xs">{{ label }}</span>
+
+    <UiTextView v-if="label" variant="caption-xs">
+      {{ label }}
+    </UiTextView>
   </div>
 </template>

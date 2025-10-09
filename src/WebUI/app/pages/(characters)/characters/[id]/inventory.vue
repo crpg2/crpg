@@ -303,7 +303,10 @@ const items = computed(() => {
           @reforge="() => onReforgeUserItem(item.userItemId)"
           @add-to-clan-armory="() => onAddItemToClanArmory(item.userItemId)"
           @remove-from-clan-armory="() => onRemoveFromClanArmory(item.userItemId)"
-          @return-to-clan-armory="() => onReturnToClanArmory(item.userItemId)"
+          @return-to-clan-armory="() => {
+            closeItemDetail(item);
+            onReturnToClanArmory(item.userItemId)
+          }"
         />
       </template>
     </ItemDetailGroup>

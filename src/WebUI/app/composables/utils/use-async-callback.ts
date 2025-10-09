@@ -1,5 +1,7 @@
 import { makeDestructurable, noop } from '@vueuse/shared'
+import { useToast } from '#imports'
 import { delay } from 'es-toolkit'
+import { shallowRef } from 'vue'
 
 import { usePageLoading } from '~/composables/app/use-page-loading'
 
@@ -51,11 +53,7 @@ export function useAsyncCallback<T extends AnyPromiseFn>(fn: T, options?: UseAsy
       await Promise.all(promises)
 
       if (successMessage) {
-        toast.add({
-          title: successMessage,
-          close: false,
-          color: 'success',
-        })
+        toast.add({ title: successMessage, close: false, color: 'success' })
       }
 
       onSuccess()
