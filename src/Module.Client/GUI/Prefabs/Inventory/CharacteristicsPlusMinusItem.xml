@@ -5,16 +5,20 @@
                HeightSizePolicy="Fixed" SuggestedHeight="25"
                Spacing="5">
       <Children>
-
         <!-- Left-aligned label -->
+        <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+          <Children>
         <TextWidget Text="@ItemLabel" 
                     WidthSizePolicy="Fixed" SuggestedWidth="120"
                     HeightSizePolicy="Fixed" SuggestedHeight="20"
                     HorizontalAlignment="Left"
                     Brush="CharacterEdit.Item.Text" />
-
         <!-- Spacer that stretches to push buttons to the right -->
         <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" />
+        <BasicTooltipViewModel DataSource="{Tooltip}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+            Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint"/>   
+        </Children>
+        </Widget>
         <CrpgButtonPrefab Parameter.ButtonText="-" Parameter.ButtonId="ButtonMinus"
                     Parameter.Width="30" Parameter.Height="30" Parameter.ButtonIsEnabled="@IsButtonMinusEnabled"
                     Parameter.CommandClick="ExecuteMinusClick" Parameter.ButtonIsVisible="@IsButtonMinusEnabled"
@@ -28,8 +32,10 @@
         <CrpgButtonPrefab Parameter.ButtonText="+" Parameter.ButtonId="ButtonPlus"
                     Parameter.Width="30" Parameter.Height="30" Parameter.ButtonIsEnabled="@IsButtonPlusEnabled"
                     Parameter.CommandClick="ExecutePlusClick" Parameter.ButtonIsVisible="@IsButtonPlusEnabled"
-                    Parameter.CommandAlternateClick="ExecutePlusAlternateClick"/>
+                    Parameter.CommandAlternateClick="ExecutePlusAlternateClick"/>        
       </Children>
     </ListPanel>
+      <BasicTooltipViewModel DataSource="{Tooltip}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+            Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint"/>   
   </Window>
 </Prefab>

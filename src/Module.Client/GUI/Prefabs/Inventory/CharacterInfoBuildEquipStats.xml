@@ -23,23 +23,11 @@
             <!-- Info Panel-->
             <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HeightSizePolicy="StretchToParent" WidthSizePolicy="StretchToParent"
                 VerticalAlignment="Center"
-                MarginTop="15" MarginBottom="15" MarginLeft="10" MarginRight="10" Spacing="2" >
-              <Children>
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Cost" Parameter.ShouldShowGold="true" Parameter.ValueText="@Cost" />
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Avg repair cost" Parameter.ShouldShowGold="true" Parameter.ValueText="@AvgRepairCost" />
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Health points" Parameter.ImgSprite="" Parameter.ValueText="@HealthPoints" />
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Weight" Parameter.ImgSprite="" Parameter.ValueText="@Weight" />
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Free weight" Parameter.ImgSprite="" Parameter.ValueText="@FreeWeight" />
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Weight reduction" Parameter.ImgSprite="" Parameter.ValueText="@WeightReduction" />                
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Percieved Weight" Parameter.ImgSprite="" Parameter.ValueText="@PerceivedWeight" />                
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Time to max speed" Parameter.ImgSprite="" Parameter.ValueText="@TimeToMaxSpeed" />
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Naked speed" Parameter.ImgSprite="" Parameter.ValueText="@NakedSpeed" />
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Current speed" Parameter.ImgSprite="" Parameter.ValueText="@CurrentSpeed" />
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Max weapon length" Parameter.ImgSprite="" Parameter.ValueText="@MaxWeaponLength" />
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Mov. speed penalty" Parameter.ImgSprite="" Parameter.ValueText="@MovementSpeedPenaltyWhenAttacking" Parameter.TextDisabledState="@MoveSpeedTextDisabledState"/>
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Mount speed penalty" Parameter.ImgSprite="" Parameter.ValueText="@MountSpeedPenalty" Parameter.TextDisabledState="@MountSpeedTextDisabledState"/>
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Mount stats penalty" Parameter.ImgSprite="" Parameter.ValueText="@AdditionalMountSpeedPenalty" Parameter.TextDisabledState="@AddMountSpeedTextDisabledState"/>
-              </Children>
+                MarginTop="15" MarginBottom="15" MarginLeft="10" MarginRight="10" Spacing="2"
+                DataSource="{Stats}">
+              <ItemTemplate>
+                <CharacterInfoBuildEquipStatsItem DataSource="{.}" /> 
+              </ItemTemplate>                  
             </ListPanel>
           </Children>
         </BrushWidget>

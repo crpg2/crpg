@@ -12,8 +12,15 @@ namespace Crpg.Module.GUI.Inventory;
 public class CharacterInfoBuildEquipStatsVM : ViewModel
 {
     private CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
-    private readonly CrpgConstants _constants = default!;
     private readonly CrpgCharacterStatCalculations _statCalcInstance = default!;
+    private MBBindingList<CharacterInfoBuildEquipStatsItemVM> _stats = new();
+    [DataSourceProperty]
+    public MBBindingList<CharacterInfoBuildEquipStatsItemVM> Stats
+    {
+        get => _stats;
+        set => SetField(ref _stats, value, nameof(Stats));
+    }
+
     private string _cost = string.Empty;
     private string _avgRepairCost = string.Empty;
     private string _healthPoints = string.Empty;
@@ -41,16 +48,31 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
             return;
         }
 
-        _constants = UserLoadoutBehavior.Constants;
+        _statCalcInstance = new CrpgCharacterStatCalculations(UserLoadoutBehavior.Constants);
 
-        _statCalcInstance = new CrpgCharacterStatCalculations(_constants);
+        _stats = new MBBindingList<CharacterInfoBuildEquipStatsItemVM>
+        {
+            new("Cost", _cost, "Total cost of all equipped items", true),
+            new("Avg repair cost", _avgRepairCost, "Average repair cost per hour of all equipped items", true),
+            new("Health points", _healthPoints, "Effective health points based on your build."),
+            new("Weight", _weight, "Weight"),
+            new("Free weight", _freeWeight, "Free weight / Maximum weight before penalties"),
+            new("Weight reduction", _weightReduction, "Remaining weight after deduction by free weight. Reduced by STR points"),
+            new("Perceived weight", _perceivedWeight, "Percieved weight"),
+            new("Time to max speed", _timeToMaxSpeed, "Acceleration time to reach max speed of running"),
+            new("Naked speed", _nakedSpeed, "Speed of running with no equipment"),
+            new("Current speed", _currentSpeed, "Current speed"),
+            new("Max weapon length", _maxWeaponLength, "Max weapon length without a movement speed penalty when fighting. Depends on STR points"),
+            new("Mov. speed penalty", _movementSpeedPenaltyWhenAttacking, "Extra movement speed penalty when attacking with a weapon based on length and STR"),
+            new("Mount speed penalty", _mountSpeedPenalty, "Reduces speed based on rider percieved weight and harness weight"),
+            new("Mount stats penalty", _additionalMountSpeedPenalty, "Penalties to mount stats based on weapon length and rider STR"),
+        };
     }
 
     internal bool UpdateCharacterBuildEquipmentStatDisplay(Equipment equipment, CrpgCharacterCharacteristics characteristics)
     {
         try
         {
-            // InformationManager.DisplayMessage(new InformationMessage("UpdateCharacterBuildEquipmentStatDisplay()", Colors.Red));
             if (UserLoadoutBehavior == null)
             {
                 InformationManager.DisplayMessage(new InformationMessage("CrpgCharacterLoadoutBehaviorClient is required but not found in current mission", Colors.Red));
@@ -76,98 +98,67 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
             int totalCost = _statCalcInstance.ComputeOverallPrice(equipment);
 
             // Stuff to display in UI
-            Cost = $"{totalCost:N0}";
-            AvgRepairCost = $"{_statCalcInstance.ComputeAverageRepairCostPerHour(totalCost):N0} / h";
-            HealthPoints = $"{_statCalcInstance.ComputeHealthPoints(characteristics)}";
-            Weight = $"{_statCalcInstance.ComputeOverallWeight(equipment):F3}";
-            FreeWeight = $"{Math.Min(_statCalcInstance.ComputeOverallWeight(equipment), charSpeedStats.FreeWeight):F2}/{charSpeedStats.FreeWeight:F2}";
-            WeightReduction = $"{(charSpeedStats.WeightReductionFactor - 1) * 100:F2}%";
-            PerceivedWeight = $"{charSpeedStats.PerceivedWeight:F3}";
-            TimeToMaxSpeed = $"{charSpeedStats.TimeToMaxSpeed:F3}s";
-            NakedSpeed = $"{charSpeedStats.NakedSpeed:F3}";
-            CurrentSpeed = $"{charSpeedStats.CurrentSpeed:F3}";
-            MaxWeaponLength = $"{charSpeedStats.MaxWeaponLength:F3}";
-            MovementSpeedPenaltyWhenAttacking = $"{charSpeedStats.MovementSpeedPenaltyWhenAttacking:F2}%";
+            _cost = $"{totalCost:N0}";
+            _avgRepairCost = $"{_statCalcInstance.ComputeAverageRepairCostPerHour(totalCost):N0} / h";
+            _healthPoints = $"{_statCalcInstance.ComputeHealthPoints(characteristics)}";
+            _weight = $"{_statCalcInstance.ComputeOverallWeight(equipment):F3}";
+            _freeWeight = $"{Math.Min(_statCalcInstance.ComputeOverallWeight(equipment), charSpeedStats.FreeWeight):F2}/{charSpeedStats.FreeWeight:F2}";
+            _weightReduction = $"{(charSpeedStats.WeightReductionFactor - 1) * 100:F2}%";
+            _perceivedWeight = $"{charSpeedStats.PerceivedWeight:F3}";
+            _timeToMaxSpeed = $"{charSpeedStats.TimeToMaxSpeed:F3}s";
+            _nakedSpeed = $"{charSpeedStats.NakedSpeed:F3}";
+            _currentSpeed = $"{charSpeedStats.CurrentSpeed:F3}";
+            _maxWeaponLength = $"{charSpeedStats.MaxWeaponLength:F3}";
+            _movementSpeedPenaltyWhenAttacking = $"{charSpeedStats.MovementSpeedPenaltyWhenAttacking:F2}%";
 
-            MoveSpeedTextDisabledState = charSpeedStats.MovementSpeedPenaltyWhenAttacking < 0;
+            _moveSpeedTextDisabledState = charSpeedStats.MovementSpeedPenaltyWhenAttacking < 0;
 
             double penaltyPercent = 0;
             if (!mount.IsEmpty) // has a horse
             {
                 penaltyPercent = mountSpeedStats.SpeedReduction * 100.0;
-                MountSpeedPenalty = $"{penaltyPercent:F2}%";
-                MountSpeedTextDisabledState = mountSpeedStats.SpeedReduction < 0;
+                _mountSpeedPenalty = $"{penaltyPercent:F2}%";
+                _mountSpeedTextDisabledState = mountSpeedStats.SpeedReduction < 0;
 
                 // Turn multiplier into penalty percent
                 penaltyPercent = (mountWeaponLengthPenalty - 1.0) * 100.0;
-                AdditionalMountSpeedPenalty = $"{penaltyPercent:F2}%";
-                AddMountSpeedTextDisabledState = penaltyPercent < 0;
+                _additionalMountSpeedPenalty = $"{penaltyPercent:F2}%";
+                _addMountSpeedTextDisabledState = penaltyPercent < 0;
             }
             else
             {
-                MountSpeedPenalty = "--";
-                AdditionalMountSpeedPenalty = "0.00%";
-                MountSpeedTextDisabledState = false;
-                AddMountSpeedTextDisabledState = false;
+                _mountSpeedPenalty = "--";
+                _additionalMountSpeedPenalty = "0.00%";
+                _mountSpeedTextDisabledState = false;
+                _addMountSpeedTextDisabledState = false;
             }
 
-            // InformationManager.DisplayMessage(new InformationMessage("UpdateCharacterBuildEquipmentStatDisplay() FINISHED"));
+            _stats = new MBBindingList<CharacterInfoBuildEquipStatsItemVM>
+            {
+                new("Cost", _cost, "Total cost of all equipped items", true),
+                new("Avg repair cost", _avgRepairCost, "Average repair cost per hour of all equipped items", true),
+                new("Health points", _healthPoints, "Effective health points based on your build."),
+                new("Weight", _weight, "Weight"),
+                new("Free weight", _freeWeight, "Free weight / Maximum weight before penalties"),
+                new("Weight reduction", _weightReduction, "Remaining weight after deduction by free weight. Reduced by STR points"),
+                new("Perceived weight", _perceivedWeight, "Percieved weight"),
+                new("Time to max speed", _timeToMaxSpeed, "Acceleration time to reach max speed of running"),
+                new("Naked speed", _nakedSpeed, "Speed of running with no equipment"),
+                new("Current speed", _currentSpeed, "Current speed"),
+                new("Max weapon length", _maxWeaponLength, "Max weapon length without a movement speed penalty when fighting. Depends on STR points"),
+                new("Mov. speed penalty", _movementSpeedPenaltyWhenAttacking, "Extra movement speed penalty when attacking with a weapon based on length and STR", false, _moveSpeedTextDisabledState),
+                new("Mount speed penalty", _mountSpeedPenalty, "Reduces speed based on rider percieved weight and harness weight", false, _mountSpeedTextDisabledState),
+                new("Mount stats penalty", _additionalMountSpeedPenalty, "Penalties to mount stats based on weapon length and rider STR", false, _addMountSpeedTextDisabledState),
+            };
+            OnPropertyChanged(nameof(Stats));
         }
         catch (Exception ex)
         {
             InformationManager.DisplayMessage(new InformationMessage($"[ERROR] {ex.Message}", Colors.Red));
             InformationManager.DisplayMessage(new InformationMessage($"[ERROR] {ex.StackTrace}", Colors.Red));
+            Debug.Print($"[ERROR] {ex.Message}\n{ex.StackTrace}");
         }
 
         return true;
     }
-
-    [DataSourceProperty]
-    public string Cost { get => _cost; set => SetField(ref _cost, value, nameof(Cost)); }
-    [DataSourceProperty]
-    public string AvgRepairCost { get => _avgRepairCost; set => SetField(ref _avgRepairCost, value, nameof(AvgRepairCost)); }
-    [DataSourceProperty]
-    public string HealthPoints { get => _healthPoints; set => SetField(ref _healthPoints, value, nameof(HealthPoints)); }
-
-    [DataSourceProperty]
-    public string Weight { get => _weight; set => SetField(ref _weight, value, nameof(Weight)); }
-
-    [DataSourceProperty]
-    public string FreeWeight { get => _freeWeight; set => SetField(ref _freeWeight, value, nameof(FreeWeight)); }
-
-    [DataSourceProperty]
-    public string WeightReduction { get => _weightReduction; set => SetField(ref _weightReduction, value, nameof(WeightReduction)); }
-
-    [DataSourceProperty]
-    public string PerceivedWeight { get => _perceivedWeight; set => SetField(ref _perceivedWeight, value, nameof(PerceivedWeight)); }
-
-    [DataSourceProperty]
-    public string TimeToMaxSpeed { get => _timeToMaxSpeed; set => SetField(ref _timeToMaxSpeed, value, nameof(TimeToMaxSpeed)); }
-
-    [DataSourceProperty]
-    public string NakedSpeed { get => _nakedSpeed; set => SetField(ref _nakedSpeed, value, nameof(NakedSpeed)); }
-
-    [DataSourceProperty]
-    public string CurrentSpeed { get => _currentSpeed; set => SetField(ref _currentSpeed, value, nameof(CurrentSpeed)); }
-
-    [DataSourceProperty]
-    public string MaxWeaponLength { get => _maxWeaponLength; set => SetField(ref _maxWeaponLength, value, nameof(MaxWeaponLength)); }
-
-    [DataSourceProperty]
-    public string MovementSpeedPenaltyWhenAttacking { get => _movementSpeedPenaltyWhenAttacking; set => SetField(ref _movementSpeedPenaltyWhenAttacking, value, nameof(MovementSpeedPenaltyWhenAttacking)); }
-
-    [DataSourceProperty]
-    public string MountSpeedPenalty { get => _mountSpeedPenalty; set => SetField(ref _mountSpeedPenalty, value, nameof(MountSpeedPenalty)); }
-
-    [DataSourceProperty]
-    public string AdditionalMountSpeedPenalty { get => _additionalMountSpeedPenalty; set => SetField(ref _additionalMountSpeedPenalty, value, nameof(AdditionalMountSpeedPenalty)); }
-
-    [DataSourceProperty]
-    public bool MoveSpeedTextDisabledState { get => _moveSpeedTextDisabledState; set => SetField(ref _moveSpeedTextDisabledState, value, nameof(MoveSpeedTextDisabledState)); }
-
-    [DataSourceProperty]
-    public bool MountSpeedTextDisabledState { get => _mountSpeedTextDisabledState; set => SetField(ref _mountSpeedTextDisabledState, value, nameof(MountSpeedTextDisabledState)); }
-
-    [DataSourceProperty]
-    public bool AddMountSpeedTextDisabledState { get => _addMountSpeedTextDisabledState; set => SetField(ref _addMountSpeedTextDisabledState, value, nameof(AddMountSpeedTextDisabledState)); }
 }

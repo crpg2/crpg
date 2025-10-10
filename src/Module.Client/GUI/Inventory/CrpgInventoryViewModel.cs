@@ -835,21 +835,6 @@ public class CrpgInventoryViewModel : ViewModel
         return null;
     }
 
-    private Vec2 ConvertScreenToWidgetCoordinates(Vec2 screenPos)
-    {
-        if (Movie == null || Layer == null)
-            return screenPos; // fallback
-
-        float layerWidth = Layer.UsableArea.X;
-        float layerHeight = Layer.UsableArea.Y;
-
-        // Convert pixel coordinates to relative (0..1)
-        float x = screenPos.X; // / layerWidth;
-        float y = screenPos.Y; // / layerHeight;
-
-        return new Vec2(x, y);
-    }
-
     private readonly bool _debugOn = false;
     private void LogDebug(string message)
     {

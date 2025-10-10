@@ -1,3 +1,4 @@
+using TaleWorlds.Core.ViewModelCollection.Information;
 using TaleWorlds.Library;
 
 namespace Crpg.Module.GUI.Inventory;
@@ -8,14 +9,16 @@ public class CharacteristicsPlusMinusItemVM : ViewModel
     private int _itemValue;
     private bool _isButtonMinusEnabled;
     private bool _isButtonPlusEnabled;
+    private BasicTooltipViewModel? _tooltip;
 
     internal event Action<CharacteristicsPlusMinusItemVM, bool>? OnPlusClickedEvent;
     internal event Action<CharacteristicsPlusMinusItemVM, bool>? OnMinusClickedEvent;
 
-    public CharacteristicsPlusMinusItemVM(string label, int value)
+    public CharacteristicsPlusMinusItemVM(string label, int value, string tooltipText = "")
     {
         _itemLabel = label;
         _itemValue = value;
+        _tooltip = new BasicTooltipViewModel(() => tooltipText);
     }
 
     [DataSourceProperty]
@@ -52,6 +55,13 @@ public class CharacteristicsPlusMinusItemVM : ViewModel
     {
         get => _textStateDisabled;
         set => SetField(ref _textStateDisabled, value, nameof(TextStateDisabled));
+    }
+
+    [DataSourceProperty]
+    public BasicTooltipViewModel? Tooltip
+    {
+        get => _tooltip;
+        set => SetField(ref _tooltip, value, nameof(Tooltip));
     }
 
     private void ExecutePlusClick()

@@ -4,13 +4,6 @@
     <Constant Name="Label.Brush" Value="CharacterEdit.Item.Text" />
     <Constant Name="Value.Brush" Value="CharacterEdit.Value.Text" />
   </Constants>
-  <Parameters>
-    <Parameter Name="LabelText" DefaultValue="Label" />
-    <Parameter Name="ImgSprite" DefaultValue="" /> <!-- SPGeneral\SPCoin -->
-    <Parameter Name="ShouldShowGold" DefaultValue="false" />
-    <Parameter Name="ValueText" DefaultValue="" />
-    <Parameter Name="TextDisabledState" DefaultValue="false" />
-  </Parameters> 
   <Window>   
     <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center"
         MarginLeft="5" MarginRight="5">
@@ -18,25 +11,25 @@
         <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HeightSizePolicy="Fixed" WidthSizePolicy="CoverChildren"
             HorizontalAlignment="Center" MarginTop="2" MarginBottom="2" MarginLeft="10" MarginRight="10" Spacing="5">
           <Children>
-          <!-- Left-aligned label -->
-            <TextWidget Text="*LabelText" 
+            <!-- Left-aligned label -->
+            <TextWidget Text="@LabelText" 
                 WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20"
                 HorizontalAlignment="Left"
                 Brush="!Label.Brush" />
-          <!-- Spacer -->
+            <!-- Spacer -->
             <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" />
-
-          <!-- Image if any Right-Aligned-->
-          <!-- <ImageWidget Sprite="*ImgSprite" WidthSizePolicy="Fixed" SuggestedWidth="20" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" VerticalAlignment="Center"  /> -->
+            <!-- Gold icon if any Right-Aligned-->
             <BrushWidget Id="GoldIcon" Brush="Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-              SuggestedWidth="15" SuggestedHeight="15" IsVisible="*ShouldShowGold" PositionYOffset="2" />
-          <!-- Value Right-Aligned-->
-            <TextWidget Text="*ValueText" IsDisabled="*TextDisabledState"
+              SuggestedWidth="15" SuggestedHeight="15" IsVisible="@ShouldShowGold" PositionYOffset="2" />
+            <!-- Value Right-Aligned-->
+            <TextWidget Text="@ValueText" IsDisabled="@TextDisabledState"
                 WidthSizePolicy="CoverChildren" SuggestedWidth="70" HeightSizePolicy="Fixed" SuggestedHeight="20" 
                 HorizontalAlignment="Right" 
                 Brush="!Value.Brush" />
           </Children>
         </ListPanel>
+        <BasicTooltipViewModel DataSource="{Tooltip}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+            Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" />     
       </Children>
     </Widget>
   </Window>
