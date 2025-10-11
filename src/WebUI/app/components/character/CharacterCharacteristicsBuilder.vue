@@ -3,7 +3,7 @@ import NumberFlow from '@number-flow/vue'
 
 import type { CharacterCharacteristics, CharacteristicKey, CharacteristicSectionKey, SkillKey } from '~/models/character'
 
-import { characteristicBonusByKey } from '~/services/character-service'
+import { ATTRIBUTES_TO_SKILLS_RATE, characteristicBonusByKey, SKILLS_TO_ATTRIBUTES_RATE } from '~/services/character-service'
 
 interface FormSchema {
   key: CharacteristicSectionKey
@@ -100,9 +100,6 @@ const formSchema: FormSchema[] = [
     ],
   },
 ]
-
-const ATTRIBUTES_TO_SKILLS = 1
-const SKILLS_TO_ATTRIBUTES = 2
 </script>
 
 <template>
@@ -150,10 +147,10 @@ const SKILLS_TO_ATTRIBUTES = 2
                     tag="p"
                   >
                     <template #attribute>
-                      <span class="font-bold text-error">{{ ATTRIBUTES_TO_SKILLS }}</span>
+                      <span class="font-bold text-error">{{ ATTRIBUTES_TO_SKILLS_RATE }}</span>
                     </template>
                     <template #skill>
-                      <span class="font-bold text-success">{{ SKILLS_TO_ATTRIBUTES }}</span>
+                      <span class="font-bold text-success">{{ SKILLS_TO_ATTRIBUTES_RATE }}</span>
                     </template>
                   </i18n-t>
                 </template>
@@ -182,11 +179,11 @@ const SKILLS_TO_ATTRIBUTES = 2
                     keypath="character.characteristic.convert.skillsToAttrs.tooltip"
                     tag="p"
                   >
-                    <template #skill>
-                      <span class="font-bold text-error">{{ SKILLS_TO_ATTRIBUTES }}</span>
-                    </template>
                     <template #attribute>
-                      <span class="font-bold text-success">{{ ATTRIBUTES_TO_SKILLS }}</span>
+                      <span class="font-bold text-success">{{ ATTRIBUTES_TO_SKILLS_RATE }}</span>
+                    </template>
+                    <template #skill>
+                      <span class="font-bold text-error">{{ SKILLS_TO_ATTRIBUTES_RATE }}</span>
                     </template>
                   </i18n-t>
                 </template>
@@ -255,13 +252,13 @@ const SKILLS_TO_ATTRIBUTES = 2
       <template #rightContent>
         <UInputNumber
           :data-aq-control="`${fieldGroupKey}:${fieldKey}`"
-          v-bind="getInputProps(fieldGroupKey, fieldKey)"
           variant="outline"
           size="lg"
           :color="fieldGroupKey === 'skills' && !checkCurrentSkillRequirementsSatisfied(fieldKey as SkillKey) ? 'error' : 'neutral'"
           :ui="{
             base: 'w-28',
           }"
+          v-bind="getInputProps(fieldGroupKey, fieldKey)"
           @update:model-value="(value) => $emit('input', fieldGroupKey, fieldKey, value)"
         />
       </template>

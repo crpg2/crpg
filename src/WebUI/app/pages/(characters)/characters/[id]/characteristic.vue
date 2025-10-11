@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useCharacter, useCharacters } from '~/composables/character/use-character'
-import { useCharacterCharacteristic, useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic'
+import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
+import { useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic-builder'
 import { useCharacterItems, useCharacterItemsProvider } from '~/composables/character/use-character-items'
 import { useUser } from '~/composables/user/use-user'
 import { CHARACTERISTIC_CONVERSION } from '~/models/character'
@@ -28,7 +29,7 @@ const {
   canConvertSkillsToAttributes,
   currentSkillRequirementsSatisfied,
   isChangeValid,
-  wasChangeMade,
+  isDirty,
   getInputProps,
   onInput,
   reset: resetCharacterCharacteristicBuilder,
@@ -97,7 +98,7 @@ const [onRespecializeCharacter] = useAsyncCallback(
       "
     >
       <UButton
-        :disabled="!wasChangeMade"
+        :disabled="!isDirty"
         color="neutral"
         variant="outline"
         size="xl"
@@ -116,7 +117,7 @@ const [onRespecializeCharacter] = useAsyncCallback(
         <UButton
           size="xl"
           icon="crpg:check"
-          :disabled="!wasChangeMade || !isChangeValid"
+          :disabled="!isDirty || !isChangeValid"
           :label="$t('action.commit')"
           data-aq-commit-action
         />

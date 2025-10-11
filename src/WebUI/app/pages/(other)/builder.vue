@@ -12,15 +12,17 @@ import type {
   CharacterWeaponProficiencies,
 } from '~/models/character'
 
-import { useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic'
+import { useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic-builder'
 import { CHARACTERISTIC_CONVERSION } from '~/models/character'
 import {
   attributePointsForLevel,
+  ATTRIBUTES_TO_SKILLS_RATE,
   createCharacteristics,
   createDefaultCharacteristic,
   getCharacterOverallItemsStats,
   getExperienceForLevel,
   skillPointsForLevel,
+  SKILLS_TO_ATTRIBUTES_RATE,
   wppForLevel,
 } from '~/services/character-service'
 
@@ -29,36 +31,34 @@ const { t } = useI18n()
 const route = useRoute('builder')
 const router = useRouter()
 
-const initialCharacteristics = ref<CharacterCharacteristics>(
-  createCharacteristics(
-    defu(
-      {
-        ...(route.query?.attributes && { attributes: route.query.attributes as Partial<CharacterAttributes> }),
-        ...(route.query?.skills && { skills: route.query.skills as Partial<CharacterSkills> }),
-        ...(route.query?.weaponProficiencies && { weaponProficiencies: route.query.weaponProficiencies as Partial<CharacterWeaponProficiencies> }),
-      },
-      createDefaultCharacteristic(),
-    ),
-  ),
-)
+const level = useRouteQuery('level', minimumLevel)
+const localLevel = ref(level.value)
+function onChangeLevel() {
+  level.value = localLevel.value
+}
+
+const initialCharacteristics = ref<CharacterCharacteristics>(defu(
+  {
+    ...(route.query?.attributes && { attributes: route.query.attributes as Partial<CharacterAttributes> }),
+    ...(route.query?.skills && { skills: route.query.skills as Partial<CharacterSkills> }),
+    ...(route.query?.weaponProficiencies && { weaponProficiencies: route.query.weaponProficiencies as Partial<CharacterWeaponProficiencies> }),
+  },
+  createDefaultCharacteristic(),
+))
 
 const {
   characteristics,
   canConvertAttributesToSkills,
   canConvertSkillsToAttributes,
   currentSkillRequirementsSatisfied,
-  convertAttributeToSkills,
-  convertSkillsToAttribute,
   getInputProps,
   onInput,
   reset: resetCharacterBuilderState,
   healthPoints,
 } = useCharacterCharacteristicBuilder(initialCharacteristics)
 
-const level = useRouteQuery('level', minimumLevel, { mode: 'replace' })
-
-const convertRateAttributesToSkills = useRouteQuery('convertRateAttributesToSkills', 0, { mode: 'replace' })
-const convertRateSkillsToAttributes = useRouteQuery('convertRateSkillsToAttributes', 0, { mode: 'replace' })
+const convertRateAttributesToSkills = useRouteQuery('convertRateAttributesToSkills', 0)
+const convertRateSkillsToAttributes = useRouteQuery('convertRateSkillsToAttributes', 0)
 
 watch(level, () => {
   resetCharacterBuilderState()
@@ -87,13 +87,13 @@ watchDebounced(
   { debounce: 500 },
 )
 
-const experienceForLevel = computed(() => getExperienceForLevel(level.value))
-const experienceForNextLevel = computed(() => getExperienceForLevel(level.value + 1))
+const experienceForLevel = computed(() => getExperienceForLevel(localLevel.value))
+const experienceForNextLevel = computed(() => getExperienceForLevel(localLevel.value + 1))
 
-const weight = useRouteQuery('weight', 0, { mode: 'replace' })
-const weaponLength = useRouteQuery('weaponLength', 0, { mode: 'replace' })
-const mountSpeed = useRouteQuery('mountSpeed', 0, { mode: 'replace' })
-const mountHarnessWeight = useRouteQuery('mountHarnessWeight', 0, { mode: 'replace' })
+const weight = useRouteQuery('weight', 0)
+const weaponLength = useRouteQuery('weaponLength', 0)
+const mountSpeed = useRouteQuery('mountSpeed', 0)
+const mountHarnessWeight = useRouteQuery('mountHarnessWeight', 0)
 
 // TODO: unit
 const convertCharacteristics = (conversion: CharacteristicConversion) => {
@@ -105,7 +105,9 @@ const convertCharacteristics = (conversion: CharacteristicConversion) => {
       convertRateAttributesToSkills.value += 1
     }
 
-    convertAttributeToSkills()
+    // convertAttributeToSkills
+    initialCharacteristics.value.attributes.points -= ATTRIBUTES_TO_SKILLS_RATE
+    initialCharacteristics.value.skills.points += SKILLS_TO_ATTRIBUTES_RATE
     return
   }
 
@@ -116,7 +118,9 @@ const convertCharacteristics = (conversion: CharacteristicConversion) => {
     convertRateSkillsToAttributes.value += 1
   }
 
-  convertSkillsToAttribute()
+  // convertSkillsToAttribute
+  initialCharacteristics.value.skills.points -= SKILLS_TO_ATTRIBUTES_RATE
+  initialCharacteristics.value.attributes.points += ATTRIBUTES_TO_SKILLS_RATE
 }
 
 const onReset = async () => {
@@ -159,7 +163,7 @@ const onShare = () => {
               class="text-center"
             >
               <template #level>
-                <span class="font-bold text-primary">{{ level }}</span>
+                <span class="font-bold text-primary">{{ localLevel }}</span>
               </template>
 
               <template #exp>
@@ -171,7 +175,7 @@ const onShare = () => {
               </template>
 
               <template #nextLevel>
-                <span class="font-bold text-primary">{{ level + 1 }}</span>
+                <span class="font-bold text-primary">{{ localLevel + 1 }}</span>
               </template>
             </i18n-t>
 
@@ -193,16 +197,17 @@ const onShare = () => {
 
             <div>
               <USlider
-                v-model="level"
+                v-model="localLevel"
                 :min="minimumLevel"
                 :max="maximumLevel"
+                @change="onChangeLevel"
               />
 
               <div class="mt-2 flex justify-between">
                 <UiTextView variant="caption-sm">
                   {{ $n(minimumLevel) }}
                 </UiTextView>
-                <UiTextView variant="caption-sm" class="text-center">
+                <UiTextView variant="caption-sm">
                   {{ $t('builder.levelChangeAttention') }}
                 </UiTextView>
                 <UiTextView variant="caption-sm">

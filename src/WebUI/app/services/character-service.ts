@@ -452,6 +452,10 @@ export const characteristicBonusByKey: Partial<Record<CharacteristicKey, Charact
   },
 }
 
+export const ATTRIBUTES_TO_SKILLS_RATE = 1
+
+export const SKILLS_TO_ATTRIBUTES_RATE = 2
+
 export const computeHealthPoints = (ironFlesh: number, strength: number): number =>
   defaultHealthPoints + ironFlesh * healthPointsForIronFlesh + strength * healthPointsForStrength
 

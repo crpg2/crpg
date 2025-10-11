@@ -4,11 +4,6 @@ import { useUser } from '~/composables/user/use-user'
 import { CHARACTER_QUERY_KEYS } from '~/queries'
 import { getCharacters } from '~/services/character-service'
 
-const characterKey: InjectionKey<{
-  characterId: ComputedRef<number>
-  character: ComputedRef<Character>
-}> = Symbol('Character')
-
 export const useCharactersProvider = () => {
   return useAsyncDataCustom(
     CHARACTER_QUERY_KEYS.root,
@@ -27,9 +22,7 @@ export const useCharacters = () => {
   const refreshCharacters = refreshAsyncData(CHARACTER_QUERY_KEYS.root)
 
   const activeCharacterId = computed(() => user.value!.activeCharacterId)
-
   const fallbackCharacterId = computed(() => user.value!.activeCharacterId || characters.value?.[0]?.id || null)
-
   const validateCharacter = (id: number) => characters.value.some(c => c.id === id)
 
   return {
@@ -40,6 +33,11 @@ export const useCharacters = () => {
     validateCharacter,
   }
 }
+
+const characterKey: InjectionKey<{
+  characterId: ComputedRef<number>
+  character: ComputedRef<Character>
+}> = Symbol('Character')
 
 export const useCharacterProvider = (character: MaybeRefOrGetter<Character>) => {
   provide(characterKey, {
