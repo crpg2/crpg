@@ -514,31 +514,7 @@ public class CrpgInventoryViewModel : ViewModel
             .ToList();
 
         InventoryGrid.SetInventoryItems(items);
-        /*
-                var items = UserLoadoutBehavior.UserInventoryItems
-                    .Where(ui => !string.IsNullOrEmpty(ui.ItemId))
-                    .Select(ui =>
-                    {
-                        var obj = MBObjectManager.Instance.GetObject<ItemObject>(ui.ItemId);
-                        return obj != null ? (obj, 1, ui) : default;
-                    })
-                    .Where(t => t.obj != null)
-                    .ToList();
-        */
-        // InventoryGrid.SetAvailableItems(items);
         InventoryGrid.InitializeFilteredItemsList();
-
-        /*
-        foreach (var slot in InventoryGrid.AvailableItems)
-        {
-            slot.OnItemDragBegin -= HandleItemDragBegin;
-            slot.OnItemDragEnd -= HandleItemDragEnd;
-
-            slot.OnItemDragBegin += HandleItemDragBegin;
-            slot.OnItemDragEnd += HandleItemDragEnd;
-        }
-
-        */
 
         OnPropertyChanged(nameof(InventoryGrid));
         LogDebug($"Inventory updated with {items.Count} items");
@@ -577,17 +553,6 @@ public class CrpgInventoryViewModel : ViewModel
 
         InventoryGrid.SetArmoryItems(items);
         InventoryGrid.InitializeFilteredItemsList();
-
-        /*
-                foreach (var slot in InventoryGrid.AvailableItems)
-                {
-                    slot.OnItemDragBegin -= HandleItemDragBegin;
-                    slot.OnItemDragEnd -= HandleItemDragEnd;
-
-                    slot.OnItemDragBegin += HandleItemDragBegin;
-                    slot.OnItemDragEnd += HandleItemDragEnd;
-                }
-            */
     }
 
     private void HandleArmoryUserItemUpdated(ClanArmoryActionType action, int uItemId)
@@ -796,8 +761,6 @@ public class CrpgInventoryViewModel : ViewModel
             LogDebug("Widget is NULL");
             return;
         }
-
-
 
         Widget? userInventoryGridWidget = FindChildById(RootWidget, "InventoryGridRoot");
 

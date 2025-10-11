@@ -72,15 +72,24 @@ public class CharacteristicsEditorVM : ViewModel
         _weaponProficiencies.Add(new CharacteristicsPlusMinusItemVM("Throwing", 0));
 
         // Skill PlusMinus
-        _skills.Add(new CharacteristicsPlusMinusItemVM("Iron Flesh", 0, $"Iron flesh\nIncreases your health by {_constants?.HealthPointsForIronFlesh} per level\nRequires: 3 STR per level"));
-        _skills.Add(new CharacteristicsPlusMinusItemVM("Power Strike", 0, $"Power strike\nIncreases your damage {_constants?.DamageFactorForPowerStrike}% with melee weapons\nRequires: 3 STR per level"));
-        _skills.Add(new CharacteristicsPlusMinusItemVM("Power Draw", 0, $"Power draw\nIncreases damage by {_constants?.DamageFactorForPowerDraw}% and your steadiness with bows\nRequires: 3 STR per level"));
-        _skills.Add(new CharacteristicsPlusMinusItemVM("Power Throw", 0, $"Power throw\nIncreases damage by {_constants?.DamageFactorForPowerThrow}% and your steadiness with throwing weapons\nRequires: 6 STR per level"));
-        _skills.Add(new CharacteristicsPlusMinusItemVM("Athletics", 0, "Atheletics\nIncreases your maximum running speed and decreases the time it takes to reach it\nRequires: 3 AGI per level"));
-        _skills.Add(new CharacteristicsPlusMinusItemVM("Riding", 0, "Riding\nIncreases riding speed, acceleration, maneuver, and dismount resistance\nRequires: 3 AGI per level"));
-        _skills.Add(new CharacteristicsPlusMinusItemVM("Weapon Master", 0, "Weapon master\nGives weapon proficiency points\nRequires: 3 AGI per level"));
-        _skills.Add(new CharacteristicsPlusMinusItemVM("Mounted Archery", 0, "Mounted archery\nRedces penalty for using ranged weapons on a moving mount\nRequires: 6 AGI per level"));
-        _skills.Add(new CharacteristicsPlusMinusItemVM("Shield", 0, "Shield\nImproves shield durability. Increases coverage from ranged attacks. Reduces stun from weapons when hit\nRequires: 6 AGI per level"));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Iron Flesh", 0,
+            $"Iron flesh\nIncreases your health by {_constants?.HealthPointsForIronFlesh} per level\nRequires: 3 STR per level"));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Power Strike", 0,
+            $"Power strike\nIncreases your damage {_constants?.DamageFactorForPowerStrike}% with melee weapons\nRequires: 3 STR per level"));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Power Draw", 0,
+            $"Power draw\nIncreases damage by {_constants?.DamageFactorForPowerDraw}% and your steadiness with bows\nRequires: 3 STR per level"));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Power Throw", 0,
+            $"Power throw\nIncreases damage by {_constants?.DamageFactorForPowerThrow}% and your steadiness with throwing weapons\nRequires: 6 STR per level"));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Athletics", 0,
+            "Atheletics\nIncreases your maximum running speed and decreases the time it takes to reach it\nRequires: 3 AGI per level"));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Riding", 0,
+            "Riding\nIncreases riding speed, acceleration, maneuver, and dismount resistance\nRequires: 3 AGI per level"));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Weapon Master", 0,
+            "Weapon master\nGives weapon proficiency points\nRequires: 3 AGI per level"));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Mounted Archery", 0,
+            "Mounted archery\nRedces penalty for using ranged weapons on a moving mount\nRequires: 6 AGI per level"));
+        _skills.Add(new CharacteristicsPlusMinusItemVM("Shield", 0,
+            "Shield\nImproves shield durability. Increases coverage from ranged attacks. Reduces stun from weapons when hit\nRequires: 6 AGI per level"));
 
         // Subscribe clicks
         WireAllEvents(true);

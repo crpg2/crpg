@@ -28,6 +28,7 @@
                 Brush="!Value.Brush" />
           </Children>
         </ListPanel>
+        <!-- Tooltip -->
         <BasicTooltipViewModel DataSource="{Tooltip}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
             Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" />     
       </Children>

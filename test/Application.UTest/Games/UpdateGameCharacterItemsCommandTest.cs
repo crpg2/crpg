@@ -1,7 +1,8 @@
-using Crpg.Application.Characters.Commands;
+﻿using Crpg.Application.Characters.Commands;
 using Crpg.Application.Common;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
+using Crpg.Application.Games.Commands;
 using Crpg.Application.Items.Models;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Items;
@@ -11,7 +12,7 @@ using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Characters;
 
-public class UpdateCharacterItemsCommandTest : TestBase
+public class UpdateGameCharacterItemsCommandTest : TestBase
 {
     [Test]
     public async Task FullUpdate()
@@ -68,8 +69,8 @@ public class UpdateCharacterItemsCommandTest : TestBase
             competitiveRatingModel: Mock.Of<ICompetitiveRatingModel>(),
             constants: new Constants());
 
-        var handler = new UpdateCharacterItemsCommand.Handler(ActDb, Mapper, characterService);
-        var cmd = new UpdateCharacterItemsCommand
+        var handler = new UpdateGameCharacterItemsCommand.Handler(ActDb, characterService);
+        var cmd = new UpdateGameCharacterItemsCommand
         {
             CharacterId = character.Id,
             UserId = user.Id,
@@ -95,7 +96,7 @@ public class UpdateCharacterItemsCommandTest : TestBase
         Assert.That(result.Errors, Is.Null);
 
         // Print all slots and item IDs
-        var userItemIdBySlot = result.Data!.ToDictionary(i => i.Slot, ei => ei.UserItem.Id);
+        var userItemIdBySlot = result.Data!.ToDictionary(i => i.Slot, ei => ei.UserItemId);
 
         // Assert
         Assert.That(userItemIdBySlot[ItemSlot.Head], Is.EqualTo(headNew.Id));
@@ -147,9 +148,9 @@ public class UpdateCharacterItemsCommandTest : TestBase
             competitiveRatingModel: Mock.Of<ICompetitiveRatingModel>(),
             constants: new Constants());
 
-        var handler = new UpdateCharacterItemsCommand.Handler(ActDb, Mapper, characterService);
+        var handler = new UpdateGameCharacterItemsCommand.Handler(ActDb, characterService);
 
-        var cmd = new UpdateCharacterItemsCommand
+        var cmd = new UpdateGameCharacterItemsCommand
         {
             CharacterId = character.Id,
             UserId = user.Id,
@@ -162,7 +163,7 @@ public class UpdateCharacterItemsCommandTest : TestBase
         };
 
         var result = await handler.Handle(cmd, CancellationToken.None);
-        var userItemIdBySlot = result.Data!.ToDictionary(i => i.Slot, i => i.UserItem.Id);
+        var userItemIdBySlot = result.Data!.ToDictionary(i => i.Slot, i => i.UserItemId);
 
         Assert.That(userItemIdBySlot[ItemSlot.Head], Is.EqualTo(headNew.Id));
         Assert.That(userItemIdBySlot[ItemSlot.Body], Is.EqualTo(bodyNew.Id));
@@ -181,8 +182,8 @@ public class UpdateCharacterItemsCommandTest : TestBase
             competitiveRatingModel: Mock.Of<ICompetitiveRatingModel>(),
             constants: new Constants());
 
-        UpdateCharacterItemsCommand.Handler handler = new(ActDb, Mapper, characterService);
-        UpdateCharacterItemsCommand cmd = new()
+        UpdateGameCharacterItemsCommand.Handler handler = new(ActDb, characterService);
+        UpdateGameCharacterItemsCommand cmd = new()
         {
             CharacterId = 1,
             UserId = user.Entity.Id,
@@ -204,8 +205,8 @@ public class UpdateCharacterItemsCommandTest : TestBase
             competitiveRatingModel: Mock.Of<ICompetitiveRatingModel>(),
             constants: new Constants());
 
-        UpdateCharacterItemsCommand.Handler handler = new(ActDb, Mapper, characterService);
-        UpdateCharacterItemsCommand cmd = new()
+        UpdateGameCharacterItemsCommand.Handler handler = new(ActDb, characterService);
+        UpdateGameCharacterItemsCommand cmd = new()
         {
             CharacterId = character.Entity.Id,
             UserId = user.Entity.Id,
@@ -226,8 +227,8 @@ public class UpdateCharacterItemsCommandTest : TestBase
             competitiveRatingModel: Mock.Of<ICompetitiveRatingModel>(),
             constants: new Constants());
 
-        UpdateCharacterItemsCommand.Handler handler = new(ActDb, Mapper, characterService);
-        UpdateCharacterItemsCommand cmd = new()
+        UpdateGameCharacterItemsCommand.Handler handler = new(ActDb, characterService);
+        UpdateGameCharacterItemsCommand cmd = new()
         {
             CharacterId = character.Entity.Id,
             UserId = 1,
@@ -252,8 +253,8 @@ public class UpdateCharacterItemsCommandTest : TestBase
             competitiveRatingModel: Mock.Of<ICompetitiveRatingModel>(),
             constants: new Constants());
 
-        UpdateCharacterItemsCommand.Handler handler = new(ActDb, Mapper, characterService);
-        UpdateCharacterItemsCommand cmd = new()
+        UpdateGameCharacterItemsCommand.Handler handler = new(ActDb, characterService);
+        UpdateGameCharacterItemsCommand cmd = new()
         {
             CharacterId = character.Entity.Id,
             UserId = user.Entity.Id,
@@ -283,8 +284,8 @@ public class UpdateCharacterItemsCommandTest : TestBase
             competitiveRatingModel: Mock.Of<ICompetitiveRatingModel>(),
             constants: new Constants());
 
-        UpdateCharacterItemsCommand.Handler handler = new(ActDb, Mapper, characterService);
-        UpdateCharacterItemsCommand cmd = new()
+        UpdateGameCharacterItemsCommand.Handler handler = new(ActDb, characterService);
+        UpdateGameCharacterItemsCommand cmd = new()
         {
             CharacterId = character.Id,
             UserId = user.Id,
@@ -311,8 +312,8 @@ public class UpdateCharacterItemsCommandTest : TestBase
             competitiveRatingModel: Mock.Of<ICompetitiveRatingModel>(),
             constants: new Constants());
 
-        UpdateCharacterItemsCommand.Handler handler = new(ActDb, Mapper, characterService);
-        UpdateCharacterItemsCommand cmd = new()
+        UpdateGameCharacterItemsCommand.Handler handler = new(ActDb, characterService);
+        UpdateGameCharacterItemsCommand cmd = new()
         {
             CharacterId = character.Id,
             UserId = user.Id,
@@ -322,7 +323,7 @@ public class UpdateCharacterItemsCommandTest : TestBase
         var result = await handler.Handle(cmd, CancellationToken.None);
         Assert.That(result.Errors, Is.Null);
 
-        var userItemIdBySlot = result.Data!.ToDictionary(i => i.Slot, ei => ei.UserItem.Id);
+        var userItemIdBySlot = result.Data!.ToDictionary(i => i.Slot, ei => ei.UserItemId);
         Assert.That(userItemIdBySlot[ItemSlot.Head], Is.EqualTo(userItem.Id));
     }
 
@@ -345,8 +346,8 @@ public class UpdateCharacterItemsCommandTest : TestBase
             competitiveRatingModel: Mock.Of<ICompetitiveRatingModel>(),
             constants: new Constants());
 
-        UpdateCharacterItemsCommand.Handler handler = new(ActDb, Mapper, characterService);
-        UpdateCharacterItemsCommand cmd = new()
+        UpdateGameCharacterItemsCommand.Handler handler = new(ActDb, characterService);
+        UpdateGameCharacterItemsCommand cmd = new()
         {
             CharacterId = character.Id,
             UserId = user.Id,
@@ -384,12 +385,12 @@ public class UpdateCharacterItemsCommandTest : TestBase
             competitiveRatingModel: Mock.Of<ICompetitiveRatingModel>(),
             constants: new Constants());
 
-        var handler = new UpdateCharacterItemsCommand.Handler(ActDb, Mapper, characterService);
+        var handler = new UpdateGameCharacterItemsCommand.Handler(ActDb, characterService);
 
-        UpdateCharacterItemsCommand cmd = new()
+        UpdateGameCharacterItemsCommand cmd = new()
         {
             CharacterId = character.Id,
-            UserId = user.Id, // important: character�s user
+            UserId = user.Id, // important: character’s user
             Items = new List<EquippedItemIdViewModel>
             {
                 new() { UserItemId = userItem.Id, Slot = ItemSlot.Head }, // unowned
@@ -439,8 +440,8 @@ public class UpdateCharacterItemsCommandTest : TestBase
             competitiveRatingModel: Mock.Of<ICompetitiveRatingModel>(),
             constants: new Constants());
 
-        UpdateCharacterItemsCommand.Handler handler = new(ActDb, Mapper, characterService);
-        UpdateCharacterItemsCommand cmd = new()
+        UpdateGameCharacterItemsCommand.Handler handler = new(ActDb, characterService);
+        UpdateGameCharacterItemsCommand cmd = new()
         {
             CharacterId = character.Id,
             UserId = user.Id,
@@ -479,8 +480,8 @@ public class UpdateCharacterItemsCommandTest : TestBase
             competitiveRatingModel: Mock.Of<ICompetitiveRatingModel>(),
             constants: new Constants());
 
-        UpdateCharacterItemsCommand.Handler handler = new(ActDb, Mapper, characterService);
-        UpdateCharacterItemsCommand cmd = new()
+        UpdateGameCharacterItemsCommand.Handler handler = new(ActDb, characterService);
+        UpdateGameCharacterItemsCommand cmd = new()
         {
             CharacterId = character.Id,
             UserId = user.Id,

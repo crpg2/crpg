@@ -1,7 +1,6 @@
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using TaleWorlds.Core;
-using TaleWorlds.Core.ViewModelCollection.Information;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 

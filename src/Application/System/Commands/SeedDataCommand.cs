@@ -124,6 +124,17 @@ public record SeedDataCommand : IMediatorRequest
             };
             User orle = new()
             {
+                PlatformUserId = "76561198016876889",
+                Platform = Platform.Steam,
+                Name = "orle",
+                Role = Role.Admin,
+                Gold = 1000000,
+                HeirloomPoints = 12,
+                ExperienceMultiplier = 1.09f,
+                Avatar = new Uri("https://avatars.akamai.steamstatic.com/d51d5155b1a564421c0b3fd5fb7eed7c4474e73d_full.jpg"),
+            };
+            User vick = new()
+            {
                 PlatformUserId = "76561197973076266",
                 Platform = Platform.Steam,
                 Name = "vick.",
@@ -131,7 +142,7 @@ public record SeedDataCommand : IMediatorRequest
                 Gold = 1000000,
                 HeirloomPoints = 12,
                 ExperienceMultiplier = 1.09f,
-                Avatar = new Uri("https://avatars.akamai.steamstatic.com/d51d5155b1a564421c0b3fd5fb7eed7c4474e73d_full.jpg"),
+                Avatar = new Uri("https://avatars.fastly.steamstatic.com/9f4bfcc04b22967cab0b3f3081772642e88cb915_full.jpg"),
             };
             User peeky = new()
             {
@@ -550,7 +561,7 @@ public record SeedDataCommand : IMediatorRequest
 
             User[] newUsers =
             {
-                takeo, orle, peeky, droob, baronCyborg, magnuclean, knitler, tjens, lerch, buddha, lancelot, bakhrat, distance,
+                takeo, orle, vick, peeky, droob, baronCyborg, magnuclean, knitler, tjens, lerch, buddha, lancelot, bakhrat, distance,
                 victorhh888, schumetzq, bryggan, ikarooz, kiwi, brainfart, falcom, opset, leanir, sellka, firebat,
                 ecko, neostralie, zorguy, azuma, elmaryk, namidaka, laHire, manik, ajroselle, skrael, bedo, lambic,
                 sanasar, vlad007, canp0g, shark, noobAmphetamine, mundete, aroyFalconer, insanitoid, scarface,
@@ -603,10 +614,20 @@ public record SeedDataCommand : IMediatorRequest
             UserItem laHireItem1 = new() { User = laHire, ItemId = "crpg_iron_cavalry_sword_v1_h1" };
             UserItem laHirekItem2 = new() { User = laHire, ItemId = "crpg_simple_saber_v1_h2" };
             UserItem laHirekItem3 = new() { User = laHire, ItemId = "crpg_steel_round_shield_v4_h0" };
+            UserItem vickItem1 = new() { User = vick, ItemId = "crpg_armet_h1" };
+            UserItem vickItem2 = new() { User = vick, ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h0", };
+            UserItem vickItem3 = new() { User = vick, ItemId = "crpg_thamaskene_steel_spatha_v1_h2" };
+            UserItem vickItem4 = new() { User = vick, ItemId = "crpg_decorated_short_spatha_v1_h1" };
+            UserItem vickItem5 = new() { User = vick, ItemId = "crpg_scalpel_v1_h0" };
+            UserItem vickItem6 = new() { User = vick, ItemId = "crpg_wolf_shoulder_v2_h3" };
+            UserItem vickItem7 = new() { User = vick, ItemId = "crpg_battania_fur_boots_v2_h3" };
+            UserItem vickItem8 = new() { User = vick, ItemId = "crpg_nordic_leather_cap_v2_h3" };
+            UserItem vickItem9 = new() { User = vick, ItemId = "crpg_eastern_wrapped_armguards_v2_h3" };
+            UserItem vickItem10 = new() { User = vick, ItemId = "crpg_blacksmith_hammer_v3_h0" };
 
             UserItem[] newUserItems =
             {
-                takeoItem1, takeoItem2, orleItem1, orleItem2, orleItem3, orleItem4, orleItem5, orleItem6, orleItem7, orleItem8, orleItem9, orleItem10, orleItem11, orleItem12, orleItem13, orleItem14, orleItem15, orleItem16, orleItem17, orleItem18, orleItem19, elmarykItem1, elmarykItem2, laHireItem1, laHirekItem2, laHirekItem3,
+                takeoItem1, takeoItem2, orleItem1, orleItem2, orleItem3, orleItem4, orleItem5, orleItem6, orleItem7, orleItem8, orleItem9, orleItem10, orleItem11, orleItem12, orleItem13, orleItem14, orleItem15, orleItem16, orleItem17, orleItem18, orleItem19, vickItem1, vickItem2, vickItem3, vickItem4, vickItem5, vickItem6, vickItem7, vickItem8, vickItem9, vickItem10, elmarykItem1, elmarykItem2, laHireItem1, laHirekItem2, laHirekItem3,
             };
 
             var existingUserItems = await _db.UserItems.ToDictionaryAsync(pi => pi.ItemId);
@@ -854,6 +875,47 @@ public record SeedDataCommand : IMediatorRequest
                 Level = 25,
                 Experience = _experienceTable.GetExperienceForLevel(25) + (_experienceTable.GetExperienceForLevel(26) - _experienceTable.GetExperienceForLevel(25)) / 2,
             };
+            Character vickCharacter0 = new()
+            {
+                User = vick,
+                Name = "vick Soldier",
+                Level = 33,
+                Generation = 3,
+                Experience = _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) - _experienceTable.GetExperienceForLevel(33)) / 2,
+                Statistics = new List<CharacterStatistics>
+                {
+                    {
+                        new CharacterStatistics
+                        {
+                            Kills = 2,
+                            Deaths = 3,
+                            Assists = 6,
+                            PlayTime = new TimeSpan(365, 0, 0, 20),
+                            GameMode = GameMode.CRPGDuel,
+                            Rating = new()
+                            {
+                                Value = 1900,
+                                Deviation = 100,
+                                Volatility = 100,
+                                CompetitiveValue = 1900,
+                            },
+                        }
+                    },
+                },
+                Characteristics = new CharacterCharacteristics
+                {
+                    Attributes = new CharacterAttributes { Points = 100 },
+                    Skills = new CharacterSkills { Points = 100 },
+                },
+            };
+
+            Character vickCharacter1 = new()
+            {
+                User = vick,
+                Name = "vick Peasant",
+                Level = 25,
+                Experience = _experienceTable.GetExperienceForLevel(25) + (_experienceTable.GetExperienceForLevel(26) - _experienceTable.GetExperienceForLevel(25)) / 2,
+            };
             Character droobCharacter0 = new()
             {
                 User = droob,
@@ -1019,7 +1081,7 @@ public record SeedDataCommand : IMediatorRequest
             };
             Character[] newCharacters =
             {
-                takeoCharacter0, takeoCharacter1, takeoCharacter2, namidakaCharacter0, peekyCharacter0, orleCharacter0, orleCharacter1, orleCharacter2, droobCharacter0,
+                takeoCharacter0, takeoCharacter1, takeoCharacter2, namidakaCharacter0, peekyCharacter0, orleCharacter0, orleCharacter1, orleCharacter2, vickCharacter0, vickCharacter1, droobCharacter0,
                 falcomCharacter0, victorhh888Character0, sellkaCharacter0, krogCharacter0, kadseCharacter0, noobAmphetamine0, baronCyborg0, ladoeaCharacter0,
             };
 
@@ -1122,6 +1184,7 @@ public record SeedDataCommand : IMediatorRequest
             ClanMember droobMember = new() { User = droob, Clan = droobClan, Role = ClanMemberRole.Leader, };
 
             ClanMember takeoMember = new() { User = takeo, Clan = pecores, Role = ClanMemberRole.Officer, };
+            ClanMember vickMember = new() { User = vick, Clan = pecores, Role = ClanMemberRole.Officer, };
             ClanMember orleMember = new() { User = orle, Clan = pecores, Role = ClanMemberRole.Leader, };
             ClanMember elmarykMember = new() { User = elmaryk, Clan = pecores, Role = ClanMemberRole.Officer, };
             ClanMember laHireMember = new() { User = laHire, Clan = pecores, Role = ClanMemberRole.Member };
@@ -1337,7 +1400,7 @@ public record SeedDataCommand : IMediatorRequest
 
             ClanMember[] newClanMembers =
             {
-                takeoMember, orleMember, elmarykMember, neostralieMember, laHireMember, azumaMember, zorguyMember,
+                takeoMember, orleMember, vickMember, elmarykMember, neostralieMember, laHireMember, azumaMember, zorguyMember,
                 eckoMember, firebatMember, sellkaMember, leanirMember, opsetMember,
                 falcomMember, brainfartMember, kiwiMember, ikaroozMember, brygganMember, schumetzqMember,
                 victorhh888Member, distanceMember, bakhratMember, lancelotMember,

@@ -39,7 +39,11 @@ public record UpdateCharacterItemsCommand : IMediatorRequest<IList<EquippedItemV
                 return new(CommonErrors.CharacterNotFound(req.CharacterId, req.UserId));
             }
 
-            await _characterService.UpdateItems(_db, character, req.Items, cancellationToken);
+            var result = await _characterService.UpdateItems(_db, character, req.Items, cancellationToken);
+            if (result.Errors is not null)
+            {
+                return new(result.Errors);
+            }
 
             await _db.SaveChangesAsync(cancellationToken);
             return new(_mapper.Map<IList<EquippedItemViewModel>>(character.EquippedItems));

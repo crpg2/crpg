@@ -1,7 +1,6 @@
 using AutoMapper;
 using Crpg.Application.Common.Mappings;
 using Crpg.Domain.Entities.Items;
-using Microsoft.Extensions.Configuration.UserSecrets;
 
 namespace Crpg.Application.Items.Models;
 
@@ -22,6 +21,7 @@ public record GameUserItemExtendedViewModel : IMapFrom<UserItem>
         profile.CreateMap<UserItem, GameUserItemExtendedViewModel>()
             // .ForMember(ui => ui.ItemId, config => config.MapFrom(src => src.Item != null ? src.Item.Id : "not found"));
             .ForMember(ui => ui.Rank, config => config.MapFrom(src => src.Item != null ? src.Item.Rank : 0))
-            .ForMember(ui => ui.IsArmoryItem, config => config.MapFrom(src => src.ClanArmoryItem != null ? true : false));
+            .ForMember(ui => ui.IsArmoryItem, config => config.MapFrom(src => src.ClanArmoryItem != null))
+            .ForMember(ui => ui.IsPersonal, config => config.MapFrom(src => src.PersonalItem != null));
     }
 }

@@ -71,6 +71,32 @@ public record UpdateGameCharacterCharacteristicsCommand : IMediatorRequest<Chara
             return new(_mapper.Map<CharacterCharacteristicsViewModel>(character.Characteristics));
         }
 
+        private static bool CheckSkillsRequirement(CharacterCharacteristicsViewModel stats)
+        {
+            return stats.Skills.IronFlesh <= stats.Attributes.Strength / 3
+                   && stats.Skills.PowerStrike <= stats.Attributes.Strength / 3
+                   && stats.Skills.PowerDraw <= stats.Attributes.Strength / 3
+                   && stats.Skills.PowerThrow <= stats.Attributes.Strength / 6
+                   && stats.Skills.Athletics <= stats.Attributes.Agility / 3
+                   && stats.Skills.Riding <= stats.Attributes.Agility / 3
+                   && stats.Skills.WeaponMaster <= stats.Attributes.Agility / 3
+                   && stats.Skills.MountedArchery <= stats.Attributes.Agility / 6
+                   && stats.Skills.Shield <= stats.Attributes.Agility / 6;
+        }
+
+        private static int CheckedDelta(int oldStat, int newStat, Func<int, int>? cost = null)
+        {
+            int delta = cost == null
+                ? newStat - oldStat
+                : cost(newStat) - cost(oldStat);
+            if (delta >= 0)
+            {
+                return delta;
+            }
+
+            throw new CharacteristicDecreasedException();
+        }
+
         private Result SetCharacteristic(CharacterCharacteristics stats, CharacterCharacteristicsViewModel newStats)
         {
             int attributesDelta = CheckedDelta(stats.Attributes.Strength, newStats.Attributes.Strength)
@@ -141,32 +167,6 @@ public record UpdateGameCharacterCharacteristicsCommand : IMediatorRequest<Chara
             stats.WeaponProficiencies.Crossbow = newStats.WeaponProficiencies.Crossbow;
 
             return new Result();
-        }
-
-        private int CheckedDelta(int oldStat, int newStat, Func<int, int>? cost = null)
-        {
-            int delta = cost == null
-                ? newStat - oldStat
-                : cost(newStat) - cost(oldStat);
-            if (delta >= 0)
-            {
-                return delta;
-            }
-
-            throw new CharacteristicDecreasedException();
-        }
-
-        private bool CheckSkillsRequirement(CharacterCharacteristicsViewModel stats)
-        {
-            return stats.Skills.IronFlesh <= stats.Attributes.Strength / 3
-                   && stats.Skills.PowerStrike <= stats.Attributes.Strength / 3
-                   && stats.Skills.PowerDraw <= stats.Attributes.Strength / 3
-                   && stats.Skills.PowerThrow <= stats.Attributes.Strength / 6
-                   && stats.Skills.Athletics <= stats.Attributes.Agility / 3
-                   && stats.Skills.Riding <= stats.Attributes.Agility / 3
-                   && stats.Skills.WeaponMaster <= stats.Attributes.Agility / 3
-                   && stats.Skills.MountedArchery <= stats.Attributes.Agility / 6
-                   && stats.Skills.Shield <= stats.Attributes.Agility / 6;
         }
 
         private int WeaponProficienciesPointsForAgility(int agility) => agility * _constants.WeaponProficiencyPointsForAgility;

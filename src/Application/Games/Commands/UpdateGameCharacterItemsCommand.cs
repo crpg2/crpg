@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Crpg.Application.Common.Interfaces;
+﻿using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
@@ -41,7 +40,12 @@ public record UpdateGameCharacterItemsCommand : IMediatorRequest<IList<EquippedI
             }
 
             // Update equipped items
-            await _characterService.UpdateItems(_db, character, req.Items, cancellationToken);
+            var result = await _characterService.UpdateItems(_db, character, req.Items, cancellationToken);
+
+            if (result.Errors is not null)
+            {
+                return new(result.Errors);
+            }
 
             // Save changes
             await _db.SaveChangesAsync(cancellationToken);

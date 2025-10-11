@@ -37,6 +37,7 @@
                         SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height" UseAlphaAsMask="True"
                         HorizontalAlignment="Left" VerticalAlignment="Center"
                         DoNotAcceptEvents="True" />
+                    <!-- ToolTip -->
                     <BasicTooltipViewModel DataSource="{ItemHint}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
                         SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height"
                         Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" />                        

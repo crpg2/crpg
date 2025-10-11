@@ -3,12 +3,10 @@ using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Items.Models;
-using Crpg.Domain.Entities;
-using Crpg.Domain.Entities.Users;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
-namespace Crpg.Application.Items.Queries;
+namespace Crpg.Application.Games.Queries;
 
 public record GetGameUserItemsQuery : IMediatorRequest<IList<GameUserItemExtendedViewModel>>
 {
@@ -39,7 +37,7 @@ public record GetGameUserItemsQuery : IMediatorRequest<IList<GameUserItemExtende
             var userItems = await _db.UserItems
                 .Include(ui => ui.Item)
                 .Include(ui => ui.User)
-                .Include(ui => ui.ClanArmoryItem) // TODO: FIXME:
+                .Include(ui => ui.ClanArmoryItem)
                 .Include(ui => ui.PersonalItem)
                 .Include(ui => ui.ClanArmoryBorrowedItem)
                 .Where(ui =>
