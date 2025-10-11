@@ -7,7 +7,7 @@ import type { UserItemsBySlot } from '~/models/user'
 
 import { useInventoryDnD } from '~/composables/character/inventory/use-inventory-dnd'
 import { useInventoryQuickEquip } from '~/composables/character/inventory/use-inventory-quick-equip'
-import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
+import { useItemDetail } from '~/composables/item/use-item-detail'
 import {
   getCharacterSlotsSchema,
   getOverallArmorValueBySlot,

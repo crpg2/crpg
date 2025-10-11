@@ -3,10 +3,10 @@ import { useStorage } from '@vueuse/core'
 
 import type { SortingConfig } from '~/services/item-search-service'
 
-import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanArmory } from '~/composables/clan/use-clan-armory'
 import { useClanMembers } from '~/composables/clan/use-clan-members'
+import { useItemDetail } from '~/composables/item/use-item-detail'
 import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'

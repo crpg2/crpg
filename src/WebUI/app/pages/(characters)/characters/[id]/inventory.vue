@@ -9,9 +9,9 @@ import { useMainHeader } from '~/composables/app/use-main-header'
 import { useCharacterInventory } from '~/composables/character/inventory/use-character-inventory'
 import { useInventoryDnD } from '~/composables/character/inventory/use-inventory-dnd'
 import { useInventoryQuickEquip } from '~/composables/character/inventory/use-inventory-quick-equip'
-import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
 import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
 import { useCharacterItems, useCharacterItemsProvider } from '~/composables/character/use-character-items'
+import { useItemDetail } from '~/composables/item/use-item-detail'
 import { useUser } from '~/composables/user/use-user'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { validateItemNotMeetRequirement } from '~/services/character-service'
@@ -52,12 +52,7 @@ const { characterCharacteristics, healthPoints } = useCharacterCharacteristic()
 
 const hasArmoryItems = computed(() => userItems.value.some(ui => ui.isArmoryItem))
 
-const {
-  closeItemDetail,
-  getUniqueId,
-  openedItems,
-  toggleItemDetail,
-} = useItemDetail()
+const { closeItemDetail, toggleItemDetail, isOpen } = useItemDetail()
 
 const onClickInventoryItem = (e: PointerEvent, userItem: UserItem) => {
   if (e.ctrlKey) {
@@ -85,7 +80,7 @@ const compareItemsResult = computed(() => {
     // TODO: ....
     createItemIndex(
       userItems.value
-        .filter(ui => openedItems.value.some(oi => oi.uniqueId === getUniqueId(ui.item.id, ui.id)))
+        .filter(ui => isOpen(ui.item.id, ui.id))
         .map(extractItem),
     ),
   )

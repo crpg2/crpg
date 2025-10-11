@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { UseDraggable as Draggable } from '@vueuse/components'
 
-import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
+import { useItemDetail } from '~/composables/item/use-item-detail'
 
 const {
   closeItemDetail,
