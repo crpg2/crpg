@@ -348,12 +348,10 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
                 ScreenManager.TopScreen?.AddLayer(layer);
             }
         }
-        else
-        {
-            layer.IsFocusLayer = true;
-            layer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
-            ScreenManager.TrySetFocus(layer);
-        }
+
+        layer.IsFocusLayer = true;
+        layer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
+        ScreenManager.TrySetFocus(layer);
     }
 
     private void DeactivateLayer(ref GauntletLayer? layer, ref IGauntletMovie? movie)

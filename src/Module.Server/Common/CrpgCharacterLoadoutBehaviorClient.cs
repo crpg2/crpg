@@ -88,9 +88,18 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         // Character basic
         RequestGetUpdatedCharacterBasic();
 
+        // User Info
+        RequestGetUserInfo();
         // Armory items
         // RequestArmoryAction(ClanArmoryActionType.Get, null);
         _clanArmory?.RequestArmoryAction(ClanArmoryActionType.Get, null);
+    }
+
+    internal void RequestGetUserInfo()
+    {
+        GameNetwork.BeginModuleEventAsClient();
+        GameNetwork.WriteMessage(new UserRequestGetUserInfo());
+        GameNetwork.EndModuleEventAsClient();
     }
 
     internal void RequestGetUserInventoryItems()

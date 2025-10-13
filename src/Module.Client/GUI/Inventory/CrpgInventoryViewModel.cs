@@ -123,7 +123,7 @@ public class CrpgInventoryViewModel : ViewModel
             UserLoadoutBehavior.OnUserCharacteristicsConverted += HandleUserCharacteristicsConverted;
             UserLoadoutBehavior.OnUserInfoUpdated += HandleUserInfoUpdated;
 
-            _characterName = $"{UserLoadoutBehavior.UserCharacter?.Name ?? string.Empty} ({UserLoadoutBehavior.UserCharacter?.Level ?? 0})";
+            CharacterName = $"{UserLoadoutBehavior.UserCharacter?.Name ?? string.Empty} ({UserLoadoutBehavior.UserCharacter?.Level ?? 0})";
 
             MissionPeer? missionPeer = GameNetwork.MyPeer.GetComponent<MissionPeer>();
             CrpgPeer? crpgPeer = missionPeer?.GetComponent<CrpgPeer>();
@@ -134,8 +134,8 @@ public class CrpgInventoryViewModel : ViewModel
                 clanTag = $"[{clanTag}]";
             }
 
-            _userName = $"{clanTag} {UserLoadoutBehavior?.User?.Name ?? string.Empty}";
-            _goldAmount = UserLoadoutBehavior?.User?.Gold.ToString("N0") ?? "0";
+            UserName = $"{clanTag} {UserLoadoutBehavior?.User?.Name ?? string.Empty}";
+            GoldAmount = UserLoadoutBehavior?.User?.Gold.ToString("N0") ?? "0";
         }
 
         _clanArmory = Mission.Current?.GetMissionBehavior<CrpgClanArmoryClient>();
@@ -184,13 +184,6 @@ public class CrpgInventoryViewModel : ViewModel
             _clanArmory.OnArmoryActionUpdated -= HandleArmoryUserItemUpdated;
         }
 
-        /*
-                foreach (var slot in InventoryGrid.AvailableItems)
-                {
-                    slot.OnItemDragBegin -= HandleItemDragBegin;
-                    slot.OnItemDragEnd -= HandleItemDragEnd;
-                }
-        */
         InventoryGrid.OnInventorySlotClicked -= HandleClick;
         InventoryGrid.OnInventorySlotHoverEnd -= HandleInventorySlotHoverEnd;
         InventoryGrid.OnInventorySlotDragStart += HandleItemDragBegin;
@@ -372,10 +365,10 @@ public class CrpgInventoryViewModel : ViewModel
 
     private void HandleItemDragBegin(ViewModel viewModel)
     {
-        LogDebugError("HandleItemDragBegin - updating equipment slot states");
+        LogDebug("HandleItemDragBegin - updating equipment slot states");
         if (viewModel is InventorySlotVM inv)
         {
-            LogDebugError($"HandleItemDragBegin for item: {inv.ItemObj?.Name}");
+            LogDebug($"HandleItemDragBegin for item: {inv.ItemObj?.Name}");
 
             if (inv.ItemObj == null)
             {
@@ -393,7 +386,7 @@ public class CrpgInventoryViewModel : ViewModel
         }
         else if (viewModel is EquipmentSlotVM eq)
         {
-            LogDebugError($"HandleItemDragBegin for item: {eq.ItemObj?.Name}");
+            LogDebug($"HandleItemDragBegin for item: {eq.ItemObj?.Name}");
 
             if (eq.ItemObj == null)
             {
@@ -706,8 +699,6 @@ public class CrpgInventoryViewModel : ViewModel
             return;
         }
 
-        CharacterName = $"{UserLoadoutBehavior.UserCharacter?.Name ?? string.Empty} ({UserLoadoutBehavior.UserCharacter?.Level ?? 0})";
-
         MissionPeer? missionPeer = GameNetwork.MyPeer.GetComponent<MissionPeer>();
         CrpgPeer? crpgPeer = missionPeer?.GetComponent<CrpgPeer>();
         string clanTag = crpgPeer?.Clan?.Tag ?? string.Empty;
@@ -717,8 +708,9 @@ public class CrpgInventoryViewModel : ViewModel
             clanTag = $"[{clanTag}]";
         }
 
-        UserName = $"{clanTag} {UserLoadoutBehavior?.User?.Name ?? string.Empty}";
-        GoldAmount = UserLoadoutBehavior?.User?.Gold.ToString("N0") ?? "0";
+        CharacterName = $"{UserLoadoutBehavior.UserCharacter?.Name ?? string.Empty} ({UserLoadoutBehavior.UserCharacter?.Level ?? 0})";
+        UserName = $"{clanTag} {UserLoadoutBehavior.User?.Name ?? string.Empty}";
+        GoldAmount = UserLoadoutBehavior.User?.Gold.ToString("N0") ?? "0";
     }
 
     private void UpdateCharacterBuildEquipmentStatDisplayFromNavbarSelection()

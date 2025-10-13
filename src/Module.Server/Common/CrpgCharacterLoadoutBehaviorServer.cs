@@ -40,6 +40,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         registerer.Register<UserRequestGetCharacterBasic>(HandleUserRequestGetCharacterBasic);
         registerer.Register<UserRequestUpdateCharacterCharacteristics>(HandleUserRequestUpdateCharacterCharacteristics);
         registerer.Register<UserRequestConvertCharacteristics>(HandleUserRequestConvertCharacteristics);
+        registerer.Register<UserRequestGetUserInfo>(HandleUserRequestGetUserInfo);
     }
 
     /// <summary>
@@ -74,16 +75,13 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
     {
         Debug.Print("HandleUserRequestGetCharacterBasic()");
         _ = GetUserCharacterBasicAsync(networkPeer);
-
-        _ = GetUserInfoAsync(networkPeer); // temp test
         return true;
     }
 
     private bool HandleUserRequestGetUserInfo(NetworkCommunicator networkPeer, UserRequestGetUserInfo message)
     {
         Debug.Print("HandleUserRequestGetUserInfo()");
-
-        _ = GetUserInfoAsync(networkPeer); // temp test
+        _ = GetUserInfoAsync(networkPeer);
         return true;
     }
 
