@@ -42,6 +42,7 @@ import {
   respecializePriceForLevel30,
   respecializePriceHalfLife,
   skillPointsPerLevel,
+  weaponProficiencyCostCoefs,
   weaponProficiencyPointsForAgility,
   weaponProficiencyPointsForLevelCoefs,
   weaponProficiencyPointsForWeaponMasterCoefs,
@@ -59,6 +60,7 @@ import type {
   CharacterEarningType,
   CharacteristicConversion,
   CharacteristicKey,
+  CharacteristicSectionKey,
   CharacterLimitations,
   CharacterMountSpeedStats,
   CharacterOverallItemsStats,
@@ -66,6 +68,7 @@ import type {
   CharacterStatistics,
   EquippedItem,
   EquippedItemId,
+  SkillKey,
   UpdateCharacterRequest,
 } from '~/models/character'
 import type { GameMode } from '~/models/game-mode'
@@ -380,6 +383,62 @@ export const wppForAgility = (agility: number): number =>
 export const wppForWeaponMaster = (weaponMaster: number): number =>
   Math.floor(applyPolynomialFunction(weaponMaster, weaponProficiencyPointsForWeaponMasterCoefs))
 
+export const getCharacteristicCost = (
+  section: CharacteristicSectionKey,
+  key: CharacteristicKey,
+  value: number,
+): number => {
+  if (section === 'weaponProficiencies') {
+    return Math.floor(applyPolynomialFunction(value, weaponProficiencyCostCoefs))
+  }
+
+  return value
+}
+
+export const skillRequirementsSatisfied = (
+  key: SkillKey,
+  value: number,
+  characteristics: CharacterCharacteristics,
+): boolean => {
+  switch (key) {
+    case 'ironFlesh':
+    case 'powerStrike':
+    case 'powerDraw':
+    case 'powerThrow':
+      return value <= Math.floor(characteristics.attributes.strength / 3) // TODO: move to constants.json
+
+    case 'athletics':
+    case 'riding':
+    case 'weaponMaster':
+      return value <= Math.floor(characteristics.attributes.agility / 3) // TODO: move to constants.json
+
+    case 'mountedArchery':
+    case 'shield':
+      return value <= Math.floor(characteristics.attributes.agility / 6) // TODO: move to constants.json
+
+    default:
+      return false
+  }
+}
+
+export const characteristicRequirementsSatisfied = (
+  section: CharacteristicSectionKey,
+  key: CharacteristicKey,
+  value: number,
+  characteristics: CharacterCharacteristics,
+): boolean => {
+  switch (section) {
+    case 'skills':
+      return skillRequirementsSatisfied(
+        key as SkillKey,
+        value,
+        characteristics,
+      )
+    default:
+      return true
+  }
+}
+
 export const createEmptyCharacteristic = (): CharacterCharacteristics => ({
   attributes: {
     agility: 0,
@@ -413,18 +472,18 @@ export const createCharacteristics = (
   payload?: PartialDeep<CharacterCharacteristics>,
 ): CharacterCharacteristics => defu(payload, createEmptyCharacteristic())
 
-export const createDefaultCharacteristic = (): CharacterCharacteristics =>
+export const createDefaultCharacteristic = (level = minimumLevel): CharacterCharacteristics =>
   createCharacteristics({
     attributes: {
+      points: attributePointsForLevel(level),
       agility: defaultAgility,
-      points: defaultAttributePoints,
       strength: defaultStrength,
     },
     skills: {
-      points: defaultSkillPoints,
+      points: skillPointsForLevel(level),
     },
     weaponProficiencies: {
-      points: wppForLevel(minimumLevel),
+      points: wppForLevel(level),
     },
   })
 

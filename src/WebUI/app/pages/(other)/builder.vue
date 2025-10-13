@@ -2,7 +2,6 @@
 import { useClipboard } from '@vueuse/core'
 import { UInputNumber } from '#components'
 import { maximumLevel, minimumLevel } from '~root/data/constants.json'
-import { defu } from 'defu'
 
 import type {
   CharacterAttributes,
@@ -15,15 +14,11 @@ import type {
 import { useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic-builder'
 import { CHARACTERISTIC_CONVERSION } from '~/models/character'
 import {
-  attributePointsForLevel,
   ATTRIBUTES_TO_SKILLS_RATE,
-  createCharacteristics,
   createDefaultCharacteristic,
   getCharacterOverallItemsStats,
   getExperienceForLevel,
-  skillPointsForLevel,
   SKILLS_TO_ATTRIBUTES_RATE,
-  wppForLevel,
 } from '~/services/character-service'
 
 const { t } = useI18n()
@@ -37,14 +32,15 @@ function onChangeLevel() {
   level.value = localLevel.value
 }
 
-const initialCharacteristics = ref<CharacterCharacteristics>(defu(
-  {
-    ...(route.query?.attributes && { attributes: route.query.attributes as Partial<CharacterAttributes> }),
-    ...(route.query?.skills && { skills: route.query.skills as Partial<CharacterSkills> }),
-    ...(route.query?.weaponProficiencies && { weaponProficiencies: route.query.weaponProficiencies as Partial<CharacterWeaponProficiencies> }),
-  },
-  createDefaultCharacteristic(),
-))
+const initialCharacteristics = ref<CharacterCharacteristics>(
+  (route.query?.attributes && route.query?.skills && route.query?.weaponProficiencies)
+    ? {
+      attributes: route.query.attributes as unknown as CharacterAttributes,
+      skills: route.query.skills as unknown as CharacterSkills,
+      weaponProficiencies: route.query.weaponProficiencies as unknown as CharacterWeaponProficiencies,
+    } satisfies CharacterCharacteristics
+    : createDefaultCharacteristic(),
+)
 
 const {
   characteristics,
@@ -60,28 +56,24 @@ const {
 const convertRateAttributesToSkills = useRouteQuery('convertRateAttributesToSkills', 0)
 const convertRateSkillsToAttributes = useRouteQuery('convertRateSkillsToAttributes', 0)
 
+const onReset = () => {
+  localLevel.value = minimumLevel
+  initialCharacteristics.value = createDefaultCharacteristic()
+  resetCharacterBuilderState()
+  router.replace({ query: {} })
+}
+
 watch(level, () => {
   resetCharacterBuilderState()
   convertRateAttributesToSkills.value = 0
   convertRateSkillsToAttributes.value = 0
-
-  initialCharacteristics.value = createCharacteristics(defu({
-    attributes: {
-      points: attributePointsForLevel(level.value),
-    },
-    skills: {
-      points: skillPointsForLevel(level.value),
-    },
-    weaponProficiencies: {
-      points: wppForLevel(level.value),
-    },
-  }, createDefaultCharacteristic()))
+  initialCharacteristics.value = createDefaultCharacteristic(level.value)
 })
 
 watchDebounced(
   characteristics,
   () => {
-    // @ts-expect-error TODO:
+    // @ts-expect-error ///
     router.replace({ query: { ...route.query, ...characteristics.value } })
   },
   { debounce: 500 },
@@ -121,12 +113,6 @@ const convertCharacteristics = (conversion: CharacteristicConversion) => {
   // convertSkillsToAttribute
   initialCharacteristics.value.skills.points -= SKILLS_TO_ATTRIBUTES_RATE
   initialCharacteristics.value.attributes.points += ATTRIBUTES_TO_SKILLS_RATE
-}
-
-const onReset = async () => {
-  initialCharacteristics.value = createDefaultCharacteristic()
-  resetCharacterBuilderState()
-  router.replace({ query: {} })
 }
 
 const { copy } = useClipboard()
@@ -187,7 +173,7 @@ const onShare = () => {
               class="text-center"
             >
               <template #level>
-                <span class="font-bold text-primary">{{ level }}</span>
+                <span class="font-bold text-primary">{{ localLevel }}</span>
               </template>
 
               <template #exp>

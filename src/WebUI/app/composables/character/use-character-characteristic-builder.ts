@@ -1,6 +1,5 @@
 import type { MaybeRefOrGetter } from 'vue'
 
-import { weaponProficiencyCostCoefs } from '~root/data/constants.json'
 import { computed, ref, toValue } from 'vue'
 
 import type {
@@ -12,70 +11,17 @@ import type {
 
 import {
   ATTRIBUTES_TO_SKILLS_RATE,
+  characteristicRequirementsSatisfied,
   computeHealthPoints,
   createDefaultCharacteristic,
   createEmptyCharacteristic,
+  getCharacteristicCost,
+  skillRequirementsSatisfied,
   SKILLS_TO_ATTRIBUTES_RATE,
   wppForAgility,
   wppForWeaponMaster,
 } from '~/services/character-service'
 import { mergeObjectWithSum, objectEntries } from '~/utils/object'
-
-const getCharacteristicCost = (
-  section: CharacteristicSectionKey,
-  key: CharacteristicKey,
-  value: number,
-): number => {
-  if (section === 'weaponProficiencies') {
-    return Math.floor(applyPolynomialFunction(value, weaponProficiencyCostCoefs))
-  }
-
-  return value
-}
-
-const skillRequirementsSatisfied = (
-  key: SkillKey,
-  value: number,
-  characteristics: CharacterCharacteristics,
-): boolean => {
-  switch (key) {
-    case 'ironFlesh':
-    case 'powerStrike':
-    case 'powerDraw':
-    case 'powerThrow':
-      return value <= Math.floor(characteristics.attributes.strength / 3) // TODO: move to constants.json
-
-    case 'athletics':
-    case 'riding':
-    case 'weaponMaster':
-      return value <= Math.floor(characteristics.attributes.agility / 3) // TODO: move to constants.json
-
-    case 'mountedArchery':
-    case 'shield':
-      return value <= Math.floor(characteristics.attributes.agility / 6) // TODO: move to constants.json
-
-    default:
-      return false
-  }
-}
-
-const characteristicRequirementsSatisfied = (
-  section: CharacteristicSectionKey,
-  key: CharacteristicKey,
-  value: number,
-  characteristics: CharacterCharacteristics,
-): boolean => {
-  switch (section) {
-    case 'skills':
-      return skillRequirementsSatisfied(
-        key as SkillKey,
-        value,
-        characteristics,
-      )
-    default:
-      return true
-  }
-}
 
 export const useCharacterCharacteristicBuilder = (
   characteristicsInitial: MaybeRefOrGetter<CharacterCharacteristics>,

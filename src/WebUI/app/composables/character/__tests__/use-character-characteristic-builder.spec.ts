@@ -8,8 +8,6 @@ import type {
   CharacterCharacteristics,
   CharacteristicKey,
   CharacteristicSectionKey,
-  CharacterSkills,
-  SkillKey,
 } from '~/models/character'
 
 import { useCharacterCharacteristicBuilder } from '../use-character-characteristic-builder'
@@ -20,6 +18,9 @@ const {
   mockedCreateEmptyCharacteristic,
   mockedWppForAgility,
   mockedWppForWeaponMaster,
+  mockedGetCharacteristicCost,
+  mockedSkillRequirementsSatisfied,
+  mockedCharacteristicRequirementsSatisfied,
   createEmptyCharacteristic,
   ATTRIBUTES_TO_SKILLS_RATE,
   SKILLS_TO_ATTRIBUTES_RATE,
@@ -64,6 +65,9 @@ const {
     mockedCreateEmptyCharacteristic: vi.fn().mockImplementation(createEmptyCharacteristic),
     mockedWppForAgility: vi.fn((value: number) => value * WPF_FOR_AGILITY),
     mockedWppForWeaponMaster: vi.fn((value: number) => value * WPF_FOR_WEAPON_MASTER),
+    mockedGetCharacteristicCost: vi.fn((_, __, value: number) => value),
+    mockedSkillRequirementsSatisfied: vi.fn().mockReturnValue(true),
+    mockedCharacteristicRequirementsSatisfied: vi.fn().mockReturnValue(true),
     createEmptyCharacteristic,
     ATTRIBUTES_TO_SKILLS_RATE,
     SKILLS_TO_ATTRIBUTES_RATE,
@@ -79,6 +83,9 @@ vi.mock('~/services/character-service', () => {
     wppForWeaponMaster: mockedWppForWeaponMaster,
     ATTRIBUTES_TO_SKILLS_RATE,
     SKILLS_TO_ATTRIBUTES_RATE,
+    getCharacteristicCost: mockedGetCharacteristicCost,
+    skillRequirementsSatisfied: mockedSkillRequirementsSatisfied,
+    characteristicRequirementsSatisfied: mockedCharacteristicRequirementsSatisfied,
   }
 })
 
@@ -196,138 +203,41 @@ describe('useCharacterCharacteristicBuilder', () => {
   })
 
   describe('isChangeValid', () => {
-    it.each<[string, PartialDeep<CharacterCharacteristics>, boolean]>([
-      [
-        'is valid when all sections have non-negative points and no unmet requirements',
-        { attributes: { points: 0 }, skills: { points: 0 }, weaponProficiencies: { points: 0 } },
-        true,
-      ],
-      [
-        'is invalid when weapon proficiencies have negative points',
-        { attributes: { points: 0 }, skills: { points: 0 }, weaponProficiencies: { points: -10 } },
-        false,
-      ],
-      [
-        'is invalid when a skill (Iron Flesh) does not meet its Strength requirement',
-        { attributes: { strength: 2 }, skills: { ironFlesh: 1 } },
-        false,
-      ],
-      [
-        'is invalid when Power Strike skill requires more Strength than available (5 < 6)',
-        { attributes: { strength: 5 }, skills: { powerStrike: 2 } },
-        false,
-      ],
-      [
-        'is valid when Power Strike skill requirement is satisfied (Strength 6)',
-        { attributes: { strength: 6 }, skills: { powerStrike: 2 } },
-        true,
-      ],
-      [
-        'is invalid when Power Draw skill exceeds Strength requirement (12 < 14 required)',
-        { attributes: { strength: 12 }, skills: { powerDraw: 5 } },
-        false,
-      ],
-      [
-        'is invalid when Mounted Archery skill requires higher Agility (5 < 6 required)',
-        { attributes: { agility: 5 }, skills: { mountedArchery: 1 } },
-        false,
-      ],
-      [
-        'is valid when Shield skill requirement (Agility 12) is satisfied',
-        { attributes: { agility: 12 }, skills: { shield: 2 } },
-        true,
-      ],
-    // TODO: add more cases for currentSkillRequirementsSatisfied
-    ])('%s', (_description, characteristics, expectation) => {
-      const { isChangeValid } = useCharacterCharacteristicBuilder(createCharacteristics(characteristics))
-      expect(isChangeValid.value).toStrictEqual(expectation)
+    it('is valid when all sections have non-negative points and no unmet requirements', () => {
+      const { isChangeValid } = useCharacterCharacteristicBuilder(createCharacteristics({ attributes: { points: 0 }, skills: { points: 0 }, weaponProficiencies: { points: 0 } }))
+      expect(isChangeValid.value).toStrictEqual(true)
+    })
+
+    it('is invalid when weapon proficiencies have negative points', () => {
+      const { isChangeValid } = useCharacterCharacteristicBuilder(createCharacteristics({ attributes: { points: 0 }, skills: { points: 0 }, weaponProficiencies: { points: -10 } }))
+      expect(isChangeValid.value).toStrictEqual(false)
+    })
+
+    it('is invalid when some skill does not meet its Strength requirement', () => {
+      mockedSkillRequirementsSatisfied.mockReturnValueOnce(false)
+      const { isChangeValid } = useCharacterCharacteristicBuilder(createCharacteristics({ attributes: { strength: 2 }, skills: { ironFlesh: 1 } }))
+      expect(isChangeValid.value).toStrictEqual(false)
     })
   })
 
-  it.each<[PartialDeep<CharacterCharacteristics>, boolean]>(
-    [
-      [{ attributes: { strength: 2 }, skills: { ironFlesh: 1 } }, false],
-      [{ attributes: { strength: 3 }, skills: { ironFlesh: 1 } }, true],
-      [{ attributes: { strength: 5 }, skills: { powerStrike: 2 } }, false],
-      [{ attributes: { strength: 6 }, skills: { powerStrike: 2 } }, true],
-      [{ attributes: { strength: 12 }, skills: { powerDraw: 5 } }, false],
-      [{ attributes: { strength: 6 }, skills: { powerThrow: 2 } }, true],
-      [{ attributes: { agility: 6 }, skills: { athletics: 3 } }, false],
-      [{ attributes: { agility: 6 }, skills: { athletics: 2 } }, true],
-      [{ attributes: { agility: 21 }, skills: { athletics: 7 } }, true],
-      [{ attributes: { agility: 3 }, skills: { mountedArchery: 1 } }, false],
-      [{ attributes: { agility: 5 }, skills: { mountedArchery: 1 } }, false],
-      [{ attributes: { agility: 6 }, skills: { mountedArchery: 1 } }, true],
-      [{ attributes: { agility: 6 }, skills: { shield: 1 } }, true],
-      [{ attributes: { agility: 6 }, skills: { shield: 3 } }, false],
-      [{ attributes: { agility: 6 }, skills: { shield: 2 } }, false],
-      [{ attributes: { agility: 12 }, skills: { shield: 2 } }, true],
-    ],
-  )('currentSkillRequirementsSatisfied - %j, %s', (characteristics, expectation) => {
-    const { currentSkillRequirementsSatisfied } = useCharacterCharacteristicBuilder(createCharacteristics(characteristics))
-    const [skillKey] = Object.keys(characteristics.skills as Partial<CharacterSkills>)
-    expect(currentSkillRequirementsSatisfied(skillKey as SkillKey)).toStrictEqual(expectation)
-  })
+  describe('getInputProps', () => {
+    it('attribute (Strength) has max 0 when no free points', () => {
+      const { getInputProps } = useCharacterCharacteristicBuilder(createCharacteristics({ attributes: { points: 0, strength: 0 } }))
+      expect(getInputProps('attributes', 'strength')).toMatchObject({ max: 0 })
+    })
 
-  it.each<
-    [
-      string,
-      PartialDeep<CharacterCharacteristics>,
-      CharacteristicSectionKey,
-      CharacteristicKey,
-      { modelValue?: number, min?: number, max: number },
-    ]
-  >([
-    //  ATTRIBUTES
-    ['attribute (Strength) has max 0 when no free points', { attributes: { points: 0, strength: 0 } }, 'attributes', 'strength', { max: 0 }],
-    ['attribute (Strength) has max 1 when 1 free point available', { attributes: { points: 1, strength: 0 } }, 'attributes', 'strength', { max: 1, modelValue: 0 }],
-    ['attribute (Strength) is capped at 1 per level step', { attributes: { points: 2, strength: 0 } }, 'attributes', 'strength', { max: 1 }],
-    ['attribute (Strength) min and max reflect current value', { attributes: { points: 1, strength: 1 } }, 'attributes', 'strength', { max: 2, min: 1, modelValue: 1 }],
-    ['attribute (Agility) range adapts with current value', { attributes: { agility: 1, points: 1 } }, 'attributes', 'agility', { max: 2, min: 1, modelValue: 1 }],
+    it('attribute (Strength) has max 1 when 1 free point available', () => {
+      const { getInputProps } = useCharacterCharacteristicBuilder(createCharacteristics({ attributes: { points: 1, strength: 0 } }))
+      expect(getInputProps('attributes', 'strength')).toMatchObject({ max: 1, modelValue: 0 })
+    })
 
-    // SKILLS
-    ['skill (Iron Flesh) locked when Strength too low', { attributes: { strength: 1 }, skills: { points: 1 } }, 'skills', 'ironFlesh', { max: 0, min: 0, modelValue: 0 }],
-    ['skill (Iron Flesh) available at Strength 3', { attributes: { strength: 3 }, skills: { points: 1 } }, 'skills', 'ironFlesh', { max: 1, min: 0, modelValue: 0 }],
-    ['skill (Iron Flesh) fixed at current value (2)', { attributes: { strength: 1 }, skills: { ironFlesh: 2, points: 1 } }, 'skills', 'ironFlesh', { max: 2, min: 2, modelValue: 2 }],
-    ['skill (Iron Flesh) unchanged at Strength 6', { attributes: { strength: 6 }, skills: { ironFlesh: 2, points: 1 } }, 'skills', 'ironFlesh', { max: 2, min: 2, modelValue: 2 }],
-    ['skill (Iron Flesh) can increase at Strength 9', { attributes: { strength: 9 }, skills: { ironFlesh: 2, points: 1 } }, 'skills', 'ironFlesh', { max: 3, min: 2, modelValue: 2 }],
-
-    ['skill (Power Strike) available at Strength 3', { attributes: { strength: 3 }, skills: { points: 1 } }, 'skills', 'powerStrike', { max: 1, min: 0, modelValue: 0 }],
-    ['skill (Power Strike) limited by points', { attributes: { strength: 5 }, skills: { points: 4 } }, 'skills', 'powerStrike', { max: 1, min: 0, modelValue: 0 }],
-
-    ['skill (Power Draw) requires Strength ≥ 3', { attributes: { strength: 3 }, skills: { points: 1 } }, 'skills', 'powerDraw', { max: 1, min: 0, modelValue: 0 }],
-    ['skill (Power Draw) locked with Strength 0', { attributes: { strength: 0 }, skills: { points: 4 } }, 'skills', 'powerDraw', { max: 0, min: 0, modelValue: 0 }],
-
-    ['skill (Power Throw) locked at Strength 2', { attributes: { strength: 2 }, skills: { points: 1 } }, 'skills', 'powerThrow', { max: 0, min: 0, modelValue: 0 }],
-    ['skill (Power Throw) available at Strength 6', { attributes: { strength: 6 }, skills: { points: 1 } }, 'skills', 'powerThrow', { max: 1, min: 0, modelValue: 0 }],
-
-    ['skill (Athletics) locked at Agility 1', { attributes: { agility: 1 }, skills: { points: 1 } }, 'skills', 'athletics', { max: 0, min: 0, modelValue: 0 }],
-    ['skill (Athletics) available at Agility 3', { attributes: { agility: 3 }, skills: { points: 1 } }, 'skills', 'athletics', { max: 1, min: 0, modelValue: 0 }],
-    ['skill (Athletics) fixed when no points left', { attributes: { agility: 12 }, skills: { athletics: 4, points: 0 } }, 'skills', 'athletics', { max: 4, min: 4, modelValue: 4 }],
-    ['skill (Athletics) can increase with high Agility', { attributes: { agility: 16 }, skills: { athletics: 4, points: 1 } }, 'skills', 'athletics', { max: 5, min: 4, modelValue: 4 }],
-
-    ['skill (Riding) locked at Agility 1', { attributes: { agility: 1 }, skills: { points: 1 } }, 'skills', 'riding', { max: 0, min: 0, modelValue: 0 }],
-    ['skill (Weapon Master) locked at Agility 1', { attributes: { agility: 1 }, skills: { points: 1 } }, 'skills', 'weaponMaster', { max: 0, min: 0, modelValue: 0 }],
-    ['skill (Mounted Archery) locked at Agility 1', { attributes: { agility: 1 }, skills: { points: 1 } }, 'skills', 'mountedArchery', { max: 0, min: 0, modelValue: 0 }],
-    ['skill (Mounted Archery) still locked at Agility 5', { attributes: { agility: 5 }, skills: { points: 1 } }, 'skills', 'mountedArchery', { max: 0, min: 0, modelValue: 0 }],
-    ['skill (Mounted Archery) available at Agility 6', { attributes: { agility: 6 }, skills: { points: 1 } }, 'skills', 'mountedArchery', { max: 1, min: 0, modelValue: 0 }],
-
-    ['skill (Shield) available at Agility 9', { attributes: { agility: 9 }, skills: { points: 1 } }, 'skills', 'shield', { max: 1, min: 0, modelValue: 0 }],
-    ['skill (Shield) locked when no points left', { attributes: { agility: 9 }, skills: { points: 0 } }, 'skills', 'shield', { max: 0, min: 0, modelValue: 0 }],
-    ['skill (Shield) fixed at current value 2', { attributes: { agility: 9 }, skills: { points: 1, shield: 2 } }, 'skills', 'shield', { max: 2, min: 2, modelValue: 2 }],
-    ['skill (Shield) can increase at Agility 18', { attributes: { agility: 18 }, skills: { points: 1, shield: 2 } }, 'skills', 'shield', { max: 3, min: 2, modelValue: 2 }],
-
-    // WEAPON PROFICIENCIES
-    ['weapon prof (One-Handed) locked with 0 points', { weaponProficiencies: { points: 0 } }, 'weaponProficiencies', 'oneHanded', { max: 0, min: 0, modelValue: 0 }],
-    ['weapon prof (One-Handed) still locked with 1 point', { weaponProficiencies: { points: 1 } }, 'weaponProficiencies', 'oneHanded', { max: 0, min: 0, modelValue: 0 }],
-    ['weapon prof (One-Handed) still locked with 3 points', { weaponProficiencies: { points: 3 } }, 'weaponProficiencies', 'oneHanded', { max: 0, min: 0, modelValue: 0 }],
-    ['weapon prof (One-Handed) available with 217 points', { weaponProficiencies: { points: 217 } }, 'weaponProficiencies', 'oneHanded', { max: 1, min: 0, modelValue: 0 }],
-    ['weapon prof (One-Handed) increases gradually from 42', { weaponProficiencies: { oneHanded: 42, points: 79 } }, 'weaponProficiencies', 'oneHanded', { max: 43, min: 42, modelValue: 42 }],
-    ['weapon prof (One-Handed) fixed at 60 when capped', { weaponProficiencies: { oneHanded: 60, points: 2 } }, 'weaponProficiencies', 'oneHanded', { max: 60, min: 60, modelValue: 60 }],
-    ['weapon prof (One-Handed) unchanged when already maxed', { weaponProficiencies: { oneHanded: 59, points: 6 } }, 'weaponProficiencies', 'oneHanded', { max: 59, min: 59, modelValue: 59 }],
-  ])('%s', (_desc, characteristics, sectionKey, key, expectation) => {
-    const { getInputProps } = useCharacterCharacteristicBuilder(createCharacteristics(characteristics))
-    expect(getInputProps(sectionKey, key)).toMatchObject(expectation)
+    it('skill (Iron Flesh) locked when Strength too low', () => {
+      mockedCharacteristicRequirementsSatisfied.mockReturnValueOnce(false)
+      const characteristics = createCharacteristics({ attributes: { points: 1, strength: 0 } })
+      const { getInputProps } = useCharacterCharacteristicBuilder(characteristics)
+      expect(getInputProps('attributes', 'strength')).toMatchObject({ max: 0, min: 0, modelValue: 0 })
+      expect(mockedCharacteristicRequirementsSatisfied).toHaveBeenCalledWith('attributes', 'strength', 1, characteristics)
+    })
   })
 
   describe('onInput', () => {
@@ -381,62 +291,6 @@ describe('useCharacterCharacteristicBuilder', () => {
         1,
         { attributes: { agility: 1, points: 0 }, weaponProficiencies: { points: 1 } },
       ],
-      [
-        'cannot increase Weapon Master skill without required Agility',
-        { skills: { points: 1, weaponMaster: 0 } },
-        'skills',
-        'weaponMaster',
-        1,
-        { skills: { points: 1, weaponMaster: 0 } },
-      ],
-      [
-        'increases Weapon Master when Agility requirement (3) is satisfied',
-        { attributes: { agility: 3 }, skills: { points: 1 } },
-        'skills',
-        'weaponMaster',
-        1,
-        { skills: { points: 0, weaponMaster: 1 } },
-      ],
-      [
-        'increases Shield when Agility requirement (6) is satisfied',
-        { attributes: { agility: 6 }, skills: { points: 1 } },
-        'skills',
-        'shield',
-        1,
-        { skills: { points: 0, shield: 1 } },
-      ],
-      [
-        'does not increase Shield when Agility requirement (5) is not satisfied',
-        { attributes: { agility: 5 }, skills: { points: 1 } },
-        'skills',
-        'shield',
-        1,
-        { skills: { points: 1, shield: 0 } },
-      ],
-      [
-        'does not allow Athletics to increase beyond requirements',
-        { skills: { points: 1, athletics: 0 } },
-        'skills',
-        'athletics',
-        2,
-        { skills: { points: 1, athletics: 0 } },
-      ],
-      [
-        'increases Bow proficiency and reduces WPP points accordingly',
-        { weaponProficiencies: { points: 22 } },
-        'weaponProficiencies',
-        'bow',
-        1,
-        { weaponProficiencies: { points: 12, bow: 1 } },
-      ],
-      [
-        'does not allow Bow proficiency increase if not enough WPP points',
-        { weaponProficiencies: { points: 3 } },
-        'weaponProficiencies',
-        'bow',
-        2,
-        { weaponProficiencies: { bow: 0 } },
-      ],
     ])(
       '%s',
       (_description, initialCharacteristics, characteristicSectionKey, characteristicKey, newValue, expectation) => {
@@ -453,6 +307,18 @@ describe('useCharacterCharacteristicBuilder', () => {
         })
       },
     )
+
+    it('does not increase Shield when Agility requirement is not satisfied', () => {
+      mockedCharacteristicRequirementsSatisfied.mockReturnValueOnce(false)
+      const { characteristics, onInput } = useCharacterCharacteristicBuilder(createCharacteristics({ attributes: { agility: 5 }, skills: { points: 1, shield: 0 } }))
+      onInput('skills', 'shield', 1)
+      expect(characteristics.value).toEqual(expect.objectContaining({
+        skills: expect.objectContaining({
+          points: 1,
+          shield: 0,
+        }),
+      }))
+    })
   })
 
   it('reset', () => {
@@ -560,7 +426,7 @@ describe('useCharacterCharacteristicBuilder', () => {
 
     onInput('weaponProficiencies', 'twoHanded', 35)
 
-    expect(characteristics.value.weaponProficiencies.points).toEqual(1)
+    expect(characteristics.value.weaponProficiencies.points).toEqual(316)
 
     expect(characteristics.value).toEqual({
       attributes: {
@@ -584,7 +450,7 @@ describe('useCharacterCharacteristicBuilder', () => {
         bow: 0,
         crossbow: 0,
         oneHanded: 0,
-        points: 1,
+        points: 316,
         polearm: 0,
         throwing: 0,
         twoHanded: 35,
