@@ -1,5 +1,6 @@
 import type { MaybeRefOrGetter } from 'vue'
 
+import { weaponProficiencyCostCoefs } from '~root/data/constants.json'
 import { computed, ref, toValue } from 'vue'
 
 import type {
@@ -26,7 +27,7 @@ const getCharacteristicCost = (
   value: number,
 ): number => {
   if (section === 'weaponProficiencies') {
-    return wppForWeaponMaster(value)
+    return Math.floor(applyPolynomialFunction(value, weaponProficiencyCostCoefs))
   }
 
   return value
