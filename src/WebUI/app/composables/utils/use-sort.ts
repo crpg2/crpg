@@ -1,5 +1,7 @@
 import type { ValueOf } from 'type-fest'
 
+import { useRouteQuery } from '@vueuse/router'
+
 export const SORT = {
   ASC: 'asc',
   DESC: 'desc',

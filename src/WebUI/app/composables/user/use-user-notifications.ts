@@ -1,5 +1,7 @@
 import { useAsyncState } from '@vueuse/core'
+import { computed } from 'vue'
 
+import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { NOTIFICATION_STATE } from '~/models/notifications'
 import {
@@ -9,8 +11,6 @@ import {
   readAllUserNotifications,
   readUserNotification,
 } from '~/services/user-service'
-
-import { useUser } from './use-user'
 
 export const useUsersNotifications = () => {
   const { fetchUser } = useUser()
