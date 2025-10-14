@@ -1,14 +1,13 @@
 import { useStorage } from '@vueuse/core'
 import { LazyAppWelcomeModal } from '#components'
+import { useOverlay } from '#imports'
 
-import { useUser } from './user/use-user'
+import { useUser } from '~/composables/user/use-user'
 
 export const useWelcome = () => {
   const showedWelcomeMessage = useStorage<boolean>('user-welcome-message-showed', false)
 
   const { user } = useUser()
-
-  const isNewUser = computed(() => user.value?.isRecent)
 
   const overlay = useOverlay()
 
@@ -20,7 +19,7 @@ export const useWelcome = () => {
     },
   })
 
-  if (isNewUser.value && !showedWelcomeMessage.value) {
+  if (Boolean(user.value?.isRecent) && !showedWelcomeMessage.value) {
     modal.open()
   }
 
