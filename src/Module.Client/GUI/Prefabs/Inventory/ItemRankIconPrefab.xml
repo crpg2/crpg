@@ -7,11 +7,11 @@
     <Widget IsVisible="*IconIsVisible" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="*Width" SuggestedHeight="*Height" >
       <Children>            
-        <BrushWidget Id="ItemRank1" Brush="Item.Rank.Icon_1" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+        <BrushWidget Id="ItemRank1" Brush="Crpg.Item.Rank.Icon_1" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@Rank1Visible" />
-        <BrushWidget Id="ItemRank2" Brush="Item.Rank.Icon_2" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+        <BrushWidget Id="ItemRank2" Brush="Crpg.Item.Rank.Icon_2" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@Rank2Visible" />
-        <BrushWidget Id="ItemRank3" Brush="Item.Rank.Icon_3" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+        <BrushWidget Id="ItemRank3" Brush="Crpg.Item.Rank.Icon_3" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@Rank3Visible" />
       </Children>
     </Widget>

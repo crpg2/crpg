@@ -3,12 +3,6 @@
     <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedHeight="80" SuggestedWidth="80" >
       <Children>
         <BrushWidget Id="Background" AcceptDrop="true" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Color="#FFFFFFFF">
-          <!-- 
-          <Children>
-            <BrushWidget MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="CrpgInventory.EquipmentSlot.BackGround">
-            </BrushWidget>
-          </Children>
-          -->
         </BrushWidget>
         <ButtonWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center"
                   SuggestedWidth="75" SuggestedHeight="75" AcceptDrag="@IsDraggable" DoNotPassEventsToChildren="true"
@@ -16,7 +10,6 @@
                   Command.DragBegin="ExecuteDragBegin" Command.DragEnd="ExecuteDragEnd" Command.Click="ExecuteClick" 
                   Command.HoverBegin="ExecuteHoverBegin" Command.HoverEnd="ExecuteHoverEnd" >
           <Children>
-
             <!-- Default fallback icon -->
             <ImageWidget Sprite="@DefaultSprite"
                 IsVisible="@ShowDefaultIcon"
@@ -24,7 +17,6 @@
                 SuggestedWidth="48" SuggestedHeight="48"
                 HorizontalAlignment="Center" VerticalAlignment="Center"
                 DoNotAcceptEvents="True" PassEventsToParent="True" />
-
             <!-- Equipped item icon -->
             <ImageIdentifierWidget DataSource="{ImageIdentifier}"
                 ImageId="@Id"
@@ -34,32 +26,23 @@
                 SuggestedWidth="90" SuggestedHeight="45"
                 HorizontalAlignment="Center" VerticalAlignment="Center"
                 Margin="4"
-                DoNotAcceptEvents="True" PassEventsToParent="True" />
-            
+                DoNotAcceptEvents="True" PassEventsToParent="True" />            
             <!-- Item rank icon (heirlooms)-->
             <ItemRankIconPrefab DataSource="{ItemRankIcon}" />
-
             <!-- Item is Currently Equipped check mark -->
-            <BrushWidget Id="ItemEquipped" Brush="Item.Equipped.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+            <BrushWidget Id="ItemEquipped" Brush="Crpg.Item.Equipped.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
               SuggestedWidth="15" SuggestedHeight="15" HorizontalAlignment="Right" VerticalAlignment="Top"
-              PositionYOffset="30" IsVisible="@IsEquipped" />                                
-
+              PositionYOffset="30" IsVisible="@IsEquipped" />
             <!-- Armory item icon -->
             <ItemArmoryIconPrefab DataSource="{ItemArmoryIcon}" HorizontalAlignment="Right" VerticalAlignment="Top"
                  PositionYOffset="0" />
-            <!-- 
-            <BrushWidget Id="ItemArmory" Brush="Item.Armory.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-              SuggestedWidth="15" SuggestedHeight="15" HorizontalAlignment="Right" VerticalAlignment="Top"
-              PositionYOffset="0" IsVisible="@IsArmoryItem" />
-            -->
-
             <!-- Quantity text (e.g., "12") -->
             <TextWidget Text="@QuantityText"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
                 MarginRight="4"
                 MarginBottom="2"
-                Brush="Inventory.ItemCountText"
+                Brush="Crpg.InventorySlot.ItemName.Text"
                 IsVisible="@QuantityText != ''"
                 DoNotAcceptEvents="True" />
             <TextWidget Text="@ItemName"
@@ -67,7 +50,7 @@
                 HeightSizePolicy="CoverChildren"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom"
-                Brush="InventorySlot.ItemName.Text"
+                Brush="Crpg.InventorySlot.ItemName.Text"
                 DoNotAcceptEvents="True" PassEventsToParent="True" />
           </Children>
         </ButtonWidget>

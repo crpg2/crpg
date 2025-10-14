@@ -21,7 +21,7 @@
           <Children>
             <BrushWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
                       MarginLeft="9" MarginRight="9" MarginTop="9" MarginBottom="9"
-                      Brush="CrpgInventory.EquipmentSlot.BackGround" />
+                      Brush="Crpg.Generic.Panel.Background" />
           </Children>
         </BrushWidget>
 

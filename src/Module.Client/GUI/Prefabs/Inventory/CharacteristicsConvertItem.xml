@@ -12,12 +12,12 @@
                     WidthSizePolicy="CoverChildren"
                     HeightSizePolicy="Fixed" SuggestedHeight="20"
                     HorizontalAlignment="Center"
-                    Brush="Inventory.ArmorAmount.Text" />
+                    Brush="Crpg.CharacterEdit.Item.Text.Medium" />
         <TextWidget IntText="@ItemValue"
                     WidthSizePolicy="Fixed" SuggestedWidth="20"
                     HeightSizePolicy="Fixed" SuggestedHeight="20" 
                     HorizontalAlignment="Left"
-                    Brush="Inventory.ArmorAmount.Text" />
+                    Brush="Crpg.CharacterEdit.Item.Text.Medium" />
         <!-- Spacer that stretches to push buttons to the right -->
         <!-- <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" /> -->
         <CrpgButtonPrefab Parameter.ButtonText="~" Parameter.ButtonId="ButtonConvert"

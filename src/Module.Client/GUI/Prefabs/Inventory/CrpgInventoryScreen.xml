@@ -22,7 +22,7 @@
           <Children>
             <BrushWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
                       MarginLeft="9" MarginRight="9" MarginTop="9" MarginBottom="9"
-                      Brush="CrpgInventory.EquipmentSlot.BackGround">
+                      Brush="Crpg.Generic.Panel.Background">
               <Children>
                 <BrushWidget Id="CrpgLogo" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!CrpgLogo.Width" SuggestedHeight="!CrpgLogo.Height"
                         Sprite="ui_crpg_icon_white_crpg_logo" Color="#ffffffff"
@@ -39,20 +39,20 @@
                         <!-- Character Name -->
                         <TextWidget Text="@CharacterName" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="30"
                             HorizontalAlignment="Left" VerticalAlignment="Center"
-                            Brush="CrpgInventory.UserName.Text"
+                            Brush="Crpg.Inventory.UserName.Text"
                             MarginTop="5" MarginBottom="0" MarginLeft="50" MarginRight="5"/>
                         <!-- Bar above -->
                         <CharacterEquipNavBar DataSource="{NavBar}" HorizontalAlignment="Center" VerticalAlignment="Center" MarginTop="10"/>                                              
                         <TextWidget Text="@UserName" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="30"
                                 HorizontalAlignment="Center" VerticalAlignment="Center"
-                                Brush="CrpgInventory.UserName.Text"
+                                Brush="Crpg.Inventory.UserName.Text"
                                 MarginTop="5" MarginRight="10"/>
-                        <BrushWidget Id="GoldIcon" Brush="Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                        <BrushWidget Id="GoldIcon" Brush="Crpg.Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
                                 SuggestedWidth="15" SuggestedHeight="15" IsVisible="true" PositionYOffset="3" MarginRight="3"
                                 VerticalAlignment="Center"/>
                         <TextWidget Text="@GoldAmount" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="30"
                                 HorizontalAlignment="Center" VerticalAlignment="Center" MarginRight="5" MarginTop="5"
-                                Brush="ItemInfo.Category.Value.Text"/>
+                                Brush="Crpg.ItemInfo.Category.Value.Text"/>
                       </Children>
                     </ListPanel>
                     <!-- Horizontal Panel -->
@@ -75,7 +75,6 @@
             </BrushWidget>                    
           </Children>
         </BrushWidget>      
-    
         <ItemInfoPrefab DataSource="{ItemInfo}" Id="ItemInfoId" HeightSizePolicy="StretchToParent" WidthSizePolicy="StretchToParent" IsVisible="@IsVisible" />
       </Children>
     </Widget>

@@ -10,7 +10,7 @@
         <ButtonWidget Id="Overlay" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
                  Color="#ffffff00"
                  DoNotAcceptEvents="false"
-                 Brush="ItemInfo.ClickOverlay"
+                 Brush="Crpg.ItemInfo.ClickOverlay"
                  DoNotPassEventsToChildren="true"
                  Command.Click="OnOverlayClick"/>  
         <!-- Frame -->
@@ -21,7 +21,7 @@
           <Children>
             <!-- Background -->
             <BrushWidget Id="ItemInfo.Background.Brush" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
-                HorizontalAlignment="Center" VerticalAlignment="Center" Brush="ItemInfo.Background"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Brush="Crpg.ItemInfo.Background"
                 MarginTop="8" MarginBottom="8" MarginLeft="8" MarginRight="8" />
             <!-- Close Button? -->
             <!-- Vertical ListPanel Holding all -->
@@ -29,8 +29,7 @@
                 WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren"
                 SuggestedWidth="*Width" Spacing="2"
                 MarginTop="10"
-                DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
-                
+                DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">                
               <Children>
                 <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" VerticalAlignment="Top"> <!-- Container for item image and userItem icons -->
                   <Children>
@@ -46,22 +45,17 @@
                     <!-- item rank icon -->
                     <ItemRankIconPrefab DataSource="{ItemRankIcon}" />
                     <!-- Item is Currently Equipped check mark -->
-                    <BrushWidget Id="ItemEquipped" Brush="Item.Equipped.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                    <BrushWidget Id="ItemEquipped" Brush="Crpg.Item.Equipped.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
                         SuggestedWidth="15" SuggestedHeight="15" HorizontalAlignment="Right" VerticalAlignment="Top"
                         PositionYOffset="30" IsVisible="@IsEquipped" />                        
                     <!-- Armory item icon -->
                     <ItemArmoryIconPrefab DataSource="{ItemArmoryIcon}" HorizontalAlignment="Right" VerticalAlignment="Top"
-                        PositionYOffset="0" />
-                    <!--
-                    <BrushWidget Id="ItemArmory" Brush="Item.Armory.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-                        SuggestedWidth="15" SuggestedHeight="15" HorizontalAlignment="Right" VerticalAlignment="Top"
-                        PositionYOffset="0" IsVisible="@IsArmoryItem" />
-                    -->                                                        
+                        PositionYOffset="0" />                                                    
                   </Children>
                 </Widget>
                 <TextWidget Id="ItemName" Text="@Name" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20"
                       HorizontalAlignment = "Center"
-                      Brush="ItemInfo.ItemName.Text" />
+                      Brush="Crpg.ItemInfo.ItemName.Text" />
                 <ListPanel DataSource="{Rows}" StackLayout.LayoutMethod="VerticalBottomToTop"
                       WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
                       SuggestedWidth="*Width" SuggestedHeight="*Height"
@@ -77,7 +71,7 @@
                   Parameter.ButtonText="@ArmoryButtonText" Parameter.ButtonId="ArmoryButton"
                   Parameter.Width="180" Parameter.Height="40" Parameter.ButtonIsEnabled="true"
                   Parameter.CommandClick="ArmoryButtonClick" Parameter.ButtonIsVisible="true"
-                  Parameter.ButtonBrushImage="Item.Armory.Icon" />      
+                  Parameter.ButtonBrushImage="Crpg.Item.Armory.Icon" />      
           </Children>
         </BrushWidget>
       </Children>

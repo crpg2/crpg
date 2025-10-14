@@ -1,8 +1,7 @@
 <Prefab Name="CharacterInfoBuildEquipStatsItem">
-
   <Constants>
-    <Constant Name="Label.Brush" Value="CharacterEdit.Item.Text" />
-    <Constant Name="Value.Brush" Value="CharacterEdit.Value.Text" />
+    <Constant Name="Label.Brush" Value="Crpg.CharacterEdit.Item.Text" />
+    <Constant Name="Value.Brush" Value="Crpg.CharacterEdit.Value.Text" />
   </Constants>
   <Window>   
     <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -19,7 +18,7 @@
             <!-- Spacer -->
             <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" />
             <!-- Gold icon if any Right-Aligned-->
-            <BrushWidget Id="GoldIcon" Brush="Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+            <BrushWidget Id="GoldIcon" Brush="Crpg.Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
               SuggestedWidth="15" SuggestedHeight="15" IsVisible="@ShouldShowGold" PositionYOffset="2" />
             <!-- Value Right-Aligned-->
             <TextWidget Text="@ValueText" IsDisabled="@TextDisabledState"

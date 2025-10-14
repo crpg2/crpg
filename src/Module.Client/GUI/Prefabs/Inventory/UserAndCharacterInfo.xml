@@ -34,7 +34,6 @@
                 <UserAndCharacterInfoItem Parameter.LabelText="Exp:" Parameter.ValueText="@CharacterExperienceText" />
               </Children>
             </ListPanel>
-
             <!-- Column 2 Stats -->
             <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top" 
                   WidthSizePolicy="Fixed" SuggestedWidth="!Column1.Width" HeightSizePolicy="CoverChildren" 

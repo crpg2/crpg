@@ -1,8 +1,4 @@
 <Prefab Name="EquipmentSlotPrefab">
-    <!-- Sprites:
-    SquareWRoundedCornersFrame_9
-    StdAssets\frame_small
-  -->
   <Constants>
     <Constant Name="MainContainer.Width" Value="85"/>
     <Constant Name="MainContainer.Height" Value="70"/>
@@ -21,7 +17,7 @@
           <Children>
             <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10"
                   WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" 
-                  Brush="CrpgInventory.EquipmentSlot.BackGround" DoNotAcceptEvents="True">
+                  Brush="Crpg.EquipmentSlot.Background" DoNotAcceptEvents="True">
             </BrushWidget>
             <!-- Default fallback icon -->
             <ImageWidget Id="DefaultIcon" Sprite="@DefaultSprite"
@@ -34,7 +30,7 @@
         </BrushWidget>
         <ButtonWidget Id="Button" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center"
                 SuggestedWidth="!Button.Width" SuggestedHeight="!Button.Height" AcceptDrag="@CanAcceptDrag" DoNotPassEventsToChildren="true"
-                ClipContents="true" DoNotAcceptEvents="False" IsEnabled="@IsButtonEnabled" Brush="EquipmentSlot.Button"
+                ClipContents="true" DoNotAcceptEvents="False" IsEnabled="@IsButtonEnabled" Brush="Crpg.EquipmentSlot.Button"
                 Command.AlternateClick="ExecuteAlternateClick" Command.Click="ExecuteClick"
                 Command.DragBegin="ExecuteDragBegin" Command.DragEnd="ExecuteDragEnd" 
                 AcceptDrop="true" Command.Drop="ExecuteTryEquipItem" Command.HoverBegin="ExecuteHoverBegin" Command.HoverEnd="ExecuteHoverEnd" AllowHoverWhileDragging="true" >

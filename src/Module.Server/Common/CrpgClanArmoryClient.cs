@@ -115,7 +115,6 @@ internal class CrpgClanArmoryClient : MissionNetwork
 
     internal CrpgClanArmoryItem? FindClanArmoryItemByUserItemId(int uItemId)
     {
-        // Defensive: return null if no armory items exist
         if (_clanArmoryItems == null)
         {
             return null;
@@ -129,13 +128,11 @@ internal class CrpgClanArmoryClient : MissionNetwork
                 continue;
             }
 
-            // Skip if this armory item has no UserItem assigned
             if (item.UserItem == null)
             {
                 continue;
             }
 
-            // Check if IDs match
             if (item.UserItem.Id == uItemId)
             {
                 return item; // Found a match
@@ -197,8 +194,6 @@ internal class CrpgClanArmoryClient : MissionNetwork
 
         var existingItem = _clanArmoryItems.FirstOrDefault(x => x.UserItem?.Id == userItemId);
 
-        // CrpgClanArmoryItem? clanArmoryItem = FindClanArmoryItemByUserItemId(userItemId);
-
         // Update _clanArmoryItems according to action
         switch (message.ActionType)
         {
@@ -248,7 +243,6 @@ internal class CrpgClanArmoryClient : MissionNetwork
                 if (existingItem != null && message.ArmoryItem != null)
                 {
                     // Update fields individually to preserve references
-                    // existingItem.UserItem = message.ArmoryItem.UserItem;
                     if (existingItem.UserItem is not null)
                     {
                         existingItem.UserItem.IsArmoryItem = true;
@@ -273,7 +267,7 @@ internal class CrpgClanArmoryClient : MissionNetwork
 
     private void HandleClanArmoryCompleteUpdate(ServerSendClanArmoryCompleteUpdate message)
     {
-        LogDebugError($"HandleClanArmoryCompleteUpdate: items({message.ArmoryItems.Count})");
+        LogDebug($"HandleClanArmoryCompleteUpdate: items({message.ArmoryItems.Count})");
         SetClanArmoryItems(message.ArmoryItems);
     }
 

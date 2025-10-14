@@ -3,7 +3,9 @@
     <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center">
       <Children>
         <ImageWidget Sprite="SPGeneral\SPScoreboard\shield" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"  />
-        <TextWidget IntText="@ArmorAmount" WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" VerticalAlignment="Center" DoNotAcceptEvents="true" PassEventsToParent="true" Brush="Inventory.ArmorAmount.Text" /> 
+        <TextWidget IntText="@ArmorAmount" WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren"
+              HorizontalAlignment="Center" VerticalAlignment="Center" DoNotAcceptEvents="true" PassEventsToParent="true"
+              Brush="Crpg.Inventory.ArmorAmount.Text" /> 
       </Children>
     </Widget>
   </Window>

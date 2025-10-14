@@ -1,7 +1,7 @@
 <Prefab Name="UserAndCharacterInfoItem">
   <Constants>
-    <Constant Name="Label.Brush" Value="CharacterEdit.Item.Text" />
-    <Constant Name="Value.Brush" Value="CharacterEdit.Value.Text" />
+    <Constant Name="Label.Brush" Value="Crpg.CharacterEdit.Item.Text" />
+    <Constant Name="Value.Brush" Value="Crpg.CharacterEdit.Value.Text" />
   </Constants>
   <Parameters>
       <Parameter Name="LabelText" DefaultValue="Label" />
@@ -21,14 +21,9 @@
               HorizontalAlignment="Left"
               Brush="!Label.Brush" />
           <!-- Spacer -->
-          <!--  <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" /> -->
-            <BrushWidget Id="GoldIcon" Brush="Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+            <BrushWidget Id="GoldIcon" Brush="Crpg.Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
               SuggestedWidth="15" SuggestedHeight="15" IsVisible="*ShouldShowGold" PositionYOffset="2"/>
-          <!-- Image if any Right-Aligned-->
-          
-          <!--
-            <ImageWidget Sprite="*ImgSprite" WidthSizePolicy="Fixed" SuggestedWidth="20" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" VerticalAlignment="Center"  />
-          -->
+
           <!-- Value Right-Aligned-->
             <TextWidget Text="*ValueText" 
               WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" 

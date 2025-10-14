@@ -30,8 +30,6 @@
                     MarginLeft="5" MarginRight="5" MarginTop="10" MarginBottom="10" Spacing="5"
                     DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
               <Children>
-                <!-- <UserAndCharacterInfo DataSource="{UserAndCharacterInfoVm}"/> -->
-
                 <!-- Horizontal layout container -->
                 <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Center" 
                         WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
@@ -59,9 +57,9 @@
                               <Children>
 
                                 <TextWidget Text="Weapon Proficiencies - " HeightSizePolicy="Fixed" SuggestedHeight="20" WidthSizePolicy="CoverChildren"
-                                    Brush="CharacterEdit.Item.Text.Medium" HorizontalAlignment="Center"/>
+                                    Brush="Crpg.CharacterEdit.Item.Text.Medium" HorizontalAlignment="Center"/>
                                     <TextWidget IntText="@WeaponProficiencyPoints" HeightSizePolicy="Fixed" SuggestedHeight="20" WidthSizePolicy="CoverChildren"
-                                    Brush="CharacterEdit.Item.Text.Medium" HorizontalAlignment="Center"/>
+                                    Brush="Crpg.CharacterEdit.Item.Text.Medium" HorizontalAlignment="Center"/>
                               </Children>
                             </ListPanel>
                             

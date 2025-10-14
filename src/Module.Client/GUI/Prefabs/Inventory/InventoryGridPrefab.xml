@@ -9,7 +9,6 @@
     <Constant Name="Background.Height" Value="410"/>
     <Constant Name="ScrollingItemGrid.Width" Value="475"/>
   </Constants>
-
   <Window>
     <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@IsVisible"
             Id="InventoryGridRoot">
@@ -20,8 +19,6 @@
             <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="Crpg.Generic.Panel.Background"/>
           </Children>
         </BrushWidget>
-
-
         <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" StackLayout.LayoutMethod="HorizontalLeftToRight" Spacing="0">
           <Children>
             <!-- Vertical Item Categories/Filter -->
@@ -29,8 +26,7 @@
               <ItemTemplate>
                 <InventorySortTypePrefab DataSource="." MarginBottom="10"/>
               </ItemTemplate>
-            </ListPanel>                
-
+            </ListPanel>
             <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" StackLayout.LayoutMethod="VerticalBottomToTop" Spacing="0" MarginTop="15">
               <Children>
                 <!-- Horizontal Top Item Categories/Filter -->
@@ -39,13 +35,12 @@
                     <InventorySortTypePrefab DataSource="." MarginRight="10" />
                   </ItemTemplate>
                 </ListPanel>
-
                 <!-- Scrolling Item grid -->
                 <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center" MarginLeft="0" MarginRight="10" MarginBottom="0" MarginTop="0">
                   <Children>
                     <BrushWidget Id="ItemGridBackground" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
                     </BrushWidget>
-                    <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="Logo.Crpg.Icon" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="Crpg.Logo.Icon" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <ScrollablePanel Id="ScrollablePanel" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center" AutoHideScrollBars="true" ClipRect="ClipRect" InnerPanel="ClipRect\InventoryGrid" VerticalScrollbar="..\VerticalScrollbar" MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10">
                       <Children>            
                         <Widget Id="ClipRect" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" ClipContents="true" VerticalAlignment="Top">
@@ -62,7 +57,7 @@
                     <ScrollbarWidget Id="VerticalScrollbar" WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="8" HorizontalAlignment="Right" VerticalAlignment="Center" MarginTop="10" MarginBottom="0" AlignmentAxis="Vertical" Handle="VerticalScrollbarHandle" MaxValue="100" MinValue="0">
                       <Children>
                         <Widget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="4" HorizontalAlignment="Center" Sprite="BlankWhiteSquare_9" AlphaFactor="0.3" Color="#515897ff" />
-                        <ImageWidget Id="VerticalScrollbarHandle" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="8" SuggestedHeight="10" HorizontalAlignment="Center" Brush="InventoryGrid.Scrollbar.Handle" />
+                        <ImageWidget Id="VerticalScrollbarHandle" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="8" SuggestedHeight="10" HorizontalAlignment="Center" Brush="Crpg.InventoryGrid.Scrollbar.Handle" />
                       </Children>
                     </ScrollbarWidget>
                   </Children>

@@ -12,7 +12,7 @@
                     WidthSizePolicy="Fixed" SuggestedWidth="120"
                     HeightSizePolicy="Fixed" SuggestedHeight="20"
                     HorizontalAlignment="Left"
-                    Brush="CharacterEdit.Item.Text" />
+                    Brush="Crpg.CharacterEdit.Item.Text" />
         <!-- Spacer that stretches to push buttons to the right -->
         <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" />
         <BasicTooltipViewModel DataSource="{Tooltip}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
@@ -27,7 +27,7 @@
                     WidthSizePolicy="Fixed" SuggestedWidth="20"
                     HeightSizePolicy="Fixed" SuggestedHeight="20"
                     HorizontalAlignment="Center"
-                    Brush="CharacterEdit.Value.Text"
+                    Brush="Crpg.CharacterEdit.Value.Text"
                     IsDisabled="@TextStateDisabled" />
         <CrpgButtonPrefab Parameter.ButtonText="+" Parameter.ButtonId="ButtonPlus"
                     Parameter.Width="30" Parameter.Height="30" Parameter.ButtonIsEnabled="@IsButtonPlusEnabled"

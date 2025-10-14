@@ -3,12 +3,6 @@
     <Parameter Name="Width" DefaultValue="220"/>
     <Parameter Name="Height" DefaultValue="50"/>
   </Parameters>
-  <Constants>
-    <Constant Name="Icon.Width" Value="30"/>
-    <Constant Name="Icon.Height" Value="30"/>
-    <Constant Name="Gold.Icon.Width" Value="25"/>
-    <Constant Name="Gold.Icon.Height" Value="25"/>
-  </Constants>
   <Window>
     <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Top"
             WidthSizePolicy="Fixed" SuggestedWidth="*Width"

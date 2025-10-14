@@ -24,11 +24,10 @@
               HeightSizePolicy="StretchToParent"
               VerticalAlignment="Center" HorizontalAlignment="Center"
               IsVisible="*ButtonIsVisible"
-              Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
-                                
+              Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">                                
           <Children>
             <ButtonWidget Id="*ButtonId" 
-                  Brush="CharacterEdit.Button"
+                  Brush="Crpg.Generic.Button"
                   WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
                   MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10"
                   Command.Click="*CommandClick" Command.AlternateClick="*CommandAlternateClick"
@@ -43,7 +42,7 @@
                     SuggestedWidth="100" SuggestedHeight="30"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    Brush="CharacterEdit.Item.Text" />
+                    Brush="Crpg.Generic.Button.Text" />
               </Children>
             </ButtonWidget>
           </Children>

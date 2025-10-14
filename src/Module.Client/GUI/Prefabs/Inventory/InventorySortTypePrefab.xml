@@ -10,7 +10,7 @@
         </BrushWidget>
         <ButtonWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center"
                   AcceptDrag="false" DoNotPassEventsToChildren="true" Command.Click="ExecuteClick" IsEnabled="true"
-                  ClipContents="true" DoNotAcceptEvents="False" Brush="InventorySort.Button" IsSelected="@IsSelected"
+                  ClipContents="true" DoNotAcceptEvents="False" Brush="Crpg.InventorySort.Button" IsSelected="@IsSelected"
                   MarginTop="2" MarginBottom="2" MarginLeft="2" MarginRight="2">
           <Children>
             <ImageWidget Sprite="@IconSprite"

@@ -16,10 +16,8 @@
             Spacing="2"
             DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
       <Children>
-        <TextWidget Id="CategoryName" Text="@CategoryName" Brush="ItemInfo.Category.Title.Text" 
+        <TextWidget Id="CategoryName" Text="@CategoryName" Brush="Crpg.ItemInfo.Category.Title.Text" 
                 WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" />
-
-            
         <!-- List Panel for multiples-->
         <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" 
             WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="25"
@@ -45,10 +43,10 @@
                 </Widget>
               </ItemTemplate>
             </ListPanel>                      
-            <BrushWidget Brush="Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+            <BrushWidget Brush="Crpg.Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
                 SuggestedWidth="!Gold.Icon.Width" SuggestedHeight="!Gold.Icon.Height"
                 IsVisible="@IsGoldVisible" PositionYOffset="2"/>
-            <TextWidget Id="ValueText" Text="@ValueText" Brush="ItemInfo.Category.Value.Text" 
+            <TextWidget Id="ValueText" Text="@ValueText" Brush="Crpg.ItemInfo.Category.Value.Text" 
                 WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" />
           </Children>
         </ListPanel>   

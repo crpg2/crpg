@@ -75,7 +75,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     // ===== API METHODS =====
 
     /// <summary>
-    /// Requests the latest user inventory and equipped items from the server.
+    /// Requests the latest user inventory equipped items from the server.
     /// </summary>
     internal void RequestGetUpdatedEquipmentAndItems()
     {
@@ -90,8 +90,8 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 
         // User Info
         RequestGetUserInfo();
+
         // Armory items
-        // RequestArmoryAction(ClanArmoryActionType.Get, null);
         _clanArmory?.RequestArmoryAction(ClanArmoryActionType.Get, null);
     }
 
@@ -118,7 +118,6 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 
     internal void RequestGetUpdatedCharacterBasic()
     {
-        // Character basic
         GameNetwork.BeginModuleEventAsClient();
         GameNetwork.WriteMessage(new UserRequestGetCharacterBasic());
         GameNetwork.EndModuleEventAsClient();

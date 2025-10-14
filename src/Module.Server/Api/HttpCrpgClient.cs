@@ -1,6 +1,5 @@
 ﻿using System.Net;
 using System.Net.Http.Headers;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using Crpg.Module.Api.Exceptions;
 using Crpg.Module.Api.Models;
@@ -16,7 +15,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
-using TaleWorlds.Core;
 using TaleWorlds.Library;
 using Platform = Crpg.Module.Api.Models.Users.Platform;
 

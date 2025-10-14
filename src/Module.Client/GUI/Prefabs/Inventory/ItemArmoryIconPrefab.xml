@@ -7,15 +7,15 @@
     <Widget IsVisible="true" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="*Width" SuggestedHeight="*Height" >
       <Children>            
-        <BrushWidget Id="YoursAvailable" Brush="Item.Armory.Icon_Yours_Available" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+        <BrushWidget Id="YoursAvailable" Brush="Crpg.Item.Armory.Icon_Yours_Available" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@YoursAvailable" />
-        <BrushWidget Id="YoursBorrowed" Brush="Item.Armory.Icon_Yours_Borrowed" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+        <BrushWidget Id="YoursBorrowed" Brush="Crpg.Item.Armory.Icon_Yours_Borrowed" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@YoursBorrowed" />
-        <BrushWidget Id="NotYoursAvailible" Brush="Item.Armory.Icon_NotYours_Available" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+        <BrushWidget Id="NotYoursAvailible" Brush="Crpg.Item.Armory.Icon_NotYours_Available" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@NotYoursAvailible" />
-        <BrushWidget Id="NotYoursBorrowed" Brush="Item.Armory.Icon_NotYours_Borrowed" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+        <BrushWidget Id="NotYoursBorrowed" Brush="Crpg.Item.Armory.Icon_NotYours_Borrowed" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@NotYoursBorrowed" />            
-        <BrushWidget Id="BorrowedByYou" Brush="Item.Armory.Icon_BorrowedByYou" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+        <BrushWidget Id="BorrowedByYou" Brush="Crpg.Item.Armory.Icon_BorrowedByYou" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@BorrowedByYou" />            
       </Children>
     </Widget>
