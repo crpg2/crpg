@@ -239,7 +239,7 @@ const regionItems = regions.map<TabsItem>(region => ({
             getFacetedRowModel: getFacetedRowModel(),
             getFacetedUniqueValues: getFacetedUniqueValues(),
           }"
-          @select="(row) => navigateTo({ name: 'clans-id', params: { id: row.original.clan.id } })"
+          @select="(_, row) => navigateTo({ name: 'clans-id', params: { id: row.original.clan.id } })"
         >
           <template #empty>
             <UiResultNotFound />

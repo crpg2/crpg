@@ -355,7 +355,7 @@ const columns: TableColumn<ClanMember>[] = [
         :pagination-options="{
           getPaginationRowModel: getPaginationRowModel(),
         }"
-        @select="(row) => openMemberDetail(row.original)"
+        @select="(_, row) => openMemberDetail(row.original)"
       >
         <template #empty>
           <UiResultNotFound />

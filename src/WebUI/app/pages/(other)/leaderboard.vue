@@ -31,9 +31,9 @@ const characterClassModel = useRouteQuery<CharacterClass | undefined>('class', u
 const { regionModel, regions } = useRegionQuery()
 
 const {
-  execute: loadLeaderBoard,
-  isLoading: leaderBoardLoading,
   state: leaderboard,
+  executeImmediate: loadLeaderBoard,
+  isLoading: leaderBoardLoading,
 } = useAsyncState(() => getLeaderBoard({
   characterClass: characterClassModel.value,
   gameMode: gameModeModel.value,

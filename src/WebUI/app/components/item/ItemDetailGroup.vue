@@ -7,7 +7,7 @@ const {
   closeItemDetail,
   computeDetailCardYPosition,
   openedItems,
-} = useItemDetail(true)
+} = useItemDetail()
 </script>
 
 <template>

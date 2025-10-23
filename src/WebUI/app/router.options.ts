@@ -54,5 +54,6 @@ const stringifyQuery = (query: Record<string, any>) =>
 
 export default {
   parseQuery,
+  // @ts-expect-error TODO:
   stringifyQuery,
 } satisfies RouterConfig

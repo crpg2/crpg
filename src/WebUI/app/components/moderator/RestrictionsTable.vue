@@ -200,7 +200,7 @@ const sorting = ref<SortingState>([
       :pagination-options="{
         getPaginationRowModel: getPaginationRowModel(),
       }"
-      @select="(row) => navigateTo({ name: 'moderator-user-id-restrictions', params: { id: row.original.restrictedUser.id } })"
+      @select="(_, row) => navigateTo({ name: 'moderator-user-id-restrictions', params: { id: row.original.restrictedUser.id } })"
     >
       <template #empty>
         <UiResultNotFound />
