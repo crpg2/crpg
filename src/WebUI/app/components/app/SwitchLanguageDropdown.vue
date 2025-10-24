@@ -6,7 +6,7 @@ defineSlots<{
     props: {
       open: boolean
       locale: typeof locale.value
-    }
+    },
   ) => any
 }>()
 
