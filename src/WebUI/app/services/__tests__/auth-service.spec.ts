@@ -1,22 +1,29 @@
 // @vitest-environment jsdom
-import { describe, expect, it, vi } from 'vitest'
+import { expect, it, vi } from 'vitest'
 
 import { PLATFORM } from '~/models/platform'
 
-import { getToken, getUser, login, logout } from '../auth-service'
+import { getToken, getUser, login, logout, signinCallback } from '../auth-service'
 
-const { mockedGetUser, mockedSigninRedirect, mockedSignoutRedirect } = vi.hoisted(() => ({
+const {
+  mockedGetUser,
+  mockedSigninRedirect,
+  mockedSignoutRedirect,
+  mockedSigninCallback,
+} = vi.hoisted(() => ({
   mockedGetUser: vi.fn(),
   mockedSigninRedirect: vi.fn(),
   mockedSignoutRedirect: vi.fn(),
+  mockedSigninCallback: vi.fn(),
 }))
 
 vi.mock('oidc-client-ts', () => ({
-  UserManager: vi.fn().mockImplementation(() => ({
-    getUser: mockedGetUser,
-    signinRedirect: mockedSigninRedirect,
-    signoutRedirect: mockedSignoutRedirect,
-  })),
+  UserManager: vi.fn(function (this: any) {
+    this.getUser = mockedGetUser
+    this.signinRedirect = mockedSigninRedirect
+    this.signoutRedirect = mockedSignoutRedirect
+    this.signinCallback = mockedSigninCallback
+  }),
   WebStorageStateStore: vi.fn(),
 }))
 
@@ -40,11 +47,13 @@ it('logout', async () => {
   expect(mockedSignoutRedirect).toHaveBeenCalled()
 })
 
+it('signinCallback', async () => {
+  await signinCallback()
+  expect(mockedSigninCallback).toHaveBeenCalled()
+})
+
 it('getToken', async () => {
   mockedGetUser.mockResolvedValueOnce({ access_token: 'access_token' })
-
-  const token = await getToken()
-
-  expect(token).toEqual('access_token')
+  expect(await getToken()).toEqual('access_token')
   expect(mockedGetUser).toHaveBeenCalled()
 })
