@@ -2,9 +2,8 @@
   "name": "crpg-web-ui",
   "type": "module",
   "scripts": {
-    "build": "nuxt generate",
     "dev": "nuxt dev --no-fork",
-    "generate": "nuxt generate",
+    "build": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "openapi-ts": "export NODE_TLS_REJECT_UNAUTHORIZED=0 && openapi-ts",

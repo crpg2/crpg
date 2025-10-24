@@ -81,6 +81,10 @@ export default defineNuxtConfig({
   // https://ui.nuxt.com/getting-started/installation/nuxt#options
   ui: {
     fonts: false,
+    // TODO: FIXME: test
+    experimental: {
+      componentDetection: true,
+    },
   },
   runtimeConfig: {
     public: {
@@ -99,6 +103,10 @@ export default defineNuxtConfig({
   devServer: {
     host: '0.0.0.0',
     port: 8080,
+  },
+  features: {
+    // TODO: FIXME: test
+    inlineStyles: true,
   },
   experimental: {
     typedPages: true,
