@@ -1,10 +1,8 @@
-import { LazyAppWelcomeModal } from '#components'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { ref } from 'vue'
 
 import { useWelcome } from '../use-welcome'
 
-// 👇 Hoisted mocks
 const {
   useStorageMock,
   useUserMock,
@@ -15,7 +13,6 @@ const {
   useOverlayMock: vi.fn(),
 }))
 
-// 👇 Mock modules
 vi.mock('@vueuse/core', () => ({
   useStorage: useStorageMock,
 }))
