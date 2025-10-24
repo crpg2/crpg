@@ -51,7 +51,7 @@ const sorting = ref<SortingState>([
   { id: 'position', desc: false },
 ])
 
-const globalFilter = ref<string>('')
+const globalFilter = ref<string | undefined>(undefined)
 
 const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
   {

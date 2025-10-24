@@ -20,7 +20,7 @@ definePageMeta({
 const { clan } = useUser()
 const { t } = useI18n()
 
-const globalFilterByName = ref<string>('')
+const globalFilterByName = ref<string | undefined>(undefined)
 
 // TODO: region & pagination as query params - improve API
 const { state: clans, isLoading: loadingClans } = useAsyncState(() => getClans(), [])

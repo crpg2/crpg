@@ -149,7 +149,7 @@ const openMemberDetail = (member: ClanMember) => {
 
 const table = useTemplateRef('table')
 const { getInitialPaginationState, pagination } = usePagination()
-const searchModel = ref<string>('')
+const searchModel = ref<string | undefined>(undefined)
 const columnFilters = ref<ColumnFiltersState>([])
 const columns: TableColumn<ClanMember>[] = [
   {
