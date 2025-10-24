@@ -1,8 +1,8 @@
-import path from 'node:path'
+import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitest/config'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 // https://nuxt.com/docs/4.x/getting-started/testing
 export default defineConfig({
@@ -10,16 +10,15 @@ export default defineConfig({
     projects: [
       {
         test: {
-          clearMocks: true,
-          setupFiles: path.resolve(__dirname, './test/setup.ts'),
           name: 'unit',
-          // include: ['test/unit/**/*.{spec,test}.ts'],
           environment: 'node',
+          clearMocks: true,
+          setupFiles: resolve(__dirname, './test/setup.ts'),
         },
         resolve: {
           alias: {
-            '~': path.resolve(__dirname, './app'),
-            '#api': path.resolve(__dirname, './generated/api'),
+            '~': resolve(__dirname, './app'),
+            '#api': resolve(__dirname, './generated/api'),
           },
         },
       },
