@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
 import {
-  checkIsDateExpired,
   computeLeftMs,
   convertHumanDurationToMs,
   daysToMs,
@@ -75,16 +74,6 @@ describe('parseTimestamp', () => {
     [172980000, { days: 2, hours: 0, minutes: 3 }],
   ])('parses %i ms to %o', (input, expected) => {
     expect(parseTimestamp(input)).toEqual(expected)
-  })
-})
-
-describe('checkIsDateExpired', () => {
-  it.each([
-    [new Date(Date.now() - 10000), 5000, true],
-    [new Date(Date.now()), 10000, false],
-    [new Date(Date.now() - 5000), 10000, false],
-  ])('checks if date %p with duration %i is expired: %s', (createdAt, duration, expected) => {
-    expect(checkIsDateExpired(createdAt, duration)).toBe(expected)
   })
 })
 

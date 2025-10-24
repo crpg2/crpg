@@ -28,9 +28,6 @@ export const convertHumanDurationToMs = (duration: HumanDuration) => {
   return daysToMs(duration.days) + hoursToMs(duration.hours) + minutesToMs(duration.minutes)
 }
 
-export const checkIsDateExpired = (createdAt: Date, duration: number) =>
-  new Date().getTime() > new Date(createdAt).getTime() + duration
-
 export const computeLeftMs = (createdAt: Date, duration: number) => {
   const result = new Date(createdAt).getTime() + duration - new Date().getTime()
   return result < 0 ? 0 : result

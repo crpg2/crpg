@@ -34,6 +34,9 @@ const items = ref<TabsItem[]>([
         :items
         size="xl"
         variant="pill"
+        :ui="{
+          root: 'gap-6',
+        }"
       >
         <template #leading="{ item }">
           <template v-if="item.value === PossibleValue.Other">

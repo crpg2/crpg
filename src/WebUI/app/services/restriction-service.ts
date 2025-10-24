@@ -1,4 +1,4 @@
-import type { RestrictionViewModel } from '#api'
+import type { GetUsersSearchData, RestrictionViewModel } from '#api'
 
 import {
   getRestrictions as _getRestrictions,
@@ -9,11 +9,9 @@ import {
   putUsersByUserIdNote,
 } from '#api/sdk.gen'
 
-import type { Platform } from '~/models/platform'
 import type { UserPrivate, UserPublic, UserRestriction, UserRestrictionCreation } from '~/models/user'
 
 import { USER_RESTRICTION_STATUS } from '~/models/user'
-import { checkIsDateExpired } from '~/utils/date'
 
 const checkIsRestrictionActive = (
   restrictions: RestrictionViewModel[],
@@ -28,12 +26,15 @@ const checkIsRestrictionActive = (
   )
 }
 
+const checkIsDateExpired = (createdAt: Date, duration: number) => new Date().getTime() > new Date(createdAt).getTime() + duration
+
 const mapRestrictions = (restrictions: RestrictionViewModel[]): UserRestriction[] => {
   return restrictions.map((r) => {
     const isExpired = checkIsDateExpired(r.createdAt, Number(r.duration))
     const isRestrictionActive = checkIsRestrictionActive(restrictions, r)
     return ({
       ...r,
+      // TODO: move to backend
       status: (!isExpired && isRestrictionActive) ? USER_RESTRICTION_STATUS.Active : USER_RESTRICTION_STATUS.NonActive,
     })
   })
@@ -54,11 +55,5 @@ export const updateUserNote = (userId: number, note: string) =>
 export const getUserById = async (userId: number): Promise<UserPrivate> =>
   (await getUsersByUserId({ path: { userId } })).data
 
-interface UserSearchQuery {
-  name?: string
-  platform?: Platform
-  platformUserId?: string
-}
-
-export const searchUser = async (query: UserSearchQuery): Promise<UserPublic[]> =>
+export const searchUser = async (query: GetUsersSearchData['query']): Promise<UserPublic[]> =>
   (await getUsersSearch({ query })).data!

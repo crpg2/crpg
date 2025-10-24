@@ -1,183 +1,162 @@
-// import { mockGet, mockPost } from 'vi-fetch'
+import type { RestrictionViewModelIListResult, UserPrivateViewModel, UserPublicViewModel } from '~~/generated/api'
 
-// import type { Restriction, RestrictionCreation } from '~/models/restriction'
-// import type { UserPrivate, UserPublic } from '~/models/user'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-// import { response } from '~/__mocks__/crpg-client'
-// import { RestrictionType } from '~/models/restriction'
-// import { getRestrictions, mapRestrictions, restrictUser } from '~/services/restriction-service'
+import { getRestrictions } from '~/services/restriction-service'
 
-// const { mockCheckIsDateExpired } = vi.hoisted(() => ({
-//   mockCheckIsDateExpired: vi.fn(),
-// }))
-// vi.mock('~/utils/date', () => ({
-//   checkIsDateExpired: mockCheckIsDateExpired,
-// }))
+const { _getRestrictionsMock } = vi.hoisted(() => ({
+  _getRestrictionsMock: vi.fn(),
+}))
 
-// const duration = 180000 // 3 min
+vi.mock('#api/sdk.gen', () => ({
+  getRestrictions: _getRestrictionsMock,
+}))
 
-// const createRestriction = (payload: Partial<Restriction> = {}): Restriction => ({
-//   createdAt: new Date('2022-11-27T22:00:00.000Z'),
-//   duration,
-//   id: 1,
-//   publicReason: '',
-//   reason: '',
-//   restrictedByUser: {} as UserPublic,
-//   restrictedUser: { id: 1 } as UserPrivate,
-//   type: RestrictionType.Join,
-//   ...payload,
+describe('restriction service', () => {
+  describe('getRestrictions', () => {
+    beforeEach(() => {
+      vi.useFakeTimers()
+      vi.setSystemTime(new Date('2022-11-28T22:00:00.000Z'))
+    })
 
-// })
+    afterEach(() => {
+      vi.useRealTimers()
+    })
 
-// describe('mapRestrictions', () => {
-//   describe('single', () => {
-//     const payload: Restriction[] = [createRestriction(),
-//     ]
+    it('returns Active when restriction not expired and newest', async () => {
+      _getRestrictionsMock.mockResolvedValueOnce({
+        data: [
+          {
+            id: 1,
+            type: 'Join',
+            createdAt: new Date('2022-11-28T21:59:00.000Z'), // 1 min ago
+            duration: 180_000, // 3 min
+            restrictedByUser: { id: 1 } as UserPublicViewModel,
+            restrictedUser: { id: 2 } as UserPrivateViewModel,
+            reason: '',
+            publicReason: '',
+          },
+        ],
+        errors: null,
+      } satisfies RestrictionViewModelIListResult)
 
-//     it('non-expired', () => {
-//       mockCheckIsDateExpired.mockReturnValue(false)
+      expect((await getRestrictions()).at(0)?.status).toBe('Active')
+    })
 
-//       expect(mapRestrictions(payload).at(0)?.active).toBeTruthy()
-//     })
+    it('returns NonActive when restriction expired', async () => {
+      _getRestrictionsMock.mockResolvedValueOnce({
+        data: [
+          {
+            id: 1,
+            type: 'Join',
+            createdAt: new Date('2022-11-28T21:56:00.000Z'), // 4 min ago
+            duration: 180_000, // 3 min
+            restrictedByUser: { id: 1 } as UserPublicViewModel,
+            restrictedUser: { id: 2 } as UserPrivateViewModel,
+            reason: '',
+            publicReason: '',
+          },
+        ],
+        errors: null,
+      } satisfies RestrictionViewModelIListResult)
 
-//     it('expired', () => {
-//       mockCheckIsDateExpired.mockReturnValue(true)
+      expect((await getRestrictions()).at(0)?.status).toBe('NonActive')
+    })
 
-//       expect(mapRestrictions(payload).at(0)?.active).toBeFalsy()
-//     })
-//   })
+    it('marks older restriction as NonActive if a newer one exists for same user/type', async () => {
+      _getRestrictionsMock.mockResolvedValueOnce({
+        data: [
+          {
+            id: 1,
+            type: 'Join',
+            createdAt: new Date('2022-11-28T21:50:00.000Z'), // 10 min ago
+            duration: 180_000, // 3 min
+            restrictedByUser: { id: 1 } as UserPublicViewModel,
+            restrictedUser: { id: 2 } as UserPrivateViewModel,
+            reason: '',
+            publicReason: '',
+          },
+          {
+            id: 2,
+            type: 'Join',
+            createdAt: new Date('2022-11-28T21:59:00.000Z'), // 1 min ago
+            duration: 180_000, // 3 min
+            restrictedByUser: { id: 1 } as UserPublicViewModel,
+            restrictedUser: { id: 2 } as UserPrivateViewModel,
+            reason: '',
+            publicReason: '',
+          },
+        ],
+        errors: null,
+      } satisfies RestrictionViewModelIListResult)
 
-//   describe('several', () => {
-//     describe('same type', () => {
-//       const payload = [
-//         createRestriction({
-//           createdAt: new Date('2022-11-28T22:00:00.000Z'),
-//           id: 1,
-//           restrictedUser: { id: 1 } as UserPrivate,
-//           type: RestrictionType.Join,
-//         }),
-//         createRestriction({
-//           createdAt: new Date('2022-11-27T22:00:00.000Z'),
-//           id: 2,
-//           restrictedUser: { id: 1 } as UserPrivate,
-//           type: RestrictionType.Join,
-//         }),
-//       ]
+      const [older, newer] = await getRestrictions()
+      expect(older?.status).toBe('NonActive')
+      expect(newer?.status).toBe('Active')
+    })
 
-//       it('non-expired', () => {
-//         mockCheckIsDateExpired.mockReturnValue(false)
+    it('does not mix restrictions of different users', async () => {
+      _getRestrictionsMock.mockResolvedValueOnce({
+        data: [
+          {
+            id: 1,
+            type: 'Join',
+            createdAt: new Date('2022-11-28T21:59:00.000Z'),
+            duration: 180_000,
+            restrictedByUser: { id: 1 } as UserPublicViewModel,
+            restrictedUser: { id: 2 } as UserPrivateViewModel,
+            reason: '',
+            publicReason: '',
+          },
+          {
+            id: 2,
+            type: 'Join',
+            createdAt: new Date('2022-11-28T21:59:00.000Z'),
+            duration: 180_000,
+            restrictedByUser: { id: 1 } as UserPublicViewModel,
+            restrictedUser: { id: 3 } as UserPrivateViewModel,
+            reason: '',
+            publicReason: '',
+          },
+        ],
+        errors: null,
+      } satisfies RestrictionViewModelIListResult)
 
-//         const result = mapRestrictions(payload)
+      const [first, second] = await getRestrictions()
+      expect(first?.status).toBe('Active')
+      expect(second?.status).toBe('Active')
+    })
 
-//         expect(result.at(0)?.active).toBeTruthy()
-//         expect(result.at(1)?.active).toBeFalsy()
-//       })
+    it('does not mix restrictions of different types', async () => {
+      _getRestrictionsMock.mockResolvedValueOnce({
+        data: [
+          {
+            id: 1,
+            type: 'Join',
+            createdAt: new Date('2022-11-28T21:59:00.000Z'),
+            duration: 180_000,
+            restrictedByUser: { id: 1 } as UserPublicViewModel,
+            restrictedUser: { id: 2 } as UserPrivateViewModel,
+            reason: '',
+            publicReason: '',
+          },
+          {
+            id: 2,
+            type: 'Chat',
+            createdAt: new Date('2022-11-28T21:59:00.000Z'),
+            duration: 180_000,
+            restrictedByUser: { id: 1 } as UserPublicViewModel,
+            restrictedUser: { id: 2 } as UserPrivateViewModel,
+            reason: '',
+            publicReason: '',
+          },
+        ],
+        errors: null,
+      } satisfies RestrictionViewModelIListResult)
 
-//       it('expired', () => {
-//         mockCheckIsDateExpired.mockReturnValue(true)
-
-//         const result = mapRestrictions(payload)
-
-//         expect(result.at(0)?.active).toBeFalsy()
-//         expect(result.at(1)?.active).toBeFalsy()
-//       })
-//     })
-
-//     describe('different type', () => {
-//       const payload = [
-//         createRestriction({
-//           type: RestrictionType.Chat,
-//         }),
-//         createRestriction({
-//           type: RestrictionType.Join,
-//         }),
-//       ]
-
-//       it('non-expired', () => {
-//         mockCheckIsDateExpired.mockReturnValue(false)
-
-//         const result = mapRestrictions(payload)
-
-//         expect(result.at(0)?.active).toBeTruthy()
-//         expect(result.at(1)?.active).toBeTruthy()
-//       })
-
-//       it('expired', () => {
-//         mockCheckIsDateExpired.mockReturnValue(true)
-
-//         const result = mapRestrictions(payload)
-
-//         expect(result.at(0)?.active).toBeFalsy()
-//         expect(result.at(1)?.active).toBeFalsy()
-//       })
-//     })
-
-//     describe('different user', () => {
-//       const payload = [
-//         createRestriction({
-//           restrictedUser: { id: 1 } as UserPrivate,
-//         }),
-//         createRestriction({
-//           restrictedUser: { id: 2 } as UserPrivate,
-//         }),
-//       ]
-
-//       it('non-expired', () => {
-//         mockCheckIsDateExpired.mockReturnValue(false)
-
-//         const result = mapRestrictions(payload)
-
-//         expect(result.at(0)?.active).toBeTruthy()
-//         expect(result.at(1)?.active).toBeTruthy()
-//       })
-
-//       it('expired', () => {
-//         mockCheckIsDateExpired.mockReturnValue(true)
-
-//         const result = mapRestrictions(payload as Restriction[])
-
-//         expect(result.at(0)?.active).toBeFalsy()
-//         expect(result.at(1)?.active).toBeFalsy()
-//       })
-//     })
-//   })
-// })
-
-// it('getRestrictions', async () => {
-//   mockCheckIsDateExpired.mockReturnValue(false)
-//   const restrictions = {
-//     duration,
-//     id: 1,
-//     reason: '',
-//     restrictedByUser: { id: 1 },
-//     restrictedUser: { id: 1 },
-//     type: 'Join',
-//   }
-
-//   mockGet('/restrictions').willResolve(response([restrictions]))
-//   expect(await getRestrictions()).toEqual([{ ...restrictions, active: true }])
-
-//   expect(mockCheckIsDateExpired).toBeCalled()
-// })
-
-// it('restrictUser', async () => {
-//   const payload = {
-//     duration: 100,
-//     reason: '',
-//     restrictedUserId: 1,
-//     type: 'Chat',
-//   } as RestrictionCreation
-
-//   const restriction = {
-//     duration: 1,
-//     id: 1,
-//     reason: '',
-//     restrictedByUser: { id: 1 },
-//     restrictedUser: { id: 1 },
-//     type: 'Join',
-//   }
-
-//   const mock = mockPost('/restrictions').willResolve(response(restriction))
-//   expect(await restrictUser(payload)).toEqual(restriction)
-//   expect(mock).toHaveFetchedWithBody(payload)
-// })
+      const [first, second] = await getRestrictions()
+      expect(first?.status).toBe('Active')
+      expect(second?.status).toBe('Active')
+    })
+  })
+})
