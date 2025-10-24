@@ -2,7 +2,7 @@ import {
   // Log,
   UserManager,
   WebStorageStateStore,
-} from 'oidc-client-ts'
+} from 'oidc-client-ts' // TODO: migrate to https://github.com/panva/openid-client
 
 import type { Platform } from '~/models/platform'
 

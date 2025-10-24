@@ -44,7 +44,7 @@ export const reforgeUserItem = (userItemId: number) => putUsersSelfItemsByIdRefo
 
 export const getUserRestriction = async (): Promise<UserRestrictionPublic> => (await getUsersSelfRestriction({ })).data
 
-export const getUserNotifications = async () => (await getUsersSelfNotifications({ })).data
+export const getUserNotifications = async () => (await getUsersSelfNotifications({})).data
 
 export const readUserNotification = (id: number) => putUsersSelfNotificationsById({ path: { id } })
 

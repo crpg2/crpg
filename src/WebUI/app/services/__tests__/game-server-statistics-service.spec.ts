@@ -1,18 +1,9 @@
-// import { mockGet } from 'vi-fetch'
-import { expect, it, vi } from 'vitest'
+import type { DeepPartial } from '@nuxt/ui/runtime/types/utils.js'
+import type { GameServerStats } from '~~/generated/api'
 
-import type { Result } from '~/api.config'
-import type { GameServerStats } from '~/models/game-server-stats'
+import { describe, expect, it, vi } from 'vitest'
 
-// import { response } from '~/__mocks__/crpg-client'
-import { GAME_MODE } from '~/models/game-mode'
-import { REGION } from '~/models/region'
 import { getGameServerStats } from '~/services/game-server-statistics-service'
-
-const response = <T>(data: T): Result<T> => ({
-  data,
-  errors: null,
-})
 
 const { getGameServerStatistics } = vi.hoisted(() => ({
   getGameServerStatistics: vi.fn(),
@@ -22,40 +13,43 @@ vi.mock('#api/sdk.gen', () => ({
   getGameServerStatistics,
 }))
 
-it('getGameServerStats', async () => {
-  const mockServerStats: GameServerStats = {
-    total: {
-      playingCount: 12,
-    },
-    regions: {
-      [REGION.Eu]: {
-        [GAME_MODE.CRPGBattle]: {
+describe('getGameServerStats', () => {
+  it('filters out empty game modes and regions correctly', async () => {
+    getGameServerStatistics.mockResolvedValueOnce({
+      data: {
+        total: {
           playingCount: 12,
         },
-        [GAME_MODE.CRPGDTV]: {
-          playingCount: 0,
+        regions: {
+          Eu: {
+            CRPGBattle: {
+              playingCount: 12,
+            },
+            CRPGDTV: {
+              playingCount: 0,
+            },
+          },
+          Na: {
+            CRPGDTV: {
+              playingCount: 0,
+            },
+          },
         },
-      },
-      [REGION.Na]: {
-        [GAME_MODE.CRPGDTV]: {
-          playingCount: 0,
-        },
-      },
-    },
-  }
+      } satisfies DeepPartial<GameServerStats>,
+      errors: null,
+    })
 
-  getGameServerStatistics.mockResolvedValue(response(mockServerStats))
-
-  expect(await getGameServerStats()).toEqual({
-    total: {
-      playingCount: 12,
-    },
-    regions: {
-      [REGION.Eu]: {
-        [GAME_MODE.CRPGBattle]: {
-          playingCount: 12,
+    expect(await getGameServerStats()).toEqual({
+      total: {
+        playingCount: 12,
+      },
+      regions: {
+        Eu: {
+          CRPGBattle: {
+            playingCount: 12,
+          },
         },
       },
-    },
+    })
   })
 })

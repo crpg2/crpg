@@ -9,11 +9,6 @@ import type { Platform } from './models/platform'
 
 import { PLATFORM } from './models/platform'
 
-export interface Result<TData> {
-  data: TData | null
-  errors: Error[] | null
-}
-
 interface CrpgApiError {
   code: string
   type: 'InternalError' | 'Forbidden' | 'Conflict' | 'NotFound' | 'Validation'

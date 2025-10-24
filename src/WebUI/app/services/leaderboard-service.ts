@@ -11,6 +11,7 @@ import type { GameMode } from '~/models/game-mode'
 import type { Region } from '~/models/region'
 
 import { RANK_GROUP } from '~/models/competitive'
+import { objectEntries } from '~/utils/object'
 
 export const getLeaderBoard = async ({
   characterClass,

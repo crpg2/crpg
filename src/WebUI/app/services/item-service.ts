@@ -29,7 +29,6 @@ import {
   WEAPON_CLASS,
   WEAPON_FLAG,
 } from '~/models/item'
-// import { createItemIndex } from '~/services/item-search-service/indexator'
 
 import type { AggregationConfig } from './item-search-service/aggregations'
 
@@ -46,9 +45,6 @@ export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 export const getItemUpgrades = async (baseId: string): Promise<Item[]> => {
   const { data } = await getItemsUpgradesByBaseId({ path: { baseId } })
   return data!
-  // return createItemIndex(data!)
-  //  hotfix, avoid duplicate items with multiply weaponClass
-  // .filter(el => el?.weaponClass === item?.weaponClass)
 }
 
 export const armorTypes: ItemType[] = [
