@@ -307,7 +307,6 @@ const itemToFlat = (item: Item, newItemDateThreshold: number): ItemFlat => {
   ]
 
   return {
-    children: [],
     id: item.id,
     type: mapItemType(item.type),
     baseId: item.baseId,
@@ -326,6 +325,7 @@ const itemToFlat = (item: Item, newItemDateThreshold: number): ItemFlat => {
     ...mapArmorProps(item),
     ...mapMountProps(item),
     ...weaponProps,
+    upgrades: [],
   }
 }
 

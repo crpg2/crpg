@@ -333,6 +333,8 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
   }
 }
 
+const [loadingItemUpgrades, toggleLoadingItemUpgrades] = useToggle()
+
 const columns = computed<TableColumn<ItemFlat>[]>(() => {
   return [
     {
@@ -358,8 +360,10 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
                 leadingIcon: ['transition-transform', _isExpanded ? 'duration-200 -rotate-90' : ''],
               },
               onClick: async () => {
-                if (!row.original.children.length) {
-                  row.original.children.push(...(createItemIndex(await getItemUpgrades(row.original.baseId))).toSpliced(0, 1))
+                if (!row.original.upgrades.length) {
+                  toggleLoadingItemUpgrades(true)
+                  row.original.upgrades.push(...(createItemIndex(await getItemUpgrades(row.original.baseId))).toSpliced(0, 1))
+                  toggleLoadingItemUpgrades(false)
                 }
                 row.toggleExpanded()
               },
@@ -454,13 +458,13 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
 </script>
 
 <template>
-  <UContainer class="max-w-full space-y-3 !p-0">
+  <UContainer class="max-w-full space-y-3 p-0!">
     <!-- TODO: skeleton -->
     <UCard
       v-if="!loadingItems"
       :ui="{
         root: 'overflow-visible rounded-none',
-        footer: 'sticky bottom-0 left-0 z-[1] bg-default/75 py-4 backdrop-blur',
+        footer: 'sticky bottom-0 left-0 z-1 bg-default/75 py-4 backdrop-blur',
       }"
     >
       <template #header>
@@ -481,7 +485,8 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
         v-model:column-visibility="columnVisibility"
         v-model:row-selection="rowSelection"
         :data="flatItems"
-        :get-sub-rows="(row) => row.children"
+        :loading="loadingItemUpgrades"
+        :get-sub-rows="(row) => row.upgrades"
         :ui="{
           root: 'overflow-visible',
           base: 'border-separate border-spacing-0',
@@ -497,14 +502,11 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
           getFacetedMinMaxValues: getFacetedMinMaxValues(),
         }"
         :expanded-options="{
-          getRowCanExpand(row) {
-            return row.depth === 0 && isUpgradableItemType
-          },
+          paginateExpandedRows: false,
+          getRowCanExpand: (row) => row.depth === 0 && isUpgradableItemType,
         }"
         :row-selection-options="{
-          enableRowSelection(row) {
-            return row.depth === 0
-          },
+          enableRowSelection: (row) => row.depth === 0,
         }"
         :column-filters-options="{
           filterFns: { includesSome },

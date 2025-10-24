@@ -240,8 +240,7 @@ export const WEAPON_USAGE = {
 export type WeaponUsage = ValueOf<typeof WEAPON_USAGE>
 
 export interface ItemFlat {
-  children: ItemFlat[]
-  //
+
   id: string
   isNew: boolean
   name: string
@@ -303,6 +302,8 @@ export interface ItemFlat {
   damage: number | null
   stackWeight: number | null
   damageType: DamageType | null | undefined
+  //
+  upgrades: ItemFlat[]
 }
 
 export type ItemDescriptorField = [string, string | number]
