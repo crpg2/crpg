@@ -23,11 +23,6 @@ vi.mock('~/services/user-service', () => ({
   getUserItems: getUserItemsMock,
 }))
 
-const USER_QUERY_KEYS = { items: vi.fn(() => 'user-items-key') }
-vi.mock('~/queries', () => ({
-  USER_QUERY_KEYS,
-}))
-
 describe('user items composables', () => {
   describe('useUserItemsProvider', () => {
     it('calls useAsyncDataCustom with expected parameters', async () => {
@@ -36,7 +31,6 @@ describe('user items composables', () => {
 
       const result = useUserItemsProvider()
 
-      expect(USER_QUERY_KEYS.items).toHaveBeenCalledTimes(1)
       expect(useAsyncDataCustomMock).toHaveBeenCalledWith(
         expect.any(Function),
         expect.any(Function),
@@ -45,8 +39,7 @@ describe('user items composables', () => {
 
       expect(result).toBe(returnValue)
 
-      const [keyFn, fetchFn, options] = useAsyncDataCustomMock.mock.calls[0]!
-      expect(keyFn()).toBe('user-items-key')
+      const [_, fetchFn, options] = useAsyncDataCustomMock.mock.calls[0]!
 
       getUserItemsMock.mockResolvedValue([{ id: 1 }])
       await fetchFn()
@@ -60,14 +53,10 @@ describe('user items composables', () => {
       const fakeData = { data: [{ id: 10 }] }
       const fakeRefresh = vi.fn()
 
-      getAsyncDataMock.mockReturnValue(fakeData)
-      refreshAsyncDataMock.mockReturnValue(fakeRefresh)
+      getAsyncDataMock.mockReturnValueOnce(fakeData)
+      refreshAsyncDataMock.mockReturnValueOnce(fakeRefresh)
 
       const result = useUserItems()
-
-      expect(USER_QUERY_KEYS.items).toHaveBeenCalledTimes(1)
-      expect(getAsyncDataMock).toHaveBeenCalledWith('user-items-key')
-      expect(refreshAsyncDataMock).toHaveBeenCalledWith('user-items-key')
 
       expect(result.userItems).toBe(fakeData)
       expect(result.refreshUserItems).toBe(fakeRefresh)

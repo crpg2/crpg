@@ -1,10 +1,8 @@
 // @vitest-environment jsdom
-
 /**
  * @link https://github.com/verdie-g/crpg/issues/873
  * @link https://user-images.githubusercontent.com/33551334/234285036-e96bd6a2-26c8-4ddc-9310-b2528f3ab70c.png
  */
-
 import { shallowMount } from '@vue/test-utils'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { defineComponent, nextTick, ref } from 'vue'
@@ -31,12 +29,10 @@ describe('useStickySidebar', () => {
 
   const mockedObserve = vi.fn()
   const mockedDisconnect = vi.fn()
-  const ResizeObserverMock = vi.fn(() => ({
-    observe: mockedObserve,
-    unobserve: vi.fn(),
-    disconnect: mockedDisconnect,
-  }))
-  vi.stubGlobal('ResizeObserver', ResizeObserverMock)
+  vi.stubGlobal('ResizeObserver', class {
+    observe = mockedObserve
+    disconnect = mockedDisconnect
+  })
 
   vi.spyOn(window, 'requestAnimationFrame').mockImplementation((cb) => {
     cb(0)

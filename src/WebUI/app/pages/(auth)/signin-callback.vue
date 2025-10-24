@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ErrorResponse } from 'oidc-client-ts'
 
-import { userManager } from '~/services/auth-service'
+import { signinCallback } from '~/services/auth-service'
 
 definePageMeta({
   layout: 'empty',
@@ -9,7 +9,7 @@ definePageMeta({
   middleware: [
     async () => {
       try {
-        await userManager.signinCallback()
+        await signinCallback()
         return navigateTo({ name: 'characters' })
       }
 

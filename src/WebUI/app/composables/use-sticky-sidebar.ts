@@ -1,3 +1,4 @@
+// @vitest-environment jsdom
 import { computed, onBeforeUnmount, onMounted, readonly, ref } from 'vue'
 
 export const useStickySidebar = (
