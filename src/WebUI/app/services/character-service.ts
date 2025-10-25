@@ -48,7 +48,7 @@ import {
   weaponProficiencyPointsForWeaponMasterCoefs,
 } from '~root/data/constants.json'
 import { defu } from 'defu'
-import { clamp, delay } from 'es-toolkit'
+import { clamp } from 'es-toolkit'
 
 import type { ActivityLog } from '~/models/activity-logs'
 import type {
