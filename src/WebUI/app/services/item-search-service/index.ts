@@ -1,6 +1,6 @@
 import type { FilterFnOption, VisibilityState } from '@tanstack/vue-table'
 
-import { uniq } from 'es-toolkit'
+import { omitBy, uniq } from 'es-toolkit'
 
 import type { Item, ItemFieldFormat, ItemFlat, ItemType, WeaponClass } from '~/models/item'
 
@@ -24,8 +24,9 @@ export type SortingConfig = Record<string, SortingOption>
 export const getAggregationsConfig = (
   itemType: ItemType,
   weaponClass: WeaponClass | null,
+  excludeKeys: Array<keyof ItemFlat> = [],
 ): AggregationConfig => {
-  const keys = [
+  const keys: Array<keyof ItemFlat> = ([
     // common aggregations keys
     'type',
     'weaponClass',
@@ -34,19 +35,10 @@ export const getAggregationsConfig = (
     ...(weaponClass !== null && weaponClass in aggregationsKeysByWeaponClass
       ? aggregationsKeysByWeaponClass[weaponClass] ?? []
       : aggregationsKeysByItemType[itemType] ?? []),
-  ] satisfies Array<keyof ItemFlat>
+  ] satisfies Array<keyof ItemFlat>).filter(key => !excludeKeys.includes(key))
 
-  return Object.fromEntries(keys.map(k => [k, aggregationsConfig[k]]))
+  return Object.fromEntries(keys.map(key => [key, aggregationsConfig[key]]))
 }
-
-export const getVisibleAggregationsConfig = (
-  aggregations: AggregationConfig,
-  excludeFields: (keyof ItemFlat)[] = [],
-): AggregationConfig =>
-  Object.fromEntries(
-    objectEntries(aggregations)
-      .filter(([key, value]) => !excludeFields.includes(key) && !value!.hidden),
-  )
 
 export const getColumnVisibility = (aggregations: AggregationConfig): VisibilityState =>
   Object.fromEntries(
@@ -69,17 +61,10 @@ export const getFacetsByWeaponClass = (weaponClasses: WeaponClass[], itemType: I
     .sort((a, b) => orders.get(a)! - orders.get(b)!)
 }
 
-const filterFnMap: Record<
-  AggregationView,
-  (format?: ItemFieldFormat) => FilterFnOption<any>
-> = {
-  [AGGREGATION_VIEW.Toggle]: format =>
-    format === ITEM_FIELD_FORMAT.String ? 'equalsString' : 'auto',
-
+const filterFnMap: Record<AggregationView, (format?: ItemFieldFormat) => FilterFnOption<any>> = {
+  [AGGREGATION_VIEW.Toggle]: format => format === ITEM_FIELD_FORMAT.String ? 'equalsString' : 'auto',
   [AGGREGATION_VIEW.Range]: () => 'inNumberRange',
-
-  [AGGREGATION_VIEW.Checkbox]: format =>
-    format === ITEM_FIELD_FORMAT.List ? 'arrIncludesSome' : 'includesSome',
+  [AGGREGATION_VIEW.Checkbox]: format => format === ITEM_FIELD_FORMAT.List ? 'arrIncludesSome' : 'includesSome',
 }
 
 export const getFilterFn = (
@@ -103,4 +88,24 @@ export function getBuckets(
   }
 
   return result
+}
+
+const itemParamIsEmpty = (field: keyof ItemFlat, itemFlat: ItemFlat) => {
+  const value = itemFlat[field]
+  if (Array.isArray(value) && value.length === 0) {
+    return true
+  }
+  if (!value) {
+    return true
+  }
+  return false
+}
+
+// TODO: FIXME: SPEC
+export const getItemAggregations = (itemFlat: ItemFlat, omitEmpty = true): AggregationConfig => {
+  const aggsConfig = getAggregationsConfig(itemFlat.type, itemFlat.weaponClass, ['type', 'weaponClass'])
+
+  return omitEmpty
+    ? omitBy(aggsConfig, (_value, field) => itemParamIsEmpty(field as keyof ItemFlat, itemFlat))
+    : aggsConfig
 }

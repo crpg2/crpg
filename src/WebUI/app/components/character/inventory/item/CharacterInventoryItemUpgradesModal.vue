@@ -8,8 +8,9 @@ import type { UserItem } from '~/models/user'
 
 import { useItemReforge } from '~/composables/item/use-item-reforge'
 import { useItemUpgrades } from '~/composables/item/use-item-upgrades'
+import { getItemAggregations } from '~/services/item-search-service'
 import { createItemIndex } from '~/services/item-search-service/indexator'
-import { getItemAggregations, getRankColor } from '~/services/item-service'
+import { getRankColor } from '~/services/item-service'
 
 const { userItem } = defineProps<{
   userItem: UserItem

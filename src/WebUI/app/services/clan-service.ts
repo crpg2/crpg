@@ -32,21 +32,14 @@ export const getClans = async (): Promise<ClanWithMemberCount[]> => (await _getC
 
 export const createClan = async (
   clan: ClanUpdate,
-): Promise<Clan> => {
-  const { data } = await postClans({
-    // @ts-expect-error TODO: FIXME: fix hey-api - WithRefs
-    body: clan,
-  })
-  return data
-}
+): Promise<Clan> => (await postClans({ body: { ...clan, discord: clan.discord! } })).data
 
 export const updateClan = (
   clanId: number,
   clan: ClanUpdate,
 ) => putClansByClanId({
   path: { clanId },
-  // @ts-expect-error TODO:FIXME:
-  body: clan,
+  body: { ...clan, discord: clan.discord! },
 })
 
 export const getClan = async (id: number): Promise<Clan> => (await getClansById({ path: { id } })).data

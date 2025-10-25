@@ -2,6 +2,7 @@ import {
   getItems as _getItems,
   getItemsUpgradesByBaseId,
 } from '#api/sdk.gen'
+import { useI18n } from '#imports'
 import {
   brokenItemRepairPenaltySeconds,
   itemBreakChance,
@@ -10,7 +11,6 @@ import {
   itemSellCostPenalty,
   itemSellGracePeriodMinutes,
 } from '~root/data/constants.json'
-import { omitBy } from 'es-toolkit'
 
 import type { EquippedItemsBySlot } from '~/models/character'
 import type { Culture } from '~/models/culture'
@@ -33,7 +33,6 @@ import {
 import type { AggregationConfig } from './item-search-service/aggregations'
 
 import { cultureToIcon } from './culture-service'
-import { getAggregationsConfig, getVisibleAggregationsConfig } from './item-search-service'
 import { aggregationsConfig } from './item-search-service/aggregations'
 
 export const getItems = async (): Promise<Item[]> => (await _getItems({ })).data!
@@ -42,10 +41,7 @@ export const extractItem = <T extends { item: Item }>(wrapper: T): Item => wrapp
 
 export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 
-export const getItemUpgrades = async (baseId: string): Promise<Item[]> => {
-  const { data } = await getItemsUpgradesByBaseId({ path: { baseId } })
-  return data!
-}
+export const getItemUpgrades = async (baseId: string): Promise<Item[]> => (await getItemsUpgradesByBaseId({ path: { baseId } })).data!
 
 export const armorTypes: ItemType[] = [
   ITEM_TYPE.HeadArmor,
@@ -209,8 +205,6 @@ export const getAvailableSlotsByItem = (
   }
 
   // Family type: compatibility with EBA BodyArmor and EBA LegArmor
-  // TODO: to fn
-
   if (
     (
       item.type === ITEM_TYPE.BodyArmor
@@ -386,7 +380,7 @@ const damageTypeFieldByDamageField: Record<ItemFlatDamageField, ItemFlatDamageTy
   thrustDamage: 'thrustDamageType',
 }
 
-export const getDamageType = (aggregationKey: keyof ItemFlat, item: ItemFlat) => {
+const getDamageType = (aggregationKey: keyof ItemFlat, item: ItemFlat) => {
   return item[damageTypeFieldByDamageField[aggregationKey as ItemFlatDamageField]]
 }
 
@@ -517,7 +511,7 @@ export const humanizeBucket = (
   if (format === ITEM_FIELD_FORMAT.Damage && item !== undefined) {
     const damageType = getDamageType(aggregationKey, item)
 
-    if (damageType === null || damageType === undefined) {
+    if (!damageType) {
       return createHumanBucket(String(bucket), null, null)
     }
 
@@ -598,7 +592,7 @@ function aggregateByCompareRule(
   )
 }
 
-// TODO: FIXME: Конкретная функция для сравнения всех элементов
+// TODO: FIXME: spec + desc
 export const getCompareItemsResult = (
   items: ItemFlat[],
   aggregationsConfig: AggregationConfig,
@@ -607,7 +601,6 @@ export const getCompareItemsResult = (
     ? Math.min(...values)
     : Math.max(...values))
 
-// TODO: FIXME: Конкретная функция для одного элемента (item)
 export const getRelativeEntries = (
   item: ItemFlat,
   aggregationsConfig: AggregationConfig,
@@ -676,7 +669,6 @@ export const computeSalePrice = (userItem: UserItem) => {
       price: Math.floor(userItem.item.price * itemSellCostPenalty),
     }
   }
-
   // If the item was recently bought it is sold at 100% of its original price.
   return { graceTimeEnd, price: userItem.item.price }
 }
@@ -691,13 +683,10 @@ export const getRankColor = (rank: number) => {
   switch (rank) {
     case 1:
       return '#4ade80'
-
     case 2:
       return '#60a5fa'
-
     case 3:
       return '#c084fc'
-
     default:
       return '#fff'
   }
@@ -722,30 +711,3 @@ export const getReforgeCostByRank = (rank: number) => {
 }
 
 export const itemIsNewDays: number = 14 // TODO: to cfg/env
-
-// spec
-const itemParamIsEmpty = (field: keyof ItemFlat, itemFlat: ItemFlat) => {
-  const value = itemFlat[field]
-
-  if (Array.isArray(value) && value.length === 0) {
-    return true
-  }
-
-  if (!value) {
-    return true
-  }
-
-  return false
-}
-
-export const getItemAggregations = (itemFlat: ItemFlat, omitEmpty = true): AggregationConfig => {
-  const aggsConfig = getVisibleAggregationsConfig(
-    getAggregationsConfig(itemFlat.type, itemFlat.weaponClass),
-    ['type', 'weaponClass'],
-  )
-
-  // // TODO: spec
-  return omitEmpty
-    ? omitBy(aggsConfig, (_value, field) => itemParamIsEmpty(field as keyof ItemFlat, itemFlat))
-    : aggsConfig
-}

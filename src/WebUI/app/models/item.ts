@@ -240,7 +240,6 @@ export const WEAPON_USAGE = {
 export type WeaponUsage = ValueOf<typeof WEAPON_USAGE>
 
 export interface ItemFlat {
-
   id: string
   isNew: boolean
   name: string

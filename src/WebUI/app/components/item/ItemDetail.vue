@@ -5,8 +5,8 @@ import type { CompareItemsResult, Item } from '~/models/item'
 
 import { useItem } from '~/composables/item/use-item'
 import { ITEM_COMPARE_MODE } from '~/models/item'
+import { getItemAggregations } from '~/services/item-search-service'
 import { createItemIndex } from '~/services/item-search-service/indexator'
-import { getItemAggregations } from '~/services/item-service'
 
 const { compareResult, item } = defineProps<{
   item: Item

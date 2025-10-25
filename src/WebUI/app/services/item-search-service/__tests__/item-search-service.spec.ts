@@ -12,7 +12,7 @@ import {
   getFacetsByItemType,
   getFacetsByWeaponClass,
   getFilterFn,
-  getVisibleAggregationsConfig,
+  // getItemAggregations, // TODO: FIXME: SPEC
 } from '~/services/item-search-service'
 
 import type { AggregationConfig, AggregationOptions } from '../aggregations'
@@ -61,28 +61,17 @@ vi.mock(
   }),
 )
 
-it.each<[ItemType, WeaponClass | null, Array<keyof ItemFlat>]>([
-  [ITEM_TYPE.Banner, null, ['price']],
-  [ITEM_TYPE.OneHandedWeapon, WEAPON_CLASS.OneHandedSword, ['price']],
-  [ITEM_TYPE.OneHandedWeapon, WEAPON_CLASS.OneHandedAxe, ['thrustDamage']],
+it.each<[ItemType, WeaponClass | null, Array<keyof ItemFlat>, Array<keyof ItemFlat>]>([
+  [ITEM_TYPE.Banner, null, [], ['type', 'weaponClass', 'modId', 'isNew', 'price']],
+  [ITEM_TYPE.OneHandedWeapon, WEAPON_CLASS.OneHandedSword, [], ['type', 'weaponClass', 'modId', 'isNew', 'price']],
+  [ITEM_TYPE.OneHandedWeapon, WEAPON_CLASS.OneHandedAxe, [], ['type', 'weaponClass', 'modId', 'isNew', 'thrustDamage']],
+  [ITEM_TYPE.OneHandedWeapon, WEAPON_CLASS.OneHandedAxe, ['type'], ['weaponClass', 'modId', 'isNew', 'thrustDamage']],
 ])(
   'getAggregationsConfig - itemType: %s, weaponClass: %s',
-  (itemType, weaponClass, expectation) => {
-    expect(Object.keys(getAggregationsConfig(itemType, weaponClass))).toEqual(['type', 'weaponClass', 'modId', 'isNew', ...expectation])
+  (itemType, weaponClass, excludeKeys, expectation) => {
+    expect(Object.keys(getAggregationsConfig(itemType, weaponClass, excludeKeys))).toEqual(expectation)
   },
 )
-
-it('getVisibleAggregationsConfig', () => {
-  expect(getVisibleAggregationsConfig(mockedAggregationsConfig, ['weaponClass'])).not.toContain(
-    [
-      // hidden
-      'tier',
-      'type',
-      // pass exclude
-      'weaponClass',
-    ],
-  )
-})
 
 it('getColumnVisibility', () => {
   expect(getColumnVisibility(mockedAggregationsConfig)).toEqual(

@@ -1,708 +1,340 @@
-// import type { PartialDeep } from 'type-fest'
+import type { PartialDeep } from 'type-fest'
+import type { Mock } from 'vitest'
 
-// // import { mockGet } from 'vi-fetch'
-// import { describe, expect, it, vi } from 'vitest'
+import { assertType, describe, expect, it, vi } from 'vitest'
 
-// import type { EquippedItemsBySlot } from '~/models/character'
-// import type { Item, ItemFlat } from '~/models/item'
-// import type { AggregationConfig } from '~/models/item-search'
-// import type { UserItem } from '~/models/user'
+import type { EquippedItemsBySlot } from '~/models/character'
+import type { Item, ItemFlag, ItemFlat, ItemSlot, ItemWeaponComponent } from '~/models/item'
+import type { UserItem } from '~/models/user'
 
-// import { response } from '~/__mocks__/crpg-client'
-// import mockItems from '~/__mocks__/items.json'
-// import { Culture } from '~/models/culture'
-// import {
-//   DamageType,
-//   ItemFamilyType,
-//   ItemFieldCompareRule,
-//   ItemFieldFormat,
-//   ItemFlags,
-//   ItemSlot,
-//   ItemType,
-//   ItemUsage,
-//   WeaponClass,
-//   WeaponFlags,
-// } from '~/models/item'
-// import { AggregationView } from '~/models/item-search'
+import { CULTURE } from '~/models/culture'
+import { ARMOR_MATERIAL_TYPE, DAMAGE_TYPE, ITEM_FAMILY_TYPE, ITEM_FLAG, ITEM_SLOT, ITEM_TYPE, ITEM_USAGE, WEAPON_CLASS, WEAPON_FLAG } from '~/models/item'
 
-// import type { HumanBucket } from './item-service'
+import * as itemService from '../item-service'
 
-// import {
-//   canAddedToClanArmory,
-//   canUpgrade,
-//   computeAverageRepairCostPerHour,
-//   computeBrokenItemRepairCost,
-//   computeSalePrice,
-//   getAvailableSlotsByItem,
-//   getCompareItemsResult,
-//   getItemFieldAbsoluteDiffStr,
-//   getItemGraceTimeEnd,
-//   getItemImage,
-//   getItems,
-//   //   getItemUpgrades,
-//   getLinkedSlots,
-//   getRelativeEntries,
-//   getWeaponClassesByItemType,
-//   groupItemsByTypeAndWeaponClass,
-//   hasWeaponClassesByItemType,
-//   humanizeBucket,
-//   IconBucketType,
-//   isGraceTimeExpired,
-// } from './item-service'
+const {
+  mockedGetItems,
+  mockedGetItemsUpgradesByBaseId,
+} = vi.hoisted(() => ({
+  mockedGetItems: vi.fn(),
+  mockedGetItemsUpgradesByBaseId: vi.fn(),
+}))
 
-// vi.mock('~/services/item-search-service/aggregations.ts', () => ({
-//   aggregationsConfig: {
-//     damage: {
-//       format: ItemFieldFormat.Damage,
-//       view: AggregationView.Range,
-//     },
-//     flags: {
-//       format: ItemFieldFormat.List,
-//       view: AggregationView.Checkbox,
-//     },
-//     price: {
-//       format: ItemFieldFormat.Number,
-//       view: AggregationView.Range,
-//     },
-//     requirement: {
-//       compareRule: ItemFieldCompareRule.Less,
-//       format: ItemFieldFormat.Requirement,
-//       view: AggregationView.Range,
-//     },
-//     swingDamage: {
-//       format: ItemFieldFormat.Damage,
-//       view: AggregationView.Range,
-//     },
-//     thrustDamage: {
-//       format: ItemFieldFormat.Damage,
-//       view: AggregationView.Range,
-//     },
-//     type: {
-//       view: AggregationView.Checkbox,
-//     },
-//   } satisfies AggregationConfig,
-// }))
+vi.mock('#api/sdk.gen', () => ({
+  getItems: mockedGetItems,
+  getItemsUpgradesByBaseId: mockedGetItemsUpgradesByBaseId,
+}))
 
-// const { mockedNotify } = vi.hoisted(() => ({
-//   mockedNotify: vi.fn(),
-// }))
+vi.mock('#imports', () => ({
+  useI18n: vi.fn(() => ({
+    t: (key: string, params?: any) => params ? `${key}:${JSON.stringify(params)}` : key,
+    n: (value: number) => `formatted:${value}`,
+  })),
+}))
 
-// beforeEach(() => {
-//   vi.useFakeTimers()
-//   vi.setSystemTime('2022-11-27T21:00:00.0000000Z')
-// })
+describe('item service', () => {
+  it('extractItem', () => {
+    const userItem = { userId: 1, item: { id: 2 } as unknown as Item }
+    const res = itemService.extractItem(userItem)
+    expect(res).toEqual({ id: 2 })
+    assertType<Item>(res)
+  })
 
-// afterEach(() => {
-//   vi.useRealTimers()
-// })
+  it('getItemImage', () => {
+    expect(itemService.getItemImage('crpg_aserai_noble_sword_2_t5')).toEqual(
+      '/items/crpg_aserai_noble_sword_2_t5.webp',
+    )
+  })
 
-// it('getItems', async () => {
-//   mockGet('/items').willResolve(response<Item[]>(mockItems as unknown as Item[]))
+  describe('isLargeShield', () => {
+    it('returns true when the item is a shield and the first weapon class is LargeShield', () => {
+      const item: Item = {
+        type: ITEM_TYPE.Shield,
+        weapons: [{ class: WEAPON_CLASS.LargeShield }],
+      } as Item
 
-//   expect(await getItems()).toEqual(mockItems)
-// })
+      expect(itemService.isLargeShield(item)).toBe(true)
+    })
 
-// it('getItemImage', () => {
-//   expect(getItemImage('crpg_aserai_noble_sword_2_t5')).toEqual(
-//     '/items/crpg_aserai_noble_sword_2_t5.webp',
-//   )
-// })
+    it('returns false when the item is not a shield', () => {
+      const item: Item = {
+        type: ITEM_TYPE.OneHandedWeapon,
+        weapons: [{ class: WEAPON_CLASS.OneHandedSword }],
+      } as Item
 
-// it.each<[PartialDeep<Item>, PartialDeep<EquippedItemsBySlot>, ItemSlot[]]>([
-//   [
-//     { armor: { familyType: ItemFamilyType.Horse }, flags: [], type: ItemType.MountHarness },
-//     {},
-//     [ItemSlot.MountHarness],
-//   ],
-//   [
-//     { armor: { familyType: ItemFamilyType.Horse }, flags: [], type: ItemType.MountHarness },
-//     { [ItemSlot.Mount]: { item: { mount: { familyType: ItemFamilyType.Horse } } } },
-//     [ItemSlot.MountHarness],
-//   ],
-//   [
-//     { armor: { familyType: ItemFamilyType.Camel }, flags: [], type: ItemType.MountHarness },
-//     {},
-//     [ItemSlot.MountHarness],
-//   ],
-//   [
-//     { armor: { familyType: ItemFamilyType.Camel }, flags: [], type: ItemType.MountHarness },
-//     { [ItemSlot.Mount]: { item: { mount: { familyType: ItemFamilyType.Horse } } } },
-//     [],
-//   ],
-//   [
-//     { armor: { familyType: ItemFamilyType.Horse }, flags: [], type: ItemType.MountHarness },
-//     { [ItemSlot.Mount]: { item: { mount: { familyType: ItemFamilyType.Camel } } } },
-//     [],
-//   ],
-//   [
-//     { flags: [], type: ItemType.OneHandedWeapon },
-//     {},
-//     [ItemSlot.Weapon0, ItemSlot.Weapon1, ItemSlot.Weapon2, ItemSlot.Weapon3],
-//   ],
-//   [{ flags: [], type: ItemType.Banner }, {}, [ItemSlot.WeaponExtra]],
-//   [{ flags: [ItemFlags.DropOnWeaponChange], type: ItemType.Polearm }, {}, [ItemSlot.WeaponExtra]], // Pike
+      expect(itemService.isLargeShield(item)).toBe(false)
+    })
+  })
 
-//   // Large shields on horseback
-//   [
-//     { flags: [], type: ItemType.Shield, weapons: [{ class: WeaponClass.LargeShield }] },
-//     {},
-//     [ItemSlot.Weapon0, ItemSlot.Weapon1, ItemSlot.Weapon2, ItemSlot.Weapon3],
-//   ],
-//   [
-//     { flags: [], type: ItemType.Shield, weapons: [{ class: WeaponClass.LargeShield }] },
-//     { [ItemSlot.Mount]: { item: { mount: { familyType: ItemFamilyType.Horse } } } },
-//     [],
-//   ],
-//   [
-//     { flags: [], type: ItemType.Mount },
-//     {
-//       [ItemSlot.Weapon2]: {
-//         item: { type: ItemType.Shield, weapons: [{ class: WeaponClass.LargeShield }] },
-//       },
-//     },
-//     [],
-//   ],
-//   [
-//     { flags: [], type: ItemType.Shield, weapons: [{ class: WeaponClass.SmallShield }] },
-//     { [ItemSlot.Mount]: { item: { mount: { familyType: ItemFamilyType.Horse } } } },
-//     [ItemSlot.Weapon0, ItemSlot.Weapon1, ItemSlot.Weapon2, ItemSlot.Weapon3],
-//   ],
-//   [
-//     { flags: [], type: ItemType.Mount },
-//     {
-//       [ItemSlot.Weapon2]: {
-//         item: { type: ItemType.Shield, weapons: [{ class: WeaponClass.SmallShield }] },
-//       },
-//     },
-//     [ItemSlot.Mount],
-//   ],
+  it.each<[string, PartialDeep<UserItem>, number, PartialDeep<EquippedItemsBySlot>, { slots: ItemSlot[], warning: string | null }]>([
+    [
+      'returns a warning when the item is broken',
+      { isBroken: true } as UserItem,
+      1,
+      {},
+      { slots: [], warning: 'character.inventory.item.broken.notify.warning' },
+    ],
+    [
+      'returns a warning when the item is in the clan armory and belongs to the same user',
+      { isArmoryItem: true, userId: 1 } as UserItem,
+      1,
+      {},
+      { slots: [], warning: 'character.inventory.item.clanArmory.inArmory.notify.warning' },
+    ],
+    [
+      'returns no slots when MountHarness family type is incompatible with the equipped Mount',
+      {
+        item: { type: ITEM_TYPE.MountHarness, armor: { familyType: ITEM_FAMILY_TYPE.Horse } },
+      } as UserItem,
+      1,
+      {
+        [ITEM_SLOT.Mount]: { item: { mount: { familyType: ITEM_FAMILY_TYPE.Camel } } },
+      },
+      { slots: [], warning: null },
+    ],
+    [
+      'returns no slots when Mount family type is incompatible with equipped MountHarness',
+      {
+        item: { type: ITEM_TYPE.Mount, mount: { familyType: ITEM_FAMILY_TYPE.Camel } },
+      } as UserItem,
+      1,
+      {
+        [ITEM_SLOT.MountHarness]: { item: { armor: { familyType: ITEM_FAMILY_TYPE.Horse } } },
+      },
+      { slots: [], warning: null },
+    ],
+    [
+      'returns WeaponExtra slot when item has DropOnWeaponChange flag (e.g. Pike)',
+      {
+        item: { flags: [ITEM_FLAG.DropOnWeaponChange] },
+      } as UserItem,
+      1,
+      {},
+      { slots: [ITEM_SLOT.WeaponExtra], warning: null },
+    ],
+    [
+      'returns a horseback warning when a large shield is equipped while mounted',
+      {
+        item: { type: ITEM_TYPE.Shield, weapons: [{ class: WEAPON_CLASS.LargeShield }], flags: [] as ItemFlag[] },
+      } as UserItem,
+      1,
+      {
+        [ITEM_SLOT.Mount]: { item: { type: ITEM_TYPE.Mount } },
+      },
+      { slots: [], warning: 'character.inventory.item.cantUseOnHorseback.notify.warning' },
+    ],
+    [
+      'returns a horseback warning when mounting while having a large shield equipped',
+      {
+        item: { type: ITEM_TYPE.Mount, flags: [] as ItemFlag[] },
+      } as UserItem,
+      1,
+      {
+        [ITEM_SLOT.Weapon0]: { item: { type: ITEM_TYPE.Shield, weapons: [{ class: WEAPON_CLASS.LargeShield }] as ItemWeaponComponent[] } },
+      },
+      { slots: [], warning: 'character.inventory.item.cantUseOnHorseback.notify.warning' },
+    ],
+    [
+      'returns an EBA armor compatibility warning when EBA BodyArmor and non-EBA LegArmor are mixed',
+      {
+        item: { type: ITEM_TYPE.BodyArmor, armor: { familyType: ITEM_FAMILY_TYPE.EBA }, flags: [] as ItemFlag[] },
+      } as UserItem,
+      1,
+      {
+        [ITEM_SLOT.Leg]: { item: { armor: { } } },
+      },
+      { slots: [], warning: 'character.inventory.item.EBAArmorCompatible.notify.warning' },
+    ],
+    [
+      'returns an EBA armor compatibility warning when EBA LegArmor is used with non-EBA BodyArmor',
+      {
+        item: { type: ITEM_TYPE.LegArmor, armor: { }, flags: [] as ItemFlag[] },
+      } as UserItem,
+      1,
+      {
+        [ITEM_SLOT.Body]: { item: { armor: { familyType: ITEM_FAMILY_TYPE.EBA } } },
+      },
+      { slots: [], warning: 'character.inventory.item.EBAArmorCompatible.notify.warning' },
+    ],
+    [
+      'returns default slots from itemSlotsByType when no special conditions are met',
+      {
+        item: { type: ITEM_TYPE.HeadArmor, flags: [] as ItemFlag[] },
+      } as UserItem,
+      1,
+      {},
+      { slots: [ITEM_SLOT.Head], warning: null },
+    ],
+  ])('getAvailableSlotsByItem - %s', (_, userItem, userId, equipedItems, expectation) => {
+    expect(itemService.getAvailableSlotsByItem(userItem as UserItem, userId, equipedItems as EquippedItemsBySlot)).toEqual(expectation)
+  })
 
-//   // EBA
-//   [{ armor: { familyType: ItemFamilyType.EBA }, flags: [], type: ItemType.BodyArmor }, {}, []],
-//   [
-//     { armor: { familyType: ItemFamilyType.EBA }, flags: [], type: ItemType.BodyArmor },
-//     {
-//       [ItemSlot.Leg]: {
-//         item: { armor: { familyType: ItemFamilyType.Undefined }, type: ItemType.LegArmor },
-//       },
-//     },
-//     [],
-//   ],
-//   [
-//     { armor: { familyType: ItemFamilyType.EBA }, flags: [], type: ItemType.BodyArmor },
-//     {
-//       [ItemSlot.Leg]: {
-//         item: { armor: { familyType: ItemFamilyType.EBA }, type: ItemType.LegArmor },
-//       },
-//     },
-//     [ItemSlot.Body],
-//   ],
-//   [
-//     { armor: { familyType: ItemFamilyType.EBA }, flags: [], type: ItemType.BodyArmor },
-//     {
-//       [ItemSlot.Leg]: {
-//         item: { armor: { familyType: ItemFamilyType.Undefined }, type: ItemType.LegArmor },
-//       },
-//     },
-//     [],
-//   ],
-//   [
-//     { armor: { familyType: ItemFamilyType.Undefined }, flags: [], type: ItemType.LegArmor },
-//     {
-//       [ItemSlot.Body]: {
-//         item: { armor: { familyType: ItemFamilyType.EBA }, type: ItemType.BodyArmor },
-//       },
-//     },
-//     [],
-//   ],
-//   [
-//     { armor: { familyType: ItemFamilyType.EBA }, flags: [], type: ItemType.LegArmor },
-//     {
-//       [ItemSlot.Body]: {
-//         item: { armor: { familyType: ItemFamilyType.EBA }, type: ItemType.BodyArmor },
-//       },
-//     },
-//     [ItemSlot.Leg],
-//   ],
-// ])('getAvailableSlotsByItem - item: %j, equipedItems: %j', (item, equipedItems, expectation) => {
-//   expect(getAvailableSlotsByItem(item as Item, equipedItems as EquippedItemsBySlot)).toEqual(
-//     expectation,
-//   )
-// })
+  it.each<[string, ItemSlot, PartialDeep<EquippedItemsBySlot>, ItemSlot[]]>([
+    [
+      'returns Body slot when Leg slot is selected and equipped BodyArmor is EBA type',
+      ITEM_SLOT.Leg,
+      {
+        [ITEM_SLOT.Body]: { item: { armor: { familyType: ITEM_FAMILY_TYPE.EBA } } },
+      },
+      [ITEM_SLOT.Body],
+    ],
+    [
+      'returns empty array when Leg slot is selected but equipped BodyArmor is not EBA type',
+      ITEM_SLOT.Leg,
+      {
+        [ITEM_SLOT.Body]: { item: { armor: { } } },
+      },
+      [],
+    ],
+    [
+      'returns empty array when Leg slot is selected but Body slot is not equipped',
+      ITEM_SLOT.Leg,
+      {},
+      [],
+    ],
+    [
+      'returns empty array when any slot other than Leg is selected',
+      ITEM_SLOT.Body,
+      {
+        [ITEM_SLOT.Body]: { item: { armor: { familyType: ITEM_FAMILY_TYPE.EBA } } },
+      },
+      [],
+    ],
+  ])('getLinkedSlots - %s', (_, slot, equippedItems, expectation) => {
+    expect(itemService.getLinkedSlots(slot, equippedItems as EquippedItemsBySlot)).toEqual(expectation)
+  })
 
-// it.each<[ItemSlot, PartialDeep<EquippedItemsBySlot>, ItemSlot[]]>([
-//   // EBA
-//   [
-//     ItemSlot.Leg,
-//     {
-//       [ItemSlot.Body]: {
-//         item: { armor: { familyType: ItemFamilyType.EBA }, type: ItemType.BodyArmor },
-//       },
-//     },
-//     [ItemSlot.Body],
-//   ],
-//   [
-//     ItemSlot.Leg,
-//     {
-//       [ItemSlot.Body]: {
-//         item: { armor: { familyType: ItemFamilyType.Undefined }, type: ItemType.BodyArmor },
-//       },
-//     },
-//     [],
-//   ],
-// ])('getLinkedSlots - slot: %s', (slot, equipedItems, expectation) => {
-//   expect(getLinkedSlots(slot, equipedItems as EquippedItemsBySlot)).toEqual(expectation)
-// })
+  it.each<[string, ItemSlot, PartialDeep<EquippedItemsBySlot>, ReturnType<typeof itemService.getUnEquipItems>]>([
+    [
+      'returns only the provided slot when there are no linked slots',
+      ITEM_SLOT.Body,
+      {},
+      [{ slot: ITEM_SLOT.Body, userItemId: null }],
+    ],
+    [
+      'returns provided slot and linked slots when linked slots exist',
+      ITEM_SLOT.Leg,
+      {
+        [ITEM_SLOT.Body]: { item: { armor: { familyType: ITEM_FAMILY_TYPE.EBA } } },
+      },
+      [
+        { slot: ITEM_SLOT.Leg, userItemId: null },
+        { slot: ITEM_SLOT.Body, userItemId: null },
+      ],
+    ],
+  ])('getUnEquipItems - %s', async (_, slot, equippedItemsBySlot, expectation) => {
+    let spy: Mock | null = null
+    if (slot === ITEM_SLOT.Leg) {
+      spy = vi.spyOn(itemService, 'getLinkedSlots').mockReturnValueOnce([ITEM_SLOT.Body])
+    }
+    else {
+      spy = vi.spyOn(itemService, 'getLinkedSlots').mockReturnValueOnce([])
+    }
 
-// it.each([
-//   [ItemType.Bow, false],
-//   [ItemType.Polearm, true],
-// ])('hasWeaponClassesByItemType - itemType: %s', (itemType, expectation) => {
-//   expect(hasWeaponClassesByItemType(itemType)).toEqual(expectation)
-// })
+    expect(itemService.getUnEquipItems(slot, equippedItemsBySlot as EquippedItemsBySlot)).toEqual(expectation)
+    spy?.mockRestore()
+  })
 
-// it.each<[ItemType, WeaponClass[]]>([
-//   [
-//     ItemType.OneHandedWeapon,
-//     [WeaponClass.OneHandedSword, WeaponClass.OneHandedAxe, WeaponClass.Mace, WeaponClass.Dagger],
-//   ],
-//   [ItemType.Bow, []],
-// ])('getWeaponClassesByItemType - itemType: %s', (itemType, expectation) => {
-//   expect(getWeaponClassesByItemType(itemType)).toEqual(expectation)
-// })
-
-// describe('humanizeBucket', () => {
-//   it.each<[keyof ItemFlat, any, HumanBucket]>([
-//     ['type', null, { icon: null, label: '', tooltip: null }],
-//     [
-//       'type',
-//       ItemType.OneHandedWeapon,
-//       {
-//         icon: { name: 'item-type-one-handed-weapon', type: IconBucketType.Svg },
-//         label: 'item.type.OneHandedWeapon',
-//         tooltip: null,
-//       },
-//     ],
-//     [
-//       'weaponClass',
-//       WeaponClass.OneHandedPolearm,
-//       {
-//         icon: { name: 'weapon-class-one-handed-polearm', type: IconBucketType.Svg },
-//         label: 'item.weaponClass.OneHandedPolearm',
-//         tooltip: null,
-//       },
-//     ],
-//     [
-//       'damageType',
-//       DamageType.Cut,
-//       {
-//         icon: { name: 'damage-type-cut', type: IconBucketType.Svg },
-//         label: 'item.damageType.Cut.long',
-//         tooltip: {
-//           description: 'item.damageType.Cut.description',
-//           title: 'item.damageType.Cut.title',
-//         },
-//       },
-//     ],
-//     [
-//       'culture',
-//       Culture.Vlandia,
-//       {
-//         icon: { name: 'culture-vlandia', type: IconBucketType.Asset },
-//         label: 'item.culture.Vlandia',
-//         tooltip: {
-//           description: null,
-//           title: 'item.culture.Vlandia',
-//         },
-//       },
-//     ],
-//     [
-//       'mountArmorFamilyType',
-//       ItemFamilyType.Horse,
-//       {
-//         icon: { name: 'mount-type-horse', type: IconBucketType.Svg },
-//         label: 'item.familyType.1.title',
-//         tooltip: {
-//           description: 'item.familyType.1.description',
-//           title: 'item.familyType.1.title',
-//         },
-//       },
-//     ],
-//     [
-//       'mountFamilyType',
-//       ItemFamilyType.Camel,
-//       {
-//         icon: { name: 'mount-type-camel', type: IconBucketType.Svg },
-//         label: 'item.familyType.2.title',
-//         tooltip: {
-//           description: 'item.familyType.2.description',
-//           title: 'item.familyType.2.title',
-//         },
-//       },
-//     ],
-//     [
-//       'armorFamilyType',
-//       ItemFamilyType.EBA,
-//       {
-//         icon: null,
-//         label: 'item.familyType.3.title',
-//         tooltip: {
-//           description: 'item.familyType.3.description',
-//           title: 'item.familyType.3.title',
-//         },
-//       },
-//     ],
-//     [
-//       'flags',
-//       ItemFlags.DropOnWeaponChange,
-//       {
-//         icon: { name: 'item-flag-drop-on-change', type: IconBucketType.Svg },
-//         label: 'item.flags.DropOnWeaponChange',
-//         tooltip: {
-//           description: null,
-//           title: 'item.flags.DropOnWeaponChange',
-//         },
-//       },
-//     ],
-//     [
-//       'flags',
-//       WeaponFlags.CanDismount,
-//       {
-//         icon: { name: 'item-flag-can-dismount', type: IconBucketType.Svg },
-//         label: 'item.weaponFlags.CanDismount',
-//         tooltip: {
-//           description: null,
-//           title: 'item.weaponFlags.CanDismount',
-//         },
-//       },
-//     ],
-//     [
-//       'flags',
-//       ItemUsage.PolearmBracing,
-//       {
-//         icon: { name: 'item-flag-brace', type: IconBucketType.Svg },
-//         label: 'item.usage.polearm_bracing.title',
-//         tooltip: {
-//           description: 'item.usage.polearm_bracing.description',
-//           title: 'item.usage.polearm_bracing.title',
-//         },
-//       },
-//     ],
-//     [
-//       'requirement',
-//       18,
-//       {
-//         icon: null,
-//         label: 'item.requirementFormat::value:18',
-//         tooltip: null,
-//       },
-//     ],
-//     [
-//       'price',
-//       1234,
-//       {
-//         icon: null,
-//         label: '1234',
-//         tooltip: null,
-//       },
-//     ],
-//     [
-//       'handling',
-//       12,
-//       {
-//         icon: null,
-//         label: '12',
-//         tooltip: null,
-//       },
-//     ],
-//   ])('aggKey: %s, bucket: %s ', (aggKey, bucket, expectation) => {
-//     expect(humanizeBucket(aggKey, bucket)).toEqual(expectation)
-//   })
-
-//   it('swingDamage', () => {
-//     const item: Partial<ItemFlat> = {
-//       swingDamageType: DamageType.Cut,
-//     }
-
-//     expect(humanizeBucket('swingDamage', 10, item as ItemFlat)).toEqual({
-//       icon: null,
-//       label: 'item.damageTypeFormat::value:10,type:item.damageType.Cut.short',
-//       tooltip: {
-//         description: 'item.damageType.Cut.description',
-//         title: 'item.damageType.Cut.title',
-//       },
-//     })
-//   })
-
-//   it('thrustDamage', () => {
-//     const item: Partial<ItemFlat> = {}
-
-//     expect(humanizeBucket('thrustDamage', 0, item as ItemFlat)).toEqual({
-//       icon: null,
-//       label: '0',
-//       tooltip: null,
-//     })
-//   })
-// })
-
-// it('compareItemsResult', () => {
-//   const items = [
-//     {
-//       flags: ['UseTeamColor'],
-//       handling: 82,
-//       length: 105,
-//       weight: 2.22,
-//     },
-//     {
-//       flags: [],
-//       handling: 86,
-//       length: 99,
-//       weight: 2.07,
-//     },
-//   ] as ItemFlat[]
-
-//   const aggregationConfig = {
-//     flags: {
-//       title: 'Flags',
-//     },
-//     handling: {
-//       compareRule: 'Bigger',
-//       title: 'Handling',
-//     },
-//     length: {
-//       compareRule: 'Bigger',
-//       title: 'Length',
-//     },
-//     weight: {
-//       compareRule: 'Less',
-//       title: 'Thrust damage',
-//     },
-//   } as AggregationConfig
-
-//   expect(getCompareItemsResult(items, aggregationConfig)).toEqual({
-//     handling: 86,
-//     length: 105,
-//     weight: 2.07,
-//   })
-// })
-
-// it('groupItemsByTypeAndWeaponClass', () => {
-//   const items = [
-//     {
-//       id: 'item1',
-//       type: ItemType.OneHandedWeapon,
-//       weaponClass: WeaponClass.OneHandedSword,
-//     },
-//     {
-//       id: 'item2',
-//       type: ItemType.OneHandedWeapon,
-//       weaponClass: WeaponClass.OneHandedSword,
-//     },
-//     {
-//       id: 'item3',
-//       type: ItemType.OneHandedWeapon,
-//       weaponClass: WeaponClass.OneHandedAxe,
-//     },
-//     // Shield Case
-//     {
-//       id: 'item4',
-//       type: ItemType.Shield,
-//       weaponClass: WeaponClass.SmallShield,
-//     },
-//     {
-//       id: 'item5',
-//       type: ItemType.Shield,
-//       weaponClass: WeaponClass.LargeShield,
-//     },
-//   ] as ItemFlat[]
-
-//   expect(groupItemsByTypeAndWeaponClass(items)).toEqual([
-//     {
-//       items: [
-//         {
-//           id: 'item1',
-//           type: 'OneHandedWeapon',
-//           weaponClass: 'OneHandedSword',
-//         },
-//         {
-//           id: 'item2',
-//           type: 'OneHandedWeapon',
-//           weaponClass: 'OneHandedSword',
-//         },
-//       ],
-//       type: 'OneHandedWeapon',
-//       weaponClass: 'OneHandedSword',
-//     },
-//     {
-//       items: [
-//         {
-//           id: 'item3',
-//           type: 'OneHandedWeapon',
-//           weaponClass: 'OneHandedAxe',
-//         },
-//       ],
-//       type: 'OneHandedWeapon',
-//       weaponClass: 'OneHandedAxe',
-//     },
-//     {
-//       items: [
-//         {
-//           id: 'item4',
-//           type: 'Shield',
-//           weaponClass: 'SmallShield',
-//         },
-//         {
-//           id: 'item5',
-//           type: 'Shield',
-//           weaponClass: 'LargeShield',
-//         },
-//       ],
-//       type: 'Shield',
-//       weaponClass: 'SmallShield',
-//     },
-//   ])
-// })
-
-// it('getRelativeEntries', () => {
-//   const item = {
-//     flags: ['UseTeamColor'],
-//     handling: 82,
-//     length: 105,
-//     weight: 2.22,
-//   } as ItemFlat
-
-//   const aggregationConfig = {
-//     flags: {
-//       title: 'Flags',
-//     },
-//     handling: {
-//       compareRule: 'Bigger',
-//       title: 'Handling',
-//     },
-//     length: {
-//       compareRule: 'Bigger',
-//       title: 'Length',
-//     },
-//     weight: {
-//       compareRule: 'Less',
-//       title: 'Thrust damage',
-//     },
-//   } as AggregationConfig
-
-//   expect(getRelativeEntries(item, aggregationConfig)).toEqual({
-//     handling: 82,
-//     length: 105,
-//     weight: 2.22,
-//   })
-// })
-
-// it.each<[ItemFieldCompareRule, number, number, string]>([
-//   [ItemFieldCompareRule.Bigger, 0, 0, ''],
-//   [ItemFieldCompareRule.Bigger, -1, 0, '-1'],
-//   [ItemFieldCompareRule.Bigger, -1, -1, ''],
-
-//   [ItemFieldCompareRule.Bigger, 1, 1, ''],
-//   [ItemFieldCompareRule.Bigger, 2, 1, ''],
-//   [ItemFieldCompareRule.Bigger, 1, 2, '-1'],
-
-//   [ItemFieldCompareRule.Less, 0, 0, ''],
-//   [ItemFieldCompareRule.Less, 0, -1, '+1'],
-//   [ItemFieldCompareRule.Less, -1, -1, ''],
-
-//   [ItemFieldCompareRule.Less, 1, 1, ''],
-//   [ItemFieldCompareRule.Less, 1, 2, ''],
-//   [ItemFieldCompareRule.Less, 2, 1, '+1'],
-// ])(
-//   'getItemFieldAbsoluteDiffStr - compareRule: %s, value: %s, bestValue: %s',
-//   (compareRule, value, bestValue, expectation) => {
-//     expect(getItemFieldAbsoluteDiffStr(compareRule, value, bestValue)).toEqual(expectation)
-//   },
-// )
-
-// it('getItemGraceTimeEnd', () => {
-//   const userItem: PartialDeep<UserItem> = {
-//     createdAt: new Date('2022-11-27T20:00:00.0000000Z'),
-//   }
-
-//   expect(getItemGraceTimeEnd(userItem as UserItem)).toEqual(
-//     new Date('2022-11-27T21:00:00.0000000Z'),
-//   )
-// })
-
-// it.each<[Date, boolean]>([
-//   [new Date('2022-11-27T20:00:00.0000000Z'), true],
-//   [new Date('2022-11-27T20:59:00.0000000Z'), true],
-//   [new Date('2022-11-27T21:00:00.0000000Z'), false],
-//   [new Date('2022-11-27T21:01:00.0000000Z'), false],
-// ])('isGraceTimeExpired - date: %s,', (itemGraceTimeEnd, expectation) => {
-//   expect(isGraceTimeExpired(itemGraceTimeEnd)).toEqual(expectation)
-// })
-
-// it.each<[PartialDeep<UserItem>, { price: number, graceTimeEnd: Date | null }]>([
-//   [
-//     {
-//       createdAt: new Date('2022-11-27T20:00:00.0000000Z'),
-//       item: {
-//         price: 1100,
-//       },
-//     },
-//     {
-//       graceTimeEnd: new Date('2022-11-27T21:00:00.000Z'),
-//       price: 1100,
-//     },
-//   ],
-//   [
-//     {
-//       createdAt: new Date('2022-11-27T19:00:00.0000000Z'),
-//       item: {
-//         price: 1100,
-//       },
-//     },
-//     {
-//       graceTimeEnd: null,
-//       price: 550,
-//     },
-//   ],
-// ])('computeSalePrice - userItem: %s,', (userItem, expectation) => {
-//   expect(computeSalePrice(userItem as UserItem)).toEqual(expectation)
-// })
-
-// it.each<[number, number]>([
-//   [1, 0],
-//   [10, 0],
-//   [100, 1],
-//   [1000, 19],
-//   [10000, 192],
-//   [100000, 1919],
-// ])('computeBrokenItemRepairCost - price: %s,', (price, expectation) => {
-//   expect(computeBrokenItemRepairCost(price)).toEqual(expectation)
-// })
-
-// it.each<[number, number]>([
-//   [1, 0],
-//   [10, 1],
-//   [100, 11],
-//   [1000, 115],
-//   [10000, 1152],
-//   [100000, 11519],
-// ])('computeAverageRepairCostPerHour - price: %s,', (price, expectation) => {
-//   expect(computeAverageRepairCostPerHour(price)).toEqual(expectation)
-// })
-
-// it.each<[ItemType, boolean]>([
-//   [ItemType.OneHandedWeapon, true],
-//   [ItemType.Banner, false],
-// ])('canUpgrade - type: %s', (itemType, expectation) => {
-//   expect(canUpgrade(itemType)).toEqual(expectation)
-// })
-
-// it.todo('tODO', () => {
-//   // getItemUpgrades();
-// })
-
-// it.each<[ItemType, boolean]>([
-//   [ItemType.OneHandedWeapon, true],
-//   [ItemType.Banner, false],
-// ])('canAddedToClanArmory - type: %s', (itemType, expectation) => {
-//   expect(canAddedToClanArmory(itemType)).toEqual(expectation)
-// })
+  it.each<[string, keyof ItemFlat, any, ItemFlat | undefined, ReturnType<typeof itemService.humanizeBucket>]>([
+    [
+      'returns empty bucket when bucket is null',
+      'type',
+      null,
+      undefined,
+      { label: '', icon: null, tooltip: null },
+    ],
+    [
+      'handles type aggregationKey',
+      'type',
+      ITEM_TYPE.Bolts,
+      undefined,
+      { label: 'item.type.Bolts', icon: 'item-type-bolt', tooltip: { description: '', title: 'item.type.Bolts' } },
+    ],
+    [
+      'handles weaponClass aggregationKey',
+      'weaponClass',
+      WEAPON_CLASS.TwoHandedSword,
+      undefined,
+      { label: 'item.weaponClass.TwoHandedSword', icon: 'weapon-class-two-handed-sword', tooltip: { description: '', title: 'item.weaponClass.TwoHandedSword' } },
+    ],
+    [
+      'handles damageType aggregationKey',
+      'damageType',
+      DAMAGE_TYPE.Cut,
+      undefined,
+      { label: 'item.damageType.Cut.long', icon: 'damage-type-cut', tooltip: { description: 'item.damageType.Cut.description', title: 'item.damageType.Cut.title' } },
+    ],
+    [
+      'handles culture aggregationKey',
+      'culture',
+      CULTURE.Empire,
+      undefined,
+      { label: 'item.culture.Empire', icon: 'culture-empire', tooltip: { description: null, title: 'item.culture.Empire' } },
+    ],
+    [
+      'handles family type keys',
+      'armorFamilyType',
+      ITEM_FAMILY_TYPE.EBA,
+      undefined,
+      { label: 'item.familyType.3.title', icon: null, tooltip: { description: 'item.familyType.3.description', title: 'item.familyType.3.title' } },
+    ],
+    [
+      'handles armorMaterialType',
+      'armorMaterialType',
+      ARMOR_MATERIAL_TYPE.Chainmail,
+      undefined,
+      { label: 'item.armorMaterialType.Chainmail.title', icon: null, tooltip: null },
+    ],
+    [
+      'handles item flag',
+      'flags',
+      ITEM_FLAG.UseTeamColor,
+      undefined,
+      { label: 'item.flags.UseTeamColor', icon: 'item-flag-use-team-color', tooltip: { description: null, title: 'item.flags.UseTeamColor' } },
+    ],
+    [
+      'handles weapon flag',
+      'flags',
+      WEAPON_FLAG.CanKnockDown,
+      undefined,
+      { label: 'item.weaponFlags.CanKnockDown', icon: 'item-flag-can-knock-down', tooltip: { description: null, title: 'item.weaponFlags.CanKnockDown' } },
+    ],
+    [
+      'handles item usage',
+      'flags',
+      ITEM_USAGE.CrossbowLight,
+      undefined,
+      { label: 'item.usage.crossbow_light.title', icon: 'item-flag-light-crossbow', tooltip: { description: 'item.usage.crossbow_light.description', title: 'item.usage.crossbow_light.title' } },
+    ],
+    [
+      'handles damage format aggregation',
+      'damage',
+      100,
+      { thrustDamageType: DAMAGE_TYPE.Pierce } as ItemFlat,
+      { label: 'item.damageTypeFormat:{"type":"item.damageType.Pierce.short","value":100}', icon: null, tooltip: { description: 'item.damageType.Pierce.description', title: 'item.damageType.Pierce.title' } },
+    ],
+    [
+      'handles requirement format aggregation',
+      'requirement',
+      10,
+      undefined,
+      { label: 'item.requirementFormat:{"value":10}', icon: null, tooltip: null },
+    ],
+    [
+      'handles number format aggregation',
+      'weight',
+      50,
+      undefined,
+      { label: 'formatted:50', icon: null, tooltip: null },
+    ],
+    [
+      'returns default string when no format or key matched',
+      'name',
+      'some',
+      undefined,
+      { label: 'some', icon: null, tooltip: null },
+    ],
+  ])('humanizeBucket - %s', async (_, aggregationKey, bucket, item, expectation) => {
+    expect(itemService.humanizeBucket(aggregationKey, bucket, item)).toEqual(expectation)
+  })
+})
