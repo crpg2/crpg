@@ -8,6 +8,7 @@ const numberCandidate = (candidate: string) => /^[+-]?\d+(?:\.\d+)?$/.test(candi
 const tryParseFloat = (str: string) => (numberCandidate(str) ? Number.parseFloat(str) : str)
 
 // ref: https://github.com/ljharb/qs/blob/main/lib/utils.js#L111
+// TODO: spec
 const decoder = (str: string): string | number | boolean | null | undefined => {
   const candidateToNumber = tryParseFloat(str)
 

@@ -58,7 +58,7 @@ export default defineAppConfig({
     },
     pagination: {
       slots: {
-        item: 'leading-[1.25]',
+        item: 'leading-tight',
       },
     },
     tabs: {
@@ -88,7 +88,7 @@ export default defineAppConfig({
     modal: {
       slots: {
         overlay: 'bg-elevated/10 backdrop-blur',
-        content: '!overflow-visible',
+        content: 'overflow-visible!',
         wrapper: 'w-full',
         header: 'p-6',
         body: 'p-6',
@@ -131,7 +131,7 @@ export default defineAppConfig({
     },
     slider: {
       slots: {
-        thumb: 'rounded-[.225rem] origin-left rotate-45 transform !ring-default ring-2 focus-visible:outline-2 focus-visible:outline-offset-2',
+        thumb: 'rounded-[.225rem] origin-left rotate-45 transform ring-default! ring-2 focus-visible:outline-2 focus-visible:outline-offset-2',
       },
       variants: {
         color: {
