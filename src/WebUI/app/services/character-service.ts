@@ -86,10 +86,7 @@ import { armorTypes, computeAverageRepairCostPerHour } from '~/services/item-ser
 import { getIndexToInsert, range } from '~/utils/array'
 import { applyPolynomialFunction, roundFLoat } from '~/utils/math'
 
-export const getCharacters = async (): Promise<Character[]> => {
-  await delay(500)
-  return (await getUsersSelfCharacters({})).data!
-}
+export const getCharacters = async (): Promise<Character[]> => (await getUsersSelfCharacters({})).data!
 
 export const getCharactersByUserId = async (
   userId: number,
@@ -186,7 +183,7 @@ export interface CharacterEarnedMetadata {
   experience: string
   gold: string
   timeEffort: string // seconds
-  [key: string]: string // Явно разрешаем строковые ключи
+  [key: string]: string
 }
 
 export const getCharacterEarningStatistics = async (
