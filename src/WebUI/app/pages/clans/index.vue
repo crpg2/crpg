@@ -9,7 +9,6 @@ import { navigateTo, tw } from '#imports'
 import type { ClanWithMemberCount } from '~/models/clan'
 
 import { useUser } from '~/composables/user/use-user'
-import { LANGUAGE } from '~/models/language'
 import { SomeRole } from '~/models/role'
 import { getClans } from '~/services/clan-service'
 
@@ -22,21 +21,17 @@ const { t } = useI18n()
 
 const globalFilterByName = ref<string | undefined>(undefined)
 
-// TODO: region & pagination as query params - improve API
 const { state: clans, isLoading: loadingClans } = useAsyncState(() => getClans(), [])
 
 const { regionModel, regions } = useRegionQuery()
 const table = useTemplateRef('table')
 
-// TODO: это не синхронизированно, т.к. нет onFilterCHange
 const columnFilters = ref<ColumnFiltersState>([
   {
     id: 'clan_region',
     value: regionModel.value,
   },
 ])
-
-const { getInitialPaginationState, pagination } = usePagination()
 
 watch(regionModel, () => {
   columnFilters.value = [
@@ -45,10 +40,10 @@ watch(regionModel, () => {
       value: regionModel.value,
     },
   ]
-
-  // TODO: на search и сортировку тоже сбрасывать? сделать обертку мб с бызовым поведением
   table.value?.tableApi.resetPagination()
 })
+
+const { getInitialPaginationState, pagination } = usePagination()
 
 const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
   {
@@ -94,10 +89,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
     accessorKey: 'clan.languages',
     enableGlobalFilter: false,
     header: ({ column }) => {
-      // TODO: fix facets in UTable
-      // const uniqueKeys: string[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
-      // TODO: рефакторинг UiTableColumnHeader
-
+      const uniqueKeys: string[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
       return h(UiGridColumnHeader, {
         label: t('clan.table.column.languages'),
         withFilter: true,
@@ -113,9 +105,9 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
             'size': 'xl',
             'ui': {
               content: 'min-w-fit',
-              base: 'px-0 py-0', // TODO:
+              base: 'px-0 py-0',
             },
-            'items': Object.values(LANGUAGE).map<SelectItem>(l => ({
+            'items': uniqueKeys.map<SelectItem>(l => ({
               value: l,
               label: `${t(`language.${l}`)} - ${l}`,
             })),
@@ -133,11 +125,18 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
     cell: ({ row }) => h('div', {
       class: 'flex items-center gap-1.5',
     }, row.original.clan.languages.map(l =>
-      h(UTooltip, { text: t(`language.${l}`) }, () => h(UBadge, {
+      h(UTooltip, {
+        text: t(`language.${l}`),
+      }, () => h(UBadge, {
         color: 'primary',
         variant: 'subtle',
         label: l,
       })))),
+    meta: {
+      class: {
+        td: tw`py-1`,
+      },
+    },
   },
   {
     accessorKey: 'memberCount',
