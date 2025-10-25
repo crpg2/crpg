@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Clans.Models;
 using Crpg.Application.Common.Mappings;
@@ -19,7 +20,10 @@ public record UserViewModel : IMapFrom<User>
     public Role Role { get; init; }
     public Region Region { get; init; }
     public bool IsDonor { get; init; }
+    public bool IsRecent { get; set; }
+    [JsonRequired]
     public Uri? Avatar { get; init; }
+    [JsonRequired]
     public int? ActiveCharacterId { get; init; }
     public int UnreadNotificationsCount { get; init; }
     public UserClanViewModel? ClanMembership { get; init; }
@@ -27,6 +31,7 @@ public record UserViewModel : IMapFrom<User>
     public void Mapping(Profile profile)
     {
         profile.CreateMap<User, UserViewModel>()
-            .ForMember(u => u.UnreadNotificationsCount, opt => opt.MapFrom(u => u.Notifications.Where(un => un.State == NotificationState.Unread).Count()));
+            .ForMember(u => u.UnreadNotificationsCount, opt => opt.MapFrom(u => u.Notifications.Where(un => un.State == NotificationState.Unread).Count()))
+            .ForMember(dest => dest.IsRecent, opt => opt.Ignore());
     }
 }

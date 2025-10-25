@@ -4,25 +4,28 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     env:
       dir: ./src/WebUI
-
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
+    - uses: actions/checkout@v5
+    - uses: actions/setup-node@v5
       with:
         node-version: '22.x'
+        cache: 'npm'
+        cache-dependency-path: '${{ env.dir }}/package-lock.json'
     - name: Install
-      run: npm install
+      run: npm ci
       working-directory: ${{env.dir}}
-    # - name: Lint
-    #   run: npm run lint
-    #   working-directory: ${{env.dir}}
-    # - name: Unit
-    #   run: npm run test:unit
-    #   working-directory: ${{env.dir}}
+    - name: Lint
+      run: npm run lint
+      working-directory: ${{env.dir}}
+    - name: Typecheck
+      run: npm run typecheck
+      working-directory: ${{env.dir}}
+    - name: Unit
+      run: npm run test:unit
+      working-directory: ${{env.dir}}
     - name: Build
       run: npm run build
       working-directory: ${{env.dir}}
