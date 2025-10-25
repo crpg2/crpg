@@ -36,7 +36,7 @@ export default defineConfig({
         RestrictionPublicViewModel: schema => convertDateTimeToTimestamp(schema, 'duration'),
         RestrictionViewModel: schema => convertDateTimeToTimestamp(schema, 'duration'),
         ItemWeaponComponentViewModel: (schema) => {
-          // @ts-expect-error ///
+          // @ts-expect-error ////
           schema.properties.itemUsage.enum = [
             'long_bow',
             'bow',
