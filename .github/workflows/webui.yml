@@ -15,7 +15,7 @@ jobs:
         cache: 'npm'
         cache-dependency-path: '${{ env.dir }}/package-lock.json'
     - name: Install
-      run: npm install
+      run: npm ci
       working-directory: ${{env.dir}}
     - name: Lint
       run: npm run lint
