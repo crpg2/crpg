@@ -104,10 +104,6 @@ export default defineNuxtConfig({
     host: '0.0.0.0',
     port: 8080,
   },
-  features: {
-    // TODO: FIXME: test
-    inlineStyles: true,
-  },
   experimental: {
     typedPages: true,
     defaults: {
@@ -116,7 +112,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  compatibilityDate: '2025-10-15',
+  compatibilityDate: '2025-10-25',
   nitro: {
     compressPublicAssets: {
       gzip: true,
