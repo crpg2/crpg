@@ -679,30 +679,14 @@ export type GameUserViewModelResult = {
 };
 
 export type Geometry = {
-    factory: GeometryFactory;
-    userData?: unknown;
-    srid: number;
-    readonly geometryType?: string | null;
-    ogcGeometryType: OgcGeometryType;
-    precisionModel: PrecisionModel;
-    coordinate: Coordinate;
-    readonly coordinates?: Array<Coordinate> | null;
-    readonly numPoints: number;
-    readonly numGeometries: number;
-    readonly isSimple: boolean;
-    readonly isValid: boolean;
-    readonly isEmpty: boolean;
-    readonly area: number;
-    readonly length: number;
-    centroid: Point;
-    interiorPoint: Point;
-    pointOnSurface: Point;
-    dimension: Dimension;
-    boundary: Geometry;
-    boundaryDimension: Dimension;
-    envelope: Geometry;
-    envelopeInternal: Envelope;
-    readonly isRectangle: boolean;
+    /**
+     * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
+     */
+    type: string;
+    /**
+     * Координаты в формате GeoJSON
+     */
+    coordinates: Array<number>;
 };
 
 export type GeometryFactory = {
@@ -810,70 +794,25 @@ export type ItemWeaponComponentViewModel = {
 export type Languages = 'En' | 'Zh' | 'Ru' | 'De' | 'Fr' | 'It' | 'Es' | 'Pl' | 'Uk' | 'Ro' | 'Nl' | 'Tr' | 'El' | 'Hu' | 'Sv' | 'Cs' | 'Pt' | 'Sr' | 'Bg' | 'Hr' | 'Da' | 'Fi' | 'No' | 'Be' | 'Lv';
 
 export type LineString = {
-    factory: GeometryFactory;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModel;
-    readonly numGeometries: number;
-    readonly isSimple: boolean;
-    readonly isValid: boolean;
-    readonly area: number;
-    centroid: Point;
-    interiorPoint: Point;
-    pointOnSurface: Point;
-    envelope: Geometry;
-    envelopeInternal: Envelope;
-    readonly isRectangle: boolean;
-    readonly coordinates?: Array<Coordinate> | null;
-    coordinateSequence: CoordinateSequence;
-    coordinate: Coordinate;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    readonly isEmpty: boolean;
-    readonly numPoints: number;
-    startPoint: Point;
-    endPoint: Point;
-    readonly isClosed: boolean;
-    readonly isRing: boolean;
-    readonly geometryType?: string | null;
-    ogcGeometryType: OgcGeometryType;
-    readonly length: number;
-    boundary: Geometry;
-    readonly count: number;
+    /**
+     * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
+     */
+    type: string;
+    /**
+     * Координаты в формате GeoJSON
+     */
+    coordinates: Array<number>;
 };
 
 export type LinearRing = {
-    factory: GeometryFactory;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModel;
-    readonly numGeometries: number;
-    readonly isSimple: boolean;
-    readonly isValid: boolean;
-    readonly area: number;
-    centroid: Point;
-    interiorPoint: Point;
-    pointOnSurface: Point;
-    envelope: Geometry;
-    envelopeInternal: Envelope;
-    readonly isRectangle: boolean;
-    readonly coordinates?: Array<Coordinate> | null;
-    coordinateSequence: CoordinateSequence;
-    coordinate: Coordinate;
-    dimension: Dimension;
-    readonly isEmpty: boolean;
-    readonly numPoints: number;
-    startPoint: Point;
-    endPoint: Point;
-    readonly isRing: boolean;
-    ogcGeometryType: OgcGeometryType;
-    readonly length: number;
-    boundary: Geometry;
-    readonly count: number;
-    boundaryDimension: Dimension;
-    readonly isClosed: boolean;
-    readonly geometryType?: string | null;
-    readonly isCCW: boolean;
+    /**
+     * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
+     */
+    type: string;
+    /**
+     * Координаты в формате GeoJSON
+     */
+    coordinates: Array<number>;
 };
 
 export type NotificationState = 'Unread' | 'Read';
@@ -907,7 +846,16 @@ export type PartyViewModel = {
     troops: number;
     position: Point;
     status: PartyStatus;
-    waypoints: Array<Geometry>;
+    waypoints: {
+        /**
+         * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
+         */
+        type: string;
+        /**
+         * Координаты в формате GeoJSON
+         */
+        coordinates: Array<number>;
+    };
     targetedParty: PartyVisibleViewModel;
     targetedSettlement: SettlementPublicViewModel;
     user: UserPublicViewModel;
@@ -941,67 +889,25 @@ export type PatchNotesIListResult = {
 export type Platform = 'Steam' | 'EpicGames' | 'Microsoft';
 
 export type Point = {
-    factory: GeometryFactory;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModel;
-    readonly numGeometries: number;
-    readonly isSimple: boolean;
-    readonly isValid: boolean;
-    readonly area: number;
-    readonly length: number;
-    centroid: Point;
-    interiorPoint: Point;
-    pointOnSurface: Point;
-    envelope: Geometry;
-    envelopeInternal: Envelope;
-    readonly isRectangle: boolean;
-    coordinateSequence: CoordinateSequence;
-    readonly coordinates?: Array<Coordinate> | null;
-    readonly numPoints: number;
-    readonly isEmpty: boolean;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    x: number;
-    y: number;
-    coordinate: Coordinate;
-    readonly geometryType?: string | null;
-    ogcGeometryType: OgcGeometryType;
-    boundary: Geometry;
-    z: number;
-    m: number;
+    /**
+     * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
+     */
+    type: string;
+    /**
+     * Координаты в формате GeoJSON
+     */
+    coordinates: Array<number>;
 };
 
 export type Polygon = {
-    factory: GeometryFactory;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModel;
-    readonly numGeometries: number;
-    readonly isSimple: boolean;
-    readonly isValid: boolean;
-    centroid: Point;
-    interiorPoint: Point;
-    pointOnSurface: Point;
-    envelope: Geometry;
-    envelopeInternal: Envelope;
-    coordinate: Coordinate;
-    readonly coordinates?: Array<Coordinate> | null;
-    readonly numPoints: number;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    readonly isEmpty: boolean;
-    exteriorRing: LineString;
-    readonly numInteriorRings: number;
-    readonly interiorRings?: Array<LineString> | null;
-    readonly geometryType?: string | null;
-    ogcGeometryType: OgcGeometryType;
-    readonly area: number;
-    readonly length: number;
-    boundary: Geometry;
-    readonly isRectangle: boolean;
-    shell: LinearRing;
-    holes?: Array<LinearRing> | null;
+    /**
+     * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
+     */
+    type: string;
+    /**
+     * Координаты в формате GeoJSON
+     */
+    coordinates: Array<number>;
 };
 
 export type PrecisionModel = {
@@ -1207,7 +1113,16 @@ export type UpdateGameUsersResultResult = {
 export type UpdatePartyStatusCommand = {
     partyId: number;
     status: PartyStatus;
-    waypoints: Array<Geometry>;
+    waypoints: {
+        /**
+         * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
+         */
+        type: string;
+        /**
+         * Координаты в формате GeoJSON
+         */
+        coordinates: Array<number>;
+    };
     targetedPartyId: number;
     targetedSettlementId: number;
 };
@@ -1502,23 +1417,6 @@ export type GameUserViewModelResultWritable = {
     data: GameUserViewModel;
 };
 
-export type GeometryWritable = {
-    factory: GeometryFactoryWritable;
-    userData?: unknown;
-    srid: number;
-    ogcGeometryType: OgcGeometryType;
-    precisionModel: PrecisionModelWritable;
-    coordinate: CoordinateWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    dimension: Dimension;
-    boundary: GeometryWritable;
-    boundaryDimension: Dimension;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-};
-
 export type GeometryFactoryWritable = {
     precisionModel: PrecisionModelWritable;
     coordinateSequenceFactory: CoordinateSequenceFactory;
@@ -1538,46 +1436,6 @@ export type ItemViewModelIListResultWritable = {
     data: Array<ItemViewModel> | null;
 };
 
-export type LineStringWritable = {
-    factory: GeometryFactoryWritable;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModelWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-    coordinateSequence: CoordinateSequenceWritable;
-    coordinate: CoordinateWritable;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    startPoint: PointWritable;
-    endPoint: PointWritable;
-    ogcGeometryType: OgcGeometryType;
-    boundary: GeometryWritable;
-};
-
-export type LinearRingWritable = {
-    factory: GeometryFactoryWritable;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModelWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-    coordinateSequence: CoordinateSequenceWritable;
-    coordinate: CoordinateWritable;
-    dimension: Dimension;
-    startPoint: PointWritable;
-    endPoint: PointWritable;
-    ogcGeometryType: OgcGeometryType;
-    boundary: GeometryWritable;
-    boundaryDimension: Dimension;
-};
-
 export type NtsGeometryServicesWritable = {
     geometryOverlay: GeometryOverlay;
     geometryRelate: GeometryRelate;
@@ -1593,48 +1451,6 @@ export type PartyViewModelResultWritable = {
 
 export type PatchNotesIListResultWritable = {
     data: Array<PatchNotes> | null;
-};
-
-export type PointWritable = {
-    factory: GeometryFactoryWritable;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModelWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-    coordinateSequence: CoordinateSequenceWritable;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    x: number;
-    y: number;
-    coordinate: CoordinateWritable;
-    ogcGeometryType: OgcGeometryType;
-    boundary: GeometryWritable;
-    z: number;
-    m: number;
-};
-
-export type PolygonWritable = {
-    factory: GeometryFactoryWritable;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModelWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-    coordinate: CoordinateWritable;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    exteriorRing: LineStringWritable;
-    ogcGeometryType: OgcGeometryType;
-    boundary: GeometryWritable;
-    shell: LinearRingWritable;
-    holes?: Array<LinearRingWritable> | null;
 };
 
 export type PrecisionModelWritable = {

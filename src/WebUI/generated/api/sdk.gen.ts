@@ -2,7 +2,7 @@
 
 import type { Client, Composable, Options as Options2, TDataShape } from './client';
 import { client } from './client.gen';
-import { getActivityLogsResponseTransformer, getBattlesByBattleIdFighterApplicationsResponseTransformer, getBattlesByBattleIdFightersResponseTransformer, getBattlesByBattleIdResponseTransformer, getBattlesResponseTransformer, getClansByClanIdArmoryResponseTransformer, getGamesTournamentUsersResponseTransformer, getGamesUsersResponseTransformer, getItemsResponseTransformer, getItemsUpgradesByBaseIdResponseTransformer, getPartiesSelfUpdateResponseTransformer, getPatchNotesResponseTransformer, getRestrictionsResponseTransformer, getSettlementsBySettlementIdItemsResponseTransformer, getSettlementsBySettlementIdResponseTransformer, getSettlementsBySettlementIdShopItemsResponseTransformer, getSettlementsResponseTransformer, getTerrainsResponseTransformer, getUsersByIdRestrictionsResponseTransformer, getUsersByUserIdResponseTransformer, getUsersResponseTransformer, getUsersSearchResponseTransformer, getUsersSelfCharactersByIdEarningStatisticsResponseTransformer, getUsersSelfCharactersByIdItemsResponseTransformer, getUsersSelfCharactersByIdLimitationsResponseTransformer, getUsersSelfItemsResponseTransformer, getUsersSelfNotificationsResponseTransformer, getUsersSelfRestrictionResponseTransformer, postBattlesByBattleIdFightersResponseTransformer, postGamesRestrictionsResponseTransformer, postPartiesResponseTransformer, postPartiesSelfItemsResponseTransformer, postSettlementsBySettlementIdItemsResponseTransformer, postSettlementsBySettlementIdResponseTransformer, postTerrainsResponseTransformer, postUsersSelfItemsResponseTransformer, putBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponseTransformer, putGamesUsersResponseTransformer, putPartiesSelfStatusResponseTransformer, putTerrainsByIdResponseTransformer, putUsersByUserIdNoteResponseTransformer, putUsersSelfCharactersByIdItemsResponseTransformer, putUsersSelfItemsByIdReforgeResponseTransformer, putUsersSelfItemsByIdRepairResponseTransformer, putUsersSelfItemsByIdUpgradeResponseTransformer, putUsersSelfNotificationsByIdResponseTransformer } from './transformers.gen';
+import { getActivityLogsResponseTransformer, getBattlesByBattleIdResponseTransformer, getBattlesResponseTransformer, getClansByClanIdArmoryResponseTransformer, getGamesTournamentUsersResponseTransformer, getGamesUsersResponseTransformer, getItemsResponseTransformer, getItemsUpgradesByBaseIdResponseTransformer, getPartiesSelfUpdateResponseTransformer, getPatchNotesResponseTransformer, getRestrictionsResponseTransformer, getSettlementsBySettlementIdItemsResponseTransformer, getSettlementsBySettlementIdShopItemsResponseTransformer, getUsersByIdRestrictionsResponseTransformer, getUsersByUserIdResponseTransformer, getUsersResponseTransformer, getUsersSearchResponseTransformer, getUsersSelfCharactersByIdEarningStatisticsResponseTransformer, getUsersSelfCharactersByIdItemsResponseTransformer, getUsersSelfCharactersByIdLimitationsResponseTransformer, getUsersSelfItemsResponseTransformer, getUsersSelfNotificationsResponseTransformer, getUsersSelfRestrictionResponseTransformer, postGamesRestrictionsResponseTransformer, postPartiesSelfItemsResponseTransformer, postSettlementsBySettlementIdItemsResponseTransformer, postUsersSelfItemsResponseTransformer, putGamesUsersResponseTransformer, putUsersByUserIdNoteResponseTransformer, putUsersSelfCharactersByIdItemsResponseTransformer, putUsersSelfItemsByIdReforgeResponseTransformer, putUsersSelfItemsByIdRepairResponseTransformer, putUsersSelfItemsByIdUpgradeResponseTransformer, putUsersSelfNotificationsByIdResponseTransformer } from './transformers.gen';
 import type { DeleteBattlesByBattleIdMercenariesByMercenaryIdData, DeleteBattlesByBattleIdMercenariesByMercenaryIdResponse, DeleteBattlesByBattleIdMercenaryApplicationsData, DeleteBattlesByBattleIdMercenaryApplicationsResponse, DeleteClansByClanIdArmoryByUserItemIdData, DeleteClansByClanIdArmoryByUserItemIdResponse, DeleteClansByClanIdMembersByUserIdData, DeleteClansByClanIdMembersByUserIdResponse, DeleteTerrainsByIdData, DeleteUsersSelfCharactersByIdData, DeleteUsersSelfCharactersByIdResponse, DeleteUsersSelfData, DeleteUsersSelfItemsByIdData, DeleteUsersSelfItemsByIdResponse, DeleteUsersSelfNotificationsByIdData, DeleteUsersSelfNotificationsByIdResponse, DeleteUsersSelfNotificationsDeleteAllData, DeleteUsersSelfNotificationsDeleteAllResponse, DeleteUsersSelfResponse, GetActivityLogsData, GetActivityLogsResponse, GetBattlesByBattleIdData, GetBattlesByBattleIdFighterApplicationsData, GetBattlesByBattleIdFighterApplicationsResponse, GetBattlesByBattleIdFightersData, GetBattlesByBattleIdFightersResponse, GetBattlesByBattleIdMercenariesData, GetBattlesByBattleIdMercenariesResponse, GetBattlesByBattleIdMercenaryApplicationsData, GetBattlesByBattleIdMercenaryApplicationsResponse, GetBattlesByBattleIdResponse, GetBattlesData, GetBattlesResponse, GetClansByClanIdArmoryData, GetClansByClanIdArmoryResponse, GetClansByClanIdInvitationsData, GetClansByClanIdInvitationsResponse, GetClansByIdData, GetClansByIdMembersData, GetClansByIdMembersResponse, GetClansByIdResponse, GetClansData, GetClansResponse, GetConnectAuthorizeData, GetConnectCallbackEpicGamesData, GetConnectCallbackMicrosoftData, GetConnectLogoutData, GetGamesClansByIdData, GetGamesClansByIdResponse, GetGameServerStatisticsData, GetGameServerStatisticsResponse, GetGamesTournamentUsersData, GetGamesTournamentUsersResponse, GetGamesUsersData, GetGamesUsersResponse, GetItemsData, GetItemsResponse, GetItemsUpgradesByBaseIdData, GetItemsUpgradesByBaseIdResponse, GetLeaderboardLeaderboardData, GetLeaderboardLeaderboardResponse, GetPartiesSelfUpdateData, GetPartiesSelfUpdateResponse, GetPatchNotesData, GetPatchNotesResponse, GetRestrictionsData, GetRestrictionsResponse, GetSettingsData, GetSettingsResponse, GetSettlementsBySettlementIdData, GetSettlementsBySettlementIdItemsData, GetSettlementsBySettlementIdItemsResponse, GetSettlementsBySettlementIdResponse, GetSettlementsBySettlementIdShopItemsData, GetSettlementsBySettlementIdShopItemsResponse, GetSettlementsData, GetSettlementsResponse, GetTerrainsData, GetTerrainsResponse, GetUsersByIdRestrictionsData, GetUsersByIdRestrictionsResponse, GetUsersByUserIdCharactersData, GetUsersByUserIdCharactersResponse, GetUsersByUserIdData, GetUsersByUserIdResponse, GetUsersData, GetUsersResponse, GetUsersRewardRecentData, GetUsersSearchData, GetUsersSearchResponse, GetUsersSelfCharactersByIdCharacteristicsData, GetUsersSelfCharactersByIdCharacteristicsResponse, GetUsersSelfCharactersByIdData, GetUsersSelfCharactersByIdEarningStatisticsData, GetUsersSelfCharactersByIdEarningStatisticsResponse, GetUsersSelfCharactersByIdItemsData, GetUsersSelfCharactersByIdItemsResponse, GetUsersSelfCharactersByIdLimitationsData, GetUsersSelfCharactersByIdLimitationsResponse, GetUsersSelfCharactersByIdResponse, GetUsersSelfCharactersByIdStatisticsData, GetUsersSelfCharactersByIdStatisticsResponse, GetUsersSelfCharactersData, GetUsersSelfCharactersResponse, GetUsersSelfClanData, GetUsersSelfClanResponse, GetUsersSelfData, GetUsersSelfItemsData, GetUsersSelfItemsResponse, GetUsersSelfNotificationsData, GetUsersSelfNotificationsResponse, GetUsersSelfResponse, GetUsersSelfRestrictionData, GetUsersSelfRestrictionResponse, PatchSettingsData, PatchSettingsResponse, PostBattlesByBattleIdFightersData, PostBattlesByBattleIdFightersResponse, PostBattlesByBattleIdMercenaryApplicationsData, PostBattlesByBattleIdMercenaryApplicationsResponse, PostClansByClanIdArmoryData, PostClansByClanIdArmoryResponse, PostClansByClanIdInvitationsData, PostClansByClanIdInvitationsResponse, PostClansData, PostClansResponse, PostConnectAuthorizeData, PostConnectTokenData, PostGamesActivityLogsData, PostGamesRestrictionsData, PostGamesRestrictionsResponse, PostItemsByIdRefundData, PostPartiesData, PostPartiesResponse, PostPartiesSelfItemsData, PostPartiesSelfItemsResponse, PostRestrictionsData, PostRestrictionsResponse, PostSettlementsBySettlementIdData, PostSettlementsBySettlementIdItemsData, PostSettlementsBySettlementIdItemsResponse, PostSettlementsBySettlementIdResponse, PostTerrainsData, PostTerrainsResponse, PostUsersSelfItemsData, PostUsersSelfItemsResponse, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseData, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseData, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse, PutClansByClanIdArmoryByUserItemIdBorrowData, PutClansByClanIdArmoryByUserItemIdBorrowResponse, PutClansByClanIdArmoryByUserItemIdReturnData, PutClansByClanIdData, PutClansByClanIdInvitationsByInvitationIdResponseData, PutClansByClanIdInvitationsByInvitationIdResponseResponse, PutClansByClanIdMembersByUserIdData, PutClansByClanIdMembersByUserIdResponse, PutClansByClanIdResponse, PutGamesUsersData, PutGamesUsersResponse, PutItemsByIdEnableData, PutItemsByIdEnableResponse, PutPartiesSelfStatusData, PutPartiesSelfStatusResponse, PutTerrainsByIdData, PutTerrainsByIdResponse, PutUsersByIdRewardsData, PutUsersByIdRewardsResponse, PutUsersByUserIdCharactersByCharacterIdRewardsData, PutUsersByUserIdCharactersByCharacterIdRewardsResponse, PutUsersByUserIdCharactersByIdRetireData, PutUsersByUserIdCharactersByIdRetireResponse, PutUsersByUserIdNoteData, PutUsersByUserIdNoteResponse, PutUsersCharactersCompetitiveRatingsData, PutUsersCharactersRespecializeData, PutUsersSelfCharactersByIdActiveData, PutUsersSelfCharactersByIdActiveResponse, PutUsersSelfCharactersByIdCharacteristicsConvertData, PutUsersSelfCharactersByIdCharacteristicsConvertResponse, PutUsersSelfCharactersByIdCharacteristicsData, PutUsersSelfCharactersByIdCharacteristicsResponse, PutUsersSelfCharactersByIdData, PutUsersSelfCharactersByIdItemsData, PutUsersSelfCharactersByIdItemsResponse, PutUsersSelfCharactersByIdRespecializeData, PutUsersSelfCharactersByIdRespecializeResponse, PutUsersSelfCharactersByIdResponse, PutUsersSelfCharactersByIdRetireData, PutUsersSelfCharactersByIdRetireResponse, PutUsersSelfCharactersByIdTournamentData, PutUsersSelfCharactersByIdTournamentResponse, PutUsersSelfData, PutUsersSelfItemsByIdReforgeData, PutUsersSelfItemsByIdReforgeResponse, PutUsersSelfItemsByIdRepairData, PutUsersSelfItemsByIdRepairResponse, PutUsersSelfItemsByIdUpgradeData, PutUsersSelfItemsByIdUpgradeResponse, PutUsersSelfNotificationsByIdData, PutUsersSelfNotificationsByIdResponse, PutUsersSelfNotificationsReadAllData, PutUsersSelfNotificationsReadAllResponse, PutUsersSelfResponse } from './types.gen';
 
 export type Options<TComposable extends Composable = '$fetch', TData extends TDataShape = TDataShape, ResT = unknown, DefaultT = undefined> = Options2<TComposable, TData, ResT, DefaultT> & {
@@ -75,7 +75,6 @@ export const getBattlesByBattleId = <TComposable extends Composable = '$fetch', 
  */
 export const getBattlesByBattleIdFighters = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesByBattleIdFightersResponse = GetBattlesByBattleIdFightersResponse>(options: Options<TComposable, GetBattlesByBattleIdFightersData, GetBattlesByBattleIdFightersResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetBattlesByBattleIdFightersResponse | DefaultT, unknown, DefaultT>({
-        responseTransformer: getBattlesByBattleIdFightersResponseTransformer,
         security: [
             {
                 scheme: 'bearer',
@@ -92,7 +91,6 @@ export const getBattlesByBattleIdFighters = <TComposable extends Composable = '$
  */
 export const postBattlesByBattleIdFighters = <TComposable extends Composable = '$fetch', DefaultT extends PostBattlesByBattleIdFightersResponse = PostBattlesByBattleIdFightersResponse>(options: Options<TComposable, PostBattlesByBattleIdFightersData, PostBattlesByBattleIdFightersResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostBattlesByBattleIdFightersResponse | DefaultT, unknown, DefaultT>({
-        responseTransformer: postBattlesByBattleIdFightersResponseTransformer,
         security: [
             {
                 scheme: 'bearer',
@@ -109,7 +107,6 @@ export const postBattlesByBattleIdFighters = <TComposable extends Composable = '
  */
 export const getBattlesByBattleIdFighterApplications = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesByBattleIdFighterApplicationsResponse = GetBattlesByBattleIdFighterApplicationsResponse>(options: Options<TComposable, GetBattlesByBattleIdFighterApplicationsData, GetBattlesByBattleIdFighterApplicationsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetBattlesByBattleIdFighterApplicationsResponse | DefaultT, unknown, DefaultT>({
-        responseTransformer: getBattlesByBattleIdFighterApplicationsResponseTransformer,
         security: [
             {
                 scheme: 'bearer',
@@ -126,7 +123,6 @@ export const getBattlesByBattleIdFighterApplications = <TComposable extends Comp
  */
 export const putBattlesByBattleIdFighterApplicationsByApplicationIdResponse = <TComposable extends Composable = '$fetch', DefaultT extends PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse = PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse>(options: Options<TComposable, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseData, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse | DefaultT, unknown, DefaultT>({
-        responseTransformer: putBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponseTransformer,
         security: [
             {
                 scheme: 'bearer',
@@ -820,7 +816,6 @@ export const getPartiesSelfUpdate = <TComposable extends Composable = '$fetch', 
  */
 export const postParties = <TComposable extends Composable = '$fetch', DefaultT extends PostPartiesResponse = PostPartiesResponse>(options: Options<TComposable, PostPartiesData, PostPartiesResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostPartiesResponse | DefaultT, unknown, DefaultT>({
-        responseTransformer: postPartiesResponseTransformer,
         security: [
             {
                 scheme: 'bearer',
@@ -841,7 +836,6 @@ export const postParties = <TComposable extends Composable = '$fetch', DefaultT 
  */
 export const putPartiesSelfStatus = <TComposable extends Composable = '$fetch', DefaultT extends PutPartiesSelfStatusResponse = PutPartiesSelfStatusResponse>(options: Options<TComposable, PutPartiesSelfStatusData, PutPartiesSelfStatusResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutPartiesSelfStatusResponse | DefaultT, unknown, DefaultT>({
-        responseTransformer: putPartiesSelfStatusResponseTransformer,
         security: [
             {
                 scheme: 'bearer',
@@ -971,7 +965,6 @@ export const patchSettings = <TComposable extends Composable = '$fetch', Default
  */
 export const getSettlements = <TComposable extends Composable = '$fetch', DefaultT extends GetSettlementsResponse = GetSettlementsResponse>(options: Options<TComposable, GetSettlementsData, GetSettlementsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetSettlementsResponse | DefaultT, unknown, DefaultT>({
-        responseTransformer: getSettlementsResponseTransformer,
         security: [
             {
                 scheme: 'bearer',
@@ -988,7 +981,6 @@ export const getSettlements = <TComposable extends Composable = '$fetch', Defaul
  */
 export const getSettlementsBySettlementId = <TComposable extends Composable = '$fetch', DefaultT extends GetSettlementsBySettlementIdResponse = GetSettlementsBySettlementIdResponse>(options: Options<TComposable, GetSettlementsBySettlementIdData, GetSettlementsBySettlementIdResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetSettlementsBySettlementIdResponse | DefaultT, unknown, DefaultT>({
-        responseTransformer: getSettlementsBySettlementIdResponseTransformer,
         security: [
             {
                 scheme: 'bearer',
@@ -1005,7 +997,6 @@ export const getSettlementsBySettlementId = <TComposable extends Composable = '$
  */
 export const postSettlementsBySettlementId = <TComposable extends Composable = '$fetch', DefaultT extends PostSettlementsBySettlementIdResponse = PostSettlementsBySettlementIdResponse>(options: Options<TComposable, PostSettlementsBySettlementIdData, PostSettlementsBySettlementIdResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostSettlementsBySettlementIdResponse | DefaultT, unknown, DefaultT>({
-        responseTransformer: postSettlementsBySettlementIdResponseTransformer,
         security: [
             {
                 scheme: 'bearer',
@@ -1081,7 +1072,6 @@ export const getSettlementsBySettlementIdShopItems = <TComposable extends Compos
  */
 export const getTerrains = <TComposable extends Composable = '$fetch', DefaultT extends GetTerrainsResponse = GetTerrainsResponse>(options: Options<TComposable, GetTerrainsData, GetTerrainsResponse, DefaultT>) => {
     return (options.client ?? client).get<TComposable, GetTerrainsResponse | DefaultT, unknown, DefaultT>({
-        responseTransformer: getTerrainsResponseTransformer,
         security: [
             {
                 scheme: 'bearer',
@@ -1098,7 +1088,6 @@ export const getTerrains = <TComposable extends Composable = '$fetch', DefaultT 
  */
 export const postTerrains = <TComposable extends Composable = '$fetch', DefaultT extends PostTerrainsResponse = PostTerrainsResponse>(options: Options<TComposable, PostTerrainsData, PostTerrainsResponse, DefaultT>) => {
     return (options.client ?? client).post<TComposable, PostTerrainsResponse | DefaultT, unknown, DefaultT>({
-        responseTransformer: postTerrainsResponseTransformer,
         security: [
             {
                 scheme: 'bearer',
@@ -1135,7 +1124,6 @@ export const deleteTerrainsById = <TComposable extends Composable = '$fetch', De
  */
 export const putTerrainsById = <TComposable extends Composable = '$fetch', DefaultT extends PutTerrainsByIdResponse = PutTerrainsByIdResponse>(options: Options<TComposable, PutTerrainsByIdData, PutTerrainsByIdResponse, DefaultT>) => {
     return (options.client ?? client).put<TComposable, PutTerrainsByIdResponse | DefaultT, unknown, DefaultT>({
-        responseTransformer: putTerrainsByIdResponseTransformer,
         security: [
             {
                 scheme: 'bearer',
