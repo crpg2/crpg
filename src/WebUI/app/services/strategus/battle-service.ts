@@ -1,12 +1,18 @@
 import {
   getBattles as _getBattles,
+  deleteBattlesByBattleIdMercenariesByMercenaryId,
+  deleteBattlesByBattleIdMercenaryApplications,
   getBattlesByBattleId,
   getBattlesByBattleIdFighterApplications,
   getBattlesByBattleIdFighters,
+  getBattlesByBattleIdMercenaries,
+  getBattlesByBattleIdMercenaryApplications,
+  postBattlesByBattleIdMercenaryApplications,
+  putBattlesByBattleIdMercenaryApplicationsByApplicationIdResponse,
 } from '#api/sdk.gen'
 
 import type { Region } from '~/models/region'
-import type { BattleFighter, BattleFighterApplicationStatus, BattlePhase } from '~/models/strategus/battle'
+import type { BattleFighter, BattleFighterApplicationStatus, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattlePhase } from '~/models/strategus/battle'
 
 export const getBattles = async (
   region: Region,
@@ -30,3 +36,32 @@ export const getBattleFighterApplications = async (
   battleId: number,
   statuses: BattleFighterApplicationStatus[],
 ) => (await getBattlesByBattleIdFighterApplications({ path: { battleId }, query: { 'status[]': statuses } })).data!
+
+export const getBattleMercenaryApplications = async (
+  battleId: number,
+  statuses: BattleMercenaryApplicationStatus[],
+) => (await getBattlesByBattleIdMercenaryApplications({ path: { battleId }, query: { 'status[]': statuses } })).data!
+
+export const applyToBattleAsMercenary = (
+  battleId: number,
+  payload: BattleMercenaryApplicationCreation,
+) => postBattlesByBattleIdMercenaryApplications({ path: { battleId }, body: payload })
+
+export const respondToBattleMercenaryApplication = (
+  battleId: number,
+  applicationId: number,
+  accept: boolean,
+) => putBattlesByBattleIdMercenaryApplicationsByApplicationIdResponse({ path: { battleId, applicationId }, body: { accept } })
+
+export const getBattleMercenaries = async (
+  battleId: number,
+) => (await getBattlesByBattleIdMercenaries({ path: { battleId } })).data!
+
+export const removeBattleMercenary = (
+  battleId: number,
+  mercenaryId: number,
+) => deleteBattlesByBattleIdMercenariesByMercenaryId({ path: { battleId, mercenaryId } })
+
+export const removeBattleMercenaryApplication = (
+  battleId: number,
+) => deleteBattlesByBattleIdMercenaryApplications({ path: { battleId } })

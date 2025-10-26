@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Text.Json.Serialization;
+using AutoMapper;
 using Crpg.Application.Battles.Models;
 using Crpg.Application.Characters.Models;
 using Crpg.Application.Common;
@@ -18,6 +19,7 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
 {
     public int UserId { get; init; }
     public int CharacterId { get; init; }
+    [JsonIgnore]
     public int BattleId { get; init; }
     public BattleSide Side { get; init; }
     public int Wage { get; init; }

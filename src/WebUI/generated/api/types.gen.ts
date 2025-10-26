@@ -55,7 +55,6 @@ export type AddSettlementItemCommand = {
 export type ApplyAsMercenaryToBattleCommand = {
     userId: number;
     characterId: number;
-    battleId: number;
     side: BattleSide;
     wage: number;
     note: string;
@@ -1033,8 +1032,6 @@ export type RespondToBattleFighterApplicationCommand = {
 };
 
 export type RespondToBattleMercenaryApplicationCommand = {
-    partyId: number;
-    mercenaryApplicationId: number;
     accept: boolean;
 };
 
