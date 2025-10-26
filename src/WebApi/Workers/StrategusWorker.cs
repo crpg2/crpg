@@ -17,7 +17,7 @@ public class StrategusWorker : BackgroundService
     private static readonly string InstrumentationVersion = AssemblyName.Version!.ToString();
     private static readonly ActivitySource ActivitySource = new(InstrumentationName, InstrumentationVersion);
     private static readonly ILogger Logger = LoggerFactory.CreateLogger<StrategusWorker>();
-    // private static readonly TimeSpan TickInterval = TimeSpan.FromMinutes(1);
+    // private static readonly TimeSpan TickInterval = TimeSpan.FromMinutes(1); // TODO: FIXME: To const
     private static readonly TimeSpan TickInterval = TimeSpan.FromSeconds(10);
 
     private static readonly Func<TimeSpan, IMediatorRequest>[] Behaviors =

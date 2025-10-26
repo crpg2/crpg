@@ -16,7 +16,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 {
     public TimeSpan DeltaTime { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<UpdatePartyPositionsCommand>
+    internal class Handler(ICrpgDbContext db, IStrategusMap strategusMap, IStrategusSpeedModel strategusSpeedModel) : IMediatorRequestHandler<UpdatePartyPositionsCommand>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdatePartyPositionsCommand>();
 
@@ -29,23 +29,16 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             PartyStatus.MovingToAttackSettlement,
         };
 
-        private static readonly PartyStatus[] UnattackableStatuses =
+        private static readonly PartyStatus[] UnattackablePartyStatuses =
         {
             PartyStatus.IdleInSettlement,
             PartyStatus.RecruitingInSettlement,
             PartyStatus.InBattle,
         };
 
-        private readonly ICrpgDbContext _db;
-        private readonly IStrategusMap _strategusMap;
-        private readonly IStrategusSpeedModel _strategusSpeedModel;
-
-        public Handler(ICrpgDbContext db, IStrategusMap strategusMap, IStrategusSpeedModel strategusSpeedModel)
-        {
-            _db = db;
-            _strategusMap = strategusMap;
-            _strategusSpeedModel = strategusSpeedModel;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IStrategusMap _strategusMap = strategusMap;
+        private readonly IStrategusSpeedModel _strategusSpeedModel = strategusSpeedModel;
 
         public async Task<Result> Handle(UpdatePartyPositionsCommand req, CancellationToken cancellationToken)
         {
@@ -134,7 +127,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                     return;
                 }
 
-                if (UnattackableStatuses.Contains(party.TargetedParty.Status))
+                if (UnattackablePartyStatuses.Contains(party.TargetedParty.Status))
                 {
                     return;
                 }
@@ -214,6 +207,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                             Side = BattleSide.Attacker,
                             Commander = true,
                         },
+                        // TODO: FIXME: if Settlement has an owner, then he must be the commander
                         new BattleFighter
                         {
                             Settlement = party.TargetedSettlement,

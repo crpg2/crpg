@@ -33,8 +33,14 @@ export type QuerySerializer = (
 
 type WithRefs<TData> = {
   [K in keyof TData]: NonNullable<TData[K]> extends object
-    ? WithRefs<NonNullable<TData[K]>> | Ref<NonNullable<TData[K]>>
-    : NonNullable<TData[K]> | Ref<NonNullable<TData[K]>>;
+    ?
+        | WithRefs<NonNullable<TData[K]>>
+        | Ref<NonNullable<TData[K]>>
+        | Extract<TData[K], null>
+    :
+        | NonNullable<TData[K]>
+        | Ref<NonNullable<TData[K]>>
+        | Extract<TData[K], null>;
 };
 
 // copied from Nuxt
@@ -70,15 +76,8 @@ export interface RequestOptions<
   Url extends string = string,
 > extends Config,
     WithRefs<{
-      /**
-       * Any body that you want to add to your request.
-       *
-       * {@link https://developer.mozilla.org/docs/Web/API/fetch#body}
-       */
-      body?: unknown;
       path?: FetchOptions<unknown>['query'];
       query?: FetchOptions<unknown>['query'];
-      rawBody?: unknown;
     }>,
     Pick<
       ServerSentEventsOptions<ResT>,
@@ -89,8 +88,15 @@ export interface RequestOptions<
       | 'sseMaxRetryDelay'
     > {
   asyncDataOptions?: AsyncDataOptions<ResT, ResT, KeysOf<ResT>, DefaultT>;
+  /**
+   * Any body that you want to add to your request.
+   *
+   * {@link https://developer.mozilla.org/docs/Web/API/fetch#body}
+   */
+  body?: NonNullable<unknown> | Ref<NonNullable<unknown>> | null;
   composable?: TComposable;
   key?: string;
+  rawBody?: NonNullable<unknown> | Ref<NonNullable<unknown>> | null;
   /**
    * Security mechanism(s) to use for the request.
    */
@@ -189,19 +195,7 @@ export type Options<
   RequestOptions<TComposable, ResT, DefaultT>,
   'body' | 'path' | 'query' | 'url'
 > &
-  WithRefs<Omit<TData, 'url'>>;
-
-export type OptionsLegacyParser<TData = unknown> = TData extends { body?: any }
-  ? TData extends { headers?: any }
-    ? OmitKeys<RequestOptions, 'body' | 'headers' | 'url'> & TData
-    : OmitKeys<RequestOptions, 'body' | 'url'> &
-        TData &
-        Pick<RequestOptions, 'headers'>
-  : TData extends { headers?: any }
-    ? OmitKeys<RequestOptions, 'headers' | 'url'> &
-        TData &
-        Pick<RequestOptions, 'body'>
-    : OmitKeys<RequestOptions, 'url'> & TData;
+  ([TData] extends [never] ? unknown : WithRefs<Omit<TData, 'url'>>);
 
 type FetchOptions<TData> = Omit<
   UseFetchOptions<TData, TData>,

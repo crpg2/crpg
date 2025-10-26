@@ -32,12 +32,13 @@ namespace Crpg.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.8")
+                .HasAnnotation("ProductVersion", "9.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "activity_log_type", new[] { "character_created", "character_deleted", "character_earned", "character_rating_reset", "character_respecialized", "character_retired", "character_rewarded", "chat_message_sent", "clan_application_accepted", "clan_application_created", "clan_application_declined", "clan_armory_add_item", "clan_armory_borrow_item", "clan_armory_remove_item", "clan_armory_return_item", "clan_created", "clan_deleted", "clan_member_kicked", "clan_member_leaved", "clan_member_role_edited", "item_bought", "item_broke", "item_reforged", "item_repaired", "item_returned", "item_sold", "item_upgraded", "server_joined", "team_hit", "team_hit_reported", "team_hit_reported_user_kicked", "user_created", "user_deleted", "user_renamed", "user_rewarded" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_fighter_application_status", new[] { "accepted", "declined", "pending" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_mercenary_application_status", new[] { "accepted", "declined", "pending" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_participant_type", new[] { "clan_member", "mercenary", "party" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_phase", new[] { "end", "hiring", "live", "preparation", "scheduled" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_side", new[] { "attacker", "defender" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "character_class", new[] { "archer", "cavalry", "crossbowman", "infantry", "mounted_archer", "peasant", "shock_infantry", "skirmisher" });
@@ -58,11 +59,57 @@ namespace Crpg.Persistence.Migrations
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "restriction_type", new[] { "all", "chat", "join" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "role", new[] { "admin", "game_admin", "moderator", "user" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "settlement_type", new[] { "castle", "town", "village" });
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "terrain_type", new[] { "barrier", "deep_water", "shallow_water", "sparse_forest", "thick_forest" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "terrain_type", new[] { "barrier", "deep_water", "plain", "shallow_water", "sparse_forest", "thick_forest" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "user_update_status", new[] { "completed", "started" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "weapon_class", new[] { "arrow", "banner", "bolt", "boulder", "bow", "cartridge", "crossbow", "dagger", "javelin", "large_shield", "low_grip_polearm", "mace", "musket", "one_handed_axe", "one_handed_polearm", "one_handed_sword", "pick", "pistol", "small_shield", "stone", "throwing_axe", "throwing_knife", "two_handed_axe", "two_handed_mace", "two_handed_polearm", "two_handed_sword", "undefined" });
             NpgsqlModelBuilderExtensions.HasPostgresExtension(modelBuilder, "postgis");
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("BattleParticipantStatistic", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Assists")
+                        .HasColumnType("integer")
+                        .HasColumnName("assists");
+
+                    b.Property<int>("BattleId")
+                        .HasColumnType("integer")
+                        .HasColumnName("battle_id");
+
+                    b.Property<int>("Deaths")
+                        .HasColumnType("integer")
+                        .HasColumnName("deaths");
+
+                    b.Property<int>("Kills")
+                        .HasColumnType("integer")
+                        .HasColumnName("kills");
+
+                    b.Property<int>("ParticipantId")
+                        .HasColumnType("integer")
+                        .HasColumnName("participant_id");
+
+                    b.Property<bool>("Participated")
+                        .HasColumnType("boolean")
+                        .HasColumnName("participated");
+
+                    b.HasKey("Id")
+                        .HasName("pk_battle_participant_statistic");
+
+                    b.HasIndex("BattleId")
+                        .HasDatabaseName("ix_battle_participant_statistic_battle_id");
+
+                    b.HasIndex("ParticipantId")
+                        .IsUnique()
+                        .HasDatabaseName("ix_battle_participant_statistic_participant_id");
+
+                    b.ToTable("battle_participant_statistic", (string)null);
+                });
 
             modelBuilder.Entity("Crpg.Domain.Entities.ActivityLogs.ActivityLog", b =>
                 {
@@ -179,9 +226,9 @@ namespace Crpg.Persistence.Migrations
                         .HasColumnType("boolean")
                         .HasColumnName("commander");
 
-                    b.Property<int>("MercenarySlots")
+                    b.Property<int>("ParticipantSlots")
                         .HasColumnType("integer")
-                        .HasColumnName("mercenary_slots");
+                        .HasColumnName("participant_slots");
 
                     b.Property<int?>("PartyId")
                         .HasColumnType("integer")
@@ -255,53 +302,6 @@ namespace Crpg.Persistence.Migrations
                     b.ToTable("battle_fighter_applications", (string)null);
                 });
 
-            modelBuilder.Entity("Crpg.Domain.Entities.Battles.BattleMercenary", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ApplicationId")
-                        .HasColumnType("integer")
-                        .HasColumnName("application_id");
-
-                    b.Property<int>("BattleId")
-                        .HasColumnType("integer")
-                        .HasColumnName("battle_id");
-
-                    b.Property<int>("CaptainFighterId")
-                        .HasColumnType("integer")
-                        .HasColumnName("captain_fighter_id");
-
-                    b.Property<int>("CharacterId")
-                        .HasColumnType("integer")
-                        .HasColumnName("character_id");
-
-                    b.Property<BattleSide>("Side")
-                        .HasColumnType("battle_side")
-                        .HasColumnName("side");
-
-                    b.HasKey("Id")
-                        .HasName("pk_battle_mercenaries");
-
-                    b.HasIndex("ApplicationId")
-                        .HasDatabaseName("ix_battle_mercenaries_application_id");
-
-                    b.HasIndex("BattleId")
-                        .HasDatabaseName("ix_battle_mercenaries_battle_id");
-
-                    b.HasIndex("CaptainFighterId")
-                        .HasDatabaseName("ix_battle_mercenaries_captain_fighter_id");
-
-                    b.HasIndex("CharacterId")
-                        .HasDatabaseName("ix_battle_mercenaries_character_id");
-
-                    b.ToTable("battle_mercenaries", (string)null);
-                });
-
             modelBuilder.Entity("Crpg.Domain.Entities.Battles.BattleMercenaryApplication", b =>
                 {
                     b.Property<int>("Id")
@@ -354,6 +354,97 @@ namespace Crpg.Persistence.Migrations
                         .HasDatabaseName("ix_battle_mercenary_applications_character_id");
 
                     b.ToTable("battle_mercenary_applications", (string)null);
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Battles.BattleParticipant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BattleId")
+                        .HasColumnType("integer")
+                        .HasColumnName("battle_id");
+
+                    b.Property<int>("CaptainFighterId")
+                        .HasColumnType("integer")
+                        .HasColumnName("captain_fighter_id");
+
+                    b.Property<int>("CharacterId")
+                        .HasColumnType("integer")
+                        .HasColumnName("character_id");
+
+                    b.Property<int?>("MercenaryApplicationId")
+                        .HasColumnType("integer")
+                        .HasColumnName("mercenary_application_id");
+
+                    b.Property<BattleSide>("Side")
+                        .HasColumnType("battle_side")
+                        .HasColumnName("side");
+
+                    b.Property<BattleParticipantType>("Type")
+                        .HasColumnType("battle_participant_type")
+                        .HasColumnName("type");
+
+                    b.HasKey("Id")
+                        .HasName("pk_battle_participants");
+
+                    b.HasIndex("BattleId")
+                        .HasDatabaseName("ix_battle_participants_battle_id");
+
+                    b.HasIndex("CaptainFighterId")
+                        .HasDatabaseName("ix_battle_participants_captain_fighter_id");
+
+                    b.HasIndex("CharacterId")
+                        .HasDatabaseName("ix_battle_participants_character_id");
+
+                    b.HasIndex("MercenaryApplicationId")
+                        .HasDatabaseName("ix_battle_participants_mercenary_application_id");
+
+                    b.ToTable("battle_participants", (string)null);
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Battles.BattleSideBriefing", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BattleId")
+                        .HasColumnType("integer")
+                        .HasColumnName("battle_id");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<string>("Note")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("note");
+
+                    b.Property<BattleSide>("Side")
+                        .HasColumnType("battle_side")
+                        .HasColumnName("side");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.HasKey("Id")
+                        .HasName("pk_battle_side_briefings");
+
+                    b.HasIndex("BattleId", "Side")
+                        .IsUnique()
+                        .HasDatabaseName("ix_battle_side_briefings_battle_id_side");
+
+                    b.ToTable("battle_side_briefings", (string)null);
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Characters.Character", b =>
@@ -1319,6 +1410,27 @@ namespace Crpg.Persistence.Migrations
                     b.ToTable("users", (string)null);
                 });
 
+            modelBuilder.Entity("BattleParticipantStatistic", b =>
+                {
+                    b.HasOne("Crpg.Domain.Entities.Battles.Battle", "Battle")
+                        .WithMany()
+                        .HasForeignKey("BattleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_battle_participant_statistic_battles_battle_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Battles.BattleParticipant", "Participant")
+                        .WithOne("Statistic")
+                        .HasForeignKey("BattleParticipantStatistic", "ParticipantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_battle_participant_statistic_battle_participants_participan");
+
+                    b.Navigation("Battle");
+
+                    b.Navigation("Participant");
+                });
+
             modelBuilder.Entity("Crpg.Domain.Entities.ActivityLogs.ActivityLog", b =>
                 {
                     b.HasOne("Crpg.Domain.Entities.Users.User", "User")
@@ -1388,45 +1500,6 @@ namespace Crpg.Persistence.Migrations
                     b.Navigation("Party");
                 });
 
-            modelBuilder.Entity("Crpg.Domain.Entities.Battles.BattleMercenary", b =>
-                {
-                    b.HasOne("Crpg.Domain.Entities.Battles.BattleMercenaryApplication", "Application")
-                        .WithMany()
-                        .HasForeignKey("ApplicationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_battle_mercenaries_battle_mercenary_applications_applicatio");
-
-                    b.HasOne("Crpg.Domain.Entities.Battles.Battle", "Battle")
-                        .WithMany("Mercenaries")
-                        .HasForeignKey("BattleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_battle_mercenaries_battles_battle_id");
-
-                    b.HasOne("Crpg.Domain.Entities.Battles.BattleFighter", "CaptainFighter")
-                        .WithMany()
-                        .HasForeignKey("CaptainFighterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_battle_mercenaries_battle_fighters_captain_fighter_id");
-
-                    b.HasOne("Crpg.Domain.Entities.Characters.Character", "Character")
-                        .WithMany()
-                        .HasForeignKey("CharacterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_battle_mercenaries_characters_character_id");
-
-                    b.Navigation("Application");
-
-                    b.Navigation("Battle");
-
-                    b.Navigation("CaptainFighter");
-
-                    b.Navigation("Character");
-                });
-
             modelBuilder.Entity("Crpg.Domain.Entities.Battles.BattleMercenaryApplication", b =>
                 {
                     b.HasOne("Crpg.Domain.Entities.Battles.Battle", "Battle")
@@ -1446,6 +1519,55 @@ namespace Crpg.Persistence.Migrations
                     b.Navigation("Battle");
 
                     b.Navigation("Character");
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Battles.BattleParticipant", b =>
+                {
+                    b.HasOne("Crpg.Domain.Entities.Battles.Battle", "Battle")
+                        .WithMany("Participants")
+                        .HasForeignKey("BattleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_battle_participants_battles_battle_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Battles.BattleFighter", "CaptainFighter")
+                        .WithMany()
+                        .HasForeignKey("CaptainFighterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_battle_participants_battle_fighters_captain_fighter_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Characters.Character", "Character")
+                        .WithMany()
+                        .HasForeignKey("CharacterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_battle_participants_characters_character_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Battles.BattleMercenaryApplication", "MercenaryApplication")
+                        .WithMany()
+                        .HasForeignKey("MercenaryApplicationId")
+                        .HasConstraintName("fk_battle_participants_battle_mercenary_applications_mercenary");
+
+                    b.Navigation("Battle");
+
+                    b.Navigation("CaptainFighter");
+
+                    b.Navigation("Character");
+
+                    b.Navigation("MercenaryApplication");
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Battles.BattleSideBriefing", b =>
+                {
+                    b.HasOne("Crpg.Domain.Entities.Battles.Battle", "Battle")
+                        .WithMany("SideBriefings")
+                        .HasForeignKey("BattleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_battle_side_briefings_battles_battle_id");
+
+                    b.Navigation("Battle");
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Characters.Character", b =>
@@ -2356,9 +2478,16 @@ namespace Crpg.Persistence.Migrations
 
                     b.Navigation("Fighters");
 
-                    b.Navigation("Mercenaries");
-
                     b.Navigation("MercenaryApplications");
+
+                    b.Navigation("Participants");
+
+                    b.Navigation("SideBriefings");
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Battles.BattleParticipant", b =>
+                {
+                    b.Navigation("Statistic");
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Characters.Character", b =>

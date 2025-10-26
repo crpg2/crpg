@@ -13,12 +13,13 @@ if (fallbackCharacterId.value) {
   await navigateTo({
     name: 'characters-id-inventory',
     params: { id: fallbackCharacterId.value },
+    replace: true,
   })
 }
 </script>
 
 <template>
-  <div class="flex min-h-[500px] items-center justify-center">
+  <div class="flex min-h-125 items-center justify-center">
     <div class="space-y-8">
       <UiDecorSeparator />
       <div class="text-center">

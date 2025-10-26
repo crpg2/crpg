@@ -46,6 +46,7 @@ public class CrpgDbContextFactory : IDesignTimeDbContextFactory<CrpgDbContext>
                         .MapEnum<SettlementType>()
                         .MapEnum<BattlePhase>()
                         .MapEnum<BattleSide>()
+                        .MapEnum<BattleParticipantType>()
                         .MapEnum<BattleFighterApplicationStatus>()
                         .MapEnum<BattleMercenaryApplicationStatus>()
                         .MapEnum<Region>()

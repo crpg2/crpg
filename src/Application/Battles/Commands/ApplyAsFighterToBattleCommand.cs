@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using Crpg.Application.Battles.Models;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
@@ -29,20 +28,13 @@ public record ApplyAsFighterToBattleCommand : IMediatorRequest<BattleFighterAppl
         }
     }
 
-    internal class Handler : IMediatorRequestHandler<ApplyAsFighterToBattleCommand, BattleFighterApplicationViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap) : IMediatorRequestHandler<ApplyAsFighterToBattleCommand, BattleFighterApplicationViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<BuySettlementItemCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly IStrategusMap _strategusMap;
-
-        public Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap)
-        {
-            _db = db;
-            _mapper = mapper;
-            _strategusMap = strategusMap;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly IStrategusMap _strategusMap = strategusMap;
 
         public async Task<Result<BattleFighterApplicationViewModel>> Handle(
             ApplyAsFighterToBattleCommand req,

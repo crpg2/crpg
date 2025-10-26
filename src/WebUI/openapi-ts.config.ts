@@ -1,10 +1,9 @@
 import type { OpenApiSchemaObject } from '@hey-api/openapi-ts'
 
 import { defineConfig } from '@hey-api/openapi-ts'
-import { fileURLToPath } from 'node:url'
 
 export default defineConfig({
-  input: `https://localhost:8000/swagger/v1/swagger.json`, // dev only
+  input: 'https://localhost:8000/swagger/v1/swagger.json',
   output: 'generated/api',
   plugins: [
     {
@@ -22,7 +21,7 @@ export default defineConfig({
     },
     {
       name: '@hey-api/client-nuxt',
-      runtimeConfigPath: fileURLToPath(new URL('app/api.config.ts', import.meta.url)),
+      runtimeConfigPath: '../../app/api.config',
     },
   ],
   parser: {
@@ -59,24 +58,28 @@ export default defineConfig({
         },
         ItemMountComponentViewModel: (schema) => {
           // @ts-expect-error ///
-          schema.properties.familyType.enum = [0, 1, 2, 3] // Undefined: 0, Horse: 1, Camel: 2, EBA: 3
+          schema.properties.familyType.enum = [
+            0, // Undefined
+            1, // Horse
+            2, // Camel
+            3, // EBA
+          ]
           // @ts-expect-error ///
           schema.properties.familyType.type = 'integer'
         },
         ItemArmorComponentViewModel: (schema) => {
           // @ts-expect-error ///
-          schema.properties.familyType.enum = [0, 1, 2, 3] // Undefined: 0, Horse: 1, Camel: 2, EBA: 3
+          schema.properties.familyType.enum = [
+            0, // Undefined
+            1, // Horse
+            2, // Camel
+            3, // EBA
+
+          ]
           // @ts-expect-error ///
           schema.properties.familyType.type = 'integer'
         },
       },
-      // TODO:
-      // parameters: {
-      //   // from: convertDateTimeToString,
-      //   region: (parameter) => {
-      //     // parameter.schema.type = 'integer'
-      //   },
-      // },
     },
   },
 })

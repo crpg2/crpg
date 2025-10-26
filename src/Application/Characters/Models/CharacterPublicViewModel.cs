@@ -7,6 +7,5 @@ public record CharacterPublicViewModel : IMapFrom<Character>
 {
     public int Id { get; init; }
     public int Level { get; init; }
-    public string Name { get; init; } = string.Empty;
     public CharacterClass Class { get; init; }
 }

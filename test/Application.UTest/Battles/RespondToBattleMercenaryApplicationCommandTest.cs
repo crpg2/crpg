@@ -16,7 +16,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
     [Test]
     public async Task ShouldReturnErrorIfPartyIsNotFound()
     {
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICharacterClassResolver>());
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = 99,
@@ -35,7 +35,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         ArrangeDb.Parties.Add(party);
         await ArrangeDb.SaveChangesAsync();
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICharacterClassResolver>());
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -69,7 +69,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         ArrangeDb.BattleMercenaryApplications.Add(application);
         await ArrangeDb.SaveChangesAsync();
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICharacterClassResolver>());
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -112,7 +112,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         ArrangeDb.BattleMercenaryApplications.Add(application);
         await ArrangeDb.SaveChangesAsync();
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICharacterClassResolver>());
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -158,7 +158,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         ArrangeDb.BattleMercenaryApplications.Add(application);
         await ArrangeDb.SaveChangesAsync();
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICharacterClassResolver>());
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -202,7 +202,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         ArrangeDb.BattleMercenaryApplications.Add(application);
         await ArrangeDb.SaveChangesAsync();
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICharacterClassResolver>());
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -212,6 +212,49 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
 
         Assert.That(res.Errors, Is.Not.Null);
         Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.ApplicationClosed));
+    }
+
+    [Test]
+    public async Task ShouldReturnErrorIfBattleParticipantSlotsExceeded()
+    {
+        Party party = new() { User = new User() };
+        ArrangeDb.Parties.Add(party);
+
+        Battle battle = new()
+        {
+            Phase = BattlePhase.Hiring,
+            Fighters =
+            {
+                new BattleFighter
+                {
+                    Side = BattleSide.Attacker,
+                    Commander = false,
+                    Party = party,
+                },
+            },
+        };
+        ArrangeDb.Battles.Add(battle);
+
+        BattleMercenaryApplication application = new()
+        {
+            Side = BattleSide.Attacker,
+            Status = BattleMercenaryApplicationStatus.Pending,
+            Battle = battle,
+            Character = new Character { User = new User() },
+        };
+        ArrangeDb.BattleMercenaryApplications.Add(application);
+        await ArrangeDb.SaveChangesAsync();
+
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
+        var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
+        {
+            PartyId = party.Id,
+            MercenaryApplicationId = application.Id,
+            Accept = true,
+        }, CancellationToken.None);
+
+        Assert.That(res.Errors, Is.Not.Null);
+        Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.BattleParticipantSlotsExceeded));
     }
 
     [Test]
@@ -245,7 +288,10 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         ArrangeDb.BattleMercenaryApplications.Add(application);
         await ArrangeDb.SaveChangesAsync();
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICharacterClassResolver>());
+        Mock<IBattleService> battleService = new();
+        battleService.Setup(bs => bs.CalculateTotalParticipantSlots(It.IsAny<Battle>(), It.IsAny<BattleSide>())).Returns(0);
+
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, battleService.Object);
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -258,7 +304,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         Assert.That(applicationVm.Id, Is.EqualTo(application.Id));
         Assert.That(applicationVm.Status, Is.EqualTo(BattleMercenaryApplicationStatus.Declined));
 
-        Assert.That(await AssertDb.BattleMercenaries.CountAsync(), Is.EqualTo(0));
+        Assert.That(await AssertDb.BattleParticipants.CountAsync(), Is.EqualTo(0));
     }
 
     [Test]
@@ -296,7 +342,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
             Character = applyingUser.Characters[0],
         };
         BattleMercenaryApplication[] otherApplications =
-        {
+        [
             new() // Should get deleted.
             {
                 Status = BattleMercenaryApplicationStatus.Pending,
@@ -321,18 +367,21 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
                 Battle = battle,
                 Character = applyingUser.Characters[1],
             },
-            new() // Should stay.
+            new() // Should get deleted.
             {
                 Status = BattleMercenaryApplicationStatus.Pending,
                 Battle = battle,
                 Character = new Character { User = new User() },
             },
-        };
+        ];
         ArrangeDb.BattleMercenaryApplications.Add(application);
         ArrangeDb.BattleMercenaryApplications.AddRange(otherApplications);
         await ArrangeDb.SaveChangesAsync();
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICharacterClassResolver>());
+        Mock<IBattleService> battleService = new();
+        battleService.Setup(bs => bs.CalculateTotalParticipantSlots(It.IsAny<Battle>(), It.IsAny<BattleSide>())).Returns(114);
+
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, battleService.Object);
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -345,7 +394,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         Assert.That(applicationVm.Id, Is.EqualTo(application.Id));
         Assert.That(applicationVm.Status, Is.EqualTo(BattleMercenaryApplicationStatus.Accepted));
 
-        Assert.That(await AssertDb.BattleMercenaries.CountAsync(), Is.EqualTo(1));
+        Assert.That(await AssertDb.BattleParticipants.CountAsync(), Is.EqualTo(1));
         Assert.That(await AssertDb.BattleMercenaryApplications.CountAsync(), Is.EqualTo(4));
     }
 }

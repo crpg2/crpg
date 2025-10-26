@@ -1,5 +1,11 @@
 <script setup lang="ts">
-defineProps<{ title?: string }>()
+import type { Variant } from '~/components/ui/text/TextView.vue'
+
+const { tag = 'h1', variant = 'h1' } = defineProps<{
+  title?: string
+  tag?: string
+  variant?: Variant
+}>()
 </script>
 
 <template>
@@ -22,7 +28,7 @@ defineProps<{ title?: string }>()
       />
 
       <slot>
-        <UiTextView v-if="title" tag="h1" variant="h1" class="text-center">
+        <UiTextView v-if="title" :tag :variant class="text-center">
           {{ title }}
         </UiTextView>
       </slot>

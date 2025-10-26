@@ -23,7 +23,7 @@ import type {
   UserRestrictionPublic,
 } from '~/models/user'
 
-export const getUser = async (): Promise<User> => (await getUsersSelf({ })).data
+export const getUser = async (): Promise<User> => (await getUsersSelf({ })).data!
 
 export const mapUserToUserPublic = (user: User): UserPublic =>
   pick(user, ['id', 'platform', 'platformUserId', 'name', 'region', 'avatar', 'clanMembership'])
@@ -42,9 +42,9 @@ export const upgradeUserItem = (userItemId: number) => putUsersSelfItemsByIdUpgr
 
 export const reforgeUserItem = (userItemId: number) => putUsersSelfItemsByIdReforge({ path: { id: userItemId } })
 
-export const getUserRestriction = async (): Promise<UserRestrictionPublic> => (await getUsersSelfRestriction({ })).data
+export const getUserRestriction = async (): Promise<UserRestrictionPublic> => (await getUsersSelfRestriction({ })).data!
 
-export const getUserNotifications = async () => (await getUsersSelfNotifications({})).data
+export const getUserNotifications = async () => (await getUsersSelfNotifications({})).data!
 
 export const readUserNotification = (id: number) => putUsersSelfNotificationsById({ path: { id } })
 

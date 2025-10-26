@@ -15,27 +15,21 @@ public record UpdateBattlePhasesCommand : IMediatorRequest
 {
     public TimeSpan DeltaTime { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<UpdateBattlePhasesCommand>
+    internal class Handler(
+        ICrpgDbContext db,
+        IBattleParticipantDistributionModel battleParticipantDistributionModel,
+        IBattleScheduler battleScheduler,
+        IDateTime dateTime,
+        Constants constants) : IMediatorRequestHandler<UpdateBattlePhasesCommand>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdateBattlePhasesCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IBattleMercenaryDistributionModel _battleMercenaryDistributionModel;
-        private readonly IBattleScheduler _battleScheduler;
-        private readonly IDateTime _dateTime;
-        private readonly TimeSpan _battleInitiationDuration;
-        private readonly TimeSpan _battleHiringDuration;
-
-        public Handler(ICrpgDbContext db, IBattleMercenaryDistributionModel battleMercenaryDistributionModel,
-            IBattleScheduler battleScheduler, IDateTime dateTime, Constants constants)
-        {
-            _db = db;
-            _battleMercenaryDistributionModel = battleMercenaryDistributionModel;
-            _battleScheduler = battleScheduler;
-            _dateTime = dateTime;
-            _battleInitiationDuration = TimeSpan.FromHours(constants.StrategusBattleInitiationDurationHours);
-            _battleHiringDuration = TimeSpan.FromHours(constants.StrategusBattleHiringDurationHours);
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IBattleParticipantDistributionModel _battleParticipantDistributionModel = battleParticipantDistributionModel;
+        private readonly IBattleScheduler _battleScheduler = battleScheduler;
+        private readonly IDateTime _dateTime = dateTime;
+        private readonly TimeSpan _battleInitiationDuration = TimeSpan.FromHours(constants.StrategusBattleInitiationDurationHours);
+        private readonly TimeSpan _battleHiringDuration = TimeSpan.FromHours(constants.StrategusBattleHiringDurationHours);
 
         public async Task<Result> Handle(UpdateBattlePhasesCommand req, CancellationToken cancellationToken)
         {
@@ -45,6 +39,9 @@ public record UpdateBattlePhasesCommand : IMediatorRequest
                 .Include(b => b.Fighters).ThenInclude(f => f.Settlement)
                 .Where(b =>
                     (b.Phase == BattlePhase.Preparation && b.CreatedAt + _battleInitiationDuration < _dateTime.UtcNow)
+                    //
+                    //
+                    //
                     || (b.Phase == BattlePhase.Hiring && b.CreatedAt + _battleInitiationDuration + _battleHiringDuration < _dateTime.UtcNow)
                     || (b.Phase == BattlePhase.Scheduled && b.ScheduledFor < _dateTime.UtcNow))
                 .AsAsyncEnumerable();
@@ -56,14 +53,29 @@ public record UpdateBattlePhasesCommand : IMediatorRequest
                 {
                     case BattlePhase.Preparation:
                         int battleSlots = 100; // TODO: make it depend on the number of troops.
-                        _battleMercenaryDistributionModel.DistributeMercenaries(battle.Fighters, battleSlots);
+                        _battleParticipantDistributionModel.DistributeParticipants(battle.Fighters, battleSlots);
+                        var fighterApplications = battle.FighterApplications.Where(ma => ma.Status == BattleFighterApplicationStatus.Pending).ToArray();
+                        foreach (BattleFighterApplication application in fighterApplications)
+                        {
+                            application.Status = BattleFighterApplicationStatus.Declined;
+                        }
+
+                        // TODO: The start time, at least approximate, should be available at the Hiring stage.
                         battle.Phase = BattlePhase.Hiring;
                         break;
                     case BattlePhase.Hiring:
                         await _battleScheduler.ScheduleBattle(battle);
+
+                        var applications = battle.MercenaryApplications.Where(ma => ma.Status == BattleMercenaryApplicationStatus.Pending).ToArray();
+                        foreach (BattleMercenaryApplication application in applications)
+                        {
+                            application.Status = BattleMercenaryApplicationStatus.Declined;
+                        }
+
                         battle.Phase = BattlePhase.Scheduled;
                         break;
                     case BattlePhase.Scheduled:
+                        // TODO: startup game server...
                         battle.Phase = BattlePhase.Live;
                         break;
                 }

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { RouteLocationRaw } from 'vue-router'
 
-defineProps<{
+const { decorated = false } = defineProps<{
   title: string
+  decorated?: boolean
   backTo?: RouteLocationRaw
 }>()
 </script>
@@ -13,7 +14,10 @@ defineProps<{
       <AppBackButton v-if="backTo" :to="backTo" />
     </div>
 
+    <UiHeading v-if="decorated" :title="title" />
+
     <UiTextView
+      v-else
       variant="h1"
       tag="h1"
       class="text-center"

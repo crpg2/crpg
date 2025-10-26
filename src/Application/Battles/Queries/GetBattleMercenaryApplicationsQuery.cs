@@ -1,11 +1,9 @@
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Crpg.Application.Battles.Models;
-using Crpg.Application.Characters.Models;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
-using Crpg.Application.Common.Services;
-using Crpg.Application.Users.Models;
 using Crpg.Domain.Entities.Battles;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
@@ -26,58 +24,46 @@ public record GetBattleMercenaryApplicationsQuery : IMediatorRequest<IList<Battl
         }
     }
 
-    internal class Handler : IMediatorRequestHandler<GetBattleMercenaryApplicationsQuery, IList<BattleMercenaryApplicationViewModel>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<GetBattleMercenaryApplicationsQuery, IList<BattleMercenaryApplicationViewModel>>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly ICharacterClassResolver _characterClassResolver;
-
-        public Handler(ICrpgDbContext db, IMapper mapper, ICharacterClassResolver characterClassResolver)
-        {
-            _db = db;
-            _mapper = mapper;
-            _characterClassResolver = characterClassResolver;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
         public async Task<Result<IList<BattleMercenaryApplicationViewModel>>> Handle(GetBattleMercenaryApplicationsQuery req, CancellationToken cancellationToken)
         {
-            var battle = await _db.Battles
-                .AsSplitQuery()
-                .Include(b => b.Fighters.Where(f => f.PartyId == req.UserId))
-                .Include(b => b.MercenaryApplications.Where(a => req.Statuses.Contains(a.Status)))
-                .ThenInclude(m => m.Character!.User)
-                .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
-            if (battle == null)
+            var battleInfo = await _db.Battles
+                .Where(b => b.Id == req.BattleId)
+                .Select(b => new { b.Id, b.Phase, })
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (battleInfo == null)
             {
                 return new(CommonErrors.BattleNotFound(req.BattleId));
             }
 
             // Mercenaries can only apply during the Hiring phase so return an error for preceding phases.
-            if (battle.Phase == BattlePhase.Preparation)
+            if (battleInfo.Phase == BattlePhase.Preparation)
             {
-                return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
+                return new(CommonErrors.BattleInvalidPhase(req.BattleId, battleInfo.Phase));
             }
 
-            BattleFighter? fighter = battle.Fighters.FirstOrDefault();
-            // If the user is not a fighter of that battle, only return its applications, else return the mercenary
-            // applications from the same side as the user.
-            var applications = battle.MercenaryApplications
-                .Where(a => a.Character!.UserId == req.UserId || (fighter != null && a.Side == fighter.Side))
-                .Select(m => new BattleMercenaryApplicationViewModel
-                {
-                    Id = m.Id,
-                    User = _mapper.Map<UserPublicViewModel>(m.Character!.User),
-                    Character = new CharacterPublicViewModel
-                    {
-                        Id = m.Character.Id,
-                        Level = m.Character.Level,
-                        Class = m.Character.Class,
-                    },
-                    Wage = m.Wage,
-                    Note = m.Note,
-                    Side = m.Side,
-                    Status = m.Status,
-                }).ToArray();
+            BattleSide? fightersSide = await _db.BattleFighters
+                .Where(f => f.BattleId == req.BattleId && f.PartyId == req.UserId)
+                .Select(f => (BattleSide?)f.Side)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            var applications = await _db.BattleMercenaryApplications
+                .Where(a =>
+                    a.BattleId == req.BattleId &&
+                    req.Statuses.Contains(a.Status) &&
+                    (
+                        // If the user is not a fighter of that battle, only return its applications, else return the mercenary
+                        // applications from the same side as the user.
+                        a.Character!.UserId == req.UserId ||
+                        (fightersSide != null && a.Side == fightersSide)))
+                .OrderByDescending(a => a.CreatedAt)
+                .ProjectTo<BattleMercenaryApplicationViewModel>(_mapper.ConfigurationProvider)
+                .ToArrayAsync(cancellationToken);
 
             return new(applications);
         }

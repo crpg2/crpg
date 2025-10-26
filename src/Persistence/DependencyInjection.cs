@@ -60,6 +60,7 @@ public static class DependencyInjection
                                 .MapEnum<SettlementType>()
                                 .MapEnum<BattlePhase>()
                                 .MapEnum<BattleSide>()
+                                .MapEnum<BattleParticipantType>()
                                 .MapEnum<BattleFighterApplicationStatus>()
                                 .MapEnum<BattleMercenaryApplicationStatus>()
                                 .MapEnum<Region>()

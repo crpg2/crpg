@@ -137,17 +137,17 @@ export const retireCharacter = (
 
 export const getCharacterCharacteristics = async (
   characterId: number,
-): Promise<CharacterCharacteristics> => (await getUsersSelfCharactersByIdCharacteristics({ path: { id: characterId } })).data
+): Promise<CharacterCharacteristics> => (await getUsersSelfCharactersByIdCharacteristics({ path: { id: characterId } })).data!
 
 export const convertCharacterCharacteristics = async (
   characterId: number,
   conversion: CharacteristicConversion,
-): Promise<CharacterCharacteristics> => (await putUsersSelfCharactersByIdCharacteristicsConvert({ path: { id: characterId }, body: { conversion } })).data
+): Promise<CharacterCharacteristics> => (await putUsersSelfCharactersByIdCharacteristicsConvert({ path: { id: characterId }, body: { conversion } })).data!
 
 export const updateCharacterCharacteristics = async (
   characterId: number,
   req: CharacterCharacteristics,
-) => (await putUsersSelfCharactersByIdCharacteristics({ path: { id: characterId }, body: req })).data
+): Promise<CharacterCharacteristics> => (await putUsersSelfCharactersByIdCharacteristics({ path: { id: characterId }, body: req })).data!
 
 export const getCharacterStatistics = async (
   characterId: number,
@@ -174,7 +174,7 @@ export const getCharacterLimitations = async (
   characterId: number,
 ): Promise<CharacterLimitations> => {
   const { data } = await getUsersSelfCharactersByIdLimitations({ path: { id: characterId } })
-  return data
+  return data!
 }
 
 export interface CharacterEarnedMetadata {
@@ -620,9 +620,7 @@ export const getCharacterItems = async (
 export const updateCharacterItems = async (
   characterId: number,
   items: EquippedItemId[],
-): Promise<EquippedItem[]> =>
-  // @ts-expect-error TODO: FIXME:
-  (await putUsersSelfCharactersByIdItems({ path: { id: characterId }, body: { items } })).data!
+): Promise<EquippedItem[]> => (await putUsersSelfCharactersByIdItems({ path: { id: characterId }, body: { items } })).data!
 
 export const computeOverallPrice = (
   items: Item[],

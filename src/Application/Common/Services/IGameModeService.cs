@@ -20,6 +20,7 @@ internal class GameModeService : IGameModeService
         { GameModeAlias.Z, GameMode.CRPGUnknownGameMode },
         { GameModeAlias.G, GameMode.CRPGCaptain },
     };
+
     public GameMode GameModeByInstanceAlias(GameModeAlias alias)
     {
         return gameModeByInstanceAlias[alias];

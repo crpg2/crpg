@@ -29,5 +29,5 @@ export const getActivityLogs = async (
       'userId[]': userIds,
     },
   })
-  return data
+  return data!
 }
