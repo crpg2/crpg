@@ -38,7 +38,7 @@ export type ActivityLogWithDictViewModel = {
 
 export type ActivityLogWithDictViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: ActivityLogWithDictViewModel;
+    data: ActivityLogWithDictViewModel | null;
 };
 
 export type AddItemToClanArmoryCommand = {
@@ -55,7 +55,6 @@ export type AddSettlementItemCommand = {
 export type ApplyAsMercenaryToBattleCommand = {
     userId: number;
     characterId: number;
-    battleId: number;
     side: BattleSide;
     wage: number;
     note: string;
@@ -66,13 +65,15 @@ export type ArmorMaterialType = 'Undefined' | 'Cloth' | 'Leather' | 'Chainmail' 
 export type BattleDetailedViewModel = {
     id: number;
     region: Region;
-    position: Point;
+    position: GeoJsonPoint;
     phase: BattlePhase;
+    type: BattleType;
     attacker: BattleFighterViewModel;
     attackerTotalTroops: number;
-    defender: BattleFighterViewModel;
+    defender: BattleFighterViewModel | null;
     defenderTotalTroops: number;
     createdAt: Date;
+    scheduledFor: Date | null;
 };
 
 export type BattleDetailedViewModelIListResult = {
@@ -80,11 +81,16 @@ export type BattleDetailedViewModelIListResult = {
     data: Array<BattleDetailedViewModel> | null;
 };
 
+export type BattleDetailedViewModelResult = {
+    readonly errors: Array<_Error> | null;
+    data: BattleDetailedViewModel | null;
+};
+
 export type BattleFighterApplicationStatus = 'Pending' | 'Declined' | 'Accepted';
 
 export type BattleFighterApplicationViewModel = {
     id: number;
-    party: PartyVisibleViewModel;
+    party: PartyVisibleViewModel | null;
     side: BattleSide;
     status: BattleFighterApplicationStatus;
 };
@@ -96,15 +102,16 @@ export type BattleFighterApplicationViewModelIListResult = {
 
 export type BattleFighterApplicationViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: BattleFighterApplicationViewModel;
+    data: BattleFighterApplicationViewModel | null;
 };
 
 export type BattleFighterViewModel = {
     id: number;
-    party: PartyPublicViewModel;
-    settlement: SettlementPublicViewModel;
+    party: PartyPublicViewModel | null;
+    settlement: SettlementPublicViewModel | null;
     side: BattleSide;
     commander: boolean;
+    mercenarySlots: number;
 };
 
 export type BattleFighterViewModelIListResult = {
@@ -131,7 +138,7 @@ export type BattleMercenaryApplicationViewModelIListResult = {
 
 export type BattleMercenaryApplicationViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: BattleMercenaryApplicationViewModel;
+    data: BattleMercenaryApplicationViewModel | null;
 };
 
 export type BattleMercenaryViewModel = {
@@ -150,17 +157,15 @@ export type BattlePhase = 'Preparation' | 'Hiring' | 'Scheduled' | 'Live' | 'End
 
 export type BattleSide = 'Attacker' | 'Defender';
 
+export type BattleType = 'Battle' | 'Siege';
+
 export type BattleViewModel = {
     id: number;
     region: Region;
-    position: Point;
+    position: GeoJsonPoint;
     phase: BattlePhase;
+    type: BattleType;
     createdAt: Date;
-};
-
-export type BattleViewModelResult = {
-    readonly errors: Array<_Error> | null;
-    data: BattleViewModel;
 };
 
 export type BuyItemCommand = {
@@ -190,7 +195,7 @@ export type CharacterCharacteristicsViewModel = {
 
 export type CharacterCharacteristicsViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: CharacterCharacteristicsViewModel;
+    data: CharacterCharacteristicsViewModel | null;
 };
 
 export type CharacterClass = 'Peasant' | 'Infantry' | 'ShockInfantry' | 'Skirmisher' | 'Crossbowman' | 'Archer' | 'Cavalry' | 'MountedArcher';
@@ -201,7 +206,7 @@ export type CharacterLimitationsViewModel = {
 
 export type CharacterLimitationsViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: CharacterLimitationsViewModel;
+    data: CharacterLimitationsViewModel | null;
 };
 
 export type CharacterPublicCompetitiveViewModel = {
@@ -270,7 +275,7 @@ export type CharacterViewModelIListResult = {
 
 export type CharacterViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: CharacterViewModel;
+    data: CharacterViewModel | null;
 };
 
 export type CharacterWeaponProficienciesViewModel = {
@@ -290,7 +295,7 @@ export type ClanArmoryBorrowedItemViewModel = {
 
 export type ClanArmoryBorrowedItemViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: ClanArmoryBorrowedItemViewModel;
+    data: ClanArmoryBorrowedItemViewModel | null;
 };
 
 export type ClanArmoryItemViewModel = {
@@ -307,7 +312,7 @@ export type ClanArmoryItemViewModelIListResult = {
 
 export type ClanArmoryItemViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: ClanArmoryItemViewModel;
+    data: ClanArmoryItemViewModel | null;
 };
 
 export type ClanInvitationStatus = 'Pending' | 'Declined' | 'Accepted';
@@ -329,7 +334,7 @@ export type ClanInvitationViewModelIListResult = {
 
 export type ClanInvitationViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: ClanInvitationViewModel;
+    data: ClanInvitationViewModel | null;
 };
 
 export type ClanMemberRole = 'Member' | 'Officer' | 'Leader';
@@ -346,7 +351,7 @@ export type ClanMemberViewModelIListResult = {
 
 export type ClanMemberViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: ClanMemberViewModel;
+    data: ClanMemberViewModel | null;
 };
 
 export type ClanPublicViewModel = {
@@ -376,7 +381,7 @@ export type ClanViewModel = {
 
 export type ClanViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: ClanViewModel;
+    data: ClanViewModel | null;
 };
 
 export type ClanWithMemberCountViewModel = {
@@ -391,37 +396,6 @@ export type ClanWithMemberCountViewModelIListResult = {
 
 export type ConvertCharacterCharacteristicsCommand = {
     conversion: CharacterCharacteristicConversion;
-};
-
-export type Coordinate = {
-    x: number;
-    y: number;
-    z: number;
-    m: number;
-    coordinateValue: Coordinate;
-    readonly isValid: boolean;
-};
-
-export type CoordinateEqualityComparer = {
-    [key: string]: never;
-};
-
-export type CoordinateSequence = {
-    readonly dimension: number;
-    readonly measures: number;
-    readonly spatial: number;
-    ordinates: Ordinates;
-    readonly hasZ: boolean;
-    readonly hasM: boolean;
-    readonly zOrdinateIndex: number;
-    readonly mOrdinateIndex: number;
-    first: Coordinate;
-    last: Coordinate;
-    readonly count: number;
-};
-
-export type CoordinateSequenceFactory = {
-    ordinates: Ordinates;
 };
 
 export type CreateClanCommand = {
@@ -443,14 +417,12 @@ export type CreatePartyCommand = {
 
 export type CreateTerrainCommand = {
     type: TerrainType;
-    boundary: Polygon;
+    boundary: GeoJsonPolygon;
 };
 
 export type Culture = 'Neutral' | 'Aserai' | 'Battania' | 'Empire' | 'Khuzait' | 'Looters' | 'Sturgia' | 'Vlandia';
 
 export type DamageType = 'Undefined' | 'Cut' | 'Pierce' | 'Blunt';
-
-export type Dimension = 'Point' | 'Curve' | 'Surface' | 'Collapse' | 'Dontcare' | 'True' | 'False';
 
 export type EditSettingsCommand = {
     discord?: string | null;
@@ -462,29 +434,10 @@ export type EditSettingsCommand = {
     happyHours?: string | null;
 };
 
-export type ElevationModel = {
-    extent: Envelope;
-};
-
 export type EnableItemCommand = {
     itemId: string;
     enable: boolean;
     userId: number;
-};
-
-export type Envelope = {
-    readonly isNull: boolean;
-    readonly width: number;
-    readonly height: number;
-    readonly diameter: number;
-    readonly minX: number;
-    readonly maxX: number;
-    readonly minY: number;
-    readonly maxY: number;
-    readonly area: number;
-    readonly minExtent: number;
-    readonly maxExtent: number;
-    centre: Coordinate;
 };
 
 export type EquippedItemIdViewModel = {
@@ -508,11 +461,11 @@ export type _Error = {
     code: ErrorCode;
     title?: string | null;
     detail?: string | null;
-    source: ErrorSource;
+    source?: ErrorSource | null;
     stackTrace?: string | null;
 };
 
-export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
+export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'MercenaryNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
 
 export type ErrorSource = {
     pointer?: string | null;
@@ -549,15 +502,15 @@ export type GameMode = 'CRPGBattle' | 'CRPGConquest' | 'CRPGDTV' | 'CRPGDuel' | 
 export type GameModeCharacterStatisticsViewModelDictionaryResult = {
     readonly errors: Array<_Error> | null;
     data: {
-        CRPGBattle: CharacterStatisticsViewModel;
-        CRPGConquest: CharacterStatisticsViewModel;
-        CRPGDTV: CharacterStatisticsViewModel;
-        CRPGDuel: CharacterStatisticsViewModel;
-        CRPGSiege: CharacterStatisticsViewModel;
-        CRPGTeamDeathmatch: CharacterStatisticsViewModel;
-        CRPGSkirmish: CharacterStatisticsViewModel;
-        CRPGUnknownGameMode: CharacterStatisticsViewModel;
-        CRPGCaptain: CharacterStatisticsViewModel;
+        CRPGBattle?: CharacterStatisticsViewModel;
+        CRPGConquest?: CharacterStatisticsViewModel;
+        CRPGDTV?: CharacterStatisticsViewModel;
+        CRPGDuel?: CharacterStatisticsViewModel;
+        CRPGSiege?: CharacterStatisticsViewModel;
+        CRPGTeamDeathmatch?: CharacterStatisticsViewModel;
+        CRPGSkirmish?: CharacterStatisticsViewModel;
+        CRPGUnknownGameMode?: CharacterStatisticsViewModel;
+        CRPGCaptain?: CharacterStatisticsViewModel;
     } | null;
 };
 
@@ -570,56 +523,56 @@ export type GameRepairedItem = {
 export type GameServerStats = {
     total: GameStats;
     regions: {
-        Eu: {
-            CRPGBattle: GameStats;
-            CRPGConquest: GameStats;
-            CRPGDTV: GameStats;
-            CRPGDuel: GameStats;
-            CRPGSiege: GameStats;
-            CRPGTeamDeathmatch: GameStats;
-            CRPGSkirmish: GameStats;
-            CRPGUnknownGameMode: GameStats;
-            CRPGCaptain: GameStats;
+        Eu?: {
+            CRPGBattle?: GameStats;
+            CRPGConquest?: GameStats;
+            CRPGDTV?: GameStats;
+            CRPGDuel?: GameStats;
+            CRPGSiege?: GameStats;
+            CRPGTeamDeathmatch?: GameStats;
+            CRPGSkirmish?: GameStats;
+            CRPGUnknownGameMode?: GameStats;
+            CRPGCaptain?: GameStats;
         };
-        Na: {
-            CRPGBattle: GameStats;
-            CRPGConquest: GameStats;
-            CRPGDTV: GameStats;
-            CRPGDuel: GameStats;
-            CRPGSiege: GameStats;
-            CRPGTeamDeathmatch: GameStats;
-            CRPGSkirmish: GameStats;
-            CRPGUnknownGameMode: GameStats;
-            CRPGCaptain: GameStats;
+        Na?: {
+            CRPGBattle?: GameStats;
+            CRPGConquest?: GameStats;
+            CRPGDTV?: GameStats;
+            CRPGDuel?: GameStats;
+            CRPGSiege?: GameStats;
+            CRPGTeamDeathmatch?: GameStats;
+            CRPGSkirmish?: GameStats;
+            CRPGUnknownGameMode?: GameStats;
+            CRPGCaptain?: GameStats;
         };
-        As: {
-            CRPGBattle: GameStats;
-            CRPGConquest: GameStats;
-            CRPGDTV: GameStats;
-            CRPGDuel: GameStats;
-            CRPGSiege: GameStats;
-            CRPGTeamDeathmatch: GameStats;
-            CRPGSkirmish: GameStats;
-            CRPGUnknownGameMode: GameStats;
-            CRPGCaptain: GameStats;
+        As?: {
+            CRPGBattle?: GameStats;
+            CRPGConquest?: GameStats;
+            CRPGDTV?: GameStats;
+            CRPGDuel?: GameStats;
+            CRPGSiege?: GameStats;
+            CRPGTeamDeathmatch?: GameStats;
+            CRPGSkirmish?: GameStats;
+            CRPGUnknownGameMode?: GameStats;
+            CRPGCaptain?: GameStats;
         };
-        Oc: {
-            CRPGBattle: GameStats;
-            CRPGConquest: GameStats;
-            CRPGDTV: GameStats;
-            CRPGDuel: GameStats;
-            CRPGSiege: GameStats;
-            CRPGTeamDeathmatch: GameStats;
-            CRPGSkirmish: GameStats;
-            CRPGUnknownGameMode: GameStats;
-            CRPGCaptain: GameStats;
+        Oc?: {
+            CRPGBattle?: GameStats;
+            CRPGConquest?: GameStats;
+            CRPGDTV?: GameStats;
+            CRPGDuel?: GameStats;
+            CRPGSiege?: GameStats;
+            CRPGTeamDeathmatch?: GameStats;
+            CRPGSkirmish?: GameStats;
+            CRPGUnknownGameMode?: GameStats;
+            CRPGCaptain?: GameStats;
         };
     };
 };
 
 export type GameServerStatsResult = {
     readonly errors: Array<_Error> | null;
-    data: GameServerStats;
+    data: GameServerStats | null;
 };
 
 export type GameStats = {
@@ -669,55 +622,36 @@ export type GameUserViewModel = {
     createdAt: Date;
     character: GameCharacterViewModel;
     restrictions: Array<RestrictionViewModel>;
-    clanMembership: GameClanMemberViewModel;
+    clanMembership: GameClanMemberViewModel | null;
 };
 
 export type GameUserViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: GameUserViewModel;
+    data: GameUserViewModel | null;
 };
 
-export type Geometry = {
-    factory: GeometryFactory;
-    userData?: unknown;
-    srid: number;
-    readonly geometryType?: string | null;
-    ogcGeometryType: OgcGeometryType;
-    precisionModel: PrecisionModel;
-    coordinate: Coordinate;
-    readonly coordinates?: Array<Coordinate> | null;
-    readonly numPoints: number;
-    readonly numGeometries: number;
-    readonly isSimple: boolean;
-    readonly isValid: boolean;
-    readonly isEmpty: boolean;
-    readonly area: number;
-    readonly length: number;
-    centroid: Point;
-    interiorPoint: Point;
-    pointOnSurface: Point;
-    dimension: Dimension;
-    boundary: Geometry;
-    boundaryDimension: Dimension;
-    envelope: Geometry;
-    envelopeInternal: Envelope;
-    readonly isRectangle: boolean;
+/**
+ * GeoJSON MultiPoint geometry
+ */
+export type GeoJsonMultiPoint = {
+    type: 'MultiPoint';
+    coordinates: Array<Array<number>>;
 };
 
-export type GeometryFactory = {
-    precisionModel: PrecisionModel;
-    coordinateSequenceFactory: CoordinateSequenceFactory;
-    readonly srid: number;
-    elevationModel: ElevationModel;
-    geometryServices: NtsGeometryServices;
+/**
+ * GeoJSON Point geometry
+ */
+export type GeoJsonPoint = {
+    type: 'Point';
+    coordinates: Array<number>;
 };
 
-export type GeometryOverlay = {
-    [key: string]: never;
-};
-
-export type GeometryRelate = {
-    [key: string]: never;
+/**
+ * GeoJSON Polygon geometry
+ */
+export type GeoJsonPolygon = {
+    type: 'Polygon';
+    coordinates: Array<Array<Array<number>>>;
 };
 
 export type InviteClanMemberCommand = {
@@ -758,7 +692,7 @@ export type ItemStackIListResult = {
 
 export type ItemStackResult = {
     readonly errors: Array<_Error> | null;
-    data: ItemStack;
+    data: ItemStack | null;
 };
 
 export type ItemType = 'Undefined' | 'HeadArmor' | 'ShoulderArmor' | 'BodyArmor' | 'HandArmor' | 'LegArmor' | 'MountHarness' | 'Mount' | 'Shield' | 'Bow' | 'Crossbow' | 'OneHandedWeapon' | 'TwoHandedWeapon' | 'Polearm' | 'Thrown' | 'Arrows' | 'Bolts' | 'Pistol' | 'Musket' | 'Bullets' | 'Banner' | 'Ranged' | 'Ammo';
@@ -776,8 +710,8 @@ export type ItemViewModel = {
     weight: number;
     flags: Array<ItemFlags>;
     createdAt: Date;
-    armor: ItemArmorComponentViewModel;
-    mount: ItemMountComponentViewModel;
+    armor: ItemArmorComponentViewModel | null;
+    mount: ItemMountComponentViewModel | null;
     weapons: Array<ItemWeaponComponentViewModel>;
     enabled: boolean;
 };
@@ -808,90 +742,9 @@ export type ItemWeaponComponentViewModel = {
 
 export type Languages = 'En' | 'Zh' | 'Ru' | 'De' | 'Fr' | 'It' | 'Es' | 'Pl' | 'Uk' | 'Ro' | 'Nl' | 'Tr' | 'El' | 'Hu' | 'Sv' | 'Cs' | 'Pt' | 'Sr' | 'Bg' | 'Hr' | 'Da' | 'Fi' | 'No' | 'Be' | 'Lv';
 
-export type LineString = {
-    factory: GeometryFactory;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModel;
-    readonly numGeometries: number;
-    readonly isSimple: boolean;
-    readonly isValid: boolean;
-    readonly area: number;
-    centroid: Point;
-    interiorPoint: Point;
-    pointOnSurface: Point;
-    envelope: Geometry;
-    envelopeInternal: Envelope;
-    readonly isRectangle: boolean;
-    readonly coordinates?: Array<Coordinate> | null;
-    coordinateSequence: CoordinateSequence;
-    coordinate: Coordinate;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    readonly isEmpty: boolean;
-    readonly numPoints: number;
-    startPoint: Point;
-    endPoint: Point;
-    readonly isClosed: boolean;
-    readonly isRing: boolean;
-    readonly geometryType?: string | null;
-    ogcGeometryType: OgcGeometryType;
-    readonly length: number;
-    boundary: Geometry;
-    readonly count: number;
-};
-
-export type LinearRing = {
-    factory: GeometryFactory;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModel;
-    readonly numGeometries: number;
-    readonly isSimple: boolean;
-    readonly isValid: boolean;
-    readonly area: number;
-    centroid: Point;
-    interiorPoint: Point;
-    pointOnSurface: Point;
-    envelope: Geometry;
-    envelopeInternal: Envelope;
-    readonly isRectangle: boolean;
-    readonly coordinates?: Array<Coordinate> | null;
-    coordinateSequence: CoordinateSequence;
-    coordinate: Coordinate;
-    dimension: Dimension;
-    readonly isEmpty: boolean;
-    readonly numPoints: number;
-    startPoint: Point;
-    endPoint: Point;
-    readonly isRing: boolean;
-    ogcGeometryType: OgcGeometryType;
-    readonly length: number;
-    boundary: Geometry;
-    readonly count: number;
-    boundaryDimension: Dimension;
-    readonly isClosed: boolean;
-    readonly geometryType?: string | null;
-    readonly isCCW: boolean;
-};
-
 export type NotificationState = 'Unread' | 'Read';
 
 export type NotificationType = 'UserRewardedToUser' | 'CharacterRewardedToUser' | 'ItemReturned' | 'ClanApplicationCreatedToUser' | 'ClanApplicationCreatedToOfficers' | 'ClanApplicationAcceptedToUser' | 'ClanApplicationDeclinedToUser' | 'ClanMemberRoleChangedToUser' | 'ClanMemberLeavedToLeader' | 'ClanMemberKickedToExMember' | 'ClanArmoryBorrowItemToLender' | 'ClanArmoryRemoveItemToBorrower';
-
-export type NtsGeometryServices = {
-    geometryOverlay: GeometryOverlay;
-    geometryRelate: GeometryRelate;
-    coordinateEqualityComparer: CoordinateEqualityComparer;
-    readonly defaultSRID: number;
-    defaultCoordinateSequenceFactory: CoordinateSequenceFactory;
-    defaultPrecisionModel: PrecisionModel;
-    defaultElevationModel: ElevationModel;
-};
-
-export type OgcGeometryType = 'Point' | 'LineString' | 'Polygon' | 'MultiPoint' | 'MultiLineString' | 'MultiPolygon' | 'GeometryCollection' | 'CircularString' | 'CompoundCurve' | 'CurvePolygon' | 'MultiCurve' | 'MultiSurface' | 'Curve' | 'Surface' | 'PolyhedralSurface' | 'TIN';
-
-export type Ordinates = 'None' | 'Spatial1' | 'Spatial2' | 'XY' | 'Spatial3' | 'XYZ' | 'Spatial4' | 'Spatial5' | 'Spatial6' | 'Spatial7' | 'Spatial8' | 'Spatial9' | 'Spatial10' | 'Spatial11' | 'Spatial12' | 'Spatial13' | 'Spatial14' | 'Spatial15' | 'Spatial16' | 'AllSpatialOrdinates' | 'Measure1' | 'XYM' | 'XYZM' | 'Measure2' | 'Measure3' | 'Measure4' | 'Measure5' | 'Measure6' | 'Measure7' | 'Measure8' | 'Measure9' | 'Measure10' | 'Measure11' | 'Measure12' | 'Measure13' | 'Measure14' | 'Measure15' | 'Measure16' | 'AllMeasureOrdinates' | 'AllOrdinates';
 
 export type PartyPublicViewModel = {
     id: number;
@@ -904,23 +757,23 @@ export type PartyViewModel = {
     id: number;
     gold: number;
     troops: number;
-    position: Point;
+    position: GeoJsonPoint;
     status: PartyStatus;
-    waypoints: Array<Geometry>;
-    targetedParty: PartyVisibleViewModel;
-    targetedSettlement: SettlementPublicViewModel;
+    waypoints: GeoJsonMultiPoint;
+    targetedParty: PartyVisibleViewModel | null;
+    targetedSettlement: SettlementPublicViewModel | null;
     user: UserPublicViewModel;
 };
 
 export type PartyViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: PartyViewModel;
+    data: PartyViewModel | null;
 };
 
 export type PartyVisibleViewModel = {
     id: number;
     troops: number;
-    position: Point;
+    position: GeoJsonPoint;
     user: UserPublicViewModel;
 };
 
@@ -938,80 +791,6 @@ export type PatchNotesIListResult = {
 };
 
 export type Platform = 'Steam' | 'EpicGames' | 'Microsoft';
-
-export type Point = {
-    factory: GeometryFactory;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModel;
-    readonly numGeometries: number;
-    readonly isSimple: boolean;
-    readonly isValid: boolean;
-    readonly area: number;
-    readonly length: number;
-    centroid: Point;
-    interiorPoint: Point;
-    pointOnSurface: Point;
-    envelope: Geometry;
-    envelopeInternal: Envelope;
-    readonly isRectangle: boolean;
-    coordinateSequence: CoordinateSequence;
-    readonly coordinates?: Array<Coordinate> | null;
-    readonly numPoints: number;
-    readonly isEmpty: boolean;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    x: number;
-    y: number;
-    coordinate: Coordinate;
-    readonly geometryType?: string | null;
-    ogcGeometryType: OgcGeometryType;
-    boundary: Geometry;
-    z: number;
-    m: number;
-};
-
-export type Polygon = {
-    factory: GeometryFactory;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModel;
-    readonly numGeometries: number;
-    readonly isSimple: boolean;
-    readonly isValid: boolean;
-    centroid: Point;
-    interiorPoint: Point;
-    pointOnSurface: Point;
-    envelope: Geometry;
-    envelopeInternal: Envelope;
-    coordinate: Coordinate;
-    readonly coordinates?: Array<Coordinate> | null;
-    readonly numPoints: number;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    readonly isEmpty: boolean;
-    exteriorRing: LineString;
-    readonly numInteriorRings: number;
-    readonly interiorRings?: Array<LineString> | null;
-    readonly geometryType?: string | null;
-    ogcGeometryType: OgcGeometryType;
-    readonly area: number;
-    readonly length: number;
-    boundary: Geometry;
-    readonly isRectangle: boolean;
-    shell: LinearRing;
-    holes?: Array<LinearRing> | null;
-};
-
-export type PrecisionModel = {
-    readonly isFloating: boolean;
-    readonly maximumSignificantDigits: number;
-    scale: number;
-    readonly gridSize: number;
-    precisionModelType: PrecisionModels;
-};
-
-export type PrecisionModels = 'Floating' | 'FloatingSingle' | 'Fixed';
 
 export type RefundItemCommand = {
     itemId: string;
@@ -1031,8 +810,6 @@ export type RespondToBattleFighterApplicationCommand = {
 };
 
 export type RespondToBattleMercenaryApplicationCommand = {
-    partyId: number;
-    mercenaryApplicationId: number;
     accept: boolean;
 };
 
@@ -1053,19 +830,19 @@ export type RestrictionPublicViewModel = {
 
 export type RestrictionPublicViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: RestrictionPublicViewModel;
+    data: RestrictionPublicViewModel | null;
 };
 
 export type RestrictionType = 'All' | 'Join' | 'Chat';
 
 export type RestrictionViewModel = {
     id: number;
-    restrictedUser: UserPrivateViewModel;
+    restrictedUser: UserPrivateViewModel | null;
     duration: number;
     type: RestrictionType;
     reason: string;
     publicReason: string;
-    restrictedByUser: UserPublicViewModel;
+    restrictedByUser: UserPublicViewModel | null;
     createdAt: Date;
 };
 
@@ -1076,7 +853,7 @@ export type RestrictionViewModelIListResult = {
 
 export type RestrictionViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: RestrictionViewModel;
+    data: RestrictionViewModel | null;
 };
 
 export type RewardCharacterCommand = {
@@ -1104,18 +881,18 @@ export type SettingsViewModel = {
 
 export type SettingsViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: SettingsViewModel;
+    data: SettingsViewModel | null;
 };
 
 export type SettlementPublicViewModel = {
     id: number;
     name: string;
     type: SettlementType;
-    position: Point;
+    position: GeoJsonPoint;
     culture: Culture;
     region: Region;
     troops: number;
-    owner: UserPublicViewModel;
+    owner: UserPublicViewModel | null;
 };
 
 export type SettlementPublicViewModelIListResult = {
@@ -1125,7 +902,7 @@ export type SettlementPublicViewModelIListResult = {
 
 export type SettlementPublicViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: SettlementPublicViewModel;
+    data: SettlementPublicViewModel | null;
 };
 
 export type SettlementType = 'Village' | 'Castle' | 'Town';
@@ -1139,7 +916,7 @@ export type StrategusUpdate = {
 
 export type StrategusUpdateResult = {
     readonly errors: Array<_Error> | null;
-    data: StrategusUpdate;
+    data: StrategusUpdate | null;
 };
 
 export type TerrainType = 'Barrier' | 'ThickForest' | 'SparseForest' | 'ShallowWater' | 'DeepWater';
@@ -1147,7 +924,7 @@ export type TerrainType = 'Barrier' | 'ThickForest' | 'SparseForest' | 'ShallowW
 export type TerrainViewModel = {
     id: number;
     type: TerrainType;
-    boundary: Polygon;
+    boundary: GeoJsonPolygon;
 };
 
 export type TerrainViewModelIListResult = {
@@ -1157,7 +934,7 @@ export type TerrainViewModelIListResult = {
 
 export type TerrainViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: TerrainViewModel;
+    data: TerrainViewModel | null;
 };
 
 export type UpdateCharacterCommand = {
@@ -1202,13 +979,13 @@ export type UpdateGameUsersResult = {
 
 export type UpdateGameUsersResultResult = {
     readonly errors: Array<_Error> | null;
-    data: UpdateGameUsersResult;
+    data: UpdateGameUsersResult | null;
 };
 
 export type UpdatePartyStatusCommand = {
     partyId: number;
     status: PartyStatus;
-    waypoints: Array<Geometry>;
+    waypoints: GeoJsonMultiPoint;
     targetedPartyId: number;
     targetedSettlementId: number;
 };
@@ -1221,7 +998,7 @@ export type UpdateSettlementCommand = {
 
 export type UpdateTerrainCommand = {
     id: number;
-    boundary: Polygon;
+    boundary: GeoJsonPolygon;
 };
 
 export type UpdateUserCommand = {
@@ -1239,7 +1016,7 @@ export type UserClanViewModel = {
 
 export type UserClanViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: UserClanViewModel;
+    data: UserClanViewModel | null;
 };
 
 export type UserItemViewModel = {
@@ -1259,7 +1036,7 @@ export type UserItemViewModelIListResult = {
 
 export type UserItemViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: UserItemViewModel;
+    data: UserItemViewModel | null;
 };
 
 export type UserNotificationMetadataEntitiesDictViewModel = {
@@ -1280,7 +1057,7 @@ export type UserNotificationViewModel = {
 
 export type UserNotificationViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: UserNotificationViewModel;
+    data: UserNotificationViewModel | null;
 };
 
 export type UserNotificationsWithDictViewModel = {
@@ -1290,7 +1067,7 @@ export type UserNotificationsWithDictViewModel = {
 
 export type UserNotificationsWithDictViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: UserNotificationsWithDictViewModel;
+    data: UserNotificationsWithDictViewModel | null;
 };
 
 export type UserPrivateViewModel = {
@@ -1308,7 +1085,7 @@ export type UserPrivateViewModel = {
     isDonor: boolean;
     note: string;
     activeCharacterId: number | null;
-    clanMembership: UserClanViewModel;
+    clanMembership: UserClanViewModel | null;
 };
 
 export type UserPrivateViewModelArrayResult = {
@@ -1323,7 +1100,7 @@ export type UserPrivateViewModelIListResult = {
 
 export type UserPrivateViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: UserPrivateViewModel;
+    data: UserPrivateViewModel | null;
 };
 
 export type UserPublicViewModel = {
@@ -1333,7 +1110,7 @@ export type UserPublicViewModel = {
     name: string;
     avatar: string | null;
     region: Region;
-    clanMembership: UserClanViewModel;
+    clanMembership: UserClanViewModel | null;
 };
 
 export type UserViewModel = {
@@ -1351,12 +1128,12 @@ export type UserViewModel = {
     avatar: string | null;
     activeCharacterId: number | null;
     unreadNotificationsCount: number;
-    clanMembership: UserClanViewModel;
+    clanMembership: UserClanViewModel | null;
 };
 
 export type UserViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: UserViewModel;
+    data: UserViewModel | null;
 };
 
 export type WeaponClass = 'Undefined' | 'Dagger' | 'OneHandedSword' | 'TwoHandedSword' | 'OneHandedAxe' | 'TwoHandedAxe' | 'Mace' | 'Pick' | 'TwoHandedMace' | 'OneHandedPolearm' | 'TwoHandedPolearm' | 'LowGripPolearm' | 'Arrow' | 'Bolt' | 'Cartridge' | 'Bow' | 'Crossbow' | 'Stone' | 'Boulder' | 'ThrowingAxe' | 'ThrowingKnife' | 'Javelin' | 'Pistol' | 'Musket' | 'SmallShield' | 'LargeShield' | 'Banner' | 'Bullets';
@@ -1368,23 +1145,57 @@ export type ActivityLogViewModelIListResultWritable = {
 };
 
 export type ActivityLogWithDictViewModelResultWritable = {
-    data: ActivityLogWithDictViewModel;
+    data: ActivityLogWithDictViewModel | null;
+};
+
+export type BattleDetailedViewModelWritable = {
+    id: number;
+    region: Region;
+    position: GeoJsonPointWritable;
+    phase: BattlePhase;
+    type: BattleType;
+    attacker: BattleFighterViewModelWritable;
+    attackerTotalTroops: number;
+    defender: BattleFighterViewModelWritable | null;
+    defenderTotalTroops: number;
+    createdAt: Date;
+    scheduledFor: Date | null;
 };
 
 export type BattleDetailedViewModelIListResultWritable = {
-    data: Array<BattleDetailedViewModel> | null;
+    data: Array<BattleDetailedViewModelWritable> | null;
+};
+
+export type BattleDetailedViewModelResultWritable = {
+    data: BattleDetailedViewModelWritable | null;
+};
+
+export type BattleFighterApplicationViewModelWritable = {
+    id: number;
+    party: PartyVisibleViewModelWritable | null;
+    side: BattleSide;
+    status: BattleFighterApplicationStatus;
 };
 
 export type BattleFighterApplicationViewModelIListResultWritable = {
-    data: Array<BattleFighterApplicationViewModel> | null;
+    data: Array<BattleFighterApplicationViewModelWritable> | null;
 };
 
 export type BattleFighterApplicationViewModelResultWritable = {
-    data: BattleFighterApplicationViewModel;
+    data: BattleFighterApplicationViewModelWritable | null;
+};
+
+export type BattleFighterViewModelWritable = {
+    id: number;
+    party: PartyPublicViewModel | null;
+    settlement: SettlementPublicViewModelWritable | null;
+    side: BattleSide;
+    commander: boolean;
+    mercenarySlots: number;
 };
 
 export type BattleFighterViewModelIListResultWritable = {
-    data: Array<BattleFighterViewModel> | null;
+    data: Array<BattleFighterViewModelWritable> | null;
 };
 
 export type BattleMercenaryApplicationViewModelIListResultWritable = {
@@ -1392,23 +1203,28 @@ export type BattleMercenaryApplicationViewModelIListResultWritable = {
 };
 
 export type BattleMercenaryApplicationViewModelResultWritable = {
-    data: BattleMercenaryApplicationViewModel;
+    data: BattleMercenaryApplicationViewModel | null;
 };
 
 export type BattleMercenaryViewModelIListResultWritable = {
     data: Array<BattleMercenaryViewModel> | null;
 };
 
-export type BattleViewModelResultWritable = {
-    data: BattleViewModel;
+export type BattleViewModelWritable = {
+    id: number;
+    region: Region;
+    position: GeoJsonPointWritable;
+    phase: BattlePhase;
+    type: BattleType;
+    createdAt: Date;
 };
 
 export type CharacterCharacteristicsViewModelResultWritable = {
-    data: CharacterCharacteristicsViewModel;
+    data: CharacterCharacteristicsViewModel | null;
 };
 
 export type CharacterLimitationsViewModelResultWritable = {
-    data: CharacterLimitationsViewModel;
+    data: CharacterLimitationsViewModel | null;
 };
 
 export type CharacterPublicCompetitiveViewModelIListResultWritable = {
@@ -1420,11 +1236,11 @@ export type CharacterViewModelIListResultWritable = {
 };
 
 export type CharacterViewModelResultWritable = {
-    data: CharacterViewModel;
+    data: CharacterViewModel | null;
 };
 
 export type ClanArmoryBorrowedItemViewModelResultWritable = {
-    data: ClanArmoryBorrowedItemViewModel;
+    data: ClanArmoryBorrowedItemViewModel | null;
 };
 
 export type ClanArmoryItemViewModelIListResultWritable = {
@@ -1432,7 +1248,7 @@ export type ClanArmoryItemViewModelIListResultWritable = {
 };
 
 export type ClanArmoryItemViewModelResultWritable = {
-    data: ClanArmoryItemViewModel;
+    data: ClanArmoryItemViewModel | null;
 };
 
 export type ClanInvitationViewModelIListResultWritable = {
@@ -1440,7 +1256,7 @@ export type ClanInvitationViewModelIListResultWritable = {
 };
 
 export type ClanInvitationViewModelResultWritable = {
-    data: ClanInvitationViewModel;
+    data: ClanInvitationViewModel | null;
 };
 
 export type ClanMemberViewModelIListResultWritable = {
@@ -1448,33 +1264,20 @@ export type ClanMemberViewModelIListResultWritable = {
 };
 
 export type ClanMemberViewModelResultWritable = {
-    data: ClanMemberViewModel;
+    data: ClanMemberViewModel | null;
 };
 
 export type ClanViewModelResultWritable = {
-    data: ClanViewModel;
+    data: ClanViewModel | null;
 };
 
 export type ClanWithMemberCountViewModelIListResultWritable = {
     data: Array<ClanWithMemberCountViewModel> | null;
 };
 
-export type CoordinateWritable = {
-    x: number;
-    y: number;
-    z: number;
-    m: number;
-    coordinateValue: CoordinateWritable;
-};
-
-export type CoordinateSequenceWritable = {
-    ordinates: Ordinates;
-    first: CoordinateWritable;
-    last: CoordinateWritable;
-};
-
-export type EnvelopeWritable = {
-    centre: CoordinateWritable;
+export type CreateTerrainCommandWritable = {
+    type: TerrainType;
+    boundary: GeoJsonPolygonWritable;
 };
 
 export type EquippedItemViewModelIListResultWritable = {
@@ -1483,48 +1286,45 @@ export type EquippedItemViewModelIListResultWritable = {
 
 export type GameModeCharacterStatisticsViewModelDictionaryResultWritable = {
     data: {
-        CRPGBattle: CharacterStatisticsViewModel;
-        CRPGConquest: CharacterStatisticsViewModel;
-        CRPGDTV: CharacterStatisticsViewModel;
-        CRPGDuel: CharacterStatisticsViewModel;
-        CRPGSiege: CharacterStatisticsViewModel;
-        CRPGTeamDeathmatch: CharacterStatisticsViewModel;
-        CRPGSkirmish: CharacterStatisticsViewModel;
-        CRPGUnknownGameMode: CharacterStatisticsViewModel;
-        CRPGCaptain: CharacterStatisticsViewModel;
+        CRPGBattle?: CharacterStatisticsViewModel;
+        CRPGConquest?: CharacterStatisticsViewModel;
+        CRPGDTV?: CharacterStatisticsViewModel;
+        CRPGDuel?: CharacterStatisticsViewModel;
+        CRPGSiege?: CharacterStatisticsViewModel;
+        CRPGTeamDeathmatch?: CharacterStatisticsViewModel;
+        CRPGSkirmish?: CharacterStatisticsViewModel;
+        CRPGUnknownGameMode?: CharacterStatisticsViewModel;
+        CRPGCaptain?: CharacterStatisticsViewModel;
     } | null;
 };
 
 export type GameServerStatsResultWritable = {
-    data: GameServerStats;
+    data: GameServerStats | null;
 };
 
 export type GameUserViewModelResultWritable = {
-    data: GameUserViewModel;
+    data: GameUserViewModel | null;
 };
 
-export type GeometryWritable = {
-    factory: GeometryFactoryWritable;
-    userData?: unknown;
-    srid: number;
-    ogcGeometryType: OgcGeometryType;
-    precisionModel: PrecisionModelWritable;
-    coordinate: CoordinateWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    dimension: Dimension;
-    boundary: GeometryWritable;
-    boundaryDimension: Dimension;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
+/**
+ * GeoJSON MultiPoint geometry
+ */
+export type GeoJsonMultiPointWritable = {
+    coordinates: Array<Array<number>>;
 };
 
-export type GeometryFactoryWritable = {
-    precisionModel: PrecisionModelWritable;
-    coordinateSequenceFactory: CoordinateSequenceFactory;
-    elevationModel: ElevationModel;
-    geometryServices: NtsGeometryServicesWritable;
+/**
+ * GeoJSON Point geometry
+ */
+export type GeoJsonPointWritable = {
+    coordinates: Array<number>;
+};
+
+/**
+ * GeoJSON Polygon geometry
+ */
+export type GeoJsonPolygonWritable = {
+    coordinates: Array<Array<Array<number>>>;
 };
 
 export type ItemStackIListResultWritable = {
@@ -1532,119 +1332,42 @@ export type ItemStackIListResultWritable = {
 };
 
 export type ItemStackResultWritable = {
-    data: ItemStack;
+    data: ItemStack | null;
 };
 
 export type ItemViewModelIListResultWritable = {
     data: Array<ItemViewModel> | null;
 };
 
-export type LineStringWritable = {
-    factory: GeometryFactoryWritable;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModelWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-    coordinateSequence: CoordinateSequenceWritable;
-    coordinate: CoordinateWritable;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    startPoint: PointWritable;
-    endPoint: PointWritable;
-    ogcGeometryType: OgcGeometryType;
-    boundary: GeometryWritable;
-};
-
-export type LinearRingWritable = {
-    factory: GeometryFactoryWritable;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModelWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-    coordinateSequence: CoordinateSequenceWritable;
-    coordinate: CoordinateWritable;
-    dimension: Dimension;
-    startPoint: PointWritable;
-    endPoint: PointWritable;
-    ogcGeometryType: OgcGeometryType;
-    boundary: GeometryWritable;
-    boundaryDimension: Dimension;
-};
-
-export type NtsGeometryServicesWritable = {
-    geometryOverlay: GeometryOverlay;
-    geometryRelate: GeometryRelate;
-    coordinateEqualityComparer: CoordinateEqualityComparer;
-    defaultCoordinateSequenceFactory: CoordinateSequenceFactory;
-    defaultPrecisionModel: PrecisionModelWritable;
-    defaultElevationModel: ElevationModel;
+export type PartyViewModelWritable = {
+    id: number;
+    gold: number;
+    troops: number;
+    position: GeoJsonPointWritable;
+    status: PartyStatus;
+    waypoints: GeoJsonMultiPointWritable;
+    targetedParty: PartyVisibleViewModelWritable | null;
+    targetedSettlement: SettlementPublicViewModelWritable | null;
+    user: UserPublicViewModel;
 };
 
 export type PartyViewModelResultWritable = {
-    data: PartyViewModel;
+    data: PartyViewModelWritable | null;
+};
+
+export type PartyVisibleViewModelWritable = {
+    id: number;
+    troops: number;
+    position: GeoJsonPointWritable;
+    user: UserPublicViewModel;
 };
 
 export type PatchNotesIListResultWritable = {
     data: Array<PatchNotes> | null;
 };
 
-export type PointWritable = {
-    factory: GeometryFactoryWritable;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModelWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-    coordinateSequence: CoordinateSequenceWritable;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    x: number;
-    y: number;
-    coordinate: CoordinateWritable;
-    ogcGeometryType: OgcGeometryType;
-    boundary: GeometryWritable;
-    z: number;
-    m: number;
-};
-
-export type PolygonWritable = {
-    factory: GeometryFactoryWritable;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModelWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-    coordinate: CoordinateWritable;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    exteriorRing: LineStringWritable;
-    ogcGeometryType: OgcGeometryType;
-    boundary: GeometryWritable;
-    shell: LinearRingWritable;
-    holes?: Array<LinearRingWritable> | null;
-};
-
-export type PrecisionModelWritable = {
-    scale: number;
-    precisionModelType: PrecisionModels;
-};
-
 export type RestrictionPublicViewModelResultWritable = {
-    data: RestrictionPublicViewModel;
+    data: RestrictionPublicViewModel | null;
 };
 
 export type RestrictionViewModelIListResultWritable = {
@@ -1652,39 +1375,76 @@ export type RestrictionViewModelIListResultWritable = {
 };
 
 export type RestrictionViewModelResultWritable = {
-    data: RestrictionViewModel;
+    data: RestrictionViewModel | null;
 };
 
 export type SettingsViewModelResultWritable = {
-    data: SettingsViewModel;
+    data: SettingsViewModel | null;
+};
+
+export type SettlementPublicViewModelWritable = {
+    id: number;
+    name: string;
+    type: SettlementType;
+    position: GeoJsonPointWritable;
+    culture: Culture;
+    region: Region;
+    troops: number;
+    owner: UserPublicViewModel | null;
 };
 
 export type SettlementPublicViewModelIListResultWritable = {
-    data: Array<SettlementPublicViewModel> | null;
+    data: Array<SettlementPublicViewModelWritable> | null;
 };
 
 export type SettlementPublicViewModelResultWritable = {
-    data: SettlementPublicViewModel;
+    data: SettlementPublicViewModelWritable | null;
+};
+
+export type StrategusUpdateWritable = {
+    party: PartyViewModelWritable;
+    visibleParties: Array<PartyVisibleViewModelWritable>;
+    visibleSettlements: Array<SettlementPublicViewModelWritable>;
+    visibleBattles: Array<BattleViewModelWritable>;
 };
 
 export type StrategusUpdateResultWritable = {
-    data: StrategusUpdate;
+    data: StrategusUpdateWritable | null;
+};
+
+export type TerrainViewModelWritable = {
+    id: number;
+    type: TerrainType;
+    boundary: GeoJsonPolygonWritable;
 };
 
 export type TerrainViewModelIListResultWritable = {
-    data: Array<TerrainViewModel> | null;
+    data: Array<TerrainViewModelWritable> | null;
 };
 
 export type TerrainViewModelResultWritable = {
-    data: TerrainViewModel;
+    data: TerrainViewModelWritable | null;
 };
 
 export type UpdateGameUsersResultResultWritable = {
-    data: UpdateGameUsersResult;
+    data: UpdateGameUsersResult | null;
+};
+
+export type UpdatePartyStatusCommandWritable = {
+    partyId: number;
+    status: PartyStatus;
+    waypoints: GeoJsonMultiPointWritable;
+    targetedPartyId: number;
+    targetedSettlementId: number;
+};
+
+export type UpdateTerrainCommandWritable = {
+    id: number;
+    boundary: GeoJsonPolygonWritable;
 };
 
 export type UserClanViewModelResultWritable = {
-    data: UserClanViewModel;
+    data: UserClanViewModel | null;
 };
 
 export type UserItemViewModelIListResultWritable = {
@@ -1692,15 +1452,15 @@ export type UserItemViewModelIListResultWritable = {
 };
 
 export type UserItemViewModelResultWritable = {
-    data: UserItemViewModel;
+    data: UserItemViewModel | null;
 };
 
 export type UserNotificationViewModelResultWritable = {
-    data: UserNotificationViewModel;
+    data: UserNotificationViewModel | null;
 };
 
 export type UserNotificationsWithDictViewModelResultWritable = {
-    data: UserNotificationsWithDictViewModel;
+    data: UserNotificationsWithDictViewModel | null;
 };
 
 export type UserPrivateViewModelArrayResultWritable = {
@@ -1712,11 +1472,11 @@ export type UserPrivateViewModelIListResultWritable = {
 };
 
 export type UserPrivateViewModelResultWritable = {
-    data: UserPrivateViewModel;
+    data: UserPrivateViewModel | null;
 };
 
 export type UserViewModelResultWritable = {
-    data: UserViewModel;
+    data: UserViewModel | null;
 };
 
 export type GetActivityLogsData = {
@@ -1753,6 +1513,7 @@ export type GetBattlesData = {
     query: {
         region: Region;
         'phase[]'?: Array<BattlePhase>;
+        type?: BattleType;
     };
     url: '/Battles';
 };
@@ -1779,7 +1540,7 @@ export type GetBattlesByBattleIdResponses = {
     /**
      * OK
      */
-    200: BattleViewModelResult;
+    200: BattleDetailedViewModelResult;
 };
 
 export type GetBattlesByBattleIdResponse = GetBattlesByBattleIdResponses[keyof GetBattlesByBattleIdResponses];
@@ -1912,6 +1673,38 @@ export type GetBattlesByBattleIdMercenariesResponses = {
 
 export type GetBattlesByBattleIdMercenariesResponse = GetBattlesByBattleIdMercenariesResponses[keyof GetBattlesByBattleIdMercenariesResponses];
 
+export type DeleteBattlesByBattleIdMercenaryApplicationsData = {
+    body?: never;
+    path: {
+        /**
+         * Battle id.
+         */
+        battleId: number;
+    };
+    query?: never;
+    url: '/Battles/{battleId}/mercenary-applications';
+};
+
+export type DeleteBattlesByBattleIdMercenaryApplicationsErrors = {
+    /**
+     * Bad Request.
+     */
+    400: unknown;
+};
+
+export type DeleteBattlesByBattleIdMercenaryApplicationsResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+    /**
+     * Removed.
+     */
+    204: void;
+};
+
+export type DeleteBattlesByBattleIdMercenaryApplicationsResponse = DeleteBattlesByBattleIdMercenaryApplicationsResponses[keyof DeleteBattlesByBattleIdMercenaryApplicationsResponses];
+
 export type GetBattlesByBattleIdMercenaryApplicationsData = {
     body?: never;
     path: {
@@ -1989,6 +1782,42 @@ export type PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResp
 };
 
 export type PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse = PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponses[keyof PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponses];
+
+export type DeleteBattlesByBattleIdMercenariesByMercenaryIdData = {
+    body?: never;
+    path: {
+        /**
+         * Battle id.
+         */
+        battleId: number;
+        /**
+         * Mercenary id.
+         */
+        mercenaryId: number;
+    };
+    query?: never;
+    url: '/Battles/{battleId}/mercenaries/{mercenaryId}';
+};
+
+export type DeleteBattlesByBattleIdMercenariesByMercenaryIdErrors = {
+    /**
+     * Bad Request.
+     */
+    400: unknown;
+};
+
+export type DeleteBattlesByBattleIdMercenariesByMercenaryIdResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+    /**
+     * Removed.
+     */
+    204: void;
+};
+
+export type DeleteBattlesByBattleIdMercenariesByMercenaryIdResponse = DeleteBattlesByBattleIdMercenariesByMercenaryIdResponses[keyof DeleteBattlesByBattleIdMercenariesByMercenaryIdResponses];
 
 export type GetClansByIdData = {
     body?: never;
@@ -2812,7 +2641,7 @@ export type PostPartiesResponses = {
 export type PostPartiesResponse = PostPartiesResponses[keyof PostPartiesResponses];
 
 export type PutPartiesSelfStatusData = {
-    body?: UpdatePartyStatusCommand;
+    body?: UpdatePartyStatusCommandWritable;
     path?: never;
     query?: never;
     url: '/Parties/self/status';
@@ -3082,7 +2911,7 @@ export type GetTerrainsResponses = {
 export type GetTerrainsResponse = GetTerrainsResponses[keyof GetTerrainsResponses];
 
 export type PostTerrainsData = {
-    body?: CreateTerrainCommand;
+    body?: CreateTerrainCommandWritable;
     path?: never;
     query?: never;
     url: '/Terrains';
@@ -3114,7 +2943,7 @@ export type DeleteTerrainsByIdResponses = {
 };
 
 export type PutTerrainsByIdData = {
-    body?: UpdateTerrainCommand;
+    body?: UpdateTerrainCommandWritable;
     path: {
         id: number;
     };

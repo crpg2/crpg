@@ -1,6 +1,7 @@
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+
 namespace WebApi.Swagger;
 
 // enum: [0, 1, ...] => ["String0", "String1", ...]

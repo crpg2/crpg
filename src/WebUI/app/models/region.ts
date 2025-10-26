@@ -8,4 +8,6 @@ export const REGION = {
   Oc: 'Oc',
 } as const satisfies Record<_Region, _Region>
 
+export const ACTUAL_REGIONS = [REGION.Eu, REGION.Na]
+
 export type Region = ValueOf<typeof REGION>

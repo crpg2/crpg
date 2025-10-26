@@ -26,6 +26,7 @@ public record UserViewModel : IMapFrom<User>
     [JsonRequired]
     public int? ActiveCharacterId { get; init; }
     public int UnreadNotificationsCount { get; init; }
+    [JsonRequired]
     public UserClanViewModel? ClanMembership { get; init; }
 
     public void Mapping(Profile profile)
