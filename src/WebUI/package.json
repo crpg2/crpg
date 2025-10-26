@@ -13,14 +13,14 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^6.0.0",
-    "@hey-api/openapi-ts": "^0.86.4",
+    "@antfu/eslint-config": "^6.1.0",
+    "@hey-api/openapi-ts": "^0.86.5",
     "@iconify-json/lucide": "^1.2.71",
     "@internationalized/date": "^3.10.0",
     "@number-flow/vue": "^0.4.8",
     "@nuxt/eslint": "^1.9.0",
     "@nuxt/ui": "^4.1.0",
-    "@nuxtjs/i18n": "^10.1.1",
+    "@nuxtjs/i18n": "^10.1.2",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.16",
     "@types/geojson": "^7946.0.16",
