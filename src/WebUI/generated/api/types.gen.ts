@@ -73,11 +73,17 @@ export type BattleDetailedViewModel = {
     defender: BattleFighterViewModel;
     defenderTotalTroops: number;
     createdAt: Date;
+    scheduledFor?: Date | null;
 };
 
 export type BattleDetailedViewModelIListResult = {
     readonly errors: Array<_Error> | null;
     data: Array<BattleDetailedViewModel> | null;
+};
+
+export type BattleDetailedViewModelResult = {
+    readonly errors: Array<_Error> | null;
+    data: BattleDetailedViewModel;
 };
 
 export type BattleFighterApplicationStatus = 'Pending' | 'Declined' | 'Accepted';
@@ -105,6 +111,7 @@ export type BattleFighterViewModel = {
     settlement: SettlementPublicViewModel;
     side: BattleSide;
     commander: boolean;
+    mercenarySlots: number;
 };
 
 export type BattleFighterViewModelIListResult = {
@@ -156,11 +163,6 @@ export type BattleViewModel = {
     position: Point;
     phase: BattlePhase;
     createdAt: Date;
-};
-
-export type BattleViewModelResult = {
-    readonly errors: Array<_Error> | null;
-    data: BattleViewModel;
 };
 
 export type BuyItemCommand = {
@@ -512,7 +514,7 @@ export type _Error = {
     stackTrace?: string | null;
 };
 
-export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
+export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'MercenaryNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
 
 export type ErrorSource = {
     pointer?: string | null;
@@ -1375,6 +1377,10 @@ export type BattleDetailedViewModelIListResultWritable = {
     data: Array<BattleDetailedViewModel> | null;
 };
 
+export type BattleDetailedViewModelResultWritable = {
+    data: BattleDetailedViewModel;
+};
+
 export type BattleFighterApplicationViewModelIListResultWritable = {
     data: Array<BattleFighterApplicationViewModel> | null;
 };
@@ -1397,10 +1403,6 @@ export type BattleMercenaryApplicationViewModelResultWritable = {
 
 export type BattleMercenaryViewModelIListResultWritable = {
     data: Array<BattleMercenaryViewModel> | null;
-};
-
-export type BattleViewModelResultWritable = {
-    data: BattleViewModel;
 };
 
 export type CharacterCharacteristicsViewModelResultWritable = {
@@ -1779,7 +1781,7 @@ export type GetBattlesByBattleIdResponses = {
     /**
      * OK
      */
-    200: BattleViewModelResult;
+    200: BattleDetailedViewModelResult;
 };
 
 export type GetBattlesByBattleIdResponse = GetBattlesByBattleIdResponses[keyof GetBattlesByBattleIdResponses];
@@ -1912,6 +1914,38 @@ export type GetBattlesByBattleIdMercenariesResponses = {
 
 export type GetBattlesByBattleIdMercenariesResponse = GetBattlesByBattleIdMercenariesResponses[keyof GetBattlesByBattleIdMercenariesResponses];
 
+export type DeleteBattlesByBattleIdMercenaryApplicationsData = {
+    body?: never;
+    path: {
+        /**
+         * Battle id.
+         */
+        battleId: number;
+    };
+    query?: never;
+    url: '/Battles/{battleId}/mercenary-applications';
+};
+
+export type DeleteBattlesByBattleIdMercenaryApplicationsErrors = {
+    /**
+     * Bad Request.
+     */
+    400: unknown;
+};
+
+export type DeleteBattlesByBattleIdMercenaryApplicationsResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+    /**
+     * Removed.
+     */
+    204: void;
+};
+
+export type DeleteBattlesByBattleIdMercenaryApplicationsResponse = DeleteBattlesByBattleIdMercenaryApplicationsResponses[keyof DeleteBattlesByBattleIdMercenaryApplicationsResponses];
+
 export type GetBattlesByBattleIdMercenaryApplicationsData = {
     body?: never;
     path: {
@@ -1989,6 +2023,42 @@ export type PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResp
 };
 
 export type PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse = PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponses[keyof PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponses];
+
+export type DeleteBattlesByBattleIdMercenariesByMercenaryIdData = {
+    body?: never;
+    path: {
+        /**
+         * Battle id.
+         */
+        battleId: number;
+        /**
+         * Mercenary id.
+         */
+        mercenaryId: number;
+    };
+    query?: never;
+    url: '/Battles/{battleId}/mercenaries/{mercenaryId}';
+};
+
+export type DeleteBattlesByBattleIdMercenariesByMercenaryIdErrors = {
+    /**
+     * Bad Request.
+     */
+    400: unknown;
+};
+
+export type DeleteBattlesByBattleIdMercenariesByMercenaryIdResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+    /**
+     * Removed.
+     */
+    204: void;
+};
+
+export type DeleteBattlesByBattleIdMercenariesByMercenaryIdResponse = DeleteBattlesByBattleIdMercenariesByMercenaryIdResponses[keyof DeleteBattlesByBattleIdMercenariesByMercenaryIdResponses];
 
 export type GetClansByIdData = {
     body?: never;

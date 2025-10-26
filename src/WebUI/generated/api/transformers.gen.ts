@@ -43,6 +43,9 @@ const battleDetailedViewModelSchemaResponseTransformer = (data: any) => {
     data.attacker = battleFighterViewModelSchemaResponseTransformer(data.attacker);
     data.defender = battleFighterViewModelSchemaResponseTransformer(data.defender);
     data.createdAt = new Date(data.createdAt);
+    if (data.scheduledFor) {
+        data.scheduledFor = new Date(data.scheduledFor);
+    }
     return data;
 };
 
@@ -124,18 +127,12 @@ const settlementPublicViewModelSchemaResponseTransformer = (data: any) => {
 };
 
 export const getBattlesByBattleIdResponseTransformer = async (data: any): Promise<GetBattlesByBattleIdResponse> => {
-    data = battleViewModelResultSchemaResponseTransformer(data);
+    data = battleDetailedViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
-const battleViewModelResultSchemaResponseTransformer = (data: any) => {
-    data.data = battleViewModelSchemaResponseTransformer(data.data);
-    return data;
-};
-
-const battleViewModelSchemaResponseTransformer = (data: any) => {
-    data.position = pointSchemaResponseTransformer(data.position);
-    data.createdAt = new Date(data.createdAt);
+const battleDetailedViewModelResultSchemaResponseTransformer = (data: any) => {
+    data.data = battleDetailedViewModelSchemaResponseTransformer(data.data);
     return data;
 };
 
@@ -333,6 +330,12 @@ const partyViewModelSchemaResponseTransformer = (data: any) => {
     });
     data.targetedParty = partyVisibleViewModelSchemaResponseTransformer(data.targetedParty);
     data.targetedSettlement = settlementPublicViewModelSchemaResponseTransformer(data.targetedSettlement);
+    return data;
+};
+
+const battleViewModelSchemaResponseTransformer = (data: any) => {
+    data.position = pointSchemaResponseTransformer(data.position);
+    data.createdAt = new Date(data.createdAt);
     return data;
 };
 

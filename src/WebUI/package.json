@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@antfu/eslint-config": "^6.1.0",
-    "@hey-api/openapi-ts": "^0.86.5",
+    "@hey-api/openapi-ts": "0.86.2",
     "@iconify-json/lucide": "^1.2.71",
     "@internationalized/date": "^3.10.0",
     "@number-flow/vue": "^0.4.8",
