@@ -15,7 +15,6 @@ public record UserPrivateViewModel : IMapFrom<User>
     public float ExperienceMultiplier { get; set; }
     public string PlatformUserId { get; init; } = string.Empty;
     public string Name { get; init; } = string.Empty;
-
     [JsonRequired]
     public Uri? Avatar { get; init; }
     public Region Region { get; init; }
@@ -23,8 +22,8 @@ public record UserPrivateViewModel : IMapFrom<User>
     public DateTime CreatedAt { get; set; }
     public bool IsDonor { get; set; }
     public string Note { get; init; } = string.Empty;
-
     [JsonRequired]
     public int? ActiveCharacterId { get; init; }
+    [JsonRequired]
     public UserClanViewModel? ClanMembership { get; init; }
 }

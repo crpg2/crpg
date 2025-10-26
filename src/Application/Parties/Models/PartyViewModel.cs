@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Text.Json.Serialization;
+using AutoMapper;
 using Crpg.Application.Clans.Models;
 using Crpg.Application.Common.Mappings;
 using Crpg.Application.Settlements.Models;
@@ -16,7 +17,9 @@ public record PartyViewModel : IMapFrom<Party>
     public Point Position { get; init; } = default!;
     public PartyStatus Status { get; init; }
     public MultiPoint Waypoints { get; init; } = MultiPoint.Empty;
+    [JsonRequired]
     public PartyVisibleViewModel? TargetedParty { get; init; }
+    [JsonRequired]
     public SettlementPublicViewModel? TargetedSettlement { get; init; }
     public UserPublicViewModel User { get; init; } = default!;
 
