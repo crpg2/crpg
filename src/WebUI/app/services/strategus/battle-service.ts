@@ -12,12 +12,12 @@ import {
 } from '#api/sdk.gen'
 
 import type { Region } from '~/models/region'
-import type { BattleFighter, BattleFighterApplicationStatus, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattlePhase } from '~/models/strategus/battle'
+import type { Battle, BattleFighter, BattleFighterApplicationStatus, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattlePhase } from '~/models/strategus/battle'
 
 export const getBattles = async (
   region: Region,
   phases: BattlePhase[],
-) => (await _getBattles({ query: { region, 'phase[]': phases } })).data!
+): Promise<Battle[]> => (await _getBattles({ query: { region, 'phase[]': phases } })).data! as Battle[] // TODO:
 
 export const getBattle = async (
   battleId: number,

@@ -36,6 +36,7 @@ export interface Battle {
   region: Region
   position: Point
   scheduledFor: Date | null
+  createdAt: Date
   attacker: BattleFighter
   attackerTotalTroops: number
   defender: BattleFighter | null // TODO: no defender? PvE?

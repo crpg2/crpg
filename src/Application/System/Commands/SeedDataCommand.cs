@@ -2187,7 +2187,7 @@ public record SeedDataCommand : IMediatorRequest
                     },
                 },
                 CreatedAt = DateTime.UtcNow.AddHours(-2),
-                ScheduledFor = DateTime.UtcNow.AddHours(2),
+                ScheduledFor = DateTime.UtcNow.AddHours(3),
             };
             Battle leblenionBattle = new()
             {
@@ -2254,7 +2254,7 @@ public record SeedDataCommand : IMediatorRequest
                         Character = krogCharacter0,
                     },
                 },
-                ScheduledFor = DateTime.UtcNow.AddHours(10),
+                ScheduledFor = DateTime.UtcNow.AddHours(5),
                 CreatedAt = DateTime.UtcNow.AddHours(-4),
             };
 
@@ -2344,7 +2344,7 @@ public record SeedDataCommand : IMediatorRequest
                         Status = BattleMercenaryApplicationStatus.Pending,
                     },
                 },
-                ScheduledFor = DateTime.UtcNow.AddHours(3),
+                ScheduledFor = DateTime.UtcNow.AddHours(7),
                 CreatedAt = DateTime.UtcNow.AddHours(-4),
             };
 
@@ -2392,6 +2392,7 @@ public record SeedDataCommand : IMediatorRequest
                     },
                 },
                 CreatedAt = DateTime.UtcNow.AddHours(-4),
+                ScheduledFor = DateTime.UtcNow.AddHours(8),
             };
 
             Battle[] newBattles = { nideonBattle, plainBattle, desertBattle, hertogeaBattle, leblenionBattle, epicroteaBattle };

@@ -21,10 +21,13 @@ const {
 </script>
 
 <template>
-  <div>
-    <div>
-      wdwd
-      {{ battles }}
+  <UContainer class="space-y-8 py-12">
+    <div
+      class="mx-auto max-w-4xl"
+    >
+      <UiHeading class="mb-14" title="Upcoming Battles" />
     </div>
-  </div>
+
+    <BattleCalendar v-if="battles.length" :battles />
+  </UContainer>
 </template>

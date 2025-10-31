@@ -18,14 +18,11 @@ public class GeoJsonSchemaFilter : ISchemaFilter
 
         schema.Properties["type"] = new OpenApiSchema
         {
-            Type = "string",
-            Description = "Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)",
-            Example = new OpenApiString(GetGeoJsonTypeName(context.Type)),
+            Type = GetGeoJsonTypeName(context.Type),
         };
 
         schema.Properties["coordinates"] = new OpenApiSchema
         {
-            Description = "Координаты в формате GeoJSON",
             Type = "array",
             Items = new OpenApiSchema { Type = "number" },
             Example = GetCoordinatesExample(context.Type),
