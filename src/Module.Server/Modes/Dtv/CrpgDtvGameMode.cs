@@ -17,11 +17,12 @@ using Crpg.Module.Common.ChatCommands;
 #else
 using Crpg.Module.Common.HotConstants;
 using Crpg.Module.GUI;
+using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.Dtv;
+using Crpg.Module.GUI.Inventory;
 using Crpg.Module.GUI.Spectator;
 using Crpg.Module.GUI.Warmup;
-using Crpg.Module.GUI.AmmoQuiverChange;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
@@ -72,6 +73,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
             new WarmupHudUiHandler(),
             new DtvHudUiHandler(),
             new AmmoQuiverChangeUiHandler(),
+            new CrpgMainGuiMissionView(), // Character/Equip gui
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -120,6 +122,8 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new CrpgCommanderBehaviorClient(),
                 new AmmoQuiverChangeBehaviorClient(),
                 new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
+                new CrpgClanArmoryClient(), // Clan armory Sync with API/Client for GUI
+                new CrpgCharacterLoadoutBehaviorClient(_constants), // Inventory & Equipment Sync for GUI                
 #endif
                 dtvClient,
                 new MultiplayerTimerComponent(), // round timer
@@ -157,6 +161,8 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
                 new CrpgCommanderBehaviorServer(),
                 new FriendlyFireReportServerBehavior(), // Ctrl+M to report friendly fire
+                new CrpgClanArmoryServer(crpgClient), // Clan armory Sync with API/Client for GUI
+                new CrpgCharacterLoadoutBehaviorServer(crpgClient), // Inventory & Equipment Sync for GUI
 #else
                 new MultiplayerAchievementComponent(),
                 MissionMatchHistoryComponent.CreateIfConditionsAreMet(),

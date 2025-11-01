@@ -19,7 +19,7 @@ internal class CrpgClanArmoryServer : MissionNetwork
     public override void OnBehaviorInitialize()
     {
         base.OnBehaviorInitialize();
-        Debug.Print("CrpgClanArmoryServer behavior initialized.", 0, Debug.DebugColor.Yellow);
+        // Debug.Print("CrpgClanArmoryServer behavior initialized.", 0, Debug.DebugColor.Yellow);
     }
 
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
@@ -197,7 +197,7 @@ internal class CrpgClanArmoryServer : MissionNetwork
             result.ArmoryItems = res.Data.ToList();
 
             // 'Get' only replies to requester, does not broadcast.
-            Debug.Print("Sending ServerSendClanArmoryCompleteUpdate()", 0, Debug.DebugColor.Yellow);
+            // Debug.Print("Sending ServerSendClanArmoryCompleteUpdate()", 0, Debug.DebugColor.Yellow);
             GameNetwork.BeginModuleEventAsServer(peer);
             GameNetwork.WriteMessage(new ServerSendClanArmoryCompleteUpdate
             {

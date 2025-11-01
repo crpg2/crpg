@@ -14,7 +14,10 @@ namespace Crpg.Module.GUI.Inventory;
 
 public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
 {
-    public enum InventoryOpenSource
+    private static readonly TimeSpan ApiRefreshCooldown = TimeSpan.FromSeconds(10); // how often to update from API when opening inventory, otherwise use cached data
+    private DateTime _lastApiRefreshTime = DateTime.MinValue;
+    private Action<object?>? _onVmCloseHandler;
+    public enum CharacterEquipOpenedFromSource
     {
         MainGuiButton,
         Hotkey,
@@ -25,10 +28,10 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
     private CrpgMainGuiVM? _mainGuiVm;
     private IGauntletMovie? _mainGuiMovie;
 
-    private GauntletLayer? _inventoryLayer;
-    private CrpgInventoryViewModel? _inventoryVm;
-    private IGauntletMovie? _inventoryMovie;
-    private bool _inventoryOpenedFromMainGui = false;
+    private GauntletLayer? _characterEquipLayer;
+    private CrpgCharacterEquipVM? _characterEquipVm;
+    private IGauntletMovie? _characterEquipMovie;
+    private bool _characterEquipOpenedFromMainGui = false;
 
     BindedKeyCategory IUseKeyBinder.BindedKeys => new()
     {
@@ -39,8 +42,8 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
             new()
             {
                 Id = "key_toggle_equip_select",
-                Name = "Open Equipment Manager",
-                Description = "Open equipment manager gui",
+                Name = "Open Character/Equipment Manager",
+                Description = "Open character/equipment manager gui",
                 DefaultInputKey = InputKey.I,
             },
         },
@@ -54,24 +57,15 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
 
         try
         {
+            _onVmCloseHandler ??= OnVmCloseRequested;
+
             // Initialize main GUI bar
             _mainGuiVm = new CrpgMainGuiVM();
-            _mainGuiVm.OpenInventoryRequested += reason => ToggleInventory(reason);
+            _mainGuiVm.OpenCharacterEquipRequested += reason => ToggleCharacterEquip(reason);
             _mainGuiLayer = new GauntletLayer(100);
             _mainGuiMovie = _mainGuiLayer.LoadMovie("CrpgMainGuiBarPrefab", _mainGuiVm);
             _mainGuiVm.IsVisible = false;
             MissionScreen.AddLayer(_mainGuiLayer);
-
-            // Inventory UI starts closed — don't create layer until needed
-            _inventoryLayer = null;
-            _inventoryVm = null;
-            _inventoryMovie = null;
-
-            // Debug hotkey registration
-            var category = HotKeyManager.GetCategory("GenericPanelGameKeyCategory");
-            // string hotkeyMessage = $"Hotkeys in GenericPanelGameKeyCategory: {string.Join(", ", category.RegisteredHotKeys.Select(h => h.Id))}";
-            // InformationManager.DisplayMessage(new InformationMessage(hotkeyMessage));
-            // Debug.Print(hotkeyMessage, 0, Debug.DebugColor.DarkBlue);
         }
         catch (Exception ex)
         {
@@ -79,6 +73,19 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
             InformationManager.DisplayMessage(new InformationMessage(errorMessage));
             Debug.Print($"{errorMessage}\n{ex.StackTrace}", 0, Debug.DebugColor.DarkBlue);
         }
+    }
+
+    public override void OnMissionScreenFinalize()
+    {
+        base.OnMissionScreenFinalize();
+
+        if (_characterEquipVm != null)
+        {
+            _characterEquipVm.OnCloseButtonClicked -= _onVmCloseHandler;
+        }
+
+        DeactivateLayer(ref _characterEquipLayer, ref _characterEquipMovie);
+        DeactivateLayer(ref _mainGuiLayer, ref _mainGuiMovie);
     }
 
     public override void EarlyStart()
@@ -92,15 +99,15 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
     {
         base.OnMissionScreenTick(dt);
 
-        bool inventoryOpen = _inventoryVm?.IsVisible ?? false;
+        bool characterEquipOpen = _characterEquipVm?.IsVisible ?? false;
         bool mainGuiOpen = _mainGuiVm?.IsVisible ?? false;
 
         // Check hotkeys on active layer
         bool escapePressed = false;
-        if (_inventoryLayer != null && _inventoryLayer.IsFocusLayer)
+        if (_characterEquipLayer != null && _characterEquipLayer.IsFocusLayer)
         {
-            escapePressed = _inventoryLayer.Input.IsHotKeyReleased("ToggleEscapeMenu") ||
-                            _inventoryLayer.Input.IsHotKeyReleased("Exit");
+            escapePressed = _characterEquipLayer.Input.IsHotKeyReleased("ToggleEscapeMenu") ||
+                            _characterEquipLayer.Input.IsHotKeyReleased("Exit");
         }
         else if (_mainGuiLayer != null && _mainGuiLayer.IsFocusLayer && mainGuiOpen)
         {
@@ -111,30 +118,28 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
         // Debug to confirm hotkey detection
         if (escapePressed)
         {
-            string message = "Escape hotkey detected";
-            InformationManager.DisplayMessage(new InformationMessage(message));
-            Debug.Print(message, 0, Debug.DebugColor.DarkBlue);
+            // InformationManager.DisplayMessage(new InformationMessage("Escape hotkey detected"));
         }
 
         // Priority: If inventory is open and Escape hotkey is pressed, close inventory
-        if (inventoryOpen && escapePressed)
+        if (characterEquipOpen && escapePressed)
         {
-            // HideInventory();
-            CloseInventory();
+            HideCharacterEquip();
+            // CloseCharacterEquip();
             return;
         }
 
         // If no inventory is open and main GUI is open and Escape hotkey is pressed, close main GUI
-        if (!inventoryOpen && mainGuiOpen && escapePressed)
+        if (!characterEquipOpen && mainGuiOpen && escapePressed)
         {
             CloseMainGui();
             return;
         }
 
         // If M is pressed and no inventory is open, open main GUI
-        if (!inventoryOpen && Input.IsKeyReleased(InputKey.M))
+        if (!characterEquipOpen && Input.IsKeyReleased(InputKey.M))
         {
-            OpenMainGui();
+            // OpenMainGui(); // Disable for now until i add more gui elements to open from main bar
             return;
         }
 
@@ -142,13 +147,27 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
         // if (Input.IsKeyReleased(InputKey.I))
         if (toggleEquipmentSelectKey != null && (Input.IsKeyPressed(toggleEquipmentSelectKey.KeyboardKey.InputKey) || Input.IsKeyDown(toggleEquipmentSelectKey.ControllerKey.InputKey)))
         {
-            ToggleInventory(InventoryOpenSource.Hotkey);
+            ToggleCharacterEquip(CharacterEquipOpenedFromSource.Hotkey);
             return;
         }
 
-        // Tick VMs
-        _mainGuiVm?.Tick();
-        // _inventoryVm?.Tick();
+        // Tick VMs?
+        // _mainGuiVm?.Tick();
+        // _characterEquipVm?.Tick();
+    }
+
+    // Close button on GUI clicked
+    private void OnVmCloseRequested(object? sender)
+    {
+        switch (sender)
+        {
+            case CrpgCharacterEquipVM:
+                HideCharacterEquip();
+                break;
+            default:
+                Debug.Print($"Unhandled VM close event from {sender?.GetType().Name}", 0, Debug.DebugColor.Red);
+                break;
+        }
     }
 
     // Main GUI bar open/close/toggle methods
@@ -198,9 +217,6 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
         _mainGuiLayer.IsFocusLayer = false;
         _mainGuiLayer.InputRestrictions.ResetInputRestrictions();
         ScreenManager.TryLoseFocus(_mainGuiLayer);
-        string message = "Main GUI bar Hidden";
-        InformationManager.DisplayMessage(new InformationMessage(message));
-        Debug.Print(message, 0, Debug.DebugColor.DarkBlue);
     }
 
     private void CloseMainGui()
@@ -220,58 +236,59 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
         Debug.Print(message, 0, Debug.DebugColor.DarkBlue);
     }
 
-    // Inventory UI open/close/toggle methods
-    private void OpenInventory(bool openedFromMainGui = false)
+    // CharacterEquip UI open/close/toggle methods
+    private void OpenCharacterEquip(bool openedFromMainGui = false)
     {
-        _inventoryOpenedFromMainGui = openedFromMainGui;
+        _characterEquipOpenedFromMainGui = openedFromMainGui;
 
         // Hide main GUI if it has focus
         HideMainGui();
 
-        ActivateLayer(ref _inventoryLayer, ref _inventoryMovie, _inventoryVm ??= new CrpgInventoryViewModel(), "CrpgInventoryScreen", 110);
-        _inventoryVm.IsVisible = true;
+        ActivateLayer(ref _characterEquipLayer, ref _characterEquipMovie, _characterEquipVm ??= new CrpgCharacterEquipVM(), "CrpgCharacterEquipPrefab", 110);
+        _characterEquipVm.IsVisible = true;
 
-        _inventoryVm.Movie = _inventoryMovie;
-
-        var rootWidget = _inventoryVm?.Movie?.RootWidget;
-        if (_inventoryVm != null && rootWidget != null && _inventoryLayer != null)
-        {
-            _inventoryVm.SetRootWidget(rootWidget);
-            _inventoryVm.SetContext(_inventoryLayer.UIContext);
-        }
+        _characterEquipVm.OnCloseButtonClicked += _onVmCloseHandler;
 
         // Fetch items from server
+        var now = DateTime.UtcNow;
+        if (now - _lastApiRefreshTime < ApiRefreshCooldown)
+        {
+            InformationManager.DisplayMessage(new InformationMessage("_lastApiRefreshTime was recent, not updating from API", Colors.Red));
+            return;
+        }
+
+        _lastApiRefreshTime = now;
         var loadout = Mission.Current.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         loadout?.RequestGetUpdatedEquipmentAndItems();
     }
 
-    // Hides the inventory UI (sets IsVisible = false, removes focus/input)
-    private void HideInventory()
+    // Hides the CharacterEquip UI (sets IsVisible = false, removes focus/input)
+    private void HideCharacterEquip()
     {
-        if (_inventoryLayer == null || _inventoryVm == null)
+        if (_characterEquipLayer == null || _characterEquipVm == null)
         {
             return;
         }
 
-        _inventoryVm.IsVisible = false;
-        _inventoryLayer.IsFocusLayer = false;
-        _inventoryLayer.InputRestrictions.ResetInputRestrictions();
-        ScreenManager.TryLoseFocus(_inventoryLayer);
+        _characterEquipVm.IsVisible = false;
+        _characterEquipLayer.IsFocusLayer = false;
+        _characterEquipLayer.InputRestrictions.ResetInputRestrictions();
+        ScreenManager.TryLoseFocus(_characterEquipLayer);
 
-        // Restore main GUI only if inventory was opened from it
-        if (_inventoryOpenedFromMainGui && _mainGuiVm != null)
+        // Restore main GUI only if characterEquip was opened from it
+        if (_characterEquipOpenedFromMainGui && _mainGuiVm != null)
         {
             OpenMainGui();
         }
 
         // Reset the flag
-        _inventoryOpenedFromMainGui = false;
+        _characterEquipOpenedFromMainGui = false;
     }
 
-    // Fully closes inventory UI (removes the layer and disposes ViewModel)
-    private void CloseInventory()
+    // Fully closes CharacterEquip UI (removes the layer and disposes ViewModel)
+    private void CloseCharacterEquip()
     {
-        if (_inventoryLayer == null)
+        if (_characterEquipLayer == null)
         {
             return;
         }
@@ -279,18 +296,20 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
         try
         {
             // Hide the VM first
-            if (_inventoryVm != null)
+            if (_characterEquipVm != null)
             {
-                _inventoryVm.IsVisible = false;
-                _inventoryVm.OnFinalize();
-                _inventoryVm = null;
+                _characterEquipVm.OnCloseButtonClicked -= _onVmCloseHandler;
+                _characterEquipVm.IsVisible = false;
+                _characterEquipVm.OnFinalize();
+
+                _characterEquipVm = null;
             }
 
             // Deactivate and remove the layer
-            DeactivateLayer(ref _inventoryLayer, ref _inventoryMovie);
+            DeactivateLayer(ref _characterEquipLayer, ref _characterEquipMovie);
 
             // Reset the flag
-            _inventoryOpenedFromMainGui = false;
+            _characterEquipOpenedFromMainGui = false;
 
             // Restore main GUI focus if it should be visible
             if (_mainGuiLayer != null && _mainGuiVm != null && _mainGuiVm.IsVisible)
@@ -302,33 +321,34 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
         }
         catch (Exception ex)
         {
-            string errorMessage = $"CloseInventory exception: {ex.Message}";
+            string errorMessage = $"CloseCharacterEquip exception: {ex.Message}";
             InformationManager.DisplayMessage(new InformationMessage(errorMessage));
             Debug.Print(errorMessage, 0, Debug.DebugColor.DarkBlue);
         }
     }
 
     // Toggle between open and hide (keep layer loaded)
-    private void ToggleInventory(InventoryOpenSource reason)
+    private void ToggleCharacterEquip(CharacterEquipOpenedFromSource reason)
     {
-        if (_inventoryVm == null || !_inventoryVm.IsVisible)
+        if (_characterEquipVm == null || !_characterEquipVm.IsVisible)
         {
-            if (reason == InventoryOpenSource.MainGuiButton)
+            if (reason == CharacterEquipOpenedFromSource.MainGuiButton)
             {
-                OpenInventory(true); // track that we came from main gui
+                OpenCharacterEquip(true); // track that we came from main gui
             }
-            else if (reason == InventoryOpenSource.Hotkey)
+            else if (reason == CharacterEquipOpenedFromSource.Hotkey)
             {
-                OpenInventory(false); // came from hotkey, don’t restore main gui
+                OpenCharacterEquip(false); // came from hotkey, don’t restore main gui
             }
         }
         else
         {
-            // HideInventory();
-            CloseInventory();
+            HideCharacterEquip();
+            // CloseCharacterEquip();
         }
     }
 
+    // Bring to front/set focus/input settings
     private void ActivateLayer(ref GauntletLayer? layer, ref IGauntletMovie? movie, ViewModel vm, string prefabName, int layerOrder = 100)
     {
         if (layer == null)

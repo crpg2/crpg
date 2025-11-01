@@ -151,14 +151,12 @@ public class InventoryGridVM : ViewModel
 
     private void ExecuteClickArmory()
     {
-        LogDebug($"Clicked Armory: (2)");
         OnInventoryChangeType?.Invoke(2);
         ActiveSection = InventorySection.Armory;
     }
 
     private void ExecuteClickUserInventory()
     {
-        LogDebug($"Clicked User Inventory: (1)");
         OnInventoryChangeType?.Invoke(1);
         ActiveSection = InventorySection.Inventory;
     }
@@ -167,7 +165,6 @@ public class InventoryGridVM : ViewModel
     {
         if (slot?.ItemObj != null)
         {
-            LogDebug($"Clicked: {slot.ItemName}");
             OnInventorySlotClicked?.Invoke(slot);
         }
     }
@@ -293,7 +290,6 @@ public class InventoryGridVM : ViewModel
 
     private void OnSortTypeClicked(InventorySortTypeVM clickedSort)
     {
-        LogDebug($"Clicked sort icon: {clickedSort.IconSprite}");
         RefreshFilteredItemsFast();
 
         if (clickedSort != null)
@@ -387,25 +383,4 @@ public class InventoryGridVM : ViewModel
     public bool IsUserInventoryButtonVisible { get => _isUserInventoryButtonVisible; set => SetField(ref _isUserInventoryButtonVisible, value, nameof(IsUserInventoryButtonVisible)); }
     [DataSourceProperty]
     public bool IsArmoryButtonVisible { get => _isArmoryButtonVisible; set => SetField(ref _isArmoryButtonVisible, value, nameof(IsArmoryButtonVisible)); }
-
-    private readonly bool _debugOn = false;
-    private void LogDebug(string message)
-    {
-        if (_debugOn)
-        {
-            LogDebug(message, Color.White);
-        }
-    }
-
-    private void LogDebugError(string message)
-    {
-        LogDebug(message, Colors.Red);
-    }
-
-    private void LogDebug(string message, Color color)
-    {
-        message = $"{GetType().Name} {message}";
-        Debug.Print(message);
-        InformationManager.DisplayMessage(new InformationMessage(message, color));
-    }
 }

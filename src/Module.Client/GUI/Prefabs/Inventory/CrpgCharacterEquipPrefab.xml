@@ -1,12 +1,7 @@
-<Prefab Name="CrpgInventoryScreen">
+<Prefab Name="CrpgCharacterEquipPrefab">
   <Constants>
     <Constant Name="Background.Width" Value="800"/>
-    <Constant Name= "Background.Height" Value="800"/>
-    <Constant Name="InventoryPanel.Width" Value="600"/>
-    <Constant Name="InventoryPanel.Height" Value="650"/>
-    <Constant Name="ExtraPanel.Width" Value="600"/>
-    <Constant Name="BuildEquipStatsPanel.Width" Value="200"/>
-    <Constant Name="BuildEquipStatsPanel.Height" Value="450"/>
+    <Constant Name="Background.Height" Value="800"/>
     <Constant Name="CrpgLogo.Width" Value="48"/>
     <Constant Name="CrpgLogo.Height" Value="48"/>
   </Constants>
@@ -27,7 +22,7 @@
                 <BrushWidget Id="CrpgLogo" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!CrpgLogo.Width" SuggestedHeight="!CrpgLogo.Height"
                         Sprite="ui_crpg_icon_white_crpg_logo" Color="#ffffffff"
                         HorizontalAlignment="Left" VerticalAlignment="Top" MarginLeft="5" MarginTop="5"
-                        PositionXOffset="0" PositionYOffset="0"/>
+                        PositionXOffset="0" PositionYOffset="0"/>                       
                 <!-- Vertical panel container-->
                 <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
                       HorizontalAlignment="Center" VerticalAlignment="Center" >
@@ -71,6 +66,12 @@
                     <!-- End Horizontal Panel -->
                   </Children>
                 </ListPanel>
+                <CrpgButtonPrefab HorizontalAlignment="Right" VerticalAlignment="Top"
+                        Parameter.ButtonId="CloseButton"
+                        Parameter.ButtonText="X"
+                        Parameter.CommandClick="CloseButtonClicked"
+                        Parameter.Width="40"
+                        Parameter.Height="30" />                 
               </Children>
             </BrushWidget>                    
           </Children>

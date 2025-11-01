@@ -39,25 +39,12 @@
                            MarginLeft="8"
                            Spacing="6">
                   <Children>
-                    <ButtonWidget WidthSizePolicy="Fixed"
-                                  HeightSizePolicy="Fixed"
-                                  SuggestedWidth="120"
-                                  SuggestedHeight="32"
-                                  DoNotPassEventsToChildren="true"
-                                  Command.Click="OpenInventoryFromButton"
-                                  HoverSound="HUD_Button">
-                      <Children>
-                        <TextWidget Text="Inventory"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    WidthSizePolicy="StretchToParent"
-                                    HeightSizePolicy="StretchToParent"
-                                    DoNotAcceptEvents="True" />
-                      </Children>
-                    </ButtonWidget>
-
+                    <CrpgButtonPrefab 
+                        Parameter.ButtonText="Character/Equip"
+                        Parameter.CommandClick="OpenCharacterEquipFromButton"
+                        Parameter.Width="150"
+                        Parameter.Height="40" />
                     <!-- Add more toolbar buttons here -->
-
                   </Children>
                 </ListPanel>
               </Children>

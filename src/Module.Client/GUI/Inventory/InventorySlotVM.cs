@@ -49,13 +49,6 @@ public class InventorySlotVM : ViewModel
     {
         UserLoadoutBehavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         _clanArmory = Mission.Current?.GetMissionBehavior<CrpgClanArmoryClient>();
-        /*
-        if (_clanArmory is null)
-        {
-            _clanArmory = new CrpgClanArmoryClient();
-            Mission.Current?.AddMissionBehavior(_clanArmory);
-        }
-        */
 
         ItemObj = item;
         if (item != null)
@@ -96,7 +89,6 @@ public class InventorySlotVM : ViewModel
 
             if (_isArmoryItem)
             {
-                // IsDraggable = !UserLoadoutBehavior.IsArmoryItemOwner(_userItemId); // dont let equip if armory item and owner
                 IsDraggable = CanDragSlot();
                 _itemArmoryIcon?.UpdateItemArmoryIconFromItem(_userItemId);
             }
@@ -158,7 +150,6 @@ public class InventorySlotVM : ViewModel
 
     internal void HandleUpdateEvent(int userItemId)
     {
-        // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: HandleUpdateEvent({userItemId})"));
         if (UserLoadoutBehavior is not null)
         {
             // Try to fetch the latest version of this item from client behavior, not API
@@ -167,7 +158,6 @@ public class InventorySlotVM : ViewModel
             // If it doesn’t exist anymore, clear it
             if (latestItem == null)
             {
-                // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: HandleUpdateEvent({userItemId}) -- latestItem is null", Colors.Red));
                 UserItemEx = null;
                 return;
             }
@@ -175,7 +165,6 @@ public class InventorySlotVM : ViewModel
             // If this slot is tracking the same item, update it
             if (UserItemEx?.Id == userItemId)
             {
-                // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: HandleUpdateEvent({userItemId}) setting UserItemEx"));
                 UserItemEx = latestItem;
             }
         }
@@ -183,7 +172,6 @@ public class InventorySlotVM : ViewModel
 
     private void ApplyUserItemEx(CrpgUserItemExtended? uItem)
     {
-        // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ApplyUserItemEx() {uItem?.ItemId}"));
         if (uItem == null)
         {
             UserItemId = -1;
@@ -192,7 +180,6 @@ public class InventorySlotVM : ViewModel
             IsEquipped = false;
             IsDraggable = true;
             QuantityText = string.Empty;
-            // SetItemRankIconsVisible(0);
             ItemRankIcon = new ItemRankIconVM(_itemRank);
             ItemArmoryIcon = new ItemArmoryIconVM();
             return;
@@ -319,8 +306,6 @@ public class InventorySlotVM : ViewModel
     {
         if (ItemObj != null)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteDragBegin()"));
-            // OnItemDragBegin?.Invoke(ItemObj);
             _onDragBegin?.Invoke(this);
         }
     }
@@ -343,8 +328,7 @@ public class InventorySlotVM : ViewModel
 
     public void ExecuteHoverBegin()
     {
-        // _onHoverEnd?.Invoke(this);
-        // InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteHoverBegin()"));
+        // _onHoverBegin?.Invoke(this);
     }
 
     public void ExecuteHoverEnd()
@@ -364,10 +348,6 @@ public class InventorySlotVM : ViewModel
 
         if (equipped != null)
         {
-            // Item is equipped
-            // InformationManager.DisplayMessage(new InformationMessage($"Item {_itemName} is equipped in slot {equipped.Slot}"));
-
-            // Example: you could set a flag for UI
             IsEquipped = true;
         }
         else

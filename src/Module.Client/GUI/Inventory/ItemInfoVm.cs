@@ -49,7 +49,7 @@ public class ItemInfoVM : ViewModel
 
     public void OnOverlayClick()
     {
-        InformationManager.DisplayMessage(new InformationMessage("OnOverlayClick()", Colors.White));
+        // InformationManager.DisplayMessage(new InformationMessage("OnOverlayClick()", Colors.White));
         // Close the popup
         IsVisible = false;
     }
@@ -78,8 +78,7 @@ public class ItemInfoVM : ViewModel
                         _clanArmory.RequestArmoryAction(ClanArmoryActionType.Borrow, UserItemExtended);
                         break;
                     case CrpgGameArmoryItemStatus.NotYoursBorrowed:
-                        // maybe check clan rank for option to return to armory
-                        if (UserLoadoutBehavior?.User?.ClanMembership?.Role > 0)
+                        if (UserLoadoutBehavior?.User?.ClanMembership?.Role == Api.Models.Clans.CrpgClanMemberRole.Leader)
                         {
                             _clanArmory.RequestArmoryAction(ClanArmoryActionType.Return, UserItemExtended);
                         }
@@ -148,7 +147,7 @@ public class ItemInfoVM : ViewModel
 
         if (item == null)
         {
-            InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM Constructed; item == null", Colors.Yellow));
+            // InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM Constructed; item == null", Colors.Yellow));
             _imageIdentifier = new ImageIdentifierVM(ImageIdentifierType.Item);
             _itemRankIcon = new ItemRankIconVM();
             _itemArmoryIcon = new ItemArmoryIconVM();
@@ -161,7 +160,7 @@ public class ItemInfoVM : ViewModel
         }
         else
         {
-            InformationManager.DisplayMessage(new InformationMessage($"ItemInfoVM Constructed userItemId: {userItemExtended?.Id} itemid: {item.Id}", Colors.Yellow));
+            // InformationManager.DisplayMessage(new InformationMessage($"ItemInfoVM Constructed userItemId: {userItemExtended?.Id} itemid: {item.Id}", Colors.Yellow));
             ItemObj = item;
             ImageIdentifier = new ImageIdentifierVM(ItemObj);
             Name = item.Name.ToString();
@@ -185,11 +184,9 @@ public class ItemInfoVM : ViewModel
 
     internal void GenerateItemInfo(ItemObject item, int userItemId = -1)
     {
-        // InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateItemInfo", Colors.Yellow));
-
         if (item == null)
         {
-            InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateItemInfo: item is null!!!", Colors.Yellow));
+            // InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateItemInfo: item is null!!!", Colors.Yellow));
             return;
         }
 
@@ -237,13 +234,9 @@ public class ItemInfoVM : ViewModel
                             ArmoryButtonText = "Borrow from armory";
                             break;
                         case CrpgGameArmoryItemStatus.NotYoursBorrowed:
-                            ArmoryButtonText = "Unavailable";
-                            // maybe check clan rank for option to return to armory
-                            if (UserLoadoutBehavior?.User?.ClanMembership?.Role > 0)
-                            {
-                                ArmoryButtonText = "Force Return";
-                            }
-
+                            ArmoryButtonText = (UserLoadoutBehavior?.User?.ClanMembership?.Role == Api.Models.Clans.CrpgClanMemberRole.Leader)
+                                ? "Force Return"
+                                : "Unavailable";
                             break;
                         case CrpgGameArmoryItemStatus.BorrowedByYou:
                             ArmoryButtonText = "Return to armory";
@@ -268,11 +261,10 @@ public class ItemInfoVM : ViewModel
 
     private void GenerateTuplesFromItem()
     {
-        // InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateTuplesFromItem", Colors.Yellow));
         Tuples.Clear();
         if (ItemObj == null)
         {
-            InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateTuplesFromItem: Item is null!!!", Colors.Yellow));
+            // InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateTuplesFromItem: Item is null!!!", Colors.Yellow));
             return;
         }
 
@@ -591,8 +583,6 @@ public class ItemInfoVM : ViewModel
             ValueText = $"{crpgItem.Price:N0}",
             IsGoldVisible = true,
         });
-
-        // InformationManager.DisplayMessage(new InformationMessage($"Tuples Generated: {Tuples.Count} ", Colors.Yellow));
     }
 
     private int ComputeAverageRepairCostPerHour(int price)
@@ -630,8 +620,6 @@ public class ItemInfoVM : ViewModel
                 Right = right,
             });
         }
-
-        // InformationManager.DisplayMessage(new InformationMessage($"Rows Generated: {Rows.Count} ", Colors.Yellow));
     }
 
     private void AddWeaponStat(string category, int value, CrpgDamageType? damageType = null, bool skipIfZero = true)

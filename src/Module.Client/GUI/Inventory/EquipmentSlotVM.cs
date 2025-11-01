@@ -85,26 +85,22 @@ public class EquipmentSlotVM : ViewModel
     // ===== Event handlers for UI actions =====
     private void ExecuteAlternateClick()
     {
-        LogDebug($"ExecuteAlternateClick()");
         OnSlotAlternateClicked?.Invoke(this);
     }
 
     private void ExecuteClick()
     {
-        LogDebug($"ExecuteClick()");
         OnSlotClicked?.Invoke(this);
     }
 
     private void ExecuteHoverBegin()
     {
         OnHoverBegin?.Invoke(this);
-        LogDebug($"ExecuteHoverBegin()");
     }
 
     private void ExecuteHoverEnd()
     {
         OnHoverEnd?.Invoke(this);
-        LogDebug($"ExecuteHoverEnd()");
     }
 
     private void ExecuteDragBegin()
@@ -226,25 +222,4 @@ public class EquipmentSlotVM : ViewModel
         CrpgItemSlot.MountHarness => "ui_crpg_icon_white_mountharness",
         _ => "ui_crpg_icon_white_weaponslot",
     };
-
-    private readonly bool _debugOn = false;
-    private void LogDebug(string message)
-    {
-        if (_debugOn)
-        {
-            LogDebug(message, Color.White);
-        }
-    }
-
-    private void LogDebugError(string message)
-    {
-        LogDebug(message, Colors.Red);
-    }
-
-    private void LogDebug(string message, Color color)
-    {
-        message = $"{GetType().Name} {message}";
-        Debug.Print(message);
-        InformationManager.DisplayMessage(new InformationMessage(message, color));
-    }
 }

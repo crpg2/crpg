@@ -18,7 +18,6 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     private readonly List<CrpgEquippedItemExtended> _equippedItems = new();
     private readonly List<CrpgUserItemExtended> _userInventoryItems = new();
     private CrpgClanArmoryClient? _clanArmory;
-    private MissionNetworkComponent? _missionNetworkComponent;
 
     // Public read-only access
     public IReadOnlyList<CrpgEquippedItemExtended> EquippedItems => _equippedItems;
@@ -40,11 +39,6 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     public override void OnBehaviorInitialize()
     {
         base.OnBehaviorInitialize();
-        _missionNetworkComponent = Mission.GetMissionBehavior<MissionNetworkComponent>();
-        if (_missionNetworkComponent != null)
-        {
-            _missionNetworkComponent.OnMyClientSynchronized += OnMyClientSynchronized;
-        }
 
         _clanArmory = Mission.Current?.GetMissionBehavior<CrpgClanArmoryClient>();
         if (_clanArmory is not null)
@@ -56,10 +50,6 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     public override void OnRemoveBehavior()
     {
         base.OnRemoveBehavior();
-        if (_missionNetworkComponent != null)
-        {
-            _missionNetworkComponent.OnMyClientSynchronized -= OnMyClientSynchronized;
-        }
 
         if (_clanArmory is not null)
         {
@@ -312,12 +302,6 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         registerer.Register<ServerSendConvertCharacteristicsResult>(HandleConvertCharacteristicsResult); // recieve result of attempt to convert character characteristics on api from server
         registerer.Register<ServerSendUserCharacterStatistics>(HandleUpdateCharacterStatistics); // recieve character statistics from server
         registerer.Register<ServerSendUserInfo>(HandleUpdateUserInfo); // recieve user info from server
-    }
-
-    private void OnMyClientSynchronized()
-    {
-        LogDebug("OnMyClientSynchronized:");
-        // RequestGetUpdatedEquipmentAndItems();
     }
 
     private void HandleUpdateUserInfo(ServerSendUserInfo message)

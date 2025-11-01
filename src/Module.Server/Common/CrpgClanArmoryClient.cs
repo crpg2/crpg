@@ -173,7 +173,7 @@ internal class CrpgClanArmoryClient : MissionNetwork
             return;
         }
 
-        InformationManager.DisplayMessage(new InformationMessage($"ArmoryActionResult: {message.ActionType} was successful!!.", Colors.Yellow));
+        // InformationManager.DisplayMessage(new InformationMessage($"ArmoryActionResult: {message.ActionType} was successful!", Colors.Yellow));
     }
 
     private void HandleClanArmoryItemUpdate(ServerSendClanArmoryItemUpdate message)

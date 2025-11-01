@@ -20,6 +20,7 @@ using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.Conquest;
+using Crpg.Module.GUI.Inventory;
 using Crpg.Module.GUI.Spectator;
 using Crpg.Module.GUI.Warmup;
 using TaleWorlds.MountAndBlade.Multiplayer;
@@ -72,6 +73,7 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
             new WarmupHudUiHandler(),
             new ConquestHudUiHandler(),
             new AmmoQuiverChangeUiHandler(),
+            new CrpgMainGuiMissionView(), // Character/Equip gui
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -119,6 +121,8 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
                 new CrpgRespawnTimerClient(),
                 new AmmoQuiverChangeBehaviorClient(),
                 new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
+                new CrpgClanArmoryClient(), // Clan armory Sync with API/Client for GUI
+                new CrpgCharacterLoadoutBehaviorClient(_constants), // Inventory & Equipment Sync for GUI  
 #endif
                 warmupComponent,
                 new CrpgConquestClient(),
@@ -155,6 +159,8 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
                 new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
                 new CrpgCommanderBehaviorServer(),
                 new FriendlyFireReportServerBehavior(), // Ctrl+M to report friendly fire
+                new CrpgClanArmoryServer(crpgClient), // Clan armory Sync with API/Client for GUI
+                new CrpgCharacterLoadoutBehaviorServer(crpgClient), // Inventory & Equipment Sync for GUI
                 new CrpgRespawnTimerServer(conquestServer, spawnBehavior),
 #else
                 new MultiplayerAchievementComponent(),

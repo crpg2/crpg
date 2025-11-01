@@ -23,7 +23,7 @@ public class CharacteristicsEditorVM : ViewModel
     private int _attributePoints;
     private int _weaponProficiencyPoints;
 
-    private UserAndCharacterInfoVM _userAndCharacterInfoVm;
+    // private UserAndCharacterInfoVM _userAndCharacterInfoVm;
     private MBBindingList<CharacteristicsPlusMinusItemVM> _weaponProficiencies = new();
     private MBBindingList<CharacteristicsPlusMinusItemVM> _skills = new();
     private CharacteristicsPlusMinusItemVM _strengthVm;
@@ -48,7 +48,7 @@ public class CharacteristicsEditorVM : ViewModel
             ?? throw new InvalidOperationException("CrpgCharacterLoadoutBehaviorClient is required");
         _constants = UserLoadoutBehavior.Constants;
 
-        _userAndCharacterInfoVm = new UserAndCharacterInfoVM();
+        // _userAndCharacterInfoVm = new UserAndCharacterInfoVM();
         // Initialize attribute VMs
         _strengthVm = new CharacteristicsPlusMinusItemVM("Strength", 0, "Strength \nIncreases your health by 1\nRequires: 1 attribute point");
         _agilityVm = new CharacteristicsPlusMinusItemVM("Agility", 0, "Agility \nIncreases your weapon points and makes you move a bit faster\nRequires: 1 attribute point");
@@ -120,10 +120,6 @@ public class CharacteristicsEditorVM : ViewModel
             return;
         }
 
-        // Basic info
-        // temp update UserAndCharacterInfoVM here
-        UserAndCharacterInfoVm.UpdateUserAndCharacterInfo();
-
         // Clone characteristics for min value enforcement
         _initialCharacteristics = CloneCharacteristics(newCharacter.Characteristics);
 
@@ -194,12 +190,50 @@ public class CharacteristicsEditorVM : ViewModel
         ResetToInitialCharacteristics();
     }
 
+    internal CrpgCharacterCharacteristics GetInitialCharacteristics()
+    {
+        return _initialCharacteristics;
+    }
+
     internal void UpdateCharacteristicsPointsAfterConversion(int attributePoints, int skillPoints)
     {
-        AttributePoints = attributePoints;
-        SkillPoints = skillPoints;
+        // How many points have been spent in the UI since editing started
+        int spentAttributePoints = _initialCharacteristics.Attributes.Points - AttributePoints;
+        int spentSkillPoints = _initialCharacteristics.Skills.Points - SkillPoints;
+
+        // Update UI totals: start from the new API values and apply the same "spent" offsets
+        AttributePoints = Math.Max(0, attributePoints - spentAttributePoints);
+        SkillPoints = Math.Max(0, skillPoints - spentSkillPoints);
+
+        // Sync initial state for future conversions
         _initialCharacteristics.Attributes.Points = attributePoints;
         _initialCharacteristics.Skills.Points = skillPoints;
+        /*
+            // Get Displayed Values
+            var curAttributePoints = AttributePoints;
+            var carSkillPoints = SkillPoints;
+
+            // API Values
+            var apiAttributePoints = attributePoints;
+            var apiSkillPoints = skillPoints;
+
+            // Initial values when editing started
+            var initialAttributePoints = _initialCharacteristics.Attributes.Points;
+            var initialSkillPoints = _initialCharacteristics.Skills.Points;
+
+
+            // Update Displayed Values based on difference between API and Initial and Current, they can increase or decrease based on conversion and points spent in UI, not only through conversion
+
+            AttributePoints = curAttributePoints + (apiAttributePoints - initialAttributePoints);
+            SkillPoints = carSkillPoints + (apiSkillPoints - initialSkillPoints);
+
+            // AttributePoints = attributePoints;
+            // SkillPoints = skillPoints;
+
+            // update initial stored values to sync with API
+            _initialCharacteristics.Attributes.Points = attributePoints;
+            _initialCharacteristics.Skills.Points = skillPoints;
+        */
     }
 
     internal CrpgCharacterCharacteristics GetCrpgCharacteristicsFromVM()
@@ -289,7 +323,7 @@ public class CharacteristicsEditorVM : ViewModel
 
         OnEditCharacteristicsChanged?.Invoke();
 
-        InformationManager.DisplayMessage(new InformationMessage($"ResetToInitialCharacteristics():  completed.", Colors.Cyan));
+        // InformationManager.DisplayMessage(new InformationMessage($"ResetToInitialCharacteristics():  completed.", Colors.Cyan));
     }
 
     private void ExecuteClickApplyChanges()
@@ -486,7 +520,6 @@ public class CharacteristicsEditorVM : ViewModel
     /// </summary>
     private void OnConvertClicked(CharacteristicsConvertItemVM vm)
     {
-        InformationManager.DisplayMessage(new InformationMessage($"OnConvertClicked: {vm.ItemLabel} : {vm.ItemValue}"));
         if (vm.Equals(ConvertAttribute))
         {
             // 1 attribute point = 2 skill points
@@ -574,7 +607,7 @@ public class CharacteristicsEditorVM : ViewModel
                     }
                 }
 
-                Debug.Print($"Increased {item.ItemLabel} by {increase} (alt-click). Remaining points: {WeaponProficiencyPointsRemaining}");
+                // Debug.Print($"Increased {item.ItemLabel} by {increase} (alt-click). Remaining points: {WeaponProficiencyPointsRemaining}");
             }
             else
             {
@@ -707,7 +740,7 @@ public class CharacteristicsEditorVM : ViewModel
             wp.TextStateDisabled = isStateDisabled;
         }
 
-        InformationManager.DisplayMessage(new InformationMessage(WeaponProficiencyDebugBreakdown()));
+        // InformationManager.DisplayMessage(new InformationMessage(WeaponProficiencyDebugBreakdown()));
     }
 
     private string WeaponProficiencyDebugBreakdown()
@@ -849,9 +882,6 @@ public class CharacteristicsEditorVM : ViewModel
 
     [DataSourceProperty]
     public MBBindingList<CharacteristicsPlusMinusItemVM> WeaponProficiencies { get => _weaponProficiencies; set => SetField(ref _weaponProficiencies, value, nameof(WeaponProficiencies)); }
-
-    [DataSourceProperty]
-    public UserAndCharacterInfoVM UserAndCharacterInfoVm { get => _userAndCharacterInfoVm; set => SetField(ref _userAndCharacterInfoVm, value, nameof(UserAndCharacterInfoVm)); }
 
     [DataSourceProperty]
     public int AttributePoints

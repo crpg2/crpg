@@ -24,6 +24,7 @@ using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.EndOfRound;
 using Crpg.Module.GUI.HudExtension;
+using Crpg.Module.GUI.Inventory;
 using Crpg.Module.GUI.Scoreboard;
 using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
@@ -93,6 +94,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMissionKillNotificationUIHandler(),
             new CrpgHudExtensionHandler(),
             new AmmoQuiverChangeUiHandler(),
+            new CrpgMainGuiMissionView(), // Character/Equip gui
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -150,6 +152,8 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new CrpgCommanderBehaviorClient(),
                     new AmmoQuiverChangeBehaviorClient(),
                     new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
+                    new CrpgClanArmoryClient(), // Clan armory Sync with API/Client for GUI
+                    new CrpgCharacterLoadoutBehaviorClient(_constants), // Inventory & Equipment Sync for GUI                      
 #endif
                     battleClient,
                     new MultiplayerTimerComponent(), // round timer
@@ -205,6 +209,8 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new CrpgCustomTeamBannersAndNamesServer(roundController),
                     new CrpgCommanderBehaviorServer(),
                     new FriendlyFireReportServerBehavior(), // Ctrl+M to report friendly fire
+                    new CrpgClanArmoryServer(crpgClient), // Clan armory Sync with API/Client for GUI
+                    new CrpgCharacterLoadoutBehaviorServer(crpgClient), // Inventory & Equipment Sync for GUI
 #else
                     new MultiplayerRoundComponent(),
                     new MultiplayerAchievementComponent(),

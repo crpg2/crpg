@@ -34,10 +34,10 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
     private string _maxWeaponLength = string.Empty;
     private string _movementSpeedPenaltyWhenAttacking = string.Empty;
     private string _mountSpeedPenalty = string.Empty;
-    private string _additionalMountSpeedPenalty = string.Empty;
+    private string _additionalMountStatsPenalty = string.Empty;
     private bool _moveSpeedTextDisabledState = false;
     private bool _mountSpeedTextDisabledState = false;
-    private bool _addMountSpeedTextDisabledState = false;
+    private bool _addMountStatsTextDisabledState = false;
 
     public CharacterInfoBuildEquipStatsVM()
     {
@@ -65,7 +65,7 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
             new("Max weapon length", _maxWeaponLength, "Max weapon length without a movement speed penalty when fighting. Depends on STR points"),
             new("Mov. speed penalty", _movementSpeedPenaltyWhenAttacking, "Extra movement speed penalty when attacking with a weapon based on length and STR"),
             new("Mount speed penalty", _mountSpeedPenalty, "Reduces speed based on rider percieved weight and harness weight"),
-            new("Mount stats penalty", _additionalMountSpeedPenalty, "Penalties to mount stats based on weapon length and rider STR"),
+            new("Mount stats penalty", _additionalMountStatsPenalty, "Penalties to mount stats based on weapon length and rider STR"),
         };
     }
 
@@ -114,23 +114,21 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
             _moveSpeedTextDisabledState = charSpeedStats.MovementSpeedPenaltyWhenAttacking < 0;
 
             double penaltyPercent = 0;
+            // Always calculate the additional mount stats penalty
+            penaltyPercent = (mountWeaponLengthPenalty - 1.0) * 100.0;
+            _additionalMountStatsPenalty = $"{penaltyPercent:F2}%";
+            _addMountStatsTextDisabledState = penaltyPercent < 0;
+
             if (!mount.IsEmpty) // has a horse
             {
                 penaltyPercent = mountSpeedStats.SpeedReduction * 100.0;
                 _mountSpeedPenalty = $"{penaltyPercent:F2}%";
                 _mountSpeedTextDisabledState = mountSpeedStats.SpeedReduction < 0;
-
-                // Turn multiplier into penalty percent
-                penaltyPercent = (mountWeaponLengthPenalty - 1.0) * 100.0;
-                _additionalMountSpeedPenalty = $"{penaltyPercent:F2}%";
-                _addMountSpeedTextDisabledState = penaltyPercent < 0;
             }
             else
             {
                 _mountSpeedPenalty = "--";
-                _additionalMountSpeedPenalty = "0.00%";
                 _mountSpeedTextDisabledState = false;
-                _addMountSpeedTextDisabledState = false;
             }
 
             _stats = new MBBindingList<CharacterInfoBuildEquipStatsItemVM>
@@ -148,7 +146,7 @@ public class CharacterInfoBuildEquipStatsVM : ViewModel
                 new("Max weapon length", _maxWeaponLength, "Max weapon length without a movement speed penalty when fighting. Depends on STR points"),
                 new("Mov. speed penalty", _movementSpeedPenaltyWhenAttacking, "Extra movement speed penalty when attacking with a weapon based on length and STR", false, _moveSpeedTextDisabledState),
                 new("Mount speed penalty", _mountSpeedPenalty, "Reduces speed based on rider percieved weight and harness weight", false, _mountSpeedTextDisabledState),
-                new("Mount stats penalty", _additionalMountSpeedPenalty, "Penalties to mount stats based on weapon length and rider STR", false, _addMountSpeedTextDisabledState),
+                new("Mount stats penalty", _additionalMountStatsPenalty, "Penalties to mount stats based on weapon length and rider STR", false, _addMountStatsTextDisabledState),
             };
             OnPropertyChanged(nameof(Stats));
         }

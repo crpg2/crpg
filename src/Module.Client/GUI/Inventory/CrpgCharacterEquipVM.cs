@@ -2,12 +2,7 @@ using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using Crpg.Module.Common.Network;
 using Crpg.Module.Common.Network.Armory;
-using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
-using TaleWorlds.Engine.GauntletUI;
-using TaleWorlds.GauntletUI;
-using TaleWorlds.GauntletUI.BaseTypes;
-using TaleWorlds.GauntletUI.Data;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -15,13 +10,10 @@ using TaleWorlds.ObjectSystem;
 
 namespace Crpg.Module.GUI.Inventory;
 
-public class CrpgInventoryViewModel : ViewModel
+public class CrpgCharacterEquipVM : ViewModel
 {
-    public IGauntletMovie? Movie { get; set; }
-    public GauntletLayer? Layer { get; set; }
-    private UIContext? _context;
-    public Widget? RootWidget { get; set; }
     internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
+    internal event Action<ViewModel>? OnCloseButtonClicked;
     private readonly CrpgClanArmoryClient? _clanArmory;
     private bool _isVisible;
 
@@ -77,7 +69,7 @@ public class CrpgInventoryViewModel : ViewModel
     [DataSourceProperty]
     public string GoldAmount { get => _goldAmount; set => SetField(ref _goldAmount, value, nameof(GoldAmount)); }
 
-    public CrpgInventoryViewModel()
+    public CrpgCharacterEquipVM()
     {
         _navBar = new CharacterEquipNavBar();
         _characteristicsEditor = new CharacteristicsEditorVM();
@@ -191,26 +183,15 @@ public class CrpgInventoryViewModel : ViewModel
         InventoryGrid.OnInventoryChangeType -= HandleInventoryChangeType;
     }
 
-    public void SetRootWidget(Widget rootWidget)
+    public void ExecuteDropDiscard(ViewModel draggedItem, int index)
     {
-        RootWidget = rootWidget;
-        LogDebug("RootWidget set");
-    }
-
-    public void SetContext(UIContext context)
-    {
-        _context = context;
-
-        _context.Root.FindChild("InventoryGridPrefab");
-        if (_context.Root != null)
+        LogDebug("ExecuteDropDiscard");
+        if (draggedItem is EquipmentSlotVM eqSlot)
         {
-            LogDebug("UIContext Root found");
+            GameNetwork.BeginModuleEventAsClient();
+            GameNetwork.WriteMessage(new UserRequestEquipCharacterItem { Slot = eqSlot.CrpgItemSlotIndex, UserItemId = -1 });
+            GameNetwork.EndModuleEventAsClient();
         }
-        else
-        {
-            LogDebugError("UIContext Root NOT found");
-        }
-        MakeItemInfo();
     }
 
     private void ShowItemInfoPopup(bool show, ItemObject? itemObj, int userItemId = -1)
@@ -252,15 +233,9 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
-    public void ExecuteDropDiscard(ViewModel draggedItem, int index)
+    private void CloseButtonClicked()
     {
-        LogDebug("ExecuteDropDiscard");
-        if (draggedItem is EquipmentSlotVM eqSlot)
-        {
-            GameNetwork.BeginModuleEventAsClient();
-            GameNetwork.WriteMessage(new UserRequestEquipCharacterItem { Slot = eqSlot.CrpgItemSlotIndex, UserItemId = -1 });
-            GameNetwork.EndModuleEventAsClient();
-        }
+        OnCloseButtonClicked?.Invoke(this);
     }
 
     private void HandleInventoryChangeType(int type)
@@ -744,50 +719,6 @@ public class CrpgInventoryViewModel : ViewModel
                 LogDebugError("Failed to update CharacterInfoBuildEquipStatsVm: characteristics or equipment is null");
             }
         }
-    }
-
-    private void MakeItemInfo()
-    {
-        if (RootWidget == null)
-        {
-            LogDebug("Widget is NULL");
-            return;
-        }
-
-        Widget? userInventoryGridWidget = FindChildById(RootWidget, "InventoryGridRoot");
-
-        if (userInventoryGridWidget != null)
-        {
-            LogDebug("InventoryGridPrefab found");
-        }
-        else
-        {
-            LogDebug("InventoryGridPrefab NOT FOUND", Colors.Red);
-        }
-    }
-
-    public static Widget? FindChildById(Widget parent, string id)
-    {
-        if (parent == null)
-        {
-            return null;
-        }
-
-        if (parent.Id == id)
-        {
-            return parent;
-        }
-
-        foreach (var child in parent.Children)
-        {
-            var result = FindChildById(child, id);
-            if (result != null)
-            {
-                return result;
-            }
-        }
-
-        return null;
     }
 
     private readonly bool _debugOn = false;

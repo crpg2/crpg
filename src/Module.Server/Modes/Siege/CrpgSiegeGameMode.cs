@@ -16,6 +16,7 @@ using Crpg.Module.Common.ChatCommands;
 using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.HudExtension;
+using Crpg.Module.GUI.Inventory;
 using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
@@ -62,6 +63,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMissionKillNotificationUIHandler(),
             new CrpgHudExtensionHandler(),
             new AmmoQuiverChangeUiHandler(),
+            new CrpgMainGuiMissionView(), // Character/Equip gui
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -102,6 +104,8 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
                 new CrpgUserManagerClient(), // Needs to be loaded before the Client mission part.
                 new MultiplayerMissionAgentVisualSpawnComponent(),
                 new AmmoQuiverChangeBehaviorClient(),
+                new CrpgClanArmoryClient(), // Clan armory Sync with API/Client for GUI
+                new CrpgCharacterLoadoutBehaviorClient(_constants), // Inventory & Equipment Sync for GUI  
 #endif
                 warmupComponent,
                 siegeClient,
@@ -134,6 +138,8 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
                 new NotAllPlayersReadyComponent(),
                 new DrowningBehavior(),
                 new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
+                new CrpgClanArmoryServer(crpgClient), // Clan armory Sync with API/Client for GUI
+                new CrpgCharacterLoadoutBehaviorServer(crpgClient), // Inventory & Equipment Sync for GUI
 #else
                 new MultiplayerAchievementComponent(),
                 MissionMatchHistoryComponent.CreateIfConditionsAreMet(),
