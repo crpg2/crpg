@@ -184,7 +184,6 @@ const columns: TableColumn<ClanMember>[] = [
 
 <template>
   <UContainer
-    v-if="clan !== null"
     class="space-y-8 py-12"
   >
     <UiHeading

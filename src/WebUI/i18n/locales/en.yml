@@ -1581,3 +1581,11 @@ strategus:
     searchBySettlements: Search settlement
     terrainLayerToggle: Terrain layer toggle
     terrainEditorToggle: Terrain editor toggle
+
+  battle:
+    phase:
+      hiring: Hiring
+      scheduled: Scheduled
+      live: Live
+      preparation: Preparation
+      end: End

@@ -31,8 +31,9 @@ function updateTitle() {
 onMounted(updateTitle)
 
 function formatRange(start: Date, end: Date) {
-  // Пример: Oct 26 – Nov 1, 2025
   const sameMonth = start.getMonth() === end.getMonth()
+
+  console.log({ start, end, sameMonth })
 
   const startStr = useDateFormat(start, 'MMM d')
 
@@ -69,10 +70,10 @@ const calendarOptions = computed(() => ({
   headerToolbar: false,
   allDaySlot: false,
   nowIndicator: true,
-  expandRows: true,
+  // expandRows: true,
   height: 'auto',
   contentHeight: 'auto',
-  dayMaxEvents: 1,
+  // dayMaxEvents: 1,
   eventTimeFormat: {
     hour: '2-digit',
     minute: '2-digit',
@@ -88,7 +89,10 @@ const calendarOptions = computed(() => ({
     .map(b => ({
       id: String(b.id),
       start: b.scheduledFor!,
-      extendedProps: b,
+      end: new Date(b.scheduledFor!).setHours(b.scheduledFor!.getHours() + 4),
+      extendedProps: {
+        battle: b,
+      },
     })),
   // eventClick: (info: any) => {
   //   const id = info.event.id
@@ -98,7 +102,7 @@ const calendarOptions = computed(() => ({
 
 <template>
   <div>
-    <div class="mb-3 flex items-center justify-between gap-2">
+    <div class="mb-5 flex items-center justify-between gap-2">
       <UFieldGroup size="xl">
         <UButton icon="crpg:chevron-left" color="neutral" variant="subtle" @click="prev" />
         <UButton color="neutral" variant="subtle" label="Today" @click="today" />
@@ -119,7 +123,7 @@ const calendarOptions = computed(() => ({
 
     <FullCalendar ref="calendar" :options="calendarOptions">
       <template #eventContent="arg">
-        <BattleEventCard :arg="arg" />
+        <BattleEventCard :battle="arg.event.extendedProps.battle" />
       </template>
     </FullCalendar>
   </div>
@@ -141,8 +145,8 @@ const calendarOptions = computed(() => ({
   --fc-button-active-bg-color: #1a252f;
   --fc-button-active-border-color: #151e27;
 
-  --fc-event-bg-color: var(--background-color-accented);
-  --fc-event-border-color: var(--border-color-default);
+  --fc-event-bg-color: transparent;
+  --fc-event-border-color: transparent;
   --fc-event-text-color: #fff;
   --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
 
@@ -168,6 +172,13 @@ const calendarOptions = computed(() => ({
   .fc-button {
 
   }
+
+   td, th {
+    /* padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem; */
+   }
 
   .fc-timegrid-now-indicator-line {
     border-width: 3px 0px 0px;
