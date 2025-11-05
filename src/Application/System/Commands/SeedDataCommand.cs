@@ -2113,7 +2113,7 @@ public record SeedDataCommand : IMediatorRequest
                 Position = new Point(107.187, -110.164),
                 Fighters =
                 {
-                    new BattleFighter { Party = xaroshParty, Side = BattleSide.Attacker, Commander = true },
+                    new BattleFighter { Party = eckoParty, Side = BattleSide.Attacker, Commander = true },
                     new BattleFighter { Party = greenShadowParty, Side = BattleSide.Attacker, Commander = false },
                     new BattleFighter { Party = drexxParty, Side = BattleSide.Defender, Commander = true },
                     new BattleFighter { Party = hannibaruParty, Side = BattleSide.Defender, Commander = false },
@@ -2391,8 +2391,8 @@ public record SeedDataCommand : IMediatorRequest
                         Status = BattleFighterApplicationStatus.Pending,
                     },
                 },
-                CreatedAt = DateTime.UtcNow.AddHours(-4),
                 ScheduledFor = DateTime.UtcNow.AddHours(17),
+                CreatedAt = DateTime.UtcNow.AddHours(-4),
             };
 
             Battle[] newBattles = { nideonBattle, plainBattle, desertBattle, hertogeaBattle, leblenionBattle, epicroteaBattle };

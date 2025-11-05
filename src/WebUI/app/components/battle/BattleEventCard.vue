@@ -1,72 +1,131 @@
 <script setup lang="ts">
-import type { EventContentArg } from '@fullcalendar/core'
-
 import type { Battle } from '~/models/strategus/battle'
 
-const { battle } = defineProps<{ battle: Battle }>()
+import { settlementIconByType } from '~/services/strategus/settlement-service'
 
-// const attacker = battle.attacker
-// const defender = battle.defender
+const { battle } = defineProps<{ battle: Battle }>()
 </script>
 
 <template>
   <UCard
-    variant="subtle"
+    variant="outline"
     :ui="{
-      footer: 'flex items-end gap-4',
-      body: 'relative ',
-      root: 'h-full',
+      header: 'flex justify-between items-center gap-4',
     }"
   >
     <template #header>
-      <div class="flex items-center gap-2">
-        <div>
-          {{ $d(battle.scheduledFor!, 'short') }}
-        </div>
-        <div>
+      <div class="flex items-center gap-3">
+        <UiTextView variant="p" tag="h5">
           {{ $t(`strategus.battle.phase.${battle.phase.toLowerCase()}`) }}
-        </div>
+        </UiTextView>
+        <UBadge
+          v-if="battle.scheduledFor"
+          :label="$d(battle.scheduledFor, 'short')"
+          variant="subtle"
+          color="neutral"
+        />
       </div>
+
+      <UiTextView variant="caption">
+        Region: {{ battle.region }}
+      </UiTextView>
     </template>
 
-    <div class="mt-1 flex justify-between gap-1">
-      <div class="flex-1 text-left">
-        <div class="font-semibold text-green-300">
-          Атакует:
+    <div class="flex justify-center gap-6">
+      <div class="flex flex-1 flex-col items-end gap-y-3.5 text-right">
+        <div class="flex items-center justify-end gap-2">
+          <UiTextView variant="caption-sm">
+            Attacker
+          </UiTextView>
+          <UBadge icon="crpg:member" :label="$n(battle.defenderTotalTroops)" variant="subtle" />
         </div>
-        <div v-if="battle.attacker.party">
-          <UserMedia :user="battle.attacker.party.user" hidden-platform />
-          {{ battle.attackerTotalTroops }}
-        </div>
+
+        <template v-if="battle.attacker.party">
+          <UiDataMedia
+            v-if="battle.attacker.party.user.clanMembership?.clan"
+            :label="battle.attacker.party.user.clanMembership.clan.name"
+            size="xl"
+            class="flex-row-reverse"
+            :style="{ color: battle.attacker.party.user.clanMembership.clan.primaryColor }"
+          >
+            <template #icon="{ classes: clanTagIconClasses }">
+              <ClanTagIcon
+                :color="battle.attacker.party.user.clanMembership.clan.primaryColor"
+                :class="clanTagIconClasses()"
+              />
+            </template>
+          </UiDataMedia>
+
+          <UserMedia :user="battle.attacker.party.user" />
+        </template>
       </div>
 
-      <div class="px-1 text-center font-bold text-red-400">
-        VS
-      </div>
+      <!-- TODO: icon by battle type -->
+      <USeparator
+        orientation="vertical"
+        class="h-28 self-center"
+        size="sm"
+        icon="crpg:game-mode-conquest"
+        :ui="{
+          icon: 'size-6',
+        }"
+      />
 
-      <div class="flex-1 text-right">
-        <div class="font-semibold text-red-300">
-          Оборона:
+      <div class="flex-1 space-y-3.5 text-left">
+        <div class="flex flex-row-reverse items-center justify-end gap-2">
+          <UiTextView variant="caption-sm">
+            Defender
+          </UiTextView>
+          <UBadge icon="crpg:member" :label="$n(battle.defenderTotalTroops)" variant="subtle" />
         </div>
-        <div v-if="battle?.defender?.party">
-          {{ battle.defender.party.name }} ({{ battle.defenderTotalTroops }})
-        </div>
-        <div v-else-if="battle?.defender?.settlement">
-          🏰 {{ battle.defender.settlement.name }} {{ battle.defenderTotalTroops }}
-        </div>
+
+        <template v-if="battle.defender?.party">
+          <UiDataMedia
+            v-if="battle.defender.party.user.clanMembership?.clan"
+            :label="battle.defender.party.user.clanMembership.clan.name"
+            size="xl"
+          >
+            <template #icon="{ classes: clanTagIconClasses }">
+              <ClanTagIcon
+                :color="battle.defender.party.user.clanMembership.clan.primaryColor"
+                :class="clanTagIconClasses()"
+              />
+            </template>
+          </UiDataMedia>
+
+          <UserMedia :user="battle.defender.party.user" />
+        </template>
+
+        <template v-else-if="battle.defender?.settlement">
+          <template v-if="battle.defender.settlement.owner">
+            <UiDataMedia
+              v-if="battle.defender.settlement.owner.clanMembership?.clan"
+              :label="battle.defender.settlement.owner.clanMembership.clan.name"
+              size="xl"
+            >
+              <template #icon="{ classes: clanTagIconClasses }">
+                <ClanTagIcon
+                  :color="battle.defender.settlement.owner.clanMembership.clan.primaryColor"
+                  :class="clanTagIconClasses()"
+                />
+              </template>
+            </UiDataMedia>
+          </template>
+
+          <div class="flex items-center gap-4">
+            <!-- <UserMedia
+              v-if="battle.defender.settlement.owner"
+              :user="battle.defender.settlement.owner"
+            /> -->
+
+            <UiDataMedia
+              :label="battle.defender.settlement.name"
+              :icon="`crpg:${settlementIconByType[battle.defender.settlement.type]}`"
+              size="md"
+            />
+          </div>
+        </template>
       </div>
     </div>
-
-    <template #footer>
-      ddd
-    </template>
   </UCard>
-  <!-- <div
-    class="rounded border border-gray-700 bg-gray-900 p-1 text-xs leading-tight text-white shadow"
-  >
-    <div class="font-bold">
-      {{ $d(battle.scheduledFor!, 'short') }} {{ $t(`strategus.battle.phase.${battle.phase.toLowerCase()}`) }}
-    </div>
-
-  </div> -->
 </template>

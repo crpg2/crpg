@@ -14,11 +14,6 @@
   },
   "dependencies": {
     "@antfu/eslint-config": "^6.2.0",
-    "@fullcalendar/core": "^6.1.19",
-    "@fullcalendar/daygrid": "^6.1.19",
-    "@fullcalendar/interaction": "^6.1.19",
-    "@fullcalendar/timegrid": "^6.1.19",
-    "@fullcalendar/vue3": "^6.1.19",
     "@hey-api/openapi-ts": "0.86.2",
     "@iconify-json/lucide": "^1.2.71",
     "@internationalized/date": "^3.10.0",

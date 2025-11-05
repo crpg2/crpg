@@ -14,6 +14,16 @@ import {
 import type { Region } from '~/models/region'
 import type { Battle, BattleFighter, BattleFighterApplicationStatus, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattlePhase } from '~/models/strategus/battle'
 
+import { BATTLE_PHASE } from '~/models/strategus/battle'
+
+// need a name
+export const SEARCHABLE_BATTLE_PHASE = [
+  BATTLE_PHASE.Scheduled,
+  BATTLE_PHASE.Hiring,
+  BATTLE_PHASE.End,
+  BATTLE_PHASE.Live,
+]
+
 export const getBattles = async (
   region: Region,
   phases: BattlePhase[],
