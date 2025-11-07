@@ -1583,9 +1583,21 @@ strategus:
     terrainEditorToggle: Terrain editor toggle
 
   battle:
+    upcoming battles: Upcoming Battles
     phase:
-      hiring: Hiring
-      scheduled: Scheduled
-      live: Live
-      preparation: Preparation
-      end: End
+      Hiring: Hiring
+      Scheduled: Scheduled
+      Live: Live
+      Preparation: Preparation
+      End: End
+    type:
+      All: All
+      Battle: Battle
+      Siege: Siege
+    side:
+      attacker: Attacker
+      defender: Defender
+
+    titleByType:
+      Siege: Siege of {settlement}
+      Battle: Battle of {nearestSettlement} {terrain}

@@ -2,11 +2,6 @@
 
 import type { GetActivityLogsResponse, GetBattlesByBattleIdResponse, GetBattlesResponse, GetClansByClanIdArmoryResponse, GetGamesTournamentUsersResponse, GetGamesUsersResponse, GetItemsResponse, GetItemsUpgradesByBaseIdResponse, GetPartiesSelfUpdateResponse, GetPatchNotesResponse, GetRestrictionsResponse, GetSettlementsBySettlementIdItemsResponse, GetSettlementsBySettlementIdShopItemsResponse, GetUsersByIdRestrictionsResponse, GetUsersByUserIdResponse, GetUsersResponse, GetUsersSearchResponse, GetUsersSelfCharactersByIdEarningStatisticsResponse, GetUsersSelfCharactersByIdItemsResponse, GetUsersSelfCharactersByIdLimitationsResponse, GetUsersSelfItemsResponse, GetUsersSelfNotificationsResponse, GetUsersSelfRestrictionResponse, PostGamesRestrictionsResponse, PostPartiesSelfItemsResponse, PostSettlementsBySettlementIdItemsResponse, PostUsersSelfItemsResponse, PutGamesUsersResponse, PutUsersByUserIdNoteResponse, PutUsersSelfCharactersByIdItemsResponse, PutUsersSelfItemsByIdReforgeResponse, PutUsersSelfItemsByIdRepairResponse, PutUsersSelfItemsByIdUpgradeResponse, PutUsersSelfNotificationsByIdResponse } from './types.gen';
 
-export const getActivityLogsResponseTransformer = async (data: any): Promise<GetActivityLogsResponse> => {
-    data = activityLogWithDictViewModelResultSchemaResponseTransformer(data);
-    return data;
-};
-
 const activityLogWithDictViewModelResultSchemaResponseTransformer = (data: any) => {
     data.data = activityLogWithDictViewModelSchemaResponseTransformer(data.data);
     return data;
@@ -24,8 +19,8 @@ const activityLogViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const getBattlesResponseTransformer = async (data: any): Promise<GetBattlesResponse> => {
-    data = battleDetailedViewModelIListResultSchemaResponseTransformer(data);
+export const getActivityLogsResponseTransformer = async (data: any): Promise<GetActivityLogsResponse> => {
+    data = activityLogWithDictViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -46,8 +41,8 @@ const battleDetailedViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const getBattlesByBattleIdResponseTransformer = async (data: any): Promise<GetBattlesByBattleIdResponse> => {
-    data = battleDetailedViewModelResultSchemaResponseTransformer(data);
+export const getBattlesResponseTransformer = async (data: any): Promise<GetBattlesResponse> => {
+    data = battleDetailedViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -56,8 +51,8 @@ const battleDetailedViewModelResultSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const getClansByClanIdArmoryResponseTransformer = async (data: any): Promise<GetClansByClanIdArmoryResponse> => {
-    data = clanArmoryItemViewModelIListResultSchemaResponseTransformer(data);
+export const getBattlesByBattleIdResponseTransformer = async (data: any): Promise<GetBattlesByBattleIdResponse> => {
+    data = battleDetailedViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -80,8 +75,8 @@ const itemViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const getGamesUsersResponseTransformer = async (data: any): Promise<GetGamesUsersResponse> => {
-    data = gameUserViewModelResultSchemaResponseTransformer(data);
+export const getClansByClanIdArmoryResponseTransformer = async (data: any): Promise<GetClansByClanIdArmoryResponse> => {
+    data = clanArmoryItemViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -110,8 +105,8 @@ const userPrivateViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const putGamesUsersResponseTransformer = async (data: any): Promise<PutGamesUsersResponse> => {
-    data = updateGameUsersResultResultSchemaResponseTransformer(data);
+export const getGamesUsersResponseTransformer = async (data: any): Promise<GetGamesUsersResponse> => {
+    data = gameUserViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -132,13 +127,13 @@ const updateGameUserResultSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const getGamesTournamentUsersResponseTransformer = async (data: any): Promise<GetGamesTournamentUsersResponse> => {
-    data = gameUserViewModelResultSchemaResponseTransformer(data);
+export const putGamesUsersResponseTransformer = async (data: any): Promise<PutGamesUsersResponse> => {
+    data = updateGameUsersResultResultSchemaResponseTransformer(data);
     return data;
 };
 
-export const postGamesRestrictionsResponseTransformer = async (data: any): Promise<PostGamesRestrictionsResponse> => {
-    data = restrictionViewModelResultSchemaResponseTransformer(data);
+export const getGamesTournamentUsersResponseTransformer = async (data: any): Promise<GetGamesTournamentUsersResponse> => {
+    data = gameUserViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -147,8 +142,8 @@ const restrictionViewModelResultSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const getItemsResponseTransformer = async (data: any): Promise<GetItemsResponse> => {
-    data = itemViewModelIListResultSchemaResponseTransformer(data);
+export const postGamesRestrictionsResponseTransformer = async (data: any): Promise<PostGamesRestrictionsResponse> => {
+    data = restrictionViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -161,13 +156,13 @@ const itemViewModelIListResultSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const getItemsUpgradesByBaseIdResponseTransformer = async (data: any): Promise<GetItemsUpgradesByBaseIdResponse> => {
+export const getItemsResponseTransformer = async (data: any): Promise<GetItemsResponse> => {
     data = itemViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
-export const getPartiesSelfUpdateResponseTransformer = async (data: any): Promise<GetPartiesSelfUpdateResponse> => {
-    data = strategusUpdateResultSchemaResponseTransformer(data);
+export const getItemsUpgradesByBaseIdResponseTransformer = async (data: any): Promise<GetItemsUpgradesByBaseIdResponse> => {
+    data = itemViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -188,8 +183,8 @@ const battleViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const postPartiesSelfItemsResponseTransformer = async (data: any): Promise<PostPartiesSelfItemsResponse> => {
-    data = itemStackResultSchemaResponseTransformer(data);
+export const getPartiesSelfUpdateResponseTransformer = async (data: any): Promise<GetPartiesSelfUpdateResponse> => {
+    data = strategusUpdateResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -203,8 +198,8 @@ const itemStackSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const getPatchNotesResponseTransformer = async (data: any): Promise<GetPatchNotesResponse> => {
-    data = patchNotesIListResultSchemaResponseTransformer(data);
+export const postPartiesSelfItemsResponseTransformer = async (data: any): Promise<PostPartiesSelfItemsResponse> => {
+    data = itemStackResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -222,8 +217,8 @@ const patchNotesSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const getRestrictionsResponseTransformer = async (data: any): Promise<GetRestrictionsResponse> => {
-    data = restrictionViewModelIListResultSchemaResponseTransformer(data);
+export const getPatchNotesResponseTransformer = async (data: any): Promise<GetPatchNotesResponse> => {
+    data = patchNotesIListResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -236,8 +231,8 @@ const restrictionViewModelIListResultSchemaResponseTransformer = (data: any) => 
     return data;
 };
 
-export const getSettlementsBySettlementIdItemsResponseTransformer = async (data: any): Promise<GetSettlementsBySettlementIdItemsResponse> => {
-    data = itemStackIListResultSchemaResponseTransformer(data);
+export const getRestrictionsResponseTransformer = async (data: any): Promise<GetRestrictionsResponse> => {
+    data = restrictionViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -247,6 +242,11 @@ const itemStackIListResultSchemaResponseTransformer = (data: any) => {
             return itemStackSchemaResponseTransformer(item);
         });
     }
+    return data;
+};
+
+export const getSettlementsBySettlementIdItemsResponseTransformer = async (data: any): Promise<GetSettlementsBySettlementIdItemsResponse> => {
+    data = itemStackIListResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -260,11 +260,6 @@ export const getSettlementsBySettlementIdShopItemsResponseTransformer = async (d
     return data;
 };
 
-export const getUsersSearchResponseTransformer = async (data: any): Promise<GetUsersSearchResponse> => {
-    data = userPrivateViewModelArrayResultSchemaResponseTransformer(data);
-    return data;
-};
-
 const userPrivateViewModelArrayResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
         data.data = data.data.map((item: any) => {
@@ -274,8 +269,8 @@ const userPrivateViewModelArrayResultSchemaResponseTransformer = (data: any) => 
     return data;
 };
 
-export const getUsersByUserIdResponseTransformer = async (data: any): Promise<GetUsersByUserIdResponse> => {
-    data = userPrivateViewModelResultSchemaResponseTransformer(data);
+export const getUsersSearchResponseTransformer = async (data: any): Promise<GetUsersSearchResponse> => {
+    data = userPrivateViewModelArrayResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -284,13 +279,13 @@ const userPrivateViewModelResultSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const putUsersByUserIdNoteResponseTransformer = async (data: any): Promise<PutUsersByUserIdNoteResponse> => {
+export const getUsersByUserIdResponseTransformer = async (data: any): Promise<GetUsersByUserIdResponse> => {
     data = userPrivateViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
-export const getUsersResponseTransformer = async (data: any): Promise<GetUsersResponse> => {
-    data = userPrivateViewModelIListResultSchemaResponseTransformer(data);
+export const putUsersByUserIdNoteResponseTransformer = async (data: any): Promise<PutUsersByUserIdNoteResponse> => {
+    data = userPrivateViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -303,13 +298,13 @@ const userPrivateViewModelIListResultSchemaResponseTransformer = (data: any) => 
     return data;
 };
 
-export const getUsersByIdRestrictionsResponseTransformer = async (data: any): Promise<GetUsersByIdRestrictionsResponse> => {
-    data = restrictionViewModelIListResultSchemaResponseTransformer(data);
+export const getUsersResponseTransformer = async (data: any): Promise<GetUsersResponse> => {
+    data = userPrivateViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
-export const getUsersSelfRestrictionResponseTransformer = async (data: any): Promise<GetUsersSelfRestrictionResponse> => {
-    data = restrictionPublicViewModelResultSchemaResponseTransformer(data);
+export const getUsersByIdRestrictionsResponseTransformer = async (data: any): Promise<GetUsersByIdRestrictionsResponse> => {
+    data = restrictionViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -323,8 +318,8 @@ const restrictionPublicViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const getUsersSelfCharactersByIdItemsResponseTransformer = async (data: any): Promise<GetUsersSelfCharactersByIdItemsResponse> => {
-    data = equippedItemViewModelIListResultSchemaResponseTransformer(data);
+export const getUsersSelfRestrictionResponseTransformer = async (data: any): Promise<GetUsersSelfRestrictionResponse> => {
+    data = restrictionPublicViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -348,13 +343,13 @@ const userItemViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const putUsersSelfCharactersByIdItemsResponseTransformer = async (data: any): Promise<PutUsersSelfCharactersByIdItemsResponse> => {
+export const getUsersSelfCharactersByIdItemsResponseTransformer = async (data: any): Promise<GetUsersSelfCharactersByIdItemsResponse> => {
     data = equippedItemViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
-export const getUsersSelfCharactersByIdEarningStatisticsResponseTransformer = async (data: any): Promise<GetUsersSelfCharactersByIdEarningStatisticsResponse> => {
-    data = activityLogViewModelIListResultSchemaResponseTransformer(data);
+export const putUsersSelfCharactersByIdItemsResponseTransformer = async (data: any): Promise<PutUsersSelfCharactersByIdItemsResponse> => {
+    data = equippedItemViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -367,8 +362,8 @@ const activityLogViewModelIListResultSchemaResponseTransformer = (data: any) => 
     return data;
 };
 
-export const getUsersSelfCharactersByIdLimitationsResponseTransformer = async (data: any): Promise<GetUsersSelfCharactersByIdLimitationsResponse> => {
-    data = characterLimitationsViewModelResultSchemaResponseTransformer(data);
+export const getUsersSelfCharactersByIdEarningStatisticsResponseTransformer = async (data: any): Promise<GetUsersSelfCharactersByIdEarningStatisticsResponse> => {
+    data = activityLogViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -382,8 +377,8 @@ const characterLimitationsViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const getUsersSelfItemsResponseTransformer = async (data: any): Promise<GetUsersSelfItemsResponse> => {
-    data = userItemViewModelIListResultSchemaResponseTransformer(data);
+export const getUsersSelfCharactersByIdLimitationsResponseTransformer = async (data: any): Promise<GetUsersSelfCharactersByIdLimitationsResponse> => {
+    data = characterLimitationsViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -396,13 +391,18 @@ const userItemViewModelIListResultSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const postUsersSelfItemsResponseTransformer = async (data: any): Promise<PostUsersSelfItemsResponse> => {
-    data = userItemViewModelResultSchemaResponseTransformer(data);
+export const getUsersSelfItemsResponseTransformer = async (data: any): Promise<GetUsersSelfItemsResponse> => {
+    data = userItemViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
 const userItemViewModelResultSchemaResponseTransformer = (data: any) => {
     data.data = userItemViewModelSchemaResponseTransformer(data.data);
+    return data;
+};
+
+export const postUsersSelfItemsResponseTransformer = async (data: any): Promise<PostUsersSelfItemsResponse> => {
+    data = userItemViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -418,11 +418,6 @@ export const putUsersSelfItemsByIdRepairResponseTransformer = async (data: any):
 
 export const putUsersSelfItemsByIdUpgradeResponseTransformer = async (data: any): Promise<PutUsersSelfItemsByIdUpgradeResponse> => {
     data = userItemViewModelResultSchemaResponseTransformer(data);
-    return data;
-};
-
-export const getUsersSelfNotificationsResponseTransformer = async (data: any): Promise<GetUsersSelfNotificationsResponse> => {
-    data = userNotificationsWithDictViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -443,12 +438,17 @@ const userNotificationViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-export const putUsersSelfNotificationsByIdResponseTransformer = async (data: any): Promise<PutUsersSelfNotificationsByIdResponse> => {
-    data = userNotificationViewModelResultSchemaResponseTransformer(data);
+export const getUsersSelfNotificationsResponseTransformer = async (data: any): Promise<GetUsersSelfNotificationsResponse> => {
+    data = userNotificationsWithDictViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
 const userNotificationViewModelResultSchemaResponseTransformer = (data: any) => {
     data.data = userNotificationViewModelSchemaResponseTransformer(data.data);
+    return data;
+};
+
+export const putUsersSelfNotificationsByIdResponseTransformer = async (data: any): Promise<PutUsersSelfNotificationsByIdResponse> => {
+    data = userNotificationViewModelResultSchemaResponseTransformer(data);
     return data;
 };

@@ -3,24 +3,31 @@ import type { SelectItem, TabsItem } from '@nuxt/ui'
 
 import { useRouteQuery } from '@vueuse/router'
 
-import type { BattlePhase } from '~/models/strategus/battle'
+import type { Battle, BattlePhase, BattleType } from '~/models/strategus/battle'
 
 import { useRegionQuery } from '~/composables/use-region'
-import { BATTLE_PHASE } from '~/models/strategus/battle'
+import { useUser } from '~/composables/user/use-user'
+import { SomeRole } from '~/models/role'
+import { BATTLE_PHASE, BATTLE_TYPE } from '~/models/strategus/battle'
 import { getBattles, SEARCHABLE_BATTLE_PHASE } from '~/services/strategus/battle-service'
 
-const { regionModel, regions } = useRegionQuery()
+definePageMeta({
+  roles: SomeRole,
+})
+
+const { regionModel, actualRegions } = useRegionQuery()
+const { clan } = useUser()
 
 const battlePhaseModel = useRouteQuery<BattlePhase[]>('battlePhases', [BATTLE_PHASE.Scheduled, BATTLE_PHASE.Hiring])
+const battleTypeModel = useRouteQuery<BattleType | 'All'>('battleType', 'All')
 
 const {
   data: battles,
-  // execute: loadBattles,
 } = useAsyncData(
-  () => getBattles(regionModel.value, battlePhaseModel.value),
+  () => getBattles(regionModel.value, battlePhaseModel.value, battleTypeModel.value !== 'All' ? battleTypeModel.value : undefined),
   {
     default: () => [],
-    watch: [regionModel, battlePhaseModel],
+    watch: [regionModel, battleTypeModel, battlePhaseModel],
   },
 )
 </script>
@@ -30,13 +37,13 @@ const {
     <div
       class="mx-auto max-w-4xl"
     >
-      <UiHeading class="mb-14" title="Upcoming Battles" />
+      <UiHeading class="mb-14" :title="$t('strategus.battle.upcoming battles')" />
     </div>
     <div class="mx-auto max-w-2xl space-y-6">
-      <div class="mb-4 flex gap-6">
+      <div class="mb-6 flex justify-between gap-4">
         <UTabs
           v-model="regionModel"
-          :items="regions.map<TabsItem>(item => ({
+          :items="actualRegions.map<TabsItem>(item => ({
             label: $t(`region.${item}`),
             value: item,
           }))"
@@ -45,52 +52,54 @@ const {
           :content="false"
         />
 
-        <USelect
-          v-model="battlePhaseModel"
-          :items="Object.values(SEARCHABLE_BATTLE_PHASE).map<SelectItem>(item => ({
-            // label: $t(`region.${item}`),
-            label: item,
-            value: item,
-          }))"
-          multiple
-          size="xl"
-          color="neutral"
-          class="w-32"
-          :ui="{
-            content: 'w-auto',
-          }"
-        />
-        <!-- <UTabs
-          v-model="battlePhaseModel"
-          :items="Object.values(SEARCHABLE_BATTLE_PHASE).map<TabsItem>(item => ({
-            label: $t(`region.${item}`),
-            value: item,
-          }))"
-          size="xl"
-          color="neutral"
-          :content="false"
-        /> -->
+        <div class="flex gap-4">
+          <USelect
+            v-model="battleTypeModel"
+            :items="['All', ...Object.values(BATTLE_TYPE).map<SelectItem>(item => ({
+              label: $t(`strategus.battle.type.${item}`),
+              value: item,
+            })),
+            ]"
+            size="xl"
+            placeholder="Type"
+            color="neutral"
+            variant="soft"
+            :ui="{
+              content: 'w-auto',
+            }"
+          />
 
-      <!-- <UTabs
-          v-model="gameModeModel"
-          :items="rankedGameModes.map<TabsItem>(mode => ({
-            label: $t(`game-mode.${mode}`),
-            icon: `crpg:${gameModeToIcon[mode]}`,
-            value: mode,
-          }))"
-          size="xl"
-          color="neutral"
-          :content="false"
-        /> -->
+          <USelect
+            v-model="battlePhaseModel"
+            :items="Object.values(SEARCHABLE_BATTLE_PHASE).map<SelectItem>(item => ({
+              label: $t(`strategus.battle.phase.${item}`),
+              value: item,
+            }))"
+            multiple
+            size="xl"
+            placeholder="Phase"
+            variant="soft"
+            color="neutral"
+            class="w-48"
+            :ui="{
+              content: 'w-auto',
+            }"
+          />
+        </div>
       </div>
 
-      <div class="space-y-6">
+      <div v-if="battles.length" class="space-y-6">
         <BattleEventCard
           v-for="battle in battles"
+
           :key="battle.id"
           :battle
         />
       </div>
+
+      <UCard v-else variant="subtle">
+        <UiResultNotFound />
+      </UCard>
     </div>
   </UContainer>
 </template>

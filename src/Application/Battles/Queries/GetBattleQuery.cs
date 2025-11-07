@@ -51,6 +51,10 @@ public record GetBattleQuery : IMediatorRequest<BattleDetailedViewModel>
                 return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
             }
 
+            var attackerCommander = battle.Fighters.First(f => f.Side == BattleSide.Attacker && f.Commander);
+            var defenderCommander = battle.Fighters.First(f => f.Side == BattleSide.Defender && f.Commander);
+            var battleType = defenderCommander.Settlement != null ? BattleType.Siege : BattleType.Battle;
+
             // TODO: FIXME: copypasta from GetBattlesQuery
             var battleVm = new BattleDetailedViewModel
             {
@@ -58,13 +62,12 @@ public record GetBattleQuery : IMediatorRequest<BattleDetailedViewModel>
                 Region = battle.Region,
                 Position = battle.Position,
                 Phase = battle.Phase,
-                Attacker = _mapper.Map<BattleFighterViewModel>(
-                     battle.Fighters.First(f => f.Side == BattleSide.Attacker && f.Commander)),
+                Type = battleType,
+                Attacker = _mapper.Map<BattleFighterViewModel>(attackerCommander),
                 AttackerTotalTroops = battle.Fighters
                      .Where(f => f.Side == BattleSide.Attacker)
                      .Sum(f => (int)Math.Floor(f.Party!.Troops)),
-                Defender = _mapper.Map<BattleFighterViewModel>(
-                     battle.Fighters.FirstOrDefault(f => f.Side == BattleSide.Defender && f.Commander)),
+                Defender = _mapper.Map<BattleFighterViewModel>(defenderCommander),
                 DefenderTotalTroops = battle.Fighters
                      .Where(f => f.Side == BattleSide.Defender)
                      .Sum(f => (int)Math.Floor(f.Party?.Troops ?? 0) + (f.Settlement?.Troops ?? 0)),

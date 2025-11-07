@@ -17,11 +17,12 @@ public class BattlesController : BaseController
     /// </summary>
     [HttpGet]
     public Task<ActionResult<Result<IList<BattleDetailedViewModel>>>> GetBattles([FromQuery] Region region,
-        [FromQuery(Name = "phase[]")] BattlePhase[] phases)
+        [FromQuery(Name = "phase[]")] BattlePhase[] phases, [FromQuery] BattleType? type)
         => ResultToActionAsync(Mediator.Send(new GetBattlesQuery
         {
             Region = region,
             Phases = phases,
+            Type = type,
         }));
 
     /// <summary>

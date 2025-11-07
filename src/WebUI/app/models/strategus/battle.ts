@@ -3,6 +3,7 @@ import type {
   BattleMercenaryApplicationStatus as _BattleMercenaryApplicationStatus,
   BattlePhase as _BattlePhase,
   BattleSide as _BattleSide,
+  BattleType as _BattleType,
 } from '#api'
 import type { Point } from 'geojson'
 import type { ValueOf } from 'type-fest'
@@ -12,6 +13,13 @@ import type { Region } from '~/models/region'
 import type { PartyCommon } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 import type { UserPublic } from '~/models/user'
+
+export const BATTLE_TYPE = {
+  Battle: 'Battle',
+  Siege: 'Siege',
+} as const satisfies Record<_BattleType, _BattleType>
+
+export type BattleType = ValueOf<typeof BATTLE_TYPE>
 
 export const BATTLE_PHASE = {
   Preparation: 'Preparation',
@@ -33,6 +41,7 @@ export type BattleSide = ValueOf<typeof BATTLE_SIDE>
 export interface Battle {
   id: number
   phase: BattlePhase
+  type: BattleType
   region: Region
   position: Point
   scheduledFor: Date | null

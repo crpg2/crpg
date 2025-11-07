@@ -12,9 +12,9 @@ import {
 } from '#api/sdk.gen'
 
 import type { Region } from '~/models/region'
-import type { Battle, BattleFighter, BattleFighterApplicationStatus, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattlePhase } from '~/models/strategus/battle'
+import type { Battle, BattleFighter, BattleFighterApplicationStatus, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattlePhase, BattleType } from '~/models/strategus/battle'
 
-import { BATTLE_PHASE } from '~/models/strategus/battle'
+import { BATTLE_PHASE, BATTLE_TYPE } from '~/models/strategus/battle'
 
 // need a name
 export const SEARCHABLE_BATTLE_PHASE = [
@@ -24,10 +24,16 @@ export const SEARCHABLE_BATTLE_PHASE = [
   BATTLE_PHASE.Live,
 ]
 
+export const battleIconByType: Record<BattleType, string> = {
+  [BATTLE_TYPE.Battle]: 'game-mode-battle',
+  [BATTLE_TYPE.Siege]: 'game-mode-conquest',
+}
+
 export const getBattles = async (
   region: Region,
   phases: BattlePhase[],
-): Promise<Battle[]> => (await _getBattles({ query: { region, 'phase[]': phases } })).data! as Battle[] // TODO:
+  type?: BattleType,
+): Promise<Battle[]> => (await _getBattles({ query: { region, 'phase[]': phases, type } })).data! as Battle[] // TODO:
 
 export const getBattle = async (
   battleId: number,

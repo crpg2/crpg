@@ -67,6 +67,7 @@ export type BattleDetailedViewModel = {
     region: Region;
     position: Point;
     phase: BattlePhase;
+    type: BattleType;
     attacker: BattleFighterViewModel;
     attackerTotalTroops: number;
     defender: BattleFighterViewModel;
@@ -156,11 +157,14 @@ export type BattlePhase = 'Preparation' | 'Hiring' | 'Scheduled' | 'Live' | 'End
 
 export type BattleSide = 'Attacker' | 'Defender';
 
+export type BattleType = 'Battle' | 'Siege';
+
 export type BattleViewModel = {
     id: number;
     region: Region;
     position: Point;
     phase: BattlePhase;
+    type: BattleType;
     createdAt: Date;
 };
 
@@ -679,13 +683,7 @@ export type GameUserViewModelResult = {
 };
 
 export type Geometry = {
-    /**
-     * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
-     */
-    type: string;
-    /**
-     * Координаты в формате GeoJSON
-     */
+    type: unknown;
     coordinates: Array<number>;
 };
 
@@ -794,24 +792,12 @@ export type ItemWeaponComponentViewModel = {
 export type Languages = 'En' | 'Zh' | 'Ru' | 'De' | 'Fr' | 'It' | 'Es' | 'Pl' | 'Uk' | 'Ro' | 'Nl' | 'Tr' | 'El' | 'Hu' | 'Sv' | 'Cs' | 'Pt' | 'Sr' | 'Bg' | 'Hr' | 'Da' | 'Fi' | 'No' | 'Be' | 'Lv';
 
 export type LineString = {
-    /**
-     * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
-     */
-    type: string;
-    /**
-     * Координаты в формате GeoJSON
-     */
+    type: unknown;
     coordinates: Array<number>;
 };
 
 export type LinearRing = {
-    /**
-     * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
-     */
-    type: string;
-    /**
-     * Координаты в формате GeoJSON
-     */
+    type: unknown;
     coordinates: Array<number>;
 };
 
@@ -847,13 +833,7 @@ export type PartyViewModel = {
     position: Point;
     status: PartyStatus;
     waypoints: {
-        /**
-         * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
-         */
-        type: string;
-        /**
-         * Координаты в формате GeoJSON
-         */
+        type: unknown;
         coordinates: Array<number>;
     };
     targetedParty: PartyVisibleViewModel;
@@ -889,24 +869,12 @@ export type PatchNotesIListResult = {
 export type Platform = 'Steam' | 'EpicGames' | 'Microsoft';
 
 export type Point = {
-    /**
-     * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
-     */
-    type: string;
-    /**
-     * Координаты в формате GeoJSON
-     */
+    type: unknown;
     coordinates: Array<number>;
 };
 
 export type Polygon = {
-    /**
-     * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
-     */
-    type: string;
-    /**
-     * Координаты в формате GeoJSON
-     */
+    type: unknown;
     coordinates: Array<number>;
 };
 
@@ -1114,13 +1082,7 @@ export type UpdatePartyStatusCommand = {
     partyId: number;
     status: PartyStatus;
     waypoints: {
-        /**
-         * Тип геометрии в формате GeoJSON (Point, LineString, Polygon и т.д.)
-         */
-        type: string;
-        /**
-         * Координаты в формате GeoJSON
-         */
+        type: unknown;
         coordinates: Array<number>;
     };
     targetedPartyId: number;
@@ -1387,6 +1349,10 @@ export type CoordinateSequenceWritable = {
     last: CoordinateWritable;
 };
 
+export type ElevationModelWritable = {
+    extent: EnvelopeWritable;
+};
+
 export type EnvelopeWritable = {
     centre: CoordinateWritable;
 };
@@ -1420,7 +1386,7 @@ export type GameUserViewModelResultWritable = {
 export type GeometryFactoryWritable = {
     precisionModel: PrecisionModelWritable;
     coordinateSequenceFactory: CoordinateSequenceFactory;
-    elevationModel: ElevationModel;
+    elevationModel: ElevationModelWritable;
     geometryServices: NtsGeometryServicesWritable;
 };
 
@@ -1442,7 +1408,7 @@ export type NtsGeometryServicesWritable = {
     coordinateEqualityComparer: CoordinateEqualityComparer;
     defaultCoordinateSequenceFactory: CoordinateSequenceFactory;
     defaultPrecisionModel: PrecisionModelWritable;
-    defaultElevationModel: ElevationModel;
+    defaultElevationModel: ElevationModelWritable;
 };
 
 export type PartyViewModelResultWritable = {
@@ -1568,6 +1534,7 @@ export type GetBattlesData = {
     query: {
         region: Region;
         'phase[]'?: Array<BattlePhase>;
+        type?: BattleType;
     };
     url: '/Battles';
 };

@@ -10,6 +10,7 @@ public record BattleDetailedViewModel
     public Region Region { get; set; }
     public Point Position { get; set; } = default!;
     public BattlePhase Phase { get; set; }
+    public BattleType Type { get; init; }
     public BattleFighterViewModel Attacker { get; init; } = default!;
     public int AttackerTotalTroops { get; init; }
     public BattleFighterViewModel? Defender { get; init; }
