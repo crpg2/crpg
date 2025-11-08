@@ -1595,8 +1595,8 @@ strategus:
       Battle: Battle
       Siege: Siege
     side:
-      attacker: Attacker
-      defender: Defender
+      Attacker: Attacker
+      Defender: Defender
 
     titleByType:
       Siege: Siege of {settlement}

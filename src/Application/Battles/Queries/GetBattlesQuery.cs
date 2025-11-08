@@ -3,6 +3,7 @@ using Crpg.Application.Battles.Models;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
+using Crpg.Application.Common.Services;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Battles;
 using FluentValidation;
@@ -32,11 +33,13 @@ public record GetBattlesQuery : IMediatorRequest<IList<BattleDetailedViewModel>>
     {
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
+        private readonly IBattleService _battleService;
 
-        public Handler(ICrpgDbContext db, IMapper mapper)
+        public Handler(ICrpgDbContext db, IMapper mapper, IBattleService battleService)
         {
             _db = db;
             _mapper = mapper;
+            _battleService = battleService;
         }
 
         public async Task<Result<IList<BattleDetailedViewModel>>> Handle(GetBattlesQuery req, CancellationToken cancellationToken)
@@ -63,32 +66,7 @@ public record GetBattlesQuery : IMediatorRequest<IList<BattleDetailedViewModel>>
                 .OrderBy(b => b.ScheduledFor)
                 .ToArrayAsync(cancellationToken);
 
-            // TODO: FIXME: copypasta from GetBattleQuery
-            var battlesVm = battles.Select(b =>
-            {
-                var attackerCommander = b.Fighters.First(f => f.Side == BattleSide.Attacker && f.Commander);
-                var defenderCommander = b.Fighters.First(f => f.Side == BattleSide.Defender && f.Commander);
-                var battleType = defenderCommander.Settlement != null ? BattleType.Siege : BattleType.Battle;
-
-                return new BattleDetailedViewModel
-                {
-                    Id = b.Id,
-                    Region = b.Region,
-                    Position = b.Position,
-                    Phase = b.Phase,
-                    Type = battleType,
-                    Attacker = _mapper.Map<BattleFighterViewModel>(attackerCommander),
-                    AttackerTotalTroops = b.Fighters
-                            .Where(f => f.Side == BattleSide.Attacker)
-                            .Sum(f => (int)Math.Floor(f.Party!.Troops)),
-                    Defender = _mapper.Map<BattleFighterViewModel>(defenderCommander),
-                    DefenderTotalTroops = b.Fighters
-                            .Where(f => f.Side == BattleSide.Defender)
-                            .Sum(f => (int)Math.Floor(f.Party?.Troops ?? 0) + (f.Settlement?.Troops ?? 0)),
-                    CreatedAt = b.CreatedAt,
-                    ScheduledFor = b.ScheduledFor,
-                };
-            }).ToArray();
+            var battlesVm = battles.Select(b => _battleService.MapToBattleDetailedViewModel(_mapper, b)).ToArray();
 
             return new(battlesVm);
         }

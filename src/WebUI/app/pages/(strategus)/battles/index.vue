@@ -18,7 +18,7 @@ definePageMeta({
 const { regionModel, actualRegions } = useRegionQuery()
 const { clan } = useUser()
 
-const battlePhaseModel = useRouteQuery<BattlePhase[]>('battlePhases', [BATTLE_PHASE.Scheduled, BATTLE_PHASE.Hiring])
+const battlePhaseModel = useRouteQuery<BattlePhase[]>('battlePhases', [BATTLE_PHASE.Live, BATTLE_PHASE.Scheduled, BATTLE_PHASE.Hiring])
 const battleTypeModel = useRouteQuery<BattleType | 'All'>('battleType', 'All')
 
 const {
@@ -88,10 +88,9 @@ const {
         </div>
       </div>
 
-      <div v-if="battles.length" class="space-y-6">
+      <div v-if="battles.length" class="space-y-7">
         <BattleEventCard
           v-for="battle in battles"
-
           :key="battle.id"
           :battle
         />
