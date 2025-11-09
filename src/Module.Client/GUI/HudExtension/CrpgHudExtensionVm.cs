@@ -6,6 +6,7 @@ using Crpg.Module.Helpers;
 using Crpg.Module.Modes.Conquest;
 using Crpg.Module.Modes.Siege;
 using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
@@ -49,8 +50,8 @@ internal class CrpgHudExtensionVm : ViewModel
     private bool _isInWarmup;
     private int _generalWarningCountdown;
     private bool _isGeneralWarningCountdownActive;
-    private ImageIdentifierVM? _allyBanner;
-    private ImageIdentifierVM? _enemyBanner;
+    private BannerImageIdentifierVM? _allyBanner;
+    private BannerImageIdentifierVM? _enemyBanner;
     private int _requiredPlayers;
 
     public CrpgHudExtensionVm(Mission mission)
@@ -74,8 +75,7 @@ internal class CrpgHudExtensionVm : ViewModel
         NetworkCommunicator.OnPeerComponentAdded += OnPeerComponentAdded;
         _mission.OnMissionReset += OnMissionReset;
         MissionLobbyComponent missionBehavior = mission.GetMissionBehavior<MissionLobbyComponent>();
-        bool isTeamsEnabled = missionBehavior.MissionType != MultiplayerGameType.FreeForAll
-                              && missionBehavior.MissionType != MultiplayerGameType.Duel;
+        bool isTeamsEnabled = missionBehavior.MissionType != MultiplayerGameType.Duel;
         IsRoundCountdownAvailable = _gameMode.IsGameModeUsingRoundCountdown;
         IsRoundCountdownSuspended = false;
         _isTeamScoresEnabled = isTeamsEnabled;
@@ -93,10 +93,10 @@ internal class CrpgHudExtensionVm : ViewModel
         }
     }
 
-    private void HandleBannerChange(BannerCode attackerBanner, BannerCode defenderBanner, string attackerName, string defenderName)
+    private void HandleBannerChange(string attackerBanner, string defenderBanner, string attackerName, string defenderName)
     {
-        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? attackerBanner : defenderBanner, true);
-        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? defenderBanner : attackerBanner, true);
+        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(attackerBanner) : new Banner(defenderBanner), true);
+        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(defenderBanner) : new Banner(attackerBanner), true);
     }
 
     [DataSourceProperty]
@@ -195,7 +195,7 @@ internal class CrpgHudExtensionVm : ViewModel
     }
 
     [DataSourceProperty]
-    public ImageIdentifierVM? AllyBanner
+    public BannerImageIdentifierVM? AllyBanner
     {
         get
         {
@@ -214,7 +214,7 @@ internal class CrpgHudExtensionVm : ViewModel
     }
 
     [DataSourceProperty]
-    public ImageIdentifierVM? EnemyBanner
+    public BannerImageIdentifierVM? EnemyBanner
     {
         get
         {

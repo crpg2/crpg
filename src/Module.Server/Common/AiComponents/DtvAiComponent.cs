@@ -21,7 +21,7 @@ public class DtvAiComponent : CommonAIComponent
         _targetTimer = new(MathHelper.RandomWithVariance(ViscountTargetTimerDuration + (ViscountTargetTimerDuration / 31 * (Mission.Current.DefenderTeam.ActiveAgents.Count - 1)) * 3, 0.5f));
     }
 
-    public override void OnTickAsAI(float dt)
+    public override void OnTickParallel(float dt)
     {
         _tickOccasionally ??= new(1f);
         if (_tickOccasionally.Check(true))
@@ -30,7 +30,7 @@ public class DtvAiComponent : CommonAIComponent
         }
     }
 
-    public override void OnHit(Agent affectorAgent, int damage, in MissionWeapon affectorWeapon)
+    public override void OnHit(Agent affectorAgent, int damage, in MissionWeapon affectorWeapon, in Blow b, in AttackCollisionData collisionData)
     {
         if (affectorAgent.Team == Mission.Current.Teams.Defender)
         {

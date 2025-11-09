@@ -48,7 +48,7 @@ internal class CrpgConquestServer : MissionMultiplayerGameModeBase, IAnalyticsFl
     public override bool IsGameModeUsingOpposingTeams => true;
 
     public override MultiplayerGameType GetMissionType()
-        => MultiplayerGameType.FreeForAll; // Helps to avoid a few crashes.
+        => MultiplayerGameType.Battle;
 
     public override bool UseRoundController() => false;
 
@@ -237,10 +237,10 @@ internal class CrpgConquestServer : MissionMultiplayerGameModeBase, IAnalyticsFl
     private void AddTeams()
     {
         BasicCultureObject attackerCulture = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue());
-        Banner attackerBanner = new(attackerCulture.BannerKey, attackerCulture.BackgroundColor1, attackerCulture.ForegroundColor1);
+        Banner attackerBanner = attackerCulture.Banner;
         Mission.Teams.Add(BattleSideEnum.Attacker, attackerCulture.BackgroundColor1, attackerCulture.ForegroundColor1, attackerBanner, false, true);
         BasicCultureObject defenderCulture = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue());
-        Banner defenderBanner = new(defenderCulture.BannerKey, defenderCulture.BackgroundColor2, defenderCulture.ForegroundColor2);
+        Banner defenderBanner = defenderCulture.Banner;
         Mission.Teams.Add(BattleSideEnum.Defender, defenderCulture.BackgroundColor2, defenderCulture.ForegroundColor2, defenderBanner, false, true);
     }
 

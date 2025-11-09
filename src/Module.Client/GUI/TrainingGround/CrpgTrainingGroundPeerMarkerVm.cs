@@ -19,10 +19,10 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
     private float _latestY;
     private float _latestW;
     private float _wPosAfterPositionCalculation;
-    private TextObject _acceptDuelRequestText = TextObject.Empty;
-    private TextObject _sendDuelRequestText = TextObject.Empty;
-    private TextObject _sendRankedDuelRequestText = TextObject.Empty;
-    private TextObject _waitingForDuelResponseText = TextObject.Empty;
+    private TextObject _acceptDuelRequestText = new(string.Empty);
+    private TextObject _sendDuelRequestText = new(string.Empty);
+    private TextObject _sendRankedDuelRequestText = new(string.Empty);
+    private TextObject _waitingForDuelResponseText = new(string.Empty);
     private bool _isEnabled;
     private bool _isTracked;
     private bool _shouldShowInformation;
@@ -408,7 +408,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
         DuelsLost = ((CrpgTrainingGroundMissionRepresentative)peer.Representative).NumberOfLosses;
         IsEnabled = true;
         TargetIconType iconType = MultiplayerClassDivisions.GetMPHeroClassForPeer(TargetPeer).IconType;
-        CompassElement = new MPTeammateCompassTargetVM(iconType, Color.White.ToUnsignedInteger(), Color.White.ToUnsignedInteger(), BannerCode.CreateFrom(new Banner()), isAlly: true);
+        CompassElement = new MPTeammateCompassTargetVM(iconType, Color.White.ToUnsignedInteger(), Color.White.ToUnsignedInteger(), new Banner(), isAlly: true);
         RefreshValues();
     }
 

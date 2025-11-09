@@ -98,6 +98,8 @@ internal class CrpgStrikeMagnitudeModel : MultiplayerStrikeMagnitudeModel
     }
 
     public override float CalculateAdjustedArmorForBlow(
+        in AttackInformation attackInformation,
+        in AttackCollisionData collisionData,
         float baseArmor,
         BasicCharacterObject attackerCharacter,
         BasicCharacterObject attackerCaptainCharacter,

@@ -63,7 +63,8 @@ internal class AmmoQuiverChangeUiHandler : MissionView, IUseKeyBinder
 
     public override void EarlyStart()
     {
-        quiverChangeKey = HotKeyManager.GetCategory(KeyCategoryId).GetGameKey("key_change_quiver");
+        // TODO: fix
+        // quiverChangeKey = HotKeyManager.GetCategory(KeyCategoryId).GetGameKey("key_change_quiver");
     }
 
     public override void OnMissionScreenFinalize()

@@ -40,7 +40,7 @@ internal class CrpgHudExtensionHandler : MissionView
         base.OnMissionScreenInitialize();
 
         _mpMissionCategory = UIResourceManager.SpriteData.SpriteCategories["ui_mpmission"];
-        _mpMissionCategory.Load(UIResourceManager.ResourceContext, UIResourceManager.UIResourceDepot);
+        _mpMissionCategory.Load(UIResourceManager.ResourceContext, UIResourceManager.ResourceDepot);
 
         _dataSource = new CrpgHudExtensionVm(Mission);
         _gauntletLayer = new GauntletLayer(ViewOrderPriority);
