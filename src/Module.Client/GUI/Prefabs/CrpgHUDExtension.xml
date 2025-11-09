@@ -36,7 +36,7 @@
             </Widget>
 
             <!--Ally Banner-->
-            <MaskedTextureWidget DataSource="{AllyBanner}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="60" SuggestedHeight="80" HorizontalAlignment="Center" VerticalAlignment="Center" Brush="MPLobby.Clan.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" IsDisabled="true"  />
+            <MaskedTextureWidget DataSource="{AllyBanner}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="60" SuggestedHeight="80" HorizontalAlignment="Center" VerticalAlignment="Center" Brush="MPLobby.Clan.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" TextureProviderName="@TextureProviderName" IsDisabled="true"  />
 
 
             <!--Countdown Timer-->
@@ -52,7 +52,7 @@
 
             <!--Enemy Banner-->
 
-            <MaskedTextureWidget DataSource="{EnemyBanner}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="60" SuggestedHeight="80" HorizontalAlignment="Center" VerticalAlignment="Center" Brush="MPLobby.Clan.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" IsDisabled="true"  />
+            <MaskedTextureWidget DataSource="{EnemyBanner}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="60" SuggestedHeight="80" HorizontalAlignment="Center" VerticalAlignment="Center" Brush="MPLobby.Clan.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" TextureProviderName="@TextureProviderName" IsDisabled="true"  />
 
 
             <!--Enemy Score-->
