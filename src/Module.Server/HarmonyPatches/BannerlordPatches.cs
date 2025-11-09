@@ -12,7 +12,7 @@ internal static class BannerlordPatches
     public static void Apply()
     {
         Harmony harmony = new("BannerlordServerPatches");
-        harmony.PatchAll(Assembly.GetExecutingAssembly());
+       // harmony.PatchAll(Assembly.GetExecutingAssembly());
         /*
         AddPrefix(harmony, typeof(MissionLobbyComponent), "SendPeerInformationsToPeer",
             BindingFlags.NonPublic | BindingFlags.Instance, typeof(SendPeerInformationsToPeerPatch),

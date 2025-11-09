@@ -93,7 +93,7 @@
 
                         <MultiplayerFactionBannerWidget UpdateChildrenStates="true" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EndOfBattle.Banner.Left.Width" SuggestedHeight="!EndOfBattle.Banner.Left.Height" HorizontalAlignment="Left" MarginTop="128" MarginLeft="260" FactionCode="@CultureId" BannerWidget="Banner" IconWidget="Icon" UseSecondary="@UseSecondary">
                           <Children>
-                            <MaskedTextureWidget DataSource="{AllyBanner}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="ClanNaming.Stage.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" IsDisabled="true"  />
+                            <MaskedTextureWidget DataSource="{AllyBanner}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="ClanNaming.Stage.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" TextureProviderName="@TextureProviderName" IsDisabled="true"  />
 
                             <Widget IsHidden="@IsRoundWinner" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="MPGeneral\MPScoreboard\loser_dirt" />
 
@@ -104,7 +104,7 @@
 
                         <MultiplayerFactionBannerWidget UpdateChildrenStates="true" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EndOfBattle.Banner.Right.Width" SuggestedHeight="!EndOfBattle.Banner.Right.Height" HorizontalAlignment="Right" MarginTop="128" MarginRight="260" FactionCode="@CultureId" BannerWidget="Banner" IconWidget="Icon" UseSecondary="@UseSecondary">
                           <Children>
-                            <MaskedTextureWidget DataSource="{EnemyBanner}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="ClanNaming.Stage.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" IsDisabled="true"  />
+                            <MaskedTextureWidget DataSource="{EnemyBanner}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="ClanNaming.Stage.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" TextureProviderName="@TextureProviderName" IsDisabled="true"  />
 
                             <Widget IsHidden="@IsRoundWinner" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="MPGeneral\MPScoreboard\loser_dirt" />
 
