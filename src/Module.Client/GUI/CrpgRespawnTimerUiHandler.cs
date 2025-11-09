@@ -23,7 +23,7 @@ internal class CrpgRespawnTimerUiHandler : MissionView
         base.OnMissionScreenInitialize();
 
         _mpMissionCategory = UIResourceManager.SpriteData.SpriteCategories["ui_mpmission"];
-        _mpMissionCategory.Load(UIResourceManager.ResourceContext, UIResourceManager.UIResourceDepot);
+        _mpMissionCategory.Load(UIResourceManager.ResourceContext, UIResourceManager.ResourceDepot);
 
         _dataSource = new CrpgRespawnTimerVm(Mission);
         _gauntletLayer = new GauntletLayer(ViewOrderPriority + 1);

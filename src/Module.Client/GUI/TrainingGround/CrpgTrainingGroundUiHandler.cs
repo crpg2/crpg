@@ -29,7 +29,7 @@ public class CrpgTrainingGroundUiHandler : MissionView
         _gauntletLayer.LoadMovie("TrainingGroundHud", _dataSource);
         SpriteData spriteData = UIResourceManager.SpriteData;
         TwoDimensionEngineResourceContext resourceContext = UIResourceManager.ResourceContext;
-        ResourceDepot uIResourceDepot = UIResourceManager.UIResourceDepot;
+        ResourceDepot uIResourceDepot = UIResourceManager.ResourceDepot;
         _mpMissionCategory = spriteData.SpriteCategories["ui_mpmission"];
         _mpMissionCategory.Load(resourceContext, uIResourceDepot);
         MissionScreen.AddLayer(_gauntletLayer);

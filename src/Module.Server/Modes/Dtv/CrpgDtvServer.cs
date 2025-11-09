@@ -461,10 +461,10 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
             }
 
             int ammoCount2 = siegeWeapon.AmmoCount;
-            if (ammoCount2 != siegeWeapon.startingAmmoCount)
+            if (ammoCount2 != siegeWeapon.StartingAmmoCount)
             {
                 int newAmmoCount2 = siegeWeapon.AmmoCount + 1;
-                newAmmoCount2 = Math.Min(newAmmoCount2, siegeWeapon.startingAmmoCount);
+                newAmmoCount2 = Math.Min(newAmmoCount2, siegeWeapon.StartingAmmoCount);
                 siegeWeapon.SetAmmo(newAmmoCount2);
                 siegeWeapon.Activate();
 
@@ -513,10 +513,10 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private void AddTeams()
     {
         BasicCultureObject attackerTeamCulture = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue());
-        Banner bannerTeam1 = new(attackerTeamCulture.BannerKey, attackerTeamCulture.BackgroundColor1, attackerTeamCulture.ForegroundColor1);
+        Banner bannerTeam1 = attackerTeamCulture.Banner;
         Mission.Teams.Add(BattleSideEnum.Attacker, attackerTeamCulture.BackgroundColor1, attackerTeamCulture.ForegroundColor1, bannerTeam1, false, true);
         BasicCultureObject defenderTeamCulture = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue());
-        Banner bannerTeam2 = new(defenderTeamCulture.BannerKey, defenderTeamCulture.BackgroundColor2, defenderTeamCulture.ForegroundColor2);
+        Banner bannerTeam2 = defenderTeamCulture.Banner;
         Mission.Teams.Add(BattleSideEnum.Defender, defenderTeamCulture.BackgroundColor2, defenderTeamCulture.ForegroundColor2, bannerTeam2, false, true);
     }
 

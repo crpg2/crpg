@@ -9,7 +9,7 @@ internal class CrpgAgentHud : MissionView
 {
     private readonly CrpgExperienceTable _experienceTable;
     private GauntletLayer? _gauntletLayer;
-    private IGauntletMovie? _gauntletMovie;
+    private GauntletMovieIdentifier? _gauntletMovie;
     private CrpgAgentHudViewModel? _dataSource;
 
     public CrpgAgentHud(CrpgExperienceTable experienceTable)

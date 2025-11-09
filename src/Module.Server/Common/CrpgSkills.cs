@@ -31,7 +31,7 @@ public class CrpgSkills
     private static SkillObject InitializeSkill(Game game, string stringId, string name, string description)
     {
         var skill = game.ObjectManager.RegisterPresumedObject(new SkillObject(stringId));
-        skill.Initialize(new TextObject(name), new TextObject(description), SkillObject.SkillTypeEnum.Personal);
+        skill.Initialize(new TextObject(name), new TextObject(description), new CharacterAttribute[0]);
         return skill;
     }
 }

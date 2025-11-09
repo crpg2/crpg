@@ -5,6 +5,7 @@ using Crpg.Module.GUI.HudExtension;
 using Crpg.Module.Modes.Conquest;
 using JetBrains.Annotations;
 using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.Core.ViewModelCollection.Information;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
@@ -14,7 +15,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
 {
     public class CrpgTeamSelectInstanceVM : ViewModel
     {
-        public CrpgTeamSelectInstanceVM(MissionScoreboardComponent missionScoreboardComponent, Team team, BasicCultureObject? culture, ImageIdentifierVM? banner, Action<Team> onSelect, bool useSecondary, string teamName)
+        public CrpgTeamSelectInstanceVM(MissionScoreboardComponent missionScoreboardComponent, Team team, BasicCultureObject? culture, BannerImageIdentifierVM? banner, Action<Team> onSelect, bool useSecondary, string teamName)
         {
             Team = team;
             UseSecondary = useSecondary;
@@ -318,7 +319,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
         }
 
         [DataSourceProperty]
-        public ImageIdentifierVM? Banner
+        public BannerImageIdentifierVM? Banner
         {
             get
             {
@@ -468,7 +469,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
 
         private int _score;
 
-        private ImageIdentifierVM? _banner = default!;
+        private BannerImageIdentifierVM? _banner = default!;
 
         private MBBindingList<MPPlayerVM> _friendAvatars = default!;
 

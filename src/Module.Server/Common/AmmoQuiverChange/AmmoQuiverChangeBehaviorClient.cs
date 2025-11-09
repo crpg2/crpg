@@ -73,7 +73,7 @@ internal class AmmoQuiverChangeBehaviorClient : MissionNetwork
     {
         if (agent != null && agent.IsActive() && agent == Mission.MainAgent)
         {
-            EquipmentIndex wieldedWeaponIndex = agent.GetWieldedItemIndex(Agent.HandIndex.MainHand);
+            EquipmentIndex wieldedWeaponIndex = agent.GetPrimaryWieldedItemIndex();
             if (wieldedWeaponIndex == EquipmentIndex.None)
             {
                 return;
@@ -122,7 +122,7 @@ internal class AmmoQuiverChangeBehaviorClient : MissionNetwork
             Mission.Current.OnItemPickUp += OnItemPickupHandler;
             Mission.Current.OnMainAgentChanged += OnMainAgentChangedHandler;
 
-            OnMainAgentChangedHandler(null, null);
+            OnMainAgentChangedHandler(null);
         }
 
         base.OnBehaviorInitialize();
@@ -294,7 +294,7 @@ internal class AmmoQuiverChangeBehaviorClient : MissionNetwork
         }
     }
 
-    private void OnMainAgentChangedHandler(object? sender, PropertyChangedEventArgs? e)
+    private void OnMainAgentChangedHandler(Agent? oldAgent)
     {
         if (Agent.Main != null)
         {
@@ -317,7 +317,7 @@ internal class AmmoQuiverChangeBehaviorClient : MissionNetwork
             return;
         }
 
-        EquipmentIndex wieldedWeaponIndex = agent.GetWieldedItemIndex(Agent.HandIndex.MainHand);
+        EquipmentIndex wieldedWeaponIndex = agent.GetPrimaryWieldedItemIndex();
         MissionWeapon weapon = wieldedWeaponIndex == EquipmentIndex.None
             ? MissionWeapon.Invalid
             : agent.Equipment[wieldedWeaponIndex];

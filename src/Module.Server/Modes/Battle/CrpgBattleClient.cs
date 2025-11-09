@@ -252,7 +252,7 @@ internal class CrpgBattleClient : MissionMultiplayerGameModeBaseClient, ICommand
             TextObject textObject = new("{=nbOZ9BNQ}A flag will spawn in {TIMER} seconds.",
             new Dictionary<string, object> { ["TIMER"] = 30 });
             string soundEventPath = "event:/ui/mission/multiplayer/pointwarning";
-            MBInformationManager.AddQuickInformation(textObject, 0, null, soundEventPath);
+            MBInformationManager.AddQuickInformation(textObject, 0, null, null, soundEventPath);
         }
         else
         {
@@ -320,7 +320,7 @@ internal class CrpgBattleClient : MissionMultiplayerGameModeBaseClient, ICommand
 
         TextObject textObject = new(flagSpawnMessage, new Dictionary<string, object> { ["NAME"] = char.ConvertFromUtf32(message.FlagChar), ["TIME"] = message.Time });
         string soundEventPath = "event:/ui/mission/multiplayer/pointsremoved";
-        MBInformationManager.AddQuickInformation(textObject, 0, null, soundEventPath);
+        MBInformationManager.AddQuickInformation(textObject, 0, null, null, soundEventPath);
 
         ChangeNumberOfFlags();
     }
