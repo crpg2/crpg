@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Text.Json.Serialization;
+using AutoMapper;
 using Crpg.Application.Common.Mappings;
 using Crpg.Application.Users.Models;
 using Crpg.Domain.Entities;
@@ -15,7 +16,8 @@ public record SettlementPublicViewModel : IMapFrom<Settlement>
     public Point Position { get; init; } = default!;
     public Culture Culture { get; init; }
     public Region Region { get; init; }
-    public int Troops { get; init; } // TODO:
+    public int Troops { get; init; }
+    [JsonRequired]
     public UserPublicViewModel? Owner { get; init; }
 
     public void Mapping(Profile profile)

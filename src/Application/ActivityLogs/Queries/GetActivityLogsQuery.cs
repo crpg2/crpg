@@ -17,8 +17,8 @@ public record GetActivityLogsQuery : IMediatorRequest<ActivityLogWithDictViewMod
 {
     public DateTime From { get; init; }
     public DateTime To { get; init; }
-    public int[] UserIds { get; init; } = Array.Empty<int>();
-    public ActivityLogType[] Types { get; init; } = Array.Empty<ActivityLogType>();
+    public int[] UserIds { get; init; } = [];
+    public ActivityLogType[] Types { get; init; } = [];
 
     public class Validator : AbstractValidator<GetActivityLogsQuery>
     {

@@ -3,7 +3,9 @@
 import type { GetActivityLogsResponse, GetBattlesByBattleIdResponse, GetBattlesResponse, GetClansByClanIdArmoryResponse, GetGamesTournamentUsersResponse, GetGamesUsersResponse, GetItemsResponse, GetItemsUpgradesByBaseIdResponse, GetPartiesSelfUpdateResponse, GetPatchNotesResponse, GetRestrictionsResponse, GetSettlementsBySettlementIdItemsResponse, GetSettlementsBySettlementIdShopItemsResponse, GetUsersByIdRestrictionsResponse, GetUsersByUserIdResponse, GetUsersResponse, GetUsersSearchResponse, GetUsersSelfCharactersByIdEarningStatisticsResponse, GetUsersSelfCharactersByIdItemsResponse, GetUsersSelfCharactersByIdLimitationsResponse, GetUsersSelfItemsResponse, GetUsersSelfNotificationsResponse, GetUsersSelfRestrictionResponse, PostGamesRestrictionsResponse, PostPartiesSelfItemsResponse, PostSettlementsBySettlementIdItemsResponse, PostUsersSelfItemsResponse, PutGamesUsersResponse, PutUsersByUserIdNoteResponse, PutUsersSelfCharactersByIdItemsResponse, PutUsersSelfItemsByIdReforgeResponse, PutUsersSelfItemsByIdRepairResponse, PutUsersSelfItemsByIdUpgradeResponse, PutUsersSelfNotificationsByIdResponse } from './types.gen';
 
 const activityLogWithDictViewModelResultSchemaResponseTransformer = (data: any) => {
-    data.data = activityLogWithDictViewModelSchemaResponseTransformer(data.data);
+    if (data.data) {
+        data.data = activityLogWithDictViewModelSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -47,7 +49,9 @@ export const getBattlesResponseTransformer = async (data: any): Promise<GetBattl
 };
 
 const battleDetailedViewModelResultSchemaResponseTransformer = (data: any) => {
-    data.data = battleDetailedViewModelSchemaResponseTransformer(data.data);
+    if (data.data) {
+        data.data = battleDetailedViewModelSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -81,7 +85,9 @@ export const getClansByClanIdArmoryResponseTransformer = async (data: any): Prom
 };
 
 const gameUserViewModelResultSchemaResponseTransformer = (data: any) => {
-    data.data = gameUserViewModelSchemaResponseTransformer(data.data);
+    if (data.data) {
+        data.data = gameUserViewModelSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -94,7 +100,9 @@ const gameUserViewModelSchemaResponseTransformer = (data: any) => {
 };
 
 const restrictionViewModelSchemaResponseTransformer = (data: any) => {
-    data.restrictedUser = userPrivateViewModelSchemaResponseTransformer(data.restrictedUser);
+    if (data.restrictedUser) {
+        data.restrictedUser = userPrivateViewModelSchemaResponseTransformer(data.restrictedUser);
+    }
     data.createdAt = new Date(data.createdAt);
     return data;
 };
@@ -111,7 +119,9 @@ export const getGamesUsersResponseTransformer = async (data: any): Promise<GetGa
 };
 
 const updateGameUsersResultResultSchemaResponseTransformer = (data: any) => {
-    data.data = updateGameUsersResultSchemaResponseTransformer(data.data);
+    if (data.data) {
+        data.data = updateGameUsersResultSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -138,7 +148,9 @@ export const getGamesTournamentUsersResponseTransformer = async (data: any): Pro
 };
 
 const restrictionViewModelResultSchemaResponseTransformer = (data: any) => {
-    data.data = restrictionViewModelSchemaResponseTransformer(data.data);
+    if (data.data) {
+        data.data = restrictionViewModelSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -167,7 +179,9 @@ export const getItemsUpgradesByBaseIdResponseTransformer = async (data: any): Pr
 };
 
 const strategusUpdateResultSchemaResponseTransformer = (data: any) => {
-    data.data = strategusUpdateSchemaResponseTransformer(data.data);
+    if (data.data) {
+        data.data = strategusUpdateSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -189,7 +203,9 @@ export const getPartiesSelfUpdateResponseTransformer = async (data: any): Promis
 };
 
 const itemStackResultSchemaResponseTransformer = (data: any) => {
-    data.data = itemStackSchemaResponseTransformer(data.data);
+    if (data.data) {
+        data.data = itemStackSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -275,7 +291,9 @@ export const getUsersSearchResponseTransformer = async (data: any): Promise<GetU
 };
 
 const userPrivateViewModelResultSchemaResponseTransformer = (data: any) => {
-    data.data = userPrivateViewModelSchemaResponseTransformer(data.data);
+    if (data.data) {
+        data.data = userPrivateViewModelSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -309,7 +327,9 @@ export const getUsersByIdRestrictionsResponseTransformer = async (data: any): Pr
 };
 
 const restrictionPublicViewModelResultSchemaResponseTransformer = (data: any) => {
-    data.data = restrictionPublicViewModelSchemaResponseTransformer(data.data);
+    if (data.data) {
+        data.data = restrictionPublicViewModelSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -368,7 +388,9 @@ export const getUsersSelfCharactersByIdEarningStatisticsResponseTransformer = as
 };
 
 const characterLimitationsViewModelResultSchemaResponseTransformer = (data: any) => {
-    data.data = characterLimitationsViewModelSchemaResponseTransformer(data.data);
+    if (data.data) {
+        data.data = characterLimitationsViewModelSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -397,7 +419,9 @@ export const getUsersSelfItemsResponseTransformer = async (data: any): Promise<G
 };
 
 const userItemViewModelResultSchemaResponseTransformer = (data: any) => {
-    data.data = userItemViewModelSchemaResponseTransformer(data.data);
+    if (data.data) {
+        data.data = userItemViewModelSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -422,7 +446,9 @@ export const putUsersSelfItemsByIdUpgradeResponseTransformer = async (data: any)
 };
 
 const userNotificationsWithDictViewModelResultSchemaResponseTransformer = (data: any) => {
-    data.data = userNotificationsWithDictViewModelSchemaResponseTransformer(data.data);
+    if (data.data) {
+        data.data = userNotificationsWithDictViewModelSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -444,7 +470,9 @@ export const getUsersSelfNotificationsResponseTransformer = async (data: any): P
 };
 
 const userNotificationViewModelResultSchemaResponseTransformer = (data: any) => {
-    data.data = userNotificationViewModelSchemaResponseTransformer(data.data);
+    if (data.data) {
+        data.data = userNotificationViewModelSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 

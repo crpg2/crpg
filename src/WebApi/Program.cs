@@ -311,8 +311,9 @@ static void ConfigureSwagger(SwaggerGenOptions options)
     });
 
     options.SupportNonNullableReferenceTypes();
+    options.NonNullableReferenceTypesAsRequired();
+    options.UseAllOfToExtendReferenceSchemas();
     options.OperationFilter<MakeAllParametersRequiredOperationFilter>();
-    options.SchemaFilter<RequireAllPropertiesSchemaFilter>();
     options.SchemaFilter<ResultSchemaFilter>();
     options.SchemaFilter<GeoJsonSchemaFilter>();
     options.SchemaFilter<FlagsEnumSchemaFilter>();

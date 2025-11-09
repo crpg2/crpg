@@ -1,4 +1,5 @@
-﻿using Crpg.Domain.Entities;
+﻿using System.Text.Json.Serialization;
+using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Battles;
 using NetTopologySuite.Geometries;
 
@@ -13,8 +14,10 @@ public record BattleDetailedViewModel
     public BattleType Type { get; init; }
     public BattleFighterViewModel Attacker { get; init; } = default!;
     public int AttackerTotalTroops { get; init; }
+    [JsonRequired]
     public BattleFighterViewModel? Defender { get; init; }
     public int DefenderTotalTroops { get; init; }
     public DateTime CreatedAt { get; set; }
+    [JsonRequired]
     public DateTime? ScheduledFor { get; set; }
 }
