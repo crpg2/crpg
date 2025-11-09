@@ -1511,8 +1511,8 @@ public record SeedDataCommand : IMediatorRequest
             Party orleParty = new()
             {
                 User = orle,
-                Troops = 1,
-                // Troops = 100,
+                // Troops = 12,
+                Troops = 100,
                 // Position = epicrotea.Position,
                 Position = rhotae.Position,
                 // Position = new Point(114.21076699552688, -109.37351870100285),

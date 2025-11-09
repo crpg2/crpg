@@ -67,6 +67,7 @@ export const useBattleMercenaries = (immediate = true) => {
   const {
     state: battleMercenaries,
     executeImmediate: loadBattleMercenaries,
+    isLoading: loadingBattleMercenaries,
   } = useAsyncState(
     () => getBattleMercenaries(battle.value.id),
     [],
@@ -87,6 +88,7 @@ export const useBattleMercenaries = (immediate = true) => {
     battleMercenariesAttackers,
     battleMercenariesDefenders,
     loadBattleMercenaries,
+    loadingBattleMercenaries,
   }
 }
 

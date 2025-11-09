@@ -16,15 +16,19 @@ definePageMeta({
 })
 
 const { regionModel, actualRegions } = useRegionQuery()
-const { clan } = useUser()
 
 const battlePhaseModel = useRouteQuery<BattlePhase[]>('battlePhases', [BATTLE_PHASE.Live, BATTLE_PHASE.Scheduled, BATTLE_PHASE.Hiring])
 const battleTypeModel = useRouteQuery<BattleType | 'All'>('battleType', 'All')
 
 const {
   data: battles,
+  pending: isLoadingBattles,
 } = useAsyncData(
-  () => getBattles(regionModel.value, battlePhaseModel.value, battleTypeModel.value !== 'All' ? battleTypeModel.value : undefined),
+  () => getBattles(
+    regionModel.value,
+    battlePhaseModel.value,
+    battleTypeModel.value !== 'All' ? battleTypeModel.value : undefined,
+  ),
   {
     default: () => [],
     watch: [regionModel, battleTypeModel, battlePhaseModel],
@@ -96,8 +100,9 @@ const {
         />
       </div>
 
-      <UCard v-else variant="subtle">
-        <UiResultNotFound />
+      <UCard v-else variant="subtle" :ui="{ body: 'relative min-h-56' }">
+        <UiResultNotFound v-if="!isLoadingBattles" />
+        <UiLoading v-else active />
       </UCard>
     </div>
   </UContainer>

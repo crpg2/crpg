@@ -1584,6 +1584,7 @@ strategus:
 
   battle:
     upcoming battles: Upcoming Battles
+    battle phase: Battle phase
     phase:
       Hiring: Hiring
       Scheduled: Scheduled
@@ -1597,7 +1598,6 @@ strategus:
     side:
       Attacker: Attacker
       Defender: Defender
-
     titleByType:
       Siege: Siege of {settlement}
       Battle: Battle of {nearestSettlement} {terrain}

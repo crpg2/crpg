@@ -8,9 +8,9 @@ import type {
 import type { Point } from 'geojson'
 import type { ValueOf } from 'type-fest'
 
-import type { Character } from '~/models/character'
+import type { Character, CharacterPublic } from '~/models/character'
 import type { Region } from '~/models/region'
-import type { PartyCommon } from '~/models/strategus/party'
+import type { PartyPublic } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 import type { UserPublic } from '~/models/user'
 
@@ -48,15 +48,15 @@ export interface Battle {
   createdAt: Date
   attacker: BattleFighter
   attackerTotalTroops: number
-  defender: BattleFighter | null // TODO: no defender? PvE?
+  defender: BattleFighter | null // TODO: no defender?
   defenderTotalTroops: number
 }
 
 export interface BattleFighter {
   id: number
-  commander: boolean // TODO: who?
+  commander: boolean
   side: BattleSide
-  party: PartyCommon | null
+  party: PartyPublic | null
   settlement: SettlementPublic | null
   mercenarySlots: number
 }
@@ -79,8 +79,7 @@ export type BattleFighterApplicationStatus = ValueOf<typeof BATTLE_FIGHTER_APPLI
 export interface BattleMercenary {
   id: number
   user: UserPublic
-  character: Character
-  captain: BattleFighter
+  character: CharacterPublic
   side: BattleSide
 }
 

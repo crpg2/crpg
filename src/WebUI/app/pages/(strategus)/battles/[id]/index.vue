@@ -1,19 +1,26 @@
 <script setup lang="ts">
-import { useBattle, useBattleFighters, useBattleMercenaries } from '~/composables/strategus/battle/use-battle'
+import type { TableColumn } from '@nuxt/ui'
+
+import { CharacterMedia, UserMedia } from '#components'
+
+import type { BattleMercenary } from '~/models/strategus/battle'
+
+import { useBattle, useBattleFighters, useBattleMercenaries, useBattleMercenaryApplications } from '~/composables/strategus/battle/use-battle'
+import { useUser } from '~/composables/user/use-user'
+import { BATTLE_PHASE, BATTLE_SIDE } from '~/models/strategus/battle'
+import { battleIconByType, getBattleFighterByUserId, getBattleTitle } from '~/services/strategus/battle-service'
+
+definePageMeta({
+  layoutOptions: {
+    bg: 'background-3.webp',
+  },
+})
+
+const { t } = useI18n()
+const { user } = useUser()
 
 const { battle } = useBattle()
-const { t } = useI18n()
-
-const pageTitle = computed(
-  () => {
-    return battle.value.defender?.party === null
-      ? t('strategus.battle.settlement.title', { settlement: battle.value.defender.settlement?.name })
-      : t('strategus.battle.party.title', {
-          nearestSettlement: 'nearestSettlement', // TODO: get nearest settlement to point
-          terrain: 'terrain', // TODO: terrain service get terrain at point
-        })
-  },
-)
+const battleTitle = computed(() => getBattleTitle(battle.value))
 
 const {
   battleFighters,
@@ -27,90 +34,103 @@ const {
   battleMercenariesAttackers,
   battleMercenariesDefenders,
   loadBattleMercenaries,
+  loadingBattleMercenaries,
 } = useBattleMercenaries()
+
+const {
+  mercenaryApplications,
+  mercenaryApplicationsCount,
+} = useBattleMercenaryApplications()
+
+const selfFighter = computed(() => getBattleFighterByUserId(battleFighters.value, user.value!.id))
+
+const mySide = computed(() => selfFighter.value?.side ?? null)
+
+const selfMercenary = computed(() => battleMercenaries.value.find(merc => merc.user.id === user.value!.id))
+
+const canJoinAsMercenary = computed(() =>
+  selfFighter.value == null && battle.value?.phase === BATTLE_PHASE.Hiring && battleMercenaries.value.length === 0,
+)
+
+// mercinariesTable
+
+const table = useTemplateRef('table')
+const columns: TableColumn<BattleMercenary>[] = [
+  {
+    accessorKey: 'user',
+    cell: ({ row }) => h(UserMedia, {
+      user: row.original.user,
+      // isSelf: checkIsSelfMember(row.original),
+      hiddenClan: true,
+    }),
+  },
+  {
+    accessorKey: 'character',
+    cell: ({ row }) => h(CharacterMedia, {
+      character: row.original.character,
+    }),
+  },
+]
 </script>
 
 <template>
   <UContainer
     class="space-y-8 py-12"
   >
-    <UiHeading
-      :title="pageTitle"
-    >
-      <!-- <template #icon>
-        <ClanTagIcon
-          :color="clan.primaryColor"
-          class="size-12"
-        />
-      </template> -->
-    </UiHeading>
+    <AppPageHeaderGroup
+      :title="battleTitle"
+      :back-to="{ name: 'battles' }"
+    />
 
     <div class="mx-auto max-w-lg space-y-5">
       <UiDecorSeparator />
 
       <div class="flex flex-wrap items-center justify-center gap-4.5">
-        <UiDataCell>
-          <template #leftContent>
-            <UIcon name="crpg:hash" class="size-6" />
-          </template>
-          <span>{{ $d(battle.scheduledFor!, 'short') }}</span>
-        </UiDataCell>
-
-        <UiDataCell>
-          <template #leftContent>
-            <UIcon name="crpg:region" class="size-6" />
-          </template>
-          <span>{{ battle.region }}</span>
-        </UiDataCell>
-
-        <!-- <USeparator orientation="vertical" class="h-8" />
-
-        <UiDataCell>
-          <template #leftContent>
-            <UIcon name="crpg:region" class="size-6" />
-          </template>
-          <span data-aq-clan-info="region"> {{ $t(`region.${clan.region}`, 0) }}</span>
-          <template #rightContent>
-            <div class="flex items-center gap-1">
-              <UTooltip
-                v-for="l in clan.languages"
-                :key="l"
-                :text="$t(`language.${l}`)"
-              >
-                <UBadge
-                  :label="l"
-                  color="primary"
-                  variant="subtle"
-                />
-              </UTooltip>
-            </div>
-          </template>
-        </UiDataCell>
-
-        <USeparator orientation="vertical" class="h-8" />
-
-        <UiDataCell>
-          <template #leftContent>
-            <UIcon name="crpg:member" class="size-6" />
-          </template>
-          <span data-aq-clan-info="member-count">{{ clanMembersCount }}</span>
-        </UiDataCell> -->
+        <BattlePhaseBadge :phase="battle.phase" />
+        <UBadge icon="i-lucide-calendar-check" :label="$d(battle.scheduledFor!, 'short')" size="xl" variant="soft" color="neutral" />
+        <UBadge icon="crpg:region" :label="$t(`region.${battle.region}`)" size="xl" variant="soft" color="neutral" />
       </div>
-
-      <!-- <UiTextView
-        v-if="clan.description"
-        variant="p"
-        class="mt-7 text-center"
-        data-aq-clan-info="description"
-      >
-        {{ clan.description }}
-      </UiTextView> -->
 
       <UiDecorSeparator />
     </div>
 
+    <pre>
+      {{ mercenaryApplications }}
+    </pre>
+
+    <div class="mx-auto max-w-lg">
+      <BattleSideComparison
+        :battle
+        :my-side
+        can-view-mercenaries
+        :attacker-mercenary-count="battleMercenariesAttackers.length"
+        :defender-mercenary-count="battleMercenariesDefenders.length"
+      />
+    </div>
+
     <div>
-      {{ battle }}
+      <div class="mx-auto max-w-3xl space-y-4">
+        <UTable
+          ref="table"
+          class="relative rounded-md border border-muted"
+          :loading="loadingBattleMercenaries"
+          :data="battleMercenaries"
+          :columns
+        >
+          <!-- @select="(_, row) => openMemberDetail(row.original)" -->
+          <template #empty>
+            <UiResultNotFound />
+          </template>
+        </UTable>
+      </div>
+    </div>
+
+    <div>
+      <pre>
+        <!-- battleMercenaries: {{ battleMercenaries }} -->
+        <!-- battleFighters: {{ battleFighters }}
+        battle: {{ battle }} -->
+      </pre>
     </div>
   </UContainer>
 </template>

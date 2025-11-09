@@ -12,7 +12,7 @@ import {
 } from '#api/sdk.gen'
 
 import type { Region } from '~/models/region'
-import type { Battle, BattleFighter, BattleFighterApplicationStatus, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattlePhase, BattleType } from '~/models/strategus/battle'
+import type { Battle, BattleFighter, BattleFighterApplicationStatus, BattleMercenary, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattlePhase, BattleType } from '~/models/strategus/battle'
 
 import { BATTLE_PHASE, BATTLE_TYPE } from '~/models/strategus/battle'
 
@@ -39,9 +39,26 @@ export const getBattle = async (
   battleId: number,
 ) => (await getBattlesByBattleId({ path: { battleId } })).data
 
+export const getBattleTitle = (battle: Battle) => {
+  const { t } = useI18n()
+
+  if (battle.type === 'Siege' && battle.defender?.settlement) {
+    return t('strategus.battle.titleByType.Siege', { settlement: battle.defender.settlement.name })
+  }
+
+  if (battle.type === 'Battle') {
+    return t('strategus.battle.titleByType.Battle', {
+      nearestSettlement: 'nearestSettlement', // TODO: get nearest settlement to point
+      terrain: 'terrain', // TODO: terrain service get terrain at point
+    })
+  }
+
+  return 'TODO: FIXME:'
+}
+
 export const getBattleFighters = async (
   battleId: number,
-) => (await getBattlesByBattleIdFighters({ path: { battleId } })).data!
+): Promise<BattleFighter[]> => (await getBattlesByBattleIdFighters({ path: { battleId } })).data!
 
 export const getBattleFighterByUserId = (
   battleFighters: BattleFighter[],
@@ -71,7 +88,7 @@ export const respondToBattleMercenaryApplication = (
 
 export const getBattleMercenaries = async (
   battleId: number,
-) => (await getBattlesByBattleIdMercenaries({ path: { battleId } })).data!
+): Promise<BattleMercenary[]> => (await getBattlesByBattleIdMercenaries({ path: { battleId } })).data!
 
 export const removeBattleMercenary = (
   battleId: number,

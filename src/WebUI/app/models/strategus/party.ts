@@ -21,6 +21,12 @@ export const PARTY_STATUS = {
 
 export type PartyStatus = ValueOf<typeof PARTY_STATUS>
 
+// TODO: rename
+export interface PartyPublic {
+  id: number
+  user: UserPublic
+}
+
 export interface PartyCommon {
   id: number
   name: string

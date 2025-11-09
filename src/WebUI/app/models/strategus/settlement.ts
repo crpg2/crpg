@@ -6,6 +6,7 @@ import type { ValueOf } from 'type-fest'
 
 import type { Culture } from '~/models/culture'
 import type { Item } from '~/models/item'
+import type { Region } from '~/models/region'
 import type { UserPublic } from '~/models/user'
 
 export const SETTLEMENT_TYPE = {
@@ -22,8 +23,7 @@ export interface SettlementPublic {
   type: SettlementType
   culture: Culture
   position: Point
-  scene: string
-  region: string
+  region: Region
   troops: number
   owner: UserPublic | null
 }
