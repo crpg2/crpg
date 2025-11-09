@@ -2149,6 +2149,19 @@ public record SeedDataCommand : IMediatorRequest
                     new BattleFighter { Party = orleParty, Side = BattleSide.Attacker, Commander = true, MercenarySlots = 7, },
                     new BattleFighter { Party = drexxParty, Side = BattleSide.Defender, Commander = true },
                 },
+                Mercenaries =
+                {
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = kadseCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = takeoCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = namidakaCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = krogCharacter0 },
+                },
+                MercenaryApplications =
+                {
+                    new BattleMercenaryApplication { Character = falcomCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending,  Note = "Lorem Ipsum" },
+                    new BattleMercenaryApplication { Character = victorhh888Character0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = sellkaCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                },
             };
 
             Battle someEndedBattle = new()
@@ -2162,6 +2175,19 @@ public record SeedDataCommand : IMediatorRequest
                 {
                     new BattleFighter { Party = orleParty, Side = BattleSide.Attacker, Commander = true, MercenarySlots = 7, },
                     new BattleFighter { Party = drexxParty, Side = BattleSide.Defender, Commander = true },
+                },
+                Mercenaries =
+                {
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = kadseCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = takeoCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = namidakaCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = krogCharacter0 },
+                },
+                MercenaryApplications =
+                {
+                    new BattleMercenaryApplication { Character = falcomCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending,  Note = "Lorem Ipsum" },
+                    new BattleMercenaryApplication { Character = victorhh888Character0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = sellkaCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
                 },
             };
 

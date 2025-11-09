@@ -313,12 +313,19 @@ static void ConfigureSwagger(SwaggerGenOptions options)
     options.SupportNonNullableReferenceTypes();
     options.NonNullableReferenceTypesAsRequired();
     options.UseAllOfToExtendReferenceSchemas();
+
     options.OperationFilter<MakeAllParametersRequiredOperationFilter>();
-    options.SchemaFilter<ResultSchemaFilter>();
+
+    // create the necessary geometric DTOs
+    options.DocumentFilter<GeoJsonDocumentFilter>();
     options.SchemaFilter<GeoJsonSchemaFilter>();
+
+    options.SchemaFilter<ResultSchemaFilter>();
     options.SchemaFilter<FlagsEnumSchemaFilter>();
     options.SchemaFilter<ItemFlagsSchemaFilter>();
     options.SchemaFilter<WeaponFlagsSchemaFilter>();
+
+    options.SchemaFilter<RemoveUnusedSchemasFilter>(); // NetTopologySuite generates many unused schemas.
 }
 
 static void ConfigureSteamAuthentication(SteamAuthenticationOptions options, IConfiguration configuration)
