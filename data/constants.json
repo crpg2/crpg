@@ -52,7 +52,7 @@
   "defaultRatingDeviation": 350,
   "defaultRatingVolatility": 0.06,
   "defaultRole": "User",
-  "defaultGold": 30000,
+  "defaultGold": 100000,
   "defaultHeirloomPoints": 0,
   "clanTagMinLength": 2,
   "clanTagMaxLength": 4,
