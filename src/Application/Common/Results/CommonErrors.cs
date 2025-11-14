@@ -133,6 +133,18 @@ internal static class CommonErrors
         Detail = $"Fighter with id '{fighterId} is not a commander of the battle with id '{battleId}'",
     };
 
+    public static Error FighterNotFound(int fighterId, int battleId) => new(ErrorType.NotFound, ErrorCode.FighterNotFound)
+    {
+        Title = "Fighter was not found in the battle",
+        Detail = $"Fighter with id '{fighterId} was not found in the battle with id '{battleId}'",
+    };
+
+    public static Error MercenaryNotFound(int mercenaryId) => new(ErrorType.NotFound, ErrorCode.MercenaryNotFound)
+    {
+        Title = "Mercenary was not found",
+        Detail = $"Mercenary with id '{mercenaryId}' was not found",
+    };
+
     public static Error PartyFighter(int partyId, int battleId) => new(ErrorType.Validation, ErrorCode.PartyFighter)
     {
         Title = "Party is a fighter in this battle",

@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Common.Mappings;
 using Crpg.Domain.Entities;
@@ -19,7 +20,9 @@ public record ItemViewModel : IMapFrom<Item>
     public float Weight { get; init; }
     public ItemFlags Flags { get; init; }
     public DateTime CreatedAt { get; init; }
+    [JsonRequired]
     public ItemArmorComponentViewModel? Armor { get; init; }
+    [JsonRequired]
     public ItemMountComponentViewModel? Mount { get; init; }
     public IList<ItemWeaponComponentViewModel> Weapons { get; init; } = Array.Empty<ItemWeaponComponentViewModel>();
     public bool Enabled { get; init; }
