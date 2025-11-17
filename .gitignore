@@ -431,7 +431,6 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-vetur.config.js
 
 # c8/istanbul
 coverage/
@@ -443,7 +442,6 @@ dist/
 stats.html
 
 # cRPG
-src/WebUI/public/items/
 *.jwk
 *.png
 *.jpg
@@ -452,6 +450,12 @@ src/WebUI/public/items/
 *.zip
 *.ttf
 
+!src/WebUI/public/*.png
+!src/WebUI/public/*.webp
+!src/WebUI/public/images/**/*.webp
+src/WebUI/public/items/
+
 # cRPG Launcher
 !src/cRPGUpdater/Properties/PublishProfiles/FolderProfile.pubxml
+
 .mono

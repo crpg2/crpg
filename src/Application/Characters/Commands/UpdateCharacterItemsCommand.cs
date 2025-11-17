@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
@@ -10,8 +11,12 @@ namespace Crpg.Application.Characters.Commands;
 
 public record UpdateCharacterItemsCommand : IMediatorRequest<IList<EquippedItemViewModel>>
 {
+    [JsonIgnore]
     public int CharacterId { get; init; }
+
+    [JsonIgnore]
     public int UserId { get; init; }
+
     public IList<EquippedItemIdViewModel> Items { get; init; } = Array.Empty<EquippedItemIdViewModel>();
 
     internal class Handler : IMediatorRequestHandler<UpdateCharacterItemsCommand, IList<EquippedItemViewModel>>

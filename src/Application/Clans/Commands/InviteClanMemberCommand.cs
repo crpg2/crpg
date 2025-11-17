@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Text.Json.Serialization;
+using AutoMapper;
 using Crpg.Application.Clans.Models;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
@@ -17,7 +18,10 @@ namespace Crpg.Application.Clans.Commands;
 /// </summary>
 public record InviteClanMemberCommand : IMediatorRequest<ClanInvitationViewModel>
 {
+    [JsonIgnore]
     public int UserId { get; init; }
+
+    [JsonIgnore]
     public int ClanId { get; init; }
     public int InviteeId { get; init; }
 

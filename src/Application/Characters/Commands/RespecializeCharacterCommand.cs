@@ -56,7 +56,7 @@ public record RespecializeCharacterCommand : IMediatorRequest<CharacterViewModel
                 return new(CommonErrors.CharacterNotFound(req.CharacterId, req.UserId));
             }
 
-            bool isRecentUser = await _userService.CheckIsRecentUser(_db, character.User!);
+            bool isRecentUser = await _userService.CheckIsRecentUser(_db, character.UserId, cancellationToken);
 
             int price = 0;
             if (!character.ForTournament && !isRecentUser && !IsFreeRespecializationPostWindow(character))

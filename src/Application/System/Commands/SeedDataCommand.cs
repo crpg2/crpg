@@ -88,6 +88,7 @@ public record SeedDataCommand : IMediatorRequest
                     Github = "https://github.com/crpg2/crpg",
                     Reddit = "https://www.reddit.com/r/CRPG_Bannerlord",
                     ModDb = "https://www.moddb.com/mods/crpg",
+                    HappyHours = "Eu|00:00|03:59|Europe/Paris,Na|20:00|22:00|America/Chicago",
                 });
             }
 
@@ -668,7 +669,7 @@ public record SeedDataCommand : IMediatorRequest
 
             Restriction[] newRestrictions =
             {
-                takeoRestriction0, takeoRestriction1, baronCyborgRestriction0,
+                takeoRestriction0, takeoRestriction1, baronCyborgRestriction0, orleRestriction0, orleRestriction1
             };
 
             _db.Restrictions.RemoveRange(await _db.Restrictions.ToArrayAsync());
@@ -1062,6 +1063,11 @@ public record SeedDataCommand : IMediatorRequest
                 Character = orleCharacter0,
                 LastRespecializeAt = DateTime.UtcNow.AddDays(-8),
             };
+            CharacterLimitations orleCharacter1Limitations = new()
+            {
+                Character = orleCharacter1,
+                LastRespecializeAt = DateTime.UtcNow.AddDays(-1).AddMinutes(-30),
+            };
             CharacterLimitations orleCharacter2Limitations = new()
             {
                 Character = orleCharacter2,
@@ -1079,7 +1085,7 @@ public record SeedDataCommand : IMediatorRequest
             };
             CharacterLimitations[] newCharactersLimitations =
             {
-                takeoCharacter0Limitations, takeoCharacter1Limitations, takeoCharacter2Limitations, orleCharacter0Limitations,
+                takeoCharacter0Limitations, takeoCharacter1Limitations, takeoCharacter2Limitations, orleCharacter0Limitations, orleCharacter1Limitations,
                 orleCharacter2Limitations, kadseCharacter0Limitations, droobCharacter0Limitations,
             };
 
@@ -2217,6 +2223,15 @@ public record SeedDataCommand : IMediatorRequest
                 if (item.Id.StartsWith("crpg_disabled_"))
                 {
                     item.Enabled = false;
+                }
+
+                // for testing filter by 'isNew' (shop page)
+                if (_appEnv.Environment == HostingEnvironment.Development)
+                {
+                    if (item.Name == "Wooden Twohander")
+                    {
+                        item.CreatedAt = DateTime.UtcNow.AddDays(-15);
+                    }
                 }
 
                 _db.Items.Add(item);
