@@ -25,8 +25,9 @@ export const getAggregationsConfig = (
   itemType: ItemType,
   weaponClass: WeaponClass | null,
   excludeKeys: Array<keyof ItemFlat> = [],
+  withHidden: boolean = true,
 ): AggregationConfig => {
-  const keys: Array<keyof ItemFlat> = ([
+  const keys = ([
     // common aggregations keys
     'type',
     'weaponClass',
@@ -35,15 +36,18 @@ export const getAggregationsConfig = (
     ...(weaponClass !== null && weaponClass in aggregationsKeysByWeaponClass
       ? aggregationsKeysByWeaponClass[weaponClass] ?? []
       : aggregationsKeysByItemType[itemType] ?? []),
-  ] satisfies Array<keyof ItemFlat>).filter(key => !excludeKeys.includes(key))
-
+  ] satisfies Array<keyof ItemFlat>)
+    .filter(key =>
+      !excludeKeys.includes(key)
+      && (withHidden || !aggregationsConfig[key]?.hidden),
+    )
   return Object.fromEntries(keys.map(key => [key, aggregationsConfig[key]]))
 }
 
 export const getColumnVisibility = (aggregations: AggregationConfig): VisibilityState =>
   Object.fromEntries(
     objectEntries(aggregations)
-      .filter(([, value]) => value!.hidden)
+      .filter(([, value]) => value?.hidden)
       .map(([key]) => [key, false]),
   )
 
@@ -103,8 +107,7 @@ const itemParamIsEmpty = (field: keyof ItemFlat, itemFlat: ItemFlat) => {
 
 // TODO: FIXME: SPEC
 export const getItemAggregations = (itemFlat: ItemFlat, omitEmpty = true): AggregationConfig => {
-  const aggsConfig = getAggregationsConfig(itemFlat.type, itemFlat.weaponClass, ['type', 'weaponClass'])
-
+  const aggsConfig = getAggregationsConfig(itemFlat.type, itemFlat.weaponClass, [], false)
   return omitEmpty
     ? omitBy(aggsConfig, (_value, field) => itemParamIsEmpty(field as keyof ItemFlat, itemFlat))
     : aggsConfig
