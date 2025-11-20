@@ -15,7 +15,7 @@
     <native_parameter id="running_sides_speed_multiplier" value="0.65" />   <!-- Native = 0.65-->
     <native_parameter id="ladder_climb_up_speed_multiplier"  value="0.88" /> <!-- Native = 0.68-->
     <native_parameter id="humanoid_physics_capsule_radius_multiplier_for_friend" value="1.475" /> <!--Native = 0.95-->
-    <native_parameter	id="humanoid_physics_capsule_radius_multiplier_for_enemy"	value="1.9" /> <!--Native = 1.5-->
-    <native_parameter id="smaller_humanoid_physics_capsule_radius_multiplier_for_static_bodies" value="0.83" /> <!--Environment (trees/walls, any entities) Native = 0.67-->
+    <native_parameter	id="humanoid_physics_capsule_radius_multiplier_for_enemy"	value="1.925" /> <!--Native = 1.5-->
+    <native_parameter id="smaller_humanoid_physics_capsule_radius_multiplier_for_static_bodies" value="0.845" /> <!--Environment (trees/walls, any entities) Native = 0.67-->
   </native_parameters>
 </base>
