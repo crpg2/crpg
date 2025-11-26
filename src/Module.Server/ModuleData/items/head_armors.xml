@@ -10296,4 +10296,52 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
+  <Item id="crpg_mb_berserkrwolf_helm_h0" name="{=Yeldur}Berserker's Wolf Helmet" mesh="ulfhednar_helmet_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="51" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_berserkrwolf_helm_h1" name="{=Yeldur}Berserker's Wolf Helmet +1" mesh="ulfhednar_helmet_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="53" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_berserkrwolf_helm_h2" name="{=Yeldur}Berserker's Wolf Helmet +2" mesh="ulfhednar_helmet_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="55" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_berserkrwolf_helm_h3" name="{=Yeldur}Berserker's Wolf Helmet +3" mesh="ulfhednar_helmet_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="57" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_wolfskin_helm_h0" name="{=Yeldur}Wolfskin Helmet" mesh="wolfskin_helm_a" culture="Culture.sturgia" weight="3.80764" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="45" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_wolfskin_helm_h1" name="{=Yeldur}Wolfskin Helmet +1" mesh="wolfskin_helm_a" culture="Culture.sturgia" weight="3.80764" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="47" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_wolfskin_helm_h2" name="{=Yeldur}Wolfskin Helmet +2" mesh="wolfskin_helm_a" culture="Culture.sturgia" weight="3.80764" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="49" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_wolfskin_helm_h3" name="{=Yeldur}Wolfskin Helmet +3" mesh="wolfskin_helm_a" culture="Culture.sturgia" weight="3.80764" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="51" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
 </Items>
