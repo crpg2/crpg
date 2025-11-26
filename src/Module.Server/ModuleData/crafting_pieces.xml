@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <CraftingPieces>
   <CraftingPiece id="crpg_militia_pernach_handle_h0" name="{=57DBqJd1}Leather Wrapped Thick Mace Handle" tier="2" piece_type="Handle" mesh="mace_handle_14" length="45" weight="1.0" item_holster_pos_shift="0,0,0.05">
     <BuildData piece_offset="14.5" />
@@ -37822,5 +37822,117 @@
   <CraftingPiece id="crpg_shaolinspade_pommel_h2" name="{=}Battlespade Pommel" tier="1" piece_type="Pommel" mesh="shaolinspade_pommel" culture="Culture.empire" length="22.1" weight="0.2" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_shaolinspade_pommel_h3" name="{=}Battlespade Pommel" tier="1" piece_type="Pommel" mesh="shaolinspade_pommel" culture="Culture.empire" length="22.1" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_blade_h0" name="{=AppleTruce}El Montante Blade" tier="4" piece_type="Blade" mesh="montante_blade" culture="Culture.battania" length="141" weight="1.2" full_scale="true">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_blade_h1" name="{=AppleTruce}El Montante Blade" tier="4" piece_type="Blade" mesh="montante_blade" culture="Culture.battania" length="141" weight="1.2" full_scale="true">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_blade_h2" name="{=AppleTruce}El Montante Blade" tier="4" piece_type="Blade" mesh="montante_blade" culture="Culture.battania" length="141" weight="1.2" full_scale="true">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_blade_h3" name="{=AppleTruce}El Montante Blade" tier="4" piece_type="Blade" mesh="montante_blade" culture="Culture.battania" length="141" weight="1.2" full_scale="true">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_pommel_h0" name="{=AppleTruce}El Montante Pommel" tier="4" piece_type="Pommel" mesh="montante_pommel" culture="Culture.battania" length="7.17" weight="0.25">
+    <BuildData next_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_pommel_h1" name="{=AppleTruce}El Montante Pommel" tier="4" piece_type="Pommel" mesh="montante_pommel" culture="Culture.battania" length="7.17" weight="0.25">
+    <BuildData next_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_pommel_h2" name="{=AppleTruce}El Montante Pommel" tier="4" piece_type="Pommel" mesh="montante_pommel" culture="Culture.battania" length="7.17" weight="0.25">
+    <BuildData next_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_pommel_h3" name="{=AppleTruce}El Montante Pommel" tier="4" piece_type="Pommel" mesh="montante_pommel" culture="Culture.battania" length="7.17" weight="0.25">
+    <BuildData next_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_guard_h0" name="{=AppleTruce}El Montante Guard" tier="5" piece_type="Guard" mesh="montante_guard" culture="Culture.battania" length="7.9" weight="0.6">
+    <BuildData next_piece_offset="6.5" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_guard_h1" name="{=AppleTruce}El Montante Guard" tier="5" piece_type="Guard" mesh="montante_guard" culture="Culture.battania" length="7.9" weight="0.6">
+    <BuildData next_piece_offset="6.5" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_guard_h2" name="{=AppleTruce}El Montante Guard" tier="5" piece_type="Guard" mesh="montante_guard" culture="Culture.battania" length="7.9" weight="0.6">
+    <BuildData next_piece_offset="6.5" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_guard_h3" name="{=AppleTruce}El Montante Guard" tier="5" piece_type="Guard" mesh="montante_guard" culture="Culture.battania" length="7.9" weight="0.3">
+    <BuildData next_piece_offset="6.5" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_handle_h0" name="{=AppleTruce}El Montante Handle" tier="3" piece_type="Handle" mesh="montante_handle" culture="Culture.khuzait" length="26.0" weight="0.25">
+    <BuildData piece_offset="-6" previous_piece_offset="0.0" next_piece_offset="1" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_handle_h1" name="{=AppleTruce}El Montante Handle" tier="3" piece_type="Handle" mesh="montante_handle" culture="Culture.khuzait" length="26.0" weight="0.25">
+    <BuildData piece_offset="-6" previous_piece_offset="0.0" next_piece_offset="1" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_handle_h2" name="{=AppleTruce}El Montante Handle" tier="3" piece_type="Handle" mesh="montante_handle" culture="Culture.khuzait" length="26.0" weight="0.25">
+    <BuildData piece_offset="-6" previous_piece_offset="0.0" next_piece_offset="1" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_handle_h3" name="{=AppleTruce}El Montante Handle" tier="3" piece_type="Handle" mesh="montante_handle" culture="Culture.khuzait" length="26.0" weight="0.25">
+    <BuildData piece_offset="-6" previous_piece_offset="0.0" next_piece_offset="1" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
   </CraftingPiece>
 </CraftingPieces>
