@@ -8088,49 +8088,49 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_a_v2_h0" name="{=ewSpZ10R}Rough Padded Cap" mesh="vlandia_bandit_cape_a" culture="Culture.looters" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_a_v2_h0" name="{=ewSpZ10R}Rough Padded Cap" mesh="vlandia_bandit_cape_a" culture="Culture.neutral_culture" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="12" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_a_v2_h1" name="{=ewSpZ10R}Rough Padded Cap +1" mesh="vlandia_bandit_cape_a" culture="Culture.looters" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_a_v2_h1" name="{=ewSpZ10R}Rough Padded Cap +1" mesh="vlandia_bandit_cape_a" culture="Culture.neutral_culture" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="14" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_a_v2_h2" name="{=ewSpZ10R}Rough Padded Cap +2" mesh="vlandia_bandit_cape_a" culture="Culture.looters" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_a_v2_h2" name="{=ewSpZ10R}Rough Padded Cap +2" mesh="vlandia_bandit_cape_a" culture="Culture.neutral_culture" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="16" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_a_v2_h3" name="{=ewSpZ10R}Rough Padded Cap +3" mesh="vlandia_bandit_cape_a" culture="Culture.looters" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_a_v2_h3" name="{=ewSpZ10R}Rough Padded Cap +3" mesh="vlandia_bandit_cape_a" culture="Culture.neutral_culture" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="18" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_b_v2_h0" name="{=7D3jvAfS}Hide Cap" mesh="vlandia_bandit_cape_b" culture="Culture.looters" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_b_v2_h0" name="{=7D3jvAfS}Hide Cap" mesh="vlandia_bandit_cape_b" culture="Culture.neutral_culture" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="8" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_b_v2_h1" name="{=7D3jvAfS}Hide Cap +1" mesh="vlandia_bandit_cape_b" culture="Culture.looters" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_b_v2_h1" name="{=7D3jvAfS}Hide Cap +1" mesh="vlandia_bandit_cape_b" culture="Culture.neutral_culture" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="10" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_b_v2_h2" name="{=7D3jvAfS}Hide Cap +2" mesh="vlandia_bandit_cape_b" culture="Culture.looters" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_b_v2_h2" name="{=7D3jvAfS}Hide Cap +2" mesh="vlandia_bandit_cape_b" culture="Culture.neutral_culture" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="12" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_b_v2_h3" name="{=7D3jvAfS}Hide Cap +3" mesh="vlandia_bandit_cape_b" culture="Culture.looters" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_b_v2_h3" name="{=7D3jvAfS}Hide Cap +3" mesh="vlandia_bandit_cape_b" culture="Culture.neutral_culture" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="14" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
