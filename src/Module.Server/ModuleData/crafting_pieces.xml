@@ -37735,4 +37735,92 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_spiked_polemace_pommel_h3" name="{=}Dummy Spiked Polemace Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
   </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_head_h0" name="{=}Battlespade Head" tier="3" piece_type="Blade" mesh="shaolinspade_blade" culture="Culture.vlandia" length="30.7" weight="0.7">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Cut" damage_factor="3.3" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_head_h1" name="{=}Battlespade Head" tier="3" piece_type="Blade" mesh="shaolinspade_blade" culture="Culture.vlandia" length="30.7" weight="0.7">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Cut" damage_factor="3.4" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_head_h2" name="{=}Battlespade Head" tier="3" piece_type="Blade" mesh="shaolinspade_blade" culture="Culture.vlandia" length="30.7" weight="0.7">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Cut" damage_factor="3.4" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_head_h3" name="{=}Battlespade Head" tier="3" piece_type="Blade" mesh="shaolinspade_blade" culture="Culture.vlandia" length="30.7" weight="0.7">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Cut" damage_factor="3.5" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_handle_h0" name="{=}Battlespade Shaft" tier="2" piece_type="Handle" mesh="shaolinspade_handle" length="142" weight="1.3" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_handle_h1" name="{=}Battlespade Shaft" tier="2" piece_type="Handle" mesh="shaolinspade_handle" length="142" weight="1.3" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_handle_h2" name="{=}Battlespade Shaft" tier="2" piece_type="Handle" mesh="shaolinspade_handle" length="142" weight="1.3" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_handle_h3" name="{=}Battlespade Shaft" tier="2" piece_type="Handle" mesh="shaolinspade_handle" length="142" weight="1.3" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_guard_h0" name="{=}Battlespade Guard" tier="1" piece_type="Guard" mesh="shaolinspade_guard" culture="Culture.empire" length="10.2" weight="0.3" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_guard_h1" name="{=}Battlespade Guard" tier="1" piece_type="Guard" mesh="shaolinspade_guard" culture="Culture.empire" length="10.2" weight="0.3" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_guard_h2" name="{=}Battlespade Guard" tier="1" piece_type="Guard" mesh="shaolinspade_guard" culture="Culture.empire" length="10.2" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_guard_h3" name="{=}Battlespade Guard" tier="1" piece_type="Guard" mesh="shaolinspade_guard" culture="Culture.empire" length="10.2" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_pommel_h0" name="{=}Battlespade Pommel" tier="1" piece_type="Pommel" mesh="shaolinspade_pommel" culture="Culture.empire" length="22.1" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_pommel_h1" name="{=}Battlespade Pommel" tier="1" piece_type="Pommel" mesh="shaolinspade_pommel" culture="Culture.empire" length="22.1" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_pommel_h2" name="{=}Battlespade Pommel" tier="1" piece_type="Pommel" mesh="shaolinspade_pommel" culture="Culture.empire" length="22.1" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_pommel_h3" name="{=}Battlespade Pommel" tier="1" piece_type="Pommel" mesh="shaolinspade_pommel" culture="Culture.empire" length="22.1" weight="0.2" is_default="true">
+  </CraftingPiece>
 </CraftingPieces>
