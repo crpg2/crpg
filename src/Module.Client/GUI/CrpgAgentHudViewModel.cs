@@ -196,6 +196,12 @@ internal class CrpgAgentHudViewModel : ViewModel
     {
         int experienceForCurrentLevel = _experienceTable.GetExperienceForLevel(user.Character.Level);
         int experienceForNextLevel = _experienceTable.GetExperienceForLevel(user.Character.Level + 1);
+
+        if (experienceForCurrentLevel == experienceForNextLevel) // Max level
+        {
+            return 1f;
+        }
+
         return (float)(user.Character.Experience - experienceForCurrentLevel) / (experienceForNextLevel - experienceForCurrentLevel);
     }
 }
