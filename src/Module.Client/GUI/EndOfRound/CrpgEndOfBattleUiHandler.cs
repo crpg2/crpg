@@ -11,7 +11,7 @@ public class CrpgEndOfBattleUIHandler : MissionView
         base.OnMissionScreenInitialize();
         ViewOrderPriority = 30;
         _dataSource = new CrpgEndOfBattleVM();
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority, "GauntletLayer", false);
+        _gauntletLayer = new GauntletLayer("MultiplayerEndOfBattle", ViewOrderPriority, false);
         _gauntletLayer.LoadMovie("MultiplayerEndOfBattle", _dataSource);
         _lobbyComponent = Mission.GetMissionBehavior<MissionLobbyComponent>();
         _lobbyComponent.OnPostMatchEnded += OnPostMatchEnded;

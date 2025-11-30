@@ -192,7 +192,7 @@ internal class ItemExporter : IDataExporter
             {
                 texture.SaveToFile(Path.Combine(outputPath, mbItem.StringId + ".png"));
                 createTextureTaskSource.SetResult(null);
-            }));
+            }, null));
         }
 
         return Task.WhenAll(createTextureTasks);

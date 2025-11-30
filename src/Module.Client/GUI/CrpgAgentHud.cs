@@ -24,7 +24,7 @@ internal class CrpgAgentHud : MissionView
         _dataSource = new CrpgAgentHudViewModel(_experienceTable);
 
         // localOrder sets the order the layer are drawn. + 1 to be drawn over the agent HUD.
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority + 1);
+        _gauntletLayer = new GauntletLayer("CrpgAgentHud", ViewOrderPriority + 1);
         _gauntletMovie = _gauntletLayer.LoadMovie("CrpgAgentHud", _dataSource); // Load the file from GUI/Prefabs.
         MissionScreen.AddLayer(_gauntletLayer);
     }

@@ -39,7 +39,7 @@ public class CrpgIntermissionScreenUIHandler : ScreenBase, IGameStateListener, I
         this._customGameClientCategory = spriteData.SpriteCategories["ui_mpintermission"];
         this._customGameClientCategory.Load(resourceContext, uiresourceDepot);
         this._dataSource = new CrpgIntermissionVM();
-        this.Layer = new GauntletLayer(100, "GauntletLayer", false);
+        this.Layer = new GauntletLayer("CrpgIntermission", 100, false);
         this.Layer.IsFocusLayer = true;
         base.AddLayer(this.Layer);
         this.Layer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("GenericPanelGameKeyCategory"));
