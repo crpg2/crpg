@@ -25,7 +25,7 @@ public class CrpgTrainingGroundUiHandler : MissionView
         ViewOrderPriority = 15;
         _client = Mission.GetMissionBehavior<CrpgTrainingGroundMissionMultiplayerClient>();
         _dataSource = new(MissionScreen.CombatCamera, _client);
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority);
+        _gauntletLayer = new GauntletLayer("TrainingGroundHud", ViewOrderPriority);
         _gauntletLayer.LoadMovie("TrainingGroundHud", _dataSource);
         SpriteData spriteData = UIResourceManager.SpriteData;
         TwoDimensionEngineResourceContext resourceContext = UIResourceManager.ResourceContext;

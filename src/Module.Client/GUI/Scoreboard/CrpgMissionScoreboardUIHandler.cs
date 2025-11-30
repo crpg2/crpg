@@ -220,7 +220,7 @@ namespace Crpg.Module.GUI.Scoreboard
         private void InitializeLayer()
         {
             this._dataSource = new CrpgMissionScoreboardVM(this._isSingleTeam, base.Mission);
-            this._gauntletLayer = new GauntletLayer(this.ViewOrderPriority, "GauntletLayer", false);
+            this._gauntletLayer = new GauntletLayer("CrpgMultiplayerScoreboard", this.ViewOrderPriority, false);
             this._gauntletLayer.LoadMovie("CrpgMultiplayerScoreboard", this._dataSource);
             this._gauntletLayer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("Generic"));
             this._gauntletLayer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("ScoreboardHotKeyCategory"));

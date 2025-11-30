@@ -23,7 +23,7 @@ internal class ConquestHudUiHandler : MissionView
         _mpMissionCategory.Load(UIResourceManager.ResourceContext, UIResourceManager.ResourceDepot);
 
         _dataSource = new ConquestHudVm(Mission);
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority);
+        _gauntletLayer = new GauntletLayer("ConquestHud", ViewOrderPriority);
         _gauntletLayer.LoadMovie("ConquestHud", _dataSource);
         MissionScreen.AddLayer(_gauntletLayer);
     }

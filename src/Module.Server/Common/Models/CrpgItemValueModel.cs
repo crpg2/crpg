@@ -53,6 +53,11 @@ internal class CrpgItemValueModel : ItemValueModel
             / (1 + heirloomLevel / 10f);
     }
 
+    public override bool GetIsTransferable(ItemObject item)
+    {
+        return false;
+    }
+
     public override float CalculateTier(ItemObject item)
     {
         return item.ItemComponent switch

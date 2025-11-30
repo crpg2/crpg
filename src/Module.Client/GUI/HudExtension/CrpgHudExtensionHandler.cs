@@ -43,7 +43,7 @@ internal class CrpgHudExtensionHandler : MissionView
         _mpMissionCategory.Load(UIResourceManager.ResourceContext, UIResourceManager.ResourceDepot);
 
         _dataSource = new CrpgHudExtensionVm(Mission);
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority);
+        _gauntletLayer = new GauntletLayer("CrpgHUDExtension", ViewOrderPriority);
         _gauntletLayer.LoadMovie("CrpgHUDExtension", _dataSource);
         MissionScreen.AddLayer(_gauntletLayer);
         MissionScreen.OnSpectateAgentFocusIn += _dataSource.OnSpectatedAgentFocusIn;
