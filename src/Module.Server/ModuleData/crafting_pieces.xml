@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <CraftingPieces>
   <CraftingPiece id="crpg_militia_pernach_handle_h0" name="{=57DBqJd1}Leather Wrapped Thick Mace Handle" tier="2" piece_type="Handle" mesh="mace_handle_14" length="45" weight="1.0" item_holster_pos_shift="0,0,0.05">
     <BuildData piece_offset="14.5" />
@@ -37387,7 +37387,7 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ottomanaxe_blade_h0" name="{=BalanceMe}Ottoman Axe Blade" tier="3" piece_type="Blade" mesh="ottomanaxe_blade" culture="Culture.vlandia" length="53.3" weight="0.2">
+  <CraftingPiece id="crpg_ottomanaxe_blade_h0" name="{=BalanceMe}Ottoman Axe Blade" tier="3" piece_type="Blade" mesh="ottomanaxe_blade" culture="Culture.vlandia" length="53.3" weight="0.3">
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.0" />
       <Swing damage_type="Cut" damage_factor="4.3" />
@@ -37400,7 +37400,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ottomanaxe_blade_h1" name="{=BalanceMe}Ottoman Axe Blade" tier="3" piece_type="Blade" mesh="ottomanaxe_blade" culture="Culture.vlandia" length="53.3" weight="0.2">
+  <CraftingPiece id="crpg_ottomanaxe_blade_h1" name="{=BalanceMe}Ottoman Axe Blade" tier="3" piece_type="Blade" mesh="ottomanaxe_blade" culture="Culture.vlandia" length="53.3" weight="0.3">
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.0" />
       <Swing damage_type="Cut" damage_factor="4.5" />
@@ -37413,7 +37413,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ottomanaxe_blade_h2" name="{=BalanceMe}Ottoman Axe Blade" tier="3" piece_type="Blade" mesh="ottomanaxe_blade" culture="Culture.vlandia" length="53.3" weight="0.2">
+  <CraftingPiece id="crpg_ottomanaxe_blade_h2" name="{=BalanceMe}Ottoman Axe Blade" tier="3" piece_type="Blade" mesh="ottomanaxe_blade" culture="Culture.vlandia" length="53.3" weight="0.3">
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.2" />
       <Swing damage_type="Cut" damage_factor="4.6" />
@@ -37426,7 +37426,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ottomanaxe_blade_h3" name="{=BalanceMe}Ottoman Axe Blade" tier="3" piece_type="Blade" mesh="ottomanaxe_blade" culture="Culture.vlandia" length="53.3" weight="0.2">
+  <CraftingPiece id="crpg_ottomanaxe_blade_h3" name="{=BalanceMe}Ottoman Axe Blade" tier="3" piece_type="Blade" mesh="ottomanaxe_blade" culture="Culture.vlandia" length="53.3" weight="0.3">
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.2" />
       <Swing damage_type="Cut" damage_factor="4.6" />
@@ -37439,37 +37439,37 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ottomanaxe_handle_h0" name="{=BalanceMe}Ottoman Axe Handle" tier="2" piece_type="Handle" mesh="ottomanaxe_handle" length="201" weight="0.7" CraftingCost="120">
+  <CraftingPiece id="crpg_ottomanaxe_handle_h0" name="{=BalanceMe}Ottoman Axe Handle" tier="2" piece_type="Handle" mesh="ottomanaxe_handle" length="201" weight="1.7" CraftingCost="120">
     <BuildData previous_piece_offset="1" next_piece_offset="0" piece_offset="35" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ottomanaxe_handle_h1" name="{=BalanceMe}Ottoman Axe Handle" tier="2" piece_type="Handle" mesh="ottomanaxe_handle" length="201" weight="0.7" CraftingCost="120">
+  <CraftingPiece id="crpg_ottomanaxe_handle_h1" name="{=BalanceMe}Ottoman Axe Handle" tier="2" piece_type="Handle" mesh="ottomanaxe_handle" length="201" weight="1.7" CraftingCost="120">
     <BuildData previous_piece_offset="1" next_piece_offset="0" piece_offset="35" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ottomanaxe_handle_h2" name="{=BalanceMe}Ottoman Axe Handle" tier="2" piece_type="Handle" mesh="ottomanaxe_handle" length="201" weight="0.7" CraftingCost="120">
+  <CraftingPiece id="crpg_ottomanaxe_handle_h2" name="{=BalanceMe}Ottoman Axe Handle" tier="2" piece_type="Handle" mesh="ottomanaxe_handle" length="201" weight="1.7" CraftingCost="120">
     <BuildData previous_piece_offset="1" next_piece_offset="0" piece_offset="35" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ottomanaxe_handle_h3" name="{=BalanceMe}Ottoman Axe Handle" tier="2" piece_type="Handle" mesh="ottomanaxe_handle" length="201" weight="0.45" CraftingCost="120">
+  <CraftingPiece id="crpg_ottomanaxe_handle_h3" name="{=BalanceMe}Ottoman Axe Handle" tier="2" piece_type="Handle" mesh="ottomanaxe_handle" length="201" weight="1.5" CraftingCost="120">
     <BuildData previous_piece_offset="1" next_piece_offset="0" piece_offset="35" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ottomanaxe_pommel_h0" name="{=BalanceMe}Ottoman Axe" tier="1" piece_type="Pommel" mesh="ottomanaxe_pommel" culture="Culture.empire" length="7.92" weight="0.4" is_default="true">
+  <CraftingPiece id="crpg_ottomanaxe_pommel_h0" name="{=BalanceMe}Ottoman Axe" tier="1" piece_type="Pommel" mesh="ottomanaxe_pommel" culture="Culture.empire" length="7.92" weight="0.1" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_ottomanaxe_pommel_h1" name="{=BalanceMe}Ottoman Axe" tier="1" piece_type="Pommel" mesh="ottomanaxe_pommel" culture="Culture.empire" length="7.92" weight="0.4" is_default="true">
+  <CraftingPiece id="crpg_ottomanaxe_pommel_h1" name="{=BalanceMe}Ottoman Axe" tier="1" piece_type="Pommel" mesh="ottomanaxe_pommel" culture="Culture.empire" length="7.92" weight="0.1" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_ottomanaxe_pommel_h2" name="{=BalanceMe}Ottoman Axe" tier="1" piece_type="Pommel" mesh="ottomanaxe_pommel" culture="Culture.empire" length="7.92" weight="0.4" is_default="true">
+  <CraftingPiece id="crpg_ottomanaxe_pommel_h2" name="{=BalanceMe}Ottoman Axe" tier="1" piece_type="Pommel" mesh="ottomanaxe_pommel" culture="Culture.empire" length="7.92" weight="0.1" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_ottomanaxe_pommel_h3" name="{=BalanceMe}Ottoman Axe" tier="1" piece_type="Pommel" mesh="ottomanaxe_pommel" culture="Culture.empire" length="7.92" weight="0.4" is_default="true">
+  <CraftingPiece id="crpg_ottomanaxe_pommel_h3" name="{=BalanceMe}Ottoman Axe" tier="1" piece_type="Pommel" mesh="ottomanaxe_pommel" culture="Culture.empire" length="7.92" weight="0.1" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_dadao_blade_h0" name="{=}Dadao Blade" tier="4" piece_type="Blade" mesh="dadao_blade" culture="Culture.battania" length="121.0" weight="0.7" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
@@ -37734,5 +37734,205 @@
   <CraftingPiece id="crpg_spiked_polemace_pommel_h2" name="{=}Dummy Spiked Polemace Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_spiked_polemace_pommel_h3" name="{=}Dummy Spiked Polemace Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_head_h0" name="{=}Battlespade Head" tier="3" piece_type="Blade" mesh="shaolinspade_blade" culture="Culture.vlandia" length="30.7" weight="0.7">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Cut" damage_factor="3.3" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_head_h1" name="{=}Battlespade Head" tier="3" piece_type="Blade" mesh="shaolinspade_blade" culture="Culture.vlandia" length="30.7" weight="0.7">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Cut" damage_factor="3.4" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_head_h2" name="{=}Battlespade Head" tier="3" piece_type="Blade" mesh="shaolinspade_blade" culture="Culture.vlandia" length="30.7" weight="0.7">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Cut" damage_factor="3.4" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_head_h3" name="{=}Battlespade Head" tier="3" piece_type="Blade" mesh="shaolinspade_blade" culture="Culture.vlandia" length="30.7" weight="0.7">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Cut" damage_factor="3.5" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_handle_h0" name="{=}Battlespade Shaft" tier="2" piece_type="Handle" mesh="shaolinspade_handle" length="142" weight="1.3" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_handle_h1" name="{=}Battlespade Shaft" tier="2" piece_type="Handle" mesh="shaolinspade_handle" length="142" weight="1.3" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_handle_h2" name="{=}Battlespade Shaft" tier="2" piece_type="Handle" mesh="shaolinspade_handle" length="142" weight="1.3" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_handle_h3" name="{=}Battlespade Shaft" tier="2" piece_type="Handle" mesh="shaolinspade_handle" length="142" weight="1.3" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_guard_h0" name="{=}Battlespade Guard" tier="1" piece_type="Guard" mesh="shaolinspade_guard" culture="Culture.empire" length="10.2" weight="0.3" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_guard_h1" name="{=}Battlespade Guard" tier="1" piece_type="Guard" mesh="shaolinspade_guard" culture="Culture.empire" length="10.2" weight="0.3" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_guard_h2" name="{=}Battlespade Guard" tier="1" piece_type="Guard" mesh="shaolinspade_guard" culture="Culture.empire" length="10.2" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_guard_h3" name="{=}Battlespade Guard" tier="1" piece_type="Guard" mesh="shaolinspade_guard" culture="Culture.empire" length="10.2" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_pommel_h0" name="{=}Battlespade Pommel" tier="1" piece_type="Pommel" mesh="shaolinspade_pommel" culture="Culture.empire" length="22.1" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_pommel_h1" name="{=}Battlespade Pommel" tier="1" piece_type="Pommel" mesh="shaolinspade_pommel" culture="Culture.empire" length="22.1" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_pommel_h2" name="{=}Battlespade Pommel" tier="1" piece_type="Pommel" mesh="shaolinspade_pommel" culture="Culture.empire" length="22.1" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shaolinspade_pommel_h3" name="{=}Battlespade Pommel" tier="1" piece_type="Pommel" mesh="shaolinspade_pommel" culture="Culture.empire" length="22.1" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_blade_h0" name="{=AppleTruce}El Montante Blade" tier="4" piece_type="Blade" mesh="montante_blade" culture="Culture.battania" length="141" weight="1.2" full_scale="true">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_blade_h1" name="{=AppleTruce}El Montante Blade" tier="4" piece_type="Blade" mesh="montante_blade" culture="Culture.battania" length="141" weight="1.2" full_scale="true">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_blade_h2" name="{=AppleTruce}El Montante Blade" tier="4" piece_type="Blade" mesh="montante_blade" culture="Culture.battania" length="141" weight="1.2" full_scale="true">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_blade_h3" name="{=AppleTruce}El Montante Blade" tier="4" piece_type="Blade" mesh="montante_blade" culture="Culture.battania" length="141" weight="1.2" full_scale="true">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_pommel_h0" name="{=AppleTruce}El Montante Pommel" tier="4" piece_type="Pommel" mesh="montante_pommel" culture="Culture.battania" length="7.17" weight="0.25">
+    <BuildData next_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_pommel_h1" name="{=AppleTruce}El Montante Pommel" tier="4" piece_type="Pommel" mesh="montante_pommel" culture="Culture.battania" length="7.17" weight="0.25">
+    <BuildData next_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_pommel_h2" name="{=AppleTruce}El Montante Pommel" tier="4" piece_type="Pommel" mesh="montante_pommel" culture="Culture.battania" length="7.17" weight="0.25">
+    <BuildData next_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_pommel_h3" name="{=AppleTruce}El Montante Pommel" tier="4" piece_type="Pommel" mesh="montante_pommel" culture="Culture.battania" length="7.17" weight="0.25">
+    <BuildData next_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_guard_h0" name="{=AppleTruce}El Montante Guard" tier="5" piece_type="Guard" mesh="montante_guard" culture="Culture.battania" length="7.9" weight="0.6">
+    <BuildData next_piece_offset="6.5" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_guard_h1" name="{=AppleTruce}El Montante Guard" tier="5" piece_type="Guard" mesh="montante_guard" culture="Culture.battania" length="7.9" weight="0.6">
+    <BuildData next_piece_offset="6.5" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_guard_h2" name="{=AppleTruce}El Montante Guard" tier="5" piece_type="Guard" mesh="montante_guard" culture="Culture.battania" length="7.9" weight="0.6">
+    <BuildData next_piece_offset="6.5" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_guard_h3" name="{=AppleTruce}El Montante Guard" tier="5" piece_type="Guard" mesh="montante_guard" culture="Culture.battania" length="7.9" weight="0.3">
+    <BuildData next_piece_offset="6.5" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_handle_h0" name="{=AppleTruce}El Montante Handle" tier="3" piece_type="Handle" mesh="montante_handle" culture="Culture.khuzait" length="26.0" weight="0.25">
+    <BuildData piece_offset="-6" previous_piece_offset="0.0" next_piece_offset="1" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_handle_h1" name="{=AppleTruce}El Montante Handle" tier="3" piece_type="Handle" mesh="montante_handle" culture="Culture.khuzait" length="26.0" weight="0.25">
+    <BuildData piece_offset="-6" previous_piece_offset="0.0" next_piece_offset="1" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_handle_h2" name="{=AppleTruce}El Montante Handle" tier="3" piece_type="Handle" mesh="montante_handle" culture="Culture.khuzait" length="26.0" weight="0.25">
+    <BuildData piece_offset="-6" previous_piece_offset="0.0" next_piece_offset="1" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_montante_handle_h3" name="{=AppleTruce}El Montante Handle" tier="3" piece_type="Handle" mesh="montante_handle" culture="Culture.khuzait" length="26.0" weight="0.25">
+    <BuildData piece_offset="-6" previous_piece_offset="0.0" next_piece_offset="1" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
   </CraftingPiece>
 </CraftingPieces>
