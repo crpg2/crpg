@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Battles.Models;
 using Crpg.Application.Characters.Models;
@@ -15,7 +16,9 @@ namespace Crpg.Application.Battles.Commands;
 
 public record RespondToBattleMercenaryApplicationCommand : IMediatorRequest<BattleMercenaryApplicationViewModel>
 {
+    [JsonIgnore]
     public int PartyId { get; init; }
+    [JsonIgnore]
     public int MercenaryApplicationId { get; init; }
     public bool Accept { get; init; }
 

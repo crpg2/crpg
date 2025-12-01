@@ -4,7 +4,6 @@ using Crpg.Application.Characters.Models;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
-using Crpg.Application.Common.Services;
 using Crpg.Application.Users.Models;
 using Crpg.Domain.Entities.Battles;
 using Microsoft.EntityFrameworkCore;
@@ -20,13 +19,11 @@ public record GetBattleMercenariesQuery : IMediatorRequest<IList<BattleMercenary
     {
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
-        private readonly ICharacterClassResolver _characterClassResolver;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, ICharacterClassResolver characterClassResolver)
+        public Handler(ICrpgDbContext db, IMapper mapper)
         {
             _db = db;
             _mapper = mapper;
-            _characterClassResolver = characterClassResolver;
         }
 
         public async Task<Result<IList<BattleMercenaryViewModel>>> Handle(GetBattleMercenariesQuery req, CancellationToken cancellationToken)
@@ -48,15 +45,17 @@ public record GetBattleMercenariesQuery : IMediatorRequest<IList<BattleMercenary
             }
 
             BattleFighter? fighter = battle.Fighters.FirstOrDefault(f => f.PartyId == req.UserId);
+            BattleMercenary? mercenary = battle.Mercenaries.FirstOrDefault(m => m.Character?.User?.Id == req.UserId);
             // During the hiring phase, only the fighters can see the mercenaries.
-            if (battle.Phase == BattlePhase.Hiring && fighter == null)
+            // If the user is not a fighter of that battle, only return its mercenary
+            if (battle.Phase == BattlePhase.Hiring && fighter == null && mercenary == null)
             {
                 return new(CommonErrors.PartyNotAFighter(req.UserId, req.BattleId));
             }
 
             // Return the mercenaries from the same side as the user during the hiring phase.
             var mercenaries = battle.Mercenaries
-                .Where(m => battle.Phase != BattlePhase.Hiring || m.Side == fighter!.Side)
+                .Where(m => battle.Phase != BattlePhase.Hiring || m.Side == fighter?.Side || m.Character?.User?.Id == req.UserId)
                 .Select(m => new BattleMercenaryViewModel
                 {
                     Id = m.Id,

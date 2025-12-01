@@ -184,8 +184,7 @@ const columns: TableColumn<ClanMember>[] = [
 
 <template>
   <UContainer
-    v-if="clan !== null"
-    class="space-y-8 pt-24 pb-12"
+    class="space-y-8 py-12"
   >
     <UiHeading
       :title="clan.name"
