@@ -1,4 +1,5 @@
-﻿using Crpg.Application.Common.Mappings;
+﻿using System.Text.Json.Serialization;
+using Crpg.Application.Common.Mappings;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Clans;
 
@@ -15,6 +16,8 @@ public record ClanViewModel : IMapFrom<Clan>
     public string BannerKey { get; init; } = string.Empty;
     public Region Region { get; init; }
     public IList<Languages> Languages { get; init; } = new List<Languages>();
+
+    [JsonRequired]
     public Uri? Discord { get; init; }
     public TimeSpan ArmoryTimeout { get; init; }
 }

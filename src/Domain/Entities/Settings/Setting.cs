@@ -9,4 +9,5 @@ public class Setting
     public string Github { get; set; } = default!;
     public string Reddit { get; set; } = default!;
     public string ModDb { get; set; } = default!;
+    public string HappyHours { get; set; } = default!;
 }

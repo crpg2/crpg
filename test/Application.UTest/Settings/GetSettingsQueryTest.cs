@@ -17,6 +17,7 @@ public class GetSettingsQueryTest : TestBase
             Github = "link",
             Reddit = "link",
             ModDb = "link",
+            HappyHours = "some",
         });
         await ArrangeDb.SaveChangesAsync();
 

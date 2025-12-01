@@ -1,6 +1,8 @@
 using Crpg.Application.Common.Results;
+using Crpg.Application.Common.Services;
 using Crpg.Application.Users.Queries;
 using Crpg.Domain.Entities.Users;
+using Moq;
 using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Users;
@@ -10,7 +12,8 @@ public class GetUserQueryTest : TestBase
     [Test]
     public async Task TestWhenUserDoesntExist()
     {
-        GetUserQuery.Handler handler = new(ActDb, Mapper);
+        Mock<IUserService> userServiceMock = new();
+        GetUserQuery.Handler handler = new(ActDb, Mapper, userServiceMock.Object);
         var result = await handler.Handle(new GetUserQuery
         {
             UserId = 1,
@@ -21,6 +24,7 @@ public class GetUserQueryTest : TestBase
     [Test]
     public async Task TestWhenUserExists()
     {
+        Mock<IUserService> userServiceMock = new();
         User dbUser = new()
         {
             PlatformUserId = "13948192759205810",
@@ -31,7 +35,7 @@ public class GetUserQueryTest : TestBase
         ArrangeDb.Users.Add(dbUser);
         await ArrangeDb.SaveChangesAsync();
 
-        GetUserQuery.Handler handler = new(ActDb, Mapper);
+        GetUserQuery.Handler handler = new(ActDb, Mapper, userServiceMock.Object);
         var user = await handler.Handle(new GetUserQuery
         {
             UserId = dbUser.Id,

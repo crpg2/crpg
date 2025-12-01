@@ -1,0 +1,192 @@
+
+@import "tailwindcss" theme(static);
+@plugin "@tailwindcss/typography";
+@import "@nuxt/ui";
+@import './fonts.css';
+
+@theme static {
+    --font-sans: "Merriweather", ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --container-8xl: 96rem; /* 1536px */
+
+    --color-black: #000;
+    --color-white: #fff;
+    --color-current: 'currentColor';
+    --color-inherit: 'inherit';
+    --color-transparent: 'transparent';
+
+    --color-crpg-red-50: #E9B4B4;
+    --color-crpg-red-100: #DF9090;
+    --color-crpg-red-200: #D46D6D;
+    --color-crpg-red-300: #CA4949;
+    --color-crpg-red-400: #B23434;
+    --color-crpg-red-500: #8E2929;
+    --color-crpg-red-600: #6B1F1F;
+    --color-crpg-red-700: #471515;
+    --color-crpg-red-800: #3B1111;
+    --color-crpg-red-900: #240A0A;
+    --color-crpg-red-950: #0C0303;
+
+    --color-crpg-gold-50: #FEFDFB;
+    --color-crpg-gold-100: #F9F6F0;
+    --color-crpg-gold-200: #EDE3CF;
+    --color-crpg-gold-300: #E0D0AE;
+    /* --color-crpg-gold-400: #D7C398; */
+    --color-crpg-gold-400: #CBB077;
+    --color-crpg-gold-500: #CBB077;
+    --color-crpg-gold-600: #BE9D56;
+    --color-crpg-gold-700: #A68540;
+    --color-crpg-gold-800: #856B33;
+    --color-crpg-gold-900: #635026;
+    --color-crpg-gold-950: #42351A;
+
+    --color-crpg-amber-50: #E4D6B9;
+    --color-crpg-amber-100: #D7C398;
+    --color-crpg-amber-200: #CBB077;
+    --color-crpg-amber-300: #BE9D56;
+    --color-crpg-amber-400: #AC8C39;
+    --color-crpg-amber-500: #856B33;
+    --color-crpg-amber-600: #635026;
+    --color-crpg-amber-700: #42351A;
+    --color-crpg-amber-800: #372C15;
+    --color-crpg-amber-900: #211B0D;
+    --color-crpg-amber-950: #0B0904;
+
+    --color-crpg-green-50: #C4D9C7;
+    --color-crpg-green-100: #A8C7AD;
+    --color-crpg-green-200: #8CB592;
+    --color-crpg-green-300: #70A478;
+    --color-crpg-green-400: #598C61;
+    --color-crpg-green-500: #48704E;
+    --color-crpg-green-600: #36543A;
+    --color-crpg-green-700: #243827;
+    --color-crpg-green-800: #1E2F20;
+    --color-crpg-green-900: #121C13;
+    --color-crpg-green-950: #060906;
+
+    --color-crpg-neutral-50: #EDEDED;
+    --color-crpg-neutral-100: #CFCFCF;
+    --color-crpg-neutral-200: #B8B8B8;
+    --color-crpg-neutral-300: #A1A1A1;
+    --color-crpg-neutral-400: #8A8A8A;
+    --color-crpg-neutral-500: #737373;
+    --color-crpg-neutral-600: #616157;
+    --color-crpg-neutral-700: #464643;
+    --color-crpg-neutral-800: #2F2F2C;
+    --color-crpg-neutral-900: #171717;
+    --color-crpg-neutral-950: #0f0f0e;
+
+    --color-notification: #53bc96;
+    --color-gold: #C99E34;
+
+    --spacing-36: 9rem /* 144px */
+    --spacing-48: 12rem /* 192px */
+    --spacing-60: 15rem /* 192px */
+
+    --animate-ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+
+    @keyframes ping {
+        75%,
+        100% {
+          transform: scale(1.5);
+          opacity: 0;
+        }
+    }
+}
+
+:root {
+    --ui-radius: 0.75rem;
+    --ui-container: var(--container-8xl);
+    --ui-text: var(--ui-color-neutral-100);
+    --ui-bg: var(--ui-color-neutral-950);
+
+    --ui-bg-elevated: var(--ui-color-neutral-900);
+}
+
+body {
+    @apply text-base;
+}
+
+/* COLOR PICKER */
+input[type='color'] {
+  @apply cursor-pointer border-none;
+  @apply h-3.5 w-3.5;
+  @apply rotate-45 transform rounded-[0.188rem];
+}
+
+::-webkit-color-swatch-wrapper {
+  @apply p-0;
+}
+
+::-webkit-color-swatch {
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.15);
+  @apply h-full w-full rounded-none border-none hover:opacity-75;
+}
+
+::-moz-color-swatch,
+::-moz-focus-inner {
+  @apply border-none;
+}
+
+::-moz-focus-inner {
+  @apply p-0;
+}
+
+.fill-current{
+    fill: currentColor;
+}
+
+@utility h1 {
+    @apply text-4xl text-highlighted font-extrabold;
+}
+
+@utility h2 {
+    @apply text-2xl text-highlighted font-bold;
+}
+
+@utility h3 {
+    @apply text-xl text-highlighted font-semibold;
+}
+
+@utility h4 {
+    @apply text-lg text-highlighted font-semibold;
+}
+
+@utility h5 {
+    @apply text-base text-highlighted font-semibold;
+}
+
+@utility p {
+    @apply text-base;
+}
+
+@utility caption {
+    @apply text-muted;
+}
+
+@utility prose {
+  --tw-prose-body: var(--ui-text-default);
+  --tw-prose-headings: var(--ui-text-highlighted);
+  --tw-prose-links: var(--ui-primary);
+  --tw-prose-lead: var(--ui-text-muted);
+  --tw-prose-bold: var(--ui-text-highlighted);
+  --tw-prose-counters: var(--ui-text-toned);
+  --tw-prose-bullets: var(--ui-text-toned);
+  --tw-prose-captions: var(--ui-text-toned);
+  --tw-prose-th-borders: var(--ui-border);
+  --tw-prose-td-borders: var(--ui-border);
+  --tw-prose-quotes: var(--ui-text-highlighted);
+  --tw-prose-quote-borders: var(--ui-border-muted);
+  --tw-prose-hr: var(--ui-border-muted);
+  --tw-prose-code: var(--ui-text-highlighted);
+  --tw-prose-pre-code: var(--ui-text-default);
+  --tw-prose-pre-bg: var(--ui-bg-muted);
+
+  a{
+    @apply no-underline;
+  }
+
+  a:hover {
+    @apply text-primary/75;
+  }
+}

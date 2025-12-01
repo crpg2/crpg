@@ -1,0 +1,143 @@
+<script setup lang="ts">
+import { useCharacter, useCharacters } from '~/composables/character/use-character'
+import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
+import { useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic-builder'
+import { useCharacterItems, useCharacterItemsProvider } from '~/composables/character/use-character-items'
+import { useUser } from '~/composables/user/use-user'
+import { CHARACTERISTIC_CONVERSION } from '~/models/character'
+import { getCharacterLimitations, getRespecCapability, respecializeCharacter } from '~/services/character-service'
+
+const { user, fetchUser } = useUser()
+const { character, characterId } = useCharacter()
+const { refreshCharacters } = useCharacters()
+const { t } = useI18n()
+
+const {
+  characterCharacteristics,
+  loadCharacterCharacteristics,
+  convertingCharacterCharacteristics,
+  onCommitCharacterCharacteristics,
+  onConvertCharacterCharacteristics,
+} = useCharacterCharacteristic()
+
+useCharacterItemsProvider()
+const { itemsOverallStats } = useCharacterItems()
+
+const {
+  characteristics,
+  canConvertAttributesToSkills,
+  canConvertSkillsToAttributes,
+  currentSkillRequirementsSatisfied,
+  isChangeValid,
+  isDirty,
+  getInputProps,
+  onInput,
+  reset: resetCharacterCharacteristicBuilder,
+  healthPoints,
+} = useCharacterCharacteristicBuilder(characterCharacteristics)
+
+const {
+  state: characterLimitations,
+  execute: loadCharacterLimitations,
+} = useAsyncState(
+  () => getCharacterLimitations(toValue(characterId)),
+  { lastRespecializeAt: new Date() },
+)
+
+const respecCapability = computed(() => getRespecCapability(
+  character.value,
+  characterLimitations.value,
+  user.value!.gold,
+  user.value!.isRecent,
+))
+
+const [onRespecializeCharacter] = useAsyncCallback(
+  async () => {
+    await respecializeCharacter(characterId.value)
+
+    await Promise.all([
+      fetchUser(), // update gold
+      refreshCharacters(),
+      loadCharacterLimitations(),
+      loadCharacterCharacteristics(),
+    ])
+  },
+  {
+    pageLoading: true,
+    successMessage: t('character.settings.respecialize.notify.success'),
+  },
+)
+</script>
+
+<template>
+  <div class="relative mx-auto max-w-4xl">
+    <div class="statsGrid grid items-start gap-6">
+      <CharacterCharacteristicsBuilder
+        :get-input-props
+        :characteristics
+        :check-current-skill-requirements-satisfied="currentSkillRequirementsSatisfied"
+        :convert-attributes-to-skills-state="{ disabled: !canConvertAttributesToSkills, loading: convertingCharacterCharacteristics }"
+        :convert-skills-to-attributes-state="{ disabled: !canConvertSkillsToAttributes, loading: convertingCharacterCharacteristics }"
+        @input="onInput"
+        @convert-attributes-to-skills="onConvertCharacterCharacteristics(CHARACTERISTIC_CONVERSION.AttributesToSkills)"
+        @convert-skills-to-attributes="onConvertCharacterCharacteristics(CHARACTERISTIC_CONVERSION.SkillsToAttributes)"
+      />
+
+      <CharacterStats
+        style="grid-area: stats"
+        :characteristics
+        :items-overall-stats="itemsOverallStats"
+        :health-points="healthPoints"
+      />
+    </div>
+
+    <div
+      class="
+        sticky bottom-0 left-0 flex w-full max-w-4xl items-center justify-center gap-4 py-3
+        backdrop-blur-sm
+      "
+    >
+      <UButton
+        :disabled="!isDirty"
+        color="neutral"
+        variant="outline"
+        size="xl"
+        icon="crpg:reset"
+        :label="$t('action.reset')"
+        data-aq-reset-action
+        @click="resetCharacterCharacteristicBuilder"
+      />
+
+      <AppConfirmActionPopover
+        @confirm="() => {
+          onCommitCharacterCharacteristics(characteristics)
+          resetCharacterCharacteristicBuilder()
+        }"
+      >
+        <UButton
+          size="xl"
+          icon="crpg:check"
+          :disabled="!isDirty || !isChangeValid"
+          :label="$t('action.commit')"
+          data-aq-commit-action
+        />
+      </AppConfirmActionPopover>
+
+      <CharacterActionRespec
+        :character
+        :respec-capability
+        @respec="onRespecializeCharacter"
+      />
+    </div>
+  </div>
+</template>
+
+<style lang="css">
+.statsGrid {
+  grid-template-areas:
+    'attributes skills stats'
+    'weaponProficiencies skills stats';
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+}
+</style>
