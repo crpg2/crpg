@@ -123,10 +123,10 @@ public class CrpgGauntletTeamSelection : MissionView
         string strValue = MultiplayerOptions.OptionType.GameType.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
         SpriteData spriteData = UIResourceManager.SpriteData;
         TwoDimensionEngineResourceContext resourceContext = UIResourceManager.ResourceContext;
-        ResourceDepot uiresourceDepot = UIResourceManager.UIResourceDepot;
+        ResourceDepot uiresourceDepot = UIResourceManager.ResourceDepot;
         _dataSource = new CrpgTeamSelectVM(Mission, new Action<Team>(OnChangeTeamTo), new Action(OnAutoassign), new Action(OnClose), Mission.Teams, strValue);
         _dataSource.RefreshDisabledTeams(_disabledTeams ?? new List<Team>());
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority, "GauntletLayer", false);
+        _gauntletLayer = new GauntletLayer("MultiplayerTeamSelection", ViewOrderPriority, false);
         _gauntletLayer.LoadMovie("MultiplayerTeamSelection", _dataSource);
         _gauntletLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.Mouse);
         MissionScreen.AddLayer(_gauntletLayer);

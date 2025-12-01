@@ -16,7 +16,7 @@ internal class SpectatorHudUiHandler : MissionView
         base.OnMissionScreenInitialize();
 
         _dataSource = new MissionMultiplayerSpectatorHUDVM(Mission);
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority);
+        _gauntletLayer = new GauntletLayer("MultiplayerSpectatorHUD", ViewOrderPriority);
         _gauntletLayer.LoadMovie("MultiplayerSpectatorHUD", _dataSource);
         MissionScreen.AddLayer(_gauntletLayer);
 

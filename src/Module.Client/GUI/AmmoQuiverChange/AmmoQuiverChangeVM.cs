@@ -1,5 +1,7 @@
 using Crpg.Module.Common.AmmoQuiverChange;
 using TaleWorlds.Core;
+using TaleWorlds.Core.ImageIdentifiers;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
@@ -21,10 +23,10 @@ internal class AmmoQuiverChangeVm : ViewModel
     private int _currentQuiverAmmo;
     private bool _rangedWeaponEquipped;
 
-    private ImageIdentifierVM _quiverImage0;
-    private ImageIdentifierVM _quiverImage1;
-    private ImageIdentifierVM _quiverImage2;
-    private ImageIdentifierVM _quiverImage3;
+    private ImageIdentifierVM _quiverImage0 = default!;
+    private ImageIdentifierVM _quiverImage1 = default!;
+    private ImageIdentifierVM _quiverImage2 = default!;
+    private ImageIdentifierVM _quiverImage3 = default!;
 
     public AmmoQuiverChangeVm(Mission mission)
     {
@@ -36,11 +38,6 @@ internal class AmmoQuiverChangeVm : ViewModel
         _wieldedWeapon = MissionWeapon.Invalid;
         _currentQuiver = MissionWeapon.Invalid;
         _rangedWeaponEquipped = false;
-
-        _quiverImage0 = new ImageIdentifierVM(ImageIdentifierType.Item);
-        _quiverImage1 = new ImageIdentifierVM(ImageIdentifierType.Item);
-        _quiverImage2 = new ImageIdentifierVM(ImageIdentifierType.Item);
-        _quiverImage3 = new ImageIdentifierVM(ImageIdentifierType.Item);
 
         RefreshValues();
     }
@@ -91,7 +88,7 @@ internal class AmmoQuiverChangeVm : ViewModel
             return false;
         }
 
-        MissionWeapon mWeaponWielded = agent.Equipment[agent.GetWieldedItemIndex(Agent.HandIndex.MainHand)];
+        MissionWeapon mWeaponWielded = agent.Equipment[agent.GetPrimaryWieldedItemIndex()];
         if (mWeaponWielded.IsEmpty || mWeaponWielded.Item == null)
         {
             return false;
@@ -194,10 +191,10 @@ internal class AmmoQuiverChangeVm : ViewModel
 
         if (agent == null || !agent.IsActive() || RangedWeaponEquipped == false || WieldedWeapon.IsEmpty || WieldedWeapon.IsEqualTo(MissionWeapon.Invalid) || WieldedWeapon.Item == null)
         {
-            QuiverImage0 = new ImageIdentifierVM(ImageIdentifierType.Item);
-            QuiverImage1 = new ImageIdentifierVM(ImageIdentifierType.Item);
-            QuiverImage2 = new ImageIdentifierVM(ImageIdentifierType.Item);
-            QuiverImage3 = new ImageIdentifierVM(ImageIdentifierType.Item);
+            QuiverImage0 = new GenericImageIdentifierVM(null);
+            QuiverImage1 = new GenericImageIdentifierVM(null);
+            QuiverImage2 = new GenericImageIdentifierVM(null);
+            QuiverImage3 = new GenericImageIdentifierVM(null);
             return;
         }
 
@@ -223,11 +220,11 @@ internal class AmmoQuiverChangeVm : ViewModel
             {
                 // check that matches ammo
                 MissionWeapon mQuiver = agent.Equipment[ammoQuivers[i]];
-                quiverImages[i] = mQuiver.IsEmpty ? new ImageIdentifierVM() : new ImageIdentifierVM(mQuiver.Item);
+                quiverImages[i] = mQuiver.IsEmpty ? new GenericImageIdentifierVM(null) : new ItemImageIdentifierVM(mQuiver.Item);
             }
             else
             {
-                quiverImages[i] = new ImageIdentifierVM(ImageIdentifierType.Item);
+                quiverImages[i] = new GenericImageIdentifierVM(null);
             }
         }
 
@@ -279,7 +276,7 @@ internal class AmmoQuiverChangeVm : ViewModel
         if (!ammoWeapon.IsEqualTo(MissionWeapon.Invalid))
         {
             // check if the ammo weapon is the wielded weapon ie throwing
-            EquipmentIndex wieldedWeaponIndex = agent.GetWieldedItemIndex(Agent.HandIndex.MainHand);
+            EquipmentIndex wieldedWeaponIndex = agent.GetPrimaryWieldedItemIndex();
             if (wieldedWeaponIndex != EquipmentIndex.None)
             {
                 MissionWeapon wieldedWeapon = agent.Equipment[wieldedWeaponIndex];

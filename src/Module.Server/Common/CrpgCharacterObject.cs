@@ -13,9 +13,9 @@ namespace Crpg.Module.Common;
 
 public class CrpgCharacterObject : BasicCharacterObject
 {
-    private readonly CharacterSkills _skills;
-    Equipment _equipment;
-    public CrpgCharacterObject(CharacterSkills skills, Equipment equipment)
+    private readonly MBCharacterSkills _skills;
+    private readonly Equipment _equipment;
+    public CrpgCharacterObject(MBCharacterSkills skills, Equipment equipment)
     {
         _skills = skills;
         _equipment = equipment;
@@ -28,12 +28,12 @@ public class CrpgCharacterObject : BasicCharacterObject
     public override bool IsMounted => base.IsMounted;
     public override bool IsFemale { get => base.IsFemale; set => base.IsFemale = value; }
     public override int HitPoints => base.HitPoints;
-    public override MBReadOnlyList<Equipment> AllEquipments => base.AllEquipments;
     public override Equipment Equipment => _equipment;
     public override TextObject GetName() => Name;
+    protected override MBReadOnlyList<Equipment> AllEquipments => base.AllEquipments;
     public override int GetSkillValue(SkillObject skill)
     {
-        return _skills.GetPropertyValue(skill);
+        return _skills.Skills.GetPropertyValue(skill);
     }
 
     public override int Level { get => base.Level; set => base.Level = value; }

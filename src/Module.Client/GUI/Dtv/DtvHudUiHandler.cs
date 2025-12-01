@@ -22,10 +22,10 @@ internal class DtvHudUiHandler : MissionView
         base.OnMissionScreenInitialize();
 
         _mpMissionCategory = UIResourceManager.SpriteData.SpriteCategories["ui_mpmission"];
-        _mpMissionCategory.Load(UIResourceManager.ResourceContext, UIResourceManager.UIResourceDepot);
+        _mpMissionCategory.Load(UIResourceManager.ResourceContext, UIResourceManager.ResourceDepot);
 
         _dataSource = new DtvHudVm(Mission);
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority);
+        _gauntletLayer = new GauntletLayer("DtvHud", ViewOrderPriority);
         _gauntletLayer.LoadMovie("DtvHud", _dataSource);
         MissionScreen.AddLayer(_gauntletLayer);
     }

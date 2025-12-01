@@ -27,7 +27,7 @@
           <ItemTemplate>
             <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="50" SuggestedHeight="50" MarginBottom="5">
               <Children>
-                <ImageIdentifierWidget DataSource="{Avatar}" DoNotAcceptEvents="true" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode" WidthSizePolicy = "StretchToParent" HeightSizePolicy = "StretchToParent" SuggestedWidth = "50" SuggestedHeight = "50" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <ImageIdentifierWidget DataSource="{Avatar}" DoNotAcceptEvents="true" ImageId="@Id" AdditionalArgs="@AdditionalArgs" TextureProviderName="@TextureProviderName" WidthSizePolicy = "StretchToParent" HeightSizePolicy = "StretchToParent" SuggestedWidth = "50" SuggestedHeight = "50" HorizontalAlignment="Center" VerticalAlignment="Center" />
               </Children>
             </Widget>
           </ItemTemplate>
@@ -57,7 +57,7 @@
 
             <MultiplayerFactionBannerWidget UpdateChildrenStates="true" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" FactionCode="@CultureId" BannerWidget="Banner" IconWidget="Icon" UseSecondary="@UseSecondary">
               <Children>
-              <MaskedTextureWidget DataSource="{Banner}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="ClanNaming.Stage.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" IsDisabled="true"  />
+              <MaskedTextureWidget DataSource="{Banner}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="ClanNaming.Stage.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" TextureProviderName="@TextureProviderName" IsDisabled="true"  />
               </Children>
             </MultiplayerFactionBannerWidget>
 

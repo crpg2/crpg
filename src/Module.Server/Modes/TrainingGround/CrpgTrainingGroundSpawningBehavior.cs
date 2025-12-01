@@ -20,7 +20,7 @@ internal class CrpgTrainingGroundSpawningBehavior : CrpgSpawningBehaviorBase
 
     public override void OnTick(float dt)
     {
-        if (IsSpawningEnabled && _spawnCheckTimer.Check(Mission.CurrentTime))
+        if (IsSpawningEnabled && SpawnCheckTimer.Check(Mission.CurrentTime))
         {
             SpawnAgents();
         }

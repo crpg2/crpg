@@ -252,7 +252,7 @@ internal class CrpgMissionMarkerVm : ViewModel
         }
 
         SiegeEngineTargets.Clear();
-        foreach (GameEntity item in Mission.Current.GetActiveEntitiesWithScriptComponentOfType<SiegeWeapon>())
+        foreach (WeakGameEntity item in Mission.Current.GetActiveEntitiesWithScriptComponentOfType<SiegeWeapon>())
         {
             SiegeWeapon firstScriptOfType = item.GetFirstScriptOfType<SiegeWeapon>();
             if (newTeam.Side == firstScriptOfType.Side)

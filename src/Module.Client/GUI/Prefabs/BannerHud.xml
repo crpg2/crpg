@@ -14,7 +14,7 @@
                              Brush="MPHUD.Extension.Banner.Circle"
                              AdditionalArgs="@AdditionalArgs"
                              ImageId="@Id"
-                             ImageTypeCode="@ImageTypeCode"
+                             TextureProviderName="@TextureProviderName"
                              IsDisabled="true" />
       </Children>
     </Widget>

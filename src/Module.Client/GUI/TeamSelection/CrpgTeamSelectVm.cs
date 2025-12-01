@@ -51,18 +51,33 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
             BasicCultureObject culture1 = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions));
 
             var banners = Mission.Current.GetMissionBehavior<CrpgCustomTeamBannersAndNamesClient>();
-            BannerCode attackerBanner = BannerCode.CreateFrom(string.Empty);
-            BannerCode defenderBanner = BannerCode.CreateFrom(String.Empty);
+            Banner attackerBanner = new(string.Empty);
+            Banner defenderBanner = new(string.Empty);
             if (Mission.Current.Teams.Count > 0)
             {
-                attackerBanner = BannerCode.CreateFrom(Mission.Current.Teams.Attacker.Banner);
-                defenderBanner = BannerCode.CreateFrom(Mission.Current.Teams.Defender.Banner);
+                attackerBanner = new(Mission.Current.Teams.Attacker.Banner);
+                defenderBanner = new(Mission.Current.Teams.Defender.Banner);
             }
-            Team1 = new CrpgTeamSelectInstanceVM(missionBehavior, team1, culture1, new(banners?.AttackerBannerCode ?? attackerBanner, true), onChangeTeamTo, false, banners?.AttackerName ?? string.Empty);
+
+            Team1 = new CrpgTeamSelectInstanceVM(
+                missionBehavior,
+                team1,
+                culture1,
+                banners?.AttackerBannerCode != null ? new(new Banner(banners?.AttackerBannerCode)) : new(attackerBanner),
+                onChangeTeamTo,
+                false,
+                banners?.AttackerName ?? string.Empty);
 
             Team team2 = teams.FirstOrDefault((Team t) => t.Side == BattleSideEnum.Defender);
             BasicCultureObject culture2 = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions));
-            Team2 = new CrpgTeamSelectInstanceVM(missionBehavior, team2, culture2, new(banners?.DefenderBannerCode ?? defenderBanner, true), onChangeTeamTo, true, banners?.DefenderName ?? string.Empty);
+            Team2 = new CrpgTeamSelectInstanceVM(
+                missionBehavior,
+                team1,
+                culture1,
+                banners?.DefenderBannerCode != null ? new(new Banner(banners?.DefenderBannerCode)) : new(defenderBanner),
+                onChangeTeamTo,
+                false,
+                banners?.DefenderName ?? string.Empty);
 
             if (GameNetwork.IsMyPeerReady)
             {

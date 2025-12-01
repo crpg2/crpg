@@ -8,8 +8,17 @@ namespace Crpg.Module.HarmonyPatches;
 public class DecideWeaponCollisionReactionPatch
 {
     [HarmonyPostfix]
-    [HarmonyPatch(typeof(Mission), "DecideWeaponCollisionReaction")]
-    public static void AddAxeSlicedThrough(ref MeleeCollisionReaction colReaction, in MissionWeapon attackerWeapon, in AttackCollisionData collisionData)
+
+    [HarmonyPatch(typeof(MissionCombatMechanicsHelper), "DecideWeaponCollisionReaction")]
+    public static void AddAxeSlicedThrough(
+        ref MeleeCollisionReaction colReaction,
+        in Blow registeredBlow,
+        in AttackCollisionData collisionData,
+        Agent attacker,
+        Agent defender, in MissionWeapon attackerWeapon,
+        bool isFatalHit,
+        bool isShruggedOff,
+        float momentumRemaining)
     {
         // Check if the weapon used for the attack is an axe
         var weaponClass = attackerWeapon.IsEmpty ? WeaponClass.Undefined : attackerWeapon.CurrentUsageItem.WeaponClass;
