@@ -40,25 +40,46 @@
   delegate_to: localhost
   become: false
 
+- name: Check if running in WSL
+  shell: command -v wslpath
+  delegate_to: localhost
+  register: wsl_check
+  failed_when: false
+  changed_when: false
+
+- name: Set WSL availability fact
+  set_fact:
+    is_wsl: "{{ wsl_check.rc == 0 }}"
+
 - name: Convert Linux Launcher Path to Windows path
   shell: wslpath -w "{{ crpg_launcher_path }}/LauncherV2.Console.Exe"
   delegate_to: localhost
   register: crpg_launcher_path_win
+  when: is_wsl
 
 - name: Convert Linux Module path to Windows path
   shell: wslpath -w "{{ crpg_game_client_local_path }}/Modules/cRPG"
   delegate_to: localhost
   register: crpg_module_client_local_path_win
+  when: is_wsl
 
 - name: Convert Linux tmp path to Windows path
   shell: wslpath -w "/tmp/hash.xml"
   delegate_to: localhost
   register: hash_output_path
+  when: is_wsl
 
-- name: Hashing Module
+- name: Hashing Module (WSL)
   shell: "{{ crpg_launcher_path }}/LauncherV2.Console.exe /hash '{{ crpg_module_client_local_path_win.stdout }}' /output '{{ hash_output_path.stdout }}' "
   delegate_to: localhost
   register: converted_path
+  when: is_wsl
+
+- name: Hashing Module (Native Linux)
+  shell: "{{ crpg_launcher_path }}/LauncherV2.Console /hash '{{ crpg_game_client_local_path }}/Modules/cRPG' /output '/tmp/hash.xml'"
+  delegate_to: localhost
+  register: converted_path
+  when: not is_wsl
 
 - name: Get list of directories in SceneObj
   ansible.builtin.shell:
