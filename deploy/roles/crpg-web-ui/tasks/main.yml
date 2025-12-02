@@ -12,7 +12,9 @@
   become: false
 
 - name: Build locally cRPG Web UI
-  command: "OUT_DIR=/tmp/{{ crpg_ui_path | basename }}_new npm {{ playbook_dir | dirname }}/src/WebUI run build"
+  command: "npm --prefix {{ playbook_dir | dirname }}/src/WebUI run build"
+  environment:
+    OUT_DIR: "/tmp/{{ crpg_ui_path | basename }}_new"
   delegate_to: localhost
   become: false
 
@@ -30,6 +32,15 @@
     mode: u=rwX,g=rX,o=rX
     owner: nginx
     group: nginx
+
+- name: Check that the 'public' folder present
+  stat:
+    path: "/var/www/public"
+  register: crpg_ui_public_stat_result
+
+- name: Rename 'public' folder
+  command: "mv /var/www/public {{ crpg_ui_path }}_new"
+  when: crpg_ui_public_stat_result.stat.exists
 
 - name: Check that a cRPG Web UI version is already present
   stat:
