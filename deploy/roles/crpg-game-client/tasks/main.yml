@@ -28,7 +28,6 @@
     - "AssetPackages"
     - "SceneObj"
     - "bin/Win64_Shipping_Client/Crpg.Module.dll"
-    - "bin/Gaming.Desktop.x64_Shipping_Client/Crpg.Module.dll"
   register: file_stats
   delegate_to: localhost
   become: false
