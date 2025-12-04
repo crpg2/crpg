@@ -71,7 +71,7 @@ internal class CrpgNotificationComponent : MultiplayerGameNotificationsComponent
     {
         if (type == CrpgNotificationType.Notification) // Small text at the top of the screen.
         {
-            MBInformationManager.AddQuickInformation(new TextObject(message), 0, null, soundEvent);
+            MBInformationManager.AddQuickInformation(new TextObject(message), 0, null, null, soundEvent);
         }
         else if (type == CrpgNotificationType.Announcement) // Big red text in the middle of the screen.
         {
@@ -104,7 +104,7 @@ internal class CrpgNotificationComponent : MultiplayerGameNotificationsComponent
             });
 
             BasicCharacterObject? commanderCharacterObject = _commanderClient.GetCommanderCharacterObjectBySide(side);
-            MBInformationManager.AddQuickInformation(new TextObject(message), 5000, commanderCharacterObject, soundEvent);
+            MBInformationManager.AddQuickInformation(new TextObject(message), 5000, commanderCharacterObject, commanderCharacterObject?.FirstBattleEquipment, soundEvent);
         }
     }
 }

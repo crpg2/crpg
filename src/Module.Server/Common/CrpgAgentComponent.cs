@@ -23,7 +23,7 @@ internal class CrpgAgentComponent : AgentComponent
         if (Agent.HasMount)
         {
             MissionEquipment equipment = Agent.Equipment;
-            EquipmentIndex offHandItemIndex = Agent.GetWieldedItemIndex(Agent.HandIndex.OffHand);
+            EquipmentIndex offHandItemIndex = Agent.GetOffhandWieldedItemIndex();
             WeaponComponentData? offHandItem = offHandItemIndex != EquipmentIndex.None
                 ? equipment[offHandItemIndex].CurrentUsageItem
                 : null;

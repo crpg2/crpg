@@ -13,8 +13,8 @@ internal class CrpgCustomTeamBannersAndNamesServer : MissionNetwork
     private Dictionary<int, (int count, CrpgClan clan)> defenderClanNumber = new();
     private int previousAttackerClanId;
     private int previousDefenderClanId;
-    public BannerCode AttackerBanner { get; private set; } = BannerCode.CreateFrom(string.Empty);
-    public BannerCode DefenderBanner { get; private set; } = BannerCode.CreateFrom(string.Empty);
+    public Banner AttackerBanner { get; private set; } = new(string.Empty);
+    public Banner DefenderBanner { get; private set; } = new(string.Empty);
     public string AttackerName { get; private set; } = string.Empty;
     public string DefenderName { get; private set; } = string.Empty;
     private MultiplayerRoundController? _roundController;
@@ -43,20 +43,19 @@ internal class CrpgCustomTeamBannersAndNamesServer : MissionNetwork
 
         if (attackerMaxClan != null)
         {
-            attackerBanner = new(new Banner(attackerMaxClan.BannerKey));
+            AttackerBanner = new(new Banner(attackerMaxClan.BannerKey));
+
             attackerTeamName = attackerMaxClan.Name;
         }
 
         if (defenderMaxClan != null)
         {
-            defenderBanner = new(new Banner(defenderMaxClan.BannerKey));
+            DefenderBanner = new(new Banner(defenderMaxClan.BannerKey));
             defenderTeamName = defenderMaxClan.Name;
         }
 
         previousAttackerClanId = attackerMaxClanId;
         previousDefenderClanId = defenderMaxClanId;
-        AttackerBanner = BannerCode.CreateFrom(attackerBanner);
-        DefenderBanner = BannerCode.CreateFrom(defenderBanner);
         AttackerName = attackerTeamName;
         DefenderName = defenderTeamName;
         GameNetwork.BeginBroadcastModuleEvent();
@@ -77,12 +76,12 @@ internal class CrpgCustomTeamBannersAndNamesServer : MissionNetwork
 
         if(attackerBanner != null)
         {
-            AttackerBanner = BannerCode.CreateFrom(attackerBanner);
+            AttackerBanner = new(attackerBanner);
         }
 
         if (defenderBanner != null)
         {
-            DefenderBanner = BannerCode.CreateFrom(defenderBanner);
+            DefenderBanner = new(defenderBanner);
         }
 
         var attackerName = MBObjectManager.Instance?.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions))?.Name.ToString() ?? string.Empty;

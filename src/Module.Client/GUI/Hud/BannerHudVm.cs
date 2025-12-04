@@ -1,4 +1,6 @@
 ﻿using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
+using TaleWorlds.GauntletUI.BaseTypes;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
@@ -8,7 +10,7 @@ internal class BannerHudVm : ViewModel
 {
     private readonly Mission _mission;
     private readonly bool _allyBanner;
-    private ImageIdentifierVM? _banner;
+    private BannerImageIdentifierVM? _banner;
 
     public BannerHudVm(Mission mission, bool allyBanner)
     {
@@ -18,7 +20,7 @@ internal class BannerHudVm : ViewModel
     }
 
     [DataSourceProperty]
-    public ImageIdentifierVM? Banner
+    public BannerImageIdentifierVM? Banner
     {
         get => _banner;
         set
@@ -42,6 +44,6 @@ internal class BannerHudVm : ViewModel
         var bannerCode = _allyBanner
             ? newTeam.Banner
             : enemyBanner?.Banner; // For some reason mission teams might not be initialized here.
-        Banner = new ImageIdentifierVM(BannerCode.CreateFrom(bannerCode), true);
+        Banner = new BannerImageIdentifierVM(bannerCode);
     }
 }

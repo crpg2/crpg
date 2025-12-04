@@ -23,7 +23,7 @@ internal class CrpgEndOfRoundUiHandler : MissionView
         _mpGameModeBase = Mission.GetMissionBehavior<MissionMultiplayerGameModeBaseClient>();
         ViewOrderPriority = 23;
         _dataSource = new CrpgEndOfRoundVm(_scoreboardComponent, _missionLobbyComponent, RoundComponent);
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority);
+        _gauntletLayer = new GauntletLayer("CrpgEndOfRound", ViewOrderPriority);
         _gauntletLayer.LoadMovie("CrpgEndOfRound", _dataSource);
         MissionScreen.AddLayer(_gauntletLayer);
         ScreenManager.SetSuspendLayer(_gauntletLayer, true);

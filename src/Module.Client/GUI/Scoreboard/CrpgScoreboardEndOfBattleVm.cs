@@ -2,11 +2,14 @@
 using System.Linq;
 using Crpg.Module.GUI.HudExtension;
 using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.Missions.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.Scoreboard;
 using TaleWorlds.ObjectSystem;
+using static TaleWorlds.MountAndBlade.MissionScoreboardComponent;
 
 namespace Crpg.Module.Gui;
 
@@ -48,10 +51,10 @@ public class CrpgScoreboardEndOfBattleVM : ViewModel
 
     }
 
-    private void HandleBannerChange(BannerCode attackerBanner, BannerCode defenderBanner, string attackerName, string defenderName)
+    private void HandleBannerChange(string attackerBanner, string defenderBanner, string attackerName, string defenderName)
     {
-        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? attackerBanner : defenderBanner, true);
-        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? defenderBanner : attackerBanner, true);
+        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(attackerBanner) : new Banner(defenderBanner), true);
+        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(defenderBanner) : new Banner(attackerBanner), true);
     }
 
     public override void RefreshValues()
@@ -132,19 +135,25 @@ private void InitSides()
             }
         }
 
-        MissionScoreboardComponent.MissionScoreboardSide missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault((MissionScoreboardComponent.MissionScoreboardSide s) => s != null && s.Side == _allyBattleSide);
+        MissionScoreboardSide missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault((MissionScoreboardSide s) => s != null && s.Side == _allyBattleSide);
+        MissionScoreboardSide missionScoreboardSide2 = _missionScoreboardComponent.Sides.FirstOrDefault((MissionScoreboardSide s) => s != null && s.Side == _enemyBattleSide);
+
+        string text = (missionScoreboardSide != null && missionScoreboardSide.Side == BattleSideEnum.Attacker) ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions) : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
+        string text2 = (missionScoreboardSide2 != null && missionScoreboardSide2.Side == BattleSideEnum.Attacker) ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions) : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
+        BasicCultureObject? basicCultureObject = string.IsNullOrEmpty(text) ? null : MBObjectManager.Instance.GetObject<BasicCultureObject>(text);
+        BasicCultureObject? basicCultureObject2 = string.IsNullOrEmpty(text2) ? null : MBObjectManager.Instance.GetObject<BasicCultureObject>(text2);
+
+        MultiplayerBattleColors multiplayerBattleColors = MultiplayerBattleColors.CreateWith(basicCultureObject, basicCultureObject2);
         if (missionScoreboardSide != null)
         {
             string objectName = (missionScoreboardSide.Side == BattleSideEnum.Attacker) ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions) : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
-            AllySide = new MPEndOfBattleSideVM(_missionScoreboardComponent, missionScoreboardSide, MBObjectManager.Instance.GetObject<BasicCultureObject>(objectName), (AllySide?.Side?.Side ?? BattleSideEnum.Attacker) == BattleSideEnum.Defender);
+            AllySide = new MPEndOfBattleSideVM(_missionScoreboardComponent, missionScoreboardSide, multiplayerBattleColors.AttackerColors);
         }
 
-        missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault((MissionScoreboardComponent.MissionScoreboardSide s) => s != null && s.Side == _enemyBattleSide);
-
-        if (missionScoreboardSide != null)
+        if (missionScoreboardSide2 != null)
         {
-            string objectName2 = (missionScoreboardSide.Side == BattleSideEnum.Attacker) ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions) : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
-            EnemySide = new MPEndOfBattleSideVM(_missionScoreboardComponent, missionScoreboardSide, MBObjectManager.Instance.GetObject<BasicCultureObject>(objectName2), (EnemySide?.Side?.Side ?? BattleSideEnum.Attacker) == BattleSideEnum.Defender);
+            string objectName2 = (missionScoreboardSide2.Side == BattleSideEnum.Attacker) ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions) : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
+            EnemySide = new MPEndOfBattleSideVM(_missionScoreboardComponent, missionScoreboardSide, multiplayerBattleColors.DefenderColors);
         }
 
 
@@ -287,7 +296,7 @@ private void InitSides()
     }
 
     [DataSourceProperty]
-    public ImageIdentifierVM? AllyBanner
+    public BannerImageIdentifierVM? AllyBanner
     {
         get
         {
@@ -306,7 +315,7 @@ private void InitSides()
     }
 
     [DataSourceProperty]
-    public ImageIdentifierVM? EnemyBanner
+    public BannerImageIdentifierVM? EnemyBanner
     {
         get
         {
@@ -352,7 +361,7 @@ private void InitSides()
 
     private MPEndOfBattleSideVM _enemySide = default!;
 
-    private ImageIdentifierVM? _allyBanner;
+    private BannerImageIdentifierVM? _allyBanner;
 
-    private ImageIdentifierVM? _enemyBanner;
+    private BannerImageIdentifierVM? _enemyBanner;
 }

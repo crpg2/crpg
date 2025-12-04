@@ -6,10 +6,10 @@ namespace Crpg.Module.Common;
 
 internal class CrpgBattleAgentOrigin : BasicBattleAgentOrigin
 {
-    public CharacterSkills Skills { get; }
+    public MBCharacterSkills Skills { get; }
     public List<(CrpgItemArmorComponent armor, ItemObject.ItemTypeEnum type)> ArmorItems { get; } = new();
 
-    public CrpgBattleAgentOrigin(BasicCharacterObject? troop, CharacterSkills skills)
+    public CrpgBattleAgentOrigin(BasicCharacterObject? troop, MBCharacterSkills skills)
         : base(troop)
     {
         Skills = skills;
