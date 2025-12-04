@@ -10,12 +10,16 @@
     <native_parameter id="defend_speed_multiplier" value="20.2"/> <!-- Native = 3.2 -->
     <native_parameter id="quick_release_skipped_progress" value="0"/>  <!-- Native = 3.2 -->
     <native_parameter id="release_skipped_progress_for_quick_ready" value="0"/> <!-- Native = 0.3 -->
-    <native_parameter id="ready_speed_multiplier" value="0.88"/>  <!-- Native = 2.2 -->
-    <native_parameter id="running_backward_speed_multiplier" value="0.50" />  <!-- Native = 0.5 -->
+    <native_parameter id="ready_speed_multiplier" value="2.2"/>  <!-- Native = 2.2 -->
+    <native_parameter id="running_backward_speed_multiplir" value="0.50" />  <!-- Native = 0.5 -->
     <native_parameter id="running_sides_speed_multiplier" value="0.65" />   <!-- Native = 0.65-->
     <native_parameter id="ladder_climb_up_speed_multiplier"  value="0.88" /> <!-- Native = 0.68-->
     <native_parameter id="humanoid_physics_capsule_radius_multiplier_for_friend" value="1.475" /> <!--Native = 0.95-->
     <native_parameter	id="humanoid_physics_capsule_radius_multiplier_for_enemy"	value="1.9" /> <!--Native = 1.5-->
     <native_parameter id="smaller_humanoid_physics_capsule_radius_multiplier_for_static_bodies" value="0.83" /> <!--Environment (trees/walls, any entities) Native = 0.67-->
+    <native_parameter	id="added_animation_duration_for_block_stuns"	value="0.01" />
+    <native_parameter id="added_animation_duration_for_blocked_attacks"	value="0.01" />
+    <native_parameter	id="stun_period_bounce"	value="0.01" />
+    <native_parameter id="additional_stun_period_for_being_struck" value="0.01" />
   </native_parameters>
 </base>
