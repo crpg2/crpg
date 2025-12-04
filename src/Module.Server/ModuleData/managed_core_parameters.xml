@@ -63,22 +63,22 @@
     <managed_core_parameter id="ThrustCombatSpeedGraphOneProgressValue" value="0.94"/>
 
     <!-- stun calc related -->
-    <managed_core_parameter id="StunPeriodAttackerSwing" value="0.1"/>
-    <managed_core_parameter id="StunPeriodAttackerThrust" value="0.67"/>
-    <managed_core_parameter id="StunDefendWeaponWeightOffsetShield" value="0.1"/>
-    <managed_core_parameter id="StunDefendWeaponWeightMultiplierWeaponWeight" value="0.25"/>
-    <managed_core_parameter id="StunDefendWeaponWeightBonusTwoHanded" value="0.25"/>
-    <managed_core_parameter id="StunDefendWeaponWeightBonusPolearm" value="0.35"/>
+    <managed_core_parameter id="StunPeriodAttackerSwing" value="0"/>
+    <managed_core_parameter id="StunPeriodAttackerThrust" value="0"/>
+    <managed_core_parameter id="StunDefendWeaponWeightOffsetShield" value="0"/>
+    <managed_core_parameter id="StunDefendWeaponWeightMultiplierWeaponWeight" value="0"/>
+    <managed_core_parameter id="StunDefendWeaponWeightBonusTwoHanded" value="0"/>
+    <managed_core_parameter id="StunDefendWeaponWeightBonusPolearm" value="0"/>
 
-    <managed_core_parameter id="StunMomentumTransferFactor" value="0.0055"/>
+    <managed_core_parameter id="StunMomentumTransferFactor" value="0"/>
 
-    <managed_core_parameter id="StunDefendWeaponWeightParryMultiplier" value="0.2"/>
-    <managed_core_parameter id="StunDefendWeaponWeightBonusRightStance" value="0.0"/>
+    <managed_core_parameter id="StunDefendWeaponWeightParryMultiplier" value="0"/>
+    <managed_core_parameter id="StunDefendWeaponWeightBonusRightStance" value="0"/>
 
-    <managed_core_parameter id="StunDefendWeaponWeightBonusActiveBlocked" value="0.1"/>
-    <managed_core_parameter id="StunDefendWeaponWeightBonusChamberBlocked" value="0.4"/>
-    <managed_core_parameter id="StunPeriodAttackerFriendlyFire" value="0.4"/>
-    <managed_core_parameter id="StunPeriodMax" value="0.8"/>
+    <managed_core_parameter id="StunDefendWeaponWeightBonusActiveBlocked" value="0"/>
+    <managed_core_parameter id="StunDefendWeaponWeightBonusChamberBlocked" value="0"/>
+    <managed_core_parameter id="StunPeriodAttackerFriendlyFire" value="0"/>
+    <managed_core_parameter id="StunPeriodMax" value="0"/>
 
     <!-- penetration limits -->
     <managed_core_parameter id="ProjectileMaxPenetrationSpeed" value="120.0" />
