@@ -39,9 +39,8 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
 
     public override void EarlyStart()
     {
-        // TODO
-        // reportTeamHitKey = HotKeyManager.GetCategory(KeyCategoryId).GetGameKey("key_report_team_hit");
-        // commandModifierKey = HotKeyManager.GetCategory(KeyCategoryId).GetGameKey("key_command_modifier");
+        reportTeamHitKey = HotKeyManager.GetCategory(KeyCategoryId).RegisteredGameKeys.Find(gk => gk != null && gk.StringId == "key_report_team_hit");
+        commandModifierKey = HotKeyManager.GetCategory(KeyCategoryId).RegisteredGameKeys.Find(gk => gk != null && gk.StringId == "key_command_modifier");
     }
 
     public override void OnMissionTick(float dt)
