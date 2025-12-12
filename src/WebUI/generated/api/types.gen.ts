@@ -27,7 +27,7 @@ export type ActivityLogViewModel = {
 };
 
 export type ActivityLogViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<ActivityLogViewModel> | null;
 };
 
@@ -37,7 +37,7 @@ export type ActivityLogWithDictViewModel = {
 };
 
 export type ActivityLogWithDictViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: ActivityLogWithDictViewModel | null;
 };
 
@@ -77,12 +77,12 @@ export type BattleDetailedViewModel = {
 };
 
 export type BattleDetailedViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<BattleDetailedViewModel> | null;
 };
 
 export type BattleDetailedViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: BattleDetailedViewModel | null;
 };
 
@@ -96,12 +96,12 @@ export type BattleFighterApplicationViewModel = {
 };
 
 export type BattleFighterApplicationViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<BattleFighterApplicationViewModel> | null;
 };
 
 export type BattleFighterApplicationViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: BattleFighterApplicationViewModel | null;
 };
 
@@ -115,7 +115,7 @@ export type BattleFighterViewModel = {
 };
 
 export type BattleFighterViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<BattleFighterViewModel> | null;
 };
 
@@ -132,12 +132,12 @@ export type BattleMercenaryApplicationViewModel = {
 };
 
 export type BattleMercenaryApplicationViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<BattleMercenaryApplicationViewModel> | null;
 };
 
 export type BattleMercenaryApplicationViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: BattleMercenaryApplicationViewModel | null;
 };
 
@@ -149,7 +149,7 @@ export type BattleMercenaryViewModel = {
 };
 
 export type BattleMercenaryViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<BattleMercenaryViewModel> | null;
 };
 
@@ -194,7 +194,7 @@ export type CharacterCharacteristicsViewModel = {
 };
 
 export type CharacterCharacteristicsViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: CharacterCharacteristicsViewModel | null;
 };
 
@@ -205,7 +205,7 @@ export type CharacterLimitationsViewModel = {
 };
 
 export type CharacterLimitationsViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: CharacterLimitationsViewModel | null;
 };
 
@@ -218,7 +218,7 @@ export type CharacterPublicCompetitiveViewModel = {
 };
 
 export type CharacterPublicCompetitiveViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<CharacterPublicCompetitiveViewModel> | null;
 };
 
@@ -269,12 +269,12 @@ export type CharacterViewModel = {
 };
 
 export type CharacterViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<CharacterViewModel> | null;
 };
 
 export type CharacterViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: CharacterViewModel | null;
 };
 
@@ -294,7 +294,7 @@ export type ClanArmoryBorrowedItemViewModel = {
 };
 
 export type ClanArmoryBorrowedItemViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: ClanArmoryBorrowedItemViewModel | null;
 };
 
@@ -306,12 +306,12 @@ export type ClanArmoryItemViewModel = {
 };
 
 export type ClanArmoryItemViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<ClanArmoryItemViewModel> | null;
 };
 
 export type ClanArmoryItemViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: ClanArmoryItemViewModel | null;
 };
 
@@ -328,12 +328,12 @@ export type ClanInvitationViewModel = {
 };
 
 export type ClanInvitationViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<ClanInvitationViewModel> | null;
 };
 
 export type ClanInvitationViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: ClanInvitationViewModel | null;
 };
 
@@ -345,12 +345,12 @@ export type ClanMemberViewModel = {
 };
 
 export type ClanMemberViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<ClanMemberViewModel> | null;
 };
 
 export type ClanMemberViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: ClanMemberViewModel | null;
 };
 
@@ -380,7 +380,7 @@ export type ClanViewModel = {
 };
 
 export type ClanViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: ClanViewModel | null;
 };
 
@@ -390,7 +390,7 @@ export type ClanWithMemberCountViewModel = {
 };
 
 export type ClanWithMemberCountViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<ClanWithMemberCountViewModel> | null;
 };
 
@@ -451,11 +451,11 @@ export type EquippedItemViewModel = {
 };
 
 export type EquippedItemViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<EquippedItemViewModel> | null;
 };
 
-export type _Error = {
+export type Error = {
     traceId?: string | null;
     type: ErrorType;
     code: ErrorCode;
@@ -500,7 +500,7 @@ export type GameEquippedItemViewModel = {
 export type GameMode = 'CRPGBattle' | 'CRPGConquest' | 'CRPGDTV' | 'CRPGDuel' | 'CRPGSiege' | 'CRPGTeamDeathmatch' | 'CRPGSkirmish' | 'CRPGUnknownGameMode' | 'CRPGCaptain';
 
 export type GameModeCharacterStatisticsViewModelDictionaryResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: {
         CRPGBattle?: CharacterStatisticsViewModel;
         CRPGConquest?: CharacterStatisticsViewModel;
@@ -571,7 +571,7 @@ export type GameServerStats = {
 };
 
 export type GameServerStatsResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: GameServerStats | null;
 };
 
@@ -626,7 +626,7 @@ export type GameUserViewModel = {
 };
 
 export type GameUserViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: GameUserViewModel | null;
 };
 
@@ -686,12 +686,12 @@ export type ItemStack = {
 };
 
 export type ItemStackIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<ItemStack> | null;
 };
 
 export type ItemStackResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: ItemStack | null;
 };
 
@@ -717,7 +717,7 @@ export type ItemViewModel = {
 };
 
 export type ItemViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<ItemViewModel> | null;
 };
 
@@ -766,7 +766,7 @@ export type PartyViewModel = {
 };
 
 export type PartyViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: PartyViewModel | null;
 };
 
@@ -786,7 +786,7 @@ export type PatchNotes = {
 };
 
 export type PatchNotesIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<PatchNotes> | null;
 };
 
@@ -829,7 +829,7 @@ export type RestrictionPublicViewModel = {
 };
 
 export type RestrictionPublicViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: RestrictionPublicViewModel | null;
 };
 
@@ -847,12 +847,12 @@ export type RestrictionViewModel = {
 };
 
 export type RestrictionViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<RestrictionViewModel> | null;
 };
 
 export type RestrictionViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: RestrictionViewModel | null;
 };
 
@@ -880,7 +880,7 @@ export type SettingsViewModel = {
 };
 
 export type SettingsViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: SettingsViewModel | null;
 };
 
@@ -896,12 +896,12 @@ export type SettlementPublicViewModel = {
 };
 
 export type SettlementPublicViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<SettlementPublicViewModel> | null;
 };
 
 export type SettlementPublicViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: SettlementPublicViewModel | null;
 };
 
@@ -915,7 +915,7 @@ export type StrategusUpdate = {
 };
 
 export type StrategusUpdateResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: StrategusUpdate | null;
 };
 
@@ -928,12 +928,12 @@ export type TerrainViewModel = {
 };
 
 export type TerrainViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<TerrainViewModel> | null;
 };
 
 export type TerrainViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: TerrainViewModel | null;
 };
 
@@ -978,7 +978,7 @@ export type UpdateGameUsersResult = {
 };
 
 export type UpdateGameUsersResultResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: UpdateGameUsersResult | null;
 };
 
@@ -1015,7 +1015,7 @@ export type UserClanViewModel = {
 };
 
 export type UserClanViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: UserClanViewModel | null;
 };
 
@@ -1030,12 +1030,12 @@ export type UserItemViewModel = {
 };
 
 export type UserItemViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<UserItemViewModel> | null;
 };
 
 export type UserItemViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: UserItemViewModel | null;
 };
 
@@ -1056,7 +1056,7 @@ export type UserNotificationViewModel = {
 };
 
 export type UserNotificationViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: UserNotificationViewModel | null;
 };
 
@@ -1066,7 +1066,7 @@ export type UserNotificationsWithDictViewModel = {
 };
 
 export type UserNotificationsWithDictViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: UserNotificationsWithDictViewModel | null;
 };
 
@@ -1089,17 +1089,17 @@ export type UserPrivateViewModel = {
 };
 
 export type UserPrivateViewModelArrayResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<UserPrivateViewModel> | null;
 };
 
 export type UserPrivateViewModelIListResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: Array<UserPrivateViewModel> | null;
 };
 
 export type UserPrivateViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: UserPrivateViewModel | null;
 };
 
@@ -1132,7 +1132,7 @@ export type UserViewModel = {
 };
 
 export type UserViewModelResult = {
-    readonly errors: Array<_Error> | null;
+    readonly errors: Array<Error> | null;
     data: UserViewModel | null;
 };
 

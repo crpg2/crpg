@@ -2,22 +2,20 @@
 
 import type { GetActivityLogsResponse, GetBattlesByBattleIdResponse, GetBattlesResponse, GetClansByClanIdArmoryResponse, GetGamesTournamentUsersResponse, GetGamesUsersResponse, GetItemsResponse, GetItemsUpgradesByBaseIdResponse, GetPartiesSelfUpdateResponse, GetPatchNotesResponse, GetRestrictionsResponse, GetSettlementsBySettlementIdItemsResponse, GetSettlementsBySettlementIdShopItemsResponse, GetUsersByIdRestrictionsResponse, GetUsersByUserIdResponse, GetUsersResponse, GetUsersSearchResponse, GetUsersSelfCharactersByIdEarningStatisticsResponse, GetUsersSelfCharactersByIdItemsResponse, GetUsersSelfCharactersByIdLimitationsResponse, GetUsersSelfItemsResponse, GetUsersSelfNotificationsResponse, GetUsersSelfRestrictionResponse, PostGamesRestrictionsResponse, PostPartiesSelfItemsResponse, PostSettlementsBySettlementIdItemsResponse, PostUsersSelfItemsResponse, PutGamesUsersResponse, PutUsersByUserIdNoteResponse, PutUsersSelfCharactersByIdItemsResponse, PutUsersSelfItemsByIdReforgeResponse, PutUsersSelfItemsByIdRepairResponse, PutUsersSelfItemsByIdUpgradeResponse, PutUsersSelfNotificationsByIdResponse } from './types.gen';
 
-const activityLogWithDictViewModelResultSchemaResponseTransformer = (data: any) => {
-    if (data.data) {
-        data.data = activityLogWithDictViewModelSchemaResponseTransformer(data.data);
-    }
+const activityLogViewModelSchemaResponseTransformer = (data: any) => {
+    data.createdAt = new Date(data.createdAt);
     return data;
 };
 
 const activityLogWithDictViewModelSchemaResponseTransformer = (data: any) => {
-    data.activityLogs = data.activityLogs.map((item: any) => {
-        return activityLogViewModelSchemaResponseTransformer(item);
-    });
+    data.activityLogs = data.activityLogs.map((item: any) => activityLogViewModelSchemaResponseTransformer(item));
     return data;
 };
 
-const activityLogViewModelSchemaResponseTransformer = (data: any) => {
-    data.createdAt = new Date(data.createdAt);
+const activityLogWithDictViewModelResultSchemaResponseTransformer = (data: any) => {
+    if (data.data) {
+        data.data = activityLogWithDictViewModelSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -26,19 +24,17 @@ export const getActivityLogsResponseTransformer = async (data: any): Promise<Get
     return data;
 };
 
-const battleDetailedViewModelIListResultSchemaResponseTransformer = (data: any) => {
-    if (data.data) {
-        data.data = data.data.map((item: any) => {
-            return battleDetailedViewModelSchemaResponseTransformer(item);
-        });
-    }
-    return data;
-};
-
 const battleDetailedViewModelSchemaResponseTransformer = (data: any) => {
     data.createdAt = new Date(data.createdAt);
     if (data.scheduledFor) {
         data.scheduledFor = new Date(data.scheduledFor);
+    }
+    return data;
+};
+
+const battleDetailedViewModelIListResultSchemaResponseTransformer = (data: any) => {
+    if (data.data) {
+        data.data = data.data.map((item: any) => battleDetailedViewModelSchemaResponseTransformer(item));
     }
     return data;
 };
@@ -60,12 +56,8 @@ export const getBattlesByBattleIdResponseTransformer = async (data: any): Promis
     return data;
 };
 
-const clanArmoryItemViewModelIListResultSchemaResponseTransformer = (data: any) => {
-    if (data.data) {
-        data.data = data.data.map((item: any) => {
-            return clanArmoryItemViewModelSchemaResponseTransformer(item);
-        });
-    }
+const itemViewModelSchemaResponseTransformer = (data: any) => {
+    data.createdAt = new Date(data.createdAt);
     return data;
 };
 
@@ -74,8 +66,10 @@ const clanArmoryItemViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-const itemViewModelSchemaResponseTransformer = (data: any) => {
-    data.createdAt = new Date(data.createdAt);
+const clanArmoryItemViewModelIListResultSchemaResponseTransformer = (data: any) => {
+    if (data.data) {
+        data.data = data.data.map((item: any) => clanArmoryItemViewModelSchemaResponseTransformer(item));
+    }
     return data;
 };
 
@@ -84,18 +78,9 @@ export const getClansByClanIdArmoryResponseTransformer = async (data: any): Prom
     return data;
 };
 
-const gameUserViewModelResultSchemaResponseTransformer = (data: any) => {
-    if (data.data) {
-        data.data = gameUserViewModelSchemaResponseTransformer(data.data);
-    }
-    return data;
-};
-
-const gameUserViewModelSchemaResponseTransformer = (data: any) => {
+const userPrivateViewModelSchemaResponseTransformer = (data: any) => {
+    data.updatedAt = new Date(data.updatedAt);
     data.createdAt = new Date(data.createdAt);
-    data.restrictions = data.restrictions.map((item: any) => {
-        return restrictionViewModelSchemaResponseTransformer(item);
-    });
     return data;
 };
 
@@ -107,9 +92,16 @@ const restrictionViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-const userPrivateViewModelSchemaResponseTransformer = (data: any) => {
-    data.updatedAt = new Date(data.updatedAt);
+const gameUserViewModelSchemaResponseTransformer = (data: any) => {
     data.createdAt = new Date(data.createdAt);
+    data.restrictions = data.restrictions.map((item: any) => restrictionViewModelSchemaResponseTransformer(item));
+    return data;
+};
+
+const gameUserViewModelResultSchemaResponseTransformer = (data: any) => {
+    if (data.data) {
+        data.data = gameUserViewModelSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -118,22 +110,20 @@ export const getGamesUsersResponseTransformer = async (data: any): Promise<GetGa
     return data;
 };
 
-const updateGameUsersResultResultSchemaResponseTransformer = (data: any) => {
-    if (data.data) {
-        data.data = updateGameUsersResultSchemaResponseTransformer(data.data);
-    }
+const updateGameUserResultSchemaResponseTransformer = (data: any) => {
+    data.user = gameUserViewModelSchemaResponseTransformer(data.user);
     return data;
 };
 
 const updateGameUsersResultSchemaResponseTransformer = (data: any) => {
-    data.updateResults = data.updateResults.map((item: any) => {
-        return updateGameUserResultSchemaResponseTransformer(item);
-    });
+    data.updateResults = data.updateResults.map((item: any) => updateGameUserResultSchemaResponseTransformer(item));
     return data;
 };
 
-const updateGameUserResultSchemaResponseTransformer = (data: any) => {
-    data.user = gameUserViewModelSchemaResponseTransformer(data.user);
+const updateGameUsersResultResultSchemaResponseTransformer = (data: any) => {
+    if (data.data) {
+        data.data = updateGameUsersResultSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
@@ -161,9 +151,7 @@ export const postGamesRestrictionsResponseTransformer = async (data: any): Promi
 
 const itemViewModelIListResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
-        data.data = data.data.map((item: any) => {
-            return itemViewModelSchemaResponseTransformer(item);
-        });
+        data.data = data.data.map((item: any) => itemViewModelSchemaResponseTransformer(item));
     }
     return data;
 };
@@ -178,6 +166,16 @@ export const getItemsUpgradesByBaseIdResponseTransformer = async (data: any): Pr
     return data;
 };
 
+const battleViewModelSchemaResponseTransformer = (data: any) => {
+    data.createdAt = new Date(data.createdAt);
+    return data;
+};
+
+const strategusUpdateSchemaResponseTransformer = (data: any) => {
+    data.visibleBattles = data.visibleBattles.map((item: any) => battleViewModelSchemaResponseTransformer(item));
+    return data;
+};
+
 const strategusUpdateResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
         data.data = strategusUpdateSchemaResponseTransformer(data.data);
@@ -185,20 +183,13 @@ const strategusUpdateResultSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-const strategusUpdateSchemaResponseTransformer = (data: any) => {
-    data.visibleBattles = data.visibleBattles.map((item: any) => {
-        return battleViewModelSchemaResponseTransformer(item);
-    });
-    return data;
-};
-
-const battleViewModelSchemaResponseTransformer = (data: any) => {
-    data.createdAt = new Date(data.createdAt);
-    return data;
-};
-
 export const getPartiesSelfUpdateResponseTransformer = async (data: any): Promise<GetPartiesSelfUpdateResponse> => {
     data = strategusUpdateResultSchemaResponseTransformer(data);
+    return data;
+};
+
+const itemStackSchemaResponseTransformer = (data: any) => {
+    data.item = itemViewModelSchemaResponseTransformer(data.item);
     return data;
 };
 
@@ -209,27 +200,20 @@ const itemStackResultSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-const itemStackSchemaResponseTransformer = (data: any) => {
-    data.item = itemViewModelSchemaResponseTransformer(data.item);
-    return data;
-};
-
 export const postPartiesSelfItemsResponseTransformer = async (data: any): Promise<PostPartiesSelfItemsResponse> => {
     data = itemStackResultSchemaResponseTransformer(data);
     return data;
 };
 
-const patchNotesIListResultSchemaResponseTransformer = (data: any) => {
-    if (data.data) {
-        data.data = data.data.map((item: any) => {
-            return patchNotesSchemaResponseTransformer(item);
-        });
-    }
+const patchNotesSchemaResponseTransformer = (data: any) => {
+    data.createdAt = new Date(data.createdAt);
     return data;
 };
 
-const patchNotesSchemaResponseTransformer = (data: any) => {
-    data.createdAt = new Date(data.createdAt);
+const patchNotesIListResultSchemaResponseTransformer = (data: any) => {
+    if (data.data) {
+        data.data = data.data.map((item: any) => patchNotesSchemaResponseTransformer(item));
+    }
     return data;
 };
 
@@ -240,9 +224,7 @@ export const getPatchNotesResponseTransformer = async (data: any): Promise<GetPa
 
 const restrictionViewModelIListResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
-        data.data = data.data.map((item: any) => {
-            return restrictionViewModelSchemaResponseTransformer(item);
-        });
+        data.data = data.data.map((item: any) => restrictionViewModelSchemaResponseTransformer(item));
     }
     return data;
 };
@@ -254,9 +236,7 @@ export const getRestrictionsResponseTransformer = async (data: any): Promise<Get
 
 const itemStackIListResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
-        data.data = data.data.map((item: any) => {
-            return itemStackSchemaResponseTransformer(item);
-        });
+        data.data = data.data.map((item: any) => itemStackSchemaResponseTransformer(item));
     }
     return data;
 };
@@ -278,9 +258,7 @@ export const getSettlementsBySettlementIdShopItemsResponseTransformer = async (d
 
 const userPrivateViewModelArrayResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
-        data.data = data.data.map((item: any) => {
-            return userPrivateViewModelSchemaResponseTransformer(item);
-        });
+        data.data = data.data.map((item: any) => userPrivateViewModelSchemaResponseTransformer(item));
     }
     return data;
 };
@@ -309,9 +287,7 @@ export const putUsersByUserIdNoteResponseTransformer = async (data: any): Promis
 
 const userPrivateViewModelIListResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
-        data.data = data.data.map((item: any) => {
-            return userPrivateViewModelSchemaResponseTransformer(item);
-        });
+        data.data = data.data.map((item: any) => userPrivateViewModelSchemaResponseTransformer(item));
     }
     return data;
 };
@@ -326,15 +302,15 @@ export const getUsersByIdRestrictionsResponseTransformer = async (data: any): Pr
     return data;
 };
 
+const restrictionPublicViewModelSchemaResponseTransformer = (data: any) => {
+    data.createdAt = new Date(data.createdAt);
+    return data;
+};
+
 const restrictionPublicViewModelResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
         data.data = restrictionPublicViewModelSchemaResponseTransformer(data.data);
     }
-    return data;
-};
-
-const restrictionPublicViewModelSchemaResponseTransformer = (data: any) => {
-    data.createdAt = new Date(data.createdAt);
     return data;
 };
 
@@ -343,12 +319,9 @@ export const getUsersSelfRestrictionResponseTransformer = async (data: any): Pro
     return data;
 };
 
-const equippedItemViewModelIListResultSchemaResponseTransformer = (data: any) => {
-    if (data.data) {
-        data.data = data.data.map((item: any) => {
-            return equippedItemViewModelSchemaResponseTransformer(item);
-        });
-    }
+const userItemViewModelSchemaResponseTransformer = (data: any) => {
+    data.item = itemViewModelSchemaResponseTransformer(data.item);
+    data.createdAt = new Date(data.createdAt);
     return data;
 };
 
@@ -357,9 +330,10 @@ const equippedItemViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-const userItemViewModelSchemaResponseTransformer = (data: any) => {
-    data.item = itemViewModelSchemaResponseTransformer(data.item);
-    data.createdAt = new Date(data.createdAt);
+const equippedItemViewModelIListResultSchemaResponseTransformer = (data: any) => {
+    if (data.data) {
+        data.data = data.data.map((item: any) => equippedItemViewModelSchemaResponseTransformer(item));
+    }
     return data;
 };
 
@@ -375,15 +349,18 @@ export const putUsersSelfCharactersByIdItemsResponseTransformer = async (data: a
 
 const activityLogViewModelIListResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
-        data.data = data.data.map((item: any) => {
-            return activityLogViewModelSchemaResponseTransformer(item);
-        });
+        data.data = data.data.map((item: any) => activityLogViewModelSchemaResponseTransformer(item));
     }
     return data;
 };
 
 export const getUsersSelfCharactersByIdEarningStatisticsResponseTransformer = async (data: any): Promise<GetUsersSelfCharactersByIdEarningStatisticsResponse> => {
     data = activityLogViewModelIListResultSchemaResponseTransformer(data);
+    return data;
+};
+
+const characterLimitationsViewModelSchemaResponseTransformer = (data: any) => {
+    data.lastRespecializeAt = new Date(data.lastRespecializeAt);
     return data;
 };
 
@@ -394,11 +371,6 @@ const characterLimitationsViewModelResultSchemaResponseTransformer = (data: any)
     return data;
 };
 
-const characterLimitationsViewModelSchemaResponseTransformer = (data: any) => {
-    data.lastRespecializeAt = new Date(data.lastRespecializeAt);
-    return data;
-};
-
 export const getUsersSelfCharactersByIdLimitationsResponseTransformer = async (data: any): Promise<GetUsersSelfCharactersByIdLimitationsResponse> => {
     data = characterLimitationsViewModelResultSchemaResponseTransformer(data);
     return data;
@@ -406,9 +378,7 @@ export const getUsersSelfCharactersByIdLimitationsResponseTransformer = async (d
 
 const userItemViewModelIListResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
-        data.data = data.data.map((item: any) => {
-            return userItemViewModelSchemaResponseTransformer(item);
-        });
+        data.data = data.data.map((item: any) => userItemViewModelSchemaResponseTransformer(item));
     }
     return data;
 };
@@ -445,22 +415,20 @@ export const putUsersSelfItemsByIdUpgradeResponseTransformer = async (data: any)
     return data;
 };
 
-const userNotificationsWithDictViewModelResultSchemaResponseTransformer = (data: any) => {
-    if (data.data) {
-        data.data = userNotificationsWithDictViewModelSchemaResponseTransformer(data.data);
-    }
+const userNotificationViewModelSchemaResponseTransformer = (data: any) => {
+    data.createdAt = new Date(data.createdAt);
     return data;
 };
 
 const userNotificationsWithDictViewModelSchemaResponseTransformer = (data: any) => {
-    data.notifications = data.notifications.map((item: any) => {
-        return userNotificationViewModelSchemaResponseTransformer(item);
-    });
+    data.notifications = data.notifications.map((item: any) => userNotificationViewModelSchemaResponseTransformer(item));
     return data;
 };
 
-const userNotificationViewModelSchemaResponseTransformer = (data: any) => {
-    data.createdAt = new Date(data.createdAt);
+const userNotificationsWithDictViewModelResultSchemaResponseTransformer = (data: any) => {
+    if (data.data) {
+        data.data = userNotificationsWithDictViewModelSchemaResponseTransformer(data.data);
+    }
     return data;
 };
 
