@@ -327,7 +327,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         return result;
     }
 
-    public override void CalculateDefendedBlowStunMultipliers(
+    /* public override void CalculateDefendedBlowStunMultipliers(
         Agent attackerAgent,
         Agent defenderAgent,
         CombatCollisionResult collisionResult,
@@ -351,7 +351,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         }
 
         defenderStunperiod = 1f;
-    }
+    } */
 
     // TODO : Consider reworking once https://forums.taleworlds.com/index.php?threads/missioncombatmechanicshelper-getdefendcollisionresults-bypass-strikemagnitudecalculationmodel.459379 is fixed
     public override bool DecideCrushedThrough(
