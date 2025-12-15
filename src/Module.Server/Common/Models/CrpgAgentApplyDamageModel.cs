@@ -327,16 +327,22 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         return result;
     }
 
-    /* public override void CalculateDefendedBlowStunMultipliers(
-        Agent attackerAgent,
-        Agent defenderAgent,
-        CombatCollisionResult collisionResult,
-        WeaponComponentData attackerWeapon,
-        WeaponComponentData defenderWeapon,
-        ref float attackerStunPeriod,
-        ref float defenderStunperiod)
+    public override void CalculateDefendedBlowStunMultipliers(
+    Agent attackerAgent,
+    Agent defenderAgent,
+    CombatCollisionResult collisionResult,
+    WeaponComponentData attackerWeapon,
+    WeaponComponentData defenderWeapon,
+    ref float attackerStunPeriod,
+    ref float defenderStunPeriod)
     {
-        attackerStunPeriod = 1f;
+        // Let base game handle normal stun logic
+        base.CalculateDefendedBlowStunMultipliers(
+            attackerAgent, defenderAgent, collisionResult,
+            attackerWeapon, defenderWeapon,
+            ref attackerStunPeriod, ref defenderStunPeriod);
+
+        // Only tweak for shield blocks
         if (collisionResult == CombatCollisionResult.Blocked && defenderAgent.WieldedOffhandWeapon.IsShield())
         {
             int shieldSkill = 0;
@@ -345,13 +351,14 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
                 shieldSkill = crpgOrigin.Skills.Skills.GetPropertyValue(CrpgSkills.Shield);
             }
 
-            defenderStunperiod = 1 / MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
+            // Compute tiny bonus, but keep it below lockout threshold
+            float bonus = 1f / MathHelper.RecursivePolynomialFunctionOfDegree2(
+                shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
 
-            return;
+            // Clamp to **very small value**, e.g., 0 → 0.02 (almost no lockout)
+            defenderStunPeriod = Math.Min(defenderStunPeriod, 0.02f);
         }
-
-        defenderStunperiod = 1f;
-    } */
+    }
 
     // TODO : Consider reworking once https://forums.taleworlds.com/index.php?threads/missioncombatmechanicshelper-getdefendcollisionresults-bypass-strikemagnitudecalculationmodel.459379 is fixed
     public override bool DecideCrushedThrough(
