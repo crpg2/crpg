@@ -354,7 +354,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
     }
 
     // TODO : Consider reworking once https://forums.taleworlds.com/index.php?threads/missioncombatmechanicshelper-getdefendcollisionresults-bypass-strikemagnitudecalculationmodel.459379 is fixed
-    public override bool DecideCrushedThrough(
+    /* public override bool DecideCrushedThrough(
         Agent attackerAgent,
         Agent defenderAgent,
         float totalAttackEnergy,
@@ -391,7 +391,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         int randomNumber = MBRandom.RandomInt(0, 1000);
         return randomNumber / 10f < Math.Pow(attackerPower / defenderDefendPower / 2.6f, 2.6f) * 100f;
     }
-
+    */
     // MissionCombatMechanicsHelper.cs/DecideMountRearedByBlow
     public override bool DecideMountRearedByBlow(
         Agent attackerAgent,
