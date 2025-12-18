@@ -351,12 +351,9 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
                 shieldSkill = crpgOrigin.Skills.Skills.GetPropertyValue(CrpgSkills.Shield);
             }
 
-            // Compute tiny bonus, but keep it below lockout threshold
-            float bonus = 1f / MathHelper.RecursivePolynomialFunctionOfDegree2(
-                shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
+            defenderStunPeriod = 1 / MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
 
-            // Clamp to **very small value**, e.g., 0 → 0.02 (almost no lockout)
-            defenderStunPeriod = Math.Min(defenderStunPeriod, 0.02f);
+            return;
         }
     }
 
