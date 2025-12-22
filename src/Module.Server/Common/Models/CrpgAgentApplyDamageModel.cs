@@ -328,15 +328,21 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
     }
 
     public override void CalculateDefendedBlowStunMultipliers(
-        Agent attackerAgent,
-        Agent defenderAgent,
-        CombatCollisionResult collisionResult,
-        WeaponComponentData attackerWeapon,
-        WeaponComponentData defenderWeapon,
-        ref float attackerStunPeriod,
-        ref float defenderStunperiod)
+    Agent attackerAgent,
+    Agent defenderAgent,
+    CombatCollisionResult collisionResult,
+    WeaponComponentData attackerWeapon,
+    WeaponComponentData defenderWeapon,
+    ref float attackerStunPeriod,
+    ref float defenderStunPeriod)
     {
-        attackerStunPeriod = 1f;
+        // Let base game handle normal stun logic
+        base.CalculateDefendedBlowStunMultipliers(
+            attackerAgent, defenderAgent, collisionResult,
+            attackerWeapon, defenderWeapon,
+            ref attackerStunPeriod, ref defenderStunPeriod);
+
+        // Only tweak for shield blocks
         if (collisionResult == CombatCollisionResult.Blocked && defenderAgent.WieldedOffhandWeapon.IsShield())
         {
             int shieldSkill = 0;
@@ -345,12 +351,10 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
                 shieldSkill = crpgOrigin.Skills.Skills.GetPropertyValue(CrpgSkills.Shield);
             }
 
-            defenderStunperiod = 1 / MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
+            defenderStunPeriod = 1 / MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
 
             return;
         }
-
-        defenderStunperiod = 1f;
     }
 
     // TODO : Consider reworking once https://forums.taleworlds.com/index.php?threads/missioncombatmechanicshelper-getdefendcollisionresults-bypass-strikemagnitudecalculationmodel.459379 is fixed
