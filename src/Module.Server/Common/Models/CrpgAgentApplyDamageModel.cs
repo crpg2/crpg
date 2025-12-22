@@ -370,8 +370,8 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         }
 
         var weaponComponentData = wieldedItemIndex != EquipmentIndex.None
-            ? attackerAgent.Equipment[wieldedItemIndex].CurrentUsageItem
-            : null;
+                ? attackerAgent.Equipment[wieldedItemIndex].CurrentUsageItem
+                : null;
         if (weaponComponentData == null
             || isPassiveUsage
             || !weaponComponentData.WeaponFlags.HasAnyFlag(WeaponFlags.CanCrushThrough)
@@ -381,15 +381,18 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
             return false;
         }
 
-        float attackerPower = 3f * GetSkillValue(attackerAgent.Origin, CrpgSkills.PowerStrike);
+        int powerStrike = GetSkillValue(attackerAgent, CrpgSkills.PowerStrike);
+        int defenderStrength = GetSkillValue(defenderAgent, CrpgSkills.Strength);
+        int defenderShield = GetSkillValue(defenderAgent, CrpgSkills.Shield);
 
-        float defenderStrengthSkill = GetSkillValue(defenderAgent.Origin, CrpgSkills.Strength);
-        float defenderShieldSkill = GetSkillValue(defenderAgent.Origin, CrpgSkills.Shield);
-        float defenderDefendPower = defendItem != null && defendItem.IsShield
-            ? Math.Max(defenderShieldSkill * 6 + 3, defenderStrengthSkill)
-            : defenderStrengthSkill;
+        float attackerPower = 3f * powerStrike;
+        float defenderDefendPower = (defendItem?.IsShield == true)
+                ? (float)System.Math.Max(defenderShield * 6 + 3, defenderStrength)
+                : defenderStrength;
+        defenderDefendPower = System.Math.Max(defenderDefendPower, 1f);
+
         int randomNumber = MBRandom.RandomInt(0, 1000);
-        return randomNumber / 10f < Math.Pow(attackerPower / defenderDefendPower / 2.6f, 2.6f) * 100f;
+        return randomNumber / 10f < (float)System.Math.Pow(attackerPower / defenderDefendPower / 2.6f, 2.6f) * 100f;
     }
 
     // MissionCombatMechanicsHelper.cs/DecideMountRearedByBlow
@@ -415,6 +418,21 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         if (agentOrigin is CrpgBattleAgentOrigin crpgOrigin)
         {
             return crpgOrigin.Skills.Skills.GetPropertyValue(skill);
+        }
+
+        return 0;
+    }
+
+    private int GetSkillValue(Agent agent, SkillObject skill)
+    {
+        if (agent?.Origin is CrpgBattleAgentOrigin crpgOrigin)
+        {
+            return crpgOrigin.Skills.Skills.GetPropertyValue(skill);
+        }
+
+        if (agent?.Character != null && skill != null)
+        {
+            return agent.Character.GetSkillValue(skill);
         }
 
         return 0;
