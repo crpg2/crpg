@@ -383,7 +383,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         int itemSkill = GetEffectiveSkill(agent, equippedItem?.RelevantSkill ?? DefaultSkills.Athletics);
         // Use weapon master here instead of wpf so the archer with no melee wpf can still fight.
         int weaponMaster = GetEffectiveSkill(agent, CrpgSkills.WeaponMaster);
-        props.SwingSpeedMultiplier = 0.87f + 0.00237f * (float)Math.Pow(itemSkill, 0.9f);
+        props.SwingSpeedMultiplier = 0.85f + 0.00237f * (float)Math.Pow(itemSkill, 0.9f);
         props.ThrustOrRangedReadySpeedMultiplier = props.SwingSpeedMultiplier;
         props.HandlingMultiplier = 1.05f * _constants.HandlingFactorForWeaponMaster[Math.Min(weaponMaster, _constants.HandlingFactorForWeaponMaster.Length - 1)];
         props.ShieldBashStunDurationMultiplier = 1f;
