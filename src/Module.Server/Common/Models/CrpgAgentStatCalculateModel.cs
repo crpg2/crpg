@@ -379,6 +379,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             1.5f);
         float bipedalCombatSpeedMinMultiplier = ManagedParameters.Instance.GetManagedParameter(ManagedParametersEnum.BipedalCombatSpeedMinMultiplier);
         float bipedalCombatSpeedMaxMultiplier = ManagedParameters.Instance.GetManagedParameter(ManagedParametersEnum.BipedalCombatSpeedMaxMultiplier);
+        props.CrouchedSpeedMultiplier = MBMath.ClampFloat(0.6f + athleticsSkill * 0.0015f, 0.5f, 1.0f);
 
         int itemSkill = GetEffectiveSkill(agent, equippedItem?.RelevantSkill ?? DefaultSkills.Athletics);
         // Use weapon master here instead of wpf so the archer with no melee wpf can still fight.
