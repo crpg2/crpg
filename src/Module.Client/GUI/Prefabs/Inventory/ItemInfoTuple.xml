@@ -1,0 +1,56 @@
+<Prefab Name="ItemInfoTuple">
+  <Parameters>
+    <Parameter Name="Width" DefaultValue="110"/>
+    <Parameter Name="Height" DefaultValue="40"/>
+  </Parameters>
+  <Constants>
+    <Constant Name="Icon.Width" Value="30"/>
+    <Constant Name="Icon.Height" Value="30"/>
+    <Constant Name="Gold.Icon.Width" Value="15"/>
+    <Constant Name="Gold.Icon.Height" Value="15"/>
+  </Constants>
+  <Window>
+    <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
+            WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+            SuggestedWidth="*Width" SuggestedHeight="*Height"
+            Spacing="2"
+            DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
+      <Children>
+        <TextWidget Id="CategoryName" Text="@CategoryName" Brush="Crpg.ItemInfo.Category.Title.Text" 
+                WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" />
+        <!-- List Panel for multiples-->
+        <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" 
+            WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="25"
+            HorizontalAlignment="Left" Spacing="5">
+          <Children>
+            <!-- Dynamic icons -->
+            <ListPanel DataSource="{Icons}" StackLayout.LayoutMethod="HorizontalLeftToRight" 
+                WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="25"
+                HorizontalAlignment="Left" Spacing="5">
+              <ItemTemplate>
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                    SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height">
+                  <Children>
+                    <ImageWidget Sprite="@IconSprite" IsVisible="true" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                        SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height" UseAlphaAsMask="True"
+                        HorizontalAlignment="Left" VerticalAlignment="Center"
+                        DoNotAcceptEvents="True" />
+                    <!-- ToolTip -->
+                    <BasicTooltipViewModel DataSource="{ItemHint}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                        SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height"
+                        Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" />                        
+                  </Children>
+                </Widget>
+              </ItemTemplate>
+            </ListPanel>                      
+            <BrushWidget Brush="Crpg.Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                SuggestedWidth="!Gold.Icon.Width" SuggestedHeight="!Gold.Icon.Height"
+                IsVisible="@IsGoldVisible" PositionYOffset="2"/>
+            <TextWidget Id="ValueText" Text="@ValueText" Brush="Crpg.ItemInfo.Category.Value.Text" 
+                WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" />
+          </Children>
+        </ListPanel>   
+      </Children>
+    </ListPanel>
+  </Window>
+</Prefab>

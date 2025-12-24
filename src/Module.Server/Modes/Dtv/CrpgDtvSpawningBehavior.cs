@@ -4,6 +4,7 @@ using Crpg.Module.Common.Network;
 using Crpg.Module.Notifications;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
+using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.PlayerServices;
 
@@ -15,6 +16,8 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
     private readonly HashSet<PlayerId> _notifiedPlayersAboutSpawnRestriction;
 
     private MissionTimer? _defendersSpawnWindowTimer;
+    private CrpgTeamInventoryServer? _teamInventory;
+    private CrpgCharacterLoadoutBehaviorServer? _userLoadout;
 
     public CrpgDtvSpawningBehavior(CrpgConstants constants)
         : base(constants)
@@ -27,6 +30,9 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
     {
         base.Initialize(spawnComponent);
         Mission.Current.AllowAiTicking = true;
+
+        _teamInventory = Mission.Current.GetMissionBehavior<CrpgTeamInventoryServer>();
+        _userLoadout = Mission.Current.GetMissionBehavior<CrpgCharacterLoadoutBehaviorServer>();
     }
 
     public override void OnTick(float dt)
@@ -67,6 +73,21 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
         return Mission.CurrentState == Mission.State.Continuing;
     }
 
+    protected override Equipment GetCharacterEquipment(NetworkCommunicator networkPeer, CrpgPeer crpgPeer)
+    {
+        if (_teamInventory?.IsEnabled == true)
+        {
+            return _teamInventory.GetPendingEquipment(networkPeer);
+        }
+
+        if (_userLoadout?.IsEnabled == true)
+        {
+            return _userLoadout.GetPeerEquipment(networkPeer);
+        }
+
+        return base.GetCharacterEquipment(networkPeer, crpgPeer);
+    }
+
     protected override bool IsPlayerAllowedToSpawn(NetworkCommunicator networkPeer)
     {
         var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
@@ -75,6 +96,39 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
             || missionPeer == null)
         {
             return false;
+        }
+
+        if (_teamInventory?.IsEnabled == true)
+        {
+            if (_teamInventory.ReadyToSpawn.Contains(networkPeer))
+            {
+                if (!DoesEquipmentContainWeapon(_teamInventory.GetPendingEquipment(networkPeer)))
+                {
+                    _teamInventory.UnsetReadyToSpawnShowMenu(networkPeer, new TextObject("{=KC9dx231}You must have a melee or throwing weapon equipped to spawn.").ToString());
+                    return false;
+                }
+
+                return true;
+            }
+
+            _teamInventory.EnsureForceMenuSent(networkPeer, new TextObject("{=KC9dx230}Select your equipment and click ready").ToString(), (int)TimeSinceSpawnEnabled);
+            return false;
+        }
+
+        if (_userLoadout?.IsEnabled == true)
+        {
+            if (_userLoadout.ReadyToSpawn.Contains(networkPeer))
+            {
+                if (!DoesEquipmentContainWeapon(_userLoadout.GetPeerEquipment(networkPeer)))
+                {
+                    _userLoadout.UnsetReadyToSpawnShowMenu(networkPeer, new TextObject("{=KC9dx231}You must have a melee or throwing weapon equipped to spawn.").ToString());
+                    return false;
+                }
+
+                return true;
+            }
+
+            return false; // not ready to spawn
         }
 
         var characterEquipment = CrpgCharacterBuilder.CreateCharacterEquipment(crpgPeer.User.Character.EquippedItems);
@@ -97,6 +151,19 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
         }
 
         return true;
+    }
+
+    protected override void OnPeerSpawned(Agent agent)
+    {
+        base.OnPeerSpawned(agent);
+        if (_userLoadout?.IsEnabled == true)
+        {
+            var peer = agent.MissionPeer?.GetNetworkPeer();
+            if (peer != null)
+            {
+                _userLoadout.ReadyToSpawn.Add(peer);
+            }
+        }
     }
 
     private void SpawnVip()

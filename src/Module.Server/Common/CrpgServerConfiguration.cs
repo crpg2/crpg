@@ -23,6 +23,8 @@ internal static class CrpgServerConfiguration
         DedicatedServerConsoleCommandManager.AddType(typeof(CrpgServerConfiguration));
     }
 
+    internal static event Action<string, object>? OnCrpgServerConfigurationChanged;
+
     public static CrpgRegion Region { get; }
     public static string Service { get; }
     public static string Instance { get; }
@@ -52,6 +54,8 @@ internal static class CrpgServerConfiguration
     public static int FriendlyFireReportDecaySeconds { get; private set; } = 60;
     public static int FriendlyFireReportWindowSeconds { get; private set; } = 10;
     public static bool IsFriendlyFireReportDecayOnRoundStartEnabled { get; private set; } = true;
+    public static bool IsCharacterLoadoutEnabled { get; private set; } = true;
+    public static bool IsTeamInventoryEnabled { get; private set; } = false;
 
     [UsedImplicitly]
     [ConsoleCommandMethod("server_name_suffix", "Suffix the server name with HH:mm to easily differentiate the new and old server in the server list. That can only be called before the server starts")]
@@ -567,5 +571,37 @@ internal static class CrpgServerConfiguration
 
         IsFriendlyFireReportDecayOnRoundStartEnabled = outputBool;
         Debug.Print($"--Changed crpg_ff_report_decay_on_round_start to: {outputBool}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_character_loadout_enabled", "Enable or disable character loadout/inventory/gui system")]
+    private static void SetCharacterLoadoutEnabled(string? inputStr)
+    {
+        if (inputStr == null || !bool.TryParse(inputStr, out bool outputBool))
+        {
+            Debug.Print($"Invalid character loadout enabled setting: {inputStr} - must be true or false");
+            Debug.Print($"Current value: crpg_character_loadout_enabled {IsCharacterLoadoutEnabled}");
+            return;
+        }
+
+        IsCharacterLoadoutEnabled = outputBool;
+        OnCrpgServerConfigurationChanged?.Invoke(nameof(IsCharacterLoadoutEnabled), outputBool);
+        Debug.Print($"--Changed: crpg_character_loadout_enabled to: {outputBool}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_team_inventory_enabled", "Enable or disable team inventory system")]
+    private static void SetTeamInventoryEnabled(string? inputStr)
+    {
+        if (inputStr == null || !bool.TryParse(inputStr, out bool outputBool))
+        {
+            Debug.Print($"Invalid team inventory enabled setting: {inputStr} - must be true or false");
+            Debug.Print($"Current value: crpg_team_inventory_enabled {IsTeamInventoryEnabled}");
+            return;
+        }
+
+        IsTeamInventoryEnabled = outputBool;
+        OnCrpgServerConfigurationChanged?.Invoke(nameof(IsTeamInventoryEnabled), outputBool);
+        Debug.Print($"--Changed: crpg_team_inventory_enabled to: {outputBool}");
     }
 }

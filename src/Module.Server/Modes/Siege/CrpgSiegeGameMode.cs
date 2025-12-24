@@ -1,4 +1,4 @@
-#if CRPG_SERVER
+﻿#if CRPG_SERVER
 using Crpg.Module.Api;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Common.ChatCommands;
@@ -6,6 +6,8 @@ using Crpg.Module.Common.ChatCommands;
 using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.HudExtension;
+using Crpg.Module.GUI.Inventory;
+using Crpg.Module.GUI.Notifications;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
@@ -39,6 +41,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
     [ViewMethod(GameName)]
     public static MissionView[] OpenCrpgSiege(Mission mission)
     {
+        CrpgCharacterEquipUiHandler.Configure(_constants);
         CrpgExperienceTable experienceTable = new(_constants);
         MissionMultiplayerGameModeBaseClient gameModeClient = mission.GetMissionBehavior<MissionMultiplayerGameModeBaseClient>();
 
@@ -60,6 +63,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMissionKillNotificationUIHandler(),
             new CrpgHudExtensionHandler(),
             new AmmoQuiverChangeUiHandler(),
+            new CrpgCharacterEquipUiHandler(), // Character/Equip gui
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -67,6 +71,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
             new MissionBoundaryWallView(),
             new SpectatorCameraView(),
             new CrpgAgentHud(experienceTable),
+            new CrpgHudNotificationUiHandler(),
             // Draw flags but also player names when pressing ALT. (Native: CreateMissionFlagMarkerUIHandler)
             ViewCreatorManager.CreateMissionView<CrpgMarkerUiHandler>(isNetwork: false, null, gameModeClient),
         };
@@ -100,6 +105,9 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
                 new CrpgUserManagerClient(), // Needs to be loaded before the Client mission part.
                 new MultiplayerMissionAgentVisualSpawnComponent(),
                 new AmmoQuiverChangeBehaviorClient(),
+                new CrpgClanArmoryClient(), // Clan armory Sync with API/Client for GUI
+                new CrpgTeamInventoryClient(), // team shared inventory sync with server/gui
+                new CrpgCharacterLoadoutBehaviorClient(), // Inventory & Equipment Sync for GUI
 #endif
                 warmupComponent,
                 siegeClient,
@@ -131,6 +139,9 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
                 new NotAllPlayersReadyComponent(),
                 new DrowningBehavior(),
                 new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
+                new CrpgClanArmoryServer(crpgClient), // Clan armory Sync with API/Client for GUI
+                new CrpgTeamInventoryServer(), // team shared inventory sync with clients/gui
+                new CrpgCharacterLoadoutBehaviorServer(crpgClient, CrpgGameMode.CRPGConquest), // Inventory & Equipment Sync for GUI
 #else
                 new MultiplayerAchievementComponent(),
                 MissionMatchHistoryComponent.CreateIfConditionsAreMet(),
