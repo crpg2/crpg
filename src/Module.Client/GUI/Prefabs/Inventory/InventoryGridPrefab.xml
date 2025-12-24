@@ -1,0 +1,79 @@
+<Prefab Name="InventoryGridPrefab">
+  <Parameters>
+    <Parameter Name="NumColumns" DefaultValue="4" />
+    <Parameter Name="Width" DefaultValue="500"/>
+    <Parameter Name="Height" DefaultValue="510"/>
+  </Parameters>
+  <Constants>
+    <Constant Name="Background.Width" Value="510"/>
+    <Constant Name="Background.Height" Value="410"/>
+    <Constant Name="ScrollingItemGrid.Width" Value="475"/>
+  </Constants>
+  <Window>
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@IsVisible"
+            Id="InventoryGridRoot">
+      <Children>
+        <!-- Main Background -->
+        <BrushWidget Id="Inventory.Frame" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+          <Children>
+            <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="Crpg.Generic.Panel.Background"/>
+          </Children>
+        </BrushWidget>
+        <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" StackLayout.LayoutMethod="HorizontalLeftToRight" Spacing="0">
+          <Children>
+            <!-- Vertical Item Categories/Filter -->
+            <ListPanel PositionYOffset="0" MarginLeft="15" MarginRight="0" MarginTop="15" MarginBottom="0" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod="VerticalBottomToTop" Spacing="2" DataSource="{InventorySortTypesLeft}">
+              <ItemTemplate>
+                <InventorySortTypePrefab DataSource="." MarginBottom="10"/>
+              </ItemTemplate>
+            </ListPanel>
+            <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" StackLayout.LayoutMethod="VerticalBottomToTop" Spacing="0" MarginTop="15">
+              <Children>
+                <!-- Horizontal Top Item Categories/Filter -->
+                <ListPanel MarginLeft="10" MarginRight="0" MarginTop="0" MarginBottom="0" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod="HorizontalLeftToRight" Spacing="0" DataSource="{InventorySortTypesTop}">
+                  <ItemTemplate>
+                    <InventorySortTypePrefab DataSource="." MarginRight="10" />
+                  </ItemTemplate>
+                </ListPanel>
+                <!-- Scrolling Item grid -->
+                <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center" MarginLeft="0" MarginRight="10" MarginBottom="0" MarginTop="0">
+                  <Children>
+                    <BrushWidget Id="ItemGridBackground" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+                    </BrushWidget>
+                    <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="Crpg.Logo.Icon" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ScrollablePanel Id="ScrollablePanel" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center" AutoHideScrollBars="true" ClipRect="ClipRect" InnerPanel="ClipRect\InventoryGrid" VerticalScrollbar="..\VerticalScrollbar" MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10">
+                      <Children>            
+                        <Widget Id="ClipRect" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" ClipContents="true" VerticalAlignment="Top">
+                          <Children>
+                            <GridWidget Id="InventoryGrid" DataSource="{FilteredItems}" ColumnCount="*NumColumns" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" DefaultCellHeight = "80" DefaultCellWidth="80" HorizontalAlignment="Left" VerticalAlignment="Top" MarginTop="5" MarginBottom="5" SpacingX="2" SpacingY="5">
+                              <ItemTemplate>
+                                <InventorySlotPrefab DataSource="." />
+                              </ItemTemplate>
+                            </GridWidget>
+                          </Children>
+                        </Widget>
+                      </Children>
+                    </ScrollablePanel>
+                    <ScrollbarWidget Id="VerticalScrollbar" WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="8" HorizontalAlignment="Right" VerticalAlignment="Center" MarginTop="10" MarginBottom="0" AlignmentAxis="Vertical" Handle="VerticalScrollbarHandle" MaxValue="100" MinValue="0">
+                      <Children>
+                        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="4" HorizontalAlignment="Center" Sprite="BlankWhiteSquare_9" AlphaFactor="0.3" Color="#515897ff" />
+                        <ImageWidget Id="VerticalScrollbarHandle" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="8" SuggestedHeight="10" HorizontalAlignment="Center" Brush="Crpg.InventoryGrid.Scrollbar.Handle" />
+                      </Children>
+                    </ScrollbarWidget>
+                  </Children>
+                </Widget>
+                <!-- end scrolling item grid -->
+                <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod="HorizontalLeftToRight" Spacing="2">
+                  <Children>
+                    <CrpgButtonPrefab Parameter.ButtonText="User Inventory" Parameter.ButtonIsSelected="@UserInventorySelected" Parameter.CommandClick="ExecuteClickUserInventory" Parameter.ButtonIsVisible="@IsUserInventoryButtonVisible" />
+                    <CrpgButtonPrefab Parameter.ButtonText="Armory" Parameter.ButtonIsSelected="@ArmorySelected" Parameter.CommandClick="ExecuteClickArmory" Parameter.ButtonIsVisible="@IsArmoryButtonVisible"/>
+                  </Children>
+                </ListPanel>
+              </Children>
+            </ListPanel>
+          </Children>           
+        </ListPanel>
+      </Children>
+    </Widget>        
+  </Window>
+</Prefab>

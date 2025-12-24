@@ -27,6 +27,7 @@ public record GameUserViewModel : IMapFrom<User>
     public void Mapping(Profile profile)
     {
         profile.CreateMap<User, GameUserViewModel>()
-            .ForMember(gu => gu.Character, opt => opt.MapFrom(u => u.Characters.FirstOrDefault()));
+            .ForMember(gu => gu.Character, opt => opt.MapFrom(u => u.Characters.FirstOrDefault()))
+            .ForMember(gu => gu.ClanMembership, opt => opt.MapFrom(u => u.ClanMembership));
     }
 }

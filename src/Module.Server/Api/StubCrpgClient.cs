@@ -112,6 +112,32 @@ internal class StubCrpgClient : ICrpgClient
         throw new NotImplementedException();
     }
 
+    public Task<CrpgResult<IList<CrpgClanArmoryItem>>> GetClanArmoryAsync(int clanId, int userId, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<CrpgClanArmoryItem>> ClanArmoryAddItemAsync(int clanId, CrpgGameClanArmoryAddItemRequest req, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<object>> RemoveClanArmoryItemAsync(int clanId, int userItemId, int userId,
+        CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<CrpgClanArmoryBorrowedItem>> ClanArmoryBorrowItemAsync(int clanId, int userItemId, CrpgGameBorrowClanArmoryItemRequest req, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<CrpgClanArmoryBorrowedItem>> ClanArmoryReturnItemAsync(int clanId, int userItemId, CrpgGameBorrowClanArmoryItemRequest req, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task<CrpgResult<CrpgUsersUpdateResponse>> UpdateUsersAsync(CrpgGameUsersUpdateRequest req, CancellationToken cancellationToken = default)
     {
         return Task.FromResult(new CrpgResult<CrpgUsersUpdateResponse>
@@ -121,6 +147,37 @@ internal class StubCrpgClient : ICrpgClient
     }
 
     public Task<CrpgResult<CrpgRestriction>> RestrictUserAsync(CrpgRestrictionRequest req, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<IList<CrpgUserItemExtended>>> GetUserItemsAsync(int userId, CancellationToken cancellationToken = default)
+    {
+        IList<CrpgUserItemExtended> dummyItems = GetDummyItems(userId);
+        return Task.FromResult(new CrpgResult<IList<CrpgUserItemExtended>> { Data = dummyItems });
+    }
+
+    public Task<CrpgResult<CrpgCharacter>> GetUserCharacterBasicAsync(int userId, int characterId, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<IList<CrpgEquippedItemExtended>>> GetCharacterEquippedItemsAsync(int userId, int characterId, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<IList<CrpgEquippedItemId>>> UpdateCharacterEquippedItemsAsync(int userId, int characterId, CrpgGameCharacterItemsUpdateRequest req, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<CrpgCharacterCharacteristics>> UpdateCharacterCharacteristicsAsync(int userId, int characterId, CrpgGameCharacterCharacteristicsUpdateRequest req, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<CrpgCharacterCharacteristics>> ConvertCharacterCharacteristicsAsync(int userId, int characterId, CrpgGameCharacteristicConversionRequest req, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }
@@ -148,5 +205,46 @@ internal class StubCrpgClient : ICrpgClient
             .GetObjectTypeList<ItemObject>()
             .GetRandomElementWithPredicate(i => i.StringId.StartsWith("mp_", StringComparison.Ordinal) && i.Type == itemType)
             .StringId;
+    }
+
+    private IList<CrpgUserItemExtended> GetDummyItems(int userId)
+    {
+        var items = new List<CrpgUserItemExtended>();
+        DateTime now = DateTime.UtcNow;
+        var itemTypes = new[]
+        {
+            ItemObject.ItemTypeEnum.HeadArmor,
+            ItemObject.ItemTypeEnum.BodyArmor,
+            ItemObject.ItemTypeEnum.LegArmor,
+            ItemObject.ItemTypeEnum.OneHandedWeapon,
+            ItemObject.ItemTypeEnum.TwoHandedWeapon,
+            ItemObject.ItemTypeEnum.Bow,
+            ItemObject.ItemTypeEnum.Crossbow,
+            ItemObject.ItemTypeEnum.Bolts,
+            ItemObject.ItemTypeEnum.Arrows,
+            ItemObject.ItemTypeEnum.Shield,
+        };
+
+        int armoryUserId = 9999;  // different user ID for armory items
+
+        for (int i = 0; i < 20; i++)
+        {
+            var type = itemTypes[i % itemTypes.Length];
+            bool isArmory = i % 3 == 0;
+
+            items.Add(new CrpgUserItemExtended
+            {
+                Id = i + 1,
+                UserId = isArmory ? armoryUserId : userId,  // Different userId for armory items
+                Rank = 0,
+                ItemId = GetRandomItemId(type),
+                IsBroken = i % 5 == 0,
+                CreatedAt = now.AddDays(-i),
+                IsArmoryItem = isArmory,
+                IsPersonal = !isArmory,
+            });
+        }
+
+        return items;
     }
 }

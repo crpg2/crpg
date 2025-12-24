@@ -1,0 +1,34 @@
+using TaleWorlds.Library;
+
+namespace Crpg.Module.GUI.Inventory;
+
+public class ItemInfoRowVM : ViewModel
+{
+    private ItemInfoTupleVM? _left;
+    private ItemInfoTupleVM? _right;
+
+    [DataSourceProperty]
+    public ItemInfoTupleVM? Left
+    {
+        get => _left;
+        set => SetField(ref _left, value, nameof(Left));
+    }
+
+    [DataSourceProperty]
+    public ItemInfoTupleVM? Right
+    {
+        get => _right;
+        set => SetField(ref _right, value, nameof(Right));
+    }
+
+    public ItemInfoRowVM()
+    {
+        // empty ctor
+    }
+
+    public ItemInfoRowVM(ItemInfoTupleVM left, ItemInfoTupleVM right)
+    {
+        Left = left;
+        Right = right;
+    }
+}

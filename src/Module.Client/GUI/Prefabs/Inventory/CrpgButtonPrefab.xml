@@ -1,0 +1,53 @@
+<Prefab Name="CrpgButtonPrefab">
+  <Parameters>
+    <Parameter Name="ButtonText" DefaultValue="Button" />
+    <Parameter Name="ButtonId" DefaultValue="" />
+    <Parameter Name="CommandClick" DefaultValue="ExecuteClick" />
+    <Parameter Name="CommandAlternateClick" DefaultValue="ExecuteAlternateClick" />
+    <Parameter Name="ButtonIsEnabled" DefaultValue="true"/>
+    <Parameter Name="ButtonIsVisible" DefaultValue="true"/>
+    <Parameter Name="ButtonIsSelected" DefaultValue="false"/>
+    <Parameter Name="ButtonBrushImage" DefaultValue=""/>
+    <Parameter Name="ImagePositionYOffset" DefaultValue="0"/>
+    <Parameter Name="ImagePositionXOffset" DefaultValue="0"/>
+    <Parameter Name="Width"  DefaultValue="120" />
+    <Parameter Name="Height" DefaultValue="40" />
+  </Parameters>
+  <Window>
+    <Widget WidthSizePolicy="Fixed" SuggestedWidth="*Width"
+              HeightSizePolicy="Fixed" SuggestedHeight="*Height"
+              VerticalAlignment="Center" HorizontalAlignment="Center"
+              MarginBottom="5" >
+      <Children>
+        <BrushWidget Id="ButtonBackgroundFrame" 
+              WidthSizePolicy="StretchToParent"
+              HeightSizePolicy="StretchToParent"
+              VerticalAlignment="Center" HorizontalAlignment="Center"
+              IsVisible="*ButtonIsVisible"
+              Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">                                
+          <Children>
+            <ButtonWidget Id="*ButtonId" 
+                  Brush="Crpg.Generic.Button"
+                  WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                  MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10"
+                  Command.Click="*CommandClick" Command.AlternateClick="*CommandAlternateClick"
+                  DoNotPassEventsToChildren="true"
+                  IsEnabled="*ButtonIsEnabled" IsSelected="*ButtonIsSelected">
+              <Children>
+                <BrushWidget Id="ButtonBrushImageId" Brush="*ButtonBrushImage" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                    SuggestedWidth="18" SuggestedHeight="18" HorizontalAlignment="Left" VerticalAlignment="Center"
+                    PositionYOffset="*ImagePositionYOffset" PositionXOffset="*ImagePositionXOffset" IsVisible="true" />  
+                <TextWidget Text="*ButtonText" 
+                    WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed"
+                    SuggestedWidth="100" SuggestedHeight="30"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Brush="Crpg.Generic.Button.Text" />
+              </Children>
+            </ButtonWidget>
+          </Children>
+        </BrushWidget>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

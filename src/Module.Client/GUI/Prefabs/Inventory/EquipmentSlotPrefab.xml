@@ -1,0 +1,60 @@
+<Prefab Name="EquipmentSlotPrefab">
+  <Constants>
+    <Constant Name="MainContainer.Width" Value="85"/>
+    <Constant Name="MainContainer.Height" Value="70"/>
+    <Constant Name="DefaultIcon.Width" Value="48"/>
+    <Constant Name="DefaultIcon.Height" Value="48"/>
+    <Constant Name="Button.Width" Value="65"/>
+    <Constant Name="Button.Height" Value="50"/>
+    <Constant Name="EquippedIcon.Width" Value="80"/>
+    <Constant Name="EquippedIcon.Height" Value="40"/>
+  </Constants>
+
+  <Window>
+    <Widget Id="MainContainer" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!MainContainer.Width" SuggestedHeight="!MainContainer.Height" >
+      <Children>
+        <BrushWidget Id="BackgroundFrame" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff" AcceptDrop="@IsButtonEnabled" DoNotAcceptEvents="True"> <!-- acceptdrop here to intercept event and stop from unequip if u drop slot on same slot. doesnt register on button if dragging-->
+          <Children>
+            <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10"
+                  WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" 
+                  Brush="Crpg.EquipmentSlot.Background" DoNotAcceptEvents="True">
+            </BrushWidget>
+            <!-- Default fallback icon -->
+            <ImageWidget Id="DefaultIcon" Sprite="@DefaultSprite"
+                    IsVisible="@ShouldShowDefaultIcon"
+                    WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                    SuggestedWidth="!DefaultIcon.Width" SuggestedHeight="!DefaultIcon.Height" UseAlphaAsMask="True"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    DoNotAcceptEvents="True" /> 
+          </Children>
+        </BrushWidget>
+        <ButtonWidget Id="Button" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center"
+                SuggestedWidth="!Button.Width" SuggestedHeight="!Button.Height" AcceptDrag="@CanAcceptDrag" DoNotPassEventsToChildren="true"
+                ClipContents="true" DoNotAcceptEvents="False" IsEnabled="@IsButtonEnabled" Brush="Crpg.EquipmentSlot.Button"
+                Command.AlternateClick="ExecuteAlternateClick" Command.Click="ExecuteClick"
+                Command.DragBegin="ExecuteDragBegin" Command.DragEnd="ExecuteDragEnd" 
+                AcceptDrop="true" Command.Drop="ExecuteTryEquipItem" Command.HoverBegin="ExecuteHoverBegin" Command.HoverEnd="ExecuteHoverEnd" AllowHoverWhileDragging="true" >
+          <Children>
+            <!-- Equipped item icon -->
+            <ImageIdentifierWidget DataSource="{ImageIdentifier}"
+                            Id="EquippedIcon"
+                            ImageId="@Id"
+                            AdditionalArgs="@AdditionalArgs"
+                            ImageTypeCode="@ImageTypeCode"
+                            WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                            SuggestedWidth="!EquippedIcon.Width" SuggestedHeight="!EquippedIcon.Height"
+                            HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Margin="4" 
+                            DoNotAcceptEvents="True" PassEventsToParent="True" />
+            <!-- Armory item icon -->
+            <ItemArmoryIconPrefab DataSource="{ItemArmoryIcon}" HorizontalAlignment="Right" VerticalAlignment="Top"
+                            PositionYOffset="0" />
+            <!-- Item rank icon (heirlooms)-->
+            <ItemRankIconPrefab DataSource="{ItemRankIcon}" />
+
+          </Children>
+        </ButtonWidget>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

@@ -29,6 +29,24 @@
         "kind": "test",
         "isDefault": true
       }
-    }
+    },
+    {
+      "label": "dotnet: Update GUI XMLs only",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "msbuild",
+        "Module.Client.csproj",
+        "-t:CopyGuiXmlOnly"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/src/Module.Client"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": []
+    } 
   ]
 }

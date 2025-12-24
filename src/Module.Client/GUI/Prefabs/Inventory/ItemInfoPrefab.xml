@@ -1,0 +1,80 @@
+<Prefab Name="ItemInfoPrefab">
+  <Parameters>
+    <Parameter Name="Width" DefaultValue="220"/>
+    <Parameter Name="Height" DefaultValue="430"/>
+  </Parameters>
+  <Window>
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+      <Children>
+        <!-- Transparent overlay (clickable) -->
+        <ButtonWidget Id="Overlay" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                 Color="#ffffff00"
+                 DoNotAcceptEvents="false"
+                 Brush="Crpg.ItemInfo.ClickOverlay"
+                 DoNotPassEventsToChildren="true"
+                 Command.Click="OnOverlayClick"/>  
+        <!-- Frame -->
+        <BrushWidget Id="ItemInfo.Frame" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                SuggestedWidth="*Width" SuggestedHeight="*Height"
+                PositionXOffset="@PositionX" PositionYOffset="@PositionY"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+          <Children>
+            <!-- Background -->
+            <BrushWidget Id="ItemInfo.Background.Brush" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Brush="Crpg.ItemInfo.Background"
+                MarginTop="8" MarginBottom="8" MarginLeft="8" MarginRight="8" />
+            <!-- Close Button? -->
+            <!-- Vertical ListPanel Holding all -->
+            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
+                WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren"
+                SuggestedWidth="*Width" Spacing="2"
+                MarginTop="10"
+                DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">                
+              <Children>
+                <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" VerticalAlignment="Top"> <!-- Container for item image and userItem icons -->
+                  <Children>
+                    <ImageIdentifierWidget DataSource="{ImageIdentifier}"
+                        ImageId="@Id"
+                        AdditionalArgs="@AdditionalArgs"
+                        ImageTypeCode="@ImageTypeCode"
+                        WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                        SuggestedWidth="130" SuggestedHeight="65"
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Margin="4"
+                        DoNotAcceptEvents="True" IsVisible="true"/>
+                    <!-- item rank icon -->
+                    <ItemRankIconPrefab DataSource="{ItemRankIcon}" />
+                    <!-- Item is Currently Equipped check mark -->
+                    <BrushWidget Id="ItemEquipped" Brush="Crpg.Item.Equipped.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                        SuggestedWidth="15" SuggestedHeight="15" HorizontalAlignment="Right" VerticalAlignment="Top"
+                        PositionYOffset="30" IsVisible="@IsEquipped" />                        
+                    <!-- Armory item icon -->
+                    <ItemArmoryIconPrefab DataSource="{ItemArmoryIcon}" HorizontalAlignment="Right" VerticalAlignment="Top"
+                        PositionYOffset="0" />                                                    
+                  </Children>
+                </Widget>
+                <TextWidget Id="ItemName" Text="@Name" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20"
+                      HorizontalAlignment = "Center"
+                      Brush="Crpg.ItemInfo.ItemName.Text" />
+                <ListPanel DataSource="{Rows}" StackLayout.LayoutMethod="VerticalBottomToTop"
+                      WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                      SuggestedWidth="*Width" SuggestedHeight="*Height"
+                      HorizontalAlignment="Center" VerticalAlignment="Top" Spacing="2"
+                      MarginLeft="25">
+                  <ItemTemplate>
+                    <ItemInfoRow DataSource="{.}"/>
+                  </ItemTemplate> 
+                </ListPanel>
+              </Children>                
+            </ListPanel>
+                <CrpgButtonPrefab HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                  Parameter.ButtonText="@ArmoryButtonText" Parameter.ButtonId="ArmoryButton"
+                  Parameter.Width="180" Parameter.Height="40" Parameter.ButtonIsEnabled="true"
+                  Parameter.CommandClick="ArmoryButtonClick" Parameter.ButtonIsVisible="true"
+                  Parameter.ButtonBrushImage="Crpg.Item.Armory.Icon" />      
+          </Children>
+        </BrushWidget>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

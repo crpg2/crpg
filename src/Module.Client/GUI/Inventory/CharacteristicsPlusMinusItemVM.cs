@@ -1,0 +1,86 @@
+using TaleWorlds.Core.ViewModelCollection.Information;
+using TaleWorlds.Library;
+
+namespace Crpg.Module.GUI.Inventory;
+
+public class CharacteristicsPlusMinusItemVM : ViewModel
+{
+    private string _itemLabel = string.Empty;
+    private int _itemValue;
+    private bool _isButtonMinusEnabled;
+    private bool _isButtonPlusEnabled;
+    private BasicTooltipViewModel? _tooltip;
+
+    internal event Action<CharacteristicsPlusMinusItemVM, bool>? OnPlusClickedEvent;
+    internal event Action<CharacteristicsPlusMinusItemVM, bool>? OnMinusClickedEvent;
+
+    public CharacteristicsPlusMinusItemVM(string label, int value, string tooltipText = "")
+    {
+        _itemLabel = label;
+        _itemValue = value;
+        _tooltip = new BasicTooltipViewModel(() => tooltipText);
+    }
+
+    [DataSourceProperty]
+    public string ItemLabel
+    {
+        get => _itemLabel;
+        set => SetField(ref _itemLabel, value, nameof(ItemLabel));
+    }
+
+    [DataSourceProperty]
+    public int ItemValue
+    {
+        get => _itemValue;
+        set => SetField(ref _itemValue, value, nameof(ItemValue));
+    }
+
+    [DataSourceProperty]
+    public bool IsButtonMinusEnabled
+    {
+        get => _isButtonMinusEnabled;
+        set => SetField(ref _isButtonMinusEnabled, value, nameof(IsButtonMinusEnabled));
+    }
+
+    [DataSourceProperty]
+    public bool IsButtonPlusEnabled
+    {
+        get => _isButtonPlusEnabled;
+        set => SetField(ref _isButtonPlusEnabled, value, nameof(IsButtonPlusEnabled));
+    }
+
+    private bool _textStateDisabled = false;
+    [DataSourceProperty]
+    public bool TextStateDisabled
+    {
+        get => _textStateDisabled;
+        set => SetField(ref _textStateDisabled, value, nameof(TextStateDisabled));
+    }
+
+    [DataSourceProperty]
+    public BasicTooltipViewModel? Tooltip
+    {
+        get => _tooltip;
+        set => SetField(ref _tooltip, value, nameof(Tooltip));
+    }
+
+    private void ExecutePlusClick()
+    {
+        OnPlusClickedEvent?.Invoke(this, false);
+    }
+
+    private void ExecuteMinusClick()
+    {
+        OnMinusClickedEvent?.Invoke(this, false);
+    }
+
+    private void ExecutePlusAlternateClick()
+    {
+        OnPlusClickedEvent?.Invoke(this, true);
+    }
+
+    private void ExecuteMinusAlternateClick()
+    {
+        OnMinusClickedEvent?.Invoke(this, true);
+    }
+}

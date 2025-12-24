@@ -52,6 +52,8 @@
     <Compile Remove="..\Module.Server\Common\CrpgServerConfiguration.cs" />
     <Compile Remove="..\Module.Server\Common\CrpgFeatureFlags.cs" />
     <Compile Remove="..\Module.Server\Common\CrpgUserManagerServer.cs" />
+    <Compile Remove="..\Module.Server\Common\CrpgCharacterLoadoutBehaviorServer.cs" />
+    <Compile Remove="..\Module.Server\Common\CrpgClanArmoryServer.cs" />      
     <Compile Remove="..\Module.Server\Common\ServerMetricsBehavior.cs" />
     <Compile Remove="..\Module.Server\Common\NotAllPlayersReadyComponent.cs" />
     <Compile Remove="..\Module.Server\Common\MapPoolComponent.cs" />
@@ -64,8 +66,9 @@
     <Compile Remove="..\Module.Server\Common\CrpgCustomBannerServer.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\MissionNetworkComponentPatch.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\SendPeerInformationsToPeerPatch.cs" />
+    <Compile Remove="..\Module.Server\Common\AmmoQuiverChange\AmmoQuiverChangeBehaviorServer.cs" />
+    <Compile Remove="..\Module.Server\Common\CrpgCharacterLoadoutBehaviorServer.cs" />
     <Compile Remove="..\Module.Server\Common\FriendlyFireReport\FriendlyFireReportServerBehavior.cs" />
-    <Compile Remove="..\Module.Server\Common\FriendlyFireReport\FriendlyFireReportClientBehavior.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\ChargeDamageCallbackPatch.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\MissionInternalHelper.cs" />
   </ItemGroup>

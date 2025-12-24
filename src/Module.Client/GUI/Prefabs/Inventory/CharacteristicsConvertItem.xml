@@ -1,0 +1,29 @@
+<Prefab Name="CharacteristicsConvertItem">
+    <!-- @ItemLabel @ItemValue @IsButtonEnabled-->
+  <Window>
+    <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" 
+            WidthSizePolicy="CoverChildren" 
+            HeightSizePolicy="Fixed" SuggestedHeight="25"
+            HorizontalAlignment="Center"
+            MarginTop="5" MarginBottom="10" MarginLeft="10" MarginRight="10"
+            Spacing="5">
+      <Children>
+        <TextWidget Text="@ItemLabel"
+                    WidthSizePolicy="CoverChildren"
+                    HeightSizePolicy="Fixed" SuggestedHeight="20"
+                    HorizontalAlignment="Center"
+                    Brush="Crpg.CharacterEdit.Item.Text.Medium" />
+        <TextWidget IntText="@ItemValue"
+                    WidthSizePolicy="Fixed" SuggestedWidth="20"
+                    HeightSizePolicy="Fixed" SuggestedHeight="20" 
+                    HorizontalAlignment="Left"
+                    Brush="Crpg.CharacterEdit.Item.Text.Medium" />
+        <!-- Spacer that stretches to push buttons to the right -->
+        <!-- <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" /> -->
+        <CrpgButtonPrefab Parameter.ButtonText="~" Parameter.ButtonId="ButtonConvert"
+                    Parameter.Width="30" Parameter.Height="30" Parameter.ButtonIsEnabled="@IsButtonEnabled"
+                    Parameter.CommandClick="ExecuteClick" Parameter.ButtonIsVisible="@IsButtonEnabled"/>
+      </Children>
+    </ListPanel>
+  </Window>
+</Prefab>
