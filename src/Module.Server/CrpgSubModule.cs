@@ -96,7 +96,7 @@ internal class CrpgSubModule : MBSubModuleBase
 
         // Uncomment to start watching UI changes.
 #if CRPG_CLIENT
-        // UIResourceManager.ResourceDepot.StartWatchingChangesInDepot();
+        UIResourceManager.ResourceDepot.StartWatchingChangesInDepot();
 #endif
     }
 
@@ -117,7 +117,7 @@ internal class CrpgSubModule : MBSubModuleBase
         base.OnApplicationTick(delta);
         // Uncomment to hot reload UI after changes.
 #if CRPG_CLIENT
-        // UIResourceManager.ResourceDepot.CheckForChanges();
+        UIResourceManager.ResourceDepot.CheckForChanges();
 #endif
     }
 #if CRPG_SERVER

@@ -1,0 +1,37 @@
+<Prefab Name="CharacterInfoBuildEquipStats">
+  <Parameters>
+    <Parameter Name="Width" DefaultValue="220"/>
+    <Parameter Name="Height" DefaultValue="430"/>
+  </Parameters>
+  <Constants>
+    <Constant Name="Container.Width" Value="220" />
+    <Constant Name="Container.Height" Value="430" />
+  </Constants>
+  <Window>
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="*Width" SuggestedHeight="*Height" HorizontalAlignment="Center" VerticalAlignment="Center">
+      <Children>
+        <!-- Frame -->
+        <BrushWidget Id="CharacterInfo.Skills.Frame"
+                HorizontalAlignment="Left"
+                WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" SuggestedWidth="!Container.Width" SuggestedHeight="!Container.Height"
+                Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+          <Children>
+            <!-- Background -->
+            <BrushWidget Id="CharacterInfo.Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Brush="Crpg.Generic.Panel.Background"
+                MarginTop="9" MarginBottom="9" MarginLeft="9" MarginRight="9"/>
+            <!-- Info Panel-->
+            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HeightSizePolicy="StretchToParent" WidthSizePolicy="StretchToParent"
+                VerticalAlignment="Center"
+                MarginTop="15" MarginBottom="15" MarginLeft="10" MarginRight="10" Spacing="2"
+                DataSource="{Stats}">
+              <ItemTemplate>
+                <CharacterInfoBuildEquipStatsItem DataSource="{.}" /> 
+              </ItemTemplate>                  
+            </ListPanel>
+          </Children>
+        </BrushWidget>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

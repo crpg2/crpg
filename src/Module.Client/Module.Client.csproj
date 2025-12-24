@@ -20,6 +20,17 @@
     <Error Text="Environment variable MB_CLIENT_PATH should be set to your Bannerlord client installation path" Condition="'$(MB_CLIENT_PATH)' == ''" />
   </Target>
 
+  <Target Name="CopyGuiXmlOnly">
+    <ItemGroup>
+      <GuiXmlContent Include="GUI\**\*.xml" />
+    </ItemGroup>
+
+    <Copy 
+      SourceFiles="@(GuiXmlContent)"
+      DestinationFiles="@(GuiXmlContent->'$(OutputPath)\..\..\%(Identity)')"
+      SkipUnchangedFiles="true" />
+  </Target>
+
   <ItemGroup>
     <ContentWithTargetPath Include="..\..\data\constants.json" Link="ModuleData\constants.json" TargetPath="..\..\ModuleData\constants.json" CopyToOutputDirectory="Always" />
     <ContentWithTargetPath Include="..\Module.Server\SubModule.xml" Link="SubModule.xml" TargetPath="..\..\SubModule.xml" CopyToOutputDirectory="Always" />
@@ -48,6 +59,8 @@
     <Compile Remove="..\Module.Server\Common\CrpgServerConfiguration.cs" />
     <Compile Remove="..\Module.Server\Common\CrpgFeatureFlags.cs" />
     <Compile Remove="..\Module.Server\Common\CrpgUserManagerServer.cs" />
+    <Compile Remove="..\Module.Server\Common\CrpgCharacterLoadoutBehaviorServer.cs" />
+    <Compile Remove="..\Module.Server\Common\CrpgClanArmoryServer.cs" />    
     <Compile Remove="..\Module.Server\Common\ServerMetricsBehavior.cs" />
     <Compile Remove="..\Module.Server\Common\NotAllPlayersReadyComponent.cs" />
     <Compile Remove="..\Module.Server\Common\MapPoolComponent.cs" />

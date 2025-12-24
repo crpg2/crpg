@@ -1,0 +1,321 @@
+<Brushes>
+  <Brush Name="Crpg.Generic.Panel.Background">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#202020FF" AlphaFactor="1" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor=".8"/>
+      </Style>
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Generic.Button">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0" Color="#0586ffff" />
+      </Style>
+      <Style Name="Hovered">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#5bacf8ff" />
+      </Style>
+      <Style Name="Pressed">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#0586ffff" />
+      </Style>
+      <Style Name="Selected">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#91c2f0ff" />
+      </Style>      
+      <Style Name="Disabled">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#353636ff" />
+      </Style>
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Generic.Button.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="15" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.EquipmentSlot.Background">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#202020FF" AlphaFactor="1" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor=".7"/>
+      </Style>
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Inventory.UserName.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="18" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>    
+  <Brush Name="Crpg.Inventory.ArmorAmount.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="18" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.InventorySort.Button">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0" Color="#0586ffff" />
+      </Style>
+      <Style Name="Hovered">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#5bacf8ff" />
+      </Style>
+      <Style Name="Pressed">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#0586ffff" />
+      </Style>
+      <Style Name="Selected">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#91c2f0ff" />
+      </Style>      
+      <Style Name="Disabled">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#353636ff" />
+      </Style>
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.EquipmentSlot.Button">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0" Color="#0586ffff" />
+      </Style>
+      <Style Name="Hovered">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#5bacf8ff" />
+      </Style>
+      <Style Name="Pressed">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#0586ffff" />
+      </Style>
+      <Style Name="Selected">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#91c2f0ff" />
+      </Style>          
+      <Style Name="Disabled">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#660707c5" />
+      </Style>
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.CharacterEdit.Item.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="15" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.CharacterEdit.Item.Text.Medium" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="18" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>     
+  <Brush Name="Crpg.CharacterEdit.Value.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center" TextVerticalAlignment="Center">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#F9EAD2FF" TextAlphaFactor="1.0" TextBlur="0" TextOutlineAmount="0" TextGlowRadius="0" FontSize="15"/>
+      <Style Name="Disabled" FontColor="#FF0000FF" TextAlphaFactor="1.0" TextColorFactor="0.9" />
+    </Styles>
+  </Brush>  
+  <Brush Name="Crpg.InventorySlot.ItemName.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="10" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.InventoryGrid.Scrollbar.Handle">
+    <Layers>
+			<BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#24285eff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+				<BrushLayer Name="Default" ColorFactor="1" />
+      </Style>
+      <Style Name="Hovered">
+				<BrushLayer Name="Default" ColorFactor="1.2" />
+      </Style>
+      <Style Name="Pressed">
+        <BrushLayer Name="Default" ColorFactor="0.8" />
+      </Style>
+      <Style Name="Selected">
+        <BrushLayer Name="Default" ColorFactor="1.2" />
+      </Style>
+      <Style Name="Disabled">
+        <BrushLayer Name="Default" AlphaFactor="0.5" />
+      </Style>
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Item.Armory.Icon">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_armory" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#ebeeecff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Item.Armory.Icon_Yours_Available">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_armory" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#ebeeecff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Item.Armory.Icon_Yours_Borrowed">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_armory" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#ccb90aff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Item.Armory.Icon_NotYours_Available">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_armory" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#19ac4aff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Item.Armory.Icon_NotYours_Borrowed">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_armory" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#b83939ff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Item.Armory.Icon_BorrowedByYou">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_armory" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#3a4ec2ff" />
+      </Style>       
+    </Styles>
+  </Brush>      
+  <Brush Name="Crpg.Item.Rank.Icon_1">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_diamond" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#4ade80ff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Item.Rank.Icon_2">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_diamond" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#60a5faff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Item.Rank.Icon_3">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_diamond" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#c084fcff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Item.Equipped.Icon">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_checkmark" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#089703ff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Item.Gold.Icon">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_circle_large" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#e2c103ff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.Logo.Icon">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_crpg" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.3" Color="#535353ff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.ItemInfo.Background">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#202020FF" AlphaFactor="1" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="1"/>
+      </Style>
+    </Styles>
+  </Brush>  
+  <Brush Name="Crpg.ItemInfo.ItemName.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Left">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="15" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.ItemInfo.Category.Title.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Left">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="15" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.ItemInfo.Category.Value.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Left">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#F9EAD2FF" FontSize="15" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>
+  <Brush Name="Crpg.ItemInfo.ClickOverlay">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#918f8fb9" AlphaFactor="1" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor=".03"/>
+      </Style>
+    </Styles>
+  </Brush>   
+</Brushes>

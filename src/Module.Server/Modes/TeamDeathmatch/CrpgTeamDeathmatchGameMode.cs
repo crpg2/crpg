@@ -22,6 +22,7 @@ using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.EndOfRound;
 using Crpg.Module.GUI.HudExtension;
+using Crpg.Module.GUI.Inventory;
 using Crpg.Module.GUI.Scoreboard;
 using Crpg.Module.GUI.Spectator;
 using Crpg.Module.GUI.Warmup;
@@ -72,6 +73,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMissionKillNotificationUIHandler(),
             new CrpgHudExtensionHandler(),
             new AmmoQuiverChangeUiHandler(),
+            new CrpgMainGuiMissionView(),
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             //new SpectatorHudUiHandler(),
             new WarmupHudUiHandler(),
@@ -123,6 +125,8 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
                 new AmmoQuiverChangeBehaviorClient(),
                 new CrpgRespawnTimerClient(),
                 new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
+                new CrpgClanArmoryClient(), // Clan armory Sync with API/Client for GUI
+                new CrpgCharacterLoadoutBehaviorClient(_constants), // Inventory & Equipment Sync for GUI
 #endif
                 new CrpgTeamDeathmatchClient(),
                 new MultiplayerTimerComponent(),
@@ -163,6 +167,8 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
                 new CrpgCommanderBehaviorServer(),
                 new CrpgRespawnTimerServer(teamDeathmatchServer, spawnBehavior),
                 new FriendlyFireReportServerBehavior(), // Ctrl+M to report friendly fire
+                new CrpgClanArmoryServer(crpgClient), // Clan armory Sync with API/Client for GUI
+                new CrpgCharacterLoadoutBehaviorServer(crpgClient), // Inventory & Equipment Sync for GUI
 #else
                 new MultiplayerAchievementComponent(),
                 MissionMatchHistoryComponent.CreateIfConditionsAreMet(),

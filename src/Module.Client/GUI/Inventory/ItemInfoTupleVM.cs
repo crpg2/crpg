@@ -1,0 +1,34 @@
+using TaleWorlds.Library;
+
+namespace Crpg.Module.GUI.Inventory;
+
+public class ItemInfoTupleVM : ViewModel
+{
+    private string _categoryName = string.Empty;
+    private string _valueText = string.Empty;
+    private bool _isGoldVisible;
+
+    [DataSourceProperty]
+    public string CategoryName
+    {
+        get => _categoryName;
+        set => SetField(ref _categoryName, value, nameof(CategoryName));
+    }
+
+    [DataSourceProperty]
+    public string ValueText
+    {
+        get => _valueText;
+        set => SetField(ref _valueText, value, nameof(ValueText));
+    }
+
+    [DataSourceProperty]
+    public bool IsGoldVisible
+    {
+        get => _isGoldVisible;
+        set => SetField(ref _isGoldVisible, value, nameof(IsGoldVisible));
+    }
+
+    [DataSourceProperty]
+    public MBBindingList<ItemInfoIconVM> Icons { get; } = new();
+}

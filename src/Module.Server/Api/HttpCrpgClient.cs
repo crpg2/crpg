@@ -4,7 +4,9 @@ using System.Text;
 using Crpg.Module.Api.Exceptions;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.ActivityLogs;
+using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Clans;
+using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Restrictions;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common;
@@ -78,8 +80,41 @@ internal class HttpCrpgClient : ICrpgClient
         return Get<CrpgUser>("games/users", queryParameters, cancellationToken);
     }
 
-    public Task<CrpgResult<CrpgUser>> GetTournamentUserAsync(Platform platform, string platformUserId,
+    public Task<CrpgResult<IList<CrpgUserItemExtended>>> GetUserItemsAsync(int userId,
         CancellationToken cancellationToken = default)
+    {
+        return Get<IList<CrpgUserItemExtended>>("games/users/" + userId + "/items", null, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgCharacter>> GetUserCharacterBasicAsync(int userId, int characterId,
+        CancellationToken cancellationToken = default)
+    {
+        return Get<CrpgCharacter>("games/users/" + userId + "/characters/" + characterId, null, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgCharacterCharacteristics>> UpdateCharacterCharacteristicsAsync(int userId, int characterId, CrpgGameCharacterCharacteristicsUpdateRequest req, CancellationToken cancellationToken = default)
+    {
+        return Put<CrpgGameCharacterCharacteristicsUpdateRequest, CrpgCharacterCharacteristics>("games/users/" + userId + "/characters/" + characterId + "/characteristics", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgCharacterCharacteristics>> ConvertCharacterCharacteristicsAsync(int userId, int characterId, CrpgGameCharacteristicConversionRequest req, CancellationToken cancellationToken = default)
+    {
+        return Put<CrpgGameCharacteristicConversionRequest, CrpgCharacterCharacteristics>("games/users/" + userId + "/characters/" + characterId + "/characteristics/convert", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<IList<CrpgEquippedItemExtended>>> GetCharacterEquippedItemsAsync(int userId, int characterId,
+        CancellationToken cancellationToken = default)
+    {
+        return Get<IList<CrpgEquippedItemExtended>>("games/users/" + userId + "/characters/" + characterId + "/items", null, cancellationToken);
+    }
+
+    public Task<CrpgResult<IList<CrpgEquippedItemId>>> UpdateCharacterEquippedItemsAsync(int userId, int characterId, CrpgGameCharacterItemsUpdateRequest req, CancellationToken cancellationToken = default)
+    {
+        return Put<CrpgGameCharacterItemsUpdateRequest, IList<CrpgEquippedItemId>>("games/users/" + userId + "/characters/" + characterId + "/items", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgUser>> GetTournamentUserAsync(Platform platform, string platformUserId,
+    CancellationToken cancellationToken = default)
     {
         Dictionary<string, string> queryParameters = new(StringComparer.Ordinal)
         {
@@ -97,6 +132,38 @@ internal class HttpCrpgClient : ICrpgClient
     public Task<CrpgResult<CrpgClan>> GetClanAsync(int clanId, CancellationToken cancellationToken = default)
     {
         return Get<CrpgClan>("games/clans/" + clanId, null, cancellationToken);
+    }
+
+    public Task<CrpgResult<IList<CrpgClanArmoryItem>>> GetClanArmoryAsync(int clanId, int userId, CancellationToken cancellationToken = default)
+    {
+        var queryParameters = new Dictionary<string, string>(StringComparer.Ordinal)
+        {
+            ["userId"] = userId.ToString(),
+        };
+
+        return Get<IList<CrpgClanArmoryItem>>("games/clans/" + clanId + "/armory", queryParameters, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgClanArmoryItem>> ClanArmoryAddItemAsync(int clanId, CrpgGameClanArmoryAddItemRequest req, CancellationToken cancellationToken = default)
+    {
+        return Post<CrpgGameClanArmoryAddItemRequest, CrpgClanArmoryItem>("games/clans/" + clanId + "/armory", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<object>> RemoveClanArmoryItemAsync(int clanId, int userItemId, int userId,
+        CancellationToken cancellationToken = default)
+    {
+        var req = new { UserId = userId }; // anonymous type for JSON body
+        return Delete<object, object>($"games/clans/{clanId}/armory/{userItemId}", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgClanArmoryBorrowedItem>> ClanArmoryBorrowItemAsync(int clanId, int userItemId, CrpgGameBorrowClanArmoryItemRequest req, CancellationToken cancellationToken = default)
+    {
+        return Put<CrpgGameBorrowClanArmoryItemRequest, CrpgClanArmoryBorrowedItem>($"games/clans/{clanId}/armory/{userItemId}/borrow", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgClanArmoryBorrowedItem>> ClanArmoryReturnItemAsync(int clanId, int userItemId, CrpgGameBorrowClanArmoryItemRequest req, CancellationToken cancellationToken = default)
+    {
+        return Put<CrpgGameBorrowClanArmoryItemRequest, CrpgClanArmoryBorrowedItem>($"games/clans/{clanId}/armory/{userItemId}/return", req, cancellationToken);
     }
 
     public Task<CrpgResult<CrpgUsersUpdateResponse>> UpdateUsersAsync(CrpgGameUsersUpdateRequest req, CancellationToken cancellationToken = default)
@@ -141,6 +208,20 @@ internal class HttpCrpgClient : ICrpgClient
         {
             Content = new StringContent(JsonConvert.SerializeObject(payload, _serializerSettings), Encoding.UTF8, "application/json"),
         };
+
+        return Send<TResponse>(msg, cancellationToken);
+    }
+
+    private Task<CrpgResult<TResponse>> Delete<TRequest, TResponse>(string requestUri, TRequest? payload,
+        CancellationToken cancellationToken) where TResponse : class
+    {
+        HttpRequestMessage msg = new(HttpMethod.Delete, requestUri);
+
+        if (payload != null)
+        {
+            string json = JsonConvert.SerializeObject(payload, _serializerSettings);
+            msg.Content = new StringContent(json, Encoding.UTF8, "application/json");
+        }
 
         return Send<TResponse>(msg, cancellationToken);
     }

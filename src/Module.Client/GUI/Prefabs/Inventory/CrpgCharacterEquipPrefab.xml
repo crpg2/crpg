@@ -1,0 +1,83 @@
+<Prefab Name="CrpgCharacterEquipPrefab">
+  <Constants>
+    <Constant Name="Background.Width" Value="800"/>
+    <Constant Name="Background.Height" Value="800"/>
+    <Constant Name="CrpgLogo.Width" Value="48"/>
+    <Constant Name="CrpgLogo.Height" Value="48"/>
+  </Constants>
+  <Window>
+    <!-- Main Container -->           
+    <Widget IsVisible="@IsVisible" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" 
+          MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10"
+          AcceptDrop="true" Command.Drop="ExecuteDropDiscard">
+      <Children>
+        <!-- Frame -->
+        <BrushWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" SuggestedWidth="!Background.Width" SuggestedHeight="!Background.Height"
+                    Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff" PositionYOffset="200" HorizontalAlignment="Center">
+          <Children>
+            <BrushWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                      MarginLeft="9" MarginRight="9" MarginTop="9" MarginBottom="9"
+                      Brush="Crpg.Generic.Panel.Background">
+              <Children>
+                <BrushWidget Id="CrpgLogo" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!CrpgLogo.Width" SuggestedHeight="!CrpgLogo.Height"
+                        Sprite="ui_crpg_icon_white_crpg_logo" Color="#ffffffff"
+                        HorizontalAlignment="Left" VerticalAlignment="Top" MarginLeft="5" MarginTop="5"
+                        PositionXOffset="0" PositionYOffset="0"/>                       
+                <!-- Vertical panel container-->
+                <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                      HorizontalAlignment="Center" VerticalAlignment="Center" >
+                  <Children>
+                    <!-- User Name/Clan/Gold -->
+                    <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                          HorizontalAlignment="Center" VerticalAlignment="Top" MarginTop="0" MarginRight="5" Spacing="10">
+                      <Children>
+                        <!-- Character Name -->
+                        <TextWidget Text="@CharacterName" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="30"
+                            HorizontalAlignment="Left" VerticalAlignment="Center"
+                            Brush="Crpg.Inventory.UserName.Text"
+                            MarginTop="5" MarginBottom="0" MarginLeft="50" MarginRight="5"/>
+                        <!-- Bar above -->
+                        <CharacterEquipNavBar DataSource="{NavBar}" HorizontalAlignment="Center" VerticalAlignment="Center" MarginTop="10"/>                                              
+                        <TextWidget Text="@UserName" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="30"
+                                HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Brush="Crpg.Inventory.UserName.Text"
+                                MarginTop="5" MarginRight="10"/>
+                        <BrushWidget Id="GoldIcon" Brush="Crpg.Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                                SuggestedWidth="15" SuggestedHeight="15" IsVisible="true" PositionYOffset="3" MarginRight="3"
+                                VerticalAlignment="Center"/>
+                        <TextWidget Text="@GoldAmount" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="30"
+                                HorizontalAlignment="Center" VerticalAlignment="Center" MarginRight="5" MarginTop="5"
+                                Brush="Crpg.ItemInfo.Category.Value.Text"/>
+                      </Children>
+                    </ListPanel>
+                    <!-- Horizontal Panel -->
+                    <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                            VerticalAlignment="Top" Spacing="5">
+                      <Children>
+                        <!-- Character Info Panel -->
+                        <CharacteristicsEditorPrefab DataSource="{CharacteristicsEditor}" />
+                        <!-- Inventory Selection -->
+                        <InventoryGridPrefab Id="UserInventoryGrid" Parameter.NumColumns="5" DataSource="{InventoryGrid}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <!-- Equipped Items Panel -->
+                        <EquipmentPanelPrefab DataSource="{EquipmentPanel}" VerticalAlignment="Top"/>
+                        <CharacterInfoBuildEquipStats DataSource="{CharacterInfoBuildEquipStatsVm}" VerticalAlignment="Top"/>
+                      </Children>
+                    </ListPanel>
+                    <!-- End Horizontal Panel -->
+                  </Children>
+                </ListPanel>
+                <CrpgButtonPrefab HorizontalAlignment="Right" VerticalAlignment="Top"
+                        Parameter.ButtonId="CloseButton"
+                        Parameter.ButtonText="X"
+                        Parameter.CommandClick="CloseButtonClicked"
+                        Parameter.Width="40"
+                        Parameter.Height="30" />                 
+              </Children>
+            </BrushWidget>                    
+          </Children>
+        </BrushWidget>      
+        <ItemInfoPrefab DataSource="{ItemInfo}" Id="ItemInfoId" HeightSizePolicy="StretchToParent" WidthSizePolicy="StretchToParent" IsVisible="@IsVisible" />
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

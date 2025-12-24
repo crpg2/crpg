@@ -1,0 +1,58 @@
+<Prefab Name="CrpgMainGuiBar">
+  <Window>
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+      <Children>
+
+        <!-- Content Container (full width, fills space above the bar) -->
+        <Widget Name="ContentContainer"
+                WidthSizePolicy="Fixed"
+                HeightSizePolicy="StretchToParent"
+                SuggestedWidth="800"
+                IsVisible="True" >
+          <!-- This is where your dynamic prefab content will load -->
+          <Children>  
+          </Children>
+        </Widget>
+
+        <!-- Bottom Toolbar -->
+        <Widget WidthSizePolicy="StretchToParent"
+                HeightSizePolicy="Fixed"
+                SuggestedHeight="48"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                MarginLeft="8"
+                MarginRight="8"
+                MarginBottom="8"
+                IsVisible="@IsVisible">
+          <Children>
+            <BrushWidget WidthSizePolicy="StretchToParent"
+                         HeightSizePolicy="StretchToParent"
+                         Sprite="SquareFrame_9"
+                         Color="#CC000000">
+              <Children>
+                <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           WidthSizePolicy="StretchToParent"
+                           HeightSizePolicy="StretchToParent"
+                           MarginRight="8"
+                           MarginLeft="8"
+                           Spacing="6">
+                  <Children>
+                    <CrpgButtonPrefab 
+                        Parameter.ButtonText="Character/Equip"
+                        Parameter.CommandClick="OpenCharacterEquipFromButton"
+                        Parameter.Width="150"
+                        Parameter.Height="40" />
+                    <!-- Add more toolbar buttons here -->
+                  </Children>
+                </ListPanel>
+              </Children>
+            </BrushWidget>
+          </Children>
+        </Widget>
+
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

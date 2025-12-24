@@ -1,0 +1,133 @@
+<Prefab Name="CharacteristicsEditorPrefab">
+  <Constants>
+    <Constant Name="CharacteristicsEditor.MainContainer.Width" Value="460"/>
+    <Constant Name="CharacteristicsEditor.MainContainer.Height" Value="430"/>
+    <Constant Name="CharacteristicsEditor.Frame.Width" Value="250"/>
+    <Constant Name="CharacteristicsEditor.Frame.Height" Value="150"/>
+    <Constant Name="AttributesAndWpf.Frame.Width" Value="220"/>
+    <Constant Name="AttributesAndWpf.Frame.Height" Value="325"/>
+    <Constant Name="Skills.Frame.Width" Value="220"/>
+    <Constant Name="Skills.Frame.Height" Value="325"/>
+  </Constants>
+  <Window>
+    <Widget Id="MainContainer" 
+            WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!CharacteristicsEditor.MainContainer.Width" SuggestedHeight="!CharacteristicsEditor.MainContainer.Height"
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            IsVisible="@IsVisible">
+      <Children>
+        <!-- Frame -->
+        <BrushWidget Id="MainContainer.Frame" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                  Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+          <Children>
+            <!-- Background -->
+            <BrushWidget Id="CharacteristicsEditor.Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Brush="Crpg.Generic.Panel.Background"
+                MarginTop="9" MarginBottom="9" MarginLeft="9" MarginRight="9"/>
+
+            <!-- Vertical Layout Container -->
+            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
+                    WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
+                    MarginLeft="5" MarginRight="5" MarginTop="10" MarginBottom="10" Spacing="5"
+                    DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
+              <Children>
+                <!-- Horizontal layout container -->
+                <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                        WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
+                        MarginLeft="0" MarginRight="0" MarginTop="0" MarginBottom="0" Spacing="5"
+                        DoNotAcceptEvents="true" DoNotPassEventsToChildren="false" >
+                  <Children>
+                    <!-- Attributes and Wpf Frame-->             
+                    <BrushWidget Id="CharacteristicsEditor.AttributesAndWpf.Frame" 
+                              HorizontalAlignment="Center" 
+                              WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!AttributesAndWpf.Frame.Width" SuggestedHeight="!AttributesAndWpf.Frame.Height" 
+                              Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+                      <Children>
+                        <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
+                                WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" 
+                                MarginTop="5" MarginBottom="5" MarginLeft="10" MarginRight="10">
+                          <Children>
+                            <CharacteristicsConvertItem DataSource="{ConvertAttribute}"/>
+                            <CharacteristicsPlusMinusItem DataSource="{StrengthVm}"/>
+                            <CharacteristicsPlusMinusItem DataSource="{AgilityVm}"/> 
+                            <!-- Spacer -->
+                            <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="10" />
+                            <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
+                                MarginLeft="0" MarginRight="0" MarginTop="0" MarginBottom="0" Spacing="5" >
+                              <Children>
+
+                                <TextWidget Text="Weapon Proficiencies - " HeightSizePolicy="Fixed" SuggestedHeight="20" WidthSizePolicy="CoverChildren"
+                                    Brush="Crpg.CharacterEdit.Item.Text.Medium" HorizontalAlignment="Center"/>
+                                    <TextWidget IntText="@WeaponProficiencyPoints" HeightSizePolicy="Fixed" SuggestedHeight="20" WidthSizePolicy="CoverChildren"
+                                    Brush="Crpg.CharacterEdit.Item.Text.Medium" HorizontalAlignment="Center"/>
+                              </Children>
+                            </ListPanel>
+                            
+                            <!-- Spacer -->
+                            <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="10" />                                
+                            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" VerticalAlignment="Top"
+                                    WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren"
+                                    DataSource="{WeaponProficiencies}" Spacing="5">
+                              <ItemTemplate>
+                                <CharacteristicsPlusMinusItem DataSource="{.}" MarginBottom="5" /> 
+                              </ItemTemplate>      
+                            </ListPanel>      
+                                 
+                          </Children>
+                        </ListPanel>    
+                      </Children>
+                    </BrushWidget>
+                    <!-- Skills Frame -->
+                    <BrushWidget Id="CharacteristicsEditor.Skills.Frame"
+                              HorizontalAlignment="Center"
+                              WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!Skills.Frame.Width" SuggestedHeight="!Skills.Frame.Height"
+                              Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+                      <Children>
+                        <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
+                                WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" 
+                                MarginTop="5" MarginBottom="5" MarginLeft="10" MarginRight="10">
+                          <Children>
+                            <CharacteristicsConvertItem DataSource="{ConvertSkill}"/> 
+                            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" VerticalAlignment="Top" 
+                                    WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" 
+                                    DataSource="{Skills}" Spacing="5">
+                              <ItemTemplate>
+                                <CharacteristicsPlusMinusItem DataSource="{.}" MarginBottom="5" /> 
+                              </ItemTemplate>      
+                            </ListPanel>     
+                          </Children>
+                        </ListPanel>
+                      </Children>
+                    </BrushWidget>
+
+                  </Children>
+                </ListPanel>
+
+                <!-- Buttons at bottom horizontal layout container -->
+                <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Center"
+                      WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                      Spacing="5" MarginTop="0" MarginBottom="10" MarginLeft="10" MarginRight="10"
+                      PassEventsToParent="false"
+                      DoNotAcceptEvents="false"
+                      DoNotPassEventsToChildren="false">
+                      
+                  <Children>
+                    <CrpgButtonPrefab Parameter.ButtonText="API Refresh" Parameter.ButtonId="ButtonApiRefreshInfo"
+                              Parameter.Width="120" Parameter.Height="40" Parameter.ButtonIsEnabled="true"
+                              Parameter.CommandClick="ExecuteClickRefreshApi" Parameter.ButtonIsVisible="true"/>
+                    <CrpgButtonPrefab Parameter.ButtonText="Apply Changes" Parameter.ButtonId="ButtonApplyChanges"
+                              Parameter.Width="120" Parameter.Height="40" Parameter.ButtonIsEnabled="true"
+                              Parameter.CommandClick="ExecuteClickApplyChanges" Parameter.ButtonIsVisible="true"/>
+                    <CrpgButtonPrefab Parameter.ButtonText="Reset Changes" Parameter.ButtonId="ButtonResetChanges"
+                              Parameter.Width="120" Parameter.Height="40" Parameter.ButtonIsEnabled="true"
+                              Parameter.CommandClick="ExecuteClickReset" Parameter.ButtonIsVisible="true"/>                              
+                  </Children>
+                </ListPanel>       
+              </Children>
+            </ListPanel>
+          </Children>
+        </BrushWidget>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>
