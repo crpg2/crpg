@@ -14,6 +14,10 @@ internal class CrpgBattleSpawningBehavior : CrpgSpawningBehaviorBase
     private MissionTimer? _spawnTimer;
     private MissionTimer? _cavalrySpawnDelayTimer;
     private bool _botsSpawned;
+#if CRPG_SERVER
+    private CrpgTeamInventoryServer? _teamInventory;
+    private CrpgCharacterLoadoutBehaviorServer? _userLoadout;
+#endif
     public CrpgBattleSpawningBehavior(CrpgConstants constants, MultiplayerRoundController roundController, MultiplayerGameType currentGameType)
         : base(constants)
     {
@@ -27,6 +31,10 @@ internal class CrpgBattleSpawningBehavior : CrpgSpawningBehaviorBase
         base.Initialize(spawnComponent);
         _roundController.OnPreparationEnded += RequestStartSpawnSession;
         _roundController.OnRoundEnding += RequestStopSpawnSession;
+#if CRPG_SERVER
+        _teamInventory = Mission.Current.GetMissionBehavior<CrpgTeamInventoryServer>();
+        _userLoadout = Mission.Current.GetMissionBehavior<CrpgCharacterLoadoutBehaviorServer>();
+#endif
     }
 
     public override void Clear()
@@ -76,6 +84,22 @@ internal class CrpgBattleSpawningBehavior : CrpgSpawningBehaviorBase
         return _roundController.IsRoundInProgress;
     }
 
+    protected override Equipment GetCharacterEquipment(NetworkCommunicator networkPeer, CrpgPeer crpgPeer)
+    {
+#if CRPG_SERVER
+        if (_teamInventory?.IsEnabled == true)
+        {
+            return _teamInventory.GetPendingEquipment(networkPeer);
+        }
+
+        if (_userLoadout?.IsEnabled == true)
+        {
+            return _userLoadout.GetPeerEquipment(networkPeer);
+        }
+#endif
+        return base.GetCharacterEquipment(networkPeer, crpgPeer);
+    }
+
     protected override bool IsPlayerAllowedToSpawn(NetworkCommunicator networkPeer)
     {
         var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
@@ -86,6 +110,30 @@ internal class CrpgBattleSpawningBehavior : CrpgSpawningBehaviorBase
         {
             return false;
         }
+
+#if CRPG_SERVER
+        if (_teamInventory?.IsEnabled == true)
+        {
+            var equipment = _teamInventory.GetPendingEquipment(networkPeer);
+            return _teamInventory.ReadyToSpawn.Contains(networkPeer) && DoesEquipmentContainWeapon(equipment);
+        }
+
+        if (_userLoadout?.IsEnabled == true)
+        {
+            if (_userLoadout.ReadyToSpawn.Contains(networkPeer))
+            {
+                if (!DoesEquipmentContainWeapon(_userLoadout.GetPeerEquipment(networkPeer)))
+                {
+                    _userLoadout.UnsetReadyToSpawnShowMenu(networkPeer, "You must have a melee weapon equipped to spawn.");
+                    return false;
+                }
+
+                return true;
+            }
+
+            return false; // not ready to spawn
+        }
+#endif
 
         var characterEquipment = CrpgCharacterBuilder.CreateCharacterEquipment(crpgPeer.User.Character.EquippedItems);
         if (!DoesEquipmentContainWeapon(characterEquipment)) // Disallow spawning without weapons.

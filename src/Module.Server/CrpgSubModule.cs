@@ -15,6 +15,7 @@ using Debug = TaleWorlds.Library.Debug;
 #if CRPG_CLIENT
 using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.HarmonyPatches;
+using TaleWorlds.Engine.GauntletUI;
 #endif
 
 #if CRPG_EDITOR
@@ -84,7 +85,7 @@ internal class CrpgSubModule : MBSubModuleBase
         KeyBinder.RegisterContexts();
 
         // Uncomment to start watching UI changes.
-        // UIResourceManager.ResourceDepot.StartWatchingChangesInDepot();
+        UIResourceManager.ResourceDepot.StartWatchingChangesInDepot();
 #elif CRPG_EDITOR
         BannerlordPatches.Apply();
 #endif
@@ -107,7 +108,7 @@ internal class CrpgSubModule : MBSubModuleBase
         base.OnApplicationTick(delta);
         // Uncomment to hot reload UI after changes.
 #if CRPG_CLIENT
-        // UIResourceManager.ResourceDepot.CheckForChanges();
+        UIResourceManager.ResourceDepot.CheckForChanges();
 #endif
     }
 

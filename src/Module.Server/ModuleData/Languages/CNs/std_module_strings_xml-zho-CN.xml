@@ -121,5 +121,202 @@
     <string id="KORWOuG4" text="修饰键，例如：Ctrl" />
     <string id="KORWOuG5" text="更换箭袋" />
     <string id="KORWOuG6" text="更换弹药箭袋" />
+
+  <!-- Inventory GUI -->
+    <!-- CharacterEquipNavBar -->
+  <string id="KC9dxc50" text="装备" />
+  <string id="KC9dxc51" text="属性" />
+    <!-- CharacterInfoBuildEquipStatsVM -->
+  <string id="KC9dxc52" text="费用" />
+  <string id="KC9dxc53" text="所有已装备物品的总费用" />
+  <string id="KC9dxc54" text="平均维修费" />
+  <string id="KC9dxc55" text="所有已装备物品每小时的平均维修费用" />
+  <string id="KC9dxc56" text="生命值" />
+  <string id="KC9dxc57" text="基于当前配装的有效生命值。" />
+  <string id="KC9dxc58" text="重量" />
+  <string id="KC9dxc59" text="重量" />
+  <string id="KC9dxc60" text="自由负重" />
+  <string id="KC9dxc61" text="自由负重 / 受到惩罚前的最大负重" />
+  <string id="KC9dxc62" text="减重" />
+  <string id="KC9dxc63" text="扣除自由负重后的剩余重量，受力量属性影响" />
+  <string id="KC9dxc64" text="感知重量" />
+  <string id="KC9dxc65" text="感知重量" />
+  <string id="KC9dxc66" text="加速至最大速度时间" />
+  <string id="KC9dxc67" text="加速至最大奔跑速度所需时间" />
+  <string id="KC9dxc68" text="裸奔速度" />
+  <string id="KC9dxc69" text="无装备时的奔跑速度" />
+  <string id="KC9dxc70" text="当前速度" />
+  <string id="KC9dxc71" text="当前速度" />
+  <string id="KC9dxc72" text="最大武器长度" />
+  <string id="KC9dxc73" text="不受移动速度惩罚的最大武器长度，取决于力量属性" />
+  <string id="KC9dxc74" text="移速惩罚" />
+  <string id="KC9dxc75" text="根据武器长度和力量属性造成的额外移速惩罚" />
+  <string id="KC9dxc76" text="坐骑速度惩罚" />
+  <string id="KC9dxc77" text="根据骑手感知重量和马铠重量降低速度" />
+  <string id="KC9dxc78" text="坐骑属性惩罚" />
+  <string id="KC9dxc79" text="根据武器长度和骑手力量对坐骑属性造成的惩罚" />
+    <!-- CharacteristicsEditorVM -->
+  <string id="KC9dxc80" text="武器熟练度 - " />
+  <string id="KC9dxc81" text="API刷新" />
+  <string id="KC9dxc82" text="应用更改" />
+  <string id="KC9dxc83" text="重置更改" />
+  <string id="KC9dxc84" text="力量" />
+  <string id="KC9dxc85" text="力量 \n每级增加1点生命值\n需要：1点属性点" />
+  <string id="KC9dxc86" text="敏捷" />
+  <string id="KC9dxc87" text="敏捷 \n增加武器点数并略微提升移动速度\n需要：1点属性点" />
+  <string id="KC9dxc88" text="属性 - " />
+  <string id="KC9dxc89" text="将1点属性点转换为2点技能点" />
+  <string id="KC9dxc90" text="技能 - " />
+  <string id="KC9dxc91" text="将2点技能点转换为1点属性点。" />
+  <string id="KC9dxc92" text="单手" />
+  <string id="KC9dxc93" text="双手" />
+  <string id="KC9dxc94" text="长杆" />
+  <string id="KC9dxc95" text="弓" />
+  <string id="KC9dxc96" text="弩" />
+  <string id="KC9dxc97" text="投掷" />
+  <string id="KC9dxc98" text="铁骨" />
+  <string id="KC9dxc99" text="铁骨\n每级增加{HEALTH_PER_LEVEL}点生命值\n需要：每级3点力量" />
+  <string id="KC9dx100" text="强力打击" />
+  <string id="KC9dx101" text="强力打击\n近战武器伤害提升{DAMAGE_FACTOR}%\n需要：每级3点力量" />
+  <string id="KC9dx102" text="强力拉弓" />
+  <string id="KC9dx103" text="强力拉弓\n伤害提升{DAMAGE_FACTOR}%并增加弓的稳定性\n需要：每级3点力量" />
+  <string id="KC9dx104" text="强力投掷" />
+  <string id="KC9dx105" text="强力投掷\n伤害提升{DAMAGE_FACTOR}%并增加投掷武器稳定性\n需要：每级6点力量" />
+  <string id="KC9dx106" text="体术" />
+  <string id="KC9dx107" text="体术\n提升最大奔跑速度并缩短加速时间\n需要：每级3点敏捷" />
+  <string id="KC9dx108" text="骑术" />
+  <string id="KC9dx109" text="骑术\n提升骑乘速度、加速度、机动性和抗击落能力\n需要：每级3点敏捷" />
+  <string id="KC9dx110" text="武器大师" />
+  <string id="KC9dx111" text="武器大师\n获得武器熟练度点数\n需要：每级3点敏捷" />
+  <string id="KC9dx112" text="骑射" />
+  <string id="KC9dx113" text="骑射\n降低在移动坐骑上使用远程武器的惩罚\n需要：每级6点敏捷" />
+  <string id="KC9dx114" text="盾牌" />
+  <string id="KC9dx115" text="盾牌\n提升盾牌耐久。增加对远程攻击的覆盖。减少被武器击中时的硬直\n需要：每级6点敏捷" />
+    <!-- CharacteristicsEditorVM status and error messages -->
+  <string id="KC9dx116" text="已将2点技能点转换为1点属性点。" />
+  <string id="KC9dx117" text="已将1点属性点转换为2点技能点。" />
+  <string id="KC9dx118" text="请稍候再发送请求。" />
+  <string id="KC9dx119" text="无法应用：{ERROR_MESSAGE}" />
+  <string id="KC9dx120" text="未应用的更改已重置为初始状态。" />
+  <string id="KC9dx121" text="正在从API更新属性。" />
+  <string id="KC9dx122" text="未做任何更改。" />
+  <string id="KC9dx123" text="{SKILL_NAME}需要更多力量/敏捷才能分配。" />
+  <string id="KC9dx124" text="武器熟练度点数超限。剩余：{REMAINING}" />
+  <string id="KC9dx125" text="属性点不能为负数。" />
+  <string id="KC9dx126" text="技能点不能为负数。" />
+    <!-- CharacterEquipUiHandler Key bindings-->
+  <string id="KC9dx127" text="打开角色/装备管理器" />
+  <string id="KC9dx128" text="打开角色装备管理界面" />
+    <!-- CrpgCharacterEquipVM -->
+  <string id="KC9dx129" text="{ITEM_NAME}已不再可用。" />
+  <string id="KC9dx130" text="选择装备并出生" />
+    <!-- EquipmentPanelVM -->
+  <string id="KC9dx131" text="头部护甲" />
+  <string id="KC9dx132" text="身体护甲" />
+  <string id="KC9dx133" text="手部护甲" />
+  <string id="KC9dx134" text="腿部护甲" />
+  <string id="KC9dx135" text="坐骑护甲" />
+    <!-- InventoryGridVM -->
+  <string id="KC9dx136" text="个人背包" />
+  <string id="KC9dx137" text="部族军械库" />
+  <string id="KC9dx138" text="队伍仓库" />
+    <!-- InventorySortTypeVM tooltips -->
+  <string id="KC9dx139" text="单手武器" />
+  <string id="KC9dx140" text="双手武器" />
+  <string id="KC9dx141" text="长杆武器" />
+  <string id="KC9dx142" text="盾牌" />
+  <string id="KC9dx143" text="投掷武器" />
+  <string id="KC9dx144" text="弓" />
+  <string id="KC9dx145" text="弩" />
+  <string id="KC9dx146" text="火器" />
+  <string id="KC9dx147" text="弹药" />
+  <string id="KC9dx148" text="头部护甲" />
+  <string id="KC9dx149" text="披风" />
+  <string id="KC9dx150" text="胸部护甲" />
+  <string id="KC9dx151" text="手部护甲" />
+  <string id="KC9dx152" text="腿部护甲" />
+  <string id="KC9dx153" text="坐骑" />
+  <string id="KC9dx154" text="马铠" />
+  <string id="KC9dx155" text="旗帜" />
+    <!-- ItemInfoVM -->
+  <string id="KC9dx156" text="加入军械库" />
+  <string id="KC9dx157" text="从军械库移除" />
+  <string id="KC9dx158" text="从军械库借用" />
+  <string id="KC9dx159" text="强制归还" />
+  <string id="KC9dx160" text="不可用" />
+  <string id="KC9dx161" text="归还军械库" />
+  <string id="KC9dx162" text="军械库状态无效" />
+  <string id="KC9dx163" text="维护费" />
+  <string id="KC9dx164" text="价格" />
+  <string id="KC9dx165" text="类型/分类" />
+  <string id="KC9dx166" text="护甲套装" />
+  <string id="KC9dx167" text="文化" />
+  <string id="KC9dx168" text="特性" />
+  <string id="KC9dx169" text="使用队伍颜色" />
+  <string id="KC9dx170" text="材质" />
+  <string id="KC9dx171" text="重量" />
+  <string id="KC9dx172" text="头部护甲" />
+  <string id="KC9dx173" text="身体护甲" />
+  <string id="KC9dx174" text="手臂护甲" />
+  <string id="KC9dx175" text="腿部护甲" />
+  <string id="KC9dx176" text="坐骑类型" />
+  <string id="KC9dx177" text="骆驼" />
+  <string id="KC9dx178" text="马匹" />
+  <string id="KC9dx179" text="体长" />
+  <string id="KC9dx180" text="冲撞伤害" />
+  <string id="KC9dx181" text="机动性" />
+  <string id="KC9dx182" text="速度" />
+  <string id="KC9dx183" text="生命值" />
+  <string id="KC9dx184" text="距离" />
+  <string id="KC9dx185" text="操控性" />
+  <string id="KC9dx186" text="刺击伤害" />
+  <string id="KC9dx187" text="刺击速度" />
+  <string id="KC9dx188" text="挥击伤害" />
+  <string id="KC9dx189" text="挥击速度" />
+  <string id="KC9dx190" text="斩切" />
+  <string id="KC9dx191" text="穿刺" />
+  <string id="KC9dx192" text="伤害类型" />
+  <string id="KC9dx193" text="伤害" />
+  <string id="KC9dx194" text="弹药重量" />
+  <string id="KC9dx195" text="弹药" />
+  <string id="KC9dx196" text="精准度" />
+  <string id="KC9dx197" text="投射速度" />
+  <string id="KC9dx198" text="装填速度" />
+  <string id="KC9dx199" text="瞄准速度" />
+  <string id="KC9dx200" text="耐久度" />
+  <string id="KC9dx201" text="护甲" />
+  <string id="KC9dx202" text="强力劈砍" />
+  <string id="KC9dx203" text="克制盾牌" />
+  <string id="KC9dx204" text="穿透盾牌" />
+  <string id="KC9dx205" text="击落坐骑" />
+  <string id="KC9dx206" text="击倒" />
+  <string id="KC9dx207" text="骑马时无法装填" />
+  <string id="KC9dx208" text="轻型弩" />
+  <string id="KC9dx209" text="重型弩" />
+  <string id="KC9dx210" text="长弓" />
+  <string id="KC9dx211" text="弓" />
+  <string id="KC9dx212" text="支撑" />
+  <string id="KC9dx213" text="长矛" />
+  <string id="KC9dx214" text="骑马时无法使用" />
+  <string id="KC9dx215" text="换武器时丢弃" />
+    <!-- CrpgCharacterLoadoutBehaviorClient -->
+  <string id="KC9dx216" text="装备已更新。" />
+  <string id="KC9dx217" text="已从{SLOT}卸下{ITEM_NAME}。" />
+  <string id="KC9dx218" text="已将{ITEM_NAME}装备到{SLOT}。" />
+  <string id="KC9dx219" text="{ITEM_NAME}已加入部族军械库。" />
+  <string id="KC9dx220" text="{ITEM_NAME}已从部族军械库移除。" />
+  <string id="KC9dx221" text="{ITEM_NAME}已从部族军械库借出。" />
+  <string id="KC9dx222" text="{ITEM_NAME}已归还部族军械库。" />
+  <string id="KC9dx223" text="部族军械库：未知操作{ACTION}" />
+  <string id="KC9dx224" text="属性更新失败：{ERROR}" />
+  <string id="KC9dx225" text="属性更新成功" />
+    <!-- CrpgClanArmoryClient -->
+  <string id="KC9dx226" text="军械库 -- 请稍候再试。" />
+  <string id="KC9dx227" text="军械库操作失败：{ERROR}" />
+    <!-- CrpgTeamInventoryClient -->
+  <string id="KC9dx228" text="已将{ITEM_NAME}装备到{SLOT}。" />
+  <string id="KC9dx229" text="已从{SLOT}卸下{ITEM_NAME}。" />
+    <!-- CrpgTeamInventoryServer -->
+  <string id="KC9dx230" text="选择装备后点击就绪" />    
   </strings>
 </base>

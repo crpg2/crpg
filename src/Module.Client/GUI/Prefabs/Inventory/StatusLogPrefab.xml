@@ -1,0 +1,23 @@
+<Prefab Name="StatusLogPrefab">
+  <Parameters>
+    <Parameter Name="PositionX" DefaultValue="0"/>
+    <Parameter Name="PositionY" DefaultValue="-110"/>
+  </Parameters>
+  <Window>
+    <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+        StackLayout.LayoutMethod="VerticalBottomToTop"
+        HorizontalAlignment="Center" VerticalAlignment="Bottom"
+        PositionXOffset="*PositionX"
+        PositionYOffset="*PositionY"    
+        RenderLate="True"
+        DataSource="{StatusMessages}">
+      <ItemTemplate>
+        <TextWidget Text="@Message" IsDisabled="@IsError"
+            DoNotAcceptEvents="True"
+            WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="25"
+            HorizontalAlignment="Center"
+            Brush="Crpg.Loadout.Status.Text" />
+      </ItemTemplate>
+    </ListPanel>
+  </Window>
+</Prefab>   

@@ -1,0 +1,19 @@
+<Prefab Name="ItemRankIconPrefab">
+  <Parameters>
+    <Parameter Name="Width"  DefaultValue="15" />
+    <Parameter Name="Height" DefaultValue="15" />
+  </Parameters>  
+  <Window>
+    <Widget IsVisible="*IconIsVisible" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+            SuggestedWidth="*Width" SuggestedHeight="*Height" >
+      <Children>            
+        <BrushWidget Id="ItemRank1" Brush="Crpg.Item.Rank.Icon_1" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+            SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@Rank1Visible" />
+        <BrushWidget Id="ItemRank2" Brush="Crpg.Item.Rank.Icon_2" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+            SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@Rank2Visible" />
+        <BrushWidget Id="ItemRank3" Brush="Crpg.Item.Rank.Icon_3" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+            SuggestedWidth="*Width" SuggestedHeight="*Height" IsVisible="@Rank3Visible" />
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>
