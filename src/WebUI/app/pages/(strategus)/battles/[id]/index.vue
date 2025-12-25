@@ -7,8 +7,8 @@ import type { BattleMercenary } from '~/models/strategus/battle'
 
 import { useBattle, useBattleFighters, useBattleMercenaries, useBattleMercenaryApplications } from '~/composables/strategus/battle/use-battle'
 import { useUser } from '~/composables/user/use-user'
-import { BATTLE_PHASE, BATTLE_SIDE } from '~/models/strategus/battle'
-import { battleIconByType, getBattleFighterByUserId, getBattleTitle } from '~/services/strategus/battle-service'
+import { BATTLE_PHASE } from '~/models/strategus/battle'
+import { getBattleFighterByUserId, getBattleTitle } from '~/services/strategus/battle-service'
 
 definePageMeta({
   layoutOptions: {

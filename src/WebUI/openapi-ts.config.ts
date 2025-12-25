@@ -22,7 +22,8 @@ export default defineConfig({
     },
     {
       name: '@hey-api/client-nuxt',
-      runtimeConfigPath: fileURLToPath(new URL('app/api.config.ts', import.meta.url)),
+      runtimeConfigPath: '../../app/api.config',
+      // runtimeConfigPath: fileURLToPath(new URL('app/api.config.ts', import.meta.url)),
     },
   ],
   parser: {

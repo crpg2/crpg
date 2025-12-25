@@ -4,7 +4,6 @@ export const CHARACTER_QUERY_KEYS = {
   items: (id: number) => [...CHARACTER_QUERY_KEYS.byId(id), { items: true }] as const,
   characteristics: (id: number) => [...CHARACTER_QUERY_KEYS.byId(id), { characteristics: true }] as const,
   statistics: (id: number) => [...CHARACTER_QUERY_KEYS.byId(id), { statistics: true }] as const,
-
 }
 
 export const USER_QUERY_KEYS = {

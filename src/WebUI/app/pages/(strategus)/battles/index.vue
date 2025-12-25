@@ -3,10 +3,9 @@ import type { SelectItem, TabsItem } from '@nuxt/ui'
 
 import { useRouteQuery } from '@vueuse/router'
 
-import type { Battle, BattlePhase, BattleType } from '~/models/strategus/battle'
+import type { BattlePhase, BattleType } from '~/models/strategus/battle'
 
 import { useRegionQuery } from '~/composables/use-region'
-import { useUser } from '~/composables/user/use-user'
 import { SomeRole } from '~/models/role'
 import { BATTLE_PHASE, BATTLE_TYPE } from '~/models/strategus/battle'
 import { getBattles, SEARCHABLE_BATTLE_PHASE } from '~/services/strategus/battle-service'
