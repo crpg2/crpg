@@ -69,7 +69,7 @@ internal class AmmoQuiverChangeComponent : MissionNetwork
             return false;
         }
 
-        wieldedWeaponIndex = agent.GetWieldedItemIndex(Agent.HandIndex.MainHand);
+        wieldedWeaponIndex = agent.GetPrimaryWieldedItemIndex();
         if (wieldedWeaponIndex == EquipmentIndex.None)
         {
             return false;
@@ -159,7 +159,7 @@ internal class AmmoQuiverChangeComponent : MissionNetwork
             return;
         }
 
-        EquipmentIndex wieldedIndex = agent.GetWieldedItemIndex(Agent.HandIndex.MainHand);
+        EquipmentIndex wieldedIndex = agent.GetPrimaryWieldedItemIndex();
         MissionWeapon wieldedWeapon = agent.WieldedWeapon;
 
         if (!wieldedWeapon.IsEmpty && !wieldedWeapon.IsEqualTo(MissionWeapon.Invalid) && wieldedIndex >= EquipmentIndex.Weapon0 && wieldedIndex <= EquipmentIndex.Weapon3)

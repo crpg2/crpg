@@ -31,7 +31,7 @@ internal class CrpgEscapeMenu : MissionGauntletMultiplayerEscapeMenu
         List<EscapeMenuItemVM> items = base.GetEscapeMenuItems();
         EscapeMenuItemVM crpgWebsiteButton = new(new TextObject("{=FAkcpZdy}Character & Shop"),
             __ => _ = PlatformServices.Instance.ShowOverlayForWebPage(CrpgWebsite),
-            null, () => Tuple.Create(false, new TextObject()));
+            null, () => Tuple.Create(false, new TextObject(string.Empty)));
 
         if (_gameModeClient is CrpgDuelMissionMultiplayerClient)
         {
@@ -66,19 +66,19 @@ internal class CrpgEscapeMenu : MissionGauntletMultiplayerEscapeMenu
         {
             DuelModeChangeArena(TroopType.Infantry);
             OnEscapeMenuToggled(false);
-        }, null, () => Tuple.Create(false, new TextObject()));
+        }, null, () => Tuple.Create(false, new TextObject(string.Empty)));
 
         EscapeMenuItemVM preferredArenaArcButton = new(new TextObject("Arena: Ranged"), _ =>
         {
             DuelModeChangeArena(TroopType.Ranged);
             OnEscapeMenuToggled(false);
-        }, null, () => Tuple.Create(false, new TextObject()));
+        }, null, () => Tuple.Create(false, new TextObject(string.Empty)));
 
         EscapeMenuItemVM preferredArenaCavButton = new(new TextObject("Arena: Cavalry"), _ =>
         {
             DuelModeChangeArena(TroopType.Cavalry);
             OnEscapeMenuToggled(false);
-        }, null, () => Tuple.Create(false, new TextObject()));
+        }, null, () => Tuple.Create(false, new TextObject(string.Empty)));
 
         List<EscapeMenuItemVM> newButtons = new() { preferredArenaInfButton, preferredArenaArcButton, preferredArenaCavButton };
         items.InsertRange(items.Count - 2, newButtons);
@@ -103,7 +103,7 @@ internal class CrpgEscapeMenu : MissionGauntletMultiplayerEscapeMenu
         {
             RefreshCharacter();
             OnEscapeMenuToggled(false);
-        }, null, () => Tuple.Create(false, TextObject.Empty));
+        }, null, () => Tuple.Create(false, new TextObject(string.Empty)));
 
         List<EscapeMenuItemVM> newButtons = new() { preferredArenaInfButton };
         items.InsertRange(items.Count - 2, newButtons);

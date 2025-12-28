@@ -6,8 +6,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using TaleWorlds.Core;
+using TaleWorlds.Engine;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.Tableaus;
+using TaleWorlds.MountAndBlade.View.Tableaus.Thumbnails;
+using Path = System.IO.Path;
 
 namespace Crpg.Module.DataExport;
 
@@ -185,11 +188,11 @@ internal class ItemExporter : IDataExporter
 
             // Texture.SaveToFile doesn't accept absolute paths
             // TODO: what is second argument "additionalArgs"?
-            TableauCacheManager.Current.BeginCreateItemTexture(mbItem, null, texture =>
+            ThumbnailCacheManager.Current.CreateTexture(new ItemThumbnailCreationData(mbItem, null, texture =>
             {
-                texture.SaveToFile(Path.Combine(outputPath, mbItem.StringId + ".png"));
+                texture.SaveToFile(Path.Combine(outputPath, mbItem.StringId + ".png"), true);
                 createTextureTaskSource.SetResult(null);
-            });
+            }, null));
         }
 
         return Task.WhenAll(createTextureTasks);

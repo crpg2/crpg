@@ -77,9 +77,9 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMultiplayerFactionBanVoteUIHandler(),
             ViewCreator.CreateMissionAgentStatusUIHandler(mission),
             ViewCreator.CreateMissionMainAgentEquipmentController(mission), // Pick/drop items.
+            ViewCreator.CreateMissionMainAgentCheerBarkControllerView(mission),
             new MissionGauntletMultiplayerOrderUIHandler(),
-            new OrderTroopPlacer(),
-            new CrpgMissionGauntletMainAgentCheerControllerView(),
+            new OrderTroopPlacer(null),
             crpgEscapeMenu,
             ViewCreator.CreateMissionAgentLabelUIHandler(mission),
             MultiplayerViewCreator.CreateMultiplayerTeamSelectUIHandler(),

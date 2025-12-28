@@ -58,7 +58,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMultiplayerFactionBanVoteUIHandler(),
             ViewCreator.CreateMissionAgentStatusUIHandler(mission),
             ViewCreator.CreateMissionMainAgentEquipmentController(mission), // Pick/drop items.
-            new CrpgMissionGauntletMainAgentCheerControllerView(),
+            ViewCreator.CreateMissionMainAgentCheerBarkControllerView(mission),
             crpgEscapeMenu,
             ViewCreator.CreateMissionAgentLabelUIHandler(mission),
             MultiplayerViewCreator.CreateMultiplayerTeamSelectUIHandler(),

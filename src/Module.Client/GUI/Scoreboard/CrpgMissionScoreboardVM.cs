@@ -6,11 +6,13 @@ using Crpg.Module.Gui;
 using TaleWorlds.CampaignSystem.ViewModelCollection.Input;
 using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection.Generic;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Diamond;
+using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.Scoreboard;
 using TaleWorlds.PlatformService;
@@ -85,8 +87,8 @@ internal class CrpgMissionScoreboardVM : ViewModel
     private bool _isPlayerActionsActive;
 
     private string _toggleMuteText = default!;
-    private ImageIdentifierVM? _allyBanner;
-    private ImageIdentifierVM? _enemyBanner;
+    private BannerImageIdentifierVM? _allyBanner;
+    private BannerImageIdentifierVM? _enemyBanner;
     public CrpgMissionScoreboardVM(bool isSingleTeam, Mission mission)
     {
         _chatBox = Game.Current.GetGameHandler<ChatBox>();
@@ -144,10 +146,10 @@ internal class CrpgMissionScoreboardVM : ViewModel
         }
     }
 
-    private void HandleBannerChange(BannerCode attackerBanner, BannerCode defenderBanner, string attackerName, string defenderName)
+    private void HandleBannerChange(string attackerBanner, string defenderBanner, string attackerName, string defenderName)
     {
-        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? attackerBanner : defenderBanner, true);
-        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Defender ? attackerBanner : defenderBanner, true);
+        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(attackerBanner) : new Banner(defenderBanner), true);
+        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Defender ? new Banner(attackerBanner) : new Banner(defenderBanner), true);
     }
 
     public override void RefreshValues()
@@ -645,7 +647,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
     }
 
     [DataSourceProperty]
-    public ImageIdentifierVM? AllyBanner
+    public BannerImageIdentifierVM? AllyBanner
     {
         get
         {
@@ -664,7 +666,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
     }
 
     [DataSourceProperty]
-    public ImageIdentifierVM? EnemyBanner
+    public BannerImageIdentifierVM? EnemyBanner
     {
         get
         {

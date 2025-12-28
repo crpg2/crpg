@@ -249,7 +249,7 @@ private int totalNumberOfBots = 800;
         }
     }
 
-    private CrpgCharacterObject CreateCharacter(CrpgCharacter character, CrpgConstants constants, CharacterSkills skills, Equipment equipment)
+    private CrpgCharacterObject CreateCharacter(CrpgCharacter character, CrpgConstants constants, MBCharacterSkills skills, Equipment equipment)
     {
         CrpgCharacterObject characterObject = new(skills, equipment)
         {
@@ -274,7 +274,7 @@ private int totalNumberOfBots = 800;
         Vec2 initialDirection = spawnFrame.rotation.f.AsVec2.Normalized();
 
         AgentBuildData agentBuildData = new AgentBuildData(character)
-            .Equipment(character.AllEquipments[MBRandom.RandomInt(character.AllEquipments.Count)])
+            .Equipment(character.RandomBattleEquipment)
             .TroopOrigin(new BasicBattleAgentOrigin(character))
             .EquipmentSeed(MissionLobbyComponent.GetRandomFaceSeedForCharacter(character))
             .Team(team)
@@ -296,7 +296,7 @@ private int totalNumberOfBots = 800;
             {
                 Equipment characterEquipment = CrpgCharacterBuilder.CreateBotCharacterEquipment(crpgPeer.User.Character.EquippedItems);
                 MultiplayerClassDivisions.MPHeroClass? peerClass = MBObjectManager.Instance.GetObject<MultiplayerClassDivisions.MPHeroClass>($"crpg_captain_bot_division_{p}");
-                CharacterSkills characterSkills = CrpgCharacterBuilder.CreateCharacterSkills(crpgPeer.User!.Character.Characteristics);
+                MBCharacterSkills characterSkills = CrpgCharacterBuilder.CreateCharacterSkills(crpgPeer.User!.Character.Characteristics);
                 BasicCharacterObject? characterXml = peerClass.HeroCharacter;
                 CrpgBattleAgentOrigin troopOrigin = new CrpgBattleAgentOrigin(characterXml, characterSkills);
                 agentBuildData.OwningMissionPeer(peer);
@@ -314,9 +314,9 @@ private int totalNumberOfBots = 800;
             character.GetBodyPropertiesMax(),
             (int)agentBuildData.AgentOverridenSpawnEquipment.HairCoverType,
             agentBuildData.AgentEquipmentSeed,
-            character.HairTags,
-            character.BeardTags,
-            character.TattooTags);
+            character.BodyPropertyRange.HairTags,
+            character.BodyPropertyRange.BeardTags,
+            character.BodyPropertyRange.TattooTags);
         agentBuildData.BodyProperties(bodyProperties);
 
         Agent agent = Mission.SpawnAgent(agentBuildData);

@@ -18,10 +18,9 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         _constants = constants;
     }
 
-    public override float CalculateDamage(
+    public override float ApplyGeneralDamageModifiers(
         in AttackInformation attackInformation,
         in AttackCollisionData collisionData,
-        in MissionWeapon weapon,
         float baseDamage)
     {
         List<WeaponClass> meleeClass = new()
@@ -49,14 +48,14 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
             WeaponClass.OneHandedAxe,
             WeaponClass.TwoHandedAxe,
         };
-        float finalDamage = base.CalculateDamage(attackInformation, collisionData, weapon, baseDamage);
+        float finalDamage = base.ApplyGeneralDamageModifiers(attackInformation, collisionData, baseDamage);
 
         if (IsPlayerCharacterAttackingVipBot(attackInformation))
         {
             return 0f;
         }
 
-        if (weapon.IsEmpty)
+        if (attackInformation.AttackerWeapon.IsEmpty)
         {
             // Increase fist damage with strength and glove armor.
             int strengthSkill = GetSkillValue(attackInformation.AttackerAgentOrigin, CrpgSkills.Strength);
@@ -71,7 +70,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
 
         if (IsPlayerCharacterAttackingDtvBot(attackInformation))
         {
-            switch (weapon.CurrentUsageItem.WeaponClass)
+            switch (attackInformation.AttackerWeapon.CurrentUsageItem.WeaponClass)
             {
                 case WeaponClass.Bolt:
                 case WeaponClass.Cartridge:
@@ -91,7 +90,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
 
         if (IsPlayerCharacterAttackingDtvBoss(attackInformation))
         {
-            if (weapon.Item.StringId.Contains("ballista_projectile"))
+            if (attackInformation.AttackerWeapon.Item.StringId.Contains("ballista_projectile"))
             {
                 finalDamage *= 0.05f;
             }
@@ -102,7 +101,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         {
             int shieldSkill = GetSkillValue(attackInformation.VictimAgentOrigin, CrpgSkills.Shield);
             finalDamage /= MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.DurabilityFactorForShieldRecursiveCoefs);
-            if (meleeClass.Contains(weapon.CurrentUsageItem.WeaponClass))
+            if (meleeClass.Contains(attackInformation.AttackerWeapon.CurrentUsageItem.WeaponClass))
             {
                 // in bannerlord/Src/TaleWorlds.MountAndBlade/MissionCombatMechanicsHelper.cs/GetAttackCollisionResults()
                 // ComputeBlowDamageOnShield is fed the basemagnitude from ComputeBlowMagnitude() instead of the specialmagnitude
@@ -111,29 +110,29 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
                 //  basemagnitude only takes in account both sweetspots and speedbonus , but not the damage multiplicator that each weapon have
                 finalDamage *=
                     collisionData.StrikeType == (int)StrikeType.Thrust
-                        ? weapon.CurrentUsageItem.ThrustDamageFactor
-                        : weapon.CurrentUsageItem.SwingDamageFactor;
+                        ? attackInformation.AttackerWeapon.CurrentUsageItem.ThrustDamageFactor
+                        : attackInformation.AttackerWeapon.CurrentUsageItem.SwingDamageFactor;
 
-                if (weapon.CurrentUsageItem.WeaponFlags.HasAnyFlag(WeaponFlags.BonusAgainstShield))
+                if (attackInformation.AttackerWeapon.CurrentUsageItem.WeaponFlags.HasAnyFlag(WeaponFlags.BonusAgainstShield))
                 {
                     // this bonus is on top of the native x2 in MissionCombatMechanicsHelper
                     // so the final bonus is 5.0 for one- and two- handed axes and 3.5 for everything else. We do this instead of nerfing the impact of shield skill so shield can stay virtually unbreakable against sword.
                     // it is the same logic as arrows not dealing a lot of damage to horse but spears dealing extra damage to horses
                     // As we want archer to fear cavs and cavs to fear spears, we want swords to fear shielders and shielders to fear axes.
 
-                    finalDamage *= axeClass.Contains(weapon.CurrentUsageItem.WeaponClass) ? 2.5f : 1.75f;
+                    finalDamage *= axeClass.Contains(attackInformation.AttackerWeapon.CurrentUsageItem.WeaponClass) ? 2.5f : 1.75f;
                 }
             }
         }
 
         // Horse HP and eHP is currently good. To adjust their performance, adjust global melee damage and global non-mounted ranged damage. Mounted ranged damage is not increase to help cavalry attack HA
-        if (!attackInformation.IsVictimAgentHuman && weapon.CurrentUsageItem.IsMeleeWeapon)
+        if (!attackInformation.IsVictimAgentHuman && attackInformation.AttackerWeapon.CurrentUsageItem.IsMeleeWeapon)
         {
             finalDamage *= 1.4f;
         }
 
         if (!attackInformation.IsVictimAgentHuman
-            && weapon.CurrentUsageItem.IsRangedWeapon
+            && attackInformation.AttackerWeapon.CurrentUsageItem.IsRangedWeapon
             && !attackInformation.DoesAttackerHaveMountAgent)
         {
             finalDamage *= 1.3f;
@@ -150,7 +149,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
             finalDamage *= 0.23f; // Decrease damage from couched lance.
         }
 
-        if (IsSwashbuckler(weapon, collisionData, attackInformation.AttackerAgent))
+        if (IsSwashbuckler(attackInformation.AttackerWeapon, collisionData, attackInformation.AttackerAgent))
         {
             finalDamage *= 1.10f;
         }
@@ -329,29 +328,33 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
     }
 
     public override void CalculateDefendedBlowStunMultipliers(
-        Agent attackerAgent,
-        Agent defenderAgent,
-        CombatCollisionResult collisionResult,
-        WeaponComponentData attackerWeapon,
-        WeaponComponentData defenderWeapon,
-        out float attackerStunMultiplier,
-        out float defenderStunMultiplier)
+    Agent attackerAgent,
+    Agent defenderAgent,
+    CombatCollisionResult collisionResult,
+    WeaponComponentData attackerWeapon,
+    WeaponComponentData defenderWeapon,
+    ref float attackerStunPeriod,
+    ref float defenderStunPeriod)
     {
-        attackerStunMultiplier = 1f;
+        // Let base game handle normal stun logic
+        base.CalculateDefendedBlowStunMultipliers(
+            attackerAgent, defenderAgent, collisionResult,
+            attackerWeapon, defenderWeapon,
+            ref attackerStunPeriod, ref defenderStunPeriod);
+
+        // Only tweak for shield blocks
         if (collisionResult == CombatCollisionResult.Blocked && defenderAgent.WieldedOffhandWeapon.IsShield())
         {
             int shieldSkill = 0;
             if (defenderAgent.Origin is CrpgBattleAgentOrigin crpgOrigin)
             {
-                shieldSkill = crpgOrigin.Skills.GetPropertyValue(CrpgSkills.Shield);
+                shieldSkill = crpgOrigin.Skills.Skills.GetPropertyValue(CrpgSkills.Shield);
             }
 
-            defenderStunMultiplier = 1 / MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
+            defenderStunPeriod = 1 / MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
 
             return;
         }
-
-        defenderStunMultiplier = 1f;
     }
 
     // TODO : Consider reworking once https://forums.taleworlds.com/index.php?threads/missioncombatmechanicshelper-getdefendcollisionresults-bypass-strikemagnitudecalculationmodel.459379 is fixed
@@ -364,15 +367,15 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         WeaponComponentData defendItem,
         bool isPassiveUsage)
     {
-        EquipmentIndex wieldedItemIndex = attackerAgent.GetWieldedItemIndex(Agent.HandIndex.OffHand);
+        EquipmentIndex wieldedItemIndex = attackerAgent.GetOffhandWieldedItemIndex();
         if (wieldedItemIndex == EquipmentIndex.None)
         {
-            wieldedItemIndex = attackerAgent.GetWieldedItemIndex(Agent.HandIndex.MainHand);
+            wieldedItemIndex = attackerAgent.GetPrimaryWieldedItemIndex();
         }
 
         var weaponComponentData = wieldedItemIndex != EquipmentIndex.None
-            ? attackerAgent.Equipment[wieldedItemIndex].CurrentUsageItem
-            : null;
+                ? attackerAgent.Equipment[wieldedItemIndex].CurrentUsageItem
+                : null;
         if (weaponComponentData == null
             || isPassiveUsage
             || !weaponComponentData.WeaponFlags.HasAnyFlag(WeaponFlags.CanCrushThrough)
@@ -382,15 +385,18 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
             return false;
         }
 
-        float attackerPower = 3f * GetSkillValue(attackerAgent.Origin, CrpgSkills.PowerStrike);
+        int powerStrike = GetSkillValue(attackerAgent, CrpgSkills.PowerStrike);
+        int defenderStrength = GetSkillValue(defenderAgent, CrpgSkills.Strength);
+        int defenderShield = GetSkillValue(defenderAgent, CrpgSkills.Shield);
 
-        float defenderStrengthSkill = GetSkillValue(defenderAgent.Origin, CrpgSkills.Strength);
-        float defenderShieldSkill = GetSkillValue(defenderAgent.Origin, CrpgSkills.Shield);
-        float defenderDefendPower = defendItem != null && defendItem.IsShield
-            ? Math.Max(defenderShieldSkill * 6 + 3, defenderStrengthSkill)
-            : defenderStrengthSkill;
+        float attackerPower = 3f * powerStrike;
+        float defenderDefendPower = (defendItem?.IsShield == true)
+                ? (float)System.Math.Max(defenderShield * 6 + 3, defenderStrength)
+                : defenderStrength;
+        defenderDefendPower = System.Math.Max(defenderDefendPower, 1f);
+
         int randomNumber = MBRandom.RandomInt(0, 1000);
-        return randomNumber / 10f < Math.Pow(attackerPower / defenderDefendPower / 2.6f, 2.6f) * 100f;
+        return randomNumber / 10f < (float)System.Math.Pow(attackerPower / defenderDefendPower / 2.6f, 2.6f) * 100f;
     }
 
     // MissionCombatMechanicsHelper.cs/DecideMountRearedByBlow
@@ -415,7 +421,22 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
     {
         if (agentOrigin is CrpgBattleAgentOrigin crpgOrigin)
         {
-            return crpgOrigin.Skills.GetPropertyValue(skill);
+            return crpgOrigin.Skills.Skills.GetPropertyValue(skill);
+        }
+
+        return 0;
+    }
+
+    private int GetSkillValue(Agent agent, SkillObject skill)
+    {
+        if (agent?.Origin is CrpgBattleAgentOrigin crpgOrigin)
+        {
+            return crpgOrigin.Skills.Skills.GetPropertyValue(skill);
+        }
+
+        if (agent?.Character != null && skill != null)
+        {
+            return agent.Character.GetSkillValue(skill);
         }
 
         return 0;

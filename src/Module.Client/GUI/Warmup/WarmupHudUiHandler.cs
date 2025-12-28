@@ -25,7 +25,7 @@ internal class WarmupHudUiHandler : MissionView
         base.OnMissionScreenInitialize();
 
         _dataSource = new WarmupHudVm(Mission);
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority);
+        _gauntletLayer = new GauntletLayer("WarmupHud", ViewOrderPriority);
         _gauntletLayer.LoadMovie("WarmupHud", _dataSource);
         MissionScreen.AddLayer(_gauntletLayer);
     }

@@ -1,9 +1,11 @@
 ﻿using Crpg.Module.Common;
 using Crpg.Module.Helpers;
 using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.Missions.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.EndOfRound;
 using TaleWorlds.ObjectSystem;
@@ -36,8 +38,8 @@ public class CrpgEndOfRoundVm : ViewModel
     private MPPlayerVM _defenderMvp = default!;
     private string _attackerMvpTitleText = string.Empty;
     private string _defenderMvpTitleText = string.Empty;
-    private ImageIdentifierVM? _allyBanner;
-    private ImageIdentifierVM? _enemyBanner;
+    private BannerImageIdentifierVM? _allyBanner;
+    private BannerImageIdentifierVM? _enemyBanner;
 
     public CrpgEndOfRoundVm(MissionScoreboardComponent scoreboardComponent,
         MissionLobbyComponent missionLobbyComponent, IRoundComponent multiplayerRoundComponent)
@@ -66,8 +68,8 @@ public class CrpgEndOfRoundVm : ViewModel
         }
         else
         {
-            _roundEndReasonAllyTeamGameModeSpecificEndedTextObject = new TextObject();
-            _roundEndReasonEnemyTeamGameModeSpecificEndedTextObject = new TextObject();
+            _roundEndReasonAllyTeamGameModeSpecificEndedTextObject = new TextObject(string.Empty);
+            _roundEndReasonEnemyTeamGameModeSpecificEndedTextObject = new TextObject(string.Empty);
         }
 
         AttackerSide = new MultiplayerEndOfRoundSideVM();
@@ -79,10 +81,10 @@ public class CrpgEndOfRoundVm : ViewModel
         }
     }
 
-    private void HandleBannerChange(BannerCode attackerBanner, BannerCode defenderBanner, string attackerName, string defenderName)
+    private void HandleBannerChange(string attackerBanner, string defenderBanner, string attackerName, string defenderName)
     {
-        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? attackerBanner : defenderBanner, true);
-        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? defenderBanner : attackerBanner, true);
+        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(attackerBanner) : new Banner(defenderBanner), true);
+        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(defenderBanner) : new Banner(attackerBanner), true);
     }
 
     public override void RefreshValues()
@@ -117,15 +119,20 @@ public class CrpgEndOfRoundVm : ViewModel
         {
             AttackerMVPTitleText = GetMvpTitleText(@object);
             DefenderMVPTitleText = GetMvpTitleText(object2);
-            AttackerSide.SetData(@object, missionScoreboardSide.SideScore, isWinner, false);
-            DefenderSide.SetData(object2, missionScoreboardSide2.SideScore, isWinner2, @object == object2);
+            AttackerSide.SetData(@object, missionScoreboardSide.SideScore, isWinner,
+                new MultiplayerBattleColors.MultiplayerCultureColorInfo(@object, false));
+
+            DefenderSide.SetData(object2, missionScoreboardSide2.SideScore, isWinner2,
+                new MultiplayerBattleColors.MultiplayerCultureColorInfo(@object2, @object == @object2));
         }
         else
         {
             DefenderMVPTitleText = GetMvpTitleText(@object);
             AttackerMVPTitleText = GetMvpTitleText(object2);
-            DefenderSide.SetData(@object, missionScoreboardSide.SideScore, isWinner, @object == object2);
-            AttackerSide.SetData(object2, missionScoreboardSide2.SideScore, isWinner2, false);
+            DefenderSide.SetData(@object, missionScoreboardSide.SideScore, isWinner,
+                new MultiplayerBattleColors.MultiplayerCultureColorInfo(@object2, @object == @object2));
+            AttackerSide.SetData(object2, missionScoreboardSide2.SideScore, isWinner2,
+                new MultiplayerBattleColors.MultiplayerCultureColorInfo(@object2, false));
         }
 
         if (_scoreboardComponent.Sides.FirstOrDefault(s => s != null && s.Side == allyBattleSide) != null)
@@ -486,7 +493,7 @@ public class CrpgEndOfRoundVm : ViewModel
         }
     }
     [DataSourceProperty]
-    public ImageIdentifierVM? AllyBanner
+    public BannerImageIdentifierVM? AllyBanner
     {
         get
         {
@@ -505,7 +512,7 @@ public class CrpgEndOfRoundVm : ViewModel
     }
 
     [DataSourceProperty]
-    public ImageIdentifierVM? EnemyBanner
+    public BannerImageIdentifierVM? EnemyBanner
     {
         get
         {

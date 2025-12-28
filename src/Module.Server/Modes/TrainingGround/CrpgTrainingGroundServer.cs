@@ -321,7 +321,7 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
         base.AfterStart();
         Mission.Current.SetMissionCorpseFadeOutTimeInSeconds(CorpseFadeOutTimeInSeconds);
         BasicCultureObject @object = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue());
-        Banner banner = new(@object.BannerKey, @object.BackgroundColor1, @object.ForegroundColor1);
+        Banner banner = @object.Banner;
         Mission.Teams.Add(BattleSideEnum.Attacker, @object.BackgroundColor1, @object.ForegroundColor1, banner, isPlayerGeneral: false);
         _rewardTickTimer = new(60);
     }

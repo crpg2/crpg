@@ -53,7 +53,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
     {
         if (agent.Origin is CrpgBattleAgentOrigin crpgOrigin)
         {
-            return crpgOrigin.Skills.GetPropertyValue(skill);
+            return crpgOrigin.Skills.Skills.GetPropertyValue(skill);
         }
 
         return base.GetEffectiveSkill(agent, skill);
@@ -147,6 +147,21 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
     /// <summary>AI difficulty.</summary>
     public override float GetDifficultyModifier()
+    {
+        return 1f;
+    }
+
+    public override float GetBreatheHoldMaxDuration(Agent agent, float baseBreatheHoldMaxDuration)
+    {
+        return baseBreatheHoldMaxDuration;
+    }
+
+    public override float GetEquipmentStealthBonus(Agent agent)
+    {
+        return 1f;
+    }
+
+    public override float GetSneakAttackMultiplier(Agent agent, WeaponComponentData weapon)
     {
         return 1f;
     }
@@ -271,7 +286,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         if (agent.RiderAgent is Agent rider)
         {
             int strengthSkill = GetEffectiveSkill(rider, CrpgSkills.Strength);
-            EquipmentIndex weaponIndex = rider.GetWieldedItemIndex(Agent.HandIndex.MainHand);
+            EquipmentIndex weaponIndex = rider.GetPrimaryWieldedItemIndex();
             WeaponComponentData? riderWeapon = weaponIndex != EquipmentIndex.None
                 ? rider.Equipment[weaponIndex].CurrentUsageItem
                 : null;
@@ -336,14 +351,14 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
         MissionEquipment equipment = agent.Equipment;
         props.WeaponsEncumbrance = equipment.GetTotalWeightOfWeapons();
-        EquipmentIndex wieldedItemIndex3 = agent.GetWieldedItemIndex(Agent.HandIndex.MainHand);
+        EquipmentIndex wieldedItemIndex3 = agent.GetPrimaryWieldedItemIndex();
         WeaponComponentData? equippedItem = wieldedItemIndex3 != EquipmentIndex.None
             ? equipment[wieldedItemIndex3].CurrentUsageItem
             : null;
         ItemObject? primaryItem = wieldedItemIndex3 != EquipmentIndex.None
             ? equipment[wieldedItemIndex3].Item
             : null;
-        EquipmentIndex wieldedItemIndex4 = agent.GetWieldedItemIndex(Agent.HandIndex.OffHand);
+        EquipmentIndex wieldedItemIndex4 = agent.GetOffhandWieldedItemIndex();
         WeaponComponentData? secondaryItem = wieldedItemIndex4 != EquipmentIndex.None
             ? equipment[wieldedItemIndex4].CurrentUsageItem
             : null;
@@ -368,7 +383,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         int itemSkill = GetEffectiveSkill(agent, equippedItem?.RelevantSkill ?? DefaultSkills.Athletics);
         // Use weapon master here instead of wpf so the archer with no melee wpf can still fight.
         int weaponMaster = GetEffectiveSkill(agent, CrpgSkills.WeaponMaster);
-        props.SwingSpeedMultiplier = 0.87f + 0.00237f * (float)Math.Pow(itemSkill, 0.9f);
+        props.SwingSpeedMultiplier = 0.85f + 0.00237f * (float)Math.Pow(itemSkill, 0.9f);
         props.ThrustOrRangedReadySpeedMultiplier = props.SwingSpeedMultiplier;
         props.HandlingMultiplier = 1.05f * _constants.HandlingFactorForWeaponMaster[Math.Min(weaponMaster, _constants.HandlingFactorForWeaponMaster.Length - 1)];
         props.ShieldBashStunDurationMultiplier = 1f;
@@ -586,61 +601,68 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
     /// </summary>
     private void SetAiProperties(Agent agent, AgentDrivenProperties agentDrivenProperties, WeaponComponentData? equippedItem, WeaponComponentData? secondaryItem)
     {
+        float levelMultiplier = 1f;
         int meleeSkill = GetMeleeSkill(agent, equippedItem, secondaryItem);
-        SkillObject skill = (equippedItem == null) ? DefaultSkills.Athletics : equippedItem.RelevantSkill;
+        SkillObject skill = ((equippedItem == null) ? DefaultSkills.Athletics : equippedItem.RelevantSkill);
         int effectiveSkill = GetEffectiveSkill(agent, skill);
-        float num = MBMath.ClampFloat(CalculateAILevel(agent, meleeSkill) * GetDifficultyModifier() * (300 / 350), 0f, 1f);
-        float num2 = MBMath.ClampFloat(CalculateAILevel(agent, effectiveSkill) * GetDifficultyModifier() * (300 / 350), 0f, 1f);
+        float num = CalculateAILevel(agent, meleeSkill) * levelMultiplier;
+        float num2 = CalculateAILevel(agent, effectiveSkill) * levelMultiplier;
         float num3 = num + agent.Defensiveness;
+        float difficultyModifier = GetDifficultyModifier();
         agentDrivenProperties.AiRangedHorsebackMissileRange = 0.3f + 0.4f * num2;
         agentDrivenProperties.AiFacingMissileWatch = -0.96f + num * 0.06f;
         agentDrivenProperties.AiFlyingMissileCheckRadius = 8f - 6f * num;
         agentDrivenProperties.AiShootFreq = 0.3f + 0.7f * num2;
-        agentDrivenProperties.AiWaitBeforeShootFactor = agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : (1f - 0.5f * num2);
-        agentDrivenProperties.AIBlockOnDecideAbility = MBMath.Lerp(0.25f, 0.99f, MBMath.ClampFloat(num, 0f, 1f), 1E-05f);
-        agentDrivenProperties.AIParryOnDecideAbility = MBMath.Lerp(0.01f, 0.95f, MBMath.ClampFloat(MathF.Pow(num, 1.5f), 0f, 1f), 1E-05f);
+        agentDrivenProperties.AiWaitBeforeShootFactor = (agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : (1f - 0.5f * num2));
+        agentDrivenProperties.AIBlockOnDecideAbility = MBMath.Lerp(0.5f, 0.99f, MBMath.ClampFloat(MathF.Pow(num, 0.5f), 0f, 1f));
+        agentDrivenProperties.AIParryOnDecideAbility = MBMath.Lerp(0.5f, 0.95f, MBMath.ClampFloat(num, 0f, 1f));
         agentDrivenProperties.AiTryChamberAttackOnDecide = (num - 0.15f) * 0.1f;
-        agentDrivenProperties.AIAttackOnParryChance = 0.3f - 0.1f * agent.Defensiveness;
+        agentDrivenProperties.AIAttackOnParryChance = 0.08f - 0.02f * agent.Defensiveness;
         agentDrivenProperties.AiAttackOnParryTiming = -0.2f + 0.3f * num;
-        agentDrivenProperties.AIDecideOnAttackChance = 0.15f * agent.Defensiveness;
-        agentDrivenProperties.AIParryOnAttackAbility = MBMath.ClampFloat(num * num * num, 0f, 1f);
+        agentDrivenProperties.AIDecideOnAttackChance = 0.5f * agent.Defensiveness;
+        agentDrivenProperties.AIParryOnAttackAbility = MBMath.ClampFloat(num, 0f, 1f);
         agentDrivenProperties.AiKick = -0.1f + ((num > 0.4f) ? 0.4f : num);
         agentDrivenProperties.AiAttackCalculationMaxTimeFactor = num;
         agentDrivenProperties.AiDecideOnAttackWhenReceiveHitTiming = -0.25f * (1f - num);
         agentDrivenProperties.AiDecideOnAttackContinueAction = -0.5f * (1f - num);
         agentDrivenProperties.AiDecideOnAttackingContinue = 0.1f * num;
-        agentDrivenProperties.AIParryOnAttackingContinueAbility = MBMath.Lerp(0.05f, 0.95f, MBMath.ClampFloat(num * num * num, 0f, 1f), 1E-05f);
-        agentDrivenProperties.AIDecideOnRealizeEnemyBlockingAttackAbility = 0.5f * MBMath.ClampFloat(MathF.Pow(num, 2.5f) - 0.1f, 0f, 1f);
-        agentDrivenProperties.AIRealizeBlockingFromIncorrectSideAbility = 0.5f * MBMath.ClampFloat(MathF.Pow(num, 2.5f) - 0.1f, 0f, 1f);
+        agentDrivenProperties.AIParryOnAttackingContinueAbility = MBMath.Lerp(0.5f, 0.95f, MBMath.ClampFloat(num, 0f, 1f));
+        agentDrivenProperties.AIDecideOnRealizeEnemyBlockingAttackAbility = MBMath.ClampFloat(MathF.Pow(num, 2.5f) - 0.1f, 0f, 1f);
+        agentDrivenProperties.AIRealizeBlockingFromIncorrectSideAbility = MBMath.ClampFloat(MathF.Pow(num, 2.5f) - 0.01f, 0f, 1f);
         agentDrivenProperties.AiAttackingShieldDefenseChance = 0.2f + 0.3f * num;
         agentDrivenProperties.AiAttackingShieldDefenseTimer = -0.3f + 0.3f * num;
-        agentDrivenProperties.AiRandomizedDefendDirectionChance = 1f - MathF.Log(num * 7f + 1f, 2f) * 0.33333f;
+        agentDrivenProperties.AiRandomizedDefendDirectionChance = 1f - MathF.Pow(num, 3f);
         agentDrivenProperties.AiShooterError = 0.008f;
-        agentDrivenProperties.AISetNoAttackTimerAfterBeingHitAbility = MBMath.ClampFloat(num * num, 0.05f, 0.95f);
-        agentDrivenProperties.AISetNoAttackTimerAfterBeingParriedAbility = MBMath.ClampFloat(num * num, 0.05f, 0.95f);
-        agentDrivenProperties.AISetNoDefendTimerAfterHittingAbility = MBMath.ClampFloat(num * num, 0.05f, 0.95f);
-        agentDrivenProperties.AISetNoDefendTimerAfterParryingAbility = MBMath.ClampFloat(num * num, 0.05f, 0.95f);
-        agentDrivenProperties.AIEstimateStunDurationPrecision = 1f - MBMath.ClampFloat(num * num, 0.05f, 0.95f);
-        agentDrivenProperties.AIHoldingReadyMaxDuration = MBMath.Lerp(0.25f, 0f, MathF.Min(1f, num * 1.2f), 1E-05f);
+        agentDrivenProperties.AISetNoAttackTimerAfterBeingHitAbility = MBMath.Lerp(0.33f, 1f, num);
+        agentDrivenProperties.AISetNoAttackTimerAfterBeingParriedAbility = MBMath.Lerp(0.2f, 1f, num * num);
+        agentDrivenProperties.AISetNoDefendTimerAfterHittingAbility = MBMath.Lerp(0.1f, 0.99f, num * num);
+        agentDrivenProperties.AISetNoDefendTimerAfterParryingAbility = MBMath.Lerp(0.15f, 1f, num * num);
+        agentDrivenProperties.AIEstimateStunDurationPrecision = 1f - MBMath.Lerp(0.2f, 1f, num);
+        agentDrivenProperties.AIHoldingReadyMaxDuration = MBMath.Lerp(0.25f, 0f, MathF.Min(1f, num * 2f));
         agentDrivenProperties.AIHoldingReadyVariationPercentage = num;
         agentDrivenProperties.AiRaiseShieldDelayTimeBase = -0.75f + 0.5f * num;
         agentDrivenProperties.AiUseShieldAgainstEnemyMissileProbability = 0.1f + num * 0.6f + num3 * 0.2f;
-        agentDrivenProperties.AiCheckMovementIntervalFactor = 0.005f * (1.1f - num);
+        agentDrivenProperties.AiCheckApplyMovementInterval = (2f - difficultyModifier) * (0.05f + 0.005f * (1.1f - num));
+        agentDrivenProperties.AiCheckCalculateMovementInterval = ((agent.HasMount || agent.IsMount) ? 0.25f : ((2f - difficultyModifier) * 0.25f));
+        agentDrivenProperties.AiCheckDecideSimpleBehaviorInterval = (2f - difficultyModifier) * (agent.GetAgentFlags().HasAnyFlag(AgentFlag.CanWieldWeapon) ? 1.5f : 0.2f);
+        agentDrivenProperties.AiCheckDoSimpleBehaviorInterval = 2f - difficultyModifier;
         agentDrivenProperties.AiMovementDelayFactor = 4f / (3f + num2);
         agentDrivenProperties.AiParryDecisionChangeValue = 0.05f + 0.7f * num;
-        agentDrivenProperties.AiDefendWithShieldDecisionChanceValue = MathF.Min(1f, 0.2f + 0.5f * num + 0.2f * num3);
+        agentDrivenProperties.AiDefendWithShieldDecisionChanceValue = MathF.Min(2f, 0.5f + num + 0.6f * num3);
         agentDrivenProperties.AiMoveEnemySideTimeValue = -2.5f + 0.5f * num;
         agentDrivenProperties.AiMinimumDistanceToContinueFactor = 2f + 0.3f * (3f - num);
-        agentDrivenProperties.AiHearingDistanceFactor = 1f + num;
         agentDrivenProperties.AiChargeHorsebackTargetDistFactor = 1.5f * (3f - num);
-        agentDrivenProperties.AiWaitBeforeShootFactor = agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : (1f - 0.5f * num2);
+        agentDrivenProperties.AiWaitBeforeShootFactor = (agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : (1f - 0.5f * num2));
         float num4 = 1f - num2;
-        agentDrivenProperties.AiRangerLeadErrorMin = -num4 * 0.35f;
+        agentDrivenProperties.AiRangerLeadErrorMin = (0f - num4) * 0.35f;
         agentDrivenProperties.AiRangerLeadErrorMax = num4 * 0.2f;
         agentDrivenProperties.AiRangerVerticalErrorMultiplier = num4 * 0.1f;
-        agentDrivenProperties.AiRangerHorizontalErrorMultiplier = num4 * 0.0349065848f;
-        agentDrivenProperties.AIAttackOnDecideChance = MathF.Clamp(0.23f * CalculateAIAttackOnDecideMaxValue() * (3f - agent.Defensiveness), 0.05f, 1f);
-        agentDrivenProperties.SetStat(DrivenProperty.UseRealisticBlocking, (agent.Controller != Agent.ControllerType.Player) ? 1f : 0f);
+        agentDrivenProperties.AiRangerHorizontalErrorMultiplier = num4 * ((float)Math.PI / 90f);
+        agentDrivenProperties.AIAttackOnDecideChance = MathF.Clamp(0.1f * CalculateAIAttackOnDecideMaxValue() * (3f - agent.Defensiveness), 0.05f, 1f);
+        agentDrivenProperties.SetStat(DrivenProperty.UseRealisticBlocking, (agent.Controller != AgentControllerType.Player) ? 1f : 0f);
+        agentDrivenProperties.AiWeaponFavorMultiplierMelee = 1f;
+        agentDrivenProperties.AiWeaponFavorMultiplierRanged = 1f;
+        agentDrivenProperties.AiWeaponFavorMultiplierPolearm = 1f;
     }
 
     private float ImpactOfStrAndWeaponLengthOnCombatMaxSpeedMultiplier(int weaponLength, int strengthSkill)

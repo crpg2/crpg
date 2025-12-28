@@ -28,11 +28,11 @@
     <Compile Include="..\Module.Client\**\*$(DefaultLanguageSourceExtension)" />
     <Compile Remove="..\Module.Client\obj\Debug\**" />
     <Compile Remove="..\Module.Client\GUI\TrainingGround\**" />
+    <Compile Remove="..\Module.Client\obj\Release\**" />
     <Compile Remove="..\Module.Server\$(BaseIntermediateOutputPath)\**;..\Module.Server\$(BaseOutputPath)\**" />
     <Compile Remove="..\Module.Server\Rating\**" />
     <Compile Remove="..\Module.Server\Api\*Client.cs" />
     <Compile Remove="GUI\**" />
-    <Compile Remove="obj\**" />
     <Compile Remove="..\Module.Server\Common\Commander\CommanderBehaviorServer.cs" />
     <Compile Remove="..\Module.Server\Common\KickInactiveBehavior.cs" />
     <Compile Remove="..\Module.Server\Modes\Battle\CrpgBattleServer.cs" />
@@ -59,9 +59,7 @@
     <Compile Remove="..\Module.Server\Rewards\CrpgRewardServer.cs" />
     <Compile Remove="..\Module.Server\Firewall\*" />
     <EmbeddedResource Remove="GUI\**" />
-    <EmbeddedResource Remove="obj\**" />
     <None Remove="GUI\**" />
-    <None Remove="obj\**" />
     <Compile Remove="..\Module.Server\Common\RemoveIpFromFirewallBehavior.cs" />
     <Compile Remove="..\Module.Server\Common\CrpgCustomBannerServer.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\MissionNetworkComponentPatch.cs" />
