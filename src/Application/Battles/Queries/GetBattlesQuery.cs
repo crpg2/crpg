@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Battles.Models;
 using Crpg.Application.Common.Interfaces;
@@ -16,6 +17,9 @@ public record GetBattlesQuery : IMediatorRequest<IList<BattleDetailedViewModel>>
     public Region Region { get; init; }
     public BattleType? Type { get; init; }
     public IList<BattlePhase> Phases { get; init; } = Array.Empty<BattlePhase>();
+
+    [JsonIgnore]
+    public int UserId { get; init; }
 
     public class Validator : AbstractValidator<GetBattlesQuery>
     {
@@ -57,6 +61,9 @@ public record GetBattlesQuery : IMediatorRequest<IList<BattleDetailedViewModel>>
                             .ThenInclude(o => o!.User)
                                 .ThenInclude(u => u!.ClanMembership)
                                     .ThenInclude(c => c!.Clan)
+                .Include(b => b.MercenaryApplications)
+                    .ThenInclude(a => a.Character)
+                .Include(b => b.SideBriefings)
                 .Where(b =>
                     b.Region == req.Region &&
                     req.Phases.Contains(b.Phase) &&
@@ -66,7 +73,7 @@ public record GetBattlesQuery : IMediatorRequest<IList<BattleDetailedViewModel>>
                 .OrderBy(b => b.ScheduledFor)
                 .ToArrayAsync(cancellationToken);
 
-            var battlesVm = battles.Select(b => _battleService.MapToBattleDetailedViewModel(_mapper, b)).ToArray();
+            var battlesVm = battles.Select(b => _battleService.MapBattleToDetailedViewModel(_mapper, b, req.UserId)).ToArray();
 
             return new(battlesVm);
         }

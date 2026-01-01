@@ -20,6 +20,7 @@ public class BattlesController : BaseController
         [FromQuery(Name = "phase[]")] BattlePhase[] phases, [FromQuery] BattleType? type)
         => ResultToActionAsync(Mediator.Send(new GetBattlesQuery
         {
+            UserId = CurrentUser.User!.Id,
             Region = region,
             Phases = phases,
             Type = type,
@@ -32,6 +33,7 @@ public class BattlesController : BaseController
     public Task<ActionResult<Result<BattleDetailedViewModel>>> GetBattle([FromRoute] int battleId) =>
         ResultToActionAsync(Mediator.Send(new GetBattleQuery
         {
+            UserId = CurrentUser.User!.Id,
             BattleId = battleId,
         }));
 

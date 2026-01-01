@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Battles.Models;
 using Crpg.Application.Common.Interfaces;
@@ -12,6 +13,9 @@ namespace Crpg.Application.Battles.Queries;
 public record GetBattleQuery : IMediatorRequest<BattleDetailedViewModel>
 {
     public int BattleId { get; init; }
+
+    [JsonIgnore]
+    public int UserId { get; init; }
 
     internal class Handler : IMediatorRequestHandler<GetBattleQuery, BattleDetailedViewModel>
     {
@@ -41,8 +45,10 @@ public record GetBattleQuery : IMediatorRequest<BattleDetailedViewModel>
                             .ThenInclude(o => o!.User)
                                 .ThenInclude(u => u!.ClanMembership)
                                     .ThenInclude(c => c!.Clan)
-                .Where(b => b.Id == req.BattleId)
-                .FirstOrDefaultAsync(cancellationToken);
+                .Include(b => b.MercenaryApplications)
+                    .ThenInclude(a => a.Character)
+                .Include(b => b.SideBriefings)
+                .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {
                 return new(CommonErrors.BattleNotFound(req.BattleId));
@@ -54,7 +60,7 @@ public record GetBattleQuery : IMediatorRequest<BattleDetailedViewModel>
                 return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
             }
 
-            return new(_battleService.MapToBattleDetailedViewModel(_mapper, battle));
+            return new(_battleService.MapBattleToDetailedViewModel(_mapper, battle, req.UserId));
         }
     }
 }

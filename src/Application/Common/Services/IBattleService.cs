@@ -17,7 +17,7 @@ internal interface IBattleService
     BattleFighter? GetAttackerCommander(Battle battle);
     BattleFighter? GetDefenderCommander(Battle battle);
     BattleType GetBattleType(Battle battle);
-    BattleDetailedViewModel MapToBattleDetailedViewModel(IMapper mapper, Battle battle);
+    BattleDetailedViewModel MapBattleToDetailedViewModel(IMapper mapper, Battle battle, int userId);
 }
 
 internal class BattleService : IBattleService
@@ -145,8 +145,34 @@ internal class BattleService : IBattleService
                 (f.Settlement?.Troops ?? 0));
     }
 
-    public BattleDetailedViewModel MapToBattleDetailedViewModel(IMapper mapper, Battle battle)
+    public BattleDetailedViewModel MapBattleToDetailedViewModel(IMapper mapper, Battle battle, int userId)
     {
+        var userApplications = battle.MercenaryApplications
+            .Where(a => a.Character!.UserId == userId)
+            .ToList();
+
+        BattleMercenaryApplicationStatus? attackerStatus = userApplications
+            .Where(a => a.Side == BattleSide.Attacker)
+            .OrderByDescending(a => a.CreatedAt)
+            .Select(a => (BattleMercenaryApplicationStatus?)a.Status)
+            .FirstOrDefault();
+
+        BattleMercenaryApplicationStatus? defenderStatus = userApplications
+            .Where(a => a.Side == BattleSide.Defender)
+            .OrderByDescending(a => a.CreatedAt)
+            .Select(a => (BattleMercenaryApplicationStatus?)a.Status)
+            .FirstOrDefault();
+
+        string? attackerBriefing = battle.SideBriefings
+            .Where(b => b.Side == BattleSide.Attacker)
+            .Select(b => b.Note)
+            .FirstOrDefault();
+
+        string? defenderBriefing = battle.SideBriefings
+            .Where(b => b.Side == BattleSide.Defender)
+            .Select(b => b.Note)
+            .FirstOrDefault();
+
         return new BattleDetailedViewModel
         {
             Id = battle.Id,
@@ -154,12 +180,18 @@ internal class BattleService : IBattleService
             Position = battle.Position,
             Phase = battle.Phase,
             Type = GetBattleType(battle),
-            Attacker = mapper.Map<BattleFighterViewModel>(GetAttackerCommander(battle)),
-            AttackerTotalTroops = CalculateAttackerTotalTroops(battle),
-            Defender = mapper.Map<BattleFighterViewModel>(GetDefenderCommander(battle)),
-            DefenderTotalTroops = CalculateDefenderTotalTroops(battle),
             CreatedAt = battle.CreatedAt,
             ScheduledFor = battle.ScheduledFor,
+
+            Attacker = mapper.Map<BattleFighterViewModel>(GetAttackerCommander(battle)),
+            AttackerTotalTroops = CalculateAttackerTotalTroops(battle),
+            AttackerApplicationStatus = attackerStatus,
+            AttackerBriefing = attackerBriefing ?? string.Empty,
+
+            Defender = mapper.Map<BattleFighterViewModel>(GetDefenderCommander(battle)),
+            DefenderTotalTroops = CalculateDefenderTotalTroops(battle),
+            DefenderApplicationStatus = defenderStatus,
+            DefenderBriefing = defenderBriefing ?? string.Empty,
         };
     }
 }

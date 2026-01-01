@@ -12,12 +12,23 @@ public record BattleDetailedViewModel
     public Point Position { get; set; } = default!;
     public BattlePhase Phase { get; set; }
     public BattleType Type { get; init; }
+    public DateTime CreatedAt { get; set; }
+
+    [JsonRequired]
+    public DateTime? ScheduledFor { get; set; }
+
     public BattleFighterViewModel Attacker { get; init; } = default!;
     public int AttackerTotalTroops { get; init; }
+
+    [JsonRequired]
+    public BattleMercenaryApplicationStatus? AttackerApplicationStatus { get; init; }
+    public string AttackerBriefing { get; set; } = string.Empty;
+
     [JsonRequired]
     public BattleFighterViewModel? Defender { get; init; }
     public int DefenderTotalTroops { get; init; }
-    public DateTime CreatedAt { get; set; }
+
     [JsonRequired]
-    public DateTime? ScheduledFor { get; set; }
+    public BattleMercenaryApplicationStatus? DefenderApplicationStatus { get; init; }
+    public string DefenderBriefing { get; set; } = string.Empty;
 }

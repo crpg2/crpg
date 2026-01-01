@@ -17,4 +17,5 @@ public class Battle : AuditableEntity
     public List<BattleFighterApplication> FighterApplications { get; set; } = new();
     public List<BattleMercenary> Mercenaries { get; set; } = new();
     public List<BattleMercenaryApplication> MercenaryApplications { get; set; } = new();
+    public List<BattleSideBriefing> SideBriefings { get; set; } = new();
 }
