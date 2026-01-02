@@ -20,7 +20,7 @@ const omitEmptyGameServerStats = (regions: GameServerRegionStats): GameServerReg
 )
 
 export const getGameServerStats = async (): Promise<GameServerStats> => {
-  const { data: { regions, total } } = await getGameServerStatistics({})
+  const { regions, total } = (await getGameServerStatistics({})).data!
   return {
     total,
     regions: omitEmptyGameServerStats(regions),

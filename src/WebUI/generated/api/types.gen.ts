@@ -847,12 +847,12 @@ export type RestrictionType = 'All' | 'Join' | 'Chat';
 
 export type RestrictionViewModel = {
     id: number;
-    restrictedUser: UserPrivateViewModel | null;
+    restrictedUser: UserPrivateViewModel;
     duration: number;
     type: RestrictionType;
     reason: string;
     publicReason: string;
-    restrictedByUser: UserPublicViewModel | null;
+    restrictedByUser: UserPublicViewModel;
     createdAt: Date;
 };
 

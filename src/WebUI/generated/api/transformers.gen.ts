@@ -85,9 +85,7 @@ const userPrivateViewModelSchemaResponseTransformer = (data: any) => {
 };
 
 const restrictionViewModelSchemaResponseTransformer = (data: any) => {
-    if (data.restrictedUser) {
-        data.restrictedUser = userPrivateViewModelSchemaResponseTransformer(data.restrictedUser);
-    }
+    data.restrictedUser = userPrivateViewModelSchemaResponseTransformer(data.restrictedUser);
     data.createdAt = new Date(data.createdAt);
     return data;
 };
