@@ -18,12 +18,31 @@ interface CrpgApiError {
   stackTrace: string | null
 }
 
+function onApiError(error: CrpgApiError) {
+  const toast = useToast()
+
+  toast.add({
+    title: error?.title || 'Some Error',
+    ...(error.detail && { description: error.detail }),
+    color: 'error',
+    duration: 5000,
+    icon: 'crpg:error',
+    close: false,
+  })
+}
+
 export const createClientConfig: CreateClientConfig = (config) => {
   return ({
     ...config,
     baseURL: import.meta.env.NUXT_PUBLIC_API_BASE_URL,
-    auth: () => getToken(),
-    // TODO: spec
+    auth: getToken,
+    async onResponse({ response }) {
+      const payload = (response as FetchResponse<{ data: any, errors: CrpgApiError[] }>)._data
+
+      if (payload?.errors?.length) {
+        onApiError(payload.errors[0]!)
+      }
+    },
     async onResponseError({ response }) {
       const route = useRoute()
       const toast = useToast()
@@ -42,17 +61,7 @@ export const createClientConfig: CreateClientConfig = (config) => {
       }
 
       const [error] = (response as FetchResponse<{ errors: CrpgApiError[] }>)._data?.errors ?? []
-
-      if (error) {
-        toast.add({
-          title: error?.title || 'Some Error',
-          ...(error.detail && { description: error.detail }),
-          color: 'error',
-          duration: 5000,
-          icon: 'crpg:error',
-          close: false,
-        })
-      }
+      error && onApiError(error)
     },
   })
 }

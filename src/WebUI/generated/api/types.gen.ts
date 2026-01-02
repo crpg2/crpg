@@ -71,7 +71,7 @@ export type BattleDetailedViewModel = {
     createdAt: Date;
     scheduledFor: Date | null;
     attacker: BattleSideDetailedViewModel;
-    defender: BattleSideDetailedViewModel | null;
+    defender: BattleSideDetailedViewModel;
 };
 
 export type BattleDetailedViewModelIListResult = {
@@ -1167,7 +1167,7 @@ export type BattleDetailedViewModelWritable = {
     createdAt: Date;
     scheduledFor: Date | null;
     attacker: BattleSideDetailedViewModelWritable;
-    defender: BattleSideDetailedViewModelWritable | null;
+    defender: BattleSideDetailedViewModelWritable;
 };
 
 export type BattleDetailedViewModelIListResultWritable = {
