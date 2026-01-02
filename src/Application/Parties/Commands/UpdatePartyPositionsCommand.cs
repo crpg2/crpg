@@ -29,7 +29,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             PartyStatus.MovingToAttackSettlement,
         };
 
-        private static readonly PartyStatus[] UnattackableStatuses =
+        private static readonly PartyStatus[] UnattackablePartyStatuses =
         {
             PartyStatus.IdleInSettlement,
             PartyStatus.RecruitingInSettlement,
@@ -134,7 +134,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                     return;
                 }
 
-                if (UnattackableStatuses.Contains(party.TargetedParty.Status))
+                if (UnattackablePartyStatuses.Contains(party.TargetedParty.Status))
                 {
                     return;
                 }

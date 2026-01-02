@@ -35,7 +35,7 @@ const {
   battleMercenariesDefenders,
   loadBattleMercenaries,
   loadingBattleMercenaries,
-} = useBattleMercenaries()
+} = useBattleMercenaries(false)
 
 const {
   mercenaryApplications,
@@ -87,18 +87,23 @@ const columns: TableColumn<BattleMercenary>[] = [
 
       <div class="flex flex-wrap items-center justify-center gap-4.5">
         <BattlePhaseBadge :phase="battle.phase" />
-        <UBadge icon="i-lucide-calendar-check" :label="$d(battle.scheduledFor!, 'short')" size="xl" variant="soft" color="neutral" />
+        <UBadge
+          v-if="battle.scheduledFor"
+          icon="i-lucide-calendar-check"
+          :label="$d(battle.scheduledFor, 'short')" size="xl" variant="soft" color="neutral"
+        />
         <UBadge icon="crpg:region" :label="$t(`region.${battle.region}`)" size="xl" variant="soft" color="neutral" />
       </div>
 
       <UiDecorSeparator />
     </div>
 
+    <!--
     <pre>
       {{ mercenaryApplications }}
-    </pre>
+    </pre> -->
 
-    <div class="mx-auto max-w-lg">
+    <div class="mx-auto max-w-2xl">
       <BattleSideComparison
         :battle
         :my-side

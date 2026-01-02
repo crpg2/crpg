@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { Battle } from '~/models/strategus/battle'
+import type { Battle, BattleMercenaryApplicationStatus } from '~/models/strategus/battle'
 
 import { useUser } from '~/composables/user/use-user'
 import { BATTLE_SIDE } from '~/models/strategus/battle'
 import { battleIconByType, getBattleTitle } from '~/services/strategus/battle-service'
 
 const { battle } = defineProps<{ battle: Battle }>()
-const { clan } = useUser()
+const { clan, user } = useUser()
 
 const battleTitle = computed(() => getBattleTitle(battle))
 
@@ -16,24 +16,40 @@ const rowClass = (battle: Battle) => {
 
   //  TODO: FIXME:
   const isClanBattle = [
-    battle.attacker.party?.user?.clanMembership?.clan.id,
-    battle.defender?.party?.user?.clanMembership?.clan.id,
-    battle.defender?.settlement?.owner?.clanMembership?.clan.id,
+    battle.attacker.fighter.party?.user?.clanMembership?.clan.id,
+    battle.defender.fighter.party?.user?.clanMembership?.clan.id,
+    battle.defender.fighter.settlement?.owner?.clanMembership?.clan.id,
   ]
     .filter(Boolean)
     .includes(userClanId)
 
-  return isClanBattle ? 'text-primary' : 'text-content-100'
+  return isClanBattle
+    ? 'text-primary'
+    : 'text-content-100'
 }
+
+function getCardStyleByApplicationStatus(status: BattleMercenaryApplicationStatus) {
+  const cardColorByApplicationStatus: Record<BattleMercenaryApplicationStatus, string> = {
+    Pending: `oklch(70.7% 0.165 254.624)`,
+    Accepted: '#53bc96',
+    Declined: '#CA4949',
+  }
+
+  return {
+    '--tw-ring-color': cardColorByApplicationStatus[status],
+    'backgroundColor': `color-mix(in srgb, #000 100%, ${cardColorByApplicationStatus[status]} 15%)`,
+  }
+}
+
+const cardStyle = computed(() => {
+  const status = battle.attacker.applicationStatus ?? battle.defender.applicationStatus
+
+  return status
+    ? getCardStyleByApplicationStatus(status)
+    : undefined
+})
 </script>
 
-   <!-- :style="[
-      {
-        ...({
-          backgroundColor: `color-mix(in srgb, #000 10%, var(--color-success) 35%)`,
-        }),
-      },
-    ]" -->
 <template>
   <UCard
     variant="subtle"
@@ -41,6 +57,8 @@ const rowClass = (battle: Battle) => {
       header: 'flex justify-between items-center gap-4',
       footer: 'flex justify-between items-center gap-4',
     }"
+    class=""
+    :style="cardStyle"
   >
     <template #header>
       <UiTextView variant="h4" tag="h5">
@@ -53,8 +71,8 @@ const rowClass = (battle: Battle) => {
     <div class="flex justify-center gap-6">
       <BattleSideView
         :side="BATTLE_SIDE.Attacker"
-        :fighter="battle.attacker"
-        :total-troops="battle.attackerTotalTroops"
+        :side-info="battle.attacker"
+        :user-id="user!.id"
       />
 
       <UTooltip :text="battle.type" :content="{ side: 'top' }">
@@ -71,8 +89,8 @@ const rowClass = (battle: Battle) => {
 
       <BattleSideView
         :side="BATTLE_SIDE.Defender"
-        :fighter="battle.defender!"
-        :total-troops="battle.defenderTotalTroops"
+        :side-info="battle.defender"
+        :user-id="user!.id"
       />
     </div>
 

@@ -17,18 +17,9 @@ public record BattleDetailedViewModel
     [JsonRequired]
     public DateTime? ScheduledFor { get; set; }
 
-    public BattleFighterViewModel Attacker { get; init; } = default!;
-    public int AttackerTotalTroops { get; init; }
+    [JsonRequired]
+    public BattleSideDetailedViewModel Attacker { get; init; } = default!;
 
     [JsonRequired]
-    public BattleMercenaryApplicationStatus? AttackerApplicationStatus { get; init; }
-    public string AttackerBriefing { get; set; } = string.Empty;
-
-    [JsonRequired]
-    public BattleFighterViewModel? Defender { get; init; }
-    public int DefenderTotalTroops { get; init; }
-
-    [JsonRequired]
-    public BattleMercenaryApplicationStatus? DefenderApplicationStatus { get; init; }
-    public string DefenderBriefing { get; set; } = string.Empty;
+    public BattleSideDetailedViewModel Defender { get; init; } = default!;
 }

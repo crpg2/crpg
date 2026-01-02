@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Battle, BattleSide } from '~/models/strategus/battle'
 
+import { useUser } from '~/composables/user/use-user'
 import { BATTLE_SIDE } from '~/models/strategus/battle'
 import { battleIconByType } from '~/services/strategus/battle-service'
 
@@ -12,19 +13,21 @@ const props = defineProps<{
   defenderMercenaryCount: number
 }>()
 
+const { user } = useUser()
+
 const attackerPercentage = computed(() => {
-  const total = props.battle.attackerTotalTroops + props.battle.defenderTotalTroops
-  return total > 0 ? (props.battle.attackerTotalTroops / total) * 100 : 50
+  const total = props.battle.attacker.totalTroops + props.battle.defender.totalTroops
+  return total > 0 ? (props.battle.attacker.totalTroops / total) * 100 : 50
 })
 </script>
 
 <template>
   <div class="space-y-10">
-    <div class="flex gap-20">
+    <div class="flex gap-12">
       <BattleSideView
         :side="BATTLE_SIDE.Attacker"
-        :fighter="battle.attacker"
-        :total-troops="battle.attackerTotalTroops"
+        :side-info="battle.attacker"
+        :user-id="user!.id"
       />
 
       <UTooltip :text="battle.type" :content="{ side: 'top' }">
@@ -41,8 +44,8 @@ const attackerPercentage = computed(() => {
 
       <BattleSideView
         :side="BATTLE_SIDE.Defender"
-        :fighter="battle.defender!"
-        :total-troops="battle.defenderTotalTroops"
+        :side-info="battle.defender"
+        :user-id="user!.id"
       />
     </div>
 

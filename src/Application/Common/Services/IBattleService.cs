@@ -14,8 +14,7 @@ internal interface IBattleService
     Task<Result<BattleMercenaryApplication>> GetBattleMercenaryApplication(ICrpgDbContext db, int userId, int battleId, CancellationToken cancellationToken);
     int CalculateAttackerTotalTroops(Battle battle);
     int CalculateDefenderTotalTroops(Battle battle);
-    BattleFighter? GetAttackerCommander(Battle battle);
-    BattleFighter? GetDefenderCommander(Battle battle);
+    BattleFighter? GetCommander(Battle battle, BattleSide side);
     BattleType GetBattleType(Battle battle);
     BattleDetailedViewModel MapBattleToDetailedViewModel(IMapper mapper, Battle battle, int userId);
 }
@@ -108,22 +107,15 @@ internal class BattleService : IBattleService
         return new(mercenaryApplication);
     }
 
-    // TODO: FIXME: SPEC
-    public BattleFighter? GetAttackerCommander(Battle battle)
+    public BattleFighter? GetCommander(Battle battle, BattleSide side)
     {
-        return battle.Fighters.First(f => f.Side == BattleSide.Attacker && f.Commander);
-    }
-
-    // TODO: FIXME: SPEC
-    public BattleFighter? GetDefenderCommander(Battle battle)
-    {
-        return battle.Fighters.First(f => f.Side == BattleSide.Defender && f.Commander);
+        return battle.Fighters.First(f => f.Side == side && f.Commander);
     }
 
     // TODO: FIXME: SPEC
     public BattleType GetBattleType(Battle battle)
     {
-        var defenderCommander = GetDefenderCommander(battle);
+        var defenderCommander = GetCommander(battle, BattleSide.Defender);
         return defenderCommander?.Settlement != null ? BattleType.Siege : BattleType.Battle;
     }
 
@@ -163,15 +155,8 @@ internal class BattleService : IBattleService
             .Select(a => (BattleMercenaryApplicationStatus?)a.Status)
             .FirstOrDefault();
 
-        string? attackerBriefing = battle.SideBriefings
-            .Where(b => b.Side == BattleSide.Attacker)
-            .Select(b => b.Note)
-            .FirstOrDefault();
-
-        string? defenderBriefing = battle.SideBriefings
-            .Where(b => b.Side == BattleSide.Defender)
-            .Select(b => b.Note)
-            .FirstOrDefault();
+        var attackerBriefing = battle.SideBriefings.FirstOrDefault(b => b.Side == BattleSide.Attacker);
+        var defenderBriefing = battle.SideBriefings.FirstOrDefault(b => b.Side == BattleSide.Defender);
 
         return new BattleDetailedViewModel
         {
@@ -182,16 +167,24 @@ internal class BattleService : IBattleService
             Type = GetBattleType(battle),
             CreatedAt = battle.CreatedAt,
             ScheduledFor = battle.ScheduledFor,
-
-            Attacker = mapper.Map<BattleFighterViewModel>(GetAttackerCommander(battle)),
-            AttackerTotalTroops = CalculateAttackerTotalTroops(battle),
-            AttackerApplicationStatus = attackerStatus,
-            AttackerBriefing = attackerBriefing ?? string.Empty,
-
-            Defender = mapper.Map<BattleFighterViewModel>(GetDefenderCommander(battle)),
-            DefenderTotalTroops = CalculateDefenderTotalTroops(battle),
-            DefenderApplicationStatus = defenderStatus,
-            DefenderBriefing = defenderBriefing ?? string.Empty,
+            Attacker = new()
+            {
+                Fighter = mapper.Map<BattleFighterViewModel>(GetCommander(battle, BattleSide.Attacker)),
+                TotalTroops = CalculateAttackerTotalTroops(battle),
+                ApplicationStatus = attackerStatus,
+                Briefing = attackerBriefing != null
+                    ? mapper.Map<BattleSideBriefingViewModel>(attackerBriefing)
+                    : null,
+            },
+            Defender = new()
+            {
+                Fighter = mapper.Map<BattleFighterViewModel>(GetCommander(battle, BattleSide.Defender)),
+                TotalTroops = CalculateAttackerTotalTroops(battle),
+                ApplicationStatus = defenderStatus,
+                Briefing = defenderBriefing != null
+                    ? mapper.Map<BattleSideBriefingViewModel>(defenderBriefing)
+                    : null,
+            },
         };
     }
 }

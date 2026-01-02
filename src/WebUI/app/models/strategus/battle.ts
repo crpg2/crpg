@@ -46,11 +46,21 @@ export interface Battle {
   position: Point
   scheduledFor: Date | null
   createdAt: Date
-  attacker: BattleFighter
-  attackerTotalTroops: number
-  defender: BattleFighter | null // TODO: no defender?
-  defenderTotalTroops: number
+  attacker: BattleSideDetailed
+  defender: BattleSideDetailed
 }
+
+export interface BattleSideDetailed {
+  fighter: BattleFighter
+  totalTroops: number
+  applicationStatus: BattleMercenaryApplicationStatus | null
+  briefing: BattleSideBriefing | null
+};
+
+export interface BattleSideBriefing {
+  id: number
+  note: string
+};
 
 export interface BattleFighter {
   id: number

@@ -42,6 +42,7 @@ const {
     >
       <UiHeading class="mb-14" :title="$t('strategus.battle.upcoming battles')" />
     </div>
+
     <div class="mx-auto max-w-2xl space-y-6">
       <div class="mb-6 flex justify-between gap-4">
         <UTabs

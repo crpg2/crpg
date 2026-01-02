@@ -68,12 +68,10 @@ export type BattleDetailedViewModel = {
     position: GeoJsonPoint;
     phase: BattlePhase;
     type: BattleType;
-    attacker: BattleFighterViewModel;
-    attackerTotalTroops: number;
-    defender: BattleFighterViewModel | null;
-    defenderTotalTroops: number;
     createdAt: Date;
     scheduledFor: Date | null;
+    attacker: BattleSideDetailedViewModel;
+    defender: BattleSideDetailedViewModel | null;
 };
 
 export type BattleDetailedViewModelIListResult = {
@@ -156,6 +154,18 @@ export type BattleMercenaryViewModelIListResult = {
 export type BattlePhase = 'Preparation' | 'Hiring' | 'Scheduled' | 'Live' | 'End';
 
 export type BattleSide = 'Attacker' | 'Defender';
+
+export type BattleSideBriefingViewModel = {
+    id: number;
+    note: string;
+};
+
+export type BattleSideDetailedViewModel = {
+    fighter: BattleFighterViewModel;
+    totalTroops: number;
+    applicationStatus: BattleMercenaryApplicationStatus | null;
+    briefing: BattleSideBriefingViewModel | null;
+};
 
 export type BattleType = 'Battle' | 'Siege';
 
@@ -1154,12 +1164,10 @@ export type BattleDetailedViewModelWritable = {
     position: GeoJsonPointWritable;
     phase: BattlePhase;
     type: BattleType;
-    attacker: BattleFighterViewModelWritable;
-    attackerTotalTroops: number;
-    defender: BattleFighterViewModelWritable | null;
-    defenderTotalTroops: number;
     createdAt: Date;
     scheduledFor: Date | null;
+    attacker: BattleSideDetailedViewModelWritable;
+    defender: BattleSideDetailedViewModelWritable | null;
 };
 
 export type BattleDetailedViewModelIListResultWritable = {
@@ -1208,6 +1216,13 @@ export type BattleMercenaryApplicationViewModelResultWritable = {
 
 export type BattleMercenaryViewModelIListResultWritable = {
     data: Array<BattleMercenaryViewModel> | null;
+};
+
+export type BattleSideDetailedViewModelWritable = {
+    fighter: BattleFighterViewModelWritable;
+    totalTroops: number;
+    applicationStatus: BattleMercenaryApplicationStatus | null;
+    briefing: BattleSideBriefingViewModel | null;
 };
 
 export type BattleViewModelWritable = {

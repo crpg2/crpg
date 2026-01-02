@@ -16,7 +16,7 @@ const { size = 'md', layout } = defineProps<{
 const variants = tv({
   slots: {
     root: 'inline-flex items-center align-middle',
-    icon: '',
+    icon: 'shrink-0',
     label: '',
   },
   variants: {

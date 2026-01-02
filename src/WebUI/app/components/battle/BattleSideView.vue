@@ -1,61 +1,74 @@
 <script setup lang="ts">
-import type { BattleFighter, BattleSide } from '~/models/strategus/battle'
+import { LazyBattleApplicationDialog } from '#components'
+
+import type { BattleFighter, BattleMercenaryApplicationStatus, BattleSide, BattleSideDetailed } from '~/models/strategus/battle'
 
 import { BATTLE_SIDE } from '~/models/strategus/battle'
 import { settlementIconByType } from '~/services/strategus/settlement-service'
 
-defineProps<{
+const { sideInfo, userId } = defineProps<{
   side: BattleSide
-  fighter: BattleFighter
-  totalTroops: number
+  sideInfo: BattleSideDetailed
+  userId: number
 }>()
+
+const canApply = computed(() => sideInfo.fighter.party?.user.id !== userId)
+
+const overlay = useOverlay()
+
+const confirmDeleteDialog = overlay.create(LazyBattleApplicationDialog, {
+  props: {
+    confirm: 'dd',
+  },
+})
 </script>
 
 <template>
   <div
     class="flex flex-1 flex-col gap-y-3.5"
-    :class="side === BATTLE_SIDE.Attacker ? 'items-end text-right' : 'text-left'"
+    :class="side === BATTLE_SIDE.Attacker ? 'items-end text-right' : 'items-start text-left'"
   >
     <div
       class="flex items-center gap-2"
-      :class="side === BATTLE_SIDE.Attacker ? 'flex-row justify-end' : `
-        flex-row-reverse justify-end
-      `"
+      :class="side === BATTLE_SIDE.Attacker
+        ? 'flex-row justify-end' : 'flex-row-reverse justify-end'"
     >
+      <BattleApplicationStatus v-if="canApply" :application-status="sideInfo.applicationStatus" />
+
       <UiTextView variant="caption-sm">
         {{ $t(`strategus.battle.side.${side}`) }}
       </UiTextView>
-      <UBadge icon="crpg:member" :label="$n(totalTroops)" variant="subtle" />
+      <UBadge icon="crpg:member" :label="$n(sideInfo.totalTroops)" variant="subtle" />
     </div>
 
-    <template v-if="fighter.party">
+    <template v-if="sideInfo.fighter.party">
       <UiDataMedia
-        v-if="fighter.party.user.clanMembership?.clan"
-        :label="fighter.party.user.clanMembership.clan.name"
+        v-if="sideInfo.fighter.party.user.clanMembership?.clan"
+        :label="sideInfo.fighter.party.user.clanMembership.clan.name"
         size="xl"
-        :class="side === BATTLE_SIDE.Attacker ? 'flex-row-reverse' : ''"
-        :style="{ color: fighter.party.user.clanMembership.clan.primaryColor }"
+        :layout="side === BATTLE_SIDE.Attacker ? 'reverse' : 'normal'"
+        :style="{ color: sideInfo.fighter.party.user.clanMembership.clan.primaryColor }"
       >
         <template #icon="{ classes: clanTagIconClasses }">
           <ClanTagIcon
-            :color="fighter.party.user.clanMembership.clan.primaryColor"
+            :color="sideInfo.fighter.party.user.clanMembership.clan.primaryColor"
             :class="clanTagIconClasses()"
           />
         </template>
       </UiDataMedia>
 
-      <UserMedia :user="fighter.party.user" />
+      <UserMedia :user="sideInfo.fighter.party.user" />
     </template>
 
-    <template v-else-if="fighter.settlement">
-      <template v-if="fighter.settlement.owner?.clanMembership?.clan">
+    <template v-else-if="sideInfo.fighter.settlement">
+      <template v-if="sideInfo.fighter.settlement.owner?.clanMembership?.clan">
         <UiDataMedia
-          :label="fighter.settlement.owner.clanMembership.clan.name"
+          :label="sideInfo.fighter.settlement.owner.clanMembership.clan.name"
           size="xl"
         >
           <template #icon="{ classes: clanTagIconClasses }">
             <ClanTagIcon
-              :color="fighter.settlement.owner.clanMembership.clan.primaryColor"
+              :color="sideInfo.fighter.settlement.owner.clanMembership.clan.primaryColor"
               :class="clanTagIconClasses()"
             />
           </template>
@@ -64,14 +77,14 @@ defineProps<{
 
       <div class="flex items-center gap-4">
         <UiDataMedia
-          :label="fighter.settlement.name"
-          :icon="`crpg:${settlementIconByType[fighter.settlement.type]}`"
+          :label="sideInfo.fighter.settlement.name"
+          :icon="`crpg:${settlementIconByType[sideInfo.fighter.settlement.type]}`"
           size="md"
         />
 
         <UserMedia
-          v-if="fighter.settlement.owner"
-          :user="fighter.settlement.owner"
+          v-if="sideInfo.fighter.settlement.owner"
+          :user="sideInfo.fighter.settlement.owner"
         />
       </div>
     </template>

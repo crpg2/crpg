@@ -6,6 +6,7 @@ import { BATTLE_PHASE } from '~/models/strategus/battle'
 const { phase } = defineProps<{
   phase: BattlePhase
 }>()
+
 const { t } = useI18n()
 
 const label = computed(() => t(`strategus.battle.phase.${phase}`))
