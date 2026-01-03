@@ -69,7 +69,7 @@ public record UpdateBattleSideBriefingCommand : IMediatorRequest<BattleSideBrief
                 return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
             }
 
-            var partyFighter = battle.Fighters.FirstOrDefault();
+            var partyFighter = battle.Fighters.FirstOrDefault(f => f.PartyId == req.PartyId);
 
             if (partyFighter == null)
             {

@@ -54,11 +54,10 @@ export interface BattleSideDetailed {
   fighter: BattleFighter
   totalTroops: number
   applicationStatus: BattleMercenaryApplicationStatus | null
-  briefing: BattleSideBriefing | null
+  briefing: BattleSideBriefing
 };
 
 export interface BattleSideBriefing {
-  id: number
   note: string
 };
 
@@ -112,7 +111,7 @@ export type BattleMercenaryApplicationStatus = ValueOf<typeof BATTLE_MERCENARY_A
 export interface BattleMercenaryApplication {
   id: number
   user: UserPublic
-  character: Character
+  character: CharacterPublic
   side: BattleSide
   wage: number
   note: string

@@ -174,7 +174,7 @@ internal class BattleService : IBattleService
                 ApplicationStatus = attackerStatus,
                 Briefing = attackerBriefing != null
                     ? mapper.Map<BattleSideBriefingViewModel>(attackerBriefing)
-                    : null,
+                    : new BattleSideBriefingViewModel(),
             },
             Defender = new()
             {
@@ -183,7 +183,7 @@ internal class BattleService : IBattleService
                 ApplicationStatus = defenderStatus,
                 Briefing = defenderBriefing != null
                     ? mapper.Map<BattleSideBriefingViewModel>(defenderBriefing)
-                    : null,
+                    : new BattleSideBriefingViewModel(),
             },
         };
     }

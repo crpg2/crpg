@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import type { Battle, BattleSide } from '~/models/strategus/battle'
 
-import { useUser } from '~/composables/user/use-user'
-import { BATTLE_SIDE } from '~/models/strategus/battle'
-import { battleIconByType } from '~/services/strategus/battle-service'
-
 const props = defineProps<{
   battle: Battle
   mySide: BattleSide | null // TODO:
@@ -12,8 +8,6 @@ const props = defineProps<{
   attackerMercenaryCount: number
   defenderMercenaryCount: number
 }>()
-
-const { user } = useUser()
 
 const attackerPercentage = computed(() => {
   const total = props.battle.attacker.totalTroops + props.battle.defender.totalTroops
@@ -23,32 +17,6 @@ const attackerPercentage = computed(() => {
 
 <template>
   <div class="space-y-10">
-    <div class="flex gap-12">
-      <BattleSideView
-        :side="BATTLE_SIDE.Attacker"
-        :side-info="battle.attacker"
-        :user-id="user!.id"
-      />
-
-      <UTooltip :text="battle.type" :content="{ side: 'top' }">
-        <USeparator
-          orientation="vertical"
-          class="h-28 self-center"
-          size="sm"
-          :icon="`crpg:${battleIconByType[battle.type]}`"
-          :ui="{
-            icon: 'size-7',
-          }"
-        />
-      </UTooltip>
-
-      <BattleSideView
-        :side="BATTLE_SIDE.Defender"
-        :side-info="battle.defender"
-        :user-id="user!.id"
-      />
-    </div>
-
     <USlider
       :min="0"
       :max="100"

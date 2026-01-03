@@ -38,6 +38,18 @@ public class BattlesController : BaseController
         }));
 
     /// <summary>
+    /// Update strategus battle briefing.
+    /// </summary>
+    /// <param name="battleId">Battle id.</param>
+    /// <param name="req">The entire battle side briefing with the updated values.</param>
+    [HttpPut("{battleId}/side-briefing")]
+    public Task<ActionResult<Result<BattleSideBriefingViewModel>>> UpdateBattleSideBriefing([FromRoute] int battleId, [FromBody] UpdateBattleSideBriefingCommand req)
+    {
+        req = req with { PartyId = CurrentUser.User!.Id, BattleId = battleId };
+        return ResultToActionAsync(Mediator.Send(req));
+    }
+
+    /// <summary>
     /// Get battle fighters.
     /// </summary>
     /// <returns>The fighters.</returns>

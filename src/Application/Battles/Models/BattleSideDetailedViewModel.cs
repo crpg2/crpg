@@ -11,6 +11,5 @@ public record BattleSideDetailedViewModel
     [JsonRequired]
     public BattleMercenaryApplicationStatus? ApplicationStatus { get; init; }
 
-    [JsonRequired]
-    public BattleSideBriefingViewModel? Briefing { get; init; }
+    public BattleSideBriefingViewModel Briefing { get; init; } = default!;
 }

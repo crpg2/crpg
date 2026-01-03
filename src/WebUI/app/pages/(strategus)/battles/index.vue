@@ -37,9 +37,7 @@ const {
 
 <template>
   <UContainer class="space-y-8 py-12">
-    <div
-      class="mx-auto max-w-4xl"
-    >
+    <div class="mx-auto max-w-4xl">
       <UiHeading class="mb-14" :title="$t('strategus.battle.upcoming battles')" />
     </div>
 

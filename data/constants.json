@@ -79,5 +79,5 @@
   "strategusBattleHiringDurationHours": 12,
   "strategusMercenaryMaxWage": 100000,
   "strategusMercenaryNoteMaxLength": 64,
-  "strategusBattleSideBriefingNoteMaxLength": 2000
+  "strategusBattleSideBriefingNoteMaxLength": 500
 }

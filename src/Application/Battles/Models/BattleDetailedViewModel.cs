@@ -13,13 +13,8 @@ public record BattleDetailedViewModel
     public BattlePhase Phase { get; set; }
     public BattleType Type { get; init; }
     public DateTime CreatedAt { get; set; }
-
     [JsonRequired]
     public DateTime? ScheduledFor { get; set; }
-
-    [JsonRequired]
     public BattleSideDetailedViewModel Attacker { get; init; } = default!;
-
-    [JsonRequired]
     public BattleSideDetailedViewModel Defender { get; init; } = default!;
 }

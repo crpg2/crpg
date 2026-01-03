@@ -1,10 +1,11 @@
 import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
+import { groupBy } from 'es-toolkit'
 
 import type { Battle } from '~/models/strategus/battle'
 
 import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_SIDE } from '~/models/strategus/battle'
 import { BATTLE_QUERY_KEYS } from '~/queries'
-import { getBattleFighterApplications, getBattleFighters, getBattleMercenaries, getBattleMercenaryApplications } from '~/services/strategus/battle-service'
+import { respondToBattleMercenaryApplication as _respondToBattleMercenaryApplication, getBattleFighterApplications, getBattleFighters, getBattleMercenaries, getBattleMercenaryApplications, updateBattleSideBriefing } from '~/services/strategus/battle-service'
 
 export const useBattle = () => {
   const route = useRoute('battles-id')
@@ -16,6 +17,17 @@ export const useBattle = () => {
   return {
     battle,
     refreshBattle,
+  }
+}
+
+export const useBattleSideBriefing = () => {
+  const [updateBattleBriefing, updatingBattleBriefing] = useAsyncCallback(updateBattleSideBriefing, {
+    successMessage: 'TODO:',
+  })
+
+  return {
+    updateBattleBriefing,
+    updatingBattleBriefing,
   }
 }
 
@@ -74,6 +86,8 @@ export const useBattleMercenaries = (immediate = true) => {
     { immediate, resetOnExecute: false },
   )
 
+  const battleMercenariesBySide = computed(() => groupBy(battleMercenaries.value, bm => bm.side))
+
   const battleMercenariesCount = computed(() => battleMercenaries.value.length)
 
   const battleMercenariesAttackers = computed(() =>
@@ -84,6 +98,7 @@ export const useBattleMercenaries = (immediate = true) => {
 
   return {
     battleMercenaries,
+    battleMercenariesBySide,
     battleMercenariesCount,
     battleMercenariesAttackers,
     battleMercenariesDefenders,
@@ -99,16 +114,24 @@ export const useBattleMercenaryApplications = (immediate = true) => {
     state: mercenaryApplications,
     executeImmediate: loadBattleMercenaryApplications,
   } = useAsyncState(
-    () => getBattleMercenaryApplications(battle.value.id, [BATTLE_MERCENARY_APPLICATION_STATUS.Pending]),
+    () => getBattleMercenaryApplications(battle.value.id, [
+      // TODO:
+      BATTLE_MERCENARY_APPLICATION_STATUS.Pending,
+      BATTLE_MERCENARY_APPLICATION_STATUS.Accepted,
+      BATTLE_MERCENARY_APPLICATION_STATUS.Declined,
+    ]),
     [],
     { immediate, resetOnExecute: false },
   )
 
   const mercenaryApplicationsCount = computed(() => mercenaryApplications.value.length)
 
+  const respondToBattleMercenaryApplication = (invitationId: number, accept: boolean) => _respondToBattleMercenaryApplication(battle.value.id, invitationId, accept)
+
   return {
     mercenaryApplications,
     mercenaryApplicationsCount,
     loadBattleMercenaryApplications,
+    respondToBattleMercenaryApplication,
   }
 }

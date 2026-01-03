@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { LazyBattleApplicationDialog } from '#components'
-
-import type { BattleFighter, BattleMercenaryApplicationStatus, BattleSide, BattleSideDetailed } from '~/models/strategus/battle'
+import type { BattleSide, BattleSideDetailed } from '~/models/strategus/battle'
 
 import { BATTLE_SIDE } from '~/models/strategus/battle'
 import { settlementIconByType } from '~/services/strategus/settlement-service'
@@ -12,15 +10,13 @@ const { sideInfo, userId } = defineProps<{
   userId: number
 }>()
 
+defineEmits<{
+  applyToJoin: []
+  openManage: []
+}>()
+
+// TODO:
 const canApply = computed(() => sideInfo.fighter.party?.user.id !== userId)
-
-const overlay = useOverlay()
-
-const confirmDeleteDialog = overlay.create(LazyBattleApplicationDialog, {
-  props: {
-    confirm: 'dd',
-  },
-})
 </script>
 
 <template>
@@ -33,11 +29,16 @@ const confirmDeleteDialog = overlay.create(LazyBattleApplicationDialog, {
       :class="side === BATTLE_SIDE.Attacker
         ? 'flex-row justify-end' : 'flex-row-reverse justify-end'"
     >
-      <BattleApplicationStatus v-if="canApply" :application-status="sideInfo.applicationStatus" />
+      <BattleApplicationStatus
+        v-if="canApply"
+        :application-status="sideInfo.applicationStatus"
+        @apply-to-join="$emit('applyToJoin')"
+      />
 
       <UiTextView variant="caption-sm">
         {{ $t(`strategus.battle.side.${side}`) }}
       </UiTextView>
+
       <UBadge icon="crpg:member" :label="$n(sideInfo.totalTroops)" variant="subtle" />
     </div>
 
@@ -88,5 +89,8 @@ const confirmDeleteDialog = overlay.create(LazyBattleApplicationDialog, {
         />
       </div>
     </template>
+
+    <!-- TODO: -->
+    <UButton label="Manage" icon="crpg:settings" @click="$emit('openManage')" />
   </div>
 </template>

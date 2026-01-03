@@ -30,7 +30,7 @@ const rowClass = (battle: Battle) => {
 
 function getCardStyleByApplicationStatus(status: BattleMercenaryApplicationStatus) {
   const cardColorByApplicationStatus: Record<BattleMercenaryApplicationStatus, string> = {
-    Pending: `oklch(70.7% 0.165 254.624)`,
+    Pending: `oklch(70.7% 0.165 254.624)`, // TODO:
     Accepted: '#53bc96',
     Declined: '#CA4949',
   }
@@ -68,31 +68,7 @@ const cardStyle = computed(() => {
       <BattlePhaseBadge :phase="battle.phase" />
     </template>
 
-    <div class="flex justify-center gap-6">
-      <BattleSideView
-        :side="BATTLE_SIDE.Attacker"
-        :side-info="battle.attacker"
-        :user-id="user!.id"
-      />
-
-      <UTooltip :text="battle.type" :content="{ side: 'top' }">
-        <USeparator
-          orientation="vertical"
-          class="h-28 self-center"
-          size="sm"
-          :icon="`crpg:${battleIconByType[battle.type]}`"
-          :ui="{
-            icon: 'size-7',
-          }"
-        />
-      </UTooltip>
-
-      <BattleSideView
-        :side="BATTLE_SIDE.Defender"
-        :side-info="battle.defender"
-        :user-id="user!.id"
-      />
-    </div>
+    <BattleSideViewGroup :battle />
 
     <template #footer>
       <UiTextView variant="caption">

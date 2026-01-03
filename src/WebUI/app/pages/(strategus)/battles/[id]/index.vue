@@ -8,51 +8,38 @@ import type { BattleMercenary } from '~/models/strategus/battle'
 import { useBattle, useBattleFighters, useBattleMercenaries, useBattleMercenaryApplications } from '~/composables/strategus/battle/use-battle'
 import { useUser } from '~/composables/user/use-user'
 import { BATTLE_PHASE } from '~/models/strategus/battle'
-import { getBattleFighterByUserId, getBattleTitle } from '~/services/strategus/battle-service'
+import { getBattleFighterByUserId } from '~/services/strategus/battle-service'
 
-definePageMeta({
-  layoutOptions: {
-    bg: 'background-3.webp',
-  },
-})
+// const { t } = useI18n()
+// const { user } = useUser()
 
-const { t } = useI18n()
-const { user } = useUser()
+// const { battle } = useBattle()
 
-const { battle } = useBattle()
-const battleTitle = computed(() => getBattleTitle(battle.value))
-
-const {
-  battleFighters,
-  battleFightersCount,
-  loadBattleFighters,
-} = useBattleFighters()
+// const {
+//   battleFighters,
+//   battleFightersCount,
+//   loadBattleFighters,
+// } = useBattleFighters()
 
 const {
-  battleMercenaries,
+  // battleMercenaries,
+  battleMercenariesBySide,
   battleMercenariesCount,
   battleMercenariesAttackers,
   battleMercenariesDefenders,
   loadBattleMercenaries,
   loadingBattleMercenaries,
-} = useBattleMercenaries(false)
+} = useBattleMercenaries()
 
-const {
-  mercenaryApplications,
-  mercenaryApplicationsCount,
-} = useBattleMercenaryApplications()
+// const selfFighter = computed(() => getBattleFighterByUserId(battleFighters.value, user.value!.id))
 
-const selfFighter = computed(() => getBattleFighterByUserId(battleFighters.value, user.value!.id))
+// const mySide = computed(() => selfFighter.value?.side ?? null)
 
-const mySide = computed(() => selfFighter.value?.side ?? null)
+// const selfMercenary = computed(() => battleMercenaries.value.find(merc => merc.user.id === user.value!.id))
 
-const selfMercenary = computed(() => battleMercenaries.value.find(merc => merc.user.id === user.value!.id))
-
-const canJoinAsMercenary = computed(() =>
-  selfFighter.value == null && battle.value?.phase === BATTLE_PHASE.Hiring && battleMercenaries.value.length === 0,
-)
-
-// mercinariesTable
+// const canJoinAsMercenary = computed(() =>
+//   selfFighter.value == null && battle.value?.phase === BATTLE_PHASE.Hiring && battleMercenaries.value.length === 0,
+// )
 
 const table = useTemplateRef('table')
 const columns: TableColumn<BattleMercenary>[] = [
@@ -61,7 +48,7 @@ const columns: TableColumn<BattleMercenary>[] = [
     cell: ({ row }) => h(UserMedia, {
       user: row.original.user,
       // isSelf: checkIsSelfMember(row.original),
-      hiddenClan: true,
+      // hiddenClan: true,
     }),
   },
   {
@@ -74,47 +61,13 @@ const columns: TableColumn<BattleMercenary>[] = [
 </script>
 
 <template>
-  <UContainer
-    class="space-y-8 py-12"
-  >
-    <AppPageHeaderGroup
-      :title="battleTitle"
-      :back-to="{ name: 'battles' }"
-    />
+  <div class="mx-auto max-w-3xl">
+    <!-- <UiTextView variant="h3" class="mb-6 text-center">
+      Mercenaries
+    </UiTextView> -->
 
-    <div class="mx-auto max-w-lg space-y-5">
-      <UiDecorSeparator />
-
-      <div class="flex flex-wrap items-center justify-center gap-4.5">
-        <BattlePhaseBadge :phase="battle.phase" />
-        <UBadge
-          v-if="battle.scheduledFor"
-          icon="i-lucide-calendar-check"
-          :label="$d(battle.scheduledFor, 'short')" size="xl" variant="soft" color="neutral"
-        />
-        <UBadge icon="crpg:region" :label="$t(`region.${battle.region}`)" size="xl" variant="soft" color="neutral" />
-      </div>
-
-      <UiDecorSeparator />
-    </div>
-
-    <!--
-    <pre>
-      {{ mercenaryApplications }}
-    </pre> -->
-
-    <div class="mx-auto max-w-2xl">
-      <BattleSideComparison
-        :battle
-        :my-side
-        can-view-mercenaries
-        :attacker-mercenary-count="battleMercenariesAttackers.length"
-        :defender-mercenary-count="battleMercenariesDefenders.length"
-      />
-    </div>
-
-    <div>
-      <div class="mx-auto max-w-3xl space-y-4">
+    <div class="grid grid-cols-2 gap-20">
+      <div v-for="(battleMercenaries, side) in battleMercenariesBySide" :key="side">
         <UTable
           ref="table"
           class="relative rounded-md border border-muted"
@@ -122,20 +75,11 @@ const columns: TableColumn<BattleMercenary>[] = [
           :data="battleMercenaries"
           :columns
         >
-          <!-- @select="(_, row) => openMemberDetail(row.original)" -->
           <template #empty>
             <UiResultNotFound />
           </template>
         </UTable>
       </div>
     </div>
-
-    <div>
-      <pre>
-        <!-- battleMercenaries: {{ battleMercenaries }} -->
-        <!-- battleFighters: {{ battleFighters }}
-        battle: {{ battle }} -->
-      </pre>
-    </div>
-  </UContainer>
+  </div>
 </template>

@@ -156,15 +156,19 @@ export type BattlePhase = 'Preparation' | 'Hiring' | 'Scheduled' | 'Live' | 'End
 export type BattleSide = 'Attacker' | 'Defender';
 
 export type BattleSideBriefingViewModel = {
-    id: number;
     note: string;
+};
+
+export type BattleSideBriefingViewModelResult = {
+    readonly errors: Array<Error> | null;
+    data: BattleSideBriefingViewModel | null;
 };
 
 export type BattleSideDetailedViewModel = {
     fighter: BattleFighterViewModel;
     totalTroops: number;
     applicationStatus: BattleMercenaryApplicationStatus | null;
-    briefing: BattleSideBriefingViewModel | null;
+    briefing: BattleSideBriefingViewModel;
 };
 
 export type BattleType = 'Battle' | 'Siege';
@@ -947,6 +951,11 @@ export type TerrainViewModelResult = {
     data: TerrainViewModel | null;
 };
 
+export type UpdateBattleSideBriefingCommand = {
+    side: BattleSide;
+    note: string;
+};
+
 export type UpdateCharacterCommand = {
     name: string;
 };
@@ -1218,11 +1227,15 @@ export type BattleMercenaryViewModelIListResultWritable = {
     data: Array<BattleMercenaryViewModel> | null;
 };
 
+export type BattleSideBriefingViewModelResultWritable = {
+    data: BattleSideBriefingViewModel | null;
+};
+
 export type BattleSideDetailedViewModelWritable = {
     fighter: BattleFighterViewModelWritable;
     totalTroops: number;
     applicationStatus: BattleMercenaryApplicationStatus | null;
-    briefing: BattleSideBriefingViewModel | null;
+    briefing: BattleSideBriefingViewModel;
 };
 
 export type BattleViewModelWritable = {
@@ -1559,6 +1572,30 @@ export type GetBattlesByBattleIdResponses = {
 };
 
 export type GetBattlesByBattleIdResponse = GetBattlesByBattleIdResponses[keyof GetBattlesByBattleIdResponses];
+
+export type PutBattlesByBattleIdSideBriefingData = {
+    /**
+     * The entire battle side briefing with the updated values.
+     */
+    body?: UpdateBattleSideBriefingCommand;
+    path: {
+        /**
+         * Battle id.
+         */
+        battleId: number;
+    };
+    query?: never;
+    url: '/Battles/{battleId}/side-briefing';
+};
+
+export type PutBattlesByBattleIdSideBriefingResponses = {
+    /**
+     * OK
+     */
+    200: BattleSideBriefingViewModelResult;
+};
+
+export type PutBattlesByBattleIdSideBriefingResponse = PutBattlesByBattleIdSideBriefingResponses[keyof PutBattlesByBattleIdSideBriefingResponses];
 
 export type GetBattlesByBattleIdFightersData = {
     body?: never;

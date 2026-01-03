@@ -2033,7 +2033,7 @@ public record SeedDataCommand : IMediatorRequest
                 },
                 MercenaryApplications =
                 {
-                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Accepted },
+                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
                 },
             };
 
@@ -2049,8 +2049,15 @@ public record SeedDataCommand : IMediatorRequest
                 },
                 MercenaryApplications =
                 {
-                    new BattleMercenaryApplication { Character = takeoCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Accepted },
-                    new BattleMercenaryApplication { Character = droobCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = takeoCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending, Wage = 122, Note = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, culpa. In, architecto tenetur. Facilis dignissimos consequuntur aut optio reiciendis sapiente sit vero magni dicta eum, quaerat officiis vel dolorum doloribus?" },
+                    new BattleMercenaryApplication { Character = droobCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending, Wage = 11111, Note = "Some" },
+                },
+                Mercenaries =
+                {
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = kadseCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = peekyCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = namidakaCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = krogCharacter0 },
                 },
             };
 
@@ -2066,7 +2073,7 @@ public record SeedDataCommand : IMediatorRequest
                 },
                 MercenaryApplications =
                 {
-                    new BattleMercenaryApplication { Character = takeoCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Accepted },
+                    new BattleMercenaryApplication { Character = takeoCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
                     new BattleMercenaryApplication { Character = droobCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
                 },
             };
@@ -2083,7 +2090,7 @@ public record SeedDataCommand : IMediatorRequest
                 },
                 MercenaryApplications =
                 {
-                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = droobCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
                 },
             };
 

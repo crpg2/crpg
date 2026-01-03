@@ -8,7 +8,7 @@ defineProps<{
 }>()
 
 defineEmits<{
-  applicationStatus: BattleMercenaryApplicationStatus | null
+  applyToJoin: []
 }>()
 
 const colorByApplicationStatus: Record<BattleMercenaryApplicationStatus, BadgeProps['color']> = {
@@ -25,7 +25,7 @@ const iconByApplicationStatus: Record<BattleMercenaryApplicationStatus, string> 
 </script>
 
 <template>
-  <UButton v-if="!applicationStatus" label="Apply" size="xs" @click="() => {}" />
+  <UButton v-if="!applicationStatus" label="Apply" size="xs" @click="$emit('applyToJoin')" />
 
   <UBadge
     v-else
