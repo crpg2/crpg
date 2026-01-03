@@ -33,5 +33,7 @@ const iconByApplicationStatus: Record<BattleMercenaryApplicationStatus, string> 
     :icon="iconByApplicationStatus[applicationStatus]"
     :color="colorByApplicationStatus[applicationStatus]"
     :label="applicationStatus"
+    trailing-icon="i-lucide-x"
+    @click="() => {}"
   />
 </template>

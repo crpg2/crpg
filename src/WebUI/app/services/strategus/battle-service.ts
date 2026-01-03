@@ -128,18 +128,18 @@ export const updateBattleSideBriefing = async (
 
 // TODO: FIXME:
 export const getBattleTitle = (battle: Battle) => {
-  const { t } = useI18n()
+  // const { t } = useI18n()
 
-  if (battle.type === 'Siege' && battle.defender?.fighter.settlement) {
-    return t('strategus.battle.titleByType.Siege', { settlement: battle.defender.fighter.settlement.name })
-  }
+  // if (battle.type === 'Siege' && battle.defender?.fighter.settlement) {
+  //   return t('strategus.battle.titleByType.Siege', { settlement: battle.defender.fighter.settlement.name })
+  // }
 
-  if (battle.type === 'Battle') {
-    return t('strategus.battle.titleByType.Battle', {
-      nearestSettlement: 'nearestSettlement', // TODO: get nearest settlement to point
-      terrain: 'terrain', // TODO: terrain service get terrain at point
-    })
-  }
+  // if (battle.type === 'Battle') {
+  //   return t('strategus.battle.titleByType.Battle', {
+  //     nearestSettlement: 'nearestSettlement', // TODO: get nearest settlement to point
+  //     terrain: 'terrain', // TODO: terrain service get terrain at point
+  //   })
+  // }
 
   return 'TODO: FIXME:'
 }
@@ -151,7 +151,7 @@ export const getBattleFighters = async (
 export const getBattleFighterByUserId = (
   battleFighters: BattleFighter[],
   userId: number,
-) => battleFighters.find(f => (f.party?.user.id || f.settlement?.owner) === userId) || null
+) => battleFighters.find(f => (f.party?.user.id || f.settlement?.owner?.id) === userId) || null
 
 export const getBattleFighterApplications = async (
   battleId: number,

@@ -37,7 +37,6 @@ const onConfirm = async () => {
       />
       <template #hint>
         <UiInputCounter
-          id="clan-description-count"
           :current="briefingModel.note.length"
           :max="strategusBattleSideBriefingNoteMaxLength"
         />

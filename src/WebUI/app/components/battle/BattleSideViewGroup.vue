@@ -1,18 +1,17 @@
 <script setup lang="ts">
-import { LazyBattleManageDrawer } from '#components'
+import type { Battle, BattleSide } from '~/models/strategus/battle'
 
-import type { Battle } from '~/models/strategus/battle'
-
-import { useUser } from '~/composables/user/use-user'
 import { BATTLE_SIDE } from '~/models/strategus/battle'
 import { battleIconByType } from '~/services/strategus/battle-service'
 
-const { battle } = defineProps<{ battle: Battle }>()
-const { user } = useUser()
+defineProps<{
+  battle: Battle
+  canApply: boolean
+}>()
 
-const overlay = useOverlay()
-
-const battleManageDrawer = overlay.create(LazyBattleManageDrawer)
+defineEmits<{
+  applyToJoin: [BattleSide]
+}>()
 </script>
 
 <template>
@@ -20,13 +19,8 @@ const battleManageDrawer = overlay.create(LazyBattleManageDrawer)
     <BattleSideView
       :side="BATTLE_SIDE.Attacker"
       :side-info="battle.attacker"
-      :user-id="user!.id"
-      @open-manage="battleManageDrawer.open({
-        side: BATTLE_SIDE.Attacker,
-        sideInfo: battle.attacker,
-        userId: user!.id,
-        battleId: battle.id,
-      })"
+      :can-apply
+      @apply-to-join="$emit('applyToJoin', BATTLE_SIDE.Attacker)"
     />
 
     <UTooltip :text="battle.type" :content="{ side: 'top' }">
@@ -44,13 +38,8 @@ const battleManageDrawer = overlay.create(LazyBattleManageDrawer)
     <BattleSideView
       :side="BATTLE_SIDE.Defender"
       :side-info="battle.defender"
-      :user-id="user!.id"
-      @open-manage="battleManageDrawer.open({
-        side: BATTLE_SIDE.Defender,
-        sideInfo: battle.defender,
-        userId: user!.id,
-        battleId: battle.id,
-      })"
+      :can-apply
+      @apply-to-join="$emit('applyToJoin', BATTLE_SIDE.Defender)"
     />
   </div>
 </template>

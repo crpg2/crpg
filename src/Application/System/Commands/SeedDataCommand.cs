@@ -2013,11 +2013,11 @@ public record SeedDataCommand : IMediatorRequest
                 },
                 MercenaryApplications =
                 {
-                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Accepted },
                 },
-                SideBriefings =
+                Mercenaries =
                 {
-                    new BattleSideBriefing { Side = BattleSide.Attacker, Note = "biba" },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = orleCharacter0 },
                 },
             };
 
@@ -2034,6 +2034,7 @@ public record SeedDataCommand : IMediatorRequest
                 MercenaryApplications =
                 {
                     new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
                 },
             };
 
@@ -2075,6 +2076,10 @@ public record SeedDataCommand : IMediatorRequest
                 {
                     new BattleMercenaryApplication { Character = takeoCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
                     new BattleMercenaryApplication { Character = droobCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
+                },
+                SideBriefings =
+                {
+                    new BattleSideBriefing { Side = BattleSide.Attacker, Note = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate" },
                 },
             };
 

@@ -117,11 +117,3 @@ export interface BattleMercenaryApplication {
   note: string
   status: BattleMercenaryApplicationStatus
 }
-
-export interface BattleMercenaryApplicationCreation {
-  userId: number
-  characterId: number
-  side: BattleSide
-  wage: number
-  note: string
-}

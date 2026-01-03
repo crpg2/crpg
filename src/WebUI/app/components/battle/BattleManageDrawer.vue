@@ -49,9 +49,9 @@ const [onRespond, responding] = useAsyncCallback(
   },
 )
 
-const activeTab = ref<'briefing' | 'mercenaryApplications'>('briefing')
+const activeTab = ref<'briefing' | 'mercenaryApplications'>('mercenaryApplications')
 
-const items = ref<TabsItem[]>([
+const items = computed<TabsItem[]>(() => [
   {
     label: 'Briefing',
     value: 'briefing',
@@ -59,44 +59,54 @@ const items = ref<TabsItem[]>([
   {
     label: 'Mercenary applications',
     value: 'mercenaryApplications',
-    badge: mercenaryApplicationsCount.value,
+    badge: {
+      variant: 'subtle',
+      color: 'primary',
+      size: 'md',
+      square: true,
+      label: mercenaryApplicationsCount.value,
+    },
   },
 ])
 </script>
 
 <template>
   <UDrawer
-    direction="right"
+    direction="top"
     :handle="false"
-    :ui="{ container: 'max-w-3xl min-w-2xl', footer: 'flex flex-row justify-end' }"
+    :ui="{
+      header: 'mb-6 flex items-center justify-between gap-4',
+      container: 'w-full max-w-(--ui-container) mx-auto',
+      footer: 'flex flex-row justify-end' }"
   >
     <template #header>
-      <div class="mb-4 flex items-center justify-between gap-4">
-        <h2 class="font-semibold text-highlighted">
+      <div class="flex items-center gap-4">
+        <UiTextView variant="h4">
           Manage Battle
-        </h2>
+        </UiTextView>
 
-        <UButton color="neutral" variant="ghost" icon="i-lucide-x" @click="onCancel" />
+        <UTabs
+          v-model="activeTab"
+          color="neutral"
+          variant="link"
+          :content="false"
+          :items="items"
+        />
       </div>
 
-      <UTabs
-        v-model="activeTab"
-        color="neutral"
-        variant="link"
-        :content="false"
-        :items="items"
-        class="w-full"
-      />
+      <UButton color="neutral" variant="ghost" icon="i-lucide-x" @click="onCancel" />
     </template>
 
     <template #body>
-      <BattleSideBriefingForm
-        v-if="activeTab === 'briefing'"
-        :briefing="sideInfo.briefing"
-        @save="onSaveBattleBriefing"
-      />
+      <div class="md:max-w-lg">
+        <BattleSideBriefingForm
+          v-if="activeTab === 'briefing'"
+          :briefing="sideInfo.briefing"
+          @save="onSaveBattleBriefing"
+        />
+      </div>
 
-      <BattleSideMercenaryApplications
+      <BattleSideMercenaryApplicationsTable
         v-if="activeTab === 'mercenaryApplications'"
         :mercenary-applications
         @respond="onRespond"

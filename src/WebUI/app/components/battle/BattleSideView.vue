@@ -4,19 +4,15 @@ import type { BattleSide, BattleSideDetailed } from '~/models/strategus/battle'
 import { BATTLE_SIDE } from '~/models/strategus/battle'
 import { settlementIconByType } from '~/services/strategus/settlement-service'
 
-const { sideInfo, userId } = defineProps<{
+defineProps<{
   side: BattleSide
   sideInfo: BattleSideDetailed
-  userId: number
+  canApply: boolean
 }>()
 
 defineEmits<{
   applyToJoin: []
-  openManage: []
 }>()
-
-// TODO:
-const canApply = computed(() => sideInfo.fighter.party?.user.id !== userId)
 </script>
 
 <template>
@@ -29,8 +25,8 @@ const canApply = computed(() => sideInfo.fighter.party?.user.id !== userId)
       :class="side === BATTLE_SIDE.Attacker
         ? 'flex-row justify-end' : 'flex-row-reverse justify-end'"
     >
+      <!-- v-if="canApply" -->
       <BattleApplicationStatus
-        v-if="canApply"
         :application-status="sideInfo.applicationStatus"
         @apply-to-join="$emit('applyToJoin')"
       />
@@ -41,7 +37,6 @@ const canApply = computed(() => sideInfo.fighter.party?.user.id !== userId)
 
       <UBadge icon="crpg:member" :label="$n(sideInfo.totalTroops)" variant="subtle" />
     </div>
-
     <template v-if="sideInfo.fighter.party">
       <UiDataMedia
         v-if="sideInfo.fighter.party.user.clanMembership?.clan"
@@ -89,8 +84,5 @@ const canApply = computed(() => sideInfo.fighter.party?.user.id !== userId)
         />
       </div>
     </template>
-
-    <!-- TODO: -->
-    <UButton label="Manage" icon="crpg:settings" @click="$emit('openManage')" />
   </div>
 </template>

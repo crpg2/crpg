@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  id: string
+  id?: string
   current: number
   max: number
 }>()

@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
-import type { RouteNamedMap } from 'vue-router/auto-routes'
 
-import { useBattle } from '~/composables/strategus/battle/use-battle'
+import { LazyBattleManageDrawer, LazyBattleMercenaryApplicationDialog } from '#components'
+import { delay } from 'es-toolkit'
+
+import type { BattleSide } from '~/models/strategus/battle'
+
+import { useBattle, useBattleFighters, useBattleMercenaries } from '~/composables/strategus/battle/use-battle'
+import { useUser } from '~/composables/user/use-user'
 import { BATTLE_QUERY_KEYS } from '~/queries'
-import { getBattle, getBattleTitle } from '~/services/strategus/battle-service'
+import { applyToBattleAsMercenary as _applyToBattleAsMercenary, getBattle, getBattleFighterByUserId, getBattleTitle } from '~/services/strategus/battle-service'
 
 definePageMeta({
   layoutOptions: {
@@ -35,22 +40,50 @@ definePageMeta({
 
 const { t } = useI18n()
 
-const { battle } = useBattle()
+const { battle, refreshBattle } = useBattle()
+const { battleFighters } = useBattleFighters()
+
+const {
+  loadBattleMercenaries,
+  loadingBattleMercenaries,
+  battleMercenariesAttackers,
+  battleMercenariesDefenders,
+} = useBattleMercenaries()
+
 const battleTitle = computed(() => getBattleTitle(battle.value))
 
-const nav = [
-  {
-    name: 'battles-id',
-    label: 'Roster',
-  },
-  {
-    name: 'battles-id-manage',
-    label: 'Manage',
-  },
-] satisfies Array<{
-  name: keyof RouteNamedMap
-  label: string
-}>
+const { user } = useUser()
+
+const selfFighter = computed(() => getBattleFighterByUserId(battleFighters.value, user.value!.id))
+
+const overlay = useOverlay()
+
+const battleManageDrawer = overlay.create(LazyBattleManageDrawer)
+
+const battleMercenaryApplicationDialog = overlay.create(LazyBattleMercenaryApplicationDialog)
+
+const [applyToBattleAsMercenary, applyingToBattleAsMercenary] = useAsyncCallback(_applyToBattleAsMercenary, {
+  successMessage: 'TODO:',
+})
+
+const onApplyToBattleAsMercenary = (side: BattleSide) => {
+  battleMercenaryApplicationDialog.open({
+    side,
+    sideInfo: side === 'Attacker' ? battle.value.attacker : battle.value.defender,
+    onApply: async (value) => {
+      await applyToBattleAsMercenary(battle.value.id, {
+        side,
+        userId: user.value!.id,
+        // characterId: value.characterId, // TODO: FIXME:
+        characterId: 6,
+        note: value.note,
+        wage: value.wage,
+      })
+      await refreshBattle()
+      battleMercenaryApplicationDialog.close()
+    },
+  })
+}
 </script>
 
 <template>
@@ -76,7 +109,13 @@ const nav = [
 
       <UiDecorSeparator />
 
-      <BattleSideViewGroup :battle />
+      <BattleSideViewGroup
+        :battle
+        :can-apply="!selfFighter"
+        @apply-to-join="onApplyToBattleAsMercenary"
+      />
+
+      <UiDecorSeparator />
 
       <!-- <BattleSideComparison
         :battle
@@ -85,29 +124,20 @@ const nav = [
         :attacker-mercenary-count="battleMercenariesAttackers.length"
         :defender-mercenary-count="battleMercenariesDefenders.length"
       /> -->
-
-      <UiDecorSeparator />
     </div>
 
-    <nav v-if="nav.length > 1" class="flex justify-center gap-2">
-      <NuxtLink
-        v-for="{ name, label } in nav"
-        :key="name"
-        v-slot="{ isExactActive }"
-        :to="({ name, params: { id: battle.id } })"
-      >
-        <UButton
-          color="neutral"
-          variant="link"
-          active-variant="soft"
-          active-color="primary"
-          :active="isExactActive"
-          size="xl"
-          :label
+    <div class="mx-auto max-w-5xl">
+      <div class="grid grid-cols-2 gap-20">
+        <BattleSideMercenariesTable
+          :battle-mercenaries="battleMercenariesAttackers"
+          :loading="loadingBattleMercenaries"
         />
-      </NuxtLink>
-    </nav>
 
-    <NuxtPage />
+        <BattleSideMercenariesTable
+          :battle-mercenaries="battleMercenariesDefenders"
+          :loading="loadingBattleMercenaries"
+        />
+      </div>
+    </div>
   </UContainer>
 </template>

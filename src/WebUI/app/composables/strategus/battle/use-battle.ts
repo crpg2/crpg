@@ -1,5 +1,4 @@
 import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
-import { groupBy } from 'es-toolkit'
 
 import type { Battle } from '~/models/strategus/battle'
 
@@ -86,8 +85,6 @@ export const useBattleMercenaries = (immediate = true) => {
     { immediate, resetOnExecute: false },
   )
 
-  const battleMercenariesBySide = computed(() => groupBy(battleMercenaries.value, bm => bm.side))
-
   const battleMercenariesCount = computed(() => battleMercenaries.value.length)
 
   const battleMercenariesAttackers = computed(() =>
@@ -98,7 +95,6 @@ export const useBattleMercenaries = (immediate = true) => {
 
   return {
     battleMercenaries,
-    battleMercenariesBySide,
     battleMercenariesCount,
     battleMercenariesAttackers,
     battleMercenariesDefenders,
