@@ -2451,7 +2451,7 @@
   <Item id="crpg_crossbow_k_v4_h0" name="Templar's Light Crossbow" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="crossbow_g" weight="3.1" appearance="0.7" difficulty="40" Type="Crossbow" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="crossbow_back_light1:crossbow_back_light2:crossbow_back_light3:crossbow_back_light4" holster_position_shift="0.02,0,-0.4">
     <ItemComponent>
       <Weapon weapon_class="Crossbow" ammo_class="Bolt" missile_speed="93" accuracy="98" thrust_damage="34" thrust_speed="84" speed_rating="69" weapon_length="95" ammo_limit="1" thrust_damage_type="Pierce" item_usage="crossbow_light" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
-        <WeaponFlags CanBeUsedWhileCrouched="true" RangedWeapon="true" HasString="true" CantReloadOnHorseback="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" />
+        <WeaponFlags RangedWeapon="true" HasString="true" CantReloadOnHorseback="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" />
       </Weapon>
     </ItemComponent>
     <Flags />
@@ -3975,7 +3975,7 @@
   <Item id="crpg_simple_steppe_bow_v2_h0" name="{=Caver}Simple Steppe Bow" body_name="bo_composite_shotbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.371253" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="125" speed_rating="85" missile_speed="71" weapon_length="110" accuracy="130" thrust_damage="10" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
-        <WeaponFlags CanBeUsedWhileCrouched="true" RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" AutoReload="true" UnloadWhenSheathed="true" />
+        <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" AutoReload="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
@@ -4007,7 +4007,7 @@
   <Item id="crpg_steppe_bow_v2_h0" name="{=steppebowitem}Steppe Bow" body_name="bo_composite_shotbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.709566" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="125" speed_rating="85" missile_speed="72" weapon_length="110" accuracy="120" thrust_damage="11" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
-        <WeaponFlags CanBeUsedWhileCrouched="true" RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
+        <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
