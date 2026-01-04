@@ -11,7 +11,6 @@ internal interface IBattleService
 {
     Task<Result<BattleFighter>> GetBattleFighter(ICrpgDbContext db, int userId, int battleId, CancellationToken cancellationToken);
     Task<Result<BattleMercenary>> GetBattleMercenary(ICrpgDbContext db, int userId, int battleId, CancellationToken cancellationToken);
-    Task<Result<BattleMercenaryApplication>> GetBattleMercenaryApplication(ICrpgDbContext db, int userId, int battleId, CancellationToken cancellationToken);
     int CalculateAttackerTotalTroops(Battle battle);
     int CalculateDefenderTotalTroops(Battle battle);
     BattleFighter? GetCommander(Battle battle, BattleSide side);
@@ -23,26 +22,20 @@ internal class BattleService : IBattleService
 {
     public async Task<Result<BattleFighter>> GetBattleFighter(ICrpgDbContext db, int userId, int battleId, CancellationToken cancellationToken)
     {
-        var user = await db.Users
-            .FirstOrDefaultAsync(u => u.Id == userId, cancellationToken);
-
+        var user = await db.Users.FirstOrDefaultAsync(u => u.Id == userId, cancellationToken);
         if (user == null)
         {
             return new(CommonErrors.UserNotFound(userId));
         }
 
-        var battle = await db.Battles
-            .FirstOrDefaultAsync(b => b.Id == battleId, cancellationToken);
-
+        var battle = await db.Battles.FirstOrDefaultAsync(b => b.Id == battleId, cancellationToken);
         if (battle == null)
         {
             return new(CommonErrors.BattleNotFound(battleId));
         }
 
-        var partyFighter = await db.BattleFighters
-            .FirstOrDefaultAsync(u => u.Party!.User!.Id == userId, cancellationToken);
-        var settlementFighter = await db.BattleFighters
-            .FirstOrDefaultAsync(u => u.Settlement!.Owner!.User!.Id == userId, cancellationToken);
+        var partyFighter = await db.BattleFighters.FirstOrDefaultAsync(u => u.Party!.User!.Id == userId, cancellationToken);
+        var settlementFighter = await db.BattleFighters.FirstOrDefaultAsync(u => u.Settlement!.Owner!.User!.Id == userId, cancellationToken);
         if (partyFighter == null && settlementFighter == null)
         {
             return new(CommonErrors.FighterNotFound(userId, battleId));
@@ -53,58 +46,25 @@ internal class BattleService : IBattleService
 
     public async Task<Result<BattleMercenary>> GetBattleMercenary(ICrpgDbContext db, int userId, int battleId, CancellationToken cancellationToken)
     {
-        var user = await db.Users
-            .FirstOrDefaultAsync(u => u.Id == userId, cancellationToken);
-
+        var user = await db.Users.FirstOrDefaultAsync(u => u.Id == userId, cancellationToken);
         if (user == null)
         {
             return new(CommonErrors.UserNotFound(userId));
         }
 
-        var battle = await db.Battles
-            .FirstOrDefaultAsync(b => b.Id == battleId, cancellationToken);
-
+        var battle = await db.Battles.FirstOrDefaultAsync(b => b.Id == battleId, cancellationToken);
         if (battle == null)
         {
             return new(CommonErrors.BattleNotFound(battleId));
         }
 
-        var mercenary = await db.BattleMercenaries
-            .FirstOrDefaultAsync(u => u.Character!.UserId == userId, cancellationToken);
+        var mercenary = await db.BattleMercenaries.FirstOrDefaultAsync(u => u.Character!.UserId == userId, cancellationToken);
         if (mercenary == null)
         {
             return new(CommonErrors.MercenaryNotFound(userId));
         }
 
         return new(mercenary);
-    }
-
-    public async Task<Result<BattleMercenaryApplication>> GetBattleMercenaryApplication(ICrpgDbContext db, int userId, int battleId, CancellationToken cancellationToken)
-    {
-        var user = await db.Users
-            .FirstOrDefaultAsync(u => u.Id == userId, cancellationToken);
-
-        if (user == null)
-        {
-            return new(CommonErrors.UserNotFound(userId));
-        }
-
-        var battle = await db.Battles
-            .FirstOrDefaultAsync(b => b.Id == battleId, cancellationToken);
-
-        if (battle == null)
-        {
-            return new(CommonErrors.BattleNotFound(battleId));
-        }
-
-        var mercenaryApplication = await db.BattleMercenaryApplications
-            .FirstOrDefaultAsync(u => u.Character!.UserId == userId, cancellationToken);
-        if (mercenaryApplication == null)
-        {
-            return new(CommonErrors.ApplicationNotFound(userId));
-        }
-
-        return new(mercenaryApplication);
     }
 
     public BattleFighter? GetCommander(Battle battle, BattleSide side)
@@ -143,17 +103,11 @@ internal class BattleService : IBattleService
             .Where(a => a.Character!.UserId == userId)
             .ToList();
 
-        BattleMercenaryApplicationStatus? attackerStatus = userApplications
-            .Where(a => a.Side == BattleSide.Attacker)
-            .OrderByDescending(a => a.CreatedAt)
-            .Select(a => (BattleMercenaryApplicationStatus?)a.Status)
-            .FirstOrDefault();
+        BattleMercenaryApplication? attackerMercenaryApplication = userApplications
+            .FirstOrDefault(a => a.Side == BattleSide.Attacker);
 
-        BattleMercenaryApplicationStatus? defenderStatus = userApplications
-            .Where(a => a.Side == BattleSide.Defender)
-            .OrderByDescending(a => a.CreatedAt)
-            .Select(a => (BattleMercenaryApplicationStatus?)a.Status)
-            .FirstOrDefault();
+        BattleMercenaryApplication? defenderMercenaryApplication = userApplications
+            .FirstOrDefault(a => a.Side == BattleSide.Defender);
 
         var attackerBriefing = battle.SideBriefings.FirstOrDefault(b => b.Side == BattleSide.Attacker);
         var defenderBriefing = battle.SideBriefings.FirstOrDefault(b => b.Side == BattleSide.Defender);
@@ -171,7 +125,9 @@ internal class BattleService : IBattleService
             {
                 Fighter = mapper.Map<BattleFighterViewModel>(GetCommander(battle, BattleSide.Attacker)),
                 TotalTroops = CalculateAttackerTotalTroops(battle),
-                ApplicationStatus = attackerStatus,
+                MercenaryApplication = attackerMercenaryApplication != null
+                    ? mapper.Map<BattleMercenaryApplicationViewModel>(attackerMercenaryApplication)
+                    : null,
                 Briefing = attackerBriefing != null
                     ? mapper.Map<BattleSideBriefingViewModel>(attackerBriefing)
                     : new BattleSideBriefingViewModel(),
@@ -180,7 +136,9 @@ internal class BattleService : IBattleService
             {
                 Fighter = mapper.Map<BattleFighterViewModel>(GetCommander(battle, BattleSide.Defender)),
                 TotalTroops = CalculateAttackerTotalTroops(battle),
-                ApplicationStatus = defenderStatus,
+                MercenaryApplication = defenderMercenaryApplication != null
+                    ? mapper.Map<BattleMercenaryApplicationViewModel>(defenderMercenaryApplication)
+                    : null,
                 Briefing = defenderBriefing != null
                     ? mapper.Map<BattleSideBriefingViewModel>(defenderBriefing)
                     : new BattleSideBriefingViewModel(),

@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
@@ -10,8 +11,13 @@ namespace Crpg.Application.Battles.Commands;
 
 public record RemoveBattleMercenaryCommand : IMediatorRequest
 {
+    [JsonIgnore]
     public int UserId { get; init; }
+
+    [JsonIgnore]
     public int BattleId { get; init; }
+
+    [JsonIgnore]
     public int RemovedMercenaryId { get; init; }
 
     internal class Handler : IMediatorRequestHandler<RemoveBattleMercenaryCommand>
@@ -29,9 +35,14 @@ public record RemoveBattleMercenaryCommand : IMediatorRequest
 
         public async Task<Result> Handle(RemoveBattleMercenaryCommand req, CancellationToken cancellationToken)
         {
+
+            // TODO: FIXME: удалить может владелец заявки - проверям
+
             var battle = await _db.Battles
                 .AsSplitQuery()
                 .Include(b => b.Fighters)
+                .Include(b => b.Mercenaries)
+                .Include(b => b.MercenaryApplications)
                 .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {
@@ -52,6 +63,8 @@ public record RemoveBattleMercenaryCommand : IMediatorRequest
             {
                 return new Result(fighterRes.Errors);
             }
+
+            // TODO: FIXME: также удалять заявку
 
             _db.BattleMercenaries.Remove(mercenary);
             await _db.SaveChangesAsync(cancellationToken);

@@ -11,7 +11,7 @@ defineProps<{
 }>()
 
 defineEmits<{
-  applyToJoin: []
+  openApplication: []
 }>()
 </script>
 
@@ -25,10 +25,10 @@ defineEmits<{
       :class="side === BATTLE_SIDE.Attacker
         ? 'flex-row justify-end' : 'flex-row-reverse justify-end'"
     >
-      <!-- v-if="canApply" -->
       <BattleApplicationStatus
-        :application-status="sideInfo.applicationStatus"
-        @apply-to-join="$emit('applyToJoin')"
+        v-if="canApply"
+        :application-status="sideInfo.mercenaryApplication?.status || null"
+        @click="$emit('openApplication')"
       />
 
       <UiTextView variant="caption-sm">

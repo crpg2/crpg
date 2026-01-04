@@ -19,6 +19,12 @@ internal static class CommonErrors
         Detail = $"Application with id '{applicationId}' was not found",
     };
 
+    public static Error ApplicationInvalidStatus(int applicationId, string status) => new(ErrorType.Validation, ErrorCode.ApplicationInvalidStatus)
+    {
+        Title = "Cannot perform action during this application status",
+        Detail = $"Cannot perform action when application with id '{applicationId}' is in status '{status}'",
+    };
+
     public static Error BattleInvalidPhase(int battleId, BattlePhase phase) => new(ErrorType.Validation, ErrorCode.BattleInvalidPhase)
     {
         Title = "Cannot perform action during this battle phase",

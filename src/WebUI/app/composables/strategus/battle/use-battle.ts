@@ -4,7 +4,16 @@ import type { Battle } from '~/models/strategus/battle'
 
 import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_SIDE } from '~/models/strategus/battle'
 import { BATTLE_QUERY_KEYS } from '~/queries'
-import { respondToBattleMercenaryApplication as _respondToBattleMercenaryApplication, getBattleFighterApplications, getBattleFighters, getBattleMercenaries, getBattleMercenaryApplications, updateBattleSideBriefing } from '~/services/strategus/battle-service'
+import {
+  respondToBattleMercenaryApplication as _respondToBattleMercenaryApplication,
+  applyToBattleAsMercenary,
+  getBattleFighterApplications,
+  getBattleFighters,
+  getBattleMercenaries,
+  getBattleMercenaryApplications,
+  removeBattleMercenaryApplication,
+  updateBattleSideBriefing,
+} from '~/services/strategus/battle-service'
 
 export const useBattle = () => {
   const route = useRoute('battles-id')
@@ -129,5 +138,23 @@ export const useBattleMercenaryApplications = (immediate = true) => {
     mercenaryApplicationsCount,
     loadBattleMercenaryApplications,
     respondToBattleMercenaryApplication,
+  }
+}
+
+export const useBattleMercenaryApplication = () => {
+  const [editBattleApplication, editingBattleApplication] = useAsyncCallback(applyToBattleAsMercenary, {
+    successMessage: 'TODO:',
+  })
+
+  const [removeBattleApplication, removingBattleApplication] = useAsyncCallback(removeBattleMercenaryApplication, {
+    successMessage: 'TODO:',
+  })
+
+  return {
+    editBattleApplication,
+    editingBattleApplication,
+
+    removeBattleApplication,
+    removingBattleApplication,
   }
 }

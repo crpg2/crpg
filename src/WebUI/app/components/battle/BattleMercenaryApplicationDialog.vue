@@ -3,11 +3,11 @@ import {
   strategusMercenaryMaxWage,
   strategusMercenaryNoteMaxLength,
 } from '~root/data/constants.json'
+import { isEqual } from 'es-toolkit'
 
 import type { BattleMercenaryApplication, BattleMercenaryApplicationCreation, BattleSide, BattleSideDetailed } from '~/models/strategus/battle'
 
-const { side, application, onApply } = defineProps<{
-  application?: BattleMercenaryApplication
+const { side, sideInfo, onApply } = defineProps<{
   side: BattleSide
   sideInfo: BattleSideDetailed
   onApply: (value: {
@@ -15,6 +15,7 @@ const { side, application, onApply } = defineProps<{
     note: string
     wage: number
   }) => void
+  onDelete: () => void
 }>()
 
 const emit = defineEmits<{
@@ -28,10 +29,18 @@ const applicationModel = ref<{
   note: string
   wage: number
 }>({
-  characterId: application?.character.id || null,
-  note: application?.note || '',
-  wage: application?.wage || 0,
+  characterId: sideInfo.mercenaryApplication?.character.id || null,
+  note: sideInfo.mercenaryApplication?.note || '',
+  wage: sideInfo.mercenaryApplication?.wage || 0,
 })
+
+const isDirty = computed(() => sideInfo.mercenaryApplication
+  ? !isEqual(applicationModel.value, {
+      characterId: sideInfo.mercenaryApplication.character.id,
+      note: sideInfo.mercenaryApplication.note,
+      wage: sideInfo.mercenaryApplication.wage,
+    })
+  : true)
 
 const onCancel = () => {
   emit('close', false)
@@ -50,8 +59,9 @@ const apply = () => {
   <UModal
     :title="`Заявка на бой за ${side}`"
     :ui="{
+      content: 'max-w-xl',
       body: 'space-y-6',
-      footer: 'flex items-center justify-center gap-4',
+      footer: 'block space-y-6',
     }"
   >
     <template #body>
@@ -70,7 +80,6 @@ const apply = () => {
       <UiDecorSeparator />
 
       <div class="space-y-4">
-        <!--  -->
         <UFormField
           label="Note"
           help="Free-form text: TODO:"
@@ -79,6 +88,7 @@ const apply = () => {
           <UTextarea
             v-model="applicationModel.note"
             autoresize
+            :readonly="sideInfo.mercenaryApplication?.status === 'Accepted'"
             :maxlength="strategusMercenaryNoteMaxLength"
             class="w-full"
           />
@@ -90,7 +100,7 @@ const apply = () => {
           </template>
         </UFormField>
 
-        <UFormField size="xl" :help="`max ${$n(strategusMercenaryMaxWage)}`">
+        <UFormField size="xl">
           <template #label>
             <UiDataCell>
               <template #leftContent>
@@ -104,30 +114,55 @@ const apply = () => {
             </UiDataCell>
           </template>
 
+          <template #hint>
+            <UiInputCounter
+              :current="applicationModel.wage"
+              :max="strategusMercenaryMaxWage"
+            />
+          </template>
+
           <UInputNumber
             v-model="applicationModel.wage"
+            :readonly="sideInfo.mercenaryApplication?.status === 'Accepted'"
             :max="strategusMercenaryMaxWage"
-            color="neutral"
+            :min="0"
             :step="1000"
             class="w-40"
           />
         </UFormField>
+
+        <div class="flex items-center justify-center gap-4">
+          <UButton
+            variant="outline"
+            size="xl"
+            :label="$t('action.cancel')"
+            @click="onCancel"
+          />
+
+          <UButton
+            size="xl"
+            :disabled="!isDirty"
+            label="Apply"
+            @click="apply"
+          />
+        </div>
       </div>
     </template>
 
-    <template #footer>
-      <UButton
-        variant="outline"
-        size="xl"
-        :label="$t('action.cancel')"
-        @click="onCancel"
-      />
-
-      <UButton
-        size="xl"
-        label="Apply"
-        @click="apply"
-      />
+    <template v-if="sideInfo.mercenaryApplication?.status === 'Pending'" #footer>
+      <div class="text-center">
+        You can
+        <ULink
+          class="
+            cursor-pointer text-error
+            hover:text-error/80
+          "
+          @click="onDelete"
+        >
+          delete your application
+        </ULink>.
+        You won't be able to restore it
+      </div>
     </template>
   </UModal>
 </template>

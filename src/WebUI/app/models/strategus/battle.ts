@@ -53,10 +53,9 @@ export interface Battle {
 export interface BattleSideDetailed {
   fighter: BattleFighter
   totalTroops: number
-  applicationStatus: BattleMercenaryApplicationStatus | null
+  mercenaryApplication: BattleMercenaryApplication | null
   briefing: BattleSideBriefing
 };
-
 export interface BattleSideBriefing {
   note: string
 };
@@ -93,7 +92,6 @@ export interface BattleMercenary {
 }
 
 export interface BattleMercenaryApplicationCreation {
-  userId: number
   characterId: number
   side: BattleSide
   wage: number

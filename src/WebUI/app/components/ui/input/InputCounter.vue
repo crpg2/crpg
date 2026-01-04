@@ -13,6 +13,6 @@ defineProps<{
     aria-live="polite"
     role="status"
   >
-    {{ current }}/{{ max }}
+    {{ $n(current) }}/{{ $n(max) }}
   </div>
 </template>

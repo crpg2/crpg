@@ -2,11 +2,10 @@
 import type { Battle, BattleMercenaryApplicationStatus } from '~/models/strategus/battle'
 
 import { useUser } from '~/composables/user/use-user'
-import { BATTLE_SIDE } from '~/models/strategus/battle'
-import { battleIconByType, getBattleTitle } from '~/services/strategus/battle-service'
+import { getBattleTitle } from '~/services/strategus/battle-service'
 
 const { battle } = defineProps<{ battle: Battle }>()
-const { clan, user } = useUser()
+const { clan } = useUser()
 
 const battleTitle = computed(() => getBattleTitle(battle))
 
@@ -42,7 +41,7 @@ function getCardStyleByApplicationStatus(status: BattleMercenaryApplicationStatu
 }
 
 const cardStyle = computed(() => {
-  const status = battle.attacker.applicationStatus ?? battle.defender.applicationStatus
+  const status = battle.attacker.mercenaryApplication?.status ?? battle.defender.mercenaryApplication?.status
 
   return status
     ? getCardStyleByApplicationStatus(status)
@@ -68,7 +67,7 @@ const cardStyle = computed(() => {
       <BattlePhaseBadge :phase="battle.phase" />
     </template>
 
-    <BattleSideViewGroup :battle />
+    <BattleSideViewGroup :battle :can-apply="false" />
 
     <template #footer>
       <UiTextView variant="caption">

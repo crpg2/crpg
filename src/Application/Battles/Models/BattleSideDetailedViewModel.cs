@@ -9,7 +9,7 @@ public record BattleSideDetailedViewModel
     public int TotalTroops { get; init; }
 
     [JsonRequired]
-    public BattleMercenaryApplicationStatus? ApplicationStatus { get; init; }
+    public BattleMercenaryApplicationViewModel? MercenaryApplication { get; init; }
 
     public BattleSideBriefingViewModel Briefing { get; init; } = default!;
 }

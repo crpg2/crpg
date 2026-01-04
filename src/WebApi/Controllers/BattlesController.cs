@@ -165,17 +165,14 @@ public class BattlesController : BaseController
     /// <summary>
     /// Remove mercenary application.
     /// </summary>
-    /// <param name="battleId">Battle id.</param>
     /// <response code="204">Removed.</response>
     /// <response code="400">Bad Request.</response>
     [HttpDelete("{battleId}/mercenary-applications")]
-    public Task<ActionResult> RemoveMercenaryApplication([FromRoute] int battleId)
+    public Task<ActionResult> RemoveMercenaryApplication(
+            [FromRoute] int battleId, [FromBody] RemoveBattleMercenaryApplicationCommand req)
     {
-        return ResultToActionAsync(Mediator.Send(new RemoveBattleMercenaryApplicationCommand
-        {
-            UserId = CurrentUser.User!.Id,
-            BattleId = battleId,
-        }, CancellationToken.None));
+        req = req with { PartyId = CurrentUser.User!.Id, BattleId = battleId };
+        return ResultToActionAsync(Mediator.Send(req));
     }
 
     /// <summary>

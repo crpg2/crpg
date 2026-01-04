@@ -2,14 +2,17 @@
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
 import { LazyBattleManageDrawer, LazyBattleMercenaryApplicationDialog } from '#components'
-import { delay } from 'es-toolkit'
 
 import type { BattleSide } from '~/models/strategus/battle'
 
-import { useBattle, useBattleFighters, useBattleMercenaries } from '~/composables/strategus/battle/use-battle'
+import { useBattle, useBattleFighters, useBattleMercenaries, useBattleMercenaryApplication } from '~/composables/strategus/battle/use-battle'
 import { useUser } from '~/composables/user/use-user'
 import { BATTLE_QUERY_KEYS } from '~/queries'
-import { applyToBattleAsMercenary as _applyToBattleAsMercenary, getBattle, getBattleFighterByUserId, getBattleTitle } from '~/services/strategus/battle-service'
+import {
+  getBattle,
+  getBattleFighterByUserId,
+  getBattleTitle,
+} from '~/services/strategus/battle-service'
 
 definePageMeta({
   layoutOptions: {
@@ -42,6 +45,7 @@ const { t } = useI18n()
 
 const { battle, refreshBattle } = useBattle()
 const { battleFighters } = useBattleFighters()
+const { editBattleApplication, editingBattleApplication, removeBattleApplication, removingBattleApplication } = useBattleMercenaryApplication()
 
 const {
   loadBattleMercenaries,
@@ -62,23 +66,23 @@ const battleManageDrawer = overlay.create(LazyBattleManageDrawer)
 
 const battleMercenaryApplicationDialog = overlay.create(LazyBattleMercenaryApplicationDialog)
 
-const [applyToBattleAsMercenary, applyingToBattleAsMercenary] = useAsyncCallback(_applyToBattleAsMercenary, {
-  successMessage: 'TODO:',
-})
-
 const onApplyToBattleAsMercenary = (side: BattleSide) => {
   battleMercenaryApplicationDialog.open({
     side,
     sideInfo: side === 'Attacker' ? battle.value.attacker : battle.value.defender,
     onApply: async (value) => {
-      await applyToBattleAsMercenary(battle.value.id, {
+      await editBattleApplication(battle.value.id, {
         side,
-        userId: user.value!.id,
         // characterId: value.characterId, // TODO: FIXME:
         characterId: 6,
         note: value.note,
         wage: value.wage,
       })
+      await refreshBattle()
+      battleMercenaryApplicationDialog.close()
+    },
+    onDelete: async () => {
+      await removeBattleApplication(battle.value.id, side)
       await refreshBattle()
       battleMercenaryApplicationDialog.close()
     },
@@ -112,7 +116,7 @@ const onApplyToBattleAsMercenary = (side: BattleSide) => {
       <BattleSideViewGroup
         :battle
         :can-apply="!selfFighter"
-        @apply-to-join="onApplyToBattleAsMercenary"
+        @open-application="onApplyToBattleAsMercenary"
       />
 
       <UiDecorSeparator />

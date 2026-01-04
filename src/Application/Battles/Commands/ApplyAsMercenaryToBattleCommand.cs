@@ -17,6 +17,7 @@ namespace Crpg.Application.Battles.Commands;
 
 public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenaryApplicationViewModel>
 {
+    [JsonIgnore]
     public int UserId { get; init; }
     public int CharacterId { get; init; }
     [JsonIgnore]
@@ -60,10 +61,7 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
                 return new(CommonErrors.CharacterNotFound(req.CharacterId, req.UserId));
             }
 
-            var battle = await _db.Battles
-                .AsSplitQuery()
-                .Include(b => b.Mercenaries)
-                .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
+            var battle = await _db.Battles.FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {
                 return new(CommonErrors.BattleNotFound(req.BattleId));

@@ -2013,7 +2013,7 @@ public record SeedDataCommand : IMediatorRequest
                 },
                 MercenaryApplications =
                 {
-                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Accepted },
+                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Accepted, Note = "Lorem ipsum dolor sit amet consectetur adipisicing elit.", Wage = 50_000 },
                 },
                 Mercenaries =
                 {

@@ -117,7 +117,11 @@ export const getBattlesByBattleIdMercenaries = <TComposable extends Composable =
 export const deleteBattlesByBattleIdMercenaryApplications = <TComposable extends Composable = '$fetch', DefaultT extends DeleteBattlesByBattleIdMercenaryApplicationsResponse = DeleteBattlesByBattleIdMercenaryApplicationsResponse>(options: Options<TComposable, DeleteBattlesByBattleIdMercenaryApplicationsData, DeleteBattlesByBattleIdMercenaryApplicationsResponse, DefaultT>) => (options.client ?? client).delete<TComposable, DeleteBattlesByBattleIdMercenaryApplicationsResponse | DefaultT, unknown, DefaultT>({
     security: [{ scheme: 'bearer', type: 'http' }],
     url: '/Battles/{battleId}/mercenary-applications',
-    ...options
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
 });
 
 /**

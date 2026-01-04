@@ -10,7 +10,7 @@ defineProps<{
 }>()
 
 defineEmits<{
-  applyToJoin: [BattleSide]
+  openApplication: [BattleSide]
 }>()
 </script>
 
@@ -20,7 +20,7 @@ defineEmits<{
       :side="BATTLE_SIDE.Attacker"
       :side-info="battle.attacker"
       :can-apply
-      @apply-to-join="$emit('applyToJoin', BATTLE_SIDE.Attacker)"
+      @open-application="$emit('openApplication', BATTLE_SIDE.Attacker)"
     />
 
     <UTooltip :text="battle.type" :content="{ side: 'top' }">
@@ -39,7 +39,7 @@ defineEmits<{
       :side="BATTLE_SIDE.Defender"
       :side-info="battle.defender"
       :can-apply
-      @apply-to-join="$emit('applyToJoin', BATTLE_SIDE.Defender)"
+      @open-application="$emit('openApplication', BATTLE_SIDE.Defender)"
     />
   </div>
 </template>

@@ -7,10 +7,6 @@ defineProps<{
   applicationStatus: BattleMercenaryApplicationStatus | null
 }>()
 
-defineEmits<{
-  applyToJoin: []
-}>()
-
 const colorByApplicationStatus: Record<BattleMercenaryApplicationStatus, BadgeProps['color']> = {
   Pending: 'info',
   Accepted: 'success',
@@ -25,15 +21,20 @@ const iconByApplicationStatus: Record<BattleMercenaryApplicationStatus, string> 
 </script>
 
 <template>
-  <UButton v-if="!applicationStatus" label="Apply" size="xs" @click="$emit('applyToJoin')" />
+  <UButton
+    v-if="!applicationStatus"
+    label="Apply"
+    class="cursor-pointer"
+    size="sm"
+  />
 
-  <UBadge
+  <UButton
     v-else
     variant="subtle"
+    size="sm"
+    class="cursor-pointer"
     :icon="iconByApplicationStatus[applicationStatus]"
     :color="colorByApplicationStatus[applicationStatus]"
     :label="applicationStatus"
-    trailing-icon="i-lucide-x"
-    @click="() => {}"
   />
 </template>

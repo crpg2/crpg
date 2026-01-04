@@ -53,7 +53,6 @@ export type AddSettlementItemCommand = {
 };
 
 export type ApplyAsMercenaryToBattleCommand = {
-    userId: number;
     characterId: number;
     side: BattleSide;
     wage: number;
@@ -167,7 +166,7 @@ export type BattleSideBriefingViewModelResult = {
 export type BattleSideDetailedViewModel = {
     fighter: BattleFighterViewModel;
     totalTroops: number;
-    applicationStatus: BattleMercenaryApplicationStatus | null;
+    mercenaryApplication: BattleMercenaryApplicationViewModel | null;
     briefing: BattleSideBriefingViewModel;
 };
 
@@ -813,13 +812,15 @@ export type RefundItemCommand = {
 
 export type Region = 'Eu' | 'Na' | 'As' | 'Oc';
 
+export type RemoveBattleMercenaryApplicationCommand = {
+    side: BattleSide;
+};
+
 export type RespondClanInvitationCommand = {
     accept: boolean;
 };
 
 export type RespondToBattleFighterApplicationCommand = {
-    partyId: number;
-    fighterApplicationId: number;
     accept: boolean;
 };
 
@@ -1234,7 +1235,7 @@ export type BattleSideBriefingViewModelResultWritable = {
 export type BattleSideDetailedViewModelWritable = {
     fighter: BattleFighterViewModelWritable;
     totalTroops: number;
-    applicationStatus: BattleMercenaryApplicationStatus | null;
+    mercenaryApplication: BattleMercenaryApplicationViewModel | null;
     briefing: BattleSideBriefingViewModel;
 };
 
@@ -1726,11 +1727,8 @@ export type GetBattlesByBattleIdMercenariesResponses = {
 export type GetBattlesByBattleIdMercenariesResponse = GetBattlesByBattleIdMercenariesResponses[keyof GetBattlesByBattleIdMercenariesResponses];
 
 export type DeleteBattlesByBattleIdMercenaryApplicationsData = {
-    body?: never;
+    body?: RemoveBattleMercenaryApplicationCommand;
     path: {
-        /**
-         * Battle id.
-         */
         battleId: number;
     };
     query?: never;
