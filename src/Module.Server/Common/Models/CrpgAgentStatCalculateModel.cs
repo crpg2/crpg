@@ -586,6 +586,12 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         float coverageFactorForShieldCoef = agent.HasMount
             ? _constants.CavalryCoverageFactorForShieldCoef
             : _constants.InfantryCoverageFactorForShieldCoef;
+        float shieldScale = 1.0f + shieldSkill * coverageFactorForShieldCoef;
+        if (agent.Equipment?.HasShield() == true)
+        {
+            agent.SetShieldCollisionBodyScale(shieldScale);
+        }
+
         props.AttributeShieldMissileCollisionBodySizeAdder = shieldSkill * coverageFactorForShieldCoef;
         float ridingAttribute = agent.MountAgent?.GetAgentDrivenPropertyValue(DrivenProperty.AttributeRiding) ?? 1f;
         props.AttributeRiding = ridingSkill * ridingAttribute;
