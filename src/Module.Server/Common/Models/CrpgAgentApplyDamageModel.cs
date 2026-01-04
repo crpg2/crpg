@@ -336,25 +336,11 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
     ref float attackerStunPeriod,
     ref float defenderStunPeriod)
     {
-        // Let base game handle normal stun logic
+        // Vanilla stun logic, need to reintroduce cRPG versions
         base.CalculateDefendedBlowStunMultipliers(
             attackerAgent, defenderAgent, collisionResult,
             attackerWeapon, defenderWeapon,
             ref attackerStunPeriod, ref defenderStunPeriod);
-
-        // Only tweak for shield blocks
-        if (collisionResult == CombatCollisionResult.Blocked && defenderAgent.WieldedOffhandWeapon.IsShield())
-        {
-            int shieldSkill = 0;
-            if (defenderAgent.Origin is CrpgBattleAgentOrigin crpgOrigin)
-            {
-                shieldSkill = crpgOrigin.Skills.Skills.GetPropertyValue(CrpgSkills.Shield);
-            }
-
-            defenderStunPeriod = 1 / MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
-
-            return;
-        }
     }
 
     // TODO : Consider reworking once https://forums.taleworlds.com/index.php?threads/missioncombatmechanicshelper-getdefendcollisionresults-bypass-strikemagnitudecalculationmodel.459379 is fixed
