@@ -190,7 +190,7 @@ internal class ItemExporter : IDataExporter
             // TODO: what is second argument "additionalArgs"?
             ThumbnailCacheManager.Current.CreateTexture(new ItemThumbnailCreationData(mbItem, null, texture =>
             {
-                texture.SaveToFile(Path.Combine(outputPath, mbItem.StringId + ".png"));
+                texture.SaveToFile(Path.Combine(outputPath, mbItem.StringId + ".png"), true);
                 createTextureTaskSource.SetResult(null);
             }, null));
         }
