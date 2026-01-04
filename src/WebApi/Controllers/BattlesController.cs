@@ -17,22 +17,37 @@ public class BattlesController : BaseController
     /// </summary>
     [HttpGet]
     public Task<ActionResult<Result<IList<BattleDetailedViewModel>>>> GetBattles([FromQuery] Region region,
-        [FromQuery(Name = "phase[]")] BattlePhase[] phases)
+        [FromQuery(Name = "phase[]")] BattlePhase[] phases, [FromQuery] BattleType? type)
         => ResultToActionAsync(Mediator.Send(new GetBattlesQuery
         {
+            UserId = CurrentUser.User!.Id,
             Region = region,
             Phases = phases,
+            Type = type,
         }));
 
     /// <summary>
     /// Get strategus battle.
     /// </summary>
     [HttpGet("{battleId}")]
-    public Task<ActionResult<Result<BattleViewModel>>> GetBattles([FromRoute] int battleId) =>
+    public Task<ActionResult<Result<BattleDetailedViewModel>>> GetBattle([FromRoute] int battleId) =>
         ResultToActionAsync(Mediator.Send(new GetBattleQuery
         {
+            UserId = CurrentUser.User!.Id,
             BattleId = battleId,
         }));
+
+    /// <summary>
+    /// Update strategus battle briefing.
+    /// </summary>
+    /// <param name="battleId">Battle id.</param>
+    /// <param name="req">The entire battle side briefing with the updated values.</param>
+    [HttpPut("{battleId}/side-briefing")]
+    public Task<ActionResult<Result<BattleSideBriefingViewModel>>> UpdateBattleSideBriefing([FromRoute] int battleId, [FromBody] UpdateBattleSideBriefingCommand req)
+    {
+        req = req with { PartyId = CurrentUser.User!.Id, BattleId = battleId };
+        return ResultToActionAsync(Mediator.Send(req));
+    }
 
     /// <summary>
     /// Get battle fighters.
@@ -148,6 +163,19 @@ public class BattlesController : BaseController
     }
 
     /// <summary>
+    /// Remove mercenary application.
+    /// </summary>
+    /// <response code="204">Removed.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpDelete("{battleId}/mercenary-applications")]
+    public Task<ActionResult> RemoveMercenaryApplication(
+            [FromRoute] int battleId, [FromBody] RemoveBattleMercenaryApplicationCommand req)
+    {
+        req = req with { PartyId = CurrentUser.User!.Id, BattleId = battleId };
+        return ResultToActionAsync(Mediator.Send(req));
+    }
+
+    /// <summary>
     /// Accept/Decline battle mercenary application.
     /// </summary>
     /// <response code="200">Ok.</response>
@@ -158,5 +186,23 @@ public class BattlesController : BaseController
     {
         req = req with { PartyId = CurrentUser.User!.Id, MercenaryApplicationId = applicationId };
         return ResultToActionAsync(Mediator.Send(req));
+    }
+
+    /// <summary>
+    /// Remove a mercenary from a battle.
+    /// </summary>
+    /// <param name="battleId">Battle id.</param>
+    /// <param name="mercenaryId">Mercenary id.</param>
+    /// <response code="204">Removed.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpDelete("{battleId}/mercenaries/{mercenaryId}")]
+    public Task<ActionResult> RemoveMercenary([FromRoute] int battleId, [FromRoute] int mercenaryId)
+    {
+        return ResultToActionAsync(Mediator.Send(new RemoveBattleMercenaryCommand
+        {
+            UserId = CurrentUser.User!.Id,
+            BattleId = battleId,
+            RemovedMercenaryId = mercenaryId,
+        }, CancellationToken.None));
     }
 }

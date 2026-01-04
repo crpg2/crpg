@@ -12,9 +12,9 @@ public record UserPublicViewModel : IMapFrom<User>
     public Platform Platform { get; init; }
     public string PlatformUserId { get; init; } = string.Empty;
     public string Name { get; init; } = string.Empty;
-
     [JsonRequired]
     public Uri? Avatar { get; init; }
     public Region Region { get; init; }
+    [JsonRequired]
     public UserClanViewModel? ClanMembership { get; init; }
 }

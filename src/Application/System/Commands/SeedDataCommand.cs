@@ -1117,12 +1117,13 @@ public record SeedDataCommand : IMediatorRequest
 
             Clan droobClan = new()
             {
-                Tag = "DROO",
+                Tag = "TFL",
                 PrimaryColor = 4278190318,
                 SecondaryColor = 4294957414,
-                Name = "Droob clan",
+                Name = "The Fancy Lads",
                 BannerKey = string.Empty,
                 Region = Region.Eu,
+                Languages = { Languages.En },
             };
 
             ClanMember droobMember = new() { User = droob, Clan = droobClan, Role = ClanMemberRole.Leader, };
@@ -1510,14 +1511,23 @@ public record SeedDataCommand : IMediatorRequest
             Party orleParty = new()
             {
                 User = orle,
-                Troops = 1,
-                // Troops = 100,
+                // Troops = 12,
+                Troops = 100,
                 // Position = epicrotea.Position,
                 Position = rhotae.Position,
                 // Position = new Point(114.21076699552688, -109.37351870100285),
                 Status = PartyStatus.IdleInSettlement,
+                // Status = PartyStatus.InBattle,
                 // TargetedSettlement = epicrotea,
                 TargetedSettlement = rhotae,
+            };
+            Party droobParty = new()
+            {
+                User = droob,
+                Troops = 500,
+                Position = epicrotea.Position,
+                Status = PartyStatus.InBattle,
+                TargetedSettlement = epicrotea,
             };
             Party brainfartParty = new()
             {
@@ -1948,7 +1958,7 @@ public record SeedDataCommand : IMediatorRequest
             // Users with no party: telesto, kypak, devoidDragon.
 
             Party[] newParties =
-            {
+            [
                 orleParty, brainfartParty, kiwiParty, ikaroozParty, laHireParty, brygganParty, elmarykParty, schumetzqParty,
                 azumaParty, zorguyParty, eckoParty, firebatParty, laenirParty, opsetParty, falcomParty,
                 victorhh888Party, sellkaParty, distanceParty, bakhratParty, lancelotParty, buddhaParty, lerchParty,
@@ -1956,10 +1966,10 @@ public record SeedDataCommand : IMediatorRequest
                 manikParty, ajroselleParty, skraelParty, bedoParty, lambicParty, sanasarParty, vlad007Party,
                 canp0GParty, sharkParty, noobAmphetamineParty, mundeteParty, aroyFalconerParty, insanitoidParty,
                 namidakaParty, xDemParty, disorotParty, aceParty, sagarParty, greenShadowParty, hannibaruParty,
-                drexxParty, xaroshParty, tipsyTobyParty, localAlphaParty, eztliParty,
-            };
+                drexxParty, xaroshParty, tipsyTobyParty, localAlphaParty, eztliParty, droobParty,
+            ];
 
-            var existingParties = (await _db.Parties.ToArrayAsync())
+            var existingParties = (await _db.Parties.ToArrayAsync(cancellationToken: cancellationToken))
                 .Select(u => u.Id)
                 .ToHashSet();
             foreach (var newParty in newParties)
@@ -1970,78 +1980,150 @@ public record SeedDataCommand : IMediatorRequest
                 }
             }
 
-            Battle nideonBattle = new()
+            // TODO: FIXME: ...
+            epicrotea.Owner = orleParty;
+            epicrotea.OwnerId = orleParty.Id;
+
+            rhotae.Owner = orleParty;
+            rhotae.OwnerId = orleParty.Id;
+
+            List<SettlementItem> rhotaeItems = new()
             {
-                Phase = BattlePhase.Preparation,
+                new() { ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h0", Count = 10 },
+                new() { ItemId = "crpg_thamaskene_steel_spatha_v1_h2", Count = 110 },
+            };
+
+            rhotae.Items = rhotaeItems;
+
+            _db.Settlements.Update(epicrotea);
+            //
+            //
+            //
+            //
+            //
+            Battle battle1 = new()
+            {
+                Phase = BattlePhase.Hiring,
                 Region = Region.Eu,
                 Position = nideon.Position,
                 Fighters =
                 {
-                    new BattleFighter
-                    {
-                        Party = xDemParty,
-                        Side = BattleSide.Attacker,
-                        Commander = true,
-                    },
-                    new BattleFighter
-                    {
-                        Party = disorotParty,
-                        Side = BattleSide.Attacker,
-                        Commander = false,
-                    },
-                    new BattleFighter
-                    {
-                        Party = null,
-                        Settlement = nideon,
-                        Side = BattleSide.Defender,
-                        Commander = true,
-                    },
-                    new BattleFighter
-                    {
-                        Party = aceParty,
-                        Side = BattleSide.Defender,
-                        Commander = false,
-                    },
+                    new BattleFighter { Party = eckoParty, Side = BattleSide.Attacker,  Commander = true },
+                    new BattleFighter { Party = drexxParty, Side = BattleSide.Defender, Commander = true },
                 },
-                FighterApplications =
+                MercenaryApplications =
                 {
-                    new BattleFighterApplication
-                    {
-                        Party = sagarParty,
-                        Side = BattleSide.Defender,
-                        Status = BattleFighterApplicationStatus.Pending,
-                    },
+                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Accepted, Note = "Lorem ipsum dolor sit amet consectetur adipisicing elit.", Wage = 50_000 },
+                },
+                Mercenaries =
+                {
+                    new BattleMercenary { Side = BattleSide.Defender, Character = orleCharacter0 },
                 },
             };
+
+            Battle battle2 = new()
+            {
+                Phase = BattlePhase.Hiring,
+                Region = Region.Eu,
+                Position = nideon.Position,
+                Fighters =
+                {
+                    new BattleFighter { Party = eckoParty, Side = BattleSide.Attacker,  Commander = true },
+                    new BattleFighter { Party = drexxParty, Side = BattleSide.Defender, Commander = true },
+                },
+                MercenaryApplications =
+                {
+                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                },
+            };
+
+            Battle battle3 = new()
+            {
+                Phase = BattlePhase.Hiring,
+                Region = Region.Eu,
+                Position = nideon.Position,
+                Fighters =
+                {
+                    new BattleFighter { Party = orleParty, Side = BattleSide.Attacker, Commander = true },
+                    new BattleFighter { Party = drexxParty, Side = BattleSide.Defender, Commander = true },
+                },
+                MercenaryApplications =
+                {
+                    new BattleMercenaryApplication { Character = takeoCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending, Wage = 122, Note = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, culpa. In, architecto tenetur. Facilis dignissimos consequuntur aut optio reiciendis sapiente sit vero magni dicta eum, quaerat officiis vel dolorum doloribus?" },
+                    new BattleMercenaryApplication { Character = droobCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending, Wage = 11111, Note = "Some" },
+                },
+                Mercenaries =
+                {
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = kadseCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = peekyCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = namidakaCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = krogCharacter0 },
+                },
+            };
+
+            Battle battle4 = new()
+            {
+                Phase = BattlePhase.Hiring,
+                Region = Region.Eu,
+                Position = nideon.Position,
+                Fighters =
+                {
+                    new BattleFighter { Party = azumaParty, Side = BattleSide.Attacker, Commander = true },
+                    new BattleFighter { Party = lerchParty, Side = BattleSide.Defender, Commander = true },
+                },
+                MercenaryApplications =
+                {
+                    new BattleMercenaryApplication { Character = takeoCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = droobCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
+                },
+                SideBriefings =
+                {
+                    new BattleSideBriefing { Side = BattleSide.Attacker, Note = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate" },
+                },
+            };
+
+            Battle siege1 = new()
+            {
+                Phase = BattlePhase.Hiring,
+                Region = Region.Eu,
+                Position = nideon.Position,
+                Fighters =
+                {
+                    new BattleFighter { Party = eckoParty, Side = BattleSide.Attacker,  Commander = true },
+                    new BattleFighter { Settlement = epicrotea, Side = BattleSide.Defender, Commander = true },
+                },
+                MercenaryApplications =
+                {
+                    new BattleMercenaryApplication { Character = droobCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                },
+            };
+
             Battle plainBattle = new()
             {
-                Phase = BattlePhase.Preparation,
+                Phase = BattlePhase.Hiring,
                 Region = Region.Eu,
                 Position = new Point(107.187, -110.164),
                 Fighters =
                 {
-                    new BattleFighter { Party = xaroshParty, Side = BattleSide.Attacker, Commander = true },
+                    new BattleFighter { Party = eckoParty, Side = BattleSide.Attacker, Commander = true },
                     new BattleFighter { Party = greenShadowParty, Side = BattleSide.Attacker, Commander = false },
                     new BattleFighter { Party = drexxParty, Side = BattleSide.Defender, Commander = true },
                     new BattleFighter { Party = hannibaruParty, Side = BattleSide.Defender, Commander = false },
                 },
+                Mercenaries =
+                {
+                    new BattleMercenary { Side = BattleSide.Attacker,  Character = droobCharacter0 },
+                },
                 FighterApplications =
                 {
-                    new BattleFighterApplication
-                    {
-                        Party = tipsyTobyParty,
-                        Side = BattleSide.Attacker,
-                        Status = BattleFighterApplicationStatus.Pending,
-                    },
-                    new BattleFighterApplication
-                    {
-                        Party = localAlphaParty,
-                        Side = BattleSide.Defender,
-                        Status = BattleFighterApplicationStatus.Pending,
-                    },
+                    new BattleFighterApplication { Party = tipsyTobyParty,  Side = BattleSide.Attacker, Status = BattleFighterApplicationStatus.Pending },
+                    new BattleFighterApplication { Party = localAlphaParty, Side = BattleSide.Defender, Status = BattleFighterApplicationStatus.Pending },
                 },
                 CreatedAt = DateTime.UtcNow,
+                ScheduledFor = DateTime.UtcNow.AddHours(1),
             };
+
             Battle hertogeaBattle = new()
             {
                 Phase = BattlePhase.Hiring,
@@ -2049,107 +2131,202 @@ public record SeedDataCommand : IMediatorRequest
                 Position = hertogea.Position,
                 Fighters =
                 {
-                    new BattleFighter
-                    {
-                        Party = alexParty,
-                        Side = BattleSide.Attacker,
-                        Commander = true,
-                    },
-                    new BattleFighter
-                    {
-                        Party = null,
-                        Settlement = hertogea,
-                        Side = BattleSide.Defender,
-                        Commander = true,
-                    },
+                    new BattleFighter { Party = alexParty, Side = BattleSide.Attacker, Commander = true },
+                    new BattleFighter { Party = null, Settlement = hertogea,  Side = BattleSide.Defender, Commander = true },
                 },
                 FighterApplications =
                 {
-                    new BattleFighterApplication
-                    {
-                        Party = kedrynFuelParty,
-                        Side = BattleSide.Attacker,
-                        Status = BattleFighterApplicationStatus.Pending,
-                    },
-                    new BattleFighterApplication
-                    {
-                        Party = luqeroParty,
-                        Side = BattleSide.Defender,
-                        Status = BattleFighterApplicationStatus.Pending,
-                    },
-                    new BattleFighterApplication
-                    {
-                        Party = ilyaParty,
-                        Side = BattleSide.Defender,
-                        Status = BattleFighterApplicationStatus.Pending,
-                    },
+                    new BattleFighterApplication { Party = kedrynFuelParty, Side = BattleSide.Attacker, Status = BattleFighterApplicationStatus.Pending },
+                    new BattleFighterApplication { Party = luqeroParty, Side = BattleSide.Defender, Status = BattleFighterApplicationStatus.Pending },
+                    new BattleFighterApplication { Party = ilyaParty, Side = BattleSide.Defender, Status = BattleFighterApplicationStatus.Pending },
                 },
                 CreatedAt = DateTime.UtcNow.AddHours(-2),
+                ScheduledFor = DateTime.UtcNow.AddHours(5),
             };
+
             Battle leblenionBattle = new()
             {
-                Phase = BattlePhase.Hiring,
+                Phase = BattlePhase.Scheduled,
                 Region = Region.Eu,
                 Position = leblenion.Position,
                 Fighters =
                 {
-                    new BattleFighter
-                    {
-                        Party = eztliParty,
-                        Side = BattleSide.Attacker,
-                        Commander = true,
-                    },
-                    new BattleFighter
-                    {
-                        Party = null,
-                        Settlement = leblenion,
-                        Side = BattleSide.Defender,
-                        Commander = true,
-                    },
+                    new BattleFighter { Party = eztliParty,  Side = BattleSide.Attacker, Commander = true },
+                    new BattleFighter { Party = null, Settlement = leblenion, Side = BattleSide.Defender, Commander = true },
                 },
                 MercenaryApplications =
                 {
-                    new BattleMercenaryApplication
-                    {
-                        Character = falcomCharacter0,
-                        Side = BattleSide.Attacker,
-                        Status = BattleMercenaryApplicationStatus.Pending,
-                    },
-                    new BattleMercenaryApplication
-                    {
-                        Character = victorhh888Character0,
-                        Side = BattleSide.Defender,
-                        Status = BattleMercenaryApplicationStatus.Pending,
-                    },
-                    new BattleMercenaryApplication
-                    {
-                        Character = sellkaCharacter0,
-                        Side = BattleSide.Defender,
-                        Status = BattleMercenaryApplicationStatus.Pending,
-                    },
+                    new BattleMercenaryApplication { Character = falcomCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = victorhh888Character0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = sellkaCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
                 },
+                Mercenaries =
+                {
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = kadseCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = takeoCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = namidakaCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = krogCharacter0 },
+                },
+                ScheduledFor = DateTime.UtcNow.AddHours(9),
                 CreatedAt = DateTime.UtcNow.AddHours(-4),
             };
 
-            Battle[] newBattles = { nideonBattle, plainBattle, hertogeaBattle, leblenionBattle };
-            if (!await _db.Battles.AnyAsync())
+            Battle epicroteaBattle = new()
             {
-                _db.Battles.AddRange(newBattles);
-            }
+                Phase = BattlePhase.Hiring,
+                Region = Region.Eu,
+                Position = epicrotea.Position,
+                Fighters =
+                {
+                    new BattleFighter { Party = droobParty, Side = BattleSide.Attacker, Commander = true, MercenarySlots = 7 },
+                    new BattleFighter { Party = kedrynFuelParty, Side = BattleSide.Attacker, MercenarySlots = 1 },
+                    new BattleFighter { Party = ilyaParty, Side = BattleSide.Attacker, MercenarySlots = 1 },
+                    new BattleFighter { Party = null, Settlement = epicrotea, Side = BattleSide.Defender, Commander = true, MercenarySlots = 80 },
+                    new BattleFighter { Party = luqeroParty, Side = BattleSide.Defender, MercenarySlots = 11 },
+                },
+                Mercenaries =
+                {
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = kadseCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = takeoCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = namidakaCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = krogCharacter0 },
+                },
+                MercenaryApplications =
+                {
+                    new BattleMercenaryApplication { Character = falcomCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending,  Note = "Lorem Ipsum" },
+                    new BattleMercenaryApplication { Character = victorhh888Character0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = sellkaCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                },
+                ScheduledFor = DateTime.UtcNow.AddHours(13),
+                CreatedAt = DateTime.UtcNow.AddHours(-4),
+            };
+
+            Battle desertBattle = new()
+            {
+                Phase = BattlePhase.Preparation,
+                Region = Region.Eu,
+                Position = new Point(107.187, -110.164),
+                Fighters =
+                {
+                    new BattleFighter { Party = droobParty, Side = BattleSide.Attacker,  Commander = true,  MercenarySlots = 7 },
+                    new BattleFighter { Party = luqeroParty,  Side = BattleSide.Defender, Commander = true, MercenarySlots = 11 },
+                },
+                FighterApplications =
+                {
+                    new BattleFighterApplication { Party = orleParty, Side = BattleSide.Attacker, Status = BattleFighterApplicationStatus.Pending },
+                    new BattleFighterApplication { Party = namidakaParty, Side = BattleSide.Attacker, Status = BattleFighterApplicationStatus.Pending },
+                    new BattleFighterApplication { Party = ilyaParty, Side = BattleSide.Attacker, Status = BattleFighterApplicationStatus.Pending },
+                },
+                ScheduledFor = DateTime.UtcNow.AddHours(17),
+                CreatedAt = DateTime.UtcNow.AddHours(-4),
+            };
+
+            Battle someLiveBattle = new()
+            {
+                Phase = BattlePhase.Live,
+                Region = Region.Eu,
+                Position = marathea.Position,
+                ScheduledFor = DateTime.UtcNow.AddMinutes(2),
+                CreatedAt = DateTime.UtcNow.AddHours(-5),
+                Fighters =
+                {
+                    new BattleFighter { Party = orleParty, Side = BattleSide.Attacker, Commander = true, MercenarySlots = 7, },
+                    new BattleFighter { Party = drexxParty, Side = BattleSide.Defender, Commander = true },
+                },
+                Mercenaries =
+                {
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = kadseCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = takeoCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = namidakaCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = krogCharacter0 },
+                },
+                MercenaryApplications =
+                {
+                    new BattleMercenaryApplication { Character = falcomCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending,  Note = "Lorem Ipsum" },
+                    new BattleMercenaryApplication { Character = victorhh888Character0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = sellkaCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                },
+            };
+
+            Battle someEndedBattle = new()
+            {
+                Phase = BattlePhase.End,
+                Region = Region.Eu,
+                Position = marathea.Position,
+                ScheduledFor = DateTime.UtcNow.AddHours(-1),
+                CreatedAt = DateTime.UtcNow.AddHours(-5),
+                Fighters =
+                {
+                    new BattleFighter { Party = orleParty, Side = BattleSide.Attacker, Commander = true, MercenarySlots = 7, },
+                    new BattleFighter { Party = drexxParty, Side = BattleSide.Defender, Commander = true },
+                },
+                Mercenaries =
+                {
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = kadseCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = takeoCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Attacker, Character = namidakaCharacter0 },
+                    new BattleMercenary { Side = BattleSide.Defender, Character = krogCharacter0 },
+                },
+                MercenaryApplications =
+                {
+                    new BattleMercenaryApplication { Character = falcomCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending,  Note = "Lorem Ipsum" },
+                    new BattleMercenaryApplication { Character = victorhh888Character0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = sellkaCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                },
+            };
+
+            Battle orleAttackerSiegeBattle = new()
+            {
+                Phase = BattlePhase.Hiring,
+                Region = Region.Eu,
+                Position = marathea.Position,
+                Fighters =
+                {
+                    new BattleFighter { Party = orleParty,  Side = BattleSide.Attacker,  Commander = true, MercenarySlots = 7 },
+                    new BattleFighter { Party = kedrynFuelParty, Side = BattleSide.Attacker,  MercenarySlots = 1 },
+                    new BattleFighter { Settlement = marathea, Side = BattleSide.Defender, Commander = true, MercenarySlots = 80 },
+                },
+                Mercenaries =
+                {
+                    new BattleMercenary { Side = BattleSide.Attacker,  Character = kadseCharacter0 },
+                },
+                FighterApplications =
+                {
+                    new BattleFighterApplication { Party = luqeroParty, Side = BattleSide.Attacker,  Status = BattleFighterApplicationStatus.Pending },
+                },
+                MercenaryApplications =
+                {
+                    new BattleMercenaryApplication { Character = ladoeaCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending, Note = "Lorem Ipsum" },
+                },
+                ScheduledFor = DateTime.UtcNow.AddHours(8),
+                CreatedAt = DateTime.UtcNow.AddHours(-5),
+            };
+
+            Battle[] newBattles = [
+                battle1, battle2,
+                battle3, battle4,
+                //
+                siege1,
+                // plainBattle, desertBattle, hertogeaBattle, leblenionBattle, epicroteaBattle,
+                // orleAttackerSiegeBattle, someLiveBattle, someEndedBattle,
+            ];
+
+            _db.Battles.RemoveRange(await _db.Battles.ToArrayAsync());
+            _db.Battles.AddRange(newBattles);
 
             Terrain[] terrains =
-            {
+            [
                 new()
                 {
                     Type = TerrainType.ThickForest,
-                    Boundary = new Polygon(new LinearRing(new Coordinate[] { new(99.210197, -101.434375), new(100.263933, -100.115272), new(100.749973, -99.783815), new(101.136596, -99.253485), new(101.445895, -98.734204), new(101.920889, -98.557427), new(101.920889, -98.557427), new(102.561578, -98.634767), new(103.467381, -98.446942), new(104.085977, -98.38065), new(104.174348, -97.761932), new(104.59411, -97.342087), new(105.168522, -97.264747), new(105.787118, -97.640398), new(105.865278, -98.253125), new(105.732492, -98.95625), new(105.451157, -99.7625), new(104.810658, -100.004687), new(104.162348, -100.48125), new(102.95946, -100.410937), new(102.365826, -101.090625), new(101.944034, -101.309375), new(101.483188, -101.715625), new(101.194182, -101.965625), new(100.616171, -102.160937), new(100.584927, -102.746875), new(100.131891, -102.934375), new(99.460148, -102.403125), new(99.210197, -101.434375), })),
+                    Boundary = new Polygon(new LinearRing([new(99.210197, -101.434375), new(100.263933, -100.115272), new(100.749973, -99.783815), new(101.136596, -99.253485), new(101.445895, -98.734204), new(101.920889, -98.557427), new(101.920889, -98.557427), new(102.561578, -98.634767), new(103.467381, -98.446942), new(104.085977, -98.38065), new(104.174348, -97.761932), new(104.59411, -97.342087), new(105.168522, -97.264747), new(105.787118, -97.640398), new(105.865278, -98.253125), new(105.732492, -98.95625), new(105.451157, -99.7625), new(104.810658, -100.004687), new(104.162348, -100.48125), new(102.95946, -100.410937), new(102.365826, -101.090625), new(101.944034, -101.309375), new(101.483188, -101.715625), new(101.194182, -101.965625), new(100.616171, -102.160937), new(100.584927, -102.746875), new(100.131891, -102.934375), new(99.460148, -102.403125), new(99.210197, -101.434375),])),
                 },
                 new()
                 {
                     Type = TerrainType.ShallowWater,
-                    Boundary = new Polygon(new LinearRing(new Coordinate[] { new(104.174348, -97.761932), new(104.130833, -98.066596), new(103.420365, -98.192822), new(102.686134, -97.974021), new(101.694142, -97.184773), new(101.819117, -97.0363), new(102.756433, -97.677076), new(103.365688, -97.91932), new(104.174348, -97.761932), })),
+                    Boundary = new Polygon(new LinearRing([new(104.174348, -97.761932), new(104.130833, -98.066596), new(103.420365, -98.192822), new(102.686134, -97.974021), new(101.694142, -97.184773), new(101.819117, -97.0363), new(102.756433, -97.677076), new(103.365688, -97.91932), new(104.174348, -97.761932),])),
                 },
-            };
+            ];
 
             _db.Terrains.RemoveRange(await _db.Terrains.ToArrayAsync());
             _db.Terrains.AddRange(terrains);
@@ -2349,7 +2526,7 @@ public record SeedDataCommand : IMediatorRequest
                         Position = _strategusMap.TranslatePositionForRegion(settlementCreation.Position, Region.Eu, region),
                         Scene = settlementCreation.Scene,
                         Troops = StrategusSettlementDefaultTroops[settlementCreation.Type],
-                        OwnerId = null,
+                        Owner = settlementCreation.Owner,
                     };
 
                     // TODO: hack FIXME: only in dev START

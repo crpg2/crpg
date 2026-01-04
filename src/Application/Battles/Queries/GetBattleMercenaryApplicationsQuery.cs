@@ -30,13 +30,11 @@ public record GetBattleMercenaryApplicationsQuery : IMediatorRequest<IList<Battl
     {
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
-        private readonly ICharacterClassResolver _characterClassResolver;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, ICharacterClassResolver characterClassResolver)
+        public Handler(ICrpgDbContext db, IMapper mapper)
         {
             _db = db;
             _mapper = mapper;
-            _characterClassResolver = characterClassResolver;
         }
 
         public async Task<Result<IList<BattleMercenaryApplicationViewModel>>> Handle(GetBattleMercenaryApplicationsQuery req, CancellationToken cancellationToken)
@@ -45,7 +43,9 @@ public record GetBattleMercenaryApplicationsQuery : IMediatorRequest<IList<Battl
                 .AsSplitQuery()
                 .Include(b => b.Fighters.Where(f => f.PartyId == req.UserId))
                 .Include(b => b.MercenaryApplications.Where(a => req.Statuses.Contains(a.Status)))
-                .ThenInclude(m => m.Character!.User)
+                    .ThenInclude(m => m.Character!.User)
+                        .ThenInclude(u => u!.ClanMembership)
+                            .ThenInclude(cm => cm!.Clan)
                 .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {

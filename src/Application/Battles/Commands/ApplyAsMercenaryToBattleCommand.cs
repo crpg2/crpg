@@ -1,11 +1,11 @@
-﻿using AutoMapper;
+﻿using System.Text.Json.Serialization;
+using AutoMapper;
 using Crpg.Application.Battles.Models;
 using Crpg.Application.Characters.Models;
 using Crpg.Application.Common;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
-using Crpg.Application.Common.Services;
 using Crpg.Application.Users.Models;
 using Crpg.Domain.Entities.Battles;
 using FluentValidation;
@@ -17,8 +17,10 @@ namespace Crpg.Application.Battles.Commands;
 
 public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenaryApplicationViewModel>
 {
+    [JsonIgnore]
     public int UserId { get; init; }
     public int CharacterId { get; init; }
+    [JsonIgnore]
     public int BattleId { get; init; }
     public BattleSide Side { get; init; }
     public int Wage { get; init; }
@@ -59,10 +61,7 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
                 return new(CommonErrors.CharacterNotFound(req.CharacterId, req.UserId));
             }
 
-            var battle = await _db.Battles
-                .AsSplitQuery()
-                .Include(b => b.Mercenaries)
-                .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
+            var battle = await _db.Battles.FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {
                 return new(CommonErrors.BattleNotFound(req.BattleId));
@@ -85,7 +84,7 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
             var application = await _db.BattleMercenaryApplications
                 .Where(a => a.CharacterId == req.CharacterId
                             && a.BattleId == req.BattleId
-                            && a.Side == req.Side
+                            && a.Side == req.Side // We allow applications for both sides. // TODO: spec
                             && (a.Status == BattleMercenaryApplicationStatus.Pending
                                 || a.Status == BattleMercenaryApplicationStatus.Accepted))
                 .FirstOrDefaultAsync(cancellationToken);
@@ -101,8 +100,18 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
                 };
                 battle.MercenaryApplications.Add(application);
                 await _db.SaveChangesAsync(cancellationToken);
-                Logger.LogInformation("User '{0}' applied as a mercenary to battle '{1}' with character '{2}'",
-                    character.UserId, battle.Id, character.Id);
+                Logger.LogInformation(
+                    "User '{0}' applied as a mercenary to battle '{1}' for the side '{2}' with character '{3}'",
+                    character.UserId, battle.Id, req.Side, character.Id);
+            }
+            else if (application.Status == BattleMercenaryApplicationStatus.Pending)
+            {
+                application.Wage = req.Wage;
+                application.Note = req.Note;
+                application.Character = character;
+                await _db.SaveChangesAsync(cancellationToken);
+                Logger.LogInformation("User '{0}' updated application as a mercenary to battle '{1}' for the side '{2}' with character '{3}'",
+                    character.UserId, battle.Id, req.Side, character.Id);
             }
 
             return new(new BattleMercenaryApplicationViewModel

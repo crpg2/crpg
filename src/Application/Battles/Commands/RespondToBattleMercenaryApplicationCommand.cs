@@ -1,10 +1,10 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Battles.Models;
 using Crpg.Application.Characters.Models;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
-using Crpg.Application.Common.Services;
 using Crpg.Application.Users.Models;
 using Crpg.Domain.Entities.Battles;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +15,9 @@ namespace Crpg.Application.Battles.Commands;
 
 public record RespondToBattleMercenaryApplicationCommand : IMediatorRequest<BattleMercenaryApplicationViewModel>
 {
+    [JsonIgnore]
     public int PartyId { get; init; }
+    [JsonIgnore]
     public int MercenaryApplicationId { get; init; }
     public bool Accept { get; init; }
 
@@ -25,13 +27,11 @@ public record RespondToBattleMercenaryApplicationCommand : IMediatorRequest<Batt
 
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
-        private readonly ICharacterClassResolver _characterClassResolver;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, ICharacterClassResolver characterClassResolver)
+        public Handler(ICrpgDbContext db, IMapper mapper)
         {
             _db = db;
             _mapper = mapper;
-            _characterClassResolver = characterClassResolver;
         }
 
         public async Task<Result<BattleMercenaryApplicationViewModel>> Handle(RespondToBattleMercenaryApplicationCommand req,

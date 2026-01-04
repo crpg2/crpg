@@ -80,4 +80,5 @@ public class Constants
     public int StrategusBattleHiringDurationHours { get; set; }
     public int StrategusMercenaryMaxWage { get; set; }
     public int StrategusMercenaryNoteMaxLength { get; set; }
+    public int StrategusBattleSideBriefingNoteMaxLength { get; set; }
 }

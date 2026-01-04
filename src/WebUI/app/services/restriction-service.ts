@@ -53,7 +53,7 @@ export const updateUserNote = (userId: number, note: string) =>
   putUsersByUserIdNote({ path: { userId }, body: { note } })
 
 export const getUserById = async (userId: number): Promise<UserPrivate> =>
-  (await getUsersByUserId({ path: { userId } })).data
+  (await getUsersByUserId({ path: { userId } })).data!
 
 export const searchUser = async (query: GetUsersSearchData['query']): Promise<UserPublic[]> =>
   (await getUsersSearch({ query })).data!

@@ -19,6 +19,12 @@ internal static class CommonErrors
         Detail = $"Application with id '{applicationId}' was not found",
     };
 
+    public static Error ApplicationInvalidStatus(int applicationId, string status) => new(ErrorType.Validation, ErrorCode.ApplicationInvalidStatus)
+    {
+        Title = "Cannot perform action during this application status",
+        Detail = $"Cannot perform action when application with id '{applicationId}' is in status '{status}'",
+    };
+
     public static Error BattleInvalidPhase(int battleId, BattlePhase phase) => new(ErrorType.Validation, ErrorCode.BattleInvalidPhase)
     {
         Title = "Cannot perform action during this battle phase",
@@ -131,6 +137,18 @@ internal static class CommonErrors
     {
         Title = "Fighter is not a commander in the battle",
         Detail = $"Fighter with id '{fighterId} is not a commander of the battle with id '{battleId}'",
+    };
+
+    public static Error FighterNotFound(int fighterId, int battleId) => new(ErrorType.NotFound, ErrorCode.FighterNotFound)
+    {
+        Title = "Fighter was not found in the battle",
+        Detail = $"Fighter with id '{fighterId} was not found in the battle with id '{battleId}'",
+    };
+
+    public static Error MercenaryNotFound(int mercenaryId) => new(ErrorType.NotFound, ErrorCode.MercenaryNotFound)
+    {
+        Title = "Mercenary was not found",
+        Detail = $"Mercenary with id '{mercenaryId}' was not found",
     };
 
     public static Error PartyFighter(int partyId, int battleId) => new(ErrorType.Validation, ErrorCode.PartyFighter)

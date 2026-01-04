@@ -1,10 +1,11 @@
 ﻿using Crpg.Application.Characters.Models;
+using Crpg.Application.Common.Mappings;
 using Crpg.Application.Users.Models;
 using Crpg.Domain.Entities.Battles;
 
 namespace Crpg.Application.Battles.Models;
 
-public record BattleMercenaryApplicationViewModel
+public record BattleMercenaryApplicationViewModel : IMapFrom<BattleMercenaryApplication>
 {
     public int Id { get; init; }
     public UserPublicViewModel User { get; init; } = default!;

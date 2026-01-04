@@ -7,6 +7,7 @@ public enum ErrorCode
 {
     ApplicationClosed,
     ApplicationNotFound,
+    ApplicationInvalidStatus,
     BattleInvalidPhase,
     BattleNotFound,
     BattleTooFar,
@@ -27,6 +28,8 @@ public enum ErrorCode
     ClanTagAlreadyUsed,
     Conflict,
     FighterNotACommander,
+    FighterNotFound,
+    MercenaryNotFound,
     InternalError,
     InvalidField,
     ItemAlreadyOwned,

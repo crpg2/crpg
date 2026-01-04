@@ -45,6 +45,9 @@ public record UpdateBattlePhasesCommand : IMediatorRequest
                 .Include(b => b.Fighters).ThenInclude(f => f.Settlement)
                 .Where(b =>
                     (b.Phase == BattlePhase.Preparation && b.CreatedAt + _battleInitiationDuration < _dateTime.UtcNow)
+                    //
+                    //
+                    //
                     || (b.Phase == BattlePhase.Hiring && b.CreatedAt + _battleInitiationDuration + _battleHiringDuration < _dateTime.UtcNow)
                     || (b.Phase == BattlePhase.Scheduled && b.ScheduledFor < _dateTime.UtcNow))
                 .AsAsyncEnumerable();
@@ -57,13 +60,30 @@ public record UpdateBattlePhasesCommand : IMediatorRequest
                     case BattlePhase.Preparation:
                         int battleSlots = 100; // TODO: make it depend on the number of troops.
                         _battleMercenaryDistributionModel.DistributeMercenaries(battle.Fighters, battleSlots);
+                        // TODO:
+                        // TODO: spec
+                        var fighterApplications = battle.FighterApplications.Where(ma => ma.Status == BattleFighterApplicationStatus.Pending).ToArray();
+                        foreach (BattleFighterApplication application in fighterApplications)
+                        {
+                            application.Status = BattleFighterApplicationStatus.Declined;
+                        }
+
+                        // TODO: The start time, at least approximate, should be available at the Hiring stage.
                         battle.Phase = BattlePhase.Hiring;
                         break;
                     case BattlePhase.Hiring:
                         await _battleScheduler.ScheduleBattle(battle);
+
+                        var applications = battle.MercenaryApplications.Where(ma => ma.Status == BattleMercenaryApplicationStatus.Pending).ToArray();
+                        foreach (BattleMercenaryApplication application in applications)
+                        {
+                            application.Status = BattleMercenaryApplicationStatus.Declined;
+                        }
+
                         battle.Phase = BattlePhase.Scheduled;
                         break;
                     case BattlePhase.Scheduled:
+                        // TODO: startup game server...
                         battle.Phase = BattlePhase.Live;
                         break;
                 }

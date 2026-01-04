@@ -4,7 +4,6 @@ using Crpg.Application.Characters.Models;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
-using Crpg.Application.Common.Services;
 using Crpg.Application.Users.Models;
 using Crpg.Domain.Entities.Battles;
 using Microsoft.EntityFrameworkCore;
@@ -20,13 +19,11 @@ public record GetBattleMercenariesQuery : IMediatorRequest<IList<BattleMercenary
     {
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
-        private readonly ICharacterClassResolver _characterClassResolver;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, ICharacterClassResolver characterClassResolver)
+        public Handler(ICrpgDbContext db, IMapper mapper)
         {
             _db = db;
             _mapper = mapper;
-            _characterClassResolver = characterClassResolver;
         }
 
         public async Task<Result<IList<BattleMercenaryViewModel>>> Handle(GetBattleMercenariesQuery req, CancellationToken cancellationToken)
@@ -34,7 +31,10 @@ public record GetBattleMercenariesQuery : IMediatorRequest<IList<BattleMercenary
             var battle = await _db.Battles
                 .AsSplitQuery()
                 .Include(b => b.Fighters)
-                .Include(b => b.Mercenaries).ThenInclude(m => m.Character!.User)
+                .Include(b => b.Mercenaries)
+                    .ThenInclude(m => m.Character!.User)
+                        .ThenInclude(u => u!.ClanMembership)
+                            .ThenInclude(cm => cm!.Clan)
                 .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {
@@ -48,15 +48,23 @@ public record GetBattleMercenariesQuery : IMediatorRequest<IList<BattleMercenary
             }
 
             BattleFighter? fighter = battle.Fighters.FirstOrDefault(f => f.PartyId == req.UserId);
+            BattleMercenary? mercenary = battle.Mercenaries.FirstOrDefault(m => m.Character?.User?.Id == req.UserId);
             // During the hiring phase, only the fighters can see the mercenaries.
-            if (battle.Phase == BattlePhase.Hiring && fighter == null)
-            {
-                return new(CommonErrors.PartyNotAFighter(req.UserId, req.BattleId));
-            }
+            // If the user is not a fighter of that battle, only return its mercenary // TODO: why?
+            // TODO: FIXME:
+            // if (battle.Phase == BattlePhase.Hiring && fighter == null && mercenary == null)
+            // {
+            //     return new(CommonErrors.PartyNotAFighter(req.UserId, req.BattleId));
+            // }
 
-            // Return the mercenaries from the same side as the user during the hiring phase.
+            // Return the mercenaries from the same side as the user during the hiring phase. // TODO: why?
             var mercenaries = battle.Mercenaries
-                .Where(m => battle.Phase != BattlePhase.Hiring || m.Side == fighter!.Side)
+                // TODO: FIXME:
+                // .Where(m =>
+                //     battle.Phase != BattlePhase.Hiring
+                // // || m.Side == fighter?.Side
+                // // || m.Character?.User?.Id == req.UserId
+                // )
                 .Select(m => new BattleMercenaryViewModel
                 {
                     Id = m.Id,
