@@ -18,12 +18,16 @@ interface CrpgApiError {
   stackTrace: string | null
 }
 
+export interface CrpgApiResult<T> {
+  data: T | null
+  errors: CrpgApiError[] | null
+}
+
 export const createClientConfig: CreateClientConfig = (config) => {
   return ({
     ...config,
     baseURL: import.meta.env.NUXT_PUBLIC_API_BASE_URL,
-    auth: () => getToken(),
-    // TODO: spec
+    auth: getToken,
     async onResponseError({ response }) {
       const route = useRoute()
       const toast = useToast()
@@ -41,7 +45,7 @@ export const createClientConfig: CreateClientConfig = (config) => {
         return
       }
 
-      const [error] = (response as FetchResponse<{ errors: CrpgApiError[] }>)._data?.errors ?? []
+      const [error] = (response as FetchResponse<CrpgApiResult<unknown>>)._data?.errors ?? []
 
       if (error) {
         toast.add({

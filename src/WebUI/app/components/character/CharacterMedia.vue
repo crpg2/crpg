@@ -3,19 +3,32 @@ import type { CharacterPublic } from '~/models/character'
 
 import { characterClassToIcon } from '~/services/character-service'
 
-const { character } = defineProps<{
-  character: CharacterPublic
+const { character, hiddenName = false, hiddenLevel = false } = defineProps<{
+  character: CharacterPublic & { name?: string }
+  hiddenName?: boolean
+  hiddenLevel?: boolean
 }>()
 </script>
 
 <template>
-  <UiDataMedia :icon="`crpg:${characterClassToIcon[character.class]}`">
-    <template #default>
+  <UiDataMedia>
+    <template #icon="{ classes: iconClasses }">
+      <UTooltip :text="$t(`character.class.${character.class}`)">
+        <UIcon
+          :name="`crpg:${characterClassToIcon[character.class]}`"
+          :class="iconClasses()"
+        />
+      </UTooltip>
+    </template>
+
+    <template v-if="!hiddenName || !hiddenLevel" #default>
       <div class="flex gap-1">
-        <div class="max-w-[150px] truncate">
+        <div v-if="!hiddenName && character.name" class="max-w-[150px] truncate">
           {{ character.name }}
         </div>
-        ({{ character.level }})
+        <span v-if="!hiddenLevel">
+          ({{ character.level }})
+        </span>
       </div>
     </template>
   </UiDataMedia>

@@ -259,7 +259,7 @@ const formSchema: FormSchema[] = [
             base: 'w-28',
           }"
           v-bind="getInputProps(fieldGroupKey, fieldKey)"
-          @update:model-value="(value) => $emit('input', fieldGroupKey, fieldKey, value)"
+          @update:model-value="(value) => $emit('input', fieldGroupKey, fieldKey, value!)"
         />
       </template>
     </UiDataCell>

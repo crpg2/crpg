@@ -1,6 +1,12 @@
 name: WebApi
 
-on: [push, pull_request]
+on:
+  push:
+    paths-ignore:
+      - 'src/WebUI/**'
+  pull_request:
+    paths-ignore:
+      - 'src/WebUI/**'
 
 jobs:
   build:

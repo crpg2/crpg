@@ -81,7 +81,6 @@ export default defineNuxtConfig({
   // https://ui.nuxt.com/getting-started/installation/nuxt#options
   ui: {
     fonts: false,
-    // TODO: FIXME: test
     experimental: {
       componentDetection: true,
     },

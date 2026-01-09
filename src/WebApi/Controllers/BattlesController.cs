@@ -17,22 +17,37 @@ public class BattlesController : BaseController
     /// </summary>
     [HttpGet]
     public Task<ActionResult<Result<IList<BattleDetailedViewModel>>>> GetBattles([FromQuery] Region region,
-        [FromQuery(Name = "phase[]")] BattlePhase[] phases)
+        [FromQuery(Name = "phase[]")] BattlePhase[] phases, [FromQuery] BattleType? type)
         => ResultToActionAsync(Mediator.Send(new GetBattlesQuery
         {
+            UserId = CurrentUser.User!.Id,
             Region = region,
             Phases = phases,
+            Type = type,
         }));
 
     /// <summary>
     /// Get strategus battle.
     /// </summary>
     [HttpGet("{battleId}")]
-    public Task<ActionResult<Result<BattleViewModel>>> GetBattles([FromRoute] int battleId) =>
+    public Task<ActionResult<Result<BattleDetailedViewModel>>> GetBattle([FromRoute] int battleId) =>
         ResultToActionAsync(Mediator.Send(new GetBattleQuery
         {
+            UserId = CurrentUser.User!.Id,
             BattleId = battleId,
         }));
+
+    /// <summary>
+    /// Update strategus battle briefing.
+    /// </summary>
+    /// <param name="battleId">Battle id.</param>
+    /// <param name="req">The entire battle side briefing with the updated values.</param>
+    [HttpPut("{battleId}/side-briefing")]
+    public Task<ActionResult<Result<BattleSideBriefingViewModel>>> UpdateBattleSideBriefing([FromRoute] int battleId, [FromBody] UpdateBattleSideBriefingCommand req)
+    {
+        req = req with { PartyId = CurrentUser.User!.Id, BattleId = battleId };
+        return ResultToActionAsync(Mediator.Send(req));
+    }
 
     /// <summary>
     /// Get battle fighters.
@@ -97,19 +112,36 @@ public class BattlesController : BaseController
     }
 
     /// <summary>
-    /// Get battle mercenaries.
+    /// Get battle participants.
     /// </summary>
-    /// <returns>The mercenaries.</returns>
+    /// <returns>The participants.</returns>
     /// <response code="200">Ok.</response>
     /// <response code="400">Bad request.</response>
-    [HttpGet("{battleId}/mercenaries")]
-    public Task<ActionResult<Result<IList<BattleMercenaryViewModel>>>> GetBattleMercenaries([FromRoute] int battleId)
+    [HttpGet("{battleId}/participants")]
+    public Task<ActionResult<Result<IList<BattleParticipantViewModel>>>> GetBattleParticipants([FromRoute] int battleId)
     {
-        return ResultToActionAsync(Mediator.Send(new GetBattleMercenariesQuery
+        return ResultToActionAsync(Mediator.Send(new GetBattleParticipantsQuery
         {
-            UserId = CurrentUser.User!.Id,
             BattleId = battleId,
         }));
+    }
+
+    /// <summary>
+    /// Remove a battle participant from a battle.
+    /// </summary>
+    /// <param name="battleId">Battle id.</param>
+    /// <param name="participantId">Participant id.</param>
+    /// <response code="204">Removed.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpDelete("{battleId}/participants/{participantId}")]
+    public Task<ActionResult> RemoveParticipant([FromRoute] int battleId, [FromRoute] int participantId)
+    {
+        return ResultToActionAsync(Mediator.Send(new RemoveBattleParticipantCommand
+        {
+            PartyId = CurrentUser.User!.Id,
+            BattleId = battleId,
+            RemovedParticipantId = participantId,
+        }, CancellationToken.None));
     }
 
     /// <summary>
@@ -144,6 +176,19 @@ public class BattlesController : BaseController
         [FromRoute] int battleId, [FromBody] ApplyAsMercenaryToBattleCommand req)
     {
         req = req with { UserId = CurrentUser.User!.Id, BattleId = battleId };
+        return ResultToActionAsync(Mediator.Send(req));
+    }
+
+    /// <summary>
+    /// Remove mercenary application.
+    /// </summary>
+    /// <response code="204">Removed.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpDelete("{battleId}/mercenary-applications")]
+    public Task<ActionResult> RemoveMercenaryApplication(
+            [FromRoute] int battleId, [FromBody] RemoveBattleMercenaryApplicationCommand req)
+    {
+        req = req with { PartyId = CurrentUser.User!.Id, BattleId = battleId };
         return ResultToActionAsync(Mediator.Send(req));
     }
 

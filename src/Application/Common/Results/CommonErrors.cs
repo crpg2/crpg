@@ -19,6 +19,12 @@ internal static class CommonErrors
         Detail = $"Application with id '{applicationId}' was not found",
     };
 
+    public static Error ApplicationAlreadyExist(int applicationId) => new(ErrorType.Validation, ErrorCode.ApplicationAlreadyExist)
+    {
+        Title = "Application already exist",
+        Detail = $"Application with id '{applicationId}' already exist",
+    };
+
     public static Error BattleInvalidPhase(int battleId, BattlePhase phase) => new(ErrorType.Validation, ErrorCode.BattleInvalidPhase)
     {
         Title = "Cannot perform action during this battle phase",
@@ -35,6 +41,12 @@ internal static class CommonErrors
     {
         Title = "Battle is too far",
         Detail = $"Battle with id '{battleId}' is too far to perform the requested action",
+    };
+
+    public static Error BattleParticipantSlotsExceeded(int battleId, BattleSide side, int totalSlots) => new(ErrorType.Validation, ErrorCode.BattleParticipantSlotsExceeded)
+    {
+        Title = "The number of participants in the battle has been exceeded",
+        Detail = $"The number of participants in the battle with id '{battleId}' for side '{side}' has been exceeded. Limit '{totalSlots}'",
     };
 
     public static Error CharacterForTournament(int characterId) => new(ErrorType.Validation, ErrorCode.CharacterForTournament)
@@ -131,6 +143,18 @@ internal static class CommonErrors
     {
         Title = "Fighter is not a commander in the battle",
         Detail = $"Fighter with id '{fighterId} is not a commander of the battle with id '{battleId}'",
+    };
+
+    public static Error FighterNotFound(int fighterId, int battleId) => new(ErrorType.NotFound, ErrorCode.FighterNotFound)
+    {
+        Title = "Fighter was not found in the battle",
+        Detail = $"Fighter with id '{fighterId} was not found in the battle with id '{battleId}'",
+    };
+
+    public static Error BattleParticipantNotFound(int battleParticipantId) => new(ErrorType.NotFound, ErrorCode.BattleParticipantNotFound)
+    {
+        Title = "Battle participant was not found",
+        Detail = $"Battle participant with id '{battleParticipantId}' was not found",
     };
 
     public static Error PartyFighter(int partyId, int battleId) => new(ErrorType.Validation, ErrorCode.PartyFighter)

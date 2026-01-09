@@ -36,12 +36,12 @@ public class UpdateBattlePhasesCommandTest : TestBase
         ArrangeDb.Battles.AddRange(battles);
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IBattleMercenaryDistributionModel> battleMercenaryDistributionModelMock = new();
+        Mock<IBattleParticipantDistributionModel> battleParticipantDistributionModelMock = new();
 
         Mock<IDateTime> dateTimeMock = new();
         dateTimeMock.Setup(dt => dt.UtcNow).Returns(new DateTime(2010, 12, 5));
 
-        UpdateBattlePhasesCommand.Handler handler = new(ActDb, battleMercenaryDistributionModelMock.Object,
+        UpdateBattlePhasesCommand.Handler handler = new(ActDb, battleParticipantDistributionModelMock.Object,
             Mock.Of<IBattleScheduler>(), dateTimeMock.Object, Constants);
         await handler.Handle(new UpdateBattlePhasesCommand(), CancellationToken.None);
 
@@ -49,8 +49,8 @@ public class UpdateBattlePhasesCommandTest : TestBase
         Assert.That(battles[0].Phase, Is.EqualTo(BattlePhase.Hiring));
         Assert.That(battles[1].Phase, Is.EqualTo(BattlePhase.Preparation));
 
-        battleMercenaryDistributionModelMock.Verify(m =>
-            m.DistributeMercenaries(It.IsAny<IList<BattleFighter>>(), It.IsAny<int>()), Times.Once);
+        battleParticipantDistributionModelMock.Verify(m =>
+            m.DistributeParticipants(It.IsAny<IList<BattleFighter>>(), It.IsAny<int>()), Times.Once);
     }
 
     [Test]
@@ -75,7 +75,7 @@ public class UpdateBattlePhasesCommandTest : TestBase
         Mock<IDateTime> dateTimeMock = new();
         dateTimeMock.Setup(dt => dt.UtcNow).Returns(new DateTime(2010, 12, 5));
         Mock<IBattleScheduler> battleSchedulerMock = new();
-        UpdateBattlePhasesCommand.Handler handler = new(ActDb, Mock.Of<IBattleMercenaryDistributionModel>(),
+        UpdateBattlePhasesCommand.Handler handler = new(ActDb, Mock.Of<IBattleParticipantDistributionModel>(),
             battleSchedulerMock.Object, dateTimeMock.Object, Constants);
         await handler.Handle(new UpdateBattlePhasesCommand(), CancellationToken.None);
 
@@ -107,7 +107,7 @@ public class UpdateBattlePhasesCommandTest : TestBase
         Mock<IDateTime> dateTimeMock = new();
         dateTimeMock.Setup(dt => dt.UtcNow).Returns(new DateTime(2010, 12, 5));
 
-        UpdateBattlePhasesCommand.Handler handler = new(ActDb, Mock.Of<IBattleMercenaryDistributionModel>(),
+        UpdateBattlePhasesCommand.Handler handler = new(ActDb, Mock.Of<IBattleParticipantDistributionModel>(),
             Mock.Of<IBattleScheduler>(), dateTimeMock.Object, Constants);
         await handler.Handle(new UpdateBattlePhasesCommand(), CancellationToken.None);
 

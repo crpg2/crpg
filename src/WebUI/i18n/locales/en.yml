@@ -1581,3 +1581,23 @@ strategus:
     searchBySettlements: Search settlement
     terrainLayerToggle: Terrain layer toggle
     terrainEditorToggle: Terrain editor toggle
+
+  battle:
+    upcoming battles: Upcoming Battles
+    battle phase: Battle phase
+    phase:
+      Hiring: Hiring
+      Scheduled: Scheduled
+      Live: Live
+      Preparation: Preparation
+      End: End
+    type:
+      All: All
+      Battle: Battle
+      Siege: Siege
+    side:
+      Attacker: Attacker
+      Defender: Defender
+    titleByType:
+      Siege: Siege of {settlement}
+      Battle: Battle on the {terrain} near the {nearestSettlement}

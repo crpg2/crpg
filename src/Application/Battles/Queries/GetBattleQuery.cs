@@ -1,33 +1,42 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using Crpg.Application.Battles.Models;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
+using Crpg.Application.Common.Services;
 using Crpg.Domain.Entities.Battles;
+using Crpg.Domain.Entities.Terrains;
 using Microsoft.EntityFrameworkCore;
 
 namespace Crpg.Application.Battles.Queries;
 
-public record GetBattleQuery : IMediatorRequest<BattleViewModel>
+public record GetBattleQuery : IMediatorRequest<BattleDetailedViewModel>
 {
     public int BattleId { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<GetBattleQuery, BattleViewModel>
+    [JsonIgnore]
+    public int UserId { get; init; }
+
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IBattleService battleService) : IMediatorRequestHandler<GetBattleQuery, BattleDetailedViewModel>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly IBattleService _battleService = battleService;
 
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
-
-        public async Task<Result<BattleViewModel>> Handle(GetBattleQuery req, CancellationToken cancellationToken)
+        public async Task<Result<BattleDetailedViewModel>> Handle(GetBattleQuery req, CancellationToken cancellationToken)
         {
             var battle = await _db.Battles
-                .ProjectTo<BattleViewModel>(_mapper.ConfigurationProvider)
+                .AsSplitQuery()
+                .Include(b => b.Fighters)
+                    .ThenInclude(f => f.Party!.User!.ClanMembership!.Clan)
+                .Include(b => b.Fighters)
+                    .ThenInclude(f => f.Settlement!.Owner!.User!.ClanMembership!.Clan)
+                .Include(b => b.MercenaryApplications)
+                    .ThenInclude(a => a.Character)
+                .Include(b => b.Participants)
+                    .ThenInclude(p => p.Character)
+                .Include(b => b.SideBriefings)
                 .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {
@@ -40,7 +49,14 @@ public record GetBattleQuery : IMediatorRequest<BattleViewModel>
                 return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
             }
 
-            return new(battle);
+            var nearestSettlement = await _db.Settlements
+                .OrderBy(s => s.Position.Distance(battle.Position))
+                .FirstAsync(cancellationToken);
+
+            var battleTerrain = await _db.Terrains
+                .FirstOrDefaultAsync(t => t.Boundary.Covers(battle.Position), cancellationToken) ?? new() { Type = TerrainType.Plain, };
+
+            return new(_battleService.MapBattleToDetailedViewModel(_mapper, battle, req.UserId, nearestSettlement, battleTerrain));
         }
     }
 }

@@ -32,7 +32,7 @@ internal class StrategusSpeedModel : IStrategusSpeedModel
         return baseSpeed * terrainSpeedFactor * weightFactor * MountsInfluence(party.Troops, party.Items) * troopInfluence;
     }
 
-    private double MountsInfluence(float troops, List<PartyItem> partyItems)
+    private static double MountsInfluence(float troops, List<PartyItem> partyItems)
     {
         const double forcedMarchSpeed = 2;
 

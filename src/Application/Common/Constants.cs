@@ -4,9 +4,9 @@
 public class Constants
 {
     public int WeaponProficiencyPointsForAgility { get; set; }
-    public float[] WeaponProficiencyPointsForWeaponMasterCoefs { get; set; } = Array.Empty<float>();
-    public float[] WeaponProficiencyPointsForLevelCoefs { get; set; } = Array.Empty<float>();
-    public float[] WeaponProficiencyCostCoefs { get; set; } = Array.Empty<float>();
+    public float[] WeaponProficiencyPointsForWeaponMasterCoefs { get; set; } = [];
+    public float[] WeaponProficiencyPointsForLevelCoefs { get; set; } = [];
+    public float[] WeaponProficiencyCostCoefs { get; set; } = [];
     public float DefaultExperienceMultiplier { get; set; }
     public float ExperienceMultiplierByGeneration { get; set; }
     public float MaxExperienceMultiplierForGeneration { get; set; }
@@ -24,12 +24,12 @@ public class Constants
     public int BrokenItemRepairPenaltySeconds { get; set; }
     public float ItemSellCostPenalty { get; set; }
     public int ItemSellGracePeriodMinutes { get; set; }
-    public float[] ItemReforgeCostPerRank { get; set; } = Array.Empty<float>();
+    public float[] ItemReforgeCostPerRank { get; set; } = [];
     public int MinimumLevel { get; set; }
     public int MaximumLevel { get; set; }
     public int TournamentLevel { get; set; }
     public int NewUserStartingCharacterLevel { get; set; }
-    public float[] ExperienceForLevelCoefs { get; set; } = Array.Empty<float>();
+    public float[] ExperienceForLevelCoefs { get; set; } = [];
     public int HighLevelCutoff { get; set; }
     public int DefaultStrength { get; set; }
     public int DefaultAgility { get; set; }
@@ -44,12 +44,12 @@ public class Constants
     public float DamageFactorForPowerStrike { get; set; }
     public float DamageFactorForPowerDraw { get; set; }
     public float DamageFactorForPowerThrow { get; set; }
-    public float[] HandlingFactorForWeaponMaster { get; set; } = Array.Empty<float>();
-    public float[] DurabilityFactorForShieldRecursiveCoefs { get; set; } = Array.Empty<float>();
+    public float[] HandlingFactorForWeaponMaster { get; set; } = [];
+    public float[] DurabilityFactorForShieldRecursiveCoefs { get; set; } = [];
     public float InfantryCoverageFactorForShieldCoef { get; set; }
     public float CavalryCoverageFactorForShieldCoef { get; set; }
-    public float[] MountedRangedSkillInaccuracy { get; set; } = Array.Empty<float>();
-    public float[] ShieldDefendStunMultiplierForSkillRecursiveCoefs { get; set; } = Array.Empty<float>();
+    public float[] MountedRangedSkillInaccuracy { get; set; } = [];
+    public float[] ShieldDefendStunMultiplierForSkillRecursiveCoefs { get; set; } = [];
     public float ArmorSetRequirementPowerMeanPValue { get; set; }
     public float DefaultRating { get; set; }
     public float DefaultRatingDeviation { get; set; }
@@ -71,7 +71,7 @@ public class Constants
     public double StrategusEquivalentDistance { get; set; }
     public double StrategusInteractionDistance { get; set; }
     public double StrategusViewDistance { get; set; }
-    public double[] StrategusSpawningPositionCenter { get; set; } = Array.Empty<double>();
+    public double[] StrategusSpawningPositionCenter { get; set; } = [];
     public double StrategusSpawningPositionRadius { get; set; }
     public float StrategusTroopRecruitmentPerHour { get; set; }
     public int StrategusMinPartyTroops { get; set; }
@@ -80,4 +80,5 @@ public class Constants
     public int StrategusBattleHiringDurationHours { get; set; }
     public int StrategusMercenaryMaxWage { get; set; }
     public int StrategusMercenaryNoteMaxLength { get; set; }
+    public int StrategusBattleSideBriefingNoteMaxLength { get; set; }
 }

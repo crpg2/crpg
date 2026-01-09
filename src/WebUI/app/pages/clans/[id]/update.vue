@@ -27,7 +27,6 @@ definePageMeta({
   ],
 })
 
-const toast = useToast()
 const { t } = useI18n()
 
 const { user, fetchUser } = useUser()
@@ -43,11 +42,6 @@ const [onUpdateClan] = useAsyncCallback(
   async (data: ClanUpdate) => {
     await updateClan(data)
     await fetchUser() // update clan info
-    toast.add({
-      title: t('clan.update.notify.success'),
-      close: false,
-      color: 'success',
-    })
     backToClanPage()
   },
   {

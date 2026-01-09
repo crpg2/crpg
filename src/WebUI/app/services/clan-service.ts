@@ -32,7 +32,7 @@ export const getClans = async (): Promise<ClanWithMemberCount[]> => (await _getC
 
 export const createClan = async (
   clan: ClanUpdate,
-): Promise<Clan> => (await postClans({ body: { ...clan, discord: clan.discord! } })).data
+): Promise<Clan> => (await postClans({ body: { ...clan, discord: clan.discord! } })).data!
 
 export const updateClan = (
   clanId: number,
@@ -42,7 +42,7 @@ export const updateClan = (
   body: { ...clan, discord: clan.discord! },
 })
 
-export const getClan = async (id: number): Promise<Clan> => (await getClansById({ path: { id } })).data
+export const getClan = async (id: number): Promise<Clan> => (await getClansById({ path: { id } })).data!
 
 export const getClanMembers = async (id: number): Promise<ClanMember[]> => (await getClansByIdMembers({ path: { id } })).data!
 

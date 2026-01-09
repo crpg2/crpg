@@ -69,7 +69,7 @@ const clanSize = computed(() => ({
           #default="{ classes: labelClasses }"
         >
           <div
-            class="max-w-52 truncate leading-none"
+            class="max-w-32 truncate leading-none"
             :class="labelClasses()"
             :title="user.name"
           >

@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Characters.Models;
 using Crpg.Application.Clans.Models;
@@ -22,6 +23,7 @@ public record GameUserViewModel : IMapFrom<User>
     public DateTime CreatedAt { get; set; }
     public GameCharacterViewModel Character { get; init; } = default!;
     public IList<RestrictionViewModel> Restrictions { get; set; } = Array.Empty<RestrictionViewModel>();
+    [JsonRequired]
     public GameClanMemberViewModel? ClanMembership { get; set; }
 
     public void Mapping(Profile profile)

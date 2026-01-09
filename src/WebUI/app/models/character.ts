@@ -10,12 +10,12 @@ import type { UserItem } from '~/models/user'
 
 export interface CharacterPublic {
   id: number
-  name: string
   level: number
   class: CharacterClass
 }
 
 export interface Character extends CharacterPublic {
+  name: string
   generation: number
   experience: number
   forTournament: boolean

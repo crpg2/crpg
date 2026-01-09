@@ -5,11 +5,10 @@ import type {
 } from '#api'
 import type { ValueOf } from 'type-fest'
 
+import type { Item } from '~/models/item'
 import type { Language } from '~/models/language'
 import type { Region } from '~/models/region'
 import type { UserPublic } from '~/models/user'
-
-import type { Item } from './item'
 
 export interface Clan {
   id: number

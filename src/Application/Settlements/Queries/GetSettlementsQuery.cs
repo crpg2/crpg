@@ -24,7 +24,10 @@ public record GetSettlementsQuery : IMediatorRequest<IList<SettlementPublicViewM
         public async Task<Result<IList<SettlementPublicViewModel>>> Handle(GetSettlementsQuery req, CancellationToken cancellationToken)
         {
             var settlements = await _db.Settlements
-                .Include(s => s.Owner!.User!.ClanMembership!.Clan)
+                .Include(s => s.Owner)
+                    .ThenInclude(o => o!.User)
+                        .ThenInclude(u => u!.ClanMembership)
+                            .ThenInclude(cm => cm!.Clan)
                 .ProjectTo<SettlementPublicViewModel>(_mapper.ConfigurationProvider)
                 .ToArrayAsync(cancellationToken);
 

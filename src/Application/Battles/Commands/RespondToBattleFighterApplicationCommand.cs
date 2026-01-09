@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Battles.Models;
 using Crpg.Application.Common.Interfaces;
@@ -12,22 +13,18 @@ namespace Crpg.Application.Battles.Commands;
 
 public record RespondToBattleFighterApplicationCommand : IMediatorRequest<BattleFighterApplicationViewModel>
 {
+    [JsonIgnore]
     public int PartyId { get; init; }
+    [JsonIgnore]
     public int FighterApplicationId { get; init; }
     public bool Accept { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<RespondToBattleFighterApplicationCommand, BattleFighterApplicationViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<RespondToBattleFighterApplicationCommand, BattleFighterApplicationViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<RespondToBattleFighterApplicationCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
         public async Task<Result<BattleFighterApplicationViewModel>> Handle(RespondToBattleFighterApplicationCommand req,
             CancellationToken cancellationToken)
@@ -82,7 +79,7 @@ public record RespondToBattleFighterApplicationCommand : IMediatorRequest<Battle
                 {
                     Side = application.Side,
                     Commander = false,
-                    MercenarySlots = 0,
+                    ParticipantSlots = 0,
                     Party = application.Party,
                     Battle = application.Battle,
                 };

@@ -4,7 +4,7 @@ using Crpg.Domain.Entities.Characters;
 namespace Crpg.Domain.Entities.Battles;
 
 /// <summary>
-/// Application to join a <see cref="Battle"/> during the <see cref="BattlePhase.Preparation"/>
+/// Application to join a <see cref="Battle"/> during the <see cref="BattlePhase.Hiring"/>
 /// phase.
 /// </summary>
 public class BattleMercenaryApplication : AuditableEntity

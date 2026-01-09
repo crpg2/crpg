@@ -23,16 +23,10 @@ public record GetBattleFighterApplicationsQuery : IMediatorRequest<IList<BattleF
         }
     }
 
-    internal class Handler : IMediatorRequestHandler<GetBattleFighterApplicationsQuery, IList<BattleFighterApplicationViewModel>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<GetBattleFighterApplicationsQuery, IList<BattleFighterApplicationViewModel>>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
         public async Task<Result<IList<BattleFighterApplicationViewModel>>> Handle(
             GetBattleFighterApplicationsQuery req, CancellationToken cancellationToken)
