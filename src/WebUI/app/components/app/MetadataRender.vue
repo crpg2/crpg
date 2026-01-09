@@ -115,22 +115,30 @@ function Render() {
       ...(clanId && { clan: () => renderUserClan(Number(clanId)) }),
       ...(oldClanMemberRole && { oldClanMemberRole: () => h(ClanRole, { role: oldClanMemberRole as ClanMemberRole }) }),
       ...(newClanMemberRole && { newClanMemberRole: () => h(ClanRole, { role: newClanMemberRole as ClanMemberRole }) }),
+
       ...(userId && { user: () => renderUser(Number(userId)) }),
       ...(targetUserId && { targetUser: () => renderUser(Number(targetUserId)) }),
       ...(actorUserId && { actorUser: () => renderUser(Number(actorUserId)) }),
+
       ...(characterId && { character: () => renderCharacter(Number(characterId)) }),
+
       ...(gold && { gold: () => renderGold(Number(gold)) }),
       ...(price && { price: () => renderGold(Number(price)) }),
       ...(refundedGold && { refundedGold: () => renderGold(Number(refundedGold)) }),
+
       ...(heirloomPoints && { heirloomPoints: () => renderLoom(Number(heirloomPoints)) }),
       ...(refundedHeirloomPoints && { refundedHeirloomPoints: () => renderLoom(Number(refundedHeirloomPoints)) }),
+
       ...(itemId && { item: () => renderItem(itemId) }),
       ...(userItemId && { userItem: () => renderItem(userItemId) }),
+
       ...(damage && { damage: () => renderDamage(damage) }),
       ...(instance && { instance: () => h(UBadge, { color: 'neutral', size: 'sm', variant: 'subtle', label: instance }) }),
       ...(gameMode && { gameMode: () => h(UBadge, { color: 'neutral', size: 'sm', variant: 'soft', label: gameMode }) }),
+
       ...Object.entries(restKeys).reduce((out: Record<string, () => VNode>, [key, value]) => {
-        out[key] = () => renderStrong(value)
+        const [isNumber, candidateToNumber] = tryGetNumber(value)
+        out[key] = () => renderStrong(isNumber ? n(candidateToNumber) : value)
         return out
       }, {} as Record<string, () => any>),
     },

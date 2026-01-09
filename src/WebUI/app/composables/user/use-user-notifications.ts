@@ -17,7 +17,7 @@ export const useUsersNotifications = () => {
 
   const {
     state: notifications,
-    execute: loadNotifications,
+    executeImmediate: loadNotifications,
     isLoading: loadingNotifications,
   } = useAsyncState(
     () => getUserNotifications(),
@@ -79,11 +79,9 @@ export const useUsersNotifications = () => {
       || deletingAllNotification.value,
   )
 
-  const isEmpty = computed(() => !notifications.value.notifications.length)
-
   return {
-    notifications,
-    isEmpty,
+    notifications: toRef(() => notifications.value.notifications),
+    notificationsDict: toRef(() => notifications.value.dict),
     isLoading,
     loadNotifications,
     hasUnreadNotifications,
