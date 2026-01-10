@@ -80,10 +80,10 @@ public record RemoveBattleParticipantCommand : IMediatorRequest
             }
 
             _db.BattleParticipants.Remove(participant);
-            _db.ActivityLogs.Add(_activityLogService.CreateBattleParticipantKickedLog(battle.Id, req.RemovedParticipantId, req.PartyId));
-            _db.UserNotifications.Add(_userNotificationService.CreateBattleParticipantKickedToExParticipantNotification(req.RemovedParticipantId, battle.Id));
+            _db.ActivityLogs.Add(_activityLogService.CreateBattleParticipantKickedLog(battle.Id, participant.Character!.UserId, req.PartyId));
+            _db.UserNotifications.Add(_userNotificationService.CreateBattleParticipantKickedToExParticipantNotification(participant.Character!.UserId, battle.Id));
             await _db.SaveChangesAsync(cancellationToken);
-            Logger.LogInformation("User '{0}' removed participant '{1}' out of battle '{2}'", req.PartyId, req.RemovedParticipantId, req.BattleId);
+            Logger.LogInformation("User '{0}' removed participant '{1}' (user '{2}') out of battle '{3}'", req.PartyId, req.RemovedParticipantId, participant.Character!.UserId, req.BattleId);
             return new Result();
         }
     }

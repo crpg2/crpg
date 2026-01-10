@@ -45,28 +45,40 @@ export const useUsersNotifications = () => {
   const [readNotification, readingNotification] = useAsyncCallback(
     async (id: number) => {
       await readUserNotification(id)
-      updateState()
+      await updateState()
+    },
+    {
+      pageLoading: false,
     },
   )
 
   const [readAllNotifications, readingAllNotification] = useAsyncCallback(
     async () => {
       await readAllUserNotifications()
-      updateState()
+      await updateState()
+    },
+    {
+      pageLoading: false,
     },
   )
 
   const [deleteNotification, deletingNotification] = useAsyncCallback(
     async (id: number) => {
       await deleteUserNotification(id)
-      updateState()
+      await updateState()
+    },
+    {
+      pageLoading: false,
     },
   )
 
   const [deleteAllNotifications, deletingAllNotification] = useAsyncCallback(
     async () => {
       await deleteAllUserNotifications()
-      updateState()
+      await updateState()
+    },
+    {
+      pageLoading: false,
     },
   )
 

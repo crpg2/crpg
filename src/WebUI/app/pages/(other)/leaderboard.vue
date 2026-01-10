@@ -201,7 +201,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
         <UTabs
           v-model="regionModel"
           :items="regions.map<TabsItem>(region => ({
-            label: $t(`region.${region}`),
+            label: $t(`region.${region}`, 0),
             value: region,
           }))"
           size="xl"

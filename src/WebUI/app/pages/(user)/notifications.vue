@@ -4,7 +4,7 @@ import type { ColumnFiltersState } from '@tanstack/vue-table'
 
 import { functionalUpdate, getCoreRowModel, getFacetedRowModel, getFacetedUniqueValues, getFilteredRowModel, getPaginationRowModel, useVueTable } from '@tanstack/vue-table'
 
-import type { Notification, NotificationState, NotificationType } from '~/models/notifications'
+import type { Notification } from '~/models/notifications'
 
 import { useUsersNotifications } from '~/composables/user/use-user-notifications'
 import { NOTIFICATION_STATE } from '~/models/notifications'
@@ -25,7 +25,9 @@ const {
   deleteAllNotifications,
 } = useUsersNotifications()
 
-const { pagination, setPagination } = usePagination({ pageSize: 15 })
+const { pagination, setPagination } = usePagination({ pageSize: 5 })
+
+const { t } = useI18n()
 
 const columns: TableColumn<Notification>[] = [
   {
@@ -47,25 +49,31 @@ const columns: TableColumn<Notification>[] = [
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
 const onlyStateUnread = ref<boolean>(false)
-const types = ref<NotificationType[]>([])
+const typesModel = ref<NotificationTypeItemOption[]>([])
+interface NotificationTypeItemOption {
+  id: string
+  label: string
+}
 
 const columnFilters = computed<ColumnFiltersState>(() => [
-  ...(types.value.length ? [{ id: 'types', value: types.value }] : []),
+  ...(typesModel.value.length ? [{ id: 'types', value: typesModel.value.map(item => item.id) }] : []),
   ...(onlyStateUnread.value ? [{ id: 'state', value: [NOTIFICATION_STATE.Unread] }] : []),
 ])
 
 const grid = useVueTable({
   get data() {
-    return notifications
+    return notifications.value
   },
   columns,
   getCoreRowModel: getCoreRowModel(),
   getFilteredRowModel: getFilteredRowModel(),
   getFacetedRowModel: getFacetedRowModel(),
   getFacetedUniqueValues: getFacetedUniqueValues(),
+  getPaginationRowModel: getPaginationRowModel(),
   filterFns: {
     includesSome,
   },
+  autoResetPageIndex: false,
   state: {
     get columnFilters() {
       return columnFilters.value
@@ -74,19 +82,57 @@ const grid = useVueTable({
       return pagination.value
     },
   },
-  getPaginationRowModel: getPaginationRowModel(),
   onPaginationChange: (updater) => {
     setPagination(functionalUpdate(updater, pagination.value))
     scrollToTop()
   },
 })
 
-const aggregatedTypes = computed(() => {
+function fixPaginationAfterDelete() {
+  /**
+   * autoResetPageIndex disabled
+   * for better UX when deleting notifications
+   * by default, any change in data resets pagination to default
+   */
+  const totalRows = grid.getFilteredRowModel().rows.length
+  const pageSize = pagination.value.pageSize
+
+  const maxPageIndex = Math.max(0, Math.ceil(totalRows / pageSize) - 1)
+
+  if (pagination.value.pageIndex > maxPageIndex) {
+    setPagination({
+      ...pagination.value,
+      pageIndex: maxPageIndex,
+    })
+  }
+}
+
+watch(columnFilters, () => {
+  setPagination({
+    ...pagination.value,
+    pageIndex: 0,
+  })
+})
+
+watch(notifications, () => {
+  fixPaginationAfterDelete()
+})
+
+const typesItems = computed<NotificationTypeItemOption[]>(() => {
   const column = grid.getColumn('types')
   if (!column) {
     return []
   }
-  return [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
+  return [
+    ...new Set(
+      Array.from(column.getFacetedUniqueValues().keys())
+        .flat()
+        .map(id => ({
+          label: t(`notification.${id}.title`),
+          id,
+        })),
+    ),
+  ]
 })
 
 const isEmpty = computed(() => !grid.getRowCount())
@@ -100,13 +146,14 @@ const isEmpty = computed(() => !grid.getRowCount())
       <div class="mb-4 flex justify-between gap-4">
         <div class="flex items-center gap-4">
           <USelectMenu
-            v-model="types"
+            v-model="typesModel"
             class="w-48"
             color="neutral"
+            size="xl"
             variant="subtle"
-            placeholder="By type"
+            :placeholder="$t('user.notifications.filter.byType')"
             multiple
-            :items="aggregatedTypes"
+            :items="typesItems"
             :ui="{
               content: 'w-auto',
             }"
@@ -115,32 +162,36 @@ const isEmpty = computed(() => !grid.getRowCount())
           <USwitch
             v-model="onlyStateUnread"
             variant="card"
-            label="Only Unread"
+            size="xl"
+            :label="$t('user.notifications.filter.onlyUnread')"
           />
         </div>
 
-        <div v-if="!isEmpty" class="flex gap-4">
+        <UDropdownMenu
+          v-if="!isEmpty"
+          size="xl"
+          :items="[
+            {
+              label: $t('user.notifications.action.readAll.title'),
+              disabled: !hasUnreadNotifications,
+              onSelect: () => readAllNotifications(),
+            },
+            {
+              label: $t('user.notifications.action.deleteAll.title'),
+              icon: 'crpg:close',
+              color: 'error',
+              onSelect: () => deleteAllNotifications(),
+            },
+          ]"
+          :modal="false"
+        >
           <UButton
-            :disabled="!hasUnreadNotifications"
-            variant="ghost"
+            variant="outline"
             color="neutral"
-            :label="$t('user.notifications.action.readAll.title')"
-            @click="readAllNotifications"
+            size="xl"
+            icon="crpg:dots"
           />
-
-          <AppConfirmActionPopover
-            :confirm-label="$t('action.ok')"
-            :label="$t('user.notifications.action.deleteAll.confirmTitle')"
-            @confirm="deleteAllNotifications"
-          >
-            <UButton
-              variant="ghost"
-              color="error"
-              icon="crpg:close"
-              :label="$t('user.notifications.action.deleteAll.title')"
-            />
-          </AppConfirmActionPopover>
-        </div>
+        </UDropdownMenu>
       </div>
 
       <div class="relative flex flex-col flex-wrap gap-4">

@@ -167,7 +167,7 @@ const checkCanManageParticipant = (participant: BattleParticipant) => participan
           icon="i-lucide-calendar-check"
           :label="$d(battle.scheduledFor, 'short')" size="xl" variant="soft" color="neutral"
         />
-        <UBadge icon="crpg:region" :label="$t(`region.${battle.region}`)" size="xl" variant="soft" color="neutral" />
+        <UBadge icon="crpg:region" :label="$t(`region.${battle.region}`, 0)" size="xl" variant="soft" color="neutral" />
       </div>
 
       <UiDecorSeparator />

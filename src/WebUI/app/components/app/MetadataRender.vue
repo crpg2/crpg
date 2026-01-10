@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AppCoin, AppLoom, CharacterMedia, ClanRole, ItemThumb, UBadge, UserClan, UserMedia, UTooltip } from '#components'
+import { AppCoin, AppLoom, CharacterMedia, ClanRole, ItemThumb, UBadge, ULink, UserClan, UserMedia, UTooltip } from '#components'
 import { I18nT } from 'vue-i18n'
 
 import type { ClanMemberRole } from '~/models/clan'
@@ -81,6 +81,8 @@ const renderGold = (value: number) => h(AppCoin, { value })
 
 const renderLoom = (point: number) => h(AppLoom, { point })
 
+const renderBattleLink = (battleId: number) => h(ULink, { to: { name: 'battles-id', params: { id: battleId } } }, { default: () => battleId })
+
 function Render() {
   const {
     clanId,
@@ -100,6 +102,7 @@ function Render() {
     damage,
     instance,
     gameMode,
+    battleId,
     ...restKeys
   } = metadata
 
@@ -135,6 +138,7 @@ function Render() {
       ...(damage && { damage: () => renderDamage(damage) }),
       ...(instance && { instance: () => h(UBadge, { color: 'neutral', size: 'sm', variant: 'subtle', label: instance }) }),
       ...(gameMode && { gameMode: () => h(UBadge, { color: 'neutral', size: 'sm', variant: 'soft', label: gameMode }) }),
+      ...(battleId && { battle: () => renderBattleLink(Number(battleId)) }),
 
       ...Object.entries(restKeys).reduce((out: Record<string, () => VNode>, [key, value]) => {
         const [isNumber, candidateToNumber] = tryGetNumber(value)

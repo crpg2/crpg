@@ -30,7 +30,7 @@ const isUnread = computed(() => notification.state === NOTIFICATION_STATE.Unread
   >
     <UiDataCell>
       <AppMetadataRender
-        :keypath="`notification.tpl.${notification.type}`"
+        :keypath="`notification.${notification.type}.tpl`"
         :metadata="notification.metadata"
         :dict
         class="flex-1 pr-8"

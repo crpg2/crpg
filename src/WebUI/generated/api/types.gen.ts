@@ -14,7 +14,7 @@ export type ActivityLogMetadataEntitiesDictViewModel = {
     characters: Array<CharacterPublicViewModel>;
 };
 
-export type ActivityLogType = 'UserCreated' | 'UserDeleted' | 'UserRenamed' | 'UserRewarded' | 'ItemBought' | 'ItemSold' | 'ItemBroke' | 'ItemReforged' | 'ItemRepaired' | 'ItemUpgraded' | 'ItemReturned' | 'CharacterCreated' | 'CharacterDeleted' | 'CharacterRatingReset' | 'CharacterRespecialized' | 'CharacterRetired' | 'CharacterRewarded' | 'CharacterEarned' | 'ServerJoined' | 'ChatMessageSent' | 'TeamHit' | 'ClanCreated' | 'ClanDeleted' | 'ClanApplicationCreated' | 'ClanApplicationDeclined' | 'ClanApplicationAccepted' | 'ClanMemberKicked' | 'ClanMemberLeaved' | 'ClanMemberRoleEdited' | 'ClanArmoryAddItem' | 'ClanArmoryRemoveItem' | 'ClanArmoryReturnItem' | 'ClanArmoryBorrowItem' | 'TeamHitReported' | 'TeamHitReportedUserKicked';
+export type ActivityLogType = 'UserCreated' | 'UserDeleted' | 'UserRenamed' | 'UserRewarded' | 'ItemBought' | 'ItemSold' | 'ItemBroke' | 'ItemReforged' | 'ItemRepaired' | 'ItemUpgraded' | 'ItemReturned' | 'CharacterCreated' | 'CharacterDeleted' | 'CharacterRatingReset' | 'CharacterRespecialized' | 'CharacterRetired' | 'CharacterRewarded' | 'CharacterEarned' | 'ServerJoined' | 'ChatMessageSent' | 'TeamHit' | 'ClanCreated' | 'ClanDeleted' | 'ClanApplicationCreated' | 'ClanApplicationDeclined' | 'ClanApplicationAccepted' | 'ClanMemberKicked' | 'ClanMemberLeaved' | 'ClanMemberRoleEdited' | 'ClanArmoryAddItem' | 'ClanArmoryRemoveItem' | 'ClanArmoryReturnItem' | 'ClanArmoryBorrowItem' | 'TeamHitReported' | 'TeamHitReportedUserKicked' | 'BattleApplyAsMercenary' | 'BattleMercenaryApplicationDeclined' | 'BattleMercenaryApplicationAccepted' | 'BattleParticipantLeaved' | 'BattleParticipantKicked';
 
 export type ActivityLogViewModel = {
     id: number;
@@ -194,7 +194,6 @@ export type BattleViewModel = {
     region: Region;
     position: GeoJsonPoint;
     phase: BattlePhase;
-    type: BattleType;
     createdAt: Date;
 };
 
@@ -773,7 +772,7 @@ export type Languages = 'En' | 'Zh' | 'Ru' | 'De' | 'Fr' | 'It' | 'Es' | 'Pl' | 
 
 export type NotificationState = 'Unread' | 'Read';
 
-export type NotificationType = 'UserRewardedToUser' | 'CharacterRewardedToUser' | 'ItemReturned' | 'ClanApplicationCreatedToUser' | 'ClanApplicationCreatedToOfficers' | 'ClanApplicationAcceptedToUser' | 'ClanApplicationDeclinedToUser' | 'ClanMemberRoleChangedToUser' | 'ClanMemberLeavedToLeader' | 'ClanMemberKickedToExMember' | 'ClanArmoryBorrowItemToLender' | 'ClanArmoryRemoveItemToBorrower';
+export type NotificationType = 'UserRewardedToUser' | 'CharacterRewardedToUser' | 'ItemReturned' | 'ClanApplicationCreatedToUser' | 'ClanApplicationCreatedToOfficers' | 'ClanApplicationAcceptedToUser' | 'ClanApplicationDeclinedToUser' | 'ClanMemberRoleChangedToUser' | 'ClanMemberLeavedToLeader' | 'ClanMemberKickedToExMember' | 'ClanArmoryBorrowItemToLender' | 'ClanArmoryRemoveItemToBorrower' | 'BattleMercenaryApplicationAccepted' | 'BattleMercenaryApplicationDeclined' | 'BattleParticipantKickedToExParticipant';
 
 export type PartyPublicViewModel = {
     id: number;
@@ -1264,7 +1263,6 @@ export type BattleViewModelWritable = {
     region: Region;
     position: GeoJsonPointWritable;
     phase: BattlePhase;
-    type: BattleType;
     createdAt: Date;
 };
 

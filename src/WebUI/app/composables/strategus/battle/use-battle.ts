@@ -25,7 +25,10 @@ export const useBattleTitle = (battle: MaybeRefOrGetter) => {
     return t('strategus.battle.titleByType.Siege', { settlement: toValue(battle).nearestSettlement.name })
   }
 
-  return t('strategus.battle.titleByType.Battle', { nearestSettlement: toValue(battle).nearestSettlement.name, terrain: toValue(battle).terrain.type })
+  return t('strategus.battle.titleByType.Battle', {
+    nearestSettlement: toValue(battle).nearestSettlement.name,
+    terrain: t(`strategus.terrainType.${toValue(battle).terrain.type}`).toLowerCase(),
+  })
 }
 
 export const useBattle = () => {
