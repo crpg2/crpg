@@ -6,6 +6,7 @@ using Crpg.Application.Common;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
+using Crpg.Application.Common.Services;
 using Crpg.Application.Users.Models;
 using Crpg.Domain.Entities.Battles;
 using FluentValidation;
@@ -36,12 +37,13 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
         }
     }
 
-    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<ApplyAsMercenaryToBattleCommand, BattleMercenaryApplicationViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IActivityLogService activityLogService) : IMediatorRequestHandler<ApplyAsMercenaryToBattleCommand, BattleMercenaryApplicationViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<ApplyAsMercenaryToBattleCommand>();
 
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
+        private readonly IActivityLogService _activityLogService = activityLogService;
 
         public async Task<Result<BattleMercenaryApplicationViewModel>> Handle(
             ApplyAsMercenaryToBattleCommand req,
@@ -67,8 +69,7 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
             }
 
             // User cannot apply as a mercenary in battle they are fighting.
-            bool isUserFighter = await _db.BattleFighters.AnyAsync(f =>
-                f.BattleId == battle.Id && f.PartyId == character.UserId, cancellationToken);
+            bool isUserFighter = await _db.BattleFighters.AnyAsync(f => f.BattleId == battle.Id && f.PartyId == character.UserId, cancellationToken);
             if (isUserFighter)
             {
                 return new(CommonErrors.PartyFighter(character.UserId, battle.Id));
@@ -104,6 +105,8 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
                 Character = character,
             };
             battle.MercenaryApplications.Add(application);
+            _db.ActivityLogs.Add(_activityLogService.CreateApplyAsMercenaryToBattleLog(battle.Id, req.Side.ToString(), req.UserId, character.Id));
+
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation(
                 "User '{0}' applied as a mercenary to battle '{1}' for the side '{2}' with character '{3}'",

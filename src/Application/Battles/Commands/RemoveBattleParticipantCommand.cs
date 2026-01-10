@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
+using Crpg.Application.Common.Services;
 using Crpg.Domain.Entities.Battles;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -20,11 +21,13 @@ public record RemoveBattleParticipantCommand : IMediatorRequest
     [JsonIgnore]
     public int RemovedParticipantId { get; init; }
 
-    internal class Handler(ICrpgDbContext db) : IMediatorRequestHandler<RemoveBattleParticipantCommand>
+    internal class Handler(ICrpgDbContext db, IActivityLogService activityLogService, IUserNotificationService userNotificationService) : IMediatorRequestHandler<RemoveBattleParticipantCommand>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<RemoveBattleParticipantCommand>();
 
         private readonly ICrpgDbContext _db = db;
+        private readonly IActivityLogService _activityLogService = activityLogService;
+        private readonly IUserNotificationService _userNotificationService = userNotificationService;
 
         public async Task<Result> Handle(RemoveBattleParticipantCommand req, CancellationToken cancellationToken)
         {
@@ -64,6 +67,7 @@ public record RemoveBattleParticipantCommand : IMediatorRequest
             if (req.PartyId == participant.Character!.UserId) // Participant is leaving the battle
             {
                 _db.BattleParticipants.Remove(participant);
+                _db.ActivityLogs.Add(_activityLogService.CreateBattleParticipantLeavedLog(battle.Id, req.PartyId));
                 await _db.SaveChangesAsync(cancellationToken);
                 Logger.LogInformation("Participant '{0}' left the battle clan '{1}'", req.PartyId, req.BattleId);
                 return new Result();
@@ -76,6 +80,8 @@ public record RemoveBattleParticipantCommand : IMediatorRequest
             }
 
             _db.BattleParticipants.Remove(participant);
+            _db.ActivityLogs.Add(_activityLogService.CreateBattleParticipantKickedLog(battle.Id, req.RemovedParticipantId, req.PartyId));
+            _db.UserNotifications.Add(_userNotificationService.CreateBattleParticipantKickedToExParticipantNotification(req.RemovedParticipantId, battle.Id));
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("User '{0}' removed participant '{1}' out of battle '{2}'", req.PartyId, req.RemovedParticipantId, req.BattleId);
             return new Result();

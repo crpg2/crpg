@@ -37,4 +37,9 @@ public enum ActivityLogType
     ClanArmoryBorrowItem,
     TeamHitReported,
     TeamHitReportedUserKicked,
+    BattleApplyAsMercenary,
+    BattleMercenaryApplicationDeclined,
+    BattleMercenaryApplicationAccepted,
+    BattleParticipantLeaved,
+    BattleParticipantKicked,
 }

@@ -14,4 +14,7 @@ public enum NotificationType
     ClanMemberKickedToExMember,
     ClanArmoryBorrowItemToLender,
     ClanArmoryRemoveItemToBorrower,
+    BattleMercenaryApplicationAccepted,
+    BattleMercenaryApplicationDeclined,
+    BattleParticipantKickedToExParticipant,
 }
