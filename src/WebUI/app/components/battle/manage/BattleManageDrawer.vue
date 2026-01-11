@@ -19,6 +19,7 @@ const emit = defineEmits<{
 }>()
 
 const toast = useToast()
+const { t } = useI18n()
 
 const onCancel = () => {
   emit('close', false)
@@ -26,8 +27,8 @@ const onCancel = () => {
 
 const { updateBattleBriefing, updatingBattleBriefing } = useBattleSideBriefing()
 
-const onSaveBattleBriefing = async (briefing: BattleSideBriefing) => {
-  await updateBattleBriefing(battleId, side, briefing)
+const onSaveBattleBriefing = (briefing: BattleSideBriefing) => {
+  updateBattleBriefing(battleId, side, briefing)
 }
 
 const {
@@ -36,18 +37,19 @@ const {
   loadBattleMercenaryApplications,
   respondToBattleMercenaryApplication,
   loadingBattleMercenaryApplications,
-  loadedBattleMercenaryApplications,
 } = useBattleMercenaryApplications()
 
 const [onRespond, responding] = useAsyncCallback(
   async (applicationId: number, status: boolean) => {
     await respondToBattleMercenaryApplication(applicationId, status)
     await loadBattleMercenaryApplications()
+
     onResponded()
+
     toast.add({
       title: status
-        ? 'TODO:'
-        : 'TODO:',
+        ? t('strategus.battle.manage.mercenaryApplications.respond.accept.notify.success')
+        : t('strategus.battle.manage.mercenaryApplications.respond.decline.notify.success'),
       close: false,
       color: 'success',
     })
@@ -58,11 +60,11 @@ const activeTab = ref<'briefing' | 'mercenaryApplications'>('mercenaryApplicatio
 
 const items = computed<TabsItem[]>(() => [
   {
-    label: 'Briefing',
+    label: t('strategus.battle.manage.briefing.title'),
     value: 'briefing',
   },
   {
-    label: 'Mercenary applications',
+    label: t('strategus.battle.manage.mercenaryApplications.title'),
     value: 'mercenaryApplications',
     ...(Boolean(mercenaryPendingApplicationsCount.value) && {
       badge: {
@@ -90,7 +92,7 @@ const items = computed<TabsItem[]>(() => [
     <template #header>
       <div class="flex flex-1 items-center justify-center gap-4">
         <UiTextView variant="h4">
-          Manage Battle
+          {{ $t('strategus.battle.manage.title') }}
         </UiTextView>
 
         <UTabs
@@ -118,6 +120,7 @@ const items = computed<TabsItem[]>(() => [
         <BattleManageBriefingForm
           v-if="activeTab === 'briefing'"
           :briefing="sideInfo.briefing"
+          :loading="updatingBattleBriefing"
           @save="onSaveBattleBriefing"
         />
       </div>

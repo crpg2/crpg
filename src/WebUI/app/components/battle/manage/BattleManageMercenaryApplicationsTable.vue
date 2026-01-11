@@ -2,12 +2,11 @@
 import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState, GroupingState, SortingState, VisibilityState } from '@tanstack/vue-table'
 
-import { getGroupedRowModel, getPaginationRowModel } from '@tanstack/vue-table'
-import { AppCoin, BattleMercenaryApplicationStatusBadge, UButton, UiCollapsibleText, UiGridColumnHeader, UiGridColumnHeaderLabel, UserMedia, UTooltip } from '#components'
+import { getFacetedRowModel, getFacetedUniqueValues, getGroupedRowModel, getPaginationRowModel } from '@tanstack/vue-table'
+import { AppCoin, BattleMercenaryApplicationStatusBadge, UButton, UiCollapsibleText, UiGridColumnHeader, UiGridColumnHeaderLabel, UiTooltipContent, UserMedia, UTooltip } from '#components'
 
 import type { BattleMercenaryApplication } from '~/models/strategus/battle'
 
-import { ACTUAL_REGIONS } from '~/models/region'
 import { BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/strategus/battle'
 
 const { mercenaryApplications, totalSlots, usedSlots, mercenaryApplicationId } = defineProps<{
@@ -50,7 +49,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
   {
     accessorFn: row => row.user.id,
     id: 'user_id',
-    header: 'User',
+    header: t('strategus.battle.manage.mercenaryApplications.table.columns.user.label'),
     meta: {
       class: {
         th: tw`w-56`,
@@ -60,7 +59,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
   {
     accessorKey: 'createdAt',
     header: ({ column }) => h(UiGridColumnHeader, {
-      label: 'createdAt',
+      label: t('strategus.battle.manage.mercenaryApplications.table.columns.createdAt.label'),
       withSort: true,
       sorted: column.getIsSorted(),
       onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
@@ -71,22 +70,18 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
     accessorFn: row => row.character.level,
     id: 'character_level',
     header: ({ column }) => h(UiGridColumnHeader, {
-      label: 'Level',
+      label: t('strategus.battle.manage.mercenaryApplications.table.columns.level.label'),
       withSort: true,
       sorted: column.getIsSorted(),
       onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
     }),
-    // header: t('clan.application.table.column.name'),
-    // cell: ({ row }) => h(CharacterMedia, {
-    //   character: row.original.character,
-    // }),
   },
   {
     accessorFn: row => row.user.region,
     id: 'region',
     header: ({ column }) => {
       return h(UiGridColumnHeader, {
-        label: 'Region',
+        label: t('strategus.battle.manage.mercenaryApplications.table.columns.region.label'),
         withFilter: true,
         filtered: column.getIsFiltered(),
         onResetFilter: () => column.setFilterValue(undefined),
@@ -102,15 +97,15 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
               content: 'min-w-fit',
               base: 'px-0 py-0',
             },
-            'items': ACTUAL_REGIONS.map<SelectItem>(r => ({
-              value: r,
-              label: t(`region.${r}`),
+            'items': [...column.getFacetedUniqueValues()].map<SelectItem>(([region, count]) => ({
+              value: region,
+              label: `${t(`region.${region}`, 0)} (${count})`,
             })),
             'modelValue': column.getFilterValue(),
             'onUpdate:modelValue': column.setFilterValue,
           }, {
             default: () => h(UiGridColumnHeaderLabel, {
-              label: 'Region',
+              label: t('strategus.battle.manage.mercenaryApplications.table.columns.region.label'),
               withFilter: true,
             }),
           }),
@@ -122,6 +117,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
 
   {
     accessorKey: 'wage',
+    header: t('strategus.battle.manage.mercenaryApplications.table.columns.wage.label'),
     cell: ({ row }) => h(AppCoin, { value: row.original.wage }),
     meta: {
       class: {
@@ -131,6 +127,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
   },
   {
     accessorKey: 'note',
+    header: t('strategus.battle.manage.mercenaryApplications.table.columns.note.label'),
     cell: ({ row }) => h(UiCollapsibleText, { text: row.original.note }),
     meta: {
       class: {
@@ -142,7 +139,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
     accessorKey: 'status',
     header: ({ column }) => {
       return h(UiGridColumnHeader, {
-        label: 'Status',
+        label: t('strategus.battle.manage.mercenaryApplications.table.columns.status.label'),
         withFilter: true,
         filtered: column.getIsFiltered(),
         onResetFilter: () => column.setFilterValue(undefined),
@@ -158,15 +155,15 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
               content: 'min-w-fit',
               base: 'px-0 py-0',
             },
-            'items': Object.keys(BATTLE_MERCENARY_APPLICATION_STATUS).map<SelectItem>(s => ({
-              value: s,
-              label: s,
+            'items': [...column.getFacetedUniqueValues()].map<SelectItem>(([status, count]) => ({
+              value: status,
+              label: `${t(`strategus.battle.mercenaryApplication.status.${status}`)} (${count})`,
             })),
             'modelValue': column.getFilterValue(),
             'onUpdate:modelValue': column.setFilterValue,
           }, {
             default: () => h(UiGridColumnHeaderLabel, {
-              label: 'Status',
+              label: t('strategus.battle.manage.mercenaryApplications.table.columns.status.label'),
               withFilter: true,
             }),
           }),
@@ -176,7 +173,8 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
     cell: ({ row }) => h(BattleMercenaryApplicationStatusBadge, { applicationStatus: row.original.status }),
   },
   {
-    header: 'Actions',
+    id: 'actions',
+    header: '',
     cell: ({ row }) => {
       if (row.original.status !== BATTLE_MERCENARY_APPLICATION_STATUS.Pending) {
         return null
@@ -190,7 +188,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
           icon: 'crpg:close',
           onClick: () => emit('respond', row.original.id, false),
         }),
-        h(UTooltip, { text: 'TODO:', disabled: hasFreeSlots.value }, {
+        h(UTooltip, { disabled: hasFreeSlots.value }, {
           default: () => h(UButton, {
             label: t('action.accept'),
             icon: 'crpg:check',
@@ -198,6 +196,10 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
             color: 'success',
             disabled: !hasFreeSlots.value,
             onClick: () => emit('respond', row.original.id, true),
+          }),
+          content: () => h(UiTooltipContent, {
+            title: t('strategus.battle.manage.mercenaryApplications.respond.accept.tooltip.noFreeSlots.title'),
+            validation: t('strategus.battle.manage.mercenaryApplications.respond.accept.tooltip.noFreeSlots.description', { totalSlots }),
           }),
         }),
       ])
@@ -235,6 +237,10 @@ const sorting = ref<SortingState>([])
       :columns
       :initial-state="{
         pagination: getInitialPaginationState(),
+      }"
+      :faceted-options="{
+        getFacetedRowModel: getFacetedRowModel(),
+        getFacetedUniqueValues: getFacetedUniqueValues(),
       }"
       :pagination-options="{
         getPaginationRowModel: getPaginationRowModel(),

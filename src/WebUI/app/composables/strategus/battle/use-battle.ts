@@ -49,8 +49,10 @@ export const useBattle = () => {
 }
 
 export const useBattleSideBriefing = () => {
+  const { t } = useI18n()
+
   const [updateBattleBriefing, updatingBattleBriefing] = useAsyncCallback(updateBattleSideBriefing, {
-    successMessage: 'TODO:',
+    successMessage: t('strategus.battle.manage.briefing.notify.success'),
   })
 
   return {

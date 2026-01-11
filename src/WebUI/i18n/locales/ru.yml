@@ -1,7 +1,6 @@
 locale:
   en: English
   ru: Русский
-  cn: 中文
 
 platform:
   Steam: Steam
@@ -1547,3 +1546,50 @@ strategus:
     titleByType:
       Siege: Осада {settlement}
       Battle: Битва на {terrain} недалеко от {nearestSettlement}
+
+    mercenaryApplication:
+      statusTitle: Статус заявки наемника
+      status:
+        Pending: В ожидании
+        Accepted: Принята
+        Declined: Отклонена
+
+    manage:
+      title: Управление битвой
+      briefing:
+        title: Брифинг
+        form:
+          note:
+            label: Примечание
+            help: 'Произвольный текст: Discord, снаряжение, требования'
+        notify:
+          success: Брифинг успешно обновлён
+      mercenaryApplications:
+        title: Заявки наёмников
+        table:
+          columns:
+            user:
+              label: Пользователь
+            createdAt:
+              label: Дата создания
+            level:
+              label: Уровень
+            region:
+              label: Регион
+            wage:
+              label: Оплата
+            note:
+              label: Примечание
+            status:
+              label: Статус
+        respond:
+          accept:
+            notify:
+              success: Заявка принята
+            tooltip:
+              noFreeSlots:
+                title: Недостаточно мест для участников сражения
+                description: У вас доступно только {totalSlots} слотов для участников сражения.
+          decline:
+            notify:
+              success: Заявка отклонена

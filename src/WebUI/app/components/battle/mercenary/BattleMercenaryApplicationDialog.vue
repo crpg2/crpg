@@ -77,18 +77,18 @@ const apply = () => {
     }"
   >
     <template #title>
-      Mercenary application
+      {{ $t('strategus.battle.mercenaryApplication.title') }}
     </template>
 
     <template #body>
       <div class="grid grid-cols-[auto_auto_auto] items-start gap-4">
-        <UiDataContent v-if="sideInfo.commander.party" caption="Commander" layout="reverse" size="lg">
+        <UiDataContent v-if="sideInfo.commander.party" :caption="$t('strategus.battle.commander')" layout="reverse" size="lg">
           <UserMedia :user="sideInfo.commander.party.user" />
         </UiDataContent>
 
-        <UiDataContent caption="Side" :label="side" layout="reverse" size="lg" />
+        <UiDataContent :caption="$t('strategus.battle.sideTitle')" :label="side" layout="reverse" size="lg" />
 
-        <UiDataContent v-if="sideInfo.mercenaryApplication" caption="Status" layout="reverse" size="lg">
+        <UiDataContent v-if="sideInfo.mercenaryApplication" :caption="$t('strategus.battle.mercenaryApplication.statusTitleShort')" layout="reverse" size="lg">
           <div>
             <BattleMercenaryApplicationStatusBadge :application-status="sideInfo.mercenaryApplication.status" />
           </div>
@@ -96,7 +96,7 @@ const apply = () => {
       </div>
 
       <UFormField
-        label="Briefing"
+        :label="$t('strategus.battle.manage.briefing.title')"
         size="xl"
       >
         <UTextarea
@@ -111,8 +111,8 @@ const apply = () => {
 
       <div class="space-y-4">
         <UFormField
-          label="Note"
-          help="Free-form text: TODO:"
+          :label="$t('strategus.battle.mercenaryApplication.form.note.label')"
+          :help="$t('strategus.battle.mercenaryApplication.form.note.help')"
           size="xl"
         >
           <UTextarea
@@ -140,7 +140,7 @@ const apply = () => {
                   class="size-5"
                 />
               </template>
-              Wage
+              {{ $t('strategus.battle.mercenaryApplication.form.wage.label') }}
             </UiDataCell>
           </template>
 
@@ -162,9 +162,7 @@ const apply = () => {
       </div>
     </template>
 
-    <template
-      #footer
-    >
+    <template #footer>
       <div v-if="!readonly" class="flex items-center justify-center gap-4">
         <UButton
           variant="outline"
@@ -176,41 +174,49 @@ const apply = () => {
         <AppConfirmActionPopover @confirm="apply">
           <UButton
             size="xl"
-            label="Apply"
+            :label="$t('action.apply')"
           />
         </AppConfirmActionPopover>
       </div>
 
-      <div
+      <i18n-t
         v-if="!isNewApplication && sideInfo.mercenaryApplication?.status === BATTLE_MERCENARY_APPLICATION_STATUS.Declined"
+        scope="global"
         class="text-center"
+        keypath="strategus.battle.mercenaryApplication.create.title"
+        tag="div"
       >
-        You can
-        <ULink
-          class="cursor-pointer text-primary"
-          @click="onNewApplication"
-        >
-          create new application
-        </ULink>
-      </div>
-
-      <div
-        v-if="sideInfo.mercenaryApplication?.status === BATTLE_MERCENARY_APPLICATION_STATUS.Pending"
-        class="text-center"
-      >
-        You can
-        <AppConfirmActionPopover @confirm="onDeleteApplication">
+        <template #link>
           <ULink
-            class="
-              cursor-pointer text-error
-              hover:text-error/80
-            "
+            class="cursor-pointer text-primary"
           >
-            delete your application
+            {{ $t('strategus.battle.mercenaryApplication.create.link') }}
           </ULink>
-        </AppConfirmActionPopover>
-      </div>
+        </template>
+      </i18n-t>
 
+      <i18n-t
+        v-if="sideInfo.mercenaryApplication?.status === BATTLE_MERCENARY_APPLICATION_STATUS.Pending"
+        scope="global"
+        class="text-center"
+        keypath="strategus.battle.mercenaryApplication.delete.title"
+        tag="div"
+      >
+        <template #link>
+          <AppConfirmActionPopover @confirm="onDeleteApplication">
+            <ULink
+              class="
+                cursor-pointer text-error
+                hover:text-error/80
+              "
+            >
+              {{ $t('strategus.battle.mercenaryApplication.delete.link') }}
+            </ULink>
+          </AppConfirmActionPopover>
+        </template>
+      </i18n-t>
+
+      <!-- TODO: -->
       <div
         v-if="sideInfo.mercenaryApplication?.status === BATTLE_MERCENARY_APPLICATION_STATUS.Accepted"
         class="text-center"

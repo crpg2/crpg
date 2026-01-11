@@ -1,7 +1,6 @@
 locale:
   en: English
   ru: Русский
-  cn: 中文
 
 platform:
   Steam: Steam
@@ -1645,9 +1644,75 @@ strategus:
       All: All
       Battle: Battle
       Siege: Siege
+    commander: Commander
+    sideTitle: Side
     side:
       Attacker: Attacker
       Defender: Defender
     titleByType:
       Siege: Siege of {settlement}
       Battle: Battle on the {terrain} near the {nearestSettlement}
+
+    mercenaryApplication:
+      title: Mercenary application
+      statusTitle: Mercenary application status
+      statusTitleShort: Status
+      status:
+        Pending: Pending
+        Accepted: Accepted
+        Declined: Declined
+      form:
+        note:
+          label: Note
+          help: 'Free-form text: TODO:'
+        wage:
+          label: Wage
+          help: ''
+        notify:
+          success: Briefing successfully updated
+      create:
+        title: You can {link}
+        link: create new application
+      delete:
+        title: You can {link}
+        link: delete your application
+
+    manage:
+      title: Manage Battle
+      briefing:
+        title: Briefing
+        form:
+          note:
+            label: Note
+            help: 'Free-form text: Discord, equipment, requirements'
+        notify:
+          success: Briefing successfully updated
+      mercenaryApplications:
+        title: Mercenary applications
+        table:
+          columns:
+            user:
+              label: User
+            createdAt:
+              label: Created at
+            level:
+              label: Level
+            region:
+              label: Region
+            wage:
+              label: Wage
+            note:
+              label: Note
+            status:
+              label: Status
+        respond:
+          accept:
+            tooltip:
+              noFreeSlots:
+                title: Not enough battle participant slots
+                description: You only have {totalSlots} battle participant slots available
+            notify:
+              success: Application accepted
+          decline:
+            notify:
+              success: Application declined
