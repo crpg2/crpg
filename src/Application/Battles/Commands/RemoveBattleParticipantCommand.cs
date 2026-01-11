@@ -37,12 +37,7 @@ public record RemoveBattleParticipantCommand : IMediatorRequest
                 return new(CommonErrors.PartyNotFound(req.PartyId));
             }
 
-            var battle = await _db.Battles
-                .AsSplitQuery()
-                .Include(b => b.Participants.Where(m => m.Id == req.RemovedParticipantId))
-                    .ThenInclude(m => m.Character)
-                .Include(b => b.Fighters.Where(f => f.PartyId == req.PartyId))
-            .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
+            var battle = await _db.Battles.FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {
                 return new(CommonErrors.BattleNotFound(req.BattleId));
@@ -53,7 +48,9 @@ public record RemoveBattleParticipantCommand : IMediatorRequest
                 return new(CommonErrors.BattleInvalidPhase(battle.Id, battle.Phase));
             }
 
-            var participant = battle.Participants.FirstOrDefault();
+            var participant = await _db.BattleParticipants
+                .Include(p => p.Character)
+                .FirstOrDefaultAsync(p => p.BattleId == battle.Id && p.Id == req.RemovedParticipantId, cancellationToken);
             if (participant == null)
             {
                 return new(CommonErrors.BattleParticipantNotFound(req.RemovedParticipantId));
@@ -73,7 +70,7 @@ public record RemoveBattleParticipantCommand : IMediatorRequest
                 return new Result();
             }
 
-            var battleFighter = battle.Fighters.FirstOrDefault();
+            var battleFighter = await _db.BattleFighters.FirstOrDefaultAsync(f => f.BattleId == battle.Id && f.PartyId == req.PartyId, cancellationToken);
             if (battleFighter == null)
             {
                 return new(CommonErrors.FighterNotFound(req.PartyId, req.BattleId));

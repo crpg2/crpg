@@ -18,15 +18,15 @@ import {
   updateBattleSideBriefing,
 } from '~/services/strategus/battle-service'
 
-export const useBattleTitle = (battle: MaybeRefOrGetter) => {
+export const useBattleTitle = (battle: MaybeRefOrGetter<Battle>) => {
   const { t } = useI18n()
 
   if (toValue(battle).type === 'Siege') {
-    return t('strategus.battle.titleByType.Siege', { settlement: toValue(battle).nearestSettlement.name })
+    return t('strategus.battle.titleByType.Siege', { settlement: toValue(battle).nearestSettlement?.name ?? 'TODO:' })
   }
 
   return t('strategus.battle.titleByType.Battle', {
-    nearestSettlement: toValue(battle).nearestSettlement.name,
+    nearestSettlement: toValue(battle).nearestSettlement?.name ?? 'TODO:',
     terrain: t(`strategus.terrainType.${toValue(battle).terrain.type}`).toLowerCase(),
   })
 }

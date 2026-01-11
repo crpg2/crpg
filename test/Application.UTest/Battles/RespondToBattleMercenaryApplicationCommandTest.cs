@@ -1,8 +1,10 @@
 ﻿using Crpg.Application.Battles.Commands;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
+using Crpg.Domain.Entities.ActivityLogs;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Characters;
+using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +18,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
     [Test]
     public async Task ShouldReturnErrorIfPartyIsNotFound()
     {
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>(), Mock.Of<IActivityLogService>(), Mock.Of<IUserNotificationService>());
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = 99,
@@ -35,7 +37,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         ArrangeDb.Parties.Add(party);
         await ArrangeDb.SaveChangesAsync();
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>(), Mock.Of<IActivityLogService>(), Mock.Of<IUserNotificationService>());
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -69,7 +71,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         ArrangeDb.BattleMercenaryApplications.Add(application);
         await ArrangeDb.SaveChangesAsync();
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>(), Mock.Of<IActivityLogService>(), Mock.Of<IUserNotificationService>());
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -112,7 +114,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         ArrangeDb.BattleMercenaryApplications.Add(application);
         await ArrangeDb.SaveChangesAsync();
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>(), Mock.Of<IActivityLogService>(), Mock.Of<IUserNotificationService>());
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -158,7 +160,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         ArrangeDb.BattleMercenaryApplications.Add(application);
         await ArrangeDb.SaveChangesAsync();
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>(), Mock.Of<IActivityLogService>(), Mock.Of<IUserNotificationService>());
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -202,7 +204,7 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         ArrangeDb.BattleMercenaryApplications.Add(application);
         await ArrangeDb.SaveChangesAsync();
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>(), Mock.Of<IActivityLogService>(), Mock.Of<IUserNotificationService>());
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -245,7 +247,10 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         ArrangeDb.BattleMercenaryApplications.Add(application);
         await ArrangeDb.SaveChangesAsync();
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>());
+        Mock<IBattleService> battleService = new();
+        battleService.Setup(s => s.CalculateTotalParticipantSlots(It.IsAny<Battle>(), It.IsAny<BattleSide>())).Returns(0);
+
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, battleService.Object, Mock.Of<IActivityLogService>(), Mock.Of<IUserNotificationService>());
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -288,10 +293,17 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         ArrangeDb.BattleMercenaryApplications.Add(application);
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IBattleService> battleService = new();
-        battleService.Setup(bs => bs.CalculateTotalParticipantSlots(It.IsAny<Battle>(), It.IsAny<BattleSide>())).Returns(0);
+        Mock<IActivityLogService> activityLogService = new();
+        activityLogService
+            .Setup(s => s.CreateRespondToBattleMercenaryApplicationLog(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int>(), It.IsAny<bool>()))
+            .Returns(() => new ActivityLog());
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, battleService.Object);
+        Mock<IUserNotificationService> userNotificationService = new();
+        userNotificationService
+            .Setup(s => s.CreateBattleMercenaryApplicationRespondedNotification(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<bool>()))
+            .Returns(() => new UserNotification());
+
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IBattleService>(), activityLogService.Object, userNotificationService.Object);
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -305,6 +317,9 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         Assert.That(applicationVm.Status, Is.EqualTo(BattleMercenaryApplicationStatus.Declined));
 
         Assert.That(await AssertDb.BattleParticipants.CountAsync(), Is.EqualTo(0));
+
+        activityLogService.Verify(s => s.CreateRespondToBattleMercenaryApplicationLog(battle.Id, application.Id, party.Id, false), Times.Once);
+        userNotificationService.Verify(s => s.CreateBattleMercenaryApplicationRespondedNotification(application.Character.UserId, battle.Id, false), Times.Once);
     }
 
     [Test]
@@ -381,7 +396,13 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
         Mock<IBattleService> battleService = new();
         battleService.Setup(bs => bs.CalculateTotalParticipantSlots(It.IsAny<Battle>(), It.IsAny<BattleSide>())).Returns(114);
 
-        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, battleService.Object);
+        Mock<IActivityLogService> activityLogService = new();
+        activityLogService.Setup(s => s.CreateRespondToBattleMercenaryApplicationLog(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int>(), It.IsAny<bool>())).Returns(() => new ActivityLog());
+
+        Mock<IUserNotificationService> userNotificationService = new();
+        userNotificationService.Setup(s => s.CreateBattleMercenaryApplicationRespondedNotification(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<bool>())).Returns(() => new UserNotification());
+
+        RespondToBattleMercenaryApplicationCommand.Handler handler = new(ActDb, Mapper, battleService.Object, activityLogService.Object, userNotificationService.Object);
         var res = await handler.Handle(new RespondToBattleMercenaryApplicationCommand
         {
             PartyId = party.Id,
@@ -396,5 +417,8 @@ public class RespondToBattleMercenaryApplicationCommandTest : TestBase
 
         Assert.That(await AssertDb.BattleParticipants.CountAsync(), Is.EqualTo(1));
         Assert.That(await AssertDb.BattleMercenaryApplications.CountAsync(), Is.EqualTo(4));
+
+        activityLogService.Verify(s => s.CreateRespondToBattleMercenaryApplicationLog(battle.Id, application.Id, party.Id, true), Times.Once);
+        userNotificationService.Verify(s => s.CreateBattleMercenaryApplicationRespondedNotification(application.Character.UserId, battle.Id, true), Times.Once);
     }
 }

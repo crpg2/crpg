@@ -8,6 +8,7 @@ public enum ErrorCode
     ApplicationClosed,
     ApplicationNotFound,
     ApplicationAlreadyExist,
+    BattleMercenaryAlreadyExist,
     BattleInvalidPhase,
     BattleNotFound,
     BattleTooFar,

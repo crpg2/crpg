@@ -68,45 +68,81 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
                 return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
             }
 
+            var battleParticipant = await _db.BattleParticipants.FirstOrDefaultAsync(bp =>
+                  bp.BattleId == battle.Id &&
+                  bp.CharacterId == req.CharacterId,
+                  cancellationToken);
+
             // User cannot apply as a mercenary in battle they are fighting.
-            bool isUserFighter = await _db.BattleFighters.AnyAsync(f => f.BattleId == battle.Id && f.PartyId == character.UserId, cancellationToken);
-            if (isUserFighter)
+            if (battleParticipant?.Type == BattleParticipantType.Party)
             {
                 return new(CommonErrors.PartyFighter(character.UserId, battle.Id));
             }
 
-            // Check for existing application.
-            var application = await _db.BattleMercenaryApplications
-                .Where(a => a.CharacterId == req.CharacterId
-                            && a.BattleId == req.BattleId
-                            && a.Side == req.Side // We allow applications for both sides. // TODO: spec
-                            && (a.Status == BattleMercenaryApplicationStatus.Pending))
-                .FirstOrDefaultAsync(cancellationToken);
+            // Check for existing applications
+            var existingApplications = (await _db.BattleMercenaryApplications
+                    .Where(a =>
+                        a.CharacterId == req.CharacterId &&
+                        a.BattleId == req.BattleId &&
+                        (a.Status == BattleMercenaryApplicationStatus.Pending || a.Status == BattleMercenaryApplicationStatus.Accepted))
+                    .ToListAsync(cancellationToken))
+                .GroupBy(a => a.Side)
+                .ToList();
 
-            /*
-                We don't allow applications to be edited, as there may be various controversial situations
-                Ex.: a mercenary changed their wage, but the battle commander did not update the mercenary applications table and accepted the mercenary at the old wage.
-
-                For change the wage or the note of the application:
-                    1/ delete the current (Pending) application
-                    2/ create a new one
-             */
-            if (application != null)
+            if (existingApplications.Count != 0)
             {
-                return new(CommonErrors.ApplicationAlreadyExist(application.Id));
+                BattleSide oppositeSide = req.Side == BattleSide.Attacker ? BattleSide.Defender : BattleSide.Attacker;
+
+                var currentSideApplications = existingApplications.FirstOrDefault(g => g.Key == req.Side);
+                var oppositeSideApplications = existingApplications.FirstOrDefault(g => g.Key == oppositeSide);
+
+                int? activeApplicationId = battleParticipant?.MercenaryApplicationId;
+
+                if (currentSideApplications != null)
+                {
+                    /*
+                        We don't allow applications to be edited, as there may be various controversial situations
+                        Ex.: a mercenary changed their wage, but the battle commander did not update the mercenary applications table and accepted the mercenary at the old wage.
+                        For change the wage or the note of the application:
+                        1/ delete the current (Pending) application
+                        2/ create a new one
+                    */
+                    var currentSidePendingApplication = currentSideApplications.FirstOrDefault(a => a.Status == BattleMercenaryApplicationStatus.Pending);
+                    if (currentSidePendingApplication != null)
+                    {
+                        return new(CommonErrors.ApplicationAlreadyExist(currentSidePendingApplication.Id));
+                    }
+
+                    /*
+                        There can be many applications with the status “Accepted”.
+                        If a battle participant left the battle or was kicked out, and then reapplied and was accepted.
+                    */
+                    var currentSideAcceptedApplication = currentSideApplications.FirstOrDefault(a => a.Status == BattleMercenaryApplicationStatus.Accepted && a.Id == activeApplicationId);
+                    if (currentSideAcceptedApplication != null)
+                    {
+                        return new(CommonErrors.ApplicationAlreadyExist(currentSideAcceptedApplication.Id));
+                    }
+                }
+
+                // D'ont allow creating a application if there is already an accepted application for the opposite side
+                if (oppositeSideApplications != null
+                    && oppositeSideApplications.Any(a => a.Status == BattleMercenaryApplicationStatus.Accepted && a.Id == activeApplicationId))
+                {
+                    return new(CommonErrors.BattleMercenaryAlreadyExist(req.Side, oppositeSide));
+                }
             }
 
-            application = new BattleMercenaryApplication
+            var newApplication = new BattleMercenaryApplication
             {
+                Battle = battle,
+                Character = character,
                 Side = req.Side,
                 Wage = req.Wage,
                 Note = req.Note,
                 Status = BattleMercenaryApplicationStatus.Pending,
-                Character = character,
             };
-            battle.MercenaryApplications.Add(application);
-            _db.ActivityLogs.Add(_activityLogService.CreateApplyAsMercenaryToBattleLog(battle.Id, req.Side.ToString(), req.UserId, character.Id));
-
+            _db.BattleMercenaryApplications.Add(newApplication);
+            _db.ActivityLogs.Add(_activityLogService.CreateApplyAsMercenaryToBattleLog(battle.Id, req.Side, req.UserId, character.Id));
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation(
                 "User '{0}' applied as a mercenary to battle '{1}' for the side '{2}' with character '{3}'",
@@ -114,18 +150,13 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
 
             return new(new BattleMercenaryApplicationViewModel
             {
-                Id = application.Id,
+                Id = newApplication.Id,
                 User = _mapper.Map<UserPublicViewModel>(character.User),
-                Character = new CharacterPublicViewModel
-                {
-                    Id = character.Id,
-                    Level = character.Level,
-                    Class = character.Class,
-                },
-                Side = application.Side,
-                Wage = application.Wage,
-                Note = application.Note,
-                Status = application.Status,
+                Character = _mapper.Map<CharacterPublicViewModel>(character),
+                Side = newApplication.Side,
+                Wage = newApplication.Wage,
+                Note = newApplication.Note,
+                Status = newApplication.Status,
             });
         }
     }

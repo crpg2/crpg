@@ -76,11 +76,11 @@ public record RespondToBattleMercenaryApplicationCommand : IMediatorRequest<Batt
                 return new(CommonErrors.ApplicationClosed(application.Id));
             }
 
-            int totalParticipantSlots = _battleService.CalculateTotalParticipantSlots(application.Battle, application.Side);
-            int currentParticipantsCount = application.Battle.Participants.Count(p => p.Side == application.Side);
-
             if (req.Accept)
             {
+                int totalParticipantSlots = _battleService.CalculateTotalParticipantSlots(application.Battle, application.Side);
+                int currentParticipantsCount = application.Battle.Participants.Count(p => p.Side == application.Side);
+
                 if (currentParticipantsCount >= totalParticipantSlots)
                 {
                     return new(CommonErrors.BattleParticipantSlotsExceeded(application.BattleId, application.Side, totalParticipantSlots));

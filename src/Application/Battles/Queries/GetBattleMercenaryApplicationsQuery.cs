@@ -57,8 +57,8 @@ public record GetBattleMercenaryApplicationsQuery : IMediatorRequest<IList<Battl
                     a.BattleId == req.BattleId &&
                     req.Statuses.Contains(a.Status) &&
                     (
-                        // If the user is not a fighter of that battle, only return its applications, else return the mercenary
-                        // applications from the same side as the user.
+                        // If the user is not a fighter of that battle, only return its applications,
+                        // else return the mercenary applications from the same side as the user.
                         a.Character!.UserId == req.UserId ||
                         (fightersSide != null && a.Side == fightersSide)))
                 .OrderByDescending(a => a.CreatedAt)

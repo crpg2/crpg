@@ -1,4 +1,5 @@
 ﻿using Crpg.Domain.Entities.ActivityLogs;
+using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Servers;
 
@@ -36,7 +37,7 @@ internal interface IActivityLogService
     ActivityLog CreateRemoveItemFromClanArmoryLog(int userId, int clanId, int userItemId);
     ActivityLog CreateBorrowItemFromClanArmoryLog(int userId, int clanId, int userItemId);
     ActivityLog CreateReturnItemToClanArmoryLog(int userId, int clanId, int userItemId);
-    ActivityLog CreateApplyAsMercenaryToBattleLog(int battleId, string side, int userId, int characterId);
+    ActivityLog CreateApplyAsMercenaryToBattleLog(int battleId, BattleSide side, int userId, int characterId);
     ActivityLog CreateRespondToBattleMercenaryApplicationLog(int battleId, int applicationId, int userId, bool accept);
     ActivityLog CreateBattleParticipantLeavedLog(int battleId, int userId);
     ActivityLog CreateBattleParticipantKickedLog(int battleId, int userId, int actorUserId);
@@ -280,11 +281,11 @@ internal class ActivityLogService : IActivityLogService
         ]);
     }
 
-    public ActivityLog CreateApplyAsMercenaryToBattleLog(int battleId, string side, int userId, int characterId)
+    public ActivityLog CreateApplyAsMercenaryToBattleLog(int battleId, BattleSide side, int userId, int characterId)
     {
         return CreateLog(ActivityLogType.BattleApplyAsMercenary, userId, [
             new("battleId", battleId.ToString()),
-            new("side", side),
+            new("side", side.ToString()),
             new("userId", userId.ToString()),
             new("characterId", characterId.ToString()),
       ]);
