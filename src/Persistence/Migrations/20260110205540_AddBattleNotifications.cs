@@ -1,0 +1,29 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace Crpg.Persistence.Migrations;
+
+/// <inheritdoc />
+public partial class AddBattleNotifications : Migration
+{
+    /// <inheritdoc />
+    protected override void Up(MigrationBuilder migrationBuilder)
+    {
+        migrationBuilder.AlterDatabase()
+            .Annotation("Npgsql:Enum:activity_log_type", "battle_apply_as_mercenary,battle_mercenary_application_accepted,battle_mercenary_application_declined,battle_participant_kicked,battle_participant_leaved,character_created,character_deleted,character_earned,character_rating_reset,character_respecialized,character_retired,character_rewarded,chat_message_sent,clan_application_accepted,clan_application_created,clan_application_declined,clan_armory_add_item,clan_armory_borrow_item,clan_armory_remove_item,clan_armory_return_item,clan_created,clan_deleted,clan_member_kicked,clan_member_leaved,clan_member_role_edited,item_bought,item_broke,item_reforged,item_repaired,item_returned,item_sold,item_upgraded,server_joined,team_hit,team_hit_reported,team_hit_reported_user_kicked,user_created,user_deleted,user_renamed,user_rewarded")
+            .Annotation("Npgsql:Enum:notification_type", "battle_mercenary_application_accepted,battle_mercenary_application_declined,battle_participant_kicked_to_ex_participant,character_rewarded_to_user,clan_application_accepted_to_user,clan_application_created_to_officers,clan_application_created_to_user,clan_application_declined_to_user,clan_armory_borrow_item_to_lender,clan_armory_remove_item_to_borrower,clan_member_kicked_to_ex_member,clan_member_leaved_to_leader,clan_member_role_changed_to_user,item_returned,user_rewarded_to_user")
+            .OldAnnotation("Npgsql:Enum:activity_log_type", "character_created,character_deleted,character_earned,character_rating_reset,character_respecialized,character_retired,character_rewarded,chat_message_sent,clan_application_accepted,clan_application_created,clan_application_declined,clan_armory_add_item,clan_armory_borrow_item,clan_armory_remove_item,clan_armory_return_item,clan_created,clan_deleted,clan_member_kicked,clan_member_leaved,clan_member_role_edited,item_bought,item_broke,item_reforged,item_repaired,item_returned,item_sold,item_upgraded,server_joined,team_hit,team_hit_reported,team_hit_reported_user_kicked,user_created,user_deleted,user_renamed,user_rewarded")
+            .OldAnnotation("Npgsql:Enum:notification_type", "character_rewarded_to_user,clan_application_accepted_to_user,clan_application_created_to_officers,clan_application_created_to_user,clan_application_declined_to_user,clan_armory_borrow_item_to_lender,clan_armory_remove_item_to_borrower,clan_member_kicked_to_ex_member,clan_member_leaved_to_leader,clan_member_role_changed_to_user,item_returned,user_rewarded_to_user");
+    }
+
+    /// <inheritdoc />
+    protected override void Down(MigrationBuilder migrationBuilder)
+    {
+        migrationBuilder.AlterDatabase()
+            .Annotation("Npgsql:Enum:activity_log_type", "character_created,character_deleted,character_earned,character_rating_reset,character_respecialized,character_retired,character_rewarded,chat_message_sent,clan_application_accepted,clan_application_created,clan_application_declined,clan_armory_add_item,clan_armory_borrow_item,clan_armory_remove_item,clan_armory_return_item,clan_created,clan_deleted,clan_member_kicked,clan_member_leaved,clan_member_role_edited,item_bought,item_broke,item_reforged,item_repaired,item_returned,item_sold,item_upgraded,server_joined,team_hit,team_hit_reported,team_hit_reported_user_kicked,user_created,user_deleted,user_renamed,user_rewarded")
+            .Annotation("Npgsql:Enum:notification_type", "character_rewarded_to_user,clan_application_accepted_to_user,clan_application_created_to_officers,clan_application_created_to_user,clan_application_declined_to_user,clan_armory_borrow_item_to_lender,clan_armory_remove_item_to_borrower,clan_member_kicked_to_ex_member,clan_member_leaved_to_leader,clan_member_role_changed_to_user,item_returned,user_rewarded_to_user")
+            .OldAnnotation("Npgsql:Enum:activity_log_type", "battle_apply_as_mercenary,battle_mercenary_application_accepted,battle_mercenary_application_declined,battle_participant_kicked,battle_participant_leaved,character_created,character_deleted,character_earned,character_rating_reset,character_respecialized,character_retired,character_rewarded,chat_message_sent,clan_application_accepted,clan_application_created,clan_application_declined,clan_armory_add_item,clan_armory_borrow_item,clan_armory_remove_item,clan_armory_return_item,clan_created,clan_deleted,clan_member_kicked,clan_member_leaved,clan_member_role_edited,item_bought,item_broke,item_reforged,item_repaired,item_returned,item_sold,item_upgraded,server_joined,team_hit,team_hit_reported,team_hit_reported_user_kicked,user_created,user_deleted,user_renamed,user_rewarded")
+            .OldAnnotation("Npgsql:Enum:notification_type", "battle_mercenary_application_accepted,battle_mercenary_application_declined,battle_participant_kicked_to_ex_participant,character_rewarded_to_user,clan_application_accepted_to_user,clan_application_created_to_officers,clan_application_created_to_user,clan_application_declined_to_user,clan_armory_borrow_item_to_lender,clan_armory_remove_item_to_borrower,clan_member_kicked_to_ex_member,clan_member_leaved_to_leader,clan_member_role_changed_to_user,item_returned,user_rewarded_to_user");
+    }
+}

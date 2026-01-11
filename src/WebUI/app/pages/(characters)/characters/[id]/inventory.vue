@@ -25,7 +25,6 @@ const { clan, user } = useUser()
 const { data: userItems, pending: loadingUserItems } = useUserItemsProvider()
 useCharacterItemsProvider()
 
-const { t } = useI18n()
 const { mainHeaderHeight } = useMainHeader()
 
 const {
@@ -128,7 +127,7 @@ const items = computed(() => {
           <UDropdownMenu
             :items="[
               {
-                label: t('character.inventory.filter.hideInArmory'),
+                label: $t('character.inventory.filter.hideInArmory'),
                 type: 'checkbox',
                 icon: 'crpg:armory',
                 checked: hideInArmoryItemsModel,

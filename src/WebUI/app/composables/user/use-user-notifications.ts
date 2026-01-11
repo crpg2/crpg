@@ -1,5 +1,5 @@
 import { useAsyncState } from '@vueuse/core'
-import { computed } from 'vue'
+import { computed, toRef } from 'vue'
 
 import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
@@ -17,7 +17,7 @@ export const useUsersNotifications = () => {
 
   const {
     state: notifications,
-    execute: loadNotifications,
+    executeImmediate: loadNotifications,
     isLoading: loadingNotifications,
   } = useAsyncState(
     () => getUserNotifications(),
@@ -45,28 +45,40 @@ export const useUsersNotifications = () => {
   const [readNotification, readingNotification] = useAsyncCallback(
     async (id: number) => {
       await readUserNotification(id)
-      updateState()
+      await updateState()
+    },
+    {
+      pageLoading: false,
     },
   )
 
   const [readAllNotifications, readingAllNotification] = useAsyncCallback(
     async () => {
       await readAllUserNotifications()
-      updateState()
+      await updateState()
+    },
+    {
+      pageLoading: false,
     },
   )
 
   const [deleteNotification, deletingNotification] = useAsyncCallback(
     async (id: number) => {
       await deleteUserNotification(id)
-      updateState()
+      await updateState()
+    },
+    {
+      pageLoading: false,
     },
   )
 
   const [deleteAllNotifications, deletingAllNotification] = useAsyncCallback(
     async () => {
       await deleteAllUserNotifications()
-      updateState()
+      await updateState()
+    },
+    {
+      pageLoading: false,
     },
   )
 
@@ -79,11 +91,9 @@ export const useUsersNotifications = () => {
       || deletingAllNotification.value,
   )
 
-  const isEmpty = computed(() => !notifications.value.notifications.length)
-
   return {
-    notifications,
-    isEmpty,
+    notifications: toRef(() => notifications.value.notifications),
+    notificationsDict: toRef(() => notifications.value.dict),
     isLoading,
     loadNotifications,
     hasUnreadNotifications,

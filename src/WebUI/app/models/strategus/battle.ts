@@ -52,7 +52,7 @@ export interface Battle {
   attacker: BattleSideDetailed
   defender: BattleSideDetailed
   terrain: Terrain
-  nearestSettlement: SettlementPublic
+  nearestSettlement: SettlementPublic | null
 }
 
 export interface BattleSideDetailed {

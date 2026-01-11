@@ -24,113 +24,72 @@ public class GetBattleParticipantsQueryTest : TestBase
         Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.BattleNotFound));
     }
 
-    // [Test]
-    // public async Task ShouldReturnErrorIfBattleIsInPreparation()
-    // {
-    //     Battle battle = new() { Phase = BattlePhase.Preparation };
-    //     ArrangeDb.Battles.Add(battle);
-    //     await ArrangeDb.SaveChangesAsync();
+    [Test]
+    public async Task ShouldReturnErrorIfBattleIsInPreparation()
+    {
+        Battle battle = new() { Phase = BattlePhase.Preparation };
+        ArrangeDb.Battles.Add(battle);
+        await ArrangeDb.SaveChangesAsync();
 
-    //     GetBattleMercenariesQuery.Handler handler = new(ActDb, Mapper);
-    //     var res = await handler.Handle(new GetBattleMercenariesQuery
-    //     {
-    //         UserId = 99,
-    //         BattleId = battle.Id,
-    //     }, CancellationToken.None);
+        GetBattleParticipantsQuery.Handler handler = new(ActDb, Mapper);
+        var res = await handler.Handle(new GetBattleParticipantsQuery
+        {
+            BattleId = battle.Id,
+        }, CancellationToken.None);
 
-    //     Assert.That(res.Errors, Is.Not.Null);
-    //     Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.BattleInvalidPhase));
-    // }
+        Assert.That(res.Errors, Is.Not.Null);
+        Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.BattleInvalidPhase));
+    }
 
-    // [Test]
-    // public async Task ShouldReturnErrorIfBattleIsInHiringPhaseAndUserNotAFighter()
-    // {
-    //     Battle battle = new() { Phase = BattlePhase.Hiring };
-    //     ArrangeDb.Battles.Add(battle);
-    //     await ArrangeDb.SaveChangesAsync();
+    [Test]
+    public async Task ShouldOnlyReturnBothSidesDuringOtherPhases()
+    {
+        Battle battle = new()
+        {
+            Phase = BattlePhase.Hiring,
+            Participants =
+            {
+                new()
+                {
+                    Character = new Character { User = new User() },
+                    Side = BattleSide.Attacker,
+                },
+                new()
+                {
+                    Character = new Character { User = new User() },
+                    Side = BattleSide.Defender,
+                },
+            },
+        };
 
-    //     GetBattleMercenariesQuery.Handler handler = new(ActDb, Mapper);
-    //     var res = await handler.Handle(new GetBattleMercenariesQuery
-    //     {
-    //         UserId = 99,
-    //         BattleId = battle.Id,
-    //     }, CancellationToken.None);
+        Battle battle2 = new()
+        {
+            Phase = BattlePhase.Hiring,
+            Participants =
+            {
+                new()
+                {
+                    Character = new Character { User = new User() },
+                    Side = BattleSide.Attacker,
+                },
+                new()
+                {
+                    Character = new Character { User = new User() },
+                    Side = BattleSide.Defender,
+                },
+            },
+        };
+        ArrangeDb.Battles.AddRange([battle, battle2]);
+        await ArrangeDb.SaveChangesAsync();
 
-    //     Assert.That(res.Errors, Is.Not.Null);
-    //     Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.PartyNotAFighter));
-    // }
+        GetBattleParticipantsQuery.Handler handler = new(ActDb, Mapper);
+        var res = await handler.Handle(new GetBattleParticipantsQuery
+        {
+            BattleId = battle.Id,
+        }, CancellationToken.None);
 
-    // [Test]
-    // public async Task ShouldOnlyReturnOneSideDuringHiringPhase()
-    // {
-    //     Battle battle = new()
-    //     {
-    //         Phase = BattlePhase.Hiring,
-    //         Fighters = { new BattleFighter { PartyId = 20, Side = BattleSide.Defender } },
-    //         Mercenaries =
-    //         {
-    //             new BattleMercenary
-    //             {
-    //                 Character = new Character { User = new User() },
-    //                 Side = BattleSide.Attacker,
-    //             },
-    //             new BattleMercenary
-    //             {
-    //                 Character = new Character { User = new User() },
-    //                 Side = BattleSide.Defender,
-    //             },
-    //         },
-    //     };
-    //     ArrangeDb.Battles.Add(battle);
-    //     await ArrangeDb.SaveChangesAsync();
-
-    //     GetBattleMercenariesQuery.Handler handler = new(ActDb, Mapper);
-    //     var res = await handler.Handle(new GetBattleMercenariesQuery
-    //     {
-    //         UserId = 20,
-    //         BattleId = battle.Id,
-    //     }, CancellationToken.None);
-
-    //     Assert.That(res.Errors, Is.Null);
-    //     var mercenaries = res.Data!;
-    //     Assert.That(mercenaries.Count, Is.EqualTo(1));
-    //     Assert.That(mercenaries[0].Side, Is.EqualTo(BattleSide.Defender));
-    // }
-
-    // [TestCase(BattlePhase.Scheduled)]
-    // [TestCase(BattlePhase.Live)]
-    // [TestCase(BattlePhase.End)]
-    // public async Task ShouldOnlyReturnBothSidesDuringOtherPhases(BattlePhase battlePhase)
-    // {
-    //     Battle battle = new()
-    //     {
-    //         Phase = battlePhase,
-    //         Mercenaries =
-    //         {
-    //             new BattleMercenary
-    //             {
-    //                 Character = new Character { User = new User() },
-    //                 Side = BattleSide.Attacker,
-    //             },
-    //             new BattleMercenary
-    //             {
-    //                 Character = new Character { User = new User() },
-    //                 Side = BattleSide.Defender,
-    //             },
-    //         },
-    //     };
-    //     ArrangeDb.Battles.Add(battle);
-    //     await ArrangeDb.SaveChangesAsync();
-
-    //     GetBattleMercenariesQuery.Handler handler = new(ActDb, Mapper);
-    //     var res = await handler.Handle(new GetBattleMercenariesQuery
-    //     {
-    //         UserId = 20,
-    //         BattleId = battle.Id,
-    //     }, CancellationToken.None);
-
-    //     Assert.That(res.Errors, Is.Null);
-    //     var mercenaries = res.Data!;
-    //     Assert.That(mercenaries.Count, Is.EqualTo(2));
-    // }
+        Assert.That(res.Errors, Is.Null);
+        var mercenaries = res.Data!;
+        Assert.That(mercenaries.Count, Is.EqualTo(2));
+    }
 }

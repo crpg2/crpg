@@ -115,7 +115,7 @@ const cardStyle = computed(() => {
 
     <template #footer>
       <UiTextView variant="caption">
-        {{ $t(`region.${battle.region}`) }} · {{ $t(`strategus.battle.type.${battle.type}`) }} · <template v-if="battle.scheduledFor">
+        {{ $t(`region.${battle.region}`, 0) }} · {{ $t(`strategus.battle.type.${battle.type}`) }} · <template v-if="battle.scheduledFor">
           {{ $d(battle.scheduledFor, 'short') }}
         </template>
       </UiTextView>

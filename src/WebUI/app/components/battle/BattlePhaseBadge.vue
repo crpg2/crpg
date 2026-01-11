@@ -13,7 +13,7 @@ const label = computed(() => t(`strategus.battle.phase.${phase}`))
 </script>
 
 <template>
-  <UTooltip :text="$t('strategus.battle.battle phase')">
+  <UTooltip :text="$t('strategus.battle.battlePhase')">
     <UBadge
       v-if="phase === BATTLE_PHASE.Hiring"
       variant="soft"

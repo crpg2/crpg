@@ -22,13 +22,15 @@ public record RespondToBattleMercenaryApplicationCommand : IMediatorRequest<Batt
     public int MercenaryApplicationId { get; init; }
     public bool Accept { get; init; }
 
-    internal class Handler(ICrpgDbContext db, IMapper mapper, IBattleService battleService) : IMediatorRequestHandler<RespondToBattleMercenaryApplicationCommand, BattleMercenaryApplicationViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IBattleService battleService, IActivityLogService activityLogService, IUserNotificationService userNotificationService) : IMediatorRequestHandler<RespondToBattleMercenaryApplicationCommand, BattleMercenaryApplicationViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<RespondToBattleMercenaryApplicationCommand>();
 
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
         private readonly IBattleService _battleService = battleService;
+        private readonly IActivityLogService _activityLogService = activityLogService;
+        private readonly IUserNotificationService _userNotificationService = userNotificationService;
 
         public async Task<Result<BattleMercenaryApplicationViewModel>> Handle(RespondToBattleMercenaryApplicationCommand req,
             CancellationToken cancellationToken)
@@ -74,11 +76,11 @@ public record RespondToBattleMercenaryApplicationCommand : IMediatorRequest<Batt
                 return new(CommonErrors.ApplicationClosed(application.Id));
             }
 
-            int totalParticipantSlots = _battleService.CalculateTotalParticipantSlots(application.Battle, application.Side);
-            int currentParticipantsCount = application.Battle.Participants.Count(p => p.Side == application.Side);
-
             if (req.Accept)
             {
+                int totalParticipantSlots = _battleService.CalculateTotalParticipantSlots(application.Battle, application.Side);
+                int currentParticipantsCount = application.Battle.Participants.Count(p => p.Side == application.Side);
+
                 if (currentParticipantsCount >= totalParticipantSlots)
                 {
                     return new(CommonErrors.BattleParticipantSlotsExceeded(application.BattleId, application.Side, totalParticipantSlots));
@@ -110,11 +112,11 @@ public record RespondToBattleMercenaryApplicationCommand : IMediatorRequest<Batt
                 application.Status = BattleMercenaryApplicationStatus.Declined;
             }
 
+            _db.ActivityLogs.Add(_activityLogService.CreateRespondToBattleMercenaryApplicationLog(application.Battle.Id, req.MercenaryApplicationId, req.PartyId, req.Accept));
+            _db.UserNotifications.Add(_userNotificationService.CreateBattleMercenaryApplicationRespondedNotification(application.Character!.UserId, application.Battle.Id, req.Accept));
             await _db.SaveChangesAsync(cancellationToken);
-            Logger.LogInformation(
-                "Party '{0}' {1} application '{2}' from character '{3}' to join battle '{4}' as a mercenary",
-                req.PartyId, req.Accept ? "accepted" : "declined", req.MercenaryApplicationId,
-                application.CharacterId, application.BattleId);
+            Logger.LogInformation("Party '{0}' {1} application '{2}' from character '{3}' to join battle '{4}' as a mercenary",
+                req.PartyId, req.Accept ? "accepted" : "declined", req.MercenaryApplicationId, application.CharacterId, application.BattleId);
             return new(new BattleMercenaryApplicationViewModel
             {
                 Id = application.Id,

@@ -113,6 +113,7 @@ async function deleteCharacter() {
     <template #footer>
       <i18n-t
         scope="global"
+        class="text-center"
         keypath="character.settings.delete.title"
         tag="div"
       >

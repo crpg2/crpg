@@ -14,7 +14,7 @@ export type ActivityLogMetadataEntitiesDictViewModel = {
     characters: Array<CharacterPublicViewModel>;
 };
 
-export type ActivityLogType = 'UserCreated' | 'UserDeleted' | 'UserRenamed' | 'UserRewarded' | 'ItemBought' | 'ItemSold' | 'ItemBroke' | 'ItemReforged' | 'ItemRepaired' | 'ItemUpgraded' | 'ItemReturned' | 'CharacterCreated' | 'CharacterDeleted' | 'CharacterRatingReset' | 'CharacterRespecialized' | 'CharacterRetired' | 'CharacterRewarded' | 'CharacterEarned' | 'ServerJoined' | 'ChatMessageSent' | 'TeamHit' | 'ClanCreated' | 'ClanDeleted' | 'ClanApplicationCreated' | 'ClanApplicationDeclined' | 'ClanApplicationAccepted' | 'ClanMemberKicked' | 'ClanMemberLeaved' | 'ClanMemberRoleEdited' | 'ClanArmoryAddItem' | 'ClanArmoryRemoveItem' | 'ClanArmoryReturnItem' | 'ClanArmoryBorrowItem' | 'TeamHitReported' | 'TeamHitReportedUserKicked';
+export type ActivityLogType = 'UserCreated' | 'UserDeleted' | 'UserRenamed' | 'UserRewarded' | 'ItemBought' | 'ItemSold' | 'ItemBroke' | 'ItemReforged' | 'ItemRepaired' | 'ItemUpgraded' | 'ItemReturned' | 'CharacterCreated' | 'CharacterDeleted' | 'CharacterRatingReset' | 'CharacterRespecialized' | 'CharacterRetired' | 'CharacterRewarded' | 'CharacterEarned' | 'ServerJoined' | 'ChatMessageSent' | 'TeamHit' | 'ClanCreated' | 'ClanDeleted' | 'ClanApplicationCreated' | 'ClanApplicationDeclined' | 'ClanApplicationAccepted' | 'ClanMemberKicked' | 'ClanMemberLeaved' | 'ClanMemberRoleEdited' | 'ClanArmoryAddItem' | 'ClanArmoryRemoveItem' | 'ClanArmoryReturnItem' | 'ClanArmoryBorrowItem' | 'TeamHitReported' | 'TeamHitReportedUserKicked' | 'BattleApplyAsMercenary' | 'BattleMercenaryApplicationDeclined' | 'BattleMercenaryApplicationAccepted' | 'BattleParticipantLeaved' | 'BattleParticipantKicked';
 
 export type ActivityLogViewModel = {
     id: number;
@@ -66,7 +66,7 @@ export type BattleDetailedViewModel = {
     region: Region;
     position: GeoJsonPoint;
     terrain: TerrainViewModel;
-    nearestSettlement: SettlementPublicViewModel;
+    nearestSettlement: SettlementPublicViewModel | null;
     phase: BattlePhase;
     type: BattleType;
     createdAt: Date;
@@ -194,7 +194,6 @@ export type BattleViewModel = {
     region: Region;
     position: GeoJsonPoint;
     phase: BattlePhase;
-    type: BattleType;
     createdAt: Date;
 };
 
@@ -494,7 +493,7 @@ export type Error = {
     stackTrace?: string | null;
 };
 
-export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
+export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
 
 export type ErrorSource = {
     pointer?: string | null;
@@ -773,7 +772,7 @@ export type Languages = 'En' | 'Zh' | 'Ru' | 'De' | 'Fr' | 'It' | 'Es' | 'Pl' | 
 
 export type NotificationState = 'Unread' | 'Read';
 
-export type NotificationType = 'UserRewardedToUser' | 'CharacterRewardedToUser' | 'ItemReturned' | 'ClanApplicationCreatedToUser' | 'ClanApplicationCreatedToOfficers' | 'ClanApplicationAcceptedToUser' | 'ClanApplicationDeclinedToUser' | 'ClanMemberRoleChangedToUser' | 'ClanMemberLeavedToLeader' | 'ClanMemberKickedToExMember' | 'ClanArmoryBorrowItemToLender' | 'ClanArmoryRemoveItemToBorrower';
+export type NotificationType = 'UserRewardedToUser' | 'CharacterRewardedToUser' | 'ItemReturned' | 'ClanApplicationCreatedToUser' | 'ClanApplicationCreatedToOfficers' | 'ClanApplicationAcceptedToUser' | 'ClanApplicationDeclinedToUser' | 'ClanMemberRoleChangedToUser' | 'ClanMemberLeavedToLeader' | 'ClanMemberKickedToExMember' | 'ClanArmoryBorrowItemToLender' | 'ClanArmoryRemoveItemToBorrower' | 'BattleMercenaryApplicationAccepted' | 'BattleMercenaryApplicationDeclined' | 'BattleParticipantKickedToExParticipant';
 
 export type PartyPublicViewModel = {
     id: number;
@@ -1189,7 +1188,7 @@ export type BattleDetailedViewModelWritable = {
     region: Region;
     position: GeoJsonPointWritable;
     terrain: TerrainViewModelWritable;
-    nearestSettlement: SettlementPublicViewModelWritable;
+    nearestSettlement: SettlementPublicViewModelWritable | null;
     phase: BattlePhase;
     type: BattleType;
     createdAt: Date;
@@ -1264,7 +1263,6 @@ export type BattleViewModelWritable = {
     region: Region;
     position: GeoJsonPointWritable;
     phase: BattlePhase;
-    type: BattleType;
     createdAt: Date;
 };
 

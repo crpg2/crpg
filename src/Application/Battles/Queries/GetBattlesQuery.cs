@@ -53,20 +53,14 @@ public record GetBattlesQuery : IMediatorRequest<IList<BattleDetailedViewModel>>
                 .Include(b => b.Participants)
                     .ThenInclude(p => p.Character)
                 .Include(b => b.SideBriefings)
-                .Where(b =>
-                    b.Region == req.Region &&
-                    req.Phases.Contains(b.Phase) &&
-                    (req.Type == null || (req.Type == BattleType.Siege
-                            ? b.Fighters.Any(f => f.Side == BattleSide.Defender && f.Commander && f.Settlement != null)
-                            : b.Fighters.Any(f => f.Side == BattleSide.Defender && f.Commander && f.Settlement == null))))
-
+                .Where(b => b.Region == req.Region && req.Phases.Contains(b.Phase))
                 .Select(b => new
                 {
                     Battle = b,
                     NearestSettlement = _db.Settlements.OrderBy(s => s.Position.Distance(b.Position)).FirstOrDefault(),
                     Terrain = _db.Terrains.FirstOrDefault(t => t.Boundary.Covers(b.Position)) ?? new() { Type = TerrainType.Plain, },
                 })
-                // .OrderBy(b => b.ScheduledFor) // TODO: FIXME:
+                // .OrderByDescending(b => b.ScheduledFor) // TODO: FIXME:
                 .ToArrayAsync(cancellationToken);
 
             return new(battles.Select(b =>

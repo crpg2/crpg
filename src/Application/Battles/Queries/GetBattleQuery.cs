@@ -51,10 +51,10 @@ public record GetBattleQuery : IMediatorRequest<BattleDetailedViewModel>
 
             var nearestSettlement = await _db.Settlements
                 .OrderBy(s => s.Position.Distance(battle.Position))
-                .FirstAsync(cancellationToken);
+                .FirstOrDefaultAsync(cancellationToken);
 
-            var battleTerrain = await _db.Terrains
-                .FirstOrDefaultAsync(t => t.Boundary.Covers(battle.Position), cancellationToken) ?? new() { Type = TerrainType.Plain, };
+            var battleTerrain = await _db.Terrains.FirstOrDefaultAsync(t => t.Boundary.Covers(battle.Position), cancellationToken)
+                ?? new() { Type = TerrainType.Plain, };
 
             return new(_battleService.MapBattleToDetailedViewModel(_mapper, battle, req.UserId, nearestSettlement, battleTerrain));
         }

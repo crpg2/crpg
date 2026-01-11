@@ -25,6 +25,12 @@ internal static class CommonErrors
         Detail = $"Application with id '{applicationId}' already exist",
     };
 
+    public static Error BattleMercenaryAlreadyExist(BattleSide side, BattleSide existSide) => new(ErrorType.Validation, ErrorCode.BattleMercenaryAlreadyExist)
+    {
+        Title = "You are already applied for the other side",
+        Detail = $"You want to apply up for side '{side}', but you are already applied for side '{existSide}'",
+    };
+
     public static Error BattleInvalidPhase(int battleId, BattlePhase phase) => new(ErrorType.Validation, ErrorCode.BattleInvalidPhase)
     {
         Title = "Cannot perform action during this battle phase",

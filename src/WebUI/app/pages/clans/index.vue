@@ -167,7 +167,7 @@ const columnVisibility = ref<VisibilityState>({
 })
 
 const regionItems = regions.map<TabsItem>(region => ({
-  label: t(`region.${region}`),
+  label: t(`region.${region}`, 0),
   value: region,
 }))
 </script>

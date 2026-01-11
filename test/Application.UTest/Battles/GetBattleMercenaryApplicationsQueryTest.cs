@@ -99,12 +99,12 @@ public class GetBattleMercenaryApplicationsQueryTest : TestBase
         {
             UserId = 20,
             BattleId = battle.Id,
-            Statuses = new[]
-            {
+            Statuses =
+            [
                 BattleMercenaryApplicationStatus.Pending,
                 BattleMercenaryApplicationStatus.Declined,
                 BattleMercenaryApplicationStatus.Accepted,
-            },
+            ],
         }, CancellationToken.None);
 
         Assert.That(res.Errors, Is.Null);
@@ -159,10 +159,10 @@ public class GetBattleMercenaryApplicationsQueryTest : TestBase
         {
             UserId = user.Id,
             BattleId = battle.Id,
-            Statuses = new[]
-            {
+            Statuses =
+            [
                 BattleMercenaryApplicationStatus.Pending,
-            },
+            ],
         }, CancellationToken.None);
 
         Assert.That(res.Errors, Is.Null);

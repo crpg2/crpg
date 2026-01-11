@@ -78,6 +78,8 @@ const itemActions = computed(() => {
         <template #borrow>
           <i18n-t
             scope="global"
+            class="flex items-center gap-2"
+            tag="div"
             keypath="clan.armory.item.borrow.title"
           >
             <template #user>
