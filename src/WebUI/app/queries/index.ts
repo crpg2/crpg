@@ -20,3 +20,7 @@ export const BATTLE_QUERY_KEYS = {
   root: ['battles'] as const,
   byId: (id: number) => [...BATTLE_QUERY_KEYS.root, id] as const,
 }
+
+export const PARTY_QUERY_KEYS = {
+  root: ['party'] as const,
+}

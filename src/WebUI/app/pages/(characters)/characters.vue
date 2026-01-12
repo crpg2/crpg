@@ -4,10 +4,13 @@ import { SomeRole } from '~/models/role'
 
 definePageMeta({
   roles: SomeRole,
+  middleware: [
+    async () => {
+      const { execute } = useCharactersProvider()
+      await execute()
+    },
+  ],
 })
-
-const { execute } = useCharactersProvider()
-await execute()
 </script>
 
 <template>

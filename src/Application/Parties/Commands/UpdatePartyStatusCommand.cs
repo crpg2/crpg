@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Text.Json.Serialization;
+using AutoMapper;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
@@ -15,6 +16,7 @@ namespace Crpg.Application.Parties.Commands;
 
 public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
 {
+    [JsonIgnore]
     public int PartyId { get; set; }
     public PartyStatus Status { get; init; }
     public MultiPoint Waypoints { get; init; } = MultiPoint.Empty;

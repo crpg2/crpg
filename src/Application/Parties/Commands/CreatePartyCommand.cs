@@ -1,13 +1,12 @@
-﻿using AutoMapper;
+﻿using System.Text.Json.Serialization;
+using AutoMapper;
 using Crpg.Application.Common;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Parties.Models;
-using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Parties;
-using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using NetTopologySuite.Geometries;
@@ -17,6 +16,7 @@ namespace Crpg.Application.Parties.Commands;
 
 public record CreatePartyCommand : IMediatorRequest<PartyViewModel>
 {
+    [JsonIgnore]
     public int UserId { get; set; }
 
     internal class Handler : IMediatorRequestHandler<CreatePartyCommand, PartyViewModel>

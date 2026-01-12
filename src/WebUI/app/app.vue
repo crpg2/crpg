@@ -3,9 +3,9 @@ import type { Locale, Messages } from '@nuxt/ui'
 
 import { en, ru } from '@nuxt/ui/locale'
 
-import { usePageLoadingProvider } from '~/composables/app/use-page-loading'
+import { usePageLoading } from '~/composables/app/use-page-loading'
 
-const [activePageLoading] = usePageLoadingProvider()
+const [activePageLoading] = usePageLoading()
 
 const { locale } = useI18n()
 

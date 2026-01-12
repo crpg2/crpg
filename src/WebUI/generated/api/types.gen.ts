@@ -440,7 +440,7 @@ export type CreateClanCommand = {
 };
 
 export type CreatePartyCommand = {
-    userId: number;
+    [key: string]: never;
 };
 
 export type CreateTerrainCommand = {
@@ -1018,7 +1018,6 @@ export type UpdateGameUsersResultResult = {
 };
 
 export type UpdatePartyStatusCommand = {
-    partyId: number;
     status: PartyStatus;
     waypoints: GeoJsonMultiPoint;
     targetedPartyId: number;
@@ -1478,7 +1477,6 @@ export type UpdateGameUsersResultResultWritable = {
 };
 
 export type UpdatePartyStatusCommandWritable = {
-    partyId: number;
     status: PartyStatus;
     waypoints: GeoJsonMultiPointWritable;
     targetedPartyId: number;
