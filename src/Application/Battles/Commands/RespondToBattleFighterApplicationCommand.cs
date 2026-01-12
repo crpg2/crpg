@@ -5,6 +5,7 @@ using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Domain.Entities.Battles;
+using Crpg.Domain.Entities.Parties;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using LoggerFactory = Crpg.Logging.LoggerFactory;
@@ -37,8 +38,10 @@ public record RespondToBattleFighterApplicationCommand : IMediatorRequest<Battle
 
             var application = await _db.BattleFighterApplications
                 .AsSplitQuery()
-                .Include(a => a.Battle!).ThenInclude(b => b.Fighters.Where(f => f.PartyId == req.PartyId))
-                .Include(a => a.Party!).ThenInclude(h => h.User)
+                .Include(a => a.Battle!)
+                    .ThenInclude(b => b.Fighters.Where(f => f.PartyId == req.PartyId))
+                .Include(a => a.Party!)
+                    .ThenInclude(h => h.User)
                 .FirstOrDefaultAsync(a => a.Id == req.FighterApplicationId, cancellationToken);
             if (application == null)
             {
@@ -58,8 +61,7 @@ public record RespondToBattleFighterApplicationCommand : IMediatorRequest<Battle
 
             if (partyFighter.Side != application.Side)
             {
-                return new(CommonErrors.PartiesNotOnTheSameSide(partyFighter.Id, application.PartyId,
-                    application.BattleId));
+                return new(CommonErrors.PartiesNotOnTheSameSide(partyFighter.Id, application.PartyId, application.BattleId));
             }
 
             if (application.Battle.Phase != BattlePhase.Preparation)
@@ -72,6 +74,14 @@ public record RespondToBattleFighterApplicationCommand : IMediatorRequest<Battle
                 return new(CommonErrors.ApplicationClosed(application.Id));
             }
 
+            var otherApplications = await _db.BattleFighterApplications
+                  .Where(a => a.Id != application.Id
+                              && a.BattleId == application.BattleId
+                              && a.PartyId == application.PartyId
+                              && a.Status == BattleFighterApplicationStatus.Pending)
+                  .ToArrayAsync(cancellationToken);
+
+            // TODO: FIXME: notification
             if (req.Accept)
             {
                 application.Status = BattleFighterApplicationStatus.Accepted;
@@ -85,18 +95,21 @@ public record RespondToBattleFighterApplicationCommand : IMediatorRequest<Battle
                 };
                 _db.BattleFighters.Add(newFighter);
 
+                application.Party!.Status = PartyStatus.InBattle;
+
                 // Delete all other applying party pending applications for this battle.
-                var otherApplications = await _db.BattleFighterApplications
-                    .Where(a => a.Id != application.Id
-                                && a.BattleId == application.BattleId
-                                && a.PartyId == application.PartyId
-                                && a.Status == BattleFighterApplicationStatus.Pending)
-                    .ToArrayAsync(cancellationToken);
                 _db.BattleFighterApplications.RemoveRange(otherApplications);
             }
             else
             {
                 application.Status = BattleFighterApplicationStatus.Declined;
+
+                // Kick Party out of the battle if there are no other pending application
+                if (otherApplications.Length == 0)
+                {
+                    application.Party!.Status = PartyStatus.Idle;
+                    application.Party!.CurrentBattleId = null;
+                }
             }
 
             await _db.SaveChangesAsync(cancellationToken);

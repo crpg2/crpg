@@ -11,7 +11,7 @@ import type { ValueOf } from 'type-fest'
 
 import type { CharacterPublic } from '~/models/character'
 import type { Region } from '~/models/region'
-import type { PartyPublic } from '~/models/strategus/party'
+import type { ItemStack, PartyPublic } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 import type { UserPublic } from '~/models/user'
 
@@ -63,9 +63,14 @@ export interface BattleSideDetailed {
   mercenaryApplication: BattleMercenaryApplication | null
   briefing: BattleSideBriefing
 };
+
 export interface BattleSideBriefing {
   note: string
 };
+
+export interface BattleJoinIntent {
+  side: BattleSide
+}
 
 export interface BattleFighter {
   id: number
@@ -80,9 +85,24 @@ export const BATTLE_FIGHTER_APPLICATION_STATUS = {
   Pending: 'Pending',
   Declined: 'Declined',
   Accepted: 'Accepted',
+  Intent: 'Intent',
 } as const satisfies Record<_BattleFighterApplicationStatus, _BattleFighterApplicationStatus>
 
 export type BattleFighterApplicationStatus = ValueOf<typeof BATTLE_FIGHTER_APPLICATION_STATUS>
+
+export interface BattleFighterApplication {
+  id: number
+  party: PartyPublic
+  side: BattleSide
+  status: BattleFighterApplicationStatus
+}
+
+export interface BattleFighterInventory {
+  fighterId: number
+  party: PartyPublic | null
+  settlement: SettlementPublic | null
+  items: ItemStack[]
+}
 
 export interface BattleParticipant {
   id: number
@@ -133,4 +153,14 @@ export interface BattleMercenaryApplication {
   wage: number
   note: string
   status: BattleMercenaryApplicationStatus
+}
+
+// TODO: FIXME:
+export interface MapBattle {
+  id: number
+  phase: BattlePhase
+  region: Region
+  position: Point
+  createdAt: Date
+  fighters: BattleFighter[]
 }

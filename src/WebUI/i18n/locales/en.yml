@@ -226,6 +226,14 @@ error:
       repeat: Whether you are able to consistently reproduce this error
   goToHomePage: Go to home page
 
+application:
+  title: Application
+  statusTitle: Status
+  status:
+    Pending: Pending
+    Accepted: Accepted
+    Declined: Declined
+
 form:
   validate:
     invalid: The form contains errors
@@ -1610,11 +1618,6 @@ strategus:
     join: 'You will join the campaign in region: {region}'
     hint: 'If this doesn''t seem right you can try re-login or contact an administrator'
 
-  movementType:
-    Move: Move
-    Follow: Follow
-    Attack: Attack
-
   settlementType:
     Village: Village
     Castle: Castle
@@ -1659,11 +1662,6 @@ strategus:
     mercenaryApplication:
       title: Mercenary application
       statusTitle: Mercenary application status
-      statusTitleShort: Status
-      status:
-        Pending: Pending
-        Accepted: Accepted
-        Declined: Declined
       form:
         character:
           label: Character
@@ -1722,3 +1720,20 @@ strategus:
           decline:
             notify:
               success: Application declined
+
+  partyStatus:
+    Idle: Idle
+    IdleInSettlement: Idle in settlement
+    RecruitingInSettlement: Recruiting in settlement
+    AwaitingBattleJoinDecision: Awaiting battle join decision
+    InBattle: In battle
+    AwaitingPartyOfferDecision: Awaiting party offer decision
+
+  partyOrderType:
+    MoveToPoint: Move
+    FollowParty: Follow
+    AttackParty: Attack
+    MoveToSettlement: Move to
+    AttackSettlement: Attack
+    JoinBattle: Join to
+    TransferOfferParty: Transfer offer

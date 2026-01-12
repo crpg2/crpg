@@ -1,19 +1,23 @@
 import {
   getBattles as _getBattles,
+  deleteBattlesByBattleIdFighterApplications,
+  deleteBattlesByBattleIdFightersByFighterId,
   deleteBattlesByBattleIdMercenaryApplications,
   deleteBattlesByBattleIdParticipantsByParticipantId,
   getBattlesByBattleId,
   getBattlesByBattleIdFighterApplications,
   getBattlesByBattleIdFighters,
+  getBattlesByBattleIdItems,
   getBattlesByBattleIdMercenaryApplications,
   getBattlesByBattleIdParticipants,
   postBattlesByBattleIdMercenaryApplications,
+  putBattlesByBattleIdFighterApplicationsByApplicationIdResponse,
   putBattlesByBattleIdMercenaryApplicationsByApplicationIdResponse,
   putBattlesByBattleIdSideBriefing,
 } from '#api/sdk.gen'
 
 import type { Region } from '~/models/region'
-import type { Battle, BattleFighter, BattleFighterApplicationStatus, BattleMercenaryApplication, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattleParticipant, BattlePhase, BattleSide, BattleSideBriefing, BattleType } from '~/models/strategus/battle'
+import type { Battle, BattleFighter, BattleFighterApplication, BattleFighterApplicationStatus, BattleFighterInventory, BattleMercenaryApplication, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattleParticipant, BattlePhase, BattleSide, BattleSideBriefing, BattleType } from '~/models/strategus/battle'
 
 import { BATTLE_PHASE, BATTLE_TYPE } from '~/models/strategus/battle'
 
@@ -52,15 +56,24 @@ export const getBattleFighters = async (
   battleId: number,
 ): Promise<BattleFighter[]> => (await getBattlesByBattleIdFighters({ path: { battleId } })).data!
 
-// export const getBattleFighterByUserId = (
-//   battleFighters: BattleFighter[],
-//   userId: number,
-// ) => battleFighters.find(f => f.party?.user.id === userId) ?? null
+export const removeBattleFighter = (
+  battleId: number,
+  fighterId: number,
+) => deleteBattlesByBattleIdFightersByFighterId({ path: { battleId, fighterId } })
 
 export const getBattleFighterApplications = async (
   battleId: number,
   statuses: BattleFighterApplicationStatus[],
-) => (await getBattlesByBattleIdFighterApplications({ path: { battleId }, query: { 'status[]': statuses } })).data!
+): Promise<BattleFighterApplication[]> => (await getBattlesByBattleIdFighterApplications({ path: { battleId }, query: { 'status[]': statuses } })).data!
+
+export const removeBattleFighterApplication = (
+  battleId: number,
+  side: BattleSide,
+) => deleteBattlesByBattleIdFighterApplications({ path: { battleId }, body: { side } })
+
+export const getBattleItems = async (
+  battleId: number,
+): Promise<BattleFighterInventory[]> => (await getBattlesByBattleIdItems({ path: { battleId } })).data!
 
 export const getBattleMercenaryApplications = async (
   battleId: number,
@@ -82,6 +95,12 @@ export const respondToBattleMercenaryApplication = (
   applicationId: number,
   accept: boolean,
 ) => putBattlesByBattleIdMercenaryApplicationsByApplicationIdResponse({ path: { battleId, applicationId }, body: { accept } })
+
+export const respondToBattleFighterApplication = (
+  battleId: number,
+  applicationId: number,
+  accept: boolean,
+) => putBattlesByBattleIdFighterApplicationsByApplicationIdResponse({ path: { battleId, applicationId }, body: { accept } })
 
 export const getBattleParticipants = async (
   battleId: number,

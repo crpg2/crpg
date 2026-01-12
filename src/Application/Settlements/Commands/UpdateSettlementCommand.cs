@@ -42,7 +42,7 @@ public record UpdateSettlementCommand : IMediatorRequest<SettlementPublicViewMod
         public async ValueTask<Result<SettlementPublicViewModel>> Handle(UpdateSettlementCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
-                .Include(h => h.TargetedSettlement)
+                .Include(h => h.CurrentSettlement)
                 .FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
             if (party == null)
             {
@@ -51,12 +51,12 @@ public record UpdateSettlementCommand : IMediatorRequest<SettlementPublicViewMod
 
             if ((party.Status != PartyStatus.IdleInSettlement
                  && party.Status != PartyStatus.RecruitingInSettlement)
-                || party.TargetedSettlementId != req.SettlementId)
+                || party.CurrentSettlementId != req.SettlementId)
             {
                 return new(CommonErrors.PartyNotInASettlement(party.Id));
             }
 
-            int troopsDelta = req.Troops - party.TargetedSettlement!.Troops;
+            int troopsDelta = req.Troops - party.CurrentSettlement!.Troops;
             if (troopsDelta >= 0) // Party troops -> settlement troops.
             {
                 if (party.Troops < troopsDelta)
@@ -66,19 +66,19 @@ public record UpdateSettlementCommand : IMediatorRequest<SettlementPublicViewMod
             }
             else // Settlement troops -> party troops.
             {
-                if (party.TargetedSettlement!.OwnerId != party.Id)
+                if (party.CurrentSettlement!.OwnerId != party.Id)
                 {
-                    return new(CommonErrors.PartyNotSettlementOwner(party.Id, party.TargetedSettlementId!.Value));
+                    return new(CommonErrors.PartyNotSettlementOwner(party.Id, party.CurrentSettlementId!.Value));
                 }
             }
 
-            party.TargetedSettlement.Troops += troopsDelta;
+            party.CurrentSettlement.Troops += troopsDelta;
             party.Troops -= troopsDelta;
 
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("Party '{0}' {1} settlement '{2}'", req.PartyId,
-                troopsDelta >= 0 ? "gave troops to" : "took troops from", party.TargetedSettlementId);
-            return new(_mapper.Map<SettlementPublicViewModel>(party.TargetedSettlement));
+                troopsDelta >= 0 ? "gave troops to" : "took troops from", party.CurrentSettlementId);
+            return new(_mapper.Map<SettlementPublicViewModel>(party.CurrentSettlement));
         }
     }
 }

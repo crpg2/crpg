@@ -1,4 +1,4 @@
-import { createSharedComposable, tryOnScopeDispose } from '@vueuse/core'
+import { createSharedComposable } from '@vueuse/core'
 import { ref } from 'vue'
 
 interface ElementBound {
@@ -8,8 +8,7 @@ interface ElementBound {
 }
 
 interface OpenedItem {
-  id: string
-  userItemId: number
+  id: string // itemId
   bound: ElementBound
 }
 
@@ -28,22 +27,22 @@ const computeDetailCardYPosition = (y: number, cardHeight = 700) => {
 export const _useItemDetail = () => {
   const openedItems = ref<OpenedItem[]>([])
 
-  const isOpen = (id: string, userItemId: number) => openedItems.value.some(oi => oi.id === id && oi.userItemId === userItemId)
+  const isOpen = (itemId: string) => openedItems.value.some(oi => oi.id === itemId)
 
   const openItemDetail = (item: OpenedItem) => {
     openedItems.value.push(item)
   }
 
-  const closeItemDetail = (item: OpenedItem) => {
-    openedItems.value = openedItems.value.filter(oi => !(oi.id === item.id && oi.userItemId === item.userItemId))
+  const closeItemDetail = (itemId: string) => {
+    openedItems.value = openedItems.value.filter(oi => oi.id !== itemId)
   }
 
-  const toggleItemDetail = (target: HTMLElement, item: Omit<OpenedItem, 'bound'>) => {
-    const _item = { ...item, bound: getElementBounds(target) }
-
-    isOpen(_item.id, _item.userItemId)
-      ? closeItemDetail(_item)
-      : openItemDetail(_item)
+  const toggleItemDetail = (target: HTMLElement, itemId: string) => {
+    if (isOpen(itemId)) {
+      closeItemDetail(itemId)
+      return
+    }
+    openItemDetail({ id: itemId, bound: getElementBounds(target) })
   }
 
   const closeAll = () => {
@@ -52,13 +51,13 @@ export const _useItemDetail = () => {
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === 'Escape' && openedItems.value.length > 0) {
-      closeItemDetail(openedItems.value.at(-1)!)
+      closeItemDetail(openedItems.value.at(-1)!.id)
     }
   }
 
   window.addEventListener('keydown', handleKeyDown)
 
-  tryOnScopeDispose(() => {
+  onBeforeRouteLeave(() => {
     window.removeEventListener('keydown', handleKeyDown)
     closeAll()
   })

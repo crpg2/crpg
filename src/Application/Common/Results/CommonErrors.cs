@@ -157,10 +157,10 @@ internal static class CommonErrors
         Detail = $"Fighter with id '{fighterId} was not found in the battle with id '{battleId}'",
     };
 
-    public static Error BattleParticipantNotFound(int battleParticipantId) => new(ErrorType.NotFound, ErrorCode.BattleParticipantNotFound)
+    public static Error BattleParticipantNotFound(int battleParticipantId, int battleId) => new(ErrorType.NotFound, ErrorCode.BattleParticipantNotFound)
     {
         Title = "Battle participant was not found",
-        Detail = $"Battle participant with id '{battleParticipantId}' was not found",
+        Detail = $"Battle participant with id '{battleParticipantId}' was not found in the battle with id '{battleId}'",
     };
 
     public static Error PartyFighter(int partyId, int battleId) => new(ErrorType.Validation, ErrorCode.PartyFighter)
@@ -217,6 +217,13 @@ internal static class CommonErrors
         {
             Title = "Parties are not on the same side of the battle",
             Detail = $"Parties with ids '{partyId1}' and '{partyId2}' are not in the side in the battle with id '{battleId}'",
+        };
+
+    public static Error PendingBattleFighterApplicationNotExist(int partyId, int battleId, BattleSide side) =>
+        new(ErrorType.Validation, ErrorCode.PendingBattleFighterApplicationNotExist)
+        {
+            Title = "Party has no pending application to fight for the side",
+            Detail = $"Party with id '{partyId}' has no pending application to battle '{battleId}' for the side '{side}'",
         };
 
     public static Error ItemAlreadyOwned(string itemId) => new(ErrorType.Validation, ErrorCode.ItemAlreadyOwned)

@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
@@ -9,18 +10,13 @@ namespace Crpg.Application.Terrains.Commands;
 
 public record DeleteTerrainCommand : IMediatorRequest
 {
+    [JsonIgnore]
     public int Id { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<DeleteTerrainCommand>
+    internal class Handler(ICrpgDbContext db) : IMediatorRequestHandler<DeleteTerrainCommand>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<DeleteTerrainCommand>();
-
-        private readonly ICrpgDbContext _db;
-
-        public Handler(ICrpgDbContext db)
-        {
-            _db = db;
-        }
+        private readonly ICrpgDbContext _db = db;
 
         public async ValueTask<Result> Handle(DeleteTerrainCommand req, CancellationToken cancellationToken)
         {

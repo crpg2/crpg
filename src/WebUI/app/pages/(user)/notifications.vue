@@ -189,7 +189,7 @@ const isEmpty = computed(() => !grid.getRowCount())
             variant="outline"
             color="neutral"
             size="xl"
-            icon="crpg:dots"
+            icon="i-lucide-ellipsis-vertical"
           />
         </UDropdownMenu>
       </div>

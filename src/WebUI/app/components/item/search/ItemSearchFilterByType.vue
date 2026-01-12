@@ -15,11 +15,13 @@ const {
   weaponClasses = [],
   orientation = 'horizontal',
   withAllCategories = false,
+  size = 'xl',
 } = defineProps<{
   itemTypes: ItemType[]
   weaponClasses?: WeaponClass[]
   orientation?: 'vertical' | 'horizontal'
   withAllCategories?: boolean
+  size?: 'md' | 'xl'
 }>()
 
 const itemType = defineModel<ItemType>('itemType', { default: () => ITEM_TYPE.Undefined })
@@ -50,14 +52,14 @@ const weaponClassOptions = computed(() => {
     :items="itemTypeOptions"
     :content="false"
     color="neutral"
-    size="xl"
+    :size
     :orientation
     :ui="{
       list: 'w-auto',
       root: 'flex-row',
       trigger: [
-        'min-w-13 h-13 p-2',
         orientation === 'vertical' ? 'flex justify-center' : '',
+        size === 'xl' ? 'p-2 min-w-13 h-13' : 'p-1 min-w-10 h-10',
       ],
     }"
   >
@@ -69,7 +71,8 @@ const weaponClassOptions = computed(() => {
       >
         <UIcon
           :name="_item.icon"
-          class="size-9 cursor-pointer outline-0 select-none"
+          class="cursor-pointer outline-0 select-none"
+          :class="[size === 'xl' ? 'size-9' : 'size-6']"
         />
       </UTooltip>
     </template>
@@ -85,7 +88,7 @@ const weaponClassOptions = computed(() => {
           v-model="weaponClass"
           :items="weaponClassOptions"
           :content="false"
-          size="xl"
+          :size
           variant="link"
           color="neutral"
           :orientation

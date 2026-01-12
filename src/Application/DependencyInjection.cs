@@ -44,6 +44,7 @@ public static class DependencyInjection
             .AddSingleton<IGeoIpService>(CreateGeoIpService())
             .AddSingleton<IStrategusMap, StrategusMap>()
             .AddSingleton<IStrategusSpeedModel, StrategusSpeedModel>()
+            .AddSingleton<IStrategusRouting, StrategusRouting>()
             .AddSingleton<IBattleService, BattleService>()
             .AddSingleton<IBattleScheduler>(strategusBattleScheduler)
             .AddSingleton<ICharacterClassResolver, CharacterClassResolver>()

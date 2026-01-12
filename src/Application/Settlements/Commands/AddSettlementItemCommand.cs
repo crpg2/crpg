@@ -34,7 +34,7 @@ public record AddSettlementItemCommand : IMediatorRequest<ItemStack>
         public async ValueTask<Result<ItemStack>> Handle(AddSettlementItemCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
-                .Include(h => h.TargetedSettlement)
+                .Include(h => h.CurrentSettlement)
                 .FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
             if (party == null)
             {
@@ -43,7 +43,7 @@ public record AddSettlementItemCommand : IMediatorRequest<ItemStack>
 
             if ((party.Status != PartyStatus.IdleInSettlement
                  && party.Status != PartyStatus.RecruitingInSettlement)
-                || party.TargetedSettlementId != req.SettlementId)
+                || party.CurrentSettlementId != req.SettlementId)
             {
                 return new(CommonErrors.PartyNotInASettlement(party.Id));
             }
@@ -69,9 +69,9 @@ public record AddSettlementItemCommand : IMediatorRequest<ItemStack>
             else // settlement -> party
             {
                 // Only owner can take items from their settlements.
-                if (party.TargetedSettlement!.OwnerId != party.Id)
+                if (party.CurrentSettlement!.OwnerId != party.Id)
                 {
-                    return new(CommonErrors.PartyNotSettlementOwner(party.Id, party.TargetedSettlementId.Value));
+                    return new(CommonErrors.PartyNotSettlementOwner(party.Id, party.CurrentSettlementId.Value));
                 }
 
                 if (settlementItem == null || settlementItem.Count < -req.Count)
@@ -105,7 +105,7 @@ public record AddSettlementItemCommand : IMediatorRequest<ItemStack>
                     Count = req.Count,
                     Item = item,
                 };
-                party.TargetedSettlement!.Items.Add(settlementItem);
+                party.CurrentSettlement!.Items.Add(settlementItem);
             }
             else // Update existing item stack.
             {

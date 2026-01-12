@@ -94,6 +94,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
     cell: ({ row }) => h(CompetitiveRank, {
       rankTable: rankTable.value,
       competitiveValue: getCompetitiveValueByGameMode(row.original.statistics, gameModeModel.value),
+      animated: false,
     }),
     meta: {
       class: {
@@ -110,7 +111,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
       'modelValue': globalFilter.value,
       'onUpdate:modelValue': (val: string) => globalFilter.value = val,
     }, {}),
-    cell: ({ row }) => h(UserMedia, { user: row.original.user, hiddenPlatform: true }),
+    cell: ({ row }) => h(UserMedia, { user: row.original.user, hiddenPlatform: true, isSelf: row.original.user.id === user.value!.id }),
     meta: {
       class: {
         th: tw`max-w-96`,

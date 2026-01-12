@@ -44,7 +44,9 @@ const { t } = useI18n()
         />
 
         <UNavigationMenu
-          color="neutral" variant="link" :items="[
+          color="neutral"
+          variant="link"
+          :items="[
             {
               label: t('nav.main.Leaderboard'),
               to: { name: 'leaderboard' },

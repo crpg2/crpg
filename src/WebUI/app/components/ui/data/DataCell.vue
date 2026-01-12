@@ -7,11 +7,13 @@ const { inline = false } = defineProps<{
 
 const slots = useSlots()
 
-const columns = computed(() => [
-  ...(slots.leftContent ? ['max-content'] : []),
-  ...(slots.default ? ['1fr'] : []),
-  ...(slots.rightContent ? ['max-content'] : []),
-].join(' '))
+const columns = computed(() => {
+  return [
+    ...(slots.leftContent ? ['max-content'] : []),
+    ...(slots.default ? ['1fr'] : []),
+    ...(slots.rightContent ? ['max-content'] : []),
+  ].join(' ')
+})
 
 const variants = tv({
   slots: {

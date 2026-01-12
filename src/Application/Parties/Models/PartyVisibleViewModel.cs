@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Crpg.Application.Clans.Models;
 using Crpg.Application.Common.Mappings;
 using Crpg.Application.Users.Models;
 using Crpg.Domain.Entities.Parties;
