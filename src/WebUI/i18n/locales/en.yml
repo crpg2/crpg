@@ -152,6 +152,7 @@ action:
   confirm: Confirm
   create: Create
   search: Search
+  send: Send
   apply: Apply
   accept: Accept
   decline: Decline
@@ -174,6 +175,7 @@ action:
   start: Start
   ok: Ok
   selectFromList: Select from the list
+  detail: Detail
 
 login:
   label: Login with
@@ -321,6 +323,7 @@ welcome:
       techSupport: Tech support
 
 character:
+  selectCharacter: Select character
   nav:
     overview: Overview
     inventory: Inventory
@@ -1662,9 +1665,12 @@ strategus:
         Accepted: Accepted
         Declined: Declined
       form:
+        character:
+          label: Character
+          help: ''
         note:
           label: Note
-          help: 'Free-form text: TODO:'
+          help: Free-form text
         wage:
           label: Wage
           help: ''

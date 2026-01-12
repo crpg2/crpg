@@ -6,6 +6,8 @@ import {
 
 import type { BattleSide, BattleSideDetailed } from '~/models/strategus/battle'
 
+import { useCharacters, useCharactersProvider } from '~/composables/character/use-character'
+import { useUser } from '~/composables/user/use-user'
 import { BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/strategus/battle'
 
 const { sideInfo, onApply } = defineProps<{
@@ -59,12 +61,16 @@ const onCancel = () => {
 }
 
 const apply = () => {
-  // if (applicationModel.value.characterId === null) {
-  //   return
-  // }
+  if (applicationModel.value.characterId === null) {
+    return
+  }
   // @ts-expect-error TODO:
   onApply(applicationModel.value)
 }
+const { execute } = useCharactersProvider()
+execute()
+const { user } = useUser()
+const { characters } = useCharacters()
 </script>
 
 <template>
@@ -109,7 +115,20 @@ const apply = () => {
 
       <UiDecorSeparator />
 
-      <div class="space-y-4">
+      <div class="space-y-6">
+        <UFormField
+          :label="$t('strategus.battle.mercenaryApplication.form.character.label')"
+          size="xl"
+        >
+          <CharacterSelect
+            :readonly
+            :characters
+            :current-character-id="applicationModel.characterId"
+            :active-character-id="user!.activeCharacterId"
+            @select="(id) => applicationModel.characterId = id"
+          />
+        </UFormField>
+
         <UFormField
           :label="$t('strategus.battle.mercenaryApplication.form.note.label')"
           :help="$t('strategus.battle.mercenaryApplication.form.note.help')"
@@ -174,7 +193,7 @@ const apply = () => {
         <AppConfirmActionPopover @confirm="apply">
           <UButton
             size="xl"
-            :label="$t('action.apply')"
+            :label="$t('action.send')"
           />
         </AppConfirmActionPopover>
       </div>
@@ -189,6 +208,7 @@ const apply = () => {
         <template #link>
           <ULink
             class="cursor-pointer text-primary"
+            @click="onNewApplication"
           >
             {{ $t('strategus.battle.mercenaryApplication.create.link') }}
           </ULink>

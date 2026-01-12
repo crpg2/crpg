@@ -14,11 +14,10 @@ const route = useRoute('characters-id')
 const { user, fetchUser } = useUser()
 const { characters, refreshCharacters, activeCharacterId } = useCharacters()
 
-if (!characters.value.find(c => c.id === Number(route.params.id))) {
+const character = computed(() => characters.value.find(c => c.id === Number(route.params.id))!)
+if (!character.value) {
   throw createError({ statusCode: 404, statusMessage: 'Character not found' })
 }
-
-const character = computed(() => characters.value.find(c => c.id === Number(route.params.id))!)
 useCharacterProvider(character)
 
 const overlay = useOverlay()
@@ -109,8 +108,10 @@ const nav = [
       <div class="flex items-center gap-4">
         <CharacterSelect
           :characters
-          :current-character="character"
+          :current-character-id="character.id"
           :active-character-id="user!.activeCharacterId"
+          :simple="false"
+          @select="(id) => navigateTo({ params: { id }, replace: true })"
           @activate="onActivateCharacter"
           @create="onCreateNewCharacter"
         />

@@ -91,8 +91,7 @@ const openBattleAsMercenaryDialog = (side: BattleSide) => {
     async onApply(value) {
       await createBattleApplication({
         side,
-        // characterId: value.characterId, // TODO: FIXME:
-        characterId: 6,
+        characterId: value.characterId,
         note: value.note,
         wage: value.wage,
       })
@@ -159,7 +158,7 @@ const checkCanManageParticipant = (participant: BattleParticipant) => participan
       :back-to="{ name: 'battles' }"
     />
 
-    <div class="mx-auto max-w-xl space-y-6">
+    <div class="mx-auto max-w-2xl space-y-6">
       <div class="flex flex-wrap items-center justify-center gap-4.5">
         <BattlePhaseBadge :phase="battle.phase" />
         <UBadge

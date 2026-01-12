@@ -128,8 +128,11 @@ const cardStyle = computed(() => {
       /> -->
 
       <UButton
-        icon="i-lucide-arrow-right" trailing
-        variant="subtle" color="neutral" label="Detail"
+        icon="i-lucide-arrow-right"
+        trailing
+        variant="link"
+        color="neutral"
+        :label="$t('action.detail')"
         size="xl"
         :to="{ name: 'battles-id', params: { id: battle.id } }"
       />
