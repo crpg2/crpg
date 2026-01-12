@@ -29,11 +29,8 @@ const isUnread = computed(() => notification.state === NOTIFICATION_STATE.Unread
     }"
   >
     <UiDataCell>
-      <template #leftContent>
-        <UAvatar icon="crpg:logo" :ui="{ root: 'bg-muted', icon: 'text-highlighted' }" />
-      </template>
       <AppMetadataRender
-        :keypath="`notification.tpl.${notification.type}`"
+        :keypath="`notification.${notification.type}.tpl`"
         :metadata="notification.metadata"
         :dict
         class="flex-1 pr-8"
@@ -43,15 +40,15 @@ const isUnread = computed(() => notification.state === NOTIFICATION_STATE.Unread
     <UTooltip v-if="isUnread" :text="$t('user.notifications.unreadNotification')">
       <UIcon
         name="crpg:item-rank-duotone"
-        class="
-          absolute top-3 right-3 z-10 size-4 text-[var(--color-notification)] outline-0 select-none
-        "
+        class="absolute top-3 right-3 z-10 size-4 text-notification outline-0 select-none"
       />
     </UTooltip>
 
     <template #footer>
       <UTooltip :text="$d(new Date(notification.createdAt), 'short')">
-        <UBadge size="sm" variant="soft" color="neutral" :label="timeAgo" />
+        <UiTextView variant="caption-xs">
+          {{ timeAgo }}
+        </UiTextView>
       </UTooltip>
 
       <div class="mr-0 ml-auto flex gap-3">

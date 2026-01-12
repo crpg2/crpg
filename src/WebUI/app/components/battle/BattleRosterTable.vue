@@ -30,7 +30,7 @@ const columns = computed<TableColumn<BattleParticipant>[]>(() => [
   {
     accessorKey: 'user',
     header: () => h('div', { class: 'inline-flex gap-1.5' }, [
-      h('span', null, 'Participant'),
+      h('span', null, 'Participants'),
       h('span', null, '·'),
       h(UiTextView, { variant: 'caption' }, {
         default: () => `${participants.length}/${totalParticipantSlots}`,

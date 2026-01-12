@@ -15,13 +15,13 @@ const colorByApplicationStatus: Record<BattleMercenaryApplicationStatus, BadgePr
 </script>
 
 <template>
-  <UTooltip text="Mercenary application status">
+  <UTooltip :text="$t('strategus.battle.mercenaryApplication.statusTitle')">
     <UBadge
       variant="subtle"
       class="cursor-pointer"
       icon="crpg:mercenary"
       :color="colorByApplicationStatus[applicationStatus]"
-      :label="applicationStatus"
+      :label="$t(`strategus.battle.mercenaryApplication.status.${applicationStatus}`)"
     />
   </UTooltip>
 </template>

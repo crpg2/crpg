@@ -1,7 +1,6 @@
 locale:
   en: English
   ru: Русский
-  cn: 中文
 
 platform:
   Steam: Steam
@@ -149,6 +148,7 @@ action:
   confirm: Подтверждаю
   create: Создать
   search: Поиск
+  send: Отправить
   apply: Принять
   accept: Принять
   decline: Отклонить
@@ -170,6 +170,7 @@ action:
   copy: Копировать
   ok: Ок
   selectFromList: Выберите из списка
+  detail: Подробнее
 
 login:
   label: Вход
@@ -191,6 +192,7 @@ shortcuts:
 
 setting:
   language: Язык
+  notifications: Уведомления
   settings: Настройки
   logout: Выйти
 
@@ -289,6 +291,8 @@ welcome:
       techSupport: Тех. поддержка
 
 character:
+  selectCharacter: Выберите персонажа
+
   nav:
     overview: Обзор
     inventory: Инвентарь
@@ -379,7 +383,6 @@ character:
       title: Ранг
       tooltip:
         title: Ранг
-        # prettier-igno                                                                                                                                                                                                                                                                                                                      re
         desc: '
           <p>Ваш рейтинг присваивает вам ранг, который напрямую связан с автобалансом, используя который он решает, в какую команду вас поместить. Система, которую мы используем <strong>*Glicko2</strong>.</p>
           <p>Не беспокойтесь о своем ранге! В конце концов, это инструмент, который мы используем для балансировки команд, он не обязательно является идеальным показателем мастерства в Bannerlord.</p>
@@ -409,10 +412,10 @@ character:
     active:
       tooltip:
         title: Активный персонаж
-        desc: '
-          <p>Включите, чтобы использовать этого персонажа в игре.</p>
-          <p>Если ни один из ваших персонажей не был выбран в качестве активного, то, присоединившись к серверу, вы создадите нового персонажа.</p>
-          <p>Имейте в виду, что вы можете создать только одного персонажа в час. После этого вы будете автоматически выкинуты с сервера.</p>'
+        desc:
+          - Включите, чтобы использовать этого персонажа в игре.
+          - Если ни один из ваших персонажей не был выбран в качестве активного, то, присоединившись к серверу, вы создадите нового персонажа.
+          - Имейте в виду, что вы можете создать только одного персонажа в час. После этого вы будете автоматически выкинуты с сервера.
     respecialize:
       title: Сброс
       tooltip:
@@ -959,6 +962,22 @@ user:
         navigate: Перейдите на наш канал {modMailLink}
         follow: Следуйте инструкциям в этом канале, чтобы связаться с нами
       outro: Обратите внимание, что в настоящее время мы не принимаем обращения через любую другую платформу, кроме Discord.
+  notifications:
+    title: Уведомления
+    unreadNotification: Непрочитанное уведомление
+    filter:
+      byType: По типу
+      onlyUnread: Только непрочитанные
+    action:
+      read:
+        title: Прочитать
+      readAll:
+        title: Отметить все как прочитанные
+      delete:
+        title: Удалить
+      deleteAll:
+        title: Удалить все
+        confirmTitle: Вы уверены, что хотите удалить все уведомления?
 
 banned:
   title: Вы забанены
@@ -1407,6 +1426,67 @@ item:
   filter:
     all: Все
 
+notification:
+  ItemReturned:
+    title: Предмет возвращён
+    tpl: 'Предмет {item} был удалён из вашего инвентаря. Возвращено: {refundedGold} {refundedHeirloomPoints}'
+
+  ClanMemberRoleChangedToUser:
+    title: Роль в клане изменена
+    tpl: 'Ваша роль {oldClanMemberRole} в клане {clan} была изменена на {newClanMemberRole}'
+
+  ClanMemberLeavedToLeader:
+    title: Участник покинул клан
+    tpl: '{user} покинул ваш клан {clan}'
+
+  ClanMemberKickedToExMember:
+    title: Исключение из клана
+    tpl: 'Вы были исключены из клана {clan}'
+
+  ClanApplicationCreatedToUser:
+    title: Заявка в клан отправлена
+    tpl: 'Ваша заявка на вступление в клан {clan} успешно создана'
+
+  ClanApplicationCreatedToOfficers:
+    title: Новая заявка в клан
+    tpl: '{user} подал заявку на вступление в ваш клан {clan}'
+
+  ClanApplicationAcceptedToUser:
+    title: Заявка в клан принята
+    tpl: 'Ваша заявка на вступление в клан {clan} была одобрена'
+
+  ClanApplicationDeclinedToUser:
+    title: Заявка в клан отклонена
+    tpl: 'Ваша заявка на вступление в клан {clan} была отклонена'
+
+  ClanArmoryBorrowItemToLender:
+    title: Предмет взят из хранилища
+    tpl: '{user} взял ваш предмет {item} из кланового хранилища клана {clan}'
+
+  ClanArmoryRemoveItemToBorrower:
+    title: Предмет изъят из хранилища
+    tpl: '{user} забрал свой предмет {item} из кланового хранилища клана {clan}'
+
+  UserRewardedToUser:
+    title: Получена награда
+    tpl: 'Вы получили награду: {gold} {heirloomPoints} {item}'
+
+  CharacterRewardedToUser:
+    title: Награда персонажу
+    tpl: 'Ваш персонаж {character} получил {experience} опыта'
+
+  BattleMercenaryApplicationAccepted:
+    title: Заявка наёмника принята
+    tpl: 'Ваша заявка на участие в бою {battle} в качестве наёмника была принята'
+
+  BattleMercenaryApplicationDeclined:
+    title: Заявка наёмника отклонена
+    tpl: 'Ваша заявка на участие в бою {battle} в качестве наёмника была отклонена'
+
+  BattleParticipantKickedToExParticipant:
+    title: Исключение из боя
+    tpl: 'Вы были исключены из боя {battle}'
+
 leaderboard:
   title: Таблица лидеров
   table:
@@ -1419,7 +1499,7 @@ leaderboard:
       region: Регион
 
 credits:
-  pageTitle: Участники проекта
+  pageTitle: Авторы проекта
   description: Этот раздел служит для выражения признательности нашим <strong>разработчикам, участникам, создателям, художникам и всем остальным</strong> за их вклад в создание нашего мода. Мы ценим все, что было сделано для поддержания этого мода, независимо от того, насколько это было незначительно.
   subtitle: Без вас этот мод не был бы возможен!
   role:
@@ -1440,3 +1520,99 @@ rankTable:
 patchNotes:
   showAllPatches: '+ {count} патчей | + {count} патч | + {count} патча | + {count} патчей'
   latestPatch: Последний патч
+
+strategus:
+  terrainType:
+    Barrier: Barrier
+    ThickForest: Thick forest
+    SparseForest: Sparse forest
+    ShallowWater: Shallow water
+    DeepWater: Deep water
+    Plain: Равнина
+
+  battle:
+    upcomingBattles: Upcoming Battles
+    battlePhase: Фаза боя
+    phase:
+      Preparation: Подготовка
+      Hiring: Hiring
+      Scheduled: Scheduled
+      Live: Live
+      End: End
+    type:
+      All: Все
+      Battle: Битва
+      Siege: Осада
+    side:
+      Attacker: Атакующий
+      Defender: Защитник
+    titleByType:
+      Siege: Осада {settlement}
+      Battle: Битва на {terrain} недалеко от {nearestSettlement}
+
+    mercenaryApplication:
+      title: Заявка наёмника
+      statusTitle: Статус заявки наёмника
+      statusTitleShort: Статус
+      status:
+        Pending: В ожидании
+        Accepted: Принята
+        Declined: Отклонена
+      form:
+        character:
+          label: Персонаж
+          help: ''
+        note:
+          label: Примечание
+          help: Произвольный текст
+        wage:
+          label: Оплата
+          help: ''
+        notify:
+          success: Брифинг успешно обновлён
+      create:
+        title: Вы можете {link}
+        link: создать новую заявку
+      delete:
+        title: Вы можете {link}
+        link: удалить свою заявку
+
+    manage:
+      title: Управление битвой
+      briefing:
+        title: Брифинг
+        form:
+          note:
+            label: Примечание
+            help: 'Произвольный текст: Discord, снаряжение, требования'
+        notify:
+          success: Брифинг успешно обновлён
+      mercenaryApplications:
+        title: Заявки наёмников
+        table:
+          columns:
+            user:
+              label: Пользователь
+            createdAt:
+              label: Дата создания
+            level:
+              label: Уровень
+            region:
+              label: Регион
+            wage:
+              label: Оплата
+            note:
+              label: Примечание
+            status:
+              label: Статус
+        respond:
+          accept:
+            notify:
+              success: Заявка принята
+            tooltip:
+              noFreeSlots:
+                title: Недостаточно мест для участников сражения
+                description: У вас доступно только {totalSlots} слотов для участников сражения.
+          decline:
+            notify:
+              success: Заявка отклонена

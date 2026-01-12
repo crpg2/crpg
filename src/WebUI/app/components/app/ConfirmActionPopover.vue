@@ -37,7 +37,7 @@ const [open, toggle] = useToggle()
 
         <UButton
           icon="crpg:check"
-          :label="confirmLabel ?? $t('action.confirm')"
+          :label="confirmLabel ?? $t('action.ok')"
           @click="() => {
             $emit('confirm')
             toggle(false)

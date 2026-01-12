@@ -10,12 +10,16 @@ namespace Crpg.Application.Common.Services;
 
 internal interface IBattleService
 {
-    BattleDetailedViewModel MapBattleToDetailedViewModel(IMapper mapper, Battle battle, int userId, Settlement nearestSettlement, Terrain terrain);
+    BattleDetailedViewModel MapBattleToDetailedViewModel(IMapper mapper, Battle battle, int userId, Settlement? nearestSettlement, Terrain terrain);
     int CalculateTotalParticipantSlots(Battle battle, BattleSide side);
 }
 
 internal class BattleService : IBattleService
 {
+    /// <summary>
+    /// Calculates the total participant slots for a battle side.
+    /// See <see cref="BattleParticipantUniformDistributionModel.DistributeParticipants"/>.
+    /// </summary>
     public int CalculateTotalParticipantSlots(Battle battle, BattleSide side)
     {
         var fighters = battle.Fighters.Where(f => f.Side == side);
@@ -26,7 +30,7 @@ internal class BattleService : IBattleService
         IMapper mapper,
         Battle battle,
         int userId,
-        Settlement nearestSettlement,
+        Settlement? nearestSettlement,
         Terrain terrain)
     {
         var userApplications = battle.MercenaryApplications
@@ -42,7 +46,7 @@ internal class BattleService : IBattleService
             Id = battle.Id,
             Region = battle.Region,
             Position = battle.Position,
-            NearestSettlement = mapper.Map<SettlementPublicViewModel>(nearestSettlement),
+            NearestSettlement = nearestSettlement != null ? mapper.Map<SettlementPublicViewModel>(nearestSettlement) : null,
             Terrain = mapper.Map<TerrainViewModel>(terrain),
             Phase = battle.Phase,
             Type = GetBattleType(battle),

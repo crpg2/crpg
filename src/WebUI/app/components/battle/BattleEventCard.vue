@@ -115,7 +115,7 @@ const cardStyle = computed(() => {
 
     <template #footer>
       <UiTextView variant="caption">
-        {{ $t(`region.${battle.region}`) }} · {{ $t(`strategus.battle.type.${battle.type}`) }} · <template v-if="battle.scheduledFor">
+        {{ $t(`region.${battle.region}`, 0) }} · {{ $t(`strategus.battle.type.${battle.type}`) }} · <template v-if="battle.scheduledFor">
           {{ $d(battle.scheduledFor, 'short') }}
         </template>
       </UiTextView>
@@ -128,8 +128,11 @@ const cardStyle = computed(() => {
       /> -->
 
       <UButton
-        icon="i-lucide-arrow-right" trailing
-        variant="subtle" color="neutral" label="Detail"
+        icon="i-lucide-arrow-right"
+        trailing
+        variant="link"
+        color="neutral"
+        :label="$t('action.detail')"
         size="xl"
         :to="{ name: 'battles-id', params: { id: battle.id } }"
       />
