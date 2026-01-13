@@ -1,5 +1,10 @@
+import type { Polygon } from 'geojson'
+
 import {
   getTerrains as _getTerrains,
+  deleteTerrainsById,
+  postTerrains,
+  putTerrainsById,
 } from '#api/sdk.gen'
 
 import type { Terrain, TerrainFeatureCollection, TerrainType } from '~/models/strategus/terrain'
@@ -36,11 +41,19 @@ export const mapTerrainsToFeatureCollection = (terrains: Terrain[]): TerrainFeat
   })),
 })
 
+export interface TerrainCreation {
+  type: TerrainType
+  boundary: Polygon
+}
+
+export interface TerrainUpdate {
+  boundary: Polygon
+}
+
 export const getTerrains = async (): Promise<Terrain[]> => (await _getTerrains({})).data!
 
-// export const addTerrain = (payload: TerrainCreation) => post<Terrain>('/terrains', payload)
+export const addTerrain = (payload: TerrainCreation) => postTerrains({ body: payload })
 
-// export const updateTerrain = (id: number, payload: TerrainUpdate) =>
-//   put<Terrain>(`/terrains/${id}`, payload)
+export const updateTerrain = (id: number, payload: TerrainUpdate) => putTerrainsById({ path: { id }, body: payload })
 
-// export const deleteTerrain = (id: number) => del(`/terrains/${id}`)
+export const deleteTerrain = (id: number) => deleteTerrainsById({ path: { id } })

@@ -16,9 +16,6 @@ export const useSettlements = (
   const { state: settlements, execute: loadSettlements } = useAsyncState(
     () => getSettlements(),
     [],
-    {
-      immediate: true,
-    },
   )
 
   const visibleSettlements = computed(() => {

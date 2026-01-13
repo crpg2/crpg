@@ -1,22 +1,20 @@
-import type { UpdatePartyStatusCommandWritable } from '#api'
-
 import {
   getPartiesSelfUpdate,
   postParties,
   putPartiesSelfStatus,
 } from '#api/sdk.gen'
 
-import type { PartyStatus } from '~/models/strategus/party'
+import type { PartyStatus, UpdatePartyStatus } from '~/models/strategus/party'
 
 import { PARTY_STATUS } from '~/models/strategus/party'
 
 export const getSelfUpdate = () => getPartiesSelfUpdate({})
 
-export const updatePartyStatus = async (payload: UpdatePartyStatusCommandWritable) => (await putPartiesSelfStatus({ body: payload })).data!
+export const updatePartyStatus = async (payload: UpdatePartyStatus) => (await putPartiesSelfStatus({ body: payload })).data!
 
-export const registerParty = () => postParties({})
+export const registerParty = () => postParties({ body: {} })
 
-export const inSettlementStatuses = new Set<PartyStatus>([
+export const IN_SETTLEMENT_PARRY_STATUSES: PartyStatus[] = [
   PARTY_STATUS.IdleInSettlement,
   PARTY_STATUS.RecruitingInSettlement,
-])
+]

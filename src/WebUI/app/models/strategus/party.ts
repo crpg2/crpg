@@ -29,7 +29,6 @@ export interface PartyPublic {
 
 export interface PartyCommon {
   id: number
-  // name: string
   troops: number
   position: Point
   user: UserPublic
@@ -48,4 +47,11 @@ export interface StrategusUpdate {
   visibleParties: PartyCommon[]
   visibleSettlements: SettlementPublic[]
   visibleBattles: any[] // TODO: FIXME:
+}
+
+export interface UpdatePartyStatus {
+  status: PartyStatus
+  waypoints: MultiPoint
+  targetedPartyId: number
+  targetedSettlementId: number
 }

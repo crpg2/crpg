@@ -1031,7 +1031,6 @@ export type UpdateSettlementCommand = {
 };
 
 export type UpdateTerrainCommand = {
-    id: number;
     boundary: GeoJsonPolygon;
 };
 
@@ -1484,7 +1483,6 @@ export type UpdatePartyStatusCommandWritable = {
 };
 
 export type UpdateTerrainCommandWritable = {
-    id: number;
     boundary: GeoJsonPolygonWritable;
 };
 

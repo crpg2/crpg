@@ -19,22 +19,14 @@ public record CreatePartyCommand : IMediatorRequest<PartyViewModel>
     [JsonIgnore]
     public int UserId { get; set; }
 
-    internal class Handler : IMediatorRequestHandler<CreatePartyCommand, PartyViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap, Constants constants) : IMediatorRequestHandler<CreatePartyCommand, PartyViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<CreatePartyCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly IStrategusMap _strategusMap;
-        private readonly Constants _constants;
-
-        public Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap, Constants constants)
-        {
-            _db = db;
-            _mapper = mapper;
-            _strategusMap = strategusMap;
-            _constants = constants;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly IStrategusMap _strategusMap = strategusMap;
+        private readonly Constants _constants = constants;
 
         public async Task<Result<PartyViewModel>> Handle(CreatePartyCommand req, CancellationToken cancellationToken)
         {

@@ -2,18 +2,24 @@
 import type { Map } from 'leaflet'
 
 import { LControlZoom, LMap, LTileLayer } from '@vue-leaflet/vue-leaflet'
+import { LMarkerClusterGroup } from 'vue-leaflet-markercluster'
 
-import type { StrategusUpdate } from '~/models/strategus/party'
+import type { MovementType } from '~/models/strategus/movement'
+import type { PartyCommon } from '~/models/strategus/party'
+import '@geoman-io/leaflet-geoman-free'
+
 import type { SettlementPublic } from '~/models/strategus/settlement'
 
 import { useMainHeader } from '~/composables/app/use-main-header'
 import { useMap } from '~/composables/strategus/use-map'
 import { useParty, usePartyState } from '~/composables/strategus/use-party'
+import { usePartyMove } from '~/composables/strategus/use-party-move'
 import { useSettlements } from '~/composables/strategus/use-settlements'
 import { useTerrains } from '~/composables/strategus/use-terrains'
 import { SomeRole } from '~/models/role'
-import { PARTY_QUERY_KEYS } from '~/queries'
-import { getSelfUpdate, inSettlementStatuses } from '~/services/strategus/party-service'
+import { MOVEMENT_TARGET_TYPE, MOVEMENT_TYPE } from '~/models/strategus/movement'
+import { PARTY_STATUS } from '~/models/strategus/party'
+import { getSelfUpdate, IN_SETTLEMENT_PARRY_STATUSES } from '~/services/strategus/party-service'
 
 definePageMeta({
   roles: SomeRole,
@@ -23,20 +29,25 @@ definePageMeta({
   },
   middleware: [
     async (to) => {
-      const partyRes = await getSelfUpdate()
+      try {
+        const partyRes = await getSelfUpdate()
 
-      if (partyRes?.errors !== null || partyRes.data === null) {
-        return
-        // return navigateTo('/') // TODO: FIXME: strategus register page or smth
+        if (partyRes?.errors !== null || partyRes.data === null) {
+          return navigateTo({ name: 'join-to-strategus' })
+        }
+
+        const { party } = usePartyState(partyRes.data).value
+
+        if (party.targetedSettlement && IN_SETTLEMENT_PARRY_STATUSES.includes(party.status) && to.name !== 'strategus-settlement-id') {
+          return navigateTo({
+            name: 'strategus-settlement-id',
+            params: { id: party.targetedSettlement.id },
+          })
+        }
       }
-
-      const { party } = usePartyState(partyRes.data).value
-
-      if (party.targetedSettlement !== null && inSettlementStatuses.has(party.status) && to.name !== 'strategus-settlement-id') {
-        return navigateTo({
-          name: 'strategus-settlement-id',
-          params: { id: party.targetedSettlement.id },
-        })
+      // eslint-disable-next-line unused-imports/no-unused-vars
+      catch (_error) {
+        return navigateTo({ name: 'join-to-strategus' })
       }
     },
   ],
@@ -56,16 +67,32 @@ const {
 } = useMap()
 
 const {
-  isRegistered,
   moveParty,
-  onRegistered,
   partyInfo,
+  updateParty,
   partySpawn,
-  flyToSelfParty,
-  // visibleParties,
   toggleRecruitTroops,
   isTogglingRecruitTroops,
-} = useParty(map)
+} = useParty()
+
+const flyToSelfParty = () => {
+  (map.value!.leafletObject as Map).flyTo(positionToLatLng(partyInfo.value.party.position.coordinates), 5, {
+    animate: false,
+  })
+}
+
+const {
+  applyEvents: applyMoveEvents,
+  closeMoveDialog,
+  isMoveMode,
+
+  moveDialogCoordinates,
+  moveDialogMovementTypes,
+
+  onStartMove,
+  showMoveDialog,
+  onMoveDialogConfirm,
+} = usePartyMove(map)
 
 //
 
@@ -80,75 +107,30 @@ const {
 
 const {
   terrainsFeatureCollection,
-  loadTerrains,
-  // terrainVisibility,
-  // toggleTerrainVisibilityLayer,
-  // toggleEditMode,
-  // onTerrainUpdated,
+  terrainLayerVisibility,
+  toggleTerrainLayerVisibility,
+  toggleEditMode,
+  onTerrainUpdated,
 } = useTerrains(map)
-
-loadSettlements()
-partySpawn()
-loadTerrains()
 
 const [onMapReady, mapIsLoading] = useAsyncCallback(async (map: Map) => {
   mapBounds.value = map.getBounds()
-  // await Promise.all([
-  //   loadSettlements(),
-  //   // loadTerrains(),
-  //   partySpawn(),
-  // ])
-  // party.value && flyToSelfParty()
-  // applyMoveEvents()
-  // redirectToSettlement()
+  flyToSelfParty()
+  applyMoveEvents()
+  partySpawn()
 })
 
-const onSettlementClick = (settlement: SettlementPublic) => {
-  // if (party.value === null) {
+const onPartyClick = (targetParty: PartyCommon) => showMoveDialog({
+  target: targetParty,
+  movementTypes: [MOVEMENT_TYPE.Follow, MOVEMENT_TYPE.Attack],
+  targetType: MOVEMENT_TARGET_TYPE.Party,
+})
 
-  // }
-
-  // showMoveDialog({
-  //   movementTypes: [MovementType.Move, MovementType.Attack],
-  //   target: settlement,
-  //   targetType: MovementTargetType.Settlement,
-  // })
-}
-
-// function redirectToSettlement(): void {
-//   if (party.value === null) {
-//     return
-//   }
-
-//   if (party.value.targetedSettlement !== null && inSettlementStatuses.has(party.value.status)) {
-//     router.push({
-//       name: 'StrategusSettlementId',
-//       params: { id: party.value.targetedSettlement.id },
-//     })
-//   }
-// }
-
-// TODO: need refactoring
-// TODO: tweak routes nesting
-// enter/leave settlement
-
-// TODO: to route middleware? no
-
-// watchEffect(() => {
-//   if (party.value.targetedSettlement !== null && inSettlementStatuses.has(party.value.status)) {
-//     return navigateTo({
-//       name: 'strategus-settlement-id',
-//       params: { id: party.value.targetedSettlement.id },
-//     })
-//   }
-//   else {
-//     //
-//     // await moveParty
-//     // router.push({
-//     //   name: 'StrategusParent',
-//     // })
-//   }
-// })
+const onSettlementClick = (settlement: SettlementPublic) => showMoveDialog({
+  target: settlement,
+  movementTypes: [MOVEMENT_TYPE.Move, MOVEMENT_TYPE.Attack],
+  targetType: MOVEMENT_TARGET_TYPE.Settlement,
+})
 </script>
 
 <template>
@@ -162,80 +144,74 @@ const onSettlementClick = (settlement: SettlementPublic) => {
       @ready="onMapReady"
       @move-end="onMapMoveEnd"
     >
-      <!-- TODO: FIXME: low res map image -->
-      <!-- TODO: FIXME: zIndex -->
-      <!-- <LImageOverlay
-        url="https://www.printablee.com/postpic/2011/06/blank-100-square-grid-paper_405041.jpg"
-        :bounds="maxBounds"
-      /> -->
-      <LTileLayer v-bind="tileLayerOptions" />
+      <LTileLayer v-bind="tileLayerOptions" :z-index="1" />
       <LControlZoom position="bottomleft" />
 
-      <!-- v-if="party !== null" -->
       <MapControlLocateParty
         position="bottomleft"
         @click="flyToSelfParty"
+      />
+
+      <MapControlMousePosition position="bottomright" />
+
+      <MapControlTerrainVisibilityToggle
+        position="topleft"
+        @toggle="toggleTerrainLayerVisibility"
       />
 
       <!-- <ControlSearchToggle
         position="topleft"
         @click="toggleSearch"
       />
-      <ControlTerrainVisibilityToggle
-        position="topleft"
-        @click="toggleTerrainVisibilityLayer"
-      />
+     -->
 
-      <ControlTerrainEditToggle
+      <MapControlTerrainEditToggle
         position="topleft"
         @click="toggleEditMode"
       />
-
-      <ControlMousePosition position="bottomright" />
 
       <LMarkerClusterGroup
         :show-coverage-on-hover="false"
         chunked-loading
       >
-        <MarkerParty
-          v-for="visibleParty in visibleParties"
-          :key="`party-${visibleParty.id}`"
-          :party="visibleParty"
-          @click="onPartyClick(visibleParty)"
+        <MapMarkerParty
+          v-for="party in partyInfo.visibleParties"
+          :key="`party-${party.id}`"
+          :party
+          @click="onPartyClick(party)"
         />
       </LMarkerClusterGroup>
 
-      <DialogMove
+      <MapDialogMove
         v-if="moveDialogCoordinates !== null"
         :lat-lng="moveDialogCoordinates"
         :movement-types="moveDialogMovementTypes"
         @confirm="onMoveDialogConfirm"
         @cancel="closeMoveDialog"
       />
--->
-      <!-- v-if="terrainVisibility" -->
-      <MapLayerTerrain
-        :data="terrainsFeatureCollection"
-        @update="() => {}"
-      />
-      <!-- @update="onTerrainUpdated" -->
 
-      <!-- <MapMarkerSettlement
+      <MapLayerTerrain
+        v-if="terrainLayerVisibility"
+        :data="terrainsFeatureCollection"
+        @update="onTerrainUpdated"
+      />
+
+      <MapMarkerSettlement
         v-for="settlement in visibleSettlements"
         :key="`settlement-${settlement.id}`"
         :settlement
         @click="onSettlementClick(settlement)"
-      /> -->
+      />
 
       <MapMarkerParty
         :party="partyInfo.party"
         is-self
+        @click="onStartMove"
       />
-      <!-- @click="onStartMove" -->
-      <!-- <PartyMovementLine
-          v-if="!isMoveMode"
-          :party
-        /> -->
+      <MapPartyMovementPolyline
+        v-if="!isMoveMode"
+        :party="partyInfo.party"
+      />
     </LMap>
 
     <NuxtPage class="absolute top-6 left-16 z-1000" />
@@ -244,8 +220,8 @@ const onSettlementClick = (settlement: SettlementPublic) => {
 
 <style>
 @import 'leaflet/dist/leaflet.css';
-/* @import 'vue-leaflet-markercluster/dist/style.css';
-@import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css'; */
+@import 'vue-leaflet-markercluster/dist/style.css';
+@import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';
 
 /* .leaflet-pm-toolbar .icon-terrain-barrier {
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iIzAwMCIgZD0ibTIxLjc2IDItMTEuNTgyLjAyNEwyIDEwLjIzN2wuMDI0IDExLjU4M0wxMC4yMzcgMzBsMTEuNTgzLS4wMjRMMzAgMjEuNzZsLS4wMjQtMTEuNTgyTDIxLjc2IDJabS0uNDc3IDEuMTcxIDcuNTIgNy40OS4wMjMgMTAuNjIzLTcuMzM0IDcuMzY0LS4xNTUuMTU0LTEwLjYyMy4wMjQtNy41Mi03LjQ4OS0uMDIzLTEwLjYyMyA3LjQ5LTcuNTIgMTAuNjIzLS4wMjNabS0uNDQ2IDEuMDczLTkuNzMuMDItNi44NjMgNi44OTcuMDIgOS43MyA2Ljg5NyA2Ljg2MyA5LjczLS4wMTggNi44NjMtNi45LS4wMTgtOS43MjktNi45LTYuODYzWk03LjIwNSAxMy4yODJjLjMxNiAwIC42NDMuMDMuOTc3LjA3Ny4zNC4wNDguNjg1LjEyIDEuMDQzLjIxNXYxLjIyMWE1LjA3MyA1LjA3MyAwIDAgMC0uOTMtLjMyMSAzLjc1NCAzLjc1NCAwIDAgMC0uODU4LS4xMDhjLS4zNTcgMC0uNjIuMDQ4LS43OS4xNWEuNDg4LjQ4OCAwIDAgMC0uMjU1LjQ1OGMwIC4xNTUuMDU3LjI3NC4xNy4zNjQuMTE3LjA4My4zMjcuMTYuNjMuMjJsLjYzMi4xMjVjLjY0NC4xMzEgMS4xMDMuMzI4IDEuMzc3LjU5LjI2OC4yNjguNDA1LjY0My40MDUgMS4xMjYgMCAuNjM3LS4xOSAxLjExNC0uNTY2IDEuNDMtLjM4MS4zMS0uOTYuNDY1LTEuNzQuNDY1LS4zNjMgMC0uNzMzLS4wMzYtMS4xMDMtLjEwOGE2LjQyOCA2LjQyOCAwIDAgMS0xLjEwOC0uMzFWMTcuNjJjLjM2OS4xOTcuNzI2LjM0NiAxLjA3LjQ0Ny4zNDYuMDk2LjY4Mi4xNDMuOTk4LjE0My4zMjggMCAuNTc4LS4wNTMuNzUtLjE2YS41MTguNTE4IDAgMCAwIC4yNjMtLjQ2NS41Mi41MiAwIDAgMC0uMTc5LS40MjNjLS4xMTktLjA5Ni0uMzUxLS4xODUtLjcwMy0uMjYzbC0uNTc4LS4xMjVjLS41OC0uMTI1LTEuMDA0LS4zMjEtMS4yNzMtLjU5Ni0uMjY2LS4yNjgtLjM5OS0uNjM3LS4zOTktMS4wOTYgMC0uNTc4LjE4Ni0xLjAxOC41NTgtMS4zMjguMzczLS4zMTYuOTA4LS40NzEgMS42MDktLjQ3MVptMTEuMTgzIDBjLjkzIDAgMS42NTYuMjY4IDIuMTg2LjgwNC41My41My43OTMgMS4yNjMuNzkzIDIuMjA1IDAgLjkzNS0uMjYyIDEuNjY4LS43OTMgMi4yMDQtLjUzLjUzLTEuMjU3Ljc5OS0yLjE4Ni43OTktLjkzIDAtMS42NTYtLjI2OS0yLjE4Ny0uNzk5LS41My0uNTM2LS43OTItMS4yNjktLjc5Mi0yLjIwNCAwLS45NDIuMjYyLTEuNjc0Ljc5Mi0yLjIwNS41My0uNTM2IDEuMjU4LS44MDQgMi4xODctLjgwNFptLTguNDU0LjEwN2g1LjMzOHYxLjEyNmgtMS45MTh2NC42NjVoLTEuNDk2di00LjY2NUg5LjkzNFYxMy4zOVptMTIuMjYxIDBoMi40NzljLjczMiAwIDEuMjk4LjE2NyAxLjY5Mi40OTUuMzk5LjMyMi41OTUuNzg2LjU5NSAxLjM5NCAwIC42MDgtLjE5NiAxLjA3OC0uNTk1IDEuNDA2LS4zOTQuMzIyLS45Ni40ODgtMS42OTIuNDg4aC0uOTl2Mi4wMDhoLTEuNDg5di01Ljc5Wm0tMy44MDcuOTc3Yy0uNDU5IDAtLjgxLjE2Ny0xLjA2LjUwNy0uMjUuMzMzLS4zNzYuODEtLjM3NiAxLjQxOCAwIC42MDcuMTI1IDEuMDc4LjM3NSAxLjQxOC4yNS4zMzMuNjAyLjUgMS4wNi41LjQ2IDAgLjgxMS0uMTY3IDEuMDYxLS41LjI1LS4zNC4zNzYtLjgxLjM3Ni0xLjQxOCAwLS42MDgtLjEyNS0xLjA4NS0uMzc2LTEuNDE4LS4yNS0uMzQtLjYwMS0uNTA3LTEuMDYtLjUwN1ptNS4yOTcuMTA4djEuNjE0aC44MjhjLjI5MiAwIC41MTItLjA3MS42NzMtLjIwOC4xNTUtLjE0My4yMzItLjM0Ni4yMzItLjYwMnMtLjA3Ny0uNDU5LS4yMzItLjU5NmMtLjE2LS4xNDMtLjM4MS0uMjA4LS42NzMtLjIwOGgtLjgyOFoiLz48L3N2Zz4=');
