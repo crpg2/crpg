@@ -10,8 +10,8 @@ import { LControl } from '@vue-leaflet/vue-leaflet'
         class="flex! items-center justify-center"
         :title="$t('strategus.control.terrainEditorToggle')"
       >
-        <OIcon
-          icon="edit"
+        <UIcon
+          name="crpg:edit"
           size="lg"
         />
       </a>

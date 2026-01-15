@@ -1,89 +1,113 @@
 <script setup lang="ts">
-import { LIcon, LMarker, LTooltip } from '@vue-leaflet/vue-leaflet'
+import { LCircle, LIcon, LMarker, LTooltip } from '@vue-leaflet/vue-leaflet'
 // import { clsx } from 'clsx'
 
 import type { SettlementPublic } from '~/models/strategus/settlement'
 
+import { SETTLEMENT_TYPE } from '~/models/strategus/settlement'
 // import { SettlementType } from '~/models/strategus/settlement'
-// import { settlementIconByType } from '~/services/strategus-service/settlement'
+import { settlementIconByType } from '~/services/strategus/settlement-service'
 import { argbIntToRgbHexColor } from '~/utils/color'
 // import { hexToRGBA } from '~/utils/color'
 import { positionToLatLng } from '~/utils/geometry'
 
 const { settlement } = defineProps<{ settlement: SettlementPublic }>()
 
+defineEmits<{ click: [] }>()
+
 const settlementMarkerStyle = computed(() => {
   const output = {
-    // ...settlementIconByType[settlement.type],
     baseClass: '',
     baseStyle: '',
   }
 
-  // switch (settlement.type) {
-  //   case SettlementType.Town:
-  //     output.baseClass = clsx('gap-2 px-2 py-1.5 text-sm')
-  //     break
-  //   case SettlementType.Castle:
-  //     output.baseClass = clsx('gap-1.5 px-1.5 py-1 text-xs')
-  //     break
-  //   case SettlementType.Village:
-  //     output.baseClass = clsx('text-2xs gap-1 p-1')
-  //     break
-  // }
+  switch (settlement.type) {
+    case SETTLEMENT_TYPE.Town:
+      output.baseClass = tw`gap-2 px-3.5 py-1.5 text-lg`
+      break
+    case SETTLEMENT_TYPE.Castle:
+      output.baseClass = tw`gap-1.5 px-1.5 py-1 text-sm`
+      break
+    case SETTLEMENT_TYPE.Village:
+      output.baseClass = tw`text-xs gap-1 p-1`
+      break
+  }
 
   if (settlement?.owner?.clanMembership) {
-    output.baseStyle = `background-color: ${argbIntToRgbHexColor(settlement.owner.clanMembership.clan.primaryColor)}50;` // 50% opacity
+    output.baseStyle = `background-color: color-mix(in srgb, #fff 5%, ${argbIntToRgbHexColor(settlement.owner.clanMembership.clan.primaryColor)} 25%)`
   }
 
   return output
 })
+
+const settlementAreaRadius = computed(() => {
+  switch (settlement.type) {
+    case SETTLEMENT_TYPE.Town:
+      return 1.375
+    case SETTLEMENT_TYPE.Castle:
+      return 0.825
+    case SETTLEMENT_TYPE.Village:
+    default:
+      return 0.375
+  }
+})
 </script>
 
 <template>
-  <LMarker
-    :lat-lng="positionToLatLng(settlement.position.coordinates)"
-    :options="{ bubblingMouseEvents: false }"
-  >
-    <LIcon class-name="!flex justify-center items-center">
-      <div
-        :style="settlementMarkerStyle.baseStyle"
-        class="
-          bg-base-100/50 flex items-center rounded-md whitespace-nowrap text-white
-          hover:ring
-        "
-        :class="settlementMarkerStyle.baseClass"
-        :title="$t(`strategus.settlementType.${settlement.type}`)"
-      >
-        <!-- <OIcon :icon="settlementMarkerStyle.icon" :size="settlementMarkerStyle.iconSize" /> -->
-        <div class="leading-snug">
-          {{ settlement.name }}
-        </div>
+  <div>
+    <LMarker
+      :lat-lng="positionToLatLng(settlement.position.coordinates)"
+      :options="{ bubblingMouseEvents: false }"
+      @click="$emit('click')"
+    >
+      <LIcon class-name="!flex justify-center items-center">
+        <div
+          :style="settlementMarkerStyle.baseStyle"
+          class="
+            flex items-center rounded-md bg-primary/75 whitespace-nowrap text-highlighted
+            hover:ring hover:ring-inverted
+          "
+          :class="settlementMarkerStyle.baseClass"
+          :title="$t(`strategus.settlementType.${settlement.type}`)"
+        >
+          <UIcon :name="`crpg:${settlementIconByType[settlement.type]}`" class="size-6" />
+          <div class="leading-snug">
+            {{ settlement.name }}
+          </div>
 
-        <div v-if="settlement?.owner?.clanMembership" class="flex items-center">
-          <ClanTagIcon :color="settlement.owner.clanMembership.clan.primaryColor" size="xl" />
-          [{{ settlement.owner.clanMembership.clan.tag }}]
+          <div v-if="settlement?.owner?.clanMembership" class="flex items-center">
+            <ClanTagIcon :color="settlement.owner.clanMembership.clan.primaryColor" size="xl" />
+            [{{ settlement.owner.clanMembership.clan.tag }}]
+          </div>
         </div>
-      </div>
-    </LIcon>
+      </LIcon>
 
-    <LTooltip :options="{ direction: 'top', offset: [0, -16] }">
-      <div>
+      <LTooltip :options="{ direction: 'top', offset: [0, -16] }">
         <div class="flex min-w-80 flex-col gap-2 p-2">
           <SettlementMedia :settlement />
 
-          <div v-tooltip.bottom="`Troops`" class="flex items-center gap-1.5">
+          <!-- v-tooltip.bottom="`Troops`" -->
+          <div class="flex items-center gap-1.5">
             <!-- <OIcon icon="member" size="lg" /> -->
             {{ settlement.troops }}
           </div>
 
-          <Coin :value="10000" />
+          <AppCoin :value="10000" />
 
           <div v-if="settlement.owner" class="flex flex-col gap-1">
             <span class="text-3xs text-content-300">Owner</span>
             <UserMedia :user="settlement.owner" />
           </div>
         </div>
-      </div>
-    </LTooltip>
-  </LMarker>
+      </LTooltip>
+    </LMarker>
+    <!-- :visible="hovered" -->
+    <LCircle
+      :lat-lng="positionToLatLng(settlement.position.coordinates)"
+      :radius="settlementAreaRadius"
+      :opacity="0"
+      :fill-opacity="0.25"
+      fill-color="tomato"
+    />
+  </div>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Map } from 'leaflet'
 
-import { LControlZoom, LMap, LTileLayer } from '@vue-leaflet/vue-leaflet'
+import { LControlZoom, LFeatureGroup, LLayerGroup, LMap, LTileLayer } from '@vue-leaflet/vue-leaflet'
 import { LMarkerClusterGroup } from 'vue-leaflet-markercluster'
 
 import type { MovementType } from '~/models/strategus/movement'
@@ -170,17 +170,10 @@ const onSettlementClick = (settlement: SettlementPublic) => showMoveDialog({
         @click="toggleEditMode"
       />
 
-      <LMarkerClusterGroup
-        :show-coverage-on-hover="false"
-        chunked-loading
-      >
-        <MapMarkerParty
-          v-for="party in partyInfo.visibleParties"
-          :key="`party-${party.id}`"
-          :party
-          @click="onPartyClick(party)"
-        />
-      </LMarkerClusterGroup>
+      <MapPartyMovementPolyline
+        v-if="!isMoveMode"
+        :party="partyInfo.party"
+      />
 
       <MapDialogMove
         v-if="moveDialogCoordinates !== null"
@@ -190,27 +183,44 @@ const onSettlementClick = (settlement: SettlementPublic) => showMoveDialog({
         @cancel="closeMoveDialog"
       />
 
+      <LMarkerClusterGroup
+        chunked-loading
+        :spiderfy-on-max-zoom="true"
+        :show-coverage-on-hover="false"
+        :zoom-to-bounds-on-click="true"
+      >
+        <MapMarkerParty
+          :party="partyInfo.party"
+          is-self
+          @click="onStartMove"
+        />
+        <MapMarkerParty
+          v-for="party in partyInfo.visibleParties"
+          :key="`party-${party.id}`"
+          :party
+          @click="onPartyClick(party)"
+        />
+      </LMarkerClusterGroup>
+
       <MapLayerTerrain
         v-if="terrainLayerVisibility"
         :data="terrainsFeatureCollection"
         @update="onTerrainUpdated"
       />
 
-      <MapMarkerSettlement
-        v-for="settlement in visibleSettlements"
-        :key="`settlement-${settlement.id}`"
-        :settlement
-        @click="onSettlementClick(settlement)"
-      />
+      <LFeatureGroup name="ddddd">
+        <MapMarkerSettlement
+          v-for="settlement in visibleSettlements"
+          :key="`settlement-${settlement.id}`"
+          :settlement
+          @click="onSettlementClick(settlement)"
+        />
+      </LFeatureGroup>
 
-      <MapMarkerParty
+      <MapPartyProfile
+        class="absolute top-12 right-10 z-1000"
         :party="partyInfo.party"
-        is-self
-        @click="onStartMove"
-      />
-      <MapPartyMovementPolyline
-        v-if="!isMoveMode"
-        :party="partyInfo.party"
+        @locate="flyToSelfParty"
       />
     </LMap>
 

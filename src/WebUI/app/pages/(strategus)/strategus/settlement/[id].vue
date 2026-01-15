@@ -41,6 +41,7 @@ const { settlement } = useSettlement()
 
 <template>
   <UCard
+    class=""
     variant="subtle"
   >
     <!-- class="flex h-[95%] w-2/5 flex-col space-y-4 overflow-hidden bg-default/90 p-6 backdrop-blur-sm" -->

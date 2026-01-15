@@ -2009,7 +2009,7 @@ public record SeedDataCommand : IMediatorRequest
             {
                 User = alex,
                 Troops = 86,
-                Position = new Point(107, -106),
+                Position = new Point(120, -108),
                 Status = PartyStatus.InBattle,
                 TargetedSettlement = hertogea,
             };
@@ -2017,7 +2017,7 @@ public record SeedDataCommand : IMediatorRequest
             {
                 User = kedrynFuel,
                 Troops = 97,
-                Position = new Point(107, -106.2),
+                Position = new Point(121, -108),
                 Status = PartyStatus.FollowingParty,
                 TargetedParty = alexParty,
             };
@@ -2025,7 +2025,7 @@ public record SeedDataCommand : IMediatorRequest
             {
                 User = luqero,
                 Troops = 108,
-                Position = hertogea.Position,
+                Position = rhotae.Position,
                 Status = PartyStatus.IdleInSettlement,
                 TargetedSettlement = hertogea,
             };
@@ -2033,7 +2033,7 @@ public record SeedDataCommand : IMediatorRequest
             {
                 User = ilya,
                 Troops = 119,
-                Position = hertogea.Position,
+                Position = rhotae.Position,
                 Status = PartyStatus.IdleInSettlement,
                 TargetedSettlement = hertogea,
             };
@@ -2041,7 +2041,7 @@ public record SeedDataCommand : IMediatorRequest
             {
                 User = eztli,
                 Troops = 86,
-                Position = leblenion.Position,
+                Position = rhotae.Position,
                 Status = PartyStatus.InBattle,
                 TargetedSettlement = leblenion,
             };
@@ -2058,7 +2058,7 @@ public record SeedDataCommand : IMediatorRequest
                 manikParty, ajroselleParty, skraelParty, bedoParty, lambicParty, sanasarParty, vlad007Party,
                 canp0GParty, sharkParty, noobAmphetamineParty, mundeteParty, aroyFalconerParty, insanitoidParty,
                 namidakaParty, xDemParty, disorotParty, aceParty, sagarParty, greenShadowParty, hannibaruParty,
-                drexxParty, xaroshParty, tipsyTobyParty, localAlphaParty, eztliParty, droobParty,
+                drexxParty, xaroshParty, tipsyTobyParty, localAlphaParty, eztliParty, droobParty, alexParty, luqeroParty, ilyaParty, kedrynFuelParty
             ];
 
             var existingParties = (await _db.Parties.ToArrayAsync(cancellationToken: cancellationToken))
