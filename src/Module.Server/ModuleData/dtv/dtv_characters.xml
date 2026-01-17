@@ -1000,16 +1000,16 @@
         <equipment slot="Body" id="Item.crpg_leather_tunic_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_sturgia_boots_a_v2_h0" />
         <equipment slot="Item0" id="Item.crpg_iron_cleaver_v1_h0" />
-        <equipment slot="Item1" id="Item.crpg_handgonne_h0" />
-        <equipment slot="Item2" id="Item.crpg_cla_musket_ammo_h0" />
+        <equipment slot="Item1" id="Item.crpg_crossbow_j_v4_h0" />
+        <equipment slot="Item2" id="Item.crpg_bolt_a_v4_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
         <equipment slot="Head" id="Item.crpg_leather_studdedhelm_v2_h0" />
         <equipment slot="Body" id="Item.crpg_roughcloth_shortcoat_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_sturgia_boots_a_v2_h0" />
         <equipment slot="Item0" id="Item.crpg_cutlass_v1_h0" />
-        <equipment slot="Item1" id="Item.crpg_handgonne_h0" />
-        <equipment slot="Item2" id="Item.crpg_cla_musket_ammo_h0" />
+        <equipment slot="Item1" id="Item.crpg_crossbow_j_v4_h0" />
+        <equipment slot="Item2" id="Item.crpg_bolt_a_v4_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -3938,8 +3938,8 @@
         <equipment slot="Gloves" id="Item.crpg_decorated_imperial_gauntlets_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_mail_chausses_v2_h0" />
         <equipment slot="Item0" id="Item.crpg_blacksmith_warhammer_v3_h0" />
-        <equipment slot="Item1" id="Item.crpg_handgonne_h0" />
-        <equipment slot="Item2" id="Item.crpg_cla_musket_ammo_h0" />
+        <equipment slot="Item1" id="Item.crpg_crossbow_j_v4_h0" />
+        <equipment slot="Item2" id="Item.crpg_bolt_a_v4_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
         <equipment slot="Head" id="Item.crpg_sallet_no_visor_nochin_v2_h0" />
@@ -4110,8 +4110,8 @@
         <equipment slot="Gloves" id="Item.crpg_decorated_imperial_gauntlets_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_mail_chausses_v2_h0" />
         <equipment slot="Item0" id="Item.crpg_le_bonke_v3_h3" />
-        <equipment slot="Item1" id="Item.crpg_handgonne_h3" />
-        <equipment slot="Item2" id="Item.crpg_cla_musket_ammo_h3" />
+        <equipment slot="Item1" id="Item.crpg_crossbow_j_v4_h3" />
+        <equipment slot="Item2" id="Item.crpg_bolt_a_v4_h3" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
