@@ -1,4 +1,5 @@
 ﻿using Crpg.Domain.Common;
+using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Settlements;
 using Crpg.Domain.Entities.Users;
 using NetTopologySuite.Geometries;
@@ -61,6 +62,14 @@ public class Party : AuditableEntity
 
     /// <summary>See <see cref="TargetedSettlementId"/>.</summary>
     public Settlement? TargetedSettlement { get; set; }
+
+    /// <summary>
+    /// TODO:.
+    /// </summary>
+    public int? TargetedBattleId { get; set; }
+
+    /// <summary>See <see cref="TargetedBattleId"/>.</summary>
+    public Battle? TargetedBattle { get; set; }
 
     public User? User { get; set; }
     public List<PartyItem> Items { get; set; } = new();

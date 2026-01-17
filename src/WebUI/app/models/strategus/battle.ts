@@ -134,3 +134,11 @@ export interface BattleMercenaryApplication {
   note: string
   status: BattleMercenaryApplicationStatus
 }
+
+// TODO: FIXME:
+export interface MapBattle {
+  id: number
+  phase: BattlePhase
+  position: Point
+  createdAt: Date
+}

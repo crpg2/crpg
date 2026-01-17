@@ -49,4 +49,9 @@ public enum PartyStatus
     /// Stationary because involved in a <see cref="Battle"/>.
     /// </summary>
     InBattle,
+
+    /// <summary>
+    /// TODO:
+    /// </summary>
+    MovingToBattle,
 }

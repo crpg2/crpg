@@ -16,6 +16,7 @@ export const PARTY_STATUS = {
   MovingToSettlement: 'MovingToSettlement',
   MovingToAttackParty: 'MovingToAttackParty',
   MovingToAttackSettlement: 'MovingToAttackSettlement',
+  MovingToBattle: 'MovingToBattle',
   InBattle: 'InBattle',
 } as const satisfies Record<_PartyStatus, _PartyStatus>
 
@@ -54,4 +55,5 @@ export interface UpdatePartyStatus {
   waypoints: MultiPoint
   targetedPartyId: number
   targetedSettlementId: number
+  targetedBattletId: number
 }

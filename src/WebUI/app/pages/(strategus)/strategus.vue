@@ -4,10 +4,11 @@ import type { Map } from 'leaflet'
 import { LControlZoom, LFeatureGroup, LLayerGroup, LMap, LTileLayer } from '@vue-leaflet/vue-leaflet'
 import { LMarkerClusterGroup } from 'vue-leaflet-markercluster'
 
+import type { MapBattle } from '~/models/strategus/battle'
 import type { MovementType } from '~/models/strategus/movement'
-import type { PartyCommon } from '~/models/strategus/party'
 import '@geoman-io/leaflet-geoman-free'
 
+import type { PartyCommon } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 
 import { useMainHeader } from '~/composables/app/use-main-header'
@@ -113,11 +114,15 @@ const {
   onTerrainUpdated,
 } = useTerrains(map)
 
+const isMapRdy = ref(false)
 const [onMapReady, mapIsLoading] = useAsyncCallback(async (map: Map) => {
+  const partyPane = map.createPane('partyPane')
+  partyPane.style.zIndex = '650' // TODO: to const
   mapBounds.value = map.getBounds()
   flyToSelfParty()
   applyMoveEvents()
   partySpawn()
+  isMapRdy.value = true
 })
 
 const onPartyClick = (targetParty: PartyCommon) => showMoveDialog({
@@ -131,6 +136,14 @@ const onSettlementClick = (settlement: SettlementPublic) => showMoveDialog({
   movementTypes: [MOVEMENT_TYPE.Move, MOVEMENT_TYPE.Attack],
   targetType: MOVEMENT_TARGET_TYPE.Settlement,
 })
+
+const onBattleClick = (battle: MapBattle) => {
+  showMoveDialog({
+    target: battle,
+    movementTypes: [MOVEMENT_TYPE.JoinToBattleForAttacker, MOVEMENT_TYPE.JoinToBattleForDefender],
+    targetType: MOVEMENT_TARGET_TYPE.Battle,
+  })
+}
 </script>
 
 <template>
@@ -183,8 +196,24 @@ const onSettlementClick = (settlement: SettlementPublic) => showMoveDialog({
         @cancel="closeMoveDialog"
       />
 
+      <MapMarkerBattle
+        v-for="battle in partyInfo.visibleBattles"
+        :key="`battle-${battle.id}`"
+        :battle
+        @click="onBattleClick(battle)"
+      />
+
+      <MapMarkerSettlement
+        v-for="settlement in visibleSettlements"
+        :key="`settlement-${settlement.id}`"
+        :settlement
+        @click="onSettlementClick(settlement)"
+      />
+
       <LMarkerClusterGroup
+        v-if="isMapRdy"
         chunked-loading
+        cluster-pane="partyPane"
         :spiderfy-on-max-zoom="true"
         :show-coverage-on-hover="false"
         :zoom-to-bounds-on-click="true"
@@ -207,15 +236,6 @@ const onSettlementClick = (settlement: SettlementPublic) => showMoveDialog({
         :data="terrainsFeatureCollection"
         @update="onTerrainUpdated"
       />
-
-      <LFeatureGroup name="ddddd">
-        <MapMarkerSettlement
-          v-for="settlement in visibleSettlements"
-          :key="`settlement-${settlement.id}`"
-          :settlement
-          @click="onSettlementClick(settlement)"
-        />
-      </LFeatureGroup>
 
       <MapPartyProfile
         class="absolute top-12 right-10 z-1000"

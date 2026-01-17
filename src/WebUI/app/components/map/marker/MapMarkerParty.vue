@@ -77,6 +77,7 @@ const onReady = (circleMarker: CircleMarker) => {
     :color="markerColor"
     :fill-color="markerColor"
     :fill-opacity="1.0"
+    pane="partyPane"
     :bubbling-mouse-events="false"
     @ready="onReady"
   >

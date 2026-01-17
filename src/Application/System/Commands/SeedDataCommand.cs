@@ -1594,30 +1594,27 @@ public record SeedDataCommand : IMediatorRequest
             Party orleParty = new()
             {
                 User = orle,
-                // Troops = 12,
                 Troops = 100,
-                // Position = epicrotea.Position,
-                Position = rhotae.Position,
-                // Position = new Point(114.21076699552688, -109.37351870100285),
-                Status = PartyStatus.IdleInSettlement,
-                // Status = PartyStatus.InBattle,
-                // TargetedSettlement = epicrotea,
+                // Position = rhotae.Position,
+                Position = new Point(118.664627, -110.482864),
+                Status = PartyStatus.Idle,
                 TargetedSettlement = rhotae,
             };
             Party orle2Party = new()
             {
                 User = orle2,
                 Troops = 100,
-                Position = rhotae.Position,
-                Status = PartyStatus.IdleInSettlement,
+                Position = new Point(120.173023, -110.498929),
+                // Position = rhotae.Position,
+                Status = PartyStatus.Idle,
                 TargetedSettlement = rhotae,
             };
             Party droobParty = new()
             {
                 User = droob,
                 Troops = 500,
-                Position = epicrotea.Position,
-                Status = PartyStatus.InBattle,
+                Position = new Point(121.173023, -111.498929),
+                Status = PartyStatus.Idle,
                 TargetedSettlement = epicrotea,
             };
             Party brainfartParty = new()
@@ -2050,15 +2047,15 @@ public record SeedDataCommand : IMediatorRequest
 
             Party[] newParties =
             [
-                orleParty, orle2Party,
-                brainfartParty, kiwiParty, ikaroozParty, laHireParty, brygganParty, elmarykParty, schumetzqParty,
-                azumaParty, zorguyParty, eckoParty, firebatParty, laenirParty, opsetParty, falcomParty,
-                victorhh888Party, sellkaParty, distanceParty, bakhratParty, lancelotParty, buddhaParty, lerchParty,
-                tjensParty, knitlerParty, magnucleanParty, baronCyborgParty, scarfaceParty, neostralieParty,
-                manikParty, ajroselleParty, skraelParty, bedoParty, lambicParty, sanasarParty, vlad007Party,
-                canp0GParty, sharkParty, noobAmphetamineParty, mundeteParty, aroyFalconerParty, insanitoidParty,
-                namidakaParty, xDemParty, disorotParty, aceParty, sagarParty, greenShadowParty, hannibaruParty,
-                drexxParty, xaroshParty, tipsyTobyParty, localAlphaParty, eztliParty, droobParty, alexParty, luqeroParty, ilyaParty, kedrynFuelParty
+                orleParty, orle2Party, droobParty,
+                // brainfartParty, kiwiParty, ikaroozParty, laHireParty, brygganParty, elmarykParty, schumetzqParty,
+                // azumaParty, zorguyParty, eckoParty, firebatParty, laenirParty, opsetParty, falcomParty,
+                // victorhh888Party, sellkaParty, distanceParty, bakhratParty, lancelotParty, buddhaParty, lerchParty,
+                // tjensParty, knitlerParty, magnucleanParty, baronCyborgParty, scarfaceParty, neostralieParty,
+                // manikParty, ajroselleParty, skraelParty, bedoParty, lambicParty, sanasarParty, vlad007Party,
+                // canp0GParty, sharkParty, noobAmphetamineParty, mundeteParty, aroyFalconerParty, insanitoidParty,
+                // namidakaParty, xDemParty, disorotParty, aceParty, sagarParty, greenShadowParty, hannibaruParty,
+                // drexxParty, xaroshParty, tipsyTobyParty, localAlphaParty, eztliParty, droobParty, alexParty, luqeroParty, ilyaParty, kedrynFuelParty
             ];
 
             var existingParties = (await _db.Parties.ToArrayAsync(cancellationToken: cancellationToken))
@@ -2191,9 +2188,9 @@ public record SeedDataCommand : IMediatorRequest
             };
 
             Battle[] newBattles = [
-                battle1, battle2,
+                // battle1, battle2,
                 //
-                siege1, siege2,
+                // siege1, siege2,
             ];
 
             _db.Battles.RemoveRange(await _db.Battles.ToArrayAsync());

@@ -2,6 +2,7 @@ import type { LMap } from '@vue-leaflet/vue-leaflet'
 import type { LatLngLiteral, LeafletMouseEvent, Map } from 'leaflet'
 import type L from 'leaflet'
 
+import type { MapBattle } from '~/models/strategus/battle'
 import type { MovementTargetType, MovementType } from '~/models/strategus/movement'
 import type { PartyCommon } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
@@ -18,14 +19,14 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
   const moveDialogMovementTypes = ref<MovementType[]>([])
 
   const moveTargetType = ref<MovementTargetType | null>(null)
-  const moveTarget = ref<PartyCommon | SettlementPublic | null>(null)
+  const moveTarget = ref<PartyCommon | SettlementPublic | MapBattle | null>(null)
 
   const showMoveDialog = ({
-    movementTypes,
     target,
+    movementTypes,
     targetType,
   }: {
-    target: PartyCommon | SettlementPublic
+    target: PartyCommon | SettlementPublic | MapBattle
     targetType: MovementTargetType
     movementTypes: MovementType[]
   }) => {
@@ -67,6 +68,16 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
           targetedSettlementId: moveTarget.value.id,
         })
         break
+      // TODO:
+      case MOVEMENT_TARGET_TYPE.Battle:
+        moveParty({
+          status:
+            mt === MOVEMENT_TYPE.JoinToBattleForAttacker
+              ? PARTY_STATUS.MovingToPoint
+              : PARTY_STATUS.MovingToAttackSettlement,
+          targetedBattletId: moveTarget.value.id,
+        })
+        break
     }
 
     closeMoveDialog()
@@ -96,16 +107,16 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
   const onStartMove = (e: LeafletMouseEvent) => {
     const leafletObject = map.value!.leafletObject as Map
 
-    leafletObject.eachLayer((layer) => {
-      // if (
-      //   // layer instanceof L.Circle
-      //   // @ts-expect-error custom option
-      //   // && layer.options?.settlementZone === true
-      // ) {
-      // // zones.push(layer)
-      // }
-      console.log(layer)
-    })
+    // leafletObject.eachLayer((layer) => {
+    // if (
+    //   // layer instanceof L.Circle
+    //   // @ts-expect-error custom option
+    //   // && layer.options?.settlementZone === true
+    // ) {
+    // // zones.push(layer)
+    // }
+    // console.log(layer)
+    // })
 
     isMoveMode.value = true
     leafletObject.pm.enableDraw('Line', {})
