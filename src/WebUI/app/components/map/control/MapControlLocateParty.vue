@@ -14,8 +14,8 @@ defineEmits<{ click: [] }>()
         @click="$emit('click')"
       >
         <UIcon
-          name="crpg:crosshair"
-          size="lg"
+          name="i-lucide-locate-fixed"
+          class="size-4"
         />
       </a>
     </div>

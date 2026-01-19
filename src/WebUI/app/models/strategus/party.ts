@@ -7,6 +7,8 @@ import type { ValueOf } from 'type-fest'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 import type { UserPublic } from '~/models/user'
 
+import type { MapBattle } from './battle'
+
 export const PARTY_STATUS = {
   Idle: 'Idle',
   IdleInSettlement: 'IdleInSettlement',
@@ -41,13 +43,14 @@ export interface Party extends PartyCommon {
   waypoints: MultiPoint
   targetedParty: PartyCommon | null
   targetedSettlement: SettlementPublic | null
+  targetedBattle: MapBattle | null // TODO: FIXME:
 }
 
 export interface StrategusUpdate {
   party: Party
   visibleParties: PartyCommon[]
   visibleSettlements: SettlementPublic[]
-  visibleBattles: any[] // TODO: FIXME:
+  visibleBattles: MapBattle[] // TODO: FIXME:
 }
 
 export interface UpdatePartyStatus {

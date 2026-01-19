@@ -14,7 +14,7 @@ export const updatePartyStatus = async (payload: UpdatePartyStatus) => (await pu
 
 export const registerParty = () => postParties({ body: {} })
 
-export const IN_SETTLEMENT_PARRY_STATUSES: PartyStatus[] = [
+export const IN_SETTLEMENT_PARTY_STATUSES: PartyStatus[] = [
   PARTY_STATUS.IdleInSettlement,
   PARTY_STATUS.RecruitingInSettlement,
 ]

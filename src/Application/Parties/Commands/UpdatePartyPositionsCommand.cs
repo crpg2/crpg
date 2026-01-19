@@ -27,6 +27,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             PartyStatus.MovingToSettlement,
             PartyStatus.MovingToAttackParty,
             PartyStatus.MovingToAttackSettlement,
+            PartyStatus.MovingToBattle // TODO:
         };
 
         private static readonly PartyStatus[] UnattackablePartyStatuses =
@@ -132,8 +133,6 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                     return;
                 }
 
-                party.Status = PartyStatus.InBattle;
-                party.TargetedParty.Status = PartyStatus.InBattle;
                 Battle battle = new()
                 {
                     Phase = BattlePhase.Preparation,
@@ -154,10 +153,33 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                             Commander = true,
                         },
                     },
+                    // Participants =
+                    // {
+                    //     new BattleParticipant
+                    //     {
+                    //         Character = // TODO: FIXME:
+                    //         Side = BattleSide.Attacker,
+                    //         Type = BattleParticipantType.Party,
+                    //     },
+                    //     ...
+                    // },
                 };
+
+                party.Status = PartyStatus.InBattle;
+                party.TargetedBattle = battle;
+                party.TargetedSettlementId = null;
+                party.TargetedPartyId = null;
+
+                party.TargetedParty.Status = PartyStatus.InBattle;
+                party.TargetedParty.TargetedBattle = battle;
+                party.TargetedParty.TargetedSettlementId = null;
+                party.TargetedParty.TargetedPartyId = null;
+
                 _db.Battles.Add(battle);
                 Logger.LogInformation("Party '{0}' initiated a battle against party '{1}'",
                     party.Id, party.TargetedPartyId);
+
+                party.TargetedParty.TargetedPartyId = null;
             }
         }
 

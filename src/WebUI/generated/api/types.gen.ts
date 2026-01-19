@@ -779,7 +779,7 @@ export type PartyPublicViewModel = {
     user: UserPublicViewModel;
 };
 
-export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'MovingToPoint' | 'FollowingParty' | 'MovingToSettlement' | 'MovingToAttackParty' | 'MovingToAttackSettlement' | 'InBattle';
+export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'MovingToPoint' | 'FollowingParty' | 'MovingToSettlement' | 'MovingToAttackParty' | 'MovingToAttackSettlement' | 'InBattle' | 'MovingToBattle';
 
 export type PartyViewModel = {
     id: number;
@@ -790,6 +790,7 @@ export type PartyViewModel = {
     waypoints: GeoJsonMultiPoint;
     targetedParty: PartyVisibleViewModel | null;
     targetedSettlement: SettlementPublicViewModel | null;
+    targetedBattle: BattleViewModel | null;
     user: UserPublicViewModel;
 };
 
@@ -1393,6 +1394,7 @@ export type PartyViewModelWritable = {
     waypoints: GeoJsonMultiPointWritable;
     targetedParty: PartyVisibleViewModelWritable | null;
     targetedSettlement: SettlementPublicViewModelWritable | null;
+    targetedBattle: BattleViewModelWritable | null;
     user: UserPublicViewModel;
 };
 

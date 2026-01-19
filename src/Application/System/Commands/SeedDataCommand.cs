@@ -1595,7 +1595,6 @@ public record SeedDataCommand : IMediatorRequest
             {
                 User = orle,
                 Troops = 100,
-                // Position = rhotae.Position,
                 Position = new Point(118.664627, -110.482864),
                 Status = PartyStatus.Idle,
                 TargetedSettlement = rhotae,
@@ -1605,7 +1604,6 @@ public record SeedDataCommand : IMediatorRequest
                 User = orle2,
                 Troops = 100,
                 Position = new Point(120.173023, -110.498929),
-                // Position = rhotae.Position,
                 Status = PartyStatus.Idle,
                 TargetedSettlement = rhotae,
             };
@@ -1621,7 +1619,7 @@ public record SeedDataCommand : IMediatorRequest
             {
                 User = brainfart,
                 Troops = 1000,
-                Position = new Point(112, -88),
+                Position = new Point(122.173023, -112.498929),
                 Status = PartyStatus.Idle,
             };
             Party kiwiParty = new()
@@ -2048,6 +2046,7 @@ public record SeedDataCommand : IMediatorRequest
             Party[] newParties =
             [
                 orleParty, orle2Party, droobParty,
+                brainfartParty,
                 // brainfartParty, kiwiParty, ikaroozParty, laHireParty, brygganParty, elmarykParty, schumetzqParty,
                 // azumaParty, zorguyParty, eckoParty, firebatParty, laenirParty, opsetParty, falcomParty,
                 // victorhh888Party, sellkaParty, distanceParty, bakhratParty, lancelotParty, buddhaParty, lerchParty,
@@ -2190,7 +2189,8 @@ public record SeedDataCommand : IMediatorRequest
             Battle[] newBattles = [
                 // battle1, battle2,
                 //
-                // siege1, siege2,
+                // siege1,
+                siege2,
             ];
 
             _db.Battles.RemoveRange(await _db.Battles.ToArrayAsync());

@@ -43,10 +43,15 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
         public async Task<Result<StrategusUpdate>> Handle(GetStrategusUpdateQuery req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
-                .Include(h => h.User)
-                .Include(h => h.User!.ClanMembership!.Clan)
+                .AsSplitQuery()
+                .Include(h => h.User!)
+                    .ThenInclude(u => u.ClanMembership!.Clan)
                 .Include(h => h.TargetedParty!.User)
                 .Include(h => h.TargetedSettlement)
+                // TODO: FIXME: пересмотреть, дублируется с visibleBattles. оставить только  TargetedBattleId?
+                .Include(h => h.TargetedBattle)
+                    .ThenInclude(b => b!.Fighters)
+                        .ThenInclude(f => f!.Party!.User!.ClanMembership!.Clan)
                 .FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
             if (party == null)
             {

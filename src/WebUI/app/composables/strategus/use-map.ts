@@ -56,3 +56,18 @@ export const useMap = () => {
     //
   }
 }
+
+interface MapContext {
+  zoom: Ref<number>
+}
+
+const mapContextKey: InjectionKey<MapContext> = Symbol('StrategusMap')
+
+export const useMapContextProvider = (ctx: MapContext) => {
+  provide(mapContextKey, ctx)
+}
+
+export const useMapContext = () => {
+  const ctx = injectStrict(mapContextKey)
+  return ctx
+}

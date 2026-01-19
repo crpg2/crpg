@@ -63,6 +63,7 @@ export interface BattleSideDetailed {
   mercenaryApplication: BattleMercenaryApplication | null
   briefing: BattleSideBriefing
 };
+
 export interface BattleSideBriefing {
   note: string
 };
@@ -139,6 +140,8 @@ export interface BattleMercenaryApplication {
 export interface MapBattle {
   id: number
   phase: BattlePhase
+  region: Region
   position: Point
   createdAt: Date
+  fighters: BattleFighter[]
 }

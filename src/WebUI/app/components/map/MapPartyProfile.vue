@@ -19,7 +19,7 @@ defineEmits<{
     <div class="flex flex-col gap-2">
       <div class="flex items-center gap-2">
         <div @click="$emit('locate')">
-          <UIcon name="crpg:crosshair" size="lg" class="cursor-pointer" />
+          <UIcon name="i-lucide-locate-fixed" class="size-6 cursor-pointer" />
         </div>
 
         <UserMedia

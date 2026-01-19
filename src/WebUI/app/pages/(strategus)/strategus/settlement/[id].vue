@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { usePartyState } from '~/composables/strategus/use-party'
 import { useSettlement } from '~/composables/strategus/use-settlements'
-import { IN_SETTLEMENT_PARRY_STATUSES } from '~/services/strategus/party-service'
+import { IN_SETTLEMENT_PARTY_STATUSES } from '~/services/strategus/party-service'
 
 definePageMeta({
   middleware: [
     () => {
       const { party } = usePartyState().value
-      if (!party.targetedSettlement && !IN_SETTLEMENT_PARRY_STATUSES.includes(party.status)) {
+      if (!party.targetedSettlement && !IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)) {
         return navigateTo({ name: 'strategus' })
       }
     },

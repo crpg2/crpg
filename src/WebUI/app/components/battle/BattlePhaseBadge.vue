@@ -14,6 +14,16 @@ const label = computed(() => t(`strategus.battle.phase.${phase}`))
 
 <template>
   <UTooltip :text="$t('strategus.battle.battlePhase')">
+    <!-- TODO: FIXME: icon, style -->
+    <UBadge
+      v-if="phase === BATTLE_PHASE.Preparation"
+      variant="soft"
+      color="neutral"
+      size="xl"
+      icon="crpg:trumpet"
+      :label
+    />
+
     <UBadge
       v-if="phase === BATTLE_PHASE.Hiring"
       variant="soft"

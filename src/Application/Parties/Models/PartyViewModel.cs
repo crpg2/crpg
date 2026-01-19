@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using AutoMapper;
-using Crpg.Application.Clans.Models;
+using Crpg.Application.Battles.Models;
 using Crpg.Application.Common.Mappings;
 using Crpg.Application.Settlements.Models;
 using Crpg.Application.Users.Models;
@@ -21,6 +21,8 @@ public record PartyViewModel : IMapFrom<Party>
     public PartyVisibleViewModel? TargetedParty { get; init; }
     [JsonRequired]
     public SettlementPublicViewModel? TargetedSettlement { get; init; }
+    [JsonRequired]
+    public BattleViewModel? TargetedBattle { get; init; }
     public UserPublicViewModel User { get; init; } = default!;
 
     public void Mapping(Profile profile)

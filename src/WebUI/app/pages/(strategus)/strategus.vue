@@ -12,7 +12,7 @@ import type { PartyCommon } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 
 import { useMainHeader } from '~/composables/app/use-main-header'
-import { useMap } from '~/composables/strategus/use-map'
+import { useMap, useMapContextProvider } from '~/composables/strategus/use-map'
 import { useParty, usePartyState } from '~/composables/strategus/use-party'
 import { usePartyMove } from '~/composables/strategus/use-party-move'
 import { useSettlements } from '~/composables/strategus/use-settlements'
@@ -20,7 +20,7 @@ import { useTerrains } from '~/composables/strategus/use-terrains'
 import { SomeRole } from '~/models/role'
 import { MOVEMENT_TARGET_TYPE, MOVEMENT_TYPE } from '~/models/strategus/movement'
 import { PARTY_STATUS } from '~/models/strategus/party'
-import { getSelfUpdate, IN_SETTLEMENT_PARRY_STATUSES } from '~/services/strategus/party-service'
+import { getSelfUpdate, IN_SETTLEMENT_PARTY_STATUSES } from '~/services/strategus/party-service'
 
 definePageMeta({
   roles: SomeRole,
@@ -39,10 +39,23 @@ definePageMeta({
 
         const { party } = usePartyState(partyRes.data).value
 
-        if (party.targetedSettlement && IN_SETTLEMENT_PARRY_STATUSES.includes(party.status) && to.name !== 'strategus-settlement-id') {
+        if (party.targetedSettlement
+          && IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)
+          && to.name !== 'strategus-settlement-id'
+        ) {
           return navigateTo({
             name: 'strategus-settlement-id',
             params: { id: party.targetedSettlement.id },
+          })
+        }
+
+        if (party.targetedBattle
+          && party.status === PARTY_STATUS.InBattle
+          && to.name !== 'strategus-battle-id'
+        ) {
+          return navigateTo({
+            name: 'strategus-battle-id',
+            params: { id: party.targetedBattle.id },
           })
         }
       }
@@ -67,10 +80,14 @@ const {
   zoom,
 } = useMap()
 
+useMapContextProvider({
+  zoom,
+})
+
 const {
   moveParty,
   partyInfo,
-  updateParty,
+  // updateParty,
   partySpawn,
   toggleRecruitTroops,
   isTogglingRecruitTroops,
@@ -138,11 +155,11 @@ const onSettlementClick = (settlement: SettlementPublic) => showMoveDialog({
 })
 
 const onBattleClick = (battle: MapBattle) => {
-  showMoveDialog({
-    target: battle,
-    movementTypes: [MOVEMENT_TYPE.JoinToBattleForAttacker, MOVEMENT_TYPE.JoinToBattleForDefender],
-    targetType: MOVEMENT_TARGET_TYPE.Battle,
-  })
+  // showMoveDialog({
+  //   target: battle,
+  //   movementTypes: [MOVEMENT_TYPE.JoinToBattleForAttacker, MOVEMENT_TYPE.JoinToBattleForDefender],
+  //   targetType: MOVEMENT_TARGET_TYPE.Battle,
+  // })
 }
 </script>
 

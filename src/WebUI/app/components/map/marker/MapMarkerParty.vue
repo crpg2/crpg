@@ -31,16 +31,15 @@ const onReady = (circleMarker: CircleMarker) => {
 </script>
 
 <template>
-  <!-- <LMarker
+  <LMarker
     :lat-lng="positionToLatLng(party.position.coordinates)"
     :options="{ bubblingMouseEvents: false }"
-  > -->
-  <!-- <LIcon
+  >
+    <LIcon
       :icon-size="[32, 32]"
       class-name="!flex justify-center items-center"
-    > -->
-  <!-- TODO: FIXME: animate sprite png/webp -->
-  <!-- <svg width="32" height="32" viewBox="0 0 24 24">
+    >
+      <!-- <svg width="32" height="32" viewBox="0 0 24 24">
         <circle
           cx="12" cy="12"
           r="6"
@@ -58,20 +57,27 @@ const onReady = (circleMarker: CircleMarker) => {
           />
         </circle>
       </svg> -->
-
-  <!-- <OIcon
-        :icon="isSelf ? 'game-mode-battle' : 'char-class-peasant'"
+      <UAvatar
+        :src="party.user.avatar || ''"
+        :alt="party.user.name"
         size="2xl"
-        class="text-status-danger"
+        :class="[{ 'ring-3 ring-[#34d399]': isSelf }]"
       />
-    </LIcon> -->
 
-  <!-- <LTooltip :options="{ direction: 'top', offset: [0, -8] }">
+      <UIcon
+        :name="isSelf ? 'crpg:game-mode-battle' : 'crpg:char-class-peasant'"
+        class="size-12"
+        :class="[isSelf ? 'text-[#34d399]' : 'text-error']"
+      />
+    </LIcon>
+
+    <LTooltip :options="{ direction: 'top', offset: [0, -8] }">
       {{ party.user.name }} ({{ party.troops }})
     </LTooltip>
-  </LMarker> -->
+  </LMarker>
 
-  <LCircleMarker
+  <!--
+   <LCircleMarker
     :lat-lng="positionToLatLng(party.position.coordinates)"
     :radius="markerRadius"
     :color="markerColor"
@@ -84,5 +90,5 @@ const onReady = (circleMarker: CircleMarker) => {
     <LTooltip :options="{ direction: 'top', offset: [0, -8] }">
       {{ party.user.name }} ({{ party.troops }})
     </LTooltip>
-  </LCircleMarker>
+  </LCircleMarker> -->
 </template>
