@@ -8,7 +8,7 @@ definePageMeta({
     () => {
       // TODO: validation
       const { party } = usePartyState().value
-      if (!party.targetedBattle && party.status !== PARTY_STATUS.InBattle) {
+      if (!party.battleId && party.status !== PARTY_STATUS.InBattle) {
         return navigateTo({ name: 'strategus' })
       }
     },

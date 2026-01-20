@@ -57,6 +57,7 @@ public class CrpgDbContext : DbContext, ICrpgDbContext
     public DbSet<Battle> Battles { get; set; } = default!;
     public DbSet<BattleSideBriefing> BattleSideBriefings { get; set; } = default!;
     public DbSet<BattleFighter> BattleFighters { get; set; } = default!;
+    public DbSet<BattleJoinIntent> BattleJoinIntents { get; set; } = default!;
     public DbSet<BattleFighterApplication> BattleFighterApplications { get; set; } = default!;
     public DbSet<BattleParticipant> BattleParticipants { get; set; } = default!;
     public DbSet<BattleMercenaryApplication> BattleMercenaryApplications { get; set; } = default!;

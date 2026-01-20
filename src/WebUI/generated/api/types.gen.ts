@@ -118,6 +118,11 @@ export type BattleFighterViewModelIListResult = {
     data: Array<BattleFighterViewModel> | null;
 };
 
+export type BattleJoinIntentViewModel = {
+    battleId: number;
+    side: BattleSide;
+};
+
 export type BattleMercenaryApplicationStatus = 'Pending' | 'Declined' | 'Accepted';
 
 export type BattleMercenaryApplicationViewModel = {
@@ -195,6 +200,7 @@ export type BattleViewModel = {
     position: GeoJsonPoint;
     phase: BattlePhase;
     createdAt: Date;
+    fighters: Array<BattleFighterViewModel>;
 };
 
 export type BuyItemCommand = {
@@ -484,13 +490,13 @@ export type EquippedItemViewModelIListResult = {
 };
 
 export type Error = {
-    traceId?: string | null;
+    traceId: string | null;
     type: ErrorType;
     code: ErrorCode;
-    title?: string | null;
-    detail?: string | null;
-    source?: ErrorSource | null;
-    stackTrace?: string | null;
+    title: string | null;
+    detail: string | null;
+    source: ErrorSource | null;
+    stackTrace: string | null;
 };
 
 export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
@@ -790,7 +796,8 @@ export type PartyViewModel = {
     waypoints: GeoJsonMultiPoint;
     targetedParty: PartyVisibleViewModel | null;
     targetedSettlement: SettlementPublicViewModel | null;
-    targetedBattle: BattleViewModel | null;
+    battleJoinIntents: Array<BattleJoinIntentViewModel>;
+    battleId: number | null;
     user: UserPublicViewModel;
 };
 
@@ -1021,8 +1028,7 @@ export type UpdateGameUsersResultResult = {
 export type UpdatePartyStatusCommand = {
     status: PartyStatus;
     waypoints: GeoJsonMultiPoint;
-    targetedPartyId: number;
-    targetedSettlementId: number;
+    battleJoinIntents: Array<BattleJoinIntentViewModel>;
 };
 
 export type UpdateSettlementCommand = {
@@ -1263,6 +1269,7 @@ export type BattleViewModelWritable = {
     position: GeoJsonPointWritable;
     phase: BattlePhase;
     createdAt: Date;
+    fighters: Array<BattleFighterViewModelWritable>;
 };
 
 export type CharacterCharacteristicsViewModelResultWritable = {
@@ -1394,7 +1401,8 @@ export type PartyViewModelWritable = {
     waypoints: GeoJsonMultiPointWritable;
     targetedParty: PartyVisibleViewModelWritable | null;
     targetedSettlement: SettlementPublicViewModelWritable | null;
-    targetedBattle: BattleViewModelWritable | null;
+    battleJoinIntents: Array<BattleJoinIntentViewModel>;
+    battleId: number | null;
     user: UserPublicViewModel;
 };
 
@@ -1480,8 +1488,7 @@ export type UpdateGameUsersResultResultWritable = {
 export type UpdatePartyStatusCommandWritable = {
     status: PartyStatus;
     waypoints: GeoJsonMultiPointWritable;
-    targetedPartyId: number;
-    targetedSettlementId: number;
+    battleJoinIntents: Array<BattleJoinIntentViewModel>;
 };
 
 export type UpdateTerrainCommandWritable = {

@@ -4,6 +4,7 @@ export const MOVEMENT_TYPE = {
   Move: 'Move',
   Follow: 'Follow',
   Attack: 'Attack',
+  // TODO: шляпа
   JoinToBattleForAttacker: 'JoinToBattleForAttacker',
   JoinToBattleForDefender: 'JoinToBattleForDefender',
 } as const

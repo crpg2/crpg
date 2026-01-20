@@ -17,7 +17,7 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
 {
     public int PartyId { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<GetStrategusUpdateQuery, StrategusUpdate>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap) : IMediatorRequestHandler<GetStrategusUpdateQuery, StrategusUpdate>
     {
         private static readonly PartyStatus[] VisibleStatuses =
         {
@@ -29,29 +29,19 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
             PartyStatus.MovingToAttackSettlement,
         };
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly IStrategusMap _strategusMap;
-
-        public Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap)
-        {
-            _db = db;
-            _mapper = mapper;
-            _strategusMap = strategusMap;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly IStrategusMap _strategusMap = strategusMap;
 
         public async Task<Result<StrategusUpdate>> Handle(GetStrategusUpdateQuery req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
                 .AsSplitQuery()
-                .Include(h => h.User!)
+                .Include(p => p.User!)
                     .ThenInclude(u => u.ClanMembership!.Clan)
-                .Include(h => h.TargetedParty!.User)
-                .Include(h => h.TargetedSettlement)
-                // TODO: FIXME: пересмотреть, дублируется с visibleBattles. оставить только  TargetedBattleId?
-                .Include(h => h.TargetedBattle)
-                    .ThenInclude(b => b!.Fighters)
-                        .ThenInclude(f => f!.Party!.User!.ClanMembership!.Clan)
+                .Include(p => p.TargetedParty!.User)
+                .Include(p => p.TargetedSettlement)
+                .Include(p => p.BattleJoinIntents)
                 .FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
             if (party == null)
             {
@@ -76,9 +66,24 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
                 .ProjectTo<BattleViewModel>(_mapper.ConfigurationProvider)
                 .ToArrayAsync(cancellationToken);
 
+            // TODO: FIXME: SPEC:
+            int? currentBattleId = null;
+            if (party.Status == PartyStatus.InBattle)
+            {
+                currentBattleId = await _db.BattleFighters
+                    .Where(f => f.PartyId == party.Id)
+                    .Select(f => f.BattleId)
+                    .FirstOrDefaultAsync(cancellationToken);
+            }
+
+            var partyViewModel = _mapper.Map<PartyViewModel>(party) with
+            {
+                BattleId = currentBattleId,
+            };
+
             return new(new StrategusUpdate
             {
-                Party = _mapper.Map<PartyViewModel>(party),
+                Party = partyViewModel,
                 VisibleParties = visibleParties,
                 VisibleSettlements = visibleSettlements,
                 VisibleBattles = visibleBattles,

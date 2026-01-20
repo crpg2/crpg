@@ -1597,23 +1597,20 @@ public record SeedDataCommand : IMediatorRequest
                 Troops = 100,
                 Position = new Point(118.664627, -110.482864),
                 Status = PartyStatus.Idle,
-                TargetedSettlement = rhotae,
             };
             Party orle2Party = new()
             {
                 User = orle2,
                 Troops = 100,
-                Position = new Point(120.173023, -110.498929),
-                Status = PartyStatus.Idle,
-                TargetedSettlement = rhotae,
+                Position = new Point(121.113023, -111.418929),
+                Status = PartyStatus.InBattle,
             };
             Party droobParty = new()
             {
                 User = droob,
                 Troops = 500,
                 Position = new Point(121.173023, -111.498929),
-                Status = PartyStatus.Idle,
-                TargetedSettlement = epicrotea,
+                Status = PartyStatus.InBattle,
             };
             Party brainfartParty = new()
             {
@@ -2186,11 +2183,27 @@ public record SeedDataCommand : IMediatorRequest
                 },
             };
 
+            Battle testBattle = new()
+            {
+                Phase = BattlePhase.Preparation,
+                Region = Region.Eu,
+                Position = droobParty.Position,
+                Fighters =
+                {
+                    new BattleFighter { Party = orle2Party, Side = BattleSide.Attacker, Commander = true, ParticipantSlots = 50 },
+                    new BattleFighter { Party = droobParty, Side = BattleSide.Defender, Commander = true, ParticipantSlots = 50 },
+                },
+            };
+
+            // orle2Party.TargetedBattle = testBattle;
+            // droobParty.TargetedBattle = testBattle;
+
             Battle[] newBattles = [
                 // battle1, battle2,
                 //
                 // siege1,
                 siege2,
+                testBattle,
             ];
 
             _db.Battles.RemoveRange(await _db.Battles.ToArrayAsync());

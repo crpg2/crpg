@@ -27,7 +27,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             PartyStatus.MovingToSettlement,
             PartyStatus.MovingToAttackParty,
             PartyStatus.MovingToAttackSettlement,
-            PartyStatus.MovingToBattle // TODO:
+            PartyStatus.MovingToBattle,
         };
 
         private static readonly PartyStatus[] UnattackablePartyStatuses =
@@ -72,6 +72,11 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 
             await _db.SaveChangesAsync(cancellationToken);
             return Result.NoErrors;
+        }
+
+        private static Point GetMidPoint(Point pointA, Point pointB)
+        {
+            return new((pointA.X + pointB.X) / 2, (pointA.Y + pointB.Y) / 2);
         }
 
         private void MoveToPoint(TimeSpan deltaTime, Party party)
@@ -165,13 +170,15 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                     // },
                 };
 
+                // TODO: FIXME: проверить
+
                 party.Status = PartyStatus.InBattle;
-                party.TargetedBattle = battle;
+                // party.TargetedBattle = battle;
                 party.TargetedSettlementId = null;
                 party.TargetedPartyId = null;
 
                 party.TargetedParty.Status = PartyStatus.InBattle;
-                party.TargetedParty.TargetedBattle = battle;
+                // party.TargetedParty.TargetedBattle = battle;
                 party.TargetedParty.TargetedSettlementId = null;
                 party.TargetedParty.TargetedPartyId = null;
 
@@ -252,11 +259,6 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             return canInteractWithTarget
                 ? _strategusMap.ArePointsAtInteractionDistance(party.Position, targetPoint)
                 : _strategusMap.ArePointsEquivalent(party.Position, targetPoint);
-        }
-
-        private Point GetMidPoint(Point pointA, Point pointB)
-        {
-            return new((pointA.X + pointB.X) / 2, (pointA.Y + pointB.Y) / 2);
         }
     }
 }

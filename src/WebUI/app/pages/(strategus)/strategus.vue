@@ -49,13 +49,13 @@ definePageMeta({
           })
         }
 
-        if (party.targetedBattle
+        if (party.battleId
           && party.status === PARTY_STATUS.InBattle
           && to.name !== 'strategus-battle-id'
         ) {
           return navigateTo({
             name: 'strategus-battle-id',
-            params: { id: party.targetedBattle.id },
+            params: { id: party.battleId },
           })
         }
       }

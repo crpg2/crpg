@@ -51,7 +51,8 @@ public enum PartyStatus
     InBattle,
 
     /// <summary>
-    /// TODO:
+    /// Moving towards a <see cref="Battle"/> location with an existing
+    /// <see cref="BattleJoinIntent"/> that defines the intended side to join.
     /// </summary>
     MovingToBattle,
 }

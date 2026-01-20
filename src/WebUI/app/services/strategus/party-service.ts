@@ -4,11 +4,12 @@ import {
   putPartiesSelfStatus,
 } from '#api/sdk.gen'
 
-import type { PartyStatus, UpdatePartyStatus } from '~/models/strategus/party'
+import type { CrpgApiResult } from '~/api.config'
+import type { PartyStatus, StrategusUpdate, UpdatePartyStatus } from '~/models/strategus/party'
 
 import { PARTY_STATUS } from '~/models/strategus/party'
 
-export const getSelfUpdate = () => getPartiesSelfUpdate({})
+export const getSelfUpdate = (): Promise<CrpgApiResult<StrategusUpdate>> => getPartiesSelfUpdate({})
 
 export const updatePartyStatus = async (payload: UpdatePartyStatus) => (await putPartiesSelfStatus({ body: payload })).data!
 

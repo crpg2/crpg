@@ -64,14 +64,14 @@ public class Party : AuditableEntity
     public Settlement? TargetedSettlement { get; set; }
 
     /// <summary>
-    /// TODO:.
+    /// The collection of <see cref="BattleJoinIntent"/> representing this party's current
+    /// intentions to move to battle locations.
+    /// Each intent specifies the <see cref="BattleSide"/> the party plans to join upon arrival.
+    /// A party can have multiple intents simultaneously (e.g., one for attackers, one for defenders).
     /// </summary>
-    public int? TargetedBattleId { get; set; }
-
-    /// <summary>See <see cref="TargetedBattleId"/>.</summary>
-    public Battle? TargetedBattle { get; set; }
+    public List<BattleJoinIntent> BattleJoinIntents { get; set; } = [];
 
     public User? User { get; set; }
-    public List<PartyItem> Items { get; set; } = new();
-    public List<Settlement> OwnedSettlements { get; set; } = new();
+    public List<PartyItem> Items { get; set; } = [];
+    public List<Settlement> OwnedSettlements { get; set; } = [];
 }

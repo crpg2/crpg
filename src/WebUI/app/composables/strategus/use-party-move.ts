@@ -8,6 +8,7 @@ import type { PartyCommon } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 
 import { useParty } from '~/composables/strategus/use-party'
+import { BATTLE_SIDE } from '~/models/strategus/battle'
 import { MOVEMENT_TARGET_TYPE, MOVEMENT_TYPE } from '~/models/strategus/movement'
 import { PARTY_STATUS } from '~/models/strategus/party'
 import { positionToLatLng } from '~/utils/geometry'
@@ -68,14 +69,16 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
           targetedSettlementId: moveTarget.value.id,
         })
         break
-      // TODO:
       case MOVEMENT_TARGET_TYPE.Battle:
         moveParty({
-          status:
-            mt === MOVEMENT_TYPE.JoinToBattleForAttacker
-              ? PARTY_STATUS.MovingToPoint
-              : PARTY_STATUS.MovingToAttackSettlement,
-          targetedBattletId: moveTarget.value.id,
+          status: PARTY_STATUS.MovingToBattle,
+          battleJoinIntents: [
+            {
+              side: BATTLE_SIDE.Attacker,
+              battleId: moveTarget.value.id,
+            },
+          ],
+          // targetedBattletId: moveTarget.value.id,
         })
         break
     }

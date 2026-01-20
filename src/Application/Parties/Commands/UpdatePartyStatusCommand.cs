@@ -1,10 +1,12 @@
 ﻿using System.Text.Json.Serialization;
 using AutoMapper;
+using Crpg.Application.Battles.Models;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Parties.Models;
+using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Parties;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
@@ -20,37 +22,44 @@ public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
     public int PartyId { get; set; }
     public PartyStatus Status { get; init; }
     public MultiPoint Waypoints { get; init; } = MultiPoint.Empty;
-    public int TargetedPartyId { get; init; }
-    public int TargetedSettlementId { get; init; }
+    [JsonIgnore]
+    public int? TargetedPartyId { get; init; }
+    [JsonIgnore]
+    public int? TargetedSettlementId { get; init; }
+
+    /// <summary>
+    /// Optional battle join intents when moving to a battle.
+    /// A party can have multiple intents for different sides.
+    /// Required if Status == MovingToBattle.
+    /// </summary>
+    public BattleJoinIntentViewModel[] BattleJoinIntents { get; init; } = [];
 
     public class Validator : AbstractValidator<UpdatePartyStatusCommand>
     {
         public Validator()
         {
             RuleFor(m => m.Status).IsInEnum();
+            RuleForEach(m => m.BattleJoinIntents).ChildRules(intent =>
+            {
+                intent.RuleFor(i => i.Side).IsInEnum();
+            });
         }
     }
 
-    internal class Handler : IMediatorRequestHandler<UpdatePartyStatusCommand, PartyViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap) : IMediatorRequestHandler<UpdatePartyStatusCommand, PartyViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdatePartyStatusCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly IStrategusMap _strategusMap;
-
-        public Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap)
-        {
-            _db = db;
-            _mapper = mapper;
-            _strategusMap = strategusMap;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly IStrategusMap _strategusMap = strategusMap;
 
         public async Task<Result<PartyViewModel>> Handle(UpdatePartyStatusCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
                 .Include(h => h.User)
                 .Include(h => h.TargetedSettlement)
+                .Include(h => h.BattleJoinIntents)
                 .FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
             if (party == null)
             {
@@ -84,7 +93,7 @@ public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
             return new(_mapper.Map<PartyViewModel>(party));
         }
 
-        private Result StartStopRecruiting(bool start, Party party)
+        private static Result StartStopRecruiting(bool start, Party party)
         {
             if (start)
             {
@@ -114,6 +123,13 @@ public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
             party.TargetedPartyId = null;
             party.TargetedSettlementId = null;
 
+            // Remove old battle intents if leaving previous targets
+            if (party.BattleJoinIntents.Count != 0)
+            {
+                _db.BattleJoinIntents.RemoveRange(party.BattleJoinIntents);
+                party.BattleJoinIntents.Clear();
+            }
+
             if (req.Status == PartyStatus.MovingToPoint)
             {
                 if (!req.Waypoints.IsEmpty)
@@ -130,12 +146,12 @@ public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
                     .FirstOrDefaultAsync(h => h.Id == req.TargetedPartyId, cancellationToken);
                 if (targetParty == null)
                 {
-                    return new Result(CommonErrors.UserNotFound(req.TargetedPartyId));
+                    return new Result(CommonErrors.UserNotFound(req.TargetedPartyId ?? 0));
                 }
 
                 if (!party.Position.IsWithinDistance(targetParty.Position, _strategusMap.ViewDistance))
                 {
-                    return new Result(CommonErrors.PartyNotInSight(req.TargetedPartyId));
+                    return new Result(CommonErrors.PartyNotInSight(req.TargetedPartyId ?? 0));
                 }
 
                 party.Status = req.Status;
@@ -151,13 +167,37 @@ public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
                     .FirstOrDefaultAsync(s => s.Id == req.TargetedSettlementId, cancellationToken);
                 if (targetSettlement == null)
                 {
-                    return new Result(CommonErrors.SettlementNotFound(req.TargetedSettlementId));
+                    return new Result(CommonErrors.SettlementNotFound(req.TargetedSettlementId ?? 0));
                 }
 
                 party.Status = req.Status;
                 // Need to be set manually because it was set to null above and it can confuse EF Core.
                 party.TargetedSettlementId = targetSettlement.Id;
                 party.TargetedSettlement = targetSettlement;
+            }
+
+            // TODO: FIXME: SPEC:
+            else if (req.Status == PartyStatus.MovingToBattle)
+            {
+                if (req.BattleJoinIntents.Length == 0)
+                {
+                    // TODO: new common error
+                    // return new Result("BattleJoinIntents must be provided when moving to a battle.");
+                }
+
+                // Create intents for each chosen side
+                foreach (var intent in req.BattleJoinIntents)
+                {
+                    party.BattleJoinIntents.Add(new BattleJoinIntent
+                    {
+                        BattleId = intent.BattleId,
+                        Side = intent.Side,
+                        Party = party,
+                    });
+                }
+
+                party.Status = PartyStatus.MovingToBattle;
+                party.Waypoints = req.Waypoints;
             }
 
             return Result.NoErrors;

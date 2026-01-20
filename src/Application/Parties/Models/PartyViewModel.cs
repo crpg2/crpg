@@ -21,8 +21,9 @@ public record PartyViewModel : IMapFrom<Party>
     public PartyVisibleViewModel? TargetedParty { get; init; }
     [JsonRequired]
     public SettlementPublicViewModel? TargetedSettlement { get; init; }
+    public BattleJoinIntentViewModel[] BattleJoinIntents { get; init; } = [];
     [JsonRequired]
-    public BattleViewModel? TargetedBattle { get; init; }
+    public int? BattleId { get; init; }
     public UserPublicViewModel User { get; init; } = default!;
 
     public void Mapping(Profile profile)

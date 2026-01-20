@@ -68,6 +68,11 @@ export interface BattleSideBriefing {
   note: string
 };
 
+export interface BattleJoinIntent {
+  battleId: number
+  side: BattleSide
+}
+
 export interface BattleFighter {
   id: number
   commander: boolean

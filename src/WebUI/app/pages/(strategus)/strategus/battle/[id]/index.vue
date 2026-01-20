@@ -9,27 +9,28 @@ const { party } = usePartyState().value
 const toast = useToast()
 const { t, n } = useI18n()
 const { copy } = useClipboard()
-const battle = computed(() => party.targetedBattle!)
+// const battle = computed(() => party.targetedBattle!)
 
-const battleCoordinates = computed(() => battle.value.position.coordinates.map(p => n(p)).join(', '))
+// const battleCoordinates = computed(() => battle.value.position.coordinates.map(p => n(p)).join(', '))
 
-const onPositionCopy = () => {
-  copy(battleCoordinates.value)
-  toast.add({
-    title: t('action.copied'),
-    close: false,
-    color: 'success',
-  })
-}
+// const onPositionCopy = () => {
+//   copy(battleCoordinates.value)
+//   toast.add({
+//     title: t('action.copied'),
+//     close: false,
+//     color: 'success',
+//   })
+// }
 
-const fightersBySide = computed(() => groupBy(battle.value.fighters, f => f.side))
+// const fightersBySide = computed(() => groupBy(battle.value.fighters, f => f.side))
 </script>
 
 <template>
   <div>
+    TODO: load battle
     <!-- TODO: name -->
     <!-- <UiHeading :title="party.targetedBattle!.phase" /> -->
-    <div class="flex flex-wrap items-center justify-center gap-4.5">
+    <!-- <div class="flex flex-wrap items-center justify-center gap-4.5">
       <BattlePhaseBadge :phase="battle.phase" />
       <UBadge icon="crpg:region" :label="$t(`region.${battle.region}`, 0)" size="xl" variant="soft" color="neutral" />
       <UBadge
@@ -41,13 +42,13 @@ const fightersBySide = computed(() => groupBy(battle.value.fighters, f => f.side
         trailing-icon="crpg:copy"
         @click="onPositionCopy"
       />
-    </div>
+    </div> -->
 
     <div class="grid grid-cols-[1fr_auto_1fr] gap-6">
-      <template v-for="(fighters, side, idx) in fightersBySide" :key="side">
+      <!-- <template v-for="(fighters, side, idx) in fightersBySide" :key="side">
         <div>
-          {{ side }}
-          <div
+          {{ side }} -->
+      <!-- <div
             v-for="fighter in fighters"
             :key="fighter.id"
           >
@@ -69,8 +70,8 @@ const fightersBySide = computed(() => groupBy(battle.value.fighters, f => f.side
 
               <UserMedia :user="fighter.party.user" />
             </template>
-          </div>
-        </div>
+          </div> -->
+      <!-- </div>
 
         <USeparator
           v-if="idx === 0"
@@ -80,7 +81,7 @@ const fightersBySide = computed(() => groupBy(battle.value.fighters, f => f.side
           icon="crpg:game-mode-battle"
           :ui="{ icon: 'size-7' }"
         />
-      </template>
+      </template> -->
 
       <!-- <div
         class="flex flex-1 flex-col gap-y-3.5"
