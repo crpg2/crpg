@@ -94,6 +94,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
     cell: ({ row }) => h(CompetitiveRank, {
       rankTable: rankTable.value,
       competitiveValue: getCompetitiveValueByGameMode(row.original.statistics, gameModeModel.value),
+      animated: false,
     }),
     meta: {
       class: {

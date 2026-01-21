@@ -862,7 +862,7 @@ public record SeedDataCommand : IMediatorRequest
                                 Value = 1900,
                                 Deviation = 100,
                                 Volatility = 100,
-                                CompetitiveValue = 1900,
+                                CompetitiveValue = 117.874374f,
                             },
                         }
                     },
