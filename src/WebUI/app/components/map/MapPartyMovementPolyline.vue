@@ -49,6 +49,12 @@ const partyMovementLine = computed(() => {
       }
       color = attackColor
       break
+    case PARTY_STATUS.MovingToBattle:
+      if (party.targetedBattle) {
+        positions.push(party.targetedBattle.position.coordinates)
+      }
+      color = moveColor
+      break
     default:
       return null
   }

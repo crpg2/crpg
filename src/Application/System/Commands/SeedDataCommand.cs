@@ -2195,8 +2195,8 @@ public record SeedDataCommand : IMediatorRequest
                 },
             };
 
-            // orle2Party.TargetedBattle = testBattle;
-            // droobParty.TargetedBattle = testBattle;
+            orle2Party.TargetedBattle = testBattle;
+            droobParty.TargetedBattle = testBattle;
 
             Battle[] newBattles = [
                 // battle1, battle2,

@@ -40,6 +40,7 @@ export const useParty = (
 
     const { party } = partyInfo.value
 
+    // вынести в функции
     if (party.targetedSettlement
       && IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)
       && route.name !== 'strategus-settlement-id'
@@ -50,13 +51,14 @@ export const useParty = (
       })
     }
 
-    if (party.battleId
+    // вынести в функции
+    if (party.targetedBattle
       && party.status === PARTY_STATUS.InBattle
       && route.name !== 'strategus-battle-id'
     ) {
       await navigateTo({
         name: 'strategus-battle-id',
-        params: { id: party.battleId },
+        params: { id: party.targetedBattle.id },
       })
     }
   }
@@ -70,8 +72,9 @@ export const useParty = (
   const moveParty = async (updateRequest: Partial<UpdatePartyStatus>) => {
     partyInfo.value.party = await updatePartyStatus({
       status: PARTY_STATUS.MovingToPoint,
-      targetedPartyId: null,
-      targetedSettlementId: null,
+      targetedPartyId: 0,
+      targetedSettlementId: 0,
+      targetedBattletId: 0,
       battleJoinIntents: [],
       waypoints: { coordinates: [], type: 'MultiPoint' },
       ...updateRequest,

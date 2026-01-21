@@ -14,7 +14,9 @@ defineEmits<{
 <template>
   <UCard
     variant="subtle"
-    class="w-[22rem]"
+    :ui="{
+      root: 'bg-elevated',
+    }"
   >
     <div class="flex flex-col gap-2">
       <div class="flex items-center gap-2">

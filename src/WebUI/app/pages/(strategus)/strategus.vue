@@ -49,13 +49,13 @@ definePageMeta({
           })
         }
 
-        if (party.battleId
+        if (party.targetedBattle
           && party.status === PARTY_STATUS.InBattle
           && to.name !== 'strategus-battle-id'
         ) {
           return navigateTo({
             name: 'strategus-battle-id',
-            params: { id: party.battleId },
+            params: { id: party.targetedBattle.id },
           })
         }
       }
@@ -100,6 +100,8 @@ const flyToSelfParty = () => {
 }
 
 const {
+  moveTarget,
+  moveTargetType,
   applyEvents: applyMoveEvents,
   closeMoveDialog,
   isMoveMode,
@@ -155,16 +157,17 @@ const onSettlementClick = (settlement: SettlementPublic) => showMoveDialog({
 })
 
 const onBattleClick = (battle: MapBattle) => {
-  // showMoveDialog({
-  //   target: battle,
-  //   movementTypes: [MOVEMENT_TYPE.JoinToBattleForAttacker, MOVEMENT_TYPE.JoinToBattleForDefender],
-  //   targetType: MOVEMENT_TARGET_TYPE.Battle,
-  // })
+  showMoveDialog({
+    target: battle,
+    movementTypes: [MOVEMENT_TYPE.JoinToBattleForAttacker, MOVEMENT_TYPE.JoinToBattleForDefender],
+    targetType: MOVEMENT_TARGET_TYPE.Battle,
+  })
 }
 </script>
 
 <template>
   <div :style="{ height: `calc(100vh - ${mainHeaderHeight}px)` }">
+    <!-- {{ { isMoveMode, moveTarget, moveTargetType } }} -->
     <LMap
       ref="map"
       v-model:zoom="zoom"

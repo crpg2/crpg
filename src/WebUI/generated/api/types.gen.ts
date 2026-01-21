@@ -89,7 +89,7 @@ export type BattleFighterApplicationStatus = 'Pending' | 'Declined' | 'Accepted'
 
 export type BattleFighterApplicationViewModel = {
     id: number;
-    party: PartyVisibleViewModel | null;
+    party: PartyVisibleViewModel;
     side: BattleSide;
     status: BattleFighterApplicationStatus;
 };
@@ -796,8 +796,8 @@ export type PartyViewModel = {
     waypoints: GeoJsonMultiPoint;
     targetedParty: PartyVisibleViewModel | null;
     targetedSettlement: SettlementPublicViewModel | null;
+    targetedBattle: BattleViewModel | null;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
-    battleId: number | null;
     user: UserPublicViewModel;
 };
 
@@ -1028,6 +1028,9 @@ export type UpdateGameUsersResultResult = {
 export type UpdatePartyStatusCommand = {
     status: PartyStatus;
     waypoints: GeoJsonMultiPoint;
+    targetedPartyId: number;
+    targetedSettlementId: number;
+    targetedBattletId: number;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
 };
 
@@ -1212,7 +1215,7 @@ export type BattleDetailedViewModelResultWritable = {
 
 export type BattleFighterApplicationViewModelWritable = {
     id: number;
-    party: PartyVisibleViewModelWritable | null;
+    party: PartyVisibleViewModelWritable;
     side: BattleSide;
     status: BattleFighterApplicationStatus;
 };
@@ -1401,8 +1404,8 @@ export type PartyViewModelWritable = {
     waypoints: GeoJsonMultiPointWritable;
     targetedParty: PartyVisibleViewModelWritable | null;
     targetedSettlement: SettlementPublicViewModelWritable | null;
+    targetedBattle: BattleViewModelWritable | null;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
-    battleId: number | null;
     user: UserPublicViewModel;
 };
 
@@ -1488,6 +1491,9 @@ export type UpdateGameUsersResultResultWritable = {
 export type UpdatePartyStatusCommandWritable = {
     status: PartyStatus;
     waypoints: GeoJsonMultiPointWritable;
+    targetedPartyId: number;
+    targetedSettlementId: number;
+    targetedBattletId: number;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
 };
 

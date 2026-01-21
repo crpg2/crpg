@@ -1,13 +1,21 @@
 <script setup lang="ts">
+import type { RouteLocationNormalizedLoaded } from 'vue-router'
+
 import { usePartyState } from '~/composables/strategus/use-party'
 import { useSettlement } from '~/composables/strategus/use-settlements'
 import { IN_SETTLEMENT_PARTY_STATUSES } from '~/services/strategus/party-service'
 
 definePageMeta({
   middleware: [
-    () => {
+    async (to) => {
       const { party } = usePartyState().value
       if (!party.targetedSettlement && !IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)) {
+        return navigateTo({ name: 'strategus' })
+      }
+
+      const settlementId = Number((to as RouteLocationNormalizedLoaded<'strategus-settlement-id'>).params.id)
+
+      if (Number.isNaN(settlementId)) {
         return navigateTo({ name: 'strategus' })
       }
     },

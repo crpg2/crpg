@@ -22,16 +22,9 @@ public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
     public int PartyId { get; set; }
     public PartyStatus Status { get; init; }
     public MultiPoint Waypoints { get; init; } = MultiPoint.Empty;
-    [JsonIgnore]
-    public int? TargetedPartyId { get; init; }
-    [JsonIgnore]
-    public int? TargetedSettlementId { get; init; }
-
-    /// <summary>
-    /// Optional battle join intents when moving to a battle.
-    /// A party can have multiple intents for different sides.
-    /// Required if Status == MovingToBattle.
-    /// </summary>
+    public int TargetedPartyId { get; init; }
+    public int TargetedSettlementId { get; init; }
+    public int TargetedBattletId { get; init; }
     public BattleJoinIntentViewModel[] BattleJoinIntents { get; init; } = [];
 
     public class Validator : AbstractValidator<UpdatePartyStatusCommand>
@@ -146,12 +139,12 @@ public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
                     .FirstOrDefaultAsync(h => h.Id == req.TargetedPartyId, cancellationToken);
                 if (targetParty == null)
                 {
-                    return new Result(CommonErrors.UserNotFound(req.TargetedPartyId ?? 0));
+                    return new Result(CommonErrors.UserNotFound(req.TargetedPartyId));
                 }
 
                 if (!party.Position.IsWithinDistance(targetParty.Position, _strategusMap.ViewDistance))
                 {
-                    return new Result(CommonErrors.PartyNotInSight(req.TargetedPartyId ?? 0));
+                    return new Result(CommonErrors.PartyNotInSight(req.TargetedPartyId));
                 }
 
                 party.Status = req.Status;
@@ -167,7 +160,7 @@ public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
                     .FirstOrDefaultAsync(s => s.Id == req.TargetedSettlementId, cancellationToken);
                 if (targetSettlement == null)
                 {
-                    return new Result(CommonErrors.SettlementNotFound(req.TargetedSettlementId ?? 0));
+                    return new Result(CommonErrors.SettlementNotFound(req.TargetedSettlementId));
                 }
 
                 party.Status = req.Status;
@@ -179,13 +172,18 @@ public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
             // TODO: FIXME: SPEC:
             else if (req.Status == PartyStatus.MovingToBattle)
             {
-                if (req.BattleJoinIntents.Length == 0)
+                var targetBattle = await _db.Battles
+                    .FirstOrDefaultAsync(b => b.Id == req.TargetedBattletId, cancellationToken);
+                if (targetBattle == null)
                 {
-                    // TODO: new common error
-                    // return new Result("BattleJoinIntents must be provided when moving to a battle.");
+                    return new Result(CommonErrors.BattleNotFound(req.TargetedBattletId));
                 }
 
-                // Create intents for each chosen side
+                if (req.BattleJoinIntents.Length == 0)
+                {
+                    return new Result(CommonErrors.BattleJoinIntentsIsEmpty());
+                }
+
                 foreach (var intent in req.BattleJoinIntents)
                 {
                     party.BattleJoinIntents.Add(new BattleJoinIntent
@@ -197,7 +195,10 @@ public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
                 }
 
                 party.Status = PartyStatus.MovingToBattle;
-                party.Waypoints = req.Waypoints;
+
+                // Need to be set manually because it was set to null above and it can confuse EF Core.
+                party.TargetedBattleId = targetBattle.Id;
+                party.TargetedBattle = targetBattle;
             }
 
             return Result.NoErrors;

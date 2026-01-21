@@ -20,14 +20,15 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
     internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap) : IMediatorRequestHandler<GetStrategusUpdateQuery, StrategusUpdate>
     {
         private static readonly PartyStatus[] VisibleStatuses =
-        {
+        [
             PartyStatus.Idle,
             PartyStatus.MovingToPoint,
             PartyStatus.FollowingParty,
             PartyStatus.MovingToSettlement,
             PartyStatus.MovingToAttackParty,
             PartyStatus.MovingToAttackSettlement,
-        };
+            PartyStatus.MovingToBattle,
+        ];
 
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
@@ -41,6 +42,7 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
                     .ThenInclude(u => u.ClanMembership!.Clan)
                 .Include(p => p.TargetedParty!.User)
                 .Include(p => p.TargetedSettlement)
+                .Include(p => p.TargetedBattle)
                 .Include(p => p.BattleJoinIntents)
                 .FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
             if (party == null)
@@ -66,24 +68,9 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
                 .ProjectTo<BattleViewModel>(_mapper.ConfigurationProvider)
                 .ToArrayAsync(cancellationToken);
 
-            // TODO: FIXME: SPEC:
-            int? currentBattleId = null;
-            if (party.Status == PartyStatus.InBattle)
-            {
-                currentBattleId = await _db.BattleFighters
-                    .Where(f => f.PartyId == party.Id)
-                    .Select(f => f.BattleId)
-                    .FirstOrDefaultAsync(cancellationToken);
-            }
-
-            var partyViewModel = _mapper.Map<PartyViewModel>(party) with
-            {
-                BattleId = currentBattleId,
-            };
-
             return new(new StrategusUpdate
             {
-                Party = partyViewModel,
+                Party = _mapper.Map<PartyViewModel>(party),
                 VisibleParties = visibleParties,
                 VisibleSettlements = visibleSettlements,
                 VisibleBattles = visibleBattles,

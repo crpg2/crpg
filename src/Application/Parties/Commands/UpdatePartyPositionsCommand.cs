@@ -48,6 +48,8 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 .Where(p => MovementStatuses.Contains(p.Status))
                 .Include(p => p.TargetedParty).ThenInclude(p => p!.User)
                 .Include(p => p.TargetedSettlement)
+                .Include(p => p.TargetedBattle)
+                .Include(p => p.BattleJoinIntents)
                 // Load mounts items to compute movement speed.
                 .Include(p => p.Items.Where(oi => oi.Item!.Type == ItemType.Mount)).ThenInclude(oi => oi.Item)
                 .ToArrayAsync(cancellationToken);
@@ -66,6 +68,9 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                     case PartyStatus.MovingToSettlement:
                     case PartyStatus.MovingToAttackSettlement:
                         await MoveToSettlement(req.DeltaTime, party, cancellationToken);
+                        break;
+                    case PartyStatus.MovingToBattle:
+                        await MoveToBattle(req.DeltaTime, party, cancellationToken);
                         break;
                 }
             }
@@ -249,6 +254,47 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 Logger.LogInformation("Party '{0}' initiated a battle against settlement '{1}'",
                     party.Id, party.TargetedSettlementId);
             }
+        }
+
+        private async Task MoveToBattle(TimeSpan deltaTime, Party party, CancellationToken cancellationToken)
+        {
+            if (party.TargetedBattle == null)
+            {
+                Logger.LogWarning("Party '{partyId}' was in status '{status}' without target battle",
+                    party.Id, party.Status);
+                party.Status = PartyStatus.Idle;
+                return;
+            }
+
+            if (party.BattleJoinIntents.Count == 0)
+            {
+                Logger.LogWarning("Party '{partyId}' was in status '{status}' without battle join intents",
+                    party.Id, party.Status);
+                party.Status = PartyStatus.Idle;
+                return;
+            }
+
+            if (!MovePartyTowardsPoint(party, party.TargetedBattle.Position, deltaTime, true))
+            {
+                return;
+            }
+
+            foreach (var intent in party.BattleJoinIntents)
+            {
+                _db.BattleFighterApplications.Add(new BattleFighterApplication
+                {
+                    Battle = party.TargetedBattle,
+                    Party = party,
+                    Side = intent.Side,
+                    Status = BattleFighterApplicationStatus.Pending,
+                });
+            }
+
+            _db.BattleJoinIntents.RemoveRange(party.BattleJoinIntents);
+            party.BattleJoinIntents.Clear();
+
+            party.Status = PartyStatus.InBattle; // TODO: new status: waiting join battle?
+            party.Position = party.TargetedBattle.Position;
         }
 
         private bool MovePartyTowardsPoint(Party party, Point targetPoint, TimeSpan deltaTime, bool canInteractWithTarget)

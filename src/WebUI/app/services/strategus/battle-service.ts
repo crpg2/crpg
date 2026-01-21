@@ -8,6 +8,7 @@ import {
   getBattlesByBattleIdMercenaryApplications,
   getBattlesByBattleIdParticipants,
   postBattlesByBattleIdMercenaryApplications,
+  putBattlesByBattleIdFighterApplicationsByApplicationIdResponse,
   putBattlesByBattleIdMercenaryApplicationsByApplicationIdResponse,
   putBattlesByBattleIdSideBriefing,
 } from '#api/sdk.gen'
@@ -52,11 +53,6 @@ export const getBattleFighters = async (
   battleId: number,
 ): Promise<BattleFighter[]> => (await getBattlesByBattleIdFighters({ path: { battleId } })).data!
 
-// export const getBattleFighterByUserId = (
-//   battleFighters: BattleFighter[],
-//   userId: number,
-// ) => battleFighters.find(f => f.party?.user.id === userId) ?? null
-
 export const getBattleFighterApplications = async (
   battleId: number,
   statuses: BattleFighterApplicationStatus[],
@@ -82,6 +78,12 @@ export const respondToBattleMercenaryApplication = (
   applicationId: number,
   accept: boolean,
 ) => putBattlesByBattleIdMercenaryApplicationsByApplicationIdResponse({ path: { battleId, applicationId }, body: { accept } })
+
+export const respondToBattleFighterApplication = (
+  battleId: number,
+  applicationId: number,
+  accept: boolean,
+) => putBattlesByBattleIdFighterApplicationsByApplicationIdResponse({ path: { battleId, applicationId }, body: { accept } })
 
 export const getBattleParticipants = async (
   battleId: number,

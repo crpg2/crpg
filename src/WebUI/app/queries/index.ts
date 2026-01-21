@@ -21,6 +21,11 @@ export const BATTLE_QUERY_KEYS = {
   byId: (id: number) => [...BATTLE_QUERY_KEYS.root, id] as const,
 }
 
+export const MAP_BATTLE_QUERY_KEYS = {
+  root: ['map-battles'] as const,
+  byId: (id: number) => [...MAP_BATTLE_QUERY_KEYS.root, id] as const,
+}
+
 export const PARTY_QUERY_KEYS = {
   root: ['party'] as const,
 }

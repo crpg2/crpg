@@ -43,8 +43,8 @@ export interface Party extends PartyCommon {
   waypoints: MultiPoint
   targetedParty: PartyCommon | null
   targetedSettlement: SettlementPublic | null
+  targetedBattle: MapBattle | null
   battleJoinIntents: Array<BattleJoinIntent>
-  battleId: number | null
 }
 
 export interface StrategusUpdate {
@@ -59,5 +59,6 @@ export interface UpdatePartyStatus {
   waypoints: MultiPoint
   targetedPartyId: number | null
   targetedSettlementId: number | null
+  targetedBattletId: number | null
   battleJoinIntents: Array<BattleJoinIntent>
 }

@@ -11,6 +11,7 @@ public enum ErrorCode
     BattleMercenaryAlreadyExist,
     BattleInvalidPhase,
     BattleNotFound,
+    BattleJoinIntentsIsEmpty,
     BattleTooFar,
     BattleParticipantSlotsExceeded,
     CharacterForTournament,

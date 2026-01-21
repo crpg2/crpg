@@ -9,7 +9,7 @@ public record BattleFighterApplicationViewModel : IMapFrom<BattleFighterApplicat
 {
     public int Id { get; init; }
     [JsonRequired]
-    public PartyVisibleViewModel? Party { get; init; }
+    public PartyVisibleViewModel Party { get; init; } = default!;
     public BattleSide Side { get; init; }
     public BattleFighterApplicationStatus Status { get; init; }
 }

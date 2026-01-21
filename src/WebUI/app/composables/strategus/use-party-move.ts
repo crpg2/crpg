@@ -72,13 +72,17 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
       case MOVEMENT_TARGET_TYPE.Battle:
         moveParty({
           status: PARTY_STATUS.MovingToBattle,
+          targetedBattletId: moveTarget.value.id,
           battleJoinIntents: [
             {
               side: BATTLE_SIDE.Attacker,
               battleId: moveTarget.value.id,
             },
+            {
+              side: BATTLE_SIDE.Defender,
+              battleId: moveTarget.value.id,
+            },
           ],
-          // targetedBattletId: moveTarget.value.id,
         })
         break
     }

@@ -57,17 +57,25 @@ public class Party : AuditableEntity
     /// </summary>
     public int? TargetedSettlementId { get; set; }
 
+    /// <summary>
+    /// The id of the battle the party is moving to if <see cref="Status"/> == <see cref="PartyStatus.MovingToBattle"/>.
+    /// </summary>
+    public int? TargetedBattleId { get; set; }
+
     /// <summary>See <see cref="TargetedPartyId"/>.</summary>
     public Party? TargetedParty { get; set; }
 
     /// <summary>See <see cref="TargetedSettlementId"/>.</summary>
     public Settlement? TargetedSettlement { get; set; }
 
+    /// <summary>See <see cref="TargetedBattleId"/>.</summary>
+    public Battle? TargetedBattle { get; set; }
+
     /// <summary>
-    /// The collection of <see cref="BattleJoinIntent"/> representing this party's current
-    /// intentions to move to battle locations.
+    /// The collection of <see cref="BattleJoinIntent"/> representing this party's current intentions to move to battle locations.
     /// Each intent specifies the <see cref="BattleSide"/> the party plans to join upon arrival.
     /// A party can have multiple intents simultaneously (e.g., one for attackers, one for defenders).
+    /// It makes sense while the Party is <see cref="Status"/> == <see cref="PartyStatus.MovingToBattle"/>.
     /// </summary>
     public List<BattleJoinIntent> BattleJoinIntents { get; set; } = [];
 

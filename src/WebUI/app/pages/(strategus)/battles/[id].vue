@@ -8,8 +8,7 @@ import type { BattleParticipant, BattleSide } from '~/models/strategus/battle'
 import { useBattle, useBattleMercenaryApplication, useBattleParticipants } from '~/composables/strategus/battle/use-battle'
 import { BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_PARTICIPANT_TYPE, BATTLE_SIDE } from '~/models/strategus/battle'
 import { BATTLE_QUERY_KEYS } from '~/queries'
-import { getBattle,
-} from '~/services/strategus/battle-service'
+import { getBattle } from '~/services/strategus/battle-service'
 
 definePageMeta({
   layoutOptions: {
