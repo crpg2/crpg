@@ -89,7 +89,7 @@ export type BattleFighterApplicationStatus = 'Pending' | 'Declined' | 'Accepted'
 
 export type BattleFighterApplicationViewModel = {
     id: number;
-    party: PartyVisibleViewModel;
+    party: PartyPublicViewModel;
     side: BattleSide;
     status: BattleFighterApplicationStatus;
 };
@@ -783,6 +783,7 @@ export type NotificationType = 'UserRewardedToUser' | 'CharacterRewardedToUser' 
 export type PartyPublicViewModel = {
     id: number;
     user: UserPublicViewModel;
+    troops: number;
 };
 
 export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'MovingToPoint' | 'FollowingParty' | 'MovingToSettlement' | 'MovingToAttackParty' | 'MovingToAttackSettlement' | 'InBattle' | 'MovingToBattle';
@@ -1213,19 +1214,12 @@ export type BattleDetailedViewModelResultWritable = {
     data: BattleDetailedViewModelWritable | null;
 };
 
-export type BattleFighterApplicationViewModelWritable = {
-    id: number;
-    party: PartyVisibleViewModelWritable;
-    side: BattleSide;
-    status: BattleFighterApplicationStatus;
-};
-
 export type BattleFighterApplicationViewModelIListResultWritable = {
-    data: Array<BattleFighterApplicationViewModelWritable> | null;
+    data: Array<BattleFighterApplicationViewModel> | null;
 };
 
 export type BattleFighterApplicationViewModelResultWritable = {
-    data: BattleFighterApplicationViewModelWritable | null;
+    data: BattleFighterApplicationViewModel | null;
 };
 
 export type BattleFighterViewModelWritable = {

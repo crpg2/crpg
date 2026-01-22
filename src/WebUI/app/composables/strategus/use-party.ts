@@ -13,32 +13,37 @@ import { getSelfUpdate, IN_SETTLEMENT_PARTY_STATUSES, updatePartyStatus } from '
 // const INTERVAL = 1000 * 60 ; // 1 min
 const INTERVAL = 10000 // TODO:
 
-// велосипед?
-export const usePartyState = (data?: StrategusUpdate): Ref<StrategusUpdate> => {
+export const usePartyState = (strict: boolean = true): {
+  partyState: Ref<StrategusUpdate>
+  setPartyState: (data: StrategusUpdate) => void
+} => {
   const state = useState<StrategusUpdate | null>('party')
 
-  if (data) {
-    state.value = data
-  }
-
-  if (state.value === null) {
+  if (strict && state.value === null) {
     throw createError({ statusMessage: 'PartyInfo not provided' })
   }
 
-  return state as Ref<StrategusUpdate>
+  const setPartyState = (data: StrategusUpdate) => {
+    state.value = data
+  }
+
+  return {
+    partyState: state as Ref<StrategusUpdate>,
+    setPartyState,
+  }
 }
 
 export const useParty = (
   // TODO: provide map?
   // map: Ref<typeof LMap | null>,
 ) => {
-  const partyInfo = usePartyState()
+  const { partyState, setPartyState } = usePartyState()
   const route = useRoute()
 
   const updateParty = async () => {
-    partyInfo.value = (await getSelfUpdate()).data!
+    setPartyState((await getSelfUpdate()).data!)
 
-    const { party } = partyInfo.value
+    const { party } = partyState.value
 
     // вынести в функции
     if (party.targetedSettlement
@@ -55,6 +60,7 @@ export const useParty = (
     if (party.targetedBattle
       && party.status === PARTY_STATUS.InBattle
       && route.name !== 'strategus-battle-id'
+      && route.name !== 'strategus-battle-id-applications'
     ) {
       await navigateTo({
         name: 'strategus-battle-id',
@@ -70,7 +76,7 @@ export const useParty = (
   }
 
   const moveParty = async (updateRequest: Partial<UpdatePartyStatus>) => {
-    partyInfo.value.party = await updatePartyStatus({
+    partyState.value.party = await updatePartyStatus({
       status: PARTY_STATUS.MovingToPoint,
       targetedPartyId: 0,
       targetedSettlementId: 0,
@@ -101,7 +107,7 @@ export const useParty = (
   )
 
   return {
-    partyInfo,
+    partyState,
     updateParty,
     moveParty,
     partySpawn,

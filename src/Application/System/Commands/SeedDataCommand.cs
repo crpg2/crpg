@@ -1596,7 +1596,8 @@ public record SeedDataCommand : IMediatorRequest
                 User = orle,
                 Troops = 100,
                 Position = new Point(118.664627, -110.482864),
-                Status = PartyStatus.Idle,
+                // Status = PartyStatus.Idle,
+                Status = PartyStatus.InBattle,
             };
             Party orle2Party = new()
             {
@@ -2193,10 +2194,16 @@ public record SeedDataCommand : IMediatorRequest
                     new BattleFighter { Party = orle2Party, Side = BattleSide.Attacker, Commander = true, ParticipantSlots = 50 },
                     new BattleFighter { Party = droobParty, Side = BattleSide.Defender, Commander = true, ParticipantSlots = 50 },
                 },
+                FighterApplications =
+                {
+                    new BattleFighterApplication { Party = orleParty, Side = BattleSide.Attacker, Status = BattleFighterApplicationStatus.Pending },
+                },
             };
 
             orle2Party.TargetedBattle = testBattle;
             droobParty.TargetedBattle = testBattle;
+            orleParty.Position = testBattle.Position;
+            orleParty.TargetedBattle = testBattle;
 
             Battle[] newBattles = [
                 // battle1, battle2,

@@ -24,22 +24,23 @@ export const PARTY_STATUS = {
 
 export type PartyStatus = ValueOf<typeof PARTY_STATUS>
 
-// TODO: rename
-export interface PartyPublic {
-  id: number
-  user: UserPublic
-}
-
 export interface PartyCommon {
   id: number
   troops: number
-  position: Point
   user: UserPublic
+}
+
+export interface PartyPublic extends PartyCommon {
+}
+
+export interface PartyVisible extends PartyCommon {
+  position: Point
 }
 
 export interface Party extends PartyCommon {
   gold: number
   status: PartyStatus
+  position: Point
   waypoints: MultiPoint
   targetedParty: PartyCommon | null
   targetedSettlement: SettlementPublic | null
@@ -49,7 +50,7 @@ export interface Party extends PartyCommon {
 
 export interface StrategusUpdate {
   party: Party
-  visibleParties: PartyCommon[]
+  visibleParties: PartyVisible[]
   visibleSettlements: SettlementPublic[]
   visibleBattles: MapBattle[] // TODO: FIXME:
 }
@@ -57,8 +58,8 @@ export interface StrategusUpdate {
 export interface UpdatePartyStatus {
   status: PartyStatus
   waypoints: MultiPoint
-  targetedPartyId: number | null
-  targetedSettlementId: number | null
-  targetedBattletId: number | null
+  targetedPartyId: number
+  targetedSettlementId: number
+  targetedBattletId: number
   battleJoinIntents: Array<BattleJoinIntent>
 }

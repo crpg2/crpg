@@ -35,7 +35,7 @@ public record GetBattleFighterApplicationsQuery : IMediatorRequest<IList<BattleF
                 .AsSplitQuery()
                 .Include(b => b.Fighters.Where(f => f.PartyId == req.PartyId))
                 .Include(b => b.FighterApplications.Where(a => req.Statuses.Contains(a.Status)))
-                .ThenInclude(a => a.Party!).ThenInclude(h => h.User)
+                    .ThenInclude(a => a.Party!.User!.ClanMembership!.Clan)
                 .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {

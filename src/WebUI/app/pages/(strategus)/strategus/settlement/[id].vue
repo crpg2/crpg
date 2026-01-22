@@ -8,7 +8,9 @@ import { IN_SETTLEMENT_PARTY_STATUSES } from '~/services/strategus/party-service
 definePageMeta({
   middleware: [
     async (to) => {
-      const { party } = usePartyState().value
+      const { partyState } = usePartyState()
+      const { party } = partyState.value
+
       if (!party.targetedSettlement && !IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)) {
         return navigateTo({ name: 'strategus' })
       }
@@ -121,7 +123,7 @@ const { settlement } = useSettlement()
     </nav> -->
 
     <div class="h-full overflow-x-hidden overflow-y-auto">
-      <RouterView />
+      <NuxtPage />
     </div>
 
     <footer class="border-border-200 flex items-center gap-5 border-t pt-2">

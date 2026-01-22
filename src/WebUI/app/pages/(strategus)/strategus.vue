@@ -31,13 +31,19 @@ definePageMeta({
   middleware: [
     async (to) => {
       try {
-        const partyRes = await getSelfUpdate()
+        const { partyState, setPartyState } = usePartyState(false)
 
-        if (partyRes?.errors !== null || partyRes.data === null) {
-          return navigateTo({ name: 'join-to-strategus' })
+        if (!partyState.value) {
+          const partyRes = await getSelfUpdate()
+
+          if (partyRes?.errors !== null || partyRes.data === null) {
+            return navigateTo({ name: 'join-to-strategus' })
+          }
+
+          setPartyState(partyRes.data)
         }
 
-        const { party } = usePartyState(partyRes.data).value
+        const { party } = partyState.value
 
         if (party.targetedSettlement
           && IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)
@@ -51,7 +57,7 @@ definePageMeta({
 
         if (party.targetedBattle
           && party.status === PARTY_STATUS.InBattle
-          && to.name !== 'strategus-battle-id'
+          && (to.name !== 'strategus-battle-id' && to.name !== 'strategus-battle-id-applications')
         ) {
           return navigateTo({
             name: 'strategus-battle-id',
@@ -86,7 +92,7 @@ useMapContextProvider({
 
 const {
   moveParty,
-  partyInfo,
+  partyState,
   // updateParty,
   partySpawn,
   toggleRecruitTroops,
@@ -94,7 +100,7 @@ const {
 } = useParty()
 
 const flyToSelfParty = () => {
-  (map.value!.leafletObject as Map).flyTo(positionToLatLng(partyInfo.value.party.position.coordinates), 5, {
+  (map.value!.leafletObject as Map).flyTo(positionToLatLng(partyState.value.party.position.coordinates), 5, {
     animate: false,
   })
 }
@@ -205,7 +211,7 @@ const onBattleClick = (battle: MapBattle) => {
 
       <MapPartyMovementPolyline
         v-if="!isMoveMode"
-        :party="partyInfo.party"
+        :party="partyState.party"
       />
 
       <MapDialogMove
@@ -217,7 +223,7 @@ const onBattleClick = (battle: MapBattle) => {
       />
 
       <MapMarkerBattle
-        v-for="battle in partyInfo.visibleBattles"
+        v-for="battle in partyState.visibleBattles"
         :key="`battle-${battle.id}`"
         :battle
         @click="onBattleClick(battle)"
@@ -239,12 +245,12 @@ const onBattleClick = (battle: MapBattle) => {
         :zoom-to-bounds-on-click="true"
       >
         <MapMarkerParty
-          :party="partyInfo.party"
+          :party="partyState.party"
           is-self
           @click="onStartMove"
         />
         <MapMarkerParty
-          v-for="party in partyInfo.visibleParties"
+          v-for="party in partyState.visibleParties"
           :key="`party-${party.id}`"
           :party
           @click="onPartyClick(party)"
@@ -259,12 +265,12 @@ const onBattleClick = (battle: MapBattle) => {
 
       <MapPartyProfile
         class="absolute top-12 right-10 z-1000"
-        :party="partyInfo.party"
+        :party="partyState.party"
         @locate="flyToSelfParty"
       />
     </LMap>
 
-    <NuxtPage class="absolute top-6 left-16 z-1000" />
+    <NuxtPage class="absolute top-6 left-6 z-1000" :style="{ height: `calc(100% - 3rem)` }" />
   </div>
 </template>
 

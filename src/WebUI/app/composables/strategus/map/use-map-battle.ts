@@ -3,7 +3,7 @@ import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
 import type { Battle } from '~/models/strategus/battle'
 
 import { useUser } from '~/composables/user/use-user'
-import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/strategus/battle'
+import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_SIDE } from '~/models/strategus/battle'
 import { MAP_BATTLE_QUERY_KEYS } from '~/queries'
 import {
   respondToBattleFighterApplication as _respondToBattleFighterApplication,
@@ -36,6 +36,7 @@ export const useBattleFighterApplications = (immediate = true) => {
   const {
     state: fighterApplications,
     executeImmediate: loadBattleFighterApplications,
+    isLoading: loadingBattleFighterApplications,
   } = useAsyncState(
     () => getBattleFighterApplications(battle.value.id, [
       BATTLE_FIGHTER_APPLICATION_STATUS.Pending,
@@ -55,10 +56,10 @@ export const useBattleFighterApplications = (immediate = true) => {
     fighterApplicationsCount,
     loadBattleFighterApplications,
     respondToBattleFighterApplication,
+    loadingBattleFighterApplications,
   }
 }
 
-// TODO:  FIXME: не нужно?
 export const useBattleFighters = (immediate = true) => {
   const { battle } = useMapBattle()
   const { user } = useUser()
@@ -66,6 +67,7 @@ export const useBattleFighters = (immediate = true) => {
   const {
     state: battleFighters,
     executeImmediate: loadBattleFighters,
+    isLoading: loadingBattleFighters,
   } = useAsyncState(
     () => getBattleFighters(battle.value.id),
     [],
@@ -76,10 +78,17 @@ export const useBattleFighters = (immediate = true) => {
 
   const selfFighter = computed(() => battleFighters.value.find(f => f.party?.user.id === user.value!.id) ?? null)
 
+  const battleFighterAttackers = computed(() => battleFighters.value.filter(f => f.side === BATTLE_SIDE.Attacker))
+
+  const battleFighterDefenders = computed(() => battleFighters.value.filter(f => f.side === BATTLE_SIDE.Defender))
+
   return {
     battleFighters,
+    battleFighterAttackers,
+    battleFighterDefenders,
     battleFightersCount,
     loadBattleFighters,
+    loadingBattleFighters,
     selfFighter,
   }
 }

@@ -3,7 +3,11 @@ import { tv } from 'tailwind-variants'
 
 export type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'p-sm' | 'p-xs' | 'caption' | 'caption-sm' | 'caption-xs'
 
-const { tag = 'div', marginTop = false, marginBottom = false } = defineProps<{
+const {
+  tag = 'div',
+  marginTop = false,
+  marginBottom = false,
+} = defineProps<{
   tag?: string
   variant: Variant
   marginTop?: boolean
