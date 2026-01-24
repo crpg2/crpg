@@ -51,7 +51,7 @@ const columns = computed<TableColumn<BattleFighter>[]>(() => [
     }),
   },
   {
-    header: 'Region',
+    header: '',
     accessorFn: row => row.party!.user.region,
     id: 'region',
   },

@@ -7,6 +7,7 @@ import type { ValueOf } from 'type-fest'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 import type { UserPublic } from '~/models/user'
 
+import type { Item } from '../item'
 import type { BattleJoinIntent, MapBattle } from './battle'
 
 export const PARTY_STATUS = {
@@ -62,4 +63,9 @@ export interface UpdatePartyStatus {
   targetedSettlementId: number
   targetedBattletId: number
   battleJoinIntents: Array<BattleJoinIntent>
+}
+
+export interface ItemStack {
+  item: Item
+  count: number
 }

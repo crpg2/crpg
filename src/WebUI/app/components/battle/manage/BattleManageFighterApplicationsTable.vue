@@ -3,7 +3,7 @@ import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState, GroupingState, SortingState, VisibilityState } from '@tanstack/vue-table'
 
 import { getFacetedRowModel, getFacetedUniqueValues, getGroupedRowModel, getPaginationRowModel } from '@tanstack/vue-table'
-import { AppCoin, BattleMercenaryApplicationStatusBadge, UButton, UiCollapsibleText, UiGridColumnHeader, UiGridColumnHeaderLabel, UiTooltipContent, UserMedia, UTooltip } from '#components'
+import { AppCoin, BattleMercenaryApplicationStatusBadge, UButton, UiCollapsibleText, UiDataCell, UiDataContent, UiGridColumnHeader, UiGridColumnHeaderLabel, UiTooltipContent, UserMedia, UTooltip } from '#components'
 
 import type { BattleBattleFighterApplication, BattleFighter, BattleMercenaryApplication } from '~/models/strategus/battle'
 
@@ -16,6 +16,7 @@ const { applications } = defineProps<{
 
 const emit = defineEmits<{
   respond: [number, boolean]
+  showItems: [number]
 }>()
 
 const { t, d } = useI18n()
@@ -32,7 +33,6 @@ const columnFilters = ref<ColumnFiltersState>(getDefaultColumnFiltersState())
 const grouping = ref<GroupingState>(
   [
     // 'user_id'
-
   ],
 )
 
@@ -47,7 +47,14 @@ const columns = computed<TableColumn<BattleBattleFighterApplication>[]>(() => [
     accessorFn: row => row.party.user,
     id: 'party_user',
     header: 'User',
-    cell: ({ row }) => h(UserMedia, { user: row.original.party.user }),
+    cell: ({ row }) => h(UiDataCell, {}, {
+      leftContent: () => h(UserMedia, { user: row.original.party.user }),
+      default: () => h(UButton, {
+        variant: 'subtle',
+        icon: 'crpg:chest',
+        onClick: () => emit('showItems', row.original.party.id),
+      }),
+    }),
   },
   // {
   //   accessorFn: row => row.user.id,
@@ -228,7 +235,7 @@ const sorting = ref<SortingState>([])
     </UTable>
 
     <UiGridPagination
-      v-if="table?.tableApi"
+      v-if="table?.tableApi && table.tableApi.getRowCount() as number > pagination.pageSize"
       :table-api="toRef(() => table!.tableApi)"
     />
   </div>

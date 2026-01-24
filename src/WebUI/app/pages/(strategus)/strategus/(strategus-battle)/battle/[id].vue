@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { NavigationMenuItem } from '@nuxt/ui'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
 import { useMapBattle } from '~/composables/strategus/map/use-map-battle'
@@ -57,16 +58,32 @@ const selfCommanderFighter = computed(() => {
   }
   return null
 })
+
+const navigationItems = computed<NavigationMenuItem[]>(() => [
+  {
+    label: 'Fighters',
+    to: { name: 'strategus-battle-id', params: { id: route.params.id } },
+    active: route.name === 'strategus-battle-id', // hack, [id].vue conflict with [id]/index.vue
+    icon: 'crpg:member',
+  },
+  {
+    label: 'Applications',
+    to: { name: 'strategus-battle-id-applications', params: { id: route.params.id } },
+  },
+  {
+    label: 'Inventory',
+    to: { name: 'strategus-battle-id-inventory', params: { id: route.params.id } },
+    icon: 'crpg:chest',
+  },
+])
 </script>
 
 <template>
-  <MapSidePage class="min-w-4xl">
+  <MapSidePage class="w-4xl">
     <template #header>
       <UiTextView variant="h2" tag="h1" class="text-center">
         {{ battleTitle }}
       </UiTextView>
-
-      <!-- v-if="selfCommanderFighter?.commander" -->
     </template>
 
     <div class="space-y-4">
@@ -82,25 +99,12 @@ const selfCommanderFighter = computed(() => {
         }"
       />
 
+      <!-- v-if="selfCommanderFighter?.commander" -->
       <UNavigationMenu
         variant="pill"
         color="neutral"
         class="flex w-full justify-center gap-4"
-        :items="[
-          {
-            label: 'Fighters',
-            to: { name: 'strategus-battle-id', params: { id: route.params.id } },
-            active: route.name === 'strategus-battle-id', //
-          },
-          {
-            label: 'Applications',
-            to: { name: 'strategus-battle-id-applications', params: { id: route.params.id } },
-          },
-          {
-            label: 'Inventory',
-            to: { name: 'strategus-battle-id-inventory', params: { id: route.params.id } },
-          },
-        ]"
+        :items="navigationItems"
       />
 
       <NuxtPage />

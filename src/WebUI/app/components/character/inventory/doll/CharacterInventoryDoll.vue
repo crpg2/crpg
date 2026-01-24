@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { vOnLongPress } from '@vueuse/components'
 
-import type { CharacterCharacteristics, CharacterOverallItemsStats, EquippedItemId } from '~/models/character'
+import type { CharacterCharacteristics, CharacterOverallItemsStats } from '~/models/character'
 import type { ItemSlot } from '~/models/item'
 import type { UserItemsBySlot } from '~/models/user'
 
 import { useInventoryDnD } from '~/composables/character/inventory/use-inventory-dnd'
-import { useInventoryQuickEquip } from '~/composables/character/inventory/use-inventory-quick-equip'
-import { useItemDetail } from '~/composables/item/use-item-detail'
 import {
   getCharacterSlotsSchema,
   getOverallArmorValueBySlot,
@@ -20,29 +18,19 @@ const props = defineProps<{
   itemsStatsOverall: CharacterOverallItemsStats
 }>()
 
-defineEmits<{
-  change: [items: EquippedItemId[]] // used in useInventoryDnD
+const emit = defineEmits<{
+  itemClick: [PointerEvent, string, ItemSlot]
+  unEquip: [ItemSlot]
 }>()
 
 const slotsSchema = getCharacterSlotsSchema()
-const { toggleItemDetail } = useItemDetail()
-
-const { onQuickUnEquip } = useInventoryQuickEquip()
 
 const onClickInventoryDollSlot = (e: PointerEvent, slot: ItemSlot) => {
-  if (props.equippedItems[slot] === undefined) {
+  if (!(slot in props.equippedItems)) {
     return
   }
 
-  if (e.ctrlKey) {
-    onQuickUnEquip(slot)
-  }
-  else {
-    toggleItemDetail(e.target as unknown as HTMLElement, {
-      id: props.equippedItems[slot].item.id,
-      userItemId: props.equippedItems[slot].id,
-    })
-  }
+  emit('itemClick', e, props.equippedItems[slot].item.id, slot)
 }
 
 const {
@@ -80,7 +68,7 @@ const {
       <CharacterInventoryDollSlot
         v-for="slot in slotGroup"
         :key="`${slot.key}_${equippedItems[slot.key]?.id ?? 'empty'}`"
-        v-on-long-press="[() => !dragging && onQuickUnEquip(slot.key), { delay: 500 }]"
+        v-on-long-press="[() => !dragging && $emit('unEquip', slot.key), { delay: 500 }]"
         :item-slot="slot.key"
         :placeholder="slot.placeholderIcon"
         :user-item="equippedItems[slot.key]"

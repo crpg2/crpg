@@ -11,7 +11,7 @@ import type { ValueOf } from 'type-fest'
 
 import type { CharacterPublic } from '~/models/character'
 import type { Region } from '~/models/region'
-import type { PartyPublic } from '~/models/strategus/party'
+import type { ItemStack, PartyPublic } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 import type { UserPublic } from '~/models/user'
 
@@ -95,6 +95,13 @@ export interface BattleBattleFighterApplication {
   party: PartyPublic
   side: BattleSide
   status: BattleFighterApplicationStatus
+}
+
+export interface BattleFighterInventory {
+  fighterId: number
+  party: PartyPublic | null
+  settlement: SettlementPublic | null
+  items: ItemStack[]
 }
 
 export interface BattleParticipant {

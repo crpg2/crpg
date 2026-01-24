@@ -135,7 +135,5 @@ const items = computed<TabsItem[]>(() => [
         @respond="onRespond"
       />
     </template>
-
-    <template #footer />
   </UDrawer>
 </template>

@@ -104,6 +104,18 @@ export type BattleFighterApplicationViewModelResult = {
     data: BattleFighterApplicationViewModel | null;
 };
 
+export type BattleFighterInventoryViewModel = {
+    fighterId: number;
+    party: PartyPublicViewModel | null;
+    settlement: SettlementPublicViewModel | null;
+    items: Array<ItemStack>;
+};
+
+export type BattleFighterInventoryViewModelIListResult = {
+    readonly errors: Array<Error> | null;
+    data: Array<BattleFighterInventoryViewModel> | null;
+};
+
 export type BattleFighterViewModel = {
     id: number;
     party: PartyPublicViewModel | null;
@@ -1222,6 +1234,17 @@ export type BattleFighterApplicationViewModelResultWritable = {
     data: BattleFighterApplicationViewModel | null;
 };
 
+export type BattleFighterInventoryViewModelWritable = {
+    fighterId: number;
+    party: PartyPublicViewModel | null;
+    settlement: SettlementPublicViewModelWritable | null;
+    items: Array<ItemStack>;
+};
+
+export type BattleFighterInventoryViewModelIListResultWritable = {
+    data: Array<BattleFighterInventoryViewModelWritable> | null;
+};
+
 export type BattleFighterViewModelWritable = {
     id: number;
     party: PartyPublicViewModel | null;
@@ -1723,6 +1746,31 @@ export type PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseRespon
 };
 
 export type PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse = PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponses[keyof PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponses];
+
+export type GetBattlesByBattleIdItemsData = {
+    body?: never;
+    path: {
+        battleId: number;
+    };
+    query?: never;
+    url: '/Battles/{battleId}/items';
+};
+
+export type GetBattlesByBattleIdItemsErrors = {
+    /**
+     * Bad request.
+     */
+    400: unknown;
+};
+
+export type GetBattlesByBattleIdItemsResponses = {
+    /**
+     * Ok.
+     */
+    200: BattleFighterInventoryViewModelIListResult;
+};
+
+export type GetBattlesByBattleIdItemsResponse = GetBattlesByBattleIdItemsResponses[keyof GetBattlesByBattleIdItemsResponses];
 
 export type GetBattlesByBattleIdParticipantsData = {
     body?: never;
@@ -2751,6 +2799,31 @@ export type PostPartiesSelfItemsResponses = {
 };
 
 export type PostPartiesSelfItemsResponse = PostPartiesSelfItemsResponses[keyof PostPartiesSelfItemsResponses];
+
+export type GetPartiesByPartyIdItemsData = {
+    body?: never;
+    path: {
+        partyId: number;
+    };
+    query?: never;
+    url: '/Parties/{partyId}/items';
+};
+
+export type GetPartiesByPartyIdItemsErrors = {
+    /**
+     * Bad request.
+     */
+    400: unknown;
+};
+
+export type GetPartiesByPartyIdItemsResponses = {
+    /**
+     * Ok.
+     */
+    200: ItemStackIListResult;
+};
+
+export type GetPartiesByPartyIdItemsResponse = GetPartiesByPartyIdItemsResponses[keyof GetPartiesByPartyIdItemsResponses];
 
 export type GetPatchNotesData = {
     body?: never;

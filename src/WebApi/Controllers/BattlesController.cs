@@ -112,6 +112,22 @@ public class BattlesController : BaseController
     }
 
     /// <summary>
+    /// Get battle items (inventory by fighter).
+    /// </summary>
+    /// <returns>The item stacks.</returns>
+    /// <response code="200">Ok.</response>
+    /// <response code="400">Bad request.</response>
+    [HttpGet("{battleId}/items")]
+    public Task<ActionResult<Result<IList<BattleFighterInventoryViewModel>>>> GetBattleItems([FromRoute] int battleId)
+    {
+        return ResultToActionAsync(Mediator.Send(new GetBattleItemsQuery
+        {
+            BattleId = battleId,
+            PartyId = CurrentUser.User!.Id,
+        }));
+    }
+
+    /// <summary>
     /// Get battle participants.
     /// </summary>
     /// <returns>The participants.</returns>

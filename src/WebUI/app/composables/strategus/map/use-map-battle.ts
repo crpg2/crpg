@@ -9,6 +9,7 @@ import {
   respondToBattleFighterApplication as _respondToBattleFighterApplication,
   getBattleFighterApplications,
   getBattleFighters,
+  getBattleItems,
 } from '~/services/strategus/battle-service'
 
 import { useBattleTitle } from '../battle/use-battle'
@@ -90,5 +91,25 @@ export const useBattleFighters = (immediate = true) => {
     loadBattleFighters,
     loadingBattleFighters,
     selfFighter,
+  }
+}
+
+export const useBattleItems = (immediate = true) => {
+  const { battle } = useMapBattle()
+
+  const {
+    state: battleItems,
+    executeImmediate: loadBattleItems,
+    isLoading: loadingBattleItems,
+  } = useAsyncState(
+    () => getBattleItems(battle.value.id),
+    [],
+    { immediate, resetOnExecute: false },
+  )
+
+  return {
+    battleItems,
+    loadBattleItems,
+    loadingBattleItems,
   }
 }

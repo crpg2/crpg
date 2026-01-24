@@ -2,15 +2,17 @@
 import type { DropdownMenuItem } from '@nuxt/ui'
 
 import type { ClanArmoryItem } from '~/models/clan'
+import type { CompareItemsResult } from '~/models/item'
 import type { UserPublic } from '~/models/user'
 
 import { useUser } from '~/composables/user/use-user'
 import { CLAN_MEMBER_ROLE } from '~/models/clan'
 import { isOwnClanArmoryItem } from '~/services/clan-service'
 
-const { borrower, clanArmoryItem, lender } = defineProps<{
+const { borrower, clanArmoryItem, lender, compareResult } = defineProps<{
   clanArmoryItem: ClanArmoryItem
   lender: UserPublic
+  compareResult?: CompareItemsResult
   borrower: UserPublic | null
 }>()
 
@@ -63,7 +65,10 @@ const itemActions = computed(() => {
 </script>
 
 <template>
-  <ItemDetail :item="clanArmoryItem.item">
+  <ItemDetail
+    :item="clanArmoryItem.item"
+    :compare-result="compareResult"
+  >
     <template #badges-bottom-right>
       <ClanArmoryItemRelationBadge
         :lender="lender"

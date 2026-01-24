@@ -64,4 +64,19 @@ public class PartiesController : BaseController
         req.PartyId = CurrentUser.User!.Id;
         return ResultToActionAsync(Mediator.Send(req));
     }
+
+    /// <summary>
+    /// Get party items by id.
+    /// </summary>
+    /// <returns>The item stacks.</returns>
+    /// <response code="200">Ok.</response>
+    /// <response code="400">Bad request.</response>
+    [HttpGet("{partyId}/items")]
+    public Task<ActionResult<Result<IList<ItemStack>>>> GetPartyItems([FromRoute] int partyId)
+    {
+        return ResultToActionAsync(Mediator.Send(new GetPartyItemsQuery
+        {
+            PartyId = partyId,
+        }));
+    }
 }

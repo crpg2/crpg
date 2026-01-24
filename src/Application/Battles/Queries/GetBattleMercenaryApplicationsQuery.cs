@@ -52,6 +52,11 @@ public record GetBattleMercenaryApplicationsQuery : IMediatorRequest<IList<Battl
                 .Select(f => (BattleSide?)f.Side)
                 .FirstOrDefaultAsync(cancellationToken);
 
+            if (fightersSide == null)
+            {
+                return new(CommonErrors.PartyNotAFighter(req.UserId, req.BattleId));
+            }
+
             var applications = await _db.BattleMercenaryApplications
                 .Where(a =>
                     a.BattleId == req.BattleId &&
@@ -59,8 +64,7 @@ public record GetBattleMercenaryApplicationsQuery : IMediatorRequest<IList<Battl
                     (
                         // If the user is not a fighter of that battle, only return its applications,
                         // else return the mercenary applications from the same side as the user.
-                        a.Character!.UserId == req.UserId ||
-                        (fightersSide != null && a.Side == fightersSide)))
+                        a.Character!.UserId == req.UserId || a.Side == fightersSide))
                 .OrderByDescending(a => a.CreatedAt)
                 .ProjectTo<BattleMercenaryApplicationViewModel>(_mapper.ConfigurationProvider)
                 .ToArrayAsync(cancellationToken);

@@ -5,6 +5,7 @@ import {
   getBattlesByBattleId,
   getBattlesByBattleIdFighterApplications,
   getBattlesByBattleIdFighters,
+  getBattlesByBattleIdItems,
   getBattlesByBattleIdMercenaryApplications,
   getBattlesByBattleIdParticipants,
   postBattlesByBattleIdMercenaryApplications,
@@ -14,7 +15,7 @@ import {
 } from '#api/sdk.gen'
 
 import type { Region } from '~/models/region'
-import type { Battle, BattleBattleFighterApplication, BattleFighter, BattleFighterApplicationStatus, BattleMercenaryApplication, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattleParticipant, BattlePhase, BattleSide, BattleSideBriefing, BattleType } from '~/models/strategus/battle'
+import type { Battle, BattleBattleFighterApplication, BattleFighter, BattleFighterApplicationStatus, BattleFighterInventory, BattleMercenaryApplication, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattleParticipant, BattlePhase, BattleSide, BattleSideBriefing, BattleType } from '~/models/strategus/battle'
 
 import { BATTLE_PHASE, BATTLE_TYPE } from '~/models/strategus/battle'
 
@@ -57,6 +58,10 @@ export const getBattleFighterApplications = async (
   battleId: number,
   statuses: BattleFighterApplicationStatus[],
 ): Promise<BattleBattleFighterApplication[]> => (await getBattlesByBattleIdFighterApplications({ path: { battleId }, query: { 'status[]': statuses } })).data!
+
+export const getBattleItems = async (
+  battleId: number,
+): Promise<BattleFighterInventory[]> => (await getBattlesByBattleIdItems({ path: { battleId } })).data!
 
 export const getBattleMercenaryApplications = async (
   battleId: number,

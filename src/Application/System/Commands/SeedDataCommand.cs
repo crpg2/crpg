@@ -1598,6 +1598,10 @@ public record SeedDataCommand : IMediatorRequest
                 Position = new Point(118.664627, -110.482864),
                 // Status = PartyStatus.Idle,
                 Status = PartyStatus.InBattle,
+                Items =
+                [
+                    new() { Count = 112, ItemId = "crpg_wolf_shoulder_v2_h0" },
+                ],
             };
             Party orle2Party = new()
             {
@@ -1605,6 +1609,12 @@ public record SeedDataCommand : IMediatorRequest
                 Troops = 100,
                 Position = new Point(121.113023, -111.418929),
                 Status = PartyStatus.InBattle,
+                Items =
+                [
+                    new() { Count = 12, ItemId = "crpg_simple_saber_v1_h0" },
+                    new() { Count = 2, ItemId = "crpg_eastern_wrapped_armguards_v2_h0" },
+                    new() { Count = 1112, ItemId = "crpg_wolf_shoulder_v2_h0" },
+                ],
             };
             Party droobParty = new()
             {
@@ -1612,6 +1622,10 @@ public record SeedDataCommand : IMediatorRequest
                 Troops = 500,
                 Position = new Point(121.173023, -111.498929),
                 Status = PartyStatus.InBattle,
+                Items =
+                [
+                    new() { Count = 212, ItemId = "crpg_armet_h0" },
+                ],
             };
             Party brainfartParty = new()
             {
