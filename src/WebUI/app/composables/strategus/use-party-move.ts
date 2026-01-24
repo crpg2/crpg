@@ -4,7 +4,7 @@ import type L from 'leaflet'
 
 import type { MapBattle } from '~/models/strategus/battle'
 import type { MovementTargetType, MovementType } from '~/models/strategus/movement'
-import type { PartyCommon } from '~/models/strategus/party'
+import type { PartyVisible } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 
 import { useParty } from '~/composables/strategus/use-party'
@@ -20,14 +20,14 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
   const moveDialogMovementTypes = ref<MovementType[]>([])
 
   const moveTargetType = ref<MovementTargetType | null>(null)
-  const moveTarget = ref<PartyCommon | SettlementPublic | MapBattle | null>(null)
+  const moveTarget = ref<PartyVisible | SettlementPublic | MapBattle | null>(null)
 
   const showMoveDialog = ({
     target,
     movementTypes,
     targetType,
   }: {
-    target: PartyCommon | SettlementPublic | MapBattle
+    target: PartyVisible | SettlementPublic | MapBattle
     targetType: MovementTargetType
     movementTypes: MovementType[]
   }) => {

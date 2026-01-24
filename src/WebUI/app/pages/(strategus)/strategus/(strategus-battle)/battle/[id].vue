@@ -96,6 +96,10 @@ const selfCommanderFighter = computed(() => {
             label: 'Applications',
             to: { name: 'strategus-battle-id-applications', params: { id: route.params.id } },
           },
+          {
+            label: 'Inventory',
+            to: { name: 'strategus-battle-id-inventory', params: { id: route.params.id } },
+          },
         ]"
       />
 

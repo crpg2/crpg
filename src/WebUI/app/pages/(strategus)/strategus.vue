@@ -8,7 +8,7 @@ import type { MapBattle } from '~/models/strategus/battle'
 import type { MovementType } from '~/models/strategus/movement'
 import '@geoman-io/leaflet-geoman-free'
 
-import type { PartyCommon } from '~/models/strategus/party'
+import type { PartyCommon, PartyVisible } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 
 import { useMainHeader } from '~/composables/app/use-main-header'
@@ -47,7 +47,7 @@ definePageMeta({
 
         if (party.targetedSettlement
           && IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)
-          && to.name !== 'strategus-settlement-id'
+          && !to.meta.groups?.includes('strategussettlement')
         ) {
           return navigateTo({
             name: 'strategus-settlement-id',
@@ -57,7 +57,7 @@ definePageMeta({
 
         if (party.targetedBattle
           && party.status === PARTY_STATUS.InBattle
-          && (to.name !== 'strategus-battle-id' && to.name !== 'strategus-battle-id-applications')
+          && !to.meta.groups?.includes('strategusbattle')
         ) {
           return navigateTo({
             name: 'strategus-battle-id',
@@ -150,7 +150,7 @@ const [onMapReady, mapIsLoading] = useAsyncCallback(async (map: Map) => {
   isMapRdy.value = true
 })
 
-const onPartyClick = (targetParty: PartyCommon) => showMoveDialog({
+const onPartyClick = (targetParty: PartyVisible) => showMoveDialog({
   target: targetParty,
   movementTypes: [MOVEMENT_TYPE.Follow, MOVEMENT_TYPE.Attack],
   targetType: MOVEMENT_TARGET_TYPE.Party,

@@ -45,10 +45,9 @@ export const useParty = (
 
     const { party } = partyState.value
 
-    // вынести в функции
     if (party.targetedSettlement
       && IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)
-      && route.name !== 'strategus-settlement-id'
+      && !route.meta.groups?.includes('strategussettlement')
     ) {
       await navigateTo({
         name: 'strategus-settlement-id',
@@ -56,11 +55,9 @@ export const useParty = (
       })
     }
 
-    // вынести в функции
     if (party.targetedBattle
       && party.status === PARTY_STATUS.InBattle
-      && route.name !== 'strategus-battle-id'
-      && route.name !== 'strategus-battle-id-applications'
+      && !route.meta.groups?.includes('strategusbattle')
     ) {
       await navigateTo({
         name: 'strategus-battle-id',
