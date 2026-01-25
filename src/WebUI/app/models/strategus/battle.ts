@@ -90,7 +90,7 @@ export const BATTLE_FIGHTER_APPLICATION_STATUS = {
 
 export type BattleFighterApplicationStatus = ValueOf<typeof BATTLE_FIGHTER_APPLICATION_STATUS>
 
-export interface BattleBattleFighterApplication {
+export interface BattleFighterApplication {
   id: number
   party: PartyPublic
   side: BattleSide

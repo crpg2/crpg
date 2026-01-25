@@ -1,6 +1,6 @@
 import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
 
-import type { Battle, BattleBattleFighterApplication, BattleFighter } from '~/models/strategus/battle'
+import type { Battle, BattleFighter, BattleFighterApplication } from '~/models/strategus/battle'
 
 import { useBattleTitle } from '~/composables/strategus/battle/use-battle'
 import { useUser } from '~/composables/user/use-user'
@@ -35,7 +35,7 @@ export const useBattleFighterApplications = (immediate = true) => {
   const { battle } = useMapBattle()
 
   const _key = MAP_BATTLE_QUERY_KEYS.figterApplicationsById(battle.value.id)
-  const fighterApplications = getAsyncData<BattleBattleFighterApplication[]>(_key) // TODO: Battle -> MapDetailBattle
+  const fighterApplications = getAsyncData<BattleFighterApplication[]>(_key) // TODO: Battle -> MapDetailBattle
   const refreshFighterApplications = refreshAsyncData(_key)
 
   const fighterApplicationsCount = computed(() => fighterApplications.value.length)

@@ -16,7 +16,7 @@ import {
 } from '#api/sdk.gen'
 
 import type { Region } from '~/models/region'
-import type { Battle, BattleBattleFighterApplication, BattleFighter, BattleFighterApplicationStatus, BattleFighterInventory, BattleMercenaryApplication, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattleParticipant, BattlePhase, BattleSide, BattleSideBriefing, BattleType } from '~/models/strategus/battle'
+import type { Battle, BattleFighter, BattleFighterApplication, BattleFighterApplicationStatus, BattleFighterInventory, BattleMercenaryApplication, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattleParticipant, BattlePhase, BattleSide, BattleSideBriefing, BattleType } from '~/models/strategus/battle'
 
 import { BATTLE_PHASE, BATTLE_TYPE } from '~/models/strategus/battle'
 
@@ -63,7 +63,7 @@ export const removeBattleFighter = (
 export const getBattleFighterApplications = async (
   battleId: number,
   statuses: BattleFighterApplicationStatus[],
-): Promise<BattleBattleFighterApplication[]> => (await getBattlesByBattleIdFighterApplications({ path: { battleId }, query: { 'status[]': statuses } })).data!
+): Promise<BattleFighterApplication[]> => (await getBattlesByBattleIdFighterApplications({ path: { battleId }, query: { 'status[]': statuses } })).data!
 
 export const getBattleItems = async (
   battleId: number,

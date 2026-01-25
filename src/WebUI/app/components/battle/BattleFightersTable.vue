@@ -57,7 +57,7 @@ const columns = computed<TableColumn<BattleFighter>[]>(() => [
       h(UiDataCell, null, {
         leftContent: () => h(UIcon, { name: 'crpg:member', class: 'size-5' }),
         default: () => h(UiDataContent, {
-          label: n(row.original.party!.troops * 100),
+          label: n(row.original.party!.troops),
           caption: n(row.original.participantSlots),
         }),
       })),

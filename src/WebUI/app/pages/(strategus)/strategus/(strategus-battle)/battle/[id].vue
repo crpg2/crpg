@@ -2,7 +2,7 @@
 import type { NavigationMenuItem } from '@nuxt/ui'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
-import { AppApplicationStatusBadge, UTooltip } from '#components'
+import { AppApplicationStatusBadge, BattleFighterApplicationStatusBadge, UTooltip } from '#components'
 
 import type { BattleSide } from '~/models/strategus/battle'
 
@@ -74,18 +74,15 @@ const selfFighter = computed(() => partyState.value.party.targetedBattle?.fighte
 const { fighterApplications } = useBattleFighterApplications()
 
 const pendingFigterApplications = computed(() => fighterApplications.value.filter(fa => fa.status === BATTLE_FIGHTER_APPLICATION_STATUS.Pending))
-const selfPendingFigterApplications = computed(() => pendingFigterApplications.value.filter(fa => fa.party.id === partyState.value.party.id))
+// const selfPendingFigterApplications = computed(() => pendingFigterApplications.value.filter(fa => fa.party.id === partyState.value.party.id))
 
 const renderBattleFighterApplicationStatusBadge = (side: BattleSide) => {
-  const fighterApplication = selfPendingFigterApplications.value.find(fa => fa.side === side)
-
-  if (!fighterApplication) {
+  if (selfFighter.value?.commander) {
     return null
   }
 
-  return h(UTooltip, { text: 'Battle fighter application status' }, () => h(AppApplicationStatusBadge, {
-    status: fighterApplication.status,
-  }))
+  const fighterApplication = fighterApplications.value.find(fa => fa.side === side)
+  return fighterApplication ? h(BattleFighterApplicationStatusBadge, { status: fighterApplication.status }) : null
 }
 
 const navigationItems = computed<NavigationMenuItem[]>(() => [

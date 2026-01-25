@@ -5,12 +5,12 @@ import type { ColumnFiltersState, GroupingState, SortingState, VisibilityState }
 import { getFacetedRowModel, getFacetedUniqueValues, getGroupedRowModel, getPaginationRowModel } from '@tanstack/vue-table'
 import { AppApplicationStatusBadge, UButton, UiDataCell, UiDataMedia, UiGridColumnHeader, UiGridColumnHeaderLabel, UserMedia } from '#components'
 
-import type { BattleBattleFighterApplication } from '~/models/strategus/battle'
+import type { BattleFighterApplication } from '~/models/strategus/battle'
 
 import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/strategus/battle'
 
 const { applications } = defineProps<{
-  applications: BattleBattleFighterApplication[]
+  applications: BattleFighterApplication[]
   loading: boolean
 }>()
 
@@ -36,7 +36,7 @@ const grouping = ref<GroupingState>(
   ],
 )
 
-const columns = computed<TableColumn<BattleBattleFighterApplication>[]>(() => [
+const columns = computed<TableColumn<BattleFighterApplication>[]>(() => [
   {
     accessorKey: 'id',
     header: '',
@@ -53,19 +53,6 @@ const columns = computed<TableColumn<BattleBattleFighterApplication>[]>(() => [
       },
     },
   },
-  // {
-  //   accessorFn: row => row.party.user,
-  //   id: 'party_user',
-  //   header: 'User',
-  //   cell: ({ row }) => h(UiDataCell, {}, {
-  //     leftContent: () => h(UserMedia, { user: row.original.party.user }),
-  //     default: () => h(UButton, {
-  //       variant: 'subtle',
-  //       icon: 'crpg:chest',
-  //       onClick: () => emit('showItems', row.original.party.id),
-  //     }),
-  //   }),
-  // },
   {
     accessorFn: row => row.party.troops,
     id: 'party_troops',
@@ -232,7 +219,7 @@ const sorting = ref<SortingState>([])
             <template #leftContent>
               <UserMedia :user="row.original.party.user" />
             </template>
-            <UButton variant="subtle" icon="crpg:chest" @click="$emit('showItems', row.original.party.id)" />
+            <UButton variant="ghost" icon="crpg:chest" @click="$emit('showItems', row.original.party.id)" />
           </UiDataCell>
         </div>
       </template>
