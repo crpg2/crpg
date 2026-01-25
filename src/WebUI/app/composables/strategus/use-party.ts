@@ -64,6 +64,12 @@ export const useParty = (
         params: { id: party.targetedBattle.id },
       })
     }
+
+    // TODO: подумать еще, но вроде ок
+    // don't let users go where they shouldn't
+    if ((!party.targetedSettlement && !party.targetedBattle) && route.name !== 'strategus') {
+      await navigateTo({ name: 'strategus' })
+    }
   }
 
   const { resume: startUpdatePartyInterval } = useIntervalFn(updateParty, INTERVAL, { immediate: false })

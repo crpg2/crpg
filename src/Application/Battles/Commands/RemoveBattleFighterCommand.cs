@@ -48,7 +48,9 @@ public record RemoveBattleFighterCommand : IMediatorRequest
                 return new(CommonErrors.BattleInvalidPhase(battle.Id, battle.Phase));
             }
 
-            var fighter = await _db.BattleFighters.FirstOrDefaultAsync(p => p.BattleId == battle.Id && p.Id == req.RemovedFighterId, cancellationToken);
+            var fighter = await _db.BattleFighters
+                .Include(f => f.Party)
+                .FirstOrDefaultAsync(p => p.BattleId == battle.Id && p.Id == req.RemovedFighterId, cancellationToken);
             if (fighter == null)
             {
                 return new(CommonErrors.FighterNotFound(req.RemovedFighterId, battle.Id));
@@ -69,6 +71,8 @@ public record RemoveBattleFighterCommand : IMediatorRequest
             if (req.PartyId == fighter.PartyId && fighter.Commander == false) // Fighter (not commander) is leaving the battle
             {
                 _db.BattleFighters.Remove(fighter);
+                fighter.Party!.Status = Domain.Entities.Parties.PartyStatus.Idle;
+                fighter.Party!.TargetedBattleId = null;
                 // TODO: add notification to commander
                 // _db.ActivityLogs.Add(_activityLogService.CreateBattleParticipantLeavedLog(battle.Id, req.PartyId));
                 await _db.SaveChangesAsync(cancellationToken);
@@ -76,6 +80,7 @@ public record RemoveBattleFighterCommand : IMediatorRequest
                 return new Result();
             }
 
+            // Commander kick fighter from battle
             var battleFighter = await _db.BattleFighters.FirstOrDefaultAsync(f => f.BattleId == battle.Id && f.PartyId == req.PartyId, cancellationToken);
             if (battleFighter == null)
             {
@@ -98,6 +103,8 @@ public record RemoveBattleFighterCommand : IMediatorRequest
             // TODO: add notification to ex-battle figter
             // _db.ActivityLogs.Add(_activityLogService.CreateBattleParticipantKickedLog(battle.Id, participant.Character!.UserId, req.PartyId));
             // _db.UserNotifications.Add(_userNotificationService.CreateBattleParticipantKickedToExParticipantNotification(participant.Character!.UserId, battle.Id));
+            fighter.Party!.Status = Domain.Entities.Parties.PartyStatus.Idle;
+            fighter.Party!.TargetedBattleId = null;
             await _db.SaveChangesAsync(cancellationToken);
             // Logger.LogInformation("User '{0}' removed participant '{1}' (user '{2}') out of battle '{3}'", req.PartyId, req.RemovedParticipantId, participant.Character!.UserId, req.BattleId);
             return new Result();

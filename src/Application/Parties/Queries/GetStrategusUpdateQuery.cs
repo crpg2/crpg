@@ -41,8 +41,10 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
                 .Include(p => p.User!)
                     .ThenInclude(u => u.ClanMembership!.Clan)
                 .Include(p => p.TargetedParty!.User)
-                .Include(p => p.TargetedSettlement)
+                .Include(p => p.TargetedSettlement) // TODO: FIXME: SIege
                 .Include(p => p.TargetedBattle)
+                    .ThenInclude(b => b!.Fighters)
+                        .ThenInclude(f => f!.Party)
                 .Include(p => p.BattleJoinIntents)
                 .FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
             if (party == null)

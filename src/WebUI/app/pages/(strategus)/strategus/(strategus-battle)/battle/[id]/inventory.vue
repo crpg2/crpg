@@ -8,8 +8,24 @@ import type { SettlementPublic } from '~/models/strategus/settlement'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useItemDetail } from '~/composables/item/use-item-detail'
-import { useBattleItems } from '~/composables/strategus/map/use-map-battle'
+import { useBattleItems, useMapBattle } from '~/composables/strategus/map/use-map-battle'
+import { usePartyState } from '~/composables/strategus/use-party'
 import { useUser } from '~/composables/user/use-user'
+
+definePageMeta({
+  middleware: [
+    () => {
+      const { partyState } = usePartyState()
+      const { battle } = useMapBattle()
+
+      const fighter = partyState.value.party.targetedBattle?.fighters.some(f => f.party?.id === partyState.value.party.id)
+
+      if (!fighter) {
+        return navigateTo({ name: 'strategus-battle-id', params: { id: battle.value.id } })
+      }
+    },
+  ],
+})
 
 const {
   battleItems,
@@ -92,9 +108,10 @@ const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsR
     return null
   }
 
-  // TODO: stack item
+  // TODO: stack item detail
   return h(ItemDetail, {
     item: partyItem.item,
+    compareResult: compareItemsResult.find(cr => cr.type === partyItem.item.type)?.compareResult,
   })
 }
 </script>
@@ -102,6 +119,7 @@ const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsR
 <template>
   <ItemGrid
     v-model:sorting="sortingModel"
+    class="mx-auto max-w-2xl"
     :sorting-config="sortingConfig"
     :items
   >

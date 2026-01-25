@@ -38,7 +38,7 @@ const sortingConfig: SortingConfig = {
 
 const sortingModel = ref<string>('rank_desc')
 
-const { closeItemDetail, toggleItemDetail } = useItemDetail()
+const { toggleItemDetail } = useItemDetail()
 
 const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsResult: GroupedCompareItemsResult[]) => {
   const partyItem = partyItems.value.find(i => i.item.id === opendeItem.id)
@@ -50,6 +50,7 @@ const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsR
   // TODO: stack item
   return h(ItemDetail, {
     item: partyItem.item,
+    compareResult: compareItemsResult,
   })
 }
 </script>
@@ -59,8 +60,6 @@ const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsR
     direction="top"
     :handle="false"
     handle-only
-    :dismissible="false"
-    :no-body-styles="true"
     :ui="{
       header: 'mb-6 flex items-center justify-center gap-4',
       container: 'w-full max-w-3xl mx-auto',

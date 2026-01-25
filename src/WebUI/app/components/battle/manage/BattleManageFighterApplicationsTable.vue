@@ -3,7 +3,7 @@ import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState, GroupingState, SortingState, VisibilityState } from '@tanstack/vue-table'
 
 import { getFacetedRowModel, getFacetedUniqueValues, getGroupedRowModel, getPaginationRowModel } from '@tanstack/vue-table'
-import { BattleMercenaryApplicationStatusBadge, UButton, UiDataCell, UiGridColumnHeader, UiGridColumnHeaderLabel, UserMedia } from '#components'
+import { AppApplicationStatusBadge, UButton, UiDataCell, UiDataMedia, UiGridColumnHeader, UiGridColumnHeaderLabel, UserMedia } from '#components'
 
 import type { BattleBattleFighterApplication } from '~/models/strategus/battle'
 
@@ -19,7 +19,7 @@ const emit = defineEmits<{
   showItems: [number]
 }>()
 
-const { t } = useI18n()
+const { t, n } = useI18n()
 
 const table = useTemplateRef('table')
 const { getInitialPaginationState, pagination } = usePagination()
@@ -32,7 +32,7 @@ const columnFilters = ref<ColumnFiltersState>(getDefaultColumnFiltersState())
 
 const grouping = ref<GroupingState>(
   [
-    // 'user_id'
+    'party_id',
   ],
 )
 
@@ -41,30 +41,30 @@ const columns = computed<TableColumn<BattleBattleFighterApplication>[]>(() => [
     accessorKey: 'id',
     header: '',
     id: 'id',
-    // filterFn: 'equals',
+    filterFn: 'equals',
   },
   {
-    accessorFn: row => row.party.user,
-    id: 'party_user',
-    header: 'User',
-    cell: ({ row }) => h(UiDataCell, {}, {
-      leftContent: () => h(UserMedia, { user: row.original.party.user }),
-      default: () => h(UButton, {
-        variant: 'subtle',
-        icon: 'crpg:chest',
-        onClick: () => emit('showItems', row.original.party.id),
-      }),
-    }),
+    accessorFn: row => row.party.id,
+    id: 'party_id',
+    header: t('strategus.battle.manage.mercenaryApplications.table.columns.user.label'),
+    meta: {
+      class: {
+        th: tw`w-56`,
+      },
+    },
   },
   // {
-  //   accessorFn: row => row.user.id,
-  //   id: 'user_id',
-  //   header: t('strategus.battle.manage.mercenaryApplications.table.columns.user.label'),
-  //   meta: {
-  //     class: {
-  //       th: tw`w-56`,
-  //     },
-  //   },
+  //   accessorFn: row => row.party.user,
+  //   id: 'party_user',
+  //   header: 'User',
+  //   cell: ({ row }) => h(UiDataCell, {}, {
+  //     leftContent: () => h(UserMedia, { user: row.original.party.user }),
+  //     default: () => h(UButton, {
+  //       variant: 'subtle',
+  //       icon: 'crpg:chest',
+  //       onClick: () => emit('showItems', row.original.party.id),
+  //     }),
+  //   }),
   // },
   {
     accessorFn: row => row.party.troops,
@@ -75,6 +75,7 @@ const columns = computed<TableColumn<BattleBattleFighterApplication>[]>(() => [
       sorted: column.getIsSorted(),
       onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
     }),
+    cell: ({ row }) => h(UiDataMedia, { label: n(row.original.party!.troops), icon: 'crpg:member' }),
   },
   {
     accessorFn: row => row.party.user.region,
@@ -112,6 +113,7 @@ const columns = computed<TableColumn<BattleBattleFighterApplication>[]>(() => [
       })
     },
     cell: ({ row }) => row.original.party.user.region,
+
     filterFn: 'arrIncludesSome',
   },
   {
@@ -149,7 +151,7 @@ const columns = computed<TableColumn<BattleBattleFighterApplication>[]>(() => [
       })
     },
     filterFn: 'arrIncludesSome',
-    cell: ({ row }) => h(BattleMercenaryApplicationStatusBadge, { applicationStatus: row.original.status }),
+    cell: ({ row }) => h(AppApplicationStatusBadge, { status: row.original.status }),
   },
   {
     id: 'actions',
@@ -214,7 +216,7 @@ const sorting = ref<SortingState>([])
         td: 'empty:p-0', // helps with the colspaned row added for expand slot
       }"
     >
-      <!-- <template #user_id-cell="{ row }">
+      <template #party_id-cell="{ row }">
         <div class="flex items-center gap-2">
           <UButton
             v-if="row.getIsGrouped() && row.getLeafRows().length > 1"
@@ -226,9 +228,14 @@ const sorting = ref<SortingState>([])
             }"
             @click="row.toggleExpanded()"
           />
-          <UserMedia v-if="row.groupingColumnId === 'user_id'" :user="row.original.party" />
+          <UiDataCell v-if="row.groupingColumnId === 'party_id'">
+            <template #leftContent>
+              <UserMedia :user="row.original.party.user" />
+            </template>
+            <UButton variant="subtle" icon="crpg:chest" @click="$emit('showItems', row.original.party.id)" />
+          </UiDataCell>
         </div>
-      </template> -->
+      </template>
       <template #empty>
         <UiResultNotFound />
       </template>

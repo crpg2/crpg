@@ -109,7 +109,7 @@ const { characters } = useCharacters()
 
         <UiDataContent v-if="sideInfo.mercenaryApplication" :caption="$t('application.statusTitle')" layout="reverse" size="lg">
           <div>
-            <BattleMercenaryApplicationStatusBadge :application-status="sideInfo.mercenaryApplication.status" />
+            <BattleMercenaryApplicationStatusBadge :status="sideInfo.mercenaryApplication.status" />
           </div>
         </UiDataContent>
       </div>

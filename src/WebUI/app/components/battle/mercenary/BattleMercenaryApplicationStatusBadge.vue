@@ -2,12 +2,12 @@
 import type { BattleMercenaryApplicationStatus } from '~/models/strategus/battle'
 
 defineProps<{
-  applicationStatus: BattleMercenaryApplicationStatus
+  status: BattleMercenaryApplicationStatus
 }>()
 </script>
 
 <template>
   <UTooltip :text="$t('strategus.battle.mercenaryApplication.statusTitle')">
-    <AppApplicationStatusBadge :status="applicationStatus" icon="crpg:mercenary" />
+    <AppApplicationStatusBadge :status icon="crpg:mercenary" />
   </UTooltip>
 </template>

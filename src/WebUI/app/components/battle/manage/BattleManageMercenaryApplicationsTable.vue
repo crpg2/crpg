@@ -170,7 +170,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
       })
     },
     filterFn: 'arrIncludesSome',
-    cell: ({ row }) => h(BattleMercenaryApplicationStatusBadge, { applicationStatus: row.original.status }),
+    cell: ({ row }) => h(BattleMercenaryApplicationStatusBadge, { status: row.original.status }),
   },
   {
     id: 'actions',

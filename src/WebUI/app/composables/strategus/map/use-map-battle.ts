@@ -1,7 +1,8 @@
 import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
 
-import type { Battle } from '~/models/strategus/battle'
+import type { Battle, BattleBattleFighterApplication, BattleFighter } from '~/models/strategus/battle'
 
+import { useBattleTitle } from '~/composables/strategus/battle/use-battle'
 import { useUser } from '~/composables/user/use-user'
 import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_SIDE } from '~/models/strategus/battle'
 import { MAP_BATTLE_QUERY_KEYS } from '~/queries'
@@ -13,13 +14,11 @@ import {
   getBattleItems,
 } from '~/services/strategus/battle-service'
 
-import { useBattleTitle } from '../battle/use-battle'
-
 export const useMapBattle = () => {
   const route = useRoute('strategus-battle-id')
   const _key = MAP_BATTLE_QUERY_KEYS.byId(Number(route.params.id))
 
-  const battle = getAsyncData<Battle>(_key)
+  const battle = getAsyncData<Battle>(_key) // TODO: Battle -> MapDetailBattle
   const refreshBattle = refreshAsyncData(_key)
 
   const battleTitle = useBattleTitle(battle)
@@ -35,19 +34,9 @@ export const useMapBattle = () => {
 export const useBattleFighterApplications = (immediate = true) => {
   const { battle } = useMapBattle()
 
-  const {
-    state: fighterApplications,
-    executeImmediate: loadBattleFighterApplications,
-    isLoading: loadingBattleFighterApplications,
-  } = useAsyncState(
-    () => getBattleFighterApplications(battle.value.id, [
-      BATTLE_FIGHTER_APPLICATION_STATUS.Pending,
-      BATTLE_MERCENARY_APPLICATION_STATUS.Accepted,
-      BATTLE_MERCENARY_APPLICATION_STATUS.Declined,
-    ]),
-    [],
-    { immediate, resetOnExecute: false },
-  )
+  const _key = MAP_BATTLE_QUERY_KEYS.figterApplicationsById(battle.value.id)
+  const fighterApplications = getAsyncData<BattleBattleFighterApplication[]>(_key) // TODO: Battle -> MapDetailBattle
+  const refreshFighterApplications = refreshAsyncData(_key)
 
   const fighterApplicationsCount = computed(() => fighterApplications.value.length)
 
@@ -56,9 +45,8 @@ export const useBattleFighterApplications = (immediate = true) => {
   return {
     fighterApplications,
     fighterApplicationsCount,
-    loadBattleFighterApplications,
+    refreshFighterApplications,
     respondToBattleFighterApplication,
-    loadingBattleFighterApplications,
   }
 }
 
@@ -92,8 +80,6 @@ export const useBattleFighters = (immediate = true) => {
       loadBattleFighters(),
       refreshBattle(),
     ])
-  }, {
-    successMessage: 'TODO:',
   })
 
   return {

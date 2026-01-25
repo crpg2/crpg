@@ -102,15 +102,9 @@ const cardStyle = computed(() => {
     </template>
 
     <BattleSideViewGroup
-      :battle
-      :can-apply="{
-        Attacker: null,
-        Defender: null,
-      }"
-      :can-manage="{
-        Attacker: false,
-        Defender: false,
-      }"
+      :battle-type="battle.type"
+      :attacker="battle.attacker"
+      :defender="battle.defender"
     />
 
     <template #footer>

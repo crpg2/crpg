@@ -58,8 +58,7 @@ public record RespondToBattleFighterApplicationCommand : IMediatorRequest<Battle
 
             if (partyFighter.Side != application.Side)
             {
-                return new(CommonErrors.PartiesNotOnTheSameSide(partyFighter.Id, application.PartyId,
-                    application.BattleId));
+                return new(CommonErrors.PartiesNotOnTheSameSide(partyFighter.Id, application.PartyId, application.BattleId));
             }
 
             if (application.Battle.Phase != BattlePhase.Preparation)
@@ -72,6 +71,7 @@ public record RespondToBattleFighterApplicationCommand : IMediatorRequest<Battle
                 return new(CommonErrors.ApplicationClosed(application.Id));
             }
 
+            // TODO: FIXME: notification
             if (req.Accept)
             {
                 application.Status = BattleFighterApplicationStatus.Accepted;

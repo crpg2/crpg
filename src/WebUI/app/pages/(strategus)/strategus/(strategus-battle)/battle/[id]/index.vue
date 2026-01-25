@@ -2,13 +2,14 @@
 import type { BattleFighter, BattleSide } from '~/models/strategus/battle'
 
 import { useBattleFighters } from '~/composables/strategus/map/use-map-battle'
+import { useParty } from '~/composables/strategus/use-party'
 import { BATTLE_SIDE } from '~/models/strategus/battle'
-// import { usePartyState } from '~/composables/strategus/use-party'
 
 const toast = useToast()
 
-// const {} = usePartyState
+const { updateParty } = useParty()
 
+// TODO: to parent?
 const {
   battleFighterAttackers,
   battleFighterDefenders,
@@ -18,6 +19,11 @@ const {
   removeBattleFigter,
   removingBattleFigter,
 } = useBattleFighters()
+
+const onLeaveBattle = async (fighterId: number) => {
+  await removeBattleFigter(fighterId)
+  await updateParty()
+}
 
 const checkCanKick = (side: BattleSide, fighter: BattleFighter) => {
   // other side or yourself
@@ -50,9 +56,8 @@ const checkCanLeave = (side: BattleSide, fighter: BattleFighter) => {
         :loading="loadingBattleFighters"
         :can-kick-by-fighter="(fighter) => checkCanKick(side, fighter)"
         :can-leave-by-fighter="(fighter) => checkCanLeave(side, fighter)"
-        :show-actions="side === selfBattleFighter?.side"
         @kick="removeBattleFigter"
-        @leave="removeBattleFigter"
+        @leave="onLeaveBattle"
       />
     </div>
   </div>

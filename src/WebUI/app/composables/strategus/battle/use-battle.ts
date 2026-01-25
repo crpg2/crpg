@@ -5,7 +5,7 @@ import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
 import type { Battle, BattleMercenaryApplicationCreation, BattleSide } from '~/models/strategus/battle'
 
 import { useUser } from '~/composables/user/use-user'
-import { BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_PARTICIPANT_TYPE, BATTLE_SIDE } from '~/models/strategus/battle'
+import { BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_PARTICIPANT_TYPE, BATTLE_SIDE, BATTLE_TYPE } from '~/models/strategus/battle'
 import { BATTLE_QUERY_KEYS } from '~/queries'
 import {
   removeBattleParticipant as _removeBattleParticipant,
@@ -18,15 +18,15 @@ import {
 } from '~/services/strategus/battle-service'
 
 export const useBattleTitle = (battle: MaybeRefOrGetter<Battle>) => {
-  const { t } = useI18n()
+  const { $i18n } = useNuxtApp() // I didn't use i18n because it works outside of setup, for example in route middleware
 
-  if (toValue(battle).type === 'Siege') {
-    return t('strategus.battle.titleByType.Siege', { settlement: toValue(battle).nearestSettlement?.name ?? 'TODO:' })
+  if (toValue(battle).type === BATTLE_TYPE.Siege) {
+    return $i18n.t('strategus.battle.titleByType.Siege', { settlement: toValue(battle).nearestSettlement?.name ?? 'TODO:' })
   }
 
-  return t('strategus.battle.titleByType.Battle', {
+  return $i18n.t('strategus.battle.titleByType.Battle', {
     nearestSettlement: toValue(battle).nearestSettlement?.name ?? 'TODO:',
-    terrain: t(`strategus.terrainType.${toValue(battle).terrain.type}`).toLowerCase(),
+    terrain: $i18n.t(`strategus.terrainType.${toValue(battle).terrain.type}`).toLowerCase(),
   })
 }
 
