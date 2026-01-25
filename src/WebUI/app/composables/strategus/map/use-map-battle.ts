@@ -6,6 +6,7 @@ import { useUser } from '~/composables/user/use-user'
 import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_SIDE } from '~/models/strategus/battle'
 import { MAP_BATTLE_QUERY_KEYS } from '~/queries'
 import {
+  removeBattleFighter as _removeBattleFighter,
   respondToBattleFighterApplication as _respondToBattleFighterApplication,
   getBattleFighterApplications,
   getBattleFighters,
@@ -62,7 +63,7 @@ export const useBattleFighterApplications = (immediate = true) => {
 }
 
 export const useBattleFighters = (immediate = true) => {
-  const { battle } = useMapBattle()
+  const { battle, refreshBattle } = useMapBattle()
   const { user } = useUser()
 
   const {
@@ -77,11 +78,23 @@ export const useBattleFighters = (immediate = true) => {
 
   const battleFightersCount = computed(() => battleFighters.value.length)
 
-  const selfFighter = computed(() => battleFighters.value.find(f => f.party?.user.id === user.value!.id) ?? null)
+  const selfBattleFighter = computed(() => battleFighters.value.find(f => f.party?.user.id === user.value!.id) ?? null)
+
+  const isSelfBattleFighterCommander = computed(() => selfBattleFighter.value?.commander)
 
   const battleFighterAttackers = computed(() => battleFighters.value.filter(f => f.side === BATTLE_SIDE.Attacker))
 
   const battleFighterDefenders = computed(() => battleFighters.value.filter(f => f.side === BATTLE_SIDE.Defender))
+
+  const [removeBattleFigter, removingBattleFigter] = useAsyncCallback(async (fighterId: number) => {
+    await _removeBattleFighter(battle.value.id, fighterId)
+    await Promise.all([
+      loadBattleFighters(),
+      refreshBattle(),
+    ])
+  }, {
+    successMessage: 'TODO:',
+  })
 
   return {
     battleFighters,
@@ -90,7 +103,10 @@ export const useBattleFighters = (immediate = true) => {
     battleFightersCount,
     loadBattleFighters,
     loadingBattleFighters,
-    selfFighter,
+    selfBattleFighter,
+    isSelfBattleFighterCommander,
+    removeBattleFigter,
+    removingBattleFigter,
   }
 }
 

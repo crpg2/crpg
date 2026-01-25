@@ -67,13 +67,13 @@ const navigationItems = computed<NavigationMenuItem[]>(() => [
     icon: 'crpg:member',
   },
   {
-    label: 'Applications',
-    to: { name: 'strategus-battle-id-applications', params: { id: route.params.id } },
-  },
-  {
     label: 'Inventory',
     to: { name: 'strategus-battle-id-inventory', params: { id: route.params.id } },
     icon: 'crpg:chest',
+  },
+  {
+    label: 'Applications',
+    to: { name: 'strategus-battle-id-applications', params: { id: route.params.id } },
   },
 ])
 </script>
@@ -81,9 +81,7 @@ const navigationItems = computed<NavigationMenuItem[]>(() => [
 <template>
   <MapSidePage class="w-4xl">
     <template #header>
-      <UiTextView variant="h2" tag="h1" class="text-center">
-        {{ battleTitle }}
-      </UiTextView>
+      <UiHeading variant="h2" tag="h1" :title="battleTitle" />
     </template>
 
     <div class="space-y-4">

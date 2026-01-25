@@ -1694,6 +1694,39 @@ export type PostBattlesByBattleIdFightersResponses = {
 
 export type PostBattlesByBattleIdFightersResponse = PostBattlesByBattleIdFightersResponses[keyof PostBattlesByBattleIdFightersResponses];
 
+export type DeleteBattlesByBattleIdFightersByFighterIdData = {
+    body?: never;
+    path: {
+        /**
+         * Battle id.
+         */
+        battleId: number;
+        fighterId: number;
+    };
+    query?: never;
+    url: '/Battles/{battleId}/fighters/{fighterId}';
+};
+
+export type DeleteBattlesByBattleIdFightersByFighterIdErrors = {
+    /**
+     * Bad Request.
+     */
+    400: unknown;
+};
+
+export type DeleteBattlesByBattleIdFightersByFighterIdResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+    /**
+     * Removed.
+     */
+    204: void;
+};
+
+export type DeleteBattlesByBattleIdFightersByFighterIdResponse = DeleteBattlesByBattleIdFightersByFighterIdResponses[keyof DeleteBattlesByBattleIdFightersByFighterIdResponses];
+
 export type GetBattlesByBattleIdFighterApplicationsData = {
     body?: never;
     path: {

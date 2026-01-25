@@ -4,12 +4,12 @@
 <template>
   <div>
     <UCard
-      variant="soft"
+      variant="subtle"
       :ui="{
         header: 'pt-6 pb-3',
         footer: 'pb-6 pt-3',
         body: 'flex-1 overflow-x-hidden overflow-y-auto py-3',
-        root: 'bg-elevated/80 h-full backdrop-blur-sm flex flex-col divide-muted',
+        root: 'ring-2 ring-accented bg-elevated/90 h-full backdrop-blur-md flex flex-col divide-muted',
       }"
     >
       <template #header>

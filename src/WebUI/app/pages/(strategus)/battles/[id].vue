@@ -100,6 +100,7 @@ const openBattleAsMercenaryDialog = (side: BattleSide) => {
       await removeBattleApplication(side)
       close()
     },
+    // TODO: FIXME: перенести в таблицу
     async onLeaveFromBattle() {
       if (!selfBattleParticipant.value) {
         return

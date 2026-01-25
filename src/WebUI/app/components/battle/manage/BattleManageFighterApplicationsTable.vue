@@ -3,9 +3,9 @@ import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState, GroupingState, SortingState, VisibilityState } from '@tanstack/vue-table'
 
 import { getFacetedRowModel, getFacetedUniqueValues, getGroupedRowModel, getPaginationRowModel } from '@tanstack/vue-table'
-import { AppCoin, BattleMercenaryApplicationStatusBadge, UButton, UiCollapsibleText, UiDataCell, UiDataContent, UiGridColumnHeader, UiGridColumnHeaderLabel, UiTooltipContent, UserMedia, UTooltip } from '#components'
+import { BattleMercenaryApplicationStatusBadge, UButton, UiDataCell, UiGridColumnHeader, UiGridColumnHeaderLabel, UserMedia } from '#components'
 
-import type { BattleBattleFighterApplication, BattleFighter, BattleMercenaryApplication } from '~/models/strategus/battle'
+import type { BattleBattleFighterApplication } from '~/models/strategus/battle'
 
 import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/strategus/battle'
 
@@ -19,7 +19,7 @@ const emit = defineEmits<{
   showItems: [number]
 }>()
 
-const { t, d } = useI18n()
+const { t } = useI18n()
 
 const table = useTemplateRef('table')
 const { getInitialPaginationState, pagination } = usePagination()
@@ -136,7 +136,7 @@ const columns = computed<TableColumn<BattleBattleFighterApplication>[]>(() => [
             },
             'items': [...column.getFacetedUniqueValues()].map<SelectItem>(([status, count]) => ({
               value: status,
-              label: `${t(`strategus.battle.mercenaryApplication.status.${status}`)} (${count})`,
+              label: `${t(`application.status.${status}`)} (${count})`,
             })),
             'modelValue': column.getFilterValue(),
             'onUpdate:modelValue': column.setFilterValue,

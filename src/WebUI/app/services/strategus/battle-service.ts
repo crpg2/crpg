@@ -1,5 +1,6 @@
 import {
   getBattles as _getBattles,
+  deleteBattlesByBattleIdFightersByFighterId,
   deleteBattlesByBattleIdMercenaryApplications,
   deleteBattlesByBattleIdParticipantsByParticipantId,
   getBattlesByBattleId,
@@ -53,6 +54,11 @@ export const updateBattleSideBriefing = async (
 export const getBattleFighters = async (
   battleId: number,
 ): Promise<BattleFighter[]> => (await getBattlesByBattleIdFighters({ path: { battleId } })).data!
+
+export const removeBattleFighter = (
+  battleId: number,
+  fighterId: number,
+) => deleteBattlesByBattleIdFightersByFighterId({ path: { battleId, fighterId } })
 
 export const getBattleFighterApplications = async (
   battleId: number,

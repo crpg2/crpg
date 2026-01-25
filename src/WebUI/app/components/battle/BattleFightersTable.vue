@@ -1,40 +1,33 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
-import type { SortingState, VisibilityState } from '@tanstack/vue-table'
+import type { VisibilityState } from '@tanstack/vue-table'
 
-import { AppConfirmActionPopover, UButton, UiGridColumnHeader, UiTextView, UserMedia } from '#components'
+import { AppConfirmActionPopover, UButton, UIcon, UiDataCell, UiDataContent, UserMedia, UTooltip } from '#components'
 
 import type { BattleFighter } from '~/models/strategus/battle'
 
 import { useUser } from '~/composables/user/use-user'
 
-const { fighters, canManage, canManageByFighter } = defineProps<{
+const { fighters, showActions, canKickByFighter, canLeaveByFighter } = defineProps<{
   fighters: BattleFighter[]
   loading: boolean
-  canManage: boolean
-  canManageByFighter: (fighter: BattleFighter) => boolean
+  showActions: boolean
+  canKickByFighter: (fighter: BattleFighter) => boolean
+  canLeaveByFighter: (fighter: BattleFighter) => boolean
 }>()
 
 const emit = defineEmits<{
-  kick: [participantId: number]
-  // showMercinaryApplication: [mercinaryApplicationId: number]
+  kick: [fighterId: number]
+  leave: [fighterId: number]
 }>()
 
+const { n } = useI18n()
 const { user } = useUser()
 
-const table = useTemplateRef('table')
 const columns = computed<TableColumn<BattleFighter>[]>(() => [
-
   {
     accessorKey: 'user',
-    header: 'Fighter',
-    // header: () => h('div', { class: 'inline-flex gap-1.5' }, [
-    //   h('span', null, 'Participants'),
-    //   h('span', null, '·'),
-    //   h(UiTextView, { variant: 'caption' }, {
-    //     default: () => `${participants.length}/${totalParticipantSlots}`,
-    //   }),
-    // ]),
+    header: '',
     cell: ({ row }) => h(UserMedia, {
       user: row.original.party!.user,
       isSelf: row.original.party?.user.id === user.value!.id,
@@ -43,45 +36,43 @@ const columns = computed<TableColumn<BattleFighter>[]>(() => [
   {
     accessorFn: row => row.party!.troops,
     id: 'party_troops',
-    header: ({ column }) => h(UiGridColumnHeader, {
-      label: 'Troops',
-      withSort: true,
-      sorted: column.getIsSorted(),
-      onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
-    }),
-  },
-  {
     header: '',
-    accessorFn: row => row.party!.user.region,
-    id: 'region',
+    cell: ({ row }) => h(UTooltip, { text: 'TODO: troops/participantSlots' }, () =>
+      h(UiDataCell, null, {
+        leftContent: () => h(UIcon, { name: 'crpg:member', class: 'size-5' }),
+        default: () => h(UiDataContent, {
+          label: n(row.original.party!.troops * 100),
+          caption: n(row.original.participantSlots),
+        }),
+      })),
   },
   {
     id: 'actions',
     header: '',
     cell: ({ row }) => {
-      if (!canManageByFighter(row.original)) {
-        return null
-      }
-
       return h('div', { class: 'flex gap-1.5 justify-end' }, [
-        // ...(row.original.type === BATTLE_PARTICIPANT_TYPE.Mercenary && row.original.mercenaryApplicationId
-        //   ? [
-        //       h(UButton, {
-        //         variant: 'subtle',
-        //         icon: 'crpg:mercenary',
-        //         onClick: () => emit('showMercinaryApplication', row.original.mercenaryApplicationId!),
-        //       }),
-        //     ]
-        //   : []),
-        h(AppConfirmActionPopover, {
-          onConfirm: () => emit('kick', row.original.id),
-        }, {
-          default: () => h(UButton, {
-            variant: 'subtle',
-            color: 'error',
-            icon: 'crpg:close',
-          }),
-        }),
+        ...(canKickByFighter(row.original)
+          ? [
+              h(AppConfirmActionPopover, { onConfirm: () => emit('kick', row.original.id) }, () =>
+                h(UTooltip, { text: 'TODO: kick' }, () =>
+                  h(UButton, {
+                    variant: 'ghost',
+                    color: 'error',
+                    icon: 'crpg:kick',
+                  }))),
+            ]
+          : []),
+        ...(canLeaveByFighter(row.original)
+          ? [
+              h(AppConfirmActionPopover, { onConfirm: () => emit('leave', row.original.id) }, () =>
+                h(UTooltip, { text: 'TODO: retreat' }, () =>
+                  h(UButton, {
+                    variant: 'ghost',
+                    color: 'error',
+                    icon: 'crpg:retreat',
+                  }))),
+            ]
+          : []),
       ])
     },
   },
@@ -89,31 +80,27 @@ const columns = computed<TableColumn<BattleFighter>[]>(() => [
 
 const columnVisibility = computed<VisibilityState>(() => {
   return {
-    // type: false,
-    ...(!canManage && {
+    ...(!showActions && {
       actions: false,
     }),
   }
 })
-
-const sorting = ref<SortingState>([
-  // { id: 'type', desc: true },
-])
 </script>
 
 <template>
   <div>
     <UTable
-      ref="table"
       v-model:column-visibility="columnVisibility"
-      v-model:sorting="sorting"
-      class="relative rounded-md border border-muted"
+      class="rounded-md border border-muted"
       :loading
       :data="fighters"
       :columns
+      :ui="{
+        thead: 'hidden',
+      }"
     >
       <template #empty>
-        <UiResultNotFound message="TODO:" />
+        <UiResultNotFound message="TODO: loading" />
       </template>
     </UTable>
   </div>

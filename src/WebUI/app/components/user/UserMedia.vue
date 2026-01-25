@@ -47,7 +47,6 @@ const clanSize = computed(() => ({
         :size="avatarSize"
         :alt="user.name"
         class="squircle rounded-none"
-        :class="[{ 'ring-2 ring-success': isSelf }]"
       />
     </template>
 
@@ -71,13 +70,10 @@ const clanSize = computed(() => ({
         >
           <div
             class="max-w-32 truncate leading-none"
-            :class="labelClasses()"
+            :class="[labelClasses(), { 'text-primary': isSelf }]"
             :title="user.name"
           >
             {{ user.name }}
-            <template v-if="isSelf">
-              ({{ $t('you') }})
-            </template>
           </div>
         </template>
       </UiDataMedia>

@@ -226,6 +226,14 @@ error:
       repeat: Whether you are able to consistently reproduce this error
   goToHomePage: Go to home page
 
+application:
+  title: Application
+  statusTitle: Status
+  status:
+    Pending: Pending
+    Accepted: Accepted
+    Declined: Declined
+
 form:
   validate:
     invalid: The form contains errors
@@ -1659,11 +1667,6 @@ strategus:
     mercenaryApplication:
       title: Mercenary application
       statusTitle: Mercenary application status
-      statusTitleShort: Status
-      status:
-        Pending: Pending
-        Accepted: Accepted
-        Declined: Declined
       form:
         character:
           label: Character

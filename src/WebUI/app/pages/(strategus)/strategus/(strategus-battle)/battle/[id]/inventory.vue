@@ -83,7 +83,7 @@ const sortingConfig: SortingConfig = {
 
 const sortingModel = ref<string>('rank_desc')
 
-const { closeItemDetail, toggleItemDetail } = useItemDetail()
+const { toggleItemDetail } = useItemDetail()
 
 const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsResult: GroupedCompareItemsResult[]) => {
   const partyItem = items.value.find(i => i.item.id === opendeItem.id)
@@ -100,47 +100,44 @@ const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsR
 </script>
 
 <template>
-  <div class="mx-auto max-w-2xl">
-    <ItemGrid
-      v-if="Boolean(items.length)"
-      v-model:sorting="sortingModel"
-      :items
-      :sorting-config="sortingConfig"
-    >
-      <template #item="battleItem">
-        <ItemCard
-          class="cursor-pointer"
-          :item="battleItem.item"
-          @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, battleItem.item.id)"
-        >
-          <template #badges-bottom-right>
-            <UPopover>
-              <UBadge :label="$n(battleItem.count)" variant="subtle" />
+  <ItemGrid
+    v-model:sorting="sortingModel"
+    :sorting-config="sortingConfig"
+    :items
+  >
+    <template #item="battleItem">
+      <ItemCard
+        class="cursor-pointer"
+        :item="battleItem.item"
+        @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, battleItem.item.id)"
+      >
+        <template #badges-bottom-right>
+          <UPopover>
+            <UBadge :label="$n(battleItem.count)" variant="subtle" @click.stop />
 
-              <template #content>
-                <div class="flex flex-col gap-3.5">
-                  <UiDataCell v-for="(fighter, fighterId) in battleItem.countByFighter" :key="fighterId">
-                    <template v-if="fighter.party" #leftContent>
-                      <UserMedia :user="fighter.party.user" :is-self="fighter.party.user.id === user!.id" />
-                    </template>
-                    <!-- hack ;) -->
-                    <div />
-                    <template #rightContent>
-                      <UiTextView variant="p" class="font-bold">
-                        {{ $n(fighter.count) }}
-                      </UiTextView>
-                    </template>
-                  </UiDataCell>
-                </div>
-              </template>
-            </UPopover>
-          </template>
-        </ItemCard>
-      </template>
+            <template #content>
+              <div class="flex flex-col gap-3.5">
+                <UiDataCell v-for="(fighter, fighterId) in battleItem.countByFighter" :key="fighterId">
+                  <template v-if="fighter.party" #leftContent>
+                    <UserMedia :user="fighter.party.user" :is-self="fighter.party.user.id === user!.id" />
+                  </template>
+                  <!-- hack ;) -->
+                  <div />
+                  <template #rightContent>
+                    <UiTextView variant="p" class="font-bold">
+                      {{ $n(fighter.count) }}
+                    </UiTextView>
+                  </template>
+                </UiDataCell>
+              </div>
+            </template>
+          </UPopover>
+        </template>
+      </ItemCard>
+    </template>
 
-      <template #item-detail="{ item, compareItemsResult }">
-        <component :is="renderItemDetail(item, compareItemsResult)" />
-      </template>
-    </ItemGrid>
-  </div>
+    <template #item-detail="{ item, compareItemsResult }">
+      <component :is="renderItemDetail(item, compareItemsResult)" />
+    </template>
+  </ItemGrid>
 </template>

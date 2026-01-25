@@ -163,10 +163,10 @@ internal static class CommonErrors
         Detail = $"Fighter with id '{fighterId} was not found in the battle with id '{battleId}'",
     };
 
-    public static Error BattleParticipantNotFound(int battleParticipantId) => new(ErrorType.NotFound, ErrorCode.BattleParticipantNotFound)
+    public static Error BattleParticipantNotFound(int battleParticipantId, int battleId) => new(ErrorType.NotFound, ErrorCode.BattleParticipantNotFound)
     {
         Title = "Battle participant was not found",
-        Detail = $"Battle participant with id '{battleParticipantId}' was not found",
+        Detail = $"Battle participant with id '{battleParticipantId}' was not found in the battle with id '{battleId}'",
     };
 
     public static Error PartyFighter(int partyId, int battleId) => new(ErrorType.Validation, ErrorCode.PartyFighter)

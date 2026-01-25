@@ -157,7 +157,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
             },
             'items': [...column.getFacetedUniqueValues()].map<SelectItem>(([status, count]) => ({
               value: status,
-              label: `${t(`strategus.battle.mercenaryApplication.status.${status}`)} (${count})`,
+              label: `${t(`application.status.${status}`)} (${count})`,
             })),
             'modelValue': column.getFilterValue(),
             'onUpdate:modelValue': column.setFilterValue,

@@ -38,12 +38,10 @@ function getFighterApplicationByPartyId(partyId: number) {
 </script>
 
 <template>
-  <div>
-    <BattleManageFighterApplicationsTable
-      :applications="fighterApplications"
-      :loading="loadingBattleFighterApplications || responding"
-      @respond="onRespond"
-      @show-items="(partyId) => partyFighterItemDrawer.open({ party: getFighterApplicationByPartyId(partyId)?.party })"
-    />
-  </div>
+  <BattleManageFighterApplicationsTable
+    :applications="fighterApplications"
+    :loading="loadingBattleFighterApplications || responding"
+    @respond="onRespond"
+    @show-items="(partyId) => partyFighterItemDrawer.open({ party: getFighterApplicationByPartyId(partyId)?.party! })"
+  />
 </template>
