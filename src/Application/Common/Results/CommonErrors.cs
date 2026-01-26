@@ -225,6 +225,13 @@ internal static class CommonErrors
             Detail = $"Parties with ids '{partyId1}' and '{partyId2}' are not in the side in the battle with id '{battleId}'",
         };
 
+    public static Error PendingBattleFighterApplicationNotExist(int partyId, int battleId, BattleSide side) =>
+        new(ErrorType.Validation, ErrorCode.PendingBattleFighterApplicationNotExist)
+        {
+            Title = "Party has no pending application to fight for the side",
+            Detail = $"Party with id '{partyId}' has no pending application to battle '{battleId}' for the side '{side}'",
+        };
+
     public static Error ItemAlreadyOwned(string itemId) => new(ErrorType.Validation, ErrorCode.ItemAlreadyOwned)
     {
         Title = "Item is already owned",

@@ -3,7 +3,7 @@ import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
 import { usePartyState } from '~/composables/strategus/use-party'
 import { useSettlement } from '~/composables/strategus/use-settlements'
-import { IN_SETTLEMENT_PARTY_STATUSES } from '~/services/strategus/party-service'
+import { shouldPartyBeInSettlement } from '~/services/strategus/party-service'
 
 definePageMeta({
   middleware: [
@@ -11,7 +11,7 @@ definePageMeta({
       const { partyState } = usePartyState()
       const { party } = partyState.value
 
-      if (!party.targetedSettlement && !IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)) {
+      if (!shouldPartyBeInSettlement(party)) {
         return navigateTo({ name: 'strategus' })
       }
 

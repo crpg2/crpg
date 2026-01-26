@@ -24,27 +24,24 @@ public record GetBattleItemsQuery : IMediatorRequest<IList<BattleFighterInventor
 
         public async Task<Result<IList<BattleFighterInventoryViewModel>>> Handle(GetBattleItemsQuery req, CancellationToken cancellationToken)
         {
-            var battle = await _db.Battles
-                .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
-
+            var battle = await _db.Battles.FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {
                 return new(CommonErrors.BattleNotFound(req.BattleId));
             }
 
-            BattleSide? fightersSide = await _db.BattleFighters
+            BattleSide? battleSide = await _db.BattleFighters
                 .Where(f => f.BattleId == req.BattleId && f.PartyId == req.PartyId)
                 .Select(f => (BattleSide?)f.Side)
                 .FirstOrDefaultAsync(cancellationToken);
-
-            if (fightersSide == null)
+            if (battleSide == null)
             {
                 return new(CommonErrors.PartyNotAFighter(req.PartyId, req.BattleId));
             }
 
             var fighters = await _db.BattleFighters
                 .AsSplitQuery()
-                .Where(f => f.BattleId == req.BattleId && f.Side == fightersSide)
+                .Where(f => f.BattleId == req.BattleId && f.Side == battleSide)
                 .Include(f => f.Party)
                     .ThenInclude(p => p!.Items)
                         .ThenInclude(i => i.Item)
@@ -56,7 +53,6 @@ public record GetBattleItemsQuery : IMediatorRequest<IList<BattleFighterInventor
                 .Include(f => f.Settlement)
                     .ThenInclude(s => s!.Owner!.User!.ClanMembership!.Clan)
                 .Include(f => f.Settlement)
-
                 .ToListAsync(cancellationToken);
 
             var result = fighters.Select(f => new BattleFighterInventoryViewModel

@@ -8,7 +8,7 @@ import type { Party, PartyCommon, StrategusUpdate, UpdatePartyStatus } from '~/m
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { PARTY_STATUS } from '~/models/strategus/party'
 import { PARTY_QUERY_KEYS } from '~/queries'
-import { getSelfUpdate, IN_SETTLEMENT_PARTY_STATUSES, updatePartyStatus } from '~/services/strategus/party-service'
+import { getSelfUpdate, IN_BATTLE_PARTY_STATUSES, IN_SETTLEMENT_PARTY_STATUSES, shouldPartyBeInBattle, shouldPartyBeInSettlement, updatePartyStatus } from '~/services/strategus/party-service'
 
 // const INTERVAL = 1000 * 60 ; // 1 min
 const INTERVAL = 10000 // TODO:
@@ -45,29 +45,28 @@ export const useParty = (
 
     const { party } = partyState.value
 
-    if (party.targetedSettlement
-      && IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)
-      && !route.meta.groups?.includes('strategussettlement')
+    const _shouldPartyBeInSettlement = shouldPartyBeInSettlement(party)
+    const _shouldPartyBeInBattle = shouldPartyBeInBattle(party)
+
+    if (_shouldPartyBeInSettlement && !route.meta.groups?.includes('strategussettlement')
     ) {
       await navigateTo({
         name: 'strategus-settlement-id',
-        params: { id: party.targetedSettlement.id },
+        params: { id: party.targetedSettlement!.id },
       })
     }
 
-    if (party.targetedBattle
-      && party.status === PARTY_STATUS.InBattle
-      && !route.meta.groups?.includes('strategusbattle')
+    if (_shouldPartyBeInBattle && !route.meta.groups?.includes('strategusbattle')
     ) {
       await navigateTo({
         name: 'strategus-battle-id',
-        params: { id: party.targetedBattle.id },
+        params: { id: party.targetedBattle!.id },
       })
     }
 
     // TODO: подумать еще, но вроде ок
     // don't let users go where they shouldn't
-    if ((!party.targetedSettlement && !party.targetedBattle) && route.name !== 'strategus') {
+    if (!_shouldPartyBeInSettlement && !_shouldPartyBeInBattle && route.name !== 'strategus') {
       await navigateTo({ name: 'strategus' })
     }
   }

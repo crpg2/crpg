@@ -798,7 +798,7 @@ export type PartyPublicViewModel = {
     troops: number;
 };
 
-export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'MovingToPoint' | 'FollowingParty' | 'MovingToSettlement' | 'MovingToAttackParty' | 'MovingToAttackSettlement' | 'InBattle' | 'MovingToBattle';
+export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'MovingToPoint' | 'FollowingParty' | 'MovingToSettlement' | 'MovingToAttackParty' | 'MovingToAttackSettlement' | 'InBattle' | 'MovingToBattle' | 'AwaitingBattleJoinDecision';
 
 export type PartyViewModel = {
     id: number;
@@ -847,6 +847,10 @@ export type RefundItemCommand = {
 };
 
 export type Region = 'Eu' | 'Na' | 'As' | 'Oc';
+
+export type RemoveBattleFighterApplicationCommand = {
+    side: BattleSide;
+};
 
 export type RemoveBattleMercenaryApplicationCommand = {
     side: BattleSide;
@@ -1701,6 +1705,9 @@ export type DeleteBattlesByBattleIdFightersByFighterIdData = {
          * Battle id.
          */
         battleId: number;
+        /**
+         * Fighter id.
+         */
         fighterId: number;
     };
     query?: never;
@@ -1726,6 +1733,35 @@ export type DeleteBattlesByBattleIdFightersByFighterIdResponses = {
 };
 
 export type DeleteBattlesByBattleIdFightersByFighterIdResponse = DeleteBattlesByBattleIdFightersByFighterIdResponses[keyof DeleteBattlesByBattleIdFightersByFighterIdResponses];
+
+export type DeleteBattlesByBattleIdFighterApplicationsData = {
+    body?: RemoveBattleFighterApplicationCommand;
+    path: {
+        battleId: number;
+    };
+    query?: never;
+    url: '/Battles/{battleId}/fighter-applications';
+};
+
+export type DeleteBattlesByBattleIdFighterApplicationsErrors = {
+    /**
+     * Bad Request.
+     */
+    400: unknown;
+};
+
+export type DeleteBattlesByBattleIdFighterApplicationsResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+    /**
+     * Removed.
+     */
+    204: void;
+};
+
+export type DeleteBattlesByBattleIdFighterApplicationsResponse = DeleteBattlesByBattleIdFighterApplicationsResponses[keyof DeleteBattlesByBattleIdFighterApplicationsResponses];
 
 export type GetBattlesByBattleIdFighterApplicationsData = {
     body?: never;

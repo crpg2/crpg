@@ -21,7 +21,7 @@ const {
 } = useBattleFighters()
 
 const onLeaveBattle = async (fighterId: number) => {
-  await removeBattleFigter(fighterId)
+  await removeBattleFigter(fighterId, 'leave')
   await updateParty()
 }
 
@@ -56,7 +56,7 @@ const checkCanLeave = (side: BattleSide, fighter: BattleFighter) => {
         :loading="loadingBattleFighters"
         :can-kick-by-fighter="(fighter) => checkCanKick(side, fighter)"
         :can-leave-by-fighter="(fighter) => checkCanLeave(side, fighter)"
-        @kick="removeBattleFigter"
+        @kick="(fighterId) => removeBattleFigter(fighterId, 'kick')"
         @leave="onLeaveBattle"
       />
     </div>

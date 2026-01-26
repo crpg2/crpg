@@ -293,7 +293,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             _db.BattleJoinIntents.RemoveRange(party.BattleJoinIntents);
             party.BattleJoinIntents.Clear();
 
-            party.Status = PartyStatus.InBattle; // TODO: new status: waiting join battle?
+            party.Status = PartyStatus.AwaitingBattleJoinDecision;
             party.Position = party.TargetedBattle.Position;
         }
 

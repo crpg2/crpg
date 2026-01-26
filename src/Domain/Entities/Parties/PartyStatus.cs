@@ -55,4 +55,10 @@ public enum PartyStatus
     /// <see cref="BattleJoinIntent"/> that defines the intended side to join.
     /// </summary>
     MovingToBattle,
+
+    /// <summary>
+    /// Awaiting response to applications to join <see cref="Battle"/> as a <see cref="BattleFighter"/>
+    /// Cannot move (to move, must remove requests). Can be attacked by other <see cref="Party"/> (this is done to prevent abuse mechanics).
+    /// </summary>
+    AwaitingBattleJoinDecision,
 }

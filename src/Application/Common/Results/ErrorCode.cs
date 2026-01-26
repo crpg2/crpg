@@ -51,6 +51,7 @@ public enum ErrorCode
     NotEnoughSkillPoints,
     NotEnoughWeaponProficiencyPoints,
     PartiesNotOnTheSameSide,
+    PendingBattleFighterApplicationNotExist,
     PartyFighter,
     PartyInBattle,
     PartyNotAFighter,

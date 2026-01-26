@@ -20,6 +20,7 @@ export const PARTY_STATUS = {
   MovingToAttackParty: 'MovingToAttackParty',
   MovingToAttackSettlement: 'MovingToAttackSettlement',
   MovingToBattle: 'MovingToBattle',
+  AwaitingBattleJoinDecision: 'AwaitingBattleJoinDecision',
   InBattle: 'InBattle',
 } as const satisfies Record<_PartyStatus, _PartyStatus>
 

@@ -2,26 +2,24 @@
 import type { NavigationMenuItem } from '@nuxt/ui'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
-import { AppApplicationStatusBadge, BattleFighterApplicationStatusBadge, UTooltip } from '#components'
+import { BattleFighterApplicationStatusBadge } from '#components'
 
 import type { BattleSide } from '~/models/strategus/battle'
 
-import { useBattleFighterApplications, useMapBattle } from '~/composables/strategus/map/use-map-battle'
-import { usePartyState } from '~/composables/strategus/use-party'
+import { useBattleFighterApplications, useBattleFighterApplicationsProvider, useMapBattle, useMapBattleProvider } from '~/composables/strategus/map/use-map-battle'
+import { useParty } from '~/composables/strategus/use-party'
 import { useUser } from '~/composables/user/use-user'
 import { BATTLE_FIGHTER_APPLICATION_STATUS } from '~/models/strategus/battle'
-import { PARTY_STATUS } from '~/models/strategus/party'
-import { MAP_BATTLE_QUERY_KEYS } from '~/queries'
-import { getBattle, getBattleFighterApplications } from '~/services/strategus/battle-service'
+import { shouldPartyBeInBattle } from '~/services/strategus/party-service'
 
 definePageMeta({
   middleware: [
     async (to) => {
-      const { partyState } = usePartyState()
+      const { partyState } = useParty()
 
       const { party } = partyState.value
 
-      if (!party.targetedBattle && party.status !== PARTY_STATUS.InBattle) {
+      if (!shouldPartyBeInBattle(party)) {
         return navigateTo({ name: 'strategus' })
       }
 
@@ -31,33 +29,27 @@ definePageMeta({
         return navigateTo({ name: 'strategus' })
       }
 
-      const { data: battle, error } = await useAsyncData(
-        toCacheKey(MAP_BATTLE_QUERY_KEYS.byId(battleId)),
-        () => getBattle(battleId),
-      )
+      const { execute, data: battle, error } = useMapBattleProvider(battleId)
+      await execute()
 
       if (!battle.value || error.value) {
         return navigateTo({ name: 'strategus' })
       }
 
-      await useAsyncData(
-        toCacheKey(MAP_BATTLE_QUERY_KEYS.figterApplicationsById(battleId)),
-        () => getBattleFighterApplications(battleId, [
-          BATTLE_FIGHTER_APPLICATION_STATUS.Pending,
-          BATTLE_FIGHTER_APPLICATION_STATUS.Accepted,
-          BATTLE_FIGHTER_APPLICATION_STATUS.Declined,
-        ]),
-      )
+      const { execute: l } = useBattleFighterApplicationsProvider()
+      await l()
     },
   ],
 })
 
 const { battle, battleTitle } = useMapBattle()
 
-const { partyState } = usePartyState()
+const { partyState, updateParty } = useParty()
 const { user } = useUser()
 const route = useRoute<'strategus-battle-id'>()
 const { t } = useI18n() // TODO:
+
+const selfFighter = computed(() => partyState.value.party.targetedBattle?.fighters.find(f => f.party?.id === partyState.value.party.id))
 
 const selfCommanderFighter = computed(() => {
   if (battle.value.attacker.commander.party?.id === user.value!.id) {
@@ -69,12 +61,9 @@ const selfCommanderFighter = computed(() => {
   return null
 })
 
-const selfFighter = computed(() => partyState.value.party.targetedBattle?.fighters.find(f => f.party?.id === partyState.value.party.id))
-
-const { fighterApplications } = useBattleFighterApplications()
+const { fighterApplications, removeBattleFighterApplication } = useBattleFighterApplications()
 
 const pendingFigterApplications = computed(() => fighterApplications.value.filter(fa => fa.status === BATTLE_FIGHTER_APPLICATION_STATUS.Pending))
-// const selfPendingFigterApplications = computed(() => pendingFigterApplications.value.filter(fa => fa.party.id === partyState.value.party.id))
 
 const renderBattleFighterApplicationStatusBadge = (side: BattleSide) => {
   if (selfFighter.value?.commander) {
@@ -82,7 +71,19 @@ const renderBattleFighterApplicationStatusBadge = (side: BattleSide) => {
   }
 
   const fighterApplication = fighterApplications.value.find(fa => fa.side === side)
-  return fighterApplication ? h(BattleFighterApplicationStatusBadge, { status: fighterApplication.status }) : null
+
+  if (!fighterApplication
+    /**
+     * There may be a case where an application is accepted, but the fighter was kicked out of the battle, but then re-created the application for the other side.
+     */
+    || (fighterApplication.status === BATTLE_FIGHTER_APPLICATION_STATUS.Accepted && !selfFighter.value)) {
+    return null
+  }
+
+  return h(BattleFighterApplicationStatusBadge, { status: fighterApplication.status, onDelete: async () => {
+    await removeBattleFighterApplication(side)
+    await updateParty()
+  } })
 }
 
 const navigationItems = computed<NavigationMenuItem[]>(() => [

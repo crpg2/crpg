@@ -6,6 +6,7 @@ type ApplicationStatus = 'Accepted' | 'Declined' | 'Pending'
 defineProps<{
   status: ApplicationStatus
   icon?: BadgeProps['icon']
+  trailingIcon?: BadgeProps['icon']
 }>()
 
 const colorByApplicationStatus: Record<ApplicationStatus, BadgeProps['color']> = {
@@ -20,6 +21,7 @@ const colorByApplicationStatus: Record<ApplicationStatus, BadgeProps['color']> =
     variant="subtle"
     class="cursor-pointer"
     :icon
+    :trailing-icon
     :color="colorByApplicationStatus[status]"
     :label="$t(`application.status.${status}`)"
   />

@@ -1,5 +1,6 @@
 import {
   getBattles as _getBattles,
+  deleteBattlesByBattleIdFighterApplications,
   deleteBattlesByBattleIdFightersByFighterId,
   deleteBattlesByBattleIdMercenaryApplications,
   deleteBattlesByBattleIdParticipantsByParticipantId,
@@ -64,6 +65,11 @@ export const getBattleFighterApplications = async (
   battleId: number,
   statuses: BattleFighterApplicationStatus[],
 ): Promise<BattleFighterApplication[]> => (await getBattlesByBattleIdFighterApplications({ path: { battleId }, query: { 'status[]': statuses } })).data!
+
+export const removeBattleFighterApplication = (
+  battleId: number,
+  side: BattleSide,
+) => deleteBattlesByBattleIdFighterApplications({ path: { battleId }, body: { side } })
 
 export const getBattleItems = async (
   battleId: number,

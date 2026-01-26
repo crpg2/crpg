@@ -28,6 +28,7 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
             PartyStatus.MovingToAttackParty,
             PartyStatus.MovingToAttackSettlement,
             PartyStatus.MovingToBattle,
+            PartyStatus.AwaitingBattleJoinDecision,
         ];
 
         private readonly ICrpgDbContext _db = db;

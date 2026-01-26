@@ -4,9 +4,10 @@ export const MOVEMENT_TYPE = {
   Move: 'Move',
   Follow: 'Follow',
   Attack: 'Attack',
-  // TODO: шляпа
+  // TODO: временно
   JoinToBattleForAttacker: 'JoinToBattleForAttacker',
   JoinToBattleForDefender: 'JoinToBattleForDefender',
+  JoinToBattleForBoth: 'JoinToBattleForBoth',
 } as const
 
 export type MovementType = ValueOf<typeof MOVEMENT_TYPE>

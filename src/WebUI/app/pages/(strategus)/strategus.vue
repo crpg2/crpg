@@ -8,7 +8,7 @@ import type { MapBattle } from '~/models/strategus/battle'
 import type { MovementType } from '~/models/strategus/movement'
 import '@geoman-io/leaflet-geoman-free'
 
-import type { PartyCommon, PartyVisible } from '~/models/strategus/party'
+import type { PartyVisible } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 
 import { useMainHeader } from '~/composables/app/use-main-header'
@@ -19,13 +19,12 @@ import { useSettlements } from '~/composables/strategus/use-settlements'
 import { useTerrains } from '~/composables/strategus/use-terrains'
 import { SomeRole } from '~/models/role'
 import { MOVEMENT_TARGET_TYPE, MOVEMENT_TYPE } from '~/models/strategus/movement'
-import { PARTY_STATUS } from '~/models/strategus/party'
-import { getSelfUpdate, IN_SETTLEMENT_PARTY_STATUSES } from '~/services/strategus/party-service'
+import { getSelfUpdate, shouldPartyBeInBattle, shouldPartyBeInSettlement } from '~/services/strategus/party-service'
 
 definePageMeta({
   roles: SomeRole,
   layoutOptions: {
-    noFooter: true, // TODO:
+    noFooter: true,
     noStickyHeader: true,
   },
   middleware: [
@@ -45,23 +44,18 @@ definePageMeta({
 
         const { party } = partyState.value
 
-        if (party.targetedSettlement
-          && IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)
-          && !to.meta.groups?.includes('strategussettlement')
-        ) {
+        if (shouldPartyBeInSettlement(party) && !to.meta.groups?.includes('strategussettlement')) {
           return navigateTo({
             name: 'strategus-settlement-id',
-            params: { id: party.targetedSettlement.id },
+            params: { id: party.targetedSettlement!.id },
           })
         }
 
-        if (party.targetedBattle
-          && party.status === PARTY_STATUS.InBattle
-          && !to.meta.groups?.includes('strategusbattle')
+        if (shouldPartyBeInBattle(party) && !to.meta.groups?.includes('strategusbattle')
         ) {
           return navigateTo({
             name: 'strategus-battle-id',
-            params: { id: party.targetedBattle.id },
+            params: { id: party.targetedBattle!.id },
           })
         }
       }
@@ -86,18 +80,9 @@ const {
   zoom,
 } = useMap()
 
-useMapContextProvider({
-  zoom,
-})
+useMapContextProvider({ zoom })
 
-const {
-  moveParty,
-  partyState,
-  // updateParty,
-  partySpawn,
-  toggleRecruitTroops,
-  isTogglingRecruitTroops,
-} = useParty()
+const { partyState, partySpawn } = useParty()
 
 const flyToSelfParty = () => {
   (map.value!.leafletObject as Map).flyTo(positionToLatLng(partyState.value.party.position.coordinates), 5, {
@@ -119,8 +104,6 @@ const {
   showMoveDialog,
   onMoveDialogConfirm,
 } = usePartyMove(map)
-
-//
 
 const {
   flyToSettlement,
@@ -165,7 +148,7 @@ const onSettlementClick = (settlement: SettlementPublic) => showMoveDialog({
 const onBattleClick = (battle: MapBattle) => {
   showMoveDialog({
     target: battle,
-    movementTypes: [MOVEMENT_TYPE.JoinToBattleForAttacker, MOVEMENT_TYPE.JoinToBattleForDefender],
+    movementTypes: [MOVEMENT_TYPE.JoinToBattleForAttacker, MOVEMENT_TYPE.JoinToBattleForDefender, MOVEMENT_TYPE.JoinToBattleForBoth],
     targetType: MOVEMENT_TARGET_TYPE.Battle,
   })
 }

@@ -81,7 +81,7 @@ public class BattlesController : BaseController
     /// Remove a battle fighter from a battle.
     /// </summary>
     /// <param name="battleId">Battle id.</param>
-    /// <param name="fightertId">Fighter id.</param>
+    /// <param name="fighterId">Fighter id.</param>
     /// <response code="204">Removed.</response>
     /// <response code="400">Bad Request.</response>
     [HttpDelete("{battleId}/fighters/{fighterId}")]
@@ -114,6 +114,19 @@ public class BattlesController : BaseController
             BattleId = battleId,
             Statuses = statuses,
         }));
+    }
+
+    /// <summary>
+    /// Remove battle fighter application.
+    /// </summary>
+    /// <response code="204">Removed.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpDelete("{battleId}/fighter-applications")]
+    public Task<ActionResult> RemoveBattleFighteryApplication(
+            [FromRoute] int battleId, [FromBody] RemoveBattleFighterApplicationCommand req)
+    {
+        req = req with { PartyId = CurrentUser.User!.Id, BattleId = battleId };
+        return ResultToActionAsync(Mediator.Send(req));
     }
 
     /// <summary>

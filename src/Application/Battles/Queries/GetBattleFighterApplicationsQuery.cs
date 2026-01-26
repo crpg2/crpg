@@ -45,7 +45,8 @@ public record GetBattleFighterApplicationsQuery : IMediatorRequest<IList<BattleF
             BattleFighter? fighter = battle.Fighters.FirstOrDefault();
             // If the fighter is a commander, return all applications of their side else return only the party applications.
             var applications = battle.FighterApplications
-                .Where(a => a.PartyId == req.PartyId || (fighter != null && fighter.Commander && a.Side == fighter.Side));
+                .Where(a => a.PartyId == req.PartyId || (fighter != null && fighter.Commander && a.Side == fighter.Side))
+                .OrderByDescending(a => a.CreatedAt);
             return new(_mapper.Map<IList<BattleFighterApplicationViewModel>>(applications));
         }
     }

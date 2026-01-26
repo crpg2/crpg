@@ -129,6 +129,7 @@ const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsR
         :item="battleItem.item"
         @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, battleItem.item.id)"
       >
+        <!-- to cmp -->
         <template #badges-bottom-right>
           <UPopover>
             <UBadge :label="$n(battleItem.count)" variant="subtle" @click.stop />
