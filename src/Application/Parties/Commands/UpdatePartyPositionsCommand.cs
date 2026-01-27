@@ -21,21 +21,21 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdatePartyPositionsCommand>();
 
         private static readonly PartyStatus[] MovementStatuses =
-        {
+        [
             PartyStatus.MovingToPoint,
             PartyStatus.FollowingParty,
             PartyStatus.MovingToSettlement,
             PartyStatus.MovingToAttackParty,
             PartyStatus.MovingToAttackSettlement,
             PartyStatus.MovingToBattle,
-        };
+        ];
 
         private static readonly PartyStatus[] UnattackablePartyStatuses =
-        {
+        [
             PartyStatus.IdleInSettlement,
             PartyStatus.RecruitingInSettlement,
             PartyStatus.InBattle,
-        };
+        ];
 
         private readonly ICrpgDbContext _db = db;
         private readonly IStrategusMap _strategusMap = strategusMap;

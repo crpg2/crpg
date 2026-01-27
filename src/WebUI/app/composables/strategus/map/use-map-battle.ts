@@ -1,10 +1,10 @@
 import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
 
-import type { Battle, BattleFighter, BattleFighterApplication, BattleSide } from '~/models/strategus/battle'
+import type { Battle, BattleFighterApplication, BattleSide } from '~/models/strategus/battle'
 
 import { useBattleTitle } from '~/composables/strategus/battle/use-battle'
 import { useUser } from '~/composables/user/use-user'
-import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_SIDE } from '~/models/strategus/battle'
+import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_SIDE } from '~/models/strategus/battle'
 import { MAP_BATTLE_QUERY_KEYS } from '~/queries'
 import {
   removeBattleFighter as _removeBattleFighter,
@@ -17,15 +17,11 @@ import {
 } from '~/services/strategus/battle-service'
 
 export const useMapBattleProvider = (battleId: number) => {
-  console.log('battleId', battleId)
-
-  return useAsyncDataCustom(
-    MAP_BATTLE_QUERY_KEYS.byId(battleId),
+  return useAsyncData(
+    toCacheKey(MAP_BATTLE_QUERY_KEYS.byId(battleId)),
     () => getBattle(battleId),
     {
       default: () => [],
-      poll: true,
-      loadingIndicator: true,
     },
   )
 }
@@ -47,21 +43,16 @@ export const useMapBattle = () => {
   }
 }
 
-export const useBattleFighterApplicationsProvider = () => {
-  const { battle } = useMapBattle()
-  console.log(battle.value.id)
-
-  return useAsyncDataCustom(
-    MAP_BATTLE_QUERY_KEYS.figterApplicationsById(battle.value.id),
-    () => getBattleFighterApplications(battle.value.id, [
+export const useBattleFighterApplicationsProvider = (battleId: number) => {
+  return useAsyncData(
+    toCacheKey(MAP_BATTLE_QUERY_KEYS.figterApplicationsById(battleId)),
+    () => getBattleFighterApplications(battleId, [
       BATTLE_FIGHTER_APPLICATION_STATUS.Pending,
       BATTLE_FIGHTER_APPLICATION_STATUS.Accepted,
       BATTLE_FIGHTER_APPLICATION_STATUS.Declined,
     ]),
     {
       default: () => [],
-      poll: true,
-      loadingIndicator: true,
     },
   )
 }

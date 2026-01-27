@@ -7,7 +7,7 @@ import { BattleFighterApplicationStatusBadge } from '#components'
 import type { BattleSide } from '~/models/strategus/battle'
 
 import { useBattleFighterApplications, useBattleFighterApplicationsProvider, useMapBattle, useMapBattleProvider } from '~/composables/strategus/map/use-map-battle'
-import { useParty } from '~/composables/strategus/use-party'
+import { useParty, usePartyState } from '~/composables/strategus/use-party'
 import { useUser } from '~/composables/user/use-user'
 import { BATTLE_FIGHTER_APPLICATION_STATUS } from '~/models/strategus/battle'
 import { shouldPartyBeInBattle } from '~/services/strategus/party-service'
@@ -15,11 +15,9 @@ import { shouldPartyBeInBattle } from '~/services/strategus/party-service'
 definePageMeta({
   middleware: [
     async (to) => {
-      const { partyState } = useParty()
+      const { partyState } = usePartyState()
 
-      const { party } = partyState.value
-
-      if (!shouldPartyBeInBattle(party)) {
+      if (!shouldPartyBeInBattle(partyState.value.party)) {
         return navigateTo({ name: 'strategus' })
       }
 
@@ -29,15 +27,13 @@ definePageMeta({
         return navigateTo({ name: 'strategus' })
       }
 
-      const { execute, data: battle, error } = useMapBattleProvider(battleId)
-      await execute()
+      const { data: battle, error } = await useMapBattleProvider(battleId)
 
       if (!battle.value || error.value) {
         return navigateTo({ name: 'strategus' })
       }
 
-      const { execute: l } = useBattleFighterApplicationsProvider()
-      await l()
+      await useBattleFighterApplicationsProvider(battleId)
     },
   ],
 })
@@ -47,7 +43,6 @@ const { battle, battleTitle } = useMapBattle()
 const { partyState, updateParty } = useParty()
 const { user } = useUser()
 const route = useRoute<'strategus-battle-id'>()
-const { t } = useI18n() // TODO:
 
 const selfFighter = computed(() => partyState.value.party.targetedBattle?.fighters.find(f => f.party?.id === partyState.value.party.id))
 
@@ -85,6 +80,8 @@ const renderBattleFighterApplicationStatusBadge = (side: BattleSide) => {
     await updateParty()
   } })
 }
+
+const { t } = useI18n() // TODO:
 
 const navigationItems = computed<NavigationMenuItem[]>(() => [
   {

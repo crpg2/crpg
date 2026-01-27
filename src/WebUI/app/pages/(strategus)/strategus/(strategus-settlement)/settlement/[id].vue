@@ -9,9 +9,8 @@ definePageMeta({
   middleware: [
     async (to) => {
       const { partyState } = usePartyState()
-      const { party } = partyState.value
 
-      if (!shouldPartyBeInSettlement(party)) {
+      if (!shouldPartyBeInSettlement(partyState.value.party)) {
         return navigateTo({ name: 'strategus' })
       }
 

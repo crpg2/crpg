@@ -1597,7 +1597,7 @@ public record SeedDataCommand : IMediatorRequest
                 Troops = 100,
                 Position = new Point(118.664627, -110.482864),
                 // Status = PartyStatus.Idle,
-                Status = PartyStatus.InBattle,
+                Status = PartyStatus.AwaitingBattleJoinDecision,
                 Items =
                 [
                     new() { Count = 112, ItemId = "crpg_wolf_shoulder_v2_h0" },

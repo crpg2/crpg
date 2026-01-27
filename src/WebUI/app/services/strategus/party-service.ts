@@ -24,9 +24,17 @@ export const IN_SETTLEMENT_PARTY_STATUSES: PartyStatus[] = [
   PARTY_STATUS.IdleInSettlement,
   PARTY_STATUS.RecruitingInSettlement,
 ]
+
 export const IN_BATTLE_PARTY_STATUSES: PartyStatus[] = [
   PARTY_STATUS.InBattle,
   PARTY_STATUS.AwaitingBattleJoinDecision, // You can attack at a party in this status.
+]
+
+export const UNMOVABLE_PARTY_STATUSES: PartyStatus[] = [
+  PARTY_STATUS.InBattle,
+  PARTY_STATUS.AwaitingBattleJoinDecision,
+  PARTY_STATUS.IdleInSettlement,
+  PARTY_STATUS.RecruitingInSettlement,
 ]
 
 export const shouldPartyBeInSettlement = (party: Party) => party.targetedSettlement && IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)

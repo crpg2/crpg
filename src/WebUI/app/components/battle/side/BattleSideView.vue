@@ -2,6 +2,7 @@
 import type { BattleFighter, BattleSide } from '~/models/strategus/battle'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 
+import { useUser } from '~/composables/user/use-user'
 import { BATTLE_SIDE } from '~/models/strategus/battle'
 
 defineProps<{
@@ -10,6 +11,8 @@ defineProps<{
   settlement: SettlementPublic | null
   totalTroops: number
 }>()
+
+const { user } = useUser()
 </script>
 
 <template>
@@ -58,6 +61,7 @@ defineProps<{
         <UserMedia
           v-if="settlement.owner"
           :user="settlement.owner"
+          :is-self="user!.id === settlement.owner.id"
         />
       </div>
     </template>
@@ -78,7 +82,7 @@ defineProps<{
         </template>
       </UiDataMedia>
 
-      <UserMedia :user="commander.party.user" />
+      <UserMedia :user="commander.party.user" :is-self="user!.id === commander.party.user.id" />
     </template>
 
     <slot name="append" />

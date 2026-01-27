@@ -11,16 +11,30 @@ import { useParty } from '~/composables/strategus/use-party'
 import { BATTLE_SIDE } from '~/models/strategus/battle'
 import { MOVEMENT_TARGET_TYPE, MOVEMENT_TYPE } from '~/models/strategus/movement'
 import { PARTY_STATUS } from '~/models/strategus/party'
+import { UNMOVABLE_PARTY_STATUSES } from '~/services/strategus/party-service'
 import { positionToLatLng } from '~/utils/geometry'
 
 export const usePartyMove = (map: Ref<typeof LMap | null>) => {
-  const { moveParty } = useParty()
+  const { moveParty, partyState } = useParty()
+  const toast = useToast()
 
   const moveDialogCoordinates = ref<LatLngLiteral | null>(null)
   const moveDialogMovementTypes = ref<MovementType[]>([])
 
   const moveTargetType = ref<MovementTargetType | null>(null)
   const moveTarget = ref<PartyVisible | SettlementPublic | MapBattle | null>(null)
+
+  const validateCanMove = () => {
+    if (UNMOVABLE_PARTY_STATUSES.includes(partyState.value.party.status)) {
+      toast.add({
+        description: 'Вы не можете двигаться TODO:',
+        color: 'warning',
+      })
+      return false
+    }
+
+    return true
+  }
 
   const showMoveDialog = ({
     target,
@@ -31,6 +45,10 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
     targetType: MovementTargetType
     movementTypes: MovementType[]
   }) => {
+    if (!validateCanMove()) {
+      return
+    }
+
     moveTarget.value = target
     moveTargetType.value = targetType
 
@@ -120,6 +138,10 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
   }
 
   const onStartMove = (e: LeafletMouseEvent) => {
+    if (!validateCanMove()) {
+      return
+    }
+
     const leafletObject = map.value!.leafletObject as Map
 
     // leafletObject.eachLayer((layer) => {

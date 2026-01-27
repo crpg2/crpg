@@ -59,7 +59,7 @@ public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
                 return new(CommonErrors.PartyNotFound(req.PartyId));
             }
 
-            if (party.Status == PartyStatus.InBattle)
+            if (party.Status == PartyStatus.InBattle || party.Status == PartyStatus.AwaitingBattleJoinDecision)
             {
                 return new(CommonErrors.PartyInBattle(req.PartyId));
             }
@@ -115,13 +115,22 @@ public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
             party.Waypoints = MultiPoint.Empty;
             party.TargetedPartyId = null;
             party.TargetedSettlementId = null;
+            party.TargetedBattleId = null;
 
+            // TODO: FIXME: SPEC:
             // Remove old battle intents if leaving previous targets
             if (party.BattleJoinIntents.Count != 0)
             {
                 _db.BattleJoinIntents.RemoveRange(party.BattleJoinIntents);
                 party.BattleJoinIntents.Clear();
             }
+
+            // TODO: FIXME: SPEC:
+            // Remove old pending battle fighter applications
+            var pendingBattleFighterApplications = await _db.BattleFighterApplications
+                .Where(a => a.PartyId == party.Id && a.Status == BattleFighterApplicationStatus.Pending)
+                .ToArrayAsync(cancellationToken);
+            _db.BattleFighterApplications.RemoveRange(pendingBattleFighterApplications);
 
             if (req.Status == PartyStatus.MovingToPoint)
             {

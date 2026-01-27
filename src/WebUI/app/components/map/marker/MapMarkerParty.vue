@@ -4,11 +4,11 @@ import type { CircleMarker, Marker } from 'leaflet'
 import { LCircleMarker, LIcon, LMarker, LTooltip } from '@vue-leaflet/vue-leaflet'
 import { strategusMaxPartyTroops, strategusMinPartyTroops } from '~root/data/constants.json'
 
-import type { PartyCommon } from '~/models/strategus/party'
+import type { PartyVisible } from '~/models/strategus/party'
 
 import { positionToLatLng } from '~/utils/geometry'
 
-const { isSelf = false, party } = defineProps<{ party: PartyCommon, isSelf?: boolean }>()
+const { isSelf = false, party } = defineProps<{ party: PartyVisible, isSelf?: boolean }>()
 
 const minRadius = 4
 const maxRadius = 10
@@ -20,7 +20,7 @@ const markerRadius = computed(() => {
   return minRadius + sizeFactor * (maxRadius - minRadius)
 })
 
-// TODO: FIXME: clan mates
+// TODO: FIXME: clan mates,
 const markerColor = computed(() => (isSelf ? '#34d399' : '#ef4444')) // TODO: colors
 
 const onReady = (circleMarker: CircleMarker) => {
@@ -57,17 +57,12 @@ const onReady = (circleMarker: CircleMarker) => {
           />
         </circle>
       </svg> -->
-      <UAvatar
-        :src="party.user.avatar || ''"
-        :alt="party.user.name"
-        size="2xl"
-        :class="[{ 'ring-3 ring-[#34d399]': isSelf }]"
-      />
 
-      <UIcon
-        :name="isSelf ? 'crpg:game-mode-battle' : 'crpg:char-class-peasant'"
-        class="size-12"
-        :class="[isSelf ? 'text-[#34d399]' : 'text-error']"
+      <UserAvatar
+        :avatar="party?.user.avatar || ''"
+        :name="party?.user.name || ''"
+        size="xl"
+        :is-self
       />
     </LIcon>
 

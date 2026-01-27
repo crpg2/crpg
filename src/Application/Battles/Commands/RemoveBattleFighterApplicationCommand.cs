@@ -60,10 +60,10 @@ public record RemoveBattleFighterApplicationCommand : IMediatorRequest
 
             _db.BattleFighterApplications.Remove(application);
 
-            bool hasOtherApplications = battle.FighterApplications
+            bool hasOtherPendingApplications = battle.FighterApplications
                   .Any(a => a.Id != application.Id && a.Status == BattleFighterApplicationStatus.Pending);
 
-            if (!hasOtherApplications)
+            if (!hasOtherPendingApplications)
             {
                 // TODO: to party service - LeaveFromBattle
                 application.Party!.Status = PartyStatus.Idle;

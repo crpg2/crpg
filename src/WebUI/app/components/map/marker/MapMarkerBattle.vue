@@ -1,18 +1,44 @@
 <script setup lang="ts">
 import { LCircle, LIcon, LMarker, LPopup, LTooltip } from '@vue-leaflet/vue-leaflet'
 
-import type { BattleSide } from '~/models/strategus/battle'
+import type { BattleFighter, BattleSide, MapBattle } from '~/models/strategus/battle'
 
 import { useMapContext } from '~/composables/strategus/use-map'
+import { useUser } from '~/composables/user/use-user'
+import { BATTLE_SIDE } from '~/models/strategus/battle'
 import { positionToLatLng } from '~/utils/geometry'
 
-const { battle } = defineProps<{ battle: any }>()
+const { battle } = defineProps<{ battle: MapBattle }>()
 
 defineEmits<{ join: [side: BattleSide] }>()
 
 const { zoom } = useMapContext()
 
 const showDetail = computed(() => zoom.value > 5)
+
+const { user } = useUser()
+const attackerCommander = computed(() => battle.fighters.find(f => f.commander && f.side === BATTLE_SIDE.Attacker))
+const defenderCommander = computed(() => battle.fighters.find(f => f.commander && f.side === BATTLE_SIDE.Defender))
+
+// TODO: вынести на бек
+const fighterTroopsAcc = (fighter: BattleFighter): number => {
+  if (fighter.party) {
+    return fighter.party.troops
+  }
+
+  if (fighter.settlement) {
+    return fighter.settlement.troops
+  }
+
+  return 0
+}
+
+const totalTroopsBySide = (side: BattleSide) => computed(() => battle.fighters
+  .filter(f => f.side === side)
+  .reduce((acc, f) => acc + fighterTroopsAcc(f), 0))
+
+const attackerTotalTroops = totalTroopsBySide(BATTLE_SIDE.Attacker)
+const defenderTotalTroops = totalTroopsBySide(BATTLE_SIDE.Defender)
 </script>
 
 <template>
@@ -23,26 +49,66 @@ const showDetail = computed(() => zoom.value > 5)
     <LIcon class-name="!flex justify-center items-center">
       <div
         class="
-          flex items-center justify-center gap-2 rounded-md bg-error/66 px-3 py-2 text-highlighted
+          flex items-center justify-center gap-2 rounded-md bg-error/66 p-2 text-highlighted
           hover:ring hover:ring-inverted
         "
       >
-        <div v-if="showDetail" class="flex whitespace-nowrap">
-          pipisculus (100)
-        </div>
+        <UiDataCell v-if="showDetail">
+          <template #leftContent>
+            <UserMedia
+              :user="attackerCommander!.party!.user"
+              :is-self="user!.id === attackerCommander?.party?.user.id"
+            />
+          </template>
+          {{ $n(attackerTotalTroops) }}
+        </UiDataCell>
 
         <UIcon name="crpg:game-mode-duel" :class="zoom > 5 ? 'size-8' : 'size-5'" />
 
-        <div v-if="showDetail" class="flex whitespace-nowrap">
-          droob (200)
-        </div>
+        <UiDataCell v-if="showDetail">
+          <template #leftContent>
+            <UserMedia
+              :user="defenderCommander!.party!.user"
+              :is-self="user!.id === defenderCommander?.party?.user.id"
+            />
+          </template>
+          {{ $n(defenderTotalTroops) }}
+        </UiDataCell>
       </div>
     </LIcon>
 
-    <LPopup :options="{ direction: 'top', offset: [0, -16] }">
-      <div class="flex min-w-80 flex-col gap-2 p-2">
-        TODO: список участников
+    <LTooltip :options="{ direction: 'top', offset: [0, -32] }">
+      <div class="flex min-w-80 gap-2 p-2">
+        <UiDataCell>
+          <template #leftContent>
+            <UserMedia
+              :user="attackerCommander!.party!.user"
+              :is-self="user!.id === attackerCommander?.party?.user.id"
+            />
+          </template>
+          {{ $n(attackerTotalTroops) }}
+        </UiDataCell>
+
+        <UIcon name="crpg:game-mode-duel" :class="zoom > 5 ? 'size-8' : 'size-5'" />
+
+        <UiDataCell>
+          <template #leftContent>
+            <UserMedia
+              :user="defenderCommander!.party!.user"
+              :is-self="user!.id === defenderCommander?.party?.user.id"
+            />
+          </template>
+          {{ $n(defenderTotalTroops) }}
+        </UiDataCell>
+        <!--  -->
       </div>
-    </LPopup>
+    </LTooltip>
   </LMarker>
 </template>
+
+  <!-- <UAvatar
+              :src="defenderCommander?.party?.user.avatar || ''"
+              :alt="defenderCommander?.party?.user.name || ''"
+              size="xl"
+              :class="[{ 'ring-3 ring-[#34d399]': defenderCommander?.party?.user.id === user?.id }]"
+            /> -->
