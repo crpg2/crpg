@@ -39,27 +39,20 @@ watch(
   <LLayerGroup ref="layerGroup">
     <LPopup
       :lat-lng="latLng"
-      :options="{ className: 'move-popup', offset: [0, -8] }"
+      :options="{ className: 'move-popup', offset: [0, -16] }"
     >
-      <div class="mt-4 flex flex-col gap-1 p-2">
-        <button
+      <div class="flex w-full flex-col items-center justify-center gap-2">
+        <UButton
           v-for="mt in movementTypes"
           :key="mt"
-          class="
-            border-base-500 rounded-sm border px-4 py-2
-            hover:ring
-          "
+          block
+          color="neutral"
+          variant="subtle"
           @click="emit('confirm', mt)"
         >
           {{ $t(`strategus.movementType.${mt}`) }}
-        </button>
+        </UButton>
       </div>
     </LPopup>
   </LLayerGroup>
 </template>
-
-<style>
-/* .move-popup .leaflet-popup-content {
-  @apply m-0;
-} */
-</style>

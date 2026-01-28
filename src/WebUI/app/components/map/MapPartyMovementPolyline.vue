@@ -60,12 +60,12 @@ const partyMovementLine = computed(() => {
   }
 
   return {
-    // TODO: ts
     color,
     dashArray: '10, 10',
     dashOffset: '10',
+    lineCap: 'round',
+    lineJoin: 'bevel',
     latLngs: [party.position.coordinates, ...positions].map(positionToLatLng),
-    // TODO:
     options: {
       pmIgnore: true,
     },

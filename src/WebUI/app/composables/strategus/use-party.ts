@@ -1,14 +1,10 @@
-import type { LMap } from '@vue-leaflet/vue-leaflet'
-import type { Map } from 'leaflet'
+import { useIntervalFn } from '@vueuse/core'
 
-import { useIntervalFn, useToggle } from '@vueuse/core'
-
-import type { Party, PartyCommon, StrategusUpdate, UpdatePartyStatus } from '~/models/strategus/party'
+import type { StrategusUpdate, UpdatePartyStatus } from '~/models/strategus/party'
 
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { PARTY_STATUS } from '~/models/strategus/party'
-import { PARTY_QUERY_KEYS } from '~/queries'
-import { getSelfUpdate, IN_BATTLE_PARTY_STATUSES, IN_SETTLEMENT_PARTY_STATUSES, shouldPartyBeInBattle, shouldPartyBeInSettlement, updatePartyStatus } from '~/services/strategus/party-service'
+import { getSelfUpdate, shouldPartyBeInBattle, shouldPartyBeInSettlement, updatePartyStatus } from '~/services/strategus/party-service'
 
 // const INTERVAL = 1000 * 60 ; // 1 min
 const INTERVAL = 10000 // TODO:

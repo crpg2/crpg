@@ -101,6 +101,7 @@ const settlementAreaRadius = computed(() => {
         </div>
       </LTooltip>
     </LMarker>
+
     <!-- :visible="hovered" -->
     <LCircle
       :lat-lng="positionToLatLng(settlement.position.coordinates)"

@@ -44,7 +44,7 @@ export interface Party extends PartyCommon {
   status: PartyStatus
   position: Point
   waypoints: MultiPoint
-  targetedParty: PartyCommon | null
+  targetedParty: PartyVisible | null
   targetedSettlement: SettlementPublic | null
   targetedBattle: MapBattle | null
   battleJoinIntents: Array<BattleJoinIntent>

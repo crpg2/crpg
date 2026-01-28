@@ -49,7 +49,11 @@ const clanSize = computed(() => ({
         :is-self
       />
     </template>
-    <div class="flex flex-col items-start gap-0.5">
+
+    <div
+      v-if="!hiddenPlatform || !hiddenTitle || (!hiddenClan && user.clanMembership)"
+      class="flex flex-col items-start gap-0.5"
+    >
       <UiDataMedia layout="reverse" :size>
         <template
           v-if="!hiddenPlatform"
@@ -69,7 +73,7 @@ const clanSize = computed(() => ({
         >
           <div
             class="max-w-32 truncate leading-none"
-            :class="[labelClasses(), { 'text-primary': isSelf }]"
+            :class="[labelClasses()]"
             :title="user.name"
           >
             {{ user.name }}

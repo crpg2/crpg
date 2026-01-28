@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LCircle, LIcon, LMarker, LPopup, LTooltip } from '@vue-leaflet/vue-leaflet'
+import { LIcon, LMarker, LTooltip } from '@vue-leaflet/vue-leaflet'
 
 import type { BattleFighter, BattleSide, MapBattle } from '~/models/strategus/battle'
 
@@ -20,7 +20,6 @@ const { user } = useUser()
 const attackerCommander = computed(() => battle.fighters.find(f => f.commander && f.side === BATTLE_SIDE.Attacker))
 const defenderCommander = computed(() => battle.fighters.find(f => f.commander && f.side === BATTLE_SIDE.Defender))
 
-// TODO: вынести на бек
 const fighterTroopsAcc = (fighter: BattleFighter): number => {
   if (fighter.party) {
     return fighter.party.troops
@@ -33,6 +32,7 @@ const fighterTroopsAcc = (fighter: BattleFighter): number => {
   return 0
 }
 
+// TODO: вынести на бек
 const totalTroopsBySide = (side: BattleSide) => computed(() => battle.fighters
   .filter(f => f.side === side)
   .reduce((acc, f) => acc + fighterTroopsAcc(f), 0))
@@ -53,32 +53,28 @@ const defenderTotalTroops = totalTroopsBySide(BATTLE_SIDE.Defender)
           hover:ring hover:ring-inverted
         "
       >
-        <UiDataCell v-if="showDetail">
-          <template #leftContent>
-            <UserMedia
-              :user="attackerCommander!.party!.user"
-              :is-self="user!.id === attackerCommander?.party?.user.id"
-            />
-          </template>
-          {{ $n(attackerTotalTroops) }}
-        </UiDataCell>
+        <UserMedia
+          :user="attackerCommander!.party!.user"
+          hidden-clan
+          hidden-platform
+          :hidden-title="!showDetail"
+          :is-self="user!.id === attackerCommander?.party?.user.id"
+        />
 
-        <UIcon name="crpg:game-mode-duel" :class="zoom > 5 ? 'size-8' : 'size-5'" />
+        <UIcon name="crpg:game-mode-duel" :class="zoom > 5 ? 'size-7' : 'size-5'" />
 
-        <UiDataCell v-if="showDetail">
-          <template #leftContent>
-            <UserMedia
-              :user="defenderCommander!.party!.user"
-              :is-self="user!.id === defenderCommander?.party?.user.id"
-            />
-          </template>
-          {{ $n(defenderTotalTroops) }}
-        </UiDataCell>
+        <UserMedia
+          :user="defenderCommander!.party!.user"
+          hidden-clan
+          hidden-platform
+          :hidden-title="!showDetail"
+          :is-self="user!.id === defenderCommander?.party?.user.id"
+        />
       </div>
     </LIcon>
 
     <LTooltip :options="{ direction: 'top', offset: [0, -32] }">
-      <div class="flex min-w-80 gap-2 p-2">
+      <div class="flex gap-4 p-2">
         <UiDataCell>
           <template #leftContent>
             <UserMedia
@@ -86,10 +82,10 @@ const defenderTotalTroops = totalTroopsBySide(BATTLE_SIDE.Defender)
               :is-self="user!.id === attackerCommander?.party?.user.id"
             />
           </template>
-          {{ $n(attackerTotalTroops) }}
+          <UiDataMedia icon="crpg:member" :label="$n(attackerTotalTroops)" />
         </UiDataCell>
 
-        <UIcon name="crpg:game-mode-duel" :class="zoom > 5 ? 'size-8' : 'size-5'" />
+        <UIcon name="crpg:game-mode-duel" :class="zoom > 5 ? 'size-7' : 'size-5'" />
 
         <UiDataCell>
           <template #leftContent>
@@ -98,17 +94,9 @@ const defenderTotalTroops = totalTroopsBySide(BATTLE_SIDE.Defender)
               :is-self="user!.id === defenderCommander?.party?.user.id"
             />
           </template>
-          {{ $n(defenderTotalTroops) }}
+          <UiDataMedia icon="crpg:member" :label="$n(defenderTotalTroops)" />
         </UiDataCell>
-        <!--  -->
       </div>
     </LTooltip>
   </LMarker>
 </template>
-
-  <!-- <UAvatar
-              :src="defenderCommander?.party?.user.avatar || ''"
-              :alt="defenderCommander?.party?.user.name || ''"
-              size="xl"
-              :class="[{ 'ring-3 ring-[#34d399]': defenderCommander?.party?.user.id === user?.id }]"
-            /> -->

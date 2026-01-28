@@ -75,10 +75,7 @@ const classes = computed(() => variants({
     </slot>
 
     <slot v-bind="{ classes: classes.label }">
-      <div
-        v-if="label"
-        :class="classes.label()"
-      >
+      <div v-if="label" :class="classes.label()">
         {{ label }}
       </div>
     </slot>
