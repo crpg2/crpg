@@ -2,6 +2,8 @@ import type { LMap } from '@vue-leaflet/vue-leaflet'
 import type { LatLngLiteral, LeafletMouseEvent, Map } from 'leaflet'
 import type L from 'leaflet'
 
+import { useMagicKeys } from '@vueuse/core'
+
 import type { MapBattle } from '~/models/strategus/battle'
 import type { MovementTargetType, MovementType } from '~/models/strategus/movement'
 import type { PartyVisible } from '~/models/strategus/party'
@@ -10,7 +12,7 @@ import type { SettlementPublic } from '~/models/strategus/settlement'
 import { useParty } from '~/composables/strategus/use-party'
 import { BATTLE_SIDE } from '~/models/strategus/battle'
 import { MOVEMENT_TARGET_TYPE, MOVEMENT_TYPE } from '~/models/strategus/movement'
-import { PARTY_STATUS } from '~/models/strategus/party'
+import { PARTY_ORDER_TYPE, PARTY_STATUS } from '~/models/strategus/party'
 import { UNMOVABLE_PARTY_STATUSES } from '~/services/strategus/party-service'
 import { positionToLatLng } from '~/utils/geometry'
 
@@ -63,6 +65,8 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
     moveTargetType.value = null
   }
 
+  const { shift } = useMagicKeys()
+
   const onMoveDialogConfirm = (mt: MovementType) => {
     if (!moveTarget.value || !moveTargetType.value) {
       return
@@ -71,26 +75,26 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
     switch (moveTargetType.value) {
       case MOVEMENT_TARGET_TYPE.Party:
         moveParty({
-          status:
+          type:
             mt === MOVEMENT_TYPE.Follow
-              ? PARTY_STATUS.FollowingParty
-              : PARTY_STATUS.MovingToAttackParty,
+              ? PARTY_ORDER_TYPE.FollowParty
+              : PARTY_ORDER_TYPE.AttackParty,
           targetedPartyId: moveTarget.value.id,
-        })
+        }, shift?.value)
         break
       case MOVEMENT_TARGET_TYPE.Settlement:
         moveParty({
-          status:
+          type:
             mt === MOVEMENT_TYPE.Move
-              ? PARTY_STATUS.MovingToSettlement
-              : PARTY_STATUS.MovingToAttackSettlement,
+              ? PARTY_ORDER_TYPE.MoveToSettlement
+              : PARTY_ORDER_TYPE.AttackSettlement,
           targetedSettlementId: moveTarget.value.id,
-        })
+        }, shift?.value)
         break
       case MOVEMENT_TARGET_TYPE.Battle:
         moveParty({
-          status: PARTY_STATUS.MovingToBattle,
-          targetedBattletId: moveTarget.value.id,
+          type: PARTY_ORDER_TYPE.JoinBattle,
+          targetedBattleId: moveTarget.value.id,
           battleJoinIntents: [
             ...(mt === MOVEMENT_TYPE.JoinToBattleForAttacker || mt === MOVEMENT_TYPE.JoinToBattleForBoth)
               ? [
@@ -109,7 +113,7 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
                 ]
               : [],
           ],
-        })
+        }, shift?.value)
         break
     }
 
@@ -129,9 +133,9 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
     const coordinates = layer.toGeoJSON().geometry.coordinates
 
     await moveParty({
-      status: PARTY_STATUS.MovingToPoint,
+      type: PARTY_ORDER_TYPE.MoveToPoint,
       waypoints: { coordinates, type: 'MultiPoint' },
-    })
+    }, shift?.value)
 
     event.layer.removeFrom(map.value!.leafletObject as Map)
     isMoveMode.value = false

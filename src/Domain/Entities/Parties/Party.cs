@@ -12,7 +12,7 @@ namespace Crpg.Domain.Entities.Parties;
 public class Party : AuditableEntity
 {
     /// <summary>
-    /// Same as <see cref="Users.User.Id"/> (one-to-one mapping).
+    /// Same as <see cref="User.Id"/> (one-to-one mapping).
     /// </summary>
     public int Id { get; set; }
 
@@ -37,6 +37,8 @@ public class Party : AuditableEntity
     /// <see cref="TargetedSettlement"/>.
     /// </summary>
     public PartyStatus Status { get; set; }
+
+    public List<PartyOrder> Orders { get; set; } = [];
 
     /// <summary>
     /// Sequence of points the user is moving to if <see cref="Status"/> == <see cref="PartyStatus.MovingToPoint"/>.
@@ -81,5 +83,5 @@ public class Party : AuditableEntity
 
     public User? User { get; set; }
     public List<PartyItem> Items { get; set; } = [];
-    public List<Settlement> OwnedSettlements { get; set; } = [];
+    public List<Settlement> OwnedSettlements { get; set; } = []; // TODO: подумать
 }

@@ -20,15 +20,15 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdatePartyPositionsCommand>();
 
-        private static readonly PartyStatus[] MovementStatuses =
-        [
-            PartyStatus.MovingToPoint,
-            PartyStatus.FollowingParty,
-            PartyStatus.MovingToSettlement,
-            PartyStatus.MovingToAttackParty,
-            PartyStatus.MovingToAttackSettlement,
-            PartyStatus.MovingToBattle,
-        ];
+        // private static readonly PartyStatus[] MovementStatuses =
+        // [
+        //     PartyStatus.MovingToPoint,
+        //     PartyStatus.FollowingParty,
+        //     PartyStatus.MovingToSettlement,
+        //     PartyStatus.MovingToAttackParty,
+        //     PartyStatus.MovingToAttackSettlement,
+        //     PartyStatus.MovingToBattle,
+        // ];
 
         private static readonly PartyStatus[] UnattackablePartyStatuses =
         [
@@ -45,7 +45,8 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
         {
             var parties = await _db.Parties
                 .AsSplitQuery()
-                .Where(p => MovementStatuses.Contains(p.Status))
+                // .Where(p => MovementStatuses.Contains(p.Status)) // TODO:
+                .Include(p => p.Orders)
                 .Include(p => p.TargetedParty).ThenInclude(p => p!.User)
                 .Include(p => p.TargetedSettlement)
                 .Include(p => p.TargetedBattle)
@@ -56,23 +57,30 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 
             foreach (var party in parties)
             {
-                switch (party.Status)
+                if (party.Orders.Count == 0)
                 {
-                    case PartyStatus.MovingToPoint:
-                        MoveToPoint(req.DeltaTime, party);
-                        break;
-                    case PartyStatus.FollowingParty:
-                    case PartyStatus.MovingToAttackParty:
-                        MoveToParty(req.DeltaTime, party);
-                        break;
-                    case PartyStatus.MovingToSettlement:
-                    case PartyStatus.MovingToAttackSettlement:
-                        await MoveToSettlement(req.DeltaTime, party, cancellationToken);
-                        break;
-                    case PartyStatus.MovingToBattle:
-                        await MoveToBattle(req.DeltaTime, party, cancellationToken);
-                        break;
+                    continue;
                 }
+
+                var order = party.Orders.OrderBy(o => o.OrderIndex).First();
+
+                // switch (order.Type)
+                // {
+                //     case PartyOrderType.MoveToPoint:
+                //         MoveToPoint(req.DeltaTime, party, order);
+                //         break;
+                //     case PartyOrderType.FollowParty:
+                //     case PartyOrderType.AttackParty:
+                //         MoveToParty(req.DeltaTime, party, order);
+                //         break;
+                //     case PartyOrderType.MoveToSettlement:
+                //     case PartyOrderType.AttackSettlement:
+                //         await MoveToSettlement(req.DeltaTime, party, order, cancellationToken);
+                //         break;
+                //     case PartyOrderType.JoinBattle:
+                //         MoveToBattle(req.DeltaTime, party, order);
+                //         break;
+                // }
             }
 
             await _db.SaveChangesAsync(cancellationToken);
@@ -84,61 +92,66 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             return new((pointA.X + pointB.X) / 2, (pointA.Y + pointB.Y) / 2);
         }
 
-        private void MoveToPoint(TimeSpan deltaTime, Party party)
+        private void MoveToPoint(TimeSpan deltaTime, Party party, PartyOrder order)
         {
-            if (party.Waypoints.IsEmpty)
+            // TODO: to fluent validator
+            if (order.Waypoints.IsEmpty)
             {
-                Logger.LogWarning("Party '{partyId}' was in status '{status}' without any points to go to",
-                    party.Id, party.Status);
-                party.Status = PartyStatus.Idle;
+                Logger.LogWarning("Party '{partyId}' was in order type '{orderType}' without any points to go to",
+                    party.Id, order.Type);
+                // party.Status = PartyStatus.Idle; // TODO:
+                party.Orders.Remove(order);
                 return;
             }
 
-            var targetPoint = (Point)party.Waypoints[0];
+            var targetPoint = (Point)order.Waypoints[0];
             if (!MovePartyTowardsPoint(party, targetPoint, deltaTime, false))
             {
                 return;
             }
 
-            party.Waypoints = new MultiPoint(party.Waypoints.Skip(1).Cast<Point>().ToArray());
-            if (party.Waypoints.Count == 0)
+            order.Waypoints = new MultiPoint([.. order.Waypoints.Skip(1).Cast<Point>()]);
+            if (order.Waypoints.Count == 0)
             {
-                party.Status = PartyStatus.Idle;
+                // party.Status = PartyStatus.Idle; // TODO: FIXME:
+                party.Orders.Remove(order);
             }
         }
 
-        private void MoveToParty(TimeSpan deltaTime, Party party)
+        private void MoveToParty(TimeSpan deltaTime, Party party, PartyOrder order)
         {
-            if (party.TargetedParty == null)
+            if (order.TargetedParty == null)
             {
-                Logger.LogWarning("Party '{partyId}' was in status '{status}' without target party",
-                    party.Id, party.Status);
-                party.Status = PartyStatus.Idle;
+                Logger.LogWarning("Party '{partyId}' was in order type '{orderType}' without target party",
+                    party.Id, order.Type);
+                // party.Status = PartyStatus.Idle; // TODO:
+                party.Orders.Remove(order);
                 return;
             }
 
-            if (!party.Position.IsWithinDistance(party.TargetedParty.Position, _strategusMap.ViewDistance))
+            if (!party.Position.IsWithinDistance(order.TargetedParty.Position, _strategusMap.ViewDistance))
             {
                 // Followed party is not in sight anymore. Stop.
-                party.Status = PartyStatus.Idle;
-                party.TargetedParty = null;
+                // party.Status = PartyStatus.Idle; // TODO:
+                // party.TargetedParty = null;
+                party.Orders.Remove(order);
                 return;
             }
 
-            if (party.Status == PartyStatus.FollowingParty)
+            if (order.Type == PartyOrderType.FollowParty)
             {
                 // Set canInteractWithTarget to false to the party doesn't stop to interaction range
                 // but stops on the target party itself.
-                MovePartyTowardsPoint(party, party.TargetedParty.Position, deltaTime, false);
+                MovePartyTowardsPoint(party, order.TargetedParty.Position, deltaTime, false);
             }
-            else if (party.Status == PartyStatus.MovingToAttackParty)
+            else if (order.Type == PartyOrderType.AttackParty)
             {
-                if (!MovePartyTowardsPoint(party, party.TargetedParty.Position, deltaTime, true))
+                if (!MovePartyTowardsPoint(party, order.TargetedParty.Position, deltaTime, true))
                 {
                     return;
                 }
 
-                if (UnattackablePartyStatuses.Contains(party.TargetedParty.Status))
+                if (UnattackablePartyStatuses.Contains(order.TargetedParty.Status))
                 {
                     return;
                 }
@@ -146,8 +159,8 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 Battle battle = new()
                 {
                     Phase = BattlePhase.Preparation,
-                    Region = party.TargetedParty.User!.Region, // Region of the defender.
-                    Position = GetMidPoint(party.Position, party.TargetedParty.Position),
+                    Region = order.TargetedParty.User!.Region, // Region of the defender.
+                    Position = GetMidPoint(party.Position, order.TargetedParty.Position),
                     Fighters =
                     {
                         new BattleFighter
@@ -158,7 +171,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                         },
                         new BattleFighter
                         {
-                            Party = party.TargetedParty,
+                            Party = order.TargetedParty,
                             Side = BattleSide.Defender,
                             Commander = true,
                         },
@@ -176,46 +189,48 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 };
 
                 // TODO: FIXME: проверить
-
                 party.Status = PartyStatus.InBattle;
+                // TODO: FIXME: Добавить в party currentBattle, currentSettlement, currentParty
                 // party.TargetedBattle = battle;
-                party.TargetedSettlementId = null;
-                party.TargetedPartyId = null;
+                // party.TargetedSettlementId = null;
+                // party.TargetedPartyId = null;
 
-                party.TargetedParty.Status = PartyStatus.InBattle;
+                order.TargetedParty.Status = PartyStatus.InBattle;
                 // party.TargetedParty.TargetedBattle = battle;
-                party.TargetedParty.TargetedSettlementId = null;
-                party.TargetedParty.TargetedPartyId = null;
+                // party.TargetedParty.TargetedSettlementId = null;
+                // party.TargetedParty.TargetedPartyId = null;
 
                 _db.Battles.Add(battle);
                 Logger.LogInformation("Party '{0}' initiated a battle against party '{1}'",
-                    party.Id, party.TargetedPartyId);
+                    party.Id, order.TargetedPartyId);
 
-                party.TargetedParty.TargetedPartyId = null;
+                // party.TargetedParty.TargetedPartyId = null;
+                party.Orders.Remove(order);
             }
         }
 
-        private async Task MoveToSettlement(TimeSpan deltaTime, Party party, CancellationToken cancellationToken)
+        private async Task MoveToSettlement(TimeSpan deltaTime, Party party, PartyOrder order, CancellationToken cancellationToken)
         {
-            if (party.TargetedSettlement == null)
+            if (order.TargetedSettlement == null)
             {
-                Logger.LogWarning("Party '{partyId}' was in status '{status}' without target settlement",
-                    party.Id, party.Status);
-                party.Status = PartyStatus.Idle;
+                Logger.LogWarning("Party '{partyId}' was in order type '{orderType}' without target settlement",
+                    party.Id, order.Type);
+                // party.Status = PartyStatus.Idle;
+                party.Orders.Remove(order);
                 return;
             }
 
-            if (!MovePartyTowardsPoint(party, party.TargetedSettlement.Position, deltaTime, true))
+            if (!MovePartyTowardsPoint(party, order.TargetedSettlement.Position, deltaTime, true))
             {
                 return;
             }
 
-            if (party.Status == PartyStatus.MovingToSettlement)
+            if (order.Type == PartyOrderType.MoveToSettlement)
             {
                 party.Status = PartyStatus.IdleInSettlement;
-                party.Position = party.TargetedSettlement.Position;
+                party.Position = order.TargetedSettlement.Position;
             }
-            else if (party.Status == PartyStatus.MovingToAttackSettlement)
+            else if (order.Type == PartyOrderType.AttackSettlement)
             {
                 bool attackInProgress = await _db.Battles
                     .AnyAsync(b =>
@@ -231,8 +246,8 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 Battle battle = new()
                 {
                     Phase = BattlePhase.Preparation,
-                    Region = party.TargetedSettlement.Region, // Region of the defender.
-                    Position = GetMidPoint(party.Position, party.TargetedSettlement.Position),
+                    Region = order.TargetedSettlement.Region, // Region of the defender.
+                    Position = GetMidPoint(party.Position, order.TargetedSettlement.Position),
                     Fighters =
                     {
                         new BattleFighter
@@ -244,7 +259,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                         // TODO: FIXME: if Settlement has an owner, then he must be the commander
                         new BattleFighter
                         {
-                            Settlement = party.TargetedSettlement,
+                            Settlement = order.TargetedSettlement,
                             Side = BattleSide.Defender,
                             Commander = true,
                         },
@@ -252,29 +267,33 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 };
                 _db.Battles.Add(battle);
                 Logger.LogInformation("Party '{0}' initiated a battle against settlement '{1}'",
-                    party.Id, party.TargetedSettlementId);
+                    party.Id, order.TargetedSettlementId);
             }
+
+            party.Orders.Remove(order);
         }
 
-        private async Task MoveToBattle(TimeSpan deltaTime, Party party, CancellationToken cancellationToken)
+        private void MoveToBattle(TimeSpan deltaTime, Party party, PartyOrder order)
         {
-            if (party.TargetedBattle == null)
+            if (order.TargetedBattle == null)
             {
-                Logger.LogWarning("Party '{partyId}' was in status '{status}' without target battle",
-                    party.Id, party.Status);
-                party.Status = PartyStatus.Idle;
+                Logger.LogWarning("Party '{partyId}' was in order type '{orderType}' without target battle",
+                    party.Id, order.Type);
+                // party.Status = PartyStatus.Idle;
+                party.Orders.Remove(order);
                 return;
             }
 
-            if (party.BattleJoinIntents.Count == 0)
+            if (order.BattleJoinIntents.Count == 0)
             {
-                Logger.LogWarning("Party '{partyId}' was in status '{status}' without battle join intents",
-                    party.Id, party.Status);
-                party.Status = PartyStatus.Idle;
+                Logger.LogWarning("Party '{partyId}' was in order type '{orderType}' without battle join intents",
+                    party.Id, order.Type);
+                // party.Status = PartyStatus.Idle;
+                party.Orders.Remove(order);
                 return;
             }
 
-            if (!MovePartyTowardsPoint(party, party.TargetedBattle.Position, deltaTime, true))
+            if (!MovePartyTowardsPoint(party, order.TargetedBattle.Position, deltaTime, true))
             {
                 return;
             }
@@ -283,7 +302,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             {
                 _db.BattleFighterApplications.Add(new BattleFighterApplication
                 {
-                    Battle = party.TargetedBattle,
+                    Battle = order.TargetedBattle,
                     Party = party,
                     Side = intent.Side,
                     Status = BattleFighterApplicationStatus.Pending,
@@ -291,10 +310,11 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             }
 
             _db.BattleJoinIntents.RemoveRange(party.BattleJoinIntents);
-            party.BattleJoinIntents.Clear();
 
             party.Status = PartyStatus.AwaitingBattleJoinDecision;
-            party.Position = party.TargetedBattle.Position;
+            party.Position = order.TargetedBattle.Position;
+
+            party.Orders.Remove(order);
         }
 
         private bool MovePartyTowardsPoint(Party party, Point targetPoint, TimeSpan deltaTime, bool canInteractWithTarget)

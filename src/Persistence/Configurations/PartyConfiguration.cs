@@ -11,5 +11,9 @@ public class PartyConfiguration : IEntityTypeConfiguration<Party>
         builder.HasOne(h => h.User!)
             .WithOne(u => u.Party!)
             .HasForeignKey<Party>(u => u.Id);
+
+        builder.HasMany(p => p.Orders)
+               .WithOne(o => o.Party)
+               .HasForeignKey(o => o.PartyId);
     }
 }

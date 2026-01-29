@@ -22,12 +22,12 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
         private static readonly PartyStatus[] VisibleStatuses =
         [
             PartyStatus.Idle,
-            PartyStatus.MovingToPoint,
-            PartyStatus.FollowingParty,
-            PartyStatus.MovingToSettlement,
-            PartyStatus.MovingToAttackParty,
-            PartyStatus.MovingToAttackSettlement,
-            PartyStatus.MovingToBattle,
+            // PartyStatus.MovingToPoint,
+            // PartyStatus.FollowingParty,
+            // PartyStatus.MovingToSettlement,
+            // PartyStatus.MovingToAttackParty,
+            // PartyStatus.MovingToAttackSettlement,
+            // PartyStatus.MovingToBattle,
             PartyStatus.AwaitingBattleJoinDecision,
         ];
 
@@ -41,12 +41,21 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
                 .AsSplitQuery()
                 .Include(p => p.User!)
                     .ThenInclude(u => u.ClanMembership!.Clan)
+
+                .Include(p => p.Orders)
+                    .ThenInclude(o => o.TargetedBattle)
+                .Include(p => p.Orders)
+                    .ThenInclude(o => o.TargetedSettlement)
+                .Include(p => p.Orders)
+                    .ThenInclude(o => o.TargetedParty)
+
                 .Include(p => p.TargetedParty!.User)
                 .Include(p => p.TargetedSettlement) // TODO: FIXME: SIege
                 .Include(p => p.TargetedBattle)
                     .ThenInclude(b => b!.Fighters)
                         .ThenInclude(f => f!.Party)
                 .Include(p => p.BattleJoinIntents)
+
                 .FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
             if (party == null)
             {

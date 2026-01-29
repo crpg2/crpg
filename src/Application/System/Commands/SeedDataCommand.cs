@@ -1596,8 +1596,8 @@ public record SeedDataCommand : IMediatorRequest
                 User = orle,
                 Troops = 100,
                 Position = new Point(118.664627, -110.482864),
-                // Status = PartyStatus.Idle,
-                Status = PartyStatus.AwaitingBattleJoinDecision,
+                Status = PartyStatus.Idle,
+                // Status = PartyStatus.AwaitingBattleJoinDecision,
                 Items =
                 [
                     new() { Count = 112, ItemId = "crpg_wolf_shoulder_v2_h0" },
@@ -1780,7 +1780,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = lerch,
                 Troops = 10,
                 Position = new Point(107, -102),
-                Status = PartyStatus.MovingToSettlement,
+                Status = PartyStatus.Idle,
                 TargetedSettlement = rhotae,
             };
             Party tjensParty = new()
@@ -1788,7 +1788,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = tjens,
                 Troops = 500,
                 Position = new Point(112, -93),
-                Status = PartyStatus.MovingToSettlement,
+                Status = PartyStatus.Idle,
                 TargetedSettlement = rhotae,
             };
             Party knitlerParty = new()
@@ -1796,7 +1796,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = knitler,
                 Troops = 3,
                 Position = new Point(124, -102),
-                Status = PartyStatus.MovingToSettlement,
+                Status = PartyStatus.Idle,
                 TargetedSettlement = rhotae,
             };
             Party magnucleanParty = new()
@@ -1804,7 +1804,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = magnuclean,
                 Troops = 100,
                 Position = new Point(120, -88),
-                Status = PartyStatus.MovingToSettlement,
+                Status = PartyStatus.Idle,
                 TargetedSettlement = rhemtoil,
             };
             Party baronCyborgParty = new()
@@ -1812,7 +1812,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = baronCyborg,
                 Troops = 9,
                 Position = new Point(120, -88),
-                Status = PartyStatus.MovingToSettlement,
+                Status = PartyStatus.Idle,
                 TargetedSettlement = mecalovea,
             };
             Party scarfaceParty = new()
@@ -1820,7 +1820,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = scarface,
                 Troops = 25,
                 Position = new Point(119, -105),
-                Status = PartyStatus.MovingToSettlement,
+                Status = PartyStatus.Idle,
                 TargetedSettlement = hertogeaCastle,
             };
             Party neostralieParty = new()
@@ -1828,7 +1828,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = neostralie,
                 Troops = 1,
                 Position = new Point(128, -97),
-                Status = PartyStatus.MovingToSettlement,
+                Status = PartyStatus.Idle,
                 TargetedSettlement = potamis,
             };
             Party manikParty = new()
@@ -1836,7 +1836,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = manik,
                 Troops = 1,
                 Position = new Point(129, -102),
-                Status = PartyStatus.MovingToAttackParty,
+                Status = PartyStatus.Idle,
                 TargetedParty = neostralieParty,
             };
             Party ajroselleParty = new()
@@ -1844,7 +1844,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = ajroselle,
                 Troops = 1,
                 Position = new Point(130, -107),
-                Status = PartyStatus.MovingToAttackParty,
+                Status = PartyStatus.Idle,
                 TargetedParty = manikParty,
             };
             Party skraelParty = new()
@@ -1852,7 +1852,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = skrael,
                 Troops = 1,
                 Position = new Point(126, -93),
-                Status = PartyStatus.MovingToAttackParty,
+                Status = PartyStatus.Idle,
                 TargetedParty = neostralieParty,
             };
             Party bedoParty = new()
@@ -1860,7 +1860,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = bedo,
                 Troops = 300,
                 Position = new Point(114, -101),
-                Status = PartyStatus.MovingToAttackSettlement,
+                Status = PartyStatus.Idle,
                 TargetedSettlement = gersegosCastle,
             };
             Party lambicParty = new()
@@ -1868,7 +1868,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = lambic,
                 Troops = 87,
                 Position = new Point(113, -98),
-                Status = PartyStatus.MovingToAttackSettlement,
+                Status = PartyStatus.Idle,
                 TargetedSettlement = gersegosCastle,
             };
             Party sanasarParty = new()
@@ -1876,7 +1876,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = sanasar,
                 Troops = 21,
                 Position = new Point(119, -101),
-                Status = PartyStatus.MovingToAttackSettlement,
+                Status = PartyStatus.Idle,
                 TargetedSettlement = rhotae,
             };
             Party vlad007Party = new()
@@ -1884,7 +1884,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = vlad007,
                 Troops = 21,
                 Position = new Point(119, -101),
-                Status = PartyStatus.MovingToAttackSettlement,
+                Status = PartyStatus.Idle,
                 TargetedSettlement = rhotae,
             };
             Party canp0GParty = new()
@@ -1892,7 +1892,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = canp0g,
                 Troops = 1,
                 Position = rhesosCastle.Position,
-                Status = PartyStatus.MovingToPoint,
+                Status = PartyStatus.Idle,
                 Waypoints = new MultiPoint(new[] { new Point(125, -97) }),
             };
             Party sharkParty = new()
@@ -1900,7 +1900,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = shark,
                 Troops = 1,
                 Position = new Point(105, -107),
-                Status = PartyStatus.MovingToPoint,
+                Status = PartyStatus.Idle,
                 Waypoints = new MultiPoint(new[] { new Point(121, -99) }),
             };
             Party noobAmphetamineParty = new()
@@ -1908,7 +1908,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = noobAmphetamine,
                 Troops = 1,
                 Position = new Point(107, -100),
-                Status = PartyStatus.MovingToPoint,
+                Status = PartyStatus.Idle,
                 Waypoints = new MultiPoint(new[] { new Point(112, -88) }),
             };
             Party mundeteParty = new()
@@ -1916,7 +1916,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = mundete,
                 Troops = 1,
                 Position = new Point(112, -99),
-                Status = PartyStatus.FollowingParty,
+                Status = PartyStatus.Idle,
                 TargetedParty = sharkParty,
             };
             Party aroyFalconerParty = new()
@@ -1924,7 +1924,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = aroyFalconer,
                 Troops = 1,
                 Position = new Point(123, -88),
-                Status = PartyStatus.MovingToPoint,
+                Status = PartyStatus.Idle,
                 Waypoints = new MultiPoint(new[] { new Point(135, -98) }),
             };
             Party insanitoidParty = new()
@@ -1932,7 +1932,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = insanitoid,
                 Troops = 1,
                 Position = new Point(135, -98),
-                Status = PartyStatus.MovingToPoint,
+                Status = PartyStatus.Idle,
                 Waypoints = new MultiPoint(new[] { new Point(123, -88) }),
             };
             Party namidakaParty = new()
@@ -1940,7 +1940,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = namidaka,
                 Troops = 11,
                 Position = new Point(135, -99),
-                Status = PartyStatus.FollowingParty,
+                Status = PartyStatus.Idle,
                 TargetedParty = insanitoidParty,
             };
             Party xDemParty = new()
@@ -2027,7 +2027,7 @@ public record SeedDataCommand : IMediatorRequest
                 User = kedrynFuel,
                 Troops = 97,
                 Position = new Point(121, -108),
-                Status = PartyStatus.FollowingParty,
+                Status = PartyStatus.Idle,
                 TargetedParty = alexParty,
             };
             Party luqeroParty = new()
@@ -2218,8 +2218,8 @@ public record SeedDataCommand : IMediatorRequest
 
             orle2Party.TargetedBattle = testBattle;
             droobParty.TargetedBattle = testBattle;
-            orleParty.Position = testBattle.Position;
-            orleParty.TargetedBattle = testBattle;
+            // orleParty.Position = testBattle.Position;
+            // orleParty.TargetedBattle = testBattle;
 
             Battle[] newBattles = [
                 // battle1, battle2,

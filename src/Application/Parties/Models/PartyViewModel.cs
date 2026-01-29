@@ -23,8 +23,10 @@ public record PartyViewModel : IMapFrom<Party>
     public SettlementPublicViewModel? TargetedSettlement { get; init; }
     [JsonRequired]
     public BattleViewModel? TargetedBattle { get; init; }
-    public BattleJoinIntentViewModel[] BattleJoinIntents { get; init; } = [];
+    public List<BattleJoinIntentViewModel> BattleJoinIntents { get; init; } = [];
     public UserPublicViewModel User { get; init; } = default!;
+
+    public List<PartyOrderViewModel> Orders { get; set; } = [];
 
     public void Mapping(Profile profile)
     {

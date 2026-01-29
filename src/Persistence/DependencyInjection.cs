@@ -57,6 +57,7 @@ public static class DependencyInjection
                                 .MapEnum<ClanInvitationType>()
                                 .MapEnum<ClanInvitationStatus>()
                                 .MapEnum<PartyStatus>()
+                                .MapEnum<PartyOrderType>()
                                 .MapEnum<SettlementType>()
                                 .MapEnum<BattlePhase>()
                                 .MapEnum<BattleSide>()

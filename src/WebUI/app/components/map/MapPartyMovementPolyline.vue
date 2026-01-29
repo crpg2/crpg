@@ -5,7 +5,7 @@ import { LPolyline } from '@vue-leaflet/vue-leaflet'
 
 import type { Party } from '~/models/strategus/party'
 
-import { PARTY_STATUS } from '~/models/strategus/party'
+import { PARTY_ORDER_TYPE } from '~/models/strategus/party'
 import { positionToLatLng } from '~/utils/geometry'
 
 const { party } = defineProps<{ party: Party }>()
@@ -17,46 +17,57 @@ const followColor = '#10b981'
 const moveColor = '#485fc7'
 
 const partyMovementLine = computed(() => {
-  let color: string
+  if (!party.orders.length) {
+    return null
+  }
   const positions: Position[] = []
 
-  switch (party.status) {
-    case PARTY_STATUS.MovingToPoint:
-      positions.push(...party.waypoints.coordinates)
-      color = moveColor
-      break
-    case PARTY_STATUS.FollowingParty:
-      if (party.targetedParty) {
-        positions.push(party.targetedParty.position.coordinates)
-      }
-      color = followColor
-      break
-    case PARTY_STATUS.MovingToSettlement:
-      if (party.targetedSettlement) {
-        positions.push(party.targetedSettlement.position.coordinates)
-      }
-      color = moveColor
-      break
-    case PARTY_STATUS.MovingToAttackParty:
-      if (party.targetedParty) {
-        positions.push(party.targetedParty.position.coordinates)
-      }
-      color = attackColor
-      break
-    case PARTY_STATUS.MovingToAttackSettlement:
-      if (party.targetedSettlement) {
-        positions.push(party.targetedSettlement.position.coordinates)
-      }
-      color = attackColor
-      break
-    case PARTY_STATUS.MovingToBattle:
-      if (party.targetedBattle) {
-        positions.push(party.targetedBattle.position.coordinates)
-      }
-      color = moveColor
-      break
-    default:
-      return null
+  let color = moveColor
+
+  const sortedOrders = party.orders.toSorted((a, b) => a.orderIndex - b.orderIndex)
+
+  for (const order of sortedOrders) {
+    switch (order.type) {
+      case PARTY_ORDER_TYPE.MoveToPoint:
+        positions.push(...order.waypoints.coordinates)
+        color = moveColor
+        break
+
+      case PARTY_ORDER_TYPE.FollowParty:
+        if (order.targetedParty) {
+          positions.push(order.targetedParty.position.coordinates)
+          color = followColor
+        }
+        break
+
+      case PARTY_ORDER_TYPE.AttackParty:
+        if (order.targetedParty) {
+          positions.push(order.targetedParty.position.coordinates)
+          color = attackColor
+        }
+        break
+
+      case PARTY_ORDER_TYPE.MoveToSettlement:
+        if (order.targetedSettlement) {
+          positions.push(order.targetedSettlement.position.coordinates)
+          color = moveColor
+        }
+        break
+
+      case PARTY_ORDER_TYPE.AttackSettlement:
+        if (order.targetedSettlement) {
+          positions.push(order.targetedSettlement.position.coordinates)
+          color = attackColor
+        }
+        break
+
+      case PARTY_ORDER_TYPE.JoinBattle:
+        if (order.targetedBattle) {
+          positions.push(order.targetedBattle.position.coordinates)
+          color = moveColor
+        }
+        break
+    }
   }
 
   return {

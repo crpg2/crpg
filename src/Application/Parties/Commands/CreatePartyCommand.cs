@@ -52,6 +52,8 @@ public record CreatePartyCommand : IMediatorRequest<PartyViewModel>
                 Waypoints = MultiPoint.Empty,
                 TargetedPartyId = null,
                 TargetedSettlementId = null,
+                TargetedBattleId = null,
+                Orders = [],
             };
 
             await _db.SaveChangesAsync(cancellationToken);

@@ -1,13 +1,20 @@
 import { useIntervalFn } from '@vueuse/core'
 
-import type { StrategusUpdate, UpdatePartyStatus } from '~/models/strategus/party'
+import type { PartyOrder, StrategusUpdate, UpdatePartyOrder } from '~/models/strategus/party'
 
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { PARTY_STATUS } from '~/models/strategus/party'
-import { getSelfUpdate, shouldPartyBeInBattle, shouldPartyBeInSettlement, updatePartyStatus } from '~/services/strategus/party-service'
+import { BATTLE_SIDE } from '~/models/strategus/battle'
+import { PARTY_ORDER_TYPE, PARTY_STATUS } from '~/models/strategus/party'
+import {
+  getSelfUpdate,
+  mapPartyOrderToUpdateOrder,
+  shouldPartyBeInBattle,
+  shouldPartyBeInSettlement,
+  updatePartyOrders,
+} from '~/services/strategus/party-service'
 
-// const INTERVAL = 1000 * 60 ; // 1 min
-const INTERVAL = 10000 // TODO:
+// const INTERVAL = 1000 * 60 ; // 1 min // TODO: to env
+const INTERVAL = 10_000 // TODO:
 
 export const usePartyState = (strict: boolean = true): {
   partyState: Ref<StrategusUpdate>
@@ -73,16 +80,29 @@ export const useParty = (
     startUpdatePartyInterval()
   }
 
-  const moveParty = async (updateRequest: Partial<UpdatePartyStatus>) => {
-    partyState.value.party = await updatePartyStatus({
-      status: PARTY_STATUS.MovingToPoint,
+  const moveParty = async (updateRequest: Partial<UpdatePartyOrder>, chain: boolean = false) => {
+    const order: UpdatePartyOrder = {
+      type: PARTY_ORDER_TYPE.MoveToPoint,
+      orderIndex: 0,
+      waypoints: { coordinates: [], type: 'MultiPoint' },
       targetedPartyId: 0,
       targetedSettlementId: 0,
-      targetedBattletId: 0,
+      targetedBattleId: 0,
       battleJoinIntents: [],
-      waypoints: { coordinates: [], type: 'MultiPoint' },
       ...updateRequest,
-    })
+    }
+
+    partyState.value.party = await updatePartyOrders(
+      chain
+        ? [
+            ...partyState.value.party.orders.map(mapPartyOrderToUpdateOrder),
+            {
+              ...order,
+              orderIndex: partyState.value.party.orders.length,
+            },
+          ]
+        : [order],
+    )
   }
 
   // TODO: move to party action

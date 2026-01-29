@@ -36,6 +36,7 @@ public interface ICrpgDbContext
     DbSet<Settlement> Settlements { get; }
     DbSet<SettlementItem> SettlementItems { get; }
     DbSet<PartyItem> PartyItems { get; }
+    DbSet<PartyOrder> PartyOrders { get; }
     DbSet<Battle> Battles { get; }
     DbSet<BattleSideBriefing> BattleSideBriefings { get; }
     DbSet<BattleFighter> BattleFighters { get; }
