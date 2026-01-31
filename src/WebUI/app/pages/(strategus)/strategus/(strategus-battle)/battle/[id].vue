@@ -6,7 +6,7 @@ import { BattleFighterApplicationStatusBadge } from '#components'
 
 import type { BattleSide } from '~/models/strategus/battle'
 
-import { useBattleFighterApplications, useBattleFighterApplicationsProvider, useMapBattle, useMapBattleProvider } from '~/composables/strategus/map/use-map-battle'
+import { useBattleFighterApplications, useBattleFighterApplicationsProvider, useBattleFighters, useBattleFightersProvider, useMapBattle, useMapBattleProvider } from '~/composables/strategus/map/use-map-battle'
 import { useParty, usePartyState } from '~/composables/strategus/use-party'
 import { useUser } from '~/composables/user/use-user'
 import { BATTLE_FIGHTER_APPLICATION_STATUS } from '~/models/strategus/battle'
@@ -33,18 +33,20 @@ definePageMeta({
         return navigateTo({ name: 'strategus' })
       }
 
-      await useBattleFighterApplicationsProvider(battleId)
+      await Promise.all([
+        useBattleFighterApplicationsProvider(battleId),
+        useBattleFightersProvider(battleId),
+      ])
     },
   ],
 })
 
 const { battle, battleTitle } = useMapBattle()
+const { selfBattleFighter } = useBattleFighters()
 
-const { partyState, updateParty } = useParty()
+const { updateParty } = useParty()
 const { user } = useUser()
 const route = useRoute<'strategus-battle-id'>()
-
-const selfFighter = computed(() => partyState.value.party.targetedBattle?.fighters.find(f => f.party?.id === partyState.value.party.id))
 
 const selfCommanderFighter = computed(() => {
   if (battle.value.attacker.commander.party?.id === user.value!.id) {
@@ -61,7 +63,7 @@ const { fighterApplications, removeBattleFighterApplication } = useBattleFighter
 const pendingFigterApplications = computed(() => fighterApplications.value.filter(fa => fa.status === BATTLE_FIGHTER_APPLICATION_STATUS.Pending))
 
 const renderBattleFighterApplicationStatusBadge = (side: BattleSide) => {
-  if (selfFighter.value?.commander) {
+  if (selfBattleFighter.value?.commander) {
     return null
   }
 
@@ -71,7 +73,7 @@ const renderBattleFighterApplicationStatusBadge = (side: BattleSide) => {
     /**
      * There may be a case where an application is accepted, but the fighter was kicked out of the battle, but then re-created the application for the other side.
      */
-    || (fighterApplication.status === BATTLE_FIGHTER_APPLICATION_STATUS.Accepted && !selfFighter.value)) {
+    || (fighterApplication.status === BATTLE_FIGHTER_APPLICATION_STATUS.Accepted && !selfBattleFighter.value)) {
     return null
   }
 
@@ -136,7 +138,7 @@ const navigationItems = computed<NavigationMenuItem[]>(() => [
       </BattleSideViewGroup>
 
       <UNavigationMenu
-        v-if="selfFighter"
+        v-if="selfBattleFighter"
         variant="pill"
         color="neutral"
         class="flex w-full justify-center gap-4"

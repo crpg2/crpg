@@ -67,7 +67,7 @@ public record RemoveBattleFighterApplicationCommand : IMediatorRequest
             {
                 // TODO: to party service - LeaveFromBattle
                 application.Party!.Status = PartyStatus.Idle;
-                application.Party!.TargetedBattleId = null;
+                application.Party!.CurrentBattleId = null;
             }
 
             await _db.SaveChangesAsync(cancellationToken);

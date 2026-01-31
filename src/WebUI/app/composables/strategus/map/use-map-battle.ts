@@ -1,6 +1,6 @@
 import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
 
-import type { Battle, BattleFighterApplication, BattleSide } from '~/models/strategus/battle'
+import type { Battle, BattleFighter, BattleFighterApplication, BattleSide } from '~/models/strategus/battle'
 
 import { useBattleTitle } from '~/composables/strategus/battle/use-battle'
 import { useUser } from '~/composables/user/use-user'
@@ -45,7 +45,7 @@ export const useMapBattle = () => {
 
 export const useBattleFighterApplicationsProvider = (battleId: number) => {
   return useAsyncData(
-    toCacheKey(MAP_BATTLE_QUERY_KEYS.figterApplicationsById(battleId)),
+    toCacheKey(MAP_BATTLE_QUERY_KEYS.fighterApplicationsById(battleId)),
     () => getBattleFighterApplications(battleId, [
       BATTLE_FIGHTER_APPLICATION_STATUS.Pending,
       BATTLE_FIGHTER_APPLICATION_STATUS.Accepted,
@@ -60,7 +60,7 @@ export const useBattleFighterApplicationsProvider = (battleId: number) => {
 export const useBattleFighterApplications = () => {
   const { battle } = useMapBattle()
 
-  const _key = MAP_BATTLE_QUERY_KEYS.figterApplicationsById(battle.value.id)
+  const _key = MAP_BATTLE_QUERY_KEYS.fighterApplicationsById(battle.value.id)
   const fighterApplications = getAsyncData<BattleFighterApplication[]>(_key)
   const refreshFighterApplications = refreshAsyncData(_key)
 
@@ -85,19 +85,23 @@ export const useBattleFighterApplications = () => {
   }
 }
 
-export const useBattleFighters = (immediate = true) => {
+export const useBattleFightersProvider = (battleId: number) => {
+  return useAsyncData(
+    toCacheKey(MAP_BATTLE_QUERY_KEYS.fightersById(battleId)),
+    () => getBattleFighters(battleId),
+    {
+      default: () => [],
+    },
+  )
+}
+
+export const useBattleFighters = () => {
   const { battle, refreshBattle } = useMapBattle()
   const { user } = useUser()
 
-  const {
-    state: battleFighters,
-    executeImmediate: loadBattleFighters,
-    isLoading: loadingBattleFighters,
-  } = useAsyncState(
-    () => getBattleFighters(battle.value.id),
-    [],
-    { immediate, resetOnExecute: false },
-  )
+  const _key = MAP_BATTLE_QUERY_KEYS.fightersById(battle.value.id)
+  const battleFighters = getAsyncData<BattleFighter[]>(_key)
+  const refreshBattleFighters = refreshAsyncData(_key)
 
   const battleFightersCount = computed(() => battleFighters.value.length)
 
@@ -114,7 +118,7 @@ export const useBattleFighters = (immediate = true) => {
 
     if (cause === 'kick') {
       await Promise.all([
-        loadBattleFighters(),
+        refreshBattleFighters(),
         refreshBattle(),
       ])
     }
@@ -125,8 +129,7 @@ export const useBattleFighters = (immediate = true) => {
     battleFighterAttackers,
     battleFighterDefenders,
     battleFightersCount,
-    loadBattleFighters,
-    loadingBattleFighters,
+    refreshBattleFighters,
     selfBattleFighter,
     isSelfBattleFighterCommander,
     removeBattleFigter,

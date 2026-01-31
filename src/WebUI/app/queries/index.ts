@@ -24,7 +24,8 @@ export const BATTLE_QUERY_KEYS = {
 export const MAP_BATTLE_QUERY_KEYS = {
   root: ['map-battles'] as const,
   byId: (id: number) => [...MAP_BATTLE_QUERY_KEYS.root, id] as const,
-  figterApplicationsById: (id: number) => [...MAP_BATTLE_QUERY_KEYS.byId(id), { figterApplications: true }] as const,
+  fightersById: (id: number) => [...MAP_BATTLE_QUERY_KEYS.byId(id), { fightersById: true }] as const,
+  fighterApplicationsById: (id: number) => [...MAP_BATTLE_QUERY_KEYS.byId(id), { figterApplications: true }] as const,
 }
 
 export const PARTY_QUERY_KEYS = {

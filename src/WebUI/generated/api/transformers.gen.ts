@@ -242,8 +242,8 @@ const partyOrderViewModelSchemaResponseTransformer = (data: any) => {
 };
 
 const partyViewModelSchemaResponseTransformer = (data: any) => {
-    if (data.targetedBattle) {
-        data.targetedBattle = battleViewModelSchemaResponseTransformer(data.targetedBattle);
+    if (data.currentBattle) {
+        data.currentBattle = battleViewModelSchemaResponseTransformer(data.currentBattle);
     }
     data.orders = data.orders.map((item: any) => partyOrderViewModelSchemaResponseTransformer(item));
     return data;

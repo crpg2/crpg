@@ -10,9 +10,9 @@ using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Parties;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-// using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging;
 using NetTopologySuite.Geometries;
-// using LoggerFactory = Crpg.Logging.LoggerFactory;
+using LoggerFactory = Crpg.Logging.LoggerFactory;
 
 namespace Crpg.Application.Parties.Commands;
 
@@ -32,6 +32,14 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
     [JsonIgnore]
     public int PartyId { get; set; }
     public PartyOrderCommandItemDto[] Orders { get; init; } = [];
+
+    public class Validator : AbstractValidator<UpdatePartyOrdersCommand>
+    {
+        public Validator()
+        {
+            RuleForEach(c => c.Orders).SetValidator(new PartyOrderValidator());
+        }
+    }
 
     public class PartyOrderValidator : AbstractValidator<PartyOrderCommandItemDto>
     {
@@ -80,10 +88,6 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
             var party = await _db.Parties
                         .Include(p => p.User!)
                             .ThenInclude(u => u.ClanMembership!.Clan)
-                        .Include(p => p.TargetedParty)
-                        .Include(p => p.TargetedSettlement)
-                        .Include(p => p.TargetedBattle)
-                        .Include(h => h.BattleJoinIntents)
                         .Include(p => p.Orders)
                         .FirstOrDefaultAsync(p => p.Id == req.PartyId, cancellationToken);
             if (party == null)
@@ -108,7 +112,8 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
                     case PartyOrderType.FollowParty:
                     case PartyOrderType.AttackParty:
                         {
-                            // We are not particularly concerned about database requests in the loop, as there will almost always be no more than two orders
+                            // We are not particularly concerned about database requests in the loop,
+                            // as there will almost always be no more than two orders
                             var targetParty = await _db.Parties
                                 .Include(p => p.User)
                                 .FirstOrDefaultAsync(h => h.Id == order.TargetedPartyId, cancellationToken);
@@ -148,29 +153,30 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
                                 return new(CommonErrors.BattleNotFound(order.TargetedBattleId));
                             }
 
+                            foreach (var intent in order.BattleJoinIntents)
+                            {
+                                _db.BattleFighterApplications.Add(new BattleFighterApplication
+                                {
+                                    Battle = targetBattle,
+                                    Party = party,
+                                    Side = intent.Side,
+                                    Status = BattleFighterApplicationStatus.Intent,
+                                });
+                            }
+
                             break;
                         }
                 }
-
-                var battleJoinIntents = order.BattleJoinIntents
-                    .Select(intent => new BattleJoinIntent
-                    {
-                        BattleId = intent.BattleId,
-                        Side = intent.Side,
-                        Party = party,
-                    })
-                    .ToList();
 
                 partyOrders.Add(new PartyOrder
                 {
                     Party = party,
                     Type = order.Type,
+                    OrderIndex = idx,
                     Waypoints = order.Waypoints,
                     TargetedPartyId = order.TargetedPartyId,
                     TargetedSettlementId = order.TargetedSettlementId,
                     TargetedBattleId = order.TargetedBattleId,
-                    OrderIndex = idx,
-                    BattleJoinIntents = battleJoinIntents,
                 });
             }
 

@@ -47,7 +47,7 @@ definePageMeta({
         if (shouldPartyBeInSettlement(party) && !to.meta.groups?.includes('strategussettlement')) {
           return navigateTo({
             name: 'strategus-settlement-id',
-            params: { id: party.targetedSettlement!.id },
+            params: { id: party.currentSettlement!.id },
           })
         }
 
@@ -55,7 +55,7 @@ definePageMeta({
         ) {
           return navigateTo({
             name: 'strategus-battle-id',
-            params: { id: party.targetedBattle!.id },
+            params: { id: party.currentBattle!.id },
           })
         }
       }

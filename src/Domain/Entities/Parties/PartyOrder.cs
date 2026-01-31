@@ -48,12 +48,5 @@ public class PartyOrder
     /// <summary>See <see cref="TargetedBattleId"/>.</summary>
     public Battle? TargetedBattle { get; set; }
 
-    /// <summary>
-    /// The collection of <see cref="BattleJoinIntent"/> representing this party's current intentions to move to battle locations.
-    /// Each intent specifies the <see cref="BattleSide"/> the party plans to join upon arrival.
-    /// A party can have multiple intents simultaneously (e.g., one for attackers, one for defenders).
-    /// It makes sense while the Party is <see cref="Type"/> == <see cref="PartyOrderType.JoinBattle"/>.
-    /// </summary>
-    public List<BattleJoinIntent> BattleJoinIntents { get; set; } = [];
     public Party? Party { get; set; }
 }

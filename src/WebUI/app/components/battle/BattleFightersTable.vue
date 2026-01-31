@@ -9,7 +9,7 @@ import { useUser } from '~/composables/user/use-user'
 
 const { fighters, canKickByFighter, canLeaveByFighter } = defineProps<{
   fighters: BattleFighter[]
-  loading: boolean
+  loading?: boolean
   canKickByFighter: (fighter: BattleFighter) => boolean
   canLeaveByFighter: (fighter: BattleFighter) => boolean
 }>()

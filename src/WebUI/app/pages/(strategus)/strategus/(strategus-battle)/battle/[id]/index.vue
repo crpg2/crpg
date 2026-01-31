@@ -13,7 +13,6 @@ const { updateParty } = useParty()
 const {
   battleFighterAttackers,
   battleFighterDefenders,
-  loadingBattleFighters,
   isSelfBattleFighterCommander,
   selfBattleFighter,
   removeBattleFigter,
@@ -53,7 +52,6 @@ const checkCanLeave = (side: BattleSide, fighter: BattleFighter) => {
         v-for="side in [BATTLE_SIDE.Attacker, BATTLE_SIDE.Defender]"
         :key="side"
         :fighters="side === BATTLE_SIDE.Attacker ? battleFighterAttackers : battleFighterDefenders"
-        :loading="loadingBattleFighters"
         :can-kick-by-fighter="(fighter) => checkCanKick(side, fighter)"
         :can-leave-by-fighter="(fighter) => checkCanLeave(side, fighter)"
         @kick="(fighterId) => removeBattleFigter(fighterId, 'kick')"

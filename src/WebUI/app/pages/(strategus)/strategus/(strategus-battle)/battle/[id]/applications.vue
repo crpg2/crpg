@@ -1,17 +1,15 @@
 <script setup lang="ts">
 import { LazyBattleManageFigterItemsDrawer } from '#components'
 
-import { useBattleFighterApplications, useMapBattle } from '~/composables/strategus/map/use-map-battle'
-import { usePartyState } from '~/composables/strategus/use-party'
+import { useBattleFighterApplications, useBattleFighters, useMapBattle } from '~/composables/strategus/map/use-map-battle'
 
 definePageMeta({
   middleware: [
     () => {
-      const { partyState } = usePartyState()
       const { battle } = useMapBattle()
-      const commander = partyState.value.party.targetedBattle?.fighters.some(f => f.commander && f.party?.id === partyState.value.party.id)
+      const { selfBattleFighter } = useBattleFighters()
 
-      if (!commander) {
+      if (!selfBattleFighter.value?.commander) {
         return navigateTo({ name: 'strategus-battle-id', params: { id: battle.value.id } })
       }
     },

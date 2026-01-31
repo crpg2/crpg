@@ -49,12 +49,6 @@ internal static class CommonErrors
         Detail = $"Battle with id '{battleId}' is too far to perform the requested action",
     };
 
-    public static Error BattleJoinIntentsIsEmpty() => new(ErrorType.NotFound, ErrorCode.BattleJoinIntentsIsEmpty)
-    {
-        Title = "Battle join intents are empty",
-        Detail = $"There cannot be any empty battle join intents if you are going into battle.",
-    };
-
     public static Error BattleParticipantSlotsExceeded(int battleId, BattleSide side, int totalSlots) => new(ErrorType.Validation, ErrorCode.BattleParticipantSlotsExceeded)
     {
         Title = "The number of participants in the battle has been exceeded",

@@ -108,7 +108,7 @@ public record RespondToBattleFighterApplicationCommand : IMediatorRequest<Battle
                 if (otherApplications.Length == 0)
                 {
                     application.Party!.Status = PartyStatus.Idle;
-                    application.Party!.TargetedBattleId = null;
+                    application.Party!.CurrentBattleId = null;
                 }
             }
 

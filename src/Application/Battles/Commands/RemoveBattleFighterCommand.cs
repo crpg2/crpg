@@ -72,7 +72,7 @@ public record RemoveBattleFighterCommand : IMediatorRequest
             {
                 _db.BattleFighters.Remove(fighter);
                 fighter.Party!.Status = Domain.Entities.Parties.PartyStatus.Idle;
-                fighter.Party!.TargetedBattleId = null;
+                fighter.Party!.CurrentBattleId = null;
                 // TODO: add notification to commander
                 // _db.ActivityLogs.Add(_activityLogService.CreateBattleParticipantLeavedLog(battle.Id, req.PartyId));
                 await _db.SaveChangesAsync(cancellationToken);
@@ -104,7 +104,7 @@ public record RemoveBattleFighterCommand : IMediatorRequest
             // _db.ActivityLogs.Add(_activityLogService.CreateBattleParticipantKickedLog(battle.Id, participant.Character!.UserId, req.PartyId));
             // _db.UserNotifications.Add(_userNotificationService.CreateBattleParticipantKickedToExParticipantNotification(participant.Character!.UserId, battle.Id));
             fighter.Party!.Status = Domain.Entities.Parties.PartyStatus.Idle;
-            fighter.Party!.TargetedBattleId = null;
+            fighter.Party!.CurrentBattleId = null;
             await _db.SaveChangesAsync(cancellationToken);
             // Logger.LogInformation("User '{0}' removed participant '{1}' (user '{2}') out of battle '{3}'", req.PartyId, req.RemovedParticipantId, participant.Character!.UserId, req.BattleId);
             return new Result();

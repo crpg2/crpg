@@ -69,7 +69,6 @@ export interface BattleSideBriefing {
 };
 
 export interface BattleJoinIntent {
-  battleId: number
   side: BattleSide
 }
 
@@ -86,6 +85,7 @@ export const BATTLE_FIGHTER_APPLICATION_STATUS = {
   Pending: 'Pending',
   Declined: 'Declined',
   Accepted: 'Accepted',
+  Intent: 'Intent',
 } as const satisfies Record<_BattleFighterApplicationStatus, _BattleFighterApplicationStatus>
 
 export type BattleFighterApplicationStatus = ValueOf<typeof BATTLE_FIGHTER_APPLICATION_STATUS>

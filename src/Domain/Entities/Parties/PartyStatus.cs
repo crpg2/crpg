@@ -21,6 +21,11 @@ public enum PartyStatus
     RecruitingInSettlement,
 
     /// <summary>
+    /// Awaiting acceptance or rejection of our offer to exchange (gold, items, army) with another a <see cref="Party"/>.
+    /// </summary>
+    AwaitingPartyOfferDecision,
+
+    /// <summary>
     /// Stationary because involved in a <see cref="Battle"/>.
     /// </summary>
     InBattle,
@@ -30,38 +35,4 @@ public enum PartyStatus
     /// Cannot move (to move, must remove requests). Can be attacked by other <see cref="Party"/> (this is done to prevent abuse mechanics).
     /// </summary>
     AwaitingBattleJoinDecision,
-
-    /// <summary>
-    /// Moving to an arbitrary location.
-    /// </summary>
-    // MovingToPoint,
-
-    /// <summary>
-    /// Following a <see cref="Party"/>.
-    /// </summary>
-    // FollowingParty,
-
-    /// <summary>
-    /// Following a <see cref="Settlement"/>.
-    /// </summary>
-    // MovingToSettlement,
-
-    /// <summary>
-    /// Moving to attack a <see cref="Party"/>.
-    /// </summary>
-    // MovingToAttackParty,
-
-    /// <summary>
-    /// Moving to attack a <see cref="Settlement"/>.
-    /// </summary>
-    // MovingToAttackSettlement,
-
-
-    /// <summary>
-    /// Moving towards a <see cref="Battle"/> location with an existing
-    /// <see cref="BattleJoinIntent"/> that defines the intended side to join.
-    /// </summary>
-    // MovingToBattle,
-
-
 }

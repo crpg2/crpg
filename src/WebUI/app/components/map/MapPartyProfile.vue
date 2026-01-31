@@ -15,14 +15,14 @@ defineEmits<{
   <UCard
     variant="subtle"
     :ui="{
-      root: 'bg-elevated',
+      root: 'ring-2 ring-accented bg-elevated/90 backdrop-blur-md flex flex-col divide-muted',
     }"
   >
     <div class="flex flex-col gap-2">
       <div class="flex items-center gap-2">
-        <div @click="$emit('locate')">
+        <!-- <div @click="$emit('locate')">
           <UIcon name="i-lucide-locate-fixed" class="size-6 cursor-pointer" />
-        </div>
+        </div> -->
 
         <UserMedia
           :user="party.user"
@@ -32,16 +32,16 @@ defineEmits<{
       </div>
 
       <div class="flex items-center gap-1.5">
-        <AppCoin :value="10000" />
-        <UiDataMedia icon="member" :label="String(party.troops)" />
+        <AppCoin :value="party.gold" />
+        <UiDataMedia icon="crpg:member" :label="$n(party.troops)" />
       </div>
 
       <div>Status: {{ party.status }}</div>
-      <div>Targeted Settlement: {{ party.targetedSettlement?.name }}</div>
-      <div>Targeted Party: {{ party.targetedParty?.user.name }}</div>
+      <!-- <div>Targeted Settlement: {{ party.currentSettlement?.name }}</div>
+      <div>Targeted Party: {{ party.currentParty?.user.name }}</div> -->
 
       <!-- TODO: add terrain to party -->
-      <div>Terrain: Plain TODO:</div>
+      <!-- <div>Terrain: Plain TODO:</div> -->
     </div>
   </UCard>
 </template>

@@ -32,7 +32,7 @@ public enum PartyOrderType
 
     /// <summary>
     /// Moving towards a <see cref="Battle"/> location with an existing
-    /// <see cref="BattleJoinIntent"/> that defines the intended side to join.
+    /// <see cref="BattleFighterApplication"/> with status == <see cref="BattleFighterApplicationStatus.Intent"/> that defines the intended side to join.
     /// </summary>
     JoinBattle,
 }

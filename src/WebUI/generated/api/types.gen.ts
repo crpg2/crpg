@@ -85,7 +85,7 @@ export type BattleDetailedViewModelResult = {
     data: BattleDetailedViewModel | null;
 };
 
-export type BattleFighterApplicationStatus = 'Pending' | 'Declined' | 'Accepted';
+export type BattleFighterApplicationStatus = 'Intent' | 'Pending' | 'Declined' | 'Accepted';
 
 export type BattleFighterApplicationViewModel = {
     id: number;
@@ -131,7 +131,6 @@ export type BattleFighterViewModelIListResult = {
 };
 
 export type BattleJoinIntentViewModel = {
-    battleId: number;
     side: BattleSide;
 };
 
@@ -511,7 +510,7 @@ export type Error = {
     stackTrace: string | null;
 };
 
-export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleJoinIntentsIsEmpty' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
+export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
 
 export type ErrorSource = {
     pointer?: string | null;
@@ -820,7 +819,7 @@ export type PartyPublicViewModel = {
     troops: number;
 };
 
-export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'InBattle' | 'AwaitingBattleJoinDecision';
+export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'AwaitingPartyOfferDecision' | 'InBattle' | 'AwaitingBattleJoinDecision';
 
 export type PartyViewModel = {
     id: number;
@@ -828,11 +827,9 @@ export type PartyViewModel = {
     troops: number;
     position: GeoJsonPoint;
     status: PartyStatus;
-    waypoints: GeoJsonMultiPoint;
-    targetedParty: PartyVisibleViewModel | null;
-    targetedSettlement: SettlementPublicViewModel | null;
-    targetedBattle: BattleViewModel | null;
-    battleJoinIntents: Array<BattleJoinIntentViewModel>;
+    currentParty: PartyVisibleViewModel | null;
+    currentSettlement: SettlementPublicViewModel | null;
+    currentBattle: BattleViewModel | null;
     user: UserPublicViewModel;
     orders: Array<PartyOrderViewModel>;
 };
@@ -1460,11 +1457,9 @@ export type PartyViewModelWritable = {
     troops: number;
     position: GeoJsonPointWritable;
     status: PartyStatus;
-    waypoints: GeoJsonMultiPointWritable;
-    targetedParty: PartyVisibleViewModelWritable | null;
-    targetedSettlement: SettlementPublicViewModelWritable | null;
-    targetedBattle: BattleViewModelWritable | null;
-    battleJoinIntents: Array<BattleJoinIntentViewModel>;
+    currentParty: PartyVisibleViewModelWritable | null;
+    currentSettlement: SettlementPublicViewModelWritable | null;
+    currentBattle: BattleViewModelWritable | null;
     user: UserPublicViewModel;
     orders: Array<PartyOrderViewModelWritable>;
 };

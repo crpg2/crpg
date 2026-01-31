@@ -40,7 +40,6 @@ public interface ICrpgDbContext
     DbSet<Battle> Battles { get; }
     DbSet<BattleSideBriefing> BattleSideBriefings { get; }
     DbSet<BattleFighter> BattleFighters { get; }
-    DbSet<BattleJoinIntent> BattleJoinIntents { get; }
     DbSet<BattleFighterApplication> BattleFighterApplications { get; }
     DbSet<BattleParticipant> BattleParticipants { get; }
     DbSet<BattleMercenaryApplication> BattleMercenaryApplications { get; }

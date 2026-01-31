@@ -15,14 +15,9 @@ export const PARTY_STATUS = {
   Idle: 'Idle',
   IdleInSettlement: 'IdleInSettlement',
   RecruitingInSettlement: 'RecruitingInSettlement',
-  // MovingToPoint: 'MovingToPoint',
-  // FollowingParty: 'FollowingParty',
-  // MovingToSettlement: 'MovingToSettlement',
-  // MovingToAttackParty: 'MovingToAttackParty',
-  // MovingToAttackSettlement: 'MovingToAttackSettlement',
-  // MovingToBattle: 'MovingToBattle',
   AwaitingBattleJoinDecision: 'AwaitingBattleJoinDecision',
   InBattle: 'InBattle',
+  AwaitingPartyOfferDecision: 'AwaitingPartyOfferDecision',
 } as const satisfies Record<_PartyStatus, _PartyStatus>
 
 export type PartyStatus = ValueOf<typeof PARTY_STATUS>
@@ -44,12 +39,10 @@ export interface Party extends PartyCommon {
   gold: number
   status: PartyStatus
   position: Point
-  waypoints: MultiPoint
-  targetedParty: PartyVisible | null
-  targetedSettlement: SettlementPublic | null
-  targetedBattle: MapBattle | null
-  battleJoinIntents: Array<BattleJoinIntent>
   orders: PartyOrder[]
+  currentParty: PartyVisible | null
+  currentSettlement: SettlementPublic | null
+  currentBattle: MapBattle | null
 }
 
 export interface StrategusUpdate {
@@ -58,15 +51,6 @@ export interface StrategusUpdate {
   visibleSettlements: SettlementPublic[]
   visibleBattles: MapBattle[] // TODO: FIXME:
 }
-
-// export interface UpdatePartyStatus {
-//   status: PartyStatus
-//   waypoints: MultiPoint
-//   targetedPartyId: number
-//   targetedSettlementId: number
-//   targetedBattletId: number
-//   battleJoinIntents: Array<BattleJoinIntent>
-// }
 
 export interface ItemStack {
   item: Item
@@ -84,16 +68,6 @@ export const PARTY_ORDER_TYPE = {
 
 export type PartyOrderType = ValueOf<typeof PARTY_ORDER_TYPE>
 
-export interface UpdatePartyOrder {
-  type: PartyOrderType
-  orderIndex: number
-  waypoints: MultiPoint
-  targetedPartyId: number
-  targetedSettlementId: number
-  targetedBattleId: number
-  battleJoinIntents: Array<BattleJoinIntent>
-}
-
 export interface PartyOrder {
   type: PartyOrderType
   orderIndex: number
@@ -101,5 +75,15 @@ export interface PartyOrder {
   targetedParty: PartyVisible | null
   targetedSettlement: SettlementPublic | null
   targetedBattle: MapBattle | null
+  battleJoinIntents: Array<BattleJoinIntent>
+}
+
+export interface UpdatePartyOrder {
+  type: PartyOrderType
+  orderIndex: number
+  waypoints: MultiPoint
+  targetedPartyId: number
+  targetedSettlementId: number
+  targetedBattleId: number
   battleJoinIntents: Array<BattleJoinIntent>
 }

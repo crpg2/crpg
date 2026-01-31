@@ -96,22 +96,8 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
           type: PARTY_ORDER_TYPE.JoinBattle,
           targetedBattleId: moveTarget.value.id,
           battleJoinIntents: [
-            ...(mt === MOVEMENT_TYPE.JoinToBattleForAttacker || mt === MOVEMENT_TYPE.JoinToBattleForBoth)
-              ? [
-                  {
-                    side: BATTLE_SIDE.Attacker,
-                    battleId: moveTarget.value.id,
-                  },
-                ]
-              : [],
-            ...(mt === MOVEMENT_TYPE.JoinToBattleForDefender || mt === MOVEMENT_TYPE.JoinToBattleForBoth)
-              ? [
-                  {
-                    side: BATTLE_SIDE.Defender,
-                    battleId: moveTarget.value.id,
-                  },
-                ]
-              : [],
+            ...(mt === MOVEMENT_TYPE.JoinToBattleForAttacker || mt === MOVEMENT_TYPE.JoinToBattleForBoth) ? [{ side: BATTLE_SIDE.Attacker }] : [],
+            ...(mt === MOVEMENT_TYPE.JoinToBattleForDefender || mt === MOVEMENT_TYPE.JoinToBattleForBoth) ? [{ side: BATTLE_SIDE.Defender }] : [],
           ],
         }, shift?.value)
         break

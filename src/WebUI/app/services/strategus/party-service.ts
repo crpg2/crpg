@@ -13,6 +13,7 @@ import { PARTY_STATUS } from '~/models/strategus/party'
 
 export const getSelfUpdate = (): Promise<CrpgApiResult<StrategusUpdate>> => getPartiesSelfUpdate({})
 
+// TODO:
 // export const updatePartyStatus = async (payload: UpdatePartyStatus): Promise<Party> => (await putPartiesSelfStatus({ body: payload })).data!
 
 export const updatePartyOrders = async (orders: UpdatePartyOrder[]): Promise<Party> => (await putPartiesSelfOrders({ body: { orders } })).data!
@@ -40,9 +41,9 @@ export const UNMOVABLE_PARTY_STATUSES: PartyStatus[] = [
   PARTY_STATUS.RecruitingInSettlement,
 ]
 
-export const shouldPartyBeInSettlement = (party: Party) => party.targetedSettlement && IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)
+export const shouldPartyBeInSettlement = (party: Party) => party.currentSettlement && IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)
 
-export const shouldPartyBeInBattle = (party: Party) => party.targetedBattle && IN_BATTLE_PARTY_STATUSES.includes(party.status)
+export const shouldPartyBeInBattle = (party: Party) => party.currentBattle && IN_BATTLE_PARTY_STATUSES.includes(party.status)
 
 export function mapPartyOrderToUpdateOrder(order: PartyOrder): UpdatePartyOrder {
   const { type, orderIndex, waypoints, targetedParty, targetedSettlement, targetedBattle, battleJoinIntents } = order

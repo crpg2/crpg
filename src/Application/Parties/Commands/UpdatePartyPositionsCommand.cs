@@ -5,6 +5,7 @@ using Crpg.Application.Common.Services;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Parties;
+using Crpg.Domain.Entities.Settlements;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using NetTopologySuite.Geometries;
@@ -19,16 +20,6 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
     internal class Handler(ICrpgDbContext db, IStrategusMap strategusMap, IStrategusSpeedModel strategusSpeedModel) : IMediatorRequestHandler<UpdatePartyPositionsCommand>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdatePartyPositionsCommand>();
-
-        // private static readonly PartyStatus[] MovementStatuses =
-        // [
-        //     PartyStatus.MovingToPoint,
-        //     PartyStatus.FollowingParty,
-        //     PartyStatus.MovingToSettlement,
-        //     PartyStatus.MovingToAttackParty,
-        //     PartyStatus.MovingToAttackSettlement,
-        //     PartyStatus.MovingToBattle,
-        // ];
 
         private static readonly PartyStatus[] UnattackablePartyStatuses =
         [
@@ -45,12 +36,13 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
         {
             var parties = await _db.Parties
                 .AsSplitQuery()
-                // .Where(p => MovementStatuses.Contains(p.Status)) // TODO:
+                .Where(p => p.Orders.Any())
                 .Include(p => p.Orders)
-                .Include(p => p.TargetedParty).ThenInclude(p => p!.User)
-                .Include(p => p.TargetedSettlement)
-                .Include(p => p.TargetedBattle)
-                .Include(p => p.BattleJoinIntents)
+                    .ThenInclude(o => o.TargetedBattle)
+                .Include(p => p.Orders)
+                    .ThenInclude(o => o.TargetedSettlement)
+                .Include(p => p.Orders)
+                    .ThenInclude(o => o.TargetedParty)
                 // Load mounts items to compute movement speed.
                 .Include(p => p.Items.Where(oi => oi.Item!.Type == ItemType.Mount)).ThenInclude(oi => oi.Item)
                 .ToArrayAsync(cancellationToken);
@@ -62,25 +54,30 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                     continue;
                 }
 
-                var order = party.Orders.OrderBy(o => o.OrderIndex).First();
+                double speed = _strategusSpeedModel.ComputePartySpeed(party);
+                double remainingDistance = speed * req.DeltaTime.TotalSeconds;
 
-                // switch (order.Type)
-                // {
-                //     case PartyOrderType.MoveToPoint:
-                //         MoveToPoint(req.DeltaTime, party, order);
-                //         break;
-                //     case PartyOrderType.FollowParty:
-                //     case PartyOrderType.AttackParty:
-                //         MoveToParty(req.DeltaTime, party, order);
-                //         break;
-                //     case PartyOrderType.MoveToSettlement:
-                //     case PartyOrderType.AttackSettlement:
-                //         await MoveToSettlement(req.DeltaTime, party, order, cancellationToken);
-                //         break;
-                //     case PartyOrderType.JoinBattle:
-                //         MoveToBattle(req.DeltaTime, party, order);
-                //         break;
-                // }
+                while (remainingDistance > 0 && party.Orders.Count != 0)
+                {
+                    var order = party.Orders.OrderBy(o => o.OrderIndex).First();
+
+                    remainingDistance = order.Type switch
+                    {
+                        PartyOrderType.MoveToPoint =>
+                            MoveToPoint(party, order, remainingDistance),
+
+                        PartyOrderType.FollowParty or PartyOrderType.AttackParty =>
+                            MoveToParty(party, order, remainingDistance),
+
+                        PartyOrderType.MoveToSettlement or PartyOrderType.AttackSettlement =>
+                            await MoveToSettlement(party, order, remainingDistance, cancellationToken),
+
+                        PartyOrderType.JoinBattle =>
+                            await MoveToBattle(party, order, remainingDistance, cancellationToken),
+
+                        _ => remainingDistance,
+                    };
+                }
             }
 
             await _db.SaveChangesAsync(cancellationToken);
@@ -92,163 +89,254 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             return new((pointA.X + pointB.X) / 2, (pointA.Y + pointB.Y) / 2);
         }
 
-        private void MoveToPoint(TimeSpan deltaTime, Party party, PartyOrder order)
+        private double MoveToPoint(Party party, PartyOrder order, double remainingDistance)
         {
-            // TODO: to fluent validator
             if (order.Waypoints.IsEmpty)
             {
                 Logger.LogWarning("Party '{partyId}' was in order type '{orderType}' without any points to go to",
                     party.Id, order.Type);
                 // party.Status = PartyStatus.Idle; // TODO:
                 party.Orders.Remove(order);
-                return;
+                return remainingDistance;
+                // return;
             }
 
-            var targetPoint = (Point)order.Waypoints[0];
-            if (!MovePartyTowardsPoint(party, targetPoint, deltaTime, false))
-            {
-                return;
-            }
+            var waypoints = order.Waypoints.Cast<Point>().ToList();
+            remainingDistance = MoveAlongWaypoints(party, waypoints, remainingDistance);
+            order.Waypoints = new MultiPoint([.. waypoints]);
 
-            order.Waypoints = new MultiPoint([.. order.Waypoints.Skip(1).Cast<Point>()]);
             if (order.Waypoints.Count == 0)
             {
                 // party.Status = PartyStatus.Idle; // TODO: FIXME:
                 party.Orders.Remove(order);
+                // TODO: next order
             }
+
+            return remainingDistance;
+
+            // var targetPoint = (Point)order.Waypoints[0];
+            // if (!MovePartyTowardsPoint(party, targetPoint, deltaTime, false))
+            // {
+            //     return;
+            // }
+
+            // order.Waypoints = new MultiPoint([.. order.Waypoints.Skip(1).Cast<Point>()]);
+            // if (order.Waypoints.Count == 0)
+            // {
+            //     party.Orders.Remove(order);
+            // }
         }
 
-        private void MoveToParty(TimeSpan deltaTime, Party party, PartyOrder order)
+        private double MoveToParty(Party party, PartyOrder order, double remainingDistance)
         {
-            if (order.TargetedParty == null)
+            var target = order.TargetedParty;
+            if (target == null)
             {
                 Logger.LogWarning("Party '{partyId}' was in order type '{orderType}' without target party",
                     party.Id, order.Type);
                 // party.Status = PartyStatus.Idle; // TODO:
                 party.Orders.Remove(order);
-                return;
+                return remainingDistance;
             }
 
-            if (!party.Position.IsWithinDistance(order.TargetedParty.Position, _strategusMap.ViewDistance))
+            if (!party.Position.IsWithinDistance(target.Position, _strategusMap.ViewDistance))
             {
                 // Followed party is not in sight anymore. Stop.
                 // party.Status = PartyStatus.Idle; // TODO:
-                // party.TargetedParty = null;
                 party.Orders.Remove(order);
-                return;
+                return remainingDistance;
             }
 
-            if (order.Type == PartyOrderType.FollowParty)
+            // TODO: FIXME: кейс, когда на Party, за которой мы следуем или атакуем - напали
+            if (_strategusMap.InteractionDistance <= party.Position.Distance(target.Position))
             {
-                // Set canInteractWithTarget to false to the party doesn't stop to interaction range
-                // but stops on the target party itself.
-                MovePartyTowardsPoint(party, order.TargetedParty.Position, deltaTime, false);
-            }
-            else if (order.Type == PartyOrderType.AttackParty)
-            {
-                if (!MovePartyTowardsPoint(party, order.TargetedParty.Position, deltaTime, true))
+                if (order.Type == PartyOrderType.AttackParty && !UnattackablePartyStatuses.Contains(target.Status))
                 {
-                    return;
+                    StartBattle(party, target);
                 }
 
-                if (UnattackablePartyStatuses.Contains(order.TargetedParty.Status))
-                {
-                    return;
-                }
-
-                Battle battle = new()
-                {
-                    Phase = BattlePhase.Preparation,
-                    Region = order.TargetedParty.User!.Region, // Region of the defender.
-                    Position = GetMidPoint(party.Position, order.TargetedParty.Position),
-                    Fighters =
-                    {
-                        new BattleFighter
-                        {
-                            Party = party,
-                            Side = BattleSide.Attacker,
-                            Commander = true,
-                        },
-                        new BattleFighter
-                        {
-                            Party = order.TargetedParty,
-                            Side = BattleSide.Defender,
-                            Commander = true,
-                        },
-                    },
-                    // Participants =
-                    // {
-                    //     new BattleParticipant
-                    //     {
-                    //         Character = // TODO: FIXME:
-                    //         Side = BattleSide.Attacker,
-                    //         Type = BattleParticipantType.Party,
-                    //     },
-                    //     ...
-                    // },
-                };
-
-                // TODO: FIXME: проверить
-                party.Status = PartyStatus.InBattle;
-                // TODO: FIXME: Добавить в party currentBattle, currentSettlement, currentParty
-                // party.TargetedBattle = battle;
-                // party.TargetedSettlementId = null;
-                // party.TargetedPartyId = null;
-
-                order.TargetedParty.Status = PartyStatus.InBattle;
-                // party.TargetedParty.TargetedBattle = battle;
-                // party.TargetedParty.TargetedSettlementId = null;
-                // party.TargetedParty.TargetedPartyId = null;
-
-                _db.Battles.Add(battle);
-                Logger.LogInformation("Party '{0}' initiated a battle against party '{1}'",
-                    party.Id, order.TargetedPartyId);
-
-                // party.TargetedParty.TargetedPartyId = null;
-                party.Orders.Remove(order);
+                // continue to execute the FollowParty order
+                return remainingDistance;
             }
+
+            return MoveTowards(party, target.Position, remainingDistance);
         }
 
-        private async Task MoveToSettlement(TimeSpan deltaTime, Party party, PartyOrder order, CancellationToken cancellationToken)
+        private async Task<double> MoveToSettlement(Party party, PartyOrder order, double remainingDistance, CancellationToken cancellationToken)
         {
-            if (order.TargetedSettlement == null)
+            var target = order.TargetedSettlement;
+            if (target == null)
             {
                 Logger.LogWarning("Party '{partyId}' was in order type '{orderType}' without target settlement",
                     party.Id, order.Type);
                 // party.Status = PartyStatus.Idle;
                 party.Orders.Remove(order);
-                return;
+                return remainingDistance;
             }
 
-            if (!MovePartyTowardsPoint(party, order.TargetedSettlement.Position, deltaTime, true))
+            if (_strategusMap.InteractionDistance <= party.Position.Distance(target.Position))
             {
-                return;
-            }
-
-            if (order.Type == PartyOrderType.MoveToSettlement)
-            {
-                party.Status = PartyStatus.IdleInSettlement;
-                party.Position = order.TargetedSettlement.Position;
-            }
-            else if (order.Type == PartyOrderType.AttackSettlement)
-            {
-                bool attackInProgress = await _db.Battles
-                    .AnyAsync(b =>
-                            b.Phase != BattlePhase.End
-                            && b.Fighters.Any(f => f.SettlementId == party.TargetedSettlementId),
-                        cancellationToken);
-                if (attackInProgress)
+                if (order.Type == PartyOrderType.MoveToSettlement)
                 {
-                    return;
+                    party.Status = PartyStatus.IdleInSettlement;
+                }
+                else
+                {
+                    await StartSettlementBattle(party, target, cancellationToken);
                 }
 
-                party.Status = PartyStatus.InBattle;
-                Battle battle = new()
+                party.Position = target.Position;
+                party.Orders.Remove(order);
+                return remainingDistance;
+            }
+
+            return MoveTowards(party, target.Position, remainingDistance);
+        }
+
+        private async Task<double> MoveToBattle(Party party, PartyOrder order, double remainingDistance, CancellationToken cancellationToken)
+        {
+            var target = order.TargetedBattle;
+            if (target == null)
+            {
+                Logger.LogWarning("Party '{partyId}' was in order type '{orderType}' without target battle",
+                    party.Id, order.Type);
+                // party.Status = PartyStatus.Idle; // TODO:
+                party.Orders.Remove(order);
+                return remainingDistance;
+            }
+
+            if (!party.Position.IsWithinDistance(target.Position, _strategusMap.ViewDistance))
+            {
+                // party.Status = PartyStatus.Idle; // TODO:
+                party.Orders.Remove(order);
+                return remainingDistance;
+            }
+
+            if (_strategusMap.InteractionDistance <= party.Position.Distance(target.Position))
+            {
+                party.Status = PartyStatus.AwaitingBattleJoinDecision;
+                party.Position = target.Position;
+                party.CurrentBattle = target;
+
+                var intentBattleFighterApplications = await _db.BattleFighterApplications
+                                .Where(bfa => bfa.BattleId == target.Id && bfa.PartyId == party.Id)
+                                .ToListAsync(cancellationToken);
+                intentBattleFighterApplications.ForEach(bfa => bfa.Status = BattleFighterApplicationStatus.Pending);
+
+                party.Orders.Remove(order);
+
+                return remainingDistance;
+            }
+
+            return MoveTowards(party, target.Position, remainingDistance);
+        }
+
+        private double MoveAlongWaypoints(Party party, List<Point> waypoints, double remainingDistance)
+        {
+            int i = 0;
+
+            while (remainingDistance > 0 && i < waypoints.Count)
+            {
+                var target = waypoints[i];
+                double dist = party.Position.Distance(target);
+
+                if (dist <= remainingDistance)
                 {
-                    Phase = BattlePhase.Preparation,
-                    Region = order.TargetedSettlement.Region, // Region of the defender.
-                    Position = GetMidPoint(party.Position, order.TargetedSettlement.Position),
-                    Fighters =
+                    party.Position = (Point)target.Copy();
+                    remainingDistance -= dist;
+                    i++;
+                }
+                else
+                {
+                    party.Position = _strategusMap.MovePointTowards(party.Position, target, remainingDistance);
+                    remainingDistance = 0;
+                }
+            }
+
+            // удаляем достигнутые точки
+            for (int j = 0; j < i; j++)
+            {
+                waypoints.RemoveAt(0);
+            }
+
+            return remainingDistance;
+        }
+
+        private double MoveTowards(Party party, Point target, double remainingDistance)
+        {
+            double dist = party.Position.Distance(target);
+
+            if (dist > remainingDistance)
+            {
+                party.Position = _strategusMap.MovePointTowards(
+                    party.Position,
+                    target,
+                    remainingDistance);
+                return 0;
+            }
+
+            party.Position = (Point)target.Copy();
+            return remainingDistance - dist;
+        }
+
+        private Task StartBattle(Party attacker, Party defender)
+        {
+            Battle battle = new()
+            {
+                Phase = BattlePhase.Preparation,
+                Region = defender.User!.Region, // Region of the defender
+                Position = GetMidPoint(attacker.Position, defender.Position),
+                Fighters =
+                    {
+                        new BattleFighter
+                        {
+                            Party = attacker,
+                            Side = BattleSide.Attacker,
+                            Commander = true,
+                        },
+                        new BattleFighter
+                        {
+                            Party = defender,
+                            Side = BattleSide.Defender,
+                            Commander = true,
+                        },
+                    },
+                // TODO: FIXME: add BattleParticipant in UpdateBattlePhasesCommand BattlePhase.Preparation -> BattlePhase.Hiring
+            };
+
+            attacker.Status = PartyStatus.InBattle;
+            attacker.CurrentBattle = battle;
+
+            defender.Status = PartyStatus.InBattle;
+            defender.CurrentBattle = battle;
+
+            // TODO:FIXME:
+            // There may be many cases, so it is necessary to check
+            // for example, if the defender was going to a battle, it is necessary to delete his battleFighterApplication in the Intent status.
+            attacker.Orders.Clear();
+            defender.Orders.Clear();
+
+            _db.Battles.Add(battle);
+            Logger.LogInformation("Party '{0}' initiated a battle against party '{1}'",
+                attacker.Id, defender.Id);
+            return Task.CompletedTask;
+        }
+
+        private async Task StartSettlementBattle(Party party, Settlement settlement, CancellationToken cancellationToken)
+        {
+            bool attackInProgress = await _db.Battles
+                .AnyAsync(b => b.Phase != BattlePhase.End && b.Fighters.Any(f => f.SettlementId == settlement.Id), cancellationToken);
+            if (attackInProgress)
+            {
+                return;
+            }
+
+            Battle battle = new()
+            {
+                Phase = BattlePhase.Preparation,
+                Region = settlement.Region, // Region of the defender
+                Position = GetMidPoint(party.Position, settlement.Position),
+                Fighters =
                     {
                         new BattleFighter
                         {
@@ -259,72 +347,17 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                         // TODO: FIXME: if Settlement has an owner, then he must be the commander
                         new BattleFighter
                         {
-                            Settlement = order.TargetedSettlement,
+                            Settlement = settlement,
                             Side = BattleSide.Defender,
                             Commander = true,
                         },
                     },
-                };
-                _db.Battles.Add(battle);
-                Logger.LogInformation("Party '{0}' initiated a battle against settlement '{1}'",
-                    party.Id, order.TargetedSettlementId);
-            }
+                // TODO: FIXME: add BattleParticipant in UpdateBattlePhasesCommand BattlePhase.Preparation -> BattlePhase.Hiring
+            };
 
-            party.Orders.Remove(order);
-        }
-
-        private void MoveToBattle(TimeSpan deltaTime, Party party, PartyOrder order)
-        {
-            if (order.TargetedBattle == null)
-            {
-                Logger.LogWarning("Party '{partyId}' was in order type '{orderType}' without target battle",
-                    party.Id, order.Type);
-                // party.Status = PartyStatus.Idle;
-                party.Orders.Remove(order);
-                return;
-            }
-
-            if (order.BattleJoinIntents.Count == 0)
-            {
-                Logger.LogWarning("Party '{partyId}' was in order type '{orderType}' without battle join intents",
-                    party.Id, order.Type);
-                // party.Status = PartyStatus.Idle;
-                party.Orders.Remove(order);
-                return;
-            }
-
-            if (!MovePartyTowardsPoint(party, order.TargetedBattle.Position, deltaTime, true))
-            {
-                return;
-            }
-
-            foreach (var intent in party.BattleJoinIntents)
-            {
-                _db.BattleFighterApplications.Add(new BattleFighterApplication
-                {
-                    Battle = order.TargetedBattle,
-                    Party = party,
-                    Side = intent.Side,
-                    Status = BattleFighterApplicationStatus.Pending,
-                });
-            }
-
-            _db.BattleJoinIntents.RemoveRange(party.BattleJoinIntents);
-
-            party.Status = PartyStatus.AwaitingBattleJoinDecision;
-            party.Position = order.TargetedBattle.Position;
-
-            party.Orders.Remove(order);
-        }
-
-        private bool MovePartyTowardsPoint(Party party, Point targetPoint, TimeSpan deltaTime, bool canInteractWithTarget)
-        {
-            double speed = _strategusSpeedModel.ComputePartySpeed(party);
-            double distance = speed * deltaTime.TotalSeconds;
-            party.Position = _strategusMap.MovePointTowards(party.Position, targetPoint, distance);
-            return canInteractWithTarget
-                ? _strategusMap.ArePointsAtInteractionDistance(party.Position, targetPoint)
-                : _strategusMap.ArePointsEquivalent(party.Position, targetPoint);
+            _db.Battles.Add(battle);
+            Logger.LogInformation("Party '{0}' initiated a battle against settlement '{1}'",
+                party.Id, settlement.Id);
         }
     }
 }

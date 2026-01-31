@@ -55,7 +55,7 @@ export const useParty = (
     ) {
       await navigateTo({
         name: 'strategus-settlement-id',
-        params: { id: party.targetedSettlement!.id },
+        params: { id: party.currentSettlement!.id },
       })
     }
 
@@ -63,7 +63,7 @@ export const useParty = (
     ) {
       await navigateTo({
         name: 'strategus-battle-id',
-        params: { id: party.targetedBattle!.id },
+        params: { id: party.currentBattle!.id },
       })
     }
 
@@ -80,6 +80,7 @@ export const useParty = (
     startUpdatePartyInterval()
   }
 
+  // TODO: переименовать, usePartyOrder bla bla bla
   const moveParty = async (updateRequest: Partial<UpdatePartyOrder>, chain: boolean = false) => {
     const order: UpdatePartyOrder = {
       type: PARTY_ORDER_TYPE.MoveToPoint,

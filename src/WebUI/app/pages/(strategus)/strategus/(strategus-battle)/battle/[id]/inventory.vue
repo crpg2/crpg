@@ -8,19 +8,16 @@ import type { SettlementPublic } from '~/models/strategus/settlement'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useItemDetail } from '~/composables/item/use-item-detail'
-import { useBattleItems, useMapBattle } from '~/composables/strategus/map/use-map-battle'
-import { usePartyState } from '~/composables/strategus/use-party'
+import { useBattleFighters, useBattleItems, useMapBattle } from '~/composables/strategus/map/use-map-battle'
 import { useUser } from '~/composables/user/use-user'
 
 definePageMeta({
   middleware: [
     () => {
-      const { partyState } = usePartyState()
       const { battle } = useMapBattle()
+      const { selfBattleFighter } = useBattleFighters()
 
-      const fighter = partyState.value.party.targetedBattle?.fighters.some(f => f.party?.id === partyState.value.party.id)
-
-      if (!fighter) {
+      if (!selfBattleFighter.value) {
         return navigateTo({ name: 'strategus-battle-id', params: { id: battle.value.id } })
       }
     },

@@ -16,14 +16,12 @@ public record PartyViewModel : IMapFrom<Party>
     public int Troops { get; init; }
     public Point Position { get; init; } = default!;
     public PartyStatus Status { get; init; }
-    public MultiPoint Waypoints { get; init; } = MultiPoint.Empty;
     [JsonRequired]
-    public PartyVisibleViewModel? TargetedParty { get; init; }
+    public PartyVisibleViewModel? CurrentParty { get; init; }
     [JsonRequired]
-    public SettlementPublicViewModel? TargetedSettlement { get; init; }
+    public SettlementPublicViewModel? CurrentSettlement { get; init; }
     [JsonRequired]
-    public BattleViewModel? TargetedBattle { get; init; }
-    public List<BattleJoinIntentViewModel> BattleJoinIntents { get; init; } = [];
+    public BattleViewModel? CurrentBattle { get; init; }
     public UserPublicViewModel User { get; init; } = default!;
 
     public List<PartyOrderViewModel> Orders { get; set; } = [];
