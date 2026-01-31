@@ -19,4 +19,5 @@ public record PartyOrderViewModel : IMapFrom<PartyOrder>
     [JsonRequired]
     public BattleViewModel? TargetedBattle { get; init; }
     public BattleJoinIntentViewModel[] BattleJoinIntents { get; init; } = [];
+    public double Distance { get; set; }
 }

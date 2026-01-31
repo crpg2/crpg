@@ -11,7 +11,6 @@ import { positionToLatLng } from '~/utils/geometry'
 const { party } = defineProps<{ party: Party }>()
 
 // TODO: colors
-// TODO: to service
 const attackColor = '#f14668'
 const followColor = '#10b981'
 const moveColor = '#485fc7'
@@ -24,9 +23,7 @@ const partyMovementLine = computed(() => {
 
   let color = moveColor
 
-  const sortedOrders = party.orders.toSorted((a, b) => a.orderIndex - b.orderIndex)
-
-  for (const order of sortedOrders) {
+  for (const order of party.orders.toSorted((a, b) => a.orderIndex - b.orderIndex)) {
     switch (order.type) {
       case PARTY_ORDER_TYPE.MoveToPoint:
         positions.push(...order.waypoints.coordinates)

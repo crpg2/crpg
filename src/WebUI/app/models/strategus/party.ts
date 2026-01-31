@@ -39,6 +39,7 @@ export interface Party extends PartyCommon {
   gold: number
   status: PartyStatus
   position: Point
+  speed: number
   orders: PartyOrder[]
   currentParty: PartyVisible | null
   currentSettlement: SettlementPublic | null
@@ -71,6 +72,7 @@ export type PartyOrderType = ValueOf<typeof PARTY_ORDER_TYPE>
 export interface PartyOrder {
   type: PartyOrderType
   orderIndex: number
+  distance: number
   waypoints: MultiPoint
   targetedParty: PartyVisible | null
   targetedSettlement: SettlementPublic | null

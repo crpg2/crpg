@@ -15,6 +15,7 @@ public record PartyViewModel : IMapFrom<Party>
     public int Gold { get; init; }
     public int Troops { get; init; }
     public Point Position { get; init; } = default!;
+    public double Speed { get; set; }
     public PartyStatus Status { get; init; }
     [JsonRequired]
     public PartyVisibleViewModel? CurrentParty { get; init; }

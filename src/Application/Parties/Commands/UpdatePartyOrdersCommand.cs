@@ -103,8 +103,10 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
 
             // clear previous
             _db.PartyOrders.RemoveRange(party.Orders);
+            // TODO:FIXME: очищать связанные с приказами временные данные, например battleFighterApplication в статусе Intent и тд (добавить в party service)
 
             List<PartyOrder> partyOrders = [];
+
             foreach (var (order, idx) in req.Orders.Select((order, idx) => (order, idx)))
             {
                 switch (order.Type)

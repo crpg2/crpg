@@ -41,19 +41,16 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                     .ThenInclude(o => o.TargetedBattle)
                 .Include(p => p.Orders)
                     .ThenInclude(o => o.TargetedSettlement)
+                // TODO: owner
                 .Include(p => p.Orders)
                     .ThenInclude(o => o.TargetedParty)
+                        .ThenInclude(p => p!.User)
                 // Load mounts items to compute movement speed.
                 .Include(p => p.Items.Where(oi => oi.Item!.Type == ItemType.Mount)).ThenInclude(oi => oi.Item)
                 .ToArrayAsync(cancellationToken);
 
             foreach (var party in parties)
             {
-                if (party.Orders.Count == 0)
-                {
-                    continue;
-                }
-
                 double speed = _strategusSpeedModel.ComputePartySpeed(party);
                 double remainingDistance = speed * req.DeltaTime.TotalSeconds;
 
@@ -98,7 +95,6 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 // party.Status = PartyStatus.Idle; // TODO:
                 party.Orders.Remove(order);
                 return remainingDistance;
-                // return;
             }
 
             var waypoints = order.Waypoints.Cast<Point>().ToList();
@@ -107,24 +103,11 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 
             if (order.Waypoints.Count == 0)
             {
-                // party.Status = PartyStatus.Idle; // TODO: FIXME:
+                // party.Status = PartyStatus.Idle; // TODO:
                 party.Orders.Remove(order);
-                // TODO: next order
             }
 
             return remainingDistance;
-
-            // var targetPoint = (Point)order.Waypoints[0];
-            // if (!MovePartyTowardsPoint(party, targetPoint, deltaTime, false))
-            // {
-            //     return;
-            // }
-
-            // order.Waypoints = new MultiPoint([.. order.Waypoints.Skip(1).Cast<Point>()]);
-            // if (order.Waypoints.Count == 0)
-            // {
-            //     party.Orders.Remove(order);
-            // }
         }
 
         private double MoveToParty(Party party, PartyOrder order, double remainingDistance)
@@ -147,15 +130,24 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 return remainingDistance;
             }
 
-            // TODO: FIXME: кейс, когда на Party, за которой мы следуем или атакуем - напали
-            if (_strategusMap.InteractionDistance <= party.Position.Distance(target.Position))
+            // TODO: FIXME: обработать кейс, когда на Party, за которой мы следуем или атакуем - напали
+
+            if (order.Type == PartyOrderType.FollowParty)
             {
-                if (order.Type == PartyOrderType.AttackParty && !UnattackablePartyStatuses.Contains(target.Status))
+                MoveTowards(party, target.Position, remainingDistance);
+                return 0; // to avoid an endless while
+            }
+
+            double interactionDist = _strategusMap.InteractionDistance;
+            double dist = party.Position.Distance(target.Position);
+
+            if (dist <= interactionDist)
+            {
+                if (!UnattackablePartyStatuses.Contains(target.Status))
                 {
                     StartBattle(party, target);
                 }
 
-                // continue to execute the FollowParty order
                 return remainingDistance;
             }
 
@@ -174,11 +166,15 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 return remainingDistance;
             }
 
-            if (_strategusMap.InteractionDistance <= party.Position.Distance(target.Position))
+            double interactionDist = _strategusMap.InteractionDistance;
+            double dist = party.Position.Distance(target.Position);
+
+            if (dist <= interactionDist)
             {
                 if (order.Type == PartyOrderType.MoveToSettlement)
                 {
                     party.Status = PartyStatus.IdleInSettlement;
+                    party.CurrentSettlement = target;
                 }
                 else
                 {
@@ -205,7 +201,10 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 return remainingDistance;
             }
 
-            if (!party.Position.IsWithinDistance(target.Position, _strategusMap.ViewDistance))
+            double interactionDist = _strategusMap.InteractionDistance;
+            double dist = party.Position.Distance(target.Position);
+
+            if (dist <= interactionDist)
             {
                 // party.Status = PartyStatus.Idle; // TODO:
                 party.Orders.Remove(order);
@@ -253,7 +252,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 }
             }
 
-            // удаляем достигнутые точки
+            // Remove the points reached
             for (int j = 0; j < i; j++)
             {
                 waypoints.RemoveAt(0);
@@ -268,16 +267,43 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 
             if (dist > remainingDistance)
             {
-                party.Position = _strategusMap.MovePointTowards(
-                    party.Position,
-                    target,
-                    remainingDistance);
+                party.Position = _strategusMap.MovePointTowards(party.Position, target, remainingDistance);
                 return 0;
             }
 
             party.Position = (Point)target.Copy();
             return remainingDistance - dist;
         }
+
+        // private double MoveToTarget<T>(
+        //     Party party,
+        //     PartyOrder order,
+        //     T? target,
+        //     Func<T, Point> getPosition,
+        //     Func<T, Task<bool>> onArrived,
+        //     double remainingDistance)
+        // {
+        //     if (target == null)
+        //     {
+        //         party.Orders.Remove(order);
+        //         return remainingDistance;
+        //     }
+
+        //     double dist = party.Position.Distance(getPosition(target));
+
+        //     if (dist <= _strategusMap.InteractionDistance)
+        //     {
+        //         bool consumeOrder = onArrived(target).GetAwaiter().GetResult();
+        //         if (consumeOrder)
+        //         {
+        //             party.Orders.Remove(order);
+        //         }
+
+        //         return remainingDistance;
+        //     }
+
+        //     return MoveTowards(party, getPosition(target), remainingDistance);
+        // }
 
         private Task StartBattle(Party attacker, Party defender)
         {

@@ -811,6 +811,7 @@ export type PartyOrderViewModel = {
     targetedSettlement: SettlementPublicViewModel | null;
     targetedBattle: BattleViewModel | null;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
+    distance: number;
 };
 
 export type PartyPublicViewModel = {
@@ -826,6 +827,7 @@ export type PartyViewModel = {
     gold: number;
     troops: number;
     position: GeoJsonPoint;
+    speed: number;
     status: PartyStatus;
     currentParty: PartyVisibleViewModel | null;
     currentSettlement: SettlementPublicViewModel | null;
@@ -1449,6 +1451,7 @@ export type PartyOrderViewModelWritable = {
     targetedSettlement: SettlementPublicViewModelWritable | null;
     targetedBattle: BattleViewModelWritable | null;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
+    distance: number;
 };
 
 export type PartyViewModelWritable = {
@@ -1456,6 +1459,7 @@ export type PartyViewModelWritable = {
     gold: number;
     troops: number;
     position: GeoJsonPointWritable;
+    speed: number;
     status: PartyStatus;
     currentParty: PartyVisibleViewModelWritable | null;
     currentSettlement: SettlementPublicViewModelWritable | null;

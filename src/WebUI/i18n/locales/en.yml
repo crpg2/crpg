@@ -1725,3 +1725,10 @@ strategus:
           decline:
             notify:
               success: Application declined
+  partyOrderType:
+    MoveToPoint: Move
+    FollowParty: Follow Party
+    AttackParty: Attack Party
+    MoveToSettlement: Move to Settlement
+    AttackSettlement: Attack Settlement
+    JoinBattle: Join to Battle
