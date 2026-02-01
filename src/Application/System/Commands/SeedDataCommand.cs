@@ -1595,6 +1595,7 @@ public record SeedDataCommand : IMediatorRequest
             {
                 User = orle,
                 Troops = 100,
+                Gold = 100_000,
                 Position = new Point(118.664627, -110.482864),
                 Status = PartyStatus.Idle,
                 // Status = PartyStatus.AwaitingBattleJoinDecision,
@@ -1609,8 +1610,10 @@ public record SeedDataCommand : IMediatorRequest
             {
                 User = orle2,
                 Troops = 100,
-                Position = new Point(121.113023, -111.418929),
-                Status = PartyStatus.InBattle,
+                Gold = 5_000,
+                Position = new Point(120.113023, -110.418929),
+                // Status = PartyStatus.InBattle,
+                Status = PartyStatus.Idle,
                 Items =
                 [
                     new() { Count = 12, ItemId = "crpg_simple_saber_v1_h0" },
@@ -1623,7 +1626,8 @@ public record SeedDataCommand : IMediatorRequest
                 User = droob,
                 Troops = 500,
                 Position = new Point(121.173023, -111.498929),
-                Status = PartyStatus.InBattle,
+                // Status = PartyStatus.InBattle,
+                Status = PartyStatus.Idle,
                 Items =
                 [
                     new() { Count = 212, ItemId = "crpg_armet_h0" },
@@ -2092,8 +2096,8 @@ public record SeedDataCommand : IMediatorRequest
                 },
             };
 
-            orle2Party.CurrentBattle = testBattle;
-            droobParty.CurrentBattle = testBattle;
+            // orle2Party.CurrentBattle = testBattle;
+            // droobParty.CurrentBattle = testBattle;
             // orleParty.Position = testBattle.Position;
             // orleParty.TargetedBattle = testBattle;
 
@@ -2101,8 +2105,8 @@ public record SeedDataCommand : IMediatorRequest
                 // battle1, battle2,
                 //
                 // siege1,
-                siege2,
-                testBattle,
+                // siege2,
+                // testBattle,
             ];
 
             _db.Battles.RemoveRange(await _db.Battles.ToArrayAsync());

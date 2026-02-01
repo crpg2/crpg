@@ -90,6 +90,7 @@ export const useParty = (
       targetedSettlementId: 0,
       targetedBattleId: 0,
       battleJoinIntents: [],
+      transferOfferPartyIntent: null,
       ...updateRequest,
     }
 

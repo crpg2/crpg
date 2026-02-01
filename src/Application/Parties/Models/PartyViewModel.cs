@@ -23,6 +23,9 @@ public record PartyViewModel : IMapFrom<Party>
     public SettlementPublicViewModel? CurrentSettlement { get; init; }
     [JsonRequired]
     public BattleViewModel? CurrentBattle { get; init; }
+
+    public List<PartyTransferOfferViewModel> CurrentTransferOffers { get; set; } = [];
+
     public UserPublicViewModel User { get; init; } = default!;
 
     public List<PartyOrderViewModel> Orders { get; set; } = [];

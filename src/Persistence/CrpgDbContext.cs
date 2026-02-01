@@ -55,6 +55,7 @@ public class CrpgDbContext : DbContext, ICrpgDbContext
     public DbSet<SettlementItem> SettlementItems { get; set; } = default!;
     public DbSet<PartyItem> PartyItems { get; set; } = default!;
     public DbSet<PartyOrder> PartyOrders { get; set; } = default!;
+    public DbSet<PartyTransferOffer> PartyTransferOffers { get; set; } = default!;
     public DbSet<Battle> Battles { get; set; } = default!;
     public DbSet<BattleSideBriefing> BattleSideBriefings { get; set; } = default!;
     public DbSet<BattleFighter> BattleFighters { get; set; } = default!;

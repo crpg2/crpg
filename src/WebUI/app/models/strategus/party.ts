@@ -1,15 +1,15 @@
 import type {
   PartyOrderType as _PartyOrderType,
   PartyStatus as _PartyStatus,
+  PartyTransferOfferStatus as _PartyTransferOfferStatus,
 } from '#api'
 import type { MultiPoint, Point } from 'geojson'
 import type { ValueOf } from 'type-fest'
 
+import type { Item } from '~/models/item'
+import type { BattleJoinIntent, MapBattle } from '~/models/strategus/battle'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 import type { UserPublic } from '~/models/user'
-
-import type { Item } from '../item'
-import type { BattleJoinIntent, MapBattle } from './battle'
 
 export const PARTY_STATUS = {
   Idle: 'Idle',
@@ -44,6 +44,7 @@ export interface Party extends PartyCommon {
   currentParty: PartyVisible | null
   currentSettlement: SettlementPublic | null
   currentBattle: MapBattle | null
+  currentTransferOffers: Array<TransferOfferParty>
 }
 
 export interface StrategusUpdate {
@@ -65,6 +66,7 @@ export const PARTY_ORDER_TYPE = {
   MoveToSettlement: 'MoveToSettlement',
   AttackSettlement: 'AttackSettlement',
   JoinBattle: 'JoinBattle',
+  TransferOfferParty: 'TransferOfferParty',
 } as const satisfies Record<_PartyOrderType, _PartyOrderType>
 
 export type PartyOrderType = ValueOf<typeof PARTY_ORDER_TYPE>
@@ -78,6 +80,34 @@ export interface PartyOrder {
   targetedSettlement: SettlementPublic | null
   targetedBattle: MapBattle | null
   battleJoinIntents: Array<BattleJoinIntent>
+  transferOfferPartyIntent: TransferOfferParty | null
+}
+
+export const PARTY_TRANSFER_STATUS = {
+  Pending: 'Pending',
+  Declined: 'Declined',
+  Accepted: 'Accepted',
+  Intent: 'Intent',
+} as const satisfies Record<_PartyTransferOfferStatus, _PartyTransferOfferStatus>
+
+export type PartyTransferOfferStatus = ValueOf<typeof PARTY_TRANSFER_STATUS>
+
+interface TransferOfferParty {
+  party: PartyVisible
+  targetParty: PartyVisible
+  status: PartyTransferOfferStatus
+  gold: number
+  troops: number
+  items: Array<ItemStack>
+}
+
+interface TransferOfferPartyUpdate {
+  gold: number
+  troops: number
+  items: Array<{
+    itemId: string
+    count: number
+  }>
 }
 
 export interface UpdatePartyOrder {
@@ -88,4 +118,5 @@ export interface UpdatePartyOrder {
   targetedSettlementId: number
   targetedBattleId: number
   battleJoinIntents: Array<BattleJoinIntent>
+  transferOfferPartyIntent: TransferOfferPartyUpdate | null
 }

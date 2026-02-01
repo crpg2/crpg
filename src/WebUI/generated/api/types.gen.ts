@@ -799,19 +799,21 @@ export type PartyOrderCommandItemDto = {
     targetedSettlementId: number;
     targetedBattleId: number;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
+    transferOfferPartyIntent: TransferOfferPartyIntent | null;
 };
 
-export type PartyOrderType = 'MoveToPoint' | 'FollowParty' | 'AttackParty' | 'MoveToSettlement' | 'AttackSettlement' | 'JoinBattle';
+export type PartyOrderType = 'MoveToPoint' | 'FollowParty' | 'AttackParty' | 'TransferOfferParty' | 'MoveToSettlement' | 'AttackSettlement' | 'JoinBattle';
 
 export type PartyOrderViewModel = {
     type: PartyOrderType;
     orderIndex: number;
+    distance: number;
     waypoints: GeoJsonMultiPoint;
     targetedParty: PartyVisibleViewModel | null;
     targetedSettlement: SettlementPublicViewModel | null;
     targetedBattle: BattleViewModel | null;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
-    distance: number;
+    transferOfferPartyIntent: PartyTransferOfferViewModel | null;
 };
 
 export type PartyPublicViewModel = {
@@ -821,6 +823,17 @@ export type PartyPublicViewModel = {
 };
 
 export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'AwaitingPartyOfferDecision' | 'InBattle' | 'AwaitingBattleJoinDecision';
+
+export type PartyTransferOfferStatus = 'Intent' | 'Pending' | 'Declined' | 'Accepted';
+
+export type PartyTransferOfferViewModel = {
+    party: PartyVisibleViewModel;
+    targetParty: PartyVisibleViewModel;
+    status: PartyTransferOfferStatus;
+    gold: number;
+    troops: number;
+    items: Array<ItemStack>;
+};
 
 export type PartyViewModel = {
     id: number;
@@ -832,6 +845,7 @@ export type PartyViewModel = {
     currentParty: PartyVisibleViewModel | null;
     currentSettlement: SettlementPublicViewModel | null;
     currentBattle: BattleViewModel | null;
+    currentTransferOffers: Array<PartyTransferOfferViewModel>;
     user: UserPublicViewModel;
     orders: Array<PartyOrderViewModel>;
 };
@@ -1012,6 +1026,17 @@ export type TerrainViewModelIListResult = {
 export type TerrainViewModelResult = {
     readonly errors: Array<Error> | null;
     data: TerrainViewModel | null;
+};
+
+export type TransferOfferPartyIntent = {
+    gold: number;
+    troops: number;
+    items: Array<TransferOfferPartyItem>;
+};
+
+export type TransferOfferPartyItem = {
+    itemId: string;
+    count: number;
 };
 
 export type UpdateBattleSideBriefingCommand = {
@@ -1441,17 +1466,28 @@ export type PartyOrderCommandItemDtoWritable = {
     targetedSettlementId: number;
     targetedBattleId: number;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
+    transferOfferPartyIntent: TransferOfferPartyIntent | null;
 };
 
 export type PartyOrderViewModelWritable = {
     type: PartyOrderType;
     orderIndex: number;
+    distance: number;
     waypoints: GeoJsonMultiPointWritable;
     targetedParty: PartyVisibleViewModelWritable | null;
     targetedSettlement: SettlementPublicViewModelWritable | null;
     targetedBattle: BattleViewModelWritable | null;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
-    distance: number;
+    transferOfferPartyIntent: PartyTransferOfferViewModelWritable | null;
+};
+
+export type PartyTransferOfferViewModelWritable = {
+    party: PartyVisibleViewModelWritable;
+    targetParty: PartyVisibleViewModelWritable;
+    status: PartyTransferOfferStatus;
+    gold: number;
+    troops: number;
+    items: Array<ItemStack>;
 };
 
 export type PartyViewModelWritable = {
@@ -1464,6 +1500,7 @@ export type PartyViewModelWritable = {
     currentParty: PartyVisibleViewModelWritable | null;
     currentSettlement: SettlementPublicViewModelWritable | null;
     currentBattle: BattleViewModelWritable | null;
+    currentTransferOffers: Array<PartyTransferOfferViewModelWritable>;
     user: UserPublicViewModel;
     orders: Array<PartyOrderViewModelWritable>;
 };
@@ -2878,6 +2915,29 @@ export type PutPartiesSelfOrdersResponses = {
 };
 
 export type PutPartiesSelfOrdersResponse = PutPartiesSelfOrdersResponses[keyof PutPartiesSelfOrdersResponses];
+
+export type GetPartiesSelfItemsData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/Parties/self/items';
+};
+
+export type GetPartiesSelfItemsErrors = {
+    /**
+     * Bad request.
+     */
+    400: unknown;
+};
+
+export type GetPartiesSelfItemsResponses = {
+    /**
+     * Ok.
+     */
+    200: ItemStackIListResult;
+};
+
+export type GetPartiesSelfItemsResponse = GetPartiesSelfItemsResponses[keyof GetPartiesSelfItemsResponses];
 
 export type PostPartiesSelfItemsData = {
     body?: BuySettlementItemCommand;

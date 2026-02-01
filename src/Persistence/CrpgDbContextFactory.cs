@@ -44,6 +44,7 @@ public class CrpgDbContextFactory : IDesignTimeDbContextFactory<CrpgDbContext>
                         .MapEnum<ClanInvitationStatus>()
                         .MapEnum<PartyStatus>()
                         .MapEnum<PartyOrderType>()
+                        .MapEnum<PartyTransferOfferStatus>()
                         .MapEnum<SettlementType>()
                         .MapEnum<BattlePhase>()
                         .MapEnum<BattleSide>()

@@ -99,6 +99,51 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
                 };
 
                 orderVm.Distance = distance;
+
+                if (orderVm.Type == PartyOrderType.JoinBattle && orderVm.TargetedBattle != null)
+                {
+                    var battleJoinIntents = await _db.BattleFighterApplications
+                        .Where(bfa => bfa.PartyId == party.Id && bfa.BattleId == orderVm.TargetedBattle.Id && bfa.Status == BattleFighterApplicationStatus.Intent)
+                        .ToArrayAsync(cancellationToken);
+
+                    foreach (var battleJoinIntent in battleJoinIntents)
+                    {
+                        orderVm.BattleJoinIntents.Add(new BattleJoinIntentViewModel() { Side = battleJoinIntent.Side, });
+                    }
+                }
+
+                // TODO: в 2х местах у меня CurrentTransferOffers
+                if (orderVm.Type == PartyOrderType.TransferOfferParty && orderVm.TargetedParty != null)
+                {
+                    var partyTransferOffer = await _db.PartyTransferOffers
+                        .FirstOrDefaultAsync(to => to.PartyId == party.Id && to.TargetPartyId == orderVm.TargetedParty.Id && to.Status == PartyTransferOfferStatus.Intent, cancellationToken);
+
+                    orderVm.TransferOfferPartyIntent = partyTransferOffer != null ? _mapper.Map<PartyTransferOfferViewModel>(partyTransferOffer) : null;
+                }
+            }
+
+            // TODO: в 2х местах у меня CurrentTransferOffers
+            var partyTransferOffers = await db.PartyTransferOffers
+                .AsSplitQuery()
+                .Include(to => to.Items).ThenInclude(oi => oi.Item)
+                .Include(to => to.TargetParty).ThenInclude(p => p!.User)
+                .Include(to => to.Party).ThenInclude(p => p!.User)
+                .Where(to => to.PartyId == party.Id || to.TargetPartyId == party.Id)
+                // .ProjectTo<PartyTransferOfferViewModel>(_mapper.ConfigurationProvider)
+                .ToListAsync(cancellationToken);
+
+            foreach (var partyTransferOffer in partyTransferOffers)
+            {
+                partyVm.CurrentTransferOffers.Add(new()
+                {
+                    Party = _mapper.Map<PartyVisibleViewModel>(partyTransferOffer.Party),
+                    TargetParty = _mapper.Map<PartyVisibleViewModel>(partyTransferOffer.TargetParty),
+                    Gold = partyTransferOffer.Gold,
+                    Status = partyTransferOffer.Status,
+                    Troops = partyTransferOffer.Troops,
+                    // Items = partyTransferOffer.Items,
+                    Items = [],
+                });
             }
 
             return new(new StrategusUpdate

@@ -3,6 +3,7 @@ import type { LatLngLiteral, LeafletMouseEvent, Map } from 'leaflet'
 import type L from 'leaflet'
 
 import { useMagicKeys } from '@vueuse/core'
+import { LazyMapPartyTransferOfferDrawer, MapPartyTransferOfferDrawer } from '#components'
 
 import type { MapBattle } from '~/models/strategus/battle'
 import type { MovementTargetType, MovementType } from '~/models/strategus/movement'
@@ -65,22 +66,44 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
     moveTargetType.value = null
   }
 
+  // TODO: временно, придумать норм UX
   const { shift } = useMagicKeys()
+  const overlay = useOverlay()
 
-  const onMoveDialogConfirm = (mt: MovementType) => {
+  const onMoveDialogConfirm = async (mt: MovementType) => {
     if (!moveTarget.value || !moveTargetType.value) {
       return
     }
 
     switch (moveTargetType.value) {
       case MOVEMENT_TARGET_TYPE.Party:
-        moveParty({
-          type:
+        // TODO: пееделать
+        if (mt === MOVEMENT_TYPE.TransferOfferParty) {
+          await overlay
+            .create(LazyMapPartyTransferOfferDrawer)
+            .open({
+              onClose(_result, transferOffer) {
+                if (!transferOffer) {
+                  return
+                }
+
+                moveParty({
+                  type: PARTY_ORDER_TYPE.TransferOfferParty,
+                  targetedPartyId: moveTarget.value!.id,
+                  transferOfferPartyIntent: transferOffer,
+                }, shift?.value)
+              },
+            })
+        }
+        else {
+          moveParty({
+            type:
             mt === MOVEMENT_TYPE.Follow
               ? PARTY_ORDER_TYPE.FollowParty
               : PARTY_ORDER_TYPE.AttackParty,
-          targetedPartyId: moveTarget.value.id,
-        }, shift?.value)
+            targetedPartyId: moveTarget.value.id,
+          }, shift?.value)
+        }
         break
       case MOVEMENT_TARGET_TYPE.Settlement:
         moveParty({

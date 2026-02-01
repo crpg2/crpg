@@ -18,6 +18,19 @@ namespace Crpg.Application.Parties.Commands;
 
 public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
 {
+    public record TransferOfferPartyItem
+    {
+        public string ItemId { get; init; } = string.Empty;
+        public int Count { get; init; }
+    }
+
+    public record TransferOfferPartyIntent
+    {
+        public int Gold { get; set; }
+        public float Troops { get; set; }
+        public List<TransferOfferPartyItem> Items { get; set; } = [];
+    }
+
     public record PartyOrderCommandItemDto
     {
         public PartyOrderType Type { get; init; }
@@ -27,6 +40,8 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
         public int TargetedSettlementId { get; init; }
         public int TargetedBattleId { get; init; }
         public BattleJoinIntentViewModel[] BattleJoinIntents { get; init; } = [];
+        [JsonRequired]
+        public TransferOfferPartyIntent? TransferOfferPartyIntent { get; init; }
     }
 
     [JsonIgnore]
@@ -85,6 +100,11 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
 
         public async Task<Result<PartyViewModel>> Handle(UpdatePartyOrdersCommand req, CancellationToken cancellationToken)
         {
+            // TODO: FIXME:
+            // TODO: FIXME:
+            // TODO: FIXME:
+            // TODO: FIXME: ДОБАВИТЬ ВАЛИДАЦИЮ - есть конечные приказы, например "атаковать город/отряд", после них нельзя добавлять новые - выкидывать 400
+
             var party = await _db.Parties
                         .Include(p => p.User!)
                             .ThenInclude(u => u.ClanMembership!.Clan)
@@ -95,7 +115,6 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
                 return new(CommonErrors.PartyNotFound(req.PartyId));
             }
 
-            // TODO: FIXME: rewrite, it should be about not giving new orders
             if (party.Status == PartyStatus.InBattle || party.Status == PartyStatus.AwaitingBattleJoinDecision)
             {
                 return new(CommonErrors.PartyInBattle(req.PartyId));
@@ -103,7 +122,7 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
 
             // clear previous
             _db.PartyOrders.RemoveRange(party.Orders);
-            // TODO:FIXME: очищать связанные с приказами временные данные, например battleFighterApplication в статусе Intent и тд (добавить в party service)
+            // TODO:FIXME: очищать связанные с приказами временные данные, например battleFighterApplication в статусе Intent и тд (добавить в party service) или PartyTransferOffer
 
             List<PartyOrder> partyOrders = [];
 
@@ -113,6 +132,7 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
                 {
                     case PartyOrderType.FollowParty:
                     case PartyOrderType.AttackParty:
+                    case PartyOrderType.TransferOfferParty:
                         {
                             // We are not particularly concerned about database requests in the loop,
                             // as there will almost always be no more than two orders
@@ -127,6 +147,16 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
                             if (!party.Position.IsWithinDistance(targetParty.Position, _strategusMap.ViewDistance))
                             {
                                 return new(CommonErrors.PartyNotInSight(order.TargetedPartyId));
+                            }
+
+                            if (order.Type == PartyOrderType.TransferOfferParty)
+                            {
+                                _db.PartyTransferOffers.Add(new PartyTransferOffer
+                                {
+                                    Party = party,
+                                    TargetParty = targetParty,
+                                    Status = PartyTransferOfferStatus.Intent,
+                                });
                             }
 
                             break;

@@ -135,7 +135,7 @@ const [onMapReady, mapIsLoading] = useAsyncCallback(async (map: Map) => {
 
 const onPartyClick = (targetParty: PartyVisible) => showMoveDialog({
   target: targetParty,
-  movementTypes: [MOVEMENT_TYPE.Follow, MOVEMENT_TYPE.Attack],
+  movementTypes: [MOVEMENT_TYPE.Follow, MOVEMENT_TYPE.Attack, MOVEMENT_TYPE.TransferOfferParty],
   targetType: MOVEMENT_TARGET_TYPE.Party,
 })
 
@@ -145,13 +145,11 @@ const onSettlementClick = (settlement: SettlementPublic) => showMoveDialog({
   targetType: MOVEMENT_TARGET_TYPE.Settlement,
 })
 
-const onBattleClick = (battle: MapBattle) => {
-  showMoveDialog({
-    target: battle,
-    movementTypes: [MOVEMENT_TYPE.JoinToBattleForAttacker, MOVEMENT_TYPE.JoinToBattleForDefender, MOVEMENT_TYPE.JoinToBattleForBoth],
-    targetType: MOVEMENT_TARGET_TYPE.Battle,
-  })
-}
+const onBattleClick = (battle: MapBattle) => showMoveDialog({
+  target: battle,
+  movementTypes: [MOVEMENT_TYPE.JoinToBattleForAttacker, MOVEMENT_TYPE.JoinToBattleForDefender, MOVEMENT_TYPE.JoinToBattleForBoth],
+  targetType: MOVEMENT_TARGET_TYPE.Battle,
+})
 </script>
 
 <template>

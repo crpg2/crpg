@@ -1,5 +1,6 @@
 import {
   getPartiesByPartyIdItems,
+  getPartiesSelfItems,
   getPartiesSelfUpdate,
   postParties,
   putPartiesSelfOrders,
@@ -19,6 +20,8 @@ export const getSelfUpdate = (): Promise<CrpgApiResult<StrategusUpdate>> => getP
 export const updatePartyOrders = async (orders: UpdatePartyOrder[]): Promise<Party> => (await putPartiesSelfOrders({ body: { orders } })).data!
 
 export const registerParty = () => postParties({ body: {} })
+
+export const getSelfPartyItems = async (): Promise<ItemStack[]> => (await getPartiesSelfItems({ })).data!
 
 export const getPartyItems = async (
   partyId: number,
@@ -55,5 +58,15 @@ export function mapPartyOrderToUpdateOrder(order: PartyOrder): UpdatePartyOrder 
     targetedSettlementId: targetedSettlement?.id || 0,
     targetedBattleId: targetedBattle?.id || 0,
     battleJoinIntents,
+    transferOfferPartyIntent: order.transferOfferPartyIntent
+      ? {
+          gold: order.transferOfferPartyIntent.gold,
+          troops: order.transferOfferPartyIntent.troops,
+          items: order.transferOfferPartyIntent.items.map(itemStack => ({
+            count: itemStack.count,
+            itemId: itemStack.item.id,
+          })),
+        }
+      : null,
   }
 }

@@ -65,6 +65,21 @@ public class PartiesController : BaseController
     }
 
     /// <summary>
+    /// Get self party items by id.
+    /// </summary>
+    /// <returns>The item stacks.</returns>
+    /// <response code="200">Ok.</response>
+    /// <response code="400">Bad request.</response>
+    [HttpGet("self/items")]
+    public Task<ActionResult<Result<IList<ItemStack>>>> GetPartyItems()
+    {
+        return ResultToActionAsync(Mediator.Send(new GetPartyItemsQuery
+        {
+            PartyId = CurrentUser.User!.Id,
+        }));
+    }
+
+    /// <summary>
     /// Buy items from a settlement.
     /// </summary>
     /// <returns>The bought items.</returns>

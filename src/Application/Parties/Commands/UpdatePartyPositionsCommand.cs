@@ -63,8 +63,8 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                         PartyOrderType.MoveToPoint =>
                             MoveToPoint(party, order, remainingDistance),
 
-                        PartyOrderType.FollowParty or PartyOrderType.AttackParty =>
-                            MoveToParty(party, order, remainingDistance),
+                        PartyOrderType.FollowParty or PartyOrderType.AttackParty or PartyOrderType.TransferOfferParty =>
+                            await MoveToParty(party, order, remainingDistance, cancellationToken),
 
                         PartyOrderType.MoveToSettlement or PartyOrderType.AttackSettlement =>
                             await MoveToSettlement(party, order, remainingDistance, cancellationToken),
@@ -110,7 +110,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             return remainingDistance;
         }
 
-        private double MoveToParty(Party party, PartyOrder order, double remainingDistance)
+        private async Task<double> MoveToParty(Party party, PartyOrder order, double remainingDistance, CancellationToken cancellationToken)
         {
             var target = order.TargetedParty;
             if (target == null)
@@ -143,9 +143,29 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 
             if (dist <= interactionDist)
             {
-                if (!UnattackablePartyStatuses.Contains(target.Status))
+                if (order.Type == PartyOrderType.AttackParty && !UnattackablePartyStatuses.Contains(target.Status))
                 {
-                    StartBattle(party, target);
+                    await StartBattle(party, target);
+                }
+
+                if (order.Type == PartyOrderType.TransferOfferParty)
+                {
+                    // TODO: move to startOffer
+                    var partyTransferOffer = await _db.PartyTransferOffers
+                            .FirstOrDefaultAsync(to => to.PartyId == party.Id && to.TargetPartyId == target.Id, cancellationToken);
+
+                    if (partyTransferOffer == null)
+                    {
+                        Logger.LogWarning("Party '{partyId}' was in order type '{orderType}' without partyTransferOffer",
+                        party.Id, order.Type);
+                    }
+                    else
+                    {
+                        partyTransferOffer.Status = PartyTransferOfferStatus.Pending;
+                        party.Status = PartyStatus.AwaitingPartyOfferDecision;
+                        party.CurrentParty = target;
+                        party.Orders.Clear();
+                    }
                 }
 
                 return remainingDistance;

@@ -25,6 +25,7 @@ function getOrderIcon(orderType: PartyOrderType): string {
     [PARTY_ORDER_TYPE.MoveToSettlement]: 'i-lucide-move-up-right',
     [PARTY_ORDER_TYPE.AttackSettlement]: 'i-lucide-move-up-right',
     [PARTY_ORDER_TYPE.JoinBattle]: 'i-lucide-move-up-right',
+    [PARTY_ORDER_TYPE.TransferOfferParty]: '',
   } satisfies Record<PartyOrderType, string>)?.[orderType] ?? ''
 }
 
@@ -86,6 +87,8 @@ const orders = computed<OrderTimlineItem[]>(() => {
       }
     })
 })
+
+const incomingTransferOffers = computed(() => party.currentTransferOffers.filter(offer => offer.targetParty.id === party.id))
 </script>
 
 <template>
@@ -117,6 +120,24 @@ const orders = computed<OrderTimlineItem[]>(() => {
 
       <div>Speed: {{ $n(party.speed) }}</div>
 
+      <!--  -->
+      <UButton
+        v-if="incomingTransferOffers.length"
+        :label="`${incomingTransferOffers.length} incoming transfer offers`"
+        variant="subtle"
+      >
+        <template #trailing>
+          <UAvatarGroup :max="2" size="xs">
+            <UAvatar
+              v-for="offer in incomingTransferOffers"
+              :key="offer.party.id"
+              :src="offer.party.user.avatar || ''"
+            />
+          </UAvatarGroup>
+        </template>
+      </UButton>
+
+      <!-- TODO: -->
       <UTimeline
         :items="orders"
         size="sm"

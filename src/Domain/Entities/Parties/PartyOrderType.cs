@@ -21,6 +21,11 @@ public enum PartyOrderType
     AttackParty,
 
     /// <summary>
+    /// Moving to transfer offer a <see cref="Party"/>.
+    /// </summary>
+    TransferOfferParty,
+
+    /// <summary>
     /// Following a <see cref="Settlement"/>.
     /// </summary>
     MoveToSettlement,

@@ -31,6 +31,7 @@ const partyMovementLine = computed(() => {
         break
 
       case PARTY_ORDER_TYPE.FollowParty:
+      case PARTY_ORDER_TYPE.TransferOfferParty:
         if (order.targetedParty) {
           positions.push(order.targetedParty.position.coordinates)
           color = followColor

@@ -1,5 +1,6 @@
 import type { ValueOf } from 'type-fest'
 
+// TODO: FIXME: переделать в приказы
 export const MOVEMENT_TYPE = {
   Move: 'Move',
   Follow: 'Follow',
@@ -8,6 +9,8 @@ export const MOVEMENT_TYPE = {
   JoinToBattleForAttacker: 'JoinToBattleForAttacker',
   JoinToBattleForDefender: 'JoinToBattleForDefender',
   JoinToBattleForBoth: 'JoinToBattleForBoth',
+  // TODO: временно
+  TransferOfferParty: 'TransferOfferParty',
 } as const
 
 export type MovementType = ValueOf<typeof MOVEMENT_TYPE>
