@@ -3,7 +3,7 @@ import type { LatLngLiteral, LeafletMouseEvent, Map } from 'leaflet'
 import type L from 'leaflet'
 
 import { useMagicKeys } from '@vueuse/core'
-import { LazyMapPartyTransferOfferDrawer, MapPartyTransferOfferDrawer } from '#components'
+import { LazyMapPartyTransferOfferDrawer } from '#components'
 
 import type { MapBattle } from '~/models/strategus/battle'
 import type { MovementTargetType, MovementType } from '~/models/strategus/movement'
@@ -79,18 +79,24 @@ export const usePartyMove = (map: Ref<typeof LMap | null>) => {
       case MOVEMENT_TARGET_TYPE.Party:
         // TODO: пееделать
         if (mt === MOVEMENT_TYPE.TransferOfferParty) {
+          const targetParty = partyState.value.visibleParties.find(p => p.id === moveTarget.value!.id)!
           await overlay
             .create(LazyMapPartyTransferOfferDrawer)
             .open({
+              targetParty,
               onClose(_result, transferOffer) {
-                if (!transferOffer) {
+                if (!_result || !transferOffer) {
                   return
                 }
 
                 moveParty({
                   type: PARTY_ORDER_TYPE.TransferOfferParty,
                   targetedPartyId: moveTarget.value!.id,
-                  transferOfferPartyIntent: transferOffer,
+                  transferOfferPartyIntent: {
+                    gold: transferOffer.gold,
+                    troops: transferOffer.troops,
+                    items: Object.entries(transferOffer.items).map(([itemId, count]) => ({ itemId, count })),
+                  },
                 }, shift?.value)
               },
             })

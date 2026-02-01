@@ -21,11 +21,13 @@ const {
   items,
   withPagination = true,
   loading = false,
+  size = 'xl',
 } = defineProps<{
   items: T[]
   sortingConfig: SortingConfig
   withPagination?: boolean
   loading?: boolean
+  size?: 'md' | 'xl'
 }>()
 
 const { t } = useI18n()
@@ -162,6 +164,7 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
           :item-types="itemTypes"
           orientation="vertical"
           with-all-categories
+          :size
         />
       </div>
 
@@ -172,22 +175,22 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
           icon="crpg:search"
           variant="subtle"
           class="col-span-3 w-full"
-          size="xl"
+          :size
         >
           <template v-if="filterByNameModel?.length" #trailing>
             <UiInputClear @click="filterByNameModel = ''" />
           </template>
         </UInput>
 
-        <div class="col-span-2 flex gap-3">
+        <div class="col-span-2 flex items-center gap-3">
           <USelect
             v-model="sortingModel"
             class="flex-1"
             :items="sortingItems"
-            size="xl"
+            :size
           />
 
-          <slot name="filter-leading" />
+          <slot name="filter-trailing" />
         </div>
       </div>
 

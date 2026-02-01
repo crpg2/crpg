@@ -140,7 +140,7 @@ const renderClanArmoryItemDetail = <T extends { id: string }>(opendeItem: T, com
         :items
         :sorting-config="sortingConfig"
       >
-        <template #filter-leading>
+        <template #filter-trailing>
           <UDropdownMenu
             size="xl"
             :items="[

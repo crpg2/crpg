@@ -165,8 +165,8 @@ const { characters } = useCharacters()
 
         <UFormField size="xl">
           <template #label>
-            <UiDataCell>
-              <template #leftContent>
+            <UiDataMedia>
+              <template #icon>
                 <UiSpriteSymbol
                   name="coin"
                   viewBox="0 0 18 18"
@@ -174,7 +174,7 @@ const { characters } = useCharacters()
                 />
               </template>
               {{ $t('strategus.battle.mercenaryApplication.form.wage.label') }}
-            </UiDataCell>
+            </UiDataMedia>
           </template>
 
           <template #hint>

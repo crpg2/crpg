@@ -52,8 +52,24 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
     {
         public Validator()
         {
+            RuleFor(c => c.Orders)
+                .Must(ValidOrdersSequence)
+                .WithMessage("Only MoveToPoint can be non-terminal. Any other order must be the last one.");
             RuleForEach(c => c.Orders).SetValidator(new PartyOrderValidator());
         }
+    }
+
+    private static bool ValidOrdersSequence(PartyOrderCommandItemDto[] orders)
+    {
+        for (int i = 0; i < orders.Length - 1; i++)
+        {
+            if (orders[i].Type != PartyOrderType.MoveToPoint)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public class PartyOrderValidator : AbstractValidator<PartyOrderCommandItemDto>
@@ -72,6 +88,12 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
                 RuleFor(o => o.TargetedPartyId)
                     .GreaterThan(0)
                     .WithMessage("TargetedPartyId is required");
+            });
+            When(o => o.Type == PartyOrderType.TransferOfferParty, () =>
+            {
+                RuleFor(o => o.TransferOfferPartyIntent)
+                    .NotNull()
+                    .WithMessage("TransferOfferPartyIntent is required");
             });
             When(o => o.Type == PartyOrderType.MoveToSettlement || o.Type == PartyOrderType.AttackSettlement, () =>
             {
@@ -100,11 +122,6 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
 
         public async Task<Result<PartyViewModel>> Handle(UpdatePartyOrdersCommand req, CancellationToken cancellationToken)
         {
-            // TODO: FIXME:
-            // TODO: FIXME:
-            // TODO: FIXME:
-            // TODO: FIXME: ДОБАВИТЬ ВАЛИДАЦИЮ - есть конечные приказы, например "атаковать город/отряд", после них нельзя добавлять новые - выкидывать 400
-
             var party = await _db.Parties
                         .Include(p => p.User!)
                             .ThenInclude(u => u.ClanMembership!.Clan)
@@ -122,7 +139,18 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
 
             // clear previous
             _db.PartyOrders.RemoveRange(party.Orders);
-            // TODO:FIXME: очищать связанные с приказами временные данные, например battleFighterApplication в статусе Intent и тд (добавить в party service) или PartyTransferOffer
+
+            // remove temporary entities associated with orders
+
+            var partyTransferIntentOffers = await _db.PartyTransferOffers
+                .Where(to => to.PartyId == party.Id && to.Status == PartyTransferOfferStatus.Intent)
+                .ToListAsync(cancellationToken);
+            _db.PartyTransferOffers.RemoveRange(partyTransferIntentOffers);
+
+            var battleFighterIntentApplications = await _db.BattleFighterApplications
+                .Where(bfa => bfa.PartyId == party.Id && bfa.Status == BattleFighterApplicationStatus.Intent)
+                .ToListAsync(cancellationToken);
+            _db.BattleFighterApplications.RemoveRange(battleFighterIntentApplications);
 
             List<PartyOrder> partyOrders = [];
 

@@ -127,7 +127,7 @@ const renderCharacterInventoryItemDetail = <T extends { id: string }>(opendeItem
       >
         <template
           v-if="hasArmoryItems"
-          #filter-leading
+          #filter-trailing
         >
           <UDropdownMenu
             :items="[
