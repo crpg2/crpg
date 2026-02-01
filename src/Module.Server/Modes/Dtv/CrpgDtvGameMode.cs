@@ -73,7 +73,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
             new WarmupHudUiHandler(),
             new DtvHudUiHandler(),
             new AmmoQuiverChangeUiHandler(),
-            new CrpgMainGuiMissionView(), // Character/Equip gui
+            //new CrpgMainGuiMissionView(), // Character/Equip gui
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -122,8 +122,8 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new CrpgCommanderBehaviorClient(),
                 new AmmoQuiverChangeBehaviorClient(),
                 new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
-                new CrpgClanArmoryClient(), // Clan armory Sync with API/Client for GUI
-                new CrpgCharacterLoadoutBehaviorClient(_constants), // Inventory & Equipment Sync for GUI
+                // new CrpgClanArmoryClient(), // Clan armory Sync with API/Client for GUI
+                // new CrpgCharacterLoadoutBehaviorClient(_constants), // Inventory & Equipment Sync for GUI
 #endif
                 dtvClient,
                 new MultiplayerTimerComponent(), // round timer
@@ -161,8 +161,8 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
                 new CrpgCommanderBehaviorServer(),
                 new FriendlyFireReportServerBehavior(), // Ctrl+M to report friendly fire
-                new CrpgClanArmoryServer(crpgClient), // Clan armory Sync with API/Client for GUI
-                new CrpgCharacterLoadoutBehaviorServer(crpgClient), // Inventory & Equipment Sync for GUI                
+                // new CrpgClanArmoryServer(crpgClient), // Clan armory Sync with API/Client for GUI
+                // new CrpgCharacterLoadoutBehaviorServer(crpgClient), // Inventory & Equipment Sync for GUI                
 #else
                 new MultiplayerAchievementComponent(),
                 MissionMatchHistoryComponent.CreateIfConditionsAreMet(),

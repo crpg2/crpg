@@ -3,6 +3,7 @@ using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using Crpg.Module.Common.Network.Armory;
 using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
@@ -29,7 +30,7 @@ public class InventorySlotVM : ViewModel
 
     private CrpgUserItemExtended? _userItemEx;
 
-    private ImageIdentifierVM _imageIdentifier;
+    private ImageIdentifierVM _imageIdentifier = default!;
 
     private ItemRankIconVM _itemRankIcon;
     private ItemArmoryIconVM? _itemArmoryIcon;
@@ -54,7 +55,7 @@ public class InventorySlotVM : ViewModel
         if (item != null)
         {
             _itemName = item.Name?.ToString() ?? "Item";
-            _imageIdentifier = new ImageIdentifierVM(item);
+            _imageIdentifier = new ItemImageIdentifierVM(item);
             _id = item.StringId;
             _showDefaultIcon = false;
             _quantityText = quantity > 1 ? quantity.ToString() : string.Empty;
@@ -98,7 +99,7 @@ public class InventorySlotVM : ViewModel
         else
         {
             _itemName = string.Empty;
-            _imageIdentifier = new ImageIdentifierVM(); // empty
+            _imageIdentifier = new GenericImageIdentifierVM(null); // empty
             _itemRankIcon = new ItemRankIconVM();
             _itemArmoryIcon = new ItemArmoryIconVM();
             _id = string.Empty;

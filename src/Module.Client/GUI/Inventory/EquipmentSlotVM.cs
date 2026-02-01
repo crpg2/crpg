@@ -1,6 +1,7 @@
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.Library;
 
 namespace Crpg.Module.GUI.Inventory;
@@ -35,7 +36,7 @@ public class EquipmentSlotVM : ViewModel
     {
         _crpgItemSlotIndex = crpgSlot;
         _defaultSprite = GetDefaultSpriteForSlot(_crpgItemSlotIndex);
-        _imageIdentifier = new ImageIdentifierVM(ImageIdentifierType.Item);
+        _imageIdentifier = new ItemImageIdentifierVM(null);
         _isButtonEnabled = true;
         _itemRankIcon = new ItemRankIconVM();
         _itemArmoryIcon = new ItemArmoryIconVM();
@@ -65,7 +66,7 @@ public class EquipmentSlotVM : ViewModel
 
     internal void ClearItem()
     {
-        SetItem(new ImageIdentifierVM(ImageIdentifierType.Item));
+        SetItem(new ItemImageIdentifierVM(null));
     }
 
     internal void RefreshFromEquipment(Equipment equipment)
@@ -79,7 +80,8 @@ public class EquipmentSlotVM : ViewModel
         ItemObject? item = element.Item;
 
         // Update the slot VM
-        SetItem(item != null ? new ImageIdentifierVM(ImageIdentifierType.Item) : null, item);
+
+        SetItem(item != null ? new ItemImageIdentifierVM(item) : null, item);
     }
 
     // ===== Event handlers for UI actions =====

@@ -3,6 +3,7 @@ using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using Crpg.Module.Common.Network.Armory;
 using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
@@ -25,7 +26,7 @@ public class ItemInfoVM : ViewModel
     private MBBindingList<ItemInfoTupleVM> _tuples = new();
     private MBBindingList<ItemInfoRowVM> _rows = new();
     private ItemObject? _itemObj;
-    private ImageIdentifierVM? _imageIdentifier;
+    private ItemImageIdentifierVM? _imageIdentifier = default!;
     private ItemRankIconVM? _itemRankIcon;
     private ItemArmoryIconVM? _itemArmoryIcon;
 
@@ -109,7 +110,7 @@ public class ItemInfoVM : ViewModel
     public ItemObject? ItemObj { get => _itemObj; set => SetField(ref _itemObj, value, nameof(ItemObj)); }
 
     [DataSourceProperty]
-    public ImageIdentifierVM? ImageIdentifier { get => _imageIdentifier; set => SetField(ref _imageIdentifier, value, nameof(ImageIdentifier)); }
+    public ItemImageIdentifierVM? ImageIdentifier { get => _imageIdentifier; set => SetField(ref _imageIdentifier, value, nameof(ImageIdentifier)); }
 
     [DataSourceProperty]
     public string Name { get => _name; set => SetField(ref _name, value, nameof(Name)); }
@@ -148,7 +149,7 @@ public class ItemInfoVM : ViewModel
         if (item == null)
         {
             // InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM Constructed; item == null", Colors.Yellow));
-            _imageIdentifier = new ImageIdentifierVM(ImageIdentifierType.Item);
+            _imageIdentifier = new ItemImageIdentifierVM(null);
             _itemRankIcon = new ItemRankIconVM();
             _itemArmoryIcon = new ItemArmoryIconVM();
             _itemObj = null;
@@ -162,7 +163,7 @@ public class ItemInfoVM : ViewModel
         {
             // InformationManager.DisplayMessage(new InformationMessage($"ItemInfoVM Constructed userItemId: {userItemExtended?.Id} itemid: {item.Id}", Colors.Yellow));
             ItemObj = item;
-            ImageIdentifier = new ImageIdentifierVM(ItemObj);
+            ImageIdentifier = new ItemImageIdentifierVM(ItemObj);
             Name = item.Name.ToString();
             UserItemExtended = userItemExtended;
             IsArmoryItem = userItemExtended?.IsArmoryItem ?? false;
@@ -200,7 +201,7 @@ public class ItemInfoVM : ViewModel
         _userItemId = userItemId;
 
         ItemObj = item;
-        ImageIdentifier = new ImageIdentifierVM(item);
+        ImageIdentifier = new ItemImageIdentifierVM(item);
         Name = item.Name.ToString();
         IsVisible = _isVisible;
 

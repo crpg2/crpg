@@ -62,8 +62,8 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
             // Initialize main GUI bar
             _mainGuiVm = new CrpgMainGuiVM();
             _mainGuiVm.OpenCharacterEquipRequested += reason => ToggleCharacterEquip(reason);
-            _mainGuiLayer = new GauntletLayer(100);
-            _mainGuiMovie = _mainGuiLayer.LoadMovie("CrpgMainGuiBarPrefab", _mainGuiVm);
+            _mainGuiLayer = new GauntletLayer("main", 100);
+            _mainGuiMovie = (IGauntletMovie?)_mainGuiLayer.LoadMovie("CrpgMainGuiBarPrefab", _mainGuiVm);
             _mainGuiVm.IsVisible = false;
             MissionScreen.AddLayer(_mainGuiLayer);
         }
@@ -92,7 +92,7 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
     {
         base.EarlyStart();
 
-        toggleEquipmentSelectKey = HotKeyManager.GetCategory(KeyCategoryId).GetGameKey("key_toggle_equip_select");
+        toggleEquipmentSelectKey = HotKeyManager.GetCategory(KeyCategoryId).RegisteredGameKeys.Find(gk => gk != null && gk.StringId == "key_toggle_equip_select");
     }
 
     public override void OnMissionScreenTick(float dt)
@@ -353,11 +353,11 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
     {
         if (layer == null)
         {
-            layer = new GauntletLayer(layerOrder) { IsFocusLayer = true };
+            layer = new GauntletLayer(prefabName, layerOrder) { IsFocusLayer = true };
             layer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
             layer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("GenericPanelGameKeyCategory"));
 
-            movie = layer.LoadMovie(prefabName, vm);
+            movie = (IGauntletMovie?)layer.LoadMovie(prefabName, vm);
 
             if (ScreenManager.TopScreen is MissionScreen missionScreen)
             {
@@ -391,7 +391,7 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
             // Release movie if exists
             if (movie != null)
             {
-                layer.ReleaseMovie(movie);
+                layer.ReleaseMovie((GauntletMovieIdentifier)movie);
                 movie = null;
             }
 

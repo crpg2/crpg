@@ -3,6 +3,7 @@ using Crpg.Module.Common;
 using Crpg.Module.Common.Network;
 using Crpg.Module.Common.Network.Armory;
 using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -449,7 +450,7 @@ public class CrpgCharacterEquipVM : ViewModel
         if (equippedItem != null)
         {
             var itemObj = MBObjectManager.Instance.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
-            slotVm.SetItem(new ImageIdentifierVM(itemObj), itemObj, equippedItem.UserItem);
+            slotVm.SetItem(new ItemImageIdentifierVM(itemObj), itemObj, equippedItem.UserItem);
             LogDebug($"Slot {updatedSlot} set to item {itemObj?.Name} (UserItemId: {equippedItem.UserItem.Id})");
         }
         else
@@ -577,7 +578,7 @@ public class CrpgCharacterEquipVM : ViewModel
             if (equippedItem != null)
             {
                 var itemObj = MBObjectManager.Instance.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
-                slotVm.SetItem(new ImageIdentifierVM(itemObj), itemObj, equippedItem.UserItem);
+                slotVm.SetItem(new ItemImageIdentifierVM(itemObj), itemObj, equippedItem.UserItem);
             }
             else
             {
