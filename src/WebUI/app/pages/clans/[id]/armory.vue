@@ -173,7 +173,7 @@ const renderClanArmoryItemDetail = <T extends { id: string }>(opendeItem: T, com
                 variant="subtle"
                 color="neutral"
                 size="xl"
-                icon="crpg:dots"
+                icon="i-lucide-ellipsis-vertical"
               />
             </UChip>
           </UDropdownMenu>

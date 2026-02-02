@@ -154,7 +154,7 @@ const renderCharacterInventoryItemDetail = <T extends { id: string }>(opendeItem
                 variant="outline"
                 color="neutral"
                 size="xl"
-                icon="crpg:dots"
+                icon="i-lucide-ellipsis-vertical"
               />
             </UChip>
           </UDropdownMenu>

@@ -40,8 +40,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 .Include(p => p.Orders)
                     .ThenInclude(o => o.TargetedBattle)
                 .Include(p => p.Orders)
-                    .ThenInclude(o => o.TargetedSettlement)
-                // TODO: owner
+                    .ThenInclude(o => o.TargetedSettlement) // TODO: Settlement owner
                 .Include(p => p.Orders)
                     .ThenInclude(o => o.TargetedParty)
                         .ThenInclude(p => p!.User)
@@ -51,6 +50,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 
             foreach (var party in parties)
             {
+                // TODO: FIXME: In calculating the current speed, terrain must also be taken into account
                 double speed = _strategusSpeedModel.ComputePartySpeed(party);
                 double remainingDistance = speed * req.DeltaTime.TotalSeconds;
 
@@ -294,36 +294,6 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             party.Position = (Point)target.Copy();
             return remainingDistance - dist;
         }
-
-        // private double MoveToTarget<T>(
-        //     Party party,
-        //     PartyOrder order,
-        //     T? target,
-        //     Func<T, Point> getPosition,
-        //     Func<T, Task<bool>> onArrived,
-        //     double remainingDistance)
-        // {
-        //     if (target == null)
-        //     {
-        //         party.Orders.Remove(order);
-        //         return remainingDistance;
-        //     }
-
-        //     double dist = party.Position.Distance(getPosition(target));
-
-        //     if (dist <= _strategusMap.InteractionDistance)
-        //     {
-        //         bool consumeOrder = onArrived(target).GetAwaiter().GetResult();
-        //         if (consumeOrder)
-        //         {
-        //             party.Orders.Remove(order);
-        //         }
-
-        //         return remainingDistance;
-        //     }
-
-        //     return MoveTowards(party, getPosition(target), remainingDistance);
-        // }
 
         private Task StartBattle(Party attacker, Party defender)
         {

@@ -78,7 +78,7 @@ const itemActions = computed(() => {
 
     <template v-if="itemActions.length" #actions>
       <UDropdownMenu :items="itemActions" size="xl">
-        <UButton variant="subtle" color="neutral" size="xl" icon="crpg:dots" />
+        <UButton variant="subtle" color="neutral" size="xl" icon="i-lucide-ellipsis-vertical" />
 
         <template #borrow>
           <i18n-t

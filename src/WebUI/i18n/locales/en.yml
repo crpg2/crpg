@@ -1727,8 +1727,9 @@ strategus:
               success: Application declined
   partyOrderType:
     MoveToPoint: Move
-    FollowParty: Follow Party
-    AttackParty: Attack Party
-    MoveToSettlement: Move to Settlement
-    AttackSettlement: Attack Settlement
-    JoinBattle: Join to Battle
+    FollowParty: Follow
+    AttackParty: Attack
+    MoveToSettlement: Move to
+    AttackSettlement: Attack
+    JoinBattle: Join to
+    TransferOfferParty: Transfer offer

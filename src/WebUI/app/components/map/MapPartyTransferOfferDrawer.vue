@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { ItemDetail, UiInputRange } from '#components'
+import { ItemDetail } from '#components'
 
 import type { GroupedCompareItemsResult } from '~/models/item'
-import type { PartyPublic, PartyVisible } from '~/models/strategus/party'
+import type { PartyVisible } from '~/models/strategus/party'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useItemDetail } from '~/composables/item/use-item-detail'
 import { useParty } from '~/composables/strategus/use-party'
-import { getPartyItems, getSelfPartyItems } from '~/services/strategus/party-service'
+import { getSelfPartyItems } from '~/services/strategus/party-service'
 
 interface TransferOffer {
   troops: number

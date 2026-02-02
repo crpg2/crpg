@@ -154,7 +154,6 @@ const onBattleClick = (battle: MapBattle) => showMoveDialog({
 
 <template>
   <div :style="{ height: `calc(100vh - ${mainHeaderHeight}px)` }">
-    <!-- {{ { isMoveMode, moveTarget, moveTargetType } }} -->
     <LMap
       ref="map"
       v-model:zoom="zoom"
@@ -165,18 +164,12 @@ const onBattleClick = (battle: MapBattle) => showMoveDialog({
       @move-end="onMapMoveEnd"
     >
       <LTileLayer v-bind="tileLayerOptions" :z-index="1" />
-      <LControlZoom position="bottomleft" />
+
+      <LControlZoom position="bottomright" />
 
       <MapControlLocateParty
-        position="bottomleft"
+        position="bottomright"
         @click="flyToSelfParty"
-      />
-
-      <MapControlMousePosition position="bottomright" />
-
-      <MapControlTerrainVisibilityToggle
-        position="topleft"
-        @toggle="toggleTerrainLayerVisibility"
       />
 
       <!-- <ControlSearchToggle
@@ -185,10 +178,17 @@ const onBattleClick = (battle: MapBattle) => showMoveDialog({
       />
      -->
 
+      <MapControlTerrainVisibilityToggle
+        position="bottomright"
+        @toggle="toggleTerrainLayerVisibility"
+      />
+
       <MapControlTerrainEditToggle
-        position="topleft"
+        position="bottomright"
         @click="toggleEditMode"
       />
+
+      <MapControlMousePosition position="bottomright" />
 
       <MapPartyMovementPolyline
         v-if="!isMoveMode"
@@ -221,9 +221,9 @@ const onBattleClick = (battle: MapBattle) => showMoveDialog({
         v-if="isMapRdy"
         chunked-loading
         cluster-pane="partyPane"
-        :spiderfy-on-max-zoom="true"
+        spiderfy-on-max-zoom
         :show-coverage-on-hover="false"
-        :zoom-to-bounds-on-click="true"
+        zoom-to-bounds-on-click
       >
         <MapMarkerParty
           v-for="party in partyState.visibleParties"
@@ -246,7 +246,7 @@ const onBattleClick = (battle: MapBattle) => showMoveDialog({
       />
 
       <MapPartyProfile
-        class="absolute top-12 right-10 z-1000"
+        class="absolute top-6 left-6 z-1000"
         :party="partyState.party"
         @locate="flyToSelfParty"
       />
@@ -265,6 +265,10 @@ const onBattleClick = (battle: MapBattle) => showMoveDialog({
 
 .leaflet-interactive {
   @apply select-none outline-0;
+}
+
+.leaflet-container a {
+  color: inherit;
 }
 
 .leaflet-tooltip {

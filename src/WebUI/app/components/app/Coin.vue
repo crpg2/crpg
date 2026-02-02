@@ -3,9 +3,10 @@ import { isString } from 'es-toolkit'
 
 import type { DataMediaSize } from '~/components/ui/data/DataMedia.vue'
 
-defineProps<{
+const { compact = false } = defineProps<{
   value?: number | string
   size?: DataMediaSize
+  compact?: boolean
 }>()
 
 defineSlots<{
@@ -25,7 +26,7 @@ defineSlots<{
           v-if="value !== undefined"
           :class="classes()"
         >
-          {{ isString(value) ? value : $n(value) }}
+          {{ isString(value) ? value : $n(value, compact ? 'compact' : '') }}
         </span>
       </slot>
     </template>
