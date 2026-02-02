@@ -78,6 +78,10 @@ export default defineNuxtConfig({
   css: [
     './assets/css/main.css',
   ],
+  // https://color-mode.nuxtjs.org/usage/configuration
+  colorMode: {
+    preference: 'dark',
+  },
   // https://ui.nuxt.com/getting-started/installation/nuxt#options
   ui: {
     fonts: false,
