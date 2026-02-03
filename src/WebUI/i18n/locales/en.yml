@@ -1618,11 +1618,6 @@ strategus:
     join: 'You will join the campaign in region: {region}'
     hint: 'If this doesn''t seem right you can try re-login or contact an administrator'
 
-  movementType:
-    Move: Move
-    Follow: Follow
-    Attack: Attack
-
   settlementType:
     Village: Village
     Castle: Castle

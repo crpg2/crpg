@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { TimelineItem } from '@nuxt/ui'
 
-import { formatTimeAgo } from '@vueuse/core'
 import { LazyMapPartyInventoryDrawer, UiDataMedia } from '#components'
 
 import type { Party, PartyOrder, PartyOrderType } from '~/models/strategus/party'
@@ -19,17 +18,18 @@ const { n, t } = useI18n()
 
 function getOrderIcon(orderType: PartyOrderType): string {
   return ({
-    [PARTY_ORDER_TYPE.MoveToPoint]: 'i-lucide-move-up-right',
-    [PARTY_ORDER_TYPE.FollowParty]: 'i-lucide-move-up-right',
+    [PARTY_ORDER_TYPE.MoveToPoint]: 'crpg:boot-prints',
+    [PARTY_ORDER_TYPE.FollowParty]: 'crpg:boot-prints',
     [PARTY_ORDER_TYPE.AttackParty]: 'crpg:game-mode-duel',
-    [PARTY_ORDER_TYPE.MoveToSettlement]: 'i-lucide-move-up-right',
-    [PARTY_ORDER_TYPE.AttackSettlement]: 'i-lucide-move-up-right',
-    [PARTY_ORDER_TYPE.JoinBattle]: 'i-lucide-move-up-right',
+    [PARTY_ORDER_TYPE.MoveToSettlement]: 'crpg:boot-prints',
+    [PARTY_ORDER_TYPE.AttackSettlement]: 'crpg:game-mode-conquest',
+    [PARTY_ORDER_TYPE.JoinBattle]: 'crpg:game-mode-duel',
     [PARTY_ORDER_TYPE.TransferOfferParty]: 'crpg:chest',
   } satisfies Record<PartyOrderType, string>)?.[orderType] ?? ''
 }
 
 type OrderTimlineItem = TimelineItem & {
+  type: PartyOrder['type']
   distance: number
   estimatedTimeMs: number
   estimatedArrivalAt: Date
@@ -76,6 +76,7 @@ const orders = computed<OrderTimlineItem[]>(() => {
       const estimatedArrivalAt = new Date(nowMs + estimatedTimeMs)
 
       return {
+        type: order.type,
         title: t(`strategus.partyOrderType.${order.type}`),
         icon: getOrderIcon(order.type),
         distance: totalDistance,
@@ -109,12 +110,6 @@ function openInventory() {
     }"
   >
     <template #header>
-      <!-- <UserMedia
-        :user="party.user"
-        hidden-platform
-        class="max-w-48"
-      /> -->
-
       <UFieldGroup size="xl" class="w-full">
         <UTooltip text="Locate">
           <UButton
@@ -215,23 +210,41 @@ function openInventory() {
         }"
       >
         <template #title="{ item } : { item: OrderTimlineItem }">
-          <div class="flex items-center gap-2">
-            <UiTextView variant="p">
-              {{ item.title }}
-            </UiTextView>
+          <div class="group flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <UiTextView variant="p">
+                {{ item.title }}
+              </UiTextView>
 
-            <template v-if="item.targetedParty">
-              <div class="flex items-center gap-1">
-                <UserMedia :user="item.targetedParty.user" size="sm" />
-                <UButton
-                  square
-                  size="sm"
-                  icon="i-lucide-locate-fixed"
-                  variant="link" color="neutral" @click="$emit('locate')"
-                />
-              </div>
-            </template>
-            <SettlementMedia v-if="item.targetedSettlement" :settlement="item.targetedSettlement" size="sm" />
+              <template v-if="item.targetedParty">
+                <div class="flex items-center gap-1">
+                  <UserMedia :user="item.targetedParty.user" size="sm" />
+                  <UButton square size="sm" icon="i-lucide-locate-fixed" variant="link" color="neutral" @click="$emit('locate')" />
+
+                  <UButton
+                    v-if="item.type === PARTY_ORDER_TYPE.TransferOfferParty"
+                    size="sm"
+                    icon="crpg:chest"
+                    variant="subtle" color="neutral" @click="() => {}"
+                  />
+                </div>
+              </template>
+
+              <SettlementMedia v-if="item.targetedSettlement" :settlement="item.targetedSettlement" size="sm" />
+            </div>
+
+            <AppConfirmActionPopover
+              @confirm="() => {
+              // TODO:
+              }"
+            >
+              <UButton
+                variant="link" color="neutral" icon="i-lucide-x" size="xs" class="
+                  invisible
+                  group-hover:visible
+                "
+              />
+            </AppConfirmActionPopover>
           </div>
         </template>
 

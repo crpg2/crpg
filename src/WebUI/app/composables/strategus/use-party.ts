@@ -10,6 +10,7 @@ import {
   mapPartyOrderToUpdateOrder,
   shouldPartyBeInBattle,
   shouldPartyBeInSettlement,
+  UNMOVABLE_PARTY_STATUSES,
   updatePartyOrders,
 } from '~/services/strategus/party-service'
 
@@ -80,8 +81,7 @@ export const useParty = (
     startUpdatePartyInterval()
   }
 
-  // TODO: переименовать, usePartyOrder bla bla bla
-  const moveParty = async (updateRequest: Partial<UpdatePartyOrder>, chain: boolean = false) => {
+  const setPartyOrder = async (updateRequest: Partial<UpdatePartyOrder>, chain: boolean = false) => {
     const order: UpdatePartyOrder = {
       type: PARTY_ORDER_TYPE.MoveToPoint,
       orderIndex: 0,
@@ -94,7 +94,7 @@ export const useParty = (
       ...updateRequest,
     }
 
-    partyState.value.party = await updatePartyOrders(
+    await updatePartyOrders(
       chain
         ? [
             ...partyState.value.party.orders.map(mapPartyOrderToUpdateOrder),
@@ -105,6 +105,8 @@ export const useParty = (
           ]
         : [order],
     )
+
+    await updateParty()
   }
 
   // TODO: move to party action
@@ -126,14 +128,28 @@ export const useParty = (
     },
   )
 
+  const toast = useToast()
+
+  const validateCanMove = () => {
+    if (UNMOVABLE_PARTY_STATUSES.includes(partyState.value.party.status)) {
+      toast.add({
+        description: 'Вы не можете двигаться TODO:',
+        color: 'warning',
+      })
+      return false
+    }
+
+    return true
+  }
+
   return {
     partyState,
     updateParty,
-    moveParty,
+    setPartyOrder,
     partySpawn,
+    validateCanMove,
 
     toggleRecruitTroops,
     isTogglingRecruitTroops,
-
   }
 }

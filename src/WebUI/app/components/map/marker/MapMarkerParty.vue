@@ -6,6 +6,7 @@ import { strategusMaxPartyTroops, strategusMinPartyTroops } from '~root/data/con
 
 import type { PartyVisible } from '~/models/strategus/party'
 
+import ClanTagIcon from '~/components/clan/ClanTagIcon.vue'
 import { positionToLatLng } from '~/utils/geometry'
 
 const { isSelf = false, party } = defineProps<{ party: PartyVisible, isSelf?: boolean }>()
@@ -35,14 +36,32 @@ const markerColor = computed(() => (isSelf ? '#34d399' : '#ef4444')) // TODO: co
     >
       <LIcon
         :icon-size="[32, 32]"
-        class-name="flex! justify-center items-center"
+        class-name="flex! items-center justify-center"
       >
-        <UserAvatar
-          :avatar="party?.user.avatar || ''"
-          :name="party?.user.name || ''"
-          size="xl"
-          :is-self
-        />
+        <div class="flex items-center justify-center gap-1 rounded-sm bg-muted/20 py-0.5 pr-1">
+          <UserAvatar
+            :avatar="party?.user.avatar || ''"
+            :name="party?.user.name || ''"
+            size="xl"
+            :is-self
+          />
+
+          <div class="flex flex-col gap-0.5">
+            <ClanTagIcon
+              :color="party?.user.clanMembership?.clan.primaryColor || ''" class="size-5"
+            />
+            <span class="text-center font-medium text-highlighted"> {{ $n(party.troops, 'compact') }}</span>
+          </div>
+        </div>
+
+        <!-- <UBadge variant="soft" color="neutral" size="xs">
+          <template #leading>
+            <ClanTagIcon
+              :color="party?.user.clanMembership?.clan.primaryColor || ''" class="size-3"
+            />
+          </template>
+          {{ $n(party.troops, 'compact') }}
+        </UBadge> -->
       </LIcon>
 
       <LTooltip :options="{ direction: 'top', offset: [0, -24] }">

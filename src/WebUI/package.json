@@ -2,7 +2,7 @@
   "name": "crpg-web-ui",
   "type": "module",
   "scripts": {
-    "dev": "nuxt dev --no-fork",
+    "dev": "nuxt dev",
     "build": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",

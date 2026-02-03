@@ -3,13 +3,16 @@ import type { LatLngLiteral, LayerGroup } from 'leaflet'
 
 import { LLayerGroup, LPopup } from '@vue-leaflet/vue-leaflet'
 
-import type { MovementType } from '~/models/strategus/movement'
+import type { PartyOrderType } from '~/models/strategus/party'
 
-const { latLng } = defineProps<{ latLng: LatLngLiteral, movementTypes: MovementType[] }>()
+const { latLng } = defineProps<{
+  latLng: LatLngLiteral
+  orders: PartyOrderType[]
+}>()
 
 const emit = defineEmits<{
   cancel: []
-  confirm: [movementType: MovementType]
+  confirm: [order: PartyOrderType]
 }>()
 
 const layerGroup = ref<typeof LLayerGroup | null>(null)
@@ -39,18 +42,18 @@ watch(
   <LLayerGroup ref="layerGroup">
     <LPopup
       :lat-lng="latLng"
-      :options="{ className: 'move-popup', offset: [0, -16] }"
+      :options="{ offset: [0, -16] }"
     >
       <div class="flex w-full flex-col items-center justify-center gap-2">
         <UButton
-          v-for="mt in movementTypes"
-          :key="mt"
+          v-for="(order, idx) in orders"
+          :key="`${order}_${idx}`"
           block
           color="neutral"
           variant="subtle"
-          @click="emit('confirm', mt)"
+          @click="emit('confirm', order)"
         >
-          {{ $t(`strategus.movementType.${mt}`) }}
+          {{ $t(`strategus.partyOrderType.${order}`) }}
         </UButton>
       </div>
     </LPopup>
