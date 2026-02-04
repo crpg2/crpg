@@ -43,6 +43,9 @@ export const useMap = () => {
 
   const zoom = ref<number>(mapOptions.minZoom)
 
+  const zoomIn = () => (map.value!.leafletObject as Map).zoomIn()
+  const zoomOut = () => (map.value!.leafletObject as Map).zoomOut()
+
   return {
     center,
     map,
@@ -51,6 +54,8 @@ export const useMap = () => {
     maxBounds,
     onMapMoveEnd,
     zoom,
+    zoomIn,
+    zoomOut,
     //
     tileLayerOptions,
     //

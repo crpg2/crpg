@@ -70,7 +70,8 @@ const orders = computed<OrderTimlineItem[]>(() => {
   return party.orders
     .toSorted((a, b) => a.orderIndex - b.orderIndex)
     .map((order) => {
-      totalDistance += order.distance
+      const distance = order.pathSegments.reduce((sum, s) => sum + s.distance, 0) ?? 0
+      totalDistance += distance
 
       const estimatedTimeMs = party.speed > 0 ? (totalDistance / party.speed) * 1000 : 0
       const estimatedArrivalAt = new Date(nowMs + estimatedTimeMs)

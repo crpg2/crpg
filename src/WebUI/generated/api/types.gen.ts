@@ -802,12 +802,20 @@ export type PartyOrderCommandItemDto = {
     transferOfferPartyIntent: TransferOfferPartyIntent | null;
 };
 
+export type PartyOrderPathSegmentViewModel = {
+    startPoint: GeoJsonPoint;
+    endPoint: GeoJsonPoint;
+    distance: number;
+    speedMultiplier: number;
+    speed: number;
+};
+
 export type PartyOrderType = 'MoveToPoint' | 'FollowParty' | 'AttackParty' | 'TransferOfferParty' | 'MoveToSettlement' | 'AttackSettlement' | 'JoinBattle';
 
 export type PartyOrderViewModel = {
     type: PartyOrderType;
     orderIndex: number;
-    distance: number;
+    pathSegments: Array<PartyOrderPathSegmentViewModel>;
     waypoints: GeoJsonMultiPoint;
     targetedParty: PartyVisibleViewModel | null;
     targetedSettlement: SettlementPublicViewModel | null;
@@ -1469,10 +1477,18 @@ export type PartyOrderCommandItemDtoWritable = {
     transferOfferPartyIntent: TransferOfferPartyIntent | null;
 };
 
+export type PartyOrderPathSegmentViewModelWritable = {
+    startPoint: GeoJsonPointWritable;
+    endPoint: GeoJsonPointWritable;
+    distance: number;
+    speedMultiplier: number;
+    speed: number;
+};
+
 export type PartyOrderViewModelWritable = {
     type: PartyOrderType;
     orderIndex: number;
-    distance: number;
+    pathSegments: Array<PartyOrderPathSegmentViewModelWritable>;
     waypoints: GeoJsonMultiPointWritable;
     targetedParty: PartyVisibleViewModelWritable | null;
     targetedSettlement: SettlementPublicViewModelWritable | null;
@@ -2911,7 +2927,7 @@ export type PutPartiesSelfOrdersResponses = {
     /**
      * Updated.
      */
-    200: PartyViewModelResult;
+    200: StrategusUpdateResult;
 };
 
 export type PutPartiesSelfOrdersResponse = PutPartiesSelfOrdersResponses[keyof PutPartiesSelfOrdersResponses];

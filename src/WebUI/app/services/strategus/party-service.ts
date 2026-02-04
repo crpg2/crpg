@@ -17,7 +17,7 @@ export const getSelfUpdate = (): Promise<CrpgApiResult<StrategusUpdate>> => getP
 // TODO:
 // export const updatePartyStatus = async (payload: UpdatePartyStatus): Promise<Party> => (await putPartiesSelfStatus({ body: payload })).data!
 
-export const updatePartyOrders = async (orders: UpdatePartyOrder[]): Promise<Party> => (await putPartiesSelfOrders({ body: { orders } })).data!
+export const updatePartyOrders = async (orders: UpdatePartyOrder[]): Promise<StrategusUpdate> => (await putPartiesSelfOrders({ body: { orders } })).data!
 
 export const registerParty = () => postParties({ body: {} })
 

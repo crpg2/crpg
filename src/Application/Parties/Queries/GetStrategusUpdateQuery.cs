@@ -10,6 +10,7 @@ using Crpg.Application.Settlements.Models;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Parties;
+using Crpg.Domain.Entities.Terrains;
 using Microsoft.EntityFrameworkCore;
 using NetTopologySuite.Geometries;
 
@@ -19,7 +20,7 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
 {
     public int PartyId { get; init; }
 
-    internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap, IStrategusSpeedModel strategusSpeedModel) : IMediatorRequestHandler<GetStrategusUpdateQuery, StrategusUpdate>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap, IStrategusSpeedModel strategusSpeedModel, IStrategusRouting strategusRouting) : IMediatorRequestHandler<GetStrategusUpdateQuery, StrategusUpdate>
     {
         private static readonly PartyStatus[] VisibleStatuses =
         [
@@ -32,6 +33,7 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
         private readonly IMapper _mapper = mapper;
         private readonly IStrategusMap _strategusMap = strategusMap;
         private readonly IStrategusSpeedModel _strategusSpeedModel = strategusSpeedModel;
+        private readonly IStrategusRouting _strategusRouting = strategusRouting;
 
         public async Task<Result<StrategusUpdate>> Handle(GetStrategusUpdateQuery req, CancellationToken cancellationToken)
         {
@@ -71,34 +73,22 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
                 .ToArrayAsync(cancellationToken);
 
             double speed = _strategusSpeedModel.ComputePartySpeed(party);
+            var terrains = await _db.Terrains.ToArrayAsync(cancellationToken);
 
             var partyVm = _mapper.Map<PartyViewModel>(party);
             partyVm.Speed = speed;
 
             // TODO: refactoring
+            Point currentPosition = party.Position;
             foreach (var orderVm in partyVm.Orders)
             {
-                double distance = orderVm.Type switch
+                orderVm.PathSegments = BuildOrderPathSegments(currentPosition, orderVm, terrains, speed);
+
+                // Update current position to the end of this order for the next order in the queue
+                if (orderVm.PathSegments.Count > 0)
                 {
-                    PartyOrderType.MoveToPoint =>
-                        CalculateWaypointsDistance(party.Position, orderVm.Waypoints),
-
-                    PartyOrderType.FollowParty or PartyOrderType.AttackParty =>
-                        orderVm.TargetedParty != null
-                            ? party.Position.Distance(orderVm.TargetedParty.Position)
-                            : 0,
-                    PartyOrderType.MoveToSettlement or PartyOrderType.AttackSettlement =>
-                        orderVm.TargetedSettlement != null
-                            ? party.Position.Distance(orderVm.TargetedSettlement.Position)
-                            : 0,
-                    PartyOrderType.JoinBattle =>
-                        orderVm.TargetedBattle != null
-                            ? party.Position.Distance(orderVm.TargetedBattle.Position)
-                            : 0,
-                    _ => 0,
-                };
-
-                orderVm.Distance = distance;
+                    currentPosition = orderVm.PathSegments[^1].EndPoint;
+                }
 
                 if (orderVm.Type == PartyOrderType.JoinBattle && orderVm.TargetedBattle != null)
                 {
@@ -123,7 +113,7 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
             }
 
             // TODO: в 2х местах у меня CurrentTransferOffers
-            var partyTransferOffers = await db.PartyTransferOffers
+            var partyTransferOffers = await _db.PartyTransferOffers
                 .AsSplitQuery()
                 .Include(to => to.Items).ThenInclude(oi => oi.Item)
                 .Include(to => to.TargetParty).ThenInclude(p => p!.User)
@@ -156,26 +146,80 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
             });
         }
 
-        // TODO: refactoring, to service
-        private static double CalculateWaypointsDistance(Point start, MultiPoint waypoints)
+        private static List<Point> GetOrderPoints(Point start, PartyOrderViewModel orderVm)
         {
-            if (waypoints == null || waypoints.Count == 0)
+            var points = new List<Point> { start };
+
+            switch (orderVm.Type)
             {
-                return 0;
+                case PartyOrderType.MoveToPoint:
+                    if (orderVm.Waypoints != null && orderVm.Waypoints.Count > 0)
+                    {
+                        points.AddRange(orderVm.Waypoints.Geometries.Cast<Point>());
+                    }
+
+                    break;
+
+                case PartyOrderType.FollowParty:
+                case PartyOrderType.AttackParty:
+                case PartyOrderType.TransferOfferParty:
+                    if (orderVm.TargetedParty != null)
+                    {
+                        points.Add(orderVm.TargetedParty.Position);
+                    }
+
+                    break;
+
+                case PartyOrderType.MoveToSettlement:
+                case PartyOrderType.AttackSettlement:
+                    if (orderVm.TargetedSettlement != null)
+                    {
+                        points.Add(orderVm.TargetedSettlement.Position);
+                    }
+
+                    break;
+
+                case PartyOrderType.JoinBattle:
+                    if (orderVm.TargetedBattle != null)
+                    {
+                        points.Add(orderVm.TargetedBattle.Position);
+                    }
+
+                    break;
             }
 
-            double total = 0;
-            var points = waypoints.Geometries
-                .Cast<Point>()
-                .Prepend(start)
-                .ToArray();
+            return points;
+        }
 
-            for (int i = 0; i < points.Length - 1; i++)
+        private List<PartyOrderPathSegmentViewModel> BuildOrderPathSegments(Point start, PartyOrderViewModel orderVm, Terrain[] terrains, double baseSpeed)
+        {
+            var points = GetOrderPoints(start, orderVm);
+            if (points.Count < 2)
             {
-                total += points[i].Distance(points[i + 1]);
+                return [];
             }
 
-            return total;
+            var segments = new List<PartyOrderPathSegmentViewModel>();
+            for (int i = 0; i < points.Count - 1; i++)
+            {
+                var pathSegments = _strategusRouting.BuildPathSegments(points[i], points[i + 1], terrains);
+                foreach (var segment in pathSegments)
+                {
+                    double distance = segment.StartPoint.Distance(segment.EndPoint);
+                    double speedMultiplier = segment.TerrainMultiplier;
+                    double speed = baseSpeed * speedMultiplier;
+                    segments.Add(new PartyOrderPathSegmentViewModel
+                    {
+                        StartPoint = segment.StartPoint,
+                        EndPoint = segment.EndPoint,
+                        Distance = distance,
+                        SpeedMultiplier = speedMultiplier,
+                        Speed = speed,
+                    });
+                }
+            }
+
+            return segments;
         }
     }
 }

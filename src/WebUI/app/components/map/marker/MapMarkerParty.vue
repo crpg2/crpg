@@ -50,7 +50,7 @@ const markerColor = computed(() => (isSelf ? '#34d399' : '#ef4444')) // TODO: co
             <ClanTagIcon
               :color="party?.user.clanMembership?.clan.primaryColor || ''" class="size-5"
             />
-            <span class="text-center font-medium text-highlighted"> {{ $n(party.troops, 'compact') }}</span>
+            <span class="text-center font-medium text-highlighted">{{ $n(party.troops, 'compact') }}</span>
           </div>
         </div>
 
@@ -85,6 +85,9 @@ const markerColor = computed(() => (isSelf ? '#34d399' : '#ef4444')) // TODO: co
       :interactive="false"
       :fill-opacity="0.25"
       fill-color="#ccc"
+      :options="{
+        pmIgnore: true,
+      }"
     />
   </div>
 </template>

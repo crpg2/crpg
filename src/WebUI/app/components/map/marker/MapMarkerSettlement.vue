@@ -64,7 +64,7 @@ const settlementAreaRadius = computed(() => {
         <div
           :style="settlementMarkerStyle.baseStyle"
           class="
-            flex items-center rounded-md bg-primary/75 whitespace-nowrap text-highlighted
+            flex items-center rounded-md bg-muted/75 whitespace-nowrap text-highlighted
             hover:ring hover:ring-inverted
           "
           :class="settlementMarkerStyle.baseClass"
@@ -92,10 +92,8 @@ const settlementAreaRadius = computed(() => {
             {{ settlement.troops }}
           </div>
 
-          <AppCoin :value="10000" />
-
           <div v-if="settlement.owner" class="flex flex-col gap-1">
-            <span class="text-3xs text-content-300">Owner</span>
+            <span class="">Owner</span>
             <UserMedia :user="settlement.owner" />
           </div>
         </div>
@@ -109,6 +107,9 @@ const settlementAreaRadius = computed(() => {
       :opacity="0"
       :fill-opacity="0.25"
       fill-color="tomato"
+      :options="{
+        pmIgnore: true,
+      }"
     />
   </div>
 </template>

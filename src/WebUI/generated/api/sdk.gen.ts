@@ -549,7 +549,7 @@ export const postParties = <TComposable extends Composable = '$fetch', DefaultT 
 });
 
 /**
- * Update strategus party status.
+ * Update strategus party orders.
  */
 export const putPartiesSelfOrders = <TComposable extends Composable = '$fetch', DefaultT extends PutPartiesSelfOrdersResponse = PutPartiesSelfOrdersResponse>(options: Options<TComposable, PutPartiesSelfOrdersData, PutPartiesSelfOrdersResponse, DefaultT>) => (options.client ?? client).put<TComposable, PutPartiesSelfOrdersResponse | DefaultT, unknown, DefaultT>({
     responseTransformer: putPartiesSelfOrdersResponseTransformer,

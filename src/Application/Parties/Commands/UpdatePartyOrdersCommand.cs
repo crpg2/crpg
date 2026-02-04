@@ -1,22 +1,18 @@
 using System.Text.Json.Serialization;
-using AutoMapper;
 using Crpg.Application.Battles.Models;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
-using Crpg.Application.Parties.Models;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Parties;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using NetTopologySuite.Geometries;
-using LoggerFactory = Crpg.Logging.LoggerFactory;
 
 namespace Crpg.Application.Parties.Commands;
 
-public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
+public record UpdatePartyOrdersCommand : IMediatorRequest
 {
     public record TransferOfferPartyItem
     {
@@ -113,14 +109,12 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
         }
     }
 
-    internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap) : IMediatorRequestHandler<UpdatePartyOrdersCommand, PartyViewModel>
+    internal class Handler(ICrpgDbContext db, IStrategusMap strategusMap) : IMediatorRequestHandler<UpdatePartyOrdersCommand>
     {
-        // private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdatePartyOrdersCommand>();
         private readonly ICrpgDbContext _db = db;
-        private readonly IMapper _mapper = mapper;
         private readonly IStrategusMap _strategusMap = strategusMap;
 
-        public async Task<Result<PartyViewModel>> Handle(UpdatePartyOrdersCommand req, CancellationToken cancellationToken)
+        public async Task<Result> Handle(UpdatePartyOrdersCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
                         .Include(p => p.User!)
@@ -141,7 +135,6 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
             _db.PartyOrders.RemoveRange(party.Orders);
 
             // remove temporary entities associated with orders
-
             var partyTransferIntentOffers = await _db.PartyTransferOffers
                 .Where(to => to.PartyId == party.Id && to.Status == PartyTransferOfferStatus.Intent)
                 .ToListAsync(cancellationToken);
@@ -151,6 +144,36 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
                 .Where(bfa => bfa.PartyId == party.Id && bfa.Status == BattleFighterApplicationStatus.Intent)
                 .ToListAsync(cancellationToken);
             _db.BattleFighterApplications.RemoveRange(battleFighterIntentApplications);
+
+            // Pre-load all referenced entities to avoid N+1 queries
+            int[] targetPartyIds = [.. req.Orders
+                .Where(o => o is { Type: PartyOrderType.FollowParty or PartyOrderType.AttackParty or PartyOrderType.TransferOfferParty, TargetedPartyId: > 0 })
+                .Select(o => o.TargetedPartyId)
+                .Distinct()];
+
+            var targetPartiesDict = await _db.Parties
+                .Include(p => p.User)
+                .Where(p => targetPartyIds.Contains(p.Id))
+                .ToDictionaryAsync(p => p.Id, cancellationToken);
+
+            int[] targetSettlementIds = [.. req.Orders
+                .Where(o => o is { Type: PartyOrderType.MoveToSettlement or PartyOrderType.AttackSettlement, TargetedSettlementId: > 0 })
+                .Select(o => o.TargetedSettlementId)
+                .Distinct()];
+
+            var targetSettlementsDict = await _db.Settlements
+                .Include(s => s.Owner!.User)
+                .Where(s => targetSettlementIds.Contains(s.Id))
+                .ToDictionaryAsync(s => s.Id, cancellationToken);
+
+            int[] targetBattleIds = [.. req.Orders
+                .Where(o => o is { Type: PartyOrderType.JoinBattle, TargetedBattleId: > 0 })
+                .Select(o => o.TargetedBattleId)
+                .Distinct()];
+
+            var targetBattlesDict = await _db.Battles
+                .Where(b => targetBattleIds.Contains(b.Id))
+                .ToDictionaryAsync(b => b.Id, cancellationToken);
 
             List<PartyOrder> partyOrders = [];
 
@@ -162,12 +185,7 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
                     case PartyOrderType.AttackParty:
                     case PartyOrderType.TransferOfferParty:
                         {
-                            // We are not particularly concerned about database requests in the loop,
-                            // as there will almost always be no more than two orders
-                            var targetParty = await _db.Parties
-                                .Include(p => p.User)
-                                .FirstOrDefaultAsync(h => h.Id == order.TargetedPartyId, cancellationToken);
-                            if (targetParty == null)
+                            if (!targetPartiesDict.TryGetValue(order.TargetedPartyId, out var targetParty))
                             {
                                 return new(CommonErrors.PartyNotFound(order.TargetedPartyId));
                             }
@@ -193,10 +211,7 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
                     case PartyOrderType.MoveToSettlement:
                     case PartyOrderType.AttackSettlement:
                         {
-                            var targetSettlement = await _db.Settlements
-                                .Include(s => s.Owner!.User)
-                                .FirstOrDefaultAsync(s => s.Id == order.TargetedSettlementId, cancellationToken);
-                            if (targetSettlement == null)
+                            if (!targetSettlementsDict.TryGetValue(order.TargetedSettlementId, out var targetSettlement))
                             {
                                 return new(CommonErrors.SettlementNotFound(order.TargetedSettlementId));
                             }
@@ -206,9 +221,7 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
 
                     case PartyOrderType.JoinBattle:
                         {
-                            var targetBattle = await _db.Battles
-                                .FirstOrDefaultAsync(b => b.Id == order.TargetedBattleId, cancellationToken);
-                            if (targetBattle == null)
+                            if (!targetBattlesDict.TryGetValue(order.TargetedBattleId, out var targetBattle))
                             {
                                 return new(CommonErrors.BattleNotFound(order.TargetedBattleId));
                             }
@@ -243,7 +256,7 @@ public record UpdatePartyOrdersCommand : IMediatorRequest<PartyViewModel>
             _db.PartyOrders.AddRange(partyOrders);
 
             await _db.SaveChangesAsync(cancellationToken);
-            return new(_mapper.Map<PartyViewModel>(party));
+            return Result.NoErrors;
         }
     }
 }

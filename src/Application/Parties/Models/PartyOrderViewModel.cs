@@ -11,7 +11,7 @@ public record PartyOrderViewModel : IMapFrom<PartyOrder>
 {
     public PartyOrderType Type { get; init; }
     public int OrderIndex { get; set; }
-    public double Distance { get; set; }
+    public List<PartyOrderPathSegmentViewModel> PathSegments { get; set; } = [];
     public MultiPoint Waypoints { get; init; } = MultiPoint.Empty;
     [JsonRequired]
     public PartyVisibleViewModel? TargetedParty { get; init; }

@@ -10,6 +10,7 @@ import {
 import type { Terrain, TerrainFeatureCollection, TerrainType } from '~/models/strategus/terrain'
 
 import { TERRAIN_TYPE } from '~/models/strategus/terrain'
+
 // TODO: colors
 export const terrainColorByType: Record<TerrainType, string> = {
   [TERRAIN_TYPE.Barrier]: '#d03c3c ',
@@ -21,12 +22,12 @@ export const terrainColorByType: Record<TerrainType, string> = {
 }
 
 export const terrainIconByType: Record<TerrainType, string> = {
-  [TERRAIN_TYPE.Barrier]: 'terrain-barrier ',
-  [TERRAIN_TYPE.SparseForest]: 'terrain-sparse-forest',
-  [TERRAIN_TYPE.ThickForest]: 'terrain-thick-forest',
-  [TERRAIN_TYPE.ShallowWater]: 'terrain-shallow-water',
-  [TERRAIN_TYPE.DeepWater]: 'terrain-deep-water',
-  [TERRAIN_TYPE.Plain]: 'terrain-plain',
+  [TERRAIN_TYPE.Plain]: 'crpg:terrain-plain',
+  [TERRAIN_TYPE.Barrier]: 'crpg:terrain-barrier',
+  [TERRAIN_TYPE.SparseForest]: 'crpg:terrain-sparse-forest',
+  [TERRAIN_TYPE.ThickForest]: 'crpg:terrain-thick-forest',
+  [TERRAIN_TYPE.ShallowWater]: 'crpg:terrain-shallow-water',
+  [TERRAIN_TYPE.DeepWater]: 'crpg:terrain-deep-water',
 }
 
 export const mapTerrainsToFeatureCollection = (terrains: Terrain[]): TerrainFeatureCollection => ({

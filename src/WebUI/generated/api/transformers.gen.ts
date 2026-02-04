@@ -289,7 +289,7 @@ export const postPartiesResponseTransformer = async (data: any): Promise<PostPar
 };
 
 export const putPartiesSelfOrdersResponseTransformer = async (data: any): Promise<PutPartiesSelfOrdersResponse> => {
-    data = partyViewModelResultSchemaResponseTransformer(data);
+    data = strategusUpdateResultSchemaResponseTransformer(data);
     return data;
 };
 

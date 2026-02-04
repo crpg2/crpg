@@ -22,7 +22,7 @@ public class StrategusWorker : BackgroundService
 
     private static readonly Func<TimeSpan, IMediatorRequest>[] Behaviors =
     {
-        // dt => new UpdatePartyPositionsCommand { DeltaTime = dt },
+        dt => new UpdatePartyPositionsCommand { DeltaTime = dt },
         dt => new UpdatePartyTroopsCommand { DeltaTime = dt },
         dt => new UpdateBattlePhasesCommand { DeltaTime = dt },
     };

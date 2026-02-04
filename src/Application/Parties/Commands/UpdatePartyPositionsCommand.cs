@@ -6,6 +6,7 @@ using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Settlements;
+using Crpg.Domain.Entities.Terrains;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using NetTopologySuite.Geometries;
@@ -17,7 +18,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 {
     public TimeSpan DeltaTime { get; init; }
 
-    internal class Handler(ICrpgDbContext db, IStrategusMap strategusMap, IStrategusSpeedModel strategusSpeedModel) : IMediatorRequestHandler<UpdatePartyPositionsCommand>
+    internal class Handler(ICrpgDbContext db, IStrategusMap strategusMap, IStrategusSpeedModel strategusSpeedModel, IStrategusRouting strategusRouting) : IMediatorRequestHandler<UpdatePartyPositionsCommand>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdatePartyPositionsCommand>();
 
@@ -31,6 +32,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
         private readonly ICrpgDbContext _db = db;
         private readonly IStrategusMap _strategusMap = strategusMap;
         private readonly IStrategusSpeedModel _strategusSpeedModel = strategusSpeedModel;
+        private readonly IStrategusRouting _strategusRouting = strategusRouting;
 
         public async Task<Result> Handle(UpdatePartyPositionsCommand req, CancellationToken cancellationToken)
         {
@@ -48,31 +50,33 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 .Include(p => p.Items.Where(oi => oi.Item!.Type == ItemType.Mount)).ThenInclude(oi => oi.Item)
                 .ToArrayAsync(cancellationToken);
 
+            // Load all terrains for terrain-based speed calculations
+            var terrains = await _db.Terrains.ToArrayAsync(cancellationToken);
+
             foreach (var party in parties)
             {
-                // TODO: FIXME: In calculating the current speed, terrain must also be taken into account
-                double speed = _strategusSpeedModel.ComputePartySpeed(party);
-                double remainingDistance = speed * req.DeltaTime.TotalSeconds;
+                double baseSpeed = _strategusSpeedModel.ComputePartySpeed(party);
+                double remainingTime = req.DeltaTime.TotalSeconds;
 
-                while (remainingDistance > 0 && party.Orders.Count != 0)
+                while (remainingTime > 0 && party.Orders.Count != 0)
                 {
                     var order = party.Orders.OrderBy(o => o.OrderIndex).First();
 
-                    remainingDistance = order.Type switch
+                    remainingTime = order.Type switch
                     {
                         PartyOrderType.MoveToPoint =>
-                            MoveToPoint(party, order, remainingDistance),
+                            MoveToPoint(party, order, baseSpeed, remainingTime, terrains),
 
                         PartyOrderType.FollowParty or PartyOrderType.AttackParty or PartyOrderType.TransferOfferParty =>
-                            await MoveToParty(party, order, remainingDistance, cancellationToken),
+                            await MoveToParty(party, order, baseSpeed, remainingTime, terrains, cancellationToken),
 
                         PartyOrderType.MoveToSettlement or PartyOrderType.AttackSettlement =>
-                            await MoveToSettlement(party, order, remainingDistance, cancellationToken),
+                            await MoveToSettlement(party, order, baseSpeed, remainingTime, terrains, cancellationToken),
 
                         PartyOrderType.JoinBattle =>
-                            await MoveToBattle(party, order, remainingDistance, cancellationToken),
+                            await MoveToBattle(party, order, baseSpeed, remainingTime, terrains, cancellationToken),
 
-                        _ => remainingDistance,
+                        _ => remainingTime,
                     };
                 }
             }
@@ -86,7 +90,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             return new((pointA.X + pointB.X) / 2, (pointA.Y + pointB.Y) / 2);
         }
 
-        private double MoveToPoint(Party party, PartyOrder order, double remainingDistance)
+        private double MoveToPoint(Party party, PartyOrder order, double baseSpeed, double remainingTime, Terrain[] terrains)
         {
             if (order.Waypoints.IsEmpty)
             {
@@ -94,11 +98,11 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                     party.Id, order.Type);
                 // party.Status = PartyStatus.Idle; // TODO:
                 party.Orders.Remove(order);
-                return remainingDistance;
+                return remainingTime;
             }
 
             var waypoints = order.Waypoints.Cast<Point>().ToList();
-            remainingDistance = MoveAlongWaypoints(party, waypoints, remainingDistance);
+            remainingTime = MoveAlongWaypoints(party, waypoints, baseSpeed, remainingTime, terrains);
             order.Waypoints = new MultiPoint([.. waypoints]);
 
             if (order.Waypoints.Count == 0)
@@ -107,10 +111,10 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 party.Orders.Remove(order);
             }
 
-            return remainingDistance;
+            return remainingTime;
         }
 
-        private async Task<double> MoveToParty(Party party, PartyOrder order, double remainingDistance, CancellationToken cancellationToken)
+        private async Task<double> MoveToParty(Party party, PartyOrder order, double baseSpeed, double remainingTime, Terrain[] terrains, CancellationToken cancellationToken)
         {
             var target = order.TargetedParty;
             if (target == null)
@@ -119,7 +123,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                     party.Id, order.Type);
                 // party.Status = PartyStatus.Idle; // TODO:
                 party.Orders.Remove(order);
-                return remainingDistance;
+                return remainingTime;
             }
 
             if (!party.Position.IsWithinDistance(target.Position, _strategusMap.ViewDistance))
@@ -127,14 +131,14 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 // Followed party is not in sight anymore. Stop.
                 // party.Status = PartyStatus.Idle; // TODO:
                 party.Orders.Remove(order);
-                return remainingDistance;
+                return remainingTime;
             }
 
             // TODO: FIXME: обработать кейс, когда на Party, за которой мы следуем или атакуем - напали
 
             if (order.Type == PartyOrderType.FollowParty)
             {
-                MoveTowards(party, target.Position, remainingDistance);
+                MoveTowardsWithTerrainSegmentation(party, target.Position, baseSpeed, remainingTime, terrains, out _);
                 return 0; // to avoid an endless while
             }
 
@@ -168,13 +172,13 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                     }
                 }
 
-                return remainingDistance;
+                return remainingTime;
             }
 
-            return MoveTowards(party, target.Position, remainingDistance);
+            return MoveTowardsWithTerrainSegmentation(party, target.Position, baseSpeed, remainingTime, terrains, out _);
         }
 
-        private async Task<double> MoveToSettlement(Party party, PartyOrder order, double remainingDistance, CancellationToken cancellationToken)
+        private async Task<double> MoveToSettlement(Party party, PartyOrder order, double baseSpeed, double remainingTime, Terrain[] terrains, CancellationToken cancellationToken)
         {
             var target = order.TargetedSettlement;
             if (target == null)
@@ -183,7 +187,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                     party.Id, order.Type);
                 // party.Status = PartyStatus.Idle;
                 party.Orders.Remove(order);
-                return remainingDistance;
+                return remainingTime;
             }
 
             double interactionDist = _strategusMap.InteractionDistance;
@@ -203,13 +207,13 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 
                 party.Position = target.Position;
                 party.Orders.Remove(order);
-                return remainingDistance;
+                return remainingTime;
             }
 
-            return MoveTowards(party, target.Position, remainingDistance);
+            return MoveTowardsWithTerrainSegmentation(party, target.Position, baseSpeed, remainingTime, terrains, out _);
         }
 
-        private async Task<double> MoveToBattle(Party party, PartyOrder order, double remainingDistance, CancellationToken cancellationToken)
+        private async Task<double> MoveToBattle(Party party, PartyOrder order, double baseSpeed, double remainingTime, Terrain[] terrains, CancellationToken cancellationToken)
         {
             var target = order.TargetedBattle;
             if (target == null)
@@ -218,7 +222,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                     party.Id, order.Type);
                 // party.Status = PartyStatus.Idle; // TODO:
                 party.Orders.Remove(order);
-                return remainingDistance;
+                return remainingTime;
             }
 
             double interactionDist = _strategusMap.InteractionDistance;
@@ -228,7 +232,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             {
                 // party.Status = PartyStatus.Idle; // TODO:
                 party.Orders.Remove(order);
-                return remainingDistance;
+                return remainingTime;
             }
 
             if (_strategusMap.InteractionDistance <= party.Position.Distance(target.Position))
@@ -244,31 +248,29 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 
                 party.Orders.Remove(order);
 
-                return remainingDistance;
+                return remainingTime;
             }
 
-            return MoveTowards(party, target.Position, remainingDistance);
+            return MoveTowardsWithTerrainSegmentation(party, target.Position, baseSpeed, remainingTime, terrains, out _);
         }
 
-        private double MoveAlongWaypoints(Party party, List<Point> waypoints, double remainingDistance)
+        private double MoveAlongWaypoints(Party party, List<Point> waypoints, double baseSpeed, double remainingTime, Terrain[] terrains)
         {
             int i = 0;
 
-            while (remainingDistance > 0 && i < waypoints.Count)
+            while (remainingTime > 0 && i < waypoints.Count)
             {
                 var target = waypoints[i];
-                double dist = party.Position.Distance(target);
+                remainingTime = MoveTowardsWithTerrainSegmentation(party, target, baseSpeed, remainingTime, terrains, out bool reachedTarget);
 
-                if (dist <= remainingDistance)
+                if (reachedTarget)
                 {
-                    party.Position = (Point)target.Copy();
-                    remainingDistance -= dist;
                     i++;
                 }
                 else
                 {
-                    party.Position = _strategusMap.MovePointTowards(party.Position, target, remainingDistance);
-                    remainingDistance = 0;
+                    // Didn't reach the target, no time left
+                    break;
                 }
             }
 
@@ -278,21 +280,54 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 waypoints.RemoveAt(0);
             }
 
-            return remainingDistance;
+            return remainingTime;
         }
 
-        private double MoveTowards(Party party, Point target, double remainingDistance)
+        /// <summary>
+        /// Moves party towards target, segmenting the path by terrain boundaries.
+        /// </summary>
+        private double MoveTowardsWithTerrainSegmentation(Party party, Point target, double baseSpeed, double remainingTime, Terrain[] terrains, out bool reachedTarget)
         {
-            double dist = party.Position.Distance(target);
+            reachedTarget = false;
+            double totalDistance = party.Position.Distance(target);
 
-            if (dist > remainingDistance)
+            if (totalDistance < 1e-10)
             {
-                party.Position = _strategusMap.MovePointTowards(party.Position, target, remainingDistance);
-                return 0;
+                reachedTarget = true;
+                return remainingTime;
             }
 
-            party.Position = (Point)target.Copy();
-            return remainingDistance - dist;
+            // Find all intersection points with terrain boundaries
+            var segments = _strategusRouting.BuildPathSegments(party.Position, target, terrains);
+
+            // Move through segments
+            Point currentPosition = party.Position;
+            foreach (var segment in segments)
+            {
+                double segmentDistance = currentPosition.Distance(segment.EndPoint);
+                double terrainMultiplier = segment.TerrainMultiplier;
+                double currentSpeed = baseSpeed * terrainMultiplier;
+                double maxDistanceWithCurrentTime = currentSpeed * remainingTime;
+
+                if (segmentDistance <= maxDistanceWithCurrentTime)
+                {
+                    // Can complete this segment
+                    double timeSpent = segmentDistance / currentSpeed;
+                    remainingTime -= timeSpent;
+                    currentPosition = segment.EndPoint;
+                    party.Position = segment.EndPoint;
+                }
+                else
+                {
+                    // Can only partially complete this segment
+                    party.Position = _strategusMap.MovePointTowards(currentPosition, segment.EndPoint, maxDistanceWithCurrentTime);
+                    remainingTime = 0;
+                    return remainingTime;
+                }
+            }
+
+            reachedTarget = true;
+            return remainingTime;
         }
 
         private Task StartBattle(Party attacker, Party defender)

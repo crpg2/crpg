@@ -25,7 +25,6 @@ internal interface IStrategusMap
     /// <summary>Translates a point from <paramref name="sourceRegion"/> to <paramref name="targetRegion"/>.</summary>
     Point TranslatePositionForRegion(Point pos, Region sourceRegion, Region targetRegion);
 
-    /// <summary>Get the spawning position depending on the region.</summary>
     Point GetSpawnPosition(Region region);
 }
 

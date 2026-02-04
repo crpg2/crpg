@@ -1,51 +1,26 @@
 import type { LMap } from '@vue-leaflet/vue-leaflet'
 import type { Map } from 'leaflet'
 
-import L from 'leaflet'
-
 import type { TerrainType } from '~/models/strategus/terrain'
 
-import { TERRAIN_TYPE } from '~/models/strategus/terrain'
 import {
   addTerrain,
   deleteTerrain,
   getTerrains,
   mapTerrainsToFeatureCollection,
   terrainColorByType,
-  terrainIconByType,
   updateTerrain,
 } from '~/services/strategus/terrain-service'
 
-const terrainDrawControls = [
-  {
-    type: TERRAIN_TYPE.Barrier,
-    title: 'Barrier',
-    className: `icon-${terrainIconByType[TERRAIN_TYPE.Barrier]}`,
-  },
-  {
-    type: TERRAIN_TYPE.ShallowWater,
-    title: 'Shallow water',
-    className: `icon-${terrainIconByType[TERRAIN_TYPE.ShallowWater]}`,
-  },
-  {
-    type: TERRAIN_TYPE.DeepWater,
-    title: 'Deep water',
-    className: `icon-${terrainIconByType[TERRAIN_TYPE.DeepWater]}`,
-  },
-  {
-    type: TERRAIN_TYPE.SparseForest,
-    title: 'Sparse forest',
-    className: `icon-${terrainIconByType[TERRAIN_TYPE.SparseForest]}`,
-  },
-  {
-    type: TERRAIN_TYPE.ThickForest,
-    title: 'Thick forest',
-    className: `icon-${terrainIconByType[TERRAIN_TYPE.ThickForest]}`,
-  },
-]
+export type Tool = 'draw' | 'edit' | 'drag' | 'remove'
 
 export const useTerrains = (map: Ref<typeof LMap | null>) => {
-  const { state: terrains, execute: loadTerrains } = useAsyncState(() => getTerrains(), [], {
+  const mapInstance = computed(() => map.value!.leafletObject as Map)
+
+  const {
+    state: terrains,
+    executeImmediate: loadTerrains,
+  } = useAsyncState(getTerrains, [], {
     resetOnExecute: false,
   })
 
@@ -55,31 +30,20 @@ export const useTerrains = (map: Ref<typeof LMap | null>) => {
 
   const editMode = ref<boolean>(false)
   const isEditorInit = ref<boolean>(false)
-  const editType = ref<TerrainType | null>(null)
+  // const editedLayer = ref<L.Layer | null>(null)
+  const terrainDrawType = ref<TerrainType | null>(null)
 
-  const setEditType = (type: TerrainType) => {
-    editType.value = type
-
-    const color = terrainColorByType[editType.value];
-
-    (map.value!.leafletObject as Map).pm.setPathOptions({
-      color,
-      fillColor: color,
-    })
-  }
-
-  // TDO: FIXME: ts
-  const onTerrainUpdated = async (event: any) => {
-    if (event.type === 'pm:create') {
+  const [onTerrainUpdate] = useAsyncCallback(async (event: any) => {
+    if (event.type === 'pm:create' && terrainDrawType.value) {
       await addTerrain({
-        type: event.shape,
+        type: terrainDrawType.value,
         boundary: event.layer.toGeoJSON().geometry,
       })
-      event.layer.removeFrom(map.value!.leafletObject as Map)
+      event.layer.removeFrom(mapInstance.value)
       await loadTerrains()
     }
 
-    if (event.type === 'pm:update') {
+    if (event.type === 'pm:update' || event.type === 'pm:dragend' || event.type === 'pm:edit') {
       await updateTerrain(event.layer.feature.id as number, {
         boundary: event.layer.toGeoJSON().geometry,
       })
@@ -91,60 +55,117 @@ export const useTerrains = (map: Ref<typeof LMap | null>) => {
       await deleteTerrain(event.layer.feature.id as number)
       await loadTerrains()
     }
-  }
+  }, {
+    pageLoading: true,
+  })
 
-  const createEditControls = () => {
-    (map.value!.leafletObject as Map).pm.addControls({
-      position: 'topleft',
-      drawCircle: false,
-      drawMarker: false,
-      drawCircleMarker: false,
-      drawPolyline: false,
-      drawRectangle: false,
-      drawText: false,
-      drawPolygon: false,
-      rotateMode: false,
-      cutPolygon: false,
+  const initEditor = () => {
+    mapInstance.value.pm.removeControls()
+
+    mapInstance.value.on('pm:create', onTerrainUpdate)
+    mapInstance.value.on('pm:remove', onTerrainUpdate)
+
+    // mapInstance.on('pm:keyevent', (e) => {
+    //   // e.event.
+    //   console.log(e)
+    // })
+
+    mapInstance.value.pm.setGlobalOptions({
+      exitModeOnEscape: true,
     })
 
-    terrainDrawControls.forEach((dc) => {
-      (map.value!.leafletObject as Map).pm.Toolbar.copyDrawControl('Polygon', {
-        name: dc.type,
-        block: 'draw',
-        title: dc.title,
-        className: dc.className,
-        onClick: () => setEditType(dc.type),
-      })
-    });
-
-    (map.value!.leafletObject as Map).on('pm:create', onTerrainUpdated);
-    (map.value!.leafletObject as Map).on('pm:remove', onTerrainUpdated)
-
-    L.PM.reInitLayer(map.value!.leafletObject as L.Layer)
-
+    // mapInstance.on('pm:editstart', (e) => {
+    //   editedLayer.value = e.propagatedFrom
+    // })
     isEditorInit.value = true
   }
+
+  const activeTool = ref<Tool | null>(null)
 
   const toggleEditMode = () => {
     editMode.value = !editMode.value
 
     if (!isEditorInit.value) {
-      return createEditControls()
+      initEditor()
+      return
     }
 
-    (map.value!.leafletObject as Map).pm.toggleControls()
+    if (!editMode.value) {
+      activeTool.value = null
+      mapInstance.value.pm.globalEditModeEnabled() && mapInstance.value.pm.disableGlobalEditMode()
+      mapInstance.value.pm.globalRemovalModeEnabled() && mapInstance.value.pm.disableGlobalRemovalMode()
+      mapInstance.value.pm.globalDragModeEnabled() && mapInstance.value.pm.disableGlobalDragMode()
+    }
+  }
+
+  const toggleDrawTool = (type: TerrainType) => {
+    if (mapInstance.value.pm.globalDrawModeEnabled()) {
+      mapInstance.value.pm.disableDraw('Polygon')
+      activeTool.value = null
+      return
+    }
+
+    mapInstance.value.pm.enableDraw('Polygon')
+
+    terrainDrawType.value = type
+    const color = terrainColorByType[type]
+    mapInstance.value.pm.setPathOptions({ color, fillColor: color })
+
+    activeTool.value = 'draw'
+  }
+
+  const toggleEditTool = () => {
+    if (mapInstance.value.pm.globalEditModeEnabled()) {
+      activeTool.value = null
+      mapInstance.value.pm.disableGlobalEditMode()
+      return
+    }
+
+    activeTool.value = 'edit'
+    mapInstance.value.pm.enableGlobalEditMode()
+  }
+
+  const toggleDragTool = () => {
+    if (mapInstance.value.pm.globalDragModeEnabled()) {
+      activeTool.value = null
+      mapInstance.value.pm.disableGlobalDragMode()
+      return
+    }
+
+    activeTool.value = 'drag'
+    mapInstance.value.pm.enableGlobalDragMode()
+  }
+
+  const toggleRemovalTool = () => {
+    if (mapInstance.value.pm.globalRemovalModeEnabled()) {
+      activeTool.value = null
+      mapInstance.value.pm.disableGlobalRemovalMode()
+      return
+    }
+
+    activeTool.value = 'remove'
+    mapInstance.value.pm.enableGlobalRemovalMode()
   }
 
   return {
     terrains,
-    terrainsFeatureCollection,
     loadTerrains,
+    terrainsFeatureCollection,
+
     terrainLayerVisibility,
     toggleTerrainLayerVisibility,
 
     editMode,
     toggleEditMode,
-    onTerrainUpdated,
-    createEditControls,
+    onTerrainUpdate,
+
+    activeTool,
+
+    toggleDrawTool,
+    terrainDrawType,
+
+    toggleEditTool,
+    toggleRemovalTool,
+    toggleDragTool,
   }
 }

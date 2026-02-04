@@ -74,13 +74,21 @@ export type PartyOrderType = ValueOf<typeof PARTY_ORDER_TYPE>
 export interface PartyOrder {
   type: PartyOrderType
   orderIndex: number
-  distance: number
   waypoints: MultiPoint
   targetedParty: PartyVisible | null
   targetedSettlement: SettlementPublic | null
   targetedBattle: MapBattle | null
   battleJoinIntents: Array<BattleJoinIntent>
   transferOfferPartyIntent: TransferOfferParty | null
+  pathSegments: Array<PartyOrderPathSegment>
+}
+
+export interface PartyOrderPathSegment {
+  startPoint: Point
+  endPoint: Point
+  distance: number
+  speedMultiplier: number
+  speed: number
 }
 
 export const PARTY_TRANSFER_STATUS = {

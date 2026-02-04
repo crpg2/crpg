@@ -94,7 +94,7 @@ export const useParty = (
       ...updateRequest,
     }
 
-    await updatePartyOrders(
+    const newPartyState = await updatePartyOrders(
       chain
         ? [
             ...partyState.value.party.orders.map(mapPartyOrderToUpdateOrder),
@@ -106,7 +106,7 @@ export const useParty = (
         : [order],
     )
 
-    await updateParty()
+    setPartyState(newPartyState)
   }
 
   // TODO: move to party action

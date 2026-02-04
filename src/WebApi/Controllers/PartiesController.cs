@@ -53,15 +53,24 @@ public class PartiesController : BaseController
     // }
 
     /// <summary>
-    /// Update strategus party status.
+    /// Update strategus party orders.
     /// </summary>
-    /// <returns>The updated strategus party.</returns>
+    /// <returns>The updated strategus state.</returns>
     /// <response code="200">Updated.</response>
     [HttpPut("self/orders")]
-    public Task<ActionResult<Result<PartyViewModel>>> UpdatePartyOrders([FromBody] UpdatePartyOrdersCommand req)
+    public async Task<ActionResult<Result<StrategusUpdate>>> UpdatePartyOrders([FromBody] UpdatePartyOrdersCommand req)
     {
         req.PartyId = CurrentUser.User!.Id;
-        return ResultToActionAsync(Mediator.Send(req));
+        var result = await Mediator.Send(req);
+        if (result.Errors != null && result.Errors.Count > 0)
+        {
+            return ResultToAction(new Result<StrategusUpdate>(result.Errors));
+        }
+
+        return await ResultToActionAsync(Mediator.Send(new GetStrategusUpdateQuery
+        {
+            PartyId = CurrentUser.User!.Id,
+        }));
     }
 
     /// <summary>

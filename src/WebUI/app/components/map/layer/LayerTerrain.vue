@@ -12,9 +12,9 @@ const { data } = defineProps<{
   data: TerrainFeatureCollection
 }>()
 
-// const emit = defineEmits<{
-// update: [e: L.PM.UpdateEventHandler]
-// }>()
+const emit = defineEmits<{
+  update: [e: L.PM.UpdateEventHandler]
+}>()
 
 const { t } = useI18n()
 const geoJSON = ref<typeof LGeoJson | null>(null)
@@ -30,7 +30,12 @@ const onEachFeatureFunction = (feature: TerrainFeature, layer: L.Polygon) => {
   layer.properties = feature.properties
 
   // @ts-expect-error TODO:
-  // layer.on('pm:update', e => emit('update', e))
+  layer.on('pm:update', event => emit('update', event))
+  // @ts-expect-error TODO:
+  layer.on('pm:dragend', event => emit('update', event))
+
+  // @ts-expect-error TODO:
+  layer.on('pm:edit', event => emit('update', event))
 
   // TODO: style
   layer.bindTooltip(
