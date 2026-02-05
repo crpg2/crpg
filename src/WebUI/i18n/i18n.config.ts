@@ -67,6 +67,11 @@ export default defineI18nConfig(() => {
           unit: 'second',
           unitDisplay: 'narrow',
         },
+        compact: {
+          notation: 'compact',
+          compactDisplay: 'short',
+          maximumFractionDigits: 1,
+        },
       },
       ru: {
         decimal: {
@@ -82,6 +87,11 @@ export default defineI18nConfig(() => {
           style: 'unit',
           unit: 'second',
           unitDisplay: 'narrow',
+        },
+        compact: {
+          notation: 'compact',
+          compactDisplay: 'short',
+          maximumFractionDigits: 1,
         },
       },
     },

@@ -36,17 +36,17 @@ const {
         hover:ring-default
       `],
       {
-        '!ring-success': focused,
-        '!ring-warning': invalid,
-        '!ring-error': remove,
+        'ring-success!': focused,
+        'ring-warning!': invalid,
+        'ring-error!': remove,
       },
     ]"
   >
     <ItemCard
       v-if="userItem !== undefined"
       :item="userItem.item"
-      class="h-full w-full cursor-grab !ring-0"
-      :class="{ '!bg-gold/25': userItem.isPersonal }"
+      class="h-full w-full cursor-grab ring-0!"
+      :class="{ 'bg-gold/25!': userItem.isPersonal }"
       data-aq-character-slot-item-thumb
     >
       <template #badges-top-right>

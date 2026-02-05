@@ -5,17 +5,19 @@ definePageMeta({
   layoutOptions: {
     bg: 'background-2.webp',
   },
+  middleware: [
+    () => {
+      const { fallbackCharacterId } = useCharacters()
+      if (fallbackCharacterId.value) {
+        return navigateTo({
+          name: 'characters-id-inventory',
+          params: { id: fallbackCharacterId.value },
+          replace: true,
+        })
+      }
+    },
+  ],
 })
-
-const { fallbackCharacterId } = useCharacters()
-
-if (fallbackCharacterId.value) {
-  await navigateTo({
-    name: 'characters-id-inventory',
-    params: { id: fallbackCharacterId.value },
-    replace: true,
-  })
-}
 </script>
 
 <template>

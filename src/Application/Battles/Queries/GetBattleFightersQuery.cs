@@ -31,11 +31,12 @@ public record GetBattleFightersQuery : IMediatorRequest<IList<BattleFighterViewM
                 return new(CommonErrors.BattleNotFound(req.BattleId));
             }
 
+            // TODO:
             // Battles in preparation shouldn't be visible to anyone but only to parties in sight on the map.
-            if (battle.Phase == BattlePhase.Preparation)
-            {
-                return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
-            }
+            // if (battle.Phase == BattlePhase.Preparation)
+            // {
+            //     return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
+            // }
 
             return new(_mapper.Map<IList<BattleFighterViewModel>>(battle.Fighters));
         }

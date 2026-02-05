@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import type { BadgeProps } from '@nuxt/ui'
+
 import type { BattlePhase } from '~/models/strategus/battle'
 
 import { BATTLE_PHASE } from '~/models/strategus/battle'
 
-const { phase } = defineProps<{
+const { phase, size = 'xl' } = defineProps<{
   phase: BattlePhase
+  size?: BadgeProps['size']
 }>()
 
 const { t } = useI18n()
@@ -14,30 +17,40 @@ const label = computed(() => t(`strategus.battle.phase.${phase}`))
 
 <template>
   <UTooltip :text="$t('strategus.battle.battlePhase')">
+    <!-- TODO: FIXME: icon, style -->
+    <UBadge
+      v-if="phase === BATTLE_PHASE.Preparation"
+      :size
+      :label
+      variant="soft"
+      color="neutral"
+      icon="crpg:trumpet"
+    />
+
     <UBadge
       v-if="phase === BATTLE_PHASE.Hiring"
+      :size
+      :label
       variant="soft"
       color="warning"
-      size="xl"
       icon="crpg:trumpet"
-      :label
     />
 
     <UBadge
       v-else-if="phase === BATTLE_PHASE.Scheduled"
+      :size
+      :label
       variant="soft"
       color="warning"
-      size="xl"
       icon="i-lucide-calendar-check"
-      :label
     />
 
     <UBadge
       v-else-if="phase === BATTLE_PHASE.Live"
+      :size
+      :label
       variant="soft"
       color="success"
-      size="xl"
-      :label
     >
       <template #leading>
         <UiPingIcon />
@@ -46,11 +59,11 @@ const label = computed(() => t(`strategus.battle.phase.${phase}`))
 
     <UBadge
       v-else-if="phase === BATTLE_PHASE.End"
+      :size
+      :label
       variant="soft"
       color="error"
-      size="xl"
       icon="crpg:not-found"
-      :label
     />
   </UTooltip>
 </template>

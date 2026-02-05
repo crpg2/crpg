@@ -53,7 +53,7 @@ public record RemoveBattleParticipantCommand : IMediatorRequest
                 .FirstOrDefaultAsync(p => p.BattleId == battle.Id && p.Id == req.RemovedParticipantId, cancellationToken);
             if (participant == null)
             {
-                return new(CommonErrors.BattleParticipantNotFound(req.RemovedParticipantId));
+                return new(CommonErrors.BattleParticipantNotFound(req.RemovedParticipantId, battle.Id));
             }
 
             if (participant.Type == BattleParticipantType.Party)
@@ -66,7 +66,7 @@ public record RemoveBattleParticipantCommand : IMediatorRequest
                 _db.BattleParticipants.Remove(participant);
                 _db.ActivityLogs.Add(_activityLogService.CreateBattleParticipantLeavedLog(battle.Id, req.PartyId));
                 await _db.SaveChangesAsync(cancellationToken);
-                Logger.LogInformation("Participant '{0}' left the battle clan '{1}'", req.PartyId, req.BattleId);
+                Logger.LogInformation("User '{0}', battle participant '{1}' left the battle '{1}'", req.PartyId, req.RemovedParticipantId, req.BattleId);
                 return new Result();
             }
 
@@ -76,11 +76,17 @@ public record RemoveBattleParticipantCommand : IMediatorRequest
                 return new(CommonErrors.FighterNotFound(req.PartyId, req.BattleId));
             }
 
+            // TODO: FIXME: ADD TEST CASE
+            if (battleFighter.Side != participant.Side)
+            {
+                return new(CommonErrors.PartiesNotOnTheSameSide(req.PartyId, participant.Character.UserId, req.BattleId));
+            }
+
             _db.BattleParticipants.Remove(participant);
             _db.ActivityLogs.Add(_activityLogService.CreateBattleParticipantKickedLog(battle.Id, participant.Character!.UserId, req.PartyId));
             _db.UserNotifications.Add(_userNotificationService.CreateBattleParticipantKickedToExParticipantNotification(participant.Character!.UserId, battle.Id));
             await _db.SaveChangesAsync(cancellationToken);
-            Logger.LogInformation("User '{0}' removed participant '{1}' (user '{2}') out of battle '{3}'", req.PartyId, req.RemovedParticipantId, participant.Character!.UserId, req.BattleId);
+            Logger.LogInformation("User '{0}' removed battle participant '{1}' (user '{2}') out of battle '{3}'", req.PartyId, req.RemovedParticipantId, participant.Character!.UserId, req.BattleId);
             return new Result();
         }
     }

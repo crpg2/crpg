@@ -85,11 +85,11 @@ export type BattleDetailedViewModelResult = {
     data: BattleDetailedViewModel | null;
 };
 
-export type BattleFighterApplicationStatus = 'Pending' | 'Declined' | 'Accepted';
+export type BattleFighterApplicationStatus = 'Intent' | 'Pending' | 'Declined' | 'Accepted';
 
 export type BattleFighterApplicationViewModel = {
     id: number;
-    party: PartyVisibleViewModel | null;
+    party: PartyPublicViewModel;
     side: BattleSide;
     status: BattleFighterApplicationStatus;
 };
@@ -104,6 +104,18 @@ export type BattleFighterApplicationViewModelResult = {
     data: BattleFighterApplicationViewModel | null;
 };
 
+export type BattleFighterInventoryViewModel = {
+    fighterId: number;
+    party: PartyPublicViewModel | null;
+    settlement: SettlementPublicViewModel | null;
+    items: Array<ItemStack>;
+};
+
+export type BattleFighterInventoryViewModelIListResult = {
+    readonly errors: Array<Error> | null;
+    data: Array<BattleFighterInventoryViewModel> | null;
+};
+
 export type BattleFighterViewModel = {
     id: number;
     party: PartyPublicViewModel | null;
@@ -116,6 +128,10 @@ export type BattleFighterViewModel = {
 export type BattleFighterViewModelIListResult = {
     readonly errors: Array<Error> | null;
     data: Array<BattleFighterViewModel> | null;
+};
+
+export type BattleJoinIntentViewModel = {
+    side: BattleSide;
 };
 
 export type BattleMercenaryApplicationStatus = 'Pending' | 'Declined' | 'Accepted';
@@ -195,6 +211,7 @@ export type BattleViewModel = {
     position: GeoJsonPoint;
     phase: BattlePhase;
     createdAt: Date;
+    fighters: Array<BattleFighterViewModel>;
 };
 
 export type BuyItemCommand = {
@@ -440,7 +457,7 @@ export type CreateClanCommand = {
 };
 
 export type CreatePartyCommand = {
-    userId: number;
+    [key: string]: never;
 };
 
 export type CreateTerrainCommand = {
@@ -484,16 +501,16 @@ export type EquippedItemViewModelIListResult = {
 };
 
 export type Error = {
-    traceId?: string | null;
+    traceId: string | null;
     type: ErrorType;
     code: ErrorCode;
-    title?: string | null;
-    detail?: string | null;
-    source?: ErrorSource | null;
-    stackTrace?: string | null;
+    title: string | null;
+    detail: string | null;
+    source: ErrorSource | null;
+    stackTrace: string | null;
 };
 
-export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
+export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
 
 export type ErrorSource = {
     pointer?: string | null;
@@ -774,23 +791,71 @@ export type NotificationState = 'Unread' | 'Read';
 
 export type NotificationType = 'UserRewardedToUser' | 'CharacterRewardedToUser' | 'ItemReturned' | 'ClanApplicationCreatedToUser' | 'ClanApplicationCreatedToOfficers' | 'ClanApplicationAcceptedToUser' | 'ClanApplicationDeclinedToUser' | 'ClanMemberRoleChangedToUser' | 'ClanMemberLeavedToLeader' | 'ClanMemberKickedToExMember' | 'ClanArmoryBorrowItemToLender' | 'ClanArmoryRemoveItemToBorrower' | 'BattleMercenaryApplicationAccepted' | 'BattleMercenaryApplicationDeclined' | 'BattleParticipantKickedToExParticipant';
 
+export type PartyOrderCommandItemDto = {
+    type: PartyOrderType;
+    orderIndex: number;
+    waypoints: GeoJsonMultiPoint;
+    targetedPartyId: number;
+    targetedSettlementId: number;
+    targetedBattleId: number;
+    battleJoinIntents: Array<BattleJoinIntentViewModel>;
+    transferOfferPartyIntent: TransferOfferPartyIntent | null;
+};
+
+export type PartyOrderPathSegmentViewModel = {
+    startPoint: GeoJsonPoint;
+    endPoint: GeoJsonPoint;
+    distance: number;
+    speedMultiplier: number;
+    speed: number;
+};
+
+export type PartyOrderType = 'MoveToPoint' | 'FollowParty' | 'AttackParty' | 'TransferOfferParty' | 'MoveToSettlement' | 'AttackSettlement' | 'JoinBattle';
+
+export type PartyOrderViewModel = {
+    type: PartyOrderType;
+    orderIndex: number;
+    pathSegments: Array<PartyOrderPathSegmentViewModel>;
+    waypoints: GeoJsonMultiPoint;
+    targetedParty: PartyVisibleViewModel | null;
+    targetedSettlement: SettlementPublicViewModel | null;
+    targetedBattle: BattleViewModel | null;
+    battleJoinIntents: Array<BattleJoinIntentViewModel>;
+    transferOfferPartyIntent: PartyTransferOfferViewModel | null;
+};
+
 export type PartyPublicViewModel = {
     id: number;
     user: UserPublicViewModel;
+    troops: number;
 };
 
-export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'MovingToPoint' | 'FollowingParty' | 'MovingToSettlement' | 'MovingToAttackParty' | 'MovingToAttackSettlement' | 'InBattle';
+export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'AwaitingPartyOfferDecision' | 'InBattle' | 'AwaitingBattleJoinDecision';
+
+export type PartyTransferOfferStatus = 'Intent' | 'Pending' | 'Declined' | 'Accepted';
+
+export type PartyTransferOfferViewModel = {
+    party: PartyVisibleViewModel;
+    targetParty: PartyVisibleViewModel;
+    status: PartyTransferOfferStatus;
+    gold: number;
+    troops: number;
+    items: Array<ItemStack>;
+};
 
 export type PartyViewModel = {
     id: number;
     gold: number;
     troops: number;
     position: GeoJsonPoint;
+    speed: number;
     status: PartyStatus;
-    waypoints: GeoJsonMultiPoint;
-    targetedParty: PartyVisibleViewModel | null;
-    targetedSettlement: SettlementPublicViewModel | null;
+    currentParty: PartyVisibleViewModel | null;
+    currentSettlement: SettlementPublicViewModel | null;
+    currentBattle: BattleViewModel | null;
+    currentTransferOffers: Array<PartyTransferOfferViewModel>;
     user: UserPublicViewModel;
+    orders: Array<PartyOrderViewModel>;
 };
 
 export type PartyViewModelResult = {
@@ -826,6 +891,10 @@ export type RefundItemCommand = {
 };
 
 export type Region = 'Eu' | 'Na' | 'As' | 'Oc';
+
+export type RemoveBattleFighterApplicationCommand = {
+    side: BattleSide;
+};
 
 export type RemoveBattleMercenaryApplicationCommand = {
     side: BattleSide;
@@ -967,6 +1036,17 @@ export type TerrainViewModelResult = {
     data: TerrainViewModel | null;
 };
 
+export type TransferOfferPartyIntent = {
+    gold: number;
+    troops: number;
+    items: Array<TransferOfferPartyItem>;
+};
+
+export type TransferOfferPartyItem = {
+    itemId: string;
+    count: number;
+};
+
 export type UpdateBattleSideBriefingCommand = {
     side: BattleSide;
     note: string;
@@ -1017,12 +1097,8 @@ export type UpdateGameUsersResultResult = {
     data: UpdateGameUsersResult | null;
 };
 
-export type UpdatePartyStatusCommand = {
-    partyId: number;
-    status: PartyStatus;
-    waypoints: GeoJsonMultiPoint;
-    targetedPartyId: number;
-    targetedSettlementId: number;
+export type UpdatePartyOrdersCommand = {
+    orders: Array<PartyOrderCommandItemDto>;
 };
 
 export type UpdateSettlementCommand = {
@@ -1032,7 +1108,6 @@ export type UpdateSettlementCommand = {
 };
 
 export type UpdateTerrainCommand = {
-    id: number;
     boundary: GeoJsonPolygon;
 };
 
@@ -1205,19 +1280,23 @@ export type BattleDetailedViewModelResultWritable = {
     data: BattleDetailedViewModelWritable | null;
 };
 
-export type BattleFighterApplicationViewModelWritable = {
-    id: number;
-    party: PartyVisibleViewModelWritable | null;
-    side: BattleSide;
-    status: BattleFighterApplicationStatus;
-};
-
 export type BattleFighterApplicationViewModelIListResultWritable = {
-    data: Array<BattleFighterApplicationViewModelWritable> | null;
+    data: Array<BattleFighterApplicationViewModel> | null;
 };
 
 export type BattleFighterApplicationViewModelResultWritable = {
-    data: BattleFighterApplicationViewModelWritable | null;
+    data: BattleFighterApplicationViewModel | null;
+};
+
+export type BattleFighterInventoryViewModelWritable = {
+    fighterId: number;
+    party: PartyPublicViewModel | null;
+    settlement: SettlementPublicViewModelWritable | null;
+    items: Array<ItemStack>;
+};
+
+export type BattleFighterInventoryViewModelIListResultWritable = {
+    data: Array<BattleFighterInventoryViewModelWritable> | null;
 };
 
 export type BattleFighterViewModelWritable = {
@@ -1264,6 +1343,7 @@ export type BattleViewModelWritable = {
     position: GeoJsonPointWritable;
     phase: BattlePhase;
     createdAt: Date;
+    fighters: Array<BattleFighterViewModelWritable>;
 };
 
 export type CharacterCharacteristicsViewModelResultWritable = {
@@ -1386,16 +1466,59 @@ export type ItemViewModelIListResultWritable = {
     data: Array<ItemViewModel> | null;
 };
 
+export type PartyOrderCommandItemDtoWritable = {
+    type: PartyOrderType;
+    orderIndex: number;
+    waypoints: GeoJsonMultiPointWritable;
+    targetedPartyId: number;
+    targetedSettlementId: number;
+    targetedBattleId: number;
+    battleJoinIntents: Array<BattleJoinIntentViewModel>;
+    transferOfferPartyIntent: TransferOfferPartyIntent | null;
+};
+
+export type PartyOrderPathSegmentViewModelWritable = {
+    startPoint: GeoJsonPointWritable;
+    endPoint: GeoJsonPointWritable;
+    distance: number;
+    speedMultiplier: number;
+    speed: number;
+};
+
+export type PartyOrderViewModelWritable = {
+    type: PartyOrderType;
+    orderIndex: number;
+    pathSegments: Array<PartyOrderPathSegmentViewModelWritable>;
+    waypoints: GeoJsonMultiPointWritable;
+    targetedParty: PartyVisibleViewModelWritable | null;
+    targetedSettlement: SettlementPublicViewModelWritable | null;
+    targetedBattle: BattleViewModelWritable | null;
+    battleJoinIntents: Array<BattleJoinIntentViewModel>;
+    transferOfferPartyIntent: PartyTransferOfferViewModelWritable | null;
+};
+
+export type PartyTransferOfferViewModelWritable = {
+    party: PartyVisibleViewModelWritable;
+    targetParty: PartyVisibleViewModelWritable;
+    status: PartyTransferOfferStatus;
+    gold: number;
+    troops: number;
+    items: Array<ItemStack>;
+};
+
 export type PartyViewModelWritable = {
     id: number;
     gold: number;
     troops: number;
     position: GeoJsonPointWritable;
+    speed: number;
     status: PartyStatus;
-    waypoints: GeoJsonMultiPointWritable;
-    targetedParty: PartyVisibleViewModelWritable | null;
-    targetedSettlement: SettlementPublicViewModelWritable | null;
+    currentParty: PartyVisibleViewModelWritable | null;
+    currentSettlement: SettlementPublicViewModelWritable | null;
+    currentBattle: BattleViewModelWritable | null;
+    currentTransferOffers: Array<PartyTransferOfferViewModelWritable>;
     user: UserPublicViewModel;
+    orders: Array<PartyOrderViewModelWritable>;
 };
 
 export type PartyViewModelResultWritable = {
@@ -1477,16 +1600,11 @@ export type UpdateGameUsersResultResultWritable = {
     data: UpdateGameUsersResult | null;
 };
 
-export type UpdatePartyStatusCommandWritable = {
-    partyId: number;
-    status: PartyStatus;
-    waypoints: GeoJsonMultiPointWritable;
-    targetedPartyId: number;
-    targetedSettlementId: number;
+export type UpdatePartyOrdersCommandWritable = {
+    orders: Array<PartyOrderCommandItemDtoWritable>;
 };
 
 export type UpdateTerrainCommandWritable = {
-    id: number;
     boundary: GeoJsonPolygonWritable;
 };
 
@@ -1666,6 +1784,71 @@ export type PostBattlesByBattleIdFightersResponses = {
 
 export type PostBattlesByBattleIdFightersResponse = PostBattlesByBattleIdFightersResponses[keyof PostBattlesByBattleIdFightersResponses];
 
+export type DeleteBattlesByBattleIdFightersByFighterIdData = {
+    body?: never;
+    path: {
+        /**
+         * Battle id.
+         */
+        battleId: number;
+        /**
+         * Fighter id.
+         */
+        fighterId: number;
+    };
+    query?: never;
+    url: '/Battles/{battleId}/fighters/{fighterId}';
+};
+
+export type DeleteBattlesByBattleIdFightersByFighterIdErrors = {
+    /**
+     * Bad Request.
+     */
+    400: unknown;
+};
+
+export type DeleteBattlesByBattleIdFightersByFighterIdResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+    /**
+     * Removed.
+     */
+    204: void;
+};
+
+export type DeleteBattlesByBattleIdFightersByFighterIdResponse = DeleteBattlesByBattleIdFightersByFighterIdResponses[keyof DeleteBattlesByBattleIdFightersByFighterIdResponses];
+
+export type DeleteBattlesByBattleIdFighterApplicationsData = {
+    body?: RemoveBattleFighterApplicationCommand;
+    path: {
+        battleId: number;
+    };
+    query?: never;
+    url: '/Battles/{battleId}/fighter-applications';
+};
+
+export type DeleteBattlesByBattleIdFighterApplicationsErrors = {
+    /**
+     * Bad Request.
+     */
+    400: unknown;
+};
+
+export type DeleteBattlesByBattleIdFighterApplicationsResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+    /**
+     * Removed.
+     */
+    204: void;
+};
+
+export type DeleteBattlesByBattleIdFighterApplicationsResponse = DeleteBattlesByBattleIdFighterApplicationsResponses[keyof DeleteBattlesByBattleIdFighterApplicationsResponses];
+
 export type GetBattlesByBattleIdFighterApplicationsData = {
     body?: never;
     path: {
@@ -1718,6 +1901,31 @@ export type PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseRespon
 };
 
 export type PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse = PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponses[keyof PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponses];
+
+export type GetBattlesByBattleIdItemsData = {
+    body?: never;
+    path: {
+        battleId: number;
+    };
+    query?: never;
+    url: '/Battles/{battleId}/items';
+};
+
+export type GetBattlesByBattleIdItemsErrors = {
+    /**
+     * Bad request.
+     */
+    400: unknown;
+};
+
+export type GetBattlesByBattleIdItemsResponses = {
+    /**
+     * Ok.
+     */
+    200: BattleFighterInventoryViewModelIListResult;
+};
+
+export type GetBattlesByBattleIdItemsResponse = GetBattlesByBattleIdItemsResponses[keyof GetBattlesByBattleIdItemsResponses];
 
 export type GetBattlesByBattleIdParticipantsData = {
     body?: never;
@@ -2708,21 +2916,44 @@ export type PostPartiesResponses = {
 
 export type PostPartiesResponse = PostPartiesResponses[keyof PostPartiesResponses];
 
-export type PutPartiesSelfStatusData = {
-    body?: UpdatePartyStatusCommandWritable;
+export type PutPartiesSelfOrdersData = {
+    body?: UpdatePartyOrdersCommandWritable;
     path?: never;
     query?: never;
-    url: '/Parties/self/status';
+    url: '/Parties/self/orders';
 };
 
-export type PutPartiesSelfStatusResponses = {
+export type PutPartiesSelfOrdersResponses = {
     /**
      * Updated.
      */
-    200: PartyViewModelResult;
+    200: StrategusUpdateResult;
 };
 
-export type PutPartiesSelfStatusResponse = PutPartiesSelfStatusResponses[keyof PutPartiesSelfStatusResponses];
+export type PutPartiesSelfOrdersResponse = PutPartiesSelfOrdersResponses[keyof PutPartiesSelfOrdersResponses];
+
+export type GetPartiesSelfItemsData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/Parties/self/items';
+};
+
+export type GetPartiesSelfItemsErrors = {
+    /**
+     * Bad request.
+     */
+    400: unknown;
+};
+
+export type GetPartiesSelfItemsResponses = {
+    /**
+     * Ok.
+     */
+    200: ItemStackIListResult;
+};
+
+export type GetPartiesSelfItemsResponse = GetPartiesSelfItemsResponses[keyof GetPartiesSelfItemsResponses];
 
 export type PostPartiesSelfItemsData = {
     body?: BuySettlementItemCommand;
@@ -2746,6 +2977,31 @@ export type PostPartiesSelfItemsResponses = {
 };
 
 export type PostPartiesSelfItemsResponse = PostPartiesSelfItemsResponses[keyof PostPartiesSelfItemsResponses];
+
+export type GetPartiesByPartyIdItemsData = {
+    body?: never;
+    path: {
+        partyId: number;
+    };
+    query?: never;
+    url: '/Parties/{partyId}/items';
+};
+
+export type GetPartiesByPartyIdItemsErrors = {
+    /**
+     * Bad request.
+     */
+    400: unknown;
+};
+
+export type GetPartiesByPartyIdItemsResponses = {
+    /**
+     * Ok.
+     */
+    200: ItemStackIListResult;
+};
+
+export type GetPartiesByPartyIdItemsResponse = GetPartiesByPartyIdItemsResponses[keyof GetPartiesByPartyIdItemsResponses];
 
 export type GetPatchNotesData = {
     body?: never;

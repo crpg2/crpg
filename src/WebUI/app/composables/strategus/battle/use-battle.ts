@@ -5,13 +5,12 @@ import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
 import type { Battle, BattleMercenaryApplicationCreation, BattleSide } from '~/models/strategus/battle'
 
 import { useUser } from '~/composables/user/use-user'
-import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_PARTICIPANT_TYPE, BATTLE_SIDE } from '~/models/strategus/battle'
+import { BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_PARTICIPANT_TYPE, BATTLE_SIDE, BATTLE_TYPE } from '~/models/strategus/battle'
 import { BATTLE_QUERY_KEYS } from '~/queries'
 import {
   removeBattleParticipant as _removeBattleParticipant,
   respondToBattleMercenaryApplication as _respondToBattleMercenaryApplication,
   applyToBattleAsMercenary,
-  getBattleFighterApplications,
   getBattleMercenaryApplications,
   getBattleParticipants,
   removeBattleMercenaryApplication,
@@ -19,15 +18,15 @@ import {
 } from '~/services/strategus/battle-service'
 
 export const useBattleTitle = (battle: MaybeRefOrGetter<Battle>) => {
-  const { t } = useI18n()
+  const { $i18n } = useNuxtApp() // I didn't use i18n because it works outside of setup, for example in route middleware
 
-  if (toValue(battle).type === 'Siege') {
-    return t('strategus.battle.titleByType.Siege', { settlement: toValue(battle).nearestSettlement?.name ?? 'TODO:' })
+  if (toValue(battle).type === BATTLE_TYPE.Siege) {
+    return $i18n.t('strategus.battle.titleByType.Siege', { settlement: toValue(battle).nearestSettlement?.name ?? 'TODO:' })
   }
 
-  return t('strategus.battle.titleByType.Battle', {
+  return $i18n.t('strategus.battle.titleByType.Battle', {
     nearestSettlement: toValue(battle).nearestSettlement?.name ?? 'TODO:',
-    terrain: t(`strategus.terrainType.${toValue(battle).terrain.type}`).toLowerCase(),
+    terrain: $i18n.t(`strategus.terrainType.${toValue(battle).terrain.type}`).toLowerCase(),
   })
 }
 
@@ -58,52 +57,6 @@ export const useBattleSideBriefing = () => {
   return {
     updateBattleBriefing,
     updatingBattleBriefing,
-  }
-}
-
-// export const useBattleFighters = (immediate = true) => {
-//   const { battle } = useBattle()
-//   const { user } = useUser()
-
-//   const {
-//     state: battleFighters,
-//     executeImmediate: loadBattleFighters,
-//   } = useAsyncState(
-//     () => getBattleFighters(battle.value.id),
-//     [],
-//     { immediate, resetOnExecute: false },
-//   )
-
-//   const battleFightersCount = computed(() => battleFighters.value.length)
-
-//   const selfFighter = computed(() => getBattleFighterByUserId(battleFighters.value, user.value!.id))
-
-//   return {
-//     battleFighters,
-//     battleFightersCount,
-//     loadBattleFighters,
-//     selfFighter,
-//   }
-// }
-
-export const useBattleFighterApplications = (immediate = true) => {
-  const { battle } = useBattle()
-
-  const {
-    state: fighterApplications,
-    executeImmediate: loadBattleFighterApplications,
-  } = useAsyncState(
-    () => getBattleFighterApplications(battle.value.id, [BATTLE_FIGHTER_APPLICATION_STATUS.Pending]),
-    [],
-    { immediate, resetOnExecute: false },
-  )
-
-  const fighterApplicationsCount = computed(() => fighterApplications.value.length)
-
-  return {
-    fighterApplications,
-    fighterApplicationsCount,
-    loadBattleFighterApplications,
   }
 }
 
@@ -174,7 +127,7 @@ export const useBattleMercenaryApplications = (immediate = true) => {
 
   const mercenaryApplicationsCount = computed(() => mercenaryApplications.value.length)
 
-  const mercenaryPendingApplicationsCount = computed(() => mercenaryApplications.value.filter(a => a.status === 'Pending').length)
+  const mercenaryPendingApplicationsCount = computed(() => mercenaryApplications.value.filter(a => a.status === BATTLE_MERCENARY_APPLICATION_STATUS.Pending).length)
 
   const respondToBattleMercenaryApplication = (invitationId: number, accept: boolean) => _respondToBattleMercenaryApplication(battle.value.id, invitationId, accept)
 
