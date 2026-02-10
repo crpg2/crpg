@@ -8,7 +8,10 @@ namespace Crpg.Application.Common.Files;
 
 internal class FileItemsSource : IItemsSource
 {
-    private static readonly string ItemsPath = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "/Common/Files/items.json";
+    private static readonly string ItemsPath = Path.Combine(
+        Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)!,
+        "net" + Environment.Version.ToString(fieldCount: 2),
+        "Common/Files/items.json");
 
     public async Task<IEnumerable<ItemCreation>> LoadItems()
     {
