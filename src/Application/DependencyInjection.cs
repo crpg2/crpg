@@ -22,7 +22,11 @@ public static class DependencyInjection
         BattleScheduler strategusBattleScheduler = new();
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly())
-            .AddMediator(o => o.Assemblies = [typeof(DependencyInjection).Assembly])
+            .AddMediator(o =>
+            {
+                o.ServiceLifetime = ServiceLifetime.Scoped;
+                o.Assemblies = [typeof(DependencyInjection).Assembly];
+            })
             .AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestInstrumentationBehavior<,>))
             .AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>))
             .AddSingleton<IExperienceTable>(experienceTable)
