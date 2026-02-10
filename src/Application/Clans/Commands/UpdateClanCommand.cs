@@ -91,7 +91,7 @@ public record UpdateClanCommand : IMediatorRequest<ClanViewModel>
             _clanService = clanService;
         }
 
-        public async Task<Result<ClanViewModel>> Handle(UpdateClanCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<ClanViewModel>> Handle(UpdateClanCommand req, CancellationToken cancellationToken)
         {
             var clan = await _db.Clans
                 .Where(c => c.Id == req.ClanId)

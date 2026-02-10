@@ -39,7 +39,7 @@ public record UpdateBattleSideBriefingCommand : IMediatorRequest<BattleSideBrief
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
 
-        public async Task<Result<BattleSideBriefingViewModel>> Handle(UpdateBattleSideBriefingCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<BattleSideBriefingViewModel>> Handle(UpdateBattleSideBriefingCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties.FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
             if (party == null)

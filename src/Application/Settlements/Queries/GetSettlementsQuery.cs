@@ -21,7 +21,7 @@ public record GetSettlementsQuery : IMediatorRequest<IList<SettlementPublicViewM
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<SettlementPublicViewModel>>> Handle(GetSettlementsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<SettlementPublicViewModel>>> Handle(GetSettlementsQuery req, CancellationToken cancellationToken)
         {
             var settlements = await _db.Settlements
                 .Include(s => s.Owner)

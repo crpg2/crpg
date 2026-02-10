@@ -29,7 +29,7 @@ public record RemoveBattleParticipantCommand : IMediatorRequest
         private readonly IActivityLogService _activityLogService = activityLogService;
         private readonly IUserNotificationService _userNotificationService = userNotificationService;
 
-        public async Task<Result> Handle(RemoveBattleParticipantCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(RemoveBattleParticipantCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties.FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
             if (party == null)

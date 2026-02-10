@@ -28,7 +28,7 @@ public record CreateTerrainCommand : IMediatorRequest<TerrainViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<TerrainViewModel>> Handle(CreateTerrainCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<TerrainViewModel>> Handle(CreateTerrainCommand req, CancellationToken cancellationToken)
         {
             Terrain terrain = new()
             {

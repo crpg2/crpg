@@ -36,7 +36,7 @@ public record SetCharacterForTournamentCommand : IMediatorRequest<CharacterViewM
             _constants = constants;
         }
 
-        public async Task<Result<CharacterViewModel>> Handle(SetCharacterForTournamentCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<CharacterViewModel>> Handle(SetCharacterForTournamentCommand req, CancellationToken cancellationToken)
         {
             var character = await _db.Characters
                 .Include(c => c.User!.ActiveCharacter)

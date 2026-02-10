@@ -24,7 +24,7 @@ public record GetUsersByNameQuery : IMediatorRequest<UserPrivateViewModel[]>
             _mapper = mapper;
         }
 
-        public async Task<Result<UserPrivateViewModel[]>> Handle(GetUsersByNameQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserPrivateViewModel[]>> Handle(GetUsersByNameQuery req, CancellationToken cancellationToken)
         {
             return new(await _db.Users
                 .Where(u => u.Name.ToLower().Contains(req.Name.ToLower()))

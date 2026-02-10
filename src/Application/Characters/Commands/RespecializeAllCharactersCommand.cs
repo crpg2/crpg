@@ -19,7 +19,7 @@ public record RespecializeAllCharactersCommand : IMediatorRequest
             _characterService = characterService;
         }
 
-        public async Task<Result> Handle(RespecializeAllCharactersCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(RespecializeAllCharactersCommand req, CancellationToken cancellationToken)
         {
             var characters = await _db.Characters.ToArrayAsync(cancellationToken: cancellationToken);
 

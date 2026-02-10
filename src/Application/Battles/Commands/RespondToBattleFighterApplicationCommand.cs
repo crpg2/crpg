@@ -26,7 +26,7 @@ public record RespondToBattleFighterApplicationCommand : IMediatorRequest<Battle
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
 
-        public async Task<Result<BattleFighterApplicationViewModel>> Handle(RespondToBattleFighterApplicationCommand req,
+        public async ValueTask<Result<BattleFighterApplicationViewModel>> Handle(RespondToBattleFighterApplicationCommand req,
             CancellationToken cancellationToken)
         {
             var party = await _db.Parties.FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);

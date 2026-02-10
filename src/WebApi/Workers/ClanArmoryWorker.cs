@@ -1,5 +1,5 @@
 using Crpg.Application.Clans.Commands.Armory;
-using MediatR;
+using Mediator;
 
 namespace Crpg.WebApi.Workers;
 

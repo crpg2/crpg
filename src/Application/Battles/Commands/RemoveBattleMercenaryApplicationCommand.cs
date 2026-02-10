@@ -23,7 +23,7 @@ public record RemoveBattleMercenaryApplicationCommand : IMediatorRequest
 
         private readonly ICrpgDbContext _db = db;
 
-        public async Task<Result> Handle(RemoveBattleMercenaryApplicationCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(RemoveBattleMercenaryApplicationCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties.FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
             if (party == null)

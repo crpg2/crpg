@@ -153,7 +153,7 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
             _gameModeService = gameModeService;
         }
 
-        public async Task<Result<GameUserViewModel>> Handle(GetGameUserCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<GameUserViewModel>> Handle(GetGameUserCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .Include(u => u.ActiveCharacter)

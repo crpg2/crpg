@@ -42,7 +42,7 @@ public record UpdateGameUsersCommand : IMediatorRequest<UpdateGameUsersResult>
             _gameModeService = gameModeService;
         }
 
-        public async Task<Result<UpdateGameUsersResult>> Handle(UpdateGameUsersCommand req,
+        public async ValueTask<Result<UpdateGameUsersResult>> Handle(UpdateGameUsersCommand req,
             CancellationToken cancellationToken)
         {
             var idempotencyKey = await _db.IdempotencyKeys

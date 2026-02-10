@@ -45,7 +45,7 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
         private readonly IMapper _mapper = mapper;
         private readonly IActivityLogService _activityLogService = activityLogService;
 
-        public async Task<Result<BattleMercenaryApplicationViewModel>> Handle(
+        public async ValueTask<Result<BattleMercenaryApplicationViewModel>> Handle(
             ApplyAsMercenaryToBattleCommand req,
             CancellationToken cancellationToken)
         {

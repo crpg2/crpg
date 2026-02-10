@@ -23,7 +23,7 @@ public record GetSettlementByIdQuery : IMediatorRequest<SettlementPublicViewMode
             _mapper = mapper;
         }
 
-        public async Task<Result<SettlementPublicViewModel>> Handle(GetSettlementByIdQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<SettlementPublicViewModel>> Handle(GetSettlementByIdQuery req, CancellationToken cancellationToken)
         {
             var settlement = await _db.Settlements
                 .Include(s => s.Owner!.User!.ClanMembership!.Clan)

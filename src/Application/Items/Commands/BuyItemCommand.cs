@@ -35,7 +35,7 @@ public record BuyItemCommand : IMediatorRequest<UserItemViewModel>
             _activityLogService = activityLogService;
         }
 
-        public async Task<Result<UserItemViewModel>> Handle(BuyItemCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserItemViewModel>> Handle(BuyItemCommand req, CancellationToken cancellationToken)
         {
             var item = await _db.Items
                 .FirstOrDefaultAsync(i => i.Id == req.ItemId, cancellationToken);

@@ -18,7 +18,7 @@ using Crpg.Sdk.Abstractions;
 using Crpg.WebApi.Identity;
 using Crpg.WebApi.Services;
 using Crpg.WebApi.Workers;
-using MediatR;
+using Mediator;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors.Infrastructure;

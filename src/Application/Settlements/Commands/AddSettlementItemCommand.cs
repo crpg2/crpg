@@ -31,7 +31,7 @@ public record AddSettlementItemCommand : IMediatorRequest<ItemStack>
             _mapper = mapper;
         }
 
-        public async Task<Result<ItemStack>> Handle(AddSettlementItemCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<ItemStack>> Handle(AddSettlementItemCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
                 .Include(h => h.TargetedSettlement)

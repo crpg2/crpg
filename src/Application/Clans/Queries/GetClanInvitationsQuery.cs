@@ -30,7 +30,7 @@ public record GetClanInvitationsQuery : IMediatorRequest<IList<ClanInvitationVie
             _clanService = clanService;
         }
 
-        public async Task<Result<IList<ClanInvitationViewModel>>> Handle(GetClanInvitationsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<ClanInvitationViewModel>>> Handle(GetClanInvitationsQuery req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .Include(u => u.ClanMembership)

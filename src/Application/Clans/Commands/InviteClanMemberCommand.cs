@@ -44,7 +44,7 @@ public record InviteClanMemberCommand : IMediatorRequest<ClanInvitationViewModel
             _userNotificationService = userNotificationService;
         }
 
-        public async Task<Result<ClanInvitationViewModel>> Handle(InviteClanMemberCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<ClanInvitationViewModel>> Handle(InviteClanMemberCommand req, CancellationToken cancellationToken)
         {
             var inviter = await _db.Users
                 .Include(u => u.ClanMembership)

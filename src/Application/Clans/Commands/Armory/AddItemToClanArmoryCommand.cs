@@ -37,7 +37,7 @@ public record AddItemToClanArmoryCommand : IMediatorRequest<ClanArmoryItemViewMo
             _activityLogService = activityLogService;
         }
 
-        public async Task<Result<ClanArmoryItemViewModel>> Handle(AddItemToClanArmoryCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<ClanArmoryItemViewModel>> Handle(AddItemToClanArmoryCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .Where(u => u.Id == req.UserId)

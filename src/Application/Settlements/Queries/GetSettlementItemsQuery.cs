@@ -24,7 +24,7 @@ public record GetSettlementItemsQuery : IMediatorRequest<IList<ItemStack>>
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<ItemStack>>> Handle(GetSettlementItemsQuery req,
+        public async ValueTask<Result<IList<ItemStack>>> Handle(GetSettlementItemsQuery req,
             CancellationToken cancellationToken)
         {
             var party = await _db.Parties

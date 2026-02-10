@@ -14,11 +14,11 @@ public class DeleteOldIdempotencyKeysCommandTest : TestBase
     {
         ArrangeDb.IdempotencyKeys.AddRange(new IdempotencyKey[]
         {
-            new() { CreatedAt = DateTime.Now.AddHours(-1) },
-            new() { CreatedAt = DateTime.Now.AddHours(-10) },
-            new() { CreatedAt = DateTime.Now.AddDays(-1) },
-            new() { CreatedAt = DateTime.Now.AddHours(-25) },
-            new() { CreatedAt = DateTime.Now.AddDays(-30) },
+            new() { CreatedAt = DateTime.UtcNow.AddHours(-1) },
+            new() { CreatedAt = DateTime.UtcNow.AddHours(-10) },
+            new() { CreatedAt = DateTime.UtcNow.AddDays(-1) },
+            new() { CreatedAt = DateTime.UtcNow.AddHours(-25) },
+            new() { CreatedAt = DateTime.UtcNow.AddDays(-30) },
         });
         await ArrangeDb.SaveChangesAsync();
 

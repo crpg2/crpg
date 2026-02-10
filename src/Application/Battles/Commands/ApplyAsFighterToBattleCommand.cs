@@ -36,7 +36,7 @@ public record ApplyAsFighterToBattleCommand : IMediatorRequest<BattleFighterAppl
         private readonly IMapper _mapper = mapper;
         private readonly IStrategusMap _strategusMap = strategusMap;
 
-        public async Task<Result<BattleFighterApplicationViewModel>> Handle(
+        public async ValueTask<Result<BattleFighterApplicationViewModel>> Handle(
             ApplyAsFighterToBattleCommand req,
             CancellationToken cancellationToken)
         {

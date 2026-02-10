@@ -36,7 +36,7 @@ public record ReturnItemToClanArmoryCommand : IMediatorRequest
             _userNotificationService = userNotificationService;
         }
 
-        public async Task<Result> Handle(ReturnItemToClanArmoryCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(ReturnItemToClanArmoryCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .Where(u => u.Id == req.UserId)

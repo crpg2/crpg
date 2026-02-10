@@ -31,7 +31,7 @@ public record GetLeaderboardQuery : IMediatorRequest<IList<CharacterPublicCompet
             _cache = cache;
         }
 
-        public async Task<Result<IList<CharacterPublicCompetitiveViewModel>>> Handle(GetLeaderboardQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<CharacterPublicCompetitiveViewModel>>> Handle(GetLeaderboardQuery req, CancellationToken cancellationToken)
         {
             string cacheKey = GetCacheKey(req);
 

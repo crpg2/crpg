@@ -40,7 +40,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
         private readonly IStrategusMap _strategusMap = strategusMap;
         private readonly IStrategusSpeedModel _strategusSpeedModel = strategusSpeedModel;
 
-        public async Task<Result> Handle(UpdatePartyPositionsCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(UpdatePartyPositionsCommand req, CancellationToken cancellationToken)
         {
             var parties = await _db.Parties
                 .AsSplitQuery()

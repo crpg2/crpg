@@ -28,7 +28,7 @@ public record SellUserItemCommand : IMediatorRequest
             _activityLogService = activityLogService;
         }
 
-        public async Task<Result> Handle(SellUserItemCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(SellUserItemCommand req, CancellationToken cancellationToken)
         {
             var userItem = await _db.UserItems
                 .Include(ui => ui.User)

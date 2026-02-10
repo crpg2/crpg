@@ -23,7 +23,7 @@ public record UpdateUserDonorsCommand : IMediatorRequest
             _db = db;
         }
 
-        public async Task<Result> Handle(UpdateUserDonorsCommand request, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(UpdateUserDonorsCommand request, CancellationToken cancellationToken)
         {
             var donorPlatformUserIds = request.PlatformUserIds.ToHashSet(StringComparer.Ordinal);
             var users = await _db.Users

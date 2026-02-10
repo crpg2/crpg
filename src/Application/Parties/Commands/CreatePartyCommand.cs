@@ -36,7 +36,7 @@ public record CreatePartyCommand : IMediatorRequest<PartyViewModel>
             _constants = constants;
         }
 
-        public async Task<Result<PartyViewModel>> Handle(CreatePartyCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<PartyViewModel>> Handle(CreatePartyCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .Include(u => u.Party)

@@ -31,7 +31,7 @@ public record UpgradeUserItemCommand : IMediatorRequest<UserItemViewModel>
             _activityLogService = activityLogService;
         }
 
-        public async Task<Result<UserItemViewModel>> Handle(UpgradeUserItemCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserItemViewModel>> Handle(UpgradeUserItemCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .AsSplitQuery()

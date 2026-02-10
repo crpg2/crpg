@@ -24,7 +24,7 @@ public record GetUserCharacterQuery : IMediatorRequest<CharacterViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<CharacterViewModel>> Handle(GetUserCharacterQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<CharacterViewModel>> Handle(GetUserCharacterQuery req, CancellationToken cancellationToken)
         {
             var character = await _db.Characters
                 .Where(c => c.Id == req.CharacterId && c.UserId == req.UserId)

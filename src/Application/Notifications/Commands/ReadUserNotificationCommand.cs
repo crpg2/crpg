@@ -28,7 +28,7 @@ public record ReadUserNotificationCommand : IMediatorRequest<UserNotificationVie
             _mapper = mapper;
         }
 
-        public async Task<Result<UserNotificationViewModel>> Handle(ReadUserNotificationCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserNotificationViewModel>> Handle(ReadUserNotificationCommand req, CancellationToken cancellationToken)
         {
             var userNotification = await _db.UserNotifications
                .FirstOrDefaultAsync(un => un.Id == req.UserNotificationId && un.UserId == req.UserId, cancellationToken);

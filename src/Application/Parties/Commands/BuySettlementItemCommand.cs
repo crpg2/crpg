@@ -43,7 +43,7 @@ public record BuySettlementItemCommand : IMediatorRequest<ItemStack>
             _strategusMap = strategusMap;
         }
 
-        public async Task<Result<ItemStack>> Handle(BuySettlementItemCommand req,
+        public async ValueTask<Result<ItemStack>> Handle(BuySettlementItemCommand req,
             CancellationToken cancellationToken)
         {
             var party = await _db.Parties

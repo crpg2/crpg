@@ -6,7 +6,7 @@ using Crpg.Application.Common.Services;
 using Crpg.Sdk.Abstractions;
 using FluentValidation;
 using MaxMind.GeoIP2;
-using MediatR;
+using Mediator;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -22,11 +22,7 @@ public static class DependencyInjection
         BattleScheduler strategusBattleScheduler = new();
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly())
-            .AddMediatR(cfg =>
-            {
-                cfg.LicenseKey = configuration["MediatR:LicenseKey"];
-                cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-            })
+            .AddMediator(o => o.Assemblies = [typeof(DependencyInjection).Assembly])
             .AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestInstrumentationBehavior<,>))
             .AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>))
             .AddSingleton<IExperienceTable>(experienceTable)

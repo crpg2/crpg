@@ -23,7 +23,7 @@ public record GetItemUpgradesQuery : IMediatorRequest<IList<ItemViewModel>>
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<ItemViewModel>>> Handle(GetItemUpgradesQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<ItemViewModel>>> Handle(GetItemUpgradesQuery req, CancellationToken cancellationToken)
         {
             var itemUpgrades = await _db.Items
                 .Where(i => i.BaseId == req.BaseId)
