@@ -1,0 +1,30 @@
+<Solution>
+  <Folder Name="/data/">
+    <File Path="data/constants.json" />
+    <File Path="data/items.json" />
+    <File Path="data/settlements.json" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Application/Application.csproj" />
+    <Project Path="src/Common/Common.csproj" />
+    <Project Path="src/Domain/Domain.csproj" />
+    <Project Path="src/Launcher/Launcher.csproj" />
+    <Project Path="src/LauncherV2.Console/LauncherV2.Console.csproj" />
+    <Project Path="src/LauncherV3/LauncherV3.csproj" />
+    <Project Path="src/Logging/Logging.csproj" />
+    <Project Path="src/Module.Client/Module.Client.csproj" />
+    <Project Path="src/Module.Editor/Module.Editor.csproj" />
+    <Project Path="src/Module.Server/Module.Server.csproj" />
+    <Project Path="src/Persistence/Persistence.csproj" />
+    <Project Path="src/Sdk.Abstractions/Sdk.Abstractions.csproj" />
+    <Project Path="src/Sdk/Sdk.csproj" />
+    <Project Path="src/WebApi/WebApi.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Application.UTest/Application.UTest.csproj" />
+    <Project Path="test/Common.UTest/Common.UTest.csproj" />
+    <Project Path="test/Module.UTest/Module.UTest.csproj" />
+    <Project Path="test/Persistence.UTest/Persistence.UTest.csproj" />
+    <Project Path="test/Sdk.UTest/Sdk.UTest.csproj" />
+  </Folder>
+</Solution>
