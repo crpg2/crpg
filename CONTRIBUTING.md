@@ -41,7 +41,7 @@ PRs or PRs with no context might get ignored.
 
 - Download [.NET 9 SDK](https://dotnet.microsoft.com/download)
 - Download your favorite IDE: [Visual Studio](https://visualstudio.microsoft.com/vs), [Visual Studio Code](https://code.visualstudio.com), [Rider](https://www.jetbrains.com/rider)...
-- Open the solution file Crpg.sln
+- Open the solution file Crpg.slnx
 - Run `dotnet dev-certs https --trust` to be able to launch the API with HTTPS. The authentication creates a cookie
   with `SameSite=None` and recent version of Chrome requires HTTPS to do so
 - Build and run (can be done without IDE using [dotnet cli](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run))

@@ -67,7 +67,7 @@
       "workingDirectory": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server",
       "environmentVariables": {
         "CRPG_API_BASE_URL": "https://api.namidaka.fr",
-        "CRPG_INSTANCE": "crpg99c",
+        "CRPG_INSTANCE": "crpg99c"
       }
     }
   },
