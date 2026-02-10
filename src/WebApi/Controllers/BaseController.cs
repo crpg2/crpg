@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Mime;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Results;
-using MediatR;
+using Mediator;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OpenIddict.Validation.AspNetCore;
@@ -56,6 +56,13 @@ public abstract class BaseController : ControllerBase
         return ResultToAction(result);
     }
 
+    protected async Task<ActionResult<Result<TData>>> ResultToActionAsync<TData>(ValueTask<Result<TData>> resultTask)
+        where TData : class
+    {
+        var result = await resultTask;
+        return ResultToAction(result);
+    }
+
     protected async Task<ActionResult<Result<TData>>> ResultToCreatedAtActionAsync<TData>(
         string actionName, string? controllerName, Func<TData, object>? getRouteValues, Task<Result<TData>> resultTask)
         where TData : class
@@ -64,7 +71,21 @@ public abstract class BaseController : ControllerBase
         return ResultToCreatedAtAction(actionName, controllerName, getRouteValues, result);
     }
 
+    protected async Task<ActionResult<Result<TData>>> ResultToCreatedAtActionAsync<TData>(
+        string actionName, string? controllerName, Func<TData, object>? getRouteValues, ValueTask<Result<TData>> resultTask)
+        where TData : class
+    {
+        var result = await resultTask;
+        return ResultToCreatedAtAction(actionName, controllerName, getRouteValues, result);
+    }
+
     protected async Task<ActionResult> ResultToActionAsync(Task<Result> resultTask)
+    {
+        var result = await resultTask;
+        return ResultToAction(result);
+    }
+
+    protected async Task<ActionResult> ResultToActionAsync(ValueTask<Result> resultTask)
     {
         var result = await resultTask;
         return ResultToAction(result);

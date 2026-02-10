@@ -31,7 +31,7 @@ public record UpdateBattlePhasesCommand : IMediatorRequest
         private readonly TimeSpan _battleInitiationDuration = TimeSpan.FromHours(constants.StrategusBattleInitiationDurationHours);
         private readonly TimeSpan _battleHiringDuration = TimeSpan.FromHours(constants.StrategusBattleHiringDurationHours);
 
-        public async Task<Result> Handle(UpdateBattlePhasesCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(UpdateBattlePhasesCommand req, CancellationToken cancellationToken)
         {
             var battles = _db.Battles
                 .AsSplitQuery()

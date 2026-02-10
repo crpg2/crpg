@@ -21,7 +21,7 @@ public record GetClansQuery : IMediatorRequest<IList<ClanWithMemberCountViewMode
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<ClanWithMemberCountViewModel>>> Handle(GetClansQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<ClanWithMemberCountViewModel>>> Handle(GetClansQuery req, CancellationToken cancellationToken)
         {
             var clans = await _db.Clans
                 .ProjectTo<ClanWithMemberCountViewModel>(_mapper.ConfigurationProvider)

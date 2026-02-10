@@ -40,7 +40,7 @@ public record BorrowItemFromClanArmoryCommand : IMediatorRequest<ClanArmoryBorro
             _userNotificationService = userNotificationService;
         }
 
-        public async Task<Result<ClanArmoryBorrowedItemViewModel>> Handle(BorrowItemFromClanArmoryCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<ClanArmoryBorrowedItemViewModel>> Handle(BorrowItemFromClanArmoryCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .Where(u => u.Id == req.UserId)

@@ -60,7 +60,7 @@ public record SeedDataCommand : IMediatorRequest
             _userNotificationService = userNotificationService;
         }
 
-        public async Task<Result> Handle(SeedDataCommand request, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(SeedDataCommand request, CancellationToken cancellationToken)
         {
             await CreateOrUpdateItems(cancellationToken);
             await CreateOrUpdateSettlements(cancellationToken);

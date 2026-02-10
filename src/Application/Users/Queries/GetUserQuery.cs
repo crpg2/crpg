@@ -26,7 +26,7 @@ public record GetUserQuery : IMediatorRequest<UserViewModel>
             _userService = userService;
         }
 
-        public async Task<Result<UserViewModel>> Handle(GetUserQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserViewModel>> Handle(GetUserQuery req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                .ProjectTo<UserViewModel>(_mapper.ConfigurationProvider)

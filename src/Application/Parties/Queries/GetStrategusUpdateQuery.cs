@@ -40,7 +40,7 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
             _strategusMap = strategusMap;
         }
 
-        public async Task<Result<StrategusUpdate>> Handle(GetStrategusUpdateQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<StrategusUpdate>> Handle(GetStrategusUpdateQuery req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
                 .Include(h => h.User)

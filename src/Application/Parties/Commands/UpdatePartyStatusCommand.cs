@@ -44,7 +44,7 @@ public record UpdatePartyStatusCommand : IMediatorRequest<PartyViewModel>
             _strategusMap = strategusMap;
         }
 
-        public async Task<Result<PartyViewModel>> Handle(UpdatePartyStatusCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<PartyViewModel>> Handle(UpdatePartyStatusCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
                 .Include(h => h.User)

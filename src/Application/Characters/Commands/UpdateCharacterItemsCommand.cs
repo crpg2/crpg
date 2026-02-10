@@ -62,7 +62,7 @@ public record UpdateCharacterItemsCommand : IMediatorRequest<IList<EquippedItemV
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<EquippedItemViewModel>>> Handle(UpdateCharacterItemsCommand req,
+        public async ValueTask<Result<IList<EquippedItemViewModel>>> Handle(UpdateCharacterItemsCommand req,
             CancellationToken cancellationToken)
         {
             var character = await _db.Characters

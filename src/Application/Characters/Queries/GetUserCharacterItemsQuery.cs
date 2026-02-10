@@ -23,7 +23,7 @@ public record GetUserCharacterItemsQuery : IMediatorRequest<IList<EquippedItemVi
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<EquippedItemViewModel>>> Handle(GetUserCharacterItemsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<EquippedItemViewModel>>> Handle(GetUserCharacterItemsQuery req, CancellationToken cancellationToken)
         {
             var character = await _db.Characters
                 .AsNoTracking()

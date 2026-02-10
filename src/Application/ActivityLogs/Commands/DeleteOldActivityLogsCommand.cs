@@ -24,7 +24,7 @@ public record DeleteOldActivityLogsCommand : IMediatorRequest
             _dateTime = dateTime;
         }
 
-        public async Task<Result> Handle(DeleteOldActivityLogsCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(DeleteOldActivityLogsCommand req, CancellationToken cancellationToken)
         {
             var limit = _dateTime.UtcNow - LogRetention;
             var activityLogs = await _db.ActivityLogs

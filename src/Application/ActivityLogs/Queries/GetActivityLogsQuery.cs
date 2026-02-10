@@ -42,7 +42,7 @@ public record GetActivityLogsQuery : IMediatorRequest<ActivityLogWithDictViewMod
             _metadataService = metadataService;
         }
 
-        public async Task<Result<ActivityLogWithDictViewModel>> Handle(GetActivityLogsQuery req,
+        public async ValueTask<Result<ActivityLogWithDictViewModel>> Handle(GetActivityLogsQuery req,
             CancellationToken cancellationToken)
         {
             var activityLogs = await _db.ActivityLogs

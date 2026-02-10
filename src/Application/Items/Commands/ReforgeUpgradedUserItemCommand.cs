@@ -34,7 +34,7 @@ public record ReforgeUpgradedUserItemCommand : IMediatorRequest<UserItemViewMode
             _constants = constants;
         }
 
-        public async Task<Result<UserItemViewModel>> Handle(ReforgeUpgradedUserItemCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserItemViewModel>> Handle(ReforgeUpgradedUserItemCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .AsSplitQuery()

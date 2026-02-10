@@ -25,7 +25,7 @@ public record ActivateCharacterCommand : IMediatorRequest
             _db = db;
         }
 
-        public async Task<Result> Handle(ActivateCharacterCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(ActivateCharacterCommand req, CancellationToken cancellationToken)
         {
             var character = await _db.Characters
                 .Include(c => c.User)

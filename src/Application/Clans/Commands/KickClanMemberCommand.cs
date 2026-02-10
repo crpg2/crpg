@@ -35,7 +35,7 @@ public record KickClanMemberCommand : IMediatorRequest
             _userNotificationService = userNotificationService;
         }
 
-        public async Task<Result> Handle(KickClanMemberCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(KickClanMemberCommand req, CancellationToken cancellationToken)
         {
             var userRes = await _clanService.GetClanMember(_db, req.UserId, req.ClanId, cancellationToken);
             if (userRes.Errors != null)

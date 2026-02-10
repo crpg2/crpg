@@ -40,7 +40,7 @@ public record GetBattlesQuery : IMediatorRequest<IList<BattleDetailedViewModel>>
         private readonly IMapper _mapper = mapper;
         private readonly IBattleService _battleService = battleService;
 
-        public async Task<Result<IList<BattleDetailedViewModel>>> Handle(GetBattlesQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<BattleDetailedViewModel>>> Handle(GetBattlesQuery req, CancellationToken cancellationToken)
         {
             var battles = await _db.Battles
                 .AsSplitQuery()

@@ -39,7 +39,7 @@ public record UpdateSettlementCommand : IMediatorRequest<SettlementPublicViewMod
             _mapper = mapper;
         }
 
-        public async Task<Result<SettlementPublicViewModel>> Handle(UpdateSettlementCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<SettlementPublicViewModel>> Handle(UpdateSettlementCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
                 .Include(h => h.TargetedSettlement)

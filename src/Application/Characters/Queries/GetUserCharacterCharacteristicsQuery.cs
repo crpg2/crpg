@@ -23,7 +23,7 @@ public record GetUserCharacterCharacteristicsQuery : IMediatorRequest<CharacterC
             _mapper = mapper;
         }
 
-        public async Task<Result<CharacterCharacteristicsViewModel>> Handle(GetUserCharacterCharacteristicsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<CharacterCharacteristicsViewModel>> Handle(GetUserCharacterCharacteristicsQuery req, CancellationToken cancellationToken)
         {
             var character = await _db.Characters
                 .AsNoTracking()

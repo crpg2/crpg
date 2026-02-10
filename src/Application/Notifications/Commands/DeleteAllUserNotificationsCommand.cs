@@ -22,7 +22,7 @@ public record DeleteAllUserNotificationsCommand : IMediatorRequest
             _db = db;
         }
 
-        public async Task<Result> Handle(DeleteAllUserNotificationsCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(DeleteAllUserNotificationsCommand req, CancellationToken cancellationToken)
         {
             var userNotifications = await _db.UserNotifications
                .Where(un => un.UserId == req.UserId)

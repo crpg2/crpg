@@ -1,5 +1,5 @@
 ﻿using Crpg.Application.ActivityLogs.Commands;
-using MediatR;
+using Mediator;
 
 namespace Crpg.WebApi.Workers;
 

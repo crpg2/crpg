@@ -27,7 +27,7 @@ public record GetSettlementShopItemsQuery : IMediatorRequest<IList<ItemViewModel
             _strategusMap = strategusMap;
         }
 
-        public async Task<Result<IList<ItemViewModel>>> Handle(GetSettlementShopItemsQuery req,
+        public async ValueTask<Result<IList<ItemViewModel>>> Handle(GetSettlementShopItemsQuery req,
             CancellationToken cancellationToken)
         {
             var party = await _db.Parties

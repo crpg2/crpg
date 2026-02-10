@@ -47,7 +47,7 @@ public record UpsertUserCommand : IMediatorRequest<UserViewModel>
             _activityLogService = activityLogService;
         }
 
-        public async Task<Result<UserViewModel>> Handle(UpsertUserCommand request, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserViewModel>> Handle(UpsertUserCommand request, CancellationToken cancellationToken)
         {
             bool newUser = false;
             var user = await _db.Users

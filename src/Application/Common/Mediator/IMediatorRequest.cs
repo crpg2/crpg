@@ -1,5 +1,5 @@
 ﻿using Crpg.Application.Common.Results;
-using MediatR;
+using Mediator;
 
 namespace Crpg.Application.Common.Mediator;
 

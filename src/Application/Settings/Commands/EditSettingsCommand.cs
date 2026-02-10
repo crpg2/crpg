@@ -78,7 +78,7 @@ public record EditSettingsCommand : IMediatorRequest<SettingsViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<SettingsViewModel>> Handle(EditSettingsCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<SettingsViewModel>> Handle(EditSettingsCommand req, CancellationToken cancellationToken)
         {
             var existingSettings = await _db.Settings.FirstOrDefaultAsync(cancellationToken);
 

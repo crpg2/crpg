@@ -18,7 +18,7 @@ public record GetBattleParticipantsQuery : IMediatorRequest<IList<BattleParticip
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
 
-        public async Task<Result<IList<BattleParticipantViewModel>>> Handle(GetBattleParticipantsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<BattleParticipantViewModel>>> Handle(GetBattleParticipantsQuery req, CancellationToken cancellationToken)
         {
             var battle = await _db.Battles.FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)

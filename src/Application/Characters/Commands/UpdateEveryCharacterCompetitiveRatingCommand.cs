@@ -20,7 +20,7 @@ public record UpdateEveryCharacterCompetitiveRatingCommand : IMediatorRequest
             _competitiveRatingModel = competitiveRatingModel;
         }
 
-        public async Task<Result> Handle(UpdateEveryCharacterCompetitiveRatingCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(UpdateEveryCharacterCompetitiveRatingCommand req, CancellationToken cancellationToken)
         {
             var characters = await _db.Characters.ToArrayAsync(cancellationToken: cancellationToken);
 

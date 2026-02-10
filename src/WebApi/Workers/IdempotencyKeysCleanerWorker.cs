@@ -1,6 +1,6 @@
 ﻿using Crpg.Application.ActivityLogs.Commands;
 using Crpg.Application.IdempotencyKeys.Commands;
-using MediatR;
+using Mediator;
 
 namespace Crpg.WebApi.Workers;
 

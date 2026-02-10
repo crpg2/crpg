@@ -26,7 +26,7 @@ public record GetClanArmoryQuery : IMediatorRequest<IList<ClanArmoryItemViewMode
             _clanService = clanService;
         }
 
-        public async Task<Result<IList<ClanArmoryItemViewModel>>> Handle(GetClanArmoryQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<ClanArmoryItemViewModel>>> Handle(GetClanArmoryQuery req, CancellationToken cancellationToken)
         {
             var user = await _db.Users.AsNoTracking()
                 .Where(u => u.Id == req.UserId)

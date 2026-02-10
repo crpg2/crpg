@@ -4,7 +4,7 @@ using Crpg.Application.Battles.Commands;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Parties.Commands;
 using Crpg.Common;
-using MediatR;
+using Mediator;
 using LoggerFactory = Crpg.Logging.LoggerFactory;
 
 namespace Crpg.WebApi.Workers;

@@ -22,7 +22,7 @@ public record UpdatePartyTroopsCommand : IMediatorRequest
             _constants = constants;
         }
 
-        public async Task<Result> Handle(UpdatePartyTroopsCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(UpdatePartyTroopsCommand req, CancellationToken cancellationToken)
         {
             float deltaTimeHours = (float)req.DeltaTime.TotalHours;
             float recruits = deltaTimeHours * _constants.StrategusTroopRecruitmentPerHour;

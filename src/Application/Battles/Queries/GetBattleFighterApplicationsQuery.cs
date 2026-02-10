@@ -28,7 +28,7 @@ public record GetBattleFighterApplicationsQuery : IMediatorRequest<IList<BattleF
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
 
-        public async Task<Result<IList<BattleFighterApplicationViewModel>>> Handle(
+        public async ValueTask<Result<IList<BattleFighterApplicationViewModel>>> Handle(
             GetBattleFighterApplicationsQuery req, CancellationToken cancellationToken)
         {
             var battle = await _db.Battles

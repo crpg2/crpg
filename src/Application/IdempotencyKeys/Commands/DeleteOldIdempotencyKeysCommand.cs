@@ -24,7 +24,7 @@ public record DeleteOldIdempotencyKeysCommand : IMediatorRequest
             _dateTime = dateTime;
         }
 
-        public async Task<Result> Handle(DeleteOldIdempotencyKeysCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(DeleteOldIdempotencyKeysCommand req, CancellationToken cancellationToken)
         {
             var limit = _dateTime.UtcNow - Retention;
             var idempotencyKeys = await _db.IdempotencyKeys

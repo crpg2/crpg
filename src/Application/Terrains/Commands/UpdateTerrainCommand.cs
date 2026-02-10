@@ -28,7 +28,7 @@ public record UpdateTerrainCommand : IMediatorRequest<TerrainViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<TerrainViewModel>> Handle(UpdateTerrainCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<TerrainViewModel>> Handle(UpdateTerrainCommand req, CancellationToken cancellationToken)
         {
             var terrain = await _db.Terrains
                 .FirstOrDefaultAsync(t => t.Id == req.Id, cancellationToken);

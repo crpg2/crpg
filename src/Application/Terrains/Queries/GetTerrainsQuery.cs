@@ -21,7 +21,7 @@ public record GetTerrainsQuery : IMediatorRequest<IList<TerrainViewModel>>
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<TerrainViewModel>>> Handle(GetTerrainsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<TerrainViewModel>>> Handle(GetTerrainsQuery req, CancellationToken cancellationToken)
         {
             var terrains = await _db.Terrains
                 .ProjectTo<TerrainViewModel>(_mapper.ConfigurationProvider)

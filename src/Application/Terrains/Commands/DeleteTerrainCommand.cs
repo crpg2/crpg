@@ -22,7 +22,7 @@ public record DeleteTerrainCommand : IMediatorRequest
             _db = db;
         }
 
-        public async Task<Result> Handle(DeleteTerrainCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(DeleteTerrainCommand req, CancellationToken cancellationToken)
         {
             var terrain = await _db.Terrains
                 .FirstOrDefaultAsync(t => t.Id == req.Id, cancellationToken);

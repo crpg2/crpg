@@ -22,7 +22,7 @@ public record GetUserItemsQuery : IMediatorRequest<IList<UserItemViewModel>>
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<UserItemViewModel>>> Handle(GetUserItemsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<UserItemViewModel>>> Handle(GetUserItemsQuery req, CancellationToken cancellationToken)
         {
             var userItems = await _db.UserItems
                 .Include(ui => ui.Item)

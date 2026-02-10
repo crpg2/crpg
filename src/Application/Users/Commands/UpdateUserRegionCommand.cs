@@ -32,7 +32,7 @@ public record UpdateUserRegionCommand : IMediatorRequest<UserViewModel>
             _geoIpService = geoIpService;
         }
 
-        public async Task<Result<UserViewModel>> Handle(UpdateUserRegionCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserViewModel>> Handle(UpdateUserRegionCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);

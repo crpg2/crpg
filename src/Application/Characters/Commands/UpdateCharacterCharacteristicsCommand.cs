@@ -36,7 +36,7 @@ public record UpdateCharacterCharacteristicsCommand : IMediatorRequest<Character
             _constants = constants;
         }
 
-        public async Task<Result<CharacterCharacteristicsViewModel>> Handle(UpdateCharacterCharacteristicsCommand req,
+        public async ValueTask<Result<CharacterCharacteristicsViewModel>> Handle(UpdateCharacterCharacteristicsCommand req,
             CancellationToken cancellationToken)
         {
             var character = await _db.Characters.FirstOrDefaultAsync(c =>

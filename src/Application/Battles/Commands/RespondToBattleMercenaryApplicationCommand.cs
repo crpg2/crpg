@@ -32,7 +32,7 @@ public record RespondToBattleMercenaryApplicationCommand : IMediatorRequest<Batt
         private readonly IActivityLogService _activityLogService = activityLogService;
         private readonly IUserNotificationService _userNotificationService = userNotificationService;
 
-        public async Task<Result<BattleMercenaryApplicationViewModel>> Handle(RespondToBattleMercenaryApplicationCommand req,
+        public async ValueTask<Result<BattleMercenaryApplicationViewModel>> Handle(RespondToBattleMercenaryApplicationCommand req,
             CancellationToken cancellationToken)
         {
             var party = await _db.Parties.FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);

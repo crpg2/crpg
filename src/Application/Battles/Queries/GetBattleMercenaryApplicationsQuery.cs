@@ -29,7 +29,7 @@ public record GetBattleMercenaryApplicationsQuery : IMediatorRequest<IList<Battl
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
 
-        public async Task<Result<IList<BattleMercenaryApplicationViewModel>>> Handle(GetBattleMercenaryApplicationsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<BattleMercenaryApplicationViewModel>>> Handle(GetBattleMercenaryApplicationsQuery req, CancellationToken cancellationToken)
         {
             var battleInfo = await _db.Battles
                 .Where(b => b.Id == req.BattleId)

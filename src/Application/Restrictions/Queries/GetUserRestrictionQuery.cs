@@ -27,7 +27,7 @@ public record GetUserRestrictionQuery : IMediatorRequest<RestrictionPublicViewMo
             _dateTime = dateTime;
         }
 
-        public async Task<Result<RestrictionPublicViewModel>> Handle(GetUserRestrictionQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<RestrictionPublicViewModel>> Handle(GetUserRestrictionQuery req, CancellationToken cancellationToken)
         {
             var lastJoinOrAllRestriction = await _db.Restrictions
                 .Where(r =>

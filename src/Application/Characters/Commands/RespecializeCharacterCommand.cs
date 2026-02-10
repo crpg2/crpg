@@ -45,7 +45,7 @@ public record RespecializeCharacterCommand : IMediatorRequest<CharacterViewModel
             _constants = constants;
         }
 
-        public async Task<Result<CharacterViewModel>> Handle(RespecializeCharacterCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<CharacterViewModel>> Handle(RespecializeCharacterCommand req, CancellationToken cancellationToken)
         {
             var character = await _db.Characters
                 .Include(c => c.User)

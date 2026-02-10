@@ -25,7 +25,7 @@ public record GetUserByPlatformIdQuery : IMediatorRequest<UserPrivateViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<UserPrivateViewModel>> Handle(GetUserByPlatformIdQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserPrivateViewModel>> Handle(GetUserByPlatformIdQuery req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .ProjectTo<UserPrivateViewModel>(_mapper.ConfigurationProvider)
