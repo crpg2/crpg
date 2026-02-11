@@ -52,13 +52,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lib.Harmony" Version="2.3.3" GeneratePathProperty="true" />
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="9.0.0" GeneratePathProperty="true" />
-    <PackageReference Include="Microsoft.Bcl.TimeProvider" Version="9.0.0" GeneratePathProperty="true" />
-    <PackageReference Include="MonoMod.Common" Version="22.6.3.1" GeneratePathProperty="true" />
-    <PackageReference Include="Mono.Cecil" Version="0.11.6" GeneratePathProperty="true" />
-    <PackageReference Include="Polly.Core" Version="8.5.0" GeneratePathProperty="true" />
-    <PackageReference Include="WindowsFirewallHelper" Version="2.2.0.86" GeneratePathProperty="true" />
+    <PackageReference Include="Lib.Harmony" GeneratePathProperty="true" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" GeneratePathProperty="true" />
+    <PackageReference Include="Microsoft.Bcl.TimeProvider" GeneratePathProperty="true" />
+    <PackageReference Include="MonoMod.Common" GeneratePathProperty="true" />
+    <PackageReference Include="Mono.Cecil" GeneratePathProperty="true" />
+    <PackageReference Include="Polly.Core" GeneratePathProperty="true" />
+    <PackageReference Include="WindowsFirewallHelper" GeneratePathProperty="true" />
   </ItemGroup>
 
   <ItemGroup>

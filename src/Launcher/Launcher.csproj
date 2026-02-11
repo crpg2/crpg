@@ -16,8 +16,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Gameloop.Vdf" Version="0.6.2" />
-    <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+    <PackageReference Include="Gameloop.Vdf" />
+    <PackageReference Include="Microsoft.Win32.Registry" />
   </ItemGroup>
 
 </Project>

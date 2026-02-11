@@ -9,10 +9,10 @@
   <Import Project="../../src/Directory.Build.props" />
 
   <ItemGroup>
-    <PackageReference Include="Moq" Version="4.20.72" />
-    <PackageReference Include="nunit" Version="4.2.2" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="Moq" />
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit3TestAdapter" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
   </ItemGroup>
 
   <ItemGroup>

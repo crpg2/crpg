@@ -20,12 +20,12 @@
     <ApplicationIcon>crpg_launcher_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-    <PackageReference Include="DownloadUtilities" Version="1.0.6401.2990" />
-    <PackageReference Include="Gameloop.Vdf" Version="0.6.2" />
-    <PackageReference Include="SharpZipLib" Version="1.4.2" />
-    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="7.0.0" />
-    <PackageReference Include="WindowsAPICodePack-Shell" Version="1.1.1" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="DownloadUtilities" />
+    <PackageReference Include="Gameloop.Vdf" />
+    <PackageReference Include="SharpZipLib" />
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" />
+    <PackageReference Include="WindowsAPICodePack-Shell" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="background.png" />
