@@ -9,8 +9,8 @@ namespace Crpg.Application.Common.Files;
 
 internal class FileSettlementsSource : ISettlementsSource
 {
-    private static readonly string StrategusSettlementsPath =
-        Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "/Common/Files/settlements.json";
+    private static readonly string StrategusSettlementsPath = FileDataPathResolver.Resolve(
+        Path.Combine("Common", "Files", "settlements.json"));
 
     public async Task<IEnumerable<SettlementCreation>> LoadStrategusSettlements()
     {

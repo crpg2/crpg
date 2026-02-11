@@ -137,13 +137,13 @@ public class FileItemsSourceTest
                     string closestItemId = TestHelper.FindClosestString(itemId, combinedItems);
                     Assert.Fail($"Character item {itemId} was not found in items.json. Did you mean {closestItemId}?");
 
-                    var botEuipmentElement = charactersDoc
+                    var botEquipmentElement = charactersDoc
                         .Descendants("equipment")
                         .FirstOrDefault(el => el.Attribute("id")!.Value == "Item." + itemId);
 
-                    if (botEuipmentElement != null)
+                    if (botEquipmentElement != null)
                     {
-                        botEuipmentElement.Attribute("id")!.Value = "Item." + closestItemId;
+                        botEquipmentElement.Attribute("id")!.Value = "Item." + closestItemId;
                     }
 
                     var dtvEquipmentElement = dtvCharactersDoc
