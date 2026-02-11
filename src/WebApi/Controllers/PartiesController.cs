@@ -115,4 +115,24 @@ public class PartiesController : BaseController
             PartyId = partyId,
         }));
     }
+
+    /// <summary>
+    /// Respond to a party transfer offer.
+    /// </summary>
+    /// <returns>The transfer offer.</returns>
+    /// <response code="200">Ok.</response>
+    /// <response code="404">Transfer offer not found.</response>
+    /// <response code="400">Invalid response (accepted more than offered, party doesn't have resources, etc).</response>
+    [HttpPut("self/transfer-offers/{transferOfferId}")]
+    public Task<ActionResult<Result<PartyTransferOfferViewModel>>> RespondToTransferOffer(
+        [FromRoute] int transferOfferId,
+        [FromBody] RespondToPartyTransferOfferCommand req)
+    {
+        var command = req with
+        {
+            PartyId = CurrentUser.User!.Id,
+            TransferOfferId = transferOfferId,
+        };
+        return ResultToActionAsync(Mediator.Send(command));
+    }
 }

@@ -1,5 +1,5 @@
 import { useMagicKeys } from '@vueuse/core'
-import { LazyMapPartyTransferOfferDrawer } from '#components'
+import { LazyMapPartyTransferOfferCreateDrawer } from '#components'
 
 import type { MapBattle } from '~/models/strategus/battle'
 import type { PartyOrderType, PartyVisible } from '~/models/strategus/party'
@@ -49,7 +49,7 @@ export const usePartyOrder = () => {
 
       case PARTY_ORDER_TYPE.TransferOfferParty:
         await overlay
-          .create(LazyMapPartyTransferOfferDrawer)
+          .create(LazyMapPartyTransferOfferCreateDrawer)
           .open({
             targetParty: orderTarget.value as PartyVisible,
             onClose(_result, transferOffer) {
@@ -59,11 +59,7 @@ export const usePartyOrder = () => {
               setPartyOrder({
                 type: order,
                 targetedPartyId: orderTarget.value!.id,
-                transferOfferPartyIntent: {
-                  gold: transferOffer.gold,
-                  troops: transferOffer.troops,
-                  items: Object.entries(transferOffer.items).map(([itemId, count]) => ({ itemId, count })),
-                },
+                transferOfferPartyIntent: transferOffer,
               }, shift?.value)
             },
           })

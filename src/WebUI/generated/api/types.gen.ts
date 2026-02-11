@@ -510,7 +510,7 @@ export type Error = {
     stackTrace: string | null;
 };
 
-export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
+export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
 
 export type ErrorSource = {
     pointer?: string | null;
@@ -832,7 +832,7 @@ export type PartyPublicViewModel = {
 
 export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'AwaitingPartyOfferDecision' | 'InBattle' | 'AwaitingBattleJoinDecision';
 
-export type PartyTransferOfferStatus = 'Intent' | 'Pending' | 'Declined' | 'Accepted';
+export type PartyTransferOfferStatus = 'Intent' | 'Pending';
 
 export type PartyTransferOfferViewModel = {
     id: number;
@@ -842,6 +842,11 @@ export type PartyTransferOfferViewModel = {
     gold: number;
     troops: number;
     items: Array<ItemStack>;
+};
+
+export type PartyTransferOfferViewModelResult = {
+    readonly errors: Array<Error> | null;
+    data: PartyTransferOfferViewModel | null;
 };
 
 export type PartyViewModel = {
@@ -911,6 +916,11 @@ export type RespondToBattleFighterApplicationCommand = {
 
 export type RespondToBattleMercenaryApplicationCommand = {
     accept: boolean;
+};
+
+export type RespondToPartyTransferOfferCommand = {
+    accept: boolean;
+    accepted?: TransferOffer | null;
 };
 
 export type RestrictCommand = {
@@ -1035,6 +1045,17 @@ export type TerrainViewModelIListResult = {
 export type TerrainViewModelResult = {
     readonly errors: Array<Error> | null;
     data: TerrainViewModel | null;
+};
+
+export type TransferOffer = {
+    gold: number;
+    troops: number;
+    items: Array<TransferOfferItem>;
+};
+
+export type TransferOfferItem = {
+    itemId: string;
+    count: number;
 };
 
 export type TransferOfferPartyIntent = {
@@ -1506,6 +1527,10 @@ export type PartyTransferOfferViewModelWritable = {
     gold: number;
     troops: number;
     items: Array<ItemStack>;
+};
+
+export type PartyTransferOfferViewModelResultWritable = {
+    data: PartyTransferOfferViewModelWritable | null;
 };
 
 export type PartyViewModelWritable = {
@@ -3004,6 +3029,35 @@ export type GetPartiesByPartyIdItemsResponses = {
 };
 
 export type GetPartiesByPartyIdItemsResponse = GetPartiesByPartyIdItemsResponses[keyof GetPartiesByPartyIdItemsResponses];
+
+export type PutPartiesSelfTransferOffersByTransferOfferIdData = {
+    body?: RespondToPartyTransferOfferCommand;
+    path: {
+        transferOfferId: number;
+    };
+    query?: never;
+    url: '/Parties/self/transfer-offers/{transferOfferId}';
+};
+
+export type PutPartiesSelfTransferOffersByTransferOfferIdErrors = {
+    /**
+     * Invalid response (accepted more than offered, party doesn't have resources, etc).
+     */
+    400: unknown;
+    /**
+     * Transfer offer not found.
+     */
+    404: unknown;
+};
+
+export type PutPartiesSelfTransferOffersByTransferOfferIdResponses = {
+    /**
+     * Ok.
+     */
+    200: PartyTransferOfferViewModelResult;
+};
+
+export type PutPartiesSelfTransferOffersByTransferOfferIdResponse = PutPartiesSelfTransferOffersByTransferOfferIdResponses[keyof PutPartiesSelfTransferOffersByTransferOfferIdResponses];
 
 export type GetPatchNotesData = {
     body?: never;

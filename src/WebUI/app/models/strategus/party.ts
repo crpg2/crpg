@@ -59,6 +59,11 @@ export interface ItemStack {
   count: number
 }
 
+export interface ItemStackUpdate {
+  itemId: string
+  count: number
+}
+
 export const PARTY_ORDER_TYPE = {
   MoveToPoint: 'MoveToPoint',
   FollowParty: 'FollowParty',
@@ -93,8 +98,6 @@ export interface PartyOrderPathSegment {
 
 export const PARTY_TRANSFER_STATUS = {
   Pending: 'Pending',
-  Declined: 'Declined',
-  Accepted: 'Accepted',
   Intent: 'Intent',
 } as const satisfies Record<_PartyTransferOfferStatus, _PartyTransferOfferStatus>
 
@@ -113,10 +116,7 @@ export interface TransferOfferParty {
 export interface TransferOfferPartyUpdate {
   gold: number
   troops: number
-  items: Array<{
-    itemId: string
-    count: number
-  }>
+  items: Array<ItemStackUpdate>
 }
 
 export interface UpdatePartyOrder {

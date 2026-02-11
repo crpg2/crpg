@@ -1,5 +1,3 @@
-using Crpg.Domain.Entities.Parties;
-
 namespace Crpg.Domain.Entities.Parties;
 
 /// <summary>
@@ -8,21 +6,12 @@ namespace Crpg.Domain.Entities.Parties;
 public enum PartyTransferOfferStatus
 {
     /// <summary>
-    /// TODO:
+    /// Initial state when the offer is created.
     /// </summary>
     Intent,
 
     /// <summary>
+    /// Pending response from the target party.
     /// </summary>
     Pending,
-
-    /// <summary>
-    /// TODO:
-    /// </summary>
-    Declined,
-
-    /// <summary>
-    /// TODO:
-    /// </summary>
-    Accepted,
 }

@@ -150,6 +150,7 @@ action:
   leave: Leave
   kick: Kick
   confirm: Confirm
+  close: Close
   create: Create
   search: Search
   send: Send

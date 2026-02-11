@@ -103,7 +103,7 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
                     }
                 }
 
-                // TODO: в 2х местах у меня CurrentTransferOffers
+                // TODO: в 2х местах у меня TransferOffers, мб убрать из приказов
                 if (orderVm.Type == PartyOrderType.TransferOfferParty && orderVm.TargetedParty != null)
                 {
                     var partyTransferOffer = await _db.PartyTransferOffers
@@ -114,7 +114,7 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
                 }
             }
 
-            // TODO: в 2х местах у меня CurrentTransferOffers
+            // TODO: в 2х местах у меня TransferOffers
             var partyTransferOffers = await _db.PartyTransferOffers
                 .AsSplitQuery()
                 .Include(to => to.Items).ThenInclude(oi => oi.Item)
@@ -123,22 +123,7 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
                 .Where(to => to.PartyId == party.Id || to.TargetPartyId == party.Id)
                 .ToListAsync(cancellationToken);
 
-            foreach (var partyTransferOffer in partyTransferOffers)
-            {
-                partyVm.CurrentTransferOffers.Add(new()
-                {
-                    Party = _mapper.Map<PartyVisibleViewModel>(partyTransferOffer.Party),
-                    TargetParty = _mapper.Map<PartyVisibleViewModel>(partyTransferOffer.TargetParty),
-                    Gold = partyTransferOffer.Gold,
-                    Status = partyTransferOffer.Status,
-                    Troops = partyTransferOffer.Troops,
-                    Items = [.. partyTransferOffer.Items.Select(oi => new ItemStack
-                    {
-                        Item = _mapper.Map<ItemViewModel>(oi.Item),
-                        Count = oi.Count,
-                    })],
-                });
-            }
+            partyVm.CurrentTransferOffers.AddRange(_mapper.Map<List<PartyTransferOfferViewModel>>(partyTransferOffers));
 
             return new(new StrategusUpdate
             {

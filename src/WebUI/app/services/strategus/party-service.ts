@@ -4,11 +4,12 @@ import {
   getPartiesSelfUpdate,
   postParties,
   putPartiesSelfOrders,
+  putPartiesSelfTransferOffersByTransferOfferId,
   // putPartiesSelfStatus,
 } from '#api/sdk.gen'
 
 import type { CrpgApiResult } from '~/api.config'
-import type { ItemStack, Party, PartyOrder, PartyStatus, StrategusUpdate, UpdatePartyOrder } from '~/models/strategus/party'
+import type { ItemStack, Party, PartyOrder, PartyStatus, StrategusUpdate, TransferOfferPartyUpdate, UpdatePartyOrder } from '~/models/strategus/party'
 
 import { PARTY_STATUS } from '~/models/strategus/party'
 
@@ -26,6 +27,14 @@ export const getSelfPartyItems = async (): Promise<ItemStack[]> => (await getPar
 export const getPartyItems = async (
   partyId: number,
 ): Promise<ItemStack[]> => (await getPartiesByPartyIdItems({ path: { partyId } })).data!
+
+export const respondToPartyTransferOffer = async (
+  transferOfferId: number,
+  accept: boolean,
+  accepted?: TransferOfferPartyUpdate,
+): Promise<void> => {
+  await putPartiesSelfTransferOffersByTransferOfferId({ path: { transferOfferId }, body: { accept, accepted } })
+}
 
 export const IN_SETTLEMENT_PARTY_STATUSES: PartyStatus[] = [
   PARTY_STATUS.IdleInSettlement,

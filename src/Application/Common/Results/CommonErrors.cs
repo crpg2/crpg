@@ -1,6 +1,7 @@
 ﻿using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Users;
 
 namespace Crpg.Application.Common.Results;
@@ -423,5 +424,41 @@ internal static class CommonErrors
     {
         Title = "Terrain was not found",
         Detail = $"Terrain with id '{terrainId}' was not found",
+    };
+
+    public static Error TransferOfferNotFound(int transferOfferId) => new(ErrorType.NotFound, ErrorCode.TransferOfferNotFound)
+    {
+        Title = "Transfer offer was not found",
+        Detail = $"Transfer offer with id '{transferOfferId}' was not found",
+    };
+
+    public static Error TransferOfferNotAllowed(int partyId, int transferOfferId) => new(ErrorType.Forbidden, ErrorCode.TransferOfferNotAllowed)
+    {
+        Title = "Party cannot respond to this offer",
+        Detail = $"This transfer offer is not for party with id '{partyId}'",
+    };
+
+    public static Error TransferOfferInvalidStatus(int transferOfferId, PartyTransferOfferStatus status) => new(ErrorType.Validation, ErrorCode.TransferOfferInvalidStatus)
+    {
+        Title = "Invalid transfer offer status",
+        Detail = $"Can only respond to offers with status 'Pending', current status is '{status}'",
+    };
+
+    public static Error TransferOfferMissingItems() => new(ErrorType.Validation, ErrorCode.TransferOfferMissingItems)
+    {
+        Title = "Offered items are required",
+        Detail = "When accepting an offer, you must specify what you offer in return",
+    };
+
+    public static Error TransferOfferInvalidAmount(string message) => new(ErrorType.Validation, ErrorCode.TransferOfferInvalidAmount)
+    {
+        Title = "Invalid transfer offer amount",
+        Detail = message,
+    };
+
+    public static Error TransferOfferInvalidItem(string itemId) => new(ErrorType.Validation, ErrorCode.TransferOfferInvalidItem)
+    {
+        Title = "Item not in original offer",
+        Detail = $"Item '{itemId}' is not in the original offer",
     };
 }

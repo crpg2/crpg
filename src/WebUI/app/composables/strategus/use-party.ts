@@ -52,16 +52,14 @@ export const useParty = (
     const _shouldPartyBeInSettlement = shouldPartyBeInSettlement(party)
     const _shouldPartyBeInBattle = shouldPartyBeInBattle(party)
 
-    if (_shouldPartyBeInSettlement && !route.meta.groups?.includes('strategussettlement')
-    ) {
+    if (_shouldPartyBeInSettlement && !route.meta.groups?.includes('strategussettlement')) {
       await navigateTo({
         name: 'strategus-settlement-id',
         params: { id: party.currentSettlement!.id },
       })
     }
 
-    if (_shouldPartyBeInBattle && !route.meta.groups?.includes('strategusbattle')
-    ) {
+    if (_shouldPartyBeInBattle && !route.meta.groups?.includes('strategusbattle')) {
       await navigateTo({
         name: 'strategus-battle-id',
         params: { id: party.currentBattle!.id },
@@ -81,7 +79,7 @@ export const useParty = (
     startUpdatePartyInterval()
   }
 
-  const setPartyOrder = async (updateRequest: Partial<UpdatePartyOrder>, chain: boolean = false) => {
+  const setPartyOrder = async (updateRequest: Partial<UpdatePartyOrder> = {}, chain: boolean = false) => {
     const order: UpdatePartyOrder = {
       type: PARTY_ORDER_TYPE.MoveToPoint,
       orderIndex: 0,
@@ -107,6 +105,10 @@ export const useParty = (
     )
 
     setPartyState(newPartyState)
+  }
+
+  const clearPartyOrders = async () => {
+    setPartyState(await updatePartyOrders([]))
   }
 
   // TODO: move to party action
@@ -146,6 +148,7 @@ export const useParty = (
     partyState,
     updateParty,
     setPartyOrder,
+    clearPartyOrders,
     partySpawn,
     validateCanMove,
 

@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import type { TimelineItem } from '@nuxt/ui'
 
-import { LazyMapPartyIncomingTransferOffersDrawer, LazyMapPartyInventoryDrawer, UiDataMedia } from '#components'
+import { LazyMapPartyIncomingTransferOffersDrawer, LazyMapPartyInventoryDrawer, LazyMapPartyTransferOfferViewDrawer, UiDataMedia } from '#components'
 
 import type { Party, PartyOrder, PartyOrderType, PartyStatus, TransferOfferParty } from '~/models/strategus/party'
 
+import { useParty } from '~/composables/strategus/use-party'
 import { PARTY_ORDER_TYPE, PARTY_STATUS } from '~/models/strategus/party'
+import { respondToPartyTransferOffer } from '~/services/strategus/party-service'
 
 const { party } = defineProps<{ party: Party }>()
 
@@ -14,7 +16,10 @@ defineEmits<{
   startMove: []
 }>()
 
+const { clearPartyOrders, updateParty } = useParty()
+
 const { n, t } = useI18n()
+const toast = useToast()
 
 function getOrderIcon(orderType: PartyOrderType): string {
   return ({
@@ -36,6 +41,7 @@ type OrderTimlineItem = TimelineItem & {
   targetedParty: PartyOrder['targetedParty']
   targetedBattle: PartyOrder['targetedBattle']
   targetedSettlement: PartyOrder['targetedSettlement']
+  transferOfferPartyIntent: PartyOrder['transferOfferPartyIntent']
 }
 
 // TODO: useLocaleTimeAgo fo ref
@@ -86,6 +92,7 @@ const orders = computed<OrderTimlineItem[]>(() => {
         targetedParty: order.targetedParty,
         targetedBattle: order.targetedBattle,
         targetedSettlement: order.targetedSettlement,
+        transferOfferPartyIntent: order.transferOfferPartyIntent,
       }
     })
 })
@@ -142,7 +149,59 @@ function openIncomingTransferOffers() {
     .create(LazyMapPartyIncomingTransferOffersDrawer)
     .open({
       transferOffers: incomingTransferOffers.value,
+      onClose: async (value, offer) => {
+        if (!value || !offer) {
+          return
+        }
+
+        if (offer.accepted) {
+          toast.add({
+            title: t('strategus.transferOffer.accepted'),
+            description: t('strategus.transferOffer.acceptedDescription'),
+            color: 'success',
+          })
+
+          await respondToPartyTransferOffer(
+            offer.id,
+            true,
+            {
+              gold: offer.accepted.gold,
+              troops: offer.accepted.troops,
+              items: offer.accepted.items,
+            },
+          )
+
+          await updateParty()
+
+          return
+        }
+
+        toast.add({
+          title: t('strategus.transferOffer.declined'),
+          description: t('strategus.transferOffer.declinedDescription'),
+          color: 'error',
+        })
+
+        await respondToPartyTransferOffer(
+          offer.id,
+          false,
+        )
+
+        await updateParty()
+      },
     })
+}
+
+// TODO: to composable
+function openOutgoingTransferOffer(transferOffer: TransferOfferParty) {
+  const drawer = overlay.create(LazyMapPartyTransferOfferViewDrawer)
+  drawer.open({
+    transferOffer,
+    onCancel: () => {
+      clearPartyOrders()
+      drawer.close()
+    },
+  })
 }
 </script>
 
@@ -256,7 +315,9 @@ function openIncomingTransferOffers() {
                     v-if="item.status === PARTY_STATUS.AwaitingPartyOfferDecision"
                     size="sm"
                     icon="crpg:chest"
-                    variant="subtle" color="neutral" @click="() => {}"
+                    variant="subtle"
+                    color="neutral"
+                    @click="() => openOutgoingTransferOffer(item.currentTransferOffer)"
                   />
                 </div>
               </template>
@@ -287,10 +348,12 @@ function openIncomingTransferOffers() {
                   <UButton square size="sm" icon="i-lucide-locate-fixed" variant="link" color="neutral" @click="$emit('locate')" />
 
                   <UButton
-                    v-if="item.type === PARTY_ORDER_TYPE.TransferOfferParty"
+                    v-if="item.type === PARTY_ORDER_TYPE.TransferOfferParty && item.transferOfferPartyIntent"
                     size="sm"
                     icon="crpg:chest"
-                    variant="subtle" color="neutral" @click="() => {}"
+                    variant="subtle"
+                    color="neutral"
+                    @click="() => openOutgoingTransferOffer(item.transferOfferPartyIntent!)"
                   />
                 </div>
               </template>
