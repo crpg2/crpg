@@ -27,7 +27,7 @@
 //     public int TargetedBattletId { get; init; }
 //     public BattleJoinIntentViewModel[] BattleJoinIntents { get; init; } = [];
 
-//     public class Validator : AbstractValidator<UpdatePartyStatusCommand>
+// public class Validator : AbstractValidator<UpdatePartyStatusCommand>
 //     {
 //         public Validator()
 //         {
@@ -39,15 +39,15 @@
 //         }
 //     }
 
-//     internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap) : IMediatorRequestHandler<UpdatePartyStatusCommand, PartyViewModel>
+// internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap) : IMediatorRequestHandler<UpdatePartyStatusCommand, PartyViewModel>
 //     {
 //         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdatePartyStatusCommand>();
 
-//         private readonly ICrpgDbContext _db = db;
+// private readonly ICrpgDbContext _db = db;
 //         private readonly IMapper _mapper = mapper;
 //         private readonly IStrategusMap _strategusMap = strategusMap;
 
-//         public async Task<Result<PartyViewModel>> Handle(UpdatePartyStatusCommand req, CancellationToken cancellationToken)
+// public async Task<Result<PartyViewModel>> Handle(UpdatePartyStatusCommand req, CancellationToken cancellationToken)
 //         {
 //             var party = await _db.Parties
 //                 .Include(h => h.User)
@@ -59,12 +59,12 @@
 //                 return new(CommonErrors.PartyNotFound(req.PartyId));
 //             }
 
-//             if (party.Status == PartyStatus.InBattle || party.Status == PartyStatus.AwaitingBattleJoinDecision)
+// if (party.Status == PartyStatus.InBattle || party.Status == PartyStatus.AwaitingBattleJoinDecision)
 //             {
 //                 return new(CommonErrors.PartyInBattle(req.PartyId));
 //             }
 
-//             if (req.Status == PartyStatus.IdleInSettlement || req.Status == PartyStatus.RecruitingInSettlement)
+// if (req.Status == PartyStatus.IdleInSettlement || req.Status == PartyStatus.RecruitingInSettlement)
 //             {
 //                 var result = StartStopRecruiting(req.Status == PartyStatus.RecruitingInSettlement, party);
 //                 if (result.Errors != null)
@@ -81,12 +81,12 @@
 //                 }
 //             }
 
-//             await _db.SaveChangesAsync(cancellationToken);
+// await _db.SaveChangesAsync(cancellationToken);
 //             Logger.LogInformation("Party '{0}' updated their status", req.PartyId);
 //             return new(_mapper.Map<PartyViewModel>(party));
 //         }
 
-//         private static Result StartStopRecruiting(bool start, Party party)
+// private static Result StartStopRecruiting(bool start, Party party)
 //         {
 //             if (start)
 //             {
@@ -103,11 +103,11 @@
 //                 }
 //             }
 
-//             party.Status = start ? PartyStatus.RecruitingInSettlement : PartyStatus.IdleInSettlement;
+// party.Status = start ? PartyStatus.RecruitingInSettlement : PartyStatus.IdleInSettlement;
 //             return Result.NoErrors;
 //         }
 
-//         private async Task<Result> UpdatePartyMovement(Party party, UpdatePartyStatusCommand req,
+// private async Task<Result> UpdatePartyMovement(Party party, UpdatePartyStatusCommand req,
 //             CancellationToken cancellationToken)
 //         {
 //             // Reset movement.
@@ -117,7 +117,7 @@
 //             party.TargetedSettlementId = null;
 //             party.TargetedBattleId = null;
 
-//             // TODO: FIXME: SPEC:
+// // TODO: FIXME: SPEC:
 //             // Remove old battle intents if leaving previous targets
 //             if (party.BattleJoinIntents.Count != 0)
 //             {
@@ -125,15 +125,15 @@
 //                 party.BattleJoinIntents.Clear();
 //             }
 
-//             // Remove old pending battle fighter applications - TODO: проверить
+// // Remove old pending battle fighter applications - TODO: проверить
 //             var pendingBattleFighterApplications = await _db.BattleFighterApplications
 //                 .Where(a => a.PartyId == party.Id && a.Status == BattleFighterApplicationStatus.Pending)
 //                 .ToArrayAsync(cancellationToken);
 //             _db.BattleFighterApplications.RemoveRange(pendingBattleFighterApplications);
 
-//             // TODO: FIXME:
+// // TODO: FIXME:
 
-//             if (req.Status == PartyStatus.MovingToPoint)
+// if (req.Status == PartyStatus.MovingToPoint)
 //             {
 //                 if (!req.Waypoints.IsEmpty)
 //                 {
@@ -152,12 +152,12 @@
 //                     return new Result(CommonErrors.UserNotFound(req.TargetedPartyId));
 //                 }
 
-//                 if (!party.Position.IsWithinDistance(targetParty.Position, _strategusMap.ViewDistance))
+// if (!party.Position.IsWithinDistance(targetParty.Position, _strategusMap.ViewDistance))
 //                 {
 //                     return new Result(CommonErrors.PartyNotInSight(req.TargetedPartyId));
 //                 }
 
-//                 party.Status = req.Status;
+// party.Status = req.Status;
 //                 // Need to be set manually because it was set to null above and it can confuse EF Core.
 //                 party.TargetedPartyId = targetParty.Id;
 //                 party.TargetedParty = targetParty;
@@ -173,13 +173,13 @@
 //                     return new Result(CommonErrors.SettlementNotFound(req.TargetedSettlementId));
 //                 }
 
-//                 party.Status = req.Status;
+// party.Status = req.Status;
 //                 // Need to be set manually because it was set to null above and it can confuse EF Core.
 //                 party.TargetedSettlementId = targetSettlement.Id;
 //                 party.TargetedSettlement = targetSettlement;
 //             }
 
-//             // TODO: FIXME: SPEC:
+// // TODO: FIXME: SPEC:
 //             else if (req.Status == PartyStatus.MovingToBattle)
 //             {
 //                 var targetBattle = await _db.Battles
@@ -189,12 +189,12 @@
 //                     return new Result(CommonErrors.BattleNotFound(req.TargetedBattletId));
 //                 }
 
-//                 if (req.BattleJoinIntents.Length == 0)
+// if (req.BattleJoinIntents.Length == 0)
 //                 {
 //                     return new Result(CommonErrors.BattleJoinIntentsIsEmpty());
 //                 }
 
-//                 foreach (var intent in req.BattleJoinIntents)
+// foreach (var intent in req.BattleJoinIntents)
 //                 {
 //                     party.BattleJoinIntents.Add(new BattleJoinIntent
 //                     {
@@ -204,14 +204,14 @@
 //                     });
 //                 }
 
-//                 party.Status = PartyStatus.MovingToBattle;
+// party.Status = PartyStatus.MovingToBattle;
 
-//                 // Need to be set manually because it was set to null above and it can confuse EF Core.
+// // Need to be set manually because it was set to null above and it can confuse EF Core.
 //                 party.TargetedBattleId = targetBattle.Id;
 //                 party.TargetedBattle = targetBattle;
 //             }
 
-//             return Result.NoErrors;
+// return Result.NoErrors;
 //         }
 //     }
 // }

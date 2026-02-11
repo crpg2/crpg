@@ -114,7 +114,7 @@ public record UpdatePartyOrdersCommand : IMediatorRequest
         private readonly ICrpgDbContext _db = db;
         private readonly IStrategusMap _strategusMap = strategusMap;
 
-        public async Task<Result> Handle(UpdatePartyOrdersCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(UpdatePartyOrdersCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
                         .Include(p => p.User!)

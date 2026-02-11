@@ -24,7 +24,7 @@ public record RemoveBattleFighterApplicationCommand : IMediatorRequest
 
         private readonly ICrpgDbContext _db = db;
 
-        public async Task<Result> Handle(RemoveBattleFighterApplicationCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(RemoveBattleFighterApplicationCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties.FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
             if (party == null)

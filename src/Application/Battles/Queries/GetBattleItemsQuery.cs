@@ -22,7 +22,7 @@ public record GetBattleItemsQuery : IMediatorRequest<IList<BattleFighterInventor
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
 
-        public async Task<Result<IList<BattleFighterInventoryViewModel>>> Handle(GetBattleItemsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<BattleFighterInventoryViewModel>>> Handle(GetBattleItemsQuery req, CancellationToken cancellationToken)
         {
             var battle = await _db.Battles.FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)

@@ -16,7 +16,7 @@ public record GetPartyItemsQuery : IMediatorRequest<IList<ItemStack>>
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
 
-        public async Task<Result<IList<ItemStack>>> Handle(GetPartyItemsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<ItemStack>>> Handle(GetPartyItemsQuery req, CancellationToken cancellationToken)
         {
             /*
             / TODO: FIXME: добавить проверок, чтобы не было уязвимости

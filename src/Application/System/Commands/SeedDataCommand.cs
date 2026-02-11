@@ -1934,7 +1934,6 @@ public record SeedDataCommand : IMediatorRequest
                 Status = PartyStatus.Idle,
             };
 
-
             // Users with no party: telesto, kypak, devoidDragon.
 
             Party[] newParties =
