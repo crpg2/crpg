@@ -32,7 +32,7 @@ namespace Crpg.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.10")
+                .HasAnnotation("ProductVersion", "10.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "activity_log_type", new[] { "battle_apply_as_mercenary", "battle_mercenary_application_accepted", "battle_mercenary_application_declined", "battle_participant_kicked", "battle_participant_leaved", "character_created", "character_deleted", "character_earned", "character_rating_reset", "character_respecialized", "character_retired", "character_rewarded", "chat_message_sent", "clan_application_accepted", "clan_application_created", "clan_application_declined", "clan_armory_add_item", "clan_armory_borrow_item", "clan_armory_remove_item", "clan_armory_return_item", "clan_created", "clan_deleted", "clan_member_kicked", "clan_member_leaved", "clan_member_role_edited", "item_bought", "item_broke", "item_reforged", "item_repaired", "item_returned", "item_sold", "item_upgraded", "server_joined", "team_hit", "team_hit_reported", "team_hit_reported_user_kicked", "user_created", "user_deleted", "user_renamed", "user_rewarded" });

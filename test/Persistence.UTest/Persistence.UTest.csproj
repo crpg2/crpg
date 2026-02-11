@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>Crpg.Persistence.UTest</RootNamespace>
     <AssemblyName>Crpg.Persistence.UTest</AssemblyName>
   </PropertyGroup>
@@ -11,8 +11,8 @@
   <ItemGroup>
     <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="nunit" Version="4.4.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="5.1.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="6.1.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -17,31 +17,31 @@ public class BattleServiceTest : TestBase
     //     var attackerUser = new User();
     //     var defenderUser = new User();
 
-    //     var attackerParty = new Party { User = attackerUser, Troops = 20 };
+    // var attackerParty = new Party { User = attackerUser, Troops = 20 };
     //     var defenderParty = new Party { User = defenderUser, Troops = 15 };
 
-    //     var attackerCommander = new BattleFighter
+    // var attackerCommander = new BattleFighter
     //     {
     //         Side = BattleSide.Attacker,
     //         Commander = true,
     //         Party = attackerParty,
     //     };
 
-    //     var defenderCommander = new BattleFighter
+    // var defenderCommander = new BattleFighter
     //     {
     //         Side = BattleSide.Defender,
     //         Commander = true,
     //         Party = defenderParty,
     //     };
 
-    //     var otherFighter = new BattleFighter
+    // var otherFighter = new BattleFighter
     //     {
     //         Side = BattleSide.Attacker,
     //         Commander = false,
     //         Party = new Party { Troops = 10 },
     //     };
 
-    //     var battle = new Battle
+    // var battle = new Battle
     //     {
     //         Id = 1,
     //         Phase = BattlePhase.Scheduled,
@@ -50,9 +50,9 @@ public class BattleServiceTest : TestBase
     //         ScheduledFor = DateTime.UtcNow.AddHours(2),
     //     };
 
-    //     var vm = _battleService.MapToBattleDetailedViewModel(Mapper, battle);
+    // var vm = _battleService.MapToBattleDetailedViewModel(Mapper, battle);
 
-    //     Assert.That(vm.Id, Is.EqualTo(1));
+    // Assert.That(vm.Id, Is.EqualTo(1));
     //     Assert.That(vm.AttackerTotalTroops, Is.EqualTo(30)); // 20 + 10
     //     Assert.That(vm.DefenderTotalTroops, Is.EqualTo(15));
     //     Assert.That(vm.Attacker.Commander, Is.True);
