@@ -702,7 +702,7 @@ public record SeedDataCommand : IMediatorRequest
 
             Restriction[] newRestrictions =
             {
-                takeoRestriction0, takeoRestriction1, baronCyborgRestriction0, orleRestriction0, orleRestriction1
+                takeoRestriction0, takeoRestriction1, baronCyborgRestriction0, orleRestriction0, orleRestriction1,
             };
 
             _db.Restrictions.RemoveRange(await _db.Restrictions.ToArrayAsync());
@@ -2191,7 +2191,6 @@ public record SeedDataCommand : IMediatorRequest
 
             Battle[] newBattles = [
                 battle1, battle2,
-                //
                 siege1, siege2,
             ];
 
@@ -2427,12 +2426,12 @@ public record SeedDataCommand : IMediatorRequest
                     //         settlement.Items = rhotaeItems;
                     //     }
 
-                    //     if (settlement.Name == "Thersenion")
+                    // if (settlement.Name == "Thersenion")
                     //     {
                     //         settlement.OwnerId = 2;
                     //     }
 
-                    //     // TODO: hack FIXME: only in dev END
+                    // // TODO: hack FIXME: only in dev END
                     // }
 
                     if (dbSettlementsByNameRegion.TryGetValue((settlement.Name, settlement.Region), out Settlement? dbSettlement))

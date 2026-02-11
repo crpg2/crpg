@@ -39,9 +39,6 @@ public record UpdateBattlePhasesCommand : IMediatorRequest
                 .Include(b => b.Fighters).ThenInclude(f => f.Settlement)
                 .Where(b =>
                     (b.Phase == BattlePhase.Preparation && b.CreatedAt + _battleInitiationDuration < _dateTime.UtcNow)
-                    //
-                    //
-                    //
                     || (b.Phase == BattlePhase.Hiring && b.CreatedAt + _battleInitiationDuration + _battleHiringDuration < _dateTime.UtcNow)
                     || (b.Phase == BattlePhase.Scheduled && b.ScheduledFor < _dateTime.UtcNow))
                 .AsAsyncEnumerable();

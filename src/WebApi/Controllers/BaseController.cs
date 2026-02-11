@@ -23,11 +23,8 @@ public abstract class BaseController : ControllerBase
     protected const string AdminPolicy = "Admin";
     protected const string GamePolicy = "Game";
 
-    private IMediator? _mediator;
-    private ICurrentUserService? _currentUser;
-
-    protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<IMediator>();
-    protected ICurrentUserService CurrentUser => _currentUser ??= HttpContext.RequestServices.GetRequiredService<ICurrentUserService>();
+    protected IMediator Mediator => field ??= HttpContext.RequestServices.GetRequiredService<IMediator>();
+    protected ICurrentUserService CurrentUser => field ??= HttpContext.RequestServices.GetRequiredService<ICurrentUserService>();
 
     protected ActionResult<Result<TData>> ResultToAction<TData>(Result<TData> result)
         where TData : class
