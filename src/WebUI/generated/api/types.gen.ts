@@ -835,6 +835,7 @@ export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement'
 export type PartyTransferOfferStatus = 'Intent' | 'Pending' | 'Declined' | 'Accepted';
 
 export type PartyTransferOfferViewModel = {
+    id: number;
     party: PartyVisibleViewModel;
     targetParty: PartyVisibleViewModel;
     status: PartyTransferOfferStatus;
@@ -1498,6 +1499,7 @@ export type PartyOrderViewModelWritable = {
 };
 
 export type PartyTransferOfferViewModelWritable = {
+    id: number;
     party: PartyVisibleViewModelWritable;
     targetParty: PartyVisibleViewModelWritable;
     status: PartyTransferOfferStatus;
