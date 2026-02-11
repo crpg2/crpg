@@ -10,8 +10,9 @@ internal class FileItemsSource : IItemsSource
 {
     private static readonly string ItemsPath = Path.Combine(
         Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)!,
-        "net" + Environment.Version.ToString(fieldCount: 2),
-        "Common/Files/items.json");
+        "Common",
+        "Files",
+        "items.json");
 
     public async Task<IEnumerable<ItemCreation>> LoadItems()
     {
