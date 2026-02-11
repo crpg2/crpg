@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using AutoMapper;
 using Crpg.Application.Common.Mappings;
 using Crpg.Persistence;
@@ -27,7 +28,6 @@ public class TestBase
     private CrpgDbContext? _arrangeDb;
     private CrpgDbContext? _actDb;
     private CrpgDbContext? _assertDb;
-    private IMapper? _mapper;
 
     /// <summary>
     /// DbContext to use to initialize the database for a test.
@@ -44,7 +44,8 @@ public class TestBase
     /// </summary>
     protected CrpgDbContext AssertDb => _assertDb ??= InitDb();
 
-    protected IMapper Mapper => _mapper ??= InitMapper();
+    [AllowNull]
+    protected IMapper Mapper { get => field ??= InitMapper(); private set; }
 
     [SetUp]
     public virtual Task SetUp()
@@ -58,7 +59,7 @@ public class TestBase
         _arrangeDb = null;
         _actDb = null;
         _assertDb = null;
-        _mapper = null;
+        Mapper = null;
         return Task.CompletedTask;
     }
 
