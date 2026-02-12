@@ -1,9 +1,12 @@
 using System.Text.Json.Serialization;
 using Crpg.Application.Battles.Models;
+using Crpg.Application.Common;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
+using Crpg.Application.Parties.Models;
+using Crpg.Application.Parties.Services;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Parties;
 using FluentValidation;
@@ -14,19 +17,6 @@ namespace Crpg.Application.Parties.Commands;
 
 public record UpdatePartyOrdersCommand : IMediatorRequest
 {
-    public record TransferOfferPartyItem
-    {
-        public string ItemId { get; init; } = string.Empty;
-        public int Count { get; init; }
-    }
-
-    public record TransferOfferPartyIntent
-    {
-        public int Gold { get; set; }
-        public float Troops { get; set; }
-        public List<TransferOfferPartyItem> Items { get; set; } = [];
-    }
-
     public record PartyOrderCommandItemDto
     {
         public PartyOrderType Type { get; init; }
@@ -37,7 +27,7 @@ public record UpdatePartyOrdersCommand : IMediatorRequest
         public int TargetedBattleId { get; init; }
         public BattleJoinIntentViewModel[] BattleJoinIntents { get; init; } = [];
         [JsonRequired]
-        public TransferOfferPartyIntent? TransferOfferPartyIntent { get; init; }
+        public TransferOfferIntent? TransferOfferPartyIntent { get; init; }
     }
 
     [JsonIgnore]
@@ -109,10 +99,12 @@ public record UpdatePartyOrdersCommand : IMediatorRequest
         }
     }
 
-    internal class Handler(ICrpgDbContext db, IStrategusMap strategusMap) : IMediatorRequestHandler<UpdatePartyOrdersCommand>
+    internal class Handler(ICrpgDbContext db, IStrategusMap strategusMap, Constants constants, IPartyTransferOfferValidationService validationService) : IMediatorRequestHandler<UpdatePartyOrdersCommand>
     {
         private readonly ICrpgDbContext _db = db;
         private readonly IStrategusMap _strategusMap = strategusMap;
+        private readonly Constants _constants = constants;
+        private readonly IPartyTransferOfferValidationService _validationService = validationService;
 
         public async ValueTask<Result> Handle(UpdatePartyOrdersCommand req, CancellationToken cancellationToken)
         {
@@ -120,6 +112,8 @@ public record UpdatePartyOrdersCommand : IMediatorRequest
                         .Include(p => p.User!)
                             .ThenInclude(u => u.ClanMembership!.Clan)
                         .Include(p => p.Orders)
+                        .Include(p => p.Items)
+                            .ThenInclude(pi => pi.Item)
                         .FirstOrDefaultAsync(p => p.Id == req.PartyId, cancellationToken);
             if (party == null)
             {
@@ -195,6 +189,13 @@ public record UpdatePartyOrdersCommand : IMediatorRequest
 
                             if (order.Type == PartyOrderType.TransferOfferParty && order.TransferOfferPartyIntent != null)
                             {
+                                // Validate party has sufficient resources
+                                var validationError = _validationService.ValidatePartyResources(party, order.TransferOfferPartyIntent.Gold, order.TransferOfferPartyIntent.Troops, order.TransferOfferPartyIntent.Items, _constants);
+                                if (validationError != null)
+                                {
+                                    return new(validationError);
+                                }
+
                                 _db.PartyTransferOffers.Add(new PartyTransferOffer
                                 {
                                     Party = party,
