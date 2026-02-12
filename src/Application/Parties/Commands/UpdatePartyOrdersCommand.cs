@@ -27,7 +27,7 @@ public record UpdatePartyOrdersCommand : IMediatorRequest
         public int TargetedBattleId { get; init; }
         public BattleJoinIntentViewModel[] BattleJoinIntents { get; init; } = [];
         [JsonRequired]
-        public TransferOfferIntent? TransferOfferPartyIntent { get; init; }
+        public PartyTransferOfferUpdate? TransferOfferPartyIntent { get; init; }
     }
 
     [JsonIgnore]

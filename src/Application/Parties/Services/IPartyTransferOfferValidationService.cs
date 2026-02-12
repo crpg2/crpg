@@ -10,17 +10,17 @@ internal interface IPartyTransferOfferValidationService
     /// <summary>
     /// Validates that the accepted transfer offer matches the original offer.
     /// </summary>
-    Error? ValidateAcceptedResources(TransferOfferIntent accepted, PartyTransferOffer offer);
+    Error? ValidateAcceptedResources(PartyTransferOfferUpdate accepted, PartyTransferOffer offer);
 
     /// <summary>
     /// Validates that the party has sufficient resources for a transfer.
     /// </summary>
-    Error? ValidatePartyResources(Party party, int gold, float troops, IEnumerable<ITransferOfferItem> items, Constants constants);
+    Error? ValidatePartyResources(Party party, int gold, float troops, ItemStackUpdate[] items, Constants constants);
 }
 
 internal class PartyTransferOfferValidationService : IPartyTransferOfferValidationService
 {
-    public Error? ValidateAcceptedResources(TransferOfferIntent accepted, PartyTransferOffer offer)
+    public Error? ValidateAcceptedResources(PartyTransferOfferUpdate accepted, PartyTransferOffer offer)
     {
         if (accepted.Gold > offer.Gold)
         {
@@ -49,7 +49,7 @@ internal class PartyTransferOfferValidationService : IPartyTransferOfferValidati
         return null;
     }
 
-    public Error? ValidatePartyResources(Party party, int gold, float troops, IEnumerable<ITransferOfferItem> items, Constants constants)
+    public Error? ValidatePartyResources(Party party, int gold, float troops, ItemStackUpdate[] items, Constants constants)
     {
         // Validate gold
         if (party.Gold < gold)

@@ -20,7 +20,7 @@ public record RespondToPartyTransferOfferCommand : IMediatorRequest<PartyTransfe
     [JsonIgnore]
     public int TransferOfferId { get; set; }
     public bool Accept { get; set; }
-    public TransferOfferIntent? Accepted { get; set; }
+    public PartyTransferOfferUpdate? Accepted { get; set; }
 
     internal class Handler(ICrpgDbContext db, IMapper mapper, Constants constants, IPartyTransferOfferValidationService validationService) : IMediatorRequestHandler<RespondToPartyTransferOfferCommand, PartyTransferOfferViewModel>
     {
