@@ -19,7 +19,7 @@
     <Compile Include="..\LauncherV3\xxHash\*" />
     <Compile Remove="..\LauncherV3\LauncherHelper\Config.cs"/>
     <Compile Remove="..\LauncherV3\LauncherHelper\GameInstallationFolderResolver.cs"/>
-    <PackageReference Include="Gameloop.Vdf" Version="0.6.2" />
+    <PackageReference Include="Gameloop.Vdf" />
   </ItemGroup>
  
 </Project>

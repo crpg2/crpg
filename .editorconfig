@@ -180,7 +180,7 @@ indent_size = 2
 charset = utf-8
 
 # Xml files
-[*.{xml,stylecop,resx,ruleset}]
+[*.{xml,props,slnx,stylecop,resx,ruleset}]
 indent_size = 2
 
 [*.yml]
