@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Map } from 'leaflet'
 
-import { LFeatureGroup, LLayerGroup, LMap, LTileLayer } from '@vue-leaflet/vue-leaflet'
+import { LMap, LTileLayer } from '@vue-leaflet/vue-leaflet'
 import L from 'leaflet'
 import 'leaflet-textpath'
 import { LMarkerClusterGroup } from 'vue-leaflet-markercluster'
@@ -106,11 +106,11 @@ const {
 } = usePartyOrder()
 
 const {
-  flyToSettlement,
-  loadSettlements,
-  settlements,
-  shownSearch,
-  toggleSearch,
+  // flyToSettlement,
+  // loadSettlements,
+  // settlements,
+  // shownSearch,
+  // toggleSearch,
   visibleSettlements,
 } = useSettlements(map, mapBounds, zoom)
 
@@ -133,7 +133,7 @@ const mapControlsRef = useTemplateRef('mapControls')
 const mapPartyProfileRef = useTemplateRef('mapPartyProfile')
 
 const isMapRdy = ref(false)
-const [onMapReady, mapIsLoading] = useAsyncCallback(async (map: Map) => {
+const [onMapReady] = useAsyncCallback(async (map: Map) => {
   const partyPane = map.createPane('partyPane')
   partyPane.style.zIndex = '650' // TODO: to const
   mapBounds.value = map.getBounds()

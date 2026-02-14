@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { BadgeProps } from '@nuxt/ui'
 
-type ApplicationStatus = 'Accepted' | 'Declined' | 'Pending'
+type ApplicationStatus = 'Accepted' | 'Declined' | 'Pending' | 'Intent'
 
 defineProps<{
   status: ApplicationStatus
@@ -13,6 +13,7 @@ const colorByApplicationStatus: Record<ApplicationStatus, BadgeProps['color']> =
   Pending: 'info',
   Accepted: 'success',
   Declined: 'error',
+  Intent: 'neutral',
 }
 </script>
 

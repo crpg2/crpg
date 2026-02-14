@@ -3,7 +3,7 @@ import type { TimelineItem } from '@nuxt/ui'
 
 import { LazyMapPartyIncomingTransferOffersDrawer, LazyMapPartyInventoryDrawer, LazyMapPartyTransferOfferViewDrawer, UiDataMedia } from '#components'
 
-import type { Party, PartyOrder, PartyOrderType, PartyStatus, TransferOfferParty } from '~/models/strategus/party'
+import type { Party, PartyOrder, PartyOrderType, TransferOfferParty } from '~/models/strategus/party'
 
 import { useParty } from '~/composables/strategus/use-party'
 import { PARTY_ORDER_TYPE, PARTY_STATUS } from '~/models/strategus/party'

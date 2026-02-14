@@ -2,7 +2,7 @@
 import type { LeafletMouseEvent } from 'leaflet'
 
 import { LCircle, LIcon, LMarker, LTooltip } from '@vue-leaflet/vue-leaflet'
-import { strategusMaxPartyTroops, strategusMinPartyTroops } from '~root/data/constants.json'
+// import { strategusMaxPartyTroops, strategusMinPartyTroops } from '~root/data/constants.json'
 
 import type { PartyVisible } from '~/models/strategus/party'
 
@@ -24,7 +24,7 @@ defineEmits<{ click: [LeafletMouseEvent] }>()
 // })
 
 // TODO: FIXME: clan mates,
-const markerColor = computed(() => (isSelf ? '#34d399' : '#ef4444')) // TODO: colors
+// const markerColor = computed(() => (isSelf ? '#34d399' : '#ef4444')) // TODO: colors
 </script>
 
 <template>
@@ -40,15 +40,16 @@ const markerColor = computed(() => (isSelf ? '#34d399' : '#ef4444')) // TODO: co
       >
         <div class="flex items-center justify-center gap-1 rounded-sm bg-muted/20 py-0.5 pr-1">
           <UserAvatar
-            :avatar="party?.user.avatar || ''"
-            :name="party?.user.name || ''"
+            :avatar="party.user.avatar || ''"
+            :name="party.user.name || ''"
             size="xl"
             :is-self
           />
 
           <div class="flex flex-col gap-0.5">
             <ClanTagIcon
-              :color="party?.user.clanMembership?.clan.primaryColor || ''" class="size-5"
+              v-if="party.user.clanMembership?.clan"
+              :color="party.user.clanMembership.clan.primaryColor" class="size-5"
             />
             <span class="text-center font-medium text-highlighted">{{ $n(party.troops, 'compact') }}</span>
           </div>

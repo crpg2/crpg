@@ -1,10 +1,9 @@
 import { useIntervalFn } from '@vueuse/core'
 
-import type { PartyOrder, StrategusUpdate, UpdatePartyOrder } from '~/models/strategus/party'
+import type { StrategusUpdate, UpdatePartyOrder } from '~/models/strategus/party'
 
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { BATTLE_SIDE } from '~/models/strategus/battle'
-import { PARTY_ORDER_TYPE, PARTY_STATUS } from '~/models/strategus/party'
+import { PARTY_ORDER_TYPE } from '~/models/strategus/party'
 import {
   getSelfUpdate,
   mapPartyOrderToUpdateOrder,
