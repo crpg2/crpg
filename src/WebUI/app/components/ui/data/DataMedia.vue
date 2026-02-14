@@ -42,17 +42,17 @@ const variants = tv({
       md: {
         root: 'gap-1',
         icon: 'size-5',
-        label: 'text-base',
+        label: 'text-sm',
       },
       lg: {
         root: 'gap-1',
         icon: 'size-6',
-        label: 'text-lg',
+        label: 'text-base',
       },
       xl: {
         root: 'gap-1',
         icon: 'size-7',
-        label: 'text-xl',
+        label: 'text-lg',
       },
     },
   },
@@ -75,10 +75,7 @@ const classes = computed(() => variants({
     </slot>
 
     <slot v-bind="{ classes: classes.label }">
-      <div
-        v-if="label"
-        :class="classes.label()"
-      >
+      <div v-if="label" :class="classes.label()">
         {{ label }}
       </div>
     </slot>

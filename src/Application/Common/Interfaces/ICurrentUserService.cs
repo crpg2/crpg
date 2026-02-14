@@ -7,14 +7,8 @@ public interface ICurrentUserService
     public UserClaims? User { get; }
 }
 
-public class UserClaims
+public class UserClaims(int id, Role role)
 {
-    public UserClaims(int id, Role role)
-    {
-        Id = id;
-        Role = role;
-    }
-
-    public int Id { get; }
-    public Role Role { get; }
+    public int Id { get; } = id;
+    public Role Role { get; } = role;
 }

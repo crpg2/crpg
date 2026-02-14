@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
-import { LazyBattleManageDrawer, LazyBattleMercenaryApplicationDialog } from '#components'
+import { BattleMercenaryApplicationStatusBadge, LazyBattleManageDrawer, LazyBattleMercenaryApplicationDialog, UButton, UTooltip } from '#components'
 
 import type { BattleParticipant, BattleSide } from '~/models/strategus/battle'
 
 import { useBattle, useBattleMercenaryApplication, useBattleParticipants } from '~/composables/strategus/battle/use-battle'
 import { BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_PARTICIPANT_TYPE, BATTLE_SIDE } from '~/models/strategus/battle'
 import { BATTLE_QUERY_KEYS } from '~/queries'
-import { getBattle,
-} from '~/services/strategus/battle-service'
+import { getBattle } from '~/services/strategus/battle-service'
 
 definePageMeta({
   layoutOptions: {
@@ -101,6 +100,7 @@ const openBattleAsMercenaryDialog = (side: BattleSide) => {
       await removeBattleApplication(side)
       close()
     },
+    // TODO: FIXME: перенести в таблицу
     async onLeaveFromBattle() {
       if (!selfBattleParticipant.value) {
         return
@@ -128,7 +128,7 @@ const checkCanApply = (side: BattleSide): ApplyState | null => {
   if (otherSideStatus === BATTLE_MERCENARY_APPLICATION_STATUS.Accepted) {
     return {
       disabled: {
-        reason: 'First leave the fight for the other side.',
+        reason: 'First leave the fight for the other side.', // TODO: FIXME: i18n
       },
     }
   }
@@ -146,6 +146,56 @@ const canManageAttackerSide = computed(() => checkCanManage(BATTLE_SIDE.Attacker
 const canManageDefenderSide = computed(() => checkCanManage(BATTLE_SIDE.Defender))
 
 const checkCanManageParticipant = (participant: BattleParticipant) => participant.type !== BATTLE_PARTICIPANT_TYPE.Party
+
+const renderBattleMercenaryApplicationStatusBadge = (side: BattleSide) => {
+  const sideInfo = getSideInfo(side)
+
+  if (!sideInfo.mercenaryApplication) {
+    return null
+  }
+
+  return h(BattleMercenaryApplicationStatusBadge, {
+    status: sideInfo.mercenaryApplication.status,
+    onClick: () => openBattleAsMercenaryDialog(side),
+  })
+}
+
+const renderSideViewAppendSlot = (side: BattleSide) => {
+  const canApply = side === BATTLE_SIDE.Attacker
+    ? checkCanApply(BATTLE_SIDE.Attacker)
+    : checkCanApply(BATTLE_SIDE.Defender)
+
+  if (canApply) {
+    return h(UTooltip, {
+      disabled: !canApply.disabled,
+      text: canApply.disabled?.reason,
+    }, () =>
+      h(UButton, {
+        label: 'Apply as mercenary',
+        icon: 'crpg:mercenary',
+        variant: 'subtle',
+        disabled: Boolean(canApply.disabled),
+        class: 'cursor-pointer',
+        onClick: () => openBattleAsMercenaryDialog(side),
+      }))
+  }
+
+  const canManage = side === BATTLE_SIDE.Attacker
+    ? canManageAttackerSide.value
+    : canManageDefenderSide.value
+
+  if (canManage) {
+    return h(UButton, {
+      label: 'Manage battle',
+      icon: 'crpg:settings',
+      variant: 'subtle',
+      class: 'cursor-pointer',
+      onClick: () => openManageDrawer(side),
+    })
+  }
+
+  return null
+}
 </script>
 
 <template>
@@ -172,18 +222,18 @@ const checkCanManageParticipant = (participant: BattleParticipant) => participan
       <UiDecorSeparator />
 
       <BattleSideViewGroup
-        :battle
-        :can-apply="{
-          Attacker: checkCanApply(BATTLE_SIDE.Attacker),
-          Defender: checkCanApply(BATTLE_SIDE.Defender),
-        }"
-        :can-manage="{
-          Attacker: canManageAttackerSide,
-          Defender: canManageDefenderSide,
-        }"
-        @open-mercenary-application="openBattleAsMercenaryDialog"
-        @open-manage="openManageDrawer"
-      />
+        :battle-type="battle.type"
+        :attacker="battle.attacker"
+        :defender="battle.defender"
+      >
+        <template #topbar-prepend="{ side }">
+          <component :is="renderBattleMercenaryApplicationStatusBadge(side)" />
+        </template>
+
+        <template #append="{ side }">
+          <component :is="renderSideViewAppendSlot(side)" />
+        </template>
+      </BattleSideViewGroup>
 
       <BattleSideComparison :battle />
     </div>

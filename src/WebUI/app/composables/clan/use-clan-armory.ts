@@ -19,8 +19,6 @@ export const useClanArmory = () => {
     isLoading: isLoadingClanArmory,
   } = useAsyncState(() => getClanArmory(clan.value.id), [], { resetOnExecute: false })
 
-  const getClanArmoryItem = (userItemId: number) => clanArmory.value.find(ca => ca.userItemId === userItemId)
-
   const addItem = (itemId: number) => addItemToClanArmory(clan.value.id, itemId)
 
   const removeItem = (itemId: number) => removeItemFromClanArmory(clan.value.id, itemId)
@@ -33,7 +31,6 @@ export const useClanArmory = () => {
     clanArmory,
     isLoadingClanArmory,
     loadClanArmory,
-    getClanArmoryItem,
     addItem,
     borrowItem,
     removeItem,

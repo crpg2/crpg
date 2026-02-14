@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from '@nuxt/ui'
 
-import NumberFlow from '@number-flow/vue'
-
 import type { Role } from '~/models/role'
 import type { User } from '~/models/user'
 
@@ -87,12 +85,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
 <template>
   <div class="flex items-center gap-3">
     <UTooltip :text="$t('user.field.gold')">
-      <AppCoin>
-        <NumberFlow
-          :value="user.gold"
-          locales="en-US"
-        />
-      </AppCoin>
+      <AppCoin :value="user.gold" />
     </UTooltip>
 
     <UTooltip :text="$t('user.field.heirloom')">
@@ -118,12 +111,12 @@ const items = computed<DropdownMenuItem[][]>(() => [
           :show="Boolean(user.unreadNotificationsCount)"
           inset
           size="2xl"
-          :ui="{ base: 'bg-[var(--color-notification)]' }"
+          :ui="{ base: 'bg-notification' }"
         >
           <UButton
             variant="outline"
             color="neutral"
-            icon="crpg:dots"
+            icon="i-lucide-ellipsis-vertical"
             active-variant="subtle"
             :active="open"
             size="xl"

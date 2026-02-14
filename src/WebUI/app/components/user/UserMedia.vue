@@ -42,15 +42,18 @@ const clanSize = computed(() => ({
 <template>
   <UiDataCell :inline>
     <template #leftContent>
-      <UAvatar
-        :src="user.avatar || ''"
+      <UserAvatar
+        :avatar="user.avatar || ''"
+        :name="user.name"
         :size="avatarSize"
-        :alt="user.name"
-        :class="[{ 'ring-2 ring-success': isSelf }]"
+        :is-self
       />
     </template>
 
-    <div class="flex flex-col items-start gap-0.5">
+    <div
+      v-if="!hiddenPlatform || !hiddenTitle || (!hiddenClan && user.clanMembership)"
+      class="flex flex-col items-start gap-0.5"
+    >
       <UiDataMedia layout="reverse" :size>
         <template
           v-if="!hiddenPlatform"
@@ -70,13 +73,10 @@ const clanSize = computed(() => ({
         >
           <div
             class="max-w-32 truncate leading-none"
-            :class="labelClasses()"
+            :class="[labelClasses()]"
             :title="user.name"
           >
             {{ user.name }}
-            <template v-if="isSelf">
-              ({{ $t('you') }})
-            </template>
           </div>
         </template>
       </UiDataMedia>

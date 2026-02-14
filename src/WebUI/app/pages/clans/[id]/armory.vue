@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { useStorage } from '@vueuse/core'
+import { ClanArmoryItemDetail } from '#components'
+import { h } from 'vue'
 
+import type { GroupedCompareItemsResult } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useClan } from '~/composables/clan/use-clan'
@@ -36,7 +39,6 @@ const {
   loadClanArmory,
   removeItem,
   returnItem,
-  getClanArmoryItem,
 } = useClanArmory()
 
 const [onBorrowFromClanArmory] = useAsyncCallback(async (userItemId: number) => {
@@ -95,6 +97,33 @@ const sortingConfig: SortingConfig = {
 const sortingModel = ref<string>('rank_desc')
 
 const { closeItemDetail, toggleItemDetail } = useItemDetail()
+
+const renderClanArmoryItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsResult: GroupedCompareItemsResult[]) => {
+  const armoryItem = items.value.find(i => i.item.id === opendeItem.id)
+
+  if (!armoryItem) {
+    return null
+  }
+
+  return h(ClanArmoryItemDetail, {
+    clanArmoryItem: armoryItem,
+    lender: getClanArmoryItemLender(armoryItem.userId, clanMembers.value)!,
+    borrower: getClanArmoryItemBorrower(armoryItem.borrowerUserId, clanMembers.value)!,
+    compareResult: compareItemsResult.find(cr => cr.type === armoryItem.item.type)?.compareResult,
+    onBorrow: () => {
+      onBorrowFromClanArmory(armoryItem.userItemId)
+      closeItemDetail(opendeItem.id)
+    },
+    onRemove: () => {
+      onRemoveFromClanArmory(armoryItem.userItemId)
+      closeItemDetail(opendeItem.id)
+    },
+    onReturn: () => {
+      onReturnFromClanArmory(armoryItem.userItemId)
+      closeItemDetail(opendeItem.id)
+    },
+  })
+}
 </script>
 
 <template>
@@ -108,10 +137,10 @@ const { closeItemDetail, toggleItemDetail } = useItemDetail()
       <ItemGrid
         v-if="Boolean(items.length)"
         v-model:sorting="sortingModel"
-        :items="items"
+        :items
         :sorting-config="sortingConfig"
       >
-        <template #filter-leading>
+        <template #filter-trailing>
           <UDropdownMenu
             size="xl"
             :items="[
@@ -138,13 +167,13 @@ const { closeItemDetail, toggleItemDetail } = useItemDetail()
               inset
               size="2xl"
               :show="hideOwnedItemsModel || showOnlyAvailableItems"
-              :ui="{ base: 'bg-[var(--color-notification)]' }"
+              :ui="{ base: 'bg-notification' }"
             >
               <UButton
                 variant="subtle"
                 color="neutral"
                 size="xl"
-                icon="crpg:dots"
+                icon="i-lucide-ellipsis-vertical"
               />
             </UChip>
           </UDropdownMenu>
@@ -155,39 +184,14 @@ const { closeItemDetail, toggleItemDetail } = useItemDetail()
             :clan-armory-item="clanArmoryItem"
             :lender="getClanMember(clanArmoryItem.userId)!.user"
             :borrower="getClanArmoryItemBorrower(clanArmoryItem.borrowerUserId, clanMembers)"
-            @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, {
-              id: clanArmoryItem.item.id,
-              userItemId: clanArmoryItem.userItemId,
-            })"
+            @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, clanArmoryItem.item.id)"
           />
         </template>
 
-        <template #footer>
-          <div />
+        <template #item-detail="{ item, compareItemsResult }">
+          <component :is="renderClanArmoryItemDetail(item, compareItemsResult)" />
         </template>
       </ItemGrid>
     </div>
-
-    <ItemDetailGroup>
-      <template #default="di">
-        <ClanArmoryItemDetail
-          :clan-armory-item="getClanArmoryItem(di.userItemId)!"
-          :lender="getClanArmoryItemLender(getClanArmoryItem(di.userItemId)!.userId, clanMembers)!"
-          :borrower="getClanArmoryItemBorrower(getClanArmoryItem(di.userItemId)!.borrowerUserId, clanMembers)"
-          @borrow="() => {
-            closeItemDetail(di);
-            onBorrowFromClanArmory(di.userItemId);
-          }"
-          @remove="() => {
-            closeItemDetail(di);
-            onRemoveFromClanArmory(di.userItemId);
-          }"
-          @return="() => {
-            closeItemDetail(di);
-            onReturnFromClanArmory(di.userItemId);
-          }"
-        />
-      </template>
-    </ItemDetailGroup>
   </UContainer>
 </template>

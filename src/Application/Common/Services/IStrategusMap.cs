@@ -8,6 +8,8 @@ internal interface IStrategusMap
 {
     double ViewDistance { get; }
 
+    double InteractionDistance { get; }
+
     /// <summary>Checks if two points are close enough to be considered equivalent.</summary>
     bool ArePointsEquivalent(Point pointA, Point pointB);
 
@@ -33,7 +35,6 @@ internal class StrategusMap : IStrategusMap
     private readonly double _width;
     private readonly double _height;
     private readonly double _equivalentDistance;
-    private readonly double _interactionDistance;
     private readonly Point _spawningPositionCenter;
     private readonly double _spawningPositionRadius;
 
@@ -43,7 +44,7 @@ internal class StrategusMap : IStrategusMap
         _width = constants.StrategusMapWidth;
         _height = constants.StrategusMapHeight;
         _equivalentDistance = constants.StrategusEquivalentDistance;
-        _interactionDistance = constants.StrategusInteractionDistance;
+        InteractionDistance = constants.StrategusInteractionDistance;
         ViewDistance = constants.StrategusViewDistance;
         double[] spawningPosition = constants.StrategusSpawningPositionCenter;
         _spawningPositionCenter = new Point(spawningPosition[0], spawningPosition[1]);
@@ -51,6 +52,8 @@ internal class StrategusMap : IStrategusMap
     }
 
     public double ViewDistance { get; }
+
+    public double InteractionDistance { get; }
 
     /// <inheritdoc />
     public bool ArePointsEquivalent(Point pointA, Point pointB)
@@ -61,7 +64,7 @@ internal class StrategusMap : IStrategusMap
     /// <inheritdoc />
     public bool ArePointsAtInteractionDistance(Point pointA, Point pointB)
     {
-        return pointA.EqualsExact(pointB, _interactionDistance);
+        return pointA.EqualsExact(pointB, InteractionDistance);
     }
 
     /// <inheritdoc />

@@ -80,7 +80,6 @@ fetchUserRestriction()
       <slot />
     </main>
 
-    <!-- TODO: FIXME: - Стратегус v-if="!route.meta.noFooter" -->
-    <AppLayoutFooter :h-h-event class="ring ring-default" />
+    <AppLayoutFooter v-if="!route.meta.layoutOptions?.noFooter" :h-h-event class="ring ring-default" />
   </div>
 </template>

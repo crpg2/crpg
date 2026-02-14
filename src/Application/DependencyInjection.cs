@@ -3,6 +3,7 @@ using Crpg.Application.Common.Behaviors;
 using Crpg.Application.Common.Files;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Services;
+using Crpg.Application.Parties.Services;
 using Crpg.Sdk.Abstractions;
 using FluentValidation;
 using MaxMind.GeoIP2;
@@ -44,6 +45,7 @@ public static class DependencyInjection
             .AddSingleton<IGeoIpService>(CreateGeoIpService())
             .AddSingleton<IStrategusMap, StrategusMap>()
             .AddSingleton<IStrategusSpeedModel, StrategusSpeedModel>()
+            .AddSingleton<IStrategusRouting, StrategusRouting>()
             .AddSingleton<IBattleService, BattleService>()
             .AddSingleton<IBattleScheduler>(strategusBattleScheduler)
             .AddSingleton<ICharacterClassResolver, CharacterClassResolver>()
@@ -51,6 +53,7 @@ public static class DependencyInjection
             .AddSingleton(constants)
             .AddSingleton<IItemsSource, FileItemsSource>()
             .AddSingleton<ISettlementsSource, FileSettlementsSource>()
+            .AddScoped<IPartyTransferOfferValidationService, PartyTransferOfferValidationService>()
             .AddValidatorsFromAssemblyContaining(typeof(DependencyInjection));
 
         return services;

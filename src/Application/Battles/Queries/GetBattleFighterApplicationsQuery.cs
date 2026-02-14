@@ -35,7 +35,7 @@ public record GetBattleFighterApplicationsQuery : IMediatorRequest<IList<BattleF
                 .AsSplitQuery()
                 .Include(b => b.Fighters.Where(f => f.PartyId == req.PartyId))
                 .Include(b => b.FighterApplications.Where(a => req.Statuses.Contains(a.Status)))
-                .ThenInclude(a => a.Party!).ThenInclude(h => h.User)
+                    .ThenInclude(a => a.Party!.User!.ClanMembership!.Clan)
                 .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {
@@ -45,7 +45,8 @@ public record GetBattleFighterApplicationsQuery : IMediatorRequest<IList<BattleF
             BattleFighter? fighter = battle.Fighters.FirstOrDefault();
             // If the fighter is a commander, return all applications of their side else return only the party applications.
             var applications = battle.FighterApplications
-                .Where(a => a.PartyId == req.PartyId || (fighter != null && fighter.Commander && a.Side == fighter.Side));
+                .Where(a => a.PartyId == req.PartyId || (fighter != null && fighter.Commander && a.Side == fighter.Side))
+                .OrderByDescending(a => a.CreatedAt);
             return new(_mapper.Map<IList<BattleFighterApplicationViewModel>>(applications));
         }
     }

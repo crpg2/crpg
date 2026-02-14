@@ -52,7 +52,7 @@ public class UpdateSettlementCommandTest : TestBase
         Party party = new()
         {
             Status = PartyStatus.IdleInSettlement,
-            TargetedSettlement = settlement,
+            CurrentSettlement = settlement,
             User = new User(),
         };
         ArrangeDb.Parties.Add(party);
@@ -81,7 +81,7 @@ public class UpdateSettlementCommandTest : TestBase
         {
             Status = PartyStatus.IdleInSettlement,
             Troops = 5,
-            TargetedSettlement = settlement,
+            CurrentSettlement = settlement,
             User = new User(),
         };
         ArrangeDb.Parties.Add(party);
@@ -110,7 +110,7 @@ public class UpdateSettlementCommandTest : TestBase
         {
             Status = PartyStatus.IdleInSettlement,
             Troops = 5,
-            TargetedSettlement = settlement,
+            CurrentSettlement = settlement,
             User = new User(),
         };
         ArrangeDb.Parties.Add(party);
@@ -142,7 +142,7 @@ public class UpdateSettlementCommandTest : TestBase
         {
             Status = PartyStatus.RecruitingInSettlement,
             Troops = 10,
-            TargetedSettlement = settlement,
+            CurrentSettlement = settlement,
             User = new User(),
         };
         ArrangeDb.Parties.Add(party);
@@ -176,7 +176,7 @@ public class UpdateSettlementCommandTest : TestBase
         {
             Status = PartyStatus.IdleInSettlement,
             Troops = 10,
-            TargetedSettlement = settlement,
+            CurrentSettlement = settlement,
             User = new User(),
         };
         ArrangeDb.Parties.Add(party);

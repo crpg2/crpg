@@ -19,7 +19,7 @@ const {
         x: item.bound.x + item.bound.width + 8,
         y: computeDetailCardYPosition(item.bound.y),
       }"
-      class="fixed cursor-move rounded-md bg-default shadow-lg select-none"
+      class="pointer-events-auto fixed cursor-move rounded-md bg-default shadow-lg select-none"
     >
       <UButton
         class="absolute top-0 right-0 z-10 translate-x-1/2 -translate-y-1/2 cursor-pointer"
@@ -27,7 +27,7 @@ const {
         size="xl"
         color="neutral"
         variant="subtle"
-        @click="closeItemDetail(item)"
+        @click="closeItemDetail(item.id)"
       />
 
       <slot v-bind="item" />

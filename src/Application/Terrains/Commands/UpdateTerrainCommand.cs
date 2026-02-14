@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
@@ -12,21 +13,15 @@ namespace Crpg.Application.Terrains.Commands;
 
 public record UpdateTerrainCommand : IMediatorRequest<TerrainViewModel>
 {
+    [JsonIgnore]
     public int Id { get; init; }
     public Polygon Boundary { get; set; } = default!;
 
-    internal class Handler : IMediatorRequestHandler<UpdateTerrainCommand, TerrainViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<UpdateTerrainCommand, TerrainViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdateTerrainCommand>();
-
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
         public async ValueTask<Result<TerrainViewModel>> Handle(UpdateTerrainCommand req, CancellationToken cancellationToken)
         {

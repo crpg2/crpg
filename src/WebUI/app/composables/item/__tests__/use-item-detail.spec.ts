@@ -1,9 +1,18 @@
 // @vitest-environment jsdom
 
 import { describe, expect, it, vi } from 'vitest'
-import { effectScope } from 'vue'
 
 import { _useItemDetail } from '../use-item-detail'
+
+const onBeforeRouteLeaveHook = vi.hoisted(() => ({
+  handler: undefined as undefined | (() => void),
+}))
+
+vi.mock('vue-router', () => ({
+  onBeforeRouteLeave: (handler: () => void) => {
+    onBeforeRouteLeaveHook.handler = handler
+  },
+}))
 
 const mockEl = { getBoundingClientRect: vi.fn(() => ({ width: 120, x: 50, y: 200 })) } as unknown as HTMLElement
 
@@ -12,11 +21,10 @@ describe('_useItemDetail', () => {
     const { openedItems, toggleItemDetail } = _useItemDetail()
 
     expect(openedItems.value).toHaveLength(0)
-    toggleItemDetail(mockEl, { id: '1', userItemId: 42 })
+    toggleItemDetail(mockEl, '1')
     expect(openedItems.value).toHaveLength(1)
     expect(openedItems.value[0]).toMatchObject({
       id: '1',
-      userItemId: 42,
       bound: { x: 50, y: 200, width: 120 },
     })
   })
@@ -24,22 +32,22 @@ describe('_useItemDetail', () => {
   it('toggles item off when already open', () => {
     const { openedItems, toggleItemDetail } = _useItemDetail()
 
-    toggleItemDetail(mockEl, { id: '1', userItemId: 42 })
+    toggleItemDetail(mockEl, '1')
     expect(openedItems.value).toHaveLength(1)
 
-    toggleItemDetail(mockEl, { id: '1', userItemId: 42 })
+    toggleItemDetail(mockEl, '1')
     expect(openedItems.value).toHaveLength(0)
   })
 
   it('closes a specific item', () => {
     const { openedItems, toggleItemDetail, closeItemDetail } = _useItemDetail()
 
-    toggleItemDetail(mockEl, { id: '1', userItemId: 42 })
-    toggleItemDetail(mockEl, { id: '2', userItemId: 99 })
+    toggleItemDetail(mockEl, '1')
+    toggleItemDetail(mockEl, '2')
 
     expect(openedItems.value).toHaveLength(2)
 
-    closeItemDetail({ id: '1', userItemId: 42, bound: { x: 0, y: 0, width: 0 } })
+    closeItemDetail('1')
     expect(openedItems.value).toHaveLength(1)
     expect(openedItems.value[0]?.id).toBe('2')
   })
@@ -59,7 +67,7 @@ describe('_useItemDetail', () => {
 
   it('returns correct element bounds', () => {
     const { toggleItemDetail, openedItems } = _useItemDetail()
-    toggleItemDetail(mockEl, { id: '1', userItemId: 99 })
+    toggleItemDetail(mockEl, '1')
 
     const bound = openedItems.value[0]?.bound
     expect(bound).toEqual({ width: 120, x: 50, y: 200 })
@@ -68,8 +76,8 @@ describe('_useItemDetail', () => {
   it('handles Escape key to close last item when setListeners = true', () => {
     const { openedItems, toggleItemDetail } = _useItemDetail()
 
-    toggleItemDetail(mockEl, { id: 'a', userItemId: 1 })
-    toggleItemDetail(mockEl, { id: 'b', userItemId: 2 })
+    toggleItemDetail(mockEl, 'a')
+    toggleItemDetail(mockEl, 'b')
 
     expect(openedItems.value).toHaveLength(2)
 
@@ -79,23 +87,18 @@ describe('_useItemDetail', () => {
     expect(openedItems.value[0]?.id).toBe('a')
   })
 
-  it('removes keydown listener and clears openedItems on scope dispose', () => {
+  it('removes keydown listener and clears openedItems on route leave', () => {
     const removeSpy = vi.spyOn(window, 'removeEventListener')
 
-    const scope = effectScope()
-    let composable: ReturnType<typeof _useItemDetail>
+    const composable = _useItemDetail()
+    composable.toggleItemDetail(mockEl, 'a')
+    composable.toggleItemDetail(mockEl, 'b')
+    expect(composable.openedItems.value).toHaveLength(2)
 
-    scope.run(() => {
-      composable = _useItemDetail()
-      composable.toggleItemDetail(mockEl, { id: 'a', userItemId: 1 })
-      composable.toggleItemDetail(mockEl, { id: 'b', userItemId: 2 })
-      expect(composable.openedItems.value).toHaveLength(2)
-    })
-
-    scope.stop()
+    onBeforeRouteLeaveHook.handler?.()
 
     expect(removeSpy).toHaveBeenCalledWith('keydown', expect.any(Function))
 
-    expect(composable!.openedItems.value).toHaveLength(0)
+    expect(composable.openedItems.value).toHaveLength(0)
   })
 })

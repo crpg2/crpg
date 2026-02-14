@@ -47,17 +47,17 @@ public record RemoveBattleMercenaryApplicationCommand : IMediatorRequest
             }
 
             // Only applications with the status Pending can be deleted.
-            var mercenaryApplication = battle.MercenaryApplications.FirstOrDefault(a => a.Status == BattleMercenaryApplicationStatus.Pending && a.Character!.UserId == req.PartyId && a.Side == req.Side);
-            if (mercenaryApplication == null)
+            var application = battle.MercenaryApplications.FirstOrDefault(a => a.Status == BattleMercenaryApplicationStatus.Pending && a.Character!.UserId == req.PartyId && a.Side == req.Side);
+            if (application == null)
             {
                 return new(CommonErrors.ApplicationNotFound(0));
             }
 
-            _db.BattleMercenaryApplications.Remove(mercenaryApplication);
+            _db.BattleMercenaryApplications.Remove(application);
             await _db.SaveChangesAsync(cancellationToken);
 
             Logger.LogInformation("User '{0}' removed their mercenary application '{1}' out of battle '{2}' for the side '{3}'", req.PartyId,
-                mercenaryApplication.Id, req.BattleId, req.Side);
+                application.Id, req.BattleId, req.Side);
 
             return new Result();
         }

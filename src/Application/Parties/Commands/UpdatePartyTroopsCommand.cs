@@ -11,16 +11,10 @@ public record UpdatePartyTroopsCommand : IMediatorRequest
 {
     public TimeSpan DeltaTime { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<UpdatePartyTroopsCommand>
+    internal class Handler(ICrpgDbContext db, Constants constants) : IMediatorRequestHandler<UpdatePartyTroopsCommand>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly Constants _constants;
-
-        public Handler(ICrpgDbContext db, Constants constants)
-        {
-            _db = db;
-            _constants = constants;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly Constants _constants = constants;
 
         public async ValueTask<Result> Handle(UpdatePartyTroopsCommand req, CancellationToken cancellationToken)
         {

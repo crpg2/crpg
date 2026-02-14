@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useVuelidate } from '@vuelidate/core'
 import {
   strategusMercenaryMaxWage,
   strategusMercenaryNoteMaxLength,
@@ -9,6 +10,7 @@ import type { BattleSide, BattleSideDetailed } from '~/models/strategus/battle'
 import { useCharacters, useCharactersProvider } from '~/composables/character/use-character'
 import { useUser } from '~/composables/user/use-user'
 import { BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/strategus/battle'
+import { errorMessagesToString, required } from '~/services/validators-service'
 
 const { sideInfo, onApply } = defineProps<{
   side: BattleSide
@@ -60,15 +62,26 @@ const onCancel = () => {
   emit('close', false)
 }
 
-const apply = () => {
-  if (applicationModel.value.characterId === null) {
+const $v = useVuelidate(
+  {
+    characterId: {
+      required: required(),
+    },
+  },
+  applicationModel,
+)
+
+const apply = async () => {
+  if (!(await $v.value.$validate()) || applicationModel.value.characterId === null) {
     return
   }
+
   // @ts-expect-error TODO:
   onApply(applicationModel.value)
 }
 const { execute } = useCharactersProvider()
 execute()
+
 const { user } = useUser()
 const { characters } = useCharacters()
 </script>
@@ -94,9 +107,9 @@ const { characters } = useCharacters()
 
         <UiDataContent :caption="$t('strategus.battle.sideTitle')" :label="side" layout="reverse" size="lg" />
 
-        <UiDataContent v-if="sideInfo.mercenaryApplication" :caption="$t('strategus.battle.mercenaryApplication.statusTitleShort')" layout="reverse" size="lg">
+        <UiDataContent v-if="sideInfo.mercenaryApplication" :caption="$t('application.statusTitle')" layout="reverse" size="lg">
           <div>
-            <BattleMercenaryApplicationStatusBadge :application-status="sideInfo.mercenaryApplication.status" />
+            <BattleMercenaryApplicationStatusBadge :status="sideInfo.mercenaryApplication.status" />
           </div>
         </UiDataContent>
       </div>
@@ -119,6 +132,7 @@ const { characters } = useCharacters()
         <UFormField
           :label="$t('strategus.battle.mercenaryApplication.form.character.label')"
           size="xl"
+          :error="errorMessagesToString($v.characterId.$errors)"
         >
           <CharacterSelect
             :readonly
@@ -151,8 +165,8 @@ const { characters } = useCharacters()
 
         <UFormField size="xl">
           <template #label>
-            <UiDataCell>
-              <template #leftContent>
+            <UiDataMedia>
+              <template #icon>
                 <UiSpriteSymbol
                   name="coin"
                   viewBox="0 0 18 18"
@@ -160,7 +174,7 @@ const { characters } = useCharacters()
                 />
               </template>
               {{ $t('strategus.battle.mercenaryApplication.form.wage.label') }}
-            </UiDataCell>
+            </UiDataMedia>
           </template>
 
           <template #hint>

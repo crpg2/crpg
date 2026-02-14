@@ -3,6 +3,9 @@ import type { AsyncData, AsyncDataOptions, NuxtApp, NuxtError } from 'nuxt/app'
 
 import { refreshNuxtData, useAsyncData } from 'nuxt/app'
 
+import { usePageLoading } from '~/composables/app/use-page-loading'
+import { usePollInterval } from '~/composables/utils/use-poll-interval'
+
 type AsyncDataCustomOptions<
   ResT,
   DataT = ResT,

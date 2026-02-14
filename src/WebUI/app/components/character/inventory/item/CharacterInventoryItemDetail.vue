@@ -188,7 +188,7 @@ const itemActions = computed(() => {
 
     <template #actions>
       <UDropdownMenu :items="itemActions" size="xl">
-        <UButton variant="subtle" color="neutral" size="xl" icon="crpg:dots" />
+        <UButton variant="subtle" color="neutral" size="xl" icon="i-lucide-ellipsis-vertical" />
 
         <template #sell-label>
           <div class="flex items-center gap-2">

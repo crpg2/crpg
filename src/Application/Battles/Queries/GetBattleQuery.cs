@@ -43,11 +43,13 @@ public record GetBattleQuery : IMediatorRequest<BattleDetailedViewModel>
                 return new(CommonErrors.BattleNotFound(req.BattleId));
             }
 
+            // TODO: FIXME: Should I make two separate query?
+            // Battle on the map (preparation), battle status > preparation
             // Battles in preparation shouldn't be visible to anyone but only to parties in sight on the map.
-            if (battle.Phase == BattlePhase.Preparation)
-            {
-                return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
-            }
+            // if (battle.Phase == BattlePhase.Preparation)
+            // {
+            //     return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
+            // }
 
             var nearestSettlement = await _db.Settlements
                 .OrderBy(s => s.Position.Distance(battle.Position))

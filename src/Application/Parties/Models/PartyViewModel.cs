@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using AutoMapper;
-using Crpg.Application.Clans.Models;
+using Crpg.Application.Battles.Models;
 using Crpg.Application.Common.Mappings;
 using Crpg.Application.Settlements.Models;
 using Crpg.Application.Users.Models;
@@ -15,17 +15,26 @@ public record PartyViewModel : IMapFrom<Party>
     public int Gold { get; init; }
     public int Troops { get; init; }
     public Point Position { get; init; } = default!;
+    public double Speed { get; set; }
     public PartyStatus Status { get; init; }
-    public MultiPoint Waypoints { get; init; } = MultiPoint.Empty;
     [JsonRequired]
-    public PartyVisibleViewModel? TargetedParty { get; init; }
+    public PartyVisibleViewModel? CurrentParty { get; init; }
     [JsonRequired]
-    public SettlementPublicViewModel? TargetedSettlement { get; init; }
+    public SettlementPublicViewModel? CurrentSettlement { get; init; }
+    [JsonRequired]
+    public BattleViewModel? CurrentBattle { get; init; }
+
+    public List<PartyTransferOfferViewModel> CurrentTransferOffers { get; set; } = [];
+
     public UserPublicViewModel User { get; init; } = default!;
+
+    public List<PartyOrderViewModel> Orders { get; set; } = [];
 
     public void Mapping(Profile profile)
     {
         profile.CreateMap<Party, PartyViewModel>()
-            .ForMember(h => h.Troops, opt => opt.MapFrom(u => (int)u.Troops));
+            .ForMember(h => h.Troops, opt => opt.MapFrom(u => (int)u.Troops))
+            .ForMember(p => p.Speed, opt => opt.Ignore())
+            .ForMember(p => p.CurrentTransferOffers, opt => opt.Ignore());
     }
 }

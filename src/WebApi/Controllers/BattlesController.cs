@@ -78,6 +78,24 @@ public class BattlesController : BaseController
     }
 
     /// <summary>
+    /// Remove a battle fighter from a battle.
+    /// </summary>
+    /// <param name="battleId">Battle id.</param>
+    /// <param name="fighterId">Fighter id.</param>
+    /// <response code="204">Removed.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpDelete("{battleId}/fighters/{fighterId}")]
+    public Task<ActionResult> RemoveBattleFighter([FromRoute] int battleId, [FromRoute] int fighterId)
+    {
+        return ResultToActionAsync(Mediator.Send(new RemoveBattleFighterCommand
+        {
+            PartyId = CurrentUser.User!.Id,
+            BattleId = battleId,
+            RemovedFighterId = fighterId,
+        }, CancellationToken.None));
+    }
+
+    /// <summary>
     /// Get battle fighter applications.
     /// </summary>
     /// <returns>
@@ -99,6 +117,19 @@ public class BattlesController : BaseController
     }
 
     /// <summary>
+    /// Remove battle fighter application.
+    /// </summary>
+    /// <response code="204">Removed.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpDelete("{battleId}/fighter-applications")]
+    public Task<ActionResult> RemoveBattleFighteryApplication(
+            [FromRoute] int battleId, [FromBody] RemoveBattleFighterApplicationCommand req)
+    {
+        req = req with { PartyId = CurrentUser.User!.Id, BattleId = battleId };
+        return ResultToActionAsync(Mediator.Send(req));
+    }
+
+    /// <summary>
     /// Accept/Decline battle fighter application.
     /// </summary>
     /// <response code="200">Ok.</response>
@@ -109,6 +140,22 @@ public class BattlesController : BaseController
     {
         req = req with { PartyId = CurrentUser.User!.Id, FighterApplicationId = applicationId };
         return ResultToActionAsync(Mediator.Send(req));
+    }
+
+    /// <summary>
+    /// Get battle items (inventory by fighter).
+    /// </summary>
+    /// <returns>The item stacks.</returns>
+    /// <response code="200">Ok.</response>
+    /// <response code="400">Bad request.</response>
+    [HttpGet("{battleId}/items")]
+    public Task<ActionResult<Result<IList<BattleFighterInventoryViewModel>>>> GetBattleItems([FromRoute] int battleId)
+    {
+        return ResultToActionAsync(Mediator.Send(new GetBattleItemsQuery
+        {
+            BattleId = battleId,
+            PartyId = CurrentUser.User!.Id,
+        }));
     }
 
     /// <summary>
@@ -134,7 +181,7 @@ public class BattlesController : BaseController
     /// <response code="204">Removed.</response>
     /// <response code="400">Bad Request.</response>
     [HttpDelete("{battleId}/participants/{participantId}")]
-    public Task<ActionResult> RemoveParticipant([FromRoute] int battleId, [FromRoute] int participantId)
+    public Task<ActionResult> RemoveBattleParticipant([FromRoute] int battleId, [FromRoute] int participantId)
     {
         return ResultToActionAsync(Mediator.Send(new RemoveBattleParticipantCommand
         {

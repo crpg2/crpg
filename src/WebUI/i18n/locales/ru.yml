@@ -147,6 +147,7 @@ action:
   kick: Выгнать
   confirm: Подтверждаю
   create: Создать
+  close: Закрыть
   search: Поиск
   send: Отправить
   apply: Принять
@@ -219,6 +220,14 @@ error:
       reproduce: Что вы делали перед возникновением ошибки
       repeat: Сможете ли вы последовательно воспроизвести эту ошибку.
   goToHomePage: Перейти на главную страницу
+
+application:
+  title: Заявка
+  statusTitle: Статус
+  status:
+    Pending: В ожидании
+    Accepted: Принята
+    Declined: Отклонена
 
 form:
   validate:
@@ -1553,11 +1562,6 @@ strategus:
     mercenaryApplication:
       title: Заявка наёмника
       statusTitle: Статус заявки наёмника
-      statusTitleShort: Статус
-      status:
-        Pending: В ожидании
-        Accepted: Принята
-        Declined: Отклонена
       form:
         character:
           label: Персонаж

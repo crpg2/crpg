@@ -4,27 +4,39 @@ import type { ColumnFiltersState } from '@tanstack/vue-table'
 
 import { functionalUpdate, getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useVueTable } from '@tanstack/vue-table'
 
-import type { Item, ItemType } from '~/models/item'
+import type { GroupedCompareItemsResult, Item, ItemType } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
 
-import { useMainHeader } from '~/composables/app/use-main-header'
-import { useStickySidebar } from '~/composables/use-sticky-sidebar'
+import { useItemDetail } from '~/composables/item/use-item-detail'
+// import { useMainHeader } from '~/composables/app/use-main-header'
+// import { useStickySidebar } from '~/composables/use-sticky-sidebar'
 import { ITEM_TYPE } from '~/models/item'
-import { getFacetsByItemType, getFilterFn } from '~/services/item-search-service'
+import { getAggregationsConfig, getFacetsByItemType, getFilterFn } from '~/services/item-search-service'
 import { aggregationsConfig } from '~/services/item-search-service/aggregations'
+import { createItemIndex } from '~/services/item-search-service/indexator'
+import { extractItem, getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
 
-const { sortingConfig, items, withPagination = true, loading = false } = defineProps<{
+const {
+  sortingConfig,
+  items,
+  withPagination = true,
+  loading = false,
+  size = 'xl',
+} = defineProps<{
   items: T[]
   sortingConfig: SortingConfig
   withPagination?: boolean
   loading?: boolean
+  size?: 'md' | 'xl'
 }>()
 
 const { t } = useI18n()
 
-const { mainHeaderHeight } = useMainHeader()
-const aside = useTemplateRef('aside')
-const { top: stickySidebarTop } = useStickySidebar(aside, mainHeaderHeight.value + 16, 16 /** 1rem */)
+// TODO: FIXME: либо выпилить, либо активировать условно, потому что в модалках это не нужно
+
+// const { mainHeaderHeight } = useMainHeader()
+// const aside = useTemplateRef('aside')
+// const { top: stickySidebarTop } = useStickySidebar(aside, mainHeaderHeight.value + 16, 16 /** 1rem */)
 
 const itemType = ref<ItemType>(ITEM_TYPE.Undefined)
 const itemTypes = computed(() => getFacetsByItemType(items.map(wrapper => wrapper.item.type)))
@@ -116,6 +128,24 @@ watch(() => items, () => {
 })
 
 const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, row) => out + row.original.item.price, 0))
+
+const showPagination = computed(() => grid.getRowCount() > pagination.value.pageSize)
+
+const { isOpen } = useItemDetail()
+
+const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
+  return groupItemsByTypeAndWeaponClass(
+    // TODO: ....
+    // find the open items
+    createItemIndex(items.filter(wrapper => isOpen(wrapper.item.id)).map(extractItem)),
+  )
+    .filter(group => group.items.length >= 2) // there is no point in comparing 1 item
+    .map(group => ({
+      compareResult: getCompareItemsResult(group.items, getAggregationsConfig(group.type, group.weaponClass)),
+      type: group.type,
+      weaponClass: group.weaponClass,
+    }))
+})
 </script>
 
 <template>
@@ -123,17 +153,18 @@ const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, ro
     <UiLoading :active="loading" />
 
     <div v-if="items.length" class="itemGrid grid h-full items-start gap-x-3 gap-y-4">
+      <!-- ref="aside"
+      :style="{ top: `${stickySidebarTop}px` }" -->
       <div
-        ref="aside"
         style="grid-area: aside"
         class="sticky top-0 left-0 flex flex-col items-center justify-center space-y-2"
-        :style="{ top: `${stickySidebarTop}px` }"
       >
         <ItemSearchFilterByType
           v-model:item-type="itemType"
           :item-types="itemTypes"
           orientation="vertical"
           with-all-categories
+          :size
         />
       </div>
 
@@ -144,22 +175,22 @@ const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, ro
           icon="crpg:search"
           variant="subtle"
           class="col-span-3 w-full"
-          size="xl"
+          :size
         >
           <template v-if="filterByNameModel?.length" #trailing>
             <UiInputClear @click="filterByNameModel = ''" />
           </template>
         </UInput>
 
-        <div class="col-span-2 flex gap-3">
+        <div class="col-span-2 flex items-center gap-3">
           <USelect
             v-model="sortingModel"
             class="flex-1"
             :items="sortingItems"
-            size="xl"
+            :size
           />
 
-          <slot name="filter-leading" />
+          <slot name="filter-trailing" />
         </div>
       </div>
 
@@ -177,7 +208,7 @@ const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, ro
 
       <div style="grid-area: footer" class="sticky bottom-4 z-10 space-y-3">
         <UiGridPagination
-          v-if="withPagination"
+          v-if="withPagination && showPagination"
           :table-api="toRef(() => grid)"
         />
 
@@ -194,6 +225,12 @@ const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, ro
     <UCard v-else-if="!loading">
       <UiResultNotFound :message="$t('character.inventory.empty')" />
     </UCard>
+
+    <ItemDetailGroup>
+      <template #default="item">
+        <slot name="item-detail" v-bind="{ item, compareItemsResult }" />
+      </template>
+    </ItemDetailGroup>
   </div>
 </template>
 

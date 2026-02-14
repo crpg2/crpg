@@ -1,4 +1,5 @@
 import type { TerrainType as _TerrainType, GeoJsonPolygon } from '#api'
+import type { Feature, FeatureCollection, Polygon } from 'geojson'
 import type { ValueOf } from 'type-fest'
 
 export const TERRAIN_TYPE = {
@@ -17,3 +18,10 @@ export interface Terrain {
   type: TerrainType
   boundary: GeoJsonPolygon
 }
+
+export interface TerrainProperties {
+  type: TerrainType
+}
+
+export type TerrainFeatureCollection = FeatureCollection<Polygon, TerrainProperties>
+export type TerrainFeature = Feature<Polygon, TerrainProperties>

@@ -56,7 +56,7 @@ public class GetSettlementItemsQueryTest : TestBase
         Party party = new()
         {
             Status = PartyStatus.IdleInSettlement,
-            TargetedSettlement = new Settlement(),
+            CurrentSettlement = new Settlement(),
             User = new User(),
         };
         ArrangeDb.Parties.Add(party);
@@ -81,7 +81,7 @@ public class GetSettlementItemsQueryTest : TestBase
         Party party = new()
         {
             Status = PartyStatus.IdleInSettlement,
-            TargetedSettlement = settlement,
+            CurrentSettlement = settlement,
             User = new User(),
         };
         ArrangeDb.Parties.Add(party);
@@ -114,7 +114,7 @@ public class GetSettlementItemsQueryTest : TestBase
         Party party = new()
         {
             Status = PartyStatus.IdleInSettlement,
-            TargetedSettlement = settlement,
+            CurrentSettlement = settlement,
             User = new User(),
             OwnedSettlements = { settlement },
         };
