@@ -68,6 +68,8 @@ public record RespondToPartyTransferOfferCommand : IMediatorRequest<PartyTransfe
                 return new(CommonErrors.TransferOfferInvalidStatus(req.TransferOfferId, offer.Status));
             }
 
+            // TODO: FIXME: валидации offeringParty статусов
+
             var offeringParty = offer.Party;
             if (offeringParty == null)
             {
@@ -109,6 +111,9 @@ public record RespondToPartyTransferOfferCommand : IMediatorRequest<PartyTransfe
                     Count = i.Count,
                 })]);
             }
+
+            // TODO: FIXME: SPEC
+            offeringParty.Status = PartyStatus.Idle;
 
             _db.PartyTransferOffers.Remove(offer);
 

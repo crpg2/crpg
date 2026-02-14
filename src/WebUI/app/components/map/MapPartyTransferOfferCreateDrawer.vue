@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import {
+  strategusMinPartyTroops,
+} from '~root/data/constants.json'
+
 import type { ItemStack, PartyVisible, TransferOfferPartyUpdate } from '~/models/strategus/party'
 
 import { useParty } from '~/composables/strategus/use-party'
@@ -29,6 +33,8 @@ const onCancel = () => {
 const onSubmit = (offer: TransferOfferPartyUpdate) => {
   emit('close', true, offer)
 }
+
+const maxTroops = computed(() => Math.max(0, partyState.value.party.troops - strategusMinPartyTroops))
 </script>
 
 <template>
@@ -58,15 +64,13 @@ const onSubmit = (offer: TransferOfferPartyUpdate) => {
     </template>
 
     <template #body>
-      <UCard>
-        <MapTransferForm
-          ref="transferForm"
-          :max-gold="partyState.party.gold"
-          :max-troops="partyState.party.troops"
-          :items
-          @submit="onSubmit"
-        />
-      </UCard>
+      <MapTransferForm
+        ref="transferForm"
+        :max-gold="partyState.party.gold"
+        :max-troops
+        :items
+        @submit="onSubmit"
+      />
     </template>
 
     <template #footer>

@@ -56,6 +56,7 @@ const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsR
     direction="top"
     :handle="false"
     handle-only
+    :dismissible="false"
     :ui="{
       header: 'flex items-center justify-center gap-4',
       container: 'w-full max-w-3xl mx-auto',

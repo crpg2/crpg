@@ -109,6 +109,7 @@ public record UpdatePartyOrdersCommand : IMediatorRequest
         public async ValueTask<Result> Handle(UpdatePartyOrdersCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
+                        .AsSplitQuery()
                         .Include(p => p.User!)
                             .ThenInclude(u => u.ClanMembership!.Clan)
                         .Include(p => p.Orders)

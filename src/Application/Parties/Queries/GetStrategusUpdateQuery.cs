@@ -39,6 +39,7 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
         public async ValueTask<Result<StrategusUpdate>> Handle(GetStrategusUpdateQuery req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
+                .AsNoTracking() // see PartiesController.UpdatePartyOrders. СCll this query once after executing the UpdatePartyOrdersCommand, we must reset the entire EF cache
                 .AsSplitQuery()
                 .Include(p => p.User!).ThenInclude(u => u.ClanMembership!.Clan)
                 // Load mounts items to compute movement speed.
