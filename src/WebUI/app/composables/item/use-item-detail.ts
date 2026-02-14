@@ -1,5 +1,6 @@
 import { createSharedComposable } from '@vueuse/core'
 import { ref } from 'vue'
+import { onBeforeRouteLeave } from 'vue-router'
 
 interface ElementBound {
   x: number

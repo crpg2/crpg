@@ -1,9 +1,18 @@
 // @vitest-environment jsdom
 
 import { describe, expect, it, vi } from 'vitest'
-import { effectScope } from 'vue'
 
 import { _useItemDetail } from '../use-item-detail'
+
+const onBeforeRouteLeaveHook = vi.hoisted(() => ({
+  handler: undefined as undefined | (() => void),
+}))
+
+vi.mock('vue-router', () => ({
+  onBeforeRouteLeave: (handler: () => void) => {
+    onBeforeRouteLeaveHook.handler = handler
+  },
+}))
 
 const mockEl = { getBoundingClientRect: vi.fn(() => ({ width: 120, x: 50, y: 200 })) } as unknown as HTMLElement
 
@@ -78,23 +87,18 @@ describe('_useItemDetail', () => {
     expect(openedItems.value[0]?.id).toBe('a')
   })
 
-  it('removes keydown listener and clears openedItems on scope dispose', () => {
+  it('removes keydown listener and clears openedItems on route leave', () => {
     const removeSpy = vi.spyOn(window, 'removeEventListener')
 
-    const scope = effectScope()
-    let composable: ReturnType<typeof _useItemDetail>
+    const composable = _useItemDetail()
+    composable.toggleItemDetail(mockEl, 'a')
+    composable.toggleItemDetail(mockEl, 'b')
+    expect(composable.openedItems.value).toHaveLength(2)
 
-    scope.run(() => {
-      composable = _useItemDetail()
-      composable.toggleItemDetail(mockEl, 'a')
-      composable.toggleItemDetail(mockEl, 'b')
-      expect(composable.openedItems.value).toHaveLength(2)
-    })
-
-    scope.stop()
+    onBeforeRouteLeaveHook.handler?.()
 
     expect(removeSpy).toHaveBeenCalledWith('keydown', expect.any(Function))
 
-    expect(composable!.openedItems.value).toHaveLength(0)
+    expect(composable.openedItems.value).toHaveLength(0)
   })
 })
