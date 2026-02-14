@@ -73,8 +73,10 @@ public class CreatePartyCommandTest : TestBase
         Assert.That(party.Troops, Is.EqualTo(1));
         Assert.That(party.Position, Is.EqualTo(new Point(150.0, 50.0)));
         Assert.That(party.Status, Is.EqualTo(PartyStatus.Idle));
-        Assert.That(party.Waypoints.Count, Is.EqualTo(0));
-        Assert.That(party.TargetedParty, Is.Null);
-        Assert.That(party.TargetedSettlement, Is.Null);
+        Assert.That(party.Orders.Count, Is.EqualTo(0));
+        Assert.That(party.CurrentTransferOffers.Count, Is.EqualTo(0));
+        Assert.That(party.CurrentParty, Is.Null);
+        Assert.That(party.CurrentSettlement, Is.Null);
+        Assert.That(party.CurrentBattle, Is.Null);
     }
 }

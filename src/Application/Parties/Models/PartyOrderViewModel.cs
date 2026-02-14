@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using AutoMapper;
 using Crpg.Application.Battles.Models;
 using Crpg.Application.Common.Mappings;
 using Crpg.Application.Settlements.Models;
@@ -22,4 +23,12 @@ public record PartyOrderViewModel : IMapFrom<PartyOrder>
     public IList<BattleJoinIntentViewModel> BattleJoinIntents { get; init; } = [];
     [JsonRequired]
     public PartyTransferOfferViewModel? TransferOfferPartyIntent { get; set; }
+
+    public void Mapping(Profile profile)
+    {
+        profile.CreateMap<PartyOrder, PartyOrderViewModel>()
+            .ForMember(p => p.PathSegments, opt => opt.Ignore())
+            .ForMember(p => p.BattleJoinIntents, opt => opt.Ignore())
+            .ForMember(p => p.TransferOfferPartyIntent, opt => opt.Ignore());
+    }
 }

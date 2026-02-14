@@ -33,6 +33,8 @@ public record PartyViewModel : IMapFrom<Party>
     public void Mapping(Profile profile)
     {
         profile.CreateMap<Party, PartyViewModel>()
-            .ForMember(h => h.Troops, opt => opt.MapFrom(u => (int)u.Troops));
+            .ForMember(h => h.Troops, opt => opt.MapFrom(u => (int)u.Troops))
+            .ForMember(p => p.Speed, opt => opt.Ignore())
+            .ForMember(p => p.CurrentTransferOffers, opt => opt.Ignore());
     }
 }

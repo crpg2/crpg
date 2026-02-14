@@ -51,13 +51,11 @@ internal class PartyTransferOfferValidationService : IPartyTransferOfferValidati
 
     public Error? ValidatePartyResources(Party party, int gold, float troops, ItemStackUpdate[] items, Constants constants)
     {
-        // Validate gold
         if (party.Gold < gold)
         {
             return CommonErrors.NotEnoughGold(gold, party.Gold);
         }
 
-        // Validate troops - must have enough to transfer and maintain minimum
         if (party.Troops < troops)
         {
             return CommonErrors.PartyNotEnoughTroops(party.Id);
@@ -69,7 +67,6 @@ internal class PartyTransferOfferValidationService : IPartyTransferOfferValidati
                 $"Cannot transfer {troops} troops as party must maintain at least {constants.StrategusMinPartyTroops} troops");
         }
 
-        // Validate items
         foreach (var item in items)
         {
             var partyItem = party.Items.FirstOrDefault(pi => pi.ItemId == item.ItemId);

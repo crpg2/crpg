@@ -43,7 +43,8 @@ public record GetBattleQuery : IMediatorRequest<BattleDetailedViewModel>
                 return new(CommonErrors.BattleNotFound(req.BattleId));
             }
 
-            // TODO: FIXME: подумать
+            // TODO: FIXME: Should I make two separate query?
+            // Battle on the map (preparation), battle status > preparation
             // Battles in preparation shouldn't be visible to anyone but only to parties in sight on the map.
             // if (battle.Phase == BattlePhase.Preparation)
             // {

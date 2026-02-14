@@ -4,9 +4,6 @@ using NetTopologySuite.Geometries;
 
 namespace Crpg.Domain.Entities.Parties;
 
-/// <summary>
-/// TODO:.
-/// </summary>
 public class PartyOrder
 {
     public int Id { get; set; }
@@ -14,7 +11,6 @@ public class PartyOrder
 
     public PartyOrderType Type { get; set; }
 
-    /// <summary>TODO:</summary>
     public int OrderIndex { get; set; }
 
     /// <summary>

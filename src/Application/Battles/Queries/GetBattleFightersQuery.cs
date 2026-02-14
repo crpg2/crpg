@@ -31,7 +31,7 @@ public record GetBattleFightersQuery : IMediatorRequest<IList<BattleFighterViewM
                 return new(CommonErrors.BattleNotFound(req.BattleId));
             }
 
-            // TODO:
+            // TODO: FIXME: Is this validation necessary?
             // Battles in preparation shouldn't be visible to anyone but only to parties in sight on the map.
             // if (battle.Phase == BattlePhase.Preparation)
             // {

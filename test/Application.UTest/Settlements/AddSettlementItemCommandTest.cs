@@ -61,7 +61,7 @@ public class AddSettlementItemCommandTest : TestBase
         Party party = new()
         {
             Status = PartyStatus.IdleInSettlement,
-            TargetedSettlement = new Settlement(),
+            CurrentSettlement = new Settlement(),
             User = new User(),
         };
         ArrangeDb.Parties.Add(party);
@@ -93,7 +93,7 @@ public class AddSettlementItemCommandTest : TestBase
         Party party = new()
         {
             Status = PartyStatus.RecruitingInSettlement,
-            TargetedSettlement = settlement,
+            CurrentSettlement = settlement,
             User = new User(),
             Items = { new PartyItem { Item = item0, Count = 5 } },
         };
@@ -126,7 +126,7 @@ public class AddSettlementItemCommandTest : TestBase
         Party party = new()
         {
             Status = PartyStatus.RecruitingInSettlement,
-            TargetedSettlement = settlement,
+            CurrentSettlement = settlement,
             User = new User(),
             Items = { new PartyItem { Item = item0, Count = 5 } },
         };
@@ -162,7 +162,7 @@ public class AddSettlementItemCommandTest : TestBase
         Party party = new()
         {
             Status = PartyStatus.RecruitingInSettlement,
-            TargetedSettlement = settlement,
+            CurrentSettlement = settlement,
             User = new User(),
             Items = new List<PartyItem>(),
         };
@@ -199,7 +199,7 @@ public class AddSettlementItemCommandTest : TestBase
         Party party = new()
         {
             Status = PartyStatus.RecruitingInSettlement,
-            TargetedSettlement = settlement,
+            CurrentSettlement = settlement,
             User = new User(),
             Items = new List<PartyItem>(),
             OwnedSettlements = { settlement },
@@ -236,7 +236,7 @@ public class AddSettlementItemCommandTest : TestBase
         Party party = new()
         {
             Status = PartyStatus.RecruitingInSettlement,
-            TargetedSettlement = settlement,
+            CurrentSettlement = settlement,
             User = new User(),
             Items = new List<PartyItem>(),
             OwnedSettlements = { settlement },
@@ -278,7 +278,7 @@ public class AddSettlementItemCommandTest : TestBase
         Party party = new()
         {
             Status = PartyStatus.IdleInSettlement,
-            TargetedSettlement = settlement,
+            CurrentSettlement = settlement,
             User = new User(),
             OwnedSettlements = { settlement },
         };

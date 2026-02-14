@@ -19,11 +19,12 @@ public record GetPartyItemsQuery : IMediatorRequest<IList<ItemStack>>
         public async ValueTask<Result<IList<ItemStack>>> Handle(GetPartyItemsQuery req, CancellationToken cancellationToken)
         {
             /*
-            / TODO: FIXME: добавить проверок, чтобы не было уязвимости
-            Инвентарь могут получать только:
-                - сам отряд
-                - лидер/командиры клана
-                - командир битвы, когда он смотрит battleFighterApplication
+            / TODO: FIXME: SPEC
+             Add checks to prevent vulnerabilities.
+            Only the following can receive inventory:
+            - The party itself
+            - Clan leaders/commanders
+            - The battle commander when viewing battleFighterApplication
             */
 
             var party = await _db.Parties
