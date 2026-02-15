@@ -740,6 +740,11 @@ export type ItemStackResult = {
     data: ItemStack | null;
 };
 
+export type ItemStackUpdate = {
+    itemId: string;
+    count: number;
+};
+
 export type ItemType = 'Undefined' | 'HeadArmor' | 'ShoulderArmor' | 'BodyArmor' | 'HandArmor' | 'LegArmor' | 'MountHarness' | 'Mount' | 'Shield' | 'Bow' | 'Crossbow' | 'OneHandedWeapon' | 'TwoHandedWeapon' | 'Polearm' | 'Thrown' | 'Arrows' | 'Bolts' | 'Pistol' | 'Musket' | 'Bullets' | 'Banner' | 'Ranged' | 'Ammo';
 
 export type ItemViewModel = {
@@ -799,7 +804,7 @@ export type PartyOrderCommandItemDto = {
     targetedSettlementId: number;
     targetedBattleId: number;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
-    transferOfferPartyIntent: TransferOfferPartyIntent | null;
+    transferOfferPartyIntent: PartyTransferOfferUpdate | null;
 };
 
 export type PartyOrderPathSegmentViewModel = {
@@ -830,9 +835,26 @@ export type PartyPublicViewModel = {
     troops: number;
 };
 
+export type PartySpeed = {
+    baseSpeed: number;
+    terrainSpeedFactor: number;
+    currentTerrainType?: TerrainType | null;
+    weightFactor: number;
+    mountInfluence: number;
+    troopInfluence: number;
+    baseSpeedWithoutTerrain: number;
+    finalSpeed: number;
+};
+
 export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'AwaitingPartyOfferDecision' | 'InBattle' | 'AwaitingBattleJoinDecision';
 
 export type PartyTransferOfferStatus = 'Intent' | 'Pending';
+
+export type PartyTransferOfferUpdate = {
+    gold: number;
+    troops: number;
+    items: Array<ItemStackUpdate>;
+};
 
 export type PartyTransferOfferViewModel = {
     id: number;
@@ -854,7 +876,7 @@ export type PartyViewModel = {
     gold: number;
     troops: number;
     position: GeoJsonPoint;
-    speed: number;
+    speed: PartySpeed;
     status: PartyStatus;
     currentParty: PartyVisibleViewModel | null;
     currentSettlement: SettlementPublicViewModel | null;
@@ -920,7 +942,7 @@ export type RespondToBattleMercenaryApplicationCommand = {
 
 export type RespondToPartyTransferOfferCommand = {
     accept: boolean;
-    accepted?: TransferOffer | null;
+    accepted?: PartyTransferOfferUpdate | null;
 };
 
 export type RestrictCommand = {
@@ -1045,28 +1067,6 @@ export type TerrainViewModelIListResult = {
 export type TerrainViewModelResult = {
     readonly errors: Array<Error> | null;
     data: TerrainViewModel | null;
-};
-
-export type TransferOffer = {
-    gold: number;
-    troops: number;
-    items: Array<TransferOfferItem>;
-};
-
-export type TransferOfferItem = {
-    itemId: string;
-    count: number;
-};
-
-export type TransferOfferPartyIntent = {
-    gold: number;
-    troops: number;
-    items: Array<TransferOfferPartyItem>;
-};
-
-export type TransferOfferPartyItem = {
-    itemId: string;
-    count: number;
 };
 
 export type UpdateBattleSideBriefingCommand = {
@@ -1496,7 +1496,7 @@ export type PartyOrderCommandItemDtoWritable = {
     targetedSettlementId: number;
     targetedBattleId: number;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
-    transferOfferPartyIntent: TransferOfferPartyIntent | null;
+    transferOfferPartyIntent: PartyTransferOfferUpdate | null;
 };
 
 export type PartyOrderPathSegmentViewModelWritable = {
@@ -1538,7 +1538,7 @@ export type PartyViewModelWritable = {
     gold: number;
     troops: number;
     position: GeoJsonPointWritable;
-    speed: number;
+    speed: PartySpeed;
     status: PartyStatus;
     currentParty: PartyVisibleViewModelWritable | null;
     currentSettlement: SettlementPublicViewModelWritable | null;

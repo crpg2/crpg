@@ -1,4 +1,6 @@
-﻿using Crpg.Domain.Entities.Parties;
+﻿using Crpg.Application.Parties.Models;
+using Crpg.Domain.Entities.Parties;
+using Crpg.Domain.Entities.Terrains;
 
 namespace Crpg.Application.Common.Services;
 
@@ -7,19 +9,43 @@ namespace Crpg.Application.Common.Services;
 /// </summary>
 internal interface IStrategusSpeedModel
 {
-    /// <summary>Compute the Party Speed.</summary>
-    double ComputePartySpeed(Party party);
+    /// <summary>Compute the Party Speed with detailed breakdown.</summary>
+    PartySpeed ComputePartySpeed(Party party, TerrainType? currentTerrainType = null);
 }
 
-internal class StrategusSpeedModel : IStrategusSpeedModel
+internal class StrategusSpeedModel(IStrategusRouting strategusRouting) : IStrategusSpeedModel
 {
-    /// <inheritdoc />
-    public double ComputePartySpeed(Party party)
-    {
-        const double baseSpeed = 1; // TODO: tune https://github.com/verdie-g/crpg/issues/195
-        const double terrainSpeedFactor = 1;
-        const double weightFactor = 1;
+    private readonly IStrategusRouting _strategusRouting = strategusRouting;
 
+    private readonly double baseSpeed = 1; // TODO: tune https://github.com/verdie-g/crpg/issues/195
+    private readonly double weightFactor = 1;
+    private readonly double forcedMarchSpeed = 2;
+
+    /// <inheritdoc />
+    public PartySpeed ComputePartySpeed(Party party, TerrainType? currentTerrainType)
+    {
+        double terrainSpeedFactor = currentTerrainType.HasValue
+            ? _strategusRouting.GetTerrainSpeedMultiplier(currentTerrainType.Value)
+            : 1.0;
+        double troopInfluence = TroopInfluence(party.Troops);
+        double mountInfluence = MountsInfluence(party.Troops, party.Items);
+        double baseSpeedWithoutTerrain = baseSpeed * weightFactor * mountInfluence * troopInfluence;
+
+        return new PartySpeed
+        {
+            BaseSpeed = baseSpeed,
+            TerrainSpeedFactor = terrainSpeedFactor,
+            CurrentTerrainType = currentTerrainType,
+            WeightFactor = weightFactor,
+            MountInfluence = mountInfluence,
+            TroopInfluence = troopInfluence,
+            BaseSpeedWithoutTerrain = baseSpeedWithoutTerrain,
+            FinalSpeed = baseSpeedWithoutTerrain * terrainSpeedFactor,
+        };
+    }
+
+    private static double TroopInfluence(float troops)
+    {
         // Troops                  | troopInfluence |
         // ------------------------+----------------+
         //  1                      |        2=2/1   |
@@ -28,14 +54,11 @@ internal class StrategusSpeedModel : IStrategusSpeedModel
         //  10000                  |          2/4   |
         // this divide the speed of the army by the order of magnitude of its size.
         // 10000 is four zeros so the denominator is 4
-        double troopInfluence = 2 / (1 + Math.Log10(1 + party.Troops / 10));
-        return baseSpeed * terrainSpeedFactor * weightFactor * MountsInfluence(party.Troops, party.Items) * troopInfluence;
+        return 2 / (1 + Math.Log10(1 + troops / 10));
     }
 
-    private static double MountsInfluence(float troops, List<PartyItem> partyItems)
+    private double MountsInfluence(float troops, List<PartyItem> partyItems)
     {
-        const double forcedMarchSpeed = 2;
-
         int mounts = 0;
         foreach (PartyItem partyItem in partyItems.OrderByDescending(i => i.Item!.Mount!.HitPoints))
         {

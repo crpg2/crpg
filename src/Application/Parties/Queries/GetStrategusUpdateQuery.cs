@@ -74,8 +74,14 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
                 .ProjectTo<BattleViewModel>(_mapper.ConfigurationProvider)
                 .ToArrayAsync(cancellationToken);
 
-            double speed = _strategusSpeedModel.ComputePartySpeed(party);
             var terrains = await _db.Terrains.ToArrayAsync(cancellationToken);
+
+            // Determine current terrain type for the party
+            var currentTerrain = terrains.FirstOrDefault(t => t.Boundary.Contains(party.Position));
+            TerrainType? currentTerrainType = currentTerrain?.Type;
+
+            // Calculate party speed with breakdown
+            var speed = _strategusSpeedModel.ComputePartySpeed(party, currentTerrainType);
 
             var partyVm = _mapper.Map<PartyViewModel>(party);
             partyVm.Speed = speed;
@@ -84,7 +90,7 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
             Point currentPosition = party.Position;
             foreach (var orderVm in partyVm.Orders)
             {
-                orderVm.PathSegments = BuildOrderPathSegments(currentPosition, orderVm, terrains, speed);
+                orderVm.PathSegments = BuildOrderPathSegments(currentPosition, orderVm, terrains, speed.BaseSpeedWithoutTerrain);
 
                 // Update current position to the end of this order for the next order in the queue
                 if (orderVm.PathSegments.Count > 0)

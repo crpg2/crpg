@@ -55,7 +55,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 
             foreach (var party in parties)
             {
-                double baseSpeed = _strategusSpeedModel.ComputePartySpeed(party);
+                double baseSpeed = _strategusSpeedModel.ComputePartySpeed(party).BaseSpeedWithoutTerrain;
                 double remainingTime = req.DeltaTime.TotalSeconds;
 
                 while (remainingTime > 0 && party.Orders.Count != 0)
