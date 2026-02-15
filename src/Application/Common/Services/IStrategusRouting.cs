@@ -23,7 +23,7 @@ public interface IStrategusRouting
     /// <returns>Interpolated point.</returns>
     Point InterpolatePoint(Point start, Point end, double ratio);
 
-    double GetTerrainSpeedMultiplier(TerrainType terrainType);
+    double GetTerrainSpeedMultiplier(TerrainType? terrainType);
 
     double GetTerrainSpeedMultiplier(Point position, Terrain[] terrains);
 }
@@ -50,9 +50,14 @@ internal class StrategusRouting() : IStrategusRouting
         { TerrainType.ShallowWater, 0.2 },
     };
 
-    public double GetTerrainSpeedMultiplier(TerrainType terrainType)
+    public double GetTerrainSpeedMultiplier(TerrainType? terrainType)
     {
-        return terrainSpeedMultiplier[terrainType];
+        if (terrainType == null)
+        {
+            return 1.0;
+        }
+
+        return terrainSpeedMultiplier[terrainType.Value];
     }
 
     public double GetTerrainSpeedMultiplier(Point position, Terrain[] terrains)

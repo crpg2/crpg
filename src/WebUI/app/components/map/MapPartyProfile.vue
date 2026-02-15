@@ -79,7 +79,7 @@ const orders = computed<OrderTimlineItem[]>(() => {
       const distance = order.pathSegments.reduce((sum, s) => sum + s.distance, 0) ?? 0
       totalDistance += distance
 
-      const estimatedTimeMs = party.speed > 0 ? (totalDistance / party.speed) * 1000 : 0
+      const estimatedTimeMs = party.speed.finalSpeed > 0 ? (totalDistance / party.speed.finalSpeed) * 1000 : 0 // TODO: проверить, надо среднюю скорость из отрезков
       const estimatedArrivalAt = new Date(nowMs + estimatedTimeMs)
 
       return {
@@ -228,8 +228,14 @@ function openOutgoingTransferOffer(transferOffer: TransferOfferParty) {
 
         <UTooltip text="Speed TODO: show calculate">
           <UButton variant="outline" block color="neutral">
-            <UiDataMedia icon="crpg:horse" :label="$n(party.speed)" />
+            <UiDataMedia icon="crpg:horse" :label="$n(party.speed.finalSpeed)" />
           </UButton>
+          <template #content>
+            <!-- TODO: FIXME: ui -->
+            <pre>
+              {{ party.speed }}
+            </pre>
+          </template>
         </UTooltip>
 
         <UTooltip>
