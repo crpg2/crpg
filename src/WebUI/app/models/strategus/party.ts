@@ -41,6 +41,7 @@ export interface Party extends PartyCommon {
   status: PartyStatus
   position: Point
   speed: PartySpeed
+  viewDistance: number
   orders: PartyOrder[]
   currentParty: PartyVisible | null
   currentSettlement: SettlementPublic | null

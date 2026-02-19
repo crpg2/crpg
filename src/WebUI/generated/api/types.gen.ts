@@ -877,6 +877,7 @@ export type PartyViewModel = {
     troops: number;
     position: GeoJsonPoint;
     speed: PartySpeed;
+    viewDistance: number;
     status: PartyStatus;
     currentParty: PartyVisibleViewModel | null;
     currentSettlement: SettlementPublicViewModel | null;
@@ -1539,6 +1540,7 @@ export type PartyViewModelWritable = {
     troops: number;
     position: GeoJsonPointWritable;
     speed: PartySpeed;
+    viewDistance: number;
     status: PartyStatus;
     currentParty: PartyVisibleViewModelWritable | null;
     currentSettlement: SettlementPublicViewModelWritable | null;
