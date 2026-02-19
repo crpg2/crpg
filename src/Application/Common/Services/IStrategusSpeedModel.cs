@@ -18,13 +18,13 @@ internal class StrategusSpeedModel(IStrategusRouting strategusRouting) : IStrate
     private readonly IStrategusRouting _strategusRouting = strategusRouting;
 
     private readonly double baseSpeed = 1; // TODO: tune https://github.com/verdie-g/crpg/issues/195
-    private readonly double weightFactor = 1;
+    private readonly double weightFactor = 1; // TODO: tune
     private readonly double forcedMarchSpeed = 2;
 
     /// <inheritdoc />
     public PartySpeed ComputePartySpeed(Party party, TerrainType? currentTerrainType)
     {
-        double terrainSpeedFactor = currentTerrainType.HasValue
+        double terrainInfluence = currentTerrainType.HasValue
             ? _strategusRouting.GetTerrainSpeedMultiplier(currentTerrainType.Value)
             : 1.0;
         double troopInfluence = TroopInfluence(party.Troops);
@@ -34,13 +34,13 @@ internal class StrategusSpeedModel(IStrategusRouting strategusRouting) : IStrate
         return new PartySpeed
         {
             BaseSpeed = baseSpeed,
-            TerrainSpeedFactor = terrainSpeedFactor,
+            TerrainInfluence = terrainInfluence,
             CurrentTerrainType = currentTerrainType,
             WeightFactor = weightFactor,
             MountInfluence = mountInfluence,
             TroopInfluence = troopInfluence,
             BaseSpeedWithoutTerrain = baseSpeedWithoutTerrain,
-            FinalSpeed = baseSpeedWithoutTerrain * terrainSpeedFactor,
+            FinalSpeed = baseSpeedWithoutTerrain * terrainInfluence,
         };
     }
 

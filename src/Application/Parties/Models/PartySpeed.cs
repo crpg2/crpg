@@ -11,7 +11,7 @@ public record PartySpeed
     public double BaseSpeed { get; init; }
 
     /// <summary>Terrain speed factor (from Terrain Type).</summary>
-    public double TerrainSpeedFactor { get; init; }
+    public double TerrainInfluence { get; init; }
 
     /// <summary>Current terrain type, if any.</summary>
     public TerrainType? CurrentTerrainType { get; init; }
