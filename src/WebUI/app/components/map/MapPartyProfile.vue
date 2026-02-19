@@ -18,7 +18,7 @@ defineEmits<{
 
 const { clearPartyOrders, updateParty } = useParty()
 
-const { n, t } = useI18n()
+const { t } = useI18n()
 const toast = useToast()
 
 function getOrderIcon(orderType: PartyOrderType): string {
@@ -226,15 +226,12 @@ function openOutgoingTransferOffer(transferOffer: TransferOfferParty) {
           <UButton icon="crpg:chest" block variant="outline" color="neutral" @click="openInventory" />
         </UTooltip>
 
-        <UTooltip text="Speed TODO: show calculate">
+        <UTooltip>
           <UButton variant="outline" block color="neutral">
             <UiDataMedia icon="crpg:horse" :label="$n(party.speed.finalSpeed)" />
           </UButton>
           <template #content>
-            <!-- TODO: FIXME: ui -->
-            <pre>
-              {{ party.speed }}
-            </pre>
+            <MapPartySpeedTooltipContent :speed="party.speed" />
           </template>
         </UTooltip>
 

@@ -58,7 +58,7 @@ export interface StrategusUpdate {
 
 export interface PartySpeed {
   baseSpeed: number
-  terrainSpeedFactor: number
+  terrainInfluence: number
   currentTerrainType?: TerrainType | null
   weightFactor: number
   mountInfluence: number
