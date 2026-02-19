@@ -16,6 +16,7 @@ public record PartyViewModel : IMapFrom<Party>
     public int Troops { get; init; }
     public Point Position { get; init; } = default!;
     public PartySpeed Speed { get; set; } = default!;
+    public double ViewDistance { get; set; }
     public PartyStatus Status { get; init; }
     [JsonRequired]
     public PartyVisibleViewModel? CurrentParty { get; init; }
@@ -35,6 +36,7 @@ public record PartyViewModel : IMapFrom<Party>
         profile.CreateMap<Party, PartyViewModel>()
             .ForMember(h => h.Troops, opt => opt.MapFrom(u => (int)u.Troops))
             .ForMember(p => p.Speed, opt => opt.Ignore())
+            .ForMember(p => p.ViewDistance, opt => opt.Ignore())
             .ForMember(p => p.CurrentTransferOffers, opt => opt.Ignore());
     }
 }
