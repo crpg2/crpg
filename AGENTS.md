@@ -46,5 +46,7 @@ Unit tests are located in the test/ directory with separate projects for each ma
 ## Bannerlord Source Code
 
 Decompiled source code of Bannerlord can be found using the environment variable `MB_SOURCES_PATH`. This code can be
-helpful to understand the internals of the game, the API, and the breaking changes between version. Read the AGENTS.md
+helpful to understand the internals of the game, the API, and the breaking changes between versions. Read the AGENTS.md
 there for more info.
+
+If the environment variable is not set and you would like to read Bannerlord source code, notify the user.
