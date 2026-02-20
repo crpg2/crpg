@@ -4,6 +4,9 @@ import type { LatLngBounds, Map } from 'leaflet'
 
 import { toValue } from 'vue'
 
+import type { SettlementPublic } from '~/models/strategus/settlement'
+
+import { SETTLEMENT_QUERY_KEYS } from '~/queries'
 import { shouldDisplaySettlement } from '~/services/strategus/map-service'
 import { getSettlement, getSettlements } from '~/services/strategus/settlement-service'
 import { positionToLatLng } from '~/utils/geometry'
@@ -50,15 +53,25 @@ export const useSettlements = (
   }
 }
 
-export const useSettlement = () => {
-  const { state: settlement, execute: loadSettlement, isLoading: loadingSettlement } = useAsyncState(
-    () => getSettlement(1), // TODO: FIXME:
-    null,
+export const useSettlementProvider = (settlementId: number) => {
+  return useAsyncData(
+    toCacheKey(SETTLEMENT_QUERY_KEYS.byId(settlementId)),
+    () => getSettlement(settlementId),
+    {
+      default: () => [],
+    },
   )
+}
+
+export const useSettlement = () => {
+  const route = useRoute('strategus-settlement-id')
+  const _key = SETTLEMENT_QUERY_KEYS.byId(Number(route.params.id))
+
+  const settlement = getAsyncData<SettlementPublic>(_key)
+  const refreshSettlement = refreshAsyncData(_key)
 
   return {
     settlement,
-    loadSettlement,
-    loadingSettlement,
+    refreshSettlement,
   }
 }

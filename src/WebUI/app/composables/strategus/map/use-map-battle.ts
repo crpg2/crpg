@@ -20,9 +20,6 @@ export const useMapBattleProvider = (battleId: number) => {
   return useAsyncData(
     toCacheKey(MAP_BATTLE_QUERY_KEYS.byId(battleId)),
     () => getBattle(battleId),
-    {
-      default: () => [],
-    },
   )
 }
 

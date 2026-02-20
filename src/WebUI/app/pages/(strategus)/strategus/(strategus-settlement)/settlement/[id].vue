@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import type { NavigationMenuItem } from '@nuxt/ui'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
 import { usePartyState } from '~/composables/strategus/use-party'
-import { useSettlement } from '~/composables/strategus/use-settlements'
+import { useSettlement, useSettlementProvider } from '~/composables/strategus/use-settlements'
 import { shouldPartyBeInSettlement } from '~/services/strategus/party-service'
 
 definePageMeta({
@@ -10,33 +11,28 @@ definePageMeta({
     async (to) => {
       const { partyState } = usePartyState()
 
-      if (!shouldPartyBeInSettlement(partyState.value.party)) {
+      const settlementId = Number((to as RouteLocationNormalizedLoaded<'strategus-settlement-id'>).params.id)
+
+      if (!shouldPartyBeInSettlement(partyState.value.party) || partyState.value.party.currentSettlement?.id !== settlementId) {
         return navigateTo({ name: 'strategus' })
       }
 
-      const settlementId = Number((to as RouteLocationNormalizedLoaded<'strategus-settlement-id'>).params.id)
-
       if (Number.isNaN(settlementId)) {
+        return navigateTo({ name: 'strategus' })
+      }
+
+      const { data: settlement, error } = await useSettlementProvider(settlementId)
+
+      if (!settlement.value || error.value) {
         return navigateTo({ name: 'strategus' })
       }
     },
   ],
 })
 
-// const { user } = toRefs(useUserStore())
-
 // const router = useRouter()
 
-// const { state: settlement, execute: loadSettlement, isLoading: loadingSettlement } = useAsyncState(
-//   () => getSettlement(Number(route.params.id)),
-//   null,
-// )
-
 const { settlement } = useSettlement()
-
-// provide(settlementKey, settlement)
-
-// const { party, moveParty } = injectStrict(partyKey)
 
 // async function leaveFromSettlement(): Promise<void> {
 //   await moveParty({
@@ -46,13 +42,34 @@ const { settlement } = useSettlement()
 //     name: 'Strategus',
 //   })
 // }
+const route = useRoute<'strategus-settlement-id'>()
+
+const navigationItems = computed<NavigationMenuItem[]>(() => [
+  {
+    label: 'ddd',
+    to: { name: 'strategus-battle-id', params: { id: route.params.id } },
+    active: route.name === 'strategus-settlement-id', // hack, [id].vue conflict with [id]/index.vue
+    icon: 'crpg:member',
+  },
+])
 </script>
 
 <template>
-  <UCard
-    class=""
-    variant="subtle"
-  >
+  <MapSidePage class="w-4xl">
+    <template #header>
+      <UiHeading variant="h2" tag="h1">
+        <SettlementMedia :settlement size="xl" />
+      </UiHeading>
+
+      <!-- <UiHeading variant="h2" tag="h1" :title="battleTitle" /> -->
+    </template>
+
+    <UNavigationMenu
+      variant="pill"
+      color="neutral"
+      class="flex w-full justify-center gap-4"
+      :items="navigationItems"
+    />
     <!-- class="flex h-[95%] w-2/5 flex-col space-y-4 overflow-hidden bg-default/90 p-6 backdrop-blur-sm" -->
     <!-- <header class="border-border-200 border-b pb-2">
 
@@ -67,7 +84,6 @@ const { settlement } = useSettlement()
           @click="leaveFromSettlement"
         />
 
-        <OLoading :active="loadingSettlement" :full-page="false" />
         <div v-if="settlement" class="flex items-center gap-5">
           <SettlementMedia :settlement="settlement" />
 
@@ -121,12 +137,6 @@ const { settlement } = useSettlement()
       </RouterLink>
     </nav> -->
 
-    <div class="h-full overflow-x-hidden overflow-y-auto">
-      <NuxtPage />
-    </div>
-
-    <footer class="border-border-200 flex items-center gap-5 border-t pt-2">
-      TODO:
-    </footer>
-  </UCard>
+    <NuxtPage />
+  </MapSidePage>
 </template>

@@ -2,8 +2,6 @@
 import { SomeRole } from '~/models/role'
 import { getSelfUpdate, registerParty } from '~/services/strategus/party-service'
 
-// import { useCharacters } from '~/composables/character/use-character'
-
 definePageMeta({
   layoutOptions: {
     bg: 'background-2.webp',
