@@ -328,21 +328,17 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
     }
 
     public override void CalculateDefendedBlowStunMultipliers(
-    Agent attackerAgent,
-    Agent defenderAgent,
-    CombatCollisionResult collisionResult,
-    WeaponComponentData attackerWeapon,
-    WeaponComponentData defenderWeapon,
-    ref float attackerStunPeriod,
-    ref float defenderStunPeriod)
+        Agent attackerAgent,
+        Agent defenderAgent,
+        CombatCollisionResult collisionResult,
+        WeaponComponentData attackerWeapon,
+        WeaponComponentData defenderWeapon,
+        ref float attackerStunPeriod,
+        ref float defenderStunPeriod)
     {
-        // Let base game handle normal stun logic
-        base.CalculateDefendedBlowStunMultipliers(
-            attackerAgent, defenderAgent, collisionResult,
-            attackerWeapon, defenderWeapon,
-            ref attackerStunPeriod, ref defenderStunPeriod);
+        attackerStunPeriod = 1.0f;
+        defenderStunPeriod = 1.0f;
 
-        // Only tweak for shield blocks
         if (collisionResult == CombatCollisionResult.Blocked && defenderAgent.WieldedOffhandWeapon.IsShield())
         {
             int shieldSkill = 0;
@@ -352,8 +348,6 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
             }
 
             defenderStunPeriod = 1 / MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
-
-            return;
         }
     }
 
