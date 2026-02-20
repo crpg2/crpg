@@ -22,7 +22,7 @@ export const updatePartyOrders = async (orders: UpdatePartyOrder[]): Promise<Str
 
 export const registerParty = () => postParties({ body: {} })
 
-export const getSelfPartyItems = async (): Promise<ItemStack[]> => (await getPartiesSelfItems({ })).data!
+export const getSelfPartyItems = async (): Promise<ItemStack[]> => (await getPartiesSelfItems({})).data!
 
 export const getPartyItems = async (
   partyId: number,
@@ -54,7 +54,8 @@ export const UNMOVABLE_PARTY_STATUSES: PartyStatus[] = [
   PARTY_STATUS.AwaitingPartyOfferDecision,
 ]
 
-export const shouldPartyBeInSettlement = (party: Party) => party.currentSettlement && IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)
+export const shouldPartyBeInSettlement = (party: Party) =>
+  party.currentSettlement && IN_SETTLEMENT_PARTY_STATUSES.includes(party.status)
 
 export const shouldPartyBeInBattle = (party: Party) => party.currentBattle && IN_BATTLE_PARTY_STATUSES.includes(party.status)
 

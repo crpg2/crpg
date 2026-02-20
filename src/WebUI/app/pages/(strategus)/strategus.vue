@@ -65,6 +65,7 @@ definePageMeta({
 })
 
 const { mainHeaderHeight } = useMainHeader()
+const route = useRoute()
 
 const {
   center,
@@ -142,6 +143,7 @@ const [onMapReady] = useAsyncCallback(async (map: Map) => {
   partySpawn()
   isMapRdy.value = true
 
+  // TODO: в композабл?
   if (mapControlsRef.value) {
     L.DomEvent.disableClickPropagation(mapControlsRef.value)
     L.DomEvent.disableScrollPropagation(mapControlsRef.value)
@@ -152,6 +154,9 @@ const [onMapReady] = useAsyncCallback(async (map: Map) => {
     L.DomEvent.disableScrollPropagation(mapPartyProfileRef.value.$el)
   }
 })
+
+// TODO: need a name
+const isBLocked = computed(() => route.name !== 'strategus')
 </script>
 
 <template>
@@ -212,6 +217,7 @@ const [onMapReady] = useAsyncCallback(async (map: Map) => {
       </LMarkerClusterGroup>
 
       <MapMarkerParty
+        v-if="!isBLocked"
         :party="partyState.party"
         is-self
         @click="onStartMove"
@@ -230,7 +236,8 @@ const [onMapReady] = useAsyncCallback(async (map: Map) => {
 
       <MapPartyProfile
         ref="mapPartyProfile"
-        class="absolute top-6 left-6 z-1000 cursor-auto"
+        class="absolute top-6 z-1000 cursor-auto"
+        :class="[isBLocked ? 'right-6' : 'left-6']"
         :party="partyState.party"
         @locate="flyToSelfParty"
       />
@@ -239,7 +246,8 @@ const [onMapReady] = useAsyncCallback(async (map: Map) => {
        -->
       <div
         ref="mapControls"
-        class="absolute bottom-12 left-1/2 z-1000 -translate-x-1/2 cursor-auto"
+        class="absolute bottom-6 z-1000 cursor-auto"
+        :class="[isBLocked ? 'right-6' : 'left-1/2 -translate-x-1/2']"
       >
         <UFieldGroup size="xl">
           <UButton

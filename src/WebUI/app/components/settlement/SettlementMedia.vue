@@ -7,7 +7,6 @@ import { settlementIconByType } from '~/services/strategus/settlement-service'
 const { settlement, size = 'md' } = defineProps<{
   settlement: SettlementPublic
   size?: DataMediaSize
-
 }>()
 </script>
 
