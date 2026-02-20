@@ -396,6 +396,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.BipedalRangedReadySpeedMultiplier = ManagedParameters.Instance.GetManagedParameter(ManagedParametersEnum.BipedalRangedReadySpeedMultiplier);
         props.BipedalRangedReloadSpeedMultiplier = ManagedParameters.Instance.GetManagedParameter(ManagedParametersEnum.BipedalRangedReloadSpeedMultiplier);
         props.CombatMaxSpeedMultiplier = bipedalCombatSpeedMaxMultiplier;
+        props.CrouchedSpeedMultiplier = 1f;
 
         if (equippedItem != null)
         {
