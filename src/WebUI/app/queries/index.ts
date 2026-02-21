@@ -23,6 +23,7 @@ export const PARTY_QUERY_KEYS = {
 export const SETTLEMENT_QUERY_KEYS = {
   root: ['settlements'] as const,
   byId: (id: number) => [...SETTLEMENT_QUERY_KEYS.root, id] as const,
+  items: (id: number) => [...SETTLEMENT_QUERY_KEYS.byId(id), { items: true }] as const,
 }
 
 export const BATTLE_QUERY_KEYS = {

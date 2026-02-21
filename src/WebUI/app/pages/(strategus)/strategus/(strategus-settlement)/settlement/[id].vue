@@ -51,15 +51,15 @@ const route = useRoute<'strategus-settlement-id'>()
 const navigationItems = computed<NavigationMenuItem[]>(() => [
   {
     label: 'Overview',
-    to: { name: 'strategus-battle-id', params: { id: route.params.id } },
+    to: { name: 'strategus-settlement-id', params: { id: route.params.id } },
     active: route.name === 'strategus-settlement-id', // hack, [id].vue conflict with [id]/index.vue
     // icon: 'crpg:member',
   },
   {
-    label: 'Garrison',
-    to: { name: 'strategus-battle-id', params: { id: route.params.id } },
-    active: route.name === 'strategus-settlement-id', // hack, [id].vue conflict with [id]/index.vue
-    icon: 'crpg:member',
+    label: 'Garrison/Inventory',
+    to: { name: 'strategus-settlement-id-inventory', params: { id: route.params.id } },
+    active: route.name === 'strategus-settlement-id-inventory', // hack, [id].vue conflict with [id]/index.vue
+    icon: 'crpg:chest',
   },
 ])
 </script>
