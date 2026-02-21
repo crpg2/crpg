@@ -84,8 +84,14 @@ const items = computed<DropdownMenuItem[][]>(() => [
 
 <template>
   <div class="flex items-center gap-3">
-    <UTooltip :text="$t('user.field.gold')">
-      <AppCoin :value="user.gold" />
+    <UTooltip>
+      <AppCoin :value="user.gold" compact />
+      <template #content>
+        <UiTextView variant="p">
+          {{ t('user.field.gold') }}
+        </UiTextView>
+        <AppCoin :value="user.gold" />
+      </template>
     </UTooltip>
 
     <UTooltip :text="$t('user.field.heirloom')">
@@ -129,9 +135,9 @@ const items = computed<DropdownMenuItem[][]>(() => [
           :show="Boolean(user.unreadNotificationsCount)"
           inset
           size="lg"
-          :ui="{ base: 'bg-[var(--color-notification)]' }"
+          :ui="{ base: 'bg-notification' }"
         >
-          <UIcon name="crpg:carillon" class="size-[1.125rem]" />
+          <UIcon name="crpg:carillon" class="size-4.5" />
         </UChip>
       </template>
     </UDropdownMenu>

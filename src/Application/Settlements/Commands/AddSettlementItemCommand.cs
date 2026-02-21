@@ -13,23 +13,18 @@ namespace Crpg.Application.Settlements.Commands;
 
 public record AddSettlementItemCommand : IMediatorRequest<ItemStack>
 {
+    // TODO: FIXME: add item transfer to UpdateSettlementCommand. Make transfer batch
     public int PartyId { get; init; }
     public int SettlementId { get; init; }
     public string ItemId { get; init; } = string.Empty;
     public int Count { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<AddSettlementItemCommand, ItemStack>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<AddSettlementItemCommand, ItemStack>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<AddSettlementItemCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
         public async ValueTask<Result<ItemStack>> Handle(AddSettlementItemCommand req, CancellationToken cancellationToken)
         {

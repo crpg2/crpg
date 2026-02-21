@@ -4,6 +4,7 @@ import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
 import { usePartyState } from '~/composables/strategus/use-party'
 import { useSettlement, useSettlementProvider } from '~/composables/strategus/use-settlements'
+import { useUser } from '~/composables/user/use-user'
 import { shouldPartyBeInSettlement } from '~/services/strategus/party-service'
 
 definePageMeta({
@@ -42,11 +43,20 @@ const { settlement } = useSettlement()
 //     name: 'Strategus',
 //   })
 // }
+
+const { user } = useUser()
+
 const route = useRoute<'strategus-settlement-id'>()
 
 const navigationItems = computed<NavigationMenuItem[]>(() => [
   {
-    label: 'ddd',
+    label: 'Overview',
+    to: { name: 'strategus-battle-id', params: { id: route.params.id } },
+    active: route.name === 'strategus-settlement-id', // hack, [id].vue conflict with [id]/index.vue
+    // icon: 'crpg:member',
+  },
+  {
+    label: 'Garrison',
     to: { name: 'strategus-battle-id', params: { id: route.params.id } },
     active: route.name === 'strategus-settlement-id', // hack, [id].vue conflict with [id]/index.vue
     icon: 'crpg:member',
@@ -57,11 +67,42 @@ const navigationItems = computed<NavigationMenuItem[]>(() => [
 <template>
   <MapSidePage class="w-4xl">
     <template #header>
-      <UiHeading variant="h2" tag="h1">
+      <div class="flex flex-wrap items-center gap-8">
         <SettlementMedia :settlement size="xl" />
-      </UiHeading>
 
-      <!-- <UiHeading variant="h2" tag="h1" :title="battleTitle" /> -->
+        <UiDataContent
+          v-if="settlement.owner"
+          caption="Owner"
+          layout="reverse"
+          size="sm"
+        >
+          <UserMedia
+            v-if="settlement.owner"
+            size="sm"
+            :user="settlement.owner"
+            :is-self="settlement.owner.id === user!.id"
+            class="max-w-64"
+          />
+        </UiDataContent>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <UBadge icon="crpg:region" :label="$t(`region.${settlement.region}`, 0)" size="lg" variant="soft" color="neutral" />
+
+          <UTooltip>
+            <AppCoin :value="500000" compact />
+            <template #content>
+              <AppCoin :value="500000" />
+            </template>
+          </UTooltip>
+
+          <UTooltip>
+            <UiDataMedia icon="crpg:member" :label="$n(settlement.troops, 'compact')" />
+            <template #content>
+              <UiDataMedia icon="crpg:member" :label="$n(settlement.troops)" />
+            </template>
+          </UTooltip>
+        </div>
+      </div>
     </template>
 
     <UNavigationMenu
@@ -85,30 +126,7 @@ const navigationItems = computed<NavigationMenuItem[]>(() => [
         />
 
         <div v-if="settlement" class="flex items-center gap-5">
-          <SettlementMedia :settlement="settlement" />
 
-          <Divider inline />
-
-          <div v-tooltip.bottom="`Troops`" class="flex items-center gap-1.5">
-            <OIcon icon="member" size="lg" />
-            {{ settlement.troops }}
-          </div>
-
-          <Divider inline />
-
-          <Coin :value="10000" />
-
-          <Divider inline />
-
-          <div v-if="settlement?.owner" class="flex flex-col gap-1">
-            <span class="text-3xs text-content-300">Owner</span>
-            <UserMedia
-              :user="settlement.owner"
-              :is-self="settlement.owner.id === user!.id"
-              class="max-w-64"
-            />
-          </div>
-        </div>
       </div>
     </header> -->
 

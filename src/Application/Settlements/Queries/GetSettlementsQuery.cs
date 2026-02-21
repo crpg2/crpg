@@ -10,16 +10,10 @@ namespace Crpg.Application.Settlements.Queries;
 
 public record GetSettlementsQuery : IMediatorRequest<IList<SettlementPublicViewModel>>
 {
-    internal class Handler : IMediatorRequestHandler<GetSettlementsQuery, IList<SettlementPublicViewModel>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<GetSettlementsQuery, IList<SettlementPublicViewModel>>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
         public async ValueTask<Result<IList<SettlementPublicViewModel>>> Handle(GetSettlementsQuery req, CancellationToken cancellationToken)
         {

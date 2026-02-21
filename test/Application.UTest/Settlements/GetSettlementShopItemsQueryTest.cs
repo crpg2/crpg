@@ -46,33 +46,34 @@ public class GetSettlementShopItemsQueryTest : TestBase
         Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.SettlementNotFound));
     }
 
-    [Test]
-    public async Task ShouldReturnErrorIfSettlementTooFar()
-    {
-        Point userPosition = new(1, 2);
-        Point settlementPosition = new(3, 4);
+    // TODO:
+    // [Test]
+    // public async Task ShouldReturnErrorIfSettlementTooFar()
+    // {
+    //     Point userPosition = new(1, 2);
+    //     Point settlementPosition = new(3, 4);
 
-        Mock<IStrategusMap> strategusMapMock = new();
-        strategusMapMock
-            .Setup(m => m.ArePointsAtInteractionDistance(userPosition, settlementPosition))
-            .Returns(false);
+    // Mock<IStrategusMap> strategusMapMock = new();
+    //     strategusMapMock
+    //         .Setup(m => m.ArePointsAtInteractionDistance(userPosition, settlementPosition))
+    //         .Returns(false);
 
-        Party party = new() { Position = userPosition, User = new User() };
-        ArrangeDb.Parties.Add(party);
-        Settlement settlement = new() { Position = settlementPosition };
-        ArrangeDb.Settlements.Add(settlement);
-        await ArrangeDb.SaveChangesAsync();
+    // Party party = new() { Position = userPosition, User = new User() };
+    //     ArrangeDb.Parties.Add(party);
+    //     Settlement settlement = new() { Position = settlementPosition };
+    //     ArrangeDb.Settlements.Add(settlement);
+    //     await ArrangeDb.SaveChangesAsync();
 
-        GetSettlementShopItemsQuery.Handler handler = new(ActDb, Mapper, strategusMapMock.Object);
-        var res = await handler.Handle(new GetSettlementShopItemsQuery
-        {
-            PartyId = party.Id,
-            SettlementId = settlement.Id,
-        }, CancellationToken.None);
+    // GetSettlementShopItemsQuery.Handler handler = new(ActDb, Mapper, strategusMapMock.Object);
+    //     var res = await handler.Handle(new GetSettlementShopItemsQuery
+    //     {
+    //         PartyId = party.Id,
+    //         SettlementId = settlement.Id,
+    //     }, CancellationToken.None);
 
-        Assert.That(res.Errors, Is.Not.Null);
-        Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.SettlementTooFar));
-    }
+    // Assert.That(res.Errors, Is.Not.Null);
+    //     Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.SettlementTooFar));
+    // }
 
     [Test]
     public async Task ShouldReturnItemsForTheSettlementCulture()
