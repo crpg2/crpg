@@ -1,8 +1,13 @@
 import {
   getSettlements as _getSettlements,
   getSettlementsBySettlementId,
+  getSettlementsBySettlementIdItems,
+  getSettlementsBySettlementIdShopItems,
+  postSettlementsBySettlementId,
+  postSettlementsBySettlementIdItems,
 } from '#api/sdk.gen'
 
+import type { ItemStack } from '~/models/strategus/party'
 import type { SettlementPublic, SettlementType } from '~/models/strategus/settlement'
 
 import { SETTLEMENT_TYPE } from '~/models/strategus/settlement'
@@ -16,3 +21,5 @@ export const settlementIconByType: Record<SettlementType, string> = {
 export const getSettlements = async () => (await _getSettlements({})).data!
 
 export const getSettlement = async (settlementId: number): Promise<SettlementPublic> => (await getSettlementsBySettlementId({ path: { settlementId } })).data!
+
+export const getSettlementItems = async (settlementId: number): Promise<ItemStack[]> => (await getSettlementsBySettlementIdItems({ path: { settlementId } })).data!
