@@ -5,6 +5,7 @@ using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Items.Models;
 using Crpg.Domain.Entities;
+using Crpg.Domain.Entities.Parties;
 using Microsoft.EntityFrameworkCore;
 
 namespace Crpg.Application.Settlements.Queries;
@@ -14,18 +15,11 @@ public record GetSettlementShopItemsQuery : IMediatorRequest<IList<ItemViewModel
     public int PartyId { get; init; }
     public int SettlementId { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<GetSettlementShopItemsQuery, IList<ItemViewModel>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap) : IMediatorRequestHandler<GetSettlementShopItemsQuery, IList<ItemViewModel>>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly IStrategusMap _strategusMap;
-
-        public Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap)
-        {
-            _db = db;
-            _mapper = mapper;
-            _strategusMap = strategusMap;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly IStrategusMap _strategusMap = strategusMap;
 
         public async ValueTask<Result<IList<ItemViewModel>>> Handle(GetSettlementShopItemsQuery req,
             CancellationToken cancellationToken)
@@ -38,17 +32,19 @@ public record GetSettlementShopItemsQuery : IMediatorRequest<IList<ItemViewModel
                 return new(CommonErrors.PartyNotFound(req.PartyId));
             }
 
+            if ((party.Status != PartyStatus.IdleInSettlement
+                 && party.Status != PartyStatus.RecruitingInSettlement)
+                || party.CurrentSettlementId != req.SettlementId)
+            {
+                return new(CommonErrors.PartyNotInASettlement(party.Id));
+            }
+
             var settlement = await _db.Settlements
                 .AsNoTracking()
                 .FirstOrDefaultAsync(s => s.Id == req.SettlementId, cancellationToken);
             if (settlement == null)
             {
                 return new(CommonErrors.SettlementNotFound(req.PartyId));
-            }
-
-            if (!_strategusMap.ArePointsAtInteractionDistance(party.Position, settlement.Position))
-            {
-                return new(CommonErrors.SettlementTooFar(req.SettlementId));
             }
 
             // Return items with the same culture as the settlement.
