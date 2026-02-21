@@ -1,4 +1,5 @@
-﻿using Crpg.Domain.Entities;
+﻿using System.Collections.Frozen;
+using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Terrains;
 using Crpg.Sdk.Abstractions;
 using NetTopologySuite.Geometries;
@@ -63,15 +64,15 @@ internal class StrategusMap : IStrategusMap
 
     public double InteractionDistance { get; }
 
-    private readonly Dictionary<TerrainType, double> terrainViewDistanceMultiplier = new()
+    private readonly FrozenDictionary<TerrainType, double> terrainViewDistanceMultiplier = new Dictionary<TerrainType, double>
     {
-        { TerrainType.Plain, 1.0 },
-        { TerrainType.SparseForest, 0.5 },
-        { TerrainType.ThickForest, 0.25 },
-        { TerrainType.Barrier, 1.0 },
-        { TerrainType.DeepWater, 1.0 },
-        { TerrainType.ShallowWater, 1.0 },
-    };
+        [TerrainType.Plain] = 1.0,
+        [TerrainType.SparseForest] = 0.5,
+        [TerrainType.ThickForest] = 0.25,
+        [TerrainType.Barrier] = 1.0,
+        [TerrainType.DeepWater] = 1.0,
+        [TerrainType.ShallowWater] = 1.0,
+    }.ToFrozenDictionary();
 
     public double GetTerrainViewDistanceMultiplier(TerrainType? terrainType)
     {

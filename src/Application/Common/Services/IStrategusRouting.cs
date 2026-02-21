@@ -1,3 +1,4 @@
+using System.Collections.Frozen;
 using Crpg.Domain.Entities.Terrains;
 using NetTopologySuite.Geometries;
 
@@ -40,15 +41,15 @@ public record PathSegment
 
 internal class StrategusRouting() : IStrategusRouting
 {
-    private readonly Dictionary<TerrainType, double> terrainSpeedMultiplier = new()
+    private readonly FrozenDictionary<TerrainType, double> terrainSpeedMultiplier = new Dictionary<TerrainType, double>
     {
-        { TerrainType.Plain, 1.0 },
-        { TerrainType.SparseForest, 0.8 },
-        { TerrainType.ThickForest, 0.5 },
-        { TerrainType.Barrier, 0 },
-        { TerrainType.DeepWater, 0 },
-        { TerrainType.ShallowWater, 0.2 },
-    };
+        [TerrainType.Plain] = 1.0,
+        [TerrainType.SparseForest] = 0.8,
+        [TerrainType.ThickForest] = 0.5,
+        [TerrainType.Barrier] = 0,
+        [TerrainType.DeepWater] = 0,
+        [TerrainType.ShallowWater] = 0.2,
+    }.ToFrozenDictionary();
 
     public double GetTerrainSpeedMultiplier(TerrainType? terrainType)
     {
