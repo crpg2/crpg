@@ -13,16 +13,10 @@ public record GetSettlementItemsQuery : IMediatorRequest<IList<ItemStack>>
     public int PartyId { get; init; }
     public int SettlementId { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<GetSettlementItemsQuery, IList<ItemStack>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<GetSettlementItemsQuery, IList<ItemStack>>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
         public async ValueTask<Result<IList<ItemStack>>> Handle(GetSettlementItemsQuery req,
             CancellationToken cancellationToken)

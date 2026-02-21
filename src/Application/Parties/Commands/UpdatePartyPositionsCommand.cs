@@ -55,7 +55,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 
             foreach (var party in parties)
             {
-                double baseSpeed = _strategusSpeedModel.ComputePartySpeed(party);
+                double baseSpeed = _strategusSpeedModel.ComputePartySpeed(party).BaseSpeedWithoutTerrain;
                 double remainingTime = req.DeltaTime.TotalSeconds;
 
                 while (remainingTime > 0 && party.Orders.Count != 0)
@@ -126,7 +126,10 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 return remainingTime;
             }
 
-            if (!party.Position.IsWithinDistance(target.Position, _strategusMap.ViewDistance))
+            var currentTerrain = terrains.FirstOrDefault(t => t.Boundary.Contains(party.Position));
+            double viewDistance = _strategusMap.ComputeViewDistance(currentTerrain?.Type);
+
+            if (!party.Position.IsWithinDistance(target.Position, viewDistance))
             {
                 // Followed party is not in sight anymore. Stop.
                 // party.Status = PartyStatus.Idle; // TODO:

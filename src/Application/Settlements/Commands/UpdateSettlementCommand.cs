@@ -26,18 +26,12 @@ public record UpdateSettlementCommand : IMediatorRequest<SettlementPublicViewMod
     //     }
     // }
 
-    internal class Handler : IMediatorRequestHandler<UpdateSettlementCommand, SettlementPublicViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<UpdateSettlementCommand, SettlementPublicViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdateSettlementCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
         public async ValueTask<Result<SettlementPublicViewModel>> Handle(UpdateSettlementCommand req, CancellationToken cancellationToken)
         {

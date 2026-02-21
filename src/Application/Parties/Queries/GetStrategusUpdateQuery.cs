@@ -5,7 +5,6 @@ using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
-using Crpg.Application.Items.Models;
 using Crpg.Application.Parties.Models;
 using Crpg.Application.Settlements.Models;
 using Crpg.Domain.Entities.Battles;
@@ -56,35 +55,41 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
                 return new(CommonErrors.PartyNotFound(req.PartyId));
             }
 
+            var terrains = await _db.Terrains.ToArrayAsync(cancellationToken);
+
+            var currentTerrain = terrains.FirstOrDefault(t => t.Boundary.Contains(party.Position));
+            TerrainType? currentTerrainType = currentTerrain?.Type;
+
+            double viewDistance = _strategusMap.ComputeViewDistance(currentTerrainType);
+
             var visibleParties = await _db.Parties
                 .Where(h => h.Id != party.Id
-                            && h.Position.IsWithinDistance(party.Position, _strategusMap.ViewDistance)
+                            && h.Position.IsWithinDistance(party.Position, viewDistance)
                             && VisibleStatuses.Contains(h.Status))
                 .ProjectTo<PartyVisibleViewModel>(_mapper.ConfigurationProvider)
                 .ToArrayAsync(cancellationToken);
 
             var visibleSettlements = await _db.Settlements
-                .Where(s => s.Position.IsWithinDistance(party.Position, _strategusMap.ViewDistance))
+                .Where(s => s.Position.IsWithinDistance(party.Position, viewDistance))
                 .ProjectTo<SettlementPublicViewModel>(_mapper.ConfigurationProvider)
                 .ToArrayAsync(cancellationToken);
 
             var visibleBattles = await _db.Battles
-                .Where(b => b.Position.IsWithinDistance(party.Position, _strategusMap.ViewDistance)
+                .Where(b => b.Position.IsWithinDistance(party.Position, viewDistance)
                             && b.Phase != BattlePhase.End)
                 .ProjectTo<BattleViewModel>(_mapper.ConfigurationProvider)
                 .ToArrayAsync(cancellationToken);
 
-            double speed = _strategusSpeedModel.ComputePartySpeed(party);
-            var terrains = await _db.Terrains.ToArrayAsync(cancellationToken);
+            var speed = _strategusSpeedModel.ComputePartySpeed(party, currentTerrainType);
 
             var partyVm = _mapper.Map<PartyViewModel>(party);
             partyVm.Speed = speed;
+            partyVm.ViewDistance = viewDistance;
 
-            // TODO: refactoring
             Point currentPosition = party.Position;
             foreach (var orderVm in partyVm.Orders)
             {
-                orderVm.PathSegments = BuildOrderPathSegments(currentPosition, orderVm, terrains, speed);
+                orderVm.PathSegments = BuildOrderPathSegments(currentPosition, orderVm, terrains, speed.BaseSpeedWithoutTerrain);
 
                 // Update current position to the end of this order for the next order in the queue
                 if (orderVm.PathSegments.Count > 0)

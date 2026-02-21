@@ -1,3 +1,4 @@
+using System.Collections.Frozen;
 using Crpg.Domain.Entities.Terrains;
 using NetTopologySuite.Geometries;
 
@@ -23,7 +24,7 @@ public interface IStrategusRouting
     /// <returns>Interpolated point.</returns>
     Point InterpolatePoint(Point start, Point end, double ratio);
 
-    double GetTerrainSpeedMultiplier(TerrainType terrainType);
+    double GetTerrainSpeedMultiplier(TerrainType? terrainType);
 
     double GetTerrainSpeedMultiplier(Point position, Terrain[] terrains);
 }
@@ -40,19 +41,24 @@ public record PathSegment
 
 internal class StrategusRouting() : IStrategusRouting
 {
-    private readonly Dictionary<TerrainType, double> terrainSpeedMultiplier = new()
+    private readonly FrozenDictionary<TerrainType, double> terrainSpeedMultiplier = new Dictionary<TerrainType, double>
     {
-        { TerrainType.Plain, 1.0 },
-        { TerrainType.SparseForest, 0.8 },
-        { TerrainType.ThickForest, 0.5 },
-        { TerrainType.Barrier, 0 },
-        { TerrainType.DeepWater, 0 },
-        { TerrainType.ShallowWater, 0.2 },
-    };
+        [TerrainType.Plain] = 1.0,
+        [TerrainType.SparseForest] = 0.8,
+        [TerrainType.ThickForest] = 0.5,
+        [TerrainType.Barrier] = 0,
+        [TerrainType.DeepWater] = 0,
+        [TerrainType.ShallowWater] = 0.2,
+    }.ToFrozenDictionary();
 
-    public double GetTerrainSpeedMultiplier(TerrainType terrainType)
+    public double GetTerrainSpeedMultiplier(TerrainType? terrainType)
     {
-        return terrainSpeedMultiplier[terrainType];
+        if (terrainType == null)
+        {
+            return 1.0;
+        }
+
+        return terrainSpeedMultiplier[terrainType.Value];
     }
 
     public double GetTerrainSpeedMultiplier(Point position, Terrain[] terrains)

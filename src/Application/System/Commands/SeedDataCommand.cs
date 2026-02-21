@@ -1604,6 +1604,7 @@ public record SeedDataCommand : IMediatorRequest
                     new() { Count = 112, ItemId = "crpg_wolf_shoulder_v2_h0" },
                     new() { Count = 112, ItemId = "crpg_scalpel_v1_h0" },
                     new() { Count = 112, ItemId = "crpg_decorated_short_spatha_v1_h0" },
+                    new() { Count = 15, ItemId = "crpg_mount1_maneuverable_14_v3_h0" },
                 ],
             };
             Party orle2Party = new()

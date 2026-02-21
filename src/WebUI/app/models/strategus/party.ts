@@ -9,6 +9,7 @@ import type { ValueOf } from 'type-fest'
 import type { Item } from '~/models/item'
 import type { BattleJoinIntent, MapBattle } from '~/models/strategus/battle'
 import type { SettlementPublic } from '~/models/strategus/settlement'
+import type { TerrainType } from '~/models/strategus/terrain'
 import type { UserPublic } from '~/models/user'
 
 export const PARTY_STATUS = {
@@ -39,7 +40,8 @@ export interface Party extends PartyCommon {
   gold: number
   status: PartyStatus
   position: Point
-  speed: number
+  speed: PartySpeed
+  viewDistance: number
   orders: PartyOrder[]
   currentParty: PartyVisible | null
   currentSettlement: SettlementPublic | null
@@ -52,6 +54,17 @@ export interface StrategusUpdate {
   visibleParties: PartyVisible[]
   visibleSettlements: SettlementPublic[]
   visibleBattles: MapBattle[] // TODO: FIXME:
+}
+
+export interface PartySpeed {
+  baseSpeed: number
+  terrainInfluence: number
+  currentTerrainType?: TerrainType | null
+  weightFactor: number
+  mountInfluence: number
+  troopInfluence: number
+  baseSpeedWithoutTerrain: number
+  finalSpeed: number
 }
 
 export interface ItemStack {
