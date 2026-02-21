@@ -13,7 +13,6 @@ using Crpg.Module.Rewards;
 #else
 using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
-using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
@@ -26,7 +25,7 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
 {
     public const string GameName = "cRPGDuel";
 
-    private static CrpgConstants _constants = default!; // Static so it's accessible from the views.
+    private static CrpgConstants _constants = null!; // Static so it's accessible from the views.
 
     public CrpgDuelGameMode(CrpgConstants constants)
         : base(GameName)

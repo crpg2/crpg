@@ -26,17 +26,17 @@ internal sealed class FriendlyFireHitMessage : GameNetworkMessage
     protected override bool OnRead()
     {
         bool bufferReadValid = true;
-        AttackerAgentIndex = GameNetworkMessage.ReadAgentIndexFromPacket(ref bufferReadValid);
-        Damage = GameNetworkMessage.ReadIntFromPacket(CompressionBasic.AgentHitDamageCompressionInfo, ref bufferReadValid);
-        ReportWindow = GameNetworkMessage.ReadIntFromPacket(reportWindowCompressionInfo, ref bufferReadValid);
+        AttackerAgentIndex = ReadAgentIndexFromPacket(ref bufferReadValid);
+        Damage = ReadIntFromPacket(CompressionBasic.AgentHitDamageCompressionInfo, ref bufferReadValid);
+        ReportWindow = ReadIntFromPacket(reportWindowCompressionInfo, ref bufferReadValid);
         return bufferReadValid;
     }
 
     protected override void OnWrite()
     {
-        GameNetworkMessage.WriteAgentIndexToPacket(AttackerAgentIndex);
-        GameNetworkMessage.WriteIntToPacket(Damage, CompressionBasic.AgentHitDamageCompressionInfo);
-        GameNetworkMessage.WriteIntToPacket(ReportWindow, reportWindowCompressionInfo);
+        WriteAgentIndexToPacket(AttackerAgentIndex);
+        WriteIntToPacket(Damage, CompressionBasic.AgentHitDamageCompressionInfo);
+        WriteIntToPacket(ReportWindow, reportWindowCompressionInfo);
     }
 
     protected override MultiplayerMessageFilter OnGetLogFilter()

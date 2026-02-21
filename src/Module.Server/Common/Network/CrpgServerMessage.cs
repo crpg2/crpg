@@ -7,7 +7,7 @@ namespace Crpg.Module.Common.Network;
 internal sealed class CrpgServerMessage : GameNetworkMessage
 {
     private static readonly CompressionInfo.Float FloatCompressionInfo = new(0.0f, 1.1f, 7);
-    public string Message { get; set; } = default!;
+    public string Message { get; set; } = null!;
 
     public float Red { get; set; }
 

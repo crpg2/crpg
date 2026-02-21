@@ -42,8 +42,8 @@ internal class CrpgHudExtensionVm : ViewModel
     private string? _warmupInfoText;
     private int _allyTeamScore = -1;
     private int _enemyTeamScore = -1;
-    private MBBindingList<MPPlayerVM> _teammatesList = default!;
-    private MBBindingList<MPPlayerVM> _enemiesList = default!;
+    private MBBindingList<MPPlayerVM> _teammatesList = null!;
+    private MBBindingList<MPPlayerVM> _enemiesList = null!;
     private bool _showHud;
     private bool _showCommanderInfo;
     private bool _showPowerLevels;
@@ -646,7 +646,7 @@ internal class CrpgHudExtensionVm : ViewModel
         RefreshValues();
     }
 
-    private void OnMissionReset(object sender, PropertyChangedEventArgs e)
+    private void OnMissionReset(object? sender, PropertyChangedEventArgs e)
     {
         IsGeneralWarningCountdownActive = false;
     }

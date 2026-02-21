@@ -10,26 +10,24 @@ using Crpg.Module.Notifications;
 using Crpg.Module.Rewards;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.Source.Missions;
 using TaleWorlds.MountAndBlade.Multiplayer;
+using TaleWorlds.MountAndBlade.Source.Missions;
 
 #if CRPG_SERVER
 using Crpg.Module.Api;
 using Crpg.Module.Common.ChatCommands;
 #else
-using TaleWorlds.MountAndBlade.Multiplayer.GauntletUI.Mission;
-using TaleWorlds.MountAndBlade.View.MissionViews.Order;
 using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.EndOfRound;
 using Crpg.Module.GUI.HudExtension;
 using Crpg.Module.GUI.Scoreboard;
-using TaleWorlds.MountAndBlade.Multiplayer;
+using TaleWorlds.MountAndBlade.Multiplayer.GauntletUI.Mission;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
-
+using TaleWorlds.MountAndBlade.View.MissionViews.Order;
 #endif
 
 namespace Crpg.Module.Modes.Battle;
@@ -40,7 +38,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
     private const string BattleGameName = "cRPGBattle";
     private const string SkirmishGameName = "cRPGSkirmish";
     private const string CaptainGameName = "cRPGCaptain";
-    private static CrpgConstants _constants = default!; // Static so it's accessible from the views.
+    private static CrpgConstants _constants = null!; // Static so it's accessible from the views.
     private MultiplayerGameType _gameType;
     public CrpgBattleGameMode(CrpgConstants constants, MultiplayerGameType gameType)
         : base(gameType switch

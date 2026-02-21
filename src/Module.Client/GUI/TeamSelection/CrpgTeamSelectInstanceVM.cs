@@ -27,12 +27,12 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
             {
                 _missionScoreboardComponent = missionScoreboardComponent;
                 _missionScoreboardComponent.OnRoundPropertiesChanged += UpdateTeamScores;
-                _missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault((MissionScoreboardComponent.MissionScoreboardSide s) => s != null && s.Side == Team.Side);
+                _missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault(s => s != null && s.Side == Team.Side);
                 IsAttacker = Team.Side == BattleSideEnum.Attacker;
                 UpdateTeamScores();
             }
 
-            CultureId = (culture == null) ? string.Empty : culture.StringId;
+            CultureId = culture == null ? string.Empty : culture.StringId;
             if (team == null)
             {
                 IsDisabled = true;
@@ -95,7 +95,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 _friends.Remove(item);
             }
 
-            List<MissionPeer> list3 = _friends.Select((MPPlayerVM x) => x.Peer).ToList<MissionPeer>();
+            List<MissionPeer> list3 = _friends.Select(x => x.Peer).ToList<MissionPeer>();
             foreach (MissionPeer missionPeer in list)
             {
                 if (!list3.Contains(missionPeer))
@@ -106,7 +106,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
 
             FriendAvatars.Clear();
             MBStringBuilder mbstringBuilder = default!;
-            mbstringBuilder.Initialize(16, "RefreshFriends");
+            mbstringBuilder.Initialize();
             for (int i = 0; i < _friends.Count; i++)
             {
                 if (i < 6)
@@ -123,11 +123,11 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
             if (num > 0)
             {
                 HasExtraFriends = true;
-                TextObject textObject = new("{=hbwp3g3k}+{FRIEND_COUNT} {newline} {?PLURAL}friends{?}friend{\\?}", null);
+                TextObject textObject = new("{=hbwp3g3k}+{FRIEND_COUNT} {newline} {?PLURAL}friends{?}friend{\\?}");
                 textObject.SetTextVariable("FRIEND_COUNT", num);
-                textObject.SetTextVariable("PLURAL", (num == 1) ? 0 : 1);
+                textObject.SetTextVariable("PLURAL", num == 1 ? 0 : 1);
                 FriendsExtraText = textObject.ToString();
-                FriendsExtraHint = new HintViewModel(textObject, null);
+                FriendsExtraHint = new HintViewModel(textObject);
                 return;
             }
 
@@ -141,13 +141,13 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
             IsDisabled = isCurrentTeam || disabledForBalance;
             if (isCurrentTeam)
             {
-                LockText = new TextObject("{=SoQcsslF}CURRENT TEAM", null).ToString();
+                LockText = new TextObject("{=SoQcsslF}CURRENT TEAM").ToString();
                 return;
             }
 
             if (disabledForBalance)
             {
-                LockText = new TextObject("{=qe46yXVJ}LOCKED FOR BALANCE", null).ToString();
+                LockText = new TextObject("{=qe46yXVJ}LOCKED FOR BALANCE").ToString();
             }
         }
 
@@ -172,7 +172,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (_cultureId != value)
                 {
                     _cultureId = value;
-                    OnPropertyChangedWithValue(value, "CultureId");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -189,7 +189,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (value != _score)
                 {
                     _score = value;
-                    OnPropertyChangedWithValue(value, "Score");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -206,7 +206,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (_isDisabled != value)
                 {
                     _isDisabled = value;
-                    OnPropertyChangedWithValue(value, "IsDisabled");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -223,7 +223,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (_useSecondary != value)
                 {
                     _useSecondary = value;
-                    OnPropertyChangedWithValue(value, "UseSecondary");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -240,7 +240,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (_isAttacker != value)
                 {
                     _isAttacker = value;
-                    OnPropertyChangedWithValue(value, "IsAttacker");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -257,7 +257,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (_isSiege != value)
                 {
                     _isSiege = value;
-                    OnPropertyChangedWithValue(value, "IsSiege");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -272,7 +272,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
             set
             {
                 _displayedPrimary = value;
-                OnPropertyChangedWithValue(value, "DisplayedPrimary");
+                OnPropertyChangedWithValue(value);
             }
         }
 
@@ -286,7 +286,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
             set
             {
                 _displayedSecondary = value;
-                OnPropertyChangedWithValue(value, "DisplayedSecondary");
+                OnPropertyChangedWithValue(value);
             }
         }
 
@@ -300,7 +300,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
             set
             {
                 _displayedSecondarySub = value;
-                OnPropertyChangedWithValue(value, "DisplayedSecondarySub");
+                OnPropertyChangedWithValue(value);
             }
         }
 
@@ -314,7 +314,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
             set
             {
                 _lockText = value;
-                OnPropertyChangedWithValue(value, "LockText");
+                OnPropertyChangedWithValue(value);
             }
         }
 
@@ -330,7 +330,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (value != _banner && (value == null || _banner == null || _banner.Id != value.Id))
                 {
                     _banner = value;
-                    OnPropertyChangedWithValue(value, "Banner");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -347,7 +347,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (_friendAvatars != value)
                 {
                     _friendAvatars = value;
-                    OnPropertyChangedWithValue(value, "FriendAvatars");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -364,7 +364,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (_hasExtraFriends != value)
                 {
                     _hasExtraFriends = value;
-                    OnPropertyChangedWithValue(value, "HasExtraFriends");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -381,7 +381,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (_friendsExtraText != value)
                 {
                     _friendsExtraText = value;
-                    OnPropertyChangedWithValue(value, "FriendsExtraText");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -398,7 +398,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (_friendsExtraHint != value)
                 {
                     _friendsExtraHint = value;
-                    OnPropertyChangedWithValue(value, "FriendsExtraHint");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -443,35 +443,35 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
 
         private const int MaxFriendAvatarCount = 6;
 
-        public readonly Team Team = default!;
+        public readonly Team Team = null!;
 
         public readonly Action<Team> _onSelect;
 
         private readonly List<MPPlayerVM> _friends;
 
-        private MissionScoreboardComponent? _missionScoreboardComponent = default!;
+        private MissionScoreboardComponent? _missionScoreboardComponent = null!;
 
-        private MissionScoreboardComponent.MissionScoreboardSide? _missionScoreboardSide = default!;
+        private MissionScoreboardComponent.MissionScoreboardSide? _missionScoreboardSide = null!;
 
-        private readonly BasicCultureObject? _culture = default!;
+        private readonly BasicCultureObject? _culture = null!;
 
         private bool _isDisabled;
 
-        private string _displayedPrimary = default!;
+        private string _displayedPrimary = null!;
 
-        private string _displayedSecondary = default!;
+        private string _displayedSecondary = null!;
 
-        private string _displayedSecondarySub = default!;
+        private string _displayedSecondarySub = null!;
 
-        private string _lockText = default!;
+        private string _lockText = null!;
 
-        private string _cultureId = default!;
+        private string _cultureId = null!;
 
         private int _score;
 
-        private BannerImageIdentifierVM? _banner = default!;
+        private BannerImageIdentifierVM? _banner = null!;
 
-        private MBBindingList<MPPlayerVM> _friendAvatars = default!;
+        private MBBindingList<MPPlayerVM> _friendAvatars = null!;
 
         private bool _hasExtraFriends;
 
@@ -481,9 +481,9 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
 
         private bool _isSiege;
 
-        private string _friendsExtraText = default!;
+        private string _friendsExtraText = null!;
 
-        private HintViewModel _friendsExtraHint = default!;
+        private HintViewModel _friendsExtraHint = null!;
         private ImageIdentifierVM? _allyBanner;
         private ImageIdentifierVM? _enemyBanner;
     }

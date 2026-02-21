@@ -45,6 +45,6 @@ internal class CrpgItemRequirementModel
         }
 
         // Compute the strength requirement based on tier
-        return (int)(Math.Ceiling((item.Tierf * (strengthRequirementForTierTenCrossbow / 9.9f)) / 3) * 3);
+        return (int)(Math.Ceiling(item.Tierf * (strengthRequirementForTierTenCrossbow / 9.9f) / 3) * 3);
     }
 }

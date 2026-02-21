@@ -155,13 +155,14 @@ dotnet_diagnostic.CS1570.severity = silent # XML comment has badly formed XML
 dotnet_diagnostic.CS1591.severity = silent # Missing XML comment for publicly visible type
 
 dotnet_diagnostic.IDE0045.severity = silent # 'if' statement can be simplified
-
 dotnet_diagnostic.SA1101.severity = silent # PrefixLocalCallsWithThis
 dotnet_diagnostic.SA1108.severity = silent # BlockStatementsMustNotContainEmbeddedComments
 dotnet_diagnostic.SA1116.severity = silent # SplitParametersMustStartOnLineAfterDeclaration
 dotnet_diagnostic.SA1117.severity = silent # ParametersMustBeOnSameLineOrSeparateLines
+dotnet_diagnostic.SA1122.severity = silent # UseStringEmptyForEmptyStrings
 dotnet_diagnostic.SA1127.severity = silent # GenericTypeConstraintsMustBeOnOwnLine
 dotnet_diagnostic.SA1201.severity = silent # ElementsMustAppearInTheCorrectOrder
+dotnet_diagnostic.SA1204.severity = silent # StaticElementsMustAppearBeforeInstanceElements
 dotnet_diagnostic.SA1309.severity = silent # FieldNamesMustNotBeginWithUnderscore
 dotnet_diagnostic.SA1402.severity = silent # FileMayOnlyContainASingleType
 dotnet_diagnostic.SA1407.severity = silent # ArithmeticExpressionsMustDeclarePrecedence
@@ -173,6 +174,10 @@ dotnet_diagnostic.SA1611.severity = silent # ElementParametersMustBeDocumented
 dotnet_diagnostic.SA1615.severity = silent # ElementReturnValueMustBeDocumented
 dotnet_diagnostic.SA1623.severity = silent # ElementReturnValueMustBeDocumented
 dotnet_diagnostic.SA1633.severity = silent # FileMustHaveHeader
+
+resharper_arrange_trailing_comma_in_multiline_lists_highlighting = none
+resharper_async_void_method_highlighting = error
+resharper_bad_control_braces_indent_highlighting = warning
 
 # Xml project files
 [*.csproj]

@@ -53,13 +53,11 @@
     <Compile Remove="..\Module.Server\Common\MapPoolComponent.cs" />
     <Compile Remove="..\Module.Server\Common\ChatCommands\**\*" />
     <Compile Remove="..\Module.Server\Rewards\CrpgRewardServer.cs" />
-    <Compile Remove="..\Module.Server\Firewall\*" />
-    <Compile Remove="..\Module.Server\Common\RemoveIpFromFirewallBehavior.cs" />
     <Compile Remove="..\Module.Server\Common\CrpgCustomBannerServer.cs" />
-    <Compile Remove="..\Module.Server\HarmonyPatches\MissionNetworkComponentPatch.cs" />
-    <Compile Remove="..\Module.Server\HarmonyPatches\SendPeerInformationsToPeerPatch.cs" />
     <Compile Remove="..\Module.Server\Common\FriendlyFireReport\FriendlyFireReportServerBehavior.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\ChargeDamageCallbackPatch.cs" />
+    <Compile Remove="..\Module.Server\HarmonyPatches\MissionNetworkComponentPatch.cs" />
+    <Compile Remove="..\Module.Server\HarmonyPatches\SendPeerInformationsToPeerPatch.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -75,14 +73,8 @@
     <Reference Include="$(MB_CLIENT_PATH)\Modules\Multiplayer\bin\Win64_Shipping_Client\TaleWorlds.*.dll">
       <Private>False</Private>
     </Reference>
-
     <Reference Include="$(MB_CLIENT_PATH)\bin\Win64_Shipping_Client\Newtonsoft.Json.dll">
       <Private>False</Private>
-    </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade.ListedServer">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Dedicated Server\bin\Win64_Shipping_Server\TaleWorlds.MountAndBlade.ListedServer.dll</HintPath>
-    </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade.Multiplayer">
     </Reference>
 
     <!-- Remove native library (not .NET). -->
@@ -92,11 +84,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="WindowsFirewallHelper" />
     <PackageReference Include="Lib.Harmony" GeneratePathProperty="true" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="$(PkgLib_Harmony)\lib\netcoreapp3.1\0Harmony.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" />
+    <None Include="$(PkgLib_Harmony)\lib\net472\0Harmony.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" />
   </ItemGroup>
 </Project>

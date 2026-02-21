@@ -24,13 +24,13 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
     private readonly CrpgBattleClient _battleClient;
     private readonly MultiplayerGameType _gametype;
     private readonly CrpgRewardServer _rewardServer;
-    private AbstractFlagSystem _flagSystem = default!;
+    private AbstractFlagSystem _flagSystem = null!;
 
     /// <summary>A number between -1.0 and 1.0. Less than 0 means the defenders are winning. Greater than 0 for attackers.</summary>
     private float _morale;
     private int _attackersSpawned;
     private int _defendersSpawned;
-    private bool _hasSpawnDelayEnded = false;
+    private bool _hasSpawnDelayEnded;
 
     public override bool IsGameModeHidingAllAgentVisuals => true;
     public override bool IsGameModeUsingOpposingTeams => true;
@@ -43,8 +43,8 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
         _battleClient = battleClient;
         _gametype = gametype;
         _rewardServer = rewardServer;
-        typeof(TaleWorlds.MountAndBlade.CompressionMission)
-            .GetField(nameof(TaleWorlds.MountAndBlade.CompressionMission.AgentOffsetCompressionInfo), BindingFlags.Public | BindingFlags.Static)?
+        typeof(CompressionMission)
+            .GetField(nameof(CompressionMission.AgentOffsetCompressionInfo), BindingFlags.Public | BindingFlags.Static)?
             .SetValue(null, new CompressionInfo.Integer(0, 16));
     }
 
@@ -56,7 +56,7 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
     public override void AfterStart()
     {
         base.AfterStart();
-        MissionPeer.OnPreTeamChanged += this.OnPreTeamChanged;
+        MissionPeer.OnPreTeamChanged += OnPreTeamChanged;
         RoundController.OnPreRoundEnding += OnPreRoundEnding;
 
         AddTeams();
@@ -72,20 +72,10 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
         ((CrpgBattleFlagSystem)_flagSystem).CheckForDeadPlayerFlagSpawnThreshold(_attackersSpawned, _defendersSpawned);
     }
 
-    protected override void HandleEarlyPlayerDisconnect(NetworkCommunicator networkPeer)
-    {
-        if (this.RoundController.IsRoundInProgress && MultiplayerOptions.OptionType.NumberOfBotsPerFormation.GetIntValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions) > 0)
-        {
-            this.MakePlayerFormationCharge(networkPeer);
-        }
-    }
-
-
-
     public override void OnBehaviorInitialize()
     {
         base.OnBehaviorInitialize();
-        _flagSystem = _gametype switch { 
+        _flagSystem = _gametype switch {
             MultiplayerGameType.Skirmish => new CrpgSkirmishFlagSystem(Mission, NotificationsComponent, _battleClient),
             _ => new CrpgBattleFlagSystem(Mission, NotificationsComponent, _battleClient),
             };
@@ -98,7 +88,7 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
     public override void OnRemoveBehavior()
     {
         RoundController.OnPreRoundEnding -= OnPreRoundEnding;
-        MissionPeer.OnPreTeamChanged -= this.OnPreTeamChanged;
+        MissionPeer.OnPreTeamChanged -= OnPreTeamChanged;
         base.OnRemoveBehavior();
     }
 
@@ -131,7 +121,7 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
     public override void OnMissionTick(float dt)
     {
         base.OnMissionTick(dt);
-        if (MissionLobbyComponent.CurrentMultiplayerState != MissionLobbyComponent.MultiplayerGameState.Playing
+        if (MissionLobbyComponent.CurrentMultiplayerState != MultiplayerGameState.Playing
             || !RoundController.IsRoundInProgress
             || !CanGameModeSystemsTickThisFrame
             || _flagSystem.HasNoFlags()) // Protection against scene with no flags.
@@ -235,6 +225,14 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
 
         int moraleOwnerSide = owner.Side == BattleSideEnum.Defender ? -1 : 1;
         return moraleOwnerSide * _morale < 0.0 || _flagSystem.GetNumberOfAttackersAroundFlag(lastFlag) > 0;
+    }
+
+    protected override void HandleEarlyPlayerDisconnect(NetworkCommunicator networkPeer)
+    {
+        if (RoundController.IsRoundInProgress && MultiplayerOptions.OptionType.NumberOfBotsPerFormation.GetIntValue() > 0)
+        {
+            MakePlayerFormationCharge(networkPeer);
+        }
     }
 
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
@@ -417,6 +415,7 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
             missionBehavior.SetTimersOfVictoryReactionsOnBattleEnd(BattleSideEnum.Defender);
         }
     }
+
     private void CheckForPlayersSpawningAsBots()
     {
         foreach (NetworkCommunicator networkCommunicator in GameNetwork.NetworkPeers)
@@ -426,32 +425,32 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
                 MissionPeer component = networkCommunicator.GetComponent<MissionPeer>();
                 if (component != null && component.ControlledAgent == null && component.Team != null && component.ControlledFormation != null && component.SpawnCountThisRound > 0)
                 {
-                    if (!component.HasSpawnTimerExpired && component.SpawnTimer.Check(base.Mission.CurrentTime))
+                    if (!component.HasSpawnTimerExpired && component.SpawnTimer.Check(Mission.CurrentTime))
                     {
                         component.HasSpawnTimerExpired = true;
                     }
 
                     if (component.HasSpawnTimerExpired)
                     {
-                        if (component.ControlledFormation.HasUnitsWithCondition((Agent agent) => agent.IsActive() && agent.IsAIControlled))
+                        if (component.ControlledFormation.HasUnitsWithCondition(agent => agent.IsActive() && agent.IsAIControlled))
                         {
                             Agent? newAgent = null;
                             Agent followingAgent = component.FollowedAgent;
-                            if (followingAgent != null && followingAgent.IsActive() && followingAgent.IsAIControlled && component.ControlledFormation.HasUnitsWithCondition((Agent agent) => agent == followingAgent))
+                            if (followingAgent != null && followingAgent.IsActive() && followingAgent.IsAIControlled && component.ControlledFormation.HasUnitsWithCondition(agent => agent == followingAgent))
                             {
                                 newAgent = followingAgent;
                             }
                             else
                             {
                                 float maxHealth = 0f;
-                                component.ControlledFormation.ApplyActionOnEachUnit(delegate (Agent agent)
+                                component.ControlledFormation.ApplyActionOnEachUnit(agent =>
                                 {
                                     if (agent.Health > maxHealth)
                                     {
                                         maxHealth = agent.Health;
                                         newAgent = agent;
                                     }
-                                }, null);
+                                });
                             }
 
                             Mission.Current.ReplaceBotWithPlayer(newAgent, component);
@@ -463,6 +462,7 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
             }
         }
     }
+
     private void MakePlayerFormationCharge(NetworkCommunicator peer)
     {
         if (peer.IsSynchronized)
@@ -474,11 +474,12 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
             }
         }
     }
+
     private void OnPreTeamChanged(NetworkCommunicator peer, Team currentTeam, Team newTeam)
     {
         if (peer.IsSynchronized && peer.GetComponent<MissionPeer>().ControlledAgent != null)
         {
-            this.MakePlayerFormationCharge(peer);
+            MakePlayerFormationCharge(peer);
         }
     }
 }

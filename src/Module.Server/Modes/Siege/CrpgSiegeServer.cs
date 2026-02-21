@@ -27,7 +27,7 @@ internal class CrpgSiegeServer : MissionMultiplayerGameModeBase, IAnalyticsFlagI
 
     private int[] _morales = Array.Empty<int>();
     private Agent? _closestAgentToMasterFlag;
-    private FlagCapturePoint _masterFlag = default!;
+    private FlagCapturePoint _masterFlag = null!;
     private Team?[] _flagOwners = Array.Empty<Team>();
     private int[] _flagRemainingMoraleGains = Array.Empty<int>();
     private float _dtSumCheckMorales;

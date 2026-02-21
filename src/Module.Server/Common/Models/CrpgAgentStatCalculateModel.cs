@@ -11,8 +11,8 @@ namespace Crpg.Module.Common.Models;
 /// </summary>
 internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 {
-    private static readonly HashSet<WeaponClass> WeaponClassesAffectedByPowerStrike = new()
-    {
+    private static readonly HashSet<WeaponClass> WeaponClassesAffectedByPowerStrike =
+    [
         WeaponClass.Dagger,
         WeaponClass.OneHandedSword,
         WeaponClass.TwoHandedSword,
@@ -23,22 +23,22 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         WeaponClass.TwoHandedMace,
         WeaponClass.OneHandedPolearm,
         WeaponClass.TwoHandedPolearm,
-        WeaponClass.LowGripPolearm,
-    };
+        WeaponClass.LowGripPolearm
+    ];
 
-    private static readonly HashSet<WeaponClass> WeaponClassesAffectedByPowerDraw = new()
-    {
-        WeaponClass.Arrow,
-    };
+    private static readonly HashSet<WeaponClass> WeaponClassesAffectedByPowerDraw =
+    [
+        WeaponClass.Arrow
+    ];
 
-    private static readonly HashSet<WeaponClass> WeaponClassesAffectedByPowerThrow = new()
-    {
+    private static readonly HashSet<WeaponClass> WeaponClassesAffectedByPowerThrow =
+    [
         WeaponClass.Stone,
         WeaponClass.Boulder,
         WeaponClass.ThrowingAxe,
         WeaponClass.ThrowingKnife,
-        WeaponClass.Javelin,
-    };
+        WeaponClass.Javelin
+    ];
 
     private readonly CrpgConstants _constants;
 
@@ -71,7 +71,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             DamageTypes.Blunt => 1.3f,
             DamageTypes.Pierce => 1.2f,
             DamageTypes.Cut => 1f,
-            DamageTypes.Invalid => 1.3f,
+            _ => 1.3f,
         };
 
         float damageTypeFactorForSwingThrowing = weapon.SwingDamageType switch
@@ -79,7 +79,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             DamageTypes.Blunt => 1.3f,
             DamageTypes.Pierce => 1.2f,
             DamageTypes.Cut => 1f,
-            DamageTypes.Invalid => 1.3f,
+            _ => 1.3f,
         };
 
         float weaponClassMultiplier = weapon.WeaponClass switch
@@ -97,7 +97,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
         if (weapon.IsRangedWeapon)
         {
-            float weaponComponent = 0.1f / ((float)Math.Pow(weapon.Accuracy / 100f, 5f));
+            float weaponComponent = 0.1f / (float)Math.Pow(weapon.Accuracy / 100f, 5f);
             float skillComponent = skillComponentMultiplier * 1000000f / (1000000f + 0.01f * (float)Math.Pow(weaponSkill, 4));
             inaccuracy = weaponComponent * skillComponent;
             inaccuracy *= weaponClassMultiplier;
@@ -224,7 +224,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
     private void InitializeHumanAgentStats(Agent agent, Equipment equipment, AgentDrivenProperties props)
     {
-
         props.SetStat(DrivenProperty.UseRealisticBlocking, MultiplayerOptions.OptionType.UseRealisticBlocking.GetBoolValue() ? 1f : 0.0f);
         props.ArmorHead = equipment.GetHeadArmorSum();
         props.ArmorTorso = equipment.GetHumanBodyArmorSum();
@@ -283,7 +282,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.MountDashAccelerationMultiplier = 1f / (2f + 8f * loadPercentage); // native between 1 and 0.1 . cRPG between 0.5 and 0.1
 
         // Mounted penalty to mount stats based on weapon length and strength
-        if (agent.RiderAgent is Agent rider)
+        if (agent.RiderAgent is { } rider)
         {
             int strengthSkill = GetEffectiveSkill(rider, CrpgSkills.Strength);
             EquipmentIndex weaponIndex = rider.GetPrimaryWieldedItemIndex();
@@ -305,19 +304,19 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         }
     }
 
-    // WARNING : for some reasone UpdateHumanAgentStats is called twice everytime there is a change (respawn or weapon switch)
-    // The first call will have crpgUser be null , and all resulting cRPG stats be null
-    // it is then overriden by the second call that will have crpgUser properly set
-    // if for some reason a calculation relies on str or agi being superior to 3 , the first call will have them set to 0 which can rely on dividing by zero
-    // if you're dividing by (str -3)
+    // WARNING : for some reason UpdateHumanAgentStats is called twice everytime there is a change (respawn or weapon switch)
+    // The first call will have crpgUser be null, and all resulting cRPG stats be null it is then overriden by the
+    // second call that will have crpgUser properly set if for some reason a calculation relies on str or agi being
+    // superior to 3, the first call will have them set to 0 which can rely on dividing by zero if you're dividing by
+    // (str -3).
     private void UpdateHumanAgentStats(Agent agent, AgentDrivenProperties props)
     {
         // Dirty hack, part of the work-around to have skills without spawning custom characters. This hack should be
-        // be performed in InitializeHumanAgentStats but the MissionPeer is null there.
+        // performed in InitializeHumanAgentStats but the MissionPeer is null there.
         if (GameNetwork.IsClientOrReplay) // Server-side the hacky AgentOrigin is directly passed to the AgentBuildData.
         {
             var crpgUser = agent.MissionPeer?.GetComponent<CrpgPeer>()?.User;
-            var agentCharacterId = agent.Character.StringId;
+            string? agentCharacterId = agent.Character.StringId;
             if (crpgUser != null && agent.Origin is not CrpgBattleAgentOrigin)
             {
                 var characteristics = crpgUser.Character.Characteristics;
@@ -348,7 +347,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             InitializeAgentStats(agent, agent.SpawnEquipment, props, null!);
         }*/
 
-
         MissionEquipment equipment = agent.Equipment;
         props.WeaponsEncumbrance = equipment.GetTotalWeightOfWeapons();
         EquipmentIndex wieldedItemIndex3 = agent.GetPrimaryWieldedItemIndex();
@@ -365,11 +363,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
         int strengthSkill = Math.Max(GetEffectiveSkill(agent, CrpgSkills.Strength), 3);
         int athleticsSkill = GetEffectiveSkill(agent, DefaultSkills.Athletics);
-        const float awfulScaler = 3231477.548f;
-        float[] weightReductionPolynomialFactor = { 30f / awfulScaler, 0.00005f / awfulScaler, 0.5f / awfulScaler, 1000000f / awfulScaler, 0f };
-        float weightReductionFactor = 1f / (1f + MathHelper.ApplyPolynomialFunction(strengthSkill - 3, weightReductionPolynomialFactor));
         float totalEncumbrance = props.ArmorEncumbrance + props.WeaponsEncumbrance;
-        float freeWeight = 2.5f * (1 + (strengthSkill - 3f) / 30f);
         float perceivedWeight = ComputePerceivedWeight(agent);
         props.TopSpeedReachDuration = 1.1f * (1f + perceivedWeight / 15f) * (20f / (20f + (float)Math.Pow(athleticsSkill / 120f, 2f))) + ImpactOfStrAndWeaponLengthOnTimeToMaxSpeed(equippedItem != null ? equippedItem.WeaponLength : 22, strengthSkill);
         float speed = 0.58f + 0.034f * athleticsSkill / 26f;
@@ -388,7 +382,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.HandlingMultiplier = 1.05f * _constants.HandlingFactorForWeaponMaster[Math.Min(weaponMaster, _constants.HandlingFactorForWeaponMaster.Length - 1)];
         props.ShieldBashStunDurationMultiplier = 1f;
         props.KickStunDurationMultiplier = 1f;
-        props.ReloadSpeed = equippedItem == null ? props.SwingSpeedMultiplier : (equippedItem.SwingSpeed / 100f) * (0.6f + 0.0001f * itemSkill + 0.0000125f * itemSkill * itemSkill);
+        props.ReloadSpeed = equippedItem == null ? props.SwingSpeedMultiplier : equippedItem.SwingSpeed / 100f * (0.6f + 0.0001f * itemSkill + 0.0000125f * itemSkill * itemSkill);
         props.MissileSpeedMultiplier = 1f;
         props.ReloadMovementPenaltyFactor = 1f;
         SetAllWeaponInaccuracy(agent, props, (int)wieldedItemIndex3, equippedItem);
@@ -472,7 +466,9 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     float wpfImpactOnWindUp = 140f; // lower is better 160f
                     float wpfImpactOnReloadSpeed = 240f; // lower is better 200f
 
-                    float DamageImpactOnWindUp = equippedItem.ThrustDamage * CrpgItemValueModel.CalculateDamageTypeFactorForThrown(equippedItem.ThrustDamageType) / CrpgItemValueModel.CalculateDamageTypeFactorForThrown(DamageTypes.Cut);
+                    float damageImpactOnWindUp = equippedItem.ThrustDamage
+                                                 * CrpgItemValueModel.CalculateDamageTypeFactorForThrown(equippedItem.ThrustDamageType)
+                                                 / CrpgItemValueModel.CalculateDamageTypeFactorForThrown(DamageTypes.Cut);
 
                     props.WeaponMaxUnsteadyAccuracyPenalty = 0.0035f;
                     props.WeaponMaxMovementAccuracyPenalty = 0.1f;
@@ -481,10 +477,10 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
                     props.WeaponBestAccuracyWaitTime = 0.00001f; // set to extremely low because as soon as windup is finished thrower is accurate
 
-                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.3f, 0.75f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 2.5f) * 40f / DamageImpactOnWindUp); // WindupSpeed
-                    props.ReloadSpeed *= MBMath.Lerp(0.8f, 1.0f, itemSkill / wpfImpactOnReloadSpeed); // this only affect picking a new throwing weapon
+                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.3f, 0.75f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 2.5f) * 40f / damageImpactOnWindUp); // WindupSpeed
+                    props.ReloadSpeed *= MBMath.Lerp(0.8f, 1.0f, itemSkill / wpfImpactOnReloadSpeed); // this only affects picking a new throwing weapon
 
-                    props.CombatMaxSpeedMultiplier *= 0.75f; // this is slowdown when ready to throw. Higher is better , do not go above 1.0
+                    props.CombatMaxSpeedMultiplier *= 0.75f; // This is a slowdown when ready to throw. Higher is better, do not go above 1.0
 
                     // These do not matter if props.WeaponMaxUnsteadyAccuracyPenalty is set to 0f
                     props.WeaponUnsteadyBeginTime = 1.0f + weaponSkill * 0.006f + powerThrow * powerThrow / 10f * 1.6f; // Time at which your character becomes tired and the accuracy declines
@@ -560,7 +556,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 // Mounted skill penalty
                 props.WeaponInaccuracy /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
 
-
                 // Encumbrance-based inaccuracy penalty (neutral at 20, quadratic growth)
                 float encumbranceRatio = totalEncumbrance / 20.0f;
                 float encumbranceMultiplier = MathF.Max(
@@ -572,7 +567,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 // Reload & draw speed penalty: linearly drops from 1.0 at 20 to 0.25 at 30
                 float reloadThrustMultiplier = totalEncumbrance <= 20f
                     ? 1.0f
-                    : MathF.Max(1.0f - ((totalEncumbrance - 20f) / 10f) * 0.75f, 0.25f);
+                    : MathF.Max(1.0f - (totalEncumbrance - 20f) / 10f * 0.75f, 0.25f);
 
                 props.ReloadSpeed *= reloadThrustMultiplier;
                 props.ThrustOrRangedReadySpeedMultiplier *= reloadThrustMultiplier;
@@ -604,7 +599,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
     {
         float levelMultiplier = 1f;
         int meleeSkill = GetMeleeSkill(agent, equippedItem, secondaryItem);
-        SkillObject skill = ((equippedItem == null) ? DefaultSkills.Athletics : equippedItem.RelevantSkill);
+        SkillObject skill = equippedItem == null ? DefaultSkills.Athletics : equippedItem.RelevantSkill;
         int effectiveSkill = GetEffectiveSkill(agent, skill);
         float num = CalculateAILevel(agent, meleeSkill) * levelMultiplier;
         float num2 = CalculateAILevel(agent, effectiveSkill) * levelMultiplier;
@@ -614,7 +609,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         agentDrivenProperties.AiFacingMissileWatch = -0.96f + num * 0.06f;
         agentDrivenProperties.AiFlyingMissileCheckRadius = 8f - 6f * num;
         agentDrivenProperties.AiShootFreq = 0.3f + 0.7f * num2;
-        agentDrivenProperties.AiWaitBeforeShootFactor = (agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : (1f - 0.5f * num2));
+        agentDrivenProperties.AiWaitBeforeShootFactor = agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : 1f - 0.5f * num2;
         agentDrivenProperties.AIBlockOnDecideAbility = MBMath.Lerp(0.5f, 0.99f, MBMath.ClampFloat(MathF.Pow(num, 0.5f), 0f, 1f));
         agentDrivenProperties.AIParryOnDecideAbility = MBMath.Lerp(0.5f, 0.95f, MBMath.ClampFloat(num, 0f, 1f));
         agentDrivenProperties.AiTryChamberAttackOnDecide = (num - 0.15f) * 0.1f;
@@ -622,7 +617,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         agentDrivenProperties.AiAttackOnParryTiming = -0.2f + 0.3f * num;
         agentDrivenProperties.AIDecideOnAttackChance = 0.5f * agent.Defensiveness;
         agentDrivenProperties.AIParryOnAttackAbility = MBMath.ClampFloat(num, 0f, 1f);
-        agentDrivenProperties.AiKick = -0.1f + ((num > 0.4f) ? 0.4f : num);
+        agentDrivenProperties.AiKick = -0.1f + (num > 0.4f ? 0.4f : num);
         agentDrivenProperties.AiAttackCalculationMaxTimeFactor = num;
         agentDrivenProperties.AiDecideOnAttackWhenReceiveHitTiming = -0.25f * (1f - num);
         agentDrivenProperties.AiDecideOnAttackContinueAction = -0.5f * (1f - num);
@@ -644,7 +639,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         agentDrivenProperties.AiRaiseShieldDelayTimeBase = -0.75f + 0.5f * num;
         agentDrivenProperties.AiUseShieldAgainstEnemyMissileProbability = 0.1f + num * 0.6f + num3 * 0.2f;
         agentDrivenProperties.AiCheckApplyMovementInterval = (2f - difficultyModifier) * (0.05f + 0.005f * (1.1f - num));
-        agentDrivenProperties.AiCheckCalculateMovementInterval = ((agent.HasMount || agent.IsMount) ? 0.25f : ((2f - difficultyModifier) * 0.25f));
+        agentDrivenProperties.AiCheckCalculateMovementInterval = agent.HasMount || agent.IsMount ? 0.25f : (2f - difficultyModifier) * 0.25f;
         agentDrivenProperties.AiCheckDecideSimpleBehaviorInterval = (2f - difficultyModifier) * (agent.GetAgentFlags().HasAnyFlag(AgentFlag.CanWieldWeapon) ? 1.5f : 0.2f);
         agentDrivenProperties.AiCheckDoSimpleBehaviorInterval = 2f - difficultyModifier;
         agentDrivenProperties.AiMovementDelayFactor = 4f / (3f + num2);
@@ -653,14 +648,14 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         agentDrivenProperties.AiMoveEnemySideTimeValue = -2.5f + 0.5f * num;
         agentDrivenProperties.AiMinimumDistanceToContinueFactor = 2f + 0.3f * (3f - num);
         agentDrivenProperties.AiChargeHorsebackTargetDistFactor = 1.5f * (3f - num);
-        agentDrivenProperties.AiWaitBeforeShootFactor = (agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : (1f - 0.5f * num2));
+        agentDrivenProperties.AiWaitBeforeShootFactor = agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : 1f - 0.5f * num2;
         float num4 = 1f - num2;
         agentDrivenProperties.AiRangerLeadErrorMin = (0f - num4) * 0.35f;
         agentDrivenProperties.AiRangerLeadErrorMax = num4 * 0.2f;
         agentDrivenProperties.AiRangerVerticalErrorMultiplier = num4 * 0.1f;
         agentDrivenProperties.AiRangerHorizontalErrorMultiplier = num4 * ((float)Math.PI / 90f);
         agentDrivenProperties.AIAttackOnDecideChance = MathF.Clamp(0.1f * CalculateAIAttackOnDecideMaxValue() * (3f - agent.Defensiveness), 0.05f, 1f);
-        agentDrivenProperties.SetStat(DrivenProperty.UseRealisticBlocking, (agent.Controller != AgentControllerType.Player) ? 1f : 0f);
+        agentDrivenProperties.SetStat(DrivenProperty.UseRealisticBlocking, agent.Controller != AgentControllerType.Player ? 1f : 0f);
         agentDrivenProperties.AiWeaponFavorMultiplierMelee = 1f;
         agentDrivenProperties.AiWeaponFavorMultiplierRanged = 1f;
         agentDrivenProperties.AiWeaponFavorMultiplierPolearm = 1f;
@@ -668,7 +663,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
     private float ImpactOfStrAndWeaponLengthOnCombatMaxSpeedMultiplier(int weaponLength, int strengthSkill)
     {
-        return Math.Min(MBMath.Lerp(0.8f, 1f, MaxWeaponLengthForStrLevel(strengthSkill) / weaponLength), 1f);
+        return Math.Min(MBMath.Lerp(0.8f, 1f, MaxWeaponLengthForStrLevel(strengthSkill) / (float)weaponLength), 1f);
     }
 
     private float ImpactOfStrAndWeaponLengthOnTimeToMaxSpeed(int weaponLength, int strengthSkill)
@@ -717,20 +712,22 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
     private float ComputePerceivedWeight(Agent agent)
     {
-        if (agent == null || agent.AgentDrivenProperties == null)
+        if (agent.AgentDrivenProperties == null)
+        {
             return 0f;
+        }
 
         int strengthSkill = Math.Max(GetEffectiveSkill(agent, CrpgSkills.Strength), 3);
         const float awfulScaler = 3231477.548f;
 
         float[] weightReductionPolynomialFactor =
-        {
+        [
             30f / awfulScaler,
             0.00005f / awfulScaler,
             0.5f / awfulScaler,
             1000000f / awfulScaler,
-            0f
-        };
+            0f,
+        ];
 
         float weightReductionFactor = 1f / (1f + MathHelper.ApplyPolynomialFunction(strengthSkill - 3, weightReductionPolynomialFactor));
         float totalEncumbrance = agent.AgentDrivenProperties.ArmorEncumbrance + agent.AgentDrivenProperties.WeaponsEncumbrance;

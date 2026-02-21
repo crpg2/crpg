@@ -7,6 +7,7 @@ using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
+using MathF = TaleWorlds.Library.MathF;
 
 namespace Crpg.Module.Modes.Warmup;
 
@@ -30,8 +31,8 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
     private MissionTimer? _rewardTickTimer;
     private MissionTime _currentStateStartTime;
     private List<MissionPeer> _players = new();
-    public event Action<float> OnWarmupRewardTick = default!;
-    public event Action<int> OnUpdatePlayerCount = default!;
+    public event Action<float> OnWarmupRewardTick = null!;
+    public event Action<int> OnUpdatePlayerCount = null!;
 
     public CrpgWarmupComponent(CrpgConstants constants,
         MultiplayerGameNotificationsComponent notificationsComponent,
@@ -122,7 +123,6 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
         RewardUsers();
     }
 
-
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
     {
         base.AddRemoveMessageHandlers(registerer);
@@ -184,7 +184,7 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
     private void UpdateRemainingPlayers()
     {
         // calculate number of remaining players needed to start game
-        OnUpdatePlayerCount?.Invoke(TaleWorlds.Library.MathF.Max(MultiplayerOptions.OptionType.MinNumberOfPlayersForMatchStart.GetIntValue() - _players.Count(), 0));
+        OnUpdatePlayerCount?.Invoke(MathF.Max(MultiplayerOptions.OptionType.MinNumberOfPlayersForMatchStart.GetIntValue() - _players.Count(), 0));
     }
 
     private void RewardUsers()
@@ -209,7 +209,7 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
         spawnComponent.SetNewSpawningBehavior(new CrpgWarmupSpawningBehavior(_constants));
     }
 
-    private void EndWarmupProgress()
+    private new void EndWarmupProgress()
     {
         WarmupStateReflection = WarmupStates.Ending;
         TimerComponentReflection.StartTimerAsServer(30f);
@@ -245,7 +245,7 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
         MissionPeer missionPeer = myPeer.GetComponent<MissionPeer>();
         if (missionPeer?.Team != null)
         {
-            string text = (missionPeer.Team.Side == BattleSideEnum.Attacker) ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions) : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
+            string text = missionPeer.Team.Side == BattleSideEnum.Attacker ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue() : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue();
             MBSoundEvent.PlaySound(SoundEvent.GetEventIdFromString("event:/alerts/rally/" + text.ToLower()), vec);
             return;
         }

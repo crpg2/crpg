@@ -1,7 +1,5 @@
-﻿using Crpg.Module.Api.Models.Characters;
-using NetworkMessages.FromServer;
+﻿using NetworkMessages.FromServer;
 using TaleWorlds.Core;
-using TaleWorlds.Diamond;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.ObjectSystem;
@@ -14,8 +12,8 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
     protected static float TimeSinceSpawnEnabled { get; set; }
     private readonly CrpgConstants _constants;
 
-    private readonly List<WeaponClass> allowedSpawnWeaponClass = new()
-    {
+    private readonly List<WeaponClass> _allowedSpawnWeaponClass =
+    [
         WeaponClass.Dagger,
         WeaponClass.Mace,
         WeaponClass.TwoHandedMace,
@@ -30,23 +28,24 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
         WeaponClass.Javelin,
         WeaponClass.Stone,
         WeaponClass.ThrowingAxe,
-        WeaponClass.ThrowingKnife,
-    };
+        WeaponClass.ThrowingKnife
+    ];
 
-    private Dictionary<Team, int> _TeamSumOfEquipment = new Dictionary<Team, int>();
-    private Dictionary<Team, int> _TeamAverageEquipment = new Dictionary<Team, int>();
-    private Dictionary<Team, int> _TeamNumberOfBots = new Dictionary<Team, int>();
+    private readonly Dictionary<Team, int> _teamSumOfEquipment = new();
+    private readonly Dictionary<Team, int> _teamAverageEquipment = new();
+    private readonly Dictionary<Team, int> _teamNumberOfBots = new();
 #if CRPG_SERVER
-    private int totalNumberOfBots = CrpgServerConfiguration.ControlledBotsCount;
+    private readonly int _totalNumberOfBots = CrpgServerConfiguration.ControlledBotsCount;
 #else
-private int totalNumberOfBots = 800;
+    private readonly int _totalNumberOfBots = 800;
 #endif
-    protected MultiplayerGameType CurrentGameMode { get; set; } = MultiplayerGameType.Battle;
 
     public CrpgSpawningBehaviorBase(CrpgConstants constants)
     {
         _constants = constants;
     }
+
+    protected MultiplayerGameType CurrentGameMode { get; set; } = MultiplayerGameType.Battle;
 
     public float TimeUntilRespawn(Team team)
     {
@@ -68,6 +67,7 @@ private int totalNumberOfBots = 800;
     {
         return false;
     }
+
     public override void Initialize(SpawnComponent spawnComponent)
     {
         base.Initialize(spawnComponent);
@@ -78,23 +78,23 @@ private int totalNumberOfBots = 800;
     {
         foreach (Team team in Mission.Current.Teams)
         {
-            _TeamSumOfEquipment[team] = ComputeTeamSumOfEquipmentValue(team);
-            _TeamAverageEquipment[team] = ComputeTeamAverageUnitValue(team, _TeamSumOfEquipment[team]);
+            _teamSumOfEquipment[team] = ComputeTeamSumOfEquipmentValue(team);
+            _teamAverageEquipment[team] = ComputeTeamAverageUnitValue(team, _teamSumOfEquipment[team]);
         }
+
         foreach (Team team in Mission.Current.Teams)
         {
             int teamCount = GameNetwork.NetworkPeers.Count(p => IsNetworkPeerRelevant(p) && p.GetComponent<MissionPeer>().Team == team);
-            float numerator = totalNumberOfBots * _TeamAverageEquipment.Where(kvp => kvp.Key != team).Sum(kvp => kvp.Value);
-            float denominator = (Mission.Current.Teams.Count - 2) * _TeamAverageEquipment.Sum(kvp => kvp.Value); // -2 because we also remove spectator
+            float numerator = _totalNumberOfBots * _teamAverageEquipment.Where(kvp => kvp.Key != team).Sum(kvp => kvp.Value);
+            float denominator = (Mission.Current.Teams.Count - 2) * _teamAverageEquipment.Sum(kvp => kvp.Value); // -2 because we also remove spectator
             if (teamCount <= 1)
             {
-                _TeamNumberOfBots[team] = totalNumberOfBots / (Mission.Current.Teams.Count - 1);
+                _teamNumberOfBots[team] = _totalNumberOfBots / (Mission.Current.Teams.Count - 1);
             }
             else
             {
-                _TeamNumberOfBots[team] = (int)(numerator / denominator);
+                _teamNumberOfBots[team] = (int)(numerator / denominator);
             }
-            
         }
 
         base.RequestStartSpawnSession();
@@ -115,7 +115,7 @@ private int totalNumberOfBots = 800;
     {
         BasicCultureObject cultureTeam1 = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue());
         BasicCultureObject cultureTeam2 = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue());
-        int p = 0;
+        int heroClassId = 0;
         foreach (NetworkCommunicator networkPeer in GameNetwork.NetworkPeers)
         {
             MissionPeer missionPeer = networkPeer.GetComponent<MissionPeer>();
@@ -133,9 +133,9 @@ private int totalNumberOfBots = 800;
                 continue;
             }
 
-            p++;
+            heroClassId++;
             BasicCultureObject teamCulture = missionPeer.Team == Mission.AttackerTeam ? cultureTeam1 : cultureTeam2;
-            var peerClass = MBObjectManager.Instance.GetObject<MultiplayerClassDivisions.MPHeroClass>($"crpg_captain_division_{p}");
+            var peerClass = MBObjectManager.Instance.GetObject<MultiplayerClassDivisions.MPHeroClass>($"crpg_captain_division_{heroClassId}");
             // var character = CreateCharacter(crpgPeer.User.Character, _constants);
             var characterSkills = CrpgCharacterBuilder.CreateCharacterSkills(crpgPeer.User!.Character.Characteristics);
             var characterXml = peerClass.HeroCharacter;
@@ -149,8 +149,6 @@ private int totalNumberOfBots = 800;
             Expecting that a character always exist in xmls
              */
 
-            //
-
             bool hasMount = characterEquipment[EquipmentIndex.Horse].Item != null;
 
             bool firstSpawn = missionPeer.SpawnCountThisRound == 0;
@@ -160,10 +158,10 @@ private int totalNumberOfBots = 800;
             initialDirection.RotateCCW(MBRandom.RandomFloatRanged(-MathF.PI / 3f, MathF.PI / 3f));
             var troopOrigin = new CrpgBattleAgentOrigin(characterXml, characterSkills);
             CrpgCharacterBuilder.AssignArmorsToTroopOrigin(troopOrigin, crpgPeer.User.Character.EquippedItems.ToList());
-            Formation formation = missionPeer.ControlledFormation;
+            Formation? formation = missionPeer.ControlledFormation;
             if (formation == null)
             {
-                formation = missionPeer.Team.FormationsIncludingEmpty.FirstOrDefault((Formation x) => x.PlayerOwner == null && x.CountOfUnits == 0);
+                formation = missionPeer.Team.FormationsIncludingEmpty.FirstOrDefault(x => x.PlayerOwner == null && x.CountOfUnits == 0);
                 if (formation != null)
                 {
                     formation.ContainsAgentVisuals = true;
@@ -226,36 +224,27 @@ private int totalNumberOfBots = 800;
                 List<NetworkCommunicator> peers = GameNetwork.NetworkPeers;
                 List<NetworkCommunicator> teamRelevantPeers =
                     peers.Where(p => IsNetworkPeerRelevant(p) && p.GetComponent<MissionPeer>().Team == missionPeer.Team).ToList();
-                float sumOfTeamEquipment = _TeamSumOfEquipment[missionPeer.Team];
+                float sumOfTeamEquipment = _teamSumOfEquipment[missionPeer.Team];
                 float peerSumOfEquipment = ComputeEquipmentValue(crpgPeer);
-                int peerNumberOfBots = 0;
+                int peerNumberOfBots;
                 if (teamRelevantPeers.Count - 1 < 1)
                 {
-                    peerNumberOfBots = _TeamNumberOfBots[missionPeer.Team];
+                    peerNumberOfBots = _teamNumberOfBots[missionPeer.Team];
                 }
                 else
                 {
-                    peerNumberOfBots = (int)(_TeamNumberOfBots[missionPeer.Team] * (1 - peerSumOfEquipment / sumOfTeamEquipment) /
-                             (float)(teamRelevantPeers.Count - 1));
+                    peerNumberOfBots = (int)(_teamNumberOfBots[missionPeer.Team] * (1 - peerSumOfEquipment / sumOfTeamEquipment) /
+                             (teamRelevantPeers.Count - 1));
                 }
 
                 for (int i = 0; i < peerNumberOfBots; i++)
                 {
-                    SpawnBotAgent($"crpg_captain_bot_division_{p}", agent.Team, missionPeer, p);
+                    SpawnBotAgent($"crpg_captain_bot_division_{heroClassId}", agent.Team, missionPeer, heroClassId);
                 }
             }
 
             // AgentVisualSpawnComponent.RemoveAgentVisuals(missionPeer, sync: true);
         }
-    }
-
-    private CrpgCharacterObject CreateCharacter(CrpgCharacter character, CrpgConstants constants, MBCharacterSkills skills, Equipment equipment)
-    {
-        CrpgCharacterObject characterObject = new(skills, equipment)
-        {
-            Level = character.Level,
-        };
-        return characterObject;
     }
 
     protected Agent SpawnBotAgent(string classDivisionId, Team team, MissionPeer? peer = null, int p = 0, bool isInitialSpawn = true)
@@ -292,13 +281,13 @@ private int totalNumberOfBots = 800;
             agentBuildData.OwningMissionPeer(peer);
             agentBuildData.Formation(peer.ControlledFormation);
             var crpgPeer = peer.GetComponent<CrpgPeer>();
-            if (crpgPeer != null && crpgPeer?.User != null)
+            if (crpgPeer != null && crpgPeer.User != null)
             {
                 Equipment characterEquipment = CrpgCharacterBuilder.CreateBotCharacterEquipment(crpgPeer.User.Character.EquippedItems);
                 MultiplayerClassDivisions.MPHeroClass? peerClass = MBObjectManager.Instance.GetObject<MultiplayerClassDivisions.MPHeroClass>($"crpg_captain_bot_division_{p}");
                 MBCharacterSkills characterSkills = CrpgCharacterBuilder.CreateCharacterSkills(crpgPeer.User!.Character.Characteristics);
                 BasicCharacterObject? characterXml = peerClass.HeroCharacter;
-                CrpgBattleAgentOrigin troopOrigin = new CrpgBattleAgentOrigin(characterXml, characterSkills);
+                CrpgBattleAgentOrigin troopOrigin = new(characterXml, characterSkills);
                 agentBuildData.OwningMissionPeer(peer);
                 agentBuildData.Formation(peer.ControlledFormation);
                 agentBuildData.Equipment(characterEquipment);
@@ -345,7 +334,7 @@ private int totalNumberOfBots = 800;
             }
             else
             {
-                botsTeam1 = totalNumberOfBots / (Mission.Current.Teams.Count - 1);
+                botsTeam1 = _totalNumberOfBots / (Mission.Current.Teams.Count - 1);
             }
 
             if (team2Count != 0)
@@ -354,17 +343,16 @@ private int totalNumberOfBots = 800;
             }
             else
             {
-                botsTeam2 = totalNumberOfBots / (Mission.Current.Teams.Count - 1);
+                botsTeam2 = _totalNumberOfBots / (Mission.Current.Teams.Count - 1);
             }
         }
-     
+
         if (botsTeam1 <= 0 && botsTeam2 <= 0)
         {
             return;
         }
 
         Mission.Current.AllowAiTicking = false;
-        int k = 0;
         foreach (Team team in Mission.Teams)
         {
             if (Mission.AttackerTeam != team && Mission.DefenderTeam != team)
@@ -390,17 +378,15 @@ private int totalNumberOfBots = 800;
                     .GetRandomElementWithPredicate<MultiplayerClassDivisions.MPHeroClass>(x => x.StringId.StartsWith("crpg_bot_"));
                 SpawnBotAgent(botClass.StringId, team, isInitialSpawn: isInitialSpawn);
             }
-
-            k++;
         }
-
     }
 
     protected virtual void OnPeerSpawned(Agent agent)
-        {
+    {
         if (agent.MissionPeer.ControlledFormation != null)
         {
-            agent.Team.AssignPlayerAsSergeantOfFormation(agent.MissionPeer, agent.MissionPeer.ControlledFormation.FormationIndex);
+            agent.Team.AssignPlayerAsSergeantOfFormation(agent.MissionPeer,
+                agent.MissionPeer.ControlledFormation.FormationIndex);
         }
 
         CrpgPeer? crpgPeer = agent.MissionPeer.GetComponent<CrpgPeer>();
@@ -411,7 +397,7 @@ private int totalNumberOfBots = 800;
     {
         for (var i = EquipmentIndex.Weapon0; i <= EquipmentIndex.Weapon3; i += 1)
         {
-            if (!equipment[i].IsEmpty && allowedSpawnWeaponClass.Contains(equipment[i].Item.PrimaryWeapon.WeaponClass))
+            if (!equipment[i].IsEmpty && _allowedSpawnWeaponClass.Contains(equipment[i].Item.PrimaryWeapon.WeaponClass))
             {
                 return true;
             }
@@ -443,7 +429,7 @@ private int totalNumberOfBots = 800;
             {
                 GameNetwork.BeginBroadcastModuleEvent();
                 GameNetwork.WriteMessage(new BotsControlledChange(networkPeer, peer.BotsUnderControlAlive, peer.BotsUnderControlTotal));
-                GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None, null);
+                GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
                 Mission.GetMissionBehavior<MissionMultiplayerGameModeFlagDominationClient>().OnBotsControlledChanged(peer, peer.BotsUnderControlAlive, peer.BotsUnderControlTotal);
             }
 
@@ -458,7 +444,7 @@ private int totalNumberOfBots = 800;
 
             GameNetwork.BeginBroadcastModuleEvent();
             GameNetwork.WriteMessage(new SetSpawnedFormationCount(Mission.NumOfFormationsSpawnedTeamOne, Mission.NumOfFormationsSpawnedTeamTwo));
-            GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None, null);
+            GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
         }
     }
 
@@ -468,7 +454,7 @@ private int totalNumberOfBots = 800;
         var teamRelevantPeers =
             peers.Where(p => IsNetworkPeerRelevant(p) && p.GetComponent<MissionPeer>().Team == team).ToList();
         int valueToReturn = teamRelevantPeers.Sum(p => ComputeEquipmentValue(p.GetComponent<CrpgPeer>()));
-        return (int) Math.Max(valueToReturn, 1);
+        return Math.Max(valueToReturn, 1);
     }
 
     private int ComputeTeamAverageUnitValue(Team team, int teamSumOfEquipment)
@@ -483,12 +469,12 @@ private int totalNumberOfBots = 800;
 
         double sumOfEachSquared = teamRelevantPeers.Sum(p => Math.Pow(ComputeEquipmentValue(p.GetComponent<CrpgPeer>()), 2f));
         int valueToReturn = (int)((teamSumOfEquipment - sumOfEachSquared / teamSumOfEquipment) / (float)(teamRelevantPeers.Count - 1));
-        return (int)Math.Max(valueToReturn, 1);
+        return Math.Max(valueToReturn, 1);
     }
 
     private int ComputeEquipmentValue(CrpgPeer peer)
     {
-        int value = peer?.User?.Character.EquippedItems.Select(i => MBObjectManager.Instance.GetObject<ItemObject>(i.UserItem.ItemId)).Sum(io => io.Value) ?? 0;
+        int value = peer.User?.Character.EquippedItems.Select(i => MBObjectManager.Instance.GetObject<ItemObject>(i.UserItem.ItemId)).Sum(io => io.Value) ?? 0;
 #if CRPG_SERVER
         return value + CrpgServerConfiguration.BaseNakedEquipmentValue; // protection against naked
 #else

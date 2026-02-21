@@ -13,7 +13,7 @@
     <PackageVersion Include="FluentValidation" Version="12.1.1" />
     <PackageVersion Include="FluentValidation.AspNetCore" Version="11.3.1" />
     <PackageVersion Include="Gameloop.Vdf" Version="0.6.2" />
-    <PackageVersion Include="Lib.Harmony" Version="2.3.3" />
+    <PackageVersion Include="Lib.Harmony" Version="2.4.2" />
     <PackageVersion Include="MaxMind.GeoIP2" Version="5.4.1" />
     <PackageVersion Include="Mediator.Abstractions" Version="3.0.1" />
     <PackageVersion Include="Mediator.SourceGenerator" Version="3.0.1" />
@@ -56,6 +56,5 @@
     <PackageVersion Include="System.Diagnostics.PerformanceCounter" Version="7.0.0" />
     <PackageVersion Include="System.Text.Json" Version="10.0.3" />
     <PackageVersion Include="WindowsAPICodePack-Shell" Version="1.1.1" />
-    <PackageVersion Include="WindowsFirewallHelper" Version="2.2.0.86" />
   </ItemGroup>
 </Project>

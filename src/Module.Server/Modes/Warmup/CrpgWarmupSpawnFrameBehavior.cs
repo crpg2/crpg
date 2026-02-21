@@ -21,7 +21,7 @@ public class CrpgWarmupSpawnFrameBehavior : SpawnFrameBehaviorBase
         return GetSpawnFrameFromSpawnPoints(spawnPoints, team, hasMount);
     }
 
-    private MatrixFrame GetSpawnFrameFromSpawnPoints(IList<GameEntity> spawnPointsList, Team team, bool hasMount)
+    private new MatrixFrame GetSpawnFrameFromSpawnPoints(IList<GameEntity> spawnPointsList, Team team, bool hasMount)
     {
         float highScore = float.MinValue;
         int index = -1;

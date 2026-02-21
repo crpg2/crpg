@@ -18,7 +18,7 @@ public class DtvAiComponent : CommonAIComponent
 
     public override void Initialize() // Not being called automatically when the component is instantiated
     {
-        _targetTimer = new(MathHelper.RandomWithVariance(ViscountTargetTimerDuration + (ViscountTargetTimerDuration / 31 * (Mission.Current.DefenderTeam.ActiveAgents.Count - 1)) * 3, 0.5f));
+        _targetTimer = new(MathHelper.RandomWithVariance(ViscountTargetTimerDuration + ViscountTargetTimerDuration / 31 * (Mission.Current.DefenderTeam.ActiveAgents.Count - 1) * 3, 0.5f));
     }
 
     public override void OnTickParallel(float dt)
@@ -52,7 +52,7 @@ public class DtvAiComponent : CommonAIComponent
 
     private void CheckTargetTimer()
     {
-        _targetTimer ??= new(MathHelper.RandomWithVariance(ViscountTargetTimerDuration + (ViscountTargetTimerDuration / 31 * (Mission.Current.DefenderTeam.ActiveAgents.Count - 1)), 0.2f));
+        _targetTimer ??= new(MathHelper.RandomWithVariance(ViscountTargetTimerDuration + ViscountTargetTimerDuration / 31 * (Mission.Current.DefenderTeam.ActiveAgents.Count - 1), 0.2f));
         if (!_focusingVip && _targetTimer.Check(true))
         {
             FocusVip();

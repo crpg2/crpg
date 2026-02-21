@@ -1,6 +1,7 @@
 ﻿using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
+using MathF = TaleWorlds.Library.MathF;
 
 namespace TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.HUDExtensions;
 
@@ -14,8 +15,8 @@ public class CrpgDuelMatchVm : ViewModel
     private string _score = string.Empty;
     private int _firstPlayerScore;
     private int _secondPlayerScore;
-    private MPPlayerVM _firstPlayer = default!;
-    private MPPlayerVM _secondPlayer = default!;
+    private MPPlayerVM _firstPlayer = null!;
+    private MPPlayerVM _secondPlayer = null!;
     public MissionPeer? FirstPlayerPeer { get; private set; }
     public MissionPeer? SecondPlayerPeer { get; private set; }
 
@@ -31,7 +32,7 @@ public class CrpgDuelMatchVm : ViewModel
             if (value != _isEnabled)
             {
                 _isEnabled = value;
-                OnPropertyChangedWithValue(value, "IsEnabled");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -48,7 +49,7 @@ public class CrpgDuelMatchVm : ViewModel
             if (value != _isPreparing)
             {
                 _isPreparing = value;
-                OnPropertyChangedWithValue(value, "IsPreparing");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -65,7 +66,7 @@ public class CrpgDuelMatchVm : ViewModel
             if (value != _countdownMessage)
             {
                 _countdownMessage = value;
-                OnPropertyChangedWithValue(value, "CountdownMessage");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -82,7 +83,7 @@ public class CrpgDuelMatchVm : ViewModel
             if (value != _score)
             {
                 _score = value;
-                OnPropertyChangedWithValue(value, "Score");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -99,7 +100,7 @@ public class CrpgDuelMatchVm : ViewModel
             if (value != _firstPlayerScore)
             {
                 _firstPlayerScore = value;
-                OnPropertyChangedWithValue(value, "FirstPlayerScore");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -116,7 +117,7 @@ public class CrpgDuelMatchVm : ViewModel
             if (value != _secondPlayerScore)
             {
                 _secondPlayerScore = value;
-                OnPropertyChangedWithValue(value, "SecondPlayerScore");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -133,7 +134,7 @@ public class CrpgDuelMatchVm : ViewModel
             if (value != _firstPlayer)
             {
                 _firstPlayer = value;
-                OnPropertyChangedWithValue(value, "FirstPlayer");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -150,7 +151,7 @@ public class CrpgDuelMatchVm : ViewModel
             if (value != _secondPlayer)
             {
                 _secondPlayer = value;
-                OnPropertyChangedWithValue(value, "SecondPlayer");
+                OnPropertyChangedWithValue(value);
             }
         }
     }

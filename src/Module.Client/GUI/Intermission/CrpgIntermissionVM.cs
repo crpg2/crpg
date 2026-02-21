@@ -1,10 +1,10 @@
 ﻿using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
+using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Diamond;
 using TaleWorlds.MountAndBlade.Multiplayer.NetworkComponents;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.Intermission;
-using TaleWorlds.MountAndBlade;
 using TaleWorlds.ObjectSystem;
 
 namespace Crpg.Module.GUI.Intermission;
@@ -13,7 +13,7 @@ public class CrpgIntermissionVM : ViewModel
 {
     private bool _hasBaseNetworkComponentSet;
 
-    private BaseNetworkComponent _baseNetworkComponent = default!;
+    private BaseNetworkComponent _baseNetworkComponent = null!;
 
     private MultiplayerIntermissionState _currentIntermissionState = default!;
 
@@ -32,9 +32,9 @@ public class CrpgIntermissionVM : ViewModel
 
     private MPIntermissionCultureItemVM? _votedCultureItem;
 
-    private string _connectedPlayersCountValueText = default!;
+    private string _connectedPlayersCountValueText = null!;
 
-    private string _maxNumPlayersValueText = default!;
+    private string _maxNumPlayersValueText = null!;
 
     private bool _isFactionAValid;
 
@@ -52,29 +52,29 @@ public class CrpgIntermissionVM : ViewModel
 
     private bool _isPlayerCountEnabled;
 
-    private string _nextMapId = default!;
+    private string _nextMapId = null!;
 
-    private string _nextFactionACultureId = default!;
+    private string _nextFactionACultureId = null!;
 
-    private string _nextFactionBCultureId = default!;
+    private string _nextFactionBCultureId = null!;
 
-    private string _nextGameStateTimerLabel = default!;
+    private string _nextGameStateTimerLabel = null!;
 
-    private string _nextGameStateTimerValue = default!;
+    private string _nextGameStateTimerValue = null!;
 
-    private string _playersLabel = default!;
+    private string _playersLabel = null!;
 
-    private string _mapVoteText = default!;
+    private string _mapVoteText = null!;
 
-    private string _cultureVoteText = default!;
+    private string _cultureVoteText = null!;
 
-    private string _serverName = default!;
+    private string _serverName = null!;
 
-    private string _welcomeMessage = default!;
+    private string _welcomeMessage = null!;
 
-    private string _nextGameType = default!;
+    private string _nextGameType = null!;
 
-    private string _nextMapName = default!;
+    private string _nextMapName = null!;
 
     private Color _nextFactionACultureColor1 = default!;
 
@@ -84,11 +84,11 @@ public class CrpgIntermissionVM : ViewModel
 
     private Color _nextFactionBCultureColor2 = default!;
 
-    private string _quitText = default!;
+    private string _quitText = null!;
 
-    private MBBindingList<MPIntermissionMapItemVM> _availableMaps = default!;
+    private MBBindingList<MPIntermissionMapItemVM> _availableMaps = null!;
 
-    private MBBindingList<MPIntermissionCultureItemVM> _availableCultures = default!;
+    private MBBindingList<MPIntermissionCultureItemVM> _availableCultures = null!;
 
     [DataSourceProperty]
     public string ConnectedPlayersCountValueText
@@ -102,7 +102,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _connectedPlayersCountValueText)
             {
                 _connectedPlayersCountValueText = value;
-                OnPropertyChangedWithValue(value, "ConnectedPlayersCountValueText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -119,7 +119,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _maxNumPlayersValueText)
             {
                 _maxNumPlayersValueText = value;
-                OnPropertyChangedWithValue(value, "MaxNumPlayersValueText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -136,7 +136,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _isFactionAValid)
             {
                 _isFactionAValid = value;
-                OnPropertyChangedWithValue(value, "IsFactionAValid");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -153,7 +153,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _isFactionBValid)
             {
                 _isFactionBValid = value;
-                OnPropertyChangedWithValue(value, "IsFactionBValid");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -170,7 +170,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _isMissionTimerEnabled)
             {
                 _isMissionTimerEnabled = value;
-                OnPropertyChangedWithValue(value, "IsMissionTimerEnabled");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -187,7 +187,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _isEndGameTimerEnabled)
             {
                 _isEndGameTimerEnabled = value;
-                OnPropertyChangedWithValue(value, "IsEndGameTimerEnabled");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -204,7 +204,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _isNextMapInfoEnabled)
             {
                 _isNextMapInfoEnabled = value;
-                OnPropertyChangedWithValue(value, "IsNextMapInfoEnabled");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -221,7 +221,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _isMapVoteEnabled)
             {
                 _isMapVoteEnabled = value;
-                OnPropertyChangedWithValue(value, "IsMapVoteEnabled");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -238,7 +238,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _isCultureVoteEnabled)
             {
                 _isCultureVoteEnabled = value;
-                OnPropertyChangedWithValue(value, "IsCultureVoteEnabled");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -255,7 +255,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _isPlayerCountEnabled)
             {
                 _isPlayerCountEnabled = value;
-                OnPropertyChangedWithValue(value, "IsPlayerCountEnabled");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -272,7 +272,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _nextMapId)
             {
                 _nextMapId = value;
-                OnPropertyChangedWithValue(value, "NextMapID");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -289,7 +289,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _nextFactionACultureId)
             {
                 _nextFactionACultureId = value;
-                OnPropertyChangedWithValue(value, "NextFactionACultureID");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -306,7 +306,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _nextFactionACultureColor1)
             {
                 _nextFactionACultureColor1 = value;
-                OnPropertyChangedWithValue(value, "NextFactionACultureColor1");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -323,7 +323,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _nextFactionACultureColor2)
             {
                 _nextFactionACultureColor2 = value;
-                OnPropertyChangedWithValue(value, "NextFactionACultureColor2");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -340,7 +340,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _nextFactionBCultureId)
             {
                 _nextFactionBCultureId = value;
-                OnPropertyChangedWithValue(value, "NextFactionBCultureID");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -357,7 +357,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _nextFactionBCultureColor1)
             {
                 _nextFactionBCultureColor1 = value;
-                OnPropertyChangedWithValue(value, "NextFactionBCultureColor1");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -374,7 +374,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _nextFactionBCultureColor2)
             {
                 _nextFactionBCultureColor2 = value;
-                OnPropertyChangedWithValue(value, "NextFactionBCultureColor2");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -391,7 +391,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _playersLabel)
             {
                 _playersLabel = value;
-                OnPropertyChangedWithValue(value, "PlayersLabel");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -408,7 +408,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _mapVoteText)
             {
                 _mapVoteText = value;
-                OnPropertyChangedWithValue(value, "MapVoteText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -425,7 +425,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _cultureVoteText)
             {
                 _cultureVoteText = value;
-                OnPropertyChangedWithValue(value, "CultureVoteText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -442,7 +442,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _nextGameStateTimerLabel)
             {
                 _nextGameStateTimerLabel = value;
-                OnPropertyChangedWithValue(value, "NextGameStateTimerLabel");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -459,7 +459,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _nextGameStateTimerValue)
             {
                 _nextGameStateTimerValue = value;
-                OnPropertyChangedWithValue(value, "NextGameStateTimerValue");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -476,7 +476,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _welcomeMessage)
             {
                 _welcomeMessage = value;
-                OnPropertyChangedWithValue(value, "WelcomeMessage");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -493,7 +493,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _serverName)
             {
                 _serverName = value;
-                OnPropertyChangedWithValue(value, "ServerName");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -510,7 +510,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _nextGameType)
             {
                 _nextGameType = value;
-                OnPropertyChangedWithValue(value, "NextGameType");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -527,7 +527,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _nextMapName)
             {
                 _nextMapName = value;
-                OnPropertyChangedWithValue(value, "NextMapName");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -544,7 +544,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _availableMaps)
             {
                 _availableMaps = value;
-                OnPropertyChangedWithValue(value, "AvailableMaps");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -561,7 +561,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _availableCultures)
             {
                 _availableCultures = value;
-                OnPropertyChangedWithValue(value, "AvailableCultures");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -578,7 +578,7 @@ public class CrpgIntermissionVM : ViewModel
             if (value != _quitText)
             {
                 _quitText = value;
-                OnPropertyChangedWithValue(value, "QuitText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -628,7 +628,7 @@ public class CrpgIntermissionVM : ViewModel
         if (_baseNetworkComponent != null)
         {
             BaseNetworkComponent baseNetworkComponent = _baseNetworkComponent;
-            baseNetworkComponent.OnIntermissionStateUpdated = (Action)Delegate.Remove(baseNetworkComponent.OnIntermissionStateUpdated, new Action(OnIntermissionStateUpdated));
+            baseNetworkComponent.OnIntermissionStateUpdated = (Action?)Delegate.Remove(baseNetworkComponent.OnIntermissionStateUpdated, new Action(OnIntermissionStateUpdated));
         }
 
         MultiplayerIntermissionVotingManager.Instance.ClearItems();
@@ -669,13 +669,13 @@ public class CrpgIntermissionVM : ViewModel
                 IsCultureVoteEnabled = true;
                 foreach (IntermissionVoteItem cultureItem in cultureVoteItems)
                 {
-                    if (AvailableCultures.FirstOrDefault((MPIntermissionCultureItemVM c) => c.CultureCode == cultureItem.Id) == null)
+                    if (AvailableCultures.FirstOrDefault(c => c.CultureCode == cultureItem.Id) == null)
                     {
                         AvailableCultures.Add(new MPIntermissionCultureItemVM(cultureItem.Id, OnPlayerVotedForCulture));
                     }
 
                     int voteCount2 = cultureItem.VoteCount;
-                    AvailableCultures.FirstOrDefault((MPIntermissionCultureItemVM c) => c.CultureCode == cultureItem.Id).Votes = voteCount2;
+                    AvailableCultures.First(c => c.CultureCode == cultureItem.Id).Votes = voteCount2;
                 }
             }
 
@@ -727,15 +727,15 @@ public class CrpgIntermissionVM : ViewModel
         }
 
         MultiplayerOptions.Instance.GetOptionFromOptionType(MultiplayerOptions.OptionType.Map).GetValue(out string value3);
-        NextMapID = (IsEndGameTimerEnabled ? string.Empty : value3);
+        NextMapID = IsEndGameTimerEnabled ? string.Empty : value3;
         TextObject textObject2;
-        string text = ((!GameTexts.TryGetText("str_multiplayer_scene_name", out textObject2, value3)) ? value3 : textObject2.ToString());
-        NextMapName = (IsEndGameTimerEnabled ? string.Empty : text);
+        string text = !GameTexts.TryGetText("str_multiplayer_scene_name", out textObject2, value3) ? value3 : textObject2.ToString();
+        NextMapName = IsEndGameTimerEnabled ? string.Empty : text;
         if (flag)
         {
             MultiplayerOptions.Instance.GetOptionFromOptionType(MultiplayerOptions.OptionType.CultureTeam1).GetValue(out string value4);
             IsFactionAValid = !IsEndGameTimerEnabled && !string.IsNullOrEmpty(value4) && _currentIntermissionState != MultiplayerIntermissionState.CountingForMapVote;
-            NextFactionACultureID = (IsEndGameTimerEnabled ? string.Empty : value4);
+            NextFactionACultureID = IsEndGameTimerEnabled ? string.Empty : value4;
             if (!string.IsNullOrEmpty(NextFactionACultureID))
             {
                 BasicCultureObject object3 = MBObjectManager.Instance.GetObject<BasicCultureObject>(NextFactionACultureID);
@@ -745,7 +745,7 @@ public class CrpgIntermissionVM : ViewModel
 
             MultiplayerOptions.Instance.GetOptionFromOptionType(MultiplayerOptions.OptionType.CultureTeam2).GetValue(out string value5);
             IsFactionBValid = !IsEndGameTimerEnabled && !string.IsNullOrEmpty(value5) && _currentIntermissionState != MultiplayerIntermissionState.CountingForMapVote;
-            NextFactionBCultureID = (IsEndGameTimerEnabled ? string.Empty : value5);
+            NextFactionBCultureID = IsEndGameTimerEnabled ? string.Empty : value5;
             if (!string.IsNullOrEmpty(NextFactionBCultureID))
             {
                 BasicCultureObject object4 = MBObjectManager.Instance.GetObject<BasicCultureObject>(NextFactionBCultureID);
@@ -762,9 +762,9 @@ public class CrpgIntermissionVM : ViewModel
         MultiplayerOptions.Instance.GetOptionFromOptionType(MultiplayerOptions.OptionType.ServerName).GetValue(out string value6);
         ServerName = value6;
         MultiplayerOptions.Instance.GetOptionFromOptionType(MultiplayerOptions.OptionType.GameType).GetValue(out string value7);
-        NextGameType = (IsEndGameTimerEnabled ? string.Empty : GameTexts.FindText("str_multiplayer_game_type", value7).ToString());
+        NextGameType = IsEndGameTimerEnabled ? string.Empty : GameTexts.FindText("str_multiplayer_game_type", value7).ToString();
         MultiplayerOptions.Instance.GetOptionFromOptionType(MultiplayerOptions.OptionType.WelcomeMessage).GetValue(out string value8);
-        WelcomeMessage = (IsEndGameTimerEnabled ? string.Empty : value8);
+        WelcomeMessage = IsEndGameTimerEnabled ? string.Empty : value8;
         MultiplayerOptions.Instance.GetOptionFromOptionType(MultiplayerOptions.OptionType.MaxNumberOfPlayers).GetValue(out int value9);
         MaxNumPlayersValueText = value9.ToString();
         ConnectedPlayersCountValueText = GameNetwork.NetworkPeers.Count.ToString();

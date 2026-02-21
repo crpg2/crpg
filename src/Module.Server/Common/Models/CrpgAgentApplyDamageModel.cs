@@ -384,13 +384,13 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         int defenderShield = GetSkillValue(defenderAgent, CrpgSkills.Shield);
 
         float attackerPower = 3f * powerStrike;
-        float defenderDefendPower = (defendItem?.IsShield == true)
-                ? (float)System.Math.Max(defenderShield * 6 + 3, defenderStrength)
+        float defenderDefendPower = defendItem?.IsShield == true
+                ? (float)Math.Max(defenderShield * 6 + 3, defenderStrength)
                 : defenderStrength;
-        defenderDefendPower = System.Math.Max(defenderDefendPower, 1f);
+        defenderDefendPower = Math.Max(defenderDefendPower, 1f);
 
         int randomNumber = MBRandom.RandomInt(0, 1000);
-        return randomNumber / 10f < (float)System.Math.Pow(attackerPower / defenderDefendPower / 2.6f, 2.6f) * 100f;
+        return randomNumber / 10f < (float)Math.Pow(attackerPower / defenderDefendPower / 2.6f, 2.6f) * 100f;
     }
 
     // MissionCombatMechanicsHelper.cs/DecideMountRearedByBlow

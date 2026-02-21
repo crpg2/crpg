@@ -10,10 +10,11 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
 {
     private int _currentWave;
     private int _currentRound;
-    public Agent? VipAgent;
-    public event Action OnUpdateCurrentProgress = default!;
-    public event Action OnWaveStart = default!;
-    public event Action OnRoundStart = default!;
+    public event Action? OnUpdateCurrentProgress;
+    public event Action? OnWaveStart;
+    public event Action? OnRoundStart;
+
+    public Agent? VipAgent { get; set; }
 
     public int CurrentRound
     {
@@ -100,13 +101,13 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
         CurrentRound = message.Round + 1;
         CurrentWave = 0;
 
-        Action onRoundStartEvent = OnRoundStart;
+        Action? onRoundStartEvent = OnRoundStart;
         if (onRoundStartEvent == null)
         {
             return;
         }
 
-        OnRoundStart();
+        onRoundStartEvent();
     }
 
     private void HandleWaveStart(CrpgDtvWaveStartMessage message)
@@ -123,6 +124,7 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
 
         OnWaveStart?.Invoke();
     }
+
     private void HandleVipSpawn(CrpgDtvVipSpawn message)
     {
         VipAgent = Mission.MissionNetworkHelper.GetAgentFromIndex(message.VipAgentIndex, true);
@@ -155,7 +157,7 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
         }
 
         TextObject textObject = new("{=mfD3LkeQ}{VIP} is being attacked by {AGENT}!",
-        new Dictionary<string, object> { ["VIP"] = agentToDefend?.Name ?? "{=}The Viscount", ["AGENT"] = attackerAgent?.Name ?? string.Empty });
+        new Dictionary<string, object> { ["VIP"] = agentToDefend?.Name ?? "{=}The Viscount", ["AGENT"] = attackerAgent.Name ?? string.Empty });
         InformationManager.DisplayMessage(new InformationMessage
         {
             Information = textObject.ToString(),

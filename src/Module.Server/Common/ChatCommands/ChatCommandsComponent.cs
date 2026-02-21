@@ -1,15 +1,13 @@
 ﻿using Crpg.Module.Api;
+using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common.Network;
+using Crpg.Module.Helpers;
+using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Network.Messages;
-using Crpg.Module.Api.Models.Users;
-using Crpg.Module.Helpers;
-using TaleWorlds.Core;
 using PlayerMessageAll = NetworkMessages.FromClient.PlayerMessageAll;
 using PlayerMessageTeam = NetworkMessages.FromClient.PlayerMessageTeam;
-
-
 #if CRPG_SERVER
 using Crpg.Module.Common.ChatCommands.Admin;
 using Crpg.Module.Common.ChatCommands.Commander;
@@ -22,7 +20,7 @@ internal class ChatCommandsComponent : GameHandler
 {
     public const char CommandPrefix = '!';
     private readonly List<QueuedMessageInfo> _queuedServerMessages;
-    private ChatCommand[] _commands = default!;
+    private ChatCommand[] _commands = null!;
 
     public ChatCommandsComponent()
     {

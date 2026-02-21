@@ -306,7 +306,7 @@ internal static class MatchBalancingHelpers
     }
 
     /// <summary>
-    /// Compute the user theoritical weight when you move him out of his clanGroup into the other team. The other team may have a users of the same clan
+    /// Compute the user theoritical weight when you move him out of his clanGroup into the other team. The other team may have a users of the same clan.
     /// </summary>
     public static float ComputeMoveWeightHalfDifference(List<WeightedCrpgUser> teamToSwapFrom, List<WeightedCrpgUser> teamToSwapInto, WeightedCrpgUser? userToMove)
     {
@@ -330,7 +330,6 @@ internal static class MatchBalancingHelpers
         float newDifference = newteamToSwapFromClanGroups.Sum(c => c.Weight()) - newteamToSwapIntoClanGroups.Sum(c => c.Weight());
         return (oldDifference - newDifference) / 2f;
     }
-
 
     public static float ComputeTeamDiffAfterSwap(List<WeightedCrpgUser> teamToSwapFrom, List<WeightedCrpgUser> teamToSwapInto, List<WeightedCrpgUser> usersToMoveFromTeam1, List<WeightedCrpgUser> usersToMoveFromTeam2)
     {
@@ -371,8 +370,8 @@ internal static class MatchBalancingHelpers
         {
             // if elements is not sorted , sort them , but using indexSortingMap to remember their original position.
             Array.Sort(weights, indexSortingMap);
-            weights = weights.Reverse().ToArray();
-            indexSortingMap = indexSortingMap.Reverse().ToArray();
+            weights = Enumerable.Reverse(weights).ToArray();
+            indexSortingMap = Enumerable.Reverse(indexSortingMap).ToArray();
         }
 
         var partitions = new TaleWorlds.Library.PriorityQueue<float, PartitionNode<T>>();

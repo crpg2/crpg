@@ -156,7 +156,6 @@ internal class CrpgTeamDeathmatchServer : MissionMultiplayerGameModeBase
             int defenderMultiplierGain = 0;
             int attackerMultiplierGain = 0;
 
-
             BattleSideEnum? valourSide = null;
             if (winningTeam != null)
             {

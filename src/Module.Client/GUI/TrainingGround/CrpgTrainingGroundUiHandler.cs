@@ -54,7 +54,7 @@ public class CrpgTrainingGroundUiHandler : MissionView
         _equipmentController!.OnEquipmentRefreshed -= OnEquipmentRefreshed;
         MissionPeer.OnEquipmentIndexRefreshed -= OnPeerEquipmentIndexRefreshed;
         _lobbyComponent!.OnPostMatchEnded -= OnPostMatchEnded;
-        NativeOptions.OnNativeOptionChanged = (NativeOptions.OnNativeOptionChangedDelegate)Delegate.Remove(NativeOptions.OnNativeOptionChanged, new NativeOptions.OnNativeOptionChangedDelegate(OnNativeOptionChanged));
+        NativeOptions.OnNativeOptionChanged = (NativeOptions.OnNativeOptionChangedDelegate?)Delegate.Remove(NativeOptions.OnNativeOptionChanged, new NativeOptions.OnNativeOptionChangedDelegate(OnNativeOptionChanged));
     }
 
     public override void OnMissionScreenTick(float dt)

@@ -23,12 +23,12 @@ public class CrpgIntermissionScreenUIHandler : ScreenBase, IGameStateListener, I
 
     public CrpgIntermissionScreenUIHandler(LobbyGameStateCustomGameClient gameState)
     {
-        this.Construct();
+        Construct();
     }
 
     public CrpgIntermissionScreenUIHandler(LobbyGameStateCommunityClient gameState)
     {
-        this.Construct();
+        Construct();
     }
 
     private void Construct()
@@ -36,36 +36,36 @@ public class CrpgIntermissionScreenUIHandler : ScreenBase, IGameStateListener, I
         SpriteData spriteData = UIResourceManager.SpriteData;
         TwoDimensionEngineResourceContext resourceContext = UIResourceManager.ResourceContext;
         ResourceDepot uiresourceDepot = UIResourceManager.ResourceDepot;
-        this._customGameClientCategory = spriteData.SpriteCategories["ui_mpintermission"];
-        this._customGameClientCategory.Load(resourceContext, uiresourceDepot);
-        this._dataSource = new CrpgIntermissionVM();
-        this.Layer = new GauntletLayer("CrpgIntermission", 100, false);
-        this.Layer.IsFocusLayer = true;
-        base.AddLayer(this.Layer);
-        this.Layer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("GenericPanelGameKeyCategory"));
-        this.Layer.LoadMovie("CrpgIntermission", this._dataSource);
+        _customGameClientCategory = spriteData.SpriteCategories["ui_mpintermission"];
+        _customGameClientCategory.Load(resourceContext, uiresourceDepot);
+        _dataSource = new CrpgIntermissionVM();
+        Layer = new GauntletLayer("CrpgIntermission", 100);
+        Layer.IsFocusLayer = true;
+        AddLayer(Layer);
+        Layer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("GenericPanelGameKeyCategory"));
+        Layer.LoadMovie("CrpgIntermission", _dataSource);
     }
 
     protected override void OnFrameTick(float dt)
     {
         base.OnFrameTick(dt);
-        this._dataSource?.Tick();
+        _dataSource?.Tick();
     }
 
     protected override void OnFinalize()
     {
         base.OnFinalize();
-        this._customGameClientCategory.Unload();
-        this.Layer?.InputRestrictions.ResetInputRestrictions();
-        this.Layer = null;
-        this._dataSource?.OnFinalize();
-        this._dataSource = null;
+        _customGameClientCategory.Unload();
+        Layer?.InputRestrictions.ResetInputRestrictions();
+        Layer = null;
+        _dataSource?.OnFinalize();
+        _dataSource = null;
     }
 
     void IGameStateListener.OnActivate()
     {
-        this.Layer?.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
-        ScreenManager.TrySetFocus(this.Layer);
+        Layer?.InputRestrictions.SetInputRestrictions();
+        ScreenManager.TrySetFocus(Layer);
         LoadingWindow.EnableGlobalLoadingWindow();
     }
 
@@ -83,16 +83,16 @@ public class CrpgIntermissionScreenUIHandler : ScreenBase, IGameStateListener, I
 
     void IChatLogHandlerScreen.TryUpdateChatLogLayerParameters(ref bool isTeamChatAvailable, ref bool inputEnabled, ref bool isToggleChatHintAvailable, ref bool isMouseVisible, ref InputContext inputContext)
     {
-        if (this.Layer != null)
+        if (Layer != null)
         {
             isTeamChatAvailable = false;
             inputEnabled = true;
-            inputContext = this.Layer.Input;
+            inputContext = Layer.Input;
         }
     }
 
     private CrpgIntermissionVM? _dataSource;
 
-    private SpriteCategory _customGameClientCategory = default!;
+    private SpriteCategory _customGameClientCategory = null!;
 }
 
