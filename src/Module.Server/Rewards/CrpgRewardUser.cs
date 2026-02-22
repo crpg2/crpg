@@ -9,7 +9,7 @@ internal sealed class CrpgRewardUser : GameNetworkMessage
 {
     private static readonly CompressionInfo.Integer Int32CompressionInfo = new(int.MinValue, int.MaxValue, true);
 
-    public CrpgUserEffectiveReward Reward { get; set; } = default!;
+    public CrpgUserEffectiveReward Reward { get; set; } = null!;
     public bool Valour { get; set; }
     public bool LowPopulation { get; set; }
     public int RepairCost { get; set; }

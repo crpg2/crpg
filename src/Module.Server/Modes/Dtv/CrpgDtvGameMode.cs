@@ -17,11 +17,11 @@ using Crpg.Module.Common.ChatCommands;
 #else
 using Crpg.Module.Common.HotConstants;
 using Crpg.Module.GUI;
+using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.Dtv;
 using Crpg.Module.GUI.Spectator;
 using Crpg.Module.GUI.Warmup;
-using Crpg.Module.GUI.AmmoQuiverChange;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
@@ -34,7 +34,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
 {
     private const string GameName = "cRPGDTV";
 
-    private static CrpgConstants _constants = default!; // Static so it's accessible from the views.
+    private static CrpgConstants _constants = null!; // Static so it's accessible from the views.
 
     public CrpgDtvGameMode(CrpgConstants constants)
         : base(GameName)

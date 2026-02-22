@@ -20,7 +20,7 @@ internal class AmmoQuiverChangeComponent : MissionNetwork
     public static bool GetAgentQuiversWithAmmoEquippedForWieldedWeapon(Agent agent, out List<int> ammoQuivers)
     {
         // List to store quiver indexes
-        ammoQuivers = new System.Collections.Generic.List<int>();
+        ammoQuivers = new List<int>();
 
         if (agent == null || !agent.IsActive())
         {
@@ -182,7 +182,7 @@ internal class AmmoQuiverChangeComponent : MissionNetwork
         MissionEquipment equipment = agent.Equipment;
 
         // List to store quiver indexes
-        var ammoQuivers = new System.Collections.Generic.List<int>();
+        var ammoQuivers = new List<int>();
 
         // Loop through equipment and find quivers
         for (int i = 0; i < 4; i++)
@@ -251,7 +251,7 @@ internal class AmmoQuiverChangeComponent : MissionNetwork
         }
     }
 
-    private void SwapQuivers(Agent agent, MissionEquipment equipment, System.Collections.Generic.List<int> ammoQuivers)
+    private void SwapQuivers(Agent agent, MissionEquipment equipment, List<int> ammoQuivers)
     {
         if (agent == null || !agent.IsActive() || ammoQuivers == null || ammoQuivers.Count < 2)
         {

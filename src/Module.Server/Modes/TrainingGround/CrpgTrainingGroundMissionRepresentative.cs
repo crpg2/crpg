@@ -10,37 +10,24 @@ namespace Crpg.Module.Modes.TrainingGround;
 public class CrpgTrainingGroundMissionRepresentative : MissionRepresentativeBase
 {
     public const int DuelPrepTime = 3;
-    public event Action<MissionPeer> OnDuelRequestedEvent = default!;
-    public event Action<bool, int> OnDuelResult = default!;
-    public event Action<MissionPeer> OnDuelRequestSentEvent = default!;
-    public event Action<MissionPeer, int> OnDuelPrepStartedEvent = default!;
-    public event Action OnAgentSpawnedWithoutDuelEvent = default!;
-    public event Action<MissionPeer, MissionPeer> OnDuelPreparationStartedForTheFirstTimeEvent = default!;
-    public event Action<MissionPeer> OnDuelEndedEvent = default!;
-    public event Action<MissionPeer> OnDuelRoundEndedEvent = default!;
-    private List<Tuple<MissionPeer, MissionTime>> _requesters = default!;
+    public event Action<MissionPeer>? OnDuelRequestedEvent;
+    public event Action<bool, int>? OnDuelResult;
+    public event Action<MissionPeer>? OnDuelRequestSentEvent;
+    public event Action<MissionPeer, int>? OnDuelPrepStartedEvent;
+    public event Action? OnAgentSpawnedWithoutDuelEvent;
+    public event Action<MissionPeer, MissionPeer>? OnDuelPreparationStartedForTheFirstTimeEvent;
+    public event Action<MissionPeer>? OnDuelEndedEvent;
+    public event Action<MissionPeer>? OnDuelRoundEndedEvent;
+    private List<Tuple<MissionPeer, MissionTime>> _requesters = null!;
     private IFocusable? _focusedObject;
 #if CRPG_SERVER
-    private CrpgTrainingGroundServer _mission = default!;
+    private CrpgTrainingGroundServer _mission = null!;
 #endif
 
-    public bool HasLoadedStats { get; set; } = false;
+    public bool HasLoadedStats { get; set; }
     public int NumberOfWins { get; set; }
     public int NumberOfLosses { get; set; }
     public int Rating { get; set; }
-
-    private bool _isInDuel
-    {
-        get
-        {
-            if (MissionPeer != null && MissionPeer.Team != null)
-            {
-                return MissionPeer.Team.IsDefender;
-            }
-
-            return false;
-        }
-    }
 
     public override void Initialize()
     {
@@ -84,7 +71,7 @@ public class CrpgTrainingGroundMissionRepresentative : MissionRepresentativeBase
                 return;
             }
 
-            if (_requesters.Any((Tuple<MissionPeer, MissionTime> req) => req.Item1 == focusedAgent.MissionPeer))
+            if (_requesters.Any(req => req.Item1 == focusedAgent.MissionPeer))
             {
                 for (int i = 0; i < _requesters.Count; i++)
                 {
@@ -127,6 +114,119 @@ public class CrpgTrainingGroundMissionRepresentative : MissionRepresentativeBase
                 }
             }
         }
+    }
+
+    public void DuelRequested(Agent requesterAgent)
+    {
+        _requesters.Add(new Tuple<MissionPeer, MissionTime>(requesterAgent.MissionPeer, MissionTime.Now + MissionTime.Seconds(10f)));
+        switch (PlayerType)
+        {
+#if CRPG_SERVER
+            case PlayerTypes.Bot:
+                _mission.DuelRequestAccepted(requesterAgent, ControlledAgent);
+                break;
+            case PlayerTypes.Server:
+                OnDuelRequestedEvent?.Invoke(requesterAgent.MissionPeer);
+                break;
+#endif
+            case PlayerTypes.Client:
+                if (IsMine)
+                {
+                    OnDuelRequestedEvent?.Invoke(requesterAgent.MissionPeer);
+                    break;
+                }
+
+                GameNetwork.BeginModuleEventAsServer(Peer);
+                GameNetwork.WriteMessage(new TrainingGroundServerDuelRequest { RequesterAgentIndex = requesterAgent.Index, RequestedAgentIndex = ControlledAgent.Index });
+                GameNetwork.EndModuleEventAsServer();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    public bool CheckHasRequestFromAndRemoveRequestIfNeeded(MissionPeer? requestOwner)
+    {
+        if (requestOwner != null && requestOwner.Representative == this)
+        {
+            _requesters.Clear();
+            return false;
+        }
+
+        Tuple<MissionPeer, MissionTime>? tuple = _requesters.FirstOrDefault(req => req.Item1 == requestOwner);
+        if (tuple == null)
+        {
+            return false;
+        }
+
+        if (requestOwner?.ControlledAgent == null || !requestOwner.ControlledAgent.IsActive())
+        {
+            _requesters.Remove(tuple);
+            return false;
+        }
+
+        if (!tuple.Item2.IsPast)
+        {
+            return true;
+        }
+
+        _requesters.Remove(tuple);
+        return false;
+    }
+
+    public void OnDuelPreparation(MissionPeer requesterPeer, MissionPeer requesteePeer)
+    {
+        switch (PlayerType)
+        {
+            case PlayerTypes.Client:
+                if (IsMine)
+                {
+                    OnDuelPrepStartedEvent?.Invoke(MissionPeer == requesterPeer ? requesteePeer : requesterPeer, 5);
+                    break;
+                }
+
+                GameNetwork.BeginModuleEventAsServer(Peer);
+                GameNetwork.WriteMessage(new DuelSessionStarted(requesterPeer.GetNetworkPeer(), requesteePeer.GetNetworkPeer()));
+                GameNetwork.EndModuleEventAsServer();
+                break;
+            case PlayerTypes.Server:
+                OnDuelPrepStartedEvent?.Invoke(MissionPeer == requesterPeer ? requesteePeer : requesterPeer, 5);
+                break;
+        }
+
+        Tuple<MissionPeer, MissionTime>? tuple = _requesters.FirstOrDefault(req => req.Item1 == requesterPeer);
+        if (tuple != null)
+        {
+            _requesters.Remove(tuple);
+        }
+    }
+
+    public void OnObjectFocused(IFocusable focusedObject)
+    {
+        _focusedObject = focusedObject;
+    }
+
+    public void OnObjectFocusLost()
+    {
+        _focusedObject = null;
+    }
+
+    public override void OnAgentSpawned()
+    {
+        if (ControlledAgent.Team != null && ControlledAgent.Team.Side == BattleSideEnum.Attacker)
+        {
+            OnAgentSpawnedWithoutDuelEvent?.Invoke();
+        }
+    }
+
+    public void OnDuelWon()
+    {
+        NumberOfWins++;
+    }
+
+    public void OnDuelLost()
+    {
+        NumberOfLosses++;
     }
 
     private void HandleServerEventDuelRequest(TrainingGroundServerDuelRequest message)
@@ -182,118 +282,5 @@ public class CrpgTrainingGroundMissionRepresentative : MissionRepresentativeBase
         });
 
         OnDuelResult?.Invoke(message.HasWonDuel, message.RatingChange);
-    }
-
-    public void DuelRequested(Agent requesterAgent)
-    {
-        _requesters.Add(new Tuple<MissionPeer, MissionTime>(requesterAgent.MissionPeer, MissionTime.Now + MissionTime.Seconds(10f)));
-        switch (PlayerType)
-        {
-#if CRPG_SERVER
-            case PlayerTypes.Bot:
-                _mission.DuelRequestAccepted(requesterAgent, ControlledAgent);
-                break;
-            case PlayerTypes.Server:
-                OnDuelRequestedEvent?.Invoke(requesterAgent.MissionPeer);
-                break;
-#endif
-            case PlayerTypes.Client:
-                if (IsMine)
-                {
-                    OnDuelRequestedEvent?.Invoke(requesterAgent.MissionPeer);
-                    break;
-                }
-
-                GameNetwork.BeginModuleEventAsServer(Peer);
-                GameNetwork.WriteMessage(new TrainingGroundServerDuelRequest { RequesterAgentIndex = requesterAgent.Index, RequestedAgentIndex = ControlledAgent.Index });
-                GameNetwork.EndModuleEventAsServer();
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
-    }
-
-    public bool CheckHasRequestFromAndRemoveRequestIfNeeded(MissionPeer requestOwner)
-    {
-        if (requestOwner != null && requestOwner.Representative == this)
-        {
-            _requesters.Clear();
-            return false;
-        }
-
-        Tuple<MissionPeer, MissionTime> tuple = _requesters.FirstOrDefault((Tuple<MissionPeer, MissionTime> req) => req.Item1 == requestOwner);
-        if (tuple == null)
-        {
-            return false;
-        }
-
-        if (requestOwner?.ControlledAgent == null || !requestOwner.ControlledAgent.IsActive())
-        {
-            _requesters.Remove(tuple);
-            return false;
-        }
-
-        if (!tuple.Item2.IsPast)
-        {
-            return true;
-        }
-
-        _requesters.Remove(tuple);
-        return false;
-    }
-
-    public void OnDuelPreparation(MissionPeer requesterPeer, MissionPeer requesteePeer)
-    {
-        switch (PlayerType)
-        {
-            case PlayerTypes.Client:
-                if (IsMine)
-                {
-                    OnDuelPrepStartedEvent?.Invoke((MissionPeer == requesterPeer) ? requesteePeer : requesterPeer, 5);
-                    break;
-                }
-
-                GameNetwork.BeginModuleEventAsServer(Peer);
-                GameNetwork.WriteMessage(new DuelSessionStarted(requesterPeer.GetNetworkPeer(), requesteePeer.GetNetworkPeer()));
-                GameNetwork.EndModuleEventAsServer();
-                break;
-            case PlayerTypes.Server:
-                OnDuelPrepStartedEvent?.Invoke((MissionPeer == requesterPeer) ? requesteePeer : requesterPeer, 5);
-                break;
-        }
-
-        Tuple<MissionPeer, MissionTime> tuple = _requesters.FirstOrDefault((Tuple<MissionPeer, MissionTime> req) => req.Item1 == requesterPeer);
-        if (tuple != null)
-        {
-            _requesters.Remove(tuple);
-        }
-    }
-
-    public void OnObjectFocused(IFocusable focusedObject)
-    {
-        _focusedObject = focusedObject;
-    }
-
-    public void OnObjectFocusLost()
-    {
-        _focusedObject = null;
-    }
-
-    public override void OnAgentSpawned()
-    {
-        if (ControlledAgent.Team != null && ControlledAgent.Team.Side == BattleSideEnum.Attacker)
-        {
-            OnAgentSpawnedWithoutDuelEvent?.Invoke();
-        }
-    }
-
-    public void OnDuelWon()
-    {
-        NumberOfWins++;
-    }
-
-    public void OnDuelLost()
-    {
-        NumberOfLosses++;
     }
 }

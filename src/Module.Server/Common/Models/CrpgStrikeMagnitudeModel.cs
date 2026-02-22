@@ -73,6 +73,7 @@ internal class CrpgStrikeMagnitudeModel : MultiplayerStrikeMagnitudeModel
                     * (float)(Math.Pow(swingSpeedPercentage, 5f) + magnitudeBonusFromExtraSpeed);
         }
     }
+
     public override float CalculateStrikeMagnitudeForThrust(
         in AttackInformation attackInformation,
         in AttackCollisionData collisionData,

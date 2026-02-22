@@ -21,8 +21,8 @@ internal class CrpgRespawnTimerVm : ViewModel
     public override void RefreshValues()
     {
         base.RefreshValues();
-        TextObject respawnTextObj = new("{=l81jAS1c}You will respawn in {TIME} {?PLURAL}seconds!{?}second!{\\?}", null);
-        respawnTextObj.SetTextVariable("PLURAL", ((int)_timeToRespawn == 1) ? 0 : 1);
+        TextObject respawnTextObj = new("{=l81jAS1c}You will respawn in {TIME} {?PLURAL}seconds!{?}second!{\\?}");
+        respawnTextObj.SetTextVariable("PLURAL", (int)_timeToRespawn == 1 ? 0 : 1);
         respawnTextObj.SetTextVariable("TIME", (int)_timeToRespawn);
         RespawnText = respawnTextObj.ToString();
         IsVisible = _timeToRespawn > 0;
@@ -37,7 +37,7 @@ internal class CrpgRespawnTimerVm : ViewModel
             if (value != _isVisible)
             {
                 _isVisible = value;
-                OnPropertyChangedWithValue(value, "IsVisible");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -51,7 +51,7 @@ internal class CrpgRespawnTimerVm : ViewModel
             if (value != _respawnText)
             {
                 _respawnText = value;
-                OnPropertyChangedWithValue(value, "RespawnText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }

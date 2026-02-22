@@ -9,8 +9,8 @@ using Crpg.Module.Notifications;
 using Crpg.Module.Rewards;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.Source.Missions;
 using TaleWorlds.MountAndBlade.Multiplayer;
+using TaleWorlds.MountAndBlade.Source.Missions;
 
 #if CRPG_SERVER
 using Crpg.Module.Api;
@@ -22,7 +22,6 @@ using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.Conquest;
 using Crpg.Module.GUI.Spectator;
 using Crpg.Module.GUI.Warmup;
-using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
@@ -35,7 +34,7 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
 {
     private const string GameName = "cRPGConquest";
 
-    private static CrpgConstants _constants = default!; // Static so it's accessible from the views.
+    private static CrpgConstants _constants = null!; // Static so it's accessible from the views.
 
     public CrpgConquestGameMode(CrpgConstants constants)
         : base(GameName)

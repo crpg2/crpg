@@ -5,13 +5,13 @@ namespace Crpg.Module.Common.Commander;
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromServer)]
 public sealed class CommanderPollClosed : GameNetworkMessage
 {
-    public NetworkCommunicator PlayerPeer { get; set; } = default!;
+    public NetworkCommunicator PlayerPeer { get; set; } = null!;
     public bool Accepted { get; set; }
 
     protected override bool OnRead()
     {
         bool result = true;
-        PlayerPeer = ReadNetworkPeerReferenceFromPacket(ref result, false);
+        PlayerPeer = ReadNetworkPeerReferenceFromPacket(ref result);
         Accepted = ReadBoolFromPacket(ref result);
         return result;
     }

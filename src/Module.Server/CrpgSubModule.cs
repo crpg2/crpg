@@ -1,6 +1,5 @@
 ﻿using Crpg.Module.Common;
 using Crpg.Module.Common.Models;
-using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.Modes.Battle;
 using Crpg.Module.Modes.Conquest;
 using Crpg.Module.Modes.Dtv;
@@ -13,11 +12,9 @@ using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.ModuleManager;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.InputSystem;
-using TaleWorlds.Engine.InputSystem;
-using TaleWorlds.MountAndBlade.GameKeyCategory;
 
 #if CRPG_CLIENT
+using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.HarmonyPatches;
 #endif
 
@@ -27,10 +24,7 @@ using Crpg.Module.HarmonyPatches;
 
 #if CRPG_SERVER
 using Crpg.Module.Common.ChatCommands;
-using TaleWorlds.MountAndBlade.DedicatedCustomServer;
 using TaleWorlds.MountAndBlade.ListedServer;
-using TaleWorlds.PlayerServices;
-using WindowsFirewallHelper;
 #else
 using TaleWorlds.Engine.GauntletUI;
 #endif
@@ -49,12 +43,6 @@ internal class CrpgSubModule : MBSubModuleBase
 #if CRPG_SERVER
     private static readonly Random Random = new();
     private static bool _mapPoolAdded;
-    public static CrpgSubModule Instance = default!;
-    public Dictionary<PlayerId, IAddress> WhitelistedIps = new();
-    public int Port()
-    {
-        return TaleWorlds.MountAndBlade.Module.CurrentModule.StartupInfo.ServerPort;
-    }
 
 #endif
     static CrpgSubModule()
@@ -63,7 +51,22 @@ internal class CrpgSubModule : MBSubModuleBase
             Debug.Print(args.ExceptionObject.ToString(), color: Debug.DebugColor.Red);
     }
 
-    private CrpgConstants _constants = default!;
+    private CrpgConstants _constants = null!;
+
+#if CRPG_SERVER
+    public override void OnGameInitializationFinished(Game game)
+    {
+        base.OnGameInitializationFinished(game);
+        AddMaps();
+        Debug.Print($"Now Adding Maps", color: Debug.DebugColor.Cyan);
+
+        // Add the chat command handler here so network messages are being processed first.
+        if (game.GetGameHandler<ChatCommandsComponent>() == null)
+        {
+            game.AddGameHandler<ChatCommandsComponent>();
+        }
+    }
+#endif
 
     protected override void OnSubModuleLoad()
     {
@@ -121,18 +124,6 @@ internal class CrpgSubModule : MBSubModuleBase
 #endif
     }
 #if CRPG_SERVER
-    public override void OnGameInitializationFinished(Game game)
-    {
-        base.OnGameInitializationFinished(game);
-        AddMaps();
-        Debug.Print($"Now Adding Maps", color: Debug.DebugColor.Cyan);
-
-        // Add the chat command handler here so network messages are being processed first.
-        if (game.GetGameHandler<ChatCommandsComponent>() == null)
-        {
-            game.AddGameHandler<ChatCommandsComponent>();
-        }
-    }
 
     private static void AddMaps()
     {

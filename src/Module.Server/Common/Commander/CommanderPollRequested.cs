@@ -6,7 +6,7 @@ namespace Crpg.Module.Common.Commander;
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromClient)]
 internal sealed class CommanderPollRequested : GameNetworkMessage
 {
-    public NetworkCommunicator PlayerPeer { get; set; } = default!;
+    public NetworkCommunicator PlayerPeer { get; set; } = null!;
     public bool IsDemoteRequested { get; set; }
 
     protected override bool OnRead()

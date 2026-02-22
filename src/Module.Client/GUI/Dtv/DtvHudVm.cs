@@ -4,6 +4,7 @@ using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
+using MathF = TaleWorlds.Library.MathF;
 
 namespace Crpg.Module.GUI.Dtv;
 
@@ -123,7 +124,7 @@ internal class DtvHudVm : ViewModel
             if (value != _roundLabel)
             {
                 _roundLabel = value;
-                OnPropertyChangedWithValue(value, "RoundLabel");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -137,7 +138,7 @@ internal class DtvHudVm : ViewModel
             if (value != _waveLabel)
             {
                 _waveLabel = value;
-                OnPropertyChangedWithValue(value, "WaveLabel");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -207,7 +208,7 @@ internal class DtvHudVm : ViewModel
             if (_vipHealth != value)
             {
                 _vipHealth = value;
-                OnPropertyChangedWithValue(value, nameof(VipHealth));
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -221,7 +222,7 @@ internal class DtvHudVm : ViewModel
             if (_vipHealthBrush != value)
             {
                 _vipHealthBrush = value;
-                OnPropertyChangedWithValue(value, nameof(VipHealthBrush));
+                OnPropertyChangedWithValue(value);
             }
         }
     }

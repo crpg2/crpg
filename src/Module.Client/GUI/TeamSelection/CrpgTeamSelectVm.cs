@@ -8,6 +8,7 @@ using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.ObjectSystem;
+using MathF = TaleWorlds.Library.MathF;
 
 namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
 {
@@ -33,7 +34,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
             }
         }
 
-        public CrpgTeamSelectVM(Mission mission, Action<Team> onChangeTeamTo, Action onAutoAssign, Action onClose, IEnumerable<Team> teams, string gamemode)
+        public CrpgTeamSelectVM(Mission mission, Action<Team> onChangeTeamTo, Action onAutoAssign, Action onClose, Mission.TeamCollection teams, string gamemode)
         {
             _onClose = onClose;
             _onAutoAssign = onAutoAssign;
@@ -44,11 +45,11 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
 
             IsRoundCountdownAvailable = _gameMode.IsGameModeUsingRoundCountdown;
 
-            Team spectatorTeam = teams.FirstOrDefault((Team t) => t.Side == BattleSideEnum.None);
-            TeamSpectators = new CrpgTeamSelectInstanceVM(missionBehavior, spectatorTeam, null, null, onChangeTeamTo, false, new TextObject("{=pSheKLB4}Spectator", null).ToString());
+            Team spectatorTeam = teams.First(t => t.Side == BattleSideEnum.None);
+            TeamSpectators = new CrpgTeamSelectInstanceVM(missionBehavior, spectatorTeam, null, null, onChangeTeamTo, false, new TextObject("{=pSheKLB4}Spectator").ToString());
 
-            Team team1 = teams.FirstOrDefault((Team t) => t.Side == BattleSideEnum.Attacker);
-            BasicCultureObject culture1 = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions));
+            Team team1 = teams.First(t => t.Side == BattleSideEnum.Attacker);
+            BasicCultureObject culture1 = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue());
 
             var banners = Mission.Current.GetMissionBehavior<CrpgCustomTeamBannersAndNamesClient>();
             Banner attackerBanner = new(string.Empty);
@@ -68,8 +69,6 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 false,
                 banners?.AttackerName ?? string.Empty);
 
-            Team team2 = teams.FirstOrDefault((Team t) => t.Side == BattleSideEnum.Defender);
-            BasicCultureObject culture2 = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions));
             Team2 = new CrpgTeamSelectInstanceVM(
                 missionBehavior,
                 team1,
@@ -91,8 +90,8 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
         public override void RefreshValues()
         {
             base.RefreshValues();
-            AutoassignLbl = new TextObject("{=bON4Kn6B}Auto Assign", null).ToString();
-            TeamSelectTitle = new TextObject("{=aVixswW5}Team Selection", null).ToString();
+            AutoassignLbl = new TextObject("{=bON4Kn6B}Auto Assign").ToString();
+            TeamSelectTitle = new TextObject("{=aVixswW5}Team Selection").ToString();
             GamemodeLbl = GameTexts.FindText("str_multiplayer_official_game_type_name", _gamemodeStr).ToString();
             Team1.RefreshValues();
             _team2.RefreshValues();
@@ -153,9 +152,9 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (team3 != null)
                 {
                     CrpgTeamSelectInstanceVM team4 = Team1;
-                    Team? team5 = (team4 != null) ? team4.Team : null;
+                    Team? team5 = team4 != null ? team4.Team : null;
                     MissionPeer missionPeer = _missionPeer;
-                    bool isCurrentTeam2 = team5 == ((missionPeer != null) ? missionPeer.Team : null);
+                    bool isCurrentTeam2 = team5 == (missionPeer != null ? missionPeer.Team : null);
                     bool disabledForBalance2;
                     if (disabledTeams == null)
                     {
@@ -177,9 +176,9 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 }
 
                 CrpgTeamSelectInstanceVM team8 = Team2;
-                Team? team9 = (team8 != null) ? team8.Team : null;
+                Team? team9 = team8 != null ? team8.Team : null;
                 MissionPeer missionPeer2 = _missionPeer;
-                bool isCurrentTeam3 = team9 == ((missionPeer2 != null) ? missionPeer2.Team : null);
+                bool isCurrentTeam3 = team9 == (missionPeer2 != null ? missionPeer2.Team : null);
                 bool disabledForBalance3;
                 if (disabledTeams == null)
                 {
@@ -198,14 +197,14 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
 
         public void RefreshPlayerAndBotCount(int playersCountOne, int playersCountTwo, int botsCountOne, int botsCountTwo)
         {
-            MBTextManager.SetTextVariable("PLAYER_COUNT", playersCountOne.ToString(), false);
-            Team1.DisplayedSecondary = new TextObject("{=Etjqamlh}{PLAYER_COUNT} Players", null).ToString();
-            MBTextManager.SetTextVariable("BOT_COUNT", botsCountOne.ToString(), false);
-            Team1.DisplayedSecondarySub = new TextObject("{=eCOJSSUH}({BOT_COUNT} Bots)", null).ToString();
-            MBTextManager.SetTextVariable("PLAYER_COUNT", playersCountTwo.ToString(), false);
-            Team2.DisplayedSecondary = new TextObject("{=Etjqamlh}{PLAYER_COUNT} Players", null).ToString();
-            MBTextManager.SetTextVariable("BOT_COUNT", botsCountTwo.ToString(), false);
-            Team2.DisplayedSecondarySub = new TextObject("{=eCOJSSUH}({BOT_COUNT} Bots)", null).ToString();
+            MBTextManager.SetTextVariable("PLAYER_COUNT", playersCountOne.ToString());
+            Team1.DisplayedSecondary = new TextObject("{=Etjqamlh}{PLAYER_COUNT} Players").ToString();
+            MBTextManager.SetTextVariable("BOT_COUNT", botsCountOne.ToString());
+            Team1.DisplayedSecondarySub = new TextObject("{=eCOJSSUH}({BOT_COUNT} Bots)").ToString();
+            MBTextManager.SetTextVariable("PLAYER_COUNT", playersCountTwo.ToString());
+            Team2.DisplayedSecondary = new TextObject("{=Etjqamlh}{PLAYER_COUNT} Players").ToString();
+            MBTextManager.SetTextVariable("BOT_COUNT", botsCountTwo.ToString());
+            Team2.DisplayedSecondarySub = new TextObject("{=eCOJSSUH}({BOT_COUNT} Bots)").ToString();
         }
 
         public void RefreshFriendsPerTeam(IEnumerable<MissionPeer> friendsTeamOne, IEnumerable<MissionPeer> friendsTeamTwo)
@@ -238,7 +237,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (value != _team1)
                 {
                     _team1 = value;
-                    OnPropertyChangedWithValue(value, "Team1");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -255,7 +254,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (value != _team2)
                 {
                     _team2 = value;
-                    OnPropertyChangedWithValue(value, "Team2");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -272,7 +271,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (value != _teamSpectators)
                 {
                     _teamSpectators = value;
-                    OnPropertyChangedWithValue(value, "TeamSpectators");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -287,7 +286,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
             set
             {
                 _teamSelectTitle = value;
-                OnPropertyChangedWithValue(value, "TeamSelectTitle");
+                OnPropertyChangedWithValue(value);
             }
         }
 
@@ -303,7 +302,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (value != _isRoundCountdownAvailable)
                 {
                     _isRoundCountdownAvailable = value;
-                    OnPropertyChangedWithValue(value, "IsRoundCountdownAvailable");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -320,7 +319,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
                 if (value != _remainingRoundTime)
                 {
                     _remainingRoundTime = value;
-                    OnPropertyChangedWithValue(value, "RemainingRoundTime");
+                    OnPropertyChangedWithValue(value);
                 }
             }
         }
@@ -335,7 +334,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
             set
             {
                 _gamemodeLbl = value;
-                OnPropertyChangedWithValue(value, "GamemodeLbl");
+                OnPropertyChangedWithValue(value);
             }
         }
 
@@ -349,7 +348,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
             set
             {
                 _autoassignLbl = value;
-                OnPropertyChangedWithValue(value, "AutoassignLbl");
+                OnPropertyChangedWithValue(value);
             }
         }
 
@@ -363,7 +362,7 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
             set
             {
                 _isCancelDisabled = value;
-                OnPropertyChangedWithValue(value, "IsCancelDisabled");
+                OnPropertyChangedWithValue(value);
             }
         }
 
@@ -371,29 +370,29 @@ namespace TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection
 
         private readonly Action _onAutoAssign;
 
-        private readonly MissionMultiplayerGameModeBaseClient _gameMode = default!;
+        private readonly MissionMultiplayerGameModeBaseClient _gameMode = null!;
 
-        private readonly MissionPeer _missionPeer = default!;
+        private readonly MissionPeer _missionPeer = null!;
 
         private readonly string _gamemodeStr;
 
-        private string _teamSelectTitle = default!;
+        private string _teamSelectTitle = null!;
 
         private bool _isRoundCountdownAvailable;
 
-        private string _remainingRoundTime = default!;
+        private string _remainingRoundTime = null!;
 
-        private string _gamemodeLbl = default!;
+        private string _gamemodeLbl = null!;
 
-        private string _autoassignLbl = default!;
+        private string _autoassignLbl = null!;
 
         private bool _isCancelDisabled;
 
-        private CrpgTeamSelectInstanceVM _team1 = default!;
+        private CrpgTeamSelectInstanceVM _team1 = null!;
 
-        private CrpgTeamSelectInstanceVM _team2 = default!;
+        private CrpgTeamSelectInstanceVM _team2 = null!;
 
-        private CrpgTeamSelectInstanceVM _teamSpectators = default!;
-        private string _toggleMuteText = default!;
+        private CrpgTeamSelectInstanceVM _teamSpectators = null!;
+        private string _toggleMuteText = null!;
     }
 }

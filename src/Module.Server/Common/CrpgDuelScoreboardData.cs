@@ -33,9 +33,9 @@ internal class CrpgDuelScoreboardData : IScoreboardData
                 },
                 _ => string.Empty),
             new("name", missionPeer => missionPeer.DisplayedName, _ => new TextObject("{=hvQSOi79}Bot").ToString()),
-            new("winstreak", (MissionPeer missionPeer) => missionPeer.GetComponent<DuelMissionRepresentative>().NumberOfWins.ToString(), (BotData bot) => string.Empty),
-            new("bounty", (MissionPeer missionPeer) => missionPeer.GetComponent<DuelMissionRepresentative>().Bounty.ToString(), (BotData bot) => string.Empty),
-            new("score", (MissionPeer missionPeer) => missionPeer.GetComponent<DuelMissionRepresentative>().Score.ToString(), (BotData bot) => string.Empty),
+            new("winstreak", missionPeer => missionPeer.GetComponent<DuelMissionRepresentative>().NumberOfWins.ToString(), bot => string.Empty),
+            new("bounty", missionPeer => missionPeer.GetComponent<DuelMissionRepresentative>().Bounty.ToString(), bot => string.Empty),
+            new("score", missionPeer => missionPeer.GetComponent<DuelMissionRepresentative>().Score.ToString(), bot => string.Empty),
         };
     }
 }

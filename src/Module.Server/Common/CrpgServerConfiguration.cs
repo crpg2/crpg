@@ -258,8 +258,8 @@ internal static class CrpgServerConfiguration
     [ConsoleCommandMethod("crpg_charge_damage_mirror_friendly_to_mount", "Mirror charge damage to mount for friendly fire")]
     private static void SetMirrorFriendlyChargeDamageMount(string? inputStr)
     {
-        if (string.IsNullOrWhiteSpace(inputStr) || (inputStr == null
-            || !bool.TryParse(inputStr, out bool outputBool)))
+        if (string.IsNullOrWhiteSpace(inputStr) || inputStr == null
+                                                || !bool.TryParse(inputStr, out bool outputBool))
         {
             Debug.Print($"Invalid mirror friendly charge damage mount: {inputStr}");
             Debug.Print("Please provide a valid boolean value (true/false).");

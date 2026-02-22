@@ -30,7 +30,7 @@ internal class HotConstant
             return true;
         }
 
-        oldValue = default;
+        oldValue = 0;
         return false;
     }
 

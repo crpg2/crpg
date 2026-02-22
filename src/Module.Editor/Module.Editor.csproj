@@ -57,10 +57,8 @@
     <Compile Remove="..\Module.Server\Common\MapPoolComponent.cs" />
     <Compile Remove="..\Module.Server\Common\ChatCommands\**\*" />
     <Compile Remove="..\Module.Server\Rewards\CrpgRewardServer.cs" />
-    <Compile Remove="..\Module.Server\Firewall\*" />
     <EmbeddedResource Remove="GUI\**" />
     <None Remove="GUI\**" />
-    <Compile Remove="..\Module.Server\Common\RemoveIpFromFirewallBehavior.cs" />
     <Compile Remove="..\Module.Server\Common\CrpgCustomBannerServer.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\MissionNetworkComponentPatch.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\SendPeerInformationsToPeerPatch.cs" />
@@ -92,11 +90,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="WindowsFirewallHelper" />
     <PackageReference Include="Lib.Harmony" GeneratePathProperty="true" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="$(PkgLib_Harmony)\lib\netcoreapp3.1\0Harmony.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" />
+    <None Include="$(PkgLib_Harmony)\lib\net472\0Harmony.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" />
   </ItemGroup>
 </Project>

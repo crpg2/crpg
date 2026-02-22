@@ -8,14 +8,14 @@ using TaleWorlds.MountAndBlade;
 namespace Crpg.Module.Modes.TeamDeathmatch;
 public class CrpgTeamDeathmatchSpawnFrameBehavior : SpawnFrameBehaviorBase
 {
-    private List<GameEntity>[] _spawnPointsByTeam = default!;
+    private List<GameEntity>[] _spawnPointsByTeam = null!;
 
     public override void Initialize()
     {
         base.Initialize();
         _spawnPointsByTeam = new List<GameEntity>[2];
-        _spawnPointsByTeam[1] = SpawnPoints.Where((GameEntity x) => x.HasTag("attacker")).ToList();
-        _spawnPointsByTeam[0] = SpawnPoints.Where((GameEntity x) => x.HasTag("defender")).ToList();
+        _spawnPointsByTeam[1] = SpawnPoints.Where(x => x.HasTag("attacker")).ToList();
+        _spawnPointsByTeam[0] = SpawnPoints.Where(x => x.HasTag("defender")).ToList();
 
         if (_spawnPointsByTeam[0].Count < 1 | _spawnPointsByTeam[1].Count < 1) // If spawnpoints missing
         {

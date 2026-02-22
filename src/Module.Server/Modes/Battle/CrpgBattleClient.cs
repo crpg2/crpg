@@ -8,7 +8,6 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.MissionRepresentatives;
 using TaleWorlds.MountAndBlade.Network.Messages;
 using TaleWorlds.MountAndBlade.Objects;
-using static TaleWorlds.MountAndBlade.MissionLobbyComponent;
 using MathF = TaleWorlds.Library.MathF;
 
 namespace Crpg.Module.Modes.Battle;
@@ -36,6 +35,7 @@ internal class CrpgBattleClient : MissionMultiplayerGameModeBaseClient, ICommand
     {
         _gameType = gameType;
     }
+
     public override bool IsGameModeUsingGold => false;
     public override bool IsGameModeTactical => _flags.Length != 0;
     public override bool IsGameModeUsingRoundCountdown => true;
@@ -48,8 +48,8 @@ internal class CrpgBattleClient : MissionMultiplayerGameModeBaseClient, ICommand
 
     public override void OnBehaviorInitialize()
     {
-        typeof(TaleWorlds.MountAndBlade.CompressionMission)
-            .GetField(nameof(TaleWorlds.MountAndBlade.CompressionMission.AgentOffsetCompressionInfo), BindingFlags.Public | BindingFlags.Static)?
+        typeof(CompressionMission)
+            .GetField(nameof(CompressionMission.AgentOffsetCompressionInfo), BindingFlags.Public | BindingFlags.Static)?
             .SetValue(null, new CompressionInfo.Integer(0, 16));
         base.OnBehaviorInitialize();
         RoundComponent.OnPreparationEnded += OnPreparationEnded;
@@ -199,6 +199,11 @@ internal class CrpgBattleClient : MissionMultiplayerGameModeBaseClient, ICommand
         return _flagOwners[flag.FlagIndex];
     }
 
+    public void OnBotsControlledChanged(MissionPeer missionPeer, int botAliveCount, int botTotalCount)
+    {
+        missionPeer.BotsUnderControlAlive = botAliveCount;
+    }
+
     protected override void AddRemoveMessageHandlers(
         GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
     {
@@ -330,15 +335,12 @@ internal class CrpgBattleClient : MissionMultiplayerGameModeBaseClient, ICommand
         _flags = Mission.Current.MissionObjects.FindAllWithType<FlagCapturePoint>().ToArray();
         _flagOwners = new Team[_flags.Length];
     }
+
     private void HandleServerEventBotsControlledChangeEvent(GameNetworkMessage baseMessage)
     {
         BotsControlledChange botsControlledChange = (BotsControlledChange)baseMessage;
         MissionPeer component = botsControlledChange.Peer.GetComponent<MissionPeer>();
-        this.OnBotsControlledChanged(component, botsControlledChange.AliveCount, botsControlledChange.TotalCount);
-    }
-    public void OnBotsControlledChanged(MissionPeer missionPeer, int botAliveCount, int botTotalCount)
-    {
-        missionPeer.BotsUnderControlAlive = botAliveCount;
+        OnBotsControlledChanged(component, botsControlledChange.AliveCount, botsControlledChange.TotalCount);
     }
 
     private void HandleServerEventFormationWipedMessage(GameNetworkMessage baseMessage)

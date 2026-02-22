@@ -10,7 +10,8 @@ internal class CrpgBattleScoreboardData : IScoreboardData
         return new MissionScoreboardComponent.ScoreboardHeader[]
         {
             new("ping", missionPeer => TaleWorlds.Library.MathF.Round(missionPeer.GetNetworkPeer().AveragePingInMilliseconds).ToString(), _ => "BOT"),
-            new("level", missionPeer => {
+            new("level", missionPeer =>
+            {
                 var crpgPeer = missionPeer.GetComponent<CrpgPeer>();
                 if (crpgPeer == null)
                 {
@@ -51,7 +52,7 @@ internal class CrpgBattleScoreboardData : IScoreboardData
             new("kill", missionPeer => missionPeer.KillCount.ToString(), bot => bot.KillCount.ToString()),
             new("death", missionPeer => missionPeer.DeathCount.ToString(), bot => bot.DeathCount.ToString()),
             new("assist", missionPeer => missionPeer.AssistCount.ToString(), bot => bot.AssistCount.ToString()),
-            //new("life", missionPeer => (missionPeer.ControlledAgent.Health + "/" + missionPeer.ControlledAgent.HealthLimit).ToString(), _ => string.Empty),
+            // new("life", missionPeer => (missionPeer.ControlledAgent.Health + "/" + missionPeer.ControlledAgent.HealthLimit).ToString(), _ => string.Empty),
             new("score", missionPeer => missionPeer.Score.ToString(), bot => bot.Score.ToString()),
         };
     }

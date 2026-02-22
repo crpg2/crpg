@@ -42,6 +42,7 @@ internal class CrpgTeamDeathmatchSpawningBehavior : CrpgSpawningBehaviorBase
         {
             return false;
         }
+
         _haveBotsSpawned = true;
         return true;
     }

@@ -31,11 +31,11 @@ public class CrpgEndOfBattleVM : ViewModel
 
     private string _descriptionText = string.Empty;
 
-    private CrpgEndOfBattlePlayerVM _firstPlacePlayer = default!;
+    private CrpgEndOfBattlePlayerVM _firstPlacePlayer = null!;
 
-    private CrpgEndOfBattlePlayerVM _secondPlacePlayer = default!;
+    private CrpgEndOfBattlePlayerVM _secondPlacePlayer = null!;
 
-    private CrpgEndOfBattlePlayerVM _thirdPlacePlayer = default!;
+    private CrpgEndOfBattlePlayerVM _thirdPlacePlayer = null!;
 
     public CrpgEndOfBattleVM()
     {
@@ -47,8 +47,8 @@ public class CrpgEndOfBattleVM : ViewModel
     public override void RefreshValues()
     {
         base.RefreshValues();
-        TitleText = new TextObject("{=GPfkMajw}Battle Ended", null).ToString();
-        DescriptionText = new TextObject("{=ADPaaX8R}Best Players of This Battle", null).ToString();
+        TitleText = new TextObject("{=GPfkMajw}Battle Ended").ToString();
+        DescriptionText = new TextObject("{=ADPaaX8R}Best Players of This Battle").ToString();
     }
 
     public void OnTick(float dt)
@@ -94,7 +94,7 @@ public class CrpgEndOfBattleVM : ViewModel
     {
         MissionScoreboardComponent missionBehavior = Mission.Current.GetMissionBehavior<MissionScoreboardComponent>();
         List<MissionPeer> list = new();
-        foreach (MissionScoreboardComponent.MissionScoreboardSide missionScoreboardSide in missionBehavior.Sides.Where((MissionScoreboardComponent.MissionScoreboardSide s) => s != null && s.Side != BattleSideEnum.None))
+        foreach (MissionScoreboardComponent.MissionScoreboardSide missionScoreboardSide in missionBehavior.Sides.Where(s => s != null && s.Side != BattleSideEnum.None))
         {
             foreach (MissionPeer item in missionScoreboardSide.Players)
             {
@@ -102,7 +102,7 @@ public class CrpgEndOfBattleVM : ViewModel
             }
         }
 
-        list.Sort((MissionPeer p1, MissionPeer p2) => GetPeerScore(p2).CompareTo(GetPeerScore(p1)));
+        list.Sort((p1, p2) => GetPeerScore(p2).CompareTo(GetPeerScore(p1)));
         if (list.Count > 0)
         {
             HasFirstPlace = true;
@@ -139,7 +139,7 @@ public class CrpgEndOfBattleVM : ViewModel
             if (value != _isEnabled)
             {
                 _isEnabled = value;
-                OnPropertyChangedWithValue(value, "IsEnabled");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -156,7 +156,7 @@ public class CrpgEndOfBattleVM : ViewModel
             if (value != _hasFirstPlace)
             {
                 _hasFirstPlace = value;
-                OnPropertyChangedWithValue(value, "HasFirstPlace");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -173,7 +173,7 @@ public class CrpgEndOfBattleVM : ViewModel
             if (value != _hasSecondPlace)
             {
                 _hasSecondPlace = value;
-                OnPropertyChangedWithValue(value, "HasSecondPlace");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -190,7 +190,7 @@ public class CrpgEndOfBattleVM : ViewModel
             if (value != _hasThirdPlace)
             {
                 _hasThirdPlace = value;
-                OnPropertyChangedWithValue(value, "HasThirdPlace");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -207,7 +207,7 @@ public class CrpgEndOfBattleVM : ViewModel
             if (value != _titleText)
             {
                 _titleText = value;
-                OnPropertyChangedWithValue(value, "TitleText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -224,7 +224,7 @@ public class CrpgEndOfBattleVM : ViewModel
             if (value != _descriptionText)
             {
                 _descriptionText = value;
-                OnPropertyChangedWithValue(value, "DescriptionText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -241,7 +241,7 @@ public class CrpgEndOfBattleVM : ViewModel
             if (value != _firstPlacePlayer)
             {
                 _firstPlacePlayer = value;
-                OnPropertyChangedWithValue(value, "FirstPlacePlayer");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -258,7 +258,7 @@ public class CrpgEndOfBattleVM : ViewModel
             if (value != _secondPlacePlayer)
             {
                 _secondPlacePlayer = value;
-                OnPropertyChangedWithValue(value, "SecondPlacePlayer");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -275,7 +275,7 @@ public class CrpgEndOfBattleVM : ViewModel
             if (value != _thirdPlacePlayer)
             {
                 _thirdPlacePlayer = value;
-                OnPropertyChangedWithValue(value, "ThirdPlacePlayer");
+                OnPropertyChangedWithValue(value);
             }
         }
     }

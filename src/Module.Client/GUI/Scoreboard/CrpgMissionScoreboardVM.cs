@@ -19,6 +19,7 @@ using TaleWorlds.PlatformService;
 using TaleWorlds.PlayerServices;
 
 namespace Crpg.Module.GUI.Scoreboard;
+
 internal class CrpgMissionScoreboardVM : ViewModel
 {
     private const float AttributeRefreshDuration = 1f;
@@ -27,19 +28,19 @@ internal class CrpgMissionScoreboardVM : ViewModel
 
     private ChatBox _chatBox;
 
-    private readonly Dictionary<BattleSideEnum, CrpgScoreboardSideVM> _missionSides = default!;
+    private readonly Dictionary<BattleSideEnum, CrpgScoreboardSideVM> _missionSides = null!;
 
-    private readonly MissionScoreboardComponent _missionScoreboardComponent = default!;
+    private readonly MissionScoreboardComponent _missionScoreboardComponent = null!;
 
-    private readonly MultiplayerPollComponent _missionPollComponent = default!;
+    private readonly MultiplayerPollComponent _missionPollComponent = null!;
 
     private readonly CrpgCommanderPollComponent? _commanderPollComponent;
 
     private readonly CrpgCommanderBehaviorClient? _commanderClient;
 
-    private VoiceChatHandler _voiceChatHandler = default!;
+    private VoiceChatHandler _voiceChatHandler = null!;
 
-    private MultiplayerPermissionHandler _permissionHandler = default!;
+    private MultiplayerPermissionHandler _permissionHandler = null!;
 
     private readonly Mission _mission;
 
@@ -50,29 +51,29 @@ internal class CrpgMissionScoreboardVM : ViewModel
     private bool _canStartKickPolls;
     private bool _canStartCommanderPolls = false;
 
-    private TextObject _muteAllText = new("{=AZSbwcG5}Mute All", null);
+    private TextObject _muteAllText = new("{=AZSbwcG5}Mute All");
 
-    private TextObject _unmuteAllText = new("{=SzRVIPeZ}Unmute All", null);
+    private TextObject _unmuteAllText = new("{=SzRVIPeZ}Unmute All");
 
     private bool _isActive;
 
-    private InputKeyItemVM _showMouseKey = default!;
+    private InputKeyItemVM _showMouseKey = null!;
 
-    private CrpgScoreboardEndOfBattleVM _endOfBattle = default!;
+    private CrpgScoreboardEndOfBattleVM _endOfBattle = null!;
 
-    private MBBindingList<CrpgScoreboardSideVM> _sides = default!;
+    private MBBindingList<CrpgScoreboardSideVM> _sides = null!;
 
-    private MBBindingList<StringPairItemWithActionVM> _playerActionList = default!;
+    private MBBindingList<StringPairItemWithActionVM> _playerActionList = null!;
 
-    private string _spectators = default!;
+    private string _spectators = null!;
 
-    private string _missionName = default!;
+    private string _missionName = null!;
 
-    private string _gameModeText = default!;
+    private string _gameModeText = null!;
 
-    private string _mapName = default!;
+    private string _mapName = null!;
 
-    private string _serverName = default!;
+    private string _serverName = null!;
 
     private bool _isBotsEnabled;
 
@@ -86,7 +87,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
 
     private bool _isPlayerActionsActive;
 
-    private string _toggleMuteText = default!;
+    private string _toggleMuteText = null!;
     private BannerImageIdentifierVM? _allyBanner;
     private BannerImageIdentifierVM? _enemyBanner;
     public CrpgMissionScoreboardVM(bool isSingleTeam, Mission mission)
@@ -108,7 +109,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             _permissionHandler.OnPlayerPlatformMuteChanged += OnPlayerPlatformMuteChanged;
         }
 
-        _canStartKickPolls = MultiplayerOptions.OptionType.AllowPollsToKickPlayers.GetBoolValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
+        _canStartKickPolls = MultiplayerOptions.OptionType.AllowPollsToKickPlayers.GetBoolValue();
         if (_canStartKickPolls)
         {
             _missionPollComponent = mission.GetMissionBehavior<MultiplayerPollComponent>();
@@ -159,12 +160,12 @@ internal class CrpgMissionScoreboardVM : ViewModel
         UpdateToggleMuteText();
         GameModeText = GameTexts.FindText("str_multiplayer_game_type", missionBehavior.MissionType.ToString()).ToString().ToLower();
         EndOfBattle.RefreshValues();
-        Sides.ApplyActionOnAllItems(delegate (CrpgScoreboardSideVM x)
+        Sides.ApplyActionOnAllItems(x =>
         {
             x.RefreshValues();
         });
         MapName = GameTexts.FindText("str_multiplayer_scene_name", missionBehavior.Mission.SceneName).ToString();
-        ServerName = MultiplayerOptions.OptionType.ServerName.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
+        ServerName = MultiplayerOptions.OptionType.ServerName.GetStrValue();
         InputKeyItemVM showMouseKey = ShowMouseKey;
         if (showMouseKey == null)
         {
@@ -220,15 +221,15 @@ internal class CrpgMissionScoreboardVM : ViewModel
                 {
                     if (PlatformServices.Instance.IsPermanentMuteAvailable)
                     {
-                        PlayerActionList.Add(new StringPairItemWithActionVM(new Action<object>(ExecutePermanentlyMute), new TextObject("{=77jmd4QF}Mute Permanently", null).ToString(), "PermanentMute", player));
+                        PlayerActionList.Add(new StringPairItemWithActionVM(new Action<object>(ExecutePermanentlyMute), new TextObject("{=77jmd4QF}Mute Permanently").ToString(), "PermanentMute", player));
                     }
 
-                    string definition = flag ? GameTexts.FindText("str_mp_scoreboard_context_unmute_text", null).ToString() : GameTexts.FindText("str_mp_scoreboard_context_mute_text", null).ToString();
+                    string definition = flag ? GameTexts.FindText("str_mp_scoreboard_context_unmute_text").ToString() : GameTexts.FindText("str_mp_scoreboard_context_mute_text").ToString();
                     PlayerActionList.Add(new StringPairItemWithActionVM(new Action<object>(ExecuteMute), definition, flag ? "UnmuteText" : "MuteText", player));
                 }
                 else
                 {
-                    PlayerActionList.Add(new StringPairItemWithActionVM(new Action<object>(ExecuteLiftPermanentMute), new TextObject("{=CIVPNf2d}Remove Permanent Mute", null).ToString(), "UnmuteText", player));
+                    PlayerActionList.Add(new StringPairItemWithActionVM(new Action<object>(ExecuteLiftPermanentMute), new TextObject("{=CIVPNf2d}Remove Permanent Mute").ToString(), "UnmuteText", player));
                 }
             }
 
@@ -236,28 +237,28 @@ internal class CrpgMissionScoreboardVM : ViewModel
             {
                 if (!isMutedFromPlatform && _voiceChatHandler != null && !flag2)
                 {
-                    string definition2 = player.Peer.IsMuted ? GameTexts.FindText("str_mp_scoreboard_context_unmute_voice", null).ToString() : GameTexts.FindText("str_mp_scoreboard_context_mute_voice", null).ToString();
+                    string definition2 = player.Peer.IsMuted ? GameTexts.FindText("str_mp_scoreboard_context_unmute_voice").ToString() : GameTexts.FindText("str_mp_scoreboard_context_mute_voice").ToString();
                     PlayerActionList.Add(new StringPairItemWithActionVM(new Action<object>(ExecuteMuteVoice), definition2, player.Peer.IsMuted ? "UnmuteVoice" : "MuteVoice", player));
                 }
 
                 if (_canStartKickPolls)
                 {
-                    PlayerActionList.Add(new StringPairItemWithActionVM(new Action<object>(ExecuteKick), GameTexts.FindText("str_mp_scoreboard_context_kick", null).ToString(), "StartKickPoll", player));
+                    PlayerActionList.Add(new StringPairItemWithActionVM(new Action<object>(ExecuteKick), GameTexts.FindText("str_mp_scoreboard_context_kick").ToString(), "StartKickPoll", player));
                 }
 
                 if (_canStartCommanderPolls)
                 {
                     bool isCommander = _commanderClient!.IsPeerCommander(player.Peer);
-                    string definition3 = isCommander ? GameTexts.FindText("str_mp_scoreboard_context_demote_commander", null).ToString() : GameTexts.FindText("str_mp_scoreboard_context_promote_commander", null).ToString();
+                    string definition3 = isCommander ? GameTexts.FindText("str_mp_scoreboard_context_demote_commander").ToString() : GameTexts.FindText("str_mp_scoreboard_context_promote_commander").ToString();
                     PlayerActionList.Add(new StringPairItemWithActionVM(new Action<object>(ExecuteCommander), definition3, isCommander ? "DemoteCommander" : "PromoteCommander", player));
                 }
             }
 
-            StringPairItemWithActionVM stringPairItemWithActionVM = new(new Action<object>(ExecuteReport), GameTexts.FindText("str_mp_scoreboard_context_report", null).ToString(), "Report", player);
+            StringPairItemWithActionVM stringPairItemWithActionVM = new(new Action<object>(ExecuteReport), GameTexts.FindText("str_mp_scoreboard_context_report").ToString(), "Report", player);
             if (MultiplayerReportPlayerManager.IsPlayerReportedOverLimit(id))
             {
                 stringPairItemWithActionVM.IsEnabled = false;
-                stringPairItemWithActionVM.Hint.HintText = new TextObject("{=klkYFik9}You've already reported this player.", null);
+                stringPairItemWithActionVM.Hint.HintText = new TextObject("{=klkYFik9}You've already reported this player.");
             }
 
             PlayerActionList.Add(stringPairItemWithActionVM);
@@ -295,7 +296,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
 
         if (_mission.GetMissionBehavior<MissionLobbyComponent>().IsInWarmup)
         {
-            MBInformationManager.AddQuickInformation(new TextObject("{=wQOq8JIE}You cannot vote for a Commander during warmup!"), 0, null, null);
+            MBInformationManager.AddQuickInformation(new TextObject("{=wQOq8JIE}You cannot vote for a Commander during warmup!"));
             return;
         }
 
@@ -313,7 +314,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
         bool flag = _chatBox.IsPlayerMutedFromGame(missionScoreboardPlayerVM.Peer.Peer.Id);
         _chatBox.SetPlayerMuted(missionScoreboardPlayerVM.Peer.Peer.Id, !flag);
         GameTexts.SetVariable("PLAYER_NAME", missionScoreboardPlayerVM.Peer.DisplayedName);
-        InformationManager.DisplayMessage(new InformationMessage((!flag) ? GameTexts.FindText("str_mute_notification", null).ToString() : GameTexts.FindText("str_unmute_notification", null).ToString()));
+        InformationManager.DisplayMessage(new InformationMessage(!flag ? GameTexts.FindText("str_mute_notification").ToString() : GameTexts.FindText("str_unmute_notification").ToString()));
     }
 
     private void ExecuteMuteVoice(object playerObj)
@@ -334,7 +335,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
         missionScoreboardPlayerVM.Peer.SetMuted(true);
         missionScoreboardPlayerVM.UpdateIsMuted();
         GameTexts.SetVariable("PLAYER_NAME", missionScoreboardPlayerVM.Peer.DisplayedName);
-        InformationManager.DisplayMessage(new InformationMessage(GameTexts.FindText("str_permanent_mute_notification", null).ToString()));
+        InformationManager.DisplayMessage(new InformationMessage(GameTexts.FindText("str_permanent_mute_notification").ToString()));
     }
 
     private void ExecuteLiftPermanentMute(object playerObj)
@@ -348,7 +349,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
         missionScoreboardPlayerVM.Peer.SetMuted(false);
         missionScoreboardPlayerVM.UpdateIsMuted();
         GameTexts.SetVariable("PLAYER_NAME", missionScoreboardPlayerVM.Peer.DisplayedName);
-        InformationManager.DisplayMessage(new InformationMessage(GameTexts.FindText("str_unmute_notification", null).ToString()));
+        InformationManager.DisplayMessage(new InformationMessage(GameTexts.FindText("str_unmute_notification").ToString()));
     }
 
     private void ExecuteKick(object playerObj)
@@ -427,7 +428,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
 
     private void UpdateSideAllPlayersAttributes(BattleSideEnum battleSide)
     {
-        MissionScoreboardComponent.MissionScoreboardSide missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault((MissionScoreboardComponent.MissionScoreboardSide s) => s != null && s.Side == battleSide);
+        MissionScoreboardComponent.MissionScoreboardSide? missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault(s => s != null && s.Side == battleSide);
         if (missionScoreboardSide != null)
         {
             foreach (MissionPeer client in missionScoreboardSide.Players)
@@ -508,7 +509,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             return _missionScoreboardComponent != null && side != BattleSideEnum.None && side != BattleSideEnum.NumSides;
         }
 
-        return _missionScoreboardComponent != null && side != BattleSideEnum.None && side != BattleSideEnum.NumSides && _missionScoreboardComponent.Sides.Any((MissionScoreboardComponent.MissionScoreboardSide s) => s != null && s.Side == side);
+        return _missionScoreboardComponent != null && side != BattleSideEnum.None && side != BattleSideEnum.NumSides && _missionScoreboardComponent.Sides.Any(s => s != null && s.Side == side);
     }
 
     private void InitSides()
@@ -538,7 +539,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             }
         }
 
-        MissionScoreboardComponent.MissionScoreboardSide missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault((MissionScoreboardComponent.MissionScoreboardSide s) => s != null && s.Side == firstSideToAdd);
+        MissionScoreboardComponent.MissionScoreboardSide? missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault(s => s != null && s.Side == firstSideToAdd);
         if (missionScoreboardSide != null)
         {
             CrpgScoreboardSideVM crpgScoreboardSideVM2 = new(missionScoreboardSide, new Action<MissionScoreboardPlayerVM>(ExecutePopulateActionList), IsSingleSide, false);
@@ -546,7 +547,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             _missionSides.Add(missionScoreboardSide.Side, crpgScoreboardSideVM2);
         }
 
-        missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault((MissionScoreboardComponent.MissionScoreboardSide s) => s != null && s.Side == secondSideToAdd);
+        missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault(s => s != null && s.Side == secondSideToAdd);
         if (missionScoreboardSide != null)
         {
             CrpgScoreboardSideVM crpgScoreboardSideVM3 = new(missionScoreboardSide, new Action<MissionScoreboardPlayerVM>(ExecutePopulateActionList), IsSingleSide, true);
@@ -696,7 +697,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _endOfBattle)
             {
                 _endOfBattle = value;
-                OnPropertyChangedWithValue(value, "EndOfBattle");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -713,7 +714,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _playerActionList)
             {
                 _playerActionList = value;
-                OnPropertyChangedWithValue(value, "PlayerActionList");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -730,7 +731,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _sides)
             {
                 _sides = value;
-                OnPropertyChangedWithValue(value, "Sides");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -745,7 +746,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
         set
         {
             _isUpdateOver = value;
-            OnPropertyChangedWithValue(value, "IsUpdateOver");
+            OnPropertyChangedWithValue(value);
         }
     }
 
@@ -761,7 +762,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _isInitalizationOver)
             {
                 _isInitalizationOver = value;
-                OnPropertyChangedWithValue(value, "IsInitalizationOver");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -778,7 +779,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _isMouseEnabled)
             {
                 _isMouseEnabled = value;
-                OnPropertyChangedWithValue(value, "IsMouseEnabled");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -795,7 +796,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _isActive)
             {
                 _isActive = value;
-                OnPropertyChangedWithValue(value, "IsActive");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -812,7 +813,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _isPlayerActionsActive)
             {
                 _isPlayerActionsActive = value;
-                OnPropertyChangedWithValue(value, "IsPlayerActionsActive");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -829,7 +830,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _spectators)
             {
                 _spectators = value;
-                OnPropertyChangedWithValue(value, "Spectators");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -846,7 +847,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _showMouseKey)
             {
                 _showMouseKey = value;
-                OnPropertyChangedWithValue(value, "ShowMouseKey");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -863,7 +864,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _missionName)
             {
                 _missionName = value;
-                OnPropertyChangedWithValue(value, "MissionName");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -880,7 +881,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _gameModeText)
             {
                 _gameModeText = value;
-                OnPropertyChangedWithValue(value, "GameModeText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -897,7 +898,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _mapName)
             {
                 _mapName = value;
-                OnPropertyChangedWithValue(value, "MapName");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -914,7 +915,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _serverName)
             {
                 _serverName = value;
-                OnPropertyChangedWithValue(value, "ServerName");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -931,7 +932,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _isBotsEnabled)
             {
                 _isBotsEnabled = value;
-                OnPropertyChangedWithValue(value, "IsBotsEnabled");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -948,7 +949,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _isSingleSide)
             {
                 _isSingleSide = value;
-                OnPropertyChangedWithValue(value, "IsSingleSide");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -965,7 +966,7 @@ internal class CrpgMissionScoreboardVM : ViewModel
             if (value != _toggleMuteText)
             {
                 _toggleMuteText = value;
-                OnPropertyChangedWithValue(value, "ToggleMuteText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }

@@ -2,11 +2,11 @@
 
 internal class CrpgSettlementCreation
 {
-    public string Name { get; set; } = default!;
+    public string Name { get; set; } = null!;
     public CrpgSettlementType Type { get; set; }
     public CrpgCulture Culture { get; set; }
-    public Point Position { get; set; } = default!;
-    public string Scene { get; set; } = default!;
+    public Point Position { get; set; } = null!;
+    public string Scene { get; set; } = null!;
 }
 
 // Copy of Crpg.Domain.Entities.Settlements.SettlementType.

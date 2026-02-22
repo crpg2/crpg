@@ -32,10 +32,10 @@ public class CrpgEndOfRoundVm : ViewModel
     private string _description = string.Empty;
     private string _cultureId = string.Empty;
     private bool _isRoundWinner;
-    private MultiplayerEndOfRoundSideVM _attackerSide = default!;
-    private MultiplayerEndOfRoundSideVM _defenderSide = default!;
-    private MPPlayerVM _attackerMvp = default!;
-    private MPPlayerVM _defenderMvp = default!;
+    private MultiplayerEndOfRoundSideVM _attackerSide = null!;
+    private MultiplayerEndOfRoundSideVM _defenderSide = null!;
+    private MPPlayerVM _attackerMvp = null!;
+    private MPPlayerVM _defenderMvp = null!;
     private string _attackerMvpTitleText = string.Empty;
     private string _defenderMvpTitleText = string.Empty;
     private BannerImageIdentifierVM? _allyBanner;
@@ -492,6 +492,7 @@ public class CrpgEndOfRoundVm : ViewModel
             }
         }
     }
+
     [DataSourceProperty]
     public BannerImageIdentifierVM? AllyBanner
     {

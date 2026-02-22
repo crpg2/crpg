@@ -23,7 +23,7 @@ public class HandleClientQuitFromCustomGamePatch
                 await Task.Delay(1);
             }
 
-            NetworkCommunicator networkCommunicator = GameNetwork.NetworkPeers.FirstOrDefault((NetworkCommunicator x) => x.VirtualPlayer.Id == playerId);
+            NetworkCommunicator? networkCommunicator = GameNetwork.NetworkPeers.FirstOrDefault(x => x.VirtualPlayer.Id == playerId);
             if (networkCommunicator != null && !networkCommunicator.IsServerPeer)
             {
                 networkCommunicator.QuitFromMission = true;

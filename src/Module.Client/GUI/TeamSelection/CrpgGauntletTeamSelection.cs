@@ -68,7 +68,7 @@ public class CrpgGauntletTeamSelection : MissionView
         if (_scoreboardGauntletComponent != null)
         {
             MissionGauntletMultiplayerScoreboard scoreboardGauntletComponent = _scoreboardGauntletComponent;
-            scoreboardGauntletComponent.OnScoreboardToggled = (Action<bool>)Delegate.Remove(scoreboardGauntletComponent.OnScoreboardToggled, new Action<bool>(OnScoreboardToggled));
+            scoreboardGauntletComponent.OnScoreboardToggled = (Action<bool>?)Delegate.Remove(scoreboardGauntletComponent.OnScoreboardToggled, new Action<bool>(OnScoreboardToggled));
         }
 
         base.OnMissionScreenFinalize();
@@ -120,13 +120,13 @@ public class CrpgGauntletTeamSelection : MissionView
         }
 
         _isActive = true;
-        string strValue = MultiplayerOptions.OptionType.GameType.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
+        string strValue = MultiplayerOptions.OptionType.GameType.GetStrValue();
         SpriteData spriteData = UIResourceManager.SpriteData;
         TwoDimensionEngineResourceContext resourceContext = UIResourceManager.ResourceContext;
         ResourceDepot uiresourceDepot = UIResourceManager.ResourceDepot;
         _dataSource = new CrpgTeamSelectVM(Mission, new Action<Team>(OnChangeTeamTo), new Action(OnAutoassign), new Action(OnClose), Mission.Teams, strValue);
         _dataSource.RefreshDisabledTeams(_disabledTeams ?? new List<Team>());
-        _gauntletLayer = new GauntletLayer("MultiplayerTeamSelection", ViewOrderPriority, false);
+        _gauntletLayer = new GauntletLayer("MultiplayerTeamSelection", ViewOrderPriority);
         _gauntletLayer.LoadMovie("MultiplayerTeamSelection", _dataSource);
         _gauntletLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.Mouse);
         MissionScreen.AddLayer(_gauntletLayer);
@@ -181,8 +181,8 @@ public class CrpgGauntletTeamSelection : MissionView
             return;
         }
 
-        IEnumerable<MissionPeer> friendsTeamOne = _multiplayerTeamSelectComponent.GetFriendsForTeam(Mission.AttackerTeam).Select((VirtualPlayer x) => x.GetComponent<MissionPeer>());
-        IEnumerable<MissionPeer> friendsTeamTwo = _multiplayerTeamSelectComponent.GetFriendsForTeam(Mission.DefenderTeam).Select((VirtualPlayer x) => x.GetComponent<MissionPeer>());
+        IEnumerable<MissionPeer> friendsTeamOne = _multiplayerTeamSelectComponent.GetFriendsForTeam(Mission.AttackerTeam).Select(x => x.GetComponent<MissionPeer>());
+        IEnumerable<MissionPeer> friendsTeamTwo = _multiplayerTeamSelectComponent.GetFriendsForTeam(Mission.DefenderTeam).Select(x => x.GetComponent<MissionPeer>());
         _dataSource?.RefreshFriendsPerTeam(friendsTeamOne, friendsTeamTwo);
     }
 
@@ -197,8 +197,8 @@ public class CrpgGauntletTeamSelection : MissionView
         _dataSource?.RefreshDisabledTeams(disabledTeams);
         int playerCountForTeam = _multiplayerTeamSelectComponent.GetPlayerCountForTeam(Mission.AttackerTeam);
         int playerCountForTeam2 = _multiplayerTeamSelectComponent.GetPlayerCountForTeam(Mission.DefenderTeam);
-        int intValue = MultiplayerOptions.OptionType.NumberOfBotsTeam1.GetIntValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
-        int intValue2 = MultiplayerOptions.OptionType.NumberOfBotsTeam2.GetIntValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
+        int intValue = MultiplayerOptions.OptionType.NumberOfBotsTeam1.GetIntValue();
+        int intValue2 = MultiplayerOptions.OptionType.NumberOfBotsTeam2.GetIntValue();
         _dataSource?.RefreshPlayerAndBotCount(playerCountForTeam, playerCountForTeam2, intValue, intValue2);
     }
 
@@ -223,7 +223,7 @@ public class CrpgGauntletTeamSelection : MissionView
                 return;
             }
 
-            gauntletLayer2.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
+            gauntletLayer2.InputRestrictions.SetInputRestrictions();
             return;
         }
     }
@@ -237,15 +237,15 @@ public class CrpgGauntletTeamSelection : MissionView
 
     private CrpgTeamSelectVM? _dataSource;
 
-    private MissionNetworkComponent _missionNetworkComponent = default!;
+    private MissionNetworkComponent _missionNetworkComponent = null!;
 
-    private MultiplayerTeamSelectComponent _multiplayerTeamSelectComponent = default!;
+    private MultiplayerTeamSelectComponent _multiplayerTeamSelectComponent = null!;
 
-    private MissionGauntletMultiplayerScoreboard _scoreboardGauntletComponent = default!;
+    private MissionGauntletMultiplayerScoreboard _scoreboardGauntletComponent = null!;
 
-    private MissionGauntletClassLoadout _classLoadoutGauntletComponent = default!;
+    private MissionGauntletClassLoadout _classLoadoutGauntletComponent = null!;
 
-    private MissionLobbyComponent _lobbyComponent = default!;
+    private MissionLobbyComponent _lobbyComponent = null!;
 
     private List<Team>? _disabledTeams;
 

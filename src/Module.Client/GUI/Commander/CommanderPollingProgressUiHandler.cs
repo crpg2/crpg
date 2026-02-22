@@ -31,7 +31,7 @@ public class CommanderPollingProgressUiHandler : MissionView
     {
         base.OnMissionScreenInitialize();
         _dataSource = new();
-        _gauntletLayer = new GauntletLayer("CrpgCommanderPollingProgress", ViewOrderPriority, false);
+        _gauntletLayer = new GauntletLayer("CrpgCommanderPollingProgress", ViewOrderPriority);
         _gauntletLayer.LoadMovie("CrpgCommanderPollingProgress", _dataSource);
         _input.RegisterHotKeyCategory(HotKeyManager.GetCategory("PollHotkeyCategory"));
         _dataSource.AddKey(HotKeyManager.GetCategory("PollHotkeyCategory").GetGameKey(108));

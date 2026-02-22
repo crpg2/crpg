@@ -6,14 +6,14 @@ namespace Crpg.Module.Common.Commander;
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromServer)]
 internal sealed class CommanderPollOpened : GameNetworkMessage
 {
-    public NetworkCommunicator InitiatorPeer { get; set; } = default!;
-    public NetworkCommunicator PlayerPeer { get; set; } = default!;
+    public NetworkCommunicator InitiatorPeer { get; set; } = null!;
+    public NetworkCommunicator PlayerPeer { get; set; } = null!;
     public bool IsDemoteRequested { get; set; }
     protected override bool OnRead()
     {
         bool result = true;
-        InitiatorPeer = ReadNetworkPeerReferenceFromPacket(ref result, false);
-        PlayerPeer = ReadNetworkPeerReferenceFromPacket(ref result, false);
+        InitiatorPeer = ReadNetworkPeerReferenceFromPacket(ref result);
+        PlayerPeer = ReadNetworkPeerReferenceFromPacket(ref result);
         IsDemoteRequested = ReadBoolFromPacket(ref result);
 
         return result;

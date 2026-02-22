@@ -15,7 +15,7 @@ namespace Crpg.Module.Common.Network;
 internal sealed class UpdateCrpgUserClanInfo : GameNetworkMessage
 {
     public VirtualPlayer? Peer { get; set; }
-    public CrpgClan Clan { get; set; } = default!;
+    public CrpgClan Clan { get; set; } = null!;
 
     protected override void OnWrite()
     {

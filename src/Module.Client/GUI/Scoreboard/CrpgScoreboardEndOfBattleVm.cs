@@ -10,6 +10,7 @@ using TaleWorlds.MountAndBlade.Missions.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.Scoreboard;
 using TaleWorlds.ObjectSystem;
 using static TaleWorlds.MountAndBlade.MissionScoreboardComponent;
+using MathF = TaleWorlds.Library.MathF;
 
 namespace Crpg.Module.Gui;
 
@@ -48,7 +49,6 @@ public class CrpgScoreboardEndOfBattleVM : ViewModel
         {
             customBanners.BannersChanged += HandleBannerChange;
         }
-
     }
 
     private void HandleBannerChange(string attackerBanner, string defenderBanner, string attackerName, string defenderName)
@@ -60,8 +60,8 @@ public class CrpgScoreboardEndOfBattleVM : ViewModel
     public override void RefreshValues()
     {
         base.RefreshValues();
-        CountdownTitle = new TextObject("{=wGjQgQlY}Next Game begins in:", null).ToString();
-        Header = new TextObject("{=HXxNfncd}End of Battle", null).ToString();
+        CountdownTitle = new TextObject("{=wGjQgQlY}Next Game begins in:").ToString();
+        Header = new TextObject("{=HXxNfncd}End of Battle").ToString();
         MPEndOfBattleSideVM allySide = AllySide;
         allySide?.RefreshValues();
 
@@ -100,23 +100,23 @@ public class CrpgScoreboardEndOfBattleVM : ViewModel
         IsAvailable = true;
         InitSides();
         MissionScoreboardComponent missionScoreboardComponent = _missionScoreboardComponent;
-        BattleSideEnum battleSideEnum = (missionScoreboardComponent != null) ? missionScoreboardComponent.GetMatchWinnerSide() : BattleSideEnum.None;
+        BattleSideEnum battleSideEnum = missionScoreboardComponent != null ? missionScoreboardComponent.GetMatchWinnerSide() : BattleSideEnum.None;
         if (battleSideEnum == _enemyBattleSide)
         {
             BattleResult = 0;
-            ResultText = GameTexts.FindText("str_defeat", null).ToString();
+            ResultText = GameTexts.FindText("str_defeat").ToString();
             return;
         }
 
         if (battleSideEnum == _allyBattleSide)
         {
             BattleResult = 1;
-            ResultText = GameTexts.FindText("str_victory", null).ToString();
+            ResultText = GameTexts.FindText("str_victory").ToString();
             return;
         }
 
         BattleResult = 2;
-        ResultText = GameTexts.FindText("str_draw", null).ToString();
+        ResultText = GameTexts.FindText("str_draw").ToString();
     }
 
 private void InitSides()
@@ -135,28 +135,26 @@ private void InitSides()
             }
         }
 
-        MissionScoreboardSide missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault((MissionScoreboardSide s) => s != null && s.Side == _allyBattleSide);
-        MissionScoreboardSide missionScoreboardSide2 = _missionScoreboardComponent.Sides.FirstOrDefault((MissionScoreboardSide s) => s != null && s.Side == _enemyBattleSide);
+        MissionScoreboardSide? missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault(s => s != null && s.Side == _allyBattleSide);
+        MissionScoreboardSide? missionScoreboardSide2 = _missionScoreboardComponent.Sides.FirstOrDefault(s => s != null && s.Side == _enemyBattleSide);
 
-        string text = (missionScoreboardSide != null && missionScoreboardSide.Side == BattleSideEnum.Attacker) ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions) : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
-        string text2 = (missionScoreboardSide2 != null && missionScoreboardSide2.Side == BattleSideEnum.Attacker) ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions) : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
+        string text = missionScoreboardSide != null && missionScoreboardSide.Side == BattleSideEnum.Attacker ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue() : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue();
+        string text2 = missionScoreboardSide2 != null && missionScoreboardSide2.Side == BattleSideEnum.Attacker ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue() : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue();
         BasicCultureObject? basicCultureObject = string.IsNullOrEmpty(text) ? null : MBObjectManager.Instance.GetObject<BasicCultureObject>(text);
         BasicCultureObject? basicCultureObject2 = string.IsNullOrEmpty(text2) ? null : MBObjectManager.Instance.GetObject<BasicCultureObject>(text2);
 
         MultiplayerBattleColors multiplayerBattleColors = MultiplayerBattleColors.CreateWith(basicCultureObject, basicCultureObject2);
         if (missionScoreboardSide != null)
         {
-            string objectName = (missionScoreboardSide.Side == BattleSideEnum.Attacker) ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions) : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
+            string objectName = missionScoreboardSide.Side == BattleSideEnum.Attacker ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue() : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue();
             AllySide = new MPEndOfBattleSideVM(_missionScoreboardComponent, missionScoreboardSide, multiplayerBattleColors.AttackerColors);
         }
 
         if (missionScoreboardSide2 != null)
         {
-            string objectName2 = (missionScoreboardSide2.Side == BattleSideEnum.Attacker) ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions) : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
+            string objectName2 = missionScoreboardSide2.Side == BattleSideEnum.Attacker ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue() : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue();
             EnemySide = new MPEndOfBattleSideVM(_missionScoreboardComponent, missionScoreboardSide, multiplayerBattleColors.DefenderColors);
         }
-
-
     }
 
     [DataSourceProperty]
@@ -171,7 +169,7 @@ private void InitSides()
             if (value != _isAvailable)
             {
                 _isAvailable = value;
-                OnPropertyChangedWithValue(value, "IsAvailable");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -188,7 +186,7 @@ private void InitSides()
             if (value != _countdownTitle)
             {
                 _countdownTitle = value;
-                OnPropertyChangedWithValue(value, "CountdownTitle");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -205,7 +203,7 @@ private void InitSides()
             if (value != _countdown)
             {
                 _countdown = value;
-                OnPropertyChangedWithValue(value, "Countdown");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -222,7 +220,7 @@ private void InitSides()
             if (value != _header)
             {
                 _header = value;
-                OnPropertyChangedWithValue(value, "Header");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -239,7 +237,7 @@ private void InitSides()
             if (value != _battleResult)
             {
                 _battleResult = value;
-                OnPropertyChangedWithValue(value, "BattleResult");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -256,7 +254,7 @@ private void InitSides()
             if (value != _resultText)
             {
                 _resultText = value;
-                OnPropertyChangedWithValue(value, "ResultText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -273,7 +271,7 @@ private void InitSides()
             if (value != _allySide)
             {
                 _allySide = value;
-                OnPropertyChangedWithValue(value, "AllySide");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -290,7 +288,7 @@ private void InitSides()
             if (value != _enemySide)
             {
                 _enemySide = value;
-                OnPropertyChangedWithValue(value, "EnemySide");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -347,19 +345,19 @@ private void InitSides()
 
     private bool _isAvailable;
 
-    private string _countdownTitle = default!;
+    private string _countdownTitle = null!;
 
     private int _countdown;
 
-    private string _header = default!;
+    private string _header = null!;
 
     private int _battleResult;
 
-    private string _resultText = default!;
+    private string _resultText = null!;
 
-    private MPEndOfBattleSideVM _allySide = default!;
+    private MPEndOfBattleSideVM _allySide = null!;
 
-    private MPEndOfBattleSideVM _enemySide = default!;
+    private MPEndOfBattleSideVM _enemySide = null!;
 
     private BannerImageIdentifierVM? _allyBanner;
 

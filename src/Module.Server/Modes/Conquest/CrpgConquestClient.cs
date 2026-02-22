@@ -71,7 +71,7 @@ internal class CrpgConquestClient : MissionMultiplayerGameModeBaseClient, IComma
     {
         base.OnMissionTick(dt);
 
-        if (MissionLobbyComponent.CurrentMultiplayerState != MissionLobbyComponent.MultiplayerGameState.Playing)
+        if (MissionLobbyComponent.CurrentMultiplayerState != MultiplayerGameState.Playing)
         {
             return;
         }

@@ -19,153 +19,166 @@ namespace Crpg.Module.GUI.Scoreboard
         public CrpgMissionScoreboardUIHandler(bool isSingleTeam)
         {
             _isSingleTeam = isSingleTeam;
-            this.ViewOrderPriority = 25;
+            ViewOrderPriority = 25;
         }
 
         public override void OnMissionScreenInitialize()
         {
             base.OnMissionScreenInitialize();
-            this.InitializeLayer();
-            base.Mission.IsFriendlyMission = false;
+            InitializeLayer();
+            Mission.IsFriendlyMission = false;
             GameKeyContext category = HotKeyManager.GetCategory("ScoreboardHotKeyCategory");
-            if (!base.MissionScreen.SceneLayer.Input.IsCategoryRegistered(category))
+            if (!MissionScreen.SceneLayer.Input.IsCategoryRegistered(category))
             {
-                base.MissionScreen.SceneLayer.Input.RegisterHotKeyCategory(category);
+                MissionScreen.SceneLayer.Input.RegisterHotKeyCategory(category);
             }
-            this._missionLobbyComponent = base.Mission.GetMissionBehavior<MissionLobbyComponent>();
-            this._scoreboardStayDuration = MissionLobbyComponent.PostMatchWaitDuration / 2f;
-            this._teamSelectComponent = base.Mission.GetMissionBehavior<MultiplayerTeamSelectComponent>();
-            this.RegisterEvents();
-            if (this._dataSource != null)
+
+            _missionLobbyComponent = Mission.GetMissionBehavior<MissionLobbyComponent>();
+            _scoreboardStayDuration = MissionLobbyComponent.PostMatchWaitDuration / 2f;
+            _teamSelectComponent = Mission.GetMissionBehavior<MultiplayerTeamSelectComponent>();
+            RegisterEvents();
+            if (_dataSource != null)
             {
-                this._dataSource.IsActive = false;
+                _dataSource.IsActive = false;
             }
         }
 
         public override void OnRemoveBehavior()
         {
-            this.UnregisterEvents();
-            this.FinalizeLayer();
+            UnregisterEvents();
+            FinalizeLayer();
             base.OnRemoveBehavior();
         }
 
         public override void OnMissionScreenFinalize()
         {
             base.OnMissionScreenFinalize();
-            this.UnregisterEvents();
-            this.FinalizeLayer();
+            UnregisterEvents();
+            FinalizeLayer();
             base.OnMissionScreenFinalize();
         }
 
         private void RegisterEvents()
         {
-            if (base.MissionScreen != null)
+            if (MissionScreen != null)
             {
-                base.MissionScreen.OnSpectateAgentFocusIn += this.HandleSpectateAgentFocusIn;
-                base.MissionScreen.OnSpectateAgentFocusOut += this.HandleSpectateAgentFocusOut;
+                MissionScreen.OnSpectateAgentFocusIn += HandleSpectateAgentFocusIn;
+                MissionScreen.OnSpectateAgentFocusOut += HandleSpectateAgentFocusOut;
             }
-            this._missionLobbyComponent.CurrentMultiplayerStateChanged += this.MissionLobbyComponentOnCurrentMultiplayerStateChanged;
-            this._missionLobbyComponent.OnCultureSelectionRequested += this.OnCultureSelectionRequested;
-            if (this._teamSelectComponent != null)
+
+            _missionLobbyComponent.CurrentMultiplayerStateChanged += MissionLobbyComponentOnCurrentMultiplayerStateChanged;
+            _missionLobbyComponent.OnCultureSelectionRequested += OnCultureSelectionRequested;
+            if (_teamSelectComponent != null)
             {
-                this._teamSelectComponent.OnSelectingTeam += this.OnSelectingTeam;
+                _teamSelectComponent.OnSelectingTeam += OnSelectingTeam;
             }
-            MissionPeer.OnTeamChanged += this.OnTeamChanged;
+
+            MissionPeer.OnTeamChanged += OnTeamChanged;
         }
 
         private void UnregisterEvents()
         {
-            if (base.MissionScreen != null)
+            if (MissionScreen != null)
             {
-                base.MissionScreen.OnSpectateAgentFocusIn -= this.HandleSpectateAgentFocusIn;
-                base.MissionScreen.OnSpectateAgentFocusOut -= this.HandleSpectateAgentFocusOut;
+                MissionScreen.OnSpectateAgentFocusIn -= HandleSpectateAgentFocusIn;
+                MissionScreen.OnSpectateAgentFocusOut -= HandleSpectateAgentFocusOut;
             }
-            this._missionLobbyComponent.CurrentMultiplayerStateChanged -= this.MissionLobbyComponentOnCurrentMultiplayerStateChanged;
-            this._missionLobbyComponent.OnCultureSelectionRequested -= this.OnCultureSelectionRequested;
-            if (this._teamSelectComponent != null)
+
+            _missionLobbyComponent.CurrentMultiplayerStateChanged -= MissionLobbyComponentOnCurrentMultiplayerStateChanged;
+            _missionLobbyComponent.OnCultureSelectionRequested -= OnCultureSelectionRequested;
+            if (_teamSelectComponent != null)
             {
-                this._teamSelectComponent.OnSelectingTeam -= this.OnSelectingTeam;
+                _teamSelectComponent.OnSelectingTeam -= OnSelectingTeam;
             }
-            MissionPeer.OnTeamChanged -= this.OnTeamChanged;
+
+            MissionPeer.OnTeamChanged -= OnTeamChanged;
         }
 
         public override void OnMissionTick(float dt)
         {
             base.OnMissionTick(dt);
-            if (this._isMissionEnding)
+            if (_isMissionEnding)
             {
-                if (this._scoreboardStayTimeElapsed >= this._scoreboardStayDuration)
+                if (_scoreboardStayTimeElapsed >= _scoreboardStayDuration)
                 {
-                    this.ToggleScoreboard(false);
+                    ToggleScoreboard(false);
                     return;
                 }
-                this._scoreboardStayTimeElapsed += dt;
+
+                _scoreboardStayTimeElapsed += dt;
             }
-            this._dataSource?.Tick(dt);
+
+            _dataSource?.Tick(dt);
             if (TaleWorlds.InputSystem.Input.IsGamepadActive)
             {
-                bool flag = base.MissionScreen.SceneLayer.Input.IsGameKeyPressed(4) || (this._gauntletLayer?.Input.IsGameKeyPressed(4) ?? false);
-                if (this._isMissionEnding)
+                bool flag = MissionScreen.SceneLayer.Input.IsGameKeyPressed(4) || (_gauntletLayer?.Input.IsGameKeyPressed(4) ?? false);
+                if (_isMissionEnding)
                 {
-                    this.ToggleScoreboard(true);
+                    ToggleScoreboard(true);
                 }
-                else if (flag && !base.MissionScreen.IsRadialMenuActive && !base.Mission.IsOrderMenuOpen)
+                else if (flag && !MissionScreen.IsRadialMenuActive && !Mission.IsOrderMenuOpen)
                 {
-                    this.ToggleScoreboard(!this._dataSource?.IsActive ?? false);
+                    ToggleScoreboard(!_dataSource?.IsActive ?? false);
                 }
             }
             else
             {
-                bool flag2 = base.MissionScreen.SceneLayer.Input.IsHotKeyDown("HoldShow") || (this._gauntletLayer?.Input.IsHotKeyDown("HoldShow") ?? false);
-                bool isActive = this._isMissionEnding || (flag2 && !base.MissionScreen.IsRadialMenuActive && !base.Mission.IsOrderMenuOpen);
-                this.ToggleScoreboard(isActive);
+                bool flag2 = MissionScreen.SceneLayer.Input.IsHotKeyDown("HoldShow") || (_gauntletLayer?.Input.IsHotKeyDown("HoldShow") ?? false);
+                bool isActive = _isMissionEnding || (flag2 && !MissionScreen.IsRadialMenuActive && !Mission.IsOrderMenuOpen);
+                ToggleScoreboard(isActive);
             }
-            if (this._isActive && (base.MissionScreen.SceneLayer.Input.IsGameKeyPressed(35) || (this._gauntletLayer?.Input.IsGameKeyPressed(35) ?? false)))
+
+            if (_isActive && (MissionScreen.SceneLayer.Input.IsGameKeyPressed(35) || (_gauntletLayer?.Input.IsGameKeyPressed(35) ?? false)))
             {
-                this._mouseRequstedWhileScoreboardActive = true;
+                _mouseRequstedWhileScoreboardActive = true;
             }
-            bool mouseState = this._isMissionEnding || (this._isActive && this._mouseRequstedWhileScoreboardActive);
-            this.SetMouseState(mouseState);
+
+            bool mouseState = _isMissionEnding || (_isActive && _mouseRequstedWhileScoreboardActive);
+            SetMouseState(mouseState);
         }
 
         private void ToggleScoreboard(bool isActive)
         {
-            if (this._isActive != isActive && _dataSource != null)
+            if (_isActive != isActive && _dataSource != null)
             {
-                this._isActive = isActive;
-                this._dataSource.IsActive = this._isActive;
-                base.MissionScreen.SetCameraLockState(this._isActive);
-                if (!this._isActive)
+                _isActive = isActive;
+                _dataSource.IsActive = _isActive;
+                MissionScreen.SetCameraLockState(_isActive);
+                if (!_isActive)
                 {
-                    this._mouseRequstedWhileScoreboardActive = false;
+                    _mouseRequstedWhileScoreboardActive = false;
                 }
-                Action<bool> onScoreboardToggled = this.OnScoreboardToggled;
+
+                Action<bool> onScoreboardToggled = OnScoreboardToggled;
                 if (onScoreboardToggled == null)
                 {
                     return;
                 }
-                onScoreboardToggled(this._isActive);
+
+                onScoreboardToggled(_isActive);
             }
         }
 
         private void SetMouseState(bool isMouseVisible)
         {
-            if (this._isMouseVisible != isMouseVisible)
+            if (_isMouseVisible != isMouseVisible)
             {
-                this._isMouseVisible = isMouseVisible;
-                if (!this._isMouseVisible)
+                _isMouseVisible = isMouseVisible;
+                if (!_isMouseVisible)
                 {
-                    this._gauntletLayer?.InputRestrictions.ResetInputRestrictions();
+                    _gauntletLayer?.InputRestrictions.ResetInputRestrictions();
                 }
                 else
                 {
-                    this._gauntletLayer?.InputRestrictions.SetInputRestrictions(this._isMouseVisible, InputUsageMask.Mouse);
+                    _gauntletLayer?.InputRestrictions.SetInputRestrictions(_isMouseVisible, InputUsageMask.Mouse);
                 }
-                CrpgMissionScoreboardVM? dataSource = this._dataSource;
+
+                CrpgMissionScoreboardVM? dataSource = _dataSource;
                 if (dataSource == null)
                 {
                     return;
                 }
+
                 dataSource.SetMouseState(isMouseVisible);
             }
         }
@@ -175,7 +188,7 @@ namespace Crpg.Module.GUI.Scoreboard
             if (followedAgent.MissionPeer != null)
             {
                 MissionPeer component = followedAgent.MissionPeer.GetComponent<MissionPeer>();
-                this._dataSource?.DecreaseSpectatorCount(component);
+                _dataSource?.DecreaseSpectatorCount(component);
             }
         }
 
@@ -184,61 +197,63 @@ namespace Crpg.Module.GUI.Scoreboard
             if (followedAgent.MissionPeer != null)
             {
                 MissionPeer component = followedAgent.MissionPeer.GetComponent<MissionPeer>();
-                this._dataSource?.IncreaseSpectatorCount(component);
+                _dataSource?.IncreaseSpectatorCount(component);
             }
         }
 
         private void MissionLobbyComponentOnCurrentMultiplayerStateChanged(MissionLobbyComponent.MultiplayerGameState newState)
         {
-            this._isMissionEnding = (newState == MissionLobbyComponent.MultiplayerGameState.Ending);
+            _isMissionEnding = newState == MissionLobbyComponent.MultiplayerGameState.Ending;
         }
 
         private void OnTeamChanged(NetworkCommunicator peer, Team previousTeam, Team newTeam)
         {
             if (peer.IsMine)
             {
-                this.FinalizeLayer();
-                this.InitializeLayer();
+                FinalizeLayer();
+                InitializeLayer();
             }
         }
 
         private void FinalizeLayer()
         {
-            if (this._dataSource != null)
+            if (_dataSource != null)
             {
-                this._dataSource.OnFinalize();
+                _dataSource.OnFinalize();
             }
-            if (this._gauntletLayer != null)
+
+            if (_gauntletLayer != null)
             {
-                base.MissionScreen.RemoveLayer(this._gauntletLayer);
+                MissionScreen.RemoveLayer(_gauntletLayer);
             }
-            this._gauntletLayer = null;
-            this._dataSource = null;
-            this._isActive = false;
+
+            _gauntletLayer = null;
+            _dataSource = null;
+            _isActive = false;
         }
 
         private void InitializeLayer()
         {
-            this._dataSource = new CrpgMissionScoreboardVM(this._isSingleTeam, base.Mission);
-            this._gauntletLayer = new GauntletLayer("CrpgMultiplayerScoreboard", this.ViewOrderPriority, false);
-            this._gauntletLayer.LoadMovie("CrpgMultiplayerScoreboard", this._dataSource);
-            this._gauntletLayer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("Generic"));
-            this._gauntletLayer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("ScoreboardHotKeyCategory"));
-            base.MissionScreen.AddLayer(this._gauntletLayer);
-            this._dataSource.IsActive = this._isActive;
+            _dataSource = new CrpgMissionScoreboardVM(_isSingleTeam, Mission);
+            _gauntletLayer = new GauntletLayer("CrpgMultiplayerScoreboard", ViewOrderPriority);
+            _gauntletLayer.LoadMovie("CrpgMultiplayerScoreboard", _dataSource);
+            _gauntletLayer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("Generic"));
+            _gauntletLayer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("ScoreboardHotKeyCategory"));
+            MissionScreen.AddLayer(_gauntletLayer);
+            _dataSource.IsActive = _isActive;
         }
 
         private void OnSelectingTeam(List<Team> disableTeams)
         {
-            this.ToggleScoreboard(false);
+            ToggleScoreboard(false);
         }
 
         private void OnCultureSelectionRequested()
         {
-            this.ToggleScoreboard(false);
+            ToggleScoreboard(false);
         }
 
-        private GauntletLayer? _gauntletLayer = default!;
+        private GauntletLayer? _gauntletLayer = null!;
 
         private CrpgMissionScoreboardVM? _dataSource;
 
@@ -252,11 +267,11 @@ namespace Crpg.Module.GUI.Scoreboard
 
         private bool _isMouseVisible;
 
-        private MissionLobbyComponent _missionLobbyComponent = default!;
+        private MissionLobbyComponent _missionLobbyComponent = null!;
 
-        private MultiplayerTeamSelectComponent _teamSelectComponent = default!;
+        private MultiplayerTeamSelectComponent _teamSelectComponent = null!;
 
-        public Action<bool> OnScoreboardToggled = default!;
+        public Action<bool> OnScoreboardToggled = null!;
 
         private float _scoreboardStayDuration;
 

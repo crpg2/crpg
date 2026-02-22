@@ -6,7 +6,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using TaleWorlds.Core;
-using TaleWorlds.Engine;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.Tableaus;
 using TaleWorlds.MountAndBlade.View.Tableaus.Thumbnails;

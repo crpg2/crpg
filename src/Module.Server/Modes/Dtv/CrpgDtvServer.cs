@@ -34,8 +34,8 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private int? _vipAgentIndex;
     private MissionTimer? _waveStartTimer;
     private MissionTimer? _endGameTimer;
-    private MissionTimer _refillBouldersTimer = default!;
-    private MissionTimer _refillFirePotsTimer = default!;
+    private MissionTimer _refillBouldersTimer = null!;
+    private MissionTimer _refillFirePotsTimer = null!;
     private MissionTime _currentRoundStartTime;
 
     public CrpgDtvServer(CrpgRewardServer rewardServer)
@@ -470,7 +470,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
 
                 GameNetwork.BeginBroadcastModuleEvent();
                 GameNetwork.WriteMessage(new SetRangedSiegeWeaponAmmo(siegeWeapon.Id, newAmmoCount2));
-                GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.AddToMissionRecord, null);
+                GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.AddToMissionRecord);
             }
         }
     }
@@ -497,7 +497,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     {
         float defendersScale = _currentRoundDefendersCount <= 10
             ? 1 + (_currentRoundDefendersCount - 1) * 0.0125f
-            : 1 + (9 * 0.0125f) + (_currentRoundDefendersCount - 10) * 0.0035f;
+            : 1 + 9 * 0.0125f + (_currentRoundDefendersCount - 10) * 0.0035f;
 
         float lostRoundPenalty = (float)wavesWon / data.Waves.Count;
         return data.Reward * defendersScale * lostRoundPenalty;
@@ -524,6 +524,6 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     {
         XmlSerializer ser = new(typeof(CrpgDtvData));
         using StreamReader sr = new(ModuleHelper.GetXmlPath("Crpg", "dtv\\dtv_data"));
-        return (CrpgDtvData)ser.Deserialize(sr);
+        return (CrpgDtvData)ser.Deserialize(sr)!;
     }
 }

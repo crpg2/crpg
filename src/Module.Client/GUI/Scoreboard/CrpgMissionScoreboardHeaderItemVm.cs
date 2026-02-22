@@ -1,20 +1,15 @@
-﻿#region assembly TaleWorlds.MountAndBlade.ViewModelCollection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// C:\Program Files (x86)\Steam\steamapps\common\Mount & Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.ViewModelCollection.dll
-// Decompiled with ICSharpCode.Decompiler 7.1.0.6543
-#endregion
-
-using Crpg.Module.Gui;
+﻿using Crpg.Module.Gui;
 using TaleWorlds.Core.ViewModelCollection.Generic;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.Scoreboard;
 
 namespace Crpg.Module.GUI.Scoreboard;
 
-public class CrpgMissionScoreboardHeaderItemVM : BindingListStringItem
+public class CrpgMissionScoreboardHeaderItemVm : BindingListStringItem
 {
     private readonly CrpgScoreboardSideVM _side;
 
-    private string _headerID = string.Empty;
+    private string _headerId = string.Empty;
 
     private bool _isIrregularStat;
 
@@ -25,14 +20,14 @@ public class CrpgMissionScoreboardHeaderItemVM : BindingListStringItem
     {
         get
         {
-            return _headerID;
+            return _headerId;
         }
         set
         {
-            if (value != _headerID)
+            if (value != _headerId)
             {
-                _headerID = value;
-                OnPropertyChangedWithValue(value, "HeaderID");
+                _headerId = value;
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -49,7 +44,7 @@ public class CrpgMissionScoreboardHeaderItemVM : BindingListStringItem
             if (value != _isIrregularStat)
             {
                 _isIrregularStat = value;
-                OnPropertyChangedWithValue(value, "IsIrregularStat");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -66,7 +61,7 @@ public class CrpgMissionScoreboardHeaderItemVM : BindingListStringItem
             if (value != _isAvatarStat)
             {
                 _isAvatarStat = value;
-                OnPropertyChangedWithValue(value, "IsAvatarStat");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -74,11 +69,11 @@ public class CrpgMissionScoreboardHeaderItemVM : BindingListStringItem
     [DataSourceProperty]
     public MissionScoreboardPlayerSortControllerVM PlayerSortController => _side.PlayerSortController;
 
-    public CrpgMissionScoreboardHeaderItemVM(CrpgScoreboardSideVM side, string headerID, string value, bool isAvatarStat, bool isIrregularStat)
+    public CrpgMissionScoreboardHeaderItemVm(CrpgScoreboardSideVM side, string headerId, string value, bool isAvatarStat, bool isIrregularStat)
         : base(value)
     {
         _side = side;
-        HeaderID = headerID;
+        HeaderID = headerId;
         IsAvatarStat = isAvatarStat;
         IsIrregularStat = isIrregularStat;
     }

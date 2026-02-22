@@ -37,7 +37,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
 {
     private const string GameName = "cRPGTeamDeathmatch";
 
-    private static CrpgConstants _constants = default!; // Static so it's accessible from the views.
+    private static CrpgConstants _constants = null!; // Static so it's accessible from the views.
 
     public CrpgTeamDeathmatchGameMode(CrpgConstants constants)
         : base(GameName)
@@ -73,7 +73,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
             new CrpgHudExtensionHandler(),
             new AmmoQuiverChangeUiHandler(),
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
-            //new SpectatorHudUiHandler(),
+            // new SpectatorHudUiHandler(),
             new WarmupHudUiHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -98,13 +98,12 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
         Game.Current.GetGameHandler<ChatCommandsComponent>()?.InitChatCommands(crpgClient);
         ChatBox chatBox = Game.Current.GetGameHandler<ChatBox>();
         CrpgTeamDeathmatchSpawningBehavior spawnBehavior = new(_constants);
-        //MultiplayerRoundController roundController = new(); // starts/stops round, ends match
+        // MultiplayerRoundController roundController = new(); // starts/stops round, ends match
         CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent,
             () => (new CrpgTeamDeathmatchSpawnFrameBehavior(), new CrpgTeamDeathmatchSpawningBehavior(_constants)));
         CrpgTeamSelectServerComponent teamSelectComponent = new(warmupComponent, null, MultiplayerGameType.TeamDeathmatch);
         CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: false, enableRating: true);
         CrpgTeamDeathmatchServer teamDeathmatchServer = new(scoreboardComponent, rewardServer);
-
 
 #else
         CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, null);

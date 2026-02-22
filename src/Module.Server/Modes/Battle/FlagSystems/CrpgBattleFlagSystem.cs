@@ -28,7 +28,7 @@ internal class CrpgBattleFlagSystem : AbstractFlagSystem
         }
 
         var randomFlag = GetRandomFlag();
-        float duration = _isDeadPlayerThresholdReached ? (GetBattleClient().FlagUnlockTime / 3) * 2 : GetBattleClient().FlagUnlockTime;
+        float duration = _isDeadPlayerThresholdReached ? GetBattleClient().FlagUnlockTime / 3 * 2 : GetBattleClient().FlagUnlockTime;
         SetFlagUnlockTimer(duration);
         SpawnFlag(randomFlag);
         SetHasFlagCountChanged(true);

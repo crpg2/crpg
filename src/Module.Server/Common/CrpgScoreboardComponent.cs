@@ -1,13 +1,12 @@
-﻿using Crpg.Module.Api.Models.Characters;
-using Crpg.Module.Common.Network;
-using Crpg.Module.Helpers;
-using NetworkMessages.FromServer;
+﻿using Crpg.Module.Common.Network;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
-
 #if CRPG_SERVER
+using Crpg.Module.Api.Models.Characters;
+using Crpg.Module.Helpers;
 using Crpg.Module.Rating;
+using NetworkMessages.FromServer;
 #endif
 
 namespace Crpg.Module.Common;
@@ -75,7 +74,7 @@ internal class CrpgScoreboardComponent : MissionScoreboardComponent
 
             score = (collisionData.InflictedDamage + collisionData.AbsorbedByArmor) / 12.5f;
         }
-        else if (affectedAgent.IsMount && affectedCharacterAgent != null)
+        else if (affectedAgent.IsMount)
         {
             score = damagedHp / affectedAgent.BaseHealthLimit * 70f * ratingFactor;
         }
@@ -111,15 +110,15 @@ internal class CrpgScoreboardComponent : MissionScoreboardComponent
                 {
                     if (agent != affectorAgent)
                     {
-                        if (agent?.Team == affectorAgent.Team)
+                        if (agent.Team == affectorAgent.Team)
                         {
-                            var agentMissionPeer = agent?.MissionPeer;
+                            var agentMissionPeer = agent.MissionPeer;
                             if (agentMissionPeer != null)
                             {
                                 ReflectionHelper.SetProperty(
                                     agentMissionPeer,
                                     nameof(agentMissionPeer.Score),
-                                    (int)(agentMissionPeer.Score + (score * ProximityScoreMultiplier)));
+                                    (int)(agentMissionPeer.Score + score * ProximityScoreMultiplier));
 
                                 GameNetwork.BeginBroadcastModuleEvent();
                                 GameNetwork.WriteMessage(new KillDeathCountChange(agentMissionPeer.GetNetworkPeer(),

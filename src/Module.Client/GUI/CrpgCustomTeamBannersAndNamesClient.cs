@@ -37,8 +37,8 @@ internal class CrpgCustomTeamBannersAndNamesClient : MissionNetwork
     {
         AttackerBannerCode = message.AttackerBanner.BannerCode != string.Empty ? message.AttackerBanner.BannerCode : Mission.Current.Teams.Attacker.Banner.BannerCode;
         DefenderBannerCode = message.DefenderBanner.BannerCode != string.Empty ? message.DefenderBanner.BannerCode : Mission.Current.Teams.Defender.Banner.BannerCode;
-        AttackerName = message.AttackerName != string.Empty ? message.AttackerName : MBObjectManager.Instance?.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions))?.Name.ToString() ?? string.Empty;
-        DefenderName = message.DefenderName != string.Empty ? message.DefenderName : MBObjectManager.Instance?.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions))?.Name.ToString() ?? string.Empty;
+        AttackerName = message.AttackerName != string.Empty ? message.AttackerName : MBObjectManager.Instance?.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue())?.Name.ToString() ?? string.Empty;
+        DefenderName = message.DefenderName != string.Empty ? message.DefenderName : MBObjectManager.Instance?.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue())?.Name.ToString() ?? string.Empty;
         BannersChanged?.Invoke(AttackerBannerCode, DefenderBannerCode, AttackerName, DefenderName);
     }
 }

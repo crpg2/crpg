@@ -7,6 +7,7 @@ internal class GameMatch
     internal List<WeightedCrpgUser> TeamB { get; set; } = new();
     internal List<WeightedCrpgUser> Waiting { get; set; } = new();
 }
+
 internal class ClanGroupsGameMatch
 {
     internal List<ClanGroup> TeamA { get; set; } = new();

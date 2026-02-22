@@ -8,7 +8,6 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Source.Missions;
 
-
 #if CRPG_SERVER
 using Crpg.Module.Api;
 using Crpg.Module.Common.ChatCommands;
@@ -16,7 +15,6 @@ using Crpg.Module.Common.ChatCommands;
 using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.HudExtension;
-using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
@@ -29,7 +27,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
 {
     private const string GameName = "cRPGSiege";
 
-    private static CrpgConstants _constants = default!; // Static so it's accessible from the views.
+    private static CrpgConstants _constants = null!; // Static so it's accessible from the views.
 
     public CrpgSiegeGameMode(CrpgConstants constants)
         : base(GameName)

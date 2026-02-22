@@ -18,18 +18,18 @@ public class CrpgTrainingGroundMarkersVm : ViewModel
 
     private const float FocusScreenDistanceThreshold = 250f;
     private const float FocusAgentDistanceThreshold = 6f;
-    private bool _hasEnteredLobby;
-    private Camera _missionCamera;
-    private CrpgTrainingGroundPeerMarkerVm? _previousFocusTarget;
-    private CrpgTrainingGroundPeerMarkerVm? _currentFocusTarget;
-    private PeerMarkerDistanceComparer _distanceComparer;
+    private readonly Camera _missionCamera;
+    private readonly PeerMarkerDistanceComparer _distanceComparer;
     private readonly Dictionary<MissionPeer, CrpgTrainingGroundPeerMarkerVm> _targetPeersToMarkersDictionary;
     private readonly CrpgTrainingGroundMissionMultiplayerClient _client;
+    private readonly Dictionary<MissionPeer, bool> _targetPeersInDuelDictionary;
+    private bool _hasEnteredLobby;
+    private CrpgTrainingGroundPeerMarkerVm? _previousFocusTarget;
+    private CrpgTrainingGroundPeerMarkerVm? _currentFocusTarget;
     private Vec2 _screenCenter;
-    private Dictionary<MissionPeer, bool> _targetPeersInDuelDictionary;
     private bool _isPlayerFocused;
     private bool _isEnabled;
-    private MBBindingList<CrpgTrainingGroundPeerMarkerVm> _targets = default!;
+    private MBBindingList<CrpgTrainingGroundPeerMarkerVm> _targets = null!;
 
     [DataSourceProperty]
     public bool IsEnabled
@@ -43,7 +43,7 @@ public class CrpgTrainingGroundMarkersVm : ViewModel
             if (value != _isEnabled)
             {
                 _isEnabled = value;
-                OnPropertyChangedWithValue(value, "IsEnabled");
+                OnPropertyChangedWithValue(value);
                 UpdateTargetsEnabled(value);
             }
         }
@@ -61,7 +61,7 @@ public class CrpgTrainingGroundMarkersVm : ViewModel
             if (value != _targets)
             {
                 _targets = value;
-                OnPropertyChangedWithValue(value, "Targets");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -82,7 +82,7 @@ public class CrpgTrainingGroundMarkersVm : ViewModel
     public override void RefreshValues()
     {
         base.RefreshValues();
-        Targets.ApplyActionOnAllItems(delegate (CrpgTrainingGroundPeerMarkerVm t)
+        Targets.ApplyActionOnAllItems(t =>
         {
             t.RefreshValues();
         });
@@ -107,7 +107,9 @@ public class CrpgTrainingGroundMarkersVm : ViewModel
         CrpgTrainingGroundMissionRepresentative myRepresentative = _client.MyRepresentative;
         myRepresentative.OnDuelRequestSentEvent += OnDuelRequestSent;
         myRepresentative.OnDuelRequestedEvent += OnDuelRequested;
-        ManagedOptions.OnManagedOptionChanged = (ManagedOptions.OnManagedOptionChangedDelegate)Delegate.Combine(ManagedOptions.OnManagedOptionChanged, new ManagedOptions.OnManagedOptionChangedDelegate(OnManagedOptionsChanged));
+        ManagedOptions.OnManagedOptionChanged = (ManagedOptions.OnManagedOptionChangedDelegate)Delegate.Combine(
+            ManagedOptions.OnManagedOptionChanged,
+            new ManagedOptions.OnManagedOptionChangedDelegate(OnManagedOptionsChanged));
     }
 
     public void UnregisterEvents()
@@ -115,14 +117,81 @@ public class CrpgTrainingGroundMarkersVm : ViewModel
         CrpgTrainingGroundMissionRepresentative myRepresentative = _client.MyRepresentative;
         myRepresentative.OnDuelRequestSentEvent -= OnDuelRequestSent;
         myRepresentative.OnDuelRequestedEvent -= OnDuelRequested;
-        ManagedOptions.OnManagedOptionChanged = (ManagedOptions.OnManagedOptionChangedDelegate)Delegate.Remove(ManagedOptions.OnManagedOptionChanged, new ManagedOptions.OnManagedOptionChangedDelegate(OnManagedOptionsChanged));
+        ManagedOptions.OnManagedOptionChanged = (ManagedOptions.OnManagedOptionChangedDelegate?)Delegate.Remove(
+            ManagedOptions.OnManagedOptionChanged,
+            new ManagedOptions.OnManagedOptionChangedDelegate(OnManagedOptionsChanged));
+    }
+
+    public void RefreshPeerEquipments()
+    {
+        foreach (MissionPeer item in VirtualPlayer.Peers<MissionPeer>())
+        {
+            OnPeerEquipmentRefreshed(item);
+        }
+    }
+
+    public void OnAgentSpawnedWithoutDuel()
+    {
+        _hasEnteredLobby = true;
+        IsEnabled = true;
+    }
+
+    public void OnDuelStarted(MissionPeer firstPeer, MissionPeer secondPeer)
+    {
+        if (_client.MyRepresentative.MissionPeer == firstPeer || _client.MyRepresentative.MissionPeer == secondPeer)
+        {
+            IsEnabled = false;
+        }
+
+        foreach (CrpgTrainingGroundPeerMarkerVm target in Targets)
+        {
+            if (target.TargetPeer == firstPeer || target.TargetPeer == secondPeer)
+            {
+                target.OnDuelStarted();
+            }
+        }
+
+        _targetPeersInDuelDictionary[firstPeer] = true;
+        _targetPeersInDuelDictionary[secondPeer] = true;
+    }
+
+    public void SetMarkerOfPeerEnabled(MissionPeer peer, bool isEnabled)
+    {
+        if (_targetPeersToMarkersDictionary.ContainsKey(peer))
+        {
+            _targetPeersToMarkersDictionary[peer].UpdateCurentDuelStatus(!isEnabled);
+            _targetPeersToMarkersDictionary[peer].UpdateRecord();
+            _targetPeersToMarkersDictionary[peer].UpdateRating();
+        }
+
+        if (_targetPeersInDuelDictionary.ContainsKey(peer))
+        {
+            _targetPeersInDuelDictionary[peer] = !isEnabled;
+        }
+    }
+
+    public void OnFocusGained()
+    {
+        _isPlayerFocused = true;
+    }
+
+    public void OnFocusLost()
+    {
+        _isPlayerFocused = false;
+    }
+
+    public void OnPeerEquipmentRefreshed(MissionPeer peer)
+    {
+        if (_targetPeersToMarkersDictionary.TryGetValue(peer, out CrpgTrainingGroundPeerMarkerVm? _))
+        {
+        }
     }
 
     private void OnManagedOptionsChanged(ManagedOptions.ManagedOptionsType changedManagedOptionsType)
     {
         if (changedManagedOptionsType == ManagedOptions.ManagedOptionsType.EnableGenericNames)
         {
-            Targets.ApplyActionOnAllItems(delegate (CrpgTrainingGroundPeerMarkerVm t)
+            Targets.ApplyActionOnAllItems(t =>
             {
                 t.RefreshValues();
             });
@@ -141,7 +210,7 @@ public class CrpgTrainingGroundMarkersVm : ViewModel
             }
         }
 
-        if (_client.MyRepresentative?.MissionPeer.ControlledAgent == null)
+        if (_client.MyRepresentative.MissionPeer.ControlledAgent == null)
         {
             return;
         }
@@ -165,10 +234,6 @@ public class CrpgTrainingGroundMarkersVm : ViewModel
         }
 
         Targets.Sort(_distanceComparer);
-        if (_client.MyRepresentative == null)
-        {
-            return;
-        }
 
         if (_currentFocusTarget != null && _currentFocusTarget.TargetPeer.ControlledAgent != null)
         {
@@ -191,14 +256,6 @@ public class CrpgTrainingGroundMarkersVm : ViewModel
         if (_currentFocusTarget == null)
         {
             _client.MyRepresentative.OnObjectFocusLost();
-        }
-    }
-
-    public void RefreshPeerEquipments()
-    {
-        foreach (MissionPeer item in VirtualPlayer.Peers<MissionPeer>())
-        {
-            OnPeerEquipmentRefreshed(item);
         }
     }
 
@@ -262,70 +319,10 @@ public class CrpgTrainingGroundMarkersVm : ViewModel
 
     private void OnDuelRequested(MissionPeer targetPeer)
     {
-        CrpgTrainingGroundPeerMarkerVm CrpgTrainingGroundPeerMarkerVm = Targets.FirstOrDefault((CrpgTrainingGroundPeerMarkerVm t) => t.TargetPeer == targetPeer);
-        if (CrpgTrainingGroundPeerMarkerVm != null)
+        var crpgTrainingGroundPeerMarkerVm = Targets.FirstOrDefault(t => t.TargetPeer == targetPeer);
+        if (crpgTrainingGroundPeerMarkerVm != null)
         {
-            CrpgTrainingGroundPeerMarkerVm.HasDuelRequestForPlayer = true;
-        }
-    }
-
-    public void OnAgentSpawnedWithoutDuel()
-    {
-        _hasEnteredLobby = true;
-        IsEnabled = true;
-    }
-
-    public void OnDuelStarted(MissionPeer firstPeer, MissionPeer secondPeer)
-    {
-        if (_client.MyRepresentative.MissionPeer == firstPeer || _client.MyRepresentative.MissionPeer == secondPeer)
-        {
-            IsEnabled = false;
-        }
-
-        foreach (CrpgTrainingGroundPeerMarkerVm target in Targets)
-        {
-            if (target.TargetPeer == firstPeer || target.TargetPeer == secondPeer)
-            {
-                target.OnDuelStarted();
-            }
-        }
-
-        _targetPeersInDuelDictionary[firstPeer] = true;
-        _targetPeersInDuelDictionary[secondPeer] = true;
-    }
-
-    public void SetMarkerOfPeerEnabled(MissionPeer peer, bool isEnabled)
-    {
-        if (peer != null)
-        {
-            if (_targetPeersToMarkersDictionary.ContainsKey(peer))
-            {
-                _targetPeersToMarkersDictionary[peer].UpdateCurentDuelStatus(!isEnabled);
-                _targetPeersToMarkersDictionary[peer].UpdateRecord();
-                _targetPeersToMarkersDictionary[peer].UpdateRating();
-            }
-
-            if (_targetPeersInDuelDictionary.ContainsKey(peer))
-            {
-                _targetPeersInDuelDictionary[peer] = !isEnabled;
-            }
-        }
-    }
-
-    public void OnFocusGained()
-    {
-        _isPlayerFocused = true;
-    }
-
-    public void OnFocusLost()
-    {
-        _isPlayerFocused = false;
-    }
-
-    public void OnPeerEquipmentRefreshed(MissionPeer peer)
-    {
-        if (_targetPeersToMarkersDictionary.TryGetValue(peer, out var value))
-        {
+            crpgTrainingGroundPeerMarkerVm.HasDuelRequestForPlayer = true;
         }
     }
 }
