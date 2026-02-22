@@ -31,7 +31,7 @@ internal class CrpgItemRequirementModel
         // Check if the item is a crossbow or firearm
         if (item.ItemType != ItemObject.ItemTypeEnum.Crossbow && item.ItemType != ItemObject.ItemTypeEnum.Musket && item.ItemType != ItemObject.ItemTypeEnum.Pistol)
         {
-            throw new ArgumentException(item.Name.ToString() + " is not a crossbow or firearm");
+            throw new ArgumentException(item.Name + " is not a crossbow or firearm");
         }
 
         // Adjust the strength requirement for light crossbows

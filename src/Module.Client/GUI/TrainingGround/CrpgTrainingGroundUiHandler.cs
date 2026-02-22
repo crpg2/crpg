@@ -73,14 +73,6 @@ public class CrpgTrainingGroundUiHandler : MissionView
         }
     }
 
-    private void OnNativeOptionChanged(NativeOptions.NativeOptionsType optionType)
-    {
-        if (optionType == NativeOptions.NativeOptionsType.ScreenResolution)
-        {
-            _dataSource!.OnScreenResolutionChanged();
-        }
-    }
-
     public override void OnAgentRemoved(Agent affectedAgent, Agent affectorAgent, AgentState agentState, KillingBlow blow)
     {
         base.OnAgentRemoved(affectedAgent, affectorAgent, agentState, blow);
@@ -120,6 +112,14 @@ public class CrpgTrainingGroundUiHandler : MissionView
     public void OnPeerEquipmentIndexRefreshed(MissionPeer peer, int equipmentSetIndex)
     {
         _dataSource!.Markers.OnPeerEquipmentRefreshed(peer);
+    }
+
+    private void OnNativeOptionChanged(NativeOptions.NativeOptionsType optionType)
+    {
+        if (optionType == NativeOptions.NativeOptionsType.ScreenResolution)
+        {
+            _dataSource!.OnScreenResolutionChanged();
+        }
     }
 
     private void OnEquipmentRefreshed(MissionPeer peer)

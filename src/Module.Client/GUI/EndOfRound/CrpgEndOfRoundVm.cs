@@ -81,12 +81,6 @@ public class CrpgEndOfRoundVm : ViewModel
         }
     }
 
-    private void HandleBannerChange(string attackerBanner, string defenderBanner, string attackerName, string defenderName)
-    {
-        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(attackerBanner) : new Banner(defenderBanner), true);
-        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(defenderBanner) : new Banner(attackerBanner), true);
-    }
-
     public override void RefreshValues()
     {
         base.RefreshValues();
@@ -123,16 +117,16 @@ public class CrpgEndOfRoundVm : ViewModel
                 new MultiplayerBattleColors.MultiplayerCultureColorInfo(@object, false));
 
             DefenderSide.SetData(object2, missionScoreboardSide2.SideScore, isWinner2,
-                new MultiplayerBattleColors.MultiplayerCultureColorInfo(@object2, @object == @object2));
+                new MultiplayerBattleColors.MultiplayerCultureColorInfo(object2, @object == object2));
         }
         else
         {
             DefenderMVPTitleText = GetMvpTitleText(@object);
             AttackerMVPTitleText = GetMvpTitleText(object2);
             DefenderSide.SetData(@object, missionScoreboardSide.SideScore, isWinner,
-                new MultiplayerBattleColors.MultiplayerCultureColorInfo(@object2, @object == @object2));
+                new MultiplayerBattleColors.MultiplayerCultureColorInfo(object2, @object == object2));
             AttackerSide.SetData(object2, missionScoreboardSide2.SideScore, isWinner2,
-                new MultiplayerBattleColors.MultiplayerCultureColorInfo(@object2, false));
+                new MultiplayerBattleColors.MultiplayerCultureColorInfo(object2, false));
         }
 
         if (_scoreboardComponent.Sides.FirstOrDefault(s => s != null && s.Side == allyBattleSide) != null)
@@ -218,6 +212,12 @@ public class CrpgEndOfRoundVm : ViewModel
         DefenderMVP.RefreshDivision();
         DefenderMVP.RefreshPreview(@object, mvpPeer.Peer.BodyProperties.DynamicProperties, mvpPeer.Peer.IsFemale);
         HasDefenderMVP = true;
+    }
+
+    private void HandleBannerChange(string attackerBanner, string defenderBanner, string attackerName, string defenderName)
+    {
+        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(attackerBanner) : new Banner(defenderBanner), true);
+        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(defenderBanner) : new Banner(attackerBanner), true);
     }
 
     private string GetMvpTitleText(BasicCultureObject culture)

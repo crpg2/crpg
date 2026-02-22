@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using Crpg.Module.Api.Models.Clans;
-using Crpg.Module.Common;
+﻿using System.ComponentModel;
 using Crpg.Module.Helpers;
 using Crpg.Module.Modes.Conquest;
 using Crpg.Module.Modes.Siege;
@@ -12,7 +9,6 @@ using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.HUDExtensions;
-using TaleWorlds.ObjectSystem;
 
 namespace Crpg.Module.GUI.HudExtension;
 

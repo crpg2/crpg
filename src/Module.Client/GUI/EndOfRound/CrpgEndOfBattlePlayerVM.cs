@@ -1,5 +1,4 @@
-﻿using System;
-using Crpg.Module.Common;
+﻿using Crpg.Module.Common;
 using Crpg.Module.Helpers;
 using TaleWorlds.Core;
 using TaleWorlds.Library;

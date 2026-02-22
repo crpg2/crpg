@@ -1,5 +1,4 @@
 ﻿using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.MissionRepresentatives;
 using TaleWorlds.MountAndBlade.Network.Messages;
 
 namespace Crpg.Module.Modes.TrainingGround;

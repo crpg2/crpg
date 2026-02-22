@@ -8,7 +8,7 @@ using Timer = TaleWorlds.Core.Timer;
 namespace Crpg.Module.Modes.Battle.FlagSystems;
 internal class CrpgBattleFlagSystem : AbstractFlagSystem
 {
-    private bool _isDeadPlayerThresholdReached = false;
+    private bool _isDeadPlayerThresholdReached;
     public CrpgBattleFlagSystem(Mission mission, MultiplayerGameNotificationsComponent notificationsComponent, CrpgBattleClient battleClient)
         : base(mission, notificationsComponent, battleClient)
     {

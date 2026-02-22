@@ -11,83 +11,44 @@ namespace Crpg.Module.GUI.Intermission;
 
 public class CrpgIntermissionVM : ViewModel
 {
+    private readonly TextObject _voteLabelText = new("{=KOVHgkVq}Voting Ends In:");
+    private readonly TextObject _waitLabelText = new("{=OZYLgnQq}Please Wait:");
+    private readonly TextObject _nextGameLabelText = new("{=lX9Qx7Wo}Next Game Starts In:");
+    private readonly TextObject _serverIdleLabelText = new("{=Rhcberxf}Awaiting Server");
+    private readonly TextObject _matchFinishedText = new("{=RbazQjFt}Match is Finished");
+    private readonly TextObject _returningToLobbyText = new("{=1UaxKbn6}Returning to the Lobby...");
     private bool _hasBaseNetworkComponentSet;
-
-    private BaseNetworkComponent _baseNetworkComponent = null!;
-
-    private MultiplayerIntermissionState _currentIntermissionState = default!;
-
-    private readonly TextObject _voteLabelText = new TextObject("{=KOVHgkVq}Voting Ends In:");
-    private readonly TextObject _waitLabelText = new TextObject("{=OZYLgnQq}Please Wait:");
-
-    private readonly TextObject _nextGameLabelText = new TextObject("{=lX9Qx7Wo}Next Game Starts In:");
-
-    private readonly TextObject _serverIdleLabelText = new TextObject("{=Rhcberxf}Awaiting Server");
-
-    private readonly TextObject _matchFinishedText = new TextObject("{=RbazQjFt}Match is Finished");
-
-    private readonly TextObject _returningToLobbyText = new TextObject("{=1UaxKbn6}Returning to the Lobby...");
-
-    private MPIntermissionMapItemVM? _votedMapItem;
-
+    private BaseNetworkComponent? _baseNetworkComponent;
+    private MultiplayerIntermissionState _currentIntermissionState;
     private MPIntermissionCultureItemVM? _votedCultureItem;
-
     private string _connectedPlayersCountValueText = null!;
-
     private string _maxNumPlayersValueText = null!;
-
     private bool _isFactionAValid;
-
     private bool _isFactionBValid;
-
     private bool _isMissionTimerEnabled;
-
     private bool _isEndGameTimerEnabled;
-
     private bool _isNextMapInfoEnabled;
-
     private bool _isMapVoteEnabled;
-
     private bool _isCultureVoteEnabled;
-
     private bool _isPlayerCountEnabled;
-
     private string _nextMapId = null!;
-
     private string _nextFactionACultureId = null!;
-
     private string _nextFactionBCultureId = null!;
-
     private string _nextGameStateTimerLabel = null!;
-
     private string _nextGameStateTimerValue = null!;
-
     private string _playersLabel = null!;
-
     private string _mapVoteText = null!;
-
     private string _cultureVoteText = null!;
-
     private string _serverName = null!;
-
     private string _welcomeMessage = null!;
-
     private string _nextGameType = null!;
-
     private string _nextMapName = null!;
-
-    private Color _nextFactionACultureColor1 = default!;
-
-    private Color _nextFactionACultureColor2 = default!;
-
-    private Color _nextFactionBCultureColor1 = default!;
-
-    private Color _nextFactionBCultureColor2 = default!;
-
+    private Color _nextFactionACultureColor1;
+    private Color _nextFactionACultureColor2;
+    private Color _nextFactionBCultureColor1;
+    private Color _nextFactionBCultureColor2;
     private string _quitText = null!;
-
     private MBBindingList<MPIntermissionMapItemVM> _availableMaps = null!;
-
     private MBBindingList<MPIntermissionCultureItemVM> _availableCultures = null!;
 
     [DataSourceProperty]
@@ -610,7 +571,7 @@ public class CrpgIntermissionVM : ViewModel
                 baseNetworkComponent.OnIntermissionStateUpdated = (Action)Delegate.Combine(baseNetworkComponent.OnIntermissionStateUpdated, new Action(OnIntermissionStateUpdated));
             }
         }
-        else if (_baseNetworkComponent.ClientIntermissionState == MultiplayerIntermissionState.Idle)
+        else if (_baseNetworkComponent?.ClientIntermissionState == MultiplayerIntermissionState.Idle)
         {
             NextGameStateTimerLabel = _serverIdleLabelText.ToString();
             NextGameStateTimerValue = string.Empty;
@@ -634,8 +595,24 @@ public class CrpgIntermissionVM : ViewModel
         MultiplayerIntermissionVotingManager.Instance.ClearItems();
     }
 
+    public void ExecuteQuitServer()
+    {
+        LobbyClient gameClient = NetworkMain.GameClient;
+        if (gameClient.CurrentState == LobbyClient.State.InCustomGame)
+        {
+            gameClient.QuitFromCustomGame();
+        }
+
+        MultiplayerIntermissionVotingManager.Instance.ClearItems();
+    }
+
     private void OnIntermissionStateUpdated()
     {
+        if (_baseNetworkComponent == null)
+        {
+            return;
+        }
+
         _currentIntermissionState = _baseNetworkComponent.ClientIntermissionState;
 
         bool flag = true;
@@ -706,7 +683,6 @@ public class CrpgIntermissionVM : ViewModel
             AvailableMaps.Clear();
             AvailableCultures.Clear();
             MultiplayerIntermissionVotingManager.Instance.ClearVotes();
-            _votedMapItem = null;
             _votedCultureItem = null;
         }
 
@@ -728,8 +704,7 @@ public class CrpgIntermissionVM : ViewModel
 
         MultiplayerOptions.Instance.GetOptionFromOptionType(MultiplayerOptions.OptionType.Map).GetValue(out string value3);
         NextMapID = IsEndGameTimerEnabled ? string.Empty : value3;
-        TextObject textObject2;
-        string text = !GameTexts.TryGetText("str_multiplayer_scene_name", out textObject2, value3) ? value3 : textObject2.ToString();
+        string text = !GameTexts.TryGetText("str_multiplayer_scene_name", out TextObject textObject2, value3) ? value3 : textObject2.ToString();
         NextMapName = IsEndGameTimerEnabled ? string.Empty : text;
         if (flag)
         {
@@ -770,34 +745,13 @@ public class CrpgIntermissionVM : ViewModel
         ConnectedPlayersCountValueText = GameNetwork.NetworkPeers.Count.ToString();
     }
 
-    public void ExecuteQuitServer()
-    {
-        LobbyClient gameClient = NetworkMain.GameClient;
-        if (gameClient.CurrentState == LobbyClient.State.InCustomGame)
-        {
-            gameClient.QuitFromCustomGame();
-        }
-
-        MultiplayerIntermissionVotingManager.Instance.ClearItems();
-    }
-
-    private void OnPlayerVotedForMap(MPIntermissionMapItemVM mapItem)
-    {
-        if (_votedMapItem != null)
-        {
-            _baseNetworkComponent.IntermissionCastVote(_votedMapItem.MapID, -1);
-            _votedMapItem.IsSelected = false;
-            _votedMapItem.Votes--;
-        }
-
-        _baseNetworkComponent.IntermissionCastVote(mapItem.MapID, 1);
-        _votedMapItem = mapItem;
-        _votedMapItem.IsSelected = true;
-        _votedMapItem.Votes++;
-    }
-
     private void OnPlayerVotedForCulture(MPIntermissionCultureItemVM cultureItem)
     {
+        if (_baseNetworkComponent == null)
+        {
+            return;
+        }
+
         if (_votedCultureItem != null)
         {
             _baseNetworkComponent.IntermissionCastVote(_votedCultureItem.CultureCode, -1);

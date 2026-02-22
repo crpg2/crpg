@@ -4,10 +4,6 @@ using TaleWorlds.MountAndBlade;
 namespace Crpg.Module.Common.AmmoQuiverChange;
 internal class AmmoQuiverChangeComponent : MissionNetwork
 {
-    public AmmoQuiverChangeComponent()
-    {
-    }
-
     public static bool IsQuiverItem(ItemObject item)
     {
         return item != null && (
@@ -208,7 +204,7 @@ internal class AmmoQuiverChangeComponent : MissionNetwork
         }
 
         // handle throwing
-        if (isThrowingWeapon == true)
+        if (isThrowingWeapon)
         {
             CycleThrowingQuivers(agent, wieldedWeaponIndex, equipment, ammoQuivers);
         }

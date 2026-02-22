@@ -1,5 +1,4 @@
-﻿using Crpg.Module.Gui;
-using TaleWorlds.Core.ViewModelCollection.Generic;
+﻿using TaleWorlds.Core.ViewModelCollection.Generic;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.Scoreboard;
 
@@ -67,7 +66,7 @@ public class CrpgMissionScoreboardHeaderItemVm : BindingListStringItem
     }
 
     [DataSourceProperty]
-    public MissionScoreboardPlayerSortControllerVM PlayerSortController => _side.PlayerSortController;
+    public MissionScoreboardPlayerSortControllerVM? PlayerSortController => _side.PlayerSortController;
 
     public CrpgMissionScoreboardHeaderItemVm(CrpgScoreboardSideVM side, string headerId, string value, bool isAvatarStat, bool isIrregularStat)
         : base(value)

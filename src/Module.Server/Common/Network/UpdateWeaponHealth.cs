@@ -7,7 +7,7 @@ namespace Crpg.Module.Common.Network;
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromServer)]
 internal sealed class UpdateWeaponHealth : GameNetworkMessage
 {
-    public int AgentIndex { get; set; } = 0!;
+    public int AgentIndex { get; set; }
     public int WeaponHealth { get; set; }
     public int LastRoll { get; set; }
     public int LastBlow { get; set; }

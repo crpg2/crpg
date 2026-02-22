@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Crpg.Module.Api.Models.Clans;
-using Crpg.Module.Common;
-using Crpg.Module.Common.Network;
-using Crpg.Module.GUI.HudExtension;
-using Messages.FromBattleServer.ToBattleServerManager;
-using TaleWorlds.CampaignSystem.LogEntries;
-using TaleWorlds.CampaignSystem.ViewModelCollection.Party;
+﻿using Crpg.Module.Common.Network;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.ObjectSystem;
@@ -21,10 +12,6 @@ internal class CrpgCustomTeamBannersAndNamesClient : MissionNetwork
     public string DefenderBannerCode { get; private set; } = string.Empty;
     public string AttackerName { get; private set; } = string.Empty;
     public string DefenderName { get; private set; } = string.Empty;
-
-    internal CrpgCustomTeamBannersAndNamesClient()
-    {
-    }
 
     public override MissionBehaviorType BehaviorType => MissionBehaviorType.Other;
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)

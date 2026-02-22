@@ -1,10 +1,6 @@
 using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.Common.KeyBinder.Models;
-
 using TaleWorlds.InputSystem;
-using TaleWorlds.Library;
-using TaleWorlds.Localization;
-using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.Server.Common.Keybinder;
 

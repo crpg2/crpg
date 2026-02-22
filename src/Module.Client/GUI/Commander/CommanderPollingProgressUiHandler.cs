@@ -6,6 +6,7 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 
 namespace Crpg.Module.GUI.Commander;
+
 public class CommanderPollingProgressUiHandler : MissionView
 {
     private CrpgCommanderPollComponent? _commanderPollComponent;
@@ -14,13 +15,7 @@ public class CommanderPollingProgressUiHandler : MissionView
     private bool _isActive;
     private bool _isVoteOpenForMyPeer;
     private MissionPeer? _targetPeer;
-    private InputContext _input
-    {
-        get
-        {
-            return MissionScreen.SceneLayer.Input;
-        }
-    }
+    private InputContext InputCtx => MissionScreen.SceneLayer.Input;
 
     public CommanderPollingProgressUiHandler()
     {
@@ -33,7 +28,7 @@ public class CommanderPollingProgressUiHandler : MissionView
         _dataSource = new();
         _gauntletLayer = new GauntletLayer("CrpgCommanderPollingProgress", ViewOrderPriority);
         _gauntletLayer.LoadMovie("CrpgCommanderPollingProgress", _dataSource);
-        _input.RegisterHotKeyCategory(HotKeyManager.GetCategory("PollHotkeyCategory"));
+        InputCtx.RegisterHotKeyCategory(HotKeyManager.GetCategory("PollHotkeyCategory"));
         _dataSource.AddKey(HotKeyManager.GetCategory("PollHotkeyCategory").GetGameKey(108));
         _dataSource.AddKey(HotKeyManager.GetCategory("PollHotkeyCategory").GetGameKey(109));
         MissionScreen.AddLayer(_gauntletLayer);
@@ -71,7 +66,7 @@ public class CommanderPollingProgressUiHandler : MissionView
         base.OnMissionScreenTick(dt);
         if (_isActive && !_isVoteOpenForMyPeer)
         {
-            if (_input.IsGameKeyPressed(108))
+            if (InputCtx.IsGameKeyPressed(108))
             {
                 _isActive = false;
                 _commanderPollComponent!.Vote(_commanderPollComponent.GetCommanderPollBySide(_targetPeer!.Team.Side), true);
@@ -79,7 +74,7 @@ public class CommanderPollingProgressUiHandler : MissionView
                 return;
             }
 
-            if (_input.IsGameKeyPressed(109))
+            if (InputCtx.IsGameKeyPressed(109))
             {
                 _isActive = false;
                 _commanderPollComponent!.Vote(_commanderPollComponent.GetCommanderPollBySide(_targetPeer!.Team.Side), false);

@@ -1,3 +1,19 @@
+#if CRPG_SERVER
+using Crpg.Module.Api;
+using Crpg.Module.Common.ChatCommands;
+#else
+
+using Crpg.Module.GUI;
+using Crpg.Module.GUI.AmmoQuiverChange;
+using Crpg.Module.GUI.Commander;
+using Crpg.Module.GUI.EndOfRound;
+using Crpg.Module.GUI.HudExtension;
+using Crpg.Module.GUI.Scoreboard;
+using Crpg.Module.GUI.Warmup;
+using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
+using TaleWorlds.MountAndBlade.View;
+using TaleWorlds.MountAndBlade.View.MissionViews;
+#endif
 using Crpg.Module.Common;
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Common.Commander;
@@ -12,24 +28,6 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Source.Missions;
 
-#if CRPG_SERVER
-using Crpg.Module.Api;
-using Crpg.Module.Common.ChatCommands;
-#else
-
-using Crpg.Module.GUI;
-using Crpg.Module.GUI.AmmoQuiverChange;
-using Crpg.Module.GUI.Commander;
-using Crpg.Module.GUI.EndOfRound;
-using Crpg.Module.GUI.HudExtension;
-using Crpg.Module.GUI.Scoreboard;
-using Crpg.Module.GUI.Spectator;
-using Crpg.Module.GUI.Warmup;
-using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
-using TaleWorlds.MountAndBlade.View;
-using TaleWorlds.MountAndBlade.View.MissionViews;
-
-#endif
 namespace Crpg.Module.Modes.TeamDeathmatch;
 
 [ViewCreatorModule] // Exposes methods with ViewMethod attribute.

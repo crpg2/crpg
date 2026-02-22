@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.Library;
@@ -32,14 +31,10 @@ internal class AmmoQuiverChangeBehaviorClient : MissionNetwork
     private readonly string _changeDeniedSound = "event:/ui/panels/previous";
     private MissionTime _lastMissileShotTime = MissionTime.Zero;
     private MissionTime _lastAmmoChangeTime = MissionTime.Zero;
-    private int _quiverChangeCount = 0;
+    private int _quiverChangeCount;
 
-    private bool _wasMainAgentActive = false;
+    private bool _wasMainAgentActive;
     private int _lastKnownTotalAmmo = -1;
-
-    public AmmoQuiverChangeBehaviorClient()
-    {
-    }
 
     public override void OnMissionTick(float dt)
     {

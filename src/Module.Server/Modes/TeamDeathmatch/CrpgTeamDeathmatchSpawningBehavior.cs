@@ -1,5 +1,4 @@
-﻿using Crpg.Module.Api.Models.Users;
-using Crpg.Module.Common;
+﻿using Crpg.Module.Common;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Diamond;
@@ -8,7 +7,7 @@ namespace Crpg.Module.Modes.TeamDeathmatch;
 
 internal class CrpgTeamDeathmatchSpawningBehavior : CrpgSpawningBehaviorBase
 {
-    private bool _haveBotsSpawned = false;
+    private bool _haveBotsSpawned;
     public CrpgTeamDeathmatchSpawningBehavior(CrpgConstants constants)
         : base(constants)
     {

@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using TaleWorlds.Core;
-using TaleWorlds.Engine.GauntletUI;
+﻿using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer.GauntletUI.Mission;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
-using TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection;
-using TaleWorlds.TwoDimension;
 
-namespace Crpg.Module.Gui;
+namespace Crpg.Module.GUI.TeamSelection;
 
 [OverrideView(typeof(MultiplayerTeamSelectUIHandler))]
 public class CrpgGauntletTeamSelection : MissionView
@@ -90,6 +84,24 @@ public class CrpgGauntletTeamSelection : MissionView
         return base.OnEscape();
     }
 
+    public override void OnMissionScreenTick(float dt)
+    {
+        base.OnMissionScreenTick(dt);
+        if (_isSynchronized && _toOpen && MissionScreen.SetDisplayDialog(true))
+        {
+            _toOpen = false;
+            OnOpen();
+        }
+
+        CrpgTeamSelectVm? dataSource = _dataSource;
+        if (dataSource == null)
+        {
+            return;
+        }
+
+        dataSource.Tick(dt);
+    }
+
     private void OnClose()
     {
         if (!_isActive)
@@ -121,10 +133,7 @@ public class CrpgGauntletTeamSelection : MissionView
 
         _isActive = true;
         string strValue = MultiplayerOptions.OptionType.GameType.GetStrValue();
-        SpriteData spriteData = UIResourceManager.SpriteData;
-        TwoDimensionEngineResourceContext resourceContext = UIResourceManager.ResourceContext;
-        ResourceDepot uiresourceDepot = UIResourceManager.ResourceDepot;
-        _dataSource = new CrpgTeamSelectVM(Mission, new Action<Team>(OnChangeTeamTo), new Action(OnAutoassign), new Action(OnClose), Mission.Teams, strValue);
+        _dataSource = new CrpgTeamSelectVm(Mission, OnChangeTeamTo, OnAutoassign, OnClose, Mission.Teams, strValue);
         _dataSource.RefreshDisabledTeams(_disabledTeams ?? new List<Team>());
         _gauntletLayer = new GauntletLayer("MultiplayerTeamSelection", ViewOrderPriority);
         _gauntletLayer.LoadMovie("MultiplayerTeamSelection", _dataSource);
@@ -148,24 +157,6 @@ public class CrpgGauntletTeamSelection : MissionView
     private void OnAutoassign()
     {
         _multiplayerTeamSelectComponent.AutoAssignTeam(GameNetwork.MyPeer);
-    }
-
-    public override void OnMissionScreenTick(float dt)
-    {
-        base.OnMissionScreenTick(dt);
-        if (_isSynchronized && _toOpen && MissionScreen.SetDisplayDialog(true))
-        {
-            _toOpen = false;
-            OnOpen();
-        }
-
-        CrpgTeamSelectVM? dataSource = _dataSource;
-        if (dataSource == null)
-        {
-            return;
-        }
-
-        dataSource.Tick(dt);
     }
 
     private void MissionLobbyComponentOnSelectingTeam(List<Team> disabledTeams)
@@ -213,7 +204,6 @@ public class CrpgGauntletTeamSelection : MissionView
             }
 
             gauntletLayer.InputRestrictions.ResetInputRestrictions();
-            return;
         }
         else
         {
@@ -224,7 +214,6 @@ public class CrpgGauntletTeamSelection : MissionView
             }
 
             gauntletLayer2.InputRestrictions.SetInputRestrictions();
-            return;
         }
     }
 
@@ -235,15 +224,15 @@ public class CrpgGauntletTeamSelection : MissionView
 
     private GauntletLayer? _gauntletLayer;
 
-    private CrpgTeamSelectVM? _dataSource;
+    private CrpgTeamSelectVm? _dataSource;
 
     private MissionNetworkComponent _missionNetworkComponent = null!;
 
     private MultiplayerTeamSelectComponent _multiplayerTeamSelectComponent = null!;
 
-    private MissionGauntletMultiplayerScoreboard _scoreboardGauntletComponent = null!;
+    private MissionGauntletMultiplayerScoreboard? _scoreboardGauntletComponent;
 
-    private MissionGauntletClassLoadout _classLoadoutGauntletComponent = null!;
+    private MissionGauntletClassLoadout? _classLoadoutGauntletComponent;
 
     private MissionLobbyComponent _lobbyComponent = null!;
 

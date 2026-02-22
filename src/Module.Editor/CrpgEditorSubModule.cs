@@ -28,5 +28,4 @@ internal class CrpgEditorSubModule : MBSubModuleBase
     {
         base.OnApplicationTick(delta);
     }
-
 }
