@@ -1,5 +1,3 @@
-using System.Linq;
-using Crpg.Module.Common;
 using Crpg.Module.Common.Commander;
 using Crpg.Module.Common.Network;
 using TaleWorlds.Core;
@@ -8,7 +6,6 @@ using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Diamond;
-using TaleWorlds.ObjectSystem;
 using TaleWorlds.PlayerServices;
 
 namespace Crpg.Module.Notifications;
@@ -98,7 +95,7 @@ internal class CrpgNotificationComponent : MultiplayerGameNotificationsComponent
             InformationManager.DisplayMessage(new InformationMessage
             {
                 Information = new TextObject("{=iERprCDU}(Commander) {NAME}: ",
-                new Dictionary<string, object> { ["NAME"] = myCommander?.UserName ?? string.Empty }).ToString() + message,
+                    new Dictionary<string, object> { ["NAME"] = myCommander?.UserName ?? string.Empty }) + message,
                 Color = new Color(0.1f, 1f, 0f),
                 SoundEventPath = "event:/ui/mission/horns/attack",
             });

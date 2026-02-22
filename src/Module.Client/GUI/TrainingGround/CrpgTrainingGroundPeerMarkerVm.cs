@@ -1,13 +1,11 @@
 ﻿using Crpg.Module.Common;
 using Crpg.Module.Modes.TrainingGround;
-using TaleWorlds.CampaignSystem.ViewModelCollection.Input;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.MissionRepresentatives;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.ClassLoadout;
 
 namespace Crpg.Module.GUI.TrainingGround;
@@ -21,7 +19,6 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
     private float _wPosAfterPositionCalculation;
     private TextObject _acceptDuelRequestText = new(string.Empty);
     private TextObject _sendDuelRequestText = new(string.Empty);
-    private TextObject _sendRankedDuelRequestText = new(string.Empty);
     private TextObject _waitingForDuelResponseText = new(string.Empty);
     private bool _isEnabled;
     private bool _isTracked;
@@ -470,6 +467,24 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
         Rating = ((CrpgTrainingGroundMissionRepresentative)TargetPeer.Representative).Rating;
     }
 
+    public void OnDuelStarted()
+    {
+        IsEnabled = false;
+        IsInDuel = true;
+    }
+
+    public void OnDuelEnded()
+    {
+        IsEnabled = true;
+        IsInDuel = false;
+    }
+
+    public void UpdateCurentDuelStatus(bool isInDuel)
+    {
+        IsInDuel = isInDuel;
+        IsEnabled = !IsInDuel;
+    }
+
     private void OnInteractionChanged()
     {
         ActionDescriptionText = string.Empty;
@@ -520,23 +535,5 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
         }
 
         ShouldShowInformation = IsTracked || IsFocused;
-    }
-
-    public void OnDuelStarted()
-    {
-        IsEnabled = false;
-        IsInDuel = true;
-    }
-
-    public void OnDuelEnded()
-    {
-        IsEnabled = true;
-        IsInDuel = false;
-    }
-
-    public void UpdateCurentDuelStatus(bool isInDuel)
-    {
-        IsInDuel = isInDuel;
-        IsEnabled = !IsInDuel;
     }
 }

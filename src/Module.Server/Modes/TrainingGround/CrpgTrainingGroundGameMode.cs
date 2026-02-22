@@ -1,4 +1,8 @@
-﻿using Crpg.Module.Common;
+﻿#if CRPG_SERVER
+using Crpg.Module.Api;
+using Crpg.Module.Common.ChatCommands;
+#endif
+using Crpg.Module.Common;
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Notifications;
 using Crpg.Module.Rewards;
@@ -6,11 +10,6 @@ using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Source.Missions;
-
-#if CRPG_SERVER
-using Crpg.Module.Api;
-using Crpg.Module.Common.ChatCommands;
-#endif
 #if CRPG_CLIENT
 using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;

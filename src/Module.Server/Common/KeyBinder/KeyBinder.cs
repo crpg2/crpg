@@ -1,9 +1,8 @@
 using System.Reflection;
-using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.Common.KeyBinder.Models;
-using JetBrains.Annotations;
 using TaleWorlds.Core;
 using TaleWorlds.InputSystem;
+using TaleWorlds.Library;
 using TaleWorlds.Localization;
 
 namespace Crpg.Module.Common.KeyBinder;
@@ -51,7 +50,7 @@ public static class KeyBinder
                 }
                 else
                 {
-                    TaleWorlds.Library.Debug.Print($"[KeyBinder] Key '{newKey.Id}' already exists in category '{group.CategoryId}', skipping.", 0, TaleWorlds.Library.Debug.DebugColor.Yellow);
+                    Debug.Print($"[KeyBinder] Key '{newKey.Id}' already exists in category '{group.CategoryId}', skipping.", 0, Debug.DebugColor.Yellow);
                 }
             }
         }

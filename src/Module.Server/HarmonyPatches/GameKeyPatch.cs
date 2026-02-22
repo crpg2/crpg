@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using Crpg.Module.Common.KeyBinder;
 using HarmonyLib;
 using TaleWorlds.InputSystem;

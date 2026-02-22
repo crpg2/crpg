@@ -1,16 +1,3 @@
-using Crpg.Module.Common;
-using Crpg.Module.Common.AmmoQuiverChange;
-using Crpg.Module.Common.Commander;
-using Crpg.Module.Common.FriendlyFireReport;
-using Crpg.Module.Common.TeamSelect;
-using Crpg.Module.Modes.Warmup;
-using Crpg.Module.Notifications;
-using Crpg.Module.Rewards;
-using TaleWorlds.Core;
-using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.Multiplayer;
-using TaleWorlds.MountAndBlade.Source.Missions;
-
 #if CRPG_SERVER
 using Crpg.Module.Api;
 using Crpg.Module.Common.ChatCommands;
@@ -26,6 +13,18 @@ using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 #endif
+using Crpg.Module.Common;
+using Crpg.Module.Common.AmmoQuiverChange;
+using Crpg.Module.Common.Commander;
+using Crpg.Module.Common.FriendlyFireReport;
+using Crpg.Module.Common.TeamSelect;
+using Crpg.Module.Modes.Warmup;
+using Crpg.Module.Notifications;
+using Crpg.Module.Rewards;
+using TaleWorlds.Core;
+using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.Multiplayer;
+using TaleWorlds.MountAndBlade.Source.Missions;
 
 namespace Crpg.Module.Modes.Dtv;
 

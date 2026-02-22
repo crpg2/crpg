@@ -1,12 +1,9 @@
-﻿using System;
-using TaleWorlds.Core;
+﻿using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.GauntletUI;
-using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.Intermission;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.Screens;
 using TaleWorlds.ScreenSystem;
@@ -14,12 +11,12 @@ using TaleWorlds.TwoDimension;
 
 namespace Crpg.Module.GUI.Intermission;
 
-
 [GameStateScreen(typeof(LobbyGameStateCustomGameClient))]
 [GameStateScreen(typeof(LobbyGameStateCommunityClient))]
 public class CrpgIntermissionScreenUIHandler : ScreenBase, IGameStateListener, IChatLogHandlerScreen
 {
-    public GauntletLayer? Layer { get; private set; }
+    private CrpgIntermissionVM? _dataSource;
+    private SpriteCategory _customGameClientCategory = null!;
 
     public CrpgIntermissionScreenUIHandler(LobbyGameStateCustomGameClient gameState)
     {
@@ -31,36 +28,7 @@ public class CrpgIntermissionScreenUIHandler : ScreenBase, IGameStateListener, I
         Construct();
     }
 
-    private void Construct()
-    {
-        SpriteData spriteData = UIResourceManager.SpriteData;
-        TwoDimensionEngineResourceContext resourceContext = UIResourceManager.ResourceContext;
-        ResourceDepot uiresourceDepot = UIResourceManager.ResourceDepot;
-        _customGameClientCategory = spriteData.SpriteCategories["ui_mpintermission"];
-        _customGameClientCategory.Load(resourceContext, uiresourceDepot);
-        _dataSource = new CrpgIntermissionVM();
-        Layer = new GauntletLayer("CrpgIntermission", 100);
-        Layer.IsFocusLayer = true;
-        AddLayer(Layer);
-        Layer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("GenericPanelGameKeyCategory"));
-        Layer.LoadMovie("CrpgIntermission", _dataSource);
-    }
-
-    protected override void OnFrameTick(float dt)
-    {
-        base.OnFrameTick(dt);
-        _dataSource?.Tick();
-    }
-
-    protected override void OnFinalize()
-    {
-        base.OnFinalize();
-        _customGameClientCategory.Unload();
-        Layer?.InputRestrictions.ResetInputRestrictions();
-        Layer = null;
-        _dataSource?.OnFinalize();
-        _dataSource = null;
-    }
+    public GauntletLayer? Layer { get; private set; }
 
     void IGameStateListener.OnActivate()
     {
@@ -91,8 +59,33 @@ public class CrpgIntermissionScreenUIHandler : ScreenBase, IGameStateListener, I
         }
     }
 
-    private CrpgIntermissionVM? _dataSource;
+    protected override void OnFrameTick(float dt)
+    {
+        base.OnFrameTick(dt);
+        _dataSource?.Tick();
+    }
 
-    private SpriteCategory _customGameClientCategory = null!;
+    protected override void OnFinalize()
+    {
+        base.OnFinalize();
+        _customGameClientCategory.Unload();
+        Layer?.InputRestrictions.ResetInputRestrictions();
+        Layer = null;
+        _dataSource?.OnFinalize();
+        _dataSource = null;
+    }
+
+    private void Construct()
+    {
+        SpriteData spriteData = UIResourceManager.SpriteData;
+        TwoDimensionEngineResourceContext resourceContext = UIResourceManager.ResourceContext;
+        ResourceDepot uiresourceDepot = UIResourceManager.ResourceDepot;
+        _customGameClientCategory = spriteData.SpriteCategories["ui_mpintermission"];
+        _customGameClientCategory.Load(resourceContext, uiresourceDepot);
+        _dataSource = new CrpgIntermissionVM();
+        Layer = new GauntletLayer("CrpgIntermission", 100) { IsFocusLayer = true };
+        AddLayer(Layer);
+        Layer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("GenericPanelGameKeyCategory"));
+        Layer.LoadMovie("CrpgIntermission", _dataSource);
+    }
 }
-

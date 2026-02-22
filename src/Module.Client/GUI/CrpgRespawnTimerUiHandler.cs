@@ -1,6 +1,5 @@
 ﻿using Crpg.Module.Common;
 using TaleWorlds.Engine.GauntletUI;
-using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 using TaleWorlds.TwoDimension;
 

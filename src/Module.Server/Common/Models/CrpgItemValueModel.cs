@@ -181,17 +181,13 @@ internal class CrpgItemValueModel : ItemValueModel
         {
             return CalculateTierNonCraftedWeapon(weaponComponent);
         }
-        else
+
+        if (isAThrowingWeapon && CalculateThrownWeaponTier(weaponComponent) > CalculateTierMeleeWeapon(weaponComponent))
         {
-            if (isAThrowingWeapon && CalculateThrownWeaponTier(weaponComponent) > CalculateTierMeleeWeapon(weaponComponent))
-            {
-                return CalculateThrownWeaponTier(weaponComponent);
-            }
-            else
-            {
-                return CalculateTierMeleeWeapon(weaponComponent);
-            }
+            return CalculateThrownWeaponTier(weaponComponent);
         }
+
+        return CalculateTierMeleeWeapon(weaponComponent);
     }
 
     private float CalculateTierMeleeWeapon(WeaponComponent weaponComponent)
@@ -322,7 +318,7 @@ internal class CrpgItemValueModel : ItemValueModel
                     thrustLengthTier = 0f;
                     break;
                 default:
-                    throw new Exception(weapon.WeaponClass.ToString() + " has no swingTierAssociated");
+                    throw new Exception(weapon.WeaponClass + " has no swingTierAssociated");
             }
 
             float swinghandlingFactor = weapon.Handling / 10000f;

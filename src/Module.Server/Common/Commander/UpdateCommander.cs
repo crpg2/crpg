@@ -7,7 +7,7 @@ namespace Crpg.Module.Common.Commander;
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromServer)]
 internal sealed class UpdateCommander : GameNetworkMessage
 {
-    public NetworkCommunicator? Commander { get; set; } = null!;
+    public NetworkCommunicator? Commander { get; set; }
     public BattleSideEnum Side { get; set; }
 
     protected override bool OnRead()
@@ -31,6 +31,6 @@ internal sealed class UpdateCommander : GameNetworkMessage
 
     protected override string OnGetLogFormat()
     {
-        return "Updating commander: " + Commander?.UserName + " on team: " + Side.ToString();
+        return "Updating commander: " + Commander?.UserName + " on team: " + Side;
     }
 }

@@ -6,7 +6,7 @@ namespace Crpg.Module.Modes.Dtv;
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromServer)]
 internal sealed class CrpgDtvWaveStartMessage : GameNetworkMessage
 {
-    public int Wave { get; set; } = 0!;
+    public int Wave { get; set; }
 
     protected override void OnWrite()
     {

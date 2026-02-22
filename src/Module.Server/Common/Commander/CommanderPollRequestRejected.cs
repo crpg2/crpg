@@ -27,6 +27,6 @@ internal sealed class CommanderPollRequestRejected : GameNetworkMessage
 
     protected override string OnGetLogFormat()
     {
-        return "Poll request rejected (" + ((MultiplayerPollRejectReason)Reason).ToString() + ")";
+        return "Poll request rejected (" + ((MultiplayerPollRejectReason)Reason) + ")";
     }
 }
