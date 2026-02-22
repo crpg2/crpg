@@ -6,6 +6,11 @@ namespace Crpg.Domain.Entities.Parties;
 public enum PartyStatus
 {
     /// <summary>
+    /// Died after a battle. Require user action to respawn.
+    /// </summary>
+    Dead,
+
+    /// <summary>
     /// Inactive.
     /// </summary>
     Idle,
