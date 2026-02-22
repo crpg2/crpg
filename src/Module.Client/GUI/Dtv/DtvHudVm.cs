@@ -1,6 +1,7 @@
 ﻿using Crpg.Module.GUI.Hud;
 using Crpg.Module.Modes.Dtv;
 using TaleWorlds.Engine.GauntletUI;
+using TaleWorlds.GauntletUI;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
@@ -21,10 +22,10 @@ internal class DtvHudVm : ViewModel
     private int _currentWave;
     private int _currentRound;
     private bool _isGameStarted;
-    private int _vipHealth = 0;
-    private int _lastVipHealth = 0;
-    private bool _isVipHealthBarVisible = false;
-    private TaleWorlds.GauntletUI.Brush _vipHealthBrush;
+    private int _vipHealth;
+    private int _lastVipHealth;
+    private bool _isVipHealthBarVisible;
+    private Brush _vipHealthBrush;
 
     public DtvHudVm(Mission mission)
     {
@@ -214,7 +215,7 @@ internal class DtvHudVm : ViewModel
     }
 
     [DataSourceProperty]
-    public TaleWorlds.GauntletUI.Brush VipHealthBrush
+    public Brush VipHealthBrush
     {
         get => _vipHealthBrush;
         set
@@ -263,7 +264,7 @@ internal class DtvHudVm : ViewModel
         }
 
         float healthRatio = MathF.Clamp(agent.Health / agent.HealthLimit, 0f, 1f);
-        int newVipHealth = (int)MathF.Round(healthRatio * 100);
+        int newVipHealth = MathF.Round(healthRatio * 100);
 
         if (newVipHealth == _lastVipHealth)
         {

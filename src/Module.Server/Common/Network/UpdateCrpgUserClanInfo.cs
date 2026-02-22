@@ -1,13 +1,8 @@
 ﻿using System.IO.Compression;
-using System.Numerics;
-using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Clans;
-using Crpg.Module.Api.Models.Items;
-using Crpg.Module.Api.Models.Users;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Network.Messages;
-using TaleWorlds.ObjectSystem;
 
 namespace Crpg.Module.Common.Network;
 

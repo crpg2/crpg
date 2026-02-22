@@ -6,10 +6,6 @@ namespace Crpg.Module.Common.FriendlyFireReport;
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromClient)]
 internal sealed class FriendlyFireReportClientMessage : GameNetworkMessage
 {
-    public FriendlyFireReportClientMessage()
-    {
-    }
-
     protected override bool OnRead()
     {
         return true; // No data to read, always valid

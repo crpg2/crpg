@@ -10,7 +10,6 @@ using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.FlagMarker.Targets;
 using TaleWorlds.MountAndBlade.Objects;
-using TaleWorlds.MountAndBlade.ViewModelCollection.HUD.FormationMarker;
 using TaleWorlds.PlatformService;
 using TaleWorlds.PlayerServices;
 using MissionSiegeEngineMarkerTargetVM = TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.FlagMarker.Targets.MissionSiegeEngineMarkerTargetVM;
@@ -43,7 +42,7 @@ internal class CrpgMissionMarkerVm : ViewModel
     private MBBindingList<MissionPeerMarkerTargetVM> _peerTargets = null!;
     private MBBindingList<MissionSiegeEngineMarkerTargetVM> _siegeEngineTargets = null!;
     private MBBindingList<MissionAlwaysVisibleMarkerTargetVM> _alwaysVisibleTargets = null!;
-    private bool _isVipOutlined = false;
+    private bool _isVipOutlined;
 
     public CrpgMissionMarkerVm(Camera missionCamera, MissionMultiplayerGameModeBaseClient gameModeClient)
     {

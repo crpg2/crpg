@@ -1,6 +1,5 @@
 using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.Common.KeyBinder.Models;
-
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
@@ -11,7 +10,7 @@ namespace Crpg.Module.Common.FriendlyFireReport;
 internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
 {
     private static readonly string KeyCategoryId = KeyBinder.KeyBinder.Categories.CrpgGeneral.CategoryId;
-    private int _reportWindowSeconds = 0; // default unlimited, updated via FriendlyFireHitMessage
+    private int _reportWindowSeconds; // default unlimited, updated via FriendlyFireHitMessage
     private bool _ctrlMWasPressed;
     private DateTime? _lastHitMessageTime;
     private int? _lastAttackerAgentIndex;
@@ -130,7 +129,7 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
             return;
         }
 
-        _lastAttackerName = agent?.Name?.ToString() ?? "Unknown";
+        _lastAttackerName = agent?.Name ?? "Unknown";
         string cmdModifierKeyStr = commandModifierKey?.KeyboardKey.InputKey.ToString() ?? "cmd modifier";
         string mKeyStr = reportTeamHitKey?.KeyboardKey.InputKey.ToString() ?? "report key";
 

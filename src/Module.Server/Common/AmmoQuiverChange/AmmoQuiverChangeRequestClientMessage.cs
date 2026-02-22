@@ -6,10 +6,6 @@ namespace Crpg.Module.Common.AmmoQuiverChange;
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromClient)]
 internal sealed class AmmoQuiverChangeRequestClientMessage : GameNetworkMessage
 {
-    public AmmoQuiverChangeRequestClientMessage()
-    {
-    }
-
     protected override bool OnRead()
     {
         return true; // No data to read, always valid

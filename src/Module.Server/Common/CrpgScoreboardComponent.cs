@@ -1,7 +1,6 @@
 ﻿using Crpg.Module.Common.Network;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
-
 #if CRPG_SERVER
 using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Helpers;

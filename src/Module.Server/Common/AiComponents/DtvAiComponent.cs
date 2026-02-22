@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Crpg.Module.Helpers;
+﻿using Crpg.Module.Helpers;
 using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.Common.AiComponents;
@@ -10,7 +7,7 @@ public class DtvAiComponent : CommonAIComponent
     private const int ViscountTargetTimerDuration = 40;
     private MissionTimer? _targetTimer;
     private MissionTimer? _tickOccasionally;
-    private bool _focusingVip = false;
+    private bool _focusingVip;
     public DtvAiComponent(Agent agent)
         : base(agent)
     {

@@ -1,6 +1,5 @@
 using Crpg.Module.Common.AmmoQuiverChange;
 using TaleWorlds.Core;
-using TaleWorlds.Core.ImageIdentifiers;
 using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -59,7 +58,6 @@ internal class AmmoQuiverChangeVm : ViewModel
         {
             ShowQuiverAmmoCount = false;
             ShowQuiverName = false;
-            return;
         }
     }
 
@@ -268,7 +266,7 @@ internal class AmmoQuiverChangeVm : ViewModel
             if (ammoQuivers.Count() > 1 || hasThrowing)
             {
                 ShowQuiverAmmoCount = true;
-                float f = (float)maxQuiverAmmo * 0.2f;
+                float f = maxQuiverAmmo * 0.2f;
                 IsQuiverAmmoCountAlertEnabled = maxQuiverAmmo != CurrentQuiverAmmo && CurrentQuiverAmmo <= MathF.Ceiling(f);
             }
         }

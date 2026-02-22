@@ -12,7 +12,6 @@ using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.ModuleManager;
 using TaleWorlds.MountAndBlade;
-
 #if CRPG_CLIENT
 using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.HarmonyPatches;
@@ -26,7 +25,6 @@ using Crpg.Module.HarmonyPatches;
 using Crpg.Module.Common.ChatCommands;
 using TaleWorlds.MountAndBlade.ListedServer;
 #else
-using TaleWorlds.Engine.GauntletUI;
 #endif
 
 #if CRPG_EXPORT
