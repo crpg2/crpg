@@ -1,6 +1,6 @@
 ServerName cRPG - Test Conquest - c-rpg.eu
+server_name_suffix
 GameType cRPGConquest
-GamePassword yoyo
 add_map_to_automated_battle_pool crpg_conquest_acre
 add_map_to_automated_battle_pool crpg_conquest_frederiksborg
 add_map_to_automated_battle_pool crpg_conquest_hades
@@ -24,7 +24,7 @@ NumberOfBotsTeam1 1
 NumberOfBotsTeam2 1
 MapTimeLimit 30
 crpg_reward_tick 30
-WarmupTimeLimit 1
+WarmupTimeLimitInSeconds 1
 start_game
 set_automated_battle_count -1
 enable_automated_battle_switching

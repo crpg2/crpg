@@ -52,6 +52,16 @@ internal static class CrpgServerConfiguration
     public static bool IsFriendlyFireReportDecayOnRoundStartEnabled { get; private set; } = true;
 
     [UsedImplicitly]
+    [ConsoleCommandMethod("server_name_suffix", "Suffix the server name with HH:mm to easily differentiate the new and old server in the server list. That can only be called before the server starts")]
+    private static void ServerNameSuffix()
+    {
+        string serverName = MultiplayerOptions.OptionType.ServerName.GetValueText();
+        string suffixedServerName = $"{serverName} {DateTime.Now:HH:mm}";
+        MultiplayerOptions.OptionType.ServerName.SetValue(suffixedServerName);
+        Debug.Print($"Set the server name to \"{suffixedServerName}\"");
+    }
+
+    [UsedImplicitly]
     [ConsoleCommandMethod("crpg_team_balancer_clan_group_size_penalty", "Apply a rating increase to members of the same clan that are playing in the same team")]
     private static void SetClanGroupSizePenalty(string? sizePenaltyStr)
     {

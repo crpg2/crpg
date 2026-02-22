@@ -1,6 +1,6 @@
 ﻿ServerName cRPG - Test DTV - c-rpg.eu
+server_name_suffix
 GameType cRPGDTV
-GamePassword yoyo
 AllowPollsToKickPlayers True
 disable_map_voting
 disable_culture_voting
@@ -15,7 +15,7 @@ FriendlyFireDamageRangedFriendPercent 50
 FriendlyFireDamageRangedSelfPercent 0
 NumberOfBotsTeam1 1
 NumberOfBotsTeam2 1
-WarmupTimeLimit 1
+WarmupTimeLimitInSeconds 1
 start_game
 set_automated_battle_count -1
 enable_automated_battle_switching

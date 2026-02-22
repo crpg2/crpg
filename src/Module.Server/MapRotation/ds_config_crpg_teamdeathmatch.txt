@@ -1,6 +1,6 @@
 ServerName cRPG Test
+server_name_suffix
 GameType cRPGTeamDeathmatch
-GamePassword yoyo
 AllowPollsToKickPlayers True
 AllowPollsToChangeMaps True
 disable_culture_voting
@@ -21,7 +21,7 @@ MapTimeLimit 5
 MinScoreToWinMatch 3500
 RespawnPeriodTeam1 15
 RespawnPeriodTeam2 15
-WarmupTimeLimit 1
+WarmupTimeLimitInSeconds 1
 crpg_happy_hours 19:00-23:00,Central European Standard Time
 start_game
 set_automated_battle_count -1
