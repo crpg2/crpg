@@ -24,6 +24,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 
         private static readonly PartyStatus[] UnattackablePartyStatuses =
         [
+            PartyStatus.Dead,
             PartyStatus.IdleInSettlement,
             PartyStatus.RecruitingInSettlement,
             PartyStatus.InBattle,

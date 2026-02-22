@@ -468,4 +468,6 @@ public class UpdatePartyPositionsCommandTest : TestBase
     //     Assert.That(battle.Fighters[1].Side, Is.EqualTo(BattleSide.Defender));
     //     Assert.That(battle.Fighters[1].Commander, Is.True);
     // }
+
+    // TODO: if dead, don't update anything + can't be attacked.
 }
