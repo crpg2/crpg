@@ -1,4 +1,5 @@
 ServerName Test Battle
+server_name_suffix
 GameType cRPGBattle
 WelcomeMessage yoyoyooooo
 AllowPollsToKickPlayers True
@@ -15,17 +16,16 @@ FriendlyFireDamageMeleeSelfPercent 0
 FriendlyFireDamageRangedFriendPercent 50
 FriendlyFireDamageRangedSelfPercent 0
 MinNumberOfPlayersForMatchStart 0
-NumberOfBotsTeam1 0
-NumberOfBotsTeam2 0
+NumberOfBotsTeam1 5
+NumberOfBotsTeam2 5
 NumberOfBotsPerFormation 10
 RoundTotal 10
 MapTimeLimit 8
 RoundTimeLimit 60
-WarmupTimeLimit 60
+WarmupTimeLimitInSeconds 60
 crpg_happy_hours 19:00-23:00,Central European Standard Time
 start_game
 set_automated_battle_count -1
 enable_automated_battle_switching
 crpg_frozen_bots False
 crpg_apply_harmony_patches
-GamePassword yoyo

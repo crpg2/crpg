@@ -1,6 +1,6 @@
 ServerName cRPG Test
+server_name_suffix
 GameType cRPGSiege
-GamePassword yoyo
 add_map_to_automated_battle_pool crpg_conquest_silverskalitz
 add_map_to_automated_battle_pool crpg_conquest_acre
 AllowPollsToKickPlayers True
@@ -21,7 +21,7 @@ MinNumberOfPlayersForMatchStart 1
 NumberOfBotsTeam1 3
 NumberOfBotsTeam2 3
 MapTimeLimit 30
-WarmupTimeLimit 1
+WarmupTimeLimitInSeconds 1
 start_game
 crpg_happy_hours 19:00-23:00,Central European Standard Time
 disable_map_voting

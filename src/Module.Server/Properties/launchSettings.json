@@ -1,4 +1,5 @@
 {
+  "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
     "Battle": {
       "commandName": "Executable",
@@ -6,8 +7,7 @@
       "commandLineArgs": "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /dedicatedcustomserverconfigfile ..\\cRPG\\ds_config_crpg_battle.txt /port 7210 /no_watchdog",
       "workingDirectory": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server",
       "environmentVariables": {
-        "CRPG_API_BASE_URL": "https://api.namidaka.fr",
-        "CRPG_INSTANCE": "crpg99a"
+        "CRPG_API_BASE_URL": "https://api.c-rpg.eu"
       }
     },
     "Conquest": {
@@ -16,8 +16,7 @@
       "commandLineArgs": "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /dedicatedcustomserverconfigfile ..\\cRPG\\ds_config_crpg_conquest.txt /port 7210 /no_watchdog",
       "workingDirectory": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server",
       "environmentVariables": {
-        "CRPG_API_BASE_URL": "https://api.namidaka.fr",
-        "CRPG_INSTANCE": "crpg99b"
+        "CRPG_API_BASE_URL": "https://api.c-rpg.eu"
       }
     },
     "Siege": {
@@ -26,8 +25,7 @@
       "commandLineArgs": "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /dedicatedcustomserverconfigfile ..\\cRPG\\ds_config_crpg_siege.txt /port 7210 /no_watchdog",
       "workingDirectory": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server",
       "environmentVariables": {
-        "CRPG_API_BASE_URL": "https://api.namidaka.fr",
-        "CRPG_INSTANCE": "crpg99b"
+        "CRPG_API_BASE_URL": "https://api.c-rpg.eu"
       }
     },
     "TeamDeathmatch": {
@@ -36,8 +34,7 @@
       "commandLineArgs": "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /dedicatedcustomserverconfigfile ..\\cRPG\\ds_config_crpg_teamdeathmatch.txt /port 7210 /no_watchdog",
       "workingDirectory": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server",
       "environmentVariables": {
-        "CRPG_API_BASE_URL": "https://api.namidaka.fr",
-        "CRPG_INSTANCE": "crpg99f"
+        "CRPG_API_BASE_URL": "https://api.c-rpg.eu"
       }
     },
     "Duel": {
@@ -46,8 +43,7 @@
       "commandLineArgs": "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /dedicatedcustomserverconfigfile ..\\cRPG\\ds_config_crpg_duel.txt /port 7210 /no_watchdog",
       "workingDirectory": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server",
       "environmentVariables": {
-        "CRPG_API_BASE_URL": "https://api.namidaka.fr",
-        "CRPG_INSTANCE": "crpg99c"
+        "CRPG_API_BASE_URL": "https://api.c-rpg.eu"
       }
     },
     "DTV": {
@@ -56,8 +52,7 @@
       "commandLineArgs": "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /dedicatedcustomserverconfigfile ..\\cRPG\\ds_config_crpg_dtv.txt /port 7210 /no_watchdog",
       "workingDirectory": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server",
       "environmentVariables": {
-        "CRPG_API_BASE_URL": "https://api.namidaka.fr",
-        "CRPG_INSTANCE": "crpg99e"
+        "CRPG_API_BASE_URL": "https://api.c-rpg.eu"
       }
     },
     "TrainingGround": {
@@ -66,10 +61,8 @@
       "commandLineArgs": "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /dedicatedcustomserverconfigfile ..\\cRPG\\ds_config_crpg_trainingground.txt /port 7210 /no_watchdog",
       "workingDirectory": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server",
       "environmentVariables": {
-        "CRPG_API_BASE_URL": "https://api.namidaka.fr",
-        "CRPG_INSTANCE": "crpg99c"
+        "CRPG_API_BASE_URL": "https://api.c-rpg.eu"
       }
     }
-  },
-  "$schema": "http://json.schemastore.org/launchsettings.json"
+  }
 }

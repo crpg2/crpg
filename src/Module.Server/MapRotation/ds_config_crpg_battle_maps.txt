@@ -1,9 +1,1 @@
-crpg_battle_cabbagepatch
-crpg_battle_skyfall
-crpg_battle_westveen
-crpg_battle_zemouri
-crpg_battle_drakenburg
-crpg_battle_vatnborg
-crpg_battle_lighthouse
-crpg_battle_hexenbrennen
-crpg_battle_monastery
+mp_compact
