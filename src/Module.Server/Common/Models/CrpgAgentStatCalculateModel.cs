@@ -596,10 +596,10 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AiFlyingMissileCheckRadius = 8f - 6f * meleeLevel;
         props.AiShootFreq = 0.3f + 0.7f * equippedItemLevel;
         props.AiWaitBeforeShootFactor = agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : 1f - 0.5f * equippedItemLevel;
-        // Chance the AI parries. https://www.desmos.com/calculator/u55k7kr7hl
-        props.AIBlockOnDecideAbility = MBMath.Lerp(0.2f, 0.99f, MBMath.ClampFloat(MathF.Pow(meleeLevel, 0.8f), 0f, 1f));
-        // Chance the AI blocks (shield). https://www.desmos.com/calculator/wkkfpjp0xa
-        props.AIParryOnDecideAbility = MBMath.Lerp(0.2f, 0.95f, meleeLevel);
+        // Chance the AI parries. https://www.desmos.com/calculator/8tgpm4ajou
+        props.AIBlockOnDecideAbility = MBMath.Lerp(0.2f, 0.99f, MBMath.ClampFloat(MathF.Pow(meleeLevel, 1.4f), 0f, 1f));
+        // Chance the AI blocks (shield). https://www.desmos.com/calculator/geifioxm1g
+        props.AIParryOnDecideAbility = MBMath.Lerp(0.2f, 0.95f, MBMath.ClampFloat(MathF.Pow(meleeLevel, 1.2f), 0f, 1f));
         // Chance the AI parries when it's attacking.
         props.AIParryOnAttackAbility = meleeLevel;
         // Chance the AI parries on chained attacks. https://www.desmos.com/calculator/pkclpc2ndr
