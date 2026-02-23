@@ -333,9 +333,6 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         ref float attackerStunPeriod,
         ref float defenderStunPeriod)
     {
-        attackerStunPeriod = 1.0f;
-        defenderStunPeriod = 1.0f;
-
         if (collisionResult == CombatCollisionResult.Blocked && defenderAgent.WieldedOffhandWeapon.IsShield())
         {
             int shieldSkill = 0;
@@ -344,7 +341,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
                 shieldSkill = crpgOrigin.Skills.Skills.GetPropertyValue(CrpgSkills.Shield);
             }
 
-            defenderStunPeriod = 1 / MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
+            defenderStunPeriod /= MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
         }
     }
 
