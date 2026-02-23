@@ -24,7 +24,7 @@ NumberOfBotsTeam1 1
 NumberOfBotsTeam2 1
 MapTimeLimit 30
 crpg_reward_tick 30
-WarmupTimeLimitInSeconds 1
+WarmupTimeLimitInSeconds 60
 start_game
 set_automated_battle_count -1
 enable_automated_battle_switching

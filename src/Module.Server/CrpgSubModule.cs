@@ -56,7 +56,6 @@ internal class CrpgSubModule : MBSubModuleBase
     {
         base.OnGameInitializationFinished(game);
         AddMaps();
-        Debug.Print($"Now Adding Maps", color: Debug.DebugColor.Cyan);
 
         // Add the chat command handler here so network messages are being processed first.
         if (game.GetGameHandler<ChatCommandsComponent>() == null)

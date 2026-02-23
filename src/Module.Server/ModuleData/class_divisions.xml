@@ -11,8 +11,8 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -32,11 +32,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -56,11 +56,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="40"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -80,11 +80,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -104,11 +104,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Archer_Heavy"
-                   melee_ai="40"
-                   ranged_ai="50"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -128,11 +128,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="50"
-                   ranged_ai="50"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -152,11 +152,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -176,11 +176,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Infantry_Light"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -200,11 +200,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -224,11 +224,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Crossbowman_Light"
-                   melee_ai="50"
-                   ranged_ai="50"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -248,11 +248,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -272,11 +272,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -296,11 +296,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -320,11 +320,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -344,11 +344,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -368,11 +368,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -392,11 +392,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -416,11 +416,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -440,11 +440,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -464,11 +464,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -488,11 +488,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -512,11 +512,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -536,11 +536,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -560,11 +560,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -584,11 +584,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -608,11 +608,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
@@ -632,11 +632,11 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Axeman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
-                   combat_movement_speed="0"
+                   movement_speed="1"
+                   combat_movement_speed="1"
                    acceleration="0">
     <Perks>
       <Perk game_mode="all"
