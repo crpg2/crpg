@@ -21,7 +21,7 @@ MinNumberOfPlayersForMatchStart 1
 NumberOfBotsTeam1 3
 NumberOfBotsTeam2 3
 MapTimeLimit 30
-WarmupTimeLimitInSeconds 1
+WarmupTimeLimitInSeconds 60
 start_game
 crpg_happy_hours 19:00-23:00,Central European Standard Time
 disable_map_voting

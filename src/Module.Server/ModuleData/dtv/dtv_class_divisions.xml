@@ -8,10 +8,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -23,7 +23,7 @@
       </Perk>
     </Perks>
   </MPClassDivision>
-  
+
   <MPClassDivision id="crpg_dtv_vip_viscount_female"
                    hero="crpg_dtv_vip_viscount_female"
                    troop="crpg_dtv_vip_viscount_female"
@@ -32,10 +32,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -57,9 +57,9 @@
                    cost="0"
                    icon="Special_Swordsman"
                    melee_ai="0"
-                   ranged_ai="5"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -80,10 +80,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -104,10 +104,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -128,10 +128,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="3"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -152,10 +152,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="3"
-                   ranged_ai="3"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -176,10 +176,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Cavalry_Light"
-                   melee_ai="3"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -199,10 +199,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -223,10 +223,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -247,10 +247,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="5"
-                   ranged_ai="5"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -271,10 +271,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -295,10 +295,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -319,10 +319,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="8"
-                   ranged_ai="8"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -343,10 +343,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Cavalry_Light"
-                   melee_ai="8"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -367,10 +367,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -391,10 +391,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -415,10 +415,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="10"
-                   ranged_ai="10"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -439,10 +439,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="10"
-                   ranged_ai="10"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -463,10 +463,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="10"
-                   ranged_ai="10"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -487,10 +487,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="10"
-                   ranged_ai="10"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -511,10 +511,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="10"
-                   ranged_ai="10"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -535,10 +535,10 @@
                   multiplier="0"
                   cost="0"
                   icon="Special_Swordsman"
-                  melee_ai="10"
-                  ranged_ai="10"
+                  melee_ai="0"
+                  ranged_ai="0"
                   armor="0"
-                  movement_speed="0"
+                  movement_speed="0.8"
                   combat_movement_speed="0"
                   acceleration="0">
     <Perks>
@@ -559,10 +559,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -583,10 +583,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -607,10 +607,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="10"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -631,10 +631,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="10"
-                   ranged_ai="10"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -655,10 +655,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="10"
-                   ranged_ai="10"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -679,10 +679,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -703,10 +703,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -727,10 +727,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="10"
-                   ranged_ai="10"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -751,10 +751,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="10"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -775,10 +775,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="10"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -799,10 +799,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -823,10 +823,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -847,10 +847,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="13"
-                   ranged_ai="13"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -871,10 +871,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="13"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -895,10 +895,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -919,10 +919,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -943,10 +943,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="15"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -967,10 +967,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="15"
-                   ranged_ai="15"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -991,10 +991,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1015,10 +1015,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1039,10 +1039,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="15"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1063,10 +1063,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="15"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1087,10 +1087,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="15"
-                   ranged_ai="15"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1111,10 +1111,10 @@
                  multiplier="0"
                  cost="0"
                  icon="Special_Swordsman"
-                 melee_ai="15"
-                 ranged_ai="15"
+                 melee_ai="0"
+                 ranged_ai="0"
                  armor="0"
-                 movement_speed="0"
+                 movement_speed="0.8"
                  combat_movement_speed="0"
                  acceleration="0">
     <Perks>
@@ -1135,10 +1135,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="15"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1159,10 +1159,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1183,10 +1183,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1207,10 +1207,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="18"
-                   ranged_ai="18"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1231,10 +1231,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="18"
-                   ranged_ai="18"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1255,10 +1255,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="18"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1279,10 +1279,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1303,10 +1303,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Cavalry_Light"
-                   melee_ai="18"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1327,10 +1327,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Cavalry_Light"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1351,10 +1351,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="18"
-                   ranged_ai="18"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1375,10 +1375,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="18"
-                   ranged_ai="18"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1399,10 +1399,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Cavalry_Light"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1423,10 +1423,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Cavalry_Light"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1447,10 +1447,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="18"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1471,10 +1471,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="18"
-                   ranged_ai="18"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1495,10 +1495,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Cavalry_Light"
-                   melee_ai="18"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1519,10 +1519,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Cavalry_Light"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1543,10 +1543,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Cavalry_Light"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1567,10 +1567,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="20"
-                   ranged_ai="20"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1591,10 +1591,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="20"
-                   ranged_ai="20"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1615,10 +1615,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="20"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1639,10 +1639,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="20"
-                   ranged_ai="20"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1663,10 +1663,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Cavalry_Light"
-                   melee_ai="20"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1687,10 +1687,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1711,10 +1711,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1735,10 +1735,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="23"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1759,10 +1759,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="23"
-                   ranged_ai="23"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1783,10 +1783,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="23"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1807,10 +1807,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1831,10 +1831,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1855,10 +1855,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="23"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1879,10 +1879,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="24"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1903,10 +1903,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="24"
-                   ranged_ai="24"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1927,10 +1927,10 @@
                  multiplier="0"
                  cost="0"
                  icon="Cavalry_Light"
-                 melee_ai="25"
+                 melee_ai="0"
                  ranged_ai="0"
                  armor="0"
-                 movement_speed="0"
+                 movement_speed="0.8"
                  combat_movement_speed="0"
                  acceleration="0">
     <Perks>
@@ -1951,10 +1951,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1975,10 +1975,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1999,10 +1999,10 @@
                  multiplier="0"
                  cost="0"
                  icon="Special_Swordsman"
-                 melee_ai="25"
+                 melee_ai="0"
                  ranged_ai="0"
                  armor="0"
-                 movement_speed="0"
+                 movement_speed="0.8"
                  combat_movement_speed="0"
                  acceleration="0">
     <Perks>
@@ -2023,10 +2023,10 @@
                  multiplier="0"
                  cost="0"
                  icon="Cavalry_Light"
-                 melee_ai="25"
-                 ranged_ai="25"
+                 melee_ai="0"
+                 ranged_ai="0"
                  armor="0"
-                 movement_speed="0"
+                 movement_speed="0.8"
                  combat_movement_speed="0"
                  acceleration="0">
     <Perks>
@@ -2047,10 +2047,10 @@
                multiplier="0"
                cost="0"
                icon="Cavalry_Light"
-               melee_ai="100"
-               ranged_ai="100"
+               melee_ai="0"
+               ranged_ai="0"
                armor="0"
-               movement_speed="0"
+               movement_speed="0.8"
                combat_movement_speed="0"
                acceleration="0">
     <Perks>
@@ -2071,10 +2071,10 @@
                multiplier="0"
                cost="0"
                icon="Cavalry_Light"
-               melee_ai="100"
-               ranged_ai="100"
+               melee_ai="0"
+               ranged_ai="0"
                armor="0"
-               movement_speed="0"
+               movement_speed="0.8"
                combat_movement_speed="0"
                acceleration="0">
     <Perks>
@@ -2095,10 +2095,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="30"
-                   ranged_ai="30"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2119,10 +2119,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="30"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2143,10 +2143,10 @@
                  multiplier="0"
                  cost="0"
                  icon="Special_Swordsman"
-                 melee_ai="30"
+                 melee_ai="0"
                  ranged_ai="0"
                  armor="0"
-                 movement_speed="0"
+                 movement_speed="0.8"
                  combat_movement_speed="0"
                  acceleration="0">
     <Perks>
@@ -2167,10 +2167,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2191,10 +2191,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2206,7 +2206,7 @@
       </Perk>
     </Perks>
   </MPClassDivision>
-  
+
  <MPClassDivision id="crpg_dtv_greyorder_shielder"
                   hero="crpg_dtv_greyorder_shielder"
                   troop="crpg_dtv_greyorder_shielder"
@@ -2215,10 +2215,10 @@
                   multiplier="0"
                   cost="0"
                   icon="Special_Swordsman"
-                  melee_ai="50"
+                  melee_ai="0"
                   ranged_ai="0"
                   armor="0"
-                  movement_speed="0"
+                  movement_speed="0.8"
                   combat_movement_speed="0"
                   acceleration="0">
     <Perks>
@@ -2230,7 +2230,7 @@
       </Perk>
     </Perks>
   </MPClassDivision>
-  
+
   <MPClassDivision id="crpg_dtv_greyorder_kuyak_two_handed"
                    hero="crpg_dtv_greyorder_kuyak_two_handed"
                    troop="crpg_dtv_greyorder_kuyak_two_handed"
@@ -2239,10 +2239,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2263,10 +2263,10 @@
                      multiplier="0"
                      cost="0"
                      icon="Special_Swordsman"
-                     melee_ai="50"
+                     melee_ai="0"
                      ranged_ai="0"
                      armor="0"
-                     movement_speed="0"
+                     movement_speed="0.8"
                      combat_movement_speed="0"
                      acceleration="0">
     <Perks>
@@ -2278,7 +2278,7 @@
       </Perk>
     </Perks>
   </MPClassDivision>
-  
+
   <MPClassDivision id="crpg_dtv_greyorder_heavy_two_handed"
                    hero="crpg_dtv_greyorder_heavy_two_handed"
                    troop="crpg_dtv_greyorder_heavy_two_handed"
@@ -2287,10 +2287,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2302,7 +2302,7 @@
       </Perk>
     </Perks>
   </MPClassDivision>
-  
+
   <MPClassDivision id="crpg_dtv_greyorder_heavy_polearm"
                    hero="crpg_dtv_greyorder_heavy_polearm"
                    troop="crpg_dtv_greyorder_heavy_polearm"
@@ -2311,10 +2311,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="50"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2326,7 +2326,7 @@
       </Perk>
     </Perks>
   </MPClassDivision>
-  
+
   <MPClassDivision id="crpg_dtv_greyorder_lieutenant_varadin"
                    hero="crpg_dtv_greyorder_lieutenant_varadin"
                    troop="crpg_dtv_greyorder_lieutenant_varadin"
@@ -2335,10 +2335,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2350,7 +2350,7 @@
       </Perk>
     </Perks>
   </MPClassDivision>
-  
+
   <MPClassDivision id="crpg_dtv_greyorder_lieutenant_knitler"
                    hero="crpg_dtv_greyorder_lieutenant_knitler"
                    troop="crpg_dtv_greyorder_lieutenant_knitler"
@@ -2359,10 +2359,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2373,7 +2373,7 @@
             perk_list="1">
       </Perk>
     </Perks>
-  </MPClassDivision>   
+  </MPClassDivision>
 
   <MPClassDivision id="crpg_dtv_greyorder_lieutenant_pawiu"
                    hero="crpg_dtv_greyorder_lieutenant_pawiu"
@@ -2383,10 +2383,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2407,10 +2407,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2422,7 +2422,7 @@
       </Perk>
     </Perks>
   </MPClassDivision>
-  
+
   <MPClassDivision id="crpg_dtv_greyorder_boss_hetman"
                    hero="crpg_dtv_greyorder_boss_hetman"
                    troop="crpg_dtv_greyorder_boss_hetman"
@@ -2431,10 +2431,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2446,7 +2446,7 @@
       </Perk>
     </Perks>
   </MPClassDivision>
-  
+
   <MPClassDivision id="crpg_dtv_greyorder_boss_tamra"
                    hero="crpg_dtv_greyorder_boss_tamra"
                    troop="crpg_dtv_greyorder_boss_tamra"
@@ -2455,10 +2455,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2479,10 +2479,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="30"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2503,10 +2503,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="30"
-                   ranged_ai="30"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2527,10 +2527,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Cavalry_Light"
-                   melee_ai="30"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2551,10 +2551,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
-                   ranged_ai="100"
+                   melee_ai="0"
+                   ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2575,10 +2575,10 @@
                    multiplier="0"
                    cost="0"
                    icon="Special_Swordsman"
-                   melee_ai="100"
+                   melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0"
+                   movement_speed="0.8"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
