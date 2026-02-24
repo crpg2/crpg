@@ -22,19 +22,20 @@ public class SettlementsController : BaseController
     /// <summary>
     /// Get settlement details by Id.
     /// </summary>
-    ///
     [HttpGet("{settlementId}")]
-    public Task<ActionResult<Result<SettlementPublicViewModel>>> UpdateSettlement([FromRoute] int settlementId)
+    public Task<ActionResult<Result<SettlementPublicViewModel>>> GetSettlementById([FromRoute] int settlementId)
     {
-        return ResultToActionAsync(Mediator.Send(new GetSettlementByIdQuery() { SettlementId = settlementId }));
+        return ResultToActionAsync(Mediator.Send(new GetSettlementByIdQuery()
+        {
+            PartyId = CurrentUser.User!.Id,
+            SettlementId = settlementId,
+        }));
     }
 
     /// <summary>
     /// Give (position count) or take (negative count) garrison troops from a settlement.
     /// </summary>
-    ///
-    // TODO: Post || Put?
-    [HttpPost("{settlementId}")]
+    [HttpPut("{settlementId}")]
     public Task<ActionResult<Result<SettlementPublicViewModel>>> UpdateSettlement([FromRoute] int settlementId,
         [FromBody] UpdateSettlementCommand req)
     {
@@ -58,9 +59,7 @@ public class SettlementsController : BaseController
     /// <summary>
     /// Give (position count) or take (negative count) garrison items from a settlement.
     /// </summary>
-    ///
-    // TODO: Post + Put?
-    [HttpPost("{settlementId}/items")]
+    [HttpPut("{settlementId}/items")]
     public Task<ActionResult<Result<ItemStack>>> UpdateSettlementItems([FromRoute] int settlementId,
         [FromBody] AddSettlementItemCommand req)
     {

@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Text.Json.Serialization;
+using AutoMapper;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
@@ -14,7 +15,9 @@ namespace Crpg.Application.Settlements.Commands;
 public record AddSettlementItemCommand : IMediatorRequest<ItemStack>
 {
     // TODO: FIXME: add item transfer to UpdateSettlementCommand. Make transfer batch
+    [JsonIgnore]
     public int PartyId { get; init; }
+    [JsonIgnore]
     public int SettlementId { get; init; }
     public string ItemId { get; init; } = string.Empty;
     public int Count { get; init; }

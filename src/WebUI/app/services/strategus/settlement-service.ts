@@ -3,8 +3,8 @@ import {
   getSettlementsBySettlementId,
   getSettlementsBySettlementIdItems,
   getSettlementsBySettlementIdShopItems,
-  postSettlementsBySettlementId,
-  postSettlementsBySettlementIdItems,
+  putSettlementsBySettlementId,
+  putSettlementsBySettlementIdItems,
 } from '#api/sdk.gen'
 
 import type { ItemStack } from '~/models/strategus/party'
@@ -23,3 +23,10 @@ export const getSettlements = async () => (await _getSettlements({})).data!
 export const getSettlement = async (settlementId: number): Promise<SettlementPublic> => (await getSettlementsBySettlementId({ path: { settlementId } })).data!
 
 export const getSettlementItems = async (settlementId: number): Promise<ItemStack[]> => (await getSettlementsBySettlementIdItems({ path: { settlementId } })).data!
+
+export const updateSettlementResources = async (settlementId: number, troops: number): Promise<SettlementPublic> => (await putSettlementsBySettlementId({
+  path: { settlementId },
+  body: {
+    troops,
+  },
+})).data!

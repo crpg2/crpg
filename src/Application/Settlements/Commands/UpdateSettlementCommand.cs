@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Text.Json.Serialization;
+using AutoMapper;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
@@ -13,7 +14,9 @@ namespace Crpg.Application.Settlements.Commands;
 
 public record UpdateSettlementCommand : IMediatorRequest<SettlementPublicViewModel>
 {
+    [JsonIgnore]
     public int PartyId { get; init; }
+    [JsonIgnore]
     public int SettlementId { get; init; }
     public int Troops { get; init; }
 

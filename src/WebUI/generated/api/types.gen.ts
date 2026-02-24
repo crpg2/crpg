@@ -46,8 +46,6 @@ export type AddItemToClanArmoryCommand = {
 };
 
 export type AddSettlementItemCommand = {
-    partyId: number;
-    settlementId: number;
     itemId: string;
     count: number;
 };
@@ -1125,8 +1123,6 @@ export type UpdatePartyOrdersCommand = {
 };
 
 export type UpdateSettlementCommand = {
-    partyId: number;
-    settlementId: number;
     troops: number;
 };
 
@@ -3204,7 +3200,7 @@ export type GetSettlementsBySettlementIdResponses = {
 
 export type GetSettlementsBySettlementIdResponse = GetSettlementsBySettlementIdResponses[keyof GetSettlementsBySettlementIdResponses];
 
-export type PostSettlementsBySettlementIdData = {
+export type PutSettlementsBySettlementIdData = {
     body?: UpdateSettlementCommand;
     path: {
         settlementId: number;
@@ -3213,14 +3209,14 @@ export type PostSettlementsBySettlementIdData = {
     url: '/Settlements/{settlementId}';
 };
 
-export type PostSettlementsBySettlementIdResponses = {
+export type PutSettlementsBySettlementIdResponses = {
     /**
      * OK
      */
     200: SettlementPublicViewModelResult;
 };
 
-export type PostSettlementsBySettlementIdResponse = PostSettlementsBySettlementIdResponses[keyof PostSettlementsBySettlementIdResponses];
+export type PutSettlementsBySettlementIdResponse = PutSettlementsBySettlementIdResponses[keyof PutSettlementsBySettlementIdResponses];
 
 export type GetSettlementsBySettlementIdItemsData = {
     body?: never;
@@ -3240,7 +3236,7 @@ export type GetSettlementsBySettlementIdItemsResponses = {
 
 export type GetSettlementsBySettlementIdItemsResponse = GetSettlementsBySettlementIdItemsResponses[keyof GetSettlementsBySettlementIdItemsResponses];
 
-export type PostSettlementsBySettlementIdItemsData = {
+export type PutSettlementsBySettlementIdItemsData = {
     body?: AddSettlementItemCommand;
     path: {
         settlementId: number;
@@ -3249,14 +3245,14 @@ export type PostSettlementsBySettlementIdItemsData = {
     url: '/Settlements/{settlementId}/items';
 };
 
-export type PostSettlementsBySettlementIdItemsResponses = {
+export type PutSettlementsBySettlementIdItemsResponses = {
     /**
      * OK
      */
     200: ItemStackResult;
 };
 
-export type PostSettlementsBySettlementIdItemsResponse = PostSettlementsBySettlementIdItemsResponses[keyof PostSettlementsBySettlementIdItemsResponses];
+export type PutSettlementsBySettlementIdItemsResponse = PutSettlementsBySettlementIdItemsResponses[keyof PutSettlementsBySettlementIdItemsResponses];
 
 export type GetSettlementsBySettlementIdShopItemsData = {
     body?: never;
