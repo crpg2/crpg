@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ItemDetail } from '#components'
+import { strategusMinPartyTroops } from '~root/data/constants.json'
 
 import type { GroupedCompareItemsResult, Item } from '~/models/item'
 import type { PartyPublic } from '~/models/strategus/party'
@@ -27,12 +28,12 @@ import { getSettlementItems } from '~/services/strategus/settlement-service'
 // })
 
 const route = useRoute<'strategus-settlement-id-inventory'>()
-const { settlement } = useSettlement()
+const { settlement, refreshSettlement, updateSettlementResources } = useSettlement()
 
 const { settlementItems } = useSettlementItems()
 
 const { user } = useUser()
-const { partyState } = useParty()
+const { partyState, updateParty } = useParty()
 
 const sortingConfig: SortingConfig = {
   rank_desc: { field: 'rank', order: 'desc' },
@@ -62,11 +63,29 @@ const maxTroops = computed(() => {
   return partyState.value.party.troops + settlement.value.troops
 })
 
-const offerModel = ref({ troops: settlement.value.troops })
+function getEmptyTransferModel() {
+  return {
+    troops: settlement.value.troops,
+  }
+}
 
-// Вычисляемые значения для отображения
-const troopsInSettlement = computed(() => offerModel.value.troops)
-const troopsInParty = computed(() => maxTroops.value - offerModel.value.troops)
+const transferModel = ref(getEmptyTransferModel())
+
+function resetTransferModel() {
+  transferModel.value = getEmptyTransferModel()
+}
+
+const [submitTransferModel, submittingTransferModel] = useAsyncCallback(async () => {
+  await updateSettlementResources(transferModel.value.troops)
+
+  await Promise.all([
+    refreshSettlement(),
+    updateParty(),
+  ])
+})
+
+const troopsInSettlement = computed(() => transferModel.value.troops)
+const troopsInParty = computed(() => maxTroops.value - transferModel.value.troops)
 </script>
 
 <template>
@@ -95,52 +114,73 @@ const troopsInParty = computed(() => maxTroops.value - offerModel.value.troops)
     </ItemGrid>
 
     <div class="mx-auto mt-8 max-w-2xl">
-      <UFormField>
-        <div class="flex justify-between text-sm">
-          <div class="flex items-center">
-            settlement: {{ $n(settlement.troops) }}
-            <UIcon name="i-lucide-chevron-right" />
-            <span
-              class="font-bold"
-              :class="[troopsInSettlement > settlement.troops ? 'text-success' : `text-error`]"
-            >
-              {{ $n(troopsInSettlement) }}
-            </span>
-          </div>
-          <div class="flex items-center">
-            <span
-              class="font-bold"
-              :class="[troopsInSettlement > settlement.troops ? 'text-success' : `text-error`]"
-            >
-              party: {{ $n(troopsInParty) }}
-            </span>
-          </div>
-        </div>
+      <UiCard :ui="{ footer: 'flex justify-end gap-2' }" icon="crpg:member" label="Manage troops">
+        <UFormField :ui="{ description: 'flex justify-between flex-wrap text-highlighted gap-4' }">
+          <template #description>
+            <div class="flex items-center gap-1">
+              <UiTextView variant="caption">
+                settlement
+              </UiTextView>
+              <UiDataMedia icon="crpg:member" :label="$n(settlement.troops)" />
+              <template v-if="settlement.troops !== troopsInSettlement">
+                <UIcon name="i-lucide-chevron-right" />
+                <div>
+                  <UiDataMedia icon="crpg:member" :label="$n(troopsInSettlement)" />
+                  <span
+                    :class="[troopsInSettlement > settlement.troops ? 'text-success' : `text-error`]"
+                  >
+                    ({{ troopsInSettlement > settlement.troops ? '+' : '' }}{{ $n(troopsInSettlement - settlement.troops) }})
+                  </span>
+                </div>
+              </template>
+            </div>
+            <div class="flex flex-row-reverse items-center gap-1">
+              <UiTextView variant="caption">
+                party
+              </UiTextView>
+              <UiDataMedia icon="crpg:member" :label="$n(partyState.party.troops)" />
+              <template v-if="partyState.party.troops !== troopsInParty">
+                <UIcon name="i-lucide-chevron-left" />
+                <div>
+                  <UiDataMedia icon="crpg:member" :label="$n(troopsInParty)" />
+                  <span
+                    :class="[troopsInParty > partyState.party.troops ? 'text-success' : `text-error`]"
+                  >
+                    ({{ troopsInParty > partyState.party.troops ? '+' : '' }}{{ $n(troopsInParty - partyState.party.troops) }})
+                  </span>
+                </div>
+              </template>
+            </div>
+          </template>
 
-        <UInputNumber
-          v-model="offerModel.troops"
-          :min="0"
-          :max="maxTroops"
-          class="w-full"
-        />
+          <UInputNumber
+            v-model="transferModel.troops"
+            :min="strategusMinPartyTroops"
+            :max="maxTroops - strategusMinPartyTroops"
+            class="w-full"
+          />
 
-        <USlider
-          v-model="offerModel.troops"
-          :min="0"
-          :max="maxTroops"
-          :step="1"
-          class="px-2.5"
-        />
+          <USlider
+            v-model="transferModel.troops"
+            :min="strategusMinPartyTroops"
+            :max="maxTroops - strategusMinPartyTroops"
+            class="px-2.5"
+          />
+        </UFormField>
 
-        <!-- <div
-            class="
-              text-center text-xs text-gray-500
-              dark:text-gray-400
-            "
-          >
-            {{ $t('strategus.settlement.troopsSliderHint') }}
-          </div> -->
-      </UFormField>
+        <template #footer>
+          <UButton
+            label="Reset"
+            variant="subtle"
+            @click="resetTransferModel"
+          />
+          <UButton
+            label="Submit"
+            :loading="submittingTransferModel"
+            @click="submitTransferModel"
+          />
+        </template>
+      </UiCard>
     </div>
   </div>
 </template>

@@ -66,6 +66,7 @@ public enum ErrorCode
     TransferOfferInvalidAmount,
     TransferOfferInvalidItem,
     SettlementNotFound,
+    SettlementNotEnoughTroops,
     SettlementTooFar,
     SkillRequirementNotMet,
     UserAlreadyInAClan,

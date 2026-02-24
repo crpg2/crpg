@@ -8,7 +8,7 @@ import type { SettlementPublic } from '~/models/strategus/settlement'
 
 import { SETTLEMENT_QUERY_KEYS } from '~/queries'
 import { shouldDisplaySettlement } from '~/services/strategus/map-service'
-import { getSettlement, getSettlementItems, getSettlements } from '~/services/strategus/settlement-service'
+import { updateSettlementResources as _updateSettlementResources, getSettlement, getSettlementItems, getSettlements } from '~/services/strategus/settlement-service'
 import { positionToLatLng } from '~/utils/geometry'
 
 export const useSettlements = (
@@ -70,9 +70,12 @@ export const useSettlement = () => {
   const settlement = getAsyncData<SettlementPublic>(_key)
   const refreshSettlement = refreshAsyncData(_key)
 
+  const updateSettlementResources = (troops: number) => _updateSettlementResources(settlement.value.id, troops)
+
   return {
     settlement,
     refreshSettlement,
+    updateSettlementResources,
   }
 }
 

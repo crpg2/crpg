@@ -323,6 +323,12 @@ internal static class CommonErrors
         Detail = $"Settlement with id '{settlementId}' was not found",
     };
 
+    public static Error SettlementNotEnoughTroops(int settlementId) => new(ErrorType.Validation, ErrorCode.SettlementNotEnoughTroops)
+    {
+        Title = "Settlement doesn't have enough troops",
+        Detail = $"Settlement with id '{settlementId}' doesn't have enough troops",
+    };
+
     public static Error SettlementTooFar(int settlementId) => new(ErrorType.Validation, ErrorCode.SettlementTooFar)
     {
         Title = "Settlement is too far",
