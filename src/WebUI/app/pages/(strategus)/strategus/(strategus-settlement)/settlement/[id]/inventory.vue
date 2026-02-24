@@ -11,6 +11,7 @@ import { useItemDetail } from '~/composables/item/use-item-detail'
 import { useParty } from '~/composables/strategus/use-party'
 import { useSettlement, useSettlementItems } from '~/composables/strategus/use-settlements'
 import { useUser } from '~/composables/user/use-user'
+import { getSelfPartyItems } from '~/services/strategus/party-service'
 import { getSettlementItems } from '~/services/strategus/settlement-service'
 
 // definePageMeta({
@@ -34,6 +35,16 @@ const { settlementItems } = useSettlementItems()
 
 const { user } = useUser()
 const { partyState, updateParty } = useParty()
+
+const {
+  state: partyItems,
+  executeImmediate: loadpartyItems,
+  isLoading: loadingPartyItems,
+} = useAsyncState(
+  () => getSelfPartyItems(),
+  [],
+  { immediate: true, resetOnExecute: false },
+)
 
 const sortingConfig: SortingConfig = {
   rank_desc: { field: 'rank', order: 'desc' },
@@ -90,7 +101,12 @@ const troopsInParty = computed(() => maxTroops.value - transferModel.value.troop
 
 <template>
   <div>
-    <div class="mx-auto mt-8 max-w-2xl">
+    <MapTransferForm2
+      :from="settlementItems"
+      :to="partyItems"
+    />
+
+    <!-- <div class="mx-auto mt-8 max-w-2xl">
       <UiCard
         :ui="{
           footer: 'flex justify-end gap-2',
@@ -201,6 +217,6 @@ const troopsInParty = computed(() => maxTroops.value - transferModel.value.troop
       <template #item-detail="{ item, compareItemsResult }">
         <component :is="renderItemDetail(item, compareItemsResult)" />
       </template>
-    </ItemGrid>
+    </ItemGrid> -->
   </div>
 </template>

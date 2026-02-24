@@ -1,6 +1,7 @@
 <script setup lang="ts" generic="T extends { item: Item }">
 import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState } from '@tanstack/vue-table'
+import type { ValueOf } from 'type-fest'
 
 import { functionalUpdate, getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useVueTable } from '@tanstack/vue-table'
 
@@ -18,33 +19,38 @@ import { extractItem, getCompareItemsResult, groupItemsByTypeAndWeaponClass } fr
 
 const {
   sortingConfig,
-  items,
-  withPagination = true,
+  // items,
+  itemsA,
+  itemsB,
   loading = false,
   size = 'xl',
 } = defineProps<{
-  items: T[]
+  // items: T[]
+  itemsA: T[]
+  itemsB: T[]
   sortingConfig: SortingConfig
-  withPagination?: boolean
   loading?: boolean
   size?: 'md' | 'xl'
 }>()
 
 const { t } = useI18n()
 
-// TODO: FIXME: либо выпилить, либо активировать условно, потому что в модалках это не нужно
-// const { mainHeaderHeight } = useMainHeader()
-// const aside = useTemplateRef('aside')
-// const { top: stickySidebarTop } = useStickySidebar(aside, mainHeaderHeight.value + 16, 16 /** 1rem */)
+const ITEM_GROUP = {
+  GroupA: 'GroupA',
+  GroupB: 'GroupB',
+} as const
 
+type ItemGroup = ValueOf<typeof ITEM_GROUP>
+type GroupedItem = T & {
+  group: ItemGroup
+}
+
+const items = computed<GroupedItem[]>(() => [
+  ...itemsA.map(item => ({ ...item, group: ITEM_GROUP.GroupA })),
+  ...itemsB.map(item => ({ ...item, group: ITEM_GROUP.GroupB })),
+])
 const itemType = ref<ItemType>(ITEM_TYPE.Undefined)
-const itemTypes = computed(() => getFacetsByItemType(items.map(wrapper => wrapper.item.type)))
-
-watch(itemType, () => {
-  window.scrollTo({ behavior: 'smooth', top: 0 })
-})
-
-const { pagination, setPagination } = usePagination({ pageSize: 20 })
+const itemTypes = computed(() => getFacetsByItemType(items.value.map(wrapper => wrapper.item.type)))
 
 const sortingItems = computed(() => Object.keys(sortingConfig).map<SelectItem>(key => ({
   label: t(`item.sort.${key}`),
@@ -62,7 +68,11 @@ const columnFilters = computed<ColumnFiltersState>(() => [
   ...(itemType.value !== ITEM_TYPE.Undefined ? [{ id: 'type', value: itemType.value }] : []),
 ])
 
-const columns: TableColumn<T>[] = [
+const columns: TableColumn<GroupedItem>[] = [
+  {
+    accessorFn: row => row.group,
+    id: 'group',
+  },
   {
     accessorFn: row => row.item.id,
     id: 'id',
@@ -88,7 +98,7 @@ const columns: TableColumn<T>[] = [
 
 const grid = useVueTable({
   get data() {
-    return toRef(() => items)
+    return toRef(() => items.value)
   },
   columns,
   getCoreRowModel: getCoreRowModel(),
@@ -107,28 +117,18 @@ const grid = useVueTable({
     get columnFilters() {
       return columnFilters.value
     },
-    get pagination() {
-      return pagination.value
-    },
   },
-  ...(withPagination && {
-    getPaginationRowModel: getPaginationRowModel(),
-    onPaginationChange: (updater) => {
-      setPagination(functionalUpdate(updater, pagination.value))
-    },
-  }),
 })
 
-watch(() => items, () => {
+const findedItemsA = computed(() => grid.getRowModel().rows.filter(row => row.original.group === ITEM_GROUP.GroupA))
+const findedItemsB = computed(() => grid.getRowModel().rows.filter(row => row.original.group === ITEM_GROUP.GroupB))
+
+watch(() => items.value, () => {
   // For example, if a product has been sold, you need to reset the filter by type.
   if (!grid.getRowModel().rows.length) {
     itemType.value = ITEM_TYPE.Undefined
   }
 })
-
-const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, row) => out + row.original.item.price, 0))
-
-const showPagination = computed(() => grid.getRowCount() > pagination.value.pageSize)
 
 const { isOpen } = useItemDetail()
 
@@ -136,7 +136,8 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
   return groupItemsByTypeAndWeaponClass(
     // TODO: ....
     // find the open items
-    createItemIndex(items.filter(wrapper => isOpen(wrapper.item.id)).map(extractItem)),
+    createItemIndex(items.value.filter(wrapper => isOpen(wrapper.item.id))
+      .map(extractItem)),
   )
     .filter(group => group.items.length >= 2) // there is no point in comparing 1 item
     .map(group => ({
@@ -148,15 +149,49 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative space-y-4">
     <UiLoading :active="loading" />
 
-    <div v-if="items.length" class="itemGrid grid h-full items-start gap-x-3 gap-y-4">
-      <!-- ref="aside"
-      :style="{ top: `${stickySidebarTop}px` }" -->
+    <div class="grid grid-cols-5 gap-3">
+      <UInput
+        v-model="filterByNameModel"
+        :placeholder="$t('action.search')"
+        icon="crpg:search"
+        variant="subtle"
+        class="col-span-3 w-full"
+        :size
+      >
+        <template v-if="filterByNameModel?.length" #trailing>
+          <UiInputClear @click="filterByNameModel = ''" />
+        </template>
+      </UInput>
+
+      <div class="col-span-2 flex items-center gap-3">
+        <USelect
+          v-model="sortingModel"
+          class="flex-1"
+          :items="sortingItems"
+          :size
+        />
+
+        <slot name="filter-trailing" />
+      </div>
+    </div>
+
+    <div v-if="items.length" class="grid grid-cols-[1fr_auto_1fr] gap-4">
       <div
-        style="grid-area: aside"
-        class="sticky top-0 left-0 flex flex-col items-center justify-center space-y-2"
+        class="
+          grid grid-cols-3 gap-2
+          2xl:grid-cols-2
+        "
+      >
+        <template v-for="item in findedItemsA" :key="item.id">
+          <slot name="item" v-bind="item.original" />
+        </template>
+      </div>
+
+      <div
+        class="sticky top-0"
       >
         <ItemSearchFilterByType
           v-model:item-type="itemType"
@@ -167,57 +202,15 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
         />
       </div>
 
-      <div style="grid-area: topbar" class="grid grid-cols-5 gap-3">
-        <UInput
-          v-model="filterByNameModel"
-          :placeholder="$t('action.search')"
-          icon="crpg:search"
-          variant="subtle"
-          class="col-span-3 w-full"
-          :size
-        >
-          <template v-if="filterByNameModel?.length" #trailing>
-            <UiInputClear @click="filterByNameModel = ''" />
-          </template>
-        </UInput>
-
-        <div class="col-span-2 flex items-center gap-3">
-          <USelect
-            v-model="sortingModel"
-            class="flex-1"
-            :items="sortingItems"
-            :size
-          />
-
-          <slot name="filter-trailing" />
-        </div>
-      </div>
-
       <div
-        style="grid-area: result"
         class="
           grid grid-cols-3 gap-2
-          2xl:grid-cols-4
+          2xl:grid-cols-2
         "
       >
-        <template v-for="item in grid.getRowModel().rows" :key="item.id">
+        <template v-for="item in findedItemsB" :key="item.id">
           <slot name="item" v-bind="item.original" />
         </template>
-      </div>
-
-      <div style="grid-area: footer" class="sticky bottom-4 z-10 space-y-3">
-        <UiGridPagination
-          v-if="withPagination && showPagination"
-          :table-api="toRef(() => grid)"
-        />
-
-        <slot
-          name="footer"
-          v-bind="{
-            filteredItemsCost,
-            filteredItemsCount: grid.getRowModel().rows.length,
-            totalItemsCount: grid.getFilteredRowModel().rows.length }"
-        />
       </div>
     </div>
 
@@ -232,14 +225,3 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
     </ItemDetailGroup>
   </div>
 </template>
-
-<style lang="css">
-.itemGrid {
-  grid-template-areas:
-    'topbar topbar'
-    'aside result'
-    'aside footer';
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr auto;
-}
-</style>
