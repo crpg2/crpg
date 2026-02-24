@@ -18,8 +18,9 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private const int MapDuration = 60 * 120;
 
     private const float UpkeepMultiplier = 0.50f;
-    private const int BoulderRefillTime = 30;
-    private const int FirePotRefillTime = 60;
+    private const int StonePileRefillTime = 30;
+    private const int LightSiegeWeaponRefillTime = 30;
+    private const int HeavySiegeWeaponRefillTime = 60;
 
     private readonly CrpgRewardServer _rewardServer;
     private readonly CrpgDtvData _dtvData;
@@ -34,8 +35,9 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private int? _vipAgentIndex;
     private MissionTimer? _waveStartTimer;
     private MissionTimer? _endGameTimer;
-    private MissionTimer _refillBouldersTimer = null!;
-    private MissionTimer _refillFirePotsTimer = null!;
+    private MissionTimer _stonePilesRefillTimer = null!;
+    private MissionTimer _lightSiegeWeaponRefillTimer = null!;
+    private MissionTimer _heavySiegeWeaponRefillTimer = null!;
     private MissionTime _currentRoundStartTime;
 
     public CrpgDtvServer(CrpgRewardServer rewardServer)
@@ -60,11 +62,13 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     public event Action<int>? DtvRoundStarted;
 
     [Flags]
-    private enum StonePileRegenerateOptions
+    private enum SiegeWeaponTypes
     {
-        All = 0x0,
-        Pots = 0x1,
-        Boulders = 0x2,
+        All = ~0x0,
+        StonePile = 0x1,
+        Ballista = 0x2,
+        Mangonel = 0x4,
+        Trebuchet = 0x8,
     }
 
     public override MultiplayerGameType GetMissionType()
@@ -76,8 +80,9 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     {
         base.AfterStart();
         AddTeams();
-        _refillBouldersTimer = new(BoulderRefillTime);
-        _refillFirePotsTimer = new(FirePotRefillTime);
+        _stonePilesRefillTimer = new MissionTimer(StonePileRefillTime);
+        _lightSiegeWeaponRefillTimer = new MissionTimer(LightSiegeWeaponRefillTime);
+        _heavySiegeWeaponRefillTimer = new MissionTimer(HeavySiegeWeaponRefillTime);
     }
 
     public override void OnBehaviorInitialize()
@@ -164,14 +169,19 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
             return;
         }
 
-        if (_refillBouldersTimer.Check(true))
+        if (_stonePilesRefillTimer.Check(true))
         {
-            RegenerateStonePiles(StonePileRegenerateOptions.Boulders);
+            RefillSiegeWeaponAmmo(SiegeWeaponTypes.StonePile);
         }
 
-        if (_refillFirePotsTimer.Check(true))
+        if (_lightSiegeWeaponRefillTimer.Check(true))
         {
-            RegenerateStonePiles(StonePileRegenerateOptions.Pots);
+            RefillSiegeWeaponAmmo(SiegeWeaponTypes.Ballista);
+        }
+
+        if (_heavySiegeWeaponRefillTimer.Check(true))
+        {
+            RefillSiegeWeaponAmmo(SiegeWeaponTypes.Mangonel | SiegeWeaponTypes.Trebuchet);
         }
 
         if (!_gameStarted)
@@ -408,68 +418,57 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         }
     }
 
-    private void RegenerateStonePiles(StonePileRegenerateOptions flag = StonePileRegenerateOptions.All)
+    private void RefillSiegeWeaponAmmo(SiegeWeaponTypes types = SiegeWeaponTypes.All)
     {
-        string itemID = string.Empty;
+        foreach (var usableMachine in Mission.MissionObjects.FindAllWithType<UsableMachine>())
+        {
+            int ammoCount;
+            int startingAmmoCount;
+            Action<int> setAmmo;
+            Func<int, GameNetworkMessage> createNetworkMessage;
+            if (usableMachine is StonePile stonePile)
+            {
+                if (!types.HasFlag(SiegeWeaponTypes.StonePile))
+                {
+                    continue;
+                }
 
-        if (flag == StonePileRegenerateOptions.Pots)
-        {
-            itemID = "pot";
-        }
-        else if (flag == StonePileRegenerateOptions.Boulders)
-        {
-            itemID = "boulder";
-        }
+                ammoCount = stonePile.AmmoCount;
+                startingAmmoCount = stonePile.StartingAmmoCount;
+                setAmmo = a => stonePile.SetAmmo(a);
+                createNetworkMessage = a => new SetStonePileAmmo(stonePile.Id, a);
+            }
+            else if (usableMachine is RangedSiegeWeapon siegeWeapon)
+            {
+                switch (usableMachine)
+                {
+                    case Ballista when !types.HasFlag(SiegeWeaponTypes.Ballista):
+                    // Not even sure Mangonel/Trebuchet have a concept of ammo.
+                    case Mangonel when !types.HasFlag(SiegeWeaponTypes.Mangonel):
+                    case Trebuchet when !types.HasFlag(SiegeWeaponTypes.Trebuchet):
+                        continue;
+                }
 
-        foreach (StonePile stonePile in Mission.MissionObjects.FindAllWithType<StonePile>())
-        {
-            if (flag != StonePileRegenerateOptions.All && stonePile.GivenItemID != itemID)
+                ammoCount = siegeWeapon.AmmoCount;
+                startingAmmoCount = siegeWeapon.StartingAmmoCount;
+                setAmmo = a => siegeWeapon.SetAmmo(a);
+                createNetworkMessage = a => new SetRangedSiegeWeaponAmmo(siegeWeapon.Id, a);
+            }
+            else
             {
                 continue;
             }
 
-            int ammoCount = stonePile.AmmoCount;
-
-            if (ammoCount != stonePile.StartingAmmoCount)
+            if (ammoCount != startingAmmoCount)
             {
                 int newAmmoCount = ammoCount + 1;
-                newAmmoCount = Math.Min(newAmmoCount, stonePile.StartingAmmoCount);
-                stonePile.SetAmmo(newAmmoCount);
-                stonePile.Activate();
+                Debug.Print($"Setting ammo from {ammoCount} to {newAmmoCount} for {usableMachine.GetType().Name}");
+                newAmmoCount = Math.Min(newAmmoCount, startingAmmoCount);
+                setAmmo(newAmmoCount);
+                usableMachine.Activate();
 
                 GameNetwork.BeginBroadcastModuleEvent();
-                GameNetwork.WriteMessage(new SetStonePileAmmo(stonePile.Id, newAmmoCount));
-                GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.AddToMissionRecord);
-            }
-        }
-
-        foreach (RangedSiegeWeapon siegeWeapon in Mission.MissionObjects.FindAllWithType<RangedSiegeWeapon>())
-        {
-            if (flag == StonePileRegenerateOptions.Pots)
-            {
-                if (siegeWeapon is not FireMangonel)
-                {
-                    continue;
-                }
-            }
-            else if (flag == StonePileRegenerateOptions.Boulders)
-            {
-                if (siegeWeapon is FireMangonel)
-                {
-                    continue;
-                }
-            }
-
-            int ammoCount2 = siegeWeapon.AmmoCount;
-            if (ammoCount2 != siegeWeapon.StartingAmmoCount)
-            {
-                int newAmmoCount2 = siegeWeapon.AmmoCount + 1;
-                newAmmoCount2 = Math.Min(newAmmoCount2, siegeWeapon.StartingAmmoCount);
-                siegeWeapon.SetAmmo(newAmmoCount2);
-                siegeWeapon.Activate();
-
-                GameNetwork.BeginBroadcastModuleEvent();
-                GameNetwork.WriteMessage(new SetRangedSiegeWeaponAmmo(siegeWeapon.Id, newAmmoCount2));
+                GameNetwork.WriteMessage(createNetworkMessage(newAmmoCount));
                 GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.AddToMissionRecord);
             }
         }
