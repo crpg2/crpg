@@ -90,66 +90,61 @@ const troopsInParty = computed(() => maxTroops.value - transferModel.value.troop
 
 <template>
   <div>
-    <ItemGrid
-      v-model:sorting="sortingModel"
-      class="mx-auto max-w-2xl"
-      :sorting-config="sortingConfig"
-      :items="settlementItems"
-    >
-      <template #item="battleItem">
-        <ItemCard
-          class="cursor-pointer"
-          :item="battleItem.item"
-          @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, battleItem.item.id)"
-        >
-          <template #badges-bottom-right>
-            <UBadge :label="$n(battleItem.count)" variant="subtle" @click.stop />
-          </template>
-        </ItemCard>
-      </template>
-
-      <template #item-detail="{ item, compareItemsResult }">
-        <component :is="renderItemDetail(item, compareItemsResult)" />
-      </template>
-    </ItemGrid>
-
     <div class="mx-auto mt-8 max-w-2xl">
-      <UiCard :ui="{ footer: 'flex justify-end gap-2' }" icon="crpg:member" label="Manage troops">
-        <UFormField :ui="{ description: 'flex justify-between flex-wrap text-highlighted gap-4' }">
+      <UiCard
+        :ui="{
+          footer: 'flex justify-end gap-2',
+        }"
+        label="Manage troops"
+        icon="crpg:member"
+      >
+        <UFormField
+          :ui="{
+            description: 'flex justify-between flex-wrap text-highlighted gap-4 text-sm',
+            help: 'flex justify-between flex-wrap text-highlighted gap-4 text-sm',
+          }"
+        >
           <template #description>
-            <div class="flex items-center gap-1">
-              <UiTextView variant="caption">
-                settlement
-              </UiTextView>
-              <UiDataMedia icon="crpg:member" :label="$n(settlement.troops)" />
-              <template v-if="settlement.troops !== troopsInSettlement">
-                <UIcon name="i-lucide-chevron-right" />
-                <div>
-                  <UiDataMedia icon="crpg:member" :label="$n(troopsInSettlement)" />
-                  <span
-                    :class="[troopsInSettlement > settlement.troops ? 'text-success' : `text-error`]"
-                  >
-                    ({{ troopsInSettlement > settlement.troops ? '+' : '' }}{{ $n(troopsInSettlement - settlement.troops) }})
-                  </span>
-                </div>
-              </template>
+            <SettlementMedia :settlement />
+            <UserMedia :user="partyState.party.user" />
+          </template>
+
+          <template #help>
+            <div class="flex items-center gap-4">
+              <div class="flex items-center gap-1">
+                <UiDataMedia icon="crpg:member" :label="$n(settlement.troops)" />
+                <template v-if="settlement.troops !== troopsInSettlement">
+                  <UIcon name="i-lucide-chevron-right" />
+                  <div>
+                    {{ $n(troopsInSettlement) }}
+                    <span
+                      :class="[troopsInSettlement > settlement.troops ? 'text-success' : `
+                        text-error
+                      `]"
+                    >
+                      ({{ troopsInSettlement > settlement.troops ? '+' : '' }}{{ $n(troopsInSettlement - settlement.troops) }})
+                    </span>
+                  </div>
+                </template>
+              </div>
             </div>
-            <div class="flex flex-row-reverse items-center gap-1">
-              <UiTextView variant="caption">
-                party
-              </UiTextView>
-              <UiDataMedia icon="crpg:member" :label="$n(partyState.party.troops)" />
-              <template v-if="partyState.party.troops !== troopsInParty">
-                <UIcon name="i-lucide-chevron-left" />
-                <div>
-                  <UiDataMedia icon="crpg:member" :label="$n(troopsInParty)" />
-                  <span
-                    :class="[troopsInParty > partyState.party.troops ? 'text-success' : `text-error`]"
-                  >
-                    ({{ troopsInParty > partyState.party.troops ? '+' : '' }}{{ $n(troopsInParty - partyState.party.troops) }})
-                  </span>
-                </div>
-              </template>
+            <div class="flex flex-row-reverse items-center gap-2">
+              <div class="flex flex-row-reverse items-center">
+                <UiDataMedia icon="crpg:member" :label="$n(partyState.party.troops)" />
+                <template v-if="partyState.party.troops !== troopsInParty">
+                  <UIcon name="i-lucide-chevron-left" />
+                  <div>
+                    {{ $n(troopsInParty) }}
+                    <span
+                      :class="[troopsInParty > partyState.party.troops ? 'text-success' : `
+                        text-error
+                      `]"
+                    >
+                      ({{ troopsInParty > partyState.party.troops ? '+' : '' }}{{ $n(troopsInParty - partyState.party.troops) }})
+                    </span>
+                  </div>
+                </template>
+              </div>
             </div>
           </template>
 
@@ -158,6 +153,8 @@ const troopsInParty = computed(() => maxTroops.value - transferModel.value.troop
             :min="strategusMinPartyTroops"
             :max="maxTroops - strategusMinPartyTroops"
             class="w-full"
+            increment-icon="i-lucide-arrow-right"
+            decrement-icon="i-lucide-arrow-left"
           />
 
           <USlider
@@ -182,5 +179,28 @@ const troopsInParty = computed(() => maxTroops.value - transferModel.value.troop
         </template>
       </UiCard>
     </div>
+
+    <ItemGrid
+      v-model:sorting="sortingModel"
+      class="mx-auto max-w-2xl"
+      :sorting-config="sortingConfig"
+      :items="settlementItems"
+    >
+      <template #item="battleItem">
+        <ItemCard
+          class="cursor-pointer"
+          :item="battleItem.item"
+          @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, battleItem.item.id)"
+        >
+          <template #badges-bottom-right>
+            <UBadge :label="$n(battleItem.count)" variant="subtle" @click.stop />
+          </template>
+        </ItemCard>
+      </template>
+
+      <template #item-detail="{ item, compareItemsResult }">
+        <component :is="renderItemDetail(item, compareItemsResult)" />
+      </template>
+    </ItemGrid>
   </div>
 </template>
