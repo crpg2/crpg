@@ -84,6 +84,7 @@ export const useSettlementItems = () => {
 
   const {
     data: settlementItems,
+    pending: pendingSettlementItems,
   } = useAsyncData(
     toCacheKey(SETTLEMENT_QUERY_KEYS.items(settlement.value.id)),
     () => getSettlementItems(settlement.value.id),
@@ -94,5 +95,6 @@ export const useSettlementItems = () => {
 
   return {
     settlementItems,
+    pendingSettlementItems,
   }
 }

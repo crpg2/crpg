@@ -1596,13 +1596,15 @@ public record SeedDataCommand : IMediatorRequest
                 User = orle,
                 Troops = 1200,
                 Gold = 100_000,
-                Position = new Point(118.664627, -110.482864),
-                Status = PartyStatus.Idle,
-                // Status = PartyStatus.AwaitingBattleJoinDecision,
+                // Position = new Point(118.664627, -110.482864),
+                Position = new Point(120.421875, -108.28125),
+                // Status = PartyStatus.Idle,
+                Status = PartyStatus.IdleInSettlement,
+                CurrentSettlement = rhotae,
                 Items =
                 [
-                    new() { Count = 112, ItemId = "crpg_wolf_shoulder_v2_h0" },
-                    new() { Count = 112, ItemId = "crpg_scalpel_v1_h0" },
+                    new() { Count = 113, ItemId = "crpg_wolf_shoulder_v2_h0" },
+                    new() { Count = 111, ItemId = "crpg_scalpel_v1_h0" },
                     new() { Count = 112, ItemId = "crpg_decorated_short_spatha_v1_h0" },
                     new() { Count = 15, ItemId = "crpg_mount1_maneuverable_14_v3_h0" },
                 ],
@@ -1969,11 +1971,12 @@ public record SeedDataCommand : IMediatorRequest
             epicrotea.Owner = orle2Party;
             epicrotea.OwnerId = orle2Party.Id;
 
-            List<SettlementItem> rhotaeItems = new()
-            {
+            List<SettlementItem> rhotaeItems =
+            [
                 new() { ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h0", Count = 10 },
                 new() { ItemId = "crpg_thamaskene_steel_spatha_v1_h2", Count = 110 },
-            };
+                new() { Count = 13, ItemId = "crpg_wolf_shoulder_v2_h0" },
+            ];
 
             rhotae.Items = rhotaeItems;
 

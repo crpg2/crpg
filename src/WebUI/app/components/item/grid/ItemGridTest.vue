@@ -181,11 +181,11 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
     <div v-if="items.length" class="grid grid-cols-[1fr_auto_1fr] gap-4">
       <div
         class="
-          grid grid-cols-3 gap-2
+          grid auto-rows-min grid-cols-3 gap-2
           2xl:grid-cols-2
         "
       >
-        <template v-for="item in findedItemsA" :key="item.id">
+        <template v-for="item in findedItemsA" :key="`${item.id}-${item.group}`">
           <slot name="item" v-bind="item.original" />
         </template>
       </div>
@@ -204,11 +204,11 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
 
       <div
         class="
-          grid grid-cols-3 gap-2
+          grid auto-rows-min grid-cols-3 gap-2
           2xl:grid-cols-2
         "
       >
-        <template v-for="item in findedItemsB" :key="item.id">
+        <template v-for="item in findedItemsB" :key="`${item.id}-${item.group}`">
           <slot name="item" v-bind="item.original" />
         </template>
       </div>

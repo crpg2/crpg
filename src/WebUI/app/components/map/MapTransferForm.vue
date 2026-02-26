@@ -220,6 +220,15 @@ const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsR
             </template>
           </ItemCard>
 
+          <!-- TODO: -->
+          <UInputNumber
+            :min="0"
+            :max="itemStack.count"
+            :model-value="offerModel.items[itemStack.item.id] || 0"
+            :readonly
+            class="w-full"
+            @update:model-value="(count) => { offerModel.items[itemStack.item.id] = count || 0 }"
+          />
           <USlider
             class="px-2"
             :min="0"

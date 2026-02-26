@@ -31,7 +31,7 @@ import { getSettlementItems } from '~/services/strategus/settlement-service'
 const route = useRoute<'strategus-settlement-id-inventory'>()
 const { settlement, refreshSettlement, updateSettlementResources } = useSettlement()
 
-const { settlementItems } = useSettlementItems()
+const { settlementItems, pendingSettlementItems } = useSettlementItems()
 
 const { user } = useUser()
 const { partyState, updateParty } = useParty()
@@ -102,6 +102,7 @@ const troopsInParty = computed(() => maxTroops.value - transferModel.value.troop
 <template>
   <div>
     <MapTransferForm2
+      v-if="!pendingSettlementItems && !loadingPartyItems"
       :from="settlementItems"
       :to="partyItems"
     />
