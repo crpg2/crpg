@@ -641,10 +641,12 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AiChargeHorsebackTargetDistFactor = 1.5f * (3f - meleeLevel);
         props.AiWaitBeforeShootFactor = agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : 1f - 0.5f * equippedItemLevel;
         float equippedItemLevelComplement = 1f - equippedItemLevel;
+        // "leading" a target means aiming ahead of a moving target. https://www.desmos.com/calculator/kjasinbun7
         props.AiRangerLeadErrorMin = -equippedItemLevelComplement * 0.35f;
         props.AiRangerLeadErrorMax = equippedItemLevelComplement * 0.2f;
-        props.AiRangerVerticalErrorMultiplier = equippedItemLevelComplement * 0.1f;
-        props.AiRangerHorizontalErrorMultiplier = equippedItemLevelComplement * ((float)Math.PI / 90f);
+        // Aiming error. https://www.desmos.com/calculator/gxexzx44ax
+        props.AiRangerVerticalErrorMultiplier = equippedItemLevelComplement * 0.15f;
+        props.AiRangerHorizontalErrorMultiplier = equippedItemLevelComplement * 0.05f;
         props.AIAttackOnDecideChance = MathF.Clamp(0.1f * CalculateAIAttackOnDecideMaxValue() * (3f - agent.Defensiveness), 0.05f, 1f);
         props.SetStat(DrivenProperty.UseRealisticBlocking, agent.Controller != AgentControllerType.Player ? 1f : 0f);
         props.AiWeaponFavorMultiplierMelee = 1f;
