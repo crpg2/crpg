@@ -8,6 +8,7 @@ using TaleWorlds.Library;
 using TaleWorlds.ModuleManager;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Network.Messages;
+using TaleWorlds.MountAndBlade.Objects.Siege;
 using TaleWorlds.ObjectSystem;
 
 namespace Crpg.Module.Modes.Dtv;
@@ -18,9 +19,9 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private const int MapDuration = 60 * 120;
 
     private const float UpkeepMultiplier = 0.50f;
-    private const int StonePileRefillTime = 30;
-    private const int LightSiegeWeaponRefillTime = 30;
-    private const int HeavySiegeWeaponRefillTime = 60;
+    private const int BoulderRefillTime = 30;
+    private const int FirePotRefillTime = 60;
+    private const int BallistaRefillTime = 30;
 
     private readonly CrpgRewardServer _rewardServer;
     private readonly CrpgDtvData _dtvData;
@@ -35,9 +36,9 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private int? _vipAgentIndex;
     private MissionTimer? _waveStartTimer;
     private MissionTimer? _endGameTimer;
-    private MissionTimer _stonePilesRefillTimer = null!;
-    private MissionTimer _lightSiegeWeaponRefillTimer = null!;
-    private MissionTimer _heavySiegeWeaponRefillTimer = null!;
+    private MissionTimer _boulderRefillTimer = null!;
+    private MissionTimer _firePotRefillTimer = null!;
+    private MissionTimer _ballistaRefillTimer = null!;
     private MissionTime _currentRoundStartTime;
 
     public CrpgDtvServer(CrpgRewardServer rewardServer)
@@ -65,10 +66,9 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private enum SiegeWeaponTypes
     {
         All = ~0x0,
-        StonePile = 0x1,
-        Ballista = 0x2,
-        Mangonel = 0x4,
-        Trebuchet = 0x8,
+        Boulder = 0x1,
+        FirePot = 0x2,
+        Ballista = 0x4,
     }
 
     public override MultiplayerGameType GetMissionType()
@@ -80,9 +80,9 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     {
         base.AfterStart();
         AddTeams();
-        _stonePilesRefillTimer = new MissionTimer(StonePileRefillTime);
-        _lightSiegeWeaponRefillTimer = new MissionTimer(LightSiegeWeaponRefillTime);
-        _heavySiegeWeaponRefillTimer = new MissionTimer(HeavySiegeWeaponRefillTime);
+        _boulderRefillTimer = new MissionTimer(BoulderRefillTime);
+        _firePotRefillTimer = new MissionTimer(FirePotRefillTime);
+        _ballistaRefillTimer = new MissionTimer(BallistaRefillTime);
     }
 
     public override void OnBehaviorInitialize()
@@ -169,19 +169,19 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
             return;
         }
 
-        if (_stonePilesRefillTimer.Check(true))
+        if (_boulderRefillTimer.Check(true))
         {
-            RefillSiegeWeaponAmmo(SiegeWeaponTypes.StonePile);
+            RefillSiegeWeaponAmmo(SiegeWeaponTypes.Boulder);
         }
 
-        if (_lightSiegeWeaponRefillTimer.Check(true))
+        if (_firePotRefillTimer.Check(true))
+        {
+            RefillSiegeWeaponAmmo(SiegeWeaponTypes.FirePot);
+        }
+
+        if (_ballistaRefillTimer.Check(true))
         {
             RefillSiegeWeaponAmmo(SiegeWeaponTypes.Ballista);
-        }
-
-        if (_heavySiegeWeaponRefillTimer.Check(true))
-        {
-            RefillSiegeWeaponAmmo(SiegeWeaponTypes.Mangonel | SiegeWeaponTypes.Trebuchet);
         }
 
         if (!_gameStarted)
@@ -420,6 +420,9 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
 
     private void RefillSiegeWeaponAmmo(SiegeWeaponTypes types = SiegeWeaponTypes.All)
     {
+        // Boulder: StonePile.GivenItemID == "boulder" or (is Mangonel and not is FireMangonel)
+        // Pot: StonePile.GivenItemID == "pot" or (is Mangonel and not is FireMangonel)
+
         foreach (var usableMachine in Mission.MissionObjects.FindAllWithType<UsableMachine>())
         {
             int ammoCount;
@@ -428,7 +431,8 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
             Func<int, GameNetworkMessage> createNetworkMessage;
             if (usableMachine is StonePile stonePile)
             {
-                if (!types.HasFlag(SiegeWeaponTypes.StonePile))
+                if ((stonePile.GivenItemID != "boulder" || !types.HasFlag(SiegeWeaponTypes.Boulder))
+                    && (stonePile.GivenItemID != "pot" || !types.HasFlag(SiegeWeaponTypes.FirePot)))
                 {
                     continue;
                 }
@@ -440,13 +444,14 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
             }
             else if (usableMachine is RangedSiegeWeapon siegeWeapon)
             {
-                switch (usableMachine)
+                var type = usableMachine.GetType();
+                if ((usableMachine is not Ballista || !types.HasFlag(SiegeWeaponTypes.Ballista))
+                    && (type != typeof(Mangonel) || !types.HasFlag(SiegeWeaponTypes.Boulder))
+                    && (type != typeof(Trebuchet) || !types.HasFlag(SiegeWeaponTypes.Boulder))
+                    && (type != typeof(FireMangonel) || !types.HasFlag(SiegeWeaponTypes.FirePot))
+                    && (type != typeof(FireTrebuchet) || !types.HasFlag(SiegeWeaponTypes.FirePot)))
                 {
-                    case Ballista when !types.HasFlag(SiegeWeaponTypes.Ballista):
-                    // Not even sure Mangonel/Trebuchet have a concept of ammo.
-                    case Mangonel when !types.HasFlag(SiegeWeaponTypes.Mangonel):
-                    case Trebuchet when !types.HasFlag(SiegeWeaponTypes.Trebuchet):
-                        continue;
+                    continue;
                 }
 
                 ammoCount = siegeWeapon.AmmoCount;
