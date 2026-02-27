@@ -1,13 +1,14 @@
 <script setup lang="ts">
+import { useThrottleFn } from '@vueuse/core'
+import { ItemDetail } from '#components'
+
+import type { GroupedCompareItemsResult } from '~/models/item'
 import type { ItemStack } from '~/models/strategus/party'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useItemDetail } from '~/composables/item/use-item-detail'
 
-const {
-  from,
-  to,
-} = defineProps<{
+const { from, to } = defineProps<{
   from: ItemStack[]
   to: ItemStack[]
 }>()
@@ -16,95 +17,103 @@ const emit = defineEmits<{
   submit: [offer: any] // TODO: need a name
 }>()
 
+const itemsById = computed(() => {
+  const record: Record<string, ItemStack['item']> = {}
+
+  for (const stack of [...from, ...to]) {
+    record[stack.item.id] = stack.item
+  }
+
+  return record
+})
+
 interface ItemGroup {
-  item: ItemStack['item']
-  totalCount: number
   initialGroupACount: number
   initialGroupBCount: number
   groupACount: number
   groupBCount: number
+  totalCount: number
 }
 
-function getInitialState() {
-  const itemsMap = new Map<
-    string, // itemId
-    ItemGroup
-  >()
+function getInitialState(): Record<string, ItemGroup> {
+  const itemsMap: Record<string, ItemGroup> = {}
 
   for (const stack of from) {
-    itemsMap.set(stack.item.id, {
-      item: stack.item,
-      totalCount: stack.count,
+    itemsMap[stack.item.id] = {
       initialGroupACount: stack.count,
       initialGroupBCount: 0,
       groupACount: stack.count,
       groupBCount: 0,
-    })
+      totalCount: stack.count,
+    }
   }
 
   for (const stack of to) {
-    const existing = itemsMap.get(stack.item.id)
+    const existing = itemsMap[stack.item.id]
     if (existing) {
-      existing.totalCount += stack.count
       existing.groupBCount += stack.count
+      existing.initialGroupBCount += stack.count
+      existing.totalCount += stack.count
     }
     else {
-      itemsMap.set(stack.item.id, {
-        item: stack.item,
-        totalCount: stack.count,
+      itemsMap[stack.item.id] = {
         groupACount: 0,
         groupBCount: stack.count,
         initialGroupACount: 0,
         initialGroupBCount: stack.count,
-      })
+        totalCount: stack.count,
+      }
     }
   }
 
   return itemsMap
 }
 
-const modelValue = ref(getInitialState())
+const modelValue = shallowRef<Record<string, ItemGroup>>(getInitialState())
 
-const getMaxCount = (itemId: string): number => modelValue.value.get(itemId)!.totalCount
+const _setModelValue = (newValue: Record<string, ItemGroup>) => {
+  modelValue.value = {
+    ...modelValue.value,
+    ...newValue,
+  }
+}
+
+const setModelValue = useThrottleFn(_setModelValue, 30)
+
+const getMaxCount = (itemId: string): number => modelValue.value[itemId]!.totalCount
 
 type Group = 'GroupA' | 'GroupB'
 
 const getValue = (itemId: string, group: Group): number => {
-  const itemGroup = modelValue.value.get(itemId)
+  const itemGroup = modelValue.value[itemId]
   return group === 'GroupA' ? itemGroup!.groupACount : itemGroup!.groupBCount
 }
 
 const setValue = (itemId: string, group: Group, value: number) => {
-  // console.log({ itemId, group, value })
+  const total = modelValue.value[itemId]!.totalCount
+  const isGroupA = group === 'GroupA'
 
-  const itemGroup = modelValue.value.get(itemId)
-
-  if (group === 'GroupA') {
-    itemGroup!.groupACount = value
-    itemGroup!.groupBCount = itemGroup!.totalCount - value
-    return
-  }
-
-  itemGroup!.groupBCount = value
-  itemGroup!.groupACount = itemGroup!.totalCount - value
+  setModelValue({
+    [itemId]: {
+      ...modelValue.value[itemId]!,
+      groupACount: isGroupA ? value : total - value,
+      groupBCount: isGroupA ? total - value : value,
+    },
+  })
 }
 
 const dynamicItems = computed(() => {
   const resultA: ItemStack[] = []
   const resultB: ItemStack[] = []
 
-  for (const itemGroup of modelValue.value.values()) {
+  for (const [itemId, itemGroup] of Object.entries(modelValue.value)) {
+    const item = itemsById.value[itemId]!
+
     if (itemGroup.groupACount > 0) {
-      resultA.push({
-        item: itemGroup.item,
-        count: itemGroup.groupACount,
-      })
+      resultA.push({ item, count: itemGroup.groupACount })
     }
     if (itemGroup.groupBCount > 0) {
-      resultB.push({
-        item: itemGroup.item,
-        count: itemGroup.groupBCount,
-      })
+      resultB.push({ item, count: itemGroup.groupBCount })
     }
   }
 
@@ -115,14 +124,6 @@ interface PublicApi {
   submit: () => void
 }
 
-const onSubmit = () => {
-
-}
-
-defineExpose<PublicApi>({
-  submit: onSubmit,
-})
-
 const sortingConfig: SortingConfig = {
   rank_desc: { field: 'rank', order: 'desc' },
   type_asc: { field: 'type', order: 'asc' },
@@ -132,12 +133,61 @@ const sortingConfig: SortingConfig = {
 const sortingModel = ref<string>('rank_desc')
 
 const { toggleItemDetail } = useItemDetail()
+
+const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsResult: GroupedCompareItemsResult[]) => {
+  const item = itemsById.value[opendeItem.id]!
+
+  if (!item) {
+    return null
+  }
+
+  return h(ItemDetail, {
+    item,
+    compareResult: compareItemsResult.find(cr => cr.type === item.type)?.compareResult,
+  })
+}
+
+const onTransferAllToGroup = (group: Group) => {
+  setModelValue(
+    Object.entries(modelValue.value)
+      .reduce((acc, [itemId, itemGroup]) => {
+        acc[itemId] = {
+          ...itemGroup,
+          groupACount: group === 'GroupA' ? itemGroup.totalCount : 0,
+          groupBCount: group === 'GroupB' ? itemGroup.totalCount : 0,
+        }
+        return acc
+      }, {} as Record<string, ItemGroup>),
+  )
+
+  // for (const [itemId, itemGroup] of Object.entries(modelValue.value)) {
+  //   newState[itemId] = {
+  //     ...itemGroup,
+  //     groupACount: group === 'GroupA' ? itemGroup.totalCount : 0,
+  //     groupBCount: group === 'GroupB' ? itemGroup.totalCount : 0,
+  //   }
+  // }
+
+  // modelValue.value = newState
+}
+
+const onReset = () => {
+  modelValue.value = getInitialState()
+}
+
+const onSubmit = () => {
+
+}
+
+defineExpose<PublicApi>({
+  submit: onSubmit,
+})
 </script>
 
 <template>
   <UCard
     :ui="{
-      header: 'grid grid-cols-2 gap-4',
+      footer: 'flex flex-row justify-end gap-4',
     }"
   >
     <ItemGridTest
@@ -145,46 +195,60 @@ const { toggleItemDetail } = useItemDetail()
       :items-a="dynamicItems.resultA"
       :items-b="dynamicItems.resultB"
       :sorting-config="sortingConfig"
-      size="md"
     >
       <template #item="itemGroup">
-        <div class="flex flex-col">
-          <ItemCard
-            class="cursor-pointer"
-            :item="itemGroup.item"
-            @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, itemGroup.item.id)"
+        <ItemStackInput
+          :item="itemGroup.item"
+          :max="getMaxCount(itemGroup.item.id)"
+          :model-value="getValue(itemGroup.item.id, itemGroup.group)"
+          @update:model-value="(count) => setValue(itemGroup.item.id, itemGroup.group, count)"
+          @toggle-item-detail="toggleItemDetail"
+        />
+      </template>
+
+      <template #item-detail="{ item, compareItemsResult }">
+        <component :is="renderItemDetail(item, compareItemsResult)" />
+      </template>
+
+      <template #left-side-header>
+        <div class="mb-2 flex justify-end">
+          <UButton
+            color="neutral"
+            trailing-icon="i-lucide-chevrons-right"
+            variant="link"
+            label="Transfer all"
+            @click="onTransferAllToGroup('GroupB')"
           />
-          <UInputNumber
-            class="w-full"
-            :min="0"
-            :max="getMaxCount(itemGroup.item.id)"
-            :model-value="getValue(itemGroup.item.id, itemGroup.group)"
-            @update:model-value="(count) => {
-              setValue(itemGroup.item.id, itemGroup.group, count as number)
-            }"
-          />
-          <USlider
-            class="px-2"
-            :min="0"
-            :max="getMaxCount(itemGroup.item.id)"
-            :model-value="getValue(itemGroup.item.id, itemGroup.group)"
-            @update:model-value="(count) => {
-              setValue(itemGroup.item.id, itemGroup.group, count as number)
-            }"
+        </div>
+      </template>
+      <template #right-side-header>
+        <div class="mb-2 flex">
+          <UButton
+            color="neutral"
+            icon="i-lucide-chevrons-left"
+            variant="link"
+            label="Transfer all"
+            @click="onTransferAllToGroup('GroupA')"
           />
         </div>
       </template>
     </ItemGridTest>
 
-    <!-- <pre>
-      {{ [...modelValue].map(([id, val]) => ({
-        id,
-          groupACount: val.groupACount,
-          groupBCount: val.groupBCount,
-          initialGroupACount: val.initialGroupACount,
-          initialGroupBCount: val.initialGroupBCount,
-          totalCount: val.totalCount,
-      })) }}
-    </pre> -->
+    <template #footer>
+      <UButton
+        :label="$t('action.reset')"
+        block
+        color="neutral"
+        variant="soft"
+        @click="onReset"
+      />
+      <UButton
+        :label="$t('action.submit')"
+        block
+        color="primary"
+        variant="soft"
+        @click="onSubmit"
+      />
+    </template>
   </UCard>
 </template>

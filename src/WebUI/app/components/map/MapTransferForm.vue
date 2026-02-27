@@ -115,7 +115,7 @@ const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsR
   // TODO: stack item detail
   return h(ItemDetail, {
     item: stackItem.item,
-    compareResult: compareItemsResult,
+    compareResult: compareItemsResult.find(cr => cr.type === stackItem.item.type)?.compareResult,
   })
 }
 </script>

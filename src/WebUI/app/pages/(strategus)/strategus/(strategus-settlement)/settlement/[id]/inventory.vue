@@ -101,13 +101,35 @@ const troopsInParty = computed(() => maxTroops.value - transferModel.value.troop
 
 <template>
   <div>
+    <ItemGrid
+      v-model:sorting="sortingModel"
+      :sorting-config="sortingConfig"
+      :items="settlementItems"
+    >
+      <template #item="battleItem">
+        <ItemCard
+          class="cursor-pointer"
+          :item="battleItem.item"
+          @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, battleItem.item.id)"
+        >
+          <template #badges-bottom-right>
+            <UBadge :label="$n(battleItem.count)" variant="subtle" @click.stop />
+          </template>
+        </ItemCard>
+      </template>
+
+      <template #item-detail="{ item, compareItemsResult }">
+        <component :is="renderItemDetail(item, compareItemsResult)" />
+      </template>
+    </ItemGrid>
+
     <MapTransferForm2
       v-if="!pendingSettlementItems && !loadingPartyItems"
       :from="settlementItems"
       :to="partyItems"
     />
 
-    <!-- <div class="mx-auto mt-8 max-w-2xl">
+    <div class="">
       <UiCard
         :ui="{
           footer: 'flex justify-end gap-2',
@@ -184,40 +206,21 @@ const troopsInParty = computed(() => maxTroops.value - transferModel.value.troop
 
         <template #footer>
           <UButton
-            label="Reset"
-            variant="subtle"
+            :label="$t('action.reset')"
+            block
+            variant="soft"
+            color="neutral"
             @click="resetTransferModel"
           />
           <UButton
-            label="Submit"
+            :label="$t('action.submit')"
+            block
+            variant="soft"
             :loading="submittingTransferModel"
             @click="submitTransferModel"
           />
         </template>
       </UiCard>
     </div>
-
-    <ItemGrid
-      v-model:sorting="sortingModel"
-      class="mx-auto max-w-2xl"
-      :sorting-config="sortingConfig"
-      :items="settlementItems"
-    >
-      <template #item="battleItem">
-        <ItemCard
-          class="cursor-pointer"
-          :item="battleItem.item"
-          @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, battleItem.item.id)"
-        >
-          <template #badges-bottom-right>
-            <UBadge :label="$n(battleItem.count)" variant="subtle" @click.stop />
-          </template>
-        </ItemCard>
-      </template>
-
-      <template #item-detail="{ item, compareItemsResult }">
-        <component :is="renderItemDetail(item, compareItemsResult)" />
-      </template>
-    </ItemGrid> -->
   </div>
 </template>

@@ -158,6 +158,7 @@ action:
   collapse: Свернуть
   find: Найти
   reset: Сбросить
+  submit: Принять
   refresh: Обновить | Обновите
   commit: Сохранить
   sort: Сортировать

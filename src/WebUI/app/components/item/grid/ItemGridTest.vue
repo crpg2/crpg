@@ -3,7 +3,7 @@ import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState } from '@tanstack/vue-table'
 import type { ValueOf } from 'type-fest'
 
-import { functionalUpdate, getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useVueTable } from '@tanstack/vue-table'
+import { getCoreRowModel, getFilteredRowModel, getSortedRowModel, useVueTable } from '@tanstack/vue-table'
 
 import type { GroupedCompareItemsResult, Item, ItemType } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
@@ -19,13 +19,11 @@ import { extractItem, getCompareItemsResult, groupItemsByTypeAndWeaponClass } fr
 
 const {
   sortingConfig,
-  // items,
   itemsA,
   itemsB,
   loading = false,
   size = 'xl',
 } = defineProps<{
-  // items: T[]
   itemsA: T[]
   itemsB: T[]
   sortingConfig: SortingConfig
@@ -134,7 +132,6 @@ const { isOpen } = useItemDetail()
 
 const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
   return groupItemsByTypeAndWeaponClass(
-    // TODO: ....
     // find the open items
     createItemIndex(items.value.filter(wrapper => isOpen(wrapper.item.id))
       .map(extractItem)),
@@ -178,17 +175,24 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
       </div>
     </div>
 
-    <div v-if="items.length" class="grid grid-cols-[1fr_auto_1fr] gap-4">
-      <div
-        class="
-          grid auto-rows-min grid-cols-3 gap-2
-          2xl:grid-cols-2
-        "
-      >
-        <template v-for="item in findedItemsA" :key="`${item.id}-${item.group}`">
-          <slot name="item" v-bind="item.original" />
-        </template>
+    <div class="grid grid-cols-[1fr_auto_1fr] gap-4">
+      <div v-if="findedItemsA.length">
+        <slot name="left-side-header" />
+        <div
+          class="
+            grid auto-rows-min grid-cols-3 gap-2
+            2xl:grid-cols-2
+          "
+        >
+          <TransitionGroup name="item-card" tag="div" class="contents">
+            <template v-for="item in findedItemsA" :key="item.original.item.id">
+              <slot name="item" v-bind="item.original" />
+            </template>
+          </TransitionGroup>
+        </div>
       </div>
+
+      <UiResultNotFound v-else :message="$t('character.inventory.empty')" />
 
       <div
         class="sticky top-0"
@@ -202,21 +206,28 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
         />
       </div>
 
-      <div
-        class="
-          grid auto-rows-min grid-cols-3 gap-2
-          2xl:grid-cols-2
-        "
-      >
-        <template v-for="item in findedItemsB" :key="`${item.id}-${item.group}`">
-          <slot name="item" v-bind="item.original" />
-        </template>
+      <div v-if="findedItemsB.length">
+        <slot name="right-side-header" />
+        <div
+          class="
+            grid auto-rows-min grid-cols-3 gap-2
+            2xl:grid-cols-2
+          "
+        >
+          <TransitionGroup name="item-card" tag="div" class="contents">
+            <template v-for="item in findedItemsB" :key="item.original.item.id">
+              <slot name="item" v-bind="item.original" />
+            </template>
+          </TransitionGroup>
+        </div>
       </div>
+      <UiResultNotFound v-else :message="$t('character.inventory.empty')" />
     </div>
 
-    <UCard v-else-if="!loading">
+    <!-- TODO: -->
+    <!-- <UCard v-else-if="!loading">
       <UiResultNotFound :message="$t('character.inventory.empty')" />
-    </UCard>
+    </UCard> -->
 
     <ItemDetailGroup>
       <template #default="item">
@@ -225,3 +236,17 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
     </ItemDetailGroup>
   </div>
 </template>
+
+<!-- TODO: to reusable component -->
+<style>
+.item-card-enter-active {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.item-card-leave-active {
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 1, 1), transform 0.25s cubic-bezier(0.4, 0, 1, 1);
+}
+.item-card-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
+}
+</style>
