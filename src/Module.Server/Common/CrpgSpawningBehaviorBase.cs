@@ -269,7 +269,7 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
             {
                 MultiplayerClassDivisions.MPHeroClass botClass = MultiplayerClassDivisions
                     .GetMPHeroClasses()
-                    .GetRandomElementWithPredicate<MultiplayerClassDivisions.MPHeroClass>(x => x.StringId.StartsWith("crpg_bot_"));
+                    .GetRandomElementWithPredicate<MultiplayerClassDivisions.MPHeroClass>(x => x.StringId.StartsWith("crpg_dtv_recruit_archer"));
                 SpawnBotAgent(botClass.StringId, team, isInitialSpawn: isInitialSpawn);
             }
         }
