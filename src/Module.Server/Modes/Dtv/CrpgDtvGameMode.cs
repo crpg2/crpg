@@ -119,6 +119,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new CrpgCommanderBehaviorClient(),
                 new AmmoQuiverChangeBehaviorClient(),
                 new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
+                new CrpgDtvStuckBotHighlighter(dtvClient),
 #endif
                 dtvClient,
                 new MultiplayerTimerComponent(), // round timer
@@ -148,7 +149,6 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new MultiplayerAdminComponent(), // admin UI to kick player or restart game
                 new CrpgUserManagerServer(crpgClient, _constants),
                 new KickInactiveBehavior(inactiveTimeLimit: 120, warmupComponent),
-                new KillStuckBotBehavior((m, a) => a.Team == m.AttackerTeam),
                 new MapPoolComponent(),
                 new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),
                 new ServerMetricsBehavior(),
