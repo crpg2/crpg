@@ -57,11 +57,12 @@ public class SettlementsController : BaseController
     }
 
     /// <summary>
-    /// Give (position count) or take (negative count) garrison items from a settlement.
+    /// Give (positive count) or take (negative count) garrison items from a settlement.
+    /// Multiple items can be transferred in a single batch operation.
     /// </summary>
     [HttpPut("{settlementId}/items")]
-    public Task<ActionResult<Result<ItemStack>>> UpdateSettlementItems([FromRoute] int settlementId,
-        [FromBody] AddSettlementItemCommand req)
+    public Task<ActionResult<Result<ItemStack[]>>> UpdateSettlementItems([FromRoute] int settlementId,
+        [FromBody] UpdateSettlementItemsCommand req)
     {
         req = req with { PartyId = CurrentUser.User!.Id, SettlementId = settlementId };
         return ResultToActionAsync(Mediator.Send(req));

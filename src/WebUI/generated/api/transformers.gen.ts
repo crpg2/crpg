@@ -368,8 +368,15 @@ export const getSettlementsBySettlementIdItemsResponseTransformer = async (data:
     return data;
 };
 
+const itemStackArrayResultSchemaResponseTransformer = (data: any) => {
+    if (data.data) {
+        data.data = data.data.map((item: any) => itemStackSchemaResponseTransformer(item));
+    }
+    return data;
+};
+
 export const putSettlementsBySettlementIdItemsResponseTransformer = async (data: any): Promise<PutSettlementsBySettlementIdItemsResponse> => {
-    data = itemStackResultSchemaResponseTransformer(data);
+    data = itemStackArrayResultSchemaResponseTransformer(data);
     return data;
 };
 

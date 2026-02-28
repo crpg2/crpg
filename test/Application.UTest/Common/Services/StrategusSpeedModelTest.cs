@@ -1,6 +1,8 @@
 ﻿using Crpg.Application.Common.Services;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Parties;
+using Crpg.Domain.Entities.Terrains;
+using Moq;
 using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Common.Services;
@@ -13,25 +15,26 @@ public class StrategusSpeedModelTest
         Party party1 = new()
         {
             Troops = 10,
-            Items = new List<PartyItem>
-            {
+            Items =
+            [
                 PartyItemMount(450, 5),
                 PartyItemMount(350, 5),
                 PartyItemMount(250, 5),
-            },
+            ],
         };
         Party party2 = new()
         {
             Troops = 10,
-            Items = new List<PartyItem>
-            {
+            Items =
+            [
                 PartyItemMount(450, 5),
                 PartyItemMount(350, 10),
                 PartyItemMount(250, 10),
-            },
+            ],
         };
-        StrategusSpeedModel speedModel = new();
-        Assert.That(speedModel.ComputePartySpeed(party1), Is.GreaterThanOrEqualTo(speedModel.ComputePartySpeed(party2)));
+        StrategusSpeedModel speedModel = CreateSpeedModel();
+        Assert.That(speedModel.ComputePartySpeed(party1, null).FinalSpeed,
+            Is.GreaterThanOrEqualTo(speedModel.ComputePartySpeed(party2, null).FinalSpeed));
     }
 
     [Test]
@@ -42,20 +45,20 @@ public class StrategusSpeedModelTest
         int slowHorseCount = 50;
         int totalHorseCount = fastHorseCount + mediumSpeedHorseCount + slowHorseCount;
         double previousSpeed = double.MaxValue;
-        StrategusSpeedModel speedModel = new();
+        StrategusSpeedModel speedModel = CreateSpeedModel();
         for (int troops = 10; troops <= 1000; troops += 10)
         {
             Party party = new()
             {
                 Troops = troops,
-                Items = new List<PartyItem>
-                {
+                Items =
+                [
                     PartyItemMount(450, fastHorseCount),
                     PartyItemMount(350, mediumSpeedHorseCount),
                     PartyItemMount(250, slowHorseCount),
-                },
+                ],
             };
-            double speed = speedModel.ComputePartySpeed(party);
+            double speed = speedModel.ComputePartySpeed(party, null).FinalSpeed;
             if (troops < totalHorseCount)
             {
                 /*
@@ -85,26 +88,63 @@ public class StrategusSpeedModelTest
     public void BuyingMountsShouldIncreaseSpeed()
     {
         double previousSpeed = 0;
-        StrategusSpeedModel speedModel = new();
+        StrategusSpeedModel speedModel = CreateSpeedModel();
         for (int mountCountFactor = 1; mountCountFactor <= 100; mountCountFactor++)
         {
             Party party = new()
             {
                 Troops = 1000,
-                Items = new List<PartyItem>
-                {
+                Items =
+                [
                     PartyItemMount(450, 6 * mountCountFactor),
                     PartyItemMount(350, 2 * mountCountFactor),
                     PartyItemMount(250, 2 * mountCountFactor),
-                },
+                ],
             };
-            double speed = speedModel.ComputePartySpeed(party);
+            double speed = speedModel.ComputePartySpeed(party, null).FinalSpeed;
             Assert.That(speed, Is.GreaterThan(previousSpeed));
             previousSpeed = speed;
         }
     }
 
-    private PartyItem PartyItemMount(int hitPoints, int count)
+    [Test]
+    public void IdenticalTroopsWithDifferentTerrainShouldHaveDifferentSpeed()
+    {
+        Party party = new()
+        {
+            Troops = 100,
+            Items =
+            [
+                PartyItemMount(450, 50),
+                PartyItemMount(350, 30),
+                PartyItemMount(250, 20),
+            ],
+        };
+        StrategusSpeedModel speedModel = CreateSpeedModelWithTerrainMultipliers();
+        double plainSpeed = speedModel.ComputePartySpeed(party, TerrainType.Plain).FinalSpeed;
+        double thickForestSpeed = speedModel.ComputePartySpeed(party, TerrainType.ThickForest).FinalSpeed;
+
+        Assert.That(plainSpeed, Is.GreaterThan(thickForestSpeed));
+    }
+
+    private static StrategusSpeedModel CreateSpeedModel()
+    {
+        var mockRouting = new Mock<IStrategusRouting>();
+        mockRouting.Setup(m => m.GetTerrainSpeedMultiplier(It.IsAny<TerrainType?>()))
+            .Returns(1.0);
+        return new StrategusSpeedModel(mockRouting.Object);
+    }
+
+    private static StrategusSpeedModel CreateSpeedModelWithTerrainMultipliers()
+    {
+        var mockRouting = new Mock<IStrategusRouting>();
+        mockRouting.Setup(m => m.GetTerrainSpeedMultiplier(TerrainType.Plain)).Returns(1.0);
+        mockRouting.Setup(m => m.GetTerrainSpeedMultiplier(TerrainType.ThickForest)).Returns(0.5);
+        mockRouting.Setup(m => m.GetTerrainSpeedMultiplier(null)).Returns(1.0);
+        return new StrategusSpeedModel(mockRouting.Object);
+    }
+
+    private static PartyItem PartyItemMount(int hitPoints, int count)
     {
         return new()
         {

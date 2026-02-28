@@ -7,7 +7,7 @@ import {
   putSettlementsBySettlementIdItems,
 } from '#api/sdk.gen'
 
-import type { ItemStack } from '~/models/strategus/party'
+import type { ItemStack, ItemStackUpdate } from '~/models/strategus/party'
 import type { SettlementPublic, SettlementType } from '~/models/strategus/settlement'
 
 import { SETTLEMENT_TYPE } from '~/models/strategus/settlement'
@@ -26,7 +26,10 @@ export const getSettlementItems = async (settlementId: number): Promise<ItemStac
 
 export const updateSettlementResources = async (settlementId: number, troops: number): Promise<SettlementPublic> => (await putSettlementsBySettlementId({
   path: { settlementId },
-  body: {
-    troops,
-  },
+  body: { troops },
 })).data!
+
+export const updateSettlementItems = async (settlementId: number, items: ItemStackUpdate[]) => putSettlementsBySettlementIdItems({
+  path: { settlementId },
+  body: { items },
+})

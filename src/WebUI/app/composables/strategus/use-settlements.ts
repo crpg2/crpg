@@ -4,11 +4,18 @@ import type { LatLngBounds, Map } from 'leaflet'
 
 import { toValue } from 'vue'
 
+import type { ItemStackUpdate } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 
 import { SETTLEMENT_QUERY_KEYS } from '~/queries'
 import { shouldDisplaySettlement } from '~/services/strategus/map-service'
-import { updateSettlementResources as _updateSettlementResources, getSettlement, getSettlementItems, getSettlements } from '~/services/strategus/settlement-service'
+import {
+  updateSettlementItems as _updateSettlementItems,
+  updateSettlementResources as _updateSettlementResources,
+  getSettlement,
+  getSettlementItems,
+  getSettlements,
+} from '~/services/strategus/settlement-service'
 import { positionToLatLng } from '~/utils/geometry'
 
 export const useSettlements = (
@@ -85,6 +92,7 @@ export const useSettlementItems = () => {
   const {
     data: settlementItems,
     pending: pendingSettlementItems,
+    refresh: loadSettlementItems,
   } = useAsyncData(
     toCacheKey(SETTLEMENT_QUERY_KEYS.items(settlement.value.id)),
     () => getSettlementItems(settlement.value.id),
@@ -93,8 +101,12 @@ export const useSettlementItems = () => {
     },
   )
 
+  const updateSettlementItems = (items: ItemStackUpdate[]) => _updateSettlementItems(settlement.value.id, items)
+
   return {
     settlementItems,
     pendingSettlementItems,
+    loadSettlementItems,
+    updateSettlementItems,
   }
 }

@@ -3,7 +3,7 @@ import { useThrottleFn } from '@vueuse/core'
 import { ItemDetail } from '#components'
 
 import type { GroupedCompareItemsResult } from '~/models/item'
-import type { ItemStack } from '~/models/strategus/party'
+import type { ItemStack, ItemStackUpdate } from '~/models/strategus/party'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useItemDetail } from '~/composables/item/use-item-detail'
@@ -14,7 +14,7 @@ const { from, to } = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  submit: [offer: any] // TODO: need a name
+  submit: [items: ItemStackUpdate[]]
 }>()
 
 const itemsById = computed(() => {
@@ -159,16 +159,6 @@ const onTransferAllToGroup = (group: Group) => {
         return acc
       }, {} as Record<string, ItemGroup>),
   )
-
-  // for (const [itemId, itemGroup] of Object.entries(modelValue.value)) {
-  //   newState[itemId] = {
-  //     ...itemGroup,
-  //     groupACount: group === 'GroupA' ? itemGroup.totalCount : 0,
-  //     groupBCount: group === 'GroupB' ? itemGroup.totalCount : 0,
-  //   }
-  // }
-
-  // modelValue.value = newState
 }
 
 const onReset = () => {
@@ -176,7 +166,13 @@ const onReset = () => {
 }
 
 const onSubmit = () => {
-
+  emit('submit', Object.entries(modelValue.value)
+    // only changed items
+    .filter(([_, itemGroup]) => itemGroup.groupACount !== itemGroup.initialGroupACount)
+    .map(([itemId, itemGroup]) => ({
+      itemId,
+      count: itemGroup.groupACount - itemGroup.initialGroupACount,
+    })))
 }
 
 defineExpose<PublicApi>({
@@ -216,6 +212,7 @@ defineExpose<PublicApi>({
             color="neutral"
             trailing-icon="i-lucide-chevrons-right"
             variant="link"
+            size="sm"
             label="Transfer all"
             @click="onTransferAllToGroup('GroupB')"
           />
@@ -227,6 +224,7 @@ defineExpose<PublicApi>({
             color="neutral"
             icon="i-lucide-chevrons-left"
             variant="link"
+            size="sm"
             label="Transfer all"
             @click="onTransferAllToGroup('GroupA')"
           />

@@ -49,6 +49,8 @@ public enum ErrorCode
     NotEnoughHeirloomPoints,
     NotEnoughSkillPoints,
     NotEnoughWeaponProficiencyPoints,
+    PartyNotEnoughItems,
+    SettlementNotEnoughItems,
     PartiesNotOnTheSameSide,
     PendingBattleFighterApplicationNotExist,
     PartyFighter,

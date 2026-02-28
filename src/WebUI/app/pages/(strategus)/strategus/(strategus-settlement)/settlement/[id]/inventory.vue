@@ -3,7 +3,7 @@ import { ItemDetail } from '#components'
 import { strategusMinPartyTroops } from '~root/data/constants.json'
 
 import type { GroupedCompareItemsResult, Item } from '~/models/item'
-import type { PartyPublic } from '~/models/strategus/party'
+import type { ItemStackUpdate, PartyPublic } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 import type { SortingConfig } from '~/services/item-search-service'
 
@@ -29,9 +29,14 @@ import { getSettlementItems } from '~/services/strategus/settlement-service'
 // })
 
 const route = useRoute<'strategus-settlement-id-inventory'>()
-const { settlement, refreshSettlement, updateSettlementResources } = useSettlement()
+const {
+  settlement,
+  refreshSettlement,
+  updateSettlementResources,
 
-const { settlementItems, pendingSettlementItems } = useSettlementItems()
+} = useSettlement()
+
+const { settlementItems, pendingSettlementItems, loadSettlementItems, updateSettlementItems } = useSettlementItems()
 
 const { user } = useUser()
 const { partyState, updateParty } = useParty()
@@ -97,6 +102,15 @@ const [submitTransferModel, submittingTransferModel] = useAsyncCallback(async ()
 
 const troopsInSettlement = computed(() => transferModel.value.troops)
 const troopsInParty = computed(() => maxTroops.value - transferModel.value.troops)
+
+const [submitItemsTransferModel, submittingItemsTransferModel] = useAsyncCallback(async (items: ItemStackUpdate[]) => {
+  await updateSettlementItems(items)
+
+  await Promise.all([
+    loadSettlementItems(),
+    loadpartyItems(),
+  ])
+})
 </script>
 
 <template>
@@ -127,6 +141,7 @@ const troopsInParty = computed(() => maxTroops.value - transferModel.value.troop
       v-if="!pendingSettlementItems && !loadingPartyItems"
       :from="settlementItems"
       :to="partyItems"
+      @submit="submitItemsTransferModel"
     />
 
     <div class="">

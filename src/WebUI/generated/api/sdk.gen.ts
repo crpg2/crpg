@@ -705,7 +705,8 @@ export const getSettlementsBySettlementIdItems = <TComposable extends Composable
 });
 
 /**
- * Give (position count) or take (negative count) garrison items from a settlement.
+ * Give (positive count) or take (negative count) garrison items from a settlement.
+ * Multiple items can be transferred in a single batch operation.
  */
 export const putSettlementsBySettlementIdItems = <TComposable extends Composable = '$fetch', DefaultT extends PutSettlementsBySettlementIdItemsResponse = PutSettlementsBySettlementIdItemsResponse>(options: Options<TComposable, PutSettlementsBySettlementIdItemsData, PutSettlementsBySettlementIdItemsResponse, DefaultT>) => (options.client ?? client).put<TComposable, PutSettlementsBySettlementIdItemsResponse | DefaultT, unknown, DefaultT>({
     responseTransformer: putSettlementsBySettlementIdItemsResponseTransformer,
