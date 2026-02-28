@@ -182,6 +182,8 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
         spawnComponent.SetNewSpawnFrameBehavior(spawnFrame);
         spawnComponent.SetNewSpawningBehavior(spawning);
 
+        // Note that compared to native, CheckForWarmupEnd is called instead of CanMatchStartAfterWarmup (checking
+        // whether a player is present in both teams). What's the point of CheckForWarmupEnd if it's ignored here TW?
         if (!GameModeReflection.CheckForWarmupEnd())
         {
             LobbyComponentReflection.SetStateEndingAsServer();
