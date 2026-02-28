@@ -96,14 +96,14 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
         Game.Current.GetGameHandler<ChatCommandsComponent>()?.InitChatCommands(crpgClient);
         ChatBox chatBox = Game.Current.GetGameHandler<ChatBox>();
 
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, () =>
+        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, lobbyComponent, () =>
             (new FlagDominationSpawnFrameBehavior(),
             new CrpgDtvSpawningBehavior(_constants)));
         CrpgTeamSelectServerComponent teamSelectComponent = new(warmupComponent, null, MultiplayerGameType.Siege);
         CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: true, enableRating: false, enableLowPopulationUpkeep: true);
         CrpgDtvSpawningBehavior spawnBehaviour = new(_constants);
 #else
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, null);
+        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, lobbyComponent, null);
         CrpgTeamSelectClientComponent teamSelectComponent = new();
 #endif
         CrpgDtvClient dtvClient = new();

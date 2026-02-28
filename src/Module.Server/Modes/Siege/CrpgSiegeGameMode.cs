@@ -83,11 +83,11 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
         ICrpgClient crpgClient = CrpgClient.Create();
         Game.Current.GetGameHandler<ChatCommandsComponent>()?.InitChatCommands(crpgClient);
         ChatBox chatBox = Game.Current.GetGameHandler<ChatBox>();
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent,
+        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, lobbyComponent,
             () => (new SiegeSpawnFrameBehavior(), new CrpgSiegeSpawningBehavior(_constants)));
         CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: false, enableRating: false);
 #else
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, null);
+        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, lobbyComponent, null);
 #endif
 
         MissionState.OpenNew(GameName,

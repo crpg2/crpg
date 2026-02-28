@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using Crpg.Module.Common;
 using Crpg.Module.Helpers;
 using Crpg.Module.Modes.Battle;
@@ -18,8 +18,8 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
 {
     private const float WarmupRewardTimer = 30f;
 
-    private static readonly FieldInfo WarmupStateField = typeof(MultiplayerWarmupComponent)
-        .GetField("_warmupState", BindingFlags.NonPublic | BindingFlags.Instance)!;
+    private static readonly PropertyInfo WarmupStateProperty = typeof(MultiplayerWarmupComponent)
+        .GetProperty("WarmupState", BindingFlags.NonPublic | BindingFlags.Instance)!;
     private static readonly FieldInfo TimerComponentField = typeof(MultiplayerWarmupComponent)
         .GetField("_timerComponent", BindingFlags.NonPublic | BindingFlags.Instance)!;
     private static readonly FieldInfo GameModeField = typeof(MultiplayerWarmupComponent)
@@ -27,36 +27,30 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
 
     private readonly CrpgConstants _constants;
     private readonly MultiplayerGameNotificationsComponent _notificationsComponent;
+    private readonly MissionLobbyComponent _lobbyComponent;
     private readonly Func<(SpawnFrameBehaviorBase, SpawningBehaviorBase)>? _createSpawnBehaviors;
+    private readonly List<MissionPeer> _players;
     private MissionTimer? _rewardTickTimer;
-    private MissionTime _currentStateStartTime;
-    private List<MissionPeer> _players = new();
-    public event Action<float> OnWarmupRewardTick = null!;
-    public event Action<int> OnUpdatePlayerCount = null!;
+
+    public event Action<float>? OnWarmupRewardTick;
+    public event Action<int>? OnUpdatePlayerCount;
 
     public CrpgWarmupComponent(CrpgConstants constants,
         MultiplayerGameNotificationsComponent notificationsComponent,
+        MissionLobbyComponent lobbyComponent,
         Func<(SpawnFrameBehaviorBase, SpawningBehaviorBase)>? createSpawnBehaviors)
     {
         _constants = constants;
         _notificationsComponent = notificationsComponent;
+        _lobbyComponent = lobbyComponent;
         _createSpawnBehaviors = createSpawnBehaviors;
+        _players = [];
     }
 
     private WarmupStates WarmupStateReflection
     {
-        get => (WarmupStates)WarmupStateField.GetValue(this)!;
-        set
-        {
-            WarmupStateField.SetValue(this, value);
-            if (GameNetwork.IsServer)
-            {
-                _currentStateStartTime = MissionTime.Now;
-                GameNetwork.BeginBroadcastModuleEvent();
-                GameNetwork.WriteMessage(new WarmupStateChange(WarmupStateReflection, _currentStateStartTime.NumberOfTicks));
-                GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
-            }
-        }
+        get => (WarmupStates)WarmupStateProperty.GetValue(this)!;
+        set => WarmupStateProperty.SetValue(this, value);
     }
 
     private MultiplayerTimerComponent TimerComponentReflection => (MultiplayerTimerComponent)TimerComponentField.GetValue(this)!;
@@ -123,44 +117,7 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
         RewardUsers();
     }
 
-    protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
-    {
-        base.AddRemoveMessageHandlers(registerer);
-        registerer.Register<WarmupStateChange>(HandleServerEventWarmupStateChange);
-    }
-
-    protected override void HandleNewClientAfterSynchronized(NetworkCommunicator networkPeer)
-    {
-        if (IsInWarmup && !networkPeer.IsServerPeer)
-        {
-            GameNetwork.BeginModuleEventAsServer(networkPeer);
-            GameNetwork.WriteMessage(new WarmupStateChange(WarmupStateReflection, _currentStateStartTime.NumberOfTicks));
-            GameNetwork.EndModuleEventAsServer();
-        }
-    }
-
-    private void HandleServerEventWarmupStateChange(WarmupStateChange message)
-    {
-        WarmupStateReflection = message.WarmupState;
-        switch (WarmupStateReflection)
-        {
-            case WarmupStates.InProgress:
-                TimerComponentReflection.StartTimerAsClient(message.StateStartTimeInSeconds, TotalWarmupDuration);
-                break;
-            case WarmupStates.Ending:
-                TimerComponentReflection.StartTimerAsClient(message.StateStartTimeInSeconds, 30f);
-                ReflectionHelper.RaiseEvent(this, nameof(OnWarmupEnding), Array.Empty<object>());
-                _notificationsComponent.WarmupEnding();
-                break;
-            case WarmupStates.Ended:
-                TimerComponentReflection.StartTimerAsClient(message.StateStartTimeInSeconds, 3f);
-                ReflectionHelper.RaiseEvent(this, nameof(OnWarmupEnded), Array.Empty<object>());
-                PlayBattleStartingSound();
-                break;
-        }
-    }
-
-    private void HandlePeerTeamChanged(NetworkCommunicator peer, Team oldTeam, Team newTeam)
+    private void HandlePeerTeamChanged(NetworkCommunicator peer, Team? oldTeam, Team? newTeam)
     {
         if (GameNetwork.VirtualPlayers[peer.VirtualPlayer.Index] != peer.VirtualPlayer)
         {
@@ -184,14 +141,14 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
     private void UpdateRemainingPlayers()
     {
         // calculate number of remaining players needed to start game
-        OnUpdatePlayerCount?.Invoke(MathF.Max(MultiplayerOptions.OptionType.MinNumberOfPlayersForMatchStart.GetIntValue() - _players.Count(), 0));
+        OnUpdatePlayerCount?.Invoke(MathF.Max(MultiplayerOptions.OptionType.MinNumberOfPlayersForMatchStart.GetIntValue() - _players.Count, 0));
     }
 
     private void RewardUsers()
     {
         _rewardTickTimer ??= new MissionTimer(duration: WarmupRewardTimer);
         // only set multi and reward players if not enough to start game
-        if (_rewardTickTimer.Check(reset: true) && MultiplayerOptions.OptionType.MinNumberOfPlayersForMatchStart.GetIntValue() - _players.Count() > 0)
+        if (_rewardTickTimer.Check(reset: true) && MultiplayerOptions.OptionType.MinNumberOfPlayersForMatchStart.GetIntValue() - _players.Count > 0)
         {
             OnWarmupRewardTick?.Invoke(_rewardTickTimer.GetTimerDuration());
         }
@@ -218,11 +175,6 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
 
     private void EndWarmup()
     {
-        if (!Mission.GetMissionBehavior<MissionMultiplayerGameModeBase>().CheckForWarmupEnd())
-        {
-            Mission.GetMissionBehavior<MissionLobbyComponent>().SetStateEndingAsServer();
-        }
-
         WarmupStateReflection = WarmupStates.Ended;
         TimerComponentReflection.StartTimerAsServer(3f);
         ReflectionHelper.RaiseEvent(this, nameof(OnWarmupEnded), Array.Empty<object>());
@@ -235,21 +187,10 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
         (SpawnFrameBehaviorBase spawnFrame, SpawningBehaviorBase spawning) = _createSpawnBehaviors!();
         spawnComponent.SetNewSpawnFrameBehavior(spawnFrame);
         spawnComponent.SetNewSpawningBehavior(spawning);
-    }
 
-    private void PlayBattleStartingSound()
-    {
-        MatrixFrame cameraFrame = Mission.Current.GetCameraFrame();
-        Vec3 vec = cameraFrame.origin + cameraFrame.rotation.u;
-        NetworkCommunicator myPeer = GameNetwork.MyPeer;
-        MissionPeer missionPeer = myPeer.GetComponent<MissionPeer>();
-        if (missionPeer?.Team != null)
+        if (!CanMatchStartAfterWarmup())
         {
-            string text = missionPeer.Team.Side == BattleSideEnum.Attacker ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue() : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue();
-            MBSoundEvent.PlaySound(SoundEvent.GetEventIdFromString("event:/alerts/rally/" + text.ToLower()), vec);
-            return;
+            _lobbyComponent.SetStateEndingAsServer();
         }
-
-        MBSoundEvent.PlaySound(SoundEvent.GetEventIdFromString("event:/alerts/rally/generic"), vec);
     }
 }

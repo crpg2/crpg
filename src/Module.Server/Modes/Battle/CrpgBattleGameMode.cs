@@ -126,12 +126,12 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
             MultiplayerGameType.Captain => new CrpgBattleSpawningBehavior(_constants, roundController, _gameType),
             _ => throw new ArgumentException(message: "Invalid game type", paramName: nameof(_gameType)),
         };
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, () =>
+        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, lobbyComponent, () =>
             (new FlagDominationSpawnFrameBehavior(), spawningBehavior));
         CrpgTeamSelectServerComponent teamSelectComponent = new(warmupComponent, roundController, _gameType);
         CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: true, enableRating: true);
 #else
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, null);
+        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, lobbyComponent, null);
         CrpgTeamSelectClientComponent teamSelectComponent = new();
 #endif
         CrpgBattleClient battleClient = new(_gameType);
