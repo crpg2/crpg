@@ -20,6 +20,11 @@
     <def name="thrust_ladder_rot_limit_right" val="57.3" /> <!-- native is 57.3 -->
     <def name="overswing_ladder_rot_limit_left"  val="67.3" />
     <def name="overswing_ladder_rot_limit_right" val="57.3" />
+    <def name="weapon_1h_bash_cooldown" val="2.0" />
+    <def name="weapon_2h_bash_cooldown" val="2.0" />
+    <def name="weapon_spear_bash_cooldown" val="2.0" />
+    <def name="shield_bash_cooldown" val="2.4" />
+    <def name="hand_shield_bash_cooldown" val="2.4" />
 
   </definitions>
 
