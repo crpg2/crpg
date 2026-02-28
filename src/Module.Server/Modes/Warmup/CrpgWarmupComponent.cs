@@ -2,10 +2,7 @@ using System.Reflection;
 using Crpg.Module.Common;
 using Crpg.Module.Helpers;
 using Crpg.Module.Modes.Battle;
-using NetworkMessages.FromServer;
 using TaleWorlds.Core;
-using TaleWorlds.Engine;
-using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using MathF = TaleWorlds.Library.MathF;
 
@@ -22,12 +19,12 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
         .GetProperty("WarmupState", BindingFlags.NonPublic | BindingFlags.Instance)!;
     private static readonly FieldInfo TimerComponentField = typeof(MultiplayerWarmupComponent)
         .GetField("_timerComponent", BindingFlags.NonPublic | BindingFlags.Instance)!;
+    private static readonly FieldInfo LobbyComponentField = typeof(MultiplayerWarmupComponent)
+        .GetField("_lobbyComponent", BindingFlags.NonPublic | BindingFlags.Instance)!;
     private static readonly FieldInfo GameModeField = typeof(MultiplayerWarmupComponent)
         .GetField("_gameMode", BindingFlags.NonPublic | BindingFlags.Instance)!;
 
     private readonly CrpgConstants _constants;
-    private readonly MultiplayerGameNotificationsComponent _notificationsComponent;
-    private readonly MissionLobbyComponent _lobbyComponent;
     private readonly Func<(SpawnFrameBehaviorBase, SpawningBehaviorBase)>? _createSpawnBehaviors;
     private readonly List<MissionPeer> _players;
     private MissionTimer? _rewardTickTimer;
@@ -36,13 +33,9 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
     public event Action<int>? OnUpdatePlayerCount;
 
     public CrpgWarmupComponent(CrpgConstants constants,
-        MultiplayerGameNotificationsComponent notificationsComponent,
-        MissionLobbyComponent lobbyComponent,
         Func<(SpawnFrameBehaviorBase, SpawningBehaviorBase)>? createSpawnBehaviors)
     {
         _constants = constants;
-        _notificationsComponent = notificationsComponent;
-        _lobbyComponent = lobbyComponent;
         _createSpawnBehaviors = createSpawnBehaviors;
         _players = [];
     }
@@ -54,6 +47,7 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
     }
 
     private MultiplayerTimerComponent TimerComponentReflection => (MultiplayerTimerComponent)TimerComponentField.GetValue(this)!;
+    private MissionLobbyComponent LobbyComponentReflection => (MissionLobbyComponent)LobbyComponentField.GetValue(this)!;
     private MissionMultiplayerGameModeBase GameModeReflection => (MissionMultiplayerGameModeBase)GameModeField.GetValue(this)!;
 
     public override void OnBehaviorInitialize()
@@ -188,9 +182,9 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
         spawnComponent.SetNewSpawnFrameBehavior(spawnFrame);
         spawnComponent.SetNewSpawningBehavior(spawning);
 
-        if (!CanMatchStartAfterWarmup())
+        if (!GameModeReflection.CheckForWarmupEnd())
         {
-            _lobbyComponent.SetStateEndingAsServer();
+            LobbyComponentReflection.SetStateEndingAsServer();
         }
     }
 }
