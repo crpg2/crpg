@@ -91,11 +91,11 @@ dotnet_style_object_initializer = true:warning
 dotnet_style_collection_initializer = true:warning
 dotnet_style_explicit_tuple_names = true:warning
 dotnet_style_coalesce_expression = true:warning
-dotnet_style_null_propagation = true:warning
+dotnet_style_null_propagation = true:silent
 dotnet_style_prefer_is_null_check_over_reference_equality_method = true:warning
 dotnet_style_prefer_inferred_tuple_names = true:warning
 dotnet_style_prefer_inferred_anonymous_type_member_names = true:warning
-dotnet_style_prefer_auto_properties = true:warning
+dotnet_style_prefer_auto_properties = true:silent
 dotnet_style_prefer_conditional_expression_over_assignment = true:warning
 dotnet_style_prefer_conditional_expression_over_return = true:silent
 csharp_prefer_simple_default_expression = true:warning
@@ -200,5 +200,9 @@ end_of_line = lf
 max_line_length = 140
 
 # Harmony needs some __result variables
+
+# IDE0031: Use null propagation
+dotnet_diagnostic.IDE0031.severity = silent
+
 [**/HarmonyPatches/*.cs]
 dotnet_diagnostic.SA1313.severity = none

@@ -37,6 +37,7 @@
                         ImageId="@Id"
                         AdditionalArgs="@AdditionalArgs"
                         ImageTypeCode="@ImageTypeCode"
+                        TextureProviderName="@TextureProviderName"
                         WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
                         SuggestedWidth="130" SuggestedHeight="65"
                         HorizontalAlignment="Center" VerticalAlignment="Center"

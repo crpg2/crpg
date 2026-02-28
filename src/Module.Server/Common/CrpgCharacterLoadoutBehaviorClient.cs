@@ -367,7 +367,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
                         userInventoryItem.IsArmoryItem = true;
                     }
 
-                    LogDebugError($"userItem: {uItemId} already exists in clan armory, updated flags.");
+                    // LogDebugError($"userItem: {uItemId} already exists in clan armory, updated flags.");
                 }
 
                 if (userInventoryItem != null)

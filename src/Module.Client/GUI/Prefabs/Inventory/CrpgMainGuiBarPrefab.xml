@@ -1,4 +1,4 @@
-<Prefab Name="CrpgMainGuiBar">
+<Prefab Name="CrpgMainGuiBarPrefab">
   <Window>
     <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
       <Children>

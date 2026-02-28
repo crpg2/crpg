@@ -9,7 +9,7 @@ namespace Crpg.Module.GUI.Inventory;
 public class EquipmentSlotVM : ViewModel
 {
     internal CrpgCharacterLoadoutBehaviorClient? UserLoadoutBehavior { get; set; }
-    private ImageIdentifierVM? _imageIdentifier;
+    private ItemImageIdentifierVM? _imageIdentifier;
     private CrpgItemSlot _crpgItemSlotIndex;
     private ItemObject? _itemObj;
     private ItemRankIconVM _itemRankIcon;
@@ -47,7 +47,7 @@ public class EquipmentSlotVM : ViewModel
         OnItemDropped?.Invoke(this, draggedItem);
     }
 
-    internal void SetItem(ImageIdentifierVM? newIdentifier, ItemObject? itemObj = null, CrpgUserItemExtended? userItemExtended = null)
+    internal void SetItem(ItemImageIdentifierVM? newIdentifier, ItemObject? itemObj = null, CrpgUserItemExtended? userItemExtended = null)
     {
         ImageIdentifier = newIdentifier;
         ItemObj = itemObj;
@@ -144,7 +144,7 @@ public class EquipmentSlotVM : ViewModel
     public ItemArmoryIconVM? ItemArmoryIcon { get => _itemArmoryIcon; set => SetField(ref _itemArmoryIcon, value, nameof(ItemArmoryIcon)); }
 
     [DataSourceProperty]
-    public ImageIdentifierVM? ImageIdentifier
+    public ItemImageIdentifierVM? ImageIdentifier
     {
         get => _imageIdentifier;
         set

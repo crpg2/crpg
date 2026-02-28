@@ -26,11 +26,11 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
     private static readonly string KeyCategoryId = KeyBinder.Categories.CrpgGeneral.CategoryId;
     private GauntletLayer? _mainGuiLayer;
     private CrpgMainGuiVM? _mainGuiVm;
-    private IGauntletMovie? _mainGuiMovie;
+    private GauntletMovieIdentifier? _mainGuiMovieId;
 
     private GauntletLayer? _characterEquipLayer;
     private CrpgCharacterEquipVM? _characterEquipVm;
-    private IGauntletMovie? _characterEquipMovie;
+    private GauntletMovieIdentifier? _characterEquipMovieId;
     private bool _characterEquipOpenedFromMainGui = false;
 
     BindedKeyCategory IUseKeyBinder.BindedKeys => new()
@@ -63,7 +63,7 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
             _mainGuiVm = new CrpgMainGuiVM();
             _mainGuiVm.OpenCharacterEquipRequested += reason => ToggleCharacterEquip(reason);
             _mainGuiLayer = new GauntletLayer("main", 100);
-            _mainGuiMovie = (IGauntletMovie?)_mainGuiLayer.LoadMovie("CrpgMainGuiBarPrefab", _mainGuiVm);
+            _mainGuiMovieId = _mainGuiLayer.LoadMovie("CrpgMainGuiBarPrefab", _mainGuiVm);
             _mainGuiVm.IsVisible = false;
             MissionScreen.AddLayer(_mainGuiLayer);
         }
@@ -84,8 +84,8 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
             _characterEquipVm.OnCloseButtonClicked -= _onVmCloseHandler;
         }
 
-        DeactivateLayer(ref _characterEquipLayer, ref _characterEquipMovie);
-        DeactivateLayer(ref _mainGuiLayer, ref _mainGuiMovie);
+        DeactivateLayer(ref _characterEquipLayer, ref _characterEquipMovieId);
+        DeactivateLayer(ref _mainGuiLayer, ref _mainGuiMovieId);
     }
 
     public override void EarlyStart()
@@ -244,7 +244,7 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
         // Hide main GUI if it has focus
         HideMainGui();
 
-        ActivateLayer(ref _characterEquipLayer, ref _characterEquipMovie, _characterEquipVm ??= new CrpgCharacterEquipVM(), "CrpgCharacterEquipPrefab", 110);
+        ActivateLayer(ref _characterEquipLayer, ref _characterEquipMovieId, _characterEquipVm ??= new CrpgCharacterEquipVM(), "CrpgCharacterEquipPrefab", 110);
         _characterEquipVm.IsVisible = true;
 
         _characterEquipVm.OnCloseButtonClicked += _onVmCloseHandler;
@@ -306,7 +306,7 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
             }
 
             // Deactivate and remove the layer
-            DeactivateLayer(ref _characterEquipLayer, ref _characterEquipMovie);
+            DeactivateLayer(ref _characterEquipLayer, ref _characterEquipMovieId);
 
             // Reset the flag
             _characterEquipOpenedFromMainGui = false;
@@ -349,7 +349,7 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
     }
 
     // Bring to front/set focus/input settings
-    private void ActivateLayer(ref GauntletLayer? layer, ref IGauntletMovie? movie, ViewModel vm, string prefabName, int layerOrder = 100)
+    private void ActivateLayer(ref GauntletLayer? layer, ref GauntletMovieIdentifier? movieId, ViewModel vm, string prefabName, int layerOrder = 100)
     {
         if (layer == null)
         {
@@ -357,7 +357,7 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
             layer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
             layer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("GenericPanelGameKeyCategory"));
 
-            movie = (IGauntletMovie?)layer.LoadMovie(prefabName, vm);
+            movieId = layer.LoadMovie(prefabName, vm);
 
             if (ScreenManager.TopScreen is MissionScreen missionScreen)
             {
@@ -374,7 +374,7 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
         ScreenManager.TrySetFocus(layer);
     }
 
-    private void DeactivateLayer(ref GauntletLayer? layer, ref IGauntletMovie? movie)
+    private void DeactivateLayer(ref GauntletLayer? layer, ref GauntletMovieIdentifier? movieId)
     {
         if (layer == null)
         {
@@ -389,10 +389,10 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
             ScreenManager.TryLoseFocus(layer);
 
             // Release movie if exists
-            if (movie != null)
+            if (movieId != null)
             {
-                layer.ReleaseMovie((GauntletMovieIdentifier)movie);
-                movie = null;
+                layer.ReleaseMovie(movieId);
+                movieId = null;
             }
 
             // Remove the layer from the screen

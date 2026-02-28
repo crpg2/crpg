@@ -26,7 +26,7 @@ public class ItemInfoVM : ViewModel
     private MBBindingList<ItemInfoTupleVM> _tuples = new();
     private MBBindingList<ItemInfoRowVM> _rows = new();
     private ItemObject? _itemObj;
-    private ItemImageIdentifierVM? _imageIdentifier = default!;
+    private ImageIdentifierVM? _imageIdentifier = default!;
     private ItemRankIconVM? _itemRankIcon;
     private ItemArmoryIconVM? _itemArmoryIcon;
 
@@ -110,7 +110,7 @@ public class ItemInfoVM : ViewModel
     public ItemObject? ItemObj { get => _itemObj; set => SetField(ref _itemObj, value, nameof(ItemObj)); }
 
     [DataSourceProperty]
-    public ItemImageIdentifierVM? ImageIdentifier { get => _imageIdentifier; set => SetField(ref _imageIdentifier, value, nameof(ImageIdentifier)); }
+    public ImageIdentifierVM? ImageIdentifier { get => _imageIdentifier; set => SetField(ref _imageIdentifier, value, nameof(ImageIdentifier)); }
 
     [DataSourceProperty]
     public string Name { get => _name; set => SetField(ref _name, value, nameof(Name)); }
