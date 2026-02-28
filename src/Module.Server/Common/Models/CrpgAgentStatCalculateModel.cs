@@ -641,10 +641,13 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AiChargeHorsebackTargetDistFactor = 1.5f * (3f - meleeLevel);
         props.AiWaitBeforeShootFactor = agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : 1f - 0.5f * equippedItemLevel;
         float equippedItemLevelComplement = 1f - equippedItemLevel;
-        // "leading" a target means aiming ahead of a moving target. https://www.desmos.com/calculator/kjasinbun7
-        props.AiRangerLeadErrorMin = -equippedItemLevelComplement * 0.35f;
-        props.AiRangerLeadErrorMax = equippedItemLevelComplement * 0.2f;
-        // Aiming error. https://www.desmos.com/calculator/gxexzx44ax
+        // "leading" a target means aiming ahead of a moving target. The AI will roll between min (shoot behind) and max
+        // (shoot ahead). https://www.desmos.com/calculator/qrdv3rthef
+        props.AiRangerLeadErrorMin = -equippedItemLevelComplement * 0.45f;
+        props.AiRangerLeadErrorMax = equippedItemLevelComplement * 0.25f;
+        // Aiming error. https://www.desmos.com/calculator/pqgcp48aoe
+        props.AiRangerVerticalErrorMultiplier = equippedItemLevelComplement * 0.1f;
+        props.AiRangerHorizontalErrorMultiplier = equippedItemLevelComplement * 0.035f;
         props.AiRangerVerticalErrorMultiplier = equippedItemLevelComplement * 0.15f;
         props.AiRangerHorizontalErrorMultiplier = equippedItemLevelComplement * 0.05f;
         props.AIAttackOnDecideChance = MathF.Clamp(0.1f * CalculateAIAttackOnDecideMaxValue() * (3f - agent.Defensiveness), 0.05f, 1f);
