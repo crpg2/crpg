@@ -15,13 +15,13 @@ FriendlyFireDamageMeleeFriendPercent 50
 FriendlyFireDamageMeleeSelfPercent 0
 FriendlyFireDamageRangedFriendPercent 50
 FriendlyFireDamageRangedSelfPercent 0
-MinNumberOfPlayersForMatchStart 0
+MinNumberOfPlayersForMatchStart 1
 NumberOfBotsTeam1 5
 NumberOfBotsTeam2 5
 NumberOfBotsPerFormation 10
 RoundTotal 10
 MapTimeLimit 8
-RoundTimeLimit 60
+RoundTimeLimit 180
 WarmupTimeLimitInSeconds 60
 crpg_happy_hours 19:00-23:00,Central European Standard Time
 start_game
