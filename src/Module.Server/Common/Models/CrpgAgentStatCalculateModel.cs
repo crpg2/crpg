@@ -64,43 +64,39 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         WeaponComponentData weapon,
         int weaponSkill)
     {
-        float inaccuracy = 0.0f;
-        float skillComponentMultiplier = 1f;
-        float damageTypeFactorForThrustThrowing = weapon.ThrustDamageType switch
-        {
-            DamageTypes.Blunt => 1.3f,
-            DamageTypes.Pierce => 1.2f,
-            DamageTypes.Cut => 1f,
-            _ => 1.3f,
-        };
-
-        float damageTypeFactorForSwingThrowing = weapon.SwingDamageType switch
-        {
-            DamageTypes.Blunt => 1.3f,
-            DamageTypes.Pierce => 1.2f,
-            DamageTypes.Cut => 1f,
-            _ => 1.3f,
-        };
-
         float weaponClassMultiplier = weapon.WeaponClass switch
         {
             WeaponClass.Bow => 1.25f,
             WeaponClass.Crossbow => 0.5f,
             WeaponClass.Musket => 0.5f,
             WeaponClass.Pistol => 0.5f,
-            WeaponClass.Stone => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.0f,
-            WeaponClass.ThrowingAxe => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForSwingThrowing / 30f, 2f) * 1.15f,
-            WeaponClass.ThrowingKnife => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.15f,
-            WeaponClass.Javelin => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.15f,
+            WeaponClass.Stone => 1.0f,
+            WeaponClass.ThrowingAxe => 1.15f,
+            WeaponClass.ThrowingKnife => 1.15f,
+            WeaponClass.Javelin => 1.15f,
             _ => 1f,
         };
 
+        if (weapon.WeaponClass is WeaponClass.Stone or WeaponClass.ThrowingAxe or WeaponClass.ThrowingKnife or WeaponClass.Javelin)
+        {
+            float throwingDamageTypeFactor = weapon.ThrustDamageType switch
+            {
+                DamageTypes.Cut => 1f,
+                DamageTypes.Pierce => 1.2f,
+                DamageTypes.Blunt => 1.3f,
+                _ => 1.3f,
+            };
+            weaponClassMultiplier *= (float)Math.Pow(weapon.ThrustDamage * throwingDamageTypeFactor / 30f, 2f);
+        }
+
+        float inaccuracy = 0.0f;
         if (weapon.IsRangedWeapon)
         {
             float weaponComponent = 0.1f / (float)Math.Pow(weapon.Accuracy / 100f, 5f);
-            float skillComponent = skillComponentMultiplier * 1000000f / (1000000f + 0.01f * (float)Math.Pow(weaponSkill, 4));
-            inaccuracy = weaponComponent * skillComponent;
-            inaccuracy *= weaponClassMultiplier;
+            float skillComponent = 1000000f / (1000000f + 0.01f * (float)Math.Pow(weaponSkill, 4));
+            // Throwing: https://www.desmos.com/calculator/j4dsgcwlos
+            // Others:   https://www.desmos.com/calculator/t97jpxmhzk
+            inaccuracy = weaponClassMultiplier * weaponComponent * skillComponent;
         }
         else if (weapon.WeaponFlags.HasAllFlags(WeaponFlags.WideGrip))
         {
@@ -444,8 +440,8 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 {
                     int powerThrow = GetEffectiveSkill(agent, CrpgSkills.PowerThrow);
 
-                    float wpfImpactOnWindUp = 140f; // lower is better 160f
-                    float wpfImpactOnReloadSpeed = 240f; // lower is better 200f
+                    const float wpfImpactOnWindUp = 140f; // Lower is better.
+                    const float wpfImpactOnReloadSpeed = 240f; // Lower is better.
 
                     float damageImpactOnWindUp = equippedItem.ThrustDamage
                                                  * CrpgItemValueModel.CalculateDamageTypeFactorForThrown(equippedItem.ThrustDamageType)
@@ -454,18 +450,25 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     props.WeaponMaxUnsteadyAccuracyPenalty = 0.0035f;
                     props.WeaponMaxMovementAccuracyPenalty = 0.1f;
 
-                    props.WeaponRotationalAccuracyPenaltyInRadians = 0.1f; // this is accuracy loss when turning lower is better
+                    // This is accuracy loss when turning lower is better.
+                    props.WeaponRotationalAccuracyPenaltyInRadians = 0.1f;
 
-                    props.WeaponBestAccuracyWaitTime = 0.00001f; // set to extremely low because as soon as windup is finished thrower is accurate
+                    // Set to extremely low because as soon as windup is finished thrower is accurate.
+                    props.WeaponBestAccuracyWaitTime = 0.00001f;
 
-                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.3f, 0.75f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 2.5f) * 40f / damageImpactOnWindUp); // WindupSpeed
-                    props.ReloadSpeed *= MBMath.Lerp(0.8f, 1.0f, itemSkill / wpfImpactOnReloadSpeed); // this only affects picking a new throwing weapon
+                    // Windup speed. https://www.desmos.com/calculator/tvejlw2s4u
+                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.3f, 0.75f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 2.5f) * 40f / damageImpactOnWindUp);
+                    // This only affects picking a new throwing weapon.
+                    props.ReloadSpeed *= MBMath.Lerp(0.8f, 1.0f, itemSkill / wpfImpactOnReloadSpeed);
 
-                    props.CombatMaxSpeedMultiplier *= 0.75f; // This is a slowdown when ready to throw. Higher is better, do not go above 1.0
+                    // This is a slowdown when ready to throw. Higher is better, do not go above 1.0.
+                    props.CombatMaxSpeedMultiplier *= 0.75f;
 
-                    // These do not matter if props.WeaponMaxUnsteadyAccuracyPenalty is set to 0f
-                    props.WeaponUnsteadyBeginTime = 1.0f + weaponSkill * 0.006f + powerThrow * powerThrow / 10f * 1.6f; // Time at which your character becomes tired and the accuracy declines
-                    props.WeaponUnsteadyEndTime = 10f + props.WeaponUnsteadyBeginTime; // time at which your character is completely tired.
+                    // These do not matter if props.WeaponMaxUnsteadyAccuracyPenalty is set to 0f.
+                    // Time at which your character becomes tired and the accuracy declines. https://www.desmos.com/calculator/cb6cadl83n
+                    props.WeaponUnsteadyBeginTime = 1.0f + weaponSkill * 0.006f + powerThrow * powerThrow / 10f * 1.6f;
+                    // Time at which your character is completely tired.
+                    props.WeaponUnsteadyEndTime = 10f + props.WeaponUnsteadyBeginTime;
                 }
 
                 // Rest? Will not touch. It may affect other mechanics like Catapults etc...
@@ -567,8 +570,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         float ridingAttribute = agent.MountAgent?.GetAgentDrivenPropertyValue(DrivenProperty.AttributeRiding) ?? 1f;
         props.AttributeRiding = ridingSkill * ridingAttribute;
         // TODO: AttributeHorseArchery doesn't seem to have any effect for now.
-        /*
-        props.AttributeHorseArchery = Game.Current.BasicModels.StrikeMagnitudeModel.CalculateHorseArcheryFactor(character);*/
+        // props.AttributeHorseArchery = Game.Current.BasicModels.StrikeMagnitudeModel.CalculateHorseArcheryFactor(character);
 
         SetAiProperties(agent, props, equippedItem, secondaryItem);
     }
