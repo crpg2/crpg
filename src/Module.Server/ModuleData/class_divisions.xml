@@ -408,30 +408,6 @@
     </Perks>
   </MPClassDivision>
 
-  <MPClassDivision id="crpg_bot_bruce"
-                   hero="crpg_bot_bruce"
-                   troop="crpg_bot_bruce"
-                   hero_idle_anim="act_vlandia_mp_voulgier_idle"
-                   troop_idle_anim="act_idle_spear_1_left_stance"
-                   multiplier="0"
-                   cost="0"
-                   icon="Special_Axeman"
-                   melee_ai="0"
-                   ranged_ai="0"
-                   armor="0"
-                   movement_speed="1"
-                   combat_movement_speed="1"
-                   acceleration="0">
-    <Perks>
-      <Perk game_mode="all"
-            name="{=}None"
-            description="{=}None."
-            icon="PerkToughness"
-            perk_list="1">
-      </Perk>
-    </Perks>
-  </MPClassDivision>
-
   <MPClassDivision id="crpg_bot_wylieoneeye"
                    hero="crpg_bot_wylieoneeye"
                    troop="crpg_bot_wylieoneeye"

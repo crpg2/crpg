@@ -25592,30 +25592,6 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_mallet_handle_h0" name="{=}Mallet Handle" tier="1" piece_type="Handle" mesh="mallet_handle" length="96" weight="0.4" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
-    <BuildData piece_offset="30.0" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_mallet_handle_h1" name="{=}Mallet Handle" tier="1" piece_type="Handle" mesh="mallet_handle" length="96" weight="0.4" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
-    <BuildData piece_offset="30.0" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_mallet_handle_h2" name="{=}Mallet Handle" tier="1" piece_type="Handle" mesh="mallet_handle" length="96" weight="0.4" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
-    <BuildData piece_offset="30.0" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_mallet_handle_h3" name="{=}Mallet Handle" tier="1" piece_type="Handle" mesh="mallet_handle" length="96" weight="0.4" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
-    <BuildData piece_offset="30.0" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
   <CraftingPiece id="crpg_bone_breaker_blade_h0" name="{=}Shield Splitter Head" tier="1" piece_type="Blade" mesh="shieldsplitter_head" length="13.4" weight="1.55" full_scale="true" excluded_item_usage_features="thrust">
     <BuildData piece_offset="-13.5" next_piece_offset="0" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
@@ -25742,30 +25718,6 @@
     </Flags>
     <Materials>
       <Material id="Iron2" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_great_maul_handle_h0" name="{=}Maul Handle" tier="1" piece_type="Handle" mesh="maul_handle" length="100" weight="1" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
-    <BuildData piece_offset="30.0" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_great_maul_handle_h1" name="{=}Maul Handle" tier="1" piece_type="Handle" mesh="maul_handle" length="100" weight="1" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
-    <BuildData piece_offset="30.0" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_great_maul_handle_h2" name="{=}Maul Handle" tier="1" piece_type="Handle" mesh="maul_handle" length="100" weight="1" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
-    <BuildData piece_offset="30.0" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_great_maul_handle_h3" name="{=}Maul Handle" tier="1" piece_type="Handle" mesh="maul_handle" length="100" weight="1" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
-    <BuildData piece_offset="30.0" />
-    <Materials>
-      <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_great_maul_handle_h0" name="{=}Maul Handle" tier="1" piece_type="Handle" mesh="maul_handle" length="100" weight="1" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
