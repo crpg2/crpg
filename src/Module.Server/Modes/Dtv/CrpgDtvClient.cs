@@ -101,13 +101,7 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
         CurrentRound = message.Round + 1;
         CurrentWave = 0;
 
-        Action? onRoundStartEvent = OnRoundStart;
-        if (onRoundStartEvent == null)
-        {
-            return;
-        }
-
-        onRoundStartEvent();
+        OnRoundStart?.Invoke();
     }
 
     private void HandleWaveStart(CrpgDtvWaveStartMessage message)

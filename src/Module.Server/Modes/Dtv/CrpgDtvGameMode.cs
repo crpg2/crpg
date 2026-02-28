@@ -119,6 +119,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new CrpgCommanderBehaviorClient(),
                 new AmmoQuiverChangeBehaviorClient(),
                 new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
+                new CrpgDtvStuckBotHighlighter(dtvClient),
 #endif
                 dtvClient,
                 new MultiplayerTimerComponent(), // round timer
