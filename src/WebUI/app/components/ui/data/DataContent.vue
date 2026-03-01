@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { tv } from 'tailwind-variants'
 
-type Size = 'md' | 'lg'
+type Size = 'sm' | 'md' | 'lg'
 
 const { layout = 'normal', ellipsis = false, size = 'md' } = defineProps<{
   label?: string
@@ -13,19 +13,24 @@ const { layout = 'normal', ellipsis = false, size = 'md' } = defineProps<{
 
 const variants = tv({
   slots: {
-    root: 'flex gap-1',
+    root: 'flex',
     label: 'font-bold text-highlighted',
     caption: 'leading-none text-muted',
   },
   variants: {
     size: {
+      sm: {
+        root: 'gap-0.5',
+        label: 'text-sm',
+        caption: 'text-xs',
+      },
       md: {
-        root: '',
+        root: 'gap-1',
         label: 'text-base',
         caption: 'text-sm',
       },
       lg: {
-        root: '',
+        root: 'gap-1',
         label: 'text-lg',
         caption: 'text-base',
       },

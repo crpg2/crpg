@@ -33,7 +33,6 @@ const {
 const { t } = useI18n()
 
 // TODO: FIXME: либо выпилить, либо активировать условно, потому что в модалках это не нужно
-
 // const { mainHeaderHeight } = useMainHeader()
 // const aside = useTemplateRef('aside')
 // const { top: stickySidebarTop } = useStickySidebar(aside, mainHeaderHeight.value + 16, 16 /** 1rem */)
@@ -201,7 +200,7 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
           2xl:grid-cols-4
         "
       >
-        <template v-for="item in grid.getRowModel().rows" :key="item.id">
+        <template v-for="item in grid.getRowModel().rows" :key="item.original.item.id">
           <slot name="item" v-bind="item.original" />
         </template>
       </div>

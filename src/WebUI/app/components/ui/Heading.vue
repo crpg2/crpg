@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { Variant } from '~/components/ui/text/TextView.vue'
+import type { TextViewVariant } from '~/components/ui/text/TextView.vue'
 
 const { tag = 'h1', variant = 'h1' } = defineProps<{
   title?: string
   tag?: string
-  variant?: Variant
+  variant?: TextViewVariant
 }>()
 </script>
 

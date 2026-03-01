@@ -298,6 +298,7 @@ const onSubmit = async () => {
         >
           <UInput
             v-model="clanFormModel.discord"
+            :model-modifiers="{ nullable: true }"
             :maxlength="clanBannerKeyMaxLength"
             class="w-full"
             icon="crpg:discord"

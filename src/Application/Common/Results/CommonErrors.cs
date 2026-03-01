@@ -275,6 +275,18 @@ internal static class CommonErrors
         Detail = $"Item with id '{itemId}' is not owned by the user",
     };
 
+    public static Error PartyNotEnoughItems(string itemId, int required, int available) => new(ErrorType.Validation, ErrorCode.PartyNotEnoughItems)
+    {
+        Title = "Party doesn't have enough items",
+        Detail = $"Item '{itemId}' requires {required} but party has only {available}",
+    };
+
+    public static Error SettlementNotEnoughItems(string itemId, int required, int available) => new(ErrorType.Validation, ErrorCode.SettlementNotEnoughItems)
+    {
+        Title = "Settlement doesn't have enough items",
+        Detail = $"Item '{itemId}' requires {required} but settlement has only {available}",
+    };
+
     public static Error ItemNotReforgeable(string itemId) => new(ErrorType.Validation, ErrorCode.ItemNotReforgeable)
     {
         Title = "Item is not reforgeable",
@@ -321,6 +333,12 @@ internal static class CommonErrors
     {
         Title = "Settlement was not found",
         Detail = $"Settlement with id '{settlementId}' was not found",
+    };
+
+    public static Error SettlementNotEnoughTroops(int settlementId) => new(ErrorType.Validation, ErrorCode.SettlementNotEnoughTroops)
+    {
+        Title = "Settlement doesn't have enough troops",
+        Detail = $"Settlement with id '{settlementId}' doesn't have enough troops",
     };
 
     public static Error SettlementTooFar(int settlementId) => new(ErrorType.Validation, ErrorCode.SettlementTooFar)

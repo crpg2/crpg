@@ -4,12 +4,12 @@ import type { LeafletMouseEvent } from 'leaflet'
 import { LCircle, LIcon, LMarker, LTooltip } from '@vue-leaflet/vue-leaflet'
 // import { strategusMaxPartyTroops, strategusMinPartyTroops } from '~root/data/constants.json'
 
-import type { PartyVisible } from '~/models/strategus/party'
+import type { Party, PartyVisible } from '~/models/strategus/party'
 
 import ClanTagIcon from '~/components/clan/ClanTagIcon.vue'
 import { positionToLatLng } from '~/utils/geometry'
 
-const { isSelf = false, party } = defineProps<{ party: PartyVisible, isSelf?: boolean }>()
+const { isSelf = false, party } = defineProps<{ party: PartyVisible | Party, isSelf?: boolean }>()
 
 defineEmits<{ click: [LeafletMouseEvent] }>()
 
@@ -79,9 +79,9 @@ defineEmits<{ click: [LeafletMouseEvent] }>()
     </LMarker>
 
     <LCircle
-      v-if="isSelf"
+      v-if="isSelf && 'viewDistance' in party"
       :lat-lng="positionToLatLng(party.position.coordinates)"
-      :radius="8"
+      :radius="party.viewDistance"
       :opacity="0"
       :interactive="false"
       :fill-opacity="0.25"

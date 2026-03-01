@@ -4,8 +4,18 @@ import type { LatLngBounds, Map } from 'leaflet'
 
 import { toValue } from 'vue'
 
+import type { ItemStackUpdate } from '~/models/strategus/party'
+import type { SettlementPublic } from '~/models/strategus/settlement'
+
+import { SETTLEMENT_QUERY_KEYS } from '~/queries'
 import { shouldDisplaySettlement } from '~/services/strategus/map-service'
-import { getSettlement, getSettlements } from '~/services/strategus/settlement-service'
+import {
+  updateSettlementItems as _updateSettlementItems,
+  updateSettlementResources as _updateSettlementResources,
+  getSettlement,
+  getSettlementItems,
+  getSettlements,
+} from '~/services/strategus/settlement-service'
 import { positionToLatLng } from '~/utils/geometry'
 
 export const useSettlements = (
@@ -50,15 +60,53 @@ export const useSettlements = (
   }
 }
 
-export const useSettlement = () => {
-  const { state: settlement, execute: loadSettlement, isLoading: loadingSettlement } = useAsyncState(
-    () => getSettlement(1), // TODO: FIXME:
-    null,
+export const useSettlementProvider = (settlementId: number) => {
+  return useAsyncData(
+    toCacheKey(SETTLEMENT_QUERY_KEYS.byId(settlementId)),
+    () => getSettlement(settlementId),
+    {
+      default: () => [],
+    },
   )
+}
+
+export const useSettlement = () => {
+  const route = useRoute('strategus-settlement-id')
+  const _key = SETTLEMENT_QUERY_KEYS.byId(Number(route.params.id))
+
+  const settlement = getAsyncData<SettlementPublic>(_key)
+  const refreshSettlement = refreshAsyncData(_key)
+
+  const updateSettlementResources = (troops: number) => _updateSettlementResources(settlement.value.id, troops)
 
   return {
     settlement,
-    loadSettlement,
-    loadingSettlement,
+    refreshSettlement,
+    updateSettlementResources,
+  }
+}
+
+export const useSettlementItems = () => {
+  const { settlement } = useSettlement()
+
+  const {
+    data: settlementItems,
+    pending: pendingSettlementItems,
+    refresh: loadSettlementItems,
+  } = useAsyncData(
+    toCacheKey(SETTLEMENT_QUERY_KEYS.items(settlement.value.id)),
+    () => getSettlementItems(settlement.value.id),
+    {
+      default: () => [],
+    },
+  )
+
+  const updateSettlementItems = (items: ItemStackUpdate[]) => _updateSettlementItems(settlement.value.id, items)
+
+  return {
+    settlementItems,
+    pendingSettlementItems,
+    loadSettlementItems,
+    updateSettlementItems,
   }
 }

@@ -3,10 +3,9 @@ import {
   strategusMinPartyTroops,
 } from '~root/data/constants.json'
 
-import type { ItemStack, PartyVisible, TransferOfferPartyUpdate } from '~/models/strategus/party'
+import type { PartyVisible, TransferOfferPartyUpdate } from '~/models/strategus/party'
 
-import { useParty } from '~/composables/strategus/use-party'
-import { getSelfPartyItems } from '~/services/strategus/party-service'
+import { useParty, usePartyItems } from '~/composables/strategus/use-party'
 
 const { targetParty } = defineProps<{
   targetParty: PartyVisible
@@ -17,12 +16,7 @@ const emit = defineEmits<{
 }>()
 
 const { partyState } = useParty()
-
-const {
-  state: items,
-  executeImmediate: loadpartyItems,
-  isLoading: loadingPartyItems,
-} = useAsyncState<ItemStack[]>(() => getSelfPartyItems(), [])
+const { partyItems } = usePartyItems(true)
 
 const transferForm = useTemplateRef('transferForm')
 
@@ -68,7 +62,7 @@ const maxTroops = computed(() => Math.max(0, partyState.value.party.troops - str
         ref="transferForm"
         :max-gold="partyState.party.gold"
         :max-troops
-        :items
+        :items="partyItems"
         @submit="onSubmit"
       />
     </template>

@@ -45,13 +45,6 @@ export type AddItemToClanArmoryCommand = {
     userItemId: number;
 };
 
-export type AddSettlementItemCommand = {
-    partyId: number;
-    settlementId: number;
-    itemId: string;
-    count: number;
-};
-
 export type ApplyAsMercenaryToBattleCommand = {
     characterId: number;
     side: BattleSide;
@@ -510,7 +503,7 @@ export type Error = {
     stackTrace: string | null;
 };
 
-export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
+export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementNotEnoughTroops' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
 
 export type ErrorSource = {
     pointer?: string | null;
@@ -730,6 +723,11 @@ export type ItemStack = {
     count: number;
 };
 
+export type ItemStackArrayResult = {
+    readonly errors: Array<Error> | null;
+    data: Array<ItemStack> | null;
+};
+
 export type ItemStackIListResult = {
     readonly errors: Array<Error> | null;
     data: Array<ItemStack> | null;
@@ -738,6 +736,11 @@ export type ItemStackIListResult = {
 export type ItemStackResult = {
     readonly errors: Array<Error> | null;
     data: ItemStack | null;
+};
+
+export type ItemStackUpdate = {
+    itemId: string;
+    count: number;
 };
 
 export type ItemType = 'Undefined' | 'HeadArmor' | 'ShoulderArmor' | 'BodyArmor' | 'HandArmor' | 'LegArmor' | 'MountHarness' | 'Mount' | 'Shield' | 'Bow' | 'Crossbow' | 'OneHandedWeapon' | 'TwoHandedWeapon' | 'Polearm' | 'Thrown' | 'Arrows' | 'Bolts' | 'Pistol' | 'Musket' | 'Bullets' | 'Banner' | 'Ranged' | 'Ammo';
@@ -799,7 +802,7 @@ export type PartyOrderCommandItemDto = {
     targetedSettlementId: number;
     targetedBattleId: number;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
-    transferOfferPartyIntent: TransferOfferPartyIntent | null;
+    transferOfferPartyIntent: PartyTransferOfferUpdate | null;
 };
 
 export type PartyOrderPathSegmentViewModel = {
@@ -830,9 +833,26 @@ export type PartyPublicViewModel = {
     troops: number;
 };
 
+export type PartySpeed = {
+    baseSpeed: number;
+    terrainInfluence: number;
+    currentTerrainType?: TerrainType | null;
+    weightFactor: number;
+    mountInfluence: number;
+    troopInfluence: number;
+    baseSpeedWithoutTerrain: number;
+    finalSpeed: number;
+};
+
 export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'AwaitingPartyOfferDecision' | 'InBattle' | 'AwaitingBattleJoinDecision';
 
 export type PartyTransferOfferStatus = 'Intent' | 'Pending';
+
+export type PartyTransferOfferUpdate = {
+    gold: number;
+    troops: number;
+    items: Array<ItemStackUpdate>;
+};
 
 export type PartyTransferOfferViewModel = {
     id: number;
@@ -854,7 +874,8 @@ export type PartyViewModel = {
     gold: number;
     troops: number;
     position: GeoJsonPoint;
-    speed: number;
+    speed: PartySpeed;
+    viewDistance: number;
     status: PartyStatus;
     currentParty: PartyVisibleViewModel | null;
     currentSettlement: SettlementPublicViewModel | null;
@@ -920,7 +941,7 @@ export type RespondToBattleMercenaryApplicationCommand = {
 
 export type RespondToPartyTransferOfferCommand = {
     accept: boolean;
-    accepted?: TransferOffer | null;
+    accepted?: PartyTransferOfferUpdate | null;
 };
 
 export type RestrictCommand = {
@@ -1047,28 +1068,6 @@ export type TerrainViewModelResult = {
     data: TerrainViewModel | null;
 };
 
-export type TransferOffer = {
-    gold: number;
-    troops: number;
-    items: Array<TransferOfferItem>;
-};
-
-export type TransferOfferItem = {
-    itemId: string;
-    count: number;
-};
-
-export type TransferOfferPartyIntent = {
-    gold: number;
-    troops: number;
-    items: Array<TransferOfferPartyItem>;
-};
-
-export type TransferOfferPartyItem = {
-    itemId: string;
-    count: number;
-};
-
 export type UpdateBattleSideBriefingCommand = {
     side: BattleSide;
     note: string;
@@ -1124,9 +1123,11 @@ export type UpdatePartyOrdersCommand = {
 };
 
 export type UpdateSettlementCommand = {
-    partyId: number;
-    settlementId: number;
     troops: number;
+};
+
+export type UpdateSettlementItemsCommand = {
+    items: Array<ItemStackUpdate>;
 };
 
 export type UpdateTerrainCommand = {
@@ -1476,6 +1477,10 @@ export type GeoJsonPolygonWritable = {
     coordinates: Array<Array<Array<number>>>;
 };
 
+export type ItemStackArrayResultWritable = {
+    data: Array<ItemStack> | null;
+};
+
 export type ItemStackIListResultWritable = {
     data: Array<ItemStack> | null;
 };
@@ -1496,7 +1501,7 @@ export type PartyOrderCommandItemDtoWritable = {
     targetedSettlementId: number;
     targetedBattleId: number;
     battleJoinIntents: Array<BattleJoinIntentViewModel>;
-    transferOfferPartyIntent: TransferOfferPartyIntent | null;
+    transferOfferPartyIntent: PartyTransferOfferUpdate | null;
 };
 
 export type PartyOrderPathSegmentViewModelWritable = {
@@ -1538,7 +1543,8 @@ export type PartyViewModelWritable = {
     gold: number;
     troops: number;
     position: GeoJsonPointWritable;
-    speed: number;
+    speed: PartySpeed;
+    viewDistance: number;
     status: PartyStatus;
     currentParty: PartyVisibleViewModelWritable | null;
     currentSettlement: SettlementPublicViewModelWritable | null;
@@ -3202,7 +3208,7 @@ export type GetSettlementsBySettlementIdResponses = {
 
 export type GetSettlementsBySettlementIdResponse = GetSettlementsBySettlementIdResponses[keyof GetSettlementsBySettlementIdResponses];
 
-export type PostSettlementsBySettlementIdData = {
+export type PutSettlementsBySettlementIdData = {
     body?: UpdateSettlementCommand;
     path: {
         settlementId: number;
@@ -3211,14 +3217,14 @@ export type PostSettlementsBySettlementIdData = {
     url: '/Settlements/{settlementId}';
 };
 
-export type PostSettlementsBySettlementIdResponses = {
+export type PutSettlementsBySettlementIdResponses = {
     /**
      * OK
      */
     200: SettlementPublicViewModelResult;
 };
 
-export type PostSettlementsBySettlementIdResponse = PostSettlementsBySettlementIdResponses[keyof PostSettlementsBySettlementIdResponses];
+export type PutSettlementsBySettlementIdResponse = PutSettlementsBySettlementIdResponses[keyof PutSettlementsBySettlementIdResponses];
 
 export type GetSettlementsBySettlementIdItemsData = {
     body?: never;
@@ -3238,8 +3244,8 @@ export type GetSettlementsBySettlementIdItemsResponses = {
 
 export type GetSettlementsBySettlementIdItemsResponse = GetSettlementsBySettlementIdItemsResponses[keyof GetSettlementsBySettlementIdItemsResponses];
 
-export type PostSettlementsBySettlementIdItemsData = {
-    body?: AddSettlementItemCommand;
+export type PutSettlementsBySettlementIdItemsData = {
+    body?: UpdateSettlementItemsCommand;
     path: {
         settlementId: number;
     };
@@ -3247,14 +3253,14 @@ export type PostSettlementsBySettlementIdItemsData = {
     url: '/Settlements/{settlementId}/items';
 };
 
-export type PostSettlementsBySettlementIdItemsResponses = {
+export type PutSettlementsBySettlementIdItemsResponses = {
     /**
      * OK
      */
-    200: ItemStackResult;
+    200: ItemStackArrayResult;
 };
 
-export type PostSettlementsBySettlementIdItemsResponse = PostSettlementsBySettlementIdItemsResponses[keyof PostSettlementsBySettlementIdItemsResponses];
+export type PutSettlementsBySettlementIdItemsResponse = PutSettlementsBySettlementIdItemsResponses[keyof PutSettlementsBySettlementIdItemsResponses];
 
 export type GetSettlementsBySettlementIdShopItemsData = {
     body?: never;

@@ -1,4 +1,6 @@
-﻿using Crpg.Domain.Entities;
+﻿using System.Collections.Frozen;
+using Crpg.Domain.Entities;
+using Crpg.Domain.Entities.Terrains;
 using Crpg.Sdk.Abstractions;
 using NetTopologySuite.Geometries;
 
@@ -9,6 +11,13 @@ internal interface IStrategusMap
     double ViewDistance { get; }
 
     double InteractionDistance { get; }
+
+    double GetTerrainViewDistanceMultiplier(TerrainType? terrainType);
+
+    double GetTerrainViewDistanceMultiplier(Point position, Terrain[] terrains);
+
+    /// <summary>Computes view distance based on terrain type.</summary>
+    double ComputeViewDistance(TerrainType? terrainType);
 
     /// <summary>Checks if two points are close enough to be considered equivalent.</summary>
     bool ArePointsEquivalent(Point pointA, Point pointB);
@@ -54,6 +63,44 @@ internal class StrategusMap : IStrategusMap
     public double ViewDistance { get; }
 
     public double InteractionDistance { get; }
+
+    private readonly FrozenDictionary<TerrainType, double> terrainViewDistanceMultiplier = new Dictionary<TerrainType, double>
+    {
+        [TerrainType.Plain] = 1.0,
+        [TerrainType.SparseForest] = 0.5,
+        [TerrainType.ThickForest] = 0.25,
+        [TerrainType.Barrier] = 1.0,
+        [TerrainType.DeepWater] = 1.0,
+        [TerrainType.ShallowWater] = 1.0,
+    }.ToFrozenDictionary();
+
+    public double GetTerrainViewDistanceMultiplier(TerrainType? terrainType)
+    {
+        if (terrainType == null)
+        {
+            return 1.0;
+        }
+
+        return terrainViewDistanceMultiplier[terrainType.Value];
+    }
+
+    public double GetTerrainViewDistanceMultiplier(Point position, Terrain[] terrains)
+    {
+        var terrain = terrains.FirstOrDefault(terrain => terrain.Boundary.Contains(position));
+        if (terrain == null)
+        {
+            return 1.0;
+        }
+
+        return GetTerrainViewDistanceMultiplier(terrain.Type);
+    }
+
+    /// <inheritdoc />
+    public double ComputeViewDistance(TerrainType? terrainType)
+    {
+        double multiplier = GetTerrainViewDistanceMultiplier(terrainType);
+        return ViewDistance * multiplier;
+    }
 
     /// <inheritdoc />
     public bool ArePointsEquivalent(Point pointA, Point pointB)

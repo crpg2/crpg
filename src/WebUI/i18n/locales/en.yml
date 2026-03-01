@@ -162,6 +162,7 @@ action:
   collapse: Collapse
   find: Find
   reset: Reset
+  submit: Submit
   refresh: Refresh
   commit: Commit
   sort: Sort

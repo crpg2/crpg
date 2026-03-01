@@ -1,10 +1,11 @@
-﻿using AutoMapper;
+﻿using System.Text.Json.Serialization;
+using AutoMapper;
+using Crpg.Application.Common;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Settlements.Models;
 using Crpg.Domain.Entities.Parties;
-using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using LoggerFactory = Crpg.Logging.LoggerFactory;
@@ -13,36 +14,23 @@ namespace Crpg.Application.Settlements.Commands;
 
 public record UpdateSettlementCommand : IMediatorRequest<SettlementPublicViewModel>
 {
+    [JsonIgnore]
     public int PartyId { get; init; }
+    [JsonIgnore]
     public int SettlementId { get; init; }
     public int Troops { get; init; }
 
-    // TODO: fix SPEC
-    // public class Validator : AbstractValidator<UpdateSettlementCommand>
-    // {
-    //     public Validator()
-    //     {
-    //         RuleFor(c => c.Troops).GreaterThanOrEqualTo(0);
-    //     }
-    // }
-
-    internal class Handler : IMediatorRequestHandler<UpdateSettlementCommand, SettlementPublicViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, Constants constants) : IMediatorRequestHandler<UpdateSettlementCommand, SettlementPublicViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdateSettlementCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly Constants _constants = constants;
 
         public async ValueTask<Result<SettlementPublicViewModel>> Handle(UpdateSettlementCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
-                .Include(h => h.CurrentSettlement)
                 .FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
             if (party == null)
             {
@@ -56,29 +44,41 @@ public record UpdateSettlementCommand : IMediatorRequest<SettlementPublicViewMod
                 return new(CommonErrors.PartyNotInASettlement(party.Id));
             }
 
-            int troopsDelta = req.Troops - party.CurrentSettlement!.Troops;
+            var settlement = await _db.Settlements
+                .FirstOrDefaultAsync(h => h.Id == req.SettlementId, cancellationToken);
+            if (settlement == null)
+            {
+                return new(CommonErrors.SettlementNotFound(req.SettlementId));
+            }
+
+            int troopsDelta = req.Troops - settlement.Troops;
             if (troopsDelta >= 0) // Party troops -> settlement troops.
             {
-                if (party.Troops < troopsDelta)
+                if (party.Troops < troopsDelta + _constants.StrategusMinPartyTroops)
                 {
                     return new(CommonErrors.PartyNotEnoughTroops(party.Id));
                 }
             }
             else // Settlement troops -> party troops.
             {
-                if (party.CurrentSettlement!.OwnerId != party.Id)
+                if (settlement.OwnerId != party.Id)
                 {
-                    return new(CommonErrors.PartyNotSettlementOwner(party.Id, party.CurrentSettlementId!.Value));
+                    return new(CommonErrors.PartyNotSettlementOwner(party.Id, settlement.Id));
+                }
+
+                if (settlement.Troops < Math.Abs(troopsDelta) + _constants.StrategusMinPartyTroops)
+                {
+                    return new(CommonErrors.SettlementNotEnoughTroops(settlement.Id));
                 }
             }
 
-            party.CurrentSettlement.Troops += troopsDelta;
+            settlement.Troops += troopsDelta;
             party.Troops -= troopsDelta;
 
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("Party '{0}' {1} settlement '{2}'", req.PartyId,
-                troopsDelta >= 0 ? "gave troops to" : "took troops from", party.CurrentSettlementId);
-            return new(_mapper.Map<SettlementPublicViewModel>(party.CurrentSettlement));
+                troopsDelta >= 0 ? "gave troops to" : "took troops from", settlement.Id);
+            return new(_mapper.Map<SettlementPublicViewModel>(settlement));
         }
     }
 }
