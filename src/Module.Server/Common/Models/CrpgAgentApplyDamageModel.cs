@@ -333,9 +333,6 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         ref float attackerStunPeriod,
         ref float defenderStunPeriod)
     {
-        attackerStunPeriod = 1.0f;
-        defenderStunPeriod = 1.0f;
-
         if (collisionResult == CombatCollisionResult.Blocked && defenderAgent.WieldedOffhandWeapon.IsShield())
         {
             int shieldSkill = 0;
@@ -344,7 +341,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
                 shieldSkill = crpgOrigin.Skills.Skills.GetPropertyValue(CrpgSkills.Shield);
             }
 
-            defenderStunPeriod = 1 / MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
+            defenderStunPeriod /= MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
         }
     }
 
@@ -355,7 +352,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         float totalAttackEnergy,
         Agent.UsageDirection attackDirection,
         StrikeType strikeType,
-        WeaponComponentData defendItem,
+        WeaponComponentData? defendItem,
         bool isPassiveUsage)
     {
         EquipmentIndex wieldedItemIndex = attackerAgent.GetOffhandWieldedItemIndex();
@@ -418,7 +415,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         return 0;
     }
 
-    private int GetSkillValue(Agent agent, SkillObject skill)
+    private int GetSkillValue(Agent? agent, SkillObject? skill)
     {
         if (agent?.Origin is CrpgBattleAgentOrigin crpgOrigin)
         {
@@ -438,8 +435,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         if (attackInformation.AttackerAgentOrigin is CrpgBattleAgentOrigin)
         {
             bool isVictimTheVipBot = attackInformation.VictimAgentCharacter != null
-                ? attackInformation.VictimAgentCharacter.StringId.StartsWith("crpg_dtv_vip_")
-                : false;
+                                     && attackInformation.VictimAgentCharacter.StringId.StartsWith("crpg_dtv_vip_");
 
             return isVictimTheVipBot;
         }
@@ -452,8 +448,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         if (attackInformation.AttackerAgentOrigin is CrpgBattleAgentOrigin)
         {
             bool isVictimDtvBot = attackInformation.VictimAgentCharacter != null
-                ? attackInformation.VictimAgentCharacter.StringId.StartsWith("crpg_dtv_")
-                : false;
+                                  && attackInformation.VictimAgentCharacter.StringId.StartsWith("crpg_dtv_");
 
             return isVictimDtvBot;
         }
@@ -465,9 +460,8 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
     {
         if (attackInformation.AttackerAgentOrigin is CrpgBattleAgentOrigin)
         {
-            bool isVictimDtvBoss = attackInformation.VictimAgentCharacter != null
-                ? attackInformation.VictimAgentCharacter.StringId.EndsWith("_boss")
-                : false;
+            bool isVictimDtvBoss = attackInformation.VictimAgentCharacter != null &&
+                                   attackInformation.VictimAgentCharacter.StringId.EndsWith("_boss");
 
             return isVictimDtvBoss;
         }

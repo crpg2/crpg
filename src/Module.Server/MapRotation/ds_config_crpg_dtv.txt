@@ -15,7 +15,7 @@ FriendlyFireDamageRangedFriendPercent 50
 FriendlyFireDamageRangedSelfPercent 0
 NumberOfBotsTeam1 1
 NumberOfBotsTeam2 1
-WarmupTimeLimitInSeconds 1
+WarmupTimeLimitInSeconds 60
 start_game
 set_automated_battle_count -1
 enable_automated_battle_switching

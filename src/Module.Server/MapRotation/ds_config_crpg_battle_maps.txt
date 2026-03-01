@@ -1,1 +1,1 @@
-mp_compact
+mp_battle_map_001
