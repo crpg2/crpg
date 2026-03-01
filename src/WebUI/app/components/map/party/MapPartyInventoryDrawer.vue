@@ -1,53 +1,14 @@
 <script setup lang="ts">
-import { ItemDetail } from '#components'
-
-import type { GroupedCompareItemsResult } from '~/models/item'
-import type { SortingConfig } from '~/services/item-search-service'
-
-import { useItemDetail } from '~/composables/item/use-item-detail'
-import { getSelfPartyItems } from '~/services/strategus/party-service'
+import { usePartyItems } from '~/composables/strategus/use-party'
 
 const emit = defineEmits<{
   close: [value: boolean]
 }>()
 
-// TODO: from props!
-const {
-  state: partyItems,
-  executeImmediate: loadpartyItems,
-  isLoading: loadingPartyItems,
-} = useAsyncState(
-  () => getSelfPartyItems(),
-  [],
-  { immediate: true, resetOnExecute: false },
-)
+const { partyItems } = usePartyItems(true)
 
 const onCancel = () => {
   emit('close', false)
-}
-
-const sortingConfig: SortingConfig = {
-  rank_desc: { field: 'rank', order: 'desc' },
-  type_asc: { field: 'type', order: 'asc' },
-  // TODO: FIXME: by count
-}
-
-const sortingModel = ref<string>('rank_desc')
-
-const { toggleItemDetail } = useItemDetail()
-
-const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsResult: GroupedCompareItemsResult[]) => {
-  const partyItem = partyItems.value.find(i => i.item.id === opendeItem.id)
-
-  if (!partyItem) {
-    return null
-  }
-
-  // TODO: stack item
-  return h(ItemDetail, {
-    item: partyItem.item,
-    compareResult: compareItemsResult,
-  })
 }
 </script>
 
@@ -76,32 +37,9 @@ const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsR
     </template>
 
     <template #body>
-      <ItemGrid
-        v-model:sorting="sortingModel"
+      <ItemStackGrid
         :items="partyItems"
-        :sorting-config="sortingConfig"
-        size="md"
-      >
-        <template #item="battleItem">
-          <div class="flex flex-col">
-            <ItemCard
-              class="cursor-pointer"
-              :item="battleItem.item"
-              @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, battleItem.item.id)"
-            >
-              <template #badges-bottom-right>
-                <UBadge variant="subtle" color="neutral">
-                  {{ $n(battleItem.count) }}
-                </UBadge>
-              </template>
-            </ItemCard>
-          </div>
-        </template>
-
-        <template #item-detail="{ item, compareItemsResult }">
-          <component :is="renderItemDetail(item, compareItemsResult)" />
-        </template>
-      </ItemGrid>
+      />
     </template>
   </UDrawer>
 </template>

@@ -18,6 +18,7 @@ export const CLAN_QUERY_KEYS = {
 
 export const PARTY_QUERY_KEYS = {
   root: ['party'] as const,
+  items: () => [...PARTY_QUERY_KEYS.root, { items: true }] as const,
 }
 
 export const SETTLEMENT_QUERY_KEYS = {

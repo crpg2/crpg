@@ -1,79 +1,43 @@
 <script setup lang="ts">
-import { ItemDetail } from '#components'
+import { LazySettlementItemsManageDrawer } from '#components'
 import { strategusMinPartyTroops } from '~root/data/constants.json'
 
-import type { GroupedCompareItemsResult, Item } from '~/models/item'
 import type { ItemStackUpdate, PartyPublic } from '~/models/strategus/party'
 import type { SettlementPublic } from '~/models/strategus/settlement'
-import type { SortingConfig } from '~/services/item-search-service'
 
-import { useItemDetail } from '~/composables/item/use-item-detail'
-import { useParty } from '~/composables/strategus/use-party'
+import { useParty, usePartyItems } from '~/composables/strategus/use-party'
 import { useSettlement, useSettlementItems } from '~/composables/strategus/use-settlements'
 import { useUser } from '~/composables/user/use-user'
-import { getSelfPartyItems } from '~/services/strategus/party-service'
-import { getSettlementItems } from '~/services/strategus/settlement-service'
+import { checkCanEditSettlementInventory } from '~/services/strategus/settlement-service'
 
-// definePageMeta({
-//   middleware: [
-//     // TODO: validate
-//     () => {
-//       const { battle } = useMapBattle()
-//       const { selfBattleFighter } = useBattleFighters()
+definePageMeta({
+  middleware: [
+    () => {
+      const { settlement } = useSettlement()
+      const { user } = useUser()
 
-//       if (!selfBattleFighter.value) {
-//         return navigateTo({ name: 'strategus-battle-id', params: { id: battle.value.id } })
-//       }
-//     },
-//   ],
-// })
+      if (!checkCanEditSettlementInventory(settlement.value, user.value!)) {
+        return navigateTo({ name: 'strategus-settlement-id', params: { id: settlement.value.id } })
+      }
+    },
+  ],
+})
 
 const route = useRoute<'strategus-settlement-id-inventory'>()
+
+const toast = useToast()
+
 const {
   settlement,
   refreshSettlement,
   updateSettlementResources,
-
 } = useSettlement()
 
 const { settlementItems, pendingSettlementItems, loadSettlementItems, updateSettlementItems } = useSettlementItems()
 
 const { user } = useUser()
 const { partyState, updateParty } = useParty()
-
-const {
-  state: partyItems,
-  executeImmediate: loadpartyItems,
-  isLoading: loadingPartyItems,
-} = useAsyncState(
-  () => getSelfPartyItems(),
-  [],
-  { immediate: true, resetOnExecute: false },
-)
-
-const sortingConfig: SortingConfig = {
-  rank_desc: { field: 'rank', order: 'desc' },
-  type_asc: { field: 'type', order: 'asc' },
-  // TODO: FIXME: by count
-}
-
-const sortingModel = ref<string>('rank_desc')
-
-const { toggleItemDetail } = useItemDetail()
-
-const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsResult: GroupedCompareItemsResult[]) => {
-  const partyItem = settlementItems.value.find(i => i.item.id === opendeItem.id)
-
-  if (!partyItem) {
-    return null
-  }
-
-  // TODO: stack item detail
-  return h(ItemDetail, {
-    item: partyItem.item,
-    compareResult: compareItemsResult.find(cr => cr.type === partyItem.item.type)?.compareResult,
-  })
-}
+const { loadpartyItems } = usePartyItems()
 
 const maxTroops = computed(() => {
   return partyState.value.party.troops + settlement.value.troops
@@ -103,139 +67,132 @@ const [submitTransferModel, submittingTransferModel] = useAsyncCallback(async ()
 const troopsInSettlement = computed(() => transferModel.value.troops)
 const troopsInParty = computed(() => maxTroops.value - transferModel.value.troops)
 
-const [submitItemsTransferModel, submittingItemsTransferModel] = useAsyncCallback(async (items: ItemStackUpdate[]) => {
-  await updateSettlementItems(items)
+const overlay = useOverlay()
 
-  await Promise.all([
-    loadSettlementItems(),
-    loadpartyItems(),
-  ])
-})
+const openSettlementItemsManageDrawer = () => {
+  overlay.create(LazySettlementItemsManageDrawer).open({
+    settlementItems: settlementItems.value,
+    settlement: settlement.value,
+    async onClose(_result, items) {
+      if (!_result || !items) {
+        return
+      }
+
+      await updateSettlementItems(items)
+
+      await Promise.all([
+        loadSettlementItems(),
+        loadpartyItems(),
+      ])
+
+      toast.add({
+        title: 'Settlement items updated',
+        color: 'success',
+      })
+    },
+  })
+}
 </script>
 
 <template>
   <div>
-    <ItemGrid
-      v-model:sorting="sortingModel"
-      :sorting-config="sortingConfig"
-      :items="settlementItems"
+    <ItemStackGrid :items="settlementItems">
+      <template #filter-trailing>
+        <UButton
+          variant="subtle"
+          label="Manage"
+          size="lg"
+          @click="openSettlementItemsManageDrawer"
+        />
+      </template>
+    </ItemStackGrid>
+
+    <!-- <UiCard
+      :ui="{
+        footer: 'flex justify-end gap-2',
+      }"
+      label="Manage troops"
+      icon="crpg:member"
     >
-      <template #item="battleItem">
-        <ItemCard
-          class="cursor-pointer"
-          :item="battleItem.item"
-          @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, battleItem.item.id)"
-        >
-          <template #badges-bottom-right>
-            <UBadge :label="$n(battleItem.count)" variant="subtle" @click.stop />
-          </template>
-        </ItemCard>
-      </template>
-
-      <template #item-detail="{ item, compareItemsResult }">
-        <component :is="renderItemDetail(item, compareItemsResult)" />
-      </template>
-    </ItemGrid>
-
-    <MapTransferForm2
-      v-if="!pendingSettlementItems && !loadingPartyItems"
-      :from="settlementItems"
-      :to="partyItems"
-      @submit="submitItemsTransferModel"
-    />
-
-    <div class="">
-      <UiCard
+      <UFormField
         :ui="{
-          footer: 'flex justify-end gap-2',
+          description: 'flex justify-between flex-wrap text-highlighted gap-4 text-sm',
+          help: 'flex justify-between flex-wrap text-highlighted gap-4 text-sm',
         }"
-        label="Manage troops"
-        icon="crpg:member"
       >
-        <UFormField
-          :ui="{
-            description: 'flex justify-between flex-wrap text-highlighted gap-4 text-sm',
-            help: 'flex justify-between flex-wrap text-highlighted gap-4 text-sm',
-          }"
-        >
-          <template #description>
-            <SettlementMedia :settlement />
-            <UserMedia :user="partyState.party.user" />
-          </template>
-
-          <template #help>
-            <div class="flex items-center gap-4">
-              <div class="flex items-center gap-1">
-                <UiDataMedia icon="crpg:member" :label="$n(settlement.troops)" />
-                <template v-if="settlement.troops !== troopsInSettlement">
-                  <UIcon name="i-lucide-chevron-right" />
-                  <div>
-                    {{ $n(troopsInSettlement) }}
-                    <span
-                      :class="[troopsInSettlement > settlement.troops ? 'text-success' : `
-                        text-error
-                      `]"
-                    >
-                      ({{ troopsInSettlement > settlement.troops ? '+' : '' }}{{ $n(troopsInSettlement - settlement.troops) }})
-                    </span>
-                  </div>
-                </template>
-              </div>
-            </div>
-            <div class="flex flex-row-reverse items-center gap-2">
-              <div class="flex flex-row-reverse items-center">
-                <UiDataMedia icon="crpg:member" :label="$n(partyState.party.troops)" />
-                <template v-if="partyState.party.troops !== troopsInParty">
-                  <UIcon name="i-lucide-chevron-left" />
-                  <div>
-                    {{ $n(troopsInParty) }}
-                    <span
-                      :class="[troopsInParty > partyState.party.troops ? 'text-success' : `
-                        text-error
-                      `]"
-                    >
-                      ({{ troopsInParty > partyState.party.troops ? '+' : '' }}{{ $n(troopsInParty - partyState.party.troops) }})
-                    </span>
-                  </div>
-                </template>
-              </div>
-            </div>
-          </template>
-
-          <UInputNumber
-            v-model="transferModel.troops"
-            :min="strategusMinPartyTroops"
-            :max="maxTroops - strategusMinPartyTroops"
-            class="w-full"
-            increment-icon="i-lucide-arrow-right"
-            decrement-icon="i-lucide-arrow-left"
-          />
-
-          <USlider
-            v-model="transferModel.troops"
-            :min="strategusMinPartyTroops"
-            :max="maxTroops - strategusMinPartyTroops"
-            class="px-2.5"
-          />
-        </UFormField>
-
-        <template #footer>
-          <UButton
-            :label="$t('action.reset')"
-            block
-            variant="soft"
-            color="neutral"
-            @click="resetTransferModel"
-          />
-          <UButton
-            :label="$t('action.submit')"
-            block
-            variant="soft"
-            :loading="submittingTransferModel"
-            @click="submitTransferModel"
-          />
+        <template #description>
+          <SettlementMedia :settlement />
+          <UserMedia :user="partyState.party.user" />
         </template>
-      </UiCard>
-    </div>
+
+        <template #help>
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-1">
+              <UiDataMedia icon="crpg:member" :label="$n(settlement.troops)" />
+              <template v-if="settlement.troops !== troopsInSettlement">
+                <UIcon name="i-lucide-chevron-right" />
+                <div>
+                  {{ $n(troopsInSettlement) }}
+                  <span
+                    :class="[troopsInSettlement > settlement.troops ? 'text-success' : `text-error`]"
+                  >
+                    ({{ troopsInSettlement > settlement.troops ? '+' : '' }}{{ $n(troopsInSettlement - settlement.troops) }})
+                  </span>
+                </div>
+              </template>
+            </div>
+          </div>
+          <div class="flex flex-row-reverse items-center gap-2">
+            <div class="flex flex-row-reverse items-center">
+              <UiDataMedia icon="crpg:member" :label="$n(partyState.party.troops)" />
+              <template v-if="partyState.party.troops !== troopsInParty">
+                <UIcon name="i-lucide-chevron-left" />
+                <div>
+                  {{ $n(troopsInParty) }}
+                  <span
+                    :class="[troopsInParty > partyState.party.troops ? 'text-success' : `text-error`]"
+                  >
+                    ({{ troopsInParty > partyState.party.troops ? '+' : '' }}{{ $n(troopsInParty - partyState.party.troops) }})
+                  </span>
+                </div>
+              </template>
+            </div>
+          </div>
+        </template>
+
+        <UInputNumber
+          v-model="transferModel.troops"
+          :min="strategusMinPartyTroops"
+          :max="maxTroops - strategusMinPartyTroops"
+          class="w-full"
+          increment-icon="i-lucide-arrow-right"
+          decrement-icon="i-lucide-arrow-left"
+        />
+
+        <USlider
+          v-model="transferModel.troops"
+          :min="strategusMinPartyTroops"
+          :max="maxTroops - strategusMinPartyTroops"
+          class="px-2.5"
+        />
+      </UFormField>
+
+      <template #footer>
+        <UButton
+          :label="$t('action.reset')"
+          block
+          variant="soft"
+          color="neutral"
+          @click="resetTransferModel"
+        />
+        <UButton
+          :label="$t('action.submit')"
+          block
+          variant="soft"
+          :loading="submittingTransferModel"
+          @click="submitTransferModel"
+        />
+      </template>
+    </UiCard> -->
   </div>
 </template>

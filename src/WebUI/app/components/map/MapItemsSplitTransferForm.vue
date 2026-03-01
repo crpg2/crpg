@@ -1,6 +1,8 @@
+<!-- TODO: FIXME: need a name -->
+<!-- TODO: FIXME: REFACTORING -->
 <script setup lang="ts">
 import { useThrottleFn } from '@vueuse/core'
-import { ItemDetail } from '#components'
+import { ItemCard, ItemDetail, UBadge, UIcon, UiInputNumberSlider } from '#components'
 
 import type { GroupedCompareItemsResult } from '~/models/item'
 import type { ItemStack, ItemStackUpdate } from '~/models/strategus/party'
@@ -14,9 +16,11 @@ const { from, to } = defineProps<{
 }>()
 
 const emit = defineEmits<{
+  close: [value: boolean]
   submit: [items: ItemStackUpdate[]]
 }>()
 
+const { n } = useI18n()
 const itemsById = computed(() => {
   const record: Record<string, ItemStack['item']> = {}
 
@@ -84,12 +88,17 @@ const getMaxCount = (itemId: string): number => modelValue.value[itemId]!.totalC
 
 type Group = 'GroupA' | 'GroupB'
 
-const getValue = (itemId: string, group: Group): number => {
+const getInitialCount = (itemId: string, group: Group): number => {
+  const itemGroup = modelValue.value[itemId]
+  return group === 'GroupA' ? itemGroup!.initialGroupACount : itemGroup!.initialGroupBCount
+}
+
+const getCount = (itemId: string, group: Group): number => {
   const itemGroup = modelValue.value[itemId]
   return group === 'GroupA' ? itemGroup!.groupACount : itemGroup!.groupBCount
 }
 
-const setValue = (itemId: string, group: Group, value: number) => {
+const setCount = (itemId: string, group: Group, value: number) => {
   const total = modelValue.value[itemId]!.totalCount
   const isGroupA = group === 'GroupA'
 
@@ -103,25 +112,26 @@ const setValue = (itemId: string, group: Group, value: number) => {
 }
 
 const dynamicItems = computed(() => {
-  const resultA: ItemStack[] = []
-  const resultB: ItemStack[] = []
+  const itemsA: ItemStack[] = []
+  const itemsB: ItemStack[] = []
 
   for (const [itemId, itemGroup] of Object.entries(modelValue.value)) {
     const item = itemsById.value[itemId]!
 
-    if (itemGroup.groupACount > 0) {
-      resultA.push({ item, count: itemGroup.groupACount })
+    if (itemGroup.initialGroupACount || itemGroup.groupACount > 0) {
+      itemsA.push({ item, count: itemGroup.groupACount })
     }
-    if (itemGroup.groupBCount > 0) {
-      resultB.push({ item, count: itemGroup.groupBCount })
+    if (itemGroup.initialGroupBCount || itemGroup.groupBCount > 0) {
+      itemsB.push({ item, count: itemGroup.groupBCount })
     }
   }
 
-  return { resultA, resultB }
+  return { itemsA, itemsB }
 })
 
 interface PublicApi {
   submit: () => void
+  reset: () => void
 }
 
 const sortingConfig: SortingConfig = {
@@ -129,10 +139,70 @@ const sortingConfig: SortingConfig = {
   type_asc: { field: 'type', order: 'asc' },
   // TODO: FIXME: by count
 }
-
 const sortingModel = ref<string>('rank_desc')
 
+const onTransferAllToGroup = (group: Group, itemIds: string[]) => {
+  setModelValue(
+    Object.entries(modelValue.value)
+      .reduce((acc, [itemId, itemGroup]) => {
+        if (itemIds.includes(itemId)) {
+          acc[itemId] = {
+            ...itemGroup,
+            groupACount: group === 'GroupA' ? itemGroup.totalCount : 0,
+            groupBCount: group === 'GroupB' ? itemGroup.totalCount : 0,
+          }
+        }
+        return acc
+      }, {} as Record<string, ItemGroup>),
+  )
+}
+
+const onReset = () => {
+  modelValue.value = getInitialState()
+}
+
+const onSubmit = () => {
+  emit('submit', Object.entries(modelValue.value)
+    // only changed items
+    .filter(([, itemGroup]) => itemGroup.groupACount !== itemGroup.initialGroupACount)
+    .map(([itemId, itemGroup]) => ({
+      itemId,
+      count: itemGroup.groupACount - itemGroup.initialGroupACount,
+    })))
+}
+
 const { toggleItemDetail } = useItemDetail()
+
+// TODO: can be moved to a separate SFC
+const renderItem = (itemGroup: { item: ItemStack['item'], group: Group }) => {
+  const initialCount = getInitialCount(itemGroup.item.id, itemGroup.group)
+  const count = getCount(itemGroup.item.id, itemGroup.group)
+
+  return h('div', [
+    h(ItemCard, {
+      class: 'cursor-pointer',
+      item: itemGroup.item,
+      onClick: (event: MouseEvent) => toggleItemDetail(event.currentTarget as HTMLElement, itemGroup.item.id),
+    }, {
+      'badges-bottom-right': () => h(UBadge, {
+        variant: 'subtle',
+        color: 'neutral',
+      }, () => [
+        n(initialCount),
+        initialCount !== count && [
+          h(UIcon, { name: 'i-lucide-chevron-right' }),
+          n(count),
+        ],
+      ]),
+    }),
+    h(UiInputNumberSlider, {
+      'min': 0,
+      'max': getMaxCount(itemGroup.item.id),
+      'modelValue': count,
+      'onUpdate:modelValue': (count: number) => setCount(itemGroup.item.id, itemGroup.group, count),
+    }),
+  ])
+}
 
 const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsResult: GroupedCompareItemsResult[]) => {
   const item = itemsById.value[opendeItem.id]!
@@ -147,36 +217,9 @@ const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsR
   })
 }
 
-const onTransferAllToGroup = (group: Group) => {
-  setModelValue(
-    Object.entries(modelValue.value)
-      .reduce((acc, [itemId, itemGroup]) => {
-        acc[itemId] = {
-          ...itemGroup,
-          groupACount: group === 'GroupA' ? itemGroup.totalCount : 0,
-          groupBCount: group === 'GroupB' ? itemGroup.totalCount : 0,
-        }
-        return acc
-      }, {} as Record<string, ItemGroup>),
-  )
-}
-
-const onReset = () => {
-  modelValue.value = getInitialState()
-}
-
-const onSubmit = () => {
-  emit('submit', Object.entries(modelValue.value)
-    // only changed items
-    .filter(([_, itemGroup]) => itemGroup.groupACount !== itemGroup.initialGroupACount)
-    .map(([itemId, itemGroup]) => ({
-      itemId,
-      count: itemGroup.groupACount - itemGroup.initialGroupACount,
-    })))
-}
-
 defineExpose<PublicApi>({
   submit: onSubmit,
+  reset: onReset,
 })
 </script>
 
@@ -186,67 +229,43 @@ defineExpose<PublicApi>({
       footer: 'flex flex-row justify-end gap-4',
     }"
   >
-    <ItemGridTest
+    <ItemGridSplit
       v-model:sorting="sortingModel"
-      :items-a="dynamicItems.resultA"
-      :items-b="dynamicItems.resultB"
+      :items-a="dynamicItems.itemsA"
+      :items-b="dynamicItems.itemsB"
       :sorting-config="sortingConfig"
     >
       <template #item="itemGroup">
-        <ItemStackInput
-          :item="itemGroup.item"
-          :max="getMaxCount(itemGroup.item.id)"
-          :model-value="getValue(itemGroup.item.id, itemGroup.group)"
-          @update:model-value="(count) => setValue(itemGroup.item.id, itemGroup.group, count)"
-          @toggle-item-detail="toggleItemDetail"
-        />
+        <component :is="renderItem(itemGroup)" />
       </template>
 
       <template #item-detail="{ item, compareItemsResult }">
         <component :is="renderItemDetail(item, compareItemsResult)" />
       </template>
 
-      <template #left-side-header>
-        <div class="mb-2 flex justify-end">
+      <template #left-side-header="{ filteredItemIds }">
+        <div class="mb-2 flex flex-wrap items-center justify-between gap-4">
+          <slot name="left-side-header" />
           <UButton
             color="neutral"
             trailing-icon="i-lucide-chevrons-right"
             variant="link"
-            size="sm"
-            label="Transfer all"
-            @click="onTransferAllToGroup('GroupB')"
+            @click="onTransferAllToGroup('GroupB', filteredItemIds)"
           />
         </div>
       </template>
-      <template #right-side-header>
-        <div class="mb-2 flex">
+
+      <template #right-side-header="{ filteredItemIds }">
+        <div class="mb-2 flex flex-wrap items-center justify-between gap-4">
           <UButton
             color="neutral"
             icon="i-lucide-chevrons-left"
             variant="link"
-            size="sm"
-            label="Transfer all"
-            @click="onTransferAllToGroup('GroupA')"
+            @click="onTransferAllToGroup('GroupA', filteredItemIds)"
           />
+          <slot name="right-side-header" />
         </div>
       </template>
-    </ItemGridTest>
-
-    <template #footer>
-      <UButton
-        :label="$t('action.reset')"
-        block
-        color="neutral"
-        variant="soft"
-        @click="onReset"
-      />
-      <UButton
-        :label="$t('action.submit')"
-        block
-        color="primary"
-        variant="soft"
-        @click="onSubmit"
-      />
-    </template>
+    </ItemGridSplit>
   </UCard>
 </template>

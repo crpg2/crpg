@@ -68,19 +68,13 @@ const transferOfferUpdate = computed(() => {
     </template>
 
     <template #body>
-      <UCard
-        :ui="{
-          body: 'space-y-8',
-        }"
-      >
-        <MapTransferForm
-          :max-gold="partyState.party.gold"
-          :max-troops="partyState.party.troops"
-          :items
-          :transfer-offer="transferOfferUpdate"
-          readonly
-        />
-      </UCard>
+      <MapTransferForm
+        :max-gold="partyState.party.gold"
+        :max-troops="partyState.party.troops"
+        :items
+        :transfer-offer="transferOfferUpdate"
+        readonly
+      />
     </template>
 
     <template #footer>

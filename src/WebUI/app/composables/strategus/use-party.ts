@@ -4,7 +4,9 @@ import type { StrategusUpdate, UpdatePartyOrder } from '~/models/strategus/party
 
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { PARTY_ORDER_TYPE } from '~/models/strategus/party'
+import { PARTY_QUERY_KEYS } from '~/queries'
 import {
+  getSelfPartyItems,
   getSelfUpdate,
   mapPartyOrderToUpdateOrder,
   shouldPartyBeInBattle,
@@ -153,5 +155,26 @@ export const useParty = (
 
     toggleRecruitTroops,
     isTogglingRecruitTroops,
+  }
+}
+
+export const usePartyItems = (immediate = false) => {
+  const {
+    data: partyItems,
+    pending: loadingPartyItems,
+    refresh: loadpartyItems,
+  } = useAsyncData(
+    toCacheKey(PARTY_QUERY_KEYS.items()),
+    () => getSelfPartyItems(),
+    {
+      default: () => [],
+      immediate,
+    },
+  )
+
+  return {
+    partyItems,
+    loadingPartyItems,
+    loadpartyItems,
   }
 }

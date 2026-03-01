@@ -200,7 +200,7 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
           2xl:grid-cols-4
         "
       >
-        <template v-for="item in grid.getRowModel().rows" :key="item.id">
+        <template v-for="item in grid.getRowModel().rows" :key="item.original.item.id">
           <slot name="item" v-bind="item.original" />
         </template>
       </div>

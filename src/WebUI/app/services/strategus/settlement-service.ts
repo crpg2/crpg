@@ -9,6 +9,7 @@ import {
 
 import type { ItemStack, ItemStackUpdate } from '~/models/strategus/party'
 import type { SettlementPublic, SettlementType } from '~/models/strategus/settlement'
+import type { User } from '~/models/user'
 
 import { SETTLEMENT_TYPE } from '~/models/strategus/settlement'
 
@@ -33,3 +34,13 @@ export const updateSettlementItems = async (settlementId: number, items: ItemSta
   path: { settlementId },
   body: { items },
 })
+
+export const checkCanEditSettlementInventory = (settlement: SettlementPublic, user: User): boolean => {
+  if (!settlement.owner) {
+    return false
+  }
+
+  // TODO: clanmember access
+
+  return settlement.owner.id === user.id
+}

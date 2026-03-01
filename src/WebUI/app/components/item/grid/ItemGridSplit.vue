@@ -1,3 +1,5 @@
+<!-- TODO: FIXME: copypasta ItemGrid, try to reuse -->
+<!-- TODO: FIXME: REFACTORING -->
 <script setup lang="ts" generic="T extends { item: Item }">
 import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState } from '@tanstack/vue-table'
@@ -9,8 +11,6 @@ import type { GroupedCompareItemsResult, Item, ItemType } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useItemDetail } from '~/composables/item/use-item-detail'
-// import { useMainHeader } from '~/composables/app/use-main-header'
-// import { useStickySidebar } from '~/composables/use-sticky-sidebar'
 import { ITEM_TYPE } from '~/models/item'
 import { getAggregationsConfig, getFacetsByItemType, getFilterFn } from '~/services/item-search-service'
 import { aggregationsConfig } from '~/services/item-search-service/aggregations'
@@ -67,66 +67,34 @@ const columnFilters = computed<ColumnFiltersState>(() => [
 ])
 
 const columns: TableColumn<GroupedItem>[] = [
-  {
-    accessorFn: row => row.group,
-    id: 'group',
-  },
-  {
-    accessorFn: row => row.item.id,
-    id: 'id',
-  },
+  { accessorFn: row => row.group, id: 'group' },
+  { accessorFn: row => row.item.id, id: 'id' },
   {
     accessorFn: row => row.item.type,
     id: 'type',
     filterFn: getFilterFn(aggregationsConfig.type!),
   },
-  {
-    accessorFn: row => row.item.price,
-    id: 'price',
-  },
-  {
-    accessorFn: row => row.item.rank,
-    id: 'rank',
-  },
-  {
-    accessorFn: row => row.item.name,
-    id: 'name',
-  },
+  { accessorFn: row => row.item.price, id: 'price' },
+  { accessorFn: row => row.item.rank, id: 'rank' },
+  { accessorFn: row => row.item.name, id: 'name' },
 ]
 
 const grid = useVueTable({
-  get data() {
-    return toRef(() => items.value)
-  },
+  get data() { return items.value },
   columns,
   getCoreRowModel: getCoreRowModel(),
   getFilteredRowModel: getFilteredRowModel(),
   getSortedRowModel: getSortedRowModel(),
-  filterFns: {
-    includesSome,
-  },
+  filterFns: { includesSome },
   state: {
-    get sorting() {
-      return sorting.value
-    },
-    get globalFilter() {
-      return filterByNameModel.value
-    },
-    get columnFilters() {
-      return columnFilters.value
-    },
+    get sorting() { return sorting.value },
+    get globalFilter() { return filterByNameModel.value },
+    get columnFilters() { return columnFilters.value },
   },
 })
 
 const findedItemsA = computed(() => grid.getRowModel().rows.filter(row => row.original.group === ITEM_GROUP.GroupA))
 const findedItemsB = computed(() => grid.getRowModel().rows.filter(row => row.original.group === ITEM_GROUP.GroupB))
-
-watch(() => items.value, () => {
-  // For example, if a product has been sold, you need to reset the filter by type.
-  if (!grid.getRowModel().rows.length) {
-    itemType.value = ITEM_TYPE.Undefined
-  }
-})
 
 const { isOpen } = useItemDetail()
 
@@ -170,33 +138,28 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
           :items="sortingItems"
           :size
         />
-
         <slot name="filter-trailing" />
       </div>
     </div>
 
     <div class="grid grid-cols-[1fr_auto_1fr] gap-4">
-      <div v-if="findedItemsA.length">
-        <slot name="left-side-header" />
+      <div>
+        <slot name="left-side-header" v-bind="{ filteredItemIds: findedItemsA.map(item => item.original.item.id) }" />
         <div
+          v-if="findedItemsA.length"
           class="
-            grid auto-rows-min grid-cols-3 gap-2
-            2xl:grid-cols-2
+            grid auto-rows-min grid-cols-2 gap-2
+            2xl:grid-cols-3
           "
         >
-          <TransitionGroup name="item-card" tag="div" class="contents">
-            <template v-for="item in findedItemsA" :key="item.original.item.id">
-              <slot name="item" v-bind="item.original" />
-            </template>
-          </TransitionGroup>
+          <template v-for="item in findedItemsA" :key="item.original.item.id">
+            <slot name="item" v-bind="item.original" />
+          </template>
         </div>
+        <UiResultNotFound v-else :message="$t('character.inventory.empty')" />
       </div>
 
-      <UiResultNotFound v-else :message="$t('character.inventory.empty')" />
-
-      <div
-        class="sticky top-0"
-      >
+      <div class="sticky top-0">
         <ItemSearchFilterByType
           v-model:item-type="itemType"
           :item-types="itemTypes"
@@ -206,28 +169,25 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
         />
       </div>
 
-      <div v-if="findedItemsB.length">
-        <slot name="right-side-header" />
+      <div>
+        <slot
+          name="right-side-header"
+          v-bind="{ filteredItemIds: findedItemsB.map(item => item.original.item.id) }"
+        />
         <div
+          v-if="findedItemsB.length"
           class="
             grid auto-rows-min grid-cols-3 gap-2
-            2xl:grid-cols-2
+            2xl:grid-cols-3
           "
         >
-          <TransitionGroup name="item-card" tag="div" class="contents">
-            <template v-for="item in findedItemsB" :key="item.original.item.id">
-              <slot name="item" v-bind="item.original" />
-            </template>
-          </TransitionGroup>
+          <template v-for="item in findedItemsB" :key="item.original.item.id">
+            <slot name="item" v-bind="item.original" />
+          </template>
         </div>
+        <UiResultNotFound v-else :message="$t('character.inventory.empty')" />
       </div>
-      <UiResultNotFound v-else :message="$t('character.inventory.empty')" />
     </div>
-
-    <!-- TODO: -->
-    <!-- <UCard v-else-if="!loading">
-      <UiResultNotFound :message="$t('character.inventory.empty')" />
-    </UCard> -->
 
     <ItemDetailGroup>
       <template #default="item">
@@ -236,17 +196,3 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
     </ItemDetailGroup>
   </div>
 </template>
-
-<!-- TODO: to reusable component -->
-<style>
-.item-card-enter-active {
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.item-card-leave-active {
-  transition: opacity 0.25s cubic-bezier(0.4, 0, 1, 1), transform 0.25s cubic-bezier(0.4, 0, 1, 1);
-}
-.item-card-leave-to {
-  opacity: 0;
-  transform: scale(0.95);
-}
-</style>

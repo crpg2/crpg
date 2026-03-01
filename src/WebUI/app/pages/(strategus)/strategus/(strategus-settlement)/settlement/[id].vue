@@ -6,6 +6,7 @@ import { usePartyState } from '~/composables/strategus/use-party'
 import { useSettlement, useSettlementProvider } from '~/composables/strategus/use-settlements'
 import { useUser } from '~/composables/user/use-user'
 import { shouldPartyBeInSettlement } from '~/services/strategus/party-service'
+import { checkCanEditSettlementInventory } from '~/services/strategus/settlement-service'
 
 definePageMeta({
   middleware: [
@@ -50,17 +51,21 @@ const route = useRoute<'strategus-settlement-id'>()
 
 const navigationItems = computed<NavigationMenuItem[]>(() => [
   {
-    label: 'Overview',
+    label: 'Town center',
     to: { name: 'strategus-settlement-id', params: { id: route.params.id } },
     active: route.name === 'strategus-settlement-id', // hack, [id].vue conflict with [id]/index.vue
-    // icon: 'crpg:member',
   },
-  {
-    label: 'Garrison/Inventory',
-    to: { name: 'strategus-settlement-id-inventory', params: { id: route.params.id } },
-    active: route.name === 'strategus-settlement-id-inventory', // hack, [id].vue conflict with [id]/index.vue
-    icon: 'crpg:chest',
-  },
+  ...(checkCanEditSettlementInventory(settlement.value, user.value!)
+    ? [
+        {
+          label: 'Garrison/Inventory',
+          to: { name: 'strategus-settlement-id-inventory', params: { id: route.params.id } },
+          active: route.name === 'strategus-settlement-id-inventory', // hack, [id].vue conflict with [id]/index.vue
+          icon: 'crpg:chest',
+        } as NavigationMenuItem,
+      ]
+    : []),
+
 ])
 </script>
 
@@ -108,52 +113,9 @@ const navigationItems = computed<NavigationMenuItem[]>(() => [
     <UNavigationMenu
       variant="pill"
       color="neutral"
-      class="flex w-full justify-center gap-4"
+      class="mb-2 flex w-full justify-center gap-4"
       :items="navigationItems"
     />
-    <!-- class="flex h-[95%] w-2/5 flex-col space-y-4 overflow-hidden bg-default/90 p-6 backdrop-blur-sm" -->
-    <!-- <header class="border-border-200 border-b pb-2">
-
-      <div class="flex items-center gap-5">
-        <OButton
-          v-tooltip.bottom="`Leave`"
-          variant="secondary"
-          size="lg"
-          outlined
-          rounded
-          icon-left="arrow-left"
-          @click="leaveFromSettlement"
-        />
-
-        <div v-if="settlement" class="flex items-center gap-5">
-
-      </div>
-    </header> -->
-
-    <!-- <nav class="flex items-center justify-center gap-2">
-      <RouterLink
-        v-slot="{ isExactActive }"
-        :to="{ name: 'StrategusSettlementId', params: { id: route.params.id } }"
-      >
-        <OButton
-          :variant="isExactActive ? 'transparent-active' : 'secondary'"
-          size="sm"
-          label="Info"
-        />
-      </RouterLink>
-
-      <RouterLink
-        v-slot="{ isExactActive }"
-        :to="{ name: 'StrategusSettlementIdGarrison', params: { id: route.params.id } }"
-      >
-        <OButton
-          :variant="isExactActive ? 'transparent-active' : 'secondary'"
-          size="sm"
-          icon-left="member"
-          label="Garrison"
-        />
-      </RouterLink>
-    </nav> -->
 
     <NuxtPage />
   </MapSidePage>
