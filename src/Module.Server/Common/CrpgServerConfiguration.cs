@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using Crpg.Module.Api.Models;
 using Crpg.Module.HarmonyPatches;
+using Crpg.Module.Notifications;
 using JetBrains.Annotations;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -59,6 +60,25 @@ internal static class CrpgServerConfiguration
         string suffixedServerName = $"{serverName} {DateTime.Now:HH:mm}";
         MultiplayerOptions.OptionType.ServerName.SetValue(suffixedServerName);
         Debug.Print($"Set the server name to \"{suffixedServerName}\"");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("announce", "Sends a message to all players")]
+    private static void Announce(string? message)
+    {
+        if (string.IsNullOrEmpty(message))
+        {
+            return;
+        }
+
+        GameNetwork.BeginBroadcastModuleEvent();
+        GameNetwork.WriteMessage(new CrpgNotification
+        {
+            Type = CrpgNotificationType.Announcement,
+            Message = message,
+        });
+        GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
+        Debug.Print($"Sent \"{message}\"");
     }
 
     [UsedImplicitly]
