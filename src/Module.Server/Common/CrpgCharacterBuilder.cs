@@ -8,21 +8,6 @@ namespace Crpg.Module.Common;
 
 internal static class CrpgCharacterBuilder
 {
-    private static readonly Dictionary<CrpgItemSlot, EquipmentIndex> ItemSlotToIndex = new()
-    {
-        [CrpgItemSlot.Head] = EquipmentIndex.Head,
-        [CrpgItemSlot.Shoulder] = EquipmentIndex.Cape,
-        [CrpgItemSlot.Body] = EquipmentIndex.Body,
-        [CrpgItemSlot.Hand] = EquipmentIndex.Gloves,
-        [CrpgItemSlot.Leg] = EquipmentIndex.Leg,
-        [CrpgItemSlot.MountHarness] = EquipmentIndex.HorseHarness,
-        [CrpgItemSlot.Mount] = EquipmentIndex.Horse,
-        [CrpgItemSlot.Weapon0] = EquipmentIndex.Weapon0,
-        [CrpgItemSlot.Weapon1] = EquipmentIndex.Weapon1,
-        [CrpgItemSlot.Weapon2] = EquipmentIndex.Weapon2,
-        [CrpgItemSlot.Weapon3] = EquipmentIndex.Weapon3,
-        [CrpgItemSlot.WeaponExtra] = EquipmentIndex.ExtraWeaponSlot,
-    };
 
     public static MBCharacterSkills CreateCharacterSkills(CrpgCharacterCharacteristics characteristics)
     {
@@ -55,8 +40,7 @@ internal static class CrpgCharacterBuilder
         Equipment equipment = new();
         foreach (var equippedItem in equippedItems)
         {
-            var index = ItemSlotToIndex[equippedItem.Slot];
-            AddEquipment(equipment, index, equippedItem.UserItem.ItemId);
+            AddEquipment(equipment, equippedItem.Slot.ToIndex(), equippedItem.UserItem.ItemId);
         }
 
         return equipment;
@@ -67,8 +51,7 @@ internal static class CrpgCharacterBuilder
         Equipment equipment = new();
         foreach (var equippedItem in equippedItems)
         {
-            var index = ItemSlotToIndex[equippedItem.Slot];
-            AddBotEquipment(equipment, index, equippedItem.UserItem.ItemId);
+            AddBotEquipment(equipment, equippedItem.Slot.ToIndex(), equippedItem.UserItem.ItemId);
         }
 
         return equipment;

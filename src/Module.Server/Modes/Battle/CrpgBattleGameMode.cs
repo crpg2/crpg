@@ -7,6 +7,7 @@ using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.EndOfRound;
 using Crpg.Module.GUI.HudExtension;
+using Crpg.Module.GUI.Inventory;
 using Crpg.Module.GUI.Scoreboard;
 using TaleWorlds.MountAndBlade.Multiplayer.GauntletUI.Mission;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
@@ -100,6 +101,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
             new MissionBoundaryWallView(),
             new SpectatorCameraView(),
             new CrpgAgentHud(experienceTable),
+            new CrpgInventoryScreen(),
             // Draw flags but also player names when pressing ALT. (Native: CreateMissionFlagMarkerUIHandler)
             ViewCreatorManager.CreateMissionView<CrpgMarkerUiHandler>(isNetwork: false, null, gameModeClient),
         };
@@ -148,6 +150,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new MultiplayerMissionAgentVisualSpawnComponent(), // expose method to spawn an agent
                     new CrpgCommanderBehaviorClient(),
                     new AmmoQuiverChangeBehaviorClient(),
+                    new CrpgInventoryClient(),
                     new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
 #endif
                     battleClient,
@@ -185,6 +188,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new AgentHumanAILogic(), // bot intelligence
                     new MultiplayerAdminComponent(), // admin UI to kick player or restart game
                     new CrpgUserManagerServer(crpgClient, _constants),
+                    new CrpgInventoryBehavior(),
                     new KickInactiveBehavior(inactiveTimeLimit: 30, warmupComponent, teamSelectComponent),
                     new MapPoolComponent(),
                     new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),

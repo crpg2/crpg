@@ -6,6 +6,7 @@ internal static class CrpgClient
     {
         string? apiUrl = Environment.GetEnvironmentVariable("CRPG_API_BASE_URL");
         string? apiKey = Environment.GetEnvironmentVariable("CRPG_API_KEY");
+        apiKey = null;
         return apiUrl == null || apiKey == null ? new StubCrpgClient() : new HttpCrpgClient(apiUrl, apiKey);
     }
 }

@@ -5,6 +5,7 @@ using Crpg.Application.Clans.Queries;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Games.Commands;
 using Crpg.Application.Games.Models;
+using Crpg.Application.Items.Models;
 using Crpg.Application.Restrictions.Commands;
 using Crpg.Application.Restrictions.Models;
 using Crpg.Domain.Entities;
@@ -38,6 +39,18 @@ public class GamesController : BaseController
     public Task<ActionResult<Result<GameUserViewModel>>> GetTournamentUser(
         [FromQuery] Platform platform, [FromQuery] string platformUserId) =>
         ResultToActionAsync(Mediator.Send(new GetGameUserTournamentCommand
+        {
+            Platform = platform,
+            PlatformUserId = platformUserId,
+        }));
+
+    /// <summary>
+    /// Get all items owned by a user.
+    /// </summary>
+    [HttpGet("users/items")]
+    public Task<ActionResult<Result<IList<GameUserItemViewModel>>>> GetUserItems(
+        [FromQuery] Platform platform, [FromQuery] string platformUserId) =>
+        ResultToActionAsync(Mediator.Send(new GetGameUserItemsCommand
         {
             Platform = platform,
             PlatformUserId = platformUserId,

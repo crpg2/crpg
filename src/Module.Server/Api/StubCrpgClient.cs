@@ -120,6 +120,46 @@ internal class StubCrpgClient : ICrpgClient
         });
     }
 
+    public Task<CrpgResult<IList<CrpgUserItem>>> GetUserItemsAsync(Platform platform, string platformUserId,
+        CancellationToken cancellationToken = default)
+    {
+        List<CrpgUserItem> userItems = [];
+        foreach (var itemType in new[]
+                 {
+                     ItemObject.ItemTypeEnum.HeadArmor,
+                     ItemObject.ItemTypeEnum.Cape,
+                     ItemObject.ItemTypeEnum.BodyArmor,
+                     ItemObject.ItemTypeEnum.HandArmor,
+                     ItemObject.ItemTypeEnum.LegArmor,
+                     ItemObject.ItemTypeEnum.HorseHarness,
+                     ItemObject.ItemTypeEnum.Horse,
+                     ItemObject.ItemTypeEnum.Shield,
+                     ItemObject.ItemTypeEnum.Bow,
+                     ItemObject.ItemTypeEnum.Crossbow,
+                     ItemObject.ItemTypeEnum.OneHandedWeapon,
+                     ItemObject.ItemTypeEnum.TwoHandedWeapon,
+                     ItemObject.ItemTypeEnum.Polearm,
+                     ItemObject.ItemTypeEnum.Thrown,
+                     ItemObject.ItemTypeEnum.Arrows,
+                     ItemObject.ItemTypeEnum.Bolts,
+                     ItemObject.ItemTypeEnum.Banner,
+                 })
+        {
+            for (int i = 0; i < 3; i += 1)
+            {
+                userItems.Add(new CrpgUserItem
+                {
+                    Id = Random.Next(),
+                    ItemId = GetRandomItemId(itemType),
+                    Rank = Random.Next(0, 3),
+                    IsBroken = Random.Next(0, 100) <= 3,
+                });
+            }
+        }
+
+        return Task.FromResult(new CrpgResult<IList<CrpgUserItem>> { Data = userItems });
+    }
+
     public Task<CrpgResult<CrpgRestriction>> RestrictUserAsync(CrpgRestrictionRequest req, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
@@ -146,7 +186,7 @@ internal class StubCrpgClient : ICrpgClient
     {
         return MBObjectManager.Instance
             .GetObjectTypeList<ItemObject>()
-            .GetRandomElementWithPredicate(i => i.StringId.StartsWith("mp_", StringComparison.Ordinal) && i.Type == itemType)
+            .GetRandomElementWithPredicate(i => i.StringId.StartsWith("crpg_", StringComparison.Ordinal) && i.Type == itemType)
             .StringId;
     }
 }

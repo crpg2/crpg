@@ -5,6 +5,7 @@ using Crpg.Module.Api.Exceptions;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.ActivityLogs;
 using Crpg.Module.Api.Models.Clans;
+using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Restrictions;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common;
@@ -102,6 +103,17 @@ internal class HttpCrpgClient : ICrpgClient
     public Task<CrpgResult<CrpgUsersUpdateResponse>> UpdateUsersAsync(CrpgGameUsersUpdateRequest req, CancellationToken cancellationToken = default)
     {
         return Put<CrpgGameUsersUpdateRequest, CrpgUsersUpdateResponse>("games/users", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<IList<CrpgUserItem>>> GetUserItemsAsync(Platform platform, string platformUserId,
+        CancellationToken cancellationToken = default)
+    {
+        Dictionary<string, string> queryParameters = new(StringComparer.Ordinal)
+        {
+            ["platform"] = platform.ToString(),
+            ["platformUserId"] = platformUserId,
+        };
+        return Get<IList<CrpgUserItem>>("games/users/items", queryParameters, cancellationToken);
     }
 
     public Task<CrpgResult<CrpgRestriction>> RestrictUserAsync(CrpgRestrictionRequest req, CancellationToken cancellationToken = default)

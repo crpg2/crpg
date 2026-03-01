@@ -5,6 +5,7 @@ using Crpg.Module.Common.ChatCommands;
 using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.HudExtension;
+using Crpg.Module.GUI.Inventory;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
@@ -66,6 +67,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
             new MissionBoundaryWallView(),
             new SpectatorCameraView(),
             new CrpgAgentHud(experienceTable),
+            new CrpgInventoryScreen(),
             // Draw flags but also player names when pressing ALT. (Native: CreateMissionFlagMarkerUIHandler)
             ViewCreatorManager.CreateMissionView<CrpgMarkerUiHandler>(isNetwork: false, null, gameModeClient),
         };
@@ -99,6 +101,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
                 new CrpgUserManagerClient(), // Needs to be loaded before the Client mission part.
                 new MultiplayerMissionAgentVisualSpawnComponent(),
                 new AmmoQuiverChangeBehaviorClient(),
+                new CrpgInventoryClient(),
 #endif
                 warmupComponent,
                 siegeClient,
@@ -124,6 +127,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
 #if CRPG_SERVER
                 new CrpgSiegeServer(siegeClient, scoreboardComponent, rewardServer),
                 new CrpgUserManagerServer(crpgClient, _constants),
+                new CrpgInventoryBehavior(),
                 new KickInactiveBehavior(inactiveTimeLimit: 90, warmupComponent),
                 new MapPoolComponent(),
                 new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),

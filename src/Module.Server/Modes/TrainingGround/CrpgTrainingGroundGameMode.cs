@@ -13,6 +13,7 @@ using TaleWorlds.MountAndBlade.Source.Missions;
 #if CRPG_CLIENT
 using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
+using Crpg.Module.GUI.Inventory;
 using Crpg.Module.GUI.TrainingGround;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
@@ -67,6 +68,7 @@ internal class CrpgTrainingGroundGameMode : MissionBasedMultiplayerGameMode
             new MissionAgentContourControllerView(),
             MultiplayerViewCreator.CreateMissionFlagMarkerUIHandler(), // Draw flags but also player names when pressing ALT.
             new CrpgAgentHud(experienceTable),
+            new CrpgInventoryScreen(),
             // Draw flags but also player names when pressing ALT. (Native: CreateMissionFlagMarkerUIHandler)
             ViewCreatorManager.CreateMissionView<CrpgMarkerUiHandler>(isNetwork: false, null, gameModeClient),
         };
@@ -96,6 +98,7 @@ internal class CrpgTrainingGroundGameMode : MissionBasedMultiplayerGameMode
                     new CrpgUserManagerClient(), // Needs to be loaded before the Client mission part.
                     new MultiplayerMissionAgentVisualSpawnComponent(), // expose method to spawn an agent
                     new AmmoQuiverChangeBehaviorClient(), // Ammo Quiver change feature
+                    new CrpgInventoryClient(),
 #endif
                     duelClient,
                     new MultiplayerTimerComponent(), // round timer
@@ -121,6 +124,7 @@ internal class CrpgTrainingGroundGameMode : MissionBasedMultiplayerGameMode
                     new AgentHumanAILogic(), // bot intelligence
                     new EquipmentControllerLeaveLogic(),
                     new CrpgUserManagerServer(crpgClient, _constants),
+                    new CrpgInventoryBehavior(),
                     new CrpgActivityLogsBehavior(null, chatBox, crpgClient),
                     new ServerMetricsBehavior(),
                     new NotAllPlayersReadyComponent(),

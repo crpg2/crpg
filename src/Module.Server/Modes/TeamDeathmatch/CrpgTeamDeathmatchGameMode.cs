@@ -7,6 +7,7 @@ using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.EndOfRound;
+using Crpg.Module.GUI.Inventory;
 using Crpg.Module.GUI.HudExtension;
 using Crpg.Module.GUI.Scoreboard;
 using Crpg.Module.GUI.Warmup;
@@ -79,6 +80,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
             new MissionBoundaryWallView(),
             new SpectatorCameraView(),
             new CrpgAgentHud(experienceTable),
+            new CrpgInventoryScreen(),
             // Draw flags but also player names when pressing ALT. (Native: CreateMissionFlagMarkerUIHandler)
             ViewCreatorManager.CreateMissionView<CrpgMarkerUiHandler>(isNetwork: false, null, gameModeClient),
         };
@@ -118,6 +120,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
                 new MultiplayerMissionAgentVisualSpawnComponent(), // expose method to spawn an agent
                 new CrpgCommanderBehaviorClient(),
                 new AmmoQuiverChangeBehaviorClient(),
+                new CrpgInventoryClient(),
                 new CrpgRespawnTimerClient(),
                 new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
 #endif
@@ -148,6 +151,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
                 new AgentHumanAILogic(),
                 new MultiplayerAdminComponent(),
                 new CrpgUserManagerServer(crpgClient, _constants),
+                new CrpgInventoryBehavior(),
                 new KickInactiveBehavior(inactiveTimeLimit: 30, warmupComponent, teamSelectComponent),
                 new MapPoolComponent(),
                 new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),

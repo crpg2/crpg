@@ -1,4 +1,5 @@
-﻿using Crpg.Module.Modes.Duel;
+﻿using Crpg.Module.GUI.Inventory;
+using Crpg.Module.Modes.Duel;
 using Crpg.Module.Modes.TrainingGround;
 using NetworkMessages.FromClient;
 using TaleWorlds.Core;
@@ -42,7 +43,17 @@ internal class CrpgEscapeMenu : MissionGauntletMultiplayerEscapeMenu
             AddTrainingGroundOptions(items);
         }
 
+        EscapeMenuItemVM inventoryButton = new(new TextObject("{=}Inventory"),
+            __ =>
+            {
+                var inventoryScreen = Mission.GetMissionBehavior<CrpgInventoryScreen>();
+                inventoryScreen?.ToggleVisibility();
+                OnEscapeMenuToggled(false);
+            },
+            null, () => Tuple.Create(false, new TextObject(string.Empty)));
+
         items.Insert(items.Count - 2, crpgWebsiteButton); // -2 = Insert new button right before the 'Options' button
+        items.Insert(items.Count - 2, inventoryButton);
 
         return items;
     }

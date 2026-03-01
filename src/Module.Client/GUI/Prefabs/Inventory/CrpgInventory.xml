@@ -1,0 +1,434 @@
+<Prefab>
+
+  <Window>
+
+    <CrpgInventoryScreenWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                IsVisible="@IsVisible">
+
+      <Children>
+
+        <!-- Dark fullscreen overlay -->
+        <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                Sprite="BlankWhiteSquare_9" Color="#000000CC"
+                DoNotAcceptEvents="true" DoNotPassEventsToChildren="true" />
+
+        <!-- Main content area -->
+        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                SuggestedWidth="1600" SuggestedHeight="900"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+
+          <Children>
+
+            <!-- ===== TITLE BAR ===== -->
+            <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed"
+                    SuggestedHeight="44"
+                    Sprite="BlankWhiteSquare_9" Color="#1A1A3EFF">
+              <Children>
+                <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
+                            Text="Inventory"
+                            Brush="Multiplayer.FactionBanner.Name.Text" Brush.FontSize="24"
+                            MarginLeft="18"
+                            HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
+                            IsVisible="@IsAlive"
+                            Text="Changes will apply on next spawn"
+                            Brush="Multiplayer.FactionBanner.Name.Text"
+                            Brush.FontSize="14" Brush.FontColor="#F59E0BFF"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <ButtonWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                              SuggestedWidth="30" SuggestedHeight="30"
+                              HorizontalAlignment="Right" VerticalAlignment="Center"
+                              MarginRight="8"
+                              Command.Click="ExecuteClose"
+                              Brush="Standard.Close" />
+              </Children>
+            </Widget>
+
+            <!-- ===== THREE-COLUMN CONTENT ===== -->
+            <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                    MarginTop="50">
+
+              <Children>
+
+                <!-- ===================== -->
+                <!-- LEFT: ARMOR & MOUNT   -->
+                <!-- ===================== -->
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                        SuggestedWidth="230"
+                        HorizontalAlignment="Left"
+                        MarginLeft="8" MarginTop="4" MarginBottom="8">
+
+                  <Children>
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed"
+                                SuggestedHeight="28"
+                                Text="Armor &amp; Mount"
+                                Brush="Multiplayer.FactionBanner.Name.Text"
+                                Brush.FontSize="16" Brush.FontColor="#8888AAFF"
+                                MarginLeft="6" />
+
+                    <ListPanel DataSource="{ArmorSlots}"
+                               WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren"
+                               MarginTop="32"
+                               StackLayout.LayoutMethod="VerticalBottomToTop">
+
+                      <ItemTemplate>
+                        <CrpgInventorySlotWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed"
+                                                 SuggestedHeight="90"
+                                                 SlotIndex="@SlotIndex"
+                                                 Command.Click="ExecuteUnequip"
+                                                 MarginBottom="6"
+                                                 Sprite="BlankWhiteSquare_9" Color="#11112488">
+
+                          <Children>
+                            <!-- Slot type label -->
+                            <TextWidget DoNotAcceptEvents="true"
+                                        WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed"
+                                        SuggestedHeight="18"
+                                        Text="@SlotName"
+                                        Brush="Multiplayer.FactionBanner.Name.Text"
+                                        Brush.FontSize="11" Brush.FontColor="#555577FF"
+                                        MarginLeft="8" MarginTop="3" />
+
+                            <!-- Equipped item content -->
+                            <Widget DoNotAcceptEvents="true"
+                                    WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                    MarginTop="20" MarginLeft="6" MarginRight="6" MarginBottom="6">
+                              <Children>
+                                <!-- Item image -->
+                                <Widget DataSource="{Item}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                                        SuggestedWidth="100" SuggestedHeight="58"
+                                        HorizontalAlignment="Left" VerticalAlignment="Center"
+                                        IsVisible="@IsEquipped"
+                                        Sprite="BlankWhiteSquare_9" Color="#1A1A38FF">
+                                  <Children>
+                                    <ImageIdentifierWidget DataSource="{ImageIdentifier}"
+                                                           WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                                           MarginLeft="2" MarginRight="2" MarginTop="2" MarginBottom="2"
+                                                           ImageId="@Id"
+                                                           AdditionalArgs="@AdditionalArgs"
+                                                           TextureProviderName="@TextureProviderName" />
+                                  </Children>
+                                </Widget>
+                                <!-- Item name -->
+                                <Widget DataSource="{Item}" WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
+                                        MarginLeft="108" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                  <Children>
+                                    <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
+                                                Text="@Name"
+                                                Brush="Multiplayer.FactionBanner.Name.Text"
+                                                Brush.FontSize="13"
+                                                Brush.FontColor="@NameColor"
+                                                VerticalAlignment="Center" />
+                                  </Children>
+                                </Widget>
+                                <!-- Empty indicator -->
+                                <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
+                                            IsVisible="@IsEmpty"
+                                            Text="- empty -"
+                                            Brush="Multiplayer.FactionBanner.Name.Text"
+                                            Brush.FontSize="12" Brush.FontColor="#333355FF"
+                                            MarginLeft="8"
+                                            HorizontalAlignment="Left" VerticalAlignment="Center" />
+                              </Children>
+                            </Widget>
+                          </Children>
+
+                        </CrpgInventorySlotWidget>
+                      </ItemTemplate>
+
+                    </ListPanel>
+                  </Children>
+                </Widget>
+
+                <!-- ===================== -->
+                <!-- CENTER: ITEM LIST     -->
+                <!-- ===================== -->
+                <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                        MarginLeft="246" MarginRight="246"
+                        MarginTop="4" MarginBottom="8">
+
+                  <Children>
+                    <!-- Filter bar -->
+                    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed"
+                            SuggestedHeight="42"
+                            Sprite="BlankWhiteSquare_9" Color="#1A1A3EFF">
+                      <Children>
+                        <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
+                                   MarginLeft="6" VerticalAlignment="Center"
+                                   StackLayout.LayoutMethod="HorizontalLeftToRight">
+                          <Children>
+                            <ButtonWidget DoNotPassEventsToChildren="true"
+                                          WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                                          SuggestedWidth="90" SuggestedHeight="32"
+                                          Command.Click="ExecuteFilterAll"
+                                          Brush="MPLobby.TextButton">
+                              <Children>
+                                <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                            Text="All"
+                                            Brush="Multiplayer.FactionBanner.Name.Text" Brush.FontSize="16" />
+                              </Children>
+                            </ButtonWidget>
+                            <ButtonWidget DoNotPassEventsToChildren="true"
+                                          WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                                          SuggestedWidth="90" SuggestedHeight="32"
+                                          Command.Click="ExecuteFilterArmor" MarginLeft="4"
+                                          Brush="MPLobby.TextButton">
+                              <Children>
+                                <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                            Text="Armor"
+                                            Brush="Multiplayer.FactionBanner.Name.Text" Brush.FontSize="16" />
+                              </Children>
+                            </ButtonWidget>
+                            <ButtonWidget DoNotPassEventsToChildren="true"
+                                          WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                                          SuggestedWidth="90" SuggestedHeight="32"
+                                          Command.Click="ExecuteFilterWeapons" MarginLeft="4"
+                                          Brush="MPLobby.TextButton">
+                              <Children>
+                                <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                            Text="Weapons"
+                                            Brush="Multiplayer.FactionBanner.Name.Text" Brush.FontSize="16" />
+                              </Children>
+                            </ButtonWidget>
+                            <ButtonWidget DoNotPassEventsToChildren="true"
+                                          WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                                          SuggestedWidth="90" SuggestedHeight="32"
+                                          Command.Click="ExecuteFilterMount" MarginLeft="4"
+                                          Brush="MPLobby.TextButton">
+                              <Children>
+                                <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                            Text="Mount"
+                                            Brush="Multiplayer.FactionBanner.Name.Text" Brush.FontSize="16" />
+                              </Children>
+                            </ButtonWidget>
+                          </Children>
+                        </ListPanel>
+                        <!-- Item count -->
+                        <TextWidget DoNotAcceptEvents="true"
+                                    WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
+                                    Text="@ItemCountText"
+                                    Brush="Multiplayer.FactionBanner.Name.Text"
+                                    Brush.FontSize="13" Brush.FontColor="#666688FF"
+                                    HorizontalAlignment="Right" VerticalAlignment="Center"
+                                    MarginRight="20" />
+                      </Children>
+                    </Widget>
+
+                    <!-- Scrollable item list -->
+                    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                            MarginTop="48" MarginBottom="46"
+                            Sprite="BlankWhiteSquare_9" Color="#0F0F22FF">
+                      <Children>
+                        <ScrollablePanel WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                         ClipRect="ItemClipRect"
+                                         InnerPanel="ItemClipRect\ItemInnerPanel"
+                                         VerticalScrollbar="..\ItemScrollbarContainer\ItemScrollbar">
+                          <Children>
+                            <Widget Id="ItemClipRect"
+                                    WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                    ClipContents="true" MarginLeft="4" MarginRight="18" MarginTop="4" MarginBottom="4">
+                              <Children>
+                                <ListPanel Id="ItemInnerPanel"
+                                           DataSource="{FilteredItems}"
+                                           WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren"
+                                           StackLayout.LayoutMethod="VerticalBottomToTop">
+
+                                  <ItemTemplate>
+                                    <CrpgInventoryItemWidget DoNotPassEventsToChildren="true"
+                                                             WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed"
+                                                             SuggestedHeight="58"
+                                                             ItemTypeInt="@ItemTypeInt"
+                                                             MbGuid="@MbGuid"
+                                                             Brush="MPLobby.TextButton"
+                                                             MarginBottom="2">
+                                      <Children>
+                                        <!-- Item thumbnail -->
+                                        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                                                SuggestedWidth="100" SuggestedHeight="50"
+                                                HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                MarginLeft="4"
+                                                Sprite="BlankWhiteSquare_9" Color="#1A1A35FF">
+                                          <Children>
+                                            <ImageIdentifierWidget DataSource="{ImageIdentifier}"
+                                                                   WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                                                   MarginLeft="2" MarginRight="2" MarginTop="2" MarginBottom="2"
+                                                                   ImageId="@Id"
+                                                                   AdditionalArgs="@AdditionalArgs"
+                                                                   TextureProviderName="@TextureProviderName" />
+                                          </Children>
+                                        </Widget>
+                                        <!-- Item name -->
+                                        <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
+                                                    Text="@Name"
+                                                    Brush="Multiplayer.FactionBanner.Name.Text"
+                                                    Brush.FontSize="16"
+                                                    Brush.FontColor="@NameColor"
+                                                    MarginLeft="112"
+                                                    HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                        <!-- Broken badge -->
+                                        <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
+                                                    IsVisible="@IsBroken"
+                                                    Text="BROKEN"
+                                                    Brush="Multiplayer.FactionBanner.Name.Text"
+                                                    Brush.FontSize="11" Brush.FontColor="#EF4444FF"
+                                                    HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                    MarginRight="60" />
+                                        <!-- Equipped indicator -->
+                                        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                                                SuggestedWidth="8" SuggestedHeight="8"
+                                                IsVisible="@IsEquipped"
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                MarginRight="16"
+                                                Sprite="BlankWhiteSquare_9" Color="#22C55EFF" />
+                                      </Children>
+                                    </CrpgInventoryItemWidget>
+                                  </ItemTemplate>
+
+                                </ListPanel>
+                              </Children>
+                            </Widget>
+                          </Children>
+                        </ScrollablePanel>
+                        <!-- Scrollbar (same style as scoreboard) -->
+                        <Widget Id="ItemScrollbarContainer" WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
+                                HorizontalAlignment="Right" MarginTop="4" MarginBottom="4" MarginRight="2">
+                          <Children>
+                            <ScrollbarWidget Id="ItemScrollbar" AlignmentAxis="Vertical"
+                                             WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                                             SuggestedWidth="4"
+                                             Handle="ItemScrollbarHandle"
+                                             MinValue="0" MaxValue="100"
+                                             Sprite="BlankWhiteSquare_9" Brush.AlphaFactor="0.3" Brush.Color="#A18661FF">
+                              <Children>
+                                <Widget Id="ItemScrollbarHandle"
+                                        WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                                        SuggestedWidth="8" SuggestedHeight="60"
+                                        HorizontalAlignment="Center"
+                                        Sprite="BlankWhiteSquare_9" Color="#A18661FF" />
+                              </Children>
+                            </ScrollbarWidget>
+                          </Children>
+                        </Widget>
+                      </Children>
+                    </Widget>
+
+                    <!-- Search bar -->
+                    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed"
+                            SuggestedHeight="40"
+                            VerticalAlignment="Bottom"
+                            Sprite="BlankWhiteSquare_9" Color="#1A1A3EFF">
+                      <Children>
+                        <EditableTextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                            MarginLeft="10" MarginRight="10" MarginTop="6" MarginBottom="6"
+                                            Brush="Multiplayer.FactionBanner.Name.Text"
+                                            Brush.FontSize="14"
+                                            DefaultSearchText="Search..."
+                                            Text="@SearchText" />
+                      </Children>
+                    </Widget>
+                  </Children>
+                </Widget>
+
+                <!-- ===================== -->
+                <!-- RIGHT: WEAPONS        -->
+                <!-- ===================== -->
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                        SuggestedWidth="230"
+                        HorizontalAlignment="Right"
+                        MarginRight="8" MarginTop="4" MarginBottom="8">
+
+                  <Children>
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed"
+                                SuggestedHeight="28"
+                                Text="Weapons"
+                                Brush="Multiplayer.FactionBanner.Name.Text"
+                                Brush.FontSize="16" Brush.FontColor="#8888AAFF"
+                                MarginLeft="6" />
+
+                    <ListPanel DataSource="{WeaponSlots}"
+                               WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren"
+                               MarginTop="32"
+                               StackLayout.LayoutMethod="VerticalBottomToTop">
+
+                      <ItemTemplate>
+                        <CrpgInventorySlotWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed"
+                                                 SuggestedHeight="90"
+                                                 SlotIndex="@SlotIndex"
+                                                 Command.Click="ExecuteUnequip"
+                                                 MarginBottom="6"
+                                                 Sprite="BlankWhiteSquare_9" Color="#11112488">
+
+                          <Children>
+                            <!-- Slot type label -->
+                            <TextWidget DoNotAcceptEvents="true"
+                                        WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed"
+                                        SuggestedHeight="18"
+                                        Text="@SlotName"
+                                        Brush="Multiplayer.FactionBanner.Name.Text"
+                                        Brush.FontSize="11" Brush.FontColor="#555577FF"
+                                        MarginLeft="8" MarginTop="3" />
+
+                            <!-- Equipped item content -->
+                            <Widget DoNotAcceptEvents="true"
+                                    WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                    MarginTop="20" MarginLeft="6" MarginRight="6" MarginBottom="6">
+                              <Children>
+                                <!-- Item image -->
+                                <Widget DataSource="{Item}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                                        SuggestedWidth="100" SuggestedHeight="58"
+                                        HorizontalAlignment="Left" VerticalAlignment="Center"
+                                        IsVisible="@IsEquipped"
+                                        Sprite="BlankWhiteSquare_9" Color="#1A1A38FF">
+                                  <Children>
+                                    <ImageIdentifierWidget DataSource="{ImageIdentifier}"
+                                                           WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                                           MarginLeft="2" MarginRight="2" MarginTop="2" MarginBottom="2"
+                                                           ImageId="@Id"
+                                                           AdditionalArgs="@AdditionalArgs"
+                                                           TextureProviderName="@TextureProviderName" />
+                                  </Children>
+                                </Widget>
+                                <!-- Item name -->
+                                <Widget DataSource="{Item}" WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
+                                        MarginLeft="108" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                  <Children>
+                                    <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
+                                                Text="@Name"
+                                                Brush="Multiplayer.FactionBanner.Name.Text"
+                                                Brush.FontSize="13"
+                                                Brush.FontColor="@NameColor"
+                                                VerticalAlignment="Center" />
+                                  </Children>
+                                </Widget>
+                                <!-- Empty indicator -->
+                                <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
+                                            IsVisible="@IsEmpty"
+                                            Text="- empty -"
+                                            Brush="Multiplayer.FactionBanner.Name.Text"
+                                            Brush.FontSize="12" Brush.FontColor="#333355FF"
+                                            MarginLeft="8"
+                                            HorizontalAlignment="Left" VerticalAlignment="Center" />
+                              </Children>
+                            </Widget>
+                          </Children>
+
+                        </CrpgInventorySlotWidget>
+                      </ItemTemplate>
+
+                    </ListPanel>
+                  </Children>
+                </Widget>
+
+              </Children>
+            </Widget>
+
+          </Children>
+        </Widget>
+
+      </Children>
+
+    </CrpgInventoryScreenWidget>
+
+  </Window>
+
+</Prefab>

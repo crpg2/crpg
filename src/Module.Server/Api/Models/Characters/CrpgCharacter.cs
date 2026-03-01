@@ -16,5 +16,5 @@ internal class CrpgCharacter
     public CrpgCharacterCharacteristics Characteristics { get; set; } = new();
     public CrpgCharacterStatistics Statistics { get; set; } = new();
 
-    public IList<CrpgEquippedItem> EquippedItems { get; set; } = Array.Empty<CrpgEquippedItem>();
+    public IList<CrpgEquippedItem> EquippedItems { get; set; } = new List<CrpgEquippedItem>();
 }

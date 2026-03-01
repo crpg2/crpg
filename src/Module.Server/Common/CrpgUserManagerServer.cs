@@ -11,6 +11,7 @@ using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Diamond;
+using TaleWorlds.ObjectSystem;
 using TaleWorlds.PlayerServices;
 using Platform = Crpg.Module.Api.Models.Users.Platform;
 
@@ -240,6 +241,66 @@ internal class CrpgUserManagerServer : MissionNetwork
                 ? lastMissionMultiplier
                 : 1;
         crpgPeer.UserLoading = false;
+
+        // Fetch user's full item inventory for the in-game inventory screen.
+        try
+        {
+            var itemsRes = await _crpgClient.GetUserItemsAsync(platform, platformUserId);
+            crpgPeer.OwnedItems = ResolveOwnedItems(itemsRes.Data!);
+        }
+        catch (Exception e)
+        {
+            Debug.Print($"Couldn't get items for {userName}: {e}");
+            crpgPeer.OwnedItems = [];
+        }
+
+        // Send the inventory to the connecting peer.
+        SyncInventoryToPeer(networkPeer, crpgPeer);
+    }
+
+    private IList<Api.Models.Items.CrpgOwnedItem> ResolveOwnedItems(IList<Api.Models.Items.CrpgUserItem> userItems)
+    {
+        List<Api.Models.Items.CrpgOwnedItem> resolved = new(userItems.Count);
+        foreach (var userItem in userItems)
+        {
+            var itemObject = MBObjectManager.Instance.GetObject<ItemObject>(userItem.ItemId);
+            if (itemObject != null)
+            {
+                resolved.Add(new Api.Models.Items.CrpgOwnedItem(itemObject, userItem.Rank, userItem.IsBroken));
+            }
+            else
+            {
+                Debug.Print($"Item '{userItem.ItemId}' not found in MBObjectManager, skipping");
+            }
+        }
+
+        return resolved;
+    }
+
+    private void SyncInventoryToPeer(NetworkCommunicator networkPeer, CrpgPeer crpgPeer)
+    {
+        int sequenceId = Random.Shared.Next();
+
+        GameNetwork.BeginModuleEventAsServer(networkPeer);
+        GameNetwork.WriteMessage(new SyncInventoryBegin { SequenceId = sequenceId });
+        GameNetwork.EndModuleEventAsServer();
+
+        foreach (var item in crpgPeer.OwnedItems)
+        {
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+            GameNetwork.WriteMessage(new SyncInventoryItem
+            {
+                SequenceId = sequenceId,
+                Item = item.Item,
+                Rank = item.Rank,
+                IsBroken = item.IsBroken,
+            });
+            GameNetwork.EndModuleEventAsServer();
+        }
+
+        GameNetwork.BeginModuleEventAsServer(networkPeer);
+        GameNetwork.WriteMessage(new SyncInventoryEnd { SequenceId = sequenceId });
+        GameNetwork.EndModuleEventAsServer();
     }
 
     private bool TryConvertPlatform(PlayerIdProvidedTypes provider, out Platform platform)

@@ -1,4 +1,5 @@
 ﻿using Crpg.Module.Api.Models.Clans;
+using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common.Network;
 using TaleWorlds.Core;
@@ -20,6 +21,9 @@ internal class CrpgPeer : PeerComponent
             SynchronizeClanToEveryone(); // Synchronize the property with the client.
         }
     }
+
+    /// <summary>All items owned by the user, fetched from the API on connect.</summary>
+    public IList<CrpgOwnedItem> OwnedItems { get; set; } = [];
 
     public SpawnInfo? LastSpawnInfo { get; set; }
 
@@ -66,6 +70,18 @@ internal class CrpgPeer : PeerComponent
         GameNetwork.EndModuleEventAsServer();
     }
 
+    public void SynchronizeUserToEveryone()
+    {
+        if (_user == null || !GameNetwork.IsServerOrRecorder)
+        {
+            return;
+        }
+
+        GameNetwork.BeginBroadcastModuleEvent();
+        GameNetwork.WriteMessage(new UpdateCrpgUser { Peer = Peer, User = _user });
+        GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
+    }
+
     public void SynchronizeClanToPeer(NetworkCommunicator networkPeer)
     {
         if (User == null || Clan == null)
@@ -76,18 +92,6 @@ internal class CrpgPeer : PeerComponent
         GameNetwork.BeginModuleEventAsServer(networkPeer);
         GameNetwork.WriteMessage(new UpdateCrpgUserClanInfo { Peer = Peer, Clan = Clan });
         GameNetwork.EndModuleEventAsServer();
-    }
-
-    private void SynchronizeUserToEveryone()
-    {
-        if (_user == null || !GameNetwork.IsServerOrRecorder)
-        {
-            return;
-        }
-
-        GameNetwork.BeginBroadcastModuleEvent();
-        GameNetwork.WriteMessage(new UpdateCrpgUser { Peer = Peer, User = _user });
-        GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
     }
 
     private void SynchronizeClanToEveryone()
