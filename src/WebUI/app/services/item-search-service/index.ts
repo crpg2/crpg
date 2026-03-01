@@ -17,9 +17,9 @@ import {
   aggregationsKeysByWeaponClass,
 } from './aggregations'
 
-export interface SortingOption<F = keyof Item> { field: F, order: 'desc' | 'asc' }
+export interface SortingOption { field: keyof Item, order: 'desc' | 'asc' }
 
-export type SortingConfig<F = keyof Item> = Record<string, SortingOption<F>>
+export type SortingConfig = Record<string, SortingOption>
 
 export const getAggregationsConfig = (
   itemType: ItemType,

@@ -1432,7 +1432,6 @@ item:
     price_desc: Дороже
     type_asc: По типу
     rank_desc: По рангу
-    count_desc: По количеству
 
   filter:
     all: Все

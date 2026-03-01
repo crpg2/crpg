@@ -1468,7 +1468,6 @@ item:
     price_desc: Price (desc)
     type_asc: By type
     rank_desc: By rank
-    count_desc: By count
 
   filter:
     all: All

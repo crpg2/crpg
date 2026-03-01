@@ -3,10 +3,19 @@ import { ItemDetail } from '#components'
 
 import type { GroupedCompareItemsResult } from '~/models/item'
 import type { ItemStack } from '~/models/strategus/party'
+import type { SortingConfig } from '~/services/item-search-service'
 
 import { useItemDetail } from '~/composables/item/use-item-detail'
 
 const { items } = defineProps<{ items: ItemStack[] }>()
+
+const sortingConfig: SortingConfig = {
+  rank_desc: { field: 'rank', order: 'desc' },
+  type_asc: { field: 'type', order: 'asc' },
+  // TODO: FIXME: by count
+}
+
+const sortingModel = ref<string>('rank_desc')
 
 const { toggleItemDetail } = useItemDetail()
 
@@ -26,17 +35,9 @@ const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsR
 
 <template>
   <ItemGrid
+    v-model:sorting="sortingModel"
+    :sorting-config="sortingConfig"
     :items
-    :sorting-config="{
-      count_desc: { field: 'count', order: 'desc' },
-    }"
-    sorting="count_desc"
-    :additional-columns="[
-      {
-        id: 'count',
-        accessorFn: row => row.count,
-      },
-    ]"
   >
     <template #filter-trailing>
       <slot name="filter-trailing" />
