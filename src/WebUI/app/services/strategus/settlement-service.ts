@@ -2,7 +2,7 @@ import {
   getSettlements as _getSettlements,
   getSettlementsBySettlementId,
   getSettlementsBySettlementIdItems,
-  getSettlementsBySettlementIdShopItems,
+  // getSettlementsBySettlementIdShopItems,
   putSettlementsBySettlementId,
   putSettlementsBySettlementIdItems,
 } from '#api/sdk.gen'
