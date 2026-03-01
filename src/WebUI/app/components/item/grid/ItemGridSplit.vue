@@ -1,21 +1,13 @@
-<!-- TODO: FIXME: copypasta ItemGrid, try to reuse -->
-<!-- TODO: FIXME: REFACTORING -->
 <script setup lang="ts" generic="T extends { item: Item }">
-import type { SelectItem, TableColumn } from '@nuxt/ui'
-import type { ColumnFiltersState } from '@tanstack/vue-table'
+import type { TableOptions } from '@tanstack/vue-table'
 import type { ValueOf } from 'type-fest'
 
-import { getCoreRowModel, getFilteredRowModel, getSortedRowModel, useVueTable } from '@tanstack/vue-table'
-
-import type { GroupedCompareItemsResult, Item, ItemType } from '~/models/item'
+import type { GroupedCompareItemsResult, Item } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
 
-import { useItemDetail } from '~/composables/item/use-item-detail'
-import { ITEM_TYPE } from '~/models/item'
-import { getAggregationsConfig, getFacetsByItemType, getFilterFn } from '~/services/item-search-service'
-import { aggregationsConfig } from '~/services/item-search-service/aggregations'
-import { createItemIndex } from '~/services/item-search-service/indexator'
-import { extractItem, getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
+import { useItemGrid } from '~/composables/item/use-item-grid'
+
+type GroupedItem = T & { group: ItemGroup }
 
 const {
   sortingConfig,
@@ -23,15 +15,30 @@ const {
   itemsB,
   loading = false,
   size = 'xl',
+  additionalColumns,
 } = defineProps<{
   itemsA: T[]
   itemsB: T[]
-  sortingConfig: SortingConfig
+  sortingConfig?: SortingConfig<string>
+  additionalColumns?: TableOptions<GroupedItem>['columns']
   loading?: boolean
   size?: 'md' | 'xl'
 }>()
 
-const { t } = useI18n()
+defineSlots<{
+  ['item-detail']: {
+    item: Item
+    compareItemsResult: GroupedCompareItemsResult[]
+  }
+  ['GroupA-header']: {
+    filteredItemIds: string[]
+  }
+  ['GroupB-header']: {
+    filteredItemIds: string[]
+  }
+  ['item']: T
+  ['filter-trailing']: any
+}>()
 
 const ITEM_GROUP = {
   GroupA: 'GroupA',
@@ -39,78 +46,32 @@ const ITEM_GROUP = {
 } as const
 
 type ItemGroup = ValueOf<typeof ITEM_GROUP>
-type GroupedItem = T & {
-  group: ItemGroup
-}
 
 const items = computed<GroupedItem[]>(() => [
   ...itemsA.map(item => ({ ...item, group: ITEM_GROUP.GroupA })),
   ...itemsB.map(item => ({ ...item, group: ITEM_GROUP.GroupB })),
 ])
-const itemType = ref<ItemType>(ITEM_TYPE.Undefined)
-const itemTypes = computed(() => getFacetsByItemType(items.value.map(wrapper => wrapper.item.type)))
 
-const sortingItems = computed(() => Object.keys(sortingConfig).map<SelectItem>(key => ({
-  label: t(`item.sort.${key}`),
-  value: key,
-})))
-const sortingModel = defineModel<string>('sorting', { default: '' })
-const sorting = computed(() => {
-  const cfg = sortingConfig[sortingModel.value]
-  return cfg ? [{ id: cfg.field, desc: cfg.order === 'desc' }] : []
+const sortingModel = defineModel<string>('sorting', { default: 'rank_desc' })
+
+const {
+  itemType,
+  itemTypes,
+  sortingItems,
+  filterByNameModel,
+  grid,
+  compareItemsResult,
+} = useItemGrid({
+  items,
+  sortingConfig,
+  sortingModel,
+  additionalColumns,
 })
 
-const filterByNameModel = ref<string | undefined>(undefined)
-
-const columnFilters = computed<ColumnFiltersState>(() => [
-  ...(itemType.value !== ITEM_TYPE.Undefined ? [{ id: 'type', value: itemType.value }] : []),
-])
-
-const columns: TableColumn<GroupedItem>[] = [
-  { accessorFn: row => row.group, id: 'group' },
-  { accessorFn: row => row.item.id, id: 'id' },
-  {
-    accessorFn: row => row.item.type,
-    id: 'type',
-    filterFn: getFilterFn(aggregationsConfig.type!),
-  },
-  { accessorFn: row => row.item.price, id: 'price' },
-  { accessorFn: row => row.item.rank, id: 'rank' },
-  { accessorFn: row => row.item.name, id: 'name' },
-]
-
-const grid = useVueTable({
-  get data() { return items.value },
-  columns,
-  getCoreRowModel: getCoreRowModel(),
-  getFilteredRowModel: getFilteredRowModel(),
-  getSortedRowModel: getSortedRowModel(),
-  filterFns: { includesSome },
-  state: {
-    get sorting() { return sorting.value },
-    get globalFilter() { return filterByNameModel.value },
-    get columnFilters() { return columnFilters.value },
-  },
-})
-
-const findedItemsA = computed(() => grid.getRowModel().rows.filter(row => row.original.group === ITEM_GROUP.GroupA))
-const findedItemsB = computed(() => grid.getRowModel().rows.filter(row => row.original.group === ITEM_GROUP.GroupB))
-
-const { isOpen } = useItemDetail()
-
-const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
-  return groupItemsByTypeAndWeaponClass(
-    // find the open items
-    createItemIndex(items.value.filter(wrapper => isOpen(wrapper.item.id))
-      .map(extractItem)),
-  )
-    .filter(group => group.items.length >= 2) // there is no point in comparing 1 item
-    .map(group => ({
-      compareResult: getCompareItemsResult(group.items, getAggregationsConfig(group.type, group.weaponClass)),
-      type: group.type,
-      weaponClass: group.weaponClass,
-    }))
-})
+const groupedItems = computed(() => ({
+  [ITEM_GROUP.GroupA]: grid.getRowModel().rows.filter(row => row.original.group === ITEM_GROUP.GroupA),
+  [ITEM_GROUP.GroupB]: grid.getRowModel().rows.filter(row => row.original.group === ITEM_GROUP.GroupB),
+}))
 </script>
 
 <template>
@@ -143,50 +104,41 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
     </div>
 
     <div class="grid grid-cols-[1fr_auto_1fr] gap-4">
-      <div>
-        <slot name="left-side-header" v-bind="{ filteredItemIds: findedItemsA.map(item => item.original.item.id) }" />
-        <div
-          v-if="findedItemsA.length"
-          class="
-            grid auto-rows-min grid-cols-2 gap-2
-            2xl:grid-cols-3
-          "
-        >
-          <template v-for="item in findedItemsA" :key="item.original.item.id">
-            <slot name="item" v-bind="item.original" />
-          </template>
+      <template
+        v-for="(group, idx) in Object.values(ITEM_GROUP)"
+        :key="group"
+      >
+        <div v-if="idx === 1" class="sticky top-0">
+          <ItemSearchFilterByType
+            v-model:item-type="itemType"
+            :item-types="itemTypes"
+            orientation="vertical"
+            with-all-categories
+            :size
+          />
         </div>
-        <UiResultNotFound v-else :message="$t('character.inventory.empty')" />
-      </div>
 
-      <div class="sticky top-0">
-        <ItemSearchFilterByType
-          v-model:item-type="itemType"
-          :item-types="itemTypes"
-          orientation="vertical"
-          with-all-categories
-          :size
-        />
-      </div>
+        <div>
+          <slot
+            :name="`${group}-header`"
+            v-bind="{ filteredItemIds: groupedItems[group].map(item => item.original.item.id) }"
+          />
 
-      <div>
-        <slot
-          name="right-side-header"
-          v-bind="{ filteredItemIds: findedItemsB.map(item => item.original.item.id) }"
-        />
-        <div
-          v-if="findedItemsB.length"
-          class="
-            grid auto-rows-min grid-cols-3 gap-2
-            2xl:grid-cols-3
-          "
-        >
-          <template v-for="item in findedItemsB" :key="item.original.item.id">
-            <slot name="item" v-bind="item.original" />
-          </template>
+          <div
+            v-if="groupedItems[group].length"
+            class="
+              grid auto-rows-min grid-cols-2 gap-2
+              2xl:grid-cols-3
+            "
+          >
+            <template v-for="item in groupedItems[group]" :key="item.original.item.id">
+              <slot name="item" v-bind="item.original" />
+            </template>
+          </div>
+
+          <UiResultNotFound v-else :message="$t('character.inventory.empty')" />
         </div>
-        <UiResultNotFound v-else :message="$t('character.inventory.empty')" />
-      </div>
+      </template>
     </div>
 
     <ItemDetailGroup>

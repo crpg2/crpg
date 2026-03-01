@@ -134,13 +134,6 @@ interface PublicApi {
   reset: () => void
 }
 
-const sortingConfig: SortingConfig = {
-  rank_desc: { field: 'rank', order: 'desc' },
-  type_asc: { field: 'type', order: 'asc' },
-  // TODO: FIXME: by count
-}
-const sortingModel = ref<string>('rank_desc')
-
 const onTransferAllToGroup = (group: Group, itemIds: string[]) => {
   setModelValue(
     Object.entries(modelValue.value)
@@ -230,10 +223,18 @@ defineExpose<PublicApi>({
     }"
   >
     <ItemGridSplit
-      v-model:sorting="sortingModel"
       :items-a="dynamicItems.itemsA"
       :items-b="dynamicItems.itemsB"
-      :sorting-config="sortingConfig"
+      :sorting-config="{
+        count_desc: { field: 'count', order: 'desc' },
+      }"
+      sorting="count_desc"
+      :additional-columns="[
+        {
+          id: 'count',
+          accessorFn: row => row.count,
+        },
+      ]"
     >
       <template #item="itemGroup">
         <component :is="renderItem(itemGroup)" />
@@ -243,7 +244,7 @@ defineExpose<PublicApi>({
         <component :is="renderItemDetail(item, compareItemsResult)" />
       </template>
 
-      <template #left-side-header="{ filteredItemIds }">
+      <template #GroupA-header="{ filteredItemIds }">
         <div class="mb-2 flex flex-wrap items-center justify-between gap-4">
           <slot name="left-side-header" />
           <UButton
@@ -255,7 +256,7 @@ defineExpose<PublicApi>({
         </div>
       </template>
 
-      <template #right-side-header="{ filteredItemIds }">
+      <template #GroupB-header="{ filteredItemIds }">
         <div class="mb-2 flex flex-wrap items-center justify-between gap-4">
           <UButton
             color="neutral"
