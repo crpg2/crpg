@@ -17,7 +17,7 @@ const { partyState } = useParty()
 const { partyItems, loadingPartyItems } = usePartyItems(true)
 
 const onCancel = () => {
-  emit('close', false, [])
+  emit('close', false)
 }
 
 const onSubmit = (items: ItemStackUpdate[]) => {

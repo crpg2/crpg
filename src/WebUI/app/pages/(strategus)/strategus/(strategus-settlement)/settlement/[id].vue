@@ -55,10 +55,15 @@ const navigationItems = computed<NavigationMenuItem[]>(() => [
     to: { name: 'strategus-settlement-id', params: { id: route.params.id } },
     active: route.name === 'strategus-settlement-id', // hack, [id].vue conflict with [id]/index.vue
   },
+  {
+    label: 'Shop TODO:',
+    to: { name: 'strategus-settlement-id', params: { id: route.params.id } },
+    active: route.name === 'strategus-settlement-id', // hack, [id].vue conflict with [id]/index.vue
+  },
   ...(checkCanEditSettlementInventory(settlement.value, user.value!)
     ? [
         {
-          label: 'Garrison/Inventory',
+          label: 'Inventory',
           to: { name: 'strategus-settlement-id-inventory', params: { id: route.params.id } },
           active: route.name === 'strategus-settlement-id-inventory', // hack, [id].vue conflict with [id]/index.vue
           icon: 'crpg:chest',
