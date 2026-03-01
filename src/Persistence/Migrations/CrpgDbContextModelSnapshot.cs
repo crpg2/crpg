@@ -36,7 +36,7 @@ namespace Crpg.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "activity_log_type", new[] { "battle_apply_as_mercenary", "battle_mercenary_application_accepted", "battle_mercenary_application_declined", "battle_participant_kicked", "battle_participant_leaved", "character_created", "character_deleted", "character_earned", "character_rating_reset", "character_respecialized", "character_retired", "character_rewarded", "chat_message_sent", "clan_application_accepted", "clan_application_created", "clan_application_declined", "clan_armory_add_item", "clan_armory_borrow_item", "clan_armory_remove_item", "clan_armory_return_item", "clan_created", "clan_deleted", "clan_member_kicked", "clan_member_leaved", "clan_member_role_edited", "item_bought", "item_broke", "item_reforged", "item_repaired", "item_returned", "item_sold", "item_upgraded", "server_joined", "team_hit", "team_hit_reported", "team_hit_reported_user_kicked", "user_created", "user_deleted", "user_renamed", "user_rewarded" });
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_fighter_application_status", new[] { "accepted", "declined", "pending" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_fighter_application_status", new[] { "accepted", "declined", "intent", "pending" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_mercenary_application_status", new[] { "accepted", "declined", "pending" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_participant_type", new[] { "clan_member", "mercenary", "party" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_phase", new[] { "end", "hiring", "live", "preparation", "scheduled" });
@@ -53,7 +53,9 @@ namespace Crpg.Persistence.Migrations
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "languages", new[] { "be", "bg", "cs", "da", "de", "el", "en", "es", "fi", "fr", "hr", "hu", "it", "lv", "nl", "no", "pl", "pt", "ro", "ru", "sr", "sv", "tr", "uk", "zh" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "notification_state", new[] { "read", "unread" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "notification_type", new[] { "battle_mercenary_application_accepted", "battle_mercenary_application_declined", "battle_participant_kicked_to_ex_participant", "character_rewarded_to_user", "clan_application_accepted_to_user", "clan_application_created_to_officers", "clan_application_created_to_user", "clan_application_declined_to_user", "clan_armory_borrow_item_to_lender", "clan_armory_remove_item_to_borrower", "clan_member_kicked_to_ex_member", "clan_member_leaved_to_leader", "clan_member_role_changed_to_user", "item_returned", "user_rewarded_to_user" });
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "party_status", new[] { "following_party", "idle", "idle_in_settlement", "in_battle", "moving_to_attack_party", "moving_to_attack_settlement", "moving_to_point", "moving_to_settlement", "recruiting_in_settlement" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "party_order_type", new[] { "attack_party", "attack_settlement", "follow_party", "join_battle", "move_to_point", "move_to_settlement", "transfer_offer_party" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "party_status", new[] { "awaiting_battle_join_decision", "awaiting_party_offer_decision", "idle", "idle_in_settlement", "in_battle", "recruiting_in_settlement" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "party_transfer_offer_status", new[] { "intent", "pending" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "platform", new[] { "epic_games", "microsoft", "steam" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "region", new[] { "as", "eu", "na", "oc" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "restriction_type", new[] { "all", "chat", "join" });
@@ -1008,6 +1010,18 @@ namespace Crpg.Persistence.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at");
 
+                    b.Property<int?>("CurrentBattleId")
+                        .HasColumnType("integer")
+                        .HasColumnName("current_battle_id");
+
+                    b.Property<int?>("CurrentPartyId")
+                        .HasColumnType("integer")
+                        .HasColumnName("current_party_id");
+
+                    b.Property<int?>("CurrentSettlementId")
+                        .HasColumnType("integer")
+                        .HasColumnName("current_settlement_id");
+
                     b.Property<int>("Gold")
                         .HasColumnType("integer")
                         .HasColumnName("gold");
@@ -1021,14 +1035,6 @@ namespace Crpg.Persistence.Migrations
                         .HasColumnType("party_status")
                         .HasColumnName("status");
 
-                    b.Property<int?>("TargetedPartyId")
-                        .HasColumnType("integer")
-                        .HasColumnName("targeted_party_id");
-
-                    b.Property<int?>("TargetedSettlementId")
-                        .HasColumnType("integer")
-                        .HasColumnName("targeted_settlement_id");
-
                     b.Property<float>("Troops")
                         .HasColumnType("real")
                         .HasColumnName("troops");
@@ -1037,19 +1043,17 @@ namespace Crpg.Persistence.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("updated_at");
 
-                    b.Property<MultiPoint>("Waypoints")
-                        .IsRequired()
-                        .HasColumnType("geometry")
-                        .HasColumnName("waypoints");
-
                     b.HasKey("Id")
                         .HasName("pk_parties");
 
-                    b.HasIndex("TargetedPartyId")
-                        .HasDatabaseName("ix_parties_targeted_party_id");
+                    b.HasIndex("CurrentBattleId")
+                        .HasDatabaseName("ix_parties_current_battle_id");
 
-                    b.HasIndex("TargetedSettlementId")
-                        .HasDatabaseName("ix_parties_targeted_settlement_id");
+                    b.HasIndex("CurrentPartyId")
+                        .HasDatabaseName("ix_parties_current_party_id");
+
+                    b.HasIndex("CurrentSettlementId")
+                        .HasDatabaseName("ix_parties_current_settlement_id");
 
                     b.ToTable("parties", (string)null);
                 });
@@ -1083,6 +1087,126 @@ namespace Crpg.Persistence.Migrations
                         .HasDatabaseName("ix_party_items_item_id");
 
                     b.ToTable("party_items", (string)null);
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Parties.PartyOrder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("OrderIndex")
+                        .HasColumnType("integer")
+                        .HasColumnName("order_index");
+
+                    b.Property<int>("PartyId")
+                        .HasColumnType("integer")
+                        .HasColumnName("party_id");
+
+                    b.Property<int?>("TargetedBattleId")
+                        .HasColumnType("integer")
+                        .HasColumnName("targeted_battle_id");
+
+                    b.Property<int?>("TargetedPartyId")
+                        .HasColumnType("integer")
+                        .HasColumnName("targeted_party_id");
+
+                    b.Property<int?>("TargetedSettlementId")
+                        .HasColumnType("integer")
+                        .HasColumnName("targeted_settlement_id");
+
+                    b.Property<PartyOrderType>("Type")
+                        .HasColumnType("party_order_type")
+                        .HasColumnName("type");
+
+                    b.Property<MultiPoint>("Waypoints")
+                        .IsRequired()
+                        .HasColumnType("geometry")
+                        .HasColumnName("waypoints");
+
+                    b.HasKey("Id")
+                        .HasName("pk_party_orders");
+
+                    b.HasIndex("PartyId")
+                        .HasDatabaseName("ix_party_orders_party_id");
+
+                    b.HasIndex("TargetedBattleId")
+                        .HasDatabaseName("ix_party_orders_targeted_battle_id");
+
+                    b.HasIndex("TargetedPartyId")
+                        .HasDatabaseName("ix_party_orders_targeted_party_id");
+
+                    b.HasIndex("TargetedSettlementId")
+                        .HasDatabaseName("ix_party_orders_targeted_settlement_id");
+
+                    b.ToTable("party_orders", (string)null);
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Parties.PartyTransferOffer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Gold")
+                        .HasColumnType("integer")
+                        .HasColumnName("gold");
+
+                    b.Property<int>("PartyId")
+                        .HasColumnType("integer")
+                        .HasColumnName("party_id");
+
+                    b.Property<PartyTransferOfferStatus>("Status")
+                        .HasColumnType("party_transfer_offer_status")
+                        .HasColumnName("status");
+
+                    b.Property<int>("TargetPartyId")
+                        .HasColumnType("integer")
+                        .HasColumnName("target_party_id");
+
+                    b.Property<float>("Troops")
+                        .HasColumnType("real")
+                        .HasColumnName("troops");
+
+                    b.HasKey("Id")
+                        .HasName("pk_party_transfer_offers");
+
+                    b.HasIndex("PartyId")
+                        .HasDatabaseName("ix_party_transfer_offers_party_id");
+
+                    b.HasIndex("TargetPartyId")
+                        .HasDatabaseName("ix_party_transfer_offers_target_party_id");
+
+                    b.ToTable("party_transfer_offers", (string)null);
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Parties.PartyTransferOfferItem", b =>
+                {
+                    b.Property<int>("PartyTransferOfferId")
+                        .HasColumnType("integer")
+                        .HasColumnName("party_transfer_offer_id");
+
+                    b.Property<string>("ItemId")
+                        .HasColumnType("text")
+                        .HasColumnName("item_id");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("integer")
+                        .HasColumnName("count");
+
+                    b.HasKey("PartyTransferOfferId", "ItemId")
+                        .HasName("pk_party_transfer_offer_items");
+
+                    b.HasIndex("ItemId")
+                        .HasDatabaseName("ix_party_transfer_offer_items_item_id");
+
+                    b.ToTable("party_transfer_offer_items", (string)null);
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Restrictions.Restriction", b =>
@@ -2360,6 +2484,21 @@ namespace Crpg.Persistence.Migrations
 
             modelBuilder.Entity("Crpg.Domain.Entities.Parties.Party", b =>
                 {
+                    b.HasOne("Crpg.Domain.Entities.Battles.Battle", "CurrentBattle")
+                        .WithMany()
+                        .HasForeignKey("CurrentBattleId")
+                        .HasConstraintName("fk_parties_battles_current_battle_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Parties.Party", "CurrentParty")
+                        .WithMany()
+                        .HasForeignKey("CurrentPartyId")
+                        .HasConstraintName("fk_parties_parties_current_party_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Settlements.Settlement", "CurrentSettlement")
+                        .WithMany()
+                        .HasForeignKey("CurrentSettlementId")
+                        .HasConstraintName("fk_parties_settlements_current_settlement_id");
+
                     b.HasOne("Crpg.Domain.Entities.Users.User", "User")
                         .WithOne("Party")
                         .HasForeignKey("Crpg.Domain.Entities.Parties.Party", "Id")
@@ -2367,19 +2506,11 @@ namespace Crpg.Persistence.Migrations
                         .IsRequired()
                         .HasConstraintName("fk_parties_users_id");
 
-                    b.HasOne("Crpg.Domain.Entities.Parties.Party", "TargetedParty")
-                        .WithMany()
-                        .HasForeignKey("TargetedPartyId")
-                        .HasConstraintName("fk_parties_parties_targeted_party_id");
+                    b.Navigation("CurrentBattle");
 
-                    b.HasOne("Crpg.Domain.Entities.Settlements.Settlement", "TargetedSettlement")
-                        .WithMany()
-                        .HasForeignKey("TargetedSettlementId")
-                        .HasConstraintName("fk_parties_settlements_targeted_settlement_id");
+                    b.Navigation("CurrentParty");
 
-                    b.Navigation("TargetedParty");
-
-                    b.Navigation("TargetedSettlement");
+                    b.Navigation("CurrentSettlement");
 
                     b.Navigation("User");
                 });
@@ -2403,6 +2534,81 @@ namespace Crpg.Persistence.Migrations
                     b.Navigation("Item");
 
                     b.Navigation("Party");
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Parties.PartyOrder", b =>
+                {
+                    b.HasOne("Crpg.Domain.Entities.Parties.Party", "Party")
+                        .WithMany("Orders")
+                        .HasForeignKey("PartyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_party_orders_parties_party_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Battles.Battle", "TargetedBattle")
+                        .WithMany()
+                        .HasForeignKey("TargetedBattleId")
+                        .HasConstraintName("fk_party_orders_battles_targeted_battle_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Parties.Party", "TargetedParty")
+                        .WithMany()
+                        .HasForeignKey("TargetedPartyId")
+                        .HasConstraintName("fk_party_orders_parties_targeted_party_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Settlements.Settlement", "TargetedSettlement")
+                        .WithMany()
+                        .HasForeignKey("TargetedSettlementId")
+                        .HasConstraintName("fk_party_orders_settlements_targeted_settlement_id");
+
+                    b.Navigation("Party");
+
+                    b.Navigation("TargetedBattle");
+
+                    b.Navigation("TargetedParty");
+
+                    b.Navigation("TargetedSettlement");
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Parties.PartyTransferOffer", b =>
+                {
+                    b.HasOne("Crpg.Domain.Entities.Parties.Party", "Party")
+                        .WithMany()
+                        .HasForeignKey("PartyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_party_transfer_offers_parties_party_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Parties.Party", "TargetParty")
+                        .WithMany()
+                        .HasForeignKey("TargetPartyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_party_transfer_offers_parties_target_party_id");
+
+                    b.Navigation("Party");
+
+                    b.Navigation("TargetParty");
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Parties.PartyTransferOfferItem", b =>
+                {
+                    b.HasOne("Crpg.Domain.Entities.Items.Item", "Item")
+                        .WithMany()
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_party_transfer_offer_items_items_item_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Parties.PartyTransferOffer", "PartyTransferOffer")
+                        .WithMany("Items")
+                        .HasForeignKey("PartyTransferOfferId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_party_transfer_offer_items_party_transfer_offers_party_tran");
+
+                    b.Navigation("Item");
+
+                    b.Navigation("PartyTransferOffer");
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Restrictions.Restriction", b =>
@@ -2545,7 +2751,14 @@ namespace Crpg.Persistence.Migrations
                 {
                     b.Navigation("Items");
 
+                    b.Navigation("Orders");
+
                     b.Navigation("OwnedSettlements");
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Parties.PartyTransferOffer", b =>
+                {
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Settlements.Settlement", b =>
