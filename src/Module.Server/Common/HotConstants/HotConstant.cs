@@ -7,16 +7,19 @@ internal class HotConstant
 {
     private static readonly Dictionary<int, HotConstant> AllConstants = new();
 
+    public static IEnumerable<HotConstant> All => AllConstants.Values;
+
     /// <param name="id">An id to uniquely identity the constant.</param>
     /// <param name="defaultValue">The default value of the constant.</param>
-    public static HotConstant Create(int id, float defaultValue)
+    /// <param name="description">A description of the constant..</param>
+    public static HotConstant Create(int id, float defaultValue, string description)
     {
         if (AllConstants.ContainsKey(id))
         {
             throw new ArgumentException("A hot constant already exists with this id", nameof(id));
         }
 
-        HotConstant constant = new(defaultValue);
+        HotConstant constant = new(id, defaultValue, description);
         AllConstants[id] = constant;
         return constant;
     }
@@ -34,10 +37,14 @@ internal class HotConstant
         return false;
     }
 
-    private HotConstant(float defaultValue)
+    private HotConstant(int id, float defaultValue, string description)
     {
+        Id = id;
         Value = defaultValue;
+        Description = description;
     }
 
+    public int Id { get; }
     public float Value { get; private set; }
+    public string Description { get; }
 }
