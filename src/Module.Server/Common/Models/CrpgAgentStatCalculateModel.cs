@@ -396,10 +396,8 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 props.TopSpeedReachDuration += 1.5f;
                 props.ThrustOrRangedReadySpeedMultiplier = equippedItem.ThrustSpeed / 160f + 0.0015f * itemSkill;
                 float maxMovementAccuracyPenaltyMultiplier = Math.Max(0.0f, 1.0f - weaponSkill / 500.0f);
-                float weaponMaxMovementAccuracyPenalty = 0.125f * maxMovementAccuracyPenaltyMultiplier;
-                float weaponMaxUnsteadyAccuracyPenalty = 0.1f * maxMovementAccuracyPenaltyMultiplier;
-                props.WeaponMaxMovementAccuracyPenalty = Math.Max(0.0f, weaponMaxMovementAccuracyPenalty);
-                props.WeaponMaxUnsteadyAccuracyPenalty = Math.Max(0.0f, weaponMaxUnsteadyAccuracyPenalty);
+                props.WeaponMaxMovementAccuracyPenalty = Math.Max(0.0f, 0.125f * maxMovementAccuracyPenaltyMultiplier);
+                props.WeaponMaxUnsteadyAccuracyPenalty = Math.Max(0.0f, 0.1f * maxMovementAccuracyPenaltyMultiplier);
 
                 // Crossbows
                 if (equippedItem.RelevantSkill == DefaultSkills.Crossbow)
@@ -448,7 +446,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                                                  / CrpgItemValueModel.CalculateDamageTypeFactorForThrown(DamageTypes.Cut);
 
                     props.WeaponMaxUnsteadyAccuracyPenalty = 0.0035f;
-                    props.WeaponMaxMovementAccuracyPenalty = 0.1f;
 
                     // This is accuracy loss when turning lower is better.
                     props.WeaponRotationalAccuracyPenaltyInRadians = 0.1f;
