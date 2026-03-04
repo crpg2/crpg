@@ -250,8 +250,8 @@ internal class CrpgRewardServer : MissionLogic
             .Where(mp => mp != null && mp.Team != null && mp.Team.Side != BattleSideEnum.None)
             .ToList();
 
-        bool veryLowPopulationServer = playingPeers.Count < 2;
-        bool lowPopulationServer = !_isLowPopulationUpkeepEnabled && playingPeers.Count < 12;
+        bool veryLowPopulationServer = playingPeers.Count < CrpgServerConfiguration.VeryLowPopulationThreshold;
+        bool lowPopulationServer = !_isLowPopulationUpkeepEnabled && playingPeers.Count < CrpgServerConfiguration.LowPopulationThreshold;
         // Force constant multiplier if there is low population.
         constantMultiplier = veryLowPopulationServer ? ExperienceMultiplierMin : constantMultiplier;
 
