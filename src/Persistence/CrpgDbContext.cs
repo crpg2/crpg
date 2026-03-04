@@ -5,7 +5,6 @@ using Crpg.Domain.Entities.ActivityLogs;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
-using Crpg.Domain.Entities.GameServers;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
 using Crpg.Domain.Entities.Notifications;
@@ -67,7 +66,6 @@ public class CrpgDbContext : DbContext, ICrpgDbContext
     public DbSet<ActivityLogMetadata> ActivityLogMetadata { get; set; } = default!;
     public DbSet<UserNotification> UserNotifications { get; set; } = default!;
     public DbSet<UserNotificationMetadata> UserNotificationMetadata { get; set; } = default!;
-    public DbSet<IdempotencyKey> IdempotencyKeys { get; set; } = default!;
     public DbSet<Terrain> Terrains { get; set; } = default!;
     public DbSet<Setting> Settings { get; set; } = default!;
 

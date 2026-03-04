@@ -23,7 +23,7 @@ public class TestBase
     /// test not terrible. The test could be much stronger by using ArrangeDb when calling Characters.Add and
     /// using ActDb to create the Handler.
     /// </summary>
-    private DbContextOptions<CrpgDbContext>? _dbOptions;
+    protected DbContextOptions<CrpgDbContext>? DbOptions { get; private set; }
 
     private CrpgDbContext? _arrangeDb;
     private CrpgDbContext? _actDb;
@@ -50,7 +50,7 @@ public class TestBase
     [SetUp]
     public virtual Task SetUp()
     {
-        _dbOptions = new DbContextOptionsBuilder<CrpgDbContext>()
+        DbOptions = new DbContextOptionsBuilder<CrpgDbContext>()
             .EnableSensitiveDataLogging()
             .EnableDetailedErrors()
             .UseInMemoryDatabase(Guid.NewGuid().ToString())
@@ -72,7 +72,7 @@ public class TestBase
         return Task.CompletedTask;
     }
 
-    private CrpgDbContext InitDb() => new(_dbOptions!, Mock.Of<IDateTime>());
+    private CrpgDbContext InitDb() => new(DbOptions!, Mock.Of<IDateTime>());
 
     private IMapper InitMapper()
     {

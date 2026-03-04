@@ -2,7 +2,6 @@ using Crpg.Domain.Entities.ActivityLogs;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
-using Crpg.Domain.Entities.GameServers;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
 using Crpg.Domain.Entities.Notifications;
@@ -50,7 +49,6 @@ public interface ICrpgDbContext
     DbSet<UserNotification> UserNotifications { get; set; }
     DbSet<Terrain> Terrains { get; }
     DbSet<UserNotificationMetadata> UserNotificationMetadata { get; set; }
-    DbSet<IdempotencyKey> IdempotencyKeys { get; set; }
     DbSet<Setting> Settings { get; set; }
     EntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);

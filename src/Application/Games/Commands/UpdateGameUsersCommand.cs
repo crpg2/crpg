@@ -1,12 +1,12 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Crpg.Application.Characters.Models;
+using Crpg.Application.Common.Exceptions;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Games.Models;
 using Crpg.Domain.Entities.Characters;
-using Crpg.Domain.Entities.GameServers;
 using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
@@ -21,10 +21,11 @@ namespace Crpg.Application.Games.Commands;
 public record UpdateGameUsersCommand : IMediatorRequest<UpdateGameUsersResult>
 {
     public IList<GameUserUpdate> Updates { get; init; } = Array.Empty<GameUserUpdate>();
-    public Guid Key { get; init; }
 
     internal class Handler : IMediatorRequestHandler<UpdateGameUsersCommand, UpdateGameUsersResult>
     {
+        internal const int MaxRetries = 3;
+
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdateGameUsersCommand>();
 
         private readonly ICrpgDbContext _db;
@@ -45,76 +46,83 @@ public record UpdateGameUsersCommand : IMediatorRequest<UpdateGameUsersResult>
         public async ValueTask<Result<UpdateGameUsersResult>> Handle(UpdateGameUsersCommand req,
             CancellationToken cancellationToken)
         {
-            var idempotencyKey = await _db.IdempotencyKeys
-                .Where(ik => ik.Key == req.Key)
-                .FirstOrDefaultAsync(cancellationToken);
-
-            if (idempotencyKey == null || idempotencyKey.Status != UserUpdateStatus.Completed)
+            for (int attempt = 0; attempt < MaxRetries; attempt++)
             {
-                IdempotencyKey key = new() { Key = req.Key, CreatedAt = DateTime.UtcNow, Status = UserUpdateStatus.Started };
-                _db.IdempotencyKeys.Add(key);
-                await _db.SaveChangesAsync(cancellationToken);
-
-                var charactersById = await LoadCharacters(req.Updates, cancellationToken);
-                List<(User user, GameUserEffectiveReward reward, List<GameRepairedItem> repairedItems, GameMode gameMode)> results = new(req.Updates.Count);
-                foreach (var update in req.Updates)
+                try
                 {
-                    GameMode updateGameMode = _gameModeService.GameModeByInstanceAlias(Enum.TryParse(update.Instance[^1..], ignoreCase: true, out GameModeAlias instanceAlias) ? instanceAlias : GameModeAlias.Z);
-                    if (!charactersById.TryGetValue(update.CharacterId, out Character? character))
+                    return await HandleCore(req, cancellationToken);
+                }
+                catch (ConflictException ex)
+                {
+                    Logger.LogWarning(ex, "Concurrency conflict on attempt {0}, clearing change tracker", attempt + 1);
+                    if (_db is DbContext dbContext)
                     {
-                        Logger.LogWarning("Character with id '{0}' doesn't exist", update.CharacterId);
-                        continue;
+                        dbContext.ChangeTracker.Clear();
                     }
 
-                    var reward = GiveReward(character, update.Reward);
-                    double timeEffort = update.Statistics.PlayTime.TotalSeconds;
-                    UpdateStatistics(updateGameMode, character, update.Statistics);
-                    _characterService.UpdateRating(character, updateGameMode, update.Statistics.Rating.Value, update.Statistics.Rating.Deviation, update.Statistics.Rating.Volatility, isGameUserUpdate: true);
-                    var brokenItems = await RepairOrBreakItems(character, update.BrokenItems, cancellationToken);
-
-                    // avoid warmup
-                    if (reward.Experience != 0)
+                    if (attempt == MaxRetries - 1)
                     {
-                        int totalRepairCost = brokenItems.Sum(item => item.RepairCost);
-                        _db.ActivityLogs.Add(_activityLogService.CreateCharacterEarnedLog(character.UserId, character.Id, updateGameMode, reward.Experience, reward.Gold - totalRepairCost, timeEffort));
+                        throw;
                     }
+                }
+            }
 
-                    results.Add((character.User!, reward, brokenItems, updateGameMode));
+            throw new InvalidOperationException();
+        }
+
+        private async Task<Result<UpdateGameUsersResult>> HandleCore(UpdateGameUsersCommand req,
+            CancellationToken cancellationToken)
+        {
+            var charactersById = await LoadCharacters(req.Updates, cancellationToken);
+            List<(User user, GameUserEffectiveReward reward, List<GameRepairedItem> repairedItems, GameMode gameMode)> results = new(req.Updates.Count);
+            foreach (var update in req.Updates)
+            {
+                GameMode updateGameMode = _gameModeService.GameModeByInstanceAlias(Enum.TryParse(update.Instance[^1..], ignoreCase: true, out GameModeAlias instanceAlias) ? instanceAlias : GameModeAlias.Z);
+                if (!charactersById.TryGetValue(update.CharacterId, out Character? character))
+                {
+                    Logger.LogWarning("Character with id '{0}' doesn't exist", update.CharacterId);
+                    continue;
                 }
 
-                key.Status = UserUpdateStatus.Completed;
-                _db.IdempotencyKeys.Update(key);
+                var reward = GiveReward(character, update.Reward);
+                double timeEffort = update.Statistics.PlayTime.TotalSeconds;
+                UpdateStatistics(updateGameMode, character, update.Statistics);
+                _characterService.UpdateRating(character, updateGameMode, update.Statistics.Rating.Value, update.Statistics.Rating.Deviation, update.Statistics.Rating.Volatility, isGameUserUpdate: true);
+                var brokenItems = await RepairOrBreakItems(character, update.BrokenItems, cancellationToken);
 
-                await _db.SaveChangesAsync(cancellationToken);
-
-                return new(new UpdateGameUsersResult
+                // avoid warmup
+                if (reward.Experience != 0)
                 {
-                    UpdateResults = results.Select(r =>
-                    {
-                        var gameUserViewModel = _mapper.Map<GameUserViewModel>(r.user);
+                    int totalRepairCost = brokenItems.Sum(item => item.RepairCost);
+                    _db.ActivityLogs.Add(_activityLogService.CreateCharacterEarnedLog(character.UserId, character.Id, updateGameMode, reward.Experience, reward.Gold - totalRepairCost, timeEffort));
+                }
 
-                        // Only include relevant statistic in response
-                        var relevantStatistic = r.user.ActiveCharacter?.Statistics.FirstOrDefault(s => s.GameMode == r.gameMode);
-                        if (relevantStatistic != null)
-                        {
-                            gameUserViewModel.Character.Statistics = _mapper.Map<CharacterStatisticsViewModel>(relevantStatistic);
-                        }
-
-                        return new UpdateGameUserResult
-                        {
-                            User = gameUserViewModel,
-                            EffectiveReward = r.reward,
-                            RepairedItems = r.repairedItems,
-                        };
-                    }).ToArray(),
-                });
+                results.Add((character.User!, reward, brokenItems, updateGameMode));
             }
-            else
+
+            await _db.SaveChangesAsync(cancellationToken);
+
+            return new(new UpdateGameUsersResult
             {
-                return new(new UpdateGameUsersResult
+                UpdateResults = results.Select(r =>
                 {
-                });
-            }
+                    var gameUserViewModel = _mapper.Map<GameUserViewModel>(r.user);
+
+                    // Only include relevant statistic in response
+                    var relevantStatistic = r.user.ActiveCharacter?.Statistics.FirstOrDefault(s => s.GameMode == r.gameMode);
+                    if (relevantStatistic != null)
+                    {
+                        gameUserViewModel.Character.Statistics = _mapper.Map<CharacterStatisticsViewModel>(relevantStatistic);
+                    }
+
+                    return new UpdateGameUserResult
+                    {
+                        User = gameUserViewModel,
+                        EffectiveReward = r.reward,
+                        RepairedItems = r.repairedItems,
+                    };
+                }).ToArray(),
+            });
         }
 
         private async Task<Dictionary<int, Character>> LoadCharacters(IList<GameUserUpdate> updates, CancellationToken cancellationToken)
