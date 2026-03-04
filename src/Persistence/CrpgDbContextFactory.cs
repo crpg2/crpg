@@ -3,7 +3,6 @@ using Crpg.Domain.Entities.ActivityLogs;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
-using Crpg.Domain.Entities.GameServers;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
@@ -57,8 +56,7 @@ public class CrpgDbContextFactory : IDesignTimeDbContextFactory<CrpgDbContext>
                         .MapEnum<ActivityLogType>()
                         .MapEnum<NotificationState>()
                         .MapEnum<NotificationType>()
-                        .MapEnum<TerrainType>()
-                        .MapEnum<UserUpdateStatus>())
+                        .MapEnum<TerrainType>())
             .UseSnakeCaseNamingConvention()
             .Options;
         return new CrpgDbContext(options);

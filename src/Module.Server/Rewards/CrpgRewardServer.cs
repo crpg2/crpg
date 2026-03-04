@@ -192,14 +192,11 @@ internal class CrpgRewardServer : MissionLogic
             return;
         }
 
-        Guid idempotencyKey = Guid.NewGuid();
-
         try
         {
             var request = new CrpgGameUsersUpdateRequest
             {
                 Updates = userUpdates,
-                Key = idempotencyKey.ToString(),
             };
 
             SetUserAsLoading(userUpdates.Select(u => u.UserId), crpgPeerByCrpgUserId, loading: true);
@@ -351,14 +348,11 @@ internal class CrpgRewardServer : MissionLogic
             return;
         }
 
-        Guid idempotencyKey = Guid.NewGuid();
-
         try
         {
             var request = new CrpgGameUsersUpdateRequest
             {
                 Updates = userUpdates,
-                Key = idempotencyKey.ToString(),
             };
 
             SetUserAsLoading(userUpdates.Select(u => u.UserId), crpgPeerByCrpgUserId, true);
