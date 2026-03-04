@@ -28,11 +28,12 @@ internal static class CrpgServerConfiguration
     public static string Instance { get; }
     public static float TeamBalancerClanGroupSizePenalty { get; private set; } = 0f;
     public static float ServerExperienceMultiplier { get; private set; } = 1.0f;
+    public static int VeryLowPopulationThreshold { get; private set; } = 6;
+    public static int LowPopulationThreshold { get; private set; } = 12;
     public static int RewardTick { get; private set; } = 60;
     public static bool TeamBalanceOnce { get; private set; }
     public static bool FrozenBots { get; private set; } = false;
     public static int ControlledBotsCount { get; private set; } = 0;
-    public static int BaseNakedEquipmentValue { get; private set; } = 10000;
     public static Tuple<TimeSpan, TimeSpan, TimeZoneInfo>? HappyHours { get; private set; }
     public static bool DisableAllChargeDamage { get; set; } = false;
     public static bool AllowFriendlyChargeDamage { get; set; } = true;
@@ -111,6 +112,34 @@ internal static class CrpgServerConfiguration
 
         ServerExperienceMultiplier = multiplier;
         Debug.Print($"Set server multiplier to {multiplier}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_very_low_pop_threshold", "Disable reward multiplier if the number of players is lower than this number")]
+    private static void SetVeryLowPopulationThreshold(string? thresholdStr)
+    {
+        if (thresholdStr == null || !int.TryParse(thresholdStr, out int threshold))
+        {
+            Debug.Print($"Invalid threshold: {thresholdStr}");
+            return;
+        }
+
+        VeryLowPopulationThreshold = threshold;
+        Debug.Print($"Set very low population threshold to {threshold}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_low_pop_threshold", "Disable upkeep if the number of players is lower than this number")]
+    private static void SetLowPopulationThreshold(string? thresholdStr)
+    {
+        if (thresholdStr == null || !int.TryParse(thresholdStr, out int threshold))
+        {
+            Debug.Print($"Invalid threshold: {thresholdStr}");
+            return;
+        }
+
+        LowPopulationThreshold = threshold;
+        Debug.Print($"Set low population threshold to {threshold}");
     }
 
     [UsedImplicitly]
