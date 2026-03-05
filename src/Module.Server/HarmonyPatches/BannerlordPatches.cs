@@ -1,12 +1,4 @@
 ﻿using System.Reflection;
-using TaleWorlds.Engine;
-using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.Diamond;
-#if CRPG_CLIENT
-using TaleWorlds.MountAndBlade.View.Tableaus;
-#endif
->>>>>>> 9e7a620f (final)
-=======
 using HarmonyLib;
 using TaleWorlds.Engine;
 using TaleWorlds.MountAndBlade;
@@ -14,14 +6,6 @@ using TaleWorlds.MountAndBlade.Diamond;
 #if CRPG_CLIENT
 using TaleWorlds.MountAndBlade.View.Tableaus;
 #endif
-=======
-using TaleWorlds.Engine;
-using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.Diamond;
-#if CRPG_CLIENT
-using TaleWorlds.MountAndBlade.View.Tableaus;
-#endif
->>>>>>> 9e7a620f (final)
 
 namespace Crpg.Module.HarmonyPatches;
 
@@ -41,20 +25,6 @@ internal static class BannerlordPatches
             nameof(SendPeerInformationsToPeerPatch.Prefix));
         AddPrefix(harmony, typeof(MissionNetworkComponent), "SendSpawnedMissionObjectsToPeer",
             BindingFlags.NonPublic | BindingFlags.Instance, typeof(MissionNetworkComponentPatch),
-            nameof(MissionNetworkComponentPatch.Prefix));*/
-        AddPrefix(harmony, typeof(ThumbnailCreatorView), "RegisterEntityWithoutTexture",
-            BindingFlags.Public | BindingFlags.Instance, typeof(RegisterEntityWithoutTexturePatch),
-            nameof(RegisterEntityWithoutTexturePatch.Prefix));
-#if CRPG_CLIENT
-        AddPrefix(harmony, typeof(TableauCacheManager), "CreateItemBaseEntity",
-        BindingFlags.NonPublic| BindingFlags.Instance, typeof(CreateItemBaseEntityPatch),
-        nameof(CreateItemBaseEntityPatch.Prefix));
-        AddPrefix(harmony, typeof(TableauCacheManager), "FillEntityWithPose",
-        BindingFlags.NonPublic | BindingFlags.Instance, typeof(FillEntityWithPosePatch),
-        nameof(FillEntityWithPosePatch.Prefix));
-#endif
->>>>>>> 9e7a620f (final)
-=======
             nameof(MissionNetworkComponentPatch.Prefix));
         AddPrefix(harmony, typeof(CustomBattleServer), "OnClientWantsToConnectCustomGameMessage",
             BindingFlags.NonPublic | BindingFlags.Instance, typeof(CustomBattleServerPatch),
@@ -70,20 +40,6 @@ internal static class BannerlordPatches
         BindingFlags.NonPublic | BindingFlags.Instance, typeof(FillEntityWithPosePatch),
         nameof(FillEntityWithPosePatch.Prefix));
 #endif
-=======
-            nameof(MissionNetworkComponentPatch.Prefix));*/
-        AddPrefix(harmony, typeof(ThumbnailCreatorView), "RegisterEntityWithoutTexture",
-            BindingFlags.Public | BindingFlags.Instance, typeof(RegisterEntityWithoutTexturePatch),
-            nameof(RegisterEntityWithoutTexturePatch.Prefix));
-#if CRPG_CLIENT
-        AddPrefix(harmony, typeof(TableauCacheManager), "CreateItemBaseEntity",
-        BindingFlags.NonPublic| BindingFlags.Instance, typeof(CreateItemBaseEntityPatch),
-        nameof(CreateItemBaseEntityPatch.Prefix));
-        AddPrefix(harmony, typeof(TableauCacheManager), "FillEntityWithPose",
-        BindingFlags.NonPublic | BindingFlags.Instance, typeof(FillEntityWithPosePatch),
-        nameof(FillEntityWithPosePatch.Prefix));
-#endif
->>>>>>> 9e7a620f (final)
     }
 
     private static void AddPrefix(Harmony harmony, Type classToPatch, string functionToPatchName, BindingFlags flags, Type patchClass, string functionPatchName)

@@ -13,12 +13,6 @@ using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.ModuleManager;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.InputSystem;
-using TaleWorlds.Engine.InputSystem;
-using TaleWorlds.MountAndBlade.GameKeyCategory;
-using Debug = TaleWorlds.Library.Debug;
->>>>>>> 9e7a620f (final)
-=======
 #if CRPG_CLIENT
 using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.HarmonyPatches;
@@ -27,12 +21,6 @@ using Crpg.Module.HarmonyPatches;
 #if CRPG_EDITOR
 using Crpg.Module.HarmonyPatches;
 #endif
-=======
-using TaleWorlds.InputSystem;
-using TaleWorlds.Engine.InputSystem;
-using TaleWorlds.MountAndBlade.GameKeyCategory;
-using Debug = TaleWorlds.Library.Debug;
->>>>>>> 9e7a620f (final)
 
 #if CRPG_SERVER
 using Crpg.Module.Common.ChatCommands;

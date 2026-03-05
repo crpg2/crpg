@@ -20,14 +20,8 @@ using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.GauntletUI.Widgets.Multiplayer;
 using TaleWorlds.MountAndBlade.View.Tableaus;
-using Crpg.Module.Common.Models;
->>>>>>> 9e7a620f (final)
-=======
 using TaleWorlds.MountAndBlade.View.Tableaus.Thumbnails;
 using Path = System.IO.Path;
-=======
-using Crpg.Module.Common.Models;
->>>>>>> 9e7a620f (final)
 
 namespace Crpg.Module.DataExport;
 
@@ -1420,17 +1414,10 @@ internal class ItemExporter : IDataExporter
             // TODO: what is second argument "additionalArgs"?
             ThumbnailCacheManager.Current.CreateTexture(new ItemThumbnailCreationData(mbItem, null, texture =>
             {
-<<<<<<< HEAD
                 texture.SaveToFile(Path.Combine(outputPath, mbItem.StringId + ".png"), true);
                 createTextureTaskSource.SetResult(null);
             }, null));
         }
-=======
-                texture.SaveToFile(Path.Combine(outputPath, id + ".png"));
-                createTextureTaskSource.SetResult(null);
-            });
-        }   
->>>>>>> 9e7a620f (final)
 
         return Task.WhenAll(createTextureTasks);
     }
