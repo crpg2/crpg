@@ -75,7 +75,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             WeaponClass.ThrowingKnife => 1.15f,
             WeaponClass.Javelin => 1.15f,
             _ => 1f,
-            _ => 1f,
         };
 
         if (weapon.WeaponClass is WeaponClass.Stone or WeaponClass.ThrowingAxe or WeaponClass.ThrowingKnife or WeaponClass.Javelin)

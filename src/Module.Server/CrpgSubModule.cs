@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Crpg.Module.Common;
+﻿using Crpg.Module.Common;
 using Crpg.Module.Common.Models;
 using Crpg.Module.Modes.Battle;
 using Crpg.Module.Modes.Conquest;
@@ -13,6 +12,7 @@ using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.ModuleManager;
 using TaleWorlds.MountAndBlade;
+using Debug = TaleWorlds.Library.Debug;
 #if CRPG_CLIENT
 using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.HarmonyPatches;
@@ -31,9 +31,7 @@ using TaleWorlds.MountAndBlade.ListedServer;
 #if CRPG_EXPORT
 using System.Runtime.CompilerServices;
 using Crpg.Module.DataExport;
-using TaleWorlds.Library;
 using TaleWorlds.Localization;
-using Crpg.Module.HarmonyPatches;
 #endif
 
 namespace Crpg.Module;
