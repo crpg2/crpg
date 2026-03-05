@@ -109,7 +109,11 @@ internal class CrpgSubModule : MBSubModuleBase
         InitializeGameModels(starterObject);
         CrpgSkills.Initialize(game);
         CrpgBannerEffects.Initialize(game);
+#if CRPG_EXPORT
+        ManagedParameters.Instance.Initialize(ModuleHelper.GetXmlPath("cRPG_Exporter", "managed_core_parameters"));
+#else
         ManagedParameters.Instance.Initialize(ModuleHelper.GetXmlPath("Crpg", "managed_core_parameters"));
+#endif
 #if CRPG_CLIENT
         game.GameTextManager.LoadGameTexts();
 #endif
@@ -227,7 +231,6 @@ internal class CrpgSubModule : MBSubModuleBase
             new TextObject("Scale"), 4578, Scale, () => (false, null)),
             new InitialStateOption("ScaleWeapon",
             new TextObject("ScaleWeapon"), 4578, ScaleWeapon, () => (false, null)),
-
         };
         foreach (var opt in mainMenuOptions)
         {
@@ -500,7 +503,8 @@ internal class CrpgSubModule : MBSubModuleBase
             4 => "Refund Armors",
             5 => "Refund Cav",
             6 => "Refund Weapons",
-            7 => "Refund firearms"
+            7 => "Refund firearms",
+            _ => "Unknown",
         }
 
         + " has been selected";

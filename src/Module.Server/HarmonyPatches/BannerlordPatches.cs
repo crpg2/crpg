@@ -1,11 +1,8 @@
-﻿using System.Reflection;
+using System.Reflection;
 using HarmonyLib;
 using TaleWorlds.Engine;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Diamond;
-#if CRPG_CLIENT
-using TaleWorlds.MountAndBlade.View.Tableaus;
-#endif
 
 namespace Crpg.Module.HarmonyPatches;
 
@@ -29,16 +26,11 @@ internal static class BannerlordPatches
         AddPrefix(harmony, typeof(CustomBattleServer), "OnClientWantsToConnectCustomGameMessage",
             BindingFlags.NonPublic | BindingFlags.Instance, typeof(CustomBattleServerPatch),
             nameof(CustomBattleServerPatch.Prefix));*/
-        AddPrefix(harmony, typeof(ThumbnailCreatorView), "RegisterEntityWithoutTexture",
-            BindingFlags.Public | BindingFlags.Instance, typeof(RegisterEntityWithoutTexturePatch),
-            nameof(RegisterEntityWithoutTexturePatch.Prefix));
 #if CRPG_CLIENT
-        AddPrefix(harmony, typeof(TableauCacheManager), "CreateItemBaseEntity",
-        BindingFlags.NonPublic| BindingFlags.Instance, typeof(CreateItemBaseEntityPatch),
-        nameof(CreateItemBaseEntityPatch.Prefix));
-        AddPrefix(harmony, typeof(TableauCacheManager), "FillEntityWithPose",
-        BindingFlags.NonPublic | BindingFlags.Instance, typeof(FillEntityWithPosePatch),
-        nameof(FillEntityWithPosePatch.Prefix));
+        // Override thumbnail render resolution for higher quality item exports.
+        AddPrefix(harmony, typeof(ThumbnailCreatorView), "RegisterRenderRequest",
+            BindingFlags.Public | BindingFlags.Instance, typeof(RegisterRenderRequestPatch),
+            nameof(RegisterRenderRequestPatch.Prefix));
 #endif
     }
 

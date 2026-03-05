@@ -23,6 +23,7 @@
   <ItemGroup>
     <ContentWithTargetPath Include="..\Module.Server\SubModule.xml" Link="SubModule.xml" TargetPath="..\..\SubModule.xml" CopyToOutputDirectory="Always" />
     <ContentWithTargetPath Include="..\..\data\constants.json" Link="constants.json" TargetPath="..\..\ModuleData\constants.json" CopyToOutputDirectory="Always" />
+    <ContentWithTargetPath Include="..\Module.Server\ModuleData\**\*" Link="ServerModuleData\%(RecursiveDir)%(Filename)%(Extension)" TargetPath="..\..\ModuleData\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="Always" />
     <ContentWithTargetPath Include="ModuleData\**\*;GUI\**\*.xml" TargetPath="..\..\%(Identity)" CopyToOutputDirectory="Always" />
     <Compile Include="..\Module.Server\**\*$(DefaultLanguageSourceExtension)" />
     <Compile Remove="..\Module.Server\$(BaseIntermediateOutputPath)\**;..\Module.Server\$(BaseOutputPath)\**" />

@@ -184,6 +184,7 @@ internal class ItemExporter : IDataExporter
             var itemsDoc = XmlComputeAutoStats(filePath);
             itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName(filePath)));
         }
+
         foreach (string filePath in PiecesFilePaths)
         {
             var itemsDoc = XmlComputeAutoStats(filePath);
@@ -512,6 +513,7 @@ internal class ItemExporter : IDataExporter
 
         return itemsDoc;
     }
+
     private static XmlDocument XmlScaleWeapon(string weaponsFilePath, string craftingPiecesFilePath, string weaponCraftingTeamplate)
     {
         XmlDocument weaponsDoc = new();
@@ -554,6 +556,7 @@ internal class ItemExporter : IDataExporter
                 {
                     continue;
                 }
+
                 foreach (var damageNode in bladeData)
                 {
                     float scaler = 1 - 0.03f / (float)Math.Pow(damageNode.Attributes["damage_type"].Value switch
@@ -561,6 +564,7 @@ internal class ItemExporter : IDataExporter
                         "Blunt" => CrpgItemValueModel.CalculateDamageTypeFactor(DamageTypes.Blunt),
                         "Cut" => CrpgItemValueModel.CalculateDamageTypeFactor(DamageTypes.Cut),
                         "Pierce" => CrpgItemValueModel.CalculateDamageTypeFactor(DamageTypes.Pierce),
+                        _ => 1,
                     }, 1 / 2.15f);
 
                     if (damageNode.Name == "Swing")
@@ -855,7 +859,6 @@ internal class ItemExporter : IDataExporter
                         break;
 
                     case ItemObject.ItemTypeEnum.Arrows:
-
 
                         var arrowDamageType = (DamageTypes)Enum.Parse(typeof(DamageTypes), node1.SelectNodes("ItemComponent/Weapon")!.Cast<XmlNode>().Last().Attributes!["thrust_damage_type"].Value);
                         var relevantArrowDictionary = arrowDamageType switch
@@ -1297,13 +1300,16 @@ internal class ItemExporter : IDataExporter
                 return int.Parse(id.Split('_').Last().Substring(1));
             }
             else
+            {
                 return 0;
+            }
         }
         catch
         {
             return 0;
         }
     }
+
     private static int ItemRank(ItemObject mbItem)
     {
         return IdToHeirloomLevel(mbItem.StringId);

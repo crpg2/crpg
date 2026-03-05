@@ -12,7 +12,6 @@ internal class SettlementExporter : IDataExporter
 {
     private const string SettlementsFile = "../../Modules/SandBox/ModuleData/settlements.xml";
 
-
     public Task Export(string gitRepoPath)
     {
         List<CrpgSettlementCreation> settlements = new();
