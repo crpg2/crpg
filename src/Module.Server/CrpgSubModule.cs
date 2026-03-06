@@ -199,11 +199,6 @@ internal class CrpgSubModule : MBSubModuleBase
         return JsonConvert.DeserializeObject<CrpgConstants>(File.ReadAllText(path))!;
     }
 
-    private void OnUnhandledException(object sender, UnhandledExceptionEventArgs args)
-    {
-        Debug.Print(args.ExceptionObject.ToString(), color: Debug.DebugColor.Red);
-    }
-
     private void InitializeGameModels(IGameStarter basicGameStarter)
     {
         basicGameStarter.AddModel(new CrpgAgentStatCalculateModel(_constants));
@@ -240,217 +235,96 @@ internal class CrpgSubModule : MBSubModuleBase
 
     private void RefundFirearm()
     {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
         InformationManager.DisplayMessage(new InformationMessage("Refunding Firearms."));
-        Task.WhenAll(exporters.Select(e => e.RefundFirearm("lol"))).ContinueWith(t =>
-        {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("Firearms were refunded"));
-        });
+        ItemExporter.RefundFirearm();
+        InformationManager.DisplayMessage(new InformationMessage("Done."));
     }
 
     private void RefundCrossbow()
     {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
         InformationManager.DisplayMessage(new InformationMessage("Refunding Crossbows."));
-        Task.WhenAll(exporters.Select(e => e.RefundCrossbow("lol"))).ContinueWith(t =>
-        {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("Crossbows were refunded"));
-        });
+        ItemExporter.RefundCrossbow();
+        InformationManager.DisplayMessage(new InformationMessage("Done."));
     }
 
     private void RefundArmor()
     {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
         InformationManager.DisplayMessage(new InformationMessage("Refunding Armors."));
-        Task.WhenAll(exporters.Select(e => e.RefundArmor("lol"))).ContinueWith(t =>
-        {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("Armors were refunded"));
-        });
+        ItemExporter.RefundArmor();
+        InformationManager.DisplayMessage(new InformationMessage("Done."));
     }
 
     private void RefundWeapons()
     {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
         InformationManager.DisplayMessage(new InformationMessage("Refunding Armors."));
-        Task.WhenAll(exporters.Select(e => e.RefundWeapons("lol"))).ContinueWith(t =>
-        {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("Weapons were refunded"));
-        });
+        ItemExporter.RefundWeapons();
+        InformationManager.DisplayMessage(new InformationMessage("Done."));
     }
 
     private void RefundThrowing()
     {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
         InformationManager.DisplayMessage(new InformationMessage("Refunding Throwing."));
-        Task.WhenAll(exporters.Select(e => e.RefundThrowing("lol"))).ContinueWith(t =>
-        {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("Throwing were refunded"));
-        });
+        ItemExporter.RefundThrowing();
+        InformationManager.DisplayMessage(new InformationMessage("Done."));
     }
 
     private void RefundCav()
     {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
         InformationManager.DisplayMessage(new InformationMessage("Refunding Cav."));
-        Task.WhenAll(exporters.Select(e => e.RefundCav("lol"))).ContinueWith(t =>
-        {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("cav has been refunded"));
-        });
+        ItemExporter.RefundCav();
+        InformationManager.DisplayMessage(new InformationMessage("Done."));
     }
 
     private void RefundBow()
     {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
         InformationManager.DisplayMessage(new InformationMessage("Refunding Bows."));
-        Task.WhenAll(exporters.Select(e => e.RefundBow("lol"))).ContinueWith(t =>
-        {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("Bow were Refunded"));
-        });
+        ItemExporter.RefundBow();
+        InformationManager.DisplayMessage(new InformationMessage("Done."));
     }
 
     private void RefundShield()
     {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
         InformationManager.DisplayMessage(new InformationMessage("Refunding Bows."));
-        Task.WhenAll(exporters.Select(e => e.RefundShield("lol"))).ContinueWith(t =>
-        {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("Shield were Refunded"));
-        });
+        ItemExporter.RefundShield();
+        InformationManager.DisplayMessage(new InformationMessage("Done."));
     }
 
     private void Scale()
     {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
-        InformationManager.DisplayMessage(new InformationMessage("Editing Class."));
-        Task.WhenAll(exporters.Select(e => e.Scale("lol"))).ContinueWith(t =>
-        {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("Done."));
-        });
+        InformationManager.DisplayMessage(new InformationMessage("Scale"));
+        ItemExporter.Scale();
+        InformationManager.DisplayMessage(new InformationMessage("Done"));
     }
 
     private void ScaleWeapon()
     {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
         InformationManager.DisplayMessage(new InformationMessage("Editing Class."));
-        Task.WhenAll(exporters.Select(e => e.ScaleWeapon("lol"))).ContinueWith(t =>
-        {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("Done."));
-        });
+        ItemExporter.ScaleWeapon();
+        InformationManager.DisplayMessage(new InformationMessage("Done."));
     }
 
     private void ComputeAutoStats()
     {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
         InformationManager.DisplayMessage(new InformationMessage("Computing Auto Generated Stats."));
-        Task.WhenAll(exporters.Select(e => e.ComputeAutoStats("lol"))).ContinueWith(t =>
-        {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("Done."));
-        });
+        ItemExporter.ComputeAutoStats();
+        InformationManager.DisplayMessage(new InformationMessage("Done."));
     }
 
     private void ExportData()
     {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
         InformationManager.DisplayMessage(new InformationMessage("Exporting data."));
-        Task.WhenAll(exporters.Select(e => e.Export("lol"))).ContinueWith(t =>
+        foreach (var exporter in new[] { new ItemExporter(), /* new SettlementExporter() */ })
         {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("Done."));
-        });
+            exporter.Export("");
+        }
+
+        InformationManager.DisplayMessage(new InformationMessage("Done."));
     }
 
     private void ExportImages()
     {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-        };
-
         InformationManager.DisplayMessage(new InformationMessage("Exporting Images."));
-        Task.WhenAll(exporters.Select(e => e.ImageExport("lol"))).ContinueWith(t =>
+        ItemExporter.ImageExport().ContinueWith(t =>
         {
             InformationManager.DisplayMessage(t.IsFaulted
                 ? new InformationMessage(t.Exception!.Message)
@@ -511,7 +385,7 @@ internal class CrpgSubModule : MBSubModuleBase
         InformationManager.DisplayMessage(new InformationMessage(message));
     }
 
-    private int _toRefund = 0;
+    private int _toRefund;
 
 #endif
 }

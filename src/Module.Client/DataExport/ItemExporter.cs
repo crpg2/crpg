@@ -1,24 +1,16 @@
 ﻿using System.Globalization;
-using System.Linq;
-using System.Net;
 using System.Text.RegularExpressions;
 using System.Xml;
-using System.Xml.Linq;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common.Models;
 using Crpg.Module.Helpers.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
-using TaleWorlds.CampaignSystem.Extensions;
 using TaleWorlds.Core;
-using TaleWorlds.Core.ViewModelCollection;
-using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.GauntletUI.Widgets.Multiplayer;
 using TaleWorlds.MountAndBlade.View.Tableaus;
 using TaleWorlds.MountAndBlade.View.Tableaus.Thumbnails;
 using Path = System.IO.Path;
@@ -28,7 +20,7 @@ namespace Crpg.Module.DataExport;
 internal class ItemExporter : IDataExporter
 {
     private static readonly string[] ItemFilePaths =
-    {
+    [
         "../../Modules/cRPG_Exporter/ModuleData/items/head_armors.xml",
         "../../Modules/cRPG_Exporter/ModuleData/items/shoulder_armors.xml",
         "../../Modules/cRPG_Exporter/ModuleData/items/body_armors.xml",
@@ -36,14 +28,15 @@ internal class ItemExporter : IDataExporter
         "../../Modules/cRPG_Exporter/ModuleData/items/leg_armors.xml",
         "../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml",
         "../../Modules/cRPG_Exporter/ModuleData/items/horses_and_others.xml",
-        "../../Modules/cRPG_Exporter/ModuleData/items/shields.xml",
-    };
+        "../../Modules/cRPG_Exporter/ModuleData/items/shields.xml"
+    ];
+
     private static readonly string[] PiecesFilePaths =
-    {
+    [
         "../../Modules/cRPG_Exporter/ModuleData/crafting_pieces.xml",
         "../../Modules/cRPG_Exporter/ModuleData/crafting_templates.xml",
-        "../../Modules/cRPG_Exporter/ModuleData/weapon_descriptions.xml",
-    };
+        "../../Modules/cRPG_Exporter/ModuleData/weapon_descriptions.xml"
+    ];
 
     private static readonly Dictionary<int, (int speedbonus, int maneuverbonus, float healthbonusPercentage)> MountHeirloomBonus = new()
     {
@@ -177,7 +170,8 @@ internal class ItemExporter : IDataExporter
         { 2, (2, 2, 1, 4, 2) },
         { 3, (3, 3, 2, 5, 3) },
     };
-    public async Task ComputeAutoStats(string gitRepoPath)
+
+    public static void ComputeAutoStats()
     {
         foreach (string filePath in ItemFilePaths)
         {
@@ -192,17 +186,13 @@ internal class ItemExporter : IDataExporter
         }
     }
 
-    public async Task RefundWeapons(string gitRepoPath)
+    public static void RefundWeapons()
     {
-        List<ItemObject.ItemTypeEnum> typesToRefund = new()
-        {
-            ItemObject.ItemTypeEnum.Shield,
-        };
         var itemsDoc = XmlRefundWeapons("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml");
         itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
     }
 
-    public async Task RefundShield(string gitRepoPath)
+    public static void RefundShield()
     {
         List<ItemObject.ItemTypeEnum> typesToRefund = new()
             {
@@ -212,7 +202,7 @@ internal class ItemExporter : IDataExporter
         itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/shields.xml")));
     }
 
-    public async Task RefundBow(string gitRepoPath)
+    public static void RefundBow()
     {
         List<ItemObject.ItemTypeEnum> typesToRefund = new()
         {
@@ -223,7 +213,7 @@ internal class ItemExporter : IDataExporter
         itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
     }
 
-    public async Task RefundCrossbow(string gitRepoPath)
+    public static void RefundCrossbow()
     {
         List<ItemObject.ItemTypeEnum> typesToRefund = new()
         {
@@ -236,7 +226,7 @@ internal class ItemExporter : IDataExporter
         itemsDoc2.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
     }
 
-    public async Task RefundFirearm(string gitRepoPath)
+    public static void RefundFirearm()
     {
         List<ItemObject.ItemTypeEnum> typesToRefund = new()
         {
@@ -250,7 +240,7 @@ internal class ItemExporter : IDataExporter
         itemsDoc2.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
     }
 
-    public async Task RefundArmor(string gitRepoPath)
+    public static void RefundArmor()
     {
         List<ItemObject.ItemTypeEnum> typesToRefund = new()
         {
@@ -268,7 +258,7 @@ internal class ItemExporter : IDataExporter
         }
     }
 
-    public async Task RefundThrowing(string gitRepoPath)
+    public static void RefundThrowing()
     {
         List<ItemObject.ItemTypeEnum> typesToRefund = new()
         {
@@ -284,7 +274,7 @@ internal class ItemExporter : IDataExporter
         itemsDoc4.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
     }
 
-    public async Task RefundCav(string gitRepoPath)
+    public static void RefundCav()
     {
         List<ItemObject.ItemTypeEnum> typesToRefund = new()
         {
@@ -295,19 +285,19 @@ internal class ItemExporter : IDataExporter
         itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/horses_and_others.xml")));
     }
 
-    public async Task Scale(string gitRepoPath)
+    public static void Scale()
     {
         var itemsDoc = XmlScaleClass("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", ItemObject.ItemTypeEnum.Bow);
         itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
     }
 
-    public async Task ScaleWeapon(string gitRepoPath)
+    public static void ScaleWeapon()
     {
         var itemsDoc = XmlScaleWeapon("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", "../../Modules/cRPG_Exporter/ModuleData/crafting_pieces.xml", "crpg_TwoHandedPolearm");
         itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/crafting_pieces.xml")));
     }
 
-    public async Task Export(string gitRepoPath)
+    public void Export(string gitRepoPath)
     {
         Debug.Print("user clicked on export");
         var game = Game.CreateGame(new MultiplayerGame(), new MultiplayerGameManager());
@@ -321,7 +311,7 @@ internal class ItemExporter : IDataExporter
         SerializeCrpgItems(crpgItems, Path.Combine("../../Modules/cRPG_Exporter/ModuleData"));
     }
 
-    public async Task ImageExport(string gitRepoPath)
+    public static async Task ImageExport()
     {
         var game = Game.CreateGame(new MultiplayerGame(), new MultiplayerGameManager());
         game.Initialize();
@@ -330,7 +320,6 @@ internal class ItemExporter : IDataExporter
             .DistinctBy(i => i.StringId)
             .OrderBy(i => i.StringId)
             .ToArray();
-        var crpgItems = mbItems.Select(MbToCrpgItem);
         string itemThumbnailsPath = Path.Combine("../../Modules/cRPG_Exporter/images");
         Directory.CreateDirectory(itemThumbnailsPath);
         await GenerateItemsThumbnail(mbItems, itemThumbnailsPath);
@@ -456,7 +445,7 @@ internal class ItemExporter : IDataExporter
         for (int i = 0; i < nodes1.Length; i += 1)
         {
             var node1 = nodes1[i];
-            var craftingTemplateAttribute = node1.Attributes["crafting_template"];
+            var craftingTemplateAttribute = node1.Attributes!["crafting_template"];
             if (craftingTemplateAttribute == null)
             {
                 continue;
@@ -527,13 +516,13 @@ internal class ItemExporter : IDataExporter
         var nodes1 = weaponsDoc.LastChild.ChildNodes.Cast<XmlNode>().ToArray();
         for (int i = 0; i < nodes1.Length; i += 1)
         {
-            if (nodes1[i].Attributes["crafting_template"]?.Value != weaponCraftingTeamplate)
+            if (nodes1[i].Attributes!["crafting_template"]?.Value != weaponCraftingTeamplate)
             {
                 continue;
             }
 
             var pieces = nodes1[i].SelectSingleNode("Pieces")?.ChildNodes;
-            string? pieceId = pieces?.Cast<XmlNode>()?.FirstOrDefault(n => n.Attributes["Type"].Value == "Blade")?.Attributes["id"]?.Value;
+            string? pieceId = pieces?.Cast<XmlNode>().FirstOrDefault(n => n.Attributes!["Type"].Value == "Blade")?.Attributes!["id"]?.Value;
             if (pieceId != null)
             {
                 piecesToScale.Add(pieceId);
@@ -549,7 +538,7 @@ internal class ItemExporter : IDataExporter
         var nodes2 = craftingPiecesDoc.LastChild.ChildNodes.Cast<XmlNode>().ToArray();
         for (int i = 0; i < nodes2.Length; i += 1)
         {
-            if (nodes2[i].Attributes["piece_type"].Value == "Blade" && piecesToScale.Contains(nodes2[i].Attributes["id"].Value))
+            if (nodes2[i].Attributes!["piece_type"].Value == "Blade" && piecesToScale.Contains(nodes2[i].Attributes!["id"].Value))
             {
                 var bladeData = nodes2[i].SelectSingleNode("BladeData")?.ChildNodes.Cast<XmlNode>();
                 if (bladeData == null)
@@ -559,7 +548,7 @@ internal class ItemExporter : IDataExporter
 
                 foreach (var damageNode in bladeData)
                 {
-                    float scaler = 1 - 0.03f / (float)Math.Pow(damageNode.Attributes["damage_type"].Value switch
+                    float scaler = 1 - 0.03f / (float)Math.Pow(damageNode.Attributes!["damage_type"].Value switch
                     {
                         "Blunt" => CrpgItemValueModel.CalculateDamageTypeFactor(DamageTypes.Blunt),
                         "Cut" => CrpgItemValueModel.CalculateDamageTypeFactor(DamageTypes.Cut),
@@ -569,7 +558,9 @@ internal class ItemExporter : IDataExporter
 
                     if (damageNode.Name == "Swing")
                     {
-                        damageNode.Attributes["damage_factor"].Value = Math.Round(float.Parse(damageNode.Attributes["damage_factor"].Value) * scaler, 1).ToString();
+                        damageNode.Attributes["damage_factor"].Value = Math
+                            .Round(float.Parse(damageNode.Attributes["damage_factor"].Value) * scaler, 1)
+                            .ToString(CultureInfo.InvariantCulture);
                     }
                 }
             }
@@ -631,7 +622,7 @@ internal class ItemExporter : IDataExporter
             if (node1.Name == "WeaponDescription")
             {
                 Debug.Print($"Parsing Weapon Description {node1.Attributes!["id"].Value!}");
-                var availablePiecesNodes1 = node1.SelectSingleNode("AvailablePieces").ChildNodes.Cast<XmlNode>().ToArray();
+                var availablePiecesNodes1 = node1.SelectSingleNode("AvailablePieces")!.ChildNodes.Cast<XmlNode>().ToArray();
                 for (int j = 0; j < availablePiecesNodes1.Length; j += 1)
                 {
                     var availablePieceNode = availablePiecesNodes1[j];
@@ -642,7 +633,7 @@ internal class ItemExporter : IDataExporter
                     }
                     else
                     {
-                        if (!upgradedAvailablePiece.ContainsKey((availablePieceNode.ParentNode.ParentNode.Attributes["id"]!.Value, baseId)))
+                        if (!upgradedAvailablePiece.ContainsKey((availablePieceNode.ParentNode!.ParentNode!.Attributes!["id"]!.Value, baseId)))
                         {
                             List<XmlNode> upgradedItemNodes = new()
                                     {
@@ -664,14 +655,14 @@ internal class ItemExporter : IDataExporter
             {
                 Debug.Print($"Parsing CraftingTemplate {node1.Attributes!["id"].Value!}");
 
-                var usablePiecesNodes1 = node1.SelectSingleNode("UsablePieces").ChildNodes.Cast<XmlNode>().ToArray();
+                var usablePiecesNodes1 = node1.SelectSingleNode("UsablePieces")!.ChildNodes.Cast<XmlNode>().ToArray();
 
-                Debug.Print($"{node1.Attributes!["id"].Value!} has {usablePiecesNodes1.Count()} usablepieces");
+                Debug.Print($"{node1.Attributes!["id"].Value!} has {usablePiecesNodes1.Length} usablepieces");
 
                 for (int j = 0; j < usablePiecesNodes1.Length; j += 1)
                 {
                     var usablePieceNode = usablePiecesNodes1[j];
-                    Debug.Print($"checking  {usablePieceNode.Attributes["piece_id"]!.Value}");
+                    Debug.Print($"checking  {usablePieceNode.Attributes!["piece_id"]!.Value}");
                     int heirloomLevel = IdToHeirloomLevel(usablePieceNode.Attributes!["piece_id"].Value);
                     string baseId = usablePieceNode.Attributes!["piece_id"].Value.Remove(usablePieceNode.Attributes!["piece_id"].Value.Length - 2);
                     if (heirloomLevel == 0)
@@ -679,7 +670,7 @@ internal class ItemExporter : IDataExporter
                     }
                     else
                     {
-                        if (!upgradedUsablePiece.ContainsKey((usablePieceNode.ParentNode.ParentNode.Attributes["id"]!.Value, baseId)))
+                        if (!upgradedUsablePiece.ContainsKey((usablePieceNode.ParentNode!.ParentNode!.Attributes!["id"]!.Value, baseId)))
                         {
                             List<XmlNode> upgradedItemNodes = new()
                                 {
@@ -718,7 +709,7 @@ internal class ItemExporter : IDataExporter
                         newNodeh1.Attributes!["id"].Value = baseId + "h1";
                         newNodeh2.Attributes!["id"].Value = baseId + "h2";
                         newNodeh3.Attributes!["id"].Value = baseId + "h3";
-                        node1.ParentNode.InsertAfter(newNodeh1, node1);
+                        node1.ParentNode!.InsertAfter(newNodeh1, node1);
                         node1.ParentNode.InsertAfter(newNodeh2, newNodeh1);
                         node1.ParentNode.InsertAfter(newNodeh3, newNodeh2);
                     }
@@ -726,7 +717,6 @@ internal class ItemExporter : IDataExporter
             }
             else if (node1.Name == "CraftedItem")
             {
-                int heirloomLevel = IdToHeirloomLevel(node1.Attributes!["id"].Value);
                 string baseId = node1.Attributes!["id"].Value.Remove(node1.Attributes!["id"].Value.Length - 2);
                 if (!upgradedItem.ContainsKey(baseId))
                 {
@@ -736,16 +726,11 @@ internal class ItemExporter : IDataExporter
                     newNodeh1.Attributes!["id"].Value = baseId + "h1";
                     newNodeh2.Attributes!["id"].Value = baseId + "h2";
                     newNodeh3.Attributes!["id"].Value = baseId + "h3";
-                    node1.ParentNode.InsertAfter(newNodeh1, node1);
+                    node1.ParentNode!.InsertAfter(newNodeh1, node1);
                     node1.ParentNode.InsertAfter(newNodeh2, newNodeh1);
                     node1.ParentNode.InsertAfter(newNodeh3, newNodeh2);
 
-                    List<XmlNode> upgradedNodes = new List<XmlNode>()
-                {
-                    newNodeh1,
-                    newNodeh2,
-                    newNodeh3,
-                };
+                    List<XmlNode> upgradedNodes = [newNodeh1, newNodeh2, newNodeh3];
 
                     foreach (XmlNode upgradedNode in upgradedNodes)
                     {
@@ -759,7 +744,6 @@ internal class ItemExporter : IDataExporter
             }
             else if (node1.Name == "CraftingPiece")
             {
-                int heirloomLevel = IdToHeirloomLevel(node1.Attributes!["id"].Value);
                 string baseId = node1.Attributes!["id"].Value.Remove(node1.Attributes!["id"].Value.Length - 2);
                 if (!upgradedItem.ContainsKey(baseId))
                 {
@@ -769,20 +753,19 @@ internal class ItemExporter : IDataExporter
                     newNodeh1.Attributes!["id"].Value = baseId + "h1";
                     newNodeh2.Attributes!["id"].Value = baseId + "h2";
                     newNodeh3.Attributes!["id"].Value = baseId + "h3";
-                    node1.ParentNode.InsertAfter(newNodeh1, node1);
+                    node1.ParentNode!.InsertAfter(newNodeh1, node1);
                     node1.ParentNode.InsertAfter(newNodeh2, newNodeh1);
                     node1.ParentNode.InsertAfter(newNodeh3, newNodeh2);
                 }
             }
             else if (node1.Name == "WeaponDescription")
             {
-                var availablePiecesNodes1 = node1.SelectSingleNode("AvailablePieces").ChildNodes.Cast<XmlNode>().ToArray();
+                var availablePiecesNodes1 = node1.SelectSingleNode("AvailablePieces")!.ChildNodes.Cast<XmlNode>().ToArray();
                 for (int j = 0; j < availablePiecesNodes1.Length; j += 1)
                 {
                     var availablePieceNode = availablePiecesNodes1[j];
-                    int heirloomLevel = IdToHeirloomLevel(availablePieceNode.Attributes!["id"].Value);
                     string baseId = availablePieceNode.Attributes!["id"].Value.Remove(availablePieceNode.Attributes!["id"].Value.Length - 2);
-                    if (!upgradedAvailablePiece.ContainsKey((availablePieceNode.ParentNode.ParentNode.Attributes["id"]!.Value, baseId)))
+                    if (!upgradedAvailablePiece.ContainsKey((availablePieceNode.ParentNode!.ParentNode!.Attributes!["id"]!.Value, baseId)))
                     {
                         XmlNode newNodeh1 = availablePieceNode.CloneNode(true);
                         XmlNode newNodeh2 = availablePieceNode.CloneNode(true);
@@ -798,16 +781,15 @@ internal class ItemExporter : IDataExporter
             }
             else if (node1.Name == "CraftingTemplate")
             {
-                var usablePiecesNodes1 = node1.SelectSingleNode("UsablePieces").ChildNodes.Cast<XmlNode>().ToArray();
+                var usablePiecesNodes1 = node1.SelectSingleNode("UsablePieces")!.ChildNodes.Cast<XmlNode>().ToArray();
                 Debug.Print($"Parsing to clone CraftingTemplate {node1.Attributes!["id"].Value!}");
-                Debug.Print($"{node1.Attributes!["id"].Value!} has {usablePiecesNodes1.Count()} usablepieces");
+                Debug.Print($"{node1.Attributes!["id"].Value!} has {usablePiecesNodes1.Length} usablepieces");
                 for (int j = 0; j < usablePiecesNodes1.Length; j += 1)
                 {
                     var usablePieceNode = usablePiecesNodes1[j];
-                    Debug.Print($"checking to clone {usablePieceNode.Attributes["piece_id"].Value}");
-                    int heirloomLevel = IdToHeirloomLevel(usablePieceNode.Attributes!["piece_id"].Value);
+                    Debug.Print($"checking to clone {usablePieceNode.Attributes!["piece_id"].Value}");
                     string baseId = usablePieceNode.Attributes!["piece_id"].Value.Remove(usablePieceNode.Attributes!["piece_id"].Value.Length - 2);
-                    if (!upgradedUsablePiece.ContainsKey((usablePieceNode.ParentNode.ParentNode.Attributes["id"]!.Value, baseId)))
+                    if (!upgradedUsablePiece.ContainsKey((usablePieceNode.ParentNode!.ParentNode!.Attributes!["id"]!.Value, baseId)))
                     {
                         Debug.Print($"cloning {usablePieceNode.Attributes["piece_id"].Value}");
                         XmlNode newNodeh1 = usablePieceNode.CloneNode(true);
@@ -836,13 +818,9 @@ internal class ItemExporter : IDataExporter
                 {
                     continue;
                 }
-                else
-                {
-                    XmlNode levelZeroItemNode = baseItem[baseId];
-                }
 
                 var nonHeirloomNode = baseItem[baseId];
-                node1.Attributes["name"].Value = nonHeirloomNode.Attributes["name"].Value + $" +{heirloomLevel}";
+                node1.Attributes["name"].Value = nonHeirloomNode.Attributes!["name"].Value + $" +{heirloomLevel}";
                 var type = (ItemObject.ItemTypeEnum)Enum.Parse(typeof(ItemObject.ItemTypeEnum), node1.Attributes!["Type"].Value);
                 Debug.Print($"now doing {node1.Attributes["id"].Value} which is derived from {nonHeirloomNode.Attributes["id"].Value} of type {type.ToString()}");
                 switch (type)
@@ -913,7 +891,7 @@ internal class ItemExporter : IDataExporter
                         break;
 
                     case ItemObject.ItemTypeEnum.Bow:
-                        string bowItemUsage = node1.SelectSingleNode("ItemComponent/Weapon").Attributes["item_usage"].Value;
+                        string bowItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")!.Attributes!["item_usage"].Value;
                         if (bowItemUsage == "long_bow")
                         {
                             if (LongBowHeirloomBonus.TryGetValue(heirloomLevel, out var newBow))
@@ -940,7 +918,7 @@ internal class ItemExporter : IDataExporter
                         break;
 
                     case ItemObject.ItemTypeEnum.Crossbow:
-                        string crossbowItemUsage = node1.SelectSingleNode("ItemComponent/Weapon").Attributes["item_usage"].Value;
+                        string crossbowItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")!.Attributes!["item_usage"].Value;
 
                         if (crossbowItemUsage == "crossbow")
                         {
@@ -969,7 +947,7 @@ internal class ItemExporter : IDataExporter
 
                     case ItemObject.ItemTypeEnum.Musket:
                         {
-                            string musketItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")?.Attributes["item_usage"]?.Value ?? string.Empty;
+                            string musketItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")?.Attributes!["item_usage"]?.Value ?? string.Empty;
 
                             if (musketItemUsage == "crpg_light_gun")
                             {
@@ -1085,25 +1063,25 @@ internal class ItemExporter : IDataExporter
                          or ItemObject.ItemTypeEnum.HorseHarness)
                 {
                     ModifyNodeAttribute(node1, "weight",
-                        _ => ModifyArmorWeight(nonHeirloomNode, node1, type).ToString(CultureInfo.InvariantCulture));
+                        _ => ModifyArmorWeight(nonHeirloomNode, type).ToString(CultureInfo.InvariantCulture));
                 }
 
                 if (type is ItemObject.ItemTypeEnum.Shield)
                 {
                     ModifyNodeAttribute(node1, "weight",
-                        _ => ModifyShieldWeight(nonHeirloomNode, node1, type).ToString(CultureInfo.InvariantCulture));
+                        _ => ModifyShieldWeight(nonHeirloomNode).ToString(CultureInfo.InvariantCulture));
                 }
 
                 if (type is ItemObject.ItemTypeEnum.Bow)
                 {
                     ModifyNodeAttribute(node1, "weight",
-                        _ => ModifyBowWeight(nonHeirloomNode, node1, type, heirloomLevel).ToString(CultureInfo.InvariantCulture));
+                        _ => ModifyBowWeight(nonHeirloomNode, heirloomLevel).ToString(CultureInfo.InvariantCulture));
                 }
 
                 if (type is ItemObject.ItemTypeEnum.Arrows)
                 {
                     ModifyNodeAttribute(node1, "weight",
-                        _ => ModifyArrowWeight(nonHeirloomNode, node1, type, heirloomLevel).ToString(CultureInfo.InvariantCulture));
+                        _ => ModifyArrowWeight(nonHeirloomNode).ToString(CultureInfo.InvariantCulture));
                 }
             }
         }
@@ -1111,11 +1089,11 @@ internal class ItemExporter : IDataExporter
         return itemsDoc;
     }
 
-    private static float ModifyArmorWeight(XmlNode nonHeirloomNode, XmlNode node, ItemObject.ItemTypeEnum type)
+    private static float ModifyArmorWeight(XmlNode nonHeirloomNode, ItemObject.ItemTypeEnum type)
     {
         XmlNode armorNode = nonHeirloomNode.SelectNodes("ItemComponent/Armor")!.Cast<XmlNode>().First();
         float armorPower =
-            1.0f * (armorNode.Attributes["head_armor"] == null ? 0f : float.Parse(armorNode.Attributes["head_armor"].Value))
+            1.0f * (armorNode.Attributes!["head_armor"] == null ? 0f : float.Parse(armorNode.Attributes["head_armor"].Value))
           + 1.15f * (armorNode.Attributes["body_armor"] == null ? 0f : float.Parse(armorNode.Attributes["body_armor"].Value))
           + 1.0f * (armorNode.Attributes["arm_armor"] == null ? 0f : float.Parse(armorNode.Attributes["arm_armor"].Value))
           + 0.8f * (armorNode.Attributes["leg_armor"] == null ? 0f : float.Parse(armorNode.Attributes["leg_armor"].Value));
@@ -1137,7 +1115,7 @@ internal class ItemExporter : IDataExporter
         return 12.2f * (float)Math.Pow(armorPower, 1.4f) / bestArmorPower;
     }
 
-    private static float ModifyShieldWeight(XmlNode nonHeirloomNode, XmlNode node, ItemObject.ItemTypeEnum type)
+    private static float ModifyShieldWeight(XmlNode nonHeirloomNode)
     {
         XmlNode shieldNode = nonHeirloomNode.SelectNodes("ItemComponent/Weapon")!.Cast<XmlNode>().First();
         float shieldWeightPoints =
@@ -1147,7 +1125,7 @@ internal class ItemExporter : IDataExporter
         return shieldWeightPoints / 800000f;
     }
 
-    private static float ModifyBowWeight(XmlNode nonHeirloomNode, XmlNode node, ItemObject.ItemTypeEnum type, int heirloomLevel)
+    private static float ModifyBowWeight(XmlNode nonHeirloomNode, int heirloomLevel)
     {
         XmlNode weaponNode = nonHeirloomNode.SelectNodes("ItemComponent/Weapon")!.Cast<XmlNode>().First();
         float tier = CrpgItemValueModel.ComputeBowTier(int.Parse(weaponNode.Attributes!["thrust_damage"].Value),
@@ -1160,7 +1138,7 @@ internal class ItemExporter : IDataExporter
         return 2f * tier * int.Parse(weaponNode.Attributes!["thrust_damage"].Value) / 100f;
     }
 
-    private static float ModifyArrowWeight(XmlNode nonHeirloomNode, XmlNode node, ItemObject.ItemTypeEnum type, int heirloomLevel)
+    private static float ModifyArrowWeight(XmlNode nonHeirloomNode)
     {
         XmlNode weaponNode = nonHeirloomNode.SelectNodes("ItemComponent/Weapon")!.Cast<XmlNode>().First();
         int damage = int.Parse(weaponNode.Attributes!["thrust_damage"].Value);
@@ -1374,7 +1352,7 @@ internal class ItemExporter : IDataExporter
             NullValueHandling = NullValueHandling.Ignore,
             Formatting = Newtonsoft.Json.Formatting.Indented,
             ContractResolver = new DefaultContractResolver { NamingStrategy = new CamelCaseNamingStrategy() },
-            Converters = new JsonConverter[] { new ArrayStringEnumFlagsConverter(), new StringEnumConverter() },
+            Converters = [new ArrayStringEnumFlagsConverter(), new StringEnumConverter()],
         });
 
         using StreamWriter s = new(Path.Combine(outputPath, "items.json"));
@@ -1383,7 +1361,7 @@ internal class ItemExporter : IDataExporter
 
     private static Task GenerateItemsThumbnail(IEnumerable<ItemObject> mbItems, string outputPath)
     {
-        List<Task> createTextureTasks = new();
+        List<Task> createTextureTasks = [];
         foreach (var mbItem in mbItems)
         {
             /*
@@ -1407,17 +1385,10 @@ internal class ItemExporter : IDataExporter
                 _ => mbItem.Type,
             };
 
-            string id = mbItem.Type switch
-            {
-                ItemObject.ItemTypeEnum.Banner => mbItem.StringId,
-                _ => mbItem.StringId.Substring(0, mbItem.StringId.Length - 3),
-            };
-
             TaskCompletionSource<object?> createTextureTaskSource = new();
             createTextureTasks.Add(createTextureTaskSource.Task);
 
             // Texture.SaveToFile doesn't accept absolute paths
-            // TODO: what is second argument "additionalArgs"?
             ThumbnailCacheManager.Current.CreateTexture(new ItemThumbnailCreationData(mbItem, null, texture =>
             {
                 texture.SaveToFile(Path.Combine(outputPath, mbItem.StringId + ".png"), true);
