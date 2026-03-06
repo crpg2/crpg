@@ -290,7 +290,6 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
         filter: () => {
           if (options.view === AGGREGATION_VIEW.Checkbox) {
             const _buckets = Object.entries(getBuckets(column.getFacetedUniqueValues()))
-            // @ts-expect-error TODO: https://github.com/nuxt/ui/issues/2968
             return h(USelect, {
               'class': 'w-full',
               'multiple': true,

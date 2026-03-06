@@ -19,22 +19,14 @@ public record UpdateCharacterCharacteristicsCommand : IMediatorRequest<Character
     public int CharacterId { get; init; }
     public CharacterCharacteristicsViewModel Characteristics { get; init; } = new();
 
-    internal class Handler : IMediatorRequestHandler<UpdateCharacterCharacteristicsCommand, CharacterCharacteristicsViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, ICharacterClassResolver characterClassResolver, Constants constants) : IMediatorRequestHandler<UpdateCharacterCharacteristicsCommand, CharacterCharacteristicsViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<RetireCharacterCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly ICharacterClassResolver _characterClassResolver;
-        private readonly Constants _constants;
-
-        public Handler(ICrpgDbContext db, IMapper mapper, ICharacterClassResolver characterClassResolver, Constants constants)
-        {
-            _db = db;
-            _mapper = mapper;
-            _characterClassResolver = characterClassResolver;
-            _constants = constants;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly ICharacterClassResolver _characterClassResolver = characterClassResolver;
+        private readonly Constants _constants = constants;
 
         public async ValueTask<Result<CharacterCharacteristicsViewModel>> Handle(UpdateCharacterCharacteristicsCommand req,
             CancellationToken cancellationToken)
@@ -54,7 +46,7 @@ public record UpdateCharacterCharacteristicsCommand : IMediatorRequest<Character
             }
             catch (CharacteristicDecreasedException)
             {
-                errors = new[] { CommonErrors.CharacteristicDecreased() };
+                errors = [CommonErrors.CharacteristicDecreased()];
             }
 
             if (errors != null && errors.Count != 0)
@@ -143,7 +135,7 @@ public record UpdateCharacterCharacteristicsCommand : IMediatorRequest<Character
             return new Result();
         }
 
-        private int CheckedDelta(int oldStat, int newStat, Func<int, int>? cost = null)
+        private static int CheckedDelta(int oldStat, int newStat, Func<int, int>? cost = null)
         {
             int delta = cost == null
                 ? newStat - oldStat
@@ -156,7 +148,7 @@ public record UpdateCharacterCharacteristicsCommand : IMediatorRequest<Character
             throw new CharacteristicDecreasedException();
         }
 
-        private bool CheckSkillsRequirement(CharacterCharacteristicsViewModel stats)
+        private static bool CheckSkillsRequirement(CharacterCharacteristicsViewModel stats)
         {
             return stats.Skills.IronFlesh <= stats.Attributes.Strength / 3
                    && stats.Skills.PowerStrike <= stats.Attributes.Strength / 3

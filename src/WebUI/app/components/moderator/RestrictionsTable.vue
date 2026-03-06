@@ -44,7 +44,6 @@ const columns: TableColumn<UserRestriction>[] = [
         onResetFilter: () => column.setFilterValue(undefined),
       }, {
         filter: () =>
-          // @ts-expect-error TODO:
           h(USelect, {
             'variant': 'none',
             'multiple': true,
@@ -85,7 +84,6 @@ const columns: TableColumn<UserRestriction>[] = [
         onResetFilter: () => column.setFilterValue(undefined),
       }, {
         filter: () =>
-          // @ts-expect-error TODO:
           h(USelect, {
             'variant': 'none',
             'multiple': true,
