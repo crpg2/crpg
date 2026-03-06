@@ -5,7 +5,7 @@
       <action type="act_equip_crossbow_left_stance_light" animation="equip_crossbow_left_stance_light"/>
       <action type="act_equip_crossbow_heavy" animation="equip_crossbow_heavy"/>
       <action type="act_equip_crossbow_left_stance_heavy" animation="equip_crossbow_left_stance_heavy"/>
-	    <action type="act_ready_musket_cla" animation="1_cla_ready_musket" />
+	  <action type="act_ready_musket_cla" animation="1_cla_ready_musket" />
       <action type="act_release_musket_cla" animation="1_cla_release_musket" />
       <action type="act_ready_continue_musket_cla" animation="1_cla_ready_continue_musket" />
       <action type="act_reload_musket_cla" animation="1_cla_reload_musket" />
