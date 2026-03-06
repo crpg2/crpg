@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <PackageReference Include="Gameloop.Vdf" />
-    <PackageReference Include="LibGit2Sharp" />
     <PackageReference Include="Microsoft.Win32.Registry" />
   </ItemGroup>
 

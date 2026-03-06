@@ -14,7 +14,6 @@
     <PackageVersion Include="FluentValidation.AspNetCore" Version="11.3.1" />
     <PackageVersion Include="Gameloop.Vdf" Version="0.6.2" />
     <PackageVersion Include="Lib.Harmony" Version="2.4.2" />
-    <PackageVersion Include="LibGit2Sharp" Version="0.27.2" />
     <PackageVersion Include="MaxMind.GeoIP2" Version="5.4.1" />
     <PackageVersion Include="Mediator.Abstractions" Version="3.0.1" />
     <PackageVersion Include="Mediator.SourceGenerator" Version="3.0.1" />

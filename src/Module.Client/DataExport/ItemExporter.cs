@@ -1,15 +1,19 @@
-﻿using System.Globalization;
+﻿#if CRPG_CLIENT
+using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Xml;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common.Models;
+using Crpg.Module.HarmonyPatches;
 using Crpg.Module.Helpers.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using TaleWorlds.Core;
+using TaleWorlds.Engine;
 using TaleWorlds.Library;
+using TaleWorlds.ModuleManager;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.Tableaus;
 using TaleWorlds.MountAndBlade.View.Tableaus.Thumbnails;
@@ -17,25 +21,27 @@ using Path = System.IO.Path;
 
 namespace Crpg.Module.DataExport;
 
-internal class ItemExporter : IDataExporter
+internal static class ItemExporter
 {
+    private static readonly string ModuleDataPath = Path.Combine(ModuleHelper.GetModuleFullPath("cRPG"), "ModuleData");
+
     private static readonly string[] ItemFilePaths =
     [
-        "../../Modules/cRPG/ModuleData/items/head_armors.xml",
-        "../../Modules/cRPG/ModuleData/items/shoulder_armors.xml",
-        "../../Modules/cRPG/ModuleData/items/body_armors.xml",
-        "../../Modules/cRPG/ModuleData/items/arm_armors.xml",
-        "../../Modules/cRPG/ModuleData/items/leg_armors.xml",
-        "../../Modules/cRPG/ModuleData/items/weapons.xml",
-        "../../Modules/cRPG/ModuleData/items/horses_and_others.xml",
-        "../../Modules/cRPG/ModuleData/items/shields.xml"
+        "items/head_armors.xml",
+        "items/shoulder_armors.xml",
+        "items/body_armors.xml",
+        "items/arm_armors.xml",
+        "items/leg_armors.xml",
+        "items/weapons.xml",
+        "items/horses_and_others.xml",
+        "items/shields.xml"
     ];
 
     private static readonly string[] PiecesFilePaths =
     [
-        "../../Modules/cRPG/ModuleData/crafting_pieces.xml",
-        "../../Modules/cRPG/ModuleData/crafting_templates.xml",
-        "../../Modules/cRPG/ModuleData/weapon_descriptions.xml"
+        "crafting_pieces.xml",
+        "crafting_templates.xml",
+        "weapon_descriptions.xml"
     ];
 
     private static readonly Dictionary<int, (int speedbonus, int maneuverbonus, float healthbonusPercentage)> MountHeirloomBonus = new()
@@ -171,135 +177,116 @@ internal class ItemExporter : IDataExporter
         [3] = (3, 3, 2, 5, 3),
     };
 
-    public static void ComputeAutoStats()
+    private static readonly HashSet<WeaponClass> MeleeWeaponClasses =
+    [
+        WeaponClass.Dagger,
+        WeaponClass.Mace,
+        WeaponClass.TwoHandedMace,
+        WeaponClass.OneHandedSword,
+        WeaponClass.TwoHandedSword,
+        WeaponClass.OneHandedAxe,
+        WeaponClass.TwoHandedAxe,
+        WeaponClass.Pick,
+        WeaponClass.LowGripPolearm,
+        WeaponClass.OneHandedPolearm,
+        WeaponClass.TwoHandedPolearm,
+    ];
+
+    [CommandLineFunctionality.CommandLineArgumentFunction("refund", "crpg")]
+    internal static string Refund(List<string> args)
     {
-        foreach (string filePath in ItemFilePaths)
+        const string weaponsPath = "items/weapons.xml";
+        const string shieldsPath = "items/shields.xml";
+        const string horsesPath = "items/horses_and_others.xml";
+
+        void ToggleRefundInFile(string path, Func<XmlNode, bool> predicate)
         {
-            var itemsDoc = XmlComputeAutoStats(filePath);
-            itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName(filePath)));
-        }
+            path = Path.Combine(ModuleDataPath, path);
 
-        foreach (string filePath in PiecesFilePaths)
-        {
-            var itemsDoc = XmlComputeAutoStats(filePath);
-            itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData", Path.GetFileName(filePath)));
-        }
-    }
-
-    public static void RefundWeapons()
-    {
-        var itemsDoc = XmlRefundWeapons("../../Modules/cRPG/ModuleData/items/weapons.xml");
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
-    }
-
-    public static void RefundShield()
-    {
-        List<ItemObject.ItemTypeEnum> typesToRefund = new()
+            XmlDocument doc = new();
+            using (var r = XmlReader.Create(path, new XmlReaderSettings { IgnoreComments = true }))
             {
-                ItemObject.ItemTypeEnum.Shield,
-            };
-        var itemsDoc = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/shields.xml", typesToRefund);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/shields.xml")));
-    }
+                doc.Load(r);
+            }
 
-    public static void RefundBow()
-    {
-        List<ItemObject.ItemTypeEnum> typesToRefund = new()
-        {
-            ItemObject.ItemTypeEnum.Bow,
-            ItemObject.ItemTypeEnum.Arrows,
-        };
-        var itemsDoc = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/weapons.xml", typesToRefund);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
-    }
+            foreach (XmlNode node in doc.LastChild!.ChildNodes)
+            {
+                if (predicate(node))
+                {
+                    node.Attributes!["id"].Value = ToggleRefund(node.Attributes!["id"].Value);
+                }
+            }
 
-    public static void RefundCrossbow()
-    {
-        List<ItemObject.ItemTypeEnum> typesToRefund = new()
-        {
-            ItemObject.ItemTypeEnum.Crossbow,
-            ItemObject.ItemTypeEnum.Bolts,
-        };
-        var itemsDoc = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/weapons.xml", typesToRefund);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
-        var itemsDoc2 = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/weapons.xml", typesToRefund);
-        itemsDoc2.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
-    }
-
-    public static void RefundFirearm()
-    {
-        List<ItemObject.ItemTypeEnum> typesToRefund = new()
-        {
-            ItemObject.ItemTypeEnum.Musket,
-            ItemObject.ItemTypeEnum.Pistol,
-            ItemObject.ItemTypeEnum.Bullets,
-        };
-        var itemsDoc = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/weapons.xml", typesToRefund);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
-        var itemsDoc2 = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/weapons.xml", typesToRefund);
-        itemsDoc2.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
-    }
-
-    public static void RefundArmor()
-    {
-        List<ItemObject.ItemTypeEnum> typesToRefund = new()
-        {
-            ItemObject.ItemTypeEnum.BodyArmor,
-            ItemObject.ItemTypeEnum.LegArmor,
-            ItemObject.ItemTypeEnum.HeadArmor,
-            ItemObject.ItemTypeEnum.HandArmor,
-            ItemObject.ItemTypeEnum.ChestArmor,
-            ItemObject.ItemTypeEnum.Cape,
-        };
-        foreach (string filepath in ItemFilePaths)
-        {
-            var itemsDoc = XmlRefundItemType(filepath, typesToRefund);
-            itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName(filepath)));
+            doc.Save(path);
         }
-    }
 
-    public static void RefundThrowing()
-    {
-        List<ItemObject.ItemTypeEnum> typesToRefund = new()
+        bool IsItemOfType(XmlNode node, ItemObject.ItemTypeEnum[] types)
         {
-            ItemObject.ItemTypeEnum.Thrown,
-        };
-        var itemsDoc = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/weapons.xml", typesToRefund);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
-        var itemsDoc2 = XmlRefundCraftingTemplate("../../Modules/cRPG/ModuleData/items/weapons.xml", "crpg_ThrowingKnife");
-        itemsDoc2.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
-        var itemsDoc3 = XmlRefundCraftingTemplate("../../Modules/cRPG/ModuleData/items/weapons.xml", "crpg_ThrowingAxe");
-        itemsDoc3.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
-        var itemsDoc4 = XmlRefundCraftingTemplate("../../Modules/cRPG/ModuleData/items/weapons.xml", "crpg_Javelin");
-        itemsDoc4.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
-    }
+            return node.Name == "Item" &&
+                   types.Contains((ItemObject.ItemTypeEnum)Enum.Parse(typeof(ItemObject.ItemTypeEnum), node.Attributes!["Type"].Value));
+        }
 
-    public static void RefundCav()
-    {
-        List<ItemObject.ItemTypeEnum> typesToRefund = new()
+        string type = args.Count > 0 ? args[0].ToLowerInvariant() : "";
+        switch (type)
         {
-            ItemObject.ItemTypeEnum.Horse,
-            ItemObject.ItemTypeEnum.HorseHarness,
-        };
-        var itemsDoc = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/horses_and_others.xml", typesToRefund);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/horses_and_others.xml")));
+            case "weapons":
+                ToggleRefundInFile(weaponsPath, _ => true);
+                break;
+
+            case "shield":
+                ToggleRefundInFile(shieldsPath, n => IsItemOfType(n,
+                    [ItemObject.ItemTypeEnum.Shield]));
+                break;
+
+            case "bow":
+                ToggleRefundInFile(weaponsPath, n => IsItemOfType(n,
+                    [ItemObject.ItemTypeEnum.Bow, ItemObject.ItemTypeEnum.Arrows]));
+                break;
+
+            case "crossbow":
+                ToggleRefundInFile(weaponsPath, n => IsItemOfType(n,
+                    [ItemObject.ItemTypeEnum.Crossbow, ItemObject.ItemTypeEnum.Bolts]));
+                break;
+
+            case "firearm":
+                ToggleRefundInFile(weaponsPath, n => IsItemOfType(n,
+                    [ItemObject.ItemTypeEnum.Musket, ItemObject.ItemTypeEnum.Pistol, ItemObject.ItemTypeEnum.Bullets]));
+                break;
+
+            case "armor":
+                ItemObject.ItemTypeEnum[] armorTypes =
+                [
+                    ItemObject.ItemTypeEnum.BodyArmor, ItemObject.ItemTypeEnum.LegArmor,
+                    ItemObject.ItemTypeEnum.HeadArmor, ItemObject.ItemTypeEnum.HandArmor,
+                    ItemObject.ItemTypeEnum.ChestArmor, ItemObject.ItemTypeEnum.Cape
+                ];
+                foreach (string filepath in ItemFilePaths)
+                {
+                    ToggleRefundInFile(filepath, n => IsItemOfType(n, armorTypes));
+                }
+
+                break;
+
+            case "throwing":
+                ToggleRefundInFile(weaponsPath, n => IsItemOfType(n, [ItemObject.ItemTypeEnum.Thrown]));
+                string[] templates = ["crpg_ThrowingKnife", "crpg_ThrowingAxe", "crpg_Javelin"];
+                ToggleRefundInFile(weaponsPath, n => templates.Contains(n.Attributes!["crafting_template"]?.Value));
+                break;
+
+            case "cav":
+                ToggleRefundInFile(horsesPath, n => IsItemOfType(n, [ItemObject.ItemTypeEnum.Horse, ItemObject.ItemTypeEnum.HorseHarness]));
+                break;
+
+            default:
+                return $"Unknown refund type: {type}. Valid types: firearm, crossbow, armor, weapons, throwing, cav, bow, shield";
+        }
+
+        return $"Refunded {type}.";
     }
 
-    public static void Scale()
+    [CommandLineFunctionality.CommandLineArgumentFunction("export_items", "crpg")]
+    internal static string ExportItems(List<string> args)
     {
-        var itemsDoc = XmlScaleClass("../../Modules/cRPG/ModuleData/items/weapons.xml", ItemObject.ItemTypeEnum.Bow);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
-    }
-
-    public static void ScaleWeapon()
-    {
-        var itemsDoc = XmlScaleWeapon("../../Modules/cRPG/ModuleData/items/weapons.xml", "../../Modules/cRPG/ModuleData/crafting_pieces.xml", "crpg_TwoHandedPolearm");
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/", Path.GetFileName("../../Modules/cRPG/ModuleData/crafting_pieces.xml")));
-    }
-
-    public void Export(string gitRepoPath)
-    {
-        Debug.Print("user clicked on export");
         var game = Game.CreateGame(new MultiplayerGame(), new MultiplayerGameManager());
         game.Initialize();
         var mbItems = game.ObjectManager.GetObjectTypeList<ItemObject>()
@@ -308,10 +295,31 @@ internal class ItemExporter : IDataExporter
             .OrderBy(i => i.StringId)
             .ToArray();
         var crpgItems = mbItems.Select(MbToCrpgItem);
-        SerializeCrpgItems(crpgItems, Path.Combine("../../Modules/cRPG/ModuleData"));
+        SerializeCrpgItems(crpgItems, ModuleDataPath);
+
+        return "Done.";
     }
 
-    public static async Task ImageExport()
+    [CommandLineFunctionality.CommandLineArgumentFunction("compute_auto_stats", "crpg")]
+    internal static string RunComputeAutoStats(List<string> args)
+    {
+        foreach (string filePath in ItemFilePaths)
+        {
+            string fullPath = Path.Combine(ModuleDataPath, filePath);
+            XmlComputeAutoStats(fullPath).Save(fullPath);
+        }
+
+        foreach (string filePath in PiecesFilePaths)
+        {
+            string fullPath = Path.Combine(ModuleDataPath, filePath);
+            XmlComputeAutoStats(fullPath).Save(fullPath);
+        }
+
+        return "Done.";
+    }
+
+    [CommandLineFunctionality.CommandLineArgumentFunction("export_images", "crpg")]
+    internal static string RunExportImages(List<string> args)
     {
         var game = Game.CreateGame(new MultiplayerGame(), new MultiplayerGameManager());
         game.Initialize();
@@ -322,7 +330,36 @@ internal class ItemExporter : IDataExporter
             .ToArray();
         string itemThumbnailsPath = Path.Combine("../../Modules/cRPG/images");
         Directory.CreateDirectory(itemThumbnailsPath);
-        await GenerateItemsThumbnail(mbItems, itemThumbnailsPath);
+        RegisterRenderRequestPatch.IsEnabled = true;
+        GenerateItemsThumbnail(mbItems, itemThumbnailsPath)
+            .ContinueWith(t =>
+            {
+                RegisterRenderRequestPatch.IsEnabled = false;
+                MBDebug.EchoCommandWindow(t.IsFaulted
+                    ? "Error. Check the logs."
+                    : "Done.");
+            });
+
+        return $"Exporting {mbItems.Length} images...";
+    }
+
+    [CommandLineFunctionality.CommandLineArgumentFunction("scale", "crpg")]
+    internal static string RunScale(List<string> args)
+    {
+        var itemsDoc = XmlScaleClass(Path.Combine(ModuleDataPath, "items/weapons.xml"), ItemObject.ItemTypeEnum.Bow);
+        itemsDoc.Save(Path.Combine(ModuleDataPath, "items/weapons.xml"));
+        return "Done.";
+    }
+
+    [CommandLineFunctionality.CommandLineArgumentFunction("scale_weapon", "crpg")]
+    internal static string RunScaleWeapon(List<string> args)
+    {
+        var itemsDoc = XmlScaleWeapon(
+            Path.Combine(ModuleDataPath, "items/weapons.xml"),
+            Path.Combine(ModuleDataPath, "crafting_pieces.xml"),
+            "crpg_TwoHandedPolearm");
+        itemsDoc.Save(Path.Combine(ModuleDataPath, "crafting_pieces.xml"));
+        return "Done.";
     }
 
     private static CrpgItem MbToCrpgItem(ItemObject mbItem)
@@ -330,7 +367,9 @@ internal class ItemExporter : IDataExporter
         CrpgItem crpgItem = new()
         {
             Id = mbItem.StringId,
-            BaseId = mbItem.StringId.Split('_').Last().Substring(0, 1) == "h" ? mbItem.StringId.Substring(0, mbItem.StringId.Length - 3) : mbItem.StringId,
+            BaseId = mbItem.StringId.Split('_').Last().Substring(0, 1) == "h"
+                ? mbItem.StringId.Substring(0, mbItem.StringId.Length - 3)
+                : mbItem.StringId,
             Name = mbItem.Name.ToString(),
             Culture = MbToCrpgCulture(mbItem.Culture),
             Type = MbToCrpgItemType(mbItem.Type),
@@ -368,20 +407,6 @@ internal class ItemExporter : IDataExporter
             };
         }
 
-        List<WeaponClass> meleeClass = new()
-        {
-            WeaponClass.Dagger,
-            WeaponClass.Mace,
-            WeaponClass.TwoHandedMace,
-            WeaponClass.OneHandedSword,
-            WeaponClass.TwoHandedSword,
-            WeaponClass.OneHandedAxe,
-            WeaponClass.TwoHandedAxe,
-            WeaponClass.Pick,
-            WeaponClass.LowGripPolearm,
-            WeaponClass.OneHandedPolearm,
-            WeaponClass.TwoHandedPolearm,
-        };
         if (mbItem.WeaponComponent != null)
         {
             crpgItem.Weapons = mbItem.WeaponComponent.Weapons.Select(w => new CrpgItemWeaponComponent
@@ -396,86 +421,16 @@ internal class ItemExporter : IDataExporter
                 Handling = w.Handling,
                 BodyArmor = w.BodyArmor,
                 Flags = MbToCrpgWeaponFlags(w.WeaponFlags),
-                ThrustDamage = meleeClass.Contains(w.WeaponClass) ? (int)(w.ThrustDamageFactor * CrpgStrikeMagnitudeModel.BladeDamageFactorToDamageRatio) : w.ThrustDamage,
+                ThrustDamage = MeleeWeaponClasses.Contains(w.WeaponClass) ? (int)(w.ThrustDamageFactor * CrpgStrikeMagnitudeModel.BladeDamageFactorToDamageRatio) : w.ThrustDamage,
                 ThrustDamageType = MbToCrpgDamageType(w.ThrustDamageType),
                 ThrustSpeed = w.ThrustSpeed,
-                SwingDamage = meleeClass.Contains(w.WeaponClass) ? (int)(w.SwingDamageFactor * CrpgStrikeMagnitudeModel.BladeDamageFactorToDamageRatio) : w.SwingDamage,
+                SwingDamage = MeleeWeaponClasses.Contains(w.WeaponClass) ? (int)(w.SwingDamageFactor * CrpgStrikeMagnitudeModel.BladeDamageFactorToDamageRatio) : w.SwingDamage,
                 SwingDamageType = MbToCrpgDamageType(w.SwingDamageType),
                 SwingSpeed = w.SwingSpeed,
             }).ToArray();
         }
 
         return crpgItem;
-    }
-
-    private static XmlDocument XmlRefundItemType(string filePath, List<ItemObject.ItemTypeEnum> typesToRefund)
-    {
-        XmlDocument itemsDoc = new();
-        using (var r = XmlReader.Create(filePath, new XmlReaderSettings { IgnoreComments = true }))
-        {
-            itemsDoc.Load(r);
-        }
-
-        var nodes1 = itemsDoc.LastChild.ChildNodes.Cast<XmlNode>().ToArray();
-        for (int i = 0; i < nodes1.Length; i += 1)
-        {
-            var node1 = nodes1[i];
-            if (node1.Name == "Item")
-            {
-                var type = (ItemObject.ItemTypeEnum)Enum.Parse(typeof(ItemObject.ItemTypeEnum), node1.Attributes!["Type"].Value);
-                if (typesToRefund.Contains(type))
-                {
-                    node1.Attributes!["id"].Value = ToggleRefund(node1.Attributes!["id"].Value);
-                }
-            }
-        }
-
-        return itemsDoc;
-    }
-
-    private static XmlDocument XmlRefundCraftingTemplate(string filePath, string craftingTemplateToRefund)
-    {
-        XmlDocument itemsDoc = new();
-        using (var r = XmlReader.Create(filePath, new XmlReaderSettings { IgnoreComments = true }))
-        {
-            itemsDoc.Load(r);
-        }
-
-        var nodes1 = itemsDoc.LastChild.ChildNodes.Cast<XmlNode>().ToArray();
-        for (int i = 0; i < nodes1.Length; i += 1)
-        {
-            var node1 = nodes1[i];
-            var craftingTemplateAttribute = node1.Attributes!["crafting_template"];
-            if (craftingTemplateAttribute == null)
-            {
-                continue;
-            }
-
-            if (craftingTemplateToRefund == craftingTemplateAttribute.Value)
-            {
-                node1.Attributes!["id"].Value = ToggleRefund(node1.Attributes!["id"].Value);
-            }
-        }
-
-        return itemsDoc;
-    }
-
-    private static XmlDocument XmlRefundWeapons(string filePath)
-    {
-        XmlDocument itemsDoc = new();
-        using (var r = XmlReader.Create(filePath, new XmlReaderSettings { IgnoreComments = true }))
-        {
-            itemsDoc.Load(r);
-        }
-
-        var nodes1 = itemsDoc.LastChild.ChildNodes.Cast<XmlNode>().ToArray();
-        for (int i = 0; i < nodes1.Length; i += 1)
-        {
-            var node1 = nodes1[i];
-            node1.Attributes!["id"].Value = ToggleRefund(node1.Attributes!["id"].Value);
-        }
-
-        return itemsDoc;
     }
 
     private static XmlDocument XmlScaleClass(string filePath, ItemObject.ItemTypeEnum typeToRefund)
@@ -569,6 +524,41 @@ internal class ItemExporter : IDataExporter
         return craftingPiecesDoc;
     }
 
+    private static void CloneHeirloomVariants(XmlNode node, string baseId, string attrName = "id")
+    {
+        for (int h = 1; h <= 3; h++)
+        {
+            XmlNode clone = node.CloneNode(true);
+            clone.Attributes![attrName].Value = baseId + "h" + h;
+            node.ParentNode!.InsertAfter(clone, node);
+            node = clone;
+        }
+    }
+
+    private static void ApplyRangedHeirloomBonus(
+        XmlNode nonHeirloomNode,
+        XmlNode heirloomNode,
+        (int damageBonus, int accuracyBonus, int missileSpeedBonus, int reloadSpeedBonus, int aimSpeedBonus) bonus)
+    {
+        ModifyChildHeirloomNodesAttribute(nonHeirloomNode, heirloomNode, "ItemComponent/Weapon", "thrust_damage", bonus.damageBonus);
+        ModifyChildHeirloomNodesAttribute(nonHeirloomNode, heirloomNode, "ItemComponent/Weapon", "speed_rating", bonus.reloadSpeedBonus);
+        ModifyChildHeirloomNodesAttribute(nonHeirloomNode, heirloomNode, "ItemComponent/Weapon", "thrust_speed", bonus.aimSpeedBonus);
+        ModifyChildHeirloomNodesAttribute(nonHeirloomNode, heirloomNode, "ItemComponent/Weapon", "accuracy", bonus.accuracyBonus);
+        ModifyChildHeirloomNodesAttribute(nonHeirloomNode, heirloomNode, "ItemComponent/Weapon", "missile_speed", bonus.missileSpeedBonus);
+    }
+
+    private static void AddToList<TKey>(Dictionary<TKey, List<XmlNode>> dict, TKey key, XmlNode node)
+        where TKey : notnull
+    {
+        if (!dict.TryGetValue(key, out var list))
+        {
+            list = [];
+            dict[key] = list;
+        }
+
+        list.Add(node);
+    }
+
     private static XmlDocument XmlComputeAutoStats(string filePath)
     {
         XmlDocument itemsDoc = new();
@@ -582,11 +572,12 @@ internal class ItemExporter : IDataExporter
         Dictionary<(string craftingtemplate, string usablepieceid), List<XmlNode>> upgradedAvailablePiece = new();
         Dictionary<string, List<XmlNode>> upgradedItem = new();
         var nodes1 = itemsDoc.LastChild.ChildNodes.Cast<XmlNode>().ToArray();
-        Debug.Print("adding to dictionary h0 items");
+
+        // Pass 1: Index base (h0) and upgraded items into dictionaries.
         for (int i = 0; i < nodes1.Length; i += 1)
         {
             var node1 = nodes1[i];
-            if (node1.Name == "Item" || node1.Name == "CraftedItem" || node1.Name == "CraftingPiece")
+            if (node1.Name is "Item" or "CraftedItem" or "CraftingPiece")
             {
                 int heirloomLevel = IdToHeirloomLevel(node1.Attributes!["id"].Value);
                 string baseId = node1.Attributes!["id"].Value.Remove(node1.Attributes!["id"].Value.Length - 2);
@@ -596,102 +587,47 @@ internal class ItemExporter : IDataExporter
                     {
                         baseItem[baseId] = node1;
                     }
-                    else
-                    {
-                    }
                 }
                 else
                 {
-                    if (!upgradedItem.ContainsKey(baseId))
-                    {
-                        List<XmlNode> upgradedItemNodes = new()
-                            {
-                                node1,
-                            };
-
-                        upgradedItem[baseId] = upgradedItemNodes;
-                    }
-                    else
-                    {
-                        upgradedItem[baseId].Add(node1);
-                    }
+                    AddToList(upgradedItem, baseId, node1);
                 }
             }
 
-            // weapon descriptions
             if (node1.Name == "WeaponDescription")
             {
-                Debug.Print($"Parsing Weapon Description {node1.Attributes!["id"].Value!}");
-                var availablePiecesNodes1 = node1.SelectSingleNode("AvailablePieces")!.ChildNodes.Cast<XmlNode>().ToArray();
-                for (int j = 0; j < availablePiecesNodes1.Length; j += 1)
+                foreach (XmlNode piece in node1.SelectSingleNode("AvailablePieces")!.ChildNodes)
                 {
-                    var availablePieceNode = availablePiecesNodes1[j];
-                    int heirloomLevel = IdToHeirloomLevel(availablePieceNode.Attributes!["id"].Value);
-                    string baseId = availablePieceNode.Attributes!["id"].Value.Remove(availablePieceNode.Attributes!["id"].Value.Length - 2);
+                    int heirloomLevel = IdToHeirloomLevel(piece.Attributes!["id"].Value);
                     if (heirloomLevel == 0)
                     {
+                        continue;
                     }
-                    else
-                    {
-                        if (!upgradedAvailablePiece.ContainsKey((availablePieceNode.ParentNode!.ParentNode!.Attributes!["id"]!.Value, baseId)))
-                        {
-                            List<XmlNode> upgradedItemNodes = new()
-                                    {
-                                        availablePieceNode,
-                                    };
 
-                            upgradedAvailablePiece[(availablePieceNode.ParentNode.ParentNode.Attributes["id"]!.Value, baseId)] = upgradedItemNodes;
-                        }
-                        else
-                        {
-                            upgradedAvailablePiece[(availablePieceNode.ParentNode.ParentNode.Attributes["id"]!.Value, baseId)].Add(availablePieceNode);
-                        }
-                    }
+                    string baseId = piece.Attributes!["id"].Value.Remove(piece.Attributes!["id"].Value.Length - 2);
+                    var key = (piece.ParentNode!.ParentNode!.Attributes!["id"]!.Value, baseId);
+                    AddToList(upgradedAvailablePiece, key, piece);
                 }
             }
 
-            // Crafting Template
             if (node1.Name == "CraftingTemplate")
             {
-                Debug.Print($"Parsing CraftingTemplate {node1.Attributes!["id"].Value!}");
-
-                var usablePiecesNodes1 = node1.SelectSingleNode("UsablePieces")!.ChildNodes.Cast<XmlNode>().ToArray();
-
-                Debug.Print($"{node1.Attributes!["id"].Value!} has {usablePiecesNodes1.Length} usablepieces");
-
-                for (int j = 0; j < usablePiecesNodes1.Length; j += 1)
+                foreach (XmlNode piece in node1.SelectSingleNode("UsablePieces")!.ChildNodes)
                 {
-                    var usablePieceNode = usablePiecesNodes1[j];
-                    Debug.Print($"checking  {usablePieceNode.Attributes!["piece_id"]!.Value}");
-                    int heirloomLevel = IdToHeirloomLevel(usablePieceNode.Attributes!["piece_id"].Value);
-                    string baseId = usablePieceNode.Attributes!["piece_id"].Value.Remove(usablePieceNode.Attributes!["piece_id"].Value.Length - 2);
+                    int heirloomLevel = IdToHeirloomLevel(piece.Attributes!["piece_id"].Value);
                     if (heirloomLevel == 0)
                     {
+                        continue;
                     }
-                    else
-                    {
-                        if (!upgradedUsablePiece.ContainsKey((usablePieceNode.ParentNode!.ParentNode!.Attributes!["id"]!.Value, baseId)))
-                        {
-                            List<XmlNode> upgradedItemNodes = new()
-                                {
-                                    usablePieceNode,
-                                };
 
-                            upgradedUsablePiece[(usablePieceNode.ParentNode.ParentNode.Attributes["id"]!.Value, baseId)] = upgradedItemNodes;
-                        }
-                        else
-                        {
-                            upgradedUsablePiece[(usablePieceNode.ParentNode.ParentNode.Attributes["id"]!.Value, baseId)].Add(usablePieceNode);
-                        }
-                    }
+                    string baseId = piece.Attributes!["piece_id"].Value.Remove(piece.Attributes!["piece_id"].Value.Length - 2);
+                    var key = (piece.ParentNode!.ParentNode!.Attributes!["id"]!.Value, baseId);
+                    AddToList(upgradedUsablePiece, key, piece);
                 }
-
-                Debug.Print($"Finished Parsing CraftingTemplate {node1.Attributes!["id"].Value!}");
             }
         }
 
-        Debug.Print($"Dictionary upgradedUsablePiece has {upgradedUsablePiece.Count} items");
-        Debug.Print($"Dictionary upgradedAvailablePiece has {upgradedAvailablePiece.Count} items");
+        // Pass 2: Clone base items to create h1/h2/h3 variants where they don't already exist.
         for (int i = 0; i < nodes1.Length; i += 1)
         {
             var node1 = nodes1[i];
@@ -699,20 +635,9 @@ internal class ItemExporter : IDataExporter
             {
                 int heirloomLevel = IdToHeirloomLevel(node1.Attributes!["id"].Value);
                 string baseId = node1.Attributes!["id"].Value.Remove(node1.Attributes!["id"].Value.Length - 2);
-                if (heirloomLevel == 0)
+                if (heirloomLevel == 0 && !upgradedItem.ContainsKey(baseId))
                 {
-                    if (!upgradedItem.ContainsKey(baseId))
-                    {
-                        XmlNode newNodeh1 = node1.CloneNode(true);
-                        XmlNode newNodeh2 = node1.CloneNode(true);
-                        XmlNode newNodeh3 = node1.CloneNode(true);
-                        newNodeh1.Attributes!["id"].Value = baseId + "h1";
-                        newNodeh2.Attributes!["id"].Value = baseId + "h2";
-                        newNodeh3.Attributes!["id"].Value = baseId + "h3";
-                        node1.ParentNode!.InsertAfter(newNodeh1, node1);
-                        node1.ParentNode.InsertAfter(newNodeh2, newNodeh1);
-                        node1.ParentNode.InsertAfter(newNodeh3, newNodeh2);
-                    }
+                    CloneHeirloomVariants(node1, baseId);
                 }
             }
             else if (node1.Name == "CraftedItem")
@@ -720,24 +645,27 @@ internal class ItemExporter : IDataExporter
                 string baseId = node1.Attributes!["id"].Value.Remove(node1.Attributes!["id"].Value.Length - 2);
                 if (!upgradedItem.ContainsKey(baseId))
                 {
-                    XmlNode newNodeh1 = node1.CloneNode(true);
-                    XmlNode newNodeh2 = node1.CloneNode(true);
-                    XmlNode newNodeh3 = node1.CloneNode(true);
-                    newNodeh1.Attributes!["id"].Value = baseId + "h1";
-                    newNodeh2.Attributes!["id"].Value = baseId + "h2";
-                    newNodeh3.Attributes!["id"].Value = baseId + "h3";
-                    node1.ParentNode!.InsertAfter(newNodeh1, node1);
-                    node1.ParentNode.InsertAfter(newNodeh2, newNodeh1);
-                    node1.ParentNode.InsertAfter(newNodeh3, newNodeh2);
+                    CloneHeirloomVariants(node1, baseId);
 
-                    List<XmlNode> upgradedNodes = [newNodeh1, newNodeh2, newNodeh3];
-
-                    foreach (XmlNode upgradedNode in upgradedNodes)
+                    // Also update piece IDs inside each cloned CraftedItem.
+                    foreach (XmlNode sibling in node1.ParentNode!.ChildNodes)
                     {
-                        foreach (XmlNode pieceNode in upgradedNode.LastChild.ChildNodes)
+                        int siblingLevel = IdToHeirloomLevel(sibling.Attributes?["id"]?.Value ?? "");
+                        if (siblingLevel == 0)
                         {
-                            string piecebaseId = pieceNode.Attributes!["id"].Value.Remove(pieceNode.Attributes!["id"].Value.Length - 2);
-                            pieceNode.Attributes!["id"].Value = piecebaseId + "h" + IdToHeirloomLevel(upgradedNode.Attributes!["id"].Value).ToString();
+                            continue;
+                        }
+
+                        string siblingBaseId = sibling.Attributes!["id"].Value.Remove(sibling.Attributes!["id"].Value.Length - 2);
+                        if (siblingBaseId != baseId)
+                        {
+                            continue;
+                        }
+
+                        foreach (XmlNode pieceNode in sibling.LastChild.ChildNodes)
+                        {
+                            string pieceBaseId = pieceNode.Attributes!["id"].Value.Remove(pieceNode.Attributes!["id"].Value.Length - 2);
+                            pieceNode.Attributes!["id"].Value = pieceBaseId + "h" + siblingLevel;
                         }
                     }
                 }
@@ -747,66 +675,34 @@ internal class ItemExporter : IDataExporter
                 string baseId = node1.Attributes!["id"].Value.Remove(node1.Attributes!["id"].Value.Length - 2);
                 if (!upgradedItem.ContainsKey(baseId))
                 {
-                    XmlNode newNodeh1 = node1.CloneNode(true);
-                    XmlNode newNodeh2 = node1.CloneNode(true);
-                    XmlNode newNodeh3 = node1.CloneNode(true);
-                    newNodeh1.Attributes!["id"].Value = baseId + "h1";
-                    newNodeh2.Attributes!["id"].Value = baseId + "h2";
-                    newNodeh3.Attributes!["id"].Value = baseId + "h3";
-                    node1.ParentNode!.InsertAfter(newNodeh1, node1);
-                    node1.ParentNode.InsertAfter(newNodeh2, newNodeh1);
-                    node1.ParentNode.InsertAfter(newNodeh3, newNodeh2);
+                    CloneHeirloomVariants(node1, baseId);
                 }
             }
             else if (node1.Name == "WeaponDescription")
             {
-                var availablePiecesNodes1 = node1.SelectSingleNode("AvailablePieces")!.ChildNodes.Cast<XmlNode>().ToArray();
-                for (int j = 0; j < availablePiecesNodes1.Length; j += 1)
+                foreach (XmlNode piece in node1.SelectSingleNode("AvailablePieces")!.ChildNodes.Cast<XmlNode>().ToArray())
                 {
-                    var availablePieceNode = availablePiecesNodes1[j];
-                    string baseId = availablePieceNode.Attributes!["id"].Value.Remove(availablePieceNode.Attributes!["id"].Value.Length - 2);
-                    if (!upgradedAvailablePiece.ContainsKey((availablePieceNode.ParentNode!.ParentNode!.Attributes!["id"]!.Value, baseId)))
+                    string baseId = piece.Attributes!["id"].Value.Remove(piece.Attributes!["id"].Value.Length - 2);
+                    if (!upgradedAvailablePiece.ContainsKey((piece.ParentNode!.ParentNode!.Attributes!["id"]!.Value, baseId)))
                     {
-                        XmlNode newNodeh1 = availablePieceNode.CloneNode(true);
-                        XmlNode newNodeh2 = availablePieceNode.CloneNode(true);
-                        XmlNode newNodeh3 = availablePieceNode.CloneNode(true);
-                        newNodeh1.Attributes!["id"].Value = baseId + "h1";
-                        newNodeh2.Attributes!["id"].Value = baseId + "h2";
-                        newNodeh3.Attributes!["id"].Value = baseId + "h3";
-                        availablePieceNode.ParentNode.InsertAfter(newNodeh1, availablePieceNode);
-                        availablePieceNode.ParentNode.InsertAfter(newNodeh2, newNodeh1);
-                        availablePieceNode.ParentNode.InsertAfter(newNodeh3, newNodeh2);
+                        CloneHeirloomVariants(piece, baseId);
                     }
                 }
             }
             else if (node1.Name == "CraftingTemplate")
             {
-                var usablePiecesNodes1 = node1.SelectSingleNode("UsablePieces")!.ChildNodes.Cast<XmlNode>().ToArray();
-                Debug.Print($"Parsing to clone CraftingTemplate {node1.Attributes!["id"].Value!}");
-                Debug.Print($"{node1.Attributes!["id"].Value!} has {usablePiecesNodes1.Length} usablepieces");
-                for (int j = 0; j < usablePiecesNodes1.Length; j += 1)
+                foreach (XmlNode piece in node1.SelectSingleNode("UsablePieces")!.ChildNodes.Cast<XmlNode>().ToArray())
                 {
-                    var usablePieceNode = usablePiecesNodes1[j];
-                    Debug.Print($"checking to clone {usablePieceNode.Attributes!["piece_id"].Value}");
-                    string baseId = usablePieceNode.Attributes!["piece_id"].Value.Remove(usablePieceNode.Attributes!["piece_id"].Value.Length - 2);
-                    if (!upgradedUsablePiece.ContainsKey((usablePieceNode.ParentNode!.ParentNode!.Attributes!["id"]!.Value, baseId)))
+                    string baseId = piece.Attributes!["piece_id"].Value.Remove(piece.Attributes!["piece_id"].Value.Length - 2);
+                    if (!upgradedUsablePiece.ContainsKey((piece.ParentNode!.ParentNode!.Attributes!["id"]!.Value, baseId)))
                     {
-                        Debug.Print($"cloning {usablePieceNode.Attributes["piece_id"].Value}");
-                        XmlNode newNodeh1 = usablePieceNode.CloneNode(true);
-                        XmlNode newNodeh2 = usablePieceNode.CloneNode(true);
-                        XmlNode newNodeh3 = usablePieceNode.CloneNode(true);
-                        newNodeh1.Attributes!["piece_id"].Value = baseId + "h1";
-                        newNodeh2.Attributes!["piece_id"].Value = baseId + "h2";
-                        newNodeh3.Attributes!["piece_id"].Value = baseId + "h3";
-                        usablePieceNode.ParentNode.InsertAfter(newNodeh1, usablePieceNode);
-                        usablePieceNode.ParentNode.InsertAfter(newNodeh2, newNodeh1);
-                        usablePieceNode.ParentNode.InsertAfter(newNodeh3, newNodeh2);
+                        CloneHeirloomVariants(piece, baseId, "piece_id");
                     }
                 }
             }
         }
 
-        Debug.Print($"Dictionary has {baseItem.Count} items");
+        // Pass 3: Apply heirloom stat bonuses to upgraded items.
         for (int i = 0; i < nodes1.Length; i += 1)
         {
             var node1 = nodes1[i];
@@ -822,7 +718,6 @@ internal class ItemExporter : IDataExporter
                 var nonHeirloomNode = baseItem[baseId];
                 node1.Attributes["name"].Value = nonHeirloomNode.Attributes!["name"].Value + $" +{heirloomLevel}";
                 var type = (ItemObject.ItemTypeEnum)Enum.Parse(typeof(ItemObject.ItemTypeEnum), node1.Attributes!["Type"].Value);
-                Debug.Print($"now doing {node1.Attributes["id"].Value} which is derived from {nonHeirloomNode.Attributes["id"].Value} of type {type.ToString()}");
                 switch (type)
                 {
                     case ItemObject.ItemTypeEnum.Horse:
@@ -891,96 +786,45 @@ internal class ItemExporter : IDataExporter
                         break;
 
                     case ItemObject.ItemTypeEnum.Bow:
+                    {
                         string bowItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")!.Attributes!["item_usage"].Value;
-                        if (bowItemUsage == "long_bow")
+                        var bowBonusTable = bowItemUsage == "long_bow" ? LongBowHeirloomBonus : BowHeirloomBonus;
+                        if (bowBonusTable.TryGetValue(heirloomLevel, out var bowBonus))
                         {
-                            if (LongBowHeirloomBonus.TryGetValue(heirloomLevel, out var newBow))
-                            {
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", newBow.damageBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "speed_rating", newBow.reloadSpeedBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_speed", newBow.aimSpeedBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "accuracy", newBow.accuracyBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "missile_speed", newBow.missileSpeedBonus);
-                            }
-                        }
-                        else
-                        {
-                            if (BowHeirloomBonus.TryGetValue(heirloomLevel, out var newBow))
-                            {
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", newBow.damageBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "speed_rating", newBow.reloadSpeedBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_speed", newBow.aimSpeedBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "accuracy", newBow.accuracyBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "missile_speed", newBow.missileSpeedBonus);
-                            }
+                            ApplyRangedHeirloomBonus(nonHeirloomNode, node1, bowBonus);
                         }
 
                         break;
+                    }
 
                     case ItemObject.ItemTypeEnum.Crossbow:
+                    {
                         string crossbowItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")!.Attributes!["item_usage"].Value;
-
-                        if (crossbowItemUsage == "crossbow")
+                        var crossbowBonusTable = crossbowItemUsage == "crossbow" ? CrossbowHeirloomBonus : LightCrossbowHeirloomBonus;
+                        if (crossbowBonusTable.TryGetValue(heirloomLevel, out var crossbowBonus))
                         {
-                            if (CrossbowHeirloomBonus.TryGetValue(heirloomLevel, out var newCrossbow))
-                            {
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", newCrossbow.damageBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "speed_rating", newCrossbow.reloadSpeedBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_speed", newCrossbow.aimSpeedBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "accuracy", newCrossbow.accuracyBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "missile_speed", newCrossbow.missileSpeedBonus);
-                            }
-                        }
-                        else
-                        {
-                            if (LightCrossbowHeirloomBonus.TryGetValue(heirloomLevel, out var newCrossbow))
-                            {
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", newCrossbow.damageBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "speed_rating", newCrossbow.reloadSpeedBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_speed", newCrossbow.aimSpeedBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "accuracy", newCrossbow.accuracyBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "missile_speed", newCrossbow.missileSpeedBonus);
-                            }
+                            ApplyRangedHeirloomBonus(nonHeirloomNode, node1, crossbowBonus);
                         }
 
                         break;
+                    }
 
                     case ItemObject.ItemTypeEnum.Musket:
+                    {
+                        string musketItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")?.Attributes!["item_usage"]?.Value ?? string.Empty;
+                        var musketBonusTable = musketItemUsage == "crpg_light_gun" ? LightMusketHeirloomBonus : MusketHeirloomBonus;
+                        if (musketBonusTable.TryGetValue(heirloomLevel, out var musketBonus))
                         {
-                            string musketItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")?.Attributes!["item_usage"]?.Value ?? string.Empty;
-
-                            if (musketItemUsage == "crpg_light_gun")
-                            {
-                                if (LightMusketHeirloomBonus.TryGetValue(heirloomLevel, out var lightMusket))
-                                {
-                                    ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", lightMusket.damageBonus);
-                                    ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "speed_rating", lightMusket.reloadSpeedBonus);
-                                    ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_speed", lightMusket.aimSpeedBonus);
-                                    ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "accuracy", lightMusket.accuracyBonus);
-                                    ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "missile_speed", lightMusket.missileSpeedBonus);
-                                }
-                            }
-                            else if (MusketHeirloomBonus.TryGetValue(heirloomLevel, out var standardMusket))
-                            {
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", standardMusket.damageBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "speed_rating", standardMusket.reloadSpeedBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_speed", standardMusket.aimSpeedBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "accuracy", standardMusket.accuracyBonus);
-                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "missile_speed", standardMusket.missileSpeedBonus);
-                            }
-
-                            break;
+                            ApplyRangedHeirloomBonus(nonHeirloomNode, node1, musketBonus);
                         }
 
-                    case ItemObject.ItemTypeEnum.Pistol:
+                        break;
+                    }
 
-                        if (PistolHeirloomBonus.TryGetValue(heirloomLevel, out var newPistol))
+                    case ItemObject.ItemTypeEnum.Pistol:
+                        if (PistolHeirloomBonus.TryGetValue(heirloomLevel, out var pistolBonus))
                         {
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", newPistol.damageBonus);
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "speed_rating", newPistol.reloadSpeedBonus);
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_speed", newPistol.aimSpeedBonus);
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "accuracy", newPistol.accuracyBonus);
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "missile_speed", newPistol.missileSpeedBonus);
+                            ApplyRangedHeirloomBonus(nonHeirloomNode, node1, pistolBonus);
                         }
 
                         break;
@@ -1141,7 +985,6 @@ internal class ItemExporter : IDataExporter
     private static float ModifyArrowWeight(XmlNode nonHeirloomNode)
     {
         XmlNode weaponNode = nonHeirloomNode.SelectNodes("ItemComponent/Weapon")!.Cast<XmlNode>().First();
-        int damage = int.Parse(weaponNode.Attributes!["thrust_damage"].Value);
         DamageTypes damagetype = weaponNode.Attributes!["thrust_damage_type"].Value switch
         {
             "Cut" => DamageTypes.Cut,
@@ -1183,7 +1026,6 @@ internal class ItemExporter : IDataExporter
                     continue;
                 }
 
-                Debug.Print("going to modify the child node");
                 ModifyHeirloomNodeAttribute(nonHeirloomChildNode, heirloomChildNode, attributeName, bonus, bonusPercentage, ihatemountsPercentage, defaultValue);
             }
         }
@@ -1199,12 +1041,9 @@ internal class ItemExporter : IDataExporter
         string? defaultValue = null)
     {
         var heirloomAttr = heirloomNode.Attributes![attributeName];
-        Debug.Print("heirloomAttr set");
         var nonHeirloomAttr = nonHeirloomNode.Attributes![attributeName];
-        Debug.Print("nonheirloomAttr set");
         if (heirloomAttr == null)
         {
-            Debug.Print("heirloomAttr is null");
             if (defaultValue == null)
             {
                 throw new KeyNotFoundException($"heirloomAttribute '{attributeName}' was not found and no default was provided");
@@ -1215,9 +1054,7 @@ internal class ItemExporter : IDataExporter
             heirloomNode.Attributes.Append(heirloomAttr);
         }
 
-        Debug.Print($"{nonHeirloomAttr == null}");
         string nonHeirloomAttrValue = nonHeirloomAttr == null ? "0" : nonHeirloomAttr.Value;
-        Debug.Print($"old {attributeName} value: {nonHeirloomAttrValue} new {attributeName} value: {int.Parse(nonHeirloomAttrValue) + bonus + (int)Math.Ceiling(int.Parse(nonHeirloomAttrValue) * bonusPercentage)}");
         heirloomAttr.Value = (int.Parse(nonHeirloomAttrValue) + bonus + (int)Math.Ceiling(int.Parse(nonHeirloomAttrValue) * bonusPercentage / 100f) + (int)Math.Ceiling((200 + int.Parse(nonHeirloomAttrValue)) * ihatemountsPercentage / 100f)).ToString();
     }
 
@@ -1269,23 +1106,12 @@ internal class ItemExporter : IDataExporter
         ItemObject.ItemTypeEnum.Cape => CrpgItemType.ShoulderArmor, // Cape is a bad name.
         _ => (CrpgItemType)Enum.Parse(typeof(CrpgItemType), t.ToString()),
     };
+
     private static int IdToHeirloomLevel(string id)
     {
-        try
-        {
-            if (id.Split('_').Last().Substring(0, 1) == "h")
-            {
-                return int.Parse(id.Split('_').Last().Substring(1));
-            }
-            else
-            {
-                return 0;
-            }
-        }
-        catch
-        {
-            return 0;
-        }
+        string[] parts = id.Split('_');
+        string last = parts[parts.Length - 1];
+        return last.StartsWith("h") && int.TryParse(last.Substring(1), out int level) ? level : 0;
     }
 
     private static int ItemRank(ItemObject mbItem)
@@ -1364,13 +1190,11 @@ internal class ItemExporter : IDataExporter
         List<Task> createTextureTasks = [];
         foreach (var mbItem in mbItems)
         {
-            /*
-            Bannerlord generates image thumbnails by loading the 3D texture, spawning a camera and taking a screenshot
-            from it. For each item type, a different camera angle is used. For shields and hand armors, it seems like
-            they are placed on an agent. To do that without spawning an agent, their type is overriden by one that
-            does not need an agent. It was observed that the bow's camera angle and the animal's camera angle were
-            good substitute for respectively shield and hand armor.
-             */
+            // Bannerlord generates image thumbnails by loading the 3D texture, spawning a camera and taking a screenshot
+            // from it. For each item type, a different camera angle is used. For shields and hand armors, it seems like
+            // they are placed on an agent. To do that without spawning an agent, their type is overriden by one that
+            // does not need an agent. It was observed that the bow's camera angle and the animal's camera angle were
+            // good substitute for respectively shield and hand armor.
             if (ItemRank(mbItem) > 0)
             {
                 continue;
@@ -1399,3 +1223,4 @@ internal class ItemExporter : IDataExporter
         return Task.WhenAll(createTextureTasks);
     }
 }
+#endif

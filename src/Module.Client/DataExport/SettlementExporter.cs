@@ -8,7 +8,7 @@ using Newtonsoft.Json.Serialization;
 
 namespace Crpg.Module.DataExport;
 
-internal class SettlementExporter : IDataExporter
+internal class SettlementExporter
 {
     private const string SettlementsFile = "../../Modules/SandBox/ModuleData/settlements.xml";
 
