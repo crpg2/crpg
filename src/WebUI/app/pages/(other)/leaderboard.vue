@@ -130,7 +130,6 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
       }, {
         filter() {
           // TODO: use facets
-          // @ts-expect-error TODO: https://github.com/nuxt/ui/issues/2968
           return h(USelect, {
             'variant': 'none',
             'multiple': false,
