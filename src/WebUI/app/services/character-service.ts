@@ -401,8 +401,10 @@ export const skillRequirementsSatisfied = (
     case 'ironFlesh':
     case 'powerStrike':
     case 'powerDraw':
-    case 'powerThrow':
       return value <= Math.floor(characteristics.attributes.strength / 3) // TODO: move to constants.json
+
+    case 'powerThrow':
+      return value <= Math.floor(characteristics.attributes.strength / 6)
 
     case 'athletics':
     case 'riding':
