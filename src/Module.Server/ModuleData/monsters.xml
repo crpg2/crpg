@@ -159,7 +159,7 @@
 				pos1="0.0, 0.0, 1.55"
 				pos2="0.0, 0, 0.8" />
       <crouched_body_capsule
-				radius="0.37"
+				radius="0.27"
 				pos1="0.0, 0.0, 1.55"
 				pos2="0.0, 0, 0.6" />
     </Capsules>
@@ -185,6 +185,11 @@
   </Monster>
   <Monster
     id="heavy_bot"
+    base_monster="human"
+    weight="10">
+  </Monster>
+  <Monster
+    id="dwarf_bot"
     base_monster="human"
     weight="10">
   </Monster>
