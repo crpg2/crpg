@@ -31,6 +31,7 @@ using TaleWorlds.MountAndBlade.ListedServer;
 #if CRPG_EXPORT
 using System.Runtime.CompilerServices;
 using Crpg.Module.DataExport;
+using TaleWorlds.Engine;
 using TaleWorlds.Localization;
 #endif
 
@@ -109,11 +110,7 @@ internal class CrpgSubModule : MBSubModuleBase
         InitializeGameModels(starterObject);
         CrpgSkills.Initialize(game);
         CrpgBannerEffects.Initialize(game);
-#if CRPG_EXPORT
-        ManagedParameters.Instance.Initialize(ModuleHelper.GetXmlPath("cRPG_Exporter", "managed_core_parameters"));
-#else
-        ManagedParameters.Instance.Initialize(ModuleHelper.GetXmlPath("Crpg", "managed_core_parameters"));
-#endif
+        ManagedParameters.Instance.Initialize(ModuleHelper.GetXmlPath("cRPG", "managed_core_parameters"));
 #if CRPG_CLIENT
         game.GameTextManager.LoadGameTexts();
 #endif
@@ -195,7 +192,7 @@ internal class CrpgSubModule : MBSubModuleBase
 #endif
     private CrpgConstants LoadCrpgConstants()
     {
-        string path = ModuleHelper.GetModuleFullPath("cRPG_Exporter") + "ModuleData/constants.json";
+        string path = ModuleHelper.GetModuleFullPath("cRPG") + "ModuleData/constants.json";
         return JsonConvert.DeserializeObject<CrpgConstants>(File.ReadAllText(path))!;
     }
 
@@ -386,6 +383,19 @@ internal class CrpgSubModule : MBSubModuleBase
     }
 
     private int _toRefund;
+
+    [CommandLineFunctionality.CommandLineArgumentFunction("export_item_thumbnails", "crpg")]
+    internal static string GetDedicatedCustomServerAuthToken(List<string> arguments)
+    {
+        ItemExporter.ImageExport().ContinueWith(t =>
+        {
+            MBDebug.EchoCommandWindow(t.IsFaulted
+                ? "Error. Check the logs."
+                : "Done.");
+        });
+
+        return "";
+    }
 
 #endif
 }

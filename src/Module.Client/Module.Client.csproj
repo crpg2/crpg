@@ -4,8 +4,8 @@
     <TargetFramework>net472</TargetFramework>
     <PlatformTarget>x64</PlatformTarget> <!-- avoids architecture mismatch warnings -->
     <RootNamespace>Crpg.Module</RootNamespace>
-    <AssemblyName>CrpgExporter.Module</AssemblyName>
-    <ModuleName>cRPG_Exporter</ModuleName>
+    <AssemblyName>Crpg.Module</AssemblyName>
+    <ModuleName>cRPG</ModuleName>
     <OutputPath>$(MB_CLIENT_PATH)\Modules\$(ModuleName)\bin\Win64_Shipping_Client</OutputPath>
     <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
 
@@ -21,9 +21,9 @@
   </Target>
 
   <ItemGroup>
+    <ContentWithTargetPath Include="..\..\data\constants.json" Link="ModuleData\constants.json" TargetPath="..\..\ModuleData\constants.json" CopyToOutputDirectory="Always" />
     <ContentWithTargetPath Include="..\Module.Server\SubModule.xml" Link="SubModule.xml" TargetPath="..\..\SubModule.xml" CopyToOutputDirectory="Always" />
-    <ContentWithTargetPath Include="..\..\data\constants.json" Link="constants.json" TargetPath="..\..\ModuleData\constants.json" CopyToOutputDirectory="Always" />
-    <ContentWithTargetPath Include="..\Module.Server\ModuleData\**\*" Link="ServerModuleData\%(RecursiveDir)%(Filename)%(Extension)" TargetPath="..\..\ModuleData\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="Always" />
+    <ContentWithTargetPath Include="..\Module.Server\ModuleData\**\*" TargetPath="..\..\ModuleData\%(RecursiveDir)\%(FileName)%(Extension)" CopyToOutputDirectory="Always" />
     <ContentWithTargetPath Include="ModuleData\**\*;GUI\**\*.xml" TargetPath="..\..\%(Identity)" CopyToOutputDirectory="Always" />
     <Compile Include="..\Module.Server\**\*$(DefaultLanguageSourceExtension)" />
     <Compile Remove="..\Module.Server\$(BaseIntermediateOutputPath)\**;..\Module.Server\$(BaseOutputPath)\**" />
@@ -53,8 +53,6 @@
     <Compile Remove="..\Module.Server\Common\MapPoolComponent.cs" />
     <Compile Remove="..\Module.Server\Common\ChatCommands\**\*" />
     <Compile Remove="..\Module.Server\Rewards\CrpgRewardServer.cs" />
-    <Compile Remove="..\Module.Server\Firewall\*" />
-    <Compile Remove="..\Module.Server\Common\RemoveIpFromFirewallBehavior.cs" />
     <Compile Remove="..\Module.Server\Common\CrpgCustomBannerServer.cs" />
     <Compile Remove="..\Module.Server\Common\FriendlyFireReport\FriendlyFireReportServerBehavior.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\ChargeDamageCallbackPatch.cs" />
@@ -83,10 +81,6 @@
     <Reference Remove="$(MB_CLIENT_PATH)/bin/Win64_Shipping_Client/TaleWorlds.Native.dll" />
     <!-- This library causes dependency conflict. -->
     <Reference Remove="$(MB_CLIENT_PATH)/bin/Win64_Shipping_Client/TaleWorlds.Starter.DotNetCore.dll" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="DataExport\ItemExporter.cs" />
   </ItemGroup>
 
   <ItemGroup>

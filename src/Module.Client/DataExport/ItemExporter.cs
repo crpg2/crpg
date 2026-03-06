@@ -21,154 +21,154 @@ internal class ItemExporter : IDataExporter
 {
     private static readonly string[] ItemFilePaths =
     [
-        "../../Modules/cRPG_Exporter/ModuleData/items/head_armors.xml",
-        "../../Modules/cRPG_Exporter/ModuleData/items/shoulder_armors.xml",
-        "../../Modules/cRPG_Exporter/ModuleData/items/body_armors.xml",
-        "../../Modules/cRPG_Exporter/ModuleData/items/arm_armors.xml",
-        "../../Modules/cRPG_Exporter/ModuleData/items/leg_armors.xml",
-        "../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml",
-        "../../Modules/cRPG_Exporter/ModuleData/items/horses_and_others.xml",
-        "../../Modules/cRPG_Exporter/ModuleData/items/shields.xml"
+        "../../Modules/cRPG/ModuleData/items/head_armors.xml",
+        "../../Modules/cRPG/ModuleData/items/shoulder_armors.xml",
+        "../../Modules/cRPG/ModuleData/items/body_armors.xml",
+        "../../Modules/cRPG/ModuleData/items/arm_armors.xml",
+        "../../Modules/cRPG/ModuleData/items/leg_armors.xml",
+        "../../Modules/cRPG/ModuleData/items/weapons.xml",
+        "../../Modules/cRPG/ModuleData/items/horses_and_others.xml",
+        "../../Modules/cRPG/ModuleData/items/shields.xml"
     ];
 
     private static readonly string[] PiecesFilePaths =
     [
-        "../../Modules/cRPG_Exporter/ModuleData/crafting_pieces.xml",
-        "../../Modules/cRPG_Exporter/ModuleData/crafting_templates.xml",
-        "../../Modules/cRPG_Exporter/ModuleData/weapon_descriptions.xml"
+        "../../Modules/cRPG/ModuleData/crafting_pieces.xml",
+        "../../Modules/cRPG/ModuleData/crafting_templates.xml",
+        "../../Modules/cRPG/ModuleData/weapon_descriptions.xml"
     ];
 
     private static readonly Dictionary<int, (int speedbonus, int maneuverbonus, float healthbonusPercentage)> MountHeirloomBonus = new()
     {
-        { 1, (1, 0, 6.2f) },
-        { 2, (1, 1, 13f) },
-        { 3, (1, 2, 19.8f) },
+        [1] = (1, 0, 6.2f),
+        [2] = (1, 1, 13f),
+        [3] = (1, 2, 19.8f),
     };
     private static readonly Dictionary<int, int> HeadArmorHeirloomBonus = new()
     {
-        { 1, 2 },
-        { 2, 4 },
-        { 3, 6 },
+        [1] = 2,
+        [2] = 4,
+        [3] = 6,
     };
     private static readonly Dictionary<int, (int bodyArmorBonus, int legArmorBonus, int armArmorBonus)> BodyArmorHeirloomBonus = new()
     {
-        { 1, (2, 1, 1) },
-        { 2, (4, 2, 2) },
-        { 3, (6, 3, 3) },
+        [1] = (2, 1, 1),
+        [2] = (4, 2, 2),
+        [3] = (6, 3, 3),
     };
     private static readonly Dictionary<int, int> LegArmorHeirloomBonus = new()
     {
-        { 1, 1 },
-        { 2, 3 },
-        { 3, 5 },
+        [1] = 1,
+        [2] = 3,
+        [3] = 5,
     };
     private static readonly Dictionary<int, (int bodyArmorBonus, int armArmorBonus)> ShoulderArmorHeirloomBonus = new()
     {
-        { 1, (2, 0) },
-        { 2, (3, 0) },
-        { 3, (4, 1) },
+        [1] = (2, 0),
+        [2] = (3, 0),
+        [3] = (4, 1),
     };
     private static readonly Dictionary<int, int> ArmArmorHeirloomBonus = new()
     {
-        { 1, 1 },
-        { 2, 2 },
-        { 3, 4 },
+        [1] = 1,
+        [2] = 2,
+        [3] = 4,
     };
     private static readonly Dictionary<int, int> HorseArmorHeirloomBonus = new()
     {
-        { 1, 3 },
-        { 2, 6 },
-        { 3, 9 },
+        [1] = 3,
+        [2] = 6,
+        [3] = 9,
     };
     private static readonly Dictionary<int, (int damageBonus, int amountBonusPercentage)> CutArrowHeirloomBonus = new()
     {
-        { 1, (0, 18) },
-        { 2, (1, 18) },
-        { 3, (2, 18) },
+        [1] = (0, 18),
+        [2] = (1, 18),
+        [3] = (2, 18),
     };
     private static readonly Dictionary<int, (int damageBonus, int amountBonusPercentage)> PierceArrowHeirloomBonus = new()
     {
-        { 1, (0, 13) },
-        { 2, (1, 4) },
-        { 3, (2, -10) },
+        [1] = (0, 13),
+        [2] = (1, 4),
+        [3] = (2, -10),
     };
     private static readonly Dictionary<int, (int damageBonus, int amountBonusPercentage)> BluntArrowHeirloomBonus = new()
     {
-        { 1, (0, 15) },
-        { 2, (0, 30) },
-        { 3, (1, 30) },
+        [1] = (0, 15),
+        [2] = (0, 30),
+        [3] = (1, 30),
     };
     private static readonly Dictionary<int, (int damageBonus, int amountBonusPercentage)> CutBoltHeirloomBonus = new()
     {
-        { 1, (2, 10) },
-        { 2, (4, 20) },
-        { 3, (6, 30) },
+        [1] = (2, 10),
+        [2] = (4, 20),
+        [3] = (6, 30),
     };
     private static readonly Dictionary<int, (int damageBonus, int amountBonusPercentage)> PierceBoltHeirloomBonus = new()
     {
-        { 1, (1, 10) },
-        { 2, (2, 20) },
-        { 3, (3, 30) },
+        [1] = (1, 10),
+        [2] = (2, 20),
+        [3] = (3, 30),
     };
     private static readonly Dictionary<int, (int damageBonus, int amountBonusPercentage)> BluntBoltHeirloomBonus = new()
     {
-        { 1, (0, 10) },
-        { 2, (0, 20) },
-        { 3, (1, 20) },
+        [1] = (0, 10),
+        [2] = (0, 20),
+        [3] = (1, 20),
     };
     private static readonly Dictionary<int, (int damageBonus, int accuracyBonus, int missileSpeedBonus, int reloadSpeedBonus, int aimSpeedBonus)> CrossbowHeirloomBonus = new()
     {
-        { 1, (1, 1, 0, 2, 1) },
-        { 2, (2, 2, 1, 4, 2) },
-        { 3, (3, 3, 2, 5, 3) },
+        [1] = (1, 1, 0, 2, 1),
+        [2] = (2, 2, 1, 4, 2),
+        [3] = (3, 3, 2, 5, 3),
     };
     private static readonly Dictionary<int, (int damageBonus, int accuracyBonus, int missileSpeedBonus, int reloadSpeedBonus, int aimSpeedBonus)> LightCrossbowHeirloomBonus = new()
     {
-        { 1, (0, 2, 1, 3, 3) },
-        { 2, (1, 2, 1, 4, 5) },
-        { 3, (2, 2, 2, 4, 5) },
+        [1] = (0, 2, 1, 3, 3),
+        [2] = (1, 2, 1, 4, 5),
+        [3] = (2, 2, 2, 4, 5),
     };
     private static readonly Dictionary<int, (int damageBonus, int accuracyBonus, int missileSpeedBonus, int reloadSpeedBonus, int aimSpeedBonus)> LongBowHeirloomBonus = new()
     {
-        { 1, (0, 2, 2, 3, 1) },
-        { 2, (0, 4, 4, 4, 3) },
-        { 3, (1, 4, 4, 4, 3) },
+        [1] = (0, 2, 2, 3, 1),
+        [2] = (0, 4, 4, 4, 3),
+        [3] = (1, 4, 4, 4, 3),
     };
     private static readonly Dictionary<int, (int damageBonus, int accuracyBonus, int missileSpeedBonus, int reloadSpeedBonus, int aimSpeedBonus)> BowHeirloomBonus = new()
     {
-        { 1, (0, 0, 9, 3, 2) },
-        { 2, (0, 3, 9, 3, 6) },
-        { 3, (0, 9, 9, 3, 6) },
+        [1] = (0, 0, 9, 3, 2),
+        [2] = (0, 3, 9, 3, 6),
+        [3] = (0, 9, 9, 3, 6),
     };
     private static readonly Dictionary<int, (int bonusHealthPercentage, int bodyArmorPercentage)> ShieldHeirloomBonus = new()
     {
-        { 1, (8, 3) },
-        { 2, (16, 6) },
-        { 3, (24, 9) },
+        [1] = (8, 3),
+        [2] = (16, 6),
+        [3] = (24, 9),
     };
     private static readonly Dictionary<int, (int damageBonus, int amountBonusPercentage)> BulletHeirloomBonus = new()
     {
-        { 1, (1, 10) },
-        { 2, (2, 20) },
-        { 3, (3, 30) },
+        [1] = (1, 10),
+        [2] = (2, 20),
+        [3] = (3, 30),
     };
     private static readonly Dictionary<int, (int damageBonus, int accuracyBonus, int missileSpeedBonus, int reloadSpeedBonus, int aimSpeedBonus)> MusketHeirloomBonus = new()
     {
-        { 1, (1, 1, 0, 2, 1) },
-        { 2, (2, 2, 1, 4, 2) },
-        { 3, (3, 3, 2, 5, 3) },
+        [1] = (1, 1, 0, 2, 1),
+        [2] = (2, 2, 1, 4, 2),
+        [3] = (3, 3, 2, 5, 3),
     };
     private static readonly Dictionary<int, (int damageBonus, int accuracyBonus, int missileSpeedBonus, int reloadSpeedBonus, int aimSpeedBonus)> LightMusketHeirloomBonus = new()
     {
-        { 1, (0, 2, 1, 3, 3) },
-        { 2, (1, 2, 1, 4, 5) },
-        { 3, (2, 2, 2, 4, 5) },
+        [1] = (0, 2, 1, 3, 3),
+        [2] = (1, 2, 1, 4, 5),
+        [3] = (2, 2, 2, 4, 5),
     };
     private static readonly Dictionary<int, (int damageBonus, int accuracyBonus, int missileSpeedBonus, int reloadSpeedBonus, int aimSpeedBonus)> PistolHeirloomBonus = new()
     {
-        { 1, (1, 1, 0, 2, 1) },
-        { 2, (2, 2, 1, 4, 2) },
-        { 3, (3, 3, 2, 5, 3) },
+        [1] = (1, 1, 0, 2, 1),
+        [2] = (2, 2, 1, 4, 2),
+        [3] = (3, 3, 2, 5, 3),
     };
 
     public static void ComputeAutoStats()
@@ -176,20 +176,20 @@ internal class ItemExporter : IDataExporter
         foreach (string filePath in ItemFilePaths)
         {
             var itemsDoc = XmlComputeAutoStats(filePath);
-            itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName(filePath)));
+            itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName(filePath)));
         }
 
         foreach (string filePath in PiecesFilePaths)
         {
             var itemsDoc = XmlComputeAutoStats(filePath);
-            itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData", Path.GetFileName(filePath)));
+            itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData", Path.GetFileName(filePath)));
         }
     }
 
     public static void RefundWeapons()
     {
-        var itemsDoc = XmlRefundWeapons("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml");
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
+        var itemsDoc = XmlRefundWeapons("../../Modules/cRPG/ModuleData/items/weapons.xml");
+        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
     }
 
     public static void RefundShield()
@@ -198,8 +198,8 @@ internal class ItemExporter : IDataExporter
             {
                 ItemObject.ItemTypeEnum.Shield,
             };
-        var itemsDoc = XmlRefundItemType("../../Modules/cRPG_Exporter/ModuleData/items/shields.xml", typesToRefund);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/shields.xml")));
+        var itemsDoc = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/shields.xml", typesToRefund);
+        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/shields.xml")));
     }
 
     public static void RefundBow()
@@ -209,8 +209,8 @@ internal class ItemExporter : IDataExporter
             ItemObject.ItemTypeEnum.Bow,
             ItemObject.ItemTypeEnum.Arrows,
         };
-        var itemsDoc = XmlRefundItemType("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", typesToRefund);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
+        var itemsDoc = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/weapons.xml", typesToRefund);
+        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
     }
 
     public static void RefundCrossbow()
@@ -220,10 +220,10 @@ internal class ItemExporter : IDataExporter
             ItemObject.ItemTypeEnum.Crossbow,
             ItemObject.ItemTypeEnum.Bolts,
         };
-        var itemsDoc = XmlRefundItemType("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", typesToRefund);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
-        var itemsDoc2 = XmlRefundItemType("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", typesToRefund);
-        itemsDoc2.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
+        var itemsDoc = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/weapons.xml", typesToRefund);
+        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
+        var itemsDoc2 = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/weapons.xml", typesToRefund);
+        itemsDoc2.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
     }
 
     public static void RefundFirearm()
@@ -234,10 +234,10 @@ internal class ItemExporter : IDataExporter
             ItemObject.ItemTypeEnum.Pistol,
             ItemObject.ItemTypeEnum.Bullets,
         };
-        var itemsDoc = XmlRefundItemType("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", typesToRefund);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
-        var itemsDoc2 = XmlRefundItemType("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", typesToRefund);
-        itemsDoc2.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
+        var itemsDoc = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/weapons.xml", typesToRefund);
+        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
+        var itemsDoc2 = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/weapons.xml", typesToRefund);
+        itemsDoc2.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
     }
 
     public static void RefundArmor()
@@ -254,7 +254,7 @@ internal class ItemExporter : IDataExporter
         foreach (string filepath in ItemFilePaths)
         {
             var itemsDoc = XmlRefundItemType(filepath, typesToRefund);
-            itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName(filepath)));
+            itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName(filepath)));
         }
     }
 
@@ -264,14 +264,14 @@ internal class ItemExporter : IDataExporter
         {
             ItemObject.ItemTypeEnum.Thrown,
         };
-        var itemsDoc = XmlRefundItemType("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", typesToRefund);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
-        var itemsDoc2 = XmlRefundCraftingTemplate("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", "crpg_ThrowingKnife");
-        itemsDoc2.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
-        var itemsDoc3 = XmlRefundCraftingTemplate("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", "crpg_ThrowingAxe");
-        itemsDoc3.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
-        var itemsDoc4 = XmlRefundCraftingTemplate("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", "crpg_Javelin");
-        itemsDoc4.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
+        var itemsDoc = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/weapons.xml", typesToRefund);
+        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
+        var itemsDoc2 = XmlRefundCraftingTemplate("../../Modules/cRPG/ModuleData/items/weapons.xml", "crpg_ThrowingKnife");
+        itemsDoc2.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
+        var itemsDoc3 = XmlRefundCraftingTemplate("../../Modules/cRPG/ModuleData/items/weapons.xml", "crpg_ThrowingAxe");
+        itemsDoc3.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
+        var itemsDoc4 = XmlRefundCraftingTemplate("../../Modules/cRPG/ModuleData/items/weapons.xml", "crpg_Javelin");
+        itemsDoc4.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
     }
 
     public static void RefundCav()
@@ -281,20 +281,20 @@ internal class ItemExporter : IDataExporter
             ItemObject.ItemTypeEnum.Horse,
             ItemObject.ItemTypeEnum.HorseHarness,
         };
-        var itemsDoc = XmlRefundItemType("../../Modules/cRPG_Exporter/ModuleData/items/horses_and_others.xml", typesToRefund);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/horses_and_others.xml")));
+        var itemsDoc = XmlRefundItemType("../../Modules/cRPG/ModuleData/items/horses_and_others.xml", typesToRefund);
+        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/horses_and_others.xml")));
     }
 
     public static void Scale()
     {
-        var itemsDoc = XmlScaleClass("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", ItemObject.ItemTypeEnum.Bow);
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
+        var itemsDoc = XmlScaleClass("../../Modules/cRPG/ModuleData/items/weapons.xml", ItemObject.ItemTypeEnum.Bow);
+        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/items", Path.GetFileName("../../Modules/cRPG/ModuleData/items/weapons.xml")));
     }
 
     public static void ScaleWeapon()
     {
-        var itemsDoc = XmlScaleWeapon("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", "../../Modules/cRPG_Exporter/ModuleData/crafting_pieces.xml", "crpg_TwoHandedPolearm");
-        itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/crafting_pieces.xml")));
+        var itemsDoc = XmlScaleWeapon("../../Modules/cRPG/ModuleData/items/weapons.xml", "../../Modules/cRPG/ModuleData/crafting_pieces.xml", "crpg_TwoHandedPolearm");
+        itemsDoc.Save(Path.Combine("../../Modules/cRPG/ModuleData/", Path.GetFileName("../../Modules/cRPG/ModuleData/crafting_pieces.xml")));
     }
 
     public void Export(string gitRepoPath)
@@ -308,7 +308,7 @@ internal class ItemExporter : IDataExporter
             .OrderBy(i => i.StringId)
             .ToArray();
         var crpgItems = mbItems.Select(MbToCrpgItem);
-        SerializeCrpgItems(crpgItems, Path.Combine("../../Modules/cRPG_Exporter/ModuleData"));
+        SerializeCrpgItems(crpgItems, Path.Combine("../../Modules/cRPG/ModuleData"));
     }
 
     public static async Task ImageExport()
@@ -320,7 +320,7 @@ internal class ItemExporter : IDataExporter
             .DistinctBy(i => i.StringId)
             .OrderBy(i => i.StringId)
             .ToArray();
-        string itemThumbnailsPath = Path.Combine("../../Modules/cRPG_Exporter/images");
+        string itemThumbnailsPath = Path.Combine("../../Modules/cRPG/images");
         Directory.CreateDirectory(itemThumbnailsPath);
         await GenerateItemsThumbnail(mbItems, itemThumbnailsPath);
     }
