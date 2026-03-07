@@ -12,6 +12,7 @@ using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.ModuleManager;
 using TaleWorlds.MountAndBlade;
+using Debug = TaleWorlds.Library.Debug;
 #if CRPG_CLIENT
 using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.HarmonyPatches;
@@ -25,13 +26,6 @@ using Crpg.Module.HarmonyPatches;
 using Crpg.Module.Common.ChatCommands;
 using TaleWorlds.MountAndBlade.ListedServer;
 #else
-#endif
-
-#if CRPG_EXPORT
-using System.Runtime.CompilerServices;
-using Crpg.Module.DataExport;
-using TaleWorlds.Library;
-using TaleWorlds.Localization;
 #endif
 
 namespace Crpg.Module;
@@ -85,18 +79,11 @@ internal class CrpgSubModule : MBSubModuleBase
         KeyBinder.Initialize();
         BannerlordPatches.Apply();
         KeyBinder.RegisterContexts();
-#elif CRPG_EDITOR
-        BannerlordPatches.Apply();
-#endif
-
-#if CRPG_EXPORT
-        TaleWorlds.MountAndBlade.Module.CurrentModule.AddInitialStateOption(new InitialStateOption("ExportData",
-            new TextObject("Export Data"), 4578, ExportData, () => (false, null)));
-#endif
 
         // Uncomment to start watching UI changes.
-#if CRPG_CLIENT
         // UIResourceManager.ResourceDepot.StartWatchingChangesInDepot();
+#elif CRPG_EDITOR
+        BannerlordPatches.Apply();
 #endif
     }
 
@@ -106,7 +93,7 @@ internal class CrpgSubModule : MBSubModuleBase
         InitializeGameModels(starterObject);
         CrpgSkills.Initialize(game);
         CrpgBannerEffects.Initialize(game);
-        ManagedParameters.Instance.Initialize(ModuleHelper.GetXmlPath("Crpg", "managed_core_parameters"));
+        ManagedParameters.Instance.Initialize(ModuleHelper.GetXmlPath("cRPG", "managed_core_parameters"));
 #if CRPG_CLIENT
         game.GameTextManager.LoadGameTexts();
 #endif
@@ -199,40 +186,4 @@ internal class CrpgSubModule : MBSubModuleBase
         basicGameStarter.AddModel(new CrpgAgentApplyDamageModel(_constants));
         basicGameStarter.AddModel(new CrpgStrikeMagnitudeModel(_constants));
     }
-
-#if CRPG_EXPORT
-    private void ExportData()
-    {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
-        InformationManager.DisplayMessage(new InformationMessage("Exporting data."));
-        string gitRepoPath = FindGitRepositoryRootPath();
-        Task.WhenAll(exporters.Select(e => e.Export(gitRepoPath))).ContinueWith(t =>
-        {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("Done."));
-        });
-    }
-
-    private string FindGitRepositoryRootPath([CallerFilePath] string currentFilePath = default!)
-    {
-        var dir = Directory.GetParent(currentFilePath);
-        while (dir != null)
-        {
-            if (Directory.Exists(Path.Combine(dir.FullName, ".git")))
-            {
-                return dir.FullName;
-            }
-
-            dir = dir.Parent;
-        }
-
-        throw new InvalidOperationException("Could not find cRPG git repository");
-    }
-#endif
 }

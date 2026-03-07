@@ -296,7 +296,7 @@ internal class CrpgItemValueModel : ItemValueModel
                     swingLengthTier = 0.455f * (float)Math.Pow(0.8f + weapon.WeaponLength * 0.01f, 2f);
                     break;
                 case WeaponClass.Mace:
-                    swingLengthTier = 0.49f * (float)Math.Pow(0.8f + weapon.WeaponLength * 0.01f, 2f);
+                    swingLengthTier = 0.4f * (float)Math.Pow(0.8f + weapon.WeaponLength * 0.01f, 2f);
                     break;
                 case WeaponClass.TwoHandedSword:
                 case WeaponClass.TwoHandedMace:
@@ -340,7 +340,8 @@ internal class CrpgItemValueModel : ItemValueModel
             }
         }
 
-        return maxTier * maxTier / 10f; // makes weapon of lower Tier Better
+        float stretchingFactor = 2.0f; // Change Me To stretch weapon even more so lower tiers are more worth it.
+        return (float)(Math.Pow(maxTier, stretchingFactor) / Math.Pow(10.0f, stretchingFactor - 1.0f)); // makes weapon of lower Tier Better
     }
 
     private float CalculateTierNonCraftedWeapon(WeaponComponent weaponComponent)
@@ -403,6 +404,7 @@ internal class CrpgItemValueModel : ItemValueModel
                 * weapon.Accuracy / 10f
                 * (float)Math.Pow(weapon.ThrustSpeed, 0.5f) / 10f
                 * (weapon.ItemUsage == "crossbow_light" ? 2f : 1f)
+                * (weapon.ItemUsage == "crpg_light_gun" ? 2f : 1f)
                 * (!weapon.WeaponFlags.HasAnyFlag(WeaponFlags.CantReloadOnHorseback) ? 1.85f : 1f)
                 / crossbowscaler;
 
@@ -453,6 +455,7 @@ internal class CrpgItemValueModel : ItemValueModel
             ItemObject.ItemTypeEnum.Arrows => arrowsTier * arrowsTier / 10f,
 
             ItemObject.ItemTypeEnum.Bolts => boltsTier * boltsTier / 10f,
+            ItemObject.ItemTypeEnum.Bullets => boltsTier * boltsTier / 10f,
             _ => 10f,
         };
     }

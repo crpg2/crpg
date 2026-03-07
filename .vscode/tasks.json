@@ -29,6 +29,16 @@
         "kind": "test",
         "isDefault": true
       }
+    },
+    {
+      "label": "cRPG: Run Exporter",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File ${workspaceFolder}/script/exporter.ps1",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
     }
   ]
 }
