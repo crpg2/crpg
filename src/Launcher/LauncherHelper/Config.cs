@@ -1,16 +1,12 @@
-﻿namespace LauncherV3.LauncherHelper;
-
-using System;
-using System.Collections.Generic;
 using System.IO;
-
 using System.Text.Json;
-
 using static LauncherV3.MainViewModel;
+
+namespace LauncherV3.LauncherHelper;
 
 internal static class Config
 {
-    public static Dictionary<Platform, GameInstallationFolderResolver.GameInstallationInfo?> GameLocations { get; private set; } = new() ;
+    public static Dictionary<Platform, GameInstallationFolderResolver.GameInstallationInfo?> GameLocations { get; private set; } = new();
     public static bool DevMode { get; set; }
     public static Platform LastPlatform { get; set; }
 
@@ -30,7 +26,7 @@ internal static class Config
             File.WriteAllText(Path.Combine(folderPath, fileName), jsonString);
             return true;
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return false;
         }
@@ -78,6 +74,4 @@ internal static class Config
         public bool DevMode { get; set; }
         public Platform LastPlatform { get; set; }
     }
-
-
 }

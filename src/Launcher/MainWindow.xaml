@@ -100,7 +100,7 @@
                     <Image Source="pack://application:,,,/discord.png" Height="29" Width="46"></Image>
                 </Hyperlink>
             </TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="40">          
+            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="40">
                 <Hyperlink NavigateUri="https://c-rpg.eu" RequestNavigate="Hyperlink_RequestNavigate" TextDecorations="None">
                     <Image Source="pack://application:,,,/website.png" Height="46" Width="46"></Image>
                 </Hyperlink>

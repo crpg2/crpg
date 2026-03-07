@@ -1,14 +1,9 @@
-﻿
-namespace LauncherV3.LauncherHelper;
-
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO.Hashing;
 using System.Xml;
+
+namespace LauncherV3.LauncherHelper;
 
 internal static class CrpgHashMethods
 {
@@ -49,10 +44,11 @@ internal static class CrpgHashMethods
 
         return string.Empty;
     }
+
     public static async Task VerifyGameFiles(string bannerlordPath, string outputFolderPath, string filename)
     {
         WriteToConsole($"Verifying Game Files now");
-        Stopwatch stopwatch = new Stopwatch(); // Create a Stopwatch instance
+        Stopwatch stopwatch = new(); // Create a Stopwatch instance
 
         if (Directory.Exists(bannerlordPath))
         {
@@ -75,7 +71,7 @@ internal static class CrpgHashMethods
 
     public static async Task<XmlDocument> GenerateCrpgFolderHashMap(string path)
     {
-        XmlDocument document = new XmlDocument();
+        XmlDocument document = new();
         var root = document.CreateElement("CrpgHashMap");
         document.AppendChild(root);
         if (!Directory.Exists(path))
@@ -83,7 +79,6 @@ internal static class CrpgHashMethods
             WriteToConsole($"cRPG is not installed at {path}");
             return document;
         }
-
 
         string[] folders = Directory.GetDirectories(path);
         string[] topFiles = Directory.GetFiles(path, "*", SearchOption.TopDirectoryOnly);
@@ -154,8 +149,7 @@ internal static class CrpgHashMethods
                 assetElement.SetAttribute("Name", Path.GetFileName(file));
                 assetElement.SetAttribute("Hash", t.Result.ToString());
                 return assetElement;
-            })
-        );
+            }));
 
         var assetElements = await Task.WhenAll(assetHashTasks);
         foreach (var assetElement in assetElements)
@@ -169,7 +163,7 @@ internal static class CrpgHashMethods
     public static async Task<ulong> HashFolder(string folderPath)
     {
         string[] allFiles = Directory.GetFiles(folderPath, "*", SearchOption.AllDirectories);
-        List<Task<ulong>> hashTasks = new List<Task<ulong>>();
+        List<Task<ulong>> hashTasks = new();
         foreach (string file in allFiles)
         {
             hashTasks.Add(HashFile(file, false));
@@ -188,17 +182,17 @@ internal static class CrpgHashMethods
 
     public static async Task<ulong> HashFile(string filePath, bool writeToConsole)
     {
-        ulong fileHash;
         if (writeToConsole)
         {
             WriteToConsole($"Hashing {Path.GetFileName(filePath)}");
         }
 
-        using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read, 8192, useAsync: true))
+        var hasher = new XxHash64();
+        using (FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read, 81920, useAsync: true))
         {
-            fileHash = await XXHash.xxHash64.ComputeHashAsync(stream);
+            await hasher.AppendAsync(stream);
         }
 
-        return fileHash;
+        return hasher.GetCurrentHashAsUInt64();
     }
 }

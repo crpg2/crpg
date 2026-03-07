@@ -1,9 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Net;
 using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
+
+#pragma warning disable SYSLIB0014 // ServicePointManager is obsolete
 
 namespace LauncherV3.LauncherHelper;
 public class CrpgChunkedRequestWithHttpClient
@@ -13,6 +12,8 @@ public class CrpgChunkedRequestWithHttpClient
     private const long MB = 1048576L;
 
     private const long GB = 1073741824L;
+
+    private readonly string _eTag = string.Empty;
 
     private string _sourceUrl = string.Empty;
 
@@ -24,9 +25,7 @@ public class CrpgChunkedRequestWithHttpClient
 
     private string _tempPath = string.Empty;
 
-    private string _eTag = string.Empty;
-
-    private IProgress<double>? Progress;
+    private IProgress<double>? _progress;
 
     static CrpgChunkedRequestWithHttpClient()
     {
@@ -45,7 +44,7 @@ public class CrpgChunkedRequestWithHttpClient
         return new CrpgChunkedRequestWithHttpClient
         {
             _sourceUrl = sourceUrl,
-            _downloading = false
+            _downloading = false,
         };
     }
 
@@ -63,9 +62,9 @@ public class CrpgChunkedRequestWithHttpClient
 
     public async Task ResumeAsync()
     {
-        if (Progress != null)
+        if (_progress != null)
         {
-            await DownloadAsync(_targetPath, Progress);
+            await DownloadAsync(_targetPath, _progress);
         }
     }
 
@@ -92,7 +91,7 @@ public class CrpgChunkedRequestWithHttpClient
 
     public async Task DownloadAsync(string targetPath, IProgress<double> overallProgress)
     {
-        Progress = overallProgress;
+        _progress = overallProgress;
 
         if (_downloading)
         {
@@ -125,7 +124,9 @@ public class CrpgChunkedRequestWithHttpClient
             chunkSize = Math.Max(minChunkSize, Math.Min(maxChunkSize, contentLength / chunks));
             chunks = (int)(contentLength / chunkSize);
             if (contentLength % chunkSize > 0)
+            {
                 chunks++;
+            }
         }
 
         Task<string>[] chunkTasks = new Task<string>[chunks];
@@ -142,12 +143,11 @@ public class CrpgChunkedRequestWithHttpClient
                 overallProgress.Report(individualProgress.Average());
             });
 
-            chunkTasks[i] = DownloadChunkAsync(httpClient,targetPath, i, chunkSize, contentLength, cancellationToken, progressReporters[i]);
+            chunkTasks[i] = DownloadChunkAsync(httpClient, targetPath, i, chunkSize, contentLength, cancellationToken, progressReporters[i]);
         }
 
         await Task.WhenAll(chunkTasks);
         _downloading = false;
-
 
         if (_cancellationSource.Token.IsCancellationRequested)
         {
@@ -167,7 +167,7 @@ public class CrpgChunkedRequestWithHttpClient
                     while (true)
                     {
                         int num4;
-                        int bytes = (num4 = await inFile.ReadAsync(buffer, 0, buffer.Length));
+                        int bytes = num4 = await inFile.ReadAsync(buffer, 0, buffer.Length);
                         if (num4 <= 0)
                         {
                             break;
@@ -245,7 +245,9 @@ public class CrpgChunkedRequestWithHttpClient
                     {
                         int bytesRead = await responseStream.ReadAsync(buffer, 0, buffer.Length, cancellationToken);
                         if (bytesRead == 0)
+                        {
                             break;
+                        }
 
                         totalBytesRead += bytesRead;
                         progress.Report((double)totalBytesRead / totalBytesToRead);
@@ -276,7 +278,6 @@ public class CrpgChunkedRequestWithHttpClient
 
         return tempFile;
     }
-
 
     private string GetTempFile(string extension)
     {

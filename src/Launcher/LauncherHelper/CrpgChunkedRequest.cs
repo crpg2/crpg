@@ -1,33 +1,25 @@
-﻿using System;
 using System.IO;
 using System.Net;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
-#nullable disable
+
+#pragma warning disable SYSLIB0014 // HttpWebRequest is obsolete
+
 namespace LauncherV3.LauncherHelper;
 
 public class CrpgChunkedRequest
 {
-    private const long KB = 1024L;
+    private string _sourceUrl = string.Empty;
 
-    private const long MB = 1048576L;
+    private string _targetPath = string.Empty;
 
-    private const long GB = 1073741824L;
-
-    private string _sourceUrl;
-
-    private string _targetPath;
-
-    private CancellationTokenSource _cancellationSource;
+    private CancellationTokenSource? _cancellationSource;
 
     private bool _downloading;
 
-    private string _tempPath;
+    private string? _tempPath;
 
-    private string _eTag;
+    private string? _eTag;
 
-    private IProgress<double> Progress;
+    private IProgress<double>? _progress;
 
     static CrpgChunkedRequest()
     {
@@ -46,7 +38,7 @@ public class CrpgChunkedRequest
         return new CrpgChunkedRequest
         {
             _sourceUrl = sourceUrl,
-            _downloading = false
+            _downloading = false,
         };
     }
 
@@ -58,28 +50,28 @@ public class CrpgChunkedRequest
 
     public async Task PauseAsync()
     {
-        _cancellationSource.Cancel(throwOnFirstException: false);
+        _cancellationSource?.Cancel(throwOnFirstException: false);
         await Task.Delay(0);
     }
 
     public async Task ResumeAsync()
     {
-        if (Progress != null)
+        if (_progress != null)
         {
-            await DownloadAsync(_targetPath, Progress);
+            await DownloadAsync(_targetPath, _progress);
         }
     }
 
     public async Task AbortAsync()
     {
-        if (!_cancellationSource.IsCancellationRequested)
+        if (!_cancellationSource?.IsCancellationRequested ?? false)
         {
-            _cancellationSource.Cancel(throwOnFirstException: false);
+            _cancellationSource?.Cancel(throwOnFirstException: false);
         }
 
         SpinWait.SpinUntil(() => !_downloading, 5000);
         string tempFile = GetTempFile("*");
-        string[] files = Directory.GetFiles(Path.GetDirectoryName(tempFile), Path.GetFileName(tempFile));
+        string[] files = Directory.GetFiles(Path.GetDirectoryName(tempFile)!, Path.GetFileName(tempFile));
         foreach (string path in files)
         {
             if (File.Exists(path))
@@ -93,15 +85,13 @@ public class CrpgChunkedRequest
 
     public async Task DownloadAsync(string targetPath, IProgress<double> overallProgress)
     {
-        Progress = overallProgress;
+        _progress = overallProgress;
         if (_downloading)
         {
             throw new Exception("Download already in progress.");
         }
 
         _cancellationSource = new CancellationTokenSource();
-        _ = _cancellationSource.Token;
-        _ = _sourceUrl;
         _targetPath = new FileInfo(targetPath).FullName;
         long contentLength = -1L;
         int chunks = Environment.ProcessorCount;
@@ -114,7 +104,7 @@ public class CrpgChunkedRequest
             {
                 HttpWebRequest httpWebRequest = WebRequest.CreateHttp(_sourceUrl);
                 httpWebRequest.Method = "HEAD";
-                using HttpWebResponse httpWebResponse = (await httpWebRequest.GetResponseAsync()) as HttpWebResponse;
+                using HttpWebResponse httpWebResponse = (HttpWebResponse)await httpWebRequest.GetResponseAsync();
                 if (httpWebResponse.Headers[HttpResponseHeader.AcceptRanges] != "bytes")
                 {
                     chunks = 1;
@@ -173,14 +163,14 @@ public class CrpgChunkedRequest
 
         await Task.WhenAll(chunkTasks);
         _downloading = false;
-        if (_cancellationSource.Token.IsCancellationRequested)
+        if (_cancellationSource!.Token.IsCancellationRequested)
         {
             return;
         }
 
         string tempFile = GetTempFile("file");
-        Directory.CreateDirectory(Path.GetDirectoryName(tempFile));
-        using (FileStream outFile = new FileStream(tempFile, FileMode.Create, FileAccess.Write, FileShare.None, bufferSize: 4096, useAsync: true))
+        Directory.CreateDirectory(Path.GetDirectoryName(tempFile)!);
+        using (FileStream outFile = new(tempFile, FileMode.Create, FileAccess.Write, FileShare.None, bufferSize: 4096, useAsync: true))
         {
             int i = 0;
             for (int j = chunks; i < j; i++)
@@ -191,13 +181,13 @@ public class CrpgChunkedRequest
                     while (true)
                     {
                         int num4;
-                        int bytes = (num4 = await inFile.ReadAsync(buffer, 0, buffer.Length));
+                        int bytes = num4 = await inFile.ReadAsync(buffer, 0, buffer.Length);
                         if (num4 <= 0)
                         {
                             break;
                         }
 
-                        if (_cancellationSource.Token.IsCancellationRequested)
+                        if (_cancellationSource!.Token.IsCancellationRequested)
                         {
                             return;
                         }
@@ -212,9 +202,9 @@ public class CrpgChunkedRequest
             }
         }
 
-        if (!_cancellationSource.Token.IsCancellationRequested)
+        if (!_cancellationSource!.Token.IsCancellationRequested)
         {
-            Directory.CreateDirectory(Path.GetDirectoryName(_targetPath));
+            Directory.CreateDirectory(Path.GetDirectoryName(_targetPath)!);
             if (File.Exists(_targetPath))
             {
                 File.Delete(_targetPath);
@@ -233,17 +223,17 @@ public class CrpgChunkedRequest
         long totalBytesRead = 0L;
         long totalBytesToRead = chunkSize;
         string tempFile = GetTempFile($"{chunkID:0000}");
-        Directory.CreateDirectory(Path.GetDirectoryName(tempFile));
+        Directory.CreateDirectory(Path.GetDirectoryName(tempFile)!);
         while (retries++ < maxRetries)
         {
             try
             {
-                if (_cancellationSource.Token.IsCancellationRequested)
+                if (_cancellationSource!.Token.IsCancellationRequested)
                 {
                     return tempFile;
                 }
 
-                using FileStream outFile = new FileStream(tempFile, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None, bufferSize: 4096, useAsync: true);
+                using FileStream outFile = new(tempFile, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None, bufferSize: 4096, useAsync: true);
                 long num = chunkID * chunkSize;
                 HttpWebRequest httpWebRequest = WebRequest.CreateHttp(_sourceUrl);
                 if (contentLength != -1 && chunkSize != -1)
@@ -262,19 +252,23 @@ public class CrpgChunkedRequest
                 }
 
                 outFile.Position = outFile.Length;
-                using (HttpWebResponse response = (await httpWebRequest.GetResponseAsync()) as HttpWebResponse)
+                using (HttpWebResponse response = (HttpWebResponse)await httpWebRequest.GetResponseAsync())
                 {
-                    using Stream responseStream = response.GetResponseStream();
+                    using Stream responseStream = response.GetResponseStream()!;
                     byte[] buffer = new byte[1048576];
                     while (true)
                     {
                         int bytesRead = await responseStream.ReadAsync(buffer, 0, buffer.Length);
                         if (bytesRead == 0)
+                        {
                             break;
-                        if (_cancellationSource.Token.IsCancellationRequested)
+                        }
+
+                        if (_cancellationSource!.Token.IsCancellationRequested)
                         {
                             return tempFile;
                         }
+
                         totalBytesRead += bytesRead;
                         progress.Report((double)totalBytesRead / totalBytesToRead);
                         await outFile.WriteAsync(buffer, 0, bytesRead);
@@ -285,7 +279,7 @@ public class CrpgChunkedRequest
             }
             catch (Exception ex)
             {
-                if (_cancellationSource.Token.IsCancellationRequested)
+                if (_cancellationSource!.Token.IsCancellationRequested)
                 {
                     return tempFile;
                 }

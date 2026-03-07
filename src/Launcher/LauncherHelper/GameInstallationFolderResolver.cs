@@ -1,6 +1,3 @@
-﻿
-namespace LauncherV3.LauncherHelper;
-
 using System.IO;
 using System.Text.Json;
 using System.Web;
@@ -9,9 +6,11 @@ using Gameloop.Vdf.Linq;
 using Microsoft.Win32;
 using static LauncherV3.MainViewModel;
 
+namespace LauncherV3.LauncherHelper;
+
 public class GameInstallationFolderResolver
 {
-    public record GameInstallationInfo(string InstallationPath, string Program, string? ProgramArguments, string? ProgramWorkingDirectory, Platform platform);
+    public record GameInstallationInfo(string InstallationPath, string Program, string? ProgramArguments, string? ProgramWorkingDirectory, Platform Platform);
     public static GameInstallationInfo? CreateGameInstallationInfo(string installationPath, Platform platform)
     {
         if (platform == Platform.Epic)
@@ -42,6 +41,7 @@ public class GameInstallationFolderResolver
         {
             Platform.Xbox => xboxBannerlordExePath,
             Platform.Steam => steamBannerlordExePath,
+            _ => null,
         };
 
         if (programPath == null)
@@ -49,14 +49,12 @@ public class GameInstallationFolderResolver
             return null;
         }
 
-        return new GameInstallationInfo
-        (
+        return new GameInstallationInfo(
             installationPath,
             programPath,
             platform == Platform.Steam ? "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /multiplayer" : null,
             platform == Platform.Steam ? Path.GetDirectoryName(programPath) : null,
-            platform
-        );
+            platform);
     }
 
     public static GameInstallationInfo? ResolveBannerlordInstallation()
