@@ -35,33 +35,36 @@ $xmlFiles = @(
     "items\weapons.xml"
 )
 
-Write-Host "Copying XMLs to game..." -ForegroundColor Cyan
+Write-Host "Copying XMLs to game: " -ForegroundColor Cyan -NoNewline
 foreach ($xml in $xmlFiles) {
     $src = Join-Path $repoModuleDataPath $xml
     $dst = Join-Path $gameModuleDataPath $xml
     $dstDir = Split-Path $dst -Parent
     Copy-Item $src $dst -Force
-    Write-Host "  $xml"
+    Write-Host "$xml " -NoNewline
 }
+Write-Host ""
 
 $exe = Join-Path $env:MB_CLIENT_PATH "bin\Win64_Shipping_Client\Bannerlord.exe"
 $gameArgs = "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /multiplayer"
-Write-Host "`nStarting Bannerlord, use ALT+~ to open the console in-game, all commands start with 'crpg.'..." -ForegroundColor Green
+Write-Host "`nUse ALT+~ to open the console in-game, all commands start with crpg." -ForegroundColor Green
+Write-Host "Starting Bannerlord..." -ForegroundColor Green
 $process = Start-Process -FilePath $exe -ArgumentList $gameArgs -WorkingDirectory (Split-Path $exe -Parent) -PassThru
 $process.WaitForExit()
 Write-Host "Bannerlord exited (code $($process.ExitCode))." -ForegroundColor Green
 
-Write-Host "`nCopying XMLs + items.json + thumbnails back to repo..." -ForegroundColor Cyan
+Write-Host "`nCopying XMLs + items.json + thumbnails back to repo: " -ForegroundColor Cyan -NoNewline
 foreach ($xml in $xmlFiles) {
     $src = Join-Path $gameModuleDataPath $xml
     $dst = Join-Path $repoModuleDataPath $xml
     Copy-Item $src $dst -Force
-    Write-Host "  $xml"
+    Write-Host "$xml " -NoNewline
 }
+Write-Host ""
 
 $itemsJsonSrc = Join-Path $gameModuleDataPath "items.json"
 if (Test-Path $itemsJsonSrc) {
-    Move-Item $itemsJsonSrc (Join-Path $repoModuleDataPath "items.json") -Force
+    Move-Item $itemsJsonSrc (Join-Path $repoPath "data\items.json") -Force
     Write-Host "  items.json"
 }
 
