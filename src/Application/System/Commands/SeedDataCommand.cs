@@ -619,7 +619,7 @@ public record SeedDataCommand : IMediatorRequest
             UserItem orleItem15 = new() { User = orle, ItemId = "crpg_bolt_c_v4_h0" };
             UserItem orleItem16 = new() { User = orle, ItemId = "crpg_wooden_sword_v3_h3" };
             UserItem orleItem17 = new() { User = orle, ItemId = "crpg_basic_imperial_leather_armor_v2_h3" };
-            UserItem orleItem18 = new() { User = orle, ItemId = "crpg_wooden_twohander_v3_h3" };
+            UserItem orleItem18 = new() { User = orle, ItemId = "crpg_wooden_twohander_v3_h0", IsBroken = true };
             UserItem orleItem19 = new() { User = orle, ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h1" };
             UserItem elmarykItem1 = new() { User = elmaryk, ItemId = "crpg_longsword_v3_h3" };
             UserItem elmarykItem2 = new() { User = elmaryk, ItemId = "crpg_avalanche_v2_h2" };
