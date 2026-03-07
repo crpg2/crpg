@@ -192,6 +192,10 @@ internal static class ItemExporter
         WeaponClass.TwoHandedPolearm,
     ];
 
+    /// <summary>
+    /// Triggers a refund for a given item category by mutating item IDs in the XML files. It increments the version
+    /// suffix (e.g. "v1") of items causing the old item to no longer exist, forcing the game to refund it to players.
+    /// </summary>
     [CommandLineFunctionality.CommandLineArgumentFunction("refund", "crpg")]
     internal static string Refund(List<string> args)
     {
@@ -284,6 +288,9 @@ internal static class ItemExporter
         return $"Refunded {type}.";
     }
 
+    /// <summary>
+    /// Exports all cRPG items to a JSON file by converting Bannerlord item objects to cRPG models.
+    /// </summary>
     [CommandLineFunctionality.CommandLineArgumentFunction("export_items", "crpg")]
     internal static string ExportItems(List<string> args)
     {
@@ -300,8 +307,11 @@ internal static class ItemExporter
         return "Done.";
     }
 
+    /// <summary>
+    /// Generates heirloom variants (h1/h2/h3) for items and crafting pieces, and applies their stat bonuses.
+    /// </summary>
     [CommandLineFunctionality.CommandLineArgumentFunction("compute_auto_stats", "crpg")]
-    internal static string RunComputeAutoStats(List<string> args)
+    internal static string ComputeAutoStats(List<string> args)
     {
         foreach (string filePath in ItemFilePaths)
         {
@@ -318,8 +328,11 @@ internal static class ItemExporter
         return "Done.";
     }
 
-    [CommandLineFunctionality.CommandLineArgumentFunction("export_images", "crpg")]
-    internal static string RunExportImages(List<string> args)
+    /// <summary>
+    /// Renders and saves PNG thumbnail images for all base (non-heirloom) cRPG items.
+    /// </summary>
+    [CommandLineFunctionality.CommandLineArgumentFunction("export_item_thumbnails", "crpg")]
+    internal static string ExportItemThumbnails(List<string> args)
     {
         var game = Game.CreateGame(new MultiplayerGame(), new MultiplayerGameManager());
         game.Initialize();
@@ -328,7 +341,7 @@ internal static class ItemExporter
             .DistinctBy(i => i.StringId)
             .OrderBy(i => i.StringId)
             .ToArray();
-        string itemThumbnailsPath = Path.Combine("../../Modules/cRPG/images");
+        string itemThumbnailsPath = Path.Combine(ModuleDataPath, "item-thumbnails");
         Directory.CreateDirectory(itemThumbnailsPath);
         RegisterRenderRequestPatch.IsEnabled = true;
         GenerateItemsThumbnail(mbItems, itemThumbnailsPath)
@@ -343,16 +356,26 @@ internal static class ItemExporter
         return $"Exporting {mbItems.Length} images...";
     }
 
+    /// <summary>
+    /// Applies a flat 0.9x multiplier to the <c>missile_speed</c> attribute of every Bow-type
+    /// item in <c>items/weapons.xml</c>. Used for batch-balancing bow projectile speeds.
+    /// </summary>
     [CommandLineFunctionality.CommandLineArgumentFunction("scale", "crpg")]
-    internal static string RunScale(List<string> args)
+    internal static string Scale(List<string> args)
     {
         var itemsDoc = XmlScaleClass(Path.Combine(ModuleDataPath, "items/weapons.xml"), ItemObject.ItemTypeEnum.Bow);
         itemsDoc.Save(Path.Combine(ModuleDataPath, "items/weapons.xml"));
         return "Done.";
     }
 
+    /// <summary>
+    /// Collects every blade crafting piece used by weapons with the <c>crpg_TwoHandedPolearm</c>
+    /// template, then reduces each blade's <c>damage_factor</c> in <c>crafting_pieces.xml</c>.
+    /// The reduction is derived from the damage type (Cut/Pierce/Blunt) so that stronger damage
+    /// types receive a proportionally larger nerf.
+    /// </summary>
     [CommandLineFunctionality.CommandLineArgumentFunction("scale_weapon", "crpg")]
-    internal static string RunScaleWeapon(List<string> args)
+    internal static string ScaleWeapon(List<string> args)
     {
         var itemsDoc = XmlScaleWeapon(
             Path.Combine(ModuleDataPath, "items/weapons.xml"),
@@ -421,10 +444,14 @@ internal static class ItemExporter
                 Handling = w.Handling,
                 BodyArmor = w.BodyArmor,
                 Flags = MbToCrpgWeaponFlags(w.WeaponFlags),
-                ThrustDamage = MeleeWeaponClasses.Contains(w.WeaponClass) ? (int)(w.ThrustDamageFactor * CrpgStrikeMagnitudeModel.BladeDamageFactorToDamageRatio) : w.ThrustDamage,
+                ThrustDamage = MeleeWeaponClasses.Contains(w.WeaponClass)
+                    ? (int)(w.ThrustDamageFactor * CrpgStrikeMagnitudeModel.BladeDamageFactorToDamageRatio)
+                    : w.ThrustDamage,
                 ThrustDamageType = MbToCrpgDamageType(w.ThrustDamageType),
                 ThrustSpeed = w.ThrustSpeed,
-                SwingDamage = MeleeWeaponClasses.Contains(w.WeaponClass) ? (int)(w.SwingDamageFactor * CrpgStrikeMagnitudeModel.BladeDamageFactorToDamageRatio) : w.SwingDamage,
+                SwingDamage = MeleeWeaponClasses.Contains(w.WeaponClass)
+                    ? (int)(w.SwingDamageFactor * CrpgStrikeMagnitudeModel.BladeDamageFactorToDamageRatio)
+                    : w.SwingDamage,
                 SwingDamageType = MbToCrpgDamageType(w.SwingDamageType),
                 SwingSpeed = w.SwingSpeed,
             }).ToArray();
@@ -450,7 +477,8 @@ internal static class ItemExporter
                 var type = (ItemObject.ItemTypeEnum)Enum.Parse(typeof(ItemObject.ItemTypeEnum), node1.Attributes!["Type"].Value);
                 if (type == typeToRefund)
                 {
-                    ModifyChildNodesAttribute(node1, "ItemComponent/Weapon", "missile_speed", x => ((int)(int.Parse(x) * 0.9f)).ToString());
+                    ModifyChildNodesAttribute(node1, "ItemComponent/Weapon", "missile_speed",
+                        x => ((int)(int.Parse(x) * 0.9f)).ToString());
                 }
             }
         }
@@ -724,16 +752,20 @@ internal static class ItemExporter
 
                         if (MountHeirloomBonus.TryGetValue(heirloomLevel, out var newMount))
                         {
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Horse", "maneuver", newMount.maneuverbonus);
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Horse", "speed", newMount.speedbonus);
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Horse", "extra_health", 0, ihatemountsPercentage: newMount.healthbonusPercentage);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Horse", "maneuver",
+                                newMount.maneuverbonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Horse", "speed",
+                                newMount.speedbonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Horse",
+                                "extra_health", 0, ihatemountsPercentage: newMount.healthbonusPercentage);
                         }
 
                         break;
 
                     case ItemObject.ItemTypeEnum.Arrows:
-
-                        var arrowDamageType = (DamageTypes)Enum.Parse(typeof(DamageTypes), node1.SelectNodes("ItemComponent/Weapon")!.Cast<XmlNode>().Last().Attributes!["thrust_damage_type"].Value);
+                        string arrowDamageTypeStr = node1.SelectNodes("ItemComponent/Weapon")!
+                            .Cast<XmlNode>().Last().Attributes!["thrust_damage_type"].Value;
+                        var arrowDamageType = (DamageTypes)Enum.Parse(typeof(DamageTypes), arrowDamageTypeStr);
                         var relevantArrowDictionary = arrowDamageType switch
                         {
                             DamageTypes.Cut => CutArrowHeirloomBonus,
@@ -743,14 +775,18 @@ internal static class ItemExporter
                         };
                         if (relevantArrowDictionary.TryGetValue(heirloomLevel, out var newArrow))
                         {
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", newArrow.damageBonus);
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "stack_amount", 0, bonusPercentage: newArrow.amountBonusPercentage);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon",
+                                "thrust_damage", newArrow.damageBonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon",
+                                "stack_amount", 0, bonusPercentage: newArrow.amountBonusPercentage);
                         }
 
                         break;
 
                     case ItemObject.ItemTypeEnum.Bolts:
-                        var boltDamageType = (DamageTypes)Enum.Parse(typeof(DamageTypes), node1.SelectNodes("ItemComponent/Weapon")!.Cast<XmlNode>().Last().Attributes!["thrust_damage_type"].Value);
+                        string boltDamageTypeStr = node1.SelectNodes("ItemComponent/Weapon")!
+                            .Cast<XmlNode>().Last().Attributes!["thrust_damage_type"].Value;
+                        var boltDamageType = (DamageTypes)Enum.Parse(typeof(DamageTypes), boltDamageTypeStr);
                         var relevantBoltDictionary = boltDamageType switch
                         {
                             DamageTypes.Cut => CutBoltHeirloomBonus,
@@ -833,7 +869,8 @@ internal static class ItemExporter
 
                         if (HeadArmorHeirloomBonus.TryGetValue(heirloomLevel, out int newHeadArmor))
                         {
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor", "head_armor", newHeadArmor);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor",
+                                "head_armor", newHeadArmor);
                         }
 
                         break;
@@ -842,9 +879,12 @@ internal static class ItemExporter
 
                         if (BodyArmorHeirloomBonus.TryGetValue(heirloomLevel, out var newBodyArmor))
                         {
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor", "body_armor", newBodyArmor.bodyArmorBonus);
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor", "leg_armor", newBodyArmor.legArmorBonus);
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor", "arm_armor", newBodyArmor.armArmorBonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor",
+                                "body_armor", newBodyArmor.bodyArmorBonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor",
+                                "leg_armor", newBodyArmor.legArmorBonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor",
+                                "arm_armor", newBodyArmor.armArmorBonus);
                         }
 
                         break;
@@ -853,7 +893,8 @@ internal static class ItemExporter
 
                         if (LegArmorHeirloomBonus.TryGetValue(heirloomLevel, out int newLegArmor))
                         {
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor", "leg_armor", newLegArmor);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor",
+                                "leg_armor", newLegArmor);
                         }
 
                         break;
@@ -862,7 +903,8 @@ internal static class ItemExporter
 
                         if (ArmArmorHeirloomBonus.TryGetValue(heirloomLevel, out int newArmArmor))
                         {
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor", "arm_armor", newArmArmor);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor",
+                                "arm_armor", newArmArmor);
                         }
 
                         break;
@@ -871,8 +913,10 @@ internal static class ItemExporter
 
                         if (ShoulderArmorHeirloomBonus.TryGetValue(heirloomLevel, out var newShoulderArmor))
                         {
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor", "body_armor", newShoulderArmor.bodyArmorBonus, defaultValue: "0");
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor", "arm_armor", newShoulderArmor.armArmorBonus, defaultValue: "0");
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor",
+                                "body_armor", newShoulderArmor.bodyArmorBonus, defaultValue: "0");
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor",
+                                "arm_armor", newShoulderArmor.armArmorBonus, defaultValue: "0");
                         }
 
                         break;
@@ -881,7 +925,8 @@ internal static class ItemExporter
 
                         if (HorseArmorHeirloomBonus.TryGetValue(heirloomLevel, out int newHorseArmor))
                         {
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor", "body_armor", newHorseArmor);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Armor",
+                                "body_armor", newHorseArmor);
                         }
 
                         break;
@@ -1026,7 +1071,8 @@ internal static class ItemExporter
                     continue;
                 }
 
-                ModifyHeirloomNodeAttribute(nonHeirloomChildNode, heirloomChildNode, attributeName, bonus, bonusPercentage, ihatemountsPercentage, defaultValue);
+                ModifyHeirloomNodeAttribute(nonHeirloomChildNode, heirloomChildNode, attributeName, bonus,
+                    bonusPercentage, ihatemountsPercentage, defaultValue);
             }
         }
     }
@@ -1055,7 +1101,10 @@ internal static class ItemExporter
         }
 
         string nonHeirloomAttrValue = nonHeirloomAttr == null ? "0" : nonHeirloomAttr.Value;
-        heirloomAttr.Value = (int.Parse(nonHeirloomAttrValue) + bonus + (int)Math.Ceiling(int.Parse(nonHeirloomAttrValue) * bonusPercentage / 100f) + (int)Math.Ceiling((200 + int.Parse(nonHeirloomAttrValue)) * ihatemountsPercentage / 100f)).ToString();
+        heirloomAttr.Value = (int.Parse(nonHeirloomAttrValue) + bonus +
+                              (int)Math.Ceiling(int.Parse(nonHeirloomAttrValue) * bonusPercentage / 100f) +
+                              (int)Math.Ceiling((200 + int.Parse(nonHeirloomAttrValue)) * ihatemountsPercentage / 100f))
+            .ToString();
     }
 
     private static void ModifyNodeAttribute(
