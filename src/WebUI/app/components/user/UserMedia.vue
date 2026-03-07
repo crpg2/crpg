@@ -50,43 +50,44 @@ const clanSize = computed(() => ({
       />
     </template>
 
-    <div
-      v-if="!hiddenPlatform || !hiddenTitle || (!hiddenClan && user.clanMembership)"
-      class="flex flex-col items-start gap-0.5"
-    >
-      <UiDataMedia layout="reverse" :size>
-        <template
-          v-if="!hiddenPlatform"
-          #icon="{ classes: platformIconClasses }"
-        >
-          <UserPlatform
-            :platform="user.platform"
-            :class="platformIconClasses()"
-            :platform-user-id="user.platformUserId"
-            :user-name="user.name"
-          />
-        </template>
-
-        <template
-          v-if="!hiddenTitle"
-          #default="{ classes: labelClasses }"
-        >
-          <div
-            class="max-w-32 truncate leading-none"
-            :class="[labelClasses()]"
-            :title="user.name"
+    <template v-if="!hiddenPlatform || !hiddenTitle || (!hiddenClan && user.clanMembership)" #default>
+      <div
+        class="flex flex-col items-start gap-0.5"
+      >
+        <UiDataMedia layout="reverse" :size>
+          <template
+            v-if="!hiddenPlatform"
+            #icon="{ classes: platformIconClasses }"
           >
-            {{ user.name }}
-          </div>
-        </template>
-      </UiDataMedia>
+            <UserPlatform
+              :platform="user.platform"
+              :class="platformIconClasses()"
+              :platform-user-id="user.platformUserId"
+              :user-name="user.name"
+            />
+          </template>
 
-      <UserClan
-        v-if="!hiddenClan && user.clanMembership"
-        :clan="user.clanMembership.clan"
-        :size="clanSize"
-        :clan-role="user.clanMembership.role"
-      />
-    </div>
+          <template
+            v-if="!hiddenTitle"
+            #default="{ classes: labelClasses }"
+          >
+            <div
+              class="max-w-32 truncate leading-none"
+              :class="[labelClasses()]"
+              :title="user.name"
+            >
+              {{ user.name }}
+            </div>
+          </template>
+        </UiDataMedia>
+
+        <UserClan
+          v-if="!hiddenClan && user.clanMembership"
+          :clan="user.clanMembership.clan"
+          :size="clanSize"
+          :clan-role="user.clanMembership.role"
+        />
+      </div>
+    </template>
   </UiDataCell>
 </template>
