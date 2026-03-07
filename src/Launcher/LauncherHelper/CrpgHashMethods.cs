@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.IO;
+using System.IO.Hashing;
 using System.Xml;
 
 namespace LauncherV3.LauncherHelper;
@@ -181,17 +182,17 @@ internal static class CrpgHashMethods
 
     public static async Task<ulong> HashFile(string filePath, bool writeToConsole)
     {
-        ulong fileHash;
         if (writeToConsole)
         {
             WriteToConsole($"Hashing {Path.GetFileName(filePath)}");
         }
 
-        using (FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read, 8192, useAsync: true))
+        var hasher = new XxHash64();
+        using (FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read, 81920, useAsync: true))
         {
-            fileHash = await XXHash.xxHash64.ComputeHashAsync(stream);
+            await hasher.AppendAsync(stream);
         }
 
-        return fileHash;
+        return hasher.GetCurrentHashAsUInt64();
     }
 }
