@@ -1,5 +1,6 @@
 using System.Collections.Concurrent;
 using System.Diagnostics;
+using System.Formats.Tar;
 using System.IO;
 using System.IO.Compression;
 using System.Net.Http;
@@ -10,9 +11,8 @@ using System.Windows.Resources;
 using System.Xml;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using ICSharpCode.SharpZipLib.Tar;
 using LauncherV3.LauncherHelper;
-using Microsoft.WindowsAPICodePack.Dialogs;
+using Microsoft.Win32;
 using static LauncherV3.LauncherHelper.GameInstallationFolderResolver;
 
 namespace LauncherV3;
@@ -287,17 +287,14 @@ public partial class MainViewModel : ObservableObject
                     Directory.CreateDirectory(path);
                 }
 
-                using (var tarArchive = TarArchive.CreateInputTarArchive(gzipStream, Encoding.UTF8))
+                try
                 {
-                    try
-                    {
-                        tarArchive.ExtractContents(path);
-                    }
-                    catch (Exception e)
-                    {
-                        WriteToConsole("Error while trying to extract download file");
-                        WriteToConsole(e.Message);
-                    }
+                    TarFile.ExtractToDirectory(gzipStream, path, overwriteFiles: true);
+                }
+                catch (Exception e)
+                {
+                    WriteToConsole("Error while trying to extract download file");
+                    WriteToConsole(e.Message);
                 }
             }
         }
@@ -314,17 +311,14 @@ public partial class MainViewModel : ObservableObject
                     Directory.CreateDirectory(outputPath);
                 }
 
-                using (var tarArchive = TarArchive.CreateInputTarArchive(gzipStream, Encoding.UTF8))
+                try
                 {
-                    try
-                    {
-                        tarArchive.ExtractContents(outputPath);
-                    }
-                    catch (Exception e)
-                    {
-                        WriteToConsole("Error while trying to extract download file");
-                        WriteToConsole(e.Message);
-                    }
+                    TarFile.ExtractToDirectory(gzipStream, outputPath, overwriteFiles: true);
+                }
+                catch (Exception e)
+                {
+                    WriteToConsole("Error while trying to extract download file");
+                    WriteToConsole(e.Message);
                 }
             }
         }
@@ -410,14 +404,11 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand(CanExecute = nameof(CanOpenFolder))]
     private void OpenFolder()
     {
-        var folderDialog = new CommonOpenFileDialog
-        {
-            IsFolderPicker = true,
-        };
+        var folderDialog = new OpenFolderDialog();
 
-        if (folderDialog.ShowDialog() == CommonFileDialogResult.Ok)
+        if (folderDialog.ShowDialog() == true)
         {
-            GameLocation = GameInstallationFolderResolver.CreateGameInstallationInfo(folderDialog.FileName, SelectedPlatform);
+            GameLocation = GameInstallationFolderResolver.CreateGameInstallationInfo(folderDialog.FolderName, SelectedPlatform);
         }
 
         if (GameLocation != null)
