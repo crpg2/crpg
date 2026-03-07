@@ -611,17 +611,17 @@ public record SeedDataCommand : IMediatorRequest
             UserItem orleItem7 = new() { User = orle, ItemId = "crpg_battania_fur_boots_v2_h3" };
             UserItem orleItem8 = new() { User = orle, ItemId = "crpg_nordic_leather_cap_v2_h3" };
             UserItem orleItem9 = new() { User = orle, ItemId = "crpg_eastern_wrapped_armguards_v2_h3" };
-            UserItem orleItem10 = new() { User = orle, ItemId = "crpg_blacksmith_hammer_v3_h0" };
+            UserItem orleItem10 = new() { User = orle, ItemId = "crpg_blacksmith_hammer_v4_h0" };
             UserItem orleItem11 = new() { User = orle, ItemId = "crpg_scythe_v2_h3" };
-            UserItem orleItem12 = new() { User = orle, ItemId = "crpg_rondel_v2_h3" };
+            UserItem orleItem12 = new() { User = orle, ItemId = "crpg_rondel_v3_h3" };
             UserItem orleItem13 = new() { User = orle, ItemId = "crpg_crossbow_j_v4_h3" };
-            UserItem orleItem14 = new() { User = orle, ItemId = "crpg_helping_hand_v3_h2" };
+            UserItem orleItem14 = new() { User = orle, ItemId = "crpg_helping_hand_v4_h2" };
             UserItem orleItem15 = new() { User = orle, ItemId = "crpg_bolt_c_v4_h0" };
             UserItem orleItem16 = new() { User = orle, ItemId = "crpg_wooden_sword_v3_h3" };
             UserItem orleItem17 = new() { User = orle, ItemId = "crpg_basic_imperial_leather_armor_v2_h3" };
             UserItem orleItem18 = new() { User = orle, ItemId = "crpg_wooden_twohander_v3_h3" };
             UserItem orleItem19 = new() { User = orle, ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h1" };
-            UserItem elmarykItem1 = new() { User = elmaryk, ItemId = "crpg_longsword_v2_h3" };
+            UserItem elmarykItem1 = new() { User = elmaryk, ItemId = "crpg_longsword_v3_h3" };
             UserItem elmarykItem2 = new() { User = elmaryk, ItemId = "crpg_avalanche_v2_h2" };
             UserItem laHireItem1 = new() { User = laHire, ItemId = "crpg_iron_cavalry_sword_v1_h1" };
             UserItem laHirekItem2 = new() { User = laHire, ItemId = "crpg_simple_saber_v1_h2" };
@@ -635,7 +635,7 @@ public record SeedDataCommand : IMediatorRequest
             UserItem vickItem7 = new() { User = vick, ItemId = "crpg_battania_fur_boots_v2_h3" };
             UserItem vickItem8 = new() { User = vick, ItemId = "crpg_nordic_leather_cap_v2_h3" };
             UserItem vickItem9 = new() { User = vick, ItemId = "crpg_eastern_wrapped_armguards_v2_h3" };
-            UserItem vickItem10 = new() { User = vick, ItemId = "crpg_blacksmith_hammer_v3_h0" };
+            UserItem vickItem10 = new() { User = vick, ItemId = "crpg_blacksmith_hammer_v4_h0" };
 
             UserItem[] newUserItems =
             {

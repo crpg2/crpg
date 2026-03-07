@@ -611,7 +611,7 @@ partial class AddIdempotencyKeys
                     .HasColumnType("timestamp with time zone")
                     .HasColumnName("created_at");
 
-                b.Property("Status")
+                b.Property<string>("Status")
                     .HasColumnType("user_update_status")
                     .HasColumnName("status");
 

@@ -47,9 +47,14 @@ public partial class AddPartyOrders : Migration
 
         migrationBuilder.AlterDatabase()
             .Annotation("Npgsql:Enum:party_order_type", "attack_party,attack_settlement,follow_party,join_battle,move_to_point,move_to_settlement,transfer_offer_party")
-            .Annotation("Npgsql:Enum:party_status", "awaiting_battle_join_decision,awaiting_party_offer_decision,idle,idle_in_settlement,in_battle,recruiting_in_settlement")
-            .Annotation("Npgsql:Enum:party_transfer_offer_status", "intent,pending")
-            .OldAnnotation("Npgsql:Enum:party_status", "following_party,idle,idle_in_settlement,in_battle,moving_to_attack_party,moving_to_attack_settlement,moving_to_point,moving_to_settlement,recruiting_in_settlement");
+            .Annotation("Npgsql:Enum:party_transfer_offer_status", "intent,pending");
+
+        migrationBuilder.Sql(@"
+            ALTER TYPE party_status RENAME TO party_status_old;
+            CREATE TYPE party_status AS ENUM ('awaiting_battle_join_decision','awaiting_party_offer_decision','idle','idle_in_settlement','in_battle','recruiting_in_settlement');
+            ALTER TABLE parties ALTER COLUMN status TYPE party_status USING status::text::party_status;
+            DROP TYPE party_status_old;
+        ");
 
         migrationBuilder.AddColumn<int>(
             name: "current_battle_id",
