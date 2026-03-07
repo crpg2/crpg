@@ -11,11 +11,17 @@ public partial class RemoveIdempotencyKeys : Migration
     {
         migrationBuilder.DropTable(
             name: "idempotency_keys");
+
+        migrationBuilder.AlterDatabase()
+            .OldAnnotation("Npgsql:Enum:user_update_status", "started,completed");
     }
 
     /// <inheritdoc />
     protected override void Down(MigrationBuilder migrationBuilder)
     {
+        migrationBuilder.AlterDatabase()
+            .Annotation("Npgsql:Enum:user_update_status", "started,completed");
+
         migrationBuilder.CreateTable(
             name: "idempotency_keys",
             columns: table => new
