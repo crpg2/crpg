@@ -149,7 +149,7 @@ function openOutgoingTransferOffer(transferOffer: TransferOfferParty) {
           >
             <UChip
               inset size="sm" show
-              :ui="{ base: 'bg-notification' }"
+              :ui="{ base: 'bg-success' }"
             >
               <UIcon name="i-lucide-ellipsis-vertical" class="size-6" />
             </UChip>

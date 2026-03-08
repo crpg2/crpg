@@ -40,7 +40,7 @@ const isUnread = computed(() => notification.state === NOTIFICATION_STATE.Unread
     <UTooltip v-if="isUnread" :text="$t('user.notifications.unreadNotification')">
       <UIcon
         name="crpg:item-rank-duotone"
-        class="absolute top-3 right-3 z-10 size-4 text-notification outline-0 select-none"
+        class="absolute top-3 right-3 z-10 size-4 text-success outline-0 select-none"
       />
     </UTooltip>
 

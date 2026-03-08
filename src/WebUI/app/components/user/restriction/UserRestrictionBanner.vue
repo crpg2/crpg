@@ -25,7 +25,7 @@ const modal = overlay.create(LazyUserRestrictionModal, {
   <UBanner
     :ui="{
       center: '',
-      title: 'text-highlighted text-lg',
+      title: 'dark:text-highlighted text-lg',
     }"
     color="error"
     :title="$t('user.restriction.notification', { duration: $t('dateTimeFormat.dd:hh:mm', { ...joinRestrictionRemainingDuration }) })"

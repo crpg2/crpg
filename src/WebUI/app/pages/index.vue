@@ -63,6 +63,8 @@ const { t } = useI18n()
           </template>
         </UNavigationMenu>
 
+        <UColorModeButton variant="ghost" color="primary" />
+
         <AppSwitchLanguageDropdown v-slot="{ open, locale }">
           <UButton
             size="lg"

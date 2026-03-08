@@ -170,7 +170,7 @@ const renderCharacterInventoryItemDetail = (openedItem: OpenedItem, compareItems
               inset
               size="2xl"
               :show="hideInArmoryItemsModel"
-              :ui="{ base: 'bg-notification' }"
+              :ui="{ base: 'bg-success' }"
             >
               <UButton
                 variant="outline"

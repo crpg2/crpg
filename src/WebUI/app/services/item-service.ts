@@ -688,7 +688,7 @@ export const getRankColor = (rank: number) => {
     case 3:
       return '#c084fc'
     default:
-      return '#fff'
+      return 'var(--ui-text-highlighted)'
   }
 }
 

@@ -15,10 +15,7 @@ defineProps<{
   >
     <div
       v-if="isSelf"
-      class="
-        squircle absolute top-1/2 left-1/2 h-[117%] w-[117%] -translate-x-1/2 -translate-y-1/2
-        bg-notification
-      "
+      class="squircle absolute top-1/2 left-1/2 h-[117%] w-[117%] -translate-1/2 bg-success"
     />
 
     <UAvatar

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { RouteNamedMap } from 'vue-router/auto-routes'
+import type { NavigationMenuItem } from '@nuxt/ui'
 
 import { ROLE } from '~/models/role'
 
@@ -7,44 +7,30 @@ definePageMeta({
   roles: [ROLE.Admin, ROLE.Moderator],
 })
 
+const route = useRoute('moderator')
+
 const { t } = useI18n()
 
-const links = [
+const navigationItems = computed<NavigationMenuItem[]>(() => [
   {
-    name: 'moderator',
     label: t('restriction.title'),
+    to: { name: 'moderator' },
+    active: route.name === 'moderator', // hack
   },
   {
-    name: 'moderator-find-user',
     label: t('findUser.title'),
+    to: { name: 'moderator-find-user' },
   },
-] satisfies Array<{
-  name: keyof RouteNamedMap
-  label: string
-}>
+])
 </script>
 
 <template>
-  <div class="space-y-8 py-6">
-    <nav class="flex items-center justify-center gap-2">
-      <NuxtLink
-        v-for="{ name, label } in links"
-        :key="name"
-        v-slot="{ isExactActive }"
-        :to="({ name })"
-      >
-        <UButton
-          color="neutral"
-          variant="link"
-          active-variant="soft"
-          active-color="primary"
-          :active="isExactActive "
-          size="xl"
-          :label
-        />
-      </NuxtLink>
-    </nav>
-
+  <div class="space-y-6 py-6">
+    <UNavigationMenu
+      color="primary"
+      class="w-full justify-center"
+      :items="navigationItems"
+    />
     <NuxtPage />
   </div>
 </template>

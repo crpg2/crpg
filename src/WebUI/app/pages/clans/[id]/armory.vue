@@ -167,7 +167,7 @@ const renderClanArmoryItemDetail = <T extends { id: string }>(opendeItem: T, com
               inset
               size="2xl"
               :show="hideOwnedItemsModel || showOnlyAvailableItems"
-              :ui="{ base: 'bg-notification' }"
+              :ui="{ base: 'bg-success' }"
             >
               <UButton
                 variant="subtle"

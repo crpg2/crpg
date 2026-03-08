@@ -185,6 +185,7 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
           <USelect
             v-model="sortingModel"
             class="flex-1"
+            variant="subtle"
             :items="sortingItems"
             :size
           />
