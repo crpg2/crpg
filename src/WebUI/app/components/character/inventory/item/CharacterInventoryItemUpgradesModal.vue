@@ -128,7 +128,7 @@ const renderItemAction = (_item: ItemFlat) => {
   }
 
   // upgrade
-  const notEnoughtPoints = user.value!.heirloomPoints < _item.rank
+  const notEnoughtPoints = user.value!.heirloomPoints < _item.rank - item.value.rank
 
   return h(UTooltip, {}, {
     default: () => h(UButton, {
