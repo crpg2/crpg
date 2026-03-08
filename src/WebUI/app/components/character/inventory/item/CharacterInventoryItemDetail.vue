@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AppCoin, LazyCharacterInventoryItemUpgradesModal, UBadge, UButton, UTooltip } from '#components'
+import { AppCoin, UBadge, UButton, UTooltip } from '#components'
 
 import type { CompareItemsResult } from '~/models/item'
 import type { UserItem, UserPublic } from '~/models/user'
@@ -23,11 +23,10 @@ const {
   lender?: UserPublic | null
 }>()
 
-const emit = defineEmits<{
+defineEmits<{
   sell: []
   repair: []
-  upgrade: []
-  reforge: []
+  upgrades: []
   addToClanArmory: []
   removeFromClanArmory: []
   returnToClanArmory: []
@@ -39,30 +38,6 @@ const isSellable = computed(() => canSell(userItem))
 const isUpgradable = computed(() => canUpgradeUserItem(userItem))
 const isManageClanArmory = computed(() => !!clan.value && canAddedToClanArmory(userItem))
 const repairCost = computed(() => computeBrokenItemRepairCost(userItem.item.price))
-
-const overlay = useOverlay()
-
-const showUpgradesModal = () => {
-  const itemUpgradesModal = overlay.create(LazyCharacterInventoryItemUpgradesModal)
-  itemUpgradesModal.open({
-    userItem,
-    gold: user.value!.gold,
-    heirloomPoints: user.value!.heirloomPoints,
-    onReforge: () => {
-      emit('reforge')
-      itemUpgradesModal.close()
-    },
-    onUpgrade: () => {
-      emit('upgrade')
-      itemUpgradesModal.close()
-      /* TODO:
-        make it more user-friendly
-        allow players to upgrade to +3 immediately
-        do not close automatically after the action
-      */
-    },
-  })
-}
 </script>
 
 <template>
@@ -143,7 +118,7 @@ const showUpgradesModal = () => {
               block
               square
               size="xl"
-              @click="showUpgradesModal"
+              @click="$emit('upgrades')"
             />
           </UTooltip>
 

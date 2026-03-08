@@ -257,6 +257,12 @@ internal static class CommonErrors
         Detail = $"Item with id '{itemId}' is not upgradable",
     };
 
+    public static Error InvalidItemUpgradeRank(int rank, int minRank, int maxRank) => new(ErrorType.Validation, ErrorCode.InvalidItemUpgradeRank)
+    {
+        Title = "Invalid item upgrade rank",
+        Detail = $"Item upgrade rank must be between {minRank} and {maxRank}, but was {rank}",
+    };
+
     public static Error ItemNotBuyable(string itemId) => new(ErrorType.Validation, ErrorCode.ItemNotBuyable)
     {
         Title = "Item is not buyable",

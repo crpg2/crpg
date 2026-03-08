@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { vOnLongPress } from '@vueuse/components'
 import { useStorage } from '@vueuse/core'
-import { CharacterInventoryItemDetail } from '#components'
+import { CharacterInventoryItemDetail, LazyCharacterInventoryItemUpgradesModal } from '#components'
 
+import type { OpenedItem } from '~/composables/item/use-item-detail'
 import type { GroupedCompareItemsResult, ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
 import type { SortingConfig } from '~/services/item-search-service'
@@ -74,6 +75,7 @@ const { state: clanMembers } = useAsyncState(
 )
 
 const hideInArmoryItemsModel = useStorage<boolean>('character-inventory-in-armory-items', true)
+const overlay = useOverlay()
 
 const items = computed(() => {
   if (!hideInArmoryItemsModel.value) {
@@ -83,8 +85,29 @@ const items = computed(() => {
   return userItems.value.filter(ui => ui.isArmoryItem ? ui.userId !== user.value!.id : true)
 })
 
-const renderCharacterInventoryItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsResult: GroupedCompareItemsResult[]) => {
-  const userItem = userItems.value.find(i => i.item.id === opendeItem.id)
+const onUpgrades = (userItem: UserItem, openedItem: OpenedItem) => {
+  const itemUpgradesModal = overlay.create(LazyCharacterInventoryItemUpgradesModal)
+
+  const update = (newUserItem: UserItem) => {
+    itemUpgradesModal.close()
+    closeItemDetail(openedItem.id)
+    toggleItemDetail(openedItem.bound, newUserItem.item.id)
+    onUpgrades(newUserItem, openedItem)
+  }
+
+  itemUpgradesModal.open({
+    userItem,
+    onUpgrade: async (upgradeRank: number) => {
+      update(await onUpgradeUserItem(userItem.id, upgradeRank))
+    },
+    onReforge: async () => {
+      update(await onReforgeUserItem(userItem.id))
+    },
+  })
+}
+
+const renderCharacterInventoryItemDetail = (openedItem: OpenedItem, compareItemsResult: GroupedCompareItemsResult[]) => {
+  const userItem = userItems.value.find(i => i.item.id === openedItem.id)
 
   if (!userItem) {
     return null
@@ -97,19 +120,18 @@ const renderCharacterInventoryItemDetail = <T extends { id: string }>(opendeItem
     compareResult: compareItemsResult.find(cr => cr.type === userItem.item.type)?.compareResult,
     onSell: () => {
       onSellUserItem(userItem.id)
-      closeItemDetail(opendeItem.id)
+      closeItemDetail(openedItem.id)
     },
     onRepair: () => onRepairUserItem(userItem.id),
-    onUpgrade: () => onUpgradeUserItem(userItem.id),
-    onReforge: () => onReforgeUserItem(userItem.id),
+    onUpgrades: () => onUpgrades(userItem, openedItem),
     onAddToClanArmory: () => {
       onAddItemToClanArmory(userItem.id)
-      closeItemDetail(opendeItem.id)
+      closeItemDetail(openedItem.id)
     },
     onRemoveFromClanArmory: () => onRemoveFromClanArmory(userItem.id),
     onReturnToClanArmory: () => {
       onReturnToClanArmory(userItem.id)
-      closeItemDetail(opendeItem.id)
+      closeItemDetail(openedItem.id)
     },
   })
 }

@@ -50,13 +50,15 @@ export function useAsyncCallback<T extends AnyPromiseFn>(fn: T, options?: UseAsy
         promises.push(delay(_delay))
       }
 
-      await Promise.all(promises)
+      const [res] = await Promise.all(promises)
 
       if (successMessage) {
         toast.add({ title: successMessage, close: false, color: 'success' })
       }
 
       onSuccess()
+
+      return res
     }
     catch (e) {
       error.value = e

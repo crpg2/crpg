@@ -44,6 +44,7 @@ public enum ErrorCode
     ItemNotReforgeable,
     ItemNotSellable,
     ItemNotUpgradable,
+    InvalidItemUpgradeRank,
     NotEnoughAttributePoints,
     NotEnoughGold,
     NotEnoughHeirloomPoints,
