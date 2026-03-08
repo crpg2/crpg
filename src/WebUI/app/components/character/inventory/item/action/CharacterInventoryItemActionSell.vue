@@ -23,7 +23,7 @@ const userItemToReplaceSalePrice = computed(() => {
   }
 })
 
-const isFreeRefund = computed(() => userItemToReplaceSalePrice.value.graceTimeEnd === null)
+const isFreeRefund = computed(() => userItemToReplaceSalePrice.value.graceTimeEnd !== null)
 </script>
 
 <template>

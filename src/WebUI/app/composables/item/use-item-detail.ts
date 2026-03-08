@@ -43,7 +43,8 @@ export const _useItemDetail = () => {
       closeItemDetail(itemId)
       return
     }
-    const bound = target instanceof HTMLElement ? getElementBounds(target) : target
+    const bound = 'getBoundingClientRect' in target ? getElementBounds(target) : target
+
     openItemDetail({ id: itemId, bound })
   }
 
