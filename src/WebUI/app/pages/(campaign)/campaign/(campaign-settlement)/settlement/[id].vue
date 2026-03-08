@@ -36,6 +36,7 @@ definePageMeta({
 
 const { settlement } = useSettlement()
 
+// TODO: FIXME:
 // async function leaveFromSettlement(): Promise<void> {
 //   await moveParty({
 //     status: PartyStatus.Idle,
@@ -56,16 +57,16 @@ const navigationItems = computed<NavigationMenuItem[]>(() => [
     active: route.name === 'campaign-settlement-id', // hack, [id].vue conflict with [id]/index.vue
   },
   {
-    label: 'Shop TODO:',
-    to: { name: 'campaign-settlement-id', params: { id: route.params.id } },
-    active: route.name === 'campaign-settlement-id', // hack, [id].vue conflict with [id]/index.vue
+    label: 'Shop',
+    to: { name: 'campaign-settlement-id-shop', params: { id: route.params.id } },
+    // active: route.name === 'campaign-settlement-id-shop', // hack, [id].vue conflict with [id]/index.vue
   },
   ...(checkCanEditSettlementInventory(settlement.value, user.value!)
     ? [
         {
           label: 'Inventory',
           to: { name: 'campaign-settlement-id-inventory', params: { id: route.params.id } },
-          active: route.name === 'campaign-settlement-id-inventory', // hack, [id].vue conflict with [id]/index.vue
+          // active: route.name === 'campaign-settlement-id-inventory', // hack, [id].vue conflict with [id]/index.vue
           icon: 'crpg:chest',
         } as NavigationMenuItem,
       ]
