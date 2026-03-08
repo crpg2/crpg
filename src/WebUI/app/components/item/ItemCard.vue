@@ -10,6 +10,8 @@ const { item } = defineProps<{
 
 const { thumb } = useItem(() => item)
 const rankColor = computed(() => getRankColor(item.rank))
+
+const colorMode = useColorMode()
 </script>
 
 <template>
@@ -21,7 +23,7 @@ const rankColor = computed(() => getRankColor(item.rank))
     :style="[
       {
         ...(item.rank > 0 && {
-          backgroundColor: `color-mix(in srgb, #000 100%, ${rankColor} 25%)`,
+          backgroundColor: `color-mix(in srgb, var(--ui-bg-elevated) 100%, ${rankColor} ${colorMode.value === 'dark' ? '25%' : '75%'})`,
         }),
       },
     ]"

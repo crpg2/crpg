@@ -33,8 +33,8 @@
       <path d="M107.07 5H9.5M5.568 5 .5.5M5.568 5 .5 9.5M5.568 5H9.5m0 0L5 .5M9.5 5 5 9.5" stroke="url(#logo-decor_a)" />
       <defs>
         <linearGradient id="logo-decor_a" x1="107.285" y1="4.5" x2=".285" y2="4.5" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#fff" stop-opacity="0" />
-          <stop offset="1" stop-color="#fff" />
+          <stop stop-color="var(--ui-bg-inverted)" stop-opacity="0" />
+          <stop offset="1" stop-color="var(--ui-bg-inverted)" />
         </linearGradient>
       </defs>
     </symbol>

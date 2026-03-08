@@ -283,7 +283,7 @@ const columns: TableColumn<ClanMember>[] = [
           :show="Boolean(applicationsCount)"
           inset
           size="2xl"
-          :ui="{ base: 'bg-[var(--color-notification)]' }"
+          :ui="{ base: 'bg-success' }"
         >
           <UButton
             :to="{ name: 'clans-id-applications', params: { id: clan.id } }"

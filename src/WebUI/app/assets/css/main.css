@@ -31,9 +31,8 @@
     --color-crpg-gold-100: #F9F6F0;
     --color-crpg-gold-200: #EDE3CF;
     --color-crpg-gold-300: #E0D0AE;
-    /* --color-crpg-gold-400: #D7C398; */
     --color-crpg-gold-400: #CBB077;
-    --color-crpg-gold-500: #CBB077;
+    --color-crpg-gold-500: #AC8C39;
     --color-crpg-gold-600: #BE9D56;
     --color-crpg-gold-700: #A68540;
     --color-crpg-gold-800: #856B33;
@@ -52,31 +51,18 @@
     --color-crpg-amber-900: #211B0D;
     --color-crpg-amber-950: #0B0904;
 
-    --color-crpg-green-50: #C4D9C7;
-    --color-crpg-green-100: #A8C7AD;
-    --color-crpg-green-200: #8CB592;
-    --color-crpg-green-300: #70A478;
-    --color-crpg-green-400: #598C61;
-    --color-crpg-green-500: #48704E;
-    --color-crpg-green-600: #36543A;
-    --color-crpg-green-700: #243827;
-    --color-crpg-green-800: #1E2F20;
-    --color-crpg-green-900: #121C13;
-    --color-crpg-green-950: #060906;
+    --color-crpg-green-50:  #d3f0e5;
+    --color-crpg-green-100: #b7e7d7;
+    --color-crpg-green-200: #90d9c2;
+    --color-crpg-green-300: #6acbae;
+    --color-crpg-green-400: #53bc96; /* base */
+    --color-crpg-green-500: #3a9c7b;
+    --color-crpg-green-600: #2c7d62;
+    --color-crpg-green-700: #1f5e49;
+    --color-crpg-green-800: #174a39;
+    --color-crpg-green-900: #0f3226;
+    --color-crpg-green-950: #081f17;
 
-    --color-crpg-neutral-50: #EDEDED;
-    --color-crpg-neutral-100: #CFCFCF;
-    --color-crpg-neutral-200: #B8B8B8;
-    --color-crpg-neutral-300: #A1A1A1;
-    --color-crpg-neutral-400: #8A8A8A;
-    --color-crpg-neutral-500: #737373;
-    --color-crpg-neutral-600: #616157;
-    --color-crpg-neutral-700: #464643;
-    --color-crpg-neutral-800: #2F2F2C;
-    --color-crpg-neutral-900: #171717;
-    --color-crpg-neutral-950: #0f0f0e;
-
-    --color-notification: #53bc96;
     --color-gold: #C99E34;
 
     --spacing-36: 9rem /* 144px */
@@ -94,17 +80,78 @@
     }
 }
 
-:root {
-    --ui-radius: 0.75rem;
-    --ui-container: var(--container-8xl);
-    --ui-text: var(--ui-color-neutral-100);
-    --ui-bg: var(--ui-color-neutral-950);
+/* ref https://github.com/nuxt/ui/blob/v4/src/runtime/index.css */
+@layer theme {
+    :root {
+        --ui-radius: 0.75rem;
+        --ui-container: var(--container-8xl);
+    }
 
-    --ui-bg-elevated: var(--ui-color-neutral-900);
+    .light {
+        --ui-bg: var(--ui-color-neutral-50);
+        --ui-bg-elevated: var(--ui-color-neutral-200);
+        --ui-bg-accented: var(--ui-color-neutral-300);
+
+        --ui-border: var(--ui-color-neutral-300);
+        --ui-border-muted: var(--ui-color-neutral-300);
+        --ui-border-accented: var(--ui-color-neutral-400);
+
+        --ui-text-dimmed: var(--ui-color-neutral-400);
+        --ui-text-muted: var(--ui-color-neutral-600);
+        --ui-text-toned: var(--ui-color-neutral-700);
+        --ui-text: var(--ui-color-neutral-800);
+        --ui-text-highlighted: var(--ui-color-neutral-950);
+
+        --ui-primary: var(--ui-color-primary-500);
+        --ui-secondary: var(--ui-color-secondary-500);
+        --ui-success: var(--ui-color-success-500);
+        --ui-info: var(--ui-color-info-500);
+        --ui-warning: var(--ui-color-warning-500);
+        --ui-error: var(--ui-color-error-100);
+
+        --color-gold: #d8aa3a;
+    }
+
+    .dark {
+        --ui-bg: var(--ui-color-neutral-950);
+        --ui-bg-elevated: var(--ui-color-neutral-900);
+
+        --ui-border: var(--ui-color-neutral-700);
+        --ui-border-muted: var(--ui-color-neutral-700);
+        --ui-border-accented: var(--ui-color-neutral-600);
+
+        --ui-text: var(--ui-color-neutral-100);
+
+        --ui-primary: var(--ui-color-primary-400);
+        --ui-secondary: var(--ui-color-secondary-400);
+        --ui-success: var(--ui-color-success-400);
+        --ui-info: var(--ui-color-info-400);
+        --ui-warning: var(--ui-color-warning-400);
+        --ui-error: var(--ui-color-error-400);
+
+        --color-gold: #C99E34;
+    }
 }
 
-body {
-    @apply text-base;
+
+@layer utilities {
+    .light {
+        --ui-primary: var(--ui-color-primary-600);
+        --ui-secondary: var(--ui-color-secondary-400);
+        --ui-success: var(--ui-color-success-400);
+        --ui-info: var(--ui-color-info-400);
+        --ui-warning: var(--ui-color-warning-400);
+        --ui-error: var(--ui-color-error-400);
+    }
+
+    .dark {
+        --ui-primary: var(--ui-color-primary-400);
+        --ui-secondary: var(--ui-color-secondary-400);
+        --ui-success: var(--ui-color-success-400);
+        --ui-info: var(--ui-color-info-400);
+        --ui-warning: var(--ui-color-warning-400);
+        --ui-error: var(--ui-color-error-400);
+    }
 }
 
 /* COLOR PICKER */
