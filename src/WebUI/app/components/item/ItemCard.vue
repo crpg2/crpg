@@ -23,7 +23,9 @@ const colorMode = useColorMode()
     :style="[
       {
         ...(item.rank > 0 && {
-          backgroundColor: `color-mix(in srgb, var(--ui-bg-elevated) 100%, ${rankColor} ${colorMode.value === 'dark' ? '25%' : '75%'})`,
+          'backgroundColor': `color-mix(in srgb, var(--ui-text-inverted) 0%, ${rankColor} ${colorMode.value === 'dark' ? '25%' : '50%'})`,
+          '--ui-border-accented': rankColor,
+
         }),
       },
     ]"

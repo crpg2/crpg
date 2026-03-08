@@ -61,6 +61,8 @@ const items = computed(() => {
           </UButton>
         </UTooltip>
 
+        <UColorModeButton variant="outline" color="primary" />
+
         <AppInstallationGuide>
           <UTooltip :text="$t('nav.main.Installation')">
             <UButton

@@ -45,7 +45,7 @@ const {
     <ItemCard
       v-if="userItem !== undefined"
       :item="userItem.item"
-      class="size-full cursor-grab ring-0!"
+      class="size-full! cursor-grab ring-0!"
       :class="{ 'bg-gold/25!': userItem.isPersonal }"
       data-aq-character-slot-item-thumb
     >

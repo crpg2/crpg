@@ -80,7 +80,7 @@ export default defineNuxtConfig({
   ],
   // https://color-mode.nuxtjs.org/usage/configuration
   colorMode: {
-    preference: 'light',
+    preference: 'dark',
   },
   // https://ui.nuxt.com/getting-started/installation/nuxt#options
   ui: {

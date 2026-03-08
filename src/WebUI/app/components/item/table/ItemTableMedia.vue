@@ -125,7 +125,7 @@ const { rankColor, thumb } = useItem(() => item)
       <UiTextView
         variant="p-sm"
         :style="{ color: rankColor }"
-        class="truncate whitespace-pre-wrap"
+        class="truncate font-medium whitespace-pre-wrap"
       >
         {{ item.name }}
       </UiTextView>

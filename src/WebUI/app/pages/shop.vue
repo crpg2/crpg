@@ -462,13 +462,12 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
     <UCard
       v-if="!loadingItems"
       :ui="{
-        root: 'overflow-visible rounded-none',
+        root: 'ring-0 overflow-visible rounded-none',
         footer: 'sticky bottom-0 left-0 z-1 bg-default/75 py-4 backdrop-blur',
       }"
     >
       <template #header>
         <ItemSearchFilterByType
-          v-if="itemTypes.length"
           v-model:item-type="itemType"
           v-model:weapon-class="weaponClass"
           :item-types="itemTypes"
@@ -491,7 +490,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
           base: 'border-separate border-spacing-0',
           tbody: '[&>tr]:last:[&>td]:border-b-0',
           tr: 'group data-[expanded=true]:bg-elevated',
-          td: 'empty:p-0 group-has-[td:not(:empty)]:border-b border-default ',
+          td: 'empty:p-0 group-has-[td:not(:empty)]:border-b border-default',
         }"
         sticky
         :columns

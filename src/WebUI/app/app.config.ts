@@ -53,7 +53,7 @@ export default defineAppConfig({
       slots: {
         th: 'text-default',
         td: 'text-inherit',
-        tbody: '[&>tr]:data-[selectable=true]:cursor-pointer [&>tr]:data-[selected=true]:bg-accented/50',
+        tbody: '[&>tr]:data-[selectable=true]:cursor-pointer [&>tr]:data-[selected=true]:bg-accented/33',
       },
     },
     pagination: {

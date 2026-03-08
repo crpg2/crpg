@@ -127,7 +127,7 @@ const navigationItems = computed<NavigationMenuItem[]>(() => [
 
       <UNavigationMenu
         color="primary"
-        class="flex w-full justify-center gap-4"
+        class="w-full justify-center"
         :items="navigationItems"
       />
     </div>

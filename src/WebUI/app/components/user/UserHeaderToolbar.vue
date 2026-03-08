@@ -98,14 +98,10 @@ const items = computed<DropdownMenuItem[][]>(() => [
       <AppLoom :point="user.heirloomPoints" />
     </UTooltip>
 
-    <USeparator orientation="vertical" class="h-6" />
-
     <UserMedia
       :user="mapUserToUserPublic(user)"
       hidden-platform
     />
-
-    <USeparator orientation="vertical" class="h-6" />
 
     <UDropdownMenu
       :modal="false"
@@ -117,7 +113,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
           :show="Boolean(user.unreadNotificationsCount)"
           inset
           size="2xl"
-          :ui="{ base: 'bg-notification' }"
+          :ui="{ base: 'bg-success' }"
         >
           <UButton
             variant="outline"
@@ -135,7 +131,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
           :show="Boolean(user.unreadNotificationsCount)"
           inset
           size="lg"
-          :ui="{ base: 'bg-notification' }"
+          :ui="{ base: 'bg-success' }"
         >
           <UIcon name="crpg:carillon" class="size-4.5" />
         </UChip>

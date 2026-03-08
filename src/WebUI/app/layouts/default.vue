@@ -61,8 +61,6 @@ fetchUserRestriction()
             />
           </NuxtLink>
 
-          <UColorModeSwitch />
-
           <AppOnlinePlayers :game-server-stats="gameServerStats" />
 
           <AppLayoutMainNavigation :latest-patch="patchNotes[0]" />
