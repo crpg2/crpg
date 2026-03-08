@@ -8,7 +8,6 @@ const { strategy = 'fixed' } = defineProps<{ bg: string, strategy?: 'absolute' |
       class="size-full object-cover opacity-15"
       :src="`/images/bg/${bg}`"
     />
-    <!-- <div class="absolute inset-0 bg-default/50 backdrop-blur-[0.075rem]" /> -->
     <div class="absolute inset-0 bg-linear-to-t from-default opacity-75 backdrop-blur-[0.075rem]" />
   </div>
 </template>
