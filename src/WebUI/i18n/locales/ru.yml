@@ -681,7 +681,6 @@ character:
           title: Улучшить предмет
           description: Вы можете улучшить предмет за очки улучшения (Heirloom)
         validation:
-          maxRank: Предмет уже имеет максимальный ранг
           loomPoints: У вас недостаточно очков улучшения
         confirm:
           description: 'Вы уверены, что хотите улучшить этот предмет за {loomPoints}? {oldItem} будет заменен на {newItem}'
@@ -701,7 +700,6 @@ character:
               looms:
                 label: Награда
         validation:
-          rank: 'Предмет должен иметь ранг больше, чем {minimumRank}'
           gold: У вас недостаточно золота
         confirm:
           description: 'Вы уверены, что хотите рассплавить этот предмет за {gold}? Вы получите {loomPoints}, также предмет {oldItem} будет заменен на {newItem}.'

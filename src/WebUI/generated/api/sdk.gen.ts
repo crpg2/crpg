@@ -1150,7 +1150,11 @@ export const putUsersSelfItemsByIdUpgrade = <TComposable extends Composable = '$
     responseTransformer: putUsersSelfItemsByIdUpgradeResponseTransformer,
     security: [{ scheme: 'bearer', type: 'http' }],
     url: '/Users/self/items/{id}/upgrade',
-    ...options
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
 });
 
 /**

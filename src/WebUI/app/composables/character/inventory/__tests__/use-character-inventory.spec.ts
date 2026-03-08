@@ -136,9 +136,9 @@ describe('useCharacterInventory', () => {
   })
 
   it('should upgrade user item and refresh data', async () => {
-    await (useCharacterInventory().onUpgradeUserItem(3))
+    await (useCharacterInventory().onUpgradeUserItem(3, 1))
 
-    expect(mockedUpgradeUserItem).toHaveBeenCalledWith(3)
+    expect(mockedUpgradeUserItem).toHaveBeenCalledWith(3, 1)
     expectRefreshData()
   })
 

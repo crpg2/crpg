@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <UiDataMedia class="font-bold text-primary" icon="crpg:blacksmith">
+  <UiDataMedia :size class="font-bold text-primary" icon="crpg:blacksmith">
     <template #default="{ classes }">
       <slot v-bind="{ classes }">
         <span

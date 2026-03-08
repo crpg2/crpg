@@ -13,7 +13,7 @@ namespace Crpg.Application.UTest.Items;
 public class UpgradeItemCommandTest : TestBase
 {
     [Test]
-    public async Task Basic()
+    public async Task UpgradeItemFromRank0ToRank1()
     {
         Item item00 = new() { Id = "a_h0", BaseId = "a", Price = 100, Enabled = true, Rank = 0 };
         Item item01 = new() { Id = "a_h1", BaseId = "a", Price = 100, Enabled = true, Rank = 1 };
@@ -58,6 +58,7 @@ public class UpgradeItemCommandTest : TestBase
         {
             UserItemId = userItem0.Id,
             UserId = user.Id,
+            UpgradeRank = 1,
         }, CancellationToken.None);
 
         var userDb = await AssertDb.Users
@@ -83,17 +84,21 @@ public class UpgradeItemCommandTest : TestBase
     }
 
     [Test]
-    public async Task CannotUpgradeNonExistingItem()
+    public async Task UpgradeItemToMaxRank()
     {
-        Item item0 = new() { Id = "a_h12", BaseId = "a", Price = 100, Enabled = true, Rank = 12 };
+        Item item00 = new() { Id = "a_h0", BaseId = "a", Price = 100, Enabled = true, Rank = 0 };
+        Item item03 = new() { Id = "a_h3", BaseId = "a", Price = 100, Enabled = true, Rank = 3 };
+
+        UserItem userItem0 = new() { Item = item00 };
+
         User user = new()
         {
             Gold = 100,
-            Items = { new() },
             HeirloomPoints = 10,
+            Items = { userItem0 },
         };
         ArrangeDb.Users.Add(user);
-        ArrangeDb.Items.Add(item0);
+        ArrangeDb.Items.AddRange(item00, item03);
         await ArrangeDb.SaveChangesAsync();
 
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
@@ -101,23 +106,121 @@ public class UpgradeItemCommandTest : TestBase
         UpgradeUserItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object);
         var result = await handler.Handle(new UpgradeUserItemCommand
         {
-            UserItemId = 15,
+            UserItemId = userItem0.Id,
             UserId = user.Id,
+            UpgradeRank = 3,
         }, CancellationToken.None);
 
-        var errorCode = result.Errors![0].Code;
-        Assert.That(errorCode, Is.EqualTo(ErrorCode.UserItemNotFound));
+        var upgradedUserItem = result.Data!;
+        Assert.That(upgradedUserItem.Item.Rank, Is.EqualTo(3));
+
+        var userDb = await AssertDb.Users.Include(u => u.Items).FirstAsync(u => u.Id == user.Id);
+        Assert.That(userDb.HeirloomPoints, Is.EqualTo(7)); // 10 - 3
     }
 
     [Test]
-    public async Task NotFoundUser()
+    public async Task UpgradeItemFromRank1ToRank2()
+    {
+        Item item01 = new() { Id = "a_h1", BaseId = "a", Price = 100, Enabled = true, Rank = 1 };
+        Item item02 = new() { Id = "a_h2", BaseId = "a", Price = 100, Enabled = true, Rank = 2 };
+
+        UserItem userItem0 = new() { Item = item01 };
+
+        User user = new()
+        {
+            Gold = 100,
+            HeirloomPoints = 5,
+            Items = { userItem0 },
+        };
+        ArrangeDb.Users.Add(user);
+        ArrangeDb.Items.AddRange(item01, item02);
+        await ArrangeDb.SaveChangesAsync();
+
+        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+
+        UpgradeUserItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object);
+        var result = await handler.Handle(new UpgradeUserItemCommand
+        {
+            UserItemId = userItem0.Id,
+            UserId = user.Id,
+            UpgradeRank = 2,
+        }, CancellationToken.None);
+
+        var upgradedUserItem = result.Data!;
+        Assert.That(upgradedUserItem.Item.Rank, Is.EqualTo(2));
+        Assert.That(upgradedUserItem.Item.BaseId, Is.EqualTo(item01.BaseId));
+
+        var userDb = await AssertDb.Users.Include(u => u.Items).FirstAsync(u => u.Id == user.Id);
+        Assert.That(userDb.HeirloomPoints, Is.EqualTo(4)); // 5 - 1 = 4
+    }
+
+    [Test]
+    public async Task BrokenItemCannotBeUpgraded()
+    {
+        Item item0 = new() { Id = "a_h0", BaseId = "a", Price = 100, Enabled = true, Rank = 0 };
+        Item item1 = new() { Id = "a_h1", BaseId = "a", Price = 100, Enabled = true, Rank = 1 };
+
+        UserItem userItem0 = new() { Item = item0, IsBroken = true };
+
+        User user = new()
+        {
+            Gold = 100,
+            HeirloomPoints = 5,
+            Items = { userItem0 },
+        };
+
+        ArrangeDb.Users.Add(user);
+        ArrangeDb.Items.AddRange(item0, item1);
+        await ArrangeDb.SaveChangesAsync();
+
+        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+
+        UpgradeUserItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object);
+        var result = await handler.Handle(new UpgradeUserItemCommand
+        {
+            UserItemId = userItem0.Id,
+            UserId = user.Id,
+            UpgradeRank = 1,
+        }, CancellationToken.None);
+
+        Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.ItemBroken));
+    }
+
+    [Test]
+    public async Task CannotUpgradeNonExistingItem()
+    {
+        User user = new()
+        {
+            Gold = 100,
+            Items = { new() },
+            HeirloomPoints = 10,
+        };
+        ArrangeDb.Users.Add(user);
+        await ArrangeDb.SaveChangesAsync();
+
+        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+
+        UpgradeUserItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object);
+        var result = await handler.Handle(new UpgradeUserItemCommand
+        {
+            UserItemId = 15, // Non-existent UserItem ID
+            UserId = user.Id,
+            UpgradeRank = 1,
+        }, CancellationToken.None);
+
+        Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.UserItemNotFound));
+    }
+
+    [Test]
+    public async Task CannotUpgradeItemForNonExistentUser()
     {
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
         UpgradeUserItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object);
         var result = await handler.Handle(new UpgradeUserItemCommand
         {
             UserItemId = 50,
-            UserId = 1,
+            UserId = 1, // Non-existent user ID
+            UpgradeRank = 1,
         }, CancellationToken.None);
         Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.UserNotFound));
     }
@@ -144,59 +247,26 @@ public class UpgradeItemCommandTest : TestBase
         {
             UserItemId = user.Items[0].Id,
             UserId = user.Id,
+            UpgradeRank = 1,
         }, CancellationToken.None);
 
-        var errorCode = result.Errors![0].Code;
-        Assert.That(errorCode, Is.EqualTo(ErrorCode.ItemNotUpgradable));
+        Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.ItemNotUpgradable));
     }
 
     [Test]
-    public async Task AlreadyOwnedHeirloom()
+    public async Task InsufficientHeirloomPointsForUpgrade()
     {
         Item item0 = new() { Id = "a_h0", BaseId = "a", Price = 100, Enabled = true, Rank = 0 };
-        Item item1 = new() { Id = "a_h1", BaseId = "a", Price = 100, Enabled = true, Rank = 1 };
-        User user = new()
-        {
-            Gold = 100,
-            Items = { new() { Item = item0 }, new() { Item = item1 } },
-            HeirloomPoints = 5,
-        };
-        ArrangeDb.Users.Add(user);
-        ArrangeDb.Items.Add(item0);
-        ArrangeDb.Items.Add(item1);
-        await ArrangeDb.SaveChangesAsync();
-
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-
-        UpgradeUserItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object);
-        var result = await handler.Handle(new UpgradeUserItemCommand
-        {
-            UserItemId = user.Items[0].Id,
-            UserId = user.Id,
-        }, CancellationToken.None);
-
-        Assert.That(result.Errors, Is.Null);
-
-        var userDb = await AssertDb.Users
-            .Include(u => u.Items)
-            .FirstAsync(u => u.Id == user.Id);
-        Assert.That(userDb.Items.Count, Is.EqualTo(2));
-    }
-
-    [Test]
-    public async Task CannotUpgradeWithNoHeirloomPoints()
-    {
-        Item item0 = new() { Id = "a_h0", BaseId = "a", Price = 100, Enabled = true, Rank = 0 };
-        Item item1 = new() { Id = "a_h1", BaseId = "a", Price = 100, Enabled = true, Rank = 1 };
+        Item item3 = new() { Id = "a_h3", BaseId = "a", Price = 100, Enabled = true, Rank = 3 };
         User user = new()
         {
             Gold = 100,
             Items = { new() { Item = item0 } },
-            HeirloomPoints = 0,
+            HeirloomPoints = 1,
         };
         ArrangeDb.Users.Add(user);
         ArrangeDb.Items.Add(item0);
-        ArrangeDb.Items.Add(item1);
+        ArrangeDb.Items.Add(item3);
         await ArrangeDb.SaveChangesAsync();
 
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
@@ -206,16 +276,16 @@ public class UpgradeItemCommandTest : TestBase
         {
             UserItemId = user.Items[0].Id,
             UserId = user.Id,
+            UpgradeRank = 3,
         }, CancellationToken.None);
 
-        var errorCode = result.Errors![0].Code;
-        Assert.That(errorCode, Is.EqualTo(ErrorCode.NotEnoughHeirloomPoints));
+        Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.NotEnoughHeirloomPoints));
     }
 
     [Test]
-    public async Task CannotUpgradeMaxRankItem()
+    public async Task CannotUpgradeWithInvalidRankZero()
     {
-        Item item0 = new() { Id = "a_h12", BaseId = "a", Price = 100, Enabled = true, Rank = 12 };
+        Item item0 = new() { Id = "a_h0", BaseId = "a", Price = 100, Enabled = true, Rank = 0 };
         User user = new()
         {
             Gold = 100,
@@ -233,9 +303,64 @@ public class UpgradeItemCommandTest : TestBase
         {
             UserItemId = user.Items[0].Id,
             UserId = user.Id,
+            UpgradeRank = 0,
         }, CancellationToken.None);
 
-        var errorCode = result.Errors![0].Code;
-        Assert.That(errorCode, Is.EqualTo(ErrorCode.UserItemMaxRankReached));
+        Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.InvalidItemUpgradeRank));
+    }
+
+    [Test]
+    public async Task CannotUpgradeWithInvalidRankAboveMax()
+    {
+        Item item0 = new() { Id = "a_h0", BaseId = "a", Price = 100, Enabled = true, Rank = 0 };
+        User user = new()
+        {
+            Gold = 100,
+            Items = { new() { Item = item0 } },
+            HeirloomPoints = 10,
+        };
+        ArrangeDb.Users.Add(user);
+        ArrangeDb.Items.Add(item0);
+        await ArrangeDb.SaveChangesAsync();
+
+        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+
+        UpgradeUserItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object);
+        var result = await handler.Handle(new UpgradeUserItemCommand
+        {
+            UserItemId = user.Items[0].Id,
+            UserId = user.Id,
+            UpgradeRank = 4,
+        }, CancellationToken.None);
+
+        Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.InvalidItemUpgradeRank));
+    }
+
+    [Test]
+    public async Task TargetItemDoesNotExist()
+    {
+        Item item0 = new() { Id = "a_h0", BaseId = "a", Price = 100, Enabled = true, Rank = 0 };
+        User user = new()
+        {
+            Gold = 100,
+            Items = { new() { Item = item0 } },
+            HeirloomPoints = 10,
+        };
+        ArrangeDb.Users.Add(user);
+        ArrangeDb.Items.Add(item0);
+
+        await ArrangeDb.SaveChangesAsync();
+
+        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+
+        UpgradeUserItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object);
+        var result = await handler.Handle(new UpgradeUserItemCommand
+        {
+            UserItemId = user.Items[0].Id,
+            UserId = user.Id,
+            UpgradeRank = 1,
+        }, CancellationToken.None);
+
+        Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.UserItemMaxRankReached));
     }
 }

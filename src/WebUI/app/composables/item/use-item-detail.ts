@@ -8,12 +8,12 @@ interface ElementBound {
   width: number
 }
 
-interface OpenedItem {
+export interface OpenedItem {
   id: string // itemId
   bound: ElementBound
 }
 
-const getElementBounds = (el: HTMLElement) => {
+const getElementBounds = (el: HTMLElement): ElementBound => {
   const { width, x, y } = el.getBoundingClientRect()
   return { width, x, y }
 }
@@ -38,12 +38,14 @@ export const _useItemDetail = () => {
     openedItems.value = openedItems.value.filter(oi => oi.id !== itemId)
   }
 
-  const toggleItemDetail = (target: HTMLElement, itemId: string) => {
+  const toggleItemDetail = (target: HTMLElement | ElementBound, itemId: string): void => {
     if (isOpen(itemId)) {
       closeItemDetail(itemId)
       return
     }
-    openItemDetail({ id: itemId, bound: getElementBounds(target) })
+    const bound = 'getBoundingClientRect' in target ? getElementBounds(target) : target
+
+    openItemDetail({ id: itemId, bound })
   }
 
   const closeAll = () => {
