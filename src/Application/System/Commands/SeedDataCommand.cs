@@ -27,7 +27,7 @@ public record SeedDataCommand : IMediatorRequest
 {
     internal class Handler : IMediatorRequestHandler<SeedDataCommand>
     {
-        private static readonly Dictionary<SettlementType, int> StrategusSettlementDefaultTroops = new()
+        private static readonly Dictionary<SettlementType, int> CampaignSettlementDefaultTroops = new()
         {
             // TODO: to const
             [SettlementType.Village] = 1000,
@@ -42,11 +42,11 @@ public record SeedDataCommand : IMediatorRequest
         private readonly IExperienceTable _experienceTable;
         private readonly IActivityLogService _activityLogService;
         private readonly IUserNotificationService _userNotificationService;
-        private readonly IStrategusMap _strategusMap;
+        private readonly ICampaignMap _campaignMap;
         private readonly ISettlementsSource _settlementsSource;
 
         public Handler(ICrpgDbContext db, IItemsSource itemsSource, IApplicationEnvironment appEnv,
-            ICharacterService characterService, IExperienceTable experienceTable, IStrategusMap strategusMap,
+            ICharacterService characterService, IExperienceTable experienceTable, ICampaignMap campaignMap,
             ISettlementsSource settlementsSource, IActivityLogService activityLogService, IUserNotificationService userNotificationService)
         {
             _db = db;
@@ -54,13 +54,13 @@ public record SeedDataCommand : IMediatorRequest
             _appEnv = appEnv;
             _characterService = characterService;
             _experienceTable = experienceTable;
-            _strategusMap = strategusMap;
+            _campaignMap = campaignMap;
             _settlementsSource = settlementsSource;
             _activityLogService = activityLogService;
             _userNotificationService = userNotificationService;
         }
 
-        public async Task<Result> Handle(SeedDataCommand request, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(SeedDataCommand request, CancellationToken cancellationToken)
         {
             await CreateOrUpdateItems(cancellationToken);
             await CreateOrUpdateSettlements(cancellationToken);
@@ -133,6 +133,28 @@ public record SeedDataCommand : IMediatorRequest
                 HeirloomPoints = 12,
                 ExperienceMultiplier = 1.09f,
                 Avatar = new Uri("https://avatars.akamai.steamstatic.com/d51d5155b1a564421c0b3fd5fb7eed7c4474e73d_full.jpg"),
+            };
+            User orle2 = new()
+            {
+                PlatformUserId = "76561198966586741",
+                Platform = Platform.Steam,
+                Name = "orle2",
+                Role = Role.Admin,
+                Gold = 1000000,
+                HeirloomPoints = 12,
+                ExperienceMultiplier = 1.09f,
+                Avatar = new Uri("https://avatars.steamstatic.com/159c371d4784cdfc93bad16612778003a573a70b_full.jpg"),
+            };
+            User vick = new()
+            {
+                PlatformUserId = "76561197973076266",
+                Platform = Platform.Steam,
+                Name = "vick.",
+                Role = Role.Admin,
+                Gold = 1000000,
+                HeirloomPoints = 12,
+                ExperienceMultiplier = 1.09f,
+                Avatar = new Uri("https://avatars.fastly.steamstatic.com/9f4bfcc04b22967cab0b3f3081772642e88cb915_full.jpg"),
             };
             User peeky = new()
             {
@@ -551,7 +573,7 @@ public record SeedDataCommand : IMediatorRequest
 
             User[] newUsers =
             {
-                takeo, orle, peeky, droob, baronCyborg, magnuclean, knitler, tjens, lerch, buddha, lancelot, bakhrat, distance,
+                takeo, orle, orle2, vick, peeky, droob, baronCyborg, magnuclean, knitler, tjens, lerch, buddha, lancelot, bakhrat, distance,
                 victorhh888, schumetzq, bryggan, ikarooz, kiwi, brainfart, falcom, opset, leanir, sellka, firebat,
                 ecko, neostralie, zorguy, azuma, elmaryk, namidaka, laHire, manik, ajroselle, skrael, bedo, lambic,
                 sanasar, vlad007, canp0g, shark, noobAmphetamine, mundete, aroyFalconer, insanitoid, scarface,
@@ -589,25 +611,36 @@ public record SeedDataCommand : IMediatorRequest
             UserItem orleItem7 = new() { User = orle, ItemId = "crpg_battania_fur_boots_v2_h3" };
             UserItem orleItem8 = new() { User = orle, ItemId = "crpg_nordic_leather_cap_v2_h3" };
             UserItem orleItem9 = new() { User = orle, ItemId = "crpg_eastern_wrapped_armguards_v2_h3" };
-            UserItem orleItem10 = new() { User = orle, ItemId = "crpg_blacksmith_hammer_v3_h0" };
+            UserItem orleItem10 = new() { User = orle, ItemId = "crpg_blacksmith_hammer_v4_h0" };
             UserItem orleItem11 = new() { User = orle, ItemId = "crpg_scythe_v2_h3" };
-            UserItem orleItem12 = new() { User = orle, ItemId = "crpg_rondel_v2_h3" };
+            UserItem orleItem12 = new() { User = orle, ItemId = "crpg_rondel_v3_h3" };
             UserItem orleItem13 = new() { User = orle, ItemId = "crpg_crossbow_j_v4_h3" };
-            UserItem orleItem14 = new() { User = orle, ItemId = "crpg_helping_hand_v3_h2" };
+            UserItem orleItem14 = new() { User = orle, ItemId = "crpg_helping_hand_v4_h2" };
             UserItem orleItem15 = new() { User = orle, ItemId = "crpg_bolt_c_v4_h0" };
             UserItem orleItem16 = new() { User = orle, ItemId = "crpg_wooden_sword_v3_h3" };
             UserItem orleItem17 = new() { User = orle, ItemId = "crpg_basic_imperial_leather_armor_v2_h3" };
-            UserItem orleItem18 = new() { User = orle, ItemId = "crpg_wooden_twohander_v3_h3" };
+            UserItem orleItem18 = new() { User = orle, ItemId = "crpg_wooden_twohander_v3_h0", IsBroken = true };
             UserItem orleItem19 = new() { User = orle, ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h1" };
-            UserItem elmarykItem1 = new() { User = elmaryk, ItemId = "crpg_longsword_v2_h3" };
+            UserItem elmarykItem1 = new() { User = elmaryk, ItemId = "crpg_longsword_v3_h3" };
             UserItem elmarykItem2 = new() { User = elmaryk, ItemId = "crpg_avalanche_v2_h2" };
             UserItem laHireItem1 = new() { User = laHire, ItemId = "crpg_iron_cavalry_sword_v1_h1" };
             UserItem laHirekItem2 = new() { User = laHire, ItemId = "crpg_simple_saber_v1_h2" };
             UserItem laHirekItem3 = new() { User = laHire, ItemId = "crpg_steel_round_shield_v4_h0" };
+            UserItem vickItem1 = new() { User = vick, ItemId = "crpg_armet_h1" };
+            UserItem vickItem2 = new() { User = vick, ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h0", };
+            UserItem vickItem3 = new() { User = vick, ItemId = "crpg_thamaskene_steel_spatha_v1_h2" };
+            UserItem vickItem4 = new() { User = vick, ItemId = "crpg_decorated_short_spatha_v1_h1" };
+            UserItem vickItem5 = new() { User = vick, ItemId = "crpg_scalpel_v1_h0" };
+            UserItem vickItem6 = new() { User = vick, ItemId = "crpg_wolf_shoulder_v2_h3" };
+            UserItem vickItem7 = new() { User = vick, ItemId = "crpg_battania_fur_boots_v2_h3" };
+            UserItem vickItem8 = new() { User = vick, ItemId = "crpg_nordic_leather_cap_v2_h3" };
+            UserItem vickItem9 = new() { User = vick, ItemId = "crpg_eastern_wrapped_armguards_v2_h3" };
+            UserItem vickItem10 = new() { User = vick, ItemId = "crpg_blacksmith_hammer_v4_h0" };
 
             UserItem[] newUserItems =
             {
-                takeoItem1, takeoItem2, orleItem1, orleItem2, orleItem3, orleItem4, orleItem5, orleItem6, orleItem7, orleItem8, orleItem9, orleItem10, orleItem11, orleItem12, orleItem13, orleItem14, orleItem15, orleItem16, orleItem17, orleItem18, orleItem19, elmarykItem1, elmarykItem2, laHireItem1, laHirekItem2, laHirekItem3,
+                takeoItem1, takeoItem2, orleItem1, orleItem2, orleItem3, orleItem4, orleItem5, orleItem6, orleItem7, orleItem8, orleItem9, orleItem10, orleItem11, orleItem12, orleItem13, orleItem14, orleItem15, orleItem16, orleItem17, orleItem18, orleItem19,
+                vickItem1, vickItem2, vickItem3, vickItem4, vickItem5, vickItem6, vickItem7, vickItem8, vickItem9, vickItem10, elmarykItem1, elmarykItem2, laHireItem1, laHirekItem2, laHirekItem3,
             };
 
             var existingUserItems = await _db.UserItems.ToDictionaryAsync(pi => pi.ItemId);
@@ -669,7 +702,7 @@ public record SeedDataCommand : IMediatorRequest
 
             Restriction[] newRestrictions =
             {
-                takeoRestriction0, takeoRestriction1, baronCyborgRestriction0, orleRestriction0, orleRestriction1
+                takeoRestriction0, takeoRestriction1, baronCyborgRestriction0, orleRestriction0, orleRestriction1,
             };
 
             _db.Restrictions.RemoveRange(await _db.Restrictions.ToArrayAsync());
@@ -829,7 +862,7 @@ public record SeedDataCommand : IMediatorRequest
                                 Value = 1900,
                                 Deviation = 100,
                                 Volatility = 100,
-                                CompetitiveValue = 1900,
+                                CompetitiveValue = 117.874374f,
                             },
                         }
                     },
@@ -852,6 +885,53 @@ public record SeedDataCommand : IMediatorRequest
             {
                 User = orle,
                 Name = "Orle Farmer",
+                Level = 25,
+                Experience = _experienceTable.GetExperienceForLevel(25) + (_experienceTable.GetExperienceForLevel(26) - _experienceTable.GetExperienceForLevel(25)) / 2,
+            };
+            Character orle2Character0 = new()
+            {
+                User = orle2,
+                Name = "Orle2 Peasant",
+                Level = 25,
+                Experience = _experienceTable.GetExperienceForLevel(25) + (_experienceTable.GetExperienceForLevel(26) - _experienceTable.GetExperienceForLevel(25)) / 2,
+            };
+            Character vickCharacter0 = new()
+            {
+                User = vick,
+                Name = "vick Soldier",
+                Level = 33,
+                Generation = 3,
+                Experience = _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) - _experienceTable.GetExperienceForLevel(33)) / 2,
+                Statistics = new List<CharacterStatistics>
+                {
+                    {
+                        new CharacterStatistics
+                        {
+                            Kills = 2,
+                            Deaths = 3,
+                            Assists = 6,
+                            PlayTime = new TimeSpan(365, 0, 0, 20),
+                            GameMode = GameMode.CRPGDuel,
+                            Rating = new()
+                            {
+                                Value = 1900,
+                                Deviation = 100,
+                                Volatility = 100,
+                                CompetitiveValue = 1900,
+                            },
+                        }
+                    },
+                },
+                Characteristics = new CharacterCharacteristics
+                {
+                    Attributes = new CharacterAttributes { Points = 100 },
+                    Skills = new CharacterSkills { Points = 100 },
+                },
+            };
+            Character vickCharacter1 = new()
+            {
+                User = vick,
+                Name = "vick Peasant",
                 Level = 25,
                 Experience = _experienceTable.GetExperienceForLevel(25) + (_experienceTable.GetExperienceForLevel(26) - _experienceTable.GetExperienceForLevel(25)) / 2,
             };
@@ -1008,20 +1088,20 @@ public record SeedDataCommand : IMediatorRequest
                 User = krog,
                 Name = krog.Name,
             };
-            Character noobAmphetamine0 = new()
+            Character noobAmphetamineCharacter0 = new()
             {
                 User = noobAmphetamine,
                 Name = noobAmphetamine.Name,
             };
-            Character baronCyborg0 = new()
+            Character baronCyborgCharacter0 = new()
             {
                 User = baronCyborg,
                 Name = baronCyborg.Name,
             };
             Character[] newCharacters =
             {
-                takeoCharacter0, takeoCharacter1, takeoCharacter2, namidakaCharacter0, peekyCharacter0, orleCharacter0, orleCharacter1, orleCharacter2, droobCharacter0,
-                falcomCharacter0, victorhh888Character0, sellkaCharacter0, krogCharacter0, kadseCharacter0, noobAmphetamine0, baronCyborg0, ladoeaCharacter0,
+                takeoCharacter0, takeoCharacter1, takeoCharacter2, namidakaCharacter0, peekyCharacter0, orleCharacter0, orleCharacter1, orleCharacter2, orle2Character0, droobCharacter0, vickCharacter0, vickCharacter1,
+                falcomCharacter0, victorhh888Character0, sellkaCharacter0, krogCharacter0, kadseCharacter0, noobAmphetamineCharacter0, baronCyborgCharacter0, ladoeaCharacter0,
             };
 
             var existingCharacters = await _db.Characters.ToDictionaryAsync(c => c.Name);
@@ -1117,18 +1197,22 @@ public record SeedDataCommand : IMediatorRequest
 
             Clan droobClan = new()
             {
-                Tag = "DROO",
+                Tag = "TFL",
                 PrimaryColor = 4278190318,
                 SecondaryColor = 4294957414,
-                Name = "Droob clan",
+                Name = "The Fancy Lads",
                 BannerKey = string.Empty,
                 Region = Region.Eu,
+                Languages = { Languages.En },
             };
 
             ClanMember droobMember = new() { User = droob, Clan = droobClan, Role = ClanMemberRole.Leader, };
 
             ClanMember takeoMember = new() { User = takeo, Clan = pecores, Role = ClanMemberRole.Officer, };
+            ClanMember vickMember = new() { User = vick, Clan = pecores, Role = ClanMemberRole.Officer, };
             ClanMember orleMember = new() { User = orle, Clan = pecores, Role = ClanMemberRole.Leader, };
+            ClanMember orle2Member = new() { User = orle2, Clan = droobClan, Role = ClanMemberRole.Officer, };
+
             ClanMember elmarykMember = new() { User = elmaryk, Clan = pecores, Role = ClanMemberRole.Officer, };
             ClanMember laHireMember = new() { User = laHire, Clan = pecores, Role = ClanMemberRole.Member };
 
@@ -1343,7 +1427,7 @@ public record SeedDataCommand : IMediatorRequest
 
             ClanMember[] newClanMembers =
             {
-                takeoMember, orleMember, elmarykMember, neostralieMember, laHireMember, azumaMember, zorguyMember,
+                takeoMember, orleMember, orle2Member, vickMember, elmarykMember, neostralieMember, laHireMember, azumaMember, zorguyMember,
                 eckoMember, firebatMember, sellkaMember, leanirMember, opsetMember,
                 falcomMember, brainfartMember, kiwiMember, ikaroozMember, brygganMember, schumetzqMember,
                 victorhh888Member, distanceMember, bakhratMember, lancelotMember,
@@ -1510,20 +1594,60 @@ public record SeedDataCommand : IMediatorRequest
             Party orleParty = new()
             {
                 User = orle,
-                Troops = 1,
-                // Troops = 100,
-                // Position = epicrotea.Position,
-                Position = rhotae.Position,
-                // Position = new Point(114.21076699552688, -109.37351870100285),
+                Troops = 1200,
+                Gold = 100_000,
+                // Position = new Point(118.664627, -110.482864),
+                Position = new Point(120.421875, -108.28125),
+                // Status = PartyStatus.Idle,
                 Status = PartyStatus.IdleInSettlement,
-                // TargetedSettlement = epicrotea,
-                TargetedSettlement = rhotae,
+                CurrentSettlement = rhotae,
+                Items =
+                [
+                    new() { Count = 113, ItemId = "crpg_wolf_shoulder_v2_h0" },
+                    new() { Count = 111, ItemId = "crpg_scalpel_v1_h0" },
+                    new() { Count = 112, ItemId = "crpg_decorated_short_spatha_v1_h0" },
+                    new() { Count = 15, ItemId = "crpg_mount1_maneuverable_14_v3_h0" },
+                ],
+            };
+            Party orle2Party = new()
+            {
+                User = orle2,
+                Troops = 100,
+                Gold = 5_000,
+                Position = new Point(120.113023, -110.418929),
+                // Status = PartyStatus.InBattle,
+                Status = PartyStatus.Idle,
+                Items =
+                [
+                    new() { Count = 12, ItemId = "crpg_simple_saber_v1_h0" },
+                    new() { Count = 2, ItemId = "crpg_eastern_wrapped_armguards_v2_h0" },
+                    new() { Count = 1112, ItemId = "crpg_wolf_shoulder_v2_h0" },
+                ],
+            };
+            Party droobParty = new()
+            {
+                User = droob,
+                Troops = 500,
+                Position = new Point(121.173023, -111.498929),
+                // Status = PartyStatus.InBattle,
+                Status = PartyStatus.Idle,
+                Items =
+                [
+                    new() { Count = 212, ItemId = "crpg_armet_h0" },
+                ],
+            };
+            Party namidakaParty = new()
+            {
+                User = namidaka,
+                Troops = 11,
+                Position = new Point(135, -99),
+                Status = PartyStatus.Idle,
             };
             Party brainfartParty = new()
             {
                 User = brainfart,
                 Troops = 1000,
-                Position = new Point(112, -88),
+                Position = new Point(122.173023, -112.498929),
                 Status = PartyStatus.Idle,
             };
             Party kiwiParty = new()
@@ -1616,7 +1740,7 @@ public record SeedDataCommand : IMediatorRequest
                 Troops = 4,
                 Position = epicrotea.Position,
                 Status = PartyStatus.IdleInSettlement,
-                TargetedSettlement = epicrotea,
+                CurrentSettlement = epicrotea,
             };
             Party victorhh888Party = new()
             {
@@ -1631,7 +1755,7 @@ public record SeedDataCommand : IMediatorRequest
                 Troops = 3,
                 Position = dyopalis.Position,
                 Status = PartyStatus.RecruitingInSettlement,
-                TargetedSettlement = dyopalis,
+                CurrentSettlement = dyopalis,
             };
             Party distanceParty = new()
             {
@@ -1639,7 +1763,7 @@ public record SeedDataCommand : IMediatorRequest
                 Troops = 1,
                 Position = rhotae.Position,
                 Status = PartyStatus.RecruitingInSettlement,
-                TargetedSettlement = rhotae,
+                CurrentSettlement = rhotae,
             };
             Party bakhratParty = new()
             {
@@ -1647,7 +1771,7 @@ public record SeedDataCommand : IMediatorRequest
                 Troops = 120,
                 Position = rhotae.Position,
                 Status = PartyStatus.RecruitingInSettlement,
-                TargetedSettlement = rhotae,
+                CurrentSettlement = rhotae,
             };
             Party lancelotParty = new()
             {
@@ -1655,7 +1779,7 @@ public record SeedDataCommand : IMediatorRequest
                 Troops = 243,
                 Position = rhotae.Position,
                 Status = PartyStatus.Idle,
-                TargetedSettlement = rhotae,
+                CurrentSettlement = rhotae,
             };
             Party buddhaParty = new()
             {
@@ -1663,303 +1787,173 @@ public record SeedDataCommand : IMediatorRequest
                 Troops = 49,
                 Position = nideon.Position,
                 Status = PartyStatus.IdleInSettlement,
-                TargetedSettlement = rhotae,
+                CurrentSettlement = rhotae,
             };
             Party lerchParty = new()
             {
                 User = lerch,
                 Troops = 10,
                 Position = new Point(107, -102),
-                Status = PartyStatus.MovingToSettlement,
-                TargetedSettlement = rhotae,
+                Status = PartyStatus.Idle,
+                CurrentSettlement = rhotae,
             };
             Party tjensParty = new()
             {
                 User = tjens,
                 Troops = 500,
                 Position = new Point(112, -93),
-                Status = PartyStatus.MovingToSettlement,
-                TargetedSettlement = rhotae,
+                Status = PartyStatus.Idle,
+                CurrentSettlement = rhotae,
             };
             Party knitlerParty = new()
             {
                 User = knitler,
                 Troops = 3,
                 Position = new Point(124, -102),
-                Status = PartyStatus.MovingToSettlement,
-                TargetedSettlement = rhotae,
+                Status = PartyStatus.Idle,
+                CurrentSettlement = rhotae,
             };
             Party magnucleanParty = new()
             {
                 User = magnuclean,
                 Troops = 100,
                 Position = new Point(120, -88),
-                Status = PartyStatus.MovingToSettlement,
-                TargetedSettlement = rhemtoil,
+                Status = PartyStatus.Idle,
+                CurrentSettlement = rhemtoil,
             };
             Party baronCyborgParty = new()
             {
                 User = baronCyborg,
                 Troops = 9,
                 Position = new Point(120, -88),
-                Status = PartyStatus.MovingToSettlement,
-                TargetedSettlement = mecalovea,
+                Status = PartyStatus.Idle,
+                CurrentSettlement = mecalovea,
             };
             Party scarfaceParty = new()
             {
                 User = scarface,
                 Troops = 25,
                 Position = new Point(119, -105),
-                Status = PartyStatus.MovingToSettlement,
-                TargetedSettlement = hertogeaCastle,
+                Status = PartyStatus.Idle,
+                CurrentSettlement = hertogeaCastle,
             };
             Party neostralieParty = new()
             {
                 User = neostralie,
                 Troops = 1,
                 Position = new Point(128, -97),
-                Status = PartyStatus.MovingToSettlement,
-                TargetedSettlement = potamis,
+                Status = PartyStatus.Idle,
+                CurrentSettlement = potamis,
             };
             Party manikParty = new()
             {
                 User = manik,
                 Troops = 1,
                 Position = new Point(129, -102),
-                Status = PartyStatus.MovingToAttackParty,
-                TargetedParty = neostralieParty,
+                Status = PartyStatus.Idle,
             };
             Party ajroselleParty = new()
             {
                 User = ajroselle,
                 Troops = 1,
                 Position = new Point(130, -107),
-                Status = PartyStatus.MovingToAttackParty,
-                TargetedParty = manikParty,
+                Status = PartyStatus.Idle,
             };
             Party skraelParty = new()
             {
                 User = skrael,
                 Troops = 1,
                 Position = new Point(126, -93),
-                Status = PartyStatus.MovingToAttackParty,
-                TargetedParty = neostralieParty,
+                Status = PartyStatus.Idle,
             };
             Party bedoParty = new()
             {
                 User = bedo,
                 Troops = 300,
                 Position = new Point(114, -101),
-                Status = PartyStatus.MovingToAttackSettlement,
-                TargetedSettlement = gersegosCastle,
+                Status = PartyStatus.Idle,
             };
             Party lambicParty = new()
             {
                 User = lambic,
                 Troops = 87,
                 Position = new Point(113, -98),
-                Status = PartyStatus.MovingToAttackSettlement,
-                TargetedSettlement = gersegosCastle,
+                Status = PartyStatus.Idle,
             };
             Party sanasarParty = new()
             {
                 User = sanasar,
                 Troops = 21,
                 Position = new Point(119, -101),
-                Status = PartyStatus.MovingToAttackSettlement,
-                TargetedSettlement = rhotae,
+                Status = PartyStatus.Idle,
             };
             Party vlad007Party = new()
             {
                 User = vlad007,
                 Troops = 21,
                 Position = new Point(119, -101),
-                Status = PartyStatus.MovingToAttackSettlement,
-                TargetedSettlement = rhotae,
+                Status = PartyStatus.Idle,
             };
             Party canp0GParty = new()
             {
                 User = canp0g,
                 Troops = 1,
                 Position = rhesosCastle.Position,
-                Status = PartyStatus.MovingToPoint,
-                Waypoints = new MultiPoint(new[] { new Point(125, -97) }),
+                Status = PartyStatus.Idle,
             };
             Party sharkParty = new()
             {
                 User = shark,
                 Troops = 1,
                 Position = new Point(105, -107),
-                Status = PartyStatus.MovingToPoint,
-                Waypoints = new MultiPoint(new[] { new Point(121, -99) }),
+                Status = PartyStatus.Idle,
             };
             Party noobAmphetamineParty = new()
             {
                 User = noobAmphetamine,
                 Troops = 1,
                 Position = new Point(107, -100),
-                Status = PartyStatus.MovingToPoint,
-                Waypoints = new MultiPoint(new[] { new Point(112, -88) }),
+                Status = PartyStatus.Idle,
             };
             Party mundeteParty = new()
             {
                 User = mundete,
                 Troops = 1,
                 Position = new Point(112, -99),
-                Status = PartyStatus.FollowingParty,
-                TargetedParty = sharkParty,
+                Status = PartyStatus.Idle,
             };
             Party aroyFalconerParty = new()
             {
                 User = aroyFalconer,
                 Troops = 1,
                 Position = new Point(123, -88),
-                Status = PartyStatus.MovingToPoint,
-                Waypoints = new MultiPoint(new[] { new Point(135, -98) }),
+                Status = PartyStatus.Idle,
             };
             Party insanitoidParty = new()
             {
                 User = insanitoid,
                 Troops = 1,
                 Position = new Point(135, -98),
-                Status = PartyStatus.MovingToPoint,
-                Waypoints = new MultiPoint(new[] { new Point(123, -88) }),
-            };
-            Party namidakaParty = new()
-            {
-                User = namidaka,
-                Troops = 11,
-                Position = new Point(135, -99),
-                Status = PartyStatus.FollowingParty,
-                TargetedParty = insanitoidParty,
-            };
-            Party xDemParty = new()
-            {
-                User = xDem,
-                Troops = 250,
-                Position = new Point(nideon.Position.X - 0.2, nideon.Position.Y - 0.2),
-                Status = PartyStatus.InBattle,
-                TargetedSettlement = nideon,
-            };
-            Party disorotParty = new()
-            {
-                User = disorot,
-                Troops = 89,
-                Position = new Point(nideon.Position.X + 0.2, nideon.Position.Y + 0.2),
-                Status = PartyStatus.InBattle,
-            };
-            Party aceParty = new()
-            {
-                User = ace,
-                Troops = 104,
-                Position = new Point(nideon.Position.X - 0.2, nideon.Position.Y + 0.2),
-                Status = PartyStatus.InBattle,
-            };
-            Party sagarParty = new()
-            {
-                User = sagar,
-                Troops = 300,
-                Position = new Point(nideon.Position.X + 0.2, nideon.Position.Y - 0.2),
                 Status = PartyStatus.Idle,
-            };
-            Party greenShadowParty = new()
-            {
-                User = greenShadow,
-                Troops = 31,
-                Position = new Point(106.986, -110.171),
-                Status = PartyStatus.InBattle,
-            };
-            Party hannibaruParty = new()
-            {
-                User = hannibaru,
-                Troops = 42,
-                Position = new Point(107.109, -110.328),
-                Status = PartyStatus.InBattle,
-            };
-            Party drexxParty = new()
-            {
-                User = drexx,
-                Troops = 53,
-                Position = new Point(107.304, -110.203),
-                Status = PartyStatus.InBattle,
-            };
-            Party xaroshParty = new()
-            {
-                User = xarosh,
-                Troops = 64,
-                Position = new Point(107.210, -110.062),
-                Status = PartyStatus.InBattle,
-            };
-            Party tipsyTobyParty = new()
-            {
-                User = tipsyToby,
-                Troops = 75,
-                Position = new Point(107.304, -110.046),
-                Status = PartyStatus.Idle,
-            };
-            Party localAlphaParty = new()
-            {
-                User = localAlpha,
-                Troops = 75,
-                Position = new Point(107.304, -110.046),
-                Status = PartyStatus.Idle,
-            };
-            Party alexParty = new()
-            {
-                User = alex,
-                Troops = 86,
-                Position = new Point(107, -106),
-                Status = PartyStatus.InBattle,
-                TargetedSettlement = hertogea,
-            };
-            Party kedrynFuelParty = new()
-            {
-                User = kedrynFuel,
-                Troops = 97,
-                Position = new Point(107, -106.2),
-                Status = PartyStatus.FollowingParty,
-                TargetedParty = alexParty,
-            };
-            Party luqeroParty = new()
-            {
-                User = luqero,
-                Troops = 108,
-                Position = hertogea.Position,
-                Status = PartyStatus.IdleInSettlement,
-                TargetedSettlement = hertogea,
-            };
-            Party ilyaParty = new()
-            {
-                User = ilya,
-                Troops = 119,
-                Position = hertogea.Position,
-                Status = PartyStatus.IdleInSettlement,
-                TargetedSettlement = hertogea,
-            };
-            Party eztliParty = new()
-            {
-                User = eztli,
-                Troops = 86,
-                Position = leblenion.Position,
-                Status = PartyStatus.InBattle,
-                TargetedSettlement = leblenion,
             };
 
             // Users with no party: telesto, kypak, devoidDragon.
 
             Party[] newParties =
-            {
-                orleParty, brainfartParty, kiwiParty, ikaroozParty, laHireParty, brygganParty, elmarykParty, schumetzqParty,
-                azumaParty, zorguyParty, eckoParty, firebatParty, laenirParty, opsetParty, falcomParty,
-                victorhh888Party, sellkaParty, distanceParty, bakhratParty, lancelotParty, buddhaParty, lerchParty,
-                tjensParty, knitlerParty, magnucleanParty, baronCyborgParty, scarfaceParty, neostralieParty,
-                manikParty, ajroselleParty, skraelParty, bedoParty, lambicParty, sanasarParty, vlad007Party,
-                canp0GParty, sharkParty, noobAmphetamineParty, mundeteParty, aroyFalconerParty, insanitoidParty,
-                namidakaParty, xDemParty, disorotParty, aceParty, sagarParty, greenShadowParty, hannibaruParty,
-                drexxParty, xaroshParty, tipsyTobyParty, localAlphaParty, eztliParty,
-            };
+            [
+                orleParty, orle2Party, droobParty,
+                brainfartParty,
+                // brainfartParty, kiwiParty, ikaroozParty, laHireParty, brygganParty, elmarykParty, schumetzqParty,
+                // azumaParty, zorguyParty, eckoParty, firebatParty, laenirParty, opsetParty, falcomParty,
+                // victorhh888Party, sellkaParty, distanceParty, bakhratParty, lancelotParty, buddhaParty, lerchParty,
+                // tjensParty, knitlerParty, magnucleanParty, baronCyborgParty, scarfaceParty, neostralieParty,
+                // manikParty, ajroselleParty, skraelParty, bedoParty, lambicParty, sanasarParty, vlad007Party,
+                // canp0GParty, sharkParty, noobAmphetamineParty, mundeteParty, aroyFalconerParty, insanitoidParty,
+                // namidakaParty, xDemParty, disorotParty, aceParty, sagarParty, greenShadowParty, hannibaruParty,
+                // drexxParty, xaroshParty, tipsyTobyParty, localAlphaParty, eztliParty, droobParty, alexParty, luqeroParty, ilyaParty, kedrynFuelParty
+            ];
 
-            var existingParties = (await _db.Parties.ToArrayAsync())
+            var existingParties = (await _db.Parties.ToArrayAsync(cancellationToken: cancellationToken))
                 .Select(u => u.Id)
                 .ToHashSet();
             foreach (var newParty in newParties)
@@ -1970,188 +1964,172 @@ public record SeedDataCommand : IMediatorRequest
                 }
             }
 
-            Battle nideonBattle = new()
+            // TODO: FIXME: ...
+            rhotae.Owner = orleParty;
+            rhotae.OwnerId = orleParty.Id;
+
+            epicrotea.Owner = orle2Party;
+            epicrotea.OwnerId = orle2Party.Id;
+
+            List<SettlementItem> rhotaeItems =
+            [
+                new() { ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h0", Count = 10 },
+                new() { ItemId = "crpg_thamaskene_steel_spatha_v1_h2", Count = 110 },
+                new() { Count = 13, ItemId = "crpg_wolf_shoulder_v2_h0" },
+            ];
+
+            rhotae.Items = rhotaeItems;
+
+            _db.Settlements.Update(epicrotea);
+
+            Battle battle1 = new()
             {
-                Phase = BattlePhase.Preparation,
+                Phase = BattlePhase.Hiring,
                 Region = Region.Eu,
-                Position = nideon.Position,
+                Position = new Point(148.7421873, -113.3123),
                 Fighters =
                 {
-                    new BattleFighter
-                    {
-                        Party = xDemParty,
-                        Side = BattleSide.Attacker,
-                        Commander = true,
-                    },
-                    new BattleFighter
-                    {
-                        Party = disorotParty,
-                        Side = BattleSide.Attacker,
-                        Commander = false,
-                    },
-                    new BattleFighter
-                    {
-                        Party = null,
-                        Settlement = nideon,
-                        Side = BattleSide.Defender,
-                        Commander = true,
-                    },
-                    new BattleFighter
-                    {
-                        Party = aceParty,
-                        Side = BattleSide.Defender,
-                        Commander = false,
-                    },
+                    new BattleFighter { Party = orle2Party, Side = BattleSide.Attacker, Commander = true, ParticipantSlots = 1 },
+                    new BattleFighter { Party = baronCyborgParty, Side = BattleSide.Attacker, ParticipantSlots = 1 },
+                    new BattleFighter { Party = sellkaParty, Side = BattleSide.Defender, Commander = true, ParticipantSlots = 50 },
                 },
-                FighterApplications =
+                MercenaryApplications =
                 {
-                    new BattleFighterApplication
-                    {
-                        Party = sagarParty,
-                        Side = BattleSide.Defender,
-                        Status = BattleFighterApplicationStatus.Pending,
-                    },
+                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending, Note = "Lorem ipsum dolor sit amet consectetur.", Wage = 1500 },
+                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = takeoCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication { Character = droobCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Accepted },
+                },
+                Participants =
+                {
+                    new BattleParticipant { Side = BattleSide.Attacker, Character = orle2Character0, Type = BattleParticipantType.Party },
+                    new BattleParticipant { Side = BattleSide.Attacker, Character = baronCyborgCharacter0, Type = BattleParticipantType.Party },
+                    new BattleParticipant { Side = BattleSide.Defender, Character = sellkaCharacter0, Type = BattleParticipantType.Party },
+                    new BattleParticipant { Side = BattleSide.Attacker, Character = kadseCharacter0, Type = BattleParticipantType.Mercenary },
+                    new BattleParticipant { Side = BattleSide.Defender, Character = peekyCharacter0, Type = BattleParticipantType.Mercenary },
+                    new BattleParticipant { Side = BattleSide.Defender, Character = namidakaCharacter0, Type = BattleParticipantType.Mercenary },
+                    new BattleParticipant { Side = BattleSide.Defender, Character = krogCharacter0, Type = BattleParticipantType.Mercenary },
+                },
+                SideBriefings =
+                {
+                    new BattleSideBriefing { Side = BattleSide.Attacker, Note = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate" },
                 },
             };
-            Battle plainBattle = new()
+
+            Battle battle2 = new()
             {
-                Phase = BattlePhase.Preparation,
+                Phase = BattlePhase.Hiring,
                 Region = Region.Eu,
-                Position = new Point(107.187, -110.164),
+                Position = new Point(135.115, -95.1328125),
                 Fighters =
                 {
-                    new BattleFighter { Party = xaroshParty, Side = BattleSide.Attacker, Commander = true },
-                    new BattleFighter { Party = greenShadowParty, Side = BattleSide.Attacker, Commander = false },
-                    new BattleFighter { Party = drexxParty, Side = BattleSide.Defender, Commander = true },
-                    new BattleFighter { Party = hannibaruParty, Side = BattleSide.Defender, Commander = false },
+                    new BattleFighter { Party = orleParty, Side = BattleSide.Attacker, Commander = true },
+                    new BattleFighter { Party = orle2Party, Side = BattleSide.Defender, Commander = true },
                 },
-                FighterApplications =
+                Participants =
                 {
-                    new BattleFighterApplication
-                    {
-                        Party = tipsyTobyParty,
-                        Side = BattleSide.Attacker,
-                        Status = BattleFighterApplicationStatus.Pending,
-                    },
-                    new BattleFighterApplication
-                    {
-                        Party = localAlphaParty,
-                        Side = BattleSide.Defender,
-                        Status = BattleFighterApplicationStatus.Pending,
-                    },
+                    new BattleParticipant { Side = BattleSide.Attacker, Character = orleCharacter0, Type = BattleParticipantType.Party },
+                    new BattleParticipant { Side = BattleSide.Defender, Character = orle2Character0, Type = BattleParticipantType.Party },
+                    new BattleParticipant { Side = BattleSide.Attacker, Character = kadseCharacter0, Type = BattleParticipantType.Mercenary },
+                    new BattleParticipant { Side = BattleSide.Defender, Character = peekyCharacter0, Type = BattleParticipantType.Mercenary },
+                    new BattleParticipant { Side = BattleSide.Defender, Character = namidakaCharacter0, Type = BattleParticipantType.Mercenary },
+                    new BattleParticipant { Side = BattleSide.Defender, Character = krogCharacter0, Type = BattleParticipantType.Mercenary },
                 },
-                CreatedAt = DateTime.UtcNow,
+                MercenaryApplications =
+                {
+                    new BattleMercenaryApplication { Character = droobCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending, Wage = 11111, Note = "Some" },
+                },
             };
-            Battle hertogeaBattle = new()
+
+            Battle siege1 = new()
+            {
+                Phase = BattlePhase.Hiring,
+                Region = Region.Eu,
+                Position = epicrotea.Position,
+                Fighters =
+                {
+                    new BattleFighter { Party = baronCyborgParty, Side = BattleSide.Attacker, Commander = true },
+                    new BattleFighter { Party = orle2Party, Side = BattleSide.Defender, Commander = true },
+                    new BattleFighter { Settlement = epicrotea, Side = BattleSide.Defender },
+                },
+                Participants =
+                {
+                    new BattleParticipant { Side = BattleSide.Attacker, Character = baronCyborgCharacter0, Type = BattleParticipantType.Party },
+                    new BattleParticipant { Side = BattleSide.Defender, Character = orle2Character0, Type = BattleParticipantType.Party },
+                },
+                MercenaryApplications =
+                {
+                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                },
+                SideBriefings =
+                {
+                    new BattleSideBriefing { Side = BattleSide.Defender, Note = "Lorem ipsum dolor sit amet consectetur adipisicing elit. " },
+                },
+            };
+
+            Battle siege2 = new()
             {
                 Phase = BattlePhase.Hiring,
                 Region = Region.Eu,
                 Position = hertogea.Position,
                 Fighters =
                 {
-                    new BattleFighter
-                    {
-                        Party = alexParty,
-                        Side = BattleSide.Attacker,
-                        Commander = true,
-                    },
-                    new BattleFighter
-                    {
-                        Party = null,
-                        Settlement = hertogea,
-                        Side = BattleSide.Defender,
-                        Commander = true,
-                    },
+                    new BattleFighter { Party = baronCyborgParty, Side = BattleSide.Attacker, Commander = true },
+                    new BattleFighter { Settlement = hertogea, Side = BattleSide.Defender, Commander = true },
+                },
+                Participants =
+                {
+                    new BattleParticipant { Side = BattleSide.Attacker, Character = baronCyborgCharacter0, Type = BattleParticipantType.Party },
+                },
+            };
+
+            Battle testBattle = new()
+            {
+                Phase = BattlePhase.Preparation,
+                Region = Region.Eu,
+                Position = droobParty.Position,
+                Fighters =
+                {
+                    new BattleFighter { Party = orle2Party, Side = BattleSide.Attacker, Commander = true, ParticipantSlots = 50 },
+                    new BattleFighter { Party = droobParty, Side = BattleSide.Defender, Commander = true, ParticipantSlots = 50 },
                 },
                 FighterApplications =
                 {
-                    new BattleFighterApplication
-                    {
-                        Party = kedrynFuelParty,
-                        Side = BattleSide.Attacker,
-                        Status = BattleFighterApplicationStatus.Pending,
-                    },
-                    new BattleFighterApplication
-                    {
-                        Party = luqeroParty,
-                        Side = BattleSide.Defender,
-                        Status = BattleFighterApplicationStatus.Pending,
-                    },
-                    new BattleFighterApplication
-                    {
-                        Party = ilyaParty,
-                        Side = BattleSide.Defender,
-                        Status = BattleFighterApplicationStatus.Pending,
-                    },
+                    // new BattleFighterApplication { Party = orleParty, Side = BattleSide.Attacker, Status = BattleFighterApplicationStatus.Pending },
                 },
-                CreatedAt = DateTime.UtcNow.AddHours(-2),
-            };
-            Battle leblenionBattle = new()
-            {
-                Phase = BattlePhase.Hiring,
-                Region = Region.Eu,
-                Position = leblenion.Position,
-                Fighters =
-                {
-                    new BattleFighter
-                    {
-                        Party = eztliParty,
-                        Side = BattleSide.Attacker,
-                        Commander = true,
-                    },
-                    new BattleFighter
-                    {
-                        Party = null,
-                        Settlement = leblenion,
-                        Side = BattleSide.Defender,
-                        Commander = true,
-                    },
-                },
-                MercenaryApplications =
-                {
-                    new BattleMercenaryApplication
-                    {
-                        Character = falcomCharacter0,
-                        Side = BattleSide.Attacker,
-                        Status = BattleMercenaryApplicationStatus.Pending,
-                    },
-                    new BattleMercenaryApplication
-                    {
-                        Character = victorhh888Character0,
-                        Side = BattleSide.Defender,
-                        Status = BattleMercenaryApplicationStatus.Pending,
-                    },
-                    new BattleMercenaryApplication
-                    {
-                        Character = sellkaCharacter0,
-                        Side = BattleSide.Defender,
-                        Status = BattleMercenaryApplicationStatus.Pending,
-                    },
-                },
-                CreatedAt = DateTime.UtcNow.AddHours(-4),
             };
 
-            Battle[] newBattles = { nideonBattle, plainBattle, hertogeaBattle, leblenionBattle };
-            if (!await _db.Battles.AnyAsync())
-            {
-                _db.Battles.AddRange(newBattles);
-            }
+            // orle2Party.CurrentBattle = testBattle;
+            // droobParty.CurrentBattle = testBattle;
+            // orleParty.Position = testBattle.Position;
+            // orleParty.TargetedBattle = testBattle;
+
+            Battle[] newBattles = [
+                // battle1, battle2,
+                //
+                // siege1,
+                // siege2,
+                // testBattle,
+            ];
+
+            _db.Battles.RemoveRange(await _db.Battles.ToArrayAsync());
+            _db.Battles.AddRange(newBattles);
 
             Terrain[] terrains =
-            {
+            [
                 new()
                 {
                     Type = TerrainType.ThickForest,
-                    Boundary = new Polygon(new LinearRing(new Coordinate[] { new(99.210197, -101.434375), new(100.263933, -100.115272), new(100.749973, -99.783815), new(101.136596, -99.253485), new(101.445895, -98.734204), new(101.920889, -98.557427), new(101.920889, -98.557427), new(102.561578, -98.634767), new(103.467381, -98.446942), new(104.085977, -98.38065), new(104.174348, -97.761932), new(104.59411, -97.342087), new(105.168522, -97.264747), new(105.787118, -97.640398), new(105.865278, -98.253125), new(105.732492, -98.95625), new(105.451157, -99.7625), new(104.810658, -100.004687), new(104.162348, -100.48125), new(102.95946, -100.410937), new(102.365826, -101.090625), new(101.944034, -101.309375), new(101.483188, -101.715625), new(101.194182, -101.965625), new(100.616171, -102.160937), new(100.584927, -102.746875), new(100.131891, -102.934375), new(99.460148, -102.403125), new(99.210197, -101.434375), })),
+                    Boundary = new Polygon(new LinearRing([new(118.930359, -112.983176), new(119.891274, -114.631516), new(122.164935, -113.670824), new(121.188394, -112.264609), new(118.930359, -112.983176),])),
                 },
                 new()
                 {
-                    Type = TerrainType.ShallowWater,
-                    Boundary = new Polygon(new LinearRing(new Coordinate[] { new(104.174348, -97.761932), new(104.130833, -98.066596), new(103.420365, -98.192822), new(102.686134, -97.974021), new(101.694142, -97.184773), new(101.819117, -97.0363), new(102.756433, -97.677076), new(103.365688, -97.91932), new(104.174348, -97.761932), })),
+                    Type = TerrainType.SparseForest,
+                    Boundary = new Polygon(new LinearRing([new(118.875666, -111.452317), new(118.930359, -112.983176), new(121.188394, -112.264609), new(120.430507, -110.87434), new(118.875666, -111.452317),])),
                 },
-            };
+            ];
 
-            _db.Terrains.RemoveRange(await _db.Terrains.ToArrayAsync());
+            _db.Terrains.RemoveRange(await _db.Terrains.ToArrayAsync(cancellationToken));
             _db.Terrains.AddRange(terrains);
         }
 
@@ -2325,7 +2303,7 @@ public record SeedDataCommand : IMediatorRequest
 
         private async Task CreateOrUpdateSettlements(CancellationToken cancellationToken)
         {
-            var settlementsByName = (await _settlementsSource.LoadStrategusSettlements())
+            var settlementsByName = (await _settlementsSource.LoadCampaignSettlements())
                 .ToDictionary(i => i.Name);
             var dbSettlementsByNameRegion = await _db.Settlements
                 .ToDictionaryAsync(di => (di.Name, di.Region), cancellationToken);
@@ -2346,10 +2324,10 @@ public record SeedDataCommand : IMediatorRequest
                         Type = settlementCreation.Type,
                         Culture = settlementCreation.Culture,
                         Region = region,
-                        Position = _strategusMap.TranslatePositionForRegion(settlementCreation.Position, Region.Eu, region),
+                        Position = _campaignMap.TranslatePositionForRegion(settlementCreation.Position, Region.Eu, region),
                         Scene = settlementCreation.Scene,
-                        Troops = StrategusSettlementDefaultTroops[settlementCreation.Type],
-                        OwnerId = null,
+                        Troops = CampaignSettlementDefaultTroops[settlementCreation.Type],
+                        Owner = settlementCreation.Owner,
                     };
 
                     // TODO: hack FIXME: only in dev START
@@ -2366,12 +2344,12 @@ public record SeedDataCommand : IMediatorRequest
                     //         settlement.Items = rhotaeItems;
                     //     }
 
-                    //     if (settlement.Name == "Thersenion")
+                    // if (settlement.Name == "Thersenion")
                     //     {
                     //         settlement.OwnerId = 2;
                     //     }
 
-                    //     // TODO: hack FIXME: only in dev END
+                    // // TODO: hack FIXME: only in dev END
                     // }
 
                     if (dbSettlementsByNameRegion.TryGetValue((settlement.Name, settlement.Region), out Settlement? dbSettlement))

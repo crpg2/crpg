@@ -23,7 +23,7 @@ public record GetClanQuery : IMediatorRequest<ClanViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<ClanViewModel>> Handle(GetClanQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<ClanViewModel>> Handle(GetClanQuery req, CancellationToken cancellationToken)
         {
             var clan = await _db.Clans
                 .Where(c => c.Id == req.ClanId)

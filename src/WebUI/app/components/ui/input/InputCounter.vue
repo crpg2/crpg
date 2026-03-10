@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  id: string
+  id?: string
   current: number
   max: number
 }>()
@@ -13,6 +13,6 @@ defineProps<{
     aria-live="polite"
     role="status"
   >
-    {{ current }}/{{ max }}
+    {{ $n(current) }}/{{ $n(max) }}
   </div>
 </template>

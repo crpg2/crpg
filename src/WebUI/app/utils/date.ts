@@ -33,5 +33,5 @@ export const computeLeftMs = (createdAt: Date, duration: number) => {
   return result < 0 ? 0 : result
 }
 
-export const isBetween = (date: Date, start: Date, end: Date) =>
-  date.valueOf() >= start.valueOf() && date.valueOf() <= end.valueOf()
+export const isBetween = (date: Date, startDate: Date, endDate: Date) =>
+  date.valueOf() >= startDate.valueOf() && date.valueOf() <= endDate.valueOf()

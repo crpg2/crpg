@@ -58,7 +58,7 @@ internal class CrpgDuelSpawningBehavior : CrpgSpawningBehaviorBase
 
         bool hasMount = agent.SpawnEquipment[EquipmentIndex.Horse].Item != null;
         bool isRanged = agent.SpawnEquipment.HasWeaponOfClass(WeaponClass.Bolt) || agent.SpawnEquipment.HasWeaponOfClass(WeaponClass.Arrow) || agent.SpawnEquipment.HasWeaponOfClass(WeaponClass.Cartridge);
-        TroopType troopType = hasMount ? TroopType.Cavalry : (isRanged ? TroopType.Ranged : TroopType.Infantry);
+        TroopType troopType = hasMount ? TroopType.Cavalry : isRanged ? TroopType.Ranged : TroopType.Infantry;
         GameNetwork.BeginModuleEventAsServer(networkPeer);
         GameNetwork.WriteMessage(new CrpgUpdateDuelArenaType { PlayerTroopType = troopType });
         GameNetwork.EndModuleEventAsServer();

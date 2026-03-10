@@ -65,18 +65,19 @@
   "clanBannerKeyMaxLength": 100,
   "clanBannerKeyMaxIcons": 12,
   "clanBannerKeyRegex": "^(-?\\d+\\.)*-?\\d+$",
-  "strategusMapWidth": 256,
-  "strategusMapHeight": 215,
-  "strategusEquivalentDistance": 0.2, /* Distance at which two points are consider equivalent. */
-  "strategusInteractionDistance": 1, /* Distance to attack, trade, ... */
-  "strategusViewDistance": 8,
-  "strategusSpawningPositionCenter": [ 122, -105 ],
-  "strategusSpawningPositionRadius": 20,
-  "strategusTroopRecruitmentPerHour": 5,
-  "strategusMinPartyTroops": 1,
-  "strategusMaxPartyTroops": 300,
-  "strategusBattleInitiationDurationHours": 24,
-  "strategusBattleHiringDurationHours": 12,
-  "strategusMercenaryMaxWage": 100000,
-  "strategusMercenaryNoteMaxLength": 64
+  "campaignMapWidth": 256,
+  "campaignMapHeight": 215,
+  "campaignEquivalentDistance": 0.2, /* Distance at which two points are consider equivalent. */
+  "campaignInteractionDistance": 1, /* Distance to attack, trade, ... */
+  "campaignViewDistance": 8,
+  "campaignSpawningPositionCenter": [ 122, -105 ],
+  "campaignSpawningPositionRadius": 20,
+  "campaignTroopRecruitmentPerHour": 5,
+  "campaignMinPartyTroops": 1,
+  "campaignMaxPartyTroops": 300,
+  "campaignBattleInitiationDurationHours": 24,
+  "campaignBattleHiringDurationHours": 12,
+  "campaignMercenaryMaxWage": 100000,
+  "campaignMercenaryNoteMaxLength": 64,
+  "campaignBattleSideBriefingNoteMaxLength": 500
 }

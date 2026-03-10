@@ -1,3 +1,14 @@
+#if CRPG_SERVER
+using Crpg.Module.Api;
+using Crpg.Module.Common.ChatCommands;
+#else
+using Crpg.Module.GUI;
+using Crpg.Module.GUI.AmmoQuiverChange;
+using Crpg.Module.GUI.HudExtension;
+using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
+using TaleWorlds.MountAndBlade.View;
+using TaleWorlds.MountAndBlade.View.MissionViews;
+#endif
 using Crpg.Module.Common;
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Modes.Warmup;
@@ -8,20 +19,6 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Source.Missions;
 
-
-#if CRPG_SERVER
-using Crpg.Module.Api;
-using Crpg.Module.Common.ChatCommands;
-#else
-using Crpg.Module.GUI;
-using Crpg.Module.GUI.AmmoQuiverChange;
-using Crpg.Module.GUI.HudExtension;
-using TaleWorlds.MountAndBlade.Multiplayer;
-using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
-using TaleWorlds.MountAndBlade.View;
-using TaleWorlds.MountAndBlade.View.MissionViews;
-#endif
-
 namespace Crpg.Module.Modes.Siege;
 
 [ViewCreatorModule] // Exposes methods with ViewMethod attribute.
@@ -29,7 +26,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
 {
     private const string GameName = "cRPGSiege";
 
-    private static CrpgConstants _constants = default!; // Static so it's accessible from the views.
+    private static CrpgConstants _constants = null!; // Static so it's accessible from the views.
 
     public CrpgSiegeGameMode(CrpgConstants constants)
         : base(GameName)
@@ -86,11 +83,11 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
         ICrpgClient crpgClient = CrpgClient.Create();
         Game.Current.GetGameHandler<ChatCommandsComponent>()?.InitChatCommands(crpgClient);
         ChatBox chatBox = Game.Current.GetGameHandler<ChatBox>();
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent,
+        CrpgWarmupComponent warmupComponent = new(_constants,
             () => (new SiegeSpawnFrameBehavior(), new CrpgSiegeSpawningBehavior(_constants)));
         CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: false, enableRating: false);
 #else
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, null);
+        CrpgWarmupComponent warmupComponent = new(_constants, null);
 #endif
 
         MissionState.OpenNew(GameName,

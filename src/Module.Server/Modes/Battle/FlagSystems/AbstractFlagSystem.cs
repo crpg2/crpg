@@ -23,7 +23,7 @@ internal abstract class AbstractFlagSystem
     /// <summary>True if a random flag has been spawned.</summary>
     private bool _hasFlagCountChanged;
     private Timer? _checkFlagRemovalTimer;
-    private MissionTimer _flagUnlockTimer = default!;
+    private MissionTimer _flagUnlockTimer = null!;
 
     private FlagCapturePoint[] _flags = Array.Empty<FlagCapturePoint>();
     private Team?[] _flagOwners = Array.Empty<Team>();

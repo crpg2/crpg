@@ -1,30 +1,28 @@
 ﻿using Crpg.Module.Modes.TrainingGround;
-using TaleWorlds.Core;
 using TaleWorlds.Engine;
-using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
-using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.HUDExtensions;
-using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.KillFeed;
 
 namespace Crpg.Module.GUI.TrainingGround;
+
 internal class CrpgTrainingGroundVm : ViewModel
 {
     private readonly CrpgTrainingGroundMissionMultiplayerClient _client;
     private readonly MissionMultiplayerGameModeBaseClient _gameMode;
     private bool _isMyRepresentativeAssigned;
     private bool _isAgentBuiltForTheFirstTime = true;
-    private string _cachedPlayerClassID = string.Empty;
+    private string _cachedPlayerClassId = string.Empty;
     private Camera _missionCamera;
     private bool _isEnabled;
     private bool _areOngoingDuelsActive;
     private bool _isPlayerInDuel;
     private string _playerScoreText = string.Empty;
     private string _remainingRoundTime = string.Empty;
-    private CrpgTrainingGroundMarkersVm _markers = default!;
-    private CrpgDuelMatchVm _playerDuelMatch = default!;
-    private MBBindingList<CrpgDuelMatchVm> _ongoingDuels = default!;
+    private CrpgTrainingGroundMarkersVm _markers = null!;
+    private CrpgDuelMatchVm _playerDuelMatch = null!;
+    private MBBindingList<CrpgDuelMatchVm> _ongoingDuels = null!;
+
     [DataSourceProperty]
     public bool IsEnabled
     {
@@ -37,7 +35,7 @@ internal class CrpgTrainingGroundVm : ViewModel
             if (value != _isEnabled)
             {
                 _isEnabled = value;
-                OnPropertyChangedWithValue(value, "IsEnabled");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -54,7 +52,7 @@ internal class CrpgTrainingGroundVm : ViewModel
             if (value != _areOngoingDuelsActive)
             {
                 _areOngoingDuelsActive = value;
-                OnPropertyChangedWithValue(value, "AreOngoingDuelsActive");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -71,7 +69,7 @@ internal class CrpgTrainingGroundVm : ViewModel
             if (value != _isPlayerInDuel)
             {
                 _isPlayerInDuel = value;
-                OnPropertyChangedWithValue(value, "IsPlayerInDuel");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -88,7 +86,7 @@ internal class CrpgTrainingGroundVm : ViewModel
             if (value != _playerScoreText)
             {
                 _playerScoreText = value;
-                OnPropertyChangedWithValue(value, "PlayerScoreText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -105,7 +103,7 @@ internal class CrpgTrainingGroundVm : ViewModel
             if (value != _remainingRoundTime)
             {
                 _remainingRoundTime = value;
-                OnPropertyChangedWithValue(value, "RemainingRoundTime");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -122,7 +120,7 @@ internal class CrpgTrainingGroundVm : ViewModel
             if (value != _markers)
             {
                 _markers = value;
-                OnPropertyChangedWithValue(value, "Markers");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -139,7 +137,7 @@ internal class CrpgTrainingGroundVm : ViewModel
             if (value != _playerDuelMatch)
             {
                 _playerDuelMatch = value;
-                OnPropertyChangedWithValue(value, "PlayerDuelMatch");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -156,7 +154,7 @@ internal class CrpgTrainingGroundVm : ViewModel
             if (value != _ongoingDuels)
             {
                 _ongoingDuels = value;
-                OnPropertyChangedWithValue(value, "OngoingDuels");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -181,20 +179,6 @@ internal class CrpgTrainingGroundVm : ViewModel
         Markers.RefreshValues();
     }
 
-    private void OnMyRepresentativeAssigned()
-    {
-        CrpgTrainingGroundMissionRepresentative myRepresentative = _client.MyRepresentative;
-        myRepresentative.OnDuelPrepStartedEvent += OnDuelPrepStarted;
-        myRepresentative.OnAgentSpawnedWithoutDuelEvent += OnAgentSpawnedWithoutDuel;
-        myRepresentative.OnDuelPreparationStartedForTheFirstTimeEvent += OnDuelStarted;
-        myRepresentative.OnDuelEndedEvent += OnDuelEnded;
-        myRepresentative.OnDuelRoundEndedEvent += OnDuelRoundEnded;
-        myRepresentative.OnDuelResult += OnDuelResult;
-        ManagedOptions.OnManagedOptionChanged = (ManagedOptions.OnManagedOptionChangedDelegate)Delegate.Combine(ManagedOptions.OnManagedOptionChanged, new ManagedOptions.OnManagedOptionChangedDelegate(OnManagedOptionChanged));
-        Markers.RegisterEvents();
-        _isMyRepresentativeAssigned = true;
-    }
-
     public void Tick(float dt)
     {
         if (_gameMode.CheckTimer(out int remainingTime, out int _))
@@ -213,7 +197,7 @@ internal class CrpgTrainingGroundVm : ViewModel
     {
         base.OnFinalize();
         CrpgTrainingGroundMissionMultiplayerClient client = _client;
-        client.OnMyRepresentativeAssigned = (Action)Delegate.Remove(client.OnMyRepresentativeAssigned, new Action(OnMyRepresentativeAssigned));
+        client.OnMyRepresentativeAssigned = (Action?)Delegate.Remove(client.OnMyRepresentativeAssigned, new Action(OnMyRepresentativeAssigned));
         if (_isMyRepresentativeAssigned)
         {
             CrpgTrainingGroundMissionRepresentative myRepresentative = _client.MyRepresentative;
@@ -223,9 +207,53 @@ internal class CrpgTrainingGroundVm : ViewModel
             myRepresentative.OnDuelEndedEvent -= OnDuelEnded;
             myRepresentative.OnDuelRoundEndedEvent -= OnDuelRoundEnded;
             myRepresentative.OnDuelResult -= OnDuelResult;
-            ManagedOptions.OnManagedOptionChanged = (ManagedOptions.OnManagedOptionChangedDelegate)Delegate.Remove(ManagedOptions.OnManagedOptionChanged, new ManagedOptions.OnManagedOptionChangedDelegate(OnManagedOptionChanged));
+            ManagedOptions.OnManagedOptionChanged = (ManagedOptions.OnManagedOptionChangedDelegate?)Delegate.Remove(ManagedOptions.OnManagedOptionChanged, new ManagedOptions.OnManagedOptionChangedDelegate(OnManagedOptionChanged));
             Markers.UnregisterEvents();
         }
+    }
+
+    public void OnScreenResolutionChanged()
+    {
+        Markers.UpdateScreenCenter();
+    }
+
+    public void OnMainAgentRemoved()
+    {
+        if (!PlayerDuelMatch.IsEnabled)
+        {
+            Markers.IsEnabled = false;
+            AreOngoingDuelsActive = false;
+        }
+    }
+
+    public void OnMainAgentBuild()
+    {
+        if (!PlayerDuelMatch.IsEnabled)
+        {
+            Markers.IsEnabled = true;
+            AreOngoingDuelsActive = true;
+        }
+
+        string stringId = MultiplayerClassDivisions.GetMPHeroClassForPeer(_client.MyRepresentative.MissionPeer).StringId;
+        if (_isAgentBuiltForTheFirstTime || stringId != _cachedPlayerClassId)
+        {
+            _isAgentBuiltForTheFirstTime = false;
+            _cachedPlayerClassId = stringId;
+        }
+    }
+
+    private void OnMyRepresentativeAssigned()
+    {
+        CrpgTrainingGroundMissionRepresentative myRepresentative = _client.MyRepresentative;
+        myRepresentative.OnDuelPrepStartedEvent += OnDuelPrepStarted;
+        myRepresentative.OnAgentSpawnedWithoutDuelEvent += OnAgentSpawnedWithoutDuel;
+        myRepresentative.OnDuelPreparationStartedForTheFirstTimeEvent += OnDuelStarted;
+        myRepresentative.OnDuelEndedEvent += OnDuelEnded;
+        myRepresentative.OnDuelRoundEndedEvent += OnDuelRoundEnded;
+        myRepresentative.OnDuelResult += OnDuelResult;
+        ManagedOptions.OnManagedOptionChanged = (ManagedOptions.OnManagedOptionChangedDelegate)Delegate.Combine(ManagedOptions.OnManagedOptionChanged, new ManagedOptions.OnManagedOptionChangedDelegate(OnManagedOptionChanged));
+        Markers.RegisterEvents();
+        _isMyRepresentativeAssigned = true;
     }
 
     private void OnManagedOptionChanged(ManagedOptions.ManagedOptionsType changedManagedOptionsType)
@@ -263,9 +291,9 @@ internal class CrpgTrainingGroundVm : ViewModel
         }
         else
         {
-            CrpgDuelMatchVm duelMatchVM = new();
-            duelMatchVM.OnDuelStarted(firstPeer, secondPeer);
-            OngoingDuels.Add(duelMatchVM);
+            CrpgDuelMatchVm duelMatchVm = new();
+            duelMatchVm.OnDuelStarted(firstPeer, secondPeer);
+            OngoingDuels.Add(duelMatchVm);
         }
     }
 
@@ -281,12 +309,12 @@ internal class CrpgTrainingGroundVm : ViewModel
             PlayerDuelMatch.OnDuelEnded();
         }
 
-        CrpgDuelMatchVm duelMatchVM = OngoingDuels.FirstOrDefault((CrpgDuelMatchVm d) => d.FirstPlayerPeer == winnerPeer || d.SecondPlayerPeer == winnerPeer);
-        if (duelMatchVM != null)
+        CrpgDuelMatchVm? duelMatchVm = OngoingDuels.FirstOrDefault(d => d.FirstPlayerPeer == winnerPeer || d.SecondPlayerPeer == winnerPeer);
+        if (duelMatchVm != null)
         {
-            Markers.SetMarkerOfPeerEnabled(duelMatchVM.FirstPlayerPeer!, isEnabled: true);
-            Markers.SetMarkerOfPeerEnabled(duelMatchVM.SecondPlayerPeer!, isEnabled: true);
-            OngoingDuels.Remove(duelMatchVM);
+            Markers.SetMarkerOfPeerEnabled(duelMatchVm.FirstPlayerPeer!, isEnabled: true);
+            Markers.SetMarkerOfPeerEnabled(duelMatchVm.SecondPlayerPeer!, isEnabled: true);
+            OngoingDuels.Remove(duelMatchVm);
         }
     }
 
@@ -298,46 +326,14 @@ internal class CrpgTrainingGroundVm : ViewModel
             return;
         }
 
-        CrpgDuelMatchVm duelMatchVM = OngoingDuels.FirstOrDefault((CrpgDuelMatchVm d) => d.FirstPlayerPeer == winnerPeer || d.SecondPlayerPeer == winnerPeer);
-        if (duelMatchVM != null)
+        CrpgDuelMatchVm? duelMatchVm = OngoingDuels.FirstOrDefault(d => d.FirstPlayerPeer == winnerPeer || d.SecondPlayerPeer == winnerPeer);
+        if (duelMatchVm != null)
         {
-            duelMatchVM.OnPeerScored(winnerPeer);
-            }
+            duelMatchVm.OnPeerScored(winnerPeer);
+        }
     }
 
     private void OnDuelResult(bool hasWonDuel, int ratingChange)
     {
-
     }
-
-    public void OnScreenResolutionChanged()
-    {
-        Markers.UpdateScreenCenter();
-    }
-
-    public void OnMainAgentRemoved()
-    {
-        if (!PlayerDuelMatch.IsEnabled)
-        {
-            Markers.IsEnabled = false;
-            AreOngoingDuelsActive = false;
-        }
-    }
-
-    public void OnMainAgentBuild()
-    {
-        if (!PlayerDuelMatch.IsEnabled)
-        {
-            Markers.IsEnabled = true;
-            AreOngoingDuelsActive = true;
-        }
-
-        string stringId = MultiplayerClassDivisions.GetMPHeroClassForPeer(_client.MyRepresentative.MissionPeer).StringId;
-        if (_isAgentBuiltForTheFirstTime || (stringId != _cachedPlayerClassID))
-        {
-            _isAgentBuiltForTheFirstTime = false;
-            _cachedPlayerClassID = stringId;
-        }
-    }
-
 }

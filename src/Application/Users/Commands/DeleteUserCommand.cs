@@ -35,7 +35,7 @@ public record DeleteUserCommand : IMediatorRequest
             _activityLogService = activityLogService;
         }
 
-        public async Task<Result> Handle(DeleteUserCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(DeleteUserCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .Include(u => u.Characters)

@@ -28,7 +28,7 @@ public record ReturnUnusedItemsToClanArmoryCommand : IMediatorRequest
             _userNotificationService = userNotificationService;
         }
 
-        public async Task<Result> Handle(ReturnUnusedItemsToClanArmoryCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(ReturnUnusedItemsToClanArmoryCommand req, CancellationToken cancellationToken)
         {
             var now = _dateTime.UtcNow;
             var users = await _db.Users

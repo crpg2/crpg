@@ -5,7 +5,8 @@ namespace Crpg.Application.Common.Files;
 
 internal class FileConstantsSource
 {
-    private static readonly string ConstantsPath = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "/Common/Files/constants.json";
+    private static readonly string ConstantsPath = FileDataPathResolver.Resolve(
+        Path.Combine("Common", "Files", "constants.json"));
 
     public Constants LoadConstants()
     {

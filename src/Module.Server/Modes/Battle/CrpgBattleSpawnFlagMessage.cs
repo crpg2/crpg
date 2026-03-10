@@ -1,6 +1,5 @@
 ﻿using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Network.Messages;
-using TaleWorlds.MountAndBlade.Objects;
 
 namespace Crpg.Module.Modes.Battle;
 
@@ -8,8 +7,8 @@ namespace Crpg.Module.Modes.Battle;
 internal sealed class CrpgBattleSpawnFlagMessage : GameNetworkMessage
 {
     private static readonly CompressionInfo.Integer FlagCapturePointCharCompressionInfo = new(65, 5);
-    public int FlagChar { get; set; } = default!;
-    public float Time { get; set; } = default!;
+    public int FlagChar { get; set; }
+    public float Time { get; set; }
 
     protected override void OnWrite()
     {
@@ -20,7 +19,7 @@ internal sealed class CrpgBattleSpawnFlagMessage : GameNetworkMessage
     protected override bool OnRead()
     {
         bool bufferReadValid = true;
-        FlagChar = GameNetworkMessage.ReadIntFromPacket(FlagCapturePointCharCompressionInfo, ref bufferReadValid);
+        FlagChar = ReadIntFromPacket(FlagCapturePointCharCompressionInfo, ref bufferReadValid);
         Time = ReadFloatFromPacket(CompressionInfo.Float.FullPrecision, ref bufferReadValid);
         return bufferReadValid;
     }

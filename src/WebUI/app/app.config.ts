@@ -18,7 +18,7 @@ export default defineAppConfig({
   ui: {
     colors: {
       primary: 'crpg-gold',
-      neutral: 'crpg-neutral',
+      neutral: 'neutral',
       success: 'crpg-green',
       error: 'crpg-red',
       warning: 'crpg-amber',
@@ -53,7 +53,7 @@ export default defineAppConfig({
       slots: {
         th: 'text-default',
         td: 'text-inherit',
-        tbody: '[&>tr]:data-[selectable=true]:cursor-pointer',
+        tbody: '[&>tr]:data-[selectable=true]:cursor-pointer [&>tr]:data-[selected=true]:bg-accented/33',
       },
     },
     pagination: {
@@ -67,7 +67,7 @@ export default defineAppConfig({
           color: 'neutral',
           variant: 'pill',
           class: {
-            indicator: 'bg-accented',
+            indicator: 'bg-muted',
             trigger: 'data-[state=active]:text-accented',
           },
         },

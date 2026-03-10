@@ -1,7 +1,7 @@
 # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/dotnet/.devcontainer/base.Dockerfile
 
 # https://mcr.microsoft.com/v2/vscode/devcontainers/dotnet/tags/list
-ARG VARIANT="9.0-bullseye"
+ARG VARIANT="10.0-noble"
 FROM mcr.microsoft.com/devcontainers/dotnet:${VARIANT}
 
 # [Choice] Node.js version: none, lts/*, 20, 18

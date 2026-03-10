@@ -29,7 +29,7 @@ public record UpdateUserNoteCommand : IMediatorRequest<UserPrivateViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<UserPrivateViewModel>> Handle(UpdateUserNoteCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserPrivateViewModel>> Handle(UpdateUserNoteCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users.FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
             if (user == null)

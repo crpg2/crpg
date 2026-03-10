@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { RouteNamedMap } from 'vue-router/auto-routes'
+import type { NavigationMenuItem } from '@nuxt/ui'
 
 import type { UserPrivate } from '~/models/user'
 
@@ -23,23 +23,21 @@ useModerationUserProvider(user as Ref<UserPrivate>)
 
 const { t } = useI18n()
 
-const links = [
+const navigationItems = computed<NavigationMenuItem[]>(() => [
   {
-    name: 'moderator-user-id-information',
     label: 'Information',
+    to: { name: 'moderator-user-id-information' },
+    active: route.name === 'moderator-user-id-information', // hack
   },
   {
-    name: 'moderator-user-id-restrictions',
     label: t('restriction.title'),
+    to: { name: 'moderator-user-id-restrictions' },
   },
   {
-    name: 'moderator-user-id-activity-logs',
     label: 'Logs',
+    to: { name: 'moderator-user-id-activity-logs' },
   },
-] satisfies Array<{
-  name: keyof RouteNamedMap
-  label: string
-}>
+])
 </script>
 
 <template>
@@ -47,24 +45,10 @@ const links = [
     <div v-if="user" class="mb-14 flex items-center justify-center gap-8">
       <UserMedia :user size="xl" />
 
-      <div class="flex items-center justify-center gap-2">
-        <NuxtLink
-          v-for="{ name, label } in links"
-          :key="name"
-          v-slot="{ isExactActive }"
-          :to="({ name })"
-        >
-          <UButton
-            color="neutral"
-            variant="link"
-            active-variant="soft"
-            active-color="primary"
-            :active="isExactActive"
-            size="xl"
-            :label
-          />
-        </NuxtLink>
-      </div>
+      <UNavigationMenu
+        color="primary"
+        :items="navigationItems"
+      />
     </div>
 
     <NuxtPage @update="loadUser" />

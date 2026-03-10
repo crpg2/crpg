@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using AutoMapper;
 using Crpg.Application.Common.Mappings;
 using Crpg.Persistence;
@@ -22,12 +23,11 @@ public class TestBase
     /// test not terrible. The test could be much stronger by using ArrangeDb when calling Characters.Add and
     /// using ActDb to create the Handler.
     /// </summary>
-    private DbContextOptions<CrpgDbContext>? _dbOptions;
+    protected DbContextOptions<CrpgDbContext>? DbOptions { get; private set; }
 
     private CrpgDbContext? _arrangeDb;
     private CrpgDbContext? _actDb;
     private CrpgDbContext? _assertDb;
-    private IMapper? _mapper;
 
     /// <summary>
     /// DbContext to use to initialize the database for a test.
@@ -44,12 +44,13 @@ public class TestBase
     /// </summary>
     protected CrpgDbContext AssertDb => _assertDb ??= InitDb();
 
-    protected IMapper Mapper => _mapper ??= InitMapper();
+    [AllowNull]
+    protected IMapper Mapper { get => field ??= InitMapper(); private set; }
 
     [SetUp]
     public virtual Task SetUp()
     {
-        _dbOptions = new DbContextOptionsBuilder<CrpgDbContext>()
+        DbOptions = new DbContextOptionsBuilder<CrpgDbContext>()
             .EnableSensitiveDataLogging()
             .EnableDetailedErrors()
             .UseInMemoryDatabase(Guid.NewGuid().ToString())
@@ -58,7 +59,7 @@ public class TestBase
         _arrangeDb = null;
         _actDb = null;
         _assertDb = null;
-        _mapper = null;
+        Mapper = null;
         return Task.CompletedTask;
     }
 
@@ -71,7 +72,7 @@ public class TestBase
         return Task.CompletedTask;
     }
 
-    private CrpgDbContext InitDb() => new(_dbOptions!, Mock.Of<IDateTime>());
+    private CrpgDbContext InitDb() => new(DbOptions!, Mock.Of<IDateTime>());
 
     private IMapper InitMapper()
     {

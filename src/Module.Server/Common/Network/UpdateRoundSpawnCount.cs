@@ -6,7 +6,7 @@ namespace Crpg.Module.Common.Network;
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromServer)]
 internal sealed class UpdateRoundSpawnCount : GameNetworkMessage
 {
-    public NetworkCommunicator Peer { get; set; } = default!;
+    public NetworkCommunicator Peer { get; set; } = null!;
     public int SpawnCount { get; set; }
 
     protected override void OnWrite()

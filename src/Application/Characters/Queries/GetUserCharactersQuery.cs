@@ -23,7 +23,7 @@ public record GetUserCharactersQuery : IMediatorRequest<IList<CharacterViewModel
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<CharacterViewModel>>> Handle(GetUserCharactersQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<CharacterViewModel>>> Handle(GetUserCharactersQuery req, CancellationToken cancellationToken)
         {
             var characters = await _db.Characters
                 .Where(c => c.UserId == req.UserId)

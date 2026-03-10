@@ -25,7 +25,7 @@ public record RefundItemCommand : IMediatorRequest
             _db = db;
         }
 
-        public async Task<Result> Handle(RefundItemCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(RefundItemCommand req, CancellationToken cancellationToken)
         {
             var item = await _db.Items
                 .FirstOrDefaultAsync(i => i.Id == req.ItemId, cancellationToken);

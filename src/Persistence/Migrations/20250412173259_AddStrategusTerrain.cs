@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Crpg.Persistence.Migrations;
 
 /// <inheritdoc />
-public partial class AddStrategusTerrain : Migration
+public partial class AddCampaignTerrain : Migration
 {
     /// <inheritdoc />
     protected override void Up(MigrationBuilder migrationBuilder)

@@ -8,14 +8,19 @@ public class DtvDataTest
     [Test]
     public void CheckBotExists()
     {
-        string classDivisionsXmlPath = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "/ModuleData/dtv/dtv_class_divisions.xml";
+        string moduleDataPath = Path.Combine(
+            Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)!,
+            "net" + Environment.Version.ToString(fieldCount: 2),
+            "ModuleData");
+
+        string classDivisionsXmlPath = Path.Combine(moduleDataPath, "dtv/dtv_class_divisions.xml");
         XDocument classDivisionsDoc = XDocument.Load(classDivisionsXmlPath);
         var classDivisionIds = classDivisionsDoc
             .Descendants("MPClassDivision")
             .Select(el => el.Attribute("id")!.Value)
             .ToHashSet();
 
-        string dtvDataXmlPath = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "/ModuleData/dtv/dtv_data.xml";
+        string dtvDataXmlPath = Path.Combine(moduleDataPath, "dtv/dtv_data.xml");
         XDocument dtvDataDoc = XDocument.Load(dtvDataXmlPath);
         string[] classDivisionIdsFromDtv = dtvDataDoc
             .Descendants("Group")

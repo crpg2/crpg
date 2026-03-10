@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from '@nuxt/ui'
 
-import NumberFlow from '@number-flow/vue'
-
 import type { Role } from '~/models/role'
 import type { User } from '~/models/user'
 
@@ -85,28 +83,25 @@ const items = computed<DropdownMenuItem[][]>(() => [
 </script>
 
 <template>
-  <div class="flex items-center gap-3">
-    <UTooltip :text="$t('user.field.gold')">
-      <AppCoin>
-        <NumberFlow
-          :value="user.gold"
-          locales="en-US"
-        />
-      </AppCoin>
+  <div class="flex items-center gap-4">
+    <UTooltip>
+      <AppCoin :value="user.gold" compact />
+      <template #content>
+        <UiTextView variant="p">
+          {{ t('user.field.gold') }}
+        </UiTextView>
+        <AppCoin :value="user.gold" />
+      </template>
     </UTooltip>
 
     <UTooltip :text="$t('user.field.heirloom')">
       <AppLoom :point="user.heirloomPoints" />
     </UTooltip>
 
-    <USeparator orientation="vertical" class="h-6" />
-
     <UserMedia
       :user="mapUserToUserPublic(user)"
       hidden-platform
     />
-
-    <USeparator orientation="vertical" class="h-6" />
 
     <UDropdownMenu
       :modal="false"
@@ -118,12 +113,12 @@ const items = computed<DropdownMenuItem[][]>(() => [
           :show="Boolean(user.unreadNotificationsCount)"
           inset
           size="2xl"
-          :ui="{ base: 'bg-[var(--color-notification)]' }"
+          :ui="{ base: 'bg-success' }"
         >
           <UButton
             variant="outline"
             color="neutral"
-            icon="crpg:dots"
+            icon="i-lucide-ellipsis-vertical"
             active-variant="subtle"
             :active="open"
             size="xl"
@@ -136,9 +131,9 @@ const items = computed<DropdownMenuItem[][]>(() => [
           :show="Boolean(user.unreadNotificationsCount)"
           inset
           size="lg"
-          :ui="{ base: 'bg-[var(--color-notification)]' }"
+          :ui="{ base: 'bg-success' }"
         >
-          <UIcon name="crpg:carillon" class="size-[1.125rem]" />
+          <UIcon name="crpg:carillon" class="size-4.5" />
         </UChip>
       </template>
     </UDropdownMenu>

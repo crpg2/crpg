@@ -2,7 +2,7 @@
 import type { TableColumn } from '@nuxt/ui'
 import type { RowSelectionState } from '@tanstack/vue-table'
 
-import { AppCoin, ItemParam, ItemTableMedia } from '#components'
+import { AppCoin, ItemParam } from '#components'
 
 import type { CompareItemsResult, ItemFlat } from '~/models/item'
 import type { AggregationConfig } from '~/services/item-search-service/aggregations'
@@ -47,10 +47,6 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => [
   {
     accessorKey: 'name',
     header: '',
-    cell: ({ row }) => h(ItemTableMedia, {
-      item: row.original,
-      showTier: true,
-    }),
   },
   ...objectKeys(aggregationConfig).map(createTableColumn),
 ])
@@ -77,6 +73,16 @@ const rowSelection = ref<RowSelectionState>({
   >
     <template #empty>
       <UiResultNotFound />
+    </template>
+
+    <template #name-cell="{ row }">
+      <div class="flex items-center gap-4">
+        <ItemTableMedia :item="row.original" show-tier>
+          <template #name-caption>
+            <slot name="name-caption" :row />
+          </template>
+        </ItemTableMedia>
+      </div>
     </template>
   </UTable>
 </template>

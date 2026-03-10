@@ -6,7 +6,7 @@ namespace Crpg.Domain.Entities.Battles;
 /// <summary>
 /// Fighter that joined their army to a <see cref="Battle"/> during the <see cref="BattlePhase.Preparation"/>
 /// phase. Fighter can be either a <see cref="Party"/> or a <see cref="Settlement"/>. Not to be confused with
-/// <see cref="BattleMercenary"/>.
+/// <see cref="BattleParticipant"/>.
 /// </summary>
 public class BattleFighter
 {
@@ -35,10 +35,10 @@ public class BattleFighter
     public bool Commander { get; set; }
 
     /// <summary>
-    /// Maximum number of <see cref="BattleMercenary"/> for the <see cref="BattleFighter"/>. Depends on
+    /// Maximum number of <see cref="BattleParticipant"/> for the <see cref="BattleFighter"/>. Depends on
     /// <see cref="Party"/> troops. This number doesn't include the <see cref="BattleFighter"/> itself.
     /// </summary>
-    public int MercenarySlots { get; set; }
+    public int ParticipantSlots { get; set; }
 
     public Party? Party { get; set; }
     public Settlement? Settlement { get; set; }

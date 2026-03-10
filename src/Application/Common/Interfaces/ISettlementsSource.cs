@@ -4,5 +4,5 @@ namespace Crpg.Application.Common.Interfaces;
 
 internal interface ISettlementsSource
 {
-    Task<IEnumerable<SettlementCreation>> LoadStrategusSettlements();
+    Task<IEnumerable<SettlementCreation>> LoadCampaignSettlements();
 }

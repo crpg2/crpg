@@ -8,7 +8,6 @@ namespace Crpg.Module.HarmonyPatches;
 public class DecideWeaponCollisionReactionPatch
 {
     [HarmonyPostfix]
-
     [HarmonyPatch(typeof(MissionCombatMechanicsHelper), "DecideWeaponCollisionReaction")]
     public static void AddAxeSlicedThrough(
         ref MeleeCollisionReaction colReaction,

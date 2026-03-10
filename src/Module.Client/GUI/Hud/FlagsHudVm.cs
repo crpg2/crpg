@@ -5,6 +5,7 @@ using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.HUDExtensions;
 using TaleWorlds.MountAndBlade.Objects;
+using MathF = TaleWorlds.Library.MathF;
 
 namespace Crpg.Module.GUI.Hud;
 
@@ -13,9 +14,9 @@ internal class FlagsHudVm : ViewModel
     private readonly CrpgSiegeClient? _siegeClient;
     private readonly ICommanderInfo _commanderInfo;
     private Team? _allyTeam;
-    private MBBindingList<CapturePointVM> _allyControlPoints = default!;
-    private MBBindingList<CapturePointVM> _neutralControlPoints = default!;
-    private MBBindingList<CapturePointVM> _enemyControlPoints = default!;
+    private MBBindingList<CapturePointVM> _allyControlPoints = null!;
+    private MBBindingList<CapturePointVM> _neutralControlPoints = null!;
+    private MBBindingList<CapturePointVM> _enemyControlPoints = null!;
 
     public FlagsHudVm()
     {

@@ -1,6 +1,7 @@
 using Crpg.Module.Common;
-using Crpg.Module.Notifications;
 using Crpg.Module.Helpers;
+using Crpg.Module.Modes.Siege;
+using Crpg.Module.Notifications;
 using Crpg.Module.Rewards;
 using NetworkMessages.FromServer;
 using TaleWorlds.Core;
@@ -9,7 +10,6 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.MissionRepresentatives;
 using TaleWorlds.MountAndBlade.Objects;
 using TaleWorlds.ObjectSystem;
-using Crpg.Module.Modes.Siege;
 
 namespace Crpg.Module.Modes.Conquest;
 
@@ -29,8 +29,8 @@ internal class CrpgConquestServer : MissionMultiplayerGameModeBase, IAnalyticsFl
     private FlagCapturePoint[][] _flagStages = Array.Empty<FlagCapturePoint[]>();
     private bool _gameStarted;
     private int _currentStage;
-    private MissionTimer _flagTickTimer = default!;
-    private MissionTimer _currentStageTimer = default!;
+    private MissionTimer _flagTickTimer = null!;
+    private MissionTimer _currentStageTimer = null!;
     private MissionTimer? _rewardTickTimer;
     private bool _wasCurrentStageNotifiedAboutOvertime;
     private bool _isOddRewardTick;
@@ -386,7 +386,7 @@ internal class CrpgConquestServer : MissionMultiplayerGameModeBase, IAnalyticsFl
 
             // https://www.desmos.com/calculator/9dbcvybhez
             int networkPeerCount = GameNetwork.NetworkPeerCount;
-            float captureSpeed = (float)(0.5f - (0.4f * (Math.Log(Math.Max(1, networkPeerCount - 11)) / Math.Log(Math.Max(1, 150)))));
+            float captureSpeed = (float)(0.5f - 0.4f * (Math.Log(Math.Max(1, networkPeerCount - 11)) / Math.Log(Math.Max(1, 150))));
             captureSpeed = Math.Max(captureSpeed, 0.1f);
             CaptureTheFlagFlagDirection flagDirection = ComputeFlagDirection(flag, flagOwner, agentDiffNumber);
             if (flagDirection != CaptureTheFlagFlagDirection.None)

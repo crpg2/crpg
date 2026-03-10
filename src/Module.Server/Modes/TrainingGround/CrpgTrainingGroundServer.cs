@@ -1,13 +1,9 @@
-﻿using System.ComponentModel;
-using Crpg.Module.Api.Models.Characters;
-using Crpg.Module.Api.Models.Users;
+﻿using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Common;
-using Crpg.Module.Rating;
 using Crpg.Module.Rewards;
 using NetworkMessages.FromClient;
 using NetworkMessages.FromServer;
 using TaleWorlds.Core;
-using TaleWorlds.Engine;
 using TaleWorlds.Library;
 using TaleWorlds.LinQuick;
 using TaleWorlds.MountAndBlade;
@@ -30,16 +26,17 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
 
         private struct Challenger
         {
-            public readonly MissionPeer MissionPeer = default!;
+            public readonly MissionPeer MissionPeer = null!;
             public readonly NetworkCommunicator? NetworkPeer;
             private readonly CrpgTrainingGroundServer _crpgTrainingGroundServer;
             public Agent? DuelingAgent { get; private set; }
             public Agent? MountAgent { get; private set; }
             public int KillCountInDuel { get; private set; }
+
             public Challenger(MissionPeer missionPeer, CrpgTrainingGroundServer crpgTrainingGroundServer)
             {
                 MissionPeer = missionPeer;
-                NetworkPeer = MissionPeer?.GetNetworkPeer();
+                NetworkPeer = MissionPeer.GetNetworkPeer();
                 DuelingAgent = null;
                 MountAgent = null;
                 KillCountInDuel = 0;
@@ -89,7 +86,7 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
         public MissionPeer RequesterPeer => _challengers[0].MissionPeer;
         public MissionPeer RequesteePeer => _challengers[1].MissionPeer;
         public MissionTime Timer { get; private set; }
-        public Team DuelingTeam { get; private set; } = default!;
+        public Team DuelingTeam { get; private set; } = null!;
         public bool Started { get; private set; }
         public bool ChallengeEnded { get; private set; }
         public MissionPeer? ChallengeWinnerPeer
@@ -111,7 +108,7 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
             {
                 if (_winnerChallengerType != ChallengerType.None)
                 {
-                    return _challengers[(_winnerChallengerType == ChallengerType.Requester) ? 1 : 0].MissionPeer;
+                    return _challengers[_winnerChallengerType == ChallengerType.Requester ? 1 : 0].MissionPeer;
                 }
 
                 return null;
@@ -125,57 +122,6 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
             _challengers[1] = new Challenger(requesteePeer, crpgTrainingGroundServer);
             Timer = MissionTime.Now + MissionTime.Seconds(DuelRequestTimeOutInSeconds + DuelRequestTimeOutServerToleranceInSeconds);
             _crpgTrainingGroundServer = crpgTrainingGroundServer;
-        }
-
-        private void DecideRoundWinner()
-        {
-            bool isConnectionActive = _challengers[0].MissionPeer.Peer.Communicator.IsConnectionActive;
-            bool isConnectionActive2 = _challengers[1].MissionPeer.Peer.Communicator.IsConnectionActive;
-            if (!Started)
-            {
-                if (isConnectionActive == isConnectionActive2)
-                {
-                    ChallengeEnded = true;
-                }
-                else
-                {
-                    _winnerChallengerType = (!isConnectionActive) ? ChallengerType.Requestee : ChallengerType.Requester;
-                }
-            }
-            else
-            {
-                Agent? duelingAgent = _challengers[0].DuelingAgent;
-                Agent? duelingAgent2 = _challengers[1].DuelingAgent;
-                if (duelingAgent != null && duelingAgent.IsActive())
-                {
-                    _winnerChallengerType = ChallengerType.Requester;
-                }
-                else if (duelingAgent2 != null && duelingAgent2.IsActive())
-                {
-                    _winnerChallengerType = ChallengerType.Requestee;
-                }
-                else
-                {
-                    if (!isConnectionActive && !isConnectionActive2)
-                    {
-                        ChallengeEnded = true;
-                    }
-
-                    _winnerChallengerType = ChallengerType.None;
-                }
-            }
-
-            if (_winnerChallengerType != ChallengerType.None)
-            {
-                _challengers[(int)_winnerChallengerType].IncreaseWinCount();
-                GameNetwork.BeginBroadcastModuleEvent();
-                GameNetwork.WriteMessage(new DuelRoundEnded(_challengers[(int)_winnerChallengerType].NetworkPeer));
-                GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
-                if (_challengers[(int)_winnerChallengerType].KillCountInDuel == 1 || !isConnectionActive || !isConnectionActive2)
-                {
-                    ChallengeEnded = true;
-                }
-            }
         }
 
         public void OnDuelPreparation(Team duelTeam)
@@ -276,6 +222,57 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
 
             return false;
         }
+
+        private void DecideRoundWinner()
+        {
+            bool isConnectionActive = _challengers[0].MissionPeer.Peer.Communicator.IsConnectionActive;
+            bool isConnectionActive2 = _challengers[1].MissionPeer.Peer.Communicator.IsConnectionActive;
+            if (!Started)
+            {
+                if (isConnectionActive == isConnectionActive2)
+                {
+                    ChallengeEnded = true;
+                }
+                else
+                {
+                    _winnerChallengerType = !isConnectionActive ? ChallengerType.Requestee : ChallengerType.Requester;
+                }
+            }
+            else
+            {
+                Agent? duelingAgent = _challengers[0].DuelingAgent;
+                Agent? duelingAgent2 = _challengers[1].DuelingAgent;
+                if (duelingAgent != null && duelingAgent.IsActive())
+                {
+                    _winnerChallengerType = ChallengerType.Requester;
+                }
+                else if (duelingAgent2 != null && duelingAgent2.IsActive())
+                {
+                    _winnerChallengerType = ChallengerType.Requestee;
+                }
+                else
+                {
+                    if (!isConnectionActive && !isConnectionActive2)
+                    {
+                        ChallengeEnded = true;
+                    }
+
+                    _winnerChallengerType = ChallengerType.None;
+                }
+            }
+
+            if (_winnerChallengerType != ChallengerType.None)
+            {
+                _challengers[(int)_winnerChallengerType].IncreaseWinCount();
+                GameNetwork.BeginBroadcastModuleEvent();
+                GameNetwork.WriteMessage(new DuelRoundEnded(_challengers[(int)_winnerChallengerType].NetworkPeer));
+                GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
+                if (_challengers[(int)_winnerChallengerType].KillCountInDuel == 1 || !isConnectionActive || !isConnectionActive2)
+                {
+                    ChallengeEnded = true;
+                }
+            }
+        }
     }
 
     public delegate void OnDuelEndedDelegate(MissionPeer winnerPeer);
@@ -289,31 +286,26 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
 
     private readonly CrpgRewardServer _rewardServer;
     private readonly Queue<Team> _deactiveDuelTeams = new();
+    private readonly List<DuelInfo> _duelRequests = new();
+    private readonly List<DuelInfo> _activeDuels = new();
+    private readonly List<DuelInfo> _endingDuels = new();
+    private readonly List<DuelInfo> _restartingDuels = new();
+    private readonly List<DuelInfo> _restartPreparationDuels = new();
+    private readonly List<KeyValuePair<MissionPeer, TroopType>> _peersAndSelections = new();
     private MissionTimer? _rewardTickTimer;
-    private List<DuelInfo> _duelRequests = new();
-    private List<DuelInfo> _activeDuels = new();
-    private List<DuelInfo> _endingDuels = new();
-    private List<DuelInfo> _restartingDuels = new();
-    private List<DuelInfo> _restartPreparationDuels = new();
-    private List<KeyValuePair<MissionPeer, TroopType>> _peersAndSelections = new();
-    public override bool IsGameModeHidingAllAgentVisuals => true;
-    public override bool IsGameModeUsingOpposingTeams => false;
-    public event OnDuelEndedDelegate OnDuelEnded = default!;
-
 
     public CrpgTrainingGroundServer(CrpgRewardServer rewardServer)
     {
         _rewardServer = rewardServer;
     }
 
+    public override bool IsGameModeHidingAllAgentVisuals => true;
+    public override bool IsGameModeUsingOpposingTeams => false;
+    public event OnDuelEndedDelegate? OnDuelEnded;
+
     public override MultiplayerGameType GetMissionType()
     {
         return MultiplayerGameType.Duel;
-    }
-
-    private bool RefreshPlayer(NetworkCommunicator networkPeer)
-    {
-        return SpawningBehavior.RefreshPlayer(networkPeer);
     }
 
     public override void AfterStart()
@@ -324,63 +316,6 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
         Banner banner = @object.Banner;
         Mission.Teams.Add(BattleSideEnum.Attacker, @object.BackgroundColor1, @object.ForegroundColor1, banner, isPlayerGeneral: false);
         _rewardTickTimer = new(60);
-    }
-
-    public override void OnBehaviorInitialize()
-    {
-        base.OnBehaviorInitialize();
-    }
-
-    protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
-    {
-        registerer.RegisterBaseHandler<TrainingGroundClientDuelRequest>(HandleClientEventDuelRequest);
-        registerer.RegisterBaseHandler<DuelResponse>(HandleClientEventDuelRequestAccepted);
-        registerer.RegisterBaseHandler<ClientRequestRefreshCharacter>(HandleClientRequestRefreshCharacter);
-    }
-
-    protected override void HandleEarlyNewClientAfterLoadingFinished(NetworkCommunicator networkPeer)
-    {
-        networkPeer.AddComponent<CrpgTrainingGroundMissionRepresentative>();
-    }
-
-    protected override void HandleNewClientAfterSynchronized(NetworkCommunicator networkPeer)
-    {
-        MissionPeer component = networkPeer.GetComponent<MissionPeer>();
-        component.Team = Mission.AttackerTeam;
-        _peersAndSelections.Add(new KeyValuePair<MissionPeer, TroopType>(component, TroopType.Invalid));
-    }
-
-    private bool HandleClientEventDuelRequest(NetworkCommunicator peer, GameNetworkMessage baseMessage)
-    {
-        TrainingGroundClientDuelRequest duelRequest = (TrainingGroundClientDuelRequest)baseMessage;
-        MissionPeer? missionPeer = peer?.GetComponent<MissionPeer>();
-        if (missionPeer != null)
-        {
-            Agent agentFromIndex = Mission.MissionNetworkHelper.GetAgentFromIndex(duelRequest.RequestedAgentIndex);
-            if (agentFromIndex != null && agentFromIndex.IsActive())
-            {
-                DuelRequestReceived(missionPeer, agentFromIndex.MissionPeer);
-            }
-        }
-
-        return true;
-    }
-
-    private bool HandleClientEventDuelRequestAccepted(NetworkCommunicator peer, GameNetworkMessage baseMessage)
-    {
-        DuelResponse duelResponse = (DuelResponse)baseMessage;
-        if (peer?.GetComponent<MissionPeer>() != null && peer.GetComponent<MissionPeer>().ControlledAgent != null && duelResponse.Peer?.GetComponent<MissionPeer>() != null && duelResponse.Peer.GetComponent<MissionPeer>().ControlledAgent != null)
-        {
-            DuelRequestAccepted(duelResponse.Peer.GetComponent<CrpgTrainingGroundMissionRepresentative>().ControlledAgent, peer.GetComponent<CrpgTrainingGroundMissionRepresentative>().ControlledAgent);
-        }
-
-        return true;
-    }
-
-    private bool HandleClientRequestRefreshCharacter(NetworkCommunicator peer, GameNetworkMessage baseMessage)
-    {
-        bool result = RefreshPlayer(peer);
-        return result;
     }
 
     public override bool CheckIfPlayerCanDespawn(MissionPeer missionPeer)
@@ -413,7 +348,7 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
 
     public void DuelRequestAccepted(Agent requesterAgent, Agent requesteeAgent)
     {
-        DuelInfo duelInfo = _duelRequests.FirstOrDefault((DuelInfo dr) => dr.IsPeerInThisDuel(requesterAgent.MissionPeer) && dr.IsPeerInThisDuel(requesteeAgent.MissionPeer));
+        DuelInfo? duelInfo = _duelRequests.FirstOrDefault(dr => dr.IsPeerInThisDuel(requesterAgent.MissionPeer) && dr.IsPeerInThisDuel(requesteeAgent.MissionPeer));
         if (duelInfo != null)
         {
             PrepareDuel(duelInfo);
@@ -429,6 +364,50 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
         CheckDuelsToStart();
         CheckDuelRequestTimeouts();
         CheckEndedDuels();
+    }
+
+    public override void OnAgentBuild(Agent agent, Banner banner)
+    {
+        if (!agent.IsHuman || agent.Team == null)
+        {
+            return;
+        }
+
+        var networkPeer = agent.MissionPeer.GetNetworkPeer();
+
+        if (networkPeer != null)
+        {
+            var component = networkPeer.GetComponent<CrpgTrainingGroundMissionRepresentative>();
+
+            CrpgPeer? crpgPeer = networkPeer.GetComponent<CrpgPeer>();
+            CrpgCharacterStatistics stats = crpgPeer.User!.Character.Statistics;
+
+            if (!component.HasLoadedStats)
+            {
+                component.NumberOfWins = stats.Kills;
+                component.NumberOfLosses = stats.Deaths;
+                component.Rating = (int)stats.Rating.CompetitiveValue;
+                component.HasLoadedStats = true;
+            }
+
+            GameNetwork.BeginBroadcastModuleEvent();
+            GameNetwork.WriteMessage(new TrainingGroundDuelPointsUpdateMessage { NetworkCommunicator = component.GetNetworkPeer(), NumberOfWins = component.NumberOfWins, NumberOfLosses = component.NumberOfLosses, Rating = component.Rating });
+            GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
+        }
+
+        if (!agent.Team.IsDefender)
+        {
+            return;
+        }
+
+        for (int i = 0; i < _activeDuels.Count; i++)
+        {
+            if (_activeDuels[i].IsPeerInThisDuel(agent.MissionPeer))
+            {
+                _activeDuels[i].OnAgentBuild(agent);
+                break;
+            }
+        }
     }
 
     public override void OnAgentRemoved(Agent affectedAgent, Agent affectorAgent, AgentState agentState, KillingBlow blow)
@@ -467,11 +446,133 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
         }
     }
 
+    protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
+    {
+        registerer.RegisterBaseHandler<TrainingGroundClientDuelRequest>(HandleClientEventDuelRequest);
+        registerer.RegisterBaseHandler<DuelResponse>(HandleClientEventDuelRequestAccepted);
+        registerer.RegisterBaseHandler<ClientRequestRefreshCharacter>(HandleClientRequestRefreshCharacter);
+    }
+
+    protected override void HandleEarlyNewClientAfterLoadingFinished(NetworkCommunicator networkPeer)
+    {
+        networkPeer.AddComponent<CrpgTrainingGroundMissionRepresentative>();
+    }
+
+    protected override void HandleNewClientAfterSynchronized(NetworkCommunicator networkPeer)
+    {
+        MissionPeer component = networkPeer.GetComponent<MissionPeer>();
+        component.Team = Mission.AttackerTeam;
+        _peersAndSelections.Add(new KeyValuePair<MissionPeer, TroopType>(component, TroopType.Invalid));
+    }
+
+    protected override void HandleLateNewClientAfterSynchronized(NetworkCommunicator networkPeer)
+    {
+        if (networkPeer.IsServerPeer)
+        {
+            return;
+        }
+
+        foreach (NetworkCommunicator networkPeer2 in GameNetwork.NetworkPeers)
+        {
+            CrpgTrainingGroundMissionRepresentative component = networkPeer2.GetComponent<CrpgTrainingGroundMissionRepresentative>();
+            if (component != null)
+            {
+                GameNetwork.BeginModuleEventAsServer(networkPeer);
+                GameNetwork.WriteMessage(new TrainingGroundDuelPointsUpdateMessage { NetworkCommunicator = component.GetNetworkPeer(), NumberOfWins = component.NumberOfWins, NumberOfLosses = component.NumberOfLosses, Rating = component.Rating });
+                GameNetwork.EndModuleEventAsServer();
+            }
+
+            if (networkPeer != networkPeer2)
+            {
+                MissionPeer component2 = networkPeer2.GetComponent<MissionPeer>();
+                if (component2 != null)
+                {
+                    GameNetwork.BeginModuleEventAsServer(networkPeer);
+                    GameNetwork.WriteMessage(new SyncPerksForCurrentlySelectedTroop(networkPeer2, component2.Perks[component2.SelectedTroopIndex]));
+                    GameNetwork.EndModuleEventAsServer();
+                }
+            }
+        }
+
+        if (SpawnComponent?.SpawningBehavior is CrpgTrainingGroundSpawningBehavior)
+        {
+            MissionPeer missionPeer = networkPeer.GetComponent<MissionPeer>();
+            missionPeer?.SpawnTimer?.AdjustStartTime(-3f); // Used to reduce the initial spawn on connect.
+        }
+
+        for (int i = 0; i < _activeDuels.Count; i++)
+        {
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+            GameNetwork.WriteMessage(new TrainingGroundDuelPreparationStartedForTheFirstTime { RequesterPeer = _activeDuels[i].RequesterPeer.GetNetworkPeer(), RequesteePeer = _activeDuels[i].RequesteePeer.GetNetworkPeer() });
+            GameNetwork.EndModuleEventAsServer();
+        }
+    }
+
+    protected override void HandleEarlyPlayerDisconnect(NetworkCommunicator networkPeer)
+    {
+        MissionPeer component = networkPeer.GetComponent<MissionPeer>();
+        for (int i = 0; i < _peersAndSelections.Count; i++)
+        {
+            if (_peersAndSelections[i].Key == component)
+            {
+                _peersAndSelections.RemoveAt(i);
+                break;
+            }
+        }
+    }
+
+    protected override void HandlePlayerDisconnect(NetworkCommunicator networkPeer)
+    {
+        MissionPeer component = networkPeer.GetComponent<MissionPeer>();
+        if (component != null)
+        {
+            component.Team = null;
+        }
+    }
+
+    private bool RefreshPlayer(NetworkCommunicator networkPeer)
+    {
+        return SpawningBehavior.RefreshPlayer(networkPeer);
+    }
+
+    private bool HandleClientEventDuelRequest(NetworkCommunicator? peer, GameNetworkMessage baseMessage)
+    {
+        TrainingGroundClientDuelRequest duelRequest = (TrainingGroundClientDuelRequest)baseMessage;
+        MissionPeer? missionPeer = peer?.GetComponent<MissionPeer>();
+        if (missionPeer != null)
+        {
+            Agent agentFromIndex = Mission.MissionNetworkHelper.GetAgentFromIndex(duelRequest.RequestedAgentIndex);
+            if (agentFromIndex != null && agentFromIndex.IsActive())
+            {
+                DuelRequestReceived(missionPeer, agentFromIndex.MissionPeer);
+            }
+        }
+
+        return true;
+    }
+
+    private bool HandleClientEventDuelRequestAccepted(NetworkCommunicator? peer, GameNetworkMessage baseMessage)
+    {
+        DuelResponse duelResponse = (DuelResponse)baseMessage;
+        if (peer?.GetComponent<MissionPeer>() != null && peer.GetComponent<MissionPeer>().ControlledAgent != null && duelResponse.Peer?.GetComponent<MissionPeer>() != null && duelResponse.Peer.GetComponent<MissionPeer>().ControlledAgent != null)
+        {
+            DuelRequestAccepted(duelResponse.Peer.GetComponent<CrpgTrainingGroundMissionRepresentative>().ControlledAgent, peer.GetComponent<CrpgTrainingGroundMissionRepresentative>().ControlledAgent);
+        }
+
+        return true;
+    }
+
+    private bool HandleClientRequestRefreshCharacter(NetworkCommunicator peer, GameNetworkMessage baseMessage)
+    {
+        bool result = RefreshPlayer(peer);
+        return result;
+    }
+
     private Team ActivateAndGetDuelTeam()
     {
         if (_deactiveDuelTeams.Count <= 0)
         {
-            return Mission.Teams.Add(BattleSideEnum.Defender, uint.MaxValue, uint.MaxValue, null, isPlayerGeneral: true, isPlayerSergeant: false, isSettingRelations: false);
+            return Mission.Teams.Add(BattleSideEnum.Defender, isPlayerGeneral: true, isPlayerSergeant: false, isSettingRelations: false);
         }
 
         return _deactiveDuelTeams.Dequeue();
@@ -484,7 +585,7 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
 
     private bool IsHavingDuel(MissionPeer peer)
     {
-        return _activeDuels.AnyQ((DuelInfo d) => d.IsPeerInThisDuel(peer));
+        return _activeDuels.AnyQ(d => d.IsPeerInThisDuel(peer));
     }
 
     private bool IsThereARequestBetweenPeers(MissionPeer requesterAgent, MissionPeer requesteeAgent)
@@ -604,7 +705,7 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
         }
     }
 
-    private async void HandleEndedChallenge(DuelInfo duel)
+    private void HandleEndedChallenge(DuelInfo duel)
     {
         MissionPeer? challengeWinnerPeer = duel.ChallengeWinnerPeer;
         MissionPeer? challengeLoserPeer = duel.ChallengeLoserPeer;
@@ -617,7 +718,7 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
 
             if (winnerCrpgPeer != null && loserCrpgPeer != null)
             {
-                await _rewardServer.OnDuelEnded(winnerCrpgPeer, loserCrpgPeer);
+                _ = _rewardServer.OnDuelEnded(winnerCrpgPeer, loserCrpgPeer);
             }
             else
             {
@@ -670,115 +771,6 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
         }
     }
 
-    public override void OnAgentBuild(Agent agent, Banner banner)
-    {
-        if (!agent.IsHuman || agent.Team == null)
-        {
-            return;
-        }
-
-        var networkPeer = agent.MissionPeer.GetNetworkPeer();
-
-        if (networkPeer != null)
-        {
-            var component = networkPeer.GetComponent<CrpgTrainingGroundMissionRepresentative>();
-
-            CrpgPeer? crpgPeer = networkPeer.GetComponent<CrpgPeer>();
-            CrpgCharacterStatistics stats = crpgPeer.User!.Character.Statistics;
-
-            if (!component.HasLoadedStats)
-            {
-                component.NumberOfWins = stats.Kills;
-                component.NumberOfLosses = stats.Deaths;
-                component.Rating = (int)stats.Rating.CompetitiveValue;
-                component.HasLoadedStats = true;
-            }
-
-            GameNetwork.BeginBroadcastModuleEvent();
-            GameNetwork.WriteMessage(new TrainingGroundDuelPointsUpdateMessage { NetworkCommunicator = component.GetNetworkPeer(), NumberOfWins = component.NumberOfWins, NumberOfLosses = component.NumberOfLosses, Rating = component.Rating });
-            GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
-        }
-
-        if (!agent.Team.IsDefender)
-        {
-            return;
-        }
-
-        for (int i = 0; i < _activeDuels.Count; i++)
-        {
-            if (_activeDuels[i].IsPeerInThisDuel(agent.MissionPeer))
-            {
-                _activeDuels[i].OnAgentBuild(agent);
-                break;
-            }
-        }
-    }
-
-    protected override void HandleLateNewClientAfterSynchronized(NetworkCommunicator networkPeer)
-    {
-        if (networkPeer.IsServerPeer)
-        {
-            return;
-        }
-
-        foreach (NetworkCommunicator networkPeer2 in GameNetwork.NetworkPeers)
-        {
-            CrpgTrainingGroundMissionRepresentative component = networkPeer2.GetComponent<CrpgTrainingGroundMissionRepresentative>();
-            if (component != null)
-            {
-                GameNetwork.BeginModuleEventAsServer(networkPeer);
-                GameNetwork.WriteMessage(new TrainingGroundDuelPointsUpdateMessage { NetworkCommunicator = component.GetNetworkPeer(), NumberOfWins = component.NumberOfWins, NumberOfLosses = component.NumberOfLosses, Rating = component.Rating });
-                GameNetwork.EndModuleEventAsServer();
-            }
-
-            if (networkPeer != networkPeer2)
-            {
-                MissionPeer component2 = networkPeer2.GetComponent<MissionPeer>();
-                if (component2 != null)
-                {
-                    GameNetwork.BeginModuleEventAsServer(networkPeer);
-                    GameNetwork.WriteMessage(new SyncPerksForCurrentlySelectedTroop(networkPeer2, component2.Perks[component2.SelectedTroopIndex]));
-                    GameNetwork.EndModuleEventAsServer();
-                }
-            }
-        }
-
-        if (SpawnComponent?.SpawningBehavior is CrpgTrainingGroundSpawningBehavior)
-        {
-            MissionPeer missionPeer = networkPeer.GetComponent<MissionPeer>();
-            missionPeer?.SpawnTimer?.AdjustStartTime(-3f); // Used to reduce the initial spawn on connect.
-        }
-
-        for (int i = 0; i < _activeDuels.Count; i++)
-        {
-            GameNetwork.BeginModuleEventAsServer(networkPeer);
-            GameNetwork.WriteMessage(new TrainingGroundDuelPreparationStartedForTheFirstTime { RequesterPeer = _activeDuels[i].RequesterPeer.GetNetworkPeer(), RequesteePeer = _activeDuels[i].RequesteePeer.GetNetworkPeer() });
-            GameNetwork.EndModuleEventAsServer();
-        }
-    }
-
-    protected override void HandleEarlyPlayerDisconnect(NetworkCommunicator networkPeer)
-    {
-        MissionPeer component = networkPeer.GetComponent<MissionPeer>();
-        for (int i = 0; i < _peersAndSelections.Count; i++)
-        {
-            if (_peersAndSelections[i].Key == component)
-            {
-                _peersAndSelections.RemoveAt(i);
-                break;
-            }
-        }
-    }
-
-    protected override void HandlePlayerDisconnect(NetworkCommunicator networkPeer)
-    {
-        MissionPeer component = networkPeer.GetComponent<MissionPeer>();
-        if (component != null)
-        {
-            component.Team = null;
-        }
-    }
-
     private void RewardUsers()
     {
         if (_rewardTickTimer!.Check(reset: true))
@@ -789,5 +781,4 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
                 updateUserStats: false);
         }
     }
-
 }

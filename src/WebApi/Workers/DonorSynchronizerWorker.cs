@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Crpg.Application.Users.Commands;
-using MediatR;
+using Mediator;
 
 namespace Crpg.WebApi.Workers;
 

@@ -16,7 +16,7 @@ public enum BattlePhase
 
     /// <summary>
     /// <see cref="Party"/>es from anywhere on the map can join the <see cref="Battle"/>
-    /// as <see cref="BattleMercenary"/>.
+    /// as <see cref="BattleParticipant"/>.
     /// </summary>
     Hiring,
 

@@ -1,9 +1,9 @@
 using Crpg.Module.Common.AmmoQuiverChange;
 using TaleWorlds.Core;
-using TaleWorlds.Core.ImageIdentifiers;
 using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
+using MathF = TaleWorlds.Library.MathF;
 
 namespace Crpg.Module.GUI.AmmoQuiverChange;
 
@@ -23,10 +23,10 @@ internal class AmmoQuiverChangeVm : ViewModel
     private int _currentQuiverAmmo;
     private bool _rangedWeaponEquipped;
 
-    private ImageIdentifierVM _quiverImage0 = default!;
-    private ImageIdentifierVM _quiverImage1 = default!;
-    private ImageIdentifierVM _quiverImage2 = default!;
-    private ImageIdentifierVM _quiverImage3 = default!;
+    private ImageIdentifierVM _quiverImage0 = null!;
+    private ImageIdentifierVM _quiverImage1 = null!;
+    private ImageIdentifierVM _quiverImage2 = null!;
+    private ImageIdentifierVM _quiverImage3 = null!;
 
     public AmmoQuiverChangeVm(Mission mission)
     {
@@ -58,7 +58,6 @@ internal class AmmoQuiverChangeVm : ViewModel
         {
             ShowQuiverAmmoCount = false;
             ShowQuiverName = false;
-            return;
         }
     }
 
@@ -267,7 +266,7 @@ internal class AmmoQuiverChangeVm : ViewModel
             if (ammoQuivers.Count() > 1 || hasThrowing)
             {
                 ShowQuiverAmmoCount = true;
-                float f = (float)maxQuiverAmmo * 0.2f;
+                float f = maxQuiverAmmo * 0.2f;
                 IsQuiverAmmoCountAlertEnabled = maxQuiverAmmo != CurrentQuiverAmmo && CurrentQuiverAmmo <= MathF.Ceiling(f);
             }
         }
@@ -433,7 +432,7 @@ internal class AmmoQuiverChangeVm : ViewModel
             if (value != _quiverImage0)
             {
                 _quiverImage0 = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(QuiverImage0));
+                OnPropertyChangedWithValue<ImageIdentifierVM>(value);
             }
         }
     }
@@ -447,7 +446,7 @@ internal class AmmoQuiverChangeVm : ViewModel
             if (value != _quiverImage1)
             {
                 _quiverImage1 = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(QuiverImage1));
+                OnPropertyChangedWithValue<ImageIdentifierVM>(value);
             }
         }
     }
@@ -461,7 +460,7 @@ internal class AmmoQuiverChangeVm : ViewModel
             if (value != _quiverImage2)
             {
                 _quiverImage2 = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(QuiverImage2));
+                OnPropertyChangedWithValue<ImageIdentifierVM>(value);
             }
         }
     }
@@ -475,7 +474,7 @@ internal class AmmoQuiverChangeVm : ViewModel
             if (value != _quiverImage3)
             {
                 _quiverImage3 = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(QuiverImage3));
+                OnPropertyChangedWithValue<ImageIdentifierVM>(value);
             }
         }
     }

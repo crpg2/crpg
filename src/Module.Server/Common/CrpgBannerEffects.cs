@@ -4,7 +4,7 @@ namespace Crpg.Module.Common;
 
 internal class CrpgBannerEffects
 {
-    private static BannerEffect _none = default!;
+    private static BannerEffect _none = null!;
 
     public static void Initialize(Game game)
     {

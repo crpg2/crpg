@@ -1,6 +1,11 @@
 import type { KeysOf, PickFrom } from '#app/composables/asyncData'
 import type { AsyncData, AsyncDataOptions, NuxtApp, NuxtError } from 'nuxt/app'
 
+import { refreshNuxtData, useAsyncData } from 'nuxt/app'
+
+import { usePageLoading } from '~/composables/app/use-page-loading'
+import { usePollInterval } from '~/composables/utils/use-poll-interval'
+
 type AsyncDataCustomOptions<
   ResT,
   DataT = ResT,
@@ -61,7 +66,7 @@ export function useAsyncDataCustom<
   }
 }
 
-export function getAsyncData<DataT = any>(key: EntryKey) {
+export function getAsyncData<DataT = any>(key: EntryKey): Ref<DataT> {
   const { data } = useNuxtData<DataT[]>(toCacheKey(key)) as { data: Ref<DataT> }
 
   if (!data.value) {

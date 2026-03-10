@@ -82,7 +82,7 @@ watchEffect(() => {
         :max
         :step
         :model-value="localValue[0]"
-        @update:model-value="(value) => change(value, localValue[1])"
+        @update:model-value="(value) => change(value!, localValue[1])"
       />
       <UInputNumber
         class="w-full"
@@ -90,7 +90,7 @@ watchEffect(() => {
         :max
         :step
         :model-value="localValue[1]"
-        @update:model-value="(value) => change(localValue[0], value)"
+        @update:model-value="(value) => change(localValue[0], value!)"
       />
     </div>
   </div>

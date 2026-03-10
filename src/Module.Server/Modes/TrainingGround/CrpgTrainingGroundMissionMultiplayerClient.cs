@@ -5,7 +5,7 @@ namespace Crpg.Module.Modes.TrainingGround;
 
 public class CrpgTrainingGroundMissionMultiplayerClient : MissionMultiplayerGameModeBaseClient
 {
-    public Action OnMyRepresentativeAssigned = default!;
+    public Action? OnMyRepresentativeAssigned { get; set; }
     public override bool IsGameModeUsingGold => false;
     public override bool IsGameModeTactical => false;
     public override bool IsGameModeUsingRoundCountdown => false;
@@ -13,19 +13,7 @@ public class CrpgTrainingGroundMissionMultiplayerClient : MissionMultiplayerGame
     public override bool IsGameModeUsingAllowTroopChange => false;
     public override MultiplayerGameType GameType => MultiplayerGameType.Duel;
     public bool IsInDuel => (GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.IsDefender).GetValueOrDefault();
-    public CrpgTrainingGroundMissionRepresentative MyRepresentative { get; private set; } = default!;
-
-    protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
-    {
-        base.AddRemoveMessageHandlers(registerer);
-    }
-
-    private void OnMyClientSynchronized()
-    {
-        MyRepresentative = GameNetwork.MyPeer.GetComponent<CrpgTrainingGroundMissionRepresentative>();
-        OnMyRepresentativeAssigned?.Invoke();
-        MyRepresentative.AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegisterer.RegisterMode.Add);
-    }
+    public CrpgTrainingGroundMissionRepresentative MyRepresentative { get; private set; } = null!;
 
     public override int GetGoldAmount() => 0;
 
@@ -52,4 +40,10 @@ public class CrpgTrainingGroundMissionMultiplayerClient : MissionMultiplayerGame
         MyRepresentative?.CheckHasRequestFromAndRemoveRequestIfNeeded(affectedAgent.MissionPeer);
     }
 
+    private void OnMyClientSynchronized()
+    {
+        MyRepresentative = GameNetwork.MyPeer.GetComponent<CrpgTrainingGroundMissionRepresentative>();
+        OnMyRepresentativeAssigned?.Invoke();
+        MyRepresentative.AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegisterer.RegisterMode.Add);
+    }
 }

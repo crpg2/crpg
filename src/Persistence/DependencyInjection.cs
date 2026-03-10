@@ -4,7 +4,6 @@ using Crpg.Domain.Entities.ActivityLogs;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
-using Crpg.Domain.Entities.GameServers;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
@@ -57,9 +56,12 @@ public static class DependencyInjection
                                 .MapEnum<ClanInvitationType>()
                                 .MapEnum<ClanInvitationStatus>()
                                 .MapEnum<PartyStatus>()
+                                .MapEnum<PartyOrderType>()
+                                .MapEnum<PartyTransferOfferStatus>()
                                 .MapEnum<SettlementType>()
                                 .MapEnum<BattlePhase>()
                                 .MapEnum<BattleSide>()
+                                .MapEnum<BattleParticipantType>()
                                 .MapEnum<BattleFighterApplicationStatus>()
                                 .MapEnum<BattleMercenaryApplicationStatus>()
                                 .MapEnum<Region>()
@@ -68,8 +70,7 @@ public static class DependencyInjection
                                 .MapEnum<ActivityLogType>()
                                 .MapEnum<NotificationState>()
                                 .MapEnum<NotificationType>()
-                                .MapEnum<TerrainType>()
-                                .MapEnum<UserUpdateStatus>())
+                                .MapEnum<TerrainType>())
                     .UseSnakeCaseNamingConvention();
 
                 // TODO: FIXME: https://github.com/dotnet/efcore/issues/35110

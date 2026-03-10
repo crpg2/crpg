@@ -8,7 +8,7 @@ namespace Crpg.Module.Modes.Siege;
 internal class CrpgSiegeSpawningBehavior : CrpgSpawningBehaviorBase
 {
     private const int AttackerSpawnDelay = 20;
-    private bool _allowSpawnTimerOverride = false;
+    private bool _allowSpawnTimerOverride;
     private MissionTimer? _spawnTimerOverrideTimer;
 
     public CrpgSiegeSpawningBehavior(CrpgConstants constants)

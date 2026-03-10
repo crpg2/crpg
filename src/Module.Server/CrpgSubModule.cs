@@ -1,6 +1,5 @@
 ﻿using Crpg.Module.Common;
 using Crpg.Module.Common.Models;
-using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.Modes.Battle;
 using Crpg.Module.Modes.Conquest;
 using Crpg.Module.Modes.Dtv;
@@ -13,11 +12,9 @@ using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.ModuleManager;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.InputSystem;
-using TaleWorlds.Engine.InputSystem;
-using TaleWorlds.MountAndBlade.GameKeyCategory;
-
+using Debug = TaleWorlds.Library.Debug;
 #if CRPG_CLIENT
+using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.HarmonyPatches;
 #endif
 
@@ -27,19 +24,8 @@ using Crpg.Module.HarmonyPatches;
 
 #if CRPG_SERVER
 using Crpg.Module.Common.ChatCommands;
-using TaleWorlds.MountAndBlade.DedicatedCustomServer;
 using TaleWorlds.MountAndBlade.ListedServer;
-using TaleWorlds.PlayerServices;
-using WindowsFirewallHelper;
 #else
-using TaleWorlds.Engine.GauntletUI;
-#endif
-
-#if CRPG_EXPORT
-using System.Runtime.CompilerServices;
-using Crpg.Module.DataExport;
-using TaleWorlds.Library;
-using TaleWorlds.Localization;
 #endif
 
 namespace Crpg.Module;
@@ -49,12 +35,6 @@ internal class CrpgSubModule : MBSubModuleBase
 #if CRPG_SERVER
     private static readonly Random Random = new();
     private static bool _mapPoolAdded;
-    public static CrpgSubModule Instance = default!;
-    public Dictionary<PlayerId, IAddress> WhitelistedIps = new();
-    public int Port()
-    {
-        return TaleWorlds.MountAndBlade.Module.CurrentModule.StartupInfo.ServerPort;
-    }
 
 #endif
     static CrpgSubModule()
@@ -63,7 +43,21 @@ internal class CrpgSubModule : MBSubModuleBase
             Debug.Print(args.ExceptionObject.ToString(), color: Debug.DebugColor.Red);
     }
 
-    private CrpgConstants _constants = default!;
+    private CrpgConstants _constants = null!;
+
+#if CRPG_SERVER
+    public override void OnGameInitializationFinished(Game game)
+    {
+        base.OnGameInitializationFinished(game);
+        AddMaps();
+
+        // Add the chat command handler here so network messages are being processed first.
+        if (game.GetGameHandler<ChatCommandsComponent>() == null)
+        {
+            game.AddGameHandler<ChatCommandsComponent>();
+        }
+    }
+#endif
 
     protected override void OnSubModuleLoad()
     {
@@ -85,18 +79,11 @@ internal class CrpgSubModule : MBSubModuleBase
         KeyBinder.Initialize();
         BannerlordPatches.Apply();
         KeyBinder.RegisterContexts();
-#elif CRPG_EDITOR
-        BannerlordPatches.Apply();
-#endif
-
-#if CRPG_EXPORT
-        TaleWorlds.MountAndBlade.Module.CurrentModule.AddInitialStateOption(new InitialStateOption("ExportData",
-            new TextObject("Export Data"), 4578, ExportData, () => (false, null)));
-#endif
 
         // Uncomment to start watching UI changes.
-#if CRPG_CLIENT
         // UIResourceManager.ResourceDepot.StartWatchingChangesInDepot();
+#elif CRPG_EDITOR
+        BannerlordPatches.Apply();
 #endif
     }
 
@@ -106,7 +93,7 @@ internal class CrpgSubModule : MBSubModuleBase
         InitializeGameModels(starterObject);
         CrpgSkills.Initialize(game);
         CrpgBannerEffects.Initialize(game);
-        ManagedParameters.Instance.Initialize(ModuleHelper.GetXmlPath("Crpg", "managed_core_parameters"));
+        ManagedParameters.Instance.Initialize(ModuleHelper.GetXmlPath("cRPG", "managed_core_parameters"));
 #if CRPG_CLIENT
         game.GameTextManager.LoadGameTexts();
 #endif
@@ -121,18 +108,6 @@ internal class CrpgSubModule : MBSubModuleBase
 #endif
     }
 #if CRPG_SERVER
-    public override void OnGameInitializationFinished(Game game)
-    {
-        base.OnGameInitializationFinished(game);
-        AddMaps();
-        Debug.Print($"Now Adding Maps", color: Debug.DebugColor.Cyan);
-
-        // Add the chat command handler here so network messages are being processed first.
-        if (game.GetGameHandler<ChatCommandsComponent>() == null)
-        {
-            game.AddGameHandler<ChatCommandsComponent>();
-        }
-    }
 
     private static void AddMaps()
     {
@@ -141,56 +116,56 @@ internal class CrpgSubModule : MBSubModuleBase
             return;
         }
 
-        string currentConfigFilePath = TaleWorlds.MountAndBlade.Module.CurrentModule.StartupInfo.CustomGameServerConfigFile;
-        string mapconfigfilepath = Path.Combine(Directory.GetCurrentDirectory(), ModuleHelper.GetModuleFullPath("cRPG"), currentConfigFilePath.Replace(".txt", string.Empty) + "_maps.txt");
+        string configFilePath = TaleWorlds.MountAndBlade.Module.CurrentModule.StartupInfo.CustomGameServerConfigFile;
+        string mapsFilePath = Path.Combine(
+            Directory.GetCurrentDirectory(),
+            ModuleHelper.GetModuleFullPath("cRPG"),
+            configFilePath.Replace(".txt", string.Empty) + "_maps.txt");
 
-        if (File.Exists(mapconfigfilepath))
+        if (!File.Exists(mapsFilePath))
         {
-            try
+            Debug.Print($"Map configuration file not found: {mapsFilePath}", color: Debug.DebugColor.Red);
+            return;
+        }
+
+        try
+        {
+            string[] maps = File.ReadAllLines(mapsFilePath)
+                .Where(map => !string.IsNullOrWhiteSpace(map))
+                .ToArray();
+
+            for (int i = maps.Length - 1; i > 0; i--)
             {
-                string[] maps = File.ReadAllLines(mapconfigfilepath);
-
-                // Remove empty or invalid map entries
-                maps = maps.Where(map => !string.IsNullOrWhiteSpace(map)).ToArray();
-
-                // Shuffle maps using Fisher-Yates Shuffle
-                Debug.Print("Shuffling maps for random order.", color: Debug.DebugColor.Cyan);
-                for (int i = maps.Length - 1; i > 0; i--)
-                {
-                    int j = Random.Next(i + 1);
-                    (maps[i], maps[j]) = (maps[j], maps[i]);
-                }
-
-                // Debug: Print shuffled map list
-                Debug.Print("Shuffled map order:", color: Debug.DebugColor.Green);
-                foreach (string map in maps)
-                {
-                    Debug.Print($"- {map}", color: Debug.DebugColor.Green);
-                }
-
-                // Add each map to the server's usable maps and automated battle pool
-                foreach (string map in maps)
-                {
-                    if (ServerSideIntermissionManager.Instance != null)
-                    {
-                        ServerSideIntermissionManager.Instance.AddMapToUsableMaps(map);
-                        ServerSideIntermissionManager.Instance.AddMapToAutomatedBattlePool(map);
-                        Debug.Print($"Added {map} to usable maps and automated battle pool.", color: Debug.DebugColor.Red);
-                    }
-                    else
-                    {
-                        Debug.Print("ServerSideIntermissionManager instance is null. Unable to add maps.", color: Debug.DebugColor.Red);
-                    }
-                }
+                int j = Random.Next(i + 1);
+                (maps[i], maps[j]) = (maps[j], maps[i]);
             }
-            catch (Exception e)
+
+            Debug.Print("Shuffled map order:", color: Debug.DebugColor.Green);
+            foreach (string map in maps)
             {
-                Debug.Print($"Error reading the map file {mapconfigfilepath}: {e.Message}", color: Debug.DebugColor.Red);
+                Debug.Print($"- {map}", color: Debug.DebugColor.Green);
+            }
+
+            // Add each map to the server's usable maps and automated battle pool
+            foreach (string map in maps)
+            {
+                if (ServerSideIntermissionManager.Instance != null)
+                {
+                    ServerSideIntermissionManager.Instance.AddMapToUsableMaps(map);
+                    ServerSideIntermissionManager.Instance.AddMapToAutomatedBattlePool(map);
+                    Debug.Print($"Added {map} to usable maps and automated battle pool.",
+                        color: Debug.DebugColor.Red);
+                }
+                else
+                {
+                    Debug.Print("ServerSideIntermissionManager instance is null. Unable to add maps.",
+                        color: Debug.DebugColor.Red);
+                }
             }
         }
-        else
+        catch (Exception e)
         {
-            Debug.Print($"Map configuration file not found: {mapconfigfilepath}", color: Debug.DebugColor.Red);
+            Debug.Print($"Error reading the map file {mapsFilePath}: {e.Message}", color: Debug.DebugColor.Red);
         }
 
         _mapPoolAdded = true;
@@ -211,40 +186,4 @@ internal class CrpgSubModule : MBSubModuleBase
         basicGameStarter.AddModel(new CrpgAgentApplyDamageModel(_constants));
         basicGameStarter.AddModel(new CrpgStrikeMagnitudeModel(_constants));
     }
-
-#if CRPG_EXPORT
-    private void ExportData()
-    {
-        IDataExporter[] exporters =
-        {
-            new ItemExporter(),
-            // new SettlementExporter(),
-        };
-
-        InformationManager.DisplayMessage(new InformationMessage("Exporting data."));
-        string gitRepoPath = FindGitRepositoryRootPath();
-        Task.WhenAll(exporters.Select(e => e.Export(gitRepoPath))).ContinueWith(t =>
-        {
-            InformationManager.DisplayMessage(t.IsFaulted
-                ? new InformationMessage(t.Exception!.Message)
-                : new InformationMessage("Done."));
-        });
-    }
-
-    private string FindGitRepositoryRootPath([CallerFilePath] string currentFilePath = default!)
-    {
-        var dir = Directory.GetParent(currentFilePath);
-        while (dir != null)
-        {
-            if (Directory.Exists(Path.Combine(dir.FullName, ".git")))
-            {
-                return dir.FullName;
-            }
-
-            dir = dir.Parent;
-        }
-
-        throw new InvalidOperationException("Could not find cRPG git repository");
-    }
-#endif
 }

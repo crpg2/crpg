@@ -13,7 +13,7 @@ namespace Crpg.WebApi.Controllers;
 public class SettlementsController : BaseController
 {
     /// <summary>
-    /// Get Strategus settlements.
+    /// Get Campaign settlements.
     /// </summary>
     [HttpGet]
     public Task<ActionResult<Result<IList<SettlementPublicViewModel>>>> GetSettlements()
@@ -22,19 +22,20 @@ public class SettlementsController : BaseController
     /// <summary>
     /// Get settlement details by Id.
     /// </summary>
-    ///
     [HttpGet("{settlementId}")]
-    public Task<ActionResult<Result<SettlementPublicViewModel>>> UpdateSettlement([FromRoute] int settlementId)
+    public Task<ActionResult<Result<SettlementPublicViewModel>>> GetSettlementById([FromRoute] int settlementId)
     {
-        return ResultToActionAsync(Mediator.Send(new GetSettlementByIdQuery() { SettlementId = settlementId }));
+        return ResultToActionAsync(Mediator.Send(new GetSettlementByIdQuery()
+        {
+            PartyId = CurrentUser.User!.Id,
+            SettlementId = settlementId,
+        }));
     }
 
     /// <summary>
     /// Give (position count) or take (negative count) garrison troops from a settlement.
     /// </summary>
-    ///
-    // TODO: Post || Put?
-    [HttpPost("{settlementId}")]
+    [HttpPut("{settlementId}")]
     public Task<ActionResult<Result<SettlementPublicViewModel>>> UpdateSettlement([FromRoute] int settlementId,
         [FromBody] UpdateSettlementCommand req)
     {
@@ -56,20 +57,19 @@ public class SettlementsController : BaseController
     }
 
     /// <summary>
-    /// Give (position count) or take (negative count) garrison items from a settlement.
+    /// Give (positive count) or take (negative count) garrison items from a settlement.
+    /// Multiple items can be transferred in a single batch operation.
     /// </summary>
-    ///
-    // TODO: Post + Put?
-    [HttpPost("{settlementId}/items")]
-    public Task<ActionResult<Result<ItemStack>>> UpdateSettlementItems([FromRoute] int settlementId,
-        [FromBody] AddSettlementItemCommand req)
+    [HttpPut("{settlementId}/items")]
+    public Task<ActionResult<Result<ItemStack[]>>> UpdateSettlementItems([FromRoute] int settlementId,
+        [FromBody] UpdateSettlementItemsCommand req)
     {
         req = req with { PartyId = CurrentUser.User!.Id, SettlementId = settlementId };
         return ResultToActionAsync(Mediator.Send(req));
     }
 
     /// <summary>
-    /// Get strategus settlement shop items.
+    /// Get campaign settlement shop items.
     /// </summary>
     [HttpGet("{settlementId}/shop/items")]
     public Task<ActionResult<Result<IList<ItemViewModel>>>> GetSettlementShopItems([FromRoute] int settlementId)

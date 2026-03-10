@@ -1,13 +1,11 @@
 ﻿using Crpg.Module.Common;
 using Crpg.Module.Modes.TrainingGround;
-using TaleWorlds.CampaignSystem.ViewModelCollection.Input;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.MissionRepresentatives;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.ClassLoadout;
 
 namespace Crpg.Module.GUI.TrainingGround;
@@ -21,7 +19,6 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
     private float _wPosAfterPositionCalculation;
     private TextObject _acceptDuelRequestText = new(string.Empty);
     private TextObject _sendDuelRequestText = new(string.Empty);
-    private TextObject _sendRankedDuelRequestText = new(string.Empty);
     private TextObject _waitingForDuelResponseText = new(string.Empty);
     private bool _isEnabled;
     private bool _isTracked;
@@ -42,7 +39,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
     private int _wSign;
     private Vec2 _screenPosition;
     private Vec3 _groundVec;
-    private MPTeammateCompassTargetVM _compassElement = default!;
+    private MPTeammateCompassTargetVM _compassElement = null!;
     public MissionPeer TargetPeer { get; private set; }
     public float Distance { get; private set; }
     public bool IsInDuel { get; private set; }
@@ -59,7 +56,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _isEnabled)
             {
                 _isEnabled = value;
-                OnPropertyChangedWithValue(value, "IsEnabled");
+                OnPropertyChangedWithValue(value);
                 UpdateTracked();
             }
         }
@@ -77,7 +74,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _isTracked)
             {
                 _isTracked = value;
-                OnPropertyChangedWithValue(value, "IsTracked");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -94,7 +91,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _shouldShowInformation)
             {
                 _shouldShowInformation = value;
-                OnPropertyChangedWithValue(value, "ShouldShowInformation");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -111,7 +108,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _isAgentInScreenBoundaries)
             {
                 _isAgentInScreenBoundaries = value;
-                OnPropertyChangedWithValue(value, "IsAgentInScreenBoundaries");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -128,7 +125,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _isFocused)
             {
                 _isFocused = value;
-                OnPropertyChangedWithValue(value, "IsFocused");
+                OnPropertyChangedWithValue(value);
                 SetFocused(value);
                 UpdateTracked();
             }
@@ -147,7 +144,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _hasDuelRequestForPlayer)
             {
                 _hasDuelRequestForPlayer = value;
-                OnPropertyChangedWithValue(value, "HasDuelRequestForPlayer");
+                OnPropertyChangedWithValue(value);
                 OnInteractionChanged();
                 UpdateTracked();
             }
@@ -166,7 +163,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _hasSentDuelRequest)
             {
                 _hasSentDuelRequest = value;
-                OnPropertyChangedWithValue(value, "HasSentDuelRequest");
+                OnPropertyChangedWithValue(value);
                 OnInteractionChanged();
                 UpdateTracked();
             }
@@ -185,7 +182,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _name)
             {
                 _name = value;
-                OnPropertyChangedWithValue(value, "Name");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -202,7 +199,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _actionDescriptionText)
             {
                 _actionDescriptionText = value;
-                OnPropertyChangedWithValue(value, "ActionDescriptionText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -219,7 +216,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _clan)
             {
                 _clan = value;
-                OnPropertyChangedWithValue(value, "Clan");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -236,7 +233,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _clanText)
             {
                 _clanText = value;
-                OnPropertyChangedWithValue(value, "ClanText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -253,7 +250,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _duelsWon)
             {
                 _duelsWon = value;
-                OnPropertyChangedWithValue(value, "DuelsWon");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -270,7 +267,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _duelsLost)
             {
                 _duelsLost = value;
-                OnPropertyChangedWithValue(value, "DuelsLost");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -287,7 +284,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _rating)
             {
                 _rating = value;
-                OnPropertyChangedWithValue(value, "Rating");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -304,7 +301,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _level)
             {
                 _level = value;
-                OnPropertyChangedWithValue(value, "Level");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -321,7 +318,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _levelText)
             {
                 _levelText = value;
-                OnPropertyChangedWithValue(value, "LevelText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -338,7 +335,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _wSign)
             {
                 _wSign = value;
-                OnPropertyChangedWithValue(value, "WSign");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -355,7 +352,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value.x != _screenPosition.x || value.y != _screenPosition.y)
             {
                 _screenPosition = value;
-                OnPropertyChangedWithValue(value, "ScreenPosition");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -388,7 +385,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             if (value != _compassElement)
             {
                 _compassElement = value;
-                OnPropertyChangedWithValue(value, "CompassElement");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -454,7 +451,7 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
             GroundVec = _groundVec;
             ScreenPosition = new Vec2(_latestX, _latestY);
             IsAgentInScreenBoundaries = !(_latestX > Screen.RealScreenResolutionWidth) && !(_latestY > Screen.RealScreenResolutionHeight) && !(_latestX + 200f < 0f) && !(_latestY + 100f < 0f);
-            _wPosAfterPositionCalculation = ((_latestW < 0f) ? (-1f) : 1.1f);
+            _wPosAfterPositionCalculation = _latestW < 0f ? -1f : 1.1f;
             WSign = (int)_wPosAfterPositionCalculation;
         }
     }
@@ -468,6 +465,24 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
     public void UpdateRating()
     {
         Rating = ((CrpgTrainingGroundMissionRepresentative)TargetPeer.Representative).Rating;
+    }
+
+    public void OnDuelStarted()
+    {
+        IsEnabled = false;
+        IsInDuel = true;
+    }
+
+    public void OnDuelEnded()
+    {
+        IsEnabled = true;
+        IsInDuel = false;
+    }
+
+    public void UpdateCurentDuelStatus(bool isInDuel)
+    {
+        IsInDuel = isInDuel;
+        IsEnabled = !IsInDuel;
     }
 
     private void OnInteractionChanged()
@@ -521,23 +536,4 @@ public class CrpgTrainingGroundPeerMarkerVm : ViewModel
 
         ShouldShowInformation = IsTracked || IsFocused;
     }
-
-    public void OnDuelStarted()
-    {
-        IsEnabled = false;
-        IsInDuel = true;
-    }
-
-    public void OnDuelEnded()
-    {
-        IsEnabled = true;
-        IsInDuel = false;
-    }
-
-    public void UpdateCurentDuelStatus(bool isInDuel)
-    {
-        IsInDuel = isInDuel;
-        IsEnabled = !IsInDuel;
-    }
-
 }

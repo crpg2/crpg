@@ -40,7 +40,7 @@ internal class CrpgCommanderBehaviorClient : MissionNetwork
     private Dictionary<BattleSideEnum, NetworkCommunicator?> _commanders = new();
     private Dictionary<BattleSideEnum, BasicCharacterObject?> _commanderCharacters = new();
 
-    public event Action<BattleSideEnum> OnCommanderUpdated = default!;
+    public event Action<BattleSideEnum> OnCommanderUpdated = null!;
 
     public CrpgCommanderBehaviorClient()
     {

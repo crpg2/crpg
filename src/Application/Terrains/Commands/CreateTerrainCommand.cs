@@ -15,20 +15,13 @@ public record CreateTerrainCommand : IMediatorRequest<TerrainViewModel>
     public TerrainType Type { get; set; }
     public Polygon Boundary { get; set; } = default!;
 
-    internal class Handler : IMediatorRequestHandler<CreateTerrainCommand, TerrainViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<CreateTerrainCommand, TerrainViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<CreateTerrainCommand>();
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
-
-        public async Task<Result<TerrainViewModel>> Handle(CreateTerrainCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<TerrainViewModel>> Handle(CreateTerrainCommand req, CancellationToken cancellationToken)
         {
             Terrain terrain = new()
             {
@@ -39,7 +32,7 @@ public record CreateTerrainCommand : IMediatorRequest<TerrainViewModel>
             _db.Terrains.Add(terrain);
 
             await _db.SaveChangesAsync(cancellationToken);
-            Logger.LogInformation("Terrain type '{0}' with boundary '{1}' add to Strategus map", req.Type, req.Boundary);
+            Logger.LogInformation("Terrain type '{0}' with boundary '{1}' add to Campaign map", req.Type, req.Boundary);
             return new(_mapper.Map<TerrainViewModel>(terrain));
         }
     }

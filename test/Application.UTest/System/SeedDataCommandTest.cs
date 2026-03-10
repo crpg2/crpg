@@ -23,7 +23,7 @@ public class SeedDataCommandTest : TestBase
     private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
     private static readonly Mock<IUserNotificationService> UserNotificationsService = new() { DefaultValue = DefaultValue.Mock };
     private static readonly ICharacterService CharacterService = Mock.Of<ICharacterService>();
-    private static readonly IStrategusMap StrategusMap = Mock.Of<IStrategusMap>();
+    private static readonly ICampaignMap CampaignMap = Mock.Of<ICampaignMap>();
 
     [Test]
     public async Task ShouldInsertItemsFromItemSource()
@@ -42,7 +42,7 @@ public class SeedDataCommandTest : TestBase
             CreateAppEnv(),
             CharacterService,
             ExperienceTable,
-            StrategusMap,
+            CampaignMap,
             Mock.Of<ISettlementsSource>(),
             ActivityLogService.Object,
             UserNotificationsService.Object);
@@ -82,7 +82,7 @@ public class SeedDataCommandTest : TestBase
             CreateAppEnv(),
             CharacterService,
             ExperienceTable,
-            StrategusMap,
+            CampaignMap,
             Mock.Of<ISettlementsSource>(),
             ActivityLogService.Object,
             UserNotificationsService.Object);
@@ -112,7 +112,7 @@ public class SeedDataCommandTest : TestBase
             CreateAppEnv(),
             CharacterService,
             ExperienceTable,
-            StrategusMap,
+            CampaignMap,
             Mock.Of<ISettlementsSource>(),
             ActivityLogService.Object,
             UserNotificationsService.Object);
@@ -177,7 +177,7 @@ public class SeedDataCommandTest : TestBase
             CreateAppEnv(),
             CharacterService,
             ExperienceTable,
-            StrategusMap,
+            CampaignMap,
             Mock.Of<ISettlementsSource>(),
             ActivityLogService.Object,
             UserNotificationsService.Object);
@@ -192,15 +192,15 @@ public class SeedDataCommandTest : TestBase
     public async Task ShouldAddSettlementIfDoesntExistsInDb()
     {
         Mock<ISettlementsSource> settlementsSource = new();
-        settlementsSource.Setup(s => s.LoadStrategusSettlements())
+        settlementsSource.Setup(s => s.LoadCampaignSettlements())
             .ReturnsAsync(new[]
             {
                 new SettlementCreation { Name = "a", Position = new Point(0, 0) },
                 new SettlementCreation { Name = "b", Position = new Point(0, 0) },
             });
 
-        Mock<IStrategusMap> strategusMapMock = new();
-        strategusMapMock
+        Mock<ICampaignMap> campaignMapMock = new();
+        campaignMapMock
             .Setup(m => m.TranslatePositionForRegion(It.IsAny<Point>(), It.IsAny<Region>(), It.IsAny<Region>()))
             .Returns((Point point, Region _, Region _) => point);
 
@@ -210,7 +210,7 @@ public class SeedDataCommandTest : TestBase
             CreateAppEnv(),
             CharacterService,
             ExperienceTable,
-            strategusMapMock.Object,
+            campaignMapMock.Object,
             settlementsSource.Object,
             ActivityLogService.Object,
             UserNotificationsService.Object);
@@ -271,7 +271,7 @@ public class SeedDataCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         Mock<ISettlementsSource> settlementsSource = new();
-        settlementsSource.Setup(s => s.LoadStrategusSettlements())
+        settlementsSource.Setup(s => s.LoadCampaignSettlements())
             .ReturnsAsync(new[]
             {
                 new SettlementCreation
@@ -284,17 +284,17 @@ public class SeedDataCommandTest : TestBase
                 },
             });
 
-        Mock<IStrategusMap> strategusMapMock = new();
-        strategusMapMock
+        Mock<ICampaignMap> campaignMapMock = new();
+        campaignMapMock
             .Setup(m => m.TranslatePositionForRegion(It.IsAny<Point>(), Region.Eu, Region.Eu))
             .Returns(new Point(3, 4));
-        strategusMapMock
+        campaignMapMock
             .Setup(m => m.TranslatePositionForRegion(It.IsAny<Point>(), Region.Eu, Region.Na))
             .Returns(new Point(4, 5));
-        strategusMapMock
+        campaignMapMock
             .Setup(m => m.TranslatePositionForRegion(It.IsAny<Point>(), Region.Eu, Region.As))
             .Returns(new Point(5, 6));
-        strategusMapMock
+        campaignMapMock
             .Setup(m => m.TranslatePositionForRegion(It.IsAny<Point>(), Region.Eu, Region.Oc))
             .Returns(new Point(5, 6));
 
@@ -304,7 +304,7 @@ public class SeedDataCommandTest : TestBase
             CreateAppEnv(),
             CharacterService,
             ExperienceTable,
-            strategusMapMock.Object,
+            campaignMapMock.Object,
             settlementsSource.Object,
             ActivityLogService.Object,
             UserNotificationsService.Object);
@@ -339,7 +339,7 @@ public class SeedDataCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         Mock<ISettlementsSource> settlementsSource = new();
-        settlementsSource.Setup(s => s.LoadStrategusSettlements())
+        settlementsSource.Setup(s => s.LoadCampaignSettlements())
             .ReturnsAsync(Array.Empty<SettlementCreation>());
 
         SeedDataCommand.Handler handler = new(
@@ -348,7 +348,7 @@ public class SeedDataCommandTest : TestBase
             CreateAppEnv(),
             CharacterService,
             ExperienceTable,
-            StrategusMap,
+            CampaignMap,
             settlementsSource.Object,
             ActivityLogService.Object,
             UserNotificationsService.Object);

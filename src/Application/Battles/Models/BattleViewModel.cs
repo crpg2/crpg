@@ -12,4 +12,5 @@ public record BattleViewModel : IMapFrom<Battle>
     public Point Position { get; init; } = default!;
     public BattlePhase Phase { get; init; }
     public DateTime CreatedAt { get; init; }
+    public IList<BattleFighterViewModel> Fighters { get; init; } = Array.Empty<BattleFighterViewModel>();
 }

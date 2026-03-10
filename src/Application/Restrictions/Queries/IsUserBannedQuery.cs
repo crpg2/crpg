@@ -22,7 +22,7 @@ public record IsUserBannedQuery : IMediatorRequest<bool>
             _dateTime = dateTime;
         }
 
-        public async Task<Result<bool>> Handle(IsUserBannedQuery request, CancellationToken cancellationToken)
+        public async ValueTask<Result<bool>> Handle(IsUserBannedQuery request, CancellationToken cancellationToken)
         {
             var lastAllRestriction = await _db.Restrictions
                 .OrderByDescending(r => r.CreatedAt)

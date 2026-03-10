@@ -5,20 +5,23 @@ definePageMeta({
   layoutOptions: {
     bg: 'background-2.webp',
   },
+  middleware: [
+    () => {
+      const { fallbackCharacterId } = useCharacters()
+      if (fallbackCharacterId.value) {
+        return navigateTo({
+          name: 'characters-id-inventory',
+          params: { id: fallbackCharacterId.value },
+          replace: true,
+        })
+      }
+    },
+  ],
 })
-
-const { fallbackCharacterId } = useCharacters()
-
-if (fallbackCharacterId.value) {
-  await navigateTo({
-    name: 'characters-id-inventory',
-    params: { id: fallbackCharacterId.value },
-  })
-}
 </script>
 
 <template>
-  <div class="flex min-h-[500px] items-center justify-center">
+  <div class="flex min-h-125 items-center justify-center">
     <div class="space-y-8">
       <UiDecorSeparator />
       <div class="text-center">

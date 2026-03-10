@@ -1,3 +1,18 @@
+#if CRPG_SERVER
+using Crpg.Module.Api;
+using Crpg.Module.Common.ChatCommands;
+#else
+using Crpg.Module.Common.HotConstants;
+using Crpg.Module.GUI;
+using Crpg.Module.GUI.AmmoQuiverChange;
+using Crpg.Module.GUI.Commander;
+using Crpg.Module.GUI.Dtv;
+using Crpg.Module.GUI.Spectator;
+using Crpg.Module.GUI.Warmup;
+using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
+using TaleWorlds.MountAndBlade.View;
+using TaleWorlds.MountAndBlade.View.MissionViews;
+#endif
 using Crpg.Module.Common;
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Common.Commander;
@@ -11,22 +26,6 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Source.Missions;
 
-#if CRPG_SERVER
-using Crpg.Module.Api;
-using Crpg.Module.Common.ChatCommands;
-#else
-using Crpg.Module.Common.HotConstants;
-using Crpg.Module.GUI;
-using Crpg.Module.GUI.Commander;
-using Crpg.Module.GUI.Dtv;
-using Crpg.Module.GUI.Spectator;
-using Crpg.Module.GUI.Warmup;
-using Crpg.Module.GUI.AmmoQuiverChange;
-using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
-using TaleWorlds.MountAndBlade.View;
-using TaleWorlds.MountAndBlade.View.MissionViews;
-#endif
-
 namespace Crpg.Module.Modes.Dtv;
 
 [ViewCreatorModule] // Exposes methods with ViewMethod attribute.
@@ -34,7 +33,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
 {
     private const string GameName = "cRPGDTV";
 
-    private static CrpgConstants _constants = default!; // Static so it's accessible from the views.
+    private static CrpgConstants _constants = null!; // Static so it's accessible from the views.
 
     public CrpgDtvGameMode(CrpgConstants constants)
         : base(GameName)
@@ -97,14 +96,14 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
         Game.Current.GetGameHandler<ChatCommandsComponent>()?.InitChatCommands(crpgClient);
         ChatBox chatBox = Game.Current.GetGameHandler<ChatBox>();
 
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, () =>
+        CrpgWarmupComponent warmupComponent = new(_constants, () =>
             (new FlagDominationSpawnFrameBehavior(),
             new CrpgDtvSpawningBehavior(_constants)));
         CrpgTeamSelectServerComponent teamSelectComponent = new(warmupComponent, null, MultiplayerGameType.Siege);
         CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: true, enableRating: false, enableLowPopulationUpkeep: true);
         CrpgDtvSpawningBehavior spawnBehaviour = new(_constants);
 #else
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, null);
+        CrpgWarmupComponent warmupComponent = new(_constants, null);
         CrpgTeamSelectClientComponent teamSelectComponent = new();
 #endif
         CrpgDtvClient dtvClient = new();
@@ -120,6 +119,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new CrpgCommanderBehaviorClient(),
                 new AmmoQuiverChangeBehaviorClient(),
                 new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
+                new CrpgDtvStuckBotHighlighter(dtvClient),
 #endif
                 dtvClient,
                 new MultiplayerTimerComponent(), // round timer

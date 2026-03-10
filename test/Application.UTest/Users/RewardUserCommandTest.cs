@@ -1,8 +1,6 @@
 ﻿using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Users.Commands;
-using Crpg.Domain.Entities.GameServers;
-using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Moq;

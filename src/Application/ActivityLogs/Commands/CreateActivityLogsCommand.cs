@@ -23,7 +23,7 @@ public record CreateActivityLogsCommand : IMediatorRequest
             _db = db;
         }
 
-        public async Task<Result> Handle(CreateActivityLogsCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(CreateActivityLogsCommand req, CancellationToken cancellationToken)
         {
             var activityLogs = req.ActivityLogs.Select(l => new ActivityLog
             {

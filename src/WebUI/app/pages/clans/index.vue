@@ -97,7 +97,6 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
         onResetFilter: () => column.setFilterValue(undefined),
       }, {
         filter: () =>
-          // @ts-expect-error TODO: https://github.com/nuxt/ui/issues/2968
           h(USelect, {
             'variant': 'none',
             'multiple': true,
@@ -167,7 +166,7 @@ const columnVisibility = ref<VisibilityState>({
 })
 
 const regionItems = regions.map<TabsItem>(region => ({
-  label: t(`region.${region}`),
+  label: t(`region.${region}`, 0),
   value: region,
 }))
 </script>

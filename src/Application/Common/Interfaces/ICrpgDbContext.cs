@@ -2,7 +2,6 @@ using Crpg.Domain.Entities.ActivityLogs;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
-using Crpg.Domain.Entities.GameServers;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
 using Crpg.Domain.Entities.Notifications;
@@ -36,17 +35,20 @@ public interface ICrpgDbContext
     DbSet<Settlement> Settlements { get; }
     DbSet<SettlementItem> SettlementItems { get; }
     DbSet<PartyItem> PartyItems { get; }
+    DbSet<PartyOrder> PartyOrders { get; }
+    DbSet<PartyTransferOffer> PartyTransferOffers { get; }
+    DbSet<PartyTransferOfferItem> PartyTransferOfferItems { get; }
     DbSet<Battle> Battles { get; }
+    DbSet<BattleSideBriefing> BattleSideBriefings { get; }
     DbSet<BattleFighter> BattleFighters { get; }
     DbSet<BattleFighterApplication> BattleFighterApplications { get; }
-    DbSet<BattleMercenary> BattleMercenaries { get; }
+    DbSet<BattleParticipant> BattleParticipants { get; }
     DbSet<BattleMercenaryApplication> BattleMercenaryApplications { get; }
     DbSet<ActivityLog> ActivityLogs { get; set; }
     DbSet<ActivityLogMetadata> ActivityLogMetadata { get; set; }
     DbSet<UserNotification> UserNotifications { get; set; }
     DbSet<Terrain> Terrains { get; }
     DbSet<UserNotificationMetadata> UserNotificationMetadata { get; set; }
-    DbSet<IdempotencyKey> IdempotencyKeys { get; set; }
     DbSet<Setting> Settings { get; set; }
     EntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);

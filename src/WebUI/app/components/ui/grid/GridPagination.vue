@@ -2,7 +2,7 @@
 import type { Table } from '@tanstack/table-core'
 
 const { tableApi } = defineProps<{
-  tableApi: Ref<Table<any>> // TODO: нужно убрать ref
+  tableApi: Ref<Table<any>> // TODO: remove ref
 }>()
 
 const total = computed(() => tableApi.value.getRowCount())

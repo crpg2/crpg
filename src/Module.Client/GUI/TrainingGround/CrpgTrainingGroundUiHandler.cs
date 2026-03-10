@@ -54,7 +54,7 @@ public class CrpgTrainingGroundUiHandler : MissionView
         _equipmentController!.OnEquipmentRefreshed -= OnEquipmentRefreshed;
         MissionPeer.OnEquipmentIndexRefreshed -= OnPeerEquipmentIndexRefreshed;
         _lobbyComponent!.OnPostMatchEnded -= OnPostMatchEnded;
-        NativeOptions.OnNativeOptionChanged = (NativeOptions.OnNativeOptionChangedDelegate)Delegate.Remove(NativeOptions.OnNativeOptionChanged, new NativeOptions.OnNativeOptionChangedDelegate(OnNativeOptionChanged));
+        NativeOptions.OnNativeOptionChanged = (NativeOptions.OnNativeOptionChangedDelegate?)Delegate.Remove(NativeOptions.OnNativeOptionChanged, new NativeOptions.OnNativeOptionChangedDelegate(OnNativeOptionChanged));
     }
 
     public override void OnMissionScreenTick(float dt)
@@ -70,14 +70,6 @@ public class CrpgTrainingGroundUiHandler : MissionView
         {
             _dataSource.Markers.RefreshPeerEquipments();
             _isPeerEquipmentsDirty = false;
-        }
-    }
-
-    private void OnNativeOptionChanged(NativeOptions.NativeOptionsType optionType)
-    {
-        if (optionType == NativeOptions.NativeOptionsType.ScreenResolution)
-        {
-            _dataSource!.OnScreenResolutionChanged();
         }
     }
 
@@ -120,6 +112,14 @@ public class CrpgTrainingGroundUiHandler : MissionView
     public void OnPeerEquipmentIndexRefreshed(MissionPeer peer, int equipmentSetIndex)
     {
         _dataSource!.Markers.OnPeerEquipmentRefreshed(peer);
+    }
+
+    private void OnNativeOptionChanged(NativeOptions.NativeOptionsType optionType)
+    {
+        if (optionType == NativeOptions.NativeOptionsType.ScreenResolution)
+        {
+            _dataSource!.OnScreenResolutionChanged();
+        }
     }
 
     private void OnEquipmentRefreshed(MissionPeer peer)

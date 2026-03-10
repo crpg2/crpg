@@ -688,12 +688,12 @@ export const getRankColor = (rank: number) => {
     case 3:
       return '#c084fc'
     default:
-      return '#fff'
+      return 'var(--ui-text-highlighted)'
   }
 }
 
 export const canUpgradeItem = (itemType: ItemType) => itemType !== ITEM_TYPE.Banner
-export const canUpgradeUserItem = (userItem: UserItem) => canUpgradeItem(userItem.item.type) && !userItem.isArmoryItem
+export const canUpgradeUserItem = (userItem: UserItem) => canUpgradeItem(userItem.item.type) && !userItem.isArmoryItem && !userItem.isBroken
 export const canSell = (userItem: UserItem) => userItem.item.rank <= 0 && !userItem.isArmoryItem && !userItem.isPersonal
 export const canAddedToClanArmory = (userItem: UserItem) => userItem.item.type !== ITEM_TYPE.Banner && !userItem.isPersonal
 

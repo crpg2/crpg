@@ -35,7 +35,6 @@ internal class OrderCommand : CommanderCommand
                     GameNetwork.EndModuleEventAsServer();
                 }
             }
-
         }
     }
 }

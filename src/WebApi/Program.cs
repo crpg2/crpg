@@ -18,7 +18,7 @@ using Crpg.Sdk.Abstractions;
 using Crpg.WebApi.Identity;
 using Crpg.WebApi.Services;
 using Crpg.WebApi.Workers;
-using MediatR;
+using Mediator;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors.Infrastructure;
@@ -49,10 +49,9 @@ builder.Services
     .AddSdk(builder.Configuration, appEnv)
     .AddPersistence(builder.Configuration, appEnv)
     .AddApplication(builder.Configuration, appEnv)
-    // .AddHostedService<StrategusWorker>() // Disable strategus for now.
+    // .AddHostedService<CampaignWorker>() // Disable campaign for now.
     .AddHostedService<DonorSynchronizerWorker>()
     .AddHostedService<ActivityLogsCleanerWorker>()
-    .AddHostedService<IdempotencyKeysCleanerWorker>()
     .AddHostedService<ClanArmoryWorker>()
     .AddHttpContextAccessor() // Injects IHttpContextAccessor
     .AddScoped<ICurrentUserService, CurrentUserService>()
@@ -311,12 +310,21 @@ static void ConfigureSwagger(SwaggerGenOptions options)
     });
 
     options.SupportNonNullableReferenceTypes();
+    options.NonNullableReferenceTypesAsRequired();
+    options.UseAllOfToExtendReferenceSchemas();
+
     options.OperationFilter<MakeAllParametersRequiredOperationFilter>();
-    options.SchemaFilter<RequireAllPropertiesSchemaFilter>();
+
+    // create the necessary geometric DTOs
+    options.DocumentFilter<GeoJsonDocumentFilter>();
+    options.SchemaFilter<GeoJsonSchemaFilter>();
+
     options.SchemaFilter<ResultSchemaFilter>();
     options.SchemaFilter<FlagsEnumSchemaFilter>();
     options.SchemaFilter<ItemFlagsSchemaFilter>();
     options.SchemaFilter<WeaponFlagsSchemaFilter>();
+
+    options.SchemaFilter<RemoveUnusedSchemasFilter>(); // NetTopologySuite generates many unused schemas.
 }
 
 static void ConfigureSteamAuthentication(SteamAuthenticationOptions options, IConfiguration configuration)

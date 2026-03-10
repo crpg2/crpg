@@ -1,13 +1,7 @@
 ﻿using Crpg.Module.Common.Network;
-using Crpg.Module.Notifications;
-using NetworkMessages.FromServer;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
-using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.Diamond;
-using TaleWorlds.PlayerServices;
-using Timer = TaleWorlds.Core.Timer;
 
 namespace Crpg.Module.Common;
 
@@ -45,13 +39,13 @@ internal class BreakableWeaponsBehaviorServer : MissionBehavior
                 continue;
             }
 
-            agent.ChangeWeaponHitPoints((EquipmentIndex)i, baseHitPoints);
+            agent.ChangeWeaponHitPoints(i, baseHitPoints);
         }
     }
 
     public override void OnMeleeHit(Agent attacker, Agent victim, bool isCanceled, AttackCollisionData collisionData)
     {
-        if (collisionData.AffectorWeaponSlotOrMissileIndex == -1) //fists
+        if (collisionData.AffectorWeaponSlotOrMissileIndex == -1) // fists
         {
             return;
         }

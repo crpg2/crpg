@@ -8,11 +8,11 @@ namespace Crpg.Module.GUI.EndOfRound;
 
 internal class CrpgEndOfRoundUiHandler : MissionView
 {
-    private CrpgEndOfRoundVm _dataSource = default!;
-    private GauntletLayer _gauntletLayer = default!;
-    private MissionLobbyComponent _missionLobbyComponent = default!;
-    private MissionScoreboardComponent _scoreboardComponent = default!;
-    private MissionMultiplayerGameModeBaseClient _mpGameModeBase = default!;
+    private CrpgEndOfRoundVm _dataSource = null!;
+    private GauntletLayer _gauntletLayer = null!;
+    private MissionLobbyComponent _missionLobbyComponent = null!;
+    private MissionScoreboardComponent _scoreboardComponent = null!;
+    private MissionMultiplayerGameModeBaseClient _mpGameModeBase = null!;
     private IRoundComponent RoundComponent => _mpGameModeBase.RoundComponent;
 
     public override void OnMissionScreenInitialize()

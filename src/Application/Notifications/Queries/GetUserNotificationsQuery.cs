@@ -30,7 +30,7 @@ public record GetUserNotificationsQuery : IMediatorRequest<UserNotificationsWith
         }
 
         // TODO: FIXME: all + pagination/filters (by date? by type?)
-        public async Task<Result<UserNotificationsWithDictViewModel>> Handle(GetUserNotificationsQuery req,
+        public async ValueTask<Result<UserNotificationsWithDictViewModel>> Handle(GetUserNotificationsQuery req,
             CancellationToken cancellationToken)
         {
             var userNotifications = await _db.UserNotifications

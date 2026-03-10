@@ -5,15 +5,15 @@ namespace Crpg.Module.Common;
 
 public class CrpgSkills
 {
-    public static SkillObject Strength { get; private set; } = default!;
-    public static SkillObject Agility { get; private set; } = default!;
-    public static SkillObject IronFlesh { get; private set; } = default!;
-    public static SkillObject PowerStrike { get; private set; } = default!;
-    public static SkillObject PowerDraw { get; private set; } = default!;
-    public static SkillObject PowerThrow { get; private set; } = default!;
-    public static SkillObject WeaponMaster { get; private set; } = default!;
-    public static SkillObject MountedArchery { get; private set; } = default!;
-    public static SkillObject Shield { get; private set; } = default!;
+    public static SkillObject Strength { get; private set; } = null!;
+    public static SkillObject Agility { get; private set; } = null!;
+    public static SkillObject IronFlesh { get; private set; } = null!;
+    public static SkillObject PowerStrike { get; private set; } = null!;
+    public static SkillObject PowerDraw { get; private set; } = null!;
+    public static SkillObject PowerThrow { get; private set; } = null!;
+    public static SkillObject WeaponMaster { get; private set; } = null!;
+    public static SkillObject MountedArchery { get; private set; } = null!;
+    public static SkillObject Shield { get; private set; } = null!;
 
     public static void Initialize(Game game)
     {

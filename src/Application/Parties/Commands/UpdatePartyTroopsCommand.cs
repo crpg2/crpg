@@ -11,21 +11,15 @@ public record UpdatePartyTroopsCommand : IMediatorRequest
 {
     public TimeSpan DeltaTime { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<UpdatePartyTroopsCommand>
+    internal class Handler(ICrpgDbContext db, Constants constants) : IMediatorRequestHandler<UpdatePartyTroopsCommand>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly Constants _constants;
+        private readonly ICrpgDbContext _db = db;
+        private readonly Constants _constants = constants;
 
-        public Handler(ICrpgDbContext db, Constants constants)
-        {
-            _db = db;
-            _constants = constants;
-        }
-
-        public async Task<Result> Handle(UpdatePartyTroopsCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(UpdatePartyTroopsCommand req, CancellationToken cancellationToken)
         {
             float deltaTimeHours = (float)req.DeltaTime.TotalHours;
-            float recruits = deltaTimeHours * _constants.StrategusTroopRecruitmentPerHour;
+            float recruits = deltaTimeHours * _constants.CampaignTroopRecruitmentPerHour;
 
             var parties = _db.Parties
                 .Where(h => h.Status == PartyStatus.RecruitingInSettlement)
@@ -33,7 +27,7 @@ public record UpdatePartyTroopsCommand : IMediatorRequest
 
             await foreach (var party in parties.WithCancellation(cancellationToken))
             {
-                party.Troops = Math.Min(party.Troops + recruits, _constants.StrategusMaxPartyTroops);
+                party.Troops = Math.Min(party.Troops + recruits, _constants.CampaignMaxPartyTroops);
             }
 
             await _db.SaveChangesAsync(cancellationToken);

@@ -121,8 +121,16 @@ const { rankColor, thumb } = useItem(() => item)
       </div>
     </div>
 
-    <UiTextView variant="p-sm" :style="{ color: rankColor }" class="truncate whitespace-pre-wrap">
-      {{ item.name }}
-    </UiTextView>
+    <div class="space-y-2">
+      <UiTextView
+        variant="p-sm"
+        :style="{ color: rankColor }"
+        class="truncate font-medium whitespace-pre-wrap"
+      >
+        {{ item.name }}
+      </UiTextView>
+
+      <slot name="name-caption" />
+    </div>
   </div>
 </template>

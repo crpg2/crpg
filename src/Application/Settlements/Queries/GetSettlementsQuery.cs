@@ -10,21 +10,18 @@ namespace Crpg.Application.Settlements.Queries;
 
 public record GetSettlementsQuery : IMediatorRequest<IList<SettlementPublicViewModel>>
 {
-    internal class Handler : IMediatorRequestHandler<GetSettlementsQuery, IList<SettlementPublicViewModel>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<GetSettlementsQuery, IList<SettlementPublicViewModel>>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
-
-        public async Task<Result<IList<SettlementPublicViewModel>>> Handle(GetSettlementsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<SettlementPublicViewModel>>> Handle(GetSettlementsQuery req, CancellationToken cancellationToken)
         {
             var settlements = await _db.Settlements
-                .Include(s => s.Owner!.User!.ClanMembership!.Clan)
+                .Include(s => s.Owner)
+                    .ThenInclude(o => o!.User)
+                        .ThenInclude(u => u!.ClanMembership)
+                            .ThenInclude(cm => cm!.Clan)
                 .ProjectTo<SettlementPublicViewModel>(_mapper.ConfigurationProvider)
                 .ToArrayAsync(cancellationToken);
 

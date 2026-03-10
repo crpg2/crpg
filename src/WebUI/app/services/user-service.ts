@@ -23,7 +23,7 @@ import type {
   UserRestrictionPublic,
 } from '~/models/user'
 
-export const getUser = async (): Promise<User> => (await getUsersSelf({ })).data
+export const getUser = async (): Promise<User> => (await getUsersSelf({ })).data!
 
 export const mapUserToUserPublic = (user: User): UserPublic =>
   pick(user, ['id', 'platform', 'platformUserId', 'name', 'region', 'avatar', 'clanMembership'])
@@ -38,13 +38,13 @@ export const sellUserItem = (userItemId: number) => deleteUsersSelfItemsById({ p
 
 export const repairUserItem = (userItemId: number) => putUsersSelfItemsByIdRepair({ path: { id: userItemId } })
 
-export const upgradeUserItem = (userItemId: number) => putUsersSelfItemsByIdUpgrade({ path: { id: userItemId } })
+export const upgradeUserItem = async (userItemId: number, upgradeRank: number): Promise<UserItem> => (await putUsersSelfItemsByIdUpgrade({ path: { id: userItemId }, body: { upgradeRank } })).data!
 
-export const reforgeUserItem = (userItemId: number) => putUsersSelfItemsByIdReforge({ path: { id: userItemId } })
+export const reforgeUserItem = async (userItemId: number): Promise<UserItem> => (await putUsersSelfItemsByIdReforge({ path: { id: userItemId } })).data!
 
-export const getUserRestriction = async (): Promise<UserRestrictionPublic> => (await getUsersSelfRestriction({ })).data
+export const getUserRestriction = async (): Promise<UserRestrictionPublic> => (await getUsersSelfRestriction({ })).data!
 
-export const getUserNotifications = async () => (await getUsersSelfNotifications({})).data
+export const getUserNotifications = async () => (await getUsersSelfNotifications({})).data!
 
 export const readUserNotification = (id: number) => putUsersSelfNotificationsById({ path: { id } })
 

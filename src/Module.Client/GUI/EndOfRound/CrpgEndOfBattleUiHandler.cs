@@ -11,7 +11,7 @@ public class CrpgEndOfBattleUIHandler : MissionView
         base.OnMissionScreenInitialize();
         ViewOrderPriority = 30;
         _dataSource = new CrpgEndOfBattleVM();
-        _gauntletLayer = new GauntletLayer("MultiplayerEndOfBattle", ViewOrderPriority, false);
+        _gauntletLayer = new GauntletLayer("MultiplayerEndOfBattle", ViewOrderPriority);
         _gauntletLayer.LoadMovie("MultiplayerEndOfBattle", _dataSource);
         _lobbyComponent = Mission.GetMissionBehavior<MissionLobbyComponent>();
         _lobbyComponent.OnPostMatchEnded += OnPostMatchEnded;
@@ -35,9 +35,9 @@ public class CrpgEndOfBattleUIHandler : MissionView
         _dataSource.OnBattleEnded();
     }
 
-    private CrpgEndOfBattleVM _dataSource = default!;
+    private CrpgEndOfBattleVM _dataSource = null!;
 
-    private GauntletLayer _gauntletLayer = default!;
+    private GauntletLayer _gauntletLayer = null!;
 
-    private MissionLobbyComponent _lobbyComponent = default!;
+    private MissionLobbyComponent _lobbyComponent = null!;
 }

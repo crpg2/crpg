@@ -54,8 +54,7 @@ describe('useUsersNotifications', () => {
   it('initializes with empty notifications and computed values', () => {
     const composable = useUsersNotifications()
 
-    expect(composable.notifications.value.notifications).toEqual([])
-    expect(composable.isEmpty.value).toBe(true)
+    expect(composable.notifications.value).toEqual([])
     expect(composable.hasUnreadNotifications.value).toBe(false)
   })
 
@@ -70,7 +69,7 @@ describe('useUsersNotifications', () => {
     await flushPromises()
 
     expect(getUserNotificationsMock).toHaveBeenCalledTimes(1)
-    expect(notifications.value.notifications).toEqual(fakeResponse.notifications)
+    expect(notifications.value).toEqual(fakeResponse.notifications)
   })
 
   it('hasUnreadNotifications updates correctly when data changes', async () => {

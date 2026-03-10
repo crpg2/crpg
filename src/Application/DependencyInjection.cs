@@ -3,10 +3,11 @@ using Crpg.Application.Common.Behaviors;
 using Crpg.Application.Common.Files;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Services;
+using Crpg.Application.Parties.Services;
 using Crpg.Sdk.Abstractions;
 using FluentValidation;
 using MaxMind.GeoIP2;
-using MediatR;
+using Mediator;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,13 +20,13 @@ public static class DependencyInjection
     {
         var constants = new FileConstantsSource().LoadConstants();
         ExperienceTable experienceTable = new(constants);
-        BattleScheduler strategusBattleScheduler = new();
+        BattleScheduler campaignBattleScheduler = new();
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly())
-            .AddMediatR(cfg =>
+            .AddMediator(o =>
             {
-                cfg.LicenseKey = configuration["MediatR:LicenseKey"];
-                cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+                o.ServiceLifetime = ServiceLifetime.Scoped;
+                o.Assemblies = [typeof(DependencyInjection).Assembly];
             })
             .AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestInstrumentationBehavior<,>))
             .AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>))
@@ -42,14 +43,17 @@ public static class DependencyInjection
             .AddSingleton<IGameServerStatsService, DatadogGameServerStatsService>()
             .AddSingleton<IPatchNotesService, GithubPatchNotesService>()
             .AddSingleton<IGeoIpService>(CreateGeoIpService())
-            .AddSingleton<IStrategusMap, StrategusMap>()
-            .AddSingleton<IStrategusSpeedModel, StrategusSpeedModel>()
-            .AddSingleton<IBattleScheduler>(strategusBattleScheduler)
+            .AddSingleton<ICampaignMap, CampaignMap>()
+            .AddSingleton<ICampaignSpeedModel, CampaignSpeedModel>()
+            .AddSingleton<ICampaignRouting, CampaignRouting>()
+            .AddSingleton<IBattleService, BattleService>()
+            .AddSingleton<IBattleScheduler>(campaignBattleScheduler)
             .AddSingleton<ICharacterClassResolver, CharacterClassResolver>()
-            .AddSingleton<IBattleMercenaryDistributionModel, BattleMercenaryUniformDistributionModel>()
+            .AddSingleton<IBattleParticipantDistributionModel, BattleParticipantUniformDistributionModel>()
             .AddSingleton(constants)
             .AddSingleton<IItemsSource, FileItemsSource>()
             .AddSingleton<ISettlementsSource, FileSettlementsSource>()
+            .AddScoped<IPartyTransferOfferValidationService, PartyTransferOfferValidationService>()
             .AddValidatorsFromAssemblyContaining(typeof(DependencyInjection));
 
         return services;

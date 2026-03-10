@@ -49,19 +49,14 @@ const defaultPathSerializer = ({ path, url: _url }: PathSerializer) => {
         style = 'matrix';
       }
 
-      const value = toValue(
-        (toValue(path) as Record<string, unknown> | undefined)?.[name],
-      );
+      const value = toValue((toValue(path) as Record<string, unknown> | undefined)?.[name]);
 
       if (value === undefined || value === null) {
         continue;
       }
 
       if (Array.isArray(value)) {
-        url = url.replace(
-          match,
-          serializeArrayParam({ explode, name, style, value }),
-        );
+        url = url.replace(match, serializeArrayParam({ explode, name, style, value }));
         continue;
       }
 
@@ -100,9 +95,8 @@ const defaultPathSerializer = ({ path, url: _url }: PathSerializer) => {
 };
 
 export const createQuerySerializer = <T = unknown>({
-  allowReserved,
-  array,
-  object,
+  parameters = {},
+  ...args
 }: QuerySerializerOptions = {}) => {
   const querySerializer = (queryParams: T) => {
     const search: string[] = [];
@@ -115,29 +109,31 @@ export const createQuerySerializer = <T = unknown>({
           continue;
         }
 
+        const options = parameters[name] || args;
+
         if (Array.isArray(value)) {
           const serializedArray = serializeArrayParam({
-            allowReserved,
+            allowReserved: options.allowReserved,
             explode: true,
             name,
             style: 'form',
             value,
-            ...array,
+            ...options.array,
           });
           if (serializedArray) search.push(serializedArray);
         } else if (typeof value === 'object') {
           const serializedObject = serializeObjectParam({
-            allowReserved,
+            allowReserved: options.allowReserved,
             explode: true,
             name,
             style: 'deepObject',
             value: value as Record<string, unknown>,
-            ...object,
+            ...options.object,
           });
           if (serializedObject) search.push(serializedObject);
         } else {
           const serializedPrimitive = serializePrimitiveParam({
-            allowReserved,
+            allowReserved: options.allowReserved,
             name,
             value: value as string,
           });
@@ -193,9 +189,7 @@ export const setAuthParams = async ({
         if (!options.query) {
           options.query = {};
         }
-        const queryValue = toValue(options.query) as
-          | Record<string, unknown>
-          | undefined;
+        const queryValue = toValue(options.query) as Record<string, unknown> | undefined;
         if (queryValue) {
           queryValue[name] = token;
         }
@@ -283,9 +277,7 @@ export const mergeHeaders = (
     }
 
     const iterator =
-      h instanceof Headers
-        ? headersEntries(h)
-        : Object.entries(h as Record<string, unknown>);
+      h instanceof Headers ? headersEntries(h) : Object.entries(h as Record<string, unknown>);
 
     for (const [key, value] of iterator) {
       if (value === null) {
@@ -298,10 +290,7 @@ export const mergeHeaders = (
         const v = unwrapRefs(value);
         // assume object headers are meant to be JSON stringified, i.e. their
         // content value in OpenAPI specification is 'application/json'
-        mergedHeaders.set(
-          key,
-          typeof v === 'object' ? JSON.stringify(v) : (v as string),
-        );
+        mergedHeaders.set(key, typeof v === 'object' ? JSON.stringify(v) : (v as string));
       }
     }
   }
@@ -355,6 +344,10 @@ type UnwrapRefs<T> =
 export const unwrapRefs = <T>(value: T): UnwrapRefs<T> => {
   if (value === null || typeof value !== 'object' || value instanceof Headers) {
     return (isRef(value) ? unref(value) : value) as UnwrapRefs<T>;
+  }
+
+  if (value instanceof Blob) {
+    return value as UnwrapRefs<T>;
   }
 
   if (Array.isArray(value)) {

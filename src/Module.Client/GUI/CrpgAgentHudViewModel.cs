@@ -2,6 +2,7 @@
 using Crpg.Module.Common;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
+using MathF = TaleWorlds.Library.MathF;
 
 namespace Crpg.Module.GUI;
 

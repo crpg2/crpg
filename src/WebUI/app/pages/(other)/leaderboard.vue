@@ -94,6 +94,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
     cell: ({ row }) => h(CompetitiveRank, {
       rankTable: rankTable.value,
       competitiveValue: getCompetitiveValueByGameMode(row.original.statistics, gameModeModel.value),
+      animated: false,
     }),
     meta: {
       class: {
@@ -110,7 +111,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
       'modelValue': globalFilter.value,
       'onUpdate:modelValue': (val: string) => globalFilter.value = val,
     }, {}),
-    cell: ({ row }) => h(UserMedia, { user: row.original.user, hiddenPlatform: true }),
+    cell: ({ row }) => h(UserMedia, { user: row.original.user, hiddenPlatform: true, isSelf: row.original.user.id === user.value!.id }),
     meta: {
       class: {
         th: tw`max-w-96`,
@@ -129,7 +130,6 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
       }, {
         filter() {
           // TODO: use facets
-          // @ts-expect-error TODO: https://github.com/nuxt/ui/issues/2968
           return h(USelect, {
             'variant': 'none',
             'multiple': false,
@@ -201,7 +201,7 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
         <UTabs
           v-model="regionModel"
           :items="regions.map<TabsItem>(region => ({
-            label: $t(`region.${region}`),
+            label: $t(`region.${region}`, 0),
             value: region,
           }))"
           size="xl"

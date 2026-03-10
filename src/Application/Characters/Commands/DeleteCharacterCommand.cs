@@ -29,7 +29,7 @@ public record DeleteCharacterCommand : IMediatorRequest
             _activityLogService = activityLogService;
         }
 
-        public async Task<Result> Handle(DeleteCharacterCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(DeleteCharacterCommand req, CancellationToken cancellationToken)
         {
             var character = await _db.Characters
                 .Include(c => c.EquippedItems)
@@ -45,6 +45,8 @@ public record DeleteCharacterCommand : IMediatorRequest
 
             _db.ActivityLogs.Add(_activityLogService.CreateCharacterDeletedLog(character.UserId, character.Id,
                 character.Generation, character.Level));
+
+            // TODO: cleanup campaign stuff
 
             await _db.SaveChangesAsync(cancellationToken);
 

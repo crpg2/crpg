@@ -298,6 +298,7 @@ const onSubmit = async () => {
         >
           <UInput
             v-model="clanFormModel.discord"
+            :model-modifiers="{ nullable: true }"
             :maxlength="clanBannerKeyMaxLength"
             class="w-full"
             icon="crpg:discord"
@@ -321,7 +322,7 @@ const onSubmit = async () => {
             class="w-32"
             color="neutral"
             data-aq-clan-form-input="armoryTimeout"
-            @update:model-value="(days) => (clanFormModel.armoryTimeout = daysToMs(days))"
+            @update:model-value="(days) => { clanFormModel.armoryTimeout = daysToMs(days || 0) }"
           />
         </UFormField>
       </UiCard>

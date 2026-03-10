@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-
 namespace Crpg.Persistence.Migrations;
 
 /// <inheritdoc />
@@ -16,7 +15,7 @@ public partial class AddPersonalItems : Migration
             {
                 user_item_id = table.Column<int>(type: "integer", nullable: false),
                 updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
             },
             constraints: table =>
             {

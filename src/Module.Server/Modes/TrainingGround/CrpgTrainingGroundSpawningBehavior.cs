@@ -28,31 +28,6 @@ internal class CrpgTrainingGroundSpawningBehavior : CrpgSpawningBehaviorBase
         base.OnTick(dt);
     }
 
-    protected override bool IsPlayerAllowedToSpawn(NetworkCommunicator networkPeer)
-    {
-        MissionPeer missionPeer = networkPeer.GetComponent<MissionPeer>();
-        return missionPeer.Culture != null
-               && missionPeer.Representative is CrpgTrainingGroundMissionRepresentative
-               && missionPeer.SpawnTimer.Check(Mission.CurrentTime);
-    }
-
-    protected override bool IsRoundInProgress()
-    {
-        return Mission.CurrentState == Mission.State.Continuing;
-    }
-
-    protected override void OnPeerSpawned(Agent agent)
-    {
-        base.OnPeerSpawned(agent);
-        _ = agent.MissionPeer.Representative; // Get initializes the representative
-
-        var networkPeer = agent.MissionPeer?.GetNetworkPeer();
-        if (networkPeer == null)
-        {
-            return;
-        }
-    }
-
     public bool RefreshPlayer(NetworkCommunicator networkPeer)
     {
         BasicCultureObject cultureTeam1 = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue());
@@ -63,7 +38,6 @@ internal class CrpgTrainingGroundSpawningBehavior : CrpgSpawningBehaviorBase
         Agent controlledAgent = missionPeer.ControlledAgent;
 
         if (!networkPeer.IsSynchronized
-            || missionPeer == null
             || controlledAgent == null
             || missionPeer.Team == null
             || missionPeer.Team == Mission.SpectatorTeam
@@ -130,5 +104,26 @@ internal class CrpgTrainingGroundSpawningBehavior : CrpgSpawningBehaviorBase
         }
 
         return true;
+    }
+
+    protected override bool IsPlayerAllowedToSpawn(NetworkCommunicator networkPeer)
+    {
+        MissionPeer missionPeer = networkPeer.GetComponent<MissionPeer>();
+        return missionPeer.Culture != null
+               && missionPeer.Representative is CrpgTrainingGroundMissionRepresentative
+               && missionPeer.SpawnTimer.Check(Mission.CurrentTime);
+    }
+
+    protected override bool IsRoundInProgress()
+    {
+        return Mission.CurrentState == Mission.State.Continuing;
+    }
+
+    protected override void OnPeerSpawned(Agent agent)
+    {
+        base.OnPeerSpawned(agent);
+        _ = agent.MissionPeer.Representative; // Get initializes the representative
+
+        _ = agent.MissionPeer?.GetNetworkPeer();
     }
 }

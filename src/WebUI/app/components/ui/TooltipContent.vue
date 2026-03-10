@@ -19,7 +19,7 @@ defineProps<{
         v-if="title"
         variant="h4"
         tag="h4"
-        :class="{ '!mb-4': description || $slots.description }"
+        :class="{ 'mb-4!': description || $slots.description }"
       >
         {{ title }}
       </UiTextView>

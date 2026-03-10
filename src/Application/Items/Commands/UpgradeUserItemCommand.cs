@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
@@ -13,29 +14,29 @@ namespace Crpg.Application.Items.Commands;
 
 public record UpgradeUserItemCommand : IMediatorRequest<UserItemViewModel>
 {
+    [JsonIgnore]
     public int UserItemId { get; init; }
+    [JsonIgnore]
     public int UserId { get; init; }
+    public int UpgradeRank { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<UpgradeUserItemCommand, UserItemViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IActivityLogService activityLogService) : IMediatorRequestHandler<UpgradeUserItemCommand, UserItemViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpgradeUserItemCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly IActivityLogService _activityLogService;
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly IActivityLogService _activityLogService = activityLogService;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, IActivityLogService activityLogService)
-        {
-            _db = db;
-            _mapper = mapper;
-            _activityLogService = activityLogService;
-        }
+        private readonly int minUpgradeRank = 1;
+        private readonly int maxUpgradeRank = 3;
 
-        public async Task<Result<UserItemViewModel>> Handle(UpgradeUserItemCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserItemViewModel>> Handle(UpgradeUserItemCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .AsSplitQuery()
-                .Include(u => u.Items).ThenInclude(ui => ui.Item)
+                .Include(u => u.Items.Where(ui => ui.Id == req.UserItemId))
+                    .ThenInclude(ui => ui.Item)
                 .FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
 
             if (user == null)
@@ -43,9 +44,9 @@ public record UpgradeUserItemCommand : IMediatorRequest<UserItemViewModel>
                 return new(CommonErrors.UserNotFound(req.UserId));
             }
 
-            if (user.HeirloomPoints < 1)
+            if (req.UpgradeRank < minUpgradeRank || req.UpgradeRank > maxUpgradeRank)
             {
-                return new(CommonErrors.NotEnoughHeirloomPoints(1, user.HeirloomPoints));
+                return new(CommonErrors.InvalidItemUpgradeRank(req.UpgradeRank, minUpgradeRank, maxUpgradeRank));
             }
 
             var userItemToUpgrade = user.Items
@@ -66,9 +67,16 @@ public record UpgradeUserItemCommand : IMediatorRequest<UserItemViewModel>
                 return new(CommonErrors.ItemNotUpgradable(userItemToUpgrade.ItemId));
             }
 
+            int upgradeCost = req.UpgradeRank - userItemToUpgrade.Item!.Rank;
+
+            if (user.HeirloomPoints < upgradeCost)
+            {
+                return new(CommonErrors.NotEnoughHeirloomPoints(upgradeCost, user.HeirloomPoints));
+            }
+
             Item? upgradedItem = await _db.Items
                 .FirstOrDefaultAsync(
-                    i => i.BaseId == userItemToUpgrade.Item!.BaseId && i.Rank == userItemToUpgrade.Item!.Rank + 1,
+                    i => i.BaseId == userItemToUpgrade.Item!.BaseId && i.Rank == req.UpgradeRank,
                     cancellationToken);
 
             if (upgradedItem == null)
@@ -77,12 +85,12 @@ public record UpgradeUserItemCommand : IMediatorRequest<UserItemViewModel>
             }
 
             userItemToUpgrade.Item = upgradedItem;
-            user.HeirloomPoints -= 1;
+            user.HeirloomPoints -= upgradeCost;
 
-            _db.ActivityLogs.Add(_activityLogService.CreateItemUpgradedLog(user.Id, userItemToUpgrade.ItemId, 1));
+            _db.ActivityLogs.Add(_activityLogService.CreateItemUpgradedLog(user.Id, userItemToUpgrade.ItemId, req.UpgradeRank));
             await _db.SaveChangesAsync(cancellationToken);
 
-            Logger.LogInformation("User '{0}' has upgraded item '{1}'", req.UserId, req.UserItemId);
+            Logger.LogInformation("User '{0}' has upgraded item '{1}' by +{2}", req.UserId, req.UserItemId, req.UpgradeRank);
             return new(_mapper.Map<UserItemViewModel>(userItemToUpgrade));
         }
     }

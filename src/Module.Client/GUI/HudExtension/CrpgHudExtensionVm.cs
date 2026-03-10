@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using Crpg.Module.Api.Models.Clans;
-using Crpg.Module.Common;
+﻿using System.ComponentModel;
 using Crpg.Module.Helpers;
 using Crpg.Module.Modes.Conquest;
 using Crpg.Module.Modes.Siege;
@@ -12,7 +9,6 @@ using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.HUDExtensions;
-using TaleWorlds.ObjectSystem;
 
 namespace Crpg.Module.GUI.HudExtension;
 
@@ -42,8 +38,8 @@ internal class CrpgHudExtensionVm : ViewModel
     private string? _warmupInfoText;
     private int _allyTeamScore = -1;
     private int _enemyTeamScore = -1;
-    private MBBindingList<MPPlayerVM> _teammatesList = default!;
-    private MBBindingList<MPPlayerVM> _enemiesList = default!;
+    private MBBindingList<MPPlayerVM> _teammatesList = null!;
+    private MBBindingList<MPPlayerVM> _enemiesList = null!;
     private bool _showHud;
     private bool _showCommanderInfo;
     private bool _showPowerLevels;
@@ -646,7 +642,7 @@ internal class CrpgHudExtensionVm : ViewModel
         RefreshValues();
     }
 
-    private void OnMissionReset(object sender, PropertyChangedEventArgs e)
+    private void OnMissionReset(object? sender, PropertyChangedEventArgs e)
     {
         IsGeneralWarningCountdownActive = false;
     }

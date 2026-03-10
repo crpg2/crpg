@@ -22,7 +22,7 @@ export const useCharacterInventory = () => {
 
   function _refreshData() {
     return Promise.all([
-      fetchUser(), // update gold
+      fetchUser(), // update gold, looms
       refreshUserItems(),
       loadCharacterItems(),
     ])
@@ -42,7 +42,6 @@ export const useCharacterInventory = () => {
     await _refreshData()
   }, {
     successMessage: t('character.inventory.item.sell.notify.success'),
-    pageLoading: true,
   })
 
   const [onRepairUserItem] = useAsyncCallback(async (userItemId: number) => {
@@ -50,22 +49,22 @@ export const useCharacterInventory = () => {
     await _refreshData()
   }, {
     successMessage: t('character.inventory.item.repair.notify.success'),
-    pageLoading: true,
   })
 
-  const [onUpgradeUserItem] = useAsyncCallback(async (userItemId: number) => {
-    await upgradeUserItem(userItemId)
+  const [onUpgradeUserItem] = useAsyncCallback(async (userItemId: number, upgradeRank: number) => {
+    const updatedItem = await upgradeUserItem(userItemId, upgradeRank)
     await _refreshData()
+    return updatedItem
   }, {
     successMessage: t('character.inventory.item.upgrade.notify.success'),
   })
 
   const [onReforgeUserItem] = useAsyncCallback(async (userItemId: number) => {
-    await reforgeUserItem(userItemId)
+    const updatedItem = await reforgeUserItem(userItemId)
     await _refreshData()
+    return updatedItem
   }, {
     successMessage: t('character.inventory.item.reforge.notify.success'),
-    pageLoading: true,
   })
 
   const [onAddItemToClanArmory] = useAsyncCallback(async (userItemId: number) => {
@@ -76,7 +75,6 @@ export const useCharacterInventory = () => {
     await _refreshData()
   }, {
     successMessage: t('clan.armory.item.add.notify.success'),
-    pageLoading: true,
   })
 
   const [onReturnToClanArmory] = useAsyncCallback(async (userItemId: number) => {
@@ -87,7 +85,6 @@ export const useCharacterInventory = () => {
     await _refreshData()
   }, {
     successMessage: t('clan.armory.item.return.notify.success'),
-    pageLoading: true,
   })
 
   const [onRemoveFromClanArmory] = useAsyncCallback(async (userItemId: number) => {
@@ -98,7 +95,6 @@ export const useCharacterInventory = () => {
     await _refreshData()
   }, {
     successMessage: t('clan.armory.item.remove.notify.success'),
-    pageLoading: true,
   })
 
   return {

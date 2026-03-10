@@ -24,7 +24,7 @@ public record GetGameUserTournamentCommand : IMediatorRequest<GameUserViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<GameUserViewModel>> Handle(GetGameUserTournamentCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<GameUserViewModel>> Handle(GetGameUserTournamentCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .Include(u => u.Characters.Where(c => c.ForTournament).Take(1))

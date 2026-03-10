@@ -1,6 +1,5 @@
 ﻿using Crpg.Application.Battles.Queries;
 using Crpg.Application.Common.Results;
-using Crpg.Application.Common.Services;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Users;
@@ -14,7 +13,7 @@ public class GetBattleMercenaryApplicationsQueryTest : TestBase
     [Test]
     public async Task ShouldReturnErrorIfBattleNotFound()
     {
-        GetBattleMercenaryApplicationsQuery.Handler handler = new(ActDb, Mapper, Mock.Of<ICharacterClassResolver>());
+        GetBattleMercenaryApplicationsQuery.Handler handler = new(ActDb, Mapper);
         var res = await handler.Handle(new GetBattleMercenaryApplicationsQuery
         {
             UserId = 99,
@@ -33,7 +32,7 @@ public class GetBattleMercenaryApplicationsQueryTest : TestBase
         ArrangeDb.Battles.Add(battle);
         await ArrangeDb.SaveChangesAsync();
 
-        GetBattleMercenaryApplicationsQuery.Handler handler = new(ActDb, Mapper, Mock.Of<ICharacterClassResolver>());
+        GetBattleMercenaryApplicationsQuery.Handler handler = new(ActDb, Mapper);
         var res = await handler.Handle(new GetBattleMercenaryApplicationsQuery
         {
             UserId = 99,
@@ -95,17 +94,17 @@ public class GetBattleMercenaryApplicationsQueryTest : TestBase
         ArrangeDb.Battles.Add(battle);
         await ArrangeDb.SaveChangesAsync();
 
-        GetBattleMercenaryApplicationsQuery.Handler handler = new(ActDb, Mapper, Mock.Of<ICharacterClassResolver>());
+        GetBattleMercenaryApplicationsQuery.Handler handler = new(ActDb, Mapper);
         var res = await handler.Handle(new GetBattleMercenaryApplicationsQuery
         {
             UserId = 20,
             BattleId = battle.Id,
-            Statuses = new[]
-            {
+            Statuses =
+            [
                 BattleMercenaryApplicationStatus.Pending,
                 BattleMercenaryApplicationStatus.Declined,
                 BattleMercenaryApplicationStatus.Accepted,
-            },
+            ],
         }, CancellationToken.None);
 
         Assert.That(res.Errors, Is.Null);
@@ -155,15 +154,15 @@ public class GetBattleMercenaryApplicationsQueryTest : TestBase
         ArrangeDb.Battles.Add(battle);
         await ArrangeDb.SaveChangesAsync();
 
-        GetBattleMercenaryApplicationsQuery.Handler handler = new(ActDb, Mapper, Mock.Of<ICharacterClassResolver>());
+        GetBattleMercenaryApplicationsQuery.Handler handler = new(ActDb, Mapper);
         var res = await handler.Handle(new GetBattleMercenaryApplicationsQuery
         {
             UserId = user.Id,
             BattleId = battle.Id,
-            Statuses = new[]
-            {
+            Statuses =
+            [
                 BattleMercenaryApplicationStatus.Pending,
-            },
+            ],
         }, CancellationToken.None);
 
         Assert.That(res.Errors, Is.Null);

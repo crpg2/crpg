@@ -47,7 +47,7 @@ public record UpdateCharacterCommand : IMediatorRequest<CharacterViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<CharacterViewModel>> Handle(UpdateCharacterCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<CharacterViewModel>> Handle(UpdateCharacterCommand req, CancellationToken cancellationToken)
         {
             var character = await _db.Characters
                 .FirstOrDefaultAsync(c => c.Id == req.CharacterId && c.UserId == req.UserId, cancellationToken);

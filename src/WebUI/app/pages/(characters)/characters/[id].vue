@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { RouteNamedMap } from 'vue-router/auto-routes'
+import type { NavigationMenuItem } from '@nuxt/ui'
 
 import { LazyCharacterCreateModal, LazyCharacterEditModal } from '#components'
 
@@ -14,11 +14,10 @@ const route = useRoute('characters-id')
 const { user, fetchUser } = useUser()
 const { characters, refreshCharacters, activeCharacterId } = useCharacters()
 
-if (!characters.value.find(c => c.id === Number(route.params.id))) {
+const character = computed(() => characters.value.find(c => c.id === Number(route.params.id))!)
+if (!character.value) {
   throw createError({ statusCode: 404, statusMessage: 'Character not found' })
 }
-
-const character = computed(() => characters.value.find(c => c.id === Number(route.params.id))!)
 useCharacterProvider(character)
 
 const overlay = useOverlay()
@@ -77,27 +76,25 @@ const [onDeleteCharacter] = useAsyncCallback(
   },
 )
 
-const nav = [
+const navigationItems = computed<NavigationMenuItem[]>(() => [
   {
-    name: 'characters-id',
     label: t('character.nav.overview'),
+    to: { name: 'characters-id' },
+    active: route.name === 'characters-id', // hack, [id].vue conflict with [id]/index.vue
   },
   {
-    name: 'characters-id-inventory',
     label: t('character.nav.inventory'),
+    to: { name: 'characters-id-inventory' },
   },
   {
-    name: 'characters-id-characteristic',
     label: t('character.nav.characteristic'),
+    to: { name: 'characters-id-characteristic' },
   },
   {
-    name: 'characters-id-stats',
     label: t('character.nav.stats'),
+    to: { name: 'characters-id-stats' },
   },
-] satisfies Array<{
-  name: keyof RouteNamedMap
-  label: string
-}>
+])
 </script>
 
 <template>
@@ -109,8 +106,10 @@ const nav = [
       <div class="flex items-center gap-4">
         <CharacterSelect
           :characters
-          :current-character="character"
+          :current-character-id="character.id"
           :active-character-id="user!.activeCharacterId"
+          :simple="false"
+          @select="(id) => navigateTo({ params: { id }, replace: true })"
           @activate="onActivateCharacter"
           @create="onCreateNewCharacter"
         />
@@ -126,24 +125,11 @@ const nav = [
         </UTooltip>
       </div>
 
-      <nav class="flex justify-center gap-2">
-        <NuxtLink
-          v-for="{ name, label } in nav"
-          :key="name"
-          v-slot="{ isExactActive }"
-          :to="({ name, params: { id: character.id } })"
-        >
-          <UButton
-            color="neutral"
-            variant="link"
-            active-variant="soft"
-            active-color="primary"
-            :active="isExactActive"
-            size="xl"
-            :label
-          />
-        </NuxtLink>
-      </nav>
+      <UNavigationMenu
+        color="primary"
+        class="w-full justify-center"
+        :items="navigationItems"
+      />
     </div>
 
     <NuxtPage />

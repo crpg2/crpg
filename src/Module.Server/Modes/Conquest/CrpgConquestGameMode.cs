@@ -1,20 +1,7 @@
-﻿using Crpg.Module.Common;
-using Crpg.Module.Common.AmmoQuiverChange;
-using Crpg.Module.Common.Commander;
-using Crpg.Module.Common.FriendlyFireReport;
-using Crpg.Module.Common.TeamSelect;
-using Crpg.Module.Modes.Siege;
-using Crpg.Module.Modes.Warmup;
-using Crpg.Module.Notifications;
-using Crpg.Module.Rewards;
-using TaleWorlds.Core;
-using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.Source.Missions;
-using TaleWorlds.MountAndBlade.Multiplayer;
-
-#if CRPG_SERVER
+﻿#if CRPG_SERVER
 using Crpg.Module.Api;
 using Crpg.Module.Common.ChatCommands;
+using Crpg.Module.Modes.Siege;
 #else
 using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
@@ -22,11 +9,22 @@ using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.Conquest;
 using Crpg.Module.GUI.Spectator;
 using Crpg.Module.GUI.Warmup;
-using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 #endif
+using Crpg.Module.Common;
+using Crpg.Module.Common.AmmoQuiverChange;
+using Crpg.Module.Common.Commander;
+using Crpg.Module.Common.FriendlyFireReport;
+using Crpg.Module.Common.TeamSelect;
+using Crpg.Module.Modes.Warmup;
+using Crpg.Module.Notifications;
+using Crpg.Module.Rewards;
+using TaleWorlds.Core;
+using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.Multiplayer;
+using TaleWorlds.MountAndBlade.Source.Missions;
 
 namespace Crpg.Module.Modes.Conquest;
 
@@ -35,7 +33,7 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
 {
     private const string GameName = "cRPGConquest";
 
-    private static CrpgConstants _constants = default!; // Static so it's accessible from the views.
+    private static CrpgConstants _constants = null!; // Static so it's accessible from the views.
 
     public CrpgConquestGameMode(CrpgConstants constants)
         : base(GameName)
@@ -96,13 +94,13 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
         Game.Current.GetGameHandler<ChatCommandsComponent>()?.InitChatCommands(crpgClient);
         ChatBox chatBox = Game.Current.GetGameHandler<ChatBox>();
         CrpgSiegeSpawningBehavior spawnBehavior = new(_constants);
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent,
+        CrpgWarmupComponent warmupComponent = new(_constants,
             () => (new SiegeSpawnFrameBehavior(), new CrpgSiegeSpawningBehavior(_constants)));
         CrpgTeamSelectServerComponent teamSelectComponent = new(warmupComponent, null, MultiplayerGameType.Siege);
         CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: false, enableRating: false);
         CrpgConquestServer conquestServer = new(scoreboardComponent, rewardServer);
 #else
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, null);
+        CrpgWarmupComponent warmupComponent = new(_constants, null);
         CrpgTeamSelectClientComponent teamSelectComponent = new();
 #endif
 

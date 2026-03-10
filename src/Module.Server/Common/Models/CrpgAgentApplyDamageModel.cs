@@ -2,7 +2,6 @@
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
-using static TaleWorlds.MountAndBlade.Mission;
 
 namespace Crpg.Module.Common.Models;
 
@@ -163,10 +162,8 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         {
             return isHuman ? CalculateRangedDamageMultiplierForHumanBodyPart(bodyPart, type) : CalculateRangedDamageMultiplierForNonHumanBodyPart(bodyPart, type);
         }
-        else
-        {
-            return isHuman ? CalculateMeleeDamageMultiplierForHumanBodyPart(bodyPart, type) : CalculateMeleeDamageMultiplierForNonHumanBodyPart(bodyPart, type);
-        }
+
+        return isHuman ? CalculateMeleeDamageMultiplierForHumanBodyPart(bodyPart, type) : CalculateMeleeDamageMultiplierForNonHumanBodyPart(bodyPart, type);
     }
 
     public float CalculateRangedDamageMultiplierForHumanBodyPart(BoneBodyPartType bodyPart, DamageTypes type)
@@ -328,21 +325,14 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
     }
 
     public override void CalculateDefendedBlowStunMultipliers(
-    Agent attackerAgent,
-    Agent defenderAgent,
-    CombatCollisionResult collisionResult,
-    WeaponComponentData attackerWeapon,
-    WeaponComponentData defenderWeapon,
-    ref float attackerStunPeriod,
-    ref float defenderStunPeriod)
+        Agent attackerAgent,
+        Agent defenderAgent,
+        CombatCollisionResult collisionResult,
+        WeaponComponentData attackerWeapon,
+        WeaponComponentData defenderWeapon,
+        ref float attackerStunPeriod,
+        ref float defenderStunPeriod)
     {
-        // Let base game handle normal stun logic
-        base.CalculateDefendedBlowStunMultipliers(
-            attackerAgent, defenderAgent, collisionResult,
-            attackerWeapon, defenderWeapon,
-            ref attackerStunPeriod, ref defenderStunPeriod);
-
-        // Only tweak for shield blocks
         if (collisionResult == CombatCollisionResult.Blocked && defenderAgent.WieldedOffhandWeapon.IsShield())
         {
             int shieldSkill = 0;
@@ -351,9 +341,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
                 shieldSkill = crpgOrigin.Skills.Skills.GetPropertyValue(CrpgSkills.Shield);
             }
 
-            defenderStunPeriod = 1 / MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
-
-            return;
+            defenderStunPeriod /= MathHelper.RecursivePolynomialFunctionOfDegree2(shieldSkill, _constants.ShieldDefendStunMultiplierForSkillRecursiveCoefs);
         }
     }
 
@@ -364,7 +352,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         float totalAttackEnergy,
         Agent.UsageDirection attackDirection,
         StrikeType strikeType,
-        WeaponComponentData defendItem,
+        WeaponComponentData? defendItem,
         bool isPassiveUsage)
     {
         EquipmentIndex wieldedItemIndex = attackerAgent.GetOffhandWieldedItemIndex();
@@ -390,13 +378,13 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         int defenderShield = GetSkillValue(defenderAgent, CrpgSkills.Shield);
 
         float attackerPower = 3f * powerStrike;
-        float defenderDefendPower = (defendItem?.IsShield == true)
-                ? (float)System.Math.Max(defenderShield * 6 + 3, defenderStrength)
+        float defenderDefendPower = defendItem?.IsShield == true
+                ? (float)Math.Max(defenderShield * 6 + 3, defenderStrength)
                 : defenderStrength;
-        defenderDefendPower = System.Math.Max(defenderDefendPower, 1f);
+        defenderDefendPower = Math.Max(defenderDefendPower, 1f);
 
         int randomNumber = MBRandom.RandomInt(0, 1000);
-        return randomNumber / 10f < (float)System.Math.Pow(attackerPower / defenderDefendPower / 2.6f, 2.6f) * 100f;
+        return randomNumber / 10f < (float)Math.Pow(attackerPower / defenderDefendPower / 2.6f, 2.6f) * 100f;
     }
 
     // MissionCombatMechanicsHelper.cs/DecideMountRearedByBlow
@@ -427,7 +415,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         return 0;
     }
 
-    private int GetSkillValue(Agent agent, SkillObject skill)
+    private int GetSkillValue(Agent? agent, SkillObject? skill)
     {
         if (agent?.Origin is CrpgBattleAgentOrigin crpgOrigin)
         {
@@ -447,8 +435,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         if (attackInformation.AttackerAgentOrigin is CrpgBattleAgentOrigin)
         {
             bool isVictimTheVipBot = attackInformation.VictimAgentCharacter != null
-                ? attackInformation.VictimAgentCharacter.StringId.StartsWith("crpg_dtv_vip_")
-                : false;
+                                     && attackInformation.VictimAgentCharacter.StringId.StartsWith("crpg_dtv_vip_");
 
             return isVictimTheVipBot;
         }
@@ -461,8 +448,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         if (attackInformation.AttackerAgentOrigin is CrpgBattleAgentOrigin)
         {
             bool isVictimDtvBot = attackInformation.VictimAgentCharacter != null
-                ? attackInformation.VictimAgentCharacter.StringId.StartsWith("crpg_dtv_")
-                : false;
+                                  && attackInformation.VictimAgentCharacter.StringId.StartsWith("crpg_dtv_");
 
             return isVictimDtvBot;
         }
@@ -474,9 +460,8 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
     {
         if (attackInformation.AttackerAgentOrigin is CrpgBattleAgentOrigin)
         {
-            bool isVictimDtvBoss = attackInformation.VictimAgentCharacter != null
-                ? attackInformation.VictimAgentCharacter.StringId.EndsWith("_boss")
-                : false;
+            bool isVictimDtvBoss = attackInformation.VictimAgentCharacter != null &&
+                                   attackInformation.VictimAgentCharacter.StringId.EndsWith("_boss");
 
             return isVictimDtvBoss;
         }

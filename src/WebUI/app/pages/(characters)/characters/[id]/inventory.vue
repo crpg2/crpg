@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { vOnLongPress } from '@vueuse/components'
 import { useStorage } from '@vueuse/core'
+import { CharacterInventoryItemDetail, LazyCharacterInventoryItemUpgradesModal } from '#components'
 
+import type { OpenedItem } from '~/composables/item/use-item-detail'
+import type { GroupedCompareItemsResult, ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
 import type { SortingConfig } from '~/services/item-search-service'
 
@@ -16,16 +19,12 @@ import { useUser } from '~/composables/user/use-user'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { validateItemNotMeetRequirement } from '~/services/character-service'
 import { getClanArmoryItemLender, getClanMembers } from '~/services/clan-service'
-import { getAggregationsConfig } from '~/services/item-search-service'
-import { createItemIndex } from '~/services/item-search-service/indexator'
-import { extractItem, getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
 
 const { clan, user } = useUser()
 
 const { data: userItems, pending: loadingUserItems } = useUserItemsProvider()
 useCharacterItemsProvider()
 
-const { t } = useI18n()
 const { mainHeaderHeight } = useMainHeader()
 
 const {
@@ -36,7 +35,7 @@ const {
 } = useCharacterItems()
 
 const { onDragEnd, onDragStart, dragging } = useInventoryDnD()
-const { onQuickEquip } = useInventoryQuickEquip()
+const { onQuickEquip, onQuickUnEquip } = useInventoryQuickEquip()
 
 const {
   onSellUserItem,
@@ -52,16 +51,14 @@ const { characterCharacteristics, healthPoints } = useCharacterCharacteristic()
 
 const hasArmoryItems = computed(() => userItems.value.some(ui => ui.isArmoryItem))
 
-const { closeItemDetail, toggleItemDetail, isOpen } = useItemDetail()
+const { closeItemDetail, toggleItemDetail } = useItemDetail()
 
-const onClickInventoryItem = (e: PointerEvent, userItem: UserItem) => {
+const onClickInventoryItem = (e: PointerEvent, userItem: UserItem, slot?: ItemSlot) => {
   if (e.ctrlKey) {
-    return onQuickEquip(userItem)
+    slot ? onQuickUnEquip(slot) : onQuickEquip(userItem)
+    return
   }
-  toggleItemDetail(e.target as HTMLElement, {
-    id: userItem.item.id,
-    userItemId: userItem.id,
-  })
+  toggleItemDetail(e.target as HTMLElement, userItem.item.id)
 }
 
 const sortingConfig: SortingConfig = {
@@ -72,35 +69,13 @@ const sortingConfig: SortingConfig = {
 }
 const sortingModel = useStorage<string>('character-inventory-sorting', 'rank_desc')
 
-// TODO: FIXME: to provide
-// TODO: FIXME: to composable
-const compareItemsResult = computed(() => {
-  // find the open items TODO: spec
-  return groupItemsByTypeAndWeaponClass(
-    // TODO: ....
-    createItemIndex(
-      userItems.value
-        .filter(ui => isOpen(ui.item.id, ui.id))
-        .map(extractItem),
-    ),
-  )
-    .filter(group => group.items.length >= 2) // there is no point in comparing 1 item
-    .map(group => ({
-      compareResult: getCompareItemsResult(
-        group.items,
-        getAggregationsConfig(group.type, group.weaponClass),
-      ),
-      type: group.type,
-      weaponClass: group.weaponClass,
-    }))
-})
-
 const { state: clanMembers } = useAsyncState(
   async () => clan.value ? getClanMembers(clan.value.id) : [],
   [],
 )
 
 const hideInArmoryItemsModel = useStorage<boolean>('character-inventory-in-armory-items', true)
+const overlay = useOverlay()
 
 const items = computed(() => {
   if (!hideInArmoryItemsModel.value) {
@@ -109,6 +84,57 @@ const items = computed(() => {
   // filter by isArmoryItem
   return userItems.value.filter(ui => ui.isArmoryItem ? ui.userId !== user.value!.id : true)
 })
+
+const onUpgrades = (userItem: UserItem, openedItem: OpenedItem) => {
+  const itemUpgradesModal = overlay.create(LazyCharacterInventoryItemUpgradesModal)
+
+  const update = (newUserItem: UserItem) => {
+    itemUpgradesModal.close()
+    closeItemDetail(openedItem.id)
+    toggleItemDetail(openedItem.bound, newUserItem.item.id)
+    onUpgrades(newUserItem, openedItem)
+  }
+
+  itemUpgradesModal.open({
+    userItem,
+    onUpgrade: async (upgradeRank: number) => {
+      update(await onUpgradeUserItem(userItem.id, upgradeRank))
+    },
+    onReforge: async () => {
+      update(await onReforgeUserItem(userItem.id))
+    },
+  })
+}
+
+const renderCharacterInventoryItemDetail = (openedItem: OpenedItem, compareItemsResult: GroupedCompareItemsResult[]) => {
+  const userItem = userItems.value.find(i => i.item.id === openedItem.id)
+
+  if (!userItem) {
+    return null
+  }
+
+  return h(CharacterInventoryItemDetail, {
+    userItem,
+    equipped: equippedItemIds.value.includes(userItem.id),
+    lender: getClanArmoryItemLender(userItem.userId, clanMembers.value),
+    compareResult: compareItemsResult.find(cr => cr.type === userItem.item.type)?.compareResult,
+    onSell: () => {
+      onSellUserItem(userItem.id)
+      closeItemDetail(openedItem.id)
+    },
+    onRepair: () => onRepairUserItem(userItem.id),
+    onUpgrades: () => onUpgrades(userItem, openedItem),
+    onAddToClanArmory: () => {
+      onAddItemToClanArmory(userItem.id)
+      closeItemDetail(openedItem.id)
+    },
+    onRemoveFromClanArmory: () => onRemoveFromClanArmory(userItem.id),
+    onReturnToClanArmory: () => {
+      onReturnToClanArmory(userItem.id)
+      closeItemDetail(openedItem.id)
+    },
+  })
+}
 </script>
 
 <template>
@@ -123,12 +149,12 @@ const items = computed(() => {
       >
         <template
           v-if="hasArmoryItems"
-          #filter-leading
+          #filter-trailing
         >
           <UDropdownMenu
             :items="[
               {
-                label: t('character.inventory.filter.hideInArmory'),
+                label: $t('character.inventory.filter.hideInArmory'),
                 type: 'checkbox',
                 icon: 'crpg:armory',
                 checked: hideInArmoryItemsModel,
@@ -144,13 +170,13 @@ const items = computed(() => {
               inset
               size="2xl"
               :show="hideInArmoryItemsModel"
-              :ui="{ base: 'bg-[var(--color-notification)]' }"
+              :ui="{ base: 'bg-success' }"
             >
               <UButton
                 variant="outline"
                 color="neutral"
                 size="xl"
-                icon="crpg:dots"
+                icon="i-lucide-ellipsis-vertical"
               />
             </UChip>
           </UDropdownMenu>
@@ -211,6 +237,10 @@ const items = computed(() => {
             </i18n-t>
           </UCard>
         </template>
+
+        <template #item-detail="{ item, compareItemsResult }">
+          <component :is="renderCharacterInventoryItemDetail(item, compareItemsResult)" />
+        </template>
       </ItemGrid>
     </div>
 
@@ -222,6 +252,8 @@ const items = computed(() => {
         :character-characteristics="characterCharacteristics"
         :equipped-items="equippedItemsBySlot"
         :items-stats-overall="itemsOverallStats"
+        @item-click="(e, itemId, slot) => onClickInventoryItem(e, userItems.find(ui => ui.item.id === itemId)!, slot)"
+        @un-equip="onQuickUnEquip"
       />
       <UCard
         style="grid-area: footer"
@@ -281,29 +313,5 @@ const items = computed(() => {
         </template>
       </CharacterStats>
     </div>
-
-    <ItemDetailGroup>
-      <template #default="item">
-        <CharacterInventoryItemDetail
-          :user-item="userItems.find(ui => ui.id === item.userItemId)!"
-          :equipped="equippedItemIds.includes(item.userItemId)"
-          :lender="getClanArmoryItemLender(userItems.find(ui => ui.id === item.userItemId)!.userId, clanMembers)"
-          :compare-result="compareItemsResult.find(cr => cr.type === userItems.find(fi => fi.item.id === item.id)!.item.type)?.compareResult"
-          @sell="() => {
-            closeItemDetail(item);
-            onSellUserItem(item.userItemId);
-          }"
-          @repair="() => onRepairUserItem(item.userItemId)"
-          @upgrade="() => onUpgradeUserItem(item.userItemId)"
-          @reforge="() => onReforgeUserItem(item.userItemId)"
-          @add-to-clan-armory="() => onAddItemToClanArmory(item.userItemId)"
-          @remove-from-clan-armory="() => onRemoveFromClanArmory(item.userItemId)"
-          @return-to-clan-armory="() => {
-            closeItemDetail(item);
-            onReturnToClanArmory(item.userItemId)
-          }"
-        />
-      </template>
-    </ItemDetailGroup>
   </div>
 </template>

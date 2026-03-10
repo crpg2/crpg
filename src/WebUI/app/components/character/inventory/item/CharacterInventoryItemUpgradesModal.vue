@@ -1,46 +1,41 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
 
-import { AppCoin, AppLoom, LazyCharacterInventoryItemReforgeConfirmDialog, LazyCharacterInventoryItemUpgradeConfirmDialog } from '#components'
+import { AppCoin, AppLoom, LazyCharacterInventoryItemReforgeConfirmDialog, LazyCharacterInventoryItemUpgradeConfirmDialog, UButton, UiTooltipContent, UTable, UTooltip } from '#components'
 
 import type { ReforgeCost } from '~/composables/item/use-item-reforge'
+import type { ItemFlat } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
 import { useItemReforge } from '~/composables/item/use-item-reforge'
-import { useItemUpgrades } from '~/composables/item/use-item-upgrades'
+import { useUser } from '~/composables/user/use-user'
 import { getItemAggregations } from '~/services/item-search-service'
 import { createItemIndex } from '~/services/item-search-service/indexator'
-import { getRankColor } from '~/services/item-service'
+import { getItemUpgrades, getRankColor, getRelativeEntries } from '~/services/item-service'
 
 const { userItem } = defineProps<{
   userItem: UserItem
-  gold: number
-  heirloomPoints: number
 }>()
 
 const emit = defineEmits<{
-  upgrade: []
+  upgrade: [upgradeRank: number]
   reforge: []
 }>()
 
 const { t } = useI18n()
+const { user } = useUser()
 
-// TODO:
 const item = computed(() => createItemIndex([userItem.item]).at(0)!)
 const aggregationConfig = computed(() => getItemAggregations(item.value, false))
 
 const {
-  itemUpgrades,
-  isLoadingitemUpgrades,
-  baseItem,
-  canUpgrade,
-  nextItem,
-  relativeEntries,
-  validation: upgradeValidation,
-} = useItemUpgrades({
-  item: { baseId: userItem.item.baseId, id: userItem.item.id, rank: userItem.item.rank },
-  aggregationConfig: aggregationConfig.value,
-})
+  state: itemUpgrades,
+  isLoading: isLoadingitemUpgrades,
+} = useAsyncState(async () => createItemIndex(await getItemUpgrades(userItem.item.baseId)), [])
+
+const baseItem = computed(() => itemUpgrades.value.find(iu => iu.rank === 0))
+
+const relativeEntries = computed(() => baseItem.value ? getRelativeEntries(baseItem.value, aggregationConfig.value) : {})
 
 const {
   canReforge,
@@ -49,47 +44,26 @@ const {
   validation: reforgeValidation,
 } = useItemReforge(userItem.item.rank)
 
-const reforgeTableInfoColumns: TableColumn<ReforgeCost>[] = [
-  {
-    header: t('character.inventory.item.reforge.tooltip.costTable.cols.rank.label'),
-    cell: ({ row }) => h('span', { style: {
-      color: getRankColor(row.original.points),
-    } }, `+${row.index + 1}`),
-  },
-  {
-    accessorKey: 'cost',
-    header: t('character.inventory.item.reforge.tooltip.costTable.cols.cost.label'),
-    cell: ({ row }) => h(AppCoin, { value: row.original.cost }),
-  },
-  {
-    accessorKey: 'points',
-    header: t('character.inventory.item.reforge.tooltip.costTable.cols.looms.label'),
-    cell: ({ row }) => h(AppLoom, { point: row.original.points }),
-  },
-]
-
 const overlay = useOverlay()
 
-const upgradeItemConfirm = overlay.create(LazyCharacterInventoryItemUpgradeConfirmDialog)
-
-async function upgrade() {
+async function upgrade(nextItem: ItemFlat) {
+  const upgradeItemConfirm = overlay.create(LazyCharacterInventoryItemUpgradeConfirmDialog)
   if (!(await upgradeItemConfirm.open({
     item: item.value,
-    nextItem: nextItem.value,
+    nextItem,
   }))) {
     return
   }
 
-  emit('upgrade')
+  emit('upgrade', nextItem.rank)
 }
-
-const reforgeItemConfirm = overlay.create(LazyCharacterInventoryItemReforgeConfirmDialog)
 
 async function reforge() {
   if (!baseItem.value) {
     return
   }
 
+  const reforgeItemConfirm = overlay.create(LazyCharacterInventoryItemReforgeConfirmDialog)
   if (!(await reforgeItemConfirm.open({
     item: item.value,
     newItem: baseItem.value,
@@ -100,6 +74,80 @@ async function reforge() {
 
   emit('reforge')
 }
+
+const renderItemAction = (_item: ItemFlat) => {
+  // reforge
+  if (_item.rank === 0 && reforgeValidation.value.rank) {
+    const reforgeTableInfoColumns: TableColumn<ReforgeCost>[] = [
+      {
+        header: t('character.inventory.item.reforge.tooltip.costTable.cols.rank.label'),
+        cell: ({ row }) => h('span', { style: {
+          color: getRankColor(row.original.points),
+        } }, `+${row.index + 1}`),
+      },
+      {
+        accessorKey: 'cost',
+        header: t('character.inventory.item.reforge.tooltip.costTable.cols.cost.label'),
+        cell: ({ row }) => h(AppCoin, { value: row.original.cost }),
+      },
+      {
+        accessorKey: 'points',
+        header: t('character.inventory.item.reforge.tooltip.costTable.cols.looms.label'),
+        cell: ({ row }) => h(AppLoom, { point: row.original.points }),
+      },
+    ]
+
+    return h(UTooltip, {}, {
+      default: () => h(UButton, {
+        variant: 'subtle',
+        disabled: !canReforge.value,
+        onClick: () => reforge(),
+      }, () => [
+        t('action.reforge'),
+        h(AppCoin, { value: reforgeCost.value }),
+      ]),
+      content: () => h('div', { class: 'space-y-4' }, [
+        h(UiTooltipContent, {
+          title: t('character.inventory.item.reforge.tooltip.title'),
+          description: t('character.inventory.item.reforge.tooltip.description'),
+          validation: !reforgeValidation.value.gold
+            ? t('character.inventory.item.reforge.validation.gold')
+            : undefined,
+        }),
+        // @ts-expect-error TODO:
+        h(UTable, {
+          data: reforgeCostTable.value,
+          columns: reforgeTableInfoColumns,
+        }),
+      ]),
+    })
+  }
+
+  if (_item.rank <= item.value.rank) {
+    return null
+  }
+
+  // upgrade
+  const notEnoughtPoints = user.value!.heirloomPoints < _item.rank - item.value.rank
+
+  return h(UTooltip, {}, {
+    default: () => h(UButton, {
+      variant: 'subtle',
+      disabled: notEnoughtPoints,
+      onClick: () => upgrade(_item),
+    }, () => [
+      t('action.upgrade'),
+      h(AppLoom, { point: _item.rank - item.value.rank }),
+    ]),
+    content: () => h(UiTooltipContent, {
+      title: t('character.inventory.item.upgrade.tooltip.title'),
+      description: t('character.inventory.item.upgrade.tooltip.description'),
+      validation: notEnoughtPoints
+        ? t('character.inventory.item.upgrade.validation.loomPoints')
+        : undefined,
+    }),
+  })
+}
 </script>
 
 <template>
@@ -107,80 +155,16 @@ async function reforge() {
     :ui="{
       content: 'max-w-5/6',
       title: 'flex items-center justify-center gap-4',
-      body: '!p-0',
+      body: 'p-0!',
     }"
   >
     <template #title>
-      <UiTextView variant="h3">
+      <UiTextView variant="h2">
         {{ $t('character.inventory.item.upgrade.upgradesTitle') }}
       </UiTextView>
 
-      <AppLoom :point="heirloomPoints" />
-      <AppCoin :value="gold" />
-
-      <UTooltip>
-        <!-- This extra div fixes a bug where this popover opens itself when the parent modal window opens. -->
-        <div>
-          <UButton
-            variant="subtle"
-            size="xl"
-            :disabled="!canUpgrade"
-            @click="upgrade"
-          >
-            {{ $t('action.upgrade') }}
-            <AppLoom :point="1" />
-          </UButton>
-        </div>
-
-        <template #content>
-          <UiTooltipContent
-            :title="$t('character.inventory.item.upgrade.tooltip.title')"
-            :description="$t('character.inventory.item.upgrade.tooltip.description')"
-            :validation="!upgradeValidation.maxRank
-              ? $t('character.inventory.item.upgrade.validation.maxRank')
-              : !upgradeValidation.points
-                ? $t('character.inventory.item.upgrade.validation.loomPoints')
-                : undefined
-            "
-          />
-        </template>
-      </UTooltip>
-
-      <UTooltip>
-        <div>
-          <UButton
-            variant="subtle"
-            size="xl"
-            :disabled="!canReforge"
-            @click="reforge"
-          >
-            {{ $t('action.reforge') }}
-            <AppCoin
-              v-if="reforgeValidation.rank"
-              :value="reforgeCost"
-            />
-          </UButton>
-        </div>
-
-        <template #content>
-          <div class="space-y-4">
-            <UiTooltipContent
-              :title="$t('character.inventory.item.reforge.tooltip.title')"
-              :description="$t('character.inventory.item.reforge.tooltip.description')"
-              :validation="!reforgeValidation.rank
-                ? $t('character.inventory.item.reforge.validation.rank', { minimumRank: 0 })
-                : !reforgeValidation.gold
-                  ? $t('character.inventory.item.reforge.validation.gold')
-                  : undefined
-              "
-            />
-            <UTable
-              :data="reforgeCostTable"
-              :columns="reforgeTableInfoColumns"
-            />
-          </div>
-        </template>
-      </UTooltip>
+      <AppLoom :point="user!.heirloomPoints" size="xl" />
+      <AppCoin :value="user!.gold" size="xl" />
     </template>
 
     <template #body>
@@ -190,7 +174,11 @@ async function reforge() {
         :items="itemUpgrades"
         :aggregation-config
         :compare-items-result="relativeEntries"
-      />
+      >
+        <template #name-caption="{ row }">
+          <component :is="renderItemAction(row.original)" />
+        </template>
+      </ItemTableUpgrades>
     </template>
   </UModal>
 </template>

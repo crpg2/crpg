@@ -1,4 +1,3 @@
-using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Network.Messages;
 
@@ -29,15 +28,15 @@ internal sealed class FriendlyFireNotificationMessage : GameNetworkMessage
     protected override bool OnRead()
     {
         bool bufferReadValid = true;
-        Message = GameNetworkMessage.ReadStringFromPacket(ref bufferReadValid);
-        Mode = (FriendlyFireMessageMode)GameNetworkMessage.ReadIntFromPacket(messageModeCompressionInfo, ref bufferReadValid);
+        Message = ReadStringFromPacket(ref bufferReadValid);
+        Mode = (FriendlyFireMessageMode)ReadIntFromPacket(messageModeCompressionInfo, ref bufferReadValid);
         return bufferReadValid;
     }
 
     protected override void OnWrite()
     {
-        GameNetworkMessage.WriteStringToPacket(Message);
-        GameNetworkMessage.WriteIntToPacket((int)Mode, messageModeCompressionInfo);
+        WriteStringToPacket(Message);
+        WriteIntToPacket((int)Mode, messageModeCompressionInfo);
     }
 
     protected override MultiplayerMessageFilter OnGetLogFilter()

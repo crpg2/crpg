@@ -78,10 +78,13 @@ export default defineNuxtConfig({
   css: [
     './assets/css/main.css',
   ],
+  // https://color-mode.nuxtjs.org/usage/configuration
+  colorMode: {
+    preference: 'dark',
+  },
   // https://ui.nuxt.com/getting-started/installation/nuxt#options
   ui: {
     fonts: false,
-    // TODO: FIXME: test
     experimental: {
       componentDetection: true,
     },
@@ -105,6 +108,7 @@ export default defineNuxtConfig({
     port: 8080,
   },
   experimental: {
+    viewTransition: true,
     typedPages: true,
     defaults: {
       nuxtLink: {
@@ -124,7 +128,9 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [
+      // @ts-expect-error FIXME: TODO: https://github.com/nuxt/nuxt/issues/34306
       tailwindcss(),
+      // @ts-expect-error FIXME: TODO: https://github.com/nuxt/nuxt/issues/34306
       JSON5(),
     ],
     envPrefix: ['NUXT_PUBLIC_'],

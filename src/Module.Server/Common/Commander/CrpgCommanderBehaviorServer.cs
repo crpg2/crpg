@@ -96,7 +96,6 @@ internal class CrpgCommanderBehaviorServer : MissionNetwork
             {
                 if (agentState == AgentState.Deleted | agentState == AgentState.Routed)
                 {
-                    return;
                 }
                 else
                 {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TaleWorlds.Core;
+﻿using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -21,7 +18,7 @@ public class CrpgWarmupSpawnFrameBehavior : SpawnFrameBehaviorBase
         return GetSpawnFrameFromSpawnPoints(spawnPoints, team, hasMount);
     }
 
-    private MatrixFrame GetSpawnFrameFromSpawnPoints(IList<GameEntity> spawnPointsList, Team team, bool hasMount)
+    private new MatrixFrame GetSpawnFrameFromSpawnPoints(IList<GameEntity> spawnPointsList, Team team, bool hasMount)
     {
         float highScore = float.MinValue;
         int index = -1;
@@ -53,7 +50,7 @@ public class CrpgWarmupSpawnFrameBehavior : SpawnFrameBehaviorBase
 
             if (proximityScore > 0f)
             {
-                proximityScore /= (float)Mission.Current.Agents.Count;
+                proximityScore /= Mission.Current.Agents.Count;
             }
 
             score += proximityScore;

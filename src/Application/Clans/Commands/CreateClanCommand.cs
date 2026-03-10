@@ -87,7 +87,7 @@ public record CreateClanCommand : IMediatorRequest<ClanViewModel>
             _activityLogService = activityLogService;
         }
 
-        public async Task<Result<ClanViewModel>> Handle(CreateClanCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<ClanViewModel>> Handle(CreateClanCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .Include(u => u.ClanMembership)

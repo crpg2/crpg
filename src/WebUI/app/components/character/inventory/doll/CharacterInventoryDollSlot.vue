@@ -36,17 +36,17 @@ const {
         hover:ring-default
       `],
       {
-        '!ring-success': focused,
-        '!ring-warning': invalid,
-        '!ring-error': remove,
+        'ring-success!': focused,
+        'ring-warning!': invalid,
+        'ring-error!': remove,
       },
     ]"
   >
     <ItemCard
       v-if="userItem !== undefined"
       :item="userItem.item"
-      class="h-full w-full cursor-grab !ring-0"
-      :class="{ '!bg-gold/25': userItem.isPersonal }"
+      class="size-full! cursor-grab ring-0!"
+      :class="{ 'bg-gold/25!': userItem.isPersonal }"
       data-aq-character-slot-item-thumb
     >
       <template #badges-top-right>
@@ -62,7 +62,7 @@ const {
 
     <UTooltip v-else>
       <UIcon
-        class="size-12 text-toned outline-0 select-none"
+        class="size-12 text-dimmed outline-0 select-none"
         :name="`crpg:${placeholder}`"
         data-aq-character-slot-item-placeholder
       />
@@ -84,7 +84,7 @@ const {
         <UIcon
           name="crpg:shield-duotone"
           class="
-            size-10 text-muted
+            size-10 text-dimmed
             group-hover:text-toned
           "
         />
