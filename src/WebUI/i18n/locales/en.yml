@@ -1608,12 +1608,12 @@ patchNotes:
   showAllPatches: '+ {count} patch | + {count} patches'
   latestPatch: Latest patch
 
-strategus:
+campaign:
   registration:
-    welcome: Welcome to Strategus!
+    welcome: Welcome to Campaign!
     description:
-      'Strategus is a multiplayer campaign for cRPG where players can aquire fiefs and land and
-      gather armies on a real-time map. Strategus expands the world of cRPG to a browser-based map
+      'Campaign is a multiplayer campaign for cRPG where players can aquire fiefs and land and
+      gather armies on a real-time map. Campaign expands the world of cRPG to a browser-based map
       of Calradia, where players take their armies into battle against other players or serve as a
       mercenary in scheduled battles on the cRPG servers.'
     join: 'You will join the campaign in region: {region}'

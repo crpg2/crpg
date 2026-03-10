@@ -1,10 +1,10 @@
 import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
 
-import type { Battle, BattleFighter, BattleFighterApplication, BattleSide } from '~/models/strategus/battle'
+import type { Battle, BattleFighter, BattleFighterApplication, BattleSide } from '~/models/campaign/battle'
 
-import { useBattleTitle } from '~/composables/strategus/battle/use-battle'
+import { useBattleTitle } from '~/composables/campaign/battle/use-battle'
 import { useUser } from '~/composables/user/use-user'
-import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_SIDE } from '~/models/strategus/battle'
+import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_SIDE } from '~/models/campaign/battle'
 import { MAP_BATTLE_QUERY_KEYS } from '~/queries'
 import {
   removeBattleFighter as _removeBattleFighter,
@@ -14,7 +14,7 @@ import {
   getBattleFighterApplications,
   getBattleFighters,
   getBattleItems,
-} from '~/services/strategus/battle-service'
+} from '~/services/campaign/battle-service'
 
 export const useMapBattleProvider = (battleId: number) => {
   return useAsyncData(
@@ -24,7 +24,7 @@ export const useMapBattleProvider = (battleId: number) => {
 }
 
 export const useMapBattle = () => {
-  const route = useRoute('strategus-battle-id')
+  const route = useRoute('campaign-battle-id')
   const _key = MAP_BATTLE_QUERY_KEYS.byId(Number(route.params.id))
 
   const battle = getAsyncData<Battle>(_key) // TODO: Battle -> MapDetailBattle

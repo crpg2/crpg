@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { LIcon, LMarker, LTooltip } from '@vue-leaflet/vue-leaflet'
 
-import type { BattleFighter, BattleSide, MapBattle } from '~/models/strategus/battle'
+import type { BattleFighter, BattleSide, MapBattle } from '~/models/campaign/battle'
 
-import { useMapContext } from '~/composables/strategus/use-map'
+import { useMapContext } from '~/composables/campaign/use-map'
 import { useUser } from '~/composables/user/use-user'
-import { BATTLE_SIDE } from '~/models/strategus/battle'
+import { BATTLE_SIDE } from '~/models/campaign/battle'
 import { positionToLatLng } from '~/utils/geometry'
 
 const { battle } = defineProps<{ battle: MapBattle }>()

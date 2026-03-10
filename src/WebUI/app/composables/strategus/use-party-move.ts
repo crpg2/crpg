@@ -2,8 +2,8 @@ import type { LMap } from '@vue-leaflet/vue-leaflet'
 import type { LeafletMouseEvent, Map } from 'leaflet'
 import type L from 'leaflet'
 
-import { useParty } from '~/composables/strategus/use-party'
-import { PARTY_ORDER_TYPE } from '~/models/strategus/party'
+import { useParty } from '~/composables/campaign/use-party'
+import { PARTY_ORDER_TYPE } from '~/models/campaign/party'
 
 export const usePartyMove = (map: Ref<typeof LMap | null>) => {
   const { setPartyOrder, validateCanMove } = useParty()

@@ -4,10 +4,10 @@ import type { SortingState, VisibilityState } from '@tanstack/vue-table'
 
 import { AppConfirmActionPopover, UButton, UiTextView, UserMedia } from '#components'
 
-import type { BattleParticipant } from '~/models/strategus/battle'
+import type { BattleParticipant } from '~/models/campaign/battle'
 
 import { useUser } from '~/composables/user/use-user'
-import { BATTLE_PARTICIPANT_TYPE } from '~/models/strategus/battle'
+import { BATTLE_PARTICIPANT_TYPE } from '~/models/campaign/battle'
 
 const { participants, canManage, canManageByParticipant, totalParticipantSlots } = defineProps<{
   participants: BattleParticipant[]

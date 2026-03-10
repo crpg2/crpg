@@ -503,7 +503,7 @@ export type Error = {
     stackTrace: string | null;
 };
 
-export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'InvalidUpgradeRank' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartyNotEnoughItems' | 'SettlementNotEnoughItems' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementNotEnoughTroops' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToStrategus' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
+export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'InvalidUpgradeRank' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartyNotEnoughItems' | 'SettlementNotEnoughItems' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementNotEnoughTroops' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToCampaign' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
 
 export type ErrorSource = {
     pointer?: string | null;
@@ -1038,16 +1038,16 @@ export type SettlementPublicViewModelResult = {
 
 export type SettlementType = 'Village' | 'Castle' | 'Town';
 
-export type StrategusUpdate = {
+export type CampaignUpdate = {
     party: PartyViewModel;
     visibleParties: Array<PartyVisibleViewModel>;
     visibleSettlements: Array<SettlementPublicViewModel>;
     visibleBattles: Array<BattleViewModel>;
 };
 
-export type StrategusUpdateResult = {
+export type CampaignUpdateResult = {
     readonly errors: Array<Error> | null;
-    data: StrategusUpdate | null;
+    data: CampaignUpdate | null;
 };
 
 export type TerrainType = 'Barrier' | 'ThickForest' | 'SparseForest' | 'ShallowWater' | 'DeepWater' | 'Plain';
@@ -1607,15 +1607,15 @@ export type SettlementPublicViewModelResultWritable = {
     data: SettlementPublicViewModelWritable | null;
 };
 
-export type StrategusUpdateWritable = {
+export type CampaignUpdateWritable = {
     party: PartyViewModelWritable;
     visibleParties: Array<PartyVisibleViewModelWritable>;
     visibleSettlements: Array<SettlementPublicViewModelWritable>;
     visibleBattles: Array<BattleViewModelWritable>;
 };
 
-export type StrategusUpdateResultWritable = {
-    data: StrategusUpdateWritable | null;
+export type CampaignUpdateResultWritable = {
+    data: CampaignUpdateWritable | null;
 };
 
 export type TerrainViewModelWritable = {
@@ -2915,7 +2915,7 @@ export type GetPartiesSelfUpdateData = {
 
 export type GetPartiesSelfUpdateErrors = {
     /**
-     * User was not registered to strategus.
+     * User was not registered to campaign.
      */
     404: unknown;
 };
@@ -2924,7 +2924,7 @@ export type GetPartiesSelfUpdateResponses = {
     /**
      * Ok.
      */
-    200: StrategusUpdateResult;
+    200: CampaignUpdateResult;
 };
 
 export type GetPartiesSelfUpdateResponse = GetPartiesSelfUpdateResponses[keyof GetPartiesSelfUpdateResponses];
@@ -2963,7 +2963,7 @@ export type PutPartiesSelfOrdersResponses = {
     /**
      * Updated.
      */
-    200: StrategusUpdateResult;
+    200: CampaignUpdateResult;
 };
 
 export type PutPartiesSelfOrdersResponse = PutPartiesSelfOrdersResponses[keyof PutPartiesSelfOrdersResponses];

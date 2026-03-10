@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import {
-  strategusBattleSideBriefingNoteMaxLength,
+  campaignBattleSideBriefingNoteMaxLength,
 } from '~root/data/constants.json'
 import { isEqual } from 'es-toolkit'
 
-import type { BattleSideBriefing } from '~/models/strategus/battle'
+import type { BattleSideBriefing } from '~/models/campaign/battle'
 
 const { briefing } = defineProps<{
   briefing: BattleSideBriefing
@@ -31,21 +31,21 @@ const isDirty = computed(() => !isEqual(briefingModel.value, briefing))
 <template>
   <div class="space-y-6">
     <UFormField
-      :label="$t('strategus.battle.manage.briefing.form.note.label')"
-      :help="$t('strategus.battle.manage.briefing.form.note.help')"
+      :label="$t('campaign.battle.manage.briefing.form.note.label')"
+      :help="$t('campaign.battle.manage.briefing.form.note.help')"
       size="xl"
     >
       <UTextarea
         v-model="briefingModel.note"
         autoresize
         :rows="7"
-        :maxlength="strategusBattleSideBriefingNoteMaxLength"
+        :maxlength="campaignBattleSideBriefingNoteMaxLength"
         class="w-full"
       />
       <template #hint>
         <UiInputCounter
           :current="briefingModel.note.length"
-          :max="strategusBattleSideBriefingNoteMaxLength"
+          :max="campaignBattleSideBriefingNoteMaxLength"
         />
       </template>
     </UFormField>

@@ -20,7 +20,7 @@ public static class DependencyInjection
     {
         var constants = new FileConstantsSource().LoadConstants();
         ExperienceTable experienceTable = new(constants);
-        BattleScheduler strategusBattleScheduler = new();
+        BattleScheduler campaignBattleScheduler = new();
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly())
             .AddMediator(o =>
@@ -43,11 +43,11 @@ public static class DependencyInjection
             .AddSingleton<IGameServerStatsService, DatadogGameServerStatsService>()
             .AddSingleton<IPatchNotesService, GithubPatchNotesService>()
             .AddSingleton<IGeoIpService>(CreateGeoIpService())
-            .AddSingleton<IStrategusMap, StrategusMap>()
-            .AddSingleton<IStrategusSpeedModel, StrategusSpeedModel>()
-            .AddSingleton<IStrategusRouting, StrategusRouting>()
+            .AddSingleton<ICampaignMap, CampaignMap>()
+            .AddSingleton<ICampaignSpeedModel, CampaignSpeedModel>()
+            .AddSingleton<ICampaignRouting, CampaignRouting>()
             .AddSingleton<IBattleService, BattleService>()
-            .AddSingleton<IBattleScheduler>(strategusBattleScheduler)
+            .AddSingleton<IBattleScheduler>(campaignBattleScheduler)
             .AddSingleton<ICharacterClassResolver, CharacterClassResolver>()
             .AddSingleton<IBattleParticipantDistributionModel, BattleParticipantUniformDistributionModel>()
             .AddSingleton(constants)

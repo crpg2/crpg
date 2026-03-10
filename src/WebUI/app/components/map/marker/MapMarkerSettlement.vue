@@ -2,11 +2,11 @@
 import { LCircle, LIcon, LMarker, LTooltip } from '@vue-leaflet/vue-leaflet'
 // import { clsx } from 'clsx'
 
-import type { SettlementPublic } from '~/models/strategus/settlement'
+import type { SettlementPublic } from '~/models/campaign/settlement'
 
-import { SETTLEMENT_TYPE } from '~/models/strategus/settlement'
-// import { SettlementType } from '~/models/strategus/settlement'
-import { settlementIconByType } from '~/services/strategus/settlement-service'
+import { SETTLEMENT_TYPE } from '~/models/campaign/settlement'
+// import { SettlementType } from '~/models/campaign/settlement'
+import { settlementIconByType } from '~/services/campaign/settlement-service'
 import { argbIntToRgbHexColor } from '~/utils/color'
 // import { hexToRGBA } from '~/utils/color'
 import { positionToLatLng } from '~/utils/geometry'
@@ -68,7 +68,7 @@ const settlementAreaRadius = computed(() => {
             hover:ring hover:ring-inverted
           "
           :class="settlementMarkerStyle.baseClass"
-          :title="$t(`strategus.settlementType.${settlement.type}`)"
+          :title="$t(`campaign.settlementType.${settlement.type}`)"
         >
           <UIcon :name="`crpg:${settlementIconByType[settlement.type]}`" class="size-6" />
           <div class="leading-snug">

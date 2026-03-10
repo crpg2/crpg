@@ -1,6 +1,6 @@
 <!-- TODO: RENAME -->
 <script setup lang="ts">
-import type { ItemStack, TransferOfferPartyUpdate } from '~/models/strategus/party'
+import type { ItemStack, TransferOfferPartyUpdate } from '~/models/campaign/party'
 
 interface TransferOfferModel {
   troops: number

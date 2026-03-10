@@ -1,7 +1,7 @@
 import type { LMap } from '@vue-leaflet/vue-leaflet'
 import type { Map } from 'leaflet'
 
-import type { TerrainType } from '~/models/strategus/terrain'
+import type { TerrainType } from '~/models/campaign/terrain'
 
 import {
   addTerrain,
@@ -10,7 +10,7 @@ import {
   mapTerrainsToFeatureCollection,
   terrainColorByType,
   updateTerrain,
-} from '~/services/strategus/terrain-service'
+} from '~/services/campaign/terrain-service'
 
 export type Tool = 'draw' | 'edit' | 'drag' | 'remove'
 

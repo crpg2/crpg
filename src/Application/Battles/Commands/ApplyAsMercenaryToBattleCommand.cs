@@ -32,8 +32,8 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
         public Validator(Constants constants)
         {
             RuleFor(a => a.Side).IsInEnum();
-            RuleFor(a => a.Wage).InclusiveBetween(0, constants.StrategusMercenaryMaxWage);
-            RuleFor(a => a.Note).MaximumLength(constants.StrategusMercenaryNoteMaxLength);
+            RuleFor(a => a.Wage).InclusiveBetween(0, constants.CampaignMercenaryMaxWage);
+            RuleFor(a => a.Note).MaximumLength(constants.CampaignMercenaryNoteMaxLength);
         }
     }
 

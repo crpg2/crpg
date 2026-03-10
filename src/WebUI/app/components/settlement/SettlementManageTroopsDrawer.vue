@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { strategusMinPartyTroops } from '~root/data/constants.json'
+import { campaignMinPartyTroops } from '~root/data/constants.json'
 
-import type { SettlementPublic } from '~/models/strategus/settlement'
+import type { SettlementPublic } from '~/models/campaign/settlement'
 
-import { useParty } from '~/composables/strategus/use-party'
+import { useParty } from '~/composables/campaign/use-party'
 
 const { settlement } = defineProps<{
   settlement: SettlementPublic
@@ -131,8 +131,8 @@ const onSubmit = () => {
 
           <UInputNumber
             v-model="transferModel.troops"
-            :min="strategusMinPartyTroops"
-            :max="maxTroops - strategusMinPartyTroops"
+            :min="campaignMinPartyTroops"
+            :max="maxTroops - campaignMinPartyTroops"
             class="w-full"
             increment-icon="i-lucide-arrow-right"
             decrement-icon="i-lucide-arrow-left"
@@ -140,8 +140,8 @@ const onSubmit = () => {
 
           <USlider
             v-model="transferModel.troops"
-            :min="strategusMinPartyTroops"
-            :max="maxTroops - strategusMinPartyTroops"
+            :min="campaignMinPartyTroops"
+            :max="maxTroops - campaignMinPartyTroops"
             class="px-2.5"
           />
         </UFormField>

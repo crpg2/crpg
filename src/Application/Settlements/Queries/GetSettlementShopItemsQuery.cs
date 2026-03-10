@@ -15,11 +15,11 @@ public record GetSettlementShopItemsQuery : IMediatorRequest<IList<ItemViewModel
     public int PartyId { get; init; }
     public int SettlementId { get; init; }
 
-    internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap) : IMediatorRequestHandler<GetSettlementShopItemsQuery, IList<ItemViewModel>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, ICampaignMap campaignMap) : IMediatorRequestHandler<GetSettlementShopItemsQuery, IList<ItemViewModel>>
     {
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
-        private readonly IStrategusMap _strategusMap = strategusMap;
+        private readonly ICampaignMap _campaignMap = campaignMap;
 
         public async ValueTask<Result<IList<ItemViewModel>>> Handle(GetSettlementShopItemsQuery req,
             CancellationToken cancellationToken)

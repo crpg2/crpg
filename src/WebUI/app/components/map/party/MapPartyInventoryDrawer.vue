@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePartyItems } from '~/composables/strategus/use-party'
+import { usePartyItems } from '~/composables/campaign/use-party'
 
 const emit = defineEmits<{
   close: [value: boolean]

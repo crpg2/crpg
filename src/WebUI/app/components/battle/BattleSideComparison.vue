@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { Battle, BattleSide } from '~/models/strategus/battle'
+import type { Battle, BattleSide } from '~/models/campaign/battle'
 
-import { BATTLE_SIDE } from '~/models/strategus/battle'
+import { BATTLE_SIDE } from '~/models/campaign/battle'
 import { argbIntToRgbHexColor } from '~/utils/color'
 
 const { battle } = defineProps<{

@@ -13,8 +13,8 @@ public class UpdateBattlePhasesCommandTest : TestBase
 {
     private static readonly Constants Constants = new()
     {
-        StrategusBattleInitiationDurationHours = 24,
-        StrategusBattleHiringDurationHours = 12,
+        CampaignBattleInitiationDurationHours = 24,
+        CampaignBattleHiringDurationHours = 12,
     };
 
     [Test]

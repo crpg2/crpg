@@ -18,7 +18,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 {
     public TimeSpan DeltaTime { get; init; }
 
-    internal class Handler(ICrpgDbContext db, IStrategusMap strategusMap, IStrategusSpeedModel strategusSpeedModel, IStrategusRouting strategusRouting) : IMediatorRequestHandler<UpdatePartyPositionsCommand>
+    internal class Handler(ICrpgDbContext db, ICampaignMap campaignMap, ICampaignSpeedModel campaignSpeedModel, ICampaignRouting campaignRouting) : IMediatorRequestHandler<UpdatePartyPositionsCommand>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdatePartyPositionsCommand>();
 
@@ -30,9 +30,9 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
         ];
 
         private readonly ICrpgDbContext _db = db;
-        private readonly IStrategusMap _strategusMap = strategusMap;
-        private readonly IStrategusSpeedModel _strategusSpeedModel = strategusSpeedModel;
-        private readonly IStrategusRouting _strategusRouting = strategusRouting;
+        private readonly ICampaignMap _campaignMap = campaignMap;
+        private readonly ICampaignSpeedModel _campaignSpeedModel = campaignSpeedModel;
+        private readonly ICampaignRouting _campaignRouting = campaignRouting;
 
         public async ValueTask<Result> Handle(UpdatePartyPositionsCommand req, CancellationToken cancellationToken)
         {
@@ -55,7 +55,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
 
             foreach (var party in parties)
             {
-                double baseSpeed = _strategusSpeedModel.ComputePartySpeed(party).BaseSpeedWithoutTerrain;
+                double baseSpeed = _campaignSpeedModel.ComputePartySpeed(party).BaseSpeedWithoutTerrain;
                 double remainingTime = req.DeltaTime.TotalSeconds;
 
                 while (remainingTime > 0 && party.Orders.Count != 0)
@@ -127,7 +127,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             }
 
             var currentTerrain = terrains.FirstOrDefault(t => t.Boundary.Contains(party.Position));
-            double viewDistance = _strategusMap.ComputeViewDistance(currentTerrain?.Type);
+            double viewDistance = _campaignMap.ComputeViewDistance(currentTerrain?.Type);
 
             if (!party.Position.IsWithinDistance(target.Position, viewDistance))
             {
@@ -145,7 +145,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 return 0; // to avoid an endless while
             }
 
-            double interactionDist = _strategusMap.InteractionDistance;
+            double interactionDist = _campaignMap.InteractionDistance;
             double dist = party.Position.Distance(target.Position);
 
             if (dist <= interactionDist)
@@ -193,7 +193,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 return remainingTime;
             }
 
-            double interactionDist = _strategusMap.InteractionDistance;
+            double interactionDist = _campaignMap.InteractionDistance;
             double dist = party.Position.Distance(target.Position);
 
             if (dist <= interactionDist)
@@ -228,7 +228,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 return remainingTime;
             }
 
-            double interactionDist = _strategusMap.InteractionDistance;
+            double interactionDist = _campaignMap.InteractionDistance;
             double dist = party.Position.Distance(target.Position);
 
             if (dist <= interactionDist)
@@ -238,7 +238,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 return remainingTime;
             }
 
-            if (_strategusMap.InteractionDistance <= party.Position.Distance(target.Position))
+            if (_campaignMap.InteractionDistance <= party.Position.Distance(target.Position))
             {
                 party.Status = PartyStatus.AwaitingBattleJoinDecision;
                 party.Position = target.Position;
@@ -301,7 +301,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
             }
 
             // Find all intersection points with terrain boundaries
-            var segments = _strategusRouting.BuildPathSegments(party.Position, target, terrains);
+            var segments = _campaignRouting.BuildPathSegments(party.Position, target, terrains);
 
             // Move through segments
             Point currentPosition = party.Position;
@@ -323,7 +323,7 @@ public record UpdatePartyPositionsCommand : IMediatorRequest
                 else
                 {
                     // Can only partially complete this segment
-                    party.Position = _strategusMap.MovePointTowards(currentPosition, segment.EndPoint, maxDistanceWithCurrentTime);
+                    party.Position = _campaignMap.MovePointTowards(currentPosition, segment.EndPoint, maxDistanceWithCurrentTime);
                     remainingTime = 0;
                     return remainingTime;
                 }

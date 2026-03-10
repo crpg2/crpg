@@ -258,21 +258,21 @@ const partyViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-const strategusUpdateSchemaResponseTransformer = (data: any) => {
+const campaignUpdateSchemaResponseTransformer = (data: any) => {
     data.party = partyViewModelSchemaResponseTransformer(data.party);
     data.visibleBattles = data.visibleBattles.map((item: any) => battleViewModelSchemaResponseTransformer(item));
     return data;
 };
 
-const strategusUpdateResultSchemaResponseTransformer = (data: any) => {
+const campaignUpdateResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
-        data.data = strategusUpdateSchemaResponseTransformer(data.data);
+        data.data = campaignUpdateSchemaResponseTransformer(data.data);
     }
     return data;
 };
 
 export const getPartiesSelfUpdateResponseTransformer = async (data: any): Promise<GetPartiesSelfUpdateResponse> => {
-    data = strategusUpdateResultSchemaResponseTransformer(data);
+    data = campaignUpdateResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -289,7 +289,7 @@ export const postPartiesResponseTransformer = async (data: any): Promise<PostPar
 };
 
 export const putPartiesSelfOrdersResponseTransformer = async (data: any): Promise<PutPartiesSelfOrdersResponse> => {
-    data = strategusUpdateResultSchemaResponseTransformer(data);
+    data = campaignUpdateResultSchemaResponseTransformer(data);
     return data;
 };
 

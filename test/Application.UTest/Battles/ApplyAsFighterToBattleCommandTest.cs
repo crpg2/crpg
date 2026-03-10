@@ -15,7 +15,7 @@ public class ApplyAsFighterToBattleCommandTest : TestBase
     [Test]
     public async Task ShouldReturnErrorIfPartyNotFound()
     {
-        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IStrategusMap>());
+        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICampaignMap>());
         var res = await handler.Handle(new()
         {
             PartyId = 1,
@@ -34,7 +34,7 @@ public class ApplyAsFighterToBattleCommandTest : TestBase
         ArrangeDb.Parties.Add(party);
         await ArrangeDb.SaveChangesAsync();
 
-        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IStrategusMap>());
+        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICampaignMap>());
         var res = await handler.Handle(new()
         {
             PartyId = party.Id,
@@ -53,7 +53,7 @@ public class ApplyAsFighterToBattleCommandTest : TestBase
         ArrangeDb.Parties.Add(party);
         await ArrangeDb.SaveChangesAsync();
 
-        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IStrategusMap>());
+        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICampaignMap>());
         var res = await handler.Handle(new()
         {
             PartyId = party.Id,
@@ -83,7 +83,7 @@ public class ApplyAsFighterToBattleCommandTest : TestBase
         ArrangeDb.Battles.Add(battle);
         await ArrangeDb.SaveChangesAsync();
 
-        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IStrategusMap>());
+        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICampaignMap>());
         var res = await handler.Handle(new()
         {
             PartyId = party.Id,
@@ -113,12 +113,12 @@ public class ApplyAsFighterToBattleCommandTest : TestBase
         ArrangeDb.Battles.Add(battle);
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IStrategusMap> strategusMapMock = new(MockBehavior.Strict);
-        strategusMapMock
+        Mock<ICampaignMap> campaignMapMock = new(MockBehavior.Strict);
+        campaignMapMock
             .Setup(m => m.ArePointsAtInteractionDistance(party.Position, battle.Position))
             .Returns(false);
 
-        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, strategusMapMock.Object);
+        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, campaignMapMock.Object);
         var res = await handler.Handle(new()
         {
             PartyId = party.Id,
@@ -157,12 +157,12 @@ public class ApplyAsFighterToBattleCommandTest : TestBase
         ArrangeDb.BattleFighterApplications.Add(existingApplication);
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IStrategusMap> strategusMapMock = new(MockBehavior.Strict);
-        strategusMapMock
+        Mock<ICampaignMap> campaignMapMock = new(MockBehavior.Strict);
+        campaignMapMock
             .Setup(m => m.ArePointsAtInteractionDistance(party.Position, battle.Position))
             .Returns(true);
 
-        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, strategusMapMock.Object);
+        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, campaignMapMock.Object);
         var res = await handler.Handle(new()
         {
             PartyId = party.Id,
@@ -192,12 +192,12 @@ public class ApplyAsFighterToBattleCommandTest : TestBase
         ArrangeDb.Battles.Add(battle);
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IStrategusMap> strategusMapMock = new(MockBehavior.Strict);
-        strategusMapMock
+        Mock<ICampaignMap> campaignMapMock = new(MockBehavior.Strict);
+        campaignMapMock
             .Setup(m => m.ArePointsAtInteractionDistance(party.Position, battle.Position))
             .Returns(true);
 
-        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, strategusMapMock.Object);
+        ApplyAsFighterToBattleCommand.Handler handler = new(ActDb, Mapper, campaignMapMock.Object);
         var res = await handler.Handle(new()
         {
             PartyId = party.Id,

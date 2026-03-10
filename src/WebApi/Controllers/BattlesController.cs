@@ -13,7 +13,7 @@ namespace Crpg.WebApi.Controllers;
 public class BattlesController : BaseController
 {
     /// <summary>
-    /// Get strategus battles.
+    /// Get campaign battles.
     /// </summary>
     [HttpGet]
     public Task<ActionResult<Result<IList<BattleDetailedViewModel>>>> GetBattles([FromQuery] Region region,
@@ -27,7 +27,7 @@ public class BattlesController : BaseController
         }));
 
     /// <summary>
-    /// Get strategus battle.
+    /// Get campaign battle.
     /// </summary>
     [HttpGet("{battleId}")]
     public Task<ActionResult<Result<BattleDetailedViewModel>>> GetBattle([FromRoute] int battleId) =>
@@ -38,7 +38,7 @@ public class BattlesController : BaseController
         }));
 
     /// <summary>
-    /// Update strategus battle briefing.
+    /// Update campaign battle briefing.
     /// </summary>
     /// <param name="battleId">Battle id.</param>
     /// <param name="req">The entire battle side briefing with the updated values.</param>

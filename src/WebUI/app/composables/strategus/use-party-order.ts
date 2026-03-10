@@ -1,13 +1,13 @@
 import { useMagicKeys } from '@vueuse/core'
 import { LazyMapPartyTransferOfferCreateDrawer } from '#components'
 
-import type { MapBattle } from '~/models/strategus/battle'
-import type { PartyOrderType, PartyVisible } from '~/models/strategus/party'
-import type { SettlementPublic } from '~/models/strategus/settlement'
+import type { MapBattle } from '~/models/campaign/battle'
+import type { PartyOrderType, PartyVisible } from '~/models/campaign/party'
+import type { SettlementPublic } from '~/models/campaign/settlement'
 
-import { useParty } from '~/composables/strategus/use-party'
-import { BATTLE_SIDE } from '~/models/strategus/battle'
-import { PARTY_ORDER_TYPE } from '~/models/strategus/party'
+import { useParty } from '~/composables/campaign/use-party'
+import { BATTLE_SIDE } from '~/models/campaign/battle'
+import { PARTY_ORDER_TYPE } from '~/models/campaign/party'
 import { positionToLatLng } from '~/utils/geometry'
 
 export type OrderTarget = PartyVisible | SettlementPublic | MapBattle

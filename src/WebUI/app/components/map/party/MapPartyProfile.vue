@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { LazyMapPartyIncomingTransferOffersDrawer, LazyMapPartyInventoryDrawer, LazyMapPartyTransferOfferViewDrawer, UiDataMedia } from '#components'
 
-import type { Party, TransferOfferParty } from '~/models/strategus/party'
+import type { Party, TransferOfferParty } from '~/models/campaign/party'
 
-import { useParty } from '~/composables/strategus/use-party'
-import { respondToPartyTransferOffer } from '~/services/strategus/party-service'
+import { useParty } from '~/composables/campaign/use-party'
+import { respondToPartyTransferOffer } from '~/services/campaign/party-service'
 
 const { party } = defineProps<{ party: Party }>()
 
@@ -39,8 +39,8 @@ function openIncomingTransferOffers() {
 
         if (offer.accepted) {
           toast.add({
-            title: t('strategus.transferOffer.accepted'),
-            description: t('strategus.transferOffer.acceptedDescription'),
+            title: t('campaign.transferOffer.accepted'),
+            description: t('campaign.transferOffer.acceptedDescription'),
             color: 'success',
           })
 
@@ -60,8 +60,8 @@ function openIncomingTransferOffers() {
         }
 
         toast.add({
-          title: t('strategus.transferOffer.declined'),
-          description: t('strategus.transferOffer.declinedDescription'),
+          title: t('campaign.transferOffer.declined'),
+          description: t('campaign.transferOffer.declinedDescription'),
           color: 'error',
         })
 

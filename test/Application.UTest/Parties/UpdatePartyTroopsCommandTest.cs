@@ -11,8 +11,8 @@ public class UpdatePartyTroopsCommandTest : TestBase
 {
     private static readonly Constants Constants = new()
     {
-        StrategusTroopRecruitmentPerHour = 5,
-        StrategusMaxPartyTroops = 10,
+        CampaignTroopRecruitmentPerHour = 5,
+        CampaignMaxPartyTroops = 10,
     };
 
     [Test]

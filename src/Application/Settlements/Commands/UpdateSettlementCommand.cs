@@ -54,7 +54,7 @@ public record UpdateSettlementCommand : IMediatorRequest<SettlementPublicViewMod
             int troopsDelta = req.Troops - settlement.Troops;
             if (troopsDelta >= 0) // Party troops -> settlement troops.
             {
-                if (party.Troops < troopsDelta + _constants.StrategusMinPartyTroops)
+                if (party.Troops < troopsDelta + _constants.CampaignMinPartyTroops)
                 {
                     return new(CommonErrors.PartyNotEnoughTroops(party.Id));
                 }
@@ -66,7 +66,7 @@ public record UpdateSettlementCommand : IMediatorRequest<SettlementPublicViewMod
                     return new(CommonErrors.PartyNotSettlementOwner(party.Id, settlement.Id));
                 }
 
-                if (settlement.Troops < Math.Abs(troopsDelta) + _constants.StrategusMinPartyTroops)
+                if (settlement.Troops < Math.Abs(troopsDelta) + _constants.CampaignMinPartyTroops)
                 {
                     return new(CommonErrors.SettlementNotEnoughTroops(settlement.Id));
                 }

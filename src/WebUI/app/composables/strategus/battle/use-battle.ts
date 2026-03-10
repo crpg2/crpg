@@ -2,10 +2,10 @@ import type { MaybeRefOrGetter } from 'vue'
 
 import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
 
-import type { Battle, BattleMercenaryApplicationCreation, BattleSide } from '~/models/strategus/battle'
+import type { Battle, BattleMercenaryApplicationCreation, BattleSide } from '~/models/campaign/battle'
 
 import { useUser } from '~/composables/user/use-user'
-import { BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_PARTICIPANT_TYPE, BATTLE_SIDE, BATTLE_TYPE } from '~/models/strategus/battle'
+import { BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_PARTICIPANT_TYPE, BATTLE_SIDE, BATTLE_TYPE } from '~/models/campaign/battle'
 import { BATTLE_QUERY_KEYS } from '~/queries'
 import {
   removeBattleParticipant as _removeBattleParticipant,
@@ -15,18 +15,18 @@ import {
   getBattleParticipants,
   removeBattleMercenaryApplication,
   updateBattleSideBriefing,
-} from '~/services/strategus/battle-service'
+} from '~/services/campaign/battle-service'
 
 export const useBattleTitle = (battle: MaybeRefOrGetter<Battle>) => {
   const { $i18n } = useNuxtApp() // I didn't use i18n because it works outside of setup, for example in route middleware
 
   if (toValue(battle).type === BATTLE_TYPE.Siege) {
-    return $i18n.t('strategus.battle.titleByType.Siege', { settlement: toValue(battle).nearestSettlement?.name ?? 'TODO:' })
+    return $i18n.t('campaign.battle.titleByType.Siege', { settlement: toValue(battle).nearestSettlement?.name ?? 'TODO:' })
   }
 
-  return $i18n.t('strategus.battle.titleByType.Battle', {
+  return $i18n.t('campaign.battle.titleByType.Battle', {
     nearestSettlement: toValue(battle).nearestSettlement?.name ?? 'TODO:',
-    terrain: $i18n.t(`strategus.terrainType.${toValue(battle).terrain.type}`).toLowerCase(),
+    terrain: $i18n.t(`campaign.terrainType.${toValue(battle).terrain.type}`).toLowerCase(),
   })
 }
 
@@ -51,7 +51,7 @@ export const useBattleSideBriefing = () => {
   const { t } = useI18n()
 
   const [updateBattleBriefing, updatingBattleBriefing] = useAsyncCallback(updateBattleSideBriefing, {
-    successMessage: t('strategus.battle.manage.briefing.notify.success'),
+    successMessage: t('campaign.battle.manage.briefing.notify.success'),
   })
 
   return {

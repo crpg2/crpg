@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { PartySpeed } from '~/models/strategus/party'
+import type { PartySpeed } from '~/models/campaign/party'
 
-import { terrainIconByType } from '~/services/strategus/terrain-service'
+import { terrainIconByType } from '~/services/campaign/terrain-service'
 
 const { speed } = defineProps<{
   speed: PartySpeed

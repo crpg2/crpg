@@ -27,7 +27,7 @@ public record SeedDataCommand : IMediatorRequest
 {
     internal class Handler : IMediatorRequestHandler<SeedDataCommand>
     {
-        private static readonly Dictionary<SettlementType, int> StrategusSettlementDefaultTroops = new()
+        private static readonly Dictionary<SettlementType, int> CampaignSettlementDefaultTroops = new()
         {
             // TODO: to const
             [SettlementType.Village] = 1000,
@@ -42,11 +42,11 @@ public record SeedDataCommand : IMediatorRequest
         private readonly IExperienceTable _experienceTable;
         private readonly IActivityLogService _activityLogService;
         private readonly IUserNotificationService _userNotificationService;
-        private readonly IStrategusMap _strategusMap;
+        private readonly ICampaignMap _campaignMap;
         private readonly ISettlementsSource _settlementsSource;
 
         public Handler(ICrpgDbContext db, IItemsSource itemsSource, IApplicationEnvironment appEnv,
-            ICharacterService characterService, IExperienceTable experienceTable, IStrategusMap strategusMap,
+            ICharacterService characterService, IExperienceTable experienceTable, ICampaignMap campaignMap,
             ISettlementsSource settlementsSource, IActivityLogService activityLogService, IUserNotificationService userNotificationService)
         {
             _db = db;
@@ -54,7 +54,7 @@ public record SeedDataCommand : IMediatorRequest
             _appEnv = appEnv;
             _characterService = characterService;
             _experienceTable = experienceTable;
-            _strategusMap = strategusMap;
+            _campaignMap = campaignMap;
             _settlementsSource = settlementsSource;
             _activityLogService = activityLogService;
             _userNotificationService = userNotificationService;
@@ -2303,7 +2303,7 @@ public record SeedDataCommand : IMediatorRequest
 
         private async Task CreateOrUpdateSettlements(CancellationToken cancellationToken)
         {
-            var settlementsByName = (await _settlementsSource.LoadStrategusSettlements())
+            var settlementsByName = (await _settlementsSource.LoadCampaignSettlements())
                 .ToDictionary(i => i.Name);
             var dbSettlementsByNameRegion = await _db.Settlements
                 .ToDictionaryAsync(di => (di.Name, di.Region), cancellationToken);
@@ -2324,9 +2324,9 @@ public record SeedDataCommand : IMediatorRequest
                         Type = settlementCreation.Type,
                         Culture = settlementCreation.Culture,
                         Region = region,
-                        Position = _strategusMap.TranslatePositionForRegion(settlementCreation.Position, Region.Eu, region),
+                        Position = _campaignMap.TranslatePositionForRegion(settlementCreation.Position, Region.Eu, region),
                         Scene = settlementCreation.Scene,
-                        Troops = StrategusSettlementDefaultTroops[settlementCreation.Type],
+                        Troops = CampaignSettlementDefaultTroops[settlementCreation.Type],
                         Owner = settlementCreation.Owner,
                     };
 

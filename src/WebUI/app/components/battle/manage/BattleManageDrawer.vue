@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { TabsItem } from '@nuxt/ui'
 
-import type { BattleSide, BattleSideBriefing, BattleSideDetailed } from '~/models/strategus/battle'
+import type { BattleSide, BattleSideBriefing, BattleSideDetailed } from '~/models/campaign/battle'
 
-import { useBattleMercenaryApplications, useBattleSideBriefing } from '~/composables/strategus/battle/use-battle'
+import { useBattleMercenaryApplications, useBattleSideBriefing } from '~/composables/campaign/battle/use-battle'
 
 const { side, battleId, onResponded } = defineProps<{
   battleId: number
@@ -48,8 +48,8 @@ const [onRespond, responding] = useAsyncCallback(
 
     toast.add({
       title: status
-        ? t('strategus.battle.manage.mercenaryApplications.respond.accept.notify.success')
-        : t('strategus.battle.manage.mercenaryApplications.respond.decline.notify.success'),
+        ? t('campaign.battle.manage.mercenaryApplications.respond.accept.notify.success')
+        : t('campaign.battle.manage.mercenaryApplications.respond.decline.notify.success'),
       close: false,
       color: 'success',
     })
@@ -60,11 +60,11 @@ const activeTab = ref<'briefing' | 'mercenaryApplications'>('mercenaryApplicatio
 
 const items = computed<TabsItem[]>(() => [
   {
-    label: t('strategus.battle.manage.briefing.title'),
+    label: t('campaign.battle.manage.briefing.title'),
     value: 'briefing',
   },
   {
-    label: t('strategus.battle.manage.mercenaryApplications.title'),
+    label: t('campaign.battle.manage.mercenaryApplications.title'),
     value: 'mercenaryApplications',
     ...(Boolean(mercenaryPendingApplicationsCount.value) && {
       badge: {
@@ -92,7 +92,7 @@ const items = computed<TabsItem[]>(() => [
     <template #header>
       <div class="flex flex-1 items-center justify-center gap-4">
         <UiTextView variant="h4">
-          {{ $t('strategus.battle.manage.title') }}
+          {{ $t('campaign.battle.manage.title') }}
         </UiTextView>
 
         <UTabs

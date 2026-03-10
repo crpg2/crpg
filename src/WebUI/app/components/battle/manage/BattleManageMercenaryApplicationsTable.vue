@@ -5,9 +5,9 @@ import type { ColumnFiltersState, GroupingState, SortingState, VisibilityState }
 import { getFacetedRowModel, getFacetedUniqueValues, getGroupedRowModel, getPaginationRowModel } from '@tanstack/vue-table'
 import { AppCoin, BattleMercenaryApplicationStatusBadge, UButton, UiCollapsibleText, UiGridColumnHeader, UiGridColumnHeaderLabel, UiTooltipContent, UserMedia, UTooltip } from '#components'
 
-import type { BattleMercenaryApplication } from '~/models/strategus/battle'
+import type { BattleMercenaryApplication } from '~/models/campaign/battle'
 
-import { BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/strategus/battle'
+import { BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/campaign/battle'
 
 const { mercenaryApplications, totalSlots, usedSlots, mercenaryApplicationId } = defineProps<{
   mercenaryApplications: BattleMercenaryApplication[]
@@ -49,7 +49,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
   {
     accessorFn: row => row.user.id,
     id: 'user_id',
-    header: t('strategus.battle.manage.mercenaryApplications.table.columns.user.label'),
+    header: t('campaign.battle.manage.mercenaryApplications.table.columns.user.label'),
     meta: {
       class: {
         th: tw`w-56`,
@@ -59,7 +59,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
   {
     accessorKey: 'createdAt',
     header: ({ column }) => h(UiGridColumnHeader, {
-      label: t('strategus.battle.manage.mercenaryApplications.table.columns.createdAt.label'),
+      label: t('campaign.battle.manage.mercenaryApplications.table.columns.createdAt.label'),
       withSort: true,
       sorted: column.getIsSorted(),
       onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
@@ -70,7 +70,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
     accessorFn: row => row.character.level,
     id: 'character_level',
     header: ({ column }) => h(UiGridColumnHeader, {
-      label: t('strategus.battle.manage.mercenaryApplications.table.columns.level.label'),
+      label: t('campaign.battle.manage.mercenaryApplications.table.columns.level.label'),
       withSort: true,
       sorted: column.getIsSorted(),
       onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
@@ -81,7 +81,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
     id: 'region',
     header: ({ column }) => {
       return h(UiGridColumnHeader, {
-        label: t('strategus.battle.manage.mercenaryApplications.table.columns.region.label'),
+        label: t('campaign.battle.manage.mercenaryApplications.table.columns.region.label'),
         withFilter: true,
         filtered: column.getIsFiltered(),
         onResetFilter: () => column.setFilterValue(undefined),
@@ -105,7 +105,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
             'onUpdate:modelValue': column.setFilterValue,
           }, {
             default: () => h(UiGridColumnHeaderLabel, {
-              label: t('strategus.battle.manage.mercenaryApplications.table.columns.region.label'),
+              label: t('campaign.battle.manage.mercenaryApplications.table.columns.region.label'),
               withFilter: true,
             }),
           }),
@@ -117,7 +117,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
 
   {
     accessorKey: 'wage',
-    header: t('strategus.battle.manage.mercenaryApplications.table.columns.wage.label'),
+    header: t('campaign.battle.manage.mercenaryApplications.table.columns.wage.label'),
     cell: ({ row }) => h(AppCoin, { value: row.original.wage }),
     meta: {
       class: {
@@ -127,7 +127,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
   },
   {
     accessorKey: 'note',
-    header: t('strategus.battle.manage.mercenaryApplications.table.columns.note.label'),
+    header: t('campaign.battle.manage.mercenaryApplications.table.columns.note.label'),
     cell: ({ row }) => h(UiCollapsibleText, { text: row.original.note }),
     meta: {
       class: {
@@ -139,7 +139,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
     accessorKey: 'status',
     header: ({ column }) => {
       return h(UiGridColumnHeader, {
-        label: t('strategus.battle.manage.mercenaryApplications.table.columns.status.label'),
+        label: t('campaign.battle.manage.mercenaryApplications.table.columns.status.label'),
         withFilter: true,
         filtered: column.getIsFiltered(),
         onResetFilter: () => column.setFilterValue(undefined),
@@ -163,7 +163,7 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
             'onUpdate:modelValue': column.setFilterValue,
           }, {
             default: () => h(UiGridColumnHeaderLabel, {
-              label: t('strategus.battle.manage.mercenaryApplications.table.columns.status.label'),
+              label: t('campaign.battle.manage.mercenaryApplications.table.columns.status.label'),
               withFilter: true,
             }),
           }),
@@ -198,8 +198,8 @@ const columns = computed<TableColumn<BattleMercenaryApplication>[]>(() => [
             onClick: () => emit('respond', row.original.id, true),
           }),
           content: () => h(UiTooltipContent, {
-            title: t('strategus.battle.manage.mercenaryApplications.respond.accept.tooltip.noFreeSlots.title'),
-            validation: t('strategus.battle.manage.mercenaryApplications.respond.accept.tooltip.noFreeSlots.description', { totalSlots }),
+            title: t('campaign.battle.manage.mercenaryApplications.respond.accept.tooltip.noFreeSlots.title'),
+            validation: t('campaign.battle.manage.mercenaryApplications.respond.accept.tooltip.noFreeSlots.description', { totalSlots }),
           }),
         }),
       ])

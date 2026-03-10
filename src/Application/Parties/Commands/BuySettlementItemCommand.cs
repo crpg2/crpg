@@ -34,13 +34,13 @@ public record BuySettlementItemCommand : IMediatorRequest<ItemStack>
 
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
-        private readonly IStrategusMap _strategusMap;
+        private readonly ICampaignMap _campaignMap;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap)
+        public Handler(ICrpgDbContext db, IMapper mapper, ICampaignMap campaignMap)
         {
             _db = db;
             _mapper = mapper;
-            _strategusMap = strategusMap;
+            _campaignMap = campaignMap;
         }
 
         public async ValueTask<Result<ItemStack>> Handle(BuySettlementItemCommand req,
@@ -61,7 +61,7 @@ public record BuySettlementItemCommand : IMediatorRequest<ItemStack>
                 return new(CommonErrors.SettlementNotFound(req.PartyId));
             }
 
-            if (!_strategusMap.ArePointsAtInteractionDistance(party.Position, settlement.Position))
+            if (!_campaignMap.ArePointsAtInteractionDistance(party.Position, settlement.Position))
             {
                 return new(CommonErrors.SettlementTooFar(req.SettlementId));
             }

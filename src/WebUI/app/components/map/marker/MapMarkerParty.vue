@@ -2,9 +2,9 @@
 import type { LeafletMouseEvent } from 'leaflet'
 
 import { LCircle, LIcon, LMarker, LTooltip } from '@vue-leaflet/vue-leaflet'
-// import { strategusMaxPartyTroops, strategusMinPartyTroops } from '~root/data/constants.json'
+// import { campaignMaxPartyTroops, campaignMinPartyTroops } from '~root/data/constants.json'
 
-import type { Party, PartyVisible } from '~/models/strategus/party'
+import type { Party, PartyVisible } from '~/models/campaign/party'
 
 import ClanTagIcon from '~/components/clan/ClanTagIcon.vue'
 import { positionToLatLng } from '~/utils/geometry'
@@ -18,7 +18,7 @@ defineEmits<{ click: [LeafletMouseEvent] }>()
 
 // // TODO: FIXME: tweak
 // const markerRadius = computed(() => {
-//   const troopsRange = strategusMaxPartyTroops - strategusMinPartyTroops // strategusMaxPartyTroops = 300?
+//   const troopsRange = campaignMaxPartyTroops - campaignMinPartyTroops // campaignMaxPartyTroops = 300?
 //   const sizeFactor = party.troops / troopsRange
 //   return minRadius + sizeFactor * (maxRadius - minRadius)
 // })

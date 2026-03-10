@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { BattleFighter, BattleSide } from '~/models/strategus/battle'
-import type { SettlementPublic } from '~/models/strategus/settlement'
+import type { BattleFighter, BattleSide } from '~/models/campaign/battle'
+import type { SettlementPublic } from '~/models/campaign/settlement'
 
 import { useUser } from '~/composables/user/use-user'
-import { BATTLE_SIDE } from '~/models/strategus/battle'
+import { BATTLE_SIDE } from '~/models/campaign/battle'
 
 defineProps<{
   side: BattleSide
@@ -31,7 +31,7 @@ const { user } = useUser()
       <slot name="topbar-prepend" />
 
       <UiTextView variant="caption-sm">
-        {{ $t(`strategus.battle.side.${side}`) }}
+        {{ $t(`campaign.battle.side.${side}`) }}
       </UiTextView>
 
       <!-- TODO: FIXME: i18n -->

@@ -1,9 +1,9 @@
 import { useIntervalFn } from '@vueuse/core'
 
-import type { StrategusUpdate, UpdatePartyOrder } from '~/models/strategus/party'
+import type { CampaignUpdate, UpdatePartyOrder } from '~/models/campaign/party'
 
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { PARTY_ORDER_TYPE } from '~/models/strategus/party'
+import { PARTY_ORDER_TYPE } from '~/models/campaign/party'
 import { PARTY_QUERY_KEYS } from '~/queries'
 import {
   getSelfPartyItems,
@@ -13,27 +13,27 @@ import {
   shouldPartyBeInSettlement,
   UNMOVABLE_PARTY_STATUSES,
   updatePartyOrders,
-} from '~/services/strategus/party-service'
+} from '~/services/campaign/party-service'
 
 // const INTERVAL = 1000 * 60 ; // 1 min // TODO: to env
 const INTERVAL = 10_000 // TODO:
 
 export const usePartyState = (strict: boolean = true): {
-  partyState: Ref<StrategusUpdate>
-  setPartyState: (data: StrategusUpdate) => void
+  partyState: Ref<CampaignUpdate>
+  setPartyState: (data: CampaignUpdate) => void
 } => {
-  const state = useState<StrategusUpdate | null>('party')
+  const state = useState<CampaignUpdate | null>('party')
 
   if (strict && state.value === null) {
     throw createError({ statusMessage: 'PartyInfo not provided' })
   }
 
-  const setPartyState = (data: StrategusUpdate) => {
+  const setPartyState = (data: CampaignUpdate) => {
     state.value = data
   }
 
   return {
-    partyState: state as Ref<StrategusUpdate>,
+    partyState: state as Ref<CampaignUpdate>,
     setPartyState,
   }
 }
@@ -53,24 +53,24 @@ export const useParty = (
     const _shouldPartyBeInSettlement = shouldPartyBeInSettlement(party)
     const _shouldPartyBeInBattle = shouldPartyBeInBattle(party)
 
-    if (_shouldPartyBeInSettlement && !route.meta.groups?.includes('strategussettlement')) {
+    if (_shouldPartyBeInSettlement && !route.meta.groups?.includes('campaignsettlement')) {
       await navigateTo({
-        name: 'strategus-settlement-id',
+        name: 'campaign-settlement-id',
         params: { id: party.currentSettlement!.id },
       })
     }
 
-    if (_shouldPartyBeInBattle && !route.meta.groups?.includes('strategusbattle')) {
+    if (_shouldPartyBeInBattle && !route.meta.groups?.includes('campaignbattle')) {
       await navigateTo({
-        name: 'strategus-battle-id',
+        name: 'campaign-battle-id',
         params: { id: party.currentBattle!.id },
       })
     }
 
     // TODO: подумать еще, но вроде ок
     // don't let users go where they shouldn't
-    if (!_shouldPartyBeInSettlement && !_shouldPartyBeInBattle && route.name !== 'strategus') {
-      await navigateTo({ name: 'strategus' })
+    if (!_shouldPartyBeInSettlement && !_shouldPartyBeInBattle && route.name !== 'campaign') {
+      await navigateTo({ name: 'campaign' })
     }
   }
 

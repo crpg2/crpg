@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { BattleFighter, BattleType } from '~/models/strategus/battle'
-import type { SettlementPublic } from '~/models/strategus/settlement'
+import type { BattleFighter, BattleType } from '~/models/campaign/battle'
+import type { SettlementPublic } from '~/models/campaign/settlement'
 
-import { BATTLE_SIDE } from '~/models/strategus/battle'
-import { battleIconByType } from '~/services/strategus/battle-service'
+import { BATTLE_SIDE } from '~/models/campaign/battle'
+import { battleIconByType } from '~/services/campaign/battle-service'
 
 interface BattleSideInfo {
   commander: BattleFighter
@@ -50,7 +50,7 @@ const sides = computed(() => [
 
       <UTooltip
         v-if="idx === 0"
-        :text="$t(`strategus.battle.type.${battleType}`)"
+        :text="$t(`campaign.battle.type.${battleType}`)"
         :content="{ side: 'top' }"
       >
         <USeparator

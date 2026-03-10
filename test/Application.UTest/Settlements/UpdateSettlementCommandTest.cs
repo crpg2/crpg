@@ -12,7 +12,7 @@ public class UpdateSettlementCommandTest : TestBase
 {
     private static readonly Constants Constants = new()
     {
-        StrategusMinPartyTroops = 1,
+        CampaignMinPartyTroops = 1,
     };
 
     [Test]

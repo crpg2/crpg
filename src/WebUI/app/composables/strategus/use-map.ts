@@ -1,7 +1,7 @@
 import type { LMap } from '@vue-leaflet/vue-leaflet'
 import type { Map, PointExpression } from 'leaflet'
 
-import { strategusMapHeight, strategusMapWidth } from '~root/data/constants.json'
+import { campaignMapHeight, campaignMapWidth } from '~root/data/constants.json'
 import { CRS, LatLngBounds } from 'leaflet'
 
 // TODO:
@@ -31,7 +31,7 @@ export const useMap = () => {
 
   const maxBounds = new LatLngBounds([
     [0, 0],
-    [-strategusMapHeight, strategusMapWidth],
+    [-campaignMapHeight, campaignMapWidth],
   ])
 
   const onMapMoveEnd = () => {
@@ -66,7 +66,7 @@ interface MapContext {
   zoom: Ref<number>
 }
 
-const mapContextKey: InjectionKey<MapContext> = Symbol('StrategusMap')
+const mapContextKey: InjectionKey<MapContext> = Symbol('CampaignMap')
 
 export const useMapContextProvider = (ctx: MapContext) => {
   provide(mapContextKey, ctx)

@@ -5,7 +5,7 @@ using NetTopologySuite.Geometries;
 namespace Crpg.Domain.Entities.Settlements;
 
 /// <summary>
-/// Represents a settlement (village, castle, town) on Strategus.
+/// Represents a settlement (village, castle, town) on the campaign.
 /// </summary>
 public class Settlement : AuditableEntity
 {
@@ -20,7 +20,7 @@ public class Settlement : AuditableEntity
     public Region Region { get; set; }
 
     /// <summary>
-    /// Position of the settlement on the strategus map.
+    /// Position of the settlement on the campaign map.
     /// </summary>
     public Point Position { get; set; } = Point.Empty;
 

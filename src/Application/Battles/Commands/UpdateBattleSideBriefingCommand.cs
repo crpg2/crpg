@@ -28,7 +28,7 @@ public record UpdateBattleSideBriefingCommand : IMediatorRequest<BattleSideBrief
         public Validator(Constants constants)
         {
             RuleFor(c => c.Side).IsInEnum();
-            RuleFor(c => c.Note).MaximumLength(constants.StrategusBattleSideBriefingNoteMaxLength);
+            RuleFor(c => c.Note).MaximumLength(constants.CampaignBattleSideBriefingNoteMaxLength);
         }
     }
 
