@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { ItemStack, ItemStackUpdate } from '~/models/strategus/party'
-import type { SettlementPublic } from '~/models/strategus/settlement'
+import type { ItemStack, ItemStackUpdate } from '~/models/campaign/party'
+import type { SettlementPublic } from '~/models/campaign/settlement'
 
-import { useParty, usePartyItems } from '~/composables/strategus/use-party'
+import { useParty, usePartyItems } from '~/composables/campaign/use-party'
 
 const { settlementItems } = defineProps<{
   settlement: SettlementPublic

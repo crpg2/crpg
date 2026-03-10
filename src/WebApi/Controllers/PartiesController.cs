@@ -12,24 +12,24 @@ namespace Crpg.WebApi.Controllers;
 public class PartiesController : BaseController
 {
     /// <summary>
-    /// Get an update of strategus for the current user.
+    /// Get an update of campaign for the current user.
     /// </summary>
-    /// <returns>Current strategus party, visible parties and settlements, etc.</returns>
+    /// <returns>Current campaign party, visible parties and settlements, etc.</returns>
     /// <response code="200">Ok.</response>
-    /// <response code="404">User was not registered to strategus.</response>
+    /// <response code="404">User was not registered to campaign.</response>
     [HttpGet("self/update")]
-    public Task<ActionResult<Result<StrategusUpdate>>> GetStrategusUpdate()
+    public Task<ActionResult<Result<CampaignUpdate>>> GetCampaignUpdate()
     {
-        return ResultToActionAsync(Mediator.Send(new GetStrategusUpdateQuery
+        return ResultToActionAsync(Mediator.Send(new GetCampaignUpdateQuery
         {
             PartyId = CurrentUser.User!.Id,
         }));
     }
 
     /// <summary>
-    /// Register user to strategus.
+    /// Register user to campaign.
     /// </summary>
-    /// <returns>The new strategus party.</returns>
+    /// <returns>The new campaign party.</returns>
     /// <response code="201">Registered.</response>
     /// <response code="400">Already registered.</response>
     [HttpPost]
@@ -37,13 +37,13 @@ public class PartiesController : BaseController
     public Task<ActionResult<Result<PartyViewModel>>> RegisterParty([FromBody] CreatePartyCommand req)
     {
         req.UserId = CurrentUser.User!.Id;
-        return ResultToCreatedAtActionAsync(nameof(GetStrategusUpdate), null, null, Mediator.Send(req));
+        return ResultToCreatedAtActionAsync(nameof(GetCampaignUpdate), null, null, Mediator.Send(req));
     }
 
     // /// <summary>
-    // /// Update strategus party status.
+    // /// Update campaign party status.
     // /// </summary>
-    // /// <returns>The updated strategus party.</returns>
+    // /// <returns>The updated campaign party.</returns>
     // /// <response code="200">Updated.</response>
     // [HttpPut("self/status")]
     // public Task<ActionResult<Result<PartyViewModel>>> UpdatePartyStatus([FromBody] UpdatePartyStatusCommand req)
@@ -53,21 +53,21 @@ public class PartiesController : BaseController
     // }
 
     /// <summary>
-    /// Update strategus party orders.
+    /// Update campaign party orders.
     /// </summary>
-    /// <returns>The updated strategus state.</returns>
+    /// <returns>The updated campaign state.</returns>
     /// <response code="200">Updated.</response>
     [HttpPut("self/orders")]
-    public async Task<ActionResult<Result<StrategusUpdate>>> UpdatePartyOrders([FromBody] UpdatePartyOrdersCommand req)
+    public async Task<ActionResult<Result<CampaignUpdate>>> UpdatePartyOrders([FromBody] UpdatePartyOrdersCommand req)
     {
         req.PartyId = CurrentUser.User!.Id;
         var result = await Mediator.Send(req);
         if (result.Errors != null && result.Errors.Count > 0)
         {
-            return ResultToAction(new Result<StrategusUpdate>(result.Errors));
+            return ResultToAction(new Result<CampaignUpdate>(result.Errors));
         }
 
-        return await ResultToActionAsync(Mediator.Send(new GetStrategusUpdateQuery
+        return await ResultToActionAsync(Mediator.Send(new GetCampaignUpdateQuery
         {
             PartyId = CurrentUser.User!.Id,
         }));

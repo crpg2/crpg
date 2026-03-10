@@ -13,7 +13,7 @@ namespace Crpg.WebApi.Controllers;
 public class SettlementsController : BaseController
 {
     /// <summary>
-    /// Get Strategus settlements.
+    /// Get Campaign settlements.
     /// </summary>
     [HttpGet]
     public Task<ActionResult<Result<IList<SettlementPublicViewModel>>>> GetSettlements()
@@ -69,7 +69,7 @@ public class SettlementsController : BaseController
     }
 
     /// <summary>
-    /// Get strategus settlement shop items.
+    /// Get campaign settlement shop items.
     /// </summary>
     [HttpGet("{settlementId}/shop/items")]
     public Task<ActionResult<Result<IList<ItemViewModel>>>> GetSettlementShopItems([FromRoute] int settlementId)

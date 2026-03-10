@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import {
-  strategusMinPartyTroops,
+  campaignMinPartyTroops,
 } from '~root/data/constants.json'
 
-import type { PartyVisible, TransferOfferPartyUpdate } from '~/models/strategus/party'
+import type { PartyVisible, TransferOfferPartyUpdate } from '~/models/campaign/party'
 
-import { useParty, usePartyItems } from '~/composables/strategus/use-party'
+import { useParty, usePartyItems } from '~/composables/campaign/use-party'
 
 const { targetParty } = defineProps<{
   targetParty: PartyVisible
@@ -28,7 +28,7 @@ const onSubmit = (offer: TransferOfferPartyUpdate) => {
   emit('close', true, offer)
 }
 
-const maxTroops = computed(() => Math.max(0, partyState.value.party.troops - strategusMinPartyTroops))
+const maxTroops = computed(() => Math.max(0, partyState.value.party.troops - campaignMinPartyTroops))
 </script>
 
 <template>

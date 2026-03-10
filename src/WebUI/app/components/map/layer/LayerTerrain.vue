@@ -4,9 +4,9 @@ import type L from 'leaflet'
 
 import { LGeoJson } from '@vue-leaflet/vue-leaflet'
 
-import type { TerrainFeature, TerrainFeatureCollection } from '~/models/strategus/terrain'
+import type { TerrainFeature, TerrainFeatureCollection } from '~/models/campaign/terrain'
 
-import { terrainColorByType } from '~/services/strategus/terrain-service'
+import { terrainColorByType } from '~/services/campaign/terrain-service'
 
 const { data } = defineProps<{
   data: TerrainFeatureCollection
@@ -39,7 +39,7 @@ const onEachFeatureFunction = (feature: TerrainFeature, layer: L.Polygon) => {
 
   // TODO: style
   layer.bindTooltip(
-    `<div>${t(`strategus.terrainType.${feature.properties.type}`)} - TODO: (ex. penalty)</div>`,
+    `<div>${t(`campaign.terrainType.${feature.properties.type}`)} - TODO: (ex. penalty)</div>`,
     {
       permanent: false,
       sticky: true,

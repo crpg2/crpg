@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ItemDetail } from '#components'
 
+import type { PartyPublic } from '~/models/campaign/party'
 import type { GroupedCompareItemsResult } from '~/models/item'
-import type { PartyPublic } from '~/models/strategus/party'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useItemDetail } from '~/composables/item/use-item-detail'
-import { getPartyItems } from '~/services/strategus/party-service'
+import { getPartyItems } from '~/services/campaign/party-service'
 
 const { party } = defineProps<{
   party: PartyPublic

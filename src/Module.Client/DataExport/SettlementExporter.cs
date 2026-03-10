@@ -1,6 +1,6 @@
 ﻿using System.Xml.Linq;
 using Crpg.Module.Api.Models;
-using Crpg.Module.Api.Models.Strategus;
+using Crpg.Module.Api.Models.Campaign;
 using Crpg.Module.Helpers.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;

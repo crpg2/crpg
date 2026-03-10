@@ -74,7 +74,7 @@ public enum ErrorCode
     SkillRequirementNotMet,
     UserAlreadyInAClan,
     UserAlreadyInTheClan,
-    UserAlreadyRegisteredToStrategus,
+    UserAlreadyRegisteredToCampaign,
     UserItemIsNotBroken,
     UserItemMaxRankReached,
     UserItemNotFound,

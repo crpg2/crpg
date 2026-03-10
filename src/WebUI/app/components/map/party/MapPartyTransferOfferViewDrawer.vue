@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { ItemStack, TransferOfferParty } from '~/models/strategus/party'
+import type { ItemStack, TransferOfferParty } from '~/models/campaign/party'
 
-import { useParty } from '~/composables/strategus/use-party'
-import { getSelfPartyItems } from '~/services/strategus/party-service'
+import { useParty } from '~/composables/campaign/use-party'
+import { getSelfPartyItems } from '~/services/campaign/party-service'
 
 const { transferOffer } = defineProps<{
   transferOffer: TransferOfferParty

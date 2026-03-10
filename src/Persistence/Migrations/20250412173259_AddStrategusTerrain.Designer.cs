@@ -26,8 +26,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Crpg.Persistence.Migrations;
 
 [DbContext(typeof(CrpgDbContext))]
-[Migration("20250412173259_AddStrategusTerrain")]
-partial class AddStrategusTerrain
+[Migration("20250412173259_AddCampaignTerrain")]
+partial class AddCampaignTerrain
 {
     /// <inheritdoc />
     protected override void BuildTargetModel(ModelBuilder modelBuilder)

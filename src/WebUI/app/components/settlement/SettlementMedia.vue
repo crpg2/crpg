@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { DataMediaSize } from '~/components/ui/data/DataMedia.vue'
 import type { TextViewVariant } from '~/components/ui/text/TextView.vue'
-import type { SettlementPublic } from '~/models/strategus/settlement'
+import type { SettlementPublic } from '~/models/campaign/settlement'
 
+import { settlementIconByType } from '~/services/campaign/settlement-service'
 import { cultureToIcon } from '~/services/culture-service'
-import { settlementIconByType } from '~/services/strategus/settlement-service'
 
 const { settlement, size = 'md' } = defineProps<{
   settlement: SettlementPublic
@@ -49,7 +49,7 @@ const nameVariant = computed(() => ({
         <UiDataMedia
           :size="mediaSize"
           :icon="`crpg:${cultureToIcon[settlement.culture]}`"
-          :label="$t(`strategus.settlementType.${settlement.type}`)"
+          :label="$t(`campaign.settlementType.${settlement.type}`)"
         />
       </template>
       <UiTextView :variant="nameVariant">

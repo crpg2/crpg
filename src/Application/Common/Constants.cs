@@ -66,19 +66,19 @@ public class Constants
     public uint ClanColorMinValue { get; set; }
     public int ClanBannerKeyMaxLength { get; set; }
     public string ClanBannerKeyRegex { get; set; } = string.Empty;
-    public double StrategusMapWidth { get; set; }
-    public double StrategusMapHeight { get; set; }
-    public double StrategusEquivalentDistance { get; set; }
-    public double StrategusInteractionDistance { get; set; }
-    public double StrategusViewDistance { get; set; }
-    public double[] StrategusSpawningPositionCenter { get; set; } = [];
-    public double StrategusSpawningPositionRadius { get; set; }
-    public float StrategusTroopRecruitmentPerHour { get; set; }
-    public int StrategusMinPartyTroops { get; set; }
-    public int StrategusMaxPartyTroops { get; set; }
-    public int StrategusBattleInitiationDurationHours { get; set; }
-    public int StrategusBattleHiringDurationHours { get; set; }
-    public int StrategusMercenaryMaxWage { get; set; }
-    public int StrategusMercenaryNoteMaxLength { get; set; }
-    public int StrategusBattleSideBriefingNoteMaxLength { get; set; }
+    public double CampaignMapWidth { get; set; }
+    public double CampaignMapHeight { get; set; }
+    public double CampaignEquivalentDistance { get; set; }
+    public double CampaignInteractionDistance { get; set; }
+    public double CampaignViewDistance { get; set; }
+    public double[] CampaignSpawningPositionCenter { get; set; } = [];
+    public double CampaignSpawningPositionRadius { get; set; }
+    public float CampaignTroopRecruitmentPerHour { get; set; }
+    public int CampaignMinPartyTroops { get; set; }
+    public int CampaignMaxPartyTroops { get; set; }
+    public int CampaignBattleInitiationDurationHours { get; set; }
+    public int CampaignBattleHiringDurationHours { get; set; }
+    public int CampaignMercenaryMaxWage { get; set; }
+    public int CampaignMercenaryNoteMaxLength { get; set; }
+    public int CampaignBattleSideBriefingNoteMaxLength { get; set; }
 }

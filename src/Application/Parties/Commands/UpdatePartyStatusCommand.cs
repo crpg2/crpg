@@ -39,13 +39,13 @@
 //         }
 //     }
 
-// internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap) : IMediatorRequestHandler<UpdatePartyStatusCommand, PartyViewModel>
+// internal class Handler(ICrpgDbContext db, IMapper mapper, ICampaignMap campaignMap) : IMediatorRequestHandler<UpdatePartyStatusCommand, PartyViewModel>
 //     {
 //         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdatePartyStatusCommand>();
 
 // private readonly ICrpgDbContext _db = db;
 //         private readonly IMapper _mapper = mapper;
-//         private readonly IStrategusMap _strategusMap = strategusMap;
+//         private readonly ICampaignMap _campaignMap = campaignMap;
 
 // public async Task<Result<PartyViewModel>> Handle(UpdatePartyStatusCommand req, CancellationToken cancellationToken)
 //         {
@@ -152,7 +152,7 @@
 //                     return new Result(CommonErrors.UserNotFound(req.TargetedPartyId));
 //                 }
 
-// if (!party.Position.IsWithinDistance(targetParty.Position, _strategusMap.ViewDistance))
+// if (!party.Position.IsWithinDistance(targetParty.Position, _campaignMap.ViewDistance))
 //                 {
 //                     return new Result(CommonErrors.PartyNotInSight(req.TargetedPartyId));
 //                 }

@@ -28,8 +28,8 @@ public record UpdateBattlePhasesCommand : IMediatorRequest
         private readonly IBattleParticipantDistributionModel _battleParticipantDistributionModel = battleParticipantDistributionModel;
         private readonly IBattleScheduler _battleScheduler = battleScheduler;
         private readonly IDateTime _dateTime = dateTime;
-        private readonly TimeSpan _battleInitiationDuration = TimeSpan.FromHours(constants.StrategusBattleInitiationDurationHours);
-        private readonly TimeSpan _battleHiringDuration = TimeSpan.FromHours(constants.StrategusBattleHiringDurationHours);
+        private readonly TimeSpan _battleInitiationDuration = TimeSpan.FromHours(constants.CampaignBattleInitiationDurationHours);
+        private readonly TimeSpan _battleHiringDuration = TimeSpan.FromHours(constants.CampaignBattleHiringDurationHours);
 
         public async ValueTask<Result> Handle(UpdateBattlePhasesCommand req, CancellationToken cancellationToken)
         {

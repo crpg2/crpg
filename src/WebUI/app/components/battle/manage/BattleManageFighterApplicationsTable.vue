@@ -5,9 +5,9 @@ import type { ColumnFiltersState, GroupingState, SortingState, VisibilityState }
 import { getFacetedRowModel, getFacetedUniqueValues, getGroupedRowModel, getPaginationRowModel } from '@tanstack/vue-table'
 import { AppApplicationStatusBadge, UButton, UiDataCell, UiDataMedia, UiGridColumnHeader, UiGridColumnHeaderLabel, UserMedia } from '#components'
 
-import type { BattleFighterApplication } from '~/models/strategus/battle'
+import type { BattleFighterApplication } from '~/models/campaign/battle'
 
-import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/strategus/battle'
+import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/campaign/battle'
 
 const { applications } = defineProps<{
   applications: BattleFighterApplication[]
@@ -46,7 +46,7 @@ const columns = computed<TableColumn<BattleFighterApplication>[]>(() => [
   {
     accessorFn: row => row.party.id,
     id: 'party_id',
-    header: t('strategus.battle.manage.mercenaryApplications.table.columns.user.label'),
+    header: t('campaign.battle.manage.mercenaryApplications.table.columns.user.label'),
     meta: {
       class: {
         th: tw`w-56`,
@@ -69,7 +69,7 @@ const columns = computed<TableColumn<BattleFighterApplication>[]>(() => [
     id: 'region',
     header: ({ column }) => {
       return h(UiGridColumnHeader, {
-        label: t('strategus.battle.manage.mercenaryApplications.table.columns.region.label'),
+        label: t('campaign.battle.manage.mercenaryApplications.table.columns.region.label'),
         withFilter: true,
         filtered: column.getIsFiltered(),
         onResetFilter: () => column.setFilterValue(undefined),
@@ -93,7 +93,7 @@ const columns = computed<TableColumn<BattleFighterApplication>[]>(() => [
             'onUpdate:modelValue': column.setFilterValue,
           }, {
             default: () => h(UiGridColumnHeaderLabel, {
-              label: t('strategus.battle.manage.mercenaryApplications.table.columns.region.label'),
+              label: t('campaign.battle.manage.mercenaryApplications.table.columns.region.label'),
               withFilter: true,
             }),
           }),
@@ -107,7 +107,7 @@ const columns = computed<TableColumn<BattleFighterApplication>[]>(() => [
     accessorKey: 'status',
     header: ({ column }) => {
       return h(UiGridColumnHeader, {
-        label: t('strategus.battle.manage.mercenaryApplications.table.columns.status.label'),
+        label: t('campaign.battle.manage.mercenaryApplications.table.columns.status.label'),
         withFilter: true,
         filtered: column.getIsFiltered(),
         onResetFilter: () => column.setFilterValue(undefined),
@@ -131,7 +131,7 @@ const columns = computed<TableColumn<BattleFighterApplication>[]>(() => [
             'onUpdate:modelValue': column.setFilterValue,
           }, {
             default: () => h(UiGridColumnHeaderLabel, {
-              label: t('strategus.battle.manage.mercenaryApplications.table.columns.status.label'),
+              label: t('campaign.battle.manage.mercenaryApplications.table.columns.status.label'),
               withFilter: true,
             }),
           }),

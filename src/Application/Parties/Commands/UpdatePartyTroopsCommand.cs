@@ -19,7 +19,7 @@ public record UpdatePartyTroopsCommand : IMediatorRequest
         public async ValueTask<Result> Handle(UpdatePartyTroopsCommand req, CancellationToken cancellationToken)
         {
             float deltaTimeHours = (float)req.DeltaTime.TotalHours;
-            float recruits = deltaTimeHours * _constants.StrategusTroopRecruitmentPerHour;
+            float recruits = deltaTimeHours * _constants.CampaignTroopRecruitmentPerHour;
 
             var parties = _db.Parties
                 .Where(h => h.Status == PartyStatus.RecruitingInSettlement)
@@ -27,7 +27,7 @@ public record UpdatePartyTroopsCommand : IMediatorRequest
 
             await foreach (var party in parties.WithCancellation(cancellationToken))
             {
-                party.Troops = Math.Min(party.Troops + recruits, _constants.StrategusMaxPartyTroops);
+                party.Troops = Math.Min(party.Troops + recruits, _constants.CampaignMaxPartyTroops);
             }
 
             await _db.SaveChangesAsync(cancellationToken);

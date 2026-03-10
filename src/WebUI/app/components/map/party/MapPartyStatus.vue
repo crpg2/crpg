@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { TimelineItem } from '@nuxt/ui'
 
-import type { Party, PartyStatus, TransferOfferParty } from '~/models/strategus/party'
+import type { Party, PartyStatus, TransferOfferParty } from '~/models/campaign/party'
 
-import { PARTY_STATUS } from '~/models/strategus/party'
+import { PARTY_STATUS } from '~/models/campaign/party'
 
 const { party } = defineProps<{ party: Party }>()
 
@@ -34,7 +34,7 @@ function getStatusIcon(status: PartyStatus): string {
 }
 
 const statuses = computed<StatusTimlineItem[]>(() => {
-  const title = t(`strategus.partyStatus.${party.status}`)
+  const title = t(`campaign.partyStatus.${party.status}`)
   const icon = getStatusIcon(party.status)
 
   if (party.status === PARTY_STATUS.Idle) {

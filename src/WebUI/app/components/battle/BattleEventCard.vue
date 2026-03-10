@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Battle, BattleMercenaryApplicationStatus } from '~/models/strategus/battle'
+import type { Battle, BattleMercenaryApplicationStatus } from '~/models/campaign/battle'
 
-import { useBattleTitle } from '~/composables/strategus/battle/use-battle'
+import { useBattleTitle } from '~/composables/campaign/battle/use-battle'
 import { useUser } from '~/composables/user/use-user'
-import { BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/strategus/battle'
+import { BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/campaign/battle'
 
 const { battle } = defineProps<{ battle: Battle }>()
 const { clan, user } = useUser()
@@ -109,7 +109,7 @@ const cardStyle = computed(() => {
 
     <template #footer>
       <UiTextView variant="caption">
-        {{ $t(`region.${battle.region}`, 0) }} · {{ $t(`strategus.battle.type.${battle.type}`) }} · <template v-if="battle.scheduledFor">
+        {{ $t(`region.${battle.region}`, 0) }} · {{ $t(`campaign.battle.type.${battle.type}`) }} · <template v-if="battle.scheduledFor">
           {{ $d(battle.scheduledFor, 'short') }}
         </template>
       </UiTextView>

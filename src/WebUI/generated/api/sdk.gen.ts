@@ -30,7 +30,7 @@ export const getActivityLogs = <TComposable extends Composable = '$fetch', Defau
 });
 
 /**
- * Get strategus battles.
+ * Get campaign battles.
  */
 export const getBattles = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesResponse = GetBattlesResponse>(options: Options<TComposable, GetBattlesData, GetBattlesResponse, DefaultT>) => (options.client ?? client).get<TComposable, GetBattlesResponse | DefaultT, unknown, DefaultT>({
     responseTransformer: getBattlesResponseTransformer,
@@ -40,7 +40,7 @@ export const getBattles = <TComposable extends Composable = '$fetch', DefaultT e
 });
 
 /**
- * Get strategus battle.
+ * Get campaign battle.
  */
 export const getBattlesByBattleId = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesByBattleIdResponse = GetBattlesByBattleIdResponse>(options: Options<TComposable, GetBattlesByBattleIdData, GetBattlesByBattleIdResponse, DefaultT>) => (options.client ?? client).get<TComposable, GetBattlesByBattleIdResponse | DefaultT, unknown, DefaultT>({
     responseTransformer: getBattlesByBattleIdResponseTransformer,
@@ -50,7 +50,7 @@ export const getBattlesByBattleId = <TComposable extends Composable = '$fetch', 
 });
 
 /**
- * Update strategus battle briefing.
+ * Update campaign battle briefing.
  */
 export const putBattlesByBattleIdSideBriefing = <TComposable extends Composable = '$fetch', DefaultT extends PutBattlesByBattleIdSideBriefingResponse = PutBattlesByBattleIdSideBriefingResponse>(options: Options<TComposable, PutBattlesByBattleIdSideBriefingData, PutBattlesByBattleIdSideBriefingResponse, DefaultT>) => (options.client ?? client).put<TComposable, PutBattlesByBattleIdSideBriefingResponse | DefaultT, unknown, DefaultT>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -525,7 +525,7 @@ export const getLeaderboardLeaderboard = <TComposable extends Composable = '$fet
 });
 
 /**
- * Get an update of strategus for the current user.
+ * Get an update of campaign for the current user.
  */
 export const getPartiesSelfUpdate = <TComposable extends Composable = '$fetch', DefaultT extends GetPartiesSelfUpdateResponse = GetPartiesSelfUpdateResponse>(options: Options<TComposable, GetPartiesSelfUpdateData, GetPartiesSelfUpdateResponse, DefaultT>) => (options.client ?? client).get<TComposable, GetPartiesSelfUpdateResponse | DefaultT, unknown, DefaultT>({
     responseTransformer: getPartiesSelfUpdateResponseTransformer,
@@ -535,7 +535,7 @@ export const getPartiesSelfUpdate = <TComposable extends Composable = '$fetch', 
 });
 
 /**
- * Register user to strategus.
+ * Register user to campaign.
  */
 export const postParties = <TComposable extends Composable = '$fetch', DefaultT extends PostPartiesResponse = PostPartiesResponse>(options: Options<TComposable, PostPartiesData, PostPartiesResponse, DefaultT>) => (options.client ?? client).post<TComposable, PostPartiesResponse | DefaultT, unknown, DefaultT>({
     responseTransformer: postPartiesResponseTransformer,
@@ -549,7 +549,7 @@ export const postParties = <TComposable extends Composable = '$fetch', DefaultT 
 });
 
 /**
- * Update strategus party orders.
+ * Update campaign party orders.
  */
 export const putPartiesSelfOrders = <TComposable extends Composable = '$fetch', DefaultT extends PutPartiesSelfOrdersResponse = PutPartiesSelfOrdersResponse>(options: Options<TComposable, PutPartiesSelfOrdersData, PutPartiesSelfOrdersResponse, DefaultT>) => (options.client ?? client).put<TComposable, PutPartiesSelfOrdersResponse | DefaultT, unknown, DefaultT>({
     responseTransformer: putPartiesSelfOrdersResponseTransformer,
@@ -664,7 +664,7 @@ export const patchSettings = <TComposable extends Composable = '$fetch', Default
 });
 
 /**
- * Get Strategus settlements.
+ * Get Campaign settlements.
  */
 export const getSettlements = <TComposable extends Composable = '$fetch', DefaultT extends GetSettlementsResponse = GetSettlementsResponse>(options: Options<TComposable, GetSettlementsData, GetSettlementsResponse, DefaultT>) => (options.client ?? client).get<TComposable, GetSettlementsResponse | DefaultT, unknown, DefaultT>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -720,7 +720,7 @@ export const putSettlementsBySettlementIdItems = <TComposable extends Composable
 });
 
 /**
- * Get strategus settlement shop items.
+ * Get campaign settlement shop items.
  */
 export const getSettlementsBySettlementIdShopItems = <TComposable extends Composable = '$fetch', DefaultT extends GetSettlementsBySettlementIdShopItemsResponse = GetSettlementsBySettlementIdShopItemsResponse>(options: Options<TComposable, GetSettlementsBySettlementIdShopItemsData, GetSettlementsBySettlementIdShopItemsResponse, DefaultT>) => (options.client ?? client).get<TComposable, GetSettlementsBySettlementIdShopItemsResponse | DefaultT, unknown, DefaultT>({
     responseTransformer: getSettlementsBySettlementIdShopItemsResponseTransformer,
@@ -730,7 +730,7 @@ export const getSettlementsBySettlementIdShopItems = <TComposable extends Compos
 });
 
 /**
- * Get Strategus map terrains.
+ * Get Campaign map terrains.
  */
 export const getTerrains = <TComposable extends Composable = '$fetch', DefaultT extends GetTerrainsResponse = GetTerrainsResponse>(options: Options<TComposable, GetTerrainsData, GetTerrainsResponse, DefaultT>) => (options.client ?? client).get<TComposable, GetTerrainsResponse | DefaultT, unknown, DefaultT>({
     security: [{ scheme: 'bearer', type: 'http' }],

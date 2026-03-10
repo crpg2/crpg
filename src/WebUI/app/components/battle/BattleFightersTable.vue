@@ -3,7 +3,7 @@ import type { TableColumn } from '@nuxt/ui'
 
 import { AppConfirmActionPopover, UButton, UIcon, UiDataCell, UiDataContent, UserMedia, UTooltip } from '#components'
 
-import type { BattleFighter } from '~/models/strategus/battle'
+import type { BattleFighter } from '~/models/campaign/battle'
 
 import { useUser } from '~/composables/user/use-user'
 

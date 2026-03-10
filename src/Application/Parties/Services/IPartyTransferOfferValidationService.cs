@@ -61,10 +61,10 @@ internal class PartyTransferOfferValidationService : IPartyTransferOfferValidati
             return CommonErrors.PartyNotEnoughTroops(party.Id);
         }
 
-        if (party.Troops - troops < constants.StrategusMinPartyTroops)
+        if (party.Troops - troops < constants.CampaignMinPartyTroops)
         {
             return CommonErrors.TransferOfferInvalidAmount(
-                $"Cannot transfer {troops} troops as party must maintain at least {constants.StrategusMinPartyTroops} troops");
+                $"Cannot transfer {troops} troops as party must maintain at least {constants.CampaignMinPartyTroops} troops");
         }
 
         foreach (var item in items)

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { BattleFighterApplicationStatus } from '~/models/strategus/battle'
+import type { BattleFighterApplicationStatus } from '~/models/campaign/battle'
 
-import { BATTLE_FIGHTER_APPLICATION_STATUS } from '~/models/strategus/battle'
+import { BATTLE_FIGHTER_APPLICATION_STATUS } from '~/models/campaign/battle'
 
 defineProps<{
   status: BattleFighterApplicationStatus

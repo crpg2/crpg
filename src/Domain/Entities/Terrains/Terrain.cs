@@ -4,7 +4,7 @@ using NetTopologySuite.Geometries;
 namespace Crpg.Domain.Entities.Terrains;
 
 /// <summary>
-/// Represents a terrain (forest, mount, river, .etc) on Strategus.
+/// Represents a terrain (forest, mount, river, .etc) on the campaign.
 /// </summary>
 public class Terrain : AuditableEntity
 {

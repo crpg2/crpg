@@ -46,7 +46,7 @@ public record DeleteCharacterCommand : IMediatorRequest
             _db.ActivityLogs.Add(_activityLogService.CreateCharacterDeletedLog(character.UserId, character.Id,
                 character.Generation, character.Level));
 
-            // TODO: cleanup strategus staff
+            // TODO: cleanup campaign stuff
 
             await _db.SaveChangesAsync(cancellationToken);
 

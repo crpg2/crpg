@@ -370,10 +370,10 @@ internal static class CommonErrors
         Detail = $"User with id '{userId}' is already in the clan with id '{clanId}'",
     };
 
-    public static Error UserAlreadyRegisteredToStrategus(int userId) => new(ErrorType.Validation, ErrorCode.UserAlreadyRegisteredToStrategus)
+    public static Error UserAlreadyRegisteredToCampaign(int userId) => new(ErrorType.Validation, ErrorCode.UserAlreadyRegisteredToCampaign)
     {
-        Title = "User has already registered to strategus",
-        Detail = $"User with id '{userId}' has already registered to strategus",
+        Title = "User has already registered to the campaign",
+        Detail = $"User with id '{userId}' has already registered to the campaign",
     };
 
     public static Error UserItemIsNotBroken(int userItemId) =>

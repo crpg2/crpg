@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { BadgeProps } from '@nuxt/ui'
 
-import type { BattlePhase } from '~/models/strategus/battle'
+import type { BattlePhase } from '~/models/campaign/battle'
 
-import { BATTLE_PHASE } from '~/models/strategus/battle'
+import { BATTLE_PHASE } from '~/models/campaign/battle'
 
 const { phase, size = 'xl' } = defineProps<{
   phase: BattlePhase
@@ -12,11 +12,11 @@ const { phase, size = 'xl' } = defineProps<{
 
 const { t } = useI18n()
 
-const label = computed(() => t(`strategus.battle.phase.${phase}`))
+const label = computed(() => t(`campaign.battle.phase.${phase}`))
 </script>
 
 <template>
-  <UTooltip :text="$t('strategus.battle.battlePhase')">
+  <UTooltip :text="$t('campaign.battle.battlePhase')">
     <!-- TODO: FIXME: icon, style -->
     <UBadge
       v-if="phase === BATTLE_PHASE.Preparation"

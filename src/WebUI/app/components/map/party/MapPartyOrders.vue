@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { TimelineItem } from '@nuxt/ui'
 
-import type { Party, PartyOrder, PartyOrderType, TransferOfferParty } from '~/models/strategus/party'
+import type { Party, PartyOrder, PartyOrderType, TransferOfferParty } from '~/models/campaign/party'
 
-import { PARTY_ORDER_TYPE } from '~/models/strategus/party'
+import { PARTY_ORDER_TYPE } from '~/models/campaign/party'
 
 const { party } = defineProps<{ party: Party }>()
 
@@ -77,7 +77,7 @@ const orders = computed<OrderTimlineItem[]>(() => {
 
       return {
         type: order.type,
-        title: t(`strategus.partyOrderType.${order.type}`),
+        title: t(`campaign.partyOrderType.${order.type}`),
         icon: getOrderIcon(order.type),
         distance: totalDistance,
         estimatedTimeMs,

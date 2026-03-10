@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { useVuelidate } from '@vuelidate/core'
 import {
-  strategusMercenaryMaxWage,
-  strategusMercenaryNoteMaxLength,
+  campaignMercenaryMaxWage,
+  campaignMercenaryNoteMaxLength,
 } from '~root/data/constants.json'
 
-import type { BattleSide, BattleSideDetailed } from '~/models/strategus/battle'
+import type { BattleSide, BattleSideDetailed } from '~/models/campaign/battle'
 
 import { useCharacters, useCharactersProvider } from '~/composables/character/use-character'
 import { useUser } from '~/composables/user/use-user'
-import { BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/strategus/battle'
+import { BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/campaign/battle'
 import { errorMessagesToString, required } from '~/services/validators-service'
 
 const { sideInfo, onApply } = defineProps<{
@@ -96,16 +96,16 @@ const { characters } = useCharacters()
     }"
   >
     <template #title>
-      {{ $t('strategus.battle.mercenaryApplication.title') }}
+      {{ $t('campaign.battle.mercenaryApplication.title') }}
     </template>
 
     <template #body>
       <div class="grid grid-cols-[auto_auto_auto] items-start gap-4">
-        <UiDataContent v-if="sideInfo.commander.party" :caption="$t('strategus.battle.commander')" layout="reverse" size="lg">
+        <UiDataContent v-if="sideInfo.commander.party" :caption="$t('campaign.battle.commander')" layout="reverse" size="lg">
           <UserMedia :user="sideInfo.commander.party.user" />
         </UiDataContent>
 
-        <UiDataContent :caption="$t('strategus.battle.sideTitle')" :label="side" layout="reverse" size="lg" />
+        <UiDataContent :caption="$t('campaign.battle.sideTitle')" :label="side" layout="reverse" size="lg" />
 
         <UiDataContent v-if="sideInfo.mercenaryApplication" :caption="$t('application.statusTitle')" layout="reverse" size="lg">
           <div>
@@ -115,7 +115,7 @@ const { characters } = useCharacters()
       </div>
 
       <UFormField
-        :label="$t('strategus.battle.manage.briefing.title')"
+        :label="$t('campaign.battle.manage.briefing.title')"
         size="xl"
       >
         <UTextarea
@@ -130,7 +130,7 @@ const { characters } = useCharacters()
 
       <div class="space-y-6">
         <UFormField
-          :label="$t('strategus.battle.mercenaryApplication.form.character.label')"
+          :label="$t('campaign.battle.mercenaryApplication.form.character.label')"
           size="xl"
           :error="errorMessagesToString($v.characterId.$errors)"
         >
@@ -144,21 +144,21 @@ const { characters } = useCharacters()
         </UFormField>
 
         <UFormField
-          :label="$t('strategus.battle.mercenaryApplication.form.note.label')"
-          :help="$t('strategus.battle.mercenaryApplication.form.note.help')"
+          :label="$t('campaign.battle.mercenaryApplication.form.note.label')"
+          :help="$t('campaign.battle.mercenaryApplication.form.note.help')"
           size="xl"
         >
           <UTextarea
             v-model="applicationModel.note"
             :readonly
             autoresize
-            :maxlength="strategusMercenaryNoteMaxLength"
+            :maxlength="campaignMercenaryNoteMaxLength"
             class="w-full"
           />
           <template #hint>
             <UiInputCounter
               :current="applicationModel.note.length"
-              :max="strategusMercenaryNoteMaxLength"
+              :max="campaignMercenaryNoteMaxLength"
             />
           </template>
         </UFormField>
@@ -173,21 +173,21 @@ const { characters } = useCharacters()
                   class="size-5"
                 />
               </template>
-              {{ $t('strategus.battle.mercenaryApplication.form.wage.label') }}
+              {{ $t('campaign.battle.mercenaryApplication.form.wage.label') }}
             </UiDataMedia>
           </template>
 
           <template #hint>
             <UiInputCounter
               :current="applicationModel.wage"
-              :max="strategusMercenaryMaxWage"
+              :max="campaignMercenaryMaxWage"
             />
           </template>
 
           <UInputNumber
             v-model="applicationModel.wage"
             :readonly
-            :max="strategusMercenaryMaxWage"
+            :max="campaignMercenaryMaxWage"
             :min="0"
             class="w-full"
           />
@@ -216,7 +216,7 @@ const { characters } = useCharacters()
         v-if="!isNewApplication && sideInfo.mercenaryApplication?.status === BATTLE_MERCENARY_APPLICATION_STATUS.Declined"
         scope="global"
         class="text-center"
-        keypath="strategus.battle.mercenaryApplication.create.title"
+        keypath="campaign.battle.mercenaryApplication.create.title"
         tag="div"
       >
         <template #link>
@@ -224,7 +224,7 @@ const { characters } = useCharacters()
             class="cursor-pointer text-primary"
             @click="onNewApplication"
           >
-            {{ $t('strategus.battle.mercenaryApplication.create.link') }}
+            {{ $t('campaign.battle.mercenaryApplication.create.link') }}
           </ULink>
         </template>
       </i18n-t>
@@ -233,7 +233,7 @@ const { characters } = useCharacters()
         v-if="sideInfo.mercenaryApplication?.status === BATTLE_MERCENARY_APPLICATION_STATUS.Pending"
         scope="global"
         class="text-center"
-        keypath="strategus.battle.mercenaryApplication.delete.title"
+        keypath="campaign.battle.mercenaryApplication.delete.title"
         tag="div"
       >
         <template #link>
@@ -244,7 +244,7 @@ const { characters } = useCharacters()
                 hover:text-error/80
               "
             >
-              {{ $t('strategus.battle.mercenaryApplication.delete.link') }}
+              {{ $t('campaign.battle.mercenaryApplication.delete.link') }}
             </ULink>
           </AppConfirmActionPopover>
         </template>

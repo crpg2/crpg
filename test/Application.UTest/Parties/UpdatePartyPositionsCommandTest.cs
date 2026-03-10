@@ -14,7 +14,7 @@ namespace Crpg.Application.UTest.Parties;
 
 public class UpdatePartyPositionsCommandTest : TestBase
 {
-    // private static readonly IStrategusSpeedModel SpeedModelMock = Mock.Of<IStrategusSpeedModel>();
+    // private static readonly ICampaignSpeedModel SpeedModelMock = Mock.Of<ICampaignSpeedModel>();
 
     // [Test]
     // public async Task UsersMovingToPointShouldMove()
@@ -31,14 +31,14 @@ public class UpdatePartyPositionsCommandTest : TestBase
     //     ArrangeDb.Parties.Add(party);
     //     await ArrangeDb.SaveChangesAsync();
     //     Point newPosition = new(2, 3);
-    //     Mock<IStrategusMap> strategusMapMock = new();
-    //     strategusMapMock
+    //     Mock<ICampaignMap> campaignMapMock = new();
+    //     campaignMapMock
     //         .Setup(m => m.MovePointTowards(position, destination, It.IsAny<double>()))
     //         .Returns(newPosition);
-    //     strategusMapMock
+    //     campaignMapMock
     //         .Setup(m => m.ArePointsEquivalent(newPosition, destination))
     //         .Returns(false);
-    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, strategusMapMock.Object, SpeedModelMock);
+    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, campaignMapMock.Object, SpeedModelMock);
     //     await handler.Handle(new UpdatePartyPositionsCommand
     //     {
     //         DeltaTime = TimeSpan.FromMinutes(1),
@@ -65,14 +65,14 @@ public class UpdatePartyPositionsCommandTest : TestBase
     //     ArrangeDb.Parties.Add(party);
     //     await ArrangeDb.SaveChangesAsync();
     //     Point newPosition = new(5, 5);
-    //     Mock<IStrategusMap> strategusMapMock = new();
-    //     strategusMapMock
+    //     Mock<ICampaignMap> campaignMapMock = new();
+    //     campaignMapMock
     //         .Setup(m => m.MovePointTowards(position, destination, It.IsAny<double>()))
     //         .Returns(newPosition);
-    //     strategusMapMock
+    //     campaignMapMock
     //         .Setup(m => m.ArePointsEquivalent(newPosition, destination))
     //         .Returns(true);
-    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, strategusMapMock.Object, SpeedModelMock);
+    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, campaignMapMock.Object, SpeedModelMock);
     //     await handler.Handle(new UpdatePartyPositionsCommand
     //     {
     //         DeltaTime = TimeSpan.FromMinutes(1),
@@ -100,14 +100,14 @@ public class UpdatePartyPositionsCommandTest : TestBase
     //     await ArrangeDb.SaveChangesAsync();
 
     // Point newPosition = new(5, 5);
-    //     Mock<IStrategusMap> strategusMapMock = new();
-    //     strategusMapMock
+    //     Mock<ICampaignMap> campaignMapMock = new();
+    //     campaignMapMock
     //         .Setup(m => m.MovePointTowards(position, destination, It.IsAny<double>()))
     //         .Returns(newPosition);
-    //     strategusMapMock
+    //     campaignMapMock
     //         .Setup(m => m.ArePointsEquivalent(newPosition, destination))
     //         .Returns(true);
-    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, strategusMapMock.Object, SpeedModelMock);
+    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, campaignMapMock.Object, SpeedModelMock);
     //     await handler.Handle(new UpdatePartyPositionsCommand
     //     {
     //         DeltaTime = TimeSpan.FromMinutes(1),
@@ -137,9 +137,9 @@ public class UpdatePartyPositionsCommandTest : TestBase
     //     ArrangeDb.Parties.Add(party);
     //     await ArrangeDb.SaveChangesAsync();
 
-    // Mock<IStrategusMap> strategusMapMock = new();
-    //     strategusMapMock.Setup(m => m.ViewDistance).Returns(0);
-    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, strategusMapMock.Object, SpeedModelMock);
+    // Mock<ICampaignMap> campaignMapMock = new();
+    //     campaignMapMock.Setup(m => m.ViewDistance).Returns(0);
+    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, campaignMapMock.Object, SpeedModelMock);
     //     await handler.Handle(new UpdatePartyPositionsCommand
     //     {
     //         DeltaTime = TimeSpan.FromMinutes(1),
@@ -171,25 +171,25 @@ public class UpdatePartyPositionsCommandTest : TestBase
     //     await ArrangeDb.SaveChangesAsync();
 
     // Point newPosition = new(2, 3);
-    //     Mock<IStrategusMap> strategusMapMock = new();
-    //     strategusMapMock.Setup(m => m.ViewDistance).Returns(500);
-    //     strategusMapMock
+    //     Mock<ICampaignMap> campaignMapMock = new();
+    //     campaignMapMock.Setup(m => m.ViewDistance).Returns(500);
+    //     campaignMapMock
     //         .Setup(m => m.MovePointTowards(position, destination, It.IsAny<double>()))
     //         .Returns(newPosition);
     //     if (status == PartyStatus.FollowingParty)
     //     {
-    //         strategusMapMock
+    //         campaignMapMock
     //             .Setup(m => m.ArePointsEquivalent(newPosition, destination))
     //             .Returns(false);
     //     }
     //     else
     //     {
-    //         strategusMapMock
+    //         campaignMapMock
     //             .Setup(m => m.ArePointsAtInteractionDistance(newPosition, destination))
     //             .Returns(false);
     //     }
 
-    // UpdatePartyPositionsCommand.Handler handler = new(ActDb, strategusMapMock.Object, SpeedModelMock);
+    // UpdatePartyPositionsCommand.Handler handler = new(ActDb, campaignMapMock.Object, SpeedModelMock);
     //     await handler.Handle(new UpdatePartyPositionsCommand
     //     {
     //         DeltaTime = TimeSpan.FromMinutes(1),
@@ -224,15 +224,15 @@ public class UpdatePartyPositionsCommandTest : TestBase
     //     await ArrangeDb.SaveChangesAsync();
 
     // Point newPosition = new(2, 3);
-    //     Mock<IStrategusMap> strategusMapMock = new();
-    //     strategusMapMock.Setup(m => m.ViewDistance).Returns(500);
-    //     strategusMapMock
+    //     Mock<ICampaignMap> campaignMapMock = new();
+    //     campaignMapMock.Setup(m => m.ViewDistance).Returns(500);
+    //     campaignMapMock
     //         .Setup(m => m.MovePointTowards(position, destination, It.IsAny<double>()))
     //         .Returns(newPosition);
-    //     strategusMapMock
+    //     campaignMapMock
     //         .Setup(m => m.ArePointsAtInteractionDistance(newPosition, destination))
     //         .Returns(true);
-    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, strategusMapMock.Object, SpeedModelMock);
+    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, campaignMapMock.Object, SpeedModelMock);
     //     await handler.Handle(new UpdatePartyPositionsCommand
     //     {
     //         DeltaTime = TimeSpan.FromMinutes(1),
@@ -263,15 +263,15 @@ public class UpdatePartyPositionsCommandTest : TestBase
     //     await ArrangeDb.SaveChangesAsync();
 
     // Point newPosition = new(3, 4);
-    //     Mock<IStrategusMap> strategusMapMock = new();
-    //     strategusMapMock.Setup(m => m.ViewDistance).Returns(500);
-    //     strategusMapMock
+    //     Mock<ICampaignMap> campaignMapMock = new();
+    //     campaignMapMock.Setup(m => m.ViewDistance).Returns(500);
+    //     campaignMapMock
     //         .Setup(m => m.MovePointTowards(position, destination, It.IsAny<double>()))
     //         .Returns(newPosition);
-    //     strategusMapMock
+    //     campaignMapMock
     //         .Setup(m => m.ArePointsAtInteractionDistance(newPosition, destination))
     //         .Returns(true);
-    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, strategusMapMock.Object, SpeedModelMock);
+    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, campaignMapMock.Object, SpeedModelMock);
     //     await handler.Handle(new UpdatePartyPositionsCommand
     //     {
     //         DeltaTime = TimeSpan.FromMinutes(1),
@@ -313,14 +313,14 @@ public class UpdatePartyPositionsCommandTest : TestBase
     //     await ArrangeDb.SaveChangesAsync();
 
     // Point newPosition = new(2, 3);
-    //     Mock<IStrategusMap> strategusMapMock = new();
-    //     strategusMapMock
+    //     Mock<ICampaignMap> campaignMapMock = new();
+    //     campaignMapMock
     //         .Setup(m => m.MovePointTowards(position, destination, It.IsAny<double>()))
     //         .Returns(newPosition);
-    //     strategusMapMock
+    //     campaignMapMock
     //         .Setup(m => m.ArePointsAtInteractionDistance(newPosition, destination))
     //         .Returns(false);
-    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, strategusMapMock.Object, SpeedModelMock);
+    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, campaignMapMock.Object, SpeedModelMock);
     //     await handler.Handle(new UpdatePartyPositionsCommand
     //     {
     //         DeltaTime = TimeSpan.FromMinutes(1),
@@ -347,14 +347,14 @@ public class UpdatePartyPositionsCommandTest : TestBase
     //     await ArrangeDb.SaveChangesAsync();
 
     // Point newPosition = new(5, 5);
-    //     Mock<IStrategusMap> strategusMapMock = new();
-    //     strategusMapMock
+    //     Mock<ICampaignMap> campaignMapMock = new();
+    //     campaignMapMock
     //         .Setup(m => m.MovePointTowards(position, destination, It.IsAny<double>()))
     //         .Returns(newPosition);
-    //     strategusMapMock
+    //     campaignMapMock
     //         .Setup(m => m.ArePointsAtInteractionDistance(newPosition, destination))
     //         .Returns(true);
-    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, strategusMapMock.Object, SpeedModelMock);
+    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, campaignMapMock.Object, SpeedModelMock);
     //     await handler.Handle(new UpdatePartyPositionsCommand
     //     {
     //         DeltaTime = TimeSpan.FromMinutes(1),
@@ -397,14 +397,14 @@ public class UpdatePartyPositionsCommandTest : TestBase
     //     await ArrangeDb.SaveChangesAsync();
 
     // Point newPosition = new(5, 5);
-    //     Mock<IStrategusMap> strategusMapMock = new();
-    //     strategusMapMock
+    //     Mock<ICampaignMap> campaignMapMock = new();
+    //     campaignMapMock
     //         .Setup(m => m.MovePointTowards(position, destination, It.IsAny<double>()))
     //         .Returns(newPosition);
-    //     strategusMapMock
+    //     campaignMapMock
     //         .Setup(m => m.ArePointsAtInteractionDistance(newPosition, destination))
     //         .Returns(true);
-    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, strategusMapMock.Object, SpeedModelMock);
+    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, campaignMapMock.Object, SpeedModelMock);
     //     await handler.Handle(new UpdatePartyPositionsCommand
     //     {
     //         DeltaTime = TimeSpan.FromMinutes(1),
@@ -434,14 +434,14 @@ public class UpdatePartyPositionsCommandTest : TestBase
     //     await ArrangeDb.SaveChangesAsync();
 
     // Point newPosition = new(3, 4);
-    //     Mock<IStrategusMap> strategusMapMock = new();
-    //     strategusMapMock
+    //     Mock<ICampaignMap> campaignMapMock = new();
+    //     campaignMapMock
     //         .Setup(m => m.MovePointTowards(position, destination, It.IsAny<double>()))
     //         .Returns(newPosition);
-    //     strategusMapMock
+    //     campaignMapMock
     //         .Setup(m => m.ArePointsAtInteractionDistance(newPosition, destination))
     //         .Returns(true);
-    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, strategusMapMock.Object, SpeedModelMock);
+    //     UpdatePartyPositionsCommand.Handler handler = new(ActDb, campaignMapMock.Object, SpeedModelMock);
     //     await handler.Handle(new UpdatePartyPositionsCommand
     //     {
     //         DeltaTime = TimeSpan.FromMinutes(1),

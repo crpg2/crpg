@@ -3,9 +3,9 @@ import type { LatLng } from 'leaflet'
 
 import { LPolyline, LTooltip } from '@vue-leaflet/vue-leaflet'
 
-import type { Party } from '~/models/strategus/party'
+import type { Party } from '~/models/campaign/party'
 
-import { PARTY_ORDER_TYPE } from '~/models/strategus/party'
+import { PARTY_ORDER_TYPE } from '~/models/campaign/party'
 import { positionToLatLng } from '~/utils/geometry'
 
 const { party } = defineProps<{ party: Party }>()

@@ -1530,7 +1530,7 @@ patchNotes:
   showAllPatches: '+ {count} патчей | + {count} патч | + {count} патча | + {count} патчей'
   latestPatch: Последний патч
 
-strategus:
+campaign:
   terrainType:
     Barrier: Barrier
     ThickForest: Thick forest

@@ -28,13 +28,13 @@ public record ApplyAsFighterToBattleCommand : IMediatorRequest<BattleFighterAppl
         }
     }
 
-    internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap) : IMediatorRequestHandler<ApplyAsFighterToBattleCommand, BattleFighterApplicationViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, ICampaignMap campaignMap) : IMediatorRequestHandler<ApplyAsFighterToBattleCommand, BattleFighterApplicationViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<BuySettlementItemCommand>();
 
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
-        private readonly IStrategusMap _strategusMap = strategusMap;
+        private readonly ICampaignMap _campaignMap = campaignMap;
 
         public async ValueTask<Result<BattleFighterApplicationViewModel>> Handle(
             ApplyAsFighterToBattleCommand req,
@@ -65,7 +65,7 @@ public record ApplyAsFighterToBattleCommand : IMediatorRequest<BattleFighterAppl
                 return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
             }
 
-            if (!_strategusMap.ArePointsAtInteractionDistance(party.Position, battle.Position))
+            if (!_campaignMap.ArePointsAtInteractionDistance(party.Position, battle.Position))
             {
                 return new(CommonErrors.BattleTooFar(req.BattleId));
             }

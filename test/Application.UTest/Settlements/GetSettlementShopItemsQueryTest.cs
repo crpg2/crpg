@@ -17,7 +17,7 @@ public class GetSettlementShopItemsQueryTest : TestBase
     // [Test]
     // public async Task ShouldReturnErrorIfUserNotFound()
     // {
-    //     GetSettlementShopItemsQuery.Handler handler = new(ActDb, Mapper, Mock.Of<IStrategusMap>());
+    //     GetSettlementShopItemsQuery.Handler handler = new(ActDb, Mapper, Mock.Of<ICampaignMap>());
     //     var res = await handler.Handle(new GetSettlementShopItemsQuery
     //     {
     //         PartyId = 1,
@@ -35,7 +35,7 @@ public class GetSettlementShopItemsQueryTest : TestBase
     //     ArrangeDb.Parties.Add(party);
     //     await ArrangeDb.SaveChangesAsync();
 
-    // GetSettlementShopItemsQuery.Handler handler = new(ActDb, Mapper, Mock.Of<IStrategusMap>());
+    // GetSettlementShopItemsQuery.Handler handler = new(ActDb, Mapper, Mock.Of<ICampaignMap>());
     //     var res = await handler.Handle(new GetSettlementShopItemsQuery
     //     {
     //         PartyId = party.Id,
@@ -53,8 +53,8 @@ public class GetSettlementShopItemsQueryTest : TestBase
     //     Point userPosition = new(1, 2);
     //     Point settlementPosition = new(3, 4);
 
-    // Mock<IStrategusMap> strategusMapMock = new();
-    //     strategusMapMock
+    // Mock<ICampaignMap> campaignMapMock = new();
+    //     campaignMapMock
     //         .Setup(m => m.ArePointsAtInteractionDistance(userPosition, settlementPosition))
     //         .Returns(false);
 
@@ -64,7 +64,7 @@ public class GetSettlementShopItemsQueryTest : TestBase
     //     ArrangeDb.Settlements.Add(settlement);
     //     await ArrangeDb.SaveChangesAsync();
 
-    // GetSettlementShopItemsQuery.Handler handler = new(ActDb, Mapper, strategusMapMock.Object);
+    // GetSettlementShopItemsQuery.Handler handler = new(ActDb, Mapper, campaignMapMock.Object);
     //     var res = await handler.Handle(new GetSettlementShopItemsQuery
     //     {
     //         PartyId = party.Id,
@@ -81,8 +81,8 @@ public class GetSettlementShopItemsQueryTest : TestBase
     //     Point userPosition = new(1, 2);
     //     Point settlementPosition = new(3, 4);
 
-    // Mock<IStrategusMap> strategusMapMock = new();
-    //     strategusMapMock
+    // Mock<ICampaignMap> campaignMapMock = new();
+    //     campaignMapMock
     //         .Setup(m => m.ArePointsAtInteractionDistance(userPosition, settlementPosition))
     //         .Returns(true);
 
@@ -99,7 +99,7 @@ public class GetSettlementShopItemsQueryTest : TestBase
     //     ArrangeDb.Items.AddRange(items);
     //     await ArrangeDb.SaveChangesAsync();
 
-    // GetSettlementShopItemsQuery.Handler handler = new(ActDb, Mapper, strategusMapMock.Object);
+    // GetSettlementShopItemsQuery.Handler handler = new(ActDb, Mapper, campaignMapMock.Object);
     //     var res = await handler.Handle(new GetSettlementShopItemsQuery
     //     {
     //         PartyId = party.Id,

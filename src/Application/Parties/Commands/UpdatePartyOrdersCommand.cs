@@ -99,10 +99,10 @@ public record UpdatePartyOrdersCommand : IMediatorRequest
         }
     }
 
-    internal class Handler(ICrpgDbContext db, IStrategusMap strategusMap, Constants constants, IPartyTransferOfferValidationService validationService) : IMediatorRequestHandler<UpdatePartyOrdersCommand>
+    internal class Handler(ICrpgDbContext db, ICampaignMap campaignMap, Constants constants, IPartyTransferOfferValidationService validationService) : IMediatorRequestHandler<UpdatePartyOrdersCommand>
     {
         private readonly ICrpgDbContext _db = db;
-        private readonly IStrategusMap _strategusMap = strategusMap;
+        private readonly ICampaignMap _campaignMap = campaignMap;
         private readonly Constants _constants = constants;
         private readonly IPartyTransferOfferValidationService _validationService = validationService;
 
@@ -183,7 +183,7 @@ public record UpdatePartyOrdersCommand : IMediatorRequest
                                 return new(CommonErrors.PartyNotFound(order.TargetedPartyId));
                             }
 
-                            if (!party.Position.IsWithinDistance(targetParty.Position, _strategusMap.ViewDistance))
+                            if (!party.Position.IsWithinDistance(targetParty.Position, _campaignMap.ViewDistance))
                             {
                                 return new(CommonErrors.PartyNotInSight(order.TargetedPartyId));
                             }

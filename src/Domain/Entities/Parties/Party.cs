@@ -7,7 +7,7 @@ using NetTopologySuite.Geometries;
 namespace Crpg.Domain.Entities.Parties;
 
 /// <summary>
-/// A party is a user information on the strategus map.
+/// A party is a user information on the campaign map.
 /// </summary>
 public class Party : AuditableEntity
 {
@@ -17,20 +17,20 @@ public class Party : AuditableEntity
     public int Id { get; set; }
 
     /// <summary>
-    /// Money of the user on Strategus. Different from <see cref="Users.User.Gold"/>.
+    /// Money of the user on the campaign. Different from <see cref="Users.User.Gold"/>.
     /// </summary>
     public int Gold { get; set; }
 
     /// <summary>
     /// Number of troops the user recruited.
     /// </summary>
-    /// <remarks>Type is a float to be able to add a fraction of troop for each strategus tick.</remarks>
+    /// <remarks>Type is a float to be able to add a fraction of troop for each campaign tick.</remarks>
     public float Troops { get; set; }
 
     public List<PartyItem> Items { get; set; } = [];
 
     /// <summary>
-    /// User position on the strategus map.
+    /// User position on the campaign map.
     /// </summary>
     public Point Position { get; set; } = Point.Empty;
 

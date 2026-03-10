@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TransferOfferParty, TransferOfferPartyUpdate } from '~/models/strategus/party'
+import type { TransferOfferParty, TransferOfferPartyUpdate } from '~/models/campaign/party'
 
 const { transferOffers } = defineProps<{
   transferOffers: TransferOfferParty[]

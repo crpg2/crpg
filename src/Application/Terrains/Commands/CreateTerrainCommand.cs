@@ -32,7 +32,7 @@ public record CreateTerrainCommand : IMediatorRequest<TerrainViewModel>
             _db.Terrains.Add(terrain);
 
             await _db.SaveChangesAsync(cancellationToken);
-            Logger.LogInformation("Terrain type '{0}' with boundary '{1}' add to Strategus map", req.Type, req.Boundary);
+            Logger.LogInformation("Terrain type '{0}' with boundary '{1}' add to Campaign map", req.Type, req.Boundary);
             return new(_mapper.Map<TerrainViewModel>(terrain));
         }
     }

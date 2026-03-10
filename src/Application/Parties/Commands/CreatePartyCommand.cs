@@ -19,13 +19,13 @@ public record CreatePartyCommand : IMediatorRequest<PartyViewModel>
     [JsonIgnore]
     public int UserId { get; set; }
 
-    internal class Handler(ICrpgDbContext db, IMapper mapper, IStrategusMap strategusMap, Constants constants) : IMediatorRequestHandler<CreatePartyCommand, PartyViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, ICampaignMap campaignMap, Constants constants) : IMediatorRequestHandler<CreatePartyCommand, PartyViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<CreatePartyCommand>();
 
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
-        private readonly IStrategusMap _strategusMap = strategusMap;
+        private readonly ICampaignMap _campaignMap = campaignMap;
         private readonly Constants _constants = constants;
 
         public async ValueTask<Result<PartyViewModel>> Handle(CreatePartyCommand req, CancellationToken cancellationToken)
@@ -40,14 +40,14 @@ public record CreatePartyCommand : IMediatorRequest<PartyViewModel>
 
             if (user.Party != null)
             {
-                return new(CommonErrors.UserAlreadyRegisteredToStrategus(req.UserId));
+                return new(CommonErrors.UserAlreadyRegisteredToCampaign(req.UserId));
             }
 
             user.Party = new Party
             {
                 Gold = 0,
-                Troops = _constants.StrategusMinPartyTroops,
-                Position = _strategusMap.GetSpawnPosition(user.Region),
+                Troops = _constants.CampaignMinPartyTroops,
+                Position = _campaignMap.GetSpawnPosition(user.Region),
                 Status = PartyStatus.Idle,
                 CurrentPartyId = null,
                 CurrentSettlementId = null,
@@ -56,7 +56,7 @@ public record CreatePartyCommand : IMediatorRequest<PartyViewModel>
             };
 
             await _db.SaveChangesAsync(cancellationToken);
-            Logger.LogInformation("User '{0}' registered to Strategus", req.UserId);
+            Logger.LogInformation("User '{0}' registered to the campaign", req.UserId);
             return new(_mapper.Map<PartyViewModel>(user.Party));
         }
     }

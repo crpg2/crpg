@@ -3,7 +3,7 @@ import type { LatLngLiteral, LayerGroup } from 'leaflet'
 
 import { LLayerGroup, LPopup } from '@vue-leaflet/vue-leaflet'
 
-import type { PartyOrderType } from '~/models/strategus/party'
+import type { PartyOrderType } from '~/models/campaign/party'
 
 const { latLng } = defineProps<{
   latLng: LatLngLiteral
@@ -53,7 +53,7 @@ watch(
           variant="subtle"
           @click="emit('confirm', order)"
         >
-          {{ $t(`strategus.partyOrderType.${order}`) }}
+          {{ $t(`campaign.partyOrderType.${order}`) }}
         </UButton>
       </div>
     </LPopup>
