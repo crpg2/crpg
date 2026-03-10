@@ -3,16 +3,17 @@ import { computed } from 'vue'
 
 import type { ClanMemberRole } from '~/models/clan'
 
+import { useClan } from '~/composables/clan/use-clan'
+import { useUser } from '~/composables/user/use-user'
 import {
   kickClanMember as _kickClanMember,
   updateClanMember as _updateClanMember,
   getClanMembers,
 } from '~/services/clan-service'
 
-import { useClan } from './use-clan'
-
 export const useClanMembers = () => {
   const { clan } = useClan()
+  const { user } = useUser()
 
   const {
     state: clanMembers,
@@ -30,10 +31,13 @@ export const useClanMembers = () => {
 
   const kickClanMember = (memberId: number) => _kickClanMember(clan.value.id, memberId)
 
+  const selfMember = computed(() => getClanMember(user.value!.id))
+
   return {
     clanMembers,
     clanMembersCount,
     isLastMember,
+    selfMember,
     loadClanMembers,
     loadingClanMembers,
     getClanMember,

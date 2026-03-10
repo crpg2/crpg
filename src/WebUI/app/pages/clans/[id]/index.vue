@@ -40,10 +40,8 @@ const {
   loadingClanMembers,
   kickClanMember,
   updateClanMember,
-  getClanMember,
+  selfMember,
 } = useClanMembers()
-
-const selfMember = computed(() => getClanMember(user.value!.id))
 
 const {
   applicationsCount,
@@ -51,14 +49,12 @@ const {
   loadClanApplications,
 } = useClanApplications(false)
 
-watchEffect(() => {
-  if (selfMember.value) {
-    loadClanApplications()
-  }
-})
-
 const canUpdateClan = computed(() => Boolean(selfMember.value && canUpdateClanValidate(selfMember.value.role)))
 const canManageApplications = computed(() => Boolean(selfMember.value && canManageApplicationsValidate(selfMember.value.role)))
+
+watchEffect(() => {
+  canManageApplications.value && loadClanApplications()
+})
 
 const canKickMember = (member: ClanMember) => Boolean(selfMember.value && canKickMemberValidate(selfMember.value, member, clanMembers.value.length))
 const checkIsSelfMember = (member: ClanMember) => member.user.id === selfMember.value?.user.id

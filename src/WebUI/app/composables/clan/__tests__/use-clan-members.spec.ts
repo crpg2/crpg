@@ -5,11 +5,13 @@ import { useClanMembers } from '../use-clan-members'
 
 const {
   mockedUseClan,
+  mockedUseUser,
   mockedGetClanMembers,
   mockedKickClanMember,
   mockedUpdateClanMember,
 } = vi.hoisted(() => ({
   mockedUseClan: vi.fn().mockReturnValue({ clan: { value: { id: 1 } } }),
+  mockedUseUser: vi.fn().mockReturnValue({ user: { value: { id: 1 } } }),
   mockedGetClanMembers: vi.fn().mockResolvedValue([
     { user: { id: 1 } },
     { user: { id: 11 } },
@@ -26,6 +28,10 @@ vi.mock('~/services/clan-service', () => ({
 
 vi.mock('~/composables/clan/use-clan', () => ({
   useClan: mockedUseClan,
+}))
+
+vi.mock('~/composables/user/use-user', () => ({
+  useUser: mockedUseUser,
 }))
 
 describe('useClanMembers', () => {
@@ -76,5 +82,23 @@ describe('useClanMembers', () => {
     await flushPromises()
 
     expect(isLastMember.value).toBe(true)
+  })
+
+  it('selfMember returns the member matching current user id', async () => {
+    const { selfMember } = useClanMembers()
+
+    await flushPromises()
+
+    expect(selfMember.value).toEqual({ user: { id: 1 } })
+  })
+
+  it('selfMember returns null when current user is not in clan', async () => {
+    mockedUseUser.mockReturnValueOnce({ user: { value: { id: 99 } } })
+
+    const { selfMember } = useClanMembers()
+
+    await flushPromises()
+
+    expect(selfMember.value).toBeNull()
   })
 })
