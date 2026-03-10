@@ -39,21 +39,13 @@ fetchUserRestriction()
           sticky top-0 z-20 bg-default/10 backdrop-blur-sm
         ` : `bg-default`]"
     >
-      <template v-if="user">
-        <LazyUserRestrictionBanner
-          v-if="restriction"
-          :restriction
-        />
-        <LazyAppHHBanner
-          v-if="isHhEventActive"
-          :region="user.region"
-          :h-h-event
-          @complete="onEndHH"
-        />
-      </template>
+      <LazyUserRestrictionBanner
+        v-if="user && restriction"
+        :restriction
+      />
 
       <div class="flex flex-wrap items-center justify-between p-3">
-        <div class="flex items-center gap-4">
+        <div class="flex flex-wrap items-center gap-3">
           <NuxtLink :to="{ name: 'index' }">
             <UIcon
               name="crpg:logo"
@@ -62,6 +54,13 @@ fetchUserRestriction()
           </NuxtLink>
 
           <AppOnlinePlayers :game-server-stats="gameServerStats" />
+
+          <LazyAppHHBadge
+            v-if="user && isHhEventActive"
+            :region="user.region"
+            :h-h-event
+            @complete="onEndHH"
+          />
 
           <AppLayoutMainNavigation :latest-patch="patchNotes[0]" />
         </div>
