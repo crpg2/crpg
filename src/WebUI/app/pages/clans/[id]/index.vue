@@ -52,9 +52,9 @@ const {
 const canUpdateClan = computed(() => Boolean(selfMember.value && canUpdateClanValidate(selfMember.value.role)))
 const canManageApplications = computed(() => Boolean(selfMember.value && canManageApplicationsValidate(selfMember.value.role)))
 
-if (canManageApplications.value) {
-  loadClanApplications()
-}
+watchEffect(() => {
+  canManageApplications.value && loadClanApplications()
+})
 
 const canKickMember = (member: ClanMember) => Boolean(selfMember.value && canKickMemberValidate(selfMember.value, member, clanMembers.value.length))
 const checkIsSelfMember = (member: ClanMember) => member.user.id === selfMember.value?.user.id
