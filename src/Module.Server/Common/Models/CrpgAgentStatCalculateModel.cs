@@ -121,6 +121,9 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         {
             InitializeMountAgentStats(agent, spawnEquipment, agentDrivenProperties);
         }
+
+        // Multiplier for defend speed when blocking with an offhand weapon (e.g. shield).
+        agentDrivenProperties.OffhandWeaponDefendSpeedMultiplier = 1f;
     }
 
     public override void UpdateAgentStats(Agent agent, AgentDrivenProperties agentDrivenProperties)
@@ -649,6 +652,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AiRangerHorizontalErrorMultiplier = equippedItemLevelComplement * 0.035f;
         props.AiRangerVerticalErrorMultiplier = equippedItemLevelComplement * 0.15f;
         props.AiRangerHorizontalErrorMultiplier = equippedItemLevelComplement * 0.05f;
+        props.AiShooterErrorWoRangeUpdate = 0f;
         props.AIAttackOnDecideChance = MathF.Clamp(0.1f * CalculateAIAttackOnDecideMaxValue() * (3f - agent.Defensiveness), 0.05f, 1f);
         props.SetStat(DrivenProperty.UseRealisticBlocking, agent.Controller != AgentControllerType.Player ? 1f : 0f);
         props.AiWeaponFavorMultiplierMelee = 1f;
