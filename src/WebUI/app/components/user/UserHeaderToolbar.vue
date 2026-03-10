@@ -83,7 +83,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
 </script>
 
 <template>
-  <div class="flex items-center gap-3">
+  <div class="flex items-center gap-4">
     <UTooltip>
       <AppCoin :value="user.gold" compact />
       <template #content>
