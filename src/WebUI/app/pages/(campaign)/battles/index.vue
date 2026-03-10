@@ -6,8 +6,8 @@ import { useRouteQuery } from '@vueuse/router'
 import type { BattlePhase, BattleType } from '~/models/campaign/battle'
 
 import { useRegionQuery } from '~/composables/use-region'
-import { SomeRole } from '~/models/role'
 import { BATTLE_PHASE, BATTLE_TYPE } from '~/models/campaign/battle'
+import { SomeRole } from '~/models/role'
 import { getBattles, SEARCHABLE_BATTLE_PHASE } from '~/services/campaign/battle-service'
 
 definePageMeta({

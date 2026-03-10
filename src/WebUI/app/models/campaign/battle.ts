@@ -9,10 +9,10 @@ import type {
 import type { Point } from 'geojson'
 import type { ValueOf } from 'type-fest'
 
-import type { CharacterPublic } from '~/models/character'
-import type { Region } from '~/models/region'
 import type { ItemStack, PartyPublic } from '~/models/campaign/party'
 import type { SettlementPublic } from '~/models/campaign/settlement'
+import type { CharacterPublic } from '~/models/character'
+import type { Region } from '~/models/region'
 import type { UserPublic } from '~/models/user'
 
 import type { Terrain } from './terrain'

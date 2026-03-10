@@ -3,8 +3,8 @@ import type { DataMediaSize } from '~/components/ui/data/DataMedia.vue'
 import type { TextViewVariant } from '~/components/ui/text/TextView.vue'
 import type { SettlementPublic } from '~/models/campaign/settlement'
 
-import { cultureToIcon } from '~/services/culture-service'
 import { settlementIconByType } from '~/services/campaign/settlement-service'
+import { cultureToIcon } from '~/services/culture-service'
 
 const { settlement, size = 'md' } = defineProps<{
   settlement: SettlementPublic

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ItemDetail } from '#components'
 
-import type { GroupedCompareItemsResult } from '~/models/item'
 import type { ItemStack } from '~/models/campaign/party'
+import type { GroupedCompareItemsResult } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useItemDetail } from '~/composables/item/use-item-detail'

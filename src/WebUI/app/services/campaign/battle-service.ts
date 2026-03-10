@@ -16,8 +16,8 @@ import {
   putBattlesByBattleIdSideBriefing,
 } from '#api/sdk.gen'
 
-import type { Region } from '~/models/region'
 import type { Battle, BattleFighter, BattleFighterApplication, BattleFighterApplicationStatus, BattleFighterInventory, BattleMercenaryApplication, BattleMercenaryApplicationCreation, BattleMercenaryApplicationStatus, BattleParticipant, BattlePhase, BattleSide, BattleSideBriefing, BattleType } from '~/models/campaign/battle'
+import type { Region } from '~/models/region'
 
 import { BATTLE_PHASE, BATTLE_TYPE } from '~/models/campaign/battle'
 

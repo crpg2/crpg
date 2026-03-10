@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { ItemDetail } from '#components'
 
-import type { GroupedCompareItemsResult, Item } from '~/models/item'
 import type { BattleFighterInventory } from '~/models/campaign/battle'
 import type { PartyPublic } from '~/models/campaign/party'
 import type { SettlementPublic } from '~/models/campaign/settlement'
+import type { GroupedCompareItemsResult, Item } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
 
-import { useItemDetail } from '~/composables/item/use-item-detail'
 import { useBattleFighters, useBattleItems, useMapBattle } from '~/composables/campaign/map/use-map-battle'
+import { useItemDetail } from '~/composables/item/use-item-detail'
 import { useUser } from '~/composables/user/use-user'
 
 definePageMeta({

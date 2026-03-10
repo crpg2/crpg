@@ -9,7 +9,7 @@ import {
 } from '#api/sdk.gen'
 
 import type { CrpgApiResult } from '~/api.config'
-import type { ItemStack, Party, PartyOrder, PartyStatus, CampaignUpdate, TransferOfferPartyUpdate, UpdatePartyOrder } from '~/models/campaign/party'
+import type { CampaignUpdate, ItemStack, Party, PartyOrder, PartyStatus, TransferOfferPartyUpdate, UpdatePartyOrder } from '~/models/campaign/party'
 
 import { PARTY_STATUS } from '~/models/campaign/party'
 

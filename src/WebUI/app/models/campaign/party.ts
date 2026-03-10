@@ -6,10 +6,10 @@ import type {
 import type { MultiPoint, Point } from 'geojson'
 import type { ValueOf } from 'type-fest'
 
-import type { Item } from '~/models/item'
 import type { BattleJoinIntent, MapBattle } from '~/models/campaign/battle'
 import type { SettlementPublic } from '~/models/campaign/settlement'
 import type { TerrainType } from '~/models/campaign/terrain'
+import type { Item } from '~/models/item'
 import type { UserPublic } from '~/models/user'
 
 export const PARTY_STATUS = {
