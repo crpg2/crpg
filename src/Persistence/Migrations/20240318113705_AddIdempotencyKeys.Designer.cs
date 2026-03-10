@@ -5,7 +5,6 @@ using Crpg.Domain.Entities.ActivityLogs;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
-using Crpg.Domain.Entities.GameServers;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
@@ -612,7 +611,7 @@ partial class AddIdempotencyKeys
                     .HasColumnType("timestamp with time zone")
                     .HasColumnName("created_at");
 
-                b.Property<UserUpdateStatus>("Status")
+                b.Property<string>("Status")
                     .HasColumnType("user_update_status")
                     .HasColumnName("status");
 

@@ -23,7 +23,7 @@ public record GetUsersByIdQuery : IMediatorRequest<IList<UserPrivateViewModel>>
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<UserPrivateViewModel>>> Handle(GetUsersByIdQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<UserPrivateViewModel>>> Handle(GetUsersByIdQuery req, CancellationToken cancellationToken)
         {
             var users = await _db.Users
                 .ProjectTo<UserPrivateViewModel>(_mapper.ConfigurationProvider)

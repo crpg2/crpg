@@ -8,7 +8,7 @@ using Crpg.Application.Users.Models;
 using Crpg.Application.Users.Queries;
 using Crpg.Domain.Entities.Users;
 using Crpg.WebApi.Services;
-using MediatR;
+using Mediator;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -385,14 +385,14 @@ public class ConnectController : ControllerBase
         return userId;
     }
 
-    private Task<Result<UserViewModel>> GetUserAsync(int userId)
+    private ValueTask<Result<UserViewModel>> GetUserAsync(int userId)
     {
         return _mediator.Send(new GetUserQuery { UserId = userId }, CancellationToken.None);
     }
 
-    private Task UpdateUserRegionAsync(int userId, IPAddress ipAddress)
+    private async ValueTask UpdateUserRegionAsync(int userId, IPAddress ipAddress)
     {
-        return _mediator.Send(new UpdateUserRegionCommand
+        await _mediator.Send(new UpdateUserRegionCommand
         {
             UserId = userId,
             IpAddress = ipAddress,

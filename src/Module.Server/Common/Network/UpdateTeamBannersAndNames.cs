@@ -7,15 +7,15 @@ namespace Crpg.Module.Common.Network;
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromServer)]
 internal sealed class UpdateTeamBannersAndNames : GameNetworkMessage
 {
-    public BannerCode AttackerBanner { get; set; } = BannerCode.CreateFrom(string.Empty);
-    public BannerCode DefenderBanner { get; set; } = BannerCode.CreateFrom(string.Empty);
+    public Banner AttackerBanner { get; set; } = new(string.Empty);
+    public Banner DefenderBanner { get; set; } = new(string.Empty);
     public string AttackerName { get; set; } = string.Empty;
     public string DefenderName { get; set; } = string.Empty;
 
     protected override void OnWrite()
     {
-        WriteBannerCodeToPacket(AttackerBanner.Code);
-        WriteBannerCodeToPacket(DefenderBanner.Code);
+        WriteBannerCodeToPacket(AttackerBanner.BannerCode);
+        WriteBannerCodeToPacket(DefenderBanner.BannerCode);
         WriteStringToPacket(AttackerName);
         WriteStringToPacket(DefenderName);
     }
@@ -23,8 +23,8 @@ internal sealed class UpdateTeamBannersAndNames : GameNetworkMessage
     protected override bool OnRead()
     {
         bool bufferReadValid = true;
-        AttackerBanner = BannerCode.CreateFrom(ReadBannerCodeFromPacket(ref bufferReadValid));
-        DefenderBanner = BannerCode.CreateFrom(ReadBannerCodeFromPacket(ref bufferReadValid));
+        AttackerBanner = new(ReadBannerCodeFromPacket(ref bufferReadValid));
+        DefenderBanner = new(ReadBannerCodeFromPacket(ref bufferReadValid));
         AttackerName = ReadStringFromPacket(ref bufferReadValid);
         DefenderName = ReadStringFromPacket(ref bufferReadValid);
         return bufferReadValid;

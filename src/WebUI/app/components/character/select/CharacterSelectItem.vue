@@ -4,6 +4,7 @@ import type { Character } from '~/models/character'
 defineProps<{
   character: Character
   isSelected: boolean
+  simple: boolean
 }>()
 
 const modelValue = defineModel<boolean>({ default: false })
@@ -11,7 +12,7 @@ const modelValue = defineModel<boolean>({ default: false })
 
 <template>
   <div class="flex items-center gap-2">
-    <UTooltip :content="{ side: 'right' }">
+    <UTooltip v-if="!simple" :content="{ side: 'right' }">
       <div @click.prevent.stop>
         <USwitch v-model="modelValue" />
       </div>

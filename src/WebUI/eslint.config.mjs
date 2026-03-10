@@ -20,13 +20,13 @@ export default withNuxt(
         'error',
         {
           groups: [
-            'type',
-            ['builtin', 'external'],
-            'internal-type',
-            'internal',
-            ['parent-type', 'sibling-type', 'index-type'],
-            ['parent', 'sibling', 'index'],
-            'object',
+            'type-import',
+            ['value-builtin', 'value-external'],
+            'type-internal',
+            'value-internal',
+            ['type-parent', 'type-sibling', 'type-index'],
+            ['value-parent', 'value-sibling', 'value-index'],
+            'ts-equals-import',
             'unknown',
           ],
         },
@@ -40,17 +40,12 @@ export default withNuxt(
     },
   },
   {
-    plugins: {
-      'better-tailwindcss': eslintPluginBetterTailwindcss,
-    },
+    extends: [
+      eslintPluginBetterTailwindcss.configs.recommended,
+    ],
     rules: {
-      // @ts-ignore
-      ...eslintPluginBetterTailwindcss.configs['recommended-warn'].rules,
-      // @ts-ignore
-      ...eslintPluginBetterTailwindcss.configs['recommended-error'].rules,
-      'better-tailwindcss/multiline': ['warn', { printWidth: 100 }],
-      'better-tailwindcss/no-unregistered-classes': ['warn'],
-      'better-tailwindcss/enforce-consistent-line-wrapping': ['off'],
+      'better-tailwindcss/enforce-consistent-line-wrapping': ['warn', { printWidth: 100 }],
+      'better-tailwindcss/no-unknown-classes': ['warn'],
     },
   },
   {
@@ -59,7 +54,6 @@ export default withNuxt(
         entryPoint: fileURLToPath(new URL('./app/assets/css/main.css', import.meta.url)),
       },
     },
-
   },
 ).overrideRules({
   '@typescript-eslint/no-unused-vars': ['warn'],

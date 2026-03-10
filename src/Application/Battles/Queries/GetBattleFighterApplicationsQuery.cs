@@ -23,25 +23,19 @@ public record GetBattleFighterApplicationsQuery : IMediatorRequest<IList<BattleF
         }
     }
 
-    internal class Handler : IMediatorRequestHandler<GetBattleFighterApplicationsQuery, IList<BattleFighterApplicationViewModel>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<GetBattleFighterApplicationsQuery, IList<BattleFighterApplicationViewModel>>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
-
-        public async Task<Result<IList<BattleFighterApplicationViewModel>>> Handle(
+        public async ValueTask<Result<IList<BattleFighterApplicationViewModel>>> Handle(
             GetBattleFighterApplicationsQuery req, CancellationToken cancellationToken)
         {
             var battle = await _db.Battles
                 .AsSplitQuery()
                 .Include(b => b.Fighters.Where(f => f.PartyId == req.PartyId))
                 .Include(b => b.FighterApplications.Where(a => req.Statuses.Contains(a.Status)))
-                .ThenInclude(a => a.Party!).ThenInclude(h => h.User)
+                    .ThenInclude(a => a.Party!.User!.ClanMembership!.Clan)
                 .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {
@@ -51,7 +45,8 @@ public record GetBattleFighterApplicationsQuery : IMediatorRequest<IList<BattleF
             BattleFighter? fighter = battle.Fighters.FirstOrDefault();
             // If the fighter is a commander, return all applications of their side else return only the party applications.
             var applications = battle.FighterApplications
-                .Where(a => a.PartyId == req.PartyId || (fighter != null && fighter.Commander && a.Side == fighter.Side));
+                .Where(a => a.PartyId == req.PartyId || (fighter != null && fighter.Commander && a.Side == fighter.Side))
+                .OrderByDescending(a => a.CreatedAt);
             return new(_mapper.Map<IList<BattleFighterApplicationViewModel>>(applications));
         }
     }

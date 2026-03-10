@@ -2,35 +2,34 @@
 
 #nullable disable
 
-namespace Crpg.Persistence.Migrations
+namespace Crpg.Persistence.Migrations;
+
+public partial class CharacterNameIndexFilter : Migration
 {
-    public partial class CharacterNameIndexFilter : Migration
+    protected override void Up(MigrationBuilder migrationBuilder)
     {
-        protected override void Up(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.DropIndex(
-                name: "ix_characters_user_id_name",
-                table: "characters");
+        migrationBuilder.DropIndex(
+            name: "ix_characters_user_id_name",
+            table: "characters");
 
-            migrationBuilder.CreateIndex(
-                name: "ix_characters_user_id_name",
-                table: "characters",
-                columns: new[] { "user_id", "name" },
-                unique: true,
-                filter: "deleted_at IS NULL");
-        }
+        migrationBuilder.CreateIndex(
+            name: "ix_characters_user_id_name",
+            table: "characters",
+            columns: new[] { "user_id", "name" },
+            unique: true,
+            filter: "deleted_at IS NULL");
+    }
 
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.DropIndex(
-                name: "ix_characters_user_id_name",
-                table: "characters");
+    protected override void Down(MigrationBuilder migrationBuilder)
+    {
+        migrationBuilder.DropIndex(
+            name: "ix_characters_user_id_name",
+            table: "characters");
 
-            migrationBuilder.CreateIndex(
-                name: "ix_characters_user_id_name",
-                table: "characters",
-                columns: new[] { "user_id", "name" },
-                unique: true);
-        }
+        migrationBuilder.CreateIndex(
+            name: "ix_characters_user_id_name",
+            table: "characters",
+            columns: new[] { "user_id", "name" },
+            unique: true);
     }
 }

@@ -1,36 +1,34 @@
-﻿using System;
-using System.Linq;
-using Crpg.Module.GUI.HudExtension;
-using TaleWorlds.Core;
+﻿using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.Missions.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.Scoreboard;
 using TaleWorlds.ObjectSystem;
+using static TaleWorlds.MountAndBlade.MissionScoreboardComponent;
+using MathF = TaleWorlds.Library.MathF;
 
-namespace Crpg.Module.Gui;
+namespace Crpg.Module.GUI;
 
 public class CrpgScoreboardEndOfBattleVM : ViewModel
 {
-    private MissionRepresentativeBase? missionRep
-    {
-        get
-        {
-            NetworkCommunicator myPeer = GameNetwork.MyPeer;
-            if (myPeer == null)
-            {
-                return null;
-            }
-
-            VirtualPlayer virtualPlayer = myPeer.VirtualPlayer;
-            if (virtualPlayer == null)
-            {
-                return null;
-            }
-
-            return virtualPlayer.GetComponent<MissionRepresentativeBase>();
-        }
-    }
+    private readonly MissionScoreboardComponent? _missionScoreboardComponent;
+    private readonly MissionMultiplayerGameModeBaseClient _gameMode;
+    private readonly MissionLobbyComponent _lobbyComponent;
+    private readonly bool _isSingleTeam;
+    private BattleSideEnum _allyBattleSide;
+    private BattleSideEnum _enemyBattleSide;
+    private bool _isAvailable;
+    private string _countdownTitle = null!;
+    private int _countdown;
+    private string _header = null!;
+    private int _battleResult;
+    private string _resultText = null!;
+    private MPEndOfBattleSideVM? _allySide;
+    private MPEndOfBattleSideVM? _enemySide;
+    private BannerImageIdentifierVM? _allyBanner;
+    private BannerImageIdentifierVM? _enemyBanner;
 
     public CrpgScoreboardEndOfBattleVM(Mission mission, MissionScoreboardComponent missionScoreboardComponent, bool isSingleTeam)
     {
@@ -45,30 +43,189 @@ public class CrpgScoreboardEndOfBattleVM : ViewModel
         {
             customBanners.BannersChanged += HandleBannerChange;
         }
-
     }
 
-    private void HandleBannerChange(BannerCode attackerBanner, BannerCode defenderBanner, string attackerName, string defenderName)
+    [DataSourceProperty]
+    public bool IsAvailable
     {
-        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? attackerBanner : defenderBanner, true);
-        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? defenderBanner : attackerBanner, true);
+        get
+        {
+            return _isAvailable;
+        }
+        set
+        {
+            if (value != _isAvailable)
+            {
+                _isAvailable = value;
+                OnPropertyChangedWithValue(value);
+            }
+        }
+    }
+
+    [DataSourceProperty]
+    public string CountdownTitle
+    {
+        get
+        {
+            return _countdownTitle;
+        }
+        set
+        {
+            if (value != _countdownTitle)
+            {
+                _countdownTitle = value;
+                OnPropertyChangedWithValue(value);
+            }
+        }
+    }
+
+    [DataSourceProperty]
+    public int Countdown
+    {
+        get
+        {
+            return _countdown;
+        }
+        set
+        {
+            if (value != _countdown)
+            {
+                _countdown = value;
+                OnPropertyChangedWithValue(value);
+            }
+        }
+    }
+
+    [DataSourceProperty]
+    public string Header
+    {
+        get
+        {
+            return _header;
+        }
+        set
+        {
+            if (value != _header)
+            {
+                _header = value;
+                OnPropertyChangedWithValue(value);
+            }
+        }
+    }
+
+    [DataSourceProperty]
+    public int BattleResult
+    {
+        get
+        {
+            return _battleResult;
+        }
+        set
+        {
+            if (value != _battleResult)
+            {
+                _battleResult = value;
+                OnPropertyChangedWithValue(value);
+            }
+        }
+    }
+
+    [DataSourceProperty]
+    public string ResultText
+    {
+        get
+        {
+            return _resultText;
+        }
+        set
+        {
+            if (value != _resultText)
+            {
+                _resultText = value;
+                OnPropertyChangedWithValue(value);
+            }
+        }
+    }
+
+    [DataSourceProperty]
+    public MPEndOfBattleSideVM? AllySide
+    {
+        get
+        {
+            return _allySide;
+        }
+        set
+        {
+            if (value != _allySide)
+            {
+                _allySide = value;
+                OnPropertyChangedWithValue(value);
+            }
+        }
+    }
+
+    [DataSourceProperty]
+    public MPEndOfBattleSideVM? EnemySide
+    {
+        get
+        {
+            return _enemySide;
+        }
+        set
+        {
+            if (value != _enemySide)
+            {
+                _enemySide = value;
+                OnPropertyChangedWithValue(value);
+            }
+        }
+    }
+
+    [DataSourceProperty]
+    public BannerImageIdentifierVM? AllyBanner
+    {
+        get
+        {
+            return _allyBanner;
+        }
+        set
+        {
+            if (value == _allyBanner)
+            {
+                return;
+            }
+
+            _allyBanner = value;
+            OnPropertyChangedWithValue(value);
+        }
+    }
+
+    [DataSourceProperty]
+    public BannerImageIdentifierVM? EnemyBanner
+    {
+        get
+        {
+            return _enemyBanner;
+        }
+        set
+        {
+            if (value == _enemyBanner)
+            {
+                return;
+            }
+
+            _enemyBanner = value;
+            OnPropertyChangedWithValue(value);
+        }
     }
 
     public override void RefreshValues()
     {
         base.RefreshValues();
-        CountdownTitle = new TextObject("{=wGjQgQlY}Next Game begins in:", null).ToString();
-        Header = new TextObject("{=HXxNfncd}End of Battle", null).ToString();
-        MPEndOfBattleSideVM allySide = AllySide;
-        allySide?.RefreshValues();
-
-        MPEndOfBattleSideVM enemySide = EnemySide;
-        if (enemySide == null)
-        {
-            return;
-        }
-
-        enemySide.RefreshValues();
+        CountdownTitle = new TextObject("{=wGjQgQlY}Next Game begins in:").ToString();
+        Header = new TextObject("{=HXxNfncd}End of Battle").ToString();
+        AllySide?.RefreshValues();
+        EnemySide?.RefreshValues();
     }
 
     public override void OnFinalize()
@@ -96,28 +253,32 @@ public class CrpgScoreboardEndOfBattleVM : ViewModel
 
         IsAvailable = true;
         InitSides();
-        MissionScoreboardComponent missionScoreboardComponent = _missionScoreboardComponent;
-        BattleSideEnum battleSideEnum = (missionScoreboardComponent != null) ? missionScoreboardComponent.GetMatchWinnerSide() : BattleSideEnum.None;
+        BattleSideEnum battleSideEnum = _missionScoreboardComponent?.GetMatchWinnerSide() ?? BattleSideEnum.None;
         if (battleSideEnum == _enemyBattleSide)
         {
             BattleResult = 0;
-            ResultText = GameTexts.FindText("str_defeat", null).ToString();
+            ResultText = GameTexts.FindText("str_defeat").ToString();
             return;
         }
 
         if (battleSideEnum == _allyBattleSide)
         {
             BattleResult = 1;
-            ResultText = GameTexts.FindText("str_victory", null).ToString();
+            ResultText = GameTexts.FindText("str_victory").ToString();
             return;
         }
 
         BattleResult = 2;
-        ResultText = GameTexts.FindText("str_draw", null).ToString();
+        ResultText = GameTexts.FindText("str_draw").ToString();
     }
 
-private void InitSides()
+    private void InitSides()
     {
+        if (_missionScoreboardComponent == null)
+        {
+            return;
+        }
+
         _allyBattleSide = BattleSideEnum.Attacker;
         _enemyBattleSide = BattleSideEnum.Defender;
         NetworkCommunicator myPeer = GameNetwork.MyPeer;
@@ -132,227 +293,42 @@ private void InitSides()
             }
         }
 
-        MissionScoreboardComponent.MissionScoreboardSide missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault((MissionScoreboardComponent.MissionScoreboardSide s) => s != null && s.Side == _allyBattleSide);
+        MissionScoreboardSide? missionScoreboardSide =
+            _missionScoreboardComponent.Sides.FirstOrDefault(s => s != null && s.Side == _allyBattleSide);
+        MissionScoreboardSide? missionScoreboardSide2 =
+            _missionScoreboardComponent.Sides.FirstOrDefault(s => s != null && s.Side == _enemyBattleSide);
+
+        string text = missionScoreboardSide != null && missionScoreboardSide.Side == BattleSideEnum.Attacker
+            ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue()
+            : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue();
+        string text2 = missionScoreboardSide2 != null && missionScoreboardSide2.Side == BattleSideEnum.Attacker
+            ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue()
+            : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue();
+        BasicCultureObject? basicCultureObject = string.IsNullOrEmpty(text)
+            ? null
+            : MBObjectManager.Instance.GetObject<BasicCultureObject>(text);
+        BasicCultureObject? basicCultureObject2 = string.IsNullOrEmpty(text2)
+            ? null
+            : MBObjectManager.Instance.GetObject<BasicCultureObject>(text2);
+
+        MultiplayerBattleColors multiplayerBattleColors =
+            MultiplayerBattleColors.CreateWith(basicCultureObject, basicCultureObject2);
         if (missionScoreboardSide != null)
         {
-            string objectName = (missionScoreboardSide.Side == BattleSideEnum.Attacker) ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions) : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
-            AllySide = new MPEndOfBattleSideVM(_missionScoreboardComponent, missionScoreboardSide, MBObjectManager.Instance.GetObject<BasicCultureObject>(objectName), (AllySide?.Side?.Side ?? BattleSideEnum.Attacker) == BattleSideEnum.Defender);
+            AllySide = new MPEndOfBattleSideVM(_missionScoreboardComponent, missionScoreboardSide,
+                multiplayerBattleColors.AttackerColors);
         }
 
-        missionScoreboardSide = _missionScoreboardComponent.Sides.FirstOrDefault((MissionScoreboardComponent.MissionScoreboardSide s) => s != null && s.Side == _enemyBattleSide);
-
-        if (missionScoreboardSide != null)
+        if (missionScoreboardSide2 != null)
         {
-            string objectName2 = (missionScoreboardSide.Side == BattleSideEnum.Attacker) ? MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions) : MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
-            EnemySide = new MPEndOfBattleSideVM(_missionScoreboardComponent, missionScoreboardSide, MBObjectManager.Instance.GetObject<BasicCultureObject>(objectName2), (EnemySide?.Side?.Side ?? BattleSideEnum.Attacker) == BattleSideEnum.Defender);
+            EnemySide = new MPEndOfBattleSideVM(_missionScoreboardComponent, missionScoreboardSide,
+                multiplayerBattleColors.DefenderColors);
         }
-
-
     }
 
-    [DataSourceProperty]
-    public bool IsAvailable
+    private void HandleBannerChange(string attackerBanner, string defenderBanner, string attackerName, string defenderName)
     {
-        get
-        {
-            return _isAvailable;
-        }
-        set
-        {
-            if (value != _isAvailable)
-            {
-                _isAvailable = value;
-                OnPropertyChangedWithValue(value, "IsAvailable");
-            }
-        }
+        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(attackerBanner) : new Banner(defenderBanner), true);
+        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(defenderBanner) : new Banner(attackerBanner), true);
     }
-
-    [DataSourceProperty]
-    public string CountdownTitle
-    {
-        get
-        {
-            return _countdownTitle;
-        }
-        set
-        {
-            if (value != _countdownTitle)
-            {
-                _countdownTitle = value;
-                OnPropertyChangedWithValue(value, "CountdownTitle");
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public int Countdown
-    {
-        get
-        {
-            return _countdown;
-        }
-        set
-        {
-            if (value != _countdown)
-            {
-                _countdown = value;
-                OnPropertyChangedWithValue(value, "Countdown");
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public string Header
-    {
-        get
-        {
-            return _header;
-        }
-        set
-        {
-            if (value != _header)
-            {
-                _header = value;
-                OnPropertyChangedWithValue(value, "Header");
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public int BattleResult
-    {
-        get
-        {
-            return _battleResult;
-        }
-        set
-        {
-            if (value != _battleResult)
-            {
-                _battleResult = value;
-                OnPropertyChangedWithValue(value, "BattleResult");
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public string ResultText
-    {
-        get
-        {
-            return _resultText;
-        }
-        set
-        {
-            if (value != _resultText)
-            {
-                _resultText = value;
-                OnPropertyChangedWithValue(value, "ResultText");
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public MPEndOfBattleSideVM AllySide
-    {
-        get
-        {
-            return _allySide;
-        }
-        set
-        {
-            if (value != _allySide)
-            {
-                _allySide = value;
-                OnPropertyChangedWithValue(value, "AllySide");
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public MPEndOfBattleSideVM EnemySide
-    {
-        get
-        {
-            return _enemySide;
-        }
-        set
-        {
-            if (value != _enemySide)
-            {
-                _enemySide = value;
-                OnPropertyChangedWithValue(value, "EnemySide");
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public ImageIdentifierVM? AllyBanner
-    {
-        get
-        {
-            return _allyBanner;
-        }
-        set
-        {
-            if (value == _allyBanner)
-            {
-                return;
-            }
-
-            _allyBanner = value;
-            OnPropertyChangedWithValue(value);
-        }
-    }
-
-    [DataSourceProperty]
-    public ImageIdentifierVM? EnemyBanner
-    {
-        get
-        {
-            return _enemyBanner;
-        }
-        set
-        {
-            if (value == _enemyBanner)
-            {
-                return;
-            }
-
-            _enemyBanner = value;
-            OnPropertyChangedWithValue(value);
-        }
-    }
-
-    private MissionScoreboardComponent _missionScoreboardComponent;
-
-    private MissionMultiplayerGameModeBaseClient _gameMode;
-
-    private MissionLobbyComponent _lobbyComponent;
-
-    private bool _isSingleTeam;
-
-    private BattleSideEnum _allyBattleSide = default!;
-
-    private BattleSideEnum _enemyBattleSide = default!;
-
-    private bool _isAvailable;
-
-    private string _countdownTitle = default!;
-
-    private int _countdown;
-
-    private string _header = default!;
-
-    private int _battleResult;
-
-    private string _resultText = default!;
-
-    private MPEndOfBattleSideVM _allySide = default!;
-
-    private MPEndOfBattleSideVM _enemySide = default!;
-
-    private ImageIdentifierVM? _allyBanner;
-
-    private ImageIdentifierVM? _enemyBanner;
 }

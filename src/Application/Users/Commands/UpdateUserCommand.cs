@@ -34,7 +34,7 @@ public record UpdateUserCommand : IMediatorRequest<UserViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<UserViewModel>> Handle(UpdateUserCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserViewModel>> Handle(UpdateUserCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users.FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
             if (user == null)

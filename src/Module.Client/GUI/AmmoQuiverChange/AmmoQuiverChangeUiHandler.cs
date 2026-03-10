@@ -4,7 +4,6 @@ using Crpg.Module.Common.KeyBinder.Models;
 using TaleWorlds.Core;
 using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.InputSystem;
-using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 
@@ -55,7 +54,7 @@ internal class AmmoQuiverChangeUiHandler : MissionView, IUseKeyBinder
         _weaponChangeBehavior.OnQuiverEvent += HandleQuiverEvent;
 
         // Initialize Gauntlet UI layer
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority);
+        _gauntletLayer = new GauntletLayer("RangedWeaponAmmoHud", ViewOrderPriority);
         _gauntletLayer.LoadMovie("RangedWeaponAmmoHud", _dataSource);
         MissionScreen.AddLayer(_gauntletLayer);
         base.OnMissionScreenInitialize();
@@ -63,7 +62,8 @@ internal class AmmoQuiverChangeUiHandler : MissionView, IUseKeyBinder
 
     public override void EarlyStart()
     {
-        quiverChangeKey = HotKeyManager.GetCategory(KeyCategoryId).GetGameKey("key_change_quiver");
+        // TODO: fix
+         quiverChangeKey = HotKeyManager.GetCategory(KeyCategoryId).RegisteredGameKeys.Find(gk => gk != null && gk.StringId == "key_change_quiver");
     }
 
     public override void OnMissionScreenFinalize()

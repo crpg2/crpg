@@ -23,7 +23,7 @@ public record GetCharacterLimitationsQuery : IMediatorRequest<CharacterLimitatio
             _mapper = mapper;
         }
 
-        public async Task<Result<CharacterLimitationsViewModel>> Handle(GetCharacterLimitationsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<CharacterLimitationsViewModel>> Handle(GetCharacterLimitationsQuery req, CancellationToken cancellationToken)
         {
             var character = await _db.Characters
                 .AsNoTracking()

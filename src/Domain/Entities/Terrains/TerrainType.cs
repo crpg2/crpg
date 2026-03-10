@@ -31,4 +31,7 @@ public enum TerrainType
 
     /// <summary></summary>
     DeepWater,
+
+    /// <summary></summary>
+    Plain,
 }

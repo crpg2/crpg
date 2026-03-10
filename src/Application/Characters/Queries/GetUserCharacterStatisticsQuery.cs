@@ -24,7 +24,7 @@ public record GetUserCharacterStatisticsQuery : IMediatorRequest<Dictionary<Game
             _mapper = mapper;
         }
 
-        public async Task<Result<Dictionary<GameMode, CharacterStatisticsViewModel>>> Handle(GetUserCharacterStatisticsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<Dictionary<GameMode, CharacterStatisticsViewModel>>> Handle(GetUserCharacterStatisticsQuery req, CancellationToken cancellationToken)
         {
             var character = await _db.Characters
                 .AsNoTracking()

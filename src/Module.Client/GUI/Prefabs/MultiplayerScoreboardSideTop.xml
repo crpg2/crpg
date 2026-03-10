@@ -70,9 +70,9 @@
 
         <MultiplayerFactionBannerWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="150" SuggestedHeight="82" HorizontalAlignment="Center" VerticalAlignment="Top" MarginTop="10" BannerWidget="Banner" FactionCode="@CultureId" UseSecondary="@UseSecondary" IconWidget="Icon" IsHidden="@IsSingleSide">
           <Children>
-            <MaskedTextureWidget DataSource="{AllyBanner}" IsVisible="*IsLeftSide"  WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="96" SuggestedHeight="96" HorizontalAlignment="Center" VerticalAlignment="Center" Brush="ClanNaming.Stage.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" IsDisabled="true"  />
+            <MaskedTextureWidget DataSource="{AllyBanner}" IsVisible="*IsLeftSide"  WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="96" SuggestedHeight="96" HorizontalAlignment="Center" VerticalAlignment="Center" Brush="ClanNaming.Stage.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" TextureProviderName="@TextureProviderName" IsDisabled="true"  />
 
-            <MaskedTextureWidget DataSource="{EnemyBanner}" IsHidden="*IsLeftSide" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="96" SuggestedHeight="96"  HorizontalAlignment="Center" VerticalAlignment="Center" Brush="ClanNaming.Stage.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" IsDisabled="true"  />
+            <MaskedTextureWidget DataSource="{EnemyBanner}" IsHidden="*IsLeftSide" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="96" SuggestedHeight="96"  HorizontalAlignment="Center" VerticalAlignment="Center" Brush="ClanNaming.Stage.Banner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" TextureProviderName="@TextureProviderName" IsDisabled="true"  />
           </Children>
         </MultiplayerFactionBannerWidget>
 

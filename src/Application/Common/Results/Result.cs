@@ -16,7 +16,7 @@ public class Result
     {
     }
 
-    public Result(Error error) => Errors = new[] { error };
+    public Result(Error error) => Errors = [error];
 
     public Result(IList<Error> errors) => Errors = errors;
 }

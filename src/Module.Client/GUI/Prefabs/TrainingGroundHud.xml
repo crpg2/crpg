@@ -65,7 +65,7 @@
                 <!--First Player-->
                 <MultiplayerTeamPlayerAvatarButtonWidget DataSource="{FirstPlayer}" DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="180" SuggestedHeight="140" AvatarImage="AvatarImage" IsDead="false" UpdateChildrenStates="true">
                   <Children>
-                    <ImageIdentifierWidget Id="AvatarImage" DataSource="{Avatar}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!UserProfile.Width" SuggestedHeight="!UserProfile.Height" HorizontalAlignment="Center" AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" MaterialAlphaFactor="0.7" />
+                    <ImageIdentifierWidget Id="AvatarImage" DataSource="{Avatar}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!UserProfile.Width" SuggestedHeight="!UserProfile.Height" HorizontalAlignment="Center" AdditionalArgs="@AdditionalArgs" ImageId="@Id" TextureProviderName="@TextureProviderName" MaterialAlphaFactor="0.7" />
 
                     <Widget Id="NameParentWidget" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="100" SuggestedHeight="20" HorizontalAlignment="Center" VerticalAlignment="Top" MarginTop="62">
                       <Children>
@@ -99,7 +99,7 @@
                 <!--Second Player-->
                 <MultiplayerTeamPlayerAvatarButtonWidget DataSource="{SecondPlayer}" DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="180" SuggestedHeight="140" AvatarImage="AvatarImage" IsDead="false" UpdateChildrenStates="true">
                   <Children>
-                    <ImageIdentifierWidget Id="AvatarImage" DataSource="{Avatar}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!UserProfile.Width" SuggestedHeight="!UserProfile.Height" HorizontalAlignment="Center" AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" MaterialAlphaFactor="0.7" />
+                    <ImageIdentifierWidget Id="AvatarImage" DataSource="{Avatar}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!UserProfile.Width" SuggestedHeight="!UserProfile.Height" HorizontalAlignment="Center" AdditionalArgs="@AdditionalArgs" ImageId="@Id" TextureProviderName="@TextureProviderName" MaterialAlphaFactor="0.7" />
 
                     <Widget Id="NameParentWidget" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="100" SuggestedHeight="20" HorizontalAlignment="Center" VerticalAlignment="Top" MarginTop="62">
                       <Children>

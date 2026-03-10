@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using Crpg.Module.Api.Models;
 using Crpg.Module.HarmonyPatches;
+using Crpg.Module.Notifications;
 using JetBrains.Annotations;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -27,11 +28,12 @@ internal static class CrpgServerConfiguration
     public static string Instance { get; }
     public static float TeamBalancerClanGroupSizePenalty { get; private set; } = 0f;
     public static float ServerExperienceMultiplier { get; private set; } = 1.0f;
+    public static int VeryLowPopulationThreshold { get; private set; } = 6;
+    public static int LowPopulationThreshold { get; private set; } = 12;
     public static int RewardTick { get; private set; } = 60;
     public static bool TeamBalanceOnce { get; private set; }
     public static bool FrozenBots { get; private set; } = false;
     public static int ControlledBotsCount { get; private set; } = 0;
-    public static int BaseNakedEquipmentValue { get; private set; } = 10000;
     public static Tuple<TimeSpan, TimeSpan, TimeZoneInfo>? HappyHours { get; private set; }
     public static bool DisableAllChargeDamage { get; set; } = false;
     public static bool AllowFriendlyChargeDamage { get; set; } = true;
@@ -50,6 +52,35 @@ internal static class CrpgServerConfiguration
     public static int FriendlyFireReportDecaySeconds { get; private set; } = 60;
     public static int FriendlyFireReportWindowSeconds { get; private set; } = 10;
     public static bool IsFriendlyFireReportDecayOnRoundStartEnabled { get; private set; } = true;
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("server_name_suffix", "Suffix the server name with HH:mm to easily differentiate the new and old server in the server list. That can only be called before the server starts")]
+    private static void ServerNameSuffix()
+    {
+        string serverName = MultiplayerOptions.OptionType.ServerName.GetValueText();
+        string suffixedServerName = $"{serverName} {DateTime.Now:HH:mm}";
+        MultiplayerOptions.OptionType.ServerName.SetValue(suffixedServerName);
+        Debug.Print($"Set the server name to \"{suffixedServerName}\"");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("announce", "Sends a message to all players")]
+    private static void Announce(string? message)
+    {
+        if (string.IsNullOrEmpty(message))
+        {
+            return;
+        }
+
+        GameNetwork.BeginBroadcastModuleEvent();
+        GameNetwork.WriteMessage(new CrpgNotification
+        {
+            Type = CrpgNotificationType.Announcement,
+            Message = message,
+        });
+        GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
+        Debug.Print($"Sent \"{message}\"");
+    }
 
     [UsedImplicitly]
     [ConsoleCommandMethod("crpg_team_balancer_clan_group_size_penalty", "Apply a rating increase to members of the same clan that are playing in the same team")]
@@ -81,6 +112,34 @@ internal static class CrpgServerConfiguration
 
         ServerExperienceMultiplier = multiplier;
         Debug.Print($"Set server multiplier to {multiplier}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_very_low_pop_threshold", "Disable reward multiplier if the number of players is lower than this number")]
+    private static void SetVeryLowPopulationThreshold(string? thresholdStr)
+    {
+        if (thresholdStr == null || !int.TryParse(thresholdStr, out int threshold))
+        {
+            Debug.Print($"Invalid threshold: {thresholdStr}");
+            return;
+        }
+
+        VeryLowPopulationThreshold = threshold;
+        Debug.Print($"Set very low population threshold to {threshold}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_low_pop_threshold", "Disable upkeep if the number of players is lower than this number")]
+    private static void SetLowPopulationThreshold(string? thresholdStr)
+    {
+        if (thresholdStr == null || !int.TryParse(thresholdStr, out int threshold))
+        {
+            Debug.Print($"Invalid threshold: {thresholdStr}");
+            return;
+        }
+
+        LowPopulationThreshold = threshold;
+        Debug.Print($"Set low population threshold to {threshold}");
     }
 
     [UsedImplicitly]
@@ -258,8 +317,8 @@ internal static class CrpgServerConfiguration
     [ConsoleCommandMethod("crpg_charge_damage_mirror_friendly_to_mount", "Mirror charge damage to mount for friendly fire")]
     private static void SetMirrorFriendlyChargeDamageMount(string? inputStr)
     {
-        if (string.IsNullOrWhiteSpace(inputStr) || (inputStr == null
-            || !bool.TryParse(inputStr, out bool outputBool)))
+        if (string.IsNullOrWhiteSpace(inputStr) || inputStr == null
+                                                || !bool.TryParse(inputStr, out bool outputBool))
         {
             Debug.Print($"Invalid mirror friendly charge damage mount: {inputStr}");
             Debug.Print("Please provide a valid boolean value (true/false).");

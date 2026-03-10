@@ -3,16 +3,14 @@ import type { LocationQuery } from 'vue-router'
 
 import { parse, stringify } from 'qs'
 
-const numberCandidate = (candidate: string) => /^[+-]?\d+(?:\.\d+)?$/.test(candidate)
-
-const tryParseFloat = (str: string) => (numberCandidate(str) ? Number.parseFloat(str) : str)
+import { tryGetNumber } from '~/utils/number'
 
 // ref: https://github.com/ljharb/qs/blob/main/lib/utils.js#L111
 // TODO: spec
 const decoder = (str: string): string | number | boolean | null | undefined => {
-  const candidateToNumber = tryParseFloat(str)
+  const [isNumber, candidateToNumber] = tryGetNumber(str)
 
-  if (typeof candidateToNumber === 'number' && !Number.isNaN(candidateToNumber)) {
+  if (isNumber) {
     return candidateToNumber
   }
 

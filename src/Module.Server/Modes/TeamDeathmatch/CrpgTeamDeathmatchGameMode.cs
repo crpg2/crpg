@@ -1,3 +1,19 @@
+#if CRPG_SERVER
+using Crpg.Module.Api;
+using Crpg.Module.Common.ChatCommands;
+#else
+
+using Crpg.Module.GUI;
+using Crpg.Module.GUI.AmmoQuiverChange;
+using Crpg.Module.GUI.Commander;
+using Crpg.Module.GUI.EndOfRound;
+using Crpg.Module.GUI.HudExtension;
+using Crpg.Module.GUI.Scoreboard;
+using Crpg.Module.GUI.Warmup;
+using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
+using TaleWorlds.MountAndBlade.View;
+using TaleWorlds.MountAndBlade.View.MissionViews;
+#endif
 using Crpg.Module.Common;
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Common.Commander;
@@ -12,24 +28,6 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Source.Missions;
 
-#if CRPG_SERVER
-using Crpg.Module.Api;
-using Crpg.Module.Common.ChatCommands;
-#else
-
-using Crpg.Module.GUI;
-using Crpg.Module.GUI.AmmoQuiverChange;
-using Crpg.Module.GUI.Commander;
-using Crpg.Module.GUI.EndOfRound;
-using Crpg.Module.GUI.HudExtension;
-using Crpg.Module.GUI.Scoreboard;
-using Crpg.Module.GUI.Spectator;
-using Crpg.Module.GUI.Warmup;
-using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
-using TaleWorlds.MountAndBlade.View;
-using TaleWorlds.MountAndBlade.View.MissionViews;
-
-#endif
 namespace Crpg.Module.Modes.TeamDeathmatch;
 
 [ViewCreatorModule] // Exposes methods with ViewMethod attribute.
@@ -37,7 +35,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
 {
     private const string GameName = "cRPGTeamDeathmatch";
 
-    private static CrpgConstants _constants = default!; // Static so it's accessible from the views.
+    private static CrpgConstants _constants = null!; // Static so it's accessible from the views.
 
     public CrpgTeamDeathmatchGameMode(CrpgConstants constants)
         : base(GameName)
@@ -58,7 +56,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMultiplayerFactionBanVoteUIHandler(),
             ViewCreator.CreateMissionAgentStatusUIHandler(mission),
             ViewCreator.CreateMissionMainAgentEquipmentController(mission), // Pick/drop items.
-            new CrpgMissionGauntletMainAgentCheerControllerView(),
+            ViewCreator.CreateMissionMainAgentCheerBarkControllerView(mission),
             crpgEscapeMenu,
             ViewCreator.CreateMissionAgentLabelUIHandler(mission),
             MultiplayerViewCreator.CreateMultiplayerTeamSelectUIHandler(),
@@ -73,7 +71,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
             new CrpgHudExtensionHandler(),
             new AmmoQuiverChangeUiHandler(),
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
-            //new SpectatorHudUiHandler(),
+            // new SpectatorHudUiHandler(),
             new WarmupHudUiHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -98,16 +96,15 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
         Game.Current.GetGameHandler<ChatCommandsComponent>()?.InitChatCommands(crpgClient);
         ChatBox chatBox = Game.Current.GetGameHandler<ChatBox>();
         CrpgTeamDeathmatchSpawningBehavior spawnBehavior = new(_constants);
-        //MultiplayerRoundController roundController = new(); // starts/stops round, ends match
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent,
+        // MultiplayerRoundController roundController = new(); // starts/stops round, ends match
+        CrpgWarmupComponent warmupComponent = new(_constants,
             () => (new CrpgTeamDeathmatchSpawnFrameBehavior(), new CrpgTeamDeathmatchSpawningBehavior(_constants)));
         CrpgTeamSelectServerComponent teamSelectComponent = new(warmupComponent, null, MultiplayerGameType.TeamDeathmatch);
         CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: false, enableRating: true);
         CrpgTeamDeathmatchServer teamDeathmatchServer = new(scoreboardComponent, rewardServer);
 
-
 #else
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, null);
+        CrpgWarmupComponent warmupComponent = new(_constants, null);
         CrpgTeamSelectClientComponent teamSelectComponent = new();
 #endif
 

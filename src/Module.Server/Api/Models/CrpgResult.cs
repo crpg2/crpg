@@ -20,5 +20,5 @@ internal class Error
     public string? Source { get; set; }
     public string? StackTrace { get; set; }
 
-    public override string ToString() => Detail ?? Title ?? Code.ToString();
+    public override string ToString() => Detail ?? Title ?? Code;
 }

@@ -15,9 +15,14 @@ export const usePagination = (initialState?: Partial<PaginationState>) => {
     pagination.value = payload
   }
 
+  function resetPagination() {
+    pagination.value = getInitialPaginationState()
+  }
+
   return {
     pagination,
     setPagination,
+    resetPagination,
     getInitialPaginationState,
   }
 }

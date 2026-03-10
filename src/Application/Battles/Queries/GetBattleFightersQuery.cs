@@ -12,34 +12,31 @@ public record GetBattleFightersQuery : IMediatorRequest<IList<BattleFighterViewM
 {
     public int BattleId { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<GetBattleFightersQuery, IList<BattleFighterViewModel>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<GetBattleFightersQuery, IList<BattleFighterViewModel>>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
-
-        public async Task<Result<IList<BattleFighterViewModel>>> Handle(GetBattleFightersQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<BattleFighterViewModel>>> Handle(GetBattleFightersQuery req, CancellationToken cancellationToken)
         {
             var battle = await _db.Battles
                 .AsSplitQuery()
-                .Include(b => b.Fighters).ThenInclude(f => f.Party!).ThenInclude(h => h.User)
-                .Include(b => b.Fighters).ThenInclude(f => f.Settlement)
+                .Include(b => b.Fighters)
+                    .ThenInclude(f => f.Party!.User!.ClanMembership!.Clan)
+                .Include(b => b.Fighters)
+                    .ThenInclude(f => f.Settlement!.Owner!.User!.ClanMembership!.Clan)
                 .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {
                 return new(CommonErrors.BattleNotFound(req.BattleId));
             }
 
+            // TODO: FIXME: Is this validation necessary?
             // Battles in preparation shouldn't be visible to anyone but only to parties in sight on the map.
-            if (battle.Phase == BattlePhase.Preparation)
-            {
-                return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
-            }
+            // if (battle.Phase == BattlePhase.Preparation)
+            // {
+            //     return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
+            // }
 
             return new(_mapper.Map<IList<BattleFighterViewModel>>(battle.Fighters));
         }

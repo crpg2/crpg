@@ -6,9 +6,9 @@ namespace Crpg.Module.Modes.TrainingGround;
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromServer)]
 internal sealed class TrainingGroundDuelPreparationStartedForTheFirstTime : GameNetworkMessage
 {
-    public NetworkCommunicator RequesterPeer { get; set; } = default!;
+    public NetworkCommunicator RequesterPeer { get; set; } = null!;
 
-    public NetworkCommunicator RequesteePeer { get; set; } = default!;
+    public NetworkCommunicator RequesteePeer { get; set; } = null!;
 
     protected override bool OnRead()
     {

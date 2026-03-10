@@ -11,7 +11,7 @@ namespace Crpg.WebApi.Controllers;
 public class TerrainsController : BaseController
 {
     /// <summary>
-    /// Get Strategus map terrains.
+    /// Get Campaign map terrains.
     /// </summary>
     [HttpGet]
     [Authorize(Policy = UserPolicy)]

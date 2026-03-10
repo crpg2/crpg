@@ -8088,49 +8088,49 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_a_v2_h0" name="{=ewSpZ10R}Rough Padded Cap" mesh="vlandia_bandit_cape_a" culture="Culture.looters" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_a_v2_h0" name="{=ewSpZ10R}Rough Padded Cap" mesh="vlandia_bandit_cape_a" culture="Culture.neutral_culture" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="12" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_a_v2_h1" name="{=ewSpZ10R}Rough Padded Cap +1" mesh="vlandia_bandit_cape_a" culture="Culture.looters" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_a_v2_h1" name="{=ewSpZ10R}Rough Padded Cap +1" mesh="vlandia_bandit_cape_a" culture="Culture.neutral_culture" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="14" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_a_v2_h2" name="{=ewSpZ10R}Rough Padded Cap +2" mesh="vlandia_bandit_cape_a" culture="Culture.looters" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_a_v2_h2" name="{=ewSpZ10R}Rough Padded Cap +2" mesh="vlandia_bandit_cape_a" culture="Culture.neutral_culture" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="16" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_a_v2_h3" name="{=ewSpZ10R}Rough Padded Cap +3" mesh="vlandia_bandit_cape_a" culture="Culture.looters" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_a_v2_h3" name="{=ewSpZ10R}Rough Padded Cap +3" mesh="vlandia_bandit_cape_a" culture="Culture.neutral_culture" weight="0.5984282" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="18" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_b_v2_h0" name="{=7D3jvAfS}Hide Cap" mesh="vlandia_bandit_cape_b" culture="Culture.looters" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_b_v2_h0" name="{=7D3jvAfS}Hide Cap" mesh="vlandia_bandit_cape_b" culture="Culture.neutral_culture" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="8" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_b_v2_h1" name="{=7D3jvAfS}Hide Cap +1" mesh="vlandia_bandit_cape_b" culture="Culture.looters" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_b_v2_h1" name="{=7D3jvAfS}Hide Cap +1" mesh="vlandia_bandit_cape_b" culture="Culture.neutral_culture" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="10" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_b_v2_h2" name="{=7D3jvAfS}Hide Cap +2" mesh="vlandia_bandit_cape_b" culture="Culture.looters" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_b_v2_h2" name="{=7D3jvAfS}Hide Cap +2" mesh="vlandia_bandit_cape_b" culture="Culture.neutral_culture" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="12" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_vlandia_bandit_cape_b_v2_h3" name="{=7D3jvAfS}Hide Cap +3" mesh="vlandia_bandit_cape_b" culture="Culture.looters" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_vlandia_bandit_cape_b_v2_h3" name="{=7D3jvAfS}Hide Cap +3" mesh="vlandia_bandit_cape_b" culture="Culture.neutral_culture" weight="0.3392223" appearance="0.8" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="14" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
@@ -10295,5 +10295,53 @@
       <Armor head_armor="57" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_mb_berserkrwolf_helm_h0" name="{=Yeldur}Berserker's Wolf Helmet" mesh="ulfhednar_helmet_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="51" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_berserkrwolf_helm_h1" name="{=Yeldur}Berserker's Wolf Helmet +1" mesh="ulfhednar_helmet_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="53" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_berserkrwolf_helm_h2" name="{=Yeldur}Berserker's Wolf Helmet +2" mesh="ulfhednar_helmet_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="55" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_berserkrwolf_helm_h3" name="{=Yeldur}Berserker's Wolf Helmet +3" mesh="ulfhednar_helmet_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="57" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_wolfskin_helm_h0" name="{=Yeldur}Wolfskin Helmet" mesh="wolfskin_helm_a" culture="Culture.sturgia" weight="3.80764" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="45" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_wolfskin_helm_h1" name="{=Yeldur}Wolfskin Helmet +1" mesh="wolfskin_helm_a" culture="Culture.sturgia" weight="3.80764" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="47" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_wolfskin_helm_h2" name="{=Yeldur}Wolfskin Helmet +2" mesh="wolfskin_helm_a" culture="Culture.sturgia" weight="3.80764" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="49" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_wolfskin_helm_h3" name="{=Yeldur}Wolfskin Helmet +3" mesh="wolfskin_helm_a" culture="Culture.sturgia" weight="3.80764" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="51" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
   </Item>
 </Items>

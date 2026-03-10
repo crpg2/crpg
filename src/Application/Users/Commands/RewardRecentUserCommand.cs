@@ -32,7 +32,7 @@ public record RewardRecentUserCommand : IMediatorRequest
             _experienceTable = experienceTable;
         }
 
-        public async Task<Result> Handle(RewardRecentUserCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(RewardRecentUserCommand req, CancellationToken cancellationToken)
         {
             var users = await _db.Users
                 .Include(u => u.Characters)

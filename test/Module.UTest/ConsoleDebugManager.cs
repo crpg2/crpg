@@ -1,9 +1,11 @@
-﻿using TaleWorlds.Library;
+﻿using System.Numerics;
+using TaleWorlds.Library;
 
 namespace Crpg.Module.UTest;
 
 internal class ConsoleDebugManager : IDebugManager
 {
+
     public void ShowWarning(string message)
     {
         Console.WriteLine(message);
@@ -104,6 +106,10 @@ internal class ConsoleDebugManager : IDebugManager
     public Vec3 GetDebugVector()
     {
         return Vec3.Zero;
+    }
+
+    public void SetDebugVector(Vec3 value)
+    {
     }
 
     public void SetCrashReportCustomString(string customString)

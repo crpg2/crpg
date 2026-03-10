@@ -1,9 +1,11 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Battles.Models;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Domain.Entities.Battles;
+using Crpg.Domain.Entities.Parties;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using LoggerFactory = Crpg.Logging.LoggerFactory;
@@ -12,24 +14,20 @@ namespace Crpg.Application.Battles.Commands;
 
 public record RespondToBattleFighterApplicationCommand : IMediatorRequest<BattleFighterApplicationViewModel>
 {
+    [JsonIgnore]
     public int PartyId { get; init; }
+    [JsonIgnore]
     public int FighterApplicationId { get; init; }
     public bool Accept { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<RespondToBattleFighterApplicationCommand, BattleFighterApplicationViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<RespondToBattleFighterApplicationCommand, BattleFighterApplicationViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<RespondToBattleFighterApplicationCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
-
-        public async Task<Result<BattleFighterApplicationViewModel>> Handle(RespondToBattleFighterApplicationCommand req,
+        public async ValueTask<Result<BattleFighterApplicationViewModel>> Handle(RespondToBattleFighterApplicationCommand req,
             CancellationToken cancellationToken)
         {
             var party = await _db.Parties.FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);
@@ -40,8 +38,10 @@ public record RespondToBattleFighterApplicationCommand : IMediatorRequest<Battle
 
             var application = await _db.BattleFighterApplications
                 .AsSplitQuery()
-                .Include(a => a.Battle!).ThenInclude(b => b.Fighters.Where(f => f.PartyId == req.PartyId))
-                .Include(a => a.Party!).ThenInclude(h => h.User)
+                .Include(a => a.Battle!)
+                    .ThenInclude(b => b.Fighters.Where(f => f.PartyId == req.PartyId))
+                .Include(a => a.Party!)
+                    .ThenInclude(h => h.User)
                 .FirstOrDefaultAsync(a => a.Id == req.FighterApplicationId, cancellationToken);
             if (application == null)
             {
@@ -61,8 +61,7 @@ public record RespondToBattleFighterApplicationCommand : IMediatorRequest<Battle
 
             if (partyFighter.Side != application.Side)
             {
-                return new(CommonErrors.PartiesNotOnTheSameSide(partyFighter.Id, application.PartyId,
-                    application.BattleId));
+                return new(CommonErrors.PartiesNotOnTheSameSide(partyFighter.Id, application.PartyId, application.BattleId));
             }
 
             if (application.Battle.Phase != BattlePhase.Preparation)
@@ -75,6 +74,14 @@ public record RespondToBattleFighterApplicationCommand : IMediatorRequest<Battle
                 return new(CommonErrors.ApplicationClosed(application.Id));
             }
 
+            var otherApplications = await _db.BattleFighterApplications
+                  .Where(a => a.Id != application.Id
+                              && a.BattleId == application.BattleId
+                              && a.PartyId == application.PartyId
+                              && a.Status == BattleFighterApplicationStatus.Pending)
+                  .ToArrayAsync(cancellationToken);
+
+            // TODO: FIXME: notification
             if (req.Accept)
             {
                 application.Status = BattleFighterApplicationStatus.Accepted;
@@ -82,24 +89,27 @@ public record RespondToBattleFighterApplicationCommand : IMediatorRequest<Battle
                 {
                     Side = application.Side,
                     Commander = false,
-                    MercenarySlots = 0,
+                    ParticipantSlots = 0,
                     Party = application.Party,
                     Battle = application.Battle,
                 };
                 _db.BattleFighters.Add(newFighter);
 
+                application.Party!.Status = PartyStatus.InBattle;
+
                 // Delete all other applying party pending applications for this battle.
-                var otherApplications = await _db.BattleFighterApplications
-                    .Where(a => a.Id != application.Id
-                                && a.BattleId == application.BattleId
-                                && a.PartyId == application.PartyId
-                                && a.Status == BattleFighterApplicationStatus.Pending)
-                    .ToArrayAsync(cancellationToken);
                 _db.BattleFighterApplications.RemoveRange(otherApplications);
             }
             else
             {
                 application.Status = BattleFighterApplicationStatus.Declined;
+
+                // Kick Party out of the battle if there are no other pending application
+                if (otherApplications.Length == 0)
+                {
+                    application.Party!.Status = PartyStatus.Idle;
+                    application.Party!.CurrentBattleId = null;
+                }
             }
 
             await _db.SaveChangesAsync(cancellationToken);

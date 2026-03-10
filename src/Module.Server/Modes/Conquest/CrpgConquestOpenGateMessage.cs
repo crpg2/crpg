@@ -6,7 +6,7 @@ namespace Crpg.Module.Modes.Conquest;
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromServer)]
 internal sealed class CrpgConquestOpenGateMessage : GameNetworkMessage
 {
-    public NetworkCommunicator Peer { get; set; } = default!;
+    public NetworkCommunicator Peer { get; set; } = null!;
 
     protected override void OnWrite()
     {

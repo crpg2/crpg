@@ -6,6 +6,12 @@
 public enum BattleFighterApplicationStatus
 {
     /// <summary>
+    /// <see cref="BattleFighterApplication"/> represents an intention to join the battle,
+    /// but the fighter has not yet arrived and cannot be accepted or declined.
+    /// </summary>
+    Intent,
+
+    /// <summary>
     /// <see cref="BattleFighterApplication"/> is waiting for a response.
     /// </summary>
     Pending,

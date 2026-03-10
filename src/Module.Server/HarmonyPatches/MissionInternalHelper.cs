@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.CompilerServices;
 using HarmonyLib;
 using TaleWorlds.Core;
@@ -19,7 +18,7 @@ public static class MissionInternalHelper
         this Mission _,
         Agent attackerAgent,
         Agent victimAgent,
-        GameEntity hitObject,
+        WeakGameEntity hitObject,
         float momentumRemaining,
         in MissionWeapon attackerWeapon,
         bool crushedThrough,
@@ -39,7 +38,7 @@ public static class MissionInternalHelper
         this Mission _,
         Agent attacker,
         Agent victim,
-        GameEntity realHitEntity,
+        WeakGameEntity realHitEntity,
         Blow b,
         ref AttackCollisionData collisionData,
         in MissionWeapon attackerWeapon,

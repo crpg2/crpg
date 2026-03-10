@@ -18,7 +18,7 @@ public class CommanderPollProgressVm : ViewModel
     private int _votesRejected;
     private string _pollInitiatorName = string.Empty;
     private string _pollDescription = string.Empty;
-    private MPPlayerVM _targetPlayer = default!;
+    private MPPlayerVM _targetPlayer = null!;
     private MBBindingList<InputKeyItemVM> _keys = new();
 
     [DataSourceProperty]
@@ -33,7 +33,7 @@ public class CommanderPollProgressVm : ViewModel
             if (value != _hasOngoingPoll)
             {
                 _hasOngoingPoll = value;
-                OnPropertyChangedWithValue(value, "HasOngoingPoll");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -50,7 +50,7 @@ public class CommanderPollProgressVm : ViewModel
             if (value != _areKeysEnabled)
             {
                 _areKeysEnabled = value;
-                OnPropertyChangedWithValue(value, "AreKeysEnabled");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -67,7 +67,7 @@ public class CommanderPollProgressVm : ViewModel
             if (_votesAccepted != value)
             {
                 _votesAccepted = value;
-                OnPropertyChangedWithValue(value, "VotesAccepted");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -84,7 +84,7 @@ public class CommanderPollProgressVm : ViewModel
             if (_votesRejected != value)
             {
                 _votesRejected = value;
-                OnPropertyChangedWithValue(value, "VotesRejected");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -101,7 +101,7 @@ public class CommanderPollProgressVm : ViewModel
             if (_pollInitiatorName != value)
             {
                 _pollInitiatorName = value;
-                OnPropertyChangedWithValue(value, "PollInitiatorName");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -118,7 +118,7 @@ public class CommanderPollProgressVm : ViewModel
             if (_pollDescription != value)
             {
                 _pollDescription = value;
-                OnPropertyChangedWithValue(value, "PollDescription");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -135,7 +135,7 @@ public class CommanderPollProgressVm : ViewModel
             if (value != _targetPlayer)
             {
                 _targetPlayer = value;
-                OnPropertyChangedWithValue(value, "TargetPlayer");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -152,7 +152,7 @@ public class CommanderPollProgressVm : ViewModel
             if (_keys != value)
             {
                 _keys = value;
-                OnPropertyChangedWithValue(value, "Keys");
+                OnPropertyChangedWithValue(value);
             }
         }
     }

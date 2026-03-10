@@ -22,7 +22,7 @@ public record GetUserRestrictionsQuery : IMediatorRequest<IList<RestrictionViewM
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<RestrictionViewModel>>> Handle(GetUserRestrictionsQuery request, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<RestrictionViewModel>>> Handle(GetUserRestrictionsQuery request, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .AsNoTracking()

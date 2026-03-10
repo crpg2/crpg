@@ -20,7 +20,7 @@ public record GetSettingsQuery : IMediatorRequest<SettingsViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<SettingsViewModel>> Handle(GetSettingsQuery req,
+        public async ValueTask<Result<SettingsViewModel>> Handle(GetSettingsQuery req,
             CancellationToken cancellationToken)
         {
             var settings = await _db.Settings.FirstOrDefaultAsync(cancellationToken);

@@ -29,6 +29,7 @@ internal class MapPoolComponent : MissionLogic
 
         _forcedNextMap = map;
     }
+
     protected override void OnEndMission()
     {
         nextMapId = (nextMapId + 1) % ListedServerCommandManager.ServerSideIntermissionManager.AutomatedMapPool.Count;

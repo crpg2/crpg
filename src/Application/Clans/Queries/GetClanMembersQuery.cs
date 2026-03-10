@@ -22,7 +22,7 @@ public record GetClanMembersQuery : IMediatorRequest<IList<ClanMemberViewModel>>
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<ClanMemberViewModel>>> Handle(GetClanMembersQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<ClanMemberViewModel>>> Handle(GetClanMembersQuery req, CancellationToken cancellationToken)
         {
             var clan = await _db.Clans
                 .Include(c => c.Members.OrderByDescending(m => m.Role)).ThenInclude(c => c.User)

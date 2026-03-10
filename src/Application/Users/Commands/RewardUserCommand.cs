@@ -41,7 +41,7 @@ public record RewardUserCommand : IMediatorRequest<UserViewModel>
             _userNotificationService = userNotificationService;
         }
 
-        public async Task<Result<UserViewModel>> Handle(RewardUserCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserViewModel>> Handle(RewardUserCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users.FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
             if (user == null)

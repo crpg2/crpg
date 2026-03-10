@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Crpg.Module.Common.KeyBinder.Models;
 
 public class BindedKeyCategory

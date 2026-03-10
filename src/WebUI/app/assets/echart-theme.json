@@ -10,7 +10,7 @@
   "backgroundColor": "rgba(0,0,0,0)",
   "textStyle": {
     "fontFamily": "Merriweather",
-    "color": "rgb(255,255,255,1)"
+    "color": "rgba(255,255,255,1)"
   },
   "title": {
     "textStyle": {
@@ -150,7 +150,7 @@
   },
   "legend": {
     "textStyle": {
-      "color": "rgb(255,255,255,1)"
+      "color": "rgba(255,255,255,1)"
     }
   },
   "tooltip": {
@@ -204,9 +204,9 @@
   },
   "dataZoom": {
     "backgroundColor": "rgba(0,0,0,0)",
-    "borderColor": "rgb(35,37,39,1)",
+    "borderColor": "rgba(35,37,39,1)",
     "textStyle": {
-      "color": "rgb(255,255,255,1)"
+      "color": "rgba(255,255,255,1)"
     },
     "dataBackground": {
       "areaStyle": {

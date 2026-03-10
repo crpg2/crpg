@@ -5,7 +5,7 @@ using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Results;
 using Crpg.Common;
 using Crpg.Sdk.Abstractions;
-using MediatR;
+using Mediator;
 using Microsoft.Extensions.Logging;
 using LoggerFactory = Crpg.Logging.LoggerFactory;
 
@@ -33,7 +33,10 @@ internal class RequestInstrumentationBehavior<TRequest, TResponse> : IPipelineBe
         _currentUser = currentUser;
     }
 
-    public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
+    public async ValueTask<TResponse> Handle(
+        TRequest request,
+        MessageHandlerDelegate<TRequest, TResponse> next,
+        CancellationToken cancellationToken)
     {
         var span = Instrumentation.StartRequestSpan();
         IDisposable? loggingScope = null;
@@ -57,7 +60,7 @@ internal class RequestInstrumentationBehavior<TRequest, TResponse> : IPipelineBe
         var sw = ValueStopwatch.StartNew();
         try
         {
-            var response = await next();
+            var response = await next(request, cancellationToken);
             if (response is Result result && result.Errors != null && result.Errors.Count != 0)
             {
                 switch (result.Errors[0].Type)

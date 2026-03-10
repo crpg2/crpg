@@ -1,4 +1,5 @@
 ﻿using Crpg.Application.Characters.Models;
+using Crpg.Application.Common.Exceptions;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Games.Commands;
 using Crpg.Application.Games.Models;
@@ -6,6 +7,8 @@ using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Users;
+using Crpg.Persistence;
+using Crpg.Sdk.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using NUnit.Framework;
@@ -96,8 +99,8 @@ public class UpdateGameUsersCommandTest : TestBase
         UpdateGameUsersCommand.Handler handler = new(ActDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object, gameModeServiceServiceMock.Object);
         var result = await handler.Handle(new UpdateGameUsersCommand
         {
-            Updates = new[]
-            {
+            Updates =
+            [
                 new GameUserUpdate
                 {
                     CharacterId = user.Characters[0].Id,
@@ -120,12 +123,12 @@ public class UpdateGameUsersCommandTest : TestBase
                         },
                     },
                     Instance = "crpg01a",
-                    BrokenItems = new[]
-                    {
-                        new GameUserDamagedItem { UserItemId = user.Characters[0].EquippedItems[0].UserItemId, RepairCost = 30 },
-                    },
-                },
-            },
+                    BrokenItems =
+                    [
+                        new GameUserDamagedItem { UserItemId = user.Characters[0].EquippedItems[0].UserItemId, RepairCost = 30 }
+                    ],
+                }
+            ],
         }, CancellationToken.None);
 
         var data = result.Data!;
@@ -141,7 +144,9 @@ public class UpdateGameUsersCommandTest : TestBase
         Assert.That(data.UpdateResults[0].EffectiveReward.Gold, Is.EqualTo(200));
         Assert.That(data.UpdateResults[0].EffectiveReward.LevelUp, Is.False);
 
-        var dbCharacter = await AssertDb.Characters.FirstAsync(c => c.Id == user.Characters[0].Id);
+        var dbCharacter = await AssertDb.Characters
+            .Include(character => character.Statistics)
+            .FirstAsync(c => c.Id == user.Characters[0].Id);
         CharacterStatistics? charStats = dbCharacter.Statistics.FirstOrDefault(s => s.GameMode == GameMode.CRPGBattle);
         Assert.That(charStats?.Kills, Is.EqualTo(6));
         Assert.That(charStats?.Deaths, Is.EqualTo(8));
@@ -196,14 +201,14 @@ public class UpdateGameUsersCommandTest : TestBase
         UpdateGameUsersCommand.Handler handler = new(ActDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object, gameModeServiceServiceMock.Object);
         var result = await handler.Handle(new UpdateGameUsersCommand
         {
-            Updates = new[]
-            {
+            Updates =
+            [
                 new GameUserUpdate
                 {
                     Instance = "crpg99a",
                     CharacterId = user.Characters[0].Id,
-                    BrokenItems = new[]
-                    {
+                    BrokenItems =
+                    [
                         new GameUserDamagedItem { UserItemId = user.Characters[0].EquippedItems[0].UserItemId, RepairCost = 100 },
                         new GameUserDamagedItem { UserItemId = user.Characters[0].EquippedItems[1].UserItemId, RepairCost = 150 },
                         new GameUserDamagedItem { UserItemId = user.Characters[0].EquippedItems[2].UserItemId, RepairCost = 200 },
@@ -215,10 +220,10 @@ public class UpdateGameUsersCommandTest : TestBase
                         new GameUserDamagedItem { UserItemId = user.Characters[0].EquippedItems[8].UserItemId, RepairCost = 500 },
                         new GameUserDamagedItem { UserItemId = user.Characters[0].EquippedItems[9].UserItemId, RepairCost = 550 },
                         new GameUserDamagedItem { UserItemId = user.Characters[0].EquippedItems[10].UserItemId, RepairCost = 600 },
-                        new GameUserDamagedItem { UserItemId = user.Characters[0].EquippedItems[11].UserItemId, RepairCost = 650 },
-                    },
-                },
-            },
+                        new GameUserDamagedItem { UserItemId = user.Characters[0].EquippedItems[11].UserItemId, RepairCost = 650 }
+                    ],
+                }
+            ],
         }, CancellationToken.None);
 
         var data = result.Data!;
@@ -288,27 +293,27 @@ public class UpdateGameUsersCommandTest : TestBase
         UpdateGameUsersCommand.Handler handler = new(ActDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object, gameModeServiceServiceMock.Object);
         var result = await handler.Handle(new UpdateGameUsersCommand
         {
-            Updates = new[]
-            {
+            Updates =
+            [
                 new GameUserUpdate
                 {
                     Instance = "crpg99a",
                     CharacterId = user.Characters[0].Id,
-                    BrokenItems = new[]
-                    {
+                    BrokenItems =
+                    [
                         new GameUserDamagedItem { UserItemId = userItem0.Id, RepairCost = 1000 },
                         new GameUserDamagedItem { UserItemId = userItem1.Id, RepairCost = 1000 },
                         new GameUserDamagedItem { UserItemId = userItem2.Id, RepairCost = 1000 },
-                        new GameUserDamagedItem { UserItemId = userItem3.Id, RepairCost = 1000 },
-                    },
-                },
-            },
+                        new GameUserDamagedItem { UserItemId = userItem3.Id, RepairCost = 1000 }
+                    ],
+                }
+            ],
         }, CancellationToken.None);
 
         var data = result.Data!;
         Assert.That(data.UpdateResults[0].User.Gold, Is.EqualTo(0));
         Assert.That(data.UpdateResults[0].User.Character.EquippedItems.Select(ei => ei.UserItem.Id),
-            Is.EquivalentTo(new[] { userItem0.Id, userItem1.Id, userItem4.Id }));
+            Is.EquivalentTo([userItem0.Id, userItem1.Id, userItem4.Id]));
 
         Assert.That(data.UpdateResults[0].RepairedItems.Count, Is.EqualTo(4));
         Assert.That(data.UpdateResults[0].RepairedItems.Count(i => i.Broke), Is.EqualTo(2));
@@ -319,7 +324,7 @@ public class UpdateGameUsersCommandTest : TestBase
             .Include(c => c.EquippedItems)
             .FirstAsync(c => c.Id == user.Characters[1].Id);
         Assert.That(characterDb1.EquippedItems.Select(ei => ei.UserItemId),
-            Is.EquivalentTo(new[] { userItem0.Id }));
+            Is.EquivalentTo([userItem0.Id]));
 
         // Check the user item ranks were set to -1.
         var userItemsDb = await AssertDb.UserItems
@@ -328,6 +333,150 @@ public class UpdateGameUsersCommandTest : TestBase
         foreach (var userItem in userItemsDb)
         {
             Assert.That(userItem.IsBroken, Is.True);
+        }
+    }
+
+    [Test]
+    public async Task ShouldRetryOnConcurrencyConflictAndSucceed()
+    {
+        User user = new()
+        {
+            Gold = 1000,
+            Characters = new List<Character>
+            {
+                new()
+                {
+                    Name = "retry-char",
+                    EquippedItems =
+                    {
+                        new EquippedItem
+                        {
+                            UserItem = new UserItem { Item = new Item() },
+                            Slot = ItemSlot.Body,
+                        },
+                    },
+                },
+            },
+        };
+        ArrangeDb.Users.Add(user);
+        await ArrangeDb.SaveChangesAsync();
+
+        int saveCallCount = 0;
+        using var failingDb = new ThrowingCrpgDbContext(DbOptions!, failOnSaveCount: 1, callCounter: () => ++saveCallCount);
+
+        Mock<ICharacterService> characterServiceMock = new();
+        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+        Mock<IGameModeService> gameModeServiceServiceMock = new();
+
+        UpdateGameUsersCommand.Handler handler = new(failingDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object, gameModeServiceServiceMock.Object);
+        var result = await handler.Handle(new UpdateGameUsersCommand
+        {
+            Updates =
+            [
+                new GameUserUpdate
+                {
+                    CharacterId = user.Characters[0].Id,
+                    Reward = new GameUserReward { Experience = 0, Gold = 100 },
+                    Statistics = new CharacterStatisticsViewModel
+                    {
+                        Rating = new CharacterRatingViewModel(),
+                    },
+                    Instance = "crpg01a",
+                    BrokenItems = [],
+                }
+            ],
+        }, CancellationToken.None);
+
+        Assert.That(result.Errors, Is.Null);
+        Assert.That(result.Data!.UpdateResults.Count, Is.EqualTo(1));
+        Assert.That(result.Data.UpdateResults[0].User.Gold, Is.EqualTo(1100));
+        Assert.That(saveCallCount, Is.EqualTo(2));
+    }
+
+    [Test]
+    public async Task ShouldThrowAfterMaxRetriesExhausted()
+    {
+        User user = new()
+        {
+            Gold = 1000,
+            Characters = new List<Character>
+            {
+                new()
+                {
+                    Name = "exhaust-char",
+                    EquippedItems =
+                    {
+                        new EquippedItem
+                        {
+                            UserItem = new UserItem { Item = new Item() },
+                            Slot = ItemSlot.Body,
+                        },
+                    },
+                },
+            },
+        };
+        ArrangeDb.Users.Add(user);
+        await ArrangeDb.SaveChangesAsync();
+
+        int saveCallCount = 0;
+        using var failingDb = new ThrowingCrpgDbContext(DbOptions!, failOnSaveCount: UpdateGameUsersCommand.Handler.MaxRetries + 1, callCounter: () => ++saveCallCount);
+
+        Mock<ICharacterService> characterServiceMock = new();
+        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+        Mock<IGameModeService> gameModeServiceServiceMock = new();
+
+        UpdateGameUsersCommand.Handler handler = new(failingDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object, gameModeServiceServiceMock.Object);
+
+        Assert.ThrowsAsync<ConflictException>(async () =>
+            await handler.Handle(new UpdateGameUsersCommand
+            {
+                Updates =
+                [
+                    new GameUserUpdate
+                    {
+                        CharacterId = user.Characters[0].Id,
+                        Reward = new GameUserReward { Experience = 0, Gold = 100 },
+                        Statistics = new CharacterStatisticsViewModel
+                        {
+                            Rating = new CharacterRatingViewModel(),
+                        },
+                        Instance = "crpg01a",
+                        BrokenItems = [],
+                    }
+                ],
+            }, CancellationToken.None));
+
+        Assert.That(saveCallCount, Is.EqualTo(UpdateGameUsersCommand.Handler.MaxRetries));
+    }
+
+    /// <summary>
+    /// A CrpgDbContext subclass that throws <see cref="ConflictException"/>
+    /// on the first N calls to SaveChangesAsync, then delegates to the base implementation.
+    /// Shares the same in-memory database as the test setup via the provided options.
+    /// </summary>
+    private class ThrowingCrpgDbContext : CrpgDbContext
+    {
+        private readonly int _failOnSaveCount;
+        private readonly Func<int> _callCounter;
+        private int _saveAttempts;
+
+        public ThrowingCrpgDbContext(DbContextOptions<CrpgDbContext> options, int failOnSaveCount, Func<int> callCounter)
+            : base(options, Mock.Of<IDateTime>())
+        {
+            _failOnSaveCount = failOnSaveCount;
+            _callCounter = callCounter;
+        }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            _saveAttempts++;
+            _callCounter();
+            if (_saveAttempts <= _failOnSaveCount)
+            {
+                throw new ConflictException(new DbUpdateConcurrencyException("Simulated concurrency conflict"));
+            }
+
+            return base.SaveChangesAsync(cancellationToken);
         }
     }
 }

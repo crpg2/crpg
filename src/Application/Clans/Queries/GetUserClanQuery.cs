@@ -22,7 +22,7 @@ public record GetUserClanQuery : IMediatorRequest<UserClanViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<UserClanViewModel>> Handle(GetUserClanQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserClanViewModel>> Handle(GetUserClanQuery req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .AsNoTracking()

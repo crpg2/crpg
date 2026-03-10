@@ -13,8 +13,9 @@ public class Battle : AuditableEntity
     /// <summary>The date the battle takes place. Null if the battle is not yet scheduled.</summary>
     public DateTime? ScheduledFor { get; set; }
 
-    public List<BattleFighter> Fighters { get; set; } = new();
-    public List<BattleFighterApplication> FighterApplications { get; set; } = new();
-    public List<BattleMercenary> Mercenaries { get; set; } = new();
-    public List<BattleMercenaryApplication> MercenaryApplications { get; set; } = new();
+    public List<BattleFighter> Fighters { get; set; } = [];
+    public List<BattleFighterApplication> FighterApplications { get; set; } = [];
+    public List<BattleParticipant> Participants { get; set; } = [];
+    public List<BattleMercenaryApplication> MercenaryApplications { get; set; } = [];
+    public List<BattleSideBriefing> SideBriefings { get; set; } = [];
 }

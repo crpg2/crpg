@@ -25,11 +25,11 @@ public class CrpgTrainingGroundUiHandler : MissionView
         ViewOrderPriority = 15;
         _client = Mission.GetMissionBehavior<CrpgTrainingGroundMissionMultiplayerClient>();
         _dataSource = new(MissionScreen.CombatCamera, _client);
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority);
+        _gauntletLayer = new GauntletLayer("TrainingGroundHud", ViewOrderPriority);
         _gauntletLayer.LoadMovie("TrainingGroundHud", _dataSource);
         SpriteData spriteData = UIResourceManager.SpriteData;
         TwoDimensionEngineResourceContext resourceContext = UIResourceManager.ResourceContext;
-        ResourceDepot uIResourceDepot = UIResourceManager.UIResourceDepot;
+        ResourceDepot uIResourceDepot = UIResourceManager.ResourceDepot;
         _mpMissionCategory = spriteData.SpriteCategories["ui_mpmission"];
         _mpMissionCategory.Load(resourceContext, uIResourceDepot);
         MissionScreen.AddLayer(_gauntletLayer);
@@ -54,7 +54,7 @@ public class CrpgTrainingGroundUiHandler : MissionView
         _equipmentController!.OnEquipmentRefreshed -= OnEquipmentRefreshed;
         MissionPeer.OnEquipmentIndexRefreshed -= OnPeerEquipmentIndexRefreshed;
         _lobbyComponent!.OnPostMatchEnded -= OnPostMatchEnded;
-        NativeOptions.OnNativeOptionChanged = (NativeOptions.OnNativeOptionChangedDelegate)Delegate.Remove(NativeOptions.OnNativeOptionChanged, new NativeOptions.OnNativeOptionChangedDelegate(OnNativeOptionChanged));
+        NativeOptions.OnNativeOptionChanged = (NativeOptions.OnNativeOptionChangedDelegate?)Delegate.Remove(NativeOptions.OnNativeOptionChanged, new NativeOptions.OnNativeOptionChangedDelegate(OnNativeOptionChanged));
     }
 
     public override void OnMissionScreenTick(float dt)
@@ -70,14 +70,6 @@ public class CrpgTrainingGroundUiHandler : MissionView
         {
             _dataSource.Markers.RefreshPeerEquipments();
             _isPeerEquipmentsDirty = false;
-        }
-    }
-
-    private void OnNativeOptionChanged(NativeOptions.NativeOptionsType optionType)
-    {
-        if (optionType == NativeOptions.NativeOptionsType.ScreenResolution)
-        {
-            _dataSource!.OnScreenResolutionChanged();
         }
     }
 
@@ -120,6 +112,14 @@ public class CrpgTrainingGroundUiHandler : MissionView
     public void OnPeerEquipmentIndexRefreshed(MissionPeer peer, int equipmentSetIndex)
     {
         _dataSource!.Markers.OnPeerEquipmentRefreshed(peer);
+    }
+
+    private void OnNativeOptionChanged(NativeOptions.NativeOptionsType optionType)
+    {
+        if (optionType == NativeOptions.NativeOptionsType.ScreenResolution)
+        {
+            _dataSource!.OnScreenResolutionChanged();
+        }
     }
 
     private void OnEquipmentRefreshed(MissionPeer peer)

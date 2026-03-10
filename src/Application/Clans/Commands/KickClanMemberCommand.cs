@@ -35,7 +35,7 @@ public record KickClanMemberCommand : IMediatorRequest
             _userNotificationService = userNotificationService;
         }
 
-        public async Task<Result> Handle(KickClanMemberCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(KickClanMemberCommand req, CancellationToken cancellationToken)
         {
             var userRes = await _clanService.GetClanMember(_db, req.UserId, req.ClanId, cancellationToken);
             if (userRes.Errors != null)
@@ -57,6 +57,7 @@ public record KickClanMemberCommand : IMediatorRequest
                 return new Result();
             }
 
+            // TODO: FIXME: Check whether the armory is cleared if the player is kicked (see _clanService.LeaveClan)
             var kickedUserRes = await _clanService.GetClanMember(_db, req.KickedUserId, req.ClanId, cancellationToken);
             if (kickedUserRes.Errors != null)
             {

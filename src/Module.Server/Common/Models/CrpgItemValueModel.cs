@@ -1,7 +1,7 @@
 ﻿using Crpg.Module.Helpers;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
-using TaleWorlds.MountAndBlade;
+using Extensions = TaleWorlds.Core.Extensions;
 
 namespace Crpg.Module.Common.Models;
 
@@ -15,8 +15,8 @@ internal class CrpgItemValueModel : ItemValueModel
         _strikeMagnitudeModel = new(constants);
     }
 
-    private static readonly float[] ItemPriceCoeffs = new float[] { 300f, 700f, 0f };
-    private static readonly float[] ArmorPriceCoeffs = new float[] { 1f, 4f, 0f, 0f, 0f };
+    private static readonly float[] ItemPriceCoeffs = [300f, 700f, 0f];
+    private static readonly float[] ArmorPriceCoeffs = [1f, 4f, 0f, 0f, 0f];
     private static readonly Dictionary<ItemObject.ItemTypeEnum, (int desiredMaxPrice, float[] priceCoeffs)> PricesAndCoeffs = new()
     {
         [ItemObject.ItemTypeEnum.HeadArmor] = (8700, ArmorPriceCoeffs),
@@ -53,6 +53,11 @@ internal class CrpgItemValueModel : ItemValueModel
             / (1 + heirloomLevel / 10f);
     }
 
+    public override bool GetIsTransferable(ItemObject item)
+    {
+        return false;
+    }
+
     public override float CalculateTier(ItemObject item)
     {
         return item.ItemComponent switch
@@ -73,6 +78,36 @@ internal class CrpgItemValueModel : ItemValueModel
     public override int CalculateValue(ItemObject item)
     {
         return GetEquipmentValueFromTier(item.Tierf, PricesAndCoeffs[item.ItemType].desiredMaxPrice, PricesAndCoeffs[item.ItemType].priceCoeffs, 50);
+    }
+
+    public static float CalculateDamageTypeFactor(DamageTypes damageType)
+    {
+        return damageType switch
+        {
+            DamageTypes.Blunt => 3.3f,
+            DamageTypes.Pierce => 2.2f,
+            _ => 1.0f,
+        };
+    }
+
+    public static float CalculateDamageTypeFactorForAmmo(DamageTypes damageType)
+    {
+        return damageType switch
+        {
+            DamageTypes.Blunt => 2f,
+            DamageTypes.Pierce => 1.75f,
+            _ => 1.02f,
+        };
+    }
+
+    public static float CalculateDamageTypeFactorForThrown(DamageTypes damageType)
+    {
+        return damageType switch
+        {
+            DamageTypes.Blunt => 1.685f,
+            DamageTypes.Pierce => 1.262f,
+            _ => 1.0695f,
+        };
     }
 
     private int GetEquipmentValueFromTier(float tier, int desiredMaxPrice, float[] priceCoeffs, int desiredTierZeroPrice)
@@ -114,7 +149,7 @@ internal class CrpgItemValueModel : ItemValueModel
         {
 
             ItemObject.ItemTypeEnum.HorseHarness => 10 * armorPower / bestArmorPower / (float)Math.Pow(1 + heirloomLevel / 16f, 1f),
-            _ => (10 * armorPower) / (bestArmorPower * (float)Math.Pow(armorComponent.Item.Weight + 8, 0.5f)) / (float)Math.Pow(1 + heirloomLevel / 20f, 1f),
+            _ => 10 * armorPower / (bestArmorPower * (float)Math.Pow(armorComponent.Item.Weight + 8, 0.5f)) / (float)Math.Pow(1 + heirloomLevel / 20f, 1f),
         };
     }
 
@@ -146,17 +181,13 @@ internal class CrpgItemValueModel : ItemValueModel
         {
             return CalculateTierNonCraftedWeapon(weaponComponent);
         }
-        else
+
+        if (isAThrowingWeapon && CalculateThrownWeaponTier(weaponComponent) > CalculateTierMeleeWeapon(weaponComponent))
         {
-            if (isAThrowingWeapon && CalculateThrownWeaponTier(weaponComponent) > CalculateTierMeleeWeapon(weaponComponent))
-            {
-                return CalculateThrownWeaponTier(weaponComponent);
-            }
-            else
-            {
-                return CalculateTierMeleeWeapon(weaponComponent);
-            }
+            return CalculateThrownWeaponTier(weaponComponent);
         }
+
+        return CalculateTierMeleeWeapon(weaponComponent);
     }
 
     private float CalculateTierMeleeWeapon(WeaponComponent weaponComponent)
@@ -265,7 +296,7 @@ internal class CrpgItemValueModel : ItemValueModel
                     swingLengthTier = 0.455f * (float)Math.Pow(0.8f + weapon.WeaponLength * 0.01f, 2f);
                     break;
                 case WeaponClass.Mace:
-                    swingLengthTier = 0.49f * (float)Math.Pow(0.8f + weapon.WeaponLength * 0.01f, 2f);
+                    swingLengthTier = 0.4f * (float)Math.Pow(0.8f + weapon.WeaponLength * 0.01f, 2f);
                     break;
                 case WeaponClass.TwoHandedSword:
                 case WeaponClass.TwoHandedMace:
@@ -287,7 +318,7 @@ internal class CrpgItemValueModel : ItemValueModel
                     thrustLengthTier = 0f;
                     break;
                 default:
-                    throw new Exception(weapon.WeaponClass.ToString() + " has no swingTierAssociated");
+                    throw new Exception(weapon.WeaponClass + " has no swingTierAssociated");
             }
 
             float swinghandlingFactor = weapon.Handling / 10000f;
@@ -309,37 +340,8 @@ internal class CrpgItemValueModel : ItemValueModel
             }
         }
 
-        return maxTier * maxTier / 10f; // makes weapon of lower Tier Better
-    }
-
-    public static float CalculateDamageTypeFactor(DamageTypes damageType)
-    {
-        return damageType switch
-        {
-            DamageTypes.Blunt => 3.3f,
-            DamageTypes.Pierce => 2.2f,
-            _ => 1.0f,
-        };
-    }
-
-    public static float CalculateDamageTypeFactorForAmmo(DamageTypes damageType)
-    {
-        return damageType switch
-        {
-            DamageTypes.Blunt => 2f,
-            DamageTypes.Pierce => 1.75f,
-            _ => 1.02f,
-        };
-    }
-
-    public static float CalculateDamageTypeFactorForThrown(DamageTypes damageType)
-    {
-        return damageType switch
-        {
-            DamageTypes.Blunt => 1.685f,
-            DamageTypes.Pierce => 1.262f,
-            _ => 1.0695f,
-        };
+        float stretchingFactor = 2.0f; // Change Me To stretch weapon even more so lower tiers are more worth it.
+        return (float)(Math.Pow(maxTier, stretchingFactor) / Math.Pow(10.0f, stretchingFactor - 1.0f)); // makes weapon of lower Tier Better
     }
 
     private float CalculateTierNonCraftedWeapon(WeaponComponent weaponComponent)
@@ -367,7 +369,7 @@ internal class CrpgItemValueModel : ItemValueModel
 
     private float CalculateThrownWeaponTier(WeaponComponent weaponComponent)
     {
-        WeaponComponentData weapon = weaponComponent.Weapons.MaxBy(a => a.MaxDataValue);
+        WeaponComponentData weapon = Extensions.MaxBy(weaponComponent.Weapons, a => a.MaxDataValue)!;
         float heirloomLevel = ItemToHeirloomLevel(weaponComponent.Item);
         float damageTypeFactor = CalculateDamageTypeFactorForThrown(weapon.ThrustDamageType == DamageTypes.Invalid ? weapon.SwingDamageType : weapon.ThrustDamageType);
         float damageFactor = (float)Math.Pow(damageTypeFactor * weapon.ThrustDamage, 2.4f);
@@ -402,6 +404,7 @@ internal class CrpgItemValueModel : ItemValueModel
                 * weapon.Accuracy / 10f
                 * (float)Math.Pow(weapon.ThrustSpeed, 0.5f) / 10f
                 * (weapon.ItemUsage == "crossbow_light" ? 2f : 1f)
+                * (weapon.ItemUsage == "crpg_light_gun" ? 2f : 1f)
                 * (!weapon.WeaponFlags.HasAnyFlag(WeaponFlags.CantReloadOnHorseback) ? 1.85f : 1f)
                 / crossbowscaler;
 
@@ -416,9 +419,9 @@ internal class CrpgItemValueModel : ItemValueModel
     private float CalculateShieldTier(WeaponComponent weaponComponent)
     {
         WeaponComponentData weapon = weaponComponent.Weapons[0];
-        float shieldTier = (1.0f * weapon.MaxDataValue
-                * (1.0f + ArmorVsCutToHpEffectivenessRatio(weapon.BodyArmor) * 1.75f))
-                * 2.1f
+        float shieldTier = 1.0f * weapon.MaxDataValue
+                                * (1.0f + ArmorVsCutToHpEffectivenessRatio(weapon.BodyArmor) * 1.75f)
+                                * 2.1f
                 / 1300f
                 * 10f;
         if (weapon.WeaponClass == WeaponClass.LargeShield)
@@ -452,11 +455,12 @@ internal class CrpgItemValueModel : ItemValueModel
             ItemObject.ItemTypeEnum.Arrows => arrowsTier * arrowsTier / 10f,
 
             ItemObject.ItemTypeEnum.Bolts => boltsTier * boltsTier / 10f,
+            ItemObject.ItemTypeEnum.Bullets => boltsTier * boltsTier / 10f,
             _ => 10f,
         };
     }
 
-    private float ItemToHeirloomLevel(ItemObject item)
+    private float ItemToHeirloomLevel(ItemObject? item)
     {
         if (item == null)
         {

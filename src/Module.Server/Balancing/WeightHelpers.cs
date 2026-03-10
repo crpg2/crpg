@@ -9,7 +9,7 @@ internal static class WeightHelpers
 
     internal static float ComputeTeamWeightedDifference(GameMatch gameMatch)
     {
-        return ComputeTeamWeight(gameMatch.TeamA, MatchBalancer.PowerParameter) - ComputeTeamWeight(gameMatch.TeamB, MatchBalancer.PowerParameter);
+        return ComputeTeamWeight(gameMatch.TeamA) - ComputeTeamWeight(gameMatch.TeamB);
     }
 
     internal static float ComputeTeamWeight(List<WeightedCrpgUser> team, float p = MatchBalancer.PowerParameter)

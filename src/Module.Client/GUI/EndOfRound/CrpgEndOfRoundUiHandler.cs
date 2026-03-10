@@ -8,11 +8,11 @@ namespace Crpg.Module.GUI.EndOfRound;
 
 internal class CrpgEndOfRoundUiHandler : MissionView
 {
-    private CrpgEndOfRoundVm _dataSource = default!;
-    private GauntletLayer _gauntletLayer = default!;
-    private MissionLobbyComponent _missionLobbyComponent = default!;
-    private MissionScoreboardComponent _scoreboardComponent = default!;
-    private MissionMultiplayerGameModeBaseClient _mpGameModeBase = default!;
+    private CrpgEndOfRoundVm _dataSource = null!;
+    private GauntletLayer _gauntletLayer = null!;
+    private MissionLobbyComponent _missionLobbyComponent = null!;
+    private MissionScoreboardComponent _scoreboardComponent = null!;
+    private MissionMultiplayerGameModeBaseClient _mpGameModeBase = null!;
     private IRoundComponent RoundComponent => _mpGameModeBase.RoundComponent;
 
     public override void OnMissionScreenInitialize()
@@ -23,7 +23,7 @@ internal class CrpgEndOfRoundUiHandler : MissionView
         _mpGameModeBase = Mission.GetMissionBehavior<MissionMultiplayerGameModeBaseClient>();
         ViewOrderPriority = 23;
         _dataSource = new CrpgEndOfRoundVm(_scoreboardComponent, _missionLobbyComponent, RoundComponent);
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority);
+        _gauntletLayer = new GauntletLayer("CrpgEndOfRound", ViewOrderPriority);
         _gauntletLayer.LoadMovie("CrpgEndOfRound", _dataSource);
         MissionScreen.AddLayer(_gauntletLayer);
         ScreenManager.SetSuspendLayer(_gauntletLayer, true);

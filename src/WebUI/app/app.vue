@@ -1,7 +1,18 @@
 <script setup lang="ts">
-import { usePageLoadingProvider } from '~/composables/app/use-page-loading'
+import type { Locale, Messages } from '@nuxt/ui'
 
-const [activePageLoading] = usePageLoadingProvider()
+import { en, ru } from '@nuxt/ui/locale'
+
+import { usePageLoading } from '~/composables/app/use-page-loading'
+
+const [activePageLoading] = usePageLoading()
+
+const { locale } = useI18n()
+
+const uiLocales: Record<string, Locale<Messages>> = {
+  en,
+  ru,
+}
 </script>
 
 <template>
@@ -13,6 +24,7 @@ const [activePageLoading] = usePageLoadingProvider()
     :tooltip="{
       delayDuration: 300,
     }"
+    :locale="uiLocales[locale] ?? en"
   >
     <NuxtLoadingIndicator color="rgb(210 187 138)" />
     <NuxtRouteAnnouncer />

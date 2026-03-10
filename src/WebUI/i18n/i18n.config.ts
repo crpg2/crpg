@@ -38,24 +38,12 @@ export default defineI18nConfig(() => {
           year: 'numeric',
         },
         short: {
-          dateStyle: 'short',
-        },
-        time: {
-          hour: 'numeric',
-          minute: 'numeric',
-        },
-      },
-      cn: {
-        long: {
           day: 'numeric',
           hour: 'numeric',
+          hour12: false,
           minute: 'numeric',
-          month: 'short',
-          weekday: 'short',
+          month: 'numeric',
           year: 'numeric',
-        },
-        short: {
-          dateStyle: 'short',
         },
         time: {
           hour: 'numeric',
@@ -79,6 +67,11 @@ export default defineI18nConfig(() => {
           unit: 'second',
           unitDisplay: 'narrow',
         },
+        compact: {
+          notation: 'compact',
+          compactDisplay: 'short',
+          maximumFractionDigits: 1,
+        },
       },
       ru: {
         decimal: {
@@ -95,21 +88,10 @@ export default defineI18nConfig(() => {
           unit: 'second',
           unitDisplay: 'narrow',
         },
-      },
-      cn: {
-        decimal: {
-          maximumFractionDigits: 3,
-          style: 'decimal',
-        },
-        percent: {
-          minimumFractionDigits: 2,
-          style: 'percent',
-        },
-        second: {
-          maximumFractionDigits: 3,
-          style: 'unit',
-          unit: 'second',
-          unitDisplay: 'narrow',
+        compact: {
+          notation: 'compact',
+          compactDisplay: 'short',
+          maximumFractionDigits: 1,
         },
       },
     },

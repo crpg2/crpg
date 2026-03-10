@@ -552,12 +552,16 @@ public class UsersController : BaseController
     /// Upgrade item.
     /// </summary>
     /// <param name="id">User item id.</param>
+    /// <param name="req">The upgrade request.</param>
     /// <returns>The upgraded item.</returns>
     /// <response code="200">Upgraded.</response>
     /// <response code="400">Bad Request.</response>
     [HttpPut("self/items/{id}/upgrade")]
-    public Task<ActionResult<Result<UserItemViewModel>>> UpgradeUserItem([FromRoute] int id) =>
-        ResultToActionAsync(Mediator.Send(new UpgradeUserItemCommand { UserItemId = id, UserId = CurrentUser.User!.Id }));
+    public Task<ActionResult<Result<UserItemViewModel>>> UpgradeUserItem([FromRoute] int id, [FromBody] UpgradeUserItemCommand req)
+    {
+        req = req with { UserItemId = id, UserId = CurrentUser.User!.Id };
+        return ResultToActionAsync(Mediator.Send(req));
+    }
 
     /// <summary>
     /// Sells item for the current user.

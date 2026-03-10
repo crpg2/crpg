@@ -42,7 +42,7 @@ public record ConvertCharacterCharacteristicsCommand : IMediatorRequest<Characte
             _mapper = mapper;
         }
 
-        public async Task<Result<CharacterCharacteristicsViewModel>> Handle(ConvertCharacterCharacteristicsCommand req,
+        public async ValueTask<Result<CharacterCharacteristicsViewModel>> Handle(ConvertCharacterCharacteristicsCommand req,
             CancellationToken cancellationToken)
         {
             var character = await _db.Characters.FirstOrDefaultAsync(c =>

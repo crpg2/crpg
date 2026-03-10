@@ -1,5 +1,4 @@
-﻿using System;
-using Crpg.Domain.Entities.GameServers;
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Crpg.Persistence.Migrations;
@@ -19,7 +18,7 @@ public partial class AddIdempotencyKeys : Migration
             {
                 key = table.Column<string>(type: "text", nullable: false),
                 created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                status = table.Column<UserUpdateStatus>(type: "user_update_status", nullable: false),
+                status = table.Column<string>(type: "user_update_status", nullable: false),
             },
             constraints: table =>
             {

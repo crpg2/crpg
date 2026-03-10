@@ -10,7 +10,6 @@ using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.FlagMarker.Targets;
 using TaleWorlds.MountAndBlade.Objects;
-using TaleWorlds.MountAndBlade.ViewModelCollection.HUD.FormationMarker;
 using TaleWorlds.PlatformService;
 using TaleWorlds.PlayerServices;
 using MissionSiegeEngineMarkerTargetVM = TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.FlagMarker.Targets.MissionSiegeEngineMarkerTargetVM;
@@ -39,11 +38,11 @@ internal class CrpgMissionMarkerVm : ViewModel
     private bool _fadeOutTimerStarted;
     private float _fadeOutTimer;
     private bool _isEnabled;
-    private MBBindingList<MissionFlagMarkerTargetVM> _flagTargets = default!;
-    private MBBindingList<MissionPeerMarkerTargetVM> _peerTargets = default!;
-    private MBBindingList<MissionSiegeEngineMarkerTargetVM> _siegeEngineTargets = default!;
-    private MBBindingList<MissionAlwaysVisibleMarkerTargetVM> _alwaysVisibleTargets = default!;
-    private bool _isVipOutlined = false;
+    private MBBindingList<MissionFlagMarkerTargetVM> _flagTargets = null!;
+    private MBBindingList<MissionPeerMarkerTargetVM> _peerTargets = null!;
+    private MBBindingList<MissionSiegeEngineMarkerTargetVM> _siegeEngineTargets = null!;
+    private MBBindingList<MissionAlwaysVisibleMarkerTargetVM> _alwaysVisibleTargets = null!;
+    private bool _isVipOutlined;
 
     public CrpgMissionMarkerVm(Camera missionCamera, MissionMultiplayerGameModeBaseClient gameModeClient)
     {
@@ -189,7 +188,6 @@ internal class CrpgMissionMarkerVm : ViewModel
             {
                 HighlightVipAgent(true);
             }
-
         }
         else
         {
@@ -252,7 +250,7 @@ internal class CrpgMissionMarkerVm : ViewModel
         }
 
         SiegeEngineTargets.Clear();
-        foreach (GameEntity item in Mission.Current.GetActiveEntitiesWithScriptComponentOfType<SiegeWeapon>())
+        foreach (WeakGameEntity item in Mission.Current.GetActiveEntitiesWithScriptComponentOfType<SiegeWeapon>())
         {
             SiegeWeapon firstScriptOfType = item.GetFirstScriptOfType<SiegeWeapon>();
             if (newTeam.Side == firstScriptOfType.Side)
@@ -273,8 +271,8 @@ internal class CrpgMissionMarkerVm : ViewModel
             {
                 if (enabled && !_isVipOutlined)
                 {
-                    uint focusedContourColor = new TaleWorlds.Library.Color(1f, 0.84f, 0.35f, 1f).ToUnsignedInteger();
-                    dtvClient.VipAgent.AgentVisuals?.SetContourColor(focusedContourColor, true);
+                    uint focusedContourColor = new Color(1f, 0.84f, 0.35f).ToUnsignedInteger();
+                    dtvClient.VipAgent.AgentVisuals?.SetContourColor(focusedContourColor);
                     _isVipOutlined = true;
                 }
                 else if (!enabled && _isVipOutlined)

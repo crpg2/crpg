@@ -80,7 +80,7 @@
                                       <Children>
                                         <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!SteamProfileFrame.Width" SuggestedHeight="!SteamProfileFrame.Height" HorizontalAlignment="Center" VerticalAlignment="Center" UpdateChildrenStates="true">
                                           <Children>
-                                            <ImageIdentifierWidget DataSource="{Avatar}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="44" SuggestedHeight="44" HorizontalAlignment="Center" VerticalAlignment="Center" AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" MaterialAlphaFactor="0.7" />
+                                            <ImageIdentifierWidget DataSource="{Avatar}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="44" SuggestedHeight="44" HorizontalAlignment="Center" VerticalAlignment="Center" AdditionalArgs="@AdditionalArgs" ImageId="@Id" TextureProviderName="@TextureProviderName" MaterialAlphaFactor="0.7" />
                                             <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="MPGeneral\MPScoreboard\steam_profile_frame" AlphaFactor="0.8" />
                                             <!--<MultiplayerCompassElement DataSource="{CompassElement}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Right" VerticalAlignment="Top" PositionXOffset="15" PositionYOffset="-20" MarginLeft="10" MarginRight="10" MarginTop="15" MarginBottom="10" />-->
 
@@ -88,7 +88,7 @@
                                             <Widget DataSource="{CompassElement}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="20" SuggestedHeight="20" HorizontalAlignment="Right" VerticalAlignment="Top">
                                               <Children>
                                                 <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginTop="-2" MarginBottom="-2" MarginLeft="-2" MarginRight="-2" HorizontalAlignment="Center" VerticalAlignment="Center" Sprite="BlankWhiteCircle" Color="@Color2" AlphaFactor="0.8"/>
-                                                <ImageIdentifierWidget DataSource="{Banner}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginTop="1.5" MarginBottom="1.5" MarginLeft="1.5" MarginRight="1.5"  HorizontalAlignment="Center" VerticalAlignment="Center" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode" CircularClipEnabled="true" IsCircularClipRadiusHalfOfHeight="true"/>
+                                                <ImageIdentifierWidget DataSource="{Banner}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginTop="1.5" MarginBottom="1.5" MarginLeft="1.5" MarginRight="1.5"  HorizontalAlignment="Center" VerticalAlignment="Center" ImageId="@Id" AdditionalArgs="@AdditionalArgs" TextureProviderName="@TextureProviderName" CircularClipEnabled="true" IsCircularClipRadiusHalfOfHeight="true"/>
                                               </Children>
                                             </Widget>
 

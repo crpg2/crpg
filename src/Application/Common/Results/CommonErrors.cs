@@ -1,6 +1,7 @@
 ﻿using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Users;
 
 namespace Crpg.Application.Common.Results;
@@ -19,6 +20,18 @@ internal static class CommonErrors
         Detail = $"Application with id '{applicationId}' was not found",
     };
 
+    public static Error ApplicationAlreadyExist(int applicationId) => new(ErrorType.Validation, ErrorCode.ApplicationAlreadyExist)
+    {
+        Title = "Application already exist",
+        Detail = $"Application with id '{applicationId}' already exist",
+    };
+
+    public static Error BattleMercenaryAlreadyExist(BattleSide side, BattleSide existSide) => new(ErrorType.Validation, ErrorCode.BattleMercenaryAlreadyExist)
+    {
+        Title = "You are already applied for the other side",
+        Detail = $"You want to apply up for side '{side}', but you are already applied for side '{existSide}'",
+    };
+
     public static Error BattleInvalidPhase(int battleId, BattlePhase phase) => new(ErrorType.Validation, ErrorCode.BattleInvalidPhase)
     {
         Title = "Cannot perform action during this battle phase",
@@ -35,6 +48,12 @@ internal static class CommonErrors
     {
         Title = "Battle is too far",
         Detail = $"Battle with id '{battleId}' is too far to perform the requested action",
+    };
+
+    public static Error BattleParticipantSlotsExceeded(int battleId, BattleSide side, int totalSlots) => new(ErrorType.Validation, ErrorCode.BattleParticipantSlotsExceeded)
+    {
+        Title = "The number of participants in the battle has been exceeded",
+        Detail = $"The number of participants in the battle with id '{battleId}' for side '{side}' has been exceeded. Limit '{totalSlots}'",
     };
 
     public static Error CharacterForTournament(int characterId) => new(ErrorType.Validation, ErrorCode.CharacterForTournament)
@@ -133,6 +152,18 @@ internal static class CommonErrors
         Detail = $"Fighter with id '{fighterId} is not a commander of the battle with id '{battleId}'",
     };
 
+    public static Error FighterNotFound(int fighterId, int battleId) => new(ErrorType.NotFound, ErrorCode.FighterNotFound)
+    {
+        Title = "Fighter was not found in the battle",
+        Detail = $"Fighter with id '{fighterId} was not found in the battle with id '{battleId}'",
+    };
+
+    public static Error BattleParticipantNotFound(int battleParticipantId, int battleId) => new(ErrorType.NotFound, ErrorCode.BattleParticipantNotFound)
+    {
+        Title = "Battle participant was not found",
+        Detail = $"Battle participant with id '{battleParticipantId}' was not found in the battle with id '{battleId}'",
+    };
+
     public static Error PartyFighter(int partyId, int battleId) => new(ErrorType.Validation, ErrorCode.PartyFighter)
     {
         Title = "Party is a fighter in this battle",
@@ -189,6 +220,13 @@ internal static class CommonErrors
             Detail = $"Parties with ids '{partyId1}' and '{partyId2}' are not in the side in the battle with id '{battleId}'",
         };
 
+    public static Error PendingBattleFighterApplicationNotExist(int partyId, int battleId, BattleSide side) =>
+        new(ErrorType.Validation, ErrorCode.PendingBattleFighterApplicationNotExist)
+        {
+            Title = "Party has no pending application to fight for the side",
+            Detail = $"Party with id '{partyId}' has no pending application to battle '{battleId}' for the side '{side}'",
+        };
+
     public static Error ItemAlreadyOwned(string itemId) => new(ErrorType.Validation, ErrorCode.ItemAlreadyOwned)
     {
         Title = "Item is already owned",
@@ -219,6 +257,12 @@ internal static class CommonErrors
         Detail = $"Item with id '{itemId}' is not upgradable",
     };
 
+    public static Error InvalidItemUpgradeRank(int rank, int minRank, int maxRank) => new(ErrorType.Validation, ErrorCode.InvalidItemUpgradeRank)
+    {
+        Title = "Invalid item upgrade rank",
+        Detail = $"Item upgrade rank must be between {minRank} and {maxRank}, but was {rank}",
+    };
+
     public static Error ItemNotBuyable(string itemId) => new(ErrorType.Validation, ErrorCode.ItemNotBuyable)
     {
         Title = "Item is not buyable",
@@ -235,6 +279,18 @@ internal static class CommonErrors
     {
         Title = "Item is not owned",
         Detail = $"Item with id '{itemId}' is not owned by the user",
+    };
+
+    public static Error PartyNotEnoughItems(string itemId, int required, int available) => new(ErrorType.Validation, ErrorCode.PartyNotEnoughItems)
+    {
+        Title = "Party doesn't have enough items",
+        Detail = $"Item '{itemId}' requires {required} but party has only {available}",
+    };
+
+    public static Error SettlementNotEnoughItems(string itemId, int required, int available) => new(ErrorType.Validation, ErrorCode.SettlementNotEnoughItems)
+    {
+        Title = "Settlement doesn't have enough items",
+        Detail = $"Item '{itemId}' requires {required} but settlement has only {available}",
     };
 
     public static Error ItemNotReforgeable(string itemId) => new(ErrorType.Validation, ErrorCode.ItemNotReforgeable)
@@ -285,6 +341,12 @@ internal static class CommonErrors
         Detail = $"Settlement with id '{settlementId}' was not found",
     };
 
+    public static Error SettlementNotEnoughTroops(int settlementId) => new(ErrorType.Validation, ErrorCode.SettlementNotEnoughTroops)
+    {
+        Title = "Settlement doesn't have enough troops",
+        Detail = $"Settlement with id '{settlementId}' doesn't have enough troops",
+    };
+
     public static Error SettlementTooFar(int settlementId) => new(ErrorType.Validation, ErrorCode.SettlementTooFar)
     {
         Title = "Settlement is too far",
@@ -308,10 +370,10 @@ internal static class CommonErrors
         Detail = $"User with id '{userId}' is already in the clan with id '{clanId}'",
     };
 
-    public static Error UserAlreadyRegisteredToStrategus(int userId) => new(ErrorType.Validation, ErrorCode.UserAlreadyRegisteredToStrategus)
+    public static Error UserAlreadyRegisteredToCampaign(int userId) => new(ErrorType.Validation, ErrorCode.UserAlreadyRegisteredToCampaign)
     {
-        Title = "User has already registered to strategus",
-        Detail = $"User with id '{userId}' has already registered to strategus",
+        Title = "User has already registered to the campaign",
+        Detail = $"User with id '{userId}' has already registered to the campaign",
     };
 
     public static Error UserItemIsNotBroken(int userItemId) =>
@@ -386,5 +448,41 @@ internal static class CommonErrors
     {
         Title = "Terrain was not found",
         Detail = $"Terrain with id '{terrainId}' was not found",
+    };
+
+    public static Error TransferOfferNotFound(int transferOfferId) => new(ErrorType.NotFound, ErrorCode.TransferOfferNotFound)
+    {
+        Title = "Transfer offer was not found",
+        Detail = $"Transfer offer with id '{transferOfferId}' was not found",
+    };
+
+    public static Error TransferOfferNotAllowed(int partyId, int transferOfferId) => new(ErrorType.Forbidden, ErrorCode.TransferOfferNotAllowed)
+    {
+        Title = "Party cannot respond to this offer",
+        Detail = $"This transfer offer is not for party with id '{partyId}'",
+    };
+
+    public static Error TransferOfferInvalidStatus(int transferOfferId, PartyTransferOfferStatus status) => new(ErrorType.Validation, ErrorCode.TransferOfferInvalidStatus)
+    {
+        Title = "Invalid transfer offer status",
+        Detail = $"Can only respond to offers with status 'Pending', current status is '{status}'",
+    };
+
+    public static Error TransferOfferMissingItems() => new(ErrorType.Validation, ErrorCode.TransferOfferMissingItems)
+    {
+        Title = "Offered items are required",
+        Detail = "When accepting an offer, you must specify what you offer in return",
+    };
+
+    public static Error TransferOfferInvalidAmount(string message) => new(ErrorType.Validation, ErrorCode.TransferOfferInvalidAmount)
+    {
+        Title = "Invalid transfer offer amount",
+        Detail = message,
+    };
+
+    public static Error TransferOfferInvalidItem(string itemId) => new(ErrorType.Validation, ErrorCode.TransferOfferInvalidItem)
+    {
+        Title = "Item not in original offer",
+        Detail = $"Item '{itemId}' is not in the original offer",
     };
 }

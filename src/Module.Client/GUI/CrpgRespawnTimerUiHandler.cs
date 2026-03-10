@@ -1,6 +1,5 @@
 ﻿using Crpg.Module.Common;
 using TaleWorlds.Engine.GauntletUI;
-using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 using TaleWorlds.TwoDimension;
 
@@ -23,10 +22,10 @@ internal class CrpgRespawnTimerUiHandler : MissionView
         base.OnMissionScreenInitialize();
 
         _mpMissionCategory = UIResourceManager.SpriteData.SpriteCategories["ui_mpmission"];
-        _mpMissionCategory.Load(UIResourceManager.ResourceContext, UIResourceManager.UIResourceDepot);
+        _mpMissionCategory.Load(UIResourceManager.ResourceContext, UIResourceManager.ResourceDepot);
 
         _dataSource = new CrpgRespawnTimerVm(Mission);
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority + 1);
+        _gauntletLayer = new GauntletLayer("CrpgRespawnTimer", ViewOrderPriority + 1);
         _gauntletLayer.LoadMovie("CrpgRespawnTimer", _dataSource);
         MissionScreen.AddLayer(_gauntletLayer);
         _respawnTimerClient = Mission.GetMissionBehavior<CrpgRespawnTimerClient>();

@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using TaleWorlds.Core;
-using TaleWorlds.Engine.GauntletUI;
+﻿using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer.GauntletUI.Mission;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
-using TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.TeamSelection;
-using TaleWorlds.TwoDimension;
 
-namespace Crpg.Module.Gui;
+namespace Crpg.Module.GUI.TeamSelection;
 
 [OverrideView(typeof(MultiplayerTeamSelectUIHandler))]
 public class CrpgGauntletTeamSelection : MissionView
@@ -68,7 +62,7 @@ public class CrpgGauntletTeamSelection : MissionView
         if (_scoreboardGauntletComponent != null)
         {
             MissionGauntletMultiplayerScoreboard scoreboardGauntletComponent = _scoreboardGauntletComponent;
-            scoreboardGauntletComponent.OnScoreboardToggled = (Action<bool>)Delegate.Remove(scoreboardGauntletComponent.OnScoreboardToggled, new Action<bool>(OnScoreboardToggled));
+            scoreboardGauntletComponent.OnScoreboardToggled = (Action<bool>?)Delegate.Remove(scoreboardGauntletComponent.OnScoreboardToggled, new Action<bool>(OnScoreboardToggled));
         }
 
         base.OnMissionScreenFinalize();
@@ -88,6 +82,24 @@ public class CrpgGauntletTeamSelection : MissionView
         }
 
         return base.OnEscape();
+    }
+
+    public override void OnMissionScreenTick(float dt)
+    {
+        base.OnMissionScreenTick(dt);
+        if (_isSynchronized && _toOpen && MissionScreen.SetDisplayDialog(true))
+        {
+            _toOpen = false;
+            OnOpen();
+        }
+
+        CrpgTeamSelectVm? dataSource = _dataSource;
+        if (dataSource == null)
+        {
+            return;
+        }
+
+        dataSource.Tick(dt);
     }
 
     private void OnClose()
@@ -120,13 +132,10 @@ public class CrpgGauntletTeamSelection : MissionView
         }
 
         _isActive = true;
-        string strValue = MultiplayerOptions.OptionType.GameType.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
-        SpriteData spriteData = UIResourceManager.SpriteData;
-        TwoDimensionEngineResourceContext resourceContext = UIResourceManager.ResourceContext;
-        ResourceDepot uiresourceDepot = UIResourceManager.UIResourceDepot;
-        _dataSource = new CrpgTeamSelectVM(Mission, new Action<Team>(OnChangeTeamTo), new Action(OnAutoassign), new Action(OnClose), Mission.Teams, strValue);
+        string strValue = MultiplayerOptions.OptionType.GameType.GetStrValue();
+        _dataSource = new CrpgTeamSelectVm(Mission, OnChangeTeamTo, OnAutoassign, OnClose, Mission.Teams, strValue);
         _dataSource.RefreshDisabledTeams(_disabledTeams ?? new List<Team>());
-        _gauntletLayer = new GauntletLayer(ViewOrderPriority, "GauntletLayer", false);
+        _gauntletLayer = new GauntletLayer("MultiplayerTeamSelection", ViewOrderPriority);
         _gauntletLayer.LoadMovie("MultiplayerTeamSelection", _dataSource);
         _gauntletLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.Mouse);
         MissionScreen.AddLayer(_gauntletLayer);
@@ -150,24 +159,6 @@ public class CrpgGauntletTeamSelection : MissionView
         _multiplayerTeamSelectComponent.AutoAssignTeam(GameNetwork.MyPeer);
     }
 
-    public override void OnMissionScreenTick(float dt)
-    {
-        base.OnMissionScreenTick(dt);
-        if (_isSynchronized && _toOpen && MissionScreen.SetDisplayDialog(true))
-        {
-            _toOpen = false;
-            OnOpen();
-        }
-
-        CrpgTeamSelectVM? dataSource = _dataSource;
-        if (dataSource == null)
-        {
-            return;
-        }
-
-        dataSource.Tick(dt);
-    }
-
     private void MissionLobbyComponentOnSelectingTeam(List<Team> disabledTeams)
     {
         _disabledTeams = disabledTeams;
@@ -181,8 +172,8 @@ public class CrpgGauntletTeamSelection : MissionView
             return;
         }
 
-        IEnumerable<MissionPeer> friendsTeamOne = _multiplayerTeamSelectComponent.GetFriendsForTeam(Mission.AttackerTeam).Select((VirtualPlayer x) => x.GetComponent<MissionPeer>());
-        IEnumerable<MissionPeer> friendsTeamTwo = _multiplayerTeamSelectComponent.GetFriendsForTeam(Mission.DefenderTeam).Select((VirtualPlayer x) => x.GetComponent<MissionPeer>());
+        IEnumerable<MissionPeer> friendsTeamOne = _multiplayerTeamSelectComponent.GetFriendsForTeam(Mission.AttackerTeam).Select(x => x.GetComponent<MissionPeer>());
+        IEnumerable<MissionPeer> friendsTeamTwo = _multiplayerTeamSelectComponent.GetFriendsForTeam(Mission.DefenderTeam).Select(x => x.GetComponent<MissionPeer>());
         _dataSource?.RefreshFriendsPerTeam(friendsTeamOne, friendsTeamTwo);
     }
 
@@ -197,8 +188,8 @@ public class CrpgGauntletTeamSelection : MissionView
         _dataSource?.RefreshDisabledTeams(disabledTeams);
         int playerCountForTeam = _multiplayerTeamSelectComponent.GetPlayerCountForTeam(Mission.AttackerTeam);
         int playerCountForTeam2 = _multiplayerTeamSelectComponent.GetPlayerCountForTeam(Mission.DefenderTeam);
-        int intValue = MultiplayerOptions.OptionType.NumberOfBotsTeam1.GetIntValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
-        int intValue2 = MultiplayerOptions.OptionType.NumberOfBotsTeam2.GetIntValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
+        int intValue = MultiplayerOptions.OptionType.NumberOfBotsTeam1.GetIntValue();
+        int intValue2 = MultiplayerOptions.OptionType.NumberOfBotsTeam2.GetIntValue();
         _dataSource?.RefreshPlayerAndBotCount(playerCountForTeam, playerCountForTeam2, intValue, intValue2);
     }
 
@@ -213,7 +204,6 @@ public class CrpgGauntletTeamSelection : MissionView
             }
 
             gauntletLayer.InputRestrictions.ResetInputRestrictions();
-            return;
         }
         else
         {
@@ -223,8 +213,7 @@ public class CrpgGauntletTeamSelection : MissionView
                 return;
             }
 
-            gauntletLayer2.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
-            return;
+            gauntletLayer2.InputRestrictions.SetInputRestrictions();
         }
     }
 
@@ -235,17 +224,17 @@ public class CrpgGauntletTeamSelection : MissionView
 
     private GauntletLayer? _gauntletLayer;
 
-    private CrpgTeamSelectVM? _dataSource;
+    private CrpgTeamSelectVm? _dataSource;
 
-    private MissionNetworkComponent _missionNetworkComponent = default!;
+    private MissionNetworkComponent _missionNetworkComponent = null!;
 
-    private MultiplayerTeamSelectComponent _multiplayerTeamSelectComponent = default!;
+    private MultiplayerTeamSelectComponent _multiplayerTeamSelectComponent = null!;
 
-    private MissionGauntletMultiplayerScoreboard _scoreboardGauntletComponent = default!;
+    private MissionGauntletMultiplayerScoreboard? _scoreboardGauntletComponent;
 
-    private MissionGauntletClassLoadout _classLoadoutGauntletComponent = default!;
+    private MissionGauntletClassLoadout? _classLoadoutGauntletComponent;
 
-    private MissionLobbyComponent _lobbyComponent = default!;
+    private MissionLobbyComponent _lobbyComponent = null!;
 
     private List<Team>? _disabledTeams;
 

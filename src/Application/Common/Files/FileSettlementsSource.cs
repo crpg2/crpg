@@ -9,12 +9,12 @@ namespace Crpg.Application.Common.Files;
 
 internal class FileSettlementsSource : ISettlementsSource
 {
-    private static readonly string StrategusSettlementsPath =
-        Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "/Common/Files/settlements.json";
+    private static readonly string CampaignSettlementsPath = FileDataPathResolver.Resolve(
+        Path.Combine("Common", "Files", "settlements.json"));
 
-    public async Task<IEnumerable<SettlementCreation>> LoadStrategusSettlements()
+    public async Task<IEnumerable<SettlementCreation>> LoadCampaignSettlements()
     {
-        await using var file = File.OpenRead(StrategusSettlementsPath);
+        await using var file = File.OpenRead(CampaignSettlementsPath);
         return (await JsonSerializer.DeserializeAsync<IEnumerable<SettlementCreation>>(file, new JsonSerializerOptions
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,

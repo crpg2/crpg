@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { tv } from 'tailwind-variants'
 
-type Size = 'md' | 'lg'
+type Size = 'sm' | 'md' | 'lg'
 
 const { layout = 'normal', ellipsis = false, size = 'md' } = defineProps<{
-  label: string
+  label?: string
   caption?: string
   layout?: 'normal' | 'reverse'
   ellipsis?: boolean
@@ -19,13 +19,18 @@ const variants = tv({
   },
   variants: {
     size: {
+      sm: {
+        root: 'gap-0.5',
+        label: 'text-sm',
+        caption: 'text-xs',
+      },
       md: {
-        root: '',
+        root: 'gap-1',
         label: 'text-base',
         caption: 'text-sm',
       },
       lg: {
-        root: '',
+        root: 'gap-1',
         label: 'text-lg',
         caption: 'text-base',
       },
@@ -59,11 +64,22 @@ const classes = computed(() => variants({
 
 <template>
   <div :class="classes.root()">
-    <div :class="classes.label()">
-      {{ label }}
-    </div>
-    <div v-if="caption" :class="classes.caption()">
-      {{ caption }}
-    </div>
+    <slot v-bind="{ classes: classes.label }">
+      <div
+        v-if="label"
+        :class="classes.label()"
+      >
+        {{ label }}
+      </div>
+    </slot>
+
+    <slot name="caption" v-bind="{ classes: classes.caption }">
+      <div
+        v-if="caption"
+        :class="classes.caption()"
+      >
+        {{ caption }}
+      </div>
+    </slot>
   </div>
 </template>

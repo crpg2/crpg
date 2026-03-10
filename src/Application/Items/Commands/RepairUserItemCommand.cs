@@ -33,7 +33,7 @@ public record RepairUserItemCommand : IMediatorRequest<UserItemViewModel>
             _constants = constants;
         }
 
-        public async Task<Result<UserItemViewModel>> Handle(RepairUserItemCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<UserItemViewModel>> Handle(RepairUserItemCommand req, CancellationToken cancellationToken)
         {
             var userItem = await _db.UserItems
                 .Include(ui => ui.User!)

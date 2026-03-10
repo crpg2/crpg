@@ -18,7 +18,7 @@ public class BuySettlementItemCommandTest : TestBase
     [Test]
     public async Task ShouldReturnErrorIfPartyNotFound()
     {
-        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IStrategusMap>());
+        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICampaignMap>());
         var res = await handler.Handle(new BuySettlementItemCommand
         {
             PartyId = 1,
@@ -38,7 +38,7 @@ public class BuySettlementItemCommandTest : TestBase
         ArrangeDb.Parties.Add(party);
         await ArrangeDb.SaveChangesAsync();
 
-        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IStrategusMap>());
+        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, Mock.Of<ICampaignMap>());
         var res = await handler.Handle(new BuySettlementItemCommand
         {
             PartyId = party.Id,
@@ -57,8 +57,8 @@ public class BuySettlementItemCommandTest : TestBase
         Point userPosition = new(1, 2);
         Point settlementPosition = new(3, 4);
 
-        Mock<IStrategusMap> strategusMapMock = new();
-        strategusMapMock
+        Mock<ICampaignMap> campaignMapMock = new();
+        campaignMapMock
             .Setup(m => m.ArePointsAtInteractionDistance(userPosition, settlementPosition))
             .Returns(false);
 
@@ -68,7 +68,7 @@ public class BuySettlementItemCommandTest : TestBase
         ArrangeDb.Settlements.Add(settlement);
         await ArrangeDb.SaveChangesAsync();
 
-        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, strategusMapMock.Object);
+        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, campaignMapMock.Object);
         var res = await handler.Handle(new BuySettlementItemCommand
         {
             PartyId = party.Id,
@@ -84,8 +84,8 @@ public class BuySettlementItemCommandTest : TestBase
     [Test]
     public async Task ShouldReturnErrorIfItemNotFound()
     {
-        Mock<IStrategusMap> strategusMapMock = new();
-        strategusMapMock
+        Mock<ICampaignMap> campaignMapMock = new();
+        campaignMapMock
             .Setup(m => m.ArePointsAtInteractionDistance(It.IsAny<Point>(), It.IsAny<Point>()))
             .Returns(true);
 
@@ -95,7 +95,7 @@ public class BuySettlementItemCommandTest : TestBase
         ArrangeDb.Settlements.Add(settlement);
         await ArrangeDb.SaveChangesAsync();
 
-        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, strategusMapMock.Object);
+        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, campaignMapMock.Object);
         var res = await handler.Handle(new BuySettlementItemCommand
         {
             PartyId = party.Id,
@@ -111,8 +111,8 @@ public class BuySettlementItemCommandTest : TestBase
     [Test]
     public async Task ShouldReturnErrorIfItemIsNotFromTheSettlementCulture()
     {
-        Mock<IStrategusMap> strategusMapMock = new();
-        strategusMapMock
+        Mock<ICampaignMap> campaignMapMock = new();
+        campaignMapMock
             .Setup(m => m.ArePointsAtInteractionDistance(It.IsAny<Point>(), It.IsAny<Point>()))
             .Returns(true);
 
@@ -124,7 +124,7 @@ public class BuySettlementItemCommandTest : TestBase
         ArrangeDb.Items.Add(item);
         await ArrangeDb.SaveChangesAsync();
 
-        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, strategusMapMock.Object);
+        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, campaignMapMock.Object);
         var res = await handler.Handle(new BuySettlementItemCommand
         {
             PartyId = party.Id,
@@ -140,8 +140,8 @@ public class BuySettlementItemCommandTest : TestBase
     [Test]
     public async Task ShouldReturnErrorIfNotEnoughGold()
     {
-        Mock<IStrategusMap> strategusMapMock = new();
-        strategusMapMock
+        Mock<ICampaignMap> campaignMapMock = new();
+        campaignMapMock
             .Setup(m => m.ArePointsAtInteractionDistance(It.IsAny<Point>(), It.IsAny<Point>()))
             .Returns(true);
 
@@ -153,7 +153,7 @@ public class BuySettlementItemCommandTest : TestBase
         ArrangeDb.Items.Add(item);
         await ArrangeDb.SaveChangesAsync();
 
-        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, strategusMapMock.Object);
+        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, campaignMapMock.Object);
         var res = await handler.Handle(new BuySettlementItemCommand
         {
             PartyId = party.Id,
@@ -169,8 +169,8 @@ public class BuySettlementItemCommandTest : TestBase
     [Test]
     public async Task ShouldAddCountToAlreadyExistingPartyItems()
     {
-        Mock<IStrategusMap> strategusMapMock = new();
-        strategusMapMock
+        Mock<ICampaignMap> campaignMapMock = new();
+        campaignMapMock
             .Setup(m => m.ArePointsAtInteractionDistance(It.IsAny<Point>(), It.IsAny<Point>()))
             .Returns(true);
 
@@ -184,7 +184,7 @@ public class BuySettlementItemCommandTest : TestBase
         ArrangeDb.PartyItems.Add(partyItem);
         await ArrangeDb.SaveChangesAsync();
 
-        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, strategusMapMock.Object);
+        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, campaignMapMock.Object);
         var res = await handler.Handle(new BuySettlementItemCommand
         {
             PartyId = party.Id,
@@ -204,8 +204,8 @@ public class BuySettlementItemCommandTest : TestBase
     [Test]
     public async Task ShouldAddItemToParty()
     {
-        Mock<IStrategusMap> strategusMapMock = new();
-        strategusMapMock
+        Mock<ICampaignMap> campaignMapMock = new();
+        campaignMapMock
             .Setup(m => m.ArePointsAtInteractionDistance(It.IsAny<Point>(), It.IsAny<Point>()))
             .Returns(true);
 
@@ -217,7 +217,7 @@ public class BuySettlementItemCommandTest : TestBase
         ArrangeDb.Items.Add(item);
         await ArrangeDb.SaveChangesAsync();
 
-        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, strategusMapMock.Object);
+        BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, campaignMapMock.Object);
         var res = await handler.Handle(new BuySettlementItemCommand
         {
             PartyId = party.Id,

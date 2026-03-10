@@ -26,7 +26,7 @@ internal class CrpgSiegeClient : MissionMultiplayerGameModeBaseClient, ICommande
 
     private FlagCapturePoint[] _flags = Array.Empty<FlagCapturePoint>();
     private Team?[] _flagOwners = Array.Empty<Team>();
-    private FlagCapturePoint _masterFlag = default!;
+    private FlagCapturePoint _masterFlag = null!;
     private SoundEvent? _bellSoundEvent;
     private float _remainingTimeForBellSoundToStop = float.MinValue;
     private float _lastBellSoundPercentage = 1f;

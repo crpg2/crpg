@@ -45,7 +45,7 @@ public record RestrictCommand : IMediatorRequest<RestrictionViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<RestrictionViewModel>> Handle(RestrictCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<RestrictionViewModel>> Handle(RestrictCommand req, CancellationToken cancellationToken)
         {
             var restrictedUser = await _db.Users.FirstOrDefaultAsync(u => u.Id == req.RestrictedUserId, cancellationToken);
             if (restrictedUser == null)

@@ -1,5 +1,4 @@
-﻿using System;
-using Crpg.Module.Common;
+﻿using Crpg.Module.Common;
 using Crpg.Module.Helpers;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
@@ -55,7 +54,7 @@ public class CrpgEndOfBattlePlayerVM : MPPlayerVM
             if (value != _placementText)
             {
                 _placementText = value;
-                OnPropertyChangedWithValue(value, "PlacementText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -72,7 +71,7 @@ public class CrpgEndOfBattlePlayerVM : MPPlayerVM
             if (value != _scoreText)
             {
                 _scoreText = value;
-                OnPropertyChangedWithValue(value, "ScoreText");
+                OnPropertyChangedWithValue(value);
             }
         }
     }
@@ -81,7 +80,7 @@ public class CrpgEndOfBattlePlayerVM : MPPlayerVM
 
     private readonly int _displayedScore;
 
-    private readonly TextObject _scoreTextObj = new("{=Kvqb1lQR}{SCORE} Score", null);
+    private readonly TextObject _scoreTextObj = new("{=Kvqb1lQR}{SCORE} Score");
 
     private string _placementText = string.Empty;
 

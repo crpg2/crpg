@@ -44,7 +44,9 @@ const { t } = useI18n()
         />
 
         <UNavigationMenu
-          color="neutral" variant="link" :items="[
+          color="neutral"
+          variant="link"
+          :items="[
             {
               label: t('nav.main.Leaderboard'),
               to: { name: 'leaderboard' },
@@ -60,6 +62,8 @@ const { t } = useI18n()
             <UIcon name="crpg:trophy-cup" class="size-6 text-gold" />
           </template>
         </UNavigationMenu>
+
+        <UColorModeButton variant="ghost" color="primary" />
 
         <AppSwitchLanguageDropdown v-slot="{ open, locale }">
           <UButton

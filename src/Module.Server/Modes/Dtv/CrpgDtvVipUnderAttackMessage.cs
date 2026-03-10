@@ -1,5 +1,4 @@
-﻿using System.Text;
-using TaleWorlds.MountAndBlade;
+﻿using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Network.Messages;
 
 namespace Crpg.Module.Modes.Dtv;

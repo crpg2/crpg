@@ -21,7 +21,7 @@ public record GetRestrictionsQuery : IMediatorRequest<IList<RestrictionViewModel
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<RestrictionViewModel>>> Handle(GetRestrictionsQuery request, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<RestrictionViewModel>>> Handle(GetRestrictionsQuery request, CancellationToken cancellationToken)
         {
             // the whole restrictions table is loaded. Acceptable since only admins can access this resource
             return new(await _db.Restrictions

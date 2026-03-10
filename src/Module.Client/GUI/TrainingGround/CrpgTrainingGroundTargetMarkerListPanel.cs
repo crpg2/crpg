@@ -18,11 +18,11 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
     private bool _hasPlayerSentDuelRequest;
     private int _wSign;
     private int _rating;
-    private RichTextWidget _actionText = default!;
-    private BrushWidget _background = default!;
-    private BrushWidget _border = default!;
-    private TextWidget _ratingTextWidget = default!;
-    [Editor(false)]
+    private RichTextWidget _actionText = null!;
+    private BrushWidget _background = null!;
+    private BrushWidget _border = null!;
+    private TextWidget _ratingTextWidget = null!;
+    [Editor]
     public Vec2 Position
     {
         get
@@ -34,12 +34,12 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             if (value != _position)
             {
                 _position = value;
-                OnPropertyChanged(value, "Position");
+                OnPropertyChanged(value);
             }
         }
     }
 
-    [Editor(false)]
+    [Editor]
     public bool IsAgentInScreenBoundaries
     {
         get
@@ -51,12 +51,12 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             if (value != _isAgentInScreenBoundaries)
             {
                 _isAgentInScreenBoundaries = value;
-                OnPropertyChanged(value, "IsAgentInScreenBoundaries");
+                OnPropertyChanged(value);
             }
         }
     }
 
-    [Editor(false)]
+    [Editor]
     public bool IsAvailable
     {
         get
@@ -68,12 +68,12 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             if (value != _isAvailable)
             {
                 _isAvailable = value;
-                OnPropertyChanged(value, "IsAvailable");
+                OnPropertyChanged(value);
             }
         }
     }
 
-    [Editor(false)]
+    [Editor]
     public bool IsTracked
     {
         get
@@ -85,12 +85,12 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             if (value != _isTracked)
             {
                 _isTracked = value;
-                OnPropertyChanged(value, "IsTracked");
+                OnPropertyChanged(value);
             }
         }
     }
 
-    [Editor(false)]
+    [Editor]
     public bool IsAgentFocused
     {
         get
@@ -102,13 +102,13 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             if (value != _isAgentFocused)
             {
                 _isAgentFocused = value;
-                OnPropertyChanged(value, "IsAgentFocused");
+                OnPropertyChanged(value);
                 UpdateChildrenFocusStates();
             }
         }
     }
 
-    [Editor(false)]
+    [Editor]
     public bool HasTargetSentDuelRequest
     {
         get
@@ -120,13 +120,13 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             if (value != _hasTargetSentDuelRequest)
             {
                 _hasTargetSentDuelRequest = value;
-                OnPropertyChanged(value, "HasTargetSentDuelRequest");
+                OnPropertyChanged(value);
                 UpdateChildrenFocusStates();
             }
         }
     }
 
-    [Editor(false)]
+    [Editor]
     public bool HasPlayerSentDuelRequest
     {
         get
@@ -138,13 +138,13 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             if (value != _hasPlayerSentDuelRequest)
             {
                 _hasPlayerSentDuelRequest = value;
-                OnPropertyChanged(value, "HasPlayerSentDuelRequest");
+                OnPropertyChanged(value);
                 UpdateChildrenFocusStates();
             }
         }
     }
 
-    [Editor(false)]
+    [Editor]
     public int WSign
     {
         get
@@ -156,12 +156,12 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             if (_wSign != value)
             {
                 _wSign = value;
-                OnPropertyChanged(value, "WSign");
+                OnPropertyChanged(value);
             }
         }
     }
 
-    [Editor(false)]
+    [Editor]
     public int Rating
     {
         get
@@ -173,13 +173,13 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             if (_rating != value)
             {
                 _rating = value;
-                OnPropertyChanged(value, "Rating");
+                OnPropertyChanged(value);
                 UpdateRatingState();
             }
         }
     }
 
-    [Editor(false)]
+    [Editor]
     public RichTextWidget ActionText
     {
         get
@@ -191,12 +191,12 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             if (value != _actionText)
             {
                 _actionText = value;
-                OnPropertyChanged(value, "ActionText");
+                OnPropertyChanged(value);
             }
         }
     }
 
-    [Editor(false)]
+    [Editor]
     public BrushWidget Background
     {
         get
@@ -208,12 +208,12 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             if (value != _background)
             {
                 _background = value;
-                OnPropertyChanged(value, "Background");
+                OnPropertyChanged(value);
             }
         }
     }
 
-    [Editor(false)]
+    [Editor]
     public BrushWidget Border
     {
         get
@@ -225,12 +225,12 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             if (value != _border)
             {
                 _border = value;
-                OnPropertyChanged(value, "Border");
+                OnPropertyChanged(value);
             }
         }
     }
 
-    [Editor(false)]
+    [Editor]
     public TextWidget RatingTextWidget
     {
         get
@@ -242,7 +242,7 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             if (value != _ratingTextWidget)
             {
                 _ratingTextWidget = value;
-                OnPropertyChanged(value, "RatingTextWidget");
+                OnPropertyChanged(value);
             }
         }
     }
@@ -286,7 +286,7 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
             position = vec + new Vec2(num2 * 150f, num * 150f);
             float num3 = num / num2;
             Vec2 vec2 = vec * 1f;
-            position = (num > 0f) ? new Vec2((0f - vec2.y) / num3, vec.y) : new Vec2(vec2.y / num3, 0f - vec.y);
+            position = num > 0f ? new Vec2((0f - vec2.y) / num3, vec.y) : new Vec2(vec2.y / num3, 0f - vec.y);
             if (position.x > vec2.x)
             {
                 position = new Vec2(vec2.x, (0f - vec2.x) * num3);
@@ -309,7 +309,7 @@ internal class CrpgTrainingGroundTargetMarkerListPanel : ListPanel
 
     private void UpdateChildrenFocusStates()
     {
-        string state = HasTargetSentDuelRequest ? TrackedState : ((HasPlayerSentDuelRequest || IsAgentFocused) ? FocusedState : DefaultState);
+        string state = HasTargetSentDuelRequest ? TrackedState : HasPlayerSentDuelRequest || IsAgentFocused ? FocusedState : DefaultState;
         Background.SetState(state);
         Border.SetState(state);
     }

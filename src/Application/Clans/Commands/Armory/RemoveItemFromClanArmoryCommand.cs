@@ -34,7 +34,7 @@ public record RemoveItemFromClanArmoryCommand : IMediatorRequest
             _activityLogService = activityLogService;
         }
 
-        public async Task<Result> Handle(RemoveItemFromClanArmoryCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result> Handle(RemoveItemFromClanArmoryCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .Where(u => u.Id == req.UserId)

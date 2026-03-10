@@ -20,7 +20,7 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
         : base(constants)
     {
         _notifiedPlayersAboutSpawnRestriction = new HashSet<PlayerId>();
-        CurrentGameMode = MultiplayerGameType.FreeForAll;
+        CurrentGameMode = MultiplayerGameType.Battle;
     }
 
     public override void Initialize(SpawnComponent spawnComponent)

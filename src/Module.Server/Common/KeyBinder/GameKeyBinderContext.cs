@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using Crpg.Module.Common.KeyBinder.Models;
 using TaleWorlds.InputSystem;
 
@@ -8,7 +6,7 @@ public sealed class GameKeyBinderContext : GameKeyContext
     private readonly IEnumerable<BindedKey> keys;
 
     public GameKeyBinderContext(string categoryId, IEnumerable<BindedKey> keys)
-        : base(categoryId, 109 + keys.Count(), GameKeyContextType.Default)
+        : base(categoryId, 109 + keys.Count())
     {
         this.keys = keys;
         // RegisterHotKeys();

@@ -2,7 +2,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Crpg.Application.Common.Results;
 using FluentValidation;
-using MediatR;
+using Mediator;
 
 namespace Crpg.Application.Common.Behaviors;
 
@@ -23,11 +23,14 @@ internal class RequestValidationBehavior<TRequest, TResponse> : IPipelineBehavio
         _validators = (validators as IValidator<TRequest>[])!;
     }
 
-    public Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
+    public ValueTask<TResponse> Handle(
+        TRequest request,
+        MessageHandlerDelegate<TRequest, TResponse> next,
+        CancellationToken cancellationToken)
     {
         if (_validators.Length == 0)
         {
-            return next();
+            return next(request, cancellationToken);
         }
 
         ValidationContext<TRequest> context = new(request);
@@ -46,7 +49,7 @@ internal class RequestValidationBehavior<TRequest, TResponse> : IPipelineBehavio
         }
 
         return errors.Count != 0
-            ? Task.FromResult(Unsafe.As<TResponse>(new Result(errors)))
-            : next();
+            ? ValueTask.FromResult(Unsafe.As<TResponse>(new Result(errors)))
+            : next(request, cancellationToken);
     }
 }

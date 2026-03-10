@@ -52,7 +52,7 @@ public record UpdateClanMemberCommand : IMediatorRequest<ClanMemberViewModel>
             _userNotificationService = userNotificationService;
         }
 
-        public async Task<Result<ClanMemberViewModel>> Handle(UpdateClanMemberCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<ClanMemberViewModel>> Handle(UpdateClanMemberCommand req, CancellationToken cancellationToken)
         {
             var userRes = await _clanService.GetClanMember(_db, req.UserId, req.ClanId, cancellationToken);
             if (userRes.Errors != null)

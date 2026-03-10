@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.Library;
@@ -32,14 +31,10 @@ internal class AmmoQuiverChangeBehaviorClient : MissionNetwork
     private readonly string _changeDeniedSound = "event:/ui/panels/previous";
     private MissionTime _lastMissileShotTime = MissionTime.Zero;
     private MissionTime _lastAmmoChangeTime = MissionTime.Zero;
-    private int _quiverChangeCount = 0;
+    private int _quiverChangeCount;
 
-    private bool _wasMainAgentActive = false;
+    private bool _wasMainAgentActive;
     private int _lastKnownTotalAmmo = -1;
-
-    public AmmoQuiverChangeBehaviorClient()
-    {
-    }
 
     public override void OnMissionTick(float dt)
     {
@@ -73,7 +68,7 @@ internal class AmmoQuiverChangeBehaviorClient : MissionNetwork
     {
         if (agent != null && agent.IsActive() && agent == Mission.MainAgent)
         {
-            EquipmentIndex wieldedWeaponIndex = agent.GetWieldedItemIndex(Agent.HandIndex.MainHand);
+            EquipmentIndex wieldedWeaponIndex = agent.GetPrimaryWieldedItemIndex();
             if (wieldedWeaponIndex == EquipmentIndex.None)
             {
                 return;
@@ -122,7 +117,7 @@ internal class AmmoQuiverChangeBehaviorClient : MissionNetwork
             Mission.Current.OnItemPickUp += OnItemPickupHandler;
             Mission.Current.OnMainAgentChanged += OnMainAgentChangedHandler;
 
-            OnMainAgentChangedHandler(null, null);
+            OnMainAgentChangedHandler(null);
         }
 
         base.OnBehaviorInitialize();
@@ -294,7 +289,7 @@ internal class AmmoQuiverChangeBehaviorClient : MissionNetwork
         }
     }
 
-    private void OnMainAgentChangedHandler(object? sender, PropertyChangedEventArgs? e)
+    private void OnMainAgentChangedHandler(Agent? oldAgent)
     {
         if (Agent.Main != null)
         {
@@ -317,7 +312,7 @@ internal class AmmoQuiverChangeBehaviorClient : MissionNetwork
             return;
         }
 
-        EquipmentIndex wieldedWeaponIndex = agent.GetWieldedItemIndex(Agent.HandIndex.MainHand);
+        EquipmentIndex wieldedWeaponIndex = agent.GetPrimaryWieldedItemIndex();
         MissionWeapon weapon = wieldedWeaponIndex == EquipmentIndex.None
             ? MissionWeapon.Invalid
             : agent.Equipment[wieldedWeaponIndex];

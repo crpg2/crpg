@@ -49,6 +49,7 @@ const reset = () => {
       <UButton
         variant="outline"
         size="xl"
+        :disabled="!isDirty"
         :label="$t('action.reset')"
         @click="reset"
       />

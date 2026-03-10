@@ -6,5 +6,5 @@
 internal class CrpgUserItem
 {
     public int Id { get; set; }
-    public string ItemId { get; set; } = default!;
+    public string ItemId { get; set; } = null!;
 }

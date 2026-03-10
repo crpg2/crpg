@@ -1,0 +1,273 @@
+<script setup lang="ts">
+import { useVuelidate } from '@vuelidate/core'
+import {
+  campaignMercenaryMaxWage,
+  campaignMercenaryNoteMaxLength,
+} from '~root/data/constants.json'
+
+import type { BattleSide, BattleSideDetailed } from '~/models/campaign/battle'
+
+import { useCharacters, useCharactersProvider } from '~/composables/character/use-character'
+import { useUser } from '~/composables/user/use-user'
+import { BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/campaign/battle'
+import { errorMessagesToString, required } from '~/services/validators-service'
+
+const { sideInfo, onApply } = defineProps<{
+  side: BattleSide
+  sideInfo: BattleSideDetailed
+  onApply: (value: {
+    characterId: number
+    note: string
+    wage: number
+  }) => void
+  onDeleteApplication: () => void
+  onLeaveFromBattle: () => void
+}>()
+
+const emit = defineEmits<{
+  close: [boolean]
+}>()
+
+interface ApplicationModel {
+  characterId: number | null
+  note: string
+  wage: number
+}
+
+const getEmptyApplicationModel = (): ApplicationModel => {
+  return {
+    characterId: null,
+    note: '',
+    wage: 0,
+  }
+}
+
+const applicationModel = ref<ApplicationModel>(sideInfo.mercenaryApplication
+  ? {
+      characterId: sideInfo.mercenaryApplication.character.id,
+      note: sideInfo.mercenaryApplication.note,
+      wage: sideInfo.mercenaryApplication.wage,
+    }
+  : getEmptyApplicationModel())
+
+const isNewApplication = ref(false)
+const readonly = computed(() => Boolean(sideInfo.mercenaryApplication) && !isNewApplication.value)
+
+const onNewApplication = () => {
+  isNewApplication.value = true
+  applicationModel.value = getEmptyApplicationModel()
+}
+
+const onCancel = () => {
+  emit('close', false)
+}
+
+const $v = useVuelidate(
+  {
+    characterId: {
+      required: required(),
+    },
+  },
+  applicationModel,
+)
+
+const apply = async () => {
+  if (!(await $v.value.$validate()) || applicationModel.value.characterId === null) {
+    return
+  }
+
+  // @ts-expect-error TODO:
+  onApply(applicationModel.value)
+}
+const { execute } = useCharactersProvider()
+execute()
+
+const { user } = useUser()
+const { characters } = useCharacters()
+</script>
+
+<template>
+  <UModal
+    :ui="{
+      content: 'max-w-xl',
+      title: 'gap-4 flex justify-center items-center',
+      body: 'space-y-6',
+      footer: 'block space-y-6',
+    }"
+  >
+    <template #title>
+      {{ $t('campaign.battle.mercenaryApplication.title') }}
+    </template>
+
+    <template #body>
+      <div class="grid grid-cols-[auto_auto_auto] items-start gap-4">
+        <UiDataContent v-if="sideInfo.commander.party" :caption="$t('campaign.battle.commander')" layout="reverse" size="lg">
+          <UserMedia :user="sideInfo.commander.party.user" />
+        </UiDataContent>
+
+        <UiDataContent :caption="$t('campaign.battle.sideTitle')" :label="side" layout="reverse" size="lg" />
+
+        <UiDataContent v-if="sideInfo.mercenaryApplication" :caption="$t('application.statusTitle')" layout="reverse" size="lg">
+          <div>
+            <BattleMercenaryApplicationStatusBadge :status="sideInfo.mercenaryApplication.status" />
+          </div>
+        </UiDataContent>
+      </div>
+
+      <UFormField
+        :label="$t('campaign.battle.manage.briefing.title')"
+        size="xl"
+      >
+        <UTextarea
+          readonly
+          autoresize
+          class="w-full"
+          :model-value="sideInfo.briefing.note"
+        />
+      </UFormField>
+
+      <UiDecorSeparator />
+
+      <div class="space-y-6">
+        <UFormField
+          :label="$t('campaign.battle.mercenaryApplication.form.character.label')"
+          size="xl"
+          :error="errorMessagesToString($v.characterId.$errors)"
+        >
+          <CharacterSelect
+            :readonly
+            :characters
+            :current-character-id="applicationModel.characterId"
+            :active-character-id="user!.activeCharacterId"
+            @select="(id) => applicationModel.characterId = id"
+          />
+        </UFormField>
+
+        <UFormField
+          :label="$t('campaign.battle.mercenaryApplication.form.note.label')"
+          :help="$t('campaign.battle.mercenaryApplication.form.note.help')"
+          size="xl"
+        >
+          <UTextarea
+            v-model="applicationModel.note"
+            :readonly
+            autoresize
+            :maxlength="campaignMercenaryNoteMaxLength"
+            class="w-full"
+          />
+          <template #hint>
+            <UiInputCounter
+              :current="applicationModel.note.length"
+              :max="campaignMercenaryNoteMaxLength"
+            />
+          </template>
+        </UFormField>
+
+        <UFormField size="xl">
+          <template #label>
+            <UiDataMedia>
+              <template #icon>
+                <UiSpriteSymbol
+                  name="coin"
+                  viewBox="0 0 18 18"
+                  class="size-5"
+                />
+              </template>
+              {{ $t('campaign.battle.mercenaryApplication.form.wage.label') }}
+            </UiDataMedia>
+          </template>
+
+          <template #hint>
+            <UiInputCounter
+              :current="applicationModel.wage"
+              :max="campaignMercenaryMaxWage"
+            />
+          </template>
+
+          <UInputNumber
+            v-model="applicationModel.wage"
+            :readonly
+            :max="campaignMercenaryMaxWage"
+            :min="0"
+            class="w-full"
+          />
+        </UFormField>
+      </div>
+    </template>
+
+    <template #footer>
+      <div v-if="!readonly" class="flex items-center justify-center gap-4">
+        <UButton
+          variant="outline"
+          size="xl"
+          :label="$t('action.cancel')"
+          @click="onCancel"
+        />
+
+        <AppConfirmActionPopover @confirm="apply">
+          <UButton
+            size="xl"
+            :label="$t('action.send')"
+          />
+        </AppConfirmActionPopover>
+      </div>
+
+      <i18n-t
+        v-if="!isNewApplication && sideInfo.mercenaryApplication?.status === BATTLE_MERCENARY_APPLICATION_STATUS.Declined"
+        scope="global"
+        class="text-center"
+        keypath="campaign.battle.mercenaryApplication.create.title"
+        tag="div"
+      >
+        <template #link>
+          <ULink
+            class="cursor-pointer text-primary"
+            @click="onNewApplication"
+          >
+            {{ $t('campaign.battle.mercenaryApplication.create.link') }}
+          </ULink>
+        </template>
+      </i18n-t>
+
+      <i18n-t
+        v-if="sideInfo.mercenaryApplication?.status === BATTLE_MERCENARY_APPLICATION_STATUS.Pending"
+        scope="global"
+        class="text-center"
+        keypath="campaign.battle.mercenaryApplication.delete.title"
+        tag="div"
+      >
+        <template #link>
+          <AppConfirmActionPopover @confirm="onDeleteApplication">
+            <ULink
+              class="
+                cursor-pointer text-error
+                hover:text-error/80
+              "
+            >
+              {{ $t('campaign.battle.mercenaryApplication.delete.link') }}
+            </ULink>
+          </AppConfirmActionPopover>
+        </template>
+      </i18n-t>
+
+      <!-- TODO: -->
+      <div
+        v-if="sideInfo.mercenaryApplication?.status === BATTLE_MERCENARY_APPLICATION_STATUS.Accepted"
+        class="text-center"
+      >
+        You can
+        <AppConfirmActionPopover @confirm="onLeaveFromBattle">
+          <ULink
+            class="
+              cursor-pointer text-error
+              hover:text-error/80
+            "
+          >
+            leave the Battle
+          </ULink>
+          on the {{ side }} side
+        </AppConfirmActionPopover>
+      </div>
+    </template>
+  </UModal>
+</template>

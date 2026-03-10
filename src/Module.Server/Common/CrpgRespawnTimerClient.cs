@@ -5,7 +5,7 @@ namespace Crpg.Module.Common;
 internal class CrpgRespawnTimerClient : MissionNetwork
 {
     public float RespawnTimer { get; private set; }
-    public event Action OnUpdateRespawnTimer = default!;
+    public event Action OnUpdateRespawnTimer = null!;
 
     public CrpgRespawnTimerClient()
     {

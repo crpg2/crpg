@@ -1,6 +1,7 @@
 using Crpg.Module.Common;
 using HarmonyLib;
 using TaleWorlds.Core;
+using TaleWorlds.Engine;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
@@ -74,7 +75,7 @@ public static class ChargeDamageCallbackPatch
     __instance.GetAttackCollisionResults(
          attacker,
          victim,
-         null!, // GameEntity is not used in this context, so we can pass null
+         WeakGameEntity.Invalid, // GameEntity is not used in this context, so we can pass null
          1f,
          in MissionWeapon.Invalid,
          false,
@@ -139,7 +140,7 @@ public static class ChargeDamageCallbackPatch
           duplicateBlow.SelfInflictedDamage = collisionData.InflictedDamage * CrpgServerConfiguration.MirrorAgentDamageMultiplier; // Adjust the multiplier as needed
 
           // Apply mirrored/damage to attacker (rider) but not to the victim up here
-          __instance.RegisterBlow(attacker.RiderAgent, victim!, null!, duplicateBlow, ref collisionData, in MissionWeapon.Invalid, ref combatLog);
+          __instance.RegisterBlow(attacker.RiderAgent, victim!, WeakGameEntity.Invalid, duplicateBlow, ref collisionData, in MissionWeapon.Invalid, ref combatLog);
         }
       }
 
@@ -173,13 +174,13 @@ public static class ChargeDamageCallbackPatch
         duplicateBlow.SelfInflictedDamage = mountDamage;
 
         // Apply mirrored damage to mount but not to the victim up here
-        __instance.RegisterBlow(attacker, victim!, null!, duplicateBlow, ref collisionData, in MissionWeapon.Invalid, ref combatLog);
+        __instance.RegisterBlow(attacker, victim!, WeakGameEntity.Invalid, duplicateBlow, ref collisionData, in MissionWeapon.Invalid, ref combatLog);
       }
 
       // blow.InflictedDamage = 0f; // No damage to the victim in original blow to cancel victim being affected but i think we should still hurt them
     }
 
-    __instance.RegisterBlow(attacker, victim!, null!, blow, ref collisionData, in MissionWeapon.Invalid, ref combatLog);
+    __instance.RegisterBlow(attacker, victim!, WeakGameEntity.Invalid, blow, ref collisionData, in MissionWeapon.Invalid, ref combatLog);
 
     // Return false to skip the original method entirely
     return false;

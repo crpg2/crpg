@@ -14,7 +14,7 @@ namespace Crpg.Module.Common.Network;
 internal sealed class UpdateCrpgUser : GameNetworkMessage
 {
     public VirtualPlayer? Peer { get; set; }
-    public CrpgUser User { get; set; } = default!;
+    public CrpgUser User { get; set; } = null!;
 
     protected override void OnWrite()
     {

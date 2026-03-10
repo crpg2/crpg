@@ -5,7 +5,7 @@ import { getRankColor } from '~/services/item-service'
 
 defineProps<{
   item: ItemFlat
-  nextItem?: ItemFlat
+  nextItem: ItemFlat
 }>()
 
 defineEmits<{
@@ -26,7 +26,7 @@ defineEmits<{
         tag="div"
       >
         <template #loomPoints>
-          <AppLoom :point="1" />
+          <AppLoom :point="nextItem.rank - item.rank" />
         </template>
         <template #oldItem>
           <span :style="{ color: getRankColor(item.rank) }">

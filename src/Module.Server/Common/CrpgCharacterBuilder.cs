@@ -24,28 +24,28 @@ internal static class CrpgCharacterBuilder
         [CrpgItemSlot.WeaponExtra] = EquipmentIndex.ExtraWeaponSlot,
     };
 
-    public static CharacterSkills CreateCharacterSkills(CrpgCharacterCharacteristics characteristics)
+    public static MBCharacterSkills CreateCharacterSkills(CrpgCharacterCharacteristics characteristics)
     {
-        CharacterSkills skills = new();
-        skills.SetPropertyValue(CrpgSkills.Strength, characteristics.Attributes.Strength);
-        skills.SetPropertyValue(CrpgSkills.Agility, characteristics.Attributes.Agility);
+        MBCharacterSkills skills = new();
+        skills.Skills.SetPropertyValue(CrpgSkills.Strength, characteristics.Attributes.Strength);
+        skills.Skills.SetPropertyValue(CrpgSkills.Agility, characteristics.Attributes.Agility);
 
-        skills.SetPropertyValue(CrpgSkills.IronFlesh, characteristics.Skills.IronFlesh);
-        skills.SetPropertyValue(CrpgSkills.PowerStrike, characteristics.Skills.PowerStrike);
-        skills.SetPropertyValue(CrpgSkills.PowerDraw, characteristics.Skills.PowerDraw);
-        skills.SetPropertyValue(CrpgSkills.PowerThrow, characteristics.Skills.PowerThrow);
-        skills.SetPropertyValue(DefaultSkills.Athletics, characteristics.Skills.Athletics * 20 + 2 * characteristics.Attributes.Agility);
-        skills.SetPropertyValue(DefaultSkills.Riding, characteristics.Skills.Riding * 20);
-        skills.SetPropertyValue(CrpgSkills.WeaponMaster, characteristics.Skills.WeaponMaster);
-        skills.SetPropertyValue(CrpgSkills.MountedArchery, characteristics.Skills.MountedArchery);
-        skills.SetPropertyValue(CrpgSkills.Shield, characteristics.Skills.Shield);
+        skills.Skills.SetPropertyValue(CrpgSkills.IronFlesh, characteristics.Skills.IronFlesh);
+        skills.Skills.SetPropertyValue(CrpgSkills.PowerStrike, characteristics.Skills.PowerStrike);
+        skills.Skills.SetPropertyValue(CrpgSkills.PowerDraw, characteristics.Skills.PowerDraw);
+        skills.Skills.SetPropertyValue(CrpgSkills.PowerThrow, characteristics.Skills.PowerThrow);
+        skills.Skills.SetPropertyValue(DefaultSkills.Athletics, characteristics.Skills.Athletics * 20 + 2 * characteristics.Attributes.Agility);
+        skills.Skills.SetPropertyValue(DefaultSkills.Riding, characteristics.Skills.Riding * 20);
+        skills.Skills.SetPropertyValue(CrpgSkills.WeaponMaster, characteristics.Skills.WeaponMaster);
+        skills.Skills.SetPropertyValue(CrpgSkills.MountedArchery, characteristics.Skills.MountedArchery);
+        skills.Skills.SetPropertyValue(CrpgSkills.Shield, characteristics.Skills.Shield);
 
-        skills.SetPropertyValue(DefaultSkills.OneHanded, characteristics.WeaponProficiencies.OneHanded);
-        skills.SetPropertyValue(DefaultSkills.TwoHanded, characteristics.WeaponProficiencies.TwoHanded);
-        skills.SetPropertyValue(DefaultSkills.Polearm, characteristics.WeaponProficiencies.Polearm);
-        skills.SetPropertyValue(DefaultSkills.Bow, characteristics.WeaponProficiencies.Bow);
-        skills.SetPropertyValue(DefaultSkills.Crossbow, characteristics.WeaponProficiencies.Crossbow);
-        skills.SetPropertyValue(DefaultSkills.Throwing, characteristics.WeaponProficiencies.Throwing);
+        skills.Skills.SetPropertyValue(DefaultSkills.OneHanded, characteristics.WeaponProficiencies.OneHanded);
+        skills.Skills.SetPropertyValue(DefaultSkills.TwoHanded, characteristics.WeaponProficiencies.TwoHanded);
+        skills.Skills.SetPropertyValue(DefaultSkills.Polearm, characteristics.WeaponProficiencies.Polearm);
+        skills.Skills.SetPropertyValue(DefaultSkills.Bow, characteristics.WeaponProficiencies.Bow);
+        skills.Skills.SetPropertyValue(DefaultSkills.Crossbow, characteristics.WeaponProficiencies.Crossbow);
+        skills.Skills.SetPropertyValue(DefaultSkills.Throwing, characteristics.WeaponProficiencies.Throwing);
 
         return skills;
     }

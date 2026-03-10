@@ -1,5 +1,4 @@
 ﻿using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.MissionRepresentatives;
 using TaleWorlds.MountAndBlade.Network.Messages;
 
 namespace Crpg.Module.Modes.TrainingGround;
@@ -10,7 +9,7 @@ public sealed class TrainingGroundDuelPointsUpdateMessage : GameNetworkMessage
     public int NumberOfWins { get; set; }
     public int NumberOfLosses { get; set; }
     public int Rating { get; set; }
-    public NetworkCommunicator NetworkCommunicator { get; set; } = default!;
+    public NetworkCommunicator NetworkCommunicator { get; set; } = null!;
 
     protected override void OnWrite()
     {

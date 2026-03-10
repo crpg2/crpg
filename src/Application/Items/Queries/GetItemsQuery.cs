@@ -20,7 +20,7 @@ public record GetItemsQuery : IMediatorRequest<IList<ItemViewModel>>
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<ItemViewModel>>> Handle(GetItemsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<ItemViewModel>>> Handle(GetItemsQuery req, CancellationToken cancellationToken)
         {
             var items = await _db.Items
                 .AsNoTracking()

@@ -29,7 +29,7 @@ public record GetUserCharacterEarningStatisticsQuery : IMediatorRequest<IList<Ac
             _dateTime = dateTime;
         }
 
-        public async Task<Result<IList<ActivityLogViewModel>>> Handle(GetUserCharacterEarningStatisticsQuery req,
+        public async ValueTask<Result<IList<ActivityLogViewModel>>> Handle(GetUserCharacterEarningStatisticsQuery req,
             CancellationToken cancellationToken)
         {
             var activityLogs = await _db.ActivityLogs

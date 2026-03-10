@@ -7,6 +7,7 @@ using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.HUDExtensions;
 using TaleWorlds.MountAndBlade.Objects;
+using MathF = TaleWorlds.Library.MathF;
 
 namespace Crpg.Module.GUI.HudExtension;
 
@@ -435,7 +436,7 @@ public class CrpgCommanderInfoVm : ViewModel
         int initialAttackerPower = _allyTeam.Side == BattleSideEnum.Attacker ? _attackerTeamInitialMemberCount : _defenderTeamInitialMemberCount;
         Team? allyTeam = _allyTeam;
         int initialDefenderPower = (allyTeam != null
-            ? (allyTeam.Side == BattleSideEnum.Attacker ? 1 : 0)
+            ? allyTeam.Side == BattleSideEnum.Attacker ? 1 : 0
             : 0) != 0 ? _defenderTeamInitialMemberCount : _attackerTeamInitialMemberCount;
         if (initialDefenderPower == 0 && initialAttackerPower == 0)
         {
@@ -548,7 +549,7 @@ public class CrpgCommanderInfoVm : ViewModel
         _areMoraleEventsRegistered = true;
     }
 
-    private void OnMissionReset(object sender, PropertyChangedEventArgs e)
+    private void OnMissionReset(object? sender, PropertyChangedEventArgs e)
     {
         if (UseMoraleComparer)
         {

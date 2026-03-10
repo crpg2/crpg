@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TaleWorlds.Core;
+﻿using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.Common;
@@ -23,7 +20,7 @@ internal class CrpgAgentComponent : AgentComponent
         if (Agent.HasMount)
         {
             MissionEquipment equipment = Agent.Equipment;
-            EquipmentIndex offHandItemIndex = Agent.GetWieldedItemIndex(Agent.HandIndex.OffHand);
+            EquipmentIndex offHandItemIndex = Agent.GetOffhandWieldedItemIndex();
             WeaponComponentData? offHandItem = offHandItemIndex != EquipmentIndex.None
                 ? equipment[offHandItemIndex].CurrentUsageItem
                 : null;
