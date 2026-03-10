@@ -1,4 +1,3 @@
-#if CRPG_CLIENT
 using HarmonyLib;
 using TaleWorlds.Engine;
 
@@ -8,7 +7,9 @@ namespace Crpg.Module.HarmonyPatches;
 /// Overrides thumbnail render resolution from the default 256x240 to 512x240
 /// for higher quality item exports.
 /// </summary>
+#if CRPG_CLIENT
 [HarmonyPatch(typeof(ThumbnailCreatorView), "RegisterRenderRequest")]
+#endif
 public class RegisterRenderRequestPatch
 {
     public static bool IsEnabled { get; set; }
@@ -29,4 +30,3 @@ public class RegisterRenderRequestPatch
         }
     }
 }
-#endif
