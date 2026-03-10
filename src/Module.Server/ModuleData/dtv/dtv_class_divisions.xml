@@ -11,7 +11,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -35,7 +35,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -59,7 +59,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -83,7 +83,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -107,7 +107,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -131,7 +131,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -155,7 +155,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -179,7 +179,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -202,7 +202,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -226,7 +226,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -250,7 +250,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -274,7 +274,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -298,7 +298,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -322,7 +322,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -346,7 +346,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -370,7 +370,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -394,7 +394,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -418,7 +418,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -442,7 +442,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -466,7 +466,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -490,7 +490,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -514,7 +514,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -538,7 +538,7 @@
                   melee_ai="0"
                   ranged_ai="0"
                   armor="0"
-                  movement_speed="0.8"
+                  movement_speed="0.9"
                   combat_movement_speed="0"
                   acceleration="0">
     <Perks>
@@ -562,7 +562,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -586,7 +586,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -610,7 +610,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -634,7 +634,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -658,7 +658,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -682,7 +682,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -706,7 +706,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -730,7 +730,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -754,7 +754,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -778,7 +778,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -802,7 +802,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -826,7 +826,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -850,7 +850,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -874,7 +874,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -898,7 +898,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -922,7 +922,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -946,7 +946,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -970,7 +970,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -994,7 +994,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1018,7 +1018,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1042,7 +1042,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1066,7 +1066,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1090,7 +1090,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1114,7 +1114,7 @@
                  melee_ai="0"
                  ranged_ai="0"
                  armor="0"
-                 movement_speed="0.8"
+                 movement_speed="0.9"
                  combat_movement_speed="0"
                  acceleration="0">
     <Perks>
@@ -1138,7 +1138,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1162,7 +1162,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1186,7 +1186,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1210,7 +1210,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1234,7 +1234,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1258,7 +1258,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1282,7 +1282,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1306,7 +1306,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1330,7 +1330,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1354,7 +1354,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1378,7 +1378,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1402,7 +1402,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1426,7 +1426,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1450,7 +1450,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1474,7 +1474,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1498,7 +1498,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1522,7 +1522,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1546,7 +1546,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1570,7 +1570,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1594,7 +1594,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1618,7 +1618,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1642,7 +1642,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1666,7 +1666,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1690,7 +1690,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1714,7 +1714,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1738,7 +1738,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1762,7 +1762,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1786,7 +1786,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1810,7 +1810,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1834,7 +1834,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1858,7 +1858,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1882,7 +1882,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1906,7 +1906,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1930,7 +1930,7 @@
                  melee_ai="0"
                  ranged_ai="0"
                  armor="0"
-                 movement_speed="0.8"
+                 movement_speed="0.9"
                  combat_movement_speed="0"
                  acceleration="0">
     <Perks>
@@ -1954,7 +1954,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -1978,7 +1978,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2002,7 +2002,7 @@
                  melee_ai="0"
                  ranged_ai="0"
                  armor="0"
-                 movement_speed="0.8"
+                 movement_speed="0.9"
                  combat_movement_speed="0"
                  acceleration="0">
     <Perks>
@@ -2026,7 +2026,7 @@
                  melee_ai="0"
                  ranged_ai="0"
                  armor="0"
-                 movement_speed="0.8"
+                 movement_speed="0.9"
                  combat_movement_speed="0"
                  acceleration="0">
     <Perks>
@@ -2050,7 +2050,7 @@
                melee_ai="0"
                ranged_ai="0"
                armor="0"
-               movement_speed="0.8"
+               movement_speed="0.9"
                combat_movement_speed="0"
                acceleration="0">
     <Perks>
@@ -2074,7 +2074,7 @@
                melee_ai="0"
                ranged_ai="0"
                armor="0"
-               movement_speed="0.8"
+               movement_speed="0.9"
                combat_movement_speed="0"
                acceleration="0">
     <Perks>
@@ -2098,7 +2098,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2122,7 +2122,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2146,7 +2146,7 @@
                  melee_ai="0"
                  ranged_ai="0"
                  armor="0"
-                 movement_speed="0.8"
+                 movement_speed="0.9"
                  combat_movement_speed="0"
                  acceleration="0">
     <Perks>
@@ -2170,7 +2170,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2194,7 +2194,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2218,7 +2218,7 @@
                   melee_ai="0"
                   ranged_ai="0"
                   armor="0"
-                  movement_speed="0.8"
+                  movement_speed="0.9"
                   combat_movement_speed="0"
                   acceleration="0">
     <Perks>
@@ -2242,7 +2242,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2266,7 +2266,7 @@
                      melee_ai="0"
                      ranged_ai="0"
                      armor="0"
-                     movement_speed="0.8"
+                     movement_speed="0.9"
                      combat_movement_speed="0"
                      acceleration="0">
     <Perks>
@@ -2290,7 +2290,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2314,7 +2314,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2338,7 +2338,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2362,7 +2362,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2386,7 +2386,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2410,7 +2410,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2434,7 +2434,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2458,7 +2458,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2482,7 +2482,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2506,7 +2506,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2530,7 +2530,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2554,7 +2554,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
@@ -2578,7 +2578,7 @@
                    melee_ai="0"
                    ranged_ai="0"
                    armor="0"
-                   movement_speed="0.8"
+                   movement_speed="0.9"
                    combat_movement_speed="0"
                    acceleration="0">
     <Perks>
