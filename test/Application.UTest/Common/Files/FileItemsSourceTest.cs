@@ -1,8 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
+using System.Text.Json;
 using System.Xml.Linq;
 using Crpg.Application.Common.Files;
-using Crpg.Application.Common.Services;
-using Crpg.Application.Items.Models;
 using Crpg.Domain.Entities.Items;
 using NUnit.Framework;
 
@@ -11,83 +10,55 @@ namespace Crpg.Application.UTest.Common.Files;
 public class FileItemsSourceTest
 {
     [Test]
-    public void TestCanDeserializeFile()
+    public async Task Tests()
     {
-        FileItemsSource source = new();
-        Assert.That(() => source.LoadItems(), Throws.Nothing);
-    }
-
-    [Test]
-    public async Task CheckNoDuplicatedId()
-    {
-        List<string> duplicates = new();
-        HashSet<string> ids = new();
+        HashSet<string> ids = [];
 
         var items = await new FileItemsSource().LoadItems();
-        foreach (var item in items)
+
+        Assert.Multiple(() =>
         {
-            if (ids.Contains(item.Id))
+            foreach (var item in items)
             {
-                duplicates.Add(item.Id);
+                Assert.That(ids.Add(item.Id), Is.True, $"Duplicate item: {item.Id}");
+                Assert.That((!item.Id.Contains("test")
+                             && !item.Id.Contains("dummy")
+                             && !item.Name.Contains('_'))
+                            || item.Id.Contains("elitesteppe"), Is.True, $"{item.Id}: test item detected");
+                Assert.That(item.Tier <= 13.1 || item.BaseId.Contains("disabled"), Is.True, $"{item.Id}: item tier too high");
+                Assert.That(item.Price, Is.GreaterThan(0).And.LessThan(100_000),
+                    $"{item.Id}: item has negative price or price is too high");
+
+                if (item.Type == ItemType.Bow)
+                {
+                    if (item.Weapons.Count != 2)
+                    {
+                        Assert.Fail($"{item.Id}: bow should have 2 weapon components");
+                        continue;
+                    }
+
+                    var w0 = item.Weapons[0];
+                    var w1 = item.Weapons[1];
+
+                    var flags0 = w0.Flags & ~WeaponFlags.AutoReload;
+                    var flags1 = w1.Flags & ~WeaponFlags.AutoReload;
+
+                    if (flags0 != flags1)
+                    {
+                        Assert.Fail($"{item.Id}: flags differ beyond AutoReload ({w0.Flags} vs {w1.Flags})");
+                        continue;
+                    }
+
+                    string clone0 = JsonSerializer.Serialize(w0 with { Flags = flags0 });
+                    string clone1 = JsonSerializer.Serialize(w1 with { Flags = flags1 });
+
+                    if (clone0 != clone1)
+                    {
+                        Assert.Fail($"{item.Id}: weapon components differ beyond AutoReload");
+                    }
+                }
             }
-
-            ids.Add(item.Id);
-        }
-
-        Assert.That(duplicates, Is.Empty,
-           "Duplicate items: " + string.Join(", ", duplicates));
-    }
-
-    [Test]
-    public async Task CheckNoTestItems()
-    {
-        var items = await new FileItemsSource().LoadItems();
-        List<string> errors = new();
-        foreach (var item in items)
-        {
-            if ((item.Id.Contains("test") || item.Id.Contains("dummy") || item.Name.Contains('_')) && !item.Id.Contains("elitesteppe"))
-            {
-                errors.Add(item.Id);
-            }
-        }
-
-        Assert.That(errors, Is.Empty,
-            $"Test items detected:{Environment.NewLine}- " + string.Join($"{Environment.NewLine}- ", errors));
-    }
-
-    [Test]
-    public async Task CheckItemTier()
-    {
-        var items = await new FileItemsSource().LoadItems();
-        List<string> errors = new();
-        foreach (var item in items)
-        {
-            // Only worry about tier if item is not disabled
-            if (item.Tier > 13.1 && !item.BaseId.Contains("disabled"))
-            {
-                errors.Add(item.Id);
-            }
-        }
-
-        Assert.That(errors, Is.Empty,
-            $"Item with too higher tier:{Environment.NewLine}- " + string.Join($"{Environment.NewLine}- ", errors));
-    }
-
-    [Test]
-    public async Task CheckPriceRange()
-    {
-        var items = await new FileItemsSource().LoadItems();
-        List<string> errors = new();
-        foreach (var item in items)
-        {
-            if (item.Price <= 0 || item.Price > 100_000)
-            {
-                errors.Add(item.Id);
-            }
-        }
-
-        Assert.That(errors, Is.Empty,
-            $"Items with zero, or negative price or price too high:{Environment.NewLine}- " + string.Join($"{Environment.NewLine}- ", errors));
+        });
     }
 
     [Test]
@@ -107,8 +78,6 @@ public class FileItemsSourceTest
         string dtvCharactersFilePath = Path.Combine(filepath, "../../../../../src/Module.Server/ModuleData/dtv/dtv_characters.xml");
         string dtvItemsFilePath = Path.Combine(filepath, "../../../../../src/Module.Server/ModuleData/dtv/dtv_weapons.xml");
         Console.WriteLine(filepath);
-        string charactersXmlPath = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)
-                                   + "/ModuleData/dtv/dtv_characters.xml";
         XDocument charactersDoc = XDocument.Load(charactersFilePath);
         XDocument dtvCharactersDoc = XDocument.Load(dtvCharactersFilePath);
         XDocument dtvItemsDoc = XDocument.Load(dtvItemsFilePath);

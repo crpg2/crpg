@@ -1,5 +1,4 @@
-﻿#if CRPG_CLIENT
-using System.Globalization;
+﻿using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Xml;
 using Crpg.Module.Api.Models;
@@ -1272,4 +1271,3 @@ internal static class ItemExporter
         return Task.WhenAll(createTextureTasks);
     }
 }
-#endif
