@@ -61,7 +61,6 @@ namespace Crpg.Persistence.Migrations
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "role", new[] { "admin", "game_admin", "moderator", "user" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "settlement_type", new[] { "castle", "town", "village" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "terrain_type", new[] { "barrier", "deep_water", "plain", "shallow_water", "sparse_forest", "thick_forest" });
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "user_update_status", new[] { "completed", "started" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "weapon_class", new[] { "arrow", "banner", "bolt", "boulder", "bow", "cartridge", "crossbow", "dagger", "javelin", "large_shield", "low_grip_polearm", "mace", "musket", "one_handed_axe", "one_handed_polearm", "one_handed_sword", "pick", "pistol", "small_shield", "stone", "throwing_axe", "throwing_knife", "two_handed_axe", "two_handed_mace", "two_handed_polearm", "two_handed_sword", "undefined" });
             NpgsqlModelBuilderExtensions.HasPostgresExtension(modelBuilder, "postgis");
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -704,31 +703,6 @@ namespace Crpg.Persistence.Migrations
                         .HasDatabaseName("ix_clan_members_clan_id");
 
                     b.ToTable("clan_members", (string)null);
-                });
-
-            modelBuilder.Entity("Crpg.Domain.Entities.GameServers.IdempotencyKey", b =>
-                {
-                    b.Property<Guid>("Key")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("key");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_at");
-
-                    b.Property<string>("Status")
-                        .HasColumnType("user_update_status")
-                        .HasColumnName("status");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("updated_at");
-
-                    b.HasKey("Key")
-                        .HasName("pk_idempotency_keys");
-
-                    b.ToTable("idempotency_keys", (string)null);
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Items.ClanArmoryItem", b =>

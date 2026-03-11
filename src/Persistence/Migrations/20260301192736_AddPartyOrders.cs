@@ -50,6 +50,8 @@ public partial class AddPartyOrders : Migration
             .Annotation("Npgsql:Enum:party_transfer_offer_status", "intent,pending");
 
         migrationBuilder.Sql(@"
+            UPDATE parties SET status = 'idle'
+            WHERE status NOT IN ('idle','idle_in_settlement','in_battle','recruiting_in_settlement');
             ALTER TYPE party_status RENAME TO party_status_old;
             CREATE TYPE party_status AS ENUM ('awaiting_battle_join_decision','awaiting_party_offer_decision','idle','idle_in_settlement','in_battle','recruiting_in_settlement');
             ALTER TABLE parties ALTER COLUMN status TYPE party_status USING status::text::party_status;

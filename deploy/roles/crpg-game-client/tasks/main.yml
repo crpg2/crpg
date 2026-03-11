@@ -3,14 +3,13 @@
 - name: get Bannerlord installation path
   set_fact:
     crpg_game_client_local_path: "{{ lookup('env', 'MB_CLIENT_PATH') }}"
-    crpg_launcher_path: "{{ lookup('env', 'CRPG_LAUNCHER_PATH') }}"
 
 - name: assert Bannerlord installation path is defined
   assert:
     that: crpg_game_client_local_path | length > 0
 
 - name: Manually remove specified files and directories with shell command
-  ansible.builtin.shell:
+  shell:
     cmd: "rm -rf {{ item }}"
   loop:
     - /tmp/rest.tar.gz
@@ -19,7 +18,7 @@
     - /tmp/SceneObj
     - /tmp/hash.xml
   delegate_to: localhost
-  become: true
+  become: false
 
 - name: check game client files
   stat:
@@ -40,62 +39,27 @@
   delegate_to: localhost
   become: false
 
-- name: Check if running in WSL
-  shell: command -v wslpath
+- name: Hashing Module
+  shell: "dotnet run {{ playbook_dir }}/../script/hash.cs -- --hash '{{ crpg_game_client_local_path }}/Modules/cRPG' --output '/tmp/hash.xml'"
   delegate_to: localhost
-  register: wsl_check
-  failed_when: false
-  changed_when: false
-
-- name: Set WSL availability fact
-  set_fact:
-    is_wsl: "{{ wsl_check.rc == 0 }}"
-
-- name: Convert Linux Launcher Path to Windows path
-  shell: wslpath -w "{{ crpg_launcher_path }}/LauncherV2.Console.Exe"
-  delegate_to: localhost
-  register: crpg_launcher_path_win
-  when: is_wsl
-
-- name: Convert Linux Module path to Windows path
-  shell: wslpath -w "{{ crpg_game_client_local_path }}/Modules/cRPG"
-  delegate_to: localhost
-  register: crpg_module_client_local_path_win
-  when: is_wsl
-
-- name: Convert Linux tmp path to Windows path
-  shell: wslpath -w "/tmp/hash.xml"
-  delegate_to: localhost
-  register: hash_output_path
-  when: is_wsl
-
-- name: Hashing Module (WSL)
-  shell: "{{ crpg_launcher_path }}/LauncherV2.Console.exe /hash '{{ crpg_module_client_local_path_win.stdout }}' /output '{{ hash_output_path.stdout }}' "
-  delegate_to: localhost
-  register: converted_path
-  when: is_wsl
-
-- name: Hashing Module (Native Linux)
-  shell: "{{ crpg_launcher_path }}/LauncherV2.Console /hash '{{ crpg_game_client_local_path }}/Modules/cRPG' /output '/tmp/hash.xml'"
-  delegate_to: localhost
-  register: converted_path
-  when: not is_wsl
+  become: false
 
 - name: Get list of directories in SceneObj
-  ansible.builtin.shell:
+  shell:
     cmd: 'ls -d "{{ crpg_game_client_local_path }}/Modules/cRPG/SceneObj/"*'
   register: sceneobj_dirs
   delegate_to: localhost
+  become: false
 
 - name: Ensure /tmp/AssetPackages directory exists
-  ansible.builtin.file:
+  file:
     path: /tmp/AssetPackages
     state: directory
   delegate_to: localhost
   become: false
 
 - name: Ensure /tmp/SceneObj directory exists
-  ansible.builtin.file:
+  file:
     path: /tmp/SceneObj
     state: directory
   delegate_to: localhost
@@ -103,78 +67,126 @@
 
 
 - name: Tar subfolders of SceneObj with the folder name at the first level
-  ansible.builtin.shell:
+  shell:
     cmd: "tar -cf /tmp/SceneObj/{{ item.split('/')[-1] }}.tar -C '{{ item | dirname }}' '{{ item | basename }}'"
   loop: "{{ sceneobj_dirs.stdout_lines }}"
   delegate_to: localhost
   become: false
 
 - name: Tar files in AssetPackages
-  ansible.builtin.command:
+  command:
     cmd: "tar -cf /tmp/AssetPackages/{{ item | basename }}.tar -C '{{ crpg_game_client_local_path }}/Modules/cRPG/AssetPackages' {{ item | basename }}"
-  loop: "{{ lookup('ansible.builtin.fileglob', crpg_game_client_local_path + '/Modules/cRPG/AssetPackages/*', wantlist=True) }}"
+  loop: "{{ lookup('fileglob', crpg_game_client_local_path + '/Modules/cRPG/AssetPackages/*', wantlist=True) }}"
   delegate_to: localhost
   become: false
 
 - name: Tar GUI, ModuleSounds, bin, ModuleData, and SubModule.xml
-  ansible.builtin.command:
+  command:
     cmd: "tar -cf /tmp/rest.tar -C '{{ crpg_game_client_local_path }}/Modules/cRPG' GUI ModuleSounds bin ModuleData SubModule.xml"
   delegate_to: localhost
   become: false
 
-- name: Compress files in /tmp/AssetPackages with pigz
-  ansible.builtin.shell:
-    cmd: "pigz -f --recursive /tmp/AssetPackages/*.tar"
+- name: Compress files in /tmp/AssetPackages with gzip
+  shell:
+    cmd: "gzip -f /tmp/AssetPackages/*.tar"
   delegate_to: localhost
+  become: false
 
-- name: Compress files in /tmp/SceneObj with pigz
-  ansible.builtin.shell:
-    cmd: "pigz -f --recursive /tmp/SceneObj/*.tar"
+- name: Compress files in /tmp/SceneObj with gzip
+  shell:
+    cmd: "gzip -f /tmp/SceneObj/*.tar"
   delegate_to: localhost
+  become: false
 
-- name: Compress /tmp/rest.tar with pigz
-  ansible.builtin.shell:
-    cmd: "pigz -f /tmp/rest.tar"
+- name: Compress /tmp/rest.tar with gzip
+  shell:
+    cmd: "gzip -f /tmp/rest.tar"
   delegate_to: localhost
+  become: false
 
 - name: Copy rest.tar.gz to destination
-  ansible.builtin.copy:
+  copy:
     src: /tmp/rest.tar.gz
     dest: "{{ crpg_ui_path }}/rest.tar.gz"
     owner: nginx
     group: nginx
 
 - name: Ensure SceneObj directory exists
-  ansible.builtin.file:
+  file:
     path: "{{ crpg_ui_path }}/SceneObj"
     state: directory
     owner: nginx
     group: nginx
 
 - name: Copy hash to destination
-  ansible.builtin.copy:
+  copy:
     src: /tmp/hash.xml
     dest: "{{ crpg_ui_path }}"
     owner: nginx
     group: nginx
 
 - name: Copy contents of SceneObj to destination
-  ansible.builtin.copy:
+  copy:
     src: /tmp/SceneObj
     dest: "{{ crpg_ui_path }}"
     owner: nginx
     group: nginx
 
-
 - name: Copy contents of AssetPackages to destination
-  ansible.builtin.copy:
+  copy:
     src: /tmp/AssetPackages
     dest: "{{ crpg_ui_path }}"
     owner: nginx
     group: nginx
 
+- name: Read mod version from SubModule.xml
+  shell: "grep -oP 'Version value=\"v\\K[^\"]+' '{{ crpg_game_client_local_path }}/Modules/cRPG/SubModule.xml'"
+  delegate_to: localhost
+  become: false
+  register: mod_version_result
+
+- name: Set version facts
+  set_fact:
+    crpg_version: "{{ mod_version_result.stdout }}"
+    crpg_bannerlord_version: "{{ mod_version_result.stdout | regex_replace('\\.[^.]+$', '') }}"
+
+- name: Convert WSL path to Windows path
+  shell: "wslpath -w '{{ crpg_game_client_local_path }}'"
+  register: windows_path_result
+  delegate_to: localhost
+  become: false
+
+- name: Set Windows path facts
+  set_fact:
+    crpg_game_client_windows_path: "{{ windows_path_result.stdout }}"
+
+- name: Generate WorkshopUpdate.xml
+  copy:
+    content: |
+      <Tasks>
+          <GetItem>
+              <ItemId Value="2878356589"/>
+          </GetItem>
+          <UpdateItem>
+              <ModuleFolder Value="{{ crpg_game_client_windows_path | regex_replace('&', '&amp;') }}\Modules\cRPG" />
+              <ChangeNotes Value="{{ crpg_version }}" />
+              <Tags>
+                  <Tag Value="Multiplayer" />
+                  <Tag Value="v{{ crpg_bannerlord_version }}" />
+              </Tags>
+          </UpdateItem>
+      </Tasks>
+    dest: "{{ crpg_game_client_local_path }}/WorkshopUpdate.xml"
+  delegate_to: localhost
+  become: false
+
+- name: Upload mod to Steam Workshop
+  shell: 'script -qc "\"{{ crpg_game_client_local_path }}/bin/Win64_Shipping_Client/TaleWorlds.MountAndBlade.SteamWorkshop.exe\" \"{{ crpg_game_client_windows_path }}\\WorkshopUpdate.xml\"" /dev/null'
+  delegate_to: localhost
+  become: false
+
 - name: Remove specified files and directories
-  ansible.builtin.file:
+  file:
     path: "{{ item }}"
     state: absent
   loop:
@@ -183,3 +195,10 @@
     - /tmp/AssetPackages
     - /tmp/SceneObj
     - /tmp/hash.xml
+
+- name: Remove local WorkshopUpdate.xml
+  file:
+    path: "{{ crpg_game_client_local_path }}/WorkshopUpdate.xml"
+    state: absent
+  delegate_to: localhost
+  become: false
