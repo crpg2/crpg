@@ -580,6 +580,9 @@ character:
     commit:
       notify: Изменения успешно сохранены
 
+    resetField: Сбросить значение поля
+    fillField: Заполнить поле до максимального значения
+
   stats:
     hp:
       title: Очки здоровья

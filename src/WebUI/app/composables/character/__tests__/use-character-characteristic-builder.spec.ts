@@ -321,6 +321,51 @@ describe('useCharacterCharacteristicBuilder', () => {
     })
   })
 
+  describe('bulk field actions', () => {
+    it('onResetField restores changed field to initial value', () => {
+      const { characteristics, onInput, onResetField } = useCharacterCharacteristicBuilder(
+        createCharacteristics({ attributes: { points: 5, strength: 2 } }),
+      )
+
+      onInput('attributes', 'strength', 4)
+      expect(characteristics.value.attributes.strength).toEqual(4)
+      expect(characteristics.value.attributes.points).toEqual(3)
+
+      onResetField('attributes', 'strength')
+
+      expect(characteristics.value.attributes.strength).toEqual(2)
+      expect(characteristics.value.attributes.points).toEqual(5)
+    })
+
+    it('onFillField spends all available points for the selected field', () => {
+      const { characteristics, onFillField } = useCharacterCharacteristicBuilder(
+        createCharacteristics({ attributes: { points: 3, strength: 0 } }),
+      )
+
+      onFillField('attributes', 'strength')
+
+      expect(characteristics.value.attributes.strength).toEqual(3)
+      expect(characteristics.value.attributes.points).toEqual(0)
+    })
+
+    it('onFillField stops when next step violates requirements', () => {
+      mockedCharacteristicRequirementsSatisfied.mockImplementation(
+        (_section, _key, value: number) => value <= 2,
+      )
+
+      const { characteristics, onFillField } = useCharacterCharacteristicBuilder(
+        createCharacteristics({ skills: { points: 5, shield: 0 } }),
+      )
+
+      onFillField('skills', 'shield')
+
+      expect(characteristics.value.skills.shield).toEqual(2)
+      expect(characteristics.value.skills.points).toEqual(3)
+
+      mockedCharacteristicRequirementsSatisfied.mockReturnValue(true)
+    })
+  })
+
   it('reset', () => {
     const { characteristics, onInput, reset } = useCharacterCharacteristicBuilder(
       createCharacteristics({ attributes: { points: 5 }, skills: { points: 10 } }),

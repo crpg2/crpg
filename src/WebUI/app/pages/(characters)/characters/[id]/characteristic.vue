@@ -32,6 +32,8 @@ const {
   isDirty,
   getInputProps,
   onInput,
+  onFillField,
+  onResetField,
   reset: resetCharacterCharacteristicBuilder,
   healthPoints,
 } = useCharacterCharacteristicBuilder(characterCharacteristics)
@@ -81,6 +83,8 @@ const [onRespecializeCharacter] = useAsyncCallback(
         @input="onInput"
         @convert-attributes-to-skills="onConvertCharacterCharacteristics(CHARACTERISTIC_CONVERSION.AttributesToSkills)"
         @convert-skills-to-attributes="onConvertCharacterCharacteristics(CHARACTERISTIC_CONVERSION.SkillsToAttributes)"
+        @fill-field="onFillField"
+        @reset-field="onResetField"
       />
 
       <CharacterStats
