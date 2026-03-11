@@ -18,11 +18,11 @@
     <SpriteCategory>
       <Name>ui_mploading</Name>
       <SpriteSheetCount>161</SpriteSheetCount>
-      <SpriteSheetSize ID="1" Width="3840" Height="1935" />
-      <SpriteSheetSize ID="2" Width="3840" Height="1935" />
-      <SpriteSheetSize ID="3" Width="3383" Height="1902" />
-      <SpriteSheetSize ID="4" Width="3383" Height="1902" />
-      <SpriteSheetSize ID="5" Width="3383" Height="1902" />
+      <SpriteSheetSize ID="1" Width="1920" Height="1080" />
+      <SpriteSheetSize ID="2" Width="1920" Height="1080" />
+      <SpriteSheetSize ID="3" Width="1920" Height="1080" />
+      <SpriteSheetSize ID="4" Width="1920" Height="1080" />
+      <SpriteSheetSize ID="5" Width="1920" Height="1080" />
       <SpriteSheetSize ID="6" Width="1920" Height="1080" />
       <SpriteSheetSize ID="7" Width="1920" Height="1080" />
       <SpriteSheetSize ID="8" Width="1920" Height="1080" />
@@ -57,8 +57,8 @@
       <SpriteSheetSize ID="37" Width="1920" Height="1080" />
       <SpriteSheetSize ID="38" Width="1920" Height="1080" />
       <SpriteSheetSize ID="39" Width="1920" Height="1080" />
-      <SpriteSheetSize ID="40" Width="1920" Height="1080" />
-      <SpriteSheetSize ID="41" Width="1920" Height="1080" />
+      <SpriteSheetSize ID="40" Width="1920" Height="968" />
+      <SpriteSheetSize ID="41" Width="1920" Height="968" />
       <SpriteSheetSize ID="42" Width="1920" Height="1080" />
       <SpriteSheetSize ID="43" Width="1920" Height="1080" />
       <SpriteSheetSize ID="44" Width="1920" Height="1080" />
@@ -173,186 +173,15 @@
   <SpriteParts>
     <SpritePart>
       <SheetID>1</SheetID>
-      <Name>mp_skirmish_map_008_skin</Name>
-      <Width>3840</Width>
-      <Height>1935</Height>
+      <Name>mp_battle_map_001</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
       <SheetX>0</SheetX>
       <SheetY>0</SheetY>
       <CategoryName>ui_mploading</CategoryName>
     </SpritePart>
     <SpritePart>
       <SheetID>2</SheetID>
-      <Name>mp_skirmish_map_010</Name>
-      <Width>3840</Width>
-      <Height>1935</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>3</SheetID>
-      <Name>mp_battle_map_001</Name>
-      <Width>3383</Width>
-      <Height>1902</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>4</SheetID>
-      <Name>mp_battle_map_002</Name>
-      <Width>3383</Width>
-      <Height>1902</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>5</SheetID>
-      <Name>mp_battle_map_003</Name>
-      <Width>3383</Width>
-      <Height>1902</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>6</SheetID>
-      <Name>mp_siege_map_012_w</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>7</SheetID>
-      <Name>mp_skirmish_map_002f</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>8</SheetID>
-      <Name>mp_skirmish_map_003_skinc</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>9</SheetID>
-      <Name>mp_skirmish_map_007</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>10</SheetID>
-      <Name>mp_skirmish_map_007_winter</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>11</SheetID>
-      <Name>mp_skirmish_map_009</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>12</SheetID>
-      <Name>mp_skirmish_map_010_winter</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>13</SheetID>
-      <Name>mp_skirmish_map_014</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>14</SheetID>
-      <Name>mp_skirmish_map_020</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>15</SheetID>
-      <Name>mp_tdm_map_001</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>16</SheetID>
-      <Name>mp_tdm_map_001_spring</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>17</SheetID>
-      <Name>mp_tdm_map_001_spring_test</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>18</SheetID>
-      <Name>mp_tdm_map_003</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>19</SheetID>
-      <Name>mp_tdm_map_004</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>20</SheetID>
-      <Name>mp_siege_map_012</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>21</SheetID>
       <Name>mp_siege_map_009</Name>
       <Width>1920</Width>
       <Height>1080</Height>
@@ -361,7 +190,160 @@
       <CategoryName>ui_mploading</CategoryName>
     </SpritePart>
     <SpritePart>
-      <SheetID>22</SheetID>
+      <SheetID>3</SheetID>
+      <Name>mp_siege_map_012</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>4</SheetID>
+      <Name>mp_siege_map_012_w</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>5</SheetID>
+      <Name>mp_skirmish_map_002f</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>6</SheetID>
+      <Name>mp_skirmish_map_003_skinc</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>7</SheetID>
+      <Name>mp_skirmish_map_007</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>8</SheetID>
+      <Name>mp_skirmish_map_007_winter</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>9</SheetID>
+      <Name>mp_tdm_map_004a</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>10</SheetID>
+      <Name>mp_skirmish_map_009</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>11</SheetID>
+      <Name>mp_skirmish_map_014</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>12</SheetID>
+      <Name>mp_skirmish_map_020</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>13</SheetID>
+      <Name>mp_tdm_map_001</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>14</SheetID>
+      <Name>mp_tdm_map_001_spring</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>15</SheetID>
+      <Name>mp_tdm_map_001_spring_test</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>16</SheetID>
+      <Name>mp_tdm_map_003</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>17</SheetID>
+      <Name>mp_tdm_map_004</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>18</SheetID>
+      <Name>mp_skirmish_map_010_winter</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>19</SheetID>
+      <Name>mp_siege_map_007_battania</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>20</SheetID>
       <Name>mp_siege_map_007_battania_w</Name>
       <Width>1920</Width>
       <Height>1080</Height>
@@ -370,8 +352,26 @@
       <CategoryName>ui_mploading</CategoryName>
     </SpritePart>
     <SpritePart>
+      <SheetID>21</SheetID>
+      <Name>mp_siege_map_005</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>22</SheetID>
+      <Name>mp_battle_map_002</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
       <SheetID>23</SheetID>
-      <Name>mp_siege_map_007_battania</Name>
+      <Name>mp_battle_map_003</Name>
       <Width>1920</Width>
       <Height>1080</Height>
       <SheetX>0</SheetX>
@@ -434,7 +434,7 @@
     </SpritePart>
     <SpritePart>
       <SheetID>30</SheetID>
-      <Name>mp_sergeant_map_010</Name>
+      <Name>mp_siege_map_005_winter</Name>
       <Width>1920</Width>
       <Height>1080</Height>
       <SheetX>0</SheetX>
@@ -443,7 +443,7 @@
     </SpritePart>
     <SpritePart>
       <SheetID>31</SheetID>
-      <Name>mp_tdm_map_004a</Name>
+      <Name>mp_tdm_map_004a_w</Name>
       <Width>1920</Width>
       <Height>1080</Height>
       <SheetX>0</SheetX>
@@ -461,69 +461,6 @@
     </SpritePart>
     <SpritePart>
       <SheetID>33</SheetID>
-      <Name>mp_sergeant_map_013</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>34</SheetID>
-      <Name>mp_sergeant_map_018</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>35</SheetID>
-      <Name>mp_sergeant_map_018_w</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>36</SheetID>
-      <Name>mp_siege_map_003</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>37</SheetID>
-      <Name>mp_siege_map_004_rs</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>38</SheetID>
-      <Name>mp_siege_map_005</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>39</SheetID>
-      <Name>mp_siege_map_005_winter</Name>
-      <Width>1920</Width>
-      <Height>1080</Height>
-      <SheetX>0</SheetX>
-      <SheetY>0</SheetY>
-      <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>40</SheetID>
       <Name>mp_sergeant_map_011_rw</Name>
       <Width>1920</Width>
       <Height>1080</Height>
@@ -532,10 +469,73 @@
       <CategoryName>ui_mploading</CategoryName>
     </SpritePart>
     <SpritePart>
-      <SheetID>41</SheetID>
-      <Name>mp_tdm_map_004a_w</Name>
+      <SheetID>34</SheetID>
+      <Name>mp_sergeant_map_013</Name>
       <Width>1920</Width>
       <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>35</SheetID>
+      <Name>mp_sergeant_map_018</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>36</SheetID>
+      <Name>mp_sergeant_map_018_w</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>37</SheetID>
+      <Name>mp_siege_map_003</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>38</SheetID>
+      <Name>mp_siege_map_004_rs</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>39</SheetID>
+      <Name>mp_sergeant_map_010</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>40</SheetID>
+      <Name>mp_skirmish_map_008_skin</Name>
+      <Width>1920</Width>
+      <Height>968</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>41</SheetID>
+      <Name>mp_skirmish_map_010</Name>
+      <Width>1920</Width>
+      <Height>968</Height>
       <SheetX>0</SheetX>
       <SheetY>0</SheetY>
       <CategoryName>ui_mploading</CategoryName>
