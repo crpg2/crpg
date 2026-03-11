@@ -12,12 +12,16 @@ import {
 
 const {
   itemTypes,
+  itemTypeCounts = {},
+  allItemsCount,
   weaponClasses = [],
   orientation = 'horizontal',
   withAllCategories = false,
   size = 'xl',
 } = defineProps<{
   itemTypes: ItemType[]
+  itemTypeCounts?: Partial<Record<ItemType, number>>
+  allItemsCount?: number
   weaponClasses?: WeaponClass[]
   orientation?: 'vertical' | 'horizontal'
   withAllCategories?: boolean
@@ -28,12 +32,17 @@ const itemType = defineModel<ItemType>('itemType', { default: () => ITEM_TYPE.Un
 
 const weaponClass = defineModel<WeaponClass | null>('weaponClass', { default: () => ITEM_TYPE.OneHandedWeapon })
 
+type ItemTypeTabItem = TabsItem & { value: ItemType, count?: number }
+
 const itemTypeOptions = computed(() => {
   return [
-    ...(withAllCategories ? [{ value: ITEM_TYPE.Undefined, icon: 'crpg:grid' }] : []),
-    ...itemTypes.map<TabsItem>(type => ({
+    ...(withAllCategories
+      ? [{ value: ITEM_TYPE.Undefined, icon: 'crpg:grid', count: allItemsCount ?? 0 } satisfies ItemTypeTabItem]
+      : []),
+    ...itemTypes.map<ItemTypeTabItem>(type => ({
       icon: `crpg:${itemTypeToIcon[type]}`,
       value: type,
+      count: itemTypeCounts[type],
     })),
   ]
 })
@@ -69,11 +78,20 @@ const weaponClassOptions = computed(() => {
         :content="{ side: orientation === 'horizontal' ? 'bottom' : 'right' }"
         :text="$t(`item.type.${_item.value}`)"
       >
-        <UIcon
-          :name="_item.icon"
-          class="cursor-pointer outline-0 select-none"
-          :class="[size === 'xl' ? 'size-9' : 'size-6']"
-        />
+        <UChip
+          :show="_item.count !== undefined"
+          :text="_item.count"
+          color="neutral"
+          :ui="{
+            base: 'h-3.5 min-w-3.5 text-[8px] bg-inverted/25 text-white ring-0',
+          }"
+        >
+          <UIcon
+            :name="_item.icon"
+            class="cursor-pointer outline-0 select-none"
+            :class="[size === 'xl' ? 'size-9' : 'size-6']"
+          />
+        </UChip>
       </UTooltip>
     </template>
 
