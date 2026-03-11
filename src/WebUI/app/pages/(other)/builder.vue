@@ -49,6 +49,8 @@ const {
   currentSkillRequirementsSatisfied,
   getInputProps,
   onInput,
+  onFillField,
+  onResetField,
   reset: resetCharacterBuilderState,
   healthPoints,
 } = useCharacterCharacteristicBuilder(initialCharacteristics)
@@ -213,6 +215,8 @@ const onShare = () => {
               @input="onInput"
               @convert-attributes-to-skills="convertCharacteristics(CHARACTERISTIC_CONVERSION.AttributesToSkills)"
               @convert-skills-to-attributes="convertCharacteristics(CHARACTERISTIC_CONVERSION.SkillsToAttributes)"
+              @fill-field="onFillField"
+              @reset-field="onResetField"
             />
 
             <CharacterStats

@@ -132,6 +132,21 @@ export const useCharacterCharacteristicBuilder = (
     characteristics.value.attributes.strength,
   ))
 
+  const onResetField = (section: CharacteristicSectionKey, key: CharacteristicKey): void => {
+    const inputProps = getInputProps(section, key)
+    if (inputProps.modelValue > inputProps.min) {
+      onInput(section, key, inputProps.min)
+    }
+  }
+
+  const onFillField = (section: CharacteristicSectionKey, key: CharacteristicKey): void => {
+    let inputProps = getInputProps(section, key)
+    while (inputProps.max > inputProps.modelValue) {
+      onInput(section, key, inputProps.max)
+      inputProps = getInputProps(section, key)
+    }
+  }
+
   return {
     canConvertAttributesToSkills,
     canConvertSkillsToAttributes,
@@ -140,29 +155,10 @@ export const useCharacterCharacteristicBuilder = (
     getInputProps,
     isChangeValid,
     onInput,
+    onFillField,
+    onResetField,
     reset,
     isDirty,
     healthPoints,
   }
 }
-
-// TODO: FIXME iter count, unit
-// const onResetField = (
-//   characteristicSectionKey: CharacteristicSectionKey,
-//   characteristicKey: CharacteristicKey,
-// ) => {
-//   for (let i = 1; i <= 300; i++) {
-//     const inputProps = getInputProps(characteristicSectionKey, characteristicKey)
-//     onInput(characteristicSectionKey, characteristicKey, inputProps.min!)
-//   }
-// }
-
-// const onFullFillField = (
-//   characteristicSectionKey: CharacteristicSectionKey,
-//   characteristicKey: CharacteristicKey,
-// ) => {
-//   for (let i = 1; i <= 300; i++) {
-//     const inputProps = getInputProps(characteristicSectionKey, characteristicKey)
-//     onInput(characteristicSectionKey, characteristicKey, inputProps.max)
-//   }
-// }

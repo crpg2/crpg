@@ -614,6 +614,9 @@ character:
     commit:
       notify: Changes have been successfully saved
 
+    resetField: Reset field value
+    fillField: Fill field to max value
+
   stats:
     hp:
       title: Health points
