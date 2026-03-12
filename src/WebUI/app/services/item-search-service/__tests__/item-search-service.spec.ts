@@ -150,9 +150,9 @@ it('getFacetsByItemType returns sorted unique item types', () => {
   ])
 
   expect(getFacetsByItemType(input, orders)).toEqual([
-    ITEM_TYPE.OneHandedWeapon,
-    ITEM_TYPE.TwoHandedWeapon,
-    ITEM_TYPE.Banner,
+    { type: ITEM_TYPE.OneHandedWeapon, count: 1 },
+    { type: ITEM_TYPE.TwoHandedWeapon, count: 1 },
+    { type: ITEM_TYPE.Banner, count: 2 },
   ])
 })
 

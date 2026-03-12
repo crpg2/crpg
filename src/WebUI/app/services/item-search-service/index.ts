@@ -53,16 +53,37 @@ export const getColumnVisibility = (aggregations: AggregationConfig): Visibility
 
 export const itemTypeOrder = new Map<ItemType, number>(Object.values(ITEM_TYPE).map((value, index) => [value, index]))
 
-export const getFacetsByItemType = (itemTypes: ItemType[], orders: Map<ItemType, number> = itemTypeOrder) => {
-  return uniq(itemTypes).sort((a, b) => orders.get(a)! - orders.get(b)!)
+export interface FacetedItemTypes {
+  type: ItemType
+  count: number
+}
+
+export const getFacetsByItemType = (itemTypes: ItemType[], orders: Map<ItemType, number> = itemTypeOrder): FacetedItemTypes[] => {
+  const counts = new Map<ItemType, number>()
+  for (const itemType of itemTypes) {
+    counts.set(itemType, (counts.get(itemType) ?? 0) + 1)
+  }
+  return Array.from(counts.entries())
+    .map(([type, count]) => ({ type, count }))
+    .sort((a, b) => orders.get(a.type)! - orders.get(b.type)!)
+}
+
+export interface FacetedWeaponClasses {
+  weaponClass: WeaponClass
+  count: number
 }
 
 export const weaponClassOrder = new Map<WeaponClass, number>(Object.values(WEAPON_CLASS).map((value, index) => [value, index]))
 
-export const getFacetsByWeaponClass = (weaponClasses: WeaponClass[], itemType: ItemType, orders: Map<WeaponClass, number> = weaponClassOrder) => {
-  return getWeaponClassesByItemType(itemType)
-    .filter(wc => weaponClasses.includes(wc))
-    .sort((a, b) => orders.get(a)! - orders.get(b)!)
+export const getFacetsByWeaponClass = (weaponClasses: WeaponClass[], orders: Map<WeaponClass, number> = weaponClassOrder): FacetedWeaponClasses[] => {
+  const counts = new Map<WeaponClass, number>()
+  for (const weaponClass of weaponClasses) {
+    counts.set(weaponClass, (counts.get(weaponClass) ?? 0) + 1)
+  }
+
+  return Array.from(counts.entries())
+    .map(([weaponClass, count]) => ({ weaponClass, count }))
+    .sort((a, b) => orders.get(a.weaponClass)! - orders.get(b.weaponClass)!)
 }
 
 const filterFnMap: Record<AggregationView, (format?: ItemFieldFormat) => FilterFnOption<any>> = {
