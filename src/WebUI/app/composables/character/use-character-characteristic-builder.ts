@@ -75,9 +75,14 @@ export const useCharacterCharacteristicBuilder = (
   const getInputProps = (
     section: CharacteristicSectionKey,
     key: CharacteristicKey,
-    noLimit = false, // TODO: FIXME: need a name, for builder page
-  ): { modelValue: number, min: number, max: number } => {
-    const initialValue = noLimit
+    noMinLimit = false, //
+  ): {
+    modelValue: number
+    min: number
+    max: number
+    costToIncrease: number
+  } => {
+    const initialValue = noMinLimit
       ? (defaults[section] as any)[key]
       : (toValue(characteristicsInitial)[section] as any)[key]
 
@@ -91,6 +96,7 @@ export const useCharacterCharacteristicBuilder = (
       max: value + ((costToIncrease <= characteristics.value[section].points && requirementsSatisfied) ? 1 : 0),
       min: initialValue, // TODO: can to default for builder
       modelValue: value,
+      costToIncrease,
     }
   }
   const onInput = (
@@ -128,7 +134,7 @@ export const useCharacterCharacteristicBuilder = (
 
   const onInputWithAutoClamp = (section: CharacteristicSectionKey, key: CharacteristicKey, targetValue: number): void => {
     const initialValue = (toValue(characteristicsInitial)[section] as any)[key]
-    let valueToTry = targetValue
+    let valueToTry = Math.min(targetValue, 250) // avoid long loop
 
     while (valueToTry >= initialValue) {
       onInput(section, key, valueToTry)

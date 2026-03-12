@@ -15,7 +15,7 @@ interface ConvertState {
 }
 
 defineProps<{
-  getInputProps: (group: CharacteristicSectionKey, field: CharacteristicKey) => { modelValue: number, min: number, max: number }
+  getInputProps: (group: CharacteristicSectionKey, field: CharacteristicKey) => { modelValue: number, min: number, max: number, costToIncrease: number }
   checkCurrentSkillRequirementsSatisfied: (skillKey: SkillKey) => boolean
   characteristics: CharacterCharacteristics
   convertAttributesToSkillsState: ConvertState
@@ -124,8 +124,8 @@ const formSchema: FormSchema[] = [
       :key="fieldKey"
       :field-group-key
       :field-key
+      :is-error="fieldGroupKey === 'skills' && !checkCurrentSkillRequirementsSatisfied(fieldKey as SkillKey)"
       :input-props="getInputProps(fieldGroupKey, fieldKey)"
-      :skill-requirement-satisfied="fieldGroupKey !== 'skills' || checkCurrentSkillRequirementsSatisfied(fieldKey as SkillKey)"
       @update:model-value="$emit('inputWithAutoClamp', fieldGroupKey, fieldKey, $event)"
       @fill-field="$emit('fillField', fieldGroupKey, fieldKey)"
       @reset-field="$emit('resetField', fieldGroupKey, fieldKey)"

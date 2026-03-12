@@ -496,6 +496,7 @@ character:
         sixStr: 6 очков силы за каждый уровень
         threeAgi: 3 очка ловкости за каждый уровень
         sixAgi: 6 очков ловкости за каждый уровень
+        wpf: '{points} weapon proficiencies'
 
     attributes:
       title: Атрибуты
@@ -554,28 +555,28 @@ character:
       children:
         oneHanded:
           title: Одноручное
-          desc: ''
-          requires: ''
+          desc: Увеличивает мастерство владения одноручным оружием
+          requires: '@:character.characteristic.requires.linked.wpf'
         twoHanded:
           title: Двуручное
-          desc: ''
-          requires: ''
+          desc: Увеличивает мастерство владения двуручным оружием
+          requires: '@:character.characteristic.requires.linked.wpf'
         polearm:
           title: Древковое
-          desc: ''
-          requires: ''
+          desc: Увеличивает мастерство владения древковым оружием
+          requires: '@:character.characteristic.requires.linked.wpf'
         bow:
           title: Лук
-          desc: ''
-          requires: ''
+          desc: Увеличивает мастерство владения луком
+          requires: '@:character.characteristic.requires.linked.wpf'
         crossbow:
           title: Арбалет
-          desc: ''
-          requires: ''
+          desc: Увеличивает мастерство владения арбалетом
+          requires: '@:character.characteristic.requires.linked.wpf'
         throwing:
           title: Метательное
-          desc: ''
-          requires: ''
+          desc: Увеличивает мастерство владения метательным оружием
+          requires: '@:character.characteristic.requires.linked.wpf'
 
     commit:
       notify: Изменения успешно сохранены

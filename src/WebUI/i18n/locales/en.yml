@@ -530,6 +530,7 @@ character:
         sixStr: 6 strength per level
         threeAgi: 3 agility per level
         sixAgi: 6 agility per level
+        wpf: '{points} weapon proficiencies'
 
     attributes:
       title: Attributes
@@ -588,28 +589,28 @@ character:
       children:
         oneHanded:
           title: One handed
-          desc: ''
-          requires: ''
+          desc: Increase one handed mastery
+          requires: '@:character.characteristic.requires.linked.wpf'
         twoHanded:
           title: Two handed
-          desc: ''
-          requires: ''
+          desc: Increase two handed mastery
+          requires: '@:character.characteristic.requires.linked.wpf'
         polearm:
           title: Polearm
-          desc: ''
-          requires: ''
+          desc: Increase polearm mastery
+          requires: '@:character.characteristic.requires.linked.wpf'
         bow:
           title: Bow
-          desc: ''
-          requires: ''
+          desc: Increase bow mastery
+          requires: '@:character.characteristic.requires.linked.wpf'
         crossbow:
           title: Crossbow
-          desc: ''
-          requires: ''
+          desc: Increase crossbow mastery
+          requires: '@:character.characteristic.requires.linked.wpf'
         throwing:
           title: Throwing
-          desc: ''
-          requires: ''
+          desc: Increase throwing mastery
+          requires: '@:character.characteristic.requires.linked.wpf'
 
     commit:
       notify: Changes have been successfully saved

@@ -5,11 +5,11 @@ import type { CharacteristicKey, CharacteristicSectionKey } from '~/models/chara
 
 import { characteristicBonusByKey } from '~/services/character-service'
 
-const props = defineProps<{
+defineProps<{
   fieldGroupKey: CharacteristicSectionKey
   fieldKey: CharacteristicKey
-  inputProps: { modelValue: number, min: number, max: number }
-  skillRequirementSatisfied: boolean
+  inputProps: { modelValue: number, min: number, max: number, costToIncrease: number }
+  isError: boolean
 }>()
 
 defineEmits<{
@@ -17,8 +17,6 @@ defineEmits<{
   'resetField': []
   'update:modelValue': [value: number]
 }>()
-
-const isError = computed(() => props.fieldGroupKey === 'skills' && !props.skillRequirementSatisfied)
 </script>
 
 <template>
@@ -45,16 +43,17 @@ const isError = computed(() => props.fieldGroupKey === 'skills' && !props.skillR
       </div>
 
       <template #content>
-        <UiTooltipContent
-          :title="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.title`)"
-        >
+        <UiTooltipContent :title="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.title`)">
           <template v-if="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.requires`)" #validation>
             <UiTextView variant="p" class="text-warning">
-              {{ $t('character.characteristic.requires.title', { text: $t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.requires`) }) }}
+              {{ $t('character.characteristic.requires.title', {
+                text: $t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.requires`,
+                         { points: inputProps.costToIncrease }),
+              }) }}
             </UiTextView>
           </template>
 
-          <template v-if="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.desc`)" #description>
+          <template #description>
             <i18n-t
               scope="global"
               :keypath="`character.characteristic.${fieldGroupKey}.children.${fieldKey}.desc`"
