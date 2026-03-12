@@ -1,7 +1,8 @@
 # Redirect www to non-wwww
 server {
     listen 80;
-    listen 443 ssl http2;
+    listen 443 ssl;
+    http2 on;
     server_name www.{{ crpg_domain_name }};
 
     include /etc/nginx/snippets/crpg-ssl.conf;
@@ -10,7 +11,8 @@ server {
 }
 
 server {
-    listen 443 ssl http2;
+    listen 443 ssl;
+    http2 on;
     server_name {{ crpg_domain_name }};
     root {{ crpg_ui_path }};
 

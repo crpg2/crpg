@@ -187,8 +187,8 @@ internal static class CrpgHashMethods
             WriteToConsole($"Hashing {Path.GetFileName(filePath)}");
         }
 
-        var hasher = new XxHash64();
-        using (FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read, 81920, useAsync: true))
+        XxHash64 hasher = new();
+        await using (FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read, 81920, useAsync: true))
         {
             await hasher.AppendAsync(stream);
         }

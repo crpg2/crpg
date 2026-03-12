@@ -38,15 +38,15 @@
 # The default values of these variables are driven from the -D command-line
 # option or PGDATA environment variable, represented here as ConfigDir.
 
-data_directory = '/var/lib/postgresql/13/main' # use data in another directory
+data_directory = '/var/lib/postgresql/{{ postgresql_version_major }}/main' # use data in another directory
                                                # (change requires restart)
-hba_file = '/etc/postgresql/13/main/pg_hba.conf' # host-based authentication file
+hba_file = '/etc/postgresql/{{ postgresql_version_major }}/main/pg_hba.conf' # host-based authentication file
                                                  # (change requires restart)
-ident_file = '/etc/postgresql/13/main/pg_ident.conf' # ident configuration file
+ident_file = '/etc/postgresql/{{ postgresql_version_major }}/main/pg_ident.conf' # ident configuration file
                                                      # (change requires restart)
 
 # If external_pid_file is not explicitly set, no extra PID file is written.
-external_pid_file = '/var/run/postgresql/13-main.pid' # write an extra PID file
+external_pid_file = '/var/run/postgresql/{{ postgresql_version_major }}-main.pid' # write an extra PID file
                                                       # (change requires restart)
 
 
@@ -505,7 +505,7 @@ log_timezone = 'Europe/Berlin'
 # PROCESS TITLE
 #------------------------------------------------------------------------------
 
-cluster_name = '13/main'   # added to process titles if nonempty
+cluster_name = '{{ postgresql_version_major }}/main'   # added to process titles if nonempty
      # (change requires restart)
 #update_process_title = on
 
@@ -514,14 +514,13 @@ cluster_name = '13/main'   # added to process titles if nonempty
 # STATISTICS
 #------------------------------------------------------------------------------
 
-# - Query and Index Statistics Collector -
+# - Cumulative Statistics -
 
 #track_activities = on
 #track_counts = on
 #track_io_timing = off
 #track_functions = none   # none, pl, all
 track_activity_query_size = 4096 # (change requires restart)
-stats_temp_directory = '/var/run/postgresql/13-main.pg_stat_tmp'
 
 
 # - Monitoring -
@@ -598,9 +597,6 @@ stats_temp_directory = '/var/run/postgresql/13-main.pg_stat_tmp'
 #vacuum_freeze_table_age = 150000000
 #vacuum_multixact_freeze_min_age = 5000000
 #vacuum_multixact_freeze_table_age = 150000000
-#vacuum_cleanup_index_scale_factor = 0.1 # fraction of total number of tuples
-      # before index cleanup, 0 always performs
-      # index cleanup
 #bytea_output = 'hex'   # hex, escape
 #xmlbinary = 'base64'
 #xmloption = 'content'
