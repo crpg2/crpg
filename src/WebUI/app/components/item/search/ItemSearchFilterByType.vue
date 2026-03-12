@@ -39,8 +39,8 @@ const itemTypeOptions = computed(() => {
       ? [{ value: ITEM_TYPE.Undefined, icon: 'crpg:grid', count: totalCount ?? 0 } satisfies ItemTypeTabItem]
       : []),
     ...itemTypes.map<ItemTypeTabItem>(item => ({
-      icon: `crpg:${itemTypeToIcon[item.type]}`,
-      value: item.type,
+      icon: `crpg:${itemTypeToIcon[item.value]}`,
+      value: item.value,
       count: item.count,
     })),
   ]
@@ -48,8 +48,8 @@ const itemTypeOptions = computed(() => {
 
 const weaponClassOptions = computed(() => {
   return weaponClasses.map<TabsItem>(item => ({
-    icon: `crpg:${weaponClassToIcon[item.weaponClass]}`,
-    value: item.weaponClass,
+    icon: `crpg:${weaponClassToIcon[item.value]}`,
+    value: item.value,
     count: item.count,
   }))
 })

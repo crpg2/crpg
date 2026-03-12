@@ -150,9 +150,9 @@ it('getFacetsByItemType returns sorted unique item types', () => {
   ])
 
   expect(getFacetsByItemType(input, orders)).toEqual([
-    { type: ITEM_TYPE.OneHandedWeapon, count: 1 },
-    { type: ITEM_TYPE.TwoHandedWeapon, count: 1 },
-    { type: ITEM_TYPE.Banner, count: 2 },
+    { value: ITEM_TYPE.OneHandedWeapon, count: 1 },
+    { value: ITEM_TYPE.TwoHandedWeapon, count: 1 },
+    { value: ITEM_TYPE.Banner, count: 2 },
   ])
 })
 
@@ -164,13 +164,17 @@ describe('getFacetsByWeaponClass', () => {
   ])
 
   it('returns sorted and filtered weapon classes', () => {
-    mockGetWeaponClassesByItemType.mockReturnValue([
-      WEAPON_CLASS.OneHandedSword,
-      WEAPON_CLASS.OneHandedAxe,
-      WEAPON_CLASS.TwoHandedSword,
+    const input = [WEAPON_CLASS.OneHandedAxe, WEAPON_CLASS.TwoHandedSword, WEAPON_CLASS.TwoHandedSword]
+    const result = getFacetsByWeaponClass(input, orders)
+    expect(result).toEqual([
+      {
+        value: WEAPON_CLASS.OneHandedAxe,
+        count: 1,
+      },
+      {
+        value: WEAPON_CLASS.TwoHandedSword,
+        count: 2,
+      },
     ])
-    const input = [WEAPON_CLASS.OneHandedAxe, WEAPON_CLASS.TwoHandedSword]
-    const result = getFacetsByWeaponClass(input, ITEM_TYPE.OneHandedWeapon, orders)
-    expect(result).toEqual([WEAPON_CLASS.OneHandedAxe, WEAPON_CLASS.TwoHandedSword])
   })
 })
