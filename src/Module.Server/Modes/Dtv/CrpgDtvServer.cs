@@ -1,6 +1,7 @@
 ﻿using System.Xml.Serialization;
 using Crpg.Module.Common;
 using Crpg.Module.Common.AiComponents;
+using Crpg.Module.Helpers;
 using Crpg.Module.Rewards;
 using NetworkMessages.FromServer;
 using TaleWorlds.Core;
@@ -456,7 +457,20 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
 
                 ammoCount = siegeWeapon.AmmoCount;
                 startingAmmoCount = siegeWeapon.StartingAmmoCount;
-                setAmmo = a => siegeWeapon.SetAmmo(a);
+                setAmmo = a =>
+                {
+                    siegeWeapon.SetAmmo(a);
+
+                    // When a weapon hits 0 ammo, it stays permanently dead. This reverses this.
+                    ReflectionHelper.SetProperty(siegeWeapon, "HasAmmo", true);
+                    siegeWeapon.SetForcedUse(true);
+                    siegeWeapon.SetIsDisabledForAI(false);
+                    var ammoPickUpPoints = (List<StandingPoint>)ReflectionHelper.GetProperty(siegeWeapon, "AmmoPickUpPoints")!;
+                    foreach (var point in ammoPickUpPoints)
+                    {
+                        point.IsDeactivated = false;
+                    }
+                };
                 createNetworkMessage = a => new SetRangedSiegeWeaponAmmo(siegeWeapon.Id, a);
             }
             else
