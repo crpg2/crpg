@@ -1,5 +1,6 @@
 using TaleWorlds.Core;
 using TaleWorlds.Library;
+using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.Modes.Dtv;
@@ -12,10 +13,13 @@ internal class CrpgDtvStuckBotHighlighter : MissionLogic
     /// <summary>The minimum wave age in seconds to start counting down before highlighting bots.</summary>
     private const float MinWaveAge = 60f;
 
+    /// <summary>The maximum number of alive bots to start highlighting.</summary>
+    private const int MaxBotsToHighlight = 5;
+
     private readonly CrpgDtvClient _dtvClient;
+    private readonly List<Agent> _highlightedAgents = new();
     private MissionTime _lastAttackerBotKillTime;
     private MissionTime _waveStartTime;
-    private bool _botsHighlighted;
     private bool _waveActive;
 
     public CrpgDtvStuckBotHighlighter(CrpgDtvClient dtvClient)
@@ -40,11 +44,13 @@ internal class CrpgDtvStuckBotHighlighter : MissionLogic
     {
         base.OnMissionTick(dt);
 
-        if (!_botsHighlighted
+        int activeBotCount = Mission.AttackerTeam?.ActiveAgents.Count(a => !a.IsPlayerControlled) ?? 0;
+        if (_highlightedAgents.Count == 0
             && _waveActive
             && _waveStartTime.ElapsedSeconds >= MinWaveAge + HighlightDelay
             && _lastAttackerBotKillTime.ElapsedSeconds >= HighlightDelay
-            && Mission.AttackerTeam?.ActiveAgents.Count > 0)
+            && activeBotCount > 0
+            && activeBotCount < MaxBotsToHighlight)
         {
             ApplyHighlights();
         }
@@ -55,6 +61,7 @@ internal class CrpgDtvStuckBotHighlighter : MissionLogic
         if (_waveActive && !affectedAgent.IsPlayerControlled && affectedAgent.Team?.Side == BattleSideEnum.Attacker)
         {
             _lastAttackerBotKillTime = MissionTime.Now;
+            _highlightedAgents.Remove(affectedAgent);
             ClearHighlights();
         }
     }
@@ -75,31 +82,33 @@ internal class CrpgDtvStuckBotHighlighter : MissionLogic
 
     private void ApplyHighlights()
     {
-        _botsHighlighted = true;
         uint contourColor = new Color(1f, 0.27f, 0.27f).ToUnsignedInteger();
         foreach (Agent agent in Mission.AttackerTeam.ActiveAgents)
         {
             if (!agent.IsPlayerControlled)
             {
                 agent.AgentVisuals?.SetContourColor(contourColor);
+                _highlightedAgents.Add(agent);
             }
         }
+
+        InformationManager.DisplayMessage(new InformationMessage
+        {
+            Information = new TextObject("{=Ht7vJBcR}Remaining enemies are now highlighted!").ToString(),
+            Color = new Color(1f, 0.27f, 0.27f),
+        });
     }
 
     private void ClearHighlights()
     {
-        if (!_botsHighlighted)
+        foreach (Agent agent in _highlightedAgents)
         {
-            return;
-        }
-
-        _botsHighlighted = false;
-        foreach (Agent agent in Mission.AttackerTeam.TeamAgents)
-        {
-            if (!agent.IsPlayerControlled)
+            if (agent.IsActive())
             {
                 agent.AgentVisuals?.SetContourColor(null);
             }
         }
+
+        _highlightedAgents.Clear();
     }
 }
