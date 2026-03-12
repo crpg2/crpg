@@ -79,7 +79,7 @@ const isError = computed(() => props.fieldGroupKey === 'skills' && !props.skillR
           <UButton
             variant="subtle"
             color="neutral"
-            icon="i-lucide-chevrons-left"
+            icon="crpg:reset"
             :disabled="inputProps.modelValue <= inputProps.min"
             :data-aq-reset-field="`${fieldGroupKey}:${fieldKey}`"
             @click="$emit('resetField')"
@@ -93,9 +93,26 @@ const isError = computed(() => props.fieldGroupKey === 'skills' && !props.skillR
             base: 'w-22',
             decrement: 'flex items-center gap-0.5',
           }"
-          v-bind="inputProps"
+          :model-value="inputProps.modelValue"
           @update:model-value="$emit('update:modelValue', $event)"
-        />
+        >
+          <template #decrement>
+            <UButton
+              variant="link"
+              color="neutral"
+              icon="i-lucide-minus"
+              :disabled="inputProps.modelValue <= inputProps.min"
+            />
+          </template>
+          <template #increment>
+            <UButton
+              variant="link"
+              color="neutral"
+              icon="i-lucide-plus"
+              :disabled="inputProps.max <= inputProps.modelValue"
+            />
+          </template>
+        </UInputNumber>
         <UTooltip :text="$t('character.characteristic.fillField')">
           <UButton
             variant="subtle"

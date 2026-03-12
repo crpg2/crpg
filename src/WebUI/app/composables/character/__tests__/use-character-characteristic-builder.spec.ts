@@ -364,6 +364,79 @@ describe('useCharacterCharacteristicBuilder', () => {
 
       mockedCharacteristicRequirementsSatisfied.mockReturnValue(true)
     })
+
+    it('onInputWithAutoClamp sets the value when enough points available', () => {
+      const { characteristics, onInputWithAutoClamp } = useCharacterCharacteristicBuilder(
+        createCharacteristics({ attributes: { points: 5, strength: 0 } }),
+      )
+
+      onInputWithAutoClamp('attributes', 'strength', 3)
+
+      expect(characteristics.value.attributes.strength).toEqual(3)
+      expect(characteristics.value.attributes.points).toEqual(2)
+    })
+
+    it('onInputWithAutoClamp clamps to max available when not enough points', () => {
+      const { characteristics, onInputWithAutoClamp } = useCharacterCharacteristicBuilder(
+        createCharacteristics({ attributes: { points: 1, strength: 0 } }),
+      )
+
+      onInputWithAutoClamp('attributes', 'strength', 5)
+
+      expect(characteristics.value.attributes.strength).toEqual(1)
+      expect(characteristics.value.attributes.points).toEqual(0)
+    })
+
+    it('onInputWithAutoClamp clamps to initial value when no points available', () => {
+      const { characteristics, onInputWithAutoClamp } = useCharacterCharacteristicBuilder(
+        createCharacteristics({ attributes: { points: 0, strength: 2 } }),
+      )
+
+      onInputWithAutoClamp('attributes', 'strength', 5)
+
+      expect(characteristics.value.attributes.strength).toEqual(2)
+      expect(characteristics.value.attributes.points).toEqual(0)
+    })
+
+    it('onInputWithAutoClamp respects requirements when clamping', () => {
+      mockedCharacteristicRequirementsSatisfied.mockImplementation(
+        (_section, _key, value: number) => value <= 2,
+      )
+
+      const { characteristics, onInputWithAutoClamp } = useCharacterCharacteristicBuilder(
+        createCharacteristics({ skills: { points: 10, shield: 0 } }),
+      )
+
+      onInputWithAutoClamp('skills', 'shield', 5)
+
+      expect(characteristics.value.skills.shield).toEqual(2)
+      expect(characteristics.value.skills.points).toEqual(8)
+
+      mockedCharacteristicRequirementsSatisfied.mockReturnValue(true)
+    })
+
+    it('onInputWithAutoClamp with agility increases WPP bonus', () => {
+      const { characteristics, onInputWithAutoClamp } = useCharacterCharacteristicBuilder(
+        createCharacteristics({ attributes: { agility: 0, points: 5 } }),
+      )
+
+      onInputWithAutoClamp('attributes', 'agility', 3)
+
+      expect(characteristics.value.attributes.agility).toEqual(3)
+      expect(characteristics.value.weaponProficiencies.points).toEqual(3)
+      expect(characteristics.value.attributes.points).toEqual(2)
+    })
+
+    it('onInputWithAutoClamp with multiple increments (simulating loop)', () => {
+      const { characteristics, onInputWithAutoClamp } = useCharacterCharacteristicBuilder(
+        createCharacteristics({ attributes: { points: 3, strength: 0 } }),
+      )
+
+      onInputWithAutoClamp('attributes', 'strength', 10)
+
+      expect(characteristics.value.attributes.strength).toEqual(3)
+      expect(characteristics.value.attributes.points).toEqual(0)
+    })
   })
 
   it('reset', () => {

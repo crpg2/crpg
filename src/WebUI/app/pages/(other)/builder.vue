@@ -48,7 +48,7 @@ const {
   canConvertSkillsToAttributes,
   currentSkillRequirementsSatisfied,
   getInputProps,
-  onInput,
+  onInputWithAutoClamp,
   onFillField,
   onResetField,
   reset: resetCharacterBuilderState,
@@ -212,7 +212,7 @@ const onShare = () => {
               :check-current-skill-requirements-satisfied="currentSkillRequirementsSatisfied"
               :convert-attributes-to-skills-state="{ disabled: !canConvertAttributesToSkills, count: convertRateAttributesToSkills }"
               :convert-skills-to-attributes-state="{ disabled: !canConvertSkillsToAttributes, count: convertRateSkillsToAttributes }"
-              @input="onInput"
+              @input-with-auto-clamp="onInputWithAutoClamp"
               @convert-attributes-to-skills="convertCharacteristics(CHARACTERISTIC_CONVERSION.AttributesToSkills)"
               @convert-skills-to-attributes="convertCharacteristics(CHARACTERISTIC_CONVERSION.SkillsToAttributes)"
               @fill-field="onFillField"

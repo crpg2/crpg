@@ -70,6 +70,29 @@ export const useCharacterCharacteristicBuilder = (
 
   const canConvertSkillsToAttributes = computed(() => characteristics.value.skills.points >= SKILLS_TO_ATTRIBUTES_RATE)
 
+  const defaults = createDefaultCharacteristic()
+
+  const getInputProps = (
+    section: CharacteristicSectionKey,
+    key: CharacteristicKey,
+    noLimit = false, // TODO: FIXME: need a name, for builder page
+  ): { modelValue: number, min: number, max: number } => {
+    const initialValue = noLimit
+      ? (defaults[section] as any)[key]
+      : (toValue(characteristicsInitial)[section] as any)[key]
+
+    const value = (characteristics.value[section] as any)[key]
+
+    const costToIncrease = getCharacteristicCost(section, key, value + 1) - getCharacteristicCost(section, key, value)
+
+    const requirementsSatisfied = characteristicRequirementsSatisfied(section, key, value + 1, characteristics.value)
+
+    return {
+      max: value + ((costToIncrease <= characteristics.value[section].points && requirementsSatisfied) ? 1 : 0),
+      min: initialValue, // TODO: can to default for builder
+      modelValue: value,
+    }
+  }
   const onInput = (
     section: CharacteristicSectionKey,
     key: CharacteristicKey,
@@ -103,34 +126,21 @@ export const useCharacterCharacteristicBuilder = (
     }
   }
 
-  const defaults = createDefaultCharacteristic()
+  const onInputWithAutoClamp = (section: CharacteristicSectionKey, key: CharacteristicKey, targetValue: number): void => {
+    const initialValue = (toValue(characteristicsInitial)[section] as any)[key]
+    let valueToTry = targetValue
 
-  const getInputProps = (
-    section: CharacteristicSectionKey,
-    key: CharacteristicKey,
-    noLimit = false, // TODO: FIXME: need a name, for builder page
-  ): { modelValue: number, min: number, max: number } => {
-    const initialValue = noLimit
-      ? (defaults[section] as any)[key]
-      : (toValue(characteristicsInitial)[section] as any)[key]
+    while (valueToTry >= initialValue) {
+      onInput(section, key, valueToTry)
+      const afterValue = (characteristics.value[section] as any)[key]
 
-    const value = (characteristics.value[section] as any)[key]
+      if (afterValue === valueToTry) {
+        return
+      }
 
-    const costToIncrease = getCharacteristicCost(section, key, value + 1) - getCharacteristicCost(section, key, value)
-
-    const requirementsSatisfied = characteristicRequirementsSatisfied(section, key, value + 1, characteristics.value)
-
-    return {
-      max: value + ((costToIncrease <= characteristics.value[section].points && requirementsSatisfied) ? 1 : 0),
-      min: initialValue, // TODO: can to default for builder
-      modelValue: value,
+      valueToTry--
     }
   }
-
-  const healthPoints = computed(() => computeHealthPoints(
-    characteristics.value.skills.ironFlesh,
-    characteristics.value.attributes.strength,
-  ))
 
   const onResetField = (section: CharacteristicSectionKey, key: CharacteristicKey): void => {
     const inputProps = getInputProps(section, key)
@@ -140,12 +150,13 @@ export const useCharacterCharacteristicBuilder = (
   }
 
   const onFillField = (section: CharacteristicSectionKey, key: CharacteristicKey): void => {
-    let inputProps = getInputProps(section, key)
-    while (inputProps.max > inputProps.modelValue) {
-      onInput(section, key, inputProps.max)
-      inputProps = getInputProps(section, key)
-    }
+    onInputWithAutoClamp(section, key, Number.MAX_SAFE_INTEGER)
   }
+
+  const healthPoints = computed(() => computeHealthPoints(
+    characteristics.value.skills.ironFlesh,
+    characteristics.value.attributes.strength,
+  ))
 
   return {
     canConvertAttributesToSkills,
@@ -155,6 +166,7 @@ export const useCharacterCharacteristicBuilder = (
     getInputProps,
     isChangeValid,
     onInput,
+    onInputWithAutoClamp,
     onFillField,
     onResetField,
     reset,

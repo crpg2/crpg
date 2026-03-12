@@ -24,6 +24,7 @@ defineProps<{
 
 defineEmits<{
   input: [groupKey: CharacteristicSectionKey, fieldKey: CharacteristicKey, value: number]
+  inputWithAutoClamp: [groupKey: CharacteristicSectionKey, fieldKey: CharacteristicKey, value: number]
   convertAttributesToSkills: []
   convertSkillsToAttributes: []
   fillField: [groupKey: CharacteristicSectionKey, fieldKey: CharacteristicKey]
@@ -125,7 +126,7 @@ const formSchema: FormSchema[] = [
       :field-key
       :input-props="getInputProps(fieldGroupKey, fieldKey)"
       :skill-requirement-satisfied="fieldGroupKey !== 'skills' || checkCurrentSkillRequirementsSatisfied(fieldKey as SkillKey)"
-      @update:model-value="$emit('input', fieldGroupKey, fieldKey, $event)"
+      @update:model-value="$emit('inputWithAutoClamp', fieldGroupKey, fieldKey, $event)"
       @fill-field="$emit('fillField', fieldGroupKey, fieldKey)"
       @reset-field="$emit('resetField', fieldGroupKey, fieldKey)"
     />

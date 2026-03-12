@@ -31,7 +31,7 @@ const {
   isChangeValid,
   isDirty,
   getInputProps,
-  onInput,
+  onInputWithAutoClamp,
   onFillField,
   onResetField,
   reset: resetCharacterCharacteristicBuilder,
@@ -80,7 +80,7 @@ const [onRespecializeCharacter] = useAsyncCallback(
         :check-current-skill-requirements-satisfied="currentSkillRequirementsSatisfied"
         :convert-attributes-to-skills-state="{ disabled: !canConvertAttributesToSkills, loading: convertingCharacterCharacteristics }"
         :convert-skills-to-attributes-state="{ disabled: !canConvertSkillsToAttributes, loading: convertingCharacterCharacteristics }"
-        @input="onInput"
+        @input-with-auto-clamp="onInputWithAutoClamp"
         @convert-attributes-to-skills="onConvertCharacterCharacteristics(CHARACTERISTIC_CONVERSION.AttributesToSkills)"
         @convert-skills-to-attributes="onConvertCharacterCharacteristics(CHARACTERISTIC_CONVERSION.SkillsToAttributes)"
         @fill-field="onFillField"
