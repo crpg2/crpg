@@ -150,7 +150,11 @@ export const useCharacterCharacteristicBuilder = (
   }
 
   const onFillField = (section: CharacteristicSectionKey, key: CharacteristicKey): void => {
-    onInputWithAutoClamp(section, key, Number.MAX_SAFE_INTEGER)
+    let inputProps = getInputProps(section, key)
+    while (inputProps.max > inputProps.modelValue) {
+      onInput(section, key, inputProps.max)
+      inputProps = getInputProps(section, key)
+    }
   }
 
   const healthPoints = computed(() => computeHealthPoints(
