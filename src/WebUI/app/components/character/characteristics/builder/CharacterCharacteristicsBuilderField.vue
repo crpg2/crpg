@@ -41,25 +41,28 @@ const isError = computed(() => inputProps.requirement?.satisfied === false)
       <template #content>
         <UiTooltipContent :title="$t(`character.characteristic.${section}.children.${characteristic}.title`)">
           <template #validation>
-            <UiTextView
-              variant="p"
-              class="text-warning"
-            >
-              {{ $t('character.characteristic.requires.text', {
-                text: [
-                  ...(inputProps.requirement ? [
-                    $t('character.characteristic.requires.format', {
-                      points: inputProps.requirement?.points,
-                      characteristic: $t(`character.characteristic.${inputProps.requirement.section}.children.${inputProps.requirement.characteristic}.title`).toLowerCase(),
-                    }),
-                  ] : []),
-                  $t('character.characteristic.requires.format', {
-                    points: inputProps.costToIncrease,
-                    characteristic: $t(`character.characteristic.${section}.title`).toLowerCase(),
-                  }),
-                ].join(', '),
+            <UiTextView variant="h4" margin-bottom class="text-warning">
+              {{ $t('character.characteristic.requires.title') }}
+            </UiTextView>
+
+            <UiTextView variant="p" class="text-warning">
+              {{ $t('character.characteristic.requires.costPoints', {
+                points: inputProps.costToIncrease,
+                characteristic: $t(`character.characteristic.${section}.title`).toLowerCase(),
               }) }}
             </UiTextView>
+
+            <template v-if="inputProps.requirement">
+              <UiTextView variant="p" class="text-warning">
+                {{ $t('character.characteristic.requires.characteristic', {
+                  points: inputProps.requirement.needCharacteristic,
+                  characteristic: $t(`character.characteristic.${inputProps.requirement.section}.children.${inputProps.requirement.characteristic}.title`).toLowerCase(),
+                }) }} ({{ $t('character.characteristic.requires.pointsPerLevel', {
+                  points: inputProps.requirement.characteristicPerLevel,
+                  characteristic: $t(`character.characteristic.${inputProps.requirement.section}.children.${inputProps.requirement.characteristic}.title`).toLowerCase(),
+                }) }})
+              </UiTextView>
+            </template>
           </template>
 
           <template #description>

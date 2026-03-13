@@ -52,6 +52,7 @@ import { clamp } from 'es-toolkit'
 
 import type { ActivityLog } from '~/models/activity-logs'
 import type {
+  AttributeKey,
   Character,
   CharacterArmorOverall,
   CharacterCharacteristics,
@@ -395,12 +396,13 @@ export const getCharacteristicCost = (
 export interface CharacteristicRequirement {
   section: CharacteristicSectionKey
   characteristic: CharacteristicKey
-  points: number
+  characteristicPerLevel: number
+  needCharacteristic: number
   satisfied: boolean
 }
 
 const skillRequirementRules: Partial<Record<SkillKey, {
-  characteristic: 'strength' | 'agility'
+  characteristic: Exclude<AttributeKey, 'points'>
   points: number
 }>> = {
   athletics: { characteristic: 'agility', points: 3 },
@@ -435,12 +437,21 @@ export const skillRequirementSatisfied = (
   const section: CharacteristicSectionKey = 'attributes'
   const { characteristic, points } = rule
   const availableCharacteristic = characteristics[section][characteristic]
+  const needCharacteristic = (value + 1) * points
+  const satisfied = value <= availableCharacteristic / points
+  /**
+   * есть 7 силы
+   * за каждый надо 3
+   * сейчас 2 ironFlesh
+   * нужно 9 силы
+   */
 
   return {
     section,
     characteristic,
-    points,
-    satisfied: value <= Math.floor(availableCharacteristic / points),
+    characteristicPerLevel: points,
+    needCharacteristic,
+    satisfied,
   }
 }
 
