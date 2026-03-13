@@ -85,6 +85,7 @@ import { GAME_MODE } from '~/models/game-mode'
 import { ITEM_SLOT, ITEM_TYPE } from '~/models/item'
 import { armorTypes, computeAverageRepairCostPerHour } from '~/services/item-service'
 import { getIndexToInsert, range } from '~/utils/array'
+import { computeLeftMs } from '~/utils/date'
 import { applyPolynomialFunction, roundFLoat } from '~/utils/math'
 
 export const getCharacters = async (): Promise<Character[]> => (await getUsersSelfCharacters({})).data!
