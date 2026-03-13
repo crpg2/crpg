@@ -47,19 +47,19 @@ const isError = computed(() => inputProps.requirement?.satisfied === false)
 
             <UiTextView variant="p" class="text-warning">
               {{ $t('character.characteristic.requires.costPoints', {
-                points: inputProps.costToIncrease,
-                characteristic: $t(`character.characteristic.${section}.title`).toLowerCase(),
+                count: inputProps.costToIncrease,
+                characteristic: $t(`character.characteristic.${section}.genitiveTitle`).toLowerCase(),
               }) }}
             </UiTextView>
 
             <template v-if="inputProps.requirement">
               <UiTextView variant="p" class="text-warning">
                 {{ $t('character.characteristic.requires.characteristic', {
-                  points: inputProps.requirement.needCharacteristic,
-                  characteristic: $t(`character.characteristic.${inputProps.requirement.section}.children.${inputProps.requirement.characteristic}.title`).toLowerCase(),
+                  count: inputProps.requirement.needCharacteristic,
+                  characteristic: $t(`character.characteristic.${inputProps.requirement.section}.children.${inputProps.requirement.characteristic}.genitiveTitle`, inputProps.requirement.needCharacteristic).toLowerCase(),
                 }) }} ({{ $t('character.characteristic.requires.pointsPerLevel', {
-                  points: inputProps.requirement.characteristicPerLevel,
-                  characteristic: $t(`character.characteristic.${inputProps.requirement.section}.children.${inputProps.requirement.characteristic}.title`).toLowerCase(),
+                  count: inputProps.requirement.characteristicPerLevel,
+                  characteristic: $t(`character.characteristic.${inputProps.requirement.section}.children.${inputProps.requirement.characteristic}.genitiveTitle`, inputProps.requirement.characteristicPerLevel).toLowerCase(),
                 }) }})
               </UiTextView>
             </template>

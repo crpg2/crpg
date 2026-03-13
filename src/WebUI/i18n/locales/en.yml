@@ -524,22 +524,26 @@ character:
 
     requires:
       title: 'Requires:'
-      pointsPerLevel: '{points} {characteristic} per level'
-      costPoints: '{points} {characteristic} points'
-      characteristic: '{points} {characteristic}'
+      costPoints: '{count} {characteristic} point | {count} {characteristic} points'
+      pointsPerLevel: '{count} {characteristic} per level'
+      characteristic: '{count} {characteristic}'
 
     attributes:
       title: Attributes
+      genitiveTitle: Attributes
       children:
         strength:
           title: Strength
+          genitiveTitle: Strength
           desc: Increases your health by {value}
         agility:
           title: Agility
+          genitiveTitle: Agility
           desc: Increases your weapon points and makes you move a bit faster
 
     skills:
       title: Skills
+      genitiveTitle: Skills
       children:
         ironFlesh:
           title: Iron flesh
@@ -571,6 +575,7 @@ character:
 
     weaponProficiencies:
       title: Weapon proficiencies
+      genitiveTitle: Weapon proficiencies
       children:
         oneHanded:
           title: One handed

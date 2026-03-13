@@ -490,22 +490,26 @@ character:
 
     requires:
       title: 'Требования:'
-      pointsPerLevel: '{points} {characteristic} за уровень'
-      costPoints: '{points} {characteristic} очков'
-      characteristic: '{points} {characteristic}'
+      costPoints: '{count} очков {characteristic} | {count} очко {characteristic} | {count} очка {characteristic} | {count} очков {characteristic}'
+      pointsPerLevel: '{count} {characteristic} за уровень'
+      characteristic: '{count} {characteristic}'
 
     attributes:
       title: Атрибуты
+      genitiveTitle: Атрибутов
       children:
         strength:
           title: Сила
+          genitiveTitle: Силы
           desc: Увеличивает количество очков здоровья на {value}
         agility:
           title: Ловкость
+          genitiveTitle: Ловкости
           desc: Увеличивает ваши очки оружия и заставляет вас двигаться немного быстрее
 
     skills:
       title: Навыки
+      genitiveTitle: Навыков
       children:
         ironFlesh:
           title: Железная кожа
@@ -537,6 +541,7 @@ character:
 
     weaponProficiencies:
       title: Владение оружием
+      genitiveTitle: Владения оружием
       children:
         oneHanded:
           title: Одноручное
