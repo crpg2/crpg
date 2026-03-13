@@ -416,7 +416,7 @@ const skillRequirementRules: Partial<Record<SkillKey, {
   weaponMaster: { characteristic: 'agility', points: 3 },
 }
 
-export interface CharacteristicProps {
+export interface CharacteristicState {
   value: number
   min: number
   max: number
@@ -439,12 +439,6 @@ export const skillRequirementSatisfied = (
   const availableCharacteristic = characteristics[section][characteristic]
   const needCharacteristic = (value + 1) * points
   const satisfied = value <= availableCharacteristic / points
-  /**
-   * есть 7 силы
-   * за каждый надо 3
-   * сейчас 2 ironFlesh
-   * нужно 9 силы
-   */
 
   return {
     section,

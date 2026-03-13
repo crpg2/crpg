@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { CharacterCharacteristics, CharacteristicKey, CharacteristicSectionKey } from '~/models/character'
-import type { CharacteristicProps } from '~/services/character-service'
+import type { CharacteristicState } from '~/services/character-service'
 
 interface FormSchema {
   key: CharacteristicSectionKey
@@ -16,8 +16,8 @@ interface ConvertState {
 }
 
 defineProps<{
-  getInputProps: (group: CharacteristicSectionKey, field: CharacteristicKey) => CharacteristicProps
   characteristics: CharacterCharacteristics
+  getCharacteristicState: (group: CharacteristicSectionKey, field: CharacteristicKey) => CharacteristicState
   convertAttributesToSkillsState: ConvertState
   convertSkillsToAttributesState: ConvertState
 }>()
@@ -125,7 +125,7 @@ const formSchema: FormSchema[] = [
       :key="characteristic"
       :section
       :characteristic
-      :input-props="getInputProps(section, characteristic)"
+      v-bind="getCharacteristicState(section, characteristic)"
       @update:model-value="$emit('inputWithAutoClamp', section, characteristic, $event)"
       @fill-field="$emit('fillField', section, characteristic)"
       @reset-field="$emit('resetField', section, characteristic)"

@@ -29,7 +29,7 @@ const {
   canConvertSkillsToAttributes,
   isChangeValid,
   isDirty,
-  getInputProps,
+  getCharacteristicState,
   onInputWithAutoClamp,
   onFillField,
   onResetField,
@@ -74,7 +74,7 @@ const [onRespecializeCharacter] = useAsyncCallback(
   <div class="relative mx-auto max-w-4xl">
     <div class="statsGrid grid items-start gap-6">
       <CharacterCharacteristicsBuilder
-        :get-input-props
+        :get-characteristic-state
         :characteristics
         :convert-attributes-to-skills-state="{ disabled: !canConvertAttributesToSkills, loading: convertingCharacterCharacteristics }"
         :convert-skills-to-attributes-state="{ disabled: !canConvertSkillsToAttributes, loading: convertingCharacterCharacteristics }"

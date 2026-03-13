@@ -46,8 +46,7 @@ const {
   characteristics,
   canConvertAttributesToSkills,
   canConvertSkillsToAttributes,
-  currentSkillRequirementsSatisfied,
-  getInputProps,
+  getCharacteristicState,
   onInputWithAutoClamp,
   onFillField,
   onResetField,
@@ -207,9 +206,8 @@ const onShare = () => {
 
           <div class="statsGrid grid items-start gap-6">
             <CharacterCharacteristicsBuilder
-              :get-input-props="(group, field) => getInputProps(group, field, true) "
+              :get-characteristic-state="(group, field) => getCharacteristicState(group, field, true) "
               :characteristics
-              :check-current-skill-requirements-satisfied="currentSkillRequirementsSatisfied"
               :convert-attributes-to-skills-state="{ disabled: !canConvertAttributesToSkills, count: convertRateAttributesToSkills }"
               :convert-skills-to-attributes-state="{ disabled: !canConvertSkillsToAttributes, count: convertRateSkillsToAttributes }"
               @input-with-auto-clamp="onInputWithAutoClamp"

@@ -7,7 +7,7 @@ import type {
   CharacteristicKey,
   CharacteristicSectionKey,
 } from '~/models/character'
-import type { CharacteristicProps } from '~/services/character-service'
+import type { CharacteristicState } from '~/services/character-service'
 
 import {
   allCharacteristicRequirementSatisfied,
@@ -60,11 +60,11 @@ export const useCharacterCharacteristicBuilder = (
 
   const defaults = createDefaultCharacteristic()
 
-  const getInputProps = (
+  const getCharacteristicState = (
     section: CharacteristicSectionKey,
     key: CharacteristicKey,
     noMinLimit = false,
-  ): CharacteristicProps => {
+  ): CharacteristicState => {
     const initialValue = noMinLimit
       ? (defaults[section] as any)[key] as number
       : (toValue(characteristicsInitial)[section] as any)[key] as number
@@ -135,17 +135,17 @@ export const useCharacterCharacteristicBuilder = (
   }
 
   const onResetField = (section: CharacteristicSectionKey, key: CharacteristicKey): void => {
-    const { value, min } = getInputProps(section, key)
+    const { value, min } = getCharacteristicState(section, key)
     if (value > min) {
       onInput(section, key, min)
     }
   }
 
   const onFillField = (section: CharacteristicSectionKey, key: CharacteristicKey): void => {
-    let { value, max } = getInputProps(section, key)
+    let { value, max } = getCharacteristicState(section, key)
     while (max > value) {
       onInput(section, key, max)
-      const { value: newValue, max: newMax } = getInputProps(section, key)
+      const { value: newValue, max: newMax } = getCharacteristicState(section, key)
       max = newMax
       value = newValue
     }
@@ -160,7 +160,7 @@ export const useCharacterCharacteristicBuilder = (
     canConvertAttributesToSkills,
     canConvertSkillsToAttributes,
     characteristics,
-    getInputProps,
+    getCharacteristicState,
     isChangeValid,
     onInput,
     onInputWithAutoClamp,

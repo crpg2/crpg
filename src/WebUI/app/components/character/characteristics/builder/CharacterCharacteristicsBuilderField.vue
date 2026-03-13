@@ -2,14 +2,18 @@
 import { UTooltip } from '#components'
 
 import type { CharacteristicKey, CharacteristicSectionKey } from '~/models/character'
-import type { CharacteristicProps } from '~/services/character-service'
+import type { CharacteristicRequirement } from '~/services/character-service'
 
 import { characteristicBonusByKey } from '~/services/character-service'
 
-const { inputProps } = defineProps<{
+const { requirement } = defineProps<{
   section: CharacteristicSectionKey
   characteristic: CharacteristicKey
-  inputProps: CharacteristicProps
+  value: number
+  min: number
+  max: number
+  costToIncrease: number
+  requirement: CharacteristicRequirement | null
 }>()
 
 defineEmits<{
@@ -18,7 +22,7 @@ defineEmits<{
   'update:modelValue': [value: number]
 }>()
 
-const isError = computed(() => inputProps.requirement?.satisfied === false)
+const isError = computed(() => requirement?.satisfied === false)
 </script>
 
 <template>
@@ -47,19 +51,19 @@ const isError = computed(() => inputProps.requirement?.satisfied === false)
 
             <UiTextView variant="p" class="text-warning">
               {{ $t('character.characteristic.requires.costPoints', {
-                count: inputProps.costToIncrease,
+                count: costToIncrease,
                 characteristic: $t(`character.characteristic.${section}.genitiveTitle`).toLowerCase(),
               }) }}
             </UiTextView>
 
-            <template v-if="inputProps.requirement">
+            <template v-if="requirement">
               <UiTextView variant="p" class="text-warning">
                 {{ $t('character.characteristic.requires.characteristic', {
-                  count: inputProps.requirement.needCharacteristic,
-                  characteristic: $t(`character.characteristic.${inputProps.requirement.section}.children.${inputProps.requirement.characteristic}.genitiveTitle`, inputProps.requirement.needCharacteristic).toLowerCase(),
+                  count: requirement.needCharacteristic,
+                  characteristic: $t(`character.characteristic.${requirement.section}.children.${requirement.characteristic}.genitiveTitle`, requirement.needCharacteristic).toLowerCase(),
                 }) }} ({{ $t('character.characteristic.requires.pointsPerLevel', {
-                  count: inputProps.requirement.characteristicPerLevel,
-                  characteristic: $t(`character.characteristic.${inputProps.requirement.section}.children.${inputProps.requirement.characteristic}.genitiveTitle`, inputProps.requirement.characteristicPerLevel).toLowerCase(),
+                  count: requirement.characteristicPerLevel,
+                  characteristic: $t(`character.characteristic.${requirement.section}.children.${requirement.characteristic}.genitiveTitle`, requirement.characteristicPerLevel).toLowerCase(),
                 }) }})
               </UiTextView>
             </template>
@@ -91,7 +95,7 @@ const isError = computed(() => inputProps.requirement?.satisfied === false)
             variant="subtle"
             color="neutral"
             icon="crpg:reset"
-            :disabled="inputProps.value <= inputProps.min"
+            :disabled="value <= min"
             :data-aq-reset-field="`${section}:${characteristic}`"
             @click="$emit('resetField')"
           />
@@ -104,7 +108,7 @@ const isError = computed(() => inputProps.requirement?.satisfied === false)
             base: 'w-22',
             decrement: 'flex items-center gap-0.5',
           }"
-          :model-value="inputProps.value"
+          :model-value="value"
           @update:model-value="$emit('update:modelValue', $event)"
         >
           <template #decrement>
@@ -112,7 +116,7 @@ const isError = computed(() => inputProps.requirement?.satisfied === false)
               variant="link"
               color="neutral"
               icon="i-lucide-minus"
-              :disabled="inputProps.value <= inputProps.min"
+              :disabled="value <= min"
             />
           </template>
           <template #increment>
@@ -120,7 +124,7 @@ const isError = computed(() => inputProps.requirement?.satisfied === false)
               variant="link"
               color="neutral"
               icon="i-lucide-plus"
-              :disabled="inputProps.max <= inputProps.value"
+              :disabled="max <= value"
             />
           </template>
         </UInputNumber>
@@ -129,7 +133,7 @@ const isError = computed(() => inputProps.requirement?.satisfied === false)
             variant="subtle"
             color="neutral"
             icon="i-lucide-chevrons-right"
-            :disabled="inputProps.max <= inputProps.value"
+            :disabled="max <= value"
             :data-aq-fill-field="`${section}:${characteristic}`"
             @click="$emit('fillField')"
           />
