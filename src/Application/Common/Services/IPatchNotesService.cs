@@ -57,7 +57,7 @@ internal class GithubPatchNotesService : IPatchNotesService
         IList<PatchNotes>? patchNotes;
         try
         {
-            var res = await _githubHttpClient.GetFromJsonAsync<GithubRelease[]>("repos/namidaka/crpg/releases",
+            var res = await _githubHttpClient.GetFromJsonAsync<GithubRelease[]>("repos/crpg2/crpg/releases",
                 cancellationToken);
             patchNotes = res!
                 .Select(r => new PatchNotes(r.Id.ToString(), r.Name, r.TagName, r.HtmlUrl, r.PublishedAt))
