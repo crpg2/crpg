@@ -6,17 +6,17 @@ import type {
   CharacterCharacteristics,
   CharacteristicKey,
   CharacteristicSectionKey,
-  SkillKey,
 } from '~/models/character'
+import type { CharacteristicProps } from '~/services/character-service'
 
 import {
+  allCharacteristicRequirementSatisfied,
   ATTRIBUTES_TO_SKILLS_RATE,
-  characteristicRequirementsSatisfied,
+  characteristicRequirementSatisfied,
   computeHealthPoints,
   createDefaultCharacteristic,
   createEmptyCharacteristic,
   getCharacteristicCost,
-  skillRequirementsSatisfied,
   SKILLS_TO_ATTRIBUTES_RATE,
   wppForAgility,
   wppForWeaponMaster,
@@ -49,21 +49,9 @@ export const useCharacterCharacteristicBuilder = (
     )
   })
 
-  const currentSkillRequirementsSatisfied = (skillKey: SkillKey): boolean =>
-    skillRequirementsSatisfied(
-      skillKey,
-      characteristics.value.skills[skillKey],
-      characteristics.value,
-    )
-
-  const allSkillsRequirementsSatisfied = computed(() =>
-    Object.keys(characteristics.value.skills)
-      .filter(skillKey => skillKey !== 'points')
-      .every(skillKey => currentSkillRequirementsSatisfied(skillKey as SkillKey)),
-  )
-
   const isChangeValid = computed(() =>
-    Object.values(characteristics.value).every(section => section.points >= 0) && allSkillsRequirementsSatisfied.value,
+    Object.values(characteristics.value).every(section => section.points >= 0)
+    && allCharacteristicRequirementSatisfied(characteristics.value),
   )
 
   const canConvertAttributesToSkills = computed(() => characteristics.value.attributes.points >= ATTRIBUTES_TO_SKILLS_RATE)
@@ -75,30 +63,28 @@ export const useCharacterCharacteristicBuilder = (
   const getInputProps = (
     section: CharacteristicSectionKey,
     key: CharacteristicKey,
-    noMinLimit = false, //
-  ): {
-    modelValue: number
-    min: number
-    max: number
-    costToIncrease: number
-  } => {
+    noMinLimit = false,
+  ): CharacteristicProps => {
     const initialValue = noMinLimit
-      ? (defaults[section] as any)[key]
-      : (toValue(characteristicsInitial)[section] as any)[key]
+      ? (defaults[section] as any)[key] as number
+      : (toValue(characteristicsInitial)[section] as any)[key] as number
 
-    const value = (characteristics.value[section] as any)[key]
+    const value = (characteristics.value[section] as any)[key] as number
 
     const costToIncrease = getCharacteristicCost(section, key, value + 1) - getCharacteristicCost(section, key, value)
 
-    const requirementsSatisfied = characteristicRequirementsSatisfied(section, key, value + 1, characteristics.value)
+    const requirement = characteristicRequirementSatisfied(section, key, value, characteristics.value)
+    const nextRequirement = characteristicRequirementSatisfied(section, key, value + 1, characteristics.value)
 
     return {
-      max: value + ((costToIncrease <= characteristics.value[section].points && requirementsSatisfied) ? 1 : 0),
-      min: initialValue, // TODO: can to default for builder
-      modelValue: value,
+      value,
+      min: initialValue,
+      max: value + ((costToIncrease <= characteristics.value[section].points && (nextRequirement !== null ? nextRequirement.satisfied : true)) ? 1 : 0),
+      requirement,
       costToIncrease,
     }
   }
+
   const onInput = (
     section: CharacteristicSectionKey,
     key: CharacteristicKey,
@@ -115,9 +101,9 @@ export const useCharacterCharacteristicBuilder = (
       return
     }
 
-    const requirementsSatisfied = characteristicRequirementsSatisfied(section, key, newValue, characteristics.value)
+    const requirement = characteristicRequirementSatisfied(section, key, newValue, characteristics.value)
 
-    if (!requirementsSatisfied) {
+    if (requirement !== null && requirement.satisfied === false) {
       return
     }
 
@@ -149,17 +135,19 @@ export const useCharacterCharacteristicBuilder = (
   }
 
   const onResetField = (section: CharacteristicSectionKey, key: CharacteristicKey): void => {
-    const inputProps = getInputProps(section, key)
-    if (inputProps.modelValue > inputProps.min) {
-      onInput(section, key, inputProps.min)
+    const { value, min } = getInputProps(section, key)
+    if (value > min) {
+      onInput(section, key, min)
     }
   }
 
   const onFillField = (section: CharacteristicSectionKey, key: CharacteristicKey): void => {
-    let inputProps = getInputProps(section, key)
-    while (inputProps.max > inputProps.modelValue) {
-      onInput(section, key, inputProps.max)
-      inputProps = getInputProps(section, key)
+    let { value, max } = getInputProps(section, key)
+    while (max > value) {
+      onInput(section, key, max)
+      const { value: newValue, max: newMax } = getInputProps(section, key)
+      max = newMax
+      value = newValue
     }
   }
 
@@ -172,7 +160,6 @@ export const useCharacterCharacteristicBuilder = (
     canConvertAttributesToSkills,
     canConvertSkillsToAttributes,
     characteristics,
-    currentSkillRequirementsSatisfied,
     getInputProps,
     isChangeValid,
     onInput,

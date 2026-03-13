@@ -2,14 +2,14 @@
 import { UTooltip } from '#components'
 
 import type { CharacteristicKey, CharacteristicSectionKey } from '~/models/character'
+import type { CharacteristicProps } from '~/services/character-service'
 
 import { characteristicBonusByKey } from '~/services/character-service'
 
-defineProps<{
-  fieldGroupKey: CharacteristicSectionKey
-  fieldKey: CharacteristicKey
-  inputProps: { modelValue: number, min: number, max: number, costToIncrease: number }
-  isError: boolean
+const { inputProps } = defineProps<{
+  section: CharacteristicSectionKey
+  characteristic: CharacteristicKey
+  inputProps: CharacteristicProps
 }>()
 
 defineEmits<{
@@ -17,6 +17,8 @@ defineEmits<{
   'resetField': []
   'update:modelValue': [value: number]
 }>()
+
+const isError = computed(() => inputProps.requirement?.satisfied === false)
 </script>
 
 <template>
@@ -25,30 +27,37 @@ defineEmits<{
       w-full px-4 py-2.5
       hover:bg-muted
     "
+    :class="[{ 'bg-error/20': isError }]"
   >
     <UTooltip :content="{ side: 'top' }">
       <div
         class="flex items-center gap-1 text-sm"
-        :class="{ 'text-error': isError }"
       >
         <UiTextView variant="caption">
-          {{ $t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.title`) }}
+          {{ $t(`character.characteristic.${section}.children.${characteristic}.title`) }}
         </UiTextView>
-
-        <UIcon
-          v-if="isError"
-          name="crpg:alert-circle"
-          class="size-4"
-        />
       </div>
 
       <template #content>
-        <UiTooltipContent :title="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.title`)">
-          <template v-if="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.requires`)" #validation>
-            <UiTextView variant="p" class="text-warning">
-              {{ $t('character.characteristic.requires.title', {
-                text: $t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.requires`,
-                         { points: inputProps.costToIncrease }),
+        <UiTooltipContent :title="$t(`character.characteristic.${section}.children.${characteristic}.title`)">
+          <template #validation>
+            <UiTextView
+              variant="p"
+              class="text-warning"
+            >
+              {{ $t('character.characteristic.requires.text', {
+                text: [
+                  ...(inputProps.requirement ? [
+                    $t('character.characteristic.requires.format', {
+                      points: inputProps.requirement?.points,
+                      characteristic: $t(`character.characteristic.${inputProps.requirement.section}.children.${inputProps.requirement.characteristic}.title`).toLowerCase(),
+                    }),
+                  ] : []),
+                  $t('character.characteristic.requires.format', {
+                    points: inputProps.costToIncrease,
+                    characteristic: $t(`character.characteristic.${section}.title`).toLowerCase(),
+                  }),
+                ].join(', '),
               }) }}
             </UiTextView>
           </template>
@@ -56,14 +65,14 @@ defineEmits<{
           <template #description>
             <i18n-t
               scope="global"
-              :keypath="`character.characteristic.${fieldGroupKey}.children.${fieldKey}.desc`"
+              :keypath="`character.characteristic.${section}.children.${characteristic}.desc`"
             >
               <template
-                v-if="characteristicBonusByKey[fieldKey]"
+                v-if="characteristic in characteristicBonusByKey"
                 #value
               >
                 <span class="font-bold text-success">
-                  {{ $n(characteristicBonusByKey[fieldKey]!.value, { style: characteristicBonusByKey[fieldKey]!.style, minimumFractionDigits: 0 }) }}
+                  {{ $n(characteristicBonusByKey[characteristic]!.value, { style: characteristicBonusByKey[characteristic]!.style, minimumFractionDigits: 0 }) }}
                 </span>
               </template>
             </i18n-t>
@@ -79,20 +88,20 @@ defineEmits<{
             variant="subtle"
             color="neutral"
             icon="crpg:reset"
-            :disabled="inputProps.modelValue <= inputProps.min"
-            :data-aq-reset-field="`${fieldGroupKey}:${fieldKey}`"
+            :disabled="inputProps.value <= inputProps.min"
+            :data-aq-reset-field="`${section}:${characteristic}`"
             @click="$emit('resetField')"
           />
         </UTooltip>
         <UInputNumber
-          :data-aq-control="`${fieldGroupKey}:${fieldKey}`"
+          :data-aq-control="`${section}:${characteristic}`"
           variant="subtle"
           :color="isError ? 'error' : 'neutral'"
           :ui="{
             base: 'w-22',
             decrement: 'flex items-center gap-0.5',
           }"
-          :model-value="inputProps.modelValue"
+          :model-value="inputProps.value"
           @update:model-value="$emit('update:modelValue', $event)"
         >
           <template #decrement>
@@ -100,7 +109,7 @@ defineEmits<{
               variant="link"
               color="neutral"
               icon="i-lucide-minus"
-              :disabled="inputProps.modelValue <= inputProps.min"
+              :disabled="inputProps.value <= inputProps.min"
             />
           </template>
           <template #increment>
@@ -108,7 +117,7 @@ defineEmits<{
               variant="link"
               color="neutral"
               icon="i-lucide-plus"
-              :disabled="inputProps.max <= inputProps.modelValue"
+              :disabled="inputProps.max <= inputProps.value"
             />
           </template>
         </UInputNumber>
@@ -117,8 +126,8 @@ defineEmits<{
             variant="subtle"
             color="neutral"
             icon="i-lucide-chevrons-right"
-            :disabled="inputProps.max <= inputProps.modelValue"
-            :data-aq-fill-field="`${fieldGroupKey}:${fieldKey}`"
+            :disabled="inputProps.max <= inputProps.value"
+            :data-aq-fill-field="`${section}:${characteristic}`"
             @click="$emit('fillField')"
           />
         </UTooltip>

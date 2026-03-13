@@ -27,7 +27,6 @@ const {
   characteristics,
   canConvertAttributesToSkills,
   canConvertSkillsToAttributes,
-  currentSkillRequirementsSatisfied,
   isChangeValid,
   isDirty,
   getInputProps,
@@ -77,7 +76,6 @@ const [onRespecializeCharacter] = useAsyncCallback(
       <CharacterCharacteristicsBuilder
         :get-input-props
         :characteristics
-        :check-current-skill-requirements-satisfied="currentSkillRequirementsSatisfied"
         :convert-attributes-to-skills-state="{ disabled: !canConvertAttributesToSkills, loading: convertingCharacterCharacteristics }"
         :convert-skills-to-attributes-state="{ disabled: !canConvertSkillsToAttributes, loading: convertingCharacterCharacteristics }"
         @input-with-auto-clamp="onInputWithAutoClamp"

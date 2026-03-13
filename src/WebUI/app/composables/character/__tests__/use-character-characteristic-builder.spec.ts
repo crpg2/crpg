@@ -488,6 +488,7 @@ describe('useCharacterCharacteristicBuilder', () => {
       max: 1,
       min: 0,
       modelValue: 1,
+      costToIncrease: 1,
     })
     expect(getInputProps('attributes', 'agility').max).toEqual(0)
 

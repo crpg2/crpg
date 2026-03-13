@@ -483,20 +483,14 @@ character:
     convert:
       attrsToSkills:
         title: Конвертировать в умения
-        tooltip: Конвертировать {attribute} очко атрибутов в {skill} очка умений
+        tooltip: Конвертировать {attribute} очко атрибутов в {skill} очка навыков
       skillsToAttrs:
         title: Конвертировать в атрибуты
-        tooltip: Конвертировать {skill} очка умений в {attribute} очко атрибутов
+        tooltip: Конвертировать {skill} очка навыков в {attribute} очко атрибутов
 
     requires:
-      title: 'Требования: {text}'
-      linked:
-        oneAttrs: 1 очко атрибутов
-        threeStr: 3 очка силы за каждый уровень
-        sixStr: 6 очков силы за каждый уровень
-        threeAgi: 3 очка ловкости за каждый уровень
-        sixAgi: 6 очков ловкости за каждый уровень
-        wpf: '{points} weapon proficiencies'
+      text: 'Требования: {text}'
+      format: '{points} очка {characteristic}'
 
     attributes:
       title: Атрибуты
@@ -504,51 +498,40 @@ character:
         strength:
           title: Сила
           desc: Увеличивает количество очков здоровья на {value}
-          requires: '@:character.characteristic.requires.linked.oneAttrs'
         agility:
           title: Ловкость
           desc: Увеличивает ваши очки оружия и заставляет вас двигаться немного быстрее
-          requires: '@:character.characteristic.requires.linked.oneAttrs'
 
     skills:
-      title: Умения
+      title: Навыки
       children:
         ironFlesh:
           title: Железная кожа
           desc: Увеличивает количество очков здоровья на {value}
-          requires: '@:character.characteristic.requires.linked.threeStr'
         powerStrike:
           title: Мощный удар
           desc: Увеличивает урон в ближнем бою на {value}
-          requires: '@:character.characteristic.requires.linked.threeStr'
         powerDraw:
           title: Мощный выстрел
           desc: Увеличивает урон от луков на {value}
-          requires: '@:character.characteristic.requires.linked.threeStr'
         powerThrow:
           title: Мощный бросок
           desc: Увеличивает урон от метательного оружия на {value}
-          requires: '@:character.characteristic.requires.linked.sixStr'
         athletics:
           title: Атлетика
           desc: Увеличивает вашу максимальную скорость бега и уменьшает время ее достижения
-          requires: '@:character.characteristic.requires.linked.threeAgi'
         riding:
           title: Верховая езда
           desc: Увеличивает скорость езды, ускорение, маневренность и спопротивление спешиванию
-          requires: '@:character.characteristic.requires.linked.threeAgi'
         weaponMaster:
           title: Оружейный мастер
           desc: Дает очки владения оружием
-          requires: '@:character.characteristic.requires.linked.threeAgi'
         mountedArchery:
           title: Стрельба верхом
           desc: Снижает штраф за использование дальнобойного оружия верхом на 10%
-          requires: '@:character.characteristic.requires.linked.sixAgi'
         shield:
           title: Щит
           desc: Повышает прочность щита. Увеличивает зону покрытия от дальнобойных атак. Уменьшает оглушение от ближнего оружия при попадании
-          requires: '@:character.characteristic.requires.linked.sixAgi'
 
     weaponProficiencies:
       title: Владение оружием
@@ -556,27 +539,21 @@ character:
         oneHanded:
           title: Одноручное
           desc: Увеличивает мастерство владения одноручным оружием
-          requires: '@:character.characteristic.requires.linked.wpf'
         twoHanded:
           title: Двуручное
           desc: Увеличивает мастерство владения двуручным оружием
-          requires: '@:character.characteristic.requires.linked.wpf'
         polearm:
           title: Древковое
           desc: Увеличивает мастерство владения древковым оружием
-          requires: '@:character.characteristic.requires.linked.wpf'
         bow:
           title: Лук
           desc: Увеличивает мастерство владения луком
-          requires: '@:character.characteristic.requires.linked.wpf'
         crossbow:
           title: Арбалет
           desc: Увеличивает мастерство владения арбалетом
-          requires: '@:character.characteristic.requires.linked.wpf'
         throwing:
           title: Метательное
           desc: Увеличивает мастерство владения метательным оружием
-          requires: '@:character.characteristic.requires.linked.wpf'
 
     commit:
       notify: Изменения успешно сохранены

@@ -392,50 +392,89 @@ export const getCharacteristicCost = (
   return value
 }
 
-export const skillRequirementsSatisfied = (
+export interface CharacteristicRequirement {
+  section: CharacteristicSectionKey
+  characteristic: CharacteristicKey
+  points: number
+  satisfied: boolean
+}
+
+const skillRequirementRules: Partial<Record<SkillKey, {
+  characteristic: 'strength' | 'agility'
+  points: number
+}>> = {
+  athletics: { characteristic: 'agility', points: 3 },
+  ironFlesh: { characteristic: 'strength', points: 3 },
+  mountedArchery: { characteristic: 'agility', points: 6 },
+  powerDraw: { characteristic: 'strength', points: 3 },
+  powerStrike: { characteristic: 'strength', points: 3 },
+  powerThrow: { characteristic: 'strength', points: 6 },
+  riding: { characteristic: 'agility', points: 3 },
+  shield: { characteristic: 'agility', points: 6 },
+  weaponMaster: { characteristic: 'agility', points: 3 },
+}
+
+export interface CharacteristicProps {
+  value: number
+  min: number
+  max: number
+  costToIncrease: number
+  requirement: CharacteristicRequirement | null
+}
+
+export const skillRequirementSatisfied = (
   key: SkillKey,
   value: number,
   characteristics: CharacterCharacteristics,
-): boolean => {
-  switch (key) {
-    case 'ironFlesh':
-    case 'powerStrike':
-    case 'powerDraw':
-      return value <= Math.floor(characteristics.attributes.strength / 3) // TODO: move to constants.json
+): CharacteristicRequirement | null => {
+  const rule = skillRequirementRules[key]
+  if (!rule) {
+    return null
+  }
 
-    case 'powerThrow':
-      return value <= Math.floor(characteristics.attributes.strength / 6)
+  const section: CharacteristicSectionKey = 'attributes'
+  const { characteristic, points } = rule
+  const availableCharacteristic = characteristics[section][characteristic]
 
-    case 'athletics':
-    case 'riding':
-    case 'weaponMaster':
-      return value <= Math.floor(characteristics.attributes.agility / 3) // TODO: move to constants.json
-
-    case 'mountedArchery':
-    case 'shield':
-      return value <= Math.floor(characteristics.attributes.agility / 6) // TODO: move to constants.json
-
-    default:
-      return false
+  return {
+    section,
+    characteristic,
+    points,
+    satisfied: value <= Math.floor(availableCharacteristic / points),
   }
 }
 
-export const characteristicRequirementsSatisfied = (
+export const characteristicRequirementSatisfied = (
   section: CharacteristicSectionKey,
   key: CharacteristicKey,
   value: number,
   characteristics: CharacterCharacteristics,
-): boolean => {
+): CharacteristicRequirement | null => {
   switch (section) {
     case 'skills':
-      return skillRequirementsSatisfied(
+      return skillRequirementSatisfied(
         key as SkillKey,
         value,
         characteristics,
       )
     default:
-      return true
+      return null
   }
+}
+
+export const allCharacteristicRequirementSatisfied = (characteristics: CharacterCharacteristics): boolean => {
+  for (const [sectionKey, sectionValue] of objectEntries(characteristics)) {
+    for (const [key, value] of objectEntries(sectionValue)) {
+      if (key === 'points') {
+        continue
+      }
+      const requirement = characteristicRequirementSatisfied(sectionKey, key as CharacteristicKey, value, characteristics)
+      if (requirement !== null && !requirement.satisfied) {
+        return false
+      }
+    }
+  }
+  return true
 }
 
 export const createEmptyCharacteristic = (): CharacterCharacteristics => ({
