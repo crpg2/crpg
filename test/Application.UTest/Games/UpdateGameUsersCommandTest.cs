@@ -21,9 +21,8 @@ public class UpdateGameUsersCommandTest : TestBase
     public void ShouldDoNothingForEmptyUpdates()
     {
         Mock<ICharacterService> characterServiceMock = new();
-        Mock<IGameModeService> gameModeServiceServiceMock = new();
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-        UpdateGameUsersCommand.Handler handler = new(ActDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object, gameModeServiceServiceMock.Object);
+        UpdateGameUsersCommand.Handler handler = new(ActDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object);
         Assert.That(() => handler.Handle(new UpdateGameUsersCommand(), CancellationToken.None), Throws.Nothing);
     }
 
@@ -94,9 +93,8 @@ public class UpdateGameUsersCommandTest : TestBase
             .Setup(cs => cs.UpdateRating(It.IsAny<Character>(), GameMode.CRPGBattle, 4, 5, 6, true));
 
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-        Mock<IGameModeService> gameModeServiceServiceMock = new();
 
-        UpdateGameUsersCommand.Handler handler = new(ActDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object, gameModeServiceServiceMock.Object);
+        UpdateGameUsersCommand.Handler handler = new(ActDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object);
         var result = await handler.Handle(new UpdateGameUsersCommand
         {
             Updates =
@@ -122,7 +120,7 @@ public class UpdateGameUsersCommandTest : TestBase
                             Volatility = 6,
                         },
                     },
-                    Instance = "crpg01a",
+                    GameMode = GameMode.CRPGBattle,
                     BrokenItems =
                     [
                         new GameUserDamagedItem { UserItemId = user.Characters[0].EquippedItems[0].UserItemId, RepairCost = 30 }
@@ -155,8 +153,6 @@ public class UpdateGameUsersCommandTest : TestBase
 
         characterServiceMock.VerifyAll();
 
-        gameModeServiceServiceMock.Verify(m =>
-            m.GameModeByInstanceAlias(It.IsAny<GameModeAlias>()), Times.Once);
         activityLogServiceMock.Verify(m =>
             m.CreateCharacterEarnedLog(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GameMode>(), It.IsAny<int>(), It.Is<int>(x => x == 200 - 30), It.IsAny<double>()), Times.Once);
     }
@@ -196,16 +192,15 @@ public class UpdateGameUsersCommandTest : TestBase
         Mock<ICharacterService> characterServiceMock = new();
 
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-        Mock<IGameModeService> gameModeServiceServiceMock = new();
 
-        UpdateGameUsersCommand.Handler handler = new(ActDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object, gameModeServiceServiceMock.Object);
+        UpdateGameUsersCommand.Handler handler = new(ActDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object);
         var result = await handler.Handle(new UpdateGameUsersCommand
         {
             Updates =
             [
                 new GameUserUpdate
                 {
-                    Instance = "crpg99a",
+                    GameMode = GameMode.CRPGBattle,
                     CharacterId = user.Characters[0].Id,
                     BrokenItems =
                     [
@@ -288,16 +283,15 @@ public class UpdateGameUsersCommandTest : TestBase
         Mock<ICharacterService> characterServiceMock = new();
 
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-        Mock<IGameModeService> gameModeServiceServiceMock = new();
 
-        UpdateGameUsersCommand.Handler handler = new(ActDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object, gameModeServiceServiceMock.Object);
+        UpdateGameUsersCommand.Handler handler = new(ActDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object);
         var result = await handler.Handle(new UpdateGameUsersCommand
         {
             Updates =
             [
                 new GameUserUpdate
                 {
-                    Instance = "crpg99a",
+                    GameMode = GameMode.CRPGBattle,
                     CharacterId = user.Characters[0].Id,
                     BrokenItems =
                     [
@@ -366,9 +360,8 @@ public class UpdateGameUsersCommandTest : TestBase
 
         Mock<ICharacterService> characterServiceMock = new();
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-        Mock<IGameModeService> gameModeServiceServiceMock = new();
 
-        UpdateGameUsersCommand.Handler handler = new(failingDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object, gameModeServiceServiceMock.Object);
+        UpdateGameUsersCommand.Handler handler = new(failingDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object);
         var result = await handler.Handle(new UpdateGameUsersCommand
         {
             Updates =
@@ -381,7 +374,7 @@ public class UpdateGameUsersCommandTest : TestBase
                     {
                         Rating = new CharacterRatingViewModel(),
                     },
-                    Instance = "crpg01a",
+                    GameMode = GameMode.CRPGBattle,
                     BrokenItems = [],
                 }
             ],
@@ -423,9 +416,8 @@ public class UpdateGameUsersCommandTest : TestBase
 
         Mock<ICharacterService> characterServiceMock = new();
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-        Mock<IGameModeService> gameModeServiceServiceMock = new();
 
-        UpdateGameUsersCommand.Handler handler = new(failingDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object, gameModeServiceServiceMock.Object);
+        UpdateGameUsersCommand.Handler handler = new(failingDb, Mapper, characterServiceMock.Object, activityLogServiceMock.Object);
 
         Assert.ThrowsAsync<ConflictException>(async () =>
             await handler.Handle(new UpdateGameUsersCommand
@@ -440,7 +432,7 @@ public class UpdateGameUsersCommandTest : TestBase
                         {
                             Rating = new CharacterRatingViewModel(),
                         },
-                        Instance = "crpg01a",
+                        GameMode = GameMode.CRPGBattle,
                         BrokenItems = [],
                     }
                 ],

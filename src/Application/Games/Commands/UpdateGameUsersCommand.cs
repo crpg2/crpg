@@ -32,15 +32,13 @@ public record UpdateGameUsersCommand : IMediatorRequest<UpdateGameUsersResult>
         private readonly IMapper _mapper;
         private readonly ICharacterService _characterService;
         private readonly IActivityLogService _activityLogService;
-        private readonly IGameModeService _gameModeService;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, ICharacterService characterService, IActivityLogService activityLogService, IGameModeService gameModeService)
+        public Handler(ICrpgDbContext db, IMapper mapper, ICharacterService characterService, IActivityLogService activityLogService)
         {
             _db = db;
             _mapper = mapper;
             _characterService = characterService;
             _activityLogService = activityLogService;
-            _gameModeService = gameModeService;
         }
 
         public async ValueTask<Result<UpdateGameUsersResult>> Handle(UpdateGameUsersCommand req,
@@ -77,7 +75,7 @@ public record UpdateGameUsersCommand : IMediatorRequest<UpdateGameUsersResult>
             List<(User user, GameUserEffectiveReward reward, List<GameRepairedItem> repairedItems, GameMode gameMode)> results = new(req.Updates.Count);
             foreach (var update in req.Updates)
             {
-                GameMode updateGameMode = _gameModeService.GameModeByInstanceAlias(Enum.TryParse(update.Instance[^1..], ignoreCase: true, out GameModeAlias instanceAlias) ? instanceAlias : GameModeAlias.Z);
+                GameMode updateGameMode = update.GameMode;
                 if (!charactersById.TryGetValue(update.CharacterId, out Character? character))
                 {
                     Logger.LogWarning("Character with id '{0}' doesn't exist", update.CharacterId);

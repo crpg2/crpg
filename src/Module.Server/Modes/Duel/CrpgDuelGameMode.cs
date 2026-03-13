@@ -1,5 +1,6 @@
 ﻿#if CRPG_SERVER
 using Crpg.Module.Api;
+using Crpg.Module.Api.Models;
 using Crpg.Module.Common.ChatCommands;
 using Crpg.Module.Rewards;
 #else
@@ -79,7 +80,7 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
         ICrpgClient crpgClient = CrpgClient.Create();
         Game.Current.GetGameHandler<ChatCommandsComponent>()?.InitChatCommands(crpgClient);
         ChatBox chatBox = Game.Current.GetGameHandler<ChatBox>();
-        CrpgRewardServer rewardServer = new(crpgClient, _constants, null, enableTeamHitCompensations: false, enableRating: true);
+        CrpgRewardServer rewardServer = new(crpgClient, _constants, null, enableTeamHitCompensations: false, enableRating: true, gameMode: CrpgGameMode.CRPGDuel);
         CrpgDuelServer duelServer = new(rewardServer);
 #endif
         CrpgDuelMissionMultiplayerClient duelClient = new();
@@ -117,7 +118,7 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
                     new MissionAgentPanicHandler(),
                     new AgentHumanAILogic(), // bot intelligence
                     new EquipmentControllerLeaveLogic(),
-                    new CrpgUserManagerServer(crpgClient, _constants),
+                    new CrpgUserManagerServer(crpgClient, _constants, CrpgGameMode.CRPGDuel),
                     new CrpgActivityLogsBehavior(null, chatBox, crpgClient),
                     new ServerMetricsBehavior(),
                     new NotAllPlayersReadyComponent(),
