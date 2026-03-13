@@ -218,6 +218,18 @@ export type BuySettlementItemCommand = {
     settlementId: number;
 };
 
+export type CampaignUpdate = {
+    party: PartyViewModel;
+    visibleParties: Array<PartyVisibleViewModel>;
+    visibleSettlements: Array<SettlementPublicViewModel>;
+    visibleBattles: Array<BattleViewModel>;
+};
+
+export type CampaignUpdateResult = {
+    readonly errors: Array<Error> | null;
+    data: CampaignUpdate | null;
+};
+
 export type CharacterAttributesViewModel = {
     points: number;
     strength: number;
@@ -458,6 +470,11 @@ export type CreateTerrainCommand = {
     boundary: GeoJsonPolygon;
 };
 
+export type CreateUserItemPresetCommand = {
+    name: string;
+    slots: Array<UserItemPresetSlotInputModel>;
+};
+
 export type Culture = 'Neutral' | 'Aserai' | 'Battania' | 'Empire' | 'Khuzait' | 'Looters' | 'Sturgia' | 'Vlandia';
 
 export type DamageType = 'Undefined' | 'Cut' | 'Pierce' | 'Blunt';
@@ -503,7 +520,7 @@ export type Error = {
     stackTrace: string | null;
 };
 
-export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'InvalidUpgradeRank' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartyNotEnoughItems' | 'SettlementNotEnoughItems' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementNotEnoughTroops' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToCampaign' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
+export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'InvalidItemUpgradeRank' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartyNotEnoughItems' | 'SettlementNotEnoughItems' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementNotEnoughTroops' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToCampaign' | 'UserItemPresetBadSlots' | 'UserItemPresetNotFound' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
 
 export type ErrorSource = {
     pointer?: string | null;
@@ -1038,18 +1055,6 @@ export type SettlementPublicViewModelResult = {
 
 export type SettlementType = 'Village' | 'Castle' | 'Town';
 
-export type CampaignUpdate = {
-    party: PartyViewModel;
-    visibleParties: Array<PartyVisibleViewModel>;
-    visibleSettlements: Array<SettlementPublicViewModel>;
-    visibleBattles: Array<BattleViewModel>;
-};
-
-export type CampaignUpdateResult = {
-    readonly errors: Array<Error> | null;
-    data: CampaignUpdate | null;
-};
-
 export type TerrainType = 'Barrier' | 'ThickForest' | 'SparseForest' | 'ShallowWater' | 'DeepWater' | 'Plain';
 
 export type TerrainViewModel = {
@@ -1137,6 +1142,11 @@ export type UpdateUserCommand = {
     userId: number;
 };
 
+export type UpdateUserItemPresetCommand = {
+    name: string;
+    slots: Array<UserItemPresetSlotInputModel>;
+};
+
 export type UpdateUserNoteCommand = {
     note: string;
 };
@@ -1153,6 +1163,32 @@ export type UserClanViewModel = {
 export type UserClanViewModelResult = {
     readonly errors: Array<Error> | null;
     data: UserClanViewModel | null;
+};
+
+export type UserItemPresetSlotInputModel = {
+    slot: ItemSlot;
+    itemId?: string | null;
+};
+
+export type UserItemPresetSlotViewModel = {
+    slot: ItemSlot;
+    itemId?: string | null;
+};
+
+export type UserItemPresetViewModel = {
+    id: number;
+    name: string;
+    slots: Array<UserItemPresetSlotViewModel>;
+};
+
+export type UserItemPresetViewModelIListResult = {
+    readonly errors: Array<Error> | null;
+    data: Array<UserItemPresetViewModel> | null;
+};
+
+export type UserItemPresetViewModelResult = {
+    readonly errors: Array<Error> | null;
+    data: UserItemPresetViewModel | null;
 };
 
 export type UserItemViewModel = {
@@ -1370,6 +1406,17 @@ export type BattleViewModelWritable = {
     phase: BattlePhase;
     createdAt: Date;
     fighters: Array<BattleFighterViewModelWritable>;
+};
+
+export type CampaignUpdateWritable = {
+    party: PartyViewModelWritable;
+    visibleParties: Array<PartyVisibleViewModelWritable>;
+    visibleSettlements: Array<SettlementPublicViewModelWritable>;
+    visibleBattles: Array<BattleViewModelWritable>;
+};
+
+export type CampaignUpdateResultWritable = {
+    data: CampaignUpdateWritable | null;
 };
 
 export type CharacterCharacteristicsViewModelResultWritable = {
@@ -1607,17 +1654,6 @@ export type SettlementPublicViewModelResultWritable = {
     data: SettlementPublicViewModelWritable | null;
 };
 
-export type CampaignUpdateWritable = {
-    party: PartyViewModelWritable;
-    visibleParties: Array<PartyVisibleViewModelWritable>;
-    visibleSettlements: Array<SettlementPublicViewModelWritable>;
-    visibleBattles: Array<BattleViewModelWritable>;
-};
-
-export type CampaignUpdateResultWritable = {
-    data: CampaignUpdateWritable | null;
-};
-
 export type TerrainViewModelWritable = {
     id: number;
     type: TerrainType;
@@ -1646,6 +1682,14 @@ export type UpdateTerrainCommandWritable = {
 
 export type UserClanViewModelResultWritable = {
     data: UserClanViewModel | null;
+};
+
+export type UserItemPresetViewModelIListResultWritable = {
+    data: Array<UserItemPresetViewModel> | null;
+};
+
+export type UserItemPresetViewModelResultWritable = {
+    data: UserItemPresetViewModel | null;
 };
 
 export type UserItemViewModelIListResultWritable = {
@@ -4234,6 +4278,107 @@ export type PostUsersSelfItemsResponses = {
 };
 
 export type PostUsersSelfItemsResponse = PostUsersSelfItemsResponses[keyof PostUsersSelfItemsResponses];
+
+export type GetUsersSelfItemPresetsData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/Users/self/item-presets';
+};
+
+export type GetUsersSelfItemPresetsResponses = {
+    /**
+     * OK
+     */
+    200: UserItemPresetViewModelIListResult;
+};
+
+export type GetUsersSelfItemPresetsResponse = GetUsersSelfItemPresetsResponses[keyof GetUsersSelfItemPresetsResponses];
+
+export type PostUsersSelfItemPresetsData = {
+    /**
+     * The user item preset to create.
+     */
+    body?: CreateUserItemPresetCommand;
+    path?: never;
+    query?: never;
+    url: '/Users/self/item-presets';
+};
+
+export type PostUsersSelfItemPresetsResponses = {
+    /**
+     * Created
+     */
+    201: UserItemPresetViewModelResult;
+};
+
+export type PostUsersSelfItemPresetsResponse = PostUsersSelfItemPresetsResponses[keyof PostUsersSelfItemPresetsResponses];
+
+export type DeleteUsersSelfItemPresetsByIdData = {
+    body?: never;
+    path: {
+        /**
+         * User item preset id.
+         */
+        id: number;
+    };
+    query?: never;
+    url: '/Users/self/item-presets/{id}';
+};
+
+export type DeleteUsersSelfItemPresetsByIdResponses = {
+    /**
+     * No Content
+     */
+    204: void;
+};
+
+export type DeleteUsersSelfItemPresetsByIdResponse = DeleteUsersSelfItemPresetsByIdResponses[keyof DeleteUsersSelfItemPresetsByIdResponses];
+
+export type GetUsersSelfItemPresetsByIdData = {
+    body?: never;
+    path: {
+        /**
+         * User item preset id.
+         */
+        id: number;
+    };
+    query?: never;
+    url: '/Users/self/item-presets/{id}';
+};
+
+export type GetUsersSelfItemPresetsByIdResponses = {
+    /**
+     * OK
+     */
+    200: UserItemPresetViewModelResult;
+};
+
+export type GetUsersSelfItemPresetsByIdResponse = GetUsersSelfItemPresetsByIdResponses[keyof GetUsersSelfItemPresetsByIdResponses];
+
+export type PutUsersSelfItemPresetsByIdData = {
+    /**
+     * Updated preset payload.
+     */
+    body?: UpdateUserItemPresetCommand;
+    path: {
+        /**
+         * User item preset id.
+         */
+        id: number;
+    };
+    query?: never;
+    url: '/Users/self/item-presets/{id}';
+};
+
+export type PutUsersSelfItemPresetsByIdResponses = {
+    /**
+     * OK
+     */
+    200: UserItemPresetViewModelResult;
+};
+
+export type PutUsersSelfItemPresetsByIdResponse = PutUsersSelfItemPresetsByIdResponses[keyof PutUsersSelfItemPresetsByIdResponses];
 
 export type PutUsersSelfItemsByIdReforgeData = {
     body?: never;

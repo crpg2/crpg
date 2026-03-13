@@ -75,6 +75,8 @@ public enum ErrorCode
     UserAlreadyInAClan,
     UserAlreadyInTheClan,
     UserAlreadyRegisteredToCampaign,
+    UserItemPresetBadSlots,
+    UserItemPresetNotFound,
     UserItemIsNotBroken,
     UserItemMaxRankReached,
     UserItemNotFound,

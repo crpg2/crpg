@@ -396,6 +396,18 @@ internal static class CommonErrors
         Detail = $"User item with id '{userItemId}' was not found",
     };
 
+    public static Error UserItemPresetBadSlots() => new(ErrorType.Validation, ErrorCode.UserItemPresetBadSlots)
+    {
+        Title = "Invalid item preset slots",
+        Detail = "The item preset must contain each item slot exactly once",
+    };
+
+    public static Error UserItemPresetNotFound(int userId, int userItemPresetId) => new(ErrorType.NotFound, ErrorCode.UserItemPresetNotFound)
+    {
+        Title = "User item preset was not found",
+        Detail = $"User item preset with id '{userItemPresetId}' was not found for user '{userId}'",
+    };
+
     public static Error UserItemInUse(int userItemId) => new(ErrorType.Conflict, ErrorCode.ItemNotOwned)
     {
         Title = "User item is in use.",
