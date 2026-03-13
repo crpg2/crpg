@@ -644,9 +644,9 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AiWaitBeforeShootFactor = agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : 1f - 0.5f * equippedItemLevel;
         float equippedItemLevelComplement = 1f - equippedItemLevel;
         // "leading" a target means aiming ahead of a moving target. The AI will roll between min (shoot behind) and max
-        // (shoot ahead). https://www.desmos.com/calculator/qrdv3rthef
-        props.AiRangerLeadErrorMin = -equippedItemLevelComplement * 0.45f;
-        props.AiRangerLeadErrorMax = equippedItemLevelComplement * 0.25f;
+        // (shoot ahead). https://www.desmos.com/calculator/6ityslajoa
+        props.AiRangerLeadErrorMin = -MathF.Pow(equippedItemLevelComplement, 0.5f) * 0.4f;
+        props.AiRangerLeadErrorMax = MathF.Pow(equippedItemLevelComplement, 0.5f) * 0.3f;
         // Aiming error. https://www.desmos.com/calculator/pqgcp48aoe
         props.AiRangerVerticalErrorMultiplier = equippedItemLevelComplement * 0.1f;
         props.AiRangerHorizontalErrorMultiplier = equippedItemLevelComplement * 0.035f;
