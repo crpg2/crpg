@@ -5,8 +5,6 @@ import type { ColumnFiltersState } from '@tanstack/vue-table'
 import {
   functionalUpdate,
   getCoreRowModel,
-  getFacetedRowModel,
-  getFacetedUniqueValues,
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
@@ -103,8 +101,6 @@ const grid = useVueTable({
   getCoreRowModel: getCoreRowModel(),
   getFilteredRowModel: getFilteredRowModel(),
   getSortedRowModel: getSortedRowModel(),
-  getFacetedRowModel: getFacetedRowModel(),
-  getFacetedUniqueValues: getFacetedUniqueValues(),
   filterFns: {
     includesSome,
   },
@@ -128,27 +124,6 @@ const grid = useVueTable({
       setPagination(functionalUpdate(updater, pagination.value))
     },
   }),
-})
-
-const itemTypeCounts = computed<Partial<Record<ItemType, number>>>(() => {
-  const typeColumn = grid.getColumn('type')
-  const facetedRows = typeColumn?.getFacetedRowModel().rows ?? []
-
-  const typeCounts = facetedRows.reduce<Partial<Record<ItemType, number>>>((out, row) => {
-    const type = row.getValue<ItemType>('type')
-    out[type] = (out[type] ?? 0) + 1
-    return out
-  }, {})
-
-  return itemTypes.value.reduce<Partial<Record<ItemType, number>>>((out, type) => {
-    out[type] = typeCounts[type] ?? 0
-    return out
-  }, {})
-})
-
-const allItemsCount = computed(() => {
-  const typeColumn = grid.getColumn('type')
-  return typeColumn?.getFacetedRowModel().rows.length ?? 0
 })
 
 watch(() => items, () => {
@@ -193,8 +168,7 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
         <ItemSearchFilterByType
           v-model:item-type="itemType"
           :item-types="itemTypes"
-          :item-type-counts="itemTypeCounts"
-          :all-items-count="allItemsCount"
+          :total-count="items.length"
           orientation="vertical"
           with-all-categories
           :size

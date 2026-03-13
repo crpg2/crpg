@@ -523,93 +523,78 @@ character:
         tooltip: Convert {skill} skill points to {attribute} attribute point
 
     requires:
-      title: 'Requires: {text}'
-      linked:
-        oneAttrs: 1 attributes
-        threeStr: 3 strength per level
-        sixStr: 6 strength per level
-        threeAgi: 3 agility per level
-        sixAgi: 6 agility per level
+      title: 'Requires:'
+      costPoints: '{count} {characteristic} point | {count} {characteristic} points'
+      pointsPerLevel: '{count} {characteristic} per level'
+      characteristic: '{count} {characteristic}'
 
     attributes:
       title: Attributes
+      genitiveTitle: Attributes
       children:
         strength:
           title: Strength
+          genitiveTitle: Strength
           desc: Increases your health by {value}
-          requires: '@:character.characteristic.requires.linked.oneAttrs'
         agility:
           title: Agility
+          genitiveTitle: Agility
           desc: Increases your weapon points and makes you move a bit faster
-          requires: '@:character.characteristic.requires.linked.oneAttrs'
 
     skills:
       title: Skills
+      genitiveTitle: Skills
       children:
         ironFlesh:
           title: Iron flesh
           desc: Increases your health by {value}
-          requires: '@:character.characteristic.requires.linked.threeStr'
         powerStrike:
           title: Power strike
           desc: Increases damage by {value} with melee weapons
-          requires: '@:character.characteristic.requires.linked.threeStr'
         powerDraw:
           title: Power draw
           desc: Increases damage by {value} and your steadiness with bows
-          requires: '@:character.characteristic.requires.linked.threeStr'
         powerThrow:
           title: Power throw
           desc: Increases damage by {value} and your steadiness with throwing weapons
-          requires: '@:character.characteristic.requires.linked.sixStr'
         athletics:
           title: Athletics
           desc: Increases your maximum running speed and decreases the time to reach it
-          requires: '@:character.characteristic.requires.linked.threeAgi'
         riding:
           title: Riding
           desc: Increases riding speed, acceleration, maneuver, and dismount resistance
-          requires: '@:character.characteristic.requires.linked.threeAgi'
         weaponMaster:
           title: Weapon master
           desc: Gives weapon proficiency points
-          requires: '@:character.characteristic.requires.linked.threeAgi'
         mountedArchery:
           title: Mounted archery
           desc: Reduces penalty for using ranged weapons on a moving mount
-          requires: '@:character.characteristic.requires.linked.sixAgi'
         shield:
           title: Shield
           desc: Improves shield durability. Increases coverage from ranged attacks. Reduces stun from weapons when hit
-          requires: '@:character.characteristic.requires.linked.sixAgi'
 
     weaponProficiencies:
       title: Weapon proficiencies
+      genitiveTitle: Weapon proficiencies
       children:
         oneHanded:
           title: One handed
-          desc: ''
-          requires: ''
+          desc: Increase one handed mastery
         twoHanded:
           title: Two handed
-          desc: ''
-          requires: ''
+          desc: Increase two handed mastery
         polearm:
           title: Polearm
-          desc: ''
-          requires: ''
+          desc: Increase polearm mastery
         bow:
           title: Bow
-          desc: ''
-          requires: ''
+          desc: Increase bow mastery
         crossbow:
           title: Crossbow
-          desc: ''
-          requires: ''
+          desc: Increase crossbow mastery
         throwing:
           title: Throwing
-          desc: ''
-          requires: ''
+          desc: Increase throwing mastery
 
     commit:
       notify: Changes have been successfully saved

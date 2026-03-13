@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { CharacterCharacteristics, CharacteristicKey, CharacteristicSectionKey, SkillKey } from '~/models/character'
+import type { CharacterCharacteristics, CharacteristicKey, CharacteristicSectionKey } from '~/models/character'
+import type { CharacteristicState } from '~/services/character-service'
 
 interface FormSchema {
   key: CharacteristicSectionKey
@@ -15,15 +16,15 @@ interface ConvertState {
 }
 
 defineProps<{
-  getInputProps: (group: CharacteristicSectionKey, field: CharacteristicKey) => { modelValue: number, min: number, max: number }
-  checkCurrentSkillRequirementsSatisfied: (skillKey: SkillKey) => boolean
   characteristics: CharacterCharacteristics
+  getCharacteristicState: (group: CharacteristicSectionKey, field: CharacteristicKey) => CharacteristicState
   convertAttributesToSkillsState: ConvertState
   convertSkillsToAttributesState: ConvertState
 }>()
 
 defineEmits<{
   input: [groupKey: CharacteristicSectionKey, fieldKey: CharacteristicKey, value: number]
+  inputWithAutoClamp: [groupKey: CharacteristicSectionKey, fieldKey: CharacteristicKey, value: number]
   convertAttributesToSkills: []
   convertSkillsToAttributes: []
   fillField: [groupKey: CharacteristicSectionKey, fieldKey: CharacteristicKey]
@@ -102,15 +103,16 @@ const formSchema: FormSchema[] = [
 
 <template>
   <UCard
-    v-for="({ key: fieldGroupKey, children }) in formSchema"
-    :key="fieldGroupKey"
+    v-for="({ key: section, children }) in formSchema"
+    :key="section"
     :ui="{ body: 'p-0! overflow-hidden', header: 'px-4! py-3' }"
-    :style="{ 'grid-area': fieldGroupKey }"
+    :style="{ 'grid-area': section }"
   >
     <template #header>
       <CharacterCharacteristicsBuilderGroupHeader
-        :field-group-key
-        :points="characteristics[fieldGroupKey].points"
+        :data-aq-fields-group="section"
+        :section
+        :points="characteristics[section].points"
         :convert-attributes-to-skills-state
         :convert-skills-to-attributes-state
         @convert-attributes-to-skills="$emit('convertAttributesToSkills')"
@@ -119,15 +121,14 @@ const formSchema: FormSchema[] = [
     </template>
 
     <CharacterCharacteristicsBuilderField
-      v-for="({ key: fieldKey }) in children"
-      :key="fieldKey"
-      :field-group-key
-      :field-key
-      :input-props="getInputProps(fieldGroupKey, fieldKey)"
-      :skill-requirement-satisfied="fieldGroupKey !== 'skills' || checkCurrentSkillRequirementsSatisfied(fieldKey as SkillKey)"
-      @update:model-value="$emit('input', fieldGroupKey, fieldKey, $event)"
-      @fill-field="$emit('fillField', fieldGroupKey, fieldKey)"
-      @reset-field="$emit('resetField', fieldGroupKey, fieldKey)"
+      v-for="({ key: characteristic }) in children"
+      :key="characteristic"
+      :section
+      :characteristic
+      v-bind="getCharacteristicState(section, characteristic)"
+      @update:model-value="$emit('inputWithAutoClamp', section, characteristic, $event)"
+      @fill-field="$emit('fillField', section, characteristic)"
+      @reset-field="$emit('resetField', section, characteristic)"
     />
   </UCard>
 </template>

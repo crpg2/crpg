@@ -2,6 +2,7 @@
 import type { TabsItem } from '@nuxt/ui'
 
 import type { ItemType, WeaponClass } from '~/models/item'
+import type { FacetedItemTypes, FacetedWeaponClasses } from '~/services/item-search-service'
 
 import { ITEM_TYPE } from '~/models/item'
 import {
@@ -12,17 +13,15 @@ import {
 
 const {
   itemTypes,
-  itemTypeCounts = {},
-  allItemsCount,
   weaponClasses = [],
+  totalCount,
   orientation = 'horizontal',
   withAllCategories = false,
   size = 'xl',
 } = defineProps<{
-  itemTypes: ItemType[]
-  itemTypeCounts?: Partial<Record<ItemType, number>>
-  allItemsCount?: number
-  weaponClasses?: WeaponClass[]
+  itemTypes: FacetedItemTypes[]
+  totalCount?: number
+  weaponClasses?: FacetedWeaponClasses[]
   orientation?: 'vertical' | 'horizontal'
   withAllCategories?: boolean
   size?: 'md' | 'xl'
@@ -37,20 +36,21 @@ type ItemTypeTabItem = TabsItem & { value: ItemType, count?: number }
 const itemTypeOptions = computed(() => {
   return [
     ...(withAllCategories
-      ? [{ value: ITEM_TYPE.Undefined, icon: 'crpg:grid', count: allItemsCount ?? 0 } satisfies ItemTypeTabItem]
+      ? [{ value: ITEM_TYPE.Undefined, icon: 'crpg:grid', count: totalCount ?? 0 } satisfies ItemTypeTabItem]
       : []),
-    ...itemTypes.map<ItemTypeTabItem>(type => ({
-      icon: `crpg:${itemTypeToIcon[type]}`,
-      value: type,
-      count: itemTypeCounts[type],
+    ...itemTypes.map<ItemTypeTabItem>(item => ({
+      icon: `crpg:${itemTypeToIcon[item.value]}`,
+      value: item.value,
+      count: item.count,
     })),
   ]
 })
 
 const weaponClassOptions = computed(() => {
-  return weaponClasses.map<TabsItem>(weaponClass => ({
-    icon: `crpg:${weaponClassToIcon[weaponClass]}`,
-    value: weaponClass,
+  return weaponClasses.map<TabsItem>(item => ({
+    icon: `crpg:${weaponClassToIcon[item.value]}`,
+    value: item.value,
+    count: item.count,
   }))
 })
 </script>
@@ -72,22 +72,21 @@ const weaponClassOptions = computed(() => {
       ],
     }"
   >
-    <template #leading="{ item: _item }">
+    <template #leading="{ item }">
       <UTooltip
-        v-if="_item.icon"
         :content="{ side: orientation === 'horizontal' ? 'bottom' : 'right' }"
-        :text="$t(`item.type.${_item.value}`)"
+        :text="$t(`item.type.${item.value}`)"
       >
         <UChip
-          :show="_item.count !== undefined"
-          :text="_item.count"
+          :show="item.count !== undefined"
+          :text="item.count"
           color="neutral"
           :ui="{
             base: 'h-3.5 min-w-3.5 text-[8px] bg-inverted/25 text-white ring-0',
           }"
         >
           <UIcon
-            :name="_item.icon"
+            :name="item.icon"
             class="cursor-pointer outline-0 select-none"
             :class="[size === 'xl' ? 'size-9' : 'size-6']"
           />
@@ -117,16 +116,24 @@ const weaponClassOptions = computed(() => {
             indicator: 'hidden',
           }"
         >
-          <template #leading="{ item: _item }">
+          <template #leading="{ item: weaponClassItem }">
             <UTooltip
-              v-if="_item.icon"
               :content="{ side: orientation === 'horizontal' ? 'bottom' : 'right' }"
-              :text="$t(`item.weaponClass.${_item.value}`)"
+              :text="$t(`item.weaponClass.${weaponClassItem.value}`)"
             >
-              <UIcon
-                :name="_item.icon"
-                class="size-9 cursor-pointer outline-0 select-none"
-              />
+              <UChip
+                :show="weaponClassItem.count !== undefined"
+                :text="weaponClassItem.count"
+                color="neutral"
+                :ui="{
+                  base: 'h-3.5 min-w-3.5 text-[8px] bg-inverted/25 text-white ring-0',
+                }"
+              >
+                <UIcon
+                  :name="weaponClassItem.icon"
+                  class="size-9 cursor-pointer outline-0 select-none"
+                />
+              </UChip>
             </UTooltip>
           </template>
         </UTabs>
