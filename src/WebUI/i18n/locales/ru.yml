@@ -631,6 +631,20 @@ character:
 
   inventory:
     empty: Инвентарь пуст..
+    presets:
+      title: Пресеты снаряжения
+      namePlaceholder: Название пресета
+      createFromCurrent: Сохранить
+      saveCurrent: Обновить
+      apply: Применить
+      delete: Удалить
+      empty: Пресетов пока нет
+      notify:
+        created: Пресет создан
+        updated: Пресет обновлен
+        deleted: Пресет удален
+        applied: Пресет применен
+        missingItems: '{count} предмет(ов) из пресета недоступно и было пропущено'
     total:
       tpl: '{count} {sum}'
       count: '... | {count} предмет | {count} предмета | {count} предметов'

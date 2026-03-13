@@ -1,13 +1,20 @@
+import type { UserItemPresetViewModel } from '#api'
+
 import {
   deleteUsersSelf,
+  deleteUsersSelfItemPresetsById,
   deleteUsersSelfItemsById,
   deleteUsersSelfNotificationsById,
   deleteUsersSelfNotificationsDeleteAll,
   getUsersSelf,
+  getUsersSelfItemPresets,
+  getUsersSelfItemPresetsById,
   getUsersSelfItems,
   getUsersSelfNotifications,
   getUsersSelfRestriction,
+  postUsersSelfItemPresets,
   postUsersSelfItems,
+  putUsersSelfItemPresetsById,
   putUsersSelfItemsByIdReforge,
   putUsersSelfItemsByIdRepair,
   putUsersSelfItemsByIdUpgrade,
@@ -19,11 +26,12 @@ import { pick } from 'es-toolkit'
 import type {
   User,
   UserItem,
+  UserItemPreset,
   UserPublic,
   UserRestrictionPublic,
 } from '~/models/user'
 
-export const getUser = async (): Promise<User> => (await getUsersSelf({ })).data!
+export const getUser = async (): Promise<User> => (await getUsersSelf({})).data!
 
 export const mapUserToUserPublic = (user: User): UserPublic =>
   pick(user, ['id', 'platform', 'platformUserId', 'name', 'region', 'avatar', 'clanMembership'])
@@ -32,17 +40,33 @@ export const deleteUser = () => deleteUsersSelf({})
 
 export const getUserItems = async (): Promise<UserItem[]> => (await getUsersSelfItems({})).data!
 
+export const getUserItemPresets = async (): Promise<UserItemPreset[]> =>
+  (await getUsersSelfItemPresets({})).data!.map(mapUserItemPreset)
+
+export const getUserItemPreset = async (id: number): Promise<UserItemPreset> =>
+  mapUserItemPreset((await getUsersSelfItemPresetsById({ path: { id } })).data!)
+
+export const createUserItemPreset = async (preset: Pick<UserItemPreset, 'name' | 'slots'>): Promise<UserItemPreset> =>
+  mapUserItemPreset((await postUsersSelfItemPresets({ body: preset })).data!)
+
+export const updateUserItemPreset = async (id: number, preset: Pick<UserItemPreset, 'name' | 'slots'>): Promise<UserItemPreset> =>
+  mapUserItemPreset((await putUsersSelfItemPresetsById({ path: { id }, body: preset })).data!)
+
+export const deleteUserItemPreset = (id: number) => deleteUsersSelfItemPresetsById({ path: { id } })
+
 export const buyUserItem = (itemId: string) => postUsersSelfItems({ body: { itemId } })
 
 export const sellUserItem = (userItemId: number) => deleteUsersSelfItemsById({ path: { id: userItemId } })
 
 export const repairUserItem = (userItemId: number) => putUsersSelfItemsByIdRepair({ path: { id: userItemId } })
 
-export const upgradeUserItem = async (userItemId: number, upgradeRank: number): Promise<UserItem> => (await putUsersSelfItemsByIdUpgrade({ path: { id: userItemId }, body: { upgradeRank } })).data!
+export const upgradeUserItem = async (userItemId: number, upgradeRank: number): Promise<UserItem> =>
+  (await putUsersSelfItemsByIdUpgrade({ path: { id: userItemId }, body: { upgradeRank } })).data!
 
-export const reforgeUserItem = async (userItemId: number): Promise<UserItem> => (await putUsersSelfItemsByIdReforge({ path: { id: userItemId } })).data!
+export const reforgeUserItem = async (userItemId: number): Promise<UserItem> =>
+  (await putUsersSelfItemsByIdReforge({ path: { id: userItemId } })).data!
 
-export const getUserRestriction = async (): Promise<UserRestrictionPublic> => (await getUsersSelfRestriction({ })).data!
+export const getUserRestriction = async (): Promise<UserRestrictionPublic> => (await getUsersSelfRestriction({})).data!
 
 export const getUserNotifications = async () => (await getUsersSelfNotifications({})).data!
 
@@ -53,3 +77,13 @@ export const readAllUserNotifications = () => putUsersSelfNotificationsReadAll({
 export const deleteUserNotification = (id: number) => deleteUsersSelfNotificationsById({ path: { id } })
 
 export const deleteAllUserNotifications = () => deleteUsersSelfNotificationsDeleteAll({})
+
+function mapUserItemPreset(preset: UserItemPresetViewModel): UserItemPreset {
+  return {
+    ...preset,
+    slots: preset.slots.map(slot => ({
+      ...slot,
+      itemId: slot.itemId ?? null,
+    })),
+  }
+}
