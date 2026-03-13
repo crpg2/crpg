@@ -19,8 +19,8 @@ const {
   mockedWppForAgility,
   mockedWppForWeaponMaster,
   mockedGetCharacteristicCost,
-  mockedSkillRequirementsSatisfied,
-  mockedCharacteristicRequirementsSatisfied,
+  mockedAllCharacteristicRequirementSatisfied,
+  mockedCharacteristicRequirementSatisfied,
   createEmptyCharacteristic,
   ATTRIBUTES_TO_SKILLS_RATE,
   SKILLS_TO_ATTRIBUTES_RATE,
@@ -61,13 +61,13 @@ const {
 
   return {
     mockedComputeHealthPoints: vi.fn(),
-    mockedCreateDefaultCharacteristic: vi.fn(),
+    mockedCreateDefaultCharacteristic: vi.fn().mockImplementation(createEmptyCharacteristic),
     mockedCreateEmptyCharacteristic: vi.fn().mockImplementation(createEmptyCharacteristic),
     mockedWppForAgility: vi.fn((value: number) => value * WPF_FOR_AGILITY),
     mockedWppForWeaponMaster: vi.fn((value: number) => value * WPF_FOR_WEAPON_MASTER),
     mockedGetCharacteristicCost: vi.fn((_, __, value: number) => value),
-    mockedSkillRequirementsSatisfied: vi.fn().mockReturnValue(true),
-    mockedCharacteristicRequirementsSatisfied: vi.fn().mockReturnValue(true),
+    mockedAllCharacteristicRequirementSatisfied: vi.fn().mockReturnValue(true),
+    mockedCharacteristicRequirementSatisfied: vi.fn().mockReturnValue(null),
     createEmptyCharacteristic,
     ATTRIBUTES_TO_SKILLS_RATE,
     SKILLS_TO_ATTRIBUTES_RATE,
@@ -84,8 +84,8 @@ vi.mock('~/services/character-service', () => {
     ATTRIBUTES_TO_SKILLS_RATE,
     SKILLS_TO_ATTRIBUTES_RATE,
     getCharacteristicCost: mockedGetCharacteristicCost,
-    skillRequirementsSatisfied: mockedSkillRequirementsSatisfied,
-    characteristicRequirementsSatisfied: mockedCharacteristicRequirementsSatisfied,
+    allCharacteristicRequirementSatisfied: mockedAllCharacteristicRequirementSatisfied,
+    characteristicRequirementSatisfied: mockedCharacteristicRequirementSatisfied,
   }
 })
 
@@ -214,29 +214,40 @@ describe('useCharacterCharacteristicBuilder', () => {
     })
 
     it('is invalid when some skill does not meet its Strength requirement', () => {
-      mockedSkillRequirementsSatisfied.mockReturnValueOnce(false)
+      mockedAllCharacteristicRequirementSatisfied.mockReturnValueOnce(false)
       const { isChangeValid } = useCharacterCharacteristicBuilder(createCharacteristics({ attributes: { strength: 2 }, skills: { ironFlesh: 1 } }))
       expect(isChangeValid.value).toStrictEqual(false)
     })
   })
 
-  describe('getInputProps', () => {
+  describe('getCharacteristicState', () => {
     it('attribute (Strength) has max 0 when no free points', () => {
-      const { getInputProps } = useCharacterCharacteristicBuilder(createCharacteristics({ attributes: { points: 0, strength: 0 } }))
-      expect(getInputProps('attributes', 'strength')).toMatchObject({ max: 0 })
+      const { getCharacteristicState } = useCharacterCharacteristicBuilder(createCharacteristics({ attributes: { points: 0, strength: 0 } }))
+      expect(getCharacteristicState('attributes', 'strength')).toMatchObject({ max: 0 })
     })
 
     it('attribute (Strength) has max 1 when 1 free point available', () => {
-      const { getInputProps } = useCharacterCharacteristicBuilder(createCharacteristics({ attributes: { points: 1, strength: 0 } }))
-      expect(getInputProps('attributes', 'strength')).toMatchObject({ max: 1, modelValue: 0 })
+      const { getCharacteristicState } = useCharacterCharacteristicBuilder(createCharacteristics({ attributes: { points: 1, strength: 0 } }))
+      expect(getCharacteristicState('attributes', 'strength')).toMatchObject({ max: 1, value: 0 })
     })
 
     it('skill (Iron Flesh) locked when Strength too low', () => {
-      mockedCharacteristicRequirementsSatisfied.mockReturnValueOnce(false)
-      const characteristics = createCharacteristics({ attributes: { points: 1, strength: 0 } })
-      const { getInputProps } = useCharacterCharacteristicBuilder(characteristics)
-      expect(getInputProps('attributes', 'strength')).toMatchObject({ max: 0, min: 0, modelValue: 0 })
-      expect(mockedCharacteristicRequirementsSatisfied).toHaveBeenCalledWith('attributes', 'strength', 1, characteristics)
+      mockedCharacteristicRequirementSatisfied.mockImplementation(
+        (_section, _key, value: number) => (value <= 0
+          ? null
+          : {
+              characteristic: 'strength',
+              characteristicPerLevel: 3,
+              needCharacteristic: 3,
+              satisfied: false,
+              section: 'attributes',
+            }),
+      )
+      const characteristics = createCharacteristics({ attributes: { points: 1, strength: 0 }, skills: { points: 1, ironFlesh: 0 } })
+      const { getCharacteristicState } = useCharacterCharacteristicBuilder(characteristics)
+      expect(getCharacteristicState('skills', 'ironFlesh')).toMatchObject({ max: 0, min: 0, value: 0 })
+      expect(mockedCharacteristicRequirementSatisfied).toHaveBeenCalledWith('skills', 'ironFlesh', 1, expect.anything())
+      mockedCharacteristicRequirementSatisfied.mockReturnValue(null)
     })
   })
 
@@ -309,7 +320,13 @@ describe('useCharacterCharacteristicBuilder', () => {
     )
 
     it('does not increase Shield when Agility requirement is not satisfied', () => {
-      mockedCharacteristicRequirementsSatisfied.mockReturnValueOnce(false)
+      mockedCharacteristicRequirementSatisfied.mockReturnValueOnce({
+        characteristic: 'agility',
+        characteristicPerLevel: 6,
+        needCharacteristic: 6,
+        satisfied: false,
+        section: 'attributes',
+      })
       const { characteristics, onInput } = useCharacterCharacteristicBuilder(createCharacteristics({ attributes: { agility: 5 }, skills: { points: 1, shield: 0 } }))
       onInput('skills', 'shield', 1)
       expect(characteristics.value).toEqual(expect.objectContaining({
@@ -349,8 +366,16 @@ describe('useCharacterCharacteristicBuilder', () => {
     })
 
     it('onFillField stops when next step violates requirements', () => {
-      mockedCharacteristicRequirementsSatisfied.mockImplementation(
-        (_section, _key, value: number) => value <= 2,
+      mockedCharacteristicRequirementSatisfied.mockImplementation(
+        (_section, _key, value: number) => (value <= 2
+          ? null
+          : {
+              characteristic: 'agility',
+              characteristicPerLevel: 6,
+              needCharacteristic: 18,
+              satisfied: false,
+              section: 'attributes',
+            }),
       )
 
       const { characteristics, onFillField } = useCharacterCharacteristicBuilder(
@@ -362,7 +387,7 @@ describe('useCharacterCharacteristicBuilder', () => {
       expect(characteristics.value.skills.shield).toEqual(2)
       expect(characteristics.value.skills.points).toEqual(3)
 
-      mockedCharacteristicRequirementsSatisfied.mockReturnValue(true)
+      mockedCharacteristicRequirementSatisfied.mockReturnValue(null)
     })
 
     it('onInputWithAutoClamp sets the value when enough points available', () => {
@@ -399,8 +424,16 @@ describe('useCharacterCharacteristicBuilder', () => {
     })
 
     it('onInputWithAutoClamp respects requirements when clamping', () => {
-      mockedCharacteristicRequirementsSatisfied.mockImplementation(
-        (_section, _key, value: number) => value <= 2,
+      mockedCharacteristicRequirementSatisfied.mockImplementation(
+        (_section, _key, value: number) => (value <= 2
+          ? null
+          : {
+              characteristic: 'agility',
+              characteristicPerLevel: 6,
+              needCharacteristic: 18,
+              satisfied: false,
+              section: 'attributes',
+            }),
       )
 
       const { characteristics, onInputWithAutoClamp } = useCharacterCharacteristicBuilder(
@@ -412,7 +445,7 @@ describe('useCharacterCharacteristicBuilder', () => {
       expect(characteristics.value.skills.shield).toEqual(2)
       expect(characteristics.value.skills.points).toEqual(8)
 
-      mockedCharacteristicRequirementsSatisfied.mockReturnValue(true)
+      mockedCharacteristicRequirementSatisfied.mockReturnValue(null)
     })
 
     it('onInputWithAutoClamp with agility increases WPP bonus', () => {
@@ -462,7 +495,7 @@ describe('useCharacterCharacteristicBuilder', () => {
     const {
       canConvertAttributesToSkills,
       characteristics,
-      getInputProps,
+      getCharacteristicState,
       isChangeValid,
       onInput,
       isDirty,
@@ -472,8 +505,8 @@ describe('useCharacterCharacteristicBuilder', () => {
     expect(characteristics.value.attributes.points).toEqual(1)
     expect(characteristics.value.attributes.strength).toEqual(0)
 
-    expect(getInputProps('attributes', 'strength').max).toEqual(1)
-    expect(getInputProps('attributes', 'agility').max).toEqual(1)
+    expect(getCharacteristicState('attributes', 'strength').max).toEqual(1)
+    expect(getCharacteristicState('attributes', 'agility').max).toEqual(1)
 
     expect(canConvertAttributesToSkills.value).toBeTruthy()
     expect(isDirty.value).toBeFalsy()
@@ -484,13 +517,13 @@ describe('useCharacterCharacteristicBuilder', () => {
     expect(characteristics.value.attributes.points).toEqual(0)
     expect(characteristics.value.attributes.strength).toEqual(1)
 
-    expect(getInputProps('attributes', 'strength')).toEqual({
+    expect(getCharacteristicState('attributes', 'strength')).toMatchObject({
       max: 1,
       min: 0,
-      modelValue: 1,
+      value: 1,
       costToIncrease: 1,
     })
-    expect(getInputProps('attributes', 'agility').max).toEqual(0)
+    expect(getCharacteristicState('attributes', 'agility').max).toEqual(0)
 
     expect(isDirty.value).toBeTruthy()
     expect(isChangeValid.value).toBeTruthy()
