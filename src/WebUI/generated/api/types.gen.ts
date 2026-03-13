@@ -212,10 +212,21 @@ export type BuyItemCommand = {
 };
 
 export type BuySettlementItemCommand = {
-    partyId: number;
     itemId: string;
     itemCount: number;
     settlementId: number;
+};
+
+export type CampaignUpdate = {
+    party: PartyViewModel;
+    visibleParties: Array<PartyVisibleViewModel>;
+    visibleSettlements: Array<SettlementPublicViewModel>;
+    visibleBattles: Array<BattleViewModel>;
+};
+
+export type CampaignUpdateResult = {
+    readonly errors: Array<Error> | null;
+    data: CampaignUpdate | null;
 };
 
 export type CharacterAttributesViewModel = {
@@ -503,7 +514,7 @@ export type Error = {
     stackTrace: string | null;
 };
 
-export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'InvalidUpgradeRank' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartyNotEnoughItems' | 'SettlementNotEnoughItems' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementNotEnoughTroops' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToCampaign' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
+export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'InvalidItemUpgradeRank' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartyNotEnoughItems' | 'SettlementNotEnoughItems' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementNotEnoughTroops' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToCampaign' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
 
 export type ErrorSource = {
     pointer?: string | null;
@@ -1038,18 +1049,6 @@ export type SettlementPublicViewModelResult = {
 
 export type SettlementType = 'Village' | 'Castle' | 'Town';
 
-export type CampaignUpdate = {
-    party: PartyViewModel;
-    visibleParties: Array<PartyVisibleViewModel>;
-    visibleSettlements: Array<SettlementPublicViewModel>;
-    visibleBattles: Array<BattleViewModel>;
-};
-
-export type CampaignUpdateResult = {
-    readonly errors: Array<Error> | null;
-    data: CampaignUpdate | null;
-};
-
 export type TerrainType = 'Barrier' | 'ThickForest' | 'SparseForest' | 'ShallowWater' | 'DeepWater' | 'Plain';
 
 export type TerrainViewModel = {
@@ -1372,6 +1371,17 @@ export type BattleViewModelWritable = {
     fighters: Array<BattleFighterViewModelWritable>;
 };
 
+export type CampaignUpdateWritable = {
+    party: PartyViewModelWritable;
+    visibleParties: Array<PartyVisibleViewModelWritable>;
+    visibleSettlements: Array<SettlementPublicViewModelWritable>;
+    visibleBattles: Array<BattleViewModelWritable>;
+};
+
+export type CampaignUpdateResultWritable = {
+    data: CampaignUpdateWritable | null;
+};
+
 export type CharacterCharacteristicsViewModelResultWritable = {
     data: CharacterCharacteristicsViewModel | null;
 };
@@ -1605,17 +1615,6 @@ export type SettlementPublicViewModelIListResultWritable = {
 
 export type SettlementPublicViewModelResultWritable = {
     data: SettlementPublicViewModelWritable | null;
-};
-
-export type CampaignUpdateWritable = {
-    party: PartyViewModelWritable;
-    visibleParties: Array<PartyVisibleViewModelWritable>;
-    visibleSettlements: Array<SettlementPublicViewModelWritable>;
-    visibleBattles: Array<BattleViewModelWritable>;
-};
-
-export type CampaignUpdateResultWritable = {
-    data: CampaignUpdateWritable | null;
 };
 
 export type TerrainViewModelWritable = {

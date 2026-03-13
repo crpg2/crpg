@@ -3,9 +3,10 @@ import {
   getPartiesSelfItems,
   getPartiesSelfUpdate,
   postParties,
+  // putPartiesSelfStatus, TODO:
+  postPartiesSelfItems,
   putPartiesSelfOrders,
   putPartiesSelfTransferOffersByTransferOfferId,
-  // putPartiesSelfStatus,
 } from '#api/sdk.gen'
 
 import type { CrpgApiResult } from '~/api.config'
@@ -23,6 +24,9 @@ export const updatePartyOrders = async (orders: UpdatePartyOrder[]): Promise<Cam
 export const registerParty = () => postParties({ body: {} })
 
 export const getSelfPartyItems = async (): Promise<ItemStack[]> => (await getPartiesSelfItems({})).data!
+
+// TODO: FIXME: batch
+export const buySettlementItem = (settlementId: number, itemId: string, itemCount: number) => postPartiesSelfItems({ body: { settlementId, itemId, itemCount } })
 
 export const getPartyItems = async (
   partyId: number,

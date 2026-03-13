@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
@@ -13,8 +14,10 @@ using LoggerFactory = Crpg.Logging.LoggerFactory;
 
 namespace Crpg.Application.Parties.Commands;
 
+// TODO: batch
 public record BuySettlementItemCommand : IMediatorRequest<ItemStack>
 {
+    [JsonIgnore]
     public int PartyId { get; set; }
     public string ItemId { get; init; } = string.Empty;
     public int ItemCount { get; init; }
@@ -28,20 +31,13 @@ public record BuySettlementItemCommand : IMediatorRequest<ItemStack>
         }
     }
 
-    internal class Handler : IMediatorRequestHandler<BuySettlementItemCommand, ItemStack>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, ICampaignMap campaignMap) : IMediatorRequestHandler<BuySettlementItemCommand, ItemStack>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<BuySettlementItemCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly ICampaignMap _campaignMap;
-
-        public Handler(ICrpgDbContext db, IMapper mapper, ICampaignMap campaignMap)
-        {
-            _db = db;
-            _mapper = mapper;
-            _campaignMap = campaignMap;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly ICampaignMap _campaignMap = campaignMap;
 
         public async ValueTask<Result<ItemStack>> Handle(BuySettlementItemCommand req,
             CancellationToken cancellationToken)
@@ -58,7 +54,7 @@ public record BuySettlementItemCommand : IMediatorRequest<ItemStack>
                 .FirstOrDefaultAsync(s => s.Id == req.SettlementId, cancellationToken);
             if (settlement == null)
             {
-                return new(CommonErrors.SettlementNotFound(req.PartyId));
+                return new(CommonErrors.SettlementNotFound(req.SettlementId));
             }
 
             if (!_campaignMap.ArePointsAtInteractionDistance(party.Position, settlement.Position))
