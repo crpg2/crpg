@@ -32,7 +32,7 @@ export const useBattleTitle = (battle: MaybeRefOrGetter<Battle>) => {
 
 export const useBattle = () => {
   const route = useRoute('battles-id')
-  const _key = BATTLE_QUERY_KEYS.byId(Number(route.params.id))
+  const _key = computed(() => BATTLE_QUERY_KEYS.byId(Number(route.params.id)))
 
   const battle = getAsyncData<Battle>(_key)
   const refreshBattle = refreshAsyncData(_key)

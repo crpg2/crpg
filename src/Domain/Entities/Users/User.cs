@@ -48,6 +48,7 @@ public class User : AuditableEntity
     public uint Version { get; set; }
 
     public IList<UserItem> Items { get; set; } = new List<UserItem>();
+    public IList<UserItemPreset> ItemPresets { get; set; } = new List<UserItemPreset>();
     public IList<Character> Characters { get; set; } = new List<Character>();
     public Character? ActiveCharacter { get; set; }
     public IList<Restriction> Restrictions { get; set; } = new List<Restriction>();

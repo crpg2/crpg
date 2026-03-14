@@ -1,7 +1,7 @@
 import type { RestrictionType as _RestrictionType } from '#api'
 import type { ValueOf } from 'type-fest'
 
-import type { Clan, ClanMemberRole } from './clan'
+import type { Clan, ClanMember, ClanMemberRole } from './clan'
 import type { Item, ItemSlot, ItemType } from './item'
 import type { NotificationState } from './notifications'
 import type { Platform } from './platform'
@@ -52,12 +52,34 @@ export interface UserItem {
   createdAt: Date
   isBroken: boolean
   isPersonal: boolean
-  isArmoryItem: boolean
+  clanArmoryLender: ClanMember | null
 }
 
 export interface UserItemsByType {
   type: ItemType
   items: UserItem[]
+}
+
+export interface UserItemPresetSlot {
+  slot: ItemSlot
+  item: Item | null
+  userItemId: number | null
+}
+
+export interface UserItemPreset {
+  id: number
+  name: string
+  slots: UserItemPresetSlot[]
+}
+
+export interface UserItemPresetUpdate {
+  name: string
+  slots: UserItemPresetSlotUpdate[]
+}
+
+export interface UserItemPresetSlotUpdate {
+  slot: ItemSlot
+  itemId: string | null
 }
 
 export type UserItemsBySlot = Record<ItemSlot, UserItem>

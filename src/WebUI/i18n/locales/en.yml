@@ -666,6 +666,19 @@ character:
 
   inventory:
     empty: The inventory is empty
+    presets:
+      save:
+        title: Save preset
+        form:
+          field:
+            name: Preset name
+      title: Loadout presets
+      notify:
+        created: Preset created
+        deleted: Preset deleted
+        applied: Preset applied
+        missingItems: '{count} preset items are not available and were skipped'
+
     total:
       tpl: '{count} {sum}'
       count: '... | {count} item | {count} items'

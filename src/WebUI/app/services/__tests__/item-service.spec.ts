@@ -76,7 +76,7 @@ describe('item service', () => {
     ],
     [
       'returns a warning when the item is in the clan armory and belongs to the same user',
-      { isArmoryItem: true, userId: 1 } as UserItem,
+      { clanArmoryLender: { user: { id: 1 } }, userId: 1 } as UserItem,
       1,
       {},
       { slots: [], warning: 'character.inventory.item.clanArmory.inArmory.notify.warning' },

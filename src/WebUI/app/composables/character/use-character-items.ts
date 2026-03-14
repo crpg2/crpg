@@ -34,8 +34,8 @@ export const useCharacterItemsProvider = () => {
 export const useCharacterItems = () => {
   const { user } = useUser()
   const { characterId } = useCharacter()
+  const _key = computed(() => CHARACTER_QUERY_KEYS.items(characterId.value))
 
-  const _key = CHARACTER_QUERY_KEYS.items(characterId.value)
   const characterItems = getAsyncData<EquippedItem[]>(_key)
   const loadCharacterItems = refreshAsyncData(_key)
 
@@ -48,7 +48,7 @@ export const useCharacterItems = () => {
 
   const [onUpdateCharacterItems, updatingCharacterItems] = useAsyncCallback(
     async (itemIds: EquippedItemId[]) => {
-      await updateCharacterItems(toValue(characterId), itemIds)
+      await updateCharacterItems(characterId.value, itemIds)
       await loadCharacterItems()
     },
     {

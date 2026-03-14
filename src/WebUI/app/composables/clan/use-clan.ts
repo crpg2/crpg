@@ -1,4 +1,5 @@
 import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
+import { computed } from 'vue'
 
 import type { Clan, ClanUpdate } from '~/models/clan'
 
@@ -7,7 +8,7 @@ import { updateClan as _updateClan } from '~/services/clan-service'
 
 export const useClan = () => {
   const route = useRoute('clans-id')
-  const _key = CLAN_QUERY_KEYS.byId(Number(route.params.id))
+  const _key = computed(() => CLAN_QUERY_KEYS.byId(Number(route.params.id)))
 
   const clan = getAsyncData<Clan>(_key)
   const refreshClan = refreshAsyncData(_key)

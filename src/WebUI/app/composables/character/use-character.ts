@@ -34,23 +34,32 @@ export const useCharacters = () => {
   }
 }
 
-const characterKey: InjectionKey<{
-  characterId: ComputedRef<number>
-  character: ComputedRef<Character>
-}> = Symbol('Character')
+export const useCharacterState = (strict: boolean = true) => {
+  const state = useState<Character | null>('character')
 
-export const useCharacterProvider = (character: MaybeRefOrGetter<Character>) => {
-  provide(characterKey, {
-    character: computed(() => toValue(character)),
-    characterId: computed(() => toValue(character)?.id),
-  })
+  if (strict && state.value === null) {
+    throw createError({ statusMessage: 'Character not provided' })
+  }
+
+  const characterId = computed(() => state.value!.id)
+
+  const setCharacterState = (data: Character) => {
+    state.value = data
+  }
+
+  return {
+    characterState: state as Ref<Character>,
+    characterId,
+    setCharacterState,
+  }
 }
 
 export const useCharacter = () => {
-  const { character, characterId } = injectStrict(characterKey)
+  const { characterState, characterId, setCharacterState } = useCharacterState()
 
   return {
-    character,
+    character: characterState,
     characterId,
+    setCharacterState,
   }
 }
