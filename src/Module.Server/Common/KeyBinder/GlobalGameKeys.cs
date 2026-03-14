@@ -1,8 +1,7 @@
-using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.Common.KeyBinder.Models;
 using TaleWorlds.InputSystem;
 
-namespace Crpg.Module.Server.Common.Keybinder;
+namespace Crpg.Module.Common.KeyBinder;
 
 public class GlobalGameKeys : IUseKeyBinder
 {

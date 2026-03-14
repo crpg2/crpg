@@ -135,7 +135,7 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
 
         if (_reportWindowSeconds <= 0) // no window
         {
-            TextObject reportPrompText = new("{=WH15BANu}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional.");
+            TextObject reportPrompText = new("{=WH15BANu}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] to report.");
             reportPrompText.SetTextVariable("ATTACKER", _lastAttackerName);
             reportPrompText.SetTextVariable("DAMAGE", message.Damage);
             reportPrompText.SetTextVariable("MODIFIERKEY", cmdModifierKeyStr);
@@ -144,7 +144,7 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
         }
         else if (_reportWindowSeconds > 0) // has window
         {
-            TextObject reportPrompNoTimeText = new("{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional {TIMELEFT} seconds remaining.");
+            TextObject reportPrompNoTimeText = new("{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] to report. ({TIMELEFT} seconds remaining");
             reportPrompNoTimeText.SetTextVariable("ATTACKER", _lastAttackerName);
             reportPrompNoTimeText.SetTextVariable("DAMAGE", message.Damage);
             reportPrompNoTimeText.SetTextVariable("TIMELEFT", _reportWindowSeconds);
