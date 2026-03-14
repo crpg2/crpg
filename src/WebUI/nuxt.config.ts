@@ -154,6 +154,7 @@ export default defineNuxtConfig({
     locales: [
       { code: 'en', file: 'en.yml' },
       { code: 'ru', file: 'ru.yml' },
+      { code: 'cn', file: 'cn.yml' },
     ],
   },
   icon: {

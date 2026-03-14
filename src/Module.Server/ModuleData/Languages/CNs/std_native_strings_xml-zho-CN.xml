@@ -46,6 +46,7 @@
     <string id="rOhUOWX6" text="只有锦标赛角色可以加入此服务器。" />
     <string id="OsPW0okL" text="无法访问 cRPG 主服务器。请稍后重试。" />
     <string id="hU3flm9q" text="cRPG 服务器仅支持 Steam、Epic Games 和 Xbox。" />
+    <string id="uPwSqhuD" text="你因过多的队友伤害而被踢出。" />
     <string id="PKVPlAeE" text="已弃置" />
     <string id="tZJ32ZRQ" text="Acacia 堡垒" />
     <string id="xEi9C8Kl" text="古代世界" />
@@ -155,5 +156,9 @@
     <string id="SHr3K666" text= "泥沼" />
     <string id="LyCaR0nS" text= "莱卡龙地区" />
     <string id="0rS3nn1a" text= "奥塞尼亚" />
+
+    <!-- Scoreboard -->
+    <string id="dqsSd8S" text="家族" />
+    <string id="dqEf8D5" text="等级" />
   </strings>
 </base>
