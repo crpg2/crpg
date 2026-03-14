@@ -1142,11 +1142,6 @@ export type UpdateUserCommand = {
     userId: number;
 };
 
-export type UpdateUserItemPresetCommand = {
-    name: string;
-    slots: Array<UserItemPresetSlotInputModel>;
-};
-
 export type UpdateUserNoteCommand = {
     note: string;
 };
@@ -1167,7 +1162,7 @@ export type UserClanViewModelResult = {
 
 export type UserItemPresetSlotInputModel = {
     slot: ItemSlot;
-    itemId?: string | null;
+    itemId: string | null;
 };
 
 export type UserItemPresetSlotViewModel = {
@@ -1197,7 +1192,7 @@ export type UserItemViewModel = {
     item: ItemViewModel;
     isBroken: boolean;
     createdAt: Date;
-    isArmoryItem: boolean;
+    clanArmoryLender: ClanMemberViewModel | null;
     isPersonal: boolean;
 };
 
@@ -4307,9 +4302,9 @@ export type PostUsersSelfItemPresetsData = {
 
 export type PostUsersSelfItemPresetsResponses = {
     /**
-     * Created
+     * OK
      */
-    201: UserItemPresetViewModelResult;
+    200: UserItemPresetViewModelResult;
 };
 
 export type PostUsersSelfItemPresetsResponse = PostUsersSelfItemPresetsResponses[keyof PostUsersSelfItemPresetsResponses];
@@ -4328,57 +4323,10 @@ export type DeleteUsersSelfItemPresetsByIdData = {
 
 export type DeleteUsersSelfItemPresetsByIdResponses = {
     /**
-     * No Content
-     */
-    204: void;
-};
-
-export type DeleteUsersSelfItemPresetsByIdResponse = DeleteUsersSelfItemPresetsByIdResponses[keyof DeleteUsersSelfItemPresetsByIdResponses];
-
-export type GetUsersSelfItemPresetsByIdData = {
-    body?: never;
-    path: {
-        /**
-         * User item preset id.
-         */
-        id: number;
-    };
-    query?: never;
-    url: '/Users/self/item-presets/{id}';
-};
-
-export type GetUsersSelfItemPresetsByIdResponses = {
-    /**
      * OK
      */
-    200: UserItemPresetViewModelResult;
+    200: unknown;
 };
-
-export type GetUsersSelfItemPresetsByIdResponse = GetUsersSelfItemPresetsByIdResponses[keyof GetUsersSelfItemPresetsByIdResponses];
-
-export type PutUsersSelfItemPresetsByIdData = {
-    /**
-     * Updated preset payload.
-     */
-    body?: UpdateUserItemPresetCommand;
-    path: {
-        /**
-         * User item preset id.
-         */
-        id: number;
-    };
-    query?: never;
-    url: '/Users/self/item-presets/{id}';
-};
-
-export type PutUsersSelfItemPresetsByIdResponses = {
-    /**
-     * OK
-     */
-    200: UserItemPresetViewModelResult;
-};
-
-export type PutUsersSelfItemPresetsByIdResponse = PutUsersSelfItemPresetsByIdResponses[keyof PutUsersSelfItemPresetsByIdResponses];
 
 export type PutUsersSelfItemsByIdReforgeData = {
     body?: never;

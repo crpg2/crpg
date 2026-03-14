@@ -1,4 +1,5 @@
 using Crpg.Application.Items.Queries;
+using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Users;
 using NUnit.Framework;
@@ -45,5 +46,79 @@ public class GetUserItemsQueryTest : TestBase
             new GetUserItemsQuery { UserId = user.Entity.Id }, CancellationToken.None);
 
         Assert.That(result.Data!.Count, Is.EqualTo(3));
+    }
+
+    [Test]
+    public async Task ClanArmoryBorrowedItems()
+    {
+        var borrower = ArrangeDb.Users.Add(new User { Id = 100 }).Entity;
+        var lender = ArrangeDb.Users.Add(new User
+        {
+            Id = 101,
+            Items =
+            {
+                new()
+                {
+                    Item = new Item { Id = "1", Enabled = true },
+                    ClanArmoryBorrowedItem = new ClanArmoryBorrowedItem { BorrowerUserId = borrower.Id },
+                },
+            },
+        });
+        await ArrangeDb.SaveChangesAsync();
+
+        var result = await new GetUserItemsQuery.Handler(ActDb, Mapper).Handle(
+            new GetUserItemsQuery { UserId = borrower.Id }, CancellationToken.None);
+
+        Assert.That(result.Data!.Count, Is.EqualTo(1));
+        Assert.That(result.Data.Any(i => i.Id == lender.Entity.Items[0].Id), Is.True);
+    }
+
+    [Test]
+    public async Task ClanArmoryBorrowedItemsFromAnotherBorrower()
+    {
+        var borrower = ArrangeDb.Users.Add(new User { Id = 100 }).Entity;
+        var anotherUser = ArrangeDb.Users.Add(new User { Id = 101 }).Entity;
+        ArrangeDb.Users.Add(new User
+        {
+            Id = 102,
+            Items =
+            {
+                new()
+                {
+                    Item = new Item { Id = "1", Enabled = true },
+                    ClanArmoryBorrowedItem = new ClanArmoryBorrowedItem { BorrowerUserId = borrower.Id },
+                },
+            },
+        });
+        await ArrangeDb.SaveChangesAsync();
+
+        var result = await new GetUserItemsQuery.Handler(ActDb, Mapper).Handle(
+            new GetUserItemsQuery { UserId = anotherUser.Id }, CancellationToken.None);
+
+        Assert.That(result.Data, Is.Empty);
+    }
+
+    [Test]
+    public async Task DisabledClanArmoryBorrowedItems()
+    {
+        var borrower = ArrangeDb.Users.Add(new User { Id = 100 }).Entity;
+        ArrangeDb.Users.Add(new User
+        {
+            Id = 101,
+            Items =
+            {
+                new()
+                {
+                    Item = new Item { Id = "1", Enabled = false },
+                    ClanArmoryBorrowedItem = new ClanArmoryBorrowedItem { BorrowerUserId = borrower.Id },
+                },
+            },
+        });
+        await ArrangeDb.SaveChangesAsync();
+
+        var result = await new GetUserItemsQuery.Handler(ActDb, Mapper).Handle(
+            new GetUserItemsQuery { UserId = borrower.Id }, CancellationToken.None);
+
+        Assert.That(result.Data, Is.Empty);
     }
 }

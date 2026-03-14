@@ -6,13 +6,11 @@ import {
   deleteUsersSelfNotificationsDeleteAll,
   getUsersSelf,
   getUsersSelfItemPresets,
-  getUsersSelfItemPresetsById,
   getUsersSelfItems,
   getUsersSelfNotifications,
   getUsersSelfRestriction,
   postUsersSelfItemPresets,
   postUsersSelfItems,
-  putUsersSelfItemPresetsById,
   putUsersSelfItemsByIdReforge,
   putUsersSelfItemsByIdRepair,
   putUsersSelfItemsByIdUpgrade,
@@ -24,7 +22,6 @@ import { pick } from 'es-toolkit'
 import type {
   User,
   UserItem,
-  UserItemPreset,
   UserItemPresetUpdate,
   UserPublic,
   UserRestrictionPublic,
@@ -39,15 +36,9 @@ export const deleteUser = () => deleteUsersSelf({})
 
 export const getUserItems = async (): Promise<UserItem[]> => (await getUsersSelfItems({})).data!
 
-export const getUserItemPresets = async () =>
-  (await getUsersSelfItemPresets({})).data!
-
-export const getUserItemPreset = async (id: number) => (await getUsersSelfItemPresetsById({ path: { id } })).data!
+export const getUserItemPresets = async () => (await getUsersSelfItemPresets({})).data!
 
 export const createUserItemPreset = async (preset: UserItemPresetUpdate) => (await postUsersSelfItemPresets({ body: preset })).data!
-
-export const updateUserItemPreset = async (id: number, preset: UserItemPresetUpdate) =>
-  (await putUsersSelfItemPresetsById({ path: { id }, body: preset })).data!
 
 export const deleteUserItemPreset = (id: number) => deleteUsersSelfItemPresetsById({ path: { id } })
 

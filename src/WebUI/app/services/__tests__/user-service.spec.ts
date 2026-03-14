@@ -7,10 +7,8 @@ import { ITEM_SLOT } from '~/models/item'
 import {
   createUserItemPreset,
   deleteUserItemPreset,
-  getUserItemPreset,
   getUserItemPresets,
   mapUserToUserPublic,
-  updateUserItemPreset,
 } from '../user-service'
 
 const {
@@ -21,13 +19,11 @@ const {
   mockedDeleteUsersSelfNotificationsDeleteAll,
   mockedGetUsersSelf,
   mockedGetUsersSelfItemPresets,
-  mockedGetUsersSelfItemPresetsById,
   mockedGetUsersSelfItems,
   mockedGetUsersSelfNotifications,
   mockedGetUsersSelfRestriction,
   mockedPostUsersSelfItemPresets,
   mockedPostUsersSelfItems,
-  mockedPutUsersSelfItemPresetsById,
   mockedPutUsersSelfItemsByIdReforge,
   mockedPutUsersSelfItemsByIdRepair,
   mockedPutUsersSelfItemsByIdUpgrade,
@@ -41,13 +37,11 @@ const {
   mockedDeleteUsersSelfNotificationsDeleteAll: vi.fn(),
   mockedGetUsersSelf: vi.fn(),
   mockedGetUsersSelfItemPresets: vi.fn(),
-  mockedGetUsersSelfItemPresetsById: vi.fn(),
   mockedGetUsersSelfItems: vi.fn(),
   mockedGetUsersSelfNotifications: vi.fn(),
   mockedGetUsersSelfRestriction: vi.fn(),
   mockedPostUsersSelfItemPresets: vi.fn(),
   mockedPostUsersSelfItems: vi.fn(),
-  mockedPutUsersSelfItemPresetsById: vi.fn(),
   mockedPutUsersSelfItemsByIdReforge: vi.fn(),
   mockedPutUsersSelfItemsByIdRepair: vi.fn(),
   mockedPutUsersSelfItemsByIdUpgrade: vi.fn(),
@@ -63,13 +57,11 @@ vi.mock('#api/sdk.gen', () => ({
   deleteUsersSelfNotificationsDeleteAll: mockedDeleteUsersSelfNotificationsDeleteAll,
   getUsersSelf: mockedGetUsersSelf,
   getUsersSelfItemPresets: mockedGetUsersSelfItemPresets,
-  getUsersSelfItemPresetsById: mockedGetUsersSelfItemPresetsById,
   getUsersSelfItems: mockedGetUsersSelfItems,
   getUsersSelfNotifications: mockedGetUsersSelfNotifications,
   getUsersSelfRestriction: mockedGetUsersSelfRestriction,
   postUsersSelfItemPresets: mockedPostUsersSelfItemPresets,
   postUsersSelfItems: mockedPostUsersSelfItems,
-  putUsersSelfItemPresetsById: mockedPutUsersSelfItemPresetsById,
   putUsersSelfItemsByIdReforge: mockedPutUsersSelfItemsByIdReforge,
   putUsersSelfItemsByIdRepair: mockedPutUsersSelfItemsByIdRepair,
   putUsersSelfItemsByIdUpgrade: mockedPutUsersSelfItemsByIdUpgrade,
@@ -129,25 +121,6 @@ describe('user service', () => {
     ])
   })
 
-  it('gets preset by id and normalizes slots', async () => {
-    mockedGetUsersSelfItemPresetsById.mockResolvedValueOnce({
-      data: {
-        id: 11,
-        name: 'Preset B',
-        slots: [{ slot: 'Body', itemId: undefined }],
-      },
-    })
-
-    const result = await getUserItemPreset(11)
-
-    expect(mockedGetUsersSelfItemPresetsById).toHaveBeenCalledWith({ path: { id: 11 } })
-    expect(result).toEqual({
-      id: 11,
-      name: 'Preset B',
-      slots: [{ slot: 'Body', itemId: null }],
-    })
-  })
-
   it('creates preset via sdk and returns mapped preset', async () => {
     const payload = {
       name: 'Preset C',
@@ -166,31 +139,6 @@ describe('user service', () => {
 
     expect(mockedPostUsersSelfItemPresets).toHaveBeenCalledWith({ body: payload })
     expect(result.id).toBe(12)
-  })
-
-  it('updates preset via sdk and returns mapped preset', async () => {
-    const payload = {
-      name: 'Preset D',
-      slots: [{ slot: ITEM_SLOT.Weapon1, itemId: null }],
-    }
-
-    mockedPutUsersSelfItemPresetsById.mockResolvedValueOnce({
-      data: {
-        id: 13,
-        name: payload.name,
-        slots: [{ slot: ITEM_SLOT.Weapon1, itemId: undefined }],
-      },
-    })
-
-    const result = await updateUserItemPreset(13, payload)
-
-    expect(mockedPutUsersSelfItemPresetsById).toHaveBeenCalledWith({
-      path: { id: 13 },
-      body: payload,
-    })
-    const [firstSlot] = result.slots
-    expect(firstSlot).toBeDefined()
-    expect(firstSlot?.itemId).toBeNull()
   })
 
   it('deletes preset by id', async () => {

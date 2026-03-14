@@ -10,7 +10,7 @@ public class GetItemsQueryTest : TestBase
     public async Task Basic()
     {
         Item[] items =
-        {
+        [
             new()
             {
                 Id = "1",
@@ -52,7 +52,7 @@ public class GetItemsQueryTest : TestBase
                 Enabled = true,
                 Rank = 1,
             },
-        };
+        ];
         ArrangeDb.Items.AddRange(items);
         await ArrangeDb.SaveChangesAsync();
 

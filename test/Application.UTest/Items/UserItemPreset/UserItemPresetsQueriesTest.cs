@@ -1,4 +1,3 @@
-using Crpg.Application.Common.Results;
 using Crpg.Application.Items.Queries;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Users;
@@ -32,11 +31,5 @@ public class UserItemPresetsQueriesTest : TestBase
         Assert.That(listResult.Errors, Is.Null);
         Assert.That(listResult.Data!.Count, Is.EqualTo(1));
         Assert.That(listResult.Data[0].Name, Is.EqualTo("u1"));
-
-        var getResult = await new GetUserItemPresetQuery.Handler(ActDb, Mapper)
-            .Handle(new GetUserItemPresetQuery { UserId = user2.Id, UserItemPresetId = listResult.Data[0].Id }, CancellationToken.None);
-
-        Assert.That(getResult.Errors, Is.Not.Null);
-        Assert.That(getResult.Errors![0].Code, Is.EqualTo(ErrorCode.UserItemPresetNotFound));
     }
 }

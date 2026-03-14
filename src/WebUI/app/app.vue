@@ -19,7 +19,7 @@ const uiLocales: Record<string, Locale<Messages>> = {
   <UApp
     :toaster="{
       position: 'top-center',
-      duration: 1000,
+      duration: 2500,
     }"
     :tooltip="{
       delayDuration: 300,

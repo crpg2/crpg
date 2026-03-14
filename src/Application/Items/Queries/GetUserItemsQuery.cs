@@ -11,28 +11,24 @@ public record GetUserItemsQuery : IMediatorRequest<IList<UserItemViewModel>>
 {
     public int UserId { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<GetUserItemsQuery, IList<UserItemViewModel>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<GetUserItemsQuery, IList<UserItemViewModel>>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-
-        public Handler(ICrpgDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
 
         public async ValueTask<Result<IList<UserItemViewModel>>> Handle(GetUserItemsQuery req, CancellationToken cancellationToken)
         {
             var userItems = await _db.UserItems
+                .AsSplitQuery()
                 .Include(ui => ui.Item)
                 .Include(ui => ui.ClanArmoryItem)
+                    .ThenInclude(cai => cai!.Lender)
+                        .ThenInclude(cm => cm!.User)
                 .Include(ui => ui.PersonalItem)
                 .Include(ui => ui.ClanArmoryBorrowedItem)
                 .Where(ui =>
                    (ui.Item!.Enabled || ui.PersonalItem != null)
                    && (ui.UserId == req.UserId || ui.ClanArmoryBorrowedItem!.BorrowerUserId == req.UserId))
-
                 .ToArrayAsync(cancellationToken);
 
             return new(_mapper.Map<IList<UserItemViewModel>>(userItems));

@@ -520,26 +520,14 @@ public class UsersController : BaseController
     }
 
     /// <summary>
-    /// Gets a user item preset.
-    /// </summary>
-    /// <param name="id">User item preset id.</param>
-    [HttpGet("self/item-presets/{id}")]
-    public Task<ActionResult<Result<UserItemPresetViewModel>>> GetUserItemPreset([FromRoute] int id)
-    {
-        GetUserItemPresetQuery query = new() { UserId = CurrentUser.User!.Id, UserItemPresetId = id };
-        return ResultToActionAsync(Mediator.Send(query));
-    }
-
-    /// <summary>
     /// Creates a user item preset.
     /// </summary>
     /// <param name="req">The user item preset to create.</param>
     [HttpPost("self/item-presets")]
-    [ProducesResponseType((int)HttpStatusCode.Created)]
     public Task<ActionResult<Result<UserItemPresetViewModel>>> CreateUserItemPreset([FromBody] CreateUserItemPresetCommand req)
     {
         req = req with { UserId = CurrentUser.User!.Id };
-        return ResultToCreatedAtActionAsync(nameof(GetUserItemPreset), null, p => new { id = p.Id }, Mediator.Send(req));
+        return ResultToCreatedAtActionAsync(nameof(GetUserItemPresets), null, p => new { id = p.Id }, Mediator.Send(req));
     }
 
     /// <summary>
@@ -547,7 +535,6 @@ public class UsersController : BaseController
     /// </summary>
     /// <param name="id">User item preset id.</param>
     [HttpDelete("self/item-presets/{id}")]
-    [ProducesResponseType((int)HttpStatusCode.NoContent)]
     public Task<ActionResult> DeleteUserItemPreset([FromRoute] int id)
     {
         return ResultToActionAsync(Mediator.Send(new DeleteUserItemPresetCommand

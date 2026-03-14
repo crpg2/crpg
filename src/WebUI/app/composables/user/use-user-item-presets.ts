@@ -1,6 +1,6 @@
 import { useI18n } from '#imports'
 
-import type { UserItemPreset, UserItemPresetSlot, UserItemPresetSlotUpdate, UserItemsBySlot } from '~/models/user'
+import type { UserItem, UserItemPreset, UserItemPresetSlot, UserItemPresetSlotUpdate, UserItemsBySlot } from '~/models/user'
 
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { ITEM_SLOT } from '~/models/item'
@@ -12,32 +12,40 @@ import {
 } from '~/services/user-service'
 
 import { useCharacterItems } from '../character/use-character-items'
+import { useUser } from './use-user'
 import { useUserItems } from './use-user-items'
+
+const getAvailableUserItemByItemId = (userId: number, userItems: UserItem[], itemId: string): number | null =>
+  userItems.find(userItem =>
+    userItem.item.id === itemId
+    && !userItem.isBroken
+    && userItem.clanArmoryLender?.user.id !== userId)?.id ?? null
 
 const ALL_ITEM_SLOTS = Object.values(ITEM_SLOT)
 
+function mapEquippedItemsToPresetSlots(equippedItemsBySlot: Partial<UserItemsBySlot>): UserItemPresetSlotUpdate[] {
+  return ALL_ITEM_SLOTS.map(slot => ({
+    slot,
+    itemId: equippedItemsBySlot[slot]?.item?.id ?? null,
+  }))
+}
+
 export const useUserItemPresets = () => {
   const { userItems } = useUserItems()
-
-  function getUserItemByItemId(itemId: string): number | null {
-    return userItems.value.find(userItem =>
-      userItem.item.id === itemId
-      && !userItem.isBroken
-      && !userItem.isArmoryItem)?.id ?? null
-  }
+  const { user } = useUser()
 
   const {
-    data: userItemPresets,
+    data: presets,
     refresh: refreshUserItemPresets,
-  } = useAsyncData<UserItemPreset[]>(toCacheKey(USER_QUERY_KEYS.itemPresets()), async () => {
-    const presets = await getUserItemPresets()
+  } = useAsyncData(toCacheKey(USER_QUERY_KEYS.itemPresets()), getUserItemPresets, { default: () => [] })
 
-    const presetsWithAvailability: UserItemPreset[] = presets.map((preset) => {
+  const userItemPresets = computed(() => {
+    const presetsWithAvailability: UserItemPreset[] = presets.value.map((preset) => {
       const slotsWithAvailability: UserItemPresetSlot[] = preset.slots.map((slot) => {
         return {
           ...slot,
           available: true,
-          userItemId: slot.item ? getUserItemByItemId(slot.item.id) : null,
+          userItemId: slot.item ? getAvailableUserItemByItemId(user.value!.id, userItems.value, slot.item.id) : null,
         }
       })
 
@@ -49,21 +57,12 @@ export const useUserItemPresets = () => {
     })
 
     return presetsWithAvailability
-  }, {
-    default: () => [],
   })
 
   return {
     userItemPresets,
     refreshUserItemPresets,
   }
-}
-
-function mapEquippedItemsToPresetSlots(equippedItemsBySlot: Partial<UserItemsBySlot>): UserItemPresetSlotUpdate[] {
-  return ALL_ITEM_SLOTS.map(slot => ({
-    slot,
-    itemId: equippedItemsBySlot[slot]?.item?.id ?? null,
-  }))
 }
 
 export const useUserItemPresetActions = () => {

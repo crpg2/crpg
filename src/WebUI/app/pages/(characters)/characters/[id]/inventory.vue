@@ -50,7 +50,7 @@ const {
 
 const { characterCharacteristics, healthPoints } = useCharacterCharacteristic()
 
-const hasArmoryItems = computed(() => userItems.value.some(ui => ui.isArmoryItem))
+const hasArmoryItems = computed(() => userItems.value.some(ui => Boolean(ui.clanArmoryLender)))
 
 const { closeItemDetail, toggleItemDetail } = useItemDetail()
 
@@ -70,6 +70,7 @@ const sortingConfig: SortingConfig = {
 }
 const sortingModel = useStorage<string>('character-inventory-sorting', 'rank_desc')
 
+// TODO:
 const { state: clanMembers } = useAsyncState(
   async () => clan.value ? getClanMembers(clan.value.id) : [],
   [],
@@ -82,8 +83,9 @@ const items = computed(() => {
   if (!hideInArmoryItemsModel.value) {
     return userItems.value
   }
-  // filter by isArmoryItem
-  return userItems.value.filter(ui => ui.isArmoryItem ? ui.userId !== user.value!.id : true)
+  return userItems.value
+    // filter by armoryItem
+    .filter(ui => ui.clanArmoryLender ? ui.clanArmoryLender.user.id !== user.value!.id : true)
 })
 
 const onUpgrades = (userItem: UserItem, openedItem: OpenedItem) => {
@@ -216,7 +218,7 @@ const createPreset = async () => {
             :user-id="user!.id"
             :equipped="equippedItemIds.includes(userItem.id)"
             :not-meet-requirement="validateItemNotMeetRequirement(userItem.item, characterCharacteristics)"
-            :lender="userItem.isArmoryItem ? getClanArmoryItemLender(userItem.userId, clanMembers) : null"
+            :lender="userItem.clanArmoryLender?.user || null"
             draggable="true"
             @dragstart="onDragStart(userItem)"
             @dragend="onDragEnd"

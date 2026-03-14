@@ -54,7 +54,6 @@ defineEmits<{
       >
         <template v-if="!slot.userItemId" #badges-top-right>
           <UBadge
-
             color="error"
             variant="soft"
             size="sm"
