@@ -39,7 +39,6 @@ const [open, toggle] = useToggle()
     <UButton
       variant="outline"
       size="lg"
-      :disabled="notEnoughGold"
     >
       <AppCoin
         :value="price"
@@ -125,15 +124,14 @@ const [open, toggle] = useToggle()
         <template #footer>
           <UButton
             variant="soft"
-            icon="crpg:close"
-            :label="$t('action.cancel')"
+            :label="$t('action.close')"
             @click="() => {
               toggle(false)
             }"
           />
 
           <UButton
-            icon="crpg:check"
+            :disabled="notEnoughGold"
             :label="$t('shop.item.buy.tooltip.buy')"
             @click="() => {
               $emit('buy')

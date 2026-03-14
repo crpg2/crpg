@@ -1,6 +1,7 @@
 locale:
   en: English
   ru: Русский
+  cn: Китайский
 
 platform:
   Steam: Steam
