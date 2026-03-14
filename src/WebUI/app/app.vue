@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Locale, Messages } from '@nuxt/ui'
 
-import { en, ru } from '@nuxt/ui/locale'
+import { en, ru, zh_cn } from '@nuxt/ui/locale'
 
 import { usePageLoading } from '~/composables/app/use-page-loading'
 
@@ -12,6 +12,7 @@ const { locale } = useI18n()
 const uiLocales: Record<string, Locale<Messages>> = {
   en,
   ru,
+  zh_cn,
 }
 </script>
 

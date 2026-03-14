@@ -666,6 +666,19 @@ character:
 
   inventory:
     empty: 物品栏空空如也
+    presets:
+      save:
+        title: 保存预设
+        form:
+          field:
+            name: 预设名称
+      title: 装备预设
+      notify:
+        created: 预设已创建
+        deleted: 预设已删除
+        applied: 预设已应用
+        missingItems: '{count} 个预设物品不可用，已跳过'
+
     total:
       tpl: '{count} {sum}'
       count: '... | {count} 件物品 | {count} 件物品'

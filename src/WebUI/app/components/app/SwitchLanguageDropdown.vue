@@ -16,7 +16,7 @@ const items = computed(() =>
   availableLocales.map(l => ({
     label: t(`locale.${l}`),
     type: 'checkbox' as const,
-    icon: `crpg:${l}`,
+    icon: `crpg:locale-${l}`,
     checked: l === locale.value,
     onUpdateChecked() {
       setLocale(l)
