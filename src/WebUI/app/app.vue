@@ -2,6 +2,7 @@
 import type { Locale, Messages } from '@nuxt/ui'
 
 import { en, ru } from '@nuxt/ui/locale'
+import { client } from '#api/client.gen'
 
 import { usePageLoading } from '~/composables/app/use-page-loading'
 
@@ -13,6 +14,21 @@ const uiLocales: Record<string, Locale<Messages>> = {
   en,
   ru,
 }
+
+function mapLocaleToApiLanguage(locale: string): string {
+  return locale === 'cn' ? 'zh-CN' : locale
+}
+
+// console.log('dd', client.getConfig())
+
+client.setConfig({
+  // ...client.getConfig(),
+  onRequest: [
+    async ({ options }) => {
+      options.headers.set('Accept-Language', mapLocaleToApiLanguage(locale.value))
+    },
+  ],
+})
 </script>
 
 <template>

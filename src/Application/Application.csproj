@@ -40,4 +40,10 @@
     <Content Include="..\..\data\settlements.json" Link="Common\Files\settlements.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ErrorTexts.*.json">
+      <WithCulture>false</WithCulture>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

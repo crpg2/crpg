@@ -41,7 +41,7 @@ internal class RequestValidationBehavior<TRequest, TResponse> : IPipelineBehavio
             {
                 errors.Add(new Error(ErrorType.Validation, ErrorCode.InvalidField)
                 {
-                    Title = "Invalid field",
+                    Title = ErrorText.Title("InvalidField", "Invalid field"),
                     Detail = failure.ErrorMessage,
                     Source = new ErrorSource { Parameter = failure.PropertyName },
                 });

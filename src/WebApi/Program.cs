@@ -6,6 +6,7 @@ using AspNet.Security.OpenId;
 using AspNet.Security.OpenId.Steam;
 using Crpg.Application;
 using Crpg.Application.Common.Interfaces;
+using Crpg.Application.Common.Results;
 using Crpg.Application.Steam;
 using Crpg.Application.System.Commands;
 using Crpg.Application.Users.Commands;
@@ -179,6 +180,11 @@ else if (app.Environment.IsProduction())
 app
     .UseSwagger()
     .UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Crpg API"))
+    .Use(async (context, next) =>
+    {
+        using IDisposable languageScope = RequestLanguage.Use(ResolveApiLanguage(context.Request.Headers.AcceptLanguage.ToString()));
+        await next();
+    })
     .UseRouting()
     .UseCors()
     .UseAuthentication()
@@ -258,6 +264,36 @@ static AuthorizationPolicy BuildScopePolicy(string scope) =>
         .RequireAuthenticatedUser()
         .RequireAssertion(c => c.User.HasScope(scope))
         .Build();
+
+static string ResolveApiLanguage(string? acceptLanguage)
+{
+    if (string.IsNullOrWhiteSpace(acceptLanguage))
+    {
+        return RequestLanguage.Default;
+    }
+
+    foreach (string segment in acceptLanguage.Split(','))
+    {
+        string candidate = segment.Split(';')[0].Trim();
+        if (candidate.StartsWith("ru", StringComparison.OrdinalIgnoreCase))
+        {
+            return "ru";
+        }
+
+        if (candidate.StartsWith("zh", StringComparison.OrdinalIgnoreCase)
+            || candidate.Equals("cn", StringComparison.OrdinalIgnoreCase))
+        {
+            return "zh-CN";
+        }
+
+        if (candidate.StartsWith("en", StringComparison.OrdinalIgnoreCase))
+        {
+            return "en";
+        }
+    }
+
+    return RequestLanguage.Default;
+}
 
 static void ConfigureCors(CorsOptions options, IConfiguration configuration)
 {

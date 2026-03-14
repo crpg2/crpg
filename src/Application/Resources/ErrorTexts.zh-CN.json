@@ -1,0 +1,8 @@
+{
+  "InvalidField.Title": "字段无效",
+  "NotEnoughGold.Title": "金币不足",
+  "NotEnoughGold.Detail": "需要 {0} 金币，但当前只有 {1}",
+  "UserNotFound.Title": "未找到用户",
+  "UserNotFound.ById.Detail": "未找到 ID 为 '{0}' 的用户",
+  "UserNotFound.ByPlatform.Detail": "未找到平台 '{1}' 上标识为 '{0}' 的用户"
+}
