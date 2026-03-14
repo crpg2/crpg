@@ -1,0 +1,8 @@
+{
+  "InvalidField.Title": "Некорректное поле",
+  "NotEnoughGold.Title": "Недостаточно золота",
+  "NotEnoughGold.Detail": "Требуется {0} золота, но доступно только {1}",
+  "UserNotFound.Title": "Пользователь не найден",
+  "UserNotFound.ById.Detail": "Пользователь с идентификатором '{0}' не найден",
+  "UserNotFound.ByPlatform.Detail": "Пользователь с идентификатором '{0}' на платформе '{1}' не найден"
+}

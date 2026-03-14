@@ -313,8 +313,8 @@ internal static class CommonErrors
 
     public static Error NotEnoughGold(int requiredGold, int actualGold) => new(ErrorType.Validation, ErrorCode.NotEnoughGold)
     {
-        Title = "Not enough gold",
-        Detail = $"{requiredGold} gold is required but only {actualGold} is available",
+        Title = ErrorText.Title("NotEnoughGold", "Not enough gold"),
+        Detail = ErrorText.Detail("NotEnoughGold", "{0} gold is required but only {1} is available", requiredGold, actualGold),
     };
 
     public static Error NotEnoughHeirloomPoints(int requiredPoints, int actualPoints) => new(ErrorType.Validation, ErrorCode.NotEnoughHeirloomPoints)
@@ -422,14 +422,14 @@ internal static class CommonErrors
 
     public static Error UserNotFound(int userId) => new(ErrorType.NotFound, ErrorCode.UserNotFound)
     {
-        Title = "User was not found",
-        Detail = $"User with id '{userId}' was not found",
+        Title = ErrorText.Title("UserNotFound", "User was not found"),
+        Detail = ErrorText.Detail("UserNotFound.ById", "User with id '{0}' was not found", userId),
     };
 
     public static Error UserNotFound(Platform platform, string platformUserId) => new(ErrorType.NotFound, ErrorCode.UserNotFound)
     {
-        Title = "User was not found",
-        Detail = $"User with '{platformUserId}' on platform '{platform}' was not found",
+        Title = ErrorText.Title("UserNotFound", "User was not found"),
+        Detail = ErrorText.Detail("UserNotFound.ByPlatform", "User with '{0}' on platform '{1}' was not found", platformUserId, platform),
     };
 
     public static Error UserNotInAClan(int userId) => new(ErrorType.Forbidden, ErrorCode.UserNotInAClan)

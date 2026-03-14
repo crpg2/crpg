@@ -1,0 +1,8 @@
+{
+  "InvalidField.Title": "Invalid field",
+  "NotEnoughGold.Title": "Not enough gold",
+  "NotEnoughGold.Detail": "{0} gold is required but only {1} is available",
+  "UserNotFound.Title": "User was not found",
+  "UserNotFound.ById.Detail": "User with id '{0}' was not found",
+  "UserNotFound.ByPlatform.Detail": "User with '{0}' on platform '{1}' was not found"
+}
