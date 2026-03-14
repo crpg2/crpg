@@ -48,7 +48,6 @@ crpg_battle_kalmara
 crpg_battle_helmspoint
 crpg_battle_bazaar
 crpg_battle_tavernbrawl
-crpg_battle_canals
 crpg_battle_acaciacitadel
 crpg_battle_krakatoa
 crpg_battle_ruinedbattlement
