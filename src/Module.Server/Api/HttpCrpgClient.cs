@@ -40,7 +40,7 @@ internal class HttpCrpgClient : ICrpgClient
         _httpClient = new HttpClient(socketsHttpHandler)
         {
             BaseAddress = new Uri(apiUrl),
-            Timeout = TimeSpan.FromSeconds(10),
+            Timeout = TimeSpan.FromSeconds(15),
             DefaultRequestHeaders =
             {
                 { "Accept", "application/json" },
