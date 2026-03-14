@@ -760,7 +760,13 @@ internal class CrpgRewardServer : MissionLogic
     {
         foreach (var crpgPeer in crpgPeerByUserId.Values)
         {
-            GameNetwork.BeginModuleEventAsServer(crpgPeer.GetNetworkPeer());
+            var networkPeer = crpgPeer.GetNetworkPeer();
+            if (!networkPeer.IsConnectionActive)
+            {
+                continue;
+            }
+
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
             GameNetwork.WriteMessage(new CrpgRewardError());
             GameNetwork.EndModuleEventAsServer();
         }
