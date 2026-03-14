@@ -84,7 +84,7 @@ internal class MatchBalancer
         if (IsBalanceGoodEnough(balancedBannerGameMatch, maxSizeRatio: 0.85f, maxDifference: 10f, percentageDifference: 0.10f))
         {
             Debug.Print("No need to do banner balancing");
-            return RandomlyAssignWaitingPlayersTeam(gameMatch);
+            return RandomlyAssignWaitingPlayersTeam(balancedBannerGameMatch);
         }
 
         Debug.Print("Banner balancing now");
@@ -296,7 +296,7 @@ internal class MatchBalancer
                 teamToSwapInto.Add(user);
             }
 
-            Debug.Print($"Complimentary Swap done instead :  {newUsersToSwap1.Count} players  from {(swappingFromWeakTeam ? "Weak Team" : "Strong Team")} in exchange of {newUsersToSwap1.Count} players");
+            Debug.Print($"Complimentary Swap done instead :  {newUsersToSwap1.Count} players  from {(swappingFromWeakTeam ? "Weak Team" : "Strong Team")} in exchange of {newUsersToSwap2.Count} players");
         }
 
         return true;
@@ -308,7 +308,7 @@ internal class MatchBalancer
             ? (gameMatch.TeamA, gameMatch.TeamB)
             : (gameMatch.TeamB, gameMatch.TeamA);
         int userCountDifference = weakTeam.Count - strongTeam.Count;
-        bool swappingFromWeakTeam = userCountDifference < 0;
+        bool swappingFromWeakTeam = userCountDifference <= 0;
 
         (List<WeightedCrpgUser> teamToSwapFrom, List<WeightedCrpgUser> teamToSwapTo) = swappingFromWeakTeam
             ? (weakTeam, strongTeam)
@@ -462,8 +462,8 @@ internal class MatchBalancer
             // potential second member of the pair
             List<ClanGroup> potentialClanGroupToSwap = MatchBalancingHelpers.FindAClanGroupToSwapUsing(
                 potentialClanGroupToSwapTargetWeight,
-                sizeScaler,
                 clanGroup.Size + Math.Abs(targetSwapSizeDifference),
+                sizeScaler,
                 teamToSwapInto,
                 usingAngle);
             Vector2 potentialSwapVector = new(
@@ -488,11 +488,13 @@ internal class MatchBalancer
         float newTeamWeightDiff = swappingFromWeakTeam
             ? strongTeam.Sum(c => c.Weight()) + 2f * sourceGroupWeight - 2f * destinationGroupWeight - weakTeam.Sum(c => c.Weight())
             : strongTeam.Sum(c => c.Weight()) - 2f * sourceGroupWeight + 2f * destinationGroupWeight - weakTeam.Sum(c => c.Weight());
+        int strongTeamSize = strongTeam.Sum(c => c.Size);
+        int weakTeamSize = weakTeam.Sum(c => c.Size);
         float newTeamSizeDiff = swappingFromWeakTeam
-            ? strongTeam.Count + 2 * sourceGroupSize - 2f * destinationGroupSize - weakTeam.Count
-            : strongTeam.Count - 2 * sourceGroupSize + 2f * destinationGroupSize - weakTeam.Count;
+            ? strongTeamSize + 2 * sourceGroupSize - 2f * destinationGroupSize - weakTeamSize
+            : strongTeamSize - 2 * sourceGroupSize + 2f * destinationGroupSize - weakTeamSize;
 
-        Vector2 oldDifferenceVector = new((strongTeam.Count - weakTeam.Count) * sizeScaler,
+        Vector2 oldDifferenceVector = new((strongTeamSize - weakTeamSize) * sizeScaler,
             strongTeam.Sum(c => c.Weight()) - weakTeam.Sum(c => c.Weight()));
         Vector2 newDifferenceVector = new(newTeamSizeDiff * sizeScaler, newTeamWeightDiff);
         return newDifferenceVector.Length() < oldDifferenceVector.Length();
@@ -500,20 +502,31 @@ internal class MatchBalancer
 
     private bool IsWeightRatioAcceptable(GameMatch gameMatch, float percentageDifference)
     {
+        float teamAAbsWeight = WeightHelpers.ComputeTeamAbsWeight(gameMatch.TeamA);
+        if (teamAAbsWeight == 0f)
+        {
+            return WeightHelpers.ComputeTeamAbsWeight(gameMatch.TeamB) == 0f;
+        }
+
         double weightRatio = Math.Abs(
             (WeightHelpers.ComputeTeamWeight(gameMatch.TeamB) - WeightHelpers.ComputeTeamWeight(gameMatch.TeamA))
-            / WeightHelpers.ComputeTeamAbsWeight(gameMatch.TeamA));
+            / teamAAbsWeight);
         return MathHelper.Within((float)weightRatio, 0f, percentageDifference);
     }
 
     private bool IsTeamSizeDifferenceAcceptable(GameMatch gameMatch, float maxSizeRatio, float maxDifference)
     {
+        bool differenceOfOnlyOne = MathHelper.Within(gameMatch.TeamA.Count - gameMatch.TeamB.Count, -1, 1);
+        if (gameMatch.TeamA.Count == 0 || gameMatch.TeamB.Count == 0)
+        {
+            return differenceOfOnlyOne;
+        }
+
         bool tooMuchSizeRatioDifference = !MathHelper.Within(
             gameMatch.TeamA.Count / (float)gameMatch.TeamB.Count,
             maxSizeRatio,
             1f / maxSizeRatio);
         bool sizeDifferenceGreaterThanThreshold = Math.Abs(gameMatch.TeamA.Count - gameMatch.TeamB.Count) > maxDifference;
-        bool differenceOfOnlyOne = MathHelper.Within(gameMatch.TeamA.Count - gameMatch.TeamB.Count, -1, 1);
         return (!tooMuchSizeRatioDifference && !sizeDifferenceGreaterThanThreshold) || differenceOfOnlyOne;
     }
 
@@ -528,10 +541,9 @@ internal class MatchBalancer
         newGameMatch.TeamA.AddRange(gameMatch.TeamA);
         newGameMatch.TeamB.AddRange(gameMatch.TeamB);
 
-        int i = 0;
         foreach (var user in gameMatch.Waiting)
         {
-            if (i % 2 == 0)
+            if (newGameMatch.TeamA.Count <= newGameMatch.TeamB.Count)
             {
                 newGameMatch.TeamA.Add(user);
             }
@@ -539,8 +551,6 @@ internal class MatchBalancer
             {
                 newGameMatch.TeamB.Add(user);
             }
-
-            i += 1;
         }
 
         return newGameMatch;
