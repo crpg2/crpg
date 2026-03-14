@@ -46,8 +46,11 @@ describe('useClan', () => {
 
     refreshClan()
 
-    expect(mockedGetAsyncData).toHaveBeenCalledWith('clan-42')
-    expect(mockedRefreshAsyncData).toHaveBeenCalledWith('clan-42')
+    const getClanKey = mockedGetAsyncData.mock.calls[0]?.[0]
+    const refreshClanKey = mockedRefreshAsyncData.mock.calls[0]?.[0]
+
+    expect(getClanKey.value).toBe('clan-42')
+    expect(refreshClanKey.value).toBe('clan-42')
   })
 
   it('updateClan calls service with correct id and data', () => {

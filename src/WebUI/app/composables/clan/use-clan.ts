@@ -1,4 +1,5 @@
 import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
+import { computed } from 'vue'
 
 import type { Clan, ClanUpdate } from '~/models/clan'
 
