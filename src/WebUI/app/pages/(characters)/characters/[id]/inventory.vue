@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { vOnLongPress } from '@vueuse/components'
 import { useStorage } from '@vueuse/core'
-import { CharacterInventoryItemDetail, LazyCharacterInventoryItemUpgradesModal } from '#components'
+import { CharacterInventoryItemDetail, LazyCharacterInventoryItemUpgradesModal, LazyCharacterInventoryPresetCreateModal, LazyCharacterInventoryPresetsDrawer } from '#components'
 
 import type { OpenedItem } from '~/composables/item/use-item-detail'
 import type { GroupedCompareItemsResult, ItemSlot } from '~/models/item'
-import type { UserItem, UserItemPreset } from '~/models/user'
+import type { UserItem } from '~/models/user'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useMainHeader } from '~/composables/app/use-main-header'
@@ -16,7 +16,7 @@ import { useCharacterCharacteristic } from '~/composables/character/use-characte
 import { useCharacterItems, useCharacterItemsProvider } from '~/composables/character/use-character-items'
 import { useItemDetail } from '~/composables/item/use-item-detail'
 import { useUser } from '~/composables/user/use-user'
-import { useUserItemPresetActions, useUserItemPresetsProvider } from '~/composables/user/use-user-item-presets'
+import { useUserItemPresetActions } from '~/composables/user/use-user-item-presets'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { validateItemNotMeetRequirement } from '~/services/character-service'
 import { getClanArmoryItemLender, getClanMembers } from '~/services/clan-service'
@@ -24,7 +24,6 @@ import { getClanArmoryItemLender, getClanMembers } from '~/services/clan-service
 const { clan, user } = useUser()
 
 const { data: userItems, pending: loadingUserItems } = useUserItemsProvider()
-const { data: userItemPresets, pending: loadingUserItemPresets } = useUserItemPresetsProvider()
 useCharacterItemsProvider()
 
 const { mainHeaderHeight } = useMainHeader()
@@ -34,16 +33,7 @@ const {
   itemsOverallStats,
   equippedItemIds,
   upkeepIsHigh,
-  onUpdateCharacterItems,
 } = useCharacterItems()
-
-const {
-  onCreateUserItemPreset,
-  onUpdateUserItemPreset,
-  onDeleteUserItemPreset,
-} = useUserItemPresetActions()
-
-const toast = useToast()
 
 const { onDragEnd, onDragStart, dragging } = useInventoryDnD()
 const { onQuickEquip, onQuickUnEquip } = useInventoryQuickEquip()
@@ -86,7 +76,6 @@ const { state: clanMembers } = useAsyncState(
 )
 
 const hideInArmoryItemsModel = useStorage<boolean>('character-inventory-in-armory-items', true)
-const presetNameModel = ref('')
 const overlay = useOverlay()
 
 const items = computed(() => {
@@ -148,72 +137,30 @@ const renderCharacterInventoryItemDetail = (openedItem: OpenedItem, compareItems
   })
 }
 
-const creatingPreset = ref(false)
-const applyingPresetId = ref<number | null>(null)
-const savingPresetId = ref<number | null>(null)
+const {
+  onCreateUserItemPreset,
+  onApplyUserItemPreset,
+} = useUserItemPresetActions()
 
-const createPresetFromCurrent = async () => {
-  if (!presetNameModel.value.trim()) {
-    return
-  }
-
-  creatingPreset.value = true
-  try {
-    await onCreateUserItemPreset(presetNameModel.value.trim(), equippedItemsBySlot.value)
-    presetNameModel.value = ''
-  }
-  finally {
-    creatingPreset.value = false
-  }
+const openPresetsDrawer = async () => {
+  const presetsDrawer = overlay.create(LazyCharacterInventoryPresetsDrawer)
+  await presetsDrawer.open({
+    onApply: async (preset) => {
+      await onApplyUserItemPreset(preset)
+      presetsDrawer.close()
+    },
+  })
 }
 
-const savePresetFromCurrent = async (preset: UserItemPreset) => {
-  savingPresetId.value = preset.id
-  try {
-    await onUpdateUserItemPreset(preset.id, preset.name, equippedItemsBySlot.value)
-  }
-  finally {
-    savingPresetId.value = null
-  }
+const createPreset = async () => {
+  const presetCreateDrawer = overlay.create(LazyCharacterInventoryPresetCreateModal)
+  await presetCreateDrawer.open({
+    onCreate: async (name: string) => {
+      await onCreateUserItemPreset(name, equippedItemsBySlot.value)
+      presetCreateDrawer.close()
+    },
+  })
 }
-
-const applyPresetToCharacter = async (preset: UserItemPreset) => {
-  applyingPresetId.value = preset.id
-  try {
-    const userItemByItemId = new Map<string, UserItem>()
-    for (const userItem of userItems.value) {
-      if (!userItemByItemId.has(userItem.item.id) && !userItem.isBroken) {
-        userItemByItemId.set(userItem.item.id, userItem)
-      }
-    }
-
-    const missingItemsCount = preset.slots
-      .filter(slot => slot.itemId != null && !userItemByItemId.has(slot.itemId))
-      .length
-
-    if (missingItemsCount > 0) {
-      toast.add({
-        title: $t('character.inventory.presets.notify.missingItems', { count: missingItemsCount }),
-        color: 'warning',
-      })
-    }
-
-    await onUpdateCharacterItems(
-      preset.slots.map(slot => ({
-        slot: slot.slot,
-        userItemId: slot.itemId == null ? null : userItemByItemId.get(slot.itemId)?.id ?? null,
-      })),
-    )
-
-    toast.add({ title: $t('character.inventory.presets.notify.applied'), color: 'success' })
-  }
-  finally {
-    applyingPresetId.value = null
-  }
-}
-
-const getPresetConfiguredSlots = (preset: UserItemPreset) =>
-  preset.slots.filter(slot => slot.itemId != null).length
 </script>
 
 <template>
@@ -334,11 +281,33 @@ const getPresetConfiguredSlots = (preset: UserItemPreset) =>
         @item-click="(e, itemId, slot) => onClickInventoryItem(e, userItems.find(ui => ui.item.id === itemId)!, slot)"
         @un-equip="onQuickUnEquip"
       />
+
       <UCard
         style="grid-area: footer"
         variant="soft"
-        :ui="{ body: 'justify-center flex', root: 'backdrop-blur-lg' }"
+        :ui="{
+          body: 'justify-center items-center flex gap-4',
+          root: 'backdrop-blur-lg' }"
       >
+        <UFieldGroup>
+          <UButton
+            label="Presets"
+            variant="subtle"
+            color="neutral"
+            trailing-icon="i-lucide-eye"
+            @click="openPresetsDrawer"
+          />
+          <UButton
+            variant="subtle"
+            color="neutral"
+            :disabled="!equippedItemIds.length"
+            icon="i-lucide-save"
+            @click="createPreset"
+          />
+        </UFieldGroup>
+
+        <USeparator orientation="vertical" decorative class="h-6" />
+
         <UiKbdCombination
           :keys="[$t('shortcuts.keys.ctrl'), $t('shortcuts.keys.lmb')]"
           :label="$t('shortcuts.hints.equip')"
@@ -391,94 +360,6 @@ const getPresetConfiguredSlots = (preset: UserItemPreset) =>
           </UiSimpleTableRow>
         </template>
       </CharacterStats>
-
-      <UCard>
-        <template #header>
-          <div class="font-semibold">
-            {{ $t('character.inventory.presets.title') }}
-          </div>
-        </template>
-
-        <div class="space-y-3">
-          <div class="flex gap-2">
-            <UInput
-              v-model="presetNameModel"
-              class="flex-1"
-              :placeholder="$t('character.inventory.presets.namePlaceholder')"
-            />
-            <UButton
-              :loading="creatingPreset"
-              :disabled="!presetNameModel.trim()"
-              color="primary"
-              @click="createPresetFromCurrent"
-            >
-              {{ $t('character.inventory.presets.createFromCurrent') }}
-            </UButton>
-          </div>
-
-          <template v-if="loadingUserItemPresets">
-            <UiLoading :active="true" />
-          </template>
-
-          <template v-else-if="!userItemPresets.length">
-            <div class="text-sm text-muted">
-              {{ $t('character.inventory.presets.empty') }}
-            </div>
-          </template>
-
-          <div
-            v-else
-            class="space-y-2"
-          >
-            <div
-              v-for="preset in userItemPresets"
-              :key="preset.id"
-              class="rounded-sm border border-default p-2"
-            >
-              <div class="mb-2 flex items-center justify-between gap-2">
-                <div class="truncate text-sm font-medium">
-                  {{ preset.name }}
-                </div>
-                <UBadge
-                  color="neutral"
-                  variant="soft"
-                >
-                  {{ getPresetConfiguredSlots(preset) }}
-                </UBadge>
-              </div>
-
-              <div class="flex gap-2">
-                <UButton
-                  size="xs"
-                  color="primary"
-                  variant="soft"
-                  :loading="applyingPresetId === preset.id"
-                  @click="applyPresetToCharacter(preset)"
-                >
-                  {{ $t('character.inventory.presets.apply') }}
-                </UButton>
-                <UButton
-                  size="xs"
-                  color="neutral"
-                  variant="soft"
-                  :loading="savingPresetId === preset.id"
-                  @click="savePresetFromCurrent(preset)"
-                >
-                  {{ $t('character.inventory.presets.saveCurrent') }}
-                </UButton>
-                <UButton
-                  size="xs"
-                  color="error"
-                  variant="ghost"
-                  @click="onDeleteUserItemPreset(preset.id)"
-                >
-                  {{ $t('character.inventory.presets.delete') }}
-                </UButton>
-              </div>
-            </div>
-          </div>
-        </div>
-      </UCard>
     </div>
   </div>
 </template>

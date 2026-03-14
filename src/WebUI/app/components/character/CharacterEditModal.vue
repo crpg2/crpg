@@ -43,16 +43,16 @@ const characterNameMaxLength = 32
 
 const overlay = useOverlay()
 
-const confirmDeleteDialog = overlay.create(LazyAppConfirmActionDialog, {
-  props: {
-    title: t('character.settings.delete.dialog.title'),
-    description: t('character.settings.delete.dialog.desc'),
-    confirm: `${character.name} - ${character.level}`,
-    confirmLabel: t('action.delete'),
-  },
-})
-
 async function deleteCharacter() {
+  const confirmDeleteDialog = overlay.create(LazyAppConfirmActionDialog, {
+    props: {
+      title: t('character.settings.delete.dialog.title'),
+      description: t('character.settings.delete.dialog.desc'),
+      confirm: `${character.name} - ${character.level}`,
+      confirmLabel: t('action.delete'),
+    },
+  })
+
   const confirm = await confirmDeleteDialog.open()
 
   if (!confirm) {

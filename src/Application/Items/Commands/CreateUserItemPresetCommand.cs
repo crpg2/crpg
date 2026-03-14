@@ -25,15 +25,14 @@ public record CreateUserItemPresetCommand : IMediatorRequest<UserItemPresetViewM
             RuleFor(x => x.Name)
                 .NotEmpty()
                 .MaximumLength(300);
-
             RuleFor(x => x.Slots)
-                .NotNull();
+                .NotEmpty();
         }
     }
 
     internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<CreateUserItemPresetCommand, UserItemPresetViewModel>
     {
-        private static readonly HashSet<ItemSlot> AllSlots = Enum.GetValues<ItemSlot>().ToHashSet();
+        private static readonly HashSet<ItemSlot> AllSlots = [.. Enum.GetValues<ItemSlot>()];
 
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
@@ -55,13 +54,12 @@ public record CreateUserItemPresetCommand : IMediatorRequest<UserItemPresetViewM
             {
                 UserId = req.UserId,
                 Name = req.Name,
-                Slots = req.Slots
+                Slots = [.. req.Slots
                     .Select(s => new UserItemPresetSlot
                     {
                         Slot = s.Slot,
                         ItemId = s.ItemId,
-                    })
-                    .ToList(),
+                    })],
             };
 
             _db.UserItemPresets.Add(preset);
@@ -72,12 +70,11 @@ public record CreateUserItemPresetCommand : IMediatorRequest<UserItemPresetViewM
 
         private async ValueTask<Result?> ValidateItemIds(IList<UserItemPresetSlotInputModel> slots, CancellationToken cancellationToken)
         {
-            string[] requestedItemIds = slots
+            string[] requestedItemIds = [.. slots
                 .Select(s => s.ItemId)
                 .Where(i => !string.IsNullOrEmpty(i))
                 .Distinct()
-                .Select(i => i!)
-                .ToArray();
+                .Select(i => i!)];
 
             if (requestedItemIds.Length == 0)
             {
@@ -105,7 +102,7 @@ public record CreateUserItemPresetCommand : IMediatorRequest<UserItemPresetViewM
                 return false;
             }
 
-            HashSet<ItemSlot> slotSet = slots.Select(s => s.Slot).ToHashSet();
+            HashSet<ItemSlot> slotSet = [.. slots.Select(s => s.Slot)];
             return slotSet.Count == AllSlots.Count && slotSet.SetEquals(AllSlots);
         }
     }

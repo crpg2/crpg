@@ -1,5 +1,3 @@
-import type { UserItemPresetViewModel } from '#api'
-
 import {
   deleteUsersSelf,
   deleteUsersSelfItemPresetsById,
@@ -27,6 +25,7 @@ import type {
   User,
   UserItem,
   UserItemPreset,
+  UserItemPresetUpdate,
   UserPublic,
   UserRestrictionPublic,
 } from '~/models/user'
@@ -40,17 +39,15 @@ export const deleteUser = () => deleteUsersSelf({})
 
 export const getUserItems = async (): Promise<UserItem[]> => (await getUsersSelfItems({})).data!
 
-export const getUserItemPresets = async (): Promise<UserItemPreset[]> =>
-  (await getUsersSelfItemPresets({})).data!.map(mapUserItemPreset)
+export const getUserItemPresets = async () =>
+  (await getUsersSelfItemPresets({})).data!
 
-export const getUserItemPreset = async (id: number): Promise<UserItemPreset> =>
-  mapUserItemPreset((await getUsersSelfItemPresetsById({ path: { id } })).data!)
+export const getUserItemPreset = async (id: number) => (await getUsersSelfItemPresetsById({ path: { id } })).data!
 
-export const createUserItemPreset = async (preset: Pick<UserItemPreset, 'name' | 'slots'>): Promise<UserItemPreset> =>
-  mapUserItemPreset((await postUsersSelfItemPresets({ body: preset })).data!)
+export const createUserItemPreset = async (preset: UserItemPresetUpdate) => (await postUsersSelfItemPresets({ body: preset })).data!
 
-export const updateUserItemPreset = async (id: number, preset: Pick<UserItemPreset, 'name' | 'slots'>): Promise<UserItemPreset> =>
-  mapUserItemPreset((await putUsersSelfItemPresetsById({ path: { id }, body: preset })).data!)
+export const updateUserItemPreset = async (id: number, preset: UserItemPresetUpdate) =>
+  (await putUsersSelfItemPresetsById({ path: { id }, body: preset })).data!
 
 export const deleteUserItemPreset = (id: number) => deleteUsersSelfItemPresetsById({ path: { id } })
 
@@ -77,13 +74,3 @@ export const readAllUserNotifications = () => putUsersSelfNotificationsReadAll({
 export const deleteUserNotification = (id: number) => deleteUsersSelfNotificationsById({ path: { id } })
 
 export const deleteAllUserNotifications = () => deleteUsersSelfNotificationsDeleteAll({})
-
-function mapUserItemPreset(preset: UserItemPresetViewModel): UserItemPreset {
-  return {
-    ...preset,
-    slots: preset.slots.map(slot => ({
-      ...slot,
-      itemId: slot.itemId ?? null,
-    })),
-  }
-}

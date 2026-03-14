@@ -66,16 +66,16 @@ export function useAsyncDataCustom<
   }
 }
 
-export function getAsyncData<DataT = any>(key: EntryKey): Ref<DataT> {
-  const { data } = useNuxtData<DataT[]>(toCacheKey(key)) as { data: Ref<DataT> }
+export function getAsyncData<DataT = any>(key: MaybeRefOrGetter<EntryKey>): Ref<DataT> {
+  const { data } = useNuxtData<DataT[]>(toCacheKey(toValue(key))) as { data: Ref<DataT> }
 
   if (!data.value) {
-    throw new Error(`Could not resolve ${key}`)
+    throw new Error(`Could not resolve ${toValue(key)}`)
   }
 
   return data
 }
 
-export function refreshAsyncData(key: EntryKey) {
-  return () => refreshNuxtData(toCacheKey(key))
+export function refreshAsyncData(key: MaybeRefOrGetter<EntryKey>) {
+  return () => refreshNuxtData(toCacheKey(toValue(key)))
 }

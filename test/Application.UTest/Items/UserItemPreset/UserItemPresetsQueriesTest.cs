@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Items;
 
-public class UserItemPresetQueriesTest : TestBase
+public class UserItemPresetsQueriesTest : TestBase
 {
     [Test]
     public async Task GetAndListAreScopedByUser()

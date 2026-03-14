@@ -638,17 +638,45 @@ public record SeedDataCommand : IMediatorRequest
             UserItem vickItem10 = new() { User = vick, ItemId = "crpg_blacksmith_hammer_v4_h0" };
 
             UserItem[] newUserItems =
-            {
+            [
                 takeoItem1, takeoItem2, orleItem1, orleItem2, orleItem3, orleItem4, orleItem5, orleItem6, orleItem7, orleItem8, orleItem9, orleItem10, orleItem11, orleItem12, orleItem13, orleItem14, orleItem15, orleItem16, orleItem17, orleItem18, orleItem19,
                 vickItem1, vickItem2, vickItem3, vickItem4, vickItem5, vickItem6, vickItem7, vickItem8, vickItem9, vickItem10, elmarykItem1, elmarykItem2, laHireItem1, laHirekItem2, laHirekItem3,
-            };
+            ];
 
-            var existingUserItems = await _db.UserItems.ToDictionaryAsync(pi => pi.ItemId);
+            var existingUserItems = await _db.UserItems.ToDictionaryAsync(pi => pi.ItemId, cancellationToken);
             foreach (var newUserItem in newUserItems)
             {
                 if (!existingUserItems.ContainsKey(newUserItem.ItemId))
                 {
                     _db.UserItems.Add(newUserItem);
+                }
+            }
+
+            UserItemPreset orlePreset1 = new()
+            {
+                User = orle,
+                Name = "Preset 1",
+                Slots =
+                [
+                    new() { Item = orleItem1.Item, Slot = ItemSlot.Head },
+                    new() { Item = orleItem17.Item, Slot = ItemSlot.Body },
+                    new() { Item = orleItem2.Item, Slot = ItemSlot.Weapon0 },
+                    new() { Item = laHirekItem3.Item, Slot = ItemSlot.Weapon1 },
+                    new() { Item = takeoItem2.Item, Slot = ItemSlot.Weapon2 },
+                    new() { Item = elmarykItem1.Item, Slot = ItemSlot.Weapon3 },
+                ],
+            };
+
+            UserItemPreset[] userItemPresets = [
+                orlePreset1,
+            ];
+
+            var existingUserItemPresets = await _db.UserItemPresets.ToDictionaryAsync(pi => pi.Id, cancellationToken);
+            foreach (var newUserItemPreset in userItemPresets)
+            {
+                if (!existingUserItemPresets.ContainsKey(newUserItemPreset.Id))
+                {
+                    _db.UserItemPresets.Add(newUserItemPreset);
                 }
             }
 

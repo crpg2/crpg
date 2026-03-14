@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
   ],
   ssr: false,
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   app: {
     head: {
       title: 'cRPG: Multiplayer Mod for Mount & Blade Bannerlord',

@@ -62,13 +62,24 @@ export interface UserItemsByType {
 
 export interface UserItemPresetSlot {
   slot: ItemSlot
-  itemId: string | null
+  item: Item | null
+  userItemId: number | null
 }
 
 export interface UserItemPreset {
   id: number
   name: string
   slots: UserItemPresetSlot[]
+}
+
+export interface UserItemPresetUpdate {
+  name: string
+  slots: UserItemPresetSlotUpdate[]
+}
+
+export interface UserItemPresetSlotUpdate {
+  slot: ItemSlot
+  itemId: string | null
 }
 
 export type UserItemsBySlot = Record<ItemSlot, UserItem>

@@ -543,19 +543,6 @@ public class UsersController : BaseController
     }
 
     /// <summary>
-    /// Updates a user item preset.
-    /// </summary>
-    /// <param name="id">User item preset id.</param>
-    /// <param name="req">Updated preset payload.</param>
-    [HttpPut("self/item-presets/{id}")]
-    public Task<ActionResult<Result<UserItemPresetViewModel>>> UpdateUserItemPreset([FromRoute] int id,
-        [FromBody] UpdateUserItemPresetCommand req)
-    {
-        req = req with { UserId = CurrentUser.User!.Id, UserItemPresetId = id };
-        return ResultToActionAsync(Mediator.Send(req));
-    }
-
-    /// <summary>
     /// Deletes a user item preset.
     /// </summary>
     /// <param name="id">User item preset id.</param>

@@ -1172,7 +1172,7 @@ export type UserItemPresetSlotInputModel = {
 
 export type UserItemPresetSlotViewModel = {
     slot: ItemSlot;
-    itemId?: string | null;
+    item: ItemViewModel | null;
 };
 
 export type UserItemPresetViewModel = {

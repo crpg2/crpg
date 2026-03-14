@@ -19,8 +19,9 @@ public record GetUserItemPresetsQuery : IMediatorRequest<IList<UserItemPresetVie
         public async ValueTask<Result<IList<UserItemPresetViewModel>>> Handle(GetUserItemPresetsQuery req, CancellationToken cancellationToken)
         {
             var presets = await _db.UserItemPresets
-                .AsNoTracking()
+                .AsSplitQuery()
                 .Include(p => p.Slots)
+                    .ThenInclude(s => s.Item)
                 .Where(p => p.UserId == req.UserId)
                 .OrderByDescending(p => p.CreatedAt)
                 .ToArrayAsync(cancellationToken);
