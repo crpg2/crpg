@@ -15,12 +15,12 @@ internal static class WeightHelpers
     internal static float ComputeTeamWeight(List<WeightedCrpgUser> team, float p = MatchBalancer.PowerParameter)
     {
         var clangroupTeam = MatchBalancingHelpers.SplitUsersIntoClanGroups(team);
-        return clangroupTeam.Sum(c => c.Weight());
+        return clangroupTeam.Sum(c => c.Weight(p));
     }
 
     internal static float ComputeTeamAbsWeight(List<WeightedCrpgUser> team, float p = MatchBalancer.PowerParameter)
     {
         var clangroupTeam = MatchBalancingHelpers.SplitUsersIntoClanGroups(team);
-        return clangroupTeam.Sum(c => Math.Abs(c.Weight()));
+        return clangroupTeam.Sum(c => Math.Abs(c.Weight(p)));
     }
 }

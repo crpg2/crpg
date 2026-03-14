@@ -35,7 +35,7 @@ internal static class MatchBalancingHelpers
             }
 
             clanMemberCounts.TryGetValue(clanGroup.ClanId.Value, out var clanCounts);
-            clanMemberCounts[clanGroup.ClanId.Value] = (clanCounts.teamACount, clanCounts.teamACount + 1);
+            clanMemberCounts[clanGroup.ClanId.Value] = (clanCounts.teamACount, clanCounts.teamBCount + clanGroup.Size);
         }
 
         foreach (ClanGroup clanGroup in newGameMatch.Waiting)
