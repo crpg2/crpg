@@ -1,5 +1,6 @@
 #if CRPG_SERVER
 using Crpg.Module.Api;
+using Crpg.Module.Api.Models;
 using Crpg.Module.Common.ChatCommands;
 #else
 using Crpg.Module.Common.HotConstants;
@@ -100,7 +101,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
             (new FlagDominationSpawnFrameBehavior(),
             new CrpgDtvSpawningBehavior(_constants)));
         CrpgTeamSelectServerComponent teamSelectComponent = new(warmupComponent, null, MultiplayerGameType.Siege);
-        CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: true, enableRating: false, enableLowPopulationUpkeep: true);
+        CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: true, enableRating: false, gameMode: CrpgGameMode.CRPGDTV, enableLowPopulationUpkeep: true);
         CrpgDtvSpawningBehavior spawnBehaviour = new(_constants);
 #else
         CrpgWarmupComponent warmupComponent = new(_constants, null);
@@ -147,7 +148,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new SpawnComponent(new BattleSpawnFrameBehavior(), spawnBehaviour),
                 new AgentHumanAILogic(), // bot intelligence
                 new MultiplayerAdminComponent(), // admin UI to kick player or restart game
-                new CrpgUserManagerServer(crpgClient, _constants),
+                new CrpgUserManagerServer(crpgClient, _constants, CrpgGameMode.CRPGDTV),
                 new KickInactiveBehavior(inactiveTimeLimit: 120, warmupComponent),
                 new MapPoolComponent(),
                 new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),

@@ -26,12 +26,14 @@ internal class CrpgUserManagerServer : MissionNetwork
 
     private readonly ICrpgClient _crpgClient;
     private readonly CrpgConstants _constants;
+    private readonly CrpgGameMode _gameMode;
     private readonly Dictionary<int, Task<CrpgResult<CrpgClan>>> _clanTasks;
 
-    public CrpgUserManagerServer(ICrpgClient crpgClient, CrpgConstants constants)
+    public CrpgUserManagerServer(ICrpgClient crpgClient, CrpgConstants constants, CrpgGameMode gameMode)
     {
         _crpgClient = crpgClient;
         _constants = constants;
+        _gameMode = gameMode;
         _clanTasks = new Dictionary<int, Task<CrpgResult<CrpgClan>>>();
     }
 
@@ -182,7 +184,7 @@ internal class CrpgUserManagerServer : MissionNetwork
         {
             var userRes = CrpgFeatureFlags.IsEnabled(CrpgFeatureFlags.FeatureTournament)
                 ? await _crpgClient.GetTournamentUserAsync(platform, platformUserId)
-                : await _crpgClient.GetUserAsync(platform, platformUserId, CrpgServerConfiguration.Region);
+                : await _crpgClient.GetUserAsync(platform, platformUserId, CrpgServerConfiguration.Region, _gameMode);
             crpgUser = userRes.Data!;
 
             if (crpgUser.ClanMembership != null)

@@ -36,6 +36,7 @@ internal class CrpgRewardServer : MissionLogic
     private readonly bool _isTeamHitCompensationsEnabled;
     private readonly bool _isRatingEnabled;
     private readonly bool _isLowPopulationUpkeepEnabled;
+    private readonly CrpgGameMode _gameMode;
 
     private bool _lastRewardDuringHappyHours;
 
@@ -45,6 +46,7 @@ internal class CrpgRewardServer : MissionLogic
         CrpgWarmupComponent? warmupComponent,
         bool enableTeamHitCompensations,
         bool enableRating,
+        CrpgGameMode gameMode,
         bool enableLowPopulationUpkeep = false)
     {
         _crpgClient = crpgClient;
@@ -59,6 +61,7 @@ internal class CrpgRewardServer : MissionLogic
         _isTeamHitCompensationsEnabled = enableTeamHitCompensations;
         _isRatingEnabled = enableRating;
         _isLowPopulationUpkeepEnabled = enableLowPopulationUpkeep;
+        _gameMode = gameMode;
     }
 
     public override MissionBehaviorType BehaviorType => MissionBehaviorType.Other;
@@ -153,6 +156,7 @@ internal class CrpgRewardServer : MissionLogic
                 Rating = winnerStats.Rating,
             },
             BrokenItems = Array.Empty<CrpgUserDamagedItem>(),
+            GameMode = _gameMode,
             Instance = CrpgServerConfiguration.Instance,
         };
         crpgPeerByCrpgUserId[winnerUpdate.UserId] = winnerPeer;
@@ -174,6 +178,7 @@ internal class CrpgRewardServer : MissionLogic
                 Rating = loserStats.Rating,
             },
             BrokenItems = Array.Empty<CrpgUserDamagedItem>(),
+            GameMode = _gameMode,
             Instance = CrpgServerConfiguration.Instance,
         };
         crpgPeerByCrpgUserId[loserUpdate.UserId] = loserPeer;
@@ -296,6 +301,7 @@ internal class CrpgRewardServer : MissionLogic
                     Rating = crpgPeer.User.Character.Statistics.Rating,
                 },
                 BrokenItems = Array.Empty<CrpgUserDamagedItem>(),
+                GameMode = _gameMode,
                 Instance = CrpgServerConfiguration.Instance,
             };
 

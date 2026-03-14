@@ -26,6 +26,7 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
     public Platform Platform { get; init; }
     public string PlatformUserId { get; init; } = default!;
     public Region Region { get; init; }
+    public GameMode GameMode { get; init; }
     public string Instance { get; init; } = string.Empty;
 
     public class Validator : AbstractValidator<GetGameUserCommand>
@@ -137,11 +138,10 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
         private readonly IUserService _userService;
         private readonly ICharacterService _characterService;
         private readonly IActivityLogService _activityLogService;
-        private readonly IGameModeService _gameModeService;
 
         public Handler(ICrpgDbContext db, IMapper mapper, IDateTime dateTime,
             IRandom random, IUserService userService, ICharacterService characterService,
-            IActivityLogService activityLogService, IGameModeService gameModeService)
+            IActivityLogService activityLogService)
         {
             _db = db;
             _mapper = mapper;
@@ -150,7 +150,6 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
             _userService = userService;
             _characterService = characterService;
             _activityLogService = activityLogService;
-            _gameModeService = gameModeService;
         }
 
         public async ValueTask<Result<GameUserViewModel>> Handle(GetGameUserCommand req, CancellationToken cancellationToken)
@@ -216,7 +215,7 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
                     .Include(ei => ei.UserItem)
                     .LoadAsync(cancellationToken);
 
-                GameMode currentGameMode = _gameModeService.GameModeByInstanceAlias(Enum.TryParse(req.Instance[^1..], ignoreCase: true, out GameModeAlias instanceAlias) ? instanceAlias : GameModeAlias.Z);
+                GameMode currentGameMode = req.GameMode;
 
                 var statistics = await _db.Entry(user.ActiveCharacter)
                     .Collection(c => c.Statistics)
