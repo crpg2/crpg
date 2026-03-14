@@ -2,12 +2,7 @@ import { describe, expect, it, vi } from 'vitest'
 
 import type { User, UserPublic } from '~/models/user'
 
-import { ITEM_SLOT } from '~/models/item'
-
 import {
-  createUserItemPreset,
-  deleteUserItemPreset,
-  getUserItemPresets,
   mapUserToUserPublic,
 } from '../user-service'
 

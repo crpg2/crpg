@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { UserItemPreset } from '~/models/user'
 
-import { getItemImage } from '~/services/item-service'
-
 const { preset } = defineProps<{
   preset: UserItemPreset
 }>()
@@ -34,7 +32,7 @@ defineEmits<{
           @click="$emit('apply')"
         />
 
-        <UTooltip :text="$t('character.inventory.presets.delete')">
+        <UTooltip :text="$t('action.delete')">
           <UButton
             color="error"
             variant="ghost"

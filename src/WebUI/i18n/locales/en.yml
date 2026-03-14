@@ -672,8 +672,6 @@ character:
           field:
             name: Preset name
       title: Loadout presets
-      apply: Apply
-      delete: Delete
       notify:
         created: Preset created
         deleted: Preset deleted
