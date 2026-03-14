@@ -79,8 +79,17 @@
   <string id="str_ff_teamhit_msg_no_peer_found" text="{=xq7QtuZ0}No connected attacker peer found for your report." />
   <string id="str_ff_teamhit_msg_no_hit_found" text="{=zD8mGERY}No recent team hit found to report." />
   <string id="str_ff_teamhit_msg_window_expired" text="{=KgZprgXA}Time expired to report {ATTACKER} for teamhit." />
-  <string id="str_ff_teamhit_msg_report_prompt" text="{=WH15BANu}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional." />
-  <string id="str_ff_teamhit_msg_report_prompt_window" text="{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional {TIMELEFT} seconds remaining." />
+  <string id="str_ff_teamhit_msg_report_prompt" text="{=WH15BANu}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] to report." />
+  <string id="str_ff_teamhit_msg_report_prompt_window" text="{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] to report. ({TIMELEFT} seconds remaining)" />
+
+  <!-- KeyBinder Options Menu -->
+  <string id="str_key_category_crpg_general" text="{=KORWOuGG}Crpg General" />
+  <string id="str_key_report_team_hit_name" text="{=KORWOuG1}Report Team Hit" />
+  <string id="str_key_report_team_hit_desc" text="{=rKORWOuG2}Report a team hit you received" />
+  <string id="str_key_command_modifier_name" text="{=KORWOuG3}Command Modifier (hold)" />
+  <string id="str_key_command_modifier_desc" text="{=KORWOuG4}Modifier key ie: Ctrl" />
+  <string id="str_key_command_change_quiver" text="{=KORWOuG5}Change Quiver" />
+  <string id="str_key_command_change_quiver_desc" text="{=KORWOuG6}Change ammo quiver" />
 
   <!-- Battle Maps -->
   <string id="str_multiplayer_scene_name.crpg_battle_abandoned" text="{=PKVPlAeE}Abandoned" />

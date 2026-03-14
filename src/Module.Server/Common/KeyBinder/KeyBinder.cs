@@ -6,6 +6,7 @@ using TaleWorlds.Library;
 using TaleWorlds.Localization;
 
 namespace Crpg.Module.Common.KeyBinder;
+
 public static class KeyBinder
 {
     public static readonly ICollection<BindedKeyCategory> KeysCategories = new List<BindedKeyCategory>();
@@ -27,7 +28,7 @@ public static class KeyBinder
     // predefined categories. you can also make your own where you create the gamekey by just using whatever string values you want
     public static class Categories
     {
-        public static readonly KeyCategoryInfo CrpgGeneral = new("crpg_general", "Crpg General");
+        public static readonly KeyCategoryInfo CrpgGeneral = new("crpg_general", "{=KORWOuGG}Crpg General");
     }
 
     // creates and/or appends keys to a category

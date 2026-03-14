@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿﻿<?xml version="1.0" encoding="utf-8"?>
 <base type="string">
   <tags>
     <tag language="简体中文"/>
@@ -45,6 +45,7 @@
     <string id="4HrC30kl" text="子爵已被屠杀！" />
     <string id="tdfOMWmf" text="防守者已被屠杀！" />
     <string id="mfD3LkeQ" text="子爵正遭到 {AGENT} 的攻击！" />
+    <string id="Ht7vJBcR" text="剩余的敌人已被标记！" />
     <string id="ck7dhCeM" text="欢迎 {NAMES} 加入 cRPG！" />
     <string id="FAkcpZdy" text="角色和商店" />
     <string id="xAnUFQt2" text="{COUNT} 位玩家转移到攻击方{newline}" />
@@ -97,18 +98,28 @@
     <string id="v1S1BAF4" text="骑兵将在 {SECONDS} 秒后出现！" />
     <string id="joWaOGco" text="到达时间限制，但仍有一些进攻者在旗帜周围。防守者需要消灭他们才能赢得游戏。" />
     <string id="I5MWE5AR" text="根据人口规模，已从地图中移除{ENTITY_COUNT}个实体。" />
+    <string id="iN5cT1v3" text="你因长时间不活动已被移至观战！" />
 
     <!-- Friendly Fire Reporting -->
-    <string id="S4FzPA70" text="{VICTIM} reported your team hit. (Dmg: {DAMAGE}) {HITSACTIVE}/{HITSMAX}team hits until kick." />
-    <string id="1Vw2P1hD" text="Reported {ATTACKER} for team hit (Dmg: {DAMAGE})." />
-    <string id="vNmyS3cU" text="{ATTACKER} reported by {VICTIM}. [{HITSACTIVE}/{HITSMAX}] decayed: {HITSDECAYED} not reported: {HITSNOTREPORTED} on reporter: {HITSONVICTIM}" />
-    <string id="uPwSqhuA" text="You have been kicked for excessive team hits ({HITSMAX})." />
-    <string id="MdIKl2Bv" text="{ATTACKER} has been kicked for excessive team hits ({HITSMAX})." />
-    <string id="Chi61w9L" text="Friendly fire reporting is currently disabled on this server." />
-    <string id="xq7QtuZ0" text="No connected attacker peer found for your report." />
-    <string id="zD8mGERY" text="No recent team hit found to report." />
-    <string id="KgZprgXA" text="Time expired to report {ATTACKER} for teamhit." />
-    <string id="WH15BANu" text="Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional." />
-    <string id="KORWOuGO" text="Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional. {TIMELEFT} seconds remaining." />
+    <string id="S4FzPA70" text="{VICTIM} 举报了你的队友伤害。（伤害：{DAMAGE}）再受到 {HITSACTIVE}/{HITSMAX} 次队友伤害将被踢出。" />
+    <string id="1Vw2P1hD" text="已举报 {ATTACKER} 的队友伤害（伤害：{DAMAGE}）。" />
+    <string id="vNmyS3cU" text="{VICTIM} 举报了 {ATTACKER}。[{HITSACTIVE}/{HITSMAX}] 已衰减：{HITSDECAYED} 未举报：{HITSNOTREPORTED} 对举报者：{HITSONVICTIM}" />
+    <string id="uPwSqhuA" text="你因过多的队友伤害而被踢出（{HITSMAX}）。" />
+    <string id="MdIKl2Bv" text="{ATTACKER} 因过多的队友伤害而被踢出（{HITSMAX}）。" />
+    <string id="Chi61w9L" text="此服务器当前已禁用队友伤害举报功能。" />
+    <string id="xq7QtuZ0" text="未找到与你举报相关的攻击者。" />
+    <string id="zD8mGERY" text="未找到最近的队友伤害记录以供举报。" />
+    <string id="KgZprgXA" text="举报 {ATTACKER} 队友伤害的时间已过期。" />
+    <string id="WH15BANu" text="{ATTACKER} 对你造成了队友伤害（伤害：{DAMAGE}）。如果你认为这是故意的，请按 [{MODIFIERKEY}+{REPORTKEY}]。" />
+    <string id="KORWOuGO" text="{ATTACKER} 对你造成了队友伤害（伤害：{DAMAGE}）。如果你认为这是故意的，请按 [{MODIFIERKEY}+{REPORTKEY}]。剩余 {TIMELEFT} 秒。" />
+    
+    <!-- KeyBinder Options Menu -->
+    <string id="KORWOuGG" text="CRPG 通用" />
+    <string id="KORWOuG1" text="举报团队攻击" />
+    <string id="KORWOuG2" text="举报你受到的团队攻击" />
+    <string id="KORWOuG3" text="指令修饰键（按住）" />
+    <string id="KORWOuG4" text="修饰键，例如：Ctrl" />
+    <string id="KORWOuG5" text="更换箭袋" />
+    <string id="KORWOuG6" text="更换弹药箭袋" />
   </strings>
 </base>
