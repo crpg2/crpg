@@ -26,8 +26,8 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
             new()
             {
                 Id = "key_report_team_hit",
-                Name = "Report Team Hit",
-                Description = "Report a team hit you received",
+                Name = "{=KORWOuG1}Report Team Hit",
+                Description = "{=KORWOuG2}Report a team hit you received",
                 DefaultInputKey = InputKey.M,
             },
         },
@@ -144,7 +144,7 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
         }
         else if (_reportWindowSeconds > 0) // has window
         {
-            TextObject reportPrompNoTimeText = new("{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] to report. ({TIMELEFT} seconds remaining");
+            TextObject reportPrompNoTimeText = new("{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] to report. ({TIMELEFT} seconds remaining)");
             reportPrompNoTimeText.SetTextVariable("ATTACKER", _lastAttackerName);
             reportPrompNoTimeText.SetTextVariable("DAMAGE", message.Damage);
             reportPrompNoTimeText.SetTextVariable("TIMELEFT", _reportWindowSeconds);

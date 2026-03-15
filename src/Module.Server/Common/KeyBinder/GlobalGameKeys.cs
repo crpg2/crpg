@@ -16,8 +16,8 @@ public class GlobalGameKeys : IUseKeyBinder
             new()
             {
                 Id = "key_command_modifier",
-                Name = "Command Modifier (hold)",
-                Description = "Modifier key ie: Ctrl",
+                Name = "{=KORWOuG3}Command Modifier (hold)",
+                Description = "{=KORWOuG4}Modifier key ie: Ctrl",
                 DefaultInputKey = InputKey.LeftControl,
             },
         },
