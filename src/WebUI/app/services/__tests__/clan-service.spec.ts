@@ -144,13 +144,13 @@ describe('clan servie', () => {
   it.each<[string, ClanArmoryItem, number, boolean]>([
     [
       'returns true when the item belongs to the current user',
-      { userItemId: 1 } as ClanArmoryItem,
+      { lender: { id: 1 } } as ClanArmoryItem,
       1,
       true,
     ],
     [
       'returns false when the item belongs to another user',
-      { userItemId: 2 } as ClanArmoryItem,
+      { lender: { id: 2 } } as ClanArmoryItem,
       1,
       false,
     ],
