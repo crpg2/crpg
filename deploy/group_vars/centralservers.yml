@@ -71,7 +71,7 @@ datadog_checks:
     postgres:
         init_config:
         instances:
-            - host: localhost
+            - host: /var/run/postgresql
               port: 5432
               dbname: "{{ crpg_db }}"
               username: "{{ datadog_db_user }}"
