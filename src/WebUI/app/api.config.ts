@@ -58,7 +58,7 @@ export const createClientConfig: CreateClientConfig = (config) => {
         })
 
         const { $logger } = useNuxtApp()
-        $logger?.error('Error occurred', error)
+        $logger?.error('API error', error)
       }
     },
   })
