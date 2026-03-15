@@ -9,9 +9,10 @@ using TaleWorlds.MountAndBlade.View.Tableaus.Thumbnails;
 namespace Crpg.Module.GUI;
 
 /// <summary>
-/// Displays a banner circle above ally agents' heads. Based on the native MissionAgentLabelView.
-/// On a playing team (alive or dead): shows labels for allies using clan banners.
-/// On the spectator team: shows labels for both teams using each team's banner.
+/// Displays a team banner circle above agents' heads. Based on the native MissionAgentLabelView.
+/// Alive: shows labels for allies only.
+/// Dead or on spectator team: shows labels for both teams.
+/// Photo mode: labels are hidden.
 /// </summary>
 internal class CrpgAgentLabelView : MissionView
 {
@@ -31,7 +32,6 @@ internal class CrpgAgentLabelView : MissionView
     private bool _isResumingView;
     private bool _alwaysShowBanners;
     private bool _indicatorsActive;
-    private bool _wasOnSpectatorTeam;
 
     private bool IndicatorsActive
     {
@@ -63,13 +63,6 @@ internal class CrpgAgentLabelView : MissionView
 
     public override void OnMissionTick(float dt)
     {
-        bool isOnSpectatorTeam = IsOnSpectatorTeam();
-        if (isOnSpectatorTeam != _wasOnSpectatorTeam)
-        {
-            _wasOnSpectatorTeam = isOnSpectatorTeam;
-            ReinitializeAllLabels();
-        }
-
         UpdateNearbyBannerOpacities();
         IndicatorsActive = _alwaysShowBanners || Input.IsGameKeyDown(5);
     }
@@ -93,13 +86,13 @@ internal class CrpgAgentLabelView : MissionView
 
     public override void OnAgentBuild(Agent agent, Banner banner)
     {
-        InitAgentLabel(agent, banner);
+        InitAgentLabel(agent);
     }
 
     public override void OnAgentTeamChanged(Team prevTeam, Team newTeam, Agent agent)
     {
         RemoveAgentLabel(agent);
-        InitAgentLabel(agent, null);
+        InitAgentLabel(agent);
     }
 
     public override void OnClearScene()
@@ -160,14 +153,14 @@ internal class CrpgAgentLabelView : MissionView
         }
     }
 
-    private void InitAgentLabel(Agent agent, Banner? peerBanner)
+    private void InitAgentLabel(Agent agent)
     {
-        if (!agent.IsHuman)
+        if (!agent.IsHuman || agent.AgentVisuals == null)
         {
             return;
         }
 
-        Banner? banner = ResolveBanner(agent, peerBanner);
+        Banner? banner = ResolveBanner(agent);
         if (banner == null)
         {
             return;
@@ -210,18 +203,9 @@ internal class CrpgAgentLabelView : MissionView
         SetBannerOpacity(agent, highlighted: false);
     }
 
-    /// <summary>
-    /// On the spectator team: use the team banner so both teams are distinguishable.
-    /// On a playing team (alive or dead): use the peer/clan banner (original behavior).
-    /// </summary>
-    private Banner? ResolveBanner(Agent agent, Banner? peerBanner)
+    private static Banner? ResolveBanner(Agent agent)
     {
-        if (IsOnSpectatorTeam())
-        {
-            return agent.Team?.Banner;
-        }
-
-        return peerBanner ?? agent.Origin?.Banner;
+        return agent.Team?.Banner;
     }
 
     private void RemoveAgentLabel(Agent agent)
@@ -271,13 +255,13 @@ internal class CrpgAgentLabelView : MissionView
             return false;
         }
 
-        // On the spectator team, show labels for both teams.
-        if (IsOnSpectatorTeam())
+        // Dead or on the spectator team: show labels for both teams.
+        if (IsSpectating())
         {
             return agent.Team != null;
         }
 
-        // On a playing team (alive or dead), show only for allies.
+        // Alive: show only for allies.
         return IsAlly(agent);
     }
 
@@ -297,15 +281,18 @@ internal class CrpgAgentLabelView : MissionView
         return myTeam != null && agent.Team == myTeam;
     }
 
-    private bool IsOnSpectatorTeam()
+    private bool IsSpectating()
     {
         if (!GameNetwork.IsSessionActive || !GameNetwork.IsMyPeerReady)
         {
-            return false;
+            return Mission?.MainAgent == null;
         }
 
-        Team? myTeam = GameNetwork.MyPeer?.GetComponent<MissionPeer>()?.Team;
-        return myTeam == null || myTeam == Mission.SpectatorTeam;
+        MissionPeer? missionPeer = GameNetwork.MyPeer?.GetComponent<MissionPeer>();
+        Team? myTeam = missionPeer?.Team;
+
+        // On the spectator team or dead (no controlled agent).
+        return myTeam == null || myTeam == Mission.SpectatorTeam || missionPeer?.ControlledAgent == null;
     }
 
     private void UpdateNearbyBannerOpacities()
@@ -370,32 +357,9 @@ internal class CrpgAgentLabelView : MissionView
         }
     }
 
-    /// <summary>
-    /// Removes and re-creates all labels. Used when switching between the spectator team and a playing team
-    /// since the banner source changes (team banner vs clan banner).
-    /// </summary>
-    private void ReinitializeAllLabels()
-    {
-        List<Agent> agents = _agentMeshes.Keys.ToList();
-        foreach (Agent agent in agents)
-        {
-            RemoveAgentLabel(agent);
-        }
-
-        _labelMaterials.Clear();
-
-        foreach (Agent agent in Mission.Agents)
-        {
-            if (agent.IsHuman)
-            {
-                InitAgentLabel(agent, null);
-            }
-        }
-    }
-
     private void OnPlayerTeamChanged(Team previousTeam, Team currentTeam)
     {
-        ReinitializeAllLabels();
+        UpdateAllAgentMeshVisibilities();
     }
 
     private void OnMainAgentChanged(Agent oldAgent)
