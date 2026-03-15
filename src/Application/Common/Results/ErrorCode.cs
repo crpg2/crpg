@@ -88,4 +88,11 @@ public enum ErrorCode
     PersonalItemAlreadyExist,
     SettingNotFound,
     TerrainNotFound,
+    MarketplaceOfferNotFound,
+    MarketplaceOfferNotAllowed,
+    MarketplaceOfferInvalidStatus,
+    MarketplaceOfferExpired,
+    MarketplaceOfferLimitReached,
+    MarketplaceOfferInvalidAsset,
+    MarketplaceOfferSelfAccept,
 }

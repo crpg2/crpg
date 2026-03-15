@@ -1,6 +1,7 @@
 ﻿using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Users;
 
@@ -496,5 +497,48 @@ internal static class CommonErrors
     {
         Title = "Item not in original offer",
         Detail = $"Item '{itemId}' is not in the original offer",
+    };
+
+    public static Error MarketplaceOfferNotFound(int offerId) => new(ErrorType.NotFound, ErrorCode.MarketplaceOfferNotFound)
+    {
+        Title = "Marketplace offer was not found",
+        Detail = $"Marketplace offer with id '{offerId}' was not found",
+    };
+
+    public static Error MarketplaceOfferNotAllowed(int offerId) => new(ErrorType.Forbidden, ErrorCode.MarketplaceOfferNotAllowed)
+    {
+        Title = "Operation is not allowed for this marketplace offer",
+        Detail = $"Marketplace offer '{offerId}' is not owned by the current user",
+    };
+
+    public static Error MarketplaceOfferInvalidStatus(int offerId, MarketplaceOfferStatus status) =>
+        new(ErrorType.Validation, ErrorCode.MarketplaceOfferInvalidStatus)
+        {
+            Title = "Invalid marketplace offer status",
+            Detail = $"Marketplace offer '{offerId}' has status '{status}' and cannot be modified",
+        };
+
+    public static Error MarketplaceOfferExpired(int offerId) => new(ErrorType.Validation, ErrorCode.MarketplaceOfferExpired)
+    {
+        Title = "Marketplace offer is expired",
+        Detail = $"Marketplace offer '{offerId}' has expired",
+    };
+
+    public static Error MarketplaceOfferLimitReached(int userId, int limit) => new(ErrorType.Validation, ErrorCode.MarketplaceOfferLimitReached)
+    {
+        Title = "Marketplace active offer limit reached",
+        Detail = $"User '{userId}' already has {limit} active marketplace offers",
+    };
+
+    public static Error MarketplaceOfferInvalidAsset(string detail) => new(ErrorType.Validation, ErrorCode.MarketplaceOfferInvalidAsset)
+    {
+        Title = "Invalid marketplace offer asset",
+        Detail = detail,
+    };
+
+    public static Error MarketplaceOfferSelfAccept(int offerId) => new(ErrorType.Validation, ErrorCode.MarketplaceOfferSelfAccept)
+    {
+        Title = "Cannot accept own marketplace offer",
+        Detail = $"Marketplace offer '{offerId}' cannot be accepted by its seller",
     };
 }
