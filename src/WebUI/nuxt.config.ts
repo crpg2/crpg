@@ -5,6 +5,8 @@ import json5 from 'json5'
 import { fileURLToPath } from 'node:url'
 import { defineNuxtConfig } from 'nuxt/config'
 
+import { name as projectName } from './package.json'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -96,10 +98,9 @@ export default defineNuxtConfig({
       },
       datadog: {
         logs: {
-          service: 'crpg-web-ui',
+          service: projectName,
           enabled: import.meta.env.NUXT_PUBLIC_DATADOG_LOGS_ENABLED === 'true',
           clientToken: import.meta.env.NUXT_PUBLIC_DATADOG_CLIENT_TOKEN,
-          forwardConsoleLogs: 'error',
         },
       },
     },
