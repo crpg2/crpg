@@ -31,8 +31,6 @@ internal class CrpgEndOfRoundUiHandler : MissionView
         RoundComponent.OnRoundStarted += RoundStarted;
         _scoreboardComponent.OnRoundPropertiesChanged += OnRoundPropertiesChanged;
         RoundComponent.OnPostRoundEnded += ShowEndOfRoundUi;
-        _scoreboardComponent.OnMVPSelected += OnMVPSelected;
-
         _missionLobbyComponent.OnPostMatchEnded += OnPostMatchEnded;
     }
 
@@ -42,8 +40,6 @@ internal class CrpgEndOfRoundUiHandler : MissionView
         RoundComponent.OnRoundStarted -= RoundStarted;
         _scoreboardComponent.OnRoundPropertiesChanged -= OnRoundPropertiesChanged;
         RoundComponent.OnPostRoundEnded -= ShowEndOfRoundUi;
-        _scoreboardComponent.OnMVPSelected -= OnMVPSelected;
-
         _missionLobbyComponent.OnPostMatchEnded -= OnPostMatchEnded;
         MissionScreen.RemoveLayer(_gauntletLayer);
         _dataSource.OnFinalize();
@@ -85,10 +81,5 @@ internal class CrpgEndOfRoundUiHandler : MissionView
     {
         ScreenManager.SetSuspendLayer(_gauntletLayer, true);
         _dataSource.IsShown = false;
-    }
-
-    private void OnMVPSelected(MissionPeer mvpPeer, int mvpCount)
-    {
-        _dataSource.OnMVPSelected(mvpPeer);
     }
 }
