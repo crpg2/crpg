@@ -14,7 +14,7 @@ export default defineNuxtPlugin<{ logger: Logger }>(async (nuxtApp) => {
   }
 
   if (!logs.clientToken) {
-    console.warn('[datadog-logs] Missing client token or site, browser log collection disabled')
+    console.warn('[datadog-logs] Missing client token, browser log collection disabled')
     return
   }
 
