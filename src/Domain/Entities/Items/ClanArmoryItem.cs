@@ -1,7 +1,7 @@
 ﻿using Crpg.Domain.Common;
 using Crpg.Domain.Entities.Clans;
-
 namespace Crpg.Domain.Entities.Items;
+
 public class ClanArmoryItem : AuditableEntity
 {
     public int LenderClanId { get; set; }

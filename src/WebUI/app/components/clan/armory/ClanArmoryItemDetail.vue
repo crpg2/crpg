@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import type { ClanArmoryItem } from '~/models/clan'
 import type { CompareItemsResult } from '~/models/item'
-import type { UserPublic } from '~/models/user'
 
 import { useUser } from '~/composables/user/use-user'
 import { CLAN_MEMBER_ROLE } from '~/models/clan'
 import { isOwnClanArmoryItem } from '~/services/clan-service'
 
-const { borrower, clanArmoryItem, lender, compareResult } = defineProps<{
+const { clanArmoryItem, compareResult } = defineProps<{
   clanArmoryItem: ClanArmoryItem
-  lender: UserPublic
   compareResult?: CompareItemsResult
-  borrower: UserPublic | null
 }>()
 
 defineEmits<{
@@ -25,7 +22,7 @@ const { clanMemberRole, user } = useUser()
 const { t } = useI18n()
 
 const isOwnArmoryItem = computed(() => isOwnClanArmoryItem(clanArmoryItem, user.value!.id))
-const canReturn = computed(() => borrower?.id === user.value!.id || clanMemberRole.value === CLAN_MEMBER_ROLE.Leader)
+const canReturn = computed(() => clanArmoryItem.borrower?.id === user.value!.id || clanMemberRole.value === CLAN_MEMBER_ROLE.Leader)
 </script>
 
 <template>
@@ -35,8 +32,8 @@ const canReturn = computed(() => borrower?.id === user.value!.id || clanMemberRo
   >
     <template #badges-bottom-right>
       <ClanArmoryItemRelationBadge
-        :lender="lender"
-        :borrower="borrower"
+        :lender="clanArmoryItem.lender"
+        :borrower="clanArmoryItem.borrower"
       />
     </template>
 
@@ -51,7 +48,7 @@ const canReturn = computed(() => borrower?.id === user.value!.id || clanMemberRo
         />
       </UTooltip>
 
-      <UTooltip v-else-if="!borrower">
+      <UTooltip v-else-if="!clanArmoryItem.borrower">
         <UButton
           variant="subtle"
           color="neutral"
@@ -68,7 +65,7 @@ const canReturn = computed(() => borrower?.id === user.value!.id || clanMemberRo
             keypath="clan.armory.item.borrow.title"
           >
             <template #user>
-              <UserMedia :user="lender" />
+              <UserMedia :user="clanArmoryItem.lender" />
             </template>
           </i18n-t>
         </template>

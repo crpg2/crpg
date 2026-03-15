@@ -350,8 +350,8 @@ export type ClanArmoryBorrowedItemViewModelResult = {
 
 export type ClanArmoryItemViewModel = {
     userItemId: number;
-    userId: number;
-    borrowerUserId: number;
+    lender: UserPublicViewModel;
+    borrower: UserPublicViewModel | null;
     item: ItemViewModel;
 };
 
@@ -661,6 +661,7 @@ export type GameUserUpdate = {
     reward: GameUserReward;
     statistics: CharacterStatisticsViewModel;
     brokenItems: Array<GameUserDamagedItem>;
+    gameMode: GameMode;
     instance: string;
 };
 
@@ -2713,6 +2714,7 @@ export type GetGamesUsersData = {
         platform: Platform;
         platformUserId?: string;
         region: Region;
+        gameMode: GameMode;
         instance?: string;
     };
     url: '/Games/users';

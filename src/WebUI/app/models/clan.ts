@@ -71,8 +71,8 @@ export interface ClanInvitation {
 }
 
 export interface ClanArmoryItem {
-  item: Item
-  borrowerUserId: number // 0 = empty
-  userId: number
   userItemId: number
+  lender: UserPublic
+  borrower: UserPublic | null
+  item: Item
 }

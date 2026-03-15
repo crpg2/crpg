@@ -141,7 +141,6 @@ const { isOpen } = useItemDetail()
 
 const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
   return groupItemsByTypeAndWeaponClass(
-    // TODO: ....
     // find the open items
     createItemIndex(items.filter(wrapper => isOpen(wrapper.item.id)).map(extractItem)),
   )
