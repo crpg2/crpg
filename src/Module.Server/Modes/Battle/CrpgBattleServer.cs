@@ -307,7 +307,8 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
         float moraleGain = teamFlagsDelta <= 0
             ? MBMath.ClampFloat(-1 - _morale, -2f, -1f) * moraleMultiplier
             : MBMath.ClampFloat(1 - _morale, 1f, 2f) * moraleMultiplier;
-        if (_flagSystem.HasFlagCountChanged()) // For the last flag, the morale is moving faster.
+        // For the last flag on multi-flag maps, the morale is moving faster.
+        if (_flagSystem.HasFlagCountChanged() && _flagSystem.GetAllFlags().Length > 1)
         {
             moraleGain *= moraleGainMultiplierLastFlag;
         }
