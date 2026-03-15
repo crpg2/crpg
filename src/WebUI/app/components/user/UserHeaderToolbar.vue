@@ -61,11 +61,11 @@ const items = computed<DropdownMenuItem[][]>(() => [
   [
     {
       label: `${t('setting.language')} | ${locale.value.toUpperCase()}`,
-      icon: `crpg:${locale.value}`,
+      icon: `crpg:locale-${locale.value}`,
       children: availableLocales.map(l => ({
         label: t(`locale.${l}`),
         type: 'checkbox' as const,
-        icon: `crpg:${l}`,
+        icon: `crpg:locale-${l}`,
         checked: l === locale.value,
         onUpdateChecked() {
           setLocale(l)
@@ -78,7 +78,6 @@ const items = computed<DropdownMenuItem[][]>(() => [
       onSelect: logout,
     },
   ],
-
 ])
 </script>
 

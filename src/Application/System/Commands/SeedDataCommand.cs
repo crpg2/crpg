@@ -1239,7 +1239,7 @@ public record SeedDataCommand : IMediatorRequest
             ClanMember takeoMember = new() { User = takeo, Clan = pecores, Role = ClanMemberRole.Officer, };
             ClanMember vickMember = new() { User = vick, Clan = pecores, Role = ClanMemberRole.Officer, };
             ClanMember orleMember = new() { User = orle, Clan = pecores, Role = ClanMemberRole.Leader, };
-            ClanMember orle2Member = new() { User = orle2, Clan = droobClan, Role = ClanMemberRole.Officer, };
+            ClanMember orle2Member = new() { User = orle2, Clan = pecores, Role = ClanMemberRole.Officer, };
 
             ClanMember elmarykMember = new() { User = elmaryk, Clan = pecores, Role = ClanMemberRole.Officer, };
             ClanMember laHireMember = new() { User = laHire, Clan = pecores, Role = ClanMemberRole.Member };

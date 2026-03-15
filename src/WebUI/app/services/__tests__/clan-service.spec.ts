@@ -3,11 +3,10 @@ import type { PartialDeep } from 'type-fest'
 import { describe, expect, it, vi } from 'vitest'
 
 import type { ClanArmoryItem, ClanMember, ClanMemberRole } from '~/models/clan'
-import type { UserPublic } from '~/models/user'
 
 import { CLAN_MEMBER_ROLE } from '~/models/clan'
 
-import { canKickMemberValidate, canManageApplicationsValidate, canUpdateClanValidate, canUpdateMemberValidate, getClanArmoryItemBorrower, getClanArmoryItemLender, isOwnClanArmoryItem } from '../clan-service'
+import { canKickMemberValidate, canManageApplicationsValidate, canUpdateClanValidate, canUpdateMemberValidate, isOwnClanArmoryItem } from '../clan-service'
 
 const {
   mockedGetClans,
@@ -142,86 +141,16 @@ describe('clan servie', () => {
     },
   )
 
-  it.each<[string, number, ClanMember[], UserPublic | null]>([
-    [
-      'returns null when the clan has no members',
-      1,
-      [],
-      null,
-    ],
-    [
-      'returns the borrower when the user is found among clan members',
-      1,
-      [
-        {
-          user: {
-            id: 1,
-          },
-        },
-      ] as ClanMember[],
-      { id: 1 } as UserPublic,
-    ],
-    [
-      'returns null when the borrower is not found among clan members',
-      2,
-      [
-        {
-          user: {
-            id: 1,
-          },
-        },
-      ] as ClanMember[],
-      null,
-    ],
-  ])('getClanArmoryItemBorrower %s', (_, borrowerUserId, clanMembers, expectedResult) => {
-    expect(getClanArmoryItemBorrower(borrowerUserId, clanMembers)).toEqual(expectedResult)
-  })
-
-  it.each<[string, number, ClanMember[], UserPublic | null]>([
-    [
-      'returns null when the clan has no members',
-      1,
-      [],
-      null,
-    ],
-    [
-      'returns the lender when the user is found among clan members',
-      1,
-      [
-        {
-          user: {
-            id: 1,
-          },
-        },
-      ] as ClanMember[],
-      { id: 1 } as UserPublic,
-    ],
-    [
-      'returns null when the lender is not found among clan members',
-      2,
-      [
-        {
-          user: {
-            id: 1,
-          },
-        },
-      ] as ClanMember[],
-      null,
-    ],
-  ])('getClanArmoryItemLender - %s', (_, userId, clanMembers, expectedResult) => {
-    expect(getClanArmoryItemLender(userId, clanMembers)).toEqual(expectedResult)
-  })
-
   it.each<[string, ClanArmoryItem, number, boolean]>([
     [
       'returns true when the item belongs to the current user',
-      { userId: 1 } as ClanArmoryItem,
+      { userItemId: 1 } as ClanArmoryItem,
       1,
       true,
     ],
     [
       'returns false when the item belongs to another user',
-      { userId: 2 } as ClanArmoryItem,
+      { userItemId: 2 } as ClanArmoryItem,
       1,
       false,
     ],

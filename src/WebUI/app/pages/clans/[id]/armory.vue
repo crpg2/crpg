@@ -3,21 +3,17 @@ import { useStorage } from '@vueuse/core'
 import { ClanArmoryItemDetail } from '#components'
 import { h } from 'vue'
 
+import type { OpenedItem } from '~/composables/item/use-item-detail'
 import type { GroupedCompareItemsResult } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanArmory } from '~/composables/clan/use-clan-armory'
-import { useClanMembers } from '~/composables/clan/use-clan-members'
 import { useItemDetail } from '~/composables/item/use-item-detail'
 import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'
-import {
-  getClanArmoryItemBorrower,
-  getClanArmoryItemLender,
-  isOwnClanArmoryItem,
-} from '~/services/clan-service'
+import { isOwnClanArmoryItem } from '~/services/clan-service'
 
 definePageMeta({
   props: true,
@@ -31,7 +27,6 @@ const { t } = useI18n()
 
 const { user } = useUser()
 const { clan } = useClan()
-const { clanMembers, getClanMember } = useClanMembers()
 
 const {
   borrowItem,
@@ -82,7 +77,7 @@ const items = computed(() => {
     // Show only available items if enabled
     if (showOnlyAvailableItems.value) {
       // Item is available if not borrowed, not owned, and not in user's inventory
-      if (armoryItem.borrowerUserId || isOwnClanArmoryItem(armoryItem, user.value!.id)) {
+      if (armoryItem.borrower || isOwnClanArmoryItem(armoryItem, user.value!.id)) {
         return false
       }
     }
@@ -98,8 +93,8 @@ const sortingModel = ref<string>('rank_desc')
 
 const { closeItemDetail, toggleItemDetail } = useItemDetail()
 
-const renderClanArmoryItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsResult: GroupedCompareItemsResult[]) => {
-  const armoryItem = items.value.find(i => i.item.id === opendeItem.id)
+const renderClanArmoryItemDetail = (opendeItem: OpenedItem, compareItemsResult: GroupedCompareItemsResult[]) => {
+  const armoryItem = items.value.find(i => i.item.id === opendeItem.id && i.userItemId === opendeItem.additionalId)
 
   if (!armoryItem) {
     return null
@@ -107,8 +102,6 @@ const renderClanArmoryItemDetail = <T extends { id: string }>(opendeItem: T, com
 
   return h(ClanArmoryItemDetail, {
     clanArmoryItem: armoryItem,
-    lender: getClanArmoryItemLender(armoryItem.userId, clanMembers.value)!,
-    borrower: getClanArmoryItemBorrower(armoryItem.borrowerUserId, clanMembers.value)!,
     compareResult: compareItemsResult.find(cr => cr.type === armoryItem.item.type)?.compareResult,
     onBorrow: () => {
       onBorrowFromClanArmory(armoryItem.userItemId)
@@ -182,9 +175,7 @@ const renderClanArmoryItemDetail = <T extends { id: string }>(opendeItem: T, com
         <template #item="clanArmoryItem">
           <ClanArmoryItemCard
             :clan-armory-item="clanArmoryItem"
-            :lender="getClanMember(clanArmoryItem.userId)!.user"
-            :borrower="getClanArmoryItemBorrower(clanArmoryItem.borrowerUserId, clanMembers)"
-            @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, clanArmoryItem.item.id)"
+            @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, clanArmoryItem.item.id, clanArmoryItem.userItemId)"
           />
         </template>
 

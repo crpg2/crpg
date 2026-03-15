@@ -19,9 +19,8 @@ import { useUser } from '~/composables/user/use-user'
 import { useUserItemPresetActions } from '~/composables/user/use-user-item-presets'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { validateItemNotMeetRequirement } from '~/services/character-service'
-import { getClanArmoryItemLender, getClanMembers } from '~/services/clan-service'
 
-const { clan, user } = useUser()
+const { user } = useUser()
 
 const { data: userItems, pending: loadingUserItems } = useUserItemsProvider()
 useCharacterItemsProvider()
@@ -59,7 +58,8 @@ const onClickInventoryItem = (e: PointerEvent, userItem: UserItem, slot?: ItemSl
     slot ? onQuickUnEquip(slot) : onQuickEquip(userItem)
     return
   }
-  toggleItemDetail(e.target as HTMLElement, userItem.item.id)
+
+  toggleItemDetail(e.target as HTMLElement, userItem.item.id, userItem.id)
 }
 
 const sortingConfig: SortingConfig = {
@@ -69,12 +69,6 @@ const sortingConfig: SortingConfig = {
   type_asc: { field: 'type', order: 'asc' },
 }
 const sortingModel = useStorage<string>('character-inventory-sorting', 'rank_desc')
-
-// TODO:
-const { state: clanMembers } = useAsyncState(
-  async () => clan.value ? getClanMembers(clan.value.id) : [],
-  [],
-)
 
 const hideInArmoryItemsModel = useStorage<boolean>('character-inventory-in-armory-items', true)
 const overlay = useOverlay()
@@ -94,7 +88,7 @@ const onUpgrades = (userItem: UserItem, openedItem: OpenedItem) => {
   const update = (newUserItem: UserItem) => {
     itemUpgradesModal.close()
     closeItemDetail(openedItem.id)
-    toggleItemDetail(openedItem.bound, newUserItem.item.id)
+    toggleItemDetail(openedItem.bound, newUserItem.item.id, newUserItem.id)
     onUpgrades(newUserItem, openedItem)
   }
 
@@ -110,7 +104,7 @@ const onUpgrades = (userItem: UserItem, openedItem: OpenedItem) => {
 }
 
 const renderCharacterInventoryItemDetail = (openedItem: OpenedItem, compareItemsResult: GroupedCompareItemsResult[]) => {
-  const userItem = userItems.value.find(i => i.item.id === openedItem.id)
+  const userItem = userItems.value.find(i => i.item.id === openedItem.id && i.id === openedItem.additionalId)
 
   if (!userItem) {
     return null
@@ -119,7 +113,7 @@ const renderCharacterInventoryItemDetail = (openedItem: OpenedItem, compareItems
   return h(CharacterInventoryItemDetail, {
     userItem,
     equipped: equippedItemIds.value.includes(userItem.id),
-    lender: getClanArmoryItemLender(userItem.userId, clanMembers.value),
+    lender: userItem.clanArmoryLender?.user || null,
     compareResult: compareItemsResult.find(cr => cr.type === userItem.item.type)?.compareResult,
     onSell: () => {
       onSellUserItem(userItem.id)
@@ -280,7 +274,7 @@ const createPreset = async () => {
         :character-characteristics="characterCharacteristics"
         :equipped-items="equippedItemsBySlot"
         :items-stats-overall="itemsOverallStats"
-        @item-click="(e, itemId, slot) => onClickInventoryItem(e, userItems.find(ui => ui.item.id === itemId)!, slot)"
+        @item-click="(e, userItem, slot) => onClickInventoryItem(e, userItem, slot)"
         @un-equip="onQuickUnEquip"
       />
 
