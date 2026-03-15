@@ -1,16 +1,13 @@
 <script setup lang="ts">
+import type { LocationQueryRaw } from 'vue-router'
+
 import { AppCoin, UBadge, UButton, UTooltip } from '#components'
 
 import type { CompareItemsResult } from '~/models/item'
 import type { UserItem, UserPublic } from '~/models/user'
 
 import { useUser } from '~/composables/user/use-user'
-import {
-  canAddedToClanArmory,
-  canSell,
-  canUpgradeUserItem,
-  computeBrokenItemRepairCost,
-} from '~/services/item-service'
+import { canUpgradeItem, computeBrokenItemRepairCost } from '~/services/item-service'
 
 const {
   userItem,
@@ -34,9 +31,6 @@ defineEmits<{
 
 const { user, clan } = useUser()
 
-const isSellable = computed(() => canSell(userItem))
-const isUpgradable = computed(() => canUpgradeUserItem(userItem))
-const isManageClanArmory = computed(() => !!clan.value && canAddedToClanArmory(userItem))
 const repairCost = computed(() => computeBrokenItemRepairCost(userItem.item.price))
 </script>
 
@@ -78,57 +72,103 @@ const repairCost = computed(() => computeBrokenItemRepairCost(userItem.item.pric
           />
         </UTooltip>
       </template>
+
+      <UTooltip v-if="userItem.isListedOnMarketplace" :text="$t('character.inventory.item.listedOnMarketplace.tooltip.title')">
+        <UBadge
+          variant="soft"
+          color="primary"
+          icon="crpg:trade"
+          size="lg"
+        />
+      </UTooltip>
     </template>
 
     <template #actions>
       <div class="flex flex-col gap-2">
-        <UFieldGroup orientation="vertical">
+        <UFieldGroup orientation="vertical" size="xl">
           <CharacterInventoryItemActionSell
-            v-if="isSellable"
             :user-item
-            @click="$emit('sell')"
+            @sell="$emit('sell')"
           />
 
-          <UTooltip v-if="userItem.isBroken">
+          <UTooltip
+            v-if="userItem.isBroken"
+            :content="{ side: 'right' }"
+          >
             <UButton
               variant="subtle"
               color="neutral"
               icon="crpg:repair"
               block
-              size="xl"
               @click="$emit('repair')"
             />
             <template #content>
-              <i18n-t
-                scope="global"
-                keypath="character.inventory.item.repair.title"
-              >
-                <template #price>
-                  <AppCoin :value="repairCost" />
-                </template>
-              </i18n-t>
+              <UiTextView variant="h4" tag="h4">
+                <i18n-t
+                  scope="global"
+                  keypath="character.inventory.item.repair.title"
+                >
+                  <template #price>
+                    <AppCoin :value="repairCost" size="xl" />
+                  </template>
+                </i18n-t>
+              </UiTextView>
             </template>
           </UTooltip>
 
-          <UTooltip v-if="isUpgradable" :text="$t('character.inventory.item.upgrade.upgradesTitle')">
+          <UTooltip v-if="canUpgradeItem(userItem.item.type)" :content="{ side: 'right' }">
             <UButton
               variant="subtle"
               color="neutral"
               icon="crpg:blacksmith"
               block
               square
-              size="xl"
               @click="$emit('upgrades')"
             />
+
+            <template #content>
+              <UiTooltipContent :title="$t('character.inventory.item.upgrade.upgradesTitle')" />
+            </template>
           </UTooltip>
 
           <CharacterInventoryItemActionClanArmory
-            v-if="isManageClanArmory"
+            v-if="!!clan"
             :user-item
             @add="$emit('addToClanArmory')"
             @remove="$emit('removeFromClanArmory')"
             @return="$emit('returnToClanArmory')"
           />
+
+          <UTooltip
+            v-if="!userItem.isPersonal"
+            :content="{ side: 'right' }"
+          >
+            <UButton
+              variant="subtle"
+              color="neutral"
+              icon="crpg:trade"
+              block
+              square
+              size="xl"
+              :to="{
+                name: 'marketplace',
+                query: {
+                  requested: {
+                    item: {
+                      id: userItem.item.id,
+                      baseId: userItem.item.baseId,
+                      rank: userItem.item.rank,
+                      name: userItem.item.name,
+                    },
+                  },
+                } as unknown as LocationQueryRaw,
+              }"
+            />
+
+            <template #content>
+              <UiTooltipContent :title="$t('character.inventory.item.showMarketplaceOffers.title')" />
+            </template>
+          </UTooltip>
         </UFieldGroup>
       </div>
     </template>

@@ -14,7 +14,7 @@ export type ActivityLogMetadataEntitiesDictViewModel = {
     characters: Array<CharacterPublicViewModel>;
 };
 
-export type ActivityLogType = 'UserCreated' | 'UserDeleted' | 'UserRenamed' | 'UserRewarded' | 'ItemBought' | 'ItemSold' | 'ItemBroke' | 'ItemReforged' | 'ItemRepaired' | 'ItemUpgraded' | 'ItemReturned' | 'CharacterCreated' | 'CharacterDeleted' | 'CharacterRatingReset' | 'CharacterRespecialized' | 'CharacterRetired' | 'CharacterRewarded' | 'CharacterEarned' | 'ServerJoined' | 'ChatMessageSent' | 'TeamHit' | 'ClanCreated' | 'ClanDeleted' | 'ClanApplicationCreated' | 'ClanApplicationDeclined' | 'ClanApplicationAccepted' | 'ClanMemberKicked' | 'ClanMemberLeaved' | 'ClanMemberRoleEdited' | 'ClanArmoryAddItem' | 'ClanArmoryRemoveItem' | 'ClanArmoryReturnItem' | 'ClanArmoryBorrowItem' | 'TeamHitReported' | 'TeamHitReportedUserKicked' | 'BattleApplyAsMercenary' | 'BattleMercenaryApplicationDeclined' | 'BattleMercenaryApplicationAccepted' | 'BattleParticipantLeaved' | 'BattleParticipantKicked';
+export type ActivityLogType = 'UserCreated' | 'UserDeleted' | 'UserRenamed' | 'UserRewarded' | 'ItemBought' | 'ItemSold' | 'ItemBroke' | 'ItemReforged' | 'ItemRepaired' | 'ItemUpgraded' | 'ItemReturned' | 'CharacterCreated' | 'CharacterDeleted' | 'CharacterRatingReset' | 'CharacterRespecialized' | 'CharacterRetired' | 'CharacterRewarded' | 'CharacterEarned' | 'ServerJoined' | 'ChatMessageSent' | 'TeamHit' | 'ClanCreated' | 'ClanDeleted' | 'ClanApplicationCreated' | 'ClanApplicationDeclined' | 'ClanApplicationAccepted' | 'ClanMemberKicked' | 'ClanMemberLeaved' | 'ClanMemberRoleEdited' | 'ClanArmoryAddItem' | 'ClanArmoryRemoveItem' | 'ClanArmoryReturnItem' | 'ClanArmoryBorrowItem' | 'TeamHitReported' | 'TeamHitReportedUserKicked' | 'BattleApplyAsMercenary' | 'BattleMercenaryApplicationDeclined' | 'BattleMercenaryApplicationAccepted' | 'BattleParticipantLeaved' | 'BattleParticipantKicked' | 'MarketplaceOfferCreated' | 'MarketplaceOfferAccepted' | 'MarketplaceOfferInvalidated' | 'MarketplaceOfferCancelled' | 'MarketplaceOfferExpired';
 
 export type ActivityLogViewModel = {
     id: number;
@@ -461,6 +461,11 @@ export type CreateClanCommand = {
     armoryTimeout: number;
 };
 
+export type CreateMarketplaceOfferCommand = {
+    offer: MarketplaceOfferAssetInput;
+    request: MarketplaceOfferAssetInput;
+};
+
 export type CreatePartyCommand = {
     [key: string]: never;
 };
@@ -490,9 +495,7 @@ export type EditSettingsCommand = {
 };
 
 export type EnableItemCommand = {
-    itemId: string;
     enable: boolean;
-    userId: number;
 };
 
 export type EquippedItemIdViewModel = {
@@ -520,7 +523,7 @@ export type Error = {
     stackTrace: string | null;
 };
 
-export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'InvalidItemUpgradeRank' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartyNotEnoughItems' | 'SettlementNotEnoughItems' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementNotEnoughTroops' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToCampaign' | 'UserItemPresetBadSlots' | 'UserItemPresetNotFound' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
+export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'InvalidItemUpgradeRank' | 'UserItemInMarketplace' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartyNotEnoughItems' | 'SettlementNotEnoughItems' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementNotEnoughTroops' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToCampaign' | 'UserItemPresetBadSlots' | 'UserItemPresetNotFound' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound' | 'MarketplaceOfferNotFound' | 'MarketplaceOfferNotAllowed' | 'MarketplaceOfferExpired' | 'MarketplaceOfferLimitReached' | 'MarketplaceOfferInvalidAsset' | 'MarketplaceOfferSelfAccept';
 
 export type ErrorSource = {
     pointer?: string | null;
@@ -761,6 +764,13 @@ export type ItemStackViewModelResult = {
     data: ItemStackViewModel | null;
 };
 
+export type ItemSummaryViewModel = {
+    id: string;
+    baseId: string;
+    rank: number;
+    name: string;
+};
+
 export type ItemType = 'Undefined' | 'HeadArmor' | 'ShoulderArmor' | 'BodyArmor' | 'HandArmor' | 'LegArmor' | 'MountHarness' | 'Mount' | 'Shield' | 'Bow' | 'Crossbow' | 'OneHandedWeapon' | 'TwoHandedWeapon' | 'Polearm' | 'Thrown' | 'Arrows' | 'Bolts' | 'Pistol' | 'Musket' | 'Bullets' | 'Banner' | 'Ranged' | 'Ammo';
 
 export type ItemViewModel = {
@@ -808,9 +818,69 @@ export type ItemWeaponComponentViewModel = {
 
 export type Languages = 'En' | 'Zh' | 'Ru' | 'De' | 'Fr' | 'It' | 'Es' | 'Pl' | 'Uk' | 'Ro' | 'Nl' | 'Tr' | 'El' | 'Hu' | 'Sv' | 'Cs' | 'Pt' | 'Sr' | 'Bg' | 'Hr' | 'Da' | 'Fi' | 'No' | 'Be' | 'Lv';
 
+export type MarketplaceOfferAssetInput = {
+    gold?: number | null;
+    heirloomPoints?: number | null;
+    userItemId?: number | null;
+    itemId?: string | null;
+};
+
+export type MarketplaceOfferAssetSide = 'Offered' | 'Requested';
+
+export type MarketplaceOfferAssetViewModel = {
+    side: MarketplaceOfferAssetSide;
+    gold: number;
+    heirloomPoints: number;
+    item: ItemSummaryViewModel | null;
+};
+
+export type MarketplaceOfferHistoryViewModel = {
+    id: number;
+    seller: UserPublicViewModel;
+    buyer: UserPublicViewModel;
+    goldFee: number;
+    acceptedAt: Date;
+    offer: MarketplaceOfferAssetViewModel;
+    request: MarketplaceOfferAssetViewModel;
+};
+
+export type MarketplaceOfferViewModel = {
+    id: number;
+    seller: UserPublicViewModel;
+    createdAt: Date;
+    offer: MarketplaceOfferAssetViewModel;
+    request: MarketplaceOfferAssetViewModel;
+    goldFee: number;
+};
+
+export type MarketplaceOfferViewModelResult = {
+    readonly errors: Array<Error> | null;
+    data: MarketplaceOfferViewModel | null;
+};
+
+export type MarketplaceOffersHistoryPageViewModel = {
+    items: Array<MarketplaceOfferHistoryViewModel>;
+    totalCount: number;
+};
+
+export type MarketplaceOffersHistoryPageViewModelResult = {
+    readonly errors: Array<Error> | null;
+    data: MarketplaceOffersHistoryPageViewModel | null;
+};
+
+export type MarketplaceOffersPageViewModel = {
+    items: Array<MarketplaceOfferViewModel>;
+    totalCount: number;
+};
+
+export type MarketplaceOffersPageViewModelResult = {
+    readonly errors: Array<Error> | null;
+    data: MarketplaceOffersPageViewModel | null;
+};
+
 export type NotificationState = 'Unread' | 'Read';
 
-export type NotificationType = 'UserRewardedToUser' | 'CharacterRewardedToUser' | 'ItemReturned' | 'ClanApplicationCreatedToUser' | 'ClanApplicationCreatedToOfficers' | 'ClanApplicationAcceptedToUser' | 'ClanApplicationDeclinedToUser' | 'ClanMemberRoleChangedToUser' | 'ClanMemberLeavedToLeader' | 'ClanMemberKickedToExMember' | 'ClanArmoryBorrowItemToLender' | 'ClanArmoryRemoveItemToBorrower' | 'BattleMercenaryApplicationAccepted' | 'BattleMercenaryApplicationDeclined' | 'BattleParticipantKickedToExParticipant';
+export type NotificationType = 'UserRewardedToUser' | 'CharacterRewardedToUser' | 'ItemReturned' | 'ClanApplicationCreatedToUser' | 'ClanApplicationCreatedToOfficers' | 'ClanApplicationAcceptedToUser' | 'ClanApplicationDeclinedToUser' | 'ClanMemberRoleChangedToUser' | 'ClanMemberLeavedToLeader' | 'ClanMemberKickedToExMember' | 'ClanArmoryBorrowItemToLender' | 'ClanArmoryRemoveItemToBorrower' | 'BattleMercenaryApplicationAccepted' | 'BattleMercenaryApplicationDeclined' | 'BattleParticipantKickedToExParticipant' | 'MarketplaceOfferExpired' | 'MarketplaceOfferAcceptedToSeller' | 'MarketplaceOfferAcceptedToBuyer' | 'MarketplaceOfferInvalidated';
 
 export type PartyOrderCommandItemDto = {
     type: PartyOrderType;
@@ -931,8 +1001,7 @@ export type PatchNotesIListResult = {
 export type Platform = 'Steam' | 'EpicGames' | 'Microsoft';
 
 export type RefundItemCommand = {
-    itemId: string;
-    userId: number;
+    [key: string]: never;
 };
 
 export type Region = 'Eu' | 'Na' | 'As' | 'Oc';
@@ -1191,6 +1260,7 @@ export type UserItemViewModel = {
     id: number;
     userId: number;
     item: ItemViewModel;
+    isListedOnMarketplace: boolean;
     isBroken: boolean;
     createdAt: Date;
     clanArmoryLender: ClanMemberViewModel | null;
@@ -1287,7 +1357,9 @@ export type UserViewModel = {
     platformUserId: string;
     name: string;
     gold: number;
+    reservedGold: number;
     heirloomPoints: number;
+    reservedHeirloomPoints: number;
     experienceMultiplier: number;
     role: Role;
     region: Region;
@@ -1296,6 +1368,7 @@ export type UserViewModel = {
     avatar: string | null;
     activeCharacterId: number | null;
     unreadNotificationsCount: number;
+    activeMarketplaceOffersCount: number;
     clanMembership: UserClanViewModel | null;
 };
 
@@ -1537,6 +1610,18 @@ export type ItemStackViewModelResultWritable = {
 
 export type ItemViewModelIListResultWritable = {
     data: Array<ItemViewModel> | null;
+};
+
+export type MarketplaceOfferViewModelResultWritable = {
+    data: MarketplaceOfferViewModel | null;
+};
+
+export type MarketplaceOffersHistoryPageViewModelResultWritable = {
+    data: MarketplaceOffersHistoryPageViewModel | null;
+};
+
+export type MarketplaceOffersPageViewModelResultWritable = {
+    data: MarketplaceOffersPageViewModel | null;
 };
 
 export type PartyOrderCommandItemDtoWritable = {
@@ -2863,29 +2948,29 @@ export type GetItemsUpgradesByBaseIdResponses = {
 
 export type GetItemsUpgradesByBaseIdResponse = GetItemsUpgradesByBaseIdResponses[keyof GetItemsUpgradesByBaseIdResponses];
 
-export type PutItemsByIdEnableData = {
+export type PutItemsByBaseIdEnableData = {
     /**
      * Enabling value.
      */
     body?: EnableItemCommand;
     path?: {
         /**
-         * Item id.
+         * Item BaseId.
          */
-        id?: string;
+        baseId?: string;
     };
     query?: never;
-    url: '/Items/{id}/enable';
+    url: '/Items/{baseId}/enable';
 };
 
-export type PutItemsByIdEnableErrors = {
+export type PutItemsByBaseIdEnableErrors = {
     /**
      * Bad Request.
      */
     400: unknown;
 };
 
-export type PutItemsByIdEnableResponses = {
+export type PutItemsByBaseIdEnableResponses = {
     /**
      * OK
      */
@@ -2896,7 +2981,7 @@ export type PutItemsByIdEnableResponses = {
     204: void;
 };
 
-export type PutItemsByIdEnableResponse = PutItemsByIdEnableResponses[keyof PutItemsByIdEnableResponses];
+export type PutItemsByBaseIdEnableResponse = PutItemsByBaseIdEnableResponses[keyof PutItemsByBaseIdEnableResponses];
 
 export type PostItemsByIdRefundData = {
     /**
@@ -2946,6 +3031,106 @@ export type GetLeaderboardLeaderboardResponses = {
 };
 
 export type GetLeaderboardLeaderboardResponse = GetLeaderboardLeaderboardResponses[keyof GetLeaderboardLeaderboardResponses];
+
+export type GetMarketplaceOffersData = {
+    body?: never;
+    path?: never;
+    query: {
+        offeredItemId?: string;
+        offeredItemRanks: Array<number>;
+        offeredItemType?: ItemType;
+        offeredGold?: string;
+        offeredHeirloomPoints?: string;
+        requestedItemId?: string;
+        requestedItemRanks: Array<number>;
+        requestedItemType?: ItemType;
+        requestedGold?: string;
+        requestedHeirloomPoints?: string;
+        sellerId?: number;
+        onlyAffordable: boolean;
+        page: number;
+        pageSize: number;
+    };
+    url: '/Marketplace/offers';
+};
+
+export type GetMarketplaceOffersResponses = {
+    /**
+     * OK
+     */
+    200: MarketplaceOffersPageViewModelResult;
+};
+
+export type GetMarketplaceOffersResponse = GetMarketplaceOffersResponses[keyof GetMarketplaceOffersResponses];
+
+export type PostMarketplaceOffersData = {
+    body?: CreateMarketplaceOfferCommand;
+    path?: never;
+    query?: never;
+    url: '/Marketplace/offers';
+};
+
+export type PostMarketplaceOffersResponses = {
+    /**
+     * Created
+     */
+    201: MarketplaceOfferViewModelResult;
+};
+
+export type PostMarketplaceOffersResponse = PostMarketplaceOffersResponses[keyof PostMarketplaceOffersResponses];
+
+export type DeleteMarketplaceOffersByOfferIdData = {
+    body?: never;
+    path: {
+        offerId: number;
+    };
+    query?: never;
+    url: '/Marketplace/offers/{offerId}';
+};
+
+export type DeleteMarketplaceOffersByOfferIdResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+};
+
+export type GetMarketplaceOffersHistoryData = {
+    body?: never;
+    path?: never;
+    query: {
+        buyerId?: number;
+        sellerId?: number;
+        page: number;
+        pageSize: number;
+    };
+    url: '/Marketplace/offers/history';
+};
+
+export type GetMarketplaceOffersHistoryResponses = {
+    /**
+     * OK
+     */
+    200: MarketplaceOffersHistoryPageViewModelResult;
+};
+
+export type GetMarketplaceOffersHistoryResponse = GetMarketplaceOffersHistoryResponses[keyof GetMarketplaceOffersHistoryResponses];
+
+export type PostMarketplaceOffersByOfferIdAcceptData = {
+    body?: never;
+    path: {
+        offerId: number;
+    };
+    query?: never;
+    url: '/Marketplace/offers/{offerId}/accept';
+};
+
+export type PostMarketplaceOffersByOfferIdAcceptResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+};
 
 export type GetPartiesSelfUpdateData = {
     body?: never;

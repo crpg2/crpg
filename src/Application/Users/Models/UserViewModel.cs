@@ -3,6 +3,7 @@ using AutoMapper;
 using Crpg.Application.Clans.Models;
 using Crpg.Application.Common.Mappings;
 using Crpg.Domain.Entities;
+using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Users;
 
@@ -15,7 +16,9 @@ public record UserViewModel : IMapFrom<User>
     public string PlatformUserId { get; init; } = string.Empty;
     public string Name { get; init; } = string.Empty;
     public int Gold { get; init; }
+    public int ReservedGold { get; init; }
     public int HeirloomPoints { get; init; }
+    public int ReservedHeirloomPoints { get; init; }
     public float ExperienceMultiplier { get; init; }
     public Role Role { get; init; }
     public Region Region { get; init; }
@@ -26,13 +29,22 @@ public record UserViewModel : IMapFrom<User>
     [JsonRequired]
     public int? ActiveCharacterId { get; init; }
     public int UnreadNotificationsCount { get; init; }
+    public int ActiveMarketplaceOffersCount { get; init; }
     [JsonRequired]
     public UserClanViewModel? ClanMembership { get; init; }
 
-    public void Mapping(Profile profile)
-    {
-        profile.CreateMap<User, UserViewModel>()
-            .ForMember(u => u.UnreadNotificationsCount, opt => opt.MapFrom(u => u.Notifications.Where(un => un.State == NotificationState.Unread).Count()))
+    public void Mapping(Profile profile) => profile.CreateMap<User, UserViewModel>()
+            .ForMember(u => u.UnreadNotificationsCount,
+                opt => opt.MapFrom(u => u.Notifications.Count(un => un.State == NotificationState.Unread)))
+            .ForMember(u => u.ReservedGold,
+                opt => opt.MapFrom(u =>
+                    u.Offers.Sum(o =>
+                        o.GoldFee +
+                        o.Assets.Where(a => a.Side == MarketplaceOfferAssetSide.Offered).Sum(a => a.Gold))))
+            .ForMember(u => u.ReservedHeirloomPoints,
+                opt => opt.MapFrom(u =>
+                    u.Offers.SelectMany(o =>
+                        o.Assets.Where(a => a.Side == MarketplaceOfferAssetSide.Offered)).Sum(a => a.HeirloomPoints)))
+            .ForMember(u => u.ActiveMarketplaceOffersCount, opt => opt.MapFrom(u => u.Offers.Count))
             .ForMember(dest => dest.IsRecent, opt => opt.Ignore());
-    }
 }

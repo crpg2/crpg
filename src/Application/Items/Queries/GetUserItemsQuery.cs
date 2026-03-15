@@ -26,6 +26,7 @@ public record GetUserItemsQuery : IMediatorRequest<IList<UserItemViewModel>>
                         .ThenInclude(cm => cm!.User)
                 .Include(ui => ui.PersonalItem)
                 .Include(ui => ui.ClanArmoryBorrowedItem)
+                .Include(ui => ui.MarketplaceOfferAssets)
                 .Where(ui =>
                    (ui.Item!.Enabled || ui.PersonalItem != null)
                    && (ui.UserId == req.UserId || ui.ClanArmoryBorrowedItem!.BorrowerUserId == req.UserId))

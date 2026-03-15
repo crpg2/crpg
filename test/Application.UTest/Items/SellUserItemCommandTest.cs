@@ -1,7 +1,9 @@
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Items.Commands;
+using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Users;
 using Moq;
 using NUnit.Framework;
@@ -16,13 +18,13 @@ public class SellUserItemCommandTest : TestBase
         User user = new()
         {
             Gold = 0,
-            Items = new List<UserItem>
-            {
+            Items =
+            [
                 new()
                 {
                     Item = new Item { Price = 100, Enabled = true },
                 },
-            },
+            ],
         };
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
@@ -79,13 +81,13 @@ public class SellUserItemCommandTest : TestBase
         User user = new()
         {
             Gold = 0,
-            Items = new List<UserItem>
-            {
+            Items =
+            [
                 new()
                 {
                     Item = new Item { Enabled = false },
                 },
-            },
+            ],
         };
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
@@ -107,20 +109,133 @@ public class SellUserItemCommandTest : TestBase
         User user = new()
         {
             Gold = 0,
-            Items = new List<UserItem>
-            {
+            Items =
+            [
                 new()
                 {
                     Id = 1,
                     Item = heirloomedItem,
                 },
-            },
+            ],
         };
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
         IItemService itemService = Mock.Of<IItemService>();
         SellUserItemCommand.Handler handler = new(ActDb, itemService, Mock.Of<IActivityLogService>());
+        var result = await handler.Handle(new SellUserItemCommand
+        {
+            UserItemId = user.Items[0].Id,
+            UserId = user.Id,
+        }, CancellationToken.None);
+        Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.ItemNotSellable));
+    }
+
+    [Test]
+    public async Task PersonalItemShouldNotBeSellable()
+    {
+        User user = new()
+        {
+            Items = [
+                new()
+                {
+                    Item = new Item { Enabled = true },
+                    PersonalItem = new(),
+                }
+            ],
+        };
+        ArrangeDb.Users.Add(user);
+        await ArrangeDb.SaveChangesAsync();
+
+        SellUserItemCommand.Handler handler = new(ActDb, Mock.Of<IItemService>(), Mock.Of<IActivityLogService>());
+        var result = await handler.Handle(new SellUserItemCommand
+        {
+            UserItemId = user.Items[0].Id,
+            UserId = user.Id,
+        }, CancellationToken.None);
+        Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.ItemNotSellable));
+    }
+
+    [Test]
+    public async Task ClanArmoryItemShouldNotBeSellable()
+    {
+        User user = new()
+        {
+            Items =
+            [
+                new()
+                {
+                    Item = new Item { Enabled = true },
+                    ClanArmoryItem = new ClanArmoryItem(),
+                },
+            ],
+        };
+        ArrangeDb.Users.Add(user);
+        await ArrangeDb.SaveChangesAsync();
+
+        SellUserItemCommand.Handler handler = new(ActDb, Mock.Of<IItemService>(), Mock.Of<IActivityLogService>());
+        var result = await handler.Handle(new SellUserItemCommand
+        {
+            UserItemId = user.Items[0].Id,
+            UserId = user.Id,
+        }, CancellationToken.None);
+        Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.ItemNotSellable));
+    }
+
+    [Test]
+    public async Task ClanArmoryBorrowedItemShouldNotBeSellable()
+    {
+        User user = new()
+        {
+            Items =
+            {
+                new()
+                {
+                    Item = new Item { Enabled = true },
+                    ClanArmoryBorrowedItem = new ClanArmoryBorrowedItem { BorrowerUserId = 99 },
+                },
+            },
+        };
+        ArrangeDb.Users.Add(user);
+        await ArrangeDb.SaveChangesAsync();
+
+        SellUserItemCommand.Handler handler = new(ActDb, Mock.Of<IItemService>(), Mock.Of<IActivityLogService>());
+        var result = await handler.Handle(new SellUserItemCommand
+        {
+            UserItemId = user.Items[0].Id,
+            UserId = user.Id,
+        }, CancellationToken.None);
+        Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.ItemNotSellable));
+    }
+
+    [Test]
+    public async Task MarketplaceListedItemShouldNotBeSellable()
+    {
+        User user = new()
+        {
+            Items = [
+                new()
+                {
+                    Item = new Item { Enabled = true },
+                }
+            ],
+        };
+        ArrangeDb.Users.Add(user);
+        await ArrangeDb.SaveChangesAsync();
+
+        ArrangeDb.MarketplaceOffers.Add(new MarketplaceOffer
+        {
+            SellerId = user.Id,
+            ExpiresAt = DateTime.UtcNow.AddDays(7),
+            Assets =
+            [
+                new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItemId = user.Items[0].Id },
+                new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, Gold = 100 },
+            ],
+        });
+        await ArrangeDb.SaveChangesAsync();
+
+        SellUserItemCommand.Handler handler = new(ActDb, Mock.Of<IItemService>(), Mock.Of<IActivityLogService>());
         var result = await handler.Handle(new SellUserItemCommand
         {
             UserItemId = user.Items[0].Id,

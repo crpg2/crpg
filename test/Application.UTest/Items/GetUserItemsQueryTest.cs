@@ -1,6 +1,7 @@
 using Crpg.Application.Items.Queries;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Users;
 using NUnit.Framework;
 
@@ -120,5 +121,46 @@ public class GetUserItemsQueryTest : TestBase
             new GetUserItemsQuery { UserId = borrower.Id }, CancellationToken.None);
 
         Assert.That(result.Data, Is.Empty);
+    }
+
+    [Test]
+    public async Task IsListedOnMarketplaceWhenOfferedAsset()
+    {
+        var item = new Item { Id = "1", Enabled = true };
+        var userItem = new UserItem { Item = item };
+        var user = ArrangeDb.Users.Add(new User { Items = { userItem } });
+        await ArrangeDb.SaveChangesAsync();
+
+        ArrangeDb.MarketplaceOffers.Add(new MarketplaceOffer
+        {
+            SellerId = user.Entity.Id,
+            ExpiresAt = DateTime.UtcNow.AddDays(7),
+            Assets =
+            [
+                new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItemId = userItem.Id },
+                new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, Gold = 100 },
+            ],
+        });
+        await ArrangeDb.SaveChangesAsync();
+
+        var result = await new GetUserItemsQuery.Handler(ActDb, Mapper).Handle(
+            new GetUserItemsQuery { UserId = user.Entity.Id }, CancellationToken.None);
+
+        Assert.That(result.Data!.Single().IsListedOnMarketplace, Is.True);
+    }
+
+    [Test]
+    public async Task IsNotListedOnMarketplaceWhenNoOfferedAsset()
+    {
+        var user = ArrangeDb.Users.Add(new User
+        {
+            Items = { new() { Item = new Item { Id = "1", Enabled = true } } },
+        });
+        await ArrangeDb.SaveChangesAsync();
+
+        var result = await new GetUserItemsQuery.Handler(ActDb, Mapper).Handle(
+            new GetUserItemsQuery { UserId = user.Entity.Id }, CancellationToken.None);
+
+        Assert.That(result.Data!.Single().IsListedOnMarketplace, Is.False);
     }
 }

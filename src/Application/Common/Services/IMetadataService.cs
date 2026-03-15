@@ -1,17 +1,41 @@
+using System.Text.Json;
+using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Marketplace;
+
 namespace Crpg.Application.Common.Services;
 
 internal interface IMetadataService
 {
     EntitiesFromMetadata ExtractEntitiesFromMetadata(IEnumerable<KeyValuePair<string, string>> metadata);
+
+    MetadataItem? ConvertItemToMetadataItem(Item? item);
+
+    List<IMetadata> ConvertMarketplaceOfferToMetadata(MarketplaceOfferAsset offered, MarketplaceOfferAsset requested);
 }
 
-internal record struct EntitiesFromMetadata
+internal interface IMetadata
+{
+    string Key { get; }
+    string Value { get; }
+}
+
+internal record Metadata(string Key, string Value) : IMetadata;
+
+internal class MetadataItem
+{
+    public string Id { get; set; } = string.Empty;
+    public string BaseId { get; set; } = string.Empty;
+    public int Rank { get; set; }
+    public string Name { get; set; } = string.Empty;
+}
+
+internal readonly record struct EntitiesFromMetadata
 {
     public EntitiesFromMetadata()
     {
-        ClansIds = new List<int>();
-        UsersIds = new List<int>();
-        CharactersIds = new List<int>();
+        ClansIds = [];
+        UsersIds = [];
+        CharactersIds = [];
     }
 
     public IList<int> ClansIds { get; init; }
@@ -35,7 +59,7 @@ internal class MetadataService : IMetadataService
                 }
             }
 
-            if ((md.Key == "userId" || md.Key == "actorUserId" || md.Key == "targetUserId")
+            if ((md.Key == "userId" || md.Key == "actorUserId" || md.Key == "targetUserId" || md.Key == "sellerId" || md.Key == "buyerId")
                 && int.TryParse(md.Value, out int userId))
             {
                 if (!output.UsersIds.Contains(userId))
@@ -54,5 +78,45 @@ internal class MetadataService : IMetadataService
         }
 
         return output;
+    }
+
+    public List<IMetadata> ConvertMarketplaceOfferToMetadata(MarketplaceOfferAsset offered, MarketplaceOfferAsset requested)
+    {
+        var options = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        };
+
+        return
+        [
+            new Metadata("offered", JsonSerializer.Serialize(new
+            {
+                offered.Gold,
+                offered.HeirloomPoints,
+                Item = ConvertItemToMetadataItem(offered.UserItem?.Item),
+            }, options)),
+            new Metadata("requested", JsonSerializer.Serialize(new
+            {
+                requested.Gold,
+                requested.HeirloomPoints,
+                Item = ConvertItemToMetadataItem(requested.Item),
+            }, options)),
+        ];
+    }
+
+    public MetadataItem? ConvertItemToMetadataItem(Item? item)
+    {
+        if (item == null)
+        {
+            return null;
+        }
+
+        return new MetadataItem
+        {
+            Id = item.Id,
+            BaseId = item.BaseId,
+            Name = item.Name,
+            Rank = item.Rank,
+        };
     }
 }

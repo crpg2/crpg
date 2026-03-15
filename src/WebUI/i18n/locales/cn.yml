@@ -747,7 +747,6 @@ character:
             warning: 该物品在家族军械库中。请先从军械库中取出。
     filter:
       hideInArmory: 隐藏军械库中的物品
-      showInArmory: 显示军械库中的物品
 
   doll:
     slot:
@@ -980,7 +979,9 @@ user:
   field:
     name: 用户名
     gold: 金币
-    heirloom: 转生点
+    reservedGold: 保留的金币
+    heirloomPoints: 转生点
+    reservedHeirloomPoints: 保留的转生点
   settings:
     title: 账户设置
     dangerZone: 危险区域
@@ -1519,6 +1520,14 @@ notification:
   ItemReturned:
     title: 物品已归还
     tpl: '物品 {item} 已从你的物品栏中移除。退还 {refundedGold} {refundedHeirloomPoints}'
+
+  MarketplaceOfferExpired:
+    title: 市场报价已过期
+    tpl: '你的市场报价 #{offerId} 已过期。已退还：{refundedGold} {refundedHeirloomPoints}'
+
+  MarketplaceOfferCancelled:
+    title: 市场报价已取消
+    tpl: '你的市场报价 #{offerId} 已取消。已退还：{refundedGold} {refundedHeirloomPoints}'
 
   ClanMemberRoleChangedToUser:
     title: 家族身份已更改

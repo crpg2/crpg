@@ -270,8 +270,10 @@ const sorting = ref<SortingState>([])
     </UTable>
 
     <UiGridPagination
-      v-if="table?.tableApi"
-      :table-api="toRef(() => table!.tableApi)"
+      :page="pagination.pageIndex + 1"
+      :size="pagination.pageSize"
+      :total="table?.tableApi.getFilteredRowModel().rows.length ?? 0"
+      @update:page="(page) => table?.tableApi.setPageIndex(page - 1)"
     />
   </div>
 </template>

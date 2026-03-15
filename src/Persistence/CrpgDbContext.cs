@@ -7,6 +7,7 @@ using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
+using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
@@ -63,6 +64,8 @@ public class CrpgDbContext : DbContext, ICrpgDbContext
     public DbSet<BattleFighterApplication> BattleFighterApplications { get; set; } = default!;
     public DbSet<BattleParticipant> BattleParticipants { get; set; } = default!;
     public DbSet<BattleMercenaryApplication> BattleMercenaryApplications { get; set; } = default!;
+    public DbSet<MarketplaceOffer> MarketplaceOffers { get; set; } = default!;
+    public DbSet<MarketplaceOfferAsset> MarketplaceOfferAssets { get; set; } = default!;
     public DbSet<ActivityLog> ActivityLogs { get; set; } = default!;
     public DbSet<ActivityLogMetadata> ActivityLogMetadata { get; set; } = default!;
     public DbSet<UserNotification> UserNotifications { get; set; } = default!;

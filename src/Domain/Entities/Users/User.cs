@@ -2,6 +2,7 @@ using Crpg.Domain.Common;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
@@ -47,12 +48,13 @@ public class User : AuditableEntity
     /// <summary>Used of optimistic concurrency.</summary>
     public uint Version { get; set; }
 
-    public IList<UserItem> Items { get; set; } = new List<UserItem>();
-    public IList<UserItemPreset> ItemPresets { get; set; } = new List<UserItemPreset>();
-    public IList<Character> Characters { get; set; } = new List<Character>();
+    public IList<UserItem> Items { get; set; } = [];
+    public IList<UserItemPreset> ItemPresets { get; set; } = [];
+    public IList<Character> Characters { get; set; } = [];
     public Character? ActiveCharacter { get; set; }
-    public IList<Restriction> Restrictions { get; set; } = new List<Restriction>();
+    public IList<Restriction> Restrictions { get; set; } = [];
     public ClanMember? ClanMembership { get; set; }
     public Party? Party { get; set; }
-    public IList<UserNotification> Notifications { get; set; } = new List<UserNotification>();
+    public IList<UserNotification> Notifications { get; set; } = [];
+    public IList<MarketplaceOffer> Offers { get; set; } = [];
 }

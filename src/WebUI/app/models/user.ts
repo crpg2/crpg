@@ -14,16 +14,19 @@ export interface User {
   platformUserId: string
   name: string
   gold: number
+  reservedGold: number
+  heirloomPoints: number
+  reservedHeirloomPoints: number
   avatar: string | null
   region: Region
   isDonor: boolean
   isRecent: boolean
   role: Role
-  heirloomPoints: number
   experienceMultiplier: number
   activeCharacterId: number | null
   unreadNotificationsCount: number
   clanMembership: UserClanMembership | null
+  activeMarketplaceOffersCount: number
 }
 
 export interface UserPublic
@@ -31,11 +34,11 @@ export interface UserPublic
 
 export interface UserPrivate extends UserPublic {
   gold: number
+  heirloomPoints: number
   note: string
   createdAt: Date
   updatedAt: Date
   isDonor: boolean
-  heirloomPoints: number
   experienceMultiplier: number
   activeCharacterId: number | null
 }
@@ -52,6 +55,7 @@ export interface UserItem {
   createdAt: Date
   isBroken: boolean
   isPersonal: boolean
+  isListedOnMarketplace: boolean
   clanArmoryLender: ClanMember | null
 }
 

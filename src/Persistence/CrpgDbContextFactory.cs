@@ -4,6 +4,7 @@ using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
@@ -50,6 +51,7 @@ public class CrpgDbContextFactory : IDesignTimeDbContextFactory<CrpgDbContext>
                         .MapEnum<BattleParticipantType>()
                         .MapEnum<BattleFighterApplicationStatus>()
                         .MapEnum<BattleMercenaryApplicationStatus>()
+                        .MapEnum<MarketplaceOfferAssetSide>()
                         .MapEnum<Region>()
                         .MapEnum<Languages>()
                         .MapEnum<GameMode>()

@@ -176,10 +176,12 @@ internal class ClanService(IActivityLogService activityLogService, IUserNotifica
                     ui.UserId == user.Id
                     && ui.Id == userItemId
                     && ui.Item!.Enabled
+                    && !ui.IsBroken
                     && ui.Item.Type != ItemType.Banner)
                 .Include(ui => ui.Item)
                 .Include(ui => ui.ClanArmoryItem)
                 .Include(ui => ui.EquippedItems)
+                .Include(ui => ui.MarketplaceOfferAssets)
                 .FirstOrDefaultAsync(cancellationToken);
 
         if (userItem == null)
@@ -187,7 +189,7 @@ internal class ClanService(IActivityLogService activityLogService, IUserNotifica
             return new(CommonErrors.UserItemNotFound(userItemId));
         }
 
-        if (userItem.EquippedItems.Any())
+        if (userItem.EquippedItems.Count != 0)
         {
             db.EquippedItems.RemoveRange(userItem.EquippedItems);
         }
@@ -197,7 +199,17 @@ internal class ClanService(IActivityLogService activityLogService, IUserNotifica
             return new(CommonErrors.UserItemInUse(userItemId));
         }
 
-        var armoryItem = new ClanArmoryItem { LenderClanId = clan.Id, UserItemId = userItem.Id, LenderUserId = user.Id };
+        if (userItem.MarketplaceOfferAssets.Count != 0)
+        {
+            return new(CommonErrors.UserItemInMarketplace(userItemId));
+        }
+
+        var armoryItem = new ClanArmoryItem
+        {
+            LenderClanId = clan.Id,
+            UserItemId = userItem.Id,
+            LenderUserId = user.Id,
+        };
         db.ClanArmoryItems.Add(armoryItem);
 
         return new(armoryItem);

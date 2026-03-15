@@ -50,6 +50,7 @@ const isCrpgApiResult = (result: unknown): result is CrpgApiResult<unknown> => {
     return false
   }
 
+  // TODO: FIXME: data не всегда есть
   return 'data' in result && 'errors' in result
 }
 
@@ -79,10 +80,12 @@ export const onResponseError = async (
     })
   }
 
-  if (roles?.length && response.status === 401) {
-    showErrorToast('Session expired')
-    await delay(1000)
-    await login((globalThis.localStorage?.getItem('user-platform') as Platform) ?? PLATFORM.Steam)
+  if (response.status === 401) {
+    if (roles?.length) {
+      showErrorToast('Session expired')
+      await delay(1000)
+      return login((globalThis.localStorage?.getItem('user-platform') as Platform) ?? PLATFORM.Steam)
+    }
     return
   }
 
@@ -99,7 +102,7 @@ export const onResponseError = async (
     }
 
     showErrorToast()
-    logger?.error?.('Crpg Api Error', responseData)
+    logger?.error?.('Unknown Crpg Api Error', responseData)
     return
   }
 

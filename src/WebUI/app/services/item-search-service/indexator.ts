@@ -1,4 +1,4 @@
-import { cloneDeep } from 'es-toolkit'
+import { uniq } from 'es-toolkit'
 
 import type {
   Item,
@@ -62,6 +62,14 @@ const VISIBLE_WEAPON_FLAGS: WeaponFlag[] = [
   WEAPON_FLAG.MultiplePenetration,
   WEAPON_FLAG.CantUseOnHorseback,
 ]
+
+const VISIBLE_ITEM_FLAGS_SET = new Set(VISIBLE_ITEM_FLAGS)
+const VISIBLE_ITEM_USAGE_SET = new Set(VISIBLE_ITEM_USAGE)
+const VISIBLE_WEAPON_FLAGS_SET = new Set(VISIBLE_WEAPON_FLAGS)
+
+const RANGED_ITEM_TYPES_SET = new Set<ItemType>([ITEM_TYPE.Bow, ITEM_TYPE.Crossbow, ITEM_TYPE.Musket, ITEM_TYPE.Pistol])
+const AMMO_DAMAGE_ITEM_TYPES_SET = new Set<ItemType>([ITEM_TYPE.Bolts, ITEM_TYPE.Arrows, ITEM_TYPE.Thrown, ITEM_TYPE.Bullets])
+const AMMO_ITEM_TYPES_SET = new Set<ItemType>([ITEM_TYPE.Arrows, ITEM_TYPE.Bolts, ITEM_TYPE.Bullets])
 
 const itemTypeByWeaponClass: Record<WeaponClass, ItemType> = {
   [WEAPON_CLASS.Arrow]: ITEM_TYPE.Ammo,
@@ -161,41 +169,44 @@ const mapWeaponProps = (item: Item) => {
         : originalWeapon.thrustDamageType,
     thrustSpeed: originalWeapon.thrustDamage !== 0 ? originalWeapon.thrustSpeed : 0,
     weaponClass: originalWeapon.class,
-    weaponFlags: originalWeapon.flags,
+    weaponFlags: [...originalWeapon.flags],
     weaponPrimaryClass: originalWeapon.class,
   }
 
   if (item.type === ITEM_TYPE.Shield) {
-    if (isLargeShield(item)) {
-      weapon.weaponFlags.push(WEAPON_FLAG.CantUseOnHorseback)
-    }
+    const weaponFlags = isLargeShield(item) && !weapon.weaponFlags.includes(WEAPON_FLAG.CantUseOnHorseback)
+      ? [...weapon.weaponFlags, WEAPON_FLAG.CantUseOnHorseback]
+      : weapon.weaponFlags
 
     return {
       ...weapon,
+      weaponFlags,
       shieldArmor: originalWeapon.bodyArmor,
       shieldDurability: originalWeapon.stackAmount,
       shieldSpeed: originalWeapon.swingSpeed,
     }
   }
 
-  if (([ITEM_TYPE.Bow, ITEM_TYPE.Crossbow, ITEM_TYPE.Musket, ITEM_TYPE.Pistol] as ItemType[]).includes(item.type)) {
+  if (RANGED_ITEM_TYPES_SET.has(item.type)) {
     // add custom flag
-    if (
+    const weaponFlags = (
       item.type === ITEM_TYPE.Crossbow
       && !originalWeapon.flags.includes(WEAPON_FLAG.CantReloadOnHorseback)
-    ) {
-      weapon.weaponFlags.push(WEAPON_FLAG.CanReloadOnHorseback)
-    }
+      && !weapon.weaponFlags.includes(WEAPON_FLAG.CanReloadOnHorseback)
+    )
+      ? [...weapon.weaponFlags, WEAPON_FLAG.CanReloadOnHorseback]
+      : weapon.weaponFlags
 
     return {
       ...weapon,
+      weaponFlags,
       aimSpeed: originalWeapon.thrustSpeed,
       damage: originalWeapon.thrustDamage,
       reloadSpeed: originalWeapon.swingSpeed,
     }
   }
 
-  if (([ITEM_TYPE.Bolts, ITEM_TYPE.Arrows, ITEM_TYPE.Thrown, ITEM_TYPE.Bullets] as ItemType[]).includes(item.type)) {
+  if (AMMO_DAMAGE_ITEM_TYPES_SET.has(item.type)) {
     return {
       ...weapon,
       damage: originalWeapon.thrustDamage,
@@ -244,7 +255,7 @@ const mapArmorProps = (item: Item) => {
 }
 
 const mapWeight = (item: Item) => {
-  if (([ITEM_TYPE.Thrown, ITEM_TYPE.Bolts, ITEM_TYPE.Arrows, ITEM_TYPE.Bullets] as ItemType[]).includes(item.type)) {
+  if (AMMO_DAMAGE_ITEM_TYPES_SET.has(item.type)) {
     const [weapon] = item.weapons
 
     return {
@@ -277,8 +288,8 @@ const mapMountProps = (item: Item) => {
   }
 }
 
-const generateModId = (item: Item, weaponClass?: WeaponClass) => {
-  return `${item.id}_${item.type}${weaponClass !== undefined ? `_${weaponClass}` : ''}`
+const generateModId = (itemId: Item, itemType: ItemType, weaponClass?: WeaponClass) => {
+  return `${itemId.id}_${itemType}${weaponClass !== undefined ? `_${weaponClass}` : ''}`
 }
 
 /**
@@ -286,46 +297,57 @@ const generateModId = (item: Item, weaponClass?: WeaponClass) => {
  * @description Change the type for grouping to UI (e.g., group ranged or ammo)
  */
 const mapItemType = (type: ItemType): ItemType => {
-  if (([ITEM_TYPE.Bow, ITEM_TYPE.Crossbow, ITEM_TYPE.Musket, ITEM_TYPE.Pistol] as ItemType[]).includes(type)) {
+  if (RANGED_ITEM_TYPES_SET.has(type)) {
     return ITEM_TYPE.Ranged
   }
 
-  if (([ITEM_TYPE.Arrows, ITEM_TYPE.Bolts, ITEM_TYPE.Bullets] as ItemType[]).includes(type)) {
+  if (AMMO_ITEM_TYPES_SET.has(type)) {
     return ITEM_TYPE.Ammo
   }
 
   return type
 }
 
-const itemToFlat = (item: Item, newItemDateThreshold: number): ItemFlat => {
-  const weaponProps = mapWeaponProps(item)
+const itemToFlat = <
+  TItem extends { item: Item },
+  TMeta extends { [key: string]: unknown } = { [key: string]: unknown },
+>(
+  wrapper: TItem,
+  newItemDateThreshold: number,
+  writeMeta?: (item: TItem) => TMeta,
+): ItemFlat<TMeta> => {
+  const weaponProps = mapWeaponProps(wrapper.item)
 
-  const flags = [
-    ...item.flags.filter(flag => VISIBLE_ITEM_FLAGS.includes(flag)),
-    ...weaponProps.weaponFlags.filter(wf => VISIBLE_WEAPON_FLAGS.includes(wf)),
-    ...weaponProps.itemUsage.filter(iu => VISIBLE_ITEM_USAGE.includes(iu)),
-  ]
+  const flags = uniq([
+    ...wrapper.item.flags.filter(flag => VISIBLE_ITEM_FLAGS_SET.has(flag)),
+    ...weaponProps.weaponFlags.filter(wf => VISIBLE_WEAPON_FLAGS_SET.has(wf)),
+    ...weaponProps.itemUsage.filter(iu => VISIBLE_ITEM_USAGE_SET.has(iu)),
+  ])
 
+  const { id, type, baseId, culture, name, createdAt, price, rank, requirement, tier } = wrapper.item
+
+  const resolvedType = mapItemType(type)
   return {
-    id: item.id,
-    type: mapItemType(item.type),
-    baseId: item.baseId,
-    culture: item.culture,
+    id,
+    type: resolvedType,
+    baseId,
+    culture,
     flags,
-    modId: generateModId(item, weaponProps.weaponClass ?? undefined),
-    name: item.name,
-    isNew: new Date(item.createdAt).getTime() > newItemDateThreshold,
-    price: item.price,
-    rank: item.rank,
-    requirement: item.requirement,
-    tier: roundFLoat(item.tier),
-    upkeep: computeAverageRepairCostPerHour(item.price),
+    modId: generateModId(wrapper.item, resolvedType, weaponProps.weaponClass ?? undefined),
+    name,
+    isNew: createdAt.getTime() > newItemDateThreshold,
+    price,
+    rank,
+    requirement,
+    tier: roundFLoat(tier),
+    upkeep: computeAverageRepairCostPerHour(price),
     weaponUsage: [WEAPON_USAGE.Primary],
-    ...mapWeight(item),
-    ...mapArmorProps(item),
-    ...mapMountProps(item),
+    ...mapWeight(wrapper.item),
+    ...mapArmorProps(wrapper.item),
+    ...mapMountProps(wrapper.item),
     ...weaponProps,
     upgrades: [],
+    meta: writeMeta ? writeMeta(wrapper) : ({} as TMeta),
   }
 }
 
@@ -372,72 +394,103 @@ const getPrimaryWeaponClass = (item: Item) => {
   return null
 }
 
-// TODO: FIXME: SPEC cloneMultipleUsageWeapon param
-export const createItemIndex = (items: Item[], cloneMultipleUsageWeapon = false): ItemFlat[] => {
+export interface CreateItemIndexOptions<TItem, TMeta extends { [key: string]: unknown }> {
+  cloneMultipleUsageWeapon?: boolean
+  writeMeta?: (item: TItem) => TMeta
+}
+
+export function createItemIndex<
+  TMeta extends { [key: string]: unknown },
+>(
+  items: Item[],
+  options?: CreateItemIndexOptions<Item, TMeta>,
+): ItemFlat[]
+export function createItemIndex<
+  TWrappedItem extends { item: Item },
+  TMeta extends { [key: string]: unknown },
+>(
+  items: TWrappedItem[],
+  options?: CreateItemIndexOptions<TWrappedItem, TMeta>):
+ItemFlat<TMeta>[]
+
+export function createItemIndex<
+  TWrappedItem extends { item: Item },
+  TMeta extends { [key: string]: unknown } = { [key: string]: unknown },
+>(
+  items: (Item | TWrappedItem)[],
+  options?: CreateItemIndexOptions<TWrappedItem, TMeta>,
+): ItemFlat<TMeta>[] {
+  const writeMeta = options?.writeMeta
+  const cloneMultipleUsageWeapon = options?.cloneMultipleUsageWeapon ?? false
   const newItemDateThreshold = new Date().setDate(new Date().getDate() - itemIsNewDays)
+  const outByModId = new Map<string, number>()
 
   // TODO: try to remove cloneDeep
-  const result = cloneDeep(items).reduce<ItemFlat[]>((out, item) => {
-    // TODO: bows have 2 loading modes, so there are several objects in the weapons data structure
-    if (item.weapons.length > 1 && item.type !== ITEM_TYPE.Bow) {
-      item.weapons.forEach((w) => {
-        const weaponClass = normalizeWeaponClass(item.type, w)
-        const isPrimaryUsage = checkWeaponIsPrimaryUsage(item.type, w, item.weapons)
-        // fixes a duplicate class, ex. Hoe: 1h/2h/1h
-        const itemTypeAlreadyExistIdx = out.findIndex((fi) => {
+  const result = items
+    .reduce<ItemFlat<TMeta>[]>((out, _wrapper) => {
+      const wrapper = 'item' in _wrapper ? _wrapper as TWrappedItem : { item: _wrapper } as TWrappedItem
+      // TODO: bows have 2 loading modes, so there are several objects in the weapons data structure
+      if (wrapper.item.weapons.length > 1 && wrapper.item.type !== ITEM_TYPE.Bow) {
+        wrapper.item.weapons.forEach((w) => {
+          const weaponClass = normalizeWeaponClass(wrapper.item.type, w)
+          const isPrimaryUsage = checkWeaponIsPrimaryUsage(wrapper.item.type, w, wrapper.item.weapons)
+          const targetType = itemTypeByWeaponClass[weaponClass]
+          const targetModId = generateModId(wrapper.item, targetType, weaponClass)
+          // fixes a duplicate class, ex. Hoe: 1h/2h/1h
+          const itemTypeAlreadyExistIdx = outByModId.get(targetModId) ?? -1
+
           // console.table({
-          //   fiType: fi.type,
-          //   itemType: item.type,
-          //   fiModId: fi.modId,
-          //   itemId: generateModId(item, w.class),
-          //   exist:
-          //     fi.modId ===
-          //     generateModId({ ...item, type: itemTypeByWeaponClass[w.class] }, w.class),
+          //   idx,
+          //   out: JSON.stringify(out.map(dd => ({ class: dd.weaponClass, type: dd.type }))),
+          //   type: item.type,
+          //   class: w.class,
+          //   itemTypeByWeaponClass: itemTypeByWeaponClass[w.class],
+          //   itemTypeAlreadyExistIdx,
+          //   isPrimaryUsage,
+          //   modId: generateModId(item, w.class),
           // });
-          return (
-            fi.modId === generateModId({ ...item, type: itemTypeByWeaponClass[weaponClass] }, weaponClass)
-          )
-        })
 
-        // console.table({
-        //   idx,
-        //   out: JSON.stringify(out.map(dd => ({ class: dd.weaponClass, type: dd.type }))),
-        //   type: item.type,
-        //   class: w.class,
-        //   itemTypeByWeaponClass: itemTypeByWeaponClass[w.class],
-        //   itemTypeAlreadyExistIdx,
-        //   isPrimaryUsage,
-        //   modId: generateModId(item, w.class),
-        // });
-
-        // merge itemUsage, if the weapon has several of the same class
-        if (itemTypeAlreadyExistIdx !== -1) {
-          if (VISIBLE_ITEM_USAGE.includes(w.itemUsage)) {
-            out[itemTypeAlreadyExistIdx]?.flags.push(w.itemUsage)
+          // merge itemUsage, if the weapon has several of the same class
+          if (itemTypeAlreadyExistIdx !== -1) {
+            if (VISIBLE_ITEM_USAGE_SET.has(w.itemUsage) && !out[itemTypeAlreadyExistIdx]?.flags.includes(w.itemUsage)) {
+              out[itemTypeAlreadyExistIdx]?.flags.push(w.itemUsage)
+            }
+            return
           }
-          return
-        }
 
-        if (isPrimaryUsage || cloneMultipleUsageWeapon) {
-          out.push({
-            ...itemToFlat({
-              ...item,
-              type: itemTypeByWeaponClass[weaponClass],
-              weapons: [{ ...w, class: weaponClass }], // TODO:
-            }, newItemDateThreshold),
-            weaponPrimaryClass: isPrimaryUsage ? weaponClass : getPrimaryWeaponClass(item),
-            weaponUsage: [isPrimaryUsage ? WEAPON_USAGE.Primary : WEAPON_USAGE.Secondary],
-          })
-        }
-      })
-    }
-    //
-    else {
-      out.push(itemToFlat(item, newItemDateThreshold))
-    }
+          if (isPrimaryUsage || cloneMultipleUsageWeapon) {
+            out.push({
+              ...itemToFlat(
+                {
+                  ...wrapper,
+                  item: {
+                    ...wrapper.item,
+                    type: targetType,
+                    weapons: [{ ...w, class: weaponClass }], // TODO: ?
+                  },
+                },
+                newItemDateThreshold,
+                writeMeta,
+              ),
+              weaponPrimaryClass: isPrimaryUsage ? weaponClass : getPrimaryWeaponClass(wrapper.item),
+              weaponUsage: [isPrimaryUsage ? WEAPON_USAGE.Primary : WEAPON_USAGE.Secondary],
+            })
+            outByModId.set(targetModId, out.length - 1)
+          }
+        })
+      }
+      else {
+        const flat = itemToFlat(
+          wrapper,
+          newItemDateThreshold,
+          writeMeta,
+        )
+        out.push(flat)
+        outByModId.set(flat.modId, out.length - 1)
+      }
 
-    return out
-  }, [])
+      return out
+    }, [])
 
   // console.log(result);
 

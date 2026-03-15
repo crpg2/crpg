@@ -3,6 +3,7 @@ using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Items.Models;
+using Crpg.Application.Marketplace.Services;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.ActivityLogs;
 using Crpg.Domain.Entities.Battles;
@@ -10,6 +11,7 @@ using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
+using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
@@ -25,7 +27,9 @@ namespace Crpg.Application.System.Commands;
 
 public record SeedDataCommand : IMediatorRequest
 {
-    internal class Handler : IMediatorRequestHandler<SeedDataCommand>
+    internal class Handler(ICrpgDbContext db, IItemsSource itemsSource, IApplicationEnvironment appEnv,
+        ICharacterService characterService, IExperienceTable experienceTable, ICampaignMap campaignMap,
+        ISettlementsSource settlementsSource, IActivityLogService activityLogService, IUserNotificationService userNotificationService, IItemService itemService, IMarketplaceService marketplaceService) : IMediatorRequestHandler<SeedDataCommand>
     {
         private static readonly Dictionary<SettlementType, int> CampaignSettlementDefaultTroops = new()
         {
@@ -35,30 +39,18 @@ public record SeedDataCommand : IMediatorRequest
             [SettlementType.Town] = 8000,
         };
 
-        private readonly ICrpgDbContext _db;
-        private readonly IItemsSource _itemsSource;
-        private readonly IApplicationEnvironment _appEnv;
-        private readonly ICharacterService _characterService;
-        private readonly IExperienceTable _experienceTable;
-        private readonly IActivityLogService _activityLogService;
-        private readonly IUserNotificationService _userNotificationService;
-        private readonly ICampaignMap _campaignMap;
-        private readonly ISettlementsSource _settlementsSource;
+        private readonly ICrpgDbContext _db = db;
+        private readonly IItemsSource _itemsSource = itemsSource;
+        private readonly IApplicationEnvironment _appEnv = appEnv;
+        private readonly ICharacterService _characterService = characterService;
+        private readonly IExperienceTable _experienceTable = experienceTable;
+        private readonly IItemService _itemService = itemService;
+        private readonly IMarketplaceService _marketplaceService = marketplaceService;
 
-        public Handler(ICrpgDbContext db, IItemsSource itemsSource, IApplicationEnvironment appEnv,
-            ICharacterService characterService, IExperienceTable experienceTable, ICampaignMap campaignMap,
-            ISettlementsSource settlementsSource, IActivityLogService activityLogService, IUserNotificationService userNotificationService)
-        {
-            _db = db;
-            _itemsSource = itemsSource;
-            _appEnv = appEnv;
-            _characterService = characterService;
-            _experienceTable = experienceTable;
-            _campaignMap = campaignMap;
-            _settlementsSource = settlementsSource;
-            _activityLogService = activityLogService;
-            _userNotificationService = userNotificationService;
-        }
+        private readonly IActivityLogService _activityLogService = activityLogService;
+        private readonly IUserNotificationService _userNotificationService = userNotificationService;
+        private readonly ICampaignMap _campaignMap = campaignMap;
+        private readonly ISettlementsSource _settlementsSource = settlementsSource;
 
         public async ValueTask<Result> Handle(SeedDataCommand request, CancellationToken cancellationToken)
         {
@@ -602,6 +594,7 @@ public record SeedDataCommand : IMediatorRequest
 
             UserItem takeoItem1 = new() { User = takeo, ItemId = "crpg_thamaskene_steel_spatha_v1_h3" };
             UserItem takeoItem2 = new() { User = takeo, ItemId = "crpg_winds_fury_v1_h2" };
+            UserItem takeoItem3 = new() { User = takeo, ItemId = "crpg_wolf_shoulder_v2_h3" };
             UserItem orleItem1 = new() { User = orle, ItemId = "crpg_armet_h1", PersonalItem = new() };
             UserItem orleItem2 = new() { User = orle, ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h0", };
             UserItem orleItem3 = new() { User = orle, ItemId = "crpg_thamaskene_steel_spatha_v1_h2" };
@@ -621,6 +614,10 @@ public record SeedDataCommand : IMediatorRequest
             UserItem orleItem17 = new() { User = orle, ItemId = "crpg_basic_imperial_leather_armor_v2_h3" };
             UserItem orleItem18 = new() { User = orle, ItemId = "crpg_wooden_twohander_v3_h0", IsBroken = true };
             UserItem orleItem19 = new() { User = orle, ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h1" };
+            UserItem orleItem20 = new() { User = orle, ItemId = "crpg_14_decor_paltedboots_noble1_v1_h0" };
+            UserItem orle2Item1 = new() { User = orle2, ItemId = "crpg_cts_saxon_sword_h2" };
+            UserItem orle2Item2 = new() { User = orle2, ItemId = "crpg_ar_horse_armor_c_v3_h3" };
+            UserItem orle2Item3 = new() { User = orle2, ItemId = "crpg_mount1_maneuverable_14_v3_h0" };
             UserItem elmarykItem1 = new() { User = elmaryk, ItemId = "crpg_longsword_v3_h3" };
             UserItem elmarykItem2 = new() { User = elmaryk, ItemId = "crpg_avalanche_v2_h2" };
             UserItem laHireItem1 = new() { User = laHire, ItemId = "crpg_iron_cavalry_sword_v1_h1" };
@@ -639,7 +636,7 @@ public record SeedDataCommand : IMediatorRequest
 
             UserItem[] newUserItems =
             [
-                takeoItem1, takeoItem2, orleItem1, orleItem2, orleItem3, orleItem4, orleItem5, orleItem6, orleItem7, orleItem8, orleItem9, orleItem10, orleItem11, orleItem12, orleItem13, orleItem14, orleItem15, orleItem16, orleItem17, orleItem18, orleItem19,
+                takeoItem1, takeoItem2, takeoItem3, orleItem1, orleItem2, orleItem3, orleItem4, orleItem5, orleItem6, orleItem7, orleItem8, orleItem9, orleItem10, orleItem11, orleItem12, orleItem13, orleItem14, orleItem15, orleItem16, orleItem17, orleItem18, orleItem19, orleItem20, orle2Item1, orle2Item2, orle2Item3,
                 vickItem1, vickItem2, vickItem3, vickItem4, vickItem5, vickItem6, vickItem7, vickItem8, vickItem9, vickItem10, elmarykItem1, elmarykItem2, laHireItem1, laHirekItem2, laHirekItem3,
             ];
 
@@ -677,6 +674,137 @@ public record SeedDataCommand : IMediatorRequest
                 if (!existingUserItemPresets.ContainsKey(newUserItemPreset.Id))
                 {
                     _db.UserItemPresets.Add(newUserItemPreset);
+                }
+            }
+
+            MarketplaceOffer orleMarketplaceOffer1 = new()
+            {
+                Seller = orle,
+                Assets = [
+                    new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = orleItem17, Gold = 100_000 },
+                    new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, HeirloomPoints = 3 },
+                ],
+                GoldFee = 5000,
+                CreatedAt = DateTime.UtcNow.AddDays(-1).AddHours(-2),
+                ExpiresAt = DateTime.UtcNow.AddDays(6),
+            };
+
+            MarketplaceOffer orleMarketplaceOffer2 = new()
+            {
+                Seller = orle,
+                Assets = [
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = orleItem19, HeirloomPoints = 1 },
+                    new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, Gold = 100_000 },
+                ],
+                GoldFee = 5000,
+                CreatedAt = DateTime.UtcNow.AddDays(-6).AddHours(-23).AddMinutes(-59),
+                ExpiresAt = DateTime.UtcNow.AddMinutes(1),
+            };
+
+            MarketplaceOffer orleMarketplaceOffer3 = new()
+            {
+                Seller = orle,
+                Assets = [
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = orleItem17, HeirloomPoints = 1 },
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, ItemId = orle2Item1.ItemId },
+                ],
+                CreatedAt = DateTime.UtcNow,
+                ExpiresAt = DateTime.UtcNow.AddDays(6),
+            };
+
+            MarketplaceOffer orleMarketplaceOffer4 = new()
+            {
+                Seller = orle,
+                Assets = [
+                    new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = orleItem17 },
+                    new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, HeirloomPoints = 2, Gold = 100_000 },
+                ],
+                GoldFee = 5000,
+                CreatedAt = DateTime.UtcNow.AddDays(-1).AddHours(-2),
+                ExpiresAt = DateTime.UtcNow.AddDays(6),
+            };
+
+            MarketplaceOffer orle2MarketplaceOffer1 = new()
+            {
+                Seller = orle2,
+                Assets = [
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItemId = orle2Item1.Id, HeirloomPoints = 1 },
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, ItemId = "crpg_basic_imperial_leather_armor_v2_h3", Gold = 20_000 },
+                ],
+                GoldFee = 1000,
+                CreatedAt = DateTime.UtcNow,
+                ExpiresAt = DateTime.UtcNow.AddDays(6),
+            };
+
+            MarketplaceOffer orle2MarketplaceOffer2 = new()
+            {
+                Seller = orle2,
+                Assets = [
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = orle2Item2 },
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, ItemId = "crpg_steel_round_shield_v4_h3" },
+                ],
+                CreatedAt = DateTime.UtcNow,
+                ExpiresAt = DateTime.UtcNow.AddDays(6),
+            };
+
+            MarketplaceOffer orle2MarketplaceOffer3 = new()
+            {
+                Seller = orle2,
+                Assets = [
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = orle2Item3, Gold = 10_000 },
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, ItemId = "crpg_steel_round_shield_v4_h0" },
+                ],
+                CreatedAt = DateTime.UtcNow,
+                ExpiresAt = DateTime.UtcNow.AddDays(6),
+            };
+
+            MarketplaceOffer orle2MarketplaceOffer4 = new()
+            {
+                Seller = orle2,
+                Assets = [
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, Gold = 300_000 },
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested,  HeirloomPoints = 1 },
+                ],
+                GoldFee = 5000,
+                CreatedAt = DateTime.UtcNow,
+                ExpiresAt = DateTime.UtcNow.AddDays(6),
+            };
+
+            MarketplaceOffer orle2MarketplaceOffer5 = new()
+            {
+                Seller = orle2,
+                Assets = [
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, HeirloomPoints = 1 },
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, Gold = 300_000 },
+                ],
+                GoldFee = 5000,
+                CreatedAt = DateTime.UtcNow,
+                ExpiresAt = DateTime.UtcNow.AddDays(6),
+            };
+
+            MarketplaceOffer takeoMarketplaceOffer5 = new()
+            {
+                Seller = takeo,
+                Assets = [
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = takeoItem3 },
+                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, Gold = 300_000 },
+                ],
+                GoldFee = 5000,
+                CreatedAt = DateTime.UtcNow,
+                ExpiresAt = DateTime.UtcNow.AddDays(1),
+            };
+
+            MarketplaceOffer[] marketplaceOffers = [
+              orleMarketplaceOffer1, orleMarketplaceOffer2, orleMarketplaceOffer3, orleMarketplaceOffer4, orle2MarketplaceOffer1, orle2MarketplaceOffer3, orle2MarketplaceOffer4,
+              orle2MarketplaceOffer5, takeoMarketplaceOffer5,
+            ];
+
+            var existingMarketplaceOffers = await _db.MarketplaceOffers.ToDictionaryAsync(pi => pi.Id, cancellationToken);
+            foreach (var newMarketplaceOffer in marketplaceOffers)
+            {
+                if (!existingMarketplaceOffers.ContainsKey(newMarketplaceOffer.Id))
+                {
+                    _db.MarketplaceOffers.Add(newMarketplaceOffer);
                 }
             }
 
@@ -1499,7 +1627,7 @@ public record SeedDataCommand : IMediatorRequest
             activityLogUserRewarded.CreatedAt = DateTime.UtcNow.AddDays(-1);
 
             ActivityLog[] commonActivityLogs =
-            {
+            [
                 _activityLogService.CreateUserCreatedLog(orle.Id),
                 _activityLogService.CreateUserDeletedLog(orle.Id),
                 _activityLogService.CreateUserRenamedLog(orle.Id, "Salt", "Duke Salt of Savoy"),
@@ -1514,10 +1642,10 @@ public record SeedDataCommand : IMediatorRequest
                 _activityLogService.CreateCharacterRespecializedLog(orle.Id, orleCharacter0.Id, 120000),
                 _activityLogService.CreateCharacterRetiredLog(orle.Id, orleCharacter0.Id, 34),
                 _activityLogService.CreateCharacterRewardedLog(orle.Id, takeo.Id, 5, 1000000),
-            };
+            ];
 
             ActivityLog[] gameServerActivityLogs =
-            {
+            [
                 new() { Type = ActivityLogType.ServerJoined, User = orle },
                 new() { Type = ActivityLogType.ChatMessageSent, User = orle, Metadata = { new("message", "Fluttershy is best"), new("instance", "crpg01a"), } },
                 new() { Type = ActivityLogType.ChatMessageSent, User = orle, Metadata = { new("message", "No, Rarity the best"), new("instance", "crpg01a"), }, },
@@ -1526,10 +1654,10 @@ public record SeedDataCommand : IMediatorRequest
                 new() { Type = ActivityLogType.TeamHit, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(+6), Metadata = { new("targetUserId", namidaka.Id.ToString()), new("damage", "333"), new("instance", "crpg01a"), }, },
                 new() { Type = ActivityLogType.TeamHitReported, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(+6), Metadata = { new("targetUserId", namidaka.Id.ToString()), new("reportedHits", "333"), new("decayedHits", "111"), new("unreportedHits", "222"), new("onReporterHits", "11"), new("damage", "123"), new("weaponName", "crpg_item_1"), }, },
                 new() { Type = ActivityLogType.TeamHitReportedUserKicked, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(+6), Metadata = { new("reportedHits", "333"), new("decayedHits", "111"), new("unreportedHits", "222"), }, },
-            };
+            ];
 
             ActivityLog[] characterEarnedActivityLogs =
-            {
+            [
                 new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-1), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "122000"), new("gold", "1244") } },
                 new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-12), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "7000"), new("gold", "989") } },
                 new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-15), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "32000"), new("gold", "-900") } },
@@ -1540,10 +1668,10 @@ public record SeedDataCommand : IMediatorRequest
                 new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-17), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "993310"), new("gold", "133") } },
                 new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-111), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGDTV"), new("experience", "122234"), new("gold", "-1222") } },
                 new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-112), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGDTV"), new("experience", "3111"), new("gold", "-122") } },
-            };
+            ];
 
             ActivityLog[] clanActivityLogs =
-            {
+            [
                 _activityLogService.CreateClanApplicationCreatedLog(takeo.Id, 1),
                 _activityLogService.CreateClanApplicationCreatedLog(namidaka.Id, 1),
                 _activityLogService.CreateClanApplicationCreatedLog(orle.Id, 1),
@@ -1558,17 +1686,55 @@ public record SeedDataCommand : IMediatorRequest
                 _activityLogService.CreateRemoveItemFromClanArmoryLog(takeo.Id, pecores.Id, takeoItem1.Id),
                 _activityLogService.CreateReturnItemToClanArmoryLog(takeo.Id, pecores.Id, orleItem1.Id),
                 _activityLogService.CreateBorrowItemFromClanArmoryLog(takeo.Id, pecores.Id, orleItem1.Id),
-            };
+            ];
 
-            _db.ActivityLogs.RemoveRange(await _db.ActivityLogs.ToArrayAsync());
-            _db.ActivityLogs.AddRange(
-                            commonActivityLogs
+            ActivityLog[] marketplaceActivityLogs =
+            [
+                _activityLogService.CreateMarketplaceOfferCreatedLog(userId: orle.Id, offerId: 121, listingFee: 350, goldFee: 5_000,
+                    offered: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
+                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
+
+                _activityLogService.CreateMarketplaceOfferCancelledLog(userId: orle.Id, offerId: 125, goldFee: 5_000,
+                    offered: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
+                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
+
+                _activityLogService.CreateMarketplaceOfferAcceptedLog(buyerId: orle.Id, sellerId: orle2.Id, offerId: 123, goldFee: 10_000,
+                    offered: new() { Gold = 0, HeirloomPoints = 1, Item = orle2Item1.Item },
+                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orleItem17.Item }),
+                _activityLogService.CreateMarketplaceOfferAcceptedLog(buyerId: orle2.Id, sellerId: orle.Id, offerId: 124, goldFee: 5_000,
+                    offered: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
+                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
+
+                _activityLogService.CreateMarketplaceOfferInvalidatedLog(userId: orle.Id, offerId: 121, goldFee: 5_000,
+                    offered: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
+                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
+
+                _activityLogService.CreateMarketplaceOfferExpiredLog(userId: orle.Id, offerId: 121, goldFee: 5_000,
+                    offered: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
+                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
+            ];
+
+            _db.ActivityLogs.RemoveRange(await _db.ActivityLogs.ToArrayAsync(cancellationToken));
+            _db.ActivityLogs.AddRange(commonActivityLogs
                     .Concat(gameServerActivityLogs)
                     .Concat(characterEarnedActivityLogs)
-                    .Concat(clanActivityLogs));
+                    .Concat(clanActivityLogs)
+                    .Concat(marketplaceActivityLogs));
 
             UserNotification[] orleNotifications =
-            {
+            [
+                _userNotificationService.CreateMarketplaceOfferAcceptedToSellerNotification(
+                    userId: orle.Id, buyerId: orle2.Id, offerId: 123, goldFee: 10_000,
+                    offered: new() { Gold = 0, HeirloomPoints = 1, Item = orleItem17.Item },
+                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item1.Item }),
+                _userNotificationService.CreateMarketplaceOfferExpiredNotification(
+                    userId: orle.Id, offerId: 123, goldFee: 10_000,
+                    offered: new() { Gold = 0, HeirloomPoints = 1, Item = orleItem17.Item },
+                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item1.Item }),
+                _userNotificationService.CreateMarketplaceOfferInvalidatedNotification(
+                    userId: orle.Id, offerId: 123, goldFee: 10_000,
+                    offered: new() { Gold = 0, HeirloomPoints = 1, Item = orleItem17.Item },
+                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item1.Item }),
                 _userNotificationService.CreateUserRewardedToUserNotification(orle.Id, 100, 1, orleItem1.ItemId),
                 _userNotificationService.CreateCharacterRewardedToUserNotification(orle.Id, orleCharacter0.Id, 122211),
                 _userNotificationService.CreateItemReturnedToUserNotification(orle.Id, orleItem1.ItemId, 2, 1222),
@@ -1581,14 +1747,14 @@ public record SeedDataCommand : IMediatorRequest
                 _userNotificationService.CreateClanMemberKickedToExMemberNotification(orle.Id, pecores.Id),
                 _userNotificationService.CreateClanArmoryBorrowItemToLenderNotification(orle.Id, pecores.Id, orleItem1.ItemId, takeo.Id),
                 _userNotificationService.CreateClanArmoryRemoveItemToBorrowerNotification(orle.Id, pecores.Id, takeoItem1.ItemId, takeo.Id),
-            };
+            ];
 
-            _db.UserNotifications.RemoveRange(await _db.UserNotifications.ToArrayAsync());
+            _db.UserNotifications.RemoveRange(await _db.UserNotifications.ToArrayAsync(cancellationToken));
             _db.UserNotifications.AddRange(orleNotifications);
 
-            ClanInvitation[] newClanInvitations = { schumetzqRequestForPecores, victorhh888MemberRequestForPecores, neostralieOfferToBrygganForPecores };
+            ClanInvitation[] newClanInvitations = [schumetzqRequestForPecores, victorhh888MemberRequestForPecores, neostralieOfferToBrygganForPecores];
 
-            var existingClanInvitations = await _db.ClanInvitations.ToDictionaryAsync(i => (i.InviteeId, i.InviterId));
+            var existingClanInvitations = await _db.ClanInvitations.ToDictionaryAsync(i => (i.InviteeId, i.InviterId), cancellationToken);
             foreach (var newClanInvitation in newClanInvitations)
             {
                 if (!existingClanInvitations.ContainsKey((newClanInvitation.Invitee!.Id, newClanInvitation.Inviter!.Id)))
@@ -2180,25 +2346,9 @@ public record SeedDataCommand : IMediatorRequest
                     continue;
                 }
 
-                var userItems = await _db.UserItems
-                    .Include(ui => ui.User)
-                    .Include(ui => ui.Item)
-                    .Where(ui => ui.ItemId == dbItem.Id)
-                    .ToArrayAsync(cancellationToken);
-                foreach (var userItem in userItems)
-                {
-                    userItem.User!.Gold += userItem.Item!.Price;
-                    // Trick to avoid UpdatedAt to be updated.
-                    userItem.User.UpdatedAt = userItem.User.UpdatedAt;
-                    if (userItem.Item!.Rank > 0)
-                    {
-                        userItem.User.HeirloomPoints += userItem.Item!.Rank;
-                    }
+                await _itemService.RefundUserItemsByItemAsync(_db, _activityLogService, _userNotificationService, dbItem.Id, cancellationToken);
 
-                    _db.UserItems.Remove(userItem);
-                    _db.ActivityLogs.Add(_activityLogService.CreateItemReturnedLog(userItem.User.Id, userItem.Item.Id, userItem.Item.Rank, userItem.Item.Price));
-                    _db.UserNotifications.Add(_userNotificationService.CreateItemReturnedToUserNotification(userItem.User.Id, userItem.Item.Id, userItem.Item.Rank, userItem.Item.Price));
-                }
+                await _marketplaceService.InvalidateOffersByItemIdAsync(_db, _activityLogService, _userNotificationService, dbItem.Id, cancellationToken);
 
                 var itemsToDelete = dbItemsById.Values.Where(i => i.Id == dbItem.Id).ToArray();
                 foreach (var i in itemsToDelete)

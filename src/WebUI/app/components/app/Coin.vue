@@ -3,20 +3,17 @@ import { isString } from 'es-toolkit'
 
 import type { DataMediaSize } from '~/components/ui/data/DataMedia.vue'
 
-const { compact = false } = defineProps<{
+const { compact = false, hiddenIcon = false } = defineProps<{
   value?: number | string
   size?: DataMediaSize
   compact?: boolean
-}>()
-
-defineSlots<{
-  default: (props: { classes: () => string }) => any
+  hiddenIcon?: boolean
 }>()
 </script>
 
 <template>
   <UiDataMedia :size class="font-bold text-gold">
-    <template #icon="{ classes }">
+    <template v-if="!hiddenIcon" #icon="{ classes }">
       <UiSpriteSymbol name="coin" viewBox="0 0 18 18" :class="classes()" />
     </template>
 
@@ -27,6 +24,7 @@ defineSlots<{
           :class="classes()"
         >
           {{ isString(value) ? value : $n(value, compact ? 'compact' : '') }}
+          <slot name="trailing" />
         </span>
       </slot>
     </template>

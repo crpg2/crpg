@@ -9,6 +9,7 @@ import type {
 } from '#api'
 import type { ValueOf } from 'type-fest'
 
+import type { ClanMember } from '~/models/clan'
 import type { Culture } from '~/models/culture'
 
 export const ARMOR_MATERIAL_TYPE = {
@@ -230,6 +231,7 @@ export interface Item {
   weapons: ItemWeaponComponent[]
   armor: ItemArmorComponent | null
   mount: ItemMountComponent | null
+  enabled: boolean
 }
 
 export const WEAPON_USAGE = {
@@ -239,7 +241,8 @@ export const WEAPON_USAGE = {
 
 export type WeaponUsage = ValueOf<typeof WEAPON_USAGE>
 
-export interface ItemFlat {
+export interface ItemFlat<TMeta extends { [key: string]: unknown } = { [key: string]: unknown }> {
+  meta: TMeta
   id: string
   isNew: boolean
   name: string
@@ -367,3 +370,25 @@ export const ITEM_COMPARE_MODE = {
 } as const
 
 export type ItemCompareMode = ValueOf<typeof ITEM_COMPARE_MODE>
+
+// TODO: rename
+export interface SelectedItem {
+  id: string
+  baseId: string
+  rank: number
+  name: string
+}
+
+export interface SelectedUserItem extends SelectedItem {
+  userItemId: number
+}
+
+export interface UserItemMeta {
+  [key: string]: unknown
+  userItemId: number
+  isBroken: boolean
+  isPersonal: boolean
+  clanArmoryLender: ClanMember | null
+}
+
+export type UserItemFlat = ItemFlat<UserItemMeta>
