@@ -7,6 +7,7 @@ ExecStart={{ crpg_module_path }}/crpg-game-server.sh %i
 Restart=always
 RestartSec=5
 KillSignal=SIGINT
+LimitCORE=10737418240
 User={{ crpg_game_server_user }}
 LogRateLimitBurst=20000
 LogRateLimitIntervalSec=10s
