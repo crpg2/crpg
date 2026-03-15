@@ -82,7 +82,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
             new MissionGauntletMultiplayerOrderUIHandler(),
             new OrderTroopPlacer(null),
             crpgEscapeMenu,
-            ViewCreator.CreateMissionAgentLabelUIHandler(mission),
+            new CrpgAgentLabelView(),
             MultiplayerViewCreator.CreateMultiplayerTeamSelectUIHandler(),
             new CrpgMissionScoreboardUIHandler(false),
             new CrpgEndOfRoundUiHandler(),
