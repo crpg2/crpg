@@ -19,13 +19,10 @@ crpg_battle_orionarena
 crpg_battle_sanctuary
 crpg_battle_verloren
 crpg_battle_nirvana
-crpg_battle_hexenbrennen
 crpg_battle_icelake
 crpg_battle_persia
-crpg_battle_pompeii
 crpg_battle_ketilsfarm
 crpg_battle_ghosttown
-crpg_battle_overgrown
 mp_skirmish_map_020
 crpg_battle_fieldbytheriver
 crpg_battle_dragonsroost
@@ -34,7 +31,6 @@ crpg_battle_monastery
 crpg_battle_sallyout
 crpg_battle_kingsroad
 crpg_battle_sandiboush
-crpg_battle_talmberg
 crpg_battle_banditvalley
 crpg_battle_vritannis
 crpg_battle_khamsin
