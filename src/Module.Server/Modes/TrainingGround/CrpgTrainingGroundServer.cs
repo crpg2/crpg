@@ -61,6 +61,10 @@ internal class CrpgTrainingGroundServer : MissionMultiplayerGameModeBase
             {
                 if (MissionPeer.Peer.Communicator.IsConnectionActive)
                 {
+                    // Both calls are needed: SetTeam updates the native agent's team,
+                    // MissionPeer.Team updates the peer's team. Omitting SetTeam causes
+                    // a desync that crashes in Agent::compute_body_rotation.
+                    MissionPeer.ControlledAgent?.SetTeam(Mission.Current.AttackerTeam, true);
                     MissionPeer.Team = Mission.Current.AttackerTeam;
                 }
             }
