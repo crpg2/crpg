@@ -94,6 +94,14 @@ export default defineNuxtConfig({
       api: {
         baseUrl: import.meta.env.NUXT_PUBLIC_API_BASE_URL,
       },
+      datadog: {
+        logs: {
+          service: 'crpg-web-ui',
+          enabled: import.meta.env.NUXT_PUBLIC_DATADOG_LOGS_ENABLED === 'true',
+          clientToken: import.meta.env.NUXT_PUBLIC_DATADOG_CLIENT_TOKEN,
+          forwardConsoleLogs: 'error',
+        },
+      },
     },
   },
   alias: {

@@ -56,6 +56,8 @@ export const createClientConfig: CreateClientConfig = (config) => {
           icon: 'crpg:error',
           close: false,
         })
+        const { $datadogLogs } = useNuxtApp()
+        $datadogLogs.logger.error('Error occurred', error)
       }
     },
   })
