@@ -20,8 +20,8 @@ const sortingModel = ref<string>('rank_desc')
 
 const { toggleItemDetail } = useItemDetail()
 
-const renderItemDetail = (opendeItem: OpenedItem, compareItemsResult: GroupedCompareItemsResult[]) => {
-  const itemStack = items.find(i => i.item.id === opendeItem.id)
+const renderItemDetail = (openedItem: OpenedItem, compareItemsResult: GroupedCompareItemsResult[]) => {
+  const itemStack = items.find(i => i.item.id === openedItem.id)
 
   if (!itemStack) {
     return null
