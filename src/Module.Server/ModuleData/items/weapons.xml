@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
   <CraftedItem id="crpg_french_voulge_v3_h0" name="{=kaikaikai}French Voulge" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
@@ -2788,7 +2788,7 @@
       </Weapon>
     </ItemComponent>
   </Item>
-  <Item id="crpg_strong_tribal_long_bow_v2_h0" name="Strong Tribal Long Bow" body_name="bo_longbow_i" mesh="longbow_i" culture="Culture.aserai" weight="3.986683" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_strong_tribal_long_bow_v2_h0" name="Strong Tribal Long Bow" body_name="bo_composite_longbow_g" mesh="longbow_i" culture="Culture.aserai" weight="3.986683" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="76" speed_rating="70" missile_speed="88" weapon_length="116" accuracy="100" thrust_damage="20" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2799,7 +2799,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_strong_tribal_long_bow_v2_h1" name="Strong Tribal Long Bow +1" body_name="bo_longbow_i" mesh="longbow_i" culture="Culture.aserai" weight="3.624257" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_strong_tribal_long_bow_v2_h1" name="Strong Tribal Long Bow +1" body_name="bo_composite_longbow_g" mesh="longbow_i" culture="Culture.aserai" weight="3.624257" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="77" speed_rating="73" missile_speed="90" weapon_length="116" accuracy="102" thrust_damage="20" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2810,7 +2810,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_strong_tribal_long_bow_v2_h2" name="Strong Tribal Long Bow +2" body_name="bo_longbow_i" mesh="longbow_i" culture="Culture.aserai" weight="3.322235" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_strong_tribal_long_bow_v2_h2" name="Strong Tribal Long Bow +2" body_name="bo_composite_longbow_g" mesh="longbow_i" culture="Culture.aserai" weight="3.322235" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="79" speed_rating="74" missile_speed="92" weapon_length="116" accuracy="104" thrust_damage="20" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2821,7 +2821,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_strong_tribal_long_bow_v2_h3" name="Strong Tribal Long Bow +3" body_name="bo_longbow_i" mesh="longbow_i" culture="Culture.aserai" weight="3.066679" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_strong_tribal_long_bow_v2_h3" name="Strong Tribal Long Bow +3" body_name="bo_composite_longbow_g" mesh="longbow_i" culture="Culture.aserai" weight="3.066679" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="79" speed_rating="74" missile_speed="92" weapon_length="116" accuracy="104" thrust_damage="21" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2832,7 +2832,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_long_bow_v2_h0" name="{=WRqYWspc}Noble Long Bow" body_name="bo_longbow_j" mesh="longbow_j" weight="3.595155" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_noble_long_bow_v2_h0" name="{=WRqYWspc}Noble Long Bow" body_name="bo_composite_longbow_g" mesh="longbow_j" weight="3.595155" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="86" speed_rating="88" missile_speed="90" weapon_length="118" accuracy="97" thrust_damage="18" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2843,7 +2843,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_long_bow_v2_h1" name="{=WRqYWspc}Noble Long Bow +1" body_name="bo_longbow_j" mesh="longbow_j" weight="3.268323" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_noble_long_bow_v2_h1" name="{=WRqYWspc}Noble Long Bow +1" body_name="bo_composite_longbow_g" mesh="longbow_j" weight="3.268323" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="87" speed_rating="91" missile_speed="92" weapon_length="118" accuracy="99" thrust_damage="18" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2854,7 +2854,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_long_bow_v2_h2" name="{=WRqYWspc}Noble Long Bow +2" body_name="bo_longbow_j" mesh="longbow_j" weight="2.995963" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_noble_long_bow_v2_h2" name="{=WRqYWspc}Noble Long Bow +2" body_name="bo_composite_longbow_g" mesh="longbow_j" weight="2.995963" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="89" speed_rating="92" missile_speed="94" weapon_length="118" accuracy="101" thrust_damage="18" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2865,7 +2865,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_long_bow_v2_h3" name="{=WRqYWspc}Noble Long Bow +3" body_name="bo_longbow_j" mesh="longbow_j" weight="2.765504" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_noble_long_bow_v2_h3" name="{=WRqYWspc}Noble Long Bow +3" body_name="bo_composite_longbow_g" mesh="longbow_j" weight="2.765504" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="89" speed_rating="92" missile_speed="94" weapon_length="118" accuracy="101" thrust_damage="19" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2876,7 +2876,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_short_bow_v2_h0" name="{=EO7pCu1b}Noble Short Bow" body_name="bo_shortbow_f" mesh="shortbow_f" weight="2.949016" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_noble_short_bow_v2_h0" name="{=EO7pCu1b}Noble Short Bow" body_name="bo_composite_shotbow_f" mesh="shortbow_f" weight="2.949016" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="100" speed_rating="98" missile_speed="76" weapon_length="116" accuracy="98" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2887,7 +2887,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_short_bow_v2_h1" name="{=EO7pCu1b}Noble Short Bow +1" body_name="bo_shortbow_f" mesh="shortbow_f" weight="2.680923" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_noble_short_bow_v2_h1" name="{=EO7pCu1b}Noble Short Bow +1" body_name="bo_composite_shotbow_f" mesh="shortbow_f" weight="2.680923" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="102" speed_rating="101" missile_speed="85" weapon_length="116" accuracy="98" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2898,7 +2898,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_short_bow_v2_h2" name="{=EO7pCu1b}Noble Short Bow +2" body_name="bo_shortbow_f" mesh="shortbow_f" weight="2.457513" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_noble_short_bow_v2_h2" name="{=EO7pCu1b}Noble Short Bow +2" body_name="bo_composite_shotbow_f" mesh="shortbow_f" weight="2.457513" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="106" speed_rating="101" missile_speed="85" weapon_length="116" accuracy="101" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2909,7 +2909,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_short_bow_v2_h3" name="{=EO7pCu1b}Noble Short Bow +3" body_name="bo_shortbow_f" mesh="shortbow_f" weight="2.268474" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_noble_short_bow_v2_h3" name="{=EO7pCu1b}Noble Short Bow +3" body_name="bo_composite_shotbow_f" mesh="shortbow_f" weight="2.268474" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="106" speed_rating="101" missile_speed="85" weapon_length="116" accuracy="107" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2920,7 +2920,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_fine_ranger_bow_v2_h0" name="{=9YbFEaZ1}Fine Ranger Bow" body_name="bo_longbow_b" mesh="longbow_b" culture="Culture.vlandia" difficulty="50" weight="2.768267" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_fine_ranger_bow_v2_h0" name="{=9YbFEaZ1}Fine Ranger Bow" body_name="bo_composite_longbow_a" mesh="longbow_b" culture="Culture.vlandia" difficulty="50" weight="2.768267" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="102" speed_rating="92" missile_speed="84" weapon_length="117" accuracy="106" thrust_damage="15" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2931,7 +2931,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_fine_ranger_bow_v2_h1" name="{=9YbFEaZ1}Fine Ranger Bow +1" body_name="bo_longbow_b" mesh="longbow_b" culture="Culture.vlandia" difficulty="50" weight="2.516606" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_fine_ranger_bow_v2_h1" name="{=9YbFEaZ1}Fine Ranger Bow +1" body_name="bo_composite_longbow_a" mesh="longbow_b" culture="Culture.vlandia" difficulty="50" weight="2.516606" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="103" speed_rating="95" missile_speed="86" weapon_length="117" accuracy="108" thrust_damage="15" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2942,7 +2942,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_fine_ranger_bow_v2_h2" name="{=9YbFEaZ1}Fine Ranger Bow +2" body_name="bo_longbow_b" mesh="longbow_b" culture="Culture.vlandia" difficulty="50" weight="2.306889" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_fine_ranger_bow_v2_h2" name="{=9YbFEaZ1}Fine Ranger Bow +2" body_name="bo_composite_longbow_a" mesh="longbow_b" culture="Culture.vlandia" difficulty="50" weight="2.306889" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="105" speed_rating="96" missile_speed="88" weapon_length="117" accuracy="110" thrust_damage="15" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2953,7 +2953,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_fine_ranger_bow_v2_h3" name="{=9YbFEaZ1}Fine Ranger Bow +3" body_name="bo_longbow_b" mesh="longbow_b" culture="Culture.vlandia" difficulty="50" weight="2.129436" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_fine_ranger_bow_v2_h3" name="{=9YbFEaZ1}Fine Ranger Bow +3" body_name="bo_composite_longbow_a" mesh="longbow_b" culture="Culture.vlandia" difficulty="50" weight="2.129436" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="105" speed_rating="96" missile_speed="88" weapon_length="117" accuracy="110" thrust_damage="16" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2964,7 +2964,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_hassun_yumi_v2_h0" name="{=ifzgMcrK}Hassun Yumi" body_name="bo_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="2.983332" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_hassun_yumi_v2_h0" name="{=ifzgMcrK}Hassun Yumi" body_name="bo_composite_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="2.983332" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="100" speed_rating="70" missile_speed="77" weapon_length="114" accuracy="110" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2975,7 +2975,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_hassun_yumi_v2_h1" name="{=ifzgMcrK}Hassun Yumi +1" body_name="bo_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="2.71212" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_hassun_yumi_v2_h1" name="{=ifzgMcrK}Hassun Yumi +1" body_name="bo_composite_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="2.71212" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="102" speed_rating="73" missile_speed="86" weapon_length="114" accuracy="110" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2986,7 +2986,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_hassun_yumi_v2_h2" name="{=ifzgMcrK}Hassun Yumi +2" body_name="bo_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="2.48611" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_hassun_yumi_v2_h2" name="{=ifzgMcrK}Hassun Yumi +2" body_name="bo_composite_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="2.48611" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="106" speed_rating="73" missile_speed="86" weapon_length="114" accuracy="113" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -2997,7 +2997,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_hassun_yumi_v2_h3" name="{=ifzgMcrK}Hassun Yumi +3" body_name="bo_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="2.294871" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_hassun_yumi_v2_h3" name="{=ifzgMcrK}Hassun Yumi +3" body_name="bo_composite_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="2.294871" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="106" speed_rating="73" missile_speed="86" weapon_length="114" accuracy="119" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3008,7 +3008,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_fine_long_bow_v2_h0" name="{=ZFwKlHIJ}Fine Long Bow" body_name="bo_longbow_c" mesh="longbow_c" culture="Culture.battania" weight="3.211313" difficulty="50" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_fine_long_bow_v2_h0" name="{=ZFwKlHIJ}Fine Long Bow" body_name="bo_composite_longbow_a" mesh="longbow_c" culture="Culture.battania" weight="3.211313" difficulty="50" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="87" speed_rating="89" missile_speed="88" weapon_length="118" accuracy="102" thrust_damage="17" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3019,7 +3019,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_fine_long_bow_v2_h1" name="{=ZFwKlHIJ}Fine Long Bow +1" body_name="bo_longbow_c" mesh="longbow_c" culture="Culture.battania" weight="2.919376" difficulty="50" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_fine_long_bow_v2_h1" name="{=ZFwKlHIJ}Fine Long Bow +1" body_name="bo_composite_longbow_a" mesh="longbow_c" culture="Culture.battania" weight="2.919376" difficulty="50" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="88" speed_rating="92" missile_speed="90" weapon_length="118" accuracy="104" thrust_damage="17" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3030,7 +3030,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_fine_long_bow_v2_h2" name="{=ZFwKlHIJ}Fine Long Bow +2" body_name="bo_longbow_c" mesh="longbow_c" culture="Culture.battania" weight="2.676094" difficulty="50" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_fine_long_bow_v2_h2" name="{=ZFwKlHIJ}Fine Long Bow +2" body_name="bo_composite_longbow_a" mesh="longbow_c" culture="Culture.battania" weight="2.676094" difficulty="50" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="90" speed_rating="93" missile_speed="92" weapon_length="118" accuracy="106" thrust_damage="17" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3041,7 +3041,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_fine_long_bow_v2_h3" name="{=ZFwKlHIJ}Fine Long Bow +3" body_name="bo_longbow_c" mesh="longbow_c" culture="Culture.battania" weight="2.470241" difficulty="50" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_fine_long_bow_v2_h3" name="{=ZFwKlHIJ}Fine Long Bow +3" body_name="bo_composite_longbow_a" mesh="longbow_c" culture="Culture.battania" weight="2.470241" difficulty="50" appearance="0.1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="90" speed_rating="93" missile_speed="92" weapon_length="118" accuracy="106" thrust_damage="18" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3052,7 +3052,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_ranger_bow_v2_h0" name="{=RcCtV0aS}Noble Ranger Bow" body_name="bo_longbow_d" mesh="longbow_d" culture="Culture.battania" weight="3.2" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_noble_ranger_bow_v2_h0" name="{=RcCtV0aS}Noble Ranger Bow" body_name="bo_composite_longbow_a" mesh="longbow_d" culture="Culture.battania" weight="3.2" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="101" speed_rating="91" missile_speed="86" weapon_length="115" accuracy="101" thrust_damage="16" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3063,7 +3063,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_ranger_bow_v2_h1" name="{=RcCtV0aS}Noble Ranger Bow +1" body_name="bo_longbow_d" mesh="longbow_d" culture="Culture.battania" weight="2.909091" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_noble_ranger_bow_v2_h1" name="{=RcCtV0aS}Noble Ranger Bow +1" body_name="bo_composite_longbow_a" mesh="longbow_d" culture="Culture.battania" weight="2.909091" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="102" speed_rating="94" missile_speed="88" weapon_length="115" accuracy="103" thrust_damage="16" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3074,7 +3074,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_ranger_bow_v2_h2" name="{=RcCtV0aS}Noble Ranger Bow +2" body_name="bo_longbow_d" mesh="longbow_d" culture="Culture.battania" weight="2.666667" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_noble_ranger_bow_v2_h2" name="{=RcCtV0aS}Noble Ranger Bow +2" body_name="bo_composite_longbow_a" mesh="longbow_d" culture="Culture.battania" weight="2.666667" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="104" speed_rating="95" missile_speed="90" weapon_length="115" accuracy="105" thrust_damage="16" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3085,7 +3085,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_ranger_bow_v2_h3" name="{=RcCtV0aS}Noble Ranger Bow +3" body_name="bo_longbow_d" mesh="longbow_d" culture="Culture.battania" weight="2.461539" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_noble_ranger_bow_v2_h3" name="{=RcCtV0aS}Noble Ranger Bow +3" body_name="bo_composite_longbow_a" mesh="longbow_d" culture="Culture.battania" weight="2.461539" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="104" speed_rating="95" missile_speed="90" weapon_length="115" accuracy="105" thrust_damage="17" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3096,7 +3096,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_steppe_war_bow_v2_h0" name="{=wfhHGTbl}Steppe War Bow" body_name="bo_shortbow_a" mesh="shortbow_a" culture="Culture.khuzait" weight="2.124901" difficulty="50" appearance="0.25" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_steppe_war_bow_v2_h0" name="{=wfhHGTbl}Steppe War Bow" body_name="bo_composite_shotbow_a" mesh="shortbow_a" culture="Culture.khuzait" weight="2.124901" difficulty="50" appearance="0.25" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="123" speed_rating="84" missile_speed="73" weapon_length="107" accuracy="115" thrust_damage="12" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.0,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3107,7 +3107,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_steppe_war_bow_v2_h1" name="{=wfhHGTbl}Steppe War Bow +1" body_name="bo_shortbow_a" mesh="shortbow_a" culture="Culture.khuzait" weight="1.931728" difficulty="50" appearance="0.25" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_steppe_war_bow_v2_h1" name="{=wfhHGTbl}Steppe War Bow +1" body_name="bo_composite_shotbow_a" mesh="shortbow_a" culture="Culture.khuzait" weight="1.931728" difficulty="50" appearance="0.25" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="125" speed_rating="87" missile_speed="82" weapon_length="107" accuracy="115" thrust_damage="12" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.0,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3118,7 +3118,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_steppe_war_bow_v2_h2" name="{=wfhHGTbl}Steppe War Bow +2" body_name="bo_shortbow_a" mesh="shortbow_a" culture="Culture.khuzait" weight="1.77075" difficulty="50" appearance="0.25" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_steppe_war_bow_v2_h2" name="{=wfhHGTbl}Steppe War Bow +2" body_name="bo_composite_shotbow_a" mesh="shortbow_a" culture="Culture.khuzait" weight="1.77075" difficulty="50" appearance="0.25" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="129" speed_rating="87" missile_speed="82" weapon_length="107" accuracy="118" thrust_damage="12" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.0,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3129,7 +3129,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_steppe_war_bow_v2_h3" name="{=wfhHGTbl}Steppe War Bow +3" body_name="bo_shortbow_a" mesh="shortbow_a" culture="Culture.khuzait" weight="1.634539" difficulty="50" appearance="0.25" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_steppe_war_bow_v2_h3" name="{=wfhHGTbl}Steppe War Bow +3" body_name="bo_composite_shotbow_a" mesh="shortbow_a" culture="Culture.khuzait" weight="1.634539" difficulty="50" appearance="0.25" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="129" speed_rating="87" missile_speed="82" weapon_length="107" accuracy="124" thrust_damage="12" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.0,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3140,7 +3140,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_rokusun_yumi_v2_h0" name="{=ZQv5Bcl2}Rokusun Yumi" body_name="bo_longbow_h" mesh="longbow_h" culture="Culture.aserai" weight="2.183936" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_rokusun_yumi_v2_h0" name="{=ZQv5Bcl2}Rokusun Yumi" body_name="bo_composite_longbow_g" mesh="longbow_h" culture="Culture.aserai" weight="2.183936" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="103" speed_rating="72" missile_speed="77" weapon_length="115" accuracy="120" thrust_damage="13" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3151,7 +3151,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_rokusun_yumi_v2_h1" name="{=ZQv5Bcl2}Rokusun Yumi +1" body_name="bo_longbow_h" mesh="longbow_h" culture="Culture.aserai" weight="1.985396" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_rokusun_yumi_v2_h1" name="{=ZQv5Bcl2}Rokusun Yumi +1" body_name="bo_composite_longbow_g" mesh="longbow_h" culture="Culture.aserai" weight="1.985396" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="105" speed_rating="75" missile_speed="86" weapon_length="115" accuracy="120" thrust_damage="13" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3162,7 +3162,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_rokusun_yumi_v2_h2" name="{=ZQv5Bcl2}Rokusun Yumi +2" body_name="bo_longbow_h" mesh="longbow_h" culture="Culture.aserai" weight="1.819946" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_rokusun_yumi_v2_h2" name="{=ZQv5Bcl2}Rokusun Yumi +2" body_name="bo_composite_longbow_g" mesh="longbow_h" culture="Culture.aserai" weight="1.819946" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="109" speed_rating="75" missile_speed="86" weapon_length="115" accuracy="123" thrust_damage="13" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3173,7 +3173,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_rokusun_yumi_v2_h3" name="{=ZQv5Bcl2}Rokusun Yumi +3" body_name="bo_longbow_h" mesh="longbow_h" culture="Culture.aserai" weight="1.679951" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_rokusun_yumi_v2_h3" name="{=ZQv5Bcl2}Rokusun Yumi +3" body_name="bo_composite_longbow_g" mesh="longbow_h" culture="Culture.aserai" weight="1.679951" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="109" speed_rating="75" missile_speed="86" weapon_length="115" accuracy="129" thrust_damage="13" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3184,7 +3184,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_yonsun_yumi_v2_h0" name="{=A6llHL9s}Yonsun Yumi" body_name="bo_longbow_a" mesh="longbow_a" culture="Culture.vlandia" subtype="bow" weight="1.49285" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_yonsun_yumi_v2_h0" name="{=A6llHL9s}Yonsun Yumi" body_name="bo_composite_longbow_a" mesh="longbow_a" culture="Culture.vlandia" subtype="bow" weight="1.49285" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="107" speed_rating="76" missile_speed="77" weapon_length="120" accuracy="130" thrust_damage="11" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3195,7 +3195,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_yonsun_yumi_v2_h1" name="{=A6llHL9s}Yonsun Yumi +1" body_name="bo_longbow_a" mesh="longbow_a" culture="Culture.vlandia" subtype="bow" weight="1.357136" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_yonsun_yumi_v2_h1" name="{=A6llHL9s}Yonsun Yumi +1" body_name="bo_composite_longbow_a" mesh="longbow_a" culture="Culture.vlandia" subtype="bow" weight="1.357136" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="109" speed_rating="79" missile_speed="86" weapon_length="120" accuracy="130" thrust_damage="11" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3206,7 +3206,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_yonsun_yumi_v2_h2" name="{=A6llHL9s}Yonsun Yumi +2" body_name="bo_longbow_a" mesh="longbow_a" culture="Culture.vlandia" subtype="bow" weight="1.244041" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_yonsun_yumi_v2_h2" name="{=A6llHL9s}Yonsun Yumi +2" body_name="bo_composite_longbow_a" mesh="longbow_a" culture="Culture.vlandia" subtype="bow" weight="1.244041" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="113" speed_rating="79" missile_speed="86" weapon_length="120" accuracy="133" thrust_damage="11" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3217,7 +3217,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_yonsun_yumi_v2_h3" name="{=A6llHL9s}Yonsun Yumi +3" body_name="bo_longbow_a" mesh="longbow_a" culture="Culture.vlandia" subtype="bow" weight="1.148346" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_yonsun_yumi_v2_h3" name="{=A6llHL9s}Yonsun Yumi +3" body_name="bo_composite_longbow_a" mesh="longbow_a" culture="Culture.vlandia" subtype="bow" weight="1.148346" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="113" speed_rating="79" missile_speed="86" weapon_length="120" accuracy="139" thrust_damage="11" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3228,7 +3228,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_nordic_short_bow_v2_h0" name="{=tEimkEsU}Nordic Short Bow" body_name="bo_shortbow_e" mesh="shortbow_e" culture="Culture.sturgia" weight="2.480239" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_nordic_short_bow_v2_h0" name="{=tEimkEsU}Nordic Short Bow" body_name="bo_composite_shotbow_c" mesh="shortbow_e" culture="Culture.sturgia" weight="2.480239" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="106" speed_rating="81" missile_speed="79" weapon_length="108" accuracy="121" thrust_damage="13" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3239,7 +3239,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_nordic_short_bow_v2_h1" name="{=tEimkEsU}Nordic Short Bow +1" body_name="bo_shortbow_e" mesh="shortbow_e" culture="Culture.sturgia" weight="2.254762" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_nordic_short_bow_v2_h1" name="{=tEimkEsU}Nordic Short Bow +1" body_name="bo_composite_shotbow_c" mesh="shortbow_e" culture="Culture.sturgia" weight="2.254762" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="108" speed_rating="84" missile_speed="88" weapon_length="108" accuracy="121" thrust_damage="13" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3250,7 +3250,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_nordic_short_bow_v2_h2" name="{=tEimkEsU}Nordic Short Bow +2" body_name="bo_shortbow_e" mesh="shortbow_e" culture="Culture.sturgia" weight="2.066865" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_nordic_short_bow_v2_h2" name="{=tEimkEsU}Nordic Short Bow +2" body_name="bo_composite_shotbow_c" mesh="shortbow_e" culture="Culture.sturgia" weight="2.066865" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="112" speed_rating="84" missile_speed="88" weapon_length="108" accuracy="124" thrust_damage="13" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3261,7 +3261,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_nordic_short_bow_v2_h3" name="{=tEimkEsU}Nordic Short Bow +3" body_name="bo_shortbow_e" mesh="shortbow_e" culture="Culture.sturgia" weight="1.907876" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_nordic_short_bow_v2_h3" name="{=tEimkEsU}Nordic Short Bow +3" body_name="bo_composite_shotbow_c" mesh="shortbow_e" culture="Culture.sturgia" weight="1.907876" difficulty="30" appearance="0.6" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="112" speed_rating="84" missile_speed="88" weapon_length="108" accuracy="130" thrust_damage="13" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3272,7 +3272,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_light_recurve_bow_v2_h0" name="{=E7miRMw1}Light Recurve Bow" body_name="bo_shortbow_b" mesh="shortbow_b" culture="Culture.khuzait" weight="1.133811" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_light_recurve_bow_v2_h0" name="{=E7miRMw1}Light Recurve Bow" body_name="bo_composite_shotbow_b" mesh="shortbow_b" culture="Culture.khuzait" weight="1.133811" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="122" speed_rating="130" missile_speed="75" weapon_length="106" accuracy="100" thrust_damage="10" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.0,0,-0.1" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3283,7 +3283,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_light_recurve_bow_v2_h1" name="{=E7miRMw1}Light Recurve Bow +1" body_name="bo_shortbow_b" mesh="shortbow_b" culture="Culture.khuzait" weight="1.030738" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_light_recurve_bow_v2_h1" name="{=E7miRMw1}Light Recurve Bow +1" body_name="bo_composite_shotbow_b" mesh="shortbow_b" culture="Culture.khuzait" weight="1.030738" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="124" speed_rating="133" missile_speed="84" weapon_length="106" accuracy="100" thrust_damage="10" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.0,0,-0.1" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3294,7 +3294,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_light_recurve_bow_v2_h2" name="{=E7miRMw1}Light Recurve Bow +2" body_name="bo_shortbow_b" mesh="shortbow_b" culture="Culture.khuzait" weight="0.9448428" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_light_recurve_bow_v2_h2" name="{=E7miRMw1}Light Recurve Bow +2" body_name="bo_composite_shotbow_b" mesh="shortbow_b" culture="Culture.khuzait" weight="0.9448428" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="128" speed_rating="133" missile_speed="84" weapon_length="106" accuracy="103" thrust_damage="10" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.0,0,-0.1" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3305,7 +3305,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_light_recurve_bow_v2_h3" name="{=E7miRMw1}Light Recurve Bow +3" body_name="bo_shortbow_b" mesh="shortbow_b" culture="Culture.khuzait" weight="0.8721627" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_light_recurve_bow_v2_h3" name="{=E7miRMw1}Light Recurve Bow +3" body_name="bo_composite_shotbow_b" mesh="shortbow_b" culture="Culture.khuzait" weight="0.8721627" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="128" speed_rating="133" missile_speed="84" weapon_length="106" accuracy="109" thrust_damage="10" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.0,0,-0.1" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3316,7 +3316,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_steppe_bow_v2_h0" name="{=w6EU77OH}Noble Steppe Bow" body_name="bo_shortbow_d" mesh="shortbow_d" culture="Culture.khuzait" weight="2.568754" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_noble_steppe_bow_v2_h0" name="{=w6EU77OH}Noble Steppe Bow" body_name="bo_composite_shotbow_c" mesh="shortbow_d" culture="Culture.khuzait" weight="2.568754" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="121" speed_rating="83" missile_speed="74" weapon_length="108" accuracy="110" thrust_damage="13" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3327,7 +3327,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_steppe_bow_v2_h1" name="{=w6EU77OH}Noble Steppe Bow +1" body_name="bo_shortbow_d" mesh="shortbow_d" culture="Culture.khuzait" weight="2.335231" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_noble_steppe_bow_v2_h1" name="{=w6EU77OH}Noble Steppe Bow +1" body_name="bo_composite_shotbow_c" mesh="shortbow_d" culture="Culture.khuzait" weight="2.335231" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="123" speed_rating="86" missile_speed="83" weapon_length="108" accuracy="110" thrust_damage="13" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3338,7 +3338,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_steppe_bow_v2_h2" name="{=w6EU77OH}Noble Steppe Bow +2" body_name="bo_shortbow_d" mesh="shortbow_d" culture="Culture.khuzait" weight="2.140628" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_noble_steppe_bow_v2_h2" name="{=w6EU77OH}Noble Steppe Bow +2" body_name="bo_composite_shotbow_c" mesh="shortbow_d" culture="Culture.khuzait" weight="2.140628" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="127" speed_rating="86" missile_speed="83" weapon_length="108" accuracy="113" thrust_damage="13" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3349,7 +3349,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_noble_steppe_bow_v2_h3" name="{=w6EU77OH}Noble Steppe Bow +3" body_name="bo_shortbow_d" mesh="shortbow_d" culture="Culture.khuzait" weight="1.975965" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_noble_steppe_bow_v2_h3" name="{=w6EU77OH}Noble Steppe Bow +3" body_name="bo_composite_shotbow_c" mesh="shortbow_d" culture="Culture.khuzait" weight="1.975965" difficulty="30" appearance="0.4" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="127" speed_rating="86" missile_speed="83" weapon_length="108" accuracy="119" thrust_damage="13" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3360,7 +3360,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_heavy_hunting_bow_v3_h0" name="{=h1jKICdp}Heavy Hunting Bow" body_name="bo_shortbow_c" mesh="shortbow_c" weight="2.745972" difficulty="30" appearance="0.5" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_heavy_hunting_bow_v3_h0" name="{=h1jKICdp}Heavy Hunting Bow" body_name="bo_composite_shotbow_c" mesh="shortbow_c" weight="2.745972" difficulty="30" appearance="0.5" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="90" speed_rating="90" missile_speed="75" weapon_length="110" accuracy="125" thrust_damage="15" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3371,7 +3371,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_heavy_hunting_bow_v3_h1" name="{=h1jKICdp}Heavy Hunting Bow +1" body_name="bo_shortbow_c" mesh="shortbow_c" weight="2.496338" difficulty="30" appearance="0.5" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_heavy_hunting_bow_v3_h1" name="{=h1jKICdp}Heavy Hunting Bow +1" body_name="bo_composite_shotbow_c" mesh="shortbow_c" weight="2.496338" difficulty="30" appearance="0.5" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="91" speed_rating="93" missile_speed="77" weapon_length="110" accuracy="127" thrust_damage="15" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3382,7 +3382,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_heavy_hunting_bow_v3_h2" name="{=h1jKICdp}Heavy Hunting Bow +2" body_name="bo_shortbow_c" mesh="shortbow_c" weight="2.28831" difficulty="30" appearance="0.5" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_heavy_hunting_bow_v3_h2" name="{=h1jKICdp}Heavy Hunting Bow +2" body_name="bo_composite_shotbow_c" mesh="shortbow_c" weight="2.28831" difficulty="30" appearance="0.5" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="93" speed_rating="94" missile_speed="79" weapon_length="110" accuracy="129" thrust_damage="15" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3393,7 +3393,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_heavy_hunting_bow_v3_h3" name="{=h1jKICdp}Heavy Hunting Bow +3" body_name="bo_shortbow_c" mesh="shortbow_c" weight="2.112286" difficulty="30" appearance="0.5" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_heavy_hunting_bow_v3_h3" name="{=h1jKICdp}Heavy Hunting Bow +3" body_name="bo_composite_shotbow_c" mesh="shortbow_c" weight="2.112286" difficulty="30" appearance="0.5" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="93" speed_rating="94" missile_speed="79" weapon_length="110" accuracy="129" thrust_damage="16" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3404,7 +3404,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_simple_ranger_bow_v2_h0" name="{=Caver}Simple Ranger Bow" body_name="bo_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="1.714303" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_simple_ranger_bow_v2_h0" name="{=Caver}Simple Ranger Bow" body_name="bo_composite_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="1.714303" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="103" speed_rating="93" missile_speed="80" weapon_length="113" accuracy="130" thrust_damage="12" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3415,7 +3415,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_simple_ranger_bow_v2_h1" name="{=Caver}Simple Ranger Bow +1" body_name="bo_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="1.558458" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_simple_ranger_bow_v2_h1" name="{=Caver}Simple Ranger Bow +1" body_name="bo_composite_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="1.558458" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="104" speed_rating="96" missile_speed="82" weapon_length="113" accuracy="132" thrust_damage="12" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3426,7 +3426,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_simple_ranger_bow_v2_h2" name="{=Caver}Simple Ranger Bow +2" body_name="bo_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="1.428586" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_simple_ranger_bow_v2_h2" name="{=Caver}Simple Ranger Bow +2" body_name="bo_composite_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="1.428586" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="106" speed_rating="97" missile_speed="84" weapon_length="113" accuracy="134" thrust_damage="12" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3437,7 +3437,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_simple_ranger_bow_v2_h3" name="{=Caver}Simple Ranger Bow +3" body_name="bo_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="1.318695" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_simple_ranger_bow_v2_h3" name="{=Caver}Simple Ranger Bow +3" body_name="bo_composite_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="1.318695" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="106" speed_rating="97" missile_speed="84" weapon_length="113" accuracy="134" thrust_damage="13" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3448,7 +3448,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_common_ranger_bow_v2_h0" name="{=mTWvG1xz}Common Ranger Bow" body_name="bo_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="2.476824" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_common_ranger_bow_v2_h0" name="{=mTWvG1xz}Common Ranger Bow" body_name="bo_composite_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="2.476824" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="103" speed_rating="93" missile_speed="82" weapon_length="113" accuracy="115" thrust_damage="14" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3459,7 +3459,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_common_ranger_bow_v2_h1" name="{=mTWvG1xz}Common Ranger Bow +1" body_name="bo_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="2.251658" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_common_ranger_bow_v2_h1" name="{=mTWvG1xz}Common Ranger Bow +1" body_name="bo_composite_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="2.251658" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="104" speed_rating="96" missile_speed="84" weapon_length="113" accuracy="117" thrust_damage="14" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3470,7 +3470,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_common_ranger_bow_v2_h2" name="{=mTWvG1xz}Common Ranger Bow +2" body_name="bo_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="2.06402" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_common_ranger_bow_v2_h2" name="{=mTWvG1xz}Common Ranger Bow +2" body_name="bo_composite_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="2.06402" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="106" speed_rating="97" missile_speed="86" weapon_length="113" accuracy="119" thrust_damage="14" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3481,7 +3481,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_common_ranger_bow_v2_h3" name="{=mTWvG1xz}Common Ranger Bow +3" body_name="bo_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="1.905249" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_common_ranger_bow_v2_h3" name="{=mTWvG1xz}Common Ranger Bow +3" body_name="bo_composite_longbow_e" mesh="longbow_e" culture="Culture.battania" weight="1.905249" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="106" speed_rating="97" missile_speed="86" weapon_length="113" accuracy="119" thrust_damage="15" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3492,7 +3492,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_simple_long_bow_v2_h0" name="{=Caver}Simple Long Bow" body_name="bo_longbow_f" mesh="longbow_f" culture="Culture.battania" weight="1.871785" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_simple_long_bow_v2_h0" name="{=Caver}Simple Long Bow" body_name="bo_composite_longbow_e" mesh="longbow_f" culture="Culture.battania" weight="1.871785" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="88" speed_rating="90" missile_speed="84" weapon_length="111" accuracy="112" thrust_damage="14" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3503,7 +3503,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_simple_long_bow_v2_h1" name="{=Caver}Simple Long Bow +1" body_name="bo_longbow_f" mesh="longbow_f" culture="Culture.battania" weight="1.701623" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_simple_long_bow_v2_h1" name="{=Caver}Simple Long Bow +1" body_name="bo_composite_longbow_e" mesh="longbow_f" culture="Culture.battania" weight="1.701623" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="89" speed_rating="93" missile_speed="86" weapon_length="111" accuracy="114" thrust_damage="14" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3514,7 +3514,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_simple_long_bow_v2_h2" name="{=Caver}Simple Long Bow +2" body_name="bo_longbow_f" mesh="longbow_f" culture="Culture.battania" weight="1.559821" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_simple_long_bow_v2_h2" name="{=Caver}Simple Long Bow +2" body_name="bo_composite_longbow_e" mesh="longbow_f" culture="Culture.battania" weight="1.559821" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="91" speed_rating="94" missile_speed="88" weapon_length="111" accuracy="116" thrust_damage="14" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3525,7 +3525,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_simple_long_bow_v2_h3" name="{=Caver}Simple Long Bow +3" body_name="bo_longbow_f" mesh="longbow_f" culture="Culture.battania" weight="1.439835" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_simple_long_bow_v2_h3" name="{=Caver}Simple Long Bow +3" body_name="bo_composite_longbow_e" mesh="longbow_f" culture="Culture.battania" weight="1.439835" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="91" speed_rating="94" missile_speed="88" weapon_length="111" accuracy="116" thrust_damage="15" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3536,7 +3536,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_common_long_bow_v2_h0" name="{=KTegaNPW}Common Long Bow" body_name="bo_longbow_f" mesh="longbow_f" culture="Culture.battania" weight="2.822189" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_common_long_bow_v2_h0" name="{=KTegaNPW}Common Long Bow" body_name="bo_composite_longbow_e" mesh="longbow_f" culture="Culture.battania" weight="2.822189" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="88" speed_rating="90" missile_speed="86" weapon_length="111" accuracy="107" thrust_damage="16" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3547,7 +3547,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_common_long_bow_v2_h1" name="{=KTegaNPW}Common Long Bow +1" body_name="bo_longbow_f" mesh="longbow_f" culture="Culture.battania" weight="2.565626" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_common_long_bow_v2_h1" name="{=KTegaNPW}Common Long Bow +1" body_name="bo_composite_longbow_e" mesh="longbow_f" culture="Culture.battania" weight="2.565626" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="89" speed_rating="93" missile_speed="88" weapon_length="111" accuracy="109" thrust_damage="16" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3558,7 +3558,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_common_long_bow_v2_h2" name="{=KTegaNPW}Common Long Bow +2" body_name="bo_longbow_f" mesh="longbow_f" culture="Culture.battania" weight="2.351824" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_common_long_bow_v2_h2" name="{=KTegaNPW}Common Long Bow +2" body_name="bo_composite_longbow_e" mesh="longbow_f" culture="Culture.battania" weight="2.351824" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="91" speed_rating="94" missile_speed="90" weapon_length="111" accuracy="111" thrust_damage="16" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3569,7 +3569,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_common_long_bow_v2_h3" name="{=KTegaNPW}Common Long Bow +3" body_name="bo_longbow_f" mesh="longbow_f" culture="Culture.battania" weight="2.170915" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_common_long_bow_v2_h3" name="{=KTegaNPW}Common Long Bow +3" body_name="bo_composite_longbow_e" mesh="longbow_f" culture="Culture.battania" weight="2.170915" difficulty="15" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="91" speed_rating="94" missile_speed="90" weapon_length="111" accuracy="111" thrust_damage="17" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3580,7 +3580,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_simple_steppe_bow_v2_h0" name="{=Caver}Simple Steppe Bow" body_name="bo_shortbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.371253" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_simple_steppe_bow_v2_h0" name="{=Caver}Simple Steppe Bow" body_name="bo_composite_shotbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.371253" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="125" speed_rating="85" missile_speed="71" weapon_length="110" accuracy="130" thrust_damage="10" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3591,7 +3591,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_simple_steppe_bow_v2_h1" name="{=Caver}Simple Steppe Bow +1" body_name="bo_shortbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.246593" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_simple_steppe_bow_v2_h1" name="{=Caver}Simple Steppe Bow +1" body_name="bo_composite_shotbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.246593" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="127" speed_rating="88" missile_speed="80" weapon_length="110" accuracy="130" thrust_damage="10" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3602,7 +3602,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_simple_steppe_bow_v2_h2" name="{=Caver}Simple Steppe Bow +2" body_name="bo_shortbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.14271" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_simple_steppe_bow_v2_h2" name="{=Caver}Simple Steppe Bow +2" body_name="bo_composite_shotbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.14271" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="131" speed_rating="88" missile_speed="80" weapon_length="110" accuracy="133" thrust_damage="10" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3613,7 +3613,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_simple_steppe_bow_v2_h3" name="{=Caver}Simple Steppe Bow +3" body_name="bo_shortbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.05481" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_simple_steppe_bow_v2_h3" name="{=Caver}Simple Steppe Bow +3" body_name="bo_composite_shotbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.05481" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="131" speed_rating="88" missile_speed="80" weapon_length="110" accuracy="139" thrust_damage="10" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3624,7 +3624,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_steppe_bow_v2_h0" name="{=steppebowitem}Steppe Bow" body_name="bo_shortbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.709566" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_steppe_bow_v2_h0" name="{=steppebowitem}Steppe Bow" body_name="bo_composite_shotbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.709566" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="125" speed_rating="85" missile_speed="72" weapon_length="110" accuracy="120" thrust_damage="11" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3635,7 +3635,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_steppe_bow_v2_h1" name="{=steppebowitem}Steppe Bow +1" body_name="bo_shortbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.554151" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_steppe_bow_v2_h1" name="{=steppebowitem}Steppe Bow +1" body_name="bo_composite_shotbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.554151" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="127" speed_rating="88" missile_speed="81" weapon_length="110" accuracy="120" thrust_damage="11" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3646,7 +3646,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_steppe_bow_v2_h2" name="{=steppebowitem}Steppe Bow +2" body_name="bo_shortbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.424638" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_steppe_bow_v2_h2" name="{=steppebowitem}Steppe Bow +2" body_name="bo_composite_shotbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.424638" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="131" speed_rating="88" missile_speed="81" weapon_length="110" accuracy="123" thrust_damage="11" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3657,7 +3657,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_steppe_bow_v2_h3" name="{=steppebowitem}Steppe Bow +3" body_name="bo_shortbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.31505" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_steppe_bow_v2_h3" name="{=steppebowitem}Steppe Bow +3" body_name="bo_composite_shotbow_g" mesh="shortbow_g" culture="Culture.khuzait" weight="1.31505" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="131" speed_rating="88" missile_speed="81" weapon_length="110" accuracy="129" thrust_damage="11" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3668,7 +3668,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_light_hunting_bow_v3_h0" name="{=YGQ6UXCo}Light Hunting Bow" body_name="bo_shortbow_i" mesh="shortbow_i" culture="Culture.battania" weight="1.819491" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_light_hunting_bow_v3_h0" name="{=YGQ6UXCo}Light Hunting Bow" body_name="bo_composite_shotbow_h" mesh="shortbow_i" culture="Culture.battania" weight="1.819491" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="92" speed_rating="92" missile_speed="73" weapon_length="108" accuracy="130" thrust_damage="13" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3679,7 +3679,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_light_hunting_bow_v3_h1" name="{=YGQ6UXCo}Light Hunting Bow +1" body_name="bo_shortbow_i" mesh="shortbow_i" culture="Culture.battania" weight="1.654082" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_light_hunting_bow_v3_h1" name="{=YGQ6UXCo}Light Hunting Bow +1" body_name="bo_composite_shotbow_h" mesh="shortbow_i" culture="Culture.battania" weight="1.654082" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="93" speed_rating="95" missile_speed="75" weapon_length="108" accuracy="132" thrust_damage="13" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3690,7 +3690,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_light_hunting_bow_v3_h2" name="{=YGQ6UXCo}Light Hunting Bow +2" body_name="bo_shortbow_i" mesh="shortbow_i" culture="Culture.battania" weight="1.516242" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_light_hunting_bow_v3_h2" name="{=YGQ6UXCo}Light Hunting Bow +2" body_name="bo_composite_shotbow_h" mesh="shortbow_i" culture="Culture.battania" weight="1.516242" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="95" speed_rating="96" missile_speed="77" weapon_length="108" accuracy="134" thrust_damage="13" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3701,7 +3701,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_light_hunting_bow_v3_h3" name="{=YGQ6UXCo}Light Hunting Bow +3" body_name="bo_shortbow_i" mesh="shortbow_i" culture="Culture.battania" weight="1.399608" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_light_hunting_bow_v3_h3" name="{=YGQ6UXCo}Light Hunting Bow +3" body_name="bo_composite_shotbow_h" mesh="shortbow_i" culture="Culture.battania" weight="1.399608" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="95" speed_rating="96" missile_speed="77" weapon_length="108" accuracy="134" thrust_damage="14" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3712,7 +3712,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_common_hunting_bow_v3_h0" name="{=wltdyF2j}Common Hunting Bow" body_name="bo_shortbow_h" mesh="shortbow_h" culture="Culture.battania" weight="2.323046" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_common_hunting_bow_v3_h0" name="{=wltdyF2j}Common Hunting Bow" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="2.323046" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="91" speed_rating="91" missile_speed="74" weapon_length="110" accuracy="130" thrust_damage="14" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3723,7 +3723,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_common_hunting_bow_v3_h1" name="{=wltdyF2j}Common Hunting Bow +1" body_name="bo_shortbow_h" mesh="shortbow_h" culture="Culture.battania" weight="2.11186" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_common_hunting_bow_v3_h1" name="{=wltdyF2j}Common Hunting Bow +1" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="2.11186" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="92" speed_rating="94" missile_speed="76" weapon_length="110" accuracy="132" thrust_damage="14" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3734,7 +3734,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_common_hunting_bow_v3_h2" name="{=wltdyF2j}Common Hunting Bow +2" body_name="bo_shortbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.935872" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_common_hunting_bow_v3_h2" name="{=wltdyF2j}Common Hunting Bow +2" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.935872" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="94" speed_rating="95" missile_speed="78" weapon_length="110" accuracy="134" thrust_damage="14" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -3745,7 +3745,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_common_hunting_bow_v3_h3" name="{=wltdyF2j}Common Hunting Bow +3" body_name="bo_shortbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.786958" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_common_hunting_bow_v3_h3" name="{=wltdyF2j}Common Hunting Bow +3" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.786958" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="94" speed_rating="95" missile_speed="78" weapon_length="110" accuracy="134" thrust_damage="15" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -7796,28 +7796,28 @@
       <Piece id="crpg_cavalry_lance_handle_h3" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_az-zagayah_v2_h0" name="{=Telford}Az-zaÄ¡Äyah" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_az-zagayah_v2_h0" name="{=Telford}Az-zaġāyah" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_az-zaÄ¡Äyah_blade_h0" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_az-zaÄ¡Äyah_handle_h0" Type="Handle" scale_factor="103" />
+      <Piece id="crpg_az-zaġāyah_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_az-zaġāyah_handle_h0" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_az-zagayah_v2_h1" name="{=Telford}Az-zaÄ¡Äyah +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_az-zagayah_v2_h1" name="{=Telford}Az-zaġāyah +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_az-zaÄ¡Äyah_blade_h1" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_az-zaÄ¡Äyah_handle_h1" Type="Handle" scale_factor="103" />
+      <Piece id="crpg_az-zaġāyah_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_az-zaġāyah_handle_h1" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_az-zagayah_v2_h2" name="{=Telford}Az-zaÄ¡Äyah +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_az-zagayah_v2_h2" name="{=Telford}Az-zaġāyah +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_az-zaÄ¡Äyah_blade_h2" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_az-zaÄ¡Äyah_handle_h2" Type="Handle" scale_factor="103" />
+      <Piece id="crpg_az-zaġāyah_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_az-zaġāyah_handle_h2" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_az-zagayah_v2_h3" name="{=Telford}Az-zaÄ¡Äyah +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_az-zagayah_v2_h3" name="{=Telford}Az-zaġāyah +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_az-zaÄ¡Äyah_blade_h3" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_az-zaÄ¡Äyah_handle_h3" Type="Handle" scale_factor="103" />
+      <Piece id="crpg_az-zaġāyah_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_az-zaġāyah_handle_h3" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_decorated_steppe_lance_v2_h0" name="{=Telford}Decorated Steppe Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
@@ -10532,7 +10532,7 @@
       <Piece id="crpg_wooden_sword_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <Item id="crpg_training_longbow_v2_h0" name="{=cmuMaYGR}Practice Bow" body_name="bo_longbow_a" mesh="longbow_a" culture="Culture.vlandia" is_merchandise="false" subtype="bow" weight="0.7071788" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_training_longbow_v2_h0" name="{=cmuMaYGR}Practice Bow" body_name="bo_composite_longbow_a" mesh="longbow_a" culture="Culture.vlandia" is_merchandise="false" subtype="bow" weight="0.7071788" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="90" speed_rating="85" missile_speed="80" weapon_length="120" accuracy="130" thrust_damage="10" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -10543,7 +10543,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_training_longbow_v2_h1" name="{=cmuMaYGR}Practice Bow +1" body_name="bo_longbow_a" mesh="longbow_a" culture="Culture.vlandia" is_merchandise="false" subtype="bow" weight="0.6428898" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_training_longbow_v2_h1" name="{=cmuMaYGR}Practice Bow +1" body_name="bo_composite_longbow_a" mesh="longbow_a" culture="Culture.vlandia" is_merchandise="false" subtype="bow" weight="0.6428898" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="91" speed_rating="88" missile_speed="82" weapon_length="120" accuracy="132" thrust_damage="10" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -10554,7 +10554,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_training_longbow_v2_h2" name="{=cmuMaYGR}Practice Bow +2" body_name="bo_longbow_a" mesh="longbow_a" culture="Culture.vlandia" is_merchandise="false" subtype="bow" weight="0.5893157" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_training_longbow_v2_h2" name="{=cmuMaYGR}Practice Bow +2" body_name="bo_composite_longbow_a" mesh="longbow_a" culture="Culture.vlandia" is_merchandise="false" subtype="bow" weight="0.5893157" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="93" speed_rating="89" missile_speed="84" weapon_length="120" accuracy="134" thrust_damage="10" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -10565,7 +10565,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_training_longbow_v2_h3" name="{=cmuMaYGR}Practice Bow +3" body_name="bo_longbow_a" mesh="longbow_a" culture="Culture.vlandia" is_merchandise="false" subtype="bow" weight="0.5439837" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_training_longbow_v2_h3" name="{=cmuMaYGR}Practice Bow +3" body_name="bo_composite_longbow_a" mesh="longbow_a" culture="Culture.vlandia" is_merchandise="false" subtype="bow" weight="0.5439837" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="93" speed_rating="89" missile_speed="84" weapon_length="120" accuracy="134" thrust_damage="11" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,0,0">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -10576,7 +10576,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_training_bow_v2_h0" name="{=SUSbUAEl}Stick with a String" body_name="bo_shortbow_b" mesh="shortbow_b" weight="0.1136727" difficulty="0" appearance="1" is_merchandise="false" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_training_bow_v2_h0" name="{=SUSbUAEl}Stick with a String" body_name="bo_composite_shotbow_b" mesh="shortbow_b" weight="0.1136727" difficulty="0" appearance="1" is_merchandise="false" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="120" speed_rating="100" missile_speed="60" weapon_length="106" accuracy="130" thrust_damage="5" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.0,0,-0.1">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -10587,7 +10587,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_training_bow_v2_h1" name="{=SUSbUAEl}Stick with a String +1" body_name="bo_shortbow_b" mesh="shortbow_b" weight="0.1033389" difficulty="0" appearance="1" is_merchandise="false" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_training_bow_v2_h1" name="{=SUSbUAEl}Stick with a String +1" body_name="bo_composite_shotbow_b" mesh="shortbow_b" weight="0.1033389" difficulty="0" appearance="1" is_merchandise="false" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="122" speed_rating="103" missile_speed="69" weapon_length="106" accuracy="130" thrust_damage="5" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.0,0,-0.1">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -10598,7 +10598,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_training_bow_v2_h2" name="{=SUSbUAEl}Stick with a String +2" body_name="bo_shortbow_b" mesh="shortbow_b" weight="0.09472729" difficulty="0" appearance="1" is_merchandise="false" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_training_bow_v2_h2" name="{=SUSbUAEl}Stick with a String +2" body_name="bo_composite_shotbow_b" mesh="shortbow_b" weight="0.09472729" difficulty="0" appearance="1" is_merchandise="false" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="126" speed_rating="103" missile_speed="69" weapon_length="106" accuracy="133" thrust_damage="5" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.0,0,-0.1">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -10609,7 +10609,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_training_bow_v2_h3" name="{=SUSbUAEl}Stick with a String +3" body_name="bo_shortbow_b" mesh="shortbow_b" weight="0.08744058" difficulty="0" appearance="1" is_merchandise="false" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
+  <Item id="crpg_training_bow_v2_h3" name="{=SUSbUAEl}Stick with a String +3" body_name="bo_composite_shotbow_b" mesh="shortbow_b" weight="0.08744058" difficulty="0" appearance="1" is_merchandise="false" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="126" speed_rating="103" missile_speed="69" weapon_length="106" accuracy="139" thrust_damage="5" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.0,0,-0.1">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -14040,7 +14040,7 @@
       <Piece id="crpg_at_partisan_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <Item id="crpg_yumi_v1_h0" name="{=Salt}DaikyÅ« Yumi" body_name="bo_composite_shotbow_a" mesh="yumi" culture="Culture.vlandia" subtype="bow" weight="4.005281" appearance="1.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_yumi_v1_h0" name="{=Salt}Daikyū Yumi" body_name="bo_composite_shotbow_a" mesh="yumi" culture="Culture.vlandia" subtype="bow" weight="4.005281" appearance="1.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="72" speed_rating="67" missile_speed="82" weapon_length="120" accuracy="110" thrust_damage="20" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,15,15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -14051,7 +14051,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_yumi_v1_h1" name="{=Salt}DaikyÅ« Yumi +1" body_name="bo_composite_shotbow_a" mesh="yumi" culture="Culture.vlandia" subtype="bow" weight="3.641165" appearance="1.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_yumi_v1_h1" name="{=Salt}Daikyū Yumi +1" body_name="bo_composite_shotbow_a" mesh="yumi" culture="Culture.vlandia" subtype="bow" weight="3.641165" appearance="1.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="73" speed_rating="70" missile_speed="84" weapon_length="120" accuracy="112" thrust_damage="20" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,15,15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -14062,7 +14062,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_yumi_v1_h2" name="{=Salt}DaikyÅ« Yumi +2" body_name="bo_composite_shotbow_a" mesh="yumi" culture="Culture.vlandia" subtype="bow" weight="3.337734" appearance="1.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_yumi_v1_h2" name="{=Salt}Daikyū Yumi +2" body_name="bo_composite_shotbow_a" mesh="yumi" culture="Culture.vlandia" subtype="bow" weight="3.337734" appearance="1.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="75" speed_rating="71" missile_speed="86" weapon_length="120" accuracy="114" thrust_damage="20" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,15,15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -14073,7 +14073,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_yumi_v1_h3" name="{=Salt}DaikyÅ« Yumi +3" body_name="bo_composite_shotbow_a" mesh="yumi" culture="Culture.vlandia" subtype="bow" weight="3.080986" appearance="1.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
+  <Item id="crpg_yumi_v1_h3" name="{=Salt}Daikyū Yumi +3" body_name="bo_composite_shotbow_a" mesh="yumi" culture="Culture.vlandia" subtype="bow" weight="3.080986" appearance="1.4" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="75" speed_rating="71" missile_speed="86" weapon_length="120" accuracy="114" thrust_damage="21" thrust_damage_type="Pierce" item_usage="long_bow" physics_material="wood_weapon" center_of_mass="0.15,15,15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
