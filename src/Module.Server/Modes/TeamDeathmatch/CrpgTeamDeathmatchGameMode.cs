@@ -150,7 +150,6 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
                 new MultiplayerAdminComponent(),
                 new CrpgUserManagerServer(crpgClient, _constants, CrpgGameMode.CRPGTeamDeathmatch),
                 new KickInactiveBehavior(inactiveTimeLimit: 30, warmupComponent, teamSelectComponent),
-                new MapPoolComponent(),
                 new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),
                 new ServerMetricsBehavior(),
                 new NotAllPlayersReadyComponent(),

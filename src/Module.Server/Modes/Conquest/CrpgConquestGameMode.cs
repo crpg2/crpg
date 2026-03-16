@@ -146,7 +146,6 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
                 new SpawnComponent(new SiegeSpawnFrameBehavior(), spawnBehavior),
                 new CrpgUserManagerServer(crpgClient, _constants, CrpgGameMode.CRPGConquest),
                 new KickInactiveBehavior(inactiveTimeLimit: 90, warmupComponent, teamSelectComponent),
-                new MapPoolComponent(),
                 new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),
                 new ServerMetricsBehavior(),
                 new NotAllPlayersReadyComponent(),

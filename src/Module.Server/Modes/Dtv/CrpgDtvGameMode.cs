@@ -150,7 +150,6 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new MultiplayerAdminComponent(), // admin UI to kick player or restart game
                 new CrpgUserManagerServer(crpgClient, _constants, CrpgGameMode.CRPGDTV),
                 new KickInactiveBehavior(inactiveTimeLimit: 120, warmupComponent),
-                new MapPoolComponent(),
                 new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),
                 new ServerMetricsBehavior(),
                 new NotAllPlayersReadyComponent(),
