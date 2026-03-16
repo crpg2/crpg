@@ -8,7 +8,7 @@
         color="neutral"
         variant="ghost"
         active-variant="soft"
-        :leading-icon="`crpg:${locale}`"
+        :leading-icon="`crpg:locale-${locale}`"
         :trailing-icon="open ? 'crpg:chevron-up' : 'crpg:chevron-down'"
         :active="open"
         :label="locale.toUpperCase()"

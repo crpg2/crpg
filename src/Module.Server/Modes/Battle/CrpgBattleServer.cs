@@ -16,7 +16,6 @@ namespace Crpg.Module.Modes.Battle;
 internal class CrpgBattleServer : MissionMultiplayerGameModeBase
 {
     private const float BattleMoraleGainOnTick = 0.01f;
-    private const float BattleMoraleGainMultiplierLastFlag = 2f;
     private const float SkirmishMoraleGainOnTick = 0.00125f;
     private const float SkirmishMoraleGainMultiplierLastFlag = 2f;
     private const int LossMultiplier = 2;
@@ -301,15 +300,16 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
         }
 
         float moraleGainOnTick = _gametype == MultiplayerGameType.Skirmish ? SkirmishMoraleGainOnTick : BattleMoraleGainOnTick;
-        float moraleGainMultiplierLastFlag = _gametype == MultiplayerGameType.Skirmish ? SkirmishMoraleGainMultiplierLastFlag : BattleMoraleGainMultiplierLastFlag;
 
         float moraleMultiplier = moraleGainOnTick * Math.Abs(teamFlagsDelta);
         float moraleGain = teamFlagsDelta <= 0
             ? MBMath.ClampFloat(-1 - _morale, -2f, -1f) * moraleMultiplier
             : MBMath.ClampFloat(1 - _morale, 1f, 2f) * moraleMultiplier;
-        if (_flagSystem.HasFlagCountChanged()) // For the last flag, the morale is moving faster.
+        // In skirmish, morale moves faster once flags are reduced to one.
+        // In battle, there is always a single flag so no multiplier applies.
+        if (_gametype == MultiplayerGameType.Skirmish && _flagSystem.HasFlagCountChanged())
         {
-            moraleGain *= moraleGainMultiplierLastFlag;
+            moraleGain *= SkirmishMoraleGainMultiplierLastFlag;
         }
 
         return moraleGain;

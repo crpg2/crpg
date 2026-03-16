@@ -12,7 +12,7 @@ interface ConvertState {
 }
 
 defineProps<{
-  fieldGroupKey: CharacteristicSectionKey
+  section: CharacteristicSectionKey
   points: number
   convertAttributesToSkillsState?: ConvertState
   convertSkillsToAttributesState?: ConvertState
@@ -25,11 +25,9 @@ defineEmits<{
 </script>
 
 <template>
-  <UiDataCell
-    :data-aq-fields-group="fieldGroupKey"
-  >
+  <UiDataCell>
     <UiTextView variant="p">
-      {{ $t(`character.characteristic.${fieldGroupKey}.title`) }} -
+      {{ $t(`character.characteristic.${section}.title`) }} -
 
       <span
         class="font-bold"
@@ -40,7 +38,7 @@ defineEmits<{
     </UiTextView>
 
     <template #rightContent>
-      <UTooltip v-if="fieldGroupKey === 'attributes' && convertAttributesToSkillsState">
+      <UTooltip v-if="section === 'attributes' && convertAttributesToSkillsState">
         <UButton
           variant="outline"
           color="neutral"
@@ -73,7 +71,7 @@ defineEmits<{
         </template>
       </UTooltip>
 
-      <UTooltip v-else-if="fieldGroupKey === 'skills' && convertSkillsToAttributesState">
+      <UTooltip v-else-if="section === 'skills' && convertSkillsToAttributesState">
         <UButton
           variant="outline"
           color="neutral"

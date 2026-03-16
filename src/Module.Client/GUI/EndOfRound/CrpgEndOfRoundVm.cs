@@ -1,12 +1,9 @@
-﻿using Crpg.Module.Common;
-using Crpg.Module.Helpers;
-using TaleWorlds.Core;
+﻿using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Missions.Multiplayer;
-using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.EndOfRound;
 using TaleWorlds.ObjectSystem;
 
@@ -26,18 +23,12 @@ public class CrpgEndOfRoundVm : ViewModel
     private readonly TextObject _roundEndReasonEnemyTeamGameModeSpecificEndedTextObject;
     private readonly TextObject _roundEndReasonRoundTimeEndedWithDrawTextObject;
     private bool _isShown;
-    private bool _hasAttackerMvp;
-    private bool _hasDefenderMvp;
     private string _title = string.Empty;
     private string _description = string.Empty;
     private string _cultureId = string.Empty;
     private bool _isRoundWinner;
     private MultiplayerEndOfRoundSideVM _attackerSide = null!;
     private MultiplayerEndOfRoundSideVM _defenderSide = null!;
-    private MPPlayerVM _attackerMvp = null!;
-    private MPPlayerVM _defenderMvp = null!;
-    private string _attackerMvpTitleText = string.Empty;
-    private string _defenderMvpTitleText = string.Empty;
     private BannerImageIdentifierVM? _allyBanner;
     private BannerImageIdentifierVM? _enemyBanner;
 
@@ -111,8 +102,6 @@ public class CrpgEndOfRoundVm : ViewModel
         Team? team = missionPeer.Team;
         if (team != null && team.Side == BattleSideEnum.Attacker)
         {
-            AttackerMVPTitleText = GetMvpTitleText(@object);
-            DefenderMVPTitleText = GetMvpTitleText(object2);
             AttackerSide.SetData(@object, missionScoreboardSide.SideScore, isWinner,
                 new MultiplayerBattleColors.MultiplayerCultureColorInfo(@object, false));
 
@@ -121,8 +110,6 @@ public class CrpgEndOfRoundVm : ViewModel
         }
         else
         {
-            DefenderMVPTitleText = GetMvpTitleText(@object);
-            AttackerMVPTitleText = GetMvpTitleText(object2);
             DefenderSide.SetData(@object, missionScoreboardSide.SideScore, isWinner,
                 new MultiplayerBattleColors.MultiplayerCultureColorInfo(object2, @object == object2));
             AttackerSide.SetData(object2, missionScoreboardSide2.SideScore, isWinner2,
@@ -175,94 +162,10 @@ public class CrpgEndOfRoundVm : ViewModel
         }
     }
 
-    public void OnMVPSelected(MissionPeer mvpPeer)
-    {
-        BasicCharacterObject @object = MBObjectManager.Instance.GetObject<BasicCharacterObject>("mp_character");
-        @object.UpdatePlayerCharacterBodyProperties(mvpPeer.Peer.BodyProperties, mvpPeer.Peer.Race,
-            mvpPeer.Peer.IsFemale);
-        @object.Age = mvpPeer.Peer.BodyProperties.Age;
-
-        var crpgUser = mvpPeer.Peer.GetComponent<CrpgPeer>()?.User;
-        if (crpgUser != null)
-        {
-            var equipment = CrpgCharacterBuilder.CreateCharacterEquipment(crpgUser.Character.EquippedItems);
-            MBEquipmentRoster equipmentRoster = new();
-            ReflectionHelper.SetField(equipmentRoster, "_equipments", new MBList<Equipment> { equipment });
-            ReflectionHelper.SetField(@object, "_equipmentRoster", equipmentRoster);
-        }
-
-        NetworkCommunicator myPeer = GameNetwork.MyPeer;
-        MissionPeer missionPeer = myPeer.GetComponent<MissionPeer>();
-        Team team = mvpPeer.Team;
-        BattleSideEnum? battleSideEnum = team != null ? new BattleSideEnum?(team.Side) : null;
-        Team team2 = missionPeer.Team;
-        BattleSideEnum? battleSideEnum2 = team2 != null ? new BattleSideEnum?(team2.Side) : null;
-        if (battleSideEnum.GetValueOrDefault() == battleSideEnum2.GetValueOrDefault() &
-            battleSideEnum != null == (battleSideEnum2 != null))
-        {
-            AttackerMVP = new MPPlayerVM(mvpPeer);
-            AttackerMVP.RefreshDivision();
-            AttackerMVP.RefreshPreview(@object, mvpPeer.Peer.BodyProperties.DynamicProperties,
-                mvpPeer.Peer.IsFemale);
-            HasAttackerMVP = true;
-            return;
-        }
-
-        DefenderMVP = new MPPlayerVM(mvpPeer);
-        DefenderMVP.RefreshDivision();
-        DefenderMVP.RefreshPreview(@object, mvpPeer.Peer.BodyProperties.DynamicProperties, mvpPeer.Peer.IsFemale);
-        HasDefenderMVP = true;
-    }
-
     private void HandleBannerChange(string attackerBanner, string defenderBanner, string attackerName, string defenderName)
     {
         AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(attackerBanner) : new Banner(defenderBanner), true);
         EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(defenderBanner) : new Banner(attackerBanner), true);
-    }
-
-    private string GetMvpTitleText(BasicCultureObject culture)
-    {
-        if (culture.StringId == "vlandia")
-        {
-            return new TextObject("{=3VosbFR0}Vlandian Champion").ToString();
-        }
-
-        if (culture.StringId == "sturgia")
-        {
-            return new TextObject("{=AGUXiN8u}Voivode").ToString();
-        }
-
-        if (culture.StringId == "khuzait")
-        {
-            return new TextObject("{=F2h2cT4q}Khan's Chosen").ToString();
-        }
-
-        if (culture.StringId == "battania")
-        {
-            return new TextObject("{=eWPN3HmE}Hero of Battania").ToString();
-        }
-
-        if (culture.StringId == "aserai")
-        {
-            return new TextObject("{=5zNfxZ7B}War Prince").ToString();
-        }
-
-        if (culture.StringId == "empire")
-        {
-            return new TextObject("{=wwbIcqsq}Conqueror").ToString();
-        }
-
-        Debug.FailedAssert("Invalid Culture ID for MVP Title");
-        return string.Empty;
-    }
-
-    private void OnIsShownChanged()
-    {
-        if (!IsShown)
-        {
-            HasAttackerMVP = false;
-            HasDefenderMVP = false;
-        }
     }
 
     [DataSourceProperty]
@@ -277,43 +180,6 @@ public class CrpgEndOfRoundVm : ViewModel
             if (value != _isShown)
             {
                 _isShown = value;
-                OnPropertyChangedWithValue(value);
-                OnIsShownChanged();
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    // ReSharper disable once InconsistentNaming
-    public bool HasAttackerMVP
-    {
-        get
-        {
-            return _hasAttackerMvp;
-        }
-        set
-        {
-            if (value != _hasAttackerMvp)
-            {
-                _hasAttackerMvp = value;
-                OnPropertyChangedWithValue(value);
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    // ReSharper disable once InconsistentNaming
-    public bool HasDefenderMVP
-    {
-        get
-        {
-            return _hasDefenderMvp;
-        }
-        set
-        {
-            if (value != _hasDefenderMvp)
-            {
-                _hasDefenderMvp = value;
                 OnPropertyChangedWithValue(value);
             }
         }
@@ -416,78 +282,6 @@ public class CrpgEndOfRoundVm : ViewModel
             if (value != _defenderSide)
             {
                 _defenderSide = value;
-                OnPropertyChangedWithValue(value);
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    // ReSharper disable once InconsistentNaming
-    public MPPlayerVM AttackerMVP
-    {
-        get
-        {
-            return _attackerMvp;
-        }
-        set
-        {
-            if (value != _attackerMvp)
-            {
-                _attackerMvp = value;
-                OnPropertyChangedWithValue(value);
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    // ReSharper disable once InconsistentNaming
-    public MPPlayerVM DefenderMVP
-    {
-        get
-        {
-            return _defenderMvp;
-        }
-        set
-        {
-            if (value != _defenderMvp)
-            {
-                _defenderMvp = value;
-                OnPropertyChangedWithValue(value);
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    // ReSharper disable once InconsistentNaming
-    public string AttackerMVPTitleText
-    {
-        get
-        {
-            return _attackerMvpTitleText;
-        }
-        set
-        {
-            if (value != _attackerMvpTitleText)
-            {
-                _attackerMvpTitleText = value;
-                OnPropertyChangedWithValue(value);
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    // ReSharper disable once InconsistentNaming
-    public string DefenderMVPTitleText
-    {
-        get
-        {
-            return _defenderMvpTitleText;
-        }
-        set
-        {
-            if (value != _defenderMvpTitleText)
-            {
-                _defenderMvpTitleText = value;
                 OnPropertyChangedWithValue(value);
             }
         }

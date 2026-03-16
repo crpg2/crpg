@@ -27,11 +27,10 @@ const {
   characteristics,
   canConvertAttributesToSkills,
   canConvertSkillsToAttributes,
-  currentSkillRequirementsSatisfied,
   isChangeValid,
   isDirty,
-  getInputProps,
-  onInput,
+  getCharacteristicState,
+  onInputWithAutoClamp,
   onFillField,
   onResetField,
   reset: resetCharacterCharacteristicBuilder,
@@ -75,12 +74,11 @@ const [onRespecializeCharacter] = useAsyncCallback(
   <div class="relative mx-auto max-w-4xl">
     <div class="statsGrid grid items-start gap-6">
       <CharacterCharacteristicsBuilder
-        :get-input-props
+        :get-characteristic-state
         :characteristics
-        :check-current-skill-requirements-satisfied="currentSkillRequirementsSatisfied"
         :convert-attributes-to-skills-state="{ disabled: !canConvertAttributesToSkills, loading: convertingCharacterCharacteristics }"
         :convert-skills-to-attributes-state="{ disabled: !canConvertSkillsToAttributes, loading: convertingCharacterCharacteristics }"
-        @input="onInput"
+        @input-with-auto-clamp="onInputWithAutoClamp"
         @convert-attributes-to-skills="onConvertCharacterCharacteristics(CHARACTERISTIC_CONVERSION.AttributesToSkills)"
         @convert-skills-to-attributes="onConvertCharacterCharacteristics(CHARACTERISTIC_CONVERSION.SkillsToAttributes)"
         @fill-field="onFillField"

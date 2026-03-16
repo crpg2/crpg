@@ -52,6 +52,7 @@ import { clamp } from 'es-toolkit'
 
 import type { ActivityLog } from '~/models/activity-logs'
 import type {
+  AttributeKey,
   Character,
   CharacterArmorOverall,
   CharacterCharacteristics,
@@ -84,6 +85,7 @@ import { GAME_MODE } from '~/models/game-mode'
 import { ITEM_SLOT, ITEM_TYPE } from '~/models/item'
 import { armorTypes, computeAverageRepairCostPerHour } from '~/services/item-service'
 import { getIndexToInsert, range } from '~/utils/array'
+import { computeLeftMs } from '~/utils/date'
 import { applyPolynomialFunction, roundFLoat } from '~/utils/math'
 
 export const getCharacters = async (): Promise<Character[]> => (await getUsersSelfCharacters({})).data!
@@ -392,50 +394,93 @@ export const getCharacteristicCost = (
   return value
 }
 
-export const skillRequirementsSatisfied = (
+export interface CharacteristicRequirement {
+  section: CharacteristicSectionKey
+  characteristic: CharacteristicKey
+  characteristicPerLevel: number
+  needCharacteristic: number
+  satisfied: boolean
+}
+
+const skillRequirementRules: Partial<Record<SkillKey, {
+  characteristic: Exclude<AttributeKey, 'points'>
+  points: number
+}>> = {
+  athletics: { characteristic: 'agility', points: 3 },
+  ironFlesh: { characteristic: 'strength', points: 3 },
+  mountedArchery: { characteristic: 'agility', points: 6 },
+  powerDraw: { characteristic: 'strength', points: 3 },
+  powerStrike: { characteristic: 'strength', points: 3 },
+  powerThrow: { characteristic: 'strength', points: 6 },
+  riding: { characteristic: 'agility', points: 3 },
+  shield: { characteristic: 'agility', points: 6 },
+  weaponMaster: { characteristic: 'agility', points: 3 },
+}
+
+export interface CharacteristicState {
+  value: number
+  min: number
+  max: number
+  costToIncrease: number
+  requirement: CharacteristicRequirement | null
+}
+
+export const skillRequirementSatisfied = (
   key: SkillKey,
   value: number,
   characteristics: CharacterCharacteristics,
-): boolean => {
-  switch (key) {
-    case 'ironFlesh':
-    case 'powerStrike':
-    case 'powerDraw':
-      return value <= Math.floor(characteristics.attributes.strength / 3) // TODO: move to constants.json
+): CharacteristicRequirement | null => {
+  const rule = skillRequirementRules[key]
+  if (!rule) {
+    return null
+  }
 
-    case 'powerThrow':
-      return value <= Math.floor(characteristics.attributes.strength / 6)
+  const section: CharacteristicSectionKey = 'attributes'
+  const { characteristic, points } = rule
+  const availableCharacteristic = characteristics[section][characteristic]
+  const needCharacteristic = (value + 1) * points
+  const satisfied = value <= availableCharacteristic / points
 
-    case 'athletics':
-    case 'riding':
-    case 'weaponMaster':
-      return value <= Math.floor(characteristics.attributes.agility / 3) // TODO: move to constants.json
-
-    case 'mountedArchery':
-    case 'shield':
-      return value <= Math.floor(characteristics.attributes.agility / 6) // TODO: move to constants.json
-
-    default:
-      return false
+  return {
+    section,
+    characteristic,
+    characteristicPerLevel: points,
+    needCharacteristic,
+    satisfied,
   }
 }
 
-export const characteristicRequirementsSatisfied = (
+export const characteristicRequirementSatisfied = (
   section: CharacteristicSectionKey,
   key: CharacteristicKey,
   value: number,
   characteristics: CharacterCharacteristics,
-): boolean => {
+): CharacteristicRequirement | null => {
   switch (section) {
     case 'skills':
-      return skillRequirementsSatisfied(
+      return skillRequirementSatisfied(
         key as SkillKey,
         value,
         characteristics,
       )
     default:
-      return true
+      return null
   }
+}
+
+export const allCharacteristicRequirementSatisfied = (characteristics: CharacterCharacteristics): boolean => {
+  for (const [sectionKey, sectionValue] of objectEntries(characteristics)) {
+    for (const [key, value] of objectEntries(sectionValue)) {
+      if (key === 'points') {
+        continue
+      }
+      const requirement = characteristicRequirementSatisfied(sectionKey, key as CharacteristicKey, value, characteristics)
+      if (requirement !== null && !requirement.satisfied) {
+        return false
+      }
+    }
+  }
+  return true
 }
 
 export const createEmptyCharacteristic = (): CharacterCharacteristics => ({

@@ -22,6 +22,8 @@ public interface ICrpgDbContext
     DbSet<Character> Characters { get; }
     DbSet<Item> Items { get; }
     DbSet<UserItem> UserItems { get; }
+    DbSet<UserItemPreset> UserItemPresets { get; }
+    DbSet<UserItemPresetSlot> UserItemPresetSlots { get; }
     DbSet<PersonalItem> PersonalItems { get; }
     DbSet<EquippedItem> EquippedItems { get; }
     DbSet<CharacterLimitations> CharacterLimitations { get; }

@@ -1,0 +1,34 @@
+﻿ServerName cRPG-{{ crpg_region | upper }}-{{ crpg_game_server_id }}{{ item.name | upper }} Battle - c-rpg.eu
+GameType cRPGBattle
+WelcomeMessage Welcome to cRPG, visit https://c-rpg.eu/ to customise your character!
+AllowPollsToKickPlayers False
+AllowPollsToChangeMaps True
+disable_culture_voting
+CultureTeam1 vlandia
+CultureTeam2 sturgia
+RoundPreparationTimeLimit 2
+MaxNumberOfPlayers 200
+AutoTeamBalanceThreshold 0
+FriendlyFireDamageMeleeFriendPercent 50
+FriendlyFireDamageMeleeSelfPercent 0
+FriendlyFireDamageRangedFriendPercent 50
+FriendlyFireDamageRangedSelfPercent 0
+MinNumberOfPlayersForMatchStart 4
+NumberOfBotsTeam1 0
+NumberOfBotsTeam2 0
+NumberOfBotsPerFormation 10
+crpg_controlled_bots_count 0
+RoundTotal 7
+MapTimeLimit 8
+RoundTimeLimit 300
+WarmupTimeLimit 10
+SingleSpawn True
+start_game
+crpg_happy_hours {{ crpg_happy_hours }}
+crpg_experience_multiplier 1.35
+set_automated_battle_count -1
+enable_automated_battle_switching
+disable_map_voting
+crpg_team_balancer_clan_group_size_penalty 0.03
+crpg_team_balance_once False
+crpg_apply_harmony_patches

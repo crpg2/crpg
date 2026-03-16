@@ -56,6 +56,9 @@ export const createClientConfig: CreateClientConfig = (config) => {
           icon: 'crpg:error',
           close: false,
         })
+
+        const { $logger } = useNuxtApp()
+        $logger?.error('API error', error)
       }
     },
   })

@@ -1,5 +1,6 @@
 ﻿#if CRPG_SERVER
 using Crpg.Module.Api;
+using Crpg.Module.Api.Models;
 using Crpg.Module.Common.ChatCommands;
 using Crpg.Module.Modes.Siege;
 #else
@@ -56,7 +57,7 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
             ViewCreator.CreateMissionMainAgentEquipmentController(mission), // Pick/drop items.
             ViewCreator.CreateMissionMainAgentCheerBarkControllerView(mission),
             ViewCreatorManager.CreateMissionView<CrpgMissionMultiplayerEscapeMenu>(isNetwork: false, null, "cRPGConquest", gameModeClient),
-            ViewCreator.CreateMissionAgentLabelUIHandler(mission),
+            new CrpgAgentLabelView(),
             MultiplayerViewCreator.CreateMultiplayerTeamSelectUIHandler(),
             MultiplayerViewCreator.CreateMissionScoreBoardUIHandler(mission, false),
             MultiplayerViewCreator.CreateMultiplayerEndOfBattleUIHandler(),
@@ -97,7 +98,7 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
         CrpgWarmupComponent warmupComponent = new(_constants,
             () => (new SiegeSpawnFrameBehavior(), new CrpgSiegeSpawningBehavior(_constants)));
         CrpgTeamSelectServerComponent teamSelectComponent = new(warmupComponent, null, MultiplayerGameType.Siege);
-        CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: false, enableRating: false);
+        CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: false, enableRating: false, gameMode: CrpgGameMode.CRPGConquest);
         CrpgConquestServer conquestServer = new(scoreboardComponent, rewardServer);
 #else
         CrpgWarmupComponent warmupComponent = new(_constants, null);
@@ -143,7 +144,7 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
                 conquestServer,
                 rewardServer,
                 new SpawnComponent(new SiegeSpawnFrameBehavior(), spawnBehavior),
-                new CrpgUserManagerServer(crpgClient, _constants),
+                new CrpgUserManagerServer(crpgClient, _constants, CrpgGameMode.CRPGConquest),
                 new KickInactiveBehavior(inactiveTimeLimit: 90, warmupComponent, teamSelectComponent),
                 new MapPoolComponent(),
                 new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),

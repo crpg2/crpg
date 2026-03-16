@@ -33,13 +33,12 @@ const isNew = computed(() => !isGraceTimeExpired(getItemGraceTimeEnd(userItem)))
         />
       </UTooltip>
 
-      <template v-if="userItem.isArmoryItem">
+      <template v-if="userItem.clanArmoryLender">
         <ClanArmoryItemRelationBadge
-          v-if="lender && lender.id !== userId"
-          :lender
+          v-if="userItem.clanArmoryLender.user.id !== userId"
+          :lender="userItem.clanArmoryLender.user"
           class="cursor-default"
         />
-
         <UTooltip v-else :text="$t('character.inventory.item.clanArmory.inArmory.title')">
           <UBadge
             color="primary"

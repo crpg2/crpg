@@ -118,20 +118,10 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
             initialDirection.RotateCCW(MBRandom.RandomFloatRanged(-MathF.PI / 3f, MathF.PI / 3f));
             var troopOrigin = new CrpgBattleAgentOrigin(characterXml, characterSkills);
             CrpgCharacterBuilder.AssignArmorsToTroopOrigin(troopOrigin, crpgPeer.User.Character.EquippedItems.ToList());
-            Formation? formation = missionPeer.ControlledFormation;
-            if (formation == null)
-            {
-                formation = missionPeer.Team.FormationsIncludingEmpty.FirstOrDefault(x => x.PlayerOwner == null && x.CountOfUnits == 0);
-                if (formation != null)
-                {
-                    formation.ContainsAgentVisuals = true;
-                    if (string.IsNullOrEmpty(formation.BannerCode))
-                    {
-                        formation.BannerCode = missionPeer.Peer.BannerCode;
-                    }
-                }
-            }
-
+            Formation? formation = CurrentGameMode == MultiplayerGameType.Captain
+                ? missionPeer.ControlledFormation
+                    ?? AssignFormation(missionPeer)
+                : null;
             missionPeer.ControlledFormation = formation;
             missionPeer.HasSpawnedAgentVisuals = true;
             AgentBuildData agentBuildData = new AgentBuildData(characterXml)
@@ -298,6 +288,24 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
         }
 
         return false;
+    }
+
+    private Formation? AssignFormation(MissionPeer missionPeer)
+    {
+        Formation? formation = missionPeer.Team.FormationsIncludingEmpty
+            .FirstOrDefault(x => x.PlayerOwner == null && x.CountOfUnits == 0);
+        if (formation == null)
+        {
+            return null;
+        }
+
+        formation.ContainsAgentVisuals = true;
+        if (string.IsNullOrEmpty(formation.BannerCode))
+        {
+            formation.BannerCode = missionPeer.Peer.BannerCode;
+        }
+
+        return formation;
     }
 
     private void ResetSpawnTeams()

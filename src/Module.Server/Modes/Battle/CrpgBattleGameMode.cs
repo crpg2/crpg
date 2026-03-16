@@ -1,5 +1,6 @@
 #if CRPG_SERVER
 using Crpg.Module.Api;
+using Crpg.Module.Api.Models;
 using Crpg.Module.Common.ChatCommands;
 #else
 using Crpg.Module.GUI;
@@ -81,7 +82,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
             new MissionGauntletMultiplayerOrderUIHandler(),
             new OrderTroopPlacer(null),
             crpgEscapeMenu,
-            ViewCreator.CreateMissionAgentLabelUIHandler(mission),
+            new CrpgAgentLabelView(),
             MultiplayerViewCreator.CreateMultiplayerTeamSelectUIHandler(),
             new CrpgMissionScoreboardUIHandler(false),
             new CrpgEndOfRoundUiHandler(),
@@ -129,7 +130,14 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
         CrpgWarmupComponent warmupComponent = new(_constants, () =>
             (new FlagDominationSpawnFrameBehavior(), spawningBehavior));
         CrpgTeamSelectServerComponent teamSelectComponent = new(warmupComponent, roundController, _gameType);
-        CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: true, enableRating: true);
+        CrpgGameMode crpgGameMode = _gameType switch
+        {
+            MultiplayerGameType.Battle => CrpgGameMode.CRPGBattle,
+            MultiplayerGameType.Skirmish => CrpgGameMode.CRPGSkirmish,
+            MultiplayerGameType.Captain => CrpgGameMode.CRPGCaptain,
+            _ => CrpgGameMode.CRPGUnknownGameMode,
+        };
+        CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: true, enableRating: true, gameMode: crpgGameMode);
 #else
         CrpgWarmupComponent warmupComponent = new(_constants, null);
         CrpgTeamSelectClientComponent teamSelectComponent = new();
@@ -184,7 +192,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new SpawnComponent(new BattleSpawnFrameBehavior(), spawningBehavior),
                     new AgentHumanAILogic(), // bot intelligence
                     new MultiplayerAdminComponent(), // admin UI to kick player or restart game
-                    new CrpgUserManagerServer(crpgClient, _constants),
+                    new CrpgUserManagerServer(crpgClient, _constants, crpgGameMode),
                     new KickInactiveBehavior(inactiveTimeLimit: 30, warmupComponent, teamSelectComponent),
                     new MapPoolComponent(),
                     new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),

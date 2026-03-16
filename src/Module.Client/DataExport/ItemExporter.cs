@@ -1263,7 +1263,8 @@ internal static class ItemExporter
             // Texture.SaveToFile doesn't accept absolute paths
             ThumbnailCacheManager.Current.CreateTexture(new ItemThumbnailCreationData(mbItem, null, texture =>
             {
-                texture.SaveToFile(Path.Combine(outputPath, mbItem.StringId + ".png"), true);
+                string baseId = mbItem.StringId.Substring(0, mbItem.StringId.Length - "_h0".Length);
+                texture.SaveToFile(Path.Combine(outputPath, baseId + ".png"), true);
                 createTextureTaskSource.SetResult(null);
             }, null));
         }

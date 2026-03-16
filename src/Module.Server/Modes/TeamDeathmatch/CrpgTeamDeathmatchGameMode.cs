@@ -1,5 +1,6 @@
 #if CRPG_SERVER
 using Crpg.Module.Api;
+using Crpg.Module.Api.Models;
 using Crpg.Module.Common.ChatCommands;
 #else
 
@@ -58,7 +59,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
             ViewCreator.CreateMissionMainAgentEquipmentController(mission), // Pick/drop items.
             ViewCreator.CreateMissionMainAgentCheerBarkControllerView(mission),
             crpgEscapeMenu,
-            ViewCreator.CreateMissionAgentLabelUIHandler(mission),
+            new CrpgAgentLabelView(),
             MultiplayerViewCreator.CreateMultiplayerTeamSelectUIHandler(),
             new CrpgMissionScoreboardUIHandler(false),
             new CrpgEndOfBattleUIHandler(),
@@ -100,7 +101,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
         CrpgWarmupComponent warmupComponent = new(_constants,
             () => (new CrpgTeamDeathmatchSpawnFrameBehavior(), new CrpgTeamDeathmatchSpawningBehavior(_constants)));
         CrpgTeamSelectServerComponent teamSelectComponent = new(warmupComponent, null, MultiplayerGameType.TeamDeathmatch);
-        CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: false, enableRating: true);
+        CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: false, enableRating: true, gameMode: CrpgGameMode.CRPGTeamDeathmatch);
         CrpgTeamDeathmatchServer teamDeathmatchServer = new(scoreboardComponent, rewardServer);
 
 #else
@@ -147,7 +148,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
                 new SpawnComponent(new CrpgTeamDeathmatchSpawnFrameBehavior(), spawnBehavior),
                 new AgentHumanAILogic(),
                 new MultiplayerAdminComponent(),
-                new CrpgUserManagerServer(crpgClient, _constants),
+                new CrpgUserManagerServer(crpgClient, _constants, CrpgGameMode.CRPGTeamDeathmatch),
                 new KickInactiveBehavior(inactiveTimeLimit: 30, warmupComponent, teamSelectComponent),
                 new MapPoolComponent(),
                 new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),

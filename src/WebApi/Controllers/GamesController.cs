@@ -8,6 +8,7 @@ using Crpg.Application.Games.Models;
 using Crpg.Application.Restrictions.Commands;
 using Crpg.Application.Restrictions.Models;
 using Crpg.Domain.Entities;
+using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -22,12 +23,13 @@ public class GamesController : BaseController
     /// </summary>
     [HttpGet("users")]
     public Task<ActionResult<Result<GameUserViewModel>>> GetUser(
-        [FromQuery] Platform platform, [FromQuery] string platformUserId, [FromQuery] Region region, [FromQuery] string instance) =>
+        [FromQuery] Platform platform, [FromQuery] string platformUserId, [FromQuery] Region region, [FromQuery] GameMode gameMode, [FromQuery] string instance) =>
         ResultToActionAsync(Mediator.Send(new GetGameUserCommand
         {
             Platform = platform,
             PlatformUserId = platformUserId,
             Region = region,
+            GameMode = gameMode,
             Instance = instance,
         }));
 

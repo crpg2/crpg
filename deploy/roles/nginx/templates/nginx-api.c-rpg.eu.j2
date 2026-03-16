@@ -1,5 +1,6 @@
 server {
-    listen 443 ssl http2;
+    listen 443 ssl;
+    http2 on;
     server_name {{ crpg_api_domain_name }};
 
     include /etc/nginx/snippets/crpg-ssl.conf;
@@ -19,8 +20,5 @@ server {
         gzip_types application/json;
         gzip_min_length 1024;
 
-        opentracing on;
-        opentracing_operation_name "$request_method $uri";
-        opentracing_propagate_context;
     }
 }

@@ -162,9 +162,12 @@ const weaponClass = computed({
   },
 })
 
-const weaponClasses = computed(() => getFacetsByWeaponClass(flatItems.value
-  .map(item => item.weaponClass)
-  .filter(item => item !== null), itemType.value))
+const weaponClasses = computed(() => {
+  const weaponClassesByType = getWeaponClassesByItemType(itemType.value)
+  return getFacetsByWeaponClass(flatItems.value
+    .filter(item => item.weaponClass !== null && weaponClassesByType.includes(item.weaponClass))
+    .map(item => item.weaponClass!))
+})
 
 function getInitialColumnFiltersState(): ColumnFiltersState {
   return [

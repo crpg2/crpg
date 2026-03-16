@@ -218,6 +218,18 @@ export type BuySettlementItemCommand = {
     settlementId: number;
 };
 
+export type CampaignUpdate = {
+    party: PartyViewModel;
+    visibleParties: Array<PartyVisibleViewModel>;
+    visibleSettlements: Array<SettlementPublicViewModel>;
+    visibleBattles: Array<BattleViewModel>;
+};
+
+export type CampaignUpdateResult = {
+    readonly errors: Array<Error> | null;
+    data: CampaignUpdate | null;
+};
+
 export type CharacterAttributesViewModel = {
     points: number;
     strength: number;
@@ -338,8 +350,8 @@ export type ClanArmoryBorrowedItemViewModelResult = {
 
 export type ClanArmoryItemViewModel = {
     userItemId: number;
-    userId: number;
-    borrowerUserId: number;
+    lender: UserPublicViewModel;
+    borrower: UserPublicViewModel | null;
     item: ItemViewModel;
 };
 
@@ -458,6 +470,11 @@ export type CreateTerrainCommand = {
     boundary: GeoJsonPolygon;
 };
 
+export type CreateUserItemPresetCommand = {
+    name: string;
+    slots: Array<UserItemPresetSlotInputModel>;
+};
+
 export type Culture = 'Neutral' | 'Aserai' | 'Battania' | 'Empire' | 'Khuzait' | 'Looters' | 'Sturgia' | 'Vlandia';
 
 export type DamageType = 'Undefined' | 'Cut' | 'Pierce' | 'Blunt';
@@ -503,7 +520,7 @@ export type Error = {
     stackTrace: string | null;
 };
 
-export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'InvalidUpgradeRank' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartyNotEnoughItems' | 'SettlementNotEnoughItems' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementNotEnoughTroops' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToCampaign' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
+export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'InvalidItemUpgradeRank' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartyNotEnoughItems' | 'SettlementNotEnoughItems' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementNotEnoughTroops' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToCampaign' | 'UserItemPresetBadSlots' | 'UserItemPresetNotFound' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound';
 
 export type ErrorSource = {
     pointer?: string | null;
@@ -644,6 +661,7 @@ export type GameUserUpdate = {
     reward: GameUserReward;
     statistics: CharacterStatisticsViewModel;
     brokenItems: Array<GameUserDamagedItem>;
+    gameMode: GameMode;
     instance: string;
 };
 
@@ -1038,18 +1056,6 @@ export type SettlementPublicViewModelResult = {
 
 export type SettlementType = 'Village' | 'Castle' | 'Town';
 
-export type CampaignUpdate = {
-    party: PartyViewModel;
-    visibleParties: Array<PartyVisibleViewModel>;
-    visibleSettlements: Array<SettlementPublicViewModel>;
-    visibleBattles: Array<BattleViewModel>;
-};
-
-export type CampaignUpdateResult = {
-    readonly errors: Array<Error> | null;
-    data: CampaignUpdate | null;
-};
-
 export type TerrainType = 'Barrier' | 'ThickForest' | 'SparseForest' | 'ShallowWater' | 'DeepWater' | 'Plain';
 
 export type TerrainViewModel = {
@@ -1155,13 +1161,39 @@ export type UserClanViewModelResult = {
     data: UserClanViewModel | null;
 };
 
+export type UserItemPresetSlotInputModel = {
+    slot: ItemSlot;
+    itemId: string | null;
+};
+
+export type UserItemPresetSlotViewModel = {
+    slot: ItemSlot;
+    item: ItemViewModel | null;
+};
+
+export type UserItemPresetViewModel = {
+    id: number;
+    name: string;
+    slots: Array<UserItemPresetSlotViewModel>;
+};
+
+export type UserItemPresetViewModelIListResult = {
+    readonly errors: Array<Error> | null;
+    data: Array<UserItemPresetViewModel> | null;
+};
+
+export type UserItemPresetViewModelResult = {
+    readonly errors: Array<Error> | null;
+    data: UserItemPresetViewModel | null;
+};
+
 export type UserItemViewModel = {
     id: number;
     userId: number;
     item: ItemViewModel;
     isBroken: boolean;
     createdAt: Date;
-    isArmoryItem: boolean;
+    clanArmoryLender: ClanMemberViewModel | null;
     isPersonal: boolean;
 };
 
@@ -1370,6 +1402,17 @@ export type BattleViewModelWritable = {
     phase: BattlePhase;
     createdAt: Date;
     fighters: Array<BattleFighterViewModelWritable>;
+};
+
+export type CampaignUpdateWritable = {
+    party: PartyViewModelWritable;
+    visibleParties: Array<PartyVisibleViewModelWritable>;
+    visibleSettlements: Array<SettlementPublicViewModelWritable>;
+    visibleBattles: Array<BattleViewModelWritable>;
+};
+
+export type CampaignUpdateResultWritable = {
+    data: CampaignUpdateWritable | null;
 };
 
 export type CharacterCharacteristicsViewModelResultWritable = {
@@ -1607,17 +1650,6 @@ export type SettlementPublicViewModelResultWritable = {
     data: SettlementPublicViewModelWritable | null;
 };
 
-export type CampaignUpdateWritable = {
-    party: PartyViewModelWritable;
-    visibleParties: Array<PartyVisibleViewModelWritable>;
-    visibleSettlements: Array<SettlementPublicViewModelWritable>;
-    visibleBattles: Array<BattleViewModelWritable>;
-};
-
-export type CampaignUpdateResultWritable = {
-    data: CampaignUpdateWritable | null;
-};
-
 export type TerrainViewModelWritable = {
     id: number;
     type: TerrainType;
@@ -1646,6 +1678,14 @@ export type UpdateTerrainCommandWritable = {
 
 export type UserClanViewModelResultWritable = {
     data: UserClanViewModel | null;
+};
+
+export type UserItemPresetViewModelIListResultWritable = {
+    data: Array<UserItemPresetViewModel> | null;
+};
+
+export type UserItemPresetViewModelResultWritable = {
+    data: UserItemPresetViewModel | null;
 };
 
 export type UserItemViewModelIListResultWritable = {
@@ -2674,6 +2714,7 @@ export type GetGamesUsersData = {
         platform: Platform;
         platformUserId?: string;
         region: Region;
+        gameMode: GameMode;
         instance?: string;
     };
     url: '/Games/users';
@@ -4234,6 +4275,60 @@ export type PostUsersSelfItemsResponses = {
 };
 
 export type PostUsersSelfItemsResponse = PostUsersSelfItemsResponses[keyof PostUsersSelfItemsResponses];
+
+export type GetUsersSelfItemPresetsData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/Users/self/item-presets';
+};
+
+export type GetUsersSelfItemPresetsResponses = {
+    /**
+     * OK
+     */
+    200: UserItemPresetViewModelIListResult;
+};
+
+export type GetUsersSelfItemPresetsResponse = GetUsersSelfItemPresetsResponses[keyof GetUsersSelfItemPresetsResponses];
+
+export type PostUsersSelfItemPresetsData = {
+    /**
+     * The user item preset to create.
+     */
+    body?: CreateUserItemPresetCommand;
+    path?: never;
+    query?: never;
+    url: '/Users/self/item-presets';
+};
+
+export type PostUsersSelfItemPresetsResponses = {
+    /**
+     * OK
+     */
+    200: UserItemPresetViewModelResult;
+};
+
+export type PostUsersSelfItemPresetsResponse = PostUsersSelfItemPresetsResponses[keyof PostUsersSelfItemPresetsResponses];
+
+export type DeleteUsersSelfItemPresetsByIdData = {
+    body?: never;
+    path: {
+        /**
+         * User item preset id.
+         */
+        id: number;
+    };
+    query?: never;
+    url: '/Users/self/item-presets/{id}';
+};
+
+export type DeleteUsersSelfItemPresetsByIdResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+};
 
 export type PutUsersSelfItemsByIdReforgeData = {
     body?: never;

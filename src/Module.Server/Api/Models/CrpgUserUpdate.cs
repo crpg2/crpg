@@ -10,5 +10,6 @@ internal class CrpgUserUpdate
     public CrpgUserReward? Reward { get; set; }
     public CrpgCharacterStatistics Statistics { get; set; } = null!;
     public IList<CrpgUserDamagedItem> BrokenItems { get; set; } = Array.Empty<CrpgUserDamagedItem>();
+    public CrpgGameMode GameMode { get; set; }
     public string Instance { get; set; } = string.Empty;
 }

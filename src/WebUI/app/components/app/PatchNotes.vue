@@ -49,7 +49,7 @@ const timeAgo = useLocaleTimeAgo(latestPatch.value?.createdAt || new Date())
       variant="caption-sm"
     >
       <ULink
-        href="https://github.com/namidaka/crpg/releases"
+        href="https://github.com/crpg2/crpg/releases"
         target="_blank"
       >
         {{ $t('patchNotes.showAllPatches', { count: patchNotes.length - 1 }) }}

@@ -14,7 +14,7 @@ const {
   <Teleport to="body">
     <Draggable
       v-for="item in openedItems"
-      :key="item.id"
+      :key="`${item.id}-${item.additionalId}`"
       :initial-value="{
         x: item.bound.x + item.bound.width + 8,
         y: computeDetailCardYPosition(item.bound.y),
@@ -27,7 +27,7 @@ const {
         size="xl"
         color="neutral"
         variant="subtle"
-        @click="closeItemDetail(item.id)"
+        @click="closeItemDetail(item.id, item.additionalId)"
       />
 
       <slot v-bind="item" />

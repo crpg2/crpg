@@ -39,6 +39,34 @@ describe('_useItemDetail', () => {
     expect(openedItems.value).toHaveLength(0)
   })
 
+  it('supports opening same item id with different additionalId', () => {
+    const { openedItems, toggleItemDetail, closeItemDetail } = _useItemDetail()
+
+    toggleItemDetail(mockEl, '1', 'a')
+    toggleItemDetail(mockEl, '1', 'b')
+
+    expect(openedItems.value).toHaveLength(2)
+    expect(openedItems.value.map(i => i.additionalId)).toEqual(['a', 'b'])
+
+    closeItemDetail('1', 'a')
+
+    expect(openedItems.value).toHaveLength(1)
+    expect(openedItems.value[0]).toMatchObject({ id: '1', additionalId: 'b' })
+  })
+
+  it('closes all same-id items when additionalId is not provided', () => {
+    const { openedItems, toggleItemDetail, closeItemDetail } = _useItemDetail()
+
+    toggleItemDetail(mockEl, '1', 'a')
+    toggleItemDetail(mockEl, '1', 'b')
+    toggleItemDetail(mockEl, '2', 'c')
+
+    closeItemDetail('1')
+
+    expect(openedItems.value).toHaveLength(1)
+    expect(openedItems.value[0]).toMatchObject({ id: '2', additionalId: 'c' })
+  })
+
   it('closes a specific item', () => {
     const { openedItems, toggleItemDetail, closeItemDetail } = _useItemDetail()
 
@@ -73,6 +101,15 @@ describe('_useItemDetail', () => {
     expect(bound).toEqual({ width: 120, x: 50, y: 200 })
   })
 
+  it('accepts precomputed bounds as target', () => {
+    const { toggleItemDetail, openedItems } = _useItemDetail()
+
+    toggleItemDetail({ width: 300, x: 10, y: 20 }, '1')
+
+    expect(openedItems.value).toHaveLength(1)
+    expect(openedItems.value[0]?.bound).toEqual({ width: 300, x: 10, y: 20 })
+  })
+
   it('handles Escape key to close last item when setListeners = true', () => {
     const { openedItems, toggleItemDetail } = _useItemDetail()
 
@@ -85,6 +122,18 @@ describe('_useItemDetail', () => {
 
     expect(openedItems.value).toHaveLength(1)
     expect(openedItems.value[0]?.id).toBe('a')
+  })
+
+  it('handles Escape key with duplicate item ids by additionalId', () => {
+    const { openedItems, toggleItemDetail } = _useItemDetail()
+
+    toggleItemDetail(mockEl, 'same-id', 'a')
+    toggleItemDetail(mockEl, 'same-id', 'b')
+
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }))
+
+    expect(openedItems.value).toHaveLength(1)
+    expect(openedItems.value[0]).toMatchObject({ id: 'same-id', additionalId: 'a' })
   })
 
   it('removes keydown listener and clears openedItems on route leave', () => {

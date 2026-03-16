@@ -2,14 +2,22 @@ import { createSharedComposable } from '@vueuse/core'
 import { ref } from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 
+import type { Item } from '~/models/item'
+
 interface ElementBound {
   x: number
   y: number
   width: number
 }
 
+type Id = Item['id']
+
+type AdditionalId = number | string
+
 export interface OpenedItem {
-  id: string // itemId
+  id: Id
+  // There may be several identical items in the clan armory or in the inventory, so we need an additional identifier to distinguish them
+  additionalId?: AdditionalId
   bound: ElementBound
 }
 
@@ -25,27 +33,31 @@ const computeDetailCardYPosition = (y: number, cardHeight = 700) => {
   return bottomSpace < cardHeight ? y + bottomSpace - cardHeight : y
 }
 
+const isOpened = (item: OpenedItem, id: Id, additionalId?: AdditionalId) => {
+  return item.id === id && (additionalId === undefined || item.additionalId === additionalId)
+}
+
 export const _useItemDetail = () => {
   const openedItems = ref<OpenedItem[]>([])
 
-  const isOpen = (itemId: string) => openedItems.value.some(oi => oi.id === itemId)
+  const isOpen = (id: Id, additionalId?: AdditionalId) => openedItems.value.some(oi => isOpened(oi, id, additionalId))
 
   const openItemDetail = (item: OpenedItem) => {
     openedItems.value.push(item)
   }
 
-  const closeItemDetail = (itemId: string) => {
-    openedItems.value = openedItems.value.filter(oi => oi.id !== itemId)
+  const closeItemDetail = (id: Id, additionalId?: AdditionalId) => {
+    openedItems.value = openedItems.value.filter(oi => !isOpened(oi, id, additionalId))
   }
 
-  const toggleItemDetail = (target: HTMLElement | ElementBound, itemId: string): void => {
-    if (isOpen(itemId)) {
-      closeItemDetail(itemId)
+  const toggleItemDetail = (target: HTMLElement | ElementBound, id: Id, additionalId?: AdditionalId): void => {
+    if (isOpen(id, additionalId)) {
+      closeItemDetail(id, additionalId)
       return
     }
     const bound = 'getBoundingClientRect' in target ? getElementBounds(target) : target
 
-    openItemDetail({ id: itemId, bound })
+    openItemDetail({ id, additionalId, bound })
   }
 
   const closeAll = () => {
@@ -53,8 +65,11 @@ export const _useItemDetail = () => {
   }
 
   const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === 'Escape' && openedItems.value.length > 0) {
-      closeItemDetail(openedItems.value.at(-1)!.id)
+    if (e.key === 'Escape') {
+      const lastOpenedItem = openedItems.value[openedItems.value.length - 1]
+      if (lastOpenedItem) {
+        closeItemDetail(lastOpenedItem.id, lastOpenedItem.additionalId)
+      }
     }
   }
 

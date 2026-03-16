@@ -2,7 +2,7 @@
 ansible_connection: ssh
 ansible_user: ansible
 
-datadog_dotnet_tracer_version: 2.10.0
+datadog_dotnet_tracer_version: 3.39.0
 
 steam_api_key: !vault |
   $ANSIBLE_VAULT;1.1;AES256
@@ -38,5 +38,8 @@ crpg_game_server_api_secret: !vault |
   31643762313537653230353636346363383430393765653933303665336339616264316138663038
   3435316531373164640a616437393663666161653465303461306334623362343034386637356162
   62353136616336613035623733333161333235366361643733336534343564643065
+
+crpg_web_ui_datadog_client_token: "pub6c347722fb541b8beed517e5b73bc683"
+crpg_web_ui_datadog_logs_enabled: true
 
 crpg_api_domain_name: api.c-rpg.eu

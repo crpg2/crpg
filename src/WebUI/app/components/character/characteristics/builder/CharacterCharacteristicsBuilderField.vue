@@ -2,14 +2,18 @@
 import { UTooltip } from '#components'
 
 import type { CharacteristicKey, CharacteristicSectionKey } from '~/models/character'
+import type { CharacteristicRequirement } from '~/services/character-service'
 
 import { characteristicBonusByKey } from '~/services/character-service'
 
-const props = defineProps<{
-  fieldGroupKey: CharacteristicSectionKey
-  fieldKey: CharacteristicKey
-  inputProps: { modelValue: number, min: number, max: number }
-  skillRequirementSatisfied: boolean
+const { requirement } = defineProps<{
+  section: CharacteristicSectionKey
+  characteristic: CharacteristicKey
+  value: number
+  min: number
+  max: number
+  costToIncrease: number
+  requirement: CharacteristicRequirement | null
 }>()
 
 defineEmits<{
@@ -18,7 +22,7 @@ defineEmits<{
   'update:modelValue': [value: number]
 }>()
 
-const isError = computed(() => props.fieldGroupKey === 'skills' && !props.skillRequirementSatisfied)
+const isError = computed(() => requirement?.satisfied === false)
 </script>
 
 <template>
@@ -27,44 +31,55 @@ const isError = computed(() => props.fieldGroupKey === 'skills' && !props.skillR
       w-full px-4 py-2.5
       hover:bg-muted
     "
+    :class="[{ 'bg-error/20': isError }]"
   >
     <UTooltip :content="{ side: 'top' }">
       <div
         class="flex items-center gap-1 text-sm"
-        :class="{ 'text-error': isError }"
       >
         <UiTextView variant="caption">
-          {{ $t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.title`) }}
+          {{ $t(`character.characteristic.${section}.children.${characteristic}.title`) }}
         </UiTextView>
-
-        <UIcon
-          v-if="isError"
-          name="crpg:alert-circle"
-          class="size-4"
-        />
       </div>
 
       <template #content>
-        <UiTooltipContent
-          :title="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.title`)"
-        >
-          <template v-if="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.requires`)" #validation>
-            <UiTextView variant="p" class="text-warning">
-              {{ $t('character.characteristic.requires.title', { text: $t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.requires`) }) }}
+        <UiTooltipContent :title="$t(`character.characteristic.${section}.children.${characteristic}.title`)">
+          <template #validation>
+            <UiTextView variant="h4" margin-bottom class="text-warning">
+              {{ $t('character.characteristic.requires.title') }}
             </UiTextView>
+
+            <UiTextView variant="p" class="text-warning">
+              {{ $t('character.characteristic.requires.costPoints', {
+                count: costToIncrease,
+                characteristic: $t(`character.characteristic.${section}.genitiveTitle`).toLowerCase(),
+              }) }}
+            </UiTextView>
+
+            <template v-if="requirement">
+              <UiTextView variant="p" class="text-warning">
+                {{ $t('character.characteristic.requires.characteristic', {
+                  count: requirement.needCharacteristic,
+                  characteristic: $t(`character.characteristic.${requirement.section}.children.${requirement.characteristic}.genitiveTitle`, requirement.needCharacteristic).toLowerCase(),
+                }) }} ({{ $t('character.characteristic.requires.pointsPerLevel', {
+                  count: requirement.characteristicPerLevel,
+                  characteristic: $t(`character.characteristic.${requirement.section}.children.${requirement.characteristic}.genitiveTitle`, requirement.characteristicPerLevel).toLowerCase(),
+                }) }})
+              </UiTextView>
+            </template>
           </template>
 
-          <template v-if="$t(`character.characteristic.${fieldGroupKey}.children.${fieldKey}.desc`)" #description>
+          <template #description>
             <i18n-t
               scope="global"
-              :keypath="`character.characteristic.${fieldGroupKey}.children.${fieldKey}.desc`"
+              :keypath="`character.characteristic.${section}.children.${characteristic}.desc`"
             >
               <template
-                v-if="characteristicBonusByKey[fieldKey]"
+                v-if="characteristic in characteristicBonusByKey"
                 #value
               >
                 <span class="font-bold text-success">
-                  {{ $n(characteristicBonusByKey[fieldKey]!.value, { style: characteristicBonusByKey[fieldKey]!.style, minimumFractionDigits: 0 }) }}
+                  {{ $n(characteristicBonusByKey[characteristic]!.value, { style: characteristicBonusByKey[characteristic]!.style, minimumFractionDigits: 0 }) }}
                 </span>
               </template>
             </i18n-t>
@@ -79,30 +94,47 @@ const isError = computed(() => props.fieldGroupKey === 'skills' && !props.skillR
           <UButton
             variant="subtle"
             color="neutral"
-            icon="i-lucide-chevrons-left"
-            :disabled="inputProps.modelValue <= inputProps.min"
-            :data-aq-reset-field="`${fieldGroupKey}:${fieldKey}`"
+            icon="crpg:reset"
+            :disabled="value <= min"
+            :data-aq-reset-field="`${section}:${characteristic}`"
             @click="$emit('resetField')"
           />
         </UTooltip>
         <UInputNumber
-          :data-aq-control="`${fieldGroupKey}:${fieldKey}`"
+          :data-aq-control="`${section}:${characteristic}`"
           variant="subtle"
           :color="isError ? 'error' : 'neutral'"
           :ui="{
             base: 'w-22',
             decrement: 'flex items-center gap-0.5',
           }"
-          v-bind="inputProps"
+          :model-value="value"
           @update:model-value="$emit('update:modelValue', $event)"
-        />
+        >
+          <template #decrement>
+            <UButton
+              variant="link"
+              color="neutral"
+              icon="i-lucide-minus"
+              :disabled="value <= min"
+            />
+          </template>
+          <template #increment>
+            <UButton
+              variant="link"
+              color="neutral"
+              icon="i-lucide-plus"
+              :disabled="max <= value"
+            />
+          </template>
+        </UInputNumber>
         <UTooltip :text="$t('character.characteristic.fillField')">
           <UButton
             variant="subtle"
             color="neutral"
             icon="i-lucide-chevrons-right"
-            :disabled="inputProps.max <= inputProps.modelValue"
-            :data-aq-fill-field="`${fieldGroupKey}:${fieldKey}`"
+            :disabled="max <= value"
+            :data-aq-fill-field="`${section}:${characteristic}`"
             @click="$emit('fillField')"
           />
         </UTooltip>

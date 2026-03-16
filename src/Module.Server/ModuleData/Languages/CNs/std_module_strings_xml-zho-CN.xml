@@ -112,6 +112,7 @@
     <string id="KgZprgXA" text="举报 {ATTACKER} 队友伤害的时间已过期。" />
     <string id="WH15BANu" text="{ATTACKER} 对你造成了队友伤害（伤害：{DAMAGE}）。如果你认为这是故意的，请按 [{MODIFIERKEY}+{REPORTKEY}]。" />
     <string id="KORWOuGO" text="{ATTACKER} 对你造成了队友伤害（伤害：{DAMAGE}）。如果你认为这是故意的，请按 [{MODIFIERKEY}+{REPORTKEY}]。剩余 {TIMELEFT} 秒。" />
+<<<<<<< keybinder-fix
     
     <!-- KeyBinder Options Menu -->
     <string id="KORWOuGG" text="CRPG 通用" />
@@ -121,5 +122,7 @@
     <string id="KORWOuG4" text="修饰键，例如：Ctrl" />
     <string id="KORWOuG5" text="更换箭袋" />
     <string id="KORWOuG6" text="更换弹药箭袋" />
+=======
+>>>>>>> master
   </strings>
 </base>

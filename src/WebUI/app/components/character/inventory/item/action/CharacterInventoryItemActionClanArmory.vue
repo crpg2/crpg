@@ -17,12 +17,12 @@ defineEmits<{
 
 const { user } = useUser()
 
-const isOwnArmoryItem = computed(() => userItem.isArmoryItem && userItem.userId === user.value!.id)
+const isOwnArmoryItem = computed(() => userItem.clanArmoryLender && userItem.userId === user.value!.id)
 </script>
 
 <template>
   <UTooltip
-    :text="!userItem.isArmoryItem
+    :text="!userItem.clanArmoryLender
       ? $t('clan.armory.item.add.title')
       : isOwnArmoryItem
         ? $t('clan.armory.item.remove.title')
@@ -34,7 +34,7 @@ const isOwnArmoryItem = computed(() => userItem.isArmoryItem && userItem.userId 
       size="xl"
       block
       icon="crpg:armory"
-      @click="!userItem.isArmoryItem
+      @click="!userItem.clanArmoryLender
         ? $emit('add')
         : isOwnArmoryItem
           ? $emit('remove')

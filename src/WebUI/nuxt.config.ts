@@ -5,6 +5,8 @@ import json5 from 'json5'
 import { fileURLToPath } from 'node:url'
 import { defineNuxtConfig } from 'nuxt/config'
 
+import { name as projectName } from './package.json'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -14,7 +16,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
   ],
   ssr: false,
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   app: {
     head: {
       title: 'cRPG: Multiplayer Mod for Mount & Blade Bannerlord',
@@ -94,6 +96,13 @@ export default defineNuxtConfig({
       api: {
         baseUrl: import.meta.env.NUXT_PUBLIC_API_BASE_URL,
       },
+      datadog: {
+        logs: {
+          service: projectName,
+          enabled: import.meta.env.NUXT_PUBLIC_DATADOG_LOGS_ENABLED === 'true',
+          clientToken: import.meta.env.NUXT_PUBLIC_DATADOG_CLIENT_TOKEN,
+        },
+      },
     },
   },
   alias: {
@@ -154,6 +163,7 @@ export default defineNuxtConfig({
     locales: [
       { code: 'en', file: 'en.yml' },
       { code: 'ru', file: 'ru.yml' },
+      { code: 'cn', file: 'cn.yml' },
     ],
   },
   icon: {

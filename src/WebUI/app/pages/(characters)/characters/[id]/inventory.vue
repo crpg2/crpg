@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { vOnLongPress } from '@vueuse/components'
 import { useStorage } from '@vueuse/core'
-import { CharacterInventoryItemDetail, LazyCharacterInventoryItemUpgradesModal } from '#components'
+import { CharacterInventoryItemDetail, LazyCharacterInventoryItemUpgradesModal, LazyCharacterInventoryPresetCreateModal, LazyCharacterInventoryPresetsDrawer } from '#components'
 
 import type { OpenedItem } from '~/composables/item/use-item-detail'
 import type { GroupedCompareItemsResult, ItemSlot } from '~/models/item'
@@ -16,11 +16,11 @@ import { useCharacterCharacteristic } from '~/composables/character/use-characte
 import { useCharacterItems, useCharacterItemsProvider } from '~/composables/character/use-character-items'
 import { useItemDetail } from '~/composables/item/use-item-detail'
 import { useUser } from '~/composables/user/use-user'
+import { useUserItemPresetActions } from '~/composables/user/use-user-item-presets'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { validateItemNotMeetRequirement } from '~/services/character-service'
-import { getClanArmoryItemLender, getClanMembers } from '~/services/clan-service'
 
-const { clan, user } = useUser()
+const { user } = useUser()
 
 const { data: userItems, pending: loadingUserItems } = useUserItemsProvider()
 useCharacterItemsProvider()
@@ -49,7 +49,7 @@ const {
 
 const { characterCharacteristics, healthPoints } = useCharacterCharacteristic()
 
-const hasArmoryItems = computed(() => userItems.value.some(ui => ui.isArmoryItem))
+const hasArmoryItems = computed(() => userItems.value.some(ui => Boolean(ui.clanArmoryLender)))
 
 const { closeItemDetail, toggleItemDetail } = useItemDetail()
 
@@ -58,7 +58,8 @@ const onClickInventoryItem = (e: PointerEvent, userItem: UserItem, slot?: ItemSl
     slot ? onQuickUnEquip(slot) : onQuickEquip(userItem)
     return
   }
-  toggleItemDetail(e.target as HTMLElement, userItem.item.id)
+
+  toggleItemDetail(e.target as HTMLElement, userItem.item.id, userItem.id)
 }
 
 const sortingConfig: SortingConfig = {
@@ -69,11 +70,6 @@ const sortingConfig: SortingConfig = {
 }
 const sortingModel = useStorage<string>('character-inventory-sorting', 'rank_desc')
 
-const { state: clanMembers } = useAsyncState(
-  async () => clan.value ? getClanMembers(clan.value.id) : [],
-  [],
-)
-
 const hideInArmoryItemsModel = useStorage<boolean>('character-inventory-in-armory-items', true)
 const overlay = useOverlay()
 
@@ -81,8 +77,9 @@ const items = computed(() => {
   if (!hideInArmoryItemsModel.value) {
     return userItems.value
   }
-  // filter by isArmoryItem
-  return userItems.value.filter(ui => ui.isArmoryItem ? ui.userId !== user.value!.id : true)
+  return userItems.value
+    // filter by armoryItem
+    .filter(ui => ui.clanArmoryLender ? ui.clanArmoryLender.user.id !== user.value!.id : true)
 })
 
 const onUpgrades = (userItem: UserItem, openedItem: OpenedItem) => {
@@ -91,7 +88,7 @@ const onUpgrades = (userItem: UserItem, openedItem: OpenedItem) => {
   const update = (newUserItem: UserItem) => {
     itemUpgradesModal.close()
     closeItemDetail(openedItem.id)
-    toggleItemDetail(openedItem.bound, newUserItem.item.id)
+    toggleItemDetail(openedItem.bound, newUserItem.item.id, newUserItem.id)
     onUpgrades(newUserItem, openedItem)
   }
 
@@ -107,7 +104,7 @@ const onUpgrades = (userItem: UserItem, openedItem: OpenedItem) => {
 }
 
 const renderCharacterInventoryItemDetail = (openedItem: OpenedItem, compareItemsResult: GroupedCompareItemsResult[]) => {
-  const userItem = userItems.value.find(i => i.item.id === openedItem.id)
+  const userItem = userItems.value.find(i => i.item.id === openedItem.id && i.id === openedItem.additionalId)
 
   if (!userItem) {
     return null
@@ -116,7 +113,7 @@ const renderCharacterInventoryItemDetail = (openedItem: OpenedItem, compareItems
   return h(CharacterInventoryItemDetail, {
     userItem,
     equipped: equippedItemIds.value.includes(userItem.id),
-    lender: getClanArmoryItemLender(userItem.userId, clanMembers.value),
+    lender: userItem.clanArmoryLender?.user || null,
     compareResult: compareItemsResult.find(cr => cr.type === userItem.item.type)?.compareResult,
     onSell: () => {
       onSellUserItem(userItem.id)
@@ -132,6 +129,31 @@ const renderCharacterInventoryItemDetail = (openedItem: OpenedItem, compareItems
     onReturnToClanArmory: () => {
       onReturnToClanArmory(userItem.id)
       closeItemDetail(openedItem.id)
+    },
+  })
+}
+
+const {
+  onCreateUserItemPreset,
+  onApplyUserItemPreset,
+} = useUserItemPresetActions()
+
+const openPresetsDrawer = async () => {
+  const presetsDrawer = overlay.create(LazyCharacterInventoryPresetsDrawer)
+  await presetsDrawer.open({
+    onApply: async (preset) => {
+      await onApplyUserItemPreset(preset)
+      presetsDrawer.close()
+    },
+  })
+}
+
+const createPreset = async () => {
+  const presetCreateDrawer = overlay.create(LazyCharacterInventoryPresetCreateModal)
+  await presetCreateDrawer.open({
+    onCreate: async (name: string) => {
+      await onCreateUserItemPreset(name, equippedItemsBySlot.value)
+      presetCreateDrawer.close()
     },
   })
 }
@@ -190,7 +212,7 @@ const renderCharacterInventoryItemDetail = (openedItem: OpenedItem, compareItems
             :user-id="user!.id"
             :equipped="equippedItemIds.includes(userItem.id)"
             :not-meet-requirement="validateItemNotMeetRequirement(userItem.item, characterCharacteristics)"
-            :lender="userItem.isArmoryItem ? getClanArmoryItemLender(userItem.userId, clanMembers) : null"
+            :lender="userItem.clanArmoryLender?.user || null"
             draggable="true"
             @dragstart="onDragStart(userItem)"
             @dragend="onDragEnd"
@@ -252,14 +274,36 @@ const renderCharacterInventoryItemDetail = (openedItem: OpenedItem, compareItems
         :character-characteristics="characterCharacteristics"
         :equipped-items="equippedItemsBySlot"
         :items-stats-overall="itemsOverallStats"
-        @item-click="(e, itemId, slot) => onClickInventoryItem(e, userItems.find(ui => ui.item.id === itemId)!, slot)"
+        @item-click="(e, userItem, slot) => onClickInventoryItem(e, userItem, slot)"
         @un-equip="onQuickUnEquip"
       />
+
       <UCard
         style="grid-area: footer"
         variant="soft"
-        :ui="{ body: 'justify-center flex', root: 'backdrop-blur-lg' }"
+        :ui="{
+          body: 'justify-center items-center flex gap-4',
+          root: 'backdrop-blur-lg' }"
       >
+        <UFieldGroup>
+          <UButton
+            label="Presets"
+            variant="subtle"
+            color="neutral"
+            trailing-icon="i-lucide-eye"
+            @click="openPresetsDrawer"
+          />
+          <UButton
+            variant="subtle"
+            color="neutral"
+            :disabled="!equippedItemIds.length"
+            icon="i-lucide-save"
+            @click="createPreset"
+          />
+        </UFieldGroup>
+
+        <USeparator orientation="vertical" decorative class="h-6" />
+
         <UiKbdCombination
           :keys="[$t('shortcuts.keys.ctrl'), $t('shortcuts.keys.lmb')]"
           :label="$t('shortcuts.hints.equip')"
@@ -269,7 +313,7 @@ const renderCharacterInventoryItemDetail = (openedItem: OpenedItem, compareItems
 
     <div
       :style="{ top: `calc(${mainHeaderHeight}px + 1rem)` }"
-      class="sticky col-span-2 self-start"
+      class="sticky col-span-2 space-y-3 self-start"
     >
       <CharacterStats
         :characteristics="characterCharacteristics"

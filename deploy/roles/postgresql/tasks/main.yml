@@ -55,7 +55,12 @@
   become_user: postgres
   postgresql_user:
     name: "{{ datadog_db_user }}"
-    groups: pg_monitor
+
+- name: Add Datadog user to pg_monitor group
+  become_user: postgres
+  postgresql_membership:
+    group: pg_monitor
+    target_role: "{{ datadog_db_user }}"
 
 - name: Create a schema for Datadog in cRPG database
   become_user: postgres

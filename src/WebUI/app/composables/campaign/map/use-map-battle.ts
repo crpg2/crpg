@@ -25,7 +25,7 @@ export const useMapBattleProvider = (battleId: number) => {
 
 export const useMapBattle = () => {
   const route = useRoute('campaign-battle-id')
-  const _key = MAP_BATTLE_QUERY_KEYS.byId(Number(route.params.id))
+  const _key = computed(() => MAP_BATTLE_QUERY_KEYS.byId(Number(route.params.id)))
 
   const battle = getAsyncData<Battle>(_key) // TODO: Battle -> MapDetailBattle
   const refreshBattle = refreshAsyncData(_key)

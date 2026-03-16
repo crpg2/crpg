@@ -40,7 +40,7 @@ internal class HttpCrpgClient : ICrpgClient
         _httpClient = new HttpClient(socketsHttpHandler)
         {
             BaseAddress = new Uri(apiUrl),
-            Timeout = TimeSpan.FromSeconds(10),
+            Timeout = TimeSpan.FromSeconds(15),
             DefaultRequestHeaders =
             {
                 { "Accept", "application/json" },
@@ -65,7 +65,7 @@ internal class HttpCrpgClient : ICrpgClient
         };
     }
 
-    public Task<CrpgResult<CrpgUser>> GetUserAsync(Platform platform, string platformUserId, CrpgRegion region,
+    public Task<CrpgResult<CrpgUser>> GetUserAsync(Platform platform, string platformUserId, CrpgRegion region, CrpgGameMode gameMode,
         CancellationToken cancellationToken = default)
     {
         Dictionary<string, string> queryParameters = new(StringComparer.Ordinal)
@@ -73,6 +73,7 @@ internal class HttpCrpgClient : ICrpgClient
             ["platform"] = platform.ToString(),
             ["platformUserId"] = platformUserId,
             ["region"] = region.ToString(),
+            ["gameMode"] = gameMode.ToString(),
             ["instance"] = CrpgServerConfiguration.Instance.ToString(),
         };
         return Get<CrpgUser>("games/users", queryParameters, cancellationToken);

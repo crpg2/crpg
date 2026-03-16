@@ -122,17 +122,7 @@ export const returnItemToClanArmory = (
   userItemId: number,
 ) => putClansByClanIdArmoryByUserItemIdReturn({ path: { clanId, userItemId } })
 
-export const getClanArmoryItemBorrower = (
-  borrowerUserId: number,
-  clanMembers: ClanMember[],
-) => clanMembers.find(cm => cm.user.id === borrowerUserId)?.user ?? null
-
-export const getClanArmoryItemLender = (
-  userId: number,
-  clanMembers: ClanMember[],
-) => clanMembers.find(cm => cm.user.id === userId)?.user ?? null
-
 export const isOwnClanArmoryItem = (
   item: ClanArmoryItem,
   userId: number,
-) => item.userId === userId
+) => item.lender.id === userId

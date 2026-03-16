@@ -65,10 +65,10 @@ const repairCost = computed(() => computeBrokenItemRepairCost(userItem.item.pric
         />
       </UTooltip>
 
-      <template v-if="userItem.isArmoryItem">
+      <template v-if="userItem.clanArmoryLender">
         <ClanArmoryItemRelationBadge
-          v-if="lender && lender.id !== user!.id"
-          :lender
+          v-if="userItem.clanArmoryLender.user.id !== user!.id"
+          :lender="userItem.clanArmoryLender.user"
         />
         <UTooltip v-else :text="$t('character.inventory.item.clanArmory.inArmory.title')">
           <UBadge

@@ -13,18 +13,11 @@ public record GetClanArmoryQuery : IMediatorRequest<IList<ClanArmoryItemViewMode
     public int UserId { get; init; }
     public int ClanId { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<GetClanArmoryQuery, IList<ClanArmoryItemViewModel>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService) : IMediatorRequestHandler<GetClanArmoryQuery, IList<ClanArmoryItemViewModel>>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly IClanService _clanService;
-
-        public Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService)
-        {
-            _db = db;
-            _mapper = mapper;
-            _clanService = clanService;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly IClanService _clanService = clanService;
 
         public async ValueTask<Result<IList<ClanArmoryItemViewModel>>> Handle(GetClanArmoryQuery req, CancellationToken cancellationToken)
         {
@@ -44,10 +37,13 @@ public record GetClanArmoryQuery : IMediatorRequest<IList<ClanArmoryItemViewMode
             }
 
             var items = await _db.ClanArmoryItems
-                .AsNoTracking()
                 .AsSplitQuery()
                 .Where(ci => ci.LenderClanId == req.ClanId)
+                .Include(ci => ci.Lender)
+                    .ThenInclude(cm => cm!.User)
                 .Include(ci => ci.BorrowedItem)
+                    .ThenInclude(bi => bi!.Borrower)
+                        .ThenInclude(cm => cm!.User)
                 .Include(ci => ci.UserItem!)
                     .ThenInclude(ui => ui.Item)
                 .ToListAsync(cancellationToken);

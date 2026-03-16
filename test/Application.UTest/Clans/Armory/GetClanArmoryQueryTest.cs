@@ -37,9 +37,9 @@ public class GetClanArmoryQueryTest : TestBase
 
         Assert.That(result.Errors, Is.Null);
         Assert.That(items.Count, Is.EqualTo(count));
-        Assert.That(item.UserItemId, Is.Not.Null);
-        Assert.That(item.UserId, Is.Not.Null);
+        Assert.That(item.UserItemId, Is.Not.EqualTo(0));
+        Assert.That(item.Lender, Is.Not.Null);
         Assert.That(item.Item, Is.Not.Null);
-        Assert.That(item.BorrowerUserId, Is.Not.Null);
+        Assert.That(item.Borrower, Is.Not.Null);
     }
 }

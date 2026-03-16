@@ -9,6 +9,7 @@ export const CHARACTER_QUERY_KEYS = {
 export const USER_QUERY_KEYS = {
   root: ['self'] as const,
   items: () => [...USER_QUERY_KEYS.root, { items: true }] as const,
+  itemPresets: () => [...USER_QUERY_KEYS.root, { itemPresets: true }] as const,
 }
 
 export const CLAN_QUERY_KEYS = {

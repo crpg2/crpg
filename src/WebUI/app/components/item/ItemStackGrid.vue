@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ItemDetail } from '#components'
 
+import type { OpenedItem } from '~/composables/item/use-item-detail'
 import type { ItemStack } from '~/models/campaign/party'
 import type { GroupedCompareItemsResult } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
@@ -19,8 +20,8 @@ const sortingModel = ref<string>('rank_desc')
 
 const { toggleItemDetail } = useItemDetail()
 
-const renderItemDetail = <T extends { id: string }>(opendeItem: T, compareItemsResult: GroupedCompareItemsResult[]) => {
-  const itemStack = items.find(i => i.item.id === opendeItem.id)
+const renderItemDetail = (openedItem: OpenedItem, compareItemsResult: GroupedCompareItemsResult[]) => {
+  const itemStack = items.find(i => i.item.id === openedItem.id)
 
   if (!itemStack) {
     return null

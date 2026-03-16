@@ -16,6 +16,7 @@ export const useUserItemsProvider = () => {
 
 export const useUserItems = () => {
   const _key = USER_QUERY_KEYS.items()
+
   const userItems = getAsyncData<UserItem[]>(_key)
   const refreshUserItems = refreshAsyncData(_key)
 

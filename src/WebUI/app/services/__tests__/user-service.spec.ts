@@ -2,17 +2,22 @@ import { describe, expect, it, vi } from 'vitest'
 
 import type { User, UserPublic } from '~/models/user'
 
-import { mapUserToUserPublic } from '../user-service'
+import {
+  mapUserToUserPublic,
+} from '../user-service'
 
 const {
   mockedDeleteUsersSelf,
+  mockedDeleteUsersSelfItemPresetsById,
   mockedDeleteUsersSelfItemsById,
   mockedDeleteUsersSelfNotificationsById,
   mockedDeleteUsersSelfNotificationsDeleteAll,
   mockedGetUsersSelf,
+  mockedGetUsersSelfItemPresets,
   mockedGetUsersSelfItems,
   mockedGetUsersSelfNotifications,
   mockedGetUsersSelfRestriction,
+  mockedPostUsersSelfItemPresets,
   mockedPostUsersSelfItems,
   mockedPutUsersSelfItemsByIdReforge,
   mockedPutUsersSelfItemsByIdRepair,
@@ -21,13 +26,16 @@ const {
   mockedPutUsersSelfNotificationsReadAll,
 } = vi.hoisted(() => ({
   mockedDeleteUsersSelf: vi.fn(),
+  mockedDeleteUsersSelfItemPresetsById: vi.fn(),
   mockedDeleteUsersSelfItemsById: vi.fn(),
   mockedDeleteUsersSelfNotificationsById: vi.fn(),
   mockedDeleteUsersSelfNotificationsDeleteAll: vi.fn(),
   mockedGetUsersSelf: vi.fn(),
+  mockedGetUsersSelfItemPresets: vi.fn(),
   mockedGetUsersSelfItems: vi.fn(),
   mockedGetUsersSelfNotifications: vi.fn(),
   mockedGetUsersSelfRestriction: vi.fn(),
+  mockedPostUsersSelfItemPresets: vi.fn(),
   mockedPostUsersSelfItems: vi.fn(),
   mockedPutUsersSelfItemsByIdReforge: vi.fn(),
   mockedPutUsersSelfItemsByIdRepair: vi.fn(),
@@ -38,13 +46,16 @@ const {
 
 vi.mock('#api/sdk.gen', () => ({
   deleteUsersSelf: mockedDeleteUsersSelf,
+  deleteUsersSelfItemPresetsById: mockedDeleteUsersSelfItemPresetsById,
   deleteUsersSelfItemsById: mockedDeleteUsersSelfItemsById,
   deleteUsersSelfNotificationsById: mockedDeleteUsersSelfNotificationsById,
   deleteUsersSelfNotificationsDeleteAll: mockedDeleteUsersSelfNotificationsDeleteAll,
   getUsersSelf: mockedGetUsersSelf,
+  getUsersSelfItemPresets: mockedGetUsersSelfItemPresets,
   getUsersSelfItems: mockedGetUsersSelfItems,
   getUsersSelfNotifications: mockedGetUsersSelfNotifications,
   getUsersSelfRestriction: mockedGetUsersSelfRestriction,
+  postUsersSelfItemPresets: mockedPostUsersSelfItemPresets,
   postUsersSelfItems: mockedPostUsersSelfItems,
   putUsersSelfItemsByIdReforge: mockedPutUsersSelfItemsByIdReforge,
   putUsersSelfItemsByIdRepair: mockedPutUsersSelfItemsByIdRepair,

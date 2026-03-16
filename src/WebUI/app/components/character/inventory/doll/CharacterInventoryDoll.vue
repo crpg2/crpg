@@ -3,7 +3,7 @@ import { vOnLongPress } from '@vueuse/components'
 
 import type { CharacterCharacteristics, CharacterOverallItemsStats } from '~/models/character'
 import type { ItemSlot } from '~/models/item'
-import type { UserItemsBySlot } from '~/models/user'
+import type { UserItem, UserItemsBySlot } from '~/models/user'
 
 import { useInventoryDnD } from '~/composables/character/inventory/use-inventory-dnd'
 import {
@@ -19,7 +19,7 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  itemClick: [PointerEvent, string, ItemSlot]
+  itemClick: [event: PointerEvent, userItem: UserItem, slot: ItemSlot]
   unEquip: [ItemSlot]
 }>()
 
@@ -30,7 +30,7 @@ const onClickInventoryDollSlot = (e: PointerEvent, slot: ItemSlot) => {
     return
   }
 
-  emit('itemClick', e, props.equippedItems[slot].item.id, slot)
+  emit('itemClick', e, props.equippedItems[slot], slot)
 }
 
 const {

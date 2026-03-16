@@ -3,7 +3,7 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 
 import { LazyCharacterCreateModal, LazyCharacterEditModal } from '#components'
 
-import { useCharacterProvider, useCharacters } from '~/composables/character/use-character'
+import { useCharacters, useCharacterState } from '~/composables/character/use-character'
 import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { activateCharacter, deactivateCharacter, deleteCharacter, updateCharacter } from '~/services/character-service'
@@ -18,7 +18,8 @@ const character = computed(() => characters.value.find(c => c.id === Number(rout
 if (!character.value) {
   throw createError({ statusCode: 404, statusMessage: 'Character not found' })
 }
-useCharacterProvider(character)
+const { setCharacterState } = useCharacterState(false)
+setCharacterState(character.value)
 
 const overlay = useOverlay()
 

@@ -1,5 +1,6 @@
 #if CRPG_SERVER
 using Crpg.Module.Api;
+using Crpg.Module.Api.Models;
 using Crpg.Module.Common.ChatCommands;
 #else
 using Crpg.Module.GUI;
@@ -49,7 +50,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
             ViewCreator.CreateMissionMainAgentEquipmentController(mission), // Pick/drop items.
             ViewCreator.CreateMissionMainAgentCheerBarkControllerView(mission),
             ViewCreatorManager.CreateMissionView<CrpgMissionMultiplayerEscapeMenu>(isNetwork: false, null, "Siege", gameModeClient),
-            ViewCreator.CreateMissionAgentLabelUIHandler(mission),
+            new CrpgAgentLabelView(),
             MultiplayerViewCreator.CreateMultiplayerTeamSelectUIHandler(),
             MultiplayerViewCreator.CreateMissionScoreBoardUIHandler(mission, false),
             MultiplayerViewCreator.CreateMultiplayerEndOfBattleUIHandler(),
@@ -85,7 +86,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
         ChatBox chatBox = Game.Current.GetGameHandler<ChatBox>();
         CrpgWarmupComponent warmupComponent = new(_constants,
             () => (new SiegeSpawnFrameBehavior(), new CrpgSiegeSpawningBehavior(_constants)));
-        CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: false, enableRating: false);
+        CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: false, enableRating: false, gameMode: CrpgGameMode.CRPGConquest);
 #else
         CrpgWarmupComponent warmupComponent = new(_constants, null);
 #endif
@@ -123,7 +124,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
 
 #if CRPG_SERVER
                 new CrpgSiegeServer(siegeClient, scoreboardComponent, rewardServer),
-                new CrpgUserManagerServer(crpgClient, _constants),
+                new CrpgUserManagerServer(crpgClient, _constants, CrpgGameMode.CRPGConquest),
                 new KickInactiveBehavior(inactiveTimeLimit: 90, warmupComponent),
                 new MapPoolComponent(),
                 new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),

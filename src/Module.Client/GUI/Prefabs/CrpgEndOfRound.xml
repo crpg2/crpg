@@ -3,7 +3,6 @@
     <Constant Name="EndOfBattle.Banner.Right.Width" BrushName="MPTeamSelection.Banner.Right" BrushLayer="Default" BrushValueType="Width"/>
     <Constant Name="EndOfBattle.Banner.Right.Height" BrushName="MPTeamSelection.Banner.Right" BrushLayer="Default" BrushValueType="Height"/>
     <Constant Name="EndOfBattle.Side.Margin.Banner" Value="525"/>
-    <Constant Name="EndOfBattle.Side.Margin.MVP" Value="100"/>
   </Constants>
   <Window>
     <MultiplayerEndOfRoundPanelBrushWidget IsRoundWinner="@IsRoundWinner" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="MPEndOfRound.Banner.SoundBrush">
@@ -28,20 +27,6 @@
                 <Widget IsHidden="@IsRoundWinner" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="MPGeneral\MPScoreboard\loser_dirt" />
               </Children>
             </MultiplayerFactionBannerWidget>
-
-
-        
-        <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Left" MarginTop="225" MarginLeft="!EndOfBattle.Side.Margin.MVP" IsVisible="@HasAttackerMVP">
-          <Children>
-            <MultiplayerEndOfRound.MVP Parameter.DataSource="{AttackerMVP}" Parameter.TextDataSource="{..}" Parameter.TitleText="@AttackerMVPTitleText" />
-          </Children>
-        </Widget>
-
-        <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Right" MarginTop="225" MarginRight="!EndOfBattle.Side.Margin.MVP" IsVisible="@HasDefenderMVP" >
-          <Children>
-            <MultiplayerEndOfRound.MVP Parameter.DataSource="{DefenderMVP}" Parameter.TextDataSource="{..}" Parameter.TitleText="@DefenderMVPTitleText" />
-          </Children>
-        </Widget>
 
       </Children>
     </MultiplayerEndOfRoundPanelBrushWidget>

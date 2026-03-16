@@ -604,10 +604,10 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AIParryOnDecideAbility = MBMath.Lerp(0.2f, 0.95f, MBMath.ClampFloat(MathF.Pow(meleeLevel, 1.2f), 0f, 1f));
         // Chance the AI parries when it's attacking.
         props.AIParryOnAttackAbility = meleeLevel;
-        // Chance the AI parries on chained attacks. https://www.desmos.com/calculator/pkclpc2ndr
-        props.AIParryOnAttackingContinueAbility = MBMath.Lerp(0.2f, 0.95f, meleeLevel);
-        // Chance the AI changes a parry direction. https://www.desmos.com/calculator/souzxw9965
-        props.AiParryDecisionChangeValue = 0.05f + 0.7f * meleeLevel;
+        // Chance the AI parries on chained attacks. https://www.desmos.com/calculator/ykeqtnkspn
+        props.AIParryOnAttackingContinueAbility = MBMath.Lerp(0.2f, 0.8f, meleeLevel);
+        // Chance the AI changes a parry direction. https://www.desmos.com/calculator/ljuyuavq7i
+        props.AiParryDecisionChangeValue = 0.05f + 0.5f * meleeLevel;
         props.AIRealizeBlockingFromIncorrectSideAbility = MBMath.ClampFloat(MathF.Pow(meleeLevel, 2.5f) - 0.01f, 0f, 1f);
         props.AiTryChamberAttackOnDecide = (meleeLevel - 0.15f) * 0.1f;
         props.AIAttackOnParryChance = 0.08f - 0.02f * agent.Defensiveness;
@@ -621,7 +621,9 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AIDecideOnRealizeEnemyBlockingAttackAbility = MBMath.ClampFloat(MathF.Pow(meleeLevel, 2.5f) - 0.1f, 0f, 1f);
         props.AiAttackingShieldDefenseChance = 0.2f + 0.3f * meleeLevel;
         props.AiAttackingShieldDefenseTimer = -0.3f + 0.3f * meleeLevel;
-        props.AiRandomizedDefendDirectionChance = 1f - MathF.Pow(meleeLevel, 3f);
+        // Chance the AI picks a random (likely wrong) block direction instead of reading the attack. At 0, it always
+        // reads correctly, at 1 it's purely guessing. https://www.desmos.com/calculator/mhxwgd4dcs
+        props.AiRandomizedDefendDirectionChance = 1f - MathF.Pow(meleeLevel, 5f);
         props.AiShooterError = 0.008f;
         props.AISetNoAttackTimerAfterBeingHitAbility = MBMath.Lerp(0.33f, 1f, meleeLevel);
         props.AISetNoAttackTimerAfterBeingParriedAbility = MBMath.Lerp(0.2f, 1f, meleeLevel * meleeLevel);
@@ -644,9 +646,9 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AiWaitBeforeShootFactor = agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : 1f - 0.5f * equippedItemLevel;
         float equippedItemLevelComplement = 1f - equippedItemLevel;
         // "leading" a target means aiming ahead of a moving target. The AI will roll between min (shoot behind) and max
-        // (shoot ahead). https://www.desmos.com/calculator/qrdv3rthef
-        props.AiRangerLeadErrorMin = -equippedItemLevelComplement * 0.45f;
-        props.AiRangerLeadErrorMax = equippedItemLevelComplement * 0.25f;
+        // (shoot ahead). https://www.desmos.com/calculator/6ityslajoa
+        props.AiRangerLeadErrorMin = -MathF.Pow(equippedItemLevelComplement, 0.5f) * 0.4f;
+        props.AiRangerLeadErrorMax = MathF.Pow(equippedItemLevelComplement, 0.5f) * 0.3f;
         // Aiming error. https://www.desmos.com/calculator/pqgcp48aoe
         props.AiRangerVerticalErrorMultiplier = equippedItemLevelComplement * 0.1f;
         props.AiRangerHorizontalErrorMultiplier = equippedItemLevelComplement * 0.035f;
