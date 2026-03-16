@@ -1,5 +1,6 @@
 using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.Common.KeyBinder.Models;
+using TaleWorlds.Core;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
@@ -62,7 +63,7 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
                     {
                         if (!_expiredMessageShown)
                         {
-                            TextObject windowExpiredText = new("{=KgZprgXA}Time expired to report {ATTACKER} for teamhit.");
+                            TextObject windowExpiredText = GameTexts.FindText("str_ff_teamhit_msg", "window_expired");
                             windowExpiredText.SetTextVariable("ATTACKER", _lastAttackerName);
 
                             _expiredMessageShown = true;
@@ -135,8 +136,7 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
 
         if (_reportWindowSeconds <= 0) // no window
         {
-            TextObject reportPrompText = new("{=WH15BANu}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] to report.");
-            reportPrompText.SetTextVariable("ATTACKER", _lastAttackerName);
+            TextObject reportPrompText = GameTexts.FindText("str_ff_teamhit_msg", "report_prompt");
             reportPrompText.SetTextVariable("DAMAGE", message.Damage);
             reportPrompText.SetTextVariable("MODIFIERKEY", cmdModifierKeyStr);
             reportPrompText.SetTextVariable("REPORTKEY", mKeyStr);
@@ -144,7 +144,7 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
         }
         else if (_reportWindowSeconds > 0) // has window
         {
-            TextObject reportPrompNoTimeText = new("{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] to report. ({TIMELEFT} seconds remaining)");
+            TextObject reportPrompNoTimeText = GameTexts.FindText("str_ff_teamhit_msg", "report_prompt_window");
             reportPrompNoTimeText.SetTextVariable("ATTACKER", _lastAttackerName);
             reportPrompNoTimeText.SetTextVariable("DAMAGE", message.Damage);
             reportPrompNoTimeText.SetTextVariable("TIMELEFT", _reportWindowSeconds);
