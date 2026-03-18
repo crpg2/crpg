@@ -15,7 +15,6 @@ public class CrpgCommanderInfoVm : ViewModel
 {
     private readonly MissionMultiplayerGameModeBaseClient _gameMode;
     private readonly CrpgSiegeClient? _siegeClient;
-    private readonly MissionScoreboardComponent _missionScoreboardComponent;
     private readonly ICommanderInfo? _commanderInfo;
     private int _attackerTeamInitialMemberCount;
     private int _defenderTeamInitialMemberCount;
@@ -48,7 +47,6 @@ public class CrpgCommanderInfoVm : ViewModel
         NeutralControlPoints = new MBBindingList<CapturePointVM>();
         EnemyControlPoints = new MBBindingList<CapturePointVM>();
         _gameMode = Mission.Current.GetMissionBehavior<MissionMultiplayerGameModeBaseClient>();
-        _missionScoreboardComponent = Mission.Current.GetMissionBehavior<MissionScoreboardComponent>();
         _commanderInfo = Mission.Current.GetMissionBehavior<ICommanderInfo>();
         ShowTacticalInfo = true;
         UpdateWarmupDependentFlags(_gameMode.IsInWarmup);
@@ -431,20 +429,19 @@ public class CrpgCommanderInfoVm : ViewModel
 
         int activeAttackersCount = Mission.Current.AttackerTeam.ActiveAgents.Count;
         int activeDefendersCount = Mission.Current.DefenderTeam.ActiveAgents.Count;
+        _attackerTeamInitialMemberCount = MathF.Max(_attackerTeamInitialMemberCount, activeAttackersCount);
+        _defenderTeamInitialMemberCount = MathF.Max(_defenderTeamInitialMemberCount, activeDefendersCount);
         AllyMemberCount = _allyTeam.Side == BattleSideEnum.Attacker ? activeAttackersCount : activeDefendersCount;
         EnemyMemberCount = _allyTeam.Side == BattleSideEnum.Attacker ? activeDefendersCount : activeAttackersCount;
-        int initialAttackerPower = _allyTeam.Side == BattleSideEnum.Attacker ? _attackerTeamInitialMemberCount : _defenderTeamInitialMemberCount;
-        Team? allyTeam = _allyTeam;
-        int initialDefenderPower = (allyTeam != null
-            ? allyTeam.Side == BattleSideEnum.Attacker ? 1 : 0
-            : 0) != 0 ? _defenderTeamInitialMemberCount : _attackerTeamInitialMemberCount;
-        if (initialDefenderPower == 0 && initialAttackerPower == 0)
+        int initialAllyPower = _allyTeam.Side == BattleSideEnum.Attacker ? _attackerTeamInitialMemberCount : _defenderTeamInitialMemberCount;
+        int initialEnemyPower = _allyTeam.Side == BattleSideEnum.Attacker ? _defenderTeamInitialMemberCount : _attackerTeamInitialMemberCount;
+        if (initialAllyPower == 0 && initialEnemyPower == 0)
         {
             PowerLevelComparer.Update(1.0, 1.0, 1.0, 1.0);
         }
         else
         {
-            PowerLevelComparer.Update(EnemyMemberCount, AllyMemberCount, initialDefenderPower, initialAttackerPower);
+            PowerLevelComparer.Update(EnemyMemberCount, AllyMemberCount, initialEnemyPower, initialAllyPower);
         }
     }
 
@@ -524,13 +521,6 @@ public class CrpgCommanderInfoVm : ViewModel
     {
         ShowTacticalInfo = true;
         OnTeamChanged();
-        if (!UsePowerComparer)
-        {
-            return;
-        }
-
-        _attackerTeamInitialMemberCount = _missionScoreboardComponent.Sides[(int)BattleSideEnum.Attacker].Players.Count<MissionPeer>();
-        _defenderTeamInitialMemberCount = _missionScoreboardComponent.Sides[(int)BattleSideEnum.Defender].Players.Count<MissionPeer>();
     }
 
     private void RegisterMoraleEvents()
@@ -562,6 +552,8 @@ public class CrpgCommanderInfoVm : ViewModel
             return;
         }
 
+        _attackerTeamInitialMemberCount = 0;
+        _defenderTeamInitialMemberCount = 0;
         PowerLevelComparer.Update(1.0, 1.0, 1.0, 1.0);
     }
 

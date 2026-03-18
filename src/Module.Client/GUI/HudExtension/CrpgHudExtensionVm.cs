@@ -91,8 +91,8 @@ internal class CrpgHudExtensionVm : ViewModel
 
     private void HandleBannerChange(string attackerBanner, string defenderBanner, string attackerName, string defenderName)
     {
-        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(attackerBanner) : new Banner(defenderBanner), true);
-        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? new Banner(defenderBanner) : new Banner(attackerBanner), true);
+        AllyBanner = new(_isAttackerTeamAlly ? new Banner(attackerBanner) : new Banner(defenderBanner), true);
+        EnemyBanner = new(_isAttackerTeamAlly ? new Banner(defenderBanner) : new Banner(attackerBanner), true);
     }
 
     [DataSourceProperty]
