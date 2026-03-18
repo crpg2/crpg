@@ -281,12 +281,12 @@ internal class CrpgUserManagerServer : MissionNetwork
     {
         if (bannerKey == null)
         {
-            return string.Empty;
+            return "";
         }
 
         if (bannerKey.Length > _constants.ClanBannerKeyMaxLength)
         {
-            return string.Empty;
+            return "";
         }
 
         string[] array = bannerKey.Split('.');
@@ -316,12 +316,12 @@ internal class CrpgUserManagerServer : MissionNetwork
         {
             if (!int.TryParse(array[i], out int iconId))
             {
-                return string.Empty;
+                continue;
             }
 
             if (!CheckBannerIconList(iconId))
             {
-                return string.Empty;
+                continue;
             }
 
             if (!int.TryParse(array[i + 1], out int colorId1)
@@ -345,12 +345,12 @@ internal class CrpgUserManagerServer : MissionNetwork
                 || mirror > 1
                 || mirror < 0)
             {
-                return string.Empty;
+                continue;
             }
 
             if (!int.TryParse(array[i + 9], out int rotation))
             {
-                return string.Empty;
+                continue;
             }
 
             rotation %= 360;
@@ -360,30 +360,30 @@ internal class CrpgUserManagerServer : MissionNetwork
             }
 
             fixedBannerCode.Append(iconId);
-            fixedBannerCode.Append(".");
+            fixedBannerCode.Append('.');
             fixedBannerCode.Append(colorId1);
-            fixedBannerCode.Append(".");
+            fixedBannerCode.Append('.');
             fixedBannerCode.Append(colorId2);
-            fixedBannerCode.Append(".");
+            fixedBannerCode.Append('.');
             fixedBannerCode.Append(sizeX);
-            fixedBannerCode.Append(".");
+            fixedBannerCode.Append('.');
             fixedBannerCode.Append(sizeY);
-            fixedBannerCode.Append(".");
+            fixedBannerCode.Append('.');
             fixedBannerCode.Append(posX);
-            fixedBannerCode.Append(".");
+            fixedBannerCode.Append('.');
             fixedBannerCode.Append(posY);
-            fixedBannerCode.Append(".");
+            fixedBannerCode.Append('.');
             fixedBannerCode.Append(drawStroke);
-            fixedBannerCode.Append(".");
+            fixedBannerCode.Append('.');
             fixedBannerCode.Append(mirror);
-            fixedBannerCode.Append(".");
+            fixedBannerCode.Append('.');
             fixedBannerCode.Append(rotation);
-            fixedBannerCode.Append(".");
+            fixedBannerCode.Append('.');
         }
 
         if (fixedBannerCode.Length == 0)
         {
-            return string.Empty;
+            return "";
         }
 
         fixedBannerCode.Length -= ".".Length;
