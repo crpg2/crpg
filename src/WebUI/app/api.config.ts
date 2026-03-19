@@ -8,7 +8,6 @@ import { delay } from 'es-toolkit'
 import { getToken, login } from '~/services/auth-service'
 
 import type { Platform } from './models/platform'
-import type { Role } from './models/role'
 
 import { PLATFORM } from './models/platform'
 
@@ -54,90 +53,70 @@ const isCrpgApiResult = (result: unknown): result is CrpgApiResult<unknown> => {
   return 'data' in result && 'errors' in result
 }
 
-interface ErrorToast {
-  title: string
-  description?: string
-  color: 'error'
-  duration: number
-  icon: 'crpg:error'
-  close: false
-}
-
-interface ResponseErrorHandlerDependencies {
-  roles?: Role[]
-  toast?: {
-    add: (toast: ErrorToast) => void
+const isSwaggerValidationApiResult = (result: unknown): result is SwaggerValidationApiResult => {
+  if (!isObjectRecord(result)) {
+    return false
   }
-  logger?: {
-    error?: (message: string, payload?: unknown) => void
-  }
-  loginFn?: (platform: Platform) => Promise<unknown>
-  delayFn?: (timeout: number) => Promise<unknown>
-  getStoredPlatform?: () => Platform
-}
 
-const needSomeRole = (roles?: Role[]): boolean => {
-  return Array.isArray(roles) ? roles.length > 0 : Boolean(roles)
-}
-
-const makeErrorToast = (title?: string | null, description?: string | null): ErrorToast => {
-  return {
-    title: title || 'Some Error',
-    ...(description ? { description } : {}),
-    color: 'error',
-    duration: 5000,
-    icon: 'crpg:error',
-    close: false,
-  }
+  return !('data' in result) && 'errors' in result && isObjectRecord(result.errors)
 }
 
 export const onResponseError = async (
   { response }: { response: FetchResponse<CrpgApiResult<unknown> | SwaggerValidationApiResult> },
-  deps: ResponseErrorHandlerDependencies = {},
 ) => {
-  const roles = deps.roles ?? useRoute().meta.roles
-  const toast = deps.toast ?? useToast()
-  const logger = deps.logger ?? useNuxtApp().$logger
-  const loginFn = deps.loginFn ?? login
-  const delayFn = deps.delayFn ?? delay
-  const getStoredPlatform = deps.getStoredPlatform
-    ?? (() => (globalThis.localStorage?.getItem('user-platform') as Platform) ?? PLATFORM.Steam)
+  const roles = useRoute().meta.roles
+  const toast = useToast()
+  const logger = useNuxtApp().$logger
 
   const showErrorToast = (title?: string | null, description?: string | null) => {
-    toast.add(makeErrorToast(title, description))
+    toast.add({
+      title: title || 'Some Error',
+      ...(description ? { description } : {}),
+      color: 'error',
+      duration: 5000,
+      icon: 'crpg:error',
+      close: false,
+    })
   }
 
-  if (needSomeRole(roles) && response.status === 401) {
+  if (roles?.length && response.status === 401) {
     showErrorToast('Session expired')
-    await delayFn(1000)
-    await loginFn(getStoredPlatform())
+    await delay(1000)
+    await login((globalThis.localStorage?.getItem('user-platform') as Platform) ?? PLATFORM.Steam)
     return
   }
 
   const responseData = response._data
 
+  // Crpg api error
+  if (isCrpgApiResult(responseData)) {
+    const [error] = responseData.errors ?? []
+
+    if (error) {
+      showErrorToast(error.title, error.detail)
+      logger?.error?.('Crpg Api Error', error)
+      return
+    }
+
+    showErrorToast()
+    logger?.error?.('Crpg Api Error', responseData)
+    return
+  }
+
   // Swagger validation error
-  if (!isCrpgApiResult(responseData)) {
-    const validationDescription = Object.values(responseData?.errors || [])
+  if (isSwaggerValidationApiResult(responseData)) {
+    const validationDescription = Object.values(responseData.errors)
       .flatMap(errorMessages => Array.isArray(errorMessages) ? errorMessages : [])
       .join(', ')
 
-    showErrorToast(responseData?.title, validationDescription)
+    showErrorToast(responseData.title, validationDescription)
     logger?.error?.('Swagger Validation Api Error', responseData)
     return
   }
 
-  // Crpg api error
-  const [error] = responseData.errors ?? []
-
-  if (error) {
-    showErrorToast(error.title, error.detail)
-    logger?.error?.('Crpg Api Error', error)
-    return
-  }
-
+  // Unknown payload
   showErrorToast()
-  logger?.error?.('Crpg Api Error', responseData)
+  logger?.error?.('Unknown Api Error', responseData)
 }
 
 export const createClientConfig: CreateClientConfig = config => ({
