@@ -88,22 +88,27 @@ public abstract class BaseController : ControllerBase
         return ResultToAction(result);
     }
 
-    private ActionResult FirstErrorToAction(Result result)
+    private ObjectResult FirstErrorToAction(Result result)
     {
+        // Keep error payload shape consistent for commands returning non-generic Result.
+        Result responseResult = result.GetType() == typeof(Result)
+            ? new Result<object?>(result.Errors!)
+            : result;
+
         string traceId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
-        foreach (var error in result.Errors!)
+        foreach (var error in responseResult.Errors!)
         {
             error.TraceId = traceId;
         }
 
-        Error firstError = result.Errors.First();
+        Error firstError = responseResult.Errors.First();
         return firstError.Type switch
         {
-            ErrorType.Validation => BadRequest(result),
-            ErrorType.NotFound => NotFound(result),
-            ErrorType.Conflict => Conflict(result),
-            ErrorType.Forbidden => StatusCode((int)HttpStatusCode.Forbidden, result),
-            _ => StatusCode((int)HttpStatusCode.InternalServerError, result),
+            ErrorType.Validation => BadRequest(responseResult),
+            ErrorType.NotFound => NotFound(responseResult),
+            ErrorType.Conflict => Conflict(responseResult),
+            ErrorType.Forbidden => StatusCode((int)HttpStatusCode.Forbidden, responseResult),
+            _ => StatusCode((int)HttpStatusCode.InternalServerError, responseResult),
         };
     }
 }
