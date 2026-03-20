@@ -8,6 +8,7 @@
     <File Path=".editorconfig" />
     <File Path=".github/workflows/webapi.yml" />
     <File Path=".github/workflows/webui.yml" />
+    <File Path=".github/workflows/discord-commits.yml" />
     <File Path="AGENTS.md" />
     <File Path="CONTRIBUTING.md" />
     <File Path="README.md" />
