@@ -28,7 +28,7 @@ public static class KeyBinder
     // predefined categories. you can also make your own where you create the gamekey by just using whatever string values you want
     public static class Categories
     {
-        public static readonly KeyCategoryInfo CrpgGeneral = new("crpg_general", "{=KORWOuGG}Crpg General");
+        public static readonly KeyCategoryInfo CrpgGeneral = new("crpg_general", "{=KORWOuGG}cRPG General");
     }
 
     // creates and/or appends keys to a category
