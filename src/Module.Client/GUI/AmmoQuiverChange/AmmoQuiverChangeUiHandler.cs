@@ -25,8 +25,8 @@ internal class AmmoQuiverChangeUiHandler : MissionView, IUseKeyBinder
             new()
             {
                 Id = "key_change_quiver",
-                Name = "Change Quiver",
-                Description = "Change ammo quiver",
+                Name = "{=KORWOuG5}Change Quiver",
+                Description = "{=KORWOuG6}Change ammo quiver",
                 DefaultInputKey = InputKey.C,
             },
         },
@@ -63,7 +63,7 @@ internal class AmmoQuiverChangeUiHandler : MissionView, IUseKeyBinder
     public override void EarlyStart()
     {
         // TODO: fix
-         quiverChangeKey = HotKeyManager.GetCategory(KeyCategoryId).RegisteredGameKeys.Find(gk => gk != null && gk.StringId == "key_change_quiver");
+        quiverChangeKey = HotKeyManager.GetCategory(KeyCategoryId).RegisteredGameKeys.Find(gk => gk != null && gk.StringId == "key_change_quiver");
     }
 
     public override void OnMissionScreenFinalize()
