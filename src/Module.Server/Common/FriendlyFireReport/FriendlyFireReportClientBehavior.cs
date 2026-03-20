@@ -63,7 +63,7 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
                     {
                         if (!_expiredMessageShown)
                         {
-                            TextObject windowExpiredText = GameTexts.FindText("str_ff_teamhit_msg", "window_expired");
+                            TextObject windowExpiredText = new("{=KgZprgXA}Time expired to report {ATTACKER} for teamhit.");
                             windowExpiredText.SetTextVariable("ATTACKER", _lastAttackerName);
 
                             _expiredMessageShown = true;
@@ -136,7 +136,8 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
 
         if (_reportWindowSeconds <= 0) // no window
         {
-            TextObject reportPrompText = GameTexts.FindText("str_ff_teamhit_msg", "report_prompt");
+            TextObject reportPrompText = new("{=WH15BANu}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional.");
+            reportPrompText.SetTextVariable("ATTACKER", _lastAttackerName);
             reportPrompText.SetTextVariable("DAMAGE", message.Damage);
             reportPrompText.SetTextVariable("MODIFIERKEY", cmdModifierKeyStr);
             reportPrompText.SetTextVariable("REPORTKEY", mKeyStr);
@@ -144,7 +145,7 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
         }
         else if (_reportWindowSeconds > 0) // has window
         {
-            TextObject reportPrompNoTimeText = GameTexts.FindText("str_ff_teamhit_msg", "report_prompt_window");
+            TextObject reportPrompNoTimeText = new("{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional {TIMELEFT} seconds remaining.");
             reportPrompNoTimeText.SetTextVariable("ATTACKER", _lastAttackerName);
             reportPrompNoTimeText.SetTextVariable("DAMAGE", message.Damage);
             reportPrompNoTimeText.SetTextVariable("TIMELEFT", _reportWindowSeconds);
