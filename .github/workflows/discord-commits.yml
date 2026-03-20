@@ -1,0 +1,91 @@
+name: Discord Commit Notify
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          # GitHub username -> Discord user ID mapping.
+          declare -A DISCORD_IDS
+          DISCORD_IDS[verdie-g]="120988923638972417"
+          DISCORD_IDS[namidaka]="219432724195180544"
+          DISCORD_IDS[or2e]="349708990537531402"
+          DISCORD_IDS[Muparadzi]="267601140944863232"
+          DISCORD_IDS[its-vick]="171457823383748608"
+          DISCORD_IDS[Yeldur]="163670550063874048"
+          DISCORD_IDS[Meowkov]="1069751760442359878"
+          DISCORD_IDS[Erdertus]="429769382630129687"
+          DISCORD_IDS[GerGotha]="176742252389990400"
+          DISCORD_IDS[Telfordski]="110193659802042368"
+          DISCORD_IDS[Truthful33]="591429373106585639"
+          DISCORD_IDS[rf-l]="279666161367515146"
+          DISCORD_IDS[Diggles27]="203702117859328011"
+          DISCORD_IDS[AngryMob010]="219861011153289216"
+          DISCORD_IDS[AppleTruce]="814543198080073730"
+          DISCORD_IDS[kaikaikaia]="518223480987058188"
+
+          AUTHOR="${{ github.event.head_commit.author.username }}"
+          MESSAGE=$(echo '${{ github.event.head_commit.message }}' | head -1)
+          COMMIT_URL="${{ github.event.head_commit.url }}"
+          SHORT_SHA=$(echo "${{ github.event.head_commit.id }}" | cut -c1-7)
+
+          GUILD_ID="279063743839862805"
+
+          DISCORD_ID="${DISCORD_IDS[$AUTHOR]:-}"
+
+          if [ -n "$DISCORD_ID" ]; then
+            # Fetch guild member for server nickname.
+            MEMBER=$(curl -sf -H "Authorization: Bot $DISCORD_BOT_TOKEN" \
+              "https://discord.com/api/v10/guilds/$GUILD_ID/members/$DISCORD_ID")
+
+            NICK=$(echo "$MEMBER" | jq -r '.nick // empty')
+            GLOBAL_NAME=$(echo "$MEMBER" | jq -r '.user.global_name // empty')
+            USER_NAME=$(echo "$MEMBER" | jq -r '.user.username')
+            USERNAME="${NICK:-${GLOBAL_NAME:-$USER_NAME}}"
+
+            AVATAR_HASH=$(echo "$MEMBER" | jq -r '.avatar // empty')
+            if [ -n "$AVATAR_HASH" ]; then
+              # Per-server avatar.
+              AVATAR_URL="https://cdn.discordapp.com/guilds/${GUILD_ID}/users/${DISCORD_ID}/avatars/${AVATAR_HASH}.png"
+            else
+              # Fall back to global avatar.
+              AVATAR_HASH=$(echo "$MEMBER" | jq -r '.user.avatar // empty')
+              if [ -n "$AVATAR_HASH" ]; then
+                AVATAR_URL="https://cdn.discordapp.com/avatars/${DISCORD_ID}/${AVATAR_HASH}.png"
+              else
+                AVATAR_URL=""
+              fi
+            fi
+          else
+            # Unmapped author: use GitHub username, no avatar.
+            USERNAME="$AUTHOR"
+            AVATAR_URL=""
+          fi
+
+          # Replace (#123) with a link to the PR.
+          REPO="${{ github.repository }}"
+          CONTENT=$(echo "$MESSAGE" \
+            | sed -E "s|\(#([0-9]+)\)|[#\1](https://github.com/$REPO/pull/\1)|g")
+
+          # Post to Discord via webhook.
+          PAYLOAD=$(jq -n \
+            --arg username "$USERNAME" \
+            --arg avatar_url "$AVATAR_URL" \
+            --arg content "$CONTENT" \
+            '{username: $username, content: $content, flags: 4} + (if $avatar_url != "" then {avatar_url: $avatar_url} else {} end)')
+
+          curl -sf -H "Content-Type: application/json" \
+            -d "$PAYLOAD" \
+            "$DISCORD_WEBHOOK_URL"
+
+          echo "Posted commit $SHORT_SHA by $USERNAME to Discord."
