@@ -19,6 +19,7 @@ namespace Crpg.Module.GUI.Scoreboard;
 internal class CrpgMissionScoreboardVm : ViewModel
 {
     private const float AttributeRefreshDuration = 1f;
+    private const int MaxDisplayedSpectators = 8;
 
     private readonly Dictionary<BattleSideEnum, CrpgScoreboardSideVM> _missionSides;
     private readonly MissionScoreboardComponent _missionScoreboardComponent;
@@ -393,6 +394,7 @@ internal class CrpgMissionScoreboardVm : ViewModel
         {
             UpdateSideAllPlayersAttributes(BattleSideEnum.Attacker);
             UpdateSideAllPlayersAttributes(BattleSideEnum.Defender);
+            UpdateSpectators();
             _attributeRefreshTimeElapsed = 0f;
         }
     }
@@ -547,12 +549,55 @@ internal class CrpgMissionScoreboardVm : ViewModel
         }
     }
 
-    public void DecreaseSpectatorCount(MissionPeer spectatedPeer)
-    {
-    }
 
-    public void IncreaseSpectatorCount(MissionPeer spectatedPeer)
+
+    private void UpdateSpectators()
     {
+        List<string> spectatorNames = new();
+        foreach (NetworkCommunicator peer in GameNetwork.NetworkPeers)
+        {
+            if (!peer.IsSynchronized)
+            {
+                continue;
+            }
+
+            MissionPeer? missionPeer = peer.GetComponent<MissionPeer>();
+            if (missionPeer == null)
+            {
+                continue;
+            }
+
+            if (missionPeer.Team == null || missionPeer.Team == _mission.SpectatorTeam)
+            {
+                spectatorNames.Add(missionPeer.DisplayedName);
+            }
+        }
+
+        if (spectatorNames.Count == 0)
+        {
+            Spectators = string.Empty;
+            return;
+        }
+
+        int displayCount = Math.Min(spectatorNames.Count, MaxDisplayedSpectators);
+        string names = string.Join(", ", spectatorNames.Take(displayCount));
+        int remaining = spectatorNames.Count - displayCount;
+
+        TextObject listText;
+        if (remaining > 0)
+        {
+            listText = new TextObject("{=j9Xp2vNw}{SPECTATOR_NAMES} and {EXTRA_COUNT} more");
+            listText.SetTextVariable("SPECTATOR_NAMES", names);
+            listText.SetTextVariable("EXTRA_COUNT", remaining);
+        }
+        else
+        {
+            listText = new TextObject(names);
+        }
+
+        TextObject spectatorsText = new("{=hMd5sK8a}Spectators: {SPECTATOR_LIST}");
+        spectatorsText.SetTextVariable("SPECTATOR_LIST", listText);
+        Spectators = spectatorsText.ToString();
     }
 
     public void ExecuteToggleMute()

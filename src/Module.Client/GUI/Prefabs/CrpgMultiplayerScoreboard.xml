@@ -175,6 +175,9 @@
                           </Children>
                         </ListPanel>
 
+                        <!--Spectators-->
+                        <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" VerticalAlignment="Bottom" HorizontalAlignment="Left" MarginBottom="50" Brush="MPScoreboard.Info.Text" Text="@Spectators" />
+
                         <!--Show Cursor Icon-->
                         <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" VerticalAlignment="Bottom" HorizontalAlignment="Center" MarginBottom="7" IsHidden="@IsMouseEnabled">
                           <Children>

@@ -36,6 +36,8 @@
     <string id="ASQYQ4sZ" text="胜" />
     <string id="AtkHJkQi" text="失" />
     <string id="WkeDgZFB" text="评分" />
+    <string id="hMd5sK8a" text="观战: {SPECTATOR_LIST}" />
+    <string id="j9Xp2vNw" text="{SPECTATOR_NAMES} 以及其他 {EXTRA_COUNT} 人" />
     
     <string id="fBDiQBrC" text="生活" />
     <string id="gaC79g3U" text="你的角色身高有点奇怪。在 Bannerlord Armory 中修复它以加入 cRPG 服务器。" />
