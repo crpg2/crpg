@@ -8,8 +8,7 @@ export function useUserRestriction() {
   const restriction = useState<UserRestrictionPublic | null>('user-restriction', () => null)
 
   async function fetchUserRestriction() {
-    const data = await getUserRestriction()
-    restriction.value = data
+    restriction.value = await getUserRestriction()
   }
 
   return {

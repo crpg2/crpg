@@ -21,7 +21,9 @@ usePollInterval({
 useMainHeaderProvider(useTemplateRef('mainHeader'))
 const { showWelcomeMessage } = useWelcome()
 
-fetchUserRestriction()
+if (user.value) {
+  fetchUserRestriction()
+}
 </script>
 
 <template>
