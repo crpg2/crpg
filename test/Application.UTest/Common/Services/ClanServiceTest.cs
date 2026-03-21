@@ -416,8 +416,9 @@ public class ClanServiceTest : TestBase
         Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.UserItemNotFound));
     }
 
-    [Test]
-    public async Task ReturnArmoryItemByClanLeaderShouldWork()
+    [TestCase(ClanMemberRole.Leader)]
+    [TestCase(ClanMemberRole.Officer)]
+    public async Task ReturnArmoryItemByClanLeaderShouldWork(ClanMemberRole role)
     {
         await ClanArmoryTestHelper.CommonSetUp(ArrangeDb);
         await ClanArmoryTestHelper.AddItems(ArrangeDb, "user0");
@@ -436,8 +437,8 @@ public class ClanServiceTest : TestBase
 
         var clanLeader = new User
         {
-            Name = "clanLeader",
-            ClanMembership = new() { Clan = clan, Role = ClanMemberRole.Leader },
+            Name = "buddy",
+            ClanMembership = new() { Clan = clan, Role = role },
         };
         ActDb.Users.Add(clanLeader);
         await ActDb.SaveChangesAsync();
