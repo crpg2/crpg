@@ -6,7 +6,10 @@ import { useUser } from '~/composables/user/use-user'
 import { CLAN_MEMBER_ROLE } from '~/models/clan'
 import { isOwnClanArmoryItem } from '~/services/clan-service'
 
-const { clanArmoryItem, compareResult } = defineProps<{
+const {
+  clanArmoryItem,
+  compareResult,
+} = defineProps<{
   clanArmoryItem: ClanArmoryItem
   compareResult?: CompareItemsResult
 }>()
@@ -22,7 +25,8 @@ const { clanMemberRole, user } = useUser()
 const { t } = useI18n()
 
 const isOwnArmoryItem = computed(() => isOwnClanArmoryItem(clanArmoryItem, user.value!.id))
-const canReturn = computed(() => clanArmoryItem.borrower?.id === user.value!.id || clanMemberRole.value === CLAN_MEMBER_ROLE.Leader)
+const canReturn = computed(() => clanArmoryItem.borrower?.id === user.value!.id
+  || clanMemberRole.value === CLAN_MEMBER_ROLE.Leader || clanMemberRole.value === CLAN_MEMBER_ROLE.Officer)
 </script>
 
 <template>
@@ -56,7 +60,6 @@ const canReturn = computed(() => clanArmoryItem.borrower?.id === user.value!.id 
           icon="i-lucide-hand"
           @click="$emit('borrow')"
         />
-
         <template #content>
           <i18n-t
             scope="global"
@@ -65,7 +68,7 @@ const canReturn = computed(() => clanArmoryItem.borrower?.id === user.value!.id 
             keypath="clan.armory.item.borrow.title"
           >
             <template #user>
-              <UserMedia :user="clanArmoryItem.lender" />
+              <UserMedia :user="clanArmoryItem.lender" hidden-clan />
             </template>
           </i18n-t>
         </template>
