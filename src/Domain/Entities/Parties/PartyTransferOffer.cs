@@ -1,3 +1,5 @@
+using Crpg.Domain.Entities.Items;
+
 namespace Crpg.Domain.Entities.Parties;
 
 /// <summary>
@@ -11,7 +13,7 @@ public class PartyTransferOffer
     public PartyTransferOfferStatus Status { get; set; }
     public int Gold { get; set; }
     public float Troops { get; set; }
-    public List<PartyTransferOfferItem> Items { get; set; } = [];
+    public List<ItemStack> Items { get; set; } = [];
 
     /// <summary>See <see cref="TargetPartyId"/>.</summary>
     public Party? TargetParty { get; set; }

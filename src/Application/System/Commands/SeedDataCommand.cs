@@ -1999,7 +1999,7 @@ public record SeedDataCommand : IMediatorRequest
             epicrotea.Owner = orle2Party;
             epicrotea.OwnerId = orle2Party.Id;
 
-            List<SettlementItem> rhotaeItems =
+            List<ItemStack> rhotaeItems =
             [
                 new() { ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h0", Count = 10 },
                 new() { ItemId = "crpg_thamaskene_steel_spatha_v1_h2", Count = 110 },

@@ -11,5 +11,5 @@ public record BattleFighterInventoryViewModel
     public PartyPublicViewModel? Party { get; init; }
     [JsonRequired]
     public SettlementPublicViewModel? Settlement { get; init; }
-    public IList<ItemStack> Items { get; init; } = Array.Empty<ItemStack>();
+    public IList<ItemStackViewModel> Items { get; init; } = Array.Empty<ItemStackViewModel>();
 }

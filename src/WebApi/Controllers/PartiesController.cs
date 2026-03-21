@@ -80,7 +80,7 @@ public class PartiesController : BaseController
     /// <response code="200">Ok.</response>
     /// <response code="400">Bad request.</response>
     [HttpGet("self/items")]
-    public Task<ActionResult<Result<IList<ItemStack>>>> GetPartyItems()
+    public Task<ActionResult<Result<IList<ItemStackViewModel>>>> GetPartyItems()
     {
         return ResultToActionAsync(Mediator.Send(new GetPartyItemsQuery
         {
@@ -95,7 +95,7 @@ public class PartiesController : BaseController
     /// <response code="200">Bought.</response>
     /// <response code="400">Too far from the settlement, item not available, ...</response>
     [HttpPost("self/items")]
-    public Task<ActionResult<Result<ItemStack>>> BuySettlementItem([FromBody] BuySettlementItemCommand req)
+    public Task<ActionResult<Result<ItemStackViewModel>>> BuySettlementItem([FromBody] BuySettlementItemCommand req)
     {
         req.PartyId = CurrentUser.User!.Id;
         return ResultToActionAsync(Mediator.Send(req));
@@ -108,7 +108,7 @@ public class PartiesController : BaseController
     /// <response code="200">Ok.</response>
     /// <response code="400">Bad request.</response>
     [HttpGet("{partyId}/items")]
-    public Task<ActionResult<Result<IList<ItemStack>>>> GetPartyItems([FromRoute] int partyId)
+    public Task<ActionResult<Result<IList<ItemStackViewModel>>>> GetPartyItems([FromRoute] int partyId)
     {
         return ResultToActionAsync(Mediator.Send(new GetPartyItemsQuery
         {

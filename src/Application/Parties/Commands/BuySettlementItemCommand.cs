@@ -5,7 +5,7 @@ using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Parties.Models;
 using Crpg.Domain.Entities;
-using Crpg.Domain.Entities.Parties;
+using Crpg.Domain.Entities.Items;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -13,7 +13,7 @@ using LoggerFactory = Crpg.Logging.LoggerFactory;
 
 namespace Crpg.Application.Parties.Commands;
 
-public record BuySettlementItemCommand : IMediatorRequest<ItemStack>
+public record BuySettlementItemCommand : IMediatorRequest<ItemStackViewModel>
 {
     public int PartyId { get; set; }
     public string ItemId { get; init; } = string.Empty;
@@ -28,7 +28,7 @@ public record BuySettlementItemCommand : IMediatorRequest<ItemStack>
         }
     }
 
-    internal class Handler : IMediatorRequestHandler<BuySettlementItemCommand, ItemStack>
+    internal class Handler : IMediatorRequestHandler<BuySettlementItemCommand, ItemStackViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<BuySettlementItemCommand>();
 
@@ -43,7 +43,7 @@ public record BuySettlementItemCommand : IMediatorRequest<ItemStack>
             _campaignMap = campaignMap;
         }
 
-        public async ValueTask<Result<ItemStack>> Handle(BuySettlementItemCommand req,
+        public async ValueTask<Result<ItemStackViewModel>> Handle(BuySettlementItemCommand req,
             CancellationToken cancellationToken)
         {
             var party = await _db.Parties
@@ -84,18 +84,18 @@ public record BuySettlementItemCommand : IMediatorRequest<ItemStack>
                 return new(CommonErrors.NotEnoughGold(cost, party.Gold));
             }
 
-            var partyItem = await _db.PartyItems
+            var partyItem = await _db.ItemStacks
                 .Include(pi => pi.Item)
                 .FirstOrDefaultAsync(pi => pi.PartyId == party.Id && pi.ItemId == item.Id, cancellationToken);
             if (partyItem == null)
             {
-                partyItem = new PartyItem
+                partyItem = new ItemStack
                 {
                     Item = item,
                     Count = req.ItemCount,
                     Party = party,
                 };
-                _db.PartyItems.Add(partyItem);
+                _db.ItemStacks.Add(partyItem);
             }
             else
             {
@@ -105,7 +105,7 @@ public record BuySettlementItemCommand : IMediatorRequest<ItemStack>
             party.Gold -= cost;
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("Party '{0}' bought {1} items '{2}'", req.PartyId, req.ItemCount, req.ItemId);
-            return new(_mapper.Map<ItemStack>(partyItem));
+            return new(_mapper.Map<ItemStackViewModel>(partyItem));
         }
     }
 }

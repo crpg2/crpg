@@ -62,8 +62,8 @@ public record GetBattleItemsQuery : IMediatorRequest<IList<BattleFighterInventor
                 Settlement = _mapper.Map<SettlementPublicViewModel>(f.Settlement),
                 Items =
                     f.Party != null
-                        ? [.. f.Party.Items.Select(pi => new ItemStack { Count = pi.Count, Item = _mapper.Map<ItemViewModel>(pi.Item!), })]
-                        : [.. f.Settlement!.Items.Select(si => new ItemStack { Count = si.Count, Item = _mapper.Map<ItemViewModel>(si.Item!), })],
+                        ? [.. f.Party.Items.Select(pi => new ItemStackViewModel { Count = pi.Count, Item = _mapper.Map<ItemViewModel>(pi.Item!), })]
+                        : [.. f.Settlement!.Items.Select(si => new ItemStackViewModel { Count = si.Count, Item = _mapper.Map<ItemViewModel>(si.Item!), })],
             }).ToList();
 
             return new(result);

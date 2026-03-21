@@ -91,8 +91,8 @@ public class UpdateSettlementItemsCommandTest : TestBase
         };
         ArrangeDb.Parties.Add(party);
 
-        PartyItem partyItem = new() { Item = sword, Count = 10, Party = party };
-        ArrangeDb.PartyItems.Add(partyItem);
+        ItemStack partyItem = new() { Item = sword, Count = 10, Party = party };
+        ArrangeDb.ItemStacks.Add(partyItem);
 
         await ArrangeDb.SaveChangesAsync();
 
@@ -108,12 +108,12 @@ public class UpdateSettlementItemsCommandTest : TestBase
         Assert.That(res.Data, Has.Length.EqualTo(1));
         Assert.That(res.Data![0].Count, Is.EqualTo(5));
 
-        var assertPartyItem = await AssertDb.PartyItems
+        var assertPartyItem = await AssertDb.ItemStacks
             .FirstOrDefaultAsync(pi => pi.PartyId == party.Id && pi.ItemId == "sword");
         Assert.That(assertPartyItem, Is.Not.Null);
         Assert.That(assertPartyItem!.Count, Is.EqualTo(5));
 
-        var assertSettlementItem = await AssertDb.SettlementItems
+        var assertSettlementItem = await AssertDb.ItemStacks
             .FirstOrDefaultAsync(si => si.SettlementId == settlement.Id && si.ItemId == "sword");
         Assert.That(assertSettlementItem, Is.Not.Null);
         Assert.That(assertSettlementItem!.Count, Is.EqualTo(5));
@@ -137,8 +137,8 @@ public class UpdateSettlementItemsCommandTest : TestBase
         };
         ArrangeDb.Parties.Add(party);
 
-        PartyItem partyItem = new() { Item = sword, Count = 5, Party = party };
-        ArrangeDb.PartyItems.Add(partyItem);
+        ItemStack partyItem = new() { Item = sword, Count = 5, Party = party };
+        ArrangeDb.ItemStacks.Add(partyItem);
 
         await ArrangeDb.SaveChangesAsync();
 
@@ -152,11 +152,11 @@ public class UpdateSettlementItemsCommandTest : TestBase
 
         Assert.That(res.Errors, Is.Null);
 
-        var assertPartyItem = await AssertDb.PartyItems
+        var assertPartyItem = await AssertDb.ItemStacks
             .FirstOrDefaultAsync(pi => pi.PartyId == party.Id && pi.ItemId == "sword");
         Assert.That(assertPartyItem, Is.Null);
 
-        var assertSettlementItem = await AssertDb.SettlementItems
+        var assertSettlementItem = await AssertDb.ItemStacks
             .FirstOrDefaultAsync(si => si.SettlementId == settlement.Id && si.ItemId == "sword");
         Assert.That(assertSettlementItem, Is.Not.Null);
         Assert.That(assertSettlementItem!.Count, Is.EqualTo(5));
@@ -180,11 +180,11 @@ public class UpdateSettlementItemsCommandTest : TestBase
         };
         ArrangeDb.Parties.Add(party);
 
-        PartyItem partyItem = new() { Item = sword, Count = 10, Party = party };
-        ArrangeDb.PartyItems.Add(partyItem);
+        ItemStack partyItem = new() { Item = sword, Count = 10, Party = party };
+        ArrangeDb.ItemStacks.Add(partyItem);
 
-        SettlementItem settlementItem = new() { Item = sword, Count = 10, Settlement = settlement };
-        ArrangeDb.SettlementItems.Add(settlementItem);
+        ItemStack settlementItem = new() { Item = sword, Count = 10, Settlement = settlement };
+        ArrangeDb.ItemStacks.Add(settlementItem);
 
         await ArrangeDb.SaveChangesAsync();
 
@@ -199,11 +199,11 @@ public class UpdateSettlementItemsCommandTest : TestBase
         Assert.That(res.Errors, Is.Null);
         Assert.That(res.Data![0].Count, Is.EqualTo(15));
 
-        var assertPartyItem = await AssertDb.PartyItems
+        var assertPartyItem = await AssertDb.ItemStacks
             .FirstOrDefaultAsync(pi => pi.PartyId == party.Id && pi.ItemId == "sword");
         Assert.That(assertPartyItem!.Count, Is.EqualTo(5));
 
-        var assertSettlementItem = await AssertDb.SettlementItems
+        var assertSettlementItem = await AssertDb.ItemStacks
             .FirstOrDefaultAsync(si => si.SettlementId == settlement.Id && si.ItemId == "sword");
         Assert.That(assertSettlementItem!.Count, Is.EqualTo(15));
     }
@@ -226,8 +226,8 @@ public class UpdateSettlementItemsCommandTest : TestBase
         };
         ArrangeDb.Parties.Add(party);
 
-        PartyItem partyItem = new() { Item = sword, Count = 3, Party = party };
-        ArrangeDb.PartyItems.Add(partyItem);
+        ItemStack partyItem = new() { Item = sword, Count = 3, Party = party };
+        ArrangeDb.ItemStacks.Add(partyItem);
 
         await ArrangeDb.SaveChangesAsync();
 
@@ -262,8 +262,8 @@ public class UpdateSettlementItemsCommandTest : TestBase
         settlement.Owner = party;
         ArrangeDb.Parties.Add(party);
 
-        SettlementItem settlementItem = new() { Item = sword, Count = 10, Settlement = settlement };
-        ArrangeDb.SettlementItems.Add(settlementItem);
+        ItemStack settlementItem = new() { Item = sword, Count = 10, Settlement = settlement };
+        ArrangeDb.ItemStacks.Add(settlementItem);
 
         await ArrangeDb.SaveChangesAsync();
 
@@ -278,12 +278,12 @@ public class UpdateSettlementItemsCommandTest : TestBase
         Assert.That(res.Errors, Is.Null);
         Assert.That(res.Data![0].Count, Is.EqualTo(5));
 
-        var assertPartyItem = await AssertDb.PartyItems
+        var assertPartyItem = await AssertDb.ItemStacks
             .FirstOrDefaultAsync(pi => pi.PartyId == party.Id && pi.ItemId == "sword");
         Assert.That(assertPartyItem, Is.Not.Null);
         Assert.That(assertPartyItem!.Count, Is.EqualTo(5));
 
-        var assertSettlementItem = await AssertDb.SettlementItems
+        var assertSettlementItem = await AssertDb.ItemStacks
             .FirstOrDefaultAsync(si => si.SettlementId == settlement.Id && si.ItemId == "sword");
         Assert.That(assertSettlementItem!.Count, Is.EqualTo(5));
     }
@@ -307,8 +307,8 @@ public class UpdateSettlementItemsCommandTest : TestBase
         settlement.Owner = party;
         ArrangeDb.Parties.Add(party);
 
-        SettlementItem settlementItem = new() { Item = sword, Count = 5, Settlement = settlement };
-        ArrangeDb.SettlementItems.Add(settlementItem);
+        ItemStack settlementItem = new() { Item = sword, Count = 5, Settlement = settlement };
+        ArrangeDb.ItemStacks.Add(settlementItem);
 
         await ArrangeDb.SaveChangesAsync();
 
@@ -323,12 +323,12 @@ public class UpdateSettlementItemsCommandTest : TestBase
         Assert.That(res.Errors, Is.Null);
         Assert.That(res.Data, Has.Length.EqualTo(0));
 
-        var assertPartyItem = await AssertDb.PartyItems
+        var assertPartyItem = await AssertDb.ItemStacks
             .FirstOrDefaultAsync(pi => pi.PartyId == party.Id && pi.ItemId == "sword");
         Assert.That(assertPartyItem, Is.Not.Null);
         Assert.That(assertPartyItem!.Count, Is.EqualTo(5));
 
-        var assertSettlementItem = await AssertDb.SettlementItems
+        var assertSettlementItem = await AssertDb.ItemStacks
             .FirstOrDefaultAsync(si => si.SettlementId == settlement.Id && si.ItemId == "sword");
         Assert.That(assertSettlementItem, Is.Null);
     }
@@ -352,8 +352,8 @@ public class UpdateSettlementItemsCommandTest : TestBase
         settlement.Owner = party;
         ArrangeDb.Parties.Add(party);
 
-        SettlementItem settlementItem = new() { Item = sword, Count = 3, Settlement = settlement };
-        ArrangeDb.SettlementItems.Add(settlementItem);
+        ItemStack settlementItem = new() { Item = sword, Count = 3, Settlement = settlement };
+        ArrangeDb.ItemStacks.Add(settlementItem);
 
         await ArrangeDb.SaveChangesAsync();
 
@@ -387,8 +387,8 @@ public class UpdateSettlementItemsCommandTest : TestBase
         };
         ArrangeDb.Parties.Add(party);
 
-        SettlementItem settlementItem = new() { Item = sword, Count = 10, Settlement = settlement };
-        ArrangeDb.SettlementItems.Add(settlementItem);
+        ItemStack settlementItem = new() { Item = sword, Count = 10, Settlement = settlement };
+        ArrangeDb.ItemStacks.Add(settlementItem);
 
         await ArrangeDb.SaveChangesAsync();
 
@@ -423,9 +423,9 @@ public class UpdateSettlementItemsCommandTest : TestBase
         };
         ArrangeDb.Parties.Add(party);
 
-        PartyItem partyItem1 = new() { Item = sword, Count = 10, Party = party };
-        PartyItem partyItem2 = new() { Item = shield, Count = 8, Party = party };
-        ArrangeDb.PartyItems.AddRange(partyItem1, partyItem2);
+        ItemStack partyItem1 = new() { Item = sword, Count = 10, Party = party };
+        ItemStack partyItem2 = new() { Item = shield, Count = 8, Party = party };
+        ArrangeDb.ItemStacks.AddRange(partyItem1, partyItem2);
 
         await ArrangeDb.SaveChangesAsync();
 
@@ -444,11 +444,11 @@ public class UpdateSettlementItemsCommandTest : TestBase
         Assert.That(res.Errors, Is.Null);
         Assert.That(res.Data, Has.Length.EqualTo(2));
 
-        var swordInSettlement = await AssertDb.SettlementItems
+        var swordInSettlement = await AssertDb.ItemStacks
             .FirstOrDefaultAsync(si => si.SettlementId == settlement.Id && si.ItemId == "sword");
         Assert.That(swordInSettlement!.Count, Is.EqualTo(5));
 
-        var shieldInSettlement = await AssertDb.SettlementItems
+        var shieldInSettlement = await AssertDb.ItemStacks
             .FirstOrDefaultAsync(si => si.SettlementId == settlement.Id && si.ItemId == "shield");
         Assert.That(shieldInSettlement!.Count, Is.EqualTo(3));
     }

@@ -105,8 +105,8 @@ public class GetSettlementItemsQueryTest : TestBase
         {
             Items =
             {
-                new SettlementItem { Item = new Item { Id = "0" } },
-                new SettlementItem { Item = new Item { Id = "1" } },
+                new ItemStack { Item = new Item { Id = "0" } },
+                new ItemStack { Item = new Item { Id = "1" } },
             },
         };
         ArrangeDb.Settlements.Add(settlement);

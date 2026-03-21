@@ -1,5 +1,6 @@
 ﻿using Crpg.Domain.Common;
 using Crpg.Domain.Entities.Battles;
+using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Settlements;
 using Crpg.Domain.Entities.Users;
 using NetTopologySuite.Geometries;
@@ -27,7 +28,7 @@ public class Party : AuditableEntity
     /// <remarks>Type is a float to be able to add a fraction of troop for each campaign tick.</remarks>
     public float Troops { get; set; }
 
-    public List<PartyItem> Items { get; set; } = [];
+    public List<ItemStack> Items { get; set; } = [];
 
     /// <summary>
     /// User position on the campaign map.
