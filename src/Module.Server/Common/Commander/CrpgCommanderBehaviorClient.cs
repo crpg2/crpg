@@ -191,7 +191,7 @@ internal class CrpgCommanderBehaviorClient : MissionNetwork
         {
             Information = textObject.ToString(),
             Color = commanderSide == mySide ? new Color(0.90f, 0.25f, 0.25f) : new Color(0.1f, 1f, 0f),
-            SoundEventPath = commanderSide == mySide ? "event:/ui/mission/multiplayer/pointlost" : "event:/ui/mission/multiplayer/pointcapture",
+            SoundEventPath = commanderSide == mySide ? "event:/alerts/report/battle_losing" : "event:/alerts/report/battle_winning",
         });
     }
 
