@@ -11,5 +11,5 @@ public record PartyTransferOfferViewModel : IMapFrom<PartyTransferOffer>
     public PartyTransferOfferStatus Status { get; init; }
     public int Gold { get; set; }
     public float Troops { get; set; }
-    public List<ItemStack> Items { get; set; } = [];
+    public List<ItemStackViewModel> Items { get; set; } = [];
 }

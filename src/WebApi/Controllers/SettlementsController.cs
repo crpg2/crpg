@@ -47,7 +47,7 @@ public class SettlementsController : BaseController
     /// Get garrison items from a settlement.
     /// </summary>
     [HttpGet("{settlementId}/items")]
-    public Task<ActionResult<Result<IList<ItemStack>>>> GetSettlementItems([FromRoute] int settlementId)
+    public Task<ActionResult<Result<IList<ItemStackViewModel>>>> GetSettlementItems([FromRoute] int settlementId)
     {
         return ResultToActionAsync(Mediator.Send(new GetSettlementItemsQuery
         {
@@ -61,7 +61,7 @@ public class SettlementsController : BaseController
     /// Multiple items can be transferred in a single batch operation.
     /// </summary>
     [HttpPut("{settlementId}/items")]
-    public Task<ActionResult<Result<ItemStack[]>>> UpdateSettlementItems([FromRoute] int settlementId,
+    public Task<ActionResult<Result<ItemStackViewModel[]>>> UpdateSettlementItems([FromRoute] int settlementId,
         [FromBody] UpdateSettlementItemsCommand req)
     {
         req = req with { PartyId = CurrentUser.User!.Id, SettlementId = settlementId };

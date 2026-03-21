@@ -1,4 +1,5 @@
 ﻿using Crpg.Application.Parties.Models;
+using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Terrains;
 
@@ -57,10 +58,10 @@ internal class CampaignSpeedModel(ICampaignRouting campaignRouting) : ICampaignS
         return 2 / (1 + Math.Log10(1 + troops / 10));
     }
 
-    private double MountsInfluence(float troops, List<PartyItem> partyItems)
+    private double MountsInfluence(float troops, List<ItemStack> partyItems)
     {
         int mounts = 0;
-        foreach (PartyItem partyItem in partyItems.OrderByDescending(i => i.Item!.Mount!.HitPoints))
+        foreach (ItemStack partyItem in partyItems.OrderByDescending(i => i.Item!.Mount!.HitPoints))
         {
             mounts += partyItem.Count;
             int mountSpeed = partyItem.Item!.Mount!.HitPoints / 100;

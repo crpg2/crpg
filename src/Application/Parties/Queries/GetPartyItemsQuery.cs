@@ -7,16 +7,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Crpg.Application.Parties.Queries;
 
-public record GetPartyItemsQuery : IMediatorRequest<IList<ItemStack>>
+public record GetPartyItemsQuery : IMediatorRequest<IList<ItemStackViewModel>>
 {
     public int PartyId { get; init; }
 
-    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<GetPartyItemsQuery, IList<ItemStack>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<GetPartyItemsQuery, IList<ItemStackViewModel>>
     {
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
 
-        public async ValueTask<Result<IList<ItemStack>>> Handle(GetPartyItemsQuery req, CancellationToken cancellationToken)
+        public async ValueTask<Result<IList<ItemStackViewModel>>> Handle(GetPartyItemsQuery req, CancellationToken cancellationToken)
         {
             /*
             / TODO: FIXME: SPEC
@@ -38,7 +38,7 @@ public record GetPartyItemsQuery : IMediatorRequest<IList<ItemStack>>
                 return new(CommonErrors.PartyNotFound(req.PartyId));
             }
 
-            return new(_mapper.Map<IList<ItemStack>>(party.Items));
+            return new(_mapper.Map<IList<ItemStackViewModel>>(party.Items));
         }
     }
 }

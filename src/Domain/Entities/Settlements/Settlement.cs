@@ -1,4 +1,5 @@
 ﻿using Crpg.Domain.Common;
+using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Parties;
 using NetTopologySuite.Geometries;
 
@@ -46,5 +47,5 @@ public class Settlement : AuditableEntity
     /// Inventory of the <see cref="Settlement"/>. Used as a simple storage or as equipment for the
     /// <see cref="Troops"/> during sieges.
     /// </summary>
-    public IList<SettlementItem> Items { get; set; } = new List<SettlementItem>();
+    public IList<ItemStack> Items { get; set; } = new List<ItemStack>();
 }

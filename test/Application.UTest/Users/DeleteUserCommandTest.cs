@@ -27,7 +27,7 @@ public class DeleteUserCommandTest : TestBase
             ClanMembership = new ClanMember { Clan = new Clan() },
             Party = new Party
             {
-                Items = new List<PartyItem> { new() { Item = new Item() } },
+                Items = new List<ItemStack> { new() { Item = new Item() } },
             },
         };
         ArrangeDb.Users.Add(user);
@@ -60,7 +60,7 @@ public class DeleteUserCommandTest : TestBase
             Throws.InstanceOf<InvalidOperationException>());
         Assert.That(() => AssertDb.Parties.FirstAsync(h => h.Id == user.Id),
             Throws.InstanceOf<InvalidOperationException>());
-        Assert.That(() => AssertDb.PartyItems.FirstAsync(oi => oi.PartyId == user.Id), Throws.InstanceOf<InvalidOperationException>());
+        Assert.That(() => AssertDb.ItemStacks.FirstAsync(oi => oi.PartyId == user.Id), Throws.InstanceOf<InvalidOperationException>());
         Assert.That(() => AssertDb.Items.FirstAsync(i => i.Id == itemId), Throws.Nothing);
         Assert.That(() => AssertDb.Restrictions.FirstAsync(r => r.RestrictedUserId == user.Id), Throws.Nothing);
         Assert.That(() => AssertDb.Clans.FirstAsync(c => c.Id == clanId), Throws.Nothing);

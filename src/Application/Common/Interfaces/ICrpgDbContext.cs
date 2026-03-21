@@ -35,11 +35,10 @@ public interface ICrpgDbContext
     DbSet<ClanInvitation> ClanInvitations { get; }
     DbSet<Party> Parties { get; }
     DbSet<Settlement> Settlements { get; }
-    DbSet<SettlementItem> SettlementItems { get; }
-    DbSet<PartyItem> PartyItems { get; }
+    DbSet<ItemStack> ItemStacks { get; }
     DbSet<PartyOrder> PartyOrders { get; }
     DbSet<PartyTransferOffer> PartyTransferOffers { get; }
-    DbSet<PartyTransferOfferItem> PartyTransferOfferItems { get; }
+
     DbSet<Battle> Battles { get; }
     DbSet<BattleSideBriefing> BattleSideBriefings { get; }
     DbSet<BattleFighter> BattleFighters { get; }

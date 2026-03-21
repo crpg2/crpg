@@ -67,7 +67,7 @@ public record DeleteUserCommand : IMediatorRequest
             _db.Characters.RemoveRange(user.Characters);
             if (user.Party != null)
             {
-                _db.PartyItems.RemoveRange(user.Party!.Items);
+                _db.ItemStacks.RemoveRange(user.Party!.Items);
                 _db.Parties.Remove(user.Party);
             }
 

@@ -6,6 +6,7 @@ using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Parties.Models;
 using Crpg.Application.Parties.Services;
+using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Parties;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -105,7 +106,7 @@ public record RespondToPartyTransferOfferCommand : IMediatorRequest<PartyTransfe
                 respondingParty.Gold += req.Accepted.Gold;
                 respondingParty.Troops += req.Accepted.Troops;
 
-                TransferItems(offeringParty, respondingParty, [.. req.Accepted.Items.Select(i => new PartyTransferOfferItem
+                TransferItems(offeringParty, respondingParty, [.. req.Accepted.Items.Select(i => new ItemStack
                 {
                     ItemId = i.ItemId,
                     Count = i.Count,
@@ -124,7 +125,7 @@ public record RespondToPartyTransferOfferCommand : IMediatorRequest<PartyTransfe
             return new(_mapper.Map<PartyTransferOfferViewModel>(offer));
         }
 
-        private void TransferItems(Party from, Party to, List<PartyTransferOfferItem> items)
+        private void TransferItems(Party from, Party to, List<ItemStack> items)
         {
             foreach (var item in items)
             {
@@ -134,7 +135,7 @@ public record RespondToPartyTransferOfferCommand : IMediatorRequest<PartyTransfe
                     fromItem.Count -= item.Count;
                     if (fromItem.Count <= 0)
                     {
-                        _db.PartyItems.Remove(fromItem);
+                        _db.ItemStacks.Remove(fromItem);
                     }
                 }
 
@@ -145,13 +146,13 @@ public record RespondToPartyTransferOfferCommand : IMediatorRequest<PartyTransfe
                 }
                 else
                 {
-                    var newItem = new PartyItem
+                    var newItem = new ItemStack
                     {
                         PartyId = to.Id,
                         ItemId = item.ItemId,
                         Count = item.Count,
                     };
-                    _db.PartyItems.Add(newItem);
+                    _db.ItemStacks.Add(newItem);
                 }
             }
         }
