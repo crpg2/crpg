@@ -4,6 +4,7 @@ using System.Text;
 using Crpg.Module.Api.Exceptions;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.ActivityLogs;
+using Crpg.Module.Api.Models.Battles;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.Restrictions;
 using Crpg.Module.Api.Models.Users;
@@ -108,6 +109,18 @@ internal class HttpCrpgClient : ICrpgClient
     public Task<CrpgResult<CrpgRestriction>> RestrictUserAsync(CrpgRestrictionRequest req, CancellationToken cancellationToken = default)
     {
         return Post<CrpgRestrictionRequest, CrpgRestriction>("games/restrictions", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgBattle>> StartScheduledBattleAsync(CrpgRegion region, string instance, CancellationToken cancellationToken = default)
+    {
+        FormUrlEncodedContent urlEncodedContent = new(new Dictionary<string, string>(StringComparer.Ordinal)
+        {
+            ["region"] = region.ToString(),
+            ["instance"] = instance,
+        });
+        string query = urlEncodedContent.ReadAsStringAsync().Result;
+        HttpRequestMessage msg = new(HttpMethod.Post, "games/campaign/battles?" + query);
+        return Send<CrpgBattle>(msg, cancellationToken);
     }
 
     public void Dispose() => _httpClient.Dispose();

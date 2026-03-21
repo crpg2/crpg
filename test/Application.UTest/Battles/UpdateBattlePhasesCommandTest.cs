@@ -86,8 +86,9 @@ public class UpdateBattlePhasesCommandTest : TestBase
     }
 
     [Test]
-    public async Task ShouldSwitchScheduledBattlesToLiveAfterScheduledDate()
+    public async Task ShouldNotSwitchScheduledBattlesToLive()
     {
+        // Scheduled -> Live is now handled by game servers via ClaimScheduledBattleCommand.
         Battle[] battles =
         {
             new()
@@ -112,7 +113,7 @@ public class UpdateBattlePhasesCommandTest : TestBase
         await handler.Handle(new UpdateBattlePhasesCommand(), CancellationToken.None);
 
         battles = await AssertDb.Battles.ToArrayAsync();
-        Assert.That(battles[0].Phase, Is.EqualTo(BattlePhase.Live));
+        Assert.That(battles[0].Phase, Is.EqualTo(BattlePhase.Scheduled));
         Assert.That(battles[1].Phase, Is.EqualTo(BattlePhase.Scheduled));
     }
 }

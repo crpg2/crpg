@@ -39,8 +39,7 @@ public record UpdateBattlePhasesCommand : IMediatorRequest
                 .Include(b => b.Fighters).ThenInclude(f => f.Settlement)
                 .Where(b =>
                     (b.Phase == BattlePhase.Preparation && b.CreatedAt + _battleInitiationDuration < _dateTime.UtcNow)
-                    || (b.Phase == BattlePhase.Hiring && b.CreatedAt + _battleInitiationDuration + _battleHiringDuration < _dateTime.UtcNow)
-                    || (b.Phase == BattlePhase.Scheduled && b.ScheduledFor < _dateTime.UtcNow))
+                    || (b.Phase == BattlePhase.Hiring && b.CreatedAt + _battleInitiationDuration + _battleHiringDuration < _dateTime.UtcNow))
                 .AsAsyncEnumerable();
 
             await foreach (var battle in battles.WithCancellation(cancellationToken))
@@ -70,10 +69,6 @@ public record UpdateBattlePhasesCommand : IMediatorRequest
                         }
 
                         battle.Phase = BattlePhase.Scheduled;
-                        break;
-                    case BattlePhase.Scheduled:
-                        // TODO: startup game server...
-                        battle.Phase = BattlePhase.Live;
                         break;
                 }
 

@@ -1,5 +1,6 @@
 ﻿using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.ActivityLogs;
+using Crpg.Module.Api.Models.Battles;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.Restrictions;
 using Crpg.Module.Api.Models.Users;
@@ -22,5 +23,8 @@ internal interface ICrpgClient : IDisposable
         CancellationToken cancellationToken = default);
 
     Task<CrpgResult<CrpgRestriction>> RestrictUserAsync(CrpgRestrictionRequest req,
+        CancellationToken cancellationToken = default);
+
+    Task<CrpgResult<CrpgBattle>> StartScheduledBattleAsync(CrpgRegion region, string instance,
         CancellationToken cancellationToken = default);
 }
