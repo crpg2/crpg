@@ -44,6 +44,7 @@ internal class ChatCommandsComponent : GameHandler
                 new BanCommand(this, crpgClient),
                 new HotConstantUpdateCommand(this),
                 new HotConstantListCommand(this),
+                new HotConstantResetCommand(this),
                 new OrderCommand(this),
                 new HelpCommand(this),
                 new FriendlyFireInfoCommand(this),

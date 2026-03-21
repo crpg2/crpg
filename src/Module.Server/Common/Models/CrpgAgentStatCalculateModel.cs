@@ -1,4 +1,5 @@
-﻿using Crpg.Module.Helpers;
+﻿using Crpg.Module.Common.HotConstants;
+using Crpg.Module.Helpers;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -598,17 +599,23 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AiFlyingMissileCheckRadius = 8f - 6f * meleeLevel;
         props.AiShootFreq = 0.3f + 0.7f * equippedItemLevel;
         props.AiWaitBeforeShootFactor = agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : 1f - 0.5f * equippedItemLevel;
+
         // Chance the AI parries. https://www.desmos.com/calculator/8tgpm4ajou
-        props.AIBlockOnDecideAbility = MBMath.Lerp(0.2f, 0.99f, MBMath.ClampFloat(MathF.Pow(meleeLevel, 1.4f), 0f, 1f));
+        props.AIBlockOnDecideAbility = CrpgAiHotConstants.AIBlockOnDecideAbility.Value;
         // Chance the AI blocks (shield). https://www.desmos.com/calculator/geifioxm1g
-        props.AIParryOnDecideAbility = MBMath.Lerp(0.2f, 0.95f, MBMath.ClampFloat(MathF.Pow(meleeLevel, 1.2f), 0f, 1f));
+        props.AIParryOnDecideAbility = CrpgAiHotConstants.AIParryOnDecideAbility.Value;
         // Chance the AI parries when it's attacking.
-        props.AIParryOnAttackAbility = meleeLevel;
+        props.AIParryOnAttackAbility = CrpgAiHotConstants.AIParryOnAttackAbility.Value;
         // Chance the AI parries on chained attacks. https://www.desmos.com/calculator/ykeqtnkspn
-        props.AIParryOnAttackingContinueAbility = MBMath.Lerp(0.2f, 0.8f, meleeLevel);
+        props.AIParryOnAttackingContinueAbility = CrpgAiHotConstants.AIParryOnAttackingContinueAbility.Value;
         // Chance the AI changes a parry direction. https://www.desmos.com/calculator/ljuyuavq7i
-        props.AiParryDecisionChangeValue = 0.05f + 0.5f * meleeLevel;
-        props.AIRealizeBlockingFromIncorrectSideAbility = MBMath.ClampFloat(MathF.Pow(meleeLevel, 2.5f) - 0.01f, 0f, 1f);
+        props.AiParryDecisionChangeValue = CrpgAiHotConstants.AiParryDecisionChangeValue.Value;
+        props.AIRealizeBlockingFromIncorrectSideAbility = CrpgAiHotConstants.AIRealizeBlockingFromIncorrectSideAbility.Value;
+        // Chance the AI picks a random (likely wrong) block direction instead of reading the attack. At 0, it always
+        // reads correctly, at 1 it's purely guessing. https://www.desmos.com/calculator/mhxwgd4dcs
+        props.AiRandomizedDefendDirectionChance = CrpgAiHotConstants.AiRandomizedDefendDirectionChance.Value;
+        props.AiDefendWithShieldDecisionChanceValue = CrpgAiHotConstants.AiDefendWithShieldDecisionChanceValue.Value;
+
         props.AiTryChamberAttackOnDecide = (meleeLevel - 0.15f) * 0.1f;
         props.AIAttackOnParryChance = 0.08f - 0.02f * agent.Defensiveness;
         props.AiAttackOnParryTiming = -0.2f + 0.3f * meleeLevel;
@@ -621,9 +628,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AIDecideOnRealizeEnemyBlockingAttackAbility = MBMath.ClampFloat(MathF.Pow(meleeLevel, 2.5f) - 0.1f, 0f, 1f);
         props.AiAttackingShieldDefenseChance = 0.2f + 0.3f * meleeLevel;
         props.AiAttackingShieldDefenseTimer = -0.3f + 0.3f * meleeLevel;
-        // Chance the AI picks a random (likely wrong) block direction instead of reading the attack. At 0, it always
-        // reads correctly, at 1 it's purely guessing. https://www.desmos.com/calculator/mhxwgd4dcs
-        props.AiRandomizedDefendDirectionChance = 1f - MathF.Pow(meleeLevel, 5f);
         props.AiShooterError = 0.008f;
         props.AISetNoAttackTimerAfterBeingHitAbility = MBMath.Lerp(0.33f, 1f, meleeLevel);
         props.AISetNoAttackTimerAfterBeingParriedAbility = MBMath.Lerp(0.2f, 1f, meleeLevel * meleeLevel);
@@ -639,7 +643,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AiCheckDecideSimpleBehaviorInterval = (2f - difficultyModifier) * (agent.GetAgentFlags().HasAnyFlag(AgentFlag.CanWieldWeapon) ? 1.5f : 0.2f);
         props.AiCheckDoSimpleBehaviorInterval = 2f - difficultyModifier;
         props.AiMovementDelayFactor = 4f / (3f + equippedItemLevel);
-        props.AiDefendWithShieldDecisionChanceValue = MathF.Min(2f, 0.5f + meleeLevel + 0.6f * defenseLevel);
         props.AiMoveEnemySideTimeValue = -2.5f + 0.5f * meleeLevel;
         props.AiMinimumDistanceToContinueFactor = 2f + 0.3f * (3f - meleeLevel);
         props.AiChargeHorsebackTargetDistFactor = 1.5f * (3f - meleeLevel);
