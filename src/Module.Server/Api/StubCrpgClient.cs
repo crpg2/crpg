@@ -1,5 +1,6 @@
 using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.ActivityLogs;
+using Crpg.Module.Api.Models.Battles;
 using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.Items;
@@ -123,6 +124,11 @@ internal class StubCrpgClient : ICrpgClient
     public Task<CrpgResult<CrpgRestriction>> RestrictUserAsync(CrpgRestrictionRequest req, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<CrpgBattle>> StartScheduledBattleAsync(CrpgRegion region, string instance, CancellationToken cancellationToken = default)
+    {
+        return Task.FromResult(new CrpgResult<CrpgBattle> { Data = null });
     }
 
     public void Dispose()

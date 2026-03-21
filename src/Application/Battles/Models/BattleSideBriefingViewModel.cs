@@ -5,5 +5,6 @@ namespace Crpg.Application.Battles.Models;
 
 public record BattleSideBriefingViewModel : IMapFrom<BattleSideBriefing>
 {
+    public BattleSide Side { get; set; }
     public string Note { get; set; } = string.Empty;
 }
