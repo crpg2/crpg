@@ -364,7 +364,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
               onClick: async () => {
                 if (!row.original.upgrades.length) {
                   toggleLoadingItemUpgrades(true)
-                  row.original.upgrades.push(...(createItemIndex(await getItemUpgrades(row.original.baseId))).toSpliced(0, 1))
+                  row.original.upgrades.push(...(createItemIndex(await getItemUpgrades(row.original.baseId), false)).toSpliced(0, 1))
                   toggleLoadingItemUpgrades(false)
                 }
                 row.toggleExpanded()
@@ -514,6 +514,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
           maxLeafRowFilterDepth: 0,
         }"
         :pagination-options="{
+          autoResetPageIndex: false,
           getPaginationRowModel: getPaginationRowModel(),
         }"
         @update:column-filters="() => { resetPagination() }"
