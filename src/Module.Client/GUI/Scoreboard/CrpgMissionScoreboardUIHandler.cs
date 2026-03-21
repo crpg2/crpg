@@ -100,12 +100,6 @@ public class CrpgMissionScoreboardUIHandler : MissionView
 
     private void RegisterEvents()
     {
-        if (MissionScreen != null)
-        {
-            MissionScreen.OnSpectateAgentFocusIn += HandleSpectateAgentFocusIn;
-            MissionScreen.OnSpectateAgentFocusOut += HandleSpectateAgentFocusOut;
-        }
-
         _missionLobbyComponent.CurrentMultiplayerStateChanged += MissionLobbyComponentOnCurrentMultiplayerStateChanged;
         _missionLobbyComponent.OnCultureSelectionRequested += OnCultureSelectionRequested;
         if (_teamSelectComponent != null)
@@ -118,12 +112,6 @@ public class CrpgMissionScoreboardUIHandler : MissionView
 
     private void UnregisterEvents()
     {
-        if (MissionScreen != null)
-        {
-            MissionScreen.OnSpectateAgentFocusIn -= HandleSpectateAgentFocusIn;
-            MissionScreen.OnSpectateAgentFocusOut -= HandleSpectateAgentFocusOut;
-        }
-
         _missionLobbyComponent.CurrentMultiplayerStateChanged -= MissionLobbyComponentOnCurrentMultiplayerStateChanged;
         _missionLobbyComponent.OnCultureSelectionRequested -= OnCultureSelectionRequested;
         if (_teamSelectComponent != null)
@@ -171,24 +159,6 @@ public class CrpgMissionScoreboardUIHandler : MissionView
             }
 
             dataSource.SetMouseState(isMouseVisible);
-        }
-    }
-
-    private void HandleSpectateAgentFocusOut(Agent followedAgent)
-    {
-        if (followedAgent.MissionPeer != null)
-        {
-            MissionPeer component = followedAgent.MissionPeer.GetComponent<MissionPeer>();
-            _dataSource?.DecreaseSpectatorCount(component);
-        }
-    }
-
-    private void HandleSpectateAgentFocusIn(Agent followedAgent)
-    {
-        if (followedAgent.MissionPeer != null)
-        {
-            MissionPeer component = followedAgent.MissionPeer.GetComponent<MissionPeer>();
-            _dataSource?.IncreaseSpectatorCount(component);
         }
     }
 
