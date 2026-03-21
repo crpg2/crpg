@@ -599,17 +599,17 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AiShootFreq = 0.3f + 0.7f * equippedItemLevel;
         props.AiWaitBeforeShootFactor = agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : 1f - 0.5f * equippedItemLevel;
 
-        // Chance the AI blocks (shield). https://www.desmos.com/calculator/geifioxm1g
-        props.AIBlockOnDecideAbility = MBMath.Lerp(0.2f, 0.99f, MBMath.ClampFloat(MathF.Pow(meleeLevel, 1.4f), 0f, 1f));
-        // Chance the AI parries. https://www.desmos.com/calculator/8tgpm4ajou
-        props.AIParryOnDecideAbility = MBMath.Lerp(0.2f, 0.95f, MBMath.ClampFloat(MathF.Pow(meleeLevel, 1.2f), 0f, 1f));
+        // Chance the AI blocks (shield). https://www.desmos.com/calculator/ishgybeczd
+        props.AIBlockOnDecideAbility = MBMath.Lerp(0.2f, 0.45f, MBMath.ClampFloat(MathF.Pow(meleeLevel, 1.4f), 0f, 1f));
+        // Chance the AI parries. https://www.desmos.com/calculator/ebzhwk4wwp
+        props.AIParryOnDecideAbility = MBMath.Lerp(0.2f, 0.5f, MBMath.ClampFloat(MathF.Pow(meleeLevel, 1.2f), 0f, 1f));
         // Chance the AI parries when it's attacking.
         props.AIParryOnAttackAbility = meleeLevel;
         // Chance the AI parries on chained attacks. https://www.desmos.com/calculator/ykeqtnkspn
         props.AIParryOnAttackingContinueAbility = MBMath.Lerp(0.2f, 0.8f, meleeLevel);
         // Chance the AI changes a parry direction. https://www.desmos.com/calculator/ljuyuavq7i
         props.AiParryDecisionChangeValue = 0.05f + 0.5f * meleeLevel;
-        props.AIRealizeBlockingFromIncorrectSideAbility = MBMath.ClampFloat(MathF.Pow(meleeLevel, 2.5f) - 0.01f, 0f, 1f);
+        props.AIRealizeBlockingFromIncorrectSideAbility = 0f;
         props.AiRaiseShieldDelayTimeBase = -0.75f + 0.5f * meleeLevel;
         props.AiUseShieldAgainstEnemyMissileProbability = 0.1f + meleeLevel * 0.6f + defenseLevel * 0.2f;
 
