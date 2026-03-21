@@ -26,6 +26,7 @@ internal class CrpgAgentLabelView : MissionView
     private bool _isResumingView;
     private bool _alwaysShowBanners;
     private bool _indicatorsActive;
+    private bool _isSpectating;
 
     private bool IndicatorsActive
     {
@@ -58,6 +59,12 @@ internal class CrpgAgentLabelView : MissionView
     public override void OnMissionTick(float dt)
     {
         IndicatorsActive = _alwaysShowBanners || Input.IsGameKeyDown(5);
+        bool spectating = IsSpectating();
+        if (_isSpectating != spectating)
+        {
+            _isSpectating = spectating;
+            UpdateAllAgentMeshVisibilities();
+        }
     }
 
     public override void OnRemoveBehavior()
