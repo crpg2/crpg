@@ -12,7 +12,11 @@ internal class HotConstantsClient : MissionNetwork
 
     private void HandleUpdateHotConstant(UpdateHotConstant message)
     {
-        HotConstant.TryUpdate(message.Id, message.NewValue, out _);
+        if (HotConstant.TryGet(message.Id, out var constant))
+        {
+            constant!.Update(message.NewValue);
+        }
+
         InformationManager.DisplayMessage(new InformationMessage($"Changed constant with id '{message.Id}' from {message.OldValue} to {message.NewValue}"));
     }
 }
