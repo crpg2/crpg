@@ -67,6 +67,11 @@ internal class MapPoolHandler : GameHandler
     private void AdvanceMap()
     {
         _nextMapId = (_nextMapId + 1) % _maps.Length;
+        if (_nextMapId == 0)
+        {
+            ShuffleMaps();
+        }
+
         string nextMap = _forcedNextMap ?? _maps[_nextMapId];
 
         // Replaces the AutomatedMapPool contents with a single map so that TickAutomatedBattles can only "randomly"
@@ -104,12 +109,8 @@ internal class MapPoolHandler : GameHandler
                 .Where(map => !string.IsNullOrWhiteSpace(map))
                 .ToArray();
 
-            _maps.Shuffle();
-
-            Debug.Print("Shuffled map order:", color: Debug.DebugColor.Green);
             foreach (string map in _maps)
             {
-                Debug.Print($"  - {map}", color: Debug.DebugColor.Green);
                 ServerSideIntermissionManager.Instance.AddMapToUsableMaps(map);
                 ServerSideIntermissionManager.Instance.AddMapToAutomatedBattlePool(map);
             }
@@ -117,6 +118,16 @@ internal class MapPoolHandler : GameHandler
         catch (Exception e)
         {
             Debug.Print($"Error reading the map file {mapsFilePath}: {e.Message}", color: Debug.DebugColor.Red);
+        }
+    }
+
+    private static void ShuffleMaps()
+    {
+        _maps.Shuffle();
+        Debug.Print("Shuffled map order:", color: Debug.DebugColor.Green);
+        foreach (string map in _maps)
+        {
+            Debug.Print($"  - {map}", color: Debug.DebugColor.Green);
         }
     }
 
