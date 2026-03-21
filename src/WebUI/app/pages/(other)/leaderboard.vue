@@ -111,7 +111,11 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
       'modelValue': globalFilter.value,
       'onUpdate:modelValue': (val: string) => globalFilter.value = val,
     }, {}),
-    cell: ({ row }) => h(UserMedia, { user: row.original.user, hiddenPlatform: true, isSelf: row.original.user.id === user.value!.id }),
+    cell: ({ row }) => h(UserMedia, {
+      user: row.original.user,
+      hiddenPlatform: true,
+      isSelf: row.original.user.id === user.value?.id,
+    }),
     meta: {
       class: {
         th: tw`max-w-96`,
