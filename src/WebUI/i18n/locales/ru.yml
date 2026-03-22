@@ -432,8 +432,7 @@ character:
       tooltip:
         title: Сброс навыков персонажа
         desc:
-          - 'Бесплатно сбросить навыки персонажа можно в течении {freeRespecPostWindow} после последнего сброса, а также спустя {freeRespecInterval}'
-          - 'В остальное время сброс навыков платный, стоимость уменьшается со временем'
+          - 'Сброс навыков бесплатен в течение {freeRespecPostWindow} после последнего сброса. Затем стоимость постепенно снижается, и через {freeRespecInterval} сброс снова станет бесплатным.'
         freeRespecPostWindowRemaining: 'Оставшееся время бесплатного сброса навыков: {remainingTime}'
         paidRespec: 'Сбросьте навыки персонажа за {respecPrice}'
         freeRespecIntervalNext: 'Следующий бесплатный сброс навыков через: {nextFreeAt}'
