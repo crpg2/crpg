@@ -1,11 +1,11 @@
 ﻿using Crpg.Module.Common.Network;
+using Crpg.Module.Helpers;
+using NetworkMessages.FromServer;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 #if CRPG_SERVER
 using Crpg.Module.Api.Models.Characters;
-using Crpg.Module.Helpers;
 using Crpg.Module.Rating;
-using NetworkMessages.FromServer;
 #endif
 
 namespace Crpg.Module.Common;
