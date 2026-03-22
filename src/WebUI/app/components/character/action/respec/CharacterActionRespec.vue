@@ -67,11 +67,9 @@ async function respec() {
             <strong>{{ $t('dateTimeFormat.hh', { hours: freeRespecializePostWindowHours }) }}</strong>
           </template>
           <template #freeRespecInterval>
-            <strong>{{ $t('dateTimeFormat.hh', { hours: freeRespecializeIntervalDays }) }}</strong>
+            <strong>{{ $t('dateTimeFormat.dd', { days: freeRespecializeIntervalDays }) }}</strong>
           </template>
         </i18n-t>
-
-        <p>{{ $t('character.settings.respecialize.tooltip.desc[1]') }}</p>
 
         <i18n-t
           v-if="respecCapability.freeRespecWindowRemain > 0"

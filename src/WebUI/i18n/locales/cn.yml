@@ -466,8 +466,7 @@ character:
       tooltip:
         title: 重新专精角色
         desc:
-          - 在上次重置后的 {freeRespecPostWindow} 内，以及每隔 {freeRespecInterval}，你可以免费重置角色的技能。
-          - 其余时间内重置技能是付费的，费用会随时间逐渐降低。
+          - 重置后 {freeRespecPostWindow} 内可免费洗点。之后费用会逐渐降低，并在 {freeRespecInterval} 后再次免费。
         freeRespecPostWindowRemaining: '剩余免费技能重置时间：{remainingTime}'
         paidRespec: 重置角色的技能需要 {respecPrice}
         freeRespecIntervalNext: '下次免费技能重置时间：{nextFreeAt}'

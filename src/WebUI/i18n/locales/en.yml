@@ -466,9 +466,8 @@ character:
       tooltip:
         title: Respecialize character
         desc:
-          - 'You can reset a character''s skills for free within {freeRespecPostWindow} of the last reset, and after {freeRespecInterval}'
-          - 'The rest of the time resetting skills is paid, the cost decreases over time.'
-        freeRespecPostWindowRemaining: 'Remaining free skill reset time: {remainingTime}'
+          - 'Respecs are free up to {freeRespecPostWindow} after the last respec. The cost decreases until it is free again after {freeRespecInterval}.'
+        freeRespecPostWindowRemaining: 'Time remaining for free skill reset: {remainingTime}'
         paidRespec: 'Reset the character''s skills for {respecPrice}'
         freeRespecIntervalNext: 'The next free skill reset via: {nextFreeAt}'
       dialog:
