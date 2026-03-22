@@ -20,6 +20,16 @@ internal class CrpgScoreboardComponent : MissionScoreboardComponent
     {
     }
 
+    /// <summary>Add score to a player and broadcast the change to all clients.</summary>
+    public void GiveScore(MissionPeer peer, int score)
+    {
+        ReflectionHelper.SetProperty(peer, nameof(peer.Score), peer.Score + score);
+        GameNetwork.BeginBroadcastModuleEvent();
+        GameNetwork.WriteMessage(new KillDeathCountChange(peer.GetNetworkPeer(),
+            null, peer.KillCount, peer.AssistCount, peer.DeathCount, peer.Score));
+        GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
+    }
+
     public override void OnScoreHit(
         Agent affectedAgent,
         Agent affectorAgent,
