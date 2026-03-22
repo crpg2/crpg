@@ -319,17 +319,16 @@ const createPreset = async () => {
       </UCard>
     </div>
 
-<div
-  :style="{ top: `calc(${mainHeaderHeight}px + 1rem)` }"
-  class="sticky col-span-2 space-y-3 self-start"
->
-
-  <UAlert
+    <div
+      :style="{ top: `calc(${mainHeaderHeight}px + 1rem)` }"
+      class="sticky col-span-2 space-y-3 self-start"
+    >
+      <UAlert
     v-if="invalidEquippedCrossbow"
     color="error"
     variant="outline"
     icon="crpg:alert"
-  >
+    >
     <template #title>
       {{ $t('character.inventory.crossbowRequirementWarning.title') }}
     </template>

@@ -685,8 +685,8 @@ character:
       sum: 'worth {sum}'
 
     crossbowRequirementWarning:
-      title: Crossbow strength requirement not met
-      description: '{item} requires {required} STR, but this character only has {current} STR. Its performance will be degraded.'
+      title: Crossbow STR requirement not met
+      description: '{item} requires {required} STR, you have {current} STR. Item performance will be degraded.'
 
     item:
       sell:
