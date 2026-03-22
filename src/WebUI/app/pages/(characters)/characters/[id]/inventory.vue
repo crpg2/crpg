@@ -8,7 +8,6 @@ import type { GroupedCompareItemsResult, ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
 import type { SortingConfig } from '~/services/item-search-service'
 
-import { ITEM_TYPE } from '~/models/item'
 import { useMainHeader } from '~/composables/app/use-main-header'
 import { useCharacterInventory } from '~/composables/character/inventory/use-character-inventory'
 import { useInventoryDnD } from '~/composables/character/inventory/use-inventory-dnd'
@@ -19,6 +18,7 @@ import { useItemDetail } from '~/composables/item/use-item-detail'
 import { useUser } from '~/composables/user/use-user'
 import { useUserItemPresetActions } from '~/composables/user/use-user-item-presets'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
+import { ITEM_TYPE } from '~/models/item'
 import { validateItemNotMeetRequirement } from '~/services/character-service'
 
 const { user } = useUser()
@@ -324,65 +324,65 @@ const createPreset = async () => {
       class="sticky col-span-2 space-y-3 self-start"
     >
       <UAlert
-    v-if="invalidEquippedCrossbow"
-    color="error"
-    variant="outline"
-    icon="crpg:alert"
-    >
-    <template #title>
-      {{ $t('character.inventory.crossbowRequirementWarning.title') }}
-    </template>
-
-    <template #description>
-      {{ $t('character.inventory.crossbowRequirementWarning.description', {
-        item: invalidEquippedCrossbow.item.name,
-        required: invalidEquippedCrossbow.item.requirement,
-        current: characterCharacteristics.attributes.strength,
-      }) }}
-    </template>
-  </UAlert>
-
-  <CharacterStats
-    :characteristics="characterCharacteristics"
-    :items-overall-stats="itemsOverallStats"
-    :health-points="healthPoints"
-  >
-    <template #leading>
-      <UiSimpleTableRow
-        :label="$t('character.stats.price.title')"
-        :tooltip="{
-          title: $t('character.stats.price.title'),
-          description: $t('character.stats.price.desc'),
-        }"
+        v-if="invalidEquippedCrossbow"
+        color="error"
+        variant="outline"
+        icon="crpg:alert"
       >
-        <AppCoin :value="itemsOverallStats.price" />
-      </UiSimpleTableRow>
-
-      <UiSimpleTableRow
-        :label="$t('character.stats.avgRepairCost.title')"
-        :tooltip="{
-          title: $t('character.stats.avgRepairCost.title'),
-          description: $t('character.stats.avgRepairCost.desc'),
-        }"
-      >
-        <AppCoin :class="{ 'text-error': upkeepIsHigh }">
-          <span class="font-bold">
-            {{ $n(itemsOverallStats.averageRepairCostByHour) }} / {{ $t('dateTime.hours.short') }}
-          </span>
-        </AppCoin>
-
-        <!-- TODO: design -->
-        <template v-if="upkeepIsHigh" #tooltip-content>
-          <div class="prose prose-invert">
-            <h4 class="text-warning">
-              {{ $t('character.highUpkeepWarning.title') }}
-            </h4>
-            <div v-html="$t('character.highUpkeepWarning.desc')" />
-          </div>
+        <template #title>
+          {{ $t('character.inventory.crossbowRequirementWarning.title') }}
         </template>
-      </UiSimpleTableRow>
-    </template>
-  </CharacterStats>
-</div>
+
+        <template #description>
+          {{ $t('character.inventory.crossbowRequirementWarning.description', {
+            item: invalidEquippedCrossbow.item.name,
+            required: invalidEquippedCrossbow.item.requirement,
+            current: characterCharacteristics.attributes.strength,
+          }) }}
+        </template>
+      </UAlert>
+
+      <CharacterStats
+        :characteristics="characterCharacteristics"
+        :items-overall-stats="itemsOverallStats"
+        :health-points="healthPoints"
+      >
+        <template #leading>
+          <UiSimpleTableRow
+            :label="$t('character.stats.price.title')"
+            :tooltip="{
+              title: $t('character.stats.price.title'),
+              description: $t('character.stats.price.desc'),
+            }"
+          >
+            <AppCoin :value="itemsOverallStats.price" />
+          </UiSimpleTableRow>
+
+          <UiSimpleTableRow
+            :label="$t('character.stats.avgRepairCost.title')"
+            :tooltip="{
+              title: $t('character.stats.avgRepairCost.title'),
+              description: $t('character.stats.avgRepairCost.desc'),
+            }"
+          >
+            <AppCoin :class="{ 'text-error': upkeepIsHigh }">
+              <span class="font-bold">
+                {{ $n(itemsOverallStats.averageRepairCostByHour) }} / {{ $t('dateTime.hours.short') }}
+              </span>
+            </AppCoin>
+
+            <!-- TODO: design -->
+            <template v-if="upkeepIsHigh" #tooltip-content>
+              <div class="prose prose-invert">
+                <h4 class="text-warning">
+                  {{ $t('character.highUpkeepWarning.title') }}
+                </h4>
+                <div v-html="$t('character.highUpkeepWarning.desc')" />
+              </div>
+            </template>
+          </UiSimpleTableRow>
+        </template>
+      </CharacterStats>
+    </div>
   </div>
 </template>
