@@ -1,1 +1,6 @@
-mp_battle_map_001
+crpg_battle_canals
+crpg_battle_hexenbrennen
+crpg_battle_pompeii
+crpg_battle_overgrown
+crpg_battle_talmberg
+crpg_battle_stonehenge
