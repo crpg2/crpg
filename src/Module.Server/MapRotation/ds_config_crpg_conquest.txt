@@ -1,18 +1,12 @@
 ServerName cRPG - Test Conquest - c-rpg.eu
 server_name_suffix
 GameType cRPGConquest
-add_map_to_automated_battle_pool crpg_conquest_acre
-add_map_to_automated_battle_pool crpg_conquest_frederiksborg
-add_map_to_automated_battle_pool crpg_conquest_hades
-add_map_to_automated_battle_pool crpg_conquest_neuenburg
-add_map_to_automated_battle_pool crpg_conquest_skalalanding
 AllowPollsToKickPlayers True
 AllowPollsToChangeMaps True
 disable_culture_voting
+disable_map_voting
 CultureTeam1 vlandia
 CultureTeam2 battania
-RespawnPeriodTeam1 6
-RespawnPeriodTeam2 24
 RoundPreparationTimeLimit 2
 MaxNumberOfPlayers 120
 AutoTeamBalanceThreshold 2
@@ -23,8 +17,12 @@ FriendlyFireDamageRangedSelfPercent 0
 NumberOfBotsTeam1 1
 NumberOfBotsTeam2 1
 MapTimeLimit 30
+RespawnPeriodTeam1 6
+RespawnPeriodTeam2 24
 crpg_reward_tick 30
 WarmupTimeLimitInSeconds 60
+crpg_happy_hours 19:00-23:00,Central European Standard Time
 start_game
 set_automated_battle_count -1
 enable_automated_battle_switching
+crpg_apply_harmony_patches
