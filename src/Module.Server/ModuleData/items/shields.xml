@@ -3104,4 +3104,68 @@
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
+  <Item id="crpg_chaosshield_h0" name="{=BalanceMe}Chaos Star" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="chaosshield" culture="Culture.empire" is_merchandise="true" weight="2.243475" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="28" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="78" center_of_mass="-0.0, 0.1, 0.1" hit_points="295">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_chaosshield_h1" name="{=BalanceMe}Chaos Star" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="chaosshield" culture="Culture.empire" is_merchandise="true" weight="2.243475" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="28" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="78" center_of_mass="-0.0, 0.1, 0.1" hit_points="295">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_chaosshield_h2" name="{=BalanceMe}Chaos Star" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="chaosshield" culture="Culture.empire" is_merchandise="true" weight="2.243475" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="28" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="78" center_of_mass="-0.0, 0.1, 0.1" hit_points="295">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_chaosshield_h3" name="{=BalanceMe}Chaos Star" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="chaosshield" culture="Culture.empire" is_merchandise="true" weight="2.243475" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="28" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="78" center_of_mass="-0.0, 0.1, 0.1" hit_points="295">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_templarshield_h0" name="{=BalanceMe}Templar Shield" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="templarshield" culture="Culture.empire" is_merchandise="true" weight="2.243475" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="28" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="78" center_of_mass="-0.0, 0.1, 0.1" hit_points="295">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_templarshield_h1" name="{=BalanceMe}Templar Shield" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="templarshield" culture="Culture.empire" is_merchandise="true" weight="2.243475" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="28" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="78" center_of_mass="-0.0, 0.1, 0.1" hit_points="295">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_templarshield_h2" name="{=BalanceMe}Templar Shield" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="templarshield" culture="Culture.empire" is_merchandise="true" weight="2.243475" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="28" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="78" center_of_mass="-0.0, 0.1, 0.1" hit_points="295">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_templarshield_h3" name="{=BalanceMe}Templar Shield" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="templarshield" culture="Culture.empire" is_merchandise="true" weight="2.243475" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="28" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="78" center_of_mass="-0.0, 0.1, 0.1" hit_points="295">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
 </Items>
