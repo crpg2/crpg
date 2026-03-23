@@ -520,58 +520,59 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 // Mounted Archery
 
                 if (agent.HasMount && equippedItem.IsRangedWeapon)
-            {
-                int mountedArcherySkill = GetEffectiveSkill(agent, CrpgSkills.MountedArchery);
-
-                float weaponMaxMovementAccuracyPenalty = 0.03f / _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
-                float weaponMaxUnsteadyAccuracyPenalty = 0.15f / _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
-
-                if (equippedItem.RelevantSkill == DefaultSkills.Crossbow)
                 {
-                    float crossbowPenaltyFactor = ImpactOfStrReqOnCrossbows(agent, 0.2f, primaryItem);
-                    weaponMaxUnsteadyAccuracyPenalty /= crossbowPenaltyFactor;
-                    weaponMaxMovementAccuracyPenalty /= crossbowPenaltyFactor;
+                    int mountedArcherySkill = GetEffectiveSkill(agent, CrpgSkills.MountedArchery);
+
+                    float weaponMaxMovementAccuracyPenalty = 0.03f / _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
+                    float weaponMaxUnsteadyAccuracyPenalty = 0.15f / _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
+
+                    if (equippedItem.RelevantSkill == DefaultSkills.Crossbow)
+                    {
+                        float crossbowPenaltyFactor = ImpactOfStrReqOnCrossbows(agent, 0.2f, primaryItem);
+                        weaponMaxUnsteadyAccuracyPenalty /= crossbowPenaltyFactor;
+                        weaponMaxMovementAccuracyPenalty /= crossbowPenaltyFactor;
+                    }
+
+                    props.WeaponMaxMovementAccuracyPenalty = MathF.Clamp(weaponMaxMovementAccuracyPenalty, 0f, 1f);
+                    props.WeaponMaxUnsteadyAccuracyPenalty = MathF.Clamp(weaponMaxUnsteadyAccuracyPenalty, 0f, 1f);
+
+                    // Mounted skill penalty
+                    props.WeaponInaccuracy /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
+
+                    // Encumbrance-based inaccuracy penalty (neutral at 20, quadratic growth)
+                    float encumbranceRatio = totalEncumbrance / 20.0f;
+                    float encumbranceMultiplier = MathF.Max(
+                        1.0f + (MathF.Pow(encumbranceRatio, 2f) - 1.0f) * 0.75f,
+                        1.0f);
+
+                    props.WeaponInaccuracy *= encumbranceMultiplier;
+
+                    // Reload & draw speed penalty: linearly drops from 1.0 at 20 to 0.25 at 30
+                    float reloadThrustMultiplier = totalEncumbrance <= 20f
+                        ? 1.0f
+                        : MathF.Max(1.0f - (totalEncumbrance - 20f) / 10f * 0.75f, 0.25f);
+
+                    props.ReloadSpeed *= reloadThrustMultiplier;
+                    props.ThrustOrRangedReadySpeedMultiplier *= reloadThrustMultiplier;
+
+                    // Clamp values to ensure gameplay safety
+                    props.ReloadSpeed = MathF.Clamp(props.ReloadSpeed, 0.25f, 1.0f);
+                    props.ThrustOrRangedReadySpeedMultiplier = MathF.Clamp(props.ThrustOrRangedReadySpeedMultiplier, 0.25f, 1.0f);
                 }
-
-                props.WeaponMaxMovementAccuracyPenalty = MathF.Clamp(weaponMaxMovementAccuracyPenalty, 0f, 1f);
-                props.WeaponMaxUnsteadyAccuracyPenalty = MathF.Clamp(weaponMaxUnsteadyAccuracyPenalty, 0f, 1f);
-
-                // Mounted skill penalty
-                props.WeaponInaccuracy /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
-
-                // Encumbrance-based inaccuracy penalty (neutral at 20, quadratic growth)
-                float encumbranceRatio = totalEncumbrance / 20.0f;
-                float encumbranceMultiplier = MathF.Max(
-                    1.0f + (MathF.Pow(encumbranceRatio, 2f) - 1.0f) * 0.75f,
-                    1.0f);
-
-                props.WeaponInaccuracy *= encumbranceMultiplier;
-
-                // Reload & draw speed penalty: linearly drops from 1.0 at 20 to 0.25 at 30
-                float reloadThrustMultiplier = totalEncumbrance <= 20f
-                    ? 1.0f
-                    : MathF.Max(1.0f - (totalEncumbrance - 20f) / 10f * 0.75f, 0.25f);
-
-                props.ReloadSpeed *= reloadThrustMultiplier;
-                props.ThrustOrRangedReadySpeedMultiplier *= reloadThrustMultiplier;
-
-                // Clamp values to ensure gameplay safety
-                props.ReloadSpeed = MathF.Clamp(props.ReloadSpeed, 0.25f, 1.0f);
-                props.ThrustOrRangedReadySpeedMultiplier = MathF.Clamp(props.ThrustOrRangedReadySpeedMultiplier, 0.25f, 1.0f);
             }
+
+            int shieldSkill = GetEffectiveSkill(agent, CrpgSkills.Shield);
+            float coverageFactorForShieldCoef = agent.HasMount
+                ? _constants.CavalryCoverageFactorForShieldCoef
+                : _constants.InfantryCoverageFactorForShieldCoef;
+            props.AttributeShieldMissileCollisionBodySizeAdder = shieldSkill * coverageFactorForShieldCoef;
+            float ridingAttribute = agent.MountAgent?.GetAgentDrivenPropertyValue(DrivenProperty.AttributeRiding) ?? 1f;
+            props.AttributeRiding = ridingSkill * ridingAttribute;
+            // TODO: AttributeHorseArchery doesn't seem to have any effect for now.
+            // props.AttributeHorseArchery = Game.Current.BasicModels.StrikeMagnitudeModel.CalculateHorseArcheryFactor(character);
+
+            SetAiProperties(agent, props, equippedItem, secondaryItem);
         }
-
-        int shieldSkill = GetEffectiveSkill(agent, CrpgSkills.Shield);
-        float coverageFactorForShieldCoef = agent.HasMount
-            ? _constants.CavalryCoverageFactorForShieldCoef
-            : _constants.InfantryCoverageFactorForShieldCoef;
-        props.AttributeShieldMissileCollisionBodySizeAdder = shieldSkill * coverageFactorForShieldCoef;
-        float ridingAttribute = agent.MountAgent?.GetAgentDrivenPropertyValue(DrivenProperty.AttributeRiding) ?? 1f;
-        props.AttributeRiding = ridingSkill * ridingAttribute;
-        // TODO: AttributeHorseArchery doesn't seem to have any effect for now.
-        // props.AttributeHorseArchery = Game.Current.BasicModels.StrikeMagnitudeModel.CalculateHorseArcheryFactor(character);
-
-        SetAiProperties(agent, props, equippedItem, secondaryItem);
     }
 
     /// <summary>
