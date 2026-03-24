@@ -560,7 +560,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     props.ThrustOrRangedReadySpeedMultiplier = MathF.Clamp(props.ThrustOrRangedReadySpeedMultiplier, 0.25f, 1.0f);
                 }
             }
-
+        }
             int shieldSkill = GetEffectiveSkill(agent, CrpgSkills.Shield);
             float coverageFactorForShieldCoef = agent.HasMount
                 ? _constants.CavalryCoverageFactorForShieldCoef
@@ -572,7 +572,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             // props.AttributeHorseArchery = Game.Current.BasicModels.StrikeMagnitudeModel.CalculateHorseArcheryFactor(character);
 
             SetAiProperties(agent, props, equippedItem, secondaryItem);
-        }
     }
 
     /// <summary>
