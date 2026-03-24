@@ -5306,7 +5306,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_military_fork_blade_h0" name="{=Y0gbKTgZ}Sturgian Military Fork Head" tier="2" piece_type="Blade" mesh="spear_blade_26" length="29.8" weight="0.4584" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="3.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.9" />
     </BladeData>
     <Flags>
     </Flags>
@@ -5316,7 +5316,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_military_fork_blade_h1" name="{=Y0gbKTgZ}Sturgian Military Fork Head" tier="2" piece_type="Blade" mesh="spear_blade_26" length="29.8" weight="0.4584" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="3.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.9" />
     </BladeData>
     <Flags>
     </Flags>
@@ -5326,7 +5326,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_military_fork_blade_h2" name="{=Y0gbKTgZ}Sturgian Military Fork Head" tier="2" piece_type="Blade" mesh="spear_blade_26" length="29.8" weight="0.4584" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="3.0" />
     </BladeData>
     <Flags>
     </Flags>
@@ -5336,7 +5336,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_military_fork_blade_h3" name="{=Y0gbKTgZ}Sturgian Military Fork Head" tier="2" piece_type="Blade" mesh="spear_blade_26" length="29.8" weight="0.4584" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="3.0" />
     </BladeData>
     <Flags>
     </Flags>
