@@ -612,7 +612,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AIRealizeBlockingFromIncorrectSideAbility = 0f;
         props.AiRaiseShieldDelayTimeBase = -0.75f + 0.5f * meleeLevel;
         props.AiUseShieldAgainstEnemyMissileProbability = 0.1f + meleeLevel * 0.6f + defenseLevel * 0.2f;
-
         props.AiTryChamberAttackOnDecide = (meleeLevel - 0.15f) * 0.1f;
         props.AIAttackOnParryChance = 0.08f - 0.02f * agent.Defensiveness;
         props.AiAttackOnParryTiming = -0.2f + 0.3f * meleeLevel;
