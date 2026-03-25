@@ -405,6 +405,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 // Crossbows
                 if (equippedItem.RelevantSkill == DefaultSkills.Crossbow)
                 {
+                    props.ReloadMovementPenaltyFactor = 0.35f;
                     props.WeaponInaccuracy /= ImpactOfStrReqOnCrossbows(agent, 1f, primaryItem);
                     props.WeaponMaxMovementAccuracyPenalty *= ImpactOfStrReqOnCrossbows(agent, 0.2f, primaryItem);
                     props.WeaponMaxUnsteadyAccuracyPenalty = 0.5f / ImpactOfStrReqOnCrossbows(agent, 0.05f, primaryItem); // override to remove impact of wpf on this property
