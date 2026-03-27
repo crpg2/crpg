@@ -660,7 +660,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AIAttackOnDecideChance = MathF.Clamp(0.1f * CalculateAIAttackOnDecideMaxValue() * (3f - agent.Defensiveness), 0.05f, 1f);
         props.SetStat(DrivenProperty.UseRealisticBlocking, agent.Controller != AgentControllerType.Player ? 1f : 0f);
         props.AiWeaponFavorMultiplierMelee = 1f;
-        props.AiWeaponFavorMultiplierRanged = 1f;    
+        props.AiWeaponFavorMultiplierRanged = 1f;
         props.AiWeaponFavorMultiplierPolearm = 1f;
     }
 
