@@ -523,7 +523,7 @@ character:
         tooltip: Convert {skill} skill points to {attribute} attribute point
 
     requires:
-      title: 'Requires:'
+      title: 'You need:'
       costPoints: '{count} {characteristic} point | {count} {characteristic} points'
       pointsPerLevel: '{count} {characteristic} per level'
       characteristic: '{count} {characteristic}'
