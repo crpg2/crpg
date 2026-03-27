@@ -523,7 +523,7 @@ character:
         tooltip: 将 {skill} 技能点转换为 {attribute} 属性点
 
     requires:
-      title: 要求：
+      title: 你需要：
       costPoints: '{count} {characteristic} 点 | {count} {characteristic} 点'
       pointsPerLevel: '每级 {count} {characteristic}'
       characteristic: '{count} {characteristic}'

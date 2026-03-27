@@ -489,7 +489,7 @@ character:
         tooltip: Конвертировать {skill} очка навыков в {attribute} очко атрибутов
 
     requires:
-      title: 'Требования:'
+      title: 'Вам нужно:'
       costPoints: '{count} очков {characteristic} | {count} очко {characteristic} | {count} очка {characteristic} | {count} очков {characteristic}'
       pointsPerLevel: '{count} {characteristic} за уровень'
       characteristic: '{count} {characteristic}'
