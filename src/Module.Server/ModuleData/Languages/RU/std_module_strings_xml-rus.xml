@@ -109,7 +109,16 @@
     <string id="xq7QtuZ0" text="Атаковавший вас дружественный игрок не найден." />
     <string id="zD8mGERY" text="Данные о дружественном уроне по вам не найдены." />
     <string id="KgZprgXA" text="Время на жалобу о дружественном уроне от игрока {ATTACKER} истекло." />
-    <string id="WH15BANu" text="Дружественный урон от {ATTACKER} (Урон: {DAMAGE}). Нажмите [{MODIFIERKEY}+{REPORTKEY}], если вы считаете что это было намеренно." />
-    <string id="KORWOuGO" text="Дружественный урон от {ATTACKER} (Урон: {DAMAGE}). Нажмите [{MODIFIERKEY}+{REPORTKEY}], если вы считаете что это было намеренно. {TIMELEFT} секунд осталось." />
+    <string id="WH15BANu" text="Дружественный урон от {ATTACKER} (Урон: {DAMAGE}). Нажмите [{MODIFIERKEY}+{REPORTKEY}], доносить." />
+    <string id="KORWOuGO" text="Дружественный урон от {ATTACKER} (Урон: {DAMAGE}). Нажмите [{MODIFIERKEY}+{REPORTKEY}], доносить. ({TIMELEFT} секунд осталось)." />
+
+    <!-- KeyBinder Options Menu -->
+    <string id="KORWOuGG" text="cRPG Общее" />
+    <string id="KORWOuG1" text="Донос на тимхит" />
+    <string id="KORWOuG2" text="Пожаловаться на полученный удар по союзнику" />
+    <string id="KORWOuG3" text="Модификатор команды (удерживать)" />
+    <string id="KORWOuG4" text="Клавиша-модификатор, например: Ctrl" />
+    <string id="KORWOuG5" text="Сменить колчан" />
+    <string id="KORWOuG6" text="Сменить колчан с боеприпасами" />
   </strings>
 </base>

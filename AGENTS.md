@@ -50,6 +50,13 @@ There are several game modes available in the cRPG mod:
 - Duel: 1v1 duel against other players
 - Team Deathmatch: two teams fight with unlimited amount of lives but limited time
 
+##### Bannerlord Localization
+
+Translatable strings use `TextObject` with an 8-char random ID: `new TextObject("{=hMd5sK8a}English fallback")`.
+Variables are set via `text.SetTextVariable("VAR", value)`. English needs no translation file, the inline fallback
+is used. Translations go in `src/Module.Server/ModuleData/Languages/` XML files, keyed by ID only. Use an command
+to generate the random IDs.
+
 ## Testing
 
 Unit tests are located in the test/ directory with separate projects for each main part.

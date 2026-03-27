@@ -44,6 +44,7 @@ internal class ChatCommandsComponent : GameHandler
                 new BanCommand(this, crpgClient),
                 new HotConstantUpdateCommand(this),
                 new HotConstantListCommand(this),
+                new HotConstantResetCommand(this),
                 new OrderCommand(this),
                 new HelpCommand(this),
                 new FriendlyFireInfoCommand(this),
@@ -154,8 +155,13 @@ internal class ChatCommandsComponent : GameHandler
         }
 
         GameNetwork.NetworkMessageHandlerRegisterer handlerRegisterer = new(mode);
-        handlerRegisterer.Register<PlayerMessageAll>(HandleClientEventPlayerMessage);
-        handlerRegisterer.Register<PlayerMessageTeam>(HandleClientEventPlayerMessage);
+        // Use RegisterBaseHandler instead of Register to avoid DynamicInvoke. Register<T> stores
+        // handlers as objects and invokes them via Delegate.DynamicInvoke -> RuntimeMethodHandle.InvokeMethod.
+        // That path crashes with ExecutionEngineException when the handler makes native P/Invoke calls
+        // (e.g. MakeVoice) inside the reverse P/Invoke context of HandleNetworkPacketAsServer.
+        // Bannerlord's own order handlers (ApplyOrder etc.) use RegisterBaseHandler for the same reason.
+        handlerRegisterer.RegisterBaseHandler<PlayerMessageAll>(HandleClientEventPlayerMessage);
+        handlerRegisterer.RegisterBaseHandler<PlayerMessageTeam>(HandleClientEventPlayerMessage);
     }
 
     private bool HandleClientEventPlayerMessage(NetworkCommunicator peer, GameNetworkMessage message)

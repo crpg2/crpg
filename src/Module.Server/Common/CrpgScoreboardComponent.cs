@@ -1,11 +1,11 @@
 ﻿using Crpg.Module.Common.Network;
+using Crpg.Module.Helpers;
+using NetworkMessages.FromServer;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 #if CRPG_SERVER
 using Crpg.Module.Api.Models.Characters;
-using Crpg.Module.Helpers;
 using Crpg.Module.Rating;
-using NetworkMessages.FromServer;
 #endif
 
 namespace Crpg.Module.Common;
@@ -18,6 +18,16 @@ internal class CrpgScoreboardComponent : MissionScoreboardComponent
     public CrpgScoreboardComponent(IScoreboardData scoreboardData)
         : base(scoreboardData)
     {
+    }
+
+    /// <summary>Add score to a player and broadcast the change to all clients.</summary>
+    public void GiveScore(MissionPeer peer, int score)
+    {
+        ReflectionHelper.SetProperty(peer, nameof(peer.Score), peer.Score + score);
+        GameNetwork.BeginBroadcastModuleEvent();
+        GameNetwork.WriteMessage(new KillDeathCountChange(peer.GetNetworkPeer(),
+            null, peer.KillCount, peer.AssistCount, peer.DeathCount, peer.Score));
+        GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
     }
 
     public override void OnScoreHit(

@@ -24,7 +24,7 @@
   stat:
     path: "{{ crpg_game_client_local_path }}/Modules/cRPG/{{ item }}"
   loop:
-    - "AssetPackages"
+    - "AssetPackages/pack0.tpac" # The only tpac that meow does not provide
     - "SceneObj"
     - "bin/Win64_Shipping_Client/Crpg.Module.dll"
   register: file_stats

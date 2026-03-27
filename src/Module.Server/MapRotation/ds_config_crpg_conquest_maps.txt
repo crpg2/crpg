@@ -1,0 +1,16 @@
+crpg_conquest_silverskalitz
+crpg_conquest_acre
+crpg_conquest_bebbanburg
+crpg_conquest_ironhale
+crpg_conquest_frederiksborg
+crpg_conquest_hades
+crpg_conquest_fjallborn
+crpg_conquest_ardumu
+crpg_conquest_neuenburg
+crpg_conquest_darkwood
+crpg_conquest_poppyhills
+crpg_conquest_hailescastle
+crpg_conquest_thewhitecity
+crpg_conquest_jameyyedcastle
+crpg_conquest_talmberg
+crpg_conquest_motteandbailey

@@ -52,6 +52,8 @@
     <string id="ASQYQ4sZ" text="Победы" />
     <string id="AtkHJkQi" text="Поражения" />
     <string id="WkeDgZFB" text="Рейтинг" />
+    <string id="hMd5sK8a" text="Зрители: {SPECTATOR_LIST}" />
+    <string id="j9Xp2vNw" text="{SPECTATOR_NAMES} и ещё {EXTRA_COUNT}" />
 
     <!-- Kick reasons -->
     <string id="gaC79g3U" text="Ваш персонаж имеет недопустимый рост. Исправьте это в оружейной Баннерлорд, чтобы присоединиться к серверу cRPG." />

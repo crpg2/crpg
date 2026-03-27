@@ -836,6 +836,71 @@ namespace Crpg.Persistence.Migrations
                     b.ToTable("items", (string)null);
                 });
 
+            modelBuilder.Entity("Crpg.Domain.Entities.Items.ItemStack", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Count")
+                        .HasColumnType("integer")
+                        .HasColumnName("count");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<string>("ItemId")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("item_id");
+
+                    b.Property<int?>("PartyId")
+                        .HasColumnType("integer")
+                        .HasColumnName("party_id");
+
+                    b.Property<int?>("PartyTransferOfferId")
+                        .HasColumnType("integer")
+                        .HasColumnName("party_transfer_offer_id");
+
+                    b.Property<int?>("SettlementId")
+                        .HasColumnType("integer")
+                        .HasColumnName("settlement_id");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.HasKey("Id")
+                        .HasName("pk_item_stacks");
+
+                    b.HasIndex("ItemId")
+                        .HasDatabaseName("ix_item_stacks_item_id");
+
+                    b.HasIndex("PartyId", "ItemId")
+                        .IsUnique()
+                        .HasDatabaseName("ix_item_stacks_party_id_item_id")
+                        .HasFilter("party_id IS NOT NULL");
+
+                    b.HasIndex("PartyTransferOfferId", "ItemId")
+                        .IsUnique()
+                        .HasDatabaseName("ix_item_stacks_party_transfer_offer_id_item_id")
+                        .HasFilter("party_transfer_offer_id IS NOT NULL");
+
+                    b.HasIndex("SettlementId", "ItemId")
+                        .IsUnique()
+                        .HasDatabaseName("ix_item_stacks_settlement_id_item_id")
+                        .HasFilter("settlement_id IS NOT NULL");
+
+                    b.ToTable("item_stacks", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_item_stacks_single_owner", "(party_id IS NOT NULL)::int + (settlement_id IS NOT NULL)::int + (party_transfer_offer_id IS NOT NULL)::int = 1");
+                        });
+                });
+
             modelBuilder.Entity("Crpg.Domain.Entities.Items.PersonalItem", b =>
                 {
                     b.Property<int>("UserItemId")
@@ -1090,37 +1155,6 @@ namespace Crpg.Persistence.Migrations
                     b.ToTable("parties", (string)null);
                 });
 
-            modelBuilder.Entity("Crpg.Domain.Entities.Parties.PartyItem", b =>
-                {
-                    b.Property<int>("PartyId")
-                        .HasColumnType("integer")
-                        .HasColumnName("party_id");
-
-                    b.Property<string>("ItemId")
-                        .HasColumnType("text")
-                        .HasColumnName("item_id");
-
-                    b.Property<int>("Count")
-                        .HasColumnType("integer")
-                        .HasColumnName("count");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_at");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("updated_at");
-
-                    b.HasKey("PartyId", "ItemId")
-                        .HasName("pk_party_items");
-
-                    b.HasIndex("ItemId")
-                        .HasDatabaseName("ix_party_items_item_id");
-
-                    b.ToTable("party_items", (string)null);
-                });
-
             modelBuilder.Entity("Crpg.Domain.Entities.Parties.PartyOrder", b =>
                 {
                     b.Property<int>("Id")
@@ -1216,29 +1250,6 @@ namespace Crpg.Persistence.Migrations
                         .HasDatabaseName("ix_party_transfer_offers_target_party_id");
 
                     b.ToTable("party_transfer_offers", (string)null);
-                });
-
-            modelBuilder.Entity("Crpg.Domain.Entities.Parties.PartyTransferOfferItem", b =>
-                {
-                    b.Property<int>("PartyTransferOfferId")
-                        .HasColumnType("integer")
-                        .HasColumnName("party_transfer_offer_id");
-
-                    b.Property<string>("ItemId")
-                        .HasColumnType("text")
-                        .HasColumnName("item_id");
-
-                    b.Property<int>("Count")
-                        .HasColumnType("integer")
-                        .HasColumnName("count");
-
-                    b.HasKey("PartyTransferOfferId", "ItemId")
-                        .HasName("pk_party_transfer_offer_items");
-
-                    b.HasIndex("ItemId")
-                        .HasDatabaseName("ix_party_transfer_offer_items_item_id");
-
-                    b.ToTable("party_transfer_offer_items", (string)null);
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Restrictions.Restriction", b =>
@@ -1409,37 +1420,6 @@ namespace Crpg.Persistence.Migrations
                         .HasDatabaseName("ix_settlements_region_name");
 
                     b.ToTable("settlements", (string)null);
-                });
-
-            modelBuilder.Entity("Crpg.Domain.Entities.Settlements.SettlementItem", b =>
-                {
-                    b.Property<int>("SettlementId")
-                        .HasColumnType("integer")
-                        .HasColumnName("settlement_id");
-
-                    b.Property<string>("ItemId")
-                        .HasColumnType("text")
-                        .HasColumnName("item_id");
-
-                    b.Property<int>("Count")
-                        .HasColumnType("integer")
-                        .HasColumnName("count");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_at");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("updated_at");
-
-                    b.HasKey("SettlementId", "ItemId")
-                        .HasName("pk_settlement_items");
-
-                    b.HasIndex("ItemId")
-                        .HasDatabaseName("ix_settlement_items_item_id");
-
-                    b.ToTable("settlement_items", (string)null);
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Terrains.Terrain", b =>
@@ -2447,6 +2427,42 @@ namespace Crpg.Persistence.Migrations
                     b.Navigation("TertiaryWeapon");
                 });
 
+            modelBuilder.Entity("Crpg.Domain.Entities.Items.ItemStack", b =>
+                {
+                    b.HasOne("Crpg.Domain.Entities.Items.Item", "Item")
+                        .WithMany()
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_item_stacks_items_item_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Parties.Party", "Party")
+                        .WithMany("Items")
+                        .HasForeignKey("PartyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("fk_item_stacks_parties_party_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Parties.PartyTransferOffer", "PartyTransferOffer")
+                        .WithMany("Items")
+                        .HasForeignKey("PartyTransferOfferId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("fk_item_stacks_party_transfer_offers_party_transfer_offer_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Settlements.Settlement", "Settlement")
+                        .WithMany("Items")
+                        .HasForeignKey("SettlementId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("fk_item_stacks_settlements_settlement_id");
+
+                    b.Navigation("Item");
+
+                    b.Navigation("Party");
+
+                    b.Navigation("PartyTransferOffer");
+
+                    b.Navigation("Settlement");
+                });
+
             modelBuilder.Entity("Crpg.Domain.Entities.Items.PersonalItem", b =>
                 {
                     b.HasOne("Crpg.Domain.Entities.Items.UserItem", "UserItem")
@@ -2579,27 +2595,6 @@ namespace Crpg.Persistence.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Crpg.Domain.Entities.Parties.PartyItem", b =>
-                {
-                    b.HasOne("Crpg.Domain.Entities.Items.Item", "Item")
-                        .WithMany()
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_party_items_items_item_id");
-
-                    b.HasOne("Crpg.Domain.Entities.Parties.Party", "Party")
-                        .WithMany("Items")
-                        .HasForeignKey("PartyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_party_items_parties_party_id");
-
-                    b.Navigation("Item");
-
-                    b.Navigation("Party");
-                });
-
             modelBuilder.Entity("Crpg.Domain.Entities.Parties.PartyOrder", b =>
                 {
                     b.HasOne("Crpg.Domain.Entities.Parties.Party", "Party")
@@ -2654,27 +2649,6 @@ namespace Crpg.Persistence.Migrations
                     b.Navigation("TargetParty");
                 });
 
-            modelBuilder.Entity("Crpg.Domain.Entities.Parties.PartyTransferOfferItem", b =>
-                {
-                    b.HasOne("Crpg.Domain.Entities.Items.Item", "Item")
-                        .WithMany()
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_party_transfer_offer_items_items_item_id");
-
-                    b.HasOne("Crpg.Domain.Entities.Parties.PartyTransferOffer", "PartyTransferOffer")
-                        .WithMany("Items")
-                        .HasForeignKey("PartyTransferOfferId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_party_transfer_offer_items_party_transfer_offers_party_tran");
-
-                    b.Navigation("Item");
-
-                    b.Navigation("PartyTransferOffer");
-                });
-
             modelBuilder.Entity("Crpg.Domain.Entities.Restrictions.Restriction", b =>
                 {
                     b.HasOne("Crpg.Domain.Entities.Users.User", "RestrictedByUser")
@@ -2704,27 +2678,6 @@ namespace Crpg.Persistence.Migrations
                         .HasConstraintName("fk_settlements_parties_owner_id");
 
                     b.Navigation("Owner");
-                });
-
-            modelBuilder.Entity("Crpg.Domain.Entities.Settlements.SettlementItem", b =>
-                {
-                    b.HasOne("Crpg.Domain.Entities.Items.Item", "Item")
-                        .WithMany()
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_settlement_items_items_item_id");
-
-                    b.HasOne("Crpg.Domain.Entities.Settlements.Settlement", "Settlement")
-                        .WithMany("Items")
-                        .HasForeignKey("SettlementId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_settlement_items_settlements_settlement_id");
-
-                    b.Navigation("Item");
-
-                    b.Navigation("Settlement");
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Users.User", b =>

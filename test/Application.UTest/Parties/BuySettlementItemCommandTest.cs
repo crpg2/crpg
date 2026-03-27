@@ -180,8 +180,8 @@ public class BuySettlementItemCommandTest : TestBase
         ArrangeDb.Settlements.Add(settlement);
         Item item = new() { Culture = Culture.Sturgia, Price = 10 };
         ArrangeDb.Items.Add(item);
-        PartyItem partyItem = new() { Item = item, Count = 3, Party = party };
-        ArrangeDb.PartyItems.Add(partyItem);
+        ItemStack partyItem = new() { Item = item, Count = 3, Party = party };
+        ArrangeDb.ItemStacks.Add(partyItem);
         await ArrangeDb.SaveChangesAsync();
 
         BuySettlementItemCommand.Handler handler = new(ActDb, Mapper, campaignMapMock.Object);

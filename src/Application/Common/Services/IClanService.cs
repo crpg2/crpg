@@ -21,16 +21,10 @@ internal interface IClanService
     Task<Result<ClanArmoryBorrowedItem>> ReturnArmoryItem(ICrpgDbContext db, Clan clan, User user, int userItemId, CancellationToken cancellationToken = default);
 }
 
-internal class ClanService : IClanService
+internal class ClanService(IActivityLogService activityLogService, IUserNotificationService userNotificationService) : IClanService
 {
-    private readonly IActivityLogService _activityLogService;
-    private readonly IUserNotificationService _userNotificationService;
-
-    public ClanService(IActivityLogService activityLogService, IUserNotificationService userNotificationService)
-    {
-        _activityLogService = activityLogService;
-        _userNotificationService = userNotificationService;
-    }
+    private readonly IActivityLogService _activityLogService = activityLogService;
+    private readonly IUserNotificationService _userNotificationService = userNotificationService;
 
     public async Task<Result<User>> GetClanMember(ICrpgDbContext db, int userId, int clanId, CancellationToken cancellationToken)
     {
@@ -300,7 +294,7 @@ internal class ClanService : IClanService
         var borrowedItem = await db.ClanArmoryBorrowedItems
             .Where(bi =>
                 bi.UserItemId == userItemId
-                && (bi.BorrowerUserId == user.Id || user.ClanMembership!.Role == ClanMemberRole.Leader) // force return by clan leader
+                && (bi.BorrowerUserId == user.Id || user.ClanMembership!.Role == ClanMemberRole.Leader || user.ClanMembership!.Role == ClanMemberRole.Officer) // force return by clan leader or officer
                 && bi.BorrowerClanId == clan.Id)
             .Include(bi => bi.UserItem!).ThenInclude(ui => ui.EquippedItems)
             .FirstOrDefaultAsync(cancellationToken);

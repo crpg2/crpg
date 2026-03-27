@@ -4,15 +4,15 @@ using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Parties.Models;
+using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Parties;
-using Crpg.Domain.Entities.Settlements;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using LoggerFactory = Crpg.Logging.LoggerFactory;
 
 namespace Crpg.Application.Settlements.Commands;
 
-public record UpdateSettlementItemsCommand : IMediatorRequest<ItemStack[]>
+public record UpdateSettlementItemsCommand : IMediatorRequest<ItemStackViewModel[]>
 {
     [JsonIgnore]
     public int PartyId { get; init; }
@@ -20,14 +20,14 @@ public record UpdateSettlementItemsCommand : IMediatorRequest<ItemStack[]>
     public int SettlementId { get; init; }
     public ItemStackUpdate[] Items { get; init; } = [];
 
-    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<UpdateSettlementItemsCommand, ItemStack[]>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<UpdateSettlementItemsCommand, ItemStackViewModel[]>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<UpdateSettlementItemsCommand>();
 
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
 
-        public async ValueTask<Result<ItemStack[]>> Handle(UpdateSettlementItemsCommand req, CancellationToken cancellationToken)
+        public async ValueTask<Result<ItemStackViewModel[]>> Handle(UpdateSettlementItemsCommand req, CancellationToken cancellationToken)
         {
             var party = await _db.Parties
                 .Include(p => p.CurrentSettlement)
@@ -52,7 +52,7 @@ public record UpdateSettlementItemsCommand : IMediatorRequest<ItemStack[]>
 
             if (itemIds.Length == 0)
             {
-                return new(Array.Empty<ItemStack>());
+                return new(Array.Empty<ItemStackViewModel>());
             }
 
             // Load all items from database
@@ -68,15 +68,15 @@ public record UpdateSettlementItemsCommand : IMediatorRequest<ItemStack[]>
                 }
             }
 
-            var partyItems = await _db.PartyItems
+            var partyItems = await _db.ItemStacks
                 .Where(pi => pi.PartyId == req.PartyId)
                 .ToDictionaryAsync(pi => pi.ItemId, cancellationToken);
 
-            var settlementItems = await _db.SettlementItems
+            var settlementItems = await _db.ItemStacks
                 .Where(si => si.SettlementId == req.SettlementId)
                 .ToDictionaryAsync(si => si.ItemId, cancellationToken);
 
-            var resultSettlementItems = new List<SettlementItem>();
+            var resultSettlementItems = new List<ItemStack>();
 
             foreach (var itemUpdate in req.Items)
             {
@@ -99,13 +99,13 @@ public record UpdateSettlementItemsCommand : IMediatorRequest<ItemStack[]>
                     // Update settlement item
                     if (settlementItem == null)
                     {
-                        settlementItem = new SettlementItem
+                        settlementItem = new ItemStack
                         {
                             Item = item,
                             Count = itemUpdate.Count,
                             SettlementId = req.SettlementId,
                         };
-                        _db.SettlementItems.Add(settlementItem);
+                        _db.ItemStacks.Add(settlementItem);
                         settlementItems[itemUpdate.ItemId] = settlementItem;
                         resultSettlementItems.Add(settlementItem);
                     }
@@ -119,7 +119,7 @@ public record UpdateSettlementItemsCommand : IMediatorRequest<ItemStack[]>
                     partyItem!.Count -= itemUpdate.Count;
                     if (partyItem.Count == 0)
                     {
-                        _db.PartyItems.Remove(partyItem);
+                        _db.ItemStacks.Remove(partyItem);
                         partyItems.Remove(itemUpdate.ItemId);
                     }
                 }
@@ -139,7 +139,7 @@ public record UpdateSettlementItemsCommand : IMediatorRequest<ItemStack[]>
                     settlementItem!.Count += itemUpdate.Count; // Count is negative, so this subtracts
                     if (settlementItem.Count == 0)
                     {
-                        _db.SettlementItems.Remove(settlementItem);
+                        _db.ItemStacks.Remove(settlementItem);
                         settlementItems.Remove(itemUpdate.ItemId);
                     }
                     else
@@ -150,13 +150,13 @@ public record UpdateSettlementItemsCommand : IMediatorRequest<ItemStack[]>
                     // Update party item
                     if (partyItem == null)
                     {
-                        partyItem = new PartyItem
+                        partyItem = new ItemStack
                         {
                             Item = item,
                             Count = -itemUpdate.Count, // Make it positive
                             PartyId = req.PartyId,
                         };
-                        _db.PartyItems.Add(partyItem);
+                        _db.ItemStacks.Add(partyItem);
                         partyItems[itemUpdate.ItemId] = partyItem;
                     }
                     else
@@ -178,7 +178,7 @@ public record UpdateSettlementItemsCommand : IMediatorRequest<ItemStack[]>
                     req.PartyId, req.SettlementId, req.Items.Length, totalGiven, totalTaken);
             }
 
-            return new(_mapper.Map<ItemStack[]>(resultSettlementItems));
+            return new(_mapper.Map<ItemStackViewModel[]>(resultSettlementItems));
         }
     }
 }

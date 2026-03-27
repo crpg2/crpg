@@ -144,9 +144,9 @@ public class CampaignSpeedModelTest
         return new CampaignSpeedModel(mockRouting.Object);
     }
 
-    private static PartyItem PartyItemMount(int hitPoints, int count)
+    private static ItemStack PartyItemMount(int hitPoints, int count)
     {
-        return new()
+        return new ItemStack
         {
             Item = new Item { Mount = new ItemMountComponent { HitPoints = hitPoints } },
             Count = count,

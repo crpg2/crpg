@@ -1,7 +1,6 @@
-ServerName Test Battle
+ServerName cRPG - Test Battle - c-rpg.eu
 server_name_suffix
 GameType cRPGBattle
-WelcomeMessage yoyoyooooo
 AllowPollsToKickPlayers True
 AllowPollsToChangeMaps True
 disable_culture_voting

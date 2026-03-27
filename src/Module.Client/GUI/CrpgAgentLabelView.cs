@@ -19,19 +19,14 @@ internal class CrpgAgentLabelView : MissionView
     private const float HighlightedLabelScaleFactor = 20f;
     private const float LabelBannerWidth = 0.4f;
     private const float LabelBlackBorderWidth = 0.44f;
-    private const float NearDistance = 1.5f;
-    private const float FarDistance = 8f;
-
-    private static readonly Vec3 MeshOffset = new(0f, 0f, 2f);
-
     private readonly Dictionary<Agent, MetaMesh> _agentMeshes = [];
     private readonly Dictionary<Texture, Material> _labelMaterials = [];
-    private readonly List<Agent> _nearbyAgentsWithMeshes = [];
 
     private bool _isSuspendingView;
     private bool _isResumingView;
     private bool _alwaysShowBanners;
     private bool _indicatorsActive;
+    private bool _isSpectating;
 
     private bool IndicatorsActive
     {
@@ -63,8 +58,13 @@ internal class CrpgAgentLabelView : MissionView
 
     public override void OnMissionTick(float dt)
     {
-        UpdateNearbyBannerOpacities();
         IndicatorsActive = _alwaysShowBanners || Input.IsGameKeyDown(5);
+        bool spectating = IsSpectating();
+        if (_isSpectating != spectating)
+        {
+            _isSpectating = spectating;
+            UpdateAllAgentMeshVisibilities();
+        }
     }
 
     public override void OnRemoveBehavior()
@@ -99,7 +99,6 @@ internal class CrpgAgentLabelView : MissionView
     {
         _agentMeshes.Clear();
         _labelMaterials.Clear();
-        _nearbyAgentsWithMeshes.Clear();
     }
 
     public override void OnMissionModeChange(MissionMode oldMissionMode, bool atStart)
@@ -200,7 +199,7 @@ internal class CrpgAgentLabelView : MissionView
         agent.AgentVisuals.AddMultiMesh(labelMesh, BodyMeshTypes.Label);
         _agentMeshes[agent] = labelMesh;
         UpdateMeshVisibility(agent);
-        SetBannerOpacity(agent, highlighted: false);
+        SetBannerOpacity(agent);
     }
 
     private static Banner? ResolveBanner(Agent agent)
@@ -215,8 +214,6 @@ internal class CrpgAgentLabelView : MissionView
             agent.AgentVisuals?.ReplaceMeshWithMesh(mesh, null, BodyMeshTypes.Label);
             _agentMeshes.Remove(agent);
         }
-
-        _nearbyAgentsWithMeshes.Remove(agent);
     }
 
     private void UpdateMeshVisibility(Agent agent)
@@ -295,55 +292,15 @@ internal class CrpgAgentLabelView : MissionView
         return myTeam == null || myTeam == Mission.SpectatorTeam || missionPeer?.ControlledAgent == null;
     }
 
-    private void UpdateNearbyBannerOpacities()
-    {
-        foreach (Agent agent in _nearbyAgentsWithMeshes)
-        {
-            SetBannerOpacity(agent, highlighted: false);
-        }
-
-        _nearbyAgentsWithMeshes.Clear();
-
-        AgentProximityMap.ProximityMapSearchStruct search =
-            AgentProximityMap.BeginSearch(Mission, MissionScreen.CombatCamera.Position.AsVec2, FarDistance, extendRangeByBiggestAgentCollisionPadding: false);
-
-        while (search.LastFoundAgent != null)
-        {
-            if (_agentMeshes.ContainsKey(search.LastFoundAgent))
-            {
-                _nearbyAgentsWithMeshes.Add(search.LastFoundAgent);
-            }
-
-            AgentProximityMap.FindNext(Mission, ref search);
-        }
-
-        foreach (Agent agent in _nearbyAgentsWithMeshes)
-        {
-            SetBannerOpacity(agent, highlighted: false);
-        }
-    }
-
-    private void SetBannerOpacity(Agent agent, bool highlighted)
+    private void SetBannerOpacity(Agent agent)
     {
         if (!_agentMeshes.TryGetValue(agent, out MetaMesh? mesh))
         {
             return;
         }
 
-        float opacitySign = highlighted ? 1f : -1f;
-        float distance = (agent.Position + MeshOffset).Distance(MissionScreen.CombatCamera.Position);
-
-        if (distance < NearDistance)
-        {
-            opacitySign = 0f;
-        }
-        else if (distance < FarDistance)
-        {
-            opacitySign *= (distance - NearDistance) / (FarDistance - NearDistance);
-        }
-
         mesh.SetVectorArgument2(HighlightedLabelScaleFactor, LabelBannerWidth, LabelBlackBorderWidth,
-            opacitySign * BannerlordConfig.FriendlyTroopsBannerOpacity);
+            -BannerlordConfig.FriendlyTroopsBannerOpacity);
     }
 
     private void UpdateAllAgentMeshVisibilities()

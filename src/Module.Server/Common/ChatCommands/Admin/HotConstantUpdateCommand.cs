@@ -22,11 +22,14 @@ internal class HotConstantUpdateCommand : AdminCommand
         int hotConstantId = (int)arguments[0];
         float newValue = (float)arguments[1];
 
-        if (!HotConstant.TryUpdate(hotConstantId, newValue, out float oldValue))
+        if (!HotConstant.TryGet(hotConstantId, out var constant))
         {
-            ChatComponent.ServerSendMessageToPlayer(fromPeer, ColorWarning, $"Not constant was found with id '{hotConstantId}'.");
+            ChatComponent.ServerSendMessageToPlayer(fromPeer, ColorWarning, $"No constant was found with id '{hotConstantId}'.");
             return;
         }
+
+        float oldValue = constant!.Value;
+        constant.Update(newValue);
 
         GameNetwork.BeginBroadcastModuleEvent();
         GameNetwork.WriteMessage(new UpdateHotConstant

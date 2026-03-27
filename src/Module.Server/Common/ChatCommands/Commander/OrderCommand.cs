@@ -19,7 +19,9 @@ internal class OrderCommand : CommanderCommand
     {
         string message = (string)arguments[0];
         MissionPeer? missionPeer = fromPeer.GetComponent<MissionPeer>();
-        fromPeer.ControlledAgent.MakeVoice(SkinVoiceManager.VoiceType.Yell, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
+        // MakeVoice disabled: this native P/Invoke into the engine's sound system caused ExecutionEngineException
+        // crashes on Linux servers when called during network packet processing.
+        // fromPeer.ControlledAgent.MakeVoice(SkinVoiceManager.VoiceType.Yell, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
         foreach (NetworkCommunicator targetPeer in GameNetwork.NetworkPeers)
         {
             if (targetPeer.GetComponent<MissionPeer>()?.Team.Side == missionPeer.Team.Side)

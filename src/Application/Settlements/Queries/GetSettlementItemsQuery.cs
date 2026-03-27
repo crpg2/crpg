@@ -3,22 +3,23 @@ using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Parties.Models;
+using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Parties;
 using Microsoft.EntityFrameworkCore;
 
 namespace Crpg.Application.Settlements.Queries;
 
-public record GetSettlementItemsQuery : IMediatorRequest<IList<ItemStack>>
+public record GetSettlementItemsQuery : IMediatorRequest<IList<ItemStackViewModel>>
 {
     public int PartyId { get; init; }
     public int SettlementId { get; init; }
 
-    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<GetSettlementItemsQuery, IList<ItemStack>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<GetSettlementItemsQuery, IList<ItemStackViewModel>>
     {
         private readonly ICrpgDbContext _db = db;
         private readonly IMapper _mapper = mapper;
 
-        public async ValueTask<Result<IList<ItemStack>>> Handle(GetSettlementItemsQuery req,
+        public async ValueTask<Result<IList<ItemStackViewModel>>> Handle(GetSettlementItemsQuery req,
             CancellationToken cancellationToken)
         {
             var party = await _db.Parties
@@ -45,7 +46,7 @@ public record GetSettlementItemsQuery : IMediatorRequest<IList<ItemStack>>
                 return new(CommonErrors.PartyNotSettlementOwner(party.Id, party.CurrentSettlementId.Value));
             }
 
-            return new(_mapper.Map<IList<ItemStack>>(party.CurrentSettlement!.Items));
+            return new(_mapper.Map<IList<ItemStackViewModel>>(party.CurrentSettlement!.Items));
         }
     }
 }

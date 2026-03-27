@@ -1,5 +1,6 @@
 using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.Common.KeyBinder.Models;
+using TaleWorlds.Core;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
@@ -26,8 +27,8 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
             new()
             {
                 Id = "key_report_team_hit",
-                Name = "Report Team Hit",
-                Description = "Report a team hit you received",
+                Name = "{=KORWOuG1}Report Team Hit",
+                Description = "{=KORWOuG2}Report a team hit you received",
                 DefaultInputKey = InputKey.M,
             },
         },

@@ -21,8 +21,6 @@ public class CrpgMissionScoreboardUIHandler : MissionView
     private bool _isMouseVisible;
     private MissionLobbyComponent _missionLobbyComponent = null!;
     private MultiplayerTeamSelectComponent? _teamSelectComponent;
-    private float _scoreboardStayDuration;
-    private float _scoreboardStayTimeElapsed;
 
     [UsedImplicitly]
     public CrpgMissionScoreboardUIHandler(bool isSingleTeam)
@@ -45,7 +43,6 @@ public class CrpgMissionScoreboardUIHandler : MissionView
         }
 
         _missionLobbyComponent = Mission.GetMissionBehavior<MissionLobbyComponent>();
-        _scoreboardStayDuration = MissionLobbyComponent.PostMatchWaitDuration / 2f;
         _teamSelectComponent = Mission.GetMissionBehavior<MultiplayerTeamSelectComponent>();
         RegisterEvents();
         if (_dataSource != null)
@@ -72,17 +69,6 @@ public class CrpgMissionScoreboardUIHandler : MissionView
     public override void OnMissionTick(float dt)
     {
         base.OnMissionTick(dt);
-        if (_isMissionEnding)
-        {
-            if (_scoreboardStayTimeElapsed >= _scoreboardStayDuration)
-            {
-                ToggleScoreboard(false);
-                return;
-            }
-
-            _scoreboardStayTimeElapsed += dt;
-        }
-
         _dataSource?.Tick(dt);
         if (TaleWorlds.InputSystem.Input.IsGamepadActive)
         {
@@ -114,12 +100,6 @@ public class CrpgMissionScoreboardUIHandler : MissionView
 
     private void RegisterEvents()
     {
-        if (MissionScreen != null)
-        {
-            MissionScreen.OnSpectateAgentFocusIn += HandleSpectateAgentFocusIn;
-            MissionScreen.OnSpectateAgentFocusOut += HandleSpectateAgentFocusOut;
-        }
-
         _missionLobbyComponent.CurrentMultiplayerStateChanged += MissionLobbyComponentOnCurrentMultiplayerStateChanged;
         _missionLobbyComponent.OnCultureSelectionRequested += OnCultureSelectionRequested;
         if (_teamSelectComponent != null)
@@ -132,12 +112,6 @@ public class CrpgMissionScoreboardUIHandler : MissionView
 
     private void UnregisterEvents()
     {
-        if (MissionScreen != null)
-        {
-            MissionScreen.OnSpectateAgentFocusIn -= HandleSpectateAgentFocusIn;
-            MissionScreen.OnSpectateAgentFocusOut -= HandleSpectateAgentFocusOut;
-        }
-
         _missionLobbyComponent.CurrentMultiplayerStateChanged -= MissionLobbyComponentOnCurrentMultiplayerStateChanged;
         _missionLobbyComponent.OnCultureSelectionRequested -= OnCultureSelectionRequested;
         if (_teamSelectComponent != null)
@@ -185,24 +159,6 @@ public class CrpgMissionScoreboardUIHandler : MissionView
             }
 
             dataSource.SetMouseState(isMouseVisible);
-        }
-    }
-
-    private void HandleSpectateAgentFocusOut(Agent followedAgent)
-    {
-        if (followedAgent.MissionPeer != null)
-        {
-            MissionPeer component = followedAgent.MissionPeer.GetComponent<MissionPeer>();
-            _dataSource?.DecreaseSpectatorCount(component);
-        }
-    }
-
-    private void HandleSpectateAgentFocusIn(Agent followedAgent)
-    {
-        if (followedAgent.MissionPeer != null)
-        {
-            MissionPeer component = followedAgent.MissionPeer.GetComponent<MissionPeer>();
-            _dataSource?.IncreaseSpectatorCount(component);
         }
     }
 

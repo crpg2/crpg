@@ -8,10 +8,10 @@ internal class CrpgCustomTeamBannersAndNamesClient : MissionNetwork
 {
     public delegate void BannerNameChangedEventHandler(string attackerBanner, string defenderBanner, string attackerName, string defenderName);
     public event BannerNameChangedEventHandler? BannersChanged;
-    public string AttackerBannerCode { get; private set; } = string.Empty;
-    public string DefenderBannerCode { get; private set; } = string.Empty;
-    public string AttackerName { get; private set; } = string.Empty;
-    public string DefenderName { get; private set; } = string.Empty;
+    public string AttackerBannerCode { get; private set; } = "";
+    public string DefenderBannerCode { get; private set; } = "";
+    public string AttackerName { get; private set; } = "";
+    public string DefenderName { get; private set; } = "";
 
     public override MissionBehaviorType BehaviorType => MissionBehaviorType.Other;
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
@@ -22,10 +22,26 @@ internal class CrpgCustomTeamBannersAndNamesClient : MissionNetwork
 
     private void HandleUpdateTeamBannersAndNames(UpdateTeamBannersAndNames message)
     {
-        AttackerBannerCode = message.AttackerBanner.BannerCode != string.Empty ? message.AttackerBanner.BannerCode : Mission.Current.Teams.Attacker.Banner.BannerCode;
-        DefenderBannerCode = message.DefenderBanner.BannerCode != string.Empty ? message.DefenderBanner.BannerCode : Mission.Current.Teams.Defender.Banner.BannerCode;
-        AttackerName = message.AttackerName != string.Empty ? message.AttackerName : MBObjectManager.Instance?.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue())?.Name.ToString() ?? string.Empty;
-        DefenderName = message.DefenderName != string.Empty ? message.DefenderName : MBObjectManager.Instance?.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue())?.Name.ToString() ?? string.Empty;
+        string cultureTeam1Str = MultiplayerOptions.OptionType.CultureTeam1.GetStrValue();
+        var cultureTeam1 = MBObjectManager.Instance?.GetObject<BasicCultureObject>(cultureTeam1Str);
+        string cultureNameTeam1 = cultureTeam1?.Name.ToString() ?? "";
+
+        string cultureTeam2Str = MultiplayerOptions.OptionType.CultureTeam2.GetStrValue();
+        var cultureTeam2 = MBObjectManager.Instance?.GetObject<BasicCultureObject>(cultureTeam2Str);
+        string cultureNameTeam2 = cultureTeam2?.Name.ToString() ?? "";
+
+        AttackerBannerCode = message.AttackerBanner.BannerCode.Length != 0
+            ? message.AttackerBanner.BannerCode
+            : Mission.Teams.Attacker.Banner.BannerCode;
+        DefenderBannerCode = message.DefenderBanner.BannerCode.Length != 0
+            ? message.DefenderBanner.BannerCode
+            : Mission.Teams.Defender.Banner.BannerCode;
+        AttackerName = message.AttackerName.Length != 0
+            ? message.AttackerName
+            : cultureNameTeam1;
+        DefenderName = message.DefenderName.Length != 0
+            ? message.DefenderName
+            : cultureNameTeam2;
         BannersChanged?.Invoke(AttackerBannerCode, DefenderBannerCode, AttackerName, DefenderName);
     }
 }

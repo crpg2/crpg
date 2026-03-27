@@ -120,9 +120,10 @@
   loop: "{{ crpg_game_server_instances }}"
 
 - name: copy map configurations
-  template:
-    src: "config-{{ item.game_type }}-maps.txt.j2"
+  copy:
+    src: "{{ crpg_module_path }}/{{ item.name }}_maps.txt"
     dest: "{{ crpg_module_path }}/config-{{ item.name }}_maps.txt"
+    remote_src: true
     owner: "{{ crpg_game_server_user }}"
     group: "{{ crpg_game_server_user }}"
   loop: "{{ crpg_game_server_instances }}"

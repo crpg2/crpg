@@ -8,6 +8,7 @@ using Crpg.Application.Common.Services;
 using Crpg.Application.Parties.Models;
 using Crpg.Application.Parties.Services;
 using Crpg.Domain.Entities.Battles;
+using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Parties;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
@@ -204,7 +205,7 @@ public record UpdatePartyOrdersCommand : IMediatorRequest
                                     Status = PartyTransferOfferStatus.Intent,
                                     Gold = order.TransferOfferPartyIntent.Gold,
                                     Troops = order.TransferOfferPartyIntent.Troops,
-                                    Items = [.. order.TransferOfferPartyIntent.Items.Select(i => new PartyTransferOfferItem
+                                    Items = [.. order.TransferOfferPartyIntent.Items.Select(i => new ItemStack
                                     {
                                         ItemId = i.ItemId,
                                         Count = i.Count,

@@ -24,27 +24,31 @@ internal class HotConstant
         return constant;
     }
 
-    public static bool TryUpdate(int id, float newValue, out float oldValue)
+    public static bool TryGet(int id, out HotConstant? constant)
     {
-        if (AllConstants.TryGetValue(id, out var constant))
-        {
-            oldValue = constant.Value;
-            constant.Value = newValue;
-            return true;
-        }
-
-        oldValue = 0;
-        return false;
+        return AllConstants.TryGetValue(id, out constant);
     }
 
     private HotConstant(int id, float defaultValue, string description)
     {
         Id = id;
+        DefaultValue = defaultValue;
         Value = defaultValue;
         Description = description;
     }
 
     public int Id { get; }
+    public float DefaultValue { get; }
     public float Value { get; private set; }
     public string Description { get; }
+
+    public void Update(float newValue)
+    {
+        Value = newValue;
+    }
+
+    public void Reset()
+    {
+        Value = DefaultValue;
+    }
 }

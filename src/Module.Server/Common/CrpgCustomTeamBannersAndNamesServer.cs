@@ -10,28 +10,58 @@ namespace Crpg.Module;
 internal class CrpgCustomTeamBannersAndNamesServer : MissionNetwork
 {
     private readonly MultiplayerRoundController? _roundController;
-    private readonly Dictionary<int, (int count, CrpgClan clan)> _attackerClanNumber;
-    private readonly Dictionary<int, (int count, CrpgClan clan)> _defenderClanNumber;
     private int _previousAttackerClanId;
     private int _previousDefenderClanId;
 
     internal CrpgCustomTeamBannersAndNamesServer(MultiplayerRoundController? roundController)
     {
         _roundController = roundController;
-        _attackerClanNumber = new Dictionary<int, (int count, CrpgClan clan)>();
-        _defenderClanNumber = new Dictionary<int, (int count, CrpgClan clan)>();
     }
 
-    public Banner AttackerBanner { get; private set; } = new(string.Empty);
-    public Banner DefenderBanner { get; private set; } = new(string.Empty);
-    public string AttackerName { get; private set; } = string.Empty;
-    public string DefenderName { get; private set; } = string.Empty;
+    public Banner AttackerBanner { get; private set; } = new("");
+    public Banner DefenderBanner { get; private set; } = new("");
+    public string AttackerName { get; private set; } = "";
+    public string DefenderName { get; private set; } = "";
     public override MissionBehaviorType BehaviorType => MissionBehaviorType.Other;
 
     public void UpdateBanner()
     {
-        var attackerMaxClan = Extensions.MaxBy(_attackerClanNumber.DefaultIfEmpty(), c => c.Value.count).Value.clan;
-        var defenderMaxClan = Extensions.MaxBy(_defenderClanNumber.DefaultIfEmpty(), c => c.Value.count).Value.clan;
+        Dictionary<int, (int count, CrpgClan clan)> attackerClans = [];
+        Dictionary<int, (int count, CrpgClan clan)> defenderClans = [];
+
+        foreach (var networkPeer in GameNetwork.NetworkPeers)
+        {
+            var crpgPeer = networkPeer?.GetComponent<CrpgPeer>();
+            var missionPeer = networkPeer?.GetComponent<MissionPeer>();
+
+            if (missionPeer == null || crpgPeer?.User == null || crpgPeer.Clan == null || missionPeer.Team == null)
+            {
+                continue;
+            }
+
+            if (missionPeer.Team.Side == BattleSideEnum.None)
+            {
+                continue;
+            }
+
+            int peerClanId = crpgPeer.Clan!.Id;
+            var clanCounts = missionPeer.Team.Side == BattleSideEnum.Attacker
+                ? attackerClans
+                : defenderClans;
+
+            if (clanCounts.TryGetValue(peerClanId, out var entry))
+            {
+                entry.count++;
+                clanCounts[peerClanId] = entry;
+            }
+            else
+            {
+                clanCounts.Add(peerClanId, (1, crpgPeer.Clan));
+            }
+        }
+
+        var attackerMaxClan = Extensions.MaxBy(attackerClans.DefaultIfEmpty(), c => c.Value.count).Value.clan;
+        var defenderMaxClan = Extensions.MaxBy(defenderClans.DefaultIfEmpty(), c => c.Value.count).Value.clan;
         int attackerMaxClanId = attackerMaxClan?.Id ?? -1;
         int defenderMaxClanId = defenderMaxClan?.Id ?? -1;
         if (attackerMaxClanId == _previousAttackerClanId && defenderMaxClanId == _previousDefenderClanId)
@@ -82,17 +112,17 @@ internal class CrpgCustomTeamBannersAndNamesServer : MissionNetwork
 
         if (defenderBanner != null)
         {
-            DefenderBanner = new(defenderBanner);
+            DefenderBanner = new Banner(defenderBanner);
         }
 
-        string attackerName = MBObjectManager.Instance?.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue())?.Name.ToString() ?? string.Empty;
-        string defenderName = MBObjectManager.Instance?.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue()).Name.ToString() ?? string.Empty;
-        if (attackerName != string.Empty)
+        string attackerName = MBObjectManager.Instance?.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue())?.Name.ToString() ?? "";
+        string defenderName = MBObjectManager.Instance?.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue()).Name.ToString() ?? "";
+        if (attackerName != "")
         {
             AttackerName = attackerName;
         }
 
-        if (defenderName != string.Empty)
+        if (defenderName != "")
         {
             DefenderName = defenderName;
         }
@@ -103,7 +133,6 @@ internal class CrpgCustomTeamBannersAndNamesServer : MissionNetwork
         base.OnBehaviorInitialize();
         if (_roundController != null)
         {
-            _roundController.OnRoundStarted += InitializeClanDictionaries;
             _roundController.OnRoundStarted += UpdateBanner;
         }
     }
@@ -113,7 +142,6 @@ internal class CrpgCustomTeamBannersAndNamesServer : MissionNetwork
         base.OnRemoveBehavior();
         if (_roundController != null)
         {
-            _roundController.OnRoundStarted -= InitializeClanDictionaries;
             _roundController.OnRoundStarted -= UpdateBanner;
         }
     }
@@ -129,39 +157,5 @@ internal class CrpgCustomTeamBannersAndNamesServer : MissionNetwork
             DefenderName = DefenderName,
         });
         GameNetwork.EndModuleEventAsServer();
-    }
-
-    private void InitializeClanDictionaries()
-    {
-        foreach (var networkPeer in GameNetwork.NetworkPeers)
-        {
-            var crpgPeer = networkPeer?.GetComponent<CrpgPeer>();
-            var missionPeer = networkPeer?.GetComponent<MissionPeer>();
-
-            if (missionPeer == null || crpgPeer?.User == null || crpgPeer.Clan == null || missionPeer.Team == null)
-            {
-                continue;
-            }
-
-            if (missionPeer.Team.Side == BattleSideEnum.None)
-            {
-                continue;
-            }
-
-            int peerClanId = crpgPeer.Clan!.Id;
-            Dictionary<int, (int count, CrpgClan clan)> clanNumber = missionPeer.Team.Side == BattleSideEnum.Attacker
-                ? _attackerClanNumber
-                : _defenderClanNumber;
-
-            if (clanNumber.TryGetValue(peerClanId, out var clan))
-            {
-                clan.count++;
-                clanNumber[peerClanId] = clan;
-            }
-            else
-            {
-                clanNumber.Add(peerClanId, (1, crpgPeer.Clan));
-            }
-        }
     }
 }

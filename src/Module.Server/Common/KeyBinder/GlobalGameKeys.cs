@@ -1,8 +1,7 @@
-using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.Common.KeyBinder.Models;
 using TaleWorlds.InputSystem;
 
-namespace Crpg.Module.Server.Common.Keybinder;
+namespace Crpg.Module.Common.KeyBinder;
 
 public class GlobalGameKeys : IUseKeyBinder
 {
@@ -17,8 +16,8 @@ public class GlobalGameKeys : IUseKeyBinder
             new()
             {
                 Id = "key_command_modifier",
-                Name = "Command Modifier (hold)",
-                Description = "Modifier key ie: Ctrl",
+                Name = "{=KORWOuG3}Command Modifier (hold)",
+                Description = "{=KORWOuG4}Modifier key ie: Ctrl",
                 DefaultInputKey = InputKey.LeftControl,
             },
         },
