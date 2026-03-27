@@ -649,8 +649,8 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         float equippedItemLevelComplement = 1f - equippedItemLevel;
         // "leading" a target means aiming ahead of a moving target. The AI will roll between min (shoot behind) and max
         // (shoot ahead). https://www.desmos.com/calculator/6ityslajoa
-        props.AiRangerLeadErrorMin = -MathF.Pow(equippedItemLevelComplement, 0.5f) * 0.4f;
-        props.AiRangerLeadErrorMax = MathF.Pow(equippedItemLevelComplement, 0.5f) * 0.3f;
+        props.AiRangerLeadErrorMin = -MathF.Pow(equippedItemLevelComplement, 0.5f) * 0.6f;
+        props.AiRangerLeadErrorMax = MathF.Pow(equippedItemLevelComplement, 0.5f) * 0.5f;
         // Aiming error. https://www.desmos.com/calculator/pqgcp48aoe
         props.AiRangerVerticalErrorMultiplier = equippedItemLevelComplement * 0.1f;
         props.AiRangerHorizontalErrorMultiplier = equippedItemLevelComplement * 0.035f;
@@ -660,7 +660,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AIAttackOnDecideChance = MathF.Clamp(0.1f * CalculateAIAttackOnDecideMaxValue() * (3f - agent.Defensiveness), 0.05f, 1f);
         props.SetStat(DrivenProperty.UseRealisticBlocking, agent.Controller != AgentControllerType.Player ? 1f : 0f);
         props.AiWeaponFavorMultiplierMelee = 1f;
-        props.AiWeaponFavorMultiplierRanged = 1f;
+        props.AiWeaponFavorMultiplierRanged = 1f;    
         props.AiWeaponFavorMultiplierPolearm = 1f;
     }
 
