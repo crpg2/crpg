@@ -64,6 +64,5 @@
         "CRPG_API_BASE_URL": "https://api.c-rpg.eu"
       }
     }
-  },
-  "$schema": "http://json.schemastore.org/launchsettings.json"
+  }
 }
