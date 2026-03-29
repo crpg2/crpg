@@ -8048,7 +8048,7 @@
     <Pieces>
       <Piece id="crpg_rhomphaia_blade_h0" Type="Blade" scale_factor="105" />
       <Piece id="crpg_rhomphaia_guard_h0" Type="Guard" scale_factor="90" />
-      <Piece id="crpg_rhomphaia_handle_h0" Type="Handle" scale_factor="50" />
+      <Piece id="crpg_rhomphaia_handle_h0" Type="Handle" scale_factor="40" />
       <Piece id="crpg_rhomphaia_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
@@ -8056,7 +8056,7 @@
     <Pieces>
       <Piece id="crpg_rhomphaia_blade_h1" Type="Blade" scale_factor="105" />
       <Piece id="crpg_rhomphaia_guard_h1" Type="Guard" scale_factor="90" />
-      <Piece id="crpg_rhomphaia_handle_h1" Type="Handle" scale_factor="50" />
+      <Piece id="crpg_rhomphaia_handle_h1" Type="Handle" scale_factor="40" />
       <Piece id="crpg_rhomphaia_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
@@ -8064,7 +8064,7 @@
     <Pieces>
       <Piece id="crpg_rhomphaia_blade_h2" Type="Blade" scale_factor="105" />
       <Piece id="crpg_rhomphaia_guard_h2" Type="Guard" scale_factor="90" />
-      <Piece id="crpg_rhomphaia_handle_h2" Type="Handle" scale_factor="50" />
+      <Piece id="crpg_rhomphaia_handle_h2" Type="Handle" scale_factor="40" />
       <Piece id="crpg_rhomphaia_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
@@ -8072,7 +8072,7 @@
     <Pieces>
       <Piece id="crpg_rhomphaia_blade_h3" Type="Blade" scale_factor="105" />
       <Piece id="crpg_rhomphaia_guard_h3" Type="Guard" scale_factor="90" />
-      <Piece id="crpg_rhomphaia_handle_h3" Type="Handle" scale_factor="50" />
+      <Piece id="crpg_rhomphaia_handle_h3" Type="Handle" scale_factor="40" />
       <Piece id="crpg_rhomphaia_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
