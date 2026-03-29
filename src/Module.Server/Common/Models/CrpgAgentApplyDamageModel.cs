@@ -166,8 +166,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
                 weapon.WeaponClass == WeaponClass.TwoHandedSword ||
                 weapon.WeaponClass == WeaponClass.TwoHandedAxe ||
                 weapon.WeaponClass == WeaponClass.LowGripPolearm ||
-                weapon.WeaponClass == WeaponClass.TwoHandedPolearm
-            ))
+                weapon.WeaponClass == WeaponClass.TwoHandedPolearm))
         {
             finalDamage *= 0.70f;
         }
