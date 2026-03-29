@@ -32497,7 +32497,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_german_halberd_blade_h2" name="{=kaikaikai}German Halberd Blade" tier="3" piece_type="Blade" mesh="german_halberd_blade" culture="Culture.vlandia" length="68.8" weight="0.74">
+  <CraftingPiece id="crpg_german_halberd_blade_h2" name="{=kaikaikai}German Halberd Blade" tier="3" piece_type="Blade" mesh="german_halberd_blade" culture="Culture.vlandia" length="68.8" weight="0.78">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.3" />
       <Swing damage_type="Cut" damage_factor="4.4" />
@@ -32510,7 +32510,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_german_halberd_blade_h3" name="{=kaikaikai}German Halberd Blade" tier="3" piece_type="Blade" mesh="german_halberd_blade" culture="Culture.vlandia" length="68.8" weight="0.74">
+  <CraftingPiece id="crpg_german_halberd_blade_h3" name="{=kaikaikai}German Halberd Blade" tier="3" piece_type="Blade" mesh="german_halberd_blade" culture="Culture.vlandia" length="68.8" weight="0.78">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.5" />
       <Swing damage_type="Cut" damage_factor="4.5" />
