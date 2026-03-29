@@ -1504,7 +1504,7 @@
         <equipment slot="Body" id="Item.crpg_coat_of_plates_over_mail_v3_h0" />
         <equipment slot="Gloves" id="Item.crpg_battania_noble_bracers_v3_h0" />
         <equipment slot="Leg" id="Item.crpg_fine_town_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_burgundian_glaive_v5_h1" />
+        <equipment slot="Item0" id="Item.crpg_burgundian_glaive_v6_h1" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -1600,7 +1600,7 @@
         <equipment slot="Body" id="Item.crpg_reinforced_suede_armor_v2_h0" />
         <equipment slot="Gloves" id="Item.crpg_guarded_armwraps_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_steppe_leather_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_ancientvoulge_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_ancientvoulge_v3_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
         <equipment slot="Head" id="Item.crpg_roningasa_v2_h0" />
@@ -2879,7 +2879,7 @@
         <equipment slot="Body" id="Item.crpg_aserai_cav_armor_h0" />
         <equipment slot="Gloves" id="Item.crpg_decorated_imperial_gauntlets_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_decorated_imperial_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_warrazor_v4_h3" />
+        <equipment slot="Item0" id="Item.crpg_warrazor_v5_h3" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -3393,7 +3393,7 @@
         <equipment slot="Body" id="Item.crpg_kilt_over_plated_leather_v2_h0" />
         <equipment slot="Gloves" id="Item.crpg_battania_noble_bracers_v3_h0" />
         <equipment slot="Leg" id="Item.crpg_turndown_leather_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_rhomphaia_v4_h3" />
+        <equipment slot="Item0" id="Item.crpg_rhomphaia_v5_h3" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -4521,7 +4521,7 @@
         <equipment slot="Body" id="Item.crpg_imperial_scale_armor_v3_h0" />
         <equipment slot="Gloves" id="Item.crpg_lamellar_plate_gauntlets_v3_h0" />
         <equipment slot="Leg" id="Item.crpg_lamellar_plate_boots_v3_h0" />
-        <equipment slot="Item0" id="Item.crpg_german_halberd_v4_h3" />
+        <equipment slot="Item0" id="Item.crpg_german_halberd_v5_h3" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
