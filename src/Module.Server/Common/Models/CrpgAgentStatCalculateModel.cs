@@ -604,11 +604,11 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         // Chance the AI parries. https://www.desmos.com/calculator/ebzhwk4wwp
         props.AIParryOnDecideAbility = MBMath.Lerp(0.2f, 0.5f, MBMath.ClampFloat(MathF.Pow(meleeLevel, 1.2f), 0f, 1f));
         // Chance the AI parries when it's attacking.
-        props.AIParryOnAttackAbility = meleeLevel;
+        props.AIParryOnAttackAbility = 0f;
         // Chance the AI parries on chained attacks. https://www.desmos.com/calculator/ykeqtnkspn
         props.AIParryOnAttackingContinueAbility = MBMath.Lerp(0.2f, 0.8f, meleeLevel);
-        // Chance the AI changes a parry direction. https://www.desmos.com/calculator/ljuyuavq7i
-        props.AiParryDecisionChangeValue = 0.05f + 0.5f * meleeLevel;
+        // Chance the AI changes a parry direction.
+        props.AiParryDecisionChangeValue = 0f;
         props.AIRealizeBlockingFromIncorrectSideAbility = 0f;
         props.AiRaiseShieldDelayTimeBase = -0.75f + 0.5f * meleeLevel;
         props.AiUseShieldAgainstEnemyMissileProbability = 0.1f + meleeLevel * 0.6f + defenseLevel * 0.2f;
@@ -648,9 +648,9 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AiWaitBeforeShootFactor = agent.PropertyModifiers.resetAiWaitBeforeShootFactor ? 0f : 1f - 0.5f * equippedItemLevel;
         float equippedItemLevelComplement = 1f - equippedItemLevel;
         // "leading" a target means aiming ahead of a moving target. The AI will roll between min (shoot behind) and max
-        // (shoot ahead). https://www.desmos.com/calculator/6ityslajoa
-        props.AiRangerLeadErrorMin = -MathF.Pow(equippedItemLevelComplement, 0.5f) * 0.4f;
-        props.AiRangerLeadErrorMax = MathF.Pow(equippedItemLevelComplement, 0.5f) * 0.3f;
+        // (shoot ahead). https://www.desmos.com/calculator/ntwamwy9ul
+        props.AiRangerLeadErrorMin = -MathF.Pow(equippedItemLevelComplement, 0.5f) * 0.6f;
+        props.AiRangerLeadErrorMax = MathF.Pow(equippedItemLevelComplement, 0.5f) * 0.5f;
         // Aiming error. https://www.desmos.com/calculator/pqgcp48aoe
         props.AiRangerVerticalErrorMultiplier = equippedItemLevelComplement * 0.1f;
         props.AiRangerHorizontalErrorMultiplier = equippedItemLevelComplement * 0.035f;
