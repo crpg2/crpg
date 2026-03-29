@@ -151,14 +151,14 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         var weapon = attackInformation.AttackerWeapon.CurrentUsageItem;
         var strikeType = (StrikeType)collisionData.StrikeType;
 
-        // 1) OneHandedPolearm thrust damage reduction (always)
+        // OneHandedPolearm thrust damage reduction
         if (weapon.WeaponClass == WeaponClass.OneHandedPolearm &&
             strikeType == StrikeType.Thrust)
         {
             finalDamage *= 0.75f;
         }
 
-        // 2) Mounted swing damage reduction for heavy weapons
+        // Mounted swing damage reduction
         if (attackInformation.DoesAttackerHaveMountAgent &&
             strikeType == StrikeType.Swing &&
             (
