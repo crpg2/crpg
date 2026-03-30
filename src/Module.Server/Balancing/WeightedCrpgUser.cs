@@ -1,4 +1,5 @@
-﻿using Crpg.Module.Api.Models.Users;
+using Crpg.Module.Api.Models.Users;
+using Crpg.Module.Common;
 
 namespace Crpg.Module.Balancing;
 
@@ -11,6 +12,6 @@ internal class WeightedCrpgUser
     }
 
     public CrpgUser User { get; }
-    public int? ClanId => User.ClanMembership?.ClanId;
+    public int? ClanId => CrpgServerConfiguration.DisableClanBalancing ? null : User.ClanMembership?.ClanId;
     public float Weight { get; }
 }

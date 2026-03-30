@@ -1,4 +1,4 @@
-﻿using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;
 using Crpg.Module.Api.Models;
 using Crpg.Module.HarmonyPatches;
 using Crpg.Module.Notifications;
@@ -32,6 +32,7 @@ internal static class CrpgServerConfiguration
     public static int LowPopulationThreshold { get; private set; } = 12;
     public static int RewardTick { get; private set; } = 60;
     public static bool TeamBalanceOnce { get; private set; }
+    public static bool DisableClanBalancing { get; private set; }
     public static bool FrozenBots { get; private set; } = false;
     public static int ControlledBotsCount { get; private set; } = 0;
     public static Tuple<TimeSpan, TimeSpan, TimeZoneInfo>? HappyHours { get; private set; }
@@ -199,6 +200,22 @@ internal static class CrpgServerConfiguration
 
         TeamBalanceOnce = teamBalanceOnce;
         Debug.Print($"Set team balance once to {teamBalanceOnce}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_disable_clan_balancing", "Disable clan-aware team balancing. When true, all players are treated as clanless.")]
+    private static void SetDisableClanBalancing(string? inputStr)
+    {
+        if (inputStr == null
+            || !bool.TryParse(inputStr, out bool disableClanBalancing))
+        {
+            Debug.Print($"Invalid disable clan balancing: {inputStr}");
+            Debug.Print($"Current value: crpg_disable_clan_balancing {DisableClanBalancing}");
+            return;
+        }
+
+        DisableClanBalancing = disableClanBalancing;
+        Debug.Print($"Set disable clan balancing to {disableClanBalancing}");
     }
 
     [UsedImplicitly]
