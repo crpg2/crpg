@@ -1,8 +1,9 @@
-﻿using Crpg.Module.Notifications;
+using Crpg.Module.Notifications;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.Common.ChatCommands.Commander;
+
 internal class OrderCommand : CommanderCommand
 {
     public OrderCommand(ChatCommandsComponent chatComponent)
