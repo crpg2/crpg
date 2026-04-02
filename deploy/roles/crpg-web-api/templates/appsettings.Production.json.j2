@@ -25,9 +25,15 @@
         "RedirectUris": [
           "https://{{ crpg_domain_name }}",
           "https://{{ crpg_domain_name }}/signin-callback",
-          "https://{{ crpg_domain_name }}/signin-silent-callback"
+          "https://{{ crpg_domain_name }}/signin-silent-callback",
+          "https://{{ crpg_domain_name_proxy }}",
+          "https://{{ crpg_domain_name_proxy }}/signin-callback",
+          "https://{{ crpg_domain_name_proxy }}/signin-silent-callback"
         ],
-        "PostLogoutRedirectUris": ["https://{{ crpg_domain_name }}"],
+        "PostLogoutRedirectUris": [
+          "https://{{ crpg_domain_name }}",
+          "https://{{ crpg_domain_name_proxy }}"
+        ],
         "Permissions": [
           "ept:authorization",
           "ept:logout",

@@ -5,6 +5,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Resources;
@@ -38,6 +39,9 @@ public partial class MainViewModel : ObservableObject
 
     [ObservableProperty]
     private bool _isBeta;
+
+    [ObservableProperty]
+    private bool _ipMappingEnabled;
 
     [ObservableProperty]
     private bool _isUpdating;
@@ -77,6 +81,7 @@ public partial class MainViewModel : ObservableObject
         {
             SelectedPlatform = Config.LastPlatform;
             GameLocation = Config.GameLocations.TryGetValue(SelectedPlatform, out var gameLocation) ? gameLocation : null;
+            IpMappingEnabled = Config.IpMappingEnabled;
             IsGameUpToDate = false;
         }
 
@@ -240,9 +245,19 @@ public partial class MainViewModel : ObservableObject
         return canUpdate;
     }
 
+    private string GetBaseUrl()
+    {
+        if (IsBeta)
+        {
+            return "https://namidaka.fr/";
+        }
+
+        return IpMappingEnabled ? "https://c-rpg.site/" : "https://c-rpg.eu/";
+    }
+
     private async Task CheckNewVersion()
     {
-        string onlineVersion = await OnlineLauncherVersion("https://c-rpg.eu/LauncherVersion.txt");
+        string onlineVersion = await OnlineLauncherVersion(GetBaseUrl() + "LauncherVersion.txt");
         if (onlineVersion == "failed")
         {
             return;
@@ -445,6 +460,8 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand(CanExecute = nameof(CanStartCrpg))]
     private void StartCrpg()
     {
+        ApplyIpMappingSetting(GameLocation?.ProgramWorkingDirectory ?? string.Empty);
+
         if (GameLocation == null)
         {
             WriteToConsole("Game Location is not set!");
@@ -473,7 +490,7 @@ public partial class MainViewModel : ObservableObject
         XmlDocument doc = new();
         try
         {
-            string url = IsBeta ? "https://namidaka.fr/hash.xml" : "https://c-rpg.eu/hash.xml";
+            string url = GetBaseUrl() + "hash.xml";
             using (var client = new HttpClient())
             {
                 string xmlContent = await client.GetStringAsync(url);
@@ -626,7 +643,7 @@ public partial class MainViewModel : ObservableObject
                     // Download the file
                     WriteToConsole($"Downloading and extracting {assetToDownload.Key + ".tar.gz"} ");
                     string fileToDownload = assetToDownload.Key + ".tar.gz";
-                    var chunkedRequest = CrpgChunkedRequest.Create((IsBeta ? "https://namidaka.fr/AssetPackages/" : "https://c-rpg.eu/AssetPackages/") + assetToDownload.Key + ".tar.gz");
+                    var chunkedRequest = CrpgChunkedRequest.Create(GetBaseUrl() + "AssetPackages/" + assetToDownload.Key + ".tar.gz");
                     string tempPath = Path.Combine(Path.GetTempPath(), fileToDownload);
                     IProgress<double> currentProgress = new Progress<double>(p =>
                     {
@@ -671,7 +688,7 @@ public partial class MainViewModel : ObservableObject
                     {
                         WriteToConsole($"Downloading and extracting {mapToDownload.Key + ".tar.gz"} ");
                         string fileToDownload = mapToDownload.Key + ".tar.gz";
-                        var chunkedRequest = CrpgChunkedRequest.Create((IsBeta ? "https://namidaka.fr/SceneObj/" : "https://c-rpg.eu/SceneObj/") + fileToDownload);
+                        var chunkedRequest = CrpgChunkedRequest.Create(GetBaseUrl() + "SceneObj/" + fileToDownload);
                         string tempPath = Path.Combine(Path.GetTempPath(), fileToDownload);
 
                         progresses.TryAdd(localIndex, 0); // Initialize progress for this download
@@ -710,7 +727,7 @@ public partial class MainViewModel : ObservableObject
                     // Download the file
                     WriteToConsole($"Downloading and extracting the xmls files : rest.tar.gz");
                     string fileToDownload = "rest" + ".tar.gz";
-                    var chunkedRequest = CrpgChunkedRequest.Create((IsBeta ? "https://namidaka.fr/" : "https://c-rpg.eu/") + fileToDownload);
+                    var chunkedRequest = CrpgChunkedRequest.Create(GetBaseUrl() + fileToDownload);
                     string tempPath = Path.Combine(Path.GetTempPath(), fileToDownload);
                     IProgress<double> currentProgress = new Progress<double>(p =>
                     {
@@ -718,7 +735,10 @@ public partial class MainViewModel : ObservableObject
                     });
                     await chunkedRequest.DownloadAsync(tempPath, currentProgress);
 
-                    var extractionTask3 = Task.Run(() => ExtractAndDeleteFile(tempPath, Path.Combine(GameLocation.InstallationPath, "Modules/cRPG/")));
+                    var extractionTask3 = Task.Run(() =>
+                    {
+                        ExtractAndDeleteFile(tempPath, Path.Combine(GameLocation.InstallationPath, "Modules/cRPG/"));
+                    });
                     allTasks.Add(extractionTask3);
                 }
                 catch (Exception ex)
@@ -782,6 +802,56 @@ public partial class MainViewModel : ObservableObject
         return Config.WriteConfig(ProgramDataPath, ConfigFileName);
     }
 
+    private void ApplyIpMappingSetting(string cRPGFolderPath)
+    {
+        try
+        {
+            string ipMappingPath = Path.Combine(cRPGFolderPath, "ModuleData", "crpg-ip-mapping.json");
+            if (!File.Exists(ipMappingPath))
+            {
+                return;
+            }
+
+            string json = File.ReadAllText(ipMappingPath);
+            using var doc = JsonDocument.Parse(json);
+            var root = doc.RootElement;
+
+            // Check if the JSON has the expected structure
+            if (root.TryGetProperty("enabled", out _))
+            {
+                // Create a new JSON with updated enabled field
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                using var stream = new MemoryStream();
+                using var writer = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = true });
+
+                writer.WriteStartObject();
+
+                // Copy all properties, updating the enabled field
+                foreach (var property in root.EnumerateObject())
+                {
+                    if (property.Name == "enabled")
+                    {
+                        writer.WriteBoolean("enabled", Config.IpMappingEnabled);
+                    }
+                    else
+                    {
+                        property.WriteTo(writer);
+                    }
+                }
+
+                writer.WriteEndObject();
+                writer.Flush();
+
+                File.WriteAllBytes(ipMappingPath, stream.ToArray());
+                WriteToConsole($"Proxy setting updated: {Config.IpMappingEnabled}");
+            }
+        }
+        catch (Exception ex)
+        {
+            WriteToConsole($"Failed to update Proxy setting: {ex.Message}");
+        }
+    }
+
     partial void OnGameLocationChanged(GameInstallationInfo? value)
     {
         NotifyUI();
@@ -790,6 +860,13 @@ public partial class MainViewModel : ObservableObject
     partial void OnIsBetaChanged(bool oldValue, bool newValue)
     {
         IsGameUpToDate = false;
+        NotifyUI();
+    }
+
+    partial void OnIpMappingEnabledChanged(bool oldValue, bool newValue)
+    {
+        Config.IpMappingEnabled = newValue;
+        WriteConfig();
         NotifyUI();
     }
 
