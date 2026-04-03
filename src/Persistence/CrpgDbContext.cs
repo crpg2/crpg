@@ -43,6 +43,7 @@ public class CrpgDbContext : DbContext, ICrpgDbContext
     public DbSet<UserItemPreset> UserItemPresets { get; set; } = default!;
     public DbSet<UserItemPresetSlot> UserItemPresetSlots { get; set; } = default!;
     public DbSet<PersonalItem> PersonalItems { get; set; } = default!;
+    public DbSet<ClanItem> ClanItems { get; set; } = default!;
     public DbSet<EquippedItem> EquippedItems { get; set; } = default!;
     public DbSet<CharacterLimitations> CharacterLimitations { get; set; } = default!;
     public DbSet<Restriction> Restrictions { get; set; } = default!;

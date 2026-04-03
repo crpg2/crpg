@@ -25,6 +25,7 @@ public interface ICrpgDbContext
     DbSet<UserItemPreset> UserItemPresets { get; }
     DbSet<UserItemPresetSlot> UserItemPresetSlots { get; }
     DbSet<PersonalItem> PersonalItems { get; }
+    DbSet<ClanItem> ClanItems { get; }
     DbSet<EquippedItem> EquippedItems { get; }
     DbSet<CharacterLimitations> CharacterLimitations { get; }
     DbSet<Restriction> Restrictions { get; }
@@ -51,6 +52,7 @@ public interface ICrpgDbContext
     DbSet<Terrain> Terrains { get; }
     DbSet<UserNotificationMetadata> UserNotificationMetadata { get; set; }
     DbSet<Setting> Settings { get; set; }
+
     EntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

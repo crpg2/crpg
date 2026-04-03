@@ -1,4 +1,4 @@
-﻿using Crpg.Domain.Entities.Battles;
+using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Parties;
@@ -109,6 +109,12 @@ internal static class CommonErrors
         Detail = $"Clan invitation with id '{clanInvitationId}' was not found",
     };
 
+    public static Error ClanItemAlreadyExist(int clanId, string itemId) => new(ErrorType.Validation, ErrorCode.ClanItemAlreadyExist)
+    {
+        Title = "Clan exclusive item already exists",
+        Detail = $"Clan with id '{clanId}' already has an exclusive item '{itemId}'",
+    };
+
     public static Error ClanMemberRoleNotMet(int userId, ClanMemberRole expectedRole, ClanMemberRole actualRole) =>
         new(ErrorType.Forbidden, ErrorCode.ClanMemberRoleNotMet)
         {
@@ -168,7 +174,7 @@ internal static class CommonErrors
     {
         Title = "Party is a fighter in this battle",
         Detail = $"Cannot performed the requested action because the party with id '{partyId}' is a fighter in" +
-                 $" the battle with id '{battleId}'",
+                $" the battle with id '{battleId}'",
     };
 
     public static Error PartyInBattle(int partyId) => new(ErrorType.Validation, ErrorCode.PartyInBattle)
