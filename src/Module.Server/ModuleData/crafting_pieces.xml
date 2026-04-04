@@ -38359,27 +38359,27 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_bobsickle_pommel_h3" name="{=}Bobsickle Pommel" tier="1" piece_type="Pommel" mesh="bobsickle_pommel" culture="Culture.empire" length="8.35" weight="0" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_body_h0" name="{=gIm5Lnh8}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" length="0" weight="0.1" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_plumbata_body_h0" name="{=gIm5Lnh8}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" length="0" weight="0.1" excluded_item_usage_features="long">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_body_h1" name="{=gIm5Lnh8}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" length="0" weight="0.1" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_plumbata_body_h1" name="{=gIm5Lnh8}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" length="0" weight="0.1" excluded_item_usage_features="long">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_body_h2" name="{=gIm5Lnh8}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" length="0" weight="0.1" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_plumbata_body_h2" name="{=gIm5Lnh8}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" length="0" weight="0.1" excluded_item_usage_features="long">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_body_h3" name="{=gIm5Lnh8}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" length="0" weight="0.1" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_plumbata_body_h3" name="{=gIm5Lnh8}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" length="0" weight="0.1" excluded_item_usage_features="long">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_head_h0" name="{=T1aiDuOp}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_head" length="29.6" weight="0.4" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
+  <CraftingPiece id="crpg_plumbata_head_h0" name="{=T1aiDuOp}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" length="69.4" weight="0.4" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="1.17" />
     </BladeData>
@@ -38390,7 +38390,7 @@
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_head_h1" name="{=T1aiDuOp}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_head" length="29.6" weight="0.4" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
+  <CraftingPiece id="crpg_plumbata_head_h1" name="{=T1aiDuOp}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" length="69.4" weight="0.4" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="1.17" />
     </BladeData>
@@ -38401,7 +38401,7 @@
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_head_h2" name="{=T1aiDuOp}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_head" length="29.6" weight="0.4" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
+  <CraftingPiece id="crpg_plumbata_head_h2" name="{=T1aiDuOp}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" length="69.4" weight="0.4" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="1.17" />
     </BladeData>
@@ -38412,7 +38412,7 @@
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_head_h3" name="{=T1aiDuOp}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_head" length="29.6" weight="0.4" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
+  <CraftingPiece id="crpg_plumbata_head_h3" name="{=T1aiDuOp}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" length="69.4" weight="0.4" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="1.17" />
     </BladeData>

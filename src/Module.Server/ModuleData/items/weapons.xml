@@ -14548,7 +14548,7 @@
       <Piece id="crpg_wolfstooth_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wolfstooth_h1" name="{=}Lang Ya Bang" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_wolfstooth_h1" name="{=}Lang Ya Bang +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_wolfstooth_head_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_wolfstooth_handle_h1" Type="Handle" scale_factor="100" />
@@ -14556,7 +14556,7 @@
       <Piece id="crpg_wolfstooth_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wolfstooth_h2" name="{=}Lang Ya Bang" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_wolfstooth_h2" name="{=}Lang Ya Bang +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_wolfstooth_head_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_wolfstooth_handle_h2" Type="Handle" scale_factor="100" />
@@ -14564,7 +14564,7 @@
       <Piece id="crpg_wolfstooth_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wolfstooth_h3" name="{=}Lang Ya Bang" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_wolfstooth_h3" name="{=}Lang Ya Bang +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_wolfstooth_head_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_wolfstooth_handle_h3" Type="Handle" scale_factor="100" />
@@ -14580,7 +14580,7 @@
       <Piece id="crpg_sunsword_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_sunsword_h1" name="{=BalanceMe}Sunsword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_sunsword_h1" name="{=BalanceMe}Sunsword +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_sunsword_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_sunsword_guard_h1" Type="Guard" scale_factor="100" />
@@ -14588,7 +14588,7 @@
       <Piece id="crpg_sunsword_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_sunsword_h2" name="{=BalanceMe}Sunsword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_sunsword_h2" name="{=BalanceMe}Sunsword +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_sunsword_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_sunsword_guard_h2" Type="Guard" scale_factor="100" />
@@ -14596,7 +14596,7 @@
       <Piece id="crpg_sunsword_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_sunsword_h3" name="{=BalanceMe}Sunsword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_sunsword_h3" name="{=BalanceMe}Sunsword +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_sunsword_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_sunsword_guard_h3" Type="Guard" scale_factor="100" />
@@ -14612,7 +14612,7 @@
       <Piece id="crpg_podaodao_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_podaodao_h1" name="{=}Heavy Podao" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false">
+  <CraftedItem id="crpg_podaodao_h1" name="{=}Heavy Podao +1" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_podaodao_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_podaodao_guard_h1" Type="Guard" scale_factor="100" />
@@ -14620,7 +14620,7 @@
       <Piece id="crpg_podaodao_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_podaodao_h2" name="{=}Heavy Podao" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false">
+  <CraftedItem id="crpg_podaodao_h2" name="{=}Heavy Podao +2" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_podaodao_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_podaodao_guard_h2" Type="Guard" scale_factor="100" />
@@ -14628,7 +14628,7 @@
       <Piece id="crpg_podaodao_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_podaodao_h3" name="{=}Heavy Podao" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false">
+  <CraftedItem id="crpg_podaodao_h3" name="{=}Heavy Podao +3" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_podaodao_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_podaodao_guard_h3" Type="Guard" scale_factor="100" />
@@ -14642,19 +14642,19 @@
       <Piece id="crpg_hatinghand_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hatinghand_h1" name="{=BalanceMe}Hating Hand" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_hatinghand_h1" name="{=BalanceMe}Hating Hand +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_hatinghand_head_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_hatinghand_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hatinghand_h2" name="{=BalanceMe}Hating Hand" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_hatinghand_h2" name="{=BalanceMe}Hating Hand +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_hatinghand_head_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_hatinghand_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hatinghand_h3" name="{=BalanceMe}Hating Hand" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_hatinghand_h3" name="{=BalanceMe}Hating Hand +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_hatinghand_head_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_hatinghand_handle_h3" Type="Handle" scale_factor="100" />
@@ -14666,19 +14666,19 @@
       <Piece id="crpg_hatinghand_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hammerhand_h1" name="{=BalanceMe}Hammer Hand" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+  <CraftedItem id="crpg_hammerhand_h1" name="{=BalanceMe}Hammer Hand +1" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_hammerhand_head_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_hatinghand_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hammerhand_h2" name="{=BalanceMe}Hammer Hand" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+  <CraftedItem id="crpg_hammerhand_h2" name="{=BalanceMe}Hammer Hand +2" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_hammerhand_head_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_hatinghand_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hammerhand_h3" name="{=BalanceMe}Hammer Hand" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+  <CraftedItem id="crpg_hammerhand_h3" name="{=BalanceMe}Hammer Hand +3" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_hammerhand_head_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_hatinghand_handle_h3" Type="Handle" scale_factor="100" />
@@ -14690,19 +14690,19 @@
       <Piece id="crpg_plumbata_body_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_plumbata_h1" name="{=Salt}Plumbata" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_plumbata_h1" name="{=Salt}Plumbata +1" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_plumbata_head_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_plumbata_body_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_plumbata_h2" name="{=Salt}Plumbata" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_plumbata_h2" name="{=Salt}Plumbata +2" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_plumbata_head_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_plumbata_body_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_plumbata_h3" name="{=Salt}Plumbata" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_plumbata_h3" name="{=Salt}Plumbata +3" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_plumbata_head_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_plumbata_body_h3" Type="Handle" scale_factor="100" />
@@ -14715,21 +14715,21 @@
       <Piece id="crpg_bobsickle_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bobsickle_h1" name="{=}Bob's Scythe" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_bobsickle_h1" name="{=}Bob's Scythe +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_bobsickle_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_bobsickle_handle_h1" Type="Handle" scale_factor="100" />
       <Piece id="crpg_bobsickle_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bobsickle_h2" name="{=}Bob's Scythe" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_bobsickle_h2" name="{=}Bob's Scythe +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_bobsickle_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_bobsickle_handle_h2" Type="Handle" scale_factor="100" />
       <Piece id="crpg_bobsickle_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bobsickle_h3" name="{=}Bob's Scythe" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_bobsickle_h3" name="{=}Bob's Scythe +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_bobsickle_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_bobsickle_handle_h3" Type="Handle" scale_factor="100" />
