@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    CRPG Emote Menu — Action Set Mappings
+    Maps each crpg_act_* action type to its vanilla Bannerlord animation clip.
+    This block appends to the existing as_human_warrior action set.
+
+    INTEGRATION: Add the following to SubModule.xml <Xmls> block:
+        <XmlNode>
+            <XmlName id="ActionSets" path="Emotes/crpg_action_sets"/>
+        </XmlNode>
+-->
+<action_sets>
+    <!-- #region CRPG Emote Menu Action Sets -->
+    <action_set id="as_human_warrior" skeleton="human_skeleton" movement_system="bipedal">
+
+        <!-- idle_stand -->
+        <action type="crpg_act_stand_1" animation="anim_lord_idle_1"/>
+        <action type="crpg_act_stand_2" animation="anim_lord_idle_2"/>
+        <action type="crpg_act_stand_3" animation="anim_lord_idle_3"/>
+        <action type="crpg_act_stand_4" animation="anim_lord_idle_4"/>
+        <action type="crpg_act_stand_5" animation="anim_lord_idle_5"/>
+        <action type="crpg_act_stand_6" animation="anim_lord_idle_6"/>
+
+        <!-- sitting (tavern drinking idles — vanilla, work without a chair) -->
+        <action type="crpg_act_sit_drink_1" animation="anim_sit_idle_tavern_drink1"/>
+        <action type="crpg_act_sit_drink_2" animation="anim_sit_idle_tavern_drink2"/>
+        <action type="crpg_act_sit_drink_3" animation="anim_sit_idle_tavern_drink3"/>
+
+        <!-- taunts (all vanilla Multiplayer animations) -->
+        <action type="crpg_act_taunt_afraid"       animation="taunt_afraid"/>
+        <action type="crpg_act_taunt_bow"           animation="taunt_bow"/>
+        <action type="crpg_act_taunt_break"         animation="taunt_break"/>
+        <action type="crpg_act_taunt_disappointed"  animation="taunt_dissapointed"/>
+        <action type="crpg_act_taunt_hit_shield_2"  animation="taunt_hit_shield_2"/>
+        <action type="crpg_act_taunt_invite"        animation="taunt_invite"/>
+        <action type="crpg_act_taunt_invite_2"      animation="taunt_invite_2"/>
+        <action type="crpg_act_taunt_laugh"         animation="taunt_laugh"/>
+        <action type="crpg_act_taunt_pointing"      animation="taunt_pointing"/>
+        <action type="crpg_act_taunt_rage"          animation="taunt_rage"/>
+        <action type="crpg_act_taunt_respect"       animation="taunt_respect"/>
+        <action type="crpg_act_taunt_scared"        animation="taunt_scared"/>
+        <action type="crpg_act_taunt_surrender"     animation="taunt_surrender"/>
+        <action type="crpg_act_taunt_threat"        animation="taunt_threat"/>
+        <action type="crpg_act_taunt_threat_2"      animation="taunt_threat_2"/>
+
+        <!-- cheers (vanilla) -->
+        <action type="crpg_act_cheer_01" animation="cheering_high_01"/>
+        <action type="crpg_act_cheer_02" animation="cheering_high_02"/>
+        <action type="crpg_act_cheer_03" animation="cheering_high_03"/>
+        <action type="crpg_act_cheer_04" animation="cheering_high_04"/>
+        <action type="crpg_act_cheer_05" animation="cheering_high_05"/>
+        <action type="crpg_act_cheer_06" animation="cheering_high_06"/>
+        <action type="crpg_act_cheer_07" animation="cheering_high_07"/>
+        <action type="crpg_act_cheer_08" animation="cheering_high_08"/>
+
+        <!-- misc (vanilla) -->
+        <action type="crpg_act_dance_norse" animation="anim_tavern_dance_norse"/>
+
+    </action_set>
+    <!-- #endregion CRPG Emote Menu Action Sets -->
+</action_sets>

@@ -5,6 +5,7 @@ using Crpg.Module.Common.ChatCommands;
 using Crpg.Module.Rewards;
 #else
 using Crpg.Module.GUI;
+using Crpg.Module.GUI.AnimationMenu;
 using Crpg.Module.GUI.AmmoQuiverChange;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
@@ -66,6 +67,7 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
             new MissionAgentContourControllerView(),
             MultiplayerViewCreator.CreateMissionFlagMarkerUIHandler(), // Draw flags but also player names when pressing ALT.
             new CrpgAgentHud(experienceTable),
+            new CrpgAnimationMenuUiHandler(),
             // Draw flags but also player names when pressing ALT. (Native: CreateMissionFlagMarkerUIHandler)
             ViewCreatorManager.CreateMissionView<CrpgMarkerUiHandler>(isNetwork: false, null, gameModeClient),
         };

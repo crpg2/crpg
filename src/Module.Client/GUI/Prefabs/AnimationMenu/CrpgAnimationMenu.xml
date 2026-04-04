@@ -1,0 +1,97 @@
+<Prefab>
+    <!--
+        CrpgAnimationMenu — the full emote menu panel.
+        Bound to CrpgAnimationMenuVm.
+
+        Layout:
+            - Anchored to right side of screen, centered vertically.
+            - Semi-transparent black background panel.
+            - Items list renders the current page (categories or animations).
+            - Back / Next nav rows at the bottom.
+            - OpenMenuKeyName text hint at the very bottom so the player
+              knows which key to press to open/close the menu.
+    -->
+    <Constants>
+        <Constant Name="Item.Height"    Value="36"/>
+        <Constant Name="Item.Width"     Value="250"/>
+        <Constant Name="Menu.Height"    Value="520"/>
+        <Constant Name="Menu.Width"     Value="290"/>
+    </Constants>
+    <Window>
+        <!-- Outer anchor — right-center of screen -->
+        <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                   VerticalAlignment="Center" HorizontalAlignment="Right"
+                   StackLayout.LayoutMethod="VerticalBottomToTop"
+                   IsVisible="@IsEnabled"
+                   MarginBottom="80" MarginRight="10">
+            <Children>
+
+                <!-- ── Main panel ── -->
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                        SuggestedWidth="!Menu.Width" SuggestedHeight="!Menu.Height"
+                        VerticalAlignment="Center" HorizontalAlignment="Right"
+                        Sprite="BlankWhiteSquare_9" Color="#000000FF" AlphaFactor="0.82"
+                        IsVisible="@IsEnabled">
+                    <Children>
+
+                        <!-- Scrollable items list (categories or animations) -->
+                        <ScrollablePanel WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                                         SuggestedWidth="!Menu.Width"
+                                         SuggestedHeight="380"
+                                         VerticalAlignment="Top" HorizontalAlignment="Left"
+                                         MarginLeft="20" MarginRight="10" MarginTop="20">
+                            <Children>
+                                <ListPanel DataSource="{Items}"
+                                           WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                                           StackLayout.LayoutMethod="VerticalBottomToTop">
+                                    <ItemTemplate>
+                                        <CrpgAnimationItem Parameter.ItemHeight="!Item.Height"
+                                                           Parameter.ItemWidth="!Item.Width"
+                                                           VerticalAlignment="Center"
+                                                           HorizontalAlignment="Left"/>
+                                    </ItemTemplate>
+                                </ListPanel>
+                            </Children>
+                        </ScrollablePanel>
+
+                        <!-- Back / Next navigation rows -->
+                        <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                                   VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                   StackLayout.LayoutMethod="VerticalBottomToTop"
+                                   MarginLeft="20" MarginRight="10" MarginBottom="16">
+                            <Children>
+                                <CrpgAnimationItem Parameter.ItemDataSource="{Next}"
+                                                   Parameter.ItemHeight="!Item.Height"
+                                                   Parameter.ItemWidth="!Item.Width"/>
+                                <CrpgAnimationItem Parameter.ItemDataSource="{Back}"
+                                                   Parameter.ItemHeight="!Item.Height"
+                                                   Parameter.ItemWidth="!Item.Width"/>
+                            </Children>
+                        </ListPanel>
+
+                        <!-- Frame border overlay -->
+                        <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                Sprite="frame_9"
+                                ExtendLeft="12" ExtendTop="12" ExtendRight="12" ExtendBottom="12"
+                                IsEnabled="false"/>
+
+                    </Children>
+                </Widget>
+
+                <!-- ── Key hint shown below the panel ── -->
+                <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                        VerticalAlignment="Center" HorizontalAlignment="Center"
+                        MarginTop="6" MarginBottom="6">
+                    <Children>
+                        <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                                    Brush="MPScoreboard.Info.Text"
+                                    Brush.FontSize="18"
+                                    Text="@OpenMenuKeyName"/>
+                    </Children>
+                </Widget>
+
+            </Children>
+        </ListPanel>
+    </Window>
+</Prefab>
