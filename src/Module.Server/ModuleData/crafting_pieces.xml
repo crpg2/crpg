@@ -37999,28 +37999,28 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword_blade_h0" name="{=}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
+  <CraftingPiece id="crpg_sunsword_blade_h0" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
     <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="1.5" />
+      <Swing damage_type="Cut" damage_factor="3.3" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword_blade_h1" name="{=}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
+  <CraftingPiece id="crpg_sunsword_blade_h1" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
     <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword_blade_h2" name="{=}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
+  <CraftingPiece id="crpg_sunsword_blade_h2" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="0.93">
     <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword_blade_h3" name="{=}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
+  <CraftingPiece id="crpg_sunsword_blade_h3" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="0.93">
     <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_sunsword_pommel_h0" name="{=}Sunsword Pommel" tier="4" piece_type="Pommel" mesh="sunsword_pommel" full_scale="true" culture="Culture.battania" length="6.3" weight="0.12">
