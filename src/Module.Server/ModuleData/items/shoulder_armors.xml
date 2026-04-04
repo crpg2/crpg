@@ -3240,4 +3240,10 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_disabled_kadsebevor_h0" name="{=BalanceMe}Kadsebevor" mesh="kadsebevor" culture="Culture.neutral_culture" subtype="body_armor" weight="6" difficulty="0" appearance="1.6" Type="Cape">
+    <ItemComponent>
+        <Armor body_armor="25" modifier_group="plate" material_type="Plate"/>
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true"/>
+  </Item>
 </Items>

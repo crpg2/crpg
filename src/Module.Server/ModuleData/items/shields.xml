@@ -3168,4 +3168,20 @@
     </ItemComponent>
     <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
+  <Item id="crpg_maltastar_h0" name="{=BalanceMe}Malta Star" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="maltastar" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="10" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="480">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_disabled_meowshield_h0" name="{=BalanceMe}Meow Shield" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="meowshield" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="10" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="480">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
 </Items>

@@ -5,6 +5,10 @@
       <WeaponFlag value="MeleeWeapon" />
     </WeaponFlags>
     <AvailablePieces>
+	  <AvailablePiece id="crpg_sunsword_blade_h0"/>
+	  <AvailablePiece id="crpg_sunsword_guard_h0"/>
+	  <AvailablePiece id="crpg_sunsword_handle_h0"/>
+	  <AvailablePiece id="crpg_sunsword_pommel_h0"/>
       <AvailablePiece id="crpg_kopis_blade_h0" />
       <AvailablePiece id="crpg_kopis_blade_h1" />
       <AvailablePiece id="crpg_kopis_blade_h2" />
@@ -6554,6 +6558,8 @@
       <WeaponFlag value="BonusAgainstShield" />
     </WeaponFlags>
     <AvailablePieces>
+	  <AvailablePiece id="crpg_hatinghand_head_h0"/>
+      <AvailablePiece id="crpg_hatinghand_handle_h0"/>
       <AvailablePiece id="crpg_runic_axe_blade_h0" />
       <AvailablePiece id="crpg_runic_axe_blade_h1" />
       <AvailablePiece id="crpg_runic_axe_blade_h2" />
@@ -9157,6 +9163,9 @@
       <WeaponFlag value="TwoHandIdleOnMount" />
     </WeaponFlags>
     <AvailablePieces>
+	  <AvailablePiece id="crpg_bobsickle_blade_h0"/> 
+      <AvailablePiece id="crpg_bobsickle_handle_h0"/>
+      <AvailablePiece id="crpg_bobsickle_pommel_h0"/>
       <AvailablePiece id="crpg_nagamaki_blade_h0" />
       <AvailablePiece id="crpg_nagamaki_blade_h1" />
       <AvailablePiece id="crpg_nagamaki_blade_h2" />
@@ -10389,6 +10398,14 @@
       <AvailablePiece id="crpg_celticspear_pommel_h1" />
       <AvailablePiece id="crpg_celticspear_pommel_h2" />
       <AvailablePiece id="crpg_celticspear_pommel_h3" />
+	  <AvailablePiece id="crpg_wolfstooth_head_h0"/> 
+      <AvailablePiece id="crpg_wolfstooth_guard_h0"/> 
+      <AvailablePiece id="crpg_wolfstooth_handle_h0"/>
+      <AvailablePiece id="crpg_wolfstooth_pommel_h0"/>
+	  <AvailablePiece id="crpg_podaodao_blade_h0"/> 
+	  <AvailablePiece id="crpg_podaodao_guard_h0"/> 
+	  <AvailablePiece id="crpg_podaodao_handle_h0"/>
+	  <AvailablePiece id="crpg_podaodao_pommel_h0"/>
     </AvailablePieces>
   </WeaponDescription>
   <WeaponDescription id="crpg_SpearDoubleThrust" weapon_class="TwoHandedPolearm" item_usage_features="polearm:block:long:shield:thrust">
@@ -12811,6 +12828,8 @@
       <WeaponFlag value="UnloadWhenSheathed" />
     </WeaponFlags>
     <AvailablePieces>
+	  <AvailablePiece id="crpg_plumbata_head_h0" />
+      <AvailablePiece id="crpg_plumbata_body_h0" />
       <AvailablePiece id="crpg_light_pilum_blade_h0" />
       <AvailablePiece id="crpg_light_pilum_blade_h1" />
       <AvailablePiece id="crpg_light_pilum_blade_h2" />
@@ -13198,6 +13217,8 @@
       <WeaponFlag value="MeleeWeapon" />
     </WeaponFlags>
     <AvailablePieces>
+	  <AvailablePiece id="crpg_hatinghand_handle_h0"/>
+      <AvailablePiece id="crpg_hammerhand_head_h0"/>
       <AvailablePiece id="crpg_kama_blade_h0" />
       <AvailablePiece id="crpg_kama_blade_h1" />
       <AvailablePiece id="crpg_kama_blade_h2" />

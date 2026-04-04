@@ -10344,4 +10344,10 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_disabled_kadseears_h0" name="{=BalanceMe}Kadseears" subtype="head_armor" mesh="kadseears" culture="Culture.vlandia" weight="4.5" difficulty="0" appearance="1" Type="HeadArmor">
+        <ItemComponent>
+            <Armor head_armor="40" has_gender_variations="false" hair_cover_type="none" modifier_group="plate" material_type="Plate" beard_cover_type="all"/>
+        </ItemComponent>
+        <Flags UseTeamColor="true"/>
+  </Item>
 </Items>
