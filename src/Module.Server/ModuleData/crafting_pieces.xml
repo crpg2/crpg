@@ -38184,25 +38184,25 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_hatinghand_handle_h0" name="{=}Hating Hand Handle" tier="4" piece_type="Handle" mesh="hatinghand_handle" length="73" weight="1.6" is_default="true">
-    <BuildData piece_offset="10" next_piece_offset="0" previous_piece_offset="0"/>
+    <BuildData piece_offset="15" next_piece_offset="0" previous_piece_offset="0"/>
 	<Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_hatinghand_handle_h1" name="{=}Hating Hand Handle" tier="4" piece_type="Handle" mesh="hatinghand_handle" length="73" weight="1.6" is_default="true">
-    <BuildData piece_offset="10" next_piece_offset="0" previous_piece_offset="0"/>
+    <BuildData piece_offset="15" next_piece_offset="0" previous_piece_offset="0"/>
 	<Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_hatinghand_handle_h2" name="{=}Hating Hand Handle" tier="4" piece_type="Handle" mesh="hatinghand_handle" length="73" weight="1.6" is_default="true">
-    <BuildData piece_offset="10" next_piece_offset="0" previous_piece_offset="0"/>
+    <BuildData piece_offset="15" next_piece_offset="0" previous_piece_offset="0"/>
 	<Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_hatinghand_handle_h3" name="{=}Hating Hand Handle" tier="4" piece_type="Handle" mesh="hatinghand_handle" length="73" weight="1.6" is_default="true">
-    <BuildData piece_offset="10" next_piece_offset="0" previous_piece_offset="0"/>
+    <BuildData piece_offset="15" next_piece_offset="0" previous_piece_offset="0"/>
 	<Materials>
       <Material id="Iron4" count="1" />
     </Materials>
