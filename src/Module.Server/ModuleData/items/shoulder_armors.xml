@@ -3240,10 +3240,28 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_disabled_kadsebevor_h0" name="{=BalanceMe}Kadsebevor" mesh="kadsebevor" culture="Culture.neutral_culture" subtype="body_armor" weight="6" difficulty="0" appearance="1.6" Type="Cape">
+  <Item id="crpg_disabled_kadsebevor_h0" name="{=BalanceMe}Kadsebevor" mesh="kadsebevor" culture="Culture.neutral_culture" subtype="body_armor" weight="3.360414" difficulty="0" appearance="1.6" Type="Cape">
     <ItemComponent>
-        <Armor body_armor="25" modifier_group="plate" material_type="Plate"/>
+      <Armor body_armor="25" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
-    <Flags UseTeamColor="true" Civilian="true"/>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_disabled_kadsebevor_h1" name="{=BalanceMe}Kadsebevor +1" mesh="kadsebevor" culture="Culture.neutral_culture" subtype="body_armor" weight="3.360414" difficulty="0" appearance="1.6" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="27" modifier_group="plate" material_type="Plate" arm_armor="0" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_disabled_kadsebevor_h2" name="{=BalanceMe}Kadsebevor +2" mesh="kadsebevor" culture="Culture.neutral_culture" subtype="body_armor" weight="3.360414" difficulty="0" appearance="1.6" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="28" modifier_group="plate" material_type="Plate" arm_armor="0" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_disabled_kadsebevor_h3" name="{=BalanceMe}Kadsebevor +3" mesh="kadsebevor" culture="Culture.neutral_culture" subtype="body_armor" weight="3.360414" difficulty="0" appearance="1.6" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="29" modifier_group="plate" material_type="Plate" arm_armor="1" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
   </Item>
 </Items>
