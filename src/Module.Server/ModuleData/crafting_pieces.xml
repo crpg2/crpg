@@ -38060,16 +38060,94 @@
     <BuildData next_piece_offset="3" />
   </CraftingPiece>
   <CraftingPiece id="crpg_sunsword_handle_h0" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.1">
-    <BuildData piece_offset="-1" previous_piece_offset="1" next_piece_offset="4" />
+    <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
   </CraftingPiece>
   <CraftingPiece id="crpg_sunsword_handle_h1" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.1">
-    <BuildData piece_offset="-1" previous_piece_offset="1" next_piece_offset="4" />
+    <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
   </CraftingPiece>
   <CraftingPiece id="crpg_sunsword_handle_h2" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.1">
-    <BuildData piece_offset="-1" previous_piece_offset="1" next_piece_offset="4" />
+    <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
   </CraftingPiece>
   <CraftingPiece id="crpg_sunsword_handle_h3" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.1">
-    <BuildData piece_offset="-1" previous_piece_offset="1" next_piece_offset="4" />
+    <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_blade_h0" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.5" />
+      <Swing damage_type="Cut" damage_factor="3.3" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_blade_h1" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.5" />
+      <Swing damage_type="Cut" damage_factor="3.3" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_blade_h2" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.5" />
+      <Swing damage_type="Cut" damage_factor="3.3" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_blade_h3" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.5" />
+      <Swing damage_type="Cut" damage_factor="3.3" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_pommel_h0" name="{=}Sunsword Pommel" tier="4" piece_type="Pommel" mesh="sunsword_pommel" full_scale="true" culture="Culture.battania" length="6.3" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_pommel_h1" name="{=}Sunsword Pommel" tier="4" piece_type="Pommel" mesh="sunsword_pommel" full_scale="true" culture="Culture.battania" length="6.3" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_pommel_h2" name="{=}Sunsword Pommel" tier="4" piece_type="Pommel" mesh="sunsword_pommel" full_scale="true" culture="Culture.battania" length="6.3" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_pommel_h3" name="{=}Sunsword Pommel" tier="4" piece_type="Pommel" mesh="sunsword_pommel" full_scale="true" culture="Culture.battania" length="6.3" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_guard_h0" name="{=}Sunsword Guard" tier="5" piece_type="Guard" mesh="sunsword_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.097">
+    <BuildData next_piece_offset="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_guard_h1" name="{=}Sunsword Guard" tier="5" piece_type="Guard" mesh="sunsword_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.097">
+    <BuildData next_piece_offset="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_guard_h2" name="{=}Sunsword Guard" tier="5" piece_type="Guard" mesh="sunsword_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.097">
+    <BuildData next_piece_offset="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_guard_h3" name="{=}Sunsword Guard" tier="5" piece_type="Guard" mesh="sunsword_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.097">
+    <BuildData next_piece_offset="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_handle_h0" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.1">
+    <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_handle_h1" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.1">
+    <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_handle_h2" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.1">
+    <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sunsword2h_handle_h3" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.1">
+    <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_hatinghand_handle_h0" name="{=}Hating Hand Handle" tier="4" piece_type="Handle" mesh="hatinghand_handle" length="73" weight="1.6" is_default="true">
+    <BuildData piece_offset="20" next_piece_offset="0" previous_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_podaodao_blade_h0" name="{=}Heavy Podao Blade" tier="4" piece_type="Blade" mesh="podaodao_blade" full_scale="false" culture="Culture.battania" length="103.0" weight="1.0">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
@@ -38184,25 +38262,25 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_hatinghand_handle_h0" name="{=}Hating Hand Handle" tier="4" piece_type="Handle" mesh="hatinghand_handle" length="73" weight="1.6" is_default="true">
-    <BuildData piece_offset="15" next_piece_offset="0" previous_piece_offset="0" />
+    <BuildData piece_offset="20" next_piece_offset="0" previous_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_hatinghand_handle_h1" name="{=}Hating Hand Handle" tier="4" piece_type="Handle" mesh="hatinghand_handle" length="73" weight="1.6" is_default="true">
-    <BuildData piece_offset="15" next_piece_offset="0" previous_piece_offset="0" />
+    <BuildData piece_offset="20" next_piece_offset="0" previous_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_hatinghand_handle_h2" name="{=}Hating Hand Handle" tier="4" piece_type="Handle" mesh="hatinghand_handle" length="73" weight="1.6" is_default="true">
-    <BuildData piece_offset="15" next_piece_offset="0" previous_piece_offset="0" />
+    <BuildData piece_offset="20" next_piece_offset="0" previous_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_hatinghand_handle_h3" name="{=}Hating Hand Handle" tier="4" piece_type="Handle" mesh="hatinghand_handle" length="73" weight="1.6" is_default="true">
-    <BuildData piece_offset="15" next_piece_offset="0" previous_piece_offset="0" />
+    <BuildData piece_offset="20" next_piece_offset="0" previous_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
@@ -38351,28 +38429,32 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_bobsickle_pommel_h3" name="{=}Bobsickle Pommel" tier="1" piece_type="Pommel" mesh="bobsickle_pommel" culture="Culture.empire" length="8.35" weight="0.2" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_body_h0" name="{=gIm5Lnh8}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" length="0" weight="0.1" excluded_item_usage_features="long">
+  <CraftingPiece id="crpg_plumbata_body_h0" name="{=}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" full_scale="true" length="0" weight="0.0" excluded_item_usage_features="long">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_body_h1" name="{=gIm5Lnh8}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" length="0" weight="0.1" excluded_item_usage_features="long">
+  <CraftingPiece id="crpg_plumbata_body_h1" name="{=}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" full_scale="true" length="0" weight="0.0" excluded_item_usage_features="long">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_body_h2" name="{=gIm5Lnh8}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" length="0" weight="0.1" excluded_item_usage_features="long">
+  <CraftingPiece id="crpg_plumbata_body_h2" name="{=}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" full_scale="true" length="0" weight="0.0" excluded_item_usage_features="long">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_body_h3" name="{=gIm5Lnh8}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" length="0" weight="0.1" excluded_item_usage_features="long">
+  <CraftingPiece id="crpg_plumbata_body_h3" name="{=}Plumbata Shaft" tier="3" piece_type="Handle" mesh="" full_scale="true" length="0" weight="0.0" excluded_item_usage_features="long">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_head_h0" name="{=T1aiDuOp}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" length="69.4" weight="0.4" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+  <CraftingPiece id="crpg_plumbata_head_h0" name="{=}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" full_scale="true" length="62.5" weight="0.55" item_holster_pos_shift="0,0,0" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_axe_quiver_1">
       <Thrust damage_type="Pierce" damage_factor="1.17" />
     </BladeData>
     <Materials>
@@ -38382,8 +38464,8 @@
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_head_h1" name="{=T1aiDuOp}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" length="69.4" weight="0.4" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+  <CraftingPiece id="crpg_plumbata_head_h1" name="{=}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" full_scale="true" length="62.5" weight="0.55" item_holster_pos_shift="0,0,0" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_axe_quiver_1">
       <Thrust damage_type="Pierce" damage_factor="1.17" />
     </BladeData>
     <Materials>
@@ -38393,8 +38475,8 @@
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_head_h2" name="{=T1aiDuOp}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" length="69.4" weight="0.4" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+  <CraftingPiece id="crpg_plumbata_head_h2" name="{=}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" full_scale="true" length="62.5" weight="0.55" item_holster_pos_shift="0,0,0" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_axe_quiver_1">
       <Thrust damage_type="Pierce" damage_factor="1.17" />
     </BladeData>
     <Materials>
@@ -38404,8 +38486,8 @@
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_plumbata_head_h3" name="{=T1aiDuOp}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" length="69.4" weight="0.4" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+  <CraftingPiece id="crpg_plumbata_head_h3" name="{=}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" full_scale="true" length="62.5" weight="0.55" item_holster_pos_shift="0,0,0" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_axe_quiver_1">
       <Thrust damage_type="Pierce" damage_factor="1.17" />
     </BladeData>
     <Materials>
