@@ -636,6 +636,35 @@ export const putUsersSelfItemsByIdUpgradeResponseTransformer = async (data: any)
     return data;
 };
 
+const userQuestViewModelSchemaResponseTransformer = (data: any) => {
+    data.expiresAt = new Date(data.expiresAt);
+    return data;
+};
+
+const userQuestViewModelIListResultSchemaResponseTransformer = (data: any) => {
+    if (data.data) {
+        data.data = data.data.map((item: any) => userQuestViewModelSchemaResponseTransformer(item));
+    }
+    return data;
+};
+
+export const getUsersSelfQuestsResponseTransformer = async (data: any): Promise<GetUsersSelfQuestsResponse> => {
+    data = userQuestViewModelIListResultSchemaResponseTransformer(data);
+    return data;
+};
+
+const userQuestViewModelResultSchemaResponseTransformer = (data: any) => {
+    if (data.data) {
+        data.data = userQuestViewModelSchemaResponseTransformer(data.data);
+    }
+    return data;
+};
+
+export const putUsersSelfQuestsByIdClaimResponseTransformer = async (data: any): Promise<PutUsersSelfQuestsByIdClaimResponse> => {
+    data = userQuestViewModelResultSchemaResponseTransformer(data);
+    return data;
+};
+
 const userNotificationViewModelSchemaResponseTransformer = (data: any) => {
     data.createdAt = new Date(data.createdAt);
     return data;

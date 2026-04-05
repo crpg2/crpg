@@ -453,6 +453,19 @@ export const postGamesActivityLogs = <TComposable extends Composable = '$fetch',
 });
 
 /**
+ * Insert game events.
+ */
+export const postGamesGameEvents = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PostGamesGameEventsData, unknown, DefaultT>) => (options.client ?? client).post<TComposable, unknown | DefaultT, unknown, DefaultT>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Games/game-events',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
  * Gets a clan from its id.
  */
 export const getGamesClansById = <TComposable extends Composable = '$fetch', DefaultT extends GetGamesClansByIdResponse = GetGamesClansByIdResponse>(options: Options<TComposable, GetGamesClansByIdData, GetGamesClansByIdResponse, DefaultT>) => (options.client ?? client).get<TComposable, GetGamesClansByIdResponse | DefaultT, unknown, DefaultT>({
@@ -1248,6 +1261,39 @@ export const getUsersSelfClan = <TComposable extends Composable = '$fetch', Defa
 export const getUsersRewardRecent = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, GetUsersRewardRecentData, unknown, DefaultT>) => (options.client ?? client).get<TComposable, unknown | DefaultT, unknown, DefaultT>({
     security: [{ scheme: 'bearer', type: 'http' }],
     url: '/users/reward-recent',
+    ...options
+});
+
+/**
+ * Gets user's quests.
+ */
+export const getUsersSelfQuests = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfQuestsResponse = GetUsersSelfQuestsResponse>(options: Options<TComposable, GetUsersSelfQuestsData, GetUsersSelfQuestsResponse, DefaultT>) => (options.client ?? client).get<TComposable, GetUsersSelfQuestsResponse | DefaultT, unknown, DefaultT>({
+    responseTransformer: getUsersSelfQuestsResponseTransformer,
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Users/self/quests',
+    ...options
+});
+
+/**
+ * Claim reward for a user quest.
+ */
+export const putUsersSelfQuestsByIdClaim = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfQuestsByIdClaimResponse = PutUsersSelfQuestsByIdClaimResponse>(options: Options<TComposable, PutUsersSelfQuestsByIdClaimData, PutUsersSelfQuestsByIdClaimResponse, DefaultT>) => (options.client ?? client).put<TComposable, PutUsersSelfQuestsByIdClaimResponse | DefaultT, unknown, DefaultT>({
+    responseTransformer: putUsersSelfQuestsByIdClaimResponseTransformer,
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Users/self/quests/{id}/claim',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Reroll a user quest for gold.
+ */
+export const putUsersSelfQuestsByIdReroll = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PutUsersSelfQuestsByIdRerollData, unknown, DefaultT>) => (options.client ?? client).put<TComposable, unknown | DefaultT, unknown, DefaultT>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Users/self/quests/{id}/reroll',
     ...options
 });
 

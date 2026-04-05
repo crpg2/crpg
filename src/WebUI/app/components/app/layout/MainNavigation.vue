@@ -31,6 +31,7 @@ const items = computed(() => {
 
   const authed: NavigationMenuItem[] = [
     { label: t('nav.main.Characters'), to: { name: 'characters' } },
+    { label: t('nav.main.Quests'), to: { name: 'quests' } },
     { label: t('nav.main.Shop'), to: { name: 'shop' } },
     { label: t('nav.main.Marketplace'), to: { name: 'marketplace' } },
     { label: t('nav.main.Clans'), to: { name: 'clans' }, slot: 'clans' },

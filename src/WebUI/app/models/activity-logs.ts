@@ -48,6 +48,8 @@ export const ACTIVITY_LOG_TYPE = {
   MarketplaceListingCreated: 'MarketplaceListingCreated',
   MarketplaceListingExpired: 'MarketplaceListingExpired',
   MarketplaceListingInvalidated: 'MarketplaceListingInvalidated',
+  QuestRerolled: 'QuestRerolled',
+  QuestRewardClaimed: 'QuestRewardClaimed',
 } as const satisfies Record<_ActivityLogType, _ActivityLogType>
 
 export type ActivityLogType = ValueOf<typeof ACTIVITY_LOG_TYPE>

@@ -338,6 +338,10 @@ export type CharacterWeaponProficienciesViewModel = {
     crossbow: number;
 };
 
+export type ClaimQuestRewardCommand = {
+    characterId: number;
+};
+
 export type ClanArmoryBorrowedItemViewModel = {
     borrowerUserId: number;
     userItemId: number;
@@ -553,6 +557,24 @@ export type GameClanMemberViewModel = {
 export type GameEquippedItemViewModel = {
     slot: ItemSlot;
     userItem: GameUserItemViewModel;
+};
+
+export type GameEventField = 'WeaponClass' | 'ItemId' | 'HitType' | 'Damage' | 'TargetType' | 'BodyPart' | 'DamageType';
+
+export type GameEventType = 'Hit' | 'Kill' | 'Block';
+
+export type GameEventViewModel = {
+    userId?: number | null;
+    type: GameEventType;
+    eventData?: {
+        WeaponClass?: string;
+        ItemId?: string;
+        HitType?: string;
+        Damage?: string;
+        TargetType?: string;
+        BodyPart?: string;
+        DamageType?: string;
+    } | null;
 };
 
 export type GameMode = 'CRPGBattle' | 'CRPGConquest' | 'CRPGDTV' | 'CRPGDuel' | 'CRPGSiege' | 'CRPGTeamDeathmatch' | 'CRPGSkirmish' | 'CRPGUnknownGameMode' | 'CRPGCaptain';
@@ -1000,6 +1022,24 @@ export type PatchNotesIListResult = {
 
 export type Platform = 'Steam' | 'EpicGames' | 'Microsoft';
 
+export type QuestAggregationType = 'Count' | 'Sum';
+
+export type QuestDefinitionViewModel = {
+    id: number;
+    type: QuestType;
+    eventType: GameEventType;
+    aggregationType: QuestAggregationType;
+    aggregationField: GameEventField | null;
+    eventFiltersJson: Array<{
+        [key: string]: string;
+    }>;
+    requiredValue: number;
+    rewardGold: number;
+    rewardExperience: number;
+};
+
+export type QuestType = 'Daily' | 'Weekly';
+
 export type RefundItemCommand = {
     [key: string]: never;
 };
@@ -1349,6 +1389,24 @@ export type UserPublicViewModel = {
     avatar: string | null;
     region: Region;
     clanMembership: UserClanViewModel | null;
+};
+
+export type UserQuestViewModel = {
+    id: number;
+    isRewardClaimed: boolean;
+    expiresAt: Date;
+    currentValue: number;
+    questDefinition: QuestDefinitionViewModel;
+};
+
+export type UserQuestViewModelIListResult = {
+    readonly errors: Array<Error> | null;
+    data: Array<UserQuestViewModel> | null;
+};
+
+export type UserQuestViewModelResult = {
+    readonly errors: Array<Error> | null;
+    data: UserQuestViewModel | null;
 };
 
 export type UserViewModel = {
@@ -1799,6 +1857,14 @@ export type UserPrivateViewModelIListResultWritable = {
 
 export type UserPrivateViewModelResultWritable = {
     data: UserPrivateViewModel | null;
+};
+
+export type UserQuestViewModelIListResultWritable = {
+    data: Array<UserQuestViewModel> | null;
+};
+
+export type UserQuestViewModelResultWritable = {
+    data: UserQuestViewModel | null;
 };
 
 export type UserViewModelResultWritable = {
@@ -2867,6 +2933,30 @@ export type PostGamesActivityLogsErrors = {
 };
 
 export type PostGamesActivityLogsResponses = {
+    /**
+     * Inserted.
+     */
+    200: unknown;
+};
+
+export type PostGamesGameEventsData = {
+    /**
+     * The game events to insert.
+     */
+    body?: Array<GameEventViewModel>;
+    path?: never;
+    query?: never;
+    url: '/Games/game-events';
+};
+
+export type PostGamesGameEventsErrors = {
+    /**
+     * Bad Request.
+     */
+    400: unknown;
+};
+
+export type PostGamesGameEventsResponses = {
     /**
      * Inserted.
      */
@@ -4660,6 +4750,87 @@ export type GetUsersRewardRecentData = {
 export type GetUsersRewardRecentResponses = {
     /**
      * OK
+     */
+    200: unknown;
+};
+
+export type GetUsersSelfQuestsData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/Users/self/quests';
+};
+
+export type GetUsersSelfQuestsResponses = {
+    /**
+     * OK
+     */
+    200: UserQuestViewModelIListResult;
+};
+
+export type GetUsersSelfQuestsResponse = GetUsersSelfQuestsResponses[keyof GetUsersSelfQuestsResponses];
+
+export type PutUsersSelfQuestsByIdClaimData = {
+    /**
+     * The claim request containing the character id.
+     */
+    body?: ClaimQuestRewardCommand;
+    path: {
+        /**
+         * User quest id.
+         */
+        id: number;
+    };
+    query?: never;
+    url: '/Users/self/quests/{id}/claim';
+};
+
+export type PutUsersSelfQuestsByIdClaimErrors = {
+    /**
+     * Bad Request.
+     */
+    400: unknown;
+    /**
+     * User quest not found.
+     */
+    404: unknown;
+};
+
+export type PutUsersSelfQuestsByIdClaimResponses = {
+    /**
+     * Reward claimed.
+     */
+    200: UserQuestViewModelResult;
+};
+
+export type PutUsersSelfQuestsByIdClaimResponse = PutUsersSelfQuestsByIdClaimResponses[keyof PutUsersSelfQuestsByIdClaimResponses];
+
+export type PutUsersSelfQuestsByIdRerollData = {
+    body?: never;
+    path: {
+        /**
+         * User quest id.
+         */
+        id: number;
+    };
+    query?: never;
+    url: '/Users/self/quests/{id}/reroll';
+};
+
+export type PutUsersSelfQuestsByIdRerollErrors = {
+    /**
+     * Bad Request.
+     */
+    400: unknown;
+    /**
+     * User quest not found.
+     */
+    404: unknown;
+};
+
+export type PutUsersSelfQuestsByIdRerollResponses = {
+    /**
+     * Quest rerolled.
      */
     200: unknown;
 };

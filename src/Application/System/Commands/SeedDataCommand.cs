@@ -9,11 +9,13 @@ using Crpg.Domain.Entities.ActivityLogs;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
+using Crpg.Domain.Entities.GameEvents;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
 using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
+using Crpg.Domain.Entities.Quests;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Settlements;
@@ -29,7 +31,7 @@ public record SeedDataCommand : IMediatorRequest
 {
     internal class Handler(ICrpgDbContext db, IItemsSource itemsSource, IApplicationEnvironment appEnv,
         ICharacterService characterService, IExperienceTable experienceTable, ICampaignMap campaignMap,
-        ISettlementsSource settlementsSource, IActivityLogService activityLogService, IUserNotificationService userNotificationService, IItemService itemService, IMarketplaceService marketplaceService) : IMediatorRequestHandler<SeedDataCommand>
+        ISettlementsSource settlementsSource, IActivityLogService activityLogService, IUserNotificationService userNotificationService, IItemService itemService, IMarketplaceService marketplaceService, IQuestsSource questsSource) : IMediatorRequestHandler<SeedDataCommand>
     {
         private static readonly Dictionary<SettlementType, int> CampaignSettlementDefaultTroops = new()
         {
@@ -51,10 +53,14 @@ public record SeedDataCommand : IMediatorRequest
         private readonly IUserNotificationService _userNotificationService = userNotificationService;
         private readonly ICampaignMap _campaignMap = campaignMap;
         private readonly ISettlementsSource _settlementsSource = settlementsSource;
+        private readonly IQuestsSource _questsSource = questsSource;
 
         public async ValueTask<Result> Handle(SeedDataCommand request, CancellationToken cancellationToken)
         {
             await CreateOrUpdateItems(cancellationToken);
+            await _db.SaveChangesAsync(cancellationToken);
+            await CreateOrUpdateQuests(cancellationToken);
+            await _db.SaveChangesAsync(cancellationToken);
             await CreateOrUpdateSettlements(cancellationToken);
             await _db.SaveChangesAsync(cancellationToken);
 
@@ -92,28 +98,32 @@ public record SeedDataCommand : IMediatorRequest
                 HeirloomPoints = 2,
                 ExperienceMultiplier = 1.09f,
                 Role = Role.Admin,
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/2c/2ce4694f06523a2ffad501f5dc30ec7a8008e90e_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/2c/2ce4694f06523a2ffad501f5dc30ec7a8008e90e_full.jpg"),
             };
             User namidaka = new()
             {
                 PlatformUserId = "76561197979511363",
                 Name = "Namidaka",
                 Gold = 100000,
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/70/703178fb540263bd30d5b84562b1167985603273_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/70/703178fb540263bd30d5b84562b1167985603273_full.jpg"),
             };
             User thradok = new()
             {
                 PlatformUserId = "76561198011271387",
                 Name = "Thradok Odai",
                 Gold = 100000,
-                Avatar = new Uri("https://avatars.cloudflare.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"),
+                Avatar = new Uri(
+                    "https://avatars.cloudflare.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"),
             };
             User kinngrimm = new()
             {
                 PlatformUserId = "76561197998594278",
                 Name = "Kinngrimm",
                 Gold = 100000,
-                Avatar = new Uri("https://avatars.cloudflare.steamstatic.com/ed4f240198b8ad5ceebe4fad0160f13c1e0c3a1f_full.jpg"),
+                Avatar = new Uri(
+                    "https://avatars.cloudflare.steamstatic.com/ed4f240198b8ad5ceebe4fad0160f13c1e0c3a1f_full.jpg"),
             };
             User orle = new()
             {
@@ -124,7 +134,8 @@ public record SeedDataCommand : IMediatorRequest
                 Gold = 1000000,
                 HeirloomPoints = 12,
                 ExperienceMultiplier = 1.09f,
-                Avatar = new Uri("https://avatars.akamai.steamstatic.com/d51d5155b1a564421c0b3fd5fb7eed7c4474e73d_full.jpg"),
+                Avatar = new Uri(
+                    "https://avatars.akamai.steamstatic.com/d51d5155b1a564421c0b3fd5fb7eed7c4474e73d_full.jpg"),
             };
             User orle2 = new()
             {
@@ -146,7 +157,8 @@ public record SeedDataCommand : IMediatorRequest
                 Gold = 1000000,
                 HeirloomPoints = 12,
                 ExperienceMultiplier = 1.09f,
-                Avatar = new Uri("https://avatars.fastly.steamstatic.com/9f4bfcc04b22967cab0b3f3081772642e88cb915_full.jpg"),
+                Avatar = new Uri(
+                    "https://avatars.fastly.steamstatic.com/9f4bfcc04b22967cab0b3f3081772642e88cb915_full.jpg"),
             };
             User peeky = new()
             {
@@ -157,7 +169,8 @@ public record SeedDataCommand : IMediatorRequest
                 Gold = 1000000,
                 HeirloomPoints = 12,
                 ExperienceMultiplier = 1.09f,
-                Avatar = new Uri("https://avatars.fastly.steamstatic.com/d2eb4aa487279f3a52a2edac0566fd506cfc597f_full.jpg"),
+                Avatar = new Uri(
+                    "https://avatars.fastly.steamstatic.com/d2eb4aa487279f3a52a2edac0566fd506cfc597f_full.jpg"),
             };
             User droob = new()
             {
@@ -168,7 +181,8 @@ public record SeedDataCommand : IMediatorRequest
                 Gold = 1000000,
                 HeirloomPoints = 12,
                 ExperienceMultiplier = 1.09f,
-                Avatar = new Uri("https://avatars.cloudflare.steamstatic.com/2456d3a9f13512fb57d7b02bcf3b1249d662ad16_full.jpg"),
+                Avatar = new Uri(
+                    "https://avatars.cloudflare.steamstatic.com/2456d3a9f13512fb57d7b02bcf3b1249d662ad16_full.jpg"),
             };
             User kadse = new()
             {
@@ -180,7 +194,8 @@ public record SeedDataCommand : IMediatorRequest
                 Gold = 100000,
                 HeirloomPoints = 2,
                 ExperienceMultiplier = 1.09f,
-                Avatar = new Uri("https://avatars.akamai.steamstatic.com/8762690248c6809b0303cc803a1b2dacf3a12cd5_full.jpg"),
+                Avatar = new Uri(
+                    "https://avatars.akamai.steamstatic.com/8762690248c6809b0303cc803a1b2dacf3a12cd5_full.jpg"),
             };
             User ladoea = new()
             {
@@ -192,166 +207,192 @@ public record SeedDataCommand : IMediatorRequest
                 Gold = 100000,
                 HeirloomPoints = 2,
                 ExperienceMultiplier = 1.09f,
-                Avatar = new Uri("https://avatars.cloudflare.steamstatic.com/d7f24cffe8b7ba1ccdf1ca0d5244883584beb179_full.jpg"),
+                Avatar = new Uri(
+                    "https://avatars.cloudflare.steamstatic.com/d7f24cffe8b7ba1ccdf1ca0d5244883584beb179_full.jpg"),
             };
             User laHire = new()
             {
                 PlatformUserId = "76561198012340299",
                 Name = "LaHire",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/31/31f7c86313e48dd924c08844f1cb2dd76e542a46_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/31/31f7c86313e48dd924c08844f1cb2dd76e542a46_full.jpg"),
                 Region = Region.Eu,
             };
             User elmaryk = new()
             {
                 PlatformUserId = "76561197972800560",
                 Name = "Elmaryk",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/05/059f27b9bdf15392d8b0114d8d106bd430398cf2_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/05/059f27b9bdf15392d8b0114d8d106bd430398cf2_full.jpg"),
                 Region = Region.Eu,
             };
             User azuma = new()
             {
                 PlatformUserId = "76561198081821029",
                 Name = "Azuma",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/57/57eab4bf98145304377078d0a3d73dc05d540714_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/57/57eab4bf98145304377078d0a3d73dc05d540714_full.jpg"),
                 Region = Region.Eu,
             };
             User zorguy = new()
             {
                 PlatformUserId = "76561197989897581",
                 Name = "Zorguy",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e1/e12361889a18f7e834447bd96b9389943200f693_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e1/e12361889a18f7e834447bd96b9389943200f693_full.jpg"),
                 Region = Region.Eu,
             };
             User neostralie = new()
             {
                 PlatformUserId = "76561197992190847",
                 Name = "Neostralie",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/50/50696c5fc162251193044d50e84956a60b9b9750_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/50/50696c5fc162251193044d50e84956a60b9b9750_full.jpg"),
             };
             User ecko = new()
             {
                 PlatformUserId = "76561198003849595",
                 Name = "Ecko",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b2/b22b63e50e6148d446735f9d10b53be3dbe8114a_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b2/b22b63e50e6148d446735f9d10b53be3dbe8114a_full.jpg"),
             };
             User firebat = new()
             {
                 PlatformUserId = "76561198034738782",
                 Name = "Firebat",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/80/80cfe380953ec4b9c8c09c36b22278263c47f506_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/80/80cfe380953ec4b9c8c09c36b22278263c47f506_full.jpg"),
             };
             User sellka = new()
             {
                 PlatformUserId = "76561197979977620",
                 Name = "Sellka",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/bf/bf1a595dea0ac57cfedc0d3156f58c966abc5c63_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/bf/bf1a595dea0ac57cfedc0d3156f58c966abc5c63_full.jpg"),
             };
             User leanir = new()
             {
                 PlatformUserId = "76561198018585047",
                 Name = "Laenir",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/c1/c1eeba83d74ff6be9d9f42ca19fa15616a94dc2d_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/c1/c1eeba83d74ff6be9d9f42ca19fa15616a94dc2d_full.jpg"),
             };
             User opset = new()
             {
                 PlatformUserId = "76561198009970770",
                 Name = "Opset_the_Grey",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/36/36f6b77d3af6d18563101cea616590ba69b4ec81_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/36/36f6b77d3af6d18563101cea616590ba69b4ec81_full.jpg"),
             };
             User falcom = new()
             {
                 PlatformUserId = "76561197963438590",
                 Name = "[OdE]Falcom",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ff/ffbc4f2f33a16d764ce9aeb92495c05421738834_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ff/ffbc4f2f33a16d764ce9aeb92495c05421738834_full.jpg"),
             };
             User brainfart = new()
             {
                 PlatformUserId = "76561198007258336",
                 Name = "Brainfart",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/06/06be92280c028dbf83951ccaa7857d1b46f50401_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/06/06be92280c028dbf83951ccaa7857d1b46f50401_full.jpg"),
                 Region = Region.Eu,
             };
             User kiwi = new()
             {
                 PlatformUserId = "76561198050263436",
                 Name = "Kiwi",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b1/b1eeebf4b5eaf0d0fd255e7bfd88dddac53a79b7_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b1/b1eeebf4b5eaf0d0fd255e7bfd88dddac53a79b7_full.jpg"),
                 Region = Region.Eu,
             };
             User ikarooz = new()
             {
                 PlatformUserId = "76561198013940874",
                 Name = "Ikarooz",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/7f/7fd9de1adbc5a2d7d9f6f43905663051d1f3ad6b_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/7f/7fd9de1adbc5a2d7d9f6f43905663051d1f3ad6b_full.jpg"),
                 Region = Region.Eu,
             };
             User bryggan = new()
             {
                 PlatformUserId = "76561198076068057",
                 Name = "Bryggan",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b7/b7b0ba5b51367b8e667bac7be347c4b194e46c42_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b7/b7b0ba5b51367b8e667bac7be347c4b194e46c42_full.jpg"),
                 Region = Region.Eu,
             };
             User schumetzq = new()
             {
                 PlatformUserId = "76561198050714825",
                 Name = "Schumetzq",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/02/02fd365a5cd57ab2a09ada405546c7e1732e6e09_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/02/02fd365a5cd57ab2a09ada405546c7e1732e6e09_full.jpg"),
                 Region = Region.Eu,
             };
             User victorhh888 = new()
             {
                 PlatformUserId = "76561197968139412",
                 Name = "victorhh888",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/90/90fb01f63a3b68a4a6f06208c84cc03250f4786e_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/90/90fb01f63a3b68a4a6f06208c84cc03250f4786e_full.jpg"),
             };
             User distance = new()
             {
                 PlatformUserId = "76561198874880658",
                 Name = "远方",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d1/d18e1efd0df9440d21a820e3f37ebfc57a2b9ed4_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d1/d18e1efd0df9440d21a820e3f37ebfc57a2b9ed4_full.jpg"),
             };
             User bakhrat = new()
             {
                 PlatformUserId = "76561198051386592",
                 Name = "bakhrat 22hz",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f3/f3b2fbe95be2dfe6f3f2d5ceaca04d75a1a81966_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f3/f3b2fbe95be2dfe6f3f2d5ceaca04d75a1a81966_full.jpg"),
             };
             User lancelot = new()
             {
                 PlatformUserId = "76561198015772903",
                 Name = "Lancelot",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e9/e9cb98a2cd5facedca0982a52eb47f37142c3555_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e9/e9cb98a2cd5facedca0982a52eb47f37142c3555_full.jpg"),
             };
             User buddha = new()
             {
                 PlatformUserId = "76561198036356550",
                 Name = "Buddha.dll",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/7f/7fab01b855c8e9704f0239fa716d182ad96e3ff8_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/7f/7fab01b855c8e9704f0239fa716d182ad96e3ff8_full.jpg"),
             };
             User lerch = new()
             {
                 PlatformUserId = "76561197988504032",
                 Name = "Lerch_77",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/c0/c0d5345e5592f47aeee066e73f27d884496e75e1_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/c0/c0d5345e5592f47aeee066e73f27d884496e75e1_full.jpg"),
             };
             User tjens = new()
             {
                 PlatformUserId = "76561197997439945",
                 Name = "Tjens",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ce/ce5524c76a12dff71e0c02b3220907597ded1aca_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ce/ce5524c76a12dff71e0c02b3220907597ded1aca_full.jpg"),
             };
             User knitler = new()
             {
                 PlatformUserId = "76561198034120910",
                 Name = "Knitler",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a1/a1174ff1fdc31ff8078511e16a73d9caeee4675b_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a1/a1174ff1fdc31ff8078511e16a73d9caeee4675b_full.jpg"),
             };
             User magnuclean = new()
             {
                 PlatformUserId = "76561198044343808",
                 Name = "Magnuclean",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/8a/8a7486e99e489a7e1f7ad356ab2dd4892e4e908e_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/8a/8a7486e99e489a7e1f7ad356ab2dd4892e4e908e_full.jpg"),
             };
             User baronCyborg = new()
             {
@@ -359,218 +400,265 @@ public record SeedDataCommand : IMediatorRequest
                 PlatformUserId = "76561198026044780",
                 Name = "Baron Cyborg",
                 Region = Region.Eu,
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/58/5838cfcd99e280d82f63d92472d6d5aecebfb812_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/58/5838cfcd99e280d82f63d92472d6d5aecebfb812_full.jpg"),
             };
             User manik = new()
             {
                 Platform = Platform.Microsoft,
                 PlatformUserId = "76561198068833541",
                 Name = "Manik",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ed/edf5af17958c09a5bbcb12e352d8fa9560c22aac_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ed/edf5af17958c09a5bbcb12e352d8fa9560c22aac_full.jpg"),
             };
             User ajroselle = new()
             {
                 PlatformUserId = "76561199043634047",
                 Name = "ajroselle",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"),
             };
             User skrael = new()
             {
                 PlatformUserId = "76561197996473259",
                 Name = "Skrael",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/95/950f9f3147d4c8530a5072825d01c34ee3f1afa1_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/95/950f9f3147d4c8530a5072825d01c34ee3f1afa1_full.jpg"),
             };
             User bedo = new()
             {
                 PlatformUserId = "76561198068806579",
                 Name = "bedo",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ce/ce19953febd356e443567298449acd7284050a83_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ce/ce19953febd356e443567298449acd7284050a83_full.jpg"),
             };
             User lambic = new()
             {
                 PlatformUserId = "76561198065010536",
                 Name = "Lambic",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/af/af03d6342998e9f6887ac12883279c78edec7272_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/af/af03d6342998e9f6887ac12883279c78edec7272_full.jpg"),
             };
             User sanasar = new()
             {
                 PlatformUserId = "76561198038834052",
                 Name = "Sanasar",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/38/38b27ecb2cfd536bf553790e425ccd0a4ac9add7_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/38/38b27ecb2cfd536bf553790e425ccd0a4ac9add7_full.jpg"),
             };
             User vlad007 = new()
             {
                 PlatformUserId = "76561198007345621",
                 Name = "Vlad007",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"),
             };
             User canp0g = new()
             {
                 PlatformUserId = "76561198099388699",
                 Name = "CaNp0G",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b2/b2dc0e2223189a9ba64377e3be43d0d99442432f_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b2/b2dc0e2223189a9ba64377e3be43d0d99442432f_full.jpg"),
             };
             User shark = new()
             {
                 PlatformUserId = "76561198035838802",
                 Name = "Shark",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ed/edd897e10a88795339e102f3ff88730afd684dd9_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ed/edd897e10a88795339e102f3ff88730afd684dd9_full.jpg"),
             };
             User noobAmphetamine = new()
             {
                 PlatformUserId = "76561198140492451",
                 Name = "NoobamphetaminenoobAmphetamine",
                 Region = Region.Eu,
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"),
             };
             User mundete = new()
             {
                 PlatformUserId = "76561198298979454",
                 Name = "Mundete",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/99/994d037cb361b375cf7f34d510664dca959e27d2_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/99/994d037cb361b375cf7f34d510664dca959e27d2_full.jpg"),
             };
             User aroyFalconer = new()
             {
                 PlatformUserId = "76561198055090640",
                 Name = "aroyfalconer",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"),
             };
             User insanitoid = new()
             {
                 PlatformUserId = "76561198073114187",
                 Name = "Insanitoid",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/23/23ca1018e64e454b05b558cbf9cc7d55d1e57fc5_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/23/23ca1018e64e454b05b558cbf9cc7d55d1e57fc5_full.jpg"),
             };
             User scarface = new()
             {
                 PlatformUserId = "76561198279433049",
                 Name = "Scarface",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/7b/7b237d0943aa81b7f0637e46baff7eff9afa48ae_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/7b/7b237d0943aa81b7f0637e46baff7eff9afa48ae_full.jpg"),
             };
             User xDem = new()
             {
                 PlatformUserId = "76561197998420060",
                 Name = "XDem",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a1/a15730cb6852a7b3b8109ff70a8ab506ed221ea1_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a1/a15730cb6852a7b3b8109ff70a8ab506ed221ea1_full.jpg"),
             };
             User disorot = new()
             {
                 PlatformUserId = "76561198117963151",
                 Name = "Disorot",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/7b/7bab1c0d1a1716a7648afdfd987c44bfb58367a8_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/7b/7bab1c0d1a1716a7648afdfd987c44bfb58367a8_full.jpg"),
             };
             User ace = new()
             {
                 PlatformUserId = "76561198069571271",
                 Name = "Ace",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ac/ac7445b35f7e18eebe0d2a728aaad139b0dca3c5_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ac/ac7445b35f7e18eebe0d2a728aaad139b0dca3c5_full.jpg"),
             };
             User sagar = new()
             {
                 PlatformUserId = "76561198049628859",
                 Name = "Sagar",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/01/0190fa213e030bcffdde532705df318f348e8d30_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/01/0190fa213e030bcffdde532705df318f348e8d30_full.jpg"),
             };
             User greenShadow = new()
             {
                 PlatformUserId = "76561198239298650",
                 Name = "GreenShadow",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b7/b7f74b4cea3ce894e22890705466741276667e91_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b7/b7f74b4cea3ce894e22890705466741276667e91_full.jpg"),
             };
             User hannibaru = new()
             {
                 PlatformUserId = "76561198120421508",
                 Name = "Hannibaru",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/af/af69a66c19d409449586fdd863a70ffca5a3924c_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/af/af69a66c19d409449586fdd863a70ffca5a3924c_full.jpg"),
             };
             User drexx = new()
             {
                 PlatformUserId = "76561198010855139",
                 Name = "Drexx",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ee/ee56a301d3ec686b77c6d06c7517fbb57065b36b_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ee/ee56a301d3ec686b77c6d06c7517fbb57065b36b_full.jpg"),
             };
             User xarosh = new()
             {
                 PlatformUserId = "76561198089566223",
                 Name = "Xarosh",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/bc/bcc1c53ab76da0813e6456264ee6b588b30de7af_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/bc/bcc1c53ab76da0813e6456264ee6b588b30de7af_full.jpg"),
             };
             User tipsyToby = new()
             {
                 PlatformUserId = "76561198084047374",
                 Name = "TipsyToby1969",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/1c/1caacc14b003b71ddf09c56675c9462440dcb534_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/1c/1caacc14b003b71ddf09c56675c9462440dcb534_full.jpg"),
             };
             User localAlpha = new()
             {
                 PlatformUserId = "76561198204128229",
                 Name = "LocalAlpha",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b5/b5b58ff641803804038c3cb3529904b14bc22b2c_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b5/b5b58ff641803804038c3cb3529904b14bc22b2c_full.jpg"),
             };
             User alex = new()
             {
                 PlatformUserId = "76561198049945204",
                 Name = "Alex",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/c3/c300efbbcfae57c59095547ad9362c81c9001f07_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/c3/c300efbbcfae57c59095547ad9362c81c9001f07_full.jpg"),
             };
             User kedrynFuel = new()
             {
                 PlatformUserId = "76561198124895605",
                 Name = "KedrynFuel",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d9/d94b47877d0f0a0e50f66d80a1de34bfbf94a56f_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d9/d94b47877d0f0a0e50f66d80a1de34bfbf94a56f_full.jpg"),
             };
             User luqero = new()
             {
                 PlatformUserId = "76561197990543288",
                 Name = "LuQeRo",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ad/adf81333c999516c251df9ca281553d487825f1c_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ad/adf81333c999516c251df9ca281553d487825f1c_full.jpg"),
             };
             User ilya = new()
             {
                 PlatformUserId = "76561198116180462",
                 Name = "ilya2106",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f4/f4b04c6590153ebb1a43c9192627beb07bb613f3_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f4/f4b04c6590153ebb1a43c9192627beb07bb613f3_full.jpg"),
             };
             User eztli = new()
             {
                 PlatformUserId = "76561197995328883",
                 Name = "Eztli",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/97/971a781269e5cd82b76d0cacc138f180bbfbb8d2_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/97/971a781269e5cd82b76d0cacc138f180bbfbb8d2_full.jpg"),
             };
             User telesto = new()
             {
                 PlatformUserId = "76561198021932355",
                 Name = "Telesto",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"),
             };
             User kypak = new()
             {
                 PlatformUserId = "76561198133571210",
                 Name = "Kypak",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df6e263fe8cd9ec2d1a2a7d61da59d47f23a52cd_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df6e263fe8cd9ec2d1a2a7d61da59d47f23a52cd_full.jpg"),
             };
             User devoidDragon = new()
             {
                 PlatformUserId = "76561198018668459",
                 Name = "DevoidDragon",
-                Avatar = new Uri("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/79/79a8119bd2a027755f93872d0d09b959909a0405_full.jpg"),
+                Avatar = new Uri(
+                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/79/79a8119bd2a027755f93872d0d09b959909a0405_full.jpg"),
             };
             User krog = new()
             {
                 PlatformUserId = "76561198070447937",
                 Name = "krog",
                 Gold = 40000,
-                Avatar = new Uri("https://avatars.cloudflare.steamstatic.com/7668d01f842476a42dac041f85c9b336161bdbd0_full.jpg"),
+                Avatar = new Uri(
+                    "https://avatars.cloudflare.steamstatic.com/7668d01f842476a42dac041f85c9b336161bdbd0_full.jpg"),
+            };
+            User enfiol = new()
+            {
+                PlatformUserId = "76561198000330178",
+                Platform = Platform.Steam,
+                Name = "enfiol",
+                Role = Role.Admin,
+                Gold = 1000000,
+                HeirloomPoints = 12,
+                ExperienceMultiplier = 1.09f,
+                Avatar = new Uri(
+                    "https://avatars.akamai.steamstatic.com/d51d5155b1a564421c0b3fd5fb7eed7c4474e73d_full.jpg"),
             };
 
             User[] newUsers =
             {
-                takeo, orle, orle2, vick, peeky, droob, baronCyborg, magnuclean, knitler, tjens, lerch, buddha, lancelot, bakhrat, distance,
-                victorhh888, schumetzq, bryggan, ikarooz, kiwi, brainfart, falcom, opset, leanir, sellka, firebat,
-                ecko, neostralie, zorguy, azuma, elmaryk, namidaka, laHire, manik, ajroselle, skrael, bedo, lambic,
-                sanasar, vlad007, canp0g, shark, noobAmphetamine, mundete, aroyFalconer, insanitoid, scarface,
-                xDem, disorot, ace, sagar, greenShadow, hannibaru, drexx, xarosh, tipsyToby, localAlpha, alex,
-                kedrynFuel, luqero, ilya, eztli, telesto, kypak, devoidDragon, krog, thradok, kinngrimm, kadse, ladoea,
+                takeo, orle, orle2, vick, peeky, droob, baronCyborg, magnuclean, knitler, tjens, lerch, buddha,
+                lancelot, bakhrat, distance, victorhh888, schumetzq, bryggan, ikarooz, kiwi, brainfart, falcom,
+                opset, leanir, sellka, firebat, ecko, neostralie, zorguy, azuma, elmaryk, namidaka, laHire, manik,
+                ajroselle, skrael, bedo, lambic, sanasar, vlad007, canp0g, shark, noobAmphetamine, mundete,
+                aroyFalconer, insanitoid, scarface, xDem, disorot, ace, sagar, greenShadow, hannibaru, drexx,
+                xarosh, tipsyToby, localAlpha, alex, kedrynFuel, luqero, ilya, eztli, telesto, kypak, devoidDragon,
+                krog, thradok, kinngrimm, kadse, ladoea, enfiol,
             };
 
             var existingUsers = await _db.Users.ToDictionaryAsync(u => (u.Platform, u.PlatformUserId));
@@ -638,6 +726,11 @@ public record SeedDataCommand : IMediatorRequest
             [
                 takeoItem1, takeoItem2, takeoItem3, orleItem1, orleItem2, orleItem3, orleItem4, orleItem5, orleItem6, orleItem7, orleItem8, orleItem9, orleItem10, orleItem11, orleItem12, orleItem13, orleItem14, orleItem15, orleItem16, orleItem17, orleItem18, orleItem19, orleItem20, orle2Item1, orle2Item2, orle2Item3,
                 vickItem1, vickItem2, vickItem3, vickItem4, vickItem5, vickItem6, vickItem7, vickItem8, vickItem9, vickItem10, elmarykItem1, elmarykItem2, laHireItem1, laHirekItem2, laHirekItem3,
+                takeoItem1, takeoItem2, orleItem1, orleItem2, orleItem3, orleItem4, orleItem5, orleItem6, orleItem7,
+                orleItem8, orleItem9, orleItem10, orleItem11, orleItem12, orleItem13, orleItem14, orleItem15,
+                orleItem16, orleItem17, orleItem18, orleItem19,
+                vickItem1, vickItem2, vickItem3, vickItem4, vickItem5, vickItem6, vickItem7, vickItem8, vickItem9,
+                vickItem10, elmarykItem1, elmarykItem2, laHireItem1, laHirekItem2, laHirekItem3,
             ];
 
             var existingUserItems = await _db.UserItems.ToDictionaryAsync(pi => pi.ItemId, cancellationToken);
@@ -664,7 +757,8 @@ public record SeedDataCommand : IMediatorRequest
                 ],
             };
 
-            UserItemPreset[] userItemPresets = [
+            UserItemPreset[] userItemPresets =
+            [
                 orlePreset1,
             ];
 
@@ -851,8 +945,10 @@ public record SeedDataCommand : IMediatorRequest
                 RestrictedByUser = takeo,
                 Duration = TimeSpan.FromDays(10),
                 Type = RestrictionType.Join,
-                Reason = "INTERNAL REASON: Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate, dignissimos fugiat commodi, quibusdam necessitatibus mollitia neque, quam voluptatibus rem quas. Libero sapiente ullam aliquid.",
-                PublicReason = "PUBLIC REASON: Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate",
+                Reason =
+                    "INTERNAL REASON: Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate, dignissimos fugiat commodi, quibusdam necessitatibus mollitia neque, quam voluptatibus rem quas. Libero sapiente ullam aliquid.",
+                PublicReason =
+                    "PUBLIC REASON: Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate",
                 CreatedAt = DateTime.UtcNow,
             };
 
@@ -883,10 +979,7 @@ public record SeedDataCommand : IMediatorRequest
                             GameMode = GameMode.CRPGDuel,
                             Rating = new()
                             {
-                                Value = 2990,
-                                Deviation = 350,
-                                Volatility = 0.06f,
-                                CompetitiveValue = 2990,
+                                Value = 2990, Deviation = 350, Volatility = 0.06f, CompetitiveValue = 2990,
                             },
                         }
                     },
@@ -952,10 +1045,7 @@ public record SeedDataCommand : IMediatorRequest
                             GameMode = GameMode.CRPGDuel,
                             Rating = new()
                             {
-                                Value = 2400,
-                                Deviation = 350,
-                                Volatility = 0.06f,
-                                CompetitiveValue = 2400,
+                                Value = 2400, Deviation = 350, Volatility = 0.06f, CompetitiveValue = 2400,
                             },
                         }
                     },
@@ -968,7 +1058,9 @@ public record SeedDataCommand : IMediatorRequest
                 Name = "Peeky Soldier",
                 Level = 33,
                 Generation = 3,
-                Experience = _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) - _experienceTable.GetExperienceForLevel(33)) / 2,
+                Experience =
+                    _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) -
+                                                                  _experienceTable.GetExperienceForLevel(33)) / 2,
                 Statistics = new List<CharacterStatistics>
                 {
                     {
@@ -981,10 +1073,7 @@ public record SeedDataCommand : IMediatorRequest
                             GameMode = GameMode.CRPGConquest,
                             Rating = new()
                             {
-                                Value = 1250,
-                                Deviation = 100,
-                                Volatility = 100,
-                                CompetitiveValue = 1250,
+                                Value = 1250, Deviation = 100, Volatility = 100, CompetitiveValue = 1250,
                             },
                         }
                     },
@@ -1002,7 +1091,9 @@ public record SeedDataCommand : IMediatorRequest
                 Name = "Orle Soldier",
                 Level = 33,
                 Generation = 3,
-                Experience = _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) - _experienceTable.GetExperienceForLevel(33)) / 2,
+                Experience =
+                    _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) -
+                                                                  _experienceTable.GetExperienceForLevel(33)) / 2,
                 Statistics = new List<CharacterStatistics>
                 {
                     {
@@ -1015,10 +1106,7 @@ public record SeedDataCommand : IMediatorRequest
                             GameMode = GameMode.CRPGDuel,
                             Rating = new()
                             {
-                                Value = 1900,
-                                Deviation = 100,
-                                Volatility = 100,
-                                CompetitiveValue = 117.874374f,
+                                Value = 1900, Deviation = 100, Volatility = 100, CompetitiveValue = 117.874374f,
                             },
                         }
                     },
@@ -1052,21 +1140,27 @@ public record SeedDataCommand : IMediatorRequest
                 User = orle,
                 Name = "Orle Peasant",
                 Level = 25,
-                Experience = _experienceTable.GetExperienceForLevel(25) + (_experienceTable.GetExperienceForLevel(26) - _experienceTable.GetExperienceForLevel(25)) / 2,
+                Experience = _experienceTable.GetExperienceForLevel(25) + (_experienceTable.GetExperienceForLevel(26) -
+                                                                           _experienceTable.GetExperienceForLevel(25)) /
+                    2,
             };
             Character orleCharacter2 = new()
             {
                 User = orle,
                 Name = "Orle Farmer",
                 Level = 25,
-                Experience = _experienceTable.GetExperienceForLevel(25) + (_experienceTable.GetExperienceForLevel(26) - _experienceTable.GetExperienceForLevel(25)) / 2,
+                Experience = _experienceTable.GetExperienceForLevel(25) + (_experienceTable.GetExperienceForLevel(26) -
+                                                                           _experienceTable.GetExperienceForLevel(25)) /
+                    2,
             };
             Character orle2Character0 = new()
             {
                 User = orle2,
                 Name = "Orle2 Peasant",
                 Level = 25,
-                Experience = _experienceTable.GetExperienceForLevel(25) + (_experienceTable.GetExperienceForLevel(26) - _experienceTable.GetExperienceForLevel(25)) / 2,
+                Experience = _experienceTable.GetExperienceForLevel(25) + (_experienceTable.GetExperienceForLevel(26) -
+                                                                           _experienceTable.GetExperienceForLevel(25)) /
+                    2,
             };
             Character vickCharacter0 = new()
             {
@@ -1074,7 +1168,9 @@ public record SeedDataCommand : IMediatorRequest
                 Name = "vick Soldier",
                 Level = 33,
                 Generation = 3,
-                Experience = _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) - _experienceTable.GetExperienceForLevel(33)) / 2,
+                Experience =
+                    _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) -
+                                                                  _experienceTable.GetExperienceForLevel(33)) / 2,
                 Statistics = new List<CharacterStatistics>
                 {
                     {
@@ -1087,10 +1183,7 @@ public record SeedDataCommand : IMediatorRequest
                             GameMode = GameMode.CRPGDuel,
                             Rating = new()
                             {
-                                Value = 1900,
-                                Deviation = 100,
-                                Volatility = 100,
-                                CompetitiveValue = 1900,
+                                Value = 1900, Deviation = 100, Volatility = 100, CompetitiveValue = 1900,
                             },
                         }
                     },
@@ -1106,7 +1199,9 @@ public record SeedDataCommand : IMediatorRequest
                 User = vick,
                 Name = "vick Peasant",
                 Level = 25,
-                Experience = _experienceTable.GetExperienceForLevel(25) + (_experienceTable.GetExperienceForLevel(26) - _experienceTable.GetExperienceForLevel(25)) / 2,
+                Experience = _experienceTable.GetExperienceForLevel(25) + (_experienceTable.GetExperienceForLevel(26) -
+                                                                           _experienceTable.GetExperienceForLevel(25)) /
+                    2,
             };
             Character droobCharacter0 = new()
             {
@@ -1127,10 +1222,7 @@ public record SeedDataCommand : IMediatorRequest
                             GameMode = GameMode.CRPGBattle,
                             Rating = new()
                             {
-                                Value = 1500,
-                                Deviation = 350,
-                                Volatility = 0.06f,
-                                CompetitiveValue = 600,
+                                Value = 1500, Deviation = 350, Volatility = 0.06f, CompetitiveValue = 600,
                             },
                         }
                     },
@@ -1144,10 +1236,7 @@ public record SeedDataCommand : IMediatorRequest
                             GameMode = GameMode.CRPGConquest,
                             Rating = new()
                             {
-                                Value = 1200,
-                                Deviation = 100,
-                                Volatility = 100,
-                                CompetitiveValue = 1200,
+                                Value = 1200, Deviation = 100, Volatility = 100, CompetitiveValue = 1200,
                             },
                         }
                     },
@@ -1161,10 +1250,7 @@ public record SeedDataCommand : IMediatorRequest
                             GameMode = GameMode.CRPGDuel,
                             Rating = new()
                             {
-                                Value = 5000,
-                                Deviation = 5,
-                                Volatility = 0.05f,
-                                CompetitiveValue = 5000,
+                                Value = 5000, Deviation = 5, Volatility = 0.05f, CompetitiveValue = 5000,
                             },
                         }
                     },
@@ -1181,7 +1267,9 @@ public record SeedDataCommand : IMediatorRequest
                 Name = "Wario Kadse",
                 Level = 33,
                 Generation = 3,
-                Experience = _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) - _experienceTable.GetExperienceForLevel(33)) / 2,
+                Experience =
+                    _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) -
+                                                                  _experienceTable.GetExperienceForLevel(33)) / 2,
                 Statistics = new List<CharacterStatistics>
                 {
                     {
@@ -1194,10 +1282,7 @@ public record SeedDataCommand : IMediatorRequest
                             GameMode = GameMode.CRPGDuel,
                             Rating = new()
                             {
-                                Value = 50,
-                                Deviation = 350,
-                                Volatility = 0.06f,
-                                CompetitiveValue = 50,
+                                Value = 50, Deviation = 350, Volatility = 0.06f, CompetitiveValue = 50,
                             },
                         }
                     },
@@ -1214,7 +1299,9 @@ public record SeedDataCommand : IMediatorRequest
                 Name = "ladoea woz ere",
                 Level = 33,
                 Generation = 3,
-                Experience = _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) - _experienceTable.GetExperienceForLevel(33)) / 2,
+                Experience =
+                    _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) -
+                                                                  _experienceTable.GetExperienceForLevel(33)) / 2,
                 Statistics = new List<CharacterStatistics>
                 {
                     {
@@ -1227,10 +1314,7 @@ public record SeedDataCommand : IMediatorRequest
                             GameMode = GameMode.CRPGDuel,
                             Rating = new()
                             {
-                                Value = 50,
-                                Deviation = 350,
-                                Volatility = 0.06f,
-                                CompetitiveValue = 50,
+                                Value = 50, Deviation = 350, Volatility = 0.06f, CompetitiveValue = 50,
                             },
                         }
                     },
@@ -1241,40 +1325,18 @@ public record SeedDataCommand : IMediatorRequest
                     Skills = new CharacterSkills { Points = 100 },
                 },
             };
-            Character falcomCharacter0 = new()
-            {
-                User = falcom,
-                Name = falcom.Name,
-            };
-            Character victorhh888Character0 = new()
-            {
-                User = victorhh888,
-                Name = victorhh888.Name,
-            };
-            Character sellkaCharacter0 = new()
-            {
-                User = sellka,
-                Name = sellka.Name,
-            };
-            Character krogCharacter0 = new()
-            {
-                User = krog,
-                Name = krog.Name,
-            };
-            Character noobAmphetamineCharacter0 = new()
-            {
-                User = noobAmphetamine,
-                Name = noobAmphetamine.Name,
-            };
-            Character baronCyborgCharacter0 = new()
-            {
-                User = baronCyborg,
-                Name = baronCyborg.Name,
-            };
+            Character falcomCharacter0 = new() { User = falcom, Name = falcom.Name, };
+            Character victorhh888Character0 = new() { User = victorhh888, Name = victorhh888.Name, };
+            Character sellkaCharacter0 = new() { User = sellka, Name = sellka.Name, };
+            Character krogCharacter0 = new() { User = krog, Name = krog.Name, };
+            Character noobAmphetamineCharacter0 = new() { User = noobAmphetamine, Name = noobAmphetamine.Name, };
+            Character baronCyborgCharacter0 = new() { User = baronCyborg, Name = baronCyborg.Name, };
             Character[] newCharacters =
             {
-                takeoCharacter0, takeoCharacter1, takeoCharacter2, namidakaCharacter0, peekyCharacter0, orleCharacter0, orleCharacter1, orleCharacter2, orle2Character0, droobCharacter0, vickCharacter0, vickCharacter1,
-                falcomCharacter0, victorhh888Character0, sellkaCharacter0, krogCharacter0, kadseCharacter0, noobAmphetamineCharacter0, baronCyborgCharacter0, ladoeaCharacter0,
+                takeoCharacter0, takeoCharacter1, takeoCharacter2, namidakaCharacter0, peekyCharacter0,
+                orleCharacter0, orleCharacter1, orleCharacter2, orle2Character0, droobCharacter0, vickCharacter0,
+                vickCharacter1, falcomCharacter0, victorhh888Character0, sellkaCharacter0, krogCharacter0,
+                kadseCharacter0, noobAmphetamineCharacter0, baronCyborgCharacter0, ladoeaCharacter0,
             };
 
             var existingCharacters = await _db.Characters.ToDictionaryAsync(c => c.Name);
@@ -1338,14 +1400,16 @@ public record SeedDataCommand : IMediatorRequest
             };
             CharacterLimitations[] newCharactersLimitations =
             {
-                takeoCharacter0Limitations, takeoCharacter1Limitations, takeoCharacter2Limitations, orleCharacter0Limitations, orleCharacter1Limitations,
-                orleCharacter2Limitations, kadseCharacter0Limitations, droobCharacter0Limitations,
+                takeoCharacter0Limitations, takeoCharacter1Limitations, takeoCharacter2Limitations,
+                orleCharacter0Limitations, orleCharacter1Limitations, orleCharacter2Limitations,
+                kadseCharacter0Limitations, droobCharacter0Limitations,
             };
 
             var existingCharactersLimitations = await _db.CharacterLimitations.ToDictionaryAsync(l => l.CharacterId);
             foreach (var newCharacterLimitations in newCharactersLimitations)
             {
-                if (existingCharactersLimitations.TryGetValue(newCharacterLimitations.Character!.Id, out var existingCharacterLimitations))
+                if (existingCharactersLimitations.TryGetValue(newCharacterLimitations.Character!.Id,
+                        out var existingCharacterLimitations))
                 {
                     _db.Entry(existingCharacterLimitations).State = EntityState.Detached;
                     newCharacterLimitations.CharacterId = existingCharacterLimitations.CharacterId;
@@ -1415,8 +1479,12 @@ public record SeedDataCommand : IMediatorRequest
 
             ClanArmoryItem[] newClanArmoryItems =
             {
-                takeoClanArmoryItem1, takeoClanArmoryItem2,
-                orleClanArmoryItem2, orleClanArmoryItem3, orleClanArmoryItem4, orleClanArmoryItem5, orleClanArmoryItem6, orleClanArmoryItem7,  orleClanArmoryItem8, orleClanArmoryItem9, orleClanArmoryItem10, orleClanArmoryItem11, orleClanArmoryItem12, orleClanArmoryItem13, orleClanArmoryItem14, orleClanArmoryItem15, orleClanArmoryItem16, elmarykClanArmoryItem1, elmarykClanArmoryItem2, laHireClanArmoryItem1, laHireClanArmoryItem2, laHireClanArmoryItem3,
+                takeoClanArmoryItem1, takeoClanArmoryItem2, orleClanArmoryItem2, orleClanArmoryItem3,
+                orleClanArmoryItem4, orleClanArmoryItem5, orleClanArmoryItem6, orleClanArmoryItem7,
+                orleClanArmoryItem8, orleClanArmoryItem9, orleClanArmoryItem10, orleClanArmoryItem11,
+                orleClanArmoryItem12, orleClanArmoryItem13, orleClanArmoryItem14, orleClanArmoryItem15,
+                orleClanArmoryItem16, elmarykClanArmoryItem1, elmarykClanArmoryItem2, laHireClanArmoryItem1,
+                laHireClanArmoryItem2, laHireClanArmoryItem3,
             };
 
             foreach (var newClanArmoryItem in newClanArmoryItems)
@@ -1427,16 +1495,23 @@ public record SeedDataCommand : IMediatorRequest
                 }
             }
 
-            ClanArmoryBorrowedItem orleBorrowedItem1 = new() { UserItem = laHireClanArmoryItem2.UserItem, Borrower = orleMember };
-            ClanArmoryBorrowedItem orleBorrowedItem2 = new() { UserItem = laHireClanArmoryItem3.UserItem, Borrower = orleMember };
-            ClanArmoryBorrowedItem elmarykBorrowedItem1 = new() { UserItem = orleClanArmoryItem2.UserItem, Borrower = elmarykMember };
-            ClanArmoryBorrowedItem elmarykBorrowedItem2 = new() { UserItem = takeoClanArmoryItem1.UserItem, Borrower = elmarykMember };
-            ClanArmoryBorrowedItem laHireBorrowedItem1 = new() { UserItem = takeoClanArmoryItem2.UserItem, Borrower = laHireMember };
-            ClanArmoryBorrowedItem laHireBorrowedItem2 = new() { UserItem = orleClanArmoryItem15.UserItem, Borrower = laHireMember };
+            ClanArmoryBorrowedItem orleBorrowedItem1 =
+                new() { UserItem = laHireClanArmoryItem2.UserItem, Borrower = orleMember };
+            ClanArmoryBorrowedItem orleBorrowedItem2 =
+                new() { UserItem = laHireClanArmoryItem3.UserItem, Borrower = orleMember };
+            ClanArmoryBorrowedItem elmarykBorrowedItem1 =
+                new() { UserItem = orleClanArmoryItem2.UserItem, Borrower = elmarykMember };
+            ClanArmoryBorrowedItem elmarykBorrowedItem2 =
+                new() { UserItem = takeoClanArmoryItem1.UserItem, Borrower = elmarykMember };
+            ClanArmoryBorrowedItem laHireBorrowedItem1 =
+                new() { UserItem = takeoClanArmoryItem2.UserItem, Borrower = laHireMember };
+            ClanArmoryBorrowedItem laHireBorrowedItem2 =
+                new() { UserItem = orleClanArmoryItem15.UserItem, Borrower = laHireMember };
 
             ClanArmoryBorrowedItem[] newClanArmoryBorrowedItems =
             {
-                orleBorrowedItem1, orleBorrowedItem2, elmarykBorrowedItem1, elmarykBorrowedItem2, laHireBorrowedItem1, laHireBorrowedItem2,
+                orleBorrowedItem1, orleBorrowedItem2, elmarykBorrowedItem1, elmarykBorrowedItem2,
+                laHireBorrowedItem1, laHireBorrowedItem2,
             };
 
             foreach (var newClanArmoryBorrowedItem in newClanArmoryBorrowedItems)
@@ -1581,12 +1656,15 @@ public record SeedDataCommand : IMediatorRequest
             ClanMember leanirMember = new() { User = leanir, Clan = legio, Role = ClanMemberRole.Leader, };
             ClanMember opsetMember = new() { User = opset, Clan = theGrey, Role = ClanMemberRole.Leader, };
             ClanMember falcomMember = new() { User = falcom, Clan = ode, Role = ClanMemberRole.Leader, };
-            ClanMember brainfartMember = new() { User = brainfart, Clan = virginDefenders, Role = ClanMemberRole.Leader };
+            ClanMember brainfartMember =
+                new() { User = brainfart, Clan = virginDefenders, Role = ClanMemberRole.Leader };
             ClanMember kiwiMember = new() { User = kiwi, Clan = virginDefenders, Role = ClanMemberRole.Officer };
             ClanMember ikaroozMember = new() { User = ikarooz, Clan = virginDefenders, Role = ClanMemberRole.Member };
             ClanMember brygganMember = new() { User = bryggan, Clan = virginDefenders, Role = ClanMemberRole.Member };
-            ClanMember schumetzqMember = new() { User = schumetzq, Clan = virginDefenders, Role = ClanMemberRole.Member };
-            ClanMember victorhh888Member = new() { User = victorhh888, Clan = randomClan, Role = ClanMemberRole.Leader };
+            ClanMember schumetzqMember =
+                new() { User = schumetzq, Clan = virginDefenders, Role = ClanMemberRole.Member };
+            ClanMember victorhh888Member =
+                new() { User = victorhh888, Clan = randomClan, Role = ClanMemberRole.Leader };
             ClanMember distanceMember = new() { User = distance, Clan = randomClan, Role = ClanMemberRole.Officer };
             ClanMember bakhratMember = new() { User = bakhrat, Clan = randomClan, Role = ClanMemberRole.Member };
             ClanMember lancelotMember = new() { User = lancelot, Clan = abcClan, Role = ClanMemberRole.Leader };
@@ -1596,15 +1674,16 @@ public record SeedDataCommand : IMediatorRequest
             ClanMember knitlerMember = new() { User = knitler, Clan = jklClan, Role = ClanMemberRole.Leader };
             ClanMember magnucleanMember = new() { User = magnuclean, Clan = mnoClan, Role = ClanMemberRole.Leader };
             ClanMember baronCyborgMember = new() { User = baronCyborg, Clan = pqrClan, Role = ClanMemberRole.Leader, };
-            ClanMember noobAmphetamineMember = new() { User = noobAmphetamine, Clan = pecores, Role = ClanMemberRole.Member };
+            ClanMember noobAmphetamineMember =
+                new() { User = noobAmphetamine, Clan = pecores, Role = ClanMemberRole.Member };
 
             ClanMember[] newClanMembers =
             {
-                takeoMember, orleMember, orle2Member, vickMember, elmarykMember, neostralieMember, laHireMember, azumaMember, zorguyMember,
-                eckoMember, firebatMember, sellkaMember, leanirMember, opsetMember,
+                takeoMember, orleMember, orle2Member, vickMember, elmarykMember, neostralieMember, laHireMember,
+                azumaMember, zorguyMember, eckoMember, firebatMember, sellkaMember, leanirMember, opsetMember,
                 falcomMember, brainfartMember, kiwiMember, ikaroozMember, brygganMember, schumetzqMember,
-                victorhh888Member, distanceMember, bakhratMember, lancelotMember,
-                buddhaMember, lerchMember, tjensMember, knitlerMember, magnucleanMember, baronCyborgMember, noobAmphetamineMember, droobMember,
+                victorhh888Member, distanceMember, bakhratMember, lancelotMember, buddhaMember, lerchMember,
+                tjensMember, knitlerMember, magnucleanMember, baronCyborgMember, noobAmphetamineMember, droobMember,
             };
             var existingClanMembers = await _db.ClanMembers.ToDictionaryAsync(cm => cm.UserId);
             foreach (var newClanMember in newClanMembers)
@@ -1640,7 +1719,8 @@ public record SeedDataCommand : IMediatorRequest
                 Status = ClanInvitationStatus.Pending,
             };
 
-            var activityLogUserRewarded = _activityLogService.CreateUserRewardedLog(orle.Id, namidaka.Id, 120000, 3, orleItem1.ItemId);
+            var activityLogUserRewarded =
+                _activityLogService.CreateUserRewardedLog(orle.Id, namidaka.Id, 120000, 3, orleItem1.ItemId);
             activityLogUserRewarded.CreatedAt = DateTime.UtcNow.AddDays(-1);
 
             ActivityLog[] commonActivityLogs =
@@ -1648,8 +1728,7 @@ public record SeedDataCommand : IMediatorRequest
                 _activityLogService.CreateUserCreatedLog(orle.Id),
                 _activityLogService.CreateUserDeletedLog(orle.Id),
                 _activityLogService.CreateUserRenamedLog(orle.Id, "Salt", "Duke Salt of Savoy"),
-                activityLogUserRewarded,
-                _activityLogService.CreateItemBoughtLog(orle.Id, orleItem1.ItemId, 12000),
+                activityLogUserRewarded, _activityLogService.CreateItemBoughtLog(orle.Id, orleItem1.ItemId, 12000),
                 _activityLogService.CreateItemSoldLog(orle.Id, orleItem1.ItemId, 12000),
                 _activityLogService.CreateItemBrokeLog(orle.Id, orleItem1.ItemId),
                 _activityLogService.CreateItemUpgradedLog(orle.Id, orleItem1.ItemId, 2),
@@ -1753,13 +1832,16 @@ public record SeedDataCommand : IMediatorRequest
                     offer: new() { Gold = 0, HeirloomPoints = 1, Item = orleItem17.Item },
                     request: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item1.Item }),
                 _userNotificationService.CreateUserRewardedToUserNotification(orle.Id, 100, 1, orleItem1.ItemId),
-                _userNotificationService.CreateCharacterRewardedToUserNotification(orle.Id, orleCharacter0.Id, 122211),
+                _userNotificationService.CreateCharacterRewardedToUserNotification(orle.Id, orleCharacter0.Id,
+                    122211),
                 _userNotificationService.CreateItemReturnedToUserNotification(orle.Id, orleItem1.ItemId, 2, 1222),
-                _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, pecores.Id, takeo.Id),
+                _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, pecores.Id,
+                    takeo.Id),
                 _userNotificationService.CreateClanApplicationCreatedToUserNotification(orle.Id, pecores.Id),
                 _userNotificationService.CreateClanApplicationAcceptedToUserNotification(orle.Id, pecores.Id),
                 _userNotificationService.CreateClanApplicationDeclinedToUserNotification(orle.Id, pecores.Id),
-                _userNotificationService.CreateClanMemberRoleChangedToUserNotification(orle.Id, pecores.Id, takeo.Id, ClanMemberRole.Officer, ClanMemberRole.Leader),
+                _userNotificationService.CreateClanMemberRoleChangedToUserNotification(orle.Id, pecores.Id,
+                    takeo.Id, ClanMemberRole.Officer, ClanMemberRole.Leader),
                 _userNotificationService.CreateClanMemberLeavedToLeaderNotification(orle.Id, pecores.Id, takeo.Id),
                 _userNotificationService.CreateClanMemberKickedToExMemberNotification(orle.Id, pecores.Id),
                 _userNotificationService.CreateClanArmoryBorrowItemToLenderNotification(orle.Id, pecores.Id, orleItem1.ItemId, takeo.Id),
@@ -1769,12 +1851,233 @@ public record SeedDataCommand : IMediatorRequest
             _db.UserNotifications.RemoveRange(await _db.UserNotifications.ToArrayAsync(cancellationToken));
             _db.UserNotifications.AddRange(orleNotifications);
 
+
+            var questDefinitions = await _db.QuestDefinitions.ToArrayAsync(cancellationToken);
+            _db.UserQuests.RemoveRange(await _db.UserQuests.Where(uq => uq.UserId == orle.Id).ToArrayAsync(cancellationToken));
+            var dailyQuests = questDefinitions.Where(q => q.Type == QuestType.Daily).ToArray();
+            var weeklyQuests = questDefinitions.Where(q => q.Type == QuestType.Weekly).ToArray();
+
+            List<UserQuest> orleQuests = new();
+            for (int i = 0; i < dailyQuests.Length; i++)
+            {
+                orleQuests.Add(new UserQuest
+                {
+                    User = orle,
+                    QuestDefinition = dailyQuests[i],
+                    IsRewardClaimed = i == 2,
+                    ExpiresAt = i == 1 ? DateTime.UtcNow.AddDays(-1) : DateTime.UtcNow.AddDays(1),
+                });
+            }
+
+            for (int i = 0; i < weeklyQuests.Length; i++)
+            {
+                orleQuests.Add(new UserQuest
+                {
+                    User = orle,
+                    QuestDefinition = weeklyQuests[i],
+                    IsRewardClaimed = i == 2,
+                    ExpiresAt = DateTime.UtcNow.AddDays(7),
+                });
+            }
+
+            _db.UserQuests.AddRange(orleQuests);
+
+            GameEvent[] orleGameEvents =
+            [
+                new GameEvent
+                {
+                    User = orle,
+                    Type = GameEventType.Hit,
+                    EventData = new Dictionary<GameEventField, string>
+                    {
+                        [GameEventField.WeaponClass] = "OneHandedAxe",
+                        [GameEventField.ItemId] = "crpg_one_handed_axe_v2_h0",
+                        [GameEventField.HitType] = "Cut",
+                        [GameEventField.BodyPart] = "Chest",
+                        [GameEventField.Damage] = "60",
+                    },
+                    CreatedAt = DateTime.UtcNow.AddHours(-1),
+                },
+                new GameEvent
+                {
+                    User = orle,
+                    Type = GameEventType.Hit,
+                    EventData = new Dictionary<GameEventField, string>
+                    {
+                        [GameEventField.WeaponClass] = "OneHandedAxe",
+                        [GameEventField.ItemId] = "crpg_one_handed_axe_v2_h0",
+                        [GameEventField.HitType] = "Cut",
+                        [GameEventField.BodyPart] = "Head",
+                        [GameEventField.Damage] = "70",
+                    },
+                    CreatedAt = DateTime.UtcNow.AddHours(-2),
+                },
+                new GameEvent
+                {
+                    User = orle,
+                    Type = GameEventType.Hit,
+                    EventData = new Dictionary<GameEventField, string>
+                    {
+                        [GameEventField.WeaponClass] = "OneHandedSword",
+                        [GameEventField.ItemId] = "crpg_decorated_scimitar_with_wide_grip_v1_h0",
+                        [GameEventField.HitType] = "Cut",
+                        [GameEventField.BodyPart] = "Chest",
+                        [GameEventField.Damage] = "45",
+                    },
+                    CreatedAt = DateTime.UtcNow.AddHours(-3),
+                },
+                new GameEvent
+                {
+                    User = orle,
+                    Type = GameEventType.Hit,
+                    EventData = new Dictionary<GameEventField, string>
+                    {
+                        [GameEventField.WeaponClass] = "OneHandedSword",
+                        [GameEventField.ItemId] = "crpg_thamaskene_steel_spatha_v1_h2",
+                        [GameEventField.HitType] = "Cut",
+                        [GameEventField.BodyPart] = "Legs",
+                        [GameEventField.Damage] = "35",
+                    },
+                    CreatedAt = DateTime.UtcNow.AddHours(-4),
+                },
+                new GameEvent
+                {
+                    User = orle,
+                    Type = GameEventType.Hit,
+                    EventData = new Dictionary<GameEventField, string>
+                    {
+                        [GameEventField.WeaponClass] = "TwoHandedSword",
+                        [GameEventField.ItemId] = "crpg_scythe_v2_h3",
+                        [GameEventField.HitType] = "Cut",
+                        [GameEventField.BodyPart] = "Chest",
+                        [GameEventField.Damage] = "85",
+                    },
+                    CreatedAt = DateTime.UtcNow.AddHours(-5),
+                },
+                new GameEvent
+                {
+                    User = orle,
+                    Type = GameEventType.Hit,
+                    EventData = new Dictionary<GameEventField, string>
+                    {
+                        [GameEventField.WeaponClass] = "OneHandedPolearm",
+                        [GameEventField.ItemId] = "crpg_short_spear_v1_h0",
+                        [GameEventField.HitType] = "Thrust",
+                        [GameEventField.BodyPart] = "Chest",
+                        [GameEventField.Damage] = "95",
+                    },
+                    CreatedAt = DateTime.UtcNow.AddHours(-6),
+                },
+                new GameEvent
+                {
+                    User = orle,
+                    Type = GameEventType.Hit,
+                    EventData = new Dictionary<GameEventField, string>
+                    {
+                        [GameEventField.WeaponClass] = "Bow",
+                        [GameEventField.ItemId] = "crpg_hunting_bow_v2_h0",
+                        [GameEventField.HitType] = "Ranged",
+                        [GameEventField.BodyPart] = "Head",
+                        [GameEventField.Damage] = "80",
+                    },
+                    CreatedAt = DateTime.UtcNow.AddHours(-7),
+                },
+                new GameEvent
+                {
+                    User = orle,
+                    Type = GameEventType.Hit,
+                    EventData = new Dictionary<GameEventField, string>
+                    {
+                        [GameEventField.WeaponClass] = "Bow",
+                        [GameEventField.ItemId] = "crpg_hunting_bow_v2_h0",
+                        [GameEventField.HitType] = "Ranged",
+                        [GameEventField.BodyPart] = "Legs",
+                        [GameEventField.Damage] = "65",
+                    },
+                    CreatedAt = DateTime.UtcNow.AddHours(-8),
+                },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Bow", [GameEventField.ItemId] = "crpg_hunting_bow_v2_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-1) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Bow", [GameEventField.ItemId] = "crpg_hunting_bow_v2_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-1).AddMinutes(-20) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Bow", [GameEventField.ItemId] = "crpg_hunting_bow_v2_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-2) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Crossbow", [GameEventField.ItemId] = "crpg_light_crossbow_v1_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-2).AddMinutes(-30) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Crossbow", [GameEventField.ItemId] = "crpg_light_crossbow_v1_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-3) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Bow", [GameEventField.ItemId] = "crpg_hunting_bow_v2_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-3).AddMinutes(-20) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Bow", [GameEventField.ItemId] = "crpg_hunting_bow_v2_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-4) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Crossbow", [GameEventField.ItemId] = "crpg_light_crossbow_v1_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-4).AddMinutes(-40) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Bow", [GameEventField.ItemId] = "crpg_hunting_bow_v2_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-5) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Bow", [GameEventField.ItemId] = "crpg_hunting_bow_v2_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-5).AddMinutes(-30) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Crossbow", [GameEventField.ItemId] = "crpg_light_crossbow_v1_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-6) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Bow", [GameEventField.ItemId] = "crpg_hunting_bow_v2_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-6).AddMinutes(-20) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Bow", [GameEventField.ItemId] = "crpg_hunting_bow_v2_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-7) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Crossbow", [GameEventField.ItemId] = "crpg_light_crossbow_v1_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-7).AddMinutes(-40) },
+                new GameEvent { User = orle, Type = GameEventType.Kill, EventData = new Dictionary<GameEventField, string> { [GameEventField.WeaponClass] = "Bow", [GameEventField.ItemId] = "crpg_hunting_bow_v2_h0", [GameEventField.HitType] = "Ranged", [GameEventField.BodyPart] = "Head" }, CreatedAt = DateTime.UtcNow.AddHours(-8) },
+                new GameEvent
+                {
+                    User = orle,
+                    Type = GameEventType.Block,
+                    EventData = new Dictionary<GameEventField, string>
+                    {
+                        [GameEventField.WeaponClass] = "SmallShield",
+                        [GameEventField.ItemId] = "crpg_small_round_shield_v1_h0",
+                    },
+                    CreatedAt = DateTime.UtcNow.AddHours(-1).AddMinutes(-10),
+                },
+                new GameEvent
+                {
+                    User = orle,
+                    Type = GameEventType.Block,
+                    EventData = new Dictionary<GameEventField, string>
+                    {
+                        [GameEventField.WeaponClass] = "SmallShield",
+                        [GameEventField.ItemId] = "crpg_small_round_shield_v1_h0",
+                        [GameEventField.HitType] = "Ranged",
+                    },
+                    CreatedAt = DateTime.UtcNow.AddHours(-2).AddMinutes(-10),
+                },
+                new GameEvent
+                {
+                    User = orle,
+                    Type = GameEventType.Block,
+                    EventData = new Dictionary<GameEventField, string>
+                    {
+                        [GameEventField.WeaponClass] = "LargeShield",
+                        [GameEventField.ItemId] = "crpg_large_round_shield_v1_h0",
+                    },
+                    CreatedAt = DateTime.UtcNow.AddHours(-3).AddMinutes(-10),
+                },
+                new GameEvent
+                {
+                    User = orle,
+                    Type = GameEventType.Block,
+                    EventData = new Dictionary<GameEventField, string>
+                    {
+                        [GameEventField.WeaponClass] = "LargeShield",
+                        [GameEventField.ItemId] = "crpg_large_round_shield_v1_h0",
+                    },
+                    CreatedAt = DateTime.UtcNow.AddHours(-4).AddMinutes(-10),
+                },
+                new GameEvent
+                {
+                    User = orle,
+                    Type = GameEventType.Block,
+                    EventData = new Dictionary<GameEventField, string>
+                    {
+                        [GameEventField.WeaponClass] = "OneHandedSword",
+                        [GameEventField.ItemId] = "crpg_rondel_v3_h3",
+                    },
+                    CreatedAt = DateTime.UtcNow.AddHours(-5).AddMinutes(-10),
+                },
+            ];
+            _db.GameEvents.RemoveRange(await _db.GameEvents.Where(e => e.UserId == orle.Id).ToArrayAsync(cancellationToken));
+            _db.GameEvents.AddRange(orleGameEvents);
+
             ClanInvitation[] newClanInvitations = [schumetzqRequestForPecores, victorhh888MemberRequestForPecores, neostralieOfferToBrygganForPecores];
 
             var existingClanInvitations = await _db.ClanInvitations.ToDictionaryAsync(i => (i.InviteeId, i.InviterId), cancellationToken);
             foreach (var newClanInvitation in newClanInvitations)
             {
-                if (!existingClanInvitations.ContainsKey((newClanInvitation.Invitee!.Id, newClanInvitation.Inviter!.Id)))
+                if (!existingClanInvitations.ContainsKey((newClanInvitation.Invitee!.Id,
+                        newClanInvitation.Inviter!.Id)))
                 {
                     _db.ClanInvitations.Add(newClanInvitation);
                 }
@@ -2200,30 +2503,97 @@ public record SeedDataCommand : IMediatorRequest
                 Position = new Point(148.7421873, -113.3123),
                 Fighters =
                 {
-                    new BattleFighter { Party = orle2Party, Side = BattleSide.Attacker, Commander = true, ParticipantSlots = 1 },
-                    new BattleFighter { Party = baronCyborgParty, Side = BattleSide.Attacker, ParticipantSlots = 1 },
-                    new BattleFighter { Party = sellkaParty, Side = BattleSide.Defender, Commander = true, ParticipantSlots = 50 },
+                    new BattleFighter
+                    {
+                        Party = orle2Party, Side = BattleSide.Attacker, Commander = true, ParticipantSlots = 1
+                    },
+                    new BattleFighter
+                    {
+                        Party = baronCyborgParty, Side = BattleSide.Attacker, ParticipantSlots = 1
+                    },
+                    new BattleFighter
+                    {
+                        Party = sellkaParty, Side = BattleSide.Defender, Commander = true, ParticipantSlots = 50
+                    },
                 },
                 MercenaryApplications =
                 {
-                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending, Note = "Lorem ipsum dolor sit amet consectetur.", Wage = 1500 },
-                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
-                    new BattleMercenaryApplication { Character = takeoCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending },
-                    new BattleMercenaryApplication { Character = droobCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Accepted },
+                    new BattleMercenaryApplication
+                    {
+                        Character = orleCharacter0,
+                        Side = BattleSide.Attacker,
+                        Status = BattleMercenaryApplicationStatus.Pending,
+                        Note = "Lorem ipsum dolor sit amet consectetur.",
+                        Wage = 1500
+                    },
+                    new BattleMercenaryApplication
+                    {
+                        Character = orleCharacter0,
+                        Side = BattleSide.Defender,
+                        Status = BattleMercenaryApplicationStatus.Pending
+                    },
+                    new BattleMercenaryApplication
+                    {
+                        Character = takeoCharacter0,
+                        Side = BattleSide.Attacker,
+                        Status = BattleMercenaryApplicationStatus.Pending
+                    },
+                    new BattleMercenaryApplication
+                    {
+                        Character = droobCharacter0,
+                        Side = BattleSide.Attacker,
+                        Status = BattleMercenaryApplicationStatus.Accepted
+                    },
                 },
                 Participants =
                 {
-                    new BattleParticipant { Side = BattleSide.Attacker, Character = orle2Character0, Type = BattleParticipantType.Party },
-                    new BattleParticipant { Side = BattleSide.Attacker, Character = baronCyborgCharacter0, Type = BattleParticipantType.Party },
-                    new BattleParticipant { Side = BattleSide.Defender, Character = sellkaCharacter0, Type = BattleParticipantType.Party },
-                    new BattleParticipant { Side = BattleSide.Attacker, Character = kadseCharacter0, Type = BattleParticipantType.Mercenary },
-                    new BattleParticipant { Side = BattleSide.Defender, Character = peekyCharacter0, Type = BattleParticipantType.Mercenary },
-                    new BattleParticipant { Side = BattleSide.Defender, Character = namidakaCharacter0, Type = BattleParticipantType.Mercenary },
-                    new BattleParticipant { Side = BattleSide.Defender, Character = krogCharacter0, Type = BattleParticipantType.Mercenary },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Attacker, Character = orle2Character0, Type = BattleParticipantType.Party
+                    },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Attacker,
+                        Character = baronCyborgCharacter0,
+                        Type = BattleParticipantType.Party
+                    },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Defender, Character = sellkaCharacter0, Type = BattleParticipantType.Party
+                    },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Attacker,
+                        Character = kadseCharacter0,
+                        Type = BattleParticipantType.Mercenary
+                    },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Defender,
+                        Character = peekyCharacter0,
+                        Type = BattleParticipantType.Mercenary
+                    },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Defender,
+                        Character = namidakaCharacter0,
+                        Type = BattleParticipantType.Mercenary
+                    },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Defender,
+                        Character = krogCharacter0,
+                        Type = BattleParticipantType.Mercenary
+                    },
                 },
                 SideBriefings =
                 {
-                    new BattleSideBriefing { Side = BattleSide.Attacker, Note = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate" },
+                    new BattleSideBriefing
+                    {
+                        Side = BattleSide.Attacker,
+                        Note =
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate"
+                    },
                 },
             };
 
@@ -2239,16 +2609,49 @@ public record SeedDataCommand : IMediatorRequest
                 },
                 Participants =
                 {
-                    new BattleParticipant { Side = BattleSide.Attacker, Character = orleCharacter0, Type = BattleParticipantType.Party },
-                    new BattleParticipant { Side = BattleSide.Defender, Character = orle2Character0, Type = BattleParticipantType.Party },
-                    new BattleParticipant { Side = BattleSide.Attacker, Character = kadseCharacter0, Type = BattleParticipantType.Mercenary },
-                    new BattleParticipant { Side = BattleSide.Defender, Character = peekyCharacter0, Type = BattleParticipantType.Mercenary },
-                    new BattleParticipant { Side = BattleSide.Defender, Character = namidakaCharacter0, Type = BattleParticipantType.Mercenary },
-                    new BattleParticipant { Side = BattleSide.Defender, Character = krogCharacter0, Type = BattleParticipantType.Mercenary },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Attacker, Character = orleCharacter0, Type = BattleParticipantType.Party
+                    },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Defender, Character = orle2Character0, Type = BattleParticipantType.Party
+                    },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Attacker,
+                        Character = kadseCharacter0,
+                        Type = BattleParticipantType.Mercenary
+                    },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Defender,
+                        Character = peekyCharacter0,
+                        Type = BattleParticipantType.Mercenary
+                    },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Defender,
+                        Character = namidakaCharacter0,
+                        Type = BattleParticipantType.Mercenary
+                    },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Defender,
+                        Character = krogCharacter0,
+                        Type = BattleParticipantType.Mercenary
+                    },
                 },
                 MercenaryApplications =
                 {
-                    new BattleMercenaryApplication { Character = droobCharacter0, Side = BattleSide.Attacker, Status = BattleMercenaryApplicationStatus.Pending, Wage = 11111, Note = "Some" },
+                    new BattleMercenaryApplication
+                    {
+                        Character = droobCharacter0,
+                        Side = BattleSide.Attacker,
+                        Status = BattleMercenaryApplicationStatus.Pending,
+                        Wage = 11111,
+                        Note = "Some"
+                    },
                 },
             };
 
@@ -2265,16 +2668,35 @@ public record SeedDataCommand : IMediatorRequest
                 },
                 Participants =
                 {
-                    new BattleParticipant { Side = BattleSide.Attacker, Character = baronCyborgCharacter0, Type = BattleParticipantType.Party },
-                    new BattleParticipant { Side = BattleSide.Defender, Character = orle2Character0, Type = BattleParticipantType.Party },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Attacker,
+                        Character = baronCyborgCharacter0,
+                        Type = BattleParticipantType.Party
+                    },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Defender,
+                        Character = orle2Character0,
+                        Type = BattleParticipantType.Party
+                    },
                 },
                 MercenaryApplications =
                 {
-                    new BattleMercenaryApplication { Character = orleCharacter0, Side = BattleSide.Defender, Status = BattleMercenaryApplicationStatus.Pending },
+                    new BattleMercenaryApplication
+                    {
+                        Character = orleCharacter0,
+                        Side = BattleSide.Defender,
+                        Status = BattleMercenaryApplicationStatus.Pending
+                    },
                 },
                 SideBriefings =
                 {
-                    new BattleSideBriefing { Side = BattleSide.Defender, Note = "Lorem ipsum dolor sit amet consectetur adipisicing elit. " },
+                    new BattleSideBriefing
+                    {
+                        Side = BattleSide.Defender,
+                        Note = "Lorem ipsum dolor sit amet consectetur adipisicing elit. "
+                    },
                 },
             };
 
@@ -2290,7 +2712,12 @@ public record SeedDataCommand : IMediatorRequest
                 },
                 Participants =
                 {
-                    new BattleParticipant { Side = BattleSide.Attacker, Character = baronCyborgCharacter0, Type = BattleParticipantType.Party },
+                    new BattleParticipant
+                    {
+                        Side = BattleSide.Attacker,
+                        Character = baronCyborgCharacter0,
+                        Type = BattleParticipantType.Party
+                    },
                 },
             };
 
@@ -2301,8 +2728,14 @@ public record SeedDataCommand : IMediatorRequest
                 Position = droobParty.Position,
                 Fighters =
                 {
-                    new BattleFighter { Party = orle2Party, Side = BattleSide.Attacker, Commander = true, ParticipantSlots = 50 },
-                    new BattleFighter { Party = droobParty, Side = BattleSide.Defender, Commander = true, ParticipantSlots = 50 },
+                    new BattleFighter
+                    {
+                        Party = orle2Party, Side = BattleSide.Attacker, Commander = true, ParticipantSlots = 50
+                    },
+                    new BattleFighter
+                    {
+                        Party = droobParty, Side = BattleSide.Defender, Commander = true, ParticipantSlots = 50
+                    },
                 },
                 FighterApplications =
                 {
@@ -2315,7 +2748,8 @@ public record SeedDataCommand : IMediatorRequest
             // orleParty.Position = testBattle.Position;
             // orleParty.TargetedBattle = testBattle;
 
-            Battle[] newBattles = [
+            Battle[] newBattles =
+            [
                 // battle1, battle2,
                 //
                 // siege1,
@@ -2331,12 +2765,18 @@ public record SeedDataCommand : IMediatorRequest
                 new()
                 {
                     Type = TerrainType.ThickForest,
-                    Boundary = new Polygon(new LinearRing([new(118.930359, -112.983176), new(119.891274, -114.631516), new(122.164935, -113.670824), new(121.188394, -112.264609), new(118.930359, -112.983176),])),
+                    Boundary = new Polygon(new LinearRing([
+                        new(118.930359, -112.983176), new(119.891274, -114.631516), new(122.164935, -113.670824),
+                        new(121.188394, -112.264609), new(118.930359, -112.983176),
+                    ])),
                 },
                 new()
                 {
                     Type = TerrainType.SparseForest,
-                    Boundary = new Polygon(new LinearRing([new(118.875666, -111.452317), new(118.930359, -112.983176), new(121.188394, -112.264609), new(120.430507, -110.87434), new(118.875666, -111.452317),])),
+                    Boundary = new Polygon(new LinearRing([
+                        new(118.875666, -111.452317), new(118.930359, -112.983176), new(121.188394, -112.264609),
+                        new(120.430507, -110.87434), new(118.875666, -111.452317),
+                    ])),
                 },
             ];
 
@@ -2495,6 +2935,45 @@ public record SeedDataCommand : IMediatorRequest
             };
         }
 
+        private async Task CreateOrUpdateQuests(CancellationToken cancellationToken)
+        {
+            var questsById = (await _questsSource.LoadQuests()).ToDictionary(i => i.Id);
+            var dbQuestsById = await _db.QuestDefinitions.ToDictionaryAsync(i => i.Id, cancellationToken);
+
+            foreach (QuestDefinition questDefinition in questsById.Values)
+            {
+                CreateOrUpdateQuest(dbQuestsById, questDefinition);
+            }
+
+            // Remove items that were deleted from the item source
+            foreach (QuestDefinition dbQuestDefinition in dbQuestsById.Values)
+            {
+                if (questsById.ContainsKey(dbQuestDefinition.Id))
+                {
+                    continue;
+                }
+
+                var itemsToDelete = dbQuestsById.Values.Where(i => i.Id == dbQuestDefinition.Id).ToArray();
+                foreach (var i in itemsToDelete)
+                {
+                    _db.Entry(i).State = EntityState.Deleted;
+                }
+            }
+        }
+
+        private void CreateOrUpdateQuest(Dictionary<int, QuestDefinition> dbQuestsById, QuestDefinition questDefinition)
+        {
+            if (dbQuestsById.TryGetValue(questDefinition.Id, out QuestDefinition? dbQuestDefinition))
+            {
+                var dbQuestEntry = _db.Entry(dbQuestDefinition);
+                dbQuestEntry.CurrentValues.SetValues(questDefinition);
+            }
+            else
+            {
+                _db.QuestDefinitions.Add(questDefinition);
+            }
+        }
+
         private async Task CreateOrUpdateSettlements(CancellationToken cancellationToken)
         {
             var settlementsByName = (await _settlementsSource.LoadCampaignSettlements())
@@ -2518,7 +2997,8 @@ public record SeedDataCommand : IMediatorRequest
                         Type = settlementCreation.Type,
                         Culture = settlementCreation.Culture,
                         Region = region,
-                        Position = _campaignMap.TranslatePositionForRegion(settlementCreation.Position, Region.Eu, region),
+                        Position =
+                            _campaignMap.TranslatePositionForRegion(settlementCreation.Position, Region.Eu, region),
                         Scene = settlementCreation.Scene,
                         Troops = CampaignSettlementDefaultTroops[settlementCreation.Type],
                         Owner = settlementCreation.Owner,
@@ -2546,7 +3026,8 @@ public record SeedDataCommand : IMediatorRequest
                     // // TODO: hack FIXME: only in dev END
                     // }
 
-                    if (dbSettlementsByNameRegion.TryGetValue((settlement.Name, settlement.Region), out Settlement? dbSettlement))
+                    if (dbSettlementsByNameRegion.TryGetValue((settlement.Name, settlement.Region),
+                            out Settlement? dbSettlement))
                     {
                         _db.Entry(dbSettlement).State = EntityState.Detached;
 

@@ -47,4 +47,6 @@ public enum ActivityLogType
     MarketplaceListingInvalidated,
     MarketplaceListingCancelled,
     MarketplaceListingExpired,
+    QuestRewardClaimed,
+    QuestRerolled,
 }

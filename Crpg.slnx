@@ -2,6 +2,7 @@
   <Folder Name="/data/">
     <File Path="data/constants.json" />
     <File Path="data/items.json" />
+    <File Path="data/quests.json" />
     <File Path="data/settlements.json" />
   </Folder>
   <Folder Name="/misc/">
