@@ -38071,76 +38071,76 @@
   <CraftingPiece id="crpg_sunsword_handle_h3" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.1">
     <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_blade_h0" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
+  <CraftingPiece id="crpg_sunsword2h_blade_h0" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.25">
     <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
+      <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_blade_h1" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
+  <CraftingPiece id="crpg_sunsword2h_blade_h1" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.25">
     <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_blade_h2" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
+  <CraftingPiece id="crpg_sunsword2h_blade_h2" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.25">
     <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_blade_h3" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.0">
+  <CraftingPiece id="crpg_sunsword2h_blade_h3" name="{=Yeldur}Sunsword Blade" tier="4" piece_type="Blade" mesh="sunsword_blade" culture="Culture.battania" length="83.3" weight="1.25">
     <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="4.1" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_pommel_h0" name="{=}Sunsword Pommel" tier="4" piece_type="Pommel" mesh="sunsword_pommel" full_scale="true" culture="Culture.battania" length="6.3" weight="0.12">
+  <CraftingPiece id="crpg_sunsword2h_pommel_h0" name="{=}Sunsword Pommel" tier="4" piece_type="Pommel" mesh="sunsword_pommel" full_scale="true" culture="Culture.battania" length="6.3" weight="0.5">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_pommel_h1" name="{=}Sunsword Pommel" tier="4" piece_type="Pommel" mesh="sunsword_pommel" full_scale="true" culture="Culture.battania" length="6.3" weight="0.12">
+  <CraftingPiece id="crpg_sunsword2h_pommel_h1" name="{=}Sunsword Pommel" tier="4" piece_type="Pommel" mesh="sunsword_pommel" full_scale="true" culture="Culture.battania" length="6.3" weight="0.5">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_pommel_h2" name="{=}Sunsword Pommel" tier="4" piece_type="Pommel" mesh="sunsword_pommel" full_scale="true" culture="Culture.battania" length="6.3" weight="0.12">
+  <CraftingPiece id="crpg_sunsword2h_pommel_h2" name="{=}Sunsword Pommel" tier="4" piece_type="Pommel" mesh="sunsword_pommel" full_scale="true" culture="Culture.battania" length="6.3" weight="0.5">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_pommel_h3" name="{=}Sunsword Pommel" tier="4" piece_type="Pommel" mesh="sunsword_pommel" full_scale="true" culture="Culture.battania" length="6.3" weight="0.12">
+  <CraftingPiece id="crpg_sunsword2h_pommel_h3" name="{=}Sunsword Pommel" tier="4" piece_type="Pommel" mesh="sunsword_pommel" full_scale="true" culture="Culture.battania" length="6.3" weight="0.5">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_guard_h0" name="{=}Sunsword Guard" tier="5" piece_type="Guard" mesh="sunsword_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.097">
+  <CraftingPiece id="crpg_sunsword2h_guard_h0" name="{=}Sunsword Guard" tier="5" piece_type="Guard" mesh="sunsword_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.5">
     <BuildData next_piece_offset="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_guard_h1" name="{=}Sunsword Guard" tier="5" piece_type="Guard" mesh="sunsword_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.097">
+  <CraftingPiece id="crpg_sunsword2h_guard_h1" name="{=}Sunsword Guard" tier="5" piece_type="Guard" mesh="sunsword_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.5">
     <BuildData next_piece_offset="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_guard_h2" name="{=}Sunsword Guard" tier="5" piece_type="Guard" mesh="sunsword_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.097">
+  <CraftingPiece id="crpg_sunsword2h_guard_h2" name="{=}Sunsword Guard" tier="5" piece_type="Guard" mesh="sunsword_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.5">
     <BuildData next_piece_offset="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_guard_h3" name="{=}Sunsword Guard" tier="5" piece_type="Guard" mesh="sunsword_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.097">
+  <CraftingPiece id="crpg_sunsword2h_guard_h3" name="{=}Sunsword Guard" tier="5" piece_type="Guard" mesh="sunsword_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.5">
     <BuildData next_piece_offset="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_handle_h0" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.1">
+  <CraftingPiece id="crpg_sunsword2h_handle_h0" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.75">
     <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_handle_h1" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.1">
+  <CraftingPiece id="crpg_sunsword2h_handle_h1" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.75">
     <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_handle_h2" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.1">
+  <CraftingPiece id="crpg_sunsword2h_handle_h2" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.75">
     <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_sunsword2h_handle_h3" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.1">
+  <CraftingPiece id="crpg_sunsword2h_handle_h3" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.75">
     <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
   </CraftingPiece>
   <CraftingPiece id="crpg_hatinghand_handle_h0" name="{=}Hating Hand Handle" tier="4" piece_type="Handle" mesh="hatinghand_handle" length="73" weight="1.6" is_default="true">
