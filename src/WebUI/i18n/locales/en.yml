@@ -1196,10 +1196,10 @@ item:
   usage:
     long_bow:
       title: Longbow
-      description: ''
+      description: 'Can''t use on horseback'
     bow:
       title: Bow
-      description: ''
+      description: Can use on horseback
     crossbow:
       title: Heavy crossbow
       description: ''

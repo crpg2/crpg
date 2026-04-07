@@ -708,11 +708,10 @@ export const computeOverallArmor = (items: Item[]): OverallArmor =>
     },
   )
 
-// // TODO: SPEC
 export const computeLongestWeaponLength = (items: Item[]) => {
   return items
     .filter(item => ([ITEM_TYPE.OneHandedWeapon, ITEM_TYPE.TwoHandedWeapon, ITEM_TYPE.Polearm] as ItemType[]).includes(item.type))
-    .reduce((total, item) => (total += Math.max(total, item.weapons[0]?.length ?? 0)), 0)
+    .reduce((max, item) => Math.max(max, item.weapons[0]?.length ?? 0), 0)
 }
 
 export const computeOverallAverageRepairCostByHour = (items: Item[]) => Math.floor(items.reduce((total, item) => total + computeAverageRepairCostPerHour(item.price), 0))

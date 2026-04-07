@@ -1158,10 +1158,10 @@ item:
   usage:
     long_bow:
       title: Длинный лук
-      description: ''
+      description: Нельзя использовать верхом
     bow:
       title: Короткий лук
-      description: ''
+      description: Можно использовать верхом
     crossbow:
       title: Тяжелый арбалет
       description: ''

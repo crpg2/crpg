@@ -128,7 +128,6 @@ const renderClanArmoryItemDetail = (opendeItem: OpenedItem, compareItemsResult: 
 
     <div class="mx-auto max-w-2xl">
       <ItemGrid
-        v-if="Boolean(items.length)"
         v-model:sorting="sortingModel"
         :items
         :sorting-config="sortingConfig"

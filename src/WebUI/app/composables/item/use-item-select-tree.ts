@@ -82,9 +82,7 @@ export function useItemSelectTree<TItem extends ItemFlat, TSelected>(
     getFilteredRowModel: getFilteredRowModel(),
     getFacetedRowModel: getFacetedRowModel(),
     getFacetedUniqueValues: getFacetedUniqueValues(),
-    filterFns: {
-      includesSome,
-    },
+    filterFns: { includesSome },
     getRowId: row => row.id,
     state: {
       get globalFilter() {
