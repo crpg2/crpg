@@ -1521,14 +1521,6 @@ notification:
     title: 物品已归还
     tpl: '物品 {item} 已从你的物品栏中移除。退还 {refundedGold} {refundedHeirloomPoints}'
 
-  MarketplaceOfferExpired:
-    title: 市场报价已过期
-    tpl: '你的市场报价 #{offerId} 已过期。已退还：{refundedGold} {refundedHeirloomPoints}'
-
-  MarketplaceOfferCancelled:
-    title: 市场报价已取消
-    tpl: '你的市场报价 #{offerId} 已取消。已退还：{refundedGold} {refundedHeirloomPoints}'
-
   ClanMemberRoleChangedToUser:
     title: 家族身份已更改
     tpl: '你在家族 {clan} 中的身份 {oldClanMemberRole} 已更改为 {newClanMemberRole}'
