@@ -101,7 +101,7 @@ export type BattleFighterInventoryViewModel = {
     fighterId: number;
     party: PartyPublicViewModel | null;
     settlement: SettlementPublicViewModel | null;
-    items: Array<ItemStack>;
+    items: Array<ItemStackViewModel>;
 };
 
 export type BattleFighterInventoryViewModelIListResult = {
@@ -736,29 +736,29 @@ export type ItemMountComponentViewModel = {
 
 export type ItemSlot = 'Head' | 'Shoulder' | 'Body' | 'Hand' | 'Leg' | 'MountHarness' | 'Mount' | 'Weapon0' | 'Weapon1' | 'Weapon2' | 'Weapon3' | 'WeaponExtra';
 
-export type ItemStack = {
+export type ItemStackUpdate = {
+    itemId: string;
+    count: number;
+};
+
+export type ItemStackViewModel = {
     item: ItemViewModel;
     count: number;
 };
 
-export type ItemStackArrayResult = {
+export type ItemStackViewModelArrayResult = {
     readonly errors: Array<Error> | null;
-    data: Array<ItemStack> | null;
+    data: Array<ItemStackViewModel> | null;
 };
 
-export type ItemStackIListResult = {
+export type ItemStackViewModelIListResult = {
     readonly errors: Array<Error> | null;
-    data: Array<ItemStack> | null;
+    data: Array<ItemStackViewModel> | null;
 };
 
-export type ItemStackResult = {
+export type ItemStackViewModelResult = {
     readonly errors: Array<Error> | null;
-    data: ItemStack | null;
-};
-
-export type ItemStackUpdate = {
-    itemId: string;
-    count: number;
+    data: ItemStackViewModel | null;
 };
 
 export type ItemType = 'Undefined' | 'HeadArmor' | 'ShoulderArmor' | 'BodyArmor' | 'HandArmor' | 'LegArmor' | 'MountHarness' | 'Mount' | 'Shield' | 'Bow' | 'Crossbow' | 'OneHandedWeapon' | 'TwoHandedWeapon' | 'Polearm' | 'Thrown' | 'Arrows' | 'Bolts' | 'Pistol' | 'Musket' | 'Bullets' | 'Banner' | 'Ranged' | 'Ammo';
@@ -879,7 +879,7 @@ export type PartyTransferOfferViewModel = {
     status: PartyTransferOfferStatus;
     gold: number;
     troops: number;
-    items: Array<ItemStack>;
+    items: Array<ItemStackViewModel>;
 };
 
 export type PartyTransferOfferViewModelResult = {
@@ -1350,7 +1350,7 @@ export type BattleFighterInventoryViewModelWritable = {
     fighterId: number;
     party: PartyPublicViewModel | null;
     settlement: SettlementPublicViewModelWritable | null;
-    items: Array<ItemStack>;
+    items: Array<ItemStackViewModel>;
 };
 
 export type BattleFighterInventoryViewModelIListResultWritable = {
@@ -1523,16 +1523,16 @@ export type GeoJsonPolygonWritable = {
     coordinates: Array<Array<Array<number>>>;
 };
 
-export type ItemStackArrayResultWritable = {
-    data: Array<ItemStack> | null;
+export type ItemStackViewModelArrayResultWritable = {
+    data: Array<ItemStackViewModel> | null;
 };
 
-export type ItemStackIListResultWritable = {
-    data: Array<ItemStack> | null;
+export type ItemStackViewModelIListResultWritable = {
+    data: Array<ItemStackViewModel> | null;
 };
 
-export type ItemStackResultWritable = {
-    data: ItemStack | null;
+export type ItemStackViewModelResultWritable = {
+    data: ItemStackViewModel | null;
 };
 
 export type ItemViewModelIListResultWritable = {
@@ -1577,7 +1577,7 @@ export type PartyTransferOfferViewModelWritable = {
     status: PartyTransferOfferStatus;
     gold: number;
     troops: number;
-    items: Array<ItemStack>;
+    items: Array<ItemStackViewModel>;
 };
 
 export type PartyTransferOfferViewModelResultWritable = {
@@ -3027,7 +3027,7 @@ export type GetPartiesSelfItemsResponses = {
     /**
      * Ok.
      */
-    200: ItemStackIListResult;
+    200: ItemStackViewModelIListResult;
 };
 
 export type GetPartiesSelfItemsResponse = GetPartiesSelfItemsResponses[keyof GetPartiesSelfItemsResponses];
@@ -3050,7 +3050,7 @@ export type PostPartiesSelfItemsResponses = {
     /**
      * Bought.
      */
-    200: ItemStackResult;
+    200: ItemStackViewModelResult;
 };
 
 export type PostPartiesSelfItemsResponse = PostPartiesSelfItemsResponses[keyof PostPartiesSelfItemsResponses];
@@ -3075,7 +3075,7 @@ export type GetPartiesByPartyIdItemsResponses = {
     /**
      * Ok.
      */
-    200: ItemStackIListResult;
+    200: ItemStackViewModelIListResult;
 };
 
 export type GetPartiesByPartyIdItemsResponse = GetPartiesByPartyIdItemsResponses[keyof GetPartiesByPartyIdItemsResponses];
@@ -3283,7 +3283,7 @@ export type GetSettlementsBySettlementIdItemsResponses = {
     /**
      * OK
      */
-    200: ItemStackIListResult;
+    200: ItemStackViewModelIListResult;
 };
 
 export type GetSettlementsBySettlementIdItemsResponse = GetSettlementsBySettlementIdItemsResponses[keyof GetSettlementsBySettlementIdItemsResponses];
@@ -3301,7 +3301,7 @@ export type PutSettlementsBySettlementIdItemsResponses = {
     /**
      * OK
      */
-    200: ItemStackArrayResult;
+    200: ItemStackViewModelArrayResult;
 };
 
 export type PutSettlementsBySettlementIdItemsResponse = PutSettlementsBySettlementIdItemsResponses[keyof PutSettlementsBySettlementIdItemsResponses];
