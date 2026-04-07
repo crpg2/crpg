@@ -125,12 +125,12 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
   {
     accessorKey: 'class',
     enableGlobalFilter: false,
-    header: ({ column }) => {
+    header: () => {
       return h(UiGridColumnHeader, {
         label: t('leaderboard.table.cols.class'),
         withFilter: true,
-        filtered: column.getIsFiltered(),
-        onResetFilter: () => column.setFilterValue(undefined),
+        filtered: Boolean(characterClassModel.value),
+        onResetFilter: () => characterClassModel.value = undefined,
       }, {
         filter() {
           // TODO: use facets
@@ -148,8 +148,8 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
               icon: `crpg:${characterClassToIcon[charClass]}`,
               label: t(`character.class.${charClass}`),
             })),
-            'modelValue': column.getFilterValue(),
-            'onUpdate:modelValue': column.setFilterValue,
+            'modelValue': characterClassModel.value,
+            'onUpdate:modelValue': (val: CharacterClass) => characterClassModel.value = val,
           }, {
             default: () => h(UiGridColumnHeaderLabel, {
               label: t('leaderboard.table.cols.class'),

@@ -18,8 +18,7 @@ import { useItemDetail } from '~/composables/item/use-item-detail'
 // import { useMainHeader } from '~/composables/app/use-main-header'
 // import { useStickySidebar } from '~/composables/use-sticky-sidebar'
 import { ITEM_TYPE } from '~/models/item'
-import { getAggregationsConfig, getFacetsByItemType, getFilterFn } from '~/services/item-search-service'
-import { aggregationsConfig } from '~/services/item-search-service/aggregations'
+import { getAggregationsConfig, getFacetsByItemType, sortByItemType } from '~/services/item-search-service'
 import { createItemIndex } from '~/services/item-search-service/indexator'
 import { getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
 
@@ -77,7 +76,7 @@ const columns: TableColumn<T>[] = [
   {
     accessorFn: row => row.item.type,
     id: 'type',
-    filterFn: getFilterFn(aggregationsConfig.type!),
+    sortingFn: sortByItemType,
   },
   {
     accessorFn: row => row.item.price,
@@ -151,13 +150,15 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
       weaponClass: group.weaponClass,
     }))
 })
+
+const result = computed(() => grid.getRowModel().rows)
 </script>
 
 <template>
   <div class="relative">
     <UiLoading :active="loading" />
 
-    <div v-if="items.length" class="itemGrid grid h-full items-start gap-x-3 gap-y-4">
+    <div class="itemGrid grid h-full items-start gap-x-3 gap-y-4">
       <!-- ref="aside"
       :style="{ top: `${stickySidebarTop}px` }" -->
       <div
@@ -201,19 +202,25 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
         </div>
       </div>
 
-      <div
-        style="grid-area: result"
-        class="
-          grid grid-cols-3 gap-2
-          2xl:grid-cols-4
-        "
-      >
-        <template v-for="item in grid.getRowModel().rows" :key="item.original.item.id">
-          <slot name="item" v-bind="item.original" />
-        </template>
+      <div style="grid-area: result" class="min-h-[220px]">
+        <div
+          v-if="result.length"
+          class="
+            grid grid-cols-3 gap-2
+            2xl:grid-cols-4
+          "
+        >
+          <template v-for="item in result" :key="item.original.item.id">
+            <slot name="item" v-bind="item.original" />
+          </template>
+        </div>
+
+        <UCard v-else-if="!loading">
+          <UiResultNotFound :message="$t('character.inventory.empty')" />
+        </UCard>
       </div>
 
-      <div style="grid-area: footer" class="sticky bottom-4 z-10 space-y-3">
+      <div v-if="!loading" style="grid-area: footer" class="sticky bottom-4 z-10 space-y-3">
         <UiGridPagination
           v-if="withPagination && showPagination"
           :page="pagination.pageIndex + 1"
@@ -226,15 +233,11 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
           name="footer"
           v-bind="{
             filteredItemsCost,
-            filteredItemsCount: grid.getRowModel().rows.length,
+            filteredItemsCount: result.length,
             totalItemsCount: grid.getFilteredRowModel().rows.length }"
         />
       </div>
     </div>
-
-    <UCard v-else-if="!loading">
-      <UiResultNotFound :message="$t('character.inventory.empty')" />
-    </UCard>
 
     <ItemDetailGroup>
       <template #default="item">

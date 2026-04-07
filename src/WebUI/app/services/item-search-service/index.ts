@@ -1,4 +1,4 @@
-import type { FilterFnOption, VisibilityState } from '@tanstack/vue-table'
+import type { FilterFnOption, SortingFn, VisibilityState } from '@tanstack/vue-table'
 
 import { omitBy } from 'es-toolkit'
 
@@ -129,4 +129,10 @@ export const getItemAggregations = (itemFlat: ItemFlat, omitEmpty = true): Aggre
   return omitEmpty
     ? omitBy(aggsConfig, (_value, field) => itemParamIsEmpty(field as keyof ItemFlat, itemFlat))
     : aggsConfig
+}
+
+export const sortByItemType: SortingFn<any> = (rowA, rowB, columnId) => {
+  const a = itemTypeOrder.get(rowA.getValue(columnId)) ?? Infinity
+  const b = itemTypeOrder.get(rowB.getValue(columnId)) ?? Infinity
+  return a - b
 }

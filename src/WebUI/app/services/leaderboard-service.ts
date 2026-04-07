@@ -24,9 +24,9 @@ export const getLeaderBoard = async ({
 }): Promise<CharacterCompetitiveNumbered[]> => {
   const { data } = await getLeaderboardLeaderboard({
     query: {
-      region: region!,
-      gameMode: gameMode!,
-      characterClass: characterClass!,
+      region,
+      gameMode,
+      characterClass,
     },
   })
 
