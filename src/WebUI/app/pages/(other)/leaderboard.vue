@@ -133,7 +133,6 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
         onResetFilter: () => column.setFilterValue(undefined),
       }, {
         filter() {
-          // TODO: use facets
           return h(USelect, {
             'variant': 'none',
             'multiple': false,
@@ -233,11 +232,6 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
         :loading="leaderBoardLoading"
         :data="leaderboard"
         :columns
-        :meta="{
-          class: {
-            tr: (row) => row.original.user.id === user?.id ? tw`text-primary` : '',
-          },
-        }"
       >
         <template #empty>
           <UiResultNotFound />

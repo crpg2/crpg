@@ -409,7 +409,7 @@ public class GetLeaderboardQueryTest : TestBase
     }
 
     [Test]
-    public async Task ClanShouldbeAvailableInLeaderBoardTest()
+    public async Task ClanShouldBeAvailableInLeaderBoardTest()
     {
         Clan? orleClan = new()
         {
