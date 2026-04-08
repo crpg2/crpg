@@ -888,25 +888,25 @@
       <Piece id="crpg_barmace_handle_h3" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_awlpike_v4_h0" name="{=}Awlpike" crafting_template="crpg_Polearm_2dswing">
+  <CraftedItem id="crpg_awlpike_v5_h0" name="{=}Awlpike" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_awlpike_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_awlpike_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_awlpike_v4_h1" name="{=}Awlpike +1" crafting_template="crpg_Polearm_2dswing">
+  <CraftedItem id="crpg_awlpike_v5_h1" name="{=}Awlpike +1" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_awlpike_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_awlpike_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_awlpike_v4_h2" name="{=}Awlpike +2" crafting_template="crpg_Polearm_2dswing">
+  <CraftedItem id="crpg_awlpike_v5_h2" name="{=}Awlpike +2" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_awlpike_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_awlpike_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_awlpike_v4_h3" name="{=}Awlpike +3" crafting_template="crpg_Polearm_2dswing">
+  <CraftedItem id="crpg_awlpike_v5_h3" name="{=}Awlpike +3" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_awlpike_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_awlpike_handle_h3" Type="Handle" scale_factor="100" />

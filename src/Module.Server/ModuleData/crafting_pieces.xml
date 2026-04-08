@@ -25033,7 +25033,7 @@
   <CraftingPiece id="crpg_awlpike_blade_h2" name="{=}Awlpike Blade" tier="4" piece_type="Blade" mesh="awlpike_blade" length="85.8" weight="0.4">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.9" />
-      <Swing damage_type="Blunt" damage_factor="2.1" />
+      <Swing damage_type="Blunt" damage_factor="2.0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -25074,7 +25074,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_awlpike_handle_h3" name="{=}Awlpike Handle" tier="4" piece_type="Handle" mesh="awlpike_handle" length="160" weight="1.65" is_default="true">
+  <CraftingPiece id="crpg_awlpike_handle_h3" name="{=}Awlpike Handle" tier="4" piece_type="Handle" mesh="awlpike_handle" length="160" weight="1.75" is_default="true">
     <BuildData piece_offset="10.0" next_piece_offset="7.0" previous_piece_offset="0" />
     <Materials>
       <Material id="Wood" count="1" />
