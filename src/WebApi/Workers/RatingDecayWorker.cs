@@ -9,23 +9,23 @@ internal class RatingDecayWorker(IServiceScopeFactory serviceScopeFactory) : Bac
 
     private readonly IServiceScopeFactory _serviceScopeFactory = serviceScopeFactory;
 
-    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    protected override async Task ExecuteAsync(CancellationToken cancellationToken)
     {
-        while (true)
+        while (!cancellationToken.IsCancellationRequested)
         {
             try
             {
                 using var scope = _serviceScopeFactory.CreateScope();
 
                 var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
-                await mediator.Send(new DecayInactiveCharacterRatingsCommand(), stoppingToken);
+                await mediator.Send(new DecayInactiveCharacterRatingsCommand(), cancellationToken);
             }
             catch (Exception e)
             {
-                Logger.LogError(e, "An error occured while decaying inactive character ratings");
+                Logger.LogError(e, "An error occurred while decaying inactive character ratings");
             }
 
-            await Task.Delay(TimeSpan.FromHours(24), stoppingToken);
+            await Task.Delay(TimeSpan.FromHours(24), cancellationToken);
         }
     }
 }

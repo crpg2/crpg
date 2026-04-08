@@ -20,7 +20,7 @@ public partial class AddRatingUpdatedAt : Migration
         // Seed existing rows with the current timestamp so that the decay worker
         // starts tracking inactivity from the moment of this deployment rather than
         // skipping all pre-existing players forever.
-        migrationBuilder.Sql("UPDATE character_statistics SET rating_updated_at = NOW() AT TIME ZONE 'UTC'");
+        migrationBuilder.Sql("UPDATE character_statistics SET rating_updated_at = NOW()");
     }
 
     /// <inheritdoc />

@@ -189,13 +189,9 @@ internal class CharacterService : ICharacterService
 
             float phi = statistics.Rating.Deviation;
             float sigma = statistics.Rating.Volatility;
-            // src/Module.Server/Rating/CrpgRatingCalculator.cs -> CalculateNewRatingDeviation method
-            for (int i = 0; i < periods; i++)
-            {
-                phi = Math.Min((float)Math.Sqrt(phi * phi + sigma * sigma), _constants.DefaultRatingDeviation);
-            }
-
-            statistics.Rating.Deviation = phi;
+            // Applying sqrt(phi^2 + sigma^2) for `periods` steps collapses to sqrt(phi^2 + periods*sigma^2).
+            // See: src/Module.Server/Rating/CrpgRatingCalculator.cs -> CalculateNewRatingDeviation
+            statistics.Rating.Deviation = Math.Min((float)Math.Sqrt(phi * phi + periods * sigma * sigma), _constants.DefaultRatingDeviation);
             statistics.Rating.CompetitiveValue = _competitiveRatingModel.ComputeCompetitiveRating(statistics.Rating);
             statistics.RatingUpdatedAt += periods * periodDuration;
             decayedCount++;

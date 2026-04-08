@@ -446,11 +446,7 @@ public class CharacterServiceTest
     {
         float phi = 100f;
         float sigma = 0.06f;
-        float expectedDeviation = phi;
-        for (int i = 0; i < 2; i++)
-        {
-            expectedDeviation = (float)Math.Sqrt(expectedDeviation * expectedDeviation + sigma * sigma);
-        }
+        float expectedDeviation = (float)Math.Sqrt(phi * phi + 2 * sigma * sigma);
 
         Mock<ICompetitiveRatingModel> competitiveRatingModelMock = new();
         CharacterService characterService = new(ExperienceTable, competitiveRatingModelMock.Object, Constants);
