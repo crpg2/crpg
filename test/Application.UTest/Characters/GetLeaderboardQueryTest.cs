@@ -17,24 +17,28 @@ public class GetLeaderboardQueryTest : TestBase
         {
             Name = "Orle",
             Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
         };
 
         User takeo = new()
         {
             Name = "Takeo",
             Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
         };
 
         User namidaka = new()
         {
             Name = "Namidaka",
             Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
         };
 
         User lemon = new()
         {
             Name = "Lemon",
             Region = Domain.Entities.Region.Na,
+            UpdatedAt = DateTime.UtcNow,
         };
         Character orleCharacter = new()
         {
@@ -172,12 +176,14 @@ public class GetLeaderboardQueryTest : TestBase
         {
             Name = "Orle",
             Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
         };
 
         User droob = new()
         {
             Name = "Droob",
             Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
         };
 
         Character orleCharacter = new()
@@ -257,24 +263,28 @@ public class GetLeaderboardQueryTest : TestBase
         {
             Name = "Orle",
             Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
         };
 
         User takeo = new()
         {
             Name = "Takeo",
             Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
         };
 
         User namidaka = new()
         {
             Name = "Namidaka",
             Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
         };
 
         User lemon = new()
         {
             Name = "Namidaka",
             Region = Domain.Entities.Region.Na,
+            UpdatedAt = DateTime.UtcNow,
         };
         Character orleCharacter = new()
         {
@@ -425,6 +435,7 @@ public class GetLeaderboardQueryTest : TestBase
         {
             Name = "Orle",
             Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
             ClanMembership = orleMemberShip,
         };
 
@@ -478,12 +489,14 @@ public class GetLeaderboardQueryTest : TestBase
         {
             Name = "Orle",
             Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
         };
 
         User takeo = new()
         {
             Name = "Takeo",
             Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
         };
 
         Character orleCharacter = new()
@@ -558,12 +571,89 @@ public class GetLeaderboardQueryTest : TestBase
     }
 
     [Test]
+    public async Task InactiveUserShouldBeExcludedFromLeaderboard()
+    {
+        User activeUser = new()
+        {
+            Name = "ActivePlayer",
+            Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
+        };
+
+        User inactiveUser = new()
+        {
+            Name = "InactivePlayer",
+            Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow.AddDays(-38),
+        };
+
+        Character activeCharacter = new()
+        {
+            Name = "active char",
+            User = activeUser,
+            Class = CharacterClass.Infantry,
+            Statistics = new List<CharacterStatistics>
+            {
+                {
+                    new CharacterStatistics
+                    {
+                        GameMode = GameMode.CRPGBattle,
+                        Rating = new()
+                        {
+                            Value = 50,
+                            Deviation = 100,
+                            Volatility = 100,
+                            CompetitiveValue = 1800,
+                        },
+                    }
+                },
+            },
+        };
+
+        Character inactiveCharacter = new()
+        {
+            Name = "inactive char",
+            User = inactiveUser,
+            Class = CharacterClass.Archer,
+            Statistics = new List<CharacterStatistics>
+            {
+                {
+                    new CharacterStatistics
+                    {
+                        GameMode = GameMode.CRPGBattle,
+                        Rating = new()
+                        {
+                            Value = 50,
+                            Deviation = 100,
+                            Volatility = 100,
+                            CompetitiveValue = 2000,
+                        },
+                    }
+                },
+            },
+        };
+
+        ArrangeDb.Users.AddRange(activeUser, inactiveUser);
+        ArrangeDb.Characters.AddRange(activeCharacter, inactiveCharacter);
+        await ArrangeDb.SaveChangesAsync();
+
+        GetLeaderboardQuery.Handler handler = new(ActDb, Mapper, new MemoryCache(new MemoryCacheOptions()));
+        var result = await handler.Handle(new GetLeaderboardQuery(), CancellationToken.None);
+
+        Assert.That(result.Errors, Is.Null);
+        Assert.That(result.Data, Is.Not.Null);
+        Assert.That(result.Data!.Count, Is.EqualTo(1));
+        Assert.That(result.Data!.First().Class, Is.EqualTo(CharacterClass.Infantry));
+    }
+
+    [Test]
     public async Task DistinctByUser()
     {
         User orle = new()
         {
             Name = "Orle",
             Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
         };
 
         Character orleCharacter1 = new()
@@ -639,6 +729,7 @@ public class GetLeaderboardQueryTest : TestBase
         {
             Name = "Orle",
             Region = Domain.Entities.Region.Eu,
+            UpdatedAt = DateTime.UtcNow,
         };
 
         Character orleCharacter1 = new()
