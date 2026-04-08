@@ -10,5 +10,6 @@ public class CharacterStatistics
     public TimeSpan PlayTime { get; set; }
     public GameMode GameMode { get; set; }
     public CharacterRating Rating { get; set; } = new();
+    public DateTime? RatingUpdatedAt { get; set; }
     public Character? Character { get; set; }
 }

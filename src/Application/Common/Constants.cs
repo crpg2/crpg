@@ -54,6 +54,7 @@ public class Constants
     public float DefaultRating { get; set; }
     public float DefaultRatingDeviation { get; set; }
     public float DefaultRatingVolatility { get; set; }
+    public int RatingDecayDays { get; set; }
     public int DefaultGold { get; set; }
     public int DefaultHeirloomPoints { get; set; }
     public int ClanTagMinLength { get; set; }

@@ -2,7 +2,6 @@
 using Crpg.Application.Common.Results;
 using Crpg.Common.Helpers;
 using Crpg.Domain.Entities.Characters;
-using Crpg.Domain.Entities.Limitations;
 using Crpg.Domain.Entities.Servers;
 
 namespace Crpg.Application.Common.Services;
@@ -28,6 +27,12 @@ internal interface ICharacterService
     void ResetAllRatings(Character character);
 
     void ResetRating(Character character, GameMode gameMode);
+
+    /// <summary>
+    /// Applies Glicko2 rating deviation decay for each game mode statistic that has not been updated
+    /// within the configured period. Returns the number of statistics entries that were decayed.
+    /// </summary>
+    int DecayRatings(Character character, DateTime now);
 
     void ResetStatistics(Character character);
 
@@ -146,6 +151,7 @@ internal class CharacterService : ICharacterService
             };
 
             statistic.Rating.CompetitiveValue = _competitiveRatingModel.ComputeCompetitiveRating(statistic.Rating);
+            statistic.RatingUpdatedAt = DateTime.UtcNow;
         }
     }
 
@@ -161,6 +167,43 @@ internal class CharacterService : ICharacterService
     {
         UpdateRating(character, gameMode, _constants.DefaultRating, _constants.DefaultRatingDeviation,
         _constants.DefaultRatingVolatility);
+    }
+
+    public int DecayRatings(Character character, DateTime now)
+    {
+        var periodDuration = TimeSpan.FromDays(_constants.RatingDecayDays);
+        int decayedCount = 0;
+
+        foreach (var statistics in character.Statistics)
+        {
+            if (statistics.RatingUpdatedAt == null)
+            {
+                continue;
+            }
+
+            int periods = (int)((now - statistics.RatingUpdatedAt.Value) / periodDuration);
+            if (periods < 1)
+            {
+                continue;
+            }
+
+            float phi = statistics.Rating.Deviation;
+            float sigma = statistics.Rating.Volatility;
+            for (int i = 0; i < periods; i++)
+            {
+                phi = Math.Min((float)Math.Sqrt(phi * phi + sigma * sigma), _constants.DefaultRatingDeviation);
+            }
+
+            statistics.Rating.Deviation = phi;
+            statistics.Rating.CompetitiveValue = _competitiveRatingModel.ComputeCompetitiveRating(statistics.Rating);
+            statistics.RatingUpdatedAt += periods * periodDuration;
+            decayedCount++;
+        }
+
+        // Trick to avoid UpdatedAt to be updated.
+        character.UpdatedAt = character.UpdatedAt;
+
+        return decayedCount;
     }
 
     public Error? Retire(Character character)

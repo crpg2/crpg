@@ -1897,6 +1897,10 @@ namespace Crpg.Persistence.Migrations
                                 .HasColumnType("interval")
                                 .HasColumnName("play_time");
 
+                            b1.Property<DateTime?>("RatingUpdatedAt")
+                                .HasColumnType("timestamp with time zone")
+                                .HasColumnName("rating_updated_at");
+
                             b1.HasKey("CharacterId", "Id")
                                 .HasName("pk_character_statistics");
 

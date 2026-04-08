@@ -49,6 +49,7 @@
   "defaultRating": 1500.0,
   "defaultRatingDeviation": 350,
   "defaultRatingVolatility": 0.06,
+  "ratingDecayDays": 7,
   "defaultRole": "User",
   "defaultGold": 12000,
   "defaultHeirloomPoints": 0,

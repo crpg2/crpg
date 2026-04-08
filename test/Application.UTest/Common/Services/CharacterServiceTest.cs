@@ -33,6 +33,7 @@ public class CharacterServiceTest
         DefaultRating = 101,
         DefaultRatingDeviation = 102,
         DefaultRatingVolatility = 103,
+        RatingDecayDays = 7,
     };
 
     private static readonly ExperienceTable ExperienceTable = new(Constants);
@@ -370,5 +371,118 @@ public class CharacterServiceTest
         Assert.That(charStats?.Deaths, Is.EqualTo(0));
         Assert.That(charStats?.Assists, Is.EqualTo(0));
         Assert.That(charStats?.PlayTime, Is.EqualTo(TimeSpan.Zero));
+    }
+
+    [Test]
+    public void DecayRatingsShouldSkipNullRatingUpdatedAt()
+    {
+        Mock<ICompetitiveRatingModel> competitiveRatingModelMock = new();
+        CharacterService characterService = new(ExperienceTable, competitiveRatingModelMock.Object, Constants);
+        Character character = new()
+        {
+            Statistics = new List<CharacterStatistics>
+            {
+                new() { GameMode = GameMode.CRPGBattle, RatingUpdatedAt = null, Rating = new CharacterRating { Deviation = 100, Volatility = 0.06f } },
+            },
+        };
+
+        int count = characterService.DecayRatings(character, DateTime.UtcNow);
+
+        Assert.That(count, Is.EqualTo(0));
+        Assert.That(character.Statistics[0].Rating.Deviation, Is.EqualTo(100f));
+        competitiveRatingModelMock.Verify(m => m.ComputeCompetitiveRating(It.IsAny<CharacterRating>()), Times.Never);
+    }
+
+    [Test]
+    public void DecayRatingsShouldSkipRecentlyActivePlayer()
+    {
+        Mock<ICompetitiveRatingModel> competitiveRatingModelMock = new();
+        CharacterService characterService = new(ExperienceTable, competitiveRatingModelMock.Object, Constants);
+        Character character = new()
+        {
+            Statistics = new List<CharacterStatistics>
+            {
+                new() { GameMode = GameMode.CRPGBattle, RatingUpdatedAt = DateTime.UtcNow.AddDays(-3), Rating = new CharacterRating { Deviation = 100, Volatility = 0.06f } },
+            },
+        };
+
+        // RatingDecayDays = 7 in test Constants
+        int count = characterService.DecayRatings(character, DateTime.UtcNow);
+
+        Assert.That(count, Is.EqualTo(0));
+        Assert.That(character.Statistics[0].Rating.Deviation, Is.EqualTo(100f));
+    }
+
+    [Test]
+    public void DecayRatingsShouldIncreaseDeviationForOnePeriod()
+    {
+        float initialDeviation = 100f;
+        float volatility = 0.06f;
+        float expectedDeviation = (float)Math.Sqrt(initialDeviation * initialDeviation + volatility * volatility);
+
+        Mock<ICompetitiveRatingModel> competitiveRatingModelMock = new();
+        competitiveRatingModelMock.Setup(m => m.ComputeCompetitiveRating(It.IsAny<CharacterRating>())).Returns(42f);
+        CharacterService characterService = new(ExperienceTable, competitiveRatingModelMock.Object, Constants);
+
+        var ratingUpdatedAt = DateTime.UtcNow.AddDays(-8);
+        Character character = new()
+        {
+            Statistics = new List<CharacterStatistics>
+            {
+                new() { GameMode = GameMode.CRPGBattle, RatingUpdatedAt = ratingUpdatedAt, Rating = new CharacterRating { Deviation = initialDeviation, Volatility = volatility } },
+            },
+        };
+
+        int count = characterService.DecayRatings(character, DateTime.UtcNow);
+
+        Assert.That(count, Is.EqualTo(1));
+        Assert.That(character.Statistics[0].Rating.Deviation, Is.EqualTo(expectedDeviation).Within(0.0001f));
+        Assert.That(character.Statistics[0].Rating.CompetitiveValue, Is.EqualTo(42f));
+        Assert.That(character.Statistics[0].RatingUpdatedAt, Is.EqualTo(ratingUpdatedAt + TimeSpan.FromDays(7)).Within(TimeSpan.FromSeconds(1)));
+    }
+
+    [Test]
+    public void DecayRatingsShouldIncreaseDeviationForMultiplePeriods()
+    {
+        float phi = 100f;
+        float sigma = 0.06f;
+        float expectedDeviation = phi;
+        for (int i = 0; i < 2; i++)
+        {
+            expectedDeviation = (float)Math.Sqrt(expectedDeviation * expectedDeviation + sigma * sigma);
+        }
+
+        Mock<ICompetitiveRatingModel> competitiveRatingModelMock = new();
+        CharacterService characterService = new(ExperienceTable, competitiveRatingModelMock.Object, Constants);
+        Character character = new()
+        {
+            Statistics = new List<CharacterStatistics>
+            {
+                new() { GameMode = GameMode.CRPGBattle, RatingUpdatedAt = DateTime.UtcNow.AddDays(-16), Rating = new CharacterRating { Deviation = phi, Volatility = sigma } },
+            },
+        };
+
+        characterService.DecayRatings(character, DateTime.UtcNow);
+
+        Assert.That(character.Statistics[0].Rating.Deviation, Is.EqualTo(expectedDeviation).Within(0.0001f));
+    }
+
+    [Test]
+    public void DecayRatingsShouldNotExceedDefaultRatingDeviation()
+    {
+        Mock<ICompetitiveRatingModel> competitiveRatingModelMock = new();
+        CharacterService characterService = new(ExperienceTable, competitiveRatingModelMock.Object, Constants);
+        Character character = new()
+        {
+            Statistics = new List<CharacterStatistics>
+            {
+                // sqrt(90^2 + 50^2) ≈ 102.96 which exceeds DefaultRatingDeviation=102
+                new() { GameMode = GameMode.CRPGBattle, RatingUpdatedAt = DateTime.UtcNow.AddDays(-8), Rating = new CharacterRating { Deviation = 90f, Volatility = 50f } },
+            },
+        };
+
+        characterService.DecayRatings(character, DateTime.UtcNow);
+
+        Assert.That(character.Statistics[0].Rating.Deviation, Is.EqualTo(Constants.DefaultRatingDeviation));
     }
 }

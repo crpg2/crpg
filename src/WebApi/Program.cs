@@ -53,6 +53,7 @@ builder.Services
     .AddHostedService<DonorSynchronizerWorker>()
     .AddHostedService<ActivityLogsCleanerWorker>()
     .AddHostedService<ClanArmoryWorker>()
+    .AddHostedService<RatingDecayWorker>()
     .AddHttpContextAccessor() // Injects IHttpContextAccessor
     .AddScoped<ICurrentUserService, CurrentUserService>()
     .AddSingleton<XboxService>()
