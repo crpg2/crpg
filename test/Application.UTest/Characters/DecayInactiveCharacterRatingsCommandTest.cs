@@ -59,7 +59,7 @@ public class DecayInactiveCharacterRatingsCommandTest : TestBase
     {
         var now = DateTime.UtcNow;
 
-        // Create more characters than the batch size (100) to verify batching.
+        // Create more characters than the batch size (500) to verify batching.
         var characters = Enumerable.Range(0, 550).Select(_ =>
         {
             var c = new Character();
