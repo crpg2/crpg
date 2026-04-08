@@ -1592,7 +1592,7 @@
         <equipment slot="Body" id="Item.crpg_belted_leather_cuirass_v2_h0" />
         <equipment slot="Gloves" id="Item.crpg_guarded_armwraps_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_steppe_leather_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_bamboospear_v3_h0" />
+        <equipment slot="Item0" id="Item.crpg_bamboospear_v4_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
         <equipment slot="Head" id="Item.crpg_roningasa_v2_h0" />
@@ -4075,7 +4075,7 @@
         <equipment slot="Body" id="Item.crpg_sturgian_lamellar_fortified_v2_h0" />
         <equipment slot="Gloves" id="Item.crpg_decorated_imperial_gauntlets_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_mail_chausses_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_spiked_polehammer_v7_h3" />
+        <equipment slot="Item0" id="Item.crpg_spiked_polehammer_v8_h3" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -4315,7 +4315,7 @@
         <equipment slot="Body" id="Item.crpg_ba_platearmor2worn_h0" />
         <equipment slot="Gloves" id="Item.crpg_ba_plategauntletworn_h0" />
         <equipment slot="Leg" id="Item.crpg_ba_plategreavesworn_h0" />
-        <equipment slot="Item0" id="Item.crpg_spiked_polehammer_v7_h0" />
+        <equipment slot="Item0" id="Item.crpg_spiked_polehammer_v8_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -4383,7 +4383,7 @@
         <equipment slot="Body" id="Item.crpg_northern_coat_of_plates_v2_h0" />
         <equipment slot="Gloves" id="Item.crpg_reinforced_mail_mitten_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_plated_strip_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_awlpike_v4_h3" />
+        <equipment slot="Item0" id="Item.crpg_awlpike_v5_h3" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -4452,7 +4452,7 @@
         <equipment slot="Body" id="Item.crpg_ba_platearmor_h0" />
         <equipment slot="Gloves" id="Item.crpg_sa_ChurburghGauntlet_h0" />
         <equipment slot="Leg" id="Item.crpg_ba_plategreaves_h0" />
-        <equipment slot="Item0" id="Item.crpg_spiked_polehammer_v7_h3" />
+        <equipment slot="Item0" id="Item.crpg_spiked_polehammer_v8_h3" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -4698,7 +4698,7 @@
         <equipment slot="Body" id="Item.crpg_ba_heraldictabard3_h0" />
         <equipment slot="Gloves" id="Item.crpg_ba_plategauntletworn_h0" />
         <equipment slot="Leg" id="Item.crpg_ba_plategreavesworn_h0" />
-        <equipment slot="Item0" id="Item.crpg_spiked_polehammer_v7_h3" />
+        <equipment slot="Item0" id="Item.crpg_spiked_polehammer_v8_h3" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
