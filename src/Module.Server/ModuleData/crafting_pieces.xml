@@ -37175,9 +37175,34 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_bobs_ballmace_pommel_h3" name="{=BalanceMe}Bob's Ballmace Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.97">
   </CraftingPiece>
-  <CraftingPiece id="crpg_nagamaki_blade_h0" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_nagamaki_blade_h0" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8">
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="3.6" />
+      <Thrust damage_type="Cut" damage_factor="2.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_blade_h1" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8">
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="3.7" />
+      <Thrust damage_type="Cut" damage_factor="2.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_blade_h2" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8">
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
       <Swing damage_type="Cut" damage_factor="3.8" />
+      <Thrust damage_type="Cut" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -37186,31 +37211,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_nagamaki_blade_h1" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_nagamaki_blade_h3" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8">
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
       <Swing damage_type="Cut" damage_factor="3.9" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron4" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_nagamaki_blade_h2" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="shield:thrust">
-    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="4.0" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron4" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_nagamaki_blade_h3" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="shield:thrust">
-    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="4.1" />
+      <Thrust damage_type="Cut" damage_factor="2.9" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
