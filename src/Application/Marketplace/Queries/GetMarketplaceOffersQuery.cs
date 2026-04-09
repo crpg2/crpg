@@ -119,68 +119,45 @@ public record GetMarketplaceOffersQuery : IMediatorRequest<MarketplaceOffersPage
             var goldFilter = NormalizeCurrencyFilter(filter.Gold);
             var heirloomPointsFilter = NormalizeCurrencyFilter(filter.HeirloomPoints);
 
-            if (itemId == null
-                && !hasItemRanks
-                && !itemType.HasValue
-                && !goldFilter.MatchNone
-                && !goldFilter.HasRange
-                && !heirloomPointsFilter.MatchNone
-                && !heirloomPointsFilter.HasRange)
+            // Each offer has exactly one asset per side, so two separate .Where() calls
+            // on the same side are guaranteed to filter the same single asset.
+
+            // Item filter is side-specific (Offered uses UserItem, Requested uses Item/ItemId).
+            if (itemId != null || hasItemRanks || itemType.HasValue)
             {
-                return query;
+                if (side == MarketplaceOfferAssetSide.Offered)
+                {
+                    query = query.Where(o => o.Assets.Any(a =>
+                        a.Side == side
+                        && (itemId == null || (a.UserItem != null && a.UserItem.ItemId == itemId))
+                        && (!hasItemRanks || (a.UserItem != null && a.UserItem.Item != null && itemRanks!.Contains(a.UserItem.Item.Rank)))
+                        && (!itemType.HasValue || (a.UserItem != null && a.UserItem.Item != null && a.UserItem.Item.Type == itemType.Value))));
+                }
+                else
+                {
+                    query = query.Where(o => o.Assets.Any(a =>
+                        a.Side == side
+                        && (itemId == null || a.ItemId == itemId)
+                        && (!hasItemRanks || (a.Item != null && itemRanks!.Contains(a.Item.Rank)))
+                        && (!itemType.HasValue || (a.Item != null && a.Item.Type == itemType.Value))));
+                }
             }
 
-            return side == MarketplaceOfferAssetSide.Offered
-                ? ApplyOfferedSideFilters(query, side, itemId, itemRanks, hasItemRanks, itemType, goldFilter, heirloomPointsFilter)
-                : ApplyRequestedSideFilters(query, side, itemId, itemRanks, hasItemRanks, itemType, goldFilter, heirloomPointsFilter);
-        }
+            // Currency filter is the same for both sides.
+            if (goldFilter.MatchNone || goldFilter.HasRange || heirloomPointsFilter.MatchNone || heirloomPointsFilter.HasRange)
+            {
+                query = query.Where(o => o.Assets.Any(a =>
+                    a.Side == side
+                    && (!goldFilter.MatchNone || a.Gold == 0)
+                    && (!goldFilter.HasRange || (a.Gold > 0 && a.Gold >= goldFilter.Min && a.Gold <= goldFilter.Max))
+                    && (!heirloomPointsFilter.MatchNone || a.HeirloomPoints == 0)
+                    && (!heirloomPointsFilter.HasRange
+                        || (a.HeirloomPoints > 0
+                            && a.HeirloomPoints >= heirloomPointsFilter.Min
+                            && a.HeirloomPoints <= heirloomPointsFilter.Max))));
+            }
 
-        private static IQueryable<MarketplaceOffer> ApplyOfferedSideFilters(
-            IQueryable<MarketplaceOffer> query,
-            MarketplaceOfferAssetSide side,
-            string? itemId,
-            IList<int>? itemRanks,
-            bool hasItemRanks,
-            ItemType? itemType,
-            CurrencyFilterBounds goldFilter,
-            CurrencyFilterBounds heirloomPointsFilter)
-        {
-            return query.Where(o => o.Assets.Any(a =>
-                a.Side == side
-                && (itemId == null || (a.UserItem != null && a.UserItem.ItemId == itemId))
-                && (!hasItemRanks || (a.UserItem != null && a.UserItem.Item != null && itemRanks!.Contains(a.UserItem.Item.Rank)))
-                && (!itemType.HasValue || (a.UserItem != null && a.UserItem.Item != null && a.UserItem.Item.Type == itemType.Value))
-                && (!goldFilter.MatchNone || a.Gold == 0)
-                && (!goldFilter.HasRange || (a.Gold > 0 && a.Gold >= goldFilter.Min && a.Gold <= goldFilter.Max))
-                && (!heirloomPointsFilter.MatchNone || a.HeirloomPoints == 0)
-                && (!heirloomPointsFilter.HasRange
-                    || (a.HeirloomPoints > 0
-                        && a.HeirloomPoints >= heirloomPointsFilter.Min
-                        && a.HeirloomPoints <= heirloomPointsFilter.Max))));
-        }
-
-        private static IQueryable<MarketplaceOffer> ApplyRequestedSideFilters(
-            IQueryable<MarketplaceOffer> query,
-            MarketplaceOfferAssetSide side,
-            string? itemId,
-            IList<int>? itemRanks,
-            bool hasItemRanks,
-            ItemType? itemType,
-            CurrencyFilterBounds goldFilter,
-            CurrencyFilterBounds heirloomPointsFilter)
-        {
-            return query.Where(o => o.Assets.Any(a =>
-                a.Side == side
-                && (itemId == null || a.ItemId == itemId)
-                && (!hasItemRanks || (a.Item != null && itemRanks!.Contains(a.Item.Rank)))
-                && (!itemType.HasValue || (a.Item != null && a.Item.Type == itemType.Value))
-                && (!goldFilter.MatchNone || a.Gold == 0)
-                && (!goldFilter.HasRange || (a.Gold > 0 && a.Gold >= goldFilter.Min && a.Gold <= goldFilter.Max))
-                && (!heirloomPointsFilter.MatchNone || a.HeirloomPoints == 0)
-                && (!heirloomPointsFilter.HasRange
-                    || (a.HeirloomPoints > 0
-                        && a.HeirloomPoints >= heirloomPointsFilter.Min
-                        && a.HeirloomPoints <= heirloomPointsFilter.Max))));
+            return query;
         }
 
         private static CurrencyFilterBounds NormalizeCurrencyFilter(MarketplaceCurrencyFilter filter)
