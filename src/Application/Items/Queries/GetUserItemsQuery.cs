@@ -25,10 +25,12 @@ public record GetUserItemsQuery : IMediatorRequest<IList<UserItemViewModel>>
                     .ThenInclude(cai => cai!.Lender)
                         .ThenInclude(cm => cm!.User)
                 .Include(ui => ui.PersonalItem)
+                .Include(ui => ui.ClanItem)
                 .Include(ui => ui.ClanArmoryBorrowedItem)
                 .Where(ui =>
-                   (ui.Item!.Enabled || ui.PersonalItem != null)
-                   && (ui.UserId == req.UserId || ui.ClanArmoryBorrowedItem!.BorrowerUserId == req.UserId))
+                    // Allow disabled items if they are personal- or clan-exclusive.
+                    (ui.Item!.Enabled || ui.PersonalItem != null || ui.ClanItem != null)
+                    && (ui.UserId == req.UserId || ui.ClanArmoryBorrowedItem!.BorrowerUserId == req.UserId))
                 .ToArrayAsync(cancellationToken);
 
             return new(_mapper.Map<IList<UserItemViewModel>>(userItems));

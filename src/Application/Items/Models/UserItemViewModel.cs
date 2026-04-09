@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Clans.Models;
 using Crpg.Application.Common.Mappings;
@@ -17,10 +17,17 @@ public record UserItemViewModel : IMapFrom<UserItem>
     public ClanMemberViewModel? ClanArmoryLender { get; init; }
     public bool IsPersonal { get; init; }
 
+    /// <summary>
+    /// True when this item is exclusive to the user's clan.
+    /// Only members of the owning clan can see and equip it.
+    /// </summary>
+    public bool IsClanItem { get; init; }
+
     public void Mapping(Profile profile)
     {
         profile.CreateMap<UserItem, UserItemViewModel>()
             .ForMember(ui => ui.ClanArmoryLender, config => config.MapFrom(ui => ui.ClanArmoryItem != null ? ui.ClanArmoryItem!.Lender : null))
-            .ForMember(ui => ui.IsPersonal, config => config.MapFrom(ui => ui.PersonalItem != null));
+            .ForMember(ui => ui.IsPersonal, config => config.MapFrom(ui => ui.PersonalItem != null))
+            .ForMember(ui => ui.IsClanItem, config => config.MapFrom(ui => ui.ClanItem != null));
     }
 }

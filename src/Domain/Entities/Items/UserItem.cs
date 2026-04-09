@@ -24,5 +24,11 @@ public class UserItem : AuditableEntity
 
     public PersonalItem? PersonalItem { get; set; }
 
+    /// <summary>
+    /// If set, this item is exclusive to the clan referenced by <see cref="ClanItem.ClanId"/>.
+    /// Only members of that clan can see and equip it.
+    /// </summary>
+    public ClanItem? ClanItem { get; set; }
+
     public ClanArmoryBorrowedItem? ClanArmoryBorrowedItem { get; set; }
 }

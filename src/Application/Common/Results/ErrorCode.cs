@@ -1,4 +1,4 @@
-﻿namespace Crpg.Application.Common.Results;
+namespace Crpg.Application.Common.Results;
 
 /// <summary>
 /// A machine-readable error code.
@@ -22,6 +22,7 @@ public enum ErrorCode
     CharacteristicDecreased,
     ClanInvitationClosed,
     ClanInvitationNotFound,
+    ClanItemAlreadyExist,
     ClanMemberRoleNotMet,
     ClanNameAlreadyUsed,
     ClanNeedLeader,

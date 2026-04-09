@@ -83,6 +83,7 @@ public record UpdateCharacterItemsCommand : IMediatorRequest<IList<EquippedItemV
                 .Include(ui => ui.Item)
                 .Include(ui => ui.ClanArmoryItem)
                 .Include(ui => ui.PersonalItem)
+                .Include(ui => ui.ClanItem)
                 .Where(ui =>
                     (ui.ClanArmoryBorrowedItem!.BorrowerUserId == req.UserId || (ui.UserId == req.UserId && ui.ClanArmoryItem == null))
                     && newUserItemIds.Contains(ui.Id))
@@ -108,7 +109,8 @@ public record UpdateCharacterItemsCommand : IMediatorRequest<IList<EquippedItemV
                     return new(CommonErrors.UserItemNotFound(newEquippedItem.UserItemId.Value));
                 }
 
-                if (!userItem.Item!.Enabled && userItem.PersonalItem == null)
+                // Disabled items are allowed if they are personal- or clan-exclusive.
+                if (!userItem.Item!.Enabled && userItem.PersonalItem == null && userItem.ClanItem == null)
                 {
                     return new(CommonErrors.ItemDisabled(userItem.ItemId));
                 }

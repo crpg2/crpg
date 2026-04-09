@@ -1,4 +1,4 @@
-﻿using Crpg.Application.Common.Interfaces;
+using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Results;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
@@ -79,6 +79,8 @@ internal class ClanService(IActivityLogService activityLogService, IUserNotifica
         return null;
     }
 
+    // JoinClan is unchanged. Clan-exclusive items are provisioned by the admin via
+    // RewardClanItemCommand and are not auto-granted on join.
     public async Task<Result<ClanMember>> JoinClan(ICrpgDbContext db, User user, int clanId, CancellationToken cancellationToken)
     {
         user.ClanMembership = new ClanMember
@@ -143,6 +145,17 @@ internal class ClanService(IActivityLogService activityLogService, IUserNotifica
         db.ClanArmoryBorrowedItems.RemoveRange(member.ArmoryBorrowedItems);
         db.ClanArmoryItems.RemoveRange(member.ArmoryItems);
 
+        // Strip all clan-exclusive items from the leaving member's inventory.
+        var clanItemUserItems = await db.UserItems
+            .Where(ui => ui.UserId == member.UserId && ui.ClanItem != null && ui.ClanItem.ClanId == member.ClanId)
+            .Include(ui => ui.ClanItem)
+            .Include(ui => ui.EquippedItems)
+            .ToListAsync(cancellationToken);
+
+        db.EquippedItems.RemoveRange(clanItemUserItems.SelectMany(ui => ui.EquippedItems));
+        db.ClanItems.RemoveRange(clanItemUserItems.Select(ui => ui.ClanItem!));
+        db.UserItems.RemoveRange(clanItemUserItems);
+
         db.ClanMembers.Remove(member);
 
         db.ActivityLogs.Add(_activityLogService.CreateClanMemberLeavedLog(member.UserId, member.ClanId));
@@ -171,16 +184,16 @@ internal class ClanService(IActivityLogService activityLogService, IUserNotifica
         }
 
         var userItem = await db.UserItems
-                .AsSplitQuery()
-                .Where(ui =>
-                    ui.UserId == user.Id
-                    && ui.Id == userItemId
-                    && ui.Item!.Enabled
-                    && ui.Item.Type != ItemType.Banner)
-                .Include(ui => ui.Item)
-                .Include(ui => ui.ClanArmoryItem)
-                .Include(ui => ui.EquippedItems)
-                .FirstOrDefaultAsync(cancellationToken);
+            .AsSplitQuery()
+            .Where(ui =>
+                ui.UserId == user.Id
+                && ui.Id == userItemId
+                && ui.Item!.Enabled
+                && ui.Item.Type != ItemType.Banner)
+            .Include(ui => ui.Item)
+            .Include(ui => ui.ClanArmoryItem)
+            .Include(ui => ui.EquippedItems)
+            .FirstOrDefaultAsync(cancellationToken);
 
         if (userItem == null)
         {
