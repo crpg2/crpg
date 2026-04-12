@@ -24,6 +24,6 @@ public record UserItemViewModel : IMapFrom<UserItem>
         profile.CreateMap<UserItem, UserItemViewModel>()
             .ForMember(ui => ui.ClanArmoryLender, config => config.MapFrom(ui => ui.ClanArmoryItem != null ? ui.ClanArmoryItem!.Lender : null))
             .ForMember(ui => ui.IsPersonal, config => config.MapFrom(ui => ui.PersonalItem != null))
-            .ForMember(ui => ui.IsListedOnMarketplace, config => config.MapFrom(ui => ui.MarketplaceOfferAssets.Any(a => a.Side == MarketplaceOfferAssetSide.Offered)));
+            .ForMember(ui => ui.IsListedOnMarketplace, config => config.MapFrom(ui => ui.MarketplaceListingAssets.Any(a => a.Side == MarketplaceListingAssetSide.Offered)));
     }
 }

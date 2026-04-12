@@ -26,5 +26,5 @@ public class UserItem : AuditableEntity
     public PersonalItem? PersonalItem { get; set; }
 
     public ClanArmoryBorrowedItem? ClanArmoryBorrowedItem { get; set; }
-    public List<MarketplaceOfferAsset> MarketplaceOfferAssets { get; set; } = [];
+    public List<MarketplaceListingAsset> MarketplaceListingAssets { get; set; } = [];
 }

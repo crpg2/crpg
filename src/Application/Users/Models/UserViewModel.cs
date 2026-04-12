@@ -29,7 +29,7 @@ public record UserViewModel : IMapFrom<User>
     [JsonRequired]
     public int? ActiveCharacterId { get; init; }
     public int UnreadNotificationsCount { get; init; }
-    public int ActiveMarketplaceOffersCount { get; init; }
+    public int ActiveMarketplaceListingsCount { get; init; }
     [JsonRequired]
     public UserClanViewModel? ClanMembership { get; init; }
 
@@ -38,13 +38,13 @@ public record UserViewModel : IMapFrom<User>
                 opt => opt.MapFrom(u => u.Notifications.Count(un => un.State == NotificationState.Unread)))
             .ForMember(u => u.ReservedGold,
                 opt => opt.MapFrom(u =>
-                    u.Offers.Sum(o =>
-                        o.GoldFee +
-                        o.Assets.Where(a => a.Side == MarketplaceOfferAssetSide.Offered).Sum(a => a.Gold))))
+                    u.MarketplaceListings.Sum(l =>
+                        l.GoldFee +
+                        l.Assets.Where(a => a.Side == MarketplaceListingAssetSide.Offered).Sum(a => a.Gold))))
             .ForMember(u => u.ReservedHeirloomPoints,
                 opt => opt.MapFrom(u =>
-                    u.Offers.SelectMany(o =>
-                        o.Assets.Where(a => a.Side == MarketplaceOfferAssetSide.Offered)).Sum(a => a.HeirloomPoints)))
-            .ForMember(u => u.ActiveMarketplaceOffersCount, opt => opt.MapFrom(u => u.Offers.Count))
+                    u.MarketplaceListings.SelectMany(l =>
+                        l.Assets.Where(a => a.Side == MarketplaceListingAssetSide.Offered)).Sum(a => a.HeirloomPoints)))
+            .ForMember(u => u.ActiveMarketplaceListingsCount, opt => opt.MapFrom(u => u.MarketplaceListings.Count))
             .ForMember(dest => dest.IsRecent, opt => opt.Ignore());
 }

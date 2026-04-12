@@ -80,8 +80,8 @@
   "campaignMercenaryMaxWage": 100000,
   "campaignMercenaryNoteMaxLength": 64,
   "campaignBattleSideBriefingNoteMaxLength": 500,
-  "marketplaceOfferDurationDays": 7,
-  "marketplaceActiveOfferLimit": 10,
+  "marketplaceListingDurationDays": 7,
+  "marketplaceActiveListingLimit": 10,
   "marketplaceListingFeePerDay": 50,
   "marketplaceGoldFeePercent": 5
 }

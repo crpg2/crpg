@@ -35,7 +35,7 @@ namespace Crpg.Persistence.Migrations
                 .HasAnnotation("ProductVersion", "10.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "activity_log_type", new[] { "battle_apply_as_mercenary", "battle_mercenary_application_accepted", "battle_mercenary_application_declined", "battle_participant_kicked", "battle_participant_leaved", "character_created", "character_deleted", "character_earned", "character_rating_reset", "character_respecialized", "character_retired", "character_rewarded", "chat_message_sent", "clan_application_accepted", "clan_application_created", "clan_application_declined", "clan_armory_add_item", "clan_armory_borrow_item", "clan_armory_remove_item", "clan_armory_return_item", "clan_created", "clan_deleted", "clan_member_kicked", "clan_member_leaved", "clan_member_role_edited", "item_bought", "item_broke", "item_reforged", "item_repaired", "item_returned", "item_sold", "item_upgraded", "marketplace_offer_accepted", "marketplace_offer_cancelled", "marketplace_offer_created", "marketplace_offer_expired", "marketplace_offer_invalidated", "server_joined", "team_hit", "team_hit_reported", "team_hit_reported_user_kicked", "user_created", "user_deleted", "user_renamed", "user_rewarded" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "activity_log_type", new[] { "battle_apply_as_mercenary", "battle_mercenary_application_accepted", "battle_mercenary_application_declined", "battle_participant_kicked", "battle_participant_leaved", "character_created", "character_deleted", "character_earned", "character_rating_reset", "character_respecialized", "character_retired", "character_rewarded", "chat_message_sent", "clan_application_accepted", "clan_application_created", "clan_application_declined", "clan_armory_add_item", "clan_armory_borrow_item", "clan_armory_remove_item", "clan_armory_return_item", "clan_created", "clan_deleted", "clan_member_kicked", "clan_member_leaved", "clan_member_role_edited", "item_bought", "item_broke", "item_reforged", "item_repaired", "item_returned", "item_sold", "item_upgraded", "marketplace_listing_accepted", "marketplace_listing_cancelled", "marketplace_listing_created", "marketplace_listing_expired", "marketplace_listing_invalidated", "server_joined", "team_hit", "team_hit_reported", "team_hit_reported_user_kicked", "user_created", "user_deleted", "user_renamed", "user_rewarded" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_fighter_application_status", new[] { "accepted", "declined", "intent", "pending" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_mercenary_application_status", new[] { "accepted", "declined", "pending" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_participant_type", new[] { "clan_member", "mercenary", "party" });
@@ -51,9 +51,9 @@ namespace Crpg.Persistence.Migrations
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "item_slot", new[] { "body", "hand", "head", "leg", "mount", "mount_harness", "shoulder", "weapon0", "weapon1", "weapon2", "weapon3", "weapon_extra" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "item_type", new[] { "arrows", "banner", "body_armor", "bolts", "bow", "bullets", "crossbow", "hand_armor", "head_armor", "leg_armor", "mount", "mount_harness", "musket", "one_handed_weapon", "pistol", "polearm", "shield", "shoulder_armor", "thrown", "two_handed_weapon", "undefined" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "languages", new[] { "be", "bg", "cs", "da", "de", "el", "en", "es", "fi", "fr", "hr", "hu", "it", "lv", "nl", "no", "pl", "pt", "ro", "ru", "sr", "sv", "tr", "uk", "zh" });
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "marketplace_offer_asset_side", new[] { "offered", "requested" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "marketplace_listing_asset_side", new[] { "offered", "requested" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "notification_state", new[] { "read", "unread" });
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "notification_type", new[] { "battle_mercenary_application_accepted", "battle_mercenary_application_declined", "battle_participant_kicked_to_ex_participant", "character_rewarded_to_user", "clan_application_accepted_to_user", "clan_application_created_to_officers", "clan_application_created_to_user", "clan_application_declined_to_user", "clan_armory_borrow_item_to_lender", "clan_armory_remove_item_to_borrower", "clan_member_kicked_to_ex_member", "clan_member_leaved_to_leader", "clan_member_role_changed_to_user", "item_returned", "marketplace_offer_accepted_to_buyer", "marketplace_offer_accepted_to_seller", "marketplace_offer_expired", "marketplace_offer_invalidated", "user_rewarded_to_user" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "notification_type", new[] { "battle_mercenary_application_accepted", "battle_mercenary_application_declined", "battle_participant_kicked_to_ex_participant", "character_rewarded_to_user", "clan_application_accepted_to_user", "clan_application_created_to_officers", "clan_application_created_to_user", "clan_application_declined_to_user", "clan_armory_borrow_item_to_lender", "clan_armory_remove_item_to_borrower", "clan_member_kicked_to_ex_member", "clan_member_leaved_to_leader", "clan_member_role_changed_to_user", "item_returned", "marketplace_listing_accepted_to_buyer", "marketplace_listing_accepted_to_seller", "marketplace_listing_expired", "marketplace_listing_invalidated", "user_rewarded_to_user" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "party_order_type", new[] { "attack_party", "attack_settlement", "follow_party", "join_battle", "move_to_point", "move_to_settlement", "transfer_offer_party" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "party_status", new[] { "awaiting_battle_join_decision", "awaiting_party_offer_decision", "idle", "idle_in_settlement", "in_battle", "recruiting_in_settlement" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "party_transfer_offer_status", new[] { "intent", "pending" });
@@ -1040,7 +1040,7 @@ namespace Crpg.Persistence.Migrations
                     b.ToTable("character_limitations", (string)null);
                 });
 
-            modelBuilder.Entity("Crpg.Domain.Entities.Marketplace.MarketplaceOffer", b =>
+            modelBuilder.Entity("Crpg.Domain.Entities.Marketplace.MarketplaceListing", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1076,21 +1076,21 @@ namespace Crpg.Persistence.Migrations
                         .HasColumnName("xmin");
 
                     b.HasKey("Id")
-                        .HasName("pk_marketplace_offers");
+                        .HasName("pk_marketplace_listings");
 
                     b.HasIndex("CreatedAt")
-                        .HasDatabaseName("ix_marketplace_offers_created_at");
+                        .HasDatabaseName("ix_marketplace_listings_created_at");
 
                     b.HasIndex("ExpiresAt")
-                        .HasDatabaseName("ix_marketplace_offers_expires_at");
+                        .HasDatabaseName("ix_marketplace_listings_expires_at");
 
                     b.HasIndex("SellerId", "CreatedAt")
-                        .HasDatabaseName("ix_marketplace_offers_seller_id_created_at");
+                        .HasDatabaseName("ix_marketplace_listings_seller_id_created_at");
 
-                    b.ToTable("marketplace_offers", (string)null);
+                    b.ToTable("marketplace_listings", (string)null);
                 });
 
-            modelBuilder.Entity("Crpg.Domain.Entities.Marketplace.MarketplaceOfferAsset", b =>
+            modelBuilder.Entity("Crpg.Domain.Entities.Marketplace.MarketplaceListingAsset", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1111,12 +1111,12 @@ namespace Crpg.Persistence.Migrations
                         .HasColumnType("text")
                         .HasColumnName("item_id");
 
-                    b.Property<int>("MarketplaceOfferId")
+                    b.Property<int>("MarketplaceListingId")
                         .HasColumnType("integer")
-                        .HasColumnName("marketplace_offer_id");
+                        .HasColumnName("marketplace_listing_id");
 
-                    b.Property<MarketplaceOfferAssetSide>("Side")
-                        .HasColumnType("marketplace_offer_asset_side")
+                    b.Property<MarketplaceListingAssetSide>("Side")
+                        .HasColumnType("marketplace_listing_asset_side")
                         .HasColumnName("side");
 
                     b.Property<int?>("UserItemId")
@@ -1124,18 +1124,18 @@ namespace Crpg.Persistence.Migrations
                         .HasColumnName("user_item_id");
 
                     b.HasKey("Id")
-                        .HasName("pk_marketplace_offer_assets");
+                        .HasName("pk_marketplace_listing_assets");
 
                     b.HasIndex("ItemId")
-                        .HasDatabaseName("ix_marketplace_offer_assets_item_id");
+                        .HasDatabaseName("ix_marketplace_listing_assets_item_id");
 
                     b.HasIndex("UserItemId")
-                        .HasDatabaseName("ix_marketplace_offer_assets_user_item_id");
+                        .HasDatabaseName("ix_marketplace_listing_assets_user_item_id");
 
-                    b.HasIndex("MarketplaceOfferId", "Side")
-                        .HasDatabaseName("ix_marketplace_offer_assets_marketplace_offer_id_side");
+                    b.HasIndex("MarketplaceListingId", "Side")
+                        .HasDatabaseName("ix_marketplace_listing_assets_marketplace_listing_id_side");
 
-                    b.ToTable("marketplace_offer_assets", (string)null);
+                    b.ToTable("marketplace_listing_assets", (string)null);
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Notifications.UserNotification", b =>
@@ -2640,41 +2640,41 @@ namespace Crpg.Persistence.Migrations
                     b.Navigation("Character");
                 });
 
-            modelBuilder.Entity("Crpg.Domain.Entities.Marketplace.MarketplaceOffer", b =>
+            modelBuilder.Entity("Crpg.Domain.Entities.Marketplace.MarketplaceListing", b =>
                 {
                     b.HasOne("Crpg.Domain.Entities.Users.User", "Seller")
-                        .WithMany("Offers")
+                        .WithMany("MarketplaceListings")
                         .HasForeignKey("SellerId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("fk_marketplace_offers_users_seller_id");
+                        .HasConstraintName("fk_marketplace_listings_users_seller_id");
 
                     b.Navigation("Seller");
                 });
 
-            modelBuilder.Entity("Crpg.Domain.Entities.Marketplace.MarketplaceOfferAsset", b =>
+            modelBuilder.Entity("Crpg.Domain.Entities.Marketplace.MarketplaceListingAsset", b =>
                 {
                     b.HasOne("Crpg.Domain.Entities.Items.Item", "Item")
                         .WithMany()
                         .HasForeignKey("ItemId")
-                        .HasConstraintName("fk_marketplace_offer_assets_items_item_id");
+                        .HasConstraintName("fk_marketplace_listing_assets_items_item_id");
 
-                    b.HasOne("Crpg.Domain.Entities.Marketplace.MarketplaceOffer", "MarketplaceOffer")
+                    b.HasOne("Crpg.Domain.Entities.Marketplace.MarketplaceListing", "MarketplaceListing")
                         .WithMany("Assets")
-                        .HasForeignKey("MarketplaceOfferId")
+                        .HasForeignKey("MarketplaceListingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("fk_marketplace_offer_assets_marketplace_offers_marketplace_off");
+                        .HasConstraintName("fk_marketplace_listing_assets_marketplace_listings_marketplace");
 
                     b.HasOne("Crpg.Domain.Entities.Items.UserItem", "UserItem")
-                        .WithMany("MarketplaceOfferAssets")
+                        .WithMany("MarketplaceListingAssets")
                         .HasForeignKey("UserItemId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .HasConstraintName("fk_marketplace_offer_assets_user_items_user_item_id");
+                        .HasConstraintName("fk_marketplace_listing_assets_user_items_user_item_id");
 
                     b.Navigation("Item");
 
-                    b.Navigation("MarketplaceOffer");
+                    b.Navigation("MarketplaceListing");
 
                     b.Navigation("UserItem");
                 });
@@ -2895,7 +2895,7 @@ namespace Crpg.Persistence.Migrations
 
                     b.Navigation("EquippedItems");
 
-                    b.Navigation("MarketplaceOfferAssets");
+                    b.Navigation("MarketplaceListingAssets");
 
                     b.Navigation("PersonalItem");
                 });
@@ -2905,7 +2905,7 @@ namespace Crpg.Persistence.Migrations
                     b.Navigation("Slots");
                 });
 
-            modelBuilder.Entity("Crpg.Domain.Entities.Marketplace.MarketplaceOffer", b =>
+            modelBuilder.Entity("Crpg.Domain.Entities.Marketplace.MarketplaceListing", b =>
                 {
                     b.Navigation("Assets");
                 });
@@ -2944,9 +2944,9 @@ namespace Crpg.Persistence.Migrations
 
                     b.Navigation("Items");
 
-                    b.Navigation("Notifications");
+                    b.Navigation("MarketplaceListings");
 
-                    b.Navigation("Offers");
+                    b.Navigation("Notifications");
 
                     b.Navigation("Party");
 

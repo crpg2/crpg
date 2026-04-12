@@ -1,22 +1,22 @@
 import type { PaginationState } from '@tanstack/vue-table'
 
 import {
-  getMarketplaceOffers as _getMarketplaceOffers,
-  getMarketplaceOffersHistory as _getMarketplaceOffersHistory,
-  deleteMarketplaceOffersByOfferId,
-  postMarketplaceOffers,
-  postMarketplaceOffersByOfferIdAccept,
+  getMarketplaceListings as _getMarketplaceListings,
+  getMarketplaceListingsHistory as _getMarketplaceListingsHistory,
+  deleteMarketplaceListingsByListingId,
+  postMarketplaceListings,
+  postMarketplaceListingsByListingIdAccept,
 } from '#api/sdk.gen'
-import { marketplaceGoldFeePercent, marketplaceListingFeePerDay, marketplaceOfferDurationDays } from '~root/data/constants.json'
+import { marketplaceGoldFeePercent, marketplaceListingDurationDays, marketplaceListingFeePerDay } from '~root/data/constants.json'
 
 import type { ItemType, UserItemMeta } from '~/models/item'
-import type { MarketplaceOffer, MarketplaceOfferAssetInput, MarketplaceOffersHistoryPage, MarketplaceOffersPage, MartetplaceCurrencyFilter, MartetplaceFilter, MartetplaceHistoryFilter, MartetplaceSideFilter } from '~/models/marketplace'
+import type { MarketplaceListing, MarketplaceListingAssetInput, MarketplaceListingsHistoryPage, MarketplaceListingsPage, MartetplaceListingsCurrencyFilter, MartetplaceListingsFilter, MartetplaceListingsHistoryFilter, MartetplaceListingsSideFilter } from '~/models/marketplace'
 import type { User, UserItem } from '~/models/user'
 
 import { unwrapData } from '~/api.config'
 import { ITEM_TYPE } from '~/models/item'
 
-const toCurrencyQuery = (filter: MartetplaceCurrencyFilter): string | undefined => {
+const toCurrencyQuery = (filter: MartetplaceListingsCurrencyFilter): string | undefined => {
   if (filter === 'Any') {
     return undefined
   }
@@ -28,14 +28,14 @@ const toCurrencyQuery = (filter: MartetplaceCurrencyFilter): string | undefined 
   return `${filter[0]},${filter[1]}`
 }
 
-export const getMarketplaceOffers = async (
+export const getMarketplaceListings = async (
   pagination: PaginationState,
-  filter: MartetplaceFilter,
-): Promise<MarketplaceOffersPage> => {
+  filter: MartetplaceListingsFilter,
+): Promise<MarketplaceListingsPage> => {
   const { pageIndex, pageSize } = pagination
   const { seller, onlyAffordable, offered, requested } = filter
 
-  return unwrapData(await _getMarketplaceOffers({ query: {
+  return unwrapData(await _getMarketplaceListings({ query: {
     page: pageIndex + 1, // tanstack table is 0-based, API is 1-based
     pageSize,
     sellerId: seller ?? undefined,
@@ -53,14 +53,14 @@ export const getMarketplaceOffers = async (
   } }))
 }
 
-export const getMarketplaceOffersHistory = async (
+export const getMarketplaceListingsHistory = async (
   pagination: PaginationState,
-  filter: MartetplaceHistoryFilter,
-): Promise<MarketplaceOffersHistoryPage> => {
+  filter: MartetplaceListingsHistoryFilter,
+): Promise<MarketplaceListingsHistoryPage> => {
   const { pageIndex, pageSize } = pagination
   const { seller, buyer } = filter
 
-  return unwrapData(await _getMarketplaceOffersHistory({ query: {
+  return unwrapData(await _getMarketplaceListingsHistory({ query: {
     page: pageIndex + 1, // tanstack table is 0-based, API is 1-based
     pageSize,
     sellerId: seller ?? undefined,
@@ -68,29 +68,29 @@ export const getMarketplaceOffersHistory = async (
   } }))
 }
 
-export const createMarketplaceOffer = async (payload: { offer: MarketplaceOfferAssetInput, request: MarketplaceOfferAssetInput }): Promise<MarketplaceOffer> =>
-  unwrapData(await postMarketplaceOffers({ body: payload }))
+export const createMarketplaceListing = async (payload: { offer: MarketplaceListingAssetInput, request: MarketplaceListingAssetInput }): Promise<MarketplaceListing> =>
+  unwrapData(await postMarketplaceListings({ body: payload }))
 
-export const deleteMarketplaceOffer = (offerId: number) => deleteMarketplaceOffersByOfferId({ path: { offerId } })
+export const deleteMarketplaceListing = (listingId: number) => deleteMarketplaceListingsByListingId({ path: { listingId } })
 
-export const acceptMarketplaceOffer = (offerId: number) => postMarketplaceOffersByOfferIdAccept({ path: { offerId } })
+export const acceptMarketplaceListing = (listingId: number) => postMarketplaceListingsByListingIdAccept({ path: { listingId } })
 
-export const canTradeItem = (itemType: ItemType): boolean =>
+export const canListingItem = (itemType: ItemType): boolean =>
   itemType !== ITEM_TYPE.Banner
 
-export const canOfferUserItem = (itemType: ItemType, userItemMeta: UserItemMeta): boolean =>
+export const canListingUserItem = (itemType: ItemType, userItemMeta: UserItemMeta): boolean =>
   !userItemMeta.isBroken
   && !userItemMeta.isPersonal
   && !userItemMeta.clanArmoryLender
-  && canTradeItem(itemType)
+  && canListingItem(itemType)
 
-export const canAcceptOffer = (offer: MarketplaceOffer, user: User, userItems: UserItem[]) => {
-  return offer.seller.id !== user.id
-    && offer.request.gold <= user.gold
-    && offer.request.heirloomPoints <= user.heirloomPoints
-    && (offer.request.item === null
-      || userItems.some(ui => ui.item.id === offer.request.item!.id
-        && canOfferUserItem(ui.item.type, {
+export const canAcceptListing = (listing: MarketplaceListing, user: User, userItems: UserItem[]) => {
+  return listing.seller.id !== user.id
+    && listing.request.gold <= user.gold
+    && listing.request.heirloomPoints <= user.heirloomPoints
+    && (listing.request.item === null
+      || userItems.some(ui => ui.item.id === listing.request.item!.id
+        && canListingUserItem(ui.item.type, {
           userItemId: ui.id,
           isBroken: ui.isBroken,
           isPersonal: ui.isPersonal,
@@ -98,7 +98,7 @@ export const canAcceptOffer = (offer: MarketplaceOffer, user: User, userItems: U
         })))
 }
 
-export function getDefaultMartetplaceSideFilterState(): MartetplaceSideFilter {
+export function getDefaultMartetplaceSideFilterState(): MartetplaceListingsSideFilter {
   return {
     itemType: null,
     itemRanks: [],
@@ -108,7 +108,7 @@ export function getDefaultMartetplaceSideFilterState(): MartetplaceSideFilter {
   }
 }
 
-export const calculateFixedListingFee = () => marketplaceListingFeePerDay * marketplaceOfferDurationDays
+export const calculateFixedListingFee = () => marketplaceListingFeePerDay * marketplaceListingDurationDays
 
 export const calculateGoldCommissionFee = (gold: number) => Math.floor(gold * marketplaceGoldFeePercent / 100)
 

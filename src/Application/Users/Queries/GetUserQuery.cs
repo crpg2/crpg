@@ -23,8 +23,8 @@ public record GetUserQuery : IMediatorRequest<UserViewModel>
         {
             var user = await _db.Users
                 .AsSplitQuery()
-                .Include(u => u.Offers)
-                    .ThenInclude(o => o.Assets)
+                .Include(u => u.MarketplaceListings)
+                    .ThenInclude(l => l.Assets)
                 .ProjectTo<UserViewModel>(_mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
 

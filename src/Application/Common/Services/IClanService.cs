@@ -181,7 +181,7 @@ internal class ClanService(IActivityLogService activityLogService, IUserNotifica
                 .Include(ui => ui.Item)
                 .Include(ui => ui.ClanArmoryItem)
                 .Include(ui => ui.EquippedItems)
-                .Include(ui => ui.MarketplaceOfferAssets)
+                .Include(ui => ui.MarketplaceListingAssets)
                 .FirstOrDefaultAsync(cancellationToken);
 
         if (userItem == null)
@@ -199,7 +199,7 @@ internal class ClanService(IActivityLogService activityLogService, IUserNotifica
             return new(CommonErrors.UserItemInUse(userItemId));
         }
 
-        if (userItem.MarketplaceOfferAssets.Count != 0)
+        if (userItem.MarketplaceListingAssets.Count != 0)
         {
             return new(CommonErrors.UserItemInMarketplace(userItemId));
         }

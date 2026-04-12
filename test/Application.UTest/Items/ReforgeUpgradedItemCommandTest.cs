@@ -2,6 +2,7 @@ using Crpg.Application.Common;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Items.Commands;
+using Crpg.Application.UTest.Marketplace;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Marketplace;
@@ -276,7 +277,7 @@ public class ReforgeUpgradedItemCommandTest : TestBase
     }
 
     [Test]
-    public async Task CannotReforgeItemInMarketplace()
+    public async Task MarketplaceListedItemShouldNotBeReforgeable()
     {
         Item item00 = new() { Id = "a_h0", BaseId = "a", Price = 100, Enabled = true, Rank = 0 };
         Item item01 = new() { Id = "a_h1", BaseId = "a", Price = 100, Enabled = true, Rank = 1 };
@@ -288,16 +289,7 @@ public class ReforgeUpgradedItemCommandTest : TestBase
         };
         ArrangeDb.Users.Add(user);
         ArrangeDb.Items.AddRange(item00, item01);
-        ArrangeDb.MarketplaceOffers.Add(new MarketplaceOffer
-        {
-            SellerId = user.Id,
-            ExpiresAt = DateTime.UtcNow.AddDays(7),
-            Assets =
-            [
-                new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItemId = user.Items[0].Id },
-                new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, Gold = 100 },
-            ],
-        });
+        ArrangeDb.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(user.Id, goldFee: 10, offeredUserItemId: user.Items[0].Id, requestedGold: 100));
         await ArrangeDb.SaveChangesAsync();
 
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };

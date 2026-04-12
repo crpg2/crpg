@@ -17,8 +17,8 @@ public enum NotificationType
     BattleMercenaryApplicationAccepted,
     BattleMercenaryApplicationDeclined,
     BattleParticipantKickedToExParticipant,
-    MarketplaceOfferExpired,
-    MarketplaceOfferAcceptedToSeller,
-    MarketplaceOfferAcceptedToBuyer,
-    MarketplaceOfferInvalidated,
+    MarketplaceListingExpired,
+    MarketplaceListingAcceptedToSeller,
+    MarketplaceListingAcceptedToBuyer,
+    MarketplaceListingInvalidated,
 }

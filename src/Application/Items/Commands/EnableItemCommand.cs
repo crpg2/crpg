@@ -73,7 +73,7 @@ public record EnableItemCommand : IMediatorRequest
 
                 await _itemService.RefundUserItemsByItemAsync(_db, _activityLogService, _userNotificationService, item.Id, cancellationToken);
 
-                await _marketplaceService.InvalidateOffersByItemIdAsync(_db, _activityLogService, _userNotificationService, item.Id, cancellationToken);
+                await _marketplaceService.InvalidateListingsByItemIdAsync(_db, _activityLogService, _userNotificationService, item.Id, cancellationToken);
             }
         }
     }

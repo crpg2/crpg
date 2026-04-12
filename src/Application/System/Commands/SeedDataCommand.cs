@@ -677,134 +677,134 @@ public record SeedDataCommand : IMediatorRequest
                 }
             }
 
-            MarketplaceOffer orleMarketplaceOffer1 = new()
+            MarketplaceListing orleMarketplaceListing1 = new()
             {
                 Seller = orle,
                 Assets = [
-                    new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = orleItem17, Gold = 100_000 },
-                    new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, HeirloomPoints = 3 },
+                    new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Offered, UserItem = orleItem17, Gold = 100_000 },
+                    new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Requested, HeirloomPoints = 3 },
                 ],
                 GoldFee = 5000,
                 CreatedAt = DateTime.UtcNow.AddDays(-1).AddHours(-2),
                 ExpiresAt = DateTime.UtcNow.AddDays(6),
             };
 
-            MarketplaceOffer orleMarketplaceOffer2 = new()
+            MarketplaceListing orleMarketplaceListing2 = new()
             {
                 Seller = orle,
                 Assets = [
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = orleItem19, HeirloomPoints = 1 },
-                    new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, Gold = 100_000 },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Offered, UserItem = orleItem19, HeirloomPoints = 1 },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Requested, Gold = 100_000 },
                 ],
                 GoldFee = 5000,
                 CreatedAt = DateTime.UtcNow.AddDays(-6).AddHours(-23).AddMinutes(-59),
                 ExpiresAt = DateTime.UtcNow.AddMinutes(1),
             };
 
-            MarketplaceOffer orleMarketplaceOffer3 = new()
+            MarketplaceListing orleMarketplaceListing3 = new()
             {
                 Seller = orle,
                 Assets = [
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = orleItem17, HeirloomPoints = 1 },
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, ItemId = orle2Item1.ItemId },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Offered, UserItem = orleItem17, HeirloomPoints = 1 },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Requested, ItemId = orle2Item1.ItemId },
                 ],
                 CreatedAt = DateTime.UtcNow,
                 ExpiresAt = DateTime.UtcNow.AddDays(6),
             };
 
-            MarketplaceOffer orleMarketplaceOffer4 = new()
+            MarketplaceListing orleMarketplaceListing4 = new()
             {
                 Seller = orle,
                 Assets = [
-                    new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = orleItem17 },
-                    new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, HeirloomPoints = 2, Gold = 100_000 },
+                    new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Offered, UserItem = orleItem17 },
+                    new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Requested, HeirloomPoints = 2, Gold = 100_000 },
                 ],
                 GoldFee = 5000,
                 CreatedAt = DateTime.UtcNow.AddDays(-1).AddHours(-2),
                 ExpiresAt = DateTime.UtcNow.AddDays(6),
             };
 
-            MarketplaceOffer orle2MarketplaceOffer1 = new()
+            MarketplaceListing orle2MarketplaceListing1 = new()
             {
                 Seller = orle2,
                 Assets = [
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItemId = orle2Item1.Id, HeirloomPoints = 1 },
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, ItemId = "crpg_basic_imperial_leather_armor_v2_h3", Gold = 20_000 },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Offered, UserItemId = orle2Item1.Id, HeirloomPoints = 1 },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Requested, ItemId = "crpg_basic_imperial_leather_armor_v2_h3", Gold = 20_000 },
                 ],
                 GoldFee = 1000,
                 CreatedAt = DateTime.UtcNow,
                 ExpiresAt = DateTime.UtcNow.AddDays(6),
             };
 
-            MarketplaceOffer orle2MarketplaceOffer2 = new()
+            MarketplaceListing orle2MarketplaceListing2 = new()
             {
                 Seller = orle2,
                 Assets = [
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = orle2Item2 },
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, ItemId = "crpg_steel_round_shield_v4_h3" },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Offered, UserItem = orle2Item2 },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Requested, ItemId = "crpg_steel_round_shield_v4_h3" },
                 ],
                 CreatedAt = DateTime.UtcNow,
                 ExpiresAt = DateTime.UtcNow.AddDays(6),
             };
 
-            MarketplaceOffer orle2MarketplaceOffer3 = new()
+            MarketplaceListing orle2MarketplaceListing3 = new()
             {
                 Seller = orle2,
                 Assets = [
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = orle2Item3, Gold = 10_000 },
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, ItemId = "crpg_steel_round_shield_v4_h0" },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Offered, UserItem = orle2Item3, Gold = 10_000 },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Requested, ItemId = "crpg_steel_round_shield_v4_h0" },
                 ],
                 CreatedAt = DateTime.UtcNow,
                 ExpiresAt = DateTime.UtcNow.AddDays(6),
             };
 
-            MarketplaceOffer orle2MarketplaceOffer4 = new()
+            MarketplaceListing orle2MarketplaceListing4 = new()
             {
                 Seller = orle2,
                 Assets = [
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, Gold = 300_000 },
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested,  HeirloomPoints = 1 },
-                ],
-                GoldFee = 5000,
-                CreatedAt = DateTime.UtcNow,
-                ExpiresAt = DateTime.UtcNow.AddDays(6),
-            };
-
-            MarketplaceOffer orle2MarketplaceOffer5 = new()
-            {
-                Seller = orle2,
-                Assets = [
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, HeirloomPoints = 1 },
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, Gold = 300_000 },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Offered, Gold = 300_000 },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Requested,  HeirloomPoints = 1 },
                 ],
                 GoldFee = 5000,
                 CreatedAt = DateTime.UtcNow,
                 ExpiresAt = DateTime.UtcNow.AddDays(6),
             };
 
-            MarketplaceOffer takeoMarketplaceOffer5 = new()
+            MarketplaceListing orle2MarketplaceListing5 = new()
+            {
+                Seller = orle2,
+                Assets = [
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Offered, HeirloomPoints = 1 },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Requested, Gold = 300_000 },
+                ],
+                GoldFee = 5000,
+                CreatedAt = DateTime.UtcNow,
+                ExpiresAt = DateTime.UtcNow.AddDays(6),
+            };
+
+            MarketplaceListing takeoMarketplaceListing5 = new()
             {
                 Seller = takeo,
                 Assets = [
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItem = takeoItem3 },
-                   new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, Gold = 300_000 },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Offered, UserItem = takeoItem3 },
+                   new MarketplaceListingAsset { Side = MarketplaceListingAssetSide.Requested, Gold = 300_000 },
                 ],
                 GoldFee = 5000,
                 CreatedAt = DateTime.UtcNow,
                 ExpiresAt = DateTime.UtcNow.AddDays(1),
             };
 
-            MarketplaceOffer[] marketplaceOffers = [
-              orleMarketplaceOffer1, orleMarketplaceOffer2, orleMarketplaceOffer3, orleMarketplaceOffer4, orle2MarketplaceOffer1, orle2MarketplaceOffer3, orle2MarketplaceOffer4,
-              orle2MarketplaceOffer5, takeoMarketplaceOffer5,
+            MarketplaceListing[] marketplaceListings = [
+              orleMarketplaceListing1, orleMarketplaceListing2, orleMarketplaceListing3, orleMarketplaceListing4, orle2MarketplaceListing1, orle2MarketplaceListing3, orle2MarketplaceListing4,
+              orle2MarketplaceListing5, takeoMarketplaceListing5,
             ];
 
-            var existingMarketplaceOffers = await _db.MarketplaceOffers.ToDictionaryAsync(pi => pi.Id, cancellationToken);
-            foreach (var newMarketplaceOffer in marketplaceOffers)
+            var existingMarketplaceListings = await _db.MarketplaceListings.ToDictionaryAsync(pi => pi.Id, cancellationToken);
+            foreach (var newMarketplaceListing in marketplaceListings)
             {
-                if (!existingMarketplaceOffers.ContainsKey(newMarketplaceOffer.Id))
+                if (!existingMarketplaceListings.ContainsKey(newMarketplaceListing.Id))
                 {
-                    _db.MarketplaceOffers.Add(newMarketplaceOffer);
+                    _db.MarketplaceListings.Add(newMarketplaceListing);
                 }
             }
 
@@ -1690,28 +1690,28 @@ public record SeedDataCommand : IMediatorRequest
 
             ActivityLog[] marketplaceActivityLogs =
             [
-                _activityLogService.CreateMarketplaceOfferCreatedLog(userId: orle.Id, offerId: 121, listingFee: 350, goldFee: 5_000,
-                    offered: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
-                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
+                _activityLogService.CreateMarketplaceListingCreatedLog(userId: orle.Id, listingId: 121, listingFee: 350, goldFee: 5_000,
+                    offer: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
+                    request: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
 
-                _activityLogService.CreateMarketplaceOfferCancelledLog(userId: orle.Id, offerId: 125, goldFee: 5_000,
-                    offered: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
-                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
+                _activityLogService.CreateMarketplaceListingCancelledLog(userId: orle.Id, listingId: 125, goldFee: 5_000,
+                    offer: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
+                    request: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
 
-                _activityLogService.CreateMarketplaceOfferAcceptedLog(buyerId: orle.Id, sellerId: orle2.Id, offerId: 123, goldFee: 10_000,
-                    offered: new() { Gold = 0, HeirloomPoints = 1, Item = orle2Item1.Item },
-                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orleItem17.Item }),
-                _activityLogService.CreateMarketplaceOfferAcceptedLog(buyerId: orle2.Id, sellerId: orle.Id, offerId: 124, goldFee: 5_000,
-                    offered: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
-                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
+                _activityLogService.CreateMarketplaceListingAcceptedLog(buyerId: orle.Id, sellerId: orle2.Id, listingId: 123, goldFee: 10_000,
+                    offer: new() { Gold = 0, HeirloomPoints = 1, Item = orle2Item1.Item },
+                    request: new() { Gold = 0, HeirloomPoints = 0, Item = orleItem17.Item }),
+                _activityLogService.CreateMarketplaceListingAcceptedLog(buyerId: orle2.Id, sellerId: orle.Id, listingId: 124, goldFee: 5_000,
+                    offer: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
+                    request: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
 
-                _activityLogService.CreateMarketplaceOfferInvalidatedLog(userId: orle.Id, offerId: 121, goldFee: 5_000,
-                    offered: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
-                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
+                _activityLogService.CreateMarketplaceListingInvalidatedLog(userId: orle.Id, listingId: 121, goldFee: 5_000,
+                    offer: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
+                    request: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
 
-                _activityLogService.CreateMarketplaceOfferExpiredLog(userId: orle.Id, offerId: 121, goldFee: 5_000,
-                    offered: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
-                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
+                _activityLogService.CreateMarketplaceListingExpiredLog(userId: orle.Id, listingId: 121, goldFee: 5_000,
+                    offer: new() { Gold = 100_000, HeirloomPoints = 1, Item = orleItem17.Item },
+                    request: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item3.Item }),
             ];
 
             _db.ActivityLogs.RemoveRange(await _db.ActivityLogs.ToArrayAsync(cancellationToken));
@@ -1723,18 +1723,18 @@ public record SeedDataCommand : IMediatorRequest
 
             UserNotification[] orleNotifications =
             [
-                _userNotificationService.CreateMarketplaceOfferAcceptedToSellerNotification(
-                    userId: orle.Id, buyerId: orle2.Id, offerId: 123, goldFee: 10_000,
-                    offered: new() { Gold = 0, HeirloomPoints = 1, Item = orleItem17.Item },
-                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item1.Item }),
-                _userNotificationService.CreateMarketplaceOfferExpiredNotification(
-                    userId: orle.Id, offerId: 123, goldFee: 10_000,
-                    offered: new() { Gold = 0, HeirloomPoints = 1, Item = orleItem17.Item },
-                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item1.Item }),
-                _userNotificationService.CreateMarketplaceOfferInvalidatedNotification(
-                    userId: orle.Id, offerId: 123, goldFee: 10_000,
-                    offered: new() { Gold = 0, HeirloomPoints = 1, Item = orleItem17.Item },
-                    requested: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item1.Item }),
+                _userNotificationService.CreateMarketplaceListingAcceptedToSellerNotification(
+                    userId: orle.Id, buyerId: orle2.Id, listingId: 123, goldFee: 10_000,
+                    offer: new() { Gold = 0, HeirloomPoints = 1, Item = orleItem17.Item },
+                    request: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item1.Item }),
+                _userNotificationService.CreateMarketplaceListingExpiredNotification(
+                    userId: orle.Id, listingId: 123, goldFee: 10_000,
+                    offer: new() { Gold = 0, HeirloomPoints = 1, Item = orleItem17.Item },
+                    request: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item1.Item }),
+                _userNotificationService.CreateMarketplaceListingInvalidatedNotification(
+                    userId: orle.Id, listingId: 125, goldFee: 10_000,
+                    offer: new() { Gold = 0, HeirloomPoints = 1, Item = orleItem17.Item },
+                    request: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item1.Item }),
                 _userNotificationService.CreateUserRewardedToUserNotification(orle.Id, 100, 1, orleItem1.ItemId),
                 _userNotificationService.CreateCharacterRewardedToUserNotification(orle.Id, orleCharacter0.Id, 122211),
                 _userNotificationService.CreateItemReturnedToUserNotification(orle.Id, orleItem1.ItemId, 2, 1222),
@@ -2347,8 +2347,7 @@ public record SeedDataCommand : IMediatorRequest
                 }
 
                 await _itemService.RefundUserItemsByItemAsync(_db, _activityLogService, _userNotificationService, dbItem.Id, cancellationToken);
-
-                await _marketplaceService.InvalidateOffersByItemIdAsync(_db, _activityLogService, _userNotificationService, dbItem.Id, cancellationToken);
+                await _marketplaceService.InvalidateListingsByItemIdAsync(_db, _activityLogService, _userNotificationService, dbItem.Id, cancellationToken);
 
                 var itemsToDelete = dbItemsById.Values.Where(i => i.Id == dbItem.Id).ToArray();
                 foreach (var i in itemsToDelete)

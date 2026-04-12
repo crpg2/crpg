@@ -3,7 +3,6 @@ using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
-using static Crpg.Application.UTest.Marketplace.MarketplaceOfferFactory;
 
 namespace Crpg.Application.UTest.Marketplace;
 
@@ -24,15 +23,15 @@ public class MarketplaceServiceTest : TestBase
         ArrangeDb.Users.Add(seller);
         await ArrangeDb.SaveChangesAsync();
 
-        MarketplaceOffer offer = CreateOffer(seller.Id, goldFee: 10, offeredGold: 50, requestedGold: 80);
-        ArrangeDb.MarketplaceOffers.Add(offer);
+        MarketplaceListing listing = MarketplaceListingFactory.CreateListing(seller.Id, goldFee: 10, offeredGold: 50, requestedGold: 80);
+        ArrangeDb.MarketplaceListings.Add(listing);
         await ArrangeDb.SaveChangesAsync();
 
-        var loadedOffer = await ActDb.MarketplaceOffers
-            .Include(o => o.Assets)
-            .Include(o => o.Seller)
-            .FirstAsync(o => o.Id == offer.Id);
-        _marketplaceService.RefundAndRemoveOffer(ActDb, loadedOffer);
+        var loadedListing = await ActDb.MarketplaceListings
+            .Include(l => l.Assets)
+            .Include(l => l.Seller)
+            .FirstAsync(l => l.Id == listing.Id);
+        _marketplaceService.RefundAndRemoveListing(ActDb, loadedListing);
         await ActDb.SaveChangesAsync();
 
         User? dbSeller = await AssertDb.Users.FindAsync(seller.Id);
@@ -46,15 +45,15 @@ public class MarketplaceServiceTest : TestBase
         ArrangeDb.Users.Add(seller);
         await ArrangeDb.SaveChangesAsync();
 
-        MarketplaceOffer offer = CreateOffer(seller.Id, offeredHeirloomPoints: 3, requestedGold: 80);
-        ArrangeDb.MarketplaceOffers.Add(offer);
+        MarketplaceListing listing = MarketplaceListingFactory.CreateListing(seller.Id, offeredHeirloomPoints: 3, requestedGold: 80);
+        ArrangeDb.MarketplaceListings.Add(listing);
         await ArrangeDb.SaveChangesAsync();
 
-        var loadedOffer = await ActDb.MarketplaceOffers
-            .Include(o => o.Assets)
-            .Include(o => o.Seller)
-            .FirstAsync(o => o.Id == offer.Id);
-        _marketplaceService.RefundAndRemoveOffer(ActDb, loadedOffer);
+        var loadedListing = await ActDb.MarketplaceListings
+            .Include(l => l.Assets)
+            .Include(l => l.Seller)
+            .FirstAsync(l => l.Id == listing.Id);
+        _marketplaceService.RefundAndRemoveListing(ActDb, loadedListing);
         await ActDb.SaveChangesAsync();
 
         User? dbSeller = await AssertDb.Users.FindAsync(seller.Id);
@@ -62,26 +61,26 @@ public class MarketplaceServiceTest : TestBase
     }
 
     [Test]
-    public async Task ShouldRemoveOffer()
+    public async Task ShouldRemoveListing()
     {
         User seller = new();
         ArrangeDb.Users.Add(seller);
         await ArrangeDb.SaveChangesAsync();
 
-        MarketplaceOffer offer = CreateOffer(seller.Id, offeredGold: 25, requestedGold: 40);
-        ArrangeDb.MarketplaceOffers.Add(offer);
+        MarketplaceListing listing = MarketplaceListingFactory.CreateListing(seller.Id, offeredGold: 25, requestedGold: 40);
+        ArrangeDb.MarketplaceListings.Add(listing);
         await ArrangeDb.SaveChangesAsync();
 
-        var loadedOffer = await ActDb.MarketplaceOffers
-            .Include(o => o.Assets)
-            .Include(o => o.Seller)
-            .FirstAsync(o => o.Id == offer.Id);
-        var offeredAsset = loadedOffer.Assets.First(a => a.Side == MarketplaceOfferAssetSide.Offered);
+        var loadedListing = await ActDb.MarketplaceListings
+            .Include(l => l.Assets)
+            .Include(l => l.Seller)
+            .FirstAsync(l => l.Id == listing.Id);
+        var offeredAsset = loadedListing.Assets.First(a => a.Side == MarketplaceListingAssetSide.Offered);
 
-        _marketplaceService.RefundAndRemoveOffer(ActDb, loadedOffer);
+        _marketplaceService.RefundAndRemoveListing(ActDb, loadedListing);
         await ActDb.SaveChangesAsync();
 
-        Assert.That(await AssertDb.MarketplaceOffers.AnyAsync(o => o.Id == offer.Id), Is.False);
+        Assert.That(await AssertDb.MarketplaceListings.AnyAsync(l => l.Id == listing.Id), Is.False);
     }
 
     [Test]
@@ -91,16 +90,16 @@ public class MarketplaceServiceTest : TestBase
         ArrangeDb.Users.Add(seller);
         await ArrangeDb.SaveChangesAsync();
 
-        MarketplaceOffer offer = CreateOffer(seller.Id, goldFee: 7, offeredGold: 30, offeredHeirloomPoints: 4, requestedGold: 50);
-        ArrangeDb.MarketplaceOffers.Add(offer);
+        MarketplaceListing listing = MarketplaceListingFactory.CreateListing(seller.Id, goldFee: 7, offeredGold: 30, offeredHeirloomPoints: 4, requestedGold: 50);
+        ArrangeDb.MarketplaceListings.Add(listing);
         await ArrangeDb.SaveChangesAsync();
 
-        var loadedOffer = await ActDb.MarketplaceOffers
-            .Include(o => o.Assets)
-            .Include(o => o.Seller)
-            .FirstAsync(o => o.Id == offer.Id);
+        var loadedListing = await ActDb.MarketplaceListings
+            .Include(l => l.Assets)
+            .Include(l => l.Seller)
+            .FirstAsync(l => l.Id == listing.Id);
 
-        _marketplaceService.RefundAndRemoveOffer(ActDb, loadedOffer);
+        _marketplaceService.RefundAndRemoveListing(ActDb, loadedListing);
         await ActDb.SaveChangesAsync();
 
         User? dbSeller = await AssertDb.Users.FindAsync(seller.Id);
@@ -115,16 +114,16 @@ public class MarketplaceServiceTest : TestBase
         ArrangeDb.Users.Add(seller);
         await ArrangeDb.SaveChangesAsync();
 
-        MarketplaceOffer offer = CreateOffer(seller.Id, goldFee: 0, offeredGold: 0, offeredHeirloomPoints: 1, requestedGold: 10);
-        ArrangeDb.MarketplaceOffers.Add(offer);
+        MarketplaceListing listing = MarketplaceListingFactory.CreateListing(seller.Id, goldFee: 0, offeredGold: 0, offeredHeirloomPoints: 1, requestedGold: 10);
+        ArrangeDb.MarketplaceListings.Add(listing);
         await ArrangeDb.SaveChangesAsync();
 
-        var loadedOffer = await ActDb.MarketplaceOffers
-            .Include(o => o.Assets)
-            .Include(o => o.Seller)
-            .FirstAsync(o => o.Id == offer.Id);
+        var loadedListing = await ActDb.MarketplaceListings
+            .Include(l => l.Assets)
+            .Include(l => l.Seller)
+            .FirstAsync(l => l.Id == listing.Id);
 
-        _marketplaceService.RefundAndRemoveOffer(ActDb, loadedOffer);
+        _marketplaceService.RefundAndRemoveListing(ActDb, loadedListing);
         await ActDb.SaveChangesAsync();
 
         User? dbSeller = await AssertDb.Users.FindAsync(seller.Id);

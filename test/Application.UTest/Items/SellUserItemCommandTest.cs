@@ -1,6 +1,7 @@
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Items.Commands;
+using Crpg.Application.UTest.Marketplace;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Marketplace;
@@ -223,16 +224,7 @@ public class SellUserItemCommandTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        ArrangeDb.MarketplaceOffers.Add(new MarketplaceOffer
-        {
-            SellerId = user.Id,
-            ExpiresAt = DateTime.UtcNow.AddDays(7),
-            Assets =
-            [
-                new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItemId = user.Items[0].Id },
-                new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, Gold = 100 },
-            ],
-        });
+        ArrangeDb.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(sellerId: user.Id, offeredUserItemId: user.Items[0].Id));
         await ArrangeDb.SaveChangesAsync();
 
         SellUserItemCommand.Handler handler = new(ActDb, Mock.Of<IItemService>(), Mock.Of<IActivityLogService>());

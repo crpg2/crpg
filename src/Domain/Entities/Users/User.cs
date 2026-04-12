@@ -56,5 +56,5 @@ public class User : AuditableEntity
     public ClanMember? ClanMembership { get; set; }
     public Party? Party { get; set; }
     public IList<UserNotification> Notifications { get; set; } = [];
-    public IList<MarketplaceOffer> Offers { get; set; } = [];
+    public IList<MarketplaceListing> MarketplaceListings { get; set; } = [];
 }

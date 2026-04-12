@@ -1,89 +1,85 @@
+import type { ValueOf } from 'type-fest'
+
 import type { ItemType, SelectedItem } from '~/models/item'
 import type { UserPublic } from '~/models/user'
 
-export const MARKETPLACE_OFFER_STATUS = {
+export const MARKETPLACE_LISTING_STATUS = {
   Active: 'Active',
   Completed: 'Completed',
   Cancelled: 'Cancelled',
   Expired: 'Expired',
 } as const
 
-export type MarketplaceOfferStatus = (typeof MARKETPLACE_OFFER_STATUS)[keyof typeof MARKETPLACE_OFFER_STATUS]
+export type MarketplaceListingStatus = ValueOf<typeof MARKETPLACE_LISTING_STATUS>
 
 export const MARKETPLACE_ASSET_SIDE = {
   Offered: 'Offered',
   Requested: 'Requested',
 } as const
 
-export type MarketplaceAssetSide = (typeof MARKETPLACE_ASSET_SIDE)[keyof typeof MARKETPLACE_ASSET_SIDE]
+export type MarketplaceAssetSide = ValueOf<typeof MARKETPLACE_ASSET_SIDE>
 
-export interface MarketplaceOffer {
+export interface MarketplaceListing {
   id: number
   seller: UserPublic
   createdAt: Date
-  offer: MarketplaceOfferAsset
-  request: MarketplaceOfferAsset
+  offer: MarketplaceListingAsset
+  request: MarketplaceListingAsset
   goldFee: number
 }
 
-export interface MarketplaceOfferAsset {
+export interface MarketplaceListingAsset {
   side: MarketplaceAssetSide
   gold: number
   heirloomPoints: number
   item: SelectedItem | null
 }
 
-export interface MarketplaceOfferAssetInput {
+export interface MarketplaceListingAssetInput {
   gold: number
   heirloomPoints: number
   userItemId: number | null
   itemId: string | null
 }
 
-export interface MarketplaceOffersPage {
-  items: MarketplaceOffer[]
+export interface MarketplaceListingsPage {
+  items: MarketplaceListing[]
   totalCount: number
 }
 
-export interface MartetplaceFilter {
-  offered: MartetplaceSideFilter
-  requested: MartetplaceSideFilter
+export interface MartetplaceListingsFilter {
+  offered: MartetplaceListingsSideFilter
+  requested: MartetplaceListingsSideFilter
   seller: number | null
   onlyAffordable: boolean
 }
 
-export type MartetplaceCurrencyFilter = 'Any' | 'None' | [number, number]
-
-export interface MartetplaceSideFilter {
+export interface MartetplaceListingsSideFilter {
   itemType: ItemType | null
   itemRanks: number[]
   item: SelectedItem | null
-  gold: MartetplaceCurrencyFilter
-  heirloomPoints: MartetplaceCurrencyFilter
+  gold: MartetplaceListingsCurrencyFilter
+  heirloomPoints: MartetplaceListingsCurrencyFilter
 }
 
-export interface MarketplaceOfferHistorySide {
-  gold: number
-  heirloomPoints: number
-  item?: SelectedItem | null
-}
+export type MartetplaceListingsCurrencyFilter = 'Any' | 'None' | [number, number]
 
-export interface MarketplaceOfferHistory {
+export interface MarketplaceListingHistory {
   id: number
   seller: UserPublic
   buyer: UserPublic
   goldFee: number
   acceptedAt: Date
-  offer: MarketplaceOfferAsset
-  request: MarketplaceOfferAsset
+  offer: MarketplaceListingAsset
+  request: MarketplaceListingAsset
 }
 
-export interface MarketplaceOffersHistoryPage {
-  items: MarketplaceOfferHistory[]
+export interface MarketplaceListingsHistoryPage {
+  items: MarketplaceListingHistory[]
   totalCount: number
 }
 
-export interface MartetplaceHistoryFilter {
+export interface MartetplaceListingsHistoryFilter {
   seller: number | null
   buyer: number | null
 }

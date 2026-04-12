@@ -52,7 +52,7 @@ builder.Services
     // .AddHostedService<CampaignWorker>() // Disable campaign for now.
     .AddHostedService<DonorSynchronizerWorker>()
     .AddHostedService<ActivityLogsCleanerWorker>()
-    .AddHostedService<MarketplaceOffersCleanerWorker>()
+    .AddHostedService<MarketplaceListingsCleanerWorker>()
     .AddHostedService<ClanArmoryWorker>()
     .AddHttpContextAccessor() // Injects IHttpContextAccessor
     .AddScoped<ICurrentUserService, CurrentUserService>()

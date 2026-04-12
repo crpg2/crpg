@@ -1,8 +1,8 @@
 ﻿using Crpg.Application.Clans.Commands.Armory;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
+using Crpg.Application.UTest.Marketplace;
 using Crpg.Domain.Entities.Items;
-using Crpg.Domain.Entities.Marketplace;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using NUnit.Framework;
@@ -184,7 +184,7 @@ public class AddClanArmoryCommandTest : TestBase
     }
 
     [Test]
-    public async Task ShouldNotAddIfItemIsOnMarketplace()
+    public async Task MarketplaceListedItemShouldNotBeAddedToClanArmory()
     {
         await ClanArmoryTestHelper.CommonSetUp(ArrangeDb);
         var user = await ArrangeDb.Users
@@ -192,14 +192,7 @@ public class AddClanArmoryCommandTest : TestBase
             .FirstAsync();
 
         var item = user.Items.First();
-        var offer = new MarketplaceOffer();
-        var offerAsset = new MarketplaceOfferAsset
-        {
-            MarketplaceOffer = offer,
-            Side = MarketplaceOfferAssetSide.Offered,
-            UserItem = item,
-        };
-        await ArrangeDb.MarketplaceOfferAssets.AddAsync(offerAsset);
+        await ArrangeDb.MarketplaceListings.AddAsync(MarketplaceListingFactory.CreateListing(sellerId: user.Id, offeredUserItemId: item.Id));
         await ArrangeDb.SaveChangesAsync();
 
         user = await ActDb.Users

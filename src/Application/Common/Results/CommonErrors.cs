@@ -504,39 +504,39 @@ internal static class CommonErrors
         Detail = $"Item '{itemId}' is not in the original offer",
     };
 
-    public static Error MarketplaceOfferNotFound(int offerId) => new(ErrorType.NotFound, ErrorCode.MarketplaceOfferNotFound)
+    public static Error MarketplaceListingNotFound(int listingId) => new(ErrorType.NotFound, ErrorCode.MarketplaceListingNotFound)
     {
-        Title = "Marketplace offer was not found",
-        Detail = $"Marketplace offer with id '{offerId}' was not found",
+        Title = "Marketplace listing was not found",
+        Detail = $"Marketplace listing with id '{listingId}' was not found",
     };
 
-    public static Error MarketplaceOfferNotAllowed(int offerId) => new(ErrorType.Forbidden, ErrorCode.MarketplaceOfferNotAllowed)
+    public static Error MarketplaceListingNotAllowed(int listingId) => new(ErrorType.Forbidden, ErrorCode.MarketplaceListingNotAllowed)
     {
-        Title = "Operation is not allowed for this marketplace offer",
-        Detail = $"Marketplace offer '{offerId}' is not owned by the current user",
+        Title = "Operation is not allowed for this marketplace listing",
+        Detail = $"Marketplace listing '{listingId}' is not owned by the current user",
     };
 
-    public static Error MarketplaceOfferExpired(int offerId) => new(ErrorType.Validation, ErrorCode.MarketplaceOfferExpired)
+    public static Error MarketplaceListingExpired(int listingId) => new(ErrorType.Validation, ErrorCode.MarketplaceListingExpired)
     {
-        Title = "Marketplace offer is expired",
-        Detail = $"Marketplace offer '{offerId}' has expired",
+        Title = "Marketplace listing is expired",
+        Detail = $"Marketplace listing '{listingId}' has expired",
     };
 
-    public static Error MarketplaceOfferLimitReached(int userId, int limit) => new(ErrorType.Validation, ErrorCode.MarketplaceOfferLimitReached)
+    public static Error MarketplaceListingLimitReached(int userId, int limit) => new(ErrorType.Validation, ErrorCode.MarketplaceListingLimitReached)
     {
-        Title = "Marketplace active offer limit reached",
-        Detail = $"User '{userId}' already has {limit} active marketplace offers",
+        Title = "Marketplace active listing limit reached",
+        Detail = $"User '{userId}' already has {limit} active marketplace listings",
     };
 
-    public static Error MarketplaceOfferInvalidAsset(string detail) => new(ErrorType.Validation, ErrorCode.MarketplaceOfferInvalidAsset)
+    public static Error MarketplaceListingInvalidAsset(string detail) => new(ErrorType.Validation, ErrorCode.MarketplaceListingInvalidAsset)
     {
-        Title = "Invalid marketplace offer asset",
+        Title = "Invalid marketplace listing asset",
         Detail = detail,
     };
 
-    public static Error MarketplaceOfferSelfAccept(int offerId) => new(ErrorType.Validation, ErrorCode.MarketplaceOfferSelfAccept)
+    public static Error MarketplaceListingSelfAccept(int listingId) => new(ErrorType.Validation, ErrorCode.MarketplaceListingSelfAccept)
     {
-        Title = "Cannot accept own marketplace offer",
-        Detail = $"Marketplace offer '{offerId}' cannot be accepted by its seller",
+        Title = "Cannot accept own marketplace listing",
+        Detail = $"Marketplace listing '{listingId}' cannot be accepted by its seller",
     };
 }

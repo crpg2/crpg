@@ -26,7 +26,7 @@ export interface User {
   activeCharacterId: number | null
   unreadNotificationsCount: number
   clanMembership: UserClanMembership | null
-  activeMarketplaceOffersCount: number
+  activeMarketplaceListingsCount: number
 }
 
 export interface UserPublic

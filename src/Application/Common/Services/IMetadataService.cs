@@ -10,7 +10,7 @@ internal interface IMetadataService
 
     MetadataItem? ConvertItemToMetadataItem(Item? item);
 
-    List<IMetadata> ConvertMarketplaceOfferToMetadata(MarketplaceOfferAsset offered, MarketplaceOfferAsset requested);
+    List<IMetadata> ConvertMarketplaceListingToMetadata(MarketplaceListingAsset offered, MarketplaceListingAsset requested);
 }
 
 internal interface IMetadata
@@ -80,7 +80,7 @@ internal class MetadataService : IMetadataService
         return output;
     }
 
-    public List<IMetadata> ConvertMarketplaceOfferToMetadata(MarketplaceOfferAsset offered, MarketplaceOfferAsset requested)
+    public List<IMetadata> ConvertMarketplaceListingToMetadata(MarketplaceListingAsset offer, MarketplaceListingAsset request)
     {
         var options = new JsonSerializerOptions
         {
@@ -89,17 +89,17 @@ internal class MetadataService : IMetadataService
 
         return
         [
-            new Metadata("offered", JsonSerializer.Serialize(new
+            new Metadata("offer", JsonSerializer.Serialize(new
             {
-                offered.Gold,
-                offered.HeirloomPoints,
-                Item = ConvertItemToMetadataItem(offered.UserItem?.Item),
+                offer.Gold,
+                offer.HeirloomPoints,
+                Item = ConvertItemToMetadataItem(offer.UserItem?.Item),
             }, options)),
-            new Metadata("requested", JsonSerializer.Serialize(new
+            new Metadata("request", JsonSerializer.Serialize(new
             {
-                requested.Gold,
-                requested.HeirloomPoints,
-                Item = ConvertItemToMetadataItem(requested.Item),
+                request.Gold,
+                request.HeirloomPoints,
+                Item = ConvertItemToMetadataItem(request.Item),
             }, options)),
         ];
     }

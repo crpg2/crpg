@@ -38,7 +38,7 @@ public record UpgradeUserItemCommand : IMediatorRequest<UserItemViewModel>
                 .Include(u => u.Items)
                     .ThenInclude(ui => ui.Item)
                 .Include(u => u.Items)
-                    .ThenInclude(ui => ui.MarketplaceOfferAssets)
+                    .ThenInclude(ui => ui.MarketplaceListingAssets)
                 .FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
 
             if (user == null)
@@ -64,7 +64,7 @@ public record UpgradeUserItemCommand : IMediatorRequest<UserItemViewModel>
                 return new(CommonErrors.ItemBroken(userItemToUpgrade.ItemId));
             }
 
-            if (userItemToUpgrade.MarketplaceOfferAssets.Count != 0)
+            if (userItemToUpgrade.MarketplaceListingAssets.Count != 0)
             {
                 return new(CommonErrors.UserItemInMarketplace(userItemToUpgrade.Id));
             }

@@ -716,7 +716,7 @@ character:
       listedOnMarketplace:
         tooltip:
           title: Предмет выставлен на торговой площадке
-      showMarketplaceOffers:
+      showMarketplaceListings:
         title: Показать предложения торговой площадки с этим предметом
       cantUpgrade:
         notify:
@@ -1466,25 +1466,21 @@ notification:
     title: Предмет возвращён
     tpl: 'Предмет {item} был удалён из вашего инвентаря. Возвращено: {refundedGold} {refundedHeirloomPoints}'
 
-  MarketplaceOfferAcceptedToSeller:
-    title: Ваш оффер на рынке принят
-    tpl: 'Ваш оффер #{offerId} на рынке был принят покупателем {buyer}{br}{marketplaceOfferDetails}{br}Дополнительно списана комиссия {goldFee}'
+  MarketplaceListingAcceptedToSeller:
+    title: Ваше предложение на рынке принято
+    tpl: 'Ваше предложение #{listingId} на рынке было принято покупателем {buyer}{br}{marketplaceListingDetails}{br}Дополнительно списана комиссия {goldFee}'
 
-  MarketplaceOfferAcceptedToBuyer:
-    title: Вы приняли оффер на рынке
-    tpl: 'Вы приняли оффер #{offerId} на рынке от {seller}{br}{marketplaceOfferDetails}'
+  MarketplaceListingAcceptedToBuyer:
+    title: Вы приняли предложение на рынке
+    tpl: 'Вы приняли предложение #{listingId} на рынке от {seller}{br}{marketplaceListingDetails}'
 
-  MarketplaceOfferInvalidated:
-    title: Оффер на рынке аннулирован
-    tpl: 'Ваш оффер #{offerId} на рынке аннулирован, так как у вас больше нет необходимых ресурсов. Зарезервированные ресурсы возвращены{br}{marketplaceOfferDetails}{br}Также возвращена комиссия {goldFee}'
+  MarketplaceListingInvalidated:
+    title: Предложение на рынке аннулировано
+    tpl: 'Ваше предложение #{listingId} на рынке аннулировано, так как у вас больше нет необходимых ресурсов. Зарезервированные ресурсы возвращены{br}{marketplaceListingDetails}{br}Также возвращена комиссия {goldFee}'
 
-  MarketplaceOfferExpired:
-    title: Оффер на рынке истёк
-    tpl: 'Ваш оффер #{offerId} на рынке истёк. Зарезервированные ресурсы возвращены{br}{marketplaceOfferDetails}{br}Также возвращена комиссия {goldFee}'
-
-  MarketplaceOfferCancelled:
-    title: Оффер на рынке отменён
-    tpl: 'Ваш оффер на рынке #{offerId} был отменён. Возвращено: {refundedGold} {refundedHeirloomPoints}'
+  MarketplaceListingExpired:
+    title: Предложение на рынке истёкло
+    tpl: 'Ваше предложение #{listingId} на рынке истёкло. Зарезервированные ресурсы возвращены{br}{marketplaceListingDetails}{br}Также возвращена комиссия {goldFee}'
 
   ClanMemberRoleChangedToUser:
     title: Роль в клане изменена
@@ -1679,7 +1675,7 @@ marketplace:
     selectItemType: Выбрать тип предмета
     orSeparator: Или
     chooseItem: Выбрать предмет
-  createOffer:
+  createListing:
     title: Создать предложение
     personal: Личный предмет
     validation:
@@ -1734,9 +1730,9 @@ marketplace:
     controls:
       searchMode: Поиск
       onlyAffordable: Только доступные
-      myOffers: 'Только мои ({count}/{limit})'
-      createOffer: Создать
-      offerLimitReached: Вы достигли максимального количества активных предложений
+      myListings: 'Только мои ({count}/{limit})'
+      createListing: Создать
+      listingLimitReached: Вы достигли максимального количества активных предложений
       reset: Сбросить
       search: Найти
     filters:

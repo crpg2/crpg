@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { AppCoin, AppLoom, CharacterMedia, ClanRole, ItemThumb, MarketplaceOfferAssetGroup, UBadge, ULink, UserClan, UserMedia, UTooltip } from '#components'
+import { AppCoin, AppLoom, CharacterMedia, ClanRole, ItemThumb, MarketplaceListingAssetGroup, UBadge, ULink, UserClan, UserMedia, UTooltip } from '#components'
 import { I18nT } from 'vue-i18n'
 
 import type { ClanMemberRole } from '~/models/clan'
-import type { MarketplaceOfferAsset } from '~/models/marketplace'
+import type { MarketplaceListingAsset } from '~/models/marketplace'
 import type { MetadataDict } from '~/models/metadata'
 import type { UserPublic } from '~/models/user'
 
@@ -93,14 +93,14 @@ function renderSlots(fields: Record<string, string | number | undefined>, render
   )
 }
 
-function renderMarketplaceOfferDetails(rawOffered: string, rawRequested: string) {
+function renderMarketplaceListingDetails(rawOffer: string, rawRequest: string) {
   try {
-    const offered = JSON.parse(rawOffered) as MarketplaceOfferAsset
-    const requested = JSON.parse(rawRequested) as MarketplaceOfferAsset
-    return h(MarketplaceOfferAssetGroup, { offered, requested })
+    const offered = JSON.parse(rawOffer) as MarketplaceListingAsset
+    const requested = JSON.parse(rawRequest) as MarketplaceListingAsset
+    return h(MarketplaceListingAssetGroup, { offered, requested })
   }
   catch (_) {
-    return renderStrong(JSON.stringify({ offered: rawOffered, requested: rawRequested }))
+    return renderStrong(JSON.stringify({ offered: rawOffer, requested: rawRequest }))
   }
 }
 
@@ -128,8 +128,8 @@ function Render() {
     battleId,
     goldFee,
     listingFee,
-    offered,
-    requested,
+    offer,
+    request,
     ...restKeys
   } = metadata
 
@@ -143,7 +143,7 @@ function Render() {
     },
     {
       br: () => h('br'),
-      ...(offered && requested && { marketplaceOfferDetails: () => renderMarketplaceOfferDetails(offered, requested) }),
+      ...(offer && request && { marketplaceListingDetails: () => renderMarketplaceListingDetails(offer, request) }),
       ...(clanId && { clan: () => renderUserClan(Number(clanId)) }),
       ...renderSlots({ oldClanMemberRole, newClanMemberRole }, v => h(ClanRole, { role: v as ClanMemberRole })),
       ...renderSlots({ user: userId, targetUser: targetUserId, actorUser: actorUserId, seller: sellerId, buyer: buyerId }, v => renderUser(Number(v))),

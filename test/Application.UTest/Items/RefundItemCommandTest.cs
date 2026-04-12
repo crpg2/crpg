@@ -3,13 +3,13 @@ using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Items.Commands;
 using Crpg.Application.Marketplace.Services;
+using Crpg.Application.UTest.Marketplace;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Users;
 using Crpg.Sdk.Abstractions;
 using Moq;
 using NUnit.Framework;
-using static Crpg.Application.UTest.Marketplace.MarketplaceOfferFactory;
 
 namespace Crpg.Application.UTest.Items;
 
@@ -77,7 +77,7 @@ public class RefundItemCommandTest : TestBase
     }
 
     [Test]
-    public async Task ShouldInvalidateMarketplaceOffersOnRefund()
+    public async Task ShouldInvalidateMarketplaceListingsOnRefund()
     {
         Item item = new() { Id = "a", Enabled = true, Price = 100, Rank = 0 };
         ArrangeDb.Items.Add(item);
@@ -87,8 +87,7 @@ public class RefundItemCommandTest : TestBase
         ArrangeDb.UserItems.Add(sellerUserItem);
         await ArrangeDb.SaveChangesAsync();
 
-        MarketplaceOffer offer = CreateOffer(seller.Id, goldFee: 10, offeredGold: 50, offeredUserItemId: sellerUserItem.Id);
-        ArrangeDb.MarketplaceOffers.Add(offer);
+        ArrangeDb.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(seller.Id, goldFee: 10, offeredGold: 50, offeredUserItemId: sellerUserItem.Id));
         await ArrangeDb.SaveChangesAsync();
 
         var result = await new RefundItemCommand.Handler(ActDb, new ActivityLogService(new MetadataService()), new ItemService(Mock.Of<IDateTime>(), new Constants()), new MarketplaceService(), new UserNotificationService(new MetadataService())).Handle(new RefundItemCommand
@@ -98,7 +97,7 @@ public class RefundItemCommandTest : TestBase
         }, CancellationToken.None);
 
         Assert.That(result.Errors, Is.Null);
-        Assert.That(AssertDb.MarketplaceOffers.Any(), Is.False);
+        Assert.That(AssertDb.MarketplaceListings.Any(), Is.False);
         seller = AssertDb.Users.First(u => u.Id == seller.Id);
         // item refund (Price=100) + offer refund (offeredGold=50 + goldFee=10)
         Assert.That(seller.Gold, Is.EqualTo(160));

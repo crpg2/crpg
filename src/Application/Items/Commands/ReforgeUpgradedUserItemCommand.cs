@@ -33,7 +33,7 @@ public record ReforgeUpgradedUserItemCommand : IMediatorRequest<UserItemViewMode
                 .Include(u => u.Items)
                     .ThenInclude(ui => ui.Item)
                 .Include(u => u.Items)
-                    .ThenInclude(ui => ui.MarketplaceOfferAssets)
+                    .ThenInclude(ui => ui.MarketplaceListingAssets)
                 .FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
 
             if (user == null)
@@ -59,7 +59,7 @@ public record ReforgeUpgradedUserItemCommand : IMediatorRequest<UserItemViewMode
                 return new(CommonErrors.ItemNotReforgeable(userItemToReforge.ItemId));
             }
 
-            if (userItemToReforge.MarketplaceOfferAssets.Count != 0)
+            if (userItemToReforge.MarketplaceListingAssets.Count != 0)
             {
                 return new(CommonErrors.UserItemInMarketplace(userItemToReforge.Id));
             }

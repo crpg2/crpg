@@ -166,7 +166,7 @@ const repairCost = computed(() => computeBrokenItemRepairCost(userItem.item.pric
             />
 
             <template #content>
-              <UiTooltipContent :title="$t('character.inventory.item.showMarketplaceOffers.title')" />
+              <UiTooltipContent :title="$t('character.inventory.item.showMarketplaceListings.title')" />
             </template>
           </UTooltip>
         </UFieldGroup>

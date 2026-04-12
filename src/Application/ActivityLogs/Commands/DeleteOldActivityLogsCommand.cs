@@ -20,9 +20,9 @@ public record DeleteOldActivityLogsCommand : IMediatorRequest
         private static readonly FrozenDictionary<ActivityLogType, TimeSpan> LogRetentionByType = new Dictionary<ActivityLogType, TimeSpan>
         {
             [ActivityLogType.CharacterEarned] = TimeSpan.FromDays(15),
-            [ActivityLogType.MarketplaceOfferCreated] = TimeSpan.FromDays(180),
-            [ActivityLogType.MarketplaceOfferCancelled] = TimeSpan.FromDays(180),
-            [ActivityLogType.MarketplaceOfferExpired] = TimeSpan.FromDays(180),
+            [ActivityLogType.MarketplaceListingCreated] = TimeSpan.FromDays(180),
+            [ActivityLogType.MarketplaceListingCancelled] = TimeSpan.FromDays(180),
+            [ActivityLogType.MarketplaceListingExpired] = TimeSpan.FromDays(180),
         }.ToFrozenDictionary();
 
         private readonly ICrpgDbContext _db = db;

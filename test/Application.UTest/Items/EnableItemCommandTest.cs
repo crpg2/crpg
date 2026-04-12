@@ -3,6 +3,7 @@ using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Items.Commands;
 using Crpg.Application.Marketplace.Services;
+using Crpg.Application.UTest.Marketplace;
 using Crpg.Domain.Entities.ActivityLogs;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Items;
@@ -12,7 +13,6 @@ using Crpg.Sdk.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using NUnit.Framework;
-using static Crpg.Application.UTest.Marketplace.MarketplaceOfferFactory;
 
 namespace Crpg.Application.UTest.Items;
 
@@ -105,7 +105,7 @@ public class EnableItemCommandTest : TestBase
     }
 
     [Test]
-    public async Task ShouldCancelOffersWithItemOffered()
+    public async Task ShouldCancelListingsWithItemOffered()
     {
         Item item = new() { Id = "a", BaseId = "a", Enabled = true };
         ArrangeDb.Items.Add(item);
@@ -116,8 +116,7 @@ public class EnableItemCommandTest : TestBase
         ArrangeDb.Users.Add(seller);
         await ArrangeDb.SaveChangesAsync();
 
-        var offer = CreateOffer(seller.Id, goldFee: 10, offeredUserItemId: sellerItem.Id, requestedGold: 50);
-        ArrangeDb.MarketplaceOffers.Add(offer);
+        ArrangeDb.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(seller.Id, goldFee: 10, offeredUserItemId: sellerItem.Id, requestedGold: 50));
         await ArrangeDb.SaveChangesAsync();
 
         var result = await new EnableItemCommand.Handler(ActDb, new MarketplaceService(), new ActivityLogService(new MetadataService()), Mock.Of<IItemService>(), new UserNotificationService(new MetadataService())).Handle(new EnableItemCommand
@@ -128,21 +127,21 @@ public class EnableItemCommandTest : TestBase
         }, CancellationToken.None);
 
         Assert.That(result.Errors, Is.Null);
-        Assert.That(AssertDb.MarketplaceOffers.Count(), Is.EqualTo(0));
+        Assert.That(AssertDb.MarketplaceListings.Count(), Is.EqualTo(0));
 
         var notification = await AssertDb.UserNotifications
             .Include(n => n.Metadata)
-            .SingleOrDefaultAsync(n => n.UserId == seller.Id && n.Type == NotificationType.MarketplaceOfferInvalidated);
+            .SingleOrDefaultAsync(n => n.UserId == seller.Id && n.Type == NotificationType.MarketplaceListingInvalidated);
         Assert.That(notification, Is.Not.Null);
 
         var activityLog = await AssertDb.ActivityLogs
             .Include(l => l.Metadata)
-            .SingleOrDefaultAsync(l => l.UserId == seller.Id && l.Type == ActivityLogType.MarketplaceOfferInvalidated);
+            .SingleOrDefaultAsync(l => l.UserId == seller.Id && l.Type == ActivityLogType.MarketplaceListingInvalidated);
         Assert.That(activityLog, Is.Not.Null);
     }
 
     [Test]
-    public async Task ShouldCancelOffersWithItemRequested()
+    public async Task ShouldCancelListingsWithItemRequested()
     {
         Item item = new() { Id = "a", BaseId = "a", Enabled = true };
         ArrangeDb.Items.Add(item);
@@ -151,8 +150,8 @@ public class EnableItemCommandTest : TestBase
         ArrangeDb.Users.Add(seller);
         await ArrangeDb.SaveChangesAsync();
 
-        var offer = CreateOffer(seller.Id, goldFee: 5, offeredGold: 80, requestedItemId: item.Id);
-        ArrangeDb.MarketplaceOffers.Add(offer);
+        var listing = MarketplaceListingFactory.CreateListing(seller.Id, goldFee: 5, offeredGold: 80, requestedItemId: item.Id);
+        ArrangeDb.MarketplaceListings.Add(listing);
         await ArrangeDb.SaveChangesAsync();
 
         var result = await new EnableItemCommand.Handler(ActDb, new MarketplaceService(), new ActivityLogService(new MetadataService()), Mock.Of<IItemService>(), new UserNotificationService(new MetadataService())).Handle(new EnableItemCommand
@@ -163,16 +162,16 @@ public class EnableItemCommandTest : TestBase
         }, CancellationToken.None);
 
         Assert.That(result.Errors, Is.Null);
-        Assert.That(AssertDb.MarketplaceOffers.Count(), Is.EqualTo(0));
+        Assert.That(AssertDb.MarketplaceListings.Count(), Is.EqualTo(0));
 
         var notification = await AssertDb.UserNotifications
             .Include(n => n.Metadata)
-            .SingleOrDefaultAsync(n => n.UserId == seller.Id && n.Type == NotificationType.MarketplaceOfferInvalidated);
+            .SingleOrDefaultAsync(n => n.UserId == seller.Id && n.Type == NotificationType.MarketplaceListingInvalidated);
         Assert.That(notification, Is.Not.Null);
 
         var activityLog = await AssertDb.ActivityLogs
             .Include(l => l.Metadata)
-            .SingleOrDefaultAsync(l => l.UserId == seller.Id && l.Type == ActivityLogType.MarketplaceOfferInvalidated);
+            .SingleOrDefaultAsync(l => l.UserId == seller.Id && l.Type == ActivityLogType.MarketplaceListingInvalidated);
         Assert.That(activityLog, Is.Not.Null);
     }
 

@@ -81,8 +81,8 @@ public class Constants
     public int CampaignMercenaryMaxWage { get; set; }
     public int CampaignMercenaryNoteMaxLength { get; set; }
     public int CampaignBattleSideBriefingNoteMaxLength { get; set; }
-    public int MarketplaceOfferDurationDays { get; set; }
-    public int MarketplaceActiveOfferLimit { get; set; }
+    public int MarketplaceListingDurationDays { get; set; }
+    public int MarketplaceActiveListingLimit { get; set; }
     public int MarketplaceListingFeePerDay { get; set; }
     public int MarketplaceGoldFeePercent { get; set; }
 }

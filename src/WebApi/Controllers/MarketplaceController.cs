@@ -12,8 +12,8 @@ namespace Crpg.WebApi.Controllers;
 [Authorize(Policy = UserPolicy)]
 public class MarketplaceController : BaseController
 {
-    [HttpGet("offers")]
-    public Task<ActionResult<Result<MarketplaceOffersPageViewModel>>> GetOffers(
+    [HttpGet("listings")]
+    public Task<ActionResult<Result<MarketplaceListingsPageViewModel>>> GetListings(
         [FromQuery] string? offeredItemId = null,
         [FromQuery] IList<int>? offeredItemRanks = null,
         [FromQuery] ItemType? offeredItemType = null,
@@ -29,9 +29,9 @@ public class MarketplaceController : BaseController
         [FromQuery] int page = 1,
         [FromQuery] int pageSize = 15)
     {
-        return ResultToActionAsync(Mediator.Send(new GetMarketplaceOffersQuery
+        return ResultToActionAsync(Mediator.Send(new GetMarketplaceListingsQuery
         {
-            Offered = new GetMarketplaceOffersQuery.SideFilter
+            Offered = new GetMarketplaceListingsQuery.SideFilter
             {
                 ItemId = offeredItemId,
                 ItemRanks = offeredItemRanks,
@@ -39,7 +39,7 @@ public class MarketplaceController : BaseController
                 Gold = ParseCurrencyFilter(offeredGold),
                 HeirloomPoints = ParseCurrencyFilter(offeredHeirloomPoints),
             },
-            Requested = new GetMarketplaceOffersQuery.SideFilter
+            Requested = new GetMarketplaceListingsQuery.SideFilter
             {
                 ItemId = requestedItemId,
                 ItemRanks = requestedItemRanks,
@@ -54,32 +54,32 @@ public class MarketplaceController : BaseController
         }));
     }
 
-    [HttpPost("offers")]
+    [HttpPost("listings")]
     [ProducesResponseType((int)HttpStatusCode.Created)]
-    public Task<ActionResult<Result<MarketplaceOfferViewModel>>> CreateOffer([FromBody] CreateMarketplaceOfferCommand req)
+    public Task<ActionResult<Result<MarketplaceListingViewModel>>> CreateListing([FromBody] CreateMarketplaceListingCommand req)
     {
         req.UserId = CurrentUser.User!.Id;
-        return ResultToCreatedAtActionAsync(nameof(GetOffers), null, null, Mediator.Send(req));
+        return ResultToCreatedAtActionAsync(nameof(GetListings), null, null, Mediator.Send(req));
     }
 
-    [HttpDelete("offers/{offerId:int}")]
-    public Task<ActionResult> CancelOffer([FromRoute] int offerId)
+    [HttpDelete("listings/{listingId:int}")]
+    public Task<ActionResult> CancelListing([FromRoute] int listingId)
     {
-        return ResultToActionAsync(Mediator.Send(new CancelMarketplaceOfferCommand
+        return ResultToActionAsync(Mediator.Send(new CancelMarketplaceListingCommand
         {
             UserId = CurrentUser.User!.Id,
-            OfferId = offerId,
+            ListingId = listingId,
         }));
     }
 
-    [HttpGet("offers/history")]
-    public Task<ActionResult<Result<MarketplaceOffersHistoryPageViewModel>>> GetOffersHistory(
+    [HttpGet("listings/history")]
+    public Task<ActionResult<Result<MarketplaceListingsHistoryPageViewModel>>> GetListingsHistory(
         [FromQuery] int? buyerId = null,
         [FromQuery] int? sellerId = null,
         [FromQuery] int page = 1,
         [FromQuery] int pageSize = 15)
     {
-        return ResultToActionAsync(Mediator.Send(new GetMarketplaceOffersHistoryQuery
+        return ResultToActionAsync(Mediator.Send(new GetMarketplaceListingsHistoryQuery
         {
             BuyerId = buyerId,
             SellerId = sellerId,
@@ -88,13 +88,13 @@ public class MarketplaceController : BaseController
         }));
     }
 
-    [HttpPost("offers/{offerId:int}/accept")]
-    public Task<ActionResult> AcceptOffer([FromRoute] int offerId)
+    [HttpPost("listings/{listingId:int}/accept")]
+    public Task<ActionResult> AcceptOffer([FromRoute] int listingId)
     {
-        return ResultToActionAsync(Mediator.Send(new AcceptMarketplaceOfferCommand
+        return ResultToActionAsync(Mediator.Send(new AcceptMarketplaceListingCommand
         {
             UserId = CurrentUser.User!.Id,
-            OfferId = offerId,
+            ListingId = listingId,
         }));
     }
 

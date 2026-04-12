@@ -64,8 +64,8 @@ public class CrpgDbContext : DbContext, ICrpgDbContext
     public DbSet<BattleFighterApplication> BattleFighterApplications { get; set; } = default!;
     public DbSet<BattleParticipant> BattleParticipants { get; set; } = default!;
     public DbSet<BattleMercenaryApplication> BattleMercenaryApplications { get; set; } = default!;
-    public DbSet<MarketplaceOffer> MarketplaceOffers { get; set; } = default!;
-    public DbSet<MarketplaceOfferAsset> MarketplaceOfferAssets { get; set; } = default!;
+    public DbSet<MarketplaceListing> MarketplaceListings { get; set; } = default!;
+    public DbSet<MarketplaceListingAsset> MarketplaceListingAssets { get; set; } = default!;
     public DbSet<ActivityLog> ActivityLogs { get; set; } = default!;
     public DbSet<ActivityLogMetadata> ActivityLogMetadata { get; set; } = default!;
     public DbSet<UserNotification> UserNotifications { get; set; } = default!;

@@ -54,7 +54,7 @@ public class DeleteOldActivityLogsCommandTest : TestBase
     }
 
     [Test]
-    public async Task ShouldUse180DaysRetentionForMarketplaceOfferCreated()
+    public async Task ShouldUse180DaysRetentionForMarketplaceListingCreated()
     {
         DateTime now = new(2026, 3, 31, 12, 0, 0, DateTimeKind.Utc);
         var dateTime = new Mock<IDateTime>();
@@ -62,8 +62,8 @@ public class DeleteOldActivityLogsCommandTest : TestBase
 
         ArrangeDb.ActivityLogs.AddRange(
         [
-            new() { Type = ActivityLogType.MarketplaceOfferCreated, CreatedAt = now.AddDays(-179) },
-            new() { Type = ActivityLogType.MarketplaceOfferCreated, CreatedAt = now.AddDays(-181) },
+            new() { Type = ActivityLogType.MarketplaceListingCreated, CreatedAt = now.AddDays(-179) },
+            new() { Type = ActivityLogType.MarketplaceListingCreated, CreatedAt = now.AddDays(-181) },
         ]);
         await ArrangeDb.SaveChangesAsync();
 
@@ -72,7 +72,7 @@ public class DeleteOldActivityLogsCommandTest : TestBase
 
         ActivityLog[] logs = await AssertDb.ActivityLogs.ToArrayAsync();
         Assert.That(logs.Length, Is.EqualTo(1));
-        Assert.That(logs[0].Type, Is.EqualTo(ActivityLogType.MarketplaceOfferCreated));
+        Assert.That(logs[0].Type, Is.EqualTo(ActivityLogType.MarketplaceListingCreated));
         Assert.That(logs[0].CreatedAt, Is.EqualTo(now.AddDays(-179)));
     }
 }

@@ -65,7 +65,7 @@ public static class DependencyInjection
                                 .MapEnum<BattleParticipantType>()
                                 .MapEnum<BattleFighterApplicationStatus>()
                                 .MapEnum<BattleMercenaryApplicationStatus>()
-                                .MapEnum<MarketplaceOfferAssetSide>()
+                                .MapEnum<MarketplaceListingAssetSide>()
                                 .MapEnum<Region>()
                                 .MapEnum<Languages>()
                                 .MapEnum<GameMode>()

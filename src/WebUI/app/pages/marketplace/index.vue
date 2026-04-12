@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
 
-import { LazyMarketplaceCreateOfferDrawer, MarketplaceOfferActions, MarketplaceOfferAssetView, UBadge, UButton, UiDataCell, UserMedia, UTooltip } from '#components'
-import { marketplaceActiveOfferLimit, marketplaceOfferDurationDays } from '~root/data/constants.json'
+import { LazyMarketplaceCreateListingDrawer, MarketplaceListingActions, MarketplaceListingAssetView, UBadge, UiDataCell, UserMedia, UTooltip } from '#components'
+import { marketplaceActiveListingLimit, marketplaceListingDurationDays } from '~root/data/constants.json'
 
-import type { MarketplaceOffer } from '~/models/marketplace'
+import type { MarketplaceListing } from '~/models/marketplace'
 
-import { useMarketplaceOffers } from '~/composables/marketplace/use-marketplace-offers'
+import { useMarketplaceListings } from '~/composables/marketplace/use-marketplace-listings'
 import { useUser } from '~/composables/user/use-user'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
 import { SomeRole } from '~/models/role'
-import { acceptMarketplaceOffer, createMarketplaceOffer, deleteMarketplaceOffer } from '~/services/marketplace-service'
+import { acceptMarketplaceListing, createMarketplaceListing, deleteMarketplaceListing } from '~/services/marketplace-service'
 import { computeLeftMs, daysToMs, parseTimestamp } from '~/utils/date'
 
 definePageMeta({
@@ -27,25 +27,25 @@ const {
   updateFilterModel,
   onReset,
   onSearch,
-  marketplaceOffers,
-  loadMarketplaceOffers,
-  loadingMarketplaceOffers,
+  marketplaceListings,
+  loadMarketplaceListings,
+  loadingMarketplaceListings,
   onPageChange,
-  onToggleSelfOffers,
-} = useMarketplaceOffers()
+  onToggleSelfListings,
+} = useMarketplaceListings()
 
 const overlay = useOverlay()
 
-const [onCreateOffer] = useAsyncCallback(async () => {
+const [onCreateListing] = useAsyncCallback(async () => {
   overlay
-    .create(LazyMarketplaceCreateOfferDrawer)
+    .create(LazyMarketplaceCreateListingDrawer)
     .open({
       onClose: async (value, offer) => {
         if (!value || !offer) {
           return
         }
 
-        await createMarketplaceOffer({
+        await createMarketplaceListing({
           offer: {
             gold: offer.offered.gold,
             heirloomPoints: offer.offered.heirloomPoints,
@@ -61,7 +61,7 @@ const [onCreateOffer] = useAsyncCallback(async () => {
         })
 
         await Promise.all([
-          loadMarketplaceOffers(),
+          loadMarketplaceListings(),
           fetchUser(),
           refreshUserItems(),
         ])
@@ -69,27 +69,27 @@ const [onCreateOffer] = useAsyncCallback(async () => {
     })
 })
 
-const [onDeleteOffer] = useAsyncCallback(async (offerId: number) => {
-  await deleteMarketplaceOffer(offerId)
+const [onDeleteListing] = useAsyncCallback(async (offerId: number) => {
+  await deleteMarketplaceListing(offerId)
 
   await Promise.all([
-    loadMarketplaceOffers(),
+    loadMarketplaceListings(),
     fetchUser(),
     refreshUserItems(),
   ])
 })
 
-const [onAcceptOffer] = useAsyncCallback(async (offerId: number) => {
-  await acceptMarketplaceOffer(offerId)
+const [onAcceptListing] = useAsyncCallback(async (offerId: number) => {
+  await acceptMarketplaceListing(offerId)
 
   await Promise.all([
-    loadMarketplaceOffers(),
+    loadMarketplaceListings(),
     fetchUser(),
     refreshUserItems(),
   ])
 })
 
-const columns: TableColumn<MarketplaceOffer>[] = [
+const columns: TableColumn<MarketplaceListing>[] = [
   {
     accessorKey: 'seller',
     header: t('marketplace.page.columns.seller'),
@@ -101,7 +101,7 @@ const columns: TableColumn<MarketplaceOffer>[] = [
   {
     accessorKey: 'offer',
     header: t('marketplace.page.columns.offer'),
-    cell: ({ row }) => h(MarketplaceOfferAssetView, { asset: row.original.offer }),
+    cell: ({ row }) => h(MarketplaceListingAssetView, { asset: row.original.offer }),
     meta: {
       class: {
         th: tw`w-[480px]`,
@@ -111,7 +111,7 @@ const columns: TableColumn<MarketplaceOffer>[] = [
   {
     header: t('marketplace.page.columns.request'),
     accessorKey: 'request',
-    cell: ({ row }) => h(MarketplaceOfferAssetView, { asset: row.original.request }),
+    cell: ({ row }) => h(MarketplaceListingAssetView, { asset: row.original.request }),
     meta: {
       class: {
         th: tw`w-[480px]`,
@@ -123,8 +123,8 @@ const columns: TableColumn<MarketplaceOffer>[] = [
     header: t('marketplace.page.columns.expiresIn'),
     cell: ({ row }) => {
       const createdAt = new Date(row.original.createdAt)
-      const expiresAt = new Date(createdAt.getTime() + daysToMs(marketplaceOfferDurationDays))
-      const leftMs = computeLeftMs(createdAt, daysToMs(marketplaceOfferDurationDays))
+      const expiresAt = new Date(createdAt.getTime() + daysToMs(marketplaceListingDurationDays))
+      const leftMs = computeLeftMs(createdAt, daysToMs(marketplaceListingDurationDays))
       const remaining = parseTimestamp(leftMs)
 
       return h(UTooltip, {}, {
@@ -148,17 +148,17 @@ const columns: TableColumn<MarketplaceOffer>[] = [
   },
   {
     id: 'actions',
-    cell: ({ row }) => h(MarketplaceOfferActions, {
-      offer: row.original,
+    cell: ({ row }) => h(MarketplaceListingActions, {
+      listing: row.original,
       user: user.value!,
       userItems: userItems.value,
-      onDelete: () => onDeleteOffer(row.original.id),
-      onAccept: () => onAcceptOffer(row.original.id),
+      onDelete: () => onDeleteListing(row.original.id),
+      onAccept: () => onAcceptListing(row.original.id),
     }),
   },
 ]
 
-const hasReachedMarketplaceOfferLimit = computed(() => user.value!.activeMarketplaceOffersCount >= marketplaceActiveOfferLimit)
+const hasReachedMarketplaceListingLimit = computed(() => user.value!.activeMarketplaceListingsCount >= marketplaceActiveListingLimit)
 </script>
 
 <template>
@@ -173,27 +173,27 @@ const hasReachedMarketplaceOfferLimit = computed(() => user.value!.activeMarketp
             :active="filterModel.seller !== user?.id"
             icon="i-lucide-search"
             variant="subtle"
-            @click="onToggleSelfOffers"
+            @click="onToggleSelfListings"
           />
 
           <UButton
-            :label="$t('marketplace.page.controls.myOffers', { count: user!.activeMarketplaceOffersCount, limit: marketplaceActiveOfferLimit })"
+            :label="$t('marketplace.page.controls.myListings', { count: user!.activeMarketplaceListingsCount, limit: marketplaceActiveListingLimit })"
             variant="subtle"
             icon="crpg:member"
             block
             active-variant="solid"
             :active="filterModel.seller === user?.id"
-            @click="onToggleSelfOffers"
+            @click="onToggleSelfListings"
           />
 
-          <UTooltip :disabled="!hasReachedMarketplaceOfferLimit" :text="$t('marketplace.page.controls.offerLimitReached')">
+          <UTooltip :disabled="!hasReachedMarketplaceListingLimit" :text="$t('marketplace.page.controls.offerLimitReached')">
             <UButton
-              :label="$t('marketplace.page.controls.createOffer')"
+              :label="$t('marketplace.page.controls.createListing')"
               block
-              :disabled="hasReachedMarketplaceOfferLimit"
+              :disabled="hasReachedMarketplaceListingLimit"
               variant="subtle"
               icon="crpg:add"
-              @click="onCreateOffer"
+              @click="onCreateListing"
             />
           </UTooltip>
 
@@ -206,7 +206,7 @@ const hasReachedMarketplaceOfferLimit = computed(() => user.value!.activeMarketp
         </UFieldGroup>
 
         <div class="space-y-8" :class="{ 'pointer-events-none opacity-50': filterModel.seller === user?.id }">
-          <MarketplaceOfferSideFilter
+          <MarketplaceListingSideFilter
             :label="$t('marketplace.page.filters.offered')"
             :model-value="filterModel.offered"
             @update:model-value="(offered) => {
@@ -214,7 +214,7 @@ const hasReachedMarketplaceOfferLimit = computed(() => user.value!.activeMarketp
             }"
           />
 
-          <MarketplaceOfferSideFilter
+          <MarketplaceListingSideFilter
             :label="$t('marketplace.page.filters.requested')"
             :model-value="filterModel.requested"
             @update:model-value="(requested) => {
@@ -249,14 +249,14 @@ const hasReachedMarketplaceOfferLimit = computed(() => user.value!.activeMarketp
                 size="xl"
                 variant="subtle"
                 block
-                :loading="loadingMarketplaceOffers"
+                :loading="loadingMarketplaceListings"
                 color="neutral"
                 @click="onReset"
               />
               <UButton
                 :label="$t('marketplace.page.controls.search')"
                 size="xl"
-                :loading="loadingMarketplaceOffers"
+                :loading="loadingMarketplaceListings"
                 block
                 @click="onSearch"
               />
@@ -268,8 +268,8 @@ const hasReachedMarketplaceOfferLimit = computed(() => user.value!.activeMarketp
       <div class="space-y-4">
         <UTable
           class="relative rounded-md border border-muted"
-          :data="marketplaceOffers.items"
-          :loading="loadingMarketplaceOffers"
+          :data="marketplaceListings.items"
+          :loading="loadingMarketplaceListings"
           :columns
           :pagination-options="{
             manualPagination: true,
@@ -283,7 +283,7 @@ const hasReachedMarketplaceOfferLimit = computed(() => user.value!.activeMarketp
         <UiGridPagination
           :page="pagination.pageIndex + 1"
           :size="pagination.pageSize"
-          :total="marketplaceOffers.totalCount"
+          :total="marketplaceListings.totalCount"
           @update:page="page => onPageChange(page - 1)"
         />
       </div>

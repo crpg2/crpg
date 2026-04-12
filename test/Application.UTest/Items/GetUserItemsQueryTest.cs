@@ -1,4 +1,5 @@
 using Crpg.Application.Items.Queries;
+using Crpg.Application.UTest.Marketplace;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Marketplace;
@@ -131,16 +132,7 @@ public class GetUserItemsQueryTest : TestBase
         var user = ArrangeDb.Users.Add(new User { Items = { userItem } });
         await ArrangeDb.SaveChangesAsync();
 
-        ArrangeDb.MarketplaceOffers.Add(new MarketplaceOffer
-        {
-            SellerId = user.Entity.Id,
-            ExpiresAt = DateTime.UtcNow.AddDays(7),
-            Assets =
-            [
-                new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItemId = userItem.Id },
-                new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, Gold = 100 },
-            ],
-        });
+        ArrangeDb.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(sellerId: user.Entity.Id, offeredUserItemId: userItem.Id));
         await ArrangeDb.SaveChangesAsync();
 
         var result = await new GetUserItemsQuery.Handler(ActDb, Mapper).Handle(

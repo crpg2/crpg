@@ -1,6 +1,7 @@
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Items.Commands;
+using Crpg.Application.UTest.Marketplace;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Marketplace;
@@ -366,7 +367,7 @@ public class UpgradeItemCommandTest : TestBase
     }
 
     [Test]
-    public async Task CannotUpgradeItemInMarketplace()
+    public async Task MarketplaceListedItemShouldNotBeUpgradeable()
     {
         Item item0 = new() { Id = "a_h0", BaseId = "a", Price = 100, Enabled = true, Rank = 0 };
         Item item1 = new() { Id = "a_h1", BaseId = "a", Price = 100, Enabled = true, Rank = 1 };
@@ -378,16 +379,7 @@ public class UpgradeItemCommandTest : TestBase
         };
         ArrangeDb.Users.Add(user);
         ArrangeDb.Items.AddRange(item0, item1);
-        ArrangeDb.MarketplaceOffers.Add(new MarketplaceOffer
-        {
-            SellerId = user.Id,
-            ExpiresAt = DateTime.UtcNow.AddDays(7),
-            Assets =
-            [
-                new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Offered, UserItemId = user.Items[0].Id },
-                new MarketplaceOfferAsset { Side = MarketplaceOfferAssetSide.Requested, Gold = 100 },
-            ],
-        });
+        ArrangeDb.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(sellerId: user.Id, offeredUserItemId: user.Items[0].Id));
         await ArrangeDb.SaveChangesAsync();
 
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };

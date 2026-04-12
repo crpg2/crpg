@@ -30,7 +30,7 @@ public record SellUserItemCommand : IMediatorRequest
                 .Include(ui => ui.PersonalItem)
                 .Include(ui => ui.ClanArmoryItem)
                 .Include(ui => ui.ClanArmoryBorrowedItem)
-                .Include(ui => ui.MarketplaceOfferAssets)
+                .Include(ui => ui.MarketplaceListingAssets)
                 .FirstOrDefaultAsync(ui => ui.UserId == req.UserId && ui.Id == req.UserItemId, cancellationToken);
 
             if (userItem == null)
@@ -47,7 +47,7 @@ public record SellUserItemCommand : IMediatorRequest
                 || userItem.PersonalItem != null
                 || userItem.ClanArmoryItem != null
                 || userItem.ClanArmoryBorrowedItem != null
-                || userItem.MarketplaceOfferAssets.Count != 0)
+                || userItem.MarketplaceListingAssets.Count != 0)
             {
                 return new(CommonErrors.ItemNotSellable(userItem.Item.Id));
             }

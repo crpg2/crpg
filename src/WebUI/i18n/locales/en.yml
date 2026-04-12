@@ -750,8 +750,8 @@ character:
       listedOnMarketplace:
         tooltip:
           title: Item is listed on the marketplace
-      showMarketplaceOffers:
-        title: Show marketplace offers with this item
+      showMarketplaceListings:
+        title: Show marketplace listings with this item
       cantUpgrade:
         notify:
           reasonListedOnMarketplace: Item is listed on the marketplace and cannot be upgraded
@@ -1538,11 +1538,11 @@ activityLog:
     ClanArmoryRemoveItem: 'Item {userItem} removed from clan {clan} armory'
     ClanArmoryReturnItem: 'Item {userItem} was returned from clan {clan} armory'
     ClanArmoryBorrowItem: 'Item {userItem} was borrowed from clan {clan} armory'
-    MarketplaceOfferCreated: 'The marketplace offer #{offerId} was created. Listing Fee {listingFee}, gold fee {goldFee} {marketplaceOfferDetails}'
-    MarketplaceOfferCancelled: 'The marketplace offer #{offerId} was cancelled. Gold fee {goldFee} {marketplaceOfferDetails}'
-    MarketplaceOfferAccepted: 'The marketplace offer #{offerId} was accepted. Seller {seller}, gold fee {goldFee} {marketplaceOfferDetails}'
-    MarketplaceOfferInvalidated: 'The marketplace offer #{offerId} was invalidated. Gold fee {goldFee} {marketplaceOfferDetails}'
-    MarketplaceOfferExpired: 'The marketplace offer #{offerId} was expired. Gold fee {goldFee} {marketplaceOfferDetails}'
+    MarketplaceListingCreated: 'The marketplace listing #{listingId} was created. Listing Fee {listingFee}, gold fee {goldFee} {marketplaceListingDetails}'
+    MarketplaceListingCancelled: 'The marketplace listing #{listingId} was cancelled. Gold fee {goldFee} {marketplaceListingDetails}'
+    MarketplaceListingAccepted: 'The marketplace listing #{listingId} was accepted. Seller {seller}, gold fee {goldFee} {marketplaceListingDetails}'
+    MarketplaceListingInvalidated: 'The marketplace listing #{listingId} was invalidated. Gold fee {goldFee} {marketplaceListingDetails}'
+    MarketplaceListingExpired: 'The marketplace listing #{listingId} was expired. Gold fee {goldFee} {marketplaceListingDetails}'
 
 notification:
 
@@ -1606,21 +1606,21 @@ notification:
     title: Removed from battle
     tpl: 'You have been removed from the battle {battle}'
 
-  MarketplaceOfferAcceptedToSeller:
-    title: Your marketplace offer accepted
-    tpl: 'Your offer #{offerId} on the marketplace has been accepted by {buyer}{br}{marketplaceOfferDetails}{br}You have additionally paid {goldFee} as a fee'
+  MarketplaceListingAcceptedToSeller:
+    title: Your marketplace listing accepted
+    tpl: 'Your listing #{listingId} on the marketplace has been accepted by {buyer}{br}{marketplaceListingDetails}{br}You have additionally paid {goldFee} as a fee'
 
-  MarketplaceOfferAcceptedToBuyer:
-    title: You have accepted marketplace offer
-    tpl: 'You have accepted offer #{offerId} on the marketplace from {seller}{br}{marketplaceOfferDetails}'
+  MarketplaceListingAcceptedToBuyer:
+    title: You have accepted marketplace listing
+    tpl: 'You have accepted listing #{listingId} on the marketplace from {seller}{br}{marketplaceListingDetails}'
 
-  MarketplaceOfferInvalidated:
-    title: Marketplace offer invalidated
-    tpl: 'Your marketplace offer #{offerId} has been invalidated because you no longer have resources. The reserved resources have been refunded{br}{marketplaceOfferDetails}{br}You were also refunded {goldFee} as a fee'
+  MarketplaceListingInvalidated:
+    title: Marketplace listing invalidated
+    tpl: 'Your marketplace listing #{listingId} has been invalidated because you no longer have resources. The reserved resources have been refunded{br}{marketplaceListingDetails}{br}You were also refunded {goldFee} as a fee'
 
-  MarketplaceOfferExpired:
-    title: Marketplace offer expired
-    tpl: 'Your marketplace offer #{offerId} has expired. The reserved resources have been refunded{br}{marketplaceOfferDetails}{br}You were also refunded {goldFee} as a fee'
+  MarketplaceListingExpired:
+    title: Marketplace listing expired
+    tpl: 'Your marketplace listing #{listingId} has expired. The reserved resources have been refunded{br}{marketplaceListingDetails}{br}You were also refunded {goldFee} as a fee'
 
 leaderboard:
   title: Leaderboard
@@ -1799,12 +1799,12 @@ marketplace:
     selectItemType: Select item type
     orSeparator: Or
     chooseItem: Choose item
-  createOffer:
-    title: Create Offer
+  createListing:
+    title: Create Listing
     personal: Personal
     validation:
       hasTradeValue: Choose an item or set gold/heirloom points greater than 0
-      toast: Offer and request must each contain an item or amount greater than 0
+      toast: Listing and request must each contain an item or amount greater than 0
     offer:
       label: Offer
       selectItem: Choose offer item
@@ -1854,9 +1854,9 @@ marketplace:
     controls:
       searchMode: Search
       onlyAffordable: Only affordable
-      myOffers: 'My Offers ({count}/{limit})'
-      createOffer: Create Offer
-      offerLimitReached: You have reached the maximum number of active offers
+      myListings: 'My listings ({count}/{limit})'
+      createListing: Create Listing
+      listingLimitReached: You have reached the maximum number of active listings
       reset: Reset
       search: Search
     filters:

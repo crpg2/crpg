@@ -46,8 +46,8 @@ public interface ICrpgDbContext
     DbSet<BattleFighterApplication> BattleFighterApplications { get; }
     DbSet<BattleParticipant> BattleParticipants { get; }
     DbSet<BattleMercenaryApplication> BattleMercenaryApplications { get; }
-    DbSet<MarketplaceOffer> MarketplaceOffers { get; }
-    DbSet<MarketplaceOfferAsset> MarketplaceOfferAssets { get; }
+    DbSet<MarketplaceListing> MarketplaceListings { get; }
+    DbSet<MarketplaceListingAsset> MarketplaceListingAssets { get; }
     DbSet<ActivityLog> ActivityLogs { get; set; }
     DbSet<ActivityLogMetadata> ActivityLogMetadata { get; set; }
     DbSet<UserNotification> UserNotifications { get; set; }

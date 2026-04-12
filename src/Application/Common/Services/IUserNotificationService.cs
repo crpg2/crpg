@@ -20,10 +20,10 @@ internal interface IUserNotificationService
     UserNotification CreateCharacterRewardedToUserNotification(int userId, int characterId, int experience);
     UserNotification CreateBattleMercenaryApplicationRespondedNotification(int userId, int battleId, bool status);
     UserNotification CreateBattleParticipantKickedToExParticipantNotification(int userId, int battleId);
-    UserNotification CreateMarketplaceOfferExpiredNotification(int userId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested);
-    UserNotification CreateMarketplaceOfferAcceptedToSellerNotification(int userId, int buyerId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested);
-    UserNotification CreateMarketplaceOfferAcceptedToBuyerNotification(int userId, int sellerId, int offerId, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested);
-    UserNotification CreateMarketplaceOfferInvalidatedNotification(int userId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested);
+    UserNotification CreateMarketplaceListingExpiredNotification(int userId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request);
+    UserNotification CreateMarketplaceListingAcceptedToSellerNotification(int userId, int buyerId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request);
+    UserNotification CreateMarketplaceListingAcceptedToBuyerNotification(int userId, int sellerId, int listingId, MarketplaceListingAsset offer, MarketplaceListingAsset request);
+    UserNotification CreateMarketplaceListingInvalidatedNotification(int userId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request);
 }
 
 internal class UserNotificationService(IMetadataService metadataService) : IUserNotificationService
@@ -142,57 +142,57 @@ internal class UserNotificationService(IMetadataService metadataService) : IUser
             ]);
     }
 
-    public UserNotification CreateMarketplaceOfferExpiredNotification(int userId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested)
+    public UserNotification CreateMarketplaceListingExpiredNotification(int userId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request)
     {
         List<UserNotificationMetadata> metadata =
         [
-            new("offerId", offerId.ToString()),
+            new("listingId", listingId.ToString()),
             new("goldFee", goldFee.ToString()),
-            ..CreateMarketplaceOfferMetadata(offered, requested),
+            ..CreateMarketplaceListingMetadata(offer, request),
         ];
 
-        return CreateNotification(NotificationType.MarketplaceOfferExpired, userId, [.. metadata]);
+        return CreateNotification(NotificationType.MarketplaceListingExpired, userId, [.. metadata]);
     }
 
-    public UserNotification CreateMarketplaceOfferAcceptedToSellerNotification(int userId, int buyerId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested)
+    public UserNotification CreateMarketplaceListingAcceptedToSellerNotification(int userId, int buyerId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request)
     {
         List<UserNotificationMetadata> metadata =
         [
             new("buyerId", buyerId.ToString()),
-            new("offerId", offerId.ToString()),
+            new("listingId", listingId.ToString()),
             new("goldFee", goldFee.ToString()),
-            ..CreateMarketplaceOfferMetadata(offered, requested),
+            ..CreateMarketplaceListingMetadata(offer, request),
         ];
 
-        return CreateNotification(NotificationType.MarketplaceOfferAcceptedToSeller, userId, [.. metadata]);
+        return CreateNotification(NotificationType.MarketplaceListingAcceptedToSeller, userId, [.. metadata]);
     }
 
-    public UserNotification CreateMarketplaceOfferAcceptedToBuyerNotification(int userId, int sellerId, int offerId, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested)
+    public UserNotification CreateMarketplaceListingAcceptedToBuyerNotification(int userId, int sellerId, int listingId, MarketplaceListingAsset offer, MarketplaceListingAsset request)
     {
         List<UserNotificationMetadata> metadata =
         [
             new("sellerId", sellerId.ToString()),
-            new("offerId", offerId.ToString()),
-            ..CreateMarketplaceOfferMetadata(offered, requested),
+            new("listingId", listingId.ToString()),
+            ..CreateMarketplaceListingMetadata(offer, request),
         ];
 
-        return CreateNotification(NotificationType.MarketplaceOfferAcceptedToBuyer, userId, [.. metadata]);
+        return CreateNotification(NotificationType.MarketplaceListingAcceptedToBuyer, userId, [.. metadata]);
     }
 
-    public UserNotification CreateMarketplaceOfferInvalidatedNotification(int userId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested)
+    public UserNotification CreateMarketplaceListingInvalidatedNotification(int userId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request)
     {
         List<UserNotificationMetadata> metadata =
         [
-            new("offerId", offerId.ToString()),
+            new("listingId", listingId.ToString()),
             new("goldFee", goldFee.ToString()),
-            ..CreateMarketplaceOfferMetadata(offered, requested),
+            ..CreateMarketplaceListingMetadata(offer, request),
         ];
 
-        return CreateNotification(NotificationType.MarketplaceOfferInvalidated, userId, [.. metadata]);
+        return CreateNotification(NotificationType.MarketplaceListingInvalidated, userId, [.. metadata]);
     }
 
-    private List<UserNotificationMetadata> CreateMarketplaceOfferMetadata(MarketplaceOfferAsset offered, MarketplaceOfferAsset requested) =>
-        [.. _metadataService.ConvertMarketplaceOfferToMetadata(offered, requested).Select(m => new UserNotificationMetadata(m.Key, m.Value))];
+    private List<UserNotificationMetadata> CreateMarketplaceListingMetadata(MarketplaceListingAsset offer, MarketplaceListingAsset request) =>
+        [.. _metadataService.ConvertMarketplaceListingToMetadata(offer, request).Select(m => new UserNotificationMetadata(m.Key, m.Value))];
 
     private static UserNotification CreateNotification(NotificationType type, int userId, params UserNotificationMetadata[] metadata)
     {

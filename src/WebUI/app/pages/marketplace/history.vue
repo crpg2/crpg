@@ -2,13 +2,13 @@
 import type { TableColumn } from '@nuxt/ui'
 import type { LocationQuery, LocationQueryValueRaw } from 'vue-router'
 
-import { AppCoin, MarketplaceHistoryFilterByUser, MarketplaceOfferAssetView, UBadge, UiGridColumnHeader, UserMedia } from '#components'
+import { AppCoin, MarketplaceHistoryFilterByUser, MarketplaceListingAssetView, UBadge, UiGridColumnHeader, UserMedia } from '#components'
 
-import type { MarketplaceOfferHistory, MartetplaceHistoryFilter } from '~/models/marketplace'
+import type { MarketplaceListingHistory, MartetplaceListingsHistoryFilter } from '~/models/marketplace'
 
 import { useUser } from '~/composables/user/use-user'
 import { SomeRole } from '~/models/role'
-import { getMarketplaceOffersHistory } from '~/services/marketplace-service'
+import { getMarketplaceListingsHistory } from '~/services/marketplace-service'
 
 definePageMeta({
   roles: SomeRole,
@@ -21,7 +21,7 @@ const { pagination, setPagination } = usePagination()
 const router = useRouter()
 const route = useRoute()
 
-function getDefaultFilterModel(routeQuery: LocationQuery): MartetplaceHistoryFilter {
+function getDefaultFilterModel(routeQuery: LocationQuery): MartetplaceListingsHistoryFilter {
   const { seller, buyer } = routeQuery
 
   return {
@@ -30,9 +30,9 @@ function getDefaultFilterModel(routeQuery: LocationQuery): MartetplaceHistoryFil
   }
 }
 
-const filterModel = ref<MartetplaceHistoryFilter>(getDefaultFilterModel(route.query))
+const filterModel = ref<MartetplaceListingsHistoryFilter>(getDefaultFilterModel(route.query))
 
-function updateFilterModel(partial: Partial<MartetplaceHistoryFilter>) {
+function updateFilterModel(partial: Partial<MartetplaceListingsHistoryFilter>) {
   filterModel.value = {
     ...filterModel.value,
     ...partial,
@@ -40,10 +40,10 @@ function updateFilterModel(partial: Partial<MartetplaceHistoryFilter>) {
 }
 
 const {
-  state: marketplaceOffersHistory,
-  executeImmediate: loadMarketplaceOffersHistory,
-  isLoading: loadingMarketplaceOffersHistory,
-} = useAsyncState(() => getMarketplaceOffersHistory(pagination.value, filterModel.value), {
+  state: marketplaceListingsHistory,
+  executeImmediate: loadMarketplaceListingsHistory,
+  isLoading: loadingMarketplaceListingsHistory,
+} = useAsyncState(() => getMarketplaceListingsHistory(pagination.value, filterModel.value), {
   items: [],
   totalCount: 0,
 }, {
@@ -52,7 +52,7 @@ const {
 
 function onPageChange(pageIndex: number) {
   setPagination({ pageIndex })
-  loadMarketplaceOffersHistory()
+  loadMarketplaceListingsHistory()
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
@@ -69,7 +69,7 @@ function onFilterChange() {
         : filterModel.value.buyer as unknown as LocationQueryValueRaw,
     },
   })
-  loadMarketplaceOffersHistory()
+  loadMarketplaceListingsHistory()
 }
 
 function createUserFilterHeader(field: 'seller' | 'buyer') {
@@ -97,7 +97,7 @@ function createUserFilterHeader(field: 'seller' | 'buyer') {
   })
 }
 
-const columns: TableColumn<MarketplaceOfferHistory>[] = [
+const columns: TableColumn<MarketplaceListingHistory>[] = [
   {
     accessorKey: 'id',
     id: 'actions',
@@ -118,7 +118,7 @@ const columns: TableColumn<MarketplaceOfferHistory>[] = [
   {
     accessorKey: 'offer',
     header: t('marketplace.page.columns.offer'),
-    cell: ({ row }) => h(MarketplaceOfferAssetView, { asset: row.original.offer }),
+    cell: ({ row }) => h(MarketplaceListingAssetView, { asset: row.original.offer }),
     meta: {
       class: {
         th: tw`w-[480px]`,
@@ -136,7 +136,7 @@ const columns: TableColumn<MarketplaceOfferHistory>[] = [
   {
     accessorKey: 'request',
     header: t('marketplace.page.columns.request'),
-    cell: ({ row }) => h(MarketplaceOfferAssetView, { asset: row.original.request }),
+    cell: ({ row }) => h(MarketplaceListingAssetView, { asset: row.original.request }),
     meta: {
       class: {
         th: tw`w-[480px]`,
@@ -173,8 +173,8 @@ const columns: TableColumn<MarketplaceOfferHistory>[] = [
     <div class="space-y-4">
       <UTable
         class="relative rounded-md border border-muted"
-        :data="marketplaceOffersHistory.items"
-        :loading="loadingMarketplaceOffersHistory"
+        :data="marketplaceListingsHistory.items"
+        :loading="loadingMarketplaceListingsHistory"
         :columns
         :pagination-options="{
           manualPagination: true,
@@ -188,7 +188,7 @@ const columns: TableColumn<MarketplaceOfferHistory>[] = [
       <UiGridPagination
         :page="pagination.pageIndex + 1"
         :size="pagination.pageSize"
-        :total="marketplaceOffersHistory.totalCount"
+        :total="marketplaceListingsHistory.totalCount"
         @update:page="page => onPageChange(page - 1)"
       />
     </div>

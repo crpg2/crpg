@@ -50,8 +50,8 @@ public class GetUserQueryTest : TestBase
     {
         Mock<IUserService> userServiceMock = new();
         User dbUser = new();
-        dbUser.Offers.Add(MarketplaceOfferFactory.CreateOffer(sellerId: 0, goldFee: 10, offeredGold: 100, offeredHeirloomPoints: 5, requestedGold: 200));
-        dbUser.Offers.Add(MarketplaceOfferFactory.CreateOffer(sellerId: 0, goldFee: 5, offeredGold: 50, offeredHeirloomPoints: 3, requestedGold: 300));
+        dbUser.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(sellerId: 0, goldFee: 10, offeredGold: 100, offeredHeirloomPoints: 5, requestedGold: 200));
+        dbUser.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(sellerId: 0, goldFee: 5, offeredGold: 50, offeredHeirloomPoints: 3, requestedGold: 300));
         ArrangeDb.Users.Add(dbUser);
         await ArrangeDb.SaveChangesAsync();
 
@@ -63,19 +63,19 @@ public class GetUserQueryTest : TestBase
     }
 
     [Test]
-    public async Task TestActiveOffersCount()
+    public async Task TestActiveListingsCount()
     {
         Mock<IUserService> userServiceMock = new();
         User dbUser = new();
-        dbUser.Offers.Add(MarketplaceOfferFactory.CreateOffer(sellerId: 0, offeredGold: 10, requestedGold: 20));
-        dbUser.Offers.Add(MarketplaceOfferFactory.CreateOffer(sellerId: 0, offeredGold: 30, requestedGold: 40));
-        dbUser.Offers.Add(MarketplaceOfferFactory.CreateOffer(sellerId: 0, offeredGold: 50, requestedGold: 60));
+        dbUser.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(sellerId: 0, offeredGold: 10, requestedGold: 20));
+        dbUser.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(sellerId: 0, offeredGold: 30, requestedGold: 40));
+        dbUser.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(sellerId: 0, offeredGold: 50, requestedGold: 60));
         ArrangeDb.Users.Add(dbUser);
         await ArrangeDb.SaveChangesAsync();
 
         GetUserQuery.Handler handler = new(ActDb, Mapper, userServiceMock.Object);
         var result = await handler.Handle(new GetUserQuery { UserId = dbUser.Id }, CancellationToken.None);
 
-        Assert.That(result.Data!.ActiveMarketplaceOffersCount, Is.EqualTo(3));
+        Assert.That(result.Data!.ActiveMarketplaceListingsCount, Is.EqualTo(3));
     }
 }

@@ -42,11 +42,11 @@ internal interface IActivityLogService
     ActivityLog CreateRespondToBattleMercenaryApplicationLog(int battleId, int applicationId, int userId, bool accept);
     ActivityLog CreateBattleParticipantLeavedLog(int battleId, int userId);
     ActivityLog CreateBattleParticipantKickedLog(int battleId, int userId, int actorUserId);
-    ActivityLog CreateMarketplaceOfferCreatedLog(int userId, int offerId, int listingFee, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested);
-    ActivityLog CreateMarketplaceOfferAcceptedLog(int buyerId, int sellerId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested);
-    ActivityLog CreateMarketplaceOfferInvalidatedLog(int userId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested);
-    ActivityLog CreateMarketplaceOfferCancelledLog(int userId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested);
-    ActivityLog CreateMarketplaceOfferExpiredLog(int userId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested);
+    ActivityLog CreateMarketplaceListingCreatedLog(int userId, int listingId, int listingFee, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request);
+    ActivityLog CreateMarketplaceListingAcceptedLog(int buyerId, int sellerId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request);
+    ActivityLog CreateMarketplaceListingInvalidatedLog(int userId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request);
+    ActivityLog CreateMarketplaceListingCancelledLog(int userId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request);
+    ActivityLog CreateMarketplaceListingExpiredLog(int userId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request);
 }
 
 internal class ActivityLogService(IMetadataService metadataService) : IActivityLogService
@@ -326,70 +326,70 @@ internal class ActivityLogService(IMetadataService metadataService) : IActivityL
       ]);
     }
 
-    public ActivityLog CreateMarketplaceOfferCreatedLog(int userId, int offerId, int listingFee, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested)
+    public ActivityLog CreateMarketplaceListingCreatedLog(int userId, int listingId, int listingFee, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request)
     {
         List<ActivityLogMetadata> metadata =
         [
-            new("offerId", offerId.ToString()),
+            new("listingId", listingId.ToString()),
             new("listingFee", listingFee.ToString()),
             new("goldFee", goldFee.ToString()),
-            .. CreateMarketplaceOfferMetadata(offered, requested),
+            .. CreateMarketplaceListingMetadata(offer, request),
         ];
 
-        return CreateLog(ActivityLogType.MarketplaceOfferCreated, userId, [.. metadata]);
+        return CreateLog(ActivityLogType.MarketplaceListingCreated, userId, [.. metadata]);
     }
 
-    public ActivityLog CreateMarketplaceOfferAcceptedLog(int buyerId, int sellerId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested)
+    public ActivityLog CreateMarketplaceListingAcceptedLog(int buyerId, int sellerId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request)
     {
         List<ActivityLogMetadata> metadata =
         [
-            new("offerId", offerId.ToString()),
+            new("listingId", listingId.ToString()),
             new("sellerId", sellerId.ToString()),
             new("goldFee", goldFee.ToString()),
-            .. CreateMarketplaceOfferMetadata(offered, requested),
+            .. CreateMarketplaceListingMetadata(offer, request),
         ];
 
-        return CreateLog(ActivityLogType.MarketplaceOfferAccepted, buyerId, [.. metadata]);
+        return CreateLog(ActivityLogType.MarketplaceListingAccepted, buyerId, [.. metadata]);
     }
 
-    public ActivityLog CreateMarketplaceOfferInvalidatedLog(int userId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested)
+    public ActivityLog CreateMarketplaceListingInvalidatedLog(int userId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request)
     {
         List<ActivityLogMetadata> metadata =
         [
-            new("offerId", offerId.ToString()),
+            new("listingId", listingId.ToString()),
             new("goldFee", goldFee.ToString()),
-            .. CreateMarketplaceOfferMetadata(offered, requested),
+            .. CreateMarketplaceListingMetadata(offer, request),
         ];
 
-        return CreateLog(ActivityLogType.MarketplaceOfferInvalidated, userId, [.. metadata]);
+        return CreateLog(ActivityLogType.MarketplaceListingInvalidated, userId, [.. metadata]);
     }
 
-    public ActivityLog CreateMarketplaceOfferCancelledLog(int userId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested)
+    public ActivityLog CreateMarketplaceListingCancelledLog(int userId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request)
     {
         List<ActivityLogMetadata> metadata =
         [
-            new("offerId", offerId.ToString()),
+            new("listingId", listingId.ToString()),
             new("goldFee", goldFee.ToString()),
-            .. CreateMarketplaceOfferMetadata(offered, requested),
+            .. CreateMarketplaceListingMetadata(offer, request),
         ];
 
-        return CreateLog(ActivityLogType.MarketplaceOfferCancelled, userId, [.. metadata]);
+        return CreateLog(ActivityLogType.MarketplaceListingCancelled, userId, [.. metadata]);
     }
 
-    public ActivityLog CreateMarketplaceOfferExpiredLog(int userId, int offerId, int goldFee, MarketplaceOfferAsset offered, MarketplaceOfferAsset requested)
+    public ActivityLog CreateMarketplaceListingExpiredLog(int userId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request)
     {
         List<ActivityLogMetadata> metadata =
         [
-            new("offerId", offerId.ToString()),
+            new("listingId", listingId.ToString()),
             new("goldFee", goldFee.ToString()),
-            .. CreateMarketplaceOfferMetadata(offered, requested),
+            .. CreateMarketplaceListingMetadata(offer, request),
         ];
 
-        return CreateLog(ActivityLogType.MarketplaceOfferExpired, userId, [.. metadata]);
+        return CreateLog(ActivityLogType.MarketplaceListingExpired, userId, [.. metadata]);
     }
 
-    private List<ActivityLogMetadata> CreateMarketplaceOfferMetadata(MarketplaceOfferAsset offered, MarketplaceOfferAsset requested) =>
-        [.. _metadataService.ConvertMarketplaceOfferToMetadata(offered, requested).Select(m => new ActivityLogMetadata(m.Key, m.Value))];
+    private List<ActivityLogMetadata> CreateMarketplaceListingMetadata(MarketplaceListingAsset offer, MarketplaceListingAsset request) =>
+        [.. _metadataService.ConvertMarketplaceListingToMetadata(offer, request).Select(m => new ActivityLogMetadata(m.Key, m.Value))];
 
     private static ActivityLog CreateLog(ActivityLogType type, int userId, params ActivityLogMetadata[] metadata)
     {
