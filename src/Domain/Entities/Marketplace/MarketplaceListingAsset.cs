@@ -15,12 +15,14 @@ public class MarketplaceListingAsset
     public int HeirloomPoints { get; set; }
 
     /// <summary>
-    /// Not null when <see cref="Side"/> == <see cref="MarketplaceListingAssetSide.Offered"/> and the seller is listing a specific owned item for sale.
+    /// The <see cref="UserItem"/> that the seller is offering for sale.
+    /// Can not be null when <see cref="Side"/> == <see cref="MarketplaceListingAssetSide.Offered"/>.
     /// </summary>
     public int? UserItemId { get; set; }
 
     /// <summary>
-    /// Not null when <see cref="Side"/> == <see cref="MarketplaceListingAssetSide.Requested"/>.
+    /// The <see cref="Item"/> that the seller wants in trade. Can be any item available in the shop, and can also have an upgrade level.
+    /// Can not be null when <see cref="Side"/> == <see cref="MarketplaceListingAssetSide.Requested"/>.
     /// </summary>
     public string? ItemId { get; set; }
 
