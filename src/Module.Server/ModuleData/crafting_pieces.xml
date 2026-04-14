@@ -38454,8 +38454,8 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_plumbata_head_h0" name="{=}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" full_scale="true" length="62.5" weight="0.55" item_holster_pos_shift="0,0,0" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_axe_quiver_1">
-      <Thrust damage_type="Pierce" damage_factor="1.17" />
+    <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_axe_quiver_1">
+      <Thrust damage_type="Pierce" damage_factor="1.1" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
@@ -38465,8 +38465,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_plumbata_head_h1" name="{=}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" full_scale="true" length="62.5" weight="0.55" item_holster_pos_shift="0,0,0" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_axe_quiver_1">
-      <Thrust damage_type="Pierce" damage_factor="1.17" />
+    <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_axe_quiver_1">
+      <Thrust damage_type="Pierce" damage_factor="1.12" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
@@ -38476,8 +38476,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_plumbata_head_h2" name="{=}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" full_scale="true" length="62.5" weight="0.55" item_holster_pos_shift="0,0,0" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_axe_quiver_1">
-      <Thrust damage_type="Pierce" damage_factor="1.17" />
+    <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_axe_quiver_1">
+      <Thrust damage_type="Pierce" damage_factor="1.16" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
@@ -38487,8 +38487,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_plumbata_head_h3" name="{=}Plumbata Head" tier="3" piece_type="Blade" mesh="plumbata_body" full_scale="true" length="62.5" weight="0.55" item_holster_pos_shift="0,0,0" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_axe_quiver_1">
-      <Thrust damage_type="Pierce" damage_factor="1.17" />
+    <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_axe_quiver_1">
+      <Thrust damage_type="Pierce" damage_factor="1.21" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
