@@ -38143,12 +38143,6 @@
   <CraftingPiece id="crpg_sunsword2h_handle_h3" name="{=}Sunsword Handle" tier="3" piece_type="Handle" mesh="sunsword_handle" full_scale="false" culture="Culture.khuzait" length="24.4" weight="0.75">
     <BuildData piece_offset="-4" previous_piece_offset="1" next_piece_offset="4" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_hatinghand_handle_h0" name="{=}Hating Hand Handle" tier="4" piece_type="Handle" mesh="hatinghand_handle" length="73" weight="1.6" is_default="true">
-    <BuildData piece_offset="20" next_piece_offset="0" previous_piece_offset="0" />
-    <Materials>
-      <Material id="Iron4" count="1" />
-    </Materials>
-  </CraftingPiece>
   <CraftingPiece id="crpg_podaodao_blade_h0" name="{=}Heavy Podao Blade" tier="4" piece_type="Blade" mesh="podaodao_blade" full_scale="false" culture="Culture.battania" length="103.0" weight="1.0">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
