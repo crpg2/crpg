@@ -38151,111 +38151,111 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_podaodao_blade_h0" name="{=}Heavy Podao Blade" tier="4" piece_type="Blade" mesh="podaodao_blade" full_scale="false" culture="Culture.battania" length="103.0" weight="1.0">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_blade_h1" name="{=}Heavy Podao Blade" tier="4" piece_type="Blade" mesh="podaodao_blade" full_scale="false" culture="Culture.battania" length="103.0" weight="1.0">
+  <CraftingPiece id="crpg_podaodao_blade_h1" name="{=}Heavy Podao Blade" tier="4" piece_type="Blade" mesh="podaodao_blade" full_scale="false" culture="Culture.battania" length="103.0" weight="0.85">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_blade_h2" name="{=}Heavy Podao Blade" tier="4" piece_type="Blade" mesh="podaodao_blade" full_scale="false" culture="Culture.battania" length="103.0" weight="1.0">
+  <CraftingPiece id="crpg_podaodao_blade_h2" name="{=}Heavy Podao Blade" tier="4" piece_type="Blade" mesh="podaodao_blade" full_scale="false" culture="Culture.battania" length="103.0" weight="0.85">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="4.9" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_blade_h3" name="{=}Heavy Podao Blade" tier="4" piece_type="Blade" mesh="podaodao_blade" full_scale="false" culture="Culture.battania" length="103.0" weight="1.0">
+  <CraftingPiece id="crpg_podaodao_blade_h3" name="{=}Heavy Podao Blade" tier="4" piece_type="Blade" mesh="podaodao_blade" full_scale="false" culture="Culture.battania" length="103.0" weight="0.85">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="5.0" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_pommel_h0" name="{=}Heavy Podao Pommel" tier="4" piece_type="Pommel" mesh="podaodao_pommel" full_scale="true" culture="Culture.battania" length="14.3" weight="0.12">
+  <CraftingPiece id="crpg_podaodao_pommel_h0" name="{=}Heavy Podao Pommel" tier="4" piece_type="Pommel" mesh="podaodao_pommel" full_scale="true" culture="Culture.battania" length="14.3" weight="0.2">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_pommel_h1" name="{=}Heavy Podao Pommel" tier="4" piece_type="Pommel" mesh="podaodao_pommel" full_scale="true" culture="Culture.battania" length="14.3" weight="0.12">
+  <CraftingPiece id="crpg_podaodao_pommel_h1" name="{=}Heavy Podao Pommel" tier="4" piece_type="Pommel" mesh="podaodao_pommel" full_scale="true" culture="Culture.battania" length="14.3" weight="0.2">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_pommel_h2" name="{=}Heavy Podao Pommel" tier="4" piece_type="Pommel" mesh="podaodao_pommel" full_scale="true" culture="Culture.battania" length="14.3" weight="0.12">
+  <CraftingPiece id="crpg_podaodao_pommel_h2" name="{=}Heavy Podao Pommel" tier="4" piece_type="Pommel" mesh="podaodao_pommel" full_scale="true" culture="Culture.battania" length="14.3" weight="0.2">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_pommel_h3" name="{=}Heavy Podao Pommel" tier="4" piece_type="Pommel" mesh="podaodao_pommel" full_scale="true" culture="Culture.battania" length="14.3" weight="0.12">
+  <CraftingPiece id="crpg_podaodao_pommel_h3" name="{=}Heavy Podao Pommel" tier="4" piece_type="Pommel" mesh="podaodao_pommel" full_scale="true" culture="Culture.battania" length="14.3" weight="0.2">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_guard_h0" name="{=}Heavy Podao Guard" tier="5" piece_type="Guard" mesh="podaodao_guard" culture="Culture.battania" length="25.5" weight="0.097">
+  <CraftingPiece id="crpg_podaodao_guard_h0" name="{=}Heavy Podao Guard" tier="5" piece_type="Guard" mesh="podaodao_guard" culture="Culture.battania" length="25.5" weight="0.2">
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_guard_h1" name="{=}Heavy Podao Guard" tier="5" piece_type="Guard" mesh="podaodao_guard" culture="Culture.battania" length="25.5" weight="0.097">
+  <CraftingPiece id="crpg_podaodao_guard_h1" name="{=}Heavy Podao Guard" tier="5" piece_type="Guard" mesh="podaodao_guard" culture="Culture.battania" length="25.5" weight="0.2">
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_guard_h2" name="{=}Heavy Podao Guard" tier="5" piece_type="Guard" mesh="podaodao_guard" culture="Culture.battania" length="25.5" weight="0.097">
+  <CraftingPiece id="crpg_podaodao_guard_h2" name="{=}Heavy Podao Guard" tier="5" piece_type="Guard" mesh="podaodao_guard" culture="Culture.battania" length="25.5" weight="0.2">
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_guard_h3" name="{=}Heavy Podao Guard" tier="5" piece_type="Guard" mesh="podaodao_guard" culture="Culture.battania" length="25.5" weight="0.097">
+  <CraftingPiece id="crpg_podaodao_guard_h3" name="{=}Heavy Podao Guard" tier="5" piece_type="Guard" mesh="podaodao_guard" culture="Culture.battania" length="25.5" weight="0.2">
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_handle_h0" name="{=}Heavy Podao Handle" tier="3" piece_type="Handle" mesh="podaodao_handle" culture="Culture.khuzait" length="130.0" weight="0.1">
+  <CraftingPiece id="crpg_podaodao_handle_h0" name="{=}Heavy Podao Handle" tier="3" piece_type="Handle" mesh="podaodao_handle" culture="Culture.khuzait" length="130.0" weight="1.5">
     <BuildData piece_offset="3" previous_piece_offset="0" next_piece_offset="0" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_handle_h1" name="{=}Heavy Podao Handle" tier="3" piece_type="Handle" mesh="podaodao_handle" culture="Culture.khuzait" length="130.0" weight="0.1">
+  <CraftingPiece id="crpg_podaodao_handle_h1" name="{=}Heavy Podao Handle" tier="3" piece_type="Handle" mesh="podaodao_handle" culture="Culture.khuzait" length="130.0" weight="1.5">
     <BuildData piece_offset="3" previous_piece_offset="0" next_piece_offset="0" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_handle_h2" name="{=}Heavy Podao Handle" tier="3" piece_type="Handle" mesh="podaodao_handle" culture="Culture.khuzait" length="130.0" weight="0.1">
+  <CraftingPiece id="crpg_podaodao_handle_h2" name="{=}Heavy Podao Handle" tier="3" piece_type="Handle" mesh="podaodao_handle" culture="Culture.khuzait" length="130.0" weight="1.5">
     <BuildData piece_offset="3" previous_piece_offset="0" next_piece_offset="0" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_podaodao_handle_h3" name="{=}Heavy Podao Handle" tier="3" piece_type="Handle" mesh="podaodao_handle" culture="Culture.khuzait" length="130.0" weight="0.1">
+  <CraftingPiece id="crpg_podaodao_handle_h3" name="{=}Heavy Podao Handle" tier="3" piece_type="Handle" mesh="podaodao_handle" culture="Culture.khuzait" length="130.0" weight="1.5">
     <BuildData piece_offset="3" previous_piece_offset="0" next_piece_offset="0" />
     <Materials>
       <Material id="Iron3" count="1" />
