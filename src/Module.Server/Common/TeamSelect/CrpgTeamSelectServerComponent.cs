@@ -1,4 +1,4 @@
-﻿using System.IO.Compression;
+using System.IO.Compression;
 using System.Text;
 using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Items;
@@ -38,7 +38,7 @@ internal class CrpgTeamSelectServerComponent : MultiplayerTeamSelectComponent
     {
         _warmupComponent = warmupComponent;
         _roundController = roundController;
-        _balancer = new MatchBalancer();
+        _balancer = new MatchBalancer(CrpgServerConfiguration.DisableClanBalancing);
         _periodStatsHelper = new PeriodStatsHelper();
         _playersWaitingForTeam = new HashSet<PlayerId>();
         _playerTeamsBeforeJoiningSpectator = new Dictionary<PlayerId, Team>();
