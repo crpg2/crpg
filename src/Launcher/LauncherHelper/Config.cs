@@ -8,6 +8,7 @@ internal static class Config
 {
     public static Dictionary<Platform, GameInstallationFolderResolver.GameInstallationInfo?> GameLocations { get; private set; } = new();
     public static bool DevMode { get; set; }
+    public static bool IpMappingEnabled { get; set; }
     public static Platform LastPlatform { get; set; }
 
     public static bool WriteConfig(string folderPath, string fileName)
@@ -16,6 +17,7 @@ internal static class Config
         {
             GameLocations = GameLocations,
             DevMode = DevMode,
+            IpMappingEnabled = IpMappingEnabled,
             LastPlatform = LastPlatform,
         };
 
@@ -57,6 +59,7 @@ internal static class Config
         {
             Config.GameLocations = configData.GameLocations;
             DevMode = configData.DevMode;
+            IpMappingEnabled = configData.IpMappingEnabled;
             LastPlatform = configData.LastPlatform;
         }
 
@@ -72,6 +75,7 @@ internal static class Config
     {
         public Dictionary<Platform, GameInstallationFolderResolver.GameInstallationInfo?> GameLocations { get; set; } = new();
         public bool DevMode { get; set; }
+        public bool IpMappingEnabled { get; set; }
         public Platform LastPlatform { get; set; }
     }
 }

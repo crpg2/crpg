@@ -1,0 +1,33 @@
+{
+  "mappings": [
+    {
+      "originalAddress": "141.94.97.190",
+      "originalPort": 7212,
+      "newAddress": "89.191.234.93",
+      "newPort": 7212,
+      "description": "EU Training ground proxy"
+    },
+    {
+      "originalAddress": "141.94.97.190",
+      "originalPort": 7210,
+      "newAddress": "89.191.234.93",
+      "newPort": 7210,
+      "description": "EU Battle proxy"
+    },
+    {
+      "originalAddress": "141.94.97.190",
+      "originalPort": 7214,
+      "newAddress": "89.191.234.93",
+      "newPort": 7214,
+      "description": "EU DTV proxy"
+    },
+    {
+      "originalAddress": "141.94.97.190",
+      "originalPort": 7215,
+      "newAddress": "89.191.234.93",
+      "newPort": 7215,
+      "description": "EU TDM proxy"
+    }
+  ],
+  "enabled": false
+}

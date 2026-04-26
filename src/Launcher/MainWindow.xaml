@@ -108,6 +108,7 @@
             <TextBlock Text="{Binding Version}"  Margin="155,0,0,0" Grid.Row="4" Grid.Column="2" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" Width="60" Height="20" Panel.ZIndex="10"/>
             <ProgressBar Value="{Binding Progress, Mode=OneWay}" HorizontalAlignment="Left" Height="24" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="760" Grid.ColumnSpan="3"/>
             <CheckBox x:Name="Beta" Content="Beta" HorizontalAlignment="Left" Height="17" Margin="10,247,0,0" Grid.Row="3" VerticalAlignment="Top" Width="51" IsChecked="{Binding IsBeta, Mode=TwoWay}" Command="{Binding CheckBeta}" Grid.Column="2" Background="#7FFFFFFF" Grid.RowSpan="2"/>
+            <CheckBox x:Name="Proxy" Content="Proxy" HorizontalAlignment="Left" Height="17" Margin="10,270,0,0" Grid.Row="3" VerticalAlignment="Top" Width="80" IsChecked="{Binding IpMappingEnabled, Mode=TwoWay}" Grid.Column="2" Background="#7FFFFFFF" Grid.RowSpan="2"/>
 
 
         </Grid>
