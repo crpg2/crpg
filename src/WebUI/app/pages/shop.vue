@@ -8,6 +8,10 @@ import {
   getFacetedUniqueValues,
   getPaginationRowModel,
 } from '@tanstack/vue-table'
+
+import type { ItemFlat, ItemType, WeaponClass } from '~/models/item'
+import type { AggregationOptions } from '~/services/item-search-service/aggregations'
+
 import {
   AppCoin,
   ItemParam,
@@ -25,10 +29,6 @@ import {
   UTooltip,
 } from '#components'
 import { h } from '#imports'
-
-import type { ItemFlat, ItemType, WeaponClass } from '~/models/item'
-import type { AggregationOptions } from '~/services/item-search-service/aggregations'
-
 import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useUser } from '~/composables/user/use-user'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'

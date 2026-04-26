@@ -1,9 +1,4 @@
 import {
-  getItems as _getItems,
-  getItemsUpgradesByBaseId,
-} from '#api/sdk.gen'
-import { useI18n } from '#imports'
-import {
   brokenItemRepairPenaltySeconds,
   itemBreakChance,
   itemReforgeCostPerRank,
@@ -17,6 +12,11 @@ import type { Culture } from '~/models/culture'
 import type { ArmorMaterialType, CompareItemsResult, DamageType, Item, ItemFamilyType, ItemFieldCompareRule, ItemFlag, ItemFlat, ItemSlot, ItemType, ItemUsage, WeaponClass, WeaponFlag } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
+import {
+  getItems as _getItems,
+  getItemsUpgradesByBaseId,
+} from '#api/sdk.gen'
+import { useI18n } from '#imports'
 import {
   DAMAGE_TYPE,
   ITEM_FAMILY_TYPE,

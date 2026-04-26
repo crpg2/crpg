@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import type { LocationQueryRaw } from 'vue-router'
 
-import { AppCoin, UBadge, UButton, UTooltip } from '#components'
-
 import type { CompareItemsResult } from '~/models/item'
 import type { UserItem, UserPublic } from '~/models/user'
 
+import { AppCoin, UBadge, UButton, UTooltip } from '#components'
 import { useUser } from '~/composables/user/use-user'
 import { canUpgradeItem, computeBrokenItemRepairCost } from '~/services/item-service'
 

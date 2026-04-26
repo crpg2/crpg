@@ -2,10 +2,10 @@
 import type { TableColumn } from '@nuxt/ui'
 
 import { getPaginationRowModel } from '@tanstack/vue-table'
-import { UButton, UserMedia } from '#components'
 
 import type { ClanInvitation } from '~/models/clan'
 
+import { UButton, UserMedia } from '#components'
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanApplications } from '~/composables/clan/use-clan-applications'
 import { useUser } from '~/composables/user/use-user'

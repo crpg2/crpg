@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
 
-import { AppCoin, AppLoom, LazyCharacterInventoryItemReforgeConfirmDialog, LazyCharacterInventoryItemUpgradeConfirmDialog, UButton, UiTooltipContent, UTable, UTooltip } from '#components'
-
 import type { ReforgeCost } from '~/composables/item/use-item-reforge'
 import type { ItemFlat } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
+import { AppCoin, AppLoom, LazyCharacterInventoryItemReforgeConfirmDialog, LazyCharacterInventoryItemUpgradeConfirmDialog, UButton, UiTooltipContent, UTable, UTooltip } from '#components'
 import { useItemReforge } from '~/composables/item/use-item-reforge'
 import { useUser } from '~/composables/user/use-user'
 import { getItemAggregations } from '~/services/item-search-service'

@@ -1,24 +1,6 @@
 import type { PartialDeep } from 'type-fest'
 
 import {
-  deleteUsersSelfCharactersById,
-  getUsersByUserIdCharacters,
-  getUsersSelfCharacters,
-  getUsersSelfCharactersByIdCharacteristics,
-  getUsersSelfCharactersByIdEarningStatistics,
-  getUsersSelfCharactersByIdItems,
-  getUsersSelfCharactersByIdLimitations,
-  getUsersSelfCharactersByIdStatistics,
-  putUsersSelfCharactersById,
-  putUsersSelfCharactersByIdActive,
-  putUsersSelfCharactersByIdCharacteristics,
-  putUsersSelfCharactersByIdCharacteristicsConvert,
-  putUsersSelfCharactersByIdItems,
-  putUsersSelfCharactersByIdRespecialize,
-  putUsersSelfCharactersByIdRetire,
-  putUsersSelfCharactersByIdTournament,
-} from '#api/sdk.gen'
-import {
   attributePointsPerLevel,
   damageFactorForPowerDraw,
   damageFactorForPowerStrike,
@@ -76,6 +58,24 @@ import type { GameMode } from '~/models/game-mode'
 import type { Item, ItemArmorComponent, ItemSlot, ItemType } from '~/models/item'
 import type { TimeSeries, TimeSeriesItem } from '~/models/time-series'
 
+import {
+  deleteUsersSelfCharactersById,
+  getUsersByUserIdCharacters,
+  getUsersSelfCharacters,
+  getUsersSelfCharactersByIdCharacteristics,
+  getUsersSelfCharactersByIdEarningStatistics,
+  getUsersSelfCharactersByIdItems,
+  getUsersSelfCharactersByIdLimitations,
+  getUsersSelfCharactersByIdStatistics,
+  putUsersSelfCharactersById,
+  putUsersSelfCharactersByIdActive,
+  putUsersSelfCharactersByIdCharacteristics,
+  putUsersSelfCharactersByIdCharacteristicsConvert,
+  putUsersSelfCharactersByIdItems,
+  putUsersSelfCharactersByIdRespecialize,
+  putUsersSelfCharactersByIdRetire,
+  putUsersSelfCharactersByIdTournament,
+} from '#api/sdk.gen'
 import {
   CHARACTER_ARMOR_OVERALL_KEY,
   CHARACTER_CLASS,
@@ -823,7 +823,7 @@ export const getRespecCapability = (
   }
 
   const decayDivider
-    = (new Date().getTime() - lastRespecDate.getTime()) / (respecializePriceHalfLife * 1000 * 3600)
+    = (Date.now() - lastRespecDate.getTime()) / (respecializePriceHalfLife * 1000 * 3600)
 
   const price = Math.floor(
     Math.floor((character.experience / getExperienceForLevel(30)) * respecializePriceForLevel30)

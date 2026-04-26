@@ -1,3 +1,5 @@
+import type { ValueOf } from 'type-fest'
+
 import type {
   ArmorMaterialType as _ArmorMaterialType,
   DamageType as _DamageType,
@@ -7,8 +9,6 @@ import type {
   WeaponClass as _WeaponClass,
   WeaponFlags as _WeaponFlags,
 } from '#api'
-import type { ValueOf } from 'type-fest'
-
 import type { ClanMember } from '~/models/clan'
 import type { Culture } from '~/models/culture'
 

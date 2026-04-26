@@ -1,4 +1,3 @@
-import { useI18n } from '#imports'
 import { computed, toValue } from 'vue'
 
 import type {
@@ -6,6 +5,7 @@ import type {
   CharacteristicConversion,
 } from '~/models/character'
 
+import { useI18n } from '#imports'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { CHARACTER_QUERY_KEYS } from '~/queries'
 import {

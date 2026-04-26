@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
 
-import { LazyMarketplaceCreateListingDrawer, MarketplaceListingActions, MarketplaceListingAssetView, UBadge, UiDataCell, UserMedia, UTooltip } from '#components'
 import { marketplaceActiveListingLimit, marketplaceListingDurationDays } from '~root/data/constants.json'
 
 import type { MarketplaceListing } from '~/models/marketplace'
 
+import { LazyMarketplaceCreateListingDrawer, MarketplaceListingActions, MarketplaceListingAssetView, UBadge, UiDataCell, UserMedia, UTooltip } from '#components'
 import { useMarketplaceListings } from '~/composables/marketplace/use-marketplace-listings'
 import { useUser } from '~/composables/user/use-user'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'

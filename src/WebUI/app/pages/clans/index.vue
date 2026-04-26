@@ -3,11 +3,11 @@ import type { SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
 import type { ColumnFiltersState, VisibilityState } from '@tanstack/vue-table'
 
 import { getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
-import { ClanTagIcon, UBadge, UButton, UiGridColumnHeader, UiGridColumnHeaderLabel, UInput, USelect, UTooltip } from '#components'
-import { navigateTo, tw } from '#imports'
 
 import type { ClanWithMemberCount } from '~/models/clan'
 
+import { ClanTagIcon, UBadge, UButton, UiGridColumnHeader, UiGridColumnHeaderLabel, UInput, USelect, UTooltip } from '#components'
+import { navigateTo, tw } from '#imports'
 import { useUser } from '~/composables/user/use-user'
 import { SomeRole } from '~/models/role'
 import { getClans } from '~/services/clan-service'

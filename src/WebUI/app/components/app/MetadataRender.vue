@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { AppCoin, AppLoom, CharacterMedia, ClanRole, ItemThumb, MarketplaceListingAssetGroup, UBadge, ULink, UserClan, UserMedia, UTooltip } from '#components'
 import { I18nT } from 'vue-i18n'
 
 import type { ClanMemberRole } from '~/models/clan'
@@ -7,6 +6,7 @@ import type { MarketplaceListingAsset } from '~/models/marketplace'
 import type { MetadataDict } from '~/models/metadata'
 import type { UserPublic } from '~/models/user'
 
+import { AppCoin, AppLoom, CharacterMedia, ClanRole, ItemThumb, MarketplaceListingAssetGroup, UBadge, ULink, UserClan, UserMedia, UTooltip } from '#components'
 import { getItemImage } from '~/services/item-service'
 
 const { keypath, metadata, dict } = defineProps<{

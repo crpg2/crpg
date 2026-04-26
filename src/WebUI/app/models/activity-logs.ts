@@ -1,5 +1,6 @@
-import type { ActivityLogType as _ActivityLogType } from '#api'
 import type { ValueOf } from 'type-fest'
+
+import type { ActivityLogType as _ActivityLogType } from '#api'
 
 export const ACTIVITY_LOG_TYPE = {
   UserCreated: 'UserCreated',

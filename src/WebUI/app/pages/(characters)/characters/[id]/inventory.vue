@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { vOnLongPress } from '@vueuse/components'
 import { useStorage } from '@vueuse/core'
-import { CharacterInventoryItemDetail, LazyCharacterInventoryItemUpgradesDrawer, LazyCharacterInventoryPresetCreateModal, LazyCharacterInventoryPresetsDrawer } from '#components'
 
 import type { OpenedItem } from '~/composables/item/use-item-detail'
 import type { GroupedCompareItemsResult, ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
 import type { SortingConfig } from '~/services/item-search-service'
 
+import { CharacterInventoryItemDetail, LazyCharacterInventoryItemUpgradesDrawer, LazyCharacterInventoryPresetCreateModal, LazyCharacterInventoryPresetsDrawer } from '#components'
 import { useMainHeader } from '~/composables/app/use-main-header'
 import { useCharacterInventory } from '~/composables/character/inventory/use-character-inventory'
 import { useInventoryDnD } from '~/composables/character/inventory/use-inventory-dnd'
