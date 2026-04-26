@@ -1,13 +1,11 @@
 import { computed, toValue } from 'vue'
 
-import type { Item, ItemFlat } from '~/models/item'
-
 import { getItemImage, getRankColor } from '~/services/item-service'
 
-export const useItem = (item: MaybeRefOrGetter<Item | ItemFlat>) => {
-  const rankColor = computed(() => getRankColor(toValue(item).rank))
+export const useItem = (data: MaybeRefOrGetter<{ baseId: string, rank: number }>) => {
+  const rankColor = computed(() => getRankColor(toValue(data).rank))
 
-  const thumb = computed(() => getItemImage(toValue(item).baseId))
+  const thumb = computed(() => getItemImage(toValue(data).baseId))
 
   return {
     rankColor,

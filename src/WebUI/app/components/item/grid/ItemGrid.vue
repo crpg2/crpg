@@ -21,7 +21,7 @@ import { ITEM_TYPE } from '~/models/item'
 import { getAggregationsConfig, getFacetsByItemType, getFilterFn } from '~/services/item-search-service'
 import { aggregationsConfig } from '~/services/item-search-service/aggregations'
 import { createItemIndex } from '~/services/item-search-service/indexator'
-import { extractItem, getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
+import { getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
 
 const {
   sortingConfig,
@@ -142,7 +142,7 @@ const { isOpen } = useItemDetail()
 const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
   return groupItemsByTypeAndWeaponClass(
     // find the open items
-    createItemIndex(items.filter(wrapper => isOpen(wrapper.item.id)).map(extractItem)),
+    createItemIndex(items.filter(wrapper => isOpen(wrapper.item.id))),
   )
     .filter(group => group.items.length >= 2) // there is no point in comparing 1 item
     .map(group => ({
@@ -216,7 +216,10 @@ const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
       <div style="grid-area: footer" class="sticky bottom-4 z-10 space-y-3">
         <UiGridPagination
           v-if="withPagination && showPagination"
-          :table-api="toRef(() => grid)"
+          :page="pagination.pageIndex + 1"
+          :size="pagination.pageSize"
+          :total="grid.getRowCount()"
+          @update:page="(page) => setPagination({ pageIndex: page - 1 })"
         />
 
         <slot

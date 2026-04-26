@@ -67,9 +67,7 @@ const rowSelection = ref<RowSelectionState>({
     :data="items"
     :loading
     :columns
-    :ui="{
-      root: 'overflow-visible',
-    }"
+    class="relative rounded-md border border-muted"
   >
     <template #empty>
       <UiResultNotFound />
