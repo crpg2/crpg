@@ -23,7 +23,7 @@ public static class DependencyInjection
         ExperienceTable experienceTable = new(constants);
         BattleScheduler campaignBattleScheduler = new();
 
-        services.AddAutoMapper(Assembly.GetExecutingAssembly())
+        services.AddAutoMapper(_ => { }, Assembly.GetExecutingAssembly())
             .AddMediator(o =>
             {
                 o.ServiceLifetime = ServiceLifetime.Scoped;
