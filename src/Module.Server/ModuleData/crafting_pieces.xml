@@ -37889,111 +37889,127 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_wolfstooth_head_h0" name="{=Yeldur}Wolfstooth Blade" tier="4" piece_type="Blade" mesh="wolfstooth_head" full_scale="false" culture="Culture.battania" length="41.8" weight="0.5">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Blunt" damage_factor="2.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Pierce" damage_factor="2.5" />
     </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_head_h1" name="{=Yeldur}Wolfstooth Blade" tier="4" piece_type="Blade" mesh="wolfstooth_head" full_scale="false" culture="Culture.battania" length="41.8" weight="1.0">
+  <CraftingPiece id="crpg_wolfstooth_head_h1" name="{=Yeldur}Wolfstooth Blade" tier="4" piece_type="Blade" mesh="wolfstooth_head" full_scale="false" culture="Culture.battania" length="41.8" weight="0.5">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Blunt" damage_factor="2.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Pierce" damage_factor="2.6" />
     </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_head_h2" name="{=Yeldur}Wolfstooth Blade" tier="4" piece_type="Blade" mesh="wolfstooth_head" full_scale="false" culture="Culture.battania" length="41.8" weight="1.0">
+  <CraftingPiece id="crpg_wolfstooth_head_h2" name="{=Yeldur}Wolfstooth Blade" tier="4" piece_type="Blade" mesh="wolfstooth_head" full_scale="false" culture="Culture.battania" length="41.8" weight="0.5">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Blunt" damage_factor="2.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Pierce" damage_factor="2.7" />
     </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_head_h3" name="{=Yeldur}Wolfstooth Blade" tier="4" piece_type="Blade" mesh="wolfstooth_head" full_scale="false" culture="Culture.battania" length="41.8" weight="1.0">
+  <CraftingPiece id="crpg_wolfstooth_head_h3" name="{=Yeldur}Wolfstooth Blade" tier="4" piece_type="Blade" mesh="wolfstooth_head" full_scale="false" culture="Culture.battania" length="41.8" weight="0.5">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Blunt" damage_factor="2.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Pierce" damage_factor="2.7" />
     </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_pommel_h0" name="{=}Wolfstooth Pommel" tier="4" piece_type="Pommel" mesh="wolfstooth_pommel" full_scale="true" culture="Culture.battania" length="12.9" weight="0.5">
+  <CraftingPiece id="crpg_wolfstooth_pommel_h0" name="{=}Wolfstooth Pommel" tier="4" piece_type="Pommel" mesh="wolfstooth_pommel" full_scale="true" culture="Culture.battania" length="12.9" weight="0.3">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_pommel_h1" name="{=}Wolfstooth Pommel" tier="4" piece_type="Pommel" mesh="wolfstooth_pommel" full_scale="true" culture="Culture.battania" length="12.9" weight="0.12">
+  <CraftingPiece id="crpg_wolfstooth_pommel_h1" name="{=}Wolfstooth Pommel" tier="4" piece_type="Pommel" mesh="wolfstooth_pommel" full_scale="true" culture="Culture.battania" length="12.9" weight="0.3">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_pommel_h2" name="{=}Wolfstooth Pommel" tier="4" piece_type="Pommel" mesh="wolfstooth_pommel" full_scale="true" culture="Culture.battania" length="12.9" weight="0.12">
+  <CraftingPiece id="crpg_wolfstooth_pommel_h2" name="{=}Wolfstooth Pommel" tier="4" piece_type="Pommel" mesh="wolfstooth_pommel" full_scale="true" culture="Culture.battania" length="12.9" weight="0.3">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_pommel_h3" name="{=}Wolfstooth Pommel" tier="4" piece_type="Pommel" mesh="wolfstooth_pommel" full_scale="true" culture="Culture.battania" length="12.9" weight="0.12">
+  <CraftingPiece id="crpg_wolfstooth_pommel_h3" name="{=}Wolfstooth Pommel" tier="4" piece_type="Pommel" mesh="wolfstooth_pommel" full_scale="true" culture="Culture.battania" length="12.9" weight="0.2">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_guard_h0" name="{=}Wolfstooth Guard" tier="5" piece_type="Guard" mesh="wolfstooth_guard" culture="Culture.battania" length="5.1" weight="0.1">
+  <CraftingPiece id="crpg_wolfstooth_guard_h0" name="{=}Wolfstooth Guard" tier="5" piece_type="Guard" mesh="wolfstooth_guard" culture="Culture.battania" length="5.1" weight="0.2">
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_guard_h1" name="{=}Wolfstooth Guard" tier="5" piece_type="Guard" mesh="wolfstooth_guard" culture="Culture.battania" length="5.1" weight="0.097">
+  <CraftingPiece id="crpg_wolfstooth_guard_h1" name="{=}Wolfstooth Guard" tier="5" piece_type="Guard" mesh="wolfstooth_guard" culture="Culture.battania" length="5.1" weight="0.2">
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_guard_h2" name="{=}Wolfstooth Guard" tier="5" piece_type="Guard" mesh="wolfstooth_guard" culture="Culture.battania" length="5.1" weight="0.097">
+  <CraftingPiece id="crpg_wolfstooth_guard_h2" name="{=}Wolfstooth Guard" tier="5" piece_type="Guard" mesh="wolfstooth_guard" culture="Culture.battania" length="5.1" weight="0.2">
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_guard_h3" name="{=}Wolfstooth Guard" tier="5" piece_type="Guard" mesh="wolfstooth_guard" culture="Culture.battania" length="5.1" weight="0.097">
+  <CraftingPiece id="crpg_wolfstooth_guard_h3" name="{=}Wolfstooth Guard" tier="5" piece_type="Guard" mesh="wolfstooth_guard" culture="Culture.battania" length="5.1" weight="0.2">
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_handle_h0" name="{=}Wolfstooth Handle" tier="3" piece_type="Handle" mesh="wolfstooth_handle" culture="Culture.khuzait" length="120" weight="0.5">
+  <CraftingPiece id="crpg_wolfstooth_handle_h0" name="{=}Wolfstooth Handle" tier="3" piece_type="Handle" mesh="wolfstooth_handle" culture="Culture.khuzait" length="120" weight="1.0">
     <BuildData piece_offset="30" previous_piece_offset="0" next_piece_offset="0" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_handle_h1" name="{=}Wolfstooth Handle" tier="3" piece_type="Handle" mesh="wolfstooth_handle" culture="Culture.khuzait" length="120" weight="0.1">
+  <CraftingPiece id="crpg_wolfstooth_handle_h1" name="{=}Wolfstooth Handle" tier="3" piece_type="Handle" mesh="wolfstooth_handle" culture="Culture.khuzait" length="120" weight="1.0">
     <BuildData piece_offset="30" previous_piece_offset="0" next_piece_offset="0" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_handle_h2" name="{=}Wolfstooth Handle" tier="3" piece_type="Handle" mesh="wolfstooth_handle" culture="Culture.khuzait" length="120" weight="0.1">
+  <CraftingPiece id="crpg_wolfstooth_handle_h2" name="{=}Wolfstooth Handle" tier="3" piece_type="Handle" mesh="wolfstooth_handle" culture="Culture.khuzait" length="120" weight="1.0">
     <BuildData piece_offset="30" previous_piece_offset="0" next_piece_offset="0" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wolfstooth_handle_h3" name="{=}Wolfstooth Handle" tier="3" piece_type="Handle" mesh="wolfstooth_handle" culture="Culture.khuzait" length="120" weight="0.1">
+  <CraftingPiece id="crpg_wolfstooth_handle_h3" name="{=}Wolfstooth Handle" tier="3" piece_type="Handle" mesh="wolfstooth_handle" culture="Culture.khuzait" length="120" weight="1.0">
     <BuildData piece_offset="30" previous_piece_offset="0" next_piece_offset="0" />
     <Materials>
       <Material id="Iron3" count="1" />
