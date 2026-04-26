@@ -137,12 +137,34 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [
-      // @ts-expect-error FIXME: TODO: https://github.com/nuxt/nuxt/issues/34306
       tailwindcss(),
-      // @ts-expect-error FIXME: TODO: https://github.com/nuxt/nuxt/issues/34306
       JSON5(),
     ],
     envPrefix: ['NUXT_PUBLIC_'],
+    optimizeDeps: {
+      include: [
+        'qs', // CJS
+        '@datadog/browser-logs',
+        'oidc-client-ts',
+        'tailwind-variants',
+        'es-toolkit',
+        'leaflet', // CJS
+        '@number-flow/vue',
+        '@tanstack/vue-table',
+        '@internationalized/date',
+        'echarts/charts',
+        'echarts/components',
+        'echarts/core',
+        'echarts/renderers',
+        'vue-echarts',
+        '@vuelidate/core',
+        '@vuelidate/validators',
+        '@vue-leaflet/vue-leaflet',
+        'leaflet-textpath', // CJS
+        'vue-leaflet-markercluster',
+        '@geoman-io/leaflet-geoman-free', // CJS
+      ],
+    },
   },
   eslint: {
     config: {
