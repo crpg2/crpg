@@ -88,7 +88,7 @@ import { getIndexToInsert, range } from '~/utils/array'
 import { computeLeftMs } from '~/utils/date'
 import { applyPolynomialFunction, roundFLoat } from '~/utils/math'
 
-export const getCharacters = async (): Promise<Character[]> => (await getUsersSelfCharacters({})).data!
+export const getCharacters = async (): Promise<Character[]> => (await getUsersSelfCharacters({})).data!.toSorted((a, b) => b.id - a.id)
 
 export const getCharactersByUserId = async (
   userId: number,

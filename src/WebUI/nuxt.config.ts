@@ -117,7 +117,7 @@ export default defineNuxtConfig({
     port: 8080,
   },
   experimental: {
-    viewTransition: true,
+    viewTransition: false,
     typedPages: true,
     defaults: {
       nuxtLink: {

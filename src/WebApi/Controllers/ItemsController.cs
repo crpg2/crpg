@@ -40,15 +40,15 @@ public class ItemsController : BaseController
     /// <summary>
     /// Enable/Disable item.
     /// </summary>
-    /// <param name="id">Item id.</param>
+    /// <param name="baseId">Item BaseId.</param>
     /// <param name="req">Enabling value.</param>
     /// <response code="204">Updated.</response>
     /// <response code="400">Bad Request.</response>
     [Authorize(Policy = ModeratorPolicy)]
-    [HttpPut("{id}/enable")]
-    public Task<ActionResult> EnableItem([FromRoute] string id, [FromBody] EnableItemCommand req)
+    [HttpPut("{baseId}/enable")]
+    public Task<ActionResult> EnableItem([FromRoute] string baseId, [FromBody] EnableItemCommand req)
     {
-        req = req with { ItemId = id, UserId = CurrentUser.User!.Id };
+        req = req with { BaseItemId = baseId, UserId = CurrentUser.User!.Id };
         return ResultToActionAsync(Mediator.Send(req));
     }
 

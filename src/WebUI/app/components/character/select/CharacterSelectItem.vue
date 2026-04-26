@@ -13,9 +13,7 @@ const modelValue = defineModel<boolean>({ default: false })
 <template>
   <div class="flex items-center gap-2">
     <UTooltip v-if="!simple" :content="{ side: 'right' }">
-      <div @click.prevent.stop>
-        <USwitch v-model="modelValue" />
-      </div>
+      <USwitch v-model="modelValue" />
 
       <template #content>
         <UiTooltipContent :title="$t('character.settings.active.tooltip.title')">

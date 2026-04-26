@@ -130,6 +130,7 @@ nav:
   main:
     Characters: Персонаж
     Shop: Магазин
+    Marketplace: Барахолка
     Clans: Кланы
     Moderator: Модератор
     Admin: Админ
@@ -170,6 +171,7 @@ action:
   enter: Войти
   copied: Скопировано
   start: Начать
+  sell: Продать
   copy: Копировать
   ok: Ок
   selectFromList: Выберите из списка
@@ -447,7 +449,7 @@ character:
         title: Отставка персонажа
         desc:
           - 'Уровень персонажа сбросится до {resetLevel}. Ваш модификатор опыта увеличится на {multiplierBonus} (макс: {maxMultiplierBonus}).'
-          - 'Вы получите очки улучшения предметов {heirloom} в зависимости от уровня персонажа.'
+          - 'Вы получите очки наследия {heirloom} в зависимости от уровня персонажа.'
         required: 'Требуется {requiredLevel} уровень'
       loomPointsTable:
         cols:
@@ -650,6 +652,7 @@ character:
 
     item:
       sell:
+        action: Продать предмет
         title: Продать {price}
         confirm: Вы уверены что хотите продать предмет?
         freeRefund: Возврат без штрафа в течении {dateTime}
@@ -679,7 +682,7 @@ character:
         upgradesTitle: Улучшения предмета
         tooltip:
           title: Улучшить предмет
-          description: Вы можете улучшить предмет за очки улучшения (Heirloom)
+          description: Вы можете улучшить предмет за наследия (Heirloom)
         validation:
           loomPoints: У вас недостаточно очков улучшения
         confirm:
@@ -710,9 +713,30 @@ character:
           title: Предмет находится в клановой оружейной
           notify:
             warning: Предмет находится в клановой оружейной. Сначала верните его.
+      listedOnMarketplace:
+        tooltip:
+          title: Предмет выставлен на торговой площадке
+      showMarketplaceListings:
+        title: Показать предложения торговой площадки с этим предметом
+      cantUpgrade:
+        notify:
+          reasonListedOnMarketplace: Предмет выставлен на торговой площадке и не может быть улучшен
+          reasonInClanArmory: Предмет находится в клановой оружейной и не может быть улучшен
+          reasonBroken: Предмет сломан и не может быть улучшен
+      cantSell:
+        notify:
+          reasonPersonal: Личные предметы нельзя продать
+          reasonInClanArmory: Предмет находится в клановой оружейной и не может быть продан
+          reasonListedOnMarketplace: Предмет выставлен на торговой площадке и не может быть продан
+          reasonBroken: Предмет сломан и не может быть продан
+          reasonHasRank: Улучшенные предметы нельзя продавать
+      cantManageClanArmory:
+        notify:
+          reasonPersonal: Личные предметы нельзя добавить в клановую оружейную
+          reasonListedOnMarketplace: Предмет выставлен на торговой площадке и не может быть добавлен в оружейную
+          reasonBroken: Предмет сломан и не может быть добавлен в оружейную
     filter:
       hideInArmory: Не показывать предметы в оружейной
-      showInArmory: Показывать предметы в оружейной
 
   doll:
     slot:
@@ -792,7 +816,7 @@ shop:
       desc: Это оружие имеет несколько режимов использования
       secondary: 'Текущий режим (второстепенный): {weaponClass}'
       primary: 'Основной режим: {weaponClass}'
-    expensive: Сейчас вы не можете позволить себе содержание этого предмете
+    expensive: Слишком дорогое обслуживание
   compare:
     add: Добавить в сравнение
     addAll: Добавить все предметы в сравнение
@@ -946,7 +970,9 @@ user:
   field:
     name: Имя пользователя
     gold: Золото
-    heirloom: Очки улучшения предметов
+    reservedGold: Резерв золото
+    heirloomPoints: Очки наследия
+    reservedHeirloomPoints: Резерв очки наследия
   settings:
     title: Настройки аккаунта
     dangerZone: Опасная зона
@@ -958,7 +984,7 @@ user:
       dialog:
         title: Вы собираетесь удалить свою учетную запись
         desc: 'ФИНАЛЬНОЕ ПРЕДУПРЕЖДЕНИЕ: Этот процесс нельзя отменить - удаление вашей учетной записи означает ее окончательное исчезновение. Все данные, относящиеся к вашему пребыванию cRPG: персонажи, предметы, уровни и прочее будут окончательно удалены. Восстановить данные после удаления невозможно.'
-        enterToConfirm: 'Удалить моего персонажа {userName} с {heirloomPoints} лум-поинтами и {gold} золота'
+        enterToConfirm: 'Удалить моего персонажа {userName} с {heirloomPoints} очками улучшения предметов и {gold} золота'
       notify:
         success: Ваша учетная запись была удалена
   restriction:
@@ -1440,6 +1466,22 @@ notification:
     title: Предмет возвращён
     tpl: 'Предмет {item} был удалён из вашего инвентаря. Возвращено: {refundedGold} {refundedHeirloomPoints}'
 
+  MarketplaceListingAcceptedToSeller:
+    title: Ваше предложение на рынке принято
+    tpl: 'Ваше предложение #{listingId} на рынке было принято покупателем {buyer}{br}{marketplaceListingDetails}{br}Дополнительно списана комиссия {goldFee}'
+
+  MarketplaceListingAcceptedToBuyer:
+    title: Вы приняли предложение на рынке
+    tpl: 'Вы приняли предложение #{listingId} на рынке от {seller}{br}{marketplaceListingDetails}'
+
+  MarketplaceListingInvalidated:
+    title: Предложение на рынке аннулировано
+    tpl: 'Ваше предложение #{listingId} на рынке аннулировано, так как у вас больше нет необходимых ресурсов. Зарезервированные ресурсы возвращены{br}{marketplaceListingDetails}{br}Также возвращена комиссия {goldFee}'
+
+  MarketplaceListingExpired:
+    title: Предложение на рынке истёкло
+    tpl: 'Ваше предложение #{listingId} на рынке истёкло. Зарезервированные ресурсы возвращены{br}{marketplaceListingDetails}{br}Также возвращена комиссия {goldFee}'
+
   ClanMemberRoleChangedToUser:
     title: Роль в клане изменена
     tpl: 'Ваша роль {oldClanMemberRole} в клане {clan} была изменена на {newClanMemberRole}'
@@ -1620,3 +1662,87 @@ campaign:
           decline:
             notify:
               success: Заявка отклонена
+
+marketplace:
+  currency:
+    gold: Золото
+    heirloomPoints: Очки наследия
+  filter:
+    currencyMode:
+      Any: Любое
+      None: Без
+      CustomRange: Диапазон
+    selectItemType: Выбрать тип предмета
+    orSeparator: Или
+    chooseItem: Выбрать предмет
+  createListing:
+    title: Создать предложение
+    personal: Личный предмет
+    validation:
+      hasTradeValue: Выберите предмет или укажите количество золота/очков наследия больше 0
+      toast: Предложение и запрос должны содержать предмет или количество больше 0
+    offer:
+      label: Предложение
+      selectItem: Выберите предмет для предложения
+      goldMutualExclusion: Указание золота в предложении отключит возможность указать золото в запросе, и наоборот
+      heirloomPointsMutualExclusion: Указание очков наследия в предложении отключит возможность указать очки наследия в запросе, и наоборот
+    request:
+      label: Запрос
+      selectItem: Выберите предмет для запроса
+      goldMutualExclusion: Указание золота в запросе отключит возможность указать золото в предложении, и наоборот
+      heirloomPointsMutualExclusion: Указание очков наследия в запросе отключит возможность указать очки наследия в предложении, и наоборот
+    fees:
+      listingFee:
+        label: Комиссия за размещение
+        description: Фиксированная комиссия за размещение предложения на {days} дней
+        nonRefundable: Эта комиссия не возвращается
+      goldCommission:
+        label: Комиссия за золото
+        description: Комиссия {percent}% от суммы золота. Резервируется и возвращается при отмене предложения до совершения сделки
+      totalUpfront:
+        label: Итого будет списано при создании
+        description: Общая сумма золота, которая будет списана при создании предложения. Включает комиссию за размещение и применимые сборы
+  page:
+    columns:
+      seller: Продавец
+      buyer: Покупатель
+      offer: Предложение
+      request: Запрос
+      expiresIn: Истекает через
+      acceptedAt: Принято
+      goldFee: Комиссия за золото
+    expiryTooltip:
+      created: Создано
+      expires: Истекает
+    actions:
+      delete: Удалить
+      accept: Принять
+    deletePopover:
+      title: 'Будет возвращено:'
+      goldFee: Комиссия за золото
+      gold: Золото
+      heirloomPoints: Очки наследия
+    acceptDialog:
+      title: Принять предложение
+      titleFrom: Принять предложение от
+      youWillReceive: Вы получите
+      youWillGive: Вы отдадите
+    controls:
+      searchMode: Поиск
+      onlyAffordable: Только доступные
+      myListings: 'Только мои ({count}/{limit})'
+      createListing: Создать
+      listingLimitReached: Вы достигли максимального количества активных предложений
+      reset: Сбросить
+      search: Найти
+    filters:
+      offered: Предложение
+      requested: Запрос
+  side:
+    offered: Предложение
+    requested: Запрос
+  history:
+    title: История сделок
+    filters:
+      self: Я
+      idPlaceholder: ID юзера
