@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SelectItem, TableColumn } from '@nuxt/ui'
+import type { AcceptableValue, SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState, RowSelectionState, SortingState } from '@tanstack/vue-table'
 
 import {
@@ -297,6 +297,7 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
           if (options.view === AGGREGATION_VIEW.Range) {
             return undefined
           }
+
           const _buckets = Object.entries(getBuckets(column.getFacetedUniqueValues()))
           return h(UiGridColumnHeaderSelectFilter, {
             'class': 'w-full',
@@ -317,7 +318,7 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
                       disabled: true,
                     } satisfies SelectItem,
                 ],
-            'modelValue': column.getFilterValue(),
+            'modelValue': column.getFilterValue() as AcceptableValue | AcceptableValue[] | undefined,
             'onUpdate:modelValue': column.setFilterValue,
           })
         },

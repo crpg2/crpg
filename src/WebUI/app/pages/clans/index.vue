@@ -103,7 +103,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
               value: l,
               label: `${t(`language.${l}`)} - ${l}`,
             })),
-            'modelValue': column.getFilterValue(),
+            'modelValue': column.getFilterValue() as string[] | undefined,
             'onUpdate:modelValue': column.setFilterValue,
           }),
       })
