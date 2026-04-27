@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    CRPG Emote Menu — Action Type Declarations
+    These register each emote action name with the Bannerlord engine.
+    All animations used here are vanilla (Native / Multiplayer) so no extra .tpac is needed.
+
+    INTEGRATION: Add the following to SubModule.xml <Xmls> block:
+        <XmlNode>
+            <XmlName id="ActionSets" path="Emotes/crpg_action_types"/>
+        </XmlNode>
+-->
+<action_sets>
+    <!-- #region CRPG Emote Menu Action Types -->
+
+    <!-- idle_stand (vanilla: anim_lord_idle_1 .. 6) -->
+    <action name="crpg_act_stand_1" />
+    <action name="crpg_act_stand_2" />
+    <action name="crpg_act_stand_3" />
+    <action name="crpg_act_stand_4" />
+    <action name="crpg_act_stand_5" />
+    <action name="crpg_act_stand_6" />
+
+    <!-- sitting (vanilla: anim_sit_idle_tavern_drink1 .. 3) -->
+    <action name="crpg_act_sit_drink_1" />
+    <action name="crpg_act_sit_drink_2" />
+    <action name="crpg_act_sit_drink_3" />
+
+    <!-- taunts (vanilla: taunt_*) -->
+    <action name="crpg_act_taunt_afraid" />
+    <action name="crpg_act_taunt_bow" />
+    <action name="crpg_act_taunt_break" />
+    <action name="crpg_act_taunt_disappointed" />
+    <action name="crpg_act_taunt_hit_shield_2" />
+    <action name="crpg_act_taunt_invite" />
+    <action name="crpg_act_taunt_invite_2" />
+    <action name="crpg_act_taunt_laugh" />
+    <action name="crpg_act_taunt_pointing" />
+    <action name="crpg_act_taunt_rage" />
+    <action name="crpg_act_taunt_respect" />
+    <action name="crpg_act_taunt_scared" />
+    <action name="crpg_act_taunt_surrender" />
+    <action name="crpg_act_taunt_threat" />
+    <action name="crpg_act_taunt_threat_2" />
+
+    <!-- cheers (vanilla: cheering_high_01 .. 08) -->
+    <action name="crpg_act_cheer_01" />
+    <action name="crpg_act_cheer_02" />
+    <action name="crpg_act_cheer_03" />
+    <action name="crpg_act_cheer_04" />
+    <action name="crpg_act_cheer_05" />
+    <action name="crpg_act_cheer_06" />
+    <action name="crpg_act_cheer_07" />
+    <action name="crpg_act_cheer_08" />
+
+    <!-- misc -->
+    <action name="crpg_act_dance_norse" />
+
+    <!-- #endregion CRPG Emote Menu Action Types -->
+</action_sets>

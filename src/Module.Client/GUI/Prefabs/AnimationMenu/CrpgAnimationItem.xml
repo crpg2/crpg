@@ -1,0 +1,41 @@
+<Prefab>
+    <!--
+        CrpgAnimationItem — a single clickable row in the emote menu.
+        Bound to CrpgAnimationMenuItemVm.
+        Parameters:
+            ItemDataSource  — override the DataSource (used for Back/Next nav items)
+            ItemHeight      — row height in pixels (default 40)
+            ItemWidth       — row width in pixels (default 250)
+    -->
+    <Parameters>
+        <Parameter Name="ItemDataSource" DefaultValue=""/>
+        <Parameter Name="ItemHeight"     DefaultValue="40"/>
+        <Parameter Name="ItemWidth"      DefaultValue="250"/>
+    </Parameters>
+    <Window>
+        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                SuggestedWidth="*ItemWidth" SuggestedHeight="*ItemHeight"
+                VerticalAlignment="Center" HorizontalAlignment="Left"
+                MarginTop="4" MarginBottom="4"
+                DataSource="*ItemDataSource">
+            <Children>
+                <EscapeMenuButtonWidget WidthSizePolicy="StretchToParent"
+                                        HeightSizePolicy="StretchToParent"
+                                        Command.Click="ExecuteItem"
+                                        DoNotPassEventsToChildren="true"
+                                        UpdateChildrenStates="true"
+                                        IsEnabled="@IsEnabled">
+                    <Children>
+                        <TextWidget WidthSizePolicy="CoverChildren"
+                                    HeightSizePolicy="CoverChildren"
+                                    Brush="MPEscapeMenu.ButtonText"
+                                    IsEnabled="@IsEnabled"
+                                    Brush.FontSize="22"
+                                    Brush.TextVerticalAlignment="Center"
+                                    Text="@Text"/>
+                    </Children>
+                </EscapeMenuButtonWidget>
+            </Children>
+        </Widget>
+    </Window>
+</Prefab>

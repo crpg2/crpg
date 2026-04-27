@@ -18,6 +18,12 @@
   </SubModules>
   <Xmls>
     <XmlNode>
+      <XmlName id="ActionSets" path="Emotes/crpg_action_types"/>
+    </XmlNode>
+    <XmlNode>
+      <XmlName id="ActionSets" path="Emotes/crpg_action_sets"/>
+    </XmlNode>
+    <XmlNode>
       <XmlName id="GameText" path="multiplayer_strings"/>
     </XmlNode>
     <XmlNode>
