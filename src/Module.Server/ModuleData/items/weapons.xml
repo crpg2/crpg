@@ -14508,7 +14508,7 @@
       <Piece id="crpg_shaolinspade_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_montante_h0" name="{=}El Montante" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_montante_v1_h0" name="{=}El Montante" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_montante_blade_h0" Type="Blade" scale_factor="97" />
       <Piece id="crpg_montante_guard_h0" Type="Guard" scale_factor="100" />
@@ -14516,7 +14516,7 @@
       <Piece id="crpg_montante_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_montante_h1" name="{=}El Montante +1" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_montante_v1_h1" name="{=}El Montante +1" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_montante_blade_h1" Type="Blade" scale_factor="97" />
       <Piece id="crpg_montante_guard_h1" Type="Guard" scale_factor="100" />
@@ -14524,7 +14524,7 @@
       <Piece id="crpg_montante_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_montante_h2" name="{=}El Montante +2" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_montante_v1_h2" name="{=}El Montante +2" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_montante_blade_h2" Type="Blade" scale_factor="97" />
       <Piece id="crpg_montante_guard_h2" Type="Guard" scale_factor="100" />
@@ -14532,7 +14532,7 @@
       <Piece id="crpg_montante_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_montante_h3" name="{=}El Montante +3" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_montante_v1_h3" name="{=}El Montante +3" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_montante_blade_h3" Type="Blade" scale_factor="97" />
       <Piece id="crpg_montante_guard_h3" Type="Guard" scale_factor="100" />
