@@ -1,4 +1,3 @@
-import { getLeaderboardLeaderboard } from '#api/sdk.gen'
 import { inRange } from 'es-toolkit'
 
 import type { CharacterClass } from '~/models/character'
@@ -10,6 +9,7 @@ import type {
 import type { GameMode } from '~/models/game-mode'
 import type { Region } from '~/models/region'
 
+import { getLeaderboardLeaderboard } from '#api/sdk.gen'
 import { RANK_GROUP } from '~/models/competitive'
 import { objectEntries } from '~/utils/object'
 
@@ -24,9 +24,9 @@ export const getLeaderBoard = async ({
 }): Promise<CharacterCompetitiveNumbered[]> => {
   const { data } = await getLeaderboardLeaderboard({
     query: {
-      region: region!,
-      gameMode: gameMode!,
-      characterClass: characterClass!,
+      region,
+      gameMode,
+      characterClass,
     },
   })
 

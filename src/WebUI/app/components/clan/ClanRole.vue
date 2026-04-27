@@ -16,7 +16,7 @@ const { hiddenLabel = false, size = 'md' } = defineProps<{
     :size
     :class="
       role === CLAN_MEMBER_ROLE.Leader
-        ? 'text-[var(--color-gold)]'
+        ? 'text-gold'
         : role === CLAN_MEMBER_ROLE.Officer
           ? 'text-highlighted'
           : 'text-toned'

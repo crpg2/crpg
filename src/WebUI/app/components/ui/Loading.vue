@@ -24,7 +24,7 @@ const variants = tv({
     },
     fullPage: {
       true: {
-        root: 'pointer-events-auto fixed inset-0 z-[50]',
+        root: 'pointer-events-auto fixed inset-0 z-50',
       },
       false: {
         root: 'absolute inset-0 z-30',

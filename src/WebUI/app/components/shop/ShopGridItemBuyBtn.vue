@@ -4,7 +4,6 @@ import { groupBy } from 'es-toolkit'
 import type { UserItem } from '~/models/user'
 
 import { useUser } from '~/composables/user/use-user'
-import { getRankColor } from '~/services/item-service'
 
 const { inInventoryItems, notEnoughGold, price, upkeep } = defineProps<{
   price: number
@@ -22,19 +21,15 @@ const { user } = useUser()
 const groupedByRankInventoryItems = computed(() => groupBy(inInventoryItems, ui => ui.item.rank))
 
 const isExpensive = computed(() => user.value!.gold - price < upkeep)
-
-const [open, toggle] = useToggle()
 </script>
 
 <template>
-  <UPopover
-    v-model:open="open"
-    :content="{
-      side: 'left',
-    }"
-    :ui="{
-      content: 'p-0 ring-0 max-w-xs',
-    }"
+  <AppConfirmActionPopover
+    :content="{ side: 'left' }"
+    :title="$t('shop.item.buy.tooltip.buy')"
+    :confirm-label="$t('shop.item.buy.tooltip.buy')"
+    :confirm-disabled="notEnoughGold"
+    @confirm="$emit('buy')"
   >
     <UButton
       variant="outline"
@@ -50,24 +45,10 @@ const [open, toggle] = useToggle()
         variant="soft"
         :label="inInventoryItems.length"
       />
-      <UBadge
-        v-if="isExpensive"
-        size="sm"
-        color="error"
-        icon="crpg:alert"
-        variant="soft"
-      />
     </UButton>
 
-    <template #content>
-      <UiCard
-        :ui="{
-          header: 'prose',
-          body: 'prose space-y-4',
-          footer: 'flex justify-center items-center gap-2',
-        }"
-        :label="$t('shop.item.buy.tooltip.buy')"
-      >
+    <template #description-content>
+      <div class="space-y-4">
         <div class="space-y-2">
           <UiDataCell>
             <template #leftContent>
@@ -75,71 +56,52 @@ const [open, toggle] = useToggle()
             </template>
             <AppCoin :value="$t('item.format.upkeep', { upkeep: $n(upkeep) })" />
           </UiDataCell>
+          <UBadge v-if="isExpensive" variant="subtle" color="error" icon="crpg:alert">
+            {{ $t('shop.item.expensive') }}
+          </UBadge>
+        </div>
 
+        <div class="space-y-2">
           <UiDataCell>
             <template #leftContent>
               {{ $t('item.aggregations.price.title') }}:
             </template>
             <AppCoin :value="price" />
           </UiDataCell>
+          <UBadge v-if="notEnoughGold" variant="subtle" color="error" icon="crpg:alert">
+            {{ $t('shop.item.buy.tooltip.notEnoughGold') }}
+          </UBadge>
         </div>
 
         <i18n-t
           v-if="inInventoryItems.length"
           scope="global"
           keypath="shop.item.buy.tooltip.inInventory"
-          tag="p"
-          class="leading-relaxed"
+          tag="div"
         >
           <template #items>
-            <div
-              v-for="(items, group, idx) in groupedByRankInventoryItems" :key="group"
-              class="inline"
-            >
-              <span
-                class="font-semibold"
-                :style="{ color: getRankColor(items[0]!.item.rank) }"
-              >
-                {{ items[0]!.item.name }} ({{ items.length }})</span>
-              <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
-              <template v-if="idx + 1 < Object.keys(groupedByRankInventoryItems).length">, </template>
+            <div class="mt-4 space-y-1.5">
+              <div v-for="(items, group,) in groupedByRankInventoryItems" :key="group">
+                <ItemMedia
+                  :base-id="items[0]!.item.baseId"
+                  :name="items[0]!.item.name"
+                  :rank="items[0]!.item.rank"
+                >
+                  <template #top-right>
+                    <UChip
+                      :text=" items.length"
+                      color="neutral"
+                      :ui="{
+                        base: 'h-3.5 min-w-3.5 text-[8px] bg-inverted/25 text-white ring-0',
+                      }"
+                    />
+                  </template>
+                </ItemMedia>
+              </div>
             </div>
           </template>
         </i18n-t>
-
-        <p
-          v-if="notEnoughGold"
-          class="text-error"
-        >
-          {{ $t('shop.item.buy.tooltip.notEnoughGold') }}
-        </p>
-
-        <p
-          v-else-if="isExpensive"
-          class="text-warning"
-        >
-          {{ $t('shop.item.expensive') }}
-        </p>
-
-        <template #footer>
-          <UButton
-            variant="soft"
-            :label="$t('action.close')"
-            @click="() => {
-              toggle(false)
-            }"
-          />
-
-          <UButton
-            :disabled="notEnoughGold"
-            :label="$t('shop.item.buy.tooltip.buy')"
-            @click="() => {
-              $emit('buy')
-              toggle(false)
-            }"
-          />
-        </template>
-      </UiCard>
+      </div>
     </template>
-  </UPopover>
+  </AppConfirmActionPopover>
 </template>

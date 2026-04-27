@@ -1,3 +1,6 @@
+import type { CrpgApiResult } from '~/api.config'
+import type { CampaignUpdate, ItemStack, Party, PartyOrder, PartyStatus, TransferOfferPartyUpdate, UpdatePartyOrder } from '~/models/campaign/party'
+
 import {
   getPartiesByPartyIdItems,
   getPartiesSelfItems,
@@ -7,10 +10,6 @@ import {
   putPartiesSelfTransferOffersByTransferOfferId,
   // putPartiesSelfStatus,
 } from '#api/sdk.gen'
-
-import type { CrpgApiResult } from '~/api.config'
-import type { CampaignUpdate, ItemStack, Party, PartyOrder, PartyStatus, TransferOfferPartyUpdate, UpdatePartyOrder } from '~/models/campaign/party'
-
 import { PARTY_STATUS } from '~/models/campaign/party'
 
 export const getSelfUpdate = (): Promise<CrpgApiResult<CampaignUpdate>> => getPartiesSelfUpdate({})

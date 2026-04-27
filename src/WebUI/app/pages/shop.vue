@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SelectItem, TableColumn } from '@nuxt/ui'
+import type { AcceptableValue, SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState, RowSelectionState, SortingState } from '@tanstack/vue-table'
 
 import {
@@ -8,6 +8,10 @@ import {
   getFacetedUniqueValues,
   getPaginationRowModel,
 } from '@tanstack/vue-table'
+
+import type { ItemFlat, ItemType, WeaponClass } from '~/models/item'
+import type { AggregationOptions } from '~/services/item-search-service/aggregations'
+
 import {
   AppCoin,
   ItemParam,
@@ -17,17 +21,13 @@ import {
   UCheckbox,
   UContainer,
   UiGridColumnHeader,
-  UiGridColumnHeaderLabel,
+  UiGridColumnHeaderSelectFilter,
+  UiInputClear,
   UiInputRange,
   UInput,
-  USelect,
   UTooltip,
 } from '#components'
 import { h } from '#imports'
-
-import type { ItemFlat, ItemType, WeaponClass } from '~/models/item'
-import type { AggregationOptions } from '~/services/item-search-service/aggregations'
-
 import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useUser } from '~/composables/user/use-user'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
@@ -67,13 +67,10 @@ const { data: userItems, refresh: refreshUserItems } = useUserItemsProvider()
 const {
   state: items,
   isLoading: loadingItems,
-} = useAsyncState(() => getItems(), [])
-usePageLoading(loadingItems)
+  // TODO: weaponUsage next iteration
+} = useAsyncState(async () => createItemIndex(await getItems()), [], { shallow: false })
 
-const flatItems = ref<ItemFlat[]>([])
-watch(items, () => {
-  flatItems.value = createItemIndex(items.value, false) // TODO: weaponUsage next iteration
-})
+usePageLoading(loadingItems)
 
 const [buyItem] = useAsyncCallback(async (item: ItemFlat) => {
   await buyUserItem(item.id)
@@ -134,7 +131,7 @@ const itemType = computed({
   },
 })
 
-const itemTypes = computed(() => getFacetsByItemType(flatItems.value.map(item => item.type)))
+const itemTypes = computed(() => getFacetsByItemType(items.value.map(item => item.type)))
 
 const isUpgradableItemType = computed(() => canUpgradeItem(itemType.value))
 
@@ -164,7 +161,7 @@ const weaponClass = computed({
 
 const weaponClasses = computed(() => {
   const weaponClassesByType = getWeaponClassesByItemType(itemType.value)
-  return getFacetsByWeaponClass(flatItems.value
+  return getFacetsByWeaponClass(items.value
     .filter(item => item.weaponClass !== null && weaponClassesByType.includes(item.weaponClass))
     .map(item => item.weaponClass!))
 })
@@ -237,15 +234,21 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
               bestValue: compareItems.value !== null ? compareItems.value[key] : undefined,
             }),
       }, {
-        ...(key === 'upkeep' && { default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, { value: t('item.format.upkeep', { upkeep: n(rawBuckets) }) }) }),
+        ...(key === 'upkeep' && {
+          default: ({ rawBuckets }: { rawBuckets: number }) =>
+            h(AppCoin, { value: t('item.format.upkeep', { upkeep: n(rawBuckets) }) }),
+        }),
         ...(key === 'price' && {
-          default: ({ rawBuckets }: { rawBuckets: number }) => h(ShopGridItemBuyBtn, {
-            price: rawBuckets,
-            upkeep: row.original.upkeep,
-            inInventoryItems: getInInventoryItems(row.original.baseId),
-            notEnoughGold: user.value!.gold < row.original.price,
-            onBuy: () => buyItem(row.original),
-          }),
+          default: ({ rawBuckets }: { rawBuckets: number }) =>
+            row.depth === 0
+              ? h(ShopGridItemBuyBtn, {
+                  price: rawBuckets,
+                  upkeep: row.original.upkeep,
+                  inInventoryItems: getInInventoryItems(row.original.baseId),
+                  notEnoughGold: user.value!.gold < row.original.price,
+                  onBuy: () => buyItem(row.original),
+                })
+              : h(AppCoin, { value: rawBuckets }),
         }),
       })
     },
@@ -291,44 +294,33 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
           },
         }),
         filter: () => {
-          if (options.view === AGGREGATION_VIEW.Checkbox) {
-            const _buckets = Object.entries(getBuckets(column.getFacetedUniqueValues()))
-            return h(USelect, {
-              'class': 'w-full',
-              'multiple': true,
-              'variant': 'none',
-              'size': 'xl',
-              'trailing-icon': '', // TODO:
-              'ui': {
-                content: 'min-w-fit',
-                base: 'px-0 py-0',
-              },
-              'items': _buckets.length
-                ? _buckets.map<SelectItem>(([bucket, count]) => {
-                    const humanBucket = humanizeBucket(column.id as keyof ItemFlat, bucket)
-                    return {
-                      value: bucket,
-                      label: `${humanBucket.label}${count ? ` (${count})` : ''}`,
-                      ...(humanBucket.icon && { icon: `crpg:${humanBucket.icon}` }),
-                    }
-                  })
-                : [
+          if (options.view === AGGREGATION_VIEW.Range) {
+            return undefined
+          }
+
+          const _buckets = Object.entries(getBuckets(column.getFacetedUniqueValues()))
+          return h(UiGridColumnHeaderSelectFilter, {
+            'class': 'w-full',
+            'label': t(`item.aggregations.${header.id}.title`),
+            'items': _buckets.length
+              ? _buckets.map<SelectItem>(([bucket, count]) => {
+                  const humanBucket = humanizeBucket(column.id as keyof ItemFlat, bucket)
+                  return {
+                    value: bucket,
+                    label: `${humanBucket.label}${count ? ` (${count})` : ''}`,
+                    ...(humanBucket.icon && { icon: `crpg:${humanBucket.icon}` }),
+                  }
+                })
+              : [
                     {
                       label: t('not-found'),
                       icon: 'crpg:error',
                       disabled: true,
                     } satisfies SelectItem,
-                  ],
-              'modelValue': column.getFilterValue(),
-              'onUpdate:modelValue': column.setFilterValue,
-            }, {
-              default: () => h(UiGridColumnHeaderLabel, {
-                label: t(`item.aggregations.${header.id}.title`),
-                withFilter: true,
-              }),
-            })
-          }
-          return undefined
+                ],
+            'modelValue': column.getFilterValue() as AcceptableValue | AcceptableValue[] | undefined,
+            'onUpdate:modelValue': column.setFilterValue,
+          })
         },
       })
     },
@@ -364,7 +356,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
               onClick: async () => {
                 if (!row.original.upgrades.length) {
                   toggleLoadingItemUpgrades(true)
-                  row.original.upgrades.push(...(createItemIndex(await getItemUpgrades(row.original.baseId), false)).toSpliced(0, 1))
+                  row.original.upgrades = createItemIndex(await getItemUpgrades(row.original.baseId)).toSpliced(0, 1)
                   toggleLoadingItemUpgrades(false)
                 }
                 row.toggleExpanded()
@@ -420,9 +412,12 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
         },
       },
       header: ({ column }) => {
-        const _column = table.value?.tableApi.getColumn('isNew')
-        const _count = _column?.getFacetedUniqueValues().get(true)
-        const _value = (_column?.getFilterValue() as boolean) || false
+        const _isNewColumn = table.value?.tableApi.getColumn('isNew')
+        const _isNewcount = _isNewColumn?.getFacetedUniqueValues().get(true)
+        const _isNewvalue = (_isNewColumn?.getFilterValue() as boolean) || false
+
+        const value = column.getFilterValue() as string | undefined
+        const debouncedSetFilterValue = useDebounceFn(column.setFilterValue, 300)
 
         return h('div', {
           class: tw`flex items-center gap-2`,
@@ -433,19 +428,25 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
             'variant': 'soft',
             'size': 'xl',
             'placeholder': t('action.search'),
-            'modelValue': column.getFilterValue(),
-            'onUpdate:modelValue': column.setFilterValue,
+            'modelValue': value,
+            'onUpdate:modelValue': debouncedSetFilterValue,
+          }, {
+            ...(value?.length && {
+              trailing: () => h(UiInputClear, {
+                onClick: () => column.setFilterValue(undefined),
+              }),
+            }),
           }),
-          ...(_column && _count
+          ...(_isNewColumn && _isNewcount
             ? [
                 h(UButton, {
-                  label: `New (${_count})`,
+                  label: `New (${_isNewcount})`,
                   color: 'success',
                   variant: 'soft',
                   activeVariant: 'solid',
-                  active: _value,
+                  active: _isNewvalue,
                   onClick: () => {
-                    _column.setFilterValue(!_value || undefined)
+                    _isNewColumn.setFilterValue(!_isNewvalue || undefined)
                   },
                 }),
               ]
@@ -485,7 +486,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
         v-model:column-filters="columnFilters"
         v-model:column-visibility="columnVisibility"
         v-model:row-selection="rowSelection"
-        :data="flatItems"
+        :data="items"
         :loading="loadingItemUpgrades"
         :get-sub-rows="(row) => row.upgrades"
         :ui="{
@@ -520,14 +521,16 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
         @update:column-filters="() => { resetPagination() }"
       >
         <template #empty>
-          <UiResultNotFound class="min-h-[480px]" />
+          <UiResultNotFound class="min-h-120" />
         </template>
       </UTable>
 
       <template #footer>
         <UiGridPagination
-          v-if="table?.tableApi"
-          :table-api="toRef(() => table!.tableApi)"
+          :page="pagination.pageIndex + 1"
+          :size="pagination.pageSize"
+          :total="table?.tableApi.getFilteredRowModel().rows.length ?? 0"
+          @update:page="(page) => table?.tableApi.setPageIndex(page - 1)"
         >
           <UButton
             v-if="Object.keys(rowSelection).length >= 2"

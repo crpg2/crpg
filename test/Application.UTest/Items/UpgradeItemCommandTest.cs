@@ -1,8 +1,10 @@
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Items.Commands;
+using Crpg.Application.UTest.Marketplace;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Moq;
@@ -362,5 +364,34 @@ public class UpgradeItemCommandTest : TestBase
         }, CancellationToken.None);
 
         Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.UserItemMaxRankReached));
+    }
+
+    [Test]
+    public async Task MarketplaceListedItemShouldNotBeUpgradeable()
+    {
+        Item item0 = new() { Id = "a_h0", BaseId = "a", Price = 100, Enabled = true, Rank = 0 };
+        Item item1 = new() { Id = "a_h1", BaseId = "a", Price = 100, Enabled = true, Rank = 1 };
+        User user = new()
+        {
+            Gold = 100,
+            HeirloomPoints = 10,
+            Items = { new() { Item = item0 } },
+        };
+        ArrangeDb.Users.Add(user);
+        ArrangeDb.Items.AddRange(item0, item1);
+        ArrangeDb.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(sellerId: user.Id, offeredUserItemId: user.Items[0].Id));
+        await ArrangeDb.SaveChangesAsync();
+
+        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+
+        UpgradeUserItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object);
+        var result = await handler.Handle(new UpgradeUserItemCommand
+        {
+            UserItemId = user.Items[0].Id,
+            UserId = user.Id,
+            UpgradeRank = 1,
+        }, CancellationToken.None);
+
+        Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.UserItemInMarketplace));
     }
 }

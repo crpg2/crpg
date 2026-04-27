@@ -13,7 +13,7 @@ export const useLocaleTimeAgo = (date: Date) => {
           ? t('timeAgo.yesterday')
           : t('timeAgo.tomorrow')
         : `${n} ${t(`timeAgo.day`, n)}`,
-    future: n => (n.match(/\d/) ? t('timeAgo.in', [n]) : n),
+    future: n => (/\d/.test(n) ? t('timeAgo.in', [n]) : n),
     hour: n => `${n} ${t('timeAgo.hour', n)}`,
     invalid: '',
     justNow: t('timeAgo.just-now'),
@@ -24,7 +24,7 @@ export const useLocaleTimeAgo = (date: Date) => {
           ? t('timeAgo.last-month')
           : t('timeAgo.next-month')
         : `${n} ${t(`timeAgo.month`, n)}`,
-    past: n => (n.match(/\d/) ? t('timeAgo.ago', [n]) : n),
+    past: n => (/\d/.test(n) ? t('timeAgo.ago', [n]) : n),
     second: n => `${n} ${t(`timeAgo.second`, n)}`,
     week: (n, past) =>
       n === 1

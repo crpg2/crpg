@@ -134,7 +134,7 @@ const [onRespecializeCharacter] = useAsyncCallback(
   </div>
 </template>
 
-<style lang="css">
+<style lang="css" scoped>
 .statsGrid {
   grid-template-areas:
     'attributes skills stats'
