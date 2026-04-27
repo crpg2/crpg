@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
 
-import { AppCoin, AppLoom, LazyCharacterInventoryItemReforgeConfirmDialog, LazyCharacterInventoryItemUpgradeConfirmDialog, UButton, UiTooltipContent, UTable, UTooltip } from '#components'
-
 import type { ReforgeCost } from '~/composables/item/use-item-reforge'
 import type { ItemFlat } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
+import { AppCoin, AppLoom, LazyCharacterInventoryItemReforgeConfirmDialog, LazyCharacterInventoryItemUpgradeConfirmDialog, UButton, UiTooltipContent, UTable, UTooltip } from '#components'
 import { useItemReforge } from '~/composables/item/use-item-reforge'
 import { useUser } from '~/composables/user/use-user'
 import { getItemAggregations } from '~/services/item-search-service'
 import { createItemIndex } from '~/services/item-search-service/indexator'
-import { getItemUpgrades, getRankColor, getRelativeEntries } from '~/services/item-service'
+import { checkAvailabilityUpgradeOrReforgeUserItem, getItemUpgrades, getRankColor, getRelativeEntries } from '~/services/item-service'
 
 const { userItem } = defineProps<{
   userItem: UserItem
@@ -20,18 +19,20 @@ const { userItem } = defineProps<{
 const emit = defineEmits<{
   upgrade: [upgradeRank: number]
   reforge: []
+  close: [boolean]
 }>()
 
 const { t } = useI18n()
 const { user } = useUser()
 
-const item = computed(() => createItemIndex([userItem.item]).at(0)!)
-const aggregationConfig = computed(() => getItemAggregations(item.value, false))
+const availableUpgradeOrReforgeUserItem = computed(() => checkAvailabilityUpgradeOrReforgeUserItem(t, userItem))
 
 const {
   state: itemUpgrades,
   isLoading: isLoadingitemUpgrades,
 } = useAsyncState(async () => createItemIndex(await getItemUpgrades(userItem.item.baseId)), [])
+
+const aggregationConfig = computed(() => itemUpgrades.value.length ? getItemAggregations(itemUpgrades.value.at(0)!, false) : {})
 
 const baseItem = computed(() => itemUpgrades.value.find(iu => iu.rank === 0))
 
@@ -49,8 +50,18 @@ const overlay = useOverlay()
 async function upgrade(nextItem: ItemFlat) {
   const upgradeItemConfirm = overlay.create(LazyCharacterInventoryItemUpgradeConfirmDialog)
   if (!(await upgradeItemConfirm.open({
-    item: item.value,
-    nextItem,
+    item: {
+      id: userItem.item.id,
+      baseId: userItem.item.baseId,
+      name: userItem.item.name,
+      rank: userItem.item.rank,
+    },
+    nextItem: {
+      id: nextItem.id,
+      baseId: nextItem.baseId,
+      name: nextItem.name,
+      rank: nextItem.rank,
+    },
   }))) {
     return
   }
@@ -65,8 +76,18 @@ async function reforge() {
 
   const reforgeItemConfirm = overlay.create(LazyCharacterInventoryItemReforgeConfirmDialog)
   if (!(await reforgeItemConfirm.open({
-    item: item.value,
-    newItem: baseItem.value,
+    item: {
+      id: userItem.item.id,
+      baseId: userItem.item.baseId,
+      name: userItem.item.name,
+      rank: userItem.item.rank,
+    },
+    newItem: {
+      name: baseItem.value.name,
+      baseId: baseItem.value.baseId,
+      id: baseItem.value.id,
+      rank: baseItem.value.rank,
+    },
     reforgeCost: reforgeCost.value,
   }))) {
     return
@@ -78,6 +99,7 @@ async function reforge() {
 const renderItemAction = (_item: ItemFlat) => {
   // reforge
   if (_item.rank === 0 && reforgeValidation.value.rank) {
+    // TODO: to cmp
     const reforgeTableInfoColumns: TableColumn<ReforgeCost>[] = [
       {
         header: t('character.inventory.item.reforge.tooltip.costTable.cols.rank.label'),
@@ -100,7 +122,7 @@ const renderItemAction = (_item: ItemFlat) => {
     return h(UTooltip, {}, {
       default: () => h(UButton, {
         variant: 'subtle',
-        disabled: !canReforge.value,
+        disabled: !availableUpgradeOrReforgeUserItem.value[0] || !canReforge.value,
         onClick: () => reforge(),
       }, () => [
         t('action.reforge'),
@@ -110,9 +132,11 @@ const renderItemAction = (_item: ItemFlat) => {
         h(UiTooltipContent, {
           title: t('character.inventory.item.reforge.tooltip.title'),
           description: t('character.inventory.item.reforge.tooltip.description'),
-          validation: !reforgeValidation.value.gold
-            ? t('character.inventory.item.reforge.validation.gold')
-            : undefined,
+          validation: !availableUpgradeOrReforgeUserItem.value[0]
+            ? availableUpgradeOrReforgeUserItem.value[1]
+            : !reforgeValidation.value.gold
+                ? t('character.inventory.item.reforge.validation.gold')
+                : undefined,
         }),
         // @ts-expect-error TODO:
         h(UTable, {
@@ -123,48 +147,61 @@ const renderItemAction = (_item: ItemFlat) => {
     })
   }
 
-  if (_item.rank <= item.value.rank) {
+  if (_item.rank <= userItem.item.rank) {
     return null
   }
 
   // upgrade
-  const notEnoughtPoints = user.value!.heirloomPoints < _item.rank - item.value.rank
+  const notEnoughtPoints = user.value!.heirloomPoints < _item.rank - userItem.item.rank
 
   return h(UTooltip, {}, {
     default: () => h(UButton, {
       variant: 'subtle',
-      disabled: notEnoughtPoints,
+      disabled: !availableUpgradeOrReforgeUserItem.value[0] || notEnoughtPoints,
       onClick: () => upgrade(_item),
     }, () => [
       t('action.upgrade'),
-      h(AppLoom, { point: _item.rank - item.value.rank }),
+      h(AppLoom, { point: _item.rank - userItem.item.rank }),
     ]),
     content: () => h(UiTooltipContent, {
       title: t('character.inventory.item.upgrade.tooltip.title'),
       description: t('character.inventory.item.upgrade.tooltip.description'),
-      validation: notEnoughtPoints
-        ? t('character.inventory.item.upgrade.validation.loomPoints')
-        : undefined,
+      validation: !availableUpgradeOrReforgeUserItem.value[0]
+        ? availableUpgradeOrReforgeUserItem.value[1]
+        : notEnoughtPoints
+          ? t('character.inventory.item.upgrade.validation.loomPoints')
+          : undefined,
     }),
   })
+}
+
+const onCancel = () => {
+  emit('close', false)
 }
 </script>
 
 <template>
-  <UModal
+  <UDrawer
+    direction="top"
+    :handle="false"
     :ui="{
-      content: 'max-w-5/6',
-      title: 'flex items-center justify-center gap-4',
-      body: 'p-0!',
+      container: 'w-full max-w-(--ui-container) mx-auto',
+      header: 'flex items-center justify-center gap-4',
     }"
+    @close="onCancel"
   >
-    <template #title>
-      <UiTextView variant="h2">
-        {{ $t('character.inventory.item.upgrade.upgradesTitle') }}
-      </UiTextView>
+    <template #header>
+      <div class="flex flex-1 items-center justify-center gap-4">
+        <UiTextView variant="h2">
+          {{ $t('character.inventory.item.upgrade.upgradesTitle') }}
+        </UiTextView>
+        <AppLoom :point="user!.heirloomPoints" size="xl" />
+        <AppCoin :value="user!.gold" size="xl" />
+      </div>
 
-      <AppLoom :point="user!.heirloomPoints" size="xl" />
-      <AppCoin :value="user!.gold" size="xl" />
+      <div class="mr-0 ml-auto">
+        <UButton color="neutral" variant="ghost" icon="i-lucide-x" @click="onCancel" />
+      </div>
     </template>
 
     <template #body>
@@ -180,5 +217,5 @@ const renderItemAction = (_item: ItemFlat) => {
         </template>
       </ItemTableUpgrades>
     </template>
-  </UModal>
+  </UDrawer>
 </template>

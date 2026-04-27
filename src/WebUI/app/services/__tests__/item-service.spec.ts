@@ -1,7 +1,7 @@
 import type { PartialDeep } from 'type-fest'
 import type { Mock } from 'vitest'
 
-import { assertType, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import type { EquippedItemsBySlot } from '~/models/character'
 import type { Item, ItemFlag, ItemFlat, ItemSlot, ItemWeaponComponent } from '~/models/item'
@@ -33,13 +33,6 @@ vi.mock('#imports', () => ({
 }))
 
 describe('item service', () => {
-  it('extractItem', () => {
-    const userItem = { userId: 1, item: { id: 2 } as unknown as Item }
-    const res = itemService.extractItem(userItem)
-    expect(res).toEqual({ id: 2 })
-    assertType<Item>(res)
-  })
-
   it('getItemImage', () => {
     expect(itemService.getItemImage('crpg_aserai_noble_sword_2_t5')).toEqual(
       '/items/crpg_aserai_noble_sword_2_t5.webp',

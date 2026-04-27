@@ -55,6 +55,12 @@ export default withNuxt(
       },
     },
   },
+  {
+    files: ['**/*.md'],
+    rules: {
+      'perfectionist/sort-imports': 'off',
+    },
+  },
 ).overrideRules({
   '@typescript-eslint/no-unused-vars': ['warn'],
   'unused-imports/no-unused-vars': ['warn'],

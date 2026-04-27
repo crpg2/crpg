@@ -1,6 +1,8 @@
-﻿using Crpg.Application.Common.Interfaces;
+﻿using Crpg.Application.Common;
+using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Items.Models;
+using Crpg.Application.Marketplace.Services;
 using Crpg.Application.Settlements.Models;
 using Crpg.Application.System.Commands;
 using Crpg.Domain.Entities;
@@ -18,11 +20,13 @@ namespace Crpg.Application.UTest.System;
 
 public class SeedDataCommandTest : TestBase
 {
-    private static readonly Region[] Regions = Enum.GetValues(typeof(Region)).Cast<Region>().ToArray();
+    private static readonly Region[] Regions = [.. Enum.GetValues<Region>().Cast<Region>()];
     private static readonly IExperienceTable ExperienceTable = Mock.Of<IExperienceTable>();
-    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
-    private static readonly Mock<IUserNotificationService> UserNotificationsService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly IActivityLogService ActivityLogService = Mock.Of<IActivityLogService>();
+    private static readonly IUserNotificationService UserNotificationsService = Mock.Of<IUserNotificationService>();
     private static readonly ICharacterService CharacterService = Mock.Of<ICharacterService>();
+    private static readonly IItemService ItemService = Mock.Of<IItemService>();
+    private static readonly IMarketplaceService MarketplaceService = Mock.Of<IMarketplaceService>();
     private static readonly ICampaignMap CampaignMap = Mock.Of<ICampaignMap>();
 
     [Test]
@@ -30,22 +34,13 @@ public class SeedDataCommandTest : TestBase
     {
         Mock<IItemsSource> itemsSource = new();
         itemsSource.Setup(s => s.LoadItems())
-            .ReturnsAsync(new[]
-            {
+            .ReturnsAsync(
+            [
                 new ItemCreation { Id = "a", Type = ItemType.HeadArmor, Armor = new ItemArmorComponentViewModel() },
                 new ItemCreation { Id = "b", Type = ItemType.HeadArmor, Armor = new ItemArmorComponentViewModel() },
-            });
+            ]);
 
-        SeedDataCommand.Handler seedDataCommandHandler = new(
-            ActDb,
-            itemsSource.Object,
-            CreateAppEnv(),
-            CharacterService,
-            ExperienceTable,
-            CampaignMap,
-            Mock.Of<ISettlementsSource>(),
-            ActivityLogService.Object,
-            UserNotificationsService.Object);
+        SeedDataCommand.Handler seedDataCommandHandler = CreateSeedDataCommandHandler(itemsSource: itemsSource.Object);
         await seedDataCommandHandler.Handle(new SeedDataCommand(), CancellationToken.None);
 
         var items = await AssertDb.Items.ToArrayAsync();
@@ -71,21 +66,12 @@ public class SeedDataCommandTest : TestBase
 
         Mock<IItemsSource> itemsSource = new();
         itemsSource.Setup(s => s.LoadItems())
-            .ReturnsAsync(new[]
-            {
+            .ReturnsAsync(
+            [
                 new ItemCreation { Id = "a", Type = ItemType.HeadArmor, Armor = new ItemArmorComponentViewModel { HeadArmor = 9 } },
-            });
+            ]);
 
-        SeedDataCommand.Handler seedDataCommandHandler = new(
-            ActDb,
-            itemsSource.Object,
-            CreateAppEnv(),
-            CharacterService,
-            ExperienceTable,
-            CampaignMap,
-            Mock.Of<ISettlementsSource>(),
-            ActivityLogService.Object,
-            UserNotificationsService.Object);
+        SeedDataCommand.Handler seedDataCommandHandler = CreateSeedDataCommandHandler(itemsSource: itemsSource.Object);
         await seedDataCommandHandler.Handle(new SeedDataCommand(), CancellationToken.None);
 
         var items = await AssertDb.Items.ToArrayAsync();
@@ -99,23 +85,18 @@ public class SeedDataCommandTest : TestBase
     {
         Mock<IItemsSource> itemsSource = new();
         itemsSource.SetupSequence(s => s.LoadItems())
-            .ReturnsAsync(new[]
-            {
+            .ReturnsAsync(
+            [
                 new ItemCreation { Id = "a", Type = ItemType.HeadArmor, Price = 20, Armor = new ItemArmorComponentViewModel(), Rank = 0 },
                 new ItemCreation { Id = "b", Type = ItemType.HeadArmor, Price = 20, Armor = new ItemArmorComponentViewModel(), Rank = 1 },
-            })
-            .ReturnsAsync(Array.Empty<ItemCreation>());
+            ])
+            .ReturnsAsync([]);
 
-        SeedDataCommand.Handler seedDataCommandHandler = new(
-            ActDb,
-            itemsSource.Object,
-            CreateAppEnv(),
-            CharacterService,
-            ExperienceTable,
-            CampaignMap,
-            Mock.Of<ISettlementsSource>(),
-            ActivityLogService.Object,
-            UserNotificationsService.Object);
+        SeedDataCommand.Handler seedDataCommandHandler = CreateSeedDataCommandHandler(
+            itemsSource: itemsSource.Object,
+            activityLogService: new ActivityLogService(new MetadataService()),
+            userNotificationsService: new UserNotificationService(new MetadataService()),
+            itemService: new ItemService(Mock.Of<IDateTime>(), new Constants()));
         await seedDataCommandHandler.Handle(new SeedDataCommand(), CancellationToken.None);
         var items = await AssertDb.Items.ToArrayAsync();
         Assert.That(items.Length, Is.EqualTo(2));
@@ -166,21 +147,12 @@ public class SeedDataCommandTest : TestBase
     {
         Mock<IItemsSource> itemsSource = new();
         itemsSource.Setup(s => s.LoadItems())
-            .ReturnsAsync(new[]
-            {
+            .ReturnsAsync(
+            [
                 new ItemCreation { Id = "crpg_disabled_a", Type = ItemType.HeadArmor, Armor = new ItemArmorComponentViewModel { HeadArmor = 9 } },
-            });
+            ]);
 
-        SeedDataCommand.Handler seedDataCommandHandler = new(
-            ActDb,
-            itemsSource.Object,
-            CreateAppEnv(),
-            CharacterService,
-            ExperienceTable,
-            CampaignMap,
-            Mock.Of<ISettlementsSource>(),
-            ActivityLogService.Object,
-            UserNotificationsService.Object);
+        SeedDataCommand.Handler seedDataCommandHandler = CreateSeedDataCommandHandler(itemsSource: itemsSource.Object);
         await seedDataCommandHandler.Handle(new SeedDataCommand(), CancellationToken.None);
 
         var items = await AssertDb.Items.ToArrayAsync();
@@ -193,27 +165,20 @@ public class SeedDataCommandTest : TestBase
     {
         Mock<ISettlementsSource> settlementsSource = new();
         settlementsSource.Setup(s => s.LoadCampaignSettlements())
-            .ReturnsAsync(new[]
-            {
+            .ReturnsAsync(
+            [
                 new SettlementCreation { Name = "a", Position = new Point(0, 0) },
                 new SettlementCreation { Name = "b", Position = new Point(0, 0) },
-            });
+            ]);
 
         Mock<ICampaignMap> campaignMapMock = new();
         campaignMapMock
             .Setup(m => m.TranslatePositionForRegion(It.IsAny<Point>(), It.IsAny<Region>(), It.IsAny<Region>()))
             .Returns((Point point, Region _, Region _) => point);
 
-        SeedDataCommand.Handler handler = new(
-            ActDb,
-            Mock.Of<IItemsSource>(),
-            CreateAppEnv(),
-            CharacterService,
-            ExperienceTable,
-            campaignMapMock.Object,
-            settlementsSource.Object,
-            ActivityLogService.Object,
-            UserNotificationsService.Object);
+        SeedDataCommand.Handler handler = CreateSeedDataCommandHandler(
+            settlementsSource: settlementsSource.Object,
+            campaignMap: campaignMapMock.Object);
         await handler.Handle(new SeedDataCommand(), CancellationToken.None);
 
         var settlements = await AssertDb.Settlements.ToArrayAsync();
@@ -272,8 +237,8 @@ public class SeedDataCommandTest : TestBase
 
         Mock<ISettlementsSource> settlementsSource = new();
         settlementsSource.Setup(s => s.LoadCampaignSettlements())
-            .ReturnsAsync(new[]
-            {
+            .ReturnsAsync(
+            [
                 new SettlementCreation
                 {
                     Name = "a",
@@ -282,7 +247,7 @@ public class SeedDataCommandTest : TestBase
                     Position = new Point(3, 4),
                     Scene = "def",
                 },
-            });
+            ]);
 
         Mock<ICampaignMap> campaignMapMock = new();
         campaignMapMock
@@ -298,16 +263,9 @@ public class SeedDataCommandTest : TestBase
             .Setup(m => m.TranslatePositionForRegion(It.IsAny<Point>(), Region.Eu, Region.Oc))
             .Returns(new Point(5, 6));
 
-        SeedDataCommand.Handler handler = new(
-            ActDb,
-            Mock.Of<IItemsSource>(),
-            CreateAppEnv(),
-            CharacterService,
-            ExperienceTable,
-            campaignMapMock.Object,
-            settlementsSource.Object,
-            ActivityLogService.Object,
-            UserNotificationsService.Object);
+        SeedDataCommand.Handler handler = CreateSeedDataCommandHandler(
+            settlementsSource: settlementsSource.Object,
+            campaignMap: campaignMapMock.Object);
         await handler.Handle(new SeedDataCommand(), CancellationToken.None);
 
         var settlements = await AssertDb.Settlements.ToArrayAsync();
@@ -340,25 +298,39 @@ public class SeedDataCommandTest : TestBase
 
         Mock<ISettlementsSource> settlementsSource = new();
         settlementsSource.Setup(s => s.LoadCampaignSettlements())
-            .ReturnsAsync(Array.Empty<SettlementCreation>());
+            .ReturnsAsync([]);
 
-        SeedDataCommand.Handler handler = new(
-            ActDb,
-            Mock.Of<IItemsSource>(),
-            CreateAppEnv(),
-            CharacterService,
-            ExperienceTable,
-            CampaignMap,
-            settlementsSource.Object,
-            ActivityLogService.Object,
-            UserNotificationsService.Object);
+        SeedDataCommand.Handler handler = CreateSeedDataCommandHandler(settlementsSource: settlementsSource.Object);
         await handler.Handle(new SeedDataCommand(), CancellationToken.None);
 
         var settlements = await AssertDb.Settlements.ToArrayAsync();
         Assert.That(settlements.Length, Is.EqualTo(0));
     }
 
-    private IApplicationEnvironment CreateAppEnv()
+    private SeedDataCommand.Handler CreateSeedDataCommandHandler(
+        IItemsSource? itemsSource = null,
+        ISettlementsSource? settlementsSource = null,
+        ICampaignMap? campaignMap = null,
+        IActivityLogService? activityLogService = null,
+        IUserNotificationService? userNotificationsService = null,
+        IItemService? itemService = null,
+        IMarketplaceService? marketplaceService = null)
+    {
+        return new SeedDataCommand.Handler(
+            ActDb,
+            itemsSource ?? Mock.Of<IItemsSource>(),
+            CreateAppEnv(),
+            CharacterService,
+            ExperienceTable,
+            campaignMap ?? CampaignMap,
+            settlementsSource ?? Mock.Of<ISettlementsSource>(),
+            activityLogService ?? ActivityLogService,
+            userNotificationsService ?? UserNotificationsService,
+            itemService ?? ItemService,
+            marketplaceService ?? MarketplaceService);
+    }
+
+    private static IApplicationEnvironment CreateAppEnv()
     {
         Mock<IApplicationEnvironment> appEnv = new();
         appEnv.Setup(e => e.Environment).Returns(HostingEnvironment.Production);

@@ -1,5 +1,6 @@
-import type { RestrictionType as _RestrictionType } from '#api'
 import type { ValueOf } from 'type-fest'
+
+import type { RestrictionType as _RestrictionType } from '#api'
 
 import type { Clan, ClanMember, ClanMemberRole } from './clan'
 import type { Item, ItemSlot, ItemType } from './item'
@@ -14,16 +15,19 @@ export interface User {
   platformUserId: string
   name: string
   gold: number
+  reservedGold: number
+  heirloomPoints: number
+  reservedHeirloomPoints: number
   avatar: string | null
   region: Region
   isDonor: boolean
   isRecent: boolean
   role: Role
-  heirloomPoints: number
   experienceMultiplier: number
   activeCharacterId: number | null
   unreadNotificationsCount: number
   clanMembership: UserClanMembership | null
+  activeMarketplaceListingsCount: number
 }
 
 export interface UserPublic
@@ -31,11 +35,11 @@ export interface UserPublic
 
 export interface UserPrivate extends UserPublic {
   gold: number
+  heirloomPoints: number
   note: string
   createdAt: Date
   updatedAt: Date
   isDonor: boolean
-  heirloomPoints: number
   experienceMultiplier: number
   activeCharacterId: number | null
 }
@@ -52,6 +56,7 @@ export interface UserItem {
   createdAt: Date
   isBroken: boolean
   isPersonal: boolean
+  isListedOnMarketplace: boolean
   clanArmoryLender: ClanMember | null
 }
 

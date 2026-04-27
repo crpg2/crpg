@@ -38,7 +38,7 @@ public class MappingProfile : Profile
             foreach (var i in interfaces)
             {
                 var methodInfo = i.GetMethod(MappingMethodName);
-                methodInfo?.Invoke(instance, new object[] { this });
+                methodInfo?.Invoke(instance, [this]);
             }
         }
     }

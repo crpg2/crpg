@@ -35,8 +35,10 @@ public record UpgradeUserItemCommand : IMediatorRequest<UserItemViewModel>
         {
             var user = await _db.Users
                 .AsSplitQuery()
-                .Include(u => u.Items.Where(ui => ui.Id == req.UserItemId))
+                .Include(u => u.Items)
                     .ThenInclude(ui => ui.Item)
+                .Include(u => u.Items)
+                    .ThenInclude(ui => ui.MarketplaceListingAssets)
                 .FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
 
             if (user == null)
@@ -60,6 +62,11 @@ public record UpgradeUserItemCommand : IMediatorRequest<UserItemViewModel>
             if (userItemToUpgrade.IsBroken)
             {
                 return new(CommonErrors.ItemBroken(userItemToUpgrade.ItemId));
+            }
+
+            if (userItemToUpgrade.MarketplaceListingAssets.Count != 0)
+            {
+                return new(CommonErrors.UserItemInMarketplace(userItemToUpgrade.Id));
             }
 
             if (userItemToUpgrade.Item!.Type == ItemType.Banner)

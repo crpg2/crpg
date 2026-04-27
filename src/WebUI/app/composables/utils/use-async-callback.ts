@@ -1,8 +1,8 @@
 import { makeDestructurable, noop } from '@vueuse/shared'
-import { useToast } from '#imports'
 import { delay } from 'es-toolkit'
 import { shallowRef } from 'vue'
 
+import { useToast } from '#imports'
 import { usePageLoading } from '~/composables/app/use-page-loading'
 
 export type AnyPromiseFn = (...args: any[]) => Promise<any>

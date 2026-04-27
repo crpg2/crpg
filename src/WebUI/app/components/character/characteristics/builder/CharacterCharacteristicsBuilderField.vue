@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { UTooltip } from '#components'
-
 import type { CharacteristicKey, CharacteristicSectionKey } from '~/models/character'
 import type { CharacteristicRequirement } from '~/services/character-service'
 
+import { UTooltip } from '#components'
 import { characteristicBonusByKey } from '~/services/character-service'
 
 const { requirement } = defineProps<{

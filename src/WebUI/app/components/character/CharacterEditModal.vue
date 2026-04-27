@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useVuelidate } from '@vuelidate/core'
-import { LazyAppConfirmActionDialog } from '#components'
 
 import type { Character } from '~/models/character'
 
+import { LazyAppConfirmActionDialog } from '#components'
 import { errorMessagesToString, maxLength, minLength, required } from '~/services/validators-service'
 
 const { character } = defineProps<{
