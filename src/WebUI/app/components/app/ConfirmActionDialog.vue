@@ -120,6 +120,7 @@ const onConfirm = async () => {
       <UButton
         variant="outline"
         size="xl"
+        block
         :label="$t('action.cancel')"
         data-aq-confirm-action="cancel"
         @click="() => {
@@ -130,6 +131,7 @@ const onConfirm = async () => {
       <UButton
         :disabled="$v.confirmModel.$invalid"
         size="xl"
+        block
         :label="confirmLabel ?? $t('action.confirm')"
         data-aq-confirm-action="submit"
         @click="async() => {
