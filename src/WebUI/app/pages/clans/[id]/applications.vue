@@ -2,10 +2,10 @@
 import type { TableColumn } from '@nuxt/ui'
 
 import { getPaginationRowModel } from '@tanstack/vue-table'
-import { UButton, UserMedia } from '#components'
 
 import type { ClanInvitation } from '~/models/clan'
 
+import { UButton, UserMedia } from '#components'
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanApplications } from '~/composables/clan/use-clan-applications'
 import { useUser } from '~/composables/user/use-user'
@@ -128,8 +128,10 @@ const columns: TableColumn<ClanInvitation>[] = [
       </UTable>
 
       <UiGridPagination
-        v-if="table?.tableApi"
-        :table-api="toRef(() => table!.tableApi)"
+        :page="pagination.pageIndex + 1"
+        :size="pagination.pageSize"
+        :total="table?.tableApi.getFilteredRowModel().rows.length ?? 0"
+        @update:page="(page) => table?.tableApi.setPageIndex(page - 1)"
       />
     </div>
   </UContainer>

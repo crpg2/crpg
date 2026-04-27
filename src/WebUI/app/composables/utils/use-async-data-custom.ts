@@ -1,7 +1,8 @@
-import type { KeysOf, PickFrom } from '#app/composables/asyncData'
 import type { AsyncData, AsyncDataOptions, NuxtApp, NuxtError } from 'nuxt/app'
 
 import { refreshNuxtData, useAsyncData } from 'nuxt/app'
+
+import type { KeysOf, PickFrom } from '#app/composables/asyncData'
 
 import { usePageLoading } from '~/composables/app/use-page-loading'
 import { usePollInterval } from '~/composables/utils/use-poll-interval'

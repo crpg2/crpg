@@ -7,7 +7,7 @@
   "defaultExperienceMultiplier": 1.0,
   "experienceMultiplierByGeneration": 0.03,
   "maxExperienceMultiplierForGeneration": 1.48,
-  "respecializePriceForLevel30": 5000,
+  "respecializePriceForLevel30": 3750,
   "respecializePriceHalfLife": 24,
   "freeRespecializeIntervalDays": 7,
   "freeRespecializePostWindowHours": 12,
@@ -79,5 +79,9 @@
   "campaignBattleHiringDurationHours": 12,
   "campaignMercenaryMaxWage": 100000,
   "campaignMercenaryNoteMaxLength": 64,
-  "campaignBattleSideBriefingNoteMaxLength": 500
+  "campaignBattleSideBriefingNoteMaxLength": 500,
+  "marketplaceListingDurationDays": 7,
+  "marketplaceActiveListingLimit": 10,
+  "marketplaceListingFeePerDay": 50,
+  "marketplaceGoldFeePercent": 5
 }

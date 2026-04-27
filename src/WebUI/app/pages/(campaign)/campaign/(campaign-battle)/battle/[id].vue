@@ -2,10 +2,9 @@
 import type { NavigationMenuItem } from '@nuxt/ui'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
-import { BattleFighterApplicationStatusBadge } from '#components'
-
 import type { BattleSide } from '~/models/campaign/battle'
 
+import { BattleFighterApplicationStatusBadge } from '#components'
 import { useBattleFighterApplications, useBattleFighterApplicationsProvider, useBattleFighters, useBattleFightersProvider, useMapBattle, useMapBattleProvider } from '~/composables/campaign/map/use-map-battle'
 import { useParty, usePartyState } from '~/composables/campaign/use-party'
 import { useUser } from '~/composables/user/use-user'

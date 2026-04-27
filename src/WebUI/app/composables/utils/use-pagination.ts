@@ -1,5 +1,7 @@
 import type { PaginationState } from '@tanstack/vue-table'
 
+import { ref } from 'vue'
+
 export const usePagination = (initialState?: Partial<PaginationState>) => {
   function getInitialPaginationState(): PaginationState {
     return {
@@ -11,8 +13,8 @@ export const usePagination = (initialState?: Partial<PaginationState>) => {
 
   const pagination = ref<PaginationState>(getInitialPaginationState())
 
-  function setPagination(payload: PaginationState) {
-    pagination.value = payload
+  function setPagination(payload: Partial<PaginationState>) {
+    pagination.value = { ...pagination.value, ...payload }
   }
 
   function resetPagination() {

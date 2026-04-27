@@ -3,6 +3,7 @@ using Crpg.Application.Common.Behaviors;
 using Crpg.Application.Common.Files;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Services;
+using Crpg.Application.Marketplace.Services;
 using Crpg.Application.Parties.Services;
 using Crpg.Sdk.Abstractions;
 using FluentValidation;
@@ -22,7 +23,7 @@ public static class DependencyInjection
         ExperienceTable experienceTable = new(constants);
         BattleScheduler campaignBattleScheduler = new();
 
-        services.AddAutoMapper(Assembly.GetExecutingAssembly())
+        services.AddAutoMapper(_ => { }, Assembly.GetExecutingAssembly())
             .AddMediator(o =>
             {
                 o.ServiceLifetime = ServiceLifetime.Scoped;
@@ -54,6 +55,7 @@ public static class DependencyInjection
             .AddSingleton<IItemsSource, FileItemsSource>()
             .AddSingleton<ISettlementsSource, FileSettlementsSource>()
             .AddScoped<IPartyTransferOfferValidationService, PartyTransferOfferValidationService>()
+            .AddSingleton<IMarketplaceService, MarketplaceService>()
             .AddValidatorsFromAssemblyContaining(typeof(DependencyInjection));
 
         return services;

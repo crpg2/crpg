@@ -3,10 +3,10 @@ import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState, GroupingState, SortingState, VisibilityState } from '@tanstack/vue-table'
 
 import { getFacetedRowModel, getFacetedUniqueValues, getGroupedRowModel, getPaginationRowModel } from '@tanstack/vue-table'
-import { AppCoin, BattleMercenaryApplicationStatusBadge, UButton, UiCollapsibleText, UiGridColumnHeader, UiGridColumnHeaderLabel, UiTooltipContent, UserMedia, UTooltip } from '#components'
 
 import type { BattleMercenaryApplication } from '~/models/campaign/battle'
 
+import { AppCoin, BattleMercenaryApplicationStatusBadge, UButton, UiCollapsibleText, UiGridColumnHeader, UiGridColumnHeaderLabel, UiTooltipContent, UserMedia, UTooltip } from '#components'
 import { BATTLE_MERCENARY_APPLICATION_STATUS } from '~/models/campaign/battle'
 
 const { mercenaryApplications, totalSlots, usedSlots, mercenaryApplicationId } = defineProps<{
@@ -270,8 +270,10 @@ const sorting = ref<SortingState>([])
     </UTable>
 
     <UiGridPagination
-      v-if="table?.tableApi"
-      :table-api="toRef(() => table!.tableApi)"
+      :page="pagination.pageIndex + 1"
+      :size="pagination.pageSize"
+      :total="table?.tableApi.getFilteredRowModel().rows.length ?? 0"
+      @update:page="(page) => table?.tableApi.setPageIndex(page - 1)"
     />
   </div>
 </template>

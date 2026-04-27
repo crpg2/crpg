@@ -83,58 +83,130 @@ const items = computed<DropdownMenuItem[][]>(() => [
 
 <template>
   <div class="flex items-center gap-4">
-    <UTooltip>
-      <AppCoin :value="user.gold" compact />
-      <template #content>
-        <UiTextView variant="p">
-          {{ t('user.field.gold') }}
-        </UiTextView>
-        <AppCoin :value="user.gold" />
-      </template>
-    </UTooltip>
-
-    <UTooltip :text="$t('user.field.heirloom')">
-      <AppLoom :point="user.heirloomPoints" />
-    </UTooltip>
-
-    <UserMedia
-      :user="mapUserToUserPublic(user)"
-      hidden-platform
-    />
-
-    <UDropdownMenu
-      :modal="false"
-      size="xl"
-      :items
+    <UChip
+      :show="Boolean(user.unreadNotificationsCount)"
+      inset
+      :text="user.unreadNotificationsCount"
+      size="2xl"
+      :ui="{ base: 'bg-success text-white h-3.5 min-w-3.5 text-[8px] ring-0' }"
     >
-      <template #default="{ open }">
-        <UChip
-          :show="Boolean(user.unreadNotificationsCount)"
-          inset
-          size="2xl"
-          :ui="{ base: 'bg-success' }"
+      <UFieldGroup>
+        <UTooltip
+          :ui="{
+            content: 'flex-col gap-4 justify-start items-start',
+          }"
         >
           <UButton
-            variant="outline"
+            as="div"
+            variant="soft"
             color="neutral"
-            icon="i-lucide-ellipsis-vertical"
-            active-variant="subtle"
-            :active="open"
-            size="xl"
-          />
-        </UChip>
-      </template>
+          >
+            <AppCoin :value="user.gold" compact>
+              <template v-if="user.reservedGold" #trailing>
+                <span class="text-xs text-dimmed">({{ $n(user.reservedGold, 'compact') }})</span>
+              </template>
+            </AppCoin>
+          </UButton>
 
-      <template #notifications-leading>
-        <UChip
-          :show="Boolean(user.unreadNotificationsCount)"
-          inset
-          size="lg"
-          :ui="{ base: 'bg-success' }"
+          <template #content>
+            <UiDataCell>
+              <template #leftContent>
+                <UiTextView variant="p">
+                  {{ t('user.field.gold') }}
+                </UiTextView>
+              </template>
+              <AppCoin :value="user.gold" />
+            </UiDataCell>
+
+            <UiDataCell v-if="user.reservedGold">
+              <template #leftContent>
+                <UiTextView variant="p">
+                  {{ t('user.field.reservedGold') }}
+                </UiTextView>
+              </template>
+              <AppCoin :value="user.reservedGold" />
+            </UiDataCell>
+          </template>
+        </UTooltip>
+
+        <UTooltip
+          :ui="{
+            content: 'flex-col gap-4 justify-start items-start',
+          }"
         >
-          <UIcon name="crpg:carillon" class="size-4.5" />
-        </UChip>
-      </template>
-    </UDropdownMenu>
+          <UButton
+            as="div"
+            variant="soft"
+            color="neutral"
+          >
+            <AppLoom :point="user.heirloomPoints">
+              <template v-if="user.reservedHeirloomPoints" #trailing>
+                <span class="text-xs text-dimmed">({{ $n(user.reservedHeirloomPoints, 'compact') }})</span>
+              </template>
+            </AppLoom>
+          </UButton>
+
+          <template #content>
+            <UiDataCell>
+              <template #leftContent>
+                <UiTextView variant="p">
+                  {{ t('user.field.heirloomPoints') }}
+                </UiTextView>
+              </template>
+              <AppLoom :point="user.heirloomPoints" />
+            </UiDataCell>
+
+            <UiDataCell v-if="user.reservedHeirloomPoints">
+              <template #leftContent>
+                <UiTextView variant="p">
+                  {{ t('user.field.reservedHeirloomPoints') }}
+                </UiTextView>
+              </template>
+              <AppLoom :point="user.reservedHeirloomPoints" />
+            </UiDataCell>
+          </template>
+        </UTooltip>
+
+        <UButton
+          as="div"
+          variant="soft"
+          color="neutral"
+        >
+          <UserMedia
+            :user="mapUserToUserPublic(user)"
+            hidden-platform
+          />
+        </UButton>
+
+        <UDropdownMenu
+          :modal="false"
+          size="xl"
+          :items
+        >
+          <template #default="{ open }">
+            <UButton
+              variant="soft"
+              color="neutral"
+              icon="i-lucide-ellipsis-vertical"
+              active-variant="subtle"
+              :active="open"
+              size="xl"
+            />
+          </template>
+
+          <template #notifications-leading>
+            <UChip
+              :show="Boolean(user.unreadNotificationsCount)"
+              inset
+              size="lg"
+              :ui="{ base: 'bg-success text-white h-2.5 min-w-2.5 text-[7px]' }"
+              :text="user.unreadNotificationsCount"
+            >
+              <UIcon name="crpg:carillon" class="size-4.5" />
+            </UChip>
+          </template>
+        </UDropdownMenu>
+      </UFieldGroup>
+    </UChip>
   </div>
 </template>

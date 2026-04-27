@@ -20,22 +20,14 @@ public record AddItemToClanArmoryCommand : IMediatorRequest<ClanArmoryItemViewMo
     public int ClanId { get; init; }
 
     public int UserItemId { get; init; }
-    internal class Handler : IMediatorRequestHandler<AddItemToClanArmoryCommand, ClanArmoryItemViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService, IActivityLogService activityLogService) : IMediatorRequestHandler<AddItemToClanArmoryCommand, ClanArmoryItemViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<AddItemToClanArmoryCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly IClanService _clanService;
-        private readonly IActivityLogService _activityLogService;
-
-        public Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService, IActivityLogService activityLogService)
-        {
-            _db = db;
-            _mapper = mapper;
-            _clanService = clanService;
-            _activityLogService = activityLogService;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly IClanService _clanService = clanService;
+        private readonly IActivityLogService _activityLogService = activityLogService;
 
         public async ValueTask<Result<ClanArmoryItemViewModel>> Handle(AddItemToClanArmoryCommand req, CancellationToken cancellationToken)
         {

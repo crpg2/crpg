@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { useStorage } from '@vueuse/core'
-import { ClanArmoryItemDetail } from '#components'
 import { h } from 'vue'
 
 import type { OpenedItem } from '~/composables/item/use-item-detail'
 import type { GroupedCompareItemsResult } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
 
+import { ClanArmoryItemDetail } from '#components'
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanArmory } from '~/composables/clan/use-clan-armory'
 import { useItemDetail } from '~/composables/item/use-item-detail'
@@ -128,7 +128,6 @@ const renderClanArmoryItemDetail = (opendeItem: OpenedItem, compareItemsResult: 
 
     <div class="mx-auto max-w-2xl">
       <ItemGrid
-        v-if="Boolean(items.length)"
         v-model:sorting="sortingModel"
         :items
         :sorting-config="sortingConfig"

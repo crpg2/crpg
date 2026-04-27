@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useClipboard } from '@vueuse/core'
-import { UInputNumber } from '#components'
 import { maximumLevel, minimumLevel } from '~root/data/constants.json'
 
 import type {
@@ -11,6 +10,7 @@ import type {
   CharacterWeaponProficiencies,
 } from '~/models/character'
 
+import { UInputNumber } from '#components'
 import { useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic-builder'
 import { CHARACTERISTIC_CONVERSION } from '~/models/character'
 import {
@@ -311,7 +311,7 @@ const onShare = () => {
   </div>
 </template>
 
-<style lang="css">
+<style lang="css" scoped>
 .statsGrid {
   grid-template-areas:
     'attributes skills stats'

@@ -2,12 +2,12 @@
 <!-- TODO: FIXME: REFACTORING -->
 <script setup lang="ts">
 import { useThrottleFn } from '@vueuse/core'
-import { ItemCard, ItemDetail, UBadge, UIcon, UiInputNumberSlider } from '#components'
 
 import type { ItemStack, ItemStackUpdate } from '~/models/campaign/party'
 import type { GroupedCompareItemsResult } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
 
+import { ItemCard, ItemDetail, UBadge, UIcon, UiInputNumberSlider } from '#components'
 import { useItemDetail } from '~/composables/item/use-item-detail'
 
 const { from, to } = defineProps<{

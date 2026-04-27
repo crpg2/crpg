@@ -23,7 +23,6 @@ public partial class MainViewModel : ObservableObject
     {
         Steam,
         Epic,
-        Xbox,
     }
 
     public static readonly string ProgramDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "Crpg Launcher");
@@ -59,6 +58,12 @@ public partial class MainViewModel : ObservableObject
 
     [ObservableProperty]
     private bool _isCrpgInstalled;
+
+    [ObservableProperty]
+    private bool _isSteamInitialized;
+
+    [ObservableProperty]
+    private bool _isSteamLoggedIn;
 
     public MainViewModel()
     {
@@ -149,7 +154,10 @@ public partial class MainViewModel : ObservableObject
         IsUpdating = false;
         ApplySettings();
         Version = ReadTextFromResource("pack://application:,,,/launcherversion.txt");
+
         _ = CheckNewVersion();
+        _ = UpdateGameFilesAsync(autoRequested: true);
+
         NotifyUI();
     }
 
@@ -175,12 +183,6 @@ public partial class MainViewModel : ObservableObject
             if (platform == Platform.Steam)
             {
                 GameLocation = ResolveBannerlordSteamInstallation();
-                _ = HandleGameLocationChange(platform);
-            }
-
-            if (platform == Platform.Xbox)
-            {
-                GameLocation = ResolveBannerlordXboxInstallation();
                 _ = HandleGameLocationChange(platform);
             }
         }
@@ -238,6 +240,48 @@ public partial class MainViewModel : ObservableObject
     {
         bool canUpdate = !IsUpdating && !IsVerifying && GameLocation != null;
         return canUpdate;
+    }
+
+    private async Task IsSteamRunning()
+    {
+        while (!IsSteamInitialized)
+        {
+            using RegistryKey? key = Registry.CurrentUser.OpenSubKey(@"Software\Valve\Steam\ActiveProcess");
+            if (key == null)
+            {
+                await Task.Delay(50);
+                continue;
+            }
+
+            object? pidObj = key.GetValue("pid");
+            if (pidObj != null && (int)pidObj > 0)
+            {
+                Process steamProc = Process.GetProcessById((int)pidObj);
+                // Ensure that steam pid are steam (causes by reuse pid after steam crashes)
+                IsSteamInitialized = steamProc.ProcessName.Contains("steam", StringComparison.CurrentCultureIgnoreCase);
+            }
+
+            await Task.Delay(50);
+        }
+
+        while (!IsSteamLoggedIn)
+        {
+            using RegistryKey? key = Registry.CurrentUser.OpenSubKey(@"Software\Valve\Steam\ActiveProcess");
+            if (key == null)
+            {
+                continue;
+            }
+
+            object? activeUser = key.GetValue("ActiveUser");
+            IsSteamLoggedIn = activeUser != null && (int)activeUser > 0;
+        }
+    }
+
+    private async Task EnsureSteamReadyAsync()
+    {
+        WriteToConsole("Waiting for Steam to be ready...");
+        await IsSteamRunning();
+        WriteToConsole("Steam is ready.");
     }
 
     private async Task CheckNewVersion()
@@ -368,7 +412,7 @@ public partial class MainViewModel : ObservableObject
 
     private bool HashExist()
     {
-        return File.Exists(Path.Combine(ProgramDataPath, ConfigFileName));
+        return File.Exists(Path.Combine(ProgramDataPath, HashFileName));
     }
 
     private void NotifyUI()
@@ -443,7 +487,7 @@ public partial class MainViewModel : ObservableObject
     }
 
     [RelayCommand(CanExecute = nameof(CanStartCrpg))]
-    private void StartCrpg()
+    private async Task StartCrpg()
     {
         if (GameLocation == null)
         {
@@ -451,6 +495,20 @@ public partial class MainViewModel : ObservableObject
             return;
         }
 
+        if (SelectedPlatform == Platform.Steam)
+        {
+            // For Steam platform, ensure Steam is ready before launching
+            if (!IsSteamInitialized)
+            {
+                WriteToConsole("Steam is not running. Starting Steam...");
+                // Start Steam if not initialized
+                Process.Start(new ProcessStartInfo { FileName = "steam://main/open", UseShellExecute = true, });
+            }
+
+            await EnsureSteamReadyAsync();
+        }
+
+        WriteToConsole("Launching Bannerlord...");
         Process.Start(new ProcessStartInfo
         {
             WorkingDirectory = GameLocation?.ProgramWorkingDirectory ?? string.Empty,
@@ -462,7 +520,7 @@ public partial class MainViewModel : ObservableObject
     }
 
     [RelayCommand(CanExecute = nameof(CanUpdate))]
-    private async Task UpdateGameFilesAsync()
+    private async Task UpdateGameFilesAsync(bool autoRequested = false)
     {
         IsUpdating = true;
         if (!HashExist())
@@ -536,6 +594,11 @@ public partial class MainViewModel : ObservableObject
             WriteToConsole("Your game is Up To Date");
             IsGameUpToDate = true;
             IsUpdating = false;
+            return;
+        }
+
+        if (autoRequested)
+        {
             return;
         }
 
@@ -630,7 +693,7 @@ public partial class MainViewModel : ObservableObject
                     string tempPath = Path.Combine(Path.GetTempPath(), fileToDownload);
                     IProgress<double> currentProgress = new Progress<double>(p =>
                     {
-                       Progress = p * 100;
+                        Progress = p * 100;
                     });
                     await chunkedRequest.DownloadAsync(tempPath, currentProgress);
 
