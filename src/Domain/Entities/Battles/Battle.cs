@@ -13,6 +13,9 @@ public class Battle : AuditableEntity
     /// <summary>The date the battle takes place. Null if the battle is not yet scheduled.</summary>
     public DateTime? ScheduledFor { get; set; }
 
+    /// <summary>The game server instance running this battle. Null if not yet claimed.</summary>
+    public string? GameServer { get; set; }
+
     public List<BattleFighter> Fighters { get; set; } = [];
     public List<BattleFighterApplication> FighterApplications { get; set; } = [];
     public List<BattleParticipant> Participants { get; set; } = [];

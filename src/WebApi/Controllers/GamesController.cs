@@ -1,5 +1,7 @@
 using Crpg.Application.ActivityLogs.Commands;
 using Crpg.Application.ActivityLogs.Models;
+using Crpg.Application.Battles.Commands;
+using Crpg.Application.Battles.Models;
 using Crpg.Application.Clans.Models;
 using Crpg.Application.Clans.Queries;
 using Crpg.Application.Common.Results;
@@ -84,4 +86,16 @@ public class GamesController : BaseController
     {
         return ResultToActionAsync(Mediator.Send(req));
     }
+
+    /// <summary>
+    /// Returns the live battle for this instance, or claims the next scheduled one.
+    /// </summary>
+    [HttpPost("campaign/battles")]
+    public Task<ActionResult<Result<GameBattleViewModel>>> ClaimScheduledBattle(
+        [FromQuery] Region region, [FromQuery] string instance) =>
+        ResultToActionAsync(Mediator.Send(new StartScheduledBattleCommand
+        {
+            Region = region,
+            Instance = instance,
+        }));
 }
