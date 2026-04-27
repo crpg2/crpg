@@ -684,6 +684,10 @@ character:
       count: '... | {count} item | {count} items'
       sum: 'worth {sum}'
 
+    crossbowRequirementWarning:
+      title: Crossbow STR requirement not met
+      description: '{item} requires {required} STR, you have {current} STR. Item performance will be degraded.'
+
     item:
       sell:
         action: Sell item

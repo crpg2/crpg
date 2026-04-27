@@ -18,6 +18,7 @@ import { useItemDetail } from '~/composables/item/use-item-detail'
 import { useUser } from '~/composables/user/use-user'
 import { useUserItemPresetActions } from '~/composables/user/use-user-item-presets'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
+import { ITEM_TYPE } from '~/models/item'
 import { validateItemNotMeetRequirement } from '~/services/character-service'
 
 const { user } = useUser()
@@ -34,6 +35,15 @@ const {
   upkeepIsHigh,
 } = useCharacterItems()
 
+const { characterCharacteristics, healthPoints } = useCharacterCharacteristic()
+
+const invalidEquippedCrossbow = computed(() =>
+  Object.values(equippedItemsBySlot.value).find(userItem =>
+    userItem.item.type === ITEM_TYPE.Crossbow
+    && validateItemNotMeetRequirement(userItem.item, characterCharacteristics.value),
+  ),
+)
+
 const { onDragEnd, onDragStart, dragging } = useInventoryDnD()
 const { onQuickEquip, onQuickUnEquip } = useInventoryQuickEquip()
 
@@ -46,8 +56,6 @@ const {
   onRemoveFromClanArmory,
   onReturnToClanArmory,
 } = useCharacterInventory()
-
-const { characterCharacteristics, healthPoints } = useCharacterCharacteristic()
 
 const hasArmoryItems = computed(() => userItems.value.some(ui => Boolean(ui.clanArmoryLender)))
 
@@ -315,6 +323,25 @@ const createPreset = async () => {
       :style="{ top: `calc(${mainHeaderHeight}px + 1rem)` }"
       class="sticky col-span-2 space-y-3 self-start"
     >
+      <UAlert
+        v-if="invalidEquippedCrossbow"
+        color="error"
+        variant="outline"
+        icon="crpg:alert"
+      >
+        <template #title>
+          {{ $t('character.inventory.crossbowRequirementWarning.title') }}
+        </template>
+
+        <template #description>
+          {{ $t('character.inventory.crossbowRequirementWarning.description', {
+            item: invalidEquippedCrossbow.item.name,
+            required: invalidEquippedCrossbow.item.requirement,
+            current: characterCharacteristics.attributes.strength,
+          }) }}
+        </template>
+      </UAlert>
+
       <CharacterStats
         :characteristics="characterCharacteristics"
         :items-overall-stats="itemsOverallStats"
