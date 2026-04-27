@@ -3,10 +3,10 @@ import type { TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState } from '@tanstack/vue-table'
 
 import { getPaginationRowModel } from '@tanstack/vue-table'
-import { ClanRole, LazyClanActionLeaveConfirmDialog, LazyClanMemberDetailModal, UInput, UserMedia } from '#components'
 
 import type { ClanMember, ClanMemberRole } from '~/models/clan'
 
+import { ClanRole, LazyClanActionLeaveConfirmDialog, LazyClanMemberDetailModal, UInput, UserMedia } from '#components'
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanApplications } from '~/composables/clan/use-clan-applications'
 import { useClanMembers } from '~/composables/clan/use-clan-members'
@@ -357,7 +357,12 @@ const columns: TableColumn<ClanMember>[] = [
         </template>
       </UTable>
 
-      <UiGridPagination v-if="table?.tableApi" :table-api="toRef(() => table!.tableApi)" />
+      <UiGridPagination
+        :page="pagination.pageIndex + 1"
+        :size="pagination.pageSize"
+        :total="table?.tableApi.getFilteredRowModel().rows.length ?? 0"
+        @update:page="(page) => table?.tableApi.setPageIndex(page - 1)"
+      />
     </div>
   </UContainer>
 </template>

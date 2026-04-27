@@ -1,7 +1,6 @@
-import { useI18n } from '#imports'
-
 import type { UserItem, UserItemPreset, UserItemPresetSlot, UserItemPresetSlotUpdate, UserItemsBySlot } from '~/models/user'
 
+import { useI18n } from '#imports'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { ITEM_SLOT } from '~/models/item'
 import { USER_QUERY_KEYS } from '~/queries'

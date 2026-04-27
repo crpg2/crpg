@@ -1,11 +1,11 @@
 import { createSharedComposable, useToggle } from '@vueuse/core'
-import { useI18n, useToast } from '#imports'
 import { readonly, ref } from 'vue'
 
 import type { EquippedItemId } from '~/models/character'
 import type { ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
+import { useI18n, useToast } from '#imports'
 import { useCharacterItems } from '~/composables/character/use-character-items'
 import { useUser } from '~/composables/user/use-user'
 import { getAvailableSlotsByItem, getUnEquipItems } from '~/services/item-service'

@@ -28,7 +28,7 @@ const { settings } = useAppConfig()
       />
 
       <UCard class="relative overflow-visible py-7">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-default px-3">
+        <div class="absolute top-0 left-1/2 -translate-1/2 bg-default px-3">
           <UiTextView variant="h3" class="text-primary">
             {{ $t('welcome.bonusTitle') }}
           </UiTextView>

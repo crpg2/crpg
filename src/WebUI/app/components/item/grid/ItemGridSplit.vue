@@ -12,10 +12,9 @@ import type { SortingConfig } from '~/services/item-search-service'
 
 import { useItemDetail } from '~/composables/item/use-item-detail'
 import { ITEM_TYPE } from '~/models/item'
-import { getAggregationsConfig, getFacetsByItemType, getFilterFn } from '~/services/item-search-service'
-import { aggregationsConfig } from '~/services/item-search-service/aggregations'
+import { getAggregationsConfig, getFacetsByItemType, sortByItemType } from '~/services/item-search-service'
 import { createItemIndex } from '~/services/item-search-service/indexator'
-import { extractItem, getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
+import { getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
 
 const {
   sortingConfig,
@@ -69,11 +68,7 @@ const columnFilters = computed<ColumnFiltersState>(() => [
 const columns: TableColumn<GroupedItem>[] = [
   { accessorFn: row => row.group, id: 'group' },
   { accessorFn: row => row.item.id, id: 'id' },
-  {
-    accessorFn: row => row.item.type,
-    id: 'type',
-    filterFn: getFilterFn(aggregationsConfig.type!),
-  },
+  { accessorFn: row => row.item.type, id: 'type', sortingFn: sortByItemType },
   { accessorFn: row => row.item.price, id: 'price' },
   { accessorFn: row => row.item.rank, id: 'rank' },
   { accessorFn: row => row.item.name, id: 'name' },
@@ -101,8 +96,7 @@ const { isOpen } = useItemDetail()
 const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
   return groupItemsByTypeAndWeaponClass(
     // find the open items
-    createItemIndex(items.value.filter(wrapper => isOpen(wrapper.item.id))
-      .map(extractItem)),
+    createItemIndex(items.value.filter(wrapper => isOpen(wrapper.item.id))),
   )
     .filter(group => group.items.length >= 2) // there is no point in comparing 1 item
     .map(group => ({

@@ -1,4 +1,5 @@
 import type { GetUsersSearchData, RestrictionViewModel } from '#api'
+import type { UserPrivate, UserPublic, UserRestriction, UserRestrictionCreation } from '~/models/user'
 
 import {
   getRestrictions as _getRestrictions,
@@ -8,9 +9,6 @@ import {
   postRestrictions,
   putUsersByUserIdNote,
 } from '#api/sdk.gen'
-
-import type { UserPrivate, UserPublic, UserRestriction, UserRestrictionCreation } from '~/models/user'
-
 import { USER_RESTRICTION_STATUS } from '~/models/user'
 
 const checkIsRestrictionActive = (
@@ -26,7 +24,7 @@ const checkIsRestrictionActive = (
   )
 }
 
-const checkIsDateExpired = (createdAt: Date, duration: number) => new Date().getTime() > new Date(createdAt).getTime() + duration
+const checkIsDateExpired = (createdAt: Date, duration: number) => Date.now() > new Date(createdAt).getTime() + duration
 
 const mapRestrictions = (restrictions: RestrictionViewModel[]): UserRestriction[] => {
   return restrictions.map((r) => {

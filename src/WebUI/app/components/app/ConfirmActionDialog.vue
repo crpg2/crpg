@@ -1,21 +1,23 @@
 <script setup lang="ts">
+import type { ModalProps } from '@nuxt/ui'
+
 import { useVuelidate } from '@vuelidate/core'
 
 import { errorMessagesToString, sameAs } from '~/services/validators-service'
 
-const props = withDefaults(defineProps<{
+const {
+  confirm,
+  noSelect = true,
+  undone = true,
+} = defineProps<{
   title?: string
   description?: string
-
   confirm: string
-
   confirmLabel?: string
   noSelect?: boolean
   undone?: boolean
-}>(), {
-  noSelect: true,
-  undone: true,
-})
+  ui?: ModalProps['ui']
+}>()
 
 const emit = defineEmits<{
   close: [boolean]
@@ -26,7 +28,7 @@ const confirmModel = ref<string>('')
 const $v = useVuelidate(
   {
     confirmModel: {
-      sameAs: sameAs(props.confirm),
+      sameAs: sameAs(confirm),
     },
   },
   { confirmModel },
@@ -50,6 +52,7 @@ const onConfirm = async () => {
     :ui="{
       body: 'space-y-5 text-center',
       footer: 'flex items-center justify-center gap-4',
+      content: ui?.content,
     }"
   >
     <slot />
@@ -113,20 +116,28 @@ const onConfirm = async () => {
       </div>
     </template>
 
-    <template #footer>
+    <template #footer="{ close }">
       <UButton
         variant="outline"
         size="xl"
+        block
         :label="$t('action.cancel')"
         data-aq-confirm-action="cancel"
-        @click="onCancel"
+        @click="() => {
+          onCancel()
+          close()
+        }"
       />
       <UButton
         :disabled="$v.confirmModel.$invalid"
         size="xl"
+        block
         :label="confirmLabel ?? $t('action.confirm')"
         data-aq-confirm-action="submit"
-        @click="onConfirm"
+        @click="async() => {
+          await onConfirm()
+          close()
+        }"
       />
     </template>
   </UModal>
