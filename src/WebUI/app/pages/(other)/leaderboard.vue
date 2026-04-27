@@ -3,12 +3,12 @@ import type { SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
 import type { SortingState } from '@tanstack/table-core'
 
 import { useRouteQuery } from '@vueuse/router'
-import { CompetitiveRank, LazyCompetitiveRankTable, UButton, UIcon, UiGridColumnHeader, UiGridColumnHeaderLabel, UInput, UModal, USelect, UserMedia, UTooltip } from '#components'
 
 import type { CharacterClass } from '~/models/character'
 import type { CharacterCompetitiveNumbered } from '~/models/competitive'
 import type { GameMode } from '~/models/game-mode'
 
+import { CompetitiveRank, LazyCompetitiveRankTable, UButton, UIcon, UiGridColumnHeader, UiGridColumnHeaderSelectFilter, UInput, UModal, UserMedia, UTooltip } from '#components'
 import { useUser } from '~/composables/user/use-user'
 import { CHARACTER_CLASS } from '~/models/character'
 import { GAME_MODE } from '~/models/game-mode'
@@ -125,36 +125,24 @@ const columns = computed<TableColumn<CharacterCompetitiveNumbered>[]>(() => [
   {
     accessorKey: 'class',
     enableGlobalFilter: false,
-    header: ({ column }) => {
+    header: () => {
       return h(UiGridColumnHeader, {
         label: t('leaderboard.table.cols.class'),
         withFilter: true,
-        filtered: column.getIsFiltered(),
-        onResetFilter: () => column.setFilterValue(undefined),
+        filtered: Boolean(characterClassModel.value),
+        onResetFilter: () => characterClassModel.value = undefined,
       }, {
         filter() {
-          // TODO: use facets
-          return h(USelect, {
-            'variant': 'none',
+          return h(UiGridColumnHeaderSelectFilter, {
+            'label': t('leaderboard.table.cols.class'),
             'multiple': false,
-            'trailing-icon': '',
-            'size': 'xl',
-            'ui': {
-              content: 'min-w-fit',
-              base: 'px-0 py-0',
-            },
             'items': Object.values(CHARACTER_CLASS).map<SelectItem>(charClass => ({
               value: charClass,
               icon: `crpg:${characterClassToIcon[charClass]}`,
               label: t(`character.class.${charClass}`),
             })),
-            'modelValue': column.getFilterValue(),
-            'onUpdate:modelValue': column.setFilterValue,
-          }, {
-            default: () => h(UiGridColumnHeaderLabel, {
-              label: t('leaderboard.table.cols.class'),
-              withFilter: true,
-            }),
+            'modelValue': characterClassModel.value,
+            'onUpdate:modelValue': (val: unknown) => characterClassModel.value = val as CharacterClass,
           })
         },
       })

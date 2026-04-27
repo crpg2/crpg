@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SelectItem, TableColumn } from '@nuxt/ui'
+import type { AcceptableValue, SelectItem, TableColumn } from '@nuxt/ui'
 import type { ColumnFiltersState, RowSelectionState, SortingState } from '@tanstack/vue-table'
 
 import {
@@ -8,6 +8,10 @@ import {
   getFacetedUniqueValues,
   getPaginationRowModel,
 } from '@tanstack/vue-table'
+
+import type { ItemFlat, ItemType, WeaponClass } from '~/models/item'
+import type { AggregationOptions } from '~/services/item-search-service/aggregations'
+
 import {
   AppCoin,
   ItemParam,
@@ -17,18 +21,13 @@ import {
   UCheckbox,
   UContainer,
   UiGridColumnHeader,
-  UiGridColumnHeaderLabel,
+  UiGridColumnHeaderSelectFilter,
   UiInputClear,
   UiInputRange,
   UInput,
-  USelect,
   UTooltip,
 } from '#components'
 import { h } from '#imports'
-
-import type { ItemFlat, ItemType, WeaponClass } from '~/models/item'
-import type { AggregationOptions } from '~/services/item-search-service/aggregations'
-
 import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useUser } from '~/composables/user/use-user'
 import { useUserItemsProvider } from '~/composables/user/use-user-items'
@@ -295,44 +294,33 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
           },
         }),
         filter: () => {
-          if (options.view === AGGREGATION_VIEW.Checkbox) {
-            const _buckets = Object.entries(getBuckets(column.getFacetedUniqueValues()))
-            return h(USelect, {
-              'class': 'w-full',
-              'multiple': true,
-              'variant': 'none',
-              'size': 'xl',
-              'trailing-icon': '', // TODO:
-              'ui': {
-                content: 'min-w-fit',
-                base: 'px-0 py-0',
-              },
-              'items': _buckets.length
-                ? _buckets.map<SelectItem>(([bucket, count]) => {
-                    const humanBucket = humanizeBucket(column.id as keyof ItemFlat, bucket)
-                    return {
-                      value: bucket,
-                      label: `${humanBucket.label}${count ? ` (${count})` : ''}`,
-                      ...(humanBucket.icon && { icon: `crpg:${humanBucket.icon}` }),
-                    }
-                  })
-                : [
+          if (options.view === AGGREGATION_VIEW.Range) {
+            return undefined
+          }
+
+          const _buckets = Object.entries(getBuckets(column.getFacetedUniqueValues()))
+          return h(UiGridColumnHeaderSelectFilter, {
+            'class': 'w-full',
+            'label': t(`item.aggregations.${header.id}.title`),
+            'items': _buckets.length
+              ? _buckets.map<SelectItem>(([bucket, count]) => {
+                  const humanBucket = humanizeBucket(column.id as keyof ItemFlat, bucket)
+                  return {
+                    value: bucket,
+                    label: `${humanBucket.label}${count ? ` (${count})` : ''}`,
+                    ...(humanBucket.icon && { icon: `crpg:${humanBucket.icon}` }),
+                  }
+                })
+              : [
                     {
                       label: t('not-found'),
                       icon: 'crpg:error',
                       disabled: true,
                     } satisfies SelectItem,
-                  ],
-              'modelValue': column.getFilterValue(),
-              'onUpdate:modelValue': column.setFilterValue,
-            }, {
-              default: () => h(UiGridColumnHeaderLabel, {
-                label: t(`item.aggregations.${header.id}.title`),
-                withFilter: true,
-              }),
-            })
-          }
-          return undefined
+                ],
+            'modelValue': column.getFilterValue() as AcceptableValue | AcceptableValue[] | undefined,
+            'onUpdate:modelValue': column.setFilterValue,
+          })
         },
       })
     },

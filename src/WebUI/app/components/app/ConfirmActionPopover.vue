@@ -45,29 +45,29 @@ const [open, toggle] = useToggle()
         </template>
 
         <template #footer>
-          <UiClearFieldGroup>
-            <UButton
-              variant="subtle"
-              icon="crpg:close"
-              color="neutral"
-              :label="$t('action.cancel')"
-              @click="() => {
-                $emit('cancel')
-                toggle(false)
-              }"
-            />
+          <UButton
+            variant="subtle"
+            icon="crpg:close"
+            color="neutral"
+            block
+            :label="$t('action.cancel')"
+            @click="() => {
+              $emit('cancel')
+              toggle(false)
+            }"
+          />
 
-            <UButton
-              icon="crpg:check"
-              variant="subtle"
-              :label="confirmLabel ?? $t('action.ok')"
-              :disabled="confirmDisabled"
-              @click="() => {
-                $emit('confirm')
-                toggle(false)
-              }"
-            />
-          </UiClearFieldGroup>
+          <UButton
+            icon="crpg:check"
+            variant="subtle"
+            :label="confirmLabel ?? $t('action.ok')"
+            :disabled="confirmDisabled"
+            block
+            @click="() => {
+              $emit('confirm')
+              toggle(false)
+            }"
+          />
         </template>
       </UiCard>
     </template>

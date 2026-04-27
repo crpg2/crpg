@@ -1,10 +1,11 @@
-import type { CreateClientConfig } from '#api/client.gen'
 import type { FetchResponse } from 'ofetch'
+
+import { delay } from 'es-toolkit'
+
+import type { CreateClientConfig } from '#api/client.gen'
 
 import { useNuxtApp, useRoute } from '#app'
 import { useToast } from '#imports'
-import { delay } from 'es-toolkit'
-
 import { getToken, login } from '~/services/auth-service'
 
 import type { Platform } from './models/platform'

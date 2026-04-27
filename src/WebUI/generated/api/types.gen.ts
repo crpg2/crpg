@@ -693,7 +693,7 @@ export type GameUserViewModelResult = {
  * GeoJSON MultiPoint geometry
  */
 export type GeoJsonMultiPoint = {
-    type: 'MultiPoint';
+    readonly type: 'MultiPoint';
     coordinates: Array<Array<number>>;
 };
 
@@ -701,7 +701,7 @@ export type GeoJsonMultiPoint = {
  * GeoJSON Point geometry
  */
 export type GeoJsonPoint = {
-    type: 'Point';
+    readonly type: 'Point';
     coordinates: Array<number>;
 };
 
@@ -709,7 +709,7 @@ export type GeoJsonPoint = {
  * GeoJSON Polygon geometry
  */
 export type GeoJsonPolygon = {
-    type: 'Polygon';
+    readonly type: 'Polygon';
     coordinates: Array<Array<Array<number>>>;
 };
 

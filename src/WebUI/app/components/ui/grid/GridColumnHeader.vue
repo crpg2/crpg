@@ -82,7 +82,6 @@ const [open, toggle] = useToggle()
             ? 'crpg:arrow-up-narrow-wide'
             : 'crpg:arrow-down-narrow-wide')
           : 'crpg:arrow-up-down'"
-
         @click="$emit('sort')"
       />
     </UTooltip>

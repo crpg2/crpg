@@ -112,23 +112,23 @@ const [open, toggle] = useToggle()
         </UiTooltipContent>
 
         <template #footer>
-          <UiClearFieldGroup>
-            <UButton
-              variant="soft"
-              :label="$t('action.cancel')"
-              @click="() => {
-                toggle(false)
-              }"
-            />
+          <UButton
+            variant="soft"
+            block
+            :label="$t('action.cancel')"
+            @click="() => {
+              toggle(false)
+            }"
+          />
 
-            <UButton
-              :label="$t('action.sell')"
-              @click="() => {
-                $emit('sell')
-                toggle(false)
-              }"
-            />
-          </UiClearFieldGroup>
+          <UButton
+            block
+            :label="$t('action.sell')"
+            @click="() => {
+              $emit('sell')
+              toggle(false)
+            }"
+          />
         </template>
       </UCard>
     </template>

@@ -1,5 +1,6 @@
-import type { Platform as _Platform } from '#api'
 import type { ValueOf } from 'type-fest'
+
+import type { Platform as _Platform } from '#api'
 
 export const PLATFORM = {
   Steam: 'Steam',

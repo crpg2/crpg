@@ -1,3 +1,7 @@
+import type { ItemStack, ItemStackUpdate } from '~/models/campaign/party'
+import type { SettlementPublic, SettlementType } from '~/models/campaign/settlement'
+import type { User } from '~/models/user'
+
 import {
   getSettlements as _getSettlements,
   getSettlementsBySettlementId,
@@ -6,11 +10,6 @@ import {
   putSettlementsBySettlementId,
   putSettlementsBySettlementIdItems,
 } from '#api/sdk.gen'
-
-import type { ItemStack, ItemStackUpdate } from '~/models/campaign/party'
-import type { SettlementPublic, SettlementType } from '~/models/campaign/settlement'
-import type { User } from '~/models/user'
-
 import { SETTLEMENT_TYPE } from '~/models/campaign/settlement'
 
 export const settlementIconByType: Record<SettlementType, string> = {

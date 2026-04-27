@@ -1,5 +1,6 @@
-import type { RestrictionType as _RestrictionType } from '#api'
 import type { ValueOf } from 'type-fest'
+
+import type { RestrictionType as _RestrictionType } from '#api'
 
 import type { Clan, ClanMember, ClanMemberRole } from './clan'
 import type { Item, ItemSlot, ItemType } from './item'

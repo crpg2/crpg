@@ -2,10 +2,9 @@
 import type { TableColumn } from '@nuxt/ui'
 import type { LocationQuery, LocationQueryValueRaw } from 'vue-router'
 
-import { AppCoin, MarketplaceHistoryFilterByUser, MarketplaceListingAssetView, UBadge, UiGridColumnHeader, UserMedia } from '#components'
-
 import type { MarketplaceListingHistory, MartetplaceListingsHistoryFilter } from '~/models/marketplace'
 
+import { AppCoin, MarketplaceHistoryFilterByUser, MarketplaceListingAssetView, UBadge, UiGridColumnHeader, UserMedia } from '#components'
 import { useUser } from '~/composables/user/use-user'
 import { SomeRole } from '~/models/role'
 import { getMarketplaceListingsHistory } from '~/services/marketplace-service'

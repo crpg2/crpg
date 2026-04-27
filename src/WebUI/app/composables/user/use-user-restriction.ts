@@ -1,7 +1,6 @@
-import { useState } from '#imports'
-
 import type { UserRestrictionPublic } from '~/models/user'
 
+import { useState } from '#imports'
 import { getUserRestriction } from '~/services/user-service'
 
 export function useUserRestriction() {

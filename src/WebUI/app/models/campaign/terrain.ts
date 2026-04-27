@@ -1,6 +1,7 @@
-import type { TerrainType as _TerrainType, GeoJsonPolygon } from '#api'
 import type { Feature, FeatureCollection, Polygon } from 'geojson'
 import type { ValueOf } from 'type-fest'
+
+import type { TerrainType as _TerrainType, GeoJsonPolygon } from '#api'
 
 export const TERRAIN_TYPE = {
   Plain: 'Plain',

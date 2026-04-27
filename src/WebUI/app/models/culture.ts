@@ -1,5 +1,6 @@
-import type { Culture as _Culture } from '#api'
 import type { ValueOf } from 'type-fest'
+
+import type { Culture as _Culture } from '#api'
 
 export const CULTURE = {
   Neutral: 'Neutral',
