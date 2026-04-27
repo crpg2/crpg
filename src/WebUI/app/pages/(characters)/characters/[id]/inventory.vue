@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { vOnLongPress } from '@vueuse/components'
 import { useStorage } from '@vueuse/core'
-import { CharacterInventoryItemDetail, LazyCharacterInventoryItemUpgradesModal, LazyCharacterInventoryPresetCreateModal, LazyCharacterInventoryPresetsDrawer } from '#components'
+import { CharacterInventoryItemDetail, LazyCharacterInventoryItemUpgradesDrawer, LazyCharacterInventoryPresetCreateModal, LazyCharacterInventoryPresetsDrawer } from '#components'
 
 import type { OpenedItem } from '~/composables/item/use-item-detail'
 import type { GroupedCompareItemsResult, ItemSlot } from '~/models/item'
@@ -83,7 +83,7 @@ const items = computed(() => {
 })
 
 const onUpgrades = (userItem: UserItem, openedItem: OpenedItem) => {
-  const itemUpgradesModal = overlay.create(LazyCharacterInventoryItemUpgradesModal)
+  const itemUpgradesModal = overlay.create(LazyCharacterInventoryItemUpgradesDrawer)
 
   const update = (newUserItem: UserItem) => {
     itemUpgradesModal.close()

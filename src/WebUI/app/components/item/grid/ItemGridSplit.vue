@@ -15,7 +15,7 @@ import { ITEM_TYPE } from '~/models/item'
 import { getAggregationsConfig, getFacetsByItemType, getFilterFn } from '~/services/item-search-service'
 import { aggregationsConfig } from '~/services/item-search-service/aggregations'
 import { createItemIndex } from '~/services/item-search-service/indexator'
-import { extractItem, getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
+import { getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
 
 const {
   sortingConfig,
@@ -101,8 +101,7 @@ const { isOpen } = useItemDetail()
 const compareItemsResult = computed<GroupedCompareItemsResult[]>(() => {
   return groupItemsByTypeAndWeaponClass(
     // find the open items
-    createItemIndex(items.value.filter(wrapper => isOpen(wrapper.item.id))
-      .map(extractItem)),
+    createItemIndex(items.value.filter(wrapper => isOpen(wrapper.item.id))),
   )
     .filter(group => group.items.length >= 2) // there is no point in comparing 1 item
     .map(group => ({

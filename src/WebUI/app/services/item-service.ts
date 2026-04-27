@@ -37,8 +37,6 @@ import { aggregationsConfig } from './item-search-service/aggregations'
 
 export const getItems = async (): Promise<Item[]> => (await _getItems({ })).data!
 
-export const extractItem = <T extends { item: Item }>(wrapper: T): Item => wrapper.item
-
 export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 
 export const getItemUpgrades = async (baseId: string): Promise<Item[]> => (await getItemsUpgradesByBaseId({ path: { baseId } })).data!
@@ -692,10 +690,73 @@ export const getRankColor = (rank: number) => {
   }
 }
 
-export const canUpgradeItem = (itemType: ItemType) => itemType !== ITEM_TYPE.Banner
-export const canUpgradeUserItem = (userItem: UserItem) => canUpgradeItem(userItem.item.type) && !userItem.clanArmoryLender && !userItem.isBroken
-export const canSell = (userItem: UserItem) => userItem.item.rank <= 0 && !userItem.clanArmoryLender && !userItem.isPersonal
-export const canAddedToClanArmory = (userItem: UserItem) => userItem.item.type !== ITEM_TYPE.Banner && !userItem.isPersonal
+export const canUpgradeItem = (itemType: ItemType) =>
+  itemType !== ITEM_TYPE.Banner
+
+export const checkAvailabilityUpgradeOrReforgeUserItem = (
+  t: ReturnType<typeof useI18n>['t'],
+  userItem: UserItem,
+): [boolean, string] => {
+  if (userItem.isListedOnMarketplace) {
+    return [false, t('character.inventory.item.cantUpgrade.notify.reasonListedOnMarketplace')]
+  }
+
+  if (userItem.clanArmoryLender) {
+    return [false, t('character.inventory.item.cantUpgrade.notify.reasonInClanArmory')]
+  }
+
+  if (userItem.isBroken) {
+    return [false, t('character.inventory.item.cantUpgrade.notify.reasonBroken')]
+  }
+
+  return [true, '']
+}
+
+export const checkAvailabilitySellUserItem = (
+  t: ReturnType<typeof useI18n>['t'],
+  userItem: UserItem,
+): [boolean, string] => {
+  if (userItem.isPersonal) {
+    return [false, t('character.inventory.item.cantSell.notify.reasonPersonal')]
+  }
+
+  if (userItem.clanArmoryLender) {
+    return [false, t('character.inventory.item.cantSell.notify.reasonInClanArmory')]
+  }
+
+  if (userItem.isListedOnMarketplace) {
+    return [false, t('character.inventory.item.cantSell.notify.reasonListedOnMarketplace')]
+  }
+
+  if (userItem.isBroken) {
+    return [false, t('character.inventory.item.cantSell.notify.reasonBroken')]
+  }
+
+  if (userItem.item.rank > 0) {
+    return [false, t('character.inventory.item.cantSell.notify.reasonHasRank')]
+  }
+
+  return [true, '']
+}
+
+export const checkAvailabilityManageClanArmoryUserItem = (
+  t: ReturnType<typeof useI18n>['t'],
+  userItem: UserItem,
+): [boolean, string] => {
+  if (userItem.isPersonal) {
+    return [false, t('character.inventory.item.cantManageClanArmory.notify.reasonPersonal')]
+  }
+
+  if (userItem.isListedOnMarketplace) {
+    return [false, t('character.inventory.item.cantManageClanArmory.notify.reasonListedOnMarketplace')]
+  }
+
+  if (userItem.isBroken) {
+    return [false, t('character.inventory.item.cantManageClanArmory.notify.reasonBroken')]
+  }
+
+  return [true, '']
+}
 
 const _fallbackReforgeCost = 0
 

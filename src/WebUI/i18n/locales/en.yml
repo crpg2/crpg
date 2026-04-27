@@ -134,6 +134,7 @@ nav:
   main:
     Characters: Characters
     Shop: Shop
+    Marketplace: Marketplace
     Clans: Clans
     Moderator: Moderator
     Admin: Admin
@@ -685,6 +686,7 @@ character:
 
     item:
       sell:
+        action: Sell item
         title: Sell for {price}
         confirm: Are you sure you want to sell the item?
         freeRefund: 100% refund for the next {dateTime}
@@ -729,7 +731,7 @@ character:
           costTable:
             cols:
               rank:
-                label: Item rank
+                label: Rank
               cost:
                 label: Price
               looms:
@@ -745,9 +747,30 @@ character:
           title: Item is in the clan armory
           notify:
             warning: The item is in the clan armory. Get it from there first.
+      listedOnMarketplace:
+        tooltip:
+          title: Item is listed on the marketplace
+      showMarketplaceListings:
+        title: Show marketplace listings with this item
+      cantUpgrade:
+        notify:
+          reasonListedOnMarketplace: Item is listed on the marketplace and cannot be upgraded
+          reasonInClanArmory: Item is in the clan armory and cannot be upgraded
+          reasonBroken: Item is broken and cannot be upgraded
+      cantSell:
+        notify:
+          reasonPersonal: Personal items cannot be sold
+          reasonInClanArmory: Item is in the clan armory and cannot be sold
+          reasonListedOnMarketplace: Item is listed on the marketplace and cannot be sold
+          reasonBroken: Item is broken and cannot be sold
+          reasonHasRank: Upgraded items cannot be sold
+      cantManageClanArmory:
+        notify:
+          reasonPersonal: Personal items cannot be added to the clan armory
+          reasonListedOnMarketplace: Item is listed on the marketplace and cannot be managed
+          reasonBroken: Item is broken and cannot be added to the clan armory
     filter:
       hideInArmory: Hide the items in the armory
-      showInArmory: Show the items in the armory
 
   doll:
     slot:
@@ -826,7 +849,7 @@ shop:
       desc: This weapon has several modes of use
       secondary: 'Current mode (secondary): {weaponClass}'
       primary: 'Primary mode: {weaponClass}'
-    expensive: You can't afford the upkeep of this item
+    expensive: Too costly to maintain
   compare:
     add: Add to compare
     addAll: Add all to compare
@@ -980,7 +1003,9 @@ user:
   field:
     name: User name
     gold: Gold
-    heirloom: Heirlooms points
+    reservedGold: Reserved gold
+    heirloomPoints: Heirloom points
+    reservedHeirloomPoints: Reserved heirloom points
   settings:
     title: Account Settings
     dangerZone: Danger zone
@@ -992,7 +1017,7 @@ user:
       dialog:
         title: You are about to delete your account
         desc: 'FINAL WARNING: This process CANNOT BE UNDONE - Deleting your account means it is GONE PERMANENTLY. Any and all data relating to your time in cRPG, characters, items, levels and more WILL be PERMANENTLY erased. We CANNOT recover data once this is actioned.'
-        enterToConfirm: 'Delete my account {userName} with {heirloomPoints} loom points and {gold} gold'
+        enterToConfirm: 'Delete my account {userName} with {heirloomPoints} heirloom points and {gold} gold'
       notify:
         success: Your account has now been deleted.
   restriction:
@@ -1501,8 +1526,8 @@ activityLog:
     ServerJoined: The user has joined the server
     ChatMessageSent: 'Wrote a message: {message} {instance}'
     TeamHit: 'Dealt {damage} damage to {targetUser} {instance}'
-    ClanCreated: 'The Сlan {clan} was created'
-    ClanDeleted: 'The Сlan {clan} was deleted'
+    ClanCreated: 'The Clan {clan} was created'
+    ClanDeleted: 'The Clan {clan} was deleted'
     ClanApplicationCreated: 'The application to join {clan} has been created'
     ClanApplicationDeclined: 'The application to join {clan} has been declined'
     ClanApplicationAccepted: 'The application to join {clan} has been approved'
@@ -1513,8 +1538,14 @@ activityLog:
     ClanArmoryRemoveItem: 'Item {userItem} removed from clan {clan} armory'
     ClanArmoryReturnItem: 'Item {userItem} was returned from clan {clan} armory'
     ClanArmoryBorrowItem: 'Item {userItem} was borrowed from clan {clan} armory'
+    MarketplaceListingCreated: 'The marketplace listing #{listingId} was created. Listing Fee {listingFee}, gold fee {goldFee} {marketplaceListingDetails}'
+    MarketplaceListingCancelled: 'The marketplace listing #{listingId} was cancelled. Gold fee {goldFee} {marketplaceListingDetails}'
+    MarketplaceListingAccepted: 'The marketplace listing #{listingId} was accepted. Seller {seller}, gold fee {goldFee} {marketplaceListingDetails}'
+    MarketplaceListingInvalidated: 'The marketplace listing #{listingId} was invalidated. Gold fee {goldFee} {marketplaceListingDetails}'
+    MarketplaceListingExpired: 'The marketplace listing #{listingId} was expired. Gold fee {goldFee} {marketplaceListingDetails}'
 
 notification:
+
   ItemReturned:
     title: Item returned
     tpl: 'The item {item} has been removed from your inventory. {refundedGold} {refundedHeirloomPoints} has been refunded'
@@ -1574,6 +1605,22 @@ notification:
   BattleParticipantKickedToExParticipant:
     title: Removed from battle
     tpl: 'You have been removed from the battle {battle}'
+
+  MarketplaceListingAcceptedToSeller:
+    title: Your marketplace listing accepted
+    tpl: 'Your listing #{listingId} on the marketplace has been accepted by {buyer}{br}{marketplaceListingDetails}{br}You have additionally paid {goldFee} as a fee'
+
+  MarketplaceListingAcceptedToBuyer:
+    title: You have accepted marketplace listing
+    tpl: 'You have accepted listing #{listingId} on the marketplace from {seller}{br}{marketplaceListingDetails}'
+
+  MarketplaceListingInvalidated:
+    title: Marketplace listing invalidated
+    tpl: 'Your marketplace listing #{listingId} has been invalidated because you no longer have resources. The reserved resources have been refunded{br}{marketplaceListingDetails}{br}You were also refunded {goldFee} as a fee'
+
+  MarketplaceListingExpired:
+    title: Marketplace listing expired
+    tpl: 'Your marketplace listing #{listingId} has expired. The reserved resources have been refunded{br}{marketplaceListingDetails}{br}You were also refunded {goldFee} as a fee'
 
 leaderboard:
   title: Leaderboard
@@ -1739,3 +1786,87 @@ campaign:
     AttackSettlement: Attack
     JoinBattle: Join to
     TransferOfferParty: Transfer offer
+
+marketplace:
+  currency:
+    gold: Gold
+    heirloomPoints: Heirloom Points
+  filter:
+    currencyMode:
+      Any: Any
+      None: None
+      CustomRange: Custom range
+    selectItemType: Select item type
+    orSeparator: Or
+    chooseItem: Choose item
+  createListing:
+    title: Create Listing
+    personal: Personal
+    validation:
+      hasTradeValue: Choose an item or set gold/heirloom points greater than 0
+      toast: Listing and request must each contain an item or amount greater than 0
+    offer:
+      label: Offer
+      selectItem: Choose offer item
+      goldMutualExclusion: Setting a gold amount in the offer will disable setting a gold amount in the request, and vice versa
+      heirloomPointsMutualExclusion: Setting a heirloom points amount in the offer will disable setting a heirloom points amount in the request, and vice versa
+    request:
+      label: Request
+      selectItem: Choose request item
+      goldMutualExclusion: Setting a gold amount in the request will disable setting a gold amount in the offer, and vice versa
+      heirloomPointsMutualExclusion: Setting a heirloom points amount in the request will disable setting a heirloom points amount in the offer, and vice versa
+    fees:
+      listingFee:
+        label: Listing fee
+        description: A fixed fee to list your offer for {days} days
+        nonRefundable: This fee is non-refundable
+      goldCommission:
+        label: Gold commission
+        description: A commission fee of {percent}% on the gold amount. This fee is reserved and is refunded if the offer is cancelled before a trade is made
+      totalUpfront:
+        label: Total deducted at creation
+        description: The total amount of gold that will be deducted at the time of offer creation. This includes the listing fee and any applicable commission fees
+  page:
+    columns:
+      seller: Seller
+      buyer: Buyer
+      offer: Offer
+      request: Request
+      expiresIn: Expires in
+      acceptedAt: Accepted at
+      goldFee: Gold Fee
+    expiryTooltip:
+      created: Created
+      expires: Expires
+    actions:
+      delete: Delete
+      accept: Accept
+    deletePopover:
+      title: 'Will be returned:'
+      goldFee: Gold fee
+      gold: Gold
+      heirloomPoints: Heirloom points
+    acceptDialog:
+      title: Accept Offer
+      titleFrom: Accept offer from
+      youWillReceive: You will receive
+      youWillGive: You will give
+    controls:
+      searchMode: Search
+      onlyAffordable: Only affordable
+      myListings: 'My listings ({count}/{limit})'
+      createListing: Create Listing
+      listingLimitReached: You have reached the maximum number of active listings
+      reset: Reset
+      search: Search
+    filters:
+      offered: Offered
+      requested: Requested
+  side:
+    offered: Offer
+    requested: Request
+  history:
+    title: Marketplace History
+    filters:
+      self: Self
+      idPlaceholder: User ID

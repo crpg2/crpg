@@ -13,24 +13,20 @@ public record GetUserQuery : IMediatorRequest<UserViewModel>
 {
     public int UserId { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<GetUserQuery, UserViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IUserService userService) : IMediatorRequestHandler<GetUserQuery, UserViewModel>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly IUserService _userService;
-
-        public Handler(ICrpgDbContext db, IMapper mapper, IUserService userService)
-        {
-            _db = db;
-            _mapper = mapper;
-            _userService = userService;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly IUserService _userService = userService;
 
         public async ValueTask<Result<UserViewModel>> Handle(GetUserQuery req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
-               .ProjectTo<UserViewModel>(_mapper.ConfigurationProvider)
-               .FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
+                .AsSplitQuery()
+                .Include(u => u.MarketplaceListings)
+                    .ThenInclude(l => l.Assets)
+                .ProjectTo<UserViewModel>(_mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
 
             if (user == null)
             {

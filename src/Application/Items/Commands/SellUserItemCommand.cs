@@ -13,27 +13,24 @@ public record SellUserItemCommand : IMediatorRequest
     public int UserItemId { get; init; }
     public int UserId { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<SellUserItemCommand>
+    internal class Handler(ICrpgDbContext db, IItemService itemService, IActivityLogService activityLogService) : IMediatorRequestHandler<SellUserItemCommand>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<SellUserItemCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IItemService _itemService;
-        private readonly IActivityLogService _activityLogService;
-
-        public Handler(ICrpgDbContext db, IItemService itemService, IActivityLogService activityLogService)
-        {
-            _db = db;
-            _itemService = itemService;
-            _activityLogService = activityLogService;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IItemService _itemService = itemService;
+        private readonly IActivityLogService _activityLogService = activityLogService;
 
         public async ValueTask<Result> Handle(SellUserItemCommand req, CancellationToken cancellationToken)
         {
             var userItem = await _db.UserItems
+                .AsSplitQuery()
                 .Include(ui => ui.User)
                 .Include(ui => ui.Item)
-                .Include(ui => ui.EquippedItems)
+                .Include(ui => ui.PersonalItem)
+                .Include(ui => ui.ClanArmoryItem)
+                .Include(ui => ui.ClanArmoryBorrowedItem)
+                .Include(ui => ui.MarketplaceListingAssets)
                 .FirstOrDefaultAsync(ui => ui.UserId == req.UserId && ui.Id == req.UserItemId, cancellationToken);
 
             if (userItem == null)
@@ -46,7 +43,11 @@ public record SellUserItemCommand : IMediatorRequest
                 return new(CommonErrors.ItemDisabled(userItem.Item.Id));
             }
 
-            if (userItem.Item!.Rank > 0)
+            if (userItem.Item!.Rank > 0
+                || userItem.PersonalItem != null
+                || userItem.ClanArmoryItem != null
+                || userItem.ClanArmoryBorrowedItem != null
+                || userItem.MarketplaceListingAssets.Count != 0)
             {
                 return new(CommonErrors.ItemNotSellable(userItem.Item.Id));
             }
