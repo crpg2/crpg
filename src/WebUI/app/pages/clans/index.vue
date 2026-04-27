@@ -6,7 +6,7 @@ import { getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } fro
 
 import type { ClanWithMemberCount } from '~/models/clan'
 
-import { ClanTagIcon, UBadge, UButton, UiGridColumnHeader, UiGridColumnHeaderLabel, UInput, USelect, UTooltip } from '#components'
+import { ClanTagIcon, UBadge, UButton, UiGridColumnHeader, UiGridColumnHeaderSelectFilter, UInput, UTooltip } from '#components'
 import { navigateTo, tw } from '#imports'
 import { useUser } from '~/composables/user/use-user'
 import { SomeRole } from '~/models/role'
@@ -97,26 +97,14 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
         onResetFilter: () => column.setFilterValue(undefined),
       }, {
         filter: () =>
-          h(USelect, {
-            'variant': 'none',
-            'multiple': true,
-            'trailing-icon': '',
-            'size': 'xl',
-            'ui': {
-              content: 'min-w-fit',
-              base: 'px-0 py-0',
-            },
+          h(UiGridColumnHeaderSelectFilter, {
+            'label': t('clan.table.column.languages'),
             'items': uniqueKeys.map<SelectItem>(l => ({
               value: l,
               label: `${t(`language.${l}`)} - ${l}`,
             })),
             'modelValue': column.getFilterValue(),
             'onUpdate:modelValue': column.setFilterValue,
-          }, {
-            default: () => h(UiGridColumnHeaderLabel, {
-              label: t('clan.table.column.languages'),
-              withFilter: true,
-            }),
           }),
       })
     },

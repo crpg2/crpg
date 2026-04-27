@@ -21,11 +21,10 @@ import {
   UCheckbox,
   UContainer,
   UiGridColumnHeader,
-  UiGridColumnHeaderLabel,
+  UiGridColumnHeaderSelectFilter,
   UiInputClear,
   UiInputRange,
   UInput,
-  USelect,
   UTooltip,
 } from '#components'
 import { h } from '#imports'
@@ -295,44 +294,32 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
           },
         }),
         filter: () => {
-          if (options.view === AGGREGATION_VIEW.Checkbox) {
-            const _buckets = Object.entries(getBuckets(column.getFacetedUniqueValues()))
-            return h(USelect, {
-              'class': 'w-full',
-              'multiple': true,
-              'variant': 'none',
-              'size': 'xl',
-              'trailing-icon': '', // TODO:
-              'ui': {
-                content: 'min-w-fit',
-                base: 'px-0 py-0',
-              },
-              'items': _buckets.length
-                ? _buckets.map<SelectItem>(([bucket, count]) => {
-                    const humanBucket = humanizeBucket(column.id as keyof ItemFlat, bucket)
-                    return {
-                      value: bucket,
-                      label: `${humanBucket.label}${count ? ` (${count})` : ''}`,
-                      ...(humanBucket.icon && { icon: `crpg:${humanBucket.icon}` }),
-                    }
-                  })
-                : [
+          if (options.view === AGGREGATION_VIEW.Range) {
+            return undefined
+          }
+          const _buckets = Object.entries(getBuckets(column.getFacetedUniqueValues()))
+          return h(UiGridColumnHeaderSelectFilter, {
+            'class': 'w-full',
+            'label': t(`item.aggregations.${header.id}.title`),
+            'items': _buckets.length
+              ? _buckets.map<SelectItem>(([bucket, count]) => {
+                  const humanBucket = humanizeBucket(column.id as keyof ItemFlat, bucket)
+                  return {
+                    value: bucket,
+                    label: `${humanBucket.label}${count ? ` (${count})` : ''}`,
+                    ...(humanBucket.icon && { icon: `crpg:${humanBucket.icon}` }),
+                  }
+                })
+              : [
                     {
                       label: t('not-found'),
                       icon: 'crpg:error',
                       disabled: true,
                     } satisfies SelectItem,
-                  ],
-              'modelValue': column.getFilterValue(),
-              'onUpdate:modelValue': column.setFilterValue,
-            }, {
-              default: () => h(UiGridColumnHeaderLabel, {
-                label: t(`item.aggregations.${header.id}.title`),
-                withFilter: true,
-              }),
-            })
-          }
-          return undefined
+                ],
+            'modelValue': column.getFilterValue(),
+            'onUpdate:modelValue': column.setFilterValue,
+          })
         },
       })
     },
