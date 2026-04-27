@@ -1,4 +1,4 @@
-﻿using System.Numerics;
+using System.Numerics;
 using Crpg.Module.Helpers;
 using TaleWorlds.Library;
 
@@ -8,6 +8,13 @@ internal class MatchBalancer
 {
     public const float PowerParameter = 1f;
     public const int MaximumNumberOfSwaps = 20; // upperbound to limit number of swaps. Numberofswaps is often<3
+
+    private readonly bool _disableClanBalancing;
+
+    public MatchBalancer(bool disableClanBalancing = false)
+    {
+        _disableClanBalancing = disableClanBalancing;
+    }
 
     public GameMatch NaiveCaptainBalancing(GameMatch gameMatch)
     {
@@ -44,6 +51,14 @@ internal class MatchBalancer
         {
             Debug.Print("Game has 2 or less players");
             balancedBannerGameMatch = RandomlyAssignWaitingPlayersTeam(gameMatch);
+            MatchBalancingHelpers.DumpTeamsStatus(balancedBannerGameMatch);
+            return balancedBannerGameMatch;
+        }
+
+        if (_disableClanBalancing)
+        {
+            Debug.Print("Clan-aware balancing disabled, falling back to weight-only balancing");
+            balancedBannerGameMatch = ClanUnawareBalancing(gameMatch, firstBalance, balanceOnce);
             MatchBalancingHelpers.DumpTeamsStatus(balancedBannerGameMatch);
             return balancedBannerGameMatch;
         }
@@ -122,6 +137,37 @@ internal class MatchBalancer
 
         MatchBalancingHelpers.DumpTeamsStatus(balancedBannerGameMatch);
         return balancedBannerGameMatch;
+    }
+
+    private GameMatch ClanUnawareBalancing(GameMatch gameMatch, bool firstBalance, bool balanceOnce)
+    {
+        GameMatch balanced;
+        if (firstBalance)
+        {
+            Debug.Print("This is the first Round (clan balancing disabled)");
+            balanced = NaiveCaptainBalancing(gameMatch);
+        }
+        else if (balanceOnce && IsBalanceGoodEnough(gameMatch, maxSizeRatio: 0.7f, maxDifference: 15f, percentageDifference: 0.20f))
+        {
+            Debug.Print("This is not the first Round, balance is still good (clan balancing disabled)");
+            return RandomlyAssignWaitingPlayersTeam(gameMatch);
+        }
+        else
+        {
+            Debug.Print("This is not the first Round and balance was bad (clan balancing disabled)");
+            // Preserve existing teams (no clans to rejoin), only absorb waiting players.
+            balanced = RandomlyAssignWaitingPlayersTeam(gameMatch);
+        }
+
+        if (IsBalanceGoodEnough(balanced, maxSizeRatio: 0.85f, maxDifference: 10f, percentageDifference: 0.10f))
+        {
+            Debug.Print("Balance is good enough without further swaps");
+            return balanced;
+        }
+
+        Debug.Print("Swapping individual users to fix balance (clan balancing disabled)");
+        balanced = BalanceTeamOfSimilarSizes(balanced, bannerBalance: false, 0.10f);
+        return balanced;
     }
 
     public GameMatch KkMakeTeamOfSimilarSizesWithoutSplittingClanGroups(GameMatch gameMatch)
