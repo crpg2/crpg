@@ -12,7 +12,6 @@ definePageMeta({
         return navigateTo({
           name: 'characters-id-inventory',
           params: { id: fallbackCharacterId.value },
-          replace: true,
         })
       }
     },

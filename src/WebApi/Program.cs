@@ -54,6 +54,7 @@ builder.Services
     .AddHostedService<ActivityLogsCleanerWorker>()
     .AddHostedService<MarketplaceListingsCleanerWorker>()
     .AddHostedService<ClanArmoryWorker>()
+    .AddHostedService<QuestAssignmentWorker>()
     .AddHttpContextAccessor() // Injects IHttpContextAccessor
     .AddScoped<ICurrentUserService, CurrentUserService>()
     .AddSingleton<XboxService>()

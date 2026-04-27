@@ -121,6 +121,7 @@ dateTimeFormat:
   ss: '{secondes} @:dateTime.secondes.short'
   hh: '{hours} @:dateTime.hours.short'
   'dd:hh:mm': '{days}@:dateTime.days.short {hours}@:dateTime.hours.short {minutes}@:dateTime.minutes.short'
+  'hh:mm': '{hours}@:dateTime.hours.short {minutes}@:dateTime.minutes.short'
 
 pagination:
   counter: '{from}-{to} of {total}'
@@ -133,6 +134,7 @@ sort:
 nav:
   main:
     Characters: Characters
+    Quests: Quests
     Shop: Shop
     Marketplace: Marketplace
     Clans: Clans
@@ -1046,6 +1048,83 @@ user:
       deleteAll:
         title: Delete all
         confirmTitle: Are you sure you want to delete all notifications?
+  quests:
+    title: Quests
+    type:
+      daily: Daily
+      weekly: Weekly
+    status:
+      claimed: Claimed
+      expired: Expired
+    action:
+      claim:
+        label: Claim reward
+        title: Claim reward
+        selectCharacter: Select a character to receive the reward {questRewards}
+        notify:
+          success: Reward claimed
+      reroll:
+        label: Reroll
+        title: Reroll quest
+        confirmation: Do you want to reroll for {goldCost}?
+        notify:
+          success: Quest rerolled
+    generate:
+      titleConnector:
+        to: to
+        with: with
+      tplByEventTypeAndAggregationType:
+        Hit_Sum: 'Deal {value} damage'
+        Kill_Count: 'Kill {value} enemies'
+        Block_Sum: 'Block {value} damage'
+        Block_Count: 'Block {value} attacks'
+      tplByEventTypeAndAggregationTypeAndHitType:
+        Hit_Sum:
+          Ranged: 'Deal {value} ranged damage'
+          Melee: 'Deal {value} melee damage'
+        Kill_Count:
+          Ranged: 'Kill {value} enemies with ranged weapons'
+          Melee: 'Kill {value} enemies with melee weapons'
+        Block_Sum:
+          Ranged: 'Block {value} ranged damage'
+          Melee: 'Block {value} melee damage'
+        Block_Count:
+          Ranged: 'Block {value} ranged attacks'
+          Melee: 'Block {value} melee attacks'
+      eventField:
+        ItemId:
+          title: Item ID
+        WeaponClass:
+          title: Weapon class
+          # see values in item.weaponClass
+        HitType:
+          title: Hit type
+          values:
+            Melee: Melee
+            Ranged: Ranged
+        DamageType:
+          title: Damage type
+          # see values in item.damageType
+        Damage:
+          title: Damage
+          # no values
+        TargetType:
+          title: Target type
+          values:
+            Character: Character
+            Mount: Mount
+        BodyPart:
+          title: Body part
+          values:
+            Head: Head
+            Neck: Neck
+            Chest: Chest
+            Abdomen: Abdomen
+            ShoulderLeft: ShoulderLeft
+            ShoulderRight: ShoulderRight
+            ArmLeft: ArmLeft
+            ArmRight: ArmRight
+            Legs: Legs
 
 banned:
   title: You are banned
@@ -1543,6 +1622,8 @@ activityLog:
     MarketplaceListingAccepted: 'The marketplace listing #{listingId} was accepted. Seller {seller}, gold fee {goldFee} {marketplaceListingDetails}'
     MarketplaceListingInvalidated: 'The marketplace listing #{listingId} was invalidated. Gold fee {goldFee} {marketplaceListingDetails}'
     MarketplaceListingExpired: 'The marketplace listing #{listingId} was expired. Gold fee {goldFee} {marketplaceListingDetails}'
+    QuestRerolled: 'The quest {oldUserQuestId} was rerolled to {newUserQuestId} for {goldCost} gold'
+    QuestRewardClaimed: 'The reward for the quest {userQuestId} was claimed by {character} for {gold} and {experience} exp.'
 
 notification:
 

@@ -2,6 +2,7 @@ using Crpg.Application.Common.Files;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Games.Commands;
+using Crpg.Application.Quests.Services;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Items;
@@ -44,17 +45,16 @@ public class GetGameUserCommandTest : TestBase
     {
         Mock<IUserService> userServiceMock = new();
         Mock<ICharacterService> characterServiceMock = new();
+        Mock<IQuestAssignmentService> quest = new();
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
 
         GetGameUserCommand.Handler handler = new(ActDb, Mapper, new MachineDateTime(),
-            new ThreadSafeRandom(), userServiceMock.Object, characterServiceMock.Object, activityLogServiceMock.Object);
+            new ThreadSafeRandom(), userServiceMock.Object, characterServiceMock.Object, activityLogServiceMock.Object,
+            quest.Object);
 
         var result = await handler.Handle(new GetGameUserCommand
         {
-            Platform = Platform.EpicGames,
-            PlatformUserId = "1",
-            Region = Region.Na,
-            Instance = "crpg01a",
+            Platform = Platform.EpicGames, PlatformUserId = "1", Region = Region.Na, Instance = "crpg01a",
         }, CancellationToken.None);
 
         var gameUser = result.Data!;
@@ -80,16 +80,15 @@ public class GetGameUserCommandTest : TestBase
         Mock<IUserService> userServiceMock = new();
         Mock<ICharacterService> characterServiceMock = new();
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+        Mock<IQuestAssignmentService> questAssignmentServiceMock = new();
 
         GetGameUserCommand.Handler handler = new(ActDb, Mapper, new MachineDateTime(),
-            new ThreadSafeRandom(), userServiceMock.Object, characterServiceMock.Object, activityLogServiceMock.Object);
+            new ThreadSafeRandom(), userServiceMock.Object, characterServiceMock.Object, activityLogServiceMock.Object,
+            questAssignmentServiceMock.Object);
 
         var result = await handler.Handle(new GetGameUserCommand
         {
-            Platform = Platform.Steam,
-            PlatformUserId = "1",
-            Region = Region.Eu,
-            Instance = "crpg01a",
+            Platform = Platform.Steam, PlatformUserId = "1", Region = Region.Eu, Instance = "crpg01a",
         }, CancellationToken.None);
 
         var gameUser = result.Data!;
@@ -119,6 +118,7 @@ public class GetGameUserCommandTest : TestBase
         Mock<IUserService> userServiceMock = new();
         Mock<ICharacterService> characterServiceMock = new();
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+        Mock<IQuestAssignmentService> questAssignmentServiceMock = new();
 
         User user = new()
         {
@@ -126,23 +126,18 @@ public class GetGameUserCommandTest : TestBase
             PlatformUserId = "1",
             Gold = 1000,
             Region = Region.Eu,
-            Characters =
-            {
-                new Character { CreatedAt = DateTime.UtcNow.AddHours(-2) },
-            },
+            Characters = { new Character { CreatedAt = DateTime.UtcNow.AddHours(-2) }, },
         };
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
         GetGameUserCommand.Handler handler = new(ActDb, Mapper, new MachineDateTime(),
-            new ThreadSafeRandom(), userServiceMock.Object, characterServiceMock.Object, activityLogServiceMock.Object);
+            new ThreadSafeRandom(), userServiceMock.Object, characterServiceMock.Object, activityLogServiceMock.Object,
+            questAssignmentServiceMock.Object);
 
         var result = await handler.Handle(new GetGameUserCommand
         {
-            Platform = user.Platform,
-            PlatformUserId = user.PlatformUserId,
-            Region = Region.Na,
-            Instance = "crpg01a",
+            Platform = user.Platform, PlatformUserId = user.PlatformUserId, Region = Region.Na, Instance = "crpg01a",
         }, CancellationToken.None);
 
         var gameUser = result.Data!;
@@ -176,6 +171,7 @@ public class GetGameUserCommandTest : TestBase
         Mock<IUserService> userServiceMock = new();
         Mock<ICharacterService> characterServiceMock = new();
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+        Mock<IQuestAssignmentService> questAssignmentServiceMock = new();
 
         User user = new()
         {
@@ -196,14 +192,12 @@ public class GetGameUserCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         GetGameUserCommand.Handler handler = new(ActDb, Mapper, new MachineDateTime(),
-            new ThreadSafeRandom(), userServiceMock.Object, characterServiceMock.Object, activityLogServiceMock.Object);
+            new ThreadSafeRandom(), userServiceMock.Object, characterServiceMock.Object, activityLogServiceMock.Object,
+            questAssignmentServiceMock.Object);
 
         var res = await handler.Handle(new GetGameUserCommand
         {
-            Platform = user.Platform,
-            PlatformUserId = user.PlatformUserId,
-            Region = Region.Eu,
-            Instance = "crpg01a",
+            Platform = user.Platform, PlatformUserId = user.PlatformUserId, Region = Region.Eu, Instance = "crpg01a",
         }, CancellationToken.None);
 
         Assert.That(res.Errors, Is.Not.Null);
@@ -216,6 +210,7 @@ public class GetGameUserCommandTest : TestBase
         var userService = Mock.Of<IUserService>();
         var characterService = Mock.Of<ICharacterService>();
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+        Mock<IQuestAssignmentService> questAssignmentServiceMock = new();
 
         User user = new()
         {
@@ -225,7 +220,11 @@ public class GetGameUserCommandTest : TestBase
             Items =
             {
                 // Already owned item
-                new UserItem { ItemId = ArrangeDb.Items.First(i => i.Id == GetGameUserCommand.Handler.DefaultItemSets[1][0].id).Id },
+                new UserItem
+                {
+                    ItemId = ArrangeDb.Items.First(i => i.Id == GetGameUserCommand.Handler.DefaultItemSets[1][0].id)
+                        .Id
+                },
             },
             Characters = { new() },
         };
@@ -237,15 +236,13 @@ public class GetGameUserCommandTest : TestBase
         randomMock.Setup(r => r.Next(It.IsAny<int>(), It.IsAny<int>())).Returns(1);
 
         GetGameUserCommand.Handler handler = new(ActDb, Mapper,
-            new MachineDateTime(), randomMock.Object, userService, characterService, activityLogServiceMock.Object);
+            new MachineDateTime(), randomMock.Object, userService, characterService, activityLogServiceMock.Object,
+            questAssignmentServiceMock.Object);
 
         // Handle shouldn't throw
         await handler.Handle(new GetGameUserCommand
         {
-            Platform = user.Platform,
-            PlatformUserId = user.PlatformUserId,
-            Region = Region.Eu,
-            Instance = "crpg01a",
+            Platform = user.Platform, PlatformUserId = user.PlatformUserId, Region = Region.Eu, Instance = "crpg01a",
         }, CancellationToken.None);
 
         var userItems = await AssertDb.UserItems.Where(oi => oi.UserId == user.Id).ToArrayAsync();
@@ -258,6 +255,7 @@ public class GetGameUserCommandTest : TestBase
         var userService = Mock.Of<IUserService>();
         var characterService = Mock.Of<ICharacterService>();
         var activityLogService = Mock.Of<IActivityLogService>();
+        var questAssignmentService = Mock.Of<IQuestAssignmentService>();
 
         Character user0Character = new();
         User user0 = new()
@@ -283,14 +281,12 @@ public class GetGameUserCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         GetGameUserCommand.Handler handler = new(ActDb, Mapper,
-            new MachineDateTime(), new ThreadSafeRandom(), userService, characterService, activityLogService);
+            new MachineDateTime(), new ThreadSafeRandom(), userService, characterService, activityLogService,
+            questAssignmentService);
 
         var result = await handler.Handle(new GetGameUserCommand
         {
-            Platform = user0.Platform,
-            PlatformUserId = user0.PlatformUserId,
-            Region = Region.Eu,
-            Instance = "crpg01a",
+            Platform = user0.Platform, PlatformUserId = user0.PlatformUserId, Region = Region.Eu, Instance = "crpg01a",
         }, CancellationToken.None);
 
         var gameUser = result.Data!;
@@ -305,6 +301,7 @@ public class GetGameUserCommandTest : TestBase
         var userService = Mock.Of<IUserService>();
         var characterService = Mock.Of<ICharacterService>();
         var activityLogService = Mock.Of<IActivityLogService>();
+        var questAssignmentService = Mock.Of<IQuestAssignmentService>();
 
         Character character = new();
         User user = new()
@@ -313,25 +310,18 @@ public class GetGameUserCommandTest : TestBase
             PlatformUserId = "1",
             Region = Region.Eu,
             ActiveCharacter = character,
-            Characters = new List<Character>
-            {
-                character,
-                new(),
-                new(),
-            },
+            Characters = new List<Character> { character, new(), new(), },
         };
         ArrangeDb.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
         GetGameUserCommand.Handler handler = new(ActDb, Mapper,
-            new MachineDateTime(), new ThreadSafeRandom(), userService, characterService, activityLogService);
+            new MachineDateTime(), new ThreadSafeRandom(), userService, characterService, activityLogService,
+            questAssignmentService);
 
         var result = await handler.Handle(new GetGameUserCommand
         {
-            Platform = user.Platform,
-            PlatformUserId = user.PlatformUserId,
-            Region = Region.Eu,
-            Instance = "crpg01a",
+            Platform = user.Platform, PlatformUserId = user.PlatformUserId, Region = Region.Eu, Instance = "crpg01a",
         }, CancellationToken.None);
 
         var gameUser = result.Data!;
@@ -344,6 +334,7 @@ public class GetGameUserCommandTest : TestBase
         var userService = Mock.Of<IUserService>();
         var characterService = Mock.Of<ICharacterService>();
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+        Mock<IQuestAssignmentService> questAssignmentServiceMock = new() { DefaultValue = DefaultValue.Mock };
 
         User user = new()
         {
@@ -387,14 +378,12 @@ public class GetGameUserCommandTest : TestBase
             .Returns(new DateTime(2000, 1, 1, 12, 0, 0));
 
         GetGameUserCommand.Handler handler = new(ActDb, Mapper,
-            dateTime.Object, new ThreadSafeRandom(), userService, characterService, activityLogServiceMock.Object);
+            dateTime.Object, new ThreadSafeRandom(), userService, characterService, activityLogServiceMock.Object,
+            questAssignmentServiceMock.Object);
 
         var result = await handler.Handle(new GetGameUserCommand
         {
-            Platform = user.Platform,
-            PlatformUserId = user.PlatformUserId,
-            Region = Region.Eu,
-            Instance = "crpg01a",
+            Platform = user.Platform, PlatformUserId = user.PlatformUserId, Region = Region.Eu, Instance = "crpg01a",
         }, CancellationToken.None);
 
         var gamerUser = result.Data!;
@@ -407,6 +396,7 @@ public class GetGameUserCommandTest : TestBase
         var userService = Mock.Of<IUserService>();
         var characterService = Mock.Of<ICharacterService>();
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+        Mock<IQuestAssignmentService> questAssignmentServiceMock = new() { DefaultValue = DefaultValue.Mock };
 
         User user = new()
         {
@@ -448,14 +438,12 @@ public class GetGameUserCommandTest : TestBase
             .Returns(new DateTime(2000, 1, 1, 12, 0, 0));
 
         GetGameUserCommand.Handler handler = new(ActDb, Mapper,
-            dateTime.Object, new ThreadSafeRandom(), userService, characterService, activityLogServiceMock.Object);
+            dateTime.Object, new ThreadSafeRandom(), userService, characterService, activityLogServiceMock.Object,
+            questAssignmentServiceMock.Object);
 
         var result = await handler.Handle(new GetGameUserCommand
         {
-            Platform = user.Platform,
-            PlatformUserId = user.PlatformUserId,
-            Region = Region.Eu,
-            Instance = "crpg01a",
+            Platform = user.Platform, PlatformUserId = user.PlatformUserId, Region = Region.Eu, Instance = "crpg01a",
         }, CancellationToken.None);
 
         var gameUser = result.Data!;
@@ -520,6 +508,7 @@ public class GetGameUserCommandTest : TestBase
         var userService = Mock.Of<IUserService>();
         var characterService = Mock.Of<ICharacterService>();
         var activityLogService = Mock.Of<IActivityLogService>();
+        var questAssignmentService = Mock.Of<IQuestAssignmentService>();
 
         Character character = new()
         {
@@ -530,10 +519,7 @@ public class GetGameUserCommandTest : TestBase
                     GameMode = GameMode.CRPGDuel,
                     Rating = new CharacterRating
                     {
-                        Value = 1000,
-                        Deviation = 1,
-                        Volatility = 1,
-                        CompetitiveValue = 1000,
+                        Value = 1000, Deviation = 1, Volatility = 1, CompetitiveValue = 1000,
                     },
                 },
                 new()
@@ -541,10 +527,7 @@ public class GetGameUserCommandTest : TestBase
                     GameMode = GameMode.CRPGBattle,
                     Rating = new CharacterRating
                     {
-                        Value = 1000,
-                        Deviation = 1,
-                        Volatility = 1,
-                        CompetitiveValue = 1000,
+                        Value = 1000, Deviation = 1, Volatility = 1, CompetitiveValue = 1000,
                     },
                 },
             },
@@ -555,23 +538,18 @@ public class GetGameUserCommandTest : TestBase
             PlatformUserId = "1",
             Region = Region.Eu,
             ActiveCharacter = character,
-            Characters = new List<Character>
-            {
-                character,
-            },
+            Characters = new List<Character> { character, },
         };
         ArrangeDb.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
         GetGameUserCommand.Handler handler = new(ActDb, Mapper,
-            new MachineDateTime(), new ThreadSafeRandom(), userService, characterService, activityLogService);
+            new MachineDateTime(), new ThreadSafeRandom(), userService, characterService, activityLogService,
+            questAssignmentService);
 
         var result = await handler.Handle(new GetGameUserCommand
         {
-            Platform = user.Platform,
-            PlatformUserId = user.PlatformUserId,
-            Region = Region.Eu,
-            Instance = "crpg01a",
+            Platform = user.Platform, PlatformUserId = user.PlatformUserId, Region = Region.Eu, Instance = "crpg01a",
         }, CancellationToken.None);
 
         var gameUser = result.Data!;
@@ -585,6 +563,7 @@ public class GetGameUserCommandTest : TestBase
         var userService = Mock.Of<IUserService>();
         var characterService = Mock.Of<ICharacterService>();
         var activityLogService = Mock.Of<IActivityLogService>();
+        var questAssignmentService = Mock.Of<IQuestAssignmentService>();
 
         Character character = new();
         User user = new()
@@ -593,23 +572,18 @@ public class GetGameUserCommandTest : TestBase
             PlatformUserId = "1",
             Region = Region.Eu,
             ActiveCharacter = character,
-            Characters = new List<Character>
-            {
-                character,
-            },
+            Characters = new List<Character> { character, },
         };
         ArrangeDb.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
         GetGameUserCommand.Handler handler = new(ActDb, Mapper,
-            new MachineDateTime(), new ThreadSafeRandom(), userService, characterService, activityLogService);
+            new MachineDateTime(), new ThreadSafeRandom(), userService, characterService, activityLogService,
+            questAssignmentService);
 
         var result = await handler.Handle(new GetGameUserCommand
         {
-            Platform = user.Platform,
-            PlatformUserId = user.PlatformUserId,
-            Region = Region.Eu,
-            Instance = "crpg01a",
+            Platform = user.Platform, PlatformUserId = user.PlatformUserId, Region = Region.Eu, Instance = "crpg01a",
         }, CancellationToken.None);
 
         var gameUser = result.Data!;

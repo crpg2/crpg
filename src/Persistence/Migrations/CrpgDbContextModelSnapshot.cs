@@ -9,6 +9,7 @@ using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
+using Crpg.Domain.Entities.Quests;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Settlements;
@@ -35,7 +36,7 @@ namespace Crpg.Persistence.Migrations
                 .HasAnnotation("ProductVersion", "10.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "activity_log_type", new[] { "battle_apply_as_mercenary", "battle_mercenary_application_accepted", "battle_mercenary_application_declined", "battle_participant_kicked", "battle_participant_leaved", "character_created", "character_deleted", "character_earned", "character_rating_reset", "character_respecialized", "character_retired", "character_rewarded", "chat_message_sent", "clan_application_accepted", "clan_application_created", "clan_application_declined", "clan_armory_add_item", "clan_armory_borrow_item", "clan_armory_remove_item", "clan_armory_return_item", "clan_created", "clan_deleted", "clan_member_kicked", "clan_member_leaved", "clan_member_role_edited", "item_bought", "item_broke", "item_reforged", "item_repaired", "item_returned", "item_sold", "item_upgraded", "marketplace_listing_accepted", "marketplace_listing_cancelled", "marketplace_listing_created", "marketplace_listing_expired", "marketplace_listing_invalidated", "server_joined", "team_hit", "team_hit_reported", "team_hit_reported_user_kicked", "user_created", "user_deleted", "user_renamed", "user_rewarded" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "activity_log_type", new[] { "battle_apply_as_mercenary", "battle_mercenary_application_accepted", "battle_mercenary_application_declined", "battle_participant_kicked", "battle_participant_leaved", "character_created", "character_deleted", "character_earned", "character_rating_reset", "character_respecialized", "character_retired", "character_rewarded", "chat_message_sent", "clan_application_accepted", "clan_application_created", "clan_application_declined", "clan_armory_add_item", "clan_armory_borrow_item", "clan_armory_remove_item", "clan_armory_return_item", "clan_created", "clan_deleted", "clan_member_kicked", "clan_member_leaved", "clan_member_role_edited", "item_bought", "item_broke", "item_reforged", "item_repaired", "item_returned", "item_sold", "item_upgraded", "marketplace_listing_accepted", "marketplace_listing_cancelled", "marketplace_listing_created", "marketplace_listing_expired", "marketplace_listing_invalidated", "quest_rerolled", "quest_reward_claimed", "server_joined", "team_hit", "team_hit_reported", "team_hit_reported_user_kicked", "user_created", "user_deleted", "user_renamed", "user_rewarded" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_fighter_application_status", new[] { "accepted", "declined", "intent", "pending" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_mercenary_application_status", new[] { "accepted", "declined", "pending" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_participant_type", new[] { "clan_member", "mercenary", "party" });
@@ -58,6 +59,8 @@ namespace Crpg.Persistence.Migrations
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "party_status", new[] { "awaiting_battle_join_decision", "awaiting_party_offer_decision", "idle", "idle_in_settlement", "in_battle", "recruiting_in_settlement" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "party_transfer_offer_status", new[] { "intent", "pending" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "platform", new[] { "epic_games", "microsoft", "steam" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "quest_aggregation_type", new[] { "count", "sum" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "quest_type", new[] { "daily", "weekly" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "region", new[] { "as", "eu", "na", "oc" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "restriction_type", new[] { "all", "chat", "join" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "role", new[] { "admin", "game_admin", "moderator", "user" });
@@ -707,6 +710,47 @@ namespace Crpg.Persistence.Migrations
                     b.ToTable("clan_members", (string)null);
                 });
 
+            modelBuilder.Entity("Crpg.Domain.Entities.GameEvents.GameEvent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<string>("EventData")
+                        .HasColumnType("jsonb")
+                        .HasColumnName("event_data");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("integer")
+                        .HasColumnName("type");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("integer")
+                        .HasColumnName("user_id");
+
+                    b.HasKey("Id")
+                        .HasName("pk_game_events");
+
+                    b.HasIndex("CreatedAt")
+                        .HasDatabaseName("ix_game_events_created_at");
+
+                    b.HasIndex("UserId", "Type", "CreatedAt")
+                        .HasDatabaseName("ix_game_events_user_id_type_created_at");
+
+                    b.ToTable("game_events", (string)null);
+                });
+
             modelBuilder.Entity("Crpg.Domain.Entities.Items.ClanArmoryItem", b =>
                 {
                     b.Property<int>("UserItemId")
@@ -1350,6 +1394,159 @@ namespace Crpg.Persistence.Migrations
                         .HasDatabaseName("ix_party_transfer_offers_target_party_id");
 
                     b.ToTable("party_transfer_offers", (string)null);
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Quests.QuestDefinition", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("AggregationField")
+                        .HasColumnType("integer")
+                        .HasColumnName("aggregation_field");
+
+                    b.Property<QuestAggregationType>("AggregationType")
+                        .HasColumnType("quest_aggregation_type")
+                        .HasColumnName("aggregation_type");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<string>("EventFiltersJson")
+                        .HasColumnType("jsonb")
+                        .HasColumnName("event_filters_json");
+
+                    b.Property<int>("EventType")
+                        .HasColumnType("integer")
+                        .HasColumnName("event_type");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(true)
+                        .HasColumnName("is_active");
+
+                    b.Property<int>("RequiredValue")
+                        .HasColumnType("integer")
+                        .HasColumnName("required_value");
+
+                    b.Property<int>("RewardExperience")
+                        .HasColumnType("integer")
+                        .HasColumnName("reward_experience");
+
+                    b.Property<int>("RewardGold")
+                        .HasColumnType("integer")
+                        .HasColumnName("reward_gold");
+
+                    b.Property<QuestType>("Type")
+                        .HasColumnType("quest_type")
+                        .HasColumnName("type");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.HasKey("Id")
+                        .HasName("pk_quest_definitions");
+
+                    b.ToTable("quest_definitions", (string)null);
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Quests.UserQuest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<DateTime>("ExpiresAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("expires_at");
+
+                    b.Property<bool>("IsRewardClaimed")
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_reward_claimed");
+
+                    b.Property<int>("QuestDefinitionId")
+                        .HasColumnType("integer")
+                        .HasColumnName("quest_definition_id");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer")
+                        .HasColumnName("user_id");
+
+                    b.Property<uint>("Version")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("xid")
+                        .HasColumnName("xmin");
+
+                    b.HasKey("Id")
+                        .HasName("pk_user_quests");
+
+                    b.HasIndex("QuestDefinitionId")
+                        .HasDatabaseName("ix_user_quests_quest_definition_id");
+
+                    b.HasIndex("UserId")
+                        .HasDatabaseName("ix_user_quests_user_id");
+
+                    b.ToTable("user_quests", (string)null);
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Quests.WeeklyQuestAssignment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("AssignedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("assigned_at");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<DateTime>("ExpiresAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("expires_at");
+
+                    b.Property<int>("QuestDefinitionId")
+                        .HasColumnType("integer")
+                        .HasColumnName("quest_definition_id");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.HasKey("Id")
+                        .HasName("pk_weekly_quest_assignments");
+
+                    b.HasIndex("ExpiresAt")
+                        .HasDatabaseName("ix_weekly_quest_assignments_expires_at");
+
+                    b.HasIndex("QuestDefinitionId")
+                        .HasDatabaseName("ix_weekly_quest_assignments_quest_definition_id");
+
+                    b.ToTable("weekly_quest_assignments", (string)null);
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Restrictions.Restriction", b =>
@@ -2145,6 +2342,16 @@ namespace Crpg.Persistence.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Crpg.Domain.Entities.GameEvents.GameEvent", b =>
+                {
+                    b.HasOne("Crpg.Domain.Entities.Users.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .HasConstraintName("fk_game_events_users_user_id");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Crpg.Domain.Entities.Items.ClanArmoryItem", b =>
                 {
                     b.HasOne("Crpg.Domain.Entities.Clans.Clan", "Clan")
@@ -2786,6 +2993,39 @@ namespace Crpg.Persistence.Migrations
                     b.Navigation("Party");
 
                     b.Navigation("TargetParty");
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Quests.UserQuest", b =>
+                {
+                    b.HasOne("Crpg.Domain.Entities.Quests.QuestDefinition", "QuestDefinition")
+                        .WithMany()
+                        .HasForeignKey("QuestDefinitionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_user_quests_quest_definitions_quest_definition_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Users.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_user_quests_users_user_id");
+
+                    b.Navigation("QuestDefinition");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Quests.WeeklyQuestAssignment", b =>
+                {
+                    b.HasOne("Crpg.Domain.Entities.Quests.QuestDefinition", "QuestDefinition")
+                        .WithMany()
+                        .HasForeignKey("QuestDefinitionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_weekly_quest_assignments_quest_definitions_quest_definition");
+
+                    b.Navigation("QuestDefinition");
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Restrictions.Restriction", b =>

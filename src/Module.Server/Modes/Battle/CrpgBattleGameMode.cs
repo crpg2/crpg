@@ -194,6 +194,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new CrpgUserManagerServer(crpgClient, _constants, crpgGameMode),
                     new KickInactiveBehavior(inactiveTimeLimit: 30, warmupComponent, teamSelectComponent),
                     new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),
+                    new CrpgGameEventTrackingBehavior(warmupComponent, crpgClient),
                     new ServerMetricsBehavior(),
                     new NotAllPlayersReadyComponent(),
                     new DrowningBehavior(),

@@ -14,6 +14,9 @@ using Crpg.Application.Limitations.Queries;
 using Crpg.Application.Notifications.Commands;
 using Crpg.Application.Notifications.Models;
 using Crpg.Application.Notifications.Queries;
+using Crpg.Application.Quests.Commands;
+using Crpg.Application.Quests.Models;
+using Crpg.Application.Quests.Queries;
 using Crpg.Application.Restrictions.Models;
 using Crpg.Application.Restrictions.Queries;
 using Crpg.Application.Users.Commands;
@@ -109,7 +112,8 @@ public class UsersController : BaseController
     /// <response code="200">Ok.</response>
     [HttpGet("{userId}/characters")]
     [Authorize(Policy = ModeratorPolicy)]
-    public Task<ActionResult<Result<IList<CharacterViewModel>>>> GetUserCharactersListByUserId([FromRoute] int userId) =>
+    public Task<ActionResult<Result<IList<CharacterViewModel>>>>
+        GetUserCharactersListByUserId([FromRoute] int userId) =>
         ResultToActionAsync(Mediator.Send(new GetUserCharactersQuery { UserId = userId }));
 
     /// <summary>
@@ -288,8 +292,7 @@ public class UsersController : BaseController
     /// <response code="200">Updated.</response>
     /// <response code="400">Bad Request.</response>
     [HttpPut("self/characters/{id}/characteristics")]
-    public Task<ActionResult<Result<CharacterCharacteristicsViewModel>>> UpdateCharacterCharacteristics([FromRoute] int id,
-        [FromBody] CharacterCharacteristicsViewModel stats)
+    public Task<ActionResult<Result<CharacterCharacteristicsViewModel>>> UpdateCharacterCharacteristics([FromRoute] int id, [FromBody] CharacterCharacteristicsViewModel stats)
     {
         UpdateCharacterCharacteristicsCommand cmd = new()
         {
@@ -309,8 +312,7 @@ public class UsersController : BaseController
     /// <response code="200">Conversion performed.</response>
     /// <response code="400">Bad Request.</response>
     [HttpPut("self/characters/{id}/characteristics/convert")]
-    public Task<ActionResult<Result<CharacterCharacteristicsViewModel>>> ConvertCharacterCharacteristics([FromRoute] int id,
-        [FromBody] ConvertCharacterCharacteristicsCommand req)
+    public Task<ActionResult<Result<CharacterCharacteristicsViewModel>>> ConvertCharacterCharacteristics([FromRoute] int id, [FromBody] ConvertCharacterCharacteristicsCommand req)
     {
         req = req with { CharacterId = id, UserId = CurrentUser.User!.Id };
         return ResultToActionAsync(Mediator.Send(req));
@@ -524,7 +526,8 @@ public class UsersController : BaseController
     /// </summary>
     /// <param name="req">The user item preset to create.</param>
     [HttpPost("self/item-presets")]
-    public Task<ActionResult<Result<UserItemPresetViewModel>>> CreateUserItemPreset([FromBody] CreateUserItemPresetCommand req)
+    public Task<ActionResult<Result<UserItemPresetViewModel>>> CreateUserItemPreset(
+        [FromBody] CreateUserItemPresetCommand req)
     {
         req = req with { UserId = CurrentUser.User!.Id };
         return ResultToCreatedAtActionAsync(nameof(GetUserItemPresets), null, p => new { id = p.Id }, Mediator.Send(req));
@@ -592,7 +595,8 @@ public class UsersController : BaseController
     /// <response code="200">Upgraded.</response>
     /// <response code="400">Bad Request.</response>
     [HttpPut("self/items/{id}/upgrade")]
-    public Task<ActionResult<Result<UserItemViewModel>>> UpgradeUserItem([FromRoute] int id, [FromBody] UpgradeUserItemCommand req)
+    public Task<ActionResult<Result<UserItemViewModel>>> UpgradeUserItem([FromRoute] int id,
+        [FromBody] UpgradeUserItemCommand req)
     {
         req = req with { UserItemId = id, UserId = CurrentUser.User!.Id };
         return ResultToActionAsync(Mediator.Send(req));
@@ -625,6 +629,50 @@ public class UsersController : BaseController
     public Task<ActionResult> RewardRecently()
     {
         return ResultToActionAsync(Mediator.Send(new RewardRecentUserCommand { }));
+    }
+
+    /// <summary>
+    /// Gets user's quests.
+    /// </summary>
+    [HttpGet("self/quests")]
+    public Task<ActionResult<Result<IList<UserQuestViewModel>>>> GetUserQuests()
+    {
+        GetUserQuestsQuery query = new() { UserId = CurrentUser.User!.Id };
+        return ResultToActionAsync(Mediator.Send(query));
+    }
+
+    /// <summary>
+    /// Claim reward for a user quest.
+    /// </summary>
+    /// <param name="id">User quest id.</param>
+    /// <param name="req">The claim request containing the character id.</param>
+    /// <returns>The updated user quest.</returns>
+    /// <response code="200">Reward claimed.</response>
+    /// <response code="400">Bad Request.</response>
+    /// <response code="404">User quest not found.</response>
+    [HttpPut("self/quests/{id}/claim")]
+    public Task<ActionResult<Result<UserQuestViewModel>>> ClaimQuestReward([FromRoute] int id,
+        [FromBody] ClaimQuestRewardCommand req)
+    {
+        var cmd = req with { UserQuestId = id, UserId = CurrentUser.User!.Id };
+        return ResultToActionAsync(Mediator.Send(cmd));
+    }
+
+    /// <summary>
+    /// Reroll a user quest for gold.
+    /// </summary>
+    /// <param name="id">User quest id.</param>
+    /// <param name="req">The reroll request.</param>
+    /// <returns>The new user quest.</returns>
+    /// <response code="200">Quest rerolled.</response>
+    /// <response code="400">Bad Request.</response>
+    /// <response code="404">User quest not found.</response>
+    [HttpPut("self/quests/{id}/reroll")]
+    public Task<ActionResult> RerollQuest([FromRoute] int id)
+    {
+        var cmd = new RerollQuestCommand { UserQuestId = id, UserId = CurrentUser.User!.Id };
+
+        return ResultToActionAsync(Mediator.Send(cmd));
     }
 
     /// <summary>

@@ -314,7 +314,8 @@ public class SeedDataCommandTest : TestBase
         IActivityLogService? activityLogService = null,
         IUserNotificationService? userNotificationsService = null,
         IItemService? itemService = null,
-        IMarketplaceService? marketplaceService = null)
+        IMarketplaceService? marketplaceService = null,
+        IQuestsSource? questsSource = null)
     {
         return new SeedDataCommand.Handler(
             ActDb,
@@ -327,7 +328,8 @@ public class SeedDataCommandTest : TestBase
             activityLogService ?? ActivityLogService,
             userNotificationsService ?? UserNotificationsService,
             itemService ?? ItemService,
-            marketplaceService ?? MarketplaceService);
+            marketplaceService ?? MarketplaceService,
+            questsSource ?? Mock.Of<IQuestsSource>());
     }
 
     private static IApplicationEnvironment CreateAppEnv()
