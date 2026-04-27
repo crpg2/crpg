@@ -22,21 +22,31 @@ internal class OrderCommand : CommanderCommand
         // MakeVoice disabled: this native P/Invoke into the engine's sound system caused ExecutionEngineException
         // crashes on Linux servers when called during network packet processing.
         // fromPeer.ControlledAgent.MakeVoice(SkinVoiceManager.VoiceType.Yell, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
+        //
+        // Call GetComponent<MissionPeer> only for peers that are already synchronized. Iterating all NetworkPeers
+        // and calling GetComponent on loading / limbo peers has triggered fatal UnmanagedCallersOnly errors on
+        // Linux dedicated servers (see logs: crash after "before GetComponent" for a specific peer).
+        BattleSideEnum commanderSide = missionPeer.Team.Side;
         foreach (NetworkCommunicator targetPeer in GameNetwork.NetworkPeers)
         {
-            if (targetPeer.GetComponent<MissionPeer>()?.Team.Side == missionPeer.Team.Side)
+            if (targetPeer.IsServerPeer || !targetPeer.IsSynchronized)
             {
-                if (!targetPeer.IsServerPeer && targetPeer.IsSynchronized)
-                {
-                    GameNetwork.BeginModuleEventAsServer(targetPeer);
-                    GameNetwork.WriteMessage(new CrpgNotification
-                    {
-                        Type = CrpgNotificationType.Commander,
-                        Message = message,
-                    });
-                    GameNetwork.EndModuleEventAsServer();
-                }
+                continue;
             }
+
+            MissionPeer? targetMp = targetPeer.GetComponent<MissionPeer>();
+            if (targetMp?.Team == null || targetMp.Team.Side != commanderSide)
+            {
+                continue;
+            }
+
+            GameNetwork.BeginModuleEventAsServer(targetPeer);
+            GameNetwork.WriteMessage(new CrpgNotification
+            {
+                Type = CrpgNotificationType.Commander,
+                Message = message,
+            });
+            GameNetwork.EndModuleEventAsServer();
         }
     }
 }

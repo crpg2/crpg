@@ -75,13 +75,13 @@ const itemViewModelSchemaResponseTransformer = (data: any) => {
     return data;
 };
 
-const itemStackSchemaResponseTransformer = (data: any) => {
+const itemStackViewModelSchemaResponseTransformer = (data: any) => {
     data.item = itemViewModelSchemaResponseTransformer(data.item);
     return data;
 };
 
 const battleFighterInventoryViewModelSchemaResponseTransformer = (data: any) => {
-    data.items = data.items.map((item: any) => itemStackSchemaResponseTransformer(item));
+    data.items = data.items.map((item: any) => itemStackViewModelSchemaResponseTransformer(item));
     return data;
 };
 
@@ -235,7 +235,7 @@ const battleViewModelSchemaResponseTransformer = (data: any) => {
 };
 
 const partyTransferOfferViewModelSchemaResponseTransformer = (data: any) => {
-    data.items = data.items.map((item: any) => itemStackSchemaResponseTransformer(item));
+    data.items = data.items.map((item: any) => itemStackViewModelSchemaResponseTransformer(item));
     return data;
 };
 
@@ -293,32 +293,32 @@ export const putPartiesSelfOrdersResponseTransformer = async (data: any): Promis
     return data;
 };
 
-const itemStackIListResultSchemaResponseTransformer = (data: any) => {
+const itemStackViewModelIListResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
-        data.data = data.data.map((item: any) => itemStackSchemaResponseTransformer(item));
+        data.data = data.data.map((item: any) => itemStackViewModelSchemaResponseTransformer(item));
     }
     return data;
 };
 
 export const getPartiesSelfItemsResponseTransformer = async (data: any): Promise<GetPartiesSelfItemsResponse> => {
-    data = itemStackIListResultSchemaResponseTransformer(data);
+    data = itemStackViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
-const itemStackResultSchemaResponseTransformer = (data: any) => {
+const itemStackViewModelResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
-        data.data = itemStackSchemaResponseTransformer(data.data);
+        data.data = itemStackViewModelSchemaResponseTransformer(data.data);
     }
     return data;
 };
 
 export const postPartiesSelfItemsResponseTransformer = async (data: any): Promise<PostPartiesSelfItemsResponse> => {
-    data = itemStackResultSchemaResponseTransformer(data);
+    data = itemStackViewModelResultSchemaResponseTransformer(data);
     return data;
 };
 
 export const getPartiesByPartyIdItemsResponseTransformer = async (data: any): Promise<GetPartiesByPartyIdItemsResponse> => {
-    data = itemStackIListResultSchemaResponseTransformer(data);
+    data = itemStackViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
@@ -364,19 +364,19 @@ export const getRestrictionsResponseTransformer = async (data: any): Promise<Get
 };
 
 export const getSettlementsBySettlementIdItemsResponseTransformer = async (data: any): Promise<GetSettlementsBySettlementIdItemsResponse> => {
-    data = itemStackIListResultSchemaResponseTransformer(data);
+    data = itemStackViewModelIListResultSchemaResponseTransformer(data);
     return data;
 };
 
-const itemStackArrayResultSchemaResponseTransformer = (data: any) => {
+const itemStackViewModelArrayResultSchemaResponseTransformer = (data: any) => {
     if (data.data) {
-        data.data = data.data.map((item: any) => itemStackSchemaResponseTransformer(item));
+        data.data = data.data.map((item: any) => itemStackViewModelSchemaResponseTransformer(item));
     }
     return data;
 };
 
 export const putSettlementsBySettlementIdItemsResponseTransformer = async (data: any): Promise<PutSettlementsBySettlementIdItemsResponse> => {
-    data = itemStackArrayResultSchemaResponseTransformer(data);
+    data = itemStackViewModelArrayResultSchemaResponseTransformer(data);
     return data;
 };
 
