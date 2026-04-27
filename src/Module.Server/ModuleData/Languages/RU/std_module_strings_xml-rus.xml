@@ -120,5 +120,202 @@
     <string id="KORWOuG4" text="Клавиша-модификатор, например: Ctrl" />
     <string id="KORWOuG5" text="Сменить колчан" />
     <string id="KORWOuG6" text="Сменить колчан с боеприпасами" />
+
+    <!-- Inventory GUI -->
+      <!-- CharacterEquipNavBar -->
+    <string id="KC9dxc50" text="Снаряжение" />
+    <string id="KC9dxc51" text="Характеристики" />
+      <!-- CharacterInfoBuildEquipStatsVM -->
+    <string id="KC9dxc52" text="Стоимость" />
+    <string id="KC9dxc53" text="Суммарная стоимость всего надетого снаряжения" />
+    <string id="KC9dxc54" text="Ср. стоимость ремонта" />
+    <string id="KC9dxc55" text="Средняя стоимость ремонта в час для всего снаряжения" />
+    <string id="KC9dxc56" text="Очки здоровья" />
+    <string id="KC9dxc57" text="Эффективные очки здоровья на основе вашей сборки." />
+    <string id="KC9dxc58" text="Вес" />
+    <string id="KC9dxc59" text="Вес" />
+    <string id="KC9dxc60" text="Свободный вес" />
+    <string id="KC9dxc61" text="Свободный вес / Максимальный вес до штрафов" />
+    <string id="KC9dxc62" text="Снижение веса" />
+    <string id="KC9dxc63" text="Остаток веса после вычета свободного веса. Снижается очками СИЛ" />
+    <string id="KC9dxc64" text="Воспринимаемый вес" />
+    <string id="KC9dxc65" text="Воспринимаемый вес" />
+    <string id="KC9dxc66" text="Время до макс. скорости" />
+    <string id="KC9dxc67" text="Время разгона до максимальной скорости бега" />
+    <string id="KC9dxc68" text="Скорость без брони" />
+    <string id="KC9dxc69" text="Скорость бега без снаряжения" />
+    <string id="KC9dxc70" text="Текущая скорость" />
+    <string id="KC9dxc71" text="Текущая скорость" />
+    <string id="KC9dxc72" text="Макс. длина оружия" />
+    <string id="KC9dxc73" text="Макс. длина оружия без штрафа к скорости движения. Зависит от СИЛ" />
+    <string id="KC9dxc74" text="Штраф скорости движения" />
+    <string id="KC9dxc75" text="Доп. штраф к скорости при атаке оружием на основе длины и СИЛ" />
+    <string id="KC9dxc76" text="Штраф скорости маунта" />
+    <string id="KC9dxc77" text="Снижает скорость на основе воспринимаемого веса и веса сбруи" />
+    <string id="KC9dxc78" text="Штраф характеристик маунта" />
+    <string id="KC9dxc79" text="Штрафы к характеристикам маунта на основе длины оружия и СИЛ" />
+      <!-- CharacteristicsEditorVM -->
+    <string id="KC9dxc80" text="Владение оружием - " />
+    <string id="KC9dxc81" text="Обновить" />
+    <string id="KC9dxc82" text="Применить" />
+    <string id="KC9dxc83" text="Сбросить" />
+    <string id="KC9dxc84" text="Сила" />
+    <string id="KC9dxc85" text="Сила \nУвеличивает здоровье на 1\nТребует: 1 очко атрибута" />
+    <string id="KC9dxc86" text="Ловкость" />
+    <string id="KC9dxc87" text="Ловкость \nУвеличивает очки оружия и немного скорость движения\nТребует: 1 очко атрибута" />
+    <string id="KC9dxc88" text="Атрибуты - " />
+    <string id="KC9dxc89" text="Конвертировать 1 очко атрибута в 2 очка навыков" />
+    <string id="KC9dxc90" text="Навыки - " />
+    <string id="KC9dxc91" text="Конвертировать 2 очка навыков в 1 очко атрибута." />
+    <string id="KC9dxc92" text="Одноручное" />
+    <string id="KC9dxc93" text="Двуручное" />
+    <string id="KC9dxc94" text="Древковое" />
+    <string id="KC9dxc95" text="Лук" />
+    <string id="KC9dxc96" text="Арбалет" />
+    <string id="KC9dxc97" text="Метание" />
+    <string id="KC9dxc98" text="Железная плоть" />
+    <string id="KC9dxc99" text="Железная плоть\nУвеличивает здоровье на {HEALTH_PER_LEVEL} за уровень\nТребует: 3 СИЛ за уровень" />
+    <string id="KC9dx100" text="Мощный удар" />
+    <string id="KC9dx101" text="Мощный удар\nУвеличивает урон {DAMAGE_FACTOR}% оружием ближнего боя\nТребует: 3 СИЛ за уровень" />
+    <string id="KC9dx102" text="Мощный натяг" />
+    <string id="KC9dx103" text="Мощный натяг\nУвеличивает урон на {DAMAGE_FACTOR}% и устойчивость с луками\nТребует: 3 СИЛ за уровень" />
+    <string id="KC9dx104" text="Мощный бросок" />
+    <string id="KC9dx105" text="Мощный бросок\nУвеличивает урон на {DAMAGE_FACTOR}% и устойчивость с метательным оружием\nТребует: 6 СИЛ за уровень" />
+    <string id="KC9dx106" text="Атлетика" />
+    <string id="KC9dx107" text="Атлетика\nУвеличивает макс. скорость бега и уменьшает время разгона\nТребует: 3 ЛОВ за уровень" />
+    <string id="KC9dx108" text="Верховая езда" />
+    <string id="KC9dx109" text="Верховая езда\nУвеличивает скорость, разгон, манёвренность и устойчивость в седле\nТребует: 3 ЛОВ за уровень" />
+    <string id="KC9dx110" text="Мастер оружия" />
+    <string id="KC9dx111" text="Мастер оружия\nДаёт очки владения оружием\nТребует: 3 ЛОВ за уровень" />
+    <string id="KC9dx112" text="Конная стрельба" />
+    <string id="KC9dx113" text="Конная стрельба\nСнижает штраф за использование дальнобойного оружия на маунте\nТребует: 6 ЛОВ за уровень" />
+    <string id="KC9dx114" text="Щит" />
+    <string id="KC9dx115" text="Щит\nУлучшает прочность щита. Увеличивает защиту от снарядов. Снижает оглушение от ударов\nТребует: 6 ЛОВ за уровень" />
+      <!-- CharacteristicsEditorVM status and error messages -->
+    <string id="KC9dx116" text="Конвертировано 2 очка навыков в 1 очко атрибута." />
+    <string id="KC9dx117" text="Конвертировано 1 очко атрибута в 2 очка навыков." />
+    <string id="KC9dx118" text="Пожалуйста, подождите перед следующим запросом." />
+    <string id="KC9dx119" text="Невозможно применить: {ERROR_MESSAGE}" />
+    <string id="KC9dx120" text="Несохранённые изменения сброшены до исходного состояния." />
+    <string id="KC9dx121" text="Обновление характеристик через API." />
+    <string id="KC9dx122" text="Изменения не были внесены." />
+    <string id="KC9dx123" text="{SKILL_NAME} требует больше СИЛ/ЛОВ, чем у вас распределено." />
+    <string id="KC9dx124" text="Превышены очки владения оружием. Остаток: {REMAINING}" />
+    <string id="KC9dx125" text="Очки атрибутов не могут быть отрицательными." />
+    <string id="KC9dx126" text="Очки навыков не могут быть отрицательными." />
+      <!-- CharacterEquipUiHandler Key bindings-->
+    <string id="KC9dx127" text="Открыть менеджер персонажа/снаряжения" />
+    <string id="KC9dx128" text="Открыть интерфейс управления персонажем и снаряжением" />
+      <!-- CrpgCharacterEquipVM -->
+    <string id="KC9dx129" text="{ITEM_NAME} больше недоступен." />
+    <string id="KC9dx130" text="Выбрать снаряжение и возродиться" />
+      <!-- EquipmentPanelVM -->
+    <string id="KC9dx131" text="Броня головы" />
+    <string id="KC9dx132" text="Броня тела" />
+    <string id="KC9dx133" text="Броня рук" />
+    <string id="KC9dx134" text="Броня ног" />
+    <string id="KC9dx135" text="Броня маунта" />
+      <!-- InventoryGridVM -->
+    <string id="KC9dx136" text="Инвентарь игрока" />
+    <string id="KC9dx137" text="Арсенал клана" />
+    <string id="KC9dx138" text="Инвентарь команды" />
+      <!-- InventorySortTypeVM tooltips -->
+    <string id="KC9dx139" text="Одноручное" />
+    <string id="KC9dx140" text="Двуручное" />
+    <string id="KC9dx141" text="Древковое" />
+    <string id="KC9dx142" text="Щиты" />
+    <string id="KC9dx143" text="Метание" />
+    <string id="KC9dx144" text="Луки" />
+    <string id="KC9dx145" text="Арбалеты" />
+    <string id="KC9dx146" text="Огнестрельное" />
+    <string id="KC9dx147" text="Боеприпасы" />
+    <string id="KC9dx148" text="Броня головы" />
+    <string id="KC9dx149" text="Плащ" />
+    <string id="KC9dx150" text="Броня груди" />
+    <string id="KC9dx151" text="Броня рук" />
+    <string id="KC9dx152" text="Броня ног" />
+    <string id="KC9dx153" text="Маунт" />
+    <string id="KC9dx154" text="Сбруя маунта" />
+    <string id="KC9dx155" text="Знамя" />
+      <!-- ItemInfoVM -->
+    <string id="KC9dx156" text="Добавить в арсенал" />
+    <string id="KC9dx157" text="Убрать из арсенала" />
+    <string id="KC9dx158" text="Взять из арсенала" />
+    <string id="KC9dx159" text="Принудительный возврат" />
+    <string id="KC9dx160" text="Недоступно" />
+    <string id="KC9dx161" text="Вернуть в арсенал" />
+    <string id="KC9dx162" text="Неверный статус арсенала" />
+    <string id="KC9dx163" text="Содержание" />
+    <string id="KC9dx164" text="Цена" />
+    <string id="KC9dx165" text="Тип/Класс" />
+    <string id="KC9dx166" text="Набор брони" />
+    <string id="KC9dx167" text="Культура" />
+    <string id="KC9dx168" text="Особенности" />
+    <string id="KC9dx169" text="Цвет команды" />
+    <string id="KC9dx170" text="Материал" />
+    <string id="KC9dx171" text="Вес" />
+    <string id="KC9dx172" text="Броня головы" />
+    <string id="KC9dx173" text="Броня тела" />
+    <string id="KC9dx174" text="Броня рук" />
+    <string id="KC9dx175" text="Броня ног" />
+    <string id="KC9dx176" text="Тип маунта" />
+    <string id="KC9dx177" text="Верблюд" />
+    <string id="KC9dx178" text="Лошадь" />
+    <string id="KC9dx179" text="Длина корпуса" />
+    <string id="KC9dx180" text="Урон тараном" />
+    <string id="KC9dx181" text="Манёвренность" />
+    <string id="KC9dx182" text="Скорость" />
+    <string id="KC9dx183" text="Очки здоровья" />
+    <string id="KC9dx184" text="Дальность" />
+    <string id="KC9dx185" text="Управление" />
+    <string id="KC9dx186" text="Урон укола" />
+    <string id="KC9dx187" text="Скорость укола" />
+    <string id="KC9dx188" text="Урон удара" />
+    <string id="KC9dx189" text="Скорость удара" />
+    <string id="KC9dx190" text="Рубящий" />
+    <string id="KC9dx191" text="Пронзающий" />
+    <string id="KC9dx192" text="Тип урона" />
+    <string id="KC9dx193" text="Урон" />
+    <string id="KC9dx194" text="Вес боеприпасов" />
+    <string id="KC9dx195" text="Боеприпасы" />
+    <string id="KC9dx196" text="Точность" />
+    <string id="KC9dx197" text="Скорость снаряда" />
+    <string id="KC9dx198" text="Скорость перезарядки" />
+    <string id="KC9dx199" text="Скорость прицеливания" />
+    <string id="KC9dx200" text="Прочность" />
+    <string id="KC9dx201" text="Броня" />
+    <string id="KC9dx202" text="Сокрушительный удар" />
+    <string id="KC9dx203" text="Бонус против щита" />
+    <string id="KC9dx204" text="Пробивает щит" />
+    <string id="KC9dx205" text="Сбрасывает с маунта" />
+    <string id="KC9dx206" text="Сбивает с ног" />
+    <string id="KC9dx207" text="Нельзя перезарядить верхом" />
+    <string id="KC9dx208" text="Лёгкий арбалет" />
+    <string id="KC9dx209" text="Тяжёлый арбалет" />
+    <string id="KC9dx210" text="Длинный лук" />
+    <string id="KC9dx211" text="Лук" />
+    <string id="KC9dx212" text="Упор" />
+    <string id="KC9dx213" text="Пика" />
+    <string id="KC9dx214" text="Нельзя использовать верхом" />
+    <string id="KC9dx215" text="Бросить при смене оружия" />
+      <!-- CrpgCharacterLoadoutBehaviorClient -->
+    <string id="KC9dx216" text="Снаряжение обновлено." />
+    <string id="KC9dx217" text="Снято {ITEM_NAME} из слота {SLOT}." />
+    <string id="KC9dx218" text="Надето {ITEM_NAME} в слот {SLOT}." />
+    <string id="KC9dx219" text="{ITEM_NAME} добавлен в арсенал клана." />
+    <string id="KC9dx220" text="{ITEM_NAME} убран из арсенала клана." />
+    <string id="KC9dx221" text="{ITEM_NAME} взят из арсенала клана." />
+    <string id="KC9dx222" text="{ITEM_NAME} возвращён в арсенал клана." />
+    <string id="KC9dx223" text="Арсенал клана: неизвестное действие {ACTION}" />
+    <string id="KC9dx224" text="Обновление характеристик не удалось: {ERROR}" />
+    <string id="KC9dx225" text="Характеристики успешно обновлены" />
+      <!-- CrpgClanArmoryClient -->
+    <string id="KC9dx226" text="Арсенал -- подождите перед следующей попыткой." />
+    <string id="KC9dx227" text="Действие с арсеналом не удалось: {ERROR}" />
+      <!-- CrpgTeamInventoryClient -->
+    <string id="KC9dx228" text="Надето {ITEM_NAME} в слот {SLOT}." />
+    <string id="KC9dx229" text="Снято {ITEM_NAME} из слота {SLOT}." />
+      <!-- CrpgTeamInventoryServer -->
+    <string id="KC9dx230" text="Выберите снаряжение и нажмите готово" />    
   </strings>
 </base>

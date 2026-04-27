@@ -8,6 +8,7 @@ using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.EndOfRound;
 using Crpg.Module.GUI.HudExtension;
+using Crpg.Module.GUI.Inventory;
 using Crpg.Module.GUI.Scoreboard;
 using TaleWorlds.MountAndBlade.Multiplayer.GauntletUI.Mission;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
@@ -69,6 +70,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
     [ViewMethod("")] // All static instances in ViewCreatorModule classes are expected to have a ViewMethod attribute.
     private static MissionView[] OpenCrpgBattleOrSkirmish(Mission mission)
     {
+        CrpgCharacterEquipUiHandler.Configure(_constants);
         CrpgExperienceTable experienceTable = new(_constants);
         MissionMultiplayerGameModeBaseClient gameModeClient = mission.GetMissionBehavior<MissionMultiplayerGameModeBaseClient>();
         MissionView crpgEscapeMenu = ViewCreatorManager.CreateMissionView<CrpgMissionMultiplayerEscapeMenu>(isNetwork: false, null, "Battle", gameModeClient);
@@ -93,6 +95,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMissionKillNotificationUIHandler(),
             new CrpgHudExtensionHandler(),
             new AmmoQuiverChangeUiHandler(),
+            new CrpgCharacterEquipUiHandler(), // Character/Equip gui
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -156,6 +159,9 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new CrpgCommanderBehaviorClient(),
                     new AmmoQuiverChangeBehaviorClient(),
                     new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
+                    new CrpgClanArmoryClient(), // Clan armory Sync with API/Client for GUI
+                    new CrpgTeamInventoryClient(), // team shared inventory sync with server/gui
+                    new CrpgCharacterLoadoutBehaviorClient(), // Inventory & Equipment Sync for GUI
 #endif
                     battleClient,
                     new MultiplayerTimerComponent(), // round timer
@@ -202,6 +208,9 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new CrpgCustomTeamBannersAndNamesServer(roundController),
                     new CrpgCommanderBehaviorServer(),
                     new FriendlyFireReportServerBehavior(), // Ctrl+M to report friendly fire
+                    new CrpgClanArmoryServer(crpgClient), // Clan armory Sync with API/Client for GUI
+                    new CrpgTeamInventoryServer(), // team shared inventory sync with clients/gui
+                    new CrpgCharacterLoadoutBehaviorServer(crpgClient, crpgGameMode), // Inventory & Equipment Sync for GUI
 #else
                     new MultiplayerRoundComponent(),
                     new MultiplayerAchievementComponent(),

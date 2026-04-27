@@ -191,6 +191,11 @@ internal static class ItemExporter
         WeaponClass.TwoHandedPolearm,
     ];
 
+    public static CrpgItem MbToCrpgItemPub(ItemObject mbItem)
+    {
+        return MbToCrpgItem(mbItem);
+    }
+
     /// <summary>
     /// Triggers a refund for a given item category by mutating item IDs in the XML files. It increments the version
     /// suffix (e.g. "v1") of items causing the old item to no longer exist, forcing the game to refund it to players.
@@ -821,40 +826,40 @@ internal static class ItemExporter
                         break;
 
                     case ItemObject.ItemTypeEnum.Bow:
-                    {
-                        string bowItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")!.Attributes!["item_usage"].Value;
-                        var bowBonusTable = bowItemUsage == "long_bow" ? LongBowHeirloomBonus : BowHeirloomBonus;
-                        if (bowBonusTable.TryGetValue(heirloomLevel, out var bowBonus))
                         {
-                            ApplyRangedHeirloomBonus(nonHeirloomNode, node1, bowBonus);
-                        }
+                            string bowItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")!.Attributes!["item_usage"].Value;
+                            var bowBonusTable = bowItemUsage == "long_bow" ? LongBowHeirloomBonus : BowHeirloomBonus;
+                            if (bowBonusTable.TryGetValue(heirloomLevel, out var bowBonus))
+                            {
+                                ApplyRangedHeirloomBonus(nonHeirloomNode, node1, bowBonus);
+                            }
 
-                        break;
-                    }
+                            break;
+                        }
 
                     case ItemObject.ItemTypeEnum.Crossbow:
-                    {
-                        string crossbowItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")!.Attributes!["item_usage"].Value;
-                        var crossbowBonusTable = crossbowItemUsage == "crossbow" ? CrossbowHeirloomBonus : LightCrossbowHeirloomBonus;
-                        if (crossbowBonusTable.TryGetValue(heirloomLevel, out var crossbowBonus))
                         {
-                            ApplyRangedHeirloomBonus(nonHeirloomNode, node1, crossbowBonus);
-                        }
+                            string crossbowItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")!.Attributes!["item_usage"].Value;
+                            var crossbowBonusTable = crossbowItemUsage == "crossbow" ? CrossbowHeirloomBonus : LightCrossbowHeirloomBonus;
+                            if (crossbowBonusTable.TryGetValue(heirloomLevel, out var crossbowBonus))
+                            {
+                                ApplyRangedHeirloomBonus(nonHeirloomNode, node1, crossbowBonus);
+                            }
 
-                        break;
-                    }
+                            break;
+                        }
 
                     case ItemObject.ItemTypeEnum.Musket:
-                    {
-                        string musketItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")?.Attributes!["item_usage"]?.Value ?? string.Empty;
-                        var musketBonusTable = musketItemUsage == "crpg_light_gun" ? LightMusketHeirloomBonus : MusketHeirloomBonus;
-                        if (musketBonusTable.TryGetValue(heirloomLevel, out var musketBonus))
                         {
-                            ApplyRangedHeirloomBonus(nonHeirloomNode, node1, musketBonus);
-                        }
+                            string musketItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")?.Attributes!["item_usage"]?.Value ?? string.Empty;
+                            var musketBonusTable = musketItemUsage == "crpg_light_gun" ? LightMusketHeirloomBonus : MusketHeirloomBonus;
+                            if (musketBonusTable.TryGetValue(heirloomLevel, out var musketBonus))
+                            {
+                                ApplyRangedHeirloomBonus(nonHeirloomNode, node1, musketBonus);
+                            }
 
-                        break;
-                    }
+                            break;
+                        }
 
                     case ItemObject.ItemTypeEnum.Pistol:
                         if (PistolHeirloomBonus.TryGetValue(heirloomLevel, out var pistolBonus))
@@ -1201,7 +1206,7 @@ internal static class ItemExporter
 
     private static CrpgCulture MbToCrpgCulture(BasicCultureObject? culture) => culture == null
         ? CrpgCulture.Neutral // Consider no culture as neutral.
-        : (CrpgCulture)Enum.Parse(typeof(CrpgCulture), culture.ToString());
+        : (CrpgCulture)Enum.Parse(typeof(CrpgCulture), culture.StringId, ignoreCase: true);
 
     private static CrpgArmorMaterialType MbToCrpgArmorMaterialType(ArmorComponent.ArmorMaterialTypes t) => t switch
     {

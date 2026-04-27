@@ -8,6 +8,7 @@ using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.Dtv;
+using Crpg.Module.GUI.Inventory;
 using Crpg.Module.GUI.Spectator;
 using Crpg.Module.GUI.Warmup;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
@@ -48,6 +49,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
     [ViewMethod(GameName)]
     public static MissionView[] OpenCrpgDtv(Mission mission)
     {
+        CrpgCharacterEquipUiHandler.Configure(_constants);
         CrpgExperienceTable experienceTable = new(_constants);
         MissionMultiplayerGameModeBaseClient gameModeClient = mission.GetMissionBehavior<MissionMultiplayerGameModeBaseClient>();
         MissionView crpgEscapeMenu = ViewCreatorManager.CreateMissionView<CrpgMissionMultiplayerEscapeMenu>(isNetwork: false, null, "cRPGDTV", gameModeClient);
@@ -72,6 +74,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
             new WarmupHudUiHandler(),
             new DtvHudUiHandler(),
             new AmmoQuiverChangeUiHandler(),
+            new CrpgCharacterEquipUiHandler(), // Character/Equip gui
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -121,6 +124,9 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new AmmoQuiverChangeBehaviorClient(),
                 new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
                 new CrpgDtvStuckBotHighlighter(dtvClient),
+                new CrpgClanArmoryClient(), // Clan armory Sync with API/Client for GUI
+                new CrpgTeamInventoryClient(), // team shared inventory sync with server/gui
+                new CrpgCharacterLoadoutBehaviorClient(), // Inventory & Equipment Sync for GUI
 #endif
                 dtvClient,
                 new MultiplayerTimerComponent(), // round timer
@@ -157,6 +163,9 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
                 new CrpgCommanderBehaviorServer(),
                 new FriendlyFireReportServerBehavior(), // Ctrl+M to report friendly fire
+                new CrpgClanArmoryServer(crpgClient), // Clan armory Sync with API/Client for GUI
+                new CrpgTeamInventoryServer(), // team shared inventory sync with clients/gui
+                new CrpgCharacterLoadoutBehaviorServer(crpgClient, CrpgGameMode.CRPGDTV), // Inventory & Equipment Sync for GUI
 #else
                 new MultiplayerAchievementComponent(),
                 MissionMatchHistoryComponent.CreateIfConditionsAreMet(),

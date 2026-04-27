@@ -69,6 +69,203 @@
   <string id="str_notification.entities_removed" text="{=I5MWE5AR}{ENTITY_COUNT} entities were removed from the map given the population size." />
   <string id="str_notification.moved_to_spectator" text="{=iN5cT1v3}You have been moved to spectator due to inactivity!" />
 
+  <!-- Inventory GUI -->
+    <!-- CharacterEquipNavBar -->
+  <string id="KC9dxc50" text="Equipment" />
+  <string id="KC9dxc51" text="Characteristics" />
+    <!-- CharacterInfoBuildEquipStatsVM -->
+  <string id="KC9dxc52" text="Cost" />
+  <string id="KC9dxc53" text="Total cost of all equipped items" />
+  <string id="KC9dxc54" text="Avg repair cost" />
+  <string id="KC9dxc55" text="Average repair cost per hour of all equipped items" />
+  <string id="KC9dxc56" text="Health points" />
+  <string id="KC9dxc57" text="Effective health points based on your build." />
+  <string id="KC9dxc58" text="Weight" />
+  <string id="KC9dxc59" text="Weight" />
+  <string id="KC9dxc60" text="Free weight" />
+  <string id="KC9dxc61" text="Free weight / Maximum weight before penalties" />
+  <string id="KC9dxc62" text="Weight reduction" />
+  <string id="KC9dxc63" text="Remaining weight after deduction by free weight. Reduced by STR points" />
+  <string id="KC9dxc64" text="Perceived weight" />
+  <string id="KC9dxc65" text="Perceived weight" />
+  <string id="KC9dxc66" text="Time to max speed" />
+  <string id="KC9dxc67" text="Acceleration time to reach max speed of running" />
+  <string id="KC9dxc68" text="Naked speed" />
+  <string id="KC9dxc69" text="Speed of running with no equipment" />
+  <string id="KC9dxc70" text="Current speed" />
+  <string id="KC9dxc71" text="Current speed" />
+  <string id="KC9dxc72" text="Max weapon length" />
+  <string id="KC9dxc73" text="Max weapon length without a movement speed penalty when fighting. Depends on STR points" />
+  <string id="KC9dxc74" text="Mov. speed penalty" />
+  <string id="KC9dxc75" text="Extra movement speed penalty when attacking with a weapon based on length and STR" />
+  <string id="KC9dxc76" text="Mount speed penalty" />
+  <string id="KC9dxc77" text="Reduces speed based on rider perceived weight and harness weight" />
+  <string id="KC9dxc78" text="Mount stats penalty" />
+  <string id="KC9dxc79" text="Penalties to mount stats based on weapon length and rider STR" />
+    <!-- CharacteristicsEditorVM -->
+  <string id="KC9dxc80" text="Weapon Proficiencies - " />
+  <string id="KC9dxc81" text="API Refresh" />
+  <string id="KC9dxc82" text="Apply Changes" />
+  <string id="KC9dxc83" text="Reset Changes" />
+  <string id="KC9dxc84" text="Strength" />
+  <string id="KC9dxc85" text="Strength \nIncreases your health by 1\nRequires: 1 attribute point" />
+  <string id="KC9dxc86" text="Agility" />
+  <string id="KC9dxc87" text="Agility \nIncreases your weapon points and makes you move a bit faster\nRequires: 1 attribute point" />
+  <string id="KC9dxc88" text="Attributes - " />
+  <string id="KC9dxc89" text="Convert 1 Attribute point into 2 Skill Points" />
+  <string id="KC9dxc90" text="Skills - " />
+  <string id="KC9dxc91" text="Convert 2 Skill points into 1 Attribute point." />
+  <string id="KC9dxc92" text="One-Handed" />
+  <string id="KC9dxc93" text="Two-Handed" />
+  <string id="KC9dxc94" text="Polearm" />
+  <string id="KC9dxc95" text="Bow" />
+  <string id="KC9dxc96" text="Crossbow" />
+  <string id="KC9dxc97" text="Throwing" />
+  <string id="KC9dxc98" text="Iron Flesh" />
+  <string id="KC9dxc99" text="Iron flesh\nIncreases your health by {HEALTH_PER_LEVEL} per level\nRequires: 3 STR per level" />
+  <string id="KC9dx100" text="Power Strike" />
+  <string id="KC9dx101" text="Power strike\nIncreases your damage {DAMAGE_FACTOR}% with melee weapons\nRequires: 3 STR per level" />
+  <string id="KC9dx102" text="Power Draw" />
+  <string id="KC9dx103" text="Power draw\nIncreases damage by {DAMAGE_FACTOR}% and your steadiness with bows\nRequires: 3 STR per level" />
+  <string id="KC9dx104" text="Power Throw" />
+  <string id="KC9dx105" text="Power throw\nIncreases damage by {DAMAGE_FACTOR}% and your steadiness with throwing weapons\nRequires: 6 STR per level" />
+  <string id="KC9dx106" text="Athletics" />
+  <string id="KC9dx107" text="Athletics\nIncreases your maximum running speed and decreases the time it takes to reach it\nRequires: 3 AGI per level" />
+  <string id="KC9dx108" text="Riding" />
+  <string id="KC9dx109" text="Riding\nIncreases riding speed, acceleration, maneuver, and dismount resistance\nRequires: 3 AGI per level" />
+  <string id="KC9dx110" text="Weapon Master" />
+  <string id="KC9dx111" text="Weapon master\nGives weapon proficiency points\nRequires: 3 AGI per level" />
+  <string id="KC9dx112" text="Mounted Archery" />
+  <string id="KC9dx113" text="Mounted archery\nReduces penalty for using ranged weapons on a moving mount\nRequires: 6 AGI per level" />
+  <string id="KC9dx114" text="Shield" />
+  <string id="KC9dx115" text="Shield\nImproves shield durability. Increases coverage from ranged attacks. Reduces stun from weapons when hit\nRequires: 6 AGI per level" />  
+    <!-- CharacteristicsEditorVM status and error messages -->
+  <string id="KC9dx116" text="Converted 2 skill points into 1 attribute point." />
+  <string id="KC9dx117" text="Converted 1 attribute point into 2 skill points." />
+  <string id="KC9dx118" text="Please wait to send another API request." />
+  <string id="KC9dx119" text="Cannot apply: {ERROR_MESSAGE}" />
+  <string id="KC9dx120" text="Unapplied changes reset to initial state." />
+  <string id="KC9dx121" text="Updating Characteristics from API." />
+  <string id="KC9dx122" text="No changes have been made." />
+  <string id="KC9dx123" text="{SKILL_NAME} requires more STR/AGI than you have allocated." />
+  <string id="KC9dx124" text="Weapon proficiency points exceeded. Remaining: {REMAINING}" />
+  <string id="KC9dx125" text="Attribute points cannot be negative." />
+  <string id="KC9dx126" text="Skill points cannot be negative." />
+    <!-- CharacterEquipUiHandler Key bindings-->
+  <string id="KC9dx127" text="Open Character/Equipment Manager" />
+  <string id="KC9dx128" text="Open character/equipment manager gui" />
+    <!-- CrpgCharacterEquipVM -->
+  <string id="KC9dx129" text="{ITEM_NAME} is no longer available." />
+  <string id="KC9dx130" text="Select Equipment and Spawn" />
+    <!-- EquipmentPanelVM -->
+  <string id="KC9dx131" text="Head Armor" />
+  <string id="KC9dx132" text="Body Armor" />
+  <string id="KC9dx133" text="Hand Armor" />
+  <string id="KC9dx134" text="Leg Armor" />
+  <string id="KC9dx135" text="Mount Armor" />
+    <!-- InventoryGridVM -->
+  <string id="KC9dx136" text="User Inventory" />
+  <string id="KC9dx137" text="Clan Armory" />
+  <string id="KC9dx138" text="Team Inventory" />
+    <!-- InventorySortTypeVM tooltips -->
+  <string id="KC9dx139" text="One Handed" />
+  <string id="KC9dx140" text="Two Handed" />
+  <string id="KC9dx141" text="Polearms" />
+  <string id="KC9dx142" text="Shields" />
+  <string id="KC9dx143" text="Throwing" />
+  <string id="KC9dx144" text="Bows" />
+  <string id="KC9dx145" text="Crossbows" />
+  <string id="KC9dx146" text="Guns" />
+  <string id="KC9dx147" text="Ammunition" />
+  <string id="KC9dx148" text="Head Armor" />
+  <string id="KC9dx149" text="Cape" />
+  <string id="KC9dx150" text="Chest Armor" />
+  <string id="KC9dx151" text="Hand Armor" />
+  <string id="KC9dx152" text="Leg Armor" />
+  <string id="KC9dx153" text="Mount" />
+  <string id="KC9dx154" text="Mount Harness" />
+  <string id="KC9dx155" text="Banner" />
+    <!-- ItemInfoVM -->
+  <string id="KC9dx156" text="Add to armory" />
+  <string id="KC9dx157" text="Remove from armory" />
+  <string id="KC9dx158" text="Borrow from armory" />
+  <string id="KC9dx159" text="Force Return" />
+  <string id="KC9dx160" text="Unavailable" />
+  <string id="KC9dx161" text="Return to armory" />
+  <string id="KC9dx162" text="ArmoryStatusInvalid" />
+  <string id="KC9dx163" text="Upkeep" />
+  <string id="KC9dx164" text="Price" />
+  <string id="KC9dx165" text="Type/Class" />
+  <string id="KC9dx166" text="Armor set" />
+  <string id="KC9dx167" text="Culture" />
+  <string id="KC9dx168" text="Features" />
+  <string id="KC9dx169" text="Use team color" />
+  <string id="KC9dx170" text="Material" />
+  <string id="KC9dx171" text="Weight" />
+  <string id="KC9dx172" text="Head armor" />
+  <string id="KC9dx173" text="Body armor" />
+  <string id="KC9dx174" text="Arm armor" />
+  <string id="KC9dx175" text="Leg armor" />
+  <string id="KC9dx176" text="Mount type" />
+  <string id="KC9dx177" text="Camel" />
+  <string id="KC9dx178" text="Horse" />
+  <string id="KC9dx179" text="Body length" />
+  <string id="KC9dx180" text="Charge damage" />
+  <string id="KC9dx181" text="Maneuver" />
+  <string id="KC9dx182" text="Speed" />
+  <string id="KC9dx183" text="Hit points" />
+  <string id="KC9dx184" text="Reach" />
+  <string id="KC9dx185" text="Handling" />
+  <string id="KC9dx186" text="Thrust damage" />
+  <string id="KC9dx187" text="Thrust speed" />
+  <string id="KC9dx188" text="Swing damage" />
+  <string id="KC9dx189" text="Swing speed" />
+  <string id="KC9dx190" text="Cut" />
+  <string id="KC9dx191" text="Pierce" />
+  <string id="KC9dx192" text="Damage type" />
+  <string id="KC9dx193" text="Damage" />
+  <string id="KC9dx194" text="Stack weight" />
+  <string id="KC9dx195" text="Ammo" />
+  <string id="KC9dx196" text="Accuracy" />
+  <string id="KC9dx197" text="Missile speed" />
+  <string id="KC9dx198" text="Reload speed" />
+  <string id="KC9dx199" text="Aim speed" />
+  <string id="KC9dx200" text="Durability" />
+  <string id="KC9dx201" text="Armor" />
+  <string id="KC9dx202" text="Crush Through" />
+  <string id="KC9dx203" text="Bonus vs Shield" />
+  <string id="KC9dx204" text="Penetrates Shield" />
+  <string id="KC9dx205" text="Can Dismount" />
+  <string id="KC9dx206" text="Knock Down" />
+  <string id="KC9dx207" text="Can't Reload on Horseback" />
+  <string id="KC9dx208" text="Light Crossbow" />
+  <string id="KC9dx209" text="Heavy Crossbow" />
+  <string id="KC9dx210" text="Longbow" />
+  <string id="KC9dx211" text="Bow" />
+  <string id="KC9dx212" text="Brace" />
+  <string id="KC9dx213" text="Pike" />
+  <string id="KC9dx214" text="Can't Use on Horseback" />
+  <string id="KC9dx215" text="Drop on weapon change" />
+    <!-- CrpgCharacterLoadoutBehaviorClient -->
+  <string id="KC9dx216" text="Equipment updated." />
+  <string id="KC9dx217" text="Unequipped {ITEM_NAME} from {SLOT}." />
+  <string id="KC9dx218" text="Equipped {ITEM_NAME} to {SLOT}." />
+  <string id="KC9dx219" text="{ITEM_NAME} added to clan armory." />
+  <string id="KC9dx220" text="{ITEM_NAME} removed from clan armory." />
+  <string id="KC9dx221" text="{ITEM_NAME} borrowed from clan armory." />
+  <string id="KC9dx222" text="{ITEM_NAME} returned to clan armory." />
+  <string id="KC9dx223" text="ClanArmory: unknown action {ACTION}" />
+  <string id="KC9dx224" text="Updated Characteristics Failed: {ERROR}" />
+  <string id="KC9dx225" text="Updated Characteristics Successfully" />
+    <!-- CrpgClanArmoryClient -->
+  <string id="KC9dx226" text="Armory -- please wait before trying again." />
+  <string id="KC9dx227" text="Armory action failed: {ERROR}" />
+    <!-- CrpgTeamInventoryClient -->
+  <string id="KC9dx228" text="Equipped {ITEM_NAME} in {SLOT}." />
+  <string id="KC9dx229" text="Unequipped {ITEM_NAME} from {SLOT}." />
+    <!-- CrpgTeamInventoryServer -->
+  <string id="KC9dx230" text="Select your equipment and click ready" />
+  
   <!-- Battle Maps -->
   <string id="str_multiplayer_scene_name.crpg_battle_abandoned" text="{=PKVPlAeE}Abandoned" />
   <string id="str_multiplayer_scene_name.crpg_battle_acaciacitadel" text="{=tZJ32ZRQ}Acacia Citadel" />
