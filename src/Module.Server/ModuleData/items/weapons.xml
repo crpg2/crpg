@@ -14668,25 +14668,25 @@
       <Piece id="crpg_podaodao_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hatinghand_h0" name="{=Yeldur}Hating Hand" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+  <CraftedItem id="crpg_hatinghand_h0" name="{=BalanceMe}Hating Hand" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_hatinghand_head_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_hatinghand_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hatinghand_h1" name="{=Yeldur}Hating Hand +1" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+  <CraftedItem id="crpg_hatinghand_h1" name="{=BalanceMe}Hating Hand +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_hatinghand_head_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_hatinghand_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hatinghand_h2" name="{=Yeldur}Hating Hand +2" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+  <CraftedItem id="crpg_hatinghand_h2" name="{=BalanceMe}Hating Hand +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_hatinghand_head_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_hatinghand_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hatinghand_h3" name="{=Yeldur}Hating Hand +3" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+  <CraftedItem id="crpg_hatinghand_h3" name="{=BalanceMe}Hating Hand +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_hatinghand_head_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_hatinghand_handle_h3" Type="Handle" scale_factor="100" />
