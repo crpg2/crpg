@@ -10344,4 +10344,28 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_disabled_kadseears_h0" name="{=Yeldur}Kadseears" subtype="head_armor" mesh="kadseears" culture="Culture.vlandia" weight="3.228808" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="none" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_disabled_kadseears_h1" name="{=Yeldur}Kadseears +1" subtype="head_armor" mesh="kadseears" culture="Culture.vlandia" weight="3.228808" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="42" has_gender_variations="false" hair_cover_type="none" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_disabled_kadseears_h2" name="{=Yeldur}Kadseears +2" subtype="head_armor" mesh="kadseears" culture="Culture.vlandia" weight="3.228808" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="44" has_gender_variations="false" hair_cover_type="none" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_disabled_kadseears_h3" name="{=Yeldur}Kadseears +3" subtype="head_armor" mesh="kadseears" culture="Culture.vlandia" weight="3.228808" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="none" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
 </Items>

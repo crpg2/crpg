@@ -20,6 +20,22 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_sunsword_blade_h0" />
+      <UsablePiece piece_id="crpg_sunsword_blade_h1" />
+      <UsablePiece piece_id="crpg_sunsword_blade_h2" />
+      <UsablePiece piece_id="crpg_sunsword_blade_h3" />
+      <UsablePiece piece_id="crpg_sunsword_guard_h0" />
+      <UsablePiece piece_id="crpg_sunsword_guard_h1" />
+      <UsablePiece piece_id="crpg_sunsword_guard_h2" />
+      <UsablePiece piece_id="crpg_sunsword_guard_h3" />
+      <UsablePiece piece_id="crpg_sunsword_handle_h0" />
+      <UsablePiece piece_id="crpg_sunsword_handle_h1" />
+      <UsablePiece piece_id="crpg_sunsword_handle_h2" />
+      <UsablePiece piece_id="crpg_sunsword_handle_h3" />
+      <UsablePiece piece_id="crpg_sunsword_pommel_h0" />
+      <UsablePiece piece_id="crpg_sunsword_pommel_h1" />
+      <UsablePiece piece_id="crpg_sunsword_pommel_h2" />
+      <UsablePiece piece_id="crpg_sunsword_pommel_h3" />
       <UsablePiece piece_id="crpg_kopis_blade_h0" />
       <UsablePiece piece_id="crpg_kopis_blade_h1" />
       <UsablePiece piece_id="crpg_kopis_blade_h2" />
@@ -3520,6 +3536,22 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_sunsword2h_blade_h0" />
+      <UsablePiece piece_id="crpg_sunsword2h_blade_h1" />
+      <UsablePiece piece_id="crpg_sunsword2h_blade_h2" />
+      <UsablePiece piece_id="crpg_sunsword2h_blade_h3" />
+      <UsablePiece piece_id="crpg_sunsword2h_guard_h0" />
+      <UsablePiece piece_id="crpg_sunsword2h_guard_h1" />
+      <UsablePiece piece_id="crpg_sunsword2h_guard_h2" />
+      <UsablePiece piece_id="crpg_sunsword2h_guard_h3" />
+      <UsablePiece piece_id="crpg_sunsword2h_handle_h0" />
+      <UsablePiece piece_id="crpg_sunsword2h_handle_h1" />
+      <UsablePiece piece_id="crpg_sunsword2h_handle_h2" />
+      <UsablePiece piece_id="crpg_sunsword2h_handle_h3" />
+      <UsablePiece piece_id="crpg_sunsword2h_pommel_h0" />
+      <UsablePiece piece_id="crpg_sunsword2h_pommel_h1" />
+      <UsablePiece piece_id="crpg_sunsword2h_pommel_h2" />
+      <UsablePiece piece_id="crpg_sunsword2h_pommel_h3" />
       <UsablePiece piece_id="crpg_ibelinsword_2h_blade_h0" />
       <UsablePiece piece_id="crpg_ibelinsword_2h_blade_h1" />
       <UsablePiece piece_id="crpg_ibelinsword_2h_blade_h2" />
@@ -5107,6 +5139,14 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_hatinghand_handle_h0" />
+      <UsablePiece piece_id="crpg_hatinghand_handle_h1" />
+      <UsablePiece piece_id="crpg_hatinghand_handle_h2" />
+      <UsablePiece piece_id="crpg_hatinghand_handle_h3" />
+      <UsablePiece piece_id="crpg_hatinghand_head_h0" />
+      <UsablePiece piece_id="crpg_hatinghand_head_h1" />
+      <UsablePiece piece_id="crpg_hatinghand_head_h2" />
+      <UsablePiece piece_id="crpg_hatinghand_head_h3" />
       <UsablePiece piece_id="crpg_runic_axe_blade_h0" />
       <UsablePiece piece_id="crpg_runic_axe_blade_h1" />
       <UsablePiece piece_id="crpg_runic_axe_blade_h2" />
@@ -6647,6 +6687,50 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_bobsickle_blade_h0" />
+      <UsablePiece piece_id="crpg_bobsickle_blade_h1" />
+      <UsablePiece piece_id="crpg_bobsickle_blade_h2" />
+      <UsablePiece piece_id="crpg_bobsickle_blade_h3" />
+      <UsablePiece piece_id="crpg_bobsickle_pommel_h0" />
+      <UsablePiece piece_id="crpg_bobsickle_pommel_h1" />
+      <UsablePiece piece_id="crpg_bobsickle_pommel_h2" />
+      <UsablePiece piece_id="crpg_bobsickle_pommel_h3" />
+      <UsablePiece piece_id="crpg_bobsickle_handle_h0" />
+      <UsablePiece piece_id="crpg_bobsickle_handle_h1" />
+      <UsablePiece piece_id="crpg_bobsickle_handle_h2" />
+      <UsablePiece piece_id="crpg_bobsickle_handle_h3" />
+      <UsablePiece piece_id="crpg_podaodao_blade_h0" />
+      <UsablePiece piece_id="crpg_podaodao_blade_h1" />
+      <UsablePiece piece_id="crpg_podaodao_blade_h2" />
+      <UsablePiece piece_id="crpg_podaodao_blade_h3" />
+      <UsablePiece piece_id="crpg_podaodao_guard_h0" />
+      <UsablePiece piece_id="crpg_podaodao_guard_h1" />
+      <UsablePiece piece_id="crpg_podaodao_guard_h2" />
+      <UsablePiece piece_id="crpg_podaodao_guard_h3" />
+      <UsablePiece piece_id="crpg_podaodao_handle_h0" />
+      <UsablePiece piece_id="crpg_podaodao_handle_h1" />
+      <UsablePiece piece_id="crpg_podaodao_handle_h2" />
+      <UsablePiece piece_id="crpg_podaodao_handle_h3" />
+      <UsablePiece piece_id="crpg_podaodao_pommel_h0" />
+      <UsablePiece piece_id="crpg_podaodao_pommel_h1" />
+      <UsablePiece piece_id="crpg_podaodao_pommel_h2" />
+      <UsablePiece piece_id="crpg_podaodao_pommel_h3" />
+      <UsablePiece piece_id="crpg_wolfstooth_head_h0" />
+      <UsablePiece piece_id="crpg_wolfstooth_head_h1" />
+      <UsablePiece piece_id="crpg_wolfstooth_head_h2" />
+      <UsablePiece piece_id="crpg_wolfstooth_head_h3" />
+      <UsablePiece piece_id="crpg_wolfstooth_guard_h0" />
+      <UsablePiece piece_id="crpg_wolfstooth_guard_h1" />
+      <UsablePiece piece_id="crpg_wolfstooth_guard_h2" />
+      <UsablePiece piece_id="crpg_wolfstooth_guard_h3" />
+      <UsablePiece piece_id="crpg_wolfstooth_handle_h0" />
+      <UsablePiece piece_id="crpg_wolfstooth_handle_h1" />
+      <UsablePiece piece_id="crpg_wolfstooth_handle_h2" />
+      <UsablePiece piece_id="crpg_wolfstooth_handle_h3" />
+      <UsablePiece piece_id="crpg_wolfstooth_pommel_h0" />
+      <UsablePiece piece_id="crpg_wolfstooth_pommel_h1" />
+      <UsablePiece piece_id="crpg_wolfstooth_pommel_h2" />
+      <UsablePiece piece_id="crpg_wolfstooth_pommel_h3" />
       <UsablePiece piece_id="crpg_shaolinspade_head_h0" />
       <UsablePiece piece_id="crpg_shaolinspade_head_h1" />
       <UsablePiece piece_id="crpg_shaolinspade_head_h2" />
@@ -8621,6 +8705,14 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_plumbata_head_h0" />
+      <UsablePiece piece_id="crpg_plumbata_head_h1" />
+      <UsablePiece piece_id="crpg_plumbata_head_h2" />
+      <UsablePiece piece_id="crpg_plumbata_head_h3" />
+      <UsablePiece piece_id="crpg_plumbata_body_h0" />
+      <UsablePiece piece_id="crpg_plumbata_body_h1" />
+      <UsablePiece piece_id="crpg_plumbata_body_h2" />
+      <UsablePiece piece_id="crpg_plumbata_body_h3" />
       <UsablePiece piece_id="crpg_light_pilum_blade_h0" />
       <UsablePiece piece_id="crpg_light_pilum_blade_h1" />
       <UsablePiece piece_id="crpg_light_pilum_blade_h2" />
@@ -9022,6 +9114,14 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_hammerhand_handle_h0" />
+      <UsablePiece piece_id="crpg_hammerhand_handle_h1" />
+      <UsablePiece piece_id="crpg_hammerhand_handle_h2" />
+      <UsablePiece piece_id="crpg_hammerhand_handle_h3" />
+      <UsablePiece piece_id="crpg_hammerhand_head_h0" />
+      <UsablePiece piece_id="crpg_hammerhand_head_h1" />
+      <UsablePiece piece_id="crpg_hammerhand_head_h2" />
+      <UsablePiece piece_id="crpg_hammerhand_head_h3" />
       <UsablePiece piece_id="crpg_kama_blade_h0" />
       <UsablePiece piece_id="crpg_kama_blade_h1" />
       <UsablePiece piece_id="crpg_kama_blade_h2" />

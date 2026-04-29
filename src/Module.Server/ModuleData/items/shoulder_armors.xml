@@ -3240,4 +3240,28 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_disabled_kadsebevor_h0" name="{=Yeldur}Kadsebevor" mesh="kadsebevor" culture="Culture.neutral_culture" subtype="body_armor" weight="2.48876" difficulty="0" appearance="1.6" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="8" modifier_group="plate" material_type="Plate" head_armor="14" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_disabled_kadsebevor_h1" name="{=Yeldur}Kadsebevor +1" mesh="kadsebevor" culture="Culture.neutral_culture" subtype="body_armor" weight="2.48876" difficulty="0" appearance="1.6" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="10" modifier_group="plate" material_type="Plate" head_armor="14" arm_armor="0" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_disabled_kadsebevor_h2" name="{=Yeldur}Kadsebevor +2" mesh="kadsebevor" culture="Culture.neutral_culture" subtype="body_armor" weight="2.48876" difficulty="0" appearance="1.6" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="11" modifier_group="plate" material_type="Plate" head_armor="14" arm_armor="0" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_disabled_kadsebevor_h3" name="{=Yeldur}Kadsebevor +3" mesh="kadsebevor" culture="Culture.neutral_culture" subtype="body_armor" weight="2.48876" difficulty="0" appearance="1.6" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="12" modifier_group="plate" material_type="Plate" head_armor="14" arm_armor="1" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
 </Items>
