@@ -317,6 +317,7 @@ export const Pike: Item = {
   requirement: 0,
   tier: 4.1352773,
   type: 'Polearm',
+  enabled: true,
   weapons: [
     {
       accuracy: 0,
@@ -486,6 +487,7 @@ export const Bow: Item = {
   requirement: 0,
   tier: 9.940793,
   type: 'Bow',
+  enabled: true,
   weapons: [
     {
       accuracy: 95,
@@ -628,6 +630,7 @@ export const MountHarness: Item = {
     legArmor: 0,
     materialType: 'Leather',
   },
+  enabled: true,
   baseId: 'crpg_light_harness',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
   culture: 'Neutral',
@@ -651,6 +654,7 @@ export const Mount: Item = {
   culture: 'Khuzait',
   flags: ['Civilian'],
   id: 'crpg_mount_balanced_5',
+  enabled: true,
   mount: {
     bodyLength: 105,
     chargeDamage: 1,
@@ -678,6 +682,7 @@ export const Helmet: Item = {
     legArmor: 0,
     materialType: 'Plate',
   },
+  enabled: true,
   baseId: 'crpg_sa_1ChurburghHelm',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
   culture: 'Vlandia',

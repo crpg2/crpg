@@ -2,7 +2,6 @@
 import type { NavigationMenuItem } from '@nuxt/ui'
 
 import { LazyCharacterCreateModal, LazyCharacterEditModal } from '#components'
-
 import { useCharacters, useCharacterState } from '~/composables/character/use-character'
 import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'

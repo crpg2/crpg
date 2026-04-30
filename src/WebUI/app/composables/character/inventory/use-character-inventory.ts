@@ -1,5 +1,4 @@
 import { useI18n } from '#imports'
-
 import { useCharacterItems } from '~/composables/character/use-character-items'
 import { useUser } from '~/composables/user/use-user'
 import { useUserItems } from '~/composables/user/use-user-items'

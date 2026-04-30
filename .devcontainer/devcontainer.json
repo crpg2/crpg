@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/dotnet
 {
-  "name": "C# (.NET)",
+  "name": "C# (.NET) Node.js Dev Container",
   "build": {
     "dockerfile": "Dockerfile",
     "args": {
@@ -40,9 +40,6 @@
             "(?:'|\"|`)([^']*)(?:'|\"|`)"
           ]
         ],
-        "typescript.preferences.autoImportFileExcludePatterns": [
-          "vue-router" // ref: https://github.com/posva/unplugin-vue-router#setup
-        ],
         "files.associations": {
           "*.css": "tailwindcss"
         },
@@ -70,17 +67,7 @@
           "json",
           "jsonc",
           "yaml",
-          "toml",
-          "xml",
-          "gql",
-          "graphql",
-          "astro",
-          "svelte",
-          "css",
-          "less",
-          "scss",
-          "pcss",
-          "postcss"
+          "css"
         ]
       }
     }

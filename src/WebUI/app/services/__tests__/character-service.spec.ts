@@ -19,6 +19,7 @@ import {
   canRetireValidate,
   canSetCharacterForTournamentValidate,
   computeHealthPoints,
+  computeLongestWeaponLength,
   computeOverallWeight,
   convertCharacterCharacteristics,
   createCharacteristics,
@@ -473,6 +474,35 @@ describe('character service', () => {
     ],
   ])('computeOverallWeight - items: %j, expectedWeight: %j', (items, expectation) => {
     expect(computeOverallWeight(items as Item[])).toEqual(expectation)
+  })
+
+  it.each([
+    [[], 0],
+    [
+      [{ type: ITEM_TYPE.Shield, weapons: [{ length: 50 }] }],
+      0,
+    ],
+    [
+      [{ type: ITEM_TYPE.OneHandedWeapon, weapons: [{ length: 80 }] }],
+      80,
+    ],
+    [
+      [
+        { type: ITEM_TYPE.OneHandedWeapon, weapons: [{ length: 80 }] },
+        { type: ITEM_TYPE.TwoHandedWeapon, weapons: [{ length: 120 }] },
+        { type: ITEM_TYPE.Polearm, weapons: [{ length: 200 }] },
+      ],
+      200,
+    ],
+    [
+      [
+        { type: ITEM_TYPE.Polearm, weapons: [{ length: 200 }] },
+        { type: ITEM_TYPE.OneHandedWeapon, weapons: [{ length: 80 }] },
+      ],
+      200,
+    ],
+  ])('computeLongestWeaponLength - items: %j, expected: %j', (items, expectation) => {
+    expect(computeLongestWeaponLength(items as Item[])).toEqual(expectation)
   })
 
   it.each([

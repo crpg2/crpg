@@ -6,6 +6,7 @@ definePageMeta({
   roles: SomeRole,
   middleware: [
     async () => {
+      // TODO: FIXME: два раза при SPA
       const { execute } = useCharactersProvider()
       await execute()
     },

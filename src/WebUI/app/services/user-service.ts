@@ -1,3 +1,13 @@
+import { pick } from 'es-toolkit'
+
+import type {
+  User,
+  UserItem,
+  UserItemPresetUpdate,
+  UserPublic,
+  UserRestrictionPublic,
+} from '~/models/user'
+
 import {
   deleteUsersSelf,
   deleteUsersSelfItemPresetsById,
@@ -17,15 +27,6 @@ import {
   putUsersSelfNotificationsById,
   putUsersSelfNotificationsReadAll,
 } from '#api/sdk.gen'
-import { pick } from 'es-toolkit'
-
-import type {
-  User,
-  UserItem,
-  UserItemPresetUpdate,
-  UserPublic,
-  UserRestrictionPublic,
-} from '~/models/user'
 
 export const getUser = async (): Promise<User> => (await getUsersSelf({})).data!
 

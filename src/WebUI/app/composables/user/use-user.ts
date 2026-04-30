@@ -1,8 +1,8 @@
-import { useState } from '#imports'
 import { computed } from 'vue'
 
 import type { User } from '~/models/user'
 
+import { useState } from '#imports'
 import { getUser } from '~/services/user-service'
 
 export function useUser() {

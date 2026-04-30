@@ -16,18 +16,11 @@ public record GetUserNotificationsQuery : IMediatorRequest<UserNotificationsWith
 {
     public int UserId { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<GetUserNotificationsQuery, UserNotificationsWithDictViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IMetadataService metadataService) : IMediatorRequestHandler<GetUserNotificationsQuery, UserNotificationsWithDictViewModel>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly IMetadataService _metadataService;
-
-        public Handler(ICrpgDbContext db, IMapper mapper, IMetadataService metadataService)
-        {
-            _db = db;
-            _mapper = mapper;
-            _metadataService = metadataService;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly IMetadataService _metadataService = metadataService;
 
         // TODO: FIXME: all + pagination/filters (by date? by type?)
         public async ValueTask<Result<UserNotificationsWithDictViewModel>> Handle(GetUserNotificationsQuery req,

@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import type {
-  ActivityLog,
-  ActivityLogType,
-} from '~/models/activity-logs'
+import type { ActivityLog } from '~/models/activity-logs'
 import type { MetadataDict } from '~/models/metadata'
 import type { UserPublic } from '~/models/user'
 
@@ -20,8 +17,7 @@ const {
   isSelfUser: boolean
 }>()
 
-const emit = defineEmits<{
-  addType: [type: ActivityLogType]
+defineEmits<{
   addUser: [user: number]
 }>()
 
@@ -47,7 +43,6 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
             variant="subtle"
             color="neutral"
             :label="activityLog.type"
-            @click="emit('addType', activityLog.type)"
           />
         </template>
       </UiDataCell>

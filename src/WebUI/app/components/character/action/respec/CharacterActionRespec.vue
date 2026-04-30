@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { LazyCharacterActionRespecConfirmDialog } from '#components'
 import { freeRespecializeIntervalDays, freeRespecializePostWindowHours } from '~root/data/constants.json'
 
 import type { Character } from '~/models/character'
 import type { RespecCapability } from '~/services/character-service'
 
+import { LazyCharacterActionRespecConfirmDialog } from '#components'
 import { parseTimestamp } from '~/utils/date'
 
 const { character, respecCapability } = defineProps<{

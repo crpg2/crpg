@@ -1,6 +1,7 @@
 ﻿using Crpg.Application.Clans.Commands.Armory;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
+using Crpg.Application.UTest.Marketplace;
 using Crpg.Domain.Entities.Items;
 using Microsoft.EntityFrameworkCore;
 using Moq;
@@ -180,5 +181,41 @@ public class AddClanArmoryCommandTest : TestBase
         Assert.That(user.Items.Count(ui => ui.ClanArmoryItem != null), Is.EqualTo(1));
         Assert.That(AssertDb.ClanArmoryItems.Count(), Is.EqualTo(1));
         Assert.That(AssertDb.EquippedItems.Count(), Is.EqualTo(0));
+    }
+
+    [Test]
+    public async Task MarketplaceListedItemShouldNotBeAddedToClanArmory()
+    {
+        await ClanArmoryTestHelper.CommonSetUp(ArrangeDb);
+        var user = await ArrangeDb.Users
+            .Include(u => u.Items)
+            .FirstAsync();
+
+        var item = user.Items.First();
+        await ArrangeDb.MarketplaceListings.AddAsync(MarketplaceListingFactory.CreateListing(sellerId: user.Id, offeredUserItemId: item.Id));
+        await ArrangeDb.SaveChangesAsync();
+
+        user = await ActDb.Users
+            .Include(u => u.Items)
+            .Include(u => u.ClanMembership)
+            .FirstAsync(u => u.Name == user.Name);
+
+        var handler = new AddItemToClanArmoryCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object);
+        var result = await handler.Handle(new AddItemToClanArmoryCommand
+        {
+            UserItemId = item.Id,
+            UserId = user.Id,
+            ClanId = user.ClanMembership!.ClanId,
+        }, CancellationToken.None);
+
+        Assert.That(result.Errors, Is.Not.Null);
+        Assert.That(result.Errors!.First().Code, Is.EqualTo(ErrorCode.UserItemInMarketplace));
+
+        user = await AssertDb.Users
+            .Include(u => u.Items).ThenInclude(ui => ui.ClanArmoryItem)
+            .FirstAsync(u => u.Id == user.Id);
+
+        Assert.That(user.Items.Count(ui => ui.ClanArmoryItem != null), Is.EqualTo(0));
+        Assert.That(AssertDb.ClanArmoryItems.Count(), Is.EqualTo(0));
     }
 }

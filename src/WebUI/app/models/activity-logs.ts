@@ -1,5 +1,6 @@
-import type { ActivityLogType as _ActivityLogType } from '#api'
 import type { ValueOf } from 'type-fest'
+
+import type { ActivityLogType as _ActivityLogType } from '#api'
 
 export const ACTIVITY_LOG_TYPE = {
   UserCreated: 'UserCreated',
@@ -42,6 +43,11 @@ export const ACTIVITY_LOG_TYPE = {
   BattleMercenaryApplicationDeclined: 'BattleMercenaryApplicationDeclined',
   BattleParticipantKicked: 'BattleParticipantKicked',
   BattleParticipantLeaved: 'BattleParticipantLeaved',
+  MarketplaceListingAccepted: 'MarketplaceListingAccepted',
+  MarketplaceListingCancelled: 'MarketplaceListingCancelled',
+  MarketplaceListingCreated: 'MarketplaceListingCreated',
+  MarketplaceListingExpired: 'MarketplaceListingExpired',
+  MarketplaceListingInvalidated: 'MarketplaceListingInvalidated',
 } as const satisfies Record<_ActivityLogType, _ActivityLogType>
 
 export type ActivityLogType = ValueOf<typeof ACTIVITY_LOG_TYPE>

@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
 
-import { AppConfirmActionPopover, UButton, UIcon, UiDataCell, UiDataContent, UserMedia, UTooltip } from '#components'
-
 import type { BattleFighter } from '~/models/campaign/battle'
 
+import { AppConfirmActionPopover, UButton, UIcon, UiDataCell, UiDataContent, UserMedia, UTooltip } from '#components'
 import { useUser } from '~/composables/user/use-user'
 
 const { fighters, canKickByFighter, canLeaveByFighter } = defineProps<{

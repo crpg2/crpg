@@ -1,5 +1,6 @@
 using Crpg.Domain.Common;
 using Crpg.Domain.Entities.Clans;
+using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Users;
 
 namespace Crpg.Domain.Entities.Items;
@@ -19,10 +20,11 @@ public class UserItem : AuditableEntity
     /// <summary>
     /// Characters with that item equipped.
     /// </summary>
-    public List<EquippedItem> EquippedItems { get; set; } = new();
+    public List<EquippedItem> EquippedItems { get; set; } = [];
     public ClanArmoryItem? ClanArmoryItem { get; set; }
 
     public PersonalItem? PersonalItem { get; set; }
 
     public ClanArmoryBorrowedItem? ClanArmoryBorrowedItem { get; set; }
+    public List<MarketplaceListingAsset> MarketplaceListingAssets { get; set; } = [];
 }

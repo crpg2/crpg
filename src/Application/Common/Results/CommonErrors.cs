@@ -263,6 +263,12 @@ internal static class CommonErrors
         Detail = $"Item upgrade rank must be between {minRank} and {maxRank}, but was {rank}",
     };
 
+    public static Error UserItemInMarketplace(int userItemId) => new(ErrorType.Validation, ErrorCode.UserItemInMarketplace)
+    {
+        Title = "User item is in marketplace",
+        Detail = $"User item with id '{userItemId}' is currently listed on the marketplace",
+    };
+
     public static Error ItemNotBuyable(string itemId) => new(ErrorType.Validation, ErrorCode.ItemNotBuyable)
     {
         Title = "Item is not buyable",
@@ -496,5 +502,41 @@ internal static class CommonErrors
     {
         Title = "Item not in original offer",
         Detail = $"Item '{itemId}' is not in the original offer",
+    };
+
+    public static Error MarketplaceListingNotFound(int listingId) => new(ErrorType.NotFound, ErrorCode.MarketplaceListingNotFound)
+    {
+        Title = "Marketplace listing was not found",
+        Detail = $"Marketplace listing with id '{listingId}' was not found",
+    };
+
+    public static Error MarketplaceListingNotAllowed(int listingId) => new(ErrorType.Forbidden, ErrorCode.MarketplaceListingNotAllowed)
+    {
+        Title = "Operation is not allowed for this marketplace listing",
+        Detail = $"Marketplace listing '{listingId}' is not owned by the current user",
+    };
+
+    public static Error MarketplaceListingExpired(int listingId) => new(ErrorType.Validation, ErrorCode.MarketplaceListingExpired)
+    {
+        Title = "Marketplace listing is expired",
+        Detail = $"Marketplace listing '{listingId}' has expired",
+    };
+
+    public static Error MarketplaceListingLimitReached(int userId, int limit) => new(ErrorType.Validation, ErrorCode.MarketplaceListingLimitReached)
+    {
+        Title = "Marketplace active listing limit reached",
+        Detail = $"User '{userId}' already has {limit} active marketplace listings",
+    };
+
+    public static Error MarketplaceListingInvalidAsset(string detail) => new(ErrorType.Validation, ErrorCode.MarketplaceListingInvalidAsset)
+    {
+        Title = "Invalid marketplace listing asset",
+        Detail = detail,
+    };
+
+    public static Error MarketplaceListingSelfAccept(int listingId) => new(ErrorType.Validation, ErrorCode.MarketplaceListingSelfAccept)
+    {
+        Title = "Cannot accept own marketplace listing",
+        Detail = $"Marketplace listing '{listingId}' cannot be accepted by its seller",
     };
 }

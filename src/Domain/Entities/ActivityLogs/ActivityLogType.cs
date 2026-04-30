@@ -42,4 +42,9 @@ public enum ActivityLogType
     BattleMercenaryApplicationAccepted,
     BattleParticipantLeaved,
     BattleParticipantKicked,
+    MarketplaceListingCreated,
+    MarketplaceListingAccepted,
+    MarketplaceListingInvalidated,
+    MarketplaceListingCancelled,
+    MarketplaceListingExpired,
 }

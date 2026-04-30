@@ -18,28 +18,10 @@ public class GameInstallationFolderResolver
             return ResolveBannerlordEpicGamesInstallation();
         }
 
-        string? xboxBannerlordExePath = Path.Combine(installationPath, "bin/Gaming.Desktop.x64_Shipping_Client/Launcher.Native.exe");
-        string xboxBannerlordExePathBis = Path.Combine(installationPath, "Content/bin/Gaming.Desktop.x64_Shipping_Client/Launcher.Native.exe");
-        string xboxBannerlordExePathTertiary = Path.Combine(installationPath, "Mount & Blade II- Bannerlord/Content/bin/Gaming.Desktop.x64_Shipping_Client/Launcher.Native.exe");
         string? steamBannerlordExePath = Path.Combine(installationPath, "bin/Win64_Shipping_Client/Bannerlord.exe");
-        if (!File.Exists(xboxBannerlordExePath))
-        {
-            xboxBannerlordExePath = null;
-        }
-
-        if (File.Exists(xboxBannerlordExePathBis))
-        {
-            xboxBannerlordExePath = xboxBannerlordExePathBis;
-        }
-
-        if (File.Exists(xboxBannerlordExePathTertiary))
-        {
-            xboxBannerlordExePath = xboxBannerlordExePathTertiary;
-        }
 
         string? programPath = platform switch
         {
-            Platform.Xbox => xboxBannerlordExePath,
             Platform.Steam => steamBannerlordExePath,
             _ => null,
         };
@@ -66,12 +48,6 @@ public class GameInstallationFolderResolver
         }
 
         bannerlordInstallation = ResolveBannerlordEpicGamesInstallation();
-        if (bannerlordInstallation != null)
-        {
-            return bannerlordInstallation;
-        }
-
-        bannerlordInstallation = ResolveBannerlordXboxInstallation();
         if (bannerlordInstallation != null)
         {
             return bannerlordInstallation;
@@ -165,19 +141,4 @@ public class GameInstallationFolderResolver
         return null;
     }
 
-    public static GameInstallationInfo? ResolveBannerlordXboxInstallation()
-    {
-        // I couldn't find a smart way to find an xbox game so let's just try to find a XboxGames folder in single letter disks.
-        for (char disk = 'A'; disk <= 'Z'; disk += (char)1)
-        {
-            string bannerlordPath = disk + ":/XboxGames/Mount & Blade II- Bannerlord/Content";
-            string bannerlordExePath = Path.Combine(bannerlordPath, "bin/Gaming.Desktop.x64_Shipping_Client/Launcher.Native.exe");
-            if (File.Exists(bannerlordExePath))
-            {
-                return new GameInstallationInfo(bannerlordPath, bannerlordExePath, null, null, Platform.Xbox);
-            }
-        }
-
-        return null;
-    }
 }

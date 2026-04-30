@@ -1,21 +1,12 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, expectTypeOf, it, vi } from 'vitest'
 
-import { WEAPON_USAGE } from '~/models/item'
+import type { Item, ItemFlat } from '~/models/item'
+
+import { ITEM_TYPE, WEAPON_CLASS, WEAPON_FLAG, WEAPON_USAGE } from '~/models/item'
 
 import mockConstants from '../../../../mocks/constants.json'
 import { createItemIndex } from '../indexator'
-import {
-  Bolts,
-  Bow,
-  Helmet,
-  Hoe,
-  Longsword,
-  Mount,
-  MountHarness,
-  Pike,
-  Shield,
-  ThrowingAxe,
-} from './mocks'
+import * as itemMocks from './mocks'
 
 vi.mock('~root/data/constants.json', vi.fn().mockImplementation(() => mockConstants))
 
@@ -25,8 +16,6 @@ const { mockedComputeAverageRepairCostPerHour, mockedIsLargeShield } = vi.hoiste
 }))
 
 vi.mock('#api/sdk.gen')
-
-// itemTypeByWeaponClass,
 
 vi.mock('~/services/item-service', () => ({
   computeAverageRepairCostPerHour: mockedComputeAverageRepairCostPerHour,
@@ -45,7 +34,7 @@ describe('createItemIndex', () => {
   })
 
   it('weapons > 1, same weaponClass', () => {
-    const index = createItemIndex([Pike], true)
+    const index = createItemIndex([itemMocks.Pike], { cloneMultipleUsageWeapon: true })
 
     expect(index.length).toEqual(1)
     const [item] = index
@@ -60,7 +49,7 @@ describe('createItemIndex', () => {
   })
 
   it('weapons > 1, diff weaponClass - it is necessary to clone the item', () => {
-    const index = createItemIndex([Hoe], true)
+    const index = createItemIndex([itemMocks.Hoe], { cloneMultipleUsageWeapon: true })
 
     expect(index.length).toEqual(2)
     const [item1, item2] = index
@@ -78,9 +67,20 @@ describe('createItemIndex', () => {
     expect(item2?.thrustDamageType).toEqual(undefined)
   })
 
+  it('weapons > 1, diff weaponClass with cloneMultipleUsageWeapon=false keeps only primary usage', () => {
+    const index = createItemIndex([itemMocks.Hoe], { cloneMultipleUsageWeapon: false })
+
+    expect(index.length).toEqual(1)
+    const [item] = index
+
+    expect(item?.type).toEqual('TwoHandedWeapon')
+    expect(item?.weaponClass).toEqual('TwoHandedAxe')
+    expect(item?.weaponUsage).toEqual([WEAPON_USAGE.Primary])
+  })
+
   it('shield', () => {
     mockedIsLargeShield.mockReturnValueOnce(true)
-    const index = createItemIndex([Shield])
+    const index = createItemIndex([itemMocks.Shield])
     const [item] = index
 
     expect(item?.shieldDurability).toEqual(70)
@@ -88,27 +88,27 @@ describe('createItemIndex', () => {
     expect(item?.shieldArmor).toEqual(0)
     expect(item?.weaponClass).toEqual('LargeShield')
     expect(item?.weaponPrimaryClass).toEqual('LargeShield')
-    expect(item?.flags).contains('CantUseOnHorseback')
+    expect(item?.flags).toContain('CantUseOnHorseback')
   })
 
   it('shield - CantUseOnHorseback', () => {
     mockedIsLargeShield.mockReturnValueOnce(false)
-    const index = createItemIndex([Shield])
+    const index = createItemIndex([itemMocks.Shield])
     const [item] = index
 
-    expect(item?.flags).not.contains('CantUseOnHorseback')
+    expect(item?.flags).not.toContain('CantUseOnHorseback')
   })
 
   it('shield - upkeep', () => {
     mockedIsLargeShield.mockReturnValueOnce(true)
-    const index = createItemIndex([Shield])
+    const index = createItemIndex([itemMocks.Shield])
     const [item] = index
 
     expect(item?.upkeep).toEqual(item!.price * 2)
   })
 
   it('bow', () => {
-    const index = createItemIndex([Bow])
+    const index = createItemIndex([itemMocks.Bow])
     const [item] = index
 
     expect(item?.reloadSpeed).toEqual(98)
@@ -117,7 +117,7 @@ describe('createItemIndex', () => {
   })
 
   it('bolts', () => {
-    const index = createItemIndex([Bolts])
+    const index = createItemIndex([itemMocks.Bolts])
     const [item] = index
 
     expect(item?.damage).toEqual(14)
@@ -127,7 +127,7 @@ describe('createItemIndex', () => {
   })
 
   it('throwing axe', () => {
-    const index = createItemIndex([ThrowingAxe], true)
+    const index = createItemIndex([itemMocks.ThrowingAxe], { cloneMultipleUsageWeapon: true })
     const [item1, item2] = index
 
     expect(item1?.type).toEqual('OneHandedWeapon')
@@ -143,7 +143,7 @@ describe('createItemIndex', () => {
   })
 
   it('mount harness', () => {
-    const index = createItemIndex([MountHarness])
+    const index = createItemIndex([itemMocks.MountHarness])
     const [item] = index
 
     expect(item?.mountArmor).toEqual(6)
@@ -151,7 +151,7 @@ describe('createItemIndex', () => {
   })
 
   it('mount', () => {
-    const index = createItemIndex([Mount])
+    const index = createItemIndex([itemMocks.Mount])
     const [item] = index
 
     expect(item?.bodyLength).toEqual(105)
@@ -163,7 +163,7 @@ describe('createItemIndex', () => {
   })
 
   it('helmet', () => {
-    const index = createItemIndex([Helmet])
+    const index = createItemIndex([itemMocks.Helmet])
     const [item] = index
 
     expect(item?.mountArmor).toEqual(null)
@@ -172,10 +172,93 @@ describe('createItemIndex', () => {
   })
 
   it('isNew', () => {
-    const index = createItemIndex([Helmet, Longsword])
+    const index = createItemIndex([itemMocks.Helmet, itemMocks.Longsword])
     const [item1, item2] = index
 
     expect(item1?.isNew).toBeTruthy()
     expect(item2?.isNew).toBeFalsy()
+  })
+
+  it('does not mutate input weapon flags', () => {
+    const shield = structuredClone(itemMocks.Shield)
+    const initialFlags = [...shield.weapons[0]!.flags]
+
+    mockedIsLargeShield.mockReturnValueOnce(true)
+    createItemIndex([shield])
+
+    expect(shield.weapons[0]!.flags).toEqual(initialFlags)
+    expect(shield.weapons[0]!.flags).not.toContain('CantUseOnHorseback')
+  })
+
+  it('crossbow adds CanReloadOnHorseback only when allowed', () => {
+    const crossbow: Item = {
+      ...itemMocks.Bow,
+      type: ITEM_TYPE.Crossbow,
+      weapons: [{
+        ...itemMocks.Bow.weapons[0]!,
+        class: WEAPON_CLASS.Crossbow,
+        flags: ['RangedWeapon'],
+        itemUsage: 'crossbow',
+      }],
+    }
+
+    const index1 = createItemIndex([crossbow])
+    expect(index1[0]?.flags).toContain(WEAPON_FLAG.CanReloadOnHorseback)
+
+    const crossbowCantReload: Item = {
+      ...crossbow,
+      weapons: [{
+        ...crossbow.weapons[0]!,
+        flags: ['RangedWeapon', WEAPON_FLAG.CantReloadOnHorseback],
+      }],
+    }
+
+    const index2 = createItemIndex([crossbowCantReload])
+    expect(index2[0]?.flags).toContain(WEAPON_FLAG.CantReloadOnHorseback)
+    expect(index2[0]?.flags).not.toContain(WEAPON_FLAG.CanReloadOnHorseback)
+  })
+
+  it('flags are deduplicated', () => {
+    const shieldWithFlag: Item = {
+      ...itemMocks.Shield,
+      weapons: [{
+        ...itemMocks.Shield.weapons[0]!,
+        flags: [...itemMocks.Shield.weapons[0]!.flags, WEAPON_FLAG.CantUseOnHorseback],
+      }],
+    }
+
+    mockedIsLargeShield.mockReturnValueOnce(true)
+    const index = createItemIndex([shieldWithFlag])
+    const cantUseOnHorseback = index[0]?.flags.filter(f => f === WEAPON_FLAG.CantUseOnHorseback)
+
+    expect(cantUseOnHorseback?.length).toEqual(1)
+  })
+
+  it('writeMeta maps wrapper data for each item', () => {
+    const wrappedItems = [
+      { item: itemMocks.Helmet, marker: 'h' },
+      { item: itemMocks.Longsword, marker: 'l' },
+    ]
+
+    const index = createItemIndex(wrappedItems, {
+      writeMeta: wrapper => ({ marker: wrapper.marker }),
+    })
+
+    expect(index[0]?.meta).toEqual({ marker: 'h' })
+    expect(index[1]?.meta).toEqual({ marker: 'l' })
+  })
+
+  it('writeMeta infers output types', () => {
+    const wrappedItems = [
+      { item: itemMocks.Helmet, marker: 'h' },
+      { item: itemMocks.Longsword, marker: 'l' },
+    ]
+
+    const index = createItemIndex(wrappedItems, {
+      writeMeta: wrapper => ({ marker: wrapper.marker, itemId: wrapper.item.id }),
+    })
+
+    expectTypeOf(index).toEqualTypeOf<ItemFlat<{ marker: string, itemId: string }>[]>()
+    expectTypeOf(index[0]!.meta).toEqualTypeOf<{ marker: string, itemId: string }>()
   })
 })

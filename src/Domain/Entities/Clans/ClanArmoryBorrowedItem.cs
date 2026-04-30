@@ -2,6 +2,7 @@
 using Crpg.Domain.Entities.Items;
 
 namespace Crpg.Domain.Entities.Clans;
+
 public class ClanArmoryBorrowedItem : AuditableEntity
 {
     public int BorrowerClanId { get; set; }

@@ -47,7 +47,7 @@ const canReturn = computed(() => clanArmoryItem.borrower?.id === user.value!.id
           variant="subtle"
           color="neutral"
           size="xl"
-          icon="i-lucide-undo-2"
+          icon="crpg:armory-return"
           @click="$emit('remove')"
         />
       </UTooltip>
@@ -57,7 +57,7 @@ const canReturn = computed(() => clanArmoryItem.borrower?.id === user.value!.id
           variant="subtle"
           color="neutral"
           size="xl"
-          icon="i-lucide-hand"
+          icon="crpg:armory-take"
           @click="$emit('borrow')"
         />
         <template #content>
@@ -79,7 +79,7 @@ const canReturn = computed(() => clanArmoryItem.borrower?.id === user.value!.id
           variant="subtle"
           color="neutral"
           size="xl"
-          icon="i-lucide-undo-2"
+          icon="crpg:armory-return"
           @click="$emit('return')"
         />
       </UTooltip>

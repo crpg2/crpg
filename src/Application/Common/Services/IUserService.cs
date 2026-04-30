@@ -16,16 +16,10 @@ internal interface IUserService
 }
 
 /// <inheritdoc />
-internal class UserService : IUserService
+internal class UserService(IDateTime dateTime, Constants constants) : IUserService
 {
-    private readonly IDateTime _dateTime;
-    private readonly Constants _constants;
-
-    public UserService(IDateTime dateTime, Constants constants)
-    {
-        _dateTime = dateTime;
-        _constants = constants;
-    }
+    private readonly IDateTime _dateTime = dateTime;
+    private readonly Constants _constants = constants;
 
     public void SetDefaultValuesForUser(User user)
     {

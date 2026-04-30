@@ -148,6 +148,29 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
             finalDamage *= 0.23f; // Decrease damage from couched lance.
         }
 
+        var weapon = attackInformation.AttackerWeapon.CurrentUsageItem;
+        var strikeType = (StrikeType)collisionData.StrikeType;
+
+        // OneHandedPolearm thrust damage reduction
+        if (weapon.WeaponClass == WeaponClass.OneHandedPolearm &&
+            strikeType == StrikeType.Thrust)
+        {
+            finalDamage *= 0.75f;
+        }
+
+        // Mounted swing damage reduction
+        if (attackInformation.DoesAttackerHaveMountAgent &&
+            strikeType == StrikeType.Swing &&
+            (
+                weapon.WeaponClass == WeaponClass.TwoHandedMace ||
+                weapon.WeaponClass == WeaponClass.TwoHandedSword ||
+                weapon.WeaponClass == WeaponClass.TwoHandedAxe ||
+                weapon.WeaponClass == WeaponClass.LowGripPolearm ||
+                weapon.WeaponClass == WeaponClass.TwoHandedPolearm))
+        {
+            finalDamage *= 0.70f;
+        }
+
         if (IsSwashbuckler(attackInformation.AttackerWeapon, collisionData, attackInformation.AttackerAgent))
         {
             finalDamage *= 1.10f;

@@ -2,10 +2,9 @@
 import type { TableColumn } from '@nuxt/ui'
 import type { SortingState, VisibilityState } from '@tanstack/vue-table'
 
-import { AppConfirmActionPopover, UButton, UiTextView, UserMedia } from '#components'
-
 import type { BattleParticipant } from '~/models/campaign/battle'
 
+import { AppConfirmActionPopover, UButton, UiTextView, UserMedia } from '#components'
 import { useUser } from '~/composables/user/use-user'
 import { BATTLE_PARTICIPANT_TYPE } from '~/models/campaign/battle'
 

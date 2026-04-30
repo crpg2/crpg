@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { LazyAppConfirmActionDialog } from '#components'
-
 import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'

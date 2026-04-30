@@ -4,6 +4,7 @@ using Crpg.Application.Common.Mappings;
 using Crpg.Persistence;
 using Crpg.Sdk.Abstractions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using NUnit.Framework;
 
@@ -74,9 +75,11 @@ public class TestBase
 
     private CrpgDbContext InitDb() => new(DbOptions!, Mock.Of<IDateTime>());
 
-    private IMapper InitMapper()
+    private static IMapper InitMapper()
     {
-        MapperConfiguration configurationProvider = new(cfg => cfg.AddProfile<MappingProfile>());
+        MapperConfiguration configurationProvider = new(
+            cfg => cfg.AddProfile<MappingProfile>(),
+            NullLoggerFactory.Instance);
         return configurationProvider.CreateMapper();
     }
 }

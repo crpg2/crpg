@@ -45,6 +45,7 @@ public enum ErrorCode
     ItemNotSellable,
     ItemNotUpgradable,
     InvalidItemUpgradeRank,
+    UserItemInMarketplace,
     NotEnoughAttributePoints,
     NotEnoughGold,
     NotEnoughHeirloomPoints,
@@ -88,4 +89,10 @@ public enum ErrorCode
     PersonalItemAlreadyExist,
     SettingNotFound,
     TerrainNotFound,
+    MarketplaceListingNotFound,
+    MarketplaceListingNotAllowed,
+    MarketplaceListingExpired,
+    MarketplaceListingLimitReached,
+    MarketplaceListingInvalidAsset,
+    MarketplaceListingSelfAccept,
 }

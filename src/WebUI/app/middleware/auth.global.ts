@@ -1,9 +1,8 @@
 import type { RouteLocationNormalized } from 'vue-router'
 
-import { defineNuxtRouteMiddleware, navigateTo } from '#app'
-
 import type { Role } from '~/models/role'
 
+import { defineNuxtRouteMiddleware, navigateTo } from '#app'
 import { useUser } from '~/composables/user/use-user'
 import { getUser } from '~/services/auth-service'
 

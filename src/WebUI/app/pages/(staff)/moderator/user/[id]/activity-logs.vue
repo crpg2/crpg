@@ -2,10 +2,10 @@
 import type { ZonedDateTime } from '@internationalized/date'
 
 import { DateFormatter, getLocalTimeZone, now, parseZonedDateTime } from '@internationalized/date'
-import { LazyModeratorUserFinder } from '#components'
 
 import type { ActivityLogType } from '~/models/activity-logs'
 
+import { LazyModeratorUserFinder } from '#components'
 import { useModerationUser } from '~/composables/moderator/use-moderation-user'
 import { SORT, useSort } from '~/composables/utils/use-sort' // TODO:
 import { ACTIVITY_LOG_TYPE } from '~/models/activity-logs'
@@ -48,10 +48,6 @@ const to = useRouteQuery(
 
 const types = useRouteQuery<ActivityLogType[]>('types', [])
 
-const addType = (type: ActivityLogType) => {
-  types.value = [...new Set([...types.value]), type]
-}
-
 const additionalUsers = useRouteQuery('additionalUsers', [], { transform: value => value.map(Number) })
 
 const toggleAdditionalUser = (userId: number) => {
@@ -86,7 +82,8 @@ const {
     },
   },
   {
-    resetOnExecute: false,
+    immediate: false,
+    resetOnExecute: true,
     throwError: true,
     pageLoading: true,
   },
@@ -99,7 +96,12 @@ const sortedActivityLogs = computed(() => activityLogs.value.activityLogs.toSort
 ))
 
 watch([types, to, from, additionalUsers], () => {
+  if (!types.value.length) {
+    return
+  }
   fetchActivityLogs()
+}, {
+  immediate: true,
 })
 </script>
 
@@ -114,6 +116,7 @@ watch([types, to, from, additionalUsers], () => {
           variant="subtle"
           :placeholder="$t('activityLog.form.type')"
           multiple
+          clear
           :items="Object.values(ACTIVITY_LOG_TYPE)"
           :ui="{
             content: 'w-auto',
@@ -197,7 +200,7 @@ watch([types, to, from, additionalUsers], () => {
       <UModal
         :title="t('findUser.title')"
         :ui="{
-          content: 'min-w-[720px]',
+          content: 'min-w-180',
         }"
       >
         <UButton
@@ -241,7 +244,6 @@ watch([types, to, from, additionalUsers], () => {
           : activityLogs.dict.users.find(user => user.id === activityLog.userId)!"
         :dict="activityLogs.dict"
         @add-user="toggleAdditionalUser"
-        @add-type="addType"
       />
     </div>
   </div>

@@ -1,5 +1,6 @@
-import type { GameMode as _GameMode } from '#api'
 import type { ValueOf } from 'type-fest'
+
+import type { GameMode as _GameMode } from '#api'
 
 export const GAME_MODE = {
   CRPGUnknownGameMode: 'CRPGUnknownGameMode',

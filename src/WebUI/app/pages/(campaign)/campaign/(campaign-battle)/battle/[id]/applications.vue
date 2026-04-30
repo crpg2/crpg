@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { LazyBattleManageFigterItemsDrawer } from '#components'
-
 import { useBattleFighterApplications, useBattleFighters, useMapBattle } from '~/composables/campaign/map/use-map-battle'
 
 definePageMeta({

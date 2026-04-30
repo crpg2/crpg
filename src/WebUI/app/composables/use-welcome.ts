@@ -1,7 +1,7 @@
 import { useStorage } from '@vueuse/core'
+
 import { LazyAppWelcomeModal } from '#components'
 import { useOverlay } from '#imports'
-
 import { useUser } from '~/composables/user/use-user'
 
 export const useWelcome = () => {

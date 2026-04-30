@@ -2,8 +2,10 @@ using Crpg.Application.Common;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Items.Commands;
+using Crpg.Application.UTest.Marketplace;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Moq;
@@ -272,5 +274,33 @@ public class ReforgeUpgradedItemCommandTest : TestBase
 
         var errorCode = result.Errors![0].Code;
         Assert.That(errorCode, Is.EqualTo(ErrorCode.NotEnoughGold));
+    }
+
+    [Test]
+    public async Task MarketplaceListedItemShouldNotBeReforgeable()
+    {
+        Item item00 = new() { Id = "a_h0", BaseId = "a", Price = 100, Enabled = true, Rank = 0 };
+        Item item01 = new() { Id = "a_h1", BaseId = "a", Price = 100, Enabled = true, Rank = 1 };
+        User user = new()
+        {
+            Gold = 1000000,
+            HeirloomPoints = 5,
+            Items = { new() { Item = item01 } },
+        };
+        ArrangeDb.Users.Add(user);
+        ArrangeDb.Items.AddRange(item00, item01);
+        ArrangeDb.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(user.Id, goldFee: 10, offeredUserItemId: user.Items[0].Id, requestedGold: 100));
+        await ArrangeDb.SaveChangesAsync();
+
+        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
+
+        ReforgeUpgradedUserItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object, Constants);
+        var result = await handler.Handle(new ReforgeUpgradedUserItemCommand
+        {
+            UserItemId = user.Items[0].Id,
+            UserId = user.Id,
+        }, CancellationToken.None);
+
+        Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.UserItemInMarketplace));
     }
 }
