@@ -5139,14 +5139,6 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
-      <UsablePiece piece_id="crpg_hatinghand_handle_h0" />
-      <UsablePiece piece_id="crpg_hatinghand_handle_h1" />
-      <UsablePiece piece_id="crpg_hatinghand_handle_h2" />
-      <UsablePiece piece_id="crpg_hatinghand_handle_h3" />
-      <UsablePiece piece_id="crpg_hatinghand_head_h0" />
-      <UsablePiece piece_id="crpg_hatinghand_head_h1" />
-      <UsablePiece piece_id="crpg_hatinghand_head_h2" />
-      <UsablePiece piece_id="crpg_hatinghand_head_h3" />
       <UsablePiece piece_id="crpg_runic_axe_blade_h0" />
       <UsablePiece piece_id="crpg_runic_axe_blade_h1" />
       <UsablePiece piece_id="crpg_runic_axe_blade_h2" />
@@ -9114,6 +9106,14 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_hatinghand_handle_h0" />
+      <UsablePiece piece_id="crpg_hatinghand_handle_h1" />
+      <UsablePiece piece_id="crpg_hatinghand_handle_h2" />
+      <UsablePiece piece_id="crpg_hatinghand_handle_h3" />
+      <UsablePiece piece_id="crpg_hatinghand_head_h0" />
+      <UsablePiece piece_id="crpg_hatinghand_head_h1" />
+      <UsablePiece piece_id="crpg_hatinghand_head_h2" />
+      <UsablePiece piece_id="crpg_hatinghand_head_h3" />
       <UsablePiece piece_id="crpg_hammerhand_handle_h0" />
       <UsablePiece piece_id="crpg_hammerhand_handle_h1" />
       <UsablePiece piece_id="crpg_hammerhand_handle_h2" />
