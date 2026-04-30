@@ -70,17 +70,9 @@ public class GamesController : BaseController
     /// <summary>
     /// Insert game events.
     /// </summary>
-    /// <param name="gameEvents">The game events to insert.</param>
-    /// <response code="200">Inserted.</response>
-    /// <response code="400">Bad Request.</response>
     [HttpPost("game-events")]
-    public Task<ActionResult> InsertGameEvents([FromBody] GameEventViewModel[] gameEvents)
-    {
-        return ResultToActionAsync(Mediator.Send(new CreateGameEventsCommand
-        {
-            GameEvents = gameEvents,
-        }, CancellationToken.None));
-    }
+    public Task<ActionResult> InsertGameEvents([FromBody] CreateGameEventsCommand cmd) =>
+        ResultToActionAsync(Mediator.Send(cmd));
 
     // TODO: this endpoint is a duplicate of /clans/{id} because I could not find a good way for an endpoint to allow
     // both the user and game policies.
