@@ -33,7 +33,7 @@ namespace Crpg.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.3")
+                .HasAnnotation("ProductVersion", "10.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "activity_log_type", new[] { "battle_apply_as_mercenary", "battle_mercenary_application_accepted", "battle_mercenary_application_declined", "battle_participant_kicked", "battle_participant_leaved", "character_created", "character_deleted", "character_earned", "character_rating_reset", "character_respecialized", "character_retired", "character_rewarded", "chat_message_sent", "clan_application_accepted", "clan_application_created", "clan_application_declined", "clan_armory_add_item", "clan_armory_borrow_item", "clan_armory_remove_item", "clan_armory_return_item", "clan_created", "clan_deleted", "clan_member_kicked", "clan_member_leaved", "clan_member_role_edited", "item_bought", "item_broke", "item_reforged", "item_repaired", "item_returned", "item_sold", "item_upgraded", "marketplace_listing_accepted", "marketplace_listing_cancelled", "marketplace_listing_created", "marketplace_listing_expired", "marketplace_listing_invalidated", "quest_rerolled", "quest_reward_claimed", "server_joined", "team_hit", "team_hit_reported", "team_hit_reported_user_kicked", "user_created", "user_deleted", "user_renamed", "user_rewarded" });
@@ -726,6 +726,15 @@ namespace Crpg.Persistence.Migrations
                     b.Property<string>("EventData")
                         .HasColumnType("jsonb")
                         .HasColumnName("event_data");
+
+                    b.Property<GameMode>("GameMode")
+                        .HasColumnType("game_mode")
+                        .HasColumnName("game_mode");
+
+                    b.Property<string>("Instance")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("instance");
 
                     b.Property<int>("Type")
                         .HasColumnType("integer")
@@ -1516,10 +1525,6 @@ namespace Crpg.Persistence.Migrations
                         .HasColumnName("id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("AssignedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("assigned_at");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone")

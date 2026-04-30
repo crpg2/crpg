@@ -26,13 +26,15 @@ internal class CrpgGameEventTrackingBehavior : MissionBehavior
     private readonly CrpgWarmupComponent? _warmupComponent;
     private readonly ICrpgClient _crpgClient;
     private readonly List<CrpgGameEvent> _buffer;
+    private readonly CrpgGameMode _gameMode;
     private DateTime _nextFlushTime;
 
-    public CrpgGameEventTrackingBehavior(CrpgWarmupComponent? warmupComponent, ICrpgClient crpgClient)
+    public CrpgGameEventTrackingBehavior(CrpgWarmupComponent? warmupComponent, ICrpgClient crpgClient, CrpgGameMode gameMode)
     {
         _warmupComponent = warmupComponent;
         _crpgClient = crpgClient;
         _buffer = new();
+        _gameMode = gameMode;
         _nextFlushTime = DateTime.Now.AddMilliseconds(FlushIntervalMilliseconds);
     }
 
@@ -283,7 +285,12 @@ internal class CrpgGameEventTrackingBehavior : MissionBehavior
     {
         var events = _buffer.ToArray();
         _buffer.Clear();
-        _ = _crpgClient.CreateGameEventsAsync(events); // Fire and forget
+        _ = _crpgClient.CreateGameEventsAsync(new CrpgGameEventsCreateRequest
+        {
+            GameMode = _gameMode,
+            Instance = CrpgServerConfiguration.Region,
+            Events = events,
+        }); // Fire and forget
         Debug.Print($"Sent {events.Length} game events");
     }
 

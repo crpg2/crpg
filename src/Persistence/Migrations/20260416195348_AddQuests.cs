@@ -1,5 +1,5 @@
-﻿using System;
-using Crpg.Domain.Entities.Quests;
+﻿using Crpg.Domain.Entities.Quests;
+using Crpg.Domain.Entities.Servers;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -26,6 +26,8 @@ public partial class AddQuests : Migration
                 id = table.Column<int>(type: "integer", nullable: false)
                     .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                 user_id = table.Column<int>(type: "integer", nullable: true),
+                game_mode = table.Column<GameMode>(type: "game_mode", nullable: false, defaultValue: GameMode.CRPGBattle),
+                instance = table.Column<string>(type: "text", nullable: false, defaultValue: ""),
                 type = table.Column<int>(type: "integer", nullable: false),
                 event_data = table.Column<string>(type: "jsonb", nullable: true),
                 updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
@@ -102,7 +104,6 @@ public partial class AddQuests : Migration
                 id = table.Column<int>(type: "integer", nullable: false)
                     .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                 quest_definition_id = table.Column<int>(type: "integer", nullable: false),
-                assigned_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                 expires_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                 updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                 created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),

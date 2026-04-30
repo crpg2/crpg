@@ -16,9 +16,3 @@ public class QuestDefinition : AuditableEntity
     public int RewardExperience { get; set; }
     public bool IsActive { get; set; }
 }
-
-public enum QuestAggregationType
-{
-    Count,
-    Sum,
-}

@@ -3,9 +3,9 @@ using Mediator;
 
 namespace Crpg.WebApi.Workers;
 
-public class QuestAssignmentWorker(IServiceScopeFactory serviceScopeFactory) : BackgroundService
+public class QuestsAssignmentWorker(IServiceScopeFactory serviceScopeFactory) : BackgroundService
 {
-    private static readonly ILogger Logger = Logging.LoggerFactory.CreateLogger<QuestAssignmentWorker>();
+    private static readonly ILogger Logger = Logging.LoggerFactory.CreateLogger<QuestsAssignmentWorker>();
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {

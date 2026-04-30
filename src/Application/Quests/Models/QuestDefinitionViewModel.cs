@@ -11,12 +11,9 @@ public record QuestDefinitionViewModel : IMapFrom<QuestDefinition>
     public QuestType Type { get; set; }
     public GameEventType EventType { get; init; }
     public QuestAggregationType AggregationType { get; init; }
-
     [JsonRequired]
     public GameEventField? AggregationField { get; init; }
-
     public Dictionary<string, string>[] EventFiltersJson { get; set; } = [];
-
     public int RequiredValue { get; init; }
     public int RewardGold { get; init; }
     public int RewardExperience { get; init; }

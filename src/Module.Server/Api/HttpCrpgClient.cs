@@ -111,9 +111,9 @@ internal class HttpCrpgClient : ICrpgClient
         return Post<CrpgRestrictionRequest, CrpgRestriction>("games/restrictions", req, cancellationToken);
     }
 
-    public Task CreateGameEventsAsync(IList<CrpgGameEvent> crpgGameEvents, CancellationToken cancellationToken = default)
+    public Task CreateGameEventsAsync(CrpgGameEventsCreateRequest req, CancellationToken cancellationToken = default)
     {
-        return Post<IList<CrpgGameEvent>, object>("games/game-events", crpgGameEvents, cancellationToken);
+        return Post<CrpgGameEventsCreateRequest, object>("games/game-events", req, cancellationToken);
     }
 
     public void Dispose() => _httpClient.Dispose();

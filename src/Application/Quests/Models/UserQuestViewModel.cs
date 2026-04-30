@@ -10,7 +10,6 @@ public record UserQuestViewModel : IMapFrom<UserQuest>
     public bool IsRewardClaimed { get; init; }
     public DateTime ExpiresAt { get; init; }
     public int CurrentValue { get; init; }
-
     public QuestDefinitionViewModel QuestDefinition { get; init; } = default!;
 
     public void Mapping(Profile profile)

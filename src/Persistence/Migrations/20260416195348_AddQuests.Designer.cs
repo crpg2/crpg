@@ -728,6 +728,15 @@ partial class AddQuests
                     .HasColumnType("jsonb")
                     .HasColumnName("event_data");
 
+                b.Property<GameMode>("GameMode")
+                    .HasColumnType("game_mode")
+                    .HasColumnName("game_mode");
+
+                b.Property<string>("Instance")
+                    .IsRequired()
+                    .HasColumnType("text")
+                    .HasColumnName("instance");
+
                 b.Property<int>("Type")
                     .HasColumnType("integer")
                     .HasColumnName("type");
@@ -1419,10 +1428,6 @@ partial class AddQuests
                     .HasColumnName("id");
 
                 NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                b.Property<DateTime>("AssignedAt")
-                    .HasColumnType("timestamp with time zone")
-                    .HasColumnName("assigned_at");
 
                 b.Property<DateTime>("CreatedAt")
                     .HasColumnType("timestamp with time zone")

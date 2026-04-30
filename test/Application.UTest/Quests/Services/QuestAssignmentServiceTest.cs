@@ -120,8 +120,8 @@ public class QuestAssignmentServiceTest : TestBase
         ArrangeDb.Users.Add(user);
         ArrangeDb.QuestDefinitions.AddRange(weeklyDefinition1, weeklyDefinition2);
         ArrangeDb.WeeklyQuestAssignments.AddRange(
-            new WeeklyQuestAssignment { QuestDefinitionId = weeklyDefinition1.Id, AssignedAt = DateTime.UtcNow, ExpiresAt = expiresAt },
-            new WeeklyQuestAssignment { QuestDefinitionId = weeklyDefinition2.Id, AssignedAt = DateTime.UtcNow, ExpiresAt = expiresAt });
+            new WeeklyQuestAssignment { QuestDefinitionId = weeklyDefinition1.Id, ExpiresAt = expiresAt },
+            new WeeklyQuestAssignment { QuestDefinitionId = weeklyDefinition2.Id, ExpiresAt = expiresAt });
         ArrangeDb.UserQuests.Add(new UserQuest
         {
             UserId = user.Id,
@@ -164,7 +164,6 @@ public class QuestAssignmentServiceTest : TestBase
         ArrangeDb.WeeklyQuestAssignments.Add(new WeeklyQuestAssignment
         {
             QuestDefinitionId = weeklyDefinition.Id,
-            AssignedAt = DateTime.UtcNow,
             ExpiresAt = DateTime.UtcNow.AddDays(3),
         });
         ArrangeDb.UserQuests.Add(new UserQuest

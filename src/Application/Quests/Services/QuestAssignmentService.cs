@@ -86,8 +86,7 @@ public class QuestAssignmentService(ICrpgDbContext db, Constants constants) : IQ
             .ToListAsync(cancellationToken);
 
         List<int> selectedWeeklyQuestIds;
-        var now = DateTime.UtcNow;
-        var expiresAt = NextMonday(now.Date);
+        var expiresAt = NextMonday(DateTime.UtcNow.Date);
         if (currentWeeklyAssignments.Count == 0)
         {
             // Create new weekly assignments for this week
@@ -102,7 +101,6 @@ public class QuestAssignmentService(ICrpgDbContext db, Constants constants) : IQ
                 var assignment = new WeeklyQuestAssignment
                 {
                     QuestDefinitionId = questId,
-                    AssignedAt = now,
                     ExpiresAt = expiresAt,
                 };
                 db.WeeklyQuestAssignments.Add(assignment);

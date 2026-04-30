@@ -126,7 +126,7 @@ internal class StubCrpgClient : ICrpgClient
         throw new NotImplementedException();
     }
 
-    public Task CreateGameEventsAsync(IList<CrpgGameEvent> crpgGameEvents, CancellationToken cancellationToken = default)
+    public Task CreateGameEventsAsync(CrpgGameEventsCreateRequest req, CancellationToken cancellationToken = default)
     {
         return Task.CompletedTask;
     }
