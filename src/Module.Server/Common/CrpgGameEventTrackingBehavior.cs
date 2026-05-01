@@ -1,4 +1,5 @@
 ﻿using Crpg.Module.Api;
+using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.GameEvents;
 using Crpg.Module.Modes.Warmup;
 using TaleWorlds.Core;
@@ -288,13 +289,13 @@ internal class CrpgGameEventTrackingBehavior : MissionBehavior
         _ = _crpgClient.CreateGameEventsAsync(new CrpgGameEventsCreateRequest
         {
             GameMode = _gameMode,
-            Instance = CrpgServerConfiguration.Region,
+            Instance = CrpgServerConfiguration.Region.ToString().ToLowerInvariant(),
             Events = events,
         }); // Fire and forget
         Debug.Print($"Sent {events.Length} game events");
     }
 
-    private string? ToString(BoneBodyPartType partType)
+    private static string? ToString(BoneBodyPartType partType)
     {
         switch (partType)
         {

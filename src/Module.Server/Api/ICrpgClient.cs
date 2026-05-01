@@ -25,5 +25,5 @@ internal interface ICrpgClient : IDisposable
     Task<CrpgResult<CrpgRestriction>> RestrictUserAsync(CrpgRestrictionRequest req,
         CancellationToken cancellationToken = default);
 
-    Task CreateGameEventsAsync(IList<CrpgGameEvent> crpgGameEvents, CancellationToken cancellationToken = default);
+    Task CreateGameEventsAsync(CrpgGameEventsCreateRequest req, CancellationToken cancellationToken = default);
 }
