@@ -1,10 +1,10 @@
+import type { GameEventField, UserQuest } from '~/models/quest'
+
 import {
   getUsersSelfQuests,
   putUsersSelfQuestsByIdClaim,
   putUsersSelfQuestsByIdReroll,
 } from '#api/sdk.gen'
-
-import type { GameEventField, UserQuest } from '~/models/quest'
 
 export const getUserQuests = async (): Promise<UserQuest[]> => {
   const data = (await getUsersSelfQuests({})).data!

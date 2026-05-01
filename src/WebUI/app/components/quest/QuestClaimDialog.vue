@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { UserQuest } from '~/models/quest'
 
-import { useQuestDescription } from '~/composables/quest/use-quest-description'
 import { useUser } from '~/composables/user/use-user'
 import { getCharacters } from '~/services/character-service'
 

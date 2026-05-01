@@ -9,12 +9,15 @@ const { icon, label, variant = 'outline', ...props } = defineProps<{
 
 <template>
   <UCard v-bind="{ ...props, variant }">
-    <template v-if="label" #header>
-      <UiDataMedia
-        :icon
-        :label
-        size="xl"
-      />
+    <template #header>
+      <slot name="title">
+        <UiDataMedia
+          v-if="label"
+          :icon
+          :label
+          size="xl"
+        />
+      </slot>
     </template>
 
     <template v-if="$slots.default" #default>

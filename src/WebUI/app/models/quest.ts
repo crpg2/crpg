@@ -1,10 +1,11 @@
+import type { ValueOf } from 'type-fest'
+
 import type {
   GameEventField as _GameEventField,
   GameEventType as _GameEventType,
   QuestAggregationType as _QuestAggregationType,
   QuestType as _QuestType,
 } from '#api'
-import type { ValueOf } from 'type-fest'
 
 export const QUEST_TYPE = {
   Daily: 'Daily',
@@ -54,39 +55,8 @@ export interface QuestDefinition {
   eventType: GameEventType
   aggregationType: QuestAggregationType
   aggregationField: GameEventField | null
-  eventFiltersJson: Record<GameEventField, string>[]
+  eventFiltersJson: Partial<Record<GameEventField, string>>[]
   requiredValue: number
   rewardGold: number
   rewardExperience: number
 }
-
-/*
-
-Filters
-+ WeaponClass
-
-+ ItemId
-
-+ HitType
--- Ranged
--- Melee
-
-Damage
-
-TargetType
--- Mount
--- Character
-
-+ BodyPart
--- Head
--- Neck
--- Chest
--- Abdomen
--- ShoulderLeft
--- ShoulderRight
--- ArmLeft
--- ArmRight
--- Legs
-
-+ DamageType
-*/

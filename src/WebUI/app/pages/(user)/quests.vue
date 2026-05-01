@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useAsyncState } from '@vueuse/core'
-import { LazyQuestClaimDialog } from '#components'
 import { groupBy } from 'es-toolkit'
 
 import type { QuestType, UserQuest } from '~/models/quest'
 
+import { LazyQuestClaimDialog } from '#components'
 import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { QUEST_TYPE } from '~/models/quest'

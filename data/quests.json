@@ -303,7 +303,7 @@
     "id": 25,
     "type": "Weekly",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"Pistol"},{"WeaponClass":"Musket"}],
+    "eventFiltersJson": [{"WeaponClass":"Musket"}],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 5000,
