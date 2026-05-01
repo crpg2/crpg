@@ -16,13 +16,11 @@ public record DeleteOldActivityLogsCommand : IMediatorRequest
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<DeleteOldActivityLogsCommand>();
         private static readonly TimeSpan DefaultLogRetention = TimeSpan.FromDays(30);
-        private static readonly TimeSpan CandidateLogRetention = TimeSpan.FromDays(15);
+        private static readonly TimeSpan CandidateLogRetention = TimeSpan.FromDays(14);
         private static readonly FrozenDictionary<ActivityLogType, TimeSpan> LogRetentionByType = new Dictionary<ActivityLogType, TimeSpan>
         {
-            [ActivityLogType.CharacterEarned] = TimeSpan.FromDays(15),
-            [ActivityLogType.MarketplaceListingCreated] = TimeSpan.FromDays(180),
-            [ActivityLogType.MarketplaceListingCancelled] = TimeSpan.FromDays(180),
-            [ActivityLogType.MarketplaceListingExpired] = TimeSpan.FromDays(180),
+            [ActivityLogType.CharacterEarned] = TimeSpan.FromDays(14),
+            [ActivityLogType.MarketplaceListingAccepted] = TimeSpan.FromDays(180),
         }.ToFrozenDictionary();
 
         private readonly ICrpgDbContext _db = db;
