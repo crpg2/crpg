@@ -7980,7 +7980,7 @@
       <Piece id="crpg_long_glaive_pommel_h3" Type="Pommel" scale_factor="97" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fine_steel_menavlion_v5_h0" name="{=kaikaikai}Fine Steel Menavlion" crafting_template="crpg_Polearm_2dswing" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_fine_steel_menavlion_v6_h0" name="{=kaikaikai}Fine Steel Menavlion" crafting_template="crpg_Polearm_2dswing" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fine_steel_menavlion_blade_h0" Type="Blade" scale_factor="95" />
       <Piece id="crpg_fine_steel_menavlion_guard_h0" Type="Guard" scale_factor="100" />
@@ -7988,7 +7988,7 @@
       <Piece id="crpg_fine_steel_menavlion_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fine_steel_menavlion_v5_h1" name="{=kaikaikai}Fine Steel Menavlion +1" crafting_template="crpg_Polearm_2dswing" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_fine_steel_menavlion_v6_h1" name="{=kaikaikai}Fine Steel Menavlion +1" crafting_template="crpg_Polearm_2dswing" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fine_steel_menavlion_blade_h1" Type="Blade" scale_factor="95" />
       <Piece id="crpg_fine_steel_menavlion_guard_h1" Type="Guard" scale_factor="100" />
@@ -7996,7 +7996,7 @@
       <Piece id="crpg_fine_steel_menavlion_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fine_steel_menavlion_v5_h2" name="{=kaikaikai}Fine Steel Menavlion +2" crafting_template="crpg_Polearm_2dswing" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_fine_steel_menavlion_v6_h2" name="{=kaikaikai}Fine Steel Menavlion +2" crafting_template="crpg_Polearm_2dswing" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fine_steel_menavlion_blade_h2" Type="Blade" scale_factor="95" />
       <Piece id="crpg_fine_steel_menavlion_guard_h2" Type="Guard" scale_factor="100" />
@@ -8004,7 +8004,7 @@
       <Piece id="crpg_fine_steel_menavlion_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fine_steel_menavlion_v5_h3" name="{=kaikaikai}Fine Steel Menavlion +3" crafting_template="crpg_Polearm_2dswing" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_fine_steel_menavlion_v6_h3" name="{=kaikaikai}Fine Steel Menavlion +3" crafting_template="crpg_Polearm_2dswing" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fine_steel_menavlion_blade_h3" Type="Blade" scale_factor="95" />
       <Piece id="crpg_fine_steel_menavlion_guard_h3" Type="Guard" scale_factor="100" />
@@ -12996,7 +12996,7 @@
       <Piece id="crpg_black_longdagger_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_swiss_halberd_v2_h0" name="{=Salt}Swiss Halberd" crafting_template="crpg_Polearm_2dswing">
+  <CraftedItem id="crpg_swiss_halberd_v3_h0" name="{=Salt}Swiss Halberd" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_swiss_halberd_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_handle_h0" Type="Handle" scale_factor="75" />
@@ -13004,7 +13004,7 @@
       <Piece id="crpg_swiss_halberd_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_swiss_halberd_v2_h1" name="{=Salt}Swiss Halberd +1" crafting_template="crpg_Polearm_2dswing">
+  <CraftedItem id="crpg_swiss_halberd_v3_h1" name="{=Salt}Swiss Halberd +1" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_swiss_halberd_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_handle_h1" Type="Handle" scale_factor="75" />
@@ -13012,7 +13012,7 @@
       <Piece id="crpg_swiss_halberd_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_swiss_halberd_v2_h2" name="{=Salt}Swiss Halberd +2" crafting_template="crpg_Polearm_2dswing">
+  <CraftedItem id="crpg_swiss_halberd_v3_h2" name="{=Salt}Swiss Halberd +2" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_swiss_halberd_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_handle_h2" Type="Handle" scale_factor="75" />
@@ -13020,7 +13020,7 @@
       <Piece id="crpg_swiss_halberd_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_swiss_halberd_v2_h3" name="{=Salt}Swiss Halberd +3" crafting_template="crpg_Polearm_2dswing">
+  <CraftedItem id="crpg_swiss_halberd_v3_h3" name="{=Salt}Swiss Halberd +3" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_swiss_halberd_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_handle_h3" Type="Handle" scale_factor="75" />
