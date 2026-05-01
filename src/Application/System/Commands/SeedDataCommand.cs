@@ -1832,16 +1832,13 @@ public record SeedDataCommand : IMediatorRequest
                     offer: new() { Gold = 0, HeirloomPoints = 1, Item = orleItem17.Item },
                     request: new() { Gold = 0, HeirloomPoints = 0, Item = orle2Item1.Item }),
                 _userNotificationService.CreateUserRewardedToUserNotification(orle.Id, 100, 1, orleItem1.ItemId),
-                _userNotificationService.CreateCharacterRewardedToUserNotification(orle.Id, orleCharacter0.Id,
-                    122211),
+                _userNotificationService.CreateCharacterRewardedToUserNotification(orle.Id, orleCharacter0.Id, 122211),
                 _userNotificationService.CreateItemReturnedToUserNotification(orle.Id, orleItem1.ItemId, 2, 1222),
-                _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, pecores.Id,
-                    takeo.Id),
+                _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, pecores.Id, takeo.Id),
                 _userNotificationService.CreateClanApplicationCreatedToUserNotification(orle.Id, pecores.Id),
                 _userNotificationService.CreateClanApplicationAcceptedToUserNotification(orle.Id, pecores.Id),
                 _userNotificationService.CreateClanApplicationDeclinedToUserNotification(orle.Id, pecores.Id),
-                _userNotificationService.CreateClanMemberRoleChangedToUserNotification(orle.Id, pecores.Id,
-                    takeo.Id, ClanMemberRole.Officer, ClanMemberRole.Leader),
+                _userNotificationService.CreateClanMemberRoleChangedToUserNotification(orle.Id, pecores.Id, takeo.Id, ClanMemberRole.Officer, ClanMemberRole.Leader),
                 _userNotificationService.CreateClanMemberLeavedToLeaderNotification(orle.Id, pecores.Id, takeo.Id),
                 _userNotificationService.CreateClanMemberKickedToExMemberNotification(orle.Id, pecores.Id),
                 _userNotificationService.CreateClanArmoryBorrowItemToLenderNotification(orle.Id, pecores.Id, orleItem1.ItemId, takeo.Id),
@@ -1851,13 +1848,12 @@ public record SeedDataCommand : IMediatorRequest
             _db.UserNotifications.RemoveRange(await _db.UserNotifications.ToArrayAsync(cancellationToken));
             _db.UserNotifications.AddRange(orleNotifications);
 
-
             var questDefinitions = await _db.QuestDefinitions.ToArrayAsync(cancellationToken);
             _db.UserQuests.RemoveRange(await _db.UserQuests.Where(uq => uq.UserId == orle.Id).ToArrayAsync(cancellationToken));
             var dailyQuests = questDefinitions.Where(q => q.Type == QuestType.Daily).ToArray();
             var weeklyQuests = questDefinitions.Where(q => q.Type == QuestType.Weekly).ToArray();
 
-            List<UserQuest> orleQuests = new();
+            List<UserQuest> orleQuests = [];
             for (int i = 0; i < dailyQuests.Length; i++)
             {
                 orleQuests.Add(new UserQuest
@@ -2505,15 +2501,15 @@ public record SeedDataCommand : IMediatorRequest
                 {
                     new BattleFighter
                     {
-                        Party = orle2Party, Side = BattleSide.Attacker, Commander = true, ParticipantSlots = 1
+                        Party = orle2Party, Side = BattleSide.Attacker, Commander = true, ParticipantSlots = 1,
                     },
                     new BattleFighter
                     {
-                        Party = baronCyborgParty, Side = BattleSide.Attacker, ParticipantSlots = 1
+                        Party = baronCyborgParty, Side = BattleSide.Attacker, ParticipantSlots = 1,
                     },
                     new BattleFighter
                     {
-                        Party = sellkaParty, Side = BattleSide.Defender, Commander = true, ParticipantSlots = 50
+                        Party = sellkaParty, Side = BattleSide.Defender, Commander = true, ParticipantSlots = 50,
                     },
                 },
                 MercenaryApplications =
@@ -2524,66 +2520,66 @@ public record SeedDataCommand : IMediatorRequest
                         Side = BattleSide.Attacker,
                         Status = BattleMercenaryApplicationStatus.Pending,
                         Note = "Lorem ipsum dolor sit amet consectetur.",
-                        Wage = 1500
+                        Wage = 1500,
                     },
                     new BattleMercenaryApplication
                     {
                         Character = orleCharacter0,
                         Side = BattleSide.Defender,
-                        Status = BattleMercenaryApplicationStatus.Pending
+                        Status = BattleMercenaryApplicationStatus.Pending,
                     },
                     new BattleMercenaryApplication
                     {
                         Character = takeoCharacter0,
                         Side = BattleSide.Attacker,
-                        Status = BattleMercenaryApplicationStatus.Pending
+                        Status = BattleMercenaryApplicationStatus.Pending,
                     },
                     new BattleMercenaryApplication
                     {
                         Character = droobCharacter0,
                         Side = BattleSide.Attacker,
-                        Status = BattleMercenaryApplicationStatus.Accepted
+                        Status = BattleMercenaryApplicationStatus.Accepted,
                     },
                 },
                 Participants =
                 {
                     new BattleParticipant
                     {
-                        Side = BattleSide.Attacker, Character = orle2Character0, Type = BattleParticipantType.Party
+                        Side = BattleSide.Attacker, Character = orle2Character0, Type = BattleParticipantType.Party,
                     },
                     new BattleParticipant
                     {
                         Side = BattleSide.Attacker,
                         Character = baronCyborgCharacter0,
-                        Type = BattleParticipantType.Party
+                        Type = BattleParticipantType.Party,
                     },
                     new BattleParticipant
                     {
-                        Side = BattleSide.Defender, Character = sellkaCharacter0, Type = BattleParticipantType.Party
+                        Side = BattleSide.Defender, Character = sellkaCharacter0, Type = BattleParticipantType.Party,
                     },
                     new BattleParticipant
                     {
                         Side = BattleSide.Attacker,
                         Character = kadseCharacter0,
-                        Type = BattleParticipantType.Mercenary
+                        Type = BattleParticipantType.Mercenary,
                     },
                     new BattleParticipant
                     {
                         Side = BattleSide.Defender,
                         Character = peekyCharacter0,
-                        Type = BattleParticipantType.Mercenary
+                        Type = BattleParticipantType.Mercenary,
                     },
                     new BattleParticipant
                     {
                         Side = BattleSide.Defender,
                         Character = namidakaCharacter0,
-                        Type = BattleParticipantType.Mercenary
+                        Type = BattleParticipantType.Mercenary,
                     },
                     new BattleParticipant
                     {
                         Side = BattleSide.Defender,
                         Character = krogCharacter0,
-                        Type = BattleParticipantType.Mercenary
+                        Type = BattleParticipantType.Mercenary,
                     },
                 },
                 SideBriefings =
@@ -2592,7 +2588,7 @@ public record SeedDataCommand : IMediatorRequest
                     {
                         Side = BattleSide.Attacker,
                         Note =
-                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate"
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate",
                     },
                 },
             };
@@ -2611,35 +2607,35 @@ public record SeedDataCommand : IMediatorRequest
                 {
                     new BattleParticipant
                     {
-                        Side = BattleSide.Attacker, Character = orleCharacter0, Type = BattleParticipantType.Party
+                        Side = BattleSide.Attacker, Character = orleCharacter0, Type = BattleParticipantType.Party,
                     },
                     new BattleParticipant
                     {
-                        Side = BattleSide.Defender, Character = orle2Character0, Type = BattleParticipantType.Party
+                        Side = BattleSide.Defender, Character = orle2Character0, Type = BattleParticipantType.Party,
                     },
                     new BattleParticipant
                     {
                         Side = BattleSide.Attacker,
                         Character = kadseCharacter0,
-                        Type = BattleParticipantType.Mercenary
+                        Type = BattleParticipantType.Mercenary,
                     },
                     new BattleParticipant
                     {
                         Side = BattleSide.Defender,
                         Character = peekyCharacter0,
-                        Type = BattleParticipantType.Mercenary
+                        Type = BattleParticipantType.Mercenary,
                     },
                     new BattleParticipant
                     {
                         Side = BattleSide.Defender,
                         Character = namidakaCharacter0,
-                        Type = BattleParticipantType.Mercenary
+                        Type = BattleParticipantType.Mercenary,
                     },
                     new BattleParticipant
                     {
                         Side = BattleSide.Defender,
                         Character = krogCharacter0,
-                        Type = BattleParticipantType.Mercenary
+                        Type = BattleParticipantType.Mercenary,
                     },
                 },
                 MercenaryApplications =
@@ -2650,7 +2646,7 @@ public record SeedDataCommand : IMediatorRequest
                         Side = BattleSide.Attacker,
                         Status = BattleMercenaryApplicationStatus.Pending,
                         Wage = 11111,
-                        Note = "Some"
+                        Note = "Some",
                     },
                 },
             };
@@ -2672,13 +2668,13 @@ public record SeedDataCommand : IMediatorRequest
                     {
                         Side = BattleSide.Attacker,
                         Character = baronCyborgCharacter0,
-                        Type = BattleParticipantType.Party
+                        Type = BattleParticipantType.Party,
                     },
                     new BattleParticipant
                     {
                         Side = BattleSide.Defender,
                         Character = orle2Character0,
-                        Type = BattleParticipantType.Party
+                        Type = BattleParticipantType.Party,
                     },
                 },
                 MercenaryApplications =
@@ -2687,7 +2683,7 @@ public record SeedDataCommand : IMediatorRequest
                     {
                         Character = orleCharacter0,
                         Side = BattleSide.Defender,
-                        Status = BattleMercenaryApplicationStatus.Pending
+                        Status = BattleMercenaryApplicationStatus.Pending,
                     },
                 },
                 SideBriefings =
@@ -2695,7 +2691,7 @@ public record SeedDataCommand : IMediatorRequest
                     new BattleSideBriefing
                     {
                         Side = BattleSide.Defender,
-                        Note = "Lorem ipsum dolor sit amet consectetur adipisicing elit. "
+                        Note = "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
                     },
                 },
             };
@@ -2716,7 +2712,7 @@ public record SeedDataCommand : IMediatorRequest
                     {
                         Side = BattleSide.Attacker,
                         Character = baronCyborgCharacter0,
-                        Type = BattleParticipantType.Party
+                        Type = BattleParticipantType.Party,
                     },
                 },
             };
@@ -2730,11 +2726,11 @@ public record SeedDataCommand : IMediatorRequest
                 {
                     new BattleFighter
                     {
-                        Party = orle2Party, Side = BattleSide.Attacker, Commander = true, ParticipantSlots = 50
+                        Party = orle2Party, Side = BattleSide.Attacker, Commander = true, ParticipantSlots = 50,
                     },
                     new BattleFighter
                     {
-                        Party = droobParty, Side = BattleSide.Defender, Commander = true, ParticipantSlots = 50
+                        Party = droobParty, Side = BattleSide.Defender, Commander = true, ParticipantSlots = 50,
                     },
                 },
                 FighterApplications =
