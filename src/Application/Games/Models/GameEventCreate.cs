@@ -2,7 +2,7 @@ using Crpg.Domain.Entities.GameEvents;
 
 namespace Crpg.Application.Games.Models;
 
-public record GameEventViewModel
+public record GameEventCreate
 {
     public int? UserId { get; init; }
     public GameEventType Type { get; init; }

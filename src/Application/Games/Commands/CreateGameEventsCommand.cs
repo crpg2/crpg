@@ -13,7 +13,7 @@ public record CreateGameEventsCommand : IMediatorRequest
 {
     public string Instance { get; init; } = string.Empty;
     public GameMode GameMode { get; init; }
-    public IList<GameEventViewModel> Events { get; init; } = Array.Empty<GameEventViewModel>();
+    public IList<GameEventCreate> Events { get; init; } = Array.Empty<GameEventCreate>();
 
     internal class Handler(ICrpgDbContext db) : IMediatorRequestHandler<CreateGameEventsCommand>
     {
