@@ -465,6 +465,12 @@ export type CreateClanCommand = {
     armoryTimeout: number;
 };
 
+export type CreateGameEventsCommand = {
+    instance: string;
+    gameMode: GameMode;
+    events: Array<GameEventViewModel>;
+};
+
 export type CreateMarketplaceListingCommand = {
     offer: MarketplaceListingAssetInput;
     request: MarketplaceListingAssetInput;
@@ -2940,25 +2946,15 @@ export type PostGamesActivityLogsResponses = {
 };
 
 export type PostGamesGameEventsData = {
-    /**
-     * The game events to insert.
-     */
-    body?: Array<GameEventViewModel>;
+    body?: CreateGameEventsCommand;
     path?: never;
     query?: never;
     url: '/Games/game-events';
 };
 
-export type PostGamesGameEventsErrors = {
-    /**
-     * Bad Request.
-     */
-    400: unknown;
-};
-
 export type PostGamesGameEventsResponses = {
     /**
-     * Inserted.
+     * OK
      */
     200: unknown;
 };
