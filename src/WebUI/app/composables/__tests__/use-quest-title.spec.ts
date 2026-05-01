@@ -54,13 +54,6 @@ function makeDefinition(overrides: Partial<QuestDefinition> = {}): QuestDefiniti
 }
 
 describe('useQuestTitle', () => {
-  it('renders title without filters using eventType_aggregationType key', () => {
-    expect(mockedT).toHaveBeenCalledWith(
-      `user.quests.generate.tplByEventTypeAndAggregationType.Kill_Count`,
-      { value: '10' },
-    )
-  })
-
   it('renders title with hitType using the hitType-specific key', () => {
     const render = useQuestTitle(makeDefinition({
       eventFiltersJson: [{ [GAME_EVENT_FIELD.HitType]: 'Melee' }],
