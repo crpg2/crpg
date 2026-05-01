@@ -67,6 +67,13 @@ public class GamesController : BaseController
         }, CancellationToken.None));
     }
 
+    /// <summary>
+    /// Insert game events.
+    /// </summary>
+    [HttpPost("game-events")]
+    public Task<ActionResult> InsertGameEvents([FromBody] CreateGameEventsCommand cmd) =>
+        ResultToActionAsync(Mediator.Send(cmd));
+
     // TODO: this endpoint is a duplicate of /clans/{id} because I could not find a good way for an endpoint to allow
     // both the user and game policies.
 

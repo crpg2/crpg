@@ -129,6 +129,7 @@ sort:
 nav:
   main:
     Characters: Персонаж
+    Quests: Квесты
     Shop: Магазин
     Marketplace: Барахолка
     Clans: Кланы
@@ -1013,6 +1014,80 @@ user:
       deleteAll:
         title: Удалить все
         confirmTitle: Вы уверены, что хотите удалить все уведомления?
+  quests:
+    title: Задания
+    type:
+      daily: Ежедневное
+      weekly: Еженедельное
+    status:
+      claimed: Получено
+      expired: Истекло
+    action:
+      claim:
+        label: Получить награду
+        title: Получить награду
+        selectCharacter: Выберите персонажа для получения награды {questRewards}
+        notify:
+          success: Награда получена
+      reroll:
+        label: Перебросить
+        title: Перебросить задание
+        confirmation: Перебросить задание за {goldCost}?
+        notify:
+          success: Задание переброшено
+    generate:
+      titleConnector:
+        to: по
+        with: с помощью
+      tplByEventTypeAndAggregationType:
+        Hit_Sum: 'Нанесите {value} урона'
+        Kill_Count: 'Убейте {value} врагов'
+        Block_Sum: 'Заблокируйте {value} урона'
+        Block_Count: 'Заблокируйте {value} атак'
+      tplByEventTypeAndAggregationTypeAndHitType:
+        Hit_Sum:
+          Ranged: 'Нанесите {value} дальнего урона'
+          Melee: 'Нанесите {value} урона в ближнем бою'
+        Kill_Count:
+          Ranged: 'Убейте {value} врагов дальнобойным оружием'
+          Melee: 'Убейте {value} врагов в ближнем бою'
+        Block_Sum:
+          Ranged: 'Заблокируйте {value} дальнего урона'
+          Melee: 'Заблокируйте {value} урона в ближнем бою'
+        Block_Count:
+          Ranged: 'Заблокируйте {value} дальних атак'
+          Melee: 'Заблокируйте {value} атак в ближнем бою'
+      eventField:
+        ItemId:
+          title: ID предмета
+        WeaponClass:
+          title: Класс оружия
+        HitType:
+          title: Тип удара
+          values:
+            Melee: Ближний
+            Ranged: Дальний
+        DamageType:
+          title: Тип урона
+        Damage:
+          title: Урон
+        TargetType:
+          title: Тип цели
+          values:
+            Character: Персонаж
+            Mount: Скакун
+        BodyPart:
+          title: Часть тела
+          values:
+            Head: Голова
+            Neck: Шея
+            Chest: Грудь
+            Abdomen: Живот
+            ShoulderLeft: Левое плечо
+            ShoulderRight: Правое плечо
+            ArmLeft: Левая рука
+            ArmRight: Правая рука
+            Legs: Ноги
 
 banned:
   title: Вы забанены

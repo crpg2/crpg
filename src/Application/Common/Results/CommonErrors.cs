@@ -539,4 +539,34 @@ internal static class CommonErrors
         Title = "Cannot accept own marketplace listing",
         Detail = $"Marketplace listing '{listingId}' cannot be accepted by its seller",
     };
+
+    public static Error UserQuestNotFound(int userQuestId, int userId) => new(ErrorType.NotFound, ErrorCode.UserQuestNotFound)
+    {
+        Title = "User quest was not found",
+        Detail = $"User quest with id '{userQuestId}' for user with id '{userId}' was not found",
+    };
+
+    public static Error QuestRewardAlreadyClaimed(int userQuestId) => new(ErrorType.Validation, ErrorCode.QuestRewardAlreadyClaimed)
+    {
+        Title = "Quest reward already claimed",
+        Detail = $"Reward for quest with id '{userQuestId}' has already been claimed",
+    };
+
+    public static Error QuestExpired(int userQuestId) => new(ErrorType.Validation, ErrorCode.QuestExpired)
+    {
+        Title = "Quest expired",
+        Detail = $"Quest with id '{userQuestId}' has expired and cannot be claimed",
+    };
+
+    public static Error QuestDefinitionNotFound(int questDefinitionId) => new(ErrorType.NotFound, ErrorCode.QuestDefinitionNotFound)
+    {
+        Title = "Quest definition was not found",
+        Detail = $"Quest definition with id '{questDefinitionId}' was not found",
+    };
+
+    public static Error QuestNotCompleted(int userQuestId, int currentValue, int requiredValue) => new(ErrorType.Validation, ErrorCode.QuestNotCompleted)
+    {
+        Title = "Quest not completed",
+        Detail = $"Quest with id '{userQuestId}' requires {requiredValue} but current progress is {currentValue}",
+    };
 }

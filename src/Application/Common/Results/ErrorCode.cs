@@ -95,4 +95,9 @@ public enum ErrorCode
     MarketplaceListingLimitReached,
     MarketplaceListingInvalidAsset,
     MarketplaceListingSelfAccept,
+    UserQuestNotFound,
+    QuestRewardAlreadyClaimed,
+    QuestExpired,
+    QuestDefinitionNotFound,
+    QuestNotCompleted,
 }

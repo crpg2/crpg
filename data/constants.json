@@ -83,5 +83,8 @@
   "marketplaceListingDurationDays": 7,
   "marketplaceActiveListingLimit": 10,
   "marketplaceListingFeePerDay": 50,
-  "marketplaceGoldFeePercent": 5
+  "marketplaceGoldFeePercent": 5,
+  "questDailyQuestsPerUser": 3,
+  "questWeeklyQuestsPerUser": 1,
+  "questRerollDailyQuestPrice": 300
 }

@@ -47,6 +47,8 @@ internal interface IActivityLogService
     ActivityLog CreateMarketplaceListingInvalidatedLog(int userId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request);
     ActivityLog CreateMarketplaceListingCancelledLog(int userId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request);
     ActivityLog CreateMarketplaceListingExpiredLog(int userId, int listingId, int goldFee, MarketplaceListingAsset offer, MarketplaceListingAsset request);
+    ActivityLog CreateQuestRewardClaimedLog(int userId, int characterId, int userQuestId, int gold, int experience);
+    ActivityLog CreateQuestRerolledLog(int userId, int oldUserQuestId, int newUserQuestId, int goldCost);
 }
 
 internal class ActivityLogService(IMetadataService metadataService) : IActivityLogService
@@ -388,8 +390,27 @@ internal class ActivityLogService(IMetadataService metadataService) : IActivityL
         return CreateLog(ActivityLogType.MarketplaceListingExpired, userId, [.. metadata]);
     }
 
+    public ActivityLog CreateQuestRewardClaimedLog(int userId, int characterId, int userQuestId, int gold, int experience)
+    {
+        return CreateLog(ActivityLogType.QuestRewardClaimed, userId, [
+            new("characterId", characterId.ToString()),
+            new("userQuestId", userQuestId.ToString()),
+            new("gold", gold.ToString()),
+            new("experience", experience.ToString()),
+        ]);
+    }
+
+    public ActivityLog CreateQuestRerolledLog(int userId, int oldUserQuestId, int newUserQuestId, int goldCost)
+    {
+        return CreateLog(ActivityLogType.QuestRerolled, userId, [
+            new("oldUserQuestId", oldUserQuestId.ToString()),
+            new("newUserQuestId", newUserQuestId.ToString()),
+            new("goldCost", goldCost.ToString()),
+        ]);
+    }
+
     private List<ActivityLogMetadata> CreateMarketplaceListingMetadata(MarketplaceListingAsset offer, MarketplaceListingAsset request) =>
-        [.. _metadataService.ConvertMarketplaceListingToMetadata(offer, request).Select(m => new ActivityLogMetadata(m.Key, m.Value))];
+    [.. _metadataService.ConvertMarketplaceListingToMetadata(offer, request).Select(m => new ActivityLogMetadata(m.Key, m.Value))];
 
     private static ActivityLog CreateLog(ActivityLogType type, int userId, params ActivityLogMetadata[] metadata)
     {

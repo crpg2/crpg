@@ -38,6 +38,7 @@
     <Content Include="..\..\data\constants.json" Link="Common\Files\constants.json" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="..\..\data\items.json" Link="Common\Files\items.json" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="..\..\data\settlements.json" Link="Common\Files\settlements.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\data\quests.json" Link="Common\Files\quests.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>
