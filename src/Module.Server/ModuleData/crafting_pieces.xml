@@ -2228,13 +2228,13 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_long_glaive_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_menavlion_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_fine_steel_menavlion_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.03" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_menavlion_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_fine_steel_menavlion_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.03" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_menavlion_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_fine_steel_menavlion_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.03" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_menavlion_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_fine_steel_menavlion_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.03" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_early_halberd_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
@@ -2252,13 +2252,13 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_rhomphaia_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_polesword_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_polesword_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.3" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_polesword_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_polesword_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.25" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_polesword_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_polesword_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.25" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_polesword_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_polesword_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.25" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_glaive_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
@@ -4608,13 +4608,13 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_long_glaive_guard_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_menavlion_guard_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_fine_steel_menavlion_guard_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.01" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_menavlion_guard_h1" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_fine_steel_menavlion_guard_h1" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.01" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_menavlion_guard_h2" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_fine_steel_menavlion_guard_h2" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.01" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_menavlion_guard_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_fine_steel_menavlion_guard_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.01" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_early_halberd_guard_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
@@ -6164,7 +6164,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_menavlion_blade_h0" name="{=kaikaikai}Swordstaff Head" tier="5" piece_type="Blade" mesh="spear_blade_18" length="70" weight="0.57">
+  <CraftingPiece id="crpg_fine_steel_menavlion_blade_h0" name="{=kaikaikai}Swordstaff Head" tier="5" piece_type="Blade" mesh="spear_blade_18" length="70" weight="0.6">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Cut" damage_factor="2.5" />
       <Swing damage_type="Cut" damage_factor="4.7" />
@@ -6173,7 +6173,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_menavlion_blade_h1" name="{=kaikaikai}Swordstaff Head" tier="5" piece_type="Blade" mesh="spear_blade_18" length="70" weight="0.57">
+  <CraftingPiece id="crpg_fine_steel_menavlion_blade_h1" name="{=kaikaikai}Swordstaff Head" tier="5" piece_type="Blade" mesh="spear_blade_18" length="70" weight="0.6">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Cut" damage_factor="2.7" />
       <Swing damage_type="Cut" damage_factor="4.8" />
@@ -6182,7 +6182,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_menavlion_blade_h2" name="{=kaikaikai}Swordstaff Head" tier="5" piece_type="Blade" mesh="spear_blade_18" length="70" weight="0.54">
+  <CraftingPiece id="crpg_fine_steel_menavlion_blade_h2" name="{=kaikaikai}Swordstaff Head" tier="5" piece_type="Blade" mesh="spear_blade_18" length="70" weight="0.58">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Cut" damage_factor="2.7" />
       <Swing damage_type="Cut" damage_factor="4.9" />
@@ -6191,7 +6191,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_menavlion_blade_h3" name="{=kaikaikai}Swordstaff Head" tier="5" piece_type="Blade" mesh="spear_blade_18" length="70" weight="0.51">
+  <CraftingPiece id="crpg_fine_steel_menavlion_blade_h3" name="{=kaikaikai}Swordstaff Head" tier="5" piece_type="Blade" mesh="spear_blade_18" length="70" weight="0.54">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Cut" damage_factor="2.7" />
       <Swing damage_type="Cut" damage_factor="4.9" />
@@ -33691,10 +33691,10 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_blade_h0" name="Swiss Halberd Blade" tier="3" piece_type="Blade" mesh="swiss_halberd_blade" culture="Culture.vlandia" length="109" weight="0.05">
+  <CraftingPiece id="crpg_swiss_halberd_blade_h0" name="Swiss Halberd Blade" tier="3" piece_type="Blade" mesh="swiss_halberd_blade" culture="Culture.vlandia" length="109" weight="0.3">
     <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="4.0" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -33704,10 +33704,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_blade_h1" name="{=Salt}Swiss Halberd Blade" tier="3" piece_type="Blade" mesh="swiss_halberd_blade" culture="Culture.vlandia" length="109" weight="0.05">
+  <CraftingPiece id="crpg_swiss_halberd_blade_h1" name="{=Salt}Swiss Halberd Blade" tier="3" piece_type="Blade" mesh="swiss_halberd_blade" culture="Culture.vlandia" length="109" weight="0.3">
     <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Cut" damage_factor="4.1" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -33717,10 +33717,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_blade_h2" name="{=Salt}Swiss Halberd Blade" tier="3" piece_type="Blade" mesh="swiss_halberd_blade" culture="Culture.vlandia" length="109" weight="0.02">
+  <CraftingPiece id="crpg_swiss_halberd_blade_h2" name="{=Salt}Swiss Halberd Blade" tier="3" piece_type="Blade" mesh="swiss_halberd_blade" culture="Culture.vlandia" length="109" weight="0.3">
     <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Cut" damage_factor="4.1" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -33730,10 +33730,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_blade_h3" name="{=Salt}Swiss Halberd Blade" tier="3" piece_type="Blade" mesh="swiss_halberd_blade" culture="Culture.vlandia" length="109" weight="0.02">
+  <CraftingPiece id="crpg_swiss_halberd_blade_h3" name="{=Salt}Swiss Halberd Blade" tier="3" piece_type="Blade" mesh="swiss_halberd_blade" culture="Culture.vlandia" length="109" weight="0.3">
     <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Cut" damage_factor="4.3" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -33743,45 +33743,45 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_handle_h0" name="{=Salt}Swiss Halberd Handle" tier="2" piece_type="Handle" mesh="swiss_halberd_handle" length="232" weight="1.95">
+  <CraftingPiece id="crpg_swiss_halberd_handle_h0" name="{=Salt}Swiss Halberd Handle" tier="2" piece_type="Handle" mesh="swiss_halberd_handle" length="232" weight="1.85">
     <BuildData previous_piece_offset="0" next_piece_offset="58" piece_offset="50" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_handle_h1" name="{=Salt}Swiss Halberd Handle" tier="2" piece_type="Handle" mesh="swiss_halberd_handle" length="232" weight="1.95">
+  <CraftingPiece id="crpg_swiss_halberd_handle_h1" name="{=Salt}Swiss Halberd Handle" tier="2" piece_type="Handle" mesh="swiss_halberd_handle" length="232" weight="1.85">
     <BuildData previous_piece_offset="0" next_piece_offset="58" piece_offset="50" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_handle_h2" name="{=Salt}Swiss Halberd Handle" tier="2" piece_type="Handle" mesh="swiss_halberd_handle" length="232" weight="1.95">
+  <CraftingPiece id="crpg_swiss_halberd_handle_h2" name="{=Salt}Swiss Halberd Handle" tier="2" piece_type="Handle" mesh="swiss_halberd_handle" length="232" weight="1.85">
     <BuildData previous_piece_offset="0" next_piece_offset="58" piece_offset="50" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_handle_h3" name="{=Salt}Swiss Halberd Handle" tier="2" piece_type="Handle" mesh="swiss_halberd_handle" length="232" weight="1.95">
+  <CraftingPiece id="crpg_swiss_halberd_handle_h3" name="{=Salt}Swiss Halberd Handle" tier="2" piece_type="Handle" mesh="swiss_halberd_handle" length="232" weight="1.85">
     <BuildData previous_piece_offset="0" next_piece_offset="58" piece_offset="50" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_guard_h0" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_swiss_halberd_guard_h0" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.03" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_guard_h1" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_swiss_halberd_guard_h1" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.02" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_guard_h2" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_swiss_halberd_guard_h2" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.02" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_guard_h3" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_swiss_halberd_guard_h3" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.02" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_pommel_h0" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_swiss_halberd_pommel_h0" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.03" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_pommel_h1" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_swiss_halberd_pommel_h1" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.02" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_pommel_h2" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_swiss_halberd_pommel_h2" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.02" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_swiss_halberd_pommel_h3" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_swiss_halberd_pommel_h3" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.02" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_long_arming_sword_blade_h0" name="{=Salt}Long Arming Sword Blade" tier="3" piece_type="Blade" mesh="vlandian_blade_8" culture="Culture.aserai" length="80.3" weight="0.72">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_8_scabbard_8">
