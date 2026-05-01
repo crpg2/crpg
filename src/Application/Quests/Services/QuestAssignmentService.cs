@@ -7,7 +7,6 @@ namespace Crpg.Application.Quests.Services;
 
 public class QuestAssignmentService(ICrpgDbContext db, Constants constants) : IQuestAssignmentService
 {
-
     public async Task AssignDailyQuestsToAllUsersAsync(CancellationToken cancellationToken = default)
     {
         var oldUserQuests = await db.UserQuests.Where(uq => uq.ExpiresAt <= DateTime.UtcNow.Date).ToListAsync(cancellationToken);
