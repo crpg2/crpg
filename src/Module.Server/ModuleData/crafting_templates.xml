@@ -20,6 +20,22 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_cts_sidesword_blade_v1_h0" />
+      <UsablePiece piece_id="crpg_cts_sidesword_blade_v1_h1" />
+      <UsablePiece piece_id="crpg_cts_sidesword_blade_v1_h2" />
+      <UsablePiece piece_id="crpg_cts_sidesword_blade_v1_h3" />
+      <UsablePiece piece_id="crpg_cts_sidesword_guard_v1_h0" />
+      <UsablePiece piece_id="crpg_cts_sidesword_guard_v1_h1" />
+      <UsablePiece piece_id="crpg_cts_sidesword_guard_v1_h2" />
+      <UsablePiece piece_id="crpg_cts_sidesword_guard_v1_h3" />
+      <UsablePiece piece_id="crpg_cts_sidesword_handle_v1_h0" />
+      <UsablePiece piece_id="crpg_cts_sidesword_handle_v1_h1" />
+      <UsablePiece piece_id="crpg_cts_sidesword_handle_v1_h2" />
+      <UsablePiece piece_id="crpg_cts_sidesword_handle_v1_h3" />
+      <UsablePiece piece_id="crpg_cts_sidesword_pommel_v1_h0" />
+      <UsablePiece piece_id="crpg_cts_sidesword_pommel_v1_h1" />
+      <UsablePiece piece_id="crpg_cts_sidesword_pommel_v1_h2" />
+      <UsablePiece piece_id="crpg_cts_sidesword_pommel_v1_h3" />
       <UsablePiece piece_id="crpg_sunsword_blade_h0" />
       <UsablePiece piece_id="crpg_sunsword_blade_h1" />
       <UsablePiece piece_id="crpg_sunsword_blade_h2" />

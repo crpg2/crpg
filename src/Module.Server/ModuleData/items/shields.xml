@@ -3232,4 +3232,36 @@
     </ItemComponent>
     <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
+  <Item id="crpg_conquistador_h0" name="{=BalanceMe}Conquistador Shield" using_tableau="false" body_name="bo_cap_conquistador_shield" shield_body_name="bo_conquistador_shield" recalculate_body="false" mesh="conquistador_shield" culture="Culture.empire" is_merchandise="true" weight="3.6505" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="70" center_of_mass="-0.0, 0.1, 0.1" hit_points="596">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_conquistador_h1" name="{=BalanceMe}Conquistador Shield +1" using_tableau="false" body_name="bo_cap_conquistador_shield" shield_body_name="bo_conquistador_shield" recalculate_body="false" mesh="conquistador_shield" culture="Culture.empire" is_merchandise="true" weight="3.6505" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="12" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="70" center_of_mass="-0.0, 0.1, 0.1" hit_points="644">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_conquistador_h2" name="{=BalanceMe}Conquistador Shield +2" using_tableau="false" body_name="bo_cap_conquistador_shield" shield_body_name="bo_conquistador_shield" recalculate_body="false" mesh="conquistador_shield" culture="Culture.empire" is_merchandise="true" weight="3.6505" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="12" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="70" center_of_mass="-0.0, 0.1, 0.1" hit_points="692">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_conquistador_h3" name="{=BalanceMe}Conquistador Shield +3" using_tableau="false" body_name="bo_cap_conquistador_shield" shield_body_name="bo_conquistador_shield" recalculate_body="false" mesh="conquistador_shield" culture="Culture.empire" is_merchandise="true" weight="3.6505" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="12" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="70" center_of_mass="-0.0, 0.1, 0.1" hit_points="740">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
 </Items>
