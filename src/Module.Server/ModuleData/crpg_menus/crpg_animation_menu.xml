@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Animation Menu - can add/remove animations without recompiling, just edit this xml file. (need to update on server and client ModuleData and change maps (restart behavior))
+    menu_category is the title for the animations in gui
+        [display_name] is what shows in the menu
+        [id] if u want to find the node, not really used
+        you can add new cateogories as needed
+    menu_subcategory is optional, it just adds an extra layer in the menu to organize animations
+        [display_name] is what shows in the menu
+        [id] if u want to find the node, not really used
+        can have as many or as little subcategories as you want, or none at all.
+        also subcategories can be nested if you want even more layers of organization
+    menu_item is the actual animation, you can add as many as you want
+        [action_type] can be found in the module_data files, from native
+        [display_name] can be whatever you want, it is what shows up in the menu
+        [action_channel] is optional, if not specified it defaults to 1. 0 is full body, 1 is upper body?
+            some animations will only work on certain channels.
+            if 0 its disabled on mounts and should also have movement_cancels = true
+        [movement_cancels] is optional, if true the animation stops when the player tries to move
+        [mount_required] is optional, if true the animation only available while mounted
+        [only_on_foot] is optional, if true the animation only available while on foot
+-->
+<menu id="crpg_animation_menu" display_name="{=usDfC300}Animations">
+    <menu_category id="taunts" display_name="{=usDfC301}Taunts">
+        <menu_item action_type="act_taunt_01" display_name="{=usDfC302}Afraid"/>
+        <menu_item action_type="act_taunt_02" display_name="{=usDfC303}Bow"/>
+        <menu_item action_type="act_taunt_03" display_name="{=usDfC304}Break"/>
+        <menu_item action_type="act_taunt_04" display_name="{=usDfC305}Disappoint"/>
+        <menu_item action_type="act_taunt_05" display_name="{=usDfC305}Disappoint"/>
+        <menu_item action_type="act_taunt_06" display_name="{=usDfC305}Disappoint"/>
+        <menu_item action_type="act_taunt_07" display_name="{=usDfC305}Disappoint"/>
+        <menu_item action_type="act_taunt_08" display_name="{=usDfC306}Shield Hit"/>
+        <menu_item action_type="act_taunt_09" display_name="{=usDfC306}Shield Hit"/>
+        <menu_item action_type="act_taunt_10" display_name="{=usDfC307}Invite"/>
+        <menu_item action_type="act_taunt_11" display_name="{=usDfC307}Invite"/>
+        <menu_item action_type="act_taunt_12" display_name="{=usDfC307}Invite"/>
+        <menu_item action_type="act_taunt_13" display_name="{=usDfC307}Invite"/>
+        <menu_item action_type="act_taunt_14" display_name="{=usDfC307}Invite"/>
+        <menu_item action_type="act_taunt_15" display_name="{=usDfC308}Laugh"/>
+        <menu_item action_type="act_taunt_16" display_name="{=usDfC308}Laugh"/>
+        <menu_item action_type="act_taunt_17" display_name="{=usDfC309}Pointing"/>
+        <menu_item action_type="act_taunt_18" display_name="{=usDfC310}Rage"/>
+        <menu_item action_type="act_taunt_19" display_name="{=usDfC310}Rage"/>
+        <menu_item action_type="act_taunt_20" display_name="{=usDfC311}Respect"/>
+        <menu_item action_type="act_taunt_21" display_name="{=usDfC312}Scared"/>
+        <menu_item action_type="act_taunt_22" display_name="{=usDfC312}Scared"/>
+        <menu_item action_type="act_taunt_23" display_name="{=usDfC313}Search Opponent"/>
+        <menu_item action_type="act_taunt_24" display_name="{=usDfC313}Search Opponent"/>
+        <menu_item action_type="act_taunt_25" display_name="{=usDfC314}Smash"/>
+        <menu_item action_type="act_taunt_26" display_name="{=usDfC315}Surrender"/>
+        <menu_item action_type="act_taunt_27" display_name="{=usDfC315}Surrender"/>
+        <menu_item action_type="act_taunt_28" display_name="{=usDfC315}Surrender"/>
+        <menu_item action_type="act_taunt_29" display_name="{=usDfC316}Threat"/>
+        <menu_item action_type="act_taunt_30" display_name="{=usDfC316}Threat"/>
+        <menu_item action_type="act_taunt_31" display_name="{=usDfC316}Threat"/>
+        <menu_item action_type="act_taunt_32" display_name="{=usDfC305}Disappoint"/>
+    </menu_category>
+
+    <menu_category id="cheers" display_name="{=usDfC317}Cheers">
+        <menu_item action_type="act_cheer_1" display_name="{=usDfC318}Cheer"/>
+        <menu_item action_type="act_cheer_2" display_name="{=usDfC318}Cheer"/>
+        <menu_item action_type="act_cheer_3" display_name="{=usDfC318}Cheer"/>
+        <menu_item action_type="act_cheer_4" display_name="{=usDfC318}Cheer"/>
+        <menu_subcategory display_name="{=usDfC319}High">
+            <menu_item action_type="act_cheering_high_01" display_name="{=usDfC320}Cheer High"/>
+            <menu_item action_type="act_cheering_high_02" display_name="{=usDfC320}Cheer High"/>
+            <menu_item action_type="act_cheering_high_03" display_name="{=usDfC320}Cheer High"/>
+            <menu_item action_type="act_cheering_high_04" display_name="{=usDfC320}Cheer High"/>
+            <menu_item action_type="act_cheering_high_05" display_name="{=usDfC320}Cheer High"/>
+            <menu_item action_type="act_cheering_high_06" display_name="{=usDfC320}Cheer High"/>
+            <menu_item action_type="act_cheering_high_07" display_name="{=usDfC320}Cheer High"/>
+            <menu_item action_type="act_cheering_high_08" display_name="{=usDfC320}Cheer High"/>
+        </menu_subcategory>
+        <menu_subcategory display_name="{=usDfC321}Low">
+            <menu_item action_type="act_cheering_low_01" display_name="{=usDfC322}Cheer Low"/>
+            <menu_item action_type="act_cheering_low_02" display_name="{=usDfC322}Cheer Low"/>
+            <menu_item action_type="act_cheering_low_03" display_name="{=usDfC322}Cheer Low"/>
+            <menu_item action_type="act_cheering_low_04" display_name="{=usDfC322}Cheer Low"/>
+            <menu_item action_type="act_cheering_low_05" display_name="{=usDfC322}Cheer Low"/>
+            <menu_item action_type="act_cheering_low_06" display_name="{=usDfC322}Cheer Low"/>
+            <menu_item action_type="act_cheering_low_07" display_name="{=usDfC322}Cheer Low"/>
+            <menu_item action_type="act_cheering_low_08" display_name="{=usDfC322}Cheer Low"/>
+            <menu_item action_type="act_cheering_low_09" display_name="{=usDfC322}Cheer Low"/>
+            <menu_item action_type="act_cheering_low_10" display_name="{=usDfC322}Cheer Low"/>
+        </menu_subcategory>
+    </menu_category>
+
+    <menu_category id="greetings" display_name="{=usDfC323}Greetings">
+        <menu_subcategory display_name="{=usDfC324}Front">
+            <menu_item action_type="act_greeting_front_1" display_name="{=usDfC325}Greet front" action_channel="0"/>
+            <menu_item action_type="act_greeting_front_2" display_name="{=usDfC325}Greet front" action_channel="0"/>
+            <menu_item action_type="act_greeting_front_3" display_name="{=usDfC325}Greet front" action_channel="0"/>
+            <menu_item action_type="act_greeting_front_4" display_name="{=usDfC325}Greet front" action_channel="0"/>
+            <menu_item action_type="act_greeting_front_5" display_name="{=usDfC325}Greet front" action_channel="0"/>
+            <menu_item action_type="act_greeting_front_6" display_name="{=usDfC325}Greet front" action_channel="0"/>
+        </menu_subcategory>
+        <menu_subcategory display_name="{=usDfC326}Right">
+            <menu_item action_type="act_greeting_right_1" display_name="{=usDfC327}Greet right" action_channel="0"/>
+            <menu_item action_type="act_greeting_right_2" display_name="{=usDfC327}Greet right" action_channel="0"/>
+            <menu_item action_type="act_greeting_right_3" display_name="{=usDfC327}Greet right" action_channel="0"/>
+            <menu_item action_type="act_greeting_right_4" display_name="{=usDfC327}Greet right" action_channel="0"/>
+        </menu_subcategory>
+        <menu_subcategory display_name="{=usDfC328}Left">
+            <menu_item action_type="act_greeting_left_1" display_name="{=usDfC329}Greet left" action_channel="0"/>
+            <menu_item action_type="act_greeting_left_2" display_name="{=usDfC329}Greet left" action_channel="0"/>
+            <menu_item action_type="act_greeting_left_3" display_name="{=usDfC329}Greet left" action_channel="0"/>
+            <menu_item action_type="act_greeting_left_4" display_name="{=usDfC329}Greet left" action_channel="0"/>
+        </menu_subcategory>
+    </menu_category>
+
+    <menu_category id="poses" display_name="{=usDfC330}Poses">
+        <menu_subcategory display_name="{=usDfC331}Lord Poses">
+            <menu_item action_type="act_pose_lord_1" display_name="{=usDfC332}Mercy"/>
+            <menu_item action_type="act_pose_lord_2" display_name="{=usDfC333}Calculating"/>
+            <menu_item action_type="act_pose_lord_3" display_name="{=usDfC334}Soldier"/>
+            <menu_item action_type="act_pose_lord_4" display_name="{=usDfC335}Miser"/>
+            <menu_item action_type="act_pose_lord_5" display_name="{=usDfC336}Uncertain"/>
+            <menu_item action_type="act_pose_lord_6" display_name="{=usDfC337}Honorable"/>
+            <menu_item action_type="act_pose_lord_7" display_name="{=usDfC338}Relaxed"/>
+            <menu_item action_type="act_pose_lord_8" display_name="{=usDfC339}Reckless"/>
+        </menu_subcategory>
+        <menu_subcategory display_name="{=usDfC340}Lord Portrait Poses">
+            <menu_item action_type="act_lord_portrait_pose_1" display_name="{=usDfC340}Lord Portrait Pose"/>
+            <menu_item action_type="act_lord_portrait_pose_2" display_name="{=usDfC340}Lord Portrait Pose"/>
+            <menu_item action_type="act_lord_portrait_pose_3" display_name="{=usDfC340}Lord Portrait Pose"/>
+            <menu_item action_type="act_lord_portrait_pose_4" display_name="{=usDfC340}Lord Portrait Pose"/>
+            <menu_item action_type="act_lord_portrait_pose_5" display_name="{=usDfC340}Lord Portrait Pose"/>
+            <menu_item action_type="act_lord_portrait_pose_6" display_name="{=usDfC340}Lord Portrait Pose"/>
+            <menu_item action_type="act_lord_portrait_pose_7" display_name="{=usDfC340}Lord Portrait Pose"/>
+            <menu_item action_type="act_lord_portrait_pose_8" display_name="{=usDfC340}Lord Portrait Pose"/>
+        </menu_subcategory>
+        <menu_subcategory display_name="{=usDfC341}Tableau Poses">
+            <menu_item action_type="act_tableau_pose_1" display_name="{=usDfC341}Tableau Pose"/>
+            <menu_item action_type="act_tableau_pose_2" display_name="{=usDfC341}Tableau Pose"/>
+            <menu_item action_type="act_tableau_pose_3" display_name="{=usDfC341}Tableau Pose"/>
+            <menu_item action_type="act_tableau_pose_4" display_name="{=usDfC341}Tableau Pose"/>
+            <menu_item action_type="act_tableau_pose_5" display_name="{=usDfC341}Tableau Pose"/>
+            <menu_item action_type="act_tableau_pose_6" display_name="{=usDfC341}Tableau Pose"/>
+            <menu_item action_type="act_tableau_pose_7" display_name="{=usDfC341}Tableau Pose"/>
+            <menu_item action_type="act_tableau_pose_8" display_name="{=usDfC341}Tableau Pose"/>
+        </menu_subcategory>
+    </menu_category>
+
+    <!-- ===================== CONVERSATION ===================== -->
+    <menu_category id="conversation" display_name="{=usDfC342}Conversation">
+        <menu_subcategory display_name="{=usDfC343}Actions">
+            <menu_item action_type="act_conversation_rage" display_name="{=usDfC344}Rage"/>
+            <menu_item action_type="act_conversation_rage_commenting" display_name="{=usDfC345}Rage Commenting"/>
+            <menu_item action_type="act_conversation_threat_point" display_name="{=usDfC346}Threat Point"/>
+            <menu_item action_type="act_conversation_threat_arm" display_name="{=usDfC347}Threat Arm"/>
+            <menu_item action_type="act_conversation_threat_body" display_name="{=usDfC348}Threat Body"/>
+            <menu_item action_type="act_conversation_threat_cuttrhoat" display_name="{=usDfC349}Threat Cutthroat"/>
+            <menu_item action_type="act_conversation_point_somewhere" display_name="{=usDfC350}Point Somewhere"/>
+            <menu_item action_type="act_conversation_talk_explain" display_name="{=usDfC351}Explain"/>
+            <menu_item action_type="act_conversation_talk_explain_promise_crossedarms" display_name="{=usDfC352}Explain + Promise"/>
+            <menu_item action_type="act_conversation_talk_explain_and_threat_arm" display_name="{=usDfC353}Explain + Threat"/>
+            <menu_item action_type="act_conversation_talk_dunno" display_name="{=usDfC354}Dunno"/>
+            <menu_item action_type="act_conversation_talk_dunno_negative_promise_and_crossed_arms" display_name="{=usDfC355}Dunno Negative"/>
+            <menu_item action_type="act_conversation_talk_negative" display_name="{=usDfC356}Negative"/>
+            <menu_item action_type="act_conversation_talk_negative_promise_and_crossed_arms" display_name="{=usDfC357}Negative + Promise"/>
+            <menu_item action_type="act_conversation_talk_negative_and_explain_and_threat_arm" display_name="{=usDfC358}Negative + Threat"/>
+            <menu_item action_type="act_conversation_talk_negative_and_explain" display_name="{=usDfC359}Negative + Explain"/>
+            <menu_item action_type="act_conversation_talk_promise" display_name="{=usDfC360}Promise"/>
+            <menu_item action_type="act_conversation_talk_promise_and_crossed_arms" display_name="{=usDfC361}Promise + Crossed Arms"/>
+            <menu_item action_type="act_conversation_talk_commenting" display_name="{=usDfC362}Commenting"/>
+            <menu_item action_type="act_conversation_talk_commenting_play" display_name="{=usDfC363}Commenting Play"/>
+            <menu_item action_type="act_conversation_talk_crossedarms" display_name="{=usDfC364}Crossed Arms"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC365}Normal">
+            <menu_item action_type="act_conversation_normal_positive" display_name="{=usDfC366}Positive"/>
+            <menu_item action_type="act_conversation_normal_very_positive" display_name="{=usDfC367}Very Positive"/>
+            <menu_item action_type="act_conversation_normal_unsure" display_name="{=usDfC368}Unsure"/>
+            <menu_item action_type="act_conversation_normal_negative" display_name="{=usDfC369}Negative"/>
+            <menu_item action_type="act_conversation_normal_very_negative" display_name="{=usDfC370}Very Negative"/>
+            <menu_item action_type="act_conversation_normal_trivial" display_name="{=usDfC371}Trivial"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC372}Aggressive">
+            <menu_item action_type="act_conversation_aggressive_positive" display_name="{=usDfC366}Positive"/>
+            <menu_item action_type="act_conversation_aggressive_very_positive" display_name="{=usDfC367}Very Positive"/>
+            <menu_item action_type="act_conversation_aggressive_unsure" display_name="{=usDfC368}Unsure"/>
+            <menu_item action_type="act_conversation_aggressive_negative" display_name="{=usDfC369}Negative"/>
+            <menu_item action_type="act_conversation_aggressive_very_negative" display_name="{=usDfC370}Very Negative"/>
+            <menu_item action_type="act_conversation_aggressive_trivial" display_name="{=usDfC371}Trivial"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC373}Warrior">
+            <menu_item action_type="act_conversation_warrior_positive" display_name="{=usDfC366}Positive"/>
+            <menu_item action_type="act_conversation_warrior_very_positive" display_name="{=usDfC367}Very Positive"/>
+            <menu_item action_type="act_conversation_warrior_unsure" display_name="{=usDfC368}Unsure"/>
+            <menu_item action_type="act_conversation_warrior_negative" display_name="{=usDfC369}Negative"/>
+            <menu_item action_type="act_conversation_warrior_very_negative" display_name="{=usDfC370}Very Negative"/>
+            <menu_item action_type="act_conversation_warrior_trivial" display_name="{=usDfC371}Trivial"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC374}Hip">
+            <menu_item action_type="act_conversation_hip_positive" display_name="{=usDfC366}Positive"/>
+            <menu_item action_type="act_conversation_hip_very_positive" display_name="{=usDfC367}Very Positive"/>
+            <menu_item action_type="act_conversation_hip_unsure" display_name="{=usDfC368}Unsure"/>
+            <menu_item action_type="act_conversation_hip_negative" display_name="{=usDfC369}Negative"/>
+            <menu_item action_type="act_conversation_hip_very_negative" display_name="{=usDfC370}Very Negative"/>
+            <menu_item action_type="act_conversation_hip_trivial" display_name="{=usDfC371}Trivial"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC375}Closed">
+            <menu_item action_type="act_conversation_closed_positive" display_name="{=usDfC366}Positive"/>
+            <menu_item action_type="act_conversation_closed_very_positive" display_name="{=usDfC367}Very Positive"/>
+            <menu_item action_type="act_conversation_closed_unsure" display_name="{=usDfC368}Unsure"/>
+            <menu_item action_type="act_conversation_closed_negative" display_name="{=usDfC369}Negative"/>
+            <menu_item action_type="act_conversation_closed_very_negative" display_name="{=usDfC370}Very Negative"/>
+            <menu_item action_type="act_conversation_closed_trivial" display_name="{=usDfC371}Trivial"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC376}Confident">
+            <menu_item action_type="act_conversation_confident_positive" display_name="{=usDfC366}Positive"/>
+            <menu_item action_type="act_conversation_confident_very_positive" display_name="{=usDfC367}Very Positive"/>
+            <menu_item action_type="act_conversation_confident_unsure" display_name="{=usDfC368}Unsure"/>
+            <menu_item action_type="act_conversation_confident_negative" display_name="{=usDfC369}Negative"/>
+            <menu_item action_type="act_conversation_confident_very_negative" display_name="{=usDfC370}Very Negative"/>
+            <menu_item action_type="act_conversation_confident_trivial" display_name="{=usDfC371}Trivial"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC376}Confident">
+            <menu_item action_type="act_conversation_confident2_positive" display_name="{=usDfC366}Positive"/>
+            <menu_item action_type="act_conversation_confident2_very_positive" display_name="{=usDfC367}Very Positive"/>
+            <menu_item action_type="act_conversation_confident2_unsure" display_name="{=usDfC368}Unsure"/>
+            <menu_item action_type="act_conversation_confident2_negative" display_name="{=usDfC369}Negative"/>
+            <menu_item action_type="act_conversation_confident2_very_negative" display_name="{=usDfC370}Very Negative"/>
+            <menu_item action_type="act_conversation_confident2_trivial" display_name="{=usDfC371}Trivial"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC377}Demure">
+            <menu_item action_type="act_conversation_demure_positive" display_name="{=usDfC366}Positive"/>
+            <menu_item action_type="act_conversation_demure_very_positive" display_name="{=usDfC367}Very Positive"/>
+            <menu_item action_type="act_conversation_demure_unsure" display_name="{=usDfC368}Unsure"/>
+            <menu_item action_type="act_conversation_demure_negative" display_name="{=usDfC369}Negative"/>
+            <menu_item action_type="act_conversation_demure_very_negative" display_name="{=usDfC370}Very Negative"/>
+            <menu_item action_type="act_conversation_demure_trivial" display_name="{=usDfC371}Trivial"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC378}Nervous">
+            <menu_item action_type="act_conversation_nervous_positive" display_name="{=usDfC366}Positive"/>
+            <menu_item action_type="act_conversation_nervous_very_positive" display_name="{=usDfC367}Very Positive"/>
+            <menu_item action_type="act_conversation_nervous_unsure" display_name="{=usDfC368}Unsure"/>
+            <menu_item action_type="act_conversation_nervous_negative" display_name="{=usDfC369}Negative"/>
+            <menu_item action_type="act_conversation_nervous_very_negative" display_name="{=usDfC370}Very Negative"/>
+            <menu_item action_type="act_conversation_nervous_trivial" display_name="{=usDfC371}Trivial"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC379}Weary">
+            <menu_item action_type="act_conversation_weary_positive" display_name="{=usDfC366}Positive"/>
+            <menu_item action_type="act_conversation_weary_very_positive" display_name="{=usDfC367}Very Positive"/>
+            <menu_item action_type="act_conversation_weary_unsure" display_name="{=usDfC368}Unsure"/>
+            <menu_item action_type="act_conversation_weary_negative" display_name="{=usDfC369}Negative"/>
+            <menu_item action_type="act_conversation_weary_very_negative" display_name="{=usDfC370}Very Negative"/>
+            <menu_item action_type="act_conversation_weary_trivial" display_name="{=usDfC371}Trivial"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC380}Sit">
+            <menu_item action_type="act_conversation_normal_positive_sit" display_name="{=usDfC381}Sit Positive" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_conversation_normal_very_positive_sit" display_name="{=usDfC382}Sit Very Positive" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_conversation_normal_unsure_sit" display_name="{=usDfC383}Sit Unsure" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_conversation_normal_negative_sit" display_name="{=usDfC384}Sit Negative" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_conversation_normal_very_negative_sit" display_name="{=usDfC385}Sit Very Negative" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_conversation_normal_trivial_sit" display_name="{=usDfC415}Sit Trivial" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_conversation_sit_floor_loop" display_name="{=usDfC416}Floor Loop" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_conversation_normal_positive_sit_floor" display_name="{=usDfC417}Floor Positive" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_conversation_normal_very_positive_sit_floor" display_name="{=usDfC386}Floor Very Positive" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_conversation_normal_unsure_sit_floor" display_name="{=usDfC387}Floor Unsure" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_conversation_normal_negative_sit_floor" display_name="{=usDfC388}Floor Negative" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_conversation_normal_very_negative_sit_floor" display_name="{=usDfC389}Floor Very Negative" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_conversation_normal_trivial_sit_floor" display_name="{=usDfC390}Floor Trivial" movement_cancels="true" only_on_foot="true"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC391}Horseback">
+            <menu_item action_type="act_conversation_normal_positive_horseback" display_name="{=usDfC366}Positive" mount_required="true"/>
+            <menu_item action_type="act_conversation_normal_very_positive_horseback" display_name="{=usDfC367}Very Positive" mount_required="true"/>
+            <menu_item action_type="act_conversation_normal_unsure_horseback" display_name="{=usDfC368}Unsure" mount_required="true"/>
+            <menu_item action_type="act_conversation_normal_negative_horseback" display_name="{=usDfC369}Negative" mount_required="true"/>
+            <menu_item action_type="act_conversation_normal_very_negative_horseback" display_name="{=usDfC370}Very Negative" mount_required="true"/>
+            <menu_item action_type="act_conversation_normal_trivial_horseback" display_name="{=usDfC371}Trivial" mount_required="true"/>
+        </menu_subcategory>
+    </menu_category>
+
+    <!-- ===================== NPC Actions ===================== -->
+    <menu_category id="npc" display_name="{=usDfC392}NPC Actions">
+
+        <menu_item action_type="act_npc_villager_cloth_washing" display_name="{=usDfC393}Cloth Washing" only_on_foot="true"/>
+        <menu_item action_type="act_npc_villager_fishing" display_name="{=usDfC394}Fishing" only_on_foot="true"/>
+        <menu_item action_type="act_npc_villager_shoveling" display_name="{=usDfC395}Shoveling" only_on_foot="true"/>
+        <menu_item action_type="act_npc_villager_pitchforking" display_name="{=usDfC396}Pitchforking" only_on_foot="true"/>
+        <menu_item action_type="act_npc_villager_lumberjack" display_name="{=usDfC397}Lumberjack" only_on_foot="true"/>
+        <menu_item action_type="act_npc_villager_leather_cleaning" display_name="{=usDfC398}Leather Cleaning" only_on_foot="true"/>
+
+        <menu_item action_type="act_npc_villager_working_while_stand" display_name="{=usDfC436}Working While Standing" only_on_foot="true"/>
+        <menu_item action_type="act_npc_villager_working_while_stand_2" display_name="{=usDfC436}Working While Standing" only_on_foot="true"/>
+
+        <menu_item action_type="act_npc_farmer_digging" display_name="{=usDfC437}Digging" only_on_foot="true"/>
+
+        <menu_item action_type="act_npc_farmer_bush_cutting" display_name="{=usDfC438}Bush Cutting" only_on_foot="true"/>
+        <menu_item action_type="act_npc_farmer_bush_cutting_while_stand" display_name="{=usDfC438}Bush Cutting" only_on_foot="true"/>
+
+        <menu_item action_type="act_npc_farmer_scythe_using" display_name="{=usDfC439}Scythe Using" only_on_foot="true"/>
+
+        <menu_item action_type="act_npc_horse_grooming" display_name="{=usDfC440}Horse Grooming" only_on_foot="true"/>
+
+        <menu_subcategory display_name="{=usDfC441}Bartender">
+            <menu_item action_type="act_bartender_dust" display_name="{=usDfC442}Dust" action_channel="0" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_bartender_wipe" display_name="{=usDfC399}Wipe" action_channel="0" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_bartender_bake" display_name="{=usDfC400}Bake" action_channel="0" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_bartender_meat" display_name="{=usDfC401}Meat" action_channel="0" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_bartender_talk_to_tavern_maid" display_name="{=usDfC402}Talk to Tavern Maid" only_on_foot="true"/>
+            <menu_item action_type="act_bartender_talk_to_customer" display_name="{=usDfC403}Talk to Customer" only_on_foot="true"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC404}Dungeon">
+            <menu_item action_type="act_dungeon_prisoner_sleep_cycle" display_name="{=usDfC405}Prisoner Sleep" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_dungeon_prisoner_sitting_ground_cycle" display_name="{=usDfC406}Prisoner Sitting on Ground" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_dungeon_prisoner_lay_cycle" display_name="{=usDfC407}Prisoner Laying" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_dungeon_prisoner_cleaning_floor_cycle" display_name="{=usDfC408}Prisoner Cleaning Floor" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_dungeon_prisoner_idle_exhausted" display_name="{=usDfC429}Prisoner Idle (Exhausted)" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_dungeon_prisoner_idle_leaning_wall_cycle" display_name="{=usDfC430}Prisoner Idle (Leaning on Wall)" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_dungeon_prisoner_idle_leaning_wall_b_cycle" display_name="{=usDfC431}Prisoner Idle (Leaning on Wall B)" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_dungeon_prisoner_idle_holding_cage_cycle" display_name="{=usDfC432}Prisoner Idle (Holding Cage)" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_dungeon_prisoner_sitting_cycle" display_name="{=usDfC433}Prisoner Sitting" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_dungeon_guardian_sit_and_nap_cycle" display_name="{=usDfC434}Guardian Sitting and Napping" movement_cancels="true" only_on_foot="true"/>
+        </menu_subcategory>
+
+    </menu_category>
+
+    <!-- ===================== Misc ===================== -->
+    <menu_category id="misc" display_name="{=usDfC409}Misc">
+
+        <menu_subcategory display_name="{=usDfC380}Sit">
+            <menu_item action_type="act_sit_1" display_name="{=usDfC380}Sit" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_sit_2" display_name="{=usDfC380}Sit" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_sit_3" display_name="{=usDfC380}Sit" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_sit_4" display_name="{=usDfC380}Sit" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_sit_5" display_name="{=usDfC380}Sit" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_sit_6" display_name="{=usDfC380}Sit" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_sit_7" display_name="{=usDfC380}Sit" movement_cancels="true" only_on_foot="true"/>
+            <menu_item action_type="act_sit_8" display_name="{=usDfC380}Sit" movement_cancels="true" only_on_foot="true"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC410}Applaud">
+            <menu_item action_type="act_applaud_1" display_name="{=usDfC410}Applaud"/>
+            <menu_item action_type="act_applaud_2" display_name="{=usDfC410}Applaud"/>
+            <menu_item action_type="act_applaud_3" display_name="{=usDfC410}Applaud"/>
+            <menu_item action_type="act_applaud_4" display_name="{=usDfC410}Applaud"/>
+            <menu_item action_type="act_applaud_5" display_name="{=usDfC410}Applaud"/>
+            <menu_item action_type="act_applaud_6" display_name="{=usDfC410}Applaud"/>
+            <menu_item action_type="act_applaud_7" display_name="{=usDfC410}Applaud"/>
+        </menu_subcategory>
+
+        <menu_subcategory display_name="{=usDfC411}Listen">
+            <menu_item action_type="act_listen_1" display_name="{=usDfC411}Listen"/>
+            <menu_item action_type="act_listen_2" display_name="{=usDfC411}Listen"/>
+            <menu_item action_type="act_listen_3" display_name="{=usDfC411}Listen"/>
+            <menu_item action_type="act_listen_4" display_name="{=usDfC411}Listen"/>
+            <menu_item action_type="act_listen_5" display_name="{=usDfC411}Listen"/>
+            <menu_item action_type="act_listen_6" display_name="{=usDfC411}Listen"/>
+            <menu_item action_type="act_listen_7" display_name="{=usDfC411}Listen"/>
+        </menu_subcategory>
+
+        <menu_item action_type="act_preacher" display_name="{=usDfC412}Preacher"/>
+        <menu_item action_type="act_instructor" display_name="{=usDfC413}Instructor"/>
+
+        <menu_item action_type="act_use_smithing_machine_loop" display_name="{=usDfC414}Use Smithing Machine Loop" movement_cancels="true" action_channel="0"/>
+
+        <menu_item action_type="act_sit_beggar_beg" display_name="{=usDfC415}Sit Beggar Beg" movement_cancels="true"/>
+        <menu_item action_type="act_stand_beggar_1" display_name="{=usDfC416}Stand Beggar"/>
+        <menu_item action_type="act_stand_beggar_2" display_name="{=usDfC416}Stand Beggar"/>
+        <menu_item action_type="act_beggar_idle" display_name="{=usDfC417}Beggar Idle" action_channel="0" movement_cancels="true" only_on_foot="true"/>
+
+        <menu_item action_type="act_drunk_pair_1" display_name="{=usDfC418}Drunk Pair"/>
+        <menu_item action_type="act_drunk_pair_2" display_name="{=usDfC418}Drunk Pair"/>
+        <menu_item action_type="act_drunk_pair_3" display_name="{=usDfC418}Drunk Pair"/>
+        <menu_item action_type="act_drunk_pair_4" display_name="{=usDfC418}Drunk Pair"/>
+
+        <menu_item action_type="act_drunk_idle" display_name="{=usDfC419}Drunk Idle" action_channel="0" movement_cancels="true" only_on_foot="true"/>
+        <menu_item action_type="act_eating" display_name="{=usDfC420}Eating" action_channel="0" movement_cancels="true" only_on_foot="true"/>
+        <menu_item action_type="act_lookout" display_name="{=usDfC421}Lookout" action_channel="0" movement_cancels="true" only_on_foot="true"/>
+        <menu_item action_type="act_dance_norse" display_name="{=usDfC422}Dance Norse" action_channel="0" movement_cancels="true" only_on_foot="true"/>
+
+        <menu_item action_type="act_gossip" display_name="{=usDfC423}Gossip"/>
+        <menu_item action_type="act_gossip_2" display_name="{=usDfC423}Gossip"/>
+
+        <menu_item action_type="act_argue" display_name="{=usDfC424}Argue"/>
+        <menu_item action_type="act_argue_2" display_name="{=usDfC424}Argue"/>
+        <menu_item action_type="act_argue_3" display_name="{=usDfC424}Argue"/>
+        <menu_item action_type="act_argue_4" display_name="{=usDfC424}Argue"/>
+
+        <menu_item action_type="act_argue_soft_1" display_name="{=usDfC425}Argue Soft"/>
+        <menu_item action_type="act_argue_soft_2" display_name="{=usDfC425}Argue Soft"/>
+        <menu_item action_type="act_argue_soft_3" display_name="{=usDfC425}Argue Soft"/>
+        <menu_item action_type="act_argue_soft_4" display_name="{=usDfC425}Argue Soft"/>
+
+        <menu_item action_type="act_bully" display_name="{=usDfC426}Bully"/>
+        <menu_item action_type="act_bullied" display_name="{=usDfC426}Bullied"/>
+
+        <menu_item action_type="act_scared_reaction_1" display_name="{=usDfC427}Scared Reaction"/>
+        <menu_item action_type="act_scared_reaction_2" display_name="{=usDfC427}Scared Reaction"/>
+
+        <menu_item action_type="act_scared_idle_1" display_name="{=usDfC428}Scared Idle"/>
+        <menu_item action_type="act_scared_idle_2" display_name="{=usDfC428}Scared Idle"/>
+        <menu_item action_type="act_scared_idle_3" display_name="{=usDfC428}Scared Idle"/>
+
+    </menu_category>
+<!--
+    <menu_category id="cutscenes" display_name="Cutscenes">
+        <menu_item action_type="act_cutscene_kingdom_made_pose_01" display_name="Kingdom Made Pose"/>
+        <menu_item action_type="act_cutscene_kingdom_made_pose_02" display_name="Kingdom Made Pose"/>
+        <menu_item action_type="act_cutscene_kingdom_made_pose_03" display_name="Kingdom Made Pose"/>
+        <menu_item action_type="act_cutscene_kingdom_made_pose_04" display_name="Kingdom Made Pose"/>
+        <menu_item action_type="act_cutscene_kingdom_made_pose_05" display_name="Kingdom Made Pose"/>
+        <menu_item action_type="act_cutscene_kingdom_made_pose_06" display_name="Kingdom Made Pose"/>
+        <menu_item action_type="act_cutscene_born_baby_father_loop" display_name="Born Baby Father Loop"/>
+        <menu_item action_type="act_cutscene_born_baby_maid_loop" display_name="Born Baby Maid Loop"/>
+        <menu_item action_type="act_cutscene_born_baby_mom_loop" display_name="Born Baby Mom Loop"/>
+        <menu_item action_type="act_cutscene_born_baby_mom_loop1" display_name="Born Baby Mom Loop"/>
+        <menu_item action_type="act_cutscene_executioner_idle" display_name="Executioner Idle"/>
+        <menu_item action_type="act_cutscene_execution_prisoner_idle" display_name="Execution Prisoner Idle"/>
+        <menu_item action_type="act_cutscene_executioner_action" display_name="Executioner Action"/>
+        <menu_item action_type="act_main_story_conspiracy_walk_1" display_name="Main Story Conspiracy Walk"/>
+        <menu_item action_type="act_main_story_conspiracy_talk_1" display_name="Main Story Conspiracy Talk"/>
+    </menu_category>    
+    <menu_category id="deaths" display_name="Deaths">
+        <menu_item action_type="act_death_by_arrow_head_back1" display_name="arrow_death_head_back1" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_head1" display_name="arrow_death_head1" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_head2" display_name="arrow_death_head2" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_head3" display_name="arrow_death_head3" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_head4" display_name="arrow_death_head4" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_neck1" display_name="arrow_death_neck1" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_neck2" display_name="arrow_death_neck2" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_neck3" display_name="arrow_death_neck3" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_neck4" display_name="arrow_death_neck4" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_legs_back1" display_name="arrow_death_legs_back1" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_legs_back2" display_name="arrow_death_legs_back2" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_chest1" display_name="arrow_death_chest1" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_chest2" display_name="arrow_death_chest2" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_chest3" display_name="arrow_death_chest3" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_chest4" display_name="arrow_death_chest4" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_back1" display_name="arrow_death_back1" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_back2" display_name="arrow_death_back2" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_back3" display_name="arrow_death_back3" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_back4" display_name="arrow_death_back4" movement_cancels="true"/>
+        <menu_item action_type="act_death_fall_front" display_name="death_fall_front" movement_cancels="true"/>
+        <menu_item action_type="act_death_fall_front_heavy" display_name="death_fall_front_heavy" movement_cancels="true"/>
+        <menu_item action_type="act_death_fall_back" display_name="death_fall_back" movement_cancels="true"/>
+        <menu_item action_type="act_death_fall_back_heavy" display_name="death_fall_back_heavy" movement_cancels="true"/>
+        <menu_item action_type="act_death_fall_right" display_name="death_fall_right" movement_cancels="true"/>
+        <menu_item action_type="act_death_fall_right_heavy" display_name="death_fall_right_heavy" movement_cancels="true"/>
+        <menu_item action_type="act_death_fall_left" display_name="death_fall_left" movement_cancels="true"/>
+        <menu_item action_type="act_death_fall_left_heavy" display_name="death_fall_left_heavy" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_arrow_pelvis" display_name="arrow_death_pelvis" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_fire1" display_name="death_by_fire1" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_fire2" display_name="death_by_fire2" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_fire3" display_name="death_by_fire3" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_fire_front" display_name="death_by_fire_front" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_fire_right" display_name="death_by_fire_right" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_fire_left" display_name="death_by_fire_left" movement_cancels="true"/>
+        <menu_item action_type="act_death_by_fire_back" display_name="death_by_fire_back" movement_cancels="true"/>
+    </menu_category>
+    <menu_category id="instruments" display_name="Instruments">
+        <menu_subcategory display_name="Sitting">
+            <menu_item action_type="act_sitting_play_guitar_play_loop" display_name="Play Guitar Loop" movement_cancels="true"/>
+            <menu_item action_type="act_play_celtic_harp_sitting" display_name="Play Celtic Harp" movement_cancels="true"/>
+            <menu_item action_type="act_play_cornu_sitting" display_name="Play Cornu" movement_cancels="true"/>
+            <menu_item action_type="act_play_dombra_sitting" display_name="Play Dombra" movement_cancels="true"/>
+            <menu_item action_type="act_musician_equip_sitting" display_name="Equip Instrument" movement_cancels="true"/>
+            <menu_item action_type="act_play_flute_sitting" display_name="Play Flute" movement_cancels="true"/>
+            <menu_item action_type="act_play_bodhran_sitting" display_name="Play Bodhran" movement_cancels="true"/>
+            <menu_item action_type="act_play_hurdygurdy_sitting" display_name="Play Hurdygurdy" movement_cancels="true"/>
+            <menu_item action_type="act_play_kemane_sitting" display_name="Play Kemane" movement_cancels="true"/>
+            <menu_item action_type="act_play_khomus_sitting" display_name="Play Khomus" movement_cancels="true"/>
+            <menu_item action_type="act_play_nay_sitting" display_name="Play Nay" movement_cancels="true"/>
+            <menu_item action_type="act_play_oud_sitting" display_name="Play Oud" movement_cancels="true"/>
+            <menu_item action_type="act_play_vielle_sitting" display_name="Play Vielle" movement_cancels="true"/>
+        </menu_subcategory>
+        <menu_item action_type="act_play_celtic_harp_stand" display_name="Play Celtic Harp" movement_cancels="true"/>
+        <menu_item action_type="act_play_cornu_stand" display_name="Play Cornu" movement_cancels="true"/>
+        <menu_item action_type="act_play_dombra_stand" display_name="Play Dombra" movement_cancels="true"/>
+        <menu_item action_type="act_play_flute_stand" display_name="Play Flute" movement_cancels="true"/>
+        <menu_item action_type="act_play_bodhran_stand" display_name="Play Bodhran" movement_cancels="true"/>
+        <menu_item action_type="act_play_hurdygurdy_stand" display_name="Play Hurdygurdy" movement_cancels="true"/>
+        <menu_item action_type="act_play_kemane_stand" display_name="Play Kemane" movement_cancels="true"/>
+        <menu_item action_type="act_play_khomus_stand" display_name="Play Khomus" movement_cancels="true"/>
+        <menu_item action_type="act_play_nay_stand" display_name="Play Nay" movement_cancels="true"/>
+        <menu_item action_type="act_play_oud_stand" display_name="Play Oud" movement_cancels="true"/>
+        <menu_item action_type="act_play_vielle_stand" display_name="Play Vielle" movement_cancels="true"/>
+    </menu_category>
+-->    
+</menu>

@@ -5,8 +5,8 @@ using Crpg.Module.Common.ChatCommands;
 using Crpg.Module.Modes.Siege;
 #else
 using Crpg.Module.GUI;
-using Crpg.Module.GUI.AnimationMenu;
 using Crpg.Module.GUI.AmmoQuiverChange;
+using Crpg.Module.GUI.AnimationMenu;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.Conquest;
 using Crpg.Module.GUI.Spectator;
@@ -131,6 +131,7 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
                 new MultiplayerPollComponent(),
                 new CrpgCommanderPollComponent(),
                 new AmmoQuiverChangeComponent(),
+                new CrpgAnimationBehavior(),
                 new MultiplayerAdminComponent(),
                 notificationsComponent,
                 new MissionOptionsComponent(),

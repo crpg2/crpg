@@ -5,8 +5,8 @@ using Crpg.Module.Common.ChatCommands;
 using Crpg.Module.Rewards;
 #else
 using Crpg.Module.GUI;
-using Crpg.Module.GUI.AnimationMenu;
 using Crpg.Module.GUI.AmmoQuiverChange;
+using Crpg.Module.GUI.AnimationMenu;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
@@ -109,6 +109,7 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
                     new MissionBoundaryCrossingHandler(), // kills agent out of mission boundaries
                     new MultiplayerPollComponent(), // poll logic to kick player, ban player, change game
                     new AmmoQuiverChangeComponent(),
+                    new CrpgAnimationBehavior(),
                     new MissionOptionsComponent(),
                     new CrpgScoreboardComponent(new CrpgDuelScoreboardData()), // score board
                     new MultiplayerPreloadHelper(),

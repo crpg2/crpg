@@ -1,11 +1,11 @@
-#if CRPG_SERVER
+﻿#if CRPG_SERVER
 using Crpg.Module.Api;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Common.ChatCommands;
 #else
 using Crpg.Module.GUI;
-using Crpg.Module.GUI.AnimationMenu;
 using Crpg.Module.GUI.AmmoQuiverChange;
+using Crpg.Module.GUI.AnimationMenu;
 using Crpg.Module.GUI.HudExtension;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
@@ -115,6 +115,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
                 new MultiplayerAdminComponent(),
                 notificationsComponent,
                 new AmmoQuiverChangeComponent(),
+                new CrpgAnimationBehavior(),
                 new MissionOptionsComponent(),
                 scoreboardComponent,
                 new MissionAgentPanicHandler(),

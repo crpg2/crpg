@@ -13,8 +13,8 @@ using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Source.Missions;
 #if CRPG_CLIENT
 using Crpg.Module.GUI;
-using Crpg.Module.GUI.AnimationMenu;
 using Crpg.Module.GUI.AmmoQuiverChange;
+using Crpg.Module.GUI.AnimationMenu;
 using Crpg.Module.GUI.TrainingGround;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
@@ -111,6 +111,7 @@ internal class CrpgTrainingGroundGameMode : MissionBasedMultiplayerGameMode
                     new MissionBoundaryCrossingHandler(), // kills agent out of mission boundaries
                     new MultiplayerPollComponent(), // poll logic to kick player, ban player, change game
                     new AmmoQuiverChangeComponent(), // Ammo Quiver change feature
+                    new CrpgAnimationBehavior(),
                     new MissionOptionsComponent(),
                     new CrpgScoreboardComponent(new CrpgTrainingGroundScoreboardData()), // score board
                     new MultiplayerPreloadHelper(),

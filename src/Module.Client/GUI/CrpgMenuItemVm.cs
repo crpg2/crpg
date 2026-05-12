@@ -1,19 +1,14 @@
-using TaleWorlds.Library;
+﻿using TaleWorlds.Library;
 
-namespace Crpg.Module.GUI.AnimationMenu;
+namespace Crpg.Module.GUI;
 
-/// <summary>
-/// ViewModel for a single row in the emote menu.
-/// Works for both category navigation rows and emote play rows.
-/// The XML prefab binds Text, IsEnabled, and calls ExecuteItem() on click.
-/// </summary>
-internal class CrpgAnimationMenuItemVm : ViewModel
+internal class CrpgMenuItemVm : ViewModel
 {
+    private readonly Action? _onExecute;
     private string _text = string.Empty;
     private bool _isEnabled = true;
-    private readonly Action? _onExecute;
 
-    public CrpgAnimationMenuItemVm(string text, Action? onExecute = null, bool isEnabled = true)
+    public CrpgMenuItemVm(string text, Action? onExecute = null, bool isEnabled = true)
     {
         _text = text;
         _isEnabled = isEnabled;
@@ -26,7 +21,11 @@ internal class CrpgAnimationMenuItemVm : ViewModel
         get => _text;
         set
         {
-            if (_text == value) return;
+            if (_text == value)
+            {
+                return;
+            }
+
             _text = value;
             OnPropertyChangedWithValue(value);
         }
@@ -38,7 +37,11 @@ internal class CrpgAnimationMenuItemVm : ViewModel
         get => _isEnabled;
         set
         {
-            if (_isEnabled == value) return;
+            if (_isEnabled == value)
+            {
+                return;
+            }
+
             _isEnabled = value;
             OnPropertyChangedWithValue(value);
         }

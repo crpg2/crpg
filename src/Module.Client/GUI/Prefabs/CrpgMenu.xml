@@ -1,0 +1,129 @@
+<Prefab>
+    <Parameters>
+        <Parameter Name="MenuWidth"      DefaultValue="290"/>
+        <Parameter Name="MenuHeight"     DefaultValue="520"/>
+        <Parameter Name="ScrollHeight"   DefaultValue="380"/>
+        <Parameter Name="ItemWidth"      DefaultValue="240"/>
+        <Parameter Name="ItemHeight"     DefaultValue="36"/>
+        <Parameter Name="HAlign"         DefaultValue="Right"/>
+        <Parameter Name="VAlign"         DefaultValue="Center"/>
+        <Parameter Name="MarginBottom"   DefaultValue="80"/>
+        <Parameter Name="MarginRight"    DefaultValue="10"/>
+        <Parameter Name="ScrollbarLeft"  DefaultValue="266"/>
+        <Parameter Name="ScrollMarginTop" DefaultValue="60"/>
+    </Parameters>
+    <Window>
+        <!-- Main panel — right-click anywhere on it goes back -->
+        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                SuggestedWidth="*MenuWidth" SuggestedHeight="*MenuHeight"
+                VerticalAlignment="*VAlign" HorizontalAlignment="*HAlign"
+                IsVisible="@IsEnabled"
+                MarginBottom="*MarginBottom" MarginRight="*MarginRight"
+                Sprite="BlankWhiteSquare_9" Color="#000000FF" AlphaFactor="0.82"
+                Command.RightClick="ExecuteBack">
+            <Children>
+
+                <!-- Title -->
+                <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="30"
+                            VerticalAlignment="Top" HorizontalAlignment="Center"
+                            MarginTop="14" MarginLeft="20" MarginRight="20"
+                            Brush="MPScoreboard.Info.Text"
+                            Brush.FontSize="20"
+                            Brush.TextHorizontalAlignment="Center"
+                            Text="@MenuTitle"/>
+
+                <!-- Scrollable items list -->
+                <ScrollablePanel Id="MenuScrollPanel"
+                                 WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                                 SuggestedWidth="*ItemWidth" SuggestedHeight="*ScrollHeight"
+                                 VerticalAlignment="Top" HorizontalAlignment="Left"
+                                 MarginLeft="20" MarginTop="*ScrollMarginTop"
+                                 InnerPanel="ClipRect\InnerPanel"
+                                 ClipRect="ClipRect"
+                                 VerticalScrollbar="..\ScrollbarContainer\Scrollbar"
+                                 AutoHideScrollBars="true">
+                    <Children>
+                        <Widget Id="ClipRect"
+                                WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                ClipContents="true">
+                            <Children>
+                                <Widget Id="InnerPanel"
+                                        WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren">
+                                    <Children>
+                                        <ListPanel DataSource="{Items}"
+                                                   WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren"
+                                                   StackLayout.LayoutMethod="VerticalBottomToTop">
+                                            <ItemTemplate>
+                                                <CrpgMenuItem Parameter.ItemHeight="*ItemHeight"
+                                                              Parameter.ItemWidth="*ItemWidth"/>
+                                            </ItemTemplate>
+                                        </ListPanel>
+                                    </Children>
+                                </Widget>
+                            </Children>
+                        </Widget>
+                    </Children>
+                </ScrollablePanel>
+
+                <!-- Scrollbar -->
+                <Widget Id="ScrollbarContainer"
+                        WidthSizePolicy="Fixed" SuggestedWidth="6"
+                        HeightSizePolicy="Fixed" SuggestedHeight="*ScrollHeight"
+                        VerticalAlignment="Top" HorizontalAlignment="Left"
+                        MarginLeft="*ScrollbarLeft" MarginTop="*ScrollMarginTop">
+                    <Children>
+                        <ScrollbarWidget Id="Scrollbar"
+                                         WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                         MinValue="0" MaxValue="100" ValueInt="0"
+                                         AlignmentAxis="Vertical"
+                                         VerticalAlignment="Top" HorizontalAlignment="Center"
+                                         Sprite="BlankWhiteSquare_9"
+                                         Brush.AlphaFactor="0.4" Brush.Color="#A18661FF"
+                                         Handle="ScrollbarHandle">
+                            <Children>
+                                <Widget Id="ScrollbarHandle"
+                                        WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="20"
+                                        Sprite="BlankWhiteSquare_9" Brush.Color="#FFFFFF66"/>
+                            </Children>
+                        </ScrollbarWidget>
+                    </Children>
+                </Widget>
+
+                <!-- Back navigation -->
+                <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                           VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                           StackLayout.LayoutMethod="VerticalTopToBottom"
+                           MarginLeft="20" MarginBottom="16">
+                    <Children>
+                        <CrpgMenuItem Parameter.ItemDataSource="{Back}"
+                                      Parameter.ItemHeight="*ItemHeight"
+                                      Parameter.ItemWidth="*ItemWidth"/>
+                    </Children>
+                </ListPanel>
+
+                <!-- Frame border overlay -->
+                <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                        Sprite="frame_9"
+                        ExtendLeft="12" ExtendTop="12" ExtendRight="12" ExtendBottom="12"
+                        IsEnabled="false"/>
+
+               <!-- Close button -->
+                <EscapeMenuButtonWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                                        SuggestedWidth="24" SuggestedHeight="24"
+                                        VerticalAlignment="Top" HorizontalAlignment="Right"
+                                        MarginTop="8" MarginRight="8"
+                                        Command.Click="ExecuteClose"
+                                        DoNotPassEventsToChildren="true"
+                                        UpdateChildrenStates="true">
+                    <Children>
+                        <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                                    Brush="MPEscapeMenu.ButtonText"
+                                    Brush.FontSize="16"
+                                    Text="X"/>
+                    </Children>
+                </EscapeMenuButtonWidget>
+            </Children>
+        </Widget>
+    </Window>
+</Prefab>

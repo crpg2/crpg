@@ -1,0 +1,15 @@
+﻿<Prefab>
+    <Window>
+        <CrpgMenu
+            Parameter.MenuWidth="290"
+            Parameter.MenuHeight="520"
+            Parameter.ScrollHeight="380"
+            Parameter.ItemWidth="240"
+            Parameter.ItemHeight="36"
+            Parameter.HAlign="Right"
+            Parameter.VAlign="Center"
+            Parameter.MarginBottom="80"
+            Parameter.MarginRight="10"
+            Parameter.ScrollbarLeft="266"/>
+    </Window>
+</Prefab>

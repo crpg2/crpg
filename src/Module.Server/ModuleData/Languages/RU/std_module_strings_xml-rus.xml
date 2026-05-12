@@ -120,5 +120,161 @@
     <string id="KORWOuG4" text="Клавиша-модификатор, например: Ctrl" />
     <string id="KORWOuG5" text="Сменить колчан" />
     <string id="KORWOuG6" text="Сменить колчан с боеприпасами" />
+
+    <!-- Animation Menu -->
+    <string id="usDfC299" text="" /> <!-- EN: Animations are disabled on this server.--><string id="usDfC299" text="Анимации отключены на этом сервере." /> <!-- EN: Animations are disabled on this server. -->
+    <string id="usDfC300" text="Анимации" /> <!-- EN: Animations -->
+    <!-- Taunts -->
+    <string id="usDfC301" text="Насмешки" /> <!-- EN: Taunts -->
+    <string id="usDfC302" text="Испуг" /> <!-- EN: Afraid -->
+    <string id="usDfC303" text="Поклон" /> <!-- EN: Bow -->
+    <string id="usDfC304" text="Перелом" /> <!-- EN: Break -->
+    <string id="usDfC305" text="Разочарование" /> <!-- EN: Disappoint -->
+    <string id="usDfC306" text="Удар щитом" /> <!-- EN: Shield Hit -->
+    <string id="usDfC307" text="Приглашение" /> <!-- EN: Invite -->
+    <string id="usDfC308" text="Смех" /> <!-- EN: Laugh -->
+    <string id="usDfC309" text="Указание" /> <!-- EN: Pointing -->
+    <string id="usDfC310" text="Ярость" /> <!-- EN: Rage -->
+    <string id="usDfC311" text="Уважение" /> <!-- EN: Respect -->
+    <string id="usDfC312" text="Испуганный" /> <!-- EN: Scared -->
+    <string id="usDfC313" text="Поиск противника" /> <!-- EN: Search Opponent -->
+    <string id="usDfC314" text="Удар" /> <!-- EN: Smash -->
+    <string id="usDfC315" text="Сдача" /> <!-- EN: Surrender -->
+    <string id="usDfC316" text="Угроза" /> <!-- EN: Threat -->
+
+    <!-- Cheers -->
+    <string id="usDfC317" text="Поддержка" /> <!-- EN: Cheers -->
+    <string id="usDfC318" text="Крик поддержки" /> <!-- EN: Cheer -->
+    <string id="usDfC319" text="Высокий" /> <!-- EN: High -->
+    <string id="usDfC320" text="Громкая поддержка" /> <!-- EN: Cheer High -->
+    <string id="usDfC321" text="Низкий" /> <!-- EN: Low -->
+    <string id="usDfC322" text="Тихая поддержка" /> <!-- EN: Cheer Low -->
+
+    <!-- Greetings -->
+    <string id="usDfC323" text="Приветствия" /> <!-- EN: Greetings -->
+    <string id="usDfC324" text="Спереди" /> <!-- EN: Front -->
+    <string id="usDfC325" text="Приветствие спереди" /> <!-- EN: Greet front -->
+    <string id="usDfC326" text="Справа" /> <!-- EN: Right -->
+    <string id="usDfC327" text="Приветствие справа" /> <!-- EN: Greet right -->
+    <string id="usDfC328" text="Слева" /> <!-- EN: Left -->
+    <string id="usDfC329" text="Приветствие слева" /> <!-- EN: Greet left -->
+
+    <!-- Poses -->
+    <string id="usDfC330" text="Позы" /> <!-- EN: Poses -->
+    <string id="usDfC331" text="Лордские позы" /> <!-- EN: Lord Poses -->
+    <string id="usDfC332" text="Милость" /> <!-- EN: Mercy -->
+    <string id="usDfC333" text="Размышление" /> <!-- EN: Calculating -->
+    <string id="usDfC334" text="Солдат" /> <!-- EN: Soldier -->
+    <string id="usDfC335" text="Скряга" /> <!-- EN: Miser -->
+    <string id="usDfC336" text="Неуверенность" /> <!-- EN: Uncertain -->
+    <string id="usDfC337" text="Благородство" /> <!-- EN: Honorable -->
+    <string id="usDfC338" text="Расслабленность" /> <!-- EN: Relaxed -->
+    <string id="usDfC339" text="Безрассудство" /> <!-- EN: Reckless -->
+    <string id="usDfC340" text="Лордская портретная поза" /> <!-- EN: Lord Portrait Pose -->
+    <string id="usDfC341" text="Поза для таблицы" /> <!-- EN: Tableau Pose -->
+
+    <!-- Conversation -->
+    <string id="usDfC342" text="Разговор" /> <!-- EN: Conversation -->
+    <string id="usDfC343" text="Действия" /> <!-- EN: Actions -->
+    <string id="usDfC344" text="Ярость" /> <!-- EN: Rage -->
+    <string id="usDfC345" text="Яростное комментирование" /> <!-- EN: Rage Commenting -->
+    <string id="usDfC346" text="Угроза пальцем" /> <!-- EN: Threat Point -->
+    <string id="usDfC347" text="Угроза рукой" /> <!-- EN: Threat Arm -->
+    <string id="usDfC348" text="Угроза телом" /> <!-- EN: Threat Body -->
+    <string id="usDfC349" text="Перерезать горло" /> <!-- EN: Threat Cutthroat -->
+    <string id="usDfC350" text="Указать куда-то" /> <!-- EN: Point Somewhere -->
+    <string id="usDfC351" text="Объяснение" /> <!-- EN: Explain -->
+    <string id="usDfC352" text="Объяснение + обещание" /> <!-- EN: Explain + Promise -->
+    <string id="usDfC353" text="Объяснение + угроза" /> <!-- EN: Explain + Threat -->
+    <string id="usDfC354" text="Не знаю" /> <!-- EN: Dunno -->
+    <string id="usDfC355" text="Негативное незнание" /> <!-- EN: Dunno Negative -->
+    <string id="usDfC356" text="Отрицание" /> <!-- EN: Negative -->
+    <string id="usDfC357" text="Отрицание + обещание" /> <!-- EN: Negative + Promise -->
+    <string id="usDfC358" text="Отрицание + объяснение + угроза" /> <!-- EN: Negative + Explain + Threat Arm -->
+    <string id="usDfC359" text="Отрицание + объяснение" /> <!-- EN: Negative + Explain -->
+    <string id="usDfC360" text="Обещание" /> <!-- EN: Promise -->
+    <string id="usDfC361" text="Обещание + скрещённые руки" /> <!-- EN: Promise + Crossed Arms -->
+    <string id="usDfC362" text="Комментирование" /> <!-- EN: Commenting -->
+    <string id="usDfC363" text="Игровое комментирование" /> <!-- EN: Commenting Play -->
+    <string id="usDfC364" text="Скрещённые руки" /> <!-- EN: Crossed Arms -->
+
+    <string id="usDfC365" text="Обычный" /> <!-- EN: Normal -->
+    <string id="usDfC366" text="Позитивный" /> <!-- EN: Positive -->
+    <string id="usDfC367" text="Очень позитивный" /> <!-- EN: Very Positive -->
+    <string id="usDfC368" text="Неуверенный" /> <!-- EN: Unsure -->
+    <string id="usDfC369" text="Негативный" /> <!-- EN: Negative -->
+    <string id="usDfC370" text="Очень негативный" /> <!-- EN: Very Negative -->
+    <string id="usDfC371" text="Тривиальный" /> <!-- EN: Trivial -->
+
+    <string id="usDfC372" text="Агрессивный" /> <!-- EN: Aggressive -->
+    <string id="usDfC373" text="Воин" /> <!-- EN: Warrior -->
+    <string id="usDfC374" text="Стильный" /> <!-- EN: Hip -->
+    <string id="usDfC375" text="Закрытый" /> <!-- EN: Closed -->
+    <string id="usDfC376" text="Уверенный" /> <!-- EN: Confident -->
+    <string id="usDfC377" text="Скромный" /> <!-- EN: Demure -->
+    <string id="usDfC378" text="Нервный" /> <!-- EN: Nervous -->
+    <string id="usDfC379" text="Уставший" /> <!-- EN: Weary -->
+
+    <string id="usDfC380" text="Сидеть" /> <!-- EN: Sit -->
+    <string id="usDfC381" text="Сидеть (позитив)" /> <!-- EN: Sit Positive -->
+    <string id="usDfC382" text="Сидеть (очень позитив)" /> <!-- EN: Sit Very Positive -->
+    <string id="usDfC383" text="Сидеть (неуверенно)" /> <!-- EN: Sit Unsure -->
+    <string id="usDfC384" text="Сидеть (негатив)" /> <!-- EN: Sit Negative -->
+    <string id="usDfC385" text="Сидеть (очень негатив)" /> <!-- EN: Sit Very Negative -->
+    <string id="usDfC386" text="Пол (очень позитив)" /> <!-- EN: Floor Very Positive -->
+    <string id="usDfC387" text="Пол (неуверенно)" /> <!-- EN: Floor Unsure -->
+    <string id="usDfC388" text="Пол (негатив)" /> <!-- EN: Floor Negative -->
+    <string id="usDfC389" text="Пол (очень негатив)" /> <!-- EN: Floor Very Negative -->
+    <string id="usDfC390" text="Пол (тривиальный)" /> <!-- EN: Floor Trivial -->
+
+    <string id="usDfC391" text="Верхом" /> <!-- EN: Horseback -->
+
+    <!-- NPC Actions -->
+    <string id="usDfC392" text="Действия NPC" /> <!-- EN: NPC Actions -->
+    <string id="usDfC393" text="Стирка одежды" /> <!-- EN: Cloth Washing -->
+    <string id="usDfC394" text="Рыбалка" /> <!-- EN: Fishing -->
+    <string id="usDfC395" text="Копание" /> <!-- EN: Shoveling -->
+    <string id="usDfC396" text="Вилами" /> <!-- EN: Pitchforking -->
+    <string id="usDfC397" text="Дровосек" /> <!-- EN: Lumberjack -->
+    <string id="usDfC398" text="Чистка кожи" /> <!-- EN: Leather Cleaning -->
+    <string id="usDfC399" text="Протирать" /> <!-- EN: Wipe -->
+    <string id="usDfC400" text="Выпечка" /> <!-- EN: Bake -->
+    <string id="usDfC401" text="Мясо" /> <!-- EN: Meat -->
+    <string id="usDfC402" text="Разговор с трактирщицей" /> <!-- EN: Talk to Tavern Maid -->
+    <string id="usDfC403" text="Разговор с клиентом" /> <!-- EN: Talk to Customer -->
+
+    <string id="usDfC404" text="Подземелье" /> <!-- EN: Dungeon -->
+    <string id="usDfC405" text="Сон заключённого" /> <!-- EN: Prisoner Sleep -->
+    <string id="usDfC406" text="Сидит на земле" /> <!-- EN: Prisoner Sitting on Ground -->
+    <string id="usDfC407" text="Лежит" /> <!-- EN: Prisoner Laying -->
+    <string id="usDfC408" text="Уборка пола" /> <!-- EN: Prisoner Cleaning Floor -->
+    <string id="usDfC429" text="Заключённый (истощённый)" /> <!-- EN: Prisoner Idle (Exhausted) -->
+    <string id="usDfC430" text="Заключённый (у стены)" /> <!-- EN: Prisoner Idle (Leaning on Wall) -->
+    <string id="usDfC431" text="Заключённый (у стены B)" /> <!-- EN: Prisoner Idle (Leaning on Wall B) -->
+    <string id="usDfC432" text="Заключённый (у клетки)" /> <!-- EN: Prisoner Idle (Holding Cage) -->
+    <string id="usDfC433" text="Сидящий заключённый" /> <!-- EN: Prisoner Sitting -->
+    <string id="usDfC434" text="Охранник сидит и дремлет" /> <!-- EN: Guardian Sitting and Napping -->
+
+    <!-- Misc -->
+    <string id="usDfC409" text="Разное" /> <!-- EN: Misc -->
+    <string id="usDfC410" text="Аплодисменты" /> <!-- EN: Applaud -->
+    <string id="usDfC411" text="Слушать" /> <!-- EN: Listen -->
+    <string id="usDfC412" text="Проповедник" /> <!-- EN: Preacher -->
+    <string id="usDfC413" text="Инструктор" /> <!-- EN: Instructor -->
+    <string id="usDfC414" text="Использовать кузницу" /> <!-- EN: Use Smithing Machine Loop -->
+    <string id="usDfC415" text="Нищий сидит и просит" /> <!-- EN: Sit Beggar Beg -->
+    <string id="usDfC416" text="Стоящий нищий" /> <!-- EN: Stand Beggar -->
+    <string id="usDfC417" text="Нищий (идл)" /> <!-- EN: Beggar Idle -->
+    <string id="usDfC418" text="Пьяная пара" /> <!-- EN: Drunk Pair -->
+    <string id="usDfC419" text="Пьяный бездействует" /> <!-- EN: Drunk Idle -->
+    <string id="usDfC420" text="Еда" /> <!-- EN: Eating -->
+    <string id="usDfC421" text="Наблюдение" /> <!-- EN: Lookout -->
+    <string id="usDfC422" text="Нордский танец" /> <!-- EN: Dance Norse -->
+    <string id="usDfC423" text="Сплетни" /> <!-- EN: Gossip -->
+    <string id="usDfC424" text="Спор" /> <!-- EN: Argue -->
+    <string id="usDfC425" text="Мягкий спор" /> <!-- EN: Argue Soft -->
+    <string id="usDfC426" text="Хулиган / жертва" /> <!-- EN: Bully / Bullied -->
+    <string id="usDfC427" text="Испуганная реакция" /> <!-- EN: Scared Reaction -->
+    <string id="usDfC428" text="Испуганный идл" /> <!-- EN: Scared Idle -->    
   </strings>
 </base>

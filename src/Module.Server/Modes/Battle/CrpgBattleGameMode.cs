@@ -1,11 +1,11 @@
-#if CRPG_SERVER
+﻿#if CRPG_SERVER
 using Crpg.Module.Api;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Common.ChatCommands;
 #else
 using Crpg.Module.GUI;
-using Crpg.Module.GUI.AnimationMenu;
 using Crpg.Module.GUI.AmmoQuiverChange;
+using Crpg.Module.GUI.AnimationMenu;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.EndOfRound;
 using Crpg.Module.GUI.HudExtension;
@@ -170,6 +170,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new MultiplayerPollComponent(), // poll logic to kick player, ban player, change game
                     new CrpgCommanderPollComponent(),
                     new AmmoQuiverChangeComponent(),
+                    new CrpgAnimationBehavior(),
                     new MissionOptionsComponent(),
                     new CrpgScoreboardComponent(_gameType switch
                             {

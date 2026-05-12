@@ -121,5 +121,161 @@
     <string id="KORWOuG4" text="修饰键，例如：Ctrl" />
     <string id="KORWOuG5" text="更换箭袋" />
     <string id="KORWOuG6" text="更换弹药箭袋" />
+
+    <!-- Animation Menu -->
+    <string id="usDfC299" text="此服务器已禁用动画。" /> <!-- EN: Animations are disabled on this server. -->
+    <string id="usDfC300" text="动画" /> <!-- EN: Animations -->
+    <!-- Taunts -->
+    <string id="usDfC301" text="嘲讽" /> <!-- EN: Taunts -->
+    <string id="usDfC302" text="害怕" /> <!-- EN: Afraid -->
+    <string id="usDfC303" text="鞠躬" /> <!-- EN: Bow -->
+    <string id="usDfC304" text="破裂" /> <!-- EN: Break -->
+    <string id="usDfC305" text="失望" /> <!-- EN: Disappoint -->
+    <string id="usDfC306" text="盾牌击打" /> <!-- EN: Shield Hit -->
+    <string id="usDfC307" text="邀请" /> <!-- EN: Invite -->
+    <string id="usDfC308" text="大笑" /> <!-- EN: Laugh -->
+    <string id="usDfC309" text="指向" /> <!-- EN: Pointing -->
+    <string id="usDfC310" text="愤怒" /> <!-- EN: Rage -->
+    <string id="usDfC311" text="尊重" /> <!-- EN: Respect -->
+    <string id="usDfC312" text="恐惧" /> <!-- EN: Scared -->
+    <string id="usDfC313" text="寻找对手" /> <!-- EN: Search Opponent -->
+    <string id="usDfC314" text="猛击" /> <!-- EN: Smash -->
+    <string id="usDfC315" text="投降" /> <!-- EN: Surrender -->
+    <string id="usDfC316" text="威胁" /> <!-- EN: Threat -->
+
+    <!-- Cheers -->
+    <string id="usDfC317" text="喝彩" /> <!-- EN: Cheers -->
+    <string id="usDfC318" text="欢呼" /> <!-- EN: Cheer -->
+    <string id="usDfC319" text="高" /> <!-- EN: High -->
+    <string id="usDfC320" text="高声欢呼" /> <!-- EN: Cheer High -->
+    <string id="usDfC321" text="低" /> <!-- EN: Low -->
+    <string id="usDfC322" text="低声欢呼" /> <!-- EN: Cheer Low -->
+
+    <!-- Greetings -->
+    <string id="usDfC323" text="问候" /> <!-- EN: Greetings -->
+    <string id="usDfC324" text="正面" /> <!-- EN: Front -->
+    <string id="usDfC325" text="正面问候" /> <!-- EN: Greet front -->
+    <string id="usDfC326" text="右侧" /> <!-- EN: Right -->
+    <string id="usDfC327" text="右侧问候" /> <!-- EN: Greet right -->
+    <string id="usDfC328" text="左侧" /> <!-- EN: Left -->
+    <string id="usDfC329" text="左侧问候" /> <!-- EN: Greet left -->
+
+    <!-- Poses -->
+    <string id="usDfC330" text="姿势" /> <!-- EN: Poses -->
+    <string id="usDfC331" text="领主姿势" /> <!-- EN: Lord Poses -->
+    <string id="usDfC332" text="怜悯" /> <!-- EN: Mercy -->
+    <string id="usDfC333" text="深思" /> <!-- EN: Calculating -->
+    <string id="usDfC334" text="士兵" /> <!-- EN: Soldier -->
+    <string id="usDfC335" text="守财奴" /> <!-- EN: Miser -->
+    <string id="usDfC336" text="犹豫" /> <!-- EN: Uncertain -->
+    <string id="usDfC337" text="高尚" /> <!-- EN: Honorable -->
+    <string id="usDfC338" text="放松" /> <!-- EN: Relaxed -->
+    <string id="usDfC339" text="鲁莽" /> <!-- EN: Reckless -->
+    <string id="usDfC340" text="领主肖像姿势" /> <!-- EN: Lord Portrait Pose -->
+    <string id="usDfC341" text="画面姿势" /> <!-- EN: Tableau Pose -->
+
+    <!-- Conversation -->
+    <string id="usDfC342" text="对话" /> <!-- EN: Conversation -->
+    <string id="usDfC343" text="动作" /> <!-- EN: Actions -->
+    <string id="usDfC344" text="愤怒" /> <!-- EN: Rage -->
+    <string id="usDfC345" text="愤怒评论" /> <!-- EN: Rage Commenting -->
+    <string id="usDfC346" text="指责" /> <!-- EN: Threat Point -->
+    <string id="usDfC347" text="手势威胁" /> <!-- EN: Threat Arm -->
+    <string id="usDfC348" text="身体威胁" /> <!-- EN: Threat Body -->
+    <string id="usDfC349" text="割喉威胁" /> <!-- EN: Threat Cutthroat -->
+    <string id="usDfC350" text="指向某处" /> <!-- EN: Point Somewhere -->
+    <string id="usDfC351" text="解释" /> <!-- EN: Explain -->
+    <string id="usDfC352" text="解释 + 承诺" /> <!-- EN: Explain + Promise -->
+    <string id="usDfC353" text="解释 + 威胁" /> <!-- EN: Explain + Threat -->
+    <string id="usDfC354" text="不知道" /> <!-- EN: Dunno -->
+    <string id="usDfC355" text="否定不知道" /> <!-- EN: Dunno Negative -->
+    <string id="usDfC356" text="否定" /> <!-- EN: Negative -->
+    <string id="usDfC357" text="否定 + 承诺" /> <!-- EN: Negative + Promise -->
+    <string id="usDfC358" text="否定 + 解释 + 威胁" /> <!-- EN: Negative + Explain + Threat Arm -->
+    <string id="usDfC359" text="否定 + 解释" /> <!-- EN: Negative + Explain -->
+    <string id="usDfC360" text="承诺" /> <!-- EN: Promise -->
+    <string id="usDfC361" text="承诺 + 交叉双臂" /> <!-- EN: Promise + Crossed Arms -->
+    <string id="usDfC362" text="评论" /> <!-- EN: Commenting -->
+    <string id="usDfC363" text="互动评论" /> <!-- EN: Commenting Play -->
+    <string id="usDfC364" text="交叉双臂" /> <!-- EN: Crossed Arms -->
+
+    <string id="usDfC365" text="普通" /> <!-- EN: Normal -->
+    <string id="usDfC366" text="积极" /> <!-- EN: Positive -->
+    <string id="usDfC367" text="非常积极" /> <!-- EN: Very Positive -->
+    <string id="usDfC368" text="不确定" /> <!-- EN: Unsure -->
+    <string id="usDfC369" text="消极" /> <!-- EN: Negative -->
+    <string id="usDfC370" text="非常消极" /> <!-- EN: Very Negative -->
+    <string id="usDfC371" text="琐碎" /> <!-- EN: Trivial -->
+
+    <string id="usDfC372" text="攻击性" /> <!-- EN: Aggressive -->
+    <string id="usDfC373" text="战士" /> <!-- EN: Warrior -->
+    <string id="usDfC374" text="时髦" /> <!-- EN: Hip -->
+    <string id="usDfC375" text="封闭" /> <!-- EN: Closed -->
+    <string id="usDfC376" text="自信" /> <!-- EN: Confident -->
+    <string id="usDfC377" text="矜持" /> <!-- EN: Demure -->
+    <string id="usDfC378" text="紧张" /> <!-- EN: Nervous -->
+    <string id="usDfC379" text="疲惫" /> <!-- EN: Weary -->
+
+    <string id="usDfC380" text="坐下" /> <!-- EN: Sit -->
+    <string id="usDfC381" text="坐下（积极）" /> <!-- EN: Sit Positive -->
+    <string id="usDfC382" text="坐下（非常积极）" /> <!-- EN: Sit Very Positive -->
+    <string id="usDfC383" text="坐下（不确定）" /> <!-- EN: Sit Unsure -->
+    <string id="usDfC384" text="坐下（消极）" /> <!-- EN: Sit Negative -->
+    <string id="usDfC385" text="坐下（非常消极）" /> <!-- EN: Sit Very Negative -->
+    <string id="usDfC386" text="地面（非常积极）" /> <!-- EN: Floor Very Positive -->
+    <string id="usDfC387" text="地面（不确定）" /> <!-- EN: Floor Unsure -->
+    <string id="usDfC388" text="地面（消极）" /> <!-- EN: Floor Negative -->
+    <string id="usDfC389" text="地面（非常消极）" /> <!-- EN: Floor Very Negative -->
+    <string id="usDfC390" text="地面（琐碎）" /> <!-- EN: Floor Trivial -->
+
+    <string id="usDfC391" text="骑马" /> <!-- EN: Horseback -->
+
+    <!-- NPC Actions -->
+    <string id="usDfC392" text="NPC动作" /> <!-- EN: NPC Actions -->
+    <string id="usDfC393" text="洗衣服" /> <!-- EN: Cloth Washing -->
+    <string id="usDfC394" text="钓鱼" /> <!-- EN: Fishing -->
+    <string id="usDfC395" text="挖掘" /> <!-- EN: Shoveling -->
+    <string id="usDfC396" text="干草叉工作" /> <!-- EN: Pitchforking -->
+    <string id="usDfC397" text="伐木工" /> <!-- EN: Lumberjack -->
+    <string id="usDfC398" text="皮革清洁" /> <!-- EN: Leather Cleaning -->
+    <string id="usDfC399" text="擦拭" /> <!-- EN: Wipe -->
+    <string id="usDfC400" text="烘焙" /> <!-- EN: Bake -->
+    <string id="usDfC401" text="肉类" /> <!-- EN: Meat -->
+    <string id="usDfC402" text="与酒馆女招待交谈" /> <!-- EN: Talk to Tavern Maid -->
+    <string id="usDfC403" text="与顾客交谈" /> <!-- EN: Talk to Customer -->
+
+    <string id="usDfC404" text="地牢" /> <!-- EN: Dungeon -->
+    <string id="usDfC405" text="囚犯睡觉" /> <!-- EN: Prisoner Sleep -->
+    <string id="usDfC406" text="坐在地上" /> <!-- EN: Prisoner Sitting on Ground -->
+    <string id="usDfC407" text="躺下" /> <!-- EN: Prisoner Laying -->
+    <string id="usDfC408" text="清理地板" /> <!-- EN: Prisoner Cleaning Floor -->
+    <string id="usDfC429" text="囚犯（疲惫）" /> <!-- EN: Prisoner Idle (Exhausted) -->
+    <string id="usDfC430" text="囚犯（靠墙）" /> <!-- EN: Prisoner Idle (Leaning on Wall) -->
+    <string id="usDfC431" text="囚犯（靠墙B）" /> <!-- EN: Prisoner Idle (Leaning on Wall B) -->
+    <string id="usDfC432" text="囚犯（抓住笼子）" /> <!-- EN: Prisoner Idle (Holding Cage) -->
+    <string id="usDfC433" text="囚犯坐姿" /> <!-- EN: Prisoner Sitting -->
+    <string id="usDfC434" text="守卫坐着打盹" /> <!-- EN: Guardian Sitting and Napping -->
+
+    <!-- Misc -->
+    <string id="usDfC409" text="杂项" /> <!-- EN: Misc -->
+    <string id="usDfC410" text="鼓掌" /> <!-- EN: Applaud -->
+    <string id="usDfC411" text="倾听" /> <!-- EN: Listen -->
+    <string id="usDfC412" text="传教士" /> <!-- EN: Preacher -->
+    <string id="usDfC413" text="教官" /> <!-- EN: Instructor -->
+    <string id="usDfC414" text="使用锻造台循环" /> <!-- EN: Use Smithing Machine Loop -->
+    <string id="usDfC415" text="乞丐乞讨坐姿" /> <!-- EN: Sit Beggar Beg -->
+    <string id="usDfC416" text="站立乞丐" /> <!-- EN: Stand Beggar -->
+    <string id="usDfC417" text="乞丐待机" /> <!-- EN: Beggar Idle -->
+    <string id="usDfC418" text="醉酒二人组" /> <!-- EN: Drunk Pair -->
+    <string id="usDfC419" text="醉酒待机" /> <!-- EN: Drunk Idle -->
+    <string id="usDfC420" text="进食" /> <!-- EN: Eating -->
+    <string id="usDfC421" text="警戒" /> <!-- EN: Lookout -->
+    <string id="usDfC422" text="诺斯舞蹈" /> <!-- EN: Dance Norse -->
+    <string id="usDfC423" text="八卦" /> <!-- EN: Gossip -->
+    <string id="usDfC424" text="争吵" /> <!-- EN: Argue -->
+    <string id="usDfC425" text="轻微争吵" /> <!-- EN: Argue Soft -->
+    <string id="usDfC426" text="欺凌 / 被欺凌" /> <!-- EN: Bully / Bullied -->
+    <string id="usDfC427" text="害怕反应" /> <!-- EN: Scared Reaction -->
+    <string id="usDfC428" text="害怕待机" /> <!-- EN: Scared Idle -->    
   </strings>
 </base>

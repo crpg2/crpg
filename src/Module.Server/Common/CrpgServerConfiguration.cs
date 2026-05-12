@@ -52,6 +52,7 @@ internal static class CrpgServerConfiguration
     public static int FriendlyFireReportDecaySeconds { get; private set; } = 60;
     public static int FriendlyFireReportWindowSeconds { get; private set; } = 10;
     public static bool IsFriendlyFireReportDecayOnRoundStartEnabled { get; private set; } = true;
+    public static bool IsAnimationsEnabled { get; private set; } = true;
 
     [UsedImplicitly]
     [ConsoleCommandMethod("server_name_suffix", "Suffix the server name with HH:mm to easily differentiate the new and old server in the server list. That can only be called before the server starts")]
@@ -567,5 +568,21 @@ internal static class CrpgServerConfiguration
 
         IsFriendlyFireReportDecayOnRoundStartEnabled = outputBool;
         Debug.Print($"--Changed crpg_ff_report_decay_on_round_start to: {outputBool}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_animations_enabled", "Enable or disable animations")]
+    private static void SetAnimationsEnabled(string? inputStr)
+    {
+        if (inputStr == null
+             || !bool.TryParse(inputStr, out bool outputBool))
+        {
+            Debug.Print($"Invalid animations enabled setting: {inputStr} - must be true or false");
+            Debug.Print($"Current value: crpg_animations_enabled {IsAnimationsEnabled}");
+            return;
+        }
+
+        IsAnimationsEnabled = outputBool;
+        Debug.Print($"--Changed crpg_animations_enabled to: {outputBool}");
     }
 }

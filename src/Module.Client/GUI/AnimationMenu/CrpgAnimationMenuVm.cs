@@ -1,176 +1,97 @@
-using TaleWorlds.Library;
+﻿using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.GUI.AnimationMenu;
 
-/// <summary>
-/// Main ViewModel for the emote menu.
-/// Manages a two-level navigation stack: category list → animation list.
-///
-/// Properties bound in CrpgAnimationMenu.xml:
-///   IsEnabled       — controls overall panel visibility
-///   Items           — the current page of menu rows (categories or emotes)
-///   Back            — the "← Back" navigation item (null on the root page)
-///   Next            — reserved for future paging (currently unused)
-///   OpenMenuKeyName — key hint text shown below the panel
-/// </summary>
-internal class CrpgAnimationMenuVm : ViewModel
+internal class CrpgAnimationMenuVm : CrpgMenuVm
 {
-    private bool _isEnabled;
-    private MBBindingList<CrpgAnimationMenuItemVm> _items = new();
-    private CrpgAnimationMenuItemVm? _back;
-    private CrpgAnimationMenuItemVm? _next;
-    private string _openMenuKeyName = string.Empty;
+    public event Action<CrpgAnimEntry>? AnimRequested;
 
     public CrpgAnimationMenuVm()
     {
-        BuildCategoryPage();
+        BuildRootPage();
     }
 
-    // ──────────────────────────────────────────────────────────────────────────
-    // Bound properties
-    // ──────────────────────────────────────────────────────────────────────────
-
-    [DataSourceProperty]
-    public bool IsEnabled
+    protected override void BuildRootPage()
     {
-        get => _isEnabled;
-        set
-        {
-            if (_isEnabled == value) return;
-            _isEnabled = value;
-            OnPropertyChangedWithValue(value);
-        }
-    }
-
-    [DataSourceProperty]
-    public MBBindingList<CrpgAnimationMenuItemVm> Items
-    {
-        get => _items;
-        set
-        {
-            _items = value;
-            OnPropertyChangedWithValue(value);
-        }
-    }
-
-    /// <summary>Null when on the root category page; set when inside a category.</summary>
-    [DataSourceProperty]
-    public CrpgAnimationMenuItemVm? Back
-    {
-        get => _back;
-        set
-        {
-            _back = value;
-            OnPropertyChangedWithValue(value);
-        }
-    }
-
-    /// <summary>Reserved for multi-page support. Currently always null.</summary>
-    [DataSourceProperty]
-    public CrpgAnimationMenuItemVm? Next
-    {
-        get => _next;
-        set
-        {
-            _next = value;
-            OnPropertyChangedWithValue(value);
-        }
-    }
-
-    /// <summary>
-    /// Human-readable key name shown as a hint below the panel,
-    /// e.g. "[B] Emote Menu". Set by the UiHandler after the key is resolved.
-    /// </summary>
-    [DataSourceProperty]
-    public string OpenMenuKeyName
-    {
-        get => _openMenuKeyName;
-        set
-        {
-            if (_openMenuKeyName == value) return;
-            _openMenuKeyName = value;
-            OnPropertyChangedWithValue(value);
-        }
-    }
-
-    // ──────────────────────────────────────────────────────────────────────────
-    // Public interface used by UiHandler
-    // ──────────────────────────────────────────────────────────────────────────
-
-    public void ToggleMenu()
-    {
-        IsEnabled = !IsEnabled;
-        if (IsEnabled)
-        {
-            BuildCategoryPage(); // always open at the root
-        }
-    }
-
-    public void CloseMenu()
-    {
-        IsEnabled = false;
-    }
-
-    // ──────────────────────────────────────────────────────────────────────────
-    // Navigation
-    // ──────────────────────────────────────────────────────────────────────────
-
-    private void BuildCategoryPage()
-    {
-        var rows = new MBBindingList<CrpgAnimationMenuItemVm>();
+        // MenuTitle = CrpgAnimationData.MenuTitle;
+        var rows = new MBBindingList<CrpgMenuItemVm>();
         foreach (var category in CrpgAnimationData.Categories)
         {
-            var cat = category; // capture for lambda
-            rows.Add(new CrpgAnimationMenuItemVm(cat.DisplayName, () => BuildEmotePage(cat)));
+            var node = ToNode(category);
+            bool enabled = node.IsEnabled;
+            Action? navAction = enabled ? () => BuildPage(node, BuildRootPage, node.Label) : null;
+            rows.Add(new CrpgMenuItemVm(node.Label + " >>", navAction, enabled));
         }
 
-        Items = rows;
-        Back = null;
-        Next = null;
+        // SetPage(rows);
+        InformationManager.DisplayMessage(new InformationMessage($"Root page built with {CrpgAnimationData.MenuTitle} title."));
+        SetRootPage(rows, CrpgAnimationData.MenuTitle);
     }
 
-    private void BuildEmotePage(CrpgEmoteCategory category)
+    private MenuNode CreateAnimationNode(CrpgAnimEntry e, Dictionary<string, int> nameCounts)
     {
-        var rows = new MBBindingList<CrpgAnimationMenuItemVm>();
-        foreach (var emote in category.Emotes)
-        {
-            var entry = emote; // capture for lambda
-            rows.Add(new CrpgAnimationMenuItemVm(entry.DisplayName, () => PlayEmote(entry)));
-        }
+        string finalName = DeduplicateName(e.DisplayName, nameCounts);
 
-        Items = rows;
-        Back = new CrpgAnimationMenuItemVm("< Back", BuildCategoryPage);
-        Next = null;
+        return new MenuNode(
+            finalName,
+            new List<MenuNode>(),
+            () => PlayAnimation(e),
+            () =>
+            {
+                bool mounted = Mission.Current?.MainAgent?.MountAgent != null;
+
+                return (!e.MountRequired || mounted)
+                    && (e.Channel != 0 || !mounted)
+                    && (!e.OnlyOnFoot || !mounted);
+            });
     }
 
-    // ──────────────────────────────────────────────────────────────────────────
-    // Emote playback
-    // ──────────────────────────────────────────────────────────────────────────
-
-    private void PlayEmote(CrpgEmoteEntry emote)
+    private MenuNode ToNode(CrpgAnimCategory category)
     {
-        var agent = Mission.Current?.MainAgent;
-        if (agent == null || !agent.IsActive())
+        Dictionary<string, int> nameCounts = [];
+        List<MenuNode> children = [];
+
+        for (int i = 0; i < category.SubCategories.Count; i++)
         {
-            CloseMenu();
-            return;
+            children.Add(ToNode(category.SubCategories[i]));
         }
 
-        // Play the animation. ignorePriority=true lets it override combat idles.
-        var actionIndex = ActionIndexCache.Create(emote.ActionId);
-        agent.SetActionChannel(0, actionIndex, ignorePriority: true, startProgress: emote.StartProgress);
-
-        // Apply vertical / horizontal offsets (used for sitting poses so the
-        // character drops to the right height rather than floating mid-air).
-        if (emote.ZOffset != 0f || emote.YOffset != 0f)
+        for (int i = 0; i < category.Animations.Count; i++)
         {
-            var pos = agent.Position;
-            pos.z += emote.ZOffset;
-            pos.y += emote.YOffset;
-            agent.TeleportToPosition(pos);
+            children.Add(CreateAnimationNode(category.Animations[i], nameCounts));
         }
 
-        CloseMenu();
+        MenuNode[] childArray = new MenuNode[children.Count];
+        for (int i = 0; i < children.Count; i++)
+        {
+            childArray[i] = children[i];
+        }
+
+        return new MenuNode(
+            category.DisplayName,
+            childArray,
+            isEnabled: () => HasAnyEnabled(childArray));
+    }
+
+    private static string DeduplicateName(string name, Dictionary<string, int> counts)
+    {
+        if (!counts.TryGetValue(name, out int count))
+        {
+            count = 0;
+        }
+
+        count++;
+        counts[name] = count;
+
+        return count == 1
+            ? name
+            : $"{name} {count}";
+    }
+
+    private void PlayAnimation(CrpgAnimEntry anim)
+    {
+        AnimRequested?.Invoke(anim);
+        RaiseCloseRequested();
     }
 }
