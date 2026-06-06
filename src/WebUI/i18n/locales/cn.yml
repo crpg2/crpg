@@ -1856,7 +1856,7 @@ marketplace:
       delete: 删除
       accept: 接受
     deletePopover:
-      title: '将返还：'
+      title: 将返还：
       goldFee: 金币手续费
       gold: 金币
       heirloomPoints: 转生点
