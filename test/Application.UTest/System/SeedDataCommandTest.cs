@@ -8,6 +8,7 @@ using Crpg.Application.System.Commands;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Quests;
 using Crpg.Domain.Entities.Settlements;
 using Crpg.Domain.Entities.Users;
 using Crpg.Sdk.Abstractions;
@@ -307,6 +308,64 @@ public class SeedDataCommandTest : TestBase
         Assert.That(settlements.Length, Is.EqualTo(0));
     }
 
+    [Test]
+    public async Task ShouldInsertQuestsFromQuestsSource()
+    {
+        Mock<IQuestsSource> questsSource = new();
+        questsSource.Setup(s => s.LoadQuests())
+            .ReturnsAsync(
+            [
+                new QuestDefinition { Id = 1, Type = QuestType.Daily, RewardGold = 100 },
+                new QuestDefinition { Id = 2, Type = QuestType.Weekly, RewardGold = 500 },
+            ]);
+
+        SeedDataCommand.Handler handler = CreateSeedDataCommandHandler(questsSource: questsSource.Object);
+        await handler.Handle(new SeedDataCommand(), CancellationToken.None);
+
+        var quests = await AssertDb.QuestDefinitions.ToArrayAsync();
+        Assert.That(quests.Length, Is.EqualTo(2));
+        Assert.That(quests.Any(q => q.Id == 1 && q.Type == QuestType.Daily && q.RewardGold == 100), Is.True);
+        Assert.That(quests.Any(q => q.Id == 2 && q.Type == QuestType.Weekly && q.RewardGold == 500), Is.True);
+    }
+
+    [Test]
+    public async Task ShouldUpdateExistingQuestFromQuestsSource()
+    {
+        ArrangeDb.QuestDefinitions.Add(new QuestDefinition { Id = 1, Type = QuestType.Daily, RewardGold = 100 });
+        await ArrangeDb.SaveChangesAsync();
+
+        Mock<IQuestsSource> questsSource = new();
+        questsSource.Setup(s => s.LoadQuests())
+            .ReturnsAsync(
+            [
+                new QuestDefinition { Id = 1, Type = QuestType.Daily, RewardGold = 200 },
+            ]);
+
+        SeedDataCommand.Handler handler = CreateSeedDataCommandHandler(questsSource: questsSource.Object);
+        await handler.Handle(new SeedDataCommand(), CancellationToken.None);
+
+        var quests = await AssertDb.QuestDefinitions.ToArrayAsync();
+        Assert.That(quests.Length, Is.EqualTo(1));
+        Assert.That(quests[0].RewardGold, Is.EqualTo(200));
+    }
+
+    [Test]
+    public async Task ShouldDeleteQuestIfDoesntExistInSourceAnymore()
+    {
+        ArrangeDb.QuestDefinitions.Add(new QuestDefinition { Id = 1, Type = QuestType.Daily, RewardGold = 100 });
+        await ArrangeDb.SaveChangesAsync();
+
+        Mock<IQuestsSource> questsSource = new();
+        questsSource.Setup(s => s.LoadQuests())
+            .ReturnsAsync([]);
+
+        SeedDataCommand.Handler handler = CreateSeedDataCommandHandler(questsSource: questsSource.Object);
+        await handler.Handle(new SeedDataCommand(), CancellationToken.None);
+
+        var quests = await AssertDb.QuestDefinitions.ToArrayAsync();
+        Assert.That(quests.Length, Is.EqualTo(0));
+    }
+
     private SeedDataCommand.Handler CreateSeedDataCommandHandler(
         IItemsSource? itemsSource = null,
         ISettlementsSource? settlementsSource = null,
@@ -314,7 +373,8 @@ public class SeedDataCommandTest : TestBase
         IActivityLogService? activityLogService = null,
         IUserNotificationService? userNotificationsService = null,
         IItemService? itemService = null,
-        IMarketplaceService? marketplaceService = null)
+        IMarketplaceService? marketplaceService = null,
+        IQuestsSource? questsSource = null)
     {
         return new SeedDataCommand.Handler(
             ActDb,
@@ -327,7 +387,8 @@ public class SeedDataCommandTest : TestBase
             activityLogService ?? ActivityLogService,
             userNotificationsService ?? UserNotificationsService,
             itemService ?? ItemService,
-            marketplaceService ?? MarketplaceService);
+            marketplaceService ?? MarketplaceService,
+            questsSource ?? Mock.Of<IQuestsSource>());
     }
 
     private static IApplicationEnvironment CreateAppEnv()

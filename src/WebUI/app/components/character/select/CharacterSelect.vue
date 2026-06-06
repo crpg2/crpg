@@ -60,6 +60,7 @@ const currentCharacter = computed(() => characters.find(c => c.id === currentCha
     <UButton
       variant="outline"
       color="neutral"
+      block
       size="xl"
     >
       <template v-if="currentCharacter">

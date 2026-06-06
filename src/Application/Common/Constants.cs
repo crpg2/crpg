@@ -85,4 +85,7 @@ public class Constants
     public int MarketplaceActiveListingLimit { get; set; }
     public int MarketplaceListingFeePerDay { get; set; }
     public int MarketplaceGoldFeePercent { get; set; }
+    public int QuestDailyQuestsPerUser { get; set; }
+    public int QuestWeeklyQuestsPerUser { get; set; }
+    public int QuestRerollDailyQuestPrice { get; set; }
 }

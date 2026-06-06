@@ -1,4 +1,4 @@
-﻿using Crpg.Module.Api.Models.Users;
+using Crpg.Module.Api.Models.Users;
 
 namespace Crpg.Module.Balancing;
 

@@ -14,6 +14,9 @@ using Crpg.Application.Limitations.Queries;
 using Crpg.Application.Notifications.Commands;
 using Crpg.Application.Notifications.Models;
 using Crpg.Application.Notifications.Queries;
+using Crpg.Application.Quests.Commands;
+using Crpg.Application.Quests.Models;
+using Crpg.Application.Quests.Queries;
 using Crpg.Application.Restrictions.Models;
 using Crpg.Application.Restrictions.Queries;
 using Crpg.Application.Users.Commands;
@@ -625,6 +628,49 @@ public class UsersController : BaseController
     public Task<ActionResult> RewardRecently()
     {
         return ResultToActionAsync(Mediator.Send(new RewardRecentUserCommand { }));
+    }
+
+    /// <summary>
+    /// Gets user's quests.
+    /// </summary>
+    [HttpGet("self/quests")]
+    public Task<ActionResult<Result<IList<UserQuestViewModel>>>> GetUserQuests()
+    {
+        GetUserQuestsQuery query = new() { UserId = CurrentUser.User!.Id };
+        return ResultToActionAsync(Mediator.Send(query));
+    }
+
+    /// <summary>
+    /// Claim reward for a user quest.
+    /// </summary>
+    /// <param name="id">User quest id.</param>
+    /// <param name="req">The claim request containing the character id.</param>
+    /// <returns>The updated user quest.</returns>
+    /// <response code="200">Reward claimed.</response>
+    /// <response code="400">Bad Request.</response>
+    /// <response code="404">User quest not found.</response>
+    [HttpPut("self/quests/{id}/claim")]
+    public Task<ActionResult<Result<UserQuestViewModel>>> ClaimQuestReward([FromRoute] int id,
+        [FromBody] ClaimQuestRewardCommand req)
+    {
+        var cmd = req with { UserQuestId = id, UserId = CurrentUser.User!.Id };
+        return ResultToActionAsync(Mediator.Send(cmd));
+    }
+
+    /// <summary>
+    /// Reroll a user quest for gold.
+    /// </summary>
+    /// <param name="id">User quest id.</param>
+    /// <returns>The new user quest.</returns>
+    /// <response code="200">Quest rerolled.</response>
+    /// <response code="400">Bad Request.</response>
+    /// <response code="404">User quest not found.</response>
+    [HttpPut("self/quests/{id}/reroll")]
+    public Task<ActionResult> RerollQuest([FromRoute] int id)
+    {
+        var cmd = new RerollQuestCommand { UserQuestId = id, UserId = CurrentUser.User!.Id };
+
+        return ResultToActionAsync(Mediator.Send(cmd));
     }
 
     /// <summary>

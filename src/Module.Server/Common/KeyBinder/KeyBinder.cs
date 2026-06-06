@@ -110,7 +110,7 @@ public static class KeyBinder
             }
 
             // Register all contexts, including custom ones
-            HotKeyManager.RegisterInitialContexts(keyList, true); // Assuming this accepts the list
+            HotKeyManager.RegisterInitialContexts(keyList); // Assuming this accepts the list
         }
     }
 

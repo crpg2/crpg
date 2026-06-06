@@ -17,6 +17,7 @@ defineEmits<{
 defineSlots<{
   'default': () => any
   'description-content': () => any
+  'title': () => any
 }>()
 
 const [open, toggle] = useToggle()
@@ -40,6 +41,10 @@ const [open, toggle] = useToggle()
         }"
         :label="title ?? $t('confirmAction')"
       >
+        <template #title>
+          <slot name="title" />
+        </template>
+
         <template v-if="$slots['description-content']" #default>
           <slot name="description-content" />
         </template>
