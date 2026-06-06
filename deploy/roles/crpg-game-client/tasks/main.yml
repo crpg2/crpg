@@ -176,6 +176,13 @@
     owner: nginx
     group: nginx
 
+- name: Ensure AssetPackages directory exists
+  file:
+    path: "{{ crpg_ui_path }}/AssetPackages"
+    state: directory
+    owner: nginx
+    group: nginx
+
 - name: Copy hash to destination
   copy:
     src: /tmp/hash.xml
@@ -183,21 +190,21 @@
     owner: nginx
     group: nginx
 
-- name: Copy contents of SceneObj to destination
+- name: Copy changed SceneObj maps to destination
   copy:
-    src: /tmp/SceneObj
-    dest: "{{ crpg_ui_path }}"
+    src: "/tmp/SceneObj/{{ item }}.tar.gz"
+    dest: "{{ crpg_ui_path }}/SceneObj/{{ item }}.tar.gz"
     owner: nginx
     group: nginx
-  when: crpg_changed_maps | length > 0
+  loop: "{{ crpg_changed_maps }}"
 
-- name: Copy contents of AssetPackages to destination
+- name: Copy changed AssetPackages to destination
   copy:
-    src: /tmp/AssetPackages
-    dest: "{{ crpg_ui_path }}"
+    src: "/tmp/AssetPackages/{{ item }}.tar.gz"
+    dest: "{{ crpg_ui_path }}/AssetPackages/{{ item }}.tar.gz"
     owner: nginx
     group: nginx
-  when: crpg_changed_assets | length > 0
+  loop: "{{ crpg_changed_assets }}"
 
 - name: Read mod version from SubModule.xml
   shell: "grep -oP 'Version value=\"v\\K[^\"]+' '{{ crpg_game_client_local_path }}/Modules/cRPG/SubModule.xml'"
