@@ -1,4 +1,4 @@
-﻿using System.Net.Http.Headers;
+using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -6,6 +6,7 @@ using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using Crpg.Application.Users.Commands;
 using Mediator;
+using Microsoft.Extensions.Hosting;
 
 namespace Crpg.WebApi.Workers;
 
@@ -13,26 +14,37 @@ internal class DonorSynchronizerWorker : BackgroundService
 {
     private const int MinPatreonAmountCentsForRewards = 500;
     private const decimal MinAfdianAmountYuanPerMonth = 25m;
+    private static readonly TimeSpan PatreonTokenRefreshInterval = TimeSpan.FromDays(14);
 
     private static readonly ILogger Logger = Logging.LoggerFactory.CreateLogger<DonorSynchronizerWorker>();
     private static readonly Regex SteamIdRegex = new(@"76561198\d{9}", RegexOptions.Compiled);
 
     private readonly IConfiguration _configuration;
     private readonly IServiceScopeFactory _serviceScopeFactory;
+    private readonly string _patreonTokenFilePath;
 
-    public DonorSynchronizerWorker(IConfiguration configuration, IServiceScopeFactory serviceScopeFactory)
+    private string? _patreonAccessToken;
+    private string? _patreonRefreshToken;
+    private DateTime _nextPatreonTokenRefreshAt = DateTime.MinValue;
+
+    public DonorSynchronizerWorker(IConfiguration configuration, IServiceScopeFactory serviceScopeFactory, IHostEnvironment hostEnvironment)
     {
         _configuration = configuration;
         _serviceScopeFactory = serviceScopeFactory;
+        _patreonTokenFilePath = Path.Combine(hostEnvironment.ContentRootPath, "patreon_tokens.json");
     }
 
     protected override async Task ExecuteAsync(CancellationToken cancellationToken)
     {
+        LoadPersistedPatreonTokens();
+
         while (!cancellationToken.IsCancellationRequested)
         {
             try
             {
                 using var scope = _serviceScopeFactory.CreateScope();
+
+                await TryRefreshPatreonTokenAsync(cancellationToken);
 
                 var patreonDonors = await GetPatreonDonorsAsync(cancellationToken);
                 var afdianDonors = await GetAfdianDonorsAsync(cancellationToken);
@@ -51,9 +63,112 @@ internal class DonorSynchronizerWorker : BackgroundService
         }
     }
 
+    private void LoadPersistedPatreonTokens()
+    {
+        if (!File.Exists(_patreonTokenFilePath))
+        {
+            return;
+        }
+
+        try
+        {
+            string json = File.ReadAllText(_patreonTokenFilePath);
+            var stored = JsonSerializer.Deserialize<PatreonTokenStore>(json);
+            if (stored == null)
+            {
+                return;
+            }
+
+            if (!string.IsNullOrEmpty(stored.AccessToken))
+            {
+                _patreonAccessToken = stored.AccessToken;
+            }
+
+            if (!string.IsNullOrEmpty(stored.RefreshToken))
+            {
+                _patreonRefreshToken = stored.RefreshToken;
+            }
+
+            if (stored.LastRefreshedAt != default)
+            {
+                _nextPatreonTokenRefreshAt = stored.LastRefreshedAt + PatreonTokenRefreshInterval;
+            }
+
+            Logger.LogInformation("Loaded persisted Patreon tokens; next refresh at {NextRefreshAt}", _nextPatreonTokenRefreshAt);
+        }
+        catch (Exception e)
+        {
+            Logger.LogWarning(e, "Failed to load persisted Patreon tokens from {FilePath}", _patreonTokenFilePath);
+        }
+    }
+
+    private async Task TryRefreshPatreonTokenAsync(CancellationToken cancellationToken)
+    {
+        if (DateTime.UtcNow < _nextPatreonTokenRefreshAt)
+        {
+            return;
+        }
+
+        string? refreshToken = _patreonRefreshToken ?? _configuration.GetValue<string>("Patreon:RefreshToken");
+        string? clientId = _configuration.GetValue<string>("Patreon:ClientId");
+        string? clientSecret = _configuration.GetValue<string>("Patreon:ClientSecret");
+
+        if (refreshToken == null || clientId == null || clientSecret == null)
+        {
+            Logger.LogInformation("Patreon refresh token, client ID, or client secret not configured. Skipping token refresh");
+            _nextPatreonTokenRefreshAt = DateTime.UtcNow + PatreonTokenRefreshInterval;
+            return;
+        }
+
+        try
+        {
+            using HttpClient client = new();
+            var response = await client.PostAsync(
+                "https://www.patreon.com/api/oauth2/token",
+                new FormUrlEncodedContent(new Dictionary<string, string>
+                {
+                    ["grant_type"] = "refresh_token",
+                    ["refresh_token"] = refreshToken,
+                    ["client_id"] = clientId,
+                    ["client_secret"] = clientSecret,
+                }),
+                cancellationToken);
+
+            response.EnsureSuccessStatusCode();
+
+            var tokenResponse = await response.Content.ReadFromJsonAsync<PatreonTokenResponse>(cancellationToken);
+            if (tokenResponse == null || string.IsNullOrEmpty(tokenResponse.AccessToken))
+            {
+                Logger.LogError("Patreon token refresh returned an empty or null response");
+                return;
+            }
+
+            _patreonAccessToken = tokenResponse.AccessToken;
+            _patreonRefreshToken = tokenResponse.RefreshToken;
+            _nextPatreonTokenRefreshAt = DateTime.UtcNow + PatreonTokenRefreshInterval;
+
+            var tokenStore = new PatreonTokenStore
+            {
+                AccessToken = tokenResponse.AccessToken,
+                RefreshToken = tokenResponse.RefreshToken,
+                LastRefreshedAt = DateTime.UtcNow,
+            };
+            await File.WriteAllTextAsync(
+                _patreonTokenFilePath,
+                JsonSerializer.Serialize(tokenStore, new JsonSerializerOptions { WriteIndented = true }),
+                cancellationToken);
+
+            Logger.LogInformation("Patreon access token refreshed successfully; next refresh at {NextRefreshAt}", _nextPatreonTokenRefreshAt);
+        }
+        catch (Exception e)
+        {
+            Logger.LogError(e, "Failed to refresh Patreon access token");
+        }
+    }
+
     private async Task<IEnumerable<string>> GetPatreonDonorsAsync(CancellationToken cancellationToken)
     {
-        string? patreonAccessToken = _configuration.GetValue<string>("Patreon:AccessToken");
+        string? patreonAccessToken = _patreonAccessToken ?? _configuration.GetValue<string>("Patreon:AccessToken");
         if (patreonAccessToken == null)
         {
             Logger.LogInformation("No Patreon access token was provided. Skipping the donor synchronization");
@@ -189,6 +304,23 @@ internal class DonorSynchronizerWorker : BackgroundService
         public Guid Id { get; set; }
         public T Attributes { get; set; } = default!;
         public string Type { get; set; } = string.Empty;
+    }
+
+    private class PatreonTokenResponse
+    {
+        [JsonPropertyName("access_token")]
+        public string AccessToken { get; set; } = string.Empty;
+        [JsonPropertyName("refresh_token")]
+        public string RefreshToken { get; set; } = string.Empty;
+        [JsonPropertyName("expires_in")]
+        public int ExpiresIn { get; set; }
+    }
+
+    private class PatreonTokenStore
+    {
+        public string AccessToken { get; set; } = string.Empty;
+        public string RefreshToken { get; set; } = string.Empty;
+        public DateTime LastRefreshedAt { get; set; }
     }
 
     private class AfdianResponse<T>

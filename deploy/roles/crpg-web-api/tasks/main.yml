@@ -60,6 +60,17 @@
     enabled: yes
     state: stopped
 
+- name: Copy Patreon token file to new version
+  copy:
+    src: "{{ crpg_api_path }}/patreon_tokens.json"
+    dest: "{{ crpg_api_path }}_new/patreon_tokens.json"
+    remote_src: yes
+    owner: "{{ crpg_api_user }}"
+    group: "{{ crpg_api_user }}"
+    mode: 0600
+  ignore_errors: yes
+  when: crpg_api_path_stat_result.stat.exists
+
 - name: Swap old and new version (1/2)
   command: "mv {{ crpg_api_path }} {{ crpg_api_path }}_old"
   when: crpg_api_path_stat_result.stat.exists
