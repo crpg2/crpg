@@ -60,15 +60,6 @@
   command: "mv /var/www/public {{ crpg_ui_path }}_new"
   when: crpg_ui_public_stat_result.stat.exists
 
-- name: Preserve non-UI server files in new Web UI directory
-  shell: |
-    for item in LauncherV3.exe LauncherVersion.txt hash.xml rest.tar.gz SceneObj AssetPackages cRPGServer.zip SubModule.xml; do
-      if [ -e "{{ crpg_ui_path }}/$item" ]; then
-        cp -a "{{ crpg_ui_path }}/$item" "{{ crpg_ui_path }}_new/"
-      fi
-    done
-  when: crpg_ui_public_stat_result.stat.exists
-
 - name: Check that a cRPG Web UI version is already present
   stat:
     path: "{{ crpg_ui_path }}"
@@ -80,6 +71,15 @@
 
 - name: Swap old and new version (2/2)
   command: "mv {{ crpg_ui_path }}_new {{ crpg_ui_path }}"
+
+- name: Restore non-UI server files into new Web UI directory
+  shell: |
+    for item in LauncherV3.exe LauncherVersion.txt hash.xml rest.tar.gz SceneObj AssetPackages cRPGServer.zip SubModule.xml; do
+      if [ -e "{{ crpg_ui_path }}_old/$item" ]; then
+        mv "{{ crpg_ui_path }}_old/$item" "{{ crpg_ui_path }}/$item"
+      fi
+    done
+  when: crpg_ui_path_stat_result.stat.exists
 
 - name: Clean old cRPG Web UI
   file:
