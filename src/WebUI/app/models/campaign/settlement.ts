@@ -1,9 +1,9 @@
-import type {
-  SettlementType as _SettlementType,
-} from '#api'
 import type { Point } from 'geojson'
 import type { ValueOf } from 'type-fest'
 
+import type {
+  SettlementType as _SettlementType,
+} from '#api'
 import type { Culture } from '~/models/culture'
 import type { Item } from '~/models/item'
 import type { Region } from '~/models/region'

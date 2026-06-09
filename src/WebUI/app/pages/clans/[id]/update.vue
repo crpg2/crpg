@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { LazyAppConfirmActionDialog } from '#components'
-
 import type { ClanUpdate } from '~/models/clan'
 
+import { LazyAppConfirmActionDialog } from '#components'
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanMembers } from '~/composables/clan/use-clan-members'
 import { useUser } from '~/composables/user/use-user'

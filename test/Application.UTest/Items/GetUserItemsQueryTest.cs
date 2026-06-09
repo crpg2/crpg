@@ -1,6 +1,8 @@
 using Crpg.Application.Items.Queries;
+using Crpg.Application.UTest.Marketplace;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Users;
 using NUnit.Framework;
 
@@ -120,5 +122,37 @@ public class GetUserItemsQueryTest : TestBase
             new GetUserItemsQuery { UserId = borrower.Id }, CancellationToken.None);
 
         Assert.That(result.Data, Is.Empty);
+    }
+
+    [Test]
+    public async Task IsListedOnMarketplaceWhenOfferedAsset()
+    {
+        var item = new Item { Id = "1", Enabled = true };
+        var userItem = new UserItem { Item = item };
+        var user = ArrangeDb.Users.Add(new User { Items = { userItem } });
+        await ArrangeDb.SaveChangesAsync();
+
+        ArrangeDb.MarketplaceListings.Add(MarketplaceListingFactory.CreateListing(sellerId: user.Entity.Id, offeredUserItemId: userItem.Id));
+        await ArrangeDb.SaveChangesAsync();
+
+        var result = await new GetUserItemsQuery.Handler(ActDb, Mapper).Handle(
+            new GetUserItemsQuery { UserId = user.Entity.Id }, CancellationToken.None);
+
+        Assert.That(result.Data!.Single().IsListedOnMarketplace, Is.True);
+    }
+
+    [Test]
+    public async Task IsNotListedOnMarketplaceWhenNoOfferedAsset()
+    {
+        var user = ArrangeDb.Users.Add(new User
+        {
+            Items = { new() { Item = new Item { Id = "1", Enabled = true } } },
+        });
+        await ArrangeDb.SaveChangesAsync();
+
+        var result = await new GetUserItemsQuery.Handler(ActDb, Mapper).Handle(
+            new GetUserItemsQuery { UserId = user.Entity.Id }, CancellationToken.None);
+
+        Assert.That(result.Data!.Single().IsListedOnMarketplace, Is.False);
     }
 }

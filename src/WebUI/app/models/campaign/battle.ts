@@ -1,3 +1,6 @@
+import type { Point } from 'geojson'
+import type { ValueOf } from 'type-fest'
+
 import type {
   BattleFighterApplicationStatus as _BattleFighterApplicationStatus,
   BattleMercenaryApplicationStatus as _BattleMercenaryApplicationStatus,
@@ -6,9 +9,6 @@ import type {
   BattleSide as _BattleSide,
   BattleType as _BattleType,
 } from '#api'
-import type { Point } from 'geojson'
-import type { ValueOf } from 'type-fest'
-
 import type { ItemStack, PartyPublic } from '~/models/campaign/party'
 import type { SettlementPublic } from '~/models/campaign/settlement'
 import type { CharacterPublic } from '~/models/character'

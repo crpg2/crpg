@@ -16,6 +16,7 @@ defineProps<{
           :class="classes()"
         >
           {{ $n(point) }}
+          <slot name="trailing" />
         </span>
       </slot>
     </template>

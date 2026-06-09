@@ -3,6 +3,7 @@ using Crpg.Module.Api.Models.ActivityLogs;
 using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.Items;
+using Crpg.Module.Api.Models.GameEvents;
 using Crpg.Module.Api.Models.Restrictions;
 using Crpg.Module.Api.Models.Users;
 
@@ -61,4 +62,5 @@ internal interface ICrpgClient : IDisposable
     Task<CrpgResult<CrpgCharacterCharacteristics>> ConvertCharacterCharacteristicsAsync(int userId, int characterId,
         CrpgGameCharacteristicConversionRequest req,
         CancellationToken cancellationToken = default);
+    Task CreateGameEventsAsync(CrpgGameEventsCreateRequest req, CancellationToken cancellationToken = default);
 }

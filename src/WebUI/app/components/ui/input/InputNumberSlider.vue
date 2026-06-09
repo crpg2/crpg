@@ -28,6 +28,7 @@ const modelValue = defineModel<number>({ default: 0 })
       :max
       :disabled="readonly"
       :size
+
       @update:model-value="(value) => {
         // TODO: Strange behavior of the nuxt/ui Slider component. If you're not too lazy, please  create an issue/PR
         if (value !== undefined && typeof value === 'number') {

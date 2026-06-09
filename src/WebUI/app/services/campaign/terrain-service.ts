@@ -1,14 +1,13 @@
 import type { Polygon } from 'geojson'
 
+import type { Terrain, TerrainFeatureCollection, TerrainType } from '~/models/campaign/terrain'
+
 import {
   getTerrains as _getTerrains,
   deleteTerrainsById,
   postTerrains,
   putTerrainsById,
 } from '#api/sdk.gen'
-
-import type { Terrain, TerrainFeatureCollection, TerrainType } from '~/models/campaign/terrain'
-
 import { TERRAIN_TYPE } from '~/models/campaign/terrain'
 
 // TODO: colors

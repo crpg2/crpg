@@ -75,5 +75,8 @@
   "campaignBattleInitiationDurationHours": 24,
   "campaignBattleHiringDurationHours": 12,
   "campaignMercenaryMaxWage": 100000,
-  "campaignMercenaryNoteMaxLength": 64
+  "campaignMercenaryNoteMaxLength": 64,
+  "marketplaceListingDurationDays": 7,
+  "marketplaceListingFeePerDay": 50,
+  "marketplaceGoldFeePercent": 5
 }

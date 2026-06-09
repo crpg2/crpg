@@ -1,7 +1,6 @@
-import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
-
 import type { Battle, BattleFighter, BattleFighterApplication, BattleSide } from '~/models/campaign/battle'
 
+import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
 import { useBattleTitle } from '~/composables/campaign/battle/use-battle'
 import { useUser } from '~/composables/user/use-user'
 import { BATTLE_FIGHTER_APPLICATION_STATUS, BATTLE_SIDE } from '~/models/campaign/battle'

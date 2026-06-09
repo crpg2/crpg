@@ -1,24 +1,6 @@
 import type { PartialDeep } from 'type-fest'
 
 import {
-  deleteUsersSelfCharactersById,
-  getUsersByUserIdCharacters,
-  getUsersSelfCharacters,
-  getUsersSelfCharactersByIdCharacteristics,
-  getUsersSelfCharactersByIdEarningStatistics,
-  getUsersSelfCharactersByIdItems,
-  getUsersSelfCharactersByIdLimitations,
-  getUsersSelfCharactersByIdStatistics,
-  putUsersSelfCharactersById,
-  putUsersSelfCharactersByIdActive,
-  putUsersSelfCharactersByIdCharacteristics,
-  putUsersSelfCharactersByIdCharacteristicsConvert,
-  putUsersSelfCharactersByIdItems,
-  putUsersSelfCharactersByIdRespecialize,
-  putUsersSelfCharactersByIdRetire,
-  putUsersSelfCharactersByIdTournament,
-} from '#api/sdk.gen'
-import {
   attributePointsPerLevel,
   damageFactorForPowerDraw,
   damageFactorForPowerStrike,
@@ -77,6 +59,24 @@ import type { Item, ItemArmorComponent, ItemSlot, ItemType } from '~/models/item
 import type { TimeSeries, TimeSeriesItem } from '~/models/time-series'
 
 import {
+  deleteUsersSelfCharactersById,
+  getUsersByUserIdCharacters,
+  getUsersSelfCharacters,
+  getUsersSelfCharactersByIdCharacteristics,
+  getUsersSelfCharactersByIdEarningStatistics,
+  getUsersSelfCharactersByIdItems,
+  getUsersSelfCharactersByIdLimitations,
+  getUsersSelfCharactersByIdStatistics,
+  putUsersSelfCharactersById,
+  putUsersSelfCharactersByIdActive,
+  putUsersSelfCharactersByIdCharacteristics,
+  putUsersSelfCharactersByIdCharacteristicsConvert,
+  putUsersSelfCharactersByIdItems,
+  putUsersSelfCharactersByIdRespecialize,
+  putUsersSelfCharactersByIdRetire,
+  putUsersSelfCharactersByIdTournament,
+} from '#api/sdk.gen'
+import {
   CHARACTER_ARMOR_OVERALL_KEY,
   CHARACTER_CLASS,
   CHARACTER_EARNING_TYPE,
@@ -88,7 +88,7 @@ import { getIndexToInsert, range } from '~/utils/array'
 import { computeLeftMs } from '~/utils/date'
 import { applyPolynomialFunction, roundFLoat } from '~/utils/math'
 
-export const getCharacters = async (): Promise<Character[]> => (await getUsersSelfCharacters({})).data!
+export const getCharacters = async (): Promise<Character[]> => (await getUsersSelfCharacters({})).data!.toSorted((a, b) => b.id - a.id)
 
 export const getCharactersByUserId = async (
   userId: number,
@@ -708,11 +708,10 @@ export const computeOverallArmor = (items: Item[]): OverallArmor =>
     },
   )
 
-// // TODO: SPEC
 export const computeLongestWeaponLength = (items: Item[]) => {
   return items
     .filter(item => ([ITEM_TYPE.OneHandedWeapon, ITEM_TYPE.TwoHandedWeapon, ITEM_TYPE.Polearm] as ItemType[]).includes(item.type))
-    .reduce((total, item) => (total += Math.max(total, item.weapons[0]?.length ?? 0)), 0)
+    .reduce((max, item) => Math.max(max, item.weapons[0]?.length ?? 0), 0)
 }
 
 export const computeOverallAverageRepairCostByHour = (items: Item[]) => Math.floor(items.reduce((total, item) => total + computeAverageRepairCostPerHour(item.price), 0))
@@ -824,7 +823,7 @@ export const getRespecCapability = (
   }
 
   const decayDivider
-    = (new Date().getTime() - lastRespecDate.getTime()) / (respecializePriceHalfLife * 1000 * 3600)
+    = (Date.now() - lastRespecDate.getTime()) / (respecializePriceHalfLife * 1000 * 3600)
 
   const price = Math.floor(
     Math.floor((character.experience / getExperienceForLevel(30)) * respecializePriceForLevel30)

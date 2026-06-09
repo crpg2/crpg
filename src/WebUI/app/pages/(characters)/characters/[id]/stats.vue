@@ -13,7 +13,6 @@ import type { ComposeOption } from 'echarts/core'
 import { getLocalTimeZone, now } from '@internationalized/date'
 // TODO: FIXME: composition + components
 import NumberFlow from '@number-flow/vue'
-import { AppCoin, AppExperience, UIcon, UiDataCell } from '#components'
 import { BarChart } from 'echarts/charts'
 import {
   DataZoomComponent,
@@ -29,6 +28,7 @@ import type { CharacterEarnedData, CharacterEarningType } from '~/models/charact
 import type { GameMode } from '~/models/game-mode'
 import type { TimeSeries } from '~/models/time-series'
 
+import { AppCoin, AppExperience, UIcon, UiDataCell } from '#components'
 import theme from '~/assets/echart-theme.json'
 import { useCharacter } from '~/composables/character/use-character'
 import { CHARACTER_EARNING_TYPE } from '~/models/character'
@@ -307,7 +307,7 @@ const columns: TableColumn<CharacterEarnedDataWithGameMode>[] = [
         <AppCoin
           v-if="statTypeModel === CHARACTER_EARNING_TYPE.Gold"
           size="lg"
-          :class="total < 0 ? '!text-error' : '!text-success'"
+          :class="total < 0 ? 'text-error!' : 'text-success!'"
         >
           <NumberFlow
             :value="total"
@@ -327,7 +327,7 @@ const columns: TableColumn<CharacterEarnedDataWithGameMode>[] = [
       </div>
     </div>
 
-    <div class="h-[30rem]">
+    <div class="h-120">
       <VChart
         ref="chart"
         theme="crpg"

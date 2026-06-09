@@ -1,12 +1,12 @@
 import type { User as oidcUser } from 'oidc-client-ts'
 import type { RouteLocationNormalized } from 'vue-router'
 
-import { navigateTo } from '#app'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { ref } from 'vue'
 
 import type { User } from '~/models/user'
 
+import { navigateTo } from '#app'
 import { useUser } from '~/composables/user/use-user'
 import { getUser } from '~/services/auth-service'
 

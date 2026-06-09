@@ -1,8 +1,7 @@
-import { useI18n, useToast } from '#imports'
-
 import type { ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
+import { useI18n, useToast } from '#imports'
 import { useCharacterItems } from '~/composables/character/use-character-items'
 import { useUser } from '~/composables/user/use-user'
 import { getAvailableSlotsByItem, getUnEquipItems, isWeaponBySlot } from '~/services/item-service'

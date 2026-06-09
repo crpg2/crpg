@@ -7,6 +7,7 @@ using Crpg.Module.Api.Models.ActivityLogs;
 using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.Items;
+using Crpg.Module.Api.Models.GameEvents;
 using Crpg.Module.Api.Models.Restrictions;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common;
@@ -175,6 +176,11 @@ internal class HttpCrpgClient : ICrpgClient
     public Task<CrpgResult<CrpgRestriction>> RestrictUserAsync(CrpgRestrictionRequest req, CancellationToken cancellationToken = default)
     {
         return Post<CrpgRestrictionRequest, CrpgRestriction>("games/restrictions", req, cancellationToken);
+    }
+
+    public Task CreateGameEventsAsync(CrpgGameEventsCreateRequest req, CancellationToken cancellationToken = default)
+    {
+        return Post<CrpgGameEventsCreateRequest, object>("games/game-events", req, cancellationToken);
     }
 
     public void Dispose() => _httpClient.Dispose();

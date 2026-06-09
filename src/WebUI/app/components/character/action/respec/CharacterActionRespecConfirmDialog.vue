@@ -30,7 +30,7 @@ defineEmits<{
         <template #respecializationPrice>
           <AppCoin
             :value="respecCapability.price"
-            :class="{ '!text-error': respecCapability.price > 0 }"
+            :class="{ 'text-error!': respecCapability.price > 0 }"
           />
         </template>
       </i18n-t>

@@ -5,6 +5,7 @@ defineProps<{
   tooltip?: {
     title: string
     description?: string
+    validation?: string
   }
 }>()
 
@@ -15,7 +16,7 @@ const slots = useSlots()
   <UTooltip :disabled="!tooltip && !slots['tooltip-content']">
     <UiDataCell
       class="
-        group rounded px-3 py-2.5
+        group rounded-sm px-3 py-2.5
         hover:bg-muted
       "
     >
@@ -48,7 +49,7 @@ const slots = useSlots()
       <slot name="tooltip-content">
         <UiTooltipContent
           v-if="tooltip"
-          v-bind="{ ...tooltip }"
+          v-bind="tooltip"
         />
       </slot>
     </template>

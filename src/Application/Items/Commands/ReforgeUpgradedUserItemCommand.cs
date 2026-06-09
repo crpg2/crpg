@@ -17,28 +17,23 @@ public record ReforgeUpgradedUserItemCommand : IMediatorRequest<UserItemViewMode
     public int UserItemId { get; init; }
     public int UserId { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<ReforgeUpgradedUserItemCommand, UserItemViewModel>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IActivityLogService activityLogService, Constants constants) : IMediatorRequestHandler<ReforgeUpgradedUserItemCommand, UserItemViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<ReforgeUpgradedUserItemCommand>();
 
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly IActivityLogService _activityLogService;
-        private readonly Constants _constants;
-
-        public Handler(ICrpgDbContext db, IMapper mapper, IActivityLogService activityLogService, Constants constants)
-        {
-            _db = db;
-            _mapper = mapper;
-            _activityLogService = activityLogService;
-            _constants = constants;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly IActivityLogService _activityLogService = activityLogService;
+        private readonly Constants _constants = constants;
 
         public async ValueTask<Result<UserItemViewModel>> Handle(ReforgeUpgradedUserItemCommand req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                 .AsSplitQuery()
-                .Include(u => u.Items).ThenInclude(ui => ui.Item)
+                .Include(u => u.Items)
+                    .ThenInclude(ui => ui.Item)
+                .Include(u => u.Items)
+                    .ThenInclude(ui => ui.MarketplaceListingAssets)
                 .FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
 
             if (user == null)
@@ -62,6 +57,11 @@ public record ReforgeUpgradedUserItemCommand : IMediatorRequest<UserItemViewMode
             if (userItemToReforge.Item!.Rank == 0)
             {
                 return new(CommonErrors.ItemNotReforgeable(userItemToReforge.ItemId));
+            }
+
+            if (userItemToReforge.MarketplaceListingAssets.Count != 0)
+            {
+                return new(CommonErrors.UserItemInMarketplace(userItemToReforge.Id));
             }
 
             int reforgePrice = (int)_constants.ItemReforgeCostPerRank[userItemToReforge.Item.Rank];

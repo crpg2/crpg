@@ -2,6 +2,7 @@ using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.ActivityLogs;
 using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Clans;
+using Crpg.Module.Api.Models.GameEvents;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Restrictions;
 using Crpg.Module.Api.Models.Users;
@@ -180,6 +181,11 @@ internal class StubCrpgClient : ICrpgClient
     public Task<CrpgResult<CrpgCharacterCharacteristics>> ConvertCharacterCharacteristicsAsync(int userId, int characterId, CrpgGameCharacteristicConversionRequest req, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
+    }
+    
+    public Task CreateGameEventsAsync(CrpgGameEventsCreateRequest req, CancellationToken cancellationToken = default)
+    {
+        return Task.CompletedTask;
     }
 
     public void Dispose()

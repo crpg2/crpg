@@ -18,18 +18,13 @@ public record GetLeaderboardQuery : IMediatorRequest<IList<CharacterPublicCompet
     public CharacterClass? CharacterClass { get; set; }
     public GameMode? GameMode { get; set; }
 
-    internal class Handler : IMediatorRequestHandler<GetLeaderboardQuery, IList<CharacterPublicCompetitiveViewModel>>
+    internal class Handler(ICrpgDbContext db, IMapper mapper, IMemoryCache cache) : IMediatorRequestHandler<GetLeaderboardQuery, IList<CharacterPublicCompetitiveViewModel>>
     {
-        private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly IMemoryCache _cache;
+        private const int ActiveUserThresholdDays = 30;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, IMemoryCache cache)
-        {
-            _db = db;
-            _mapper = mapper;
-            _cache = cache;
-        }
+        private readonly ICrpgDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly IMemoryCache _cache = cache;
 
         public async ValueTask<Result<IList<CharacterPublicCompetitiveViewModel>>> Handle(GetLeaderboardQuery req, CancellationToken cancellationToken)
         {
@@ -42,6 +37,7 @@ public record GetLeaderboardQuery : IMediatorRequest<IList<CharacterPublicCompet
                 var topRatedCharactersByRegion = await _db.Characters
                     .Include(c => c.User)
                     .Where(c => (req.Region == null || req.Region == c.User!.Region)
+                             && c.User!.UpdatedAt > DateTime.UtcNow.AddDays(-ActiveUserThresholdDays)
                              && (req.CharacterClass == null || req.CharacterClass == c.Class)
                              && c.Statistics.First(s => s.GameMode == requestGameMode) != null)
                     .OrderByDescending(c => c.Statistics.First(s => s.GameMode == requestGameMode).Rating.CompetitiveValue)
@@ -49,7 +45,7 @@ public record GetLeaderboardQuery : IMediatorRequest<IList<CharacterPublicCompet
                     .ProjectTo<CharacterPublicCompetitiveViewModel>(_mapper.ConfigurationProvider)
                     .ToArrayAsync(cancellationToken);
 
-                IList<CharacterPublicCompetitiveViewModel> data = topRatedCharactersByRegion.DistinctBy(c => c.User.Id).Take(50).ToList();
+                IList<CharacterPublicCompetitiveViewModel> data = [.. topRatedCharactersByRegion.DistinctBy(c => c.User.Id).Take(50)];
 
                 var cacheOptions = new MemoryCacheEntryOptions()
                     .SetAbsoluteExpiration(TimeSpan.FromMinutes(1));
@@ -61,9 +57,9 @@ public record GetLeaderboardQuery : IMediatorRequest<IList<CharacterPublicCompet
             return new(results);
         }
 
-        private string GetCacheKey(GetLeaderboardQuery req)
+        private static string GetCacheKey(GetLeaderboardQuery req)
         {
-            List<string> keys = new() { "leaderboard" };
+            List<string> keys = ["leaderboard"];
 
             if (req.Region != null)
             {

@@ -25,7 +25,7 @@ const {
   deleteAllNotifications,
 } = useUsersNotifications()
 
-const { pagination, setPagination } = usePagination({ pageSize: 5 })
+const { pagination, setPagination } = usePagination({ pageSize: 12 })
 
 const { t } = useI18n()
 
@@ -212,7 +212,13 @@ const isEmpty = computed(() => !grid.getRowCount())
 
         <UiGridPagination
           v-if="!isEmpty"
-          :table-api="toRef(() => grid)"
+          :page="pagination.pageIndex + 1"
+          :size="pagination.pageSize"
+          :total="grid.getFilteredRowModel().rows.length"
+          @update:page="(page) => {
+            setPagination({ pageIndex: page - 1 });
+            scrollToTop()
+          }"
         />
       </div>
     </div>

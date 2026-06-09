@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { LazySettlementManageItemsDrawer, LazySettlementManageTroopsDrawer } from '#components'
-
 import { useParty, usePartyItems } from '~/composables/campaign/use-party'
 import { useSettlement, useSettlementItems } from '~/composables/campaign/use-settlements'
 import { useUser } from '~/composables/user/use-user'

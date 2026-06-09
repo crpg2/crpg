@@ -1,8 +1,8 @@
 import { computedWithControl, tryOnScopeDispose, useIntervalFn, useLocalStorage } from '@vueuse/core'
-import { useAppConfig } from '#app'
-import { useI18n, useToast } from '#imports'
 import { computed, ref } from 'vue'
 
+import { useAppConfig } from '#app'
+import { useI18n, useToast } from '#imports'
 import { useUser } from '~/composables/user/use-user'
 import { REGION } from '~/models/region'
 import { getHHEventByRegion, getHHEventRemainingSeconds } from '~/services/hh-service'

@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { UTooltip } from '#components'
 import { groupBy, inRange } from 'es-toolkit'
 
 import type { Rank } from '~/models/competitive'
+
+import { UTooltip } from '#components'
 
 const { competitiveValue, rankTable } = defineProps<{
   competitiveValue?: number
@@ -37,7 +38,7 @@ const groupedRankTable = computed(() => groupBy(rankTable, r => r.groupTitle))
           >
             <div
               class="
-                flex h-8 items-center rounded px-2 text-highlighted select-none text-shadow-lg/20
+                flex h-8 items-center rounded-sm px-2 text-highlighted select-none text-shadow-lg/20
               "
               :style="{
                 backgroundColor: rank.color,

@@ -1,10 +1,11 @@
-import type { CreateClientConfig } from '#api/client.gen'
 import type { FetchResponse } from 'ofetch'
+
+import { delay } from 'es-toolkit'
+
+import type { CreateClientConfig } from '#api/client.gen'
 
 import { useNuxtApp, useRoute } from '#app'
 import { useToast } from '#imports'
-import { delay } from 'es-toolkit'
-
 import { getToken, login } from '~/services/auth-service'
 
 import type { Platform } from './models/platform'
@@ -50,6 +51,7 @@ const isCrpgApiResult = (result: unknown): result is CrpgApiResult<unknown> => {
     return false
   }
 
+  // TODO: FIXME: data не всегда есть
   return 'data' in result && 'errors' in result
 }
 
@@ -79,10 +81,12 @@ export const onResponseError = async (
     })
   }
 
-  if (roles?.length && response.status === 401) {
-    showErrorToast('Session expired')
-    await delay(1000)
-    await login((globalThis.localStorage?.getItem('user-platform') as Platform) ?? PLATFORM.Steam)
+  if (response.status === 401) {
+    if (roles?.length) {
+      showErrorToast('Session expired')
+      await delay(1000)
+      return login((globalThis.localStorage?.getItem('user-platform') as Platform) ?? PLATFORM.Steam)
+    }
     return
   }
 
@@ -99,7 +103,7 @@ export const onResponseError = async (
     }
 
     showErrorToast()
-    logger?.error?.('Crpg Api Error', responseData)
+    logger?.error?.('Unknown Crpg Api Error', responseData)
     return
   }
 

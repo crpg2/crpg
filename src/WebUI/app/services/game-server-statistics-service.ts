@@ -1,6 +1,6 @@
-import { getGameServerStatistics } from '#api/sdk.gen'
-
 import type { GameServerModeStats, GameServerRegionStats, GameServerStats } from '~/models/game-server-stats'
+
+import { getGameServerStatistics } from '#api/sdk.gen'
 
 // TODO: move to backend
 const omitEmptyGameServerStats = (regions: GameServerRegionStats): GameServerRegionStats => Object.fromEntries(

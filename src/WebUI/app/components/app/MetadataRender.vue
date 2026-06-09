@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { AppCoin, AppLoom, CharacterMedia, ClanRole, ItemThumb, UBadge, ULink, UserClan, UserMedia, UTooltip } from '#components'
 import { I18nT } from 'vue-i18n'
 
 import type { ClanMemberRole } from '~/models/clan'
+import type { MarketplaceListingAsset } from '~/models/marketplace'
 import type { MetadataDict } from '~/models/metadata'
 import type { UserPublic } from '~/models/user'
 
+import { AppCoin, AppLoom, CharacterMedia, ClanRole, ItemThumb, MarketplaceListingAssetGroup, UBadge, ULink, UserClan, UserMedia, UTooltip } from '#components'
 import { getItemImage } from '~/services/item-service'
 
 const { keypath, metadata, dict } = defineProps<{
@@ -44,6 +45,7 @@ const renderUserClan = (clanId: number) => {
 
 const renderUser = (userId: number) => {
   const user = getUserById(userId)
+
   return user
     ? slots?.user?.({ user }) || h(UserMedia, { user, inline: true, size: 'sm' })
     : renderStrong(String(userId))
@@ -77,11 +79,30 @@ const renderItem = (itemId: string) => {
   )
 }
 
-const renderGold = (value: number) => h(AppCoin, { value })
+const renderGold = (value: number) => h(AppCoin, { value, size: 'lg' })
 
 const renderLoom = (point: number) => h(AppLoom, { point })
 
 const renderBattleLink = (battleId: number) => h(ULink, { to: { name: 'battles-id', params: { id: battleId } } }, { default: () => battleId })
+
+function renderSlots(fields: Record<string, string | number | undefined>, render: (v: string | number) => VNode) {
+  return Object.fromEntries(
+    Object.entries(fields)
+      .filter(([, v]) => v !== undefined)
+      .map(([k, v]) => [k, () => render(v!)]),
+  )
+}
+
+function renderMarketplaceListingDetails(rawOffer: string, rawRequest: string) {
+  try {
+    const offered = JSON.parse(rawOffer) as MarketplaceListingAsset
+    const requested = JSON.parse(rawRequest) as MarketplaceListingAsset
+    return h(MarketplaceListingAssetGroup, { offered, requested })
+  }
+  catch (_) {
+    return renderStrong(JSON.stringify({ offered: rawOffer, requested: rawRequest }))
+  }
+}
 
 function Render() {
   const {
@@ -89,6 +110,8 @@ function Render() {
     oldClanMemberRole,
     newClanMemberRole,
     userId,
+    buyerId,
+    sellerId,
     targetUserId,
     actorUserId,
     characterId,
@@ -103,6 +126,10 @@ function Render() {
     instance,
     gameMode,
     battleId,
+    goldFee,
+    listingFee,
+    offer,
+    request,
     ...restKeys
   } = metadata
 
@@ -115,31 +142,19 @@ function Render() {
       class: 'leading-relaxed',
     },
     {
+      br: () => h('br'),
+      ...(offer && request && { marketplaceListingDetails: () => renderMarketplaceListingDetails(offer, request) }),
       ...(clanId && { clan: () => renderUserClan(Number(clanId)) }),
-      ...(oldClanMemberRole && { oldClanMemberRole: () => h(ClanRole, { role: oldClanMemberRole as ClanMemberRole }) }),
-      ...(newClanMemberRole && { newClanMemberRole: () => h(ClanRole, { role: newClanMemberRole as ClanMemberRole }) }),
-
-      ...(userId && { user: () => renderUser(Number(userId)) }),
-      ...(targetUserId && { targetUser: () => renderUser(Number(targetUserId)) }),
-      ...(actorUserId && { actorUser: () => renderUser(Number(actorUserId)) }),
-
-      ...(characterId && { character: () => renderCharacter(Number(characterId)) }),
-
-      ...(gold && { gold: () => renderGold(Number(gold)) }),
-      ...(price && { price: () => renderGold(Number(price)) }),
-      ...(refundedGold && { refundedGold: () => renderGold(Number(refundedGold)) }),
-
-      ...(heirloomPoints && { heirloomPoints: () => renderLoom(Number(heirloomPoints)) }),
-      ...(refundedHeirloomPoints && { refundedHeirloomPoints: () => renderLoom(Number(refundedHeirloomPoints)) }),
-
-      ...(itemId && { item: () => renderItem(itemId) }),
-      ...(userItemId && { userItem: () => renderItem(userItemId) }),
-
+      ...renderSlots({ oldClanMemberRole, newClanMemberRole }, v => h(ClanRole, { role: v as ClanMemberRole })),
+      ...renderSlots({ user: userId, targetUser: targetUserId, actorUser: actorUserId, seller: sellerId, buyer: buyerId }, v => renderUser(Number(v))),
+      ...renderSlots({ character: characterId }, v => renderCharacter(Number(v))),
+      ...renderSlots({ gold, goldFee, listingFee, price, refundedGold }, v => renderGold(Number(v))),
+      ...renderSlots({ heirloomPoints, refundedHeirloomPoints }, v => renderLoom(Number(v))),
+      ...renderSlots({ item: itemId, userItem: userItemId }, v => renderItem(String(v))),
       ...(damage && { damage: () => renderDamage(damage) }),
       ...(instance && { instance: () => h(UBadge, { color: 'neutral', size: 'sm', variant: 'subtle', label: instance }) }),
       ...(gameMode && { gameMode: () => h(UBadge, { color: 'neutral', size: 'sm', variant: 'soft', label: gameMode }) }),
       ...(battleId && { battle: () => renderBattleLink(Number(battleId)) }),
-
       ...Object.entries(restKeys).reduce((out: Record<string, () => VNode>, [key, value]) => {
         const [isNumber, candidateToNumber] = tryGetNumber(value)
         out[key] = () => renderStrong(isNumber ? n(candidateToNumber) : value)

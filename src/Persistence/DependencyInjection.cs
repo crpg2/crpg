@@ -5,8 +5,10 @@ using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Marketplace;
 using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
+using Crpg.Domain.Entities.Quests;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Settlements;
@@ -64,12 +66,15 @@ public static class DependencyInjection
                                 .MapEnum<BattleParticipantType>()
                                 .MapEnum<BattleFighterApplicationStatus>()
                                 .MapEnum<BattleMercenaryApplicationStatus>()
+                                .MapEnum<MarketplaceListingAssetSide>()
                                 .MapEnum<Region>()
                                 .MapEnum<Languages>()
                                 .MapEnum<GameMode>()
                                 .MapEnum<ActivityLogType>()
                                 .MapEnum<NotificationState>()
                                 .MapEnum<NotificationType>()
+                                .MapEnum<QuestAggregationType>()
+                                .MapEnum<QuestType>()
                                 .MapEnum<TerrainType>())
                     .UseSnakeCaseNamingConvention();
 

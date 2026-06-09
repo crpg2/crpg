@@ -1,3 +1,13 @@
+import type {
+  Clan,
+  ClanArmoryItem,
+  ClanInvitation,
+  ClanMember,
+  ClanMemberRole,
+  ClanUpdate,
+  ClanWithMemberCount,
+} from '~/models/clan'
+
 import {
   getClans as _getClans,
   deleteClansByClanIdArmoryByUserItemId,
@@ -15,17 +25,6 @@ import {
   putClansByClanIdInvitationsByInvitationIdResponse,
   putClansByClanIdMembersByUserId,
 } from '#api/sdk.gen'
-
-import type {
-  Clan,
-  ClanArmoryItem,
-  ClanInvitation,
-  ClanMember,
-  ClanMemberRole,
-  ClanUpdate,
-  ClanWithMemberCount,
-} from '~/models/clan'
-
 import { CLAN_INVITATION_STATUS, CLAN_INVITATION_TYPE, CLAN_MEMBER_ROLE } from '~/models/clan'
 
 export const getClans = async (): Promise<ClanWithMemberCount[]> => (await _getClans({ })).data!

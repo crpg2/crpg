@@ -29,7 +29,7 @@ export const convertHumanDurationToMs = (duration: HumanDuration) => {
 }
 
 export const computeLeftMs = (createdAt: Date, duration: number) => {
-  const result = new Date(createdAt).getTime() + duration - new Date().getTime()
+  const result = new Date(createdAt).getTime() + duration - Date.now()
   return result < 0 ? 0 : result
 }
 

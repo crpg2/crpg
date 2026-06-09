@@ -2,11 +2,10 @@
 import type { TableColumn } from '@nuxt/ui'
 import type { RowSelectionState } from '@tanstack/vue-table'
 
-import { AppCoin, ItemParam } from '#components'
-
 import type { CompareItemsResult, ItemFlat } from '~/models/item'
 import type { AggregationConfig } from '~/services/item-search-service/aggregations'
 
+import { AppCoin, ItemParam } from '#components'
 import { ITEM_COMPARE_MODE } from '~/models/item'
 import { getColumnVisibility } from '~/services/item-search-service'
 
@@ -67,9 +66,7 @@ const rowSelection = ref<RowSelectionState>({
     :data="items"
     :loading
     :columns
-    :ui="{
-      root: 'overflow-visible',
-    }"
+    class="relative rounded-md border border-muted"
   >
     <template #empty>
       <UiResultNotFound />

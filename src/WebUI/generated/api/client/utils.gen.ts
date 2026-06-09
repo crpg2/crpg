@@ -288,7 +288,7 @@ export const mergeHeaders = (
         }
       } else if (value !== undefined) {
         const v = unwrapRefs(value);
-        // assume object headers are meant to be JSON stringified, i.e. their
+        // assume object headers are meant to be JSON stringified, i.e., their
         // content value in OpenAPI specification is 'application/json'
         mergedHeaders.set(key, typeof v === 'object' ? JSON.stringify(v) : (v as string));
       }
@@ -346,7 +346,12 @@ export const unwrapRefs = <T>(value: T): UnwrapRefs<T> => {
     return (isRef(value) ? unref(value) : value) as UnwrapRefs<T>;
   }
 
-  if (value instanceof Blob) {
+  if (
+    value instanceof Blob ||
+    value instanceof FormData ||
+    value instanceof ReadableStream ||
+    value instanceof AbortSignal
+  ) {
     return value as UnwrapRefs<T>;
   }
 

@@ -52,7 +52,7 @@ const mountedWeaponPenalty = computed(() => {
 <template>
   <UCard
     :ui="{
-      body: '!px-0 overflow-hidden !py-1.5',
+      body: 'px-0! overflow-hidden py-1.5!',
     }"
   >
     <div class="flex flex-col">

@@ -1,7 +1,7 @@
-import { getActivityLogs as _getActivityLogs } from '#api/sdk.gen'
-
 import type { ActivityLog, ActivityLogType } from '~/models/activity-logs'
 import type { MetadataDict } from '~/models/metadata'
+
+import { getActivityLogs as _getActivityLogs } from '#api/sdk.gen'
 
 export interface ActivityLogsPayload {
   to: Date

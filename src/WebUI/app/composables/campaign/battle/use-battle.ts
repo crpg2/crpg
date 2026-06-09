@@ -1,9 +1,8 @@
 import type { MaybeRefOrGetter } from 'vue'
 
-import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
-
 import type { Battle, BattleMercenaryApplicationCreation, BattleSide } from '~/models/campaign/battle'
 
+import { getAsyncData, refreshAsyncData, useRoute } from '#imports'
 import { useUser } from '~/composables/user/use-user'
 import { BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_PARTICIPANT_TYPE, BATTLE_SIDE, BATTLE_TYPE } from '~/models/campaign/battle'
 import { BATTLE_QUERY_KEYS } from '~/queries'

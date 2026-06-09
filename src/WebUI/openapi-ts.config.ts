@@ -21,7 +21,7 @@ export default defineConfig({
     },
     {
       name: '@hey-api/client-nuxt',
-      runtimeConfigPath: '../../app/api.config',
+      runtimeConfigPath: './app/api.config',
     },
   ],
   parser: {

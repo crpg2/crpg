@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { LazyUserRestrictionModal } from '#components'
-
 import type { UserRestrictionPublic } from '~/models/user'
+
+import { LazyUserRestrictionModal } from '#components'
 
 const props = defineProps<{
   restriction: UserRestrictionPublic

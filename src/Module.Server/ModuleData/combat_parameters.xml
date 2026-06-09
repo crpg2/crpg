@@ -20,11 +20,11 @@
     <def name="thrust_ladder_rot_limit_right" val="57.3" /> <!-- native is 57.3 -->
     <def name="overswing_ladder_rot_limit_left"  val="67.3" />
     <def name="overswing_ladder_rot_limit_right" val="57.3" />
-    <def name="weapon_1h_bash_cooldown" val="1.75" />
-    <def name="weapon_2h_bash_cooldown" val="1.75" />
-    <def name="weapon_spear_bash_cooldown" val="1.75" />
-    <def name="shield_bash_cooldown" val="2.15" />
-    <def name="hand_shield_bash_cooldown" val="2.15" />
+    <def name="weapon_1h_bash_cooldown" val="2.00" />
+    <def name="weapon_2h_bash_cooldown" val="2.00" />
+    <def name="weapon_spear_bash_cooldown" val="2.00" />
+    <def name="shield_bash_cooldown" val="2.40" />
+    <def name="hand_shield_bash_cooldown" val="2.40" />
 
   </definitions>
 
@@ -56,9 +56,9 @@
                   weapon_offset="0,0,0.0"
                   vertical_rot_limit_multiplier_up="thrust_vertical_rot_limit"
                   vertical_rot_limit_multiplier_down="0.5"
-                  left_rider_rot_limit="90"  
+                  left_rider_rot_limit="120"  
                   left_rider_min_rot_limit="thrust_polearm_min_rider_rot_limit_left"
-                  right_rider_rot_limit="72"
+                  right_rider_rot_limit="90"
                   right_rider_min_rot_limit="thrust_polearm_min_rider_rot_limit_right"
                   rider_look_down_limit="thrust_rider_look_down_limit"
                   left_ladder_rot_limit="thrust_ladder_rot_limit_left"
@@ -76,9 +76,9 @@
                   weapon_offset="0,0,0.0"
                   vertical_rot_limit_multiplier_up="thrust_vertical_rot_limit"
                   vertical_rot_limit_multiplier_down="0.7"                 
-                  left_rider_rot_limit="90" 
+                  left_rider_rot_limit="120" 
                   left_rider_min_rot_limit="down_and_upperstab_min_rider_rot_limit_left"
-                  right_rider_rot_limit="72"
+                  right_rider_rot_limit="90"
                   right_rider_min_rot_limit="down_and_upperstab_min_rider_rot_limit_right"
                   rider_look_down_limit="upperthrust_rider_look_down_limit"
                   left_ladder_rot_limit="thrust_ladder_rot_limit_left"
@@ -95,9 +95,9 @@
                       weapon_offset="0,0,0.3"
                       vertical_rot_limit_multiplier_up="0.5"
                       vertical_rot_limit_multiplier_down="0.5"
-                      left_rider_rot_limit="90"
+                      left_rider_rot_limit="120"
                       left_rider_min_rot_limit="down_and_upperstab_min_rider_rot_limit_left"
-                      right_rider_rot_limit="72"
+                      right_rider_rot_limit="90"
                       right_rider_min_rot_limit="down_and_upperstab_min_rider_rot_limit_right"
                       rider_look_down_limit="upperthrust_rider_look_down_limit"
                       left_ladder_rot_limit="overswing_ladder_rot_limit_left"
@@ -114,9 +114,9 @@
                       weapon_offset="0,0,0.3"
                       vertical_rot_limit_multiplier_up="0.5"
                       vertical_rot_limit_multiplier_down="0.5"
-                      left_rider_rot_limit="90"
+                      left_rider_rot_limit="120"
                       left_rider_min_rot_limit="thrust_polearm_min_rider_rot_limit_left"
-                      right_rider_rot_limit="72"
+                      right_rider_rot_limit="90"
                       right_rider_min_rot_limit="thrust_polearm_min_rider_rot_limit_right"
                       rider_look_down_limit="thrust_rider_look_down_limit"
                       left_ladder_rot_limit="thrust_ladder_rot_limit_left"

@@ -101,11 +101,7 @@ defineExpose<PublicApi>({
         <template #label>
           <UiDataMedia label="Gold">
             <template #icon="{ classes }">
-              <UiSpriteSymbol
-                name="coin"
-                viewBox="0 0 18 18"
-                :class="classes()"
-              />
+              <AppCoin :class="classes()" />
             </template>
           </UiDataMedia>
         </template>

@@ -4,6 +4,7 @@ using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Application.Games.Models;
+using Crpg.Application.Quests.Services;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Items;
@@ -138,10 +139,11 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
         private readonly IUserService _userService;
         private readonly ICharacterService _characterService;
         private readonly IActivityLogService _activityLogService;
+        private readonly IQuestAssignmentService _questAssignmentService;
 
         public Handler(ICrpgDbContext db, IMapper mapper, IDateTime dateTime,
             IRandom random, IUserService userService, ICharacterService characterService,
-            IActivityLogService activityLogService)
+            IActivityLogService activityLogService, IQuestAssignmentService questAssignmentService)
         {
             _db = db;
             _mapper = mapper;
@@ -150,6 +152,7 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
             _userService = userService;
             _characterService = characterService;
             _activityLogService = activityLogService;
+            _questAssignmentService = questAssignmentService;
         }
 
         public async ValueTask<Result<GameUserViewModel>> Handle(GetGameUserCommand req, CancellationToken cancellationToken)
@@ -205,6 +208,7 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
 
                 _db.ActivityLogs.Add(_activityLogService.CreateCharacterCreatedLog(user.Id, user.ActiveCharacter.Id));
                 await _db.SaveChangesAsync(cancellationToken);
+                await _questAssignmentService.AssignQuestsToNewUserAsync(user.Id, cancellationToken);
             }
             else
             {

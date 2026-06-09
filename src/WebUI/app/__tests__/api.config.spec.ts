@@ -108,7 +108,7 @@ describe('api.config onResponseError', () => {
     await onResponseError({ response: makeResponse(500, payload) })
 
     expect(toastAdd).toHaveBeenCalledWith(expect.objectContaining({ title: 'Some Error', color: 'error' }))
-    expect(loggerError).toHaveBeenCalledWith('Crpg Api Error', payload)
+    expect(loggerError).toHaveBeenCalledWith('Unknown Crpg Api Error', payload)
   })
 
   it('shows generic toast for unknown payload (e.g. HTML error page)', async () => {

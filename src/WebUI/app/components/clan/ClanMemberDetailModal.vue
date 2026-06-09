@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import type { RadioGroupItem } from '@nuxt/ui'
 
-import { LazyAppConfirmActionDialog } from '#components'
-
 import type { ClanMember, ClanMemberRole } from '~/models/clan'
 
+import { LazyAppConfirmActionDialog } from '#components'
 import { CLAN_MEMBER_ROLE } from '~/models/clan'
 
 const { canKick, canUpdate, member } = defineProps<{

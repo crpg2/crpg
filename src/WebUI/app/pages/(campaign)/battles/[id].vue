@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
-import { BattleMercenaryApplicationStatusBadge, LazyBattleManageDrawer, LazyBattleMercenaryApplicationDialog, UButton, UTooltip } from '#components'
-
 import type { BattleParticipant, BattleSide } from '~/models/campaign/battle'
 
+import { BattleMercenaryApplicationStatusBadge, LazyBattleManageDrawer, LazyBattleMercenaryApplicationDialog, UButton, UTooltip } from '#components'
 import { useBattle, useBattleMercenaryApplication, useBattleParticipants } from '~/composables/campaign/battle/use-battle'
 import { BATTLE_MERCENARY_APPLICATION_STATUS, BATTLE_PARTICIPANT_TYPE, BATTLE_SIDE } from '~/models/campaign/battle'
 import { BATTLE_QUERY_KEYS } from '~/queries'

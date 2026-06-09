@@ -48,6 +48,15 @@ const isNew = computed(() => !isGraceTimeExpired(getItemGraceTimeEnd(userItem)))
           />
         </UTooltip>
       </template>
+
+      <UTooltip v-if="userItem.isListedOnMarketplace" :text="$t('character.inventory.item.listedOnMarketplace.tooltip.title')">
+        <UBadge
+          variant="soft"
+          color="primary"
+          icon="crpg:trade"
+          class="cursor-default"
+        />
+      </UTooltip>
     </template>
 
     <template #badges-bottom-left>

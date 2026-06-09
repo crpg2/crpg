@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { ItemFlat } from '~/models/item'
+import type { SelectedItem } from '~/models/item'
 
 import { getRankColor } from '~/services/item-service'
 
 defineProps<{
-  item: ItemFlat
-  newItem: ItemFlat
+  item: SelectedItem
+  newItem: SelectedItem
   reforgeCost: number
 }>()
 
@@ -18,7 +18,7 @@ defineEmits<{
   <AppConfirmActionDialog
     :title="$t('action.confirmation')"
     confirm="Reforge item"
-    @close="(res) => $emit('close', res)"
+    @close="$emit('close', $event)"
   >
     <template #description>
       <i18n-t

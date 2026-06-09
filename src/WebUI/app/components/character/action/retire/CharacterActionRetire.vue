@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
 
-import { CharacterActionRetireConfirmDialog } from '#components'
 import {
   experienceMultiplierByGeneration,
   maxExperienceMultiplierForGeneration,
@@ -12,6 +11,7 @@ import {
 import type { Character } from '~/models/character'
 import type { HeirloomPointByLevelAggregation } from '~/services/character-service'
 
+import { CharacterActionRetireConfirmDialog } from '#components'
 import { canRetireValidate, getHeirloomPointByLevel, getHeirloomPointByLevelAggregation } from '~/services/character-service'
 
 const { character, userExperienceMultiplier } = defineProps<{
