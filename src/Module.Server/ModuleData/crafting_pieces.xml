@@ -38439,25 +38439,25 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bobsickle_handle_h0" name="{=}Bobsickle Shaft" tier="2" piece_type="Handle" mesh="bobsickle_handle" length="151" weight="0.4" CraftingCost="120">
+  <CraftingPiece id="crpg_bobsickle_handle_h0" name="{=}Bobsickle Shaft" tier="2" piece_type="Handle" mesh="bobsickel_handle" length="151" weight="0.4" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bobsickle_handle_h1" name="{=}Bobsickle Shaft" tier="2" piece_type="Handle" mesh="bobsickle_handle" length="151" weight="0.4" CraftingCost="120">
+  <CraftingPiece id="crpg_bobsickle_handle_h1" name="{=}Bobsickle Shaft" tier="2" piece_type="Handle" mesh="bobsickel_handle" length="151" weight="0.4" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bobsickle_handle_h2" name="{=}Bobsickle Shaft" tier="2" piece_type="Handle" mesh="bobsickle_handle" length="151" weight="0.4" CraftingCost="120">
+  <CraftingPiece id="crpg_bobsickle_handle_h2" name="{=}Bobsickle Shaft" tier="2" piece_type="Handle" mesh="bobsickel_handle" length="151" weight="0.4" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bobsickle_handle_h3" name="{=}Bobsickle Shaft" tier="2" piece_type="Handle" mesh="bobsickle_handle" length="151" weight="0.35" CraftingCost="120">
+  <CraftingPiece id="crpg_bobsickle_handle_h3" name="{=}Bobsickle Shaft" tier="2" piece_type="Handle" mesh="bobsickel_handle" length="151" weight="0.35" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
     <Materials>
       <Material id="Wood" count="1" />
