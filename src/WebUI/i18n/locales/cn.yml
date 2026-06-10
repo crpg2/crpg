@@ -134,7 +134,9 @@ nav:
   main:
     Characters: 角色
     Shop: 商店
+    Quests: 任务
     Clans: 家族
+    Marketplace: 市场
     Moderator: 管理员
     Admin: 管理
     Builder: 角色配置器
@@ -745,6 +747,28 @@ character:
           title: 物品在家族军械库中
           notify:
             warning: 该物品在家族军械库中。请先从军械库中取出。
+      listedOnMarketplace:
+        tooltip:
+          title: 物品已挂到市场
+      showMarketplaceListings:
+        title: 显示包含此物品的市场挂单
+      cantUpgrade:
+        notify:
+          reasonListedOnMarketplace: 该物品已挂到市场，无法升级
+          reasonInClanArmory: 该物品在家族军械库中，无法升级
+          reasonBroken: 该物品已损坏，无法升级
+      cantSell:
+        notify:
+          reasonPersonal: 个人物品无法出售
+          reasonInClanArmory: 该物品在家族军械库中，无法出售
+          reasonListedOnMarketplace: 该物品已挂到市场，无法出售
+          reasonBroken: 该物品已损坏，无法出售
+          reasonHasRank: 已升级的物品无法出售
+      cantManageClanArmory:
+        notify:
+          reasonPersonal: 个人物品无法加入家族军械库
+          reasonListedOnMarketplace: 该物品已挂到市场，无法加入军械库
+          reasonBroken: 该物品已损坏，无法加入军械库
     filter:
       hideInArmory: 隐藏军械库中的物品
 
@@ -1022,6 +1046,80 @@ user:
       deleteAll:
         title: 删除全部
         confirmTitle: 确定要删除所有通知吗？
+  quests:
+    title: 任务
+    type:
+      daily: 每日
+      weekly: 每周
+    status:
+      claimed: 已领取
+      expired: 已过期
+    action:
+      claim:
+        label: 领取奖励
+        title: 领取奖励
+        selectCharacter: 选择要领取 {questRewards} 的角色
+        notify:
+          success: 奖励已领取
+      reroll:
+        label: 刷新
+        title: 刷新任务
+        confirmation: 是否花费 {goldCost} 刷新任务？
+        notify:
+          success: 任务已刷新
+    generate:
+      titleConnector:
+        to: 对
+        with: 使用
+      tplByEventTypeAndAggregationType:
+        Hit_Sum: '造成 {value} 点伤害'
+        Kill_Count: '击杀 {value} 名敌人'
+        Block_Sum: '格挡 {value} 点伤害'
+        Block_Count: '格挡 {value} 次攻击'
+      tplByEventTypeAndAggregationTypeAndHitType:
+        Hit_Sum:
+          Ranged: '造成 {value} 点远程伤害'
+          Melee: '造成 {value} 点近战伤害'
+        Kill_Count:
+          Ranged: '用远程武器击杀 {value} 名敌人'
+          Melee: '用近战击杀 {value} 名敌人'
+        Block_Sum:
+          Ranged: '格挡 {value} 点远程伤害'
+          Melee: '格挡 {value} 点近战伤害'
+        Block_Count:
+          Ranged: '格挡 {value} 次远程攻击'
+          Melee: '格挡 {value} 次近战攻击'
+      eventField:
+        ItemId:
+          title: 物品 ID
+        WeaponClass:
+          title: 武器类别
+        HitType:
+          title: 命中类型
+          values:
+            Melee: 近战
+            Ranged: 远程
+        DamageType:
+          title: 伤害类型
+        Damage:
+          title: 伤害
+        TargetType:
+          title: 目标类型
+          values:
+            Character: 角色
+            Mount: 坐骑
+        BodyPart:
+          title: 部位
+          values:
+            Head: 头部
+            Neck: 颈部
+            Chest: 胸部
+            Abdomen: 腹部
+            ShoulderLeft: 左肩
+            ShoulderRight: 右肩
+            ArmLeft: 左臂
+            ArmRight: 右臂
+            Legs: 腿部
 
 banned:
   title: 你已被封禁
@@ -1123,6 +1221,7 @@ hh:
     ended: 快乐时光结束了 😭
 
 item:
+  nonTradeable: 该物品不可交易
   type:
     Undefined: ''
     HeadArmor: 头部护甲
@@ -1521,6 +1620,22 @@ notification:
     title: 物品已归还
     tpl: '物品 {item} 已从你的物品栏中移除。退还 {refundedGold} {refundedHeirloomPoints}'
 
+  MarketplaceListingAcceptedToSeller:
+    title: 你的市场挂单已被接受
+    tpl: '你的市场挂单 #{listingId} 已被买家 {buyer} 接受{br}{marketplaceListingDetails}{br}另扣除手续费 {goldFee}'
+
+  MarketplaceListingAcceptedToBuyer:
+    title: 你已接受市场挂单
+    tpl: '你接受了卖家 {seller} 的市场挂单 #{listingId}{br}{marketplaceListingDetails}'
+
+  MarketplaceListingInvalidated:
+    title: 市场挂单已失效
+    tpl: '你的市场挂单 #{listingId} 已失效，因为你已不再拥有所需资源。预留资源已返还{br}{marketplaceListingDetails}{br}手续费 {goldFee} 也已返还'
+
+  MarketplaceListingExpired:
+    title: 市场挂单已过期
+    tpl: '你的市场挂单 #{listingId} 已过期。预留资源已返还{br}{marketplaceListingDetails}{br}手续费 {goldFee} 也已返还'
+
   ClanMemberRoleChangedToUser:
     title: 家族身份已更改
     tpl: '你在家族 {clan} 中的身份 {oldClanMemberRole} 已更改为 {newClanMemberRole}'
@@ -1610,6 +1725,91 @@ credits:
 patchNotes:
   showAllPatches: '+ {count} 个补丁 | + {count} 个补丁'
   latestPatch: 最新补丁
+
+marketplace:
+  currency:
+    gold: 金币
+    heirloomPoints: 转生点
+  filter:
+    currencyMode:
+      Any: 任意
+      None: 无
+      CustomRange: 自定义范围
+    selectItemType: 选择物品类型
+    orSeparator: 或
+    chooseItem: 选择物品
+  createListing:
+    title: 创建挂单
+    personal: 个人物品
+    validation:
+      hasTradeValue: 请选择物品，或填写大于 0 的金币/转生点数量
+      toast: 你的报价和求购内容都必须包含物品或大于 0 的数量
+    offer:
+      label: 提供
+      selectItem: 选择要提供的物品
+      goldMutualExclusion: 在提供中填写金币后，将无法在求购中填写金币，反之亦然
+      heirloomPointsMutualExclusion: 在提供中填写转生点后，将无法在求购中填写转生点，反之亦然
+    request:
+      label: 求购
+      selectItem: 选择要请求的物品
+      goldMutualExclusion: 在求购中填写金币后，将无法在提供中填写金币，反之亦然
+      heirloomPointsMutualExclusion: 在求购中填写转生点后，将无法在提供中填写转生点，反之亦然
+    fees:
+      listingFee:
+        label: 上架费
+        description: 将挂单发布 {days} 天所需的固定费用
+        nonRefundable: 此费用不予退还
+      goldCommission:
+        label: 金币手续费
+        description: 金币总额的 {percent}% 手续费。创建挂单时先行预留，若在成交前取消挂单则会返还
+      totalUpfront:
+        label: 创建时总扣除
+        description: 创建挂单时将扣除的金币总额，包含上架费和适用手续费
+  page:
+    columns:
+      seller: 卖家
+      buyer: 买家
+      offer: 提供
+      request: 求购
+      expiresIn: 剩余时间
+      acceptedAt: 成交时间
+      goldFee: 金币手续费
+    expiryTooltip:
+      created: 创建时间
+      expires: 过期时间
+    actions:
+      delete: 删除
+      accept: 接受
+    deletePopover:
+      title: 将返还：
+      goldFee: 金币手续费
+      gold: 金币
+      heirloomPoints: 转生点
+    acceptDialog:
+      title: 接受挂单
+      titleFrom: 接受来自以下卖家的挂单
+      youWillReceive: 你将获得
+      youWillGive: 你将付出
+    controls:
+      searchMode: 搜索
+      onlyAffordable: 仅显示可负担的挂单
+      myListings: '仅看我的挂单（{count}/{limit}）'
+      createListing: 创建挂单
+      offerLimitReached: 你已达到活跃挂单数量上限
+      listingLimitReached: 你已达到活跃挂单数量上限
+      reset: 重置
+      search: 搜索
+    filters:
+      offered: 提供
+      requested: 求购
+  side:
+    offered: 提供
+    requested: 求购
+  history:
+    title: 交易历史
+    filters:
+      self: 仅自己
+      idPlaceholder: 用户 ID
 
 campaign:
   registration:
