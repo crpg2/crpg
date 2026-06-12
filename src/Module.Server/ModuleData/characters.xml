@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MPCharacters>
-  <NPCCharacter id="crpg_character" name="{=}cRPG Character">
+  <NPCCharacter id="crpg_character" name="{=}cRPG Character" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="00000C07000000010011111211151111000701000010000000111011000101000000500202111110000000000000000000000000000000000000000000A00000" />
     </face>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MasterTagFolder" id="{013dc018-a072-4eec-a125-c50573d2c7e7}">
+		<property name="name">
+			<value>Master</value>
+		</property>
+		<relationship name="items">
+			<destination>{73f18f13-a39a-4381-b04b-b34bd4edc4fd}</destination>
+			<destination>{e247ac20-6290-4f2d-b9a5-96ea5fab72c4}</destination>
+			<destination>{72ff8159-bbd5-4966-98e0-6de651d32456}</destination>
+			<destination>{bcece686-40b0-457b-870c-2908ddd72455}</destination>
+			<destination>{2d35ad49-e413-42e6-a764-da6117528f73}</destination>
+			<destination>{efaf4eeb-1948-45e8-a6dc-86a51fe1e66c}</destination>
+			<destination>{97dcd2c4-d869-445a-8b51-99206300c848}</destination>
+			<destination>{b0e79478-0f60-42d2-96e4-2eed7d090821}</destination>
+			<destination>{58643988-1f47-405e-a31a-2d3ca62c1bf7}</destination>
+			<destination>{565a8cdc-ee2a-4e7f-96ac-d5b20b46854d}</destination>
+			<destination>{fae850c6-0195-4129-b1df-33a68c4b25e7}</destination>
+			<destination>{7a8793f9-0512-458b-9db4-ff7d970fdebd}</destination>
+			<destination>{77b02cf4-58c0-4cd1-a68b-b95fb48f72dc}</destination>
+			<destination>{c6a56780-7b9a-45d1-a7b0-b851a4c08b23}</destination>
+			<destination>{8ca5299a-671b-4390-8ccd-86277136be5b}</destination>
+			<destination>{ba1ac462-dee7-436e-b84f-02dd4faf7867}</destination>
+			<destination>{06e816ad-4a45-4838-be53-0664bc086233}</destination>
+			<destination>{4b43a068-f13a-4043-83ff-ec44a0d913d5}</destination>
+			<destination>{152f502a-0cea-4048-858e-fa6937576e98}</destination>
+			<destination>{44a3823f-b4a5-43b0-b909-696a5051b357}</destination>
+			<destination>{b69063b1-406e-4582-870b-181585c774de}</destination>
+			<destination>{d52e1330-87fe-4560-9cf1-1f958a293eb6}</destination>
+			<destination>{afdb0906-0357-4a18-a4fb-070dd61ef0ec}</destination>
+			<destination>{f2c9ecb2-e085-4ed8-8605-6cad262776ad}</destination>
+			<destination>{25643cd7-1f7b-4894-ab6f-8b45c82e8b8c}</destination>
+			<destination>{3b3328da-5f97-4eb8-94fa-062f8447df9d}</destination>
+			<destination>{c819708d-ae98-40f8-8610-093504a33a25}</destination>
+			<destination>{60ffccd0-e617-49e3-ab8e-563d7845e70a}</destination>
+			<destination>{4a8870d6-e953-4961-9165-6d967434bdf4}</destination>
+			<destination>{c8b5e645-95d2-4814-935e-940dbbf5a274}</destination>
+			<destination>{6c3fae26-23df-468d-a77b-b2295c700f5d}</destination>
+		</relationship>
+	</object>
+	<object class="Tag" id="{73f18f13-a39a-4381-b04b-b34bd4edc4fd}">
+		<property name="name">
+			<value>f-change</value>
+		</property>
+	</object>
+	<object class="Tag" id="{e247ac20-6290-4f2d-b9a5-96ea5fab72c4}">
+		<property name="name">
+			<value>f-fix</value>
+		</property>
+	</object>
+	<object class="Tag" id="{72ff8159-bbd5-4966-98e0-6de651d32456}">
+		<property name="name">
+			<value>f-phy_empty</value>
+		</property>
+	</object>
+	<object class="Tag" id="{bcece686-40b0-457b-870c-2908ddd72455}">
+		<property name="name">
+			<value>referencee</value>
+		</property>
+	</object>
+	<object class="Tag" id="{2d35ad49-e413-42e6-a764-da6117528f73}">
+		<property name="name">
+			<value>combatActive</value>
+		</property>
+	</object>
+	<object class="Tag" id="{efaf4eeb-1948-45e8-a6dc-86a51fe1e66c}">
+		<property name="name">
+			<value>combat-curve</value>
+		</property>
+	</object>
+	<object class="Tag" id="{97dcd2c4-d869-445a-8b51-99206300c848}">
+		<property name="name">
+			<value>voice</value>
+		</property>
+	</object>
+	<object class="Tag" id="{b0e79478-0f60-42d2-96e4-2eed7d090821}">
+		<property name="name">
+			<value>impact</value>
+		</property>
+	</object>
+	<object class="Tag" id="{58643988-1f47-405e-a31a-2d3ca62c1bf7}">
+		<property name="name">
+			<value>impact-material</value>
+		</property>
+	</object>
+	<object class="Tag" id="{565a8cdc-ee2a-4e7f-96ac-d5b20b46854d}">
+		<property name="name">
+			<value>running</value>
+		</property>
+	</object>
+	<object class="Tag" id="{fae850c6-0195-4129-b1df-33a68c4b25e7}">
+		<property name="name">
+			<value>siege-big</value>
+		</property>
+	</object>
+	<object class="Tag" id="{7a8793f9-0512-458b-9db4-ff7d970fdebd}">
+		<property name="name">
+			<value>siege-small</value>
+		</property>
+	</object>
+	<object class="Tag" id="{77b02cf4-58c0-4cd1-a68b-b95fb48f72dc}">
+		<property name="name">
+			<value>passby</value>
+		</property>
+	</object>
+	<object class="Tag" id="{c6a56780-7b9a-45d1-a7b0-b851a4c08b23}">
+		<property name="name">
+			<value>multiplier</value>
+		</property>
+	</object>
+	<object class="Tag" id="{8ca5299a-671b-4390-8ccd-86277136be5b}">
+		<property name="name">
+			<value>damage</value>
+		</property>
+	</object>
+	<object class="Tag" id="{ba1ac462-dee7-436e-b84f-02dd4faf7867}">
+		<property name="name">
+			<value>equip</value>
+		</property>
+	</object>
+	<object class="Tag" id="{06e816ad-4a45-4838-be53-0664bc086233}">
+		<property name="name">
+			<value>swing</value>
+		</property>
+	</object>
+	<object class="Tag" id="{4b43a068-f13a-4043-83ff-ec44a0d913d5}">
+		<property name="name">
+			<value>Ambient</value>
+		</property>
+	</object>
+	<object class="Tag" id="{152f502a-0cea-4048-858e-fa6937576e98}">
+		<property name="name">
+			<value>disto</value>
+		</property>
+	</object>
+	<object class="Tag" id="{44a3823f-b4a5-43b0-b909-696a5051b357}">
+		<property name="name">
+			<value>FIX</value>
+		</property>
+	</object>
+	<object class="Tag" id="{b69063b1-406e-4582-870b-181585c774de}">
+		<property name="name">
+			<value>prefabexport</value>
+		</property>
+	</object>
+	<object class="Tag" id="{d52e1330-87fe-4560-9cf1-1f958a293eb6}">
+		<property name="name">
+			<value>range-short</value>
+		</property>
+	</object>
+	<object class="Tag" id="{afdb0906-0357-4a18-a4fb-070dd61ef0ec}">
+		<property name="name">
+			<value>range-tiny</value>
+		</property>
+	</object>
+	<object class="Tag" id="{f2c9ecb2-e085-4ed8-8605-6cad262776ad}">
+		<property name="name">
+			<value>range-long</value>
+		</property>
+	</object>
+	<object class="Tag" id="{25643cd7-1f7b-4894-ab6f-8b45c82e8b8c}">
+		<property name="name">
+			<value>Quad</value>
+		</property>
+	</object>
+	<object class="Tag" id="{3b3328da-5f97-4eb8-94fa-062f8447df9d}">
+		<property name="name">
+			<value>DELETE</value>
+		</property>
+	</object>
+	<object class="Tag" id="{c819708d-ae98-40f8-8610-093504a33a25}">
+		<property name="name">
+			<value>siege-attenuation</value>
+		</property>
+	</object>
+	<object class="Tag" id="{60ffccd0-e617-49e3-ab8e-563d7845e70a}">
+		<property name="name">
+			<value>siege-dist_ok</value>
+		</property>
+	</object>
+	<object class="Tag" id="{4a8870d6-e953-4961-9165-6d967434bdf4}">
+		<property name="name">
+			<value>siege-dist-ok</value>
+		</property>
+	</object>
+	<object class="Tag" id="{c8b5e645-95d2-4814-935e-940dbbf5a274}">
+		<property name="name">
+			<value>maxLength</value>
+		</property>
+	</object>
+	<object class="Tag" id="{6c3fae26-23df-468d-a77b-b2295c700f5d}">
+		<property name="name">
+			<value>3</value>
+		</property>
+	</object>
+</objects>

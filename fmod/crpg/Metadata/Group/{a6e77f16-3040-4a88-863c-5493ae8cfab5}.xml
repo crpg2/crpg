@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{a6e77f16-3040-4a88-863c-5493ae8cfab5}">
+		<property name="name">
+			<value>Controller</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{d163f106-28ea-415e-a379-a27a096ff69f}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{21bfc659-b307-4baa-8744-bb27e7821ee8}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{8c0df6cd-bac8-440e-be19-e2cf26a6c8fd}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{d163f106-28ea-415e-a379-a27a096ff69f}">
+		<relationship name="effects">
+			<destination>{ca281974-9149-4346-98c9-63aed6de3d44}</destination>
+			<destination>{aa23a402-36a0-4ac1-9687-3e714c5fb3af}</destination>
+			<destination>{336e827c-39ea-4664-a477-fd2fbfcc96af}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{21bfc659-b307-4baa-8744-bb27e7821ee8}" />
+	<object class="ThreeEQEffect" id="{ca281974-9149-4346-98c9-63aed6de3d44}">
+		<property name="midGain">
+			<value>-80</value>
+		</property>
+		<property name="highGain">
+			<value>-80</value>
+		</property>
+		<property name="lowCrossover">
+			<value>200</value>
+		</property>
+	</object>
+	<object class="CompressorEffect" id="{aa23a402-36a0-4ac1-9687-3e714c5fb3af}">
+		<property name="threshold">
+			<value>-21</value>
+		</property>
+		<property name="ratio">
+			<value>10.5</value>
+		</property>
+		<property name="attackTime">
+			<value>80</value>
+		</property>
+		<property name="releaseTime">
+			<value>10</value>
+		</property>
+		<property name="gain">
+			<value>3</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{336e827c-39ea-4664-a477-fd2fbfcc96af}" />
+</objects>

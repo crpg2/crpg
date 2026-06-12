@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{8849a751-38e8-491e-adef-8f6e379c6a1a}">
+		<property name="name">
+			<value>BodydragSpeed</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ccfec0d4-2038-477b-b073-454bea9e46bf}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ccfec0d4-2038-477b-b073-454bea9e46bf}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

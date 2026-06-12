@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(code-review)",
+      "Bash(gh pr *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:patch-diff.githubusercontent.com)",
+      "Bash(git checkout *)",
+      "WebFetch(domain:moddocs.bannerlord.com)",
+      "Bash(python3 *)"
+    ]
+  }
+}

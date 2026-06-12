@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+<events>
+	<event
+		guid="{cb991032-9264-416c-a188-ae20825a9ce4}"
+		path="event:/voice/crpg/male/whistle"
+		length="1.0104791666666666"
+		max_distance="450"
+		priority_multiplier="1"
+		bassgid="-1"
+		parameter_indices="Occlusion,isPlayer"
+		send_is_player="true"
+		send_occlusion="true"/>
+</events>
+</base>

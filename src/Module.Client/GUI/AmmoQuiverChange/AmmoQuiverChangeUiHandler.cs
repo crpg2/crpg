@@ -90,6 +90,7 @@ internal class AmmoQuiverChangeUiHandler : MissionView, IUseKeyBinder
 
         if (quiverChangeKey != null && (Input.IsKeyPressed(quiverChangeKey.KeyboardKey.InputKey) || Input.IsKeyPressed(quiverChangeKey.ControllerKey.InputKey)))
         {
+            Agent.Main?.MakeVoice(new SkinVoiceManager.SkinVoiceType("Whistle"), SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
             _weaponChangeBehavior?.RequestChangeRangedAmmo();
         }
 

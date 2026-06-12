@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{e730c409-a6ca-0d2f-27b8-8234d82f9370}">
+		<property name="name">
+			<value>Horse Gallop Spatializer</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{d8560bf0-a9ee-4fec-a668-83c3d4b34a7f}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{d8560bf0-a9ee-4fec-a668-83c3d4b34a7f}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0.5</value>
+		</property>
+		<property name="maximumDistance">
+			<value>300</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>1</value>
+		</property>
+		<property name="minimumExtent">
+			<value>20</value>
+		</property>
+		<property name="occlusionEnabled">
+			<value>false</value>
+		</property>
+		<property name="dopplerMultiplier">
+			<value>0</value>
+		</property>
+		<property name="LFEUpmixEnabled">
+			<value>true</value>
+		</property>
+		<property name="stereoToSurroundUserPanMode">
+			<value>0</value>
+		</property>
+		<relationship name="automators">
+			<destination>{5e11492b-5c6b-4a6a-8fa6-895ebc94b0ab}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{5e11492b-5c6b-4a6a-8fa6-895ebc94b0ab}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>minimumExtent</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{c325e2f7-181c-47d7-915a-fcebf6b3fcfe}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{c325e2f7-181c-47d7-915a-fcebf6b3fcfe}">
+		<relationship name="parameter">
+			<destination>{565bf8c8-c3e6-4e86-b407-5ccec5dc98d5}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{f11a8eb6-7130-45b4-ae8d-3b76ec5b2ba8}</destination>
+			<destination>{64253861-4124-46d7-b029-cf223d6f7dee}</destination>
+			<destination>{25e26966-047c-4f63-928e-94a9e7c3efe6}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{f11a8eb6-7130-45b4-ae8d-3b76ec5b2ba8}">
+		<property name="position">
+			<value>30</value>
+		</property>
+		<property name="value">
+			<value>10</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{64253861-4124-46d7-b029-cf223d6f7dee}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>180</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.354715645</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{25e26966-047c-4f63-928e-94a9e7c3efe6}">
+		<property name="position">
+			<value>100</value>
+		</property>
+		<property name="value">
+			<value>10</value>
+		</property>
+	</object>
+</objects>

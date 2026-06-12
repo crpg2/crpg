@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerPort" id="{863df414-bd27-4061-85b6-112a676ce2a2}">
+		<property name="name">
+			<value>Voice</value>
+		</property>
+		<property name="portType">
+			<value>2</value>
+		</property>
+		<relationship name="masters">
+			<destination>{49b6d345-8dc5-449c-96ee-c5d4a7e5a29f}</destination>
+		</relationship>
+		<relationship name="effectChain">
+			<destination>{19c65b25-2a5a-4c4d-adae-449931181f77}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{8fe8fae4-2c25-44c1-b03b-321a62b0ce9a}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{bc2f2d66-95cb-4a2a-a6b5-c608e1cf95e8}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{19c65b25-2a5a-4c4d-adae-449931181f77}">
+		<relationship name="effects">
+			<destination>{65c734ac-2703-4349-a3af-7ca863c837e5}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{8fe8fae4-2c25-44c1-b03b-321a62b0ce9a}" />
+	<object class="MixerBusFader" id="{65c734ac-2703-4349-a3af-7ca863c837e5}" />
+</objects>

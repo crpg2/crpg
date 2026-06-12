@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{3cbdd777-8e84-44f5-9230-618177db8993}">
+		<property name="name">
+			<value>MissionProsperity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{3f42afec-552b-4ee6-a66f-c45e5b51054e}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{3f42afec-552b-4ee6-a66f-c45e5b51054e}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>None</value>
+			<value>Low</value>
+			<value>Medium</value>
+			<value>High</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>2</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

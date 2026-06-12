@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerReturn" id="{e100e6e6-2cf4-4992-8d52-bb215a4e91d9}">
+		<property name="volume">
+			<value>-10</value>
+		</property>
+		<property name="name">
+			<value>Reverb</value>
+		</property>
+		<relationship name="masters">
+			<destination>{0527aad2-0268-409f-86d7-9a2cb115ad33}</destination>
+		</relationship>
+		<relationship name="effectChain">
+			<destination>{c21a7993-afd8-4ef5-b979-10038eb16eb5}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{077274d0-595e-4d35-9333-1b3752bd51ab}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{018bb1d5-ab4b-45c0-a167-2699455c7207}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{c21a7993-afd8-4ef5-b979-10038eb16eb5}">
+		<relationship name="effects">
+			<destination>{48e90237-ec51-4fdf-9eb9-ced6547b39a7}</destination>
+			<destination>{24f687b0-f059-4324-a3c3-76f3f8aceebe}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{077274d0-595e-4d35-9333-1b3752bd51ab}">
+		<property name="overridingOutputFormat">
+			<value>2</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{48e90237-ec51-4fdf-9eb9-ced6547b39a7}">
+		<property name="decayTime">
+			<value>600</value>
+		</property>
+		<property name="earlyDelay">
+			<value>100</value>
+		</property>
+		<property name="lateDelay">
+			<value>77</value>
+		</property>
+		<property name="HFReference">
+			<value>20000</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>30.5</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>-6</value>
+		</property>
+		<property name="highCut">
+			<value>2900</value>
+		</property>
+		<property name="wetLevel">
+			<value>-36</value>
+		</property>
+		<property name="dryLevel">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{24f687b0-f059-4324-a3c3-76f3f8aceebe}" />
+</objects>

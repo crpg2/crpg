@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerReturn" id="{7c5f1ef6-f166-4241-82e9-67769e284e1d}">
+		<property name="overridingInputFormat">
+			<value>1</value>
+		</property>
+		<property name="name">
+			<value>Player</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{a049fb22-24c8-48a7-9950-2f14473e331a}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{48957800-77d5-492c-adf0-4edef4a397ed}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{4b27def8-8232-4394-a7c7-8c4ea95ede32}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{a049fb22-24c8-48a7-9950-2f14473e331a}">
+		<relationship name="effects">
+			<destination>{07b1d7fe-5295-433e-b196-4da378d4c60a}</destination>
+			<destination>{d229f4cb-cb5a-4922-b33d-fbd2d487edab}</destination>
+			<destination>{492aeada-b133-44e0-8cf8-e6765cff9bf4}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{48957800-77d5-492c-adf0-4edef4a397ed}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{07b1d7fe-5295-433e-b196-4da378d4c60a}" />
+	<object class="Sidechain" id="{d229f4cb-cb5a-4922-b33d-fbd2d487edab}" />
+	<object class="CompressorEffect" id="{492aeada-b133-44e0-8cf8-e6765cff9bf4}">
+		<property name="threshold">
+			<value>-10</value>
+		</property>
+		<property name="ratio">
+			<value>1.79999995</value>
+		</property>
+		<property name="attackTime">
+			<value>10</value>
+		</property>
+		<property name="gain">
+			<value>4</value>
+		</property>
+	</object>
+</objects>

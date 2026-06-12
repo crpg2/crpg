@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{983ae073-a238-4d4b-8279-bd02fd133b21}">
+		<property name="name">
+			<value>WaveHeight</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ef765504-1ee0-44a3-abf2-49f945054739}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ef765504-1ee0-44a3-abf2-49f945054739}">
+		<property name="minimum">
+			<value>-10</value>
+		</property>
+		<property name="maximum">
+			<value>10</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>-10</value>
+		</property>
+		<property name="seekSpeedDescending">
+			<value>1</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

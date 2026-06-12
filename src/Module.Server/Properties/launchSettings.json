@@ -1,5 +1,4 @@
 {
-  "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
     "Battle": {
       "commandName": "Executable",
@@ -50,10 +49,7 @@
       "commandName": "Executable",
       "executablePath": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server\\DedicatedCustomServer.Starter.exe",
       "commandLineArgs": "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /dedicatedcustomserverconfigfile ..\\cRPG\\ds_config_crpg_dtv.txt /port 7210 /no_watchdog",
-      "workingDirectory": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server",
-      "environmentVariables": {
-        "CRPG_API_BASE_URL": "https://api.c-rpg.eu"
-      }
+      "workingDirectory": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server"
     },
     "TrainingGround": {
       "commandName": "Executable",
@@ -64,5 +60,6 @@
         "CRPG_API_BASE_URL": "https://api.c-rpg.eu"
       }
     }
-  }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json"
 }

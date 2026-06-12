@@ -1,0 +1,78 @@
+<voice_definitions>
+  <voice_type_declarations>
+    <voice_type name="Whistle" />
+  </voice_type_declarations>
+
+  <voice_definition
+    name="male_01"
+    sound_and_collision_info_class="human"
+    only_for_npcs="false"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+  </voice_definition>
+
+  <voice_definition
+    name="male_02"
+    sound_and_collision_info_class="human"
+    only_for_npcs="false"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+  </voice_definition>
+
+  <voice_definition
+    name="male_03"
+    sound_and_collision_info_class="human"
+    only_for_npcs="false"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+  </voice_definition>
+
+  <voice_definition
+    name="male_04"
+    sound_and_collision_info_class="human"
+    only_for_npcs="false"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+  </voice_definition>
+
+  <voice_definition
+    name="male_05"
+    sound_and_collision_info_class="human"
+    only_for_npcs="false"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+  </voice_definition>
+
+  <voice_definition
+    name="male_06"
+    sound_and_collision_info_class="human"
+    only_for_npcs="false"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+  </voice_definition>
+
+  <voice_definition
+    name="male_07"
+    sound_and_collision_info_class="human"
+    only_for_npcs="false"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+  </voice_definition>
+
+  <voice_definition
+    name="male_08"
+    sound_and_collision_info_class="human"
+    only_for_npcs="false"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+  </voice_definition>
+
+</voice_definitions>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{a53ed5b3-7a5e-4bf5-881b-505127875fb8}">
+		<property name="name">
+			<value>CampaignCameraHeight</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ee93d04d-06d4-403d-a6c4-3f907e2e6173}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ee93d04d-06d4-403d-a6c4-3f907e2e6173}">
+		<property name="maximum">
+			<value>1000</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

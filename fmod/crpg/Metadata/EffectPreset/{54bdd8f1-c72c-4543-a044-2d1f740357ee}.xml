@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{54bdd8f1-c72c-4543-a044-2d1f740357ee}">
+		<property name="name">
+			<value>Siege Move ADSR</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{f9e76e55-9e7d-40fb-af59-56ef04780462}</destination>
+		</relationship>
+	</object>
+	<object class="GainEffect" id="{f9e76e55-9e7d-40fb-af59-56ef04780462}">
+		<relationship name="modulators">
+			<destination>{df1440be-ff46-4446-9d10-916043e12124}</destination>
+		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{df1440be-ff46-4446-9d10-916043e12124}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>gain</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>250</value>
+		</property>
+		<property name="releaseTime">
+			<value>2000</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
+</objects>

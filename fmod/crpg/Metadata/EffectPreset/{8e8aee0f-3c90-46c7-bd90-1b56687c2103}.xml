@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{8e8aee0f-3c90-46c7-bd90-1b56687c2103}">
+		<property name="name">
+			<value>Campaign Ambient ADSR</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{c7c5cc7d-b4ee-44c7-8ce2-402cf2ed704b}</destination>
+		</relationship>
+	</object>
+	<object class="GainEffect" id="{c7c5cc7d-b4ee-44c7-8ce2-402cf2ed704b}">
+		<relationship name="modulators">
+			<destination>{72bc2776-a1af-46f0-b72f-5c80773daed0}</destination>
+		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{72bc2776-a1af-46f0-b72f-5c80773daed0}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>gain</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="releaseTime">
+			<value>4000</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
+</objects>

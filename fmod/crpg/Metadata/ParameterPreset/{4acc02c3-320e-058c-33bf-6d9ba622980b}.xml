@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{4acc02c3-320e-058c-33bf-6d9ba622980b}">
+		<property name="name">
+			<value>battle_size</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{0ac8c463-ba84-468b-841c-ae2154a95baa}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{0ac8c463-ba84-468b-841c-ae2154a95baa}">
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>2</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

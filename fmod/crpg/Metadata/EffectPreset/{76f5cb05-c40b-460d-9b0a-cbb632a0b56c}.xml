@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{76f5cb05-c40b-460d-9b0a-cbb632a0b56c}">
+		<property name="name">
+			<value>Siege Big Gain Distant</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{43f38032-1f3d-446a-bd62-a68668f45fbd}</destination>
+		</relationship>
+	</object>
+	<object class="GainEffect" id="{43f38032-1f3d-446a-bd62-a68668f45fbd}">
+		<relationship name="automators">
+			<destination>{f9634dfc-0d91-4444-be6c-733b6254ae69}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{f9634dfc-0d91-4444-be6c-733b6254ae69}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>gain</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{2a7c6b94-5a64-4804-8219-d3c807916835}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{2a7c6b94-5a64-4804-8219-d3c807916835}">
+		<relationship name="parameter">
+			<destination>{ce180e1f-6da6-4b89-b015-aed11271bab3}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{d0f19f4a-c32e-4b65-ab3d-5cf8a92de089}</destination>
+			<destination>{f943ba87-4549-401e-821c-909e29b4483a}</destination>
+			<destination>{86b77428-edec-4460-9697-fc8ced145e0e}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{d0f19f4a-c32e-4b65-ab3d-5cf8a92de089}">
+		<property name="position">
+			<value>100</value>
+		</property>
+		<property name="value">
+			<value>-6</value>
+		</property>
+		<property name="curveShape">
+			<value>0.321752578</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{f943ba87-4549-401e-821c-909e29b4483a}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>-32</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.182912678</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{86b77428-edec-4460-9697-fc8ced145e0e}">
+		<property name="position">
+			<value>500</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+	</object>
+</objects>

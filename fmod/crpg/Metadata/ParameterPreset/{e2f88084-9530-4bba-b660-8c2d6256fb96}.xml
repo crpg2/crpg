@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{e2f88084-9530-4bba-b660-8c2d6256fb96}">
+		<property name="name">
+			<value>RowingPower</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{52f47f42-141d-482e-b8c8-34374fffeb4b}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{52f47f42-141d-482e-b8c8-34374fffeb4b}">
+		<property name="maximum">
+			<value>500</value>
+		</property>
+		<property name="isHeld">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>1000</value>
+		</property>
+		<property name="seekSpeedDescending">
+			<value>150</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
+		</property>
+	</object>
+</objects>

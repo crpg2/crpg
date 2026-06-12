@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{ab4f6c33-d351-4dbd-ade6-76892e687be9}">
+		<property name="name">
+			<value>Tavern Music Distancing</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{6634d776-c61c-4a69-8aef-47edcfe6c6ff}</destination>
+		</relationship>
+	</object>
+	<object class="EffectChain" id="{6634d776-c61c-4a69-8aef-47edcfe6c6ff}">
+		<relationship name="effects">
+			<destination>{cae80648-107b-418b-ba33-268d64b3ec2f}</destination>
+			<destination>{69997376-cfc6-4131-aaf8-8a9c704773c5}</destination>
+			<destination>{3e544cc1-15b1-4616-8981-8ec28f64218a}</destination>
+			<destination>{0e6162ee-db24-4e99-870b-822e57409080}</destination>
+		</relationship>
+	</object>
+	<object class="GainEffect" id="{cae80648-107b-418b-ba33-268d64b3ec2f}">
+		<property name="gain">
+			<value>-3</value>
+		</property>
+	</object>
+	<object class="MixerSend" id="{69997376-cfc6-4131-aaf8-8a9c704773c5}">
+		<property name="level">
+			<value>-6</value>
+		</property>
+		<relationship name="automators">
+			<destination>{129dd51b-4a4a-4e4c-b0da-7d4513a4985e}</destination>
+		</relationship>
+		<relationship name="mixerReturn">
+			<destination>{1a8e0400-3ad5-4710-b783-8ea7d4295404}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{3e544cc1-15b1-4616-8981-8ec28f64218a}">
+		<property name="distanceRolloffType">
+			<value>3</value>
+		</property>
+		<property name="minimumDistance">
+			<value>3</value>
+		</property>
+		<property name="maximumDistance">
+			<value>50</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>6</value>
+		</property>
+		<property name="minimumExtent">
+			<value>60</value>
+		</property>
+	</object>
+	<object class="MixerSend" id="{0e6162ee-db24-4e99-870b-822e57409080}">
+		<property name="level">
+			<value>0</value>
+		</property>
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{e100e6e6-2cf4-4992-8d52-bb215a4e91d9}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{129dd51b-4a4a-4e4c-b0da-7d4513a4985e}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>level</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{589b8f22-ccb1-4faa-accc-8d85e54cbfdd}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{589b8f22-ccb1-4faa-accc-8d85e54cbfdd}">
+		<relationship name="parameter">
+			<destination>{9903b400-5457-4672-b4b2-7768d51b0596}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{0162f7e1-28ed-4ced-b7c5-46942a9e8bf5}</destination>
+			<destination>{21b6e841-dedb-44dc-b0c6-41a3db30ddae}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{0162f7e1-28ed-4ced-b7c5-46942a9e8bf5}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{21b6e841-dedb-44dc-b0c6-41a3db30ddae}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>-6</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="SnapshotGroup" id="{2d0fb9ef-d5d7-42d8-9a79-a7cdd9e94e0f}">
+		<property name="name">
+			<value>Reverbs</value>
+		</property>
+		<relationship name="folder">
+			<destination>{182d08c6-5eb5-4b39-9344-a1e70131f5cd}</destination>
+		</relationship>
+		<relationship name="items">
+			<destination>{18d379e4-4f6e-43c9-97b3-042ddb399834}</destination>
+			<destination>{d922af38-32e6-48e8-a507-b90eae348e24}</destination>
+			<destination>{7f43d61d-c80f-4035-ba4f-aacd2d9eb51e}</destination>
+			<destination>{8e638cff-d35d-45d7-b0f7-6a11f60f0de8}</destination>
+			<destination>{e662f3da-a7e4-41a8-b7a3-7741e3ae72a3}</destination>
+			<destination>{55823e4c-aa92-4f0c-9886-b5ac43536961}</destination>
+			<destination>{69789f5b-22a9-4c2d-ba20-dc29af475dd5}</destination>
+			<destination>{b7067728-ec75-4356-8002-01d6af7410a6}</destination>
+			<destination>{ce185616-3587-4cc5-8e2f-7b646c32f267}</destination>
+			<destination>{79224fb2-f701-458c-a90b-5d84392affc2}</destination>
+			<destination>{558e4b09-fb8f-47f7-9cae-3e0ce78374b9}</destination>
+		</relationship>
+	</object>
+</objects>

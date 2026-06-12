@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{5a758b39-bb40-44cc-b89d-6000ae2bb45c}">
+		<property name="name">
+			<value>Siege-Medium</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{9a7bee13-bead-48f1-a197-db51e0fcff4a}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{9a7bee13-bead-48f1-a197-db51e0fcff4a}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+		<property name="minimumDistance">
+			<value>3</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>3</value>
+		</property>
+		<property name="minimumExtent">
+			<value>30</value>
+		</property>
+		<property name="userLFELevel">
+			<value>-80</value>
+		</property>
+		<property name="stereoToSurroundUserPanMode">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

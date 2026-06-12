@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{124f32bf-b731-4b4a-a39d-882fc9d0e2a9}">
+		<property name="name">
+			<value>Crowd Size</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{82f292e7-7e29-4090-bb1d-27d089e21eab}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{82f292e7-7e29-4090-bb1d-27d089e21eab}">
+		<property name="maximum">
+			<value>1000</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>1000</value>
+		</property>
+	</object>
+</objects>
