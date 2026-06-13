@@ -1819,7 +1819,7 @@
         <equipment slot="Body" id="Item.crpg_battania_brass_plate_armor_v2_h0" />
         <equipment slot="Gloves" id="Item.crpg_northern_brass_bracers_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_steppe_leather_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_fine_steel_menavlion_v5_h2" />
+        <equipment slot="Item0" id="Item.crpg_fine_steel_menavlion_v6_h2" />
       </EquipmentRoster>
       <EquipmentRoster>
         <equipment slot="Head" id="Item.crpg_plumed_helmet_v2_h0" />
@@ -2915,7 +2915,7 @@
         <equipment slot="Leg" id="Item.crpg_decorated_imperial_boots_v2_h0" />
         <equipment slot="Horse" id="Item.crpg_mount1_camel_10_v3_h0" />
         <equipment slot="HorseHarness" id="Item.crpg_tv_camelarmor_d_v3_h0" />
-        <equipment slot="Item0" id="Item.crpg_fine_steel_menavlion_v5_h2" />
+        <equipment slot="Item0" id="Item.crpg_fine_steel_menavlion_v6_h2" />
         <equipment slot="Item1" id="Item.crpg_noyans_shield_v4_h3" />
         <equipment slot="Item2" id="Item.crpg_heavy_horsemans_mace_v3_h3" />
       </EquipmentRoster>

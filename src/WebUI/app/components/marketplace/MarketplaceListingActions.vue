@@ -88,9 +88,9 @@ const hasRefund = computed(() => listing.goldFee > 0 || listing.offer.gold > 0 |
       <template #description>
         <MarketplaceListingAssetGroup
           :offered-title="$t('marketplace.page.acceptDialog.youWillReceive')"
-          :offered="listing.request"
+          :offered="listing.offer"
           :requested-title="$t('marketplace.page.acceptDialog.youWillGive')"
-          :requested="listing.offer"
+          :requested="listing.request"
         />
       </template>
     </AppConfirmActionDialog>

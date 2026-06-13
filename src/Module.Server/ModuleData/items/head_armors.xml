@@ -10344,4 +10344,100 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_disabled_kadseears_h0" name="{=Yeldur}Kadseears" subtype="head_armor" mesh="kadseears" culture="Culture.vlandia" weight="3.228808" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="none" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_disabled_kadseears_h1" name="{=Yeldur}Kadseears +1" subtype="head_armor" mesh="kadseears" culture="Culture.vlandia" weight="3.228808" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="42" has_gender_variations="false" hair_cover_type="none" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_disabled_kadseears_h2" name="{=Yeldur}Kadseears +2" subtype="head_armor" mesh="kadseears" culture="Culture.vlandia" weight="3.228808" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="44" has_gender_variations="false" hair_cover_type="none" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_disabled_kadseears_h3" name="{=Yeldur}Kadseears +3" subtype="head_armor" mesh="kadseears" culture="Culture.vlandia" weight="3.228808" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="none" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_closehelm_closed_v1_h0" name="{=AppleTruce}Decorated Closehelm" subtype="head_armor" mesh="closehelm_closed" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_closehelm_closed_v1_h1" name="{=AppleTruce}Decorated Closehelm +1" subtype="head_armor" mesh="closehelm_closed" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_closehelm_closed_v1_h2" name="{=AppleTruce}Decorated Closehelm +2" subtype="head_armor" mesh="closehelm_closed" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_closehelm_closed_v1_h3" name="{=AppleTruce}Decorated Closehelm +3" subtype="head_armor" mesh="closehelm_closed" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="70" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_closehelm_open_v1_h0" name="{=AppleTruce}Decorated Closehelm (open)" subtype="head_armor" mesh="closehelm_open" culture="Culture.vlandia" weight="5.431972" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="58" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_closehelm_open_v1_h1" name="{=AppleTruce}Decorated Closehelm (open) +1" subtype="head_armor" mesh="closehelm_open" culture="Culture.vlandia" weight="5.431972" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="60" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_closehelm_open_v1_h2" name="{=AppleTruce}Decorated Closehelm (open) +2" subtype="head_armor" mesh="closehelm_open" culture="Culture.vlandia" weight="5.431972" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_closehelm_open_v1_h3" name="{=AppleTruce}Decorated Closehelm (open) +3" subtype="head_armor" mesh="closehelm_open" culture="Culture.vlandia" weight="5.431972" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_closehelm_steel_v1_h0" name="{=AppleTruce}Steel Closehelm" subtype="head_armor" mesh="closehelm_steel" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_closehelm_steel_v1_h1" name="{=AppleTruce}Steel Closehelm +1" subtype="head_armor" mesh="closehelm_steel" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_closehelm_steel_v1_h2" name="{=AppleTruce}Steel Closehelm +2" subtype="head_armor" mesh="closehelm_steel" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_closehelm_steel_v1_h3" name="{=AppleTruce}Steel Closehelm +3" subtype="head_armor" mesh="closehelm_steel" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="70" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
 </Items>
