@@ -4,7 +4,7 @@
     "id": 1,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{}],
+    "eventFiltersJson": [ {} ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1500,
@@ -17,7 +17,7 @@
     "id": 2,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"OneHandedSword"}],
+    "eventFiltersJson": [ { "WeaponClass": "OneHandedSword" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 750,
@@ -30,7 +30,7 @@
     "id": 3,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"OneHandedAxe"}],
+    "eventFiltersJson": [ { "WeaponClass": "OneHandedAxe" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 750,
@@ -43,7 +43,7 @@
     "id": 4,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"TwoHandedSword"}],
+    "eventFiltersJson": [ { "WeaponClass": "TwoHandedSword" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 750,
@@ -56,7 +56,10 @@
     "id": 5,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"OneHandedPolearm"},{"WeaponClass":"TwoHandedPolearm"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "OneHandedPolearm" },
+      { "WeaponClass": "TwoHandedPolearm" }
+    ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1000,
@@ -69,7 +72,7 @@
     "id": 6,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"Bow"}],
+    "eventFiltersJson": [ { "WeaponClass": "Bow" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1250,
@@ -82,7 +85,7 @@
     "id": 7,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"Crossbow"}],
+    "eventFiltersJson": [ { "WeaponClass": "Crossbow" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1250,
@@ -95,7 +98,7 @@
     "id": 8,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"BodyPart":"Head"}],
+    "eventFiltersJson": [ { "BodyPart": "Head" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 500,
@@ -108,7 +111,7 @@
     "id": 9,
     "type": "Daily",
     "eventType": "Kill",
-    "eventFiltersJson": [{}],
+    "eventFiltersJson": [ {} ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 20,
@@ -121,7 +124,12 @@
     "id": 10,
     "type": "Daily",
     "eventType": "Kill",
-    "eventFiltersJson": [{"BodyPart":"Head","HitType":"Ranged"}],
+    "eventFiltersJson": [
+      {
+        "BodyPart": "Head",
+        "HitType": "Ranged"
+      }
+    ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 5,
@@ -134,7 +142,7 @@
     "id": 11,
     "type": "Daily",
     "eventType": "Kill",
-    "eventFiltersJson": [{"HitType":"Ranged"}],
+    "eventFiltersJson": [ { "HitType": "Ranged" } ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 15,
@@ -147,7 +155,7 @@
     "id": 12,
     "type": "Daily",
     "eventType": "Kill",
-    "eventFiltersJson": [{"HitType":"Melee"}],
+    "eventFiltersJson": [ { "HitType": "Melee" } ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 10,
@@ -160,7 +168,10 @@
     "id": 13,
     "type": "Daily",
     "eventType": "Block",
-    "eventFiltersJson": [{"WeaponClass":"SmallShield"},{"WeaponClass":"LargeShield"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "SmallShield" },
+      { "WeaponClass": "LargeShield" }
+    ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 80,
@@ -173,7 +184,7 @@
     "id": 15,
     "type": "Daily",
     "eventType": "Block",
-    "eventFiltersJson": [{}],
+    "eventFiltersJson": [ {} ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 200,
@@ -186,7 +197,11 @@
     "id": 16,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"ThrowingAxe"},{"WeaponClass":"ThrowingKnife"},{"WeaponClass":"Javelin"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "ThrowingAxe" },
+      { "WeaponClass": "ThrowingKnife" },
+      { "WeaponClass": "Javelin" }
+    ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 500,
@@ -199,7 +214,10 @@
     "id": 17,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"Mace"},{"WeaponClass":"TwoHandedMace"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "Mace" },
+      { "WeaponClass": "TwoHandedMace" }
+    ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 750,
@@ -212,7 +230,7 @@
     "id": 18,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"BodyPart":"Legs"}],
+    "eventFiltersJson": [ { "BodyPart": "Legs" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 500,
@@ -225,7 +243,10 @@
     "id": 19,
     "type": "Daily",
     "eventType": "Kill",
-    "eventFiltersJson": [{"WeaponClass":"OneHandedSword"},{"WeaponClass":"TwoHandedSword"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "OneHandedSword" },
+      { "WeaponClass": "TwoHandedSword" }
+    ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 10,
@@ -238,7 +259,7 @@
     "id": 20,
     "type": "Daily",
     "eventType": "Block",
-    "eventFiltersJson": [{"HitType":"Ranged"}],
+    "eventFiltersJson": [ { "HitType": "Ranged" } ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 30,
@@ -246,12 +267,13 @@
     "rewardExperience": 100000,
     "isActive": true
   },
+
   {
     /* Weekly Damage Master */
     "id": 21,
     "type": "Weekly",
     "eventType": "Hit",
-    "eventFiltersJson": [{}],
+    "eventFiltersJson": [ {} ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 5000,
@@ -264,7 +286,7 @@
     "id": 22,
     "type": "Weekly",
     "eventType": "Kill",
-    "eventFiltersJson": [{}],
+    "eventFiltersJson": [ {} ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 100,
@@ -277,7 +299,12 @@
     "id": 23,
     "type": "Weekly",
     "eventType": "Kill",
-    "eventFiltersJson": [{"BodyPart":"Head","HitType":"Ranged"}],
+    "eventFiltersJson": [
+      {
+        "BodyPart": "Head",
+        "HitType": "Ranged"
+      }
+    ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 25,
@@ -290,7 +317,12 @@
     "id": 24,
     "type": "Weekly",
     "eventType": "Kill",
-    "eventFiltersJson": [{"WeaponClass":"TwoHandedSword"},{"WeaponClass":"TwoHandedAxe"},{"WeaponClass":"TwoHandedMace"},{"WeaponClass":"TwoHandedPolearm"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "TwoHandedSword" },
+      { "WeaponClass": "TwoHandedAxe" },
+      { "WeaponClass": "TwoHandedMace" },
+      { "WeaponClass": "TwoHandedPolearm" }
+    ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 50,
@@ -303,7 +335,7 @@
     "id": 25,
     "type": "Weekly",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"Musket"}],
+    "eventFiltersJson": [ { "WeaponClass": "Musket" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 5000,
@@ -316,10 +348,142 @@
     "id": 26,
     "type": "Weekly",
     "eventType": "Block",
-    "eventFiltersJson": [{"WeaponClass":"SmallShield"},{"WeaponClass":"LargeShield"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "SmallShield" },
+      { "WeaponClass": "LargeShield" }
+    ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 500,
+    "rewardGold": 10000,
+    "rewardExperience": 350000,
+    "isActive": true
+  },
+  {
+    /* Damage to mounts */
+    "id": 27,
+    "type": "Daily",
+    "eventType": "Hit",
+    "eventFiltersJson": [ { "TargetType": "Mount" } ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 1000,
+    "rewardGold": 3000,
+    "rewardExperience": 100000,
+    "isActive": true
+  },
+  {
+    /* Damage with 2H axe */
+    "id": 28,
+    "type": "Daily",
+    "eventType": "Hit",
+    "eventFiltersJson": [ { "WeaponClass": "TwoHandedAxe" } ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 750,
+    "rewardGold": 3000,
+    "rewardExperience": 100000,
+    "isActive": true
+  },
+  {
+    /* Damage with musket */
+    "id": 29,
+    "type": "Daily",
+    "eventType": "Hit",
+    "eventFiltersJson": [ { "WeaponClass": "Musket" } ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 1250,
+    "rewardGold": 3000,
+    "rewardExperience": 100000,
+    "isActive": true
+  },
+  {
+    /* Damage with cut damage type */
+    "id": 30,
+    "type": "Daily",
+    "eventType": "Hit",
+    "eventFiltersJson": [ { "DamageType": "Cut" } ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 1000,
+    "rewardGold": 3000,
+    "rewardExperience": 100000,
+    "isActive": true
+  },
+  {
+    /* Damage with pierce damage type */
+    "id": 31,
+    "type": "Daily",
+    "eventType": "Hit",
+    "eventFiltersJson": [ { "DamageType": "Pierce" } ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 1000,
+    "rewardGold": 3000,
+    "rewardExperience": 100000,
+    "isActive": true
+  },
+  {
+    /* Damage with blunt damage type */
+    "id": 32,
+    "type": "Daily",
+    "eventType": "Hit",
+    "eventFiltersJson": [ { "DamageType": "Blunt" } ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 1000,
+    "rewardGold": 3000,
+    "rewardExperience": 100000,
+    "isActive": true
+  },
+  {
+    /* Weekly 'Tis but a scratch */
+    "id": 33,
+    "type": "Weekly",
+    "eventType": "Hit",
+    "eventFiltersJson": [
+      { "BodyPart": "Legs" },
+      { "BodyPart": "ArmLeft" },
+      { "BodyPart": "ArmRight" }
+    ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 4000,
+    "rewardGold": 10000,
+    "rewardExperience": 350000,
+    "isActive": true
+  },
+  {
+    /* Weekly Stick them with the pointy end */
+    "id": 34,
+    "type": "Weekly",
+    "eventType": "Hit",
+    "eventFiltersJson": [
+      {
+        "WeaponClass": "OneHandedSword",
+        "DamageType": "Pierce"
+      }
+    ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 3000,
+    "rewardGold": 10000,
+    "rewardExperience": 350000,
+    "isActive": true
+  },
+  {
+    /* Weekly Pincushions */
+    "id": 35,
+    "eventType": "Hit",
+    "eventFiltersJson": [
+      { "WeaponClass": "ThrowingAxe" },
+      { "WeaponClass": "ThrowingKnife" },
+      { "WeaponClass": "Javelin" }
+    ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 5000,
     "rewardGold": 10000,
     "rewardExperience": 350000,
     "isActive": true
