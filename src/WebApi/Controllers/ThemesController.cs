@@ -1,4 +1,5 @@
 ﻿using Crpg.Application.Common.Results;
+using Crpg.Application.Themes.Commands;
 using Crpg.Application.Themes.Models;
 using Crpg.Application.Themes.Queries;
 using Microsoft.AspNetCore.Authorization;
@@ -15,4 +16,12 @@ public class ThemesController : BaseController
     /// <response code="200">Ok.</response>
     [HttpGet]
     public Task<ActionResult<Result<IList<ThemeViewModel>>>> GetThemes() => ResultToActionAsync(Mediator.Send(new GetThemesQuery()));
+
+    /// <summary>
+    /// Creates a new theme.
+    /// </summary>
+    /// <response code="200">Ok.</response>
+    [HttpPost]
+    [Authorize(Policy = AdminPolicy)]
+    public Task<ActionResult<Result<ThemeViewModel>>> CreateTheme([FromBody] CreateThemeCommand req) => ResultToActionAsync(Mediator.Send(req));
 }
