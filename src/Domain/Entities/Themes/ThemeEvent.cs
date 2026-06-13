@@ -11,6 +11,7 @@ public class ThemeEvent : AuditableEntity
             DateTimeOffset activeFromUtc,
             DateTimeOffset? activeUntilUtc,
             List<ThemeEquipmentSlot> requiredEquipmentSlotsMatchingTheme,
+            int minumumRequiredEquipmentSlotsMatchingTheme,
             Theme theme)
     {
         Name = name;
@@ -19,6 +20,7 @@ public class ThemeEvent : AuditableEntity
         ActiveFromUtc = activeFromUtc;
         ActiveUntilUtc = activeUntilUtc;
         RequiredEquipmentSlotsMatchingTheme = requiredEquipmentSlotsMatchingTheme;
+        MinumumRequiredEquipmentSlotsMatchingTheme = minumumRequiredEquipmentSlotsMatchingTheme;
         EventTheme = theme;
     }
 
