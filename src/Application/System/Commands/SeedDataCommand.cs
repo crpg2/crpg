@@ -20,6 +20,7 @@ using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Settlements;
 using Crpg.Domain.Entities.Terrains;
+using Crpg.Domain.Entities.Themes;
 using Crpg.Domain.Entities.Users;
 using Crpg.Sdk.Abstractions;
 using Microsoft.EntityFrameworkCore;
@@ -2903,6 +2904,11 @@ public record SeedDataCommand : IMediatorRequest
             if (item.Weapons.Count > 2)
             {
                 res.TertiaryWeapon = IteamWeaponComponentFromViewModel(item.Weapons[2]);
+            }
+
+            if (item.Themes != null)
+            {
+                res.Themes = item.Themes.Select(i => new Theme(i.Name) { Id = i.Id }).ToList();
             }
 
             return res;
