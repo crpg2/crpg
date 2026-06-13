@@ -1,0 +1,18 @@
+﻿using Crpg.Application.Common.Results;
+using Crpg.Application.Themes.Models;
+using Crpg.Application.Themes.Queries;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Crpg.WebApi.Controllers;
+
+[Authorize(Policy = UserPolicy)]
+public class ThemesController : BaseController
+{
+    /// <summary>
+    ///  Gets all themes.
+    /// </summary>
+    /// <response code="200">Ok.</response>
+    [HttpGet]
+    public Task<ActionResult<Result<IList<ThemeViewModel>>>> GetThemes() => ResultToActionAsync(Mediator.Send(new GetThemesQuery()));
+}
