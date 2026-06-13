@@ -100,4 +100,5 @@ public enum ErrorCode
     QuestExpired,
     QuestDefinitionNotFound,
     QuestNotCompleted,
+    ThemeNotFound,
 }

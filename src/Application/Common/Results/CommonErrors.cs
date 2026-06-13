@@ -569,4 +569,10 @@ internal static class CommonErrors
         Title = "Quest not completed",
         Detail = $"Quest with id '{userQuestId}' requires {requiredValue} but current progress is {currentValue}",
     };
+
+    public static Error ThemeNotFound(int themeId) => new(ErrorType.NotFound, ErrorCode.ThemeNotFound)
+    {
+        Title = "Theme not found",
+        Detail = $"Theme with id '{themeId}' could not be found.",
+    };
 }

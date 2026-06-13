@@ -28,7 +28,7 @@ public record CreateThemeCommand : IMediatorRequest<ThemeViewModel>
         {
             var themeToAdd = new Theme(req.Name);
 
-            db.Themes.Add(themeToAdd);
+            await db.Themes.AddAsync(themeToAdd);
             await db.SaveChangesAsync(cancellationToken);
 
             return new(mapper.Map<ThemeViewModel>(themeToAdd));

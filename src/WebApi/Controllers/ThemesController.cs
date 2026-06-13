@@ -38,4 +38,12 @@ public class ThemesController : BaseController
     /// <response code="200">Ok.</response>
     [HttpGet("events/active")]
     public Task<ActionResult<Result<IList<ThemeEventViewModel>>>> GetActiveThemeEvents() => ResultToActionAsync(Mediator.Send(new GetActiveThemeEventsQuery()));
+
+    /// <summary>
+    /// Creates a new theme event.
+    /// </summary>
+    /// <response code="200">Ok.</response>
+    [HttpPost("events")]
+    [Authorize(Policy = AdminPolicy)]
+    public Task<ActionResult<Result<ThemeEventViewModel>>> CreateThemeEvent([FromBody] CreateThemeEventCommand req) => ResultToActionAsync(Mediator.Send(req));
 }
