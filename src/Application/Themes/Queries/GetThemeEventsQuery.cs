@@ -13,7 +13,7 @@ public class GetThemeEventsQuery : IMediatorRequest<IList<ThemeEventViewModel>>
     {
         public async ValueTask<Result<IList<ThemeEventViewModel>>> Handle(GetThemeEventsQuery req, CancellationToken cancellationToken)
         {
-            var themes = await db.ThemeEvents.AsNoTracking().ToListAsync(cancellationToken);
+            var themes = await db.ThemeEvents.Include(x => x.EventTheme).AsNoTracking().ToListAsync(cancellationToken);
             var viewModels = mapper.Map<IList<ThemeEventViewModel>>(themes);
 
             return new(viewModels);

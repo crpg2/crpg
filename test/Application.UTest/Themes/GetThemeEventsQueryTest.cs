@@ -7,7 +7,7 @@ namespace Crpg.Application.UTest.Themes;
 public class GetThemeEventsQueryTest : TestBase
 {
     [Test]
-    public async Task ShouldReturnEmptyWhenNoThemes()
+    public async Task ShouldReturnEmptyWhenNoThemeEvents()
     {
         var handler = new GetThemeEventsQuery.Handler(ActDb, Mapper);
         var result = await handler.Handle(new GetThemeEventsQuery(), CancellationToken.None);
@@ -16,11 +16,11 @@ public class GetThemeEventsQueryTest : TestBase
     }
 
     [Test]
-    public async Task ShouldReturnThemes()
+    public async Task ShouldReturnThemeEvents()
     {
-        var themeOne = CreateDefaultTheme(name: "Theme 1");
-        var themeTwo = CreateDefaultTheme(name: "Theme 2");
-        ArrangeDb.ThemeEvents.AddRange(themeOne, themeTwo);
+        var themeEventOne = CreateDefaultTheme(name: "Theme 1");
+        var themeEventTwo = CreateDefaultTheme(name: "Theme 2");
+        ArrangeDb.ThemeEvents.AddRange(themeEventOne, themeEventTwo);
         await ArrangeDb.SaveChangesAsync(CancellationToken.None);
 
         var handler = new GetThemeEventsQuery.Handler(ActDb, Mapper);
@@ -32,21 +32,27 @@ public class GetThemeEventsQueryTest : TestBase
         Assert.That(result.Data, Is.Not.Null);
         Assert.That(result.Data, Has.Count.EqualTo(2));
 
-        var resultOne = result.Data!.Single(x => x.Name == themeOne.Name);
+        var resultOne = result.Data!.Single(x => x.Name == themeEventOne.Name);
         Assert.That(resultOne.Id, Is.GreaterThan(0));
-        Assert.That(resultOne.Name, Is.EqualTo(themeOne.Name));
-        Assert.That(resultOne.GoldMultiplier, Is.EqualTo(themeOne.GoldMultiplier));
-        Assert.That(resultOne.ExpMultiplier, Is.EqualTo(themeOne.ExpMultiplier));
-        Assert.That(resultOne.ActiveFromUtc, Is.EqualTo(themeOne.ActiveFromUtc));
-        Assert.That(resultOne.ActiveUntilUtc, Is.EqualTo(themeOne.ActiveUntilUtc));
+        Assert.That(resultOne.Name, Is.EqualTo(themeEventOne.Name));
+        Assert.That(resultOne.GoldMultiplier, Is.EqualTo(themeEventOne.GoldMultiplier));
+        Assert.That(resultOne.ExpMultiplier, Is.EqualTo(themeEventOne.ExpMultiplier));
+        Assert.That(resultOne.ActiveFromUtc, Is.EqualTo(themeEventOne.ActiveFromUtc));
+        Assert.That(resultOne.ActiveUntilUtc, Is.EqualTo(themeEventOne.ActiveUntilUtc));
+        Assert.That(resultOne.RequiredEquipmentSlotsMatchingTheme, Is.EquivalentTo(themeEventOne.RequiredEquipmentSlotsMatchingTheme));
+        Assert.That(resultOne.MinumumRequiredEquipmentSlotsMatchingTheme, Is.EqualTo(themeEventOne.MinumumRequiredEquipmentSlotsMatchingTheme));
+        Assert.That(resultOne.EventTheme, Is.EqualTo(themeEventOne.EventTheme).UsingPropertiesComparer());
 
-        var resultTwo = result.Data!.Single(x => x.Name == themeTwo.Name);
+        var resultTwo = result.Data!.Single(x => x.Name == themeEventTwo.Name);
         Assert.That(resultTwo.Id, Is.GreaterThan(0));
-        Assert.That(resultTwo.Name, Is.EqualTo(themeTwo.Name));
-        Assert.That(resultTwo.GoldMultiplier, Is.EqualTo(themeTwo.GoldMultiplier));
-        Assert.That(resultTwo.ExpMultiplier, Is.EqualTo(themeTwo.ExpMultiplier));
-        Assert.That(resultTwo.ActiveFromUtc, Is.EqualTo(themeTwo.ActiveFromUtc));
-        Assert.That(resultTwo.ActiveUntilUtc, Is.EqualTo(themeTwo.ActiveUntilUtc));
+        Assert.That(resultTwo.Name, Is.EqualTo(themeEventTwo.Name));
+        Assert.That(resultTwo.GoldMultiplier, Is.EqualTo(themeEventTwo.GoldMultiplier));
+        Assert.That(resultTwo.ExpMultiplier, Is.EqualTo(themeEventTwo.ExpMultiplier));
+        Assert.That(resultTwo.ActiveFromUtc, Is.EqualTo(themeEventTwo.ActiveFromUtc));
+        Assert.That(resultTwo.ActiveUntilUtc, Is.EqualTo(themeEventTwo.ActiveUntilUtc));
+        Assert.That(resultTwo.RequiredEquipmentSlotsMatchingTheme, Is.EquivalentTo(themeEventTwo.RequiredEquipmentSlotsMatchingTheme));
+        Assert.That(resultTwo.MinumumRequiredEquipmentSlotsMatchingTheme, Is.EqualTo(themeEventTwo.MinumumRequiredEquipmentSlotsMatchingTheme));
+        Assert.That(resultTwo.EventTheme, Is.EqualTo(themeEventTwo.EventTheme).UsingPropertiesComparer());
     }
 
     private static ThemeEvent CreateDefaultTheme(

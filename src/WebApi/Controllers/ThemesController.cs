@@ -29,6 +29,13 @@ public class ThemesController : BaseController
     ///  Gets all theme events.
     /// </summary>
     /// <response code="200">Ok.</response>
-    [HttpGet]
+    [HttpGet("events")]
     public Task<ActionResult<Result<IList<ThemeEventViewModel>>>> GetThemeEvents() => ResultToActionAsync(Mediator.Send(new GetThemeEventsQuery()));
+
+    /// <summary>
+    ///  Gets all active theme events.
+    /// </summary>
+    /// <response code="200">Ok.</response>
+    [HttpGet("events/active")]
+    public Task<ActionResult<Result<IList<ThemeEventViewModel>>>> GetActiveThemeEvents() => ResultToActionAsync(Mediator.Send(new GetActiveThemeEventsQuery()));
 }
