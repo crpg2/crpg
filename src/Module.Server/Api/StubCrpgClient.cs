@@ -5,6 +5,7 @@ using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.GameEvents;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Restrictions;
+using Crpg.Module.Api.Models.Themes;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common;
 using TaleWorlds.Core;
@@ -129,6 +130,11 @@ internal class StubCrpgClient : ICrpgClient
     public Task CreateGameEventsAsync(CrpgGameEventsCreateRequest req, CancellationToken cancellationToken = default)
     {
         return Task.CompletedTask;
+    }
+
+    public Task<CrpgResult<List<ThemeEvent>>> GetActiveThemeEvents(CancellationToken cancellationToken = default)
+    {
+        return Task.FromResult(new CrpgResult<List<ThemeEvent>> { Data = new List<ThemeEvent>() });
     }
 
     public void Dispose()

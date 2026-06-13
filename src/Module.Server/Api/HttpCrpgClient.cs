@@ -7,6 +7,7 @@ using Crpg.Module.Api.Models.ActivityLogs;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.GameEvents;
 using Crpg.Module.Api.Models.Restrictions;
+using Crpg.Module.Api.Models.Themes;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common;
 using Crpg.Module.Helpers.Json;
@@ -114,6 +115,11 @@ internal class HttpCrpgClient : ICrpgClient
     public Task CreateGameEventsAsync(CrpgGameEventsCreateRequest req, CancellationToken cancellationToken = default)
     {
         return Post<CrpgGameEventsCreateRequest, object>("games/game-events", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<List<ThemeEvent>>> GetActiveThemeEvents(CancellationToken cancellationToken = default)
+    {
+        return Get<List<ThemeEvent>>("games/themes/events/active", null, cancellationToken);
     }
 
     public void Dispose() => _httpClient.Dispose();
