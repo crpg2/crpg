@@ -550,6 +550,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     1.0f);
 
                 props.WeaponInaccuracy *= encumbranceMultiplier;
+                props.WeaponInaccuracy = MathF.Clamp(props.WeaponInaccuracy, 0f, 1f);
 
                 // Reload & draw speed penalty: linearly drops from 1.0 at 20 to 0.25 at 30
                 float reloadThrustMultiplier = totalEncumbrance <= 20f
