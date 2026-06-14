@@ -6,6 +6,7 @@ using Crpg.Module.Common.ChatCommands;
 using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
+using Crpg.Module.GUI.VoiceCommands;
 using Crpg.Module.GUI.EndOfRound;
 using Crpg.Module.GUI.HudExtension;
 using Crpg.Module.GUI.Scoreboard;
@@ -78,7 +79,6 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMultiplayerFactionBanVoteUIHandler(),
             ViewCreator.CreateMissionAgentStatusUIHandler(mission),
             ViewCreator.CreateMissionMainAgentEquipmentController(mission), // Pick/drop items.
-            ViewCreator.CreateMissionMainAgentCheerBarkControllerView(mission),
             new MissionGauntletMultiplayerOrderUIHandler(),
             new OrderTroopPlacer(null),
             crpgEscapeMenu,
@@ -93,6 +93,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMissionKillNotificationUIHandler(),
             new CrpgHudExtensionHandler(),
             new AmmoQuiverChangeUiHandler(),
+            new CrpgVoiceCommandsUiHandler(),
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),

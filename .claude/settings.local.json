@@ -8,7 +8,8 @@
       "WebFetch(domain:patch-diff.githubusercontent.com)",
       "Bash(git checkout *)",
       "WebFetch(domain:moddocs.bannerlord.com)",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(grep -rA8 'Brush Name=\"Scoreboard.ContextMenu.Background\"' \"/mnt/c/Program Files \\(x86\\)/Steam/steamapps/common/Mount & Blade II Bannerlord/Modules/\")"
     ]
   }
 }

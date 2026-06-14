@@ -1,6 +1,106 @@
 <voice_definitions>
   <voice_type_declarations>
-    <voice_type name="Whistle" />
+    <voice_type name="AttackArchers" />
+    <voice_type name="AttackAttack" />
+    <voice_type name="AttackBase" />
+    <voice_type name="AttackCatapult" />
+    <voice_type name="AttackCavalry" />
+    <voice_type name="AttackCharge" />
+    <voice_type name="AttackEquipment" />
+    <voice_type name="AttackGate" />
+    <voice_type name="AttackInfantry" />
+    <voice_type name="AttackLeftFlank" />
+    <voice_type name="AttackRightFlank" />
+    <voice_type name="AttackSiegeTower" />
+    <voice_type name="AttackTower" />
+    <voice_type name="DefendCatapult" />
+    <voice_type name="DefendCloseGate" />
+    <voice_type name="DefendDefend" />
+    <voice_type name="DefendFlag" />
+    <voice_type name="DefendFlagCarrier" />
+    <voice_type name="DefendGate" />
+    <voice_type name="DefendGatehouse" />
+    <voice_type name="DefendLadders" />
+    <voice_type name="DefendSiegeTower" />
+    <voice_type name="DefendStairs" />
+    <voice_type name="DefendTower" />
+    <voice_type name="DefendWalls" />
+    <voice_type name="EquipmentBuildSiegeTower" />
+    <voice_type name="EquipmentDeployCatapult" />
+    <voice_type name="EquipmentEquipment" />
+    <voice_type name="EquipmentLadders" />
+    <voice_type name="EquipmentManCatapult" />
+    <voice_type name="EquipmentManSiegeTower" />
+    <voice_type name="EquipmentShields" />
+    <voice_type name="FormationArchers" />
+    <voice_type name="FormationCavalry" />
+    <voice_type name="FormationFallBack" />
+    <voice_type name="FormationFollowMe" />
+    <voice_type name="FormationHold" />
+    <voice_type name="FormationInfantry" />
+    <voice_type name="FormationKeep" />
+    <voice_type name="FormationReleaseArrows" />
+    <voice_type name="FormationRetreat" />
+    <voice_type name="FormationShieldwall" />
+    <voice_type name="FormationShoot" />
+    <voice_type name="FormationSpreadOut" />
+    <voice_type name="FormationStandCloser" />
+    <voice_type name="FormationTakeCover" />
+    <voice_type name="IncomingArrows" />
+    <voice_type name="IncomingBase" />
+    <voice_type name="IncomingCatapult" />
+    <voice_type name="IncomingCavalry" />
+    <voice_type name="IncomingCavalryBehind" />
+    <voice_type name="IncomingCavalryCavalry" />
+    <voice_type name="IncomingCavalryLeft" />
+    <voice_type name="IncomingCavalryRight" />
+    <voice_type name="IncomingInfantry" />
+    <voice_type name="IncomingInfantryBehind" />
+    <voice_type name="IncomingInfantryInfantry" />
+    <voice_type name="IncomingInfantryLeft" />
+    <voice_type name="IncomingInfantryRight" />
+    <voice_type name="IncomingSiegeTower" />
+    <voice_type name="QuickHello" />
+    <voice_type name="QuickHelp" />
+    <voice_type name="QuickMove" />
+    <voice_type name="QuickNo" />
+    <voice_type name="QuickSilence" />
+    <voice_type name="QuickSorry" />
+    <voice_type name="QuickStop" />
+    <voice_type name="QuickThanks" />
+    <voice_type name="QuickWatchAim" />
+    <voice_type name="QuickYell" />
+    <voice_type name="QuickYes" />
+    <voice_type name="QuickWhistle" />
+    <voice_type name="SelfAttackAttacking" />
+    <voice_type name="SelfAttackBase" />
+    <voice_type name="SelfAttackCatapult" />
+    <voice_type name="SelfAttackEquipment" />
+    <voice_type name="SelfAttackFlag" />
+    <voice_type name="SelfAttackGate" />
+    <voice_type name="SelfAttackLeft" />
+    <voice_type name="SelfAttackRight" />
+    <voice_type name="SelfAttackSiegeTower" />
+    <voice_type name="SelfAttackTower" />
+    <voice_type name="SelfDefendCatapult" />
+    <voice_type name="SelfDefendCloseGate" />
+    <voice_type name="SelfDefendFlag" />
+    <voice_type name="SelfDefendGate" />
+    <voice_type name="SelfDefendGatehouse" />
+    <voice_type name="SelfDefendLadders" />
+    <voice_type name="SelfDefendSiegeTower" />
+    <voice_type name="SelfDefendStairs" />
+    <voice_type name="SelfDefendTower" />
+    <voice_type name="SelfDefendWalls" />
+    <voice_type name="SelfEquipmentBuildCatapult" />
+    <voice_type name="SelfEquipmentBuildSiegeTower" />
+    <voice_type name="SelfEquipmentEquipment" />
+    <voice_type name="SelfEquipmentHelpCatapult" />
+    <voice_type name="SelfEquipmentHelpSiegeTower" />
+    <voice_type name="SelfEquipmentLadders" />
+    <voice_type name="SelfEquipmentManCatapult" />
+    <voice_type name="SelfEquipmentManSiegeTower" />
+    <voice_type name="SelfEquipmentShields" />
   </voice_type_declarations>
 
   <voice_definition
@@ -9,7 +109,107 @@
     only_for_npcs="false"
     min_pitch_multiplier="0.9"
     max_pitch_multiplier="1.1">
-    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+    <voice type="QuickWhistle" path="event:/voice/crpg/quick/whistle" face_anim="grunt" />
+    <voice type="AttackArchers" path="event:/voice/crpg/attack/male/archers" face_anim="grunt" />
+    <voice type="AttackAttack" path="event:/voice/crpg/attack/male/attack" face_anim="grunt" />
+    <voice type="AttackBase" path="event:/voice/crpg/attack/male/base" face_anim="grunt" />
+    <voice type="AttackCatapult" path="event:/voice/crpg/attack/male/catapult" face_anim="grunt" />
+    <voice type="AttackCavalry" path="event:/voice/crpg/attack/male/cavalry" face_anim="grunt" />
+    <voice type="AttackCharge" path="event:/voice/crpg/attack/male/charge" face_anim="grunt" />
+    <voice type="AttackEquipment" path="event:/voice/crpg/attack/male/equipment" face_anim="grunt" />
+    <voice type="AttackGate" path="event:/voice/crpg/attack/male/gate" face_anim="grunt" />
+    <voice type="AttackInfantry" path="event:/voice/crpg/attack/male/infantry" face_anim="grunt" />
+    <voice type="AttackLeftFlank" path="event:/voice/crpg/attack/male/left_flank" face_anim="grunt" />
+    <voice type="AttackRightFlank" path="event:/voice/crpg/attack/male/right_flank" face_anim="grunt" />
+    <voice type="AttackSiegeTower" path="event:/voice/crpg/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="AttackTower" path="event:/voice/crpg/attack/male/tower" face_anim="grunt" />
+    <voice type="DefendCatapult" path="event:/voice/crpg/defend/male/catapult" face_anim="grunt" />
+    <voice type="DefendCloseGate" path="event:/voice/crpg/defend/male/close_gate" face_anim="grunt" />
+    <voice type="DefendDefend" path="event:/voice/crpg/defend/male/defend" face_anim="grunt" />
+    <voice type="DefendFlag" path="event:/voice/crpg/defend/male/flag" face_anim="grunt" />
+    <voice type="DefendFlagCarrier" path="event:/voice/crpg/defend/male/flag_carrier" face_anim="grunt" />
+    <voice type="DefendGate" path="event:/voice/crpg/defend/male/gate" face_anim="grunt" />
+    <voice type="DefendGatehouse" path="event:/voice/crpg/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="DefendLadders" path="event:/voice/crpg/defend/male/ladders" face_anim="grunt" />
+    <voice type="DefendSiegeTower" path="event:/voice/crpg/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="DefendStairs" path="event:/voice/crpg/defend/male/stairs" face_anim="grunt" />
+    <voice type="DefendTower" path="event:/voice/crpg/defend/male/tower" face_anim="grunt" />
+    <voice type="DefendWalls" path="event:/voice/crpg/defend/male/walls" face_anim="grunt" />
+    <voice type="EquipmentBuildSiegeTower" path="event:/voice/crpg/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentDeployCatapult" path="event:/voice/crpg/equipment/male/deploy_catapult" face_anim="grunt" />
+    <voice type="EquipmentEquipment" path="event:/voice/crpg/equipment/male/equipment" face_anim="grunt" />
+    <voice type="EquipmentLadders" path="event:/voice/crpg/equipment/male/ladders" face_anim="grunt" />
+    <voice type="EquipmentManCatapult" path="event:/voice/crpg/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="EquipmentManSiegeTower" path="event:/voice/crpg/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentShields" path="event:/voice/crpg/equipment/male/shields" face_anim="grunt" />
+    <voice type="FormationArchers" path="event:/voice/crpg/formation/male/archers" face_anim="grunt" />
+    <voice type="FormationCavalry" path="event:/voice/crpg/formation/male/cavalry" face_anim="grunt" />
+    <voice type="FormationFallBack" path="event:/voice/crpg/formation/male/fall_back" face_anim="grunt" />
+    <voice type="FormationFollowMe" path="event:/voice/crpg/formation/male/follow_me" face_anim="grunt" />
+    <voice type="FormationHold" path="event:/voice/crpg/formation/male/hold" face_anim="grunt" />
+    <voice type="FormationInfantry" path="event:/voice/crpg/formation/male/infantry" face_anim="grunt" />
+    <voice type="FormationKeep" path="event:/voice/crpg/formation/male/keep" face_anim="grunt" />
+    <voice type="FormationReleaseArrows" path="event:/voice/crpg/formation/male/release_arrows" face_anim="grunt" />
+    <voice type="FormationRetreat" path="event:/voice/crpg/formation/male/retreat" face_anim="grunt" />
+    <voice type="FormationShieldwall" path="event:/voice/crpg/formation/male/shieldwall" face_anim="grunt" />
+    <voice type="FormationShoot" path="event:/voice/crpg/formation/male/shoot" face_anim="grunt" />
+    <voice type="FormationSpreadOut" path="event:/voice/crpg/formation/male/spread_out" face_anim="grunt" />
+    <voice type="FormationStandCloser" path="event:/voice/crpg/formation/male/stand_closer" face_anim="grunt" />
+    <voice type="FormationTakeCover" path="event:/voice/crpg/formation/male/take_cover" face_anim="grunt" />
+    <voice type="IncomingArrows" path="event:/voice/crpg/incoming/male/arrows" face_anim="grunt" />
+    <voice type="IncomingBase" path="event:/voice/crpg/incoming/male/base" face_anim="grunt" />
+    <voice type="IncomingCatapult" path="event:/voice/crpg/incoming/male/catapult" face_anim="grunt" />
+    <voice type="IncomingCavalry" path="event:/voice/crpg/incoming/male/cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryBehind" path="event:/voice/crpg/incoming/male/cavalry_behind" face_anim="grunt" />
+    <voice type="IncomingCavalryCavalry" path="event:/voice/crpg/incoming/male/cavalry_cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryLeft" path="event:/voice/crpg/incoming/male/cavalry_left" face_anim="grunt" />
+    <voice type="IncomingCavalryRight" path="event:/voice/crpg/incoming/male/cavalry_right" face_anim="grunt" />
+    <voice type="IncomingInfantry" path="event:/voice/crpg/incoming/male/infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryBehind" path="event:/voice/crpg/incoming/male/infantry_behind" face_anim="grunt" />
+    <voice type="IncomingInfantryInfantry" path="event:/voice/crpg/incoming/male/infantry_infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryLeft" path="event:/voice/crpg/incoming/male/infantry_left" face_anim="grunt" />
+    <voice type="IncomingInfantryRight" path="event:/voice/crpg/incoming/male/infantry_right" face_anim="grunt" />
+    <voice type="IncomingSiegeTower" path="event:/voice/crpg/incoming/male/siege_tower" face_anim="grunt" />
+    <voice type="QuickHello" path="event:/voice/crpg/quick/male/hello" face_anim="grunt" />
+    <voice type="QuickHelp" path="event:/voice/crpg/quick/male/help" face_anim="grunt" />
+    <voice type="QuickMove" path="event:/voice/crpg/quick/male/move" face_anim="grunt" />
+    <voice type="QuickNo" path="event:/voice/crpg/quick/male/no" face_anim="grunt" />
+    <voice type="QuickSilence" path="event:/voice/crpg/quick/male/silence" face_anim="grunt" />
+    <voice type="QuickSorry" path="event:/voice/crpg/quick/male/sorry" face_anim="grunt" />
+    <voice type="QuickStop" path="event:/voice/crpg/quick/male/stop" face_anim="grunt" />
+    <voice type="QuickThanks" path="event:/voice/crpg/quick/male/thanks" face_anim="grunt" />
+    <voice type="QuickWatchAim" path="event:/voice/crpg/quick/male/watch_aim" face_anim="grunt" />
+    <voice type="QuickYell" path="event:/voice/crpg/quick/male/yell" face_anim="grunt" />
+    <voice type="QuickYes" path="event:/voice/crpg/quick/male/yes" face_anim="grunt" />
+    <voice type="SelfAttackAttacking" path="event:/voice/crpg/self/attack/male/attacking" face_anim="grunt" />
+    <voice type="SelfAttackBase" path="event:/voice/crpg/self/attack/male/base" face_anim="grunt" />
+    <voice type="SelfAttackCatapult" path="event:/voice/crpg/self/attack/male/catapult" face_anim="grunt" />
+    <voice type="SelfAttackEquipment" path="event:/voice/crpg/self/attack/male/equipment" face_anim="grunt" />
+    <voice type="SelfAttackFlag" path="event:/voice/crpg/self/attack/male/flag" face_anim="grunt" />
+    <voice type="SelfAttackGate" path="event:/voice/crpg/self/attack/male/gate" face_anim="grunt" />
+    <voice type="SelfAttackLeft" path="event:/voice/crpg/self/attack/male/left" face_anim="grunt" />
+    <voice type="SelfAttackRight" path="event:/voice/crpg/self/attack/male/right" face_anim="grunt" />
+    <voice type="SelfAttackSiegeTower" path="event:/voice/crpg/self/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfAttackTower" path="event:/voice/crpg/self/attack/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendCatapult" path="event:/voice/crpg/self/defend/male/catapult" face_anim="grunt" />
+    <voice type="SelfDefendCloseGate" path="event:/voice/crpg/self/defend/male/close_gate" face_anim="grunt" />
+    <voice type="SelfDefendFlag" path="event:/voice/crpg/self/defend/male/flag" face_anim="grunt" />
+    <voice type="SelfDefendGate" path="event:/voice/crpg/self/defend/male/gate" face_anim="grunt" />
+    <voice type="SelfDefendGatehouse" path="event:/voice/crpg/self/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="SelfDefendLadders" path="event:/voice/crpg/self/defend/male/ladders" face_anim="grunt" />
+    <voice type="SelfDefendSiegeTower" path="event:/voice/crpg/self/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfDefendStairs" path="event:/voice/crpg/self/defend/male/stairs" face_anim="grunt" />
+    <voice type="SelfDefendTower" path="event:/voice/crpg/self/defend/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendWalls" path="event:/voice/crpg/self/defend/male/walls" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildCatapult" path="event:/voice/crpg/self/equipment/male/build_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildSiegeTower" path="event:/voice/crpg/self/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentEquipment" path="event:/voice/crpg/self/equipment/male/equipment" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpCatapult" path="event:/voice/crpg/self/equipment/male/help_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpSiegeTower" path="event:/voice/crpg/self/equipment/male/help_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentLadders" path="event:/voice/crpg/self/equipment/male/ladders" face_anim="grunt" />
+    <voice type="SelfEquipmentManCatapult" path="event:/voice/crpg/self/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentManSiegeTower" path="event:/voice/crpg/self/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentShields" path="event:/voice/crpg/self/equipment/male/shields" face_anim="grunt" />
   </voice_definition>
 
   <voice_definition
@@ -18,7 +218,107 @@
     only_for_npcs="false"
     min_pitch_multiplier="0.9"
     max_pitch_multiplier="1.1">
-    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+    <voice type="QuickWhistle" path="event:/voice/crpg/quick/whistle" face_anim="grunt" />
+    <voice type="AttackArchers" path="event:/voice/crpg/attack/male/archers" face_anim="grunt" />
+    <voice type="AttackAttack" path="event:/voice/crpg/attack/male/attack" face_anim="grunt" />
+    <voice type="AttackBase" path="event:/voice/crpg/attack/male/base" face_anim="grunt" />
+    <voice type="AttackCatapult" path="event:/voice/crpg/attack/male/catapult" face_anim="grunt" />
+    <voice type="AttackCavalry" path="event:/voice/crpg/attack/male/cavalry" face_anim="grunt" />
+    <voice type="AttackCharge" path="event:/voice/crpg/attack/male/charge" face_anim="grunt" />
+    <voice type="AttackEquipment" path="event:/voice/crpg/attack/male/equipment" face_anim="grunt" />
+    <voice type="AttackGate" path="event:/voice/crpg/attack/male/gate" face_anim="grunt" />
+    <voice type="AttackInfantry" path="event:/voice/crpg/attack/male/infantry" face_anim="grunt" />
+    <voice type="AttackLeftFlank" path="event:/voice/crpg/attack/male/left_flank" face_anim="grunt" />
+    <voice type="AttackRightFlank" path="event:/voice/crpg/attack/male/right_flank" face_anim="grunt" />
+    <voice type="AttackSiegeTower" path="event:/voice/crpg/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="AttackTower" path="event:/voice/crpg/attack/male/tower" face_anim="grunt" />
+    <voice type="DefendCatapult" path="event:/voice/crpg/defend/male/catapult" face_anim="grunt" />
+    <voice type="DefendCloseGate" path="event:/voice/crpg/defend/male/close_gate" face_anim="grunt" />
+    <voice type="DefendDefend" path="event:/voice/crpg/defend/male/defend" face_anim="grunt" />
+    <voice type="DefendFlag" path="event:/voice/crpg/defend/male/flag" face_anim="grunt" />
+    <voice type="DefendFlagCarrier" path="event:/voice/crpg/defend/male/flag_carrier" face_anim="grunt" />
+    <voice type="DefendGate" path="event:/voice/crpg/defend/male/gate" face_anim="grunt" />
+    <voice type="DefendGatehouse" path="event:/voice/crpg/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="DefendLadders" path="event:/voice/crpg/defend/male/ladders" face_anim="grunt" />
+    <voice type="DefendSiegeTower" path="event:/voice/crpg/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="DefendStairs" path="event:/voice/crpg/defend/male/stairs" face_anim="grunt" />
+    <voice type="DefendTower" path="event:/voice/crpg/defend/male/tower" face_anim="grunt" />
+    <voice type="DefendWalls" path="event:/voice/crpg/defend/male/walls" face_anim="grunt" />
+    <voice type="EquipmentBuildSiegeTower" path="event:/voice/crpg/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentDeployCatapult" path="event:/voice/crpg/equipment/male/deploy_catapult" face_anim="grunt" />
+    <voice type="EquipmentEquipment" path="event:/voice/crpg/equipment/male/equipment" face_anim="grunt" />
+    <voice type="EquipmentLadders" path="event:/voice/crpg/equipment/male/ladders" face_anim="grunt" />
+    <voice type="EquipmentManCatapult" path="event:/voice/crpg/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="EquipmentManSiegeTower" path="event:/voice/crpg/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentShields" path="event:/voice/crpg/equipment/male/shields" face_anim="grunt" />
+    <voice type="FormationArchers" path="event:/voice/crpg/formation/male/archers" face_anim="grunt" />
+    <voice type="FormationCavalry" path="event:/voice/crpg/formation/male/cavalry" face_anim="grunt" />
+    <voice type="FormationFallBack" path="event:/voice/crpg/formation/male/fall_back" face_anim="grunt" />
+    <voice type="FormationFollowMe" path="event:/voice/crpg/formation/male/follow_me" face_anim="grunt" />
+    <voice type="FormationHold" path="event:/voice/crpg/formation/male/hold" face_anim="grunt" />
+    <voice type="FormationInfantry" path="event:/voice/crpg/formation/male/infantry" face_anim="grunt" />
+    <voice type="FormationKeep" path="event:/voice/crpg/formation/male/keep" face_anim="grunt" />
+    <voice type="FormationReleaseArrows" path="event:/voice/crpg/formation/male/release_arrows" face_anim="grunt" />
+    <voice type="FormationRetreat" path="event:/voice/crpg/formation/male/retreat" face_anim="grunt" />
+    <voice type="FormationShieldwall" path="event:/voice/crpg/formation/male/shieldwall" face_anim="grunt" />
+    <voice type="FormationShoot" path="event:/voice/crpg/formation/male/shoot" face_anim="grunt" />
+    <voice type="FormationSpreadOut" path="event:/voice/crpg/formation/male/spread_out" face_anim="grunt" />
+    <voice type="FormationStandCloser" path="event:/voice/crpg/formation/male/stand_closer" face_anim="grunt" />
+    <voice type="FormationTakeCover" path="event:/voice/crpg/formation/male/take_cover" face_anim="grunt" />
+    <voice type="IncomingArrows" path="event:/voice/crpg/incoming/male/arrows" face_anim="grunt" />
+    <voice type="IncomingBase" path="event:/voice/crpg/incoming/male/base" face_anim="grunt" />
+    <voice type="IncomingCatapult" path="event:/voice/crpg/incoming/male/catapult" face_anim="grunt" />
+    <voice type="IncomingCavalry" path="event:/voice/crpg/incoming/male/cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryBehind" path="event:/voice/crpg/incoming/male/cavalry_behind" face_anim="grunt" />
+    <voice type="IncomingCavalryCavalry" path="event:/voice/crpg/incoming/male/cavalry_cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryLeft" path="event:/voice/crpg/incoming/male/cavalry_left" face_anim="grunt" />
+    <voice type="IncomingCavalryRight" path="event:/voice/crpg/incoming/male/cavalry_right" face_anim="grunt" />
+    <voice type="IncomingInfantry" path="event:/voice/crpg/incoming/male/infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryBehind" path="event:/voice/crpg/incoming/male/infantry_behind" face_anim="grunt" />
+    <voice type="IncomingInfantryInfantry" path="event:/voice/crpg/incoming/male/infantry_infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryLeft" path="event:/voice/crpg/incoming/male/infantry_left" face_anim="grunt" />
+    <voice type="IncomingInfantryRight" path="event:/voice/crpg/incoming/male/infantry_right" face_anim="grunt" />
+    <voice type="IncomingSiegeTower" path="event:/voice/crpg/incoming/male/siege_tower" face_anim="grunt" />
+    <voice type="QuickHello" path="event:/voice/crpg/quick/male/hello" face_anim="grunt" />
+    <voice type="QuickHelp" path="event:/voice/crpg/quick/male/help" face_anim="grunt" />
+    <voice type="QuickMove" path="event:/voice/crpg/quick/male/move" face_anim="grunt" />
+    <voice type="QuickNo" path="event:/voice/crpg/quick/male/no" face_anim="grunt" />
+    <voice type="QuickSilence" path="event:/voice/crpg/quick/male/silence" face_anim="grunt" />
+    <voice type="QuickSorry" path="event:/voice/crpg/quick/male/sorry" face_anim="grunt" />
+    <voice type="QuickStop" path="event:/voice/crpg/quick/male/stop" face_anim="grunt" />
+    <voice type="QuickThanks" path="event:/voice/crpg/quick/male/thanks" face_anim="grunt" />
+    <voice type="QuickWatchAim" path="event:/voice/crpg/quick/male/watch_aim" face_anim="grunt" />
+    <voice type="QuickYell" path="event:/voice/crpg/quick/male/yell" face_anim="grunt" />
+    <voice type="QuickYes" path="event:/voice/crpg/quick/male/yes" face_anim="grunt" />
+    <voice type="SelfAttackAttacking" path="event:/voice/crpg/self/attack/male/attacking" face_anim="grunt" />
+    <voice type="SelfAttackBase" path="event:/voice/crpg/self/attack/male/base" face_anim="grunt" />
+    <voice type="SelfAttackCatapult" path="event:/voice/crpg/self/attack/male/catapult" face_anim="grunt" />
+    <voice type="SelfAttackEquipment" path="event:/voice/crpg/self/attack/male/equipment" face_anim="grunt" />
+    <voice type="SelfAttackFlag" path="event:/voice/crpg/self/attack/male/flag" face_anim="grunt" />
+    <voice type="SelfAttackGate" path="event:/voice/crpg/self/attack/male/gate" face_anim="grunt" />
+    <voice type="SelfAttackLeft" path="event:/voice/crpg/self/attack/male/left" face_anim="grunt" />
+    <voice type="SelfAttackRight" path="event:/voice/crpg/self/attack/male/right" face_anim="grunt" />
+    <voice type="SelfAttackSiegeTower" path="event:/voice/crpg/self/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfAttackTower" path="event:/voice/crpg/self/attack/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendCatapult" path="event:/voice/crpg/self/defend/male/catapult" face_anim="grunt" />
+    <voice type="SelfDefendCloseGate" path="event:/voice/crpg/self/defend/male/close_gate" face_anim="grunt" />
+    <voice type="SelfDefendFlag" path="event:/voice/crpg/self/defend/male/flag" face_anim="grunt" />
+    <voice type="SelfDefendGate" path="event:/voice/crpg/self/defend/male/gate" face_anim="grunt" />
+    <voice type="SelfDefendGatehouse" path="event:/voice/crpg/self/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="SelfDefendLadders" path="event:/voice/crpg/self/defend/male/ladders" face_anim="grunt" />
+    <voice type="SelfDefendSiegeTower" path="event:/voice/crpg/self/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfDefendStairs" path="event:/voice/crpg/self/defend/male/stairs" face_anim="grunt" />
+    <voice type="SelfDefendTower" path="event:/voice/crpg/self/defend/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendWalls" path="event:/voice/crpg/self/defend/male/walls" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildCatapult" path="event:/voice/crpg/self/equipment/male/build_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildSiegeTower" path="event:/voice/crpg/self/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentEquipment" path="event:/voice/crpg/self/equipment/male/equipment" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpCatapult" path="event:/voice/crpg/self/equipment/male/help_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpSiegeTower" path="event:/voice/crpg/self/equipment/male/help_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentLadders" path="event:/voice/crpg/self/equipment/male/ladders" face_anim="grunt" />
+    <voice type="SelfEquipmentManCatapult" path="event:/voice/crpg/self/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentManSiegeTower" path="event:/voice/crpg/self/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentShields" path="event:/voice/crpg/self/equipment/male/shields" face_anim="grunt" />
   </voice_definition>
 
   <voice_definition
@@ -27,7 +327,107 @@
     only_for_npcs="false"
     min_pitch_multiplier="0.9"
     max_pitch_multiplier="1.1">
-    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+    <voice type="QuickWhistle" path="event:/voice/crpg/quick/whistle" face_anim="grunt" />
+    <voice type="AttackArchers" path="event:/voice/crpg/attack/male/archers" face_anim="grunt" />
+    <voice type="AttackAttack" path="event:/voice/crpg/attack/male/attack" face_anim="grunt" />
+    <voice type="AttackBase" path="event:/voice/crpg/attack/male/base" face_anim="grunt" />
+    <voice type="AttackCatapult" path="event:/voice/crpg/attack/male/catapult" face_anim="grunt" />
+    <voice type="AttackCavalry" path="event:/voice/crpg/attack/male/cavalry" face_anim="grunt" />
+    <voice type="AttackCharge" path="event:/voice/crpg/attack/male/charge" face_anim="grunt" />
+    <voice type="AttackEquipment" path="event:/voice/crpg/attack/male/equipment" face_anim="grunt" />
+    <voice type="AttackGate" path="event:/voice/crpg/attack/male/gate" face_anim="grunt" />
+    <voice type="AttackInfantry" path="event:/voice/crpg/attack/male/infantry" face_anim="grunt" />
+    <voice type="AttackLeftFlank" path="event:/voice/crpg/attack/male/left_flank" face_anim="grunt" />
+    <voice type="AttackRightFlank" path="event:/voice/crpg/attack/male/right_flank" face_anim="grunt" />
+    <voice type="AttackSiegeTower" path="event:/voice/crpg/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="AttackTower" path="event:/voice/crpg/attack/male/tower" face_anim="grunt" />
+    <voice type="DefendCatapult" path="event:/voice/crpg/defend/male/catapult" face_anim="grunt" />
+    <voice type="DefendCloseGate" path="event:/voice/crpg/defend/male/close_gate" face_anim="grunt" />
+    <voice type="DefendDefend" path="event:/voice/crpg/defend/male/defend" face_anim="grunt" />
+    <voice type="DefendFlag" path="event:/voice/crpg/defend/male/flag" face_anim="grunt" />
+    <voice type="DefendFlagCarrier" path="event:/voice/crpg/defend/male/flag_carrier" face_anim="grunt" />
+    <voice type="DefendGate" path="event:/voice/crpg/defend/male/gate" face_anim="grunt" />
+    <voice type="DefendGatehouse" path="event:/voice/crpg/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="DefendLadders" path="event:/voice/crpg/defend/male/ladders" face_anim="grunt" />
+    <voice type="DefendSiegeTower" path="event:/voice/crpg/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="DefendStairs" path="event:/voice/crpg/defend/male/stairs" face_anim="grunt" />
+    <voice type="DefendTower" path="event:/voice/crpg/defend/male/tower" face_anim="grunt" />
+    <voice type="DefendWalls" path="event:/voice/crpg/defend/male/walls" face_anim="grunt" />
+    <voice type="EquipmentBuildSiegeTower" path="event:/voice/crpg/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentDeployCatapult" path="event:/voice/crpg/equipment/male/deploy_catapult" face_anim="grunt" />
+    <voice type="EquipmentEquipment" path="event:/voice/crpg/equipment/male/equipment" face_anim="grunt" />
+    <voice type="EquipmentLadders" path="event:/voice/crpg/equipment/male/ladders" face_anim="grunt" />
+    <voice type="EquipmentManCatapult" path="event:/voice/crpg/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="EquipmentManSiegeTower" path="event:/voice/crpg/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentShields" path="event:/voice/crpg/equipment/male/shields" face_anim="grunt" />
+    <voice type="FormationArchers" path="event:/voice/crpg/formation/male/archers" face_anim="grunt" />
+    <voice type="FormationCavalry" path="event:/voice/crpg/formation/male/cavalry" face_anim="grunt" />
+    <voice type="FormationFallBack" path="event:/voice/crpg/formation/male/fall_back" face_anim="grunt" />
+    <voice type="FormationFollowMe" path="event:/voice/crpg/formation/male/follow_me" face_anim="grunt" />
+    <voice type="FormationHold" path="event:/voice/crpg/formation/male/hold" face_anim="grunt" />
+    <voice type="FormationInfantry" path="event:/voice/crpg/formation/male/infantry" face_anim="grunt" />
+    <voice type="FormationKeep" path="event:/voice/crpg/formation/male/keep" face_anim="grunt" />
+    <voice type="FormationReleaseArrows" path="event:/voice/crpg/formation/male/release_arrows" face_anim="grunt" />
+    <voice type="FormationRetreat" path="event:/voice/crpg/formation/male/retreat" face_anim="grunt" />
+    <voice type="FormationShieldwall" path="event:/voice/crpg/formation/male/shieldwall" face_anim="grunt" />
+    <voice type="FormationShoot" path="event:/voice/crpg/formation/male/shoot" face_anim="grunt" />
+    <voice type="FormationSpreadOut" path="event:/voice/crpg/formation/male/spread_out" face_anim="grunt" />
+    <voice type="FormationStandCloser" path="event:/voice/crpg/formation/male/stand_closer" face_anim="grunt" />
+    <voice type="FormationTakeCover" path="event:/voice/crpg/formation/male/take_cover" face_anim="grunt" />
+    <voice type="IncomingArrows" path="event:/voice/crpg/incoming/male/arrows" face_anim="grunt" />
+    <voice type="IncomingBase" path="event:/voice/crpg/incoming/male/base" face_anim="grunt" />
+    <voice type="IncomingCatapult" path="event:/voice/crpg/incoming/male/catapult" face_anim="grunt" />
+    <voice type="IncomingCavalry" path="event:/voice/crpg/incoming/male/cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryBehind" path="event:/voice/crpg/incoming/male/cavalry_behind" face_anim="grunt" />
+    <voice type="IncomingCavalryCavalry" path="event:/voice/crpg/incoming/male/cavalry_cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryLeft" path="event:/voice/crpg/incoming/male/cavalry_left" face_anim="grunt" />
+    <voice type="IncomingCavalryRight" path="event:/voice/crpg/incoming/male/cavalry_right" face_anim="grunt" />
+    <voice type="IncomingInfantry" path="event:/voice/crpg/incoming/male/infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryBehind" path="event:/voice/crpg/incoming/male/infantry_behind" face_anim="grunt" />
+    <voice type="IncomingInfantryInfantry" path="event:/voice/crpg/incoming/male/infantry_infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryLeft" path="event:/voice/crpg/incoming/male/infantry_left" face_anim="grunt" />
+    <voice type="IncomingInfantryRight" path="event:/voice/crpg/incoming/male/infantry_right" face_anim="grunt" />
+    <voice type="IncomingSiegeTower" path="event:/voice/crpg/incoming/male/siege_tower" face_anim="grunt" />
+    <voice type="QuickHello" path="event:/voice/crpg/quick/male/hello" face_anim="grunt" />
+    <voice type="QuickHelp" path="event:/voice/crpg/quick/male/help" face_anim="grunt" />
+    <voice type="QuickMove" path="event:/voice/crpg/quick/male/move" face_anim="grunt" />
+    <voice type="QuickNo" path="event:/voice/crpg/quick/male/no" face_anim="grunt" />
+    <voice type="QuickSilence" path="event:/voice/crpg/quick/male/silence" face_anim="grunt" />
+    <voice type="QuickSorry" path="event:/voice/crpg/quick/male/sorry" face_anim="grunt" />
+    <voice type="QuickStop" path="event:/voice/crpg/quick/male/stop" face_anim="grunt" />
+    <voice type="QuickThanks" path="event:/voice/crpg/quick/male/thanks" face_anim="grunt" />
+    <voice type="QuickWatchAim" path="event:/voice/crpg/quick/male/watch_aim" face_anim="grunt" />
+    <voice type="QuickYell" path="event:/voice/crpg/quick/male/yell" face_anim="grunt" />
+    <voice type="QuickYes" path="event:/voice/crpg/quick/male/yes" face_anim="grunt" />
+    <voice type="SelfAttackAttacking" path="event:/voice/crpg/self/attack/male/attacking" face_anim="grunt" />
+    <voice type="SelfAttackBase" path="event:/voice/crpg/self/attack/male/base" face_anim="grunt" />
+    <voice type="SelfAttackCatapult" path="event:/voice/crpg/self/attack/male/catapult" face_anim="grunt" />
+    <voice type="SelfAttackEquipment" path="event:/voice/crpg/self/attack/male/equipment" face_anim="grunt" />
+    <voice type="SelfAttackFlag" path="event:/voice/crpg/self/attack/male/flag" face_anim="grunt" />
+    <voice type="SelfAttackGate" path="event:/voice/crpg/self/attack/male/gate" face_anim="grunt" />
+    <voice type="SelfAttackLeft" path="event:/voice/crpg/self/attack/male/left" face_anim="grunt" />
+    <voice type="SelfAttackRight" path="event:/voice/crpg/self/attack/male/right" face_anim="grunt" />
+    <voice type="SelfAttackSiegeTower" path="event:/voice/crpg/self/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfAttackTower" path="event:/voice/crpg/self/attack/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendCatapult" path="event:/voice/crpg/self/defend/male/catapult" face_anim="grunt" />
+    <voice type="SelfDefendCloseGate" path="event:/voice/crpg/self/defend/male/close_gate" face_anim="grunt" />
+    <voice type="SelfDefendFlag" path="event:/voice/crpg/self/defend/male/flag" face_anim="grunt" />
+    <voice type="SelfDefendGate" path="event:/voice/crpg/self/defend/male/gate" face_anim="grunt" />
+    <voice type="SelfDefendGatehouse" path="event:/voice/crpg/self/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="SelfDefendLadders" path="event:/voice/crpg/self/defend/male/ladders" face_anim="grunt" />
+    <voice type="SelfDefendSiegeTower" path="event:/voice/crpg/self/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfDefendStairs" path="event:/voice/crpg/self/defend/male/stairs" face_anim="grunt" />
+    <voice type="SelfDefendTower" path="event:/voice/crpg/self/defend/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendWalls" path="event:/voice/crpg/self/defend/male/walls" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildCatapult" path="event:/voice/crpg/self/equipment/male/build_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildSiegeTower" path="event:/voice/crpg/self/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentEquipment" path="event:/voice/crpg/self/equipment/male/equipment" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpCatapult" path="event:/voice/crpg/self/equipment/male/help_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpSiegeTower" path="event:/voice/crpg/self/equipment/male/help_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentLadders" path="event:/voice/crpg/self/equipment/male/ladders" face_anim="grunt" />
+    <voice type="SelfEquipmentManCatapult" path="event:/voice/crpg/self/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentManSiegeTower" path="event:/voice/crpg/self/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentShields" path="event:/voice/crpg/self/equipment/male/shields" face_anim="grunt" />
   </voice_definition>
 
   <voice_definition
@@ -36,7 +436,107 @@
     only_for_npcs="false"
     min_pitch_multiplier="0.9"
     max_pitch_multiplier="1.1">
-    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+    <voice type="QuickWhistle" path="event:/voice/crpg/quick/whistle" face_anim="grunt" />
+    <voice type="AttackArchers" path="event:/voice/crpg/attack/male/archers" face_anim="grunt" />
+    <voice type="AttackAttack" path="event:/voice/crpg/attack/male/attack" face_anim="grunt" />
+    <voice type="AttackBase" path="event:/voice/crpg/attack/male/base" face_anim="grunt" />
+    <voice type="AttackCatapult" path="event:/voice/crpg/attack/male/catapult" face_anim="grunt" />
+    <voice type="AttackCavalry" path="event:/voice/crpg/attack/male/cavalry" face_anim="grunt" />
+    <voice type="AttackCharge" path="event:/voice/crpg/attack/male/charge" face_anim="grunt" />
+    <voice type="AttackEquipment" path="event:/voice/crpg/attack/male/equipment" face_anim="grunt" />
+    <voice type="AttackGate" path="event:/voice/crpg/attack/male/gate" face_anim="grunt" />
+    <voice type="AttackInfantry" path="event:/voice/crpg/attack/male/infantry" face_anim="grunt" />
+    <voice type="AttackLeftFlank" path="event:/voice/crpg/attack/male/left_flank" face_anim="grunt" />
+    <voice type="AttackRightFlank" path="event:/voice/crpg/attack/male/right_flank" face_anim="grunt" />
+    <voice type="AttackSiegeTower" path="event:/voice/crpg/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="AttackTower" path="event:/voice/crpg/attack/male/tower" face_anim="grunt" />
+    <voice type="DefendCatapult" path="event:/voice/crpg/defend/male/catapult" face_anim="grunt" />
+    <voice type="DefendCloseGate" path="event:/voice/crpg/defend/male/close_gate" face_anim="grunt" />
+    <voice type="DefendDefend" path="event:/voice/crpg/defend/male/defend" face_anim="grunt" />
+    <voice type="DefendFlag" path="event:/voice/crpg/defend/male/flag" face_anim="grunt" />
+    <voice type="DefendFlagCarrier" path="event:/voice/crpg/defend/male/flag_carrier" face_anim="grunt" />
+    <voice type="DefendGate" path="event:/voice/crpg/defend/male/gate" face_anim="grunt" />
+    <voice type="DefendGatehouse" path="event:/voice/crpg/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="DefendLadders" path="event:/voice/crpg/defend/male/ladders" face_anim="grunt" />
+    <voice type="DefendSiegeTower" path="event:/voice/crpg/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="DefendStairs" path="event:/voice/crpg/defend/male/stairs" face_anim="grunt" />
+    <voice type="DefendTower" path="event:/voice/crpg/defend/male/tower" face_anim="grunt" />
+    <voice type="DefendWalls" path="event:/voice/crpg/defend/male/walls" face_anim="grunt" />
+    <voice type="EquipmentBuildSiegeTower" path="event:/voice/crpg/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentDeployCatapult" path="event:/voice/crpg/equipment/male/deploy_catapult" face_anim="grunt" />
+    <voice type="EquipmentEquipment" path="event:/voice/crpg/equipment/male/equipment" face_anim="grunt" />
+    <voice type="EquipmentLadders" path="event:/voice/crpg/equipment/male/ladders" face_anim="grunt" />
+    <voice type="EquipmentManCatapult" path="event:/voice/crpg/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="EquipmentManSiegeTower" path="event:/voice/crpg/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentShields" path="event:/voice/crpg/equipment/male/shields" face_anim="grunt" />
+    <voice type="FormationArchers" path="event:/voice/crpg/formation/male/archers" face_anim="grunt" />
+    <voice type="FormationCavalry" path="event:/voice/crpg/formation/male/cavalry" face_anim="grunt" />
+    <voice type="FormationFallBack" path="event:/voice/crpg/formation/male/fall_back" face_anim="grunt" />
+    <voice type="FormationFollowMe" path="event:/voice/crpg/formation/male/follow_me" face_anim="grunt" />
+    <voice type="FormationHold" path="event:/voice/crpg/formation/male/hold" face_anim="grunt" />
+    <voice type="FormationInfantry" path="event:/voice/crpg/formation/male/infantry" face_anim="grunt" />
+    <voice type="FormationKeep" path="event:/voice/crpg/formation/male/keep" face_anim="grunt" />
+    <voice type="FormationReleaseArrows" path="event:/voice/crpg/formation/male/release_arrows" face_anim="grunt" />
+    <voice type="FormationRetreat" path="event:/voice/crpg/formation/male/retreat" face_anim="grunt" />
+    <voice type="FormationShieldwall" path="event:/voice/crpg/formation/male/shieldwall" face_anim="grunt" />
+    <voice type="FormationShoot" path="event:/voice/crpg/formation/male/shoot" face_anim="grunt" />
+    <voice type="FormationSpreadOut" path="event:/voice/crpg/formation/male/spread_out" face_anim="grunt" />
+    <voice type="FormationStandCloser" path="event:/voice/crpg/formation/male/stand_closer" face_anim="grunt" />
+    <voice type="FormationTakeCover" path="event:/voice/crpg/formation/male/take_cover" face_anim="grunt" />
+    <voice type="IncomingArrows" path="event:/voice/crpg/incoming/male/arrows" face_anim="grunt" />
+    <voice type="IncomingBase" path="event:/voice/crpg/incoming/male/base" face_anim="grunt" />
+    <voice type="IncomingCatapult" path="event:/voice/crpg/incoming/male/catapult" face_anim="grunt" />
+    <voice type="IncomingCavalry" path="event:/voice/crpg/incoming/male/cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryBehind" path="event:/voice/crpg/incoming/male/cavalry_behind" face_anim="grunt" />
+    <voice type="IncomingCavalryCavalry" path="event:/voice/crpg/incoming/male/cavalry_cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryLeft" path="event:/voice/crpg/incoming/male/cavalry_left" face_anim="grunt" />
+    <voice type="IncomingCavalryRight" path="event:/voice/crpg/incoming/male/cavalry_right" face_anim="grunt" />
+    <voice type="IncomingInfantry" path="event:/voice/crpg/incoming/male/infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryBehind" path="event:/voice/crpg/incoming/male/infantry_behind" face_anim="grunt" />
+    <voice type="IncomingInfantryInfantry" path="event:/voice/crpg/incoming/male/infantry_infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryLeft" path="event:/voice/crpg/incoming/male/infantry_left" face_anim="grunt" />
+    <voice type="IncomingInfantryRight" path="event:/voice/crpg/incoming/male/infantry_right" face_anim="grunt" />
+    <voice type="IncomingSiegeTower" path="event:/voice/crpg/incoming/male/siege_tower" face_anim="grunt" />
+    <voice type="QuickHello" path="event:/voice/crpg/quick/male/hello" face_anim="grunt" />
+    <voice type="QuickHelp" path="event:/voice/crpg/quick/male/help" face_anim="grunt" />
+    <voice type="QuickMove" path="event:/voice/crpg/quick/male/move" face_anim="grunt" />
+    <voice type="QuickNo" path="event:/voice/crpg/quick/male/no" face_anim="grunt" />
+    <voice type="QuickSilence" path="event:/voice/crpg/quick/male/silence" face_anim="grunt" />
+    <voice type="QuickSorry" path="event:/voice/crpg/quick/male/sorry" face_anim="grunt" />
+    <voice type="QuickStop" path="event:/voice/crpg/quick/male/stop" face_anim="grunt" />
+    <voice type="QuickThanks" path="event:/voice/crpg/quick/male/thanks" face_anim="grunt" />
+    <voice type="QuickWatchAim" path="event:/voice/crpg/quick/male/watch_aim" face_anim="grunt" />
+    <voice type="QuickYell" path="event:/voice/crpg/quick/male/yell" face_anim="grunt" />
+    <voice type="QuickYes" path="event:/voice/crpg/quick/male/yes" face_anim="grunt" />
+    <voice type="SelfAttackAttacking" path="event:/voice/crpg/self/attack/male/attacking" face_anim="grunt" />
+    <voice type="SelfAttackBase" path="event:/voice/crpg/self/attack/male/base" face_anim="grunt" />
+    <voice type="SelfAttackCatapult" path="event:/voice/crpg/self/attack/male/catapult" face_anim="grunt" />
+    <voice type="SelfAttackEquipment" path="event:/voice/crpg/self/attack/male/equipment" face_anim="grunt" />
+    <voice type="SelfAttackFlag" path="event:/voice/crpg/self/attack/male/flag" face_anim="grunt" />
+    <voice type="SelfAttackGate" path="event:/voice/crpg/self/attack/male/gate" face_anim="grunt" />
+    <voice type="SelfAttackLeft" path="event:/voice/crpg/self/attack/male/left" face_anim="grunt" />
+    <voice type="SelfAttackRight" path="event:/voice/crpg/self/attack/male/right" face_anim="grunt" />
+    <voice type="SelfAttackSiegeTower" path="event:/voice/crpg/self/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfAttackTower" path="event:/voice/crpg/self/attack/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendCatapult" path="event:/voice/crpg/self/defend/male/catapult" face_anim="grunt" />
+    <voice type="SelfDefendCloseGate" path="event:/voice/crpg/self/defend/male/close_gate" face_anim="grunt" />
+    <voice type="SelfDefendFlag" path="event:/voice/crpg/self/defend/male/flag" face_anim="grunt" />
+    <voice type="SelfDefendGate" path="event:/voice/crpg/self/defend/male/gate" face_anim="grunt" />
+    <voice type="SelfDefendGatehouse" path="event:/voice/crpg/self/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="SelfDefendLadders" path="event:/voice/crpg/self/defend/male/ladders" face_anim="grunt" />
+    <voice type="SelfDefendSiegeTower" path="event:/voice/crpg/self/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfDefendStairs" path="event:/voice/crpg/self/defend/male/stairs" face_anim="grunt" />
+    <voice type="SelfDefendTower" path="event:/voice/crpg/self/defend/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendWalls" path="event:/voice/crpg/self/defend/male/walls" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildCatapult" path="event:/voice/crpg/self/equipment/male/build_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildSiegeTower" path="event:/voice/crpg/self/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentEquipment" path="event:/voice/crpg/self/equipment/male/equipment" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpCatapult" path="event:/voice/crpg/self/equipment/male/help_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpSiegeTower" path="event:/voice/crpg/self/equipment/male/help_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentLadders" path="event:/voice/crpg/self/equipment/male/ladders" face_anim="grunt" />
+    <voice type="SelfEquipmentManCatapult" path="event:/voice/crpg/self/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentManSiegeTower" path="event:/voice/crpg/self/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentShields" path="event:/voice/crpg/self/equipment/male/shields" face_anim="grunt" />
   </voice_definition>
 
   <voice_definition
@@ -45,7 +545,107 @@
     only_for_npcs="false"
     min_pitch_multiplier="0.9"
     max_pitch_multiplier="1.1">
-    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+    <voice type="QuickWhistle" path="event:/voice/crpg/quick/whistle" face_anim="grunt" />
+    <voice type="AttackArchers" path="event:/voice/crpg/attack/male/archers" face_anim="grunt" />
+    <voice type="AttackAttack" path="event:/voice/crpg/attack/male/attack" face_anim="grunt" />
+    <voice type="AttackBase" path="event:/voice/crpg/attack/male/base" face_anim="grunt" />
+    <voice type="AttackCatapult" path="event:/voice/crpg/attack/male/catapult" face_anim="grunt" />
+    <voice type="AttackCavalry" path="event:/voice/crpg/attack/male/cavalry" face_anim="grunt" />
+    <voice type="AttackCharge" path="event:/voice/crpg/attack/male/charge" face_anim="grunt" />
+    <voice type="AttackEquipment" path="event:/voice/crpg/attack/male/equipment" face_anim="grunt" />
+    <voice type="AttackGate" path="event:/voice/crpg/attack/male/gate" face_anim="grunt" />
+    <voice type="AttackInfantry" path="event:/voice/crpg/attack/male/infantry" face_anim="grunt" />
+    <voice type="AttackLeftFlank" path="event:/voice/crpg/attack/male/left_flank" face_anim="grunt" />
+    <voice type="AttackRightFlank" path="event:/voice/crpg/attack/male/right_flank" face_anim="grunt" />
+    <voice type="AttackSiegeTower" path="event:/voice/crpg/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="AttackTower" path="event:/voice/crpg/attack/male/tower" face_anim="grunt" />
+    <voice type="DefendCatapult" path="event:/voice/crpg/defend/male/catapult" face_anim="grunt" />
+    <voice type="DefendCloseGate" path="event:/voice/crpg/defend/male/close_gate" face_anim="grunt" />
+    <voice type="DefendDefend" path="event:/voice/crpg/defend/male/defend" face_anim="grunt" />
+    <voice type="DefendFlag" path="event:/voice/crpg/defend/male/flag" face_anim="grunt" />
+    <voice type="DefendFlagCarrier" path="event:/voice/crpg/defend/male/flag_carrier" face_anim="grunt" />
+    <voice type="DefendGate" path="event:/voice/crpg/defend/male/gate" face_anim="grunt" />
+    <voice type="DefendGatehouse" path="event:/voice/crpg/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="DefendLadders" path="event:/voice/crpg/defend/male/ladders" face_anim="grunt" />
+    <voice type="DefendSiegeTower" path="event:/voice/crpg/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="DefendStairs" path="event:/voice/crpg/defend/male/stairs" face_anim="grunt" />
+    <voice type="DefendTower" path="event:/voice/crpg/defend/male/tower" face_anim="grunt" />
+    <voice type="DefendWalls" path="event:/voice/crpg/defend/male/walls" face_anim="grunt" />
+    <voice type="EquipmentBuildSiegeTower" path="event:/voice/crpg/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentDeployCatapult" path="event:/voice/crpg/equipment/male/deploy_catapult" face_anim="grunt" />
+    <voice type="EquipmentEquipment" path="event:/voice/crpg/equipment/male/equipment" face_anim="grunt" />
+    <voice type="EquipmentLadders" path="event:/voice/crpg/equipment/male/ladders" face_anim="grunt" />
+    <voice type="EquipmentManCatapult" path="event:/voice/crpg/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="EquipmentManSiegeTower" path="event:/voice/crpg/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentShields" path="event:/voice/crpg/equipment/male/shields" face_anim="grunt" />
+    <voice type="FormationArchers" path="event:/voice/crpg/formation/male/archers" face_anim="grunt" />
+    <voice type="FormationCavalry" path="event:/voice/crpg/formation/male/cavalry" face_anim="grunt" />
+    <voice type="FormationFallBack" path="event:/voice/crpg/formation/male/fall_back" face_anim="grunt" />
+    <voice type="FormationFollowMe" path="event:/voice/crpg/formation/male/follow_me" face_anim="grunt" />
+    <voice type="FormationHold" path="event:/voice/crpg/formation/male/hold" face_anim="grunt" />
+    <voice type="FormationInfantry" path="event:/voice/crpg/formation/male/infantry" face_anim="grunt" />
+    <voice type="FormationKeep" path="event:/voice/crpg/formation/male/keep" face_anim="grunt" />
+    <voice type="FormationReleaseArrows" path="event:/voice/crpg/formation/male/release_arrows" face_anim="grunt" />
+    <voice type="FormationRetreat" path="event:/voice/crpg/formation/male/retreat" face_anim="grunt" />
+    <voice type="FormationShieldwall" path="event:/voice/crpg/formation/male/shieldwall" face_anim="grunt" />
+    <voice type="FormationShoot" path="event:/voice/crpg/formation/male/shoot" face_anim="grunt" />
+    <voice type="FormationSpreadOut" path="event:/voice/crpg/formation/male/spread_out" face_anim="grunt" />
+    <voice type="FormationStandCloser" path="event:/voice/crpg/formation/male/stand_closer" face_anim="grunt" />
+    <voice type="FormationTakeCover" path="event:/voice/crpg/formation/male/take_cover" face_anim="grunt" />
+    <voice type="IncomingArrows" path="event:/voice/crpg/incoming/male/arrows" face_anim="grunt" />
+    <voice type="IncomingBase" path="event:/voice/crpg/incoming/male/base" face_anim="grunt" />
+    <voice type="IncomingCatapult" path="event:/voice/crpg/incoming/male/catapult" face_anim="grunt" />
+    <voice type="IncomingCavalry" path="event:/voice/crpg/incoming/male/cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryBehind" path="event:/voice/crpg/incoming/male/cavalry_behind" face_anim="grunt" />
+    <voice type="IncomingCavalryCavalry" path="event:/voice/crpg/incoming/male/cavalry_cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryLeft" path="event:/voice/crpg/incoming/male/cavalry_left" face_anim="grunt" />
+    <voice type="IncomingCavalryRight" path="event:/voice/crpg/incoming/male/cavalry_right" face_anim="grunt" />
+    <voice type="IncomingInfantry" path="event:/voice/crpg/incoming/male/infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryBehind" path="event:/voice/crpg/incoming/male/infantry_behind" face_anim="grunt" />
+    <voice type="IncomingInfantryInfantry" path="event:/voice/crpg/incoming/male/infantry_infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryLeft" path="event:/voice/crpg/incoming/male/infantry_left" face_anim="grunt" />
+    <voice type="IncomingInfantryRight" path="event:/voice/crpg/incoming/male/infantry_right" face_anim="grunt" />
+    <voice type="IncomingSiegeTower" path="event:/voice/crpg/incoming/male/siege_tower" face_anim="grunt" />
+    <voice type="QuickHello" path="event:/voice/crpg/quick/male/hello" face_anim="grunt" />
+    <voice type="QuickHelp" path="event:/voice/crpg/quick/male/help" face_anim="grunt" />
+    <voice type="QuickMove" path="event:/voice/crpg/quick/male/move" face_anim="grunt" />
+    <voice type="QuickNo" path="event:/voice/crpg/quick/male/no" face_anim="grunt" />
+    <voice type="QuickSilence" path="event:/voice/crpg/quick/male/silence" face_anim="grunt" />
+    <voice type="QuickSorry" path="event:/voice/crpg/quick/male/sorry" face_anim="grunt" />
+    <voice type="QuickStop" path="event:/voice/crpg/quick/male/stop" face_anim="grunt" />
+    <voice type="QuickThanks" path="event:/voice/crpg/quick/male/thanks" face_anim="grunt" />
+    <voice type="QuickWatchAim" path="event:/voice/crpg/quick/male/watch_aim" face_anim="grunt" />
+    <voice type="QuickYell" path="event:/voice/crpg/quick/male/yell" face_anim="grunt" />
+    <voice type="QuickYes" path="event:/voice/crpg/quick/male/yes" face_anim="grunt" />
+    <voice type="SelfAttackAttacking" path="event:/voice/crpg/self/attack/male/attacking" face_anim="grunt" />
+    <voice type="SelfAttackBase" path="event:/voice/crpg/self/attack/male/base" face_anim="grunt" />
+    <voice type="SelfAttackCatapult" path="event:/voice/crpg/self/attack/male/catapult" face_anim="grunt" />
+    <voice type="SelfAttackEquipment" path="event:/voice/crpg/self/attack/male/equipment" face_anim="grunt" />
+    <voice type="SelfAttackFlag" path="event:/voice/crpg/self/attack/male/flag" face_anim="grunt" />
+    <voice type="SelfAttackGate" path="event:/voice/crpg/self/attack/male/gate" face_anim="grunt" />
+    <voice type="SelfAttackLeft" path="event:/voice/crpg/self/attack/male/left" face_anim="grunt" />
+    <voice type="SelfAttackRight" path="event:/voice/crpg/self/attack/male/right" face_anim="grunt" />
+    <voice type="SelfAttackSiegeTower" path="event:/voice/crpg/self/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfAttackTower" path="event:/voice/crpg/self/attack/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendCatapult" path="event:/voice/crpg/self/defend/male/catapult" face_anim="grunt" />
+    <voice type="SelfDefendCloseGate" path="event:/voice/crpg/self/defend/male/close_gate" face_anim="grunt" />
+    <voice type="SelfDefendFlag" path="event:/voice/crpg/self/defend/male/flag" face_anim="grunt" />
+    <voice type="SelfDefendGate" path="event:/voice/crpg/self/defend/male/gate" face_anim="grunt" />
+    <voice type="SelfDefendGatehouse" path="event:/voice/crpg/self/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="SelfDefendLadders" path="event:/voice/crpg/self/defend/male/ladders" face_anim="grunt" />
+    <voice type="SelfDefendSiegeTower" path="event:/voice/crpg/self/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfDefendStairs" path="event:/voice/crpg/self/defend/male/stairs" face_anim="grunt" />
+    <voice type="SelfDefendTower" path="event:/voice/crpg/self/defend/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendWalls" path="event:/voice/crpg/self/defend/male/walls" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildCatapult" path="event:/voice/crpg/self/equipment/male/build_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildSiegeTower" path="event:/voice/crpg/self/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentEquipment" path="event:/voice/crpg/self/equipment/male/equipment" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpCatapult" path="event:/voice/crpg/self/equipment/male/help_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpSiegeTower" path="event:/voice/crpg/self/equipment/male/help_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentLadders" path="event:/voice/crpg/self/equipment/male/ladders" face_anim="grunt" />
+    <voice type="SelfEquipmentManCatapult" path="event:/voice/crpg/self/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentManSiegeTower" path="event:/voice/crpg/self/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentShields" path="event:/voice/crpg/self/equipment/male/shields" face_anim="grunt" />
   </voice_definition>
 
   <voice_definition
@@ -54,7 +654,107 @@
     only_for_npcs="false"
     min_pitch_multiplier="0.9"
     max_pitch_multiplier="1.1">
-    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+    <voice type="QuickWhistle" path="event:/voice/crpg/quick/whistle" face_anim="grunt" />
+    <voice type="AttackArchers" path="event:/voice/crpg/attack/male/archers" face_anim="grunt" />
+    <voice type="AttackAttack" path="event:/voice/crpg/attack/male/attack" face_anim="grunt" />
+    <voice type="AttackBase" path="event:/voice/crpg/attack/male/base" face_anim="grunt" />
+    <voice type="AttackCatapult" path="event:/voice/crpg/attack/male/catapult" face_anim="grunt" />
+    <voice type="AttackCavalry" path="event:/voice/crpg/attack/male/cavalry" face_anim="grunt" />
+    <voice type="AttackCharge" path="event:/voice/crpg/attack/male/charge" face_anim="grunt" />
+    <voice type="AttackEquipment" path="event:/voice/crpg/attack/male/equipment" face_anim="grunt" />
+    <voice type="AttackGate" path="event:/voice/crpg/attack/male/gate" face_anim="grunt" />
+    <voice type="AttackInfantry" path="event:/voice/crpg/attack/male/infantry" face_anim="grunt" />
+    <voice type="AttackLeftFlank" path="event:/voice/crpg/attack/male/left_flank" face_anim="grunt" />
+    <voice type="AttackRightFlank" path="event:/voice/crpg/attack/male/right_flank" face_anim="grunt" />
+    <voice type="AttackSiegeTower" path="event:/voice/crpg/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="AttackTower" path="event:/voice/crpg/attack/male/tower" face_anim="grunt" />
+    <voice type="DefendCatapult" path="event:/voice/crpg/defend/male/catapult" face_anim="grunt" />
+    <voice type="DefendCloseGate" path="event:/voice/crpg/defend/male/close_gate" face_anim="grunt" />
+    <voice type="DefendDefend" path="event:/voice/crpg/defend/male/defend" face_anim="grunt" />
+    <voice type="DefendFlag" path="event:/voice/crpg/defend/male/flag" face_anim="grunt" />
+    <voice type="DefendFlagCarrier" path="event:/voice/crpg/defend/male/flag_carrier" face_anim="grunt" />
+    <voice type="DefendGate" path="event:/voice/crpg/defend/male/gate" face_anim="grunt" />
+    <voice type="DefendGatehouse" path="event:/voice/crpg/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="DefendLadders" path="event:/voice/crpg/defend/male/ladders" face_anim="grunt" />
+    <voice type="DefendSiegeTower" path="event:/voice/crpg/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="DefendStairs" path="event:/voice/crpg/defend/male/stairs" face_anim="grunt" />
+    <voice type="DefendTower" path="event:/voice/crpg/defend/male/tower" face_anim="grunt" />
+    <voice type="DefendWalls" path="event:/voice/crpg/defend/male/walls" face_anim="grunt" />
+    <voice type="EquipmentBuildSiegeTower" path="event:/voice/crpg/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentDeployCatapult" path="event:/voice/crpg/equipment/male/deploy_catapult" face_anim="grunt" />
+    <voice type="EquipmentEquipment" path="event:/voice/crpg/equipment/male/equipment" face_anim="grunt" />
+    <voice type="EquipmentLadders" path="event:/voice/crpg/equipment/male/ladders" face_anim="grunt" />
+    <voice type="EquipmentManCatapult" path="event:/voice/crpg/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="EquipmentManSiegeTower" path="event:/voice/crpg/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentShields" path="event:/voice/crpg/equipment/male/shields" face_anim="grunt" />
+    <voice type="FormationArchers" path="event:/voice/crpg/formation/male/archers" face_anim="grunt" />
+    <voice type="FormationCavalry" path="event:/voice/crpg/formation/male/cavalry" face_anim="grunt" />
+    <voice type="FormationFallBack" path="event:/voice/crpg/formation/male/fall_back" face_anim="grunt" />
+    <voice type="FormationFollowMe" path="event:/voice/crpg/formation/male/follow_me" face_anim="grunt" />
+    <voice type="FormationHold" path="event:/voice/crpg/formation/male/hold" face_anim="grunt" />
+    <voice type="FormationInfantry" path="event:/voice/crpg/formation/male/infantry" face_anim="grunt" />
+    <voice type="FormationKeep" path="event:/voice/crpg/formation/male/keep" face_anim="grunt" />
+    <voice type="FormationReleaseArrows" path="event:/voice/crpg/formation/male/release_arrows" face_anim="grunt" />
+    <voice type="FormationRetreat" path="event:/voice/crpg/formation/male/retreat" face_anim="grunt" />
+    <voice type="FormationShieldwall" path="event:/voice/crpg/formation/male/shieldwall" face_anim="grunt" />
+    <voice type="FormationShoot" path="event:/voice/crpg/formation/male/shoot" face_anim="grunt" />
+    <voice type="FormationSpreadOut" path="event:/voice/crpg/formation/male/spread_out" face_anim="grunt" />
+    <voice type="FormationStandCloser" path="event:/voice/crpg/formation/male/stand_closer" face_anim="grunt" />
+    <voice type="FormationTakeCover" path="event:/voice/crpg/formation/male/take_cover" face_anim="grunt" />
+    <voice type="IncomingArrows" path="event:/voice/crpg/incoming/male/arrows" face_anim="grunt" />
+    <voice type="IncomingBase" path="event:/voice/crpg/incoming/male/base" face_anim="grunt" />
+    <voice type="IncomingCatapult" path="event:/voice/crpg/incoming/male/catapult" face_anim="grunt" />
+    <voice type="IncomingCavalry" path="event:/voice/crpg/incoming/male/cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryBehind" path="event:/voice/crpg/incoming/male/cavalry_behind" face_anim="grunt" />
+    <voice type="IncomingCavalryCavalry" path="event:/voice/crpg/incoming/male/cavalry_cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryLeft" path="event:/voice/crpg/incoming/male/cavalry_left" face_anim="grunt" />
+    <voice type="IncomingCavalryRight" path="event:/voice/crpg/incoming/male/cavalry_right" face_anim="grunt" />
+    <voice type="IncomingInfantry" path="event:/voice/crpg/incoming/male/infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryBehind" path="event:/voice/crpg/incoming/male/infantry_behind" face_anim="grunt" />
+    <voice type="IncomingInfantryInfantry" path="event:/voice/crpg/incoming/male/infantry_infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryLeft" path="event:/voice/crpg/incoming/male/infantry_left" face_anim="grunt" />
+    <voice type="IncomingInfantryRight" path="event:/voice/crpg/incoming/male/infantry_right" face_anim="grunt" />
+    <voice type="IncomingSiegeTower" path="event:/voice/crpg/incoming/male/siege_tower" face_anim="grunt" />
+    <voice type="QuickHello" path="event:/voice/crpg/quick/male/hello" face_anim="grunt" />
+    <voice type="QuickHelp" path="event:/voice/crpg/quick/male/help" face_anim="grunt" />
+    <voice type="QuickMove" path="event:/voice/crpg/quick/male/move" face_anim="grunt" />
+    <voice type="QuickNo" path="event:/voice/crpg/quick/male/no" face_anim="grunt" />
+    <voice type="QuickSilence" path="event:/voice/crpg/quick/male/silence" face_anim="grunt" />
+    <voice type="QuickSorry" path="event:/voice/crpg/quick/male/sorry" face_anim="grunt" />
+    <voice type="QuickStop" path="event:/voice/crpg/quick/male/stop" face_anim="grunt" />
+    <voice type="QuickThanks" path="event:/voice/crpg/quick/male/thanks" face_anim="grunt" />
+    <voice type="QuickWatchAim" path="event:/voice/crpg/quick/male/watch_aim" face_anim="grunt" />
+    <voice type="QuickYell" path="event:/voice/crpg/quick/male/yell" face_anim="grunt" />
+    <voice type="QuickYes" path="event:/voice/crpg/quick/male/yes" face_anim="grunt" />
+    <voice type="SelfAttackAttacking" path="event:/voice/crpg/self/attack/male/attacking" face_anim="grunt" />
+    <voice type="SelfAttackBase" path="event:/voice/crpg/self/attack/male/base" face_anim="grunt" />
+    <voice type="SelfAttackCatapult" path="event:/voice/crpg/self/attack/male/catapult" face_anim="grunt" />
+    <voice type="SelfAttackEquipment" path="event:/voice/crpg/self/attack/male/equipment" face_anim="grunt" />
+    <voice type="SelfAttackFlag" path="event:/voice/crpg/self/attack/male/flag" face_anim="grunt" />
+    <voice type="SelfAttackGate" path="event:/voice/crpg/self/attack/male/gate" face_anim="grunt" />
+    <voice type="SelfAttackLeft" path="event:/voice/crpg/self/attack/male/left" face_anim="grunt" />
+    <voice type="SelfAttackRight" path="event:/voice/crpg/self/attack/male/right" face_anim="grunt" />
+    <voice type="SelfAttackSiegeTower" path="event:/voice/crpg/self/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfAttackTower" path="event:/voice/crpg/self/attack/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendCatapult" path="event:/voice/crpg/self/defend/male/catapult" face_anim="grunt" />
+    <voice type="SelfDefendCloseGate" path="event:/voice/crpg/self/defend/male/close_gate" face_anim="grunt" />
+    <voice type="SelfDefendFlag" path="event:/voice/crpg/self/defend/male/flag" face_anim="grunt" />
+    <voice type="SelfDefendGate" path="event:/voice/crpg/self/defend/male/gate" face_anim="grunt" />
+    <voice type="SelfDefendGatehouse" path="event:/voice/crpg/self/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="SelfDefendLadders" path="event:/voice/crpg/self/defend/male/ladders" face_anim="grunt" />
+    <voice type="SelfDefendSiegeTower" path="event:/voice/crpg/self/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfDefendStairs" path="event:/voice/crpg/self/defend/male/stairs" face_anim="grunt" />
+    <voice type="SelfDefendTower" path="event:/voice/crpg/self/defend/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendWalls" path="event:/voice/crpg/self/defend/male/walls" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildCatapult" path="event:/voice/crpg/self/equipment/male/build_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildSiegeTower" path="event:/voice/crpg/self/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentEquipment" path="event:/voice/crpg/self/equipment/male/equipment" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpCatapult" path="event:/voice/crpg/self/equipment/male/help_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpSiegeTower" path="event:/voice/crpg/self/equipment/male/help_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentLadders" path="event:/voice/crpg/self/equipment/male/ladders" face_anim="grunt" />
+    <voice type="SelfEquipmentManCatapult" path="event:/voice/crpg/self/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentManSiegeTower" path="event:/voice/crpg/self/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentShields" path="event:/voice/crpg/self/equipment/male/shields" face_anim="grunt" />
   </voice_definition>
 
   <voice_definition
@@ -63,7 +763,107 @@
     only_for_npcs="false"
     min_pitch_multiplier="0.9"
     max_pitch_multiplier="1.1">
-    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+    <voice type="QuickWhistle" path="event:/voice/crpg/quick/whistle" face_anim="grunt" />
+    <voice type="AttackArchers" path="event:/voice/crpg/attack/male/archers" face_anim="grunt" />
+    <voice type="AttackAttack" path="event:/voice/crpg/attack/male/attack" face_anim="grunt" />
+    <voice type="AttackBase" path="event:/voice/crpg/attack/male/base" face_anim="grunt" />
+    <voice type="AttackCatapult" path="event:/voice/crpg/attack/male/catapult" face_anim="grunt" />
+    <voice type="AttackCavalry" path="event:/voice/crpg/attack/male/cavalry" face_anim="grunt" />
+    <voice type="AttackCharge" path="event:/voice/crpg/attack/male/charge" face_anim="grunt" />
+    <voice type="AttackEquipment" path="event:/voice/crpg/attack/male/equipment" face_anim="grunt" />
+    <voice type="AttackGate" path="event:/voice/crpg/attack/male/gate" face_anim="grunt" />
+    <voice type="AttackInfantry" path="event:/voice/crpg/attack/male/infantry" face_anim="grunt" />
+    <voice type="AttackLeftFlank" path="event:/voice/crpg/attack/male/left_flank" face_anim="grunt" />
+    <voice type="AttackRightFlank" path="event:/voice/crpg/attack/male/right_flank" face_anim="grunt" />
+    <voice type="AttackSiegeTower" path="event:/voice/crpg/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="AttackTower" path="event:/voice/crpg/attack/male/tower" face_anim="grunt" />
+    <voice type="DefendCatapult" path="event:/voice/crpg/defend/male/catapult" face_anim="grunt" />
+    <voice type="DefendCloseGate" path="event:/voice/crpg/defend/male/close_gate" face_anim="grunt" />
+    <voice type="DefendDefend" path="event:/voice/crpg/defend/male/defend" face_anim="grunt" />
+    <voice type="DefendFlag" path="event:/voice/crpg/defend/male/flag" face_anim="grunt" />
+    <voice type="DefendFlagCarrier" path="event:/voice/crpg/defend/male/flag_carrier" face_anim="grunt" />
+    <voice type="DefendGate" path="event:/voice/crpg/defend/male/gate" face_anim="grunt" />
+    <voice type="DefendGatehouse" path="event:/voice/crpg/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="DefendLadders" path="event:/voice/crpg/defend/male/ladders" face_anim="grunt" />
+    <voice type="DefendSiegeTower" path="event:/voice/crpg/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="DefendStairs" path="event:/voice/crpg/defend/male/stairs" face_anim="grunt" />
+    <voice type="DefendTower" path="event:/voice/crpg/defend/male/tower" face_anim="grunt" />
+    <voice type="DefendWalls" path="event:/voice/crpg/defend/male/walls" face_anim="grunt" />
+    <voice type="EquipmentBuildSiegeTower" path="event:/voice/crpg/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentDeployCatapult" path="event:/voice/crpg/equipment/male/deploy_catapult" face_anim="grunt" />
+    <voice type="EquipmentEquipment" path="event:/voice/crpg/equipment/male/equipment" face_anim="grunt" />
+    <voice type="EquipmentLadders" path="event:/voice/crpg/equipment/male/ladders" face_anim="grunt" />
+    <voice type="EquipmentManCatapult" path="event:/voice/crpg/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="EquipmentManSiegeTower" path="event:/voice/crpg/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentShields" path="event:/voice/crpg/equipment/male/shields" face_anim="grunt" />
+    <voice type="FormationArchers" path="event:/voice/crpg/formation/male/archers" face_anim="grunt" />
+    <voice type="FormationCavalry" path="event:/voice/crpg/formation/male/cavalry" face_anim="grunt" />
+    <voice type="FormationFallBack" path="event:/voice/crpg/formation/male/fall_back" face_anim="grunt" />
+    <voice type="FormationFollowMe" path="event:/voice/crpg/formation/male/follow_me" face_anim="grunt" />
+    <voice type="FormationHold" path="event:/voice/crpg/formation/male/hold" face_anim="grunt" />
+    <voice type="FormationInfantry" path="event:/voice/crpg/formation/male/infantry" face_anim="grunt" />
+    <voice type="FormationKeep" path="event:/voice/crpg/formation/male/keep" face_anim="grunt" />
+    <voice type="FormationReleaseArrows" path="event:/voice/crpg/formation/male/release_arrows" face_anim="grunt" />
+    <voice type="FormationRetreat" path="event:/voice/crpg/formation/male/retreat" face_anim="grunt" />
+    <voice type="FormationShieldwall" path="event:/voice/crpg/formation/male/shieldwall" face_anim="grunt" />
+    <voice type="FormationShoot" path="event:/voice/crpg/formation/male/shoot" face_anim="grunt" />
+    <voice type="FormationSpreadOut" path="event:/voice/crpg/formation/male/spread_out" face_anim="grunt" />
+    <voice type="FormationStandCloser" path="event:/voice/crpg/formation/male/stand_closer" face_anim="grunt" />
+    <voice type="FormationTakeCover" path="event:/voice/crpg/formation/male/take_cover" face_anim="grunt" />
+    <voice type="IncomingArrows" path="event:/voice/crpg/incoming/male/arrows" face_anim="grunt" />
+    <voice type="IncomingBase" path="event:/voice/crpg/incoming/male/base" face_anim="grunt" />
+    <voice type="IncomingCatapult" path="event:/voice/crpg/incoming/male/catapult" face_anim="grunt" />
+    <voice type="IncomingCavalry" path="event:/voice/crpg/incoming/male/cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryBehind" path="event:/voice/crpg/incoming/male/cavalry_behind" face_anim="grunt" />
+    <voice type="IncomingCavalryCavalry" path="event:/voice/crpg/incoming/male/cavalry_cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryLeft" path="event:/voice/crpg/incoming/male/cavalry_left" face_anim="grunt" />
+    <voice type="IncomingCavalryRight" path="event:/voice/crpg/incoming/male/cavalry_right" face_anim="grunt" />
+    <voice type="IncomingInfantry" path="event:/voice/crpg/incoming/male/infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryBehind" path="event:/voice/crpg/incoming/male/infantry_behind" face_anim="grunt" />
+    <voice type="IncomingInfantryInfantry" path="event:/voice/crpg/incoming/male/infantry_infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryLeft" path="event:/voice/crpg/incoming/male/infantry_left" face_anim="grunt" />
+    <voice type="IncomingInfantryRight" path="event:/voice/crpg/incoming/male/infantry_right" face_anim="grunt" />
+    <voice type="IncomingSiegeTower" path="event:/voice/crpg/incoming/male/siege_tower" face_anim="grunt" />
+    <voice type="QuickHello" path="event:/voice/crpg/quick/male/hello" face_anim="grunt" />
+    <voice type="QuickHelp" path="event:/voice/crpg/quick/male/help" face_anim="grunt" />
+    <voice type="QuickMove" path="event:/voice/crpg/quick/male/move" face_anim="grunt" />
+    <voice type="QuickNo" path="event:/voice/crpg/quick/male/no" face_anim="grunt" />
+    <voice type="QuickSilence" path="event:/voice/crpg/quick/male/silence" face_anim="grunt" />
+    <voice type="QuickSorry" path="event:/voice/crpg/quick/male/sorry" face_anim="grunt" />
+    <voice type="QuickStop" path="event:/voice/crpg/quick/male/stop" face_anim="grunt" />
+    <voice type="QuickThanks" path="event:/voice/crpg/quick/male/thanks" face_anim="grunt" />
+    <voice type="QuickWatchAim" path="event:/voice/crpg/quick/male/watch_aim" face_anim="grunt" />
+    <voice type="QuickYell" path="event:/voice/crpg/quick/male/yell" face_anim="grunt" />
+    <voice type="QuickYes" path="event:/voice/crpg/quick/male/yes" face_anim="grunt" />
+    <voice type="SelfAttackAttacking" path="event:/voice/crpg/self/attack/male/attacking" face_anim="grunt" />
+    <voice type="SelfAttackBase" path="event:/voice/crpg/self/attack/male/base" face_anim="grunt" />
+    <voice type="SelfAttackCatapult" path="event:/voice/crpg/self/attack/male/catapult" face_anim="grunt" />
+    <voice type="SelfAttackEquipment" path="event:/voice/crpg/self/attack/male/equipment" face_anim="grunt" />
+    <voice type="SelfAttackFlag" path="event:/voice/crpg/self/attack/male/flag" face_anim="grunt" />
+    <voice type="SelfAttackGate" path="event:/voice/crpg/self/attack/male/gate" face_anim="grunt" />
+    <voice type="SelfAttackLeft" path="event:/voice/crpg/self/attack/male/left" face_anim="grunt" />
+    <voice type="SelfAttackRight" path="event:/voice/crpg/self/attack/male/right" face_anim="grunt" />
+    <voice type="SelfAttackSiegeTower" path="event:/voice/crpg/self/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfAttackTower" path="event:/voice/crpg/self/attack/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendCatapult" path="event:/voice/crpg/self/defend/male/catapult" face_anim="grunt" />
+    <voice type="SelfDefendCloseGate" path="event:/voice/crpg/self/defend/male/close_gate" face_anim="grunt" />
+    <voice type="SelfDefendFlag" path="event:/voice/crpg/self/defend/male/flag" face_anim="grunt" />
+    <voice type="SelfDefendGate" path="event:/voice/crpg/self/defend/male/gate" face_anim="grunt" />
+    <voice type="SelfDefendGatehouse" path="event:/voice/crpg/self/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="SelfDefendLadders" path="event:/voice/crpg/self/defend/male/ladders" face_anim="grunt" />
+    <voice type="SelfDefendSiegeTower" path="event:/voice/crpg/self/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfDefendStairs" path="event:/voice/crpg/self/defend/male/stairs" face_anim="grunt" />
+    <voice type="SelfDefendTower" path="event:/voice/crpg/self/defend/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendWalls" path="event:/voice/crpg/self/defend/male/walls" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildCatapult" path="event:/voice/crpg/self/equipment/male/build_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildSiegeTower" path="event:/voice/crpg/self/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentEquipment" path="event:/voice/crpg/self/equipment/male/equipment" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpCatapult" path="event:/voice/crpg/self/equipment/male/help_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpSiegeTower" path="event:/voice/crpg/self/equipment/male/help_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentLadders" path="event:/voice/crpg/self/equipment/male/ladders" face_anim="grunt" />
+    <voice type="SelfEquipmentManCatapult" path="event:/voice/crpg/self/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentManSiegeTower" path="event:/voice/crpg/self/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentShields" path="event:/voice/crpg/self/equipment/male/shields" face_anim="grunt" />
   </voice_definition>
 
   <voice_definition
@@ -72,7 +872,652 @@
     only_for_npcs="false"
     min_pitch_multiplier="0.9"
     max_pitch_multiplier="1.1">
-    <voice type="Whistle" path="event:/voice/crpg/male/whistle" face_anim="grunt" />
+    <voice type="QuickWhistle" path="event:/voice/crpg/quick/whistle" face_anim="grunt" />
+    <voice type="AttackArchers" path="event:/voice/crpg/attack/male/archers" face_anim="grunt" />
+    <voice type="AttackAttack" path="event:/voice/crpg/attack/male/attack" face_anim="grunt" />
+    <voice type="AttackBase" path="event:/voice/crpg/attack/male/base" face_anim="grunt" />
+    <voice type="AttackCatapult" path="event:/voice/crpg/attack/male/catapult" face_anim="grunt" />
+    <voice type="AttackCavalry" path="event:/voice/crpg/attack/male/cavalry" face_anim="grunt" />
+    <voice type="AttackCharge" path="event:/voice/crpg/attack/male/charge" face_anim="grunt" />
+    <voice type="AttackEquipment" path="event:/voice/crpg/attack/male/equipment" face_anim="grunt" />
+    <voice type="AttackGate" path="event:/voice/crpg/attack/male/gate" face_anim="grunt" />
+    <voice type="AttackInfantry" path="event:/voice/crpg/attack/male/infantry" face_anim="grunt" />
+    <voice type="AttackLeftFlank" path="event:/voice/crpg/attack/male/left_flank" face_anim="grunt" />
+    <voice type="AttackRightFlank" path="event:/voice/crpg/attack/male/right_flank" face_anim="grunt" />
+    <voice type="AttackSiegeTower" path="event:/voice/crpg/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="AttackTower" path="event:/voice/crpg/attack/male/tower" face_anim="grunt" />
+    <voice type="DefendCatapult" path="event:/voice/crpg/defend/male/catapult" face_anim="grunt" />
+    <voice type="DefendCloseGate" path="event:/voice/crpg/defend/male/close_gate" face_anim="grunt" />
+    <voice type="DefendDefend" path="event:/voice/crpg/defend/male/defend" face_anim="grunt" />
+    <voice type="DefendFlag" path="event:/voice/crpg/defend/male/flag" face_anim="grunt" />
+    <voice type="DefendFlagCarrier" path="event:/voice/crpg/defend/male/flag_carrier" face_anim="grunt" />
+    <voice type="DefendGate" path="event:/voice/crpg/defend/male/gate" face_anim="grunt" />
+    <voice type="DefendGatehouse" path="event:/voice/crpg/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="DefendLadders" path="event:/voice/crpg/defend/male/ladders" face_anim="grunt" />
+    <voice type="DefendSiegeTower" path="event:/voice/crpg/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="DefendStairs" path="event:/voice/crpg/defend/male/stairs" face_anim="grunt" />
+    <voice type="DefendTower" path="event:/voice/crpg/defend/male/tower" face_anim="grunt" />
+    <voice type="DefendWalls" path="event:/voice/crpg/defend/male/walls" face_anim="grunt" />
+    <voice type="EquipmentBuildSiegeTower" path="event:/voice/crpg/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentDeployCatapult" path="event:/voice/crpg/equipment/male/deploy_catapult" face_anim="grunt" />
+    <voice type="EquipmentEquipment" path="event:/voice/crpg/equipment/male/equipment" face_anim="grunt" />
+    <voice type="EquipmentLadders" path="event:/voice/crpg/equipment/male/ladders" face_anim="grunt" />
+    <voice type="EquipmentManCatapult" path="event:/voice/crpg/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="EquipmentManSiegeTower" path="event:/voice/crpg/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentShields" path="event:/voice/crpg/equipment/male/shields" face_anim="grunt" />
+    <voice type="FormationArchers" path="event:/voice/crpg/formation/male/archers" face_anim="grunt" />
+    <voice type="FormationCavalry" path="event:/voice/crpg/formation/male/cavalry" face_anim="grunt" />
+    <voice type="FormationFallBack" path="event:/voice/crpg/formation/male/fall_back" face_anim="grunt" />
+    <voice type="FormationFollowMe" path="event:/voice/crpg/formation/male/follow_me" face_anim="grunt" />
+    <voice type="FormationHold" path="event:/voice/crpg/formation/male/hold" face_anim="grunt" />
+    <voice type="FormationInfantry" path="event:/voice/crpg/formation/male/infantry" face_anim="grunt" />
+    <voice type="FormationKeep" path="event:/voice/crpg/formation/male/keep" face_anim="grunt" />
+    <voice type="FormationReleaseArrows" path="event:/voice/crpg/formation/male/release_arrows" face_anim="grunt" />
+    <voice type="FormationRetreat" path="event:/voice/crpg/formation/male/retreat" face_anim="grunt" />
+    <voice type="FormationShieldwall" path="event:/voice/crpg/formation/male/shieldwall" face_anim="grunt" />
+    <voice type="FormationShoot" path="event:/voice/crpg/formation/male/shoot" face_anim="grunt" />
+    <voice type="FormationSpreadOut" path="event:/voice/crpg/formation/male/spread_out" face_anim="grunt" />
+    <voice type="FormationStandCloser" path="event:/voice/crpg/formation/male/stand_closer" face_anim="grunt" />
+    <voice type="FormationTakeCover" path="event:/voice/crpg/formation/male/take_cover" face_anim="grunt" />
+    <voice type="IncomingArrows" path="event:/voice/crpg/incoming/male/arrows" face_anim="grunt" />
+    <voice type="IncomingBase" path="event:/voice/crpg/incoming/male/base" face_anim="grunt" />
+    <voice type="IncomingCatapult" path="event:/voice/crpg/incoming/male/catapult" face_anim="grunt" />
+    <voice type="IncomingCavalry" path="event:/voice/crpg/incoming/male/cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryBehind" path="event:/voice/crpg/incoming/male/cavalry_behind" face_anim="grunt" />
+    <voice type="IncomingCavalryCavalry" path="event:/voice/crpg/incoming/male/cavalry_cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryLeft" path="event:/voice/crpg/incoming/male/cavalry_left" face_anim="grunt" />
+    <voice type="IncomingCavalryRight" path="event:/voice/crpg/incoming/male/cavalry_right" face_anim="grunt" />
+    <voice type="IncomingInfantry" path="event:/voice/crpg/incoming/male/infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryBehind" path="event:/voice/crpg/incoming/male/infantry_behind" face_anim="grunt" />
+    <voice type="IncomingInfantryInfantry" path="event:/voice/crpg/incoming/male/infantry_infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryLeft" path="event:/voice/crpg/incoming/male/infantry_left" face_anim="grunt" />
+    <voice type="IncomingInfantryRight" path="event:/voice/crpg/incoming/male/infantry_right" face_anim="grunt" />
+    <voice type="IncomingSiegeTower" path="event:/voice/crpg/incoming/male/siege_tower" face_anim="grunt" />
+    <voice type="QuickHello" path="event:/voice/crpg/quick/male/hello" face_anim="grunt" />
+    <voice type="QuickHelp" path="event:/voice/crpg/quick/male/help" face_anim="grunt" />
+    <voice type="QuickMove" path="event:/voice/crpg/quick/male/move" face_anim="grunt" />
+    <voice type="QuickNo" path="event:/voice/crpg/quick/male/no" face_anim="grunt" />
+    <voice type="QuickSilence" path="event:/voice/crpg/quick/male/silence" face_anim="grunt" />
+    <voice type="QuickSorry" path="event:/voice/crpg/quick/male/sorry" face_anim="grunt" />
+    <voice type="QuickStop" path="event:/voice/crpg/quick/male/stop" face_anim="grunt" />
+    <voice type="QuickThanks" path="event:/voice/crpg/quick/male/thanks" face_anim="grunt" />
+    <voice type="QuickWatchAim" path="event:/voice/crpg/quick/male/watch_aim" face_anim="grunt" />
+    <voice type="QuickYell" path="event:/voice/crpg/quick/male/yell" face_anim="grunt" />
+    <voice type="QuickYes" path="event:/voice/crpg/quick/male/yes" face_anim="grunt" />
+    <voice type="SelfAttackAttacking" path="event:/voice/crpg/self/attack/male/attacking" face_anim="grunt" />
+    <voice type="SelfAttackBase" path="event:/voice/crpg/self/attack/male/base" face_anim="grunt" />
+    <voice type="SelfAttackCatapult" path="event:/voice/crpg/self/attack/male/catapult" face_anim="grunt" />
+    <voice type="SelfAttackEquipment" path="event:/voice/crpg/self/attack/male/equipment" face_anim="grunt" />
+    <voice type="SelfAttackFlag" path="event:/voice/crpg/self/attack/male/flag" face_anim="grunt" />
+    <voice type="SelfAttackGate" path="event:/voice/crpg/self/attack/male/gate" face_anim="grunt" />
+    <voice type="SelfAttackLeft" path="event:/voice/crpg/self/attack/male/left" face_anim="grunt" />
+    <voice type="SelfAttackRight" path="event:/voice/crpg/self/attack/male/right" face_anim="grunt" />
+    <voice type="SelfAttackSiegeTower" path="event:/voice/crpg/self/attack/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfAttackTower" path="event:/voice/crpg/self/attack/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendCatapult" path="event:/voice/crpg/self/defend/male/catapult" face_anim="grunt" />
+    <voice type="SelfDefendCloseGate" path="event:/voice/crpg/self/defend/male/close_gate" face_anim="grunt" />
+    <voice type="SelfDefendFlag" path="event:/voice/crpg/self/defend/male/flag" face_anim="grunt" />
+    <voice type="SelfDefendGate" path="event:/voice/crpg/self/defend/male/gate" face_anim="grunt" />
+    <voice type="SelfDefendGatehouse" path="event:/voice/crpg/self/defend/male/gatehouse" face_anim="grunt" />
+    <voice type="SelfDefendLadders" path="event:/voice/crpg/self/defend/male/ladders" face_anim="grunt" />
+    <voice type="SelfDefendSiegeTower" path="event:/voice/crpg/self/defend/male/siege_tower" face_anim="grunt" />
+    <voice type="SelfDefendStairs" path="event:/voice/crpg/self/defend/male/stairs" face_anim="grunt" />
+    <voice type="SelfDefendTower" path="event:/voice/crpg/self/defend/male/tower" face_anim="grunt" />
+    <voice type="SelfDefendWalls" path="event:/voice/crpg/self/defend/male/walls" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildCatapult" path="event:/voice/crpg/self/equipment/male/build_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildSiegeTower" path="event:/voice/crpg/self/equipment/male/build_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentEquipment" path="event:/voice/crpg/self/equipment/male/equipment" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpCatapult" path="event:/voice/crpg/self/equipment/male/help_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpSiegeTower" path="event:/voice/crpg/self/equipment/male/help_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentLadders" path="event:/voice/crpg/self/equipment/male/ladders" face_anim="grunt" />
+    <voice type="SelfEquipmentManCatapult" path="event:/voice/crpg/self/equipment/male/man_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentManSiegeTower" path="event:/voice/crpg/self/equipment/male/man_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentShields" path="event:/voice/crpg/self/equipment/male/shields" face_anim="grunt" />
+  </voice_definition>
+
+  <voice_definition
+    name="female_01"
+    sound_and_collision_info_class="human"
+    only_for_npcs="false"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+    <voice type="QuickWhistle" path="event:/voice/crpg/quick/whistle" face_anim="grunt" />
+    <voice type="AttackArchers" path="event:/voice/crpg/attack/female/archers" face_anim="grunt" />
+    <voice type="AttackAttack" path="event:/voice/crpg/attack/female/attack" face_anim="grunt" />
+    <voice type="AttackBase" path="event:/voice/crpg/attack/female/base" face_anim="grunt" />
+    <voice type="AttackCatapult" path="event:/voice/crpg/attack/female/catapult" face_anim="grunt" />
+    <voice type="AttackCavalry" path="event:/voice/crpg/attack/female/cavalry" face_anim="grunt" />
+    <voice type="AttackCharge" path="event:/voice/crpg/attack/female/charge" face_anim="grunt" />
+    <voice type="AttackEquipment" path="event:/voice/crpg/attack/female/equipment" face_anim="grunt" />
+    <voice type="AttackGate" path="event:/voice/crpg/attack/female/gate" face_anim="grunt" />
+    <voice type="AttackInfantry" path="event:/voice/crpg/attack/female/infantry" face_anim="grunt" />
+    <voice type="AttackLeftFlank" path="event:/voice/crpg/attack/female/left_flank" face_anim="grunt" />
+    <voice type="AttackRightFlank" path="event:/voice/crpg/attack/female/right_flank" face_anim="grunt" />
+    <voice type="AttackSiegeTower" path="event:/voice/crpg/attack/female/siege_tower" face_anim="grunt" />
+    <voice type="AttackTower" path="event:/voice/crpg/attack/female/tower" face_anim="grunt" />
+    <voice type="DefendCatapult" path="event:/voice/crpg/defend/female/catapult" face_anim="grunt" />
+    <voice type="DefendCloseGate" path="event:/voice/crpg/defend/female/close_gate" face_anim="grunt" />
+    <voice type="DefendDefend" path="event:/voice/crpg/defend/female/defend" face_anim="grunt" />
+    <voice type="DefendFlag" path="event:/voice/crpg/defend/female/flag" face_anim="grunt" />
+    <voice type="DefendFlagCarrier" path="event:/voice/crpg/defend/female/flag_carrier" face_anim="grunt" />
+    <voice type="DefendGate" path="event:/voice/crpg/defend/female/gate" face_anim="grunt" />
+    <voice type="DefendGatehouse" path="event:/voice/crpg/defend/female/gatehouse" face_anim="grunt" />
+    <voice type="DefendLadders" path="event:/voice/crpg/defend/female/ladders" face_anim="grunt" />
+    <voice type="DefendSiegeTower" path="event:/voice/crpg/defend/female/siege_tower" face_anim="grunt" />
+    <voice type="DefendStairs" path="event:/voice/crpg/defend/female/stairs" face_anim="grunt" />
+    <voice type="DefendTower" path="event:/voice/crpg/defend/female/tower" face_anim="grunt" />
+    <voice type="DefendWalls" path="event:/voice/crpg/defend/female/walls" face_anim="grunt" />
+    <voice type="EquipmentBuildSiegeTower" path="event:/voice/crpg/equipment/female/build_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentDeployCatapult" path="event:/voice/crpg/equipment/female/deploy_catapult" face_anim="grunt" />
+    <voice type="EquipmentEquipment" path="event:/voice/crpg/equipment/female/equipment" face_anim="grunt" />
+    <voice type="EquipmentLadders" path="event:/voice/crpg/equipment/female/ladders" face_anim="grunt" />
+    <voice type="EquipmentManCatapult" path="event:/voice/crpg/equipment/female/man_catapult" face_anim="grunt" />
+    <voice type="EquipmentManSiegeTower" path="event:/voice/crpg/equipment/female/man_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentShields" path="event:/voice/crpg/equipment/female/shields" face_anim="grunt" />
+    <voice type="FormationArchers" path="event:/voice/crpg/formation/female/archers" face_anim="grunt" />
+    <voice type="FormationCavalry" path="event:/voice/crpg/formation/female/cavalry" face_anim="grunt" />
+    <voice type="FormationFallBack" path="event:/voice/crpg/formation/female/fall_back" face_anim="grunt" />
+    <voice type="FormationFollowMe" path="event:/voice/crpg/formation/female/follow_me" face_anim="grunt" />
+    <voice type="FormationHold" path="event:/voice/crpg/formation/female/hold" face_anim="grunt" />
+    <voice type="FormationInfantry" path="event:/voice/crpg/formation/female/infantry" face_anim="grunt" />
+    <voice type="FormationKeep" path="event:/voice/crpg/formation/female/keep" face_anim="grunt" />
+    <voice type="FormationReleaseArrows" path="event:/voice/crpg/formation/female/release_arrows" face_anim="grunt" />
+    <voice type="FormationRetreat" path="event:/voice/crpg/formation/female/retreat" face_anim="grunt" />
+    <voice type="FormationShieldwall" path="event:/voice/crpg/formation/female/shieldwall" face_anim="grunt" />
+    <voice type="FormationShoot" path="event:/voice/crpg/formation/female/shoot" face_anim="grunt" />
+    <voice type="FormationSpreadOut" path="event:/voice/crpg/formation/female/spread_out" face_anim="grunt" />
+    <voice type="FormationStandCloser" path="event:/voice/crpg/formation/female/stand_closer" face_anim="grunt" />
+    <voice type="FormationTakeCover" path="event:/voice/crpg/formation/female/take_cover" face_anim="grunt" />
+    <voice type="IncomingArrows" path="event:/voice/crpg/incoming/female/arrows" face_anim="grunt" />
+    <voice type="IncomingBase" path="event:/voice/crpg/incoming/female/base" face_anim="grunt" />
+    <voice type="IncomingCatapult" path="event:/voice/crpg/incoming/female/catapult" face_anim="grunt" />
+    <voice type="IncomingCavalry" path="event:/voice/crpg/incoming/female/cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryBehind" path="event:/voice/crpg/incoming/female/cavalry_behind" face_anim="grunt" />
+    <voice type="IncomingCavalryCavalry" path="event:/voice/crpg/incoming/female/cavalry_cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryLeft" path="event:/voice/crpg/incoming/female/cavalry_left" face_anim="grunt" />
+    <voice type="IncomingCavalryRight" path="event:/voice/crpg/incoming/female/cavalry_right" face_anim="grunt" />
+    <voice type="IncomingInfantry" path="event:/voice/crpg/incoming/female/infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryBehind" path="event:/voice/crpg/incoming/female/infantry_behind" face_anim="grunt" />
+    <voice type="IncomingInfantryInfantry" path="event:/voice/crpg/incoming/female/infantry_infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryLeft" path="event:/voice/crpg/incoming/female/infantry_left" face_anim="grunt" />
+    <voice type="IncomingInfantryRight" path="event:/voice/crpg/incoming/female/infantry_right" face_anim="grunt" />
+    <voice type="IncomingSiegeTower" path="event:/voice/crpg/incoming/female/siege_tower" face_anim="grunt" />
+    <voice type="QuickHello" path="event:/voice/crpg/quick/female/hello" face_anim="grunt" />
+    <voice type="QuickHelp" path="event:/voice/crpg/quick/female/help" face_anim="grunt" />
+    <voice type="QuickMove" path="event:/voice/crpg/quick/female/move" face_anim="grunt" />
+    <voice type="QuickNo" path="event:/voice/crpg/quick/female/no" face_anim="grunt" />
+    <voice type="QuickSilence" path="event:/voice/crpg/quick/female/silence" face_anim="grunt" />
+    <voice type="QuickSorry" path="event:/voice/crpg/quick/female/sorry" face_anim="grunt" />
+    <voice type="QuickStop" path="event:/voice/crpg/quick/female/stop" face_anim="grunt" />
+    <voice type="QuickThanks" path="event:/voice/crpg/quick/female/thanks" face_anim="grunt" />
+    <voice type="QuickWatchAim" path="event:/voice/crpg/quick/female/watch_aim" face_anim="grunt" />
+    <voice type="QuickYell" path="event:/voice/crpg/quick/female/yell" face_anim="grunt" />
+    <voice type="QuickYes" path="event:/voice/crpg/quick/female/yes" face_anim="grunt" />
+    <voice type="SelfAttackAttacking" path="event:/voice/crpg/self/attack/female/attacking" face_anim="grunt" />
+    <voice type="SelfAttackBase" path="event:/voice/crpg/self/attack/female/base" face_anim="grunt" />
+    <voice type="SelfAttackCatapult" path="event:/voice/crpg/self/attack/female/catapult" face_anim="grunt" />
+    <voice type="SelfAttackEquipment" path="event:/voice/crpg/self/attack/female/equipment" face_anim="grunt" />
+    <voice type="SelfAttackFlag" path="event:/voice/crpg/self/attack/female/flag" face_anim="grunt" />
+    <voice type="SelfAttackGate" path="event:/voice/crpg/self/attack/female/gate" face_anim="grunt" />
+    <voice type="SelfAttackLeft" path="event:/voice/crpg/self/attack/female/left" face_anim="grunt" />
+    <voice type="SelfAttackRight" path="event:/voice/crpg/self/attack/female/right" face_anim="grunt" />
+    <voice type="SelfAttackSiegeTower" path="event:/voice/crpg/self/attack/female/siege_tower" face_anim="grunt" />
+    <voice type="SelfAttackTower" path="event:/voice/crpg/self/attack/female/tower" face_anim="grunt" />
+    <voice type="SelfDefendCatapult" path="event:/voice/crpg/self/defend/female/catapult" face_anim="grunt" />
+    <voice type="SelfDefendCloseGate" path="event:/voice/crpg/self/defend/female/close_gate" face_anim="grunt" />
+    <voice type="SelfDefendFlag" path="event:/voice/crpg/self/defend/female/flag" face_anim="grunt" />
+    <voice type="SelfDefendGate" path="event:/voice/crpg/self/defend/female/gate" face_anim="grunt" />
+    <voice type="SelfDefendGatehouse" path="event:/voice/crpg/self/defend/female/gatehouse" face_anim="grunt" />
+    <voice type="SelfDefendLadders" path="event:/voice/crpg/self/defend/female/ladders" face_anim="grunt" />
+    <voice type="SelfDefendSiegeTower" path="event:/voice/crpg/self/defend/female/siege_tower" face_anim="grunt" />
+    <voice type="SelfDefendStairs" path="event:/voice/crpg/self/defend/female/stairs" face_anim="grunt" />
+    <voice type="SelfDefendTower" path="event:/voice/crpg/self/defend/female/tower" face_anim="grunt" />
+    <voice type="SelfDefendWalls" path="event:/voice/crpg/self/defend/female/walls" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildCatapult" path="event:/voice/crpg/self/equipment/female/build_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildSiegeTower" path="event:/voice/crpg/self/equipment/female/build_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentEquipment" path="event:/voice/crpg/self/equipment/female/equipment" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpCatapult" path="event:/voice/crpg/self/equipment/female/help_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpSiegeTower" path="event:/voice/crpg/self/equipment/female/help_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentLadders" path="event:/voice/crpg/self/equipment/female/ladders" face_anim="grunt" />
+    <voice type="SelfEquipmentManCatapult" path="event:/voice/crpg/self/equipment/female/man_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentManSiegeTower" path="event:/voice/crpg/self/equipment/female/man_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentShields" path="event:/voice/crpg/self/equipment/female/shields" face_anim="grunt" />
+  </voice_definition>
+
+  <voice_definition
+    name="female_02"
+    sound_and_collision_info_class="human"
+    only_for_npcs="false"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+    <voice type="QuickWhistle" path="event:/voice/crpg/quick/whistle" face_anim="grunt" />
+    <voice type="AttackArchers" path="event:/voice/crpg/attack/female/archers" face_anim="grunt" />
+    <voice type="AttackAttack" path="event:/voice/crpg/attack/female/attack" face_anim="grunt" />
+    <voice type="AttackBase" path="event:/voice/crpg/attack/female/base" face_anim="grunt" />
+    <voice type="AttackCatapult" path="event:/voice/crpg/attack/female/catapult" face_anim="grunt" />
+    <voice type="AttackCavalry" path="event:/voice/crpg/attack/female/cavalry" face_anim="grunt" />
+    <voice type="AttackCharge" path="event:/voice/crpg/attack/female/charge" face_anim="grunt" />
+    <voice type="AttackEquipment" path="event:/voice/crpg/attack/female/equipment" face_anim="grunt" />
+    <voice type="AttackGate" path="event:/voice/crpg/attack/female/gate" face_anim="grunt" />
+    <voice type="AttackInfantry" path="event:/voice/crpg/attack/female/infantry" face_anim="grunt" />
+    <voice type="AttackLeftFlank" path="event:/voice/crpg/attack/female/left_flank" face_anim="grunt" />
+    <voice type="AttackRightFlank" path="event:/voice/crpg/attack/female/right_flank" face_anim="grunt" />
+    <voice type="AttackSiegeTower" path="event:/voice/crpg/attack/female/siege_tower" face_anim="grunt" />
+    <voice type="AttackTower" path="event:/voice/crpg/attack/female/tower" face_anim="grunt" />
+    <voice type="DefendCatapult" path="event:/voice/crpg/defend/female/catapult" face_anim="grunt" />
+    <voice type="DefendCloseGate" path="event:/voice/crpg/defend/female/close_gate" face_anim="grunt" />
+    <voice type="DefendDefend" path="event:/voice/crpg/defend/female/defend" face_anim="grunt" />
+    <voice type="DefendFlag" path="event:/voice/crpg/defend/female/flag" face_anim="grunt" />
+    <voice type="DefendFlagCarrier" path="event:/voice/crpg/defend/female/flag_carrier" face_anim="grunt" />
+    <voice type="DefendGate" path="event:/voice/crpg/defend/female/gate" face_anim="grunt" />
+    <voice type="DefendGatehouse" path="event:/voice/crpg/defend/female/gatehouse" face_anim="grunt" />
+    <voice type="DefendLadders" path="event:/voice/crpg/defend/female/ladders" face_anim="grunt" />
+    <voice type="DefendSiegeTower" path="event:/voice/crpg/defend/female/siege_tower" face_anim="grunt" />
+    <voice type="DefendStairs" path="event:/voice/crpg/defend/female/stairs" face_anim="grunt" />
+    <voice type="DefendTower" path="event:/voice/crpg/defend/female/tower" face_anim="grunt" />
+    <voice type="DefendWalls" path="event:/voice/crpg/defend/female/walls" face_anim="grunt" />
+    <voice type="EquipmentBuildSiegeTower" path="event:/voice/crpg/equipment/female/build_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentDeployCatapult" path="event:/voice/crpg/equipment/female/deploy_catapult" face_anim="grunt" />
+    <voice type="EquipmentEquipment" path="event:/voice/crpg/equipment/female/equipment" face_anim="grunt" />
+    <voice type="EquipmentLadders" path="event:/voice/crpg/equipment/female/ladders" face_anim="grunt" />
+    <voice type="EquipmentManCatapult" path="event:/voice/crpg/equipment/female/man_catapult" face_anim="grunt" />
+    <voice type="EquipmentManSiegeTower" path="event:/voice/crpg/equipment/female/man_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentShields" path="event:/voice/crpg/equipment/female/shields" face_anim="grunt" />
+    <voice type="FormationArchers" path="event:/voice/crpg/formation/female/archers" face_anim="grunt" />
+    <voice type="FormationCavalry" path="event:/voice/crpg/formation/female/cavalry" face_anim="grunt" />
+    <voice type="FormationFallBack" path="event:/voice/crpg/formation/female/fall_back" face_anim="grunt" />
+    <voice type="FormationFollowMe" path="event:/voice/crpg/formation/female/follow_me" face_anim="grunt" />
+    <voice type="FormationHold" path="event:/voice/crpg/formation/female/hold" face_anim="grunt" />
+    <voice type="FormationInfantry" path="event:/voice/crpg/formation/female/infantry" face_anim="grunt" />
+    <voice type="FormationKeep" path="event:/voice/crpg/formation/female/keep" face_anim="grunt" />
+    <voice type="FormationReleaseArrows" path="event:/voice/crpg/formation/female/release_arrows" face_anim="grunt" />
+    <voice type="FormationRetreat" path="event:/voice/crpg/formation/female/retreat" face_anim="grunt" />
+    <voice type="FormationShieldwall" path="event:/voice/crpg/formation/female/shieldwall" face_anim="grunt" />
+    <voice type="FormationShoot" path="event:/voice/crpg/formation/female/shoot" face_anim="grunt" />
+    <voice type="FormationSpreadOut" path="event:/voice/crpg/formation/female/spread_out" face_anim="grunt" />
+    <voice type="FormationStandCloser" path="event:/voice/crpg/formation/female/stand_closer" face_anim="grunt" />
+    <voice type="FormationTakeCover" path="event:/voice/crpg/formation/female/take_cover" face_anim="grunt" />
+    <voice type="IncomingArrows" path="event:/voice/crpg/incoming/female/arrows" face_anim="grunt" />
+    <voice type="IncomingBase" path="event:/voice/crpg/incoming/female/base" face_anim="grunt" />
+    <voice type="IncomingCatapult" path="event:/voice/crpg/incoming/female/catapult" face_anim="grunt" />
+    <voice type="IncomingCavalry" path="event:/voice/crpg/incoming/female/cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryBehind" path="event:/voice/crpg/incoming/female/cavalry_behind" face_anim="grunt" />
+    <voice type="IncomingCavalryCavalry" path="event:/voice/crpg/incoming/female/cavalry_cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryLeft" path="event:/voice/crpg/incoming/female/cavalry_left" face_anim="grunt" />
+    <voice type="IncomingCavalryRight" path="event:/voice/crpg/incoming/female/cavalry_right" face_anim="grunt" />
+    <voice type="IncomingInfantry" path="event:/voice/crpg/incoming/female/infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryBehind" path="event:/voice/crpg/incoming/female/infantry_behind" face_anim="grunt" />
+    <voice type="IncomingInfantryInfantry" path="event:/voice/crpg/incoming/female/infantry_infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryLeft" path="event:/voice/crpg/incoming/female/infantry_left" face_anim="grunt" />
+    <voice type="IncomingInfantryRight" path="event:/voice/crpg/incoming/female/infantry_right" face_anim="grunt" />
+    <voice type="IncomingSiegeTower" path="event:/voice/crpg/incoming/female/siege_tower" face_anim="grunt" />
+    <voice type="QuickHello" path="event:/voice/crpg/quick/female/hello" face_anim="grunt" />
+    <voice type="QuickHelp" path="event:/voice/crpg/quick/female/help" face_anim="grunt" />
+    <voice type="QuickMove" path="event:/voice/crpg/quick/female/move" face_anim="grunt" />
+    <voice type="QuickNo" path="event:/voice/crpg/quick/female/no" face_anim="grunt" />
+    <voice type="QuickSilence" path="event:/voice/crpg/quick/female/silence" face_anim="grunt" />
+    <voice type="QuickSorry" path="event:/voice/crpg/quick/female/sorry" face_anim="grunt" />
+    <voice type="QuickStop" path="event:/voice/crpg/quick/female/stop" face_anim="grunt" />
+    <voice type="QuickThanks" path="event:/voice/crpg/quick/female/thanks" face_anim="grunt" />
+    <voice type="QuickWatchAim" path="event:/voice/crpg/quick/female/watch_aim" face_anim="grunt" />
+    <voice type="QuickYell" path="event:/voice/crpg/quick/female/yell" face_anim="grunt" />
+    <voice type="QuickYes" path="event:/voice/crpg/quick/female/yes" face_anim="grunt" />
+    <voice type="SelfAttackAttacking" path="event:/voice/crpg/self/attack/female/attacking" face_anim="grunt" />
+    <voice type="SelfAttackBase" path="event:/voice/crpg/self/attack/female/base" face_anim="grunt" />
+    <voice type="SelfAttackCatapult" path="event:/voice/crpg/self/attack/female/catapult" face_anim="grunt" />
+    <voice type="SelfAttackEquipment" path="event:/voice/crpg/self/attack/female/equipment" face_anim="grunt" />
+    <voice type="SelfAttackFlag" path="event:/voice/crpg/self/attack/female/flag" face_anim="grunt" />
+    <voice type="SelfAttackGate" path="event:/voice/crpg/self/attack/female/gate" face_anim="grunt" />
+    <voice type="SelfAttackLeft" path="event:/voice/crpg/self/attack/female/left" face_anim="grunt" />
+    <voice type="SelfAttackRight" path="event:/voice/crpg/self/attack/female/right" face_anim="grunt" />
+    <voice type="SelfAttackSiegeTower" path="event:/voice/crpg/self/attack/female/siege_tower" face_anim="grunt" />
+    <voice type="SelfAttackTower" path="event:/voice/crpg/self/attack/female/tower" face_anim="grunt" />
+    <voice type="SelfDefendCatapult" path="event:/voice/crpg/self/defend/female/catapult" face_anim="grunt" />
+    <voice type="SelfDefendCloseGate" path="event:/voice/crpg/self/defend/female/close_gate" face_anim="grunt" />
+    <voice type="SelfDefendFlag" path="event:/voice/crpg/self/defend/female/flag" face_anim="grunt" />
+    <voice type="SelfDefendGate" path="event:/voice/crpg/self/defend/female/gate" face_anim="grunt" />
+    <voice type="SelfDefendGatehouse" path="event:/voice/crpg/self/defend/female/gatehouse" face_anim="grunt" />
+    <voice type="SelfDefendLadders" path="event:/voice/crpg/self/defend/female/ladders" face_anim="grunt" />
+    <voice type="SelfDefendSiegeTower" path="event:/voice/crpg/self/defend/female/siege_tower" face_anim="grunt" />
+    <voice type="SelfDefendStairs" path="event:/voice/crpg/self/defend/female/stairs" face_anim="grunt" />
+    <voice type="SelfDefendTower" path="event:/voice/crpg/self/defend/female/tower" face_anim="grunt" />
+    <voice type="SelfDefendWalls" path="event:/voice/crpg/self/defend/female/walls" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildCatapult" path="event:/voice/crpg/self/equipment/female/build_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildSiegeTower" path="event:/voice/crpg/self/equipment/female/build_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentEquipment" path="event:/voice/crpg/self/equipment/female/equipment" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpCatapult" path="event:/voice/crpg/self/equipment/female/help_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpSiegeTower" path="event:/voice/crpg/self/equipment/female/help_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentLadders" path="event:/voice/crpg/self/equipment/female/ladders" face_anim="grunt" />
+    <voice type="SelfEquipmentManCatapult" path="event:/voice/crpg/self/equipment/female/man_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentManSiegeTower" path="event:/voice/crpg/self/equipment/female/man_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentShields" path="event:/voice/crpg/self/equipment/female/shields" face_anim="grunt" />
+  </voice_definition>
+
+  <voice_definition
+    name="female_03"
+    sound_and_collision_info_class="human"
+    only_for_npcs="false"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+    <voice type="QuickWhistle" path="event:/voice/crpg/quick/whistle" face_anim="grunt" />
+    <voice type="AttackArchers" path="event:/voice/crpg/attack/female/archers" face_anim="grunt" />
+    <voice type="AttackAttack" path="event:/voice/crpg/attack/female/attack" face_anim="grunt" />
+    <voice type="AttackBase" path="event:/voice/crpg/attack/female/base" face_anim="grunt" />
+    <voice type="AttackCatapult" path="event:/voice/crpg/attack/female/catapult" face_anim="grunt" />
+    <voice type="AttackCavalry" path="event:/voice/crpg/attack/female/cavalry" face_anim="grunt" />
+    <voice type="AttackCharge" path="event:/voice/crpg/attack/female/charge" face_anim="grunt" />
+    <voice type="AttackEquipment" path="event:/voice/crpg/attack/female/equipment" face_anim="grunt" />
+    <voice type="AttackGate" path="event:/voice/crpg/attack/female/gate" face_anim="grunt" />
+    <voice type="AttackInfantry" path="event:/voice/crpg/attack/female/infantry" face_anim="grunt" />
+    <voice type="AttackLeftFlank" path="event:/voice/crpg/attack/female/left_flank" face_anim="grunt" />
+    <voice type="AttackRightFlank" path="event:/voice/crpg/attack/female/right_flank" face_anim="grunt" />
+    <voice type="AttackSiegeTower" path="event:/voice/crpg/attack/female/siege_tower" face_anim="grunt" />
+    <voice type="AttackTower" path="event:/voice/crpg/attack/female/tower" face_anim="grunt" />
+    <voice type="DefendCatapult" path="event:/voice/crpg/defend/female/catapult" face_anim="grunt" />
+    <voice type="DefendCloseGate" path="event:/voice/crpg/defend/female/close_gate" face_anim="grunt" />
+    <voice type="DefendDefend" path="event:/voice/crpg/defend/female/defend" face_anim="grunt" />
+    <voice type="DefendFlag" path="event:/voice/crpg/defend/female/flag" face_anim="grunt" />
+    <voice type="DefendFlagCarrier" path="event:/voice/crpg/defend/female/flag_carrier" face_anim="grunt" />
+    <voice type="DefendGate" path="event:/voice/crpg/defend/female/gate" face_anim="grunt" />
+    <voice type="DefendGatehouse" path="event:/voice/crpg/defend/female/gatehouse" face_anim="grunt" />
+    <voice type="DefendLadders" path="event:/voice/crpg/defend/female/ladders" face_anim="grunt" />
+    <voice type="DefendSiegeTower" path="event:/voice/crpg/defend/female/siege_tower" face_anim="grunt" />
+    <voice type="DefendStairs" path="event:/voice/crpg/defend/female/stairs" face_anim="grunt" />
+    <voice type="DefendTower" path="event:/voice/crpg/defend/female/tower" face_anim="grunt" />
+    <voice type="DefendWalls" path="event:/voice/crpg/defend/female/walls" face_anim="grunt" />
+    <voice type="EquipmentBuildSiegeTower" path="event:/voice/crpg/equipment/female/build_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentDeployCatapult" path="event:/voice/crpg/equipment/female/deploy_catapult" face_anim="grunt" />
+    <voice type="EquipmentEquipment" path="event:/voice/crpg/equipment/female/equipment" face_anim="grunt" />
+    <voice type="EquipmentLadders" path="event:/voice/crpg/equipment/female/ladders" face_anim="grunt" />
+    <voice type="EquipmentManCatapult" path="event:/voice/crpg/equipment/female/man_catapult" face_anim="grunt" />
+    <voice type="EquipmentManSiegeTower" path="event:/voice/crpg/equipment/female/man_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentShields" path="event:/voice/crpg/equipment/female/shields" face_anim="grunt" />
+    <voice type="FormationArchers" path="event:/voice/crpg/formation/female/archers" face_anim="grunt" />
+    <voice type="FormationCavalry" path="event:/voice/crpg/formation/female/cavalry" face_anim="grunt" />
+    <voice type="FormationFallBack" path="event:/voice/crpg/formation/female/fall_back" face_anim="grunt" />
+    <voice type="FormationFollowMe" path="event:/voice/crpg/formation/female/follow_me" face_anim="grunt" />
+    <voice type="FormationHold" path="event:/voice/crpg/formation/female/hold" face_anim="grunt" />
+    <voice type="FormationInfantry" path="event:/voice/crpg/formation/female/infantry" face_anim="grunt" />
+    <voice type="FormationKeep" path="event:/voice/crpg/formation/female/keep" face_anim="grunt" />
+    <voice type="FormationReleaseArrows" path="event:/voice/crpg/formation/female/release_arrows" face_anim="grunt" />
+    <voice type="FormationRetreat" path="event:/voice/crpg/formation/female/retreat" face_anim="grunt" />
+    <voice type="FormationShieldwall" path="event:/voice/crpg/formation/female/shieldwall" face_anim="grunt" />
+    <voice type="FormationShoot" path="event:/voice/crpg/formation/female/shoot" face_anim="grunt" />
+    <voice type="FormationSpreadOut" path="event:/voice/crpg/formation/female/spread_out" face_anim="grunt" />
+    <voice type="FormationStandCloser" path="event:/voice/crpg/formation/female/stand_closer" face_anim="grunt" />
+    <voice type="FormationTakeCover" path="event:/voice/crpg/formation/female/take_cover" face_anim="grunt" />
+    <voice type="IncomingArrows" path="event:/voice/crpg/incoming/female/arrows" face_anim="grunt" />
+    <voice type="IncomingBase" path="event:/voice/crpg/incoming/female/base" face_anim="grunt" />
+    <voice type="IncomingCatapult" path="event:/voice/crpg/incoming/female/catapult" face_anim="grunt" />
+    <voice type="IncomingCavalry" path="event:/voice/crpg/incoming/female/cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryBehind" path="event:/voice/crpg/incoming/female/cavalry_behind" face_anim="grunt" />
+    <voice type="IncomingCavalryCavalry" path="event:/voice/crpg/incoming/female/cavalry_cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryLeft" path="event:/voice/crpg/incoming/female/cavalry_left" face_anim="grunt" />
+    <voice type="IncomingCavalryRight" path="event:/voice/crpg/incoming/female/cavalry_right" face_anim="grunt" />
+    <voice type="IncomingInfantry" path="event:/voice/crpg/incoming/female/infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryBehind" path="event:/voice/crpg/incoming/female/infantry_behind" face_anim="grunt" />
+    <voice type="IncomingInfantryInfantry" path="event:/voice/crpg/incoming/female/infantry_infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryLeft" path="event:/voice/crpg/incoming/female/infantry_left" face_anim="grunt" />
+    <voice type="IncomingInfantryRight" path="event:/voice/crpg/incoming/female/infantry_right" face_anim="grunt" />
+    <voice type="IncomingSiegeTower" path="event:/voice/crpg/incoming/female/siege_tower" face_anim="grunt" />
+    <voice type="QuickHello" path="event:/voice/crpg/quick/female/hello" face_anim="grunt" />
+    <voice type="QuickHelp" path="event:/voice/crpg/quick/female/help" face_anim="grunt" />
+    <voice type="QuickMove" path="event:/voice/crpg/quick/female/move" face_anim="grunt" />
+    <voice type="QuickNo" path="event:/voice/crpg/quick/female/no" face_anim="grunt" />
+    <voice type="QuickSilence" path="event:/voice/crpg/quick/female/silence" face_anim="grunt" />
+    <voice type="QuickSorry" path="event:/voice/crpg/quick/female/sorry" face_anim="grunt" />
+    <voice type="QuickStop" path="event:/voice/crpg/quick/female/stop" face_anim="grunt" />
+    <voice type="QuickThanks" path="event:/voice/crpg/quick/female/thanks" face_anim="grunt" />
+    <voice type="QuickWatchAim" path="event:/voice/crpg/quick/female/watch_aim" face_anim="grunt" />
+    <voice type="QuickYell" path="event:/voice/crpg/quick/female/yell" face_anim="grunt" />
+    <voice type="QuickYes" path="event:/voice/crpg/quick/female/yes" face_anim="grunt" />
+    <voice type="SelfAttackAttacking" path="event:/voice/crpg/self/attack/female/attacking" face_anim="grunt" />
+    <voice type="SelfAttackBase" path="event:/voice/crpg/self/attack/female/base" face_anim="grunt" />
+    <voice type="SelfAttackCatapult" path="event:/voice/crpg/self/attack/female/catapult" face_anim="grunt" />
+    <voice type="SelfAttackEquipment" path="event:/voice/crpg/self/attack/female/equipment" face_anim="grunt" />
+    <voice type="SelfAttackFlag" path="event:/voice/crpg/self/attack/female/flag" face_anim="grunt" />
+    <voice type="SelfAttackGate" path="event:/voice/crpg/self/attack/female/gate" face_anim="grunt" />
+    <voice type="SelfAttackLeft" path="event:/voice/crpg/self/attack/female/left" face_anim="grunt" />
+    <voice type="SelfAttackRight" path="event:/voice/crpg/self/attack/female/right" face_anim="grunt" />
+    <voice type="SelfAttackSiegeTower" path="event:/voice/crpg/self/attack/female/siege_tower" face_anim="grunt" />
+    <voice type="SelfAttackTower" path="event:/voice/crpg/self/attack/female/tower" face_anim="grunt" />
+    <voice type="SelfDefendCatapult" path="event:/voice/crpg/self/defend/female/catapult" face_anim="grunt" />
+    <voice type="SelfDefendCloseGate" path="event:/voice/crpg/self/defend/female/close_gate" face_anim="grunt" />
+    <voice type="SelfDefendFlag" path="event:/voice/crpg/self/defend/female/flag" face_anim="grunt" />
+    <voice type="SelfDefendGate" path="event:/voice/crpg/self/defend/female/gate" face_anim="grunt" />
+    <voice type="SelfDefendGatehouse" path="event:/voice/crpg/self/defend/female/gatehouse" face_anim="grunt" />
+    <voice type="SelfDefendLadders" path="event:/voice/crpg/self/defend/female/ladders" face_anim="grunt" />
+    <voice type="SelfDefendSiegeTower" path="event:/voice/crpg/self/defend/female/siege_tower" face_anim="grunt" />
+    <voice type="SelfDefendStairs" path="event:/voice/crpg/self/defend/female/stairs" face_anim="grunt" />
+    <voice type="SelfDefendTower" path="event:/voice/crpg/self/defend/female/tower" face_anim="grunt" />
+    <voice type="SelfDefendWalls" path="event:/voice/crpg/self/defend/female/walls" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildCatapult" path="event:/voice/crpg/self/equipment/female/build_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildSiegeTower" path="event:/voice/crpg/self/equipment/female/build_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentEquipment" path="event:/voice/crpg/self/equipment/female/equipment" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpCatapult" path="event:/voice/crpg/self/equipment/female/help_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpSiegeTower" path="event:/voice/crpg/self/equipment/female/help_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentLadders" path="event:/voice/crpg/self/equipment/female/ladders" face_anim="grunt" />
+    <voice type="SelfEquipmentManCatapult" path="event:/voice/crpg/self/equipment/female/man_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentManSiegeTower" path="event:/voice/crpg/self/equipment/female/man_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentShields" path="event:/voice/crpg/self/equipment/female/shields" face_anim="grunt" />
+  </voice_definition>
+
+  <voice_definition
+    name="female_04"
+    sound_and_collision_info_class="human"
+    only_for_npcs="false"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+    <voice type="QuickWhistle" path="event:/voice/crpg/quick/whistle" face_anim="grunt" />
+    <voice type="AttackArchers" path="event:/voice/crpg/attack/female/archers" face_anim="grunt" />
+    <voice type="AttackAttack" path="event:/voice/crpg/attack/female/attack" face_anim="grunt" />
+    <voice type="AttackBase" path="event:/voice/crpg/attack/female/base" face_anim="grunt" />
+    <voice type="AttackCatapult" path="event:/voice/crpg/attack/female/catapult" face_anim="grunt" />
+    <voice type="AttackCavalry" path="event:/voice/crpg/attack/female/cavalry" face_anim="grunt" />
+    <voice type="AttackCharge" path="event:/voice/crpg/attack/female/charge" face_anim="grunt" />
+    <voice type="AttackEquipment" path="event:/voice/crpg/attack/female/equipment" face_anim="grunt" />
+    <voice type="AttackGate" path="event:/voice/crpg/attack/female/gate" face_anim="grunt" />
+    <voice type="AttackInfantry" path="event:/voice/crpg/attack/female/infantry" face_anim="grunt" />
+    <voice type="AttackLeftFlank" path="event:/voice/crpg/attack/female/left_flank" face_anim="grunt" />
+    <voice type="AttackRightFlank" path="event:/voice/crpg/attack/female/right_flank" face_anim="grunt" />
+    <voice type="AttackSiegeTower" path="event:/voice/crpg/attack/female/siege_tower" face_anim="grunt" />
+    <voice type="AttackTower" path="event:/voice/crpg/attack/female/tower" face_anim="grunt" />
+    <voice type="DefendCatapult" path="event:/voice/crpg/defend/female/catapult" face_anim="grunt" />
+    <voice type="DefendCloseGate" path="event:/voice/crpg/defend/female/close_gate" face_anim="grunt" />
+    <voice type="DefendDefend" path="event:/voice/crpg/defend/female/defend" face_anim="grunt" />
+    <voice type="DefendFlag" path="event:/voice/crpg/defend/female/flag" face_anim="grunt" />
+    <voice type="DefendFlagCarrier" path="event:/voice/crpg/defend/female/flag_carrier" face_anim="grunt" />
+    <voice type="DefendGate" path="event:/voice/crpg/defend/female/gate" face_anim="grunt" />
+    <voice type="DefendGatehouse" path="event:/voice/crpg/defend/female/gatehouse" face_anim="grunt" />
+    <voice type="DefendLadders" path="event:/voice/crpg/defend/female/ladders" face_anim="grunt" />
+    <voice type="DefendSiegeTower" path="event:/voice/crpg/defend/female/siege_tower" face_anim="grunt" />
+    <voice type="DefendStairs" path="event:/voice/crpg/defend/female/stairs" face_anim="grunt" />
+    <voice type="DefendTower" path="event:/voice/crpg/defend/female/tower" face_anim="grunt" />
+    <voice type="DefendWalls" path="event:/voice/crpg/defend/female/walls" face_anim="grunt" />
+    <voice type="EquipmentBuildSiegeTower" path="event:/voice/crpg/equipment/female/build_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentDeployCatapult" path="event:/voice/crpg/equipment/female/deploy_catapult" face_anim="grunt" />
+    <voice type="EquipmentEquipment" path="event:/voice/crpg/equipment/female/equipment" face_anim="grunt" />
+    <voice type="EquipmentLadders" path="event:/voice/crpg/equipment/female/ladders" face_anim="grunt" />
+    <voice type="EquipmentManCatapult" path="event:/voice/crpg/equipment/female/man_catapult" face_anim="grunt" />
+    <voice type="EquipmentManSiegeTower" path="event:/voice/crpg/equipment/female/man_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentShields" path="event:/voice/crpg/equipment/female/shields" face_anim="grunt" />
+    <voice type="FormationArchers" path="event:/voice/crpg/formation/female/archers" face_anim="grunt" />
+    <voice type="FormationCavalry" path="event:/voice/crpg/formation/female/cavalry" face_anim="grunt" />
+    <voice type="FormationFallBack" path="event:/voice/crpg/formation/female/fall_back" face_anim="grunt" />
+    <voice type="FormationFollowMe" path="event:/voice/crpg/formation/female/follow_me" face_anim="grunt" />
+    <voice type="FormationHold" path="event:/voice/crpg/formation/female/hold" face_anim="grunt" />
+    <voice type="FormationInfantry" path="event:/voice/crpg/formation/female/infantry" face_anim="grunt" />
+    <voice type="FormationKeep" path="event:/voice/crpg/formation/female/keep" face_anim="grunt" />
+    <voice type="FormationReleaseArrows" path="event:/voice/crpg/formation/female/release_arrows" face_anim="grunt" />
+    <voice type="FormationRetreat" path="event:/voice/crpg/formation/female/retreat" face_anim="grunt" />
+    <voice type="FormationShieldwall" path="event:/voice/crpg/formation/female/shieldwall" face_anim="grunt" />
+    <voice type="FormationShoot" path="event:/voice/crpg/formation/female/shoot" face_anim="grunt" />
+    <voice type="FormationSpreadOut" path="event:/voice/crpg/formation/female/spread_out" face_anim="grunt" />
+    <voice type="FormationStandCloser" path="event:/voice/crpg/formation/female/stand_closer" face_anim="grunt" />
+    <voice type="FormationTakeCover" path="event:/voice/crpg/formation/female/take_cover" face_anim="grunt" />
+    <voice type="IncomingArrows" path="event:/voice/crpg/incoming/female/arrows" face_anim="grunt" />
+    <voice type="IncomingBase" path="event:/voice/crpg/incoming/female/base" face_anim="grunt" />
+    <voice type="IncomingCatapult" path="event:/voice/crpg/incoming/female/catapult" face_anim="grunt" />
+    <voice type="IncomingCavalry" path="event:/voice/crpg/incoming/female/cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryBehind" path="event:/voice/crpg/incoming/female/cavalry_behind" face_anim="grunt" />
+    <voice type="IncomingCavalryCavalry" path="event:/voice/crpg/incoming/female/cavalry_cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryLeft" path="event:/voice/crpg/incoming/female/cavalry_left" face_anim="grunt" />
+    <voice type="IncomingCavalryRight" path="event:/voice/crpg/incoming/female/cavalry_right" face_anim="grunt" />
+    <voice type="IncomingInfantry" path="event:/voice/crpg/incoming/female/infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryBehind" path="event:/voice/crpg/incoming/female/infantry_behind" face_anim="grunt" />
+    <voice type="IncomingInfantryInfantry" path="event:/voice/crpg/incoming/female/infantry_infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryLeft" path="event:/voice/crpg/incoming/female/infantry_left" face_anim="grunt" />
+    <voice type="IncomingInfantryRight" path="event:/voice/crpg/incoming/female/infantry_right" face_anim="grunt" />
+    <voice type="IncomingSiegeTower" path="event:/voice/crpg/incoming/female/siege_tower" face_anim="grunt" />
+    <voice type="QuickHello" path="event:/voice/crpg/quick/female/hello" face_anim="grunt" />
+    <voice type="QuickHelp" path="event:/voice/crpg/quick/female/help" face_anim="grunt" />
+    <voice type="QuickMove" path="event:/voice/crpg/quick/female/move" face_anim="grunt" />
+    <voice type="QuickNo" path="event:/voice/crpg/quick/female/no" face_anim="grunt" />
+    <voice type="QuickSilence" path="event:/voice/crpg/quick/female/silence" face_anim="grunt" />
+    <voice type="QuickSorry" path="event:/voice/crpg/quick/female/sorry" face_anim="grunt" />
+    <voice type="QuickStop" path="event:/voice/crpg/quick/female/stop" face_anim="grunt" />
+    <voice type="QuickThanks" path="event:/voice/crpg/quick/female/thanks" face_anim="grunt" />
+    <voice type="QuickWatchAim" path="event:/voice/crpg/quick/female/watch_aim" face_anim="grunt" />
+    <voice type="QuickYell" path="event:/voice/crpg/quick/female/yell" face_anim="grunt" />
+    <voice type="QuickYes" path="event:/voice/crpg/quick/female/yes" face_anim="grunt" />
+    <voice type="SelfAttackAttacking" path="event:/voice/crpg/self/attack/female/attacking" face_anim="grunt" />
+    <voice type="SelfAttackBase" path="event:/voice/crpg/self/attack/female/base" face_anim="grunt" />
+    <voice type="SelfAttackCatapult" path="event:/voice/crpg/self/attack/female/catapult" face_anim="grunt" />
+    <voice type="SelfAttackEquipment" path="event:/voice/crpg/self/attack/female/equipment" face_anim="grunt" />
+    <voice type="SelfAttackFlag" path="event:/voice/crpg/self/attack/female/flag" face_anim="grunt" />
+    <voice type="SelfAttackGate" path="event:/voice/crpg/self/attack/female/gate" face_anim="grunt" />
+    <voice type="SelfAttackLeft" path="event:/voice/crpg/self/attack/female/left" face_anim="grunt" />
+    <voice type="SelfAttackRight" path="event:/voice/crpg/self/attack/female/right" face_anim="grunt" />
+    <voice type="SelfAttackSiegeTower" path="event:/voice/crpg/self/attack/female/siege_tower" face_anim="grunt" />
+    <voice type="SelfAttackTower" path="event:/voice/crpg/self/attack/female/tower" face_anim="grunt" />
+    <voice type="SelfDefendCatapult" path="event:/voice/crpg/self/defend/female/catapult" face_anim="grunt" />
+    <voice type="SelfDefendCloseGate" path="event:/voice/crpg/self/defend/female/close_gate" face_anim="grunt" />
+    <voice type="SelfDefendFlag" path="event:/voice/crpg/self/defend/female/flag" face_anim="grunt" />
+    <voice type="SelfDefendGate" path="event:/voice/crpg/self/defend/female/gate" face_anim="grunt" />
+    <voice type="SelfDefendGatehouse" path="event:/voice/crpg/self/defend/female/gatehouse" face_anim="grunt" />
+    <voice type="SelfDefendLadders" path="event:/voice/crpg/self/defend/female/ladders" face_anim="grunt" />
+    <voice type="SelfDefendSiegeTower" path="event:/voice/crpg/self/defend/female/siege_tower" face_anim="grunt" />
+    <voice type="SelfDefendStairs" path="event:/voice/crpg/self/defend/female/stairs" face_anim="grunt" />
+    <voice type="SelfDefendTower" path="event:/voice/crpg/self/defend/female/tower" face_anim="grunt" />
+    <voice type="SelfDefendWalls" path="event:/voice/crpg/self/defend/female/walls" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildCatapult" path="event:/voice/crpg/self/equipment/female/build_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildSiegeTower" path="event:/voice/crpg/self/equipment/female/build_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentEquipment" path="event:/voice/crpg/self/equipment/female/equipment" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpCatapult" path="event:/voice/crpg/self/equipment/female/help_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpSiegeTower" path="event:/voice/crpg/self/equipment/female/help_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentLadders" path="event:/voice/crpg/self/equipment/female/ladders" face_anim="grunt" />
+    <voice type="SelfEquipmentManCatapult" path="event:/voice/crpg/self/equipment/female/man_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentManSiegeTower" path="event:/voice/crpg/self/equipment/female/man_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentShields" path="event:/voice/crpg/self/equipment/female/shields" face_anim="grunt" />
+  </voice_definition>
+
+  <voice_definition
+    name="female_05"
+    sound_and_collision_info_class="human"
+    only_for_npcs="false"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+    <voice type="QuickWhistle" path="event:/voice/crpg/quick/whistle" face_anim="grunt" />
+    <voice type="AttackArchers" path="event:/voice/crpg/attack/female/archers" face_anim="grunt" />
+    <voice type="AttackAttack" path="event:/voice/crpg/attack/female/attack" face_anim="grunt" />
+    <voice type="AttackBase" path="event:/voice/crpg/attack/female/base" face_anim="grunt" />
+    <voice type="AttackCatapult" path="event:/voice/crpg/attack/female/catapult" face_anim="grunt" />
+    <voice type="AttackCavalry" path="event:/voice/crpg/attack/female/cavalry" face_anim="grunt" />
+    <voice type="AttackCharge" path="event:/voice/crpg/attack/female/charge" face_anim="grunt" />
+    <voice type="AttackEquipment" path="event:/voice/crpg/attack/female/equipment" face_anim="grunt" />
+    <voice type="AttackGate" path="event:/voice/crpg/attack/female/gate" face_anim="grunt" />
+    <voice type="AttackInfantry" path="event:/voice/crpg/attack/female/infantry" face_anim="grunt" />
+    <voice type="AttackLeftFlank" path="event:/voice/crpg/attack/female/left_flank" face_anim="grunt" />
+    <voice type="AttackRightFlank" path="event:/voice/crpg/attack/female/right_flank" face_anim="grunt" />
+    <voice type="AttackSiegeTower" path="event:/voice/crpg/attack/female/siege_tower" face_anim="grunt" />
+    <voice type="AttackTower" path="event:/voice/crpg/attack/female/tower" face_anim="grunt" />
+    <voice type="DefendCatapult" path="event:/voice/crpg/defend/female/catapult" face_anim="grunt" />
+    <voice type="DefendCloseGate" path="event:/voice/crpg/defend/female/close_gate" face_anim="grunt" />
+    <voice type="DefendDefend" path="event:/voice/crpg/defend/female/defend" face_anim="grunt" />
+    <voice type="DefendFlag" path="event:/voice/crpg/defend/female/flag" face_anim="grunt" />
+    <voice type="DefendFlagCarrier" path="event:/voice/crpg/defend/female/flag_carrier" face_anim="grunt" />
+    <voice type="DefendGate" path="event:/voice/crpg/defend/female/gate" face_anim="grunt" />
+    <voice type="DefendGatehouse" path="event:/voice/crpg/defend/female/gatehouse" face_anim="grunt" />
+    <voice type="DefendLadders" path="event:/voice/crpg/defend/female/ladders" face_anim="grunt" />
+    <voice type="DefendSiegeTower" path="event:/voice/crpg/defend/female/siege_tower" face_anim="grunt" />
+    <voice type="DefendStairs" path="event:/voice/crpg/defend/female/stairs" face_anim="grunt" />
+    <voice type="DefendTower" path="event:/voice/crpg/defend/female/tower" face_anim="grunt" />
+    <voice type="DefendWalls" path="event:/voice/crpg/defend/female/walls" face_anim="grunt" />
+    <voice type="EquipmentBuildSiegeTower" path="event:/voice/crpg/equipment/female/build_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentDeployCatapult" path="event:/voice/crpg/equipment/female/deploy_catapult" face_anim="grunt" />
+    <voice type="EquipmentEquipment" path="event:/voice/crpg/equipment/female/equipment" face_anim="grunt" />
+    <voice type="EquipmentLadders" path="event:/voice/crpg/equipment/female/ladders" face_anim="grunt" />
+    <voice type="EquipmentManCatapult" path="event:/voice/crpg/equipment/female/man_catapult" face_anim="grunt" />
+    <voice type="EquipmentManSiegeTower" path="event:/voice/crpg/equipment/female/man_siege_tower" face_anim="grunt" />
+    <voice type="EquipmentShields" path="event:/voice/crpg/equipment/female/shields" face_anim="grunt" />
+    <voice type="FormationArchers" path="event:/voice/crpg/formation/female/archers" face_anim="grunt" />
+    <voice type="FormationCavalry" path="event:/voice/crpg/formation/female/cavalry" face_anim="grunt" />
+    <voice type="FormationFallBack" path="event:/voice/crpg/formation/female/fall_back" face_anim="grunt" />
+    <voice type="FormationFollowMe" path="event:/voice/crpg/formation/female/follow_me" face_anim="grunt" />
+    <voice type="FormationHold" path="event:/voice/crpg/formation/female/hold" face_anim="grunt" />
+    <voice type="FormationInfantry" path="event:/voice/crpg/formation/female/infantry" face_anim="grunt" />
+    <voice type="FormationKeep" path="event:/voice/crpg/formation/female/keep" face_anim="grunt" />
+    <voice type="FormationReleaseArrows" path="event:/voice/crpg/formation/female/release_arrows" face_anim="grunt" />
+    <voice type="FormationRetreat" path="event:/voice/crpg/formation/female/retreat" face_anim="grunt" />
+    <voice type="FormationShieldwall" path="event:/voice/crpg/formation/female/shieldwall" face_anim="grunt" />
+    <voice type="FormationShoot" path="event:/voice/crpg/formation/female/shoot" face_anim="grunt" />
+    <voice type="FormationSpreadOut" path="event:/voice/crpg/formation/female/spread_out" face_anim="grunt" />
+    <voice type="FormationStandCloser" path="event:/voice/crpg/formation/female/stand_closer" face_anim="grunt" />
+    <voice type="FormationTakeCover" path="event:/voice/crpg/formation/female/take_cover" face_anim="grunt" />
+    <voice type="IncomingArrows" path="event:/voice/crpg/incoming/female/arrows" face_anim="grunt" />
+    <voice type="IncomingBase" path="event:/voice/crpg/incoming/female/base" face_anim="grunt" />
+    <voice type="IncomingCatapult" path="event:/voice/crpg/incoming/female/catapult" face_anim="grunt" />
+    <voice type="IncomingCavalry" path="event:/voice/crpg/incoming/female/cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryBehind" path="event:/voice/crpg/incoming/female/cavalry_behind" face_anim="grunt" />
+    <voice type="IncomingCavalryCavalry" path="event:/voice/crpg/incoming/female/cavalry_cavalry" face_anim="grunt" />
+    <voice type="IncomingCavalryLeft" path="event:/voice/crpg/incoming/female/cavalry_left" face_anim="grunt" />
+    <voice type="IncomingCavalryRight" path="event:/voice/crpg/incoming/female/cavalry_right" face_anim="grunt" />
+    <voice type="IncomingInfantry" path="event:/voice/crpg/incoming/female/infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryBehind" path="event:/voice/crpg/incoming/female/infantry_behind" face_anim="grunt" />
+    <voice type="IncomingInfantryInfantry" path="event:/voice/crpg/incoming/female/infantry_infantry" face_anim="grunt" />
+    <voice type="IncomingInfantryLeft" path="event:/voice/crpg/incoming/female/infantry_left" face_anim="grunt" />
+    <voice type="IncomingInfantryRight" path="event:/voice/crpg/incoming/female/infantry_right" face_anim="grunt" />
+    <voice type="IncomingSiegeTower" path="event:/voice/crpg/incoming/female/siege_tower" face_anim="grunt" />
+    <voice type="QuickHello" path="event:/voice/crpg/quick/female/hello" face_anim="grunt" />
+    <voice type="QuickHelp" path="event:/voice/crpg/quick/female/help" face_anim="grunt" />
+    <voice type="QuickMove" path="event:/voice/crpg/quick/female/move" face_anim="grunt" />
+    <voice type="QuickNo" path="event:/voice/crpg/quick/female/no" face_anim="grunt" />
+    <voice type="QuickSilence" path="event:/voice/crpg/quick/female/silence" face_anim="grunt" />
+    <voice type="QuickSorry" path="event:/voice/crpg/quick/female/sorry" face_anim="grunt" />
+    <voice type="QuickStop" path="event:/voice/crpg/quick/female/stop" face_anim="grunt" />
+    <voice type="QuickThanks" path="event:/voice/crpg/quick/female/thanks" face_anim="grunt" />
+    <voice type="QuickWatchAim" path="event:/voice/crpg/quick/female/watch_aim" face_anim="grunt" />
+    <voice type="QuickYell" path="event:/voice/crpg/quick/female/yell" face_anim="grunt" />
+    <voice type="QuickYes" path="event:/voice/crpg/quick/female/yes" face_anim="grunt" />
+    <voice type="SelfAttackAttacking" path="event:/voice/crpg/self/attack/female/attacking" face_anim="grunt" />
+    <voice type="SelfAttackBase" path="event:/voice/crpg/self/attack/female/base" face_anim="grunt" />
+    <voice type="SelfAttackCatapult" path="event:/voice/crpg/self/attack/female/catapult" face_anim="grunt" />
+    <voice type="SelfAttackEquipment" path="event:/voice/crpg/self/attack/female/equipment" face_anim="grunt" />
+    <voice type="SelfAttackFlag" path="event:/voice/crpg/self/attack/female/flag" face_anim="grunt" />
+    <voice type="SelfAttackGate" path="event:/voice/crpg/self/attack/female/gate" face_anim="grunt" />
+    <voice type="SelfAttackLeft" path="event:/voice/crpg/self/attack/female/left" face_anim="grunt" />
+    <voice type="SelfAttackRight" path="event:/voice/crpg/self/attack/female/right" face_anim="grunt" />
+    <voice type="SelfAttackSiegeTower" path="event:/voice/crpg/self/attack/female/siege_tower" face_anim="grunt" />
+    <voice type="SelfAttackTower" path="event:/voice/crpg/self/attack/female/tower" face_anim="grunt" />
+    <voice type="SelfDefendCatapult" path="event:/voice/crpg/self/defend/female/catapult" face_anim="grunt" />
+    <voice type="SelfDefendCloseGate" path="event:/voice/crpg/self/defend/female/close_gate" face_anim="grunt" />
+    <voice type="SelfDefendFlag" path="event:/voice/crpg/self/defend/female/flag" face_anim="grunt" />
+    <voice type="SelfDefendGate" path="event:/voice/crpg/self/defend/female/gate" face_anim="grunt" />
+    <voice type="SelfDefendGatehouse" path="event:/voice/crpg/self/defend/female/gatehouse" face_anim="grunt" />
+    <voice type="SelfDefendLadders" path="event:/voice/crpg/self/defend/female/ladders" face_anim="grunt" />
+    <voice type="SelfDefendSiegeTower" path="event:/voice/crpg/self/defend/female/siege_tower" face_anim="grunt" />
+    <voice type="SelfDefendStairs" path="event:/voice/crpg/self/defend/female/stairs" face_anim="grunt" />
+    <voice type="SelfDefendTower" path="event:/voice/crpg/self/defend/female/tower" face_anim="grunt" />
+    <voice type="SelfDefendWalls" path="event:/voice/crpg/self/defend/female/walls" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildCatapult" path="event:/voice/crpg/self/equipment/female/build_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentBuildSiegeTower" path="event:/voice/crpg/self/equipment/female/build_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentEquipment" path="event:/voice/crpg/self/equipment/female/equipment" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpCatapult" path="event:/voice/crpg/self/equipment/female/help_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentHelpSiegeTower" path="event:/voice/crpg/self/equipment/female/help_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentLadders" path="event:/voice/crpg/self/equipment/female/ladders" face_anim="grunt" />
+    <voice type="SelfEquipmentManCatapult" path="event:/voice/crpg/self/equipment/female/man_catapult" face_anim="grunt" />
+    <voice type="SelfEquipmentManSiegeTower" path="event:/voice/crpg/self/equipment/female/man_siege_tower" face_anim="grunt" />
+    <voice type="SelfEquipmentShields" path="event:/voice/crpg/self/equipment/female/shields" face_anim="grunt" />
   </voice_definition>
 
 </voice_definitions>

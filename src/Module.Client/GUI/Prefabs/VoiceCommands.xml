@@ -1,0 +1,27 @@
+<Prefab>
+  <Window>
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" IsVisible="@IsMenuVisible" InheritRenderOrder="true">
+      <Children>
+        <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Left" VerticalAlignment="Top" MarginLeft="60" MarginTop="60">
+          <Children>
+            <ListPanel DataSource="{Items}" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod="VerticalTopToBottom">
+              <ItemTemplate>
+                <BrushWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="36" MarginBottom="10" Brush="Mission.Objective.Title.Background">
+                  <Children>
+                    <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent" StackLayout.LayoutMethod="HorizontalLeftToRight" MarginLeft="14" MarginRight="14" MarginTop="4" MarginBottom="4">
+                      <Children>
+                        <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent" Brush="VoiceCommands.Item.Text" Text="@BeforePart"/>
+                        <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent" Brush="VoiceCommands.Key.Text" Text="@KeyPart"/>
+                        <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="280" Brush="VoiceCommands.Item.Text" Text="@AfterPart"/>
+                      </Children>
+                    </ListPanel>
+                  </Children>
+                </BrushWidget>
+              </ItemTemplate>
+            </ListPanel>
+          </Children>
+        </Widget>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

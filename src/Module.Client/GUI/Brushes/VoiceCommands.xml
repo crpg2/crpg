@@ -1,0 +1,26 @@
+<Brushes>
+  <Brush Name="VoiceCommands.Title.Text" Font="Galahad" TextHorizontalAlignment="Left" TextVerticalAlignment="Center">
+    <Layers>
+      <BrushLayer Name="Default"/>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#F1C232FF" TextOutlineColor="#000000FF" TextOutlineAmount="0.15" TextBlur="0.25" FontSize="32"/>
+    </Styles>
+  </Brush>
+  <Brush Name="VoiceCommands.Key.Text" Font="Galahad" TextHorizontalAlignment="Left" TextVerticalAlignment="Center">
+    <Layers>
+      <BrushLayer Name="Default"/>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#F1C232FF" TextOutlineColor="#000000FF" TextOutlineAmount="0.15" TextBlur="0.25" FontSize="24"/>
+    </Styles>
+  </Brush>
+  <Brush Name="VoiceCommands.Item.Text" Font="Galahad" TextHorizontalAlignment="Left" TextVerticalAlignment="Center">
+    <Layers>
+      <BrushLayer Name="Default"/>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#FFFFFFFF" TextOutlineColor="#000000FF" TextOutlineAmount="0.15" TextBlur="0.25" FontSize="24"/>
+    </Styles>
+  </Brush>
+</Brushes>

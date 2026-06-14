@@ -3,10 +3,10 @@
 	type="sound">
 	<asset_files>
 		<file
-			name="ModuleMasterBank.strings.bank"
+			name="ModuleSoundBank.bank"
 			decompress_samples="false"/>
 		<file
-			name="ModuleSoundBank.bank"
+			name="ModuleMasterBank.strings.bank"
 			decompress_samples="false"/>
 	</asset_files>
 </base>
