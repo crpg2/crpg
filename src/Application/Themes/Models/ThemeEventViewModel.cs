@@ -1,4 +1,5 @@
-﻿using Crpg.Application.Common.Mappings;
+﻿using AutoMapper;
+using Crpg.Application.Common.Mappings;
 using Crpg.Domain.Entities.Themes;
 
 namespace Crpg.Application.Themes.Models;
@@ -45,5 +46,10 @@ public class ThemeEventViewModel : IMapFrom<ThemeEvent>
     /// <summary>
     /// The theme of the event.
     /// </summary>
-    public Theme EventTheme { get; set; } = default!;
+    public ThemeViewModel EventTheme { get; set; } = default!;
+
+    public List<string> EligibleItemIds { get; set; } = new();
+
+    public void Mapping(Profile profile) => profile.CreateMap<ThemeEvent, ThemeEventViewModel>()
+        .ForMember(dest => dest.EligibleItemIds, opt => opt.Ignore());
 }

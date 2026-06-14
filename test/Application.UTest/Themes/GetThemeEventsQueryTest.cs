@@ -9,7 +9,7 @@ public class GetThemeEventsQueryTest : TestBase
     [Test]
     public async Task ShouldReturnEmptyWhenNoThemeEvents()
     {
-        var handler = new GetThemeEventsQuery.Handler(ActDb, Mapper);
+        var handler = new GetThemeEventsQuery.Handler(ActDb);
         var result = await handler.Handle(new GetThemeEventsQuery(), CancellationToken.None);
 
         Assert.That(result?.Data, Is.Empty);
@@ -23,7 +23,7 @@ public class GetThemeEventsQueryTest : TestBase
         ArrangeDb.ThemeEvents.AddRange(themeEventOne, themeEventTwo);
         await ArrangeDb.SaveChangesAsync(CancellationToken.None);
 
-        var handler = new GetThemeEventsQuery.Handler(ActDb, Mapper);
+        var handler = new GetThemeEventsQuery.Handler(ActDb);
 
         var result = await handler.Handle(new GetThemeEventsQuery(), CancellationToken.None);
 
@@ -41,7 +41,8 @@ public class GetThemeEventsQueryTest : TestBase
         Assert.That(resultOne.ActiveUntilUtc, Is.EqualTo(themeEventOne.ActiveUntilUtc));
         Assert.That(resultOne.RequiredEquipmentSlotsMatchingTheme, Is.EquivalentTo(themeEventOne.RequiredEquipmentSlotsMatchingTheme));
         Assert.That(resultOne.MinumumRequiredEquipmentSlotsMatchingTheme, Is.EqualTo(themeEventOne.MinumumRequiredEquipmentSlotsMatchingTheme));
-        Assert.That(resultOne.EventTheme, Is.EqualTo(themeEventOne.EventTheme).UsingPropertiesComparer());
+        Assert.That(resultOne.EventTheme.Id, Is.EqualTo(themeEventOne.EventTheme.Id));
+        Assert.That(resultOne.EventTheme.Name, Is.EqualTo(themeEventOne.EventTheme.Name));
 
         var resultTwo = result.Data!.Single(x => x.Name == themeEventTwo.Name);
         Assert.That(resultTwo.Id, Is.GreaterThan(0));
@@ -52,7 +53,8 @@ public class GetThemeEventsQueryTest : TestBase
         Assert.That(resultTwo.ActiveUntilUtc, Is.EqualTo(themeEventTwo.ActiveUntilUtc));
         Assert.That(resultTwo.RequiredEquipmentSlotsMatchingTheme, Is.EquivalentTo(themeEventTwo.RequiredEquipmentSlotsMatchingTheme));
         Assert.That(resultTwo.MinumumRequiredEquipmentSlotsMatchingTheme, Is.EqualTo(themeEventTwo.MinumumRequiredEquipmentSlotsMatchingTheme));
-        Assert.That(resultTwo.EventTheme, Is.EqualTo(themeEventTwo.EventTheme).UsingPropertiesComparer());
+        Assert.That(resultTwo.EventTheme.Id, Is.EqualTo(themeEventTwo.EventTheme.Id));
+        Assert.That(resultTwo.EventTheme.Name, Is.EqualTo(themeEventTwo.EventTheme.Name));
     }
 
     private static ThemeEvent CreateDefaultTheme(
