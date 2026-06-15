@@ -650,6 +650,18 @@ public record SeedDataCommand : IMediatorRequest
                 Avatar = new Uri(
                     "https://avatars.akamai.steamstatic.com/d51d5155b1a564421c0b3fd5fb7eed7c4474e73d_full.jpg"),
             };
+            User zorak = new()
+            {
+                PlatformUserId = "76561197992612019",
+                Platform = Platform.Steam,
+                Name = "Dr. Hax (Zorak)",
+                Role = Role.Admin,
+                Gold = 1000000,
+                HeirloomPoints = 12,
+                ExperienceMultiplier = 1.09f,
+                Avatar = new Uri(
+                    "https://avatars.fastly.steamstatic.com/a5e502265410b95711111316c47243dfb2993fbf_full.jpg"),
+            };
 
             User[] newUsers =
             {
@@ -659,7 +671,7 @@ public record SeedDataCommand : IMediatorRequest
                 ajroselle, skrael, bedo, lambic, sanasar, vlad007, canp0g, shark, noobAmphetamine, mundete,
                 aroyFalconer, insanitoid, scarface, xDem, disorot, ace, sagar, greenShadow, hannibaru, drexx,
                 xarosh, tipsyToby, localAlpha, alex, kedrynFuel, luqero, ilya, eztli, telesto, kypak, devoidDragon,
-                krog, thradok, kinngrimm, kadse, ladoea, enfiol,
+                krog, thradok, kinngrimm, kadse, ladoea, enfiol, zorak,
             };
 
             var existingUsers = await _db.Users.ToDictionaryAsync(u => (u.Platform, u.PlatformUserId));
@@ -1326,6 +1338,19 @@ public record SeedDataCommand : IMediatorRequest
                     Skills = new CharacterSkills { Points = 100 },
                 },
             };
+            Character zorakCharacter = new()
+            {
+                User = zorak,
+                Name = "Zorak",
+                Level = 33,
+                Generation = 1,
+                Experience = _experienceTable.GetExperienceForLevel(33),
+                Characteristics = new CharacterCharacteristics
+                {
+                    Attributes = new CharacterAttributes { Points = 100 },
+                    Skills = new CharacterSkills { Points = 100 },
+                },
+            };
             Character falcomCharacter0 = new() { User = falcom, Name = falcom.Name, };
             Character victorhh888Character0 = new() { User = victorhh888, Name = victorhh888.Name, };
             Character sellkaCharacter0 = new() { User = sellka, Name = sellka.Name, };
@@ -1337,7 +1362,7 @@ public record SeedDataCommand : IMediatorRequest
                 takeoCharacter0, takeoCharacter1, takeoCharacter2, namidakaCharacter0, peekyCharacter0,
                 orleCharacter0, orleCharacter1, orleCharacter2, orle2Character0, droobCharacter0, vickCharacter0,
                 vickCharacter1, falcomCharacter0, victorhh888Character0, sellkaCharacter0, krogCharacter0,
-                kadseCharacter0, noobAmphetamineCharacter0, baronCyborgCharacter0, ladoeaCharacter0,
+                kadseCharacter0, noobAmphetamineCharacter0, baronCyborgCharacter0, ladoeaCharacter0, zorakCharacter,
             };
 
             var existingCharacters = await _db.Characters.ToDictionaryAsync(c => c.Name);
@@ -2788,10 +2813,12 @@ public record SeedDataCommand : IMediatorRequest
                 .Include(i => i.Themes)
                 .AsSplitQuery()
                 .ToDictionaryAsync(i => i.Id, cancellationToken);
+            var dbThemesById = await _db.Themes.ToDictionaryAsync(t => t.Id, cancellationToken);
+            var themes = new Dictionary<int, Theme>(dbThemesById);
 
             foreach (ItemCreation item in itemsById.Values)
             {
-                Item itemToCreate = ItemCreationToItem(item);
+                Item itemToCreate = ItemCreationToItem(item, themes);
                 CreateOrUpdateItem(dbItemsById, itemToCreate);
             }
 
@@ -2828,6 +2855,11 @@ public record SeedDataCommand : IMediatorRequest
                 dbItem.PrimaryWeapon = item.PrimaryWeapon;
                 dbItem.SecondaryWeapon = item.SecondaryWeapon;
                 dbItem.TertiaryWeapon = item.TertiaryWeapon;
+                dbItem.Themes.Clear();
+                if (item.Themes != null)
+                {
+                    dbItem.Themes.AddRange(item.Themes);
+                }
             }
             else
             {
@@ -2850,7 +2882,7 @@ public record SeedDataCommand : IMediatorRequest
             }
         }
 
-        private Item ItemCreationToItem(ItemCreation item)
+        private Item ItemCreationToItem(ItemCreation item, Dictionary<int, Theme> themes)
         {
             Item res = new()
             {
@@ -2866,6 +2898,7 @@ public record SeedDataCommand : IMediatorRequest
                 Requirement = item.Requirement,
                 Flags = item.Flags,
                 Enabled = true,
+                Themes = new(),
             };
 
             if (item.Armor != null)
@@ -2909,12 +2942,32 @@ public record SeedDataCommand : IMediatorRequest
                 res.TertiaryWeapon = IteamWeaponComponentFromViewModel(item.Weapons[2]);
             }
 
-            if (item.Themes != null)
+            if (item.Themes != null && item.Themes.Count > 0)
             {
-                res.Themes = item.Themes.Select(i => new Theme(i.Name) { Id = i.Id }).ToList();
+                res.Themes.AddRange(CreateThemesForItem(item, themes));
             }
 
             return res;
+        }
+
+        private static List<Theme> CreateThemesForItem(ItemCreation item, Dictionary<int, Theme> themeInstances)
+        {
+            var themes = new List<Theme>();
+            foreach (var themeVm in item.Themes)
+            {
+                if (themeInstances.TryGetValue(themeVm.Id, out var existingTheme))
+                {
+                    themes.Add(existingTheme);
+                }
+                else
+                {
+                    var newTheme = new Theme(themeVm.Name) { Id = themeVm.Id };
+                    themeInstances[themeVm.Id] = newTheme;
+                    themes.Add(newTheme);
+                }
+            }
+
+            return themes;
         }
 
         private ItemWeaponComponent IteamWeaponComponentFromViewModel(ItemWeaponComponentViewModel weaponComponent)
