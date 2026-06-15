@@ -28,5 +28,5 @@ internal interface ICrpgClient : IDisposable
 
     Task CreateGameEventsAsync(CrpgGameEventsCreateRequest req, CancellationToken cancellationToken = default);
 
-    Task<CrpgResult<List<ThemeEvent>>> GetActiveThemeEvents(CancellationToken cancellationToken = default);
+    Task<CrpgResult<List<ThemeEvent>>> GetActiveThemeEventsAsync(CancellationToken cancellationToken = default);
 }

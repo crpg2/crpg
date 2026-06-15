@@ -1,15 +1,14 @@
 using Crpg.Module.Api;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.Characters;
-using Crpg.Module.Api.Models.Users;
+using Crpg.Module.Api.Models.Items;
+using Crpg.Module.Api.Models.Themes;
 using Crpg.Module.Common;
-using Crpg.Module.Common.Network;
 using Crpg.Module.Modes.TrainingGround;
 using Crpg.Module.Modes.Warmup;
 using Crpg.Module.Rating;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
-using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Diamond;
 using TaleWorlds.PlayerServices;
@@ -273,6 +272,7 @@ internal class CrpgRewardServer : MissionLogic
         Dictionary<int, IList<CrpgUserDamagedItem>> brokenItems = lowPopulationServer ? new() : GetBrokenItemsByCrpgUserId(networkPeers, durationUpkeep ?? durationRewarded);
 
         var compensationByCrpgUserId = _isTeamHitCompensationsEnabled ? CalculateCompensationByCrpgUserId(brokenItems) : new();
+        var activeThemeEvents = await _crpgClient.GetActiveThemeEventsAsync();
         foreach (NetworkCommunicator networkPeer in networkPeers)
         {
             var playerId = networkPeer.VirtualPlayer.Id;
@@ -327,7 +327,7 @@ internal class CrpgRewardServer : MissionLogic
                 bool isValorousPlayer = valorousPlayerIds.Contains(playerId);
                 int compensationForCrpgUser = compensationByCrpgUserId.TryGetValue(crpgUserId, out int compensation) ? compensation : 0;
                 SetRewardForConnectedPlayer(userUpdate, crpgPeer, durationRewarded, compensationForCrpgUser, isValorousPlayer,
-                    defenderMultiplierGain, attackerMultiplierGain, constantMultiplier);
+                    defenderMultiplierGain, attackerMultiplierGain, constantMultiplier, activeThemeEvents?.Data);
 
                 if (brokenItems.TryGetValue(crpgUserId, out var userBrokenItems))
                 {
@@ -339,7 +339,7 @@ internal class CrpgRewardServer : MissionLogic
             else if (crpgPeer.LastSpawnInfo != null && isPlayerInSpectator) // update spectators multiplier based on their previous team
             {
                 SetRewardForConnectedPlayer(userUpdate, crpgPeer, 0, 0, false,
-                    defenderMultiplierGain, attackerMultiplierGain, constantMultiplier);
+                    defenderMultiplierGain, attackerMultiplierGain, constantMultiplier, activeThemeEvents?.Data);
             }
 
             userUpdates.Add(userUpdate);
@@ -523,15 +523,25 @@ internal class CrpgRewardServer : MissionLogic
         bool isValorousPlayer,
         int defenderMultiplierGain,
         int attackerMultiplierGain,
-        int? constantMultiplier)
+        int? constantMultiplier,
+        List<ThemeEvent>? activeThemeEvents)
     {
         float serverXpMultiplier = CrpgServerConfiguration.ServerExperienceMultiplier;
+        float goldMultiplier = 1.0f;
         serverXpMultiplier *= IsHappyHour() ? 1.5f : 1f;
+
+        if (activeThemeEvents != null && activeThemeEvents.Count > 0)
+        {
+            var multipliers = GetActiveEventMultipliers(crpgPeer, activeThemeEvents);
+            serverXpMultiplier *= multipliers.expMultiplier;
+            goldMultiplier *= multipliers.goldMultiplier;
+        }
+
         userUpdate.Reward = new CrpgUserReward
         {
             Experience = (int)(serverXpMultiplier * durationRewarded * (_constants.BaseExperienceGainPerSecond
                 + crpgPeer.RewardMultiplier * _constants.MultipliedExperienceGainPerSecond)),
-            Gold = (int)(durationRewarded * (_constants.BaseGoldGainPerSecond
+            Gold = (int)(goldMultiplier * durationRewarded * (_constants.BaseGoldGainPerSecond
                 + crpgPeer.RewardMultiplier * _constants.MultipliedGoldGainPerSecond)
                 + compensationAmount),
         };
@@ -553,6 +563,78 @@ internal class CrpgRewardServer : MissionLogic
             }
 
             crpgPeer.RewardMultiplier = Math.Max(Math.Min(rewardMultiplier, ExperienceMultiplierMax), ExperienceMultiplierMin);
+        }
+    }
+
+    private static (float expMultiplier, float goldMultiplier) GetActiveEventMultipliers(CrpgPeer crpgPeer, List<ThemeEvent> activeThemeEvents)
+    {
+        var playerEquippedItems = crpgPeer.User!.Character.EquippedItems;
+        float currentHighestEventExpMultiplier = 1.0f;
+        float currentHighestEventGoldMultiplier = 1.0f;
+
+        foreach (var themeEvent in activeThemeEvents)
+        {
+            var playerSlotsWithEligibleItemEquipped = playerEquippedItems.Where(x => themeEvent.EligibleItemIds.Contains(x.UserItem.ItemId)).Select(x => x.Slot).ToList();
+            bool playerIsEligibleForThemeEvent = PlayerIsEligibleForThemeEvent(themeEvent, playerSlotsWithEligibleItemEquipped);
+            if (playerIsEligibleForThemeEvent)
+            {
+                if (themeEvent.ExpMultiplier > currentHighestEventExpMultiplier)
+                {
+                    currentHighestEventExpMultiplier = themeEvent.ExpMultiplier;
+                }
+
+                if (themeEvent.GoldMultiplier > currentHighestEventGoldMultiplier)
+                {
+                    currentHighestEventGoldMultiplier = themeEvent.GoldMultiplier;
+                }
+            }
+        }
+
+        if (currentHighestEventExpMultiplier > 1.0f || currentHighestEventGoldMultiplier > 1.0f)
+        {
+            GameNetwork.BeginBroadcastModuleEvent();
+            GameNetwork.WriteMessage(new CrpgRewardThemeEvent());
+            GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
+        }
+
+        return (currentHighestEventExpMultiplier, currentHighestEventGoldMultiplier);
+    }
+
+    private static bool PlayerIsEligibleForThemeEvent(ThemeEvent themeEvent, List<CrpgItemSlot> playerSlotsWithEligibleItemEquipped)
+    {
+        return playerSlotsWithEligibleItemEquipped.Count >= themeEvent.MinumumRequiredEquipmentSlotsMatchingTheme && themeEvent.RequiredEquipmentSlotsMatchingTheme.All(r => playerSlotsWithEligibleItemEquipped.Contains(MapToThemeEquipmentSlot(r)));
+    }
+
+    private static CrpgItemSlot MapToThemeEquipmentSlot(ThemeEquipmentSlot crpgItemSlot)
+    {
+        switch (crpgItemSlot)
+        {
+            case ThemeEquipmentSlot.Head:
+                return CrpgItemSlot.Head;
+            case ThemeEquipmentSlot.Shoulder:
+                return CrpgItemSlot.Shoulder;
+            case ThemeEquipmentSlot.Body:
+                return CrpgItemSlot.Body;
+            case ThemeEquipmentSlot.Hand:
+                return CrpgItemSlot.Hand;
+            case ThemeEquipmentSlot.Leg:
+                return CrpgItemSlot.Leg;
+            case ThemeEquipmentSlot.MountHarness:
+                return CrpgItemSlot.MountHarness;
+            case ThemeEquipmentSlot.Mount:
+                return CrpgItemSlot.Mount;
+            case ThemeEquipmentSlot.Weapon0:
+                return CrpgItemSlot.Weapon0;
+            case ThemeEquipmentSlot.Weapon1:
+                return CrpgItemSlot.Weapon1;
+            case ThemeEquipmentSlot.Weapon2:
+                return CrpgItemSlot.Weapon2;
+            case ThemeEquipmentSlot.Weapon3:
+                return CrpgItemSlot.Weapon3;
+            case ThemeEquipmentSlot.WeaponExtra:
+                return CrpgItemSlot.WeaponExtra;
+            default:
+                throw new ArgumentOutOfRangeException("Theme equipment slot did not exist on in character equipment slots.");
         }
     }
 

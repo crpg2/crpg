@@ -117,9 +117,9 @@ internal class HttpCrpgClient : ICrpgClient
         return Post<CrpgGameEventsCreateRequest, object>("games/game-events", req, cancellationToken);
     }
 
-    public Task<CrpgResult<List<ThemeEvent>>> GetActiveThemeEvents(CancellationToken cancellationToken = default)
+    public Task<CrpgResult<List<ThemeEvent>>> GetActiveThemeEventsAsync(CancellationToken cancellationToken = default)
     {
-        return Get<List<ThemeEvent>>("games/themes/events/active", null, cancellationToken);
+        return Get<List<ThemeEvent>>("games/theme-events/active", null, cancellationToken);
     }
 
     public void Dispose() => _httpClient.Dispose();

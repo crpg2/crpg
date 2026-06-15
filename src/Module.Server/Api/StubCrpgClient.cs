@@ -132,7 +132,7 @@ internal class StubCrpgClient : ICrpgClient
         return Task.CompletedTask;
     }
 
-    public Task<CrpgResult<List<ThemeEvent>>> GetActiveThemeEvents(CancellationToken cancellationToken = default)
+    public Task<CrpgResult<List<ThemeEvent>>> GetActiveThemeEventsAsync(CancellationToken cancellationToken = default)
     {
         return Task.FromResult(new CrpgResult<List<ThemeEvent>> { Data = new List<ThemeEvent>() });
     }
