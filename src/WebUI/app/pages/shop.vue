@@ -16,6 +16,7 @@ import {
   AppCoin,
   ItemParam,
   ItemTableMedia,
+  ItemThemePills,
   ShopGridItemBuyBtn,
   UButton,
   UCheckbox,
@@ -453,7 +454,11 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
             : []),
         ])
       },
-      cell: ({ row }) => h(ItemTableMedia, { item: row.original, showTier: true }),
+      cell: ({ row }) => h(ItemTableMedia, { item: row.original, showTier: true, themes: row.original.themes },{
+        'name-caption': () => row.original.themes?.length
+        ? h(ItemThemePills, { themes: row.original.themes, max: 1 })
+        : null
+      }),
     },
     ...objectEntries(currentAggregations.value).map(([key, options]) => createTableColumn(key, options!)),
   ]
