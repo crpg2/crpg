@@ -2784,7 +2784,10 @@ public record SeedDataCommand : IMediatorRequest
         private async Task CreateOrUpdateItems(CancellationToken cancellationToken)
         {
             var itemsById = (await _itemsSource.LoadItems()).ToDictionary(i => i.Id);
-            var dbItemsById = await _db.Items.ToDictionaryAsync(i => i.Id, cancellationToken);
+            var dbItemsById = await _db.Items
+                .Include(i => i.Themes)
+                .AsSplitQuery()
+                .ToDictionaryAsync(i => i.Id, cancellationToken);
 
             foreach (ItemCreation item in itemsById.Values)
             {
