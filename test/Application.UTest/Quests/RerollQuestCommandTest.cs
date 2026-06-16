@@ -311,8 +311,8 @@ public class RerollQuestCommandTest : TestBase
         activityLogServiceMock.Setup(al => al.CreateQuestRerolledLog(user.Id, userQuest.Id, newUserQuest.Id, Constants.QuestRerollDailyQuestPrice))
             .Returns(new ActivityLog());
         Mock<IQuestAssignmentService> questAssignmentServiceMock = new();
-        questAssignmentServiceMock.Setup(q => q.ReplaceDailyUserQuestAsync(It.IsAny<UserQuest>(), It.IsAny<CancellationToken>()))
-            .Callback<UserQuest, CancellationToken>((uq, ct) =>
+        questAssignmentServiceMock.Setup(q => q.ReplaceDailyUserQuestAsync(It.IsAny<UserQuest>(), It.IsAny<HashSet<int>>(), It.IsAny<CancellationToken>()))
+            .Callback<UserQuest, HashSet<int>, CancellationToken>((uq, aq, ct) =>
             {
                 // Simulate removal of old quest and addition of new one as the real service does
                 ActDb.UserQuests.Remove(uq);
@@ -338,7 +338,7 @@ public class RerollQuestCommandTest : TestBase
         var dbUser = await AssertDb.Users.FirstAsync(u => u.Id == user.Id);
         Assert.That(dbUser.Gold, Is.EqualTo(700)); // 1000 - 300
 
-        questAssignmentServiceMock.Verify(q => q.ReplaceDailyUserQuestAsync(It.IsAny<UserQuest>(), It.IsAny<CancellationToken>()), Times.Once);
+        questAssignmentServiceMock.Verify(q => q.ReplaceDailyUserQuestAsync(It.IsAny<UserQuest>(), It.IsAny<HashSet<int>>(), It.IsAny<CancellationToken>()), Times.Once);
         activityLogServiceMock.Verify(al => al.CreateQuestRerolledLog(
             user.Id, userQuest.Id, newUserQuest.Id, Constants.QuestRerollDailyQuestPrice), Times.Once);
 
