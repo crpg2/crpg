@@ -8,8 +8,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1500,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -21,8 +21,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 750,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -34,8 +34,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 750,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -47,8 +47,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 750,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -63,8 +63,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1000,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -76,8 +76,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1250,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -89,8 +89,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1250,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -102,8 +102,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 500,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -115,8 +115,8 @@
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 20,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -133,8 +133,8 @@
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 5,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -146,8 +146,8 @@
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 15,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -159,8 +159,8 @@
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 10,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -175,8 +175,8 @@
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 80,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -188,8 +188,8 @@
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 200,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -205,8 +205,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 500,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -221,8 +221,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 750,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -234,8 +234,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 500,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -250,8 +250,8 @@
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 10,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -263,8 +263,8 @@
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 30,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
 
@@ -277,8 +277,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 5000,
-    "rewardGold": 10000,
-    "rewardExperience": 350000,
+    "rewardGold": 5000,
+    "rewardExperience": 150000,
     "isActive": true
   },
   {
@@ -290,8 +290,8 @@
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 100,
-    "rewardGold": 10000,
-    "rewardExperience": 350000,
+    "rewardGold": 5000,
+    "rewardExperience": 150000,
     "isActive": true
   },
   {
@@ -308,8 +308,8 @@
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 25,
-    "rewardGold": 10000,
-    "rewardExperience": 350000,
+    "rewardGold": 5000,
+    "rewardExperience": 150000,
     "isActive": true
   },
   {
@@ -326,8 +326,8 @@
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 50,
-    "rewardGold": 10000,
-    "rewardExperience": 350000,
+    "rewardGold": 5000,
+    "rewardExperience": 150000,
     "isActive": true
   },
   {
@@ -339,8 +339,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 5000,
-    "rewardGold": 10000,
-    "rewardExperience": 350000,
+    "rewardGold": 5000,
+    "rewardExperience": 150000,
     "isActive": true
   },
   {
@@ -355,8 +355,8 @@
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 500,
-    "rewardGold": 10000,
-    "rewardExperience": 350000,
+    "rewardGold": 5000,
+    "rewardExperience": 150000,
     "isActive": true
   },
   {
@@ -368,8 +368,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1000,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -381,8 +381,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 750,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -394,8 +394,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1250,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -407,8 +407,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1000,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -420,8 +420,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1000,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -433,8 +433,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1000,
-    "rewardGold": 3000,
-    "rewardExperience": 100000,
+    "rewardGold": 500,
+    "rewardExperience": 25000,
     "isActive": true
   },
   {
@@ -450,8 +450,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 4000,
-    "rewardGold": 10000,
-    "rewardExperience": 350000,
+    "rewardGold": 5000,
+    "rewardExperience": 150000,
     "isActive": true
   },
   {
@@ -468,8 +468,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 3000,
-    "rewardGold": 10000,
-    "rewardExperience": 350000,
+    "rewardGold": 5000,
+    "rewardExperience": 150000,
     "isActive": true
   },
   {
@@ -484,8 +484,8 @@
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 5000,
-    "rewardGold": 10000,
-    "rewardExperience": 350000,
+    "rewardGold": 5000,
+    "rewardExperience": 150000,
     "isActive": true
   }
 ]
