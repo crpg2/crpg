@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Crpg.Application.Themes.Commands;
+﻿using Crpg.Application.Themes.Commands;
 using Crpg.Domain.Entities.Themes;
 using NUnit.Framework;
 

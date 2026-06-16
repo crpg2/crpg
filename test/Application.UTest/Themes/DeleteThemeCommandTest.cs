@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Crpg.Application.Themes.Commands;
+﻿using Crpg.Application.Themes.Commands;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Themes;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +16,7 @@ public class DeleteThemeCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         var handler = new DeleteThemeCommand.Handler(ActDb);
-        var command = CreateDefaultDeleteThemeCommandTest(theme.Id);
+        var command = CreateDefaultDeleteThemeCommand(theme.Id);
 
         var result = await handler.Handle(command, CancellationToken.None);
 
@@ -34,7 +31,7 @@ public class DeleteThemeCommandTest : TestBase
     public async Task ShouldReturnAsThoughAThemeWasRemovedWhenThemeWasNotFound()
     {
         var handler = new DeleteThemeCommand.Handler(ActDb);
-        var command = CreateDefaultDeleteThemeCommandTest();
+        var command = CreateDefaultDeleteThemeCommand();
 
         var result = await handler.Handle(command, CancellationToken.None);
 
@@ -68,7 +65,7 @@ public class DeleteThemeCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         var handler = new DeleteThemeCommand.Handler(ActDb);
-        var command = CreateDefaultDeleteThemeCommandTest();
+        var command = CreateDefaultDeleteThemeCommand();
 
         var result = await handler.Handle(command, CancellationToken.None);
 
@@ -86,5 +83,5 @@ public class DeleteThemeCommandTest : TestBase
         Assert.That(untaggedItem.Themes, Is.Empty);
     }
 
-    private static DeleteThemeCommand CreateDefaultDeleteThemeCommandTest(int id = 1) => new() { Id = id, };
+    private static DeleteThemeCommand CreateDefaultDeleteThemeCommand(int id = 1) => new() { Id = id, };
 }

@@ -1,16 +1,13 @@
-﻿using System.Text.Json.Serialization;
-using AutoMapper;
-using Crpg.Application.Common;
+﻿using Crpg.Application.Common;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
-using Crpg.Application.Themes.Models;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 namespace Crpg.Application.Themes.Commands;
 
-public record DeleteThemeCommand : IMediatorRequest<ThemeViewModel>
+public record DeleteThemeCommand : IMediatorRequest
 {
     public int Id { get; init; }
 
@@ -22,7 +19,7 @@ public record DeleteThemeCommand : IMediatorRequest<ThemeViewModel>
             if (theme == null)
             {
                 // If someone tried to remove a theme that does not exist, might as well just show a thumbs up instead of throwing errors everywhere.
-                return new();
+                return new Result();
             }
 
             await db.ThemeEvents.RemoveRangeAsync(e => e.EventTheme.Id == req.Id, cancellationToken);
@@ -41,7 +38,7 @@ public record DeleteThemeCommand : IMediatorRequest<ThemeViewModel>
 
             await db.SaveChangesAsync(cancellationToken);
 
-            return new();
+            return new Result();
         }
     }
 }

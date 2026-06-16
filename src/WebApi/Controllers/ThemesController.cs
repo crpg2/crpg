@@ -39,7 +39,7 @@ public class ThemesController : BaseController
     /// <response code="200">Ok.</response>
     [HttpDelete("{id}")]
     [Authorize(Policy = AdminPolicy)]
-    public Task<ActionResult<Result<ThemeViewModel>>> DeleteTheme([FromRoute] int id) => ResultToActionAsync(Mediator.Send(new DeleteThemeCommand { Id = id }));
+    public Task<ActionResult> DeleteTheme([FromRoute] int id) => ResultToActionAsync(Mediator.Send(new DeleteThemeCommand { Id = id }));
 
     /// <summary>
     ///  Gets all theme events.
@@ -70,4 +70,12 @@ public class ThemesController : BaseController
     [HttpPut("events")]
     [Authorize(Policy = AdminPolicy)]
     public Task<ActionResult<Result<ThemeEventViewModel>>> UpdateThemeEvent([FromBody] UpdateThemeEventCommand req) => ResultToActionAsync(Mediator.Send(req));
+
+    /// <summary>
+    /// Deletes a theme event.
+    /// </summary>
+    /// <response code="200">Ok.</response>
+    [HttpDelete("events/{id}")]
+    [Authorize(Policy = AdminPolicy)]
+    public Task<ActionResult> DeleteThemeEvent([FromRoute] int id) => ResultToActionAsync(Mediator.Send(new DeleteThemeEventCommand { Id = id }));
 }
