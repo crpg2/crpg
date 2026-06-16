@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Crpg.Application.Themes.Commands;
+﻿using Crpg.Application.Themes.Commands;
 using Crpg.Domain.Entities.Themes;
 using NUnit.Framework;
 

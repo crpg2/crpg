@@ -1,5 +1,4 @@
-﻿using System.Text.Json.Serialization;
-using AutoMapper;
+﻿using AutoMapper;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
@@ -28,7 +27,6 @@ public record UpdateThemeCommand : IMediatorRequest<ThemeViewModel>
     {
         public async ValueTask<Result<ThemeViewModel>> Handle(UpdateThemeCommand req, CancellationToken cancellationToken)
         {
-
             var theme = await db.Themes.SingleOrDefaultAsync(t => t.Id == req.Id, cancellationToken);
             if (theme == null)
             {

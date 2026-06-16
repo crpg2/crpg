@@ -101,4 +101,5 @@ public enum ErrorCode
     QuestDefinitionNotFound,
     QuestNotCompleted,
     ThemeNotFound,
+    ThemeEventNotFound,
 }

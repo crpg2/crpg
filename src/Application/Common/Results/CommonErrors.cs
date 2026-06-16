@@ -575,4 +575,10 @@ internal static class CommonErrors
         Title = "Theme not found",
         Detail = $"Theme with id '{themeId}' could not be found.",
     };
+
+    internal static Error ThemeEventNotFound(int themeEventId) => new(ErrorType.NotFound, ErrorCode.ThemeEventNotFound)
+    {
+        Title = "Theme event not found",
+        Detail = $"Theme event with id '{themeEventId}' could not be found.",
+    };
 }

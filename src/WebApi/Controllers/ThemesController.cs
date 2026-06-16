@@ -62,4 +62,12 @@ public class ThemesController : BaseController
     [HttpPost("events")]
     [Authorize(Policy = AdminPolicy)]
     public Task<ActionResult<Result<ThemeEventViewModel>>> CreateThemeEvent([FromBody] CreateThemeEventCommand req) => ResultToActionAsync(Mediator.Send(req));
+
+    /// <summary>
+    /// Updates a theme event.
+    /// </summary>
+    /// <response code="200">Ok.</response>
+    [HttpPut("events")]
+    [Authorize(Policy = AdminPolicy)]
+    public Task<ActionResult<Result<ThemeEventViewModel>>> UpdateThemeEvent([FromBody] UpdateThemeEventCommand req) => ResultToActionAsync(Mediator.Send(req));
 }
