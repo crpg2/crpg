@@ -42,7 +42,8 @@ public class DeleteThemeCommandTest : TestBase
     [Test]
     public async Task ShouldCascadeDeleteThemeEventsAndItemThemeTags()
     {
-        var theme = new Theme("Cascade");
+        var themeToRemove = new Theme("Cascade");
+        var unrelatedTheme = new Theme("Unrelated theme");
         var themeEvent = new ThemeEvent(
                 name: "Event",
                 goldMultiplier: 1.0f,
@@ -51,15 +52,15 @@ public class DeleteThemeCommandTest : TestBase
                 activeUntilUtc: null,
                 requiredEquipmentSlotsMatchingTheme: new(),
                 minumumRequiredEquipmentSlotsMatchingTheme: 0,
-                theme: theme);
+                theme: themeToRemove);
         var item = new Item
         {
             Id = "test_item_1",
             Name = "Test Item",
-            Themes = new List<Theme> { theme },
+            Themes = new List<Theme> { themeToRemove, unrelatedTheme },
         };
 
-        await ArrangeDb.Themes.AddAsync(theme);
+        await ArrangeDb.Themes.AddRangeAsync(themeToRemove, unrelatedTheme);
         await ArrangeDb.ThemeEvents.AddAsync(themeEvent);
         await ArrangeDb.Items.AddAsync(item);
         await ArrangeDb.SaveChangesAsync();
@@ -72,7 +73,7 @@ public class DeleteThemeCommandTest : TestBase
         Assert.That(result, Is.Not.Null);
         Assert.That(result.Errors, Is.Null.Or.Empty);
 
-        var deletedTheme = await AssertDb.Themes.FindAsync(theme.Id);
+        var deletedTheme = await AssertDb.Themes.FindAsync(themeToRemove.Id);
         Assert.That(deletedTheme, Is.Null);
 
         var deletedThemeEvent = await AssertDb.ThemeEvents.FindAsync(themeEvent.Id);
@@ -80,7 +81,10 @@ public class DeleteThemeCommandTest : TestBase
 
         var untaggedItem = await AssertDb.Items.Include(i => i.Themes).SingleAsync(i => i.Id == item.Id);
         Assert.That(untaggedItem, Is.Not.Null);
-        Assert.That(untaggedItem.Themes, Is.Empty);
+        Assert.That(untaggedItem.Themes.Count, Is.EqualTo(1));
+
+        var remainingTheme = untaggedItem.Themes.Single();
+        Assert.That(remainingTheme.Id, Is.EqualTo(unrelatedTheme.Id));
     }
 
     private static DeleteThemeCommand CreateDefaultDeleteThemeCommand(int id = 1) => new() { Id = id, };

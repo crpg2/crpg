@@ -31,7 +31,7 @@ public record DeleteThemeCommand : IMediatorRequest
 
             foreach (var item in taggedItems)
             {
-                item.Themes.Clear();
+                item.Themes.Remove(theme);
             }
 
             db.Themes.Remove(theme);
