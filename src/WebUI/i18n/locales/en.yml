@@ -1951,3 +1951,69 @@ marketplace:
     filters:
       self: Self
       idPlaceholder: User ID
+
+theme:
+  action:
+    edit: Edit
+    delete: Delete
+  title: Themes
+  create:
+    title: Create theme
+  delete:
+    title: Delete theme
+    confirm: >-
+      Deleting this theme will also delete all of its theme events and remove the
+      theme tag from every item that has it. This cannot be undone.
+  form:
+    field:
+      name:
+        label: Name
+  table:
+    column:
+      id: ID
+      name: Name
+  notify:
+    saved: Theme saved
+    deleted: Theme deleted
+  event:
+    title: Theme events
+    create:
+      title: Create theme event
+    edit:
+      title: Edit theme event
+    delete:
+      title: Delete theme event?
+      confirm: This theme event will be permanently removed.
+    form:
+      field:
+        name:
+          label: Name
+        theme:
+          label: Theme
+        goldMultiplier:
+          label: Gold multiplier
+        expMultiplier:
+          label: Experience multiplier
+        activeFrom:
+          label: Active from
+        activeUntil:
+          label: Active until
+          help: Leave empty for an indefinitely active event.
+        requiredSlots:
+          label: Required equipment slots
+        minSlots:
+          label: Minimum matching slots
+          help: Minimum number of slots that must hold an item matching the theme.
+    table:
+      column:
+        id: ID
+        name: Name
+        theme: Theme
+        goldMultiplier: Gold
+        expMultiplier: Exp
+        activeFrom: Active from
+        activeUntil: Active until
+    notify:
+      saved: Theme event saved
+      deleted: Theme event deleted
+
