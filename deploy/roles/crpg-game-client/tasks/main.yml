@@ -17,6 +17,7 @@
     - /tmp/AssetPackages
     - /tmp/SceneObj
     - /tmp/hash.xml
+    - /tmp/hash_old.xml
   delegate_to: localhost
   become: false
 
@@ -44,6 +45,56 @@
   delegate_to: localhost
   become: false
 
+- name: Fetch existing hash.xml from server
+  fetch:
+    src: "{{ crpg_ui_path }}/hash.xml"
+    dest: /tmp/hash_old.xml
+    flat: yes
+  ignore_errors: yes
+
+- name: Compute changed assets and maps
+  shell: |
+    python3 << 'PYEOF'
+    import xml.etree.ElementTree as ET
+    import json, os
+
+    new_root = ET.parse('/tmp/hash.xml').getroot()
+
+    if not os.path.exists('/tmp/hash_old.xml'):
+        assets = [a.get('Name') for a in new_root.findall('.//Asset')]
+        maps = [m.get('Name') for m in new_root.findall('.//Map')]
+        print(json.dumps({'assets': assets, 'maps': maps, 'rest': True}))
+    else:
+        old_root = ET.parse('/tmp/hash_old.xml').getroot()
+
+        old_assets = {a.get('Name'): a.get('Hash') for a in old_root.findall('.//Asset')}
+        old_maps = {m.get('Name'): m.get('Hash') for m in old_root.findall('.//Map')}
+        old_rest_el = old_root.find('Rest')
+        old_rest_hash = old_rest_el.get('Hash') if old_rest_el is not None else None
+
+        changed_assets = [
+            a.get('Name') for a in new_root.findall('.//Asset')
+            if old_assets.get(a.get('Name')) != a.get('Hash')
+        ]
+        changed_maps = [
+            m.get('Name') for m in new_root.findall('.//Map')
+            if old_maps.get(m.get('Name')) != m.get('Hash')
+        ]
+        new_rest_el = new_root.find('Rest')
+        rest_changed = new_rest_el is None or new_rest_el.get('Hash') != old_rest_hash
+
+        print(json.dumps({'assets': changed_assets, 'maps': changed_maps, 'rest': rest_changed}))
+    PYEOF
+  delegate_to: localhost
+  become: false
+  register: hash_diff_result
+
+- name: Set changed component facts
+  set_fact:
+    crpg_changed_assets: "{{ (hash_diff_result.stdout | from_json).assets }}"
+    crpg_changed_maps: "{{ (hash_diff_result.stdout | from_json).maps }}"
+    crpg_rest_changed: "{{ (hash_diff_result.stdout | from_json).rest }}"
+
 - name: Get list of directories in SceneObj
   shell:
     cmd: 'ls -d "{{ crpg_game_client_local_path }}/Modules/cRPG/SceneObj/"*'
@@ -70,6 +121,7 @@
   shell:
     cmd: "tar -cf /tmp/SceneObj/{{ item.split('/')[-1] }}.tar -C '{{ item | dirname }}' '{{ item | basename }}'"
   loop: "{{ sceneobj_dirs.stdout_lines }}"
+  when: item.split('/')[-1] in crpg_changed_maps
   delegate_to: localhost
   become: false
 
@@ -77,30 +129,35 @@
   command:
     cmd: "tar -cf /tmp/AssetPackages/{{ item | basename }}.tar -C '{{ crpg_game_client_local_path }}/Modules/cRPG/AssetPackages' {{ item | basename }}"
   loop: "{{ lookup('fileglob', crpg_game_client_local_path + '/Modules/cRPG/AssetPackages/*', wantlist=True) }}"
+  when: item | basename in crpg_changed_assets
   delegate_to: localhost
   become: false
 
 - name: Tar GUI, ModuleSounds, bin, ModuleData, and SubModule.xml
   command:
     cmd: "tar -cf /tmp/rest.tar -C '{{ crpg_game_client_local_path }}/Modules/cRPG' GUI ModuleSounds bin ModuleData SubModule.xml"
+  when: crpg_rest_changed
   delegate_to: localhost
   become: false
 
 - name: Compress files in /tmp/AssetPackages with gzip
   shell:
     cmd: "gzip -f /tmp/AssetPackages/*.tar"
+  when: crpg_changed_assets | length > 0
   delegate_to: localhost
   become: false
 
 - name: Compress files in /tmp/SceneObj with gzip
   shell:
     cmd: "gzip -f /tmp/SceneObj/*.tar"
+  when: crpg_changed_maps | length > 0
   delegate_to: localhost
   become: false
 
 - name: Compress /tmp/rest.tar with gzip
   shell:
     cmd: "gzip -f /tmp/rest.tar"
+  when: crpg_rest_changed
   delegate_to: localhost
   become: false
 
@@ -110,10 +167,18 @@
     dest: "{{ crpg_ui_path }}/rest.tar.gz"
     owner: nginx
     group: nginx
+  when: crpg_rest_changed
 
 - name: Ensure SceneObj directory exists
   file:
     path: "{{ crpg_ui_path }}/SceneObj"
+    state: directory
+    owner: nginx
+    group: nginx
+
+- name: Ensure AssetPackages directory exists
+  file:
+    path: "{{ crpg_ui_path }}/AssetPackages"
     state: directory
     owner: nginx
     group: nginx
@@ -125,19 +190,21 @@
     owner: nginx
     group: nginx
 
-- name: Copy contents of SceneObj to destination
+- name: Copy changed SceneObj maps to destination
   copy:
-    src: /tmp/SceneObj
-    dest: "{{ crpg_ui_path }}"
+    src: "/tmp/SceneObj/{{ item }}.tar.gz"
+    dest: "{{ crpg_ui_path }}/SceneObj/{{ item }}.tar.gz"
     owner: nginx
     group: nginx
+  loop: "{{ crpg_changed_maps }}"
 
-- name: Copy contents of AssetPackages to destination
+- name: Copy changed AssetPackages to destination
   copy:
-    src: /tmp/AssetPackages
-    dest: "{{ crpg_ui_path }}"
+    src: "/tmp/AssetPackages/{{ item }}.tar.gz"
+    dest: "{{ crpg_ui_path }}/AssetPackages/{{ item }}.tar.gz"
     owner: nginx
     group: nginx
+  loop: "{{ crpg_changed_assets }}"
 
 - name: Read mod version from SubModule.xml
   shell: "grep -oP 'Version value=\"v\\K[^\"]+' '{{ crpg_game_client_local_path }}/Modules/cRPG/SubModule.xml'"
@@ -199,6 +266,13 @@
 - name: Remove local WorkshopUpdate.xml
   file:
     path: "{{ crpg_game_client_local_path }}/WorkshopUpdate.xml"
+    state: absent
+  delegate_to: localhost
+  become: false
+
+- name: Remove local hash_old.xml
+  file:
+    path: /tmp/hash_old.xml
     state: absent
   delegate_to: localhost
   become: false
