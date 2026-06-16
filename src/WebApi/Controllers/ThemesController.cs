@@ -26,6 +26,14 @@ public class ThemesController : BaseController
     public Task<ActionResult<Result<ThemeViewModel>>> CreateTheme([FromBody] CreateThemeCommand req) => ResultToActionAsync(Mediator.Send(req));
 
     /// <summary>
+    /// Updates a new theme.
+    /// </summary>
+    /// <response code="200">Ok.</response>
+    [HttpPut]
+    [Authorize(Policy = AdminPolicy)]
+    public Task<ActionResult<Result<ThemeViewModel>>> UpdateTheme([FromBody] UpdateThemeCommand req) => ResultToActionAsync(Mediator.Send(req));
+
+    /// <summary>
     ///  Gets all theme events.
     /// </summary>
     /// <response code="200">Ok.</response>
