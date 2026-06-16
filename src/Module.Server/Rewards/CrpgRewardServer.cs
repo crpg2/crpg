@@ -1,12 +1,12 @@
 using Crpg.Module.Api;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.Characters;
-using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Themes;
 using Crpg.Module.Common;
 using Crpg.Module.Modes.TrainingGround;
 using Crpg.Module.Modes.Warmup;
 using Crpg.Module.Rating;
+using Crpg.Module.Rewards.Themes;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -532,9 +532,9 @@ internal class CrpgRewardServer : MissionLogic
 
         if (activeThemeEvents != null && activeThemeEvents.Count > 0)
         {
-            var multipliers = GetActiveEventMultipliers(crpgPeer, activeThemeEvents);
-            serverXpMultiplier *= multipliers.expMultiplier;
-            goldMultiplier *= multipliers.goldMultiplier;
+            var themeEventMultipliers = ThemesRewardHelper.GetActiveEventMultipliers(crpgPeer, activeThemeEvents);
+            serverXpMultiplier *= themeEventMultipliers.expMultiplier;
+            goldMultiplier *= themeEventMultipliers.goldMultiplier;
         }
 
         userUpdate.Reward = new CrpgUserReward
@@ -563,78 +563,6 @@ internal class CrpgRewardServer : MissionLogic
             }
 
             crpgPeer.RewardMultiplier = Math.Max(Math.Min(rewardMultiplier, ExperienceMultiplierMax), ExperienceMultiplierMin);
-        }
-    }
-
-    private static (float expMultiplier, float goldMultiplier) GetActiveEventMultipliers(CrpgPeer crpgPeer, List<ThemeEvent> activeThemeEvents)
-    {
-        var playerEquippedItems = crpgPeer.User!.Character.EquippedItems;
-        float currentHighestEventExpMultiplier = 1.0f;
-        float currentHighestEventGoldMultiplier = 1.0f;
-
-        foreach (var themeEvent in activeThemeEvents)
-        {
-            var playerSlotsWithEligibleItemEquipped = playerEquippedItems.Where(x => themeEvent.EligibleItemIds.Contains(x.UserItem.ItemId)).Select(x => x.Slot).ToList();
-            bool playerIsEligibleForThemeEvent = PlayerIsEligibleForThemeEvent(themeEvent, playerSlotsWithEligibleItemEquipped);
-            if (playerIsEligibleForThemeEvent)
-            {
-                if (themeEvent.ExpMultiplier > currentHighestEventExpMultiplier)
-                {
-                    currentHighestEventExpMultiplier = themeEvent.ExpMultiplier;
-                }
-
-                if (themeEvent.GoldMultiplier > currentHighestEventGoldMultiplier)
-                {
-                    currentHighestEventGoldMultiplier = themeEvent.GoldMultiplier;
-                }
-            }
-        }
-
-        if (currentHighestEventExpMultiplier > 1.0f || currentHighestEventGoldMultiplier > 1.0f)
-        {
-            GameNetwork.BeginBroadcastModuleEvent();
-            GameNetwork.WriteMessage(new CrpgRewardThemeEvent());
-            GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
-        }
-
-        return (currentHighestEventExpMultiplier, currentHighestEventGoldMultiplier);
-    }
-
-    private static bool PlayerIsEligibleForThemeEvent(ThemeEvent themeEvent, List<CrpgItemSlot> playerSlotsWithEligibleItemEquipped)
-    {
-        return playerSlotsWithEligibleItemEquipped.Count >= themeEvent.MinumumRequiredEquipmentSlotsMatchingTheme && themeEvent.RequiredEquipmentSlotsMatchingTheme.All(r => playerSlotsWithEligibleItemEquipped.Contains(MapToThemeEquipmentSlot(r)));
-    }
-
-    private static CrpgItemSlot MapToThemeEquipmentSlot(ThemeEquipmentSlot crpgItemSlot)
-    {
-        switch (crpgItemSlot)
-        {
-            case ThemeEquipmentSlot.Head:
-                return CrpgItemSlot.Head;
-            case ThemeEquipmentSlot.Shoulder:
-                return CrpgItemSlot.Shoulder;
-            case ThemeEquipmentSlot.Body:
-                return CrpgItemSlot.Body;
-            case ThemeEquipmentSlot.Hand:
-                return CrpgItemSlot.Hand;
-            case ThemeEquipmentSlot.Leg:
-                return CrpgItemSlot.Leg;
-            case ThemeEquipmentSlot.MountHarness:
-                return CrpgItemSlot.MountHarness;
-            case ThemeEquipmentSlot.Mount:
-                return CrpgItemSlot.Mount;
-            case ThemeEquipmentSlot.Weapon0:
-                return CrpgItemSlot.Weapon0;
-            case ThemeEquipmentSlot.Weapon1:
-                return CrpgItemSlot.Weapon1;
-            case ThemeEquipmentSlot.Weapon2:
-                return CrpgItemSlot.Weapon2;
-            case ThemeEquipmentSlot.Weapon3:
-                return CrpgItemSlot.Weapon3;
-            case ThemeEquipmentSlot.WeaponExtra:
-                return CrpgItemSlot.WeaponExtra;
-            default:
-                throw new ArgumentOutOfRangeException("Theme equipment slot did not exist on in character equipment slots.");
         }
     }
 
