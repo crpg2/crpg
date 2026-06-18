@@ -6,11 +6,12 @@ using Crpg.Application.Items.Models;
 using Crpg.Application.Items.Queries;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 
 namespace Crpg.WebApi.Controllers;
 
 [Authorize(Policy = UserPolicy)]
-public class ItemsController : BaseController
+public class ItemsController(IOutputCacheStore outputCacheStore) : BaseController
 {
     /// <summary>
     /// Gets all enabled items of rank 0.
@@ -66,4 +67,53 @@ public class ItemsController : BaseController
         req = req with { ItemId = id, UserId = CurrentUser.User!.Id };
         return ResultToActionAsync(Mediator.Send(req));
     }
+
+    /// <summary>
+    /// Replaces the themes assigned to a single item.
+    /// </summary>
+    /// <param name="id">Item id.</param>
+    /// <param name="req">The themes to assign.</param>
+    /// <response code="200">Ok.</response>
+    /// <response code="404">Item or theme not found.</response>
+    [Authorize(Policy = AdminPolicy)]
+    [HttpPut("{id}/themes")]
+    public async Task<ActionResult<Result<ItemViewModel>>> SetItemThemes([FromRoute] string id, [FromBody] SetItemThemesCommand req)
+    {
+        req = req with { ItemId = id };
+        var result = await ResultToActionAsync(Mediator.Send(req));
+        await EvictActiveThemeEventsCacheAsync();
+        return result;
+    }
+
+    /// <summary>
+    /// Adds a set of themes to several items at once, preserving themes they already have.
+    /// </summary>
+    /// <param name="req">The items and themes to tag.</param>
+    /// <response code="204">Updated.</response>
+    /// <response code="404">An item or theme was not found.</response>
+    [Authorize(Policy = AdminPolicy)]
+    [HttpPut("themes")]
+    public async Task<ActionResult> AddThemesToItems([FromBody] AddThemesToItemsCommand req)
+    {
+        var result = await ResultToActionAsync(Mediator.Send(req));
+        await EvictActiveThemeEventsCacheAsync();
+        return result;
+    }
+
+    /// <summary>
+    /// Removes a set of themes from several items at once, preserving any other themes they have.
+    /// </summary>
+    /// <param name="req">The items and themes to untag.</param>
+    /// <response code="204">Updated.</response>
+    /// <response code="404">An item or theme was not found.</response>
+    [Authorize(Policy = AdminPolicy)]
+    [HttpDelete("themes")]
+    public async Task<ActionResult> RemoveThemesFromItems([FromBody] RemoveThemesFromItemsCommand req)
+    {
+        var result = await ResultToActionAsync(Mediator.Send(req));
+        await EvictActiveThemeEventsCacheAsync();
+        return result;
+    }
+
+    private Task EvictActiveThemeEventsCacheAsync() => outputCacheStore.EvictByTagAsync(ActiveThemeEventsCacheTag, CancellationToken.None).AsTask();
 }
