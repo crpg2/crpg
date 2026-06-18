@@ -1976,6 +1976,30 @@ theme:
   notify:
     saved: Theme saved
     deleted: Theme deleted
+  tag:
+    column: Themes
+    edit:
+      title: 'Set themes: {item}'
+      tooltip: Set item themes
+    bulk:
+      add:
+        title: Add themes to {count} item | Add themes to {count} items
+        action: Add themes
+      remove:
+        title: Remove themes from {count} item | Remove themes from {count} items
+        action: Remove themes
+    field:
+      themes:
+        placeholder: Select themes
+    submit:
+      set: Save
+      add: Add
+      remove: Remove
+    empty: No themes available. Create themes first.
+    notify:
+      set: Item themes updated
+      added: Themes added to the selected items
+      removed: Themes removed from the selected items
   event:
     title: Theme events
     create:
@@ -2019,4 +2043,3 @@ theme:
     notify:
       saved: Theme event saved
       deleted: Theme event deleted
-
