@@ -45,6 +45,11 @@ export type AddItemToClanArmoryCommand = {
     userItemId: number;
 };
 
+export type AddThemesToItemsCommand = {
+    itemIds: Array<string>;
+    themeIds: Array<number>;
+};
+
 export type ApplyAsMercenaryToBattleCommand = {
     characterId: number;
     side: BattleSide;
@@ -841,6 +846,11 @@ export type ItemViewModelIListResult = {
     data: Array<ItemViewModel> | null;
 };
 
+export type ItemViewModelResult = {
+    readonly errors: Array<Error> | null;
+    data: ItemViewModel | null;
+};
+
 export type ItemWeaponComponentViewModel = {
     class: WeaponClass;
     itemUsage: 'long_bow' | 'bow' | 'crossbow' | 'crossbow_light' | 'polearm_couch' | 'polearm_bracing' | 'polearm_pike' | 'polearm';
@@ -1076,6 +1086,11 @@ export type RemoveBattleMercenaryApplicationCommand = {
     side: BattleSide;
 };
 
+export type RemoveThemesFromItemsCommand = {
+    itemIds: Array<string>;
+    themeIds: Array<number>;
+};
+
 export type RespondClanInvitationCommand = {
     accept: boolean;
 };
@@ -1148,6 +1163,10 @@ export type RewardUserCommand = {
 };
 
 export type Role = 'User' | 'Moderator' | 'GameAdmin' | 'Admin';
+
+export type SetItemThemesCommand = {
+    themeIds: Array<number>;
+};
 
 export type SettingsViewModel = {
     discord: string;
@@ -1747,6 +1766,10 @@ export type ItemStackViewModelResultWritable = {
 
 export type ItemViewModelIListResultWritable = {
     data: Array<ItemViewModel> | null;
+};
+
+export type ItemViewModelResultWritable = {
+    data: ItemViewModel | null;
 };
 
 export type MarketplaceListingViewModelResultWritable = {
@@ -3202,6 +3225,97 @@ export type PostItemsByIdRefundResponses = {
      */
     200: unknown;
 };
+
+export type PutItemsByIdThemesData = {
+    /**
+     * The themes to assign.
+     */
+    body?: SetItemThemesCommand;
+    path?: {
+        /**
+         * Item id.
+         */
+        id?: string;
+    };
+    query?: never;
+    url: '/Items/{id}/themes';
+};
+
+export type PutItemsByIdThemesErrors = {
+    /**
+     * Item or theme not found.
+     */
+    404: unknown;
+};
+
+export type PutItemsByIdThemesResponses = {
+    /**
+     * Ok.
+     */
+    200: ItemViewModelResult;
+};
+
+export type PutItemsByIdThemesResponse = PutItemsByIdThemesResponses[keyof PutItemsByIdThemesResponses];
+
+export type DeleteItemsThemesData = {
+    /**
+     * The items and themes to untag.
+     */
+    body?: RemoveThemesFromItemsCommand;
+    path?: never;
+    query?: never;
+    url: '/Items/themes';
+};
+
+export type DeleteItemsThemesErrors = {
+    /**
+     * An item or theme was not found.
+     */
+    404: unknown;
+};
+
+export type DeleteItemsThemesResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+    /**
+     * Updated.
+     */
+    204: void;
+};
+
+export type DeleteItemsThemesResponse = DeleteItemsThemesResponses[keyof DeleteItemsThemesResponses];
+
+export type PutItemsThemesData = {
+    /**
+     * The items and themes to tag.
+     */
+    body?: AddThemesToItemsCommand;
+    path?: never;
+    query?: never;
+    url: '/Items/themes';
+};
+
+export type PutItemsThemesErrors = {
+    /**
+     * An item or theme was not found.
+     */
+    404: unknown;
+};
+
+export type PutItemsThemesResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+    /**
+     * Updated.
+     */
+    204: void;
+};
+
+export type PutItemsThemesResponse = PutItemsThemesResponses[keyof PutItemsThemesResponses];
 
 export type GetLeaderboardLeaderboardData = {
     body?: never;
