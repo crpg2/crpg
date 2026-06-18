@@ -28,28 +28,9 @@ public class GetThemeEventsQuery : IMediatorRequest<IList<ThemeEventViewModel>>
                 .GroupBy(x => x.ThemeId)
                 .ToDictionary(g => g.Key, g => g.Select(x => x.Id).ToList());
 
-            var viewModels = themeEvents.Select(themeEvent => MapToViewModel(themeEvent, itemIdsByTheme)).ToList();
+            var viewModels = themeEvents.Select(themeEvent => ThemeEventMapper.ToViewModel(themeEvent, itemIdsByTheme)).ToList();
 
             return new(viewModels);
         }
-    }
-
-    private static ThemeEventViewModel MapToViewModel(ThemeEvent themeEvent, Dictionary<int, List<string>> itemIdsByTheme)
-    {
-        itemIdsByTheme.TryGetValue(themeEvent.EventTheme.Id, out List<string>? itemIds);
-
-        return new ThemeEventViewModel
-        {
-            Id = themeEvent.Id,
-            Name = themeEvent.Name,
-            GoldMultiplier = themeEvent.GoldMultiplier,
-            ExpMultiplier = themeEvent.ExpMultiplier,
-            ActiveFromUtc = themeEvent.ActiveFromUtc,
-            ActiveUntilUtc = themeEvent.ActiveUntilUtc,
-            RequiredEquipmentSlotsMatchingTheme = themeEvent.RequiredEquipmentSlotsMatchingTheme,
-            MinimumThemedItemsEquipped = themeEvent.MinimumThemedItemsEquipped,
-            EventTheme = new ThemeViewModel { Id = themeEvent.EventTheme.Id,  Name = themeEvent.EventTheme.Name },
-            EligibleItemIds = itemIds ?? new List<string>(),
-        };
     }
 }
