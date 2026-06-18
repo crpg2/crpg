@@ -28,6 +28,7 @@ public record GetItemsQuery : IMediatorRequest<IList<ItemViewModel>>
                 .Where(i => i.Enabled)
                 .Where(i => i.Rank == 0)
                 .Include(i => i.Themes)
+                .AsSplitQuery()
                 .ToListAsync(cancellationToken);
 
             return new(_mapper.Map<IList<ItemViewModel>>(items));
