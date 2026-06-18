@@ -44,7 +44,7 @@ public class GetActiveThemeEventsQueryTest : TestBase
         Assert.That(resultOne.ActiveFromUtc, Is.EqualTo(eventActiveForALimitedTime.ActiveFromUtc));
         Assert.That(resultOne.ActiveUntilUtc, Is.EqualTo(eventActiveForALimitedTime.ActiveUntilUtc));
         Assert.That(resultOne.RequiredEquipmentSlotsMatchingTheme, Is.EquivalentTo(eventActiveForALimitedTime.RequiredEquipmentSlotsMatchingTheme));
-        Assert.That(resultOne.MinumumRequiredEquipmentSlotsMatchingTheme, Is.EqualTo(eventActiveForALimitedTime.MinumumRequiredEquipmentSlotsMatchingTheme));
+        Assert.That(resultOne.MinimumThemedItemsEquipped, Is.EqualTo(eventActiveForALimitedTime.MinimumThemedItemsEquipped));
         Assert.That(resultOne.EventTheme.Id, Is.EqualTo(eventActiveForALimitedTime.EventTheme.Id));
         Assert.That(resultOne.EventTheme.Name, Is.EqualTo(eventActiveForALimitedTime.EventTheme.Name));
 
@@ -56,7 +56,7 @@ public class GetActiveThemeEventsQueryTest : TestBase
         Assert.That(resultTwo.ActiveFromUtc, Is.EqualTo(eventActiveIndefinitely.ActiveFromUtc));
         Assert.That(resultTwo.ActiveUntilUtc, Is.EqualTo(eventActiveIndefinitely.ActiveUntilUtc));
         Assert.That(resultTwo.RequiredEquipmentSlotsMatchingTheme, Is.EquivalentTo(eventActiveIndefinitely.RequiredEquipmentSlotsMatchingTheme));
-        Assert.That(resultTwo.MinumumRequiredEquipmentSlotsMatchingTheme, Is.EqualTo(eventActiveIndefinitely.MinumumRequiredEquipmentSlotsMatchingTheme));
+        Assert.That(resultTwo.MinimumThemedItemsEquipped, Is.EqualTo(eventActiveIndefinitely.MinimumThemedItemsEquipped));
         Assert.That(resultTwo.EventTheme.Id, Is.EqualTo(eventActiveIndefinitely.EventTheme.Id));
         Assert.That(resultTwo.EventTheme.Name, Is.EqualTo(eventActiveIndefinitely.EventTheme.Name));
     }
@@ -68,7 +68,7 @@ public class GetActiveThemeEventsQueryTest : TestBase
         DateTimeOffset? activeFromUtc = null,
         DateTimeOffset? activeUntilUtc = null,
         List<ThemeEquipmentSlot> requiredEquipmentSlotsMatchingTheme = null!,
-        int minumumRequiredEquipmentSlotsMatchingTheme = 1)
+        int minimumThemedItemsEquipped = 1)
     {
         return new ThemeEvent(
             name: name,
@@ -77,7 +77,7 @@ public class GetActiveThemeEventsQueryTest : TestBase
             activeFromUtc: activeFromUtc ?? DateTimeOffset.UtcNow.AddDays(-1),
             activeUntilUtc: activeUntilUtc ?? DateTimeOffset.UtcNow.AddDays(1),
             requiredEquipmentSlotsMatchingTheme: requiredEquipmentSlotsMatchingTheme ?? [],
-            minumumRequiredEquipmentSlotsMatchingTheme,
+            minimumThemedItemsEquipped,
             theme: new Theme("theme"));
     }
 }

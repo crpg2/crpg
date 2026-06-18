@@ -26,6 +26,6 @@
     expMultiplier: number 
     activeFromUtc: Date 
     activeUntilUtc: Date | null 
-    requiredEquipmentSlotsMatchingTheme: ThemeEquipmentSlot[] 
-    minumumRequiredEquipmentSlotsMatchingTheme: number 
- } 
+    requiredEquipmentSlotsMatchingTheme: ThemeEquipmentSlot[]
+    minimumThemedItemsEquipped: number | null
+ }

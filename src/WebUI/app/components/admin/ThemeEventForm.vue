@@ -34,9 +34,9 @@
        expMultiplier: props.event?.expMultiplier ?? 1, 
        activeFromUtc: toInputValue(props.event?.activeFromUtc ?? new Date()), 
        activeUntilUtc: toInputValue(props.event?.activeUntilUtc), 
-       requiredEquipmentSlotsMatchingTheme: [...(props.event?.requiredEquipmentSlotsMatchingTheme ?? [])], 
-       minumumRequiredEquipmentSlotsMatchingTheme: props.event?.minumumRequiredEquipmentSlotsMatchingTheme ?? 0, 
-    }) 
+       requiredEquipmentSlotsMatchingTheme: [...(props.event?.requiredEquipmentSlotsMatchingTheme ?? [])],
+       minimumThemedItemsEquipped: props.event?.minimumThemedItemsEquipped ?? null,
+    })
  
     const model = reactive(buildModel()) 
  
@@ -54,9 +54,9 @@
            expMultiplier: model.expMultiplier, 
            activeFromUtc: fromInputValue(model.activeFromUtc)!, 
            activeUntilUtc: fromInputValue(model.activeUntilUtc), 
-           requiredEquipmentSlotsMatchingTheme: model.requiredEquipmentSlotsMatchingTheme, 
-           minumumRequiredEquipmentSlotsMatchingTheme: model.minumumRequiredEquipmentSlotsMatchingTheme, 
-       }) 
+           requiredEquipmentSlotsMatchingTheme: model.requiredEquipmentSlotsMatchingTheme,
+           minimumThemedItemsEquipped: model.minimumThemedItemsEquipped,
+       })
     } 
  </script> 
 
@@ -146,7 +146,7 @@
             :help="$t('theme.event.form.field.minSlots.help')" 
         > 
             <UInputNumber 
-                v-model="model.minumumRequiredEquipmentSlotsMatchingTheme" 
+                v-model="model.minimumThemedItemsEquipped"
                 :min="0" 
                 size="xl" 
                 class="w-full" 

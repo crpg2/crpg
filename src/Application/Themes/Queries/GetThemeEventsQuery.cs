@@ -47,7 +47,7 @@ public class GetThemeEventsQuery : IMediatorRequest<IList<ThemeEventViewModel>>
             ActiveFromUtc = themeEvent.ActiveFromUtc,
             ActiveUntilUtc = themeEvent.ActiveUntilUtc,
             RequiredEquipmentSlotsMatchingTheme = themeEvent.RequiredEquipmentSlotsMatchingTheme,
-            MinumumRequiredEquipmentSlotsMatchingTheme = themeEvent.MinumumRequiredEquipmentSlotsMatchingTheme,
+            MinimumThemedItemsEquipped = themeEvent.MinimumThemedItemsEquipped,
             EventTheme = new ThemeViewModel { Id = themeEvent.EventTheme.Id,  Name = themeEvent.EventTheme.Name },
             EligibleItemIds = itemIds ?? new List<string>(),
         };

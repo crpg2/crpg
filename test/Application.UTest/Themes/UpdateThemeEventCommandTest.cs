@@ -28,7 +28,7 @@ public class UpdateThemeEventCommandTest : TestBase
             activeFromUtc: from,
             activeUntilUtc: until,
             requiredEquipmentSlotsMatchingTheme: new List<ThemeEquipmentSlot> { ThemeEquipmentSlot.Head, ThemeEquipmentSlot.Shoulder },
-            minimumRequiredEquipmentSlotsMatchingTheme: 2,
+            minimumThemedItemsEquipped: 2,
             themeId: theme.Id);
 
         var result = await handler.Handle(command, CancellationToken.None);
@@ -43,7 +43,7 @@ public class UpdateThemeEventCommandTest : TestBase
         Assert.That(result.Data!.ActiveFromUtc, Is.EqualTo(from));
         Assert.That(result.Data!.ActiveUntilUtc, Is.EqualTo(until));
         Assert.That(result.Data!.RequiredEquipmentSlotsMatchingTheme, Is.EquivalentTo(new List<ThemeEquipmentSlot> { ThemeEquipmentSlot.Head, ThemeEquipmentSlot.Shoulder }));
-        Assert.That(result.Data!.MinumumRequiredEquipmentSlotsMatchingTheme, Is.EqualTo(2));
+        Assert.That(result.Data!.MinimumThemedItemsEquipped, Is.EqualTo(2));
         Assert.That(result.Data!.EventTheme.Id, Is.EqualTo(theme.Id));
     }
 
@@ -202,7 +202,7 @@ public class UpdateThemeEventCommandTest : TestBase
             DateTimeOffset activeFromUtc = default,
             DateTimeOffset? activeUntilUtc = null,
             List<ThemeEquipmentSlot> requiredEquipmentSlotsMatchingTheme = null!,
-            int minimumRequiredEquipmentSlotsMatchingTheme = 0,
+            int? minimumThemedItemsEquipped = null,
             int themeId = 1)
     {
         return new UpdateThemeEventCommand
@@ -214,7 +214,7 @@ public class UpdateThemeEventCommandTest : TestBase
             ActiveFromUtc = activeFromUtc == default ? DateTimeOffset.UtcNow : activeFromUtc,
             ActiveUntilUtc = activeUntilUtc,
             RequiredEquipmentSlotsMatchingTheme = requiredEquipmentSlotsMatchingTheme ?? new(),
-            MinimumRequiredEquipmentSlotsMatchingTheme = minimumRequiredEquipmentSlotsMatchingTheme,
+            MinimumThemedItemsEquipped = minimumThemedItemsEquipped,
             ThemeId = themeId,
         };
     }
@@ -226,7 +226,7 @@ public class UpdateThemeEventCommandTest : TestBase
             DateTimeOffset activeFromUtc = default,
             DateTimeOffset? activeUntilUtc = null,
             List<ThemeEquipmentSlot> requiredEquipmentSlotsMatchingTheme = null!,
-            int minimumRequiredEquipmentSlotsMatchingTheme = 0,
+            int minimumThemedItemsEquipped = 0,
             Theme theme = null!)
     {
         return new ThemeEvent(
@@ -236,7 +236,7 @@ public class UpdateThemeEventCommandTest : TestBase
             activeFromUtc: activeFromUtc == default ? DateTimeOffset.UtcNow : activeFromUtc,
             activeUntilUtc: activeUntilUtc,
             requiredEquipmentSlotsMatchingTheme: requiredEquipmentSlotsMatchingTheme ?? new(),
-            minumumRequiredEquipmentSlotsMatchingTheme: minimumRequiredEquipmentSlotsMatchingTheme,
+            minimumThemedItemsEquipped: minimumThemedItemsEquipped,
             theme: theme ?? new Theme(name: "default theme") { Id = 1 });
     }
 }

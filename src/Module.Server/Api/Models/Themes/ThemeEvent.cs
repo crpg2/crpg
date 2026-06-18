@@ -16,7 +16,7 @@ internal class ThemeEvent
 
     public List<ThemeEquipmentSlot> RequiredEquipmentSlotsMatchingTheme { get; set; } = new();
 
-    public int MinumumRequiredEquipmentSlotsMatchingTheme { get; set; }
+    public int MinimumThemedItemsEquipped { get; set; }
 
     public Theme EventTheme { get; set; } = default!;
 

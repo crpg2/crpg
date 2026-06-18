@@ -86,18 +86,14 @@
     const { execute: submitEvent, isLoading: savingEvent } = useAsyncCallback( 
         async (data: ThemeEventFormData) => { 
         if (editingEvent.value) { 
-            console.log(data)
-            console.log(editingEvent.value)
             await updateThemeEvent({
                 ...data,
                 id: editingEvent.value.id,
                 activeFromUtc: data.activeFromUtc.toISOString() as unknown as Date,
                 activeUntilUtc: data.activeUntilUtc ? data.activeUntilUtc.toISOString() as unknown as Date : null,
-                minimumRequiredEquipmentSlotsMatchingTheme: data.minumumRequiredEquipmentSlotsMatchingTheme
-            }) 
+            })
         } 
         else { 
-            console.log(data)
             await createThemeEvent({
                 ...data,
                 activeFromUtc: data.activeFromUtc.toISOString() as unknown as Date,

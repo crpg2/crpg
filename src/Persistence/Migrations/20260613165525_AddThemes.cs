@@ -108,7 +108,7 @@ namespace Crpg.Persistence.Migrations
                     active_from_utc = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
                     active_until_utc = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
                     required_equipment_slots_matching_theme = table.Column<List<ThemeEquipmentSlot>>(type: "theme_equipment_slot[]", nullable: false),
-                    minumum_required_equipment_slots_matching_theme = table.Column<int>(type: "integer", nullable: false),
+                    minimum_themed_items_equipped = table.Column<int>(type: "integer", nullable: false),
                     event_theme_id = table.Column<int>(type: "integer", nullable: false),
                     updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)

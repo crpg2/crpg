@@ -1824,9 +1824,9 @@ namespace Crpg.Persistence.Migrations
                         .HasColumnType("real")
                         .HasColumnName("gold_multiplier");
 
-                    b.Property<int>("MinumumRequiredEquipmentSlotsMatchingTheme")
+                    b.Property<int>("MinimumThemedItemsEquipped")
                         .HasColumnType("integer")
-                        .HasColumnName("minumum_required_equipment_slots_matching_theme");
+                        .HasColumnName("minimum_themed_items_equipped");
 
                     b.Property<string>("Name")
                         .IsRequired()

@@ -496,7 +496,7 @@ export type CreateThemeEventCommand = {
     activeFromUtc: Date;
     activeUntilUtc?: Date | null;
     requiredEquipmentSlotsMatchingTheme: Array<ThemeEquipmentSlot>;
-    minumumRequiredEquipmentSlotsMatchingTheme: number;
+    minimumThemedItemsEquipped?: number | null;
     themeId: number;
 };
 
@@ -1215,7 +1215,7 @@ export type ThemeEventViewModel = {
     activeFromUtc: Date;
     activeUntilUtc?: Date | null;
     requiredEquipmentSlotsMatchingTheme: Array<ThemeEquipmentSlot>;
-    minumumRequiredEquipmentSlotsMatchingTheme: number;
+    minimumThemedItemsEquipped: number;
     eventTheme: ThemeViewModel;
     eligibleItemIds: Array<string>;
 };
@@ -1323,7 +1323,7 @@ export type UpdateThemeEventCommand = {
     activeFromUtc: Date;
     activeUntilUtc?: Date | null;
     requiredEquipmentSlotsMatchingTheme: Array<ThemeEquipmentSlot>;
-    minimumRequiredEquipmentSlotsMatchingTheme: number;
+    minimumThemedItemsEquipped?: number | null;
     themeId: number;
 };
 

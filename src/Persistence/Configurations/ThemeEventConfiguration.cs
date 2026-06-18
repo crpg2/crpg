@@ -13,7 +13,7 @@ public class ThemeEventConfiguration : IEntityTypeConfiguration<ThemeEvent>
         builder.HasIndex(x => x.Name);
         builder.Property(x => x.Name).IsRequired().HasMaxLength(100);
         builder.Property(x => x.ActiveFromUtc).IsRequired();
-        builder.Property(x => x.MinumumRequiredEquipmentSlotsMatchingTheme).IsRequired();
+        builder.Property(x => x.MinimumThemedItemsEquipped).IsRequired();
 
         builder.HasOne(x => x.EventTheme);
     }

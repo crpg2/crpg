@@ -97,9 +97,9 @@ import type { ThemeEventViewModelIListResult, ThemeViewModelIListResult } from '
             expMultiplier: 2, 
             activeFromUtc: new Date('2026-06-16T18:00:00.000Z'), 
             activeUntilUtc: null, 
-            requiredEquipmentSlotsMatchingTheme: ['Body', 'Weapon'], 
-            minumumRequiredEquipmentSlotsMatchingTheme: 2, 
-        } 
+            requiredEquipmentSlotsMatchingTheme: ['Body', 'Weapon'],
+            minimumThemedItemsEquipped: 2,
+        }
 
         it('getThemeEvents unwraps the result data', async () => { 
             _getThemesEvents.mockResolvedValueOnce({ 
@@ -130,8 +130,8 @@ import type { ThemeEventViewModelIListResult, ThemeViewModelIListResult } from '
                 expMultiplier: 2, 
                 activeFromUtc: new Date('2026-06-16T18:00:00.000Z'), 
                 activeUntilUtc: null, 
-                requiredEquipmentSlotsMatchingTheme: ['Body', 'Weapon'], 
-                minimumRequiredEquipmentSlotsMatchingTheme: 2, 
+                requiredEquipmentSlotsMatchingTheme: ['Body', 'Weapon'],
+                minimumThemedItemsEquipped: 2,
             }
 
             _putThemes.mockResolvedValueOnce({ data: updateRequestBody, errors: null }) 

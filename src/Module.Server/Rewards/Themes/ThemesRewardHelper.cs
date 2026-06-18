@@ -43,7 +43,7 @@ internal static class ThemesRewardHelper
 
     private static bool PlayerIsEligibleForThemeEvent(ThemeEvent themeEvent, List<CrpgItemSlot> playerSlotsWithEligibleItemEquipped)
     {
-        if (playerSlotsWithEligibleItemEquipped.Count < themeEvent.MinumumRequiredEquipmentSlotsMatchingTheme)
+        if (playerSlotsWithEligibleItemEquipped.Count < themeEvent.MinimumThemedItemsEquipped)
         {
             return false;
         }

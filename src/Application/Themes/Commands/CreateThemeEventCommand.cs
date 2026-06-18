@@ -23,7 +23,10 @@ public record CreateThemeEventCommand : IMediatorRequest<ThemeEventViewModel>
 
     public List<ThemeEquipmentSlot> RequiredEquipmentSlotsMatchingTheme { get; set; } = new();
 
-    public int MinumumRequiredEquipmentSlotsMatchingTheme { get; set; }
+    /// <summary>
+    /// Minimum number of themed items the player must equip. When null, it defaults to the number of required slots.
+    /// </summary>
+    public int? MinimumThemedItemsEquipped { get; set; }
 
     public int ThemeId { get; set; } = default!;
 
@@ -68,7 +71,7 @@ public record CreateThemeEventCommand : IMediatorRequest<ThemeEventViewModel>
                     activeFromUtc: req.ActiveFromUtc,
                     activeUntilUtc: req.ActiveUntilUtc,
                     requiredEquipmentSlotsMatchingTheme: req.RequiredEquipmentSlotsMatchingTheme,
-                    minumumRequiredEquipmentSlotsMatchingTheme: req.MinumumRequiredEquipmentSlotsMatchingTheme,
+                    minimumThemedItemsEquipped: req.MinimumThemedItemsEquipped ?? req.RequiredEquipmentSlotsMatchingTheme.Count,
                     theme: theme);
 
             await db.ThemeEvents.AddAsync(themeEventToAdd);

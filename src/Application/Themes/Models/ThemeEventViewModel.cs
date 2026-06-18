@@ -39,9 +39,10 @@ public class ThemeEventViewModel : IMapFrom<ThemeEvent>
     public List<ThemeEquipmentSlot> RequiredEquipmentSlotsMatchingTheme { get; set; } = new();
 
     /// <summary>
-    /// The minimum amount of equipment slots that must contain items matching the events theme for the player to be eligible for the event rewards.
+    /// The minimum number of themed items the player must have equipped (in any slot) to be eligible for the event
+    /// rewards.
     /// </summary>
-    public int MinumumRequiredEquipmentSlotsMatchingTheme { get; set; }
+    public int MinimumThemedItemsEquipped { get; set; }
 
     /// <summary>
     /// The theme of the event.

@@ -51,7 +51,7 @@ public class DeleteThemeCommandTest : TestBase
                 activeFromUtc: DateTime.UtcNow,
                 activeUntilUtc: null,
                 requiredEquipmentSlotsMatchingTheme: new(),
-                minumumRequiredEquipmentSlotsMatchingTheme: 0,
+                minimumThemedItemsEquipped: 0,
                 theme: themeToRemove);
         var item = new Item
         {

@@ -2002,8 +2002,8 @@ theme:
         requiredSlots:
           label: Required equipment slots
         minSlots:
-          label: Minimum matching slots
-          help: Minimum number of slots that must hold an item matching the theme.
+          label: Minimum themed items
+          help: Minimum number of themed items the player must equip (any slot). Leave empty to default to the number of required slots.
     table:
       column:
         id: ID

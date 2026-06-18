@@ -21,6 +21,8 @@ public class CreateThemeEventCommandTest : TestBase
             ExpMultiplier = 2.0f,
             ActiveFromUtc = DateTimeOffset.UtcNow,
             ActiveUntilUtc = DateTimeOffset.UtcNow.AddDays(7),
+            RequiredEquipmentSlotsMatchingTheme = new List<ThemeEquipmentSlot> { ThemeEquipmentSlot.Head },
+            MinimumThemedItemsEquipped = 3,
             ThemeId = theme.Id,
         };
 
@@ -33,9 +35,32 @@ public class CreateThemeEventCommandTest : TestBase
         Assert.That(result.Data.ActiveFromUtc, Is.EqualTo(command.ActiveFromUtc));
         Assert.That(result.Data.ActiveUntilUtc, Is.EqualTo(command.ActiveUntilUtc));
         Assert.That(result.Data.RequiredEquipmentSlotsMatchingTheme, Is.EquivalentTo(command.RequiredEquipmentSlotsMatchingTheme));
-        Assert.That(result.Data.MinumumRequiredEquipmentSlotsMatchingTheme, Is.EqualTo(command.MinumumRequiredEquipmentSlotsMatchingTheme));
+        Assert.That(result.Data.MinimumThemedItemsEquipped, Is.EqualTo(command.MinimumThemedItemsEquipped));
         Assert.That(result.Data.EventTheme.Id, Is.EqualTo(command.ThemeId));
 
+    }
+
+    [Test]
+    public async Task ShouldDefaultMinimumThemedItemsEquippedToRequiredSlotCountWhenNotProvided()
+    {
+        var theme = new Theme(name: "my theme");
+        await ArrangeDb.Themes.AddAsync(theme);
+        await ArrangeDb.SaveChangesAsync();
+
+        var handler = new CreateThemeEventCommand.Handler(ActDb, Mapper);
+        var command = new CreateThemeEventCommand
+        {
+            Name = "Test Theme",
+            ActiveFromUtc = DateTimeOffset.UtcNow,
+            RequiredEquipmentSlotsMatchingTheme = new List<ThemeEquipmentSlot> { ThemeEquipmentSlot.Head, ThemeEquipmentSlot.Body },
+            MinimumThemedItemsEquipped = null,
+            ThemeId = theme.Id,
+        };
+
+        var result = await handler.Handle(command, CancellationToken.None);
+
+        Assert.That(result.Data, Is.Not.Null);
+        Assert.That(result.Data!.MinimumThemedItemsEquipped, Is.EqualTo(2));
     }
 
     [Test]

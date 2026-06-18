@@ -16,7 +16,7 @@ public class DeleteThemeEventCommandTest : TestBase
             activeFromUtc: DateTimeOffset.UtcNow,
             activeUntilUtc: null,
             requiredEquipmentSlotsMatchingTheme: new(),
-            minumumRequiredEquipmentSlotsMatchingTheme: 0,
+            minimumThemedItemsEquipped: 0,
             theme: new Theme(name: "default theme") { Id = 1 });
 
         await ArrangeDb.ThemeEvents.AddAsync(themeEventToDelete);

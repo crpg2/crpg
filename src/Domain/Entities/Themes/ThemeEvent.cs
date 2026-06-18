@@ -11,7 +11,7 @@ public class ThemeEvent : AuditableEntity
             DateTimeOffset activeFromUtc,
             DateTimeOffset? activeUntilUtc,
             List<ThemeEquipmentSlot> requiredEquipmentSlotsMatchingTheme,
-            int minumumRequiredEquipmentSlotsMatchingTheme,
+            int minimumThemedItemsEquipped,
             Theme theme)
     {
         Name = name;
@@ -20,7 +20,7 @@ public class ThemeEvent : AuditableEntity
         ActiveFromUtc = activeFromUtc;
         ActiveUntilUtc = activeUntilUtc;
         RequiredEquipmentSlotsMatchingTheme = requiredEquipmentSlotsMatchingTheme;
-        MinumumRequiredEquipmentSlotsMatchingTheme = minumumRequiredEquipmentSlotsMatchingTheme;
+        MinimumThemedItemsEquipped = minimumThemedItemsEquipped;
         EventTheme = theme;
     }
 
@@ -64,9 +64,11 @@ public class ThemeEvent : AuditableEntity
     public List<ThemeEquipmentSlot> RequiredEquipmentSlotsMatchingTheme { get; set; } = new();
 
     /// <summary>
-    /// The minimum amount of equipment slots that must contain items matching the events theme for the player to be eligible for the event rewards.
+    /// The minimum number of themed items the player must have equipped (in any slot) to be eligible for the event
+    /// rewards. This is a flat count and is independent of <see cref="RequiredEquipmentSlotsMatchingTheme"/>, which
+    /// pins specific slots. When not provided on creation it defaults to the number of required slots.
     /// </summary>
-    public int MinumumRequiredEquipmentSlotsMatchingTheme { get; set; }
+    public int MinimumThemedItemsEquipped { get; set; }
 
     /// <summary>
     /// The theme of the event.

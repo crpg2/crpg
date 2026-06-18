@@ -18,7 +18,11 @@ public class UpdateThemeEventCommand : IMediatorRequest<ThemeEventViewModel>
     public DateTimeOffset ActiveFromUtc { get; set; }
     public DateTimeOffset? ActiveUntilUtc { get; set; }
     public List<ThemeEquipmentSlot> RequiredEquipmentSlotsMatchingTheme { get; set; } = new();
-    public int MinimumRequiredEquipmentSlotsMatchingTheme { get; set; }
+
+    /// <summary>
+    /// Minimum number of themed items the player must equip. When null, it defaults to the number of required slots.
+    /// </summary>
+    public int? MinimumThemedItemsEquipped { get; set; }
     public int ThemeId { get; set; }
 
     public class Validator : AbstractValidator<UpdateThemeEventCommand>
@@ -73,7 +77,7 @@ public class UpdateThemeEventCommand : IMediatorRequest<ThemeEventViewModel>
             themeEvent.ActiveFromUtc = req.ActiveFromUtc;
             themeEvent.ActiveUntilUtc = req.ActiveUntilUtc;
             themeEvent.RequiredEquipmentSlotsMatchingTheme = req.RequiredEquipmentSlotsMatchingTheme;
-            themeEvent.MinumumRequiredEquipmentSlotsMatchingTheme = req.MinimumRequiredEquipmentSlotsMatchingTheme;
+            themeEvent.MinimumThemedItemsEquipped = req.MinimumThemedItemsEquipped ?? req.RequiredEquipmentSlotsMatchingTheme.Count;
 
             await db.SaveChangesAsync(cancellationToken);
 
