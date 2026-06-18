@@ -1,15 +1,12 @@
 ﻿using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Themes;
-using Crpg.Module.Common;
-using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.Rewards.Themes;
 
 internal static class ThemesRewardHelper
 {
-    internal static (float expMultiplier, float goldMultiplier) GetActiveEventMultipliers(CrpgPeer crpgPeer, List<ThemeEvent> activeThemeEvents)
+    internal static (float expMultiplier, float goldMultiplier) GetActiveEventMultipliers(IList<CrpgEquippedItem> playerEquippedItems, List<ThemeEvent> activeThemeEvents)
     {
-        var playerEquippedItems = crpgPeer.User!.Character.EquippedItems;
         float currentHighestEventExpMultiplier = 1.0f;
         float currentHighestEventGoldMultiplier = 1.0f;
 
@@ -29,13 +26,6 @@ internal static class ThemesRewardHelper
                     currentHighestEventGoldMultiplier = themeEvent.GoldMultiplier;
                 }
             }
-        }
-
-        if (currentHighestEventExpMultiplier > 1.0f || currentHighestEventGoldMultiplier > 1.0f)
-        {
-            GameNetwork.BeginBroadcastModuleEvent();
-            GameNetwork.WriteMessage(new CrpgRewardThemeEvent());
-            GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
         }
 
         return (currentHighestEventExpMultiplier, currentHighestEventGoldMultiplier);

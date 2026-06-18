@@ -272,7 +272,18 @@ internal class CrpgRewardServer : MissionLogic
         Dictionary<int, IList<CrpgUserDamagedItem>> brokenItems = lowPopulationServer ? new() : GetBrokenItemsByCrpgUserId(networkPeers, durationUpkeep ?? durationRewarded);
 
         var compensationByCrpgUserId = _isTeamHitCompensationsEnabled ? CalculateCompensationByCrpgUserId(brokenItems) : new();
-        var activeThemeEvents = await _crpgClient.GetActiveThemeEventsAsync();
+
+        List<ThemeEvent>? activeThemeEvents = null;
+        try
+        {
+            // Theme events are a best-effort bonus. A failure here must never abort the reward update for everyone.
+            activeThemeEvents = (await _crpgClient.GetActiveThemeEventsAsync())?.Data;
+        }
+        catch (Exception e)
+        {
+            Debug.Print($"Couldn't get active theme events - {e}");
+        }
+
         foreach (NetworkCommunicator networkPeer in networkPeers)
         {
             var playerId = networkPeer.VirtualPlayer.Id;
@@ -327,7 +338,7 @@ internal class CrpgRewardServer : MissionLogic
                 bool isValorousPlayer = valorousPlayerIds.Contains(playerId);
                 int compensationForCrpgUser = compensationByCrpgUserId.TryGetValue(crpgUserId, out int compensation) ? compensation : 0;
                 SetRewardForConnectedPlayer(userUpdate, crpgPeer, durationRewarded, compensationForCrpgUser, isValorousPlayer,
-                    defenderMultiplierGain, attackerMultiplierGain, constantMultiplier, activeThemeEvents?.Data);
+                    defenderMultiplierGain, attackerMultiplierGain, constantMultiplier, activeThemeEvents);
 
                 if (brokenItems.TryGetValue(crpgUserId, out var userBrokenItems))
                 {
@@ -339,7 +350,7 @@ internal class CrpgRewardServer : MissionLogic
             else if (crpgPeer.LastSpawnInfo != null && isPlayerInSpectator) // update spectators multiplier based on their previous team
             {
                 SetRewardForConnectedPlayer(userUpdate, crpgPeer, 0, 0, false,
-                    defenderMultiplierGain, attackerMultiplierGain, constantMultiplier, activeThemeEvents?.Data);
+                    defenderMultiplierGain, attackerMultiplierGain, constantMultiplier, activeThemeEvents);
             }
 
             userUpdates.Add(userUpdate);
@@ -530,11 +541,13 @@ internal class CrpgRewardServer : MissionLogic
         float goldMultiplier = 1.0f;
         serverXpMultiplier *= IsHappyHour() ? 1.5f : 1f;
 
+        bool themeEventApplied = false;
         if (activeThemeEvents != null && activeThemeEvents.Count > 0)
         {
-            var themeEventMultipliers = ThemesRewardHelper.GetActiveEventMultipliers(crpgPeer, activeThemeEvents);
+            var themeEventMultipliers = ThemesRewardHelper.GetActiveEventMultipliers(crpgPeer.User!.Character.EquippedItems, activeThemeEvents);
             serverXpMultiplier *= themeEventMultipliers.expMultiplier;
             goldMultiplier *= themeEventMultipliers.goldMultiplier;
+            themeEventApplied = themeEventMultipliers.expMultiplier > 1.0f || themeEventMultipliers.goldMultiplier > 1.0f;
         }
 
         userUpdate.Reward = new CrpgUserReward
@@ -545,6 +558,11 @@ internal class CrpgRewardServer : MissionLogic
                 + crpgPeer.RewardMultiplier * _constants.MultipliedGoldGainPerSecond)
                 + compensationAmount),
         };
+
+        if (themeEventApplied)
+        {
+            NotifyThemeEventReward(crpgPeer, userUpdate.Reward);
+        }
 
         if (constantMultiplier != null)
         {
@@ -564,6 +582,28 @@ internal class CrpgRewardServer : MissionLogic
 
             crpgPeer.RewardMultiplier = Math.Max(Math.Min(rewardMultiplier, ExperienceMultiplierMax), ExperienceMultiplierMin);
         }
+    }
+
+    /// <summary>
+    /// Notifies a single player that a theme event boosted their reward. Only sent when the player is actually
+    /// receiving a reward this cycle, so spectators and zero-duration ticks don't get a misleading toast.
+    /// </summary>
+    private void NotifyThemeEventReward(CrpgPeer crpgPeer, CrpgUserReward reward)
+    {
+        if (reward.Experience <= 0 && reward.Gold <= 0)
+        {
+            return;
+        }
+
+        var networkPeer = crpgPeer.GetNetworkPeer();
+        if (networkPeer == null || !networkPeer.IsConnectionActive)
+        {
+            return;
+        }
+
+        GameNetwork.BeginModuleEventAsServer(networkPeer);
+        GameNetwork.WriteMessage(new CrpgRewardThemeEvent());
+        GameNetwork.EndModuleEventAsServer();
     }
 
     private bool IsHappyHour()
