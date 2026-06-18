@@ -16,8 +16,7 @@
     const { t, d } = useI18n() 
 
     const columns: TableColumn<ThemeEventViewModel>[] = [ 
-       { accessorKey: 'id', header: () => t('theme.event.table.column.id') }, 
-       { accessorKey: 'name', header: () => t('theme.event.table.column.name') }, 
+       { accessorKey: 'name', header: () => t('theme.event.table.column.name') },
        { 
            id: 'theme', 
            header: () => t('theme.event.table.column.theme'), 

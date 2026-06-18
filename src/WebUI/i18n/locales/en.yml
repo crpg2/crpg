@@ -1970,7 +1970,6 @@ theme:
         label: Name
   table:
     column:
-      id: ID
       name: Name
   notify:
     saved: Theme saved
@@ -2001,12 +2000,14 @@ theme:
           help: Leave empty for an indefinitely active event.
         requiredSlots:
           label: Required equipment slots
+        requiredWeapons:
+          label: Required themed weapons
+          help: Number of weapon slots (0–4) that must hold an item matching the theme.
         minSlots:
           label: Minimum themed items
           help: Minimum number of themed items the player must equip (any slot). Leave empty to default to the number of required slots.
     table:
       column:
-        id: ID
         name: Name
         theme: Theme
         goldMultiplier: Gold

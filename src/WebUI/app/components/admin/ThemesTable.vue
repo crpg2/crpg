@@ -15,11 +15,10 @@
 
     const { t } = useI18n() 
 
-    const columns: TableColumn<ThemeViewModel>[] = [ 
-       { accessorKey: 'id', header: () => t('theme.table.column.id') }, 
-       { accessorKey: 'name', header: () => t('theme.table.column.name') }, 
-       { id: 'actions' }, 
-    ] 
+    const columns: TableColumn<ThemeViewModel>[] = [
+       { accessorKey: 'name', header: () => t('theme.table.column.name') },
+       { id: 'actions' },
+    ]
  </script> 
 
  <template> 

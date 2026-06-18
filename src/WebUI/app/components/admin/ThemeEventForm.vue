@@ -3,7 +3,9 @@
     
     import type { ThemeEventFormData, ThemeEventViewModel, ThemeViewModel } from '~/models/theme' 
     
-    import { THEME_EQUIPMENT_SLOTS } from '~/models/theme' 
+    import { THEME_EQUIPMENT_SLOT, THEME_EQUIPMENT_SLOTS } from '~/models/theme'
+
+    const MAX_WEAPON_SLOTS = 4
     
     const props = defineProps<{ 
        themes: ThemeViewModel[] 
@@ -27,16 +29,21 @@
 
     const fromInputValue = (local: string): Date | null => local ? new Date(local) : null
  
-    const buildModel = () => ({ 
-       name: props.event?.name ?? '', 
-       themeId: props.event?.eventTheme?.id ?? props.themes[0]?.id ?? 0, 
-       goldMultiplier: props.event?.goldMultiplier ?? 1, 
-       expMultiplier: props.event?.expMultiplier ?? 1, 
-       activeFromUtc: toInputValue(props.event?.activeFromUtc ?? new Date()), 
-       activeUntilUtc: toInputValue(props.event?.activeUntilUtc), 
-       requiredEquipmentSlotsMatchingTheme: [...(props.event?.requiredEquipmentSlotsMatchingTheme ?? [])],
-       minimumThemedItemsEquipped: props.event?.minimumThemedItemsEquipped ?? null,
-    })
+    const buildModel = () => {
+        const requiredSlots = props.event?.requiredEquipmentSlotsMatchingTheme ?? []
+
+        return {
+            name: props.event?.name ?? '',
+            themeId: props.event?.eventTheme?.id ?? props.themes[0]?.id ?? 0,
+            goldMultiplier: props.event?.goldMultiplier ?? 1,
+            expMultiplier: props.event?.expMultiplier ?? 1,
+            activeFromUtc: toInputValue(props.event?.activeFromUtc ?? new Date()),
+            activeUntilUtc: toInputValue(props.event?.activeUntilUtc),
+            requiredNonWeaponSlots: requiredSlots.filter(slot => slot !== THEME_EQUIPMENT_SLOT.Weapon),
+            requiredThemedWeapons: requiredSlots.filter(slot => slot === THEME_EQUIPMENT_SLOT.Weapon).length,
+            minimumThemedItemsEquipped: props.event?.minimumThemedItemsEquipped ?? null,
+        }
+    }
  
     const model = reactive(buildModel()) 
  
@@ -44,7 +51,9 @@
  
     const themeItems = computed<SelectItem[]>(() => props.themes.map(theme => ({ label: theme.name, value: theme.id }))) 
  
-    const slotItems = computed<SelectItem[]>(() => THEME_EQUIPMENT_SLOTS.map(slot => ({ label: slot, value: slot }))) 
+    const slotItems = computed<SelectItem[]>(() => THEME_EQUIPMENT_SLOTS
+        .filter(slot => slot !== THEME_EQUIPMENT_SLOT.Weapon)
+        .map(slot => ({ label: slot, value: slot })))
  
     const onSubmit = () => {
        emit('submit', { 
@@ -53,8 +62,11 @@
            goldMultiplier: model.goldMultiplier, 
            expMultiplier: model.expMultiplier, 
            activeFromUtc: fromInputValue(model.activeFromUtc)!, 
-           activeUntilUtc: fromInputValue(model.activeUntilUtc), 
-           requiredEquipmentSlotsMatchingTheme: model.requiredEquipmentSlotsMatchingTheme,
+           activeUntilUtc: fromInputValue(model.activeUntilUtc),
+           requiredEquipmentSlotsMatchingTheme: [
+               ...model.requiredNonWeaponSlots,
+               ...Array.from({ length: model.requiredThemedWeapons }, () => THEME_EQUIPMENT_SLOT.Weapon),
+           ],
            minimumThemedItemsEquipped: model.minimumThemedItemsEquipped,
        })
     } 
@@ -131,15 +143,28 @@
             </UFormField> 
         </div> 
 
-        <UFormField :label="$t('theme.event.form.field.requiredSlots.label')"> 
-            <USelect 
-                v-model="model.requiredEquipmentSlotsMatchingTheme" 
-                :items="slotItems" 
-                multiple 
-                size="xl" 
-                class="w-full" 
-            /> 
-        </UFormField> 
+        <UFormField :label="$t('theme.event.form.field.requiredSlots.label')">
+            <USelect
+                v-model="model.requiredNonWeaponSlots"
+                :items="slotItems"
+                multiple
+                size="xl"
+                class="w-full"
+            />
+        </UFormField>
+
+        <UFormField
+            :label="$t('theme.event.form.field.requiredWeapons.label')"
+            :help="$t('theme.event.form.field.requiredWeapons.help')"
+        >
+            <UInputNumber
+                v-model="model.requiredThemedWeapons"
+                :min="0"
+                :max="MAX_WEAPON_SLOTS"
+                size="xl"
+                class="w-full"
+            />
+        </UFormField>
 
         <UFormField 
             :label="$t('theme.event.form.field.minSlots.label')" 
