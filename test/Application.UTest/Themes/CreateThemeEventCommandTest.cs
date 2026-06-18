@@ -257,6 +257,42 @@ public class CreateThemeEventCommandTest : TestBase
     }
 
     [Test]
+    public void ShouldFailValidationWhenGoldMultiplierIsBelowOne()
+    {
+        var validator = new CreateThemeEventCommand.Validator();
+        var command = new CreateThemeEventCommand
+        {
+            Name = "Test",
+            GoldMultiplier = 0.5f,
+            ExpMultiplier = 1.0f,
+            ActiveFromUtc = DateTimeOffset.UtcNow,
+        };
+
+        var result = validator.Validate(command);
+
+        Assert.That(result.IsValid, Is.False);
+        Assert.That(result.Errors.Any(e => e.PropertyName == "GoldMultiplier"), Is.True);
+    }
+
+    [Test]
+    public void ShouldFailValidationWhenExpMultiplierIsBelowOne()
+    {
+        var validator = new CreateThemeEventCommand.Validator();
+        var command = new CreateThemeEventCommand
+        {
+            Name = "Test",
+            GoldMultiplier = 1.0f,
+            ExpMultiplier = 0.5f,
+            ActiveFromUtc = DateTimeOffset.UtcNow,
+        };
+
+        var result = validator.Validate(command);
+
+        Assert.That(result.IsValid, Is.False);
+        Assert.That(result.Errors.Any(e => e.PropertyName == "ExpMultiplier"), Is.True);
+    }
+
+    [Test]
     public void ShouldPassValidationWhenMessageIs1000Characters()
     {
         var validator = new CreateThemeEventCommand.Validator();

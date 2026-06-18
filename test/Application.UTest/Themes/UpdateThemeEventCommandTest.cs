@@ -158,6 +158,43 @@ public class UpdateThemeEventCommandTest : TestBase
     }
 
     [Test]
+    public async Task ShouldFailValidationWhenGoldMultiplierIsBelowOne()
+    {
+        var validator = new UpdateThemeEventCommand.Validator();
+        var command = CreateDefaultUpdateThemeEventCommand(goldMultiplier: 0.5f);
+
+        var result = validator.Validate(command);
+
+        Assert.That(result.IsValid, Is.False);
+        Assert.That(result.Errors.Any(e => e.PropertyName == "GoldMultiplier"), Is.True);
+    }
+
+    [Test]
+    public async Task ShouldFailValidationWhenExpMultiplierIsBelowOne()
+    {
+        var validator = new UpdateThemeEventCommand.Validator();
+        var command = CreateDefaultUpdateThemeEventCommand(expMultiplier: 0.5f);
+
+        var result = validator.Validate(command);
+
+        Assert.That(result.IsValid, Is.False);
+        Assert.That(result.Errors.Any(e => e.PropertyName == "ExpMultiplier"), Is.True);
+    }
+
+    [Test]
+    public async Task ShouldFailValidationWhenActiveUntilIsBeforeActiveFrom()
+    {
+        var validator = new UpdateThemeEventCommand.Validator();
+        var now = DateTimeOffset.UtcNow;
+        var command = CreateDefaultUpdateThemeEventCommand(activeFromUtc: now, activeUntilUtc: now.AddDays(-1));
+
+        var result = validator.Validate(command);
+
+        Assert.That(result.IsValid, Is.False);
+        Assert.That(result.Errors.Any(e => e.PropertyName == "ActiveUntilUtc"), Is.True);
+    }
+
+    [Test]
     public async Task ShouldFailValidationWhenActiveFromIsMissing()
     {
         var validator = new UpdateThemeEventCommand.Validator();

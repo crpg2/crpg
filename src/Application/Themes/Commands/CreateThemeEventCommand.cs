@@ -38,8 +38,8 @@ public record CreateThemeEventCommand : IMediatorRequest<ThemeEventViewModel>
                 .NotEmpty().WithMessage("Theme name is required.")
                 .MaximumLength(100).WithMessage("Theme name cannot exceed 100 characters.");
 
-            RuleFor(r => r.GoldMultiplier).GreaterThan(0);
-            RuleFor(r => r.ExpMultiplier).GreaterThan(0);
+            RuleFor(r => r.GoldMultiplier).GreaterThanOrEqualTo(1);
+            RuleFor(r => r.ExpMultiplier).GreaterThanOrEqualTo(1);
 
             RuleFor(r => r.ActiveFromUtc)
                 .NotEmpty()

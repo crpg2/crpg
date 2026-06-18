@@ -33,8 +33,8 @@ public class UpdateThemeEventCommand : IMediatorRequest<ThemeEventViewModel>
                 .NotEmpty().WithMessage("Theme event name is required.")
                 .MaximumLength(100).WithMessage("Theme event name cannot exceed 100 characters.");
 
-            RuleFor(t => t.GoldMultiplier).GreaterThan(0);
-            RuleFor(t => t.ExpMultiplier).GreaterThan(0);
+            RuleFor(t => t.GoldMultiplier).GreaterThanOrEqualTo(1);
+            RuleFor(t => t.ExpMultiplier).GreaterThanOrEqualTo(1);
 
             RuleFor(t => t.ActiveFromUtc)
                 .NotEmpty()
@@ -43,7 +43,9 @@ public class UpdateThemeEventCommand : IMediatorRequest<ThemeEventViewModel>
 
             RuleFor(t => t.ActiveUntilUtc)
                 .Must(dt => dt == null || dt.Value.Offset == TimeSpan.Zero)
-                .WithMessage("ActiveUntilUTC must be UTC.");
+                .WithMessage("ActiveUntilUTC must be UTC.")
+                .Must((cmd, until) => until == null || until > cmd.ActiveFromUtc)
+                .WithMessage("ActiveUntilUtc must be after ActiveFromUtc.");
         }
     }
 
