@@ -14,6 +14,7 @@ using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 
 namespace Crpg.WebApi.Controllers;
 
@@ -99,5 +100,6 @@ public class GamesController : BaseController
     /// </summary>
     /// <response code="200">Ok.</response>
     [HttpGet("theme-events/active")]
+    [OutputCache(Tags = [ActiveThemeEventsCacheTag], Duration = 60)]
     public Task<ActionResult<Result<IList<ThemeEventViewModel>>>> GetActiveThemeEvents() => ResultToActionAsync(Mediator.Send(new GetActiveThemeEventsQuery()));
 }

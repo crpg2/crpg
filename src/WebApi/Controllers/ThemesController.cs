@@ -4,11 +4,12 @@ using Crpg.Application.Themes.Models;
 using Crpg.Application.Themes.Queries;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 
 namespace Crpg.WebApi.Controllers;
 
 [Authorize(Policy = UserPolicy)]
-public class ThemesController : BaseController
+public class ThemesController(IOutputCacheStore outputCacheStore) : BaseController
 {
     /// <summary>
     ///  Gets all themes.
@@ -31,7 +32,12 @@ public class ThemesController : BaseController
     /// <response code="200">Ok.</response>
     [HttpPut]
     [Authorize(Policy = AdminPolicy)]
-    public Task<ActionResult<Result<ThemeViewModel>>> UpdateTheme([FromBody] UpdateThemeCommand req) => ResultToActionAsync(Mediator.Send(req));
+    public async Task<ActionResult<Result<ThemeViewModel>>> UpdateTheme([FromBody] UpdateThemeCommand req)
+    {
+        var result = await ResultToActionAsync(Mediator.Send(req));
+        await EvictActiveThemeEventsCacheAsync();
+        return result;
+    }
 
     /// <summary>
     /// Deletes a theme in a cascade, also removing all theme event based on that theme, and untags all items tagged with it.
@@ -39,7 +45,12 @@ public class ThemesController : BaseController
     /// <response code="200">Ok.</response>
     [HttpDelete("{id}")]
     [Authorize(Policy = AdminPolicy)]
-    public Task<ActionResult> DeleteTheme([FromRoute] int id) => ResultToActionAsync(Mediator.Send(new DeleteThemeCommand { Id = id }));
+    public async Task<ActionResult> DeleteTheme([FromRoute] int id)
+    {
+        var result = await ResultToActionAsync(Mediator.Send(new DeleteThemeCommand { Id = id }));
+        await EvictActiveThemeEventsCacheAsync();
+        return result;
+    }
 
     /// <summary>
     ///  Gets all theme events.
@@ -53,6 +64,7 @@ public class ThemesController : BaseController
     /// </summary>
     /// <response code="200">Ok.</response>
     [HttpGet("events/active")]
+    [OutputCache(Tags = [ActiveThemeEventsCacheTag], Duration = 60)]
     public Task<ActionResult<Result<IList<ThemeEventViewModel>>>> GetActiveThemeEvents() => ResultToActionAsync(Mediator.Send(new GetActiveThemeEventsQuery()));
 
     /// <summary>
@@ -61,7 +73,12 @@ public class ThemesController : BaseController
     /// <response code="200">Ok.</response>
     [HttpPost("events")]
     [Authorize(Policy = AdminPolicy)]
-    public Task<ActionResult<Result<ThemeEventViewModel>>> CreateThemeEvent([FromBody] CreateThemeEventCommand req) => ResultToActionAsync(Mediator.Send(req));
+    public async Task<ActionResult<Result<ThemeEventViewModel>>> CreateThemeEvent([FromBody] CreateThemeEventCommand req)
+    {
+        var result = await ResultToActionAsync(Mediator.Send(req));
+        await EvictActiveThemeEventsCacheAsync();
+        return result;
+    }
 
     /// <summary>
     /// Updates a theme event.
@@ -69,7 +86,12 @@ public class ThemesController : BaseController
     /// <response code="200">Ok.</response>
     [HttpPut("events")]
     [Authorize(Policy = AdminPolicy)]
-    public Task<ActionResult<Result<ThemeEventViewModel>>> UpdateThemeEvent([FromBody] UpdateThemeEventCommand req) => ResultToActionAsync(Mediator.Send(req));
+    public async Task<ActionResult<Result<ThemeEventViewModel>>> UpdateThemeEvent([FromBody] UpdateThemeEventCommand req)
+    {
+        var result = await ResultToActionAsync(Mediator.Send(req));
+        await EvictActiveThemeEventsCacheAsync();
+        return result;
+    }
 
     /// <summary>
     /// Deletes a theme event.
@@ -77,5 +99,12 @@ public class ThemesController : BaseController
     /// <response code="200">Ok.</response>
     [HttpDelete("events/{id}")]
     [Authorize(Policy = AdminPolicy)]
-    public Task<ActionResult> DeleteThemeEvent([FromRoute] int id) => ResultToActionAsync(Mediator.Send(new DeleteThemeEventCommand { Id = id }));
+    public async Task<ActionResult> DeleteThemeEvent([FromRoute] int id)
+    {
+        var result = await ResultToActionAsync(Mediator.Send(new DeleteThemeEventCommand { Id = id }));
+        await EvictActiveThemeEventsCacheAsync();
+        return result;
+    }
+
+    private Task EvictActiveThemeEventsCacheAsync() => outputCacheStore.EvictByTagAsync(ActiveThemeEventsCacheTag, CancellationToken.None).AsTask();
 }
