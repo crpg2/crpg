@@ -30,8 +30,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Crpg.Persistence.Migrations
 {
     [DbContext(typeof(CrpgDbContext))]
-    [Migration("20260616073024_SimplifyThemeWeaponSlots")]
-    partial class SimplifyThemeWeaponSlots
+    [Migration("20260618190222_AddThemes")]
+    partial class AddThemes
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
