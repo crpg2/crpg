@@ -9,7 +9,7 @@ const { themes, max = 1 } = defineProps<{
 
 const list = computed(() => themes ?? []);
 const limit = computed(() => max ?? 1);
-const visible = computed(() => themes.slice(0, limit.value));
+const visible = computed(() => list.value.slice(0, limit.value));
 const overflowCount = computed(() => Math.max(0, list.value.length - limit.value));
 </script>
 

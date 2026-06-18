@@ -1959,6 +1959,8 @@ theme:
   title: Themes
   create:
     title: Create theme
+  edit:
+    title: Edit theme
   delete:
     title: Delete theme
     confirm: >-
@@ -2002,7 +2004,7 @@ theme:
           label: Required equipment slots
         requiredWeapons:
           label: Required themed weapons
-          help: Number of weapon slots (0–4) that must hold an item matching the theme.
+          help: Number of weapon slots (0–5) that must hold an item matching the theme.
         minSlots:
           label: Minimum themed items
           help: Minimum number of themed items the player must equip (any slot). Leave empty to default to the number of required slots.

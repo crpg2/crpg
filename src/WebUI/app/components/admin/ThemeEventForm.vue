@@ -5,7 +5,7 @@
     
     import { THEME_EQUIPMENT_SLOT, THEME_EQUIPMENT_SLOTS } from '~/models/theme'
 
-    const MAX_WEAPON_SLOTS = 4
+    const MAX_WEAPON_SLOTS = 5
     
     const props = defineProps<{ 
        themes: ThemeViewModel[] 
@@ -99,20 +99,20 @@
 
         <div class="grid grid-cols-2 gap-4"> 
             <UFormField :label="$t('theme.event.form.field.goldMultiplier.label')"> 
-                <UInputNumber 
-                    v-model="model.goldMultiplier" 
-                    :min="0" 
-                    :step="0.1" 
+                <UInputNumber
+                    v-model="model.goldMultiplier"
+                    :min="1"
+                    :step="0.1"
                     size="xl" 
                     class="w-full" 
                 /> 
             </UFormField> 
 
             <UFormField :label="$t('theme.event.form.field.expMultiplier.label')"> 
-                <UInputNumber 
-                    v-model="model.expMultiplier" 
-                    :min="0" 
-                    :step="0.1" 
+                <UInputNumber
+                    v-model="model.expMultiplier"
+                    :min="1"
+                    :step="0.1"
                     size="xl" 
                     class="w-full" 
                 /> 
