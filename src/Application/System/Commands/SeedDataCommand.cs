@@ -2855,10 +2855,14 @@ public record SeedDataCommand : IMediatorRequest
                 dbItem.PrimaryWeapon = item.PrimaryWeapon;
                 dbItem.SecondaryWeapon = item.SecondaryWeapon;
                 dbItem.TertiaryWeapon = item.TertiaryWeapon;
-                dbItem.Themes.Clear();
-                if (item.Themes != null)
+                // Preserve themes already on the item (e.g. tagged through the API). Only add themes coming from the
+                // items source that aren't present yet; never remove. Themes are dropped only when the item is removed.
+                foreach (var theme in item.Themes)
                 {
-                    dbItem.Themes.AddRange(item.Themes);
+                    if (dbItem.Themes.All(t => t.Id != theme.Id))
+                    {
+                        dbItem.Themes.Add(theme);
+                    }
                 }
             }
             else
