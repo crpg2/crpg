@@ -1,0 +1,18 @@
+<Prefab Name="ItemInfoRow">
+  <Parameters>
+    <Parameter Name="Width" DefaultValue="220"/>
+    <Parameter Name="Height" DefaultValue="50"/>
+  </Parameters>
+  <Window>
+    <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Top"
+            WidthSizePolicy="Fixed" SuggestedWidth="*Width"
+            HeightSizePolicy="Fixed" SuggestedHeight="*Height"
+            Spacing="1"
+            DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
+        <Children>
+          <ItemInfoTuple DataSource="{Left}"/>
+          <ItemInfoTuple DataSource="{Right}"/>
+        </Children>
+    </ListPanel>
+  </Window>
+</Prefab>

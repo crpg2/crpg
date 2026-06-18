@@ -107,7 +107,7 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
             var characterSkills = CrpgCharacterBuilder.CreateCharacterSkills(crpgPeer.User!.Character.Characteristics);
             var characterXml = peerClass.HeroCharacter;
 
-            var characterEquipment = CrpgCharacterBuilder.CreateCharacterEquipment(crpgPeer.User.Character.EquippedItems);
+            var characterEquipment = GetCharacterEquipment(networkPeer, crpgPeer);
 
             bool hasMount = characterEquipment[EquipmentIndex.Horse].Item != null;
 
@@ -288,6 +288,11 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
         }
 
         return false;
+    }
+
+    protected virtual Equipment GetCharacterEquipment(NetworkCommunicator networkPeer, CrpgPeer crpgPeer)
+    {
+        return CrpgCharacterBuilder.CreateCharacterEquipment(crpgPeer.User!.Character.EquippedItems);
     }
 
     private Formation? AssignFormation(MissionPeer missionPeer)

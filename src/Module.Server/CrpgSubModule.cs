@@ -15,6 +15,7 @@ using Debug = TaleWorlds.Library.Debug;
 #if CRPG_CLIENT
 using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.HarmonyPatches;
+using TaleWorlds.Engine.GauntletUI;
 #endif
 
 #if CRPG_EDITOR
