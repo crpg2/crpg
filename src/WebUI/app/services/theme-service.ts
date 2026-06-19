@@ -16,7 +16,7 @@ import {
   deleteThemesEventsById,
   postThemes,
   postThemesEvents,
-  putItemsByIdThemes,
+  putItemsByBaseIdThemes,
   putItemsThemes,
   putThemes,
   putThemesEvents,
@@ -38,12 +38,13 @@ export const updateThemeEvent = (body: UpdateThemeEventCommand) => putThemesEven
 
 export const deleteThemeEvent = (id: number) => deleteThemesEventsById({ path: { id } })
 
-// Item theme tagging (admin). Single = set/replace, bulk = add/remove.
-export const setItemThemes = async (itemId: string, themeIds: number[]): Promise<ItemViewModel> =>
-  (await putItemsByIdThemes({ path: { id: itemId }, body: { themeIds } })).data!
+// Item theme tagging (admin). Themes apply to a whole item family (BaseId = all rank variants).
+// Single = set/replace, bulk = add/remove.
+export const setItemThemes = async (baseId: string, themeIds: number[]): Promise<ItemViewModel> =>
+  (await putItemsByBaseIdThemes({ path: { baseId }, body: { themeIds } })).data!
 
-export const addThemesToItems = (itemIds: string[], themeIds: number[]) =>
-  putItemsThemes({ body: { itemIds, themeIds } })
+export const addThemesToItems = (baseIds: string[], themeIds: number[]) =>
+  putItemsThemes({ body: { baseIds, themeIds } })
 
-export const removeThemesFromItems = (itemIds: string[], themeIds: number[]) =>
-  deleteItemsThemes({ body: { itemIds, themeIds } })
+export const removeThemesFromItems = (baseIds: string[], themeIds: number[]) =>
+  deleteItemsThemes({ body: { baseIds, themeIds } })

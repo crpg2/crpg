@@ -9,24 +9,26 @@ using Microsoft.EntityFrameworkCore;
 namespace Crpg.Application.Items.Commands;
 
 /// <summary>
-/// Replaces the set of themes assigned to a single item.
+/// Replaces the set of themes assigned to an item family. The themes are applied to every rank variant sharing the
+/// given <see cref="Crpg.Domain.Entities.Items.Item.BaseId"/>, so upgrades stay in sync.
 /// </summary>
 public record SetItemThemesCommand : IMediatorRequest<ItemViewModel>
 {
     [JsonIgnore]
-    public string ItemId { get; init; } = string.Empty;
+    public string BaseId { get; init; } = string.Empty;
     public IList<int> ThemeIds { get; init; } = new List<int>();
 
     internal class Handler(ICrpgDbContext db, IMapper mapper) : IMediatorRequestHandler<SetItemThemesCommand, ItemViewModel>
     {
         public async ValueTask<Result<ItemViewModel>> Handle(SetItemThemesCommand req, CancellationToken cancellationToken)
         {
-            var item = await db.Items
+            var items = await db.Items
                 .Include(i => i.Themes)
-                .FirstOrDefaultAsync(i => i.Id == req.ItemId, cancellationToken);
-            if (item == null)
+                .Where(i => i.BaseId == req.BaseId)
+                .ToListAsync(cancellationToken);
+            if (items.Count == 0)
             {
-                return new(CommonErrors.ItemNotFound(req.ItemId));
+                return new(CommonErrors.ItemNotFound(req.BaseId));
             }
 
             var themeIds = req.ThemeIds.Distinct().ToList();
@@ -37,12 +39,16 @@ public record SetItemThemesCommand : IMediatorRequest<ItemViewModel>
                 return new(CommonErrors.ThemeNotFound(missingThemeId));
             }
 
-            item.Themes.Clear();
-            item.Themes.AddRange(themes);
+            foreach (var item in items)
+            {
+                item.Themes.Clear();
+                item.Themes.AddRange(themes);
+            }
 
             await db.SaveChangesAsync(cancellationToken);
 
-            return new(mapper.Map<ItemViewModel>(item));
+            var representative = items.OrderBy(i => i.Rank).First();
+            return new(mapper.Map<ItemViewModel>(representative));
         }
     }
 }

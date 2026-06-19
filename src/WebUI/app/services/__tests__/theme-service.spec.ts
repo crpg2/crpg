@@ -25,7 +25,7 @@ const {
   _postThemesEvents,
   _putThemesEvents,
   _deleteThemesEventsById,
-  _putItemsByIdThemes,
+  _putItemsByBaseIdThemes,
   _putItemsThemes,
   _deleteItemsThemes,
 } = vi.hoisted(() => ({
@@ -37,7 +37,7 @@ const {
   _postThemesEvents: vi.fn(),
   _putThemesEvents: vi.fn(),
   _deleteThemesEventsById: vi.fn(),
-  _putItemsByIdThemes: vi.fn(),
+  _putItemsByBaseIdThemes: vi.fn(),
   _putItemsThemes: vi.fn(),
   _deleteItemsThemes: vi.fn(),
 }))
@@ -51,7 +51,7 @@ vi.mock('#api/sdk.gen', () => ({
   postThemesEvents: _postThemesEvents,
   putThemesEvents: _putThemesEvents,
   deleteThemesEventsById: _deleteThemesEventsById,
-  putItemsByIdThemes: _putItemsByIdThemes,
+  putItemsByBaseIdThemes: _putItemsByBaseIdThemes,
   putItemsThemes: _putItemsThemes,
   deleteItemsThemes: _deleteItemsThemes,
 }))
@@ -163,30 +163,30 @@ describe('theme service', () => {
   })
 
   describe('item themes', () => {
-    it('setItemThemes puts the theme ids to the item route and unwraps the item', async () => {
+    it('setItemThemes puts the theme ids to the item family route and unwraps the item', async () => {
       const item = { id: 'sword_1', themes: [{ id: 1, name: 'Viking' }] }
-      _putItemsByIdThemes.mockResolvedValueOnce({ data: item, errors: null })
+      _putItemsByBaseIdThemes.mockResolvedValueOnce({ data: item, errors: null })
 
-      const result = await setItemThemes('sword_1', [1])
+      const result = await setItemThemes('sword', [1])
 
-      expect(_putItemsByIdThemes).toHaveBeenCalledWith({ path: { id: 'sword_1' }, body: { themeIds: [1] } })
+      expect(_putItemsByBaseIdThemes).toHaveBeenCalledWith({ path: { baseId: 'sword' }, body: { themeIds: [1] } })
       expect(result).toEqual(item)
     })
 
-    it('addThemesToItems puts the items and themes in the body', async () => {
+    it('addThemesToItems puts the base ids and themes in the body', async () => {
       _putItemsThemes.mockResolvedValueOnce({ data: undefined, errors: null })
 
-      await addThemesToItems(['sword_1', 'axe_2'], [1, 2])
+      await addThemesToItems(['sword', 'axe'], [1, 2])
 
-      expect(_putItemsThemes).toHaveBeenCalledWith({ body: { itemIds: ['sword_1', 'axe_2'], themeIds: [1, 2] } })
+      expect(_putItemsThemes).toHaveBeenCalledWith({ body: { baseIds: ['sword', 'axe'], themeIds: [1, 2] } })
     })
 
-    it('removeThemesFromItems deletes with the items and themes in the body', async () => {
+    it('removeThemesFromItems deletes with the base ids and themes in the body', async () => {
       _deleteItemsThemes.mockResolvedValueOnce({ data: undefined, errors: null })
 
-      await removeThemesFromItems(['sword_1'], [3])
+      await removeThemesFromItems(['sword'], [3])
 
-      expect(_deleteItemsThemes).toHaveBeenCalledWith({ body: { itemIds: ['sword_1'], themeIds: [3] } })
+      expect(_deleteItemsThemes).toHaveBeenCalledWith({ body: { baseIds: ['sword'], themeIds: [3] } })
     })
   })
 })

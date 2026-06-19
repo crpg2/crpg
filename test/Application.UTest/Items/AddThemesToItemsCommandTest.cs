@@ -9,20 +9,20 @@ namespace Crpg.Application.UTest.Items;
 public class AddThemesToItemsCommandTest : TestBase
 {
     [Test]
-    public void ShouldFailValidationWhenItemIdsIsEmpty()
+    public void ShouldFailValidationWhenBaseIdsIsEmpty()
     {
         var result = new AddThemesToItemsCommand.Validator().Validate(
-            new AddThemesToItemsCommand { ItemIds = Array.Empty<string>(), ThemeIds = new[] { 1 } });
+            new AddThemesToItemsCommand { BaseIds = Array.Empty<string>(), ThemeIds = new[] { 1 } });
 
         Assert.That(result.IsValid, Is.False);
-        Assert.That(result.Errors.Any(e => e.PropertyName == nameof(AddThemesToItemsCommand.ItemIds)), Is.True);
+        Assert.That(result.Errors.Any(e => e.PropertyName == nameof(AddThemesToItemsCommand.BaseIds)), Is.True);
     }
 
     [Test]
     public void ShouldFailValidationWhenThemeIdsIsEmpty()
     {
         var result = new AddThemesToItemsCommand.Validator().Validate(
-            new AddThemesToItemsCommand { ItemIds = new[] { "1" }, ThemeIds = Array.Empty<int>() });
+            new AddThemesToItemsCommand { BaseIds = new[] { "a" }, ThemeIds = Array.Empty<int>() });
 
         Assert.That(result.IsValid, Is.False);
         Assert.That(result.Errors.Any(e => e.PropertyName == nameof(AddThemesToItemsCommand.ThemeIds)), Is.True);
@@ -61,7 +61,7 @@ public class AddThemesToItemsCommandTest : TestBase
         var result = await new AddThemesToItemsCommand.Handler(ActDb).Handle(
             new AddThemesToItemsCommand
             {
-                ItemIds = new[] { "1", "2" },
+                BaseIds = new[] { "a", "b" },
                 ThemeIds = new[] { winter.Id, summer.Id },
             },
             CancellationToken.None);
@@ -78,7 +78,46 @@ public class AddThemesToItemsCommandTest : TestBase
     }
 
     [Test]
-    public async Task ShouldReturnErrorIfAnItemNotFound()
+    public async Task ShouldTagAllRankVariantsSharingTheBaseId()
+    {
+        Theme winter = new("winter");
+        ArrangeDb.Themes.Add(winter);
+        for (int rank = 0; rank <= 3; rank += 1)
+        {
+            ArrangeDb.Items.Add(new()
+            {
+                Id = $"a_h{rank}",
+                Name = $"a_h{rank}",
+                BaseId = "a",
+                Rank = rank,
+                Price = 100,
+                Type = ItemType.BodyArmor,
+                Enabled = true,
+            });
+        }
+
+        await ArrangeDb.SaveChangesAsync();
+
+        var result = await new AddThemesToItemsCommand.Handler(ActDb).Handle(
+            new AddThemesToItemsCommand
+            {
+                BaseIds = new[] { "a" },
+                ThemeIds = new[] { winter.Id },
+            },
+            CancellationToken.None);
+
+        Assert.That(result.Errors, Is.Null);
+
+        for (int rank = 0; rank <= 3; rank += 1)
+        {
+            var dbItem = await AssertDb.Items.FindAsync($"a_h{rank}");
+            await AssertDb.Entry(dbItem!).Collection(i => i.Themes).LoadAsync();
+            Assert.That(dbItem!.Themes.Select(t => t.Id), Is.EquivalentTo(new[] { winter.Id }));
+        }
+    }
+
+    [Test]
+    public async Task ShouldReturnErrorIfABaseIdNotFound()
     {
         Theme winter = new("winter");
         ArrangeDb.Themes.Add(winter);
@@ -97,7 +136,7 @@ public class AddThemesToItemsCommandTest : TestBase
         var result = await new AddThemesToItemsCommand.Handler(ActDb).Handle(
             new AddThemesToItemsCommand
             {
-                ItemIds = new[] { "1", "unknown" },
+                BaseIds = new[] { "a", "unknown" },
                 ThemeIds = new[] { winter.Id },
             },
             CancellationToken.None);
@@ -123,7 +162,7 @@ public class AddThemesToItemsCommandTest : TestBase
         var result = await new AddThemesToItemsCommand.Handler(ActDb).Handle(
             new AddThemesToItemsCommand
             {
-                ItemIds = new[] { "1" },
+                BaseIds = new[] { "a" },
                 ThemeIds = new[] { 999 },
             },
             CancellationToken.None);

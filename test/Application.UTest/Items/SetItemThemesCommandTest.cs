@@ -30,13 +30,50 @@ public class SetItemThemesCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         var result = await new SetItemThemesCommand.Handler(ActDb, Mapper).Handle(
-            new SetItemThemesCommand { ItemId = "1", ThemeIds = new[] { summer.Id, spring.Id } },
+            new SetItemThemesCommand { BaseId = "a", ThemeIds = new[] { summer.Id, spring.Id } },
             CancellationToken.None);
 
         Assert.That(result.Errors, Is.Null);
         var dbItem = await AssertDb.Items.FindAsync("1");
         await AssertDb.Entry(dbItem!).Collection(i => i.Themes).LoadAsync();
         Assert.That(dbItem!.Themes.Select(t => t.Id), Is.EquivalentTo(new[] { summer.Id, spring.Id }));
+    }
+
+    [Test]
+    public async Task ShouldReplaceThemesOnAllRankVariantsSharingTheBaseId()
+    {
+        Theme winter = new("winter");
+        Theme summer = new("summer");
+        ArrangeDb.Themes.AddRange(winter, summer);
+        for (int rank = 0; rank <= 3; rank += 1)
+        {
+            ArrangeDb.Items.Add(new()
+            {
+                Id = $"a_h{rank}",
+                Name = $"a_h{rank}",
+                BaseId = "a",
+                Rank = rank,
+                Price = 100,
+                Type = ItemType.BodyArmor,
+                Enabled = true,
+                Themes = new() { winter },
+            });
+        }
+
+        await ArrangeDb.SaveChangesAsync();
+
+        var result = await new SetItemThemesCommand.Handler(ActDb, Mapper).Handle(
+            new SetItemThemesCommand { BaseId = "a", ThemeIds = new[] { summer.Id } },
+            CancellationToken.None);
+
+        Assert.That(result.Errors, Is.Null);
+
+        for (int rank = 0; rank <= 3; rank += 1)
+        {
+            var dbItem = await AssertDb.Items.FindAsync($"a_h{rank}");
+            await AssertDb.Entry(dbItem!).Collection(i => i.Themes).LoadAsync();
+            Assert.That(dbItem!.Themes.Select(t => t.Id), Is.EquivalentTo(new[] { summer.Id }));
+        }
     }
 
     [Test]
@@ -59,7 +96,7 @@ public class SetItemThemesCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         var result = await new SetItemThemesCommand.Handler(ActDb, Mapper).Handle(
-            new SetItemThemesCommand { ItemId = "1", ThemeIds = Array.Empty<int>() },
+            new SetItemThemesCommand { BaseId = "a", ThemeIds = Array.Empty<int>() },
             CancellationToken.None);
 
         Assert.That(result.Errors, Is.Null);
@@ -72,7 +109,7 @@ public class SetItemThemesCommandTest : TestBase
     public async Task ShouldReturnErrorIfItemNotFound()
     {
         var result = await new SetItemThemesCommand.Handler(ActDb, Mapper).Handle(
-            new SetItemThemesCommand { ItemId = "unknown", ThemeIds = Array.Empty<int>() },
+            new SetItemThemesCommand { BaseId = "unknown", ThemeIds = Array.Empty<int>() },
             CancellationToken.None);
 
         Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.ItemNotFound));
@@ -95,7 +132,7 @@ public class SetItemThemesCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         var result = await new SetItemThemesCommand.Handler(ActDb, Mapper).Handle(
-            new SetItemThemesCommand { ItemId = "1", ThemeIds = new[] { 999 } },
+            new SetItemThemesCommand { BaseId = "a", ThemeIds = new[] { 999 } },
             CancellationToken.None);
 
         Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.ThemeNotFound));

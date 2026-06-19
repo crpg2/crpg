@@ -46,7 +46,7 @@ export type AddItemToClanArmoryCommand = {
 };
 
 export type AddThemesToItemsCommand = {
-    itemIds: Array<string>;
+    baseIds: Array<string>;
     themeIds: Array<number>;
 };
 
@@ -1087,7 +1087,7 @@ export type RemoveBattleMercenaryApplicationCommand = {
 };
 
 export type RemoveThemesFromItemsCommand = {
-    itemIds: Array<string>;
+    baseIds: Array<string>;
     themeIds: Array<number>;
 };
 
@@ -3226,40 +3226,40 @@ export type PostItemsByIdRefundResponses = {
     200: unknown;
 };
 
-export type PutItemsByIdThemesData = {
+export type PutItemsByBaseIdThemesData = {
     /**
      * The themes to assign.
      */
     body?: SetItemThemesCommand;
     path?: {
         /**
-         * Item id.
+         * Item BaseId.
          */
-        id?: string;
+        baseId?: string;
     };
     query?: never;
-    url: '/Items/{id}/themes';
+    url: '/Items/{baseId}/themes';
 };
 
-export type PutItemsByIdThemesErrors = {
+export type PutItemsByBaseIdThemesErrors = {
     /**
      * Item or theme not found.
      */
     404: unknown;
 };
 
-export type PutItemsByIdThemesResponses = {
+export type PutItemsByBaseIdThemesResponses = {
     /**
      * Ok.
      */
     200: ItemViewModelResult;
 };
 
-export type PutItemsByIdThemesResponse = PutItemsByIdThemesResponses[keyof PutItemsByIdThemesResponses];
+export type PutItemsByBaseIdThemesResponse = PutItemsByBaseIdThemesResponses[keyof PutItemsByBaseIdThemesResponses];
 
 export type DeleteItemsThemesData = {
     /**
-     * The items and themes to untag.
+     * The item BaseIds and themes to untag.
      */
     body?: RemoveThemesFromItemsCommand;
     path?: never;
@@ -3289,7 +3289,7 @@ export type DeleteItemsThemesResponse = DeleteItemsThemesResponses[keyof DeleteI
 
 export type PutItemsThemesData = {
     /**
-     * The items and themes to tag.
+     * The item BaseIds and themes to tag.
      */
     body?: AddThemesToItemsCommand;
     path?: never;

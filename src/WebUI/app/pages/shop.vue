@@ -250,13 +250,13 @@ const { execute: submitThemes, isLoading: savingThemes } = useAsyncCallback(asyn
   const chosen: ItemTheme[] = allThemes.value.filter(theme => themeIds.includes(theme.id))
 
   if (themeModalMode.value === 'set' && themeEditTarget.value) {
-    const updated = await setItemThemes(themeEditTarget.value.id, themeIds)
+    const updated = await setItemThemes(themeEditTarget.value.baseId, themeIds)
     themeEditTarget.value.themes = (updated.themes ?? []).map(theme => ({ id: theme.id, name: theme.name }))
     toast.add({ title: t('theme.tag.notify.set'), close: false, color: 'success' })
   }
   else if (themeModalMode.value === 'add') {
     const items = selectedItems.value
-    await addThemesToItems(items.map(item => item.id), themeIds)
+    await addThemesToItems(items.map(item => item.baseId), themeIds)
     for (const item of items) {
       for (const theme of chosen) {
         if (!item.themes.some(t => t.id === theme.id)) {
@@ -269,7 +269,7 @@ const { execute: submitThemes, isLoading: savingThemes } = useAsyncCallback(asyn
   }
   else if (themeModalMode.value === 'remove') {
     const items = selectedItems.value
-    await removeThemesFromItems(items.map(item => item.id), themeIds)
+    await removeThemesFromItems(items.map(item => item.baseId), themeIds)
     for (const item of items) {
       item.themes = item.themes.filter(theme => !themeIds.includes(theme.id))
     }

@@ -7,19 +7,20 @@ using Microsoft.EntityFrameworkCore;
 namespace Crpg.Application.Items.Commands;
 
 /// <summary>
-/// Adds a set of themes to several items at once. Existing themes on those items are preserved; themes already
-/// present are not duplicated.
+/// Adds a set of themes to several item families at once. The themes are applied to every rank variant sharing one
+/// of the given <see cref="Crpg.Domain.Entities.Items.Item.BaseId"/>s, so upgrades stay in sync. Existing themes on
+/// those items are preserved; themes already present are not duplicated.
 /// </summary>
 public record AddThemesToItemsCommand : IMediatorRequest
 {
-    public IList<string> ItemIds { get; init; } = new List<string>();
+    public IList<string> BaseIds { get; init; } = new List<string>();
     public IList<int> ThemeIds { get; init; } = new List<int>();
 
     public class Validator : AbstractValidator<AddThemesToItemsCommand>
     {
         public Validator()
         {
-            RuleFor(r => r.ItemIds).NotEmpty();
+            RuleFor(r => r.BaseIds).NotEmpty();
             RuleFor(r => r.ThemeIds).NotEmpty();
         }
     }
@@ -28,15 +29,17 @@ public record AddThemesToItemsCommand : IMediatorRequest
     {
         public async ValueTask<Result> Handle(AddThemesToItemsCommand req, CancellationToken cancellationToken)
         {
-            var itemIds = req.ItemIds.Distinct().ToList();
+            var baseIds = req.BaseIds.Distinct().ToList();
             var items = await db.Items
                 .Include(i => i.Themes)
-                .Where(i => itemIds.Contains(i.Id))
+                .Where(i => baseIds.Contains(i.BaseId))
                 .ToListAsync(cancellationToken);
-            if (items.Count != itemIds.Count)
+
+            var foundBaseIds = items.Select(i => i.BaseId).ToHashSet();
+            string? missingBaseId = baseIds.FirstOrDefault(id => !foundBaseIds.Contains(id));
+            if (missingBaseId != null)
             {
-                string missingItemId = itemIds.First(id => items.All(i => i.Id != id));
-                return new(CommonErrors.ItemNotFound(missingItemId));
+                return new(CommonErrors.ItemNotFound(missingBaseId));
             }
 
             var themeIds = req.ThemeIds.Distinct().ToList();
