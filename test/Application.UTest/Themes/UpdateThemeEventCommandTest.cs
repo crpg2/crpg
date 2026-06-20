@@ -211,7 +211,7 @@ public class UpdateThemeEventCommandTest : TestBase
     public async Task ShouldFailValidationWhenActiveFromIsNotUtc()
     {
         var validator = new UpdateThemeEventCommand.Validator();
-        var command = CreateDefaultUpdateThemeEventCommand(activeFromUtc: new DateTimeOffset(DateTime.Now));
+        var command = CreateDefaultUpdateThemeEventCommand(activeFromUtc: new DateTimeOffset(DateTime.Now.Ticks, TimeSpan.FromHours(2)));
 
         var result = validator.Validate(command);
 
@@ -223,7 +223,7 @@ public class UpdateThemeEventCommandTest : TestBase
     public async Task ShouldFailValidationWhenActiveUntilExistsButIsNotUtc()
     {
         var validator = new UpdateThemeEventCommand.Validator();
-        var command = CreateDefaultUpdateThemeEventCommand(activeUntilUtc: new DateTimeOffset(DateTime.Now));
+        var command = CreateDefaultUpdateThemeEventCommand(activeUntilUtc: new DateTimeOffset(DateTime.Now.Ticks, TimeSpan.FromHours(2)));
 
         var result = validator.Validate(command);
 
