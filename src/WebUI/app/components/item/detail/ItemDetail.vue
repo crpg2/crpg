@@ -8,6 +8,8 @@ import { ITEM_COMPARE_MODE } from '~/models/item'
 import { getItemAggregations } from '~/services/item-search-service'
 import { createItemIndex } from '~/services/item-search-service/indexator'
 
+import ItemThemePills from '../ItemThemePills.vue'
+
 const { compareResult, item } = defineProps<{
   item: Item
   compareResult?: CompareItemsResult
@@ -72,6 +74,12 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
     </template>
 
     <template #default>
+      <ItemThemePills
+        v-if="item.themes?.length"
+        :themes="item.themes"
+        :max="3"
+        class="mb-2"
+      />
       <div class="mb-4 flex gap-2">
         <UiTextView
           variant="h5"

@@ -35,7 +35,10 @@ import type { AggregationConfig } from './item-search-service/aggregations'
 import { cultureToIcon } from './culture-service'
 import { aggregationsConfig } from './item-search-service/aggregations'
 
-export const getItems = async (): Promise<Item[]> => (await _getItems({ })).data!
+// `fresh` bypasses the browser HTTP cache (the items list is served with a long max-age). Use sparingly: it
+// forfeits the cached fast path, so it's meant for admins who need to see their own item edits immediately.
+export const getItems = async (options?: { fresh?: boolean }): Promise<Item[]> =>
+  (await _getItems(options?.fresh ? { cache: 'reload' } : {})).data!
 
 export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 

@@ -1951,3 +1951,95 @@ marketplace:
     filters:
       self: Self
       idPlaceholder: User ID
+
+theme:
+  action:
+    edit: Edit
+    delete: Delete
+  title: Themes
+  create:
+    title: Create theme
+  edit:
+    title: Edit theme
+  delete:
+    title: Delete theme
+    confirm: >-
+      Deleting this theme will also delete all of its theme events and remove the
+      theme tag from every item that has it. This cannot be undone.
+  form:
+    field:
+      name:
+        label: Name
+  table:
+    column:
+      name: Name
+  notify:
+    saved: Theme saved
+    deleted: Theme deleted
+  tag:
+    column: Themes
+    edit:
+      title: 'Set themes: {item}'
+      tooltip: Set item themes
+    bulk:
+      add:
+        title: Add themes to {count} item | Add themes to {count} items
+        action: Add themes
+      remove:
+        title: Remove themes from {count} item | Remove themes from {count} items
+        action: Remove themes
+    field:
+      themes:
+        placeholder: Select themes
+    submit:
+      set: Save
+      add: Add
+      remove: Remove
+    empty: No themes available. Create themes first.
+    notify:
+      set: Item themes updated
+      added: Themes added to the selected items
+      removed: Themes removed from the selected items
+  event:
+    title: Theme events
+    create:
+      title: Create theme event
+    edit:
+      title: Edit theme event
+    delete:
+      title: Delete theme event?
+      confirm: This theme event will be permanently removed.
+    form:
+      field:
+        name:
+          label: Name
+        theme:
+          label: Theme
+        goldMultiplier:
+          label: Gold multiplier
+        expMultiplier:
+          label: Experience multiplier
+        activeFrom:
+          label: Active from
+        activeUntil:
+          label: Active until
+          help: Leave empty for an indefinitely active event.
+        requiredSlots:
+          label: Required equipment slots
+        requiredWeapons:
+          label: Required themed weapons
+          help: Number of weapon slots (0–5) that must hold an item matching the theme.
+        minSlots:
+          label: Minimum themed items
+          help: Minimum number of themed items the player must equip (any slot). Leave empty to default to the number of required slots.
+    table:
+      column:
+        name: Name
+        theme: Theme
+        goldMultiplier: Gold
+        expMultiplier: Exp
+        activeFrom: Active from
+        activeUntil: Active until
+    notify:
+      saved: Theme event saved
+      deleted: Theme event deleted
