@@ -475,6 +475,7 @@
   {
     /* Weekly Pincushions */
     "id": 35,
+    "type": "Weekly",
     "eventType": "Hit",
     "eventFiltersJson": [
       { "WeaponClass": "ThrowingAxe" },
