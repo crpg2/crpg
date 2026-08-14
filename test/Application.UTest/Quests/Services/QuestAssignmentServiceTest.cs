@@ -218,12 +218,14 @@ public class QuestAssignmentServiceTest : TestBase
 
         QuestAssignmentService service = new(ActDb, Constants);
 
+        var assignedDailyQuests = await ActDb.UserQuests.Where(uq => uq.UserId == user.Id).Select(uq => uq.QuestDefinitionId).ToHashSetAsync();
+
         UserQuest oldUserQuest = await ActDb.UserQuests
             .Include(uq => uq.User)
             .Include(uq => uq.QuestDefinition)
             .FirstAsync(uq => uq.Id == 100);
 
-        UserQuest newUserQuest = await service.ReplaceDailyUserQuestAsync(oldUserQuest);
+        UserQuest newUserQuest = await service.ReplaceDailyUserQuestAsync(oldUserQuest, assignedDailyQuests);
 
         bool oldQuestExists = await AssertDb.UserQuests.AnyAsync(uq => uq.Id == 100);
         UserQuest dbNewQuest = await AssertDb.UserQuests

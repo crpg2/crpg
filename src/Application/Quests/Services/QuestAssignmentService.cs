@@ -201,11 +201,10 @@ public class QuestAssignmentService(ICrpgDbContext db, Constants constants) : IQ
         await db.SaveChangesAsync(cancellationToken);
     }
 
-    public async Task<UserQuest> ReplaceDailyUserQuestAsync(UserQuest userQuest,
-        CancellationToken cancellationToken = default)
+    public async Task<UserQuest> ReplaceDailyUserQuestAsync(UserQuest userQuest, HashSet<int> assignedQuestDefinitionIds, CancellationToken cancellationToken = default)
     {
         var questDefinitions = await db.QuestDefinitions
-            .Where(qd => qd.IsActive && qd.Type == QuestType.Daily && userQuest.QuestDefinition!.Id != qd.Id)
+            .Where(qd => qd.IsActive && qd.Type == QuestType.Daily && !assignedQuestDefinitionIds.Contains(qd.Id))
             .ToListAsync(cancellationToken);
 
         var randomQuestDefinition = questDefinitions.Shuffle().FirstOrDefault() ?? throw new InvalidOperationException("No available daily quest definitions found.");

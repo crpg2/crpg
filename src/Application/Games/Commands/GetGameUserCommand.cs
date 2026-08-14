@@ -173,6 +173,7 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
 
                 // No need to save here since a character will be created and a save will be needed.
                 _db.ActivityLogs.Add(_activityLogService.CreateUserCreatedLog(user.Id));
+                await _questAssignmentService.AssignQuestsToNewUserAsync(user.Id, cancellationToken);
             }
             else
             {
@@ -208,7 +209,6 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
 
                 _db.ActivityLogs.Add(_activityLogService.CreateCharacterCreatedLog(user.Id, user.ActiveCharacter.Id));
                 await _db.SaveChangesAsync(cancellationToken);
-                await _questAssignmentService.AssignQuestsToNewUserAsync(user.Id, cancellationToken);
             }
             else
             {
