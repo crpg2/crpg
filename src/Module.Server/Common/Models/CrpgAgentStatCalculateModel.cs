@@ -413,7 +413,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     props.ReloadSpeed *= ImpactOfStrReqOnCrossbows(agent, 0.15f, primaryItem);
 
                     // slow on reload (kicks in a bit late tho)
-                    props.BipedalRangedReloadSpeedMultiplier = 0.1f;
+                    props.BipedalRangedReloadSpeedMultiplier = 0.190f;
                 }
 
                 // Bows

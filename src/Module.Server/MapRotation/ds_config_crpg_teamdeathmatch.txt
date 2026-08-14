@@ -27,3 +27,5 @@ start_game
 set_automated_battle_count -1
 enable_automated_battle_switching
 crpg_apply_harmony_patches
+GamePassword yoyo
+crpg_frozen_bots True
