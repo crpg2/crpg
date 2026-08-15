@@ -1,0 +1,13 @@
+﻿<Prefab>
+  <Window>
+    <!--
+      Instantiates CrpgHudNotificationWidget, which manages all notification
+      child widgets (RichTextWidget instances) entirely in C#.
+      No data bindings needed here — the widget handles everything internally.
+    -->
+    <CrpgHudNotificationWidget
+      WidthSizePolicy="StretchToParent"
+      HeightSizePolicy="StretchToParent"
+      DoNotAcceptEvents="True" />
+  </Window>
+</Prefab>

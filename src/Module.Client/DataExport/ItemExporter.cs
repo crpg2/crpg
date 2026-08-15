@@ -191,6 +191,11 @@ internal static class ItemExporter
         WeaponClass.TwoHandedPolearm,
     ];
 
+    public static CrpgItem MbToCrpgItemPub(ItemObject mbItem)
+    {
+        return MbToCrpgItem(mbItem);
+    }
+
     /// <summary>
     /// Triggers a refund for a given item category by mutating item IDs in the XML files. It increments the version
     /// suffix (e.g. "v1") of items causing the old item to no longer exist, forcing the game to refund it to players.
@@ -1199,9 +1204,27 @@ internal static class ItemExporter
     private static CrpgItemFlags MbToCrpgItemFlags(ItemFlags f) =>
         (CrpgItemFlags)Enum.Parse(typeof(CrpgItemFlags), f.ToString());
 
-    private static CrpgCulture MbToCrpgCulture(BasicCultureObject? culture) => culture == null
-        ? CrpgCulture.Neutral // Consider no culture as neutral.
-        : (CrpgCulture)Enum.Parse(typeof(CrpgCulture), culture.ToString());
+    private static CrpgCulture MbToCrpgCulture(BasicCultureObject? culture)
+    {
+        if (culture == null)
+        {
+            return CrpgCulture.Neutral;
+        }
+
+        // in game was messing up with localization with culture.ToString() (not ItemExporter)
+        if (Enum.TryParse(culture.ToString(), ignoreCase: true, out CrpgCulture result))
+        {
+            return result;
+        }
+
+        // culture.StringId not changed by localization, but some items (banners) didn't have culture.StringId set correctly if neutral?
+        if (Enum.TryParse(culture.StringId, ignoreCase: true, out result))
+        {
+            return result;
+        }
+
+        return CrpgCulture.Neutral;
+    }
 
     private static CrpgArmorMaterialType MbToCrpgArmorMaterialType(ArmorComponent.ArmorMaterialTypes t) => t switch
     {

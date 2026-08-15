@@ -6,6 +6,8 @@ using Crpg.Module.Rewards;
 #else
 using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
+using Crpg.Module.GUI.Inventory;
+using Crpg.Module.GUI.Notifications;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
@@ -61,11 +63,13 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
             ViewCreator.CreateMissionBoundaryCrossingView(),
             new AmmoQuiverChangeUiHandler(),
+            new CrpgCharacterEquipUiHandler(), // Character/Equip gui
             new MissionBoundaryWallView(),
             new MissionItemContourControllerView(),
             new MissionAgentContourControllerView(),
             MultiplayerViewCreator.CreateMissionFlagMarkerUIHandler(), // Draw flags but also player names when pressing ALT.
             new CrpgAgentHud(experienceTable),
+            new CrpgHudNotificationUiHandler(),
             // Draw flags but also player names when pressing ALT. (Native: CreateMissionFlagMarkerUIHandler)
             ViewCreatorManager.CreateMissionView<CrpgMarkerUiHandler>(isNetwork: false, null, gameModeClient),
         };
@@ -95,6 +99,8 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
                     new CrpgUserManagerClient(), // Needs to be loaded before the Client mission part.
                     new MultiplayerMissionAgentVisualSpawnComponent(), // expose method to spawn an agent
                     new AmmoQuiverChangeBehaviorClient(),
+                    new CrpgClanArmoryClient(), // Clan armory Sync with API/Client for GUI
+                    new CrpgCharacterLoadoutBehaviorClient(), // Inventory & Equipment Sync for GUI
 #endif
                     duelClient,
                     new MultiplayerTimerComponent(), // round timer
@@ -123,6 +129,8 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
                     new ServerMetricsBehavior(),
                     new NotAllPlayersReadyComponent(),
                     new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
+                    new CrpgClanArmoryServer(crpgClient), // Clan armory Sync with API/Client for GUI
+                    new CrpgCharacterLoadoutBehaviorServer(crpgClient, CrpgGameMode.CRPGDuel), // Inventory & Equipment Sync for GUI
 #else
                     new MultiplayerAchievementComponent(),
                     MissionMatchHistoryComponent.CreateIfConditionsAreMet(),

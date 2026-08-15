@@ -1,0 +1,36 @@
+<Prefab Name="CharacterInfoBuildEquipStatsItem">
+  <Constants>
+    <Constant Name="Label.Brush" Value="Crpg.CharacterEdit.Item.Text" />
+    <Constant Name="Value.Brush" Value="Crpg.CharacterEdit.Value.Text" />
+  </Constants>
+  <Window>   
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center"
+        MarginLeft="5" MarginRight="5">
+      <Children>
+        <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HeightSizePolicy="Fixed" WidthSizePolicy="CoverChildren"
+            HorizontalAlignment="Center" MarginTop="2" MarginBottom="2" MarginLeft="10" MarginRight="10" Spacing="5">
+          <Children>
+            <!-- Left-aligned label -->
+            <TextWidget Text="@LabelText" 
+                WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20"
+                HorizontalAlignment="Left"
+                Brush="!Label.Brush" />
+            <!-- Spacer -->
+            <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" />
+            <!-- Gold icon if any Right-Aligned-->
+            <BrushWidget Id="GoldIcon" Brush="Crpg.Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+              SuggestedWidth="15" SuggestedHeight="15" IsVisible="@ShouldShowGold" PositionYOffset="2" />
+            <!-- Value Right-Aligned-->
+            <TextWidget Text="@ValueText" IsDisabled="@TextDisabledState"
+                WidthSizePolicy="CoverChildren" SuggestedWidth="70" HeightSizePolicy="Fixed" SuggestedHeight="20" 
+                HorizontalAlignment="Right" 
+                Brush="!Value.Brush" />
+          </Children>
+        </ListPanel>
+        <!-- Tooltip -->
+        <BasicTooltipViewModel DataSource="{Tooltip}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+            Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" />     
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

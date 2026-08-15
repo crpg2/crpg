@@ -23,6 +23,7 @@ internal class CrpgUserManagerServer : MissionNetwork
     /// taste but as long as it works.
     /// </summary>
     private static readonly Dictionary<PlayerId, int> RewardMultiplierByPlayerId = new();
+    internal static event Action<NetworkCommunicator>? OnCrpgUserLoaded;
 
     private readonly ICrpgClient _crpgClient;
     private readonly CrpgConstants _constants;
@@ -242,6 +243,8 @@ internal class CrpgUserManagerServer : MissionNetwork
                 ? lastMissionMultiplier
                 : 1;
         crpgPeer.UserLoading = false;
+
+        OnCrpgUserLoaded?.Invoke(networkPeer);
     }
 
     private bool TryConvertPlatform(PlayerIdProvidedTypes provider, out Platform platform)
