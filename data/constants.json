@@ -14,7 +14,7 @@
   "minimumRetirementLevel": 31,
   "baseExperienceGainPerSecond": 18.765,
   "multipliedExperienceGainPerSecond": 18.765,
-  "baseGoldGainPerSecond": 0.66,
+  "baseGoldGainPerSecond": 0.85,
   "multipliedGoldGainPerSecond": 0.66,
   "itemRepairCostPerSecond": 0.00012554,
   "itemBreakChance": 0.5,
