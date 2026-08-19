@@ -232,6 +232,12 @@ export interface Item {
   armor: ItemArmorComponent | null
   mount: ItemMountComponent | null
   enabled: boolean
+  themes: ItemTheme[]
+}
+
+export interface ItemTheme {
+  id: number
+  name: string
 }
 
 export const WEAPON_USAGE = {
@@ -306,6 +312,8 @@ export interface ItemFlat<TMeta extends { [key: string]: unknown } = { [key: str
   damageType: DamageType | null | undefined
   //
   upgrades: ItemFlat[]
+
+  themes: ItemTheme[]
 }
 
 export type ItemDescriptorField = [string, string | number]

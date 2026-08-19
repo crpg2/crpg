@@ -23,6 +23,12 @@ public abstract class BaseController : ControllerBase
     protected const string AdminPolicy = "Admin";
     protected const string GamePolicy = "Game";
 
+
+    /// <summary>
+    /// Cache tag used by more than one controller for caching the same data.
+    /// </summary>
+    protected const string ActiveThemeEventsCacheTag = "active-theme-events";
+
     protected IMediator Mediator => field ??= HttpContext.RequestServices.GetRequiredService<IMediator>();
     protected ICurrentUserService CurrentUser => field ??= HttpContext.RequestServices.GetRequiredService<ICurrentUserService>();
 

@@ -45,6 +45,11 @@ export type AddItemToClanArmoryCommand = {
     userItemId: number;
 };
 
+export type AddThemesToItemsCommand = {
+    baseIds: Array<string>;
+    themeIds: Array<number>;
+};
+
 export type ApplyAsMercenaryToBattleCommand = {
     characterId: number;
     side: BattleSide;
@@ -468,7 +473,7 @@ export type CreateClanCommand = {
 export type CreateGameEventsCommand = {
     instance: string;
     gameMode: GameMode;
-    events: Array<GameEventViewModel>;
+    events: Array<GameEventCreate>;
 };
 
 export type CreateMarketplaceListingCommand = {
@@ -483,6 +488,21 @@ export type CreatePartyCommand = {
 export type CreateTerrainCommand = {
     type: TerrainType;
     boundary: GeoJsonPolygon;
+};
+
+export type CreateThemeCommand = {
+    name: string;
+};
+
+export type CreateThemeEventCommand = {
+    name: string;
+    goldMultiplier: number;
+    expMultiplier: number;
+    activeFromUtc: Date;
+    activeUntilUtc?: Date | null;
+    requiredEquipmentSlotsMatchingTheme: Array<ThemeEquipmentSlot>;
+    minimumThemedItemsEquipped?: number | null;
+    themeId: number;
 };
 
 export type CreateUserItemPresetCommand = {
@@ -533,7 +553,7 @@ export type Error = {
     stackTrace: string | null;
 };
 
-export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'InvalidItemUpgradeRank' | 'UserItemInMarketplace' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartyNotEnoughItems' | 'SettlementNotEnoughItems' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementNotEnoughTroops' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToCampaign' | 'UserItemPresetBadSlots' | 'UserItemPresetNotFound' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound' | 'MarketplaceListingNotFound' | 'MarketplaceListingNotAllowed' | 'MarketplaceListingExpired' | 'MarketplaceListingLimitReached' | 'MarketplaceListingInvalidAsset' | 'MarketplaceListingSelfAccept' | 'UserQuestNotFound' | 'QuestRewardAlreadyClaimed' | 'QuestExpired' | 'QuestDefinitionNotFound' | 'QuestNotCompleted';
+export type ErrorCode = 'ApplicationClosed' | 'ApplicationNotFound' | 'ApplicationAlreadyExist' | 'BattleMercenaryAlreadyExist' | 'BattleInvalidPhase' | 'BattleNotFound' | 'BattleTooFar' | 'BattleParticipantSlotsExceeded' | 'CharacterForTournament' | 'CharacterForTournamentNotFound' | 'CharacterGenerationRequirement' | 'CharacterLevelRequirementNotMet' | 'CharacterNotFound' | 'CharacterRecentlyCreated' | 'CharacteristicDecreased' | 'ClanInvitationClosed' | 'ClanInvitationNotFound' | 'ClanMemberRoleNotMet' | 'ClanNameAlreadyUsed' | 'ClanNeedLeader' | 'ClanNotFound' | 'ClanLeaderFound' | 'ClanTagAlreadyUsed' | 'Conflict' | 'FighterNotACommander' | 'FighterNotFound' | 'BattleParticipantNotFound' | 'InternalError' | 'InvalidField' | 'ItemAlreadyOwned' | 'ItemBadSlot' | 'ItemBroken' | 'ItemDisabled' | 'ItemNotBuyable' | 'ItemNotFound' | 'ItemNotOwned' | 'ItemNotReforgeable' | 'ItemNotSellable' | 'ItemNotUpgradable' | 'InvalidItemUpgradeRank' | 'UserItemInMarketplace' | 'NotEnoughAttributePoints' | 'NotEnoughGold' | 'NotEnoughHeirloomPoints' | 'NotEnoughSkillPoints' | 'NotEnoughWeaponProficiencyPoints' | 'PartyNotEnoughItems' | 'SettlementNotEnoughItems' | 'PartiesNotOnTheSameSide' | 'PendingBattleFighterApplicationNotExist' | 'PartyFighter' | 'PartyInBattle' | 'PartyNotAFighter' | 'PartyNotEnoughTroops' | 'PartyNotFound' | 'PartyNotInASettlement' | 'PartyNotInSight' | 'PartyNotSettlementOwner' | 'TransferOfferNotFound' | 'TransferOfferNotAllowed' | 'TransferOfferInvalidStatus' | 'TransferOfferMissingItems' | 'TransferOfferInvalidAmount' | 'TransferOfferInvalidItem' | 'SettlementNotFound' | 'SettlementNotEnoughTroops' | 'SettlementTooFar' | 'SkillRequirementNotMet' | 'UserAlreadyInAClan' | 'UserAlreadyInTheClan' | 'UserAlreadyRegisteredToCampaign' | 'UserItemPresetBadSlots' | 'UserItemPresetNotFound' | 'UserItemIsNotBroken' | 'UserItemMaxRankReached' | 'UserItemNotFound' | 'UserNotAClanMember' | 'UserNotFound' | 'UserNotificationNotFound' | 'UserNotInAClan' | 'UserRoleNotMet' | 'PersonalItemAlreadyExist' | 'SettingNotFound' | 'TerrainNotFound' | 'MarketplaceListingNotFound' | 'MarketplaceListingNotAllowed' | 'MarketplaceListingExpired' | 'MarketplaceListingLimitReached' | 'MarketplaceListingInvalidAsset' | 'MarketplaceListingSelfAccept' | 'UserQuestNotFound' | 'QuestRewardAlreadyClaimed' | 'QuestExpired' | 'QuestDefinitionNotFound' | 'QuestNotCompleted' | 'ThemeNotFound' | 'ThemeEventNotFound';
 
 export type ErrorSource = {
     pointer?: string | null;
@@ -565,11 +585,7 @@ export type GameEquippedItemViewModel = {
     userItem: GameUserItemViewModel;
 };
 
-export type GameEventField = 'WeaponClass' | 'ItemId' | 'HitType' | 'Damage' | 'TargetType' | 'BodyPart' | 'DamageType';
-
-export type GameEventType = 'Hit' | 'Kill' | 'Block';
-
-export type GameEventViewModel = {
+export type GameEventCreate = {
     userId?: number | null;
     type: GameEventType;
     eventData?: {
@@ -582,6 +598,10 @@ export type GameEventViewModel = {
         DamageType?: string;
     } | null;
 };
+
+export type GameEventField = 'WeaponClass' | 'ItemId' | 'HitType' | 'Damage' | 'TargetType' | 'BodyPart' | 'DamageType';
+
+export type GameEventType = 'Hit' | 'Kill' | 'Block';
 
 export type GameMode = 'CRPGBattle' | 'CRPGConquest' | 'CRPGDTV' | 'CRPGDuel' | 'CRPGSiege' | 'CRPGTeamDeathmatch' | 'CRPGSkirmish' | 'CRPGUnknownGameMode' | 'CRPGCaptain';
 
@@ -818,11 +838,17 @@ export type ItemViewModel = {
     mount: ItemMountComponentViewModel | null;
     weapons: Array<ItemWeaponComponentViewModel>;
     enabled: boolean;
+    themes: Array<ThemeViewModel>;
 };
 
 export type ItemViewModelIListResult = {
     readonly errors: Array<Error> | null;
     data: Array<ItemViewModel> | null;
+};
+
+export type ItemViewModelResult = {
+    readonly errors: Array<Error> | null;
+    data: ItemViewModel | null;
 };
 
 export type ItemWeaponComponentViewModel = {
@@ -1060,6 +1086,11 @@ export type RemoveBattleMercenaryApplicationCommand = {
     side: BattleSide;
 };
 
+export type RemoveThemesFromItemsCommand = {
+    baseIds: Array<string>;
+    themeIds: Array<number>;
+};
+
 export type RespondClanInvitationCommand = {
     accept: boolean;
 };
@@ -1133,6 +1164,10 @@ export type RewardUserCommand = {
 
 export type Role = 'User' | 'Moderator' | 'GameAdmin' | 'Admin';
 
+export type SetItemThemesCommand = {
+    themeIds: Array<number>;
+};
+
 export type SettingsViewModel = {
     discord: string;
     steam: string;
@@ -1187,6 +1222,46 @@ export type TerrainViewModelIListResult = {
 export type TerrainViewModelResult = {
     readonly errors: Array<Error> | null;
     data: TerrainViewModel | null;
+};
+
+export type ThemeEquipmentSlot = 'Head' | 'Shoulder' | 'Body' | 'Hand' | 'Leg' | 'MountHarness' | 'Mount' | 'Weapon';
+
+export type ThemeEventViewModel = {
+    id: number;
+    name: string;
+    goldMultiplier: number;
+    expMultiplier: number;
+    activeFromUtc: Date;
+    activeUntilUtc?: Date | null;
+    requiredEquipmentSlotsMatchingTheme: Array<ThemeEquipmentSlot>;
+    minimumThemedItemsEquipped: number;
+    eventTheme: ThemeViewModel;
+    eligibleItemIds: Array<string>;
+};
+
+export type ThemeEventViewModelIListResult = {
+    readonly errors: Array<Error> | null;
+    data: Array<ThemeEventViewModel> | null;
+};
+
+export type ThemeEventViewModelResult = {
+    readonly errors: Array<Error> | null;
+    data: ThemeEventViewModel | null;
+};
+
+export type ThemeViewModel = {
+    id: number;
+    name: string;
+};
+
+export type ThemeViewModelIListResult = {
+    readonly errors: Array<Error> | null;
+    data: Array<ThemeViewModel> | null;
+};
+
+export type ThemeViewModelResult = {
+    readonly errors: Array<Error> | null;
+    data: ThemeViewModel | null;
 };
 
 export type UpdateBattleSideBriefingCommand = {
@@ -1252,6 +1327,23 @@ export type UpdateSettlementItemsCommand = {
 
 export type UpdateTerrainCommand = {
     boundary: GeoJsonPolygon;
+};
+
+export type UpdateThemeCommand = {
+    id: number;
+    name: string;
+};
+
+export type UpdateThemeEventCommand = {
+    id: number;
+    name: string;
+    goldMultiplier: number;
+    expMultiplier: number;
+    activeFromUtc: Date;
+    activeUntilUtc?: Date | null;
+    requiredEquipmentSlotsMatchingTheme: Array<ThemeEquipmentSlot>;
+    minimumThemedItemsEquipped?: number | null;
+    themeId: number;
 };
 
 export type UpdateUserCommand = {
@@ -1676,6 +1768,10 @@ export type ItemViewModelIListResultWritable = {
     data: Array<ItemViewModel> | null;
 };
 
+export type ItemViewModelResultWritable = {
+    data: ItemViewModel | null;
+};
+
 export type MarketplaceListingViewModelResultWritable = {
     data: MarketplaceListingViewModel | null;
 };
@@ -1811,6 +1907,22 @@ export type TerrainViewModelIListResultWritable = {
 
 export type TerrainViewModelResultWritable = {
     data: TerrainViewModelWritable | null;
+};
+
+export type ThemeEventViewModelIListResultWritable = {
+    data: Array<ThemeEventViewModel> | null;
+};
+
+export type ThemeEventViewModelResultWritable = {
+    data: ThemeEventViewModel | null;
+};
+
+export type ThemeViewModelIListResultWritable = {
+    data: Array<ThemeViewModel> | null;
+};
+
+export type ThemeViewModelResultWritable = {
+    data: ThemeViewModel | null;
 };
 
 export type UpdateGameUsersResultResultWritable = {
@@ -3000,6 +3112,22 @@ export type PostGamesRestrictionsResponses = {
 
 export type PostGamesRestrictionsResponse = PostGamesRestrictionsResponses[keyof PostGamesRestrictionsResponses];
 
+export type GetGamesThemeEventsActiveData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/Games/theme-events/active';
+};
+
+export type GetGamesThemeEventsActiveResponses = {
+    /**
+     * Ok.
+     */
+    200: ThemeEventViewModelIListResult;
+};
+
+export type GetGamesThemeEventsActiveResponse = GetGamesThemeEventsActiveResponses[keyof GetGamesThemeEventsActiveResponses];
+
 export type GetItemsData = {
     body?: never;
     path?: never;
@@ -3097,6 +3225,97 @@ export type PostItemsByIdRefundResponses = {
      */
     200: unknown;
 };
+
+export type PutItemsByBaseIdThemesData = {
+    /**
+     * The themes to assign.
+     */
+    body?: SetItemThemesCommand;
+    path?: {
+        /**
+         * Item BaseId.
+         */
+        baseId?: string;
+    };
+    query?: never;
+    url: '/Items/{baseId}/themes';
+};
+
+export type PutItemsByBaseIdThemesErrors = {
+    /**
+     * Item or theme not found.
+     */
+    404: unknown;
+};
+
+export type PutItemsByBaseIdThemesResponses = {
+    /**
+     * Ok.
+     */
+    200: ItemViewModelResult;
+};
+
+export type PutItemsByBaseIdThemesResponse = PutItemsByBaseIdThemesResponses[keyof PutItemsByBaseIdThemesResponses];
+
+export type DeleteItemsThemesData = {
+    /**
+     * The item BaseIds and themes to untag.
+     */
+    body?: RemoveThemesFromItemsCommand;
+    path?: never;
+    query?: never;
+    url: '/Items/themes';
+};
+
+export type DeleteItemsThemesErrors = {
+    /**
+     * An item or theme was not found.
+     */
+    404: unknown;
+};
+
+export type DeleteItemsThemesResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+    /**
+     * Updated.
+     */
+    204: void;
+};
+
+export type DeleteItemsThemesResponse = DeleteItemsThemesResponses[keyof DeleteItemsThemesResponses];
+
+export type PutItemsThemesData = {
+    /**
+     * The item BaseIds and themes to tag.
+     */
+    body?: AddThemesToItemsCommand;
+    path?: never;
+    query?: never;
+    url: '/Items/themes';
+};
+
+export type PutItemsThemesErrors = {
+    /**
+     * An item or theme was not found.
+     */
+    404: unknown;
+};
+
+export type PutItemsThemesResponses = {
+    /**
+     * OK
+     */
+    200: unknown;
+    /**
+     * Updated.
+     */
+    204: void;
+};
+
+export type PutItemsThemesResponse = PutItemsThemesResponses[keyof PutItemsThemesResponses];
 
 export type GetLeaderboardLeaderboardData = {
     body?: never;
@@ -3660,6 +3879,150 @@ export type PutTerrainsByIdResponses = {
 };
 
 export type PutTerrainsByIdResponse = PutTerrainsByIdResponses[keyof PutTerrainsByIdResponses];
+
+export type GetThemesData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/Themes';
+};
+
+export type GetThemesResponses = {
+    /**
+     * Ok.
+     */
+    200: ThemeViewModelIListResult;
+};
+
+export type GetThemesResponse = GetThemesResponses[keyof GetThemesResponses];
+
+export type PostThemesData = {
+    body?: CreateThemeCommand;
+    path?: never;
+    query?: never;
+    url: '/Themes';
+};
+
+export type PostThemesResponses = {
+    /**
+     * Ok.
+     */
+    200: ThemeViewModelResult;
+};
+
+export type PostThemesResponse = PostThemesResponses[keyof PostThemesResponses];
+
+export type PutThemesData = {
+    body?: UpdateThemeCommand;
+    path?: never;
+    query?: never;
+    url: '/Themes';
+};
+
+export type PutThemesResponses = {
+    /**
+     * Ok.
+     */
+    200: ThemeViewModelResult;
+};
+
+export type PutThemesResponse = PutThemesResponses[keyof PutThemesResponses];
+
+export type DeleteThemesByIdData = {
+    body?: never;
+    path: {
+        id: number;
+    };
+    query?: never;
+    url: '/Themes/{id}';
+};
+
+export type DeleteThemesByIdResponses = {
+    /**
+     * Ok.
+     */
+    200: unknown;
+};
+
+export type GetThemesEventsData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/Themes/events';
+};
+
+export type GetThemesEventsResponses = {
+    /**
+     * Ok.
+     */
+    200: ThemeEventViewModelIListResult;
+};
+
+export type GetThemesEventsResponse = GetThemesEventsResponses[keyof GetThemesEventsResponses];
+
+export type PostThemesEventsData = {
+    body?: CreateThemeEventCommand;
+    path?: never;
+    query?: never;
+    url: '/Themes/events';
+};
+
+export type PostThemesEventsResponses = {
+    /**
+     * Ok.
+     */
+    200: ThemeEventViewModelResult;
+};
+
+export type PostThemesEventsResponse = PostThemesEventsResponses[keyof PostThemesEventsResponses];
+
+export type PutThemesEventsData = {
+    body?: UpdateThemeEventCommand;
+    path?: never;
+    query?: never;
+    url: '/Themes/events';
+};
+
+export type PutThemesEventsResponses = {
+    /**
+     * Ok.
+     */
+    200: ThemeEventViewModelResult;
+};
+
+export type PutThemesEventsResponse = PutThemesEventsResponses[keyof PutThemesEventsResponses];
+
+export type GetThemesEventsActiveData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/Themes/events/active';
+};
+
+export type GetThemesEventsActiveResponses = {
+    /**
+     * Ok.
+     */
+    200: ThemeEventViewModelIListResult;
+};
+
+export type GetThemesEventsActiveResponse = GetThemesEventsActiveResponses[keyof GetThemesEventsActiveResponses];
+
+export type DeleteThemesEventsByIdData = {
+    body?: never;
+    path: {
+        id: number;
+    };
+    query?: never;
+    url: '/Themes/events/{id}';
+};
+
+export type DeleteThemesEventsByIdResponses = {
+    /**
+     * Ok.
+     */
+    200: unknown;
+};
 
 export type GetUsersSearchData = {
     body?: never;

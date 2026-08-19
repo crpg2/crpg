@@ -67,6 +67,20 @@ const isNew = computed(() => !isGraceTimeExpired(getItemGraceTimeEnd(userItem)))
         label="new"
         size="sm"
       />
+      <UTooltip v-if="userItem.item.themes?.length">
+        <UBadge
+          icon="crpg:theme"
+          color="neutral"
+          variant="soft"
+          size="sm"
+          class="cursor-default"
+        />
+        <template #content>
+          <div class="flex flex-col gap-1 p-1">
+            <span v-for="theme in userItem.item.themes" :key="theme.id">{{ theme.name }}</span>
+          </div>
+        </template>
+      </UTooltip>
     </template>
 
     <template #badges-bottom-right>

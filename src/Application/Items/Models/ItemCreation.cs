@@ -1,3 +1,4 @@
+using Crpg.Application.Themes.Models;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Items;
 
@@ -20,4 +21,5 @@ public record ItemCreation
     public ItemArmorComponentViewModel? Armor { get; init; }
     public ItemMountComponentViewModel? Mount { get; init; }
     public IList<ItemWeaponComponentViewModel> Weapons { get; init; } = Array.Empty<ItemWeaponComponentViewModel>();
+    public IList<ThemeViewModel> Themes { get; init; } = Array.Empty<ThemeViewModel>();
 }

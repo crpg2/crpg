@@ -4,7 +4,6 @@ import type { SelectItem } from '@nuxt/ui'
 import { useModerationUser } from '~/composables/moderator/use-moderation-user'
 import { useUser } from '~/composables/user/use-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { ROLE } from '~/models/role'
 import {
   getAutoRetireCount,
   getCharactersByUserId,
@@ -15,6 +14,7 @@ import {
 import { getItemImage } from '~/services/item-service'
 import { rewardCharacter, rewardUser } from '~/services/moderation-service'
 import { updateUserNote } from '~/services/restriction-service'
+import { isAdmin } from '~/services/role-service'
 
 const emit = defineEmits<{
   update: []
@@ -51,7 +51,7 @@ const { execute: onUpdateNote, isLoading: updatingNote } = useAsyncCallback(asyn
 //
 
 // TODO: Reward - refactoring, spec
-const canReward = computed(() => user.value!.role === ROLE.Admin) // TODO: to service
+const canReward = computed(() => isAdmin(user.value))
 
 interface RewardForm {
   gold: number

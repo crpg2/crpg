@@ -304,6 +304,7 @@ export const SimpleShortSpear: Item = {
 }
 
 export const Pike: Item = {
+  themes: [],
   armor: null,
   baseId: 'crpg_vlandia_pike_1_t5',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
@@ -474,6 +475,7 @@ export const Shield: Item = {
 }
 
 export const Bow: Item = {
+  themes: [],
   armor: null,
   baseId: 'crpg_noble_bow',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
@@ -622,6 +624,7 @@ export const ThrowingAxe: Item = {
 }
 
 export const MountHarness: Item = {
+  themes: [],
   armor: {
     armArmor: 0,
     bodyArmor: 6,
@@ -648,6 +651,7 @@ export const MountHarness: Item = {
 }
 
 export const Mount: Item = {
+  themes: [],
   armor: null,
   baseId: 'crpg_mount_balanced_5',
   createdAt: new Date('2023-07-13T21:43:44.0741909Z'),
@@ -674,6 +678,7 @@ export const Mount: Item = {
 }
 
 export const Helmet: Item = {
+  themes: [],
   armor: {
     armArmor: 0,
     bodyArmor: 0,

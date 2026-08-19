@@ -39,6 +39,7 @@ internal class CrpgRewardClient : MissionNetwork
         registerer.Register<CrpgRewardUser>(HandleRewardUser);
         registerer.Register<CrpgRewardError>(HandleRewardError);
         registerer.Register<CrpgRewardHappyHour>(HandleRewardHappyHour);
+        registerer.Register<CrpgRewardThemeEvent>(HandleRewardThemeEvent);
     }
 
     private void HandleRewardUser(CrpgRewardUser message)
@@ -141,5 +142,13 @@ internal class CrpgRewardClient : MissionNetwork
             ? new TextObject("{=TWpiAeFe}It's happy hours time! Experience gain is increased by 50%.")
             : new TextObject("{=KoqNpPLa}Happy hours ended!");
         InformationManager.AddSystemNotification(textObject.ToString());
+    }
+
+    private void HandleRewardThemeEvent(CrpgRewardThemeEvent message)
+    {
+        var textObject = new TextObject("{=wRAuUAkB}You've participated in a theme event and have been given extra rewards!");
+        InformationManager.DisplayMessage(
+                new InformationMessage(textObject.ToString(),
+                new Color(46, 204, 113)));
     }
 }
