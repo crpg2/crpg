@@ -8,6 +8,7 @@ using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.Conquest;
+using Crpg.Module.GUI.VoiceCommands;
 using Crpg.Module.GUI.Spectator;
 using Crpg.Module.GUI.Warmup;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
@@ -55,7 +56,6 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMultiplayerFactionBanVoteUIHandler(),
             ViewCreator.CreateMissionAgentStatusUIHandler(mission),
             ViewCreator.CreateMissionMainAgentEquipmentController(mission), // Pick/drop items.
-            ViewCreator.CreateMissionMainAgentCheerBarkControllerView(mission),
             ViewCreatorManager.CreateMissionView<CrpgMissionMultiplayerEscapeMenu>(isNetwork: false, null, "cRPGConquest", gameModeClient),
             new CrpgAgentLabelView(),
             MultiplayerViewCreator.CreateMultiplayerTeamSelectUIHandler(),
@@ -71,6 +71,7 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
             new WarmupHudUiHandler(),
             new ConquestHudUiHandler(),
             new AmmoQuiverChangeUiHandler(),
+            new CrpgVoiceCommandsUiHandler(),
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),

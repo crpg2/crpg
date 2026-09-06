@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{22b04b60-5a0c-093b-2ec4-2a42473fa0ed}">
+		<property name="name">
+			<value>Combat Spatializer</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{1dd68499-5528-4bf8-af14-2bb54ba379e2}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{1dd68499-5528-4bf8-af14-2bb54ba379e2}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0.75</value>
+		</property>
+		<property name="maximumDistance">
+			<value>450</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="minimumExtent">
+			<value>15</value>
+		</property>
+		<property name="LFEUpmixEnabled">
+			<value>true</value>
+		</property>
+		<relationship name="automators">
+			<destination>{38d87212-665f-452d-81e7-94776b912dc1}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{38d87212-665f-452d-81e7-94776b912dc1}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>userLFELevel</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{262dd250-6812-4a14-abdc-73b74d2853e4}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{262dd250-6812-4a14-abdc-73b74d2853e4}">
+		<relationship name="parameter">
+			<destination>{7f046840-4c79-4386-9345-b81eae9d52e2}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{5dcc645c-c2aa-44cf-8788-ff3aed6ab4c8}</destination>
+			<destination>{f28c9530-7a2d-47cc-ac5c-ed8ff18d1658}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{5dcc645c-c2aa-44cf-8788-ff3aed6ab4c8}">
+		<property name="position">
+			<value>49.630844954881049</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{f28c9530-7a2d-47cc-ac5c-ed8ff18d1658}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>3.81469727e-06</value>
+		</property>
+	</object>
+</objects>

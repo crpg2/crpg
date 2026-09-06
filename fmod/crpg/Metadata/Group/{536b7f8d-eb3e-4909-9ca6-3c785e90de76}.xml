@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{536b7f8d-eb3e-4909-9ca6-3c785e90de76}">
+		<property name="name">
+			<value>gallops</value>
+		</property>
+		<property name="instanceStealing">
+			<value>3</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{521ec07d-ea42-4d47-94c1-8a3e85f7f27c}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{ece3a262-bb4a-4589-b24b-97821431d952}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{76aa61b7-6605-45da-a3c5-22bf277456d5}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{521ec07d-ea42-4d47-94c1-8a3e85f7f27c}">
+		<relationship name="effects">
+			<destination>{17f7190e-a776-47fa-8613-271b7079e823}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{ece3a262-bb4a-4589-b24b-97821431d952}" />
+	<object class="MixerBusFader" id="{17f7190e-a776-47fa-8613-271b7079e823}" />
+</objects>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{c5701deb-9b25-4f62-aff7-6198ab3fa382}">
+		<property name="name">
+			<value>bass</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{a0e4afee-92ac-4599-b8bf-c9907fe62c4a}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{bf478c9e-5768-455c-968d-44cfd87473a0}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{ccaba7c3-7f9f-4ed9-8b2c-75e20a50207e}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{a0e4afee-92ac-4599-b8bf-c9907fe62c4a}">
+		<relationship name="effects">
+			<destination>{8756af78-7ed5-4d14-af0d-ae74374099cf}</destination>
+			<destination>{3f5b7b40-3a61-46a8-a315-52ec1cf7d7aa}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{bf478c9e-5768-455c-968d-44cfd87473a0}" />
+	<object class="DelayEffect" id="{8756af78-7ed5-4d14-af0d-ae74374099cf}">
+		<property name="delay">
+			<value>265</value>
+		</property>
+		<property name="feedback">
+			<value>19</value>
+		</property>
+		<property name="level">
+			<value>-24</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{3f5b7b40-3a61-46a8-a315-52ec1cf7d7aa}" />
+</objects>

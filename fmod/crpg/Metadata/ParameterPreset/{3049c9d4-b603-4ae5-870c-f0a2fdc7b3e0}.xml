@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{3049c9d4-b603-4ae5-870c-f0a2fdc7b3e0}">
+		<property name="name">
+			<value>isUnderwaterFloat</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{906198d3-e09c-4b73-aaa4-e796b2d65072}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{906198d3-e09c-4b73-aaa4-e796b2d65072}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>4</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

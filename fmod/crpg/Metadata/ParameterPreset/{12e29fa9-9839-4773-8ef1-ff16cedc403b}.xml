@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{12e29fa9-9839-4773-8ef1-ff16cedc403b}">
+		<property name="name">
+			<value>ForceContinuous</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8fc62a23-a07a-427e-95b6-784ed4418217}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8fc62a23-a07a-427e-95b6-784ed4418217}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.5</value>
+		</property>
+	</object>
+</objects>

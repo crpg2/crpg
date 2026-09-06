@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{2598c261-ce3e-4390-badc-abad1ebdaf40}">
+		<property name="name">
+			<value>RudderStress</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{774430e0-e36e-463a-a9b1-42029f705f34}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{774430e0-e36e-463a-a9b1-42029f705f34}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

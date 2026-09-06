@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{62afdc60-4dc4-4ac3-a1ba-9d92ff27f49a}">
+		<property name="name">
+			<value>Distance Tavern Music</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{221ed121-6845-42ca-b9c3-92e208015776}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{221ed121-6845-42ca-b9c3-92e208015776}">
+		<property name="parameterType">
+			<value>3</value>
+		</property>
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

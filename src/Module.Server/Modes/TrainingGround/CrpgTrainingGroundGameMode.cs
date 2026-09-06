@@ -15,6 +15,7 @@ using TaleWorlds.MountAndBlade.Source.Missions;
 using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.TrainingGround;
+using Crpg.Module.GUI.VoiceCommands;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
@@ -52,13 +53,13 @@ internal class CrpgTrainingGroundGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMissionKillNotificationUIHandler(),
             ViewCreator.CreateMissionAgentStatusUIHandler(mission),
             ViewCreator.CreateMissionMainAgentEquipmentController(mission),
-            ViewCreator.CreateMissionMainAgentCheerBarkControllerView(mission),
             crpgEscapeMenu,
             MultiplayerViewCreator.CreateMultiplayerEndOfBattleUIHandler(),
             MultiplayerViewCreator.CreateMissionScoreBoardUIHandler(mission, true),
             MultiplayerViewCreator.CreateLobbyEquipmentUIHandler(),
             new CrpgTrainingGroundUiHandler(),
             new AmmoQuiverChangeUiHandler(), // Ammo Quiver change feature
+            new CrpgVoiceCommandsUiHandler(),
             MultiplayerViewCreator.CreatePollProgressUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),

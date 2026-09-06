@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerReturn" id="{2aebf491-01b6-4b92-a4af-e22ffb56b07e}">
+		<property name="volume">
+			<value>-6</value>
+		</property>
+		<property name="name">
+			<value>Gallops</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{59ba1849-0506-4ded-bbc5-819e6d759019}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{39561b3b-3100-42c1-afa8-bd690cb0b99a}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{a6e77f16-3040-4a88-863c-5493ae8cfab5}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{59ba1849-0506-4ded-bbc5-819e6d759019}">
+		<relationship name="effects">
+			<destination>{fc31dbbd-561c-44d0-9965-3f6e9b96bc38}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{39561b3b-3100-42c1-afa8-bd690cb0b99a}" />
+	<object class="MixerBusFader" id="{fc31dbbd-561c-44d0-9965-3f6e9b96bc38}" />
+</objects>

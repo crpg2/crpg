@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{178bbdbb-b16b-46fb-a69b-ffee4fb1a8a8}">
+		<property name="name">
+			<value>VibrationSend</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{616f0c05-c5a0-47bd-a237-80c57425a51f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{616f0c05-c5a0-47bd-a237-80c57425a51f}">
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+	</object>
+</objects>

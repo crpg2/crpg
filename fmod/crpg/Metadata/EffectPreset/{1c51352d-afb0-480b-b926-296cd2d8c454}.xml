@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{1c51352d-afb0-480b-b926-296cd2d8c454}">
+		<property name="name">
+			<value>Rainfall Gain</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{39897fea-7e0f-4716-a142-6fdfa1463289}</destination>
+		</relationship>
+	</object>
+	<object class="GainEffect" id="{39897fea-7e0f-4716-a142-6fdfa1463289}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
+		<relationship name="automators">
+			<destination>{cd4cc6ba-f682-4963-b5f6-41400bff4944}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{cd4cc6ba-f682-4963-b5f6-41400bff4944}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>gain</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{403f80ba-db2e-4dc6-b8ac-a712fb940722}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{403f80ba-db2e-4dc6-b8ac-a712fb940722}">
+		<relationship name="parameter">
+			<destination>{15a44711-6de4-4575-adbf-1c3aba604c6e}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{260c56e2-a92e-47d4-bdca-c2772f7fb1ce}</destination>
+			<destination>{c76d736f-37e4-453f-95d1-77c32a00835e}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{260c56e2-a92e-47d4-bdca-c2772f7fb1ce}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.324850112</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{c76d736f-37e4-453f-95d1-77c32a00835e}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+	<parameter
+		guid="{7c1ffb41-e626-4edc-a1ab-e22b785fc405}"
+		name="Occlusion"/>
+	<parameter
+		guid="{b0921103-8734-0877-0410-9cc070725a9a}"
+		name="isPlayer"/>
+</base>

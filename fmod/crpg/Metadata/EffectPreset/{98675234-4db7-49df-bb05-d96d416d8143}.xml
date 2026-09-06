@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{98675234-4db7-49df-bb05-d96d416d8143}">
+		<property name="name">
+			<value>Vibration Siege Big</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{3384f975-f89e-4bf0-8e6b-834fe434a713}</destination>
+		</relationship>
+	</object>
+	<object class="MixerSend" id="{3384f975-f89e-4bf0-8e6b-834fe434a713}">
+		<property name="level">
+			<value>0</value>
+		</property>
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="automators">
+			<destination>{95d1bc15-f2d5-463c-bee4-110919955627}</destination>
+		</relationship>
+		<relationship name="mixerReturn">
+			<destination>{48dc3447-14ea-48bd-a95d-486d44e51418}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{95d1bc15-f2d5-463c-bee4-110919955627}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>level</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{b99d60ca-5c91-40ab-90ae-beed96c2197b}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{b99d60ca-5c91-40ab-90ae-beed96c2197b}">
+		<relationship name="parameter">
+			<destination>{ce180e1f-6da6-4b89-b015-aed11271bab3}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{bfc45cb3-4a6c-4392-97f9-171cf2aa5423}</destination>
+			<destination>{7ca66e4e-a37f-449f-b0bb-b42b52e6a3ae}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{bfc45cb3-4a6c-4392-97f9-171cf2aa5423}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<property name="curveShape">
+			<value>0.368161321</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{7ca66e4e-a37f-449f-b0bb-b42b52e6a3ae}">
+		<property name="position">
+			<value>10</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+	</object>
+</objects>

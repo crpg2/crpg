@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{6e0f4a0d-c2a8-4eec-97e0-8112597b538a}">
+		<property name="name">
+			<value>Alert Spatializer</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{3a0c4b9d-29f2-4794-b3c3-3894c6d73f4d}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{3a0c4b9d-29f2-4794-b3c3-3894c6d73f4d}">
+		<property name="distanceRolloffType">
+			<value>2</value>
+		</property>
+		<property name="maximumDistance">
+			<value>3</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="userPanDirection">
+			<value>-180</value>
+		</property>
+		<property name="userPanExtent">
+			<value>30</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{18748155-adca-40da-91f1-f0c48d19ff1c}</destination>
+		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{18748155-adca-40da-91f1-f0c48d19ff1c}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>userPanDirection</value>
+		</property>
+		<property name="amount">
+			<value>100</value>
+		</property>
+	</object>
+</objects>

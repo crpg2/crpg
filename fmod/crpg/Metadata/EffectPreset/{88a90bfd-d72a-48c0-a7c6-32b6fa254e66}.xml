@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{88a90bfd-d72a-48c0-a7c6-32b6fa254e66}">
+		<property name="name">
+			<value>Footstep Human Send Clean</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{4bf167e0-4d62-406c-a8e8-b3ef993ce2df}</destination>
+		</relationship>
+	</object>
+	<object class="MixerSend" id="{4bf167e0-4d62-406c-a8e8-b3ef993ce2df}">
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="automators">
+			<destination>{a5b24b9c-ad52-412d-8de6-e273cbaf52be}</destination>
+		</relationship>
+		<relationship name="mixerReturn">
+			<destination>{e723b5c2-ebea-4012-9738-096a99d8c48e}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{a5b24b9c-ad52-412d-8de6-e273cbaf52be}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>level</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{b3bfc549-c9b2-46f5-85d8-9e0398314c32}</destination>
+			<destination>{61d2f445-aace-49bf-8b22-81b401f83508}</destination>
+			<destination>{3dee0f7a-b215-47c6-93ab-abe1cfc04ed5}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{b3bfc549-c9b2-46f5-85d8-9e0398314c32}">
+		<relationship name="parameter">
+			<destination>{db217dc4-cc8f-4328-ac6e-67b2fb3398c7}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{b218e51e-8bab-4eb3-a93c-78ae3dc3f5d0}</destination>
+			<destination>{d2a3e2da-ce8f-49db-beaf-a2b6fe8908f1}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{61d2f445-aace-49bf-8b22-81b401f83508}">
+		<relationship name="parameter">
+			<destination>{992db81f-bc18-4316-8a0d-13d54e4fd5af}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{be388959-117b-469e-99db-d3522f77decf}</destination>
+			<destination>{88f333ed-b975-4dee-90af-85f345f2714b}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{3dee0f7a-b215-47c6-93ab-abe1cfc04ed5}">
+		<relationship name="parameter">
+			<destination>{f096d7a3-0fbe-4b70-b3b3-5f7a82f9993b}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{77c19fe5-2c58-481a-9a08-07e6facbd1c9}</destination>
+			<destination>{8c26d357-5ab3-4432-8444-69704ea71657}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{b218e51e-8bab-4eb3-a93c-78ae3dc3f5d0}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<property name="curveShape">
+			<value>0.0252841935</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{d2a3e2da-ce8f-49db-beaf-a2b6fe8908f1}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{be388959-117b-469e-99db-d3522f77decf}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>-3</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.13510789</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{88f333ed-b975-4dee-90af-85f345f2714b}">
+		<property name="position">
+			<value>60</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{77c19fe5-2c58-481a-9a08-07e6facbd1c9}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{8c26d357-5ab3-4432-8444-69704ea71657}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<property name="curveShape">
+			<value>0.0252841935</value>
+		</property>
+	</object>
+</objects>

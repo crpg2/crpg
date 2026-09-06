@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <MPCharacters>
-  <NPCCharacter id="crpg_dtv_vip_viscount_male" name="{=}The Viscount">
+  <NPCCharacter id="crpg_dtv_vip_viscount_male" name="{=}The Viscount" voice="male_02">
     <face>
       <BodyProperties version="4" age="63.94" weight="0.5" build="0.5" key="0000C005400010CB817A88E912EA949576961CB996E8976B5A8B778977BAAAAB066776670679B58A000000000000000000000000000000000000000024CC80C4" />
     </face>
@@ -62,7 +62,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_vip_viscount_female" name="{=}The Viscountess" is_female="true">
+  <NPCCharacter id="crpg_dtv_vip_viscount_female" name="{=}The Viscountess" is_female="true" voice="male_02">
     <face>
       <BodyProperties version="4" age="40.01" weight="0.3765" build="0.6481" key="0005140152FC3004467A86577841588481E9753384DA04044483648888BB1454005A6603056167B1000000000000000000000000000000000000000056B41004" />
     </face>
@@ -124,7 +124,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_peasant" name="{=}Angry Peasant" race="light_bot">
+  <NPCCharacter id="crpg_dtv_peasant" name="{=}Angry Peasant" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="00156C0C401432DA653955B64DAA2966751694753A65788B748A8C5645834B7504B776460BC65A8700000000000000000000000000000000000000004F640002" />
     </face>
@@ -168,7 +168,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_peasant_lieutenant" name="{=}Resentful Foreman" race="light_bot">
+  <NPCCharacter id="crpg_dtv_peasant_lieutenant" name="{=}Resentful Foreman" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="00156C0C401432DA653955B64DAA2966751694753A65788B748A8C5645834B7504B776460BC65A8700000000000000000000000000000000000000004F640002" />
     </face>
@@ -206,7 +206,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_peasant_boss" name="{=}Furious Peasant" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_peasant_boss" name="{=}Furious Peasant" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="00156C0C401432DA653955B64DAA2966751694753A65788B748A8C5645834B7504B776460BC65A8700000000000000000000000000000000000000004F640002" />
     </face>
@@ -240,7 +240,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_recruit_squire" name="{=}Squire" race="light_bot">
+  <NPCCharacter id="crpg_dtv_recruit_squire" name="{=}Squire" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="00086C0080143006653955B64DAA2966751694753A65788B748A8C5645834B750177761307C65A8700000000000000000000000000000000000000003EE40002" />
     </face>
@@ -277,7 +277,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_recruit_archer" name="{=}Recruit" race="light_bot">
+  <NPCCharacter id="crpg_dtv_recruit_archer" name="{=}Recruit" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="00086C0080143006653955B64DAA2966751694753A65788B748A8C5645834B750177761307C65A8700000000000000000000000000000000000000003EE40002" />
     </face>
@@ -322,7 +322,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_recruit_cavalry" name="{=}Pompous Nobleman" race="light_bot">
+  <NPCCharacter id="crpg_dtv_recruit_cavalry" name="{=}Pompous Nobleman" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="00086C0080143006653955B64DAA2966751694753A65788B748A8C5645834B750177761307C65A8700000000000000000000000000000000000000003EE40002" />
     </face>
@@ -366,7 +366,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_recruit_lieutenant" name="{=}Mentor" race="light_bot">
+  <NPCCharacter id="crpg_dtv_recruit_lieutenant" name="{=}Mentor" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="60" weight="0.3333" build="0" key="00086C0080143006653955B64DAA2966751694753A65788B748A8C5645834B750177761307C65A8700000000000000000000000000000000000000003EE40002" />
     </face>
@@ -404,7 +404,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_recruit_boss" name="{=}Bernard" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_recruit_boss" name="{=}Bernard" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="48.92" weight="0.5" build="0.5" key="00053006C0CC0680D8BBAD3D59388C8C967674A397AA85B79CDB78A7B69548660487764608A976D400000000000000000000000000000000000000003AFC5104" />
     </face>
@@ -436,7 +436,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_looter" name="{=}Merry Man" race="light_bot">
+  <NPCCharacter id="crpg_dtv_looter" name="{=}Merry Man" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="0002740340E400866B8A8198A9A566D9198BC9A7B8457AA7A676862696B5767301777613072E24AA00000000000000000000000000000000000000003EEC00C4" />
     </face>
@@ -492,7 +492,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_looter_lieutenant" name="{=}Raid Leader" race="light_bot">
+  <NPCCharacter id="crpg_dtv_looter_lieutenant" name="{=}Raid Leader" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="0002740340E400866B8A8198A9A566D9198BC9A7B8457AA7A676862696B5767301777613072E24AA00000000000000000000000000000000000000003EEC00C4" />
     </face>
@@ -535,7 +535,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_looter_boss" name="{=}Robin Hood" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_looter_boss" name="{=}Robin Hood" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="001320098058008385694978776876A6EA4B9A586889B6678B28489BC876868901877613089571B60000000000000000000000000000000000000000690C8144" />
     </face>
@@ -570,7 +570,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_fancy_lad" name="{=}Fancy Lad" race="light_bot">
+  <NPCCharacter id="crpg_dtv_fancy_lad" name="{=}Fancy Lad" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="000A6C0FC0A0010B8BBA57A785486654A75DB2477ADD8C35B36578A75899CDA40157761305967849000000000000000000000000000000000000000078AC7104" />
     </face>
@@ -624,7 +624,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_fancy_cavalry" name="{=}Fancy Jockey" race="light_bot">
+  <NPCCharacter id="crpg_dtv_fancy_cavalry" name="{=}Fancy Jockey" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="000A6C0FC0A0010B8BBA57A785486654A75DB2477ADD8C35B36578A75899CDA40157761305967849000000000000000000000000000000000000000078AC7104" />
     </face>
@@ -668,7 +668,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_fancy_lieutenant" name="{=}Fancy Minstrel" race="light_bot">
+  <NPCCharacter id="crpg_dtv_fancy_lieutenant" name="{=}Fancy Minstrel" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="36" weight="0.3333" build="0" key="000A6C0FC0A0010B8BBA57A785486654A75DB2477ADD8C35B36578A75899CDA40157761305967849000000000000000000000000000000000000000078AC7104" />
     </face>
@@ -708,7 +708,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_fancy_boss" name="{=}Droobert Humperdink" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_fancy_boss" name="{=}Droobert Humperdink" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="000A6C0FC0A0010B8BBA57A785486654A75DB2477ADD8C35B36578A75899CDA40157761305967849000000000000000000000000000000000000000078AC7104" />
     </face>
@@ -743,7 +743,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_pirate_swabbie" name="{=}Swabbie" race="light_bot">
+  <NPCCharacter id="crpg_dtv_pirate_swabbie" name="{=}Swabbie" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="25" weight="0.5" build="0.5" key="00087806C0FC001A495893C9B59C998B8AB296A4CA67EA874C87852887B686750177761307875B76000000000000000000000000000000000000000066F40145" />
     </face>
@@ -790,7 +790,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_pirate_deckhand" name="{=}Deckhand" race="light_bot">
+  <NPCCharacter id="crpg_dtv_pirate_deckhand" name="{=}Deckhand" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="37.88" weight="0.5" build="0.5" key="001E840540FC1001AC3BA576865898CCCB46951B8579DD764C76B7478788769802877624086446A5000000000000000000000000000000000000000043042102" />
     </face>
@@ -836,7 +836,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_pirate_male" name="{=}Pirate" race="light_bot">
+  <NPCCharacter id="crpg_dtv_pirate_male" name="{=}Pirate" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="37.88" weight="0.5" build="0.5" key="001EA408C0FC22D2455B6698A74396684768D754A458CAE0598566965226B766028776240833756C000000000000000000000000000000000000000043041142" />
     </face>
@@ -882,7 +882,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_pirate_female" name="{=}Pirate" is_female="true" race="light_bot">
+  <NPCCharacter id="crpg_dtv_pirate_female" name="{=}Pirate" is_female="true" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="41.37" weight="0.5" build="0.5" key="0008AC0E40FC200DDDD5625A98A369CB8AB2BC666987B7564C87852887B686750387763508875B760000000000000000000000000000000000000000150C1104" />
     </face>
@@ -928,7 +928,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_pirate_swashbuckler" name="{=}Swashbuckler" race="light_bot">
+  <NPCCharacter id="crpg_dtv_pirate_swashbuckler" name="{=}Swashbuckler" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="37.88" weight="0.5" build="0.5" key="0010200140FC31CE575265583AA7684A387659548E28978C6915A69AA475585602877624087D95B900000000000000000000000000000000000000005B0C0004" />
     </face>
@@ -970,7 +970,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_pirate_buccaneer" name="{=}Buccaneer" race="light_bot">
+  <NPCCharacter id="crpg_dtv_pirate_buccaneer" name="{=}Buccaneer" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="37.88" weight="0.5" build="0.5" key="0010200140FC31CE575265583AA7684A387659548E28978C6915A69AA475585602877624087D95B900000000000000000000000000000000000000005B0C0004" />
     </face>
@@ -1013,7 +1013,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_pirate_lieutenant" name="{=}Quartermaster" race="light_bot">
+  <NPCCharacter id="crpg_dtv_pirate_lieutenant" name="{=}Quartermaster" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="54.72" weight="0.5" build="0.5" key="001EF40C40FC01409489464571C37D884339149587B77A5859856696836554A8059776560933756C000000000000000000000000000000000000000001248146" />
     </face>
@@ -1051,7 +1051,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_pirate_boss" name="{=}Redbeard Frank" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_pirate_boss" name="{=}Redbeard Frank" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="38.51" weight="0.5" build="0.5" key="0010280780FC03D4ECB16DFA6587274146C97592E8448606598566965A53805502A776250A33756C000000000000000000000000000000000000000001443146" />
     </face>
@@ -1084,7 +1084,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_viking_huscarl" name="{=}Huscarl" race="light_bot">
+  <NPCCharacter id="crpg_dtv_viking_huscarl" name="{=}Huscarl" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="00102C041B2C3940E99664884754BAB5A35E8E6B95A9967C78463B498C8336860075560307A7B7A500000000000000000000000000000000000000004CE45004" />
     </face>
@@ -1129,7 +1129,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_viking_raider" name="{=}Raider" race="light_bot">
+  <NPCCharacter id="crpg_dtv_viking_raider" name="{=}Raider" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="00102C041B2C3940E99664884754BAB5A35E8E6B95A9967C78463B498C8336860075560307A7B7A500000000000000000000000000000000000000004CE45004" />
     </face>
@@ -1175,7 +1175,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_viking_berserkir" name="{=}Berserkir" race="light_bot">
+  <NPCCharacter id="crpg_dtv_viking_berserkir" name="{=}Berserkir" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="39.64" weight="0.5" build="0.5" key="00000C06C0E42A42886C869855BBA5796976C76B4977A53B75349AB5A62CCC7703B776350B7BA45900000000000000000000000000000000000000002D742086" />
     </face>
@@ -1224,7 +1224,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_viking_lieutenant" name="{=}Thegn" race="light_bot">
+  <NPCCharacter id="crpg_dtv_viking_lieutenant" name="{=}Thegn" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="32" weight="0.3333" build="0" key="00102C041B2C3940E99664884754BAB5A35E8E6B95A9967C78463B498C8336860075560307A7B7A500000000000000000000000000000000000000004CE45004" />
     </face>
@@ -1268,7 +1268,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_viking_boss" name="{=}Jarl Ulfric" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_viking_boss" name="{=}Jarl Ulfric" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="43" weight="0.3333" build="0" key="00102C041B2C3940E99664884754BAB5A35E8E6B95A9967C78463B498C8336860075560307A7B7A500000000000000000000000000000000000000004CE45004" />
     </face>
@@ -1303,7 +1303,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_templar_scholar" name="{=}Scholar" race="light_bot">
+  <NPCCharacter id="crpg_dtv_templar_scholar" name="{=}Scholar" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="42.11" weight="0.9969" build="0.2608" key="000A5C0D8000030CB54E5AD37297686B665B59F9A457258C5936A7873896846B00A4F6030A789B4B00000000000000000000000000000000000000003F446002" />
     </face>
@@ -1343,7 +1343,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_templar_initiate" name="{=}Templar Initiate" race="light_bot">
+  <NPCCharacter id="crpg_dtv_templar_initiate" name="{=}Templar Initiate" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.11" weight="0.4519" build="0.6433" key="000A740A4070229C549C5C6C5C5853C8A7C898CAD548B597666A99C77B9C682800AA76030AC7B49A000000000000000000000000000000000000000057444042" />
     </face>
@@ -1386,7 +1386,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_templar_soldier" name="{=}Templar Soldier" race="light_bot">
+  <NPCCharacter id="crpg_dtv_templar_soldier" name="{=}Templar Soldier" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.11" weight="0.6267" build="0.5431" key="000AB40B8088100F6855A75D94233468755697A58A2C669A876ABD8296C567A800B896030BD7A7C900000000000000000000000000000000000000006B744142" />
     </face>
@@ -1430,7 +1430,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_templar_lieutenant" name="{=}Templar Knight" race="light_bot">
+  <NPCCharacter id="crpg_dtv_templar_lieutenant" name="{=}Templar Knight" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.11" weight="0.3452" build="0.6286" key="00058C0E40CC0344B69DBD877146C988E86483CC86B467B868749CA575966C7C00B956030B4675A8000000000000000000000000000000000000000051645002" />
     </face>
@@ -1474,7 +1474,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_templar_boss" name="{=}Grand Master Talus" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_templar_boss" name="{=}Grand Master Talus" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="43" weight="0.3333" build="0" key="00102C041B2C3940E99664884754BAB5A35E8E6B95A9967C78463B498C8336860075560307A7B7A500000000000000000000000000000000000000004CE45004" />
     </face>
@@ -1508,7 +1508,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_samurai_warrior" name="{=}Samurai" race="light_bot">
+  <NPCCharacter id="crpg_dtv_samurai_warrior" name="{=}Samurai" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="0013B00F00442689A5A734C677162363366C6993967E388B6CA8A89448556A450567765706B28848000000000000000000000000000000000000000040D40142" />
     </face>
@@ -1562,7 +1562,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_samurai_ashigaru" name="{=}Ashigaru" race="light_bot">
+  <NPCCharacter id="crpg_dtv_samurai_ashigaru" name="{=}Ashigaru" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="0013B00F00442689A5A734C677162363366C6993967E388B6CA8A89448556A450567765706B28848000000000000000000000000000000000000000040D40142" />
     </face>
@@ -1620,7 +1620,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_samurai_lieutenant" name="{=}Shinobi" race="light_bot">
+  <NPCCharacter id="crpg_dtv_samurai_lieutenant" name="{=}Shinobi" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="0013B00F00442689A5A734C677162363366C6993967E388B6CA8A89448556A450567765706B28848000000000000000000000000000000000000000040D40142" />
     </face>
@@ -1665,7 +1665,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_samurai_boss" name="{=}Sensei" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_samurai_boss" name="{=}Sensei" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="0013B00F00442689A5A734C677162363366C6993967E388B6CA8A89448556A450567765706B28848000000000000000000000000000000000000000040D40142" />
     </face>
@@ -1699,7 +1699,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_amazon_warrior" name="{=}Amazonian Warrior" is_female="true" race="light_bot">
+  <NPCCharacter id="crpg_dtv_amazon_warrior" name="{=}Amazonian Warrior" is_female="true" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.6" build="0.75" key="00239C0340E40004AA7542946A3C6A8BB44866BB647997B98C78588A79545957018776130895D3490000000000000000000000000000000000000000231C2103" />
     </face>
@@ -1744,7 +1744,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_amazon_archer" name="{=}Amazonian Huntress" is_female="true" race="light_bot">
+  <NPCCharacter id="crpg_dtv_amazon_archer" name="{=}Amazonian Huntress" is_female="true" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.6" build="0.75" key="0029B001402C0009BCB34CB656A4658AC3587866AE8E9688B655365469B7B02A01577613055C56A6000000000000000000000000000000000000000068AC1103" />
     </face>
@@ -1789,7 +1789,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_amazon_lieutenant" name="{=}Amazonian Captain" is_female="true" race="light_bot">
+  <NPCCharacter id="crpg_dtv_amazon_lieutenant" name="{=}Amazonian Captain" is_female="true" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.6" build="0.75" key="0029B001402C0009BCB34CB656A4658AC3587866AE8E9688B655365469B7B02A01577613055C56A6000000000000000000000000000000000000000068AC1103" />
     </face>
@@ -1831,7 +1831,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_amazon_boss" name="{=}Penthesilea" is_female="true" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_amazon_boss" name="{=}Penthesilea" is_female="true" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.6" build="0.75" key="0020540F00CC2001B9888AA27A9C8444876A76496A77A9DBC793A53A3CA3474601B776130B5A2477000000000000000000000000000000000000000043640043" />
     </face>
@@ -1868,7 +1868,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_english_billman" name="{=}Billman" race="light_bot">
+  <NPCCharacter id="crpg_dtv_english_billman" name="{=}Billman" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.12" weight="0.6713" build="0.4855" key="0005900980B412456978E4877718CAD67C7E78CA9447E59875A48ABA269C34AB0097A6030966B5B80000000000000000000000000000000000000000271C3002" />
     </face>
@@ -1910,7 +1910,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_english_manatarms" name="{=}Man-at-arms" race="light_bot">
+  <NPCCharacter id="crpg_dtv_english_manatarms" name="{=}Man-at-arms" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.03" weight="0.5988" build="0.375" key="00027C04C0000002C4B37B6AC17C5B6BAA9689BE5A625476567353345498DC88009696030986B6760000000000000000000000000000000000000000252C4005" />
     </face>
@@ -1963,7 +1963,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_english_archer" name="{=}Yeoman Archer" race="light_bot">
+  <NPCCharacter id="crpg_dtv_english_archer" name="{=}Yeoman Archer" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.12" weight="0.2958" build="0.3188" key="0002480080B4068C79C98BA34579554665784665AA8686A4838A7AB288E1793C00754603074A8393000000000000000000000000000000000000000026DC5002" />
     </face>
@@ -2009,7 +2009,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_english_arbalist" name="{=}Arbalist" race="light_bot">
+  <NPCCharacter id="crpg_dtv_english_arbalist" name="{=}Arbalist" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.12" weight="0.2958" build="0.3188" key="0002480080B4068C79C98BA34579554665784665AA8686A4838A7AB288E1793C00754603074A8393000000000000000000000000000000000000000026DC5002" />
     </face>
@@ -2055,7 +2055,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_english_knight" name="{=}Dismounted Knight" race="light_bot">
+  <NPCCharacter id="crpg_dtv_english_knight" name="{=}Dismounted Knight" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.03" weight="0.5988" build="0.5046" key="00024000800031C29876A789B89AA2935E3997246BA864EB434C7368344879E600A896030AE96868000000000000000000000000000000000000000025445005" />
     </face>
@@ -2099,7 +2099,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_english_lieutenant" name="{=}Banner Knight" race="light_bot">
+  <NPCCharacter id="crpg_dtv_english_lieutenant" name="{=}Banner Knight" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.03" weight="0.5988" build="0.5046" key="00027C04C0000002C4B37B6AC17C5B6BAA9689BE5A625476567353345498DC88009696030986B6760000000000000000000000000000000000000000252C4005" />
     </face>
@@ -2144,7 +2144,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_english_boss" name="{=}Duke Raphael" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_english_boss" name="{=}Duke Raphael" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.03" weight="0.5988" build="0.5046" key="0002700D800005D4DB774796B493B4A4A8B5589B723772579969666295794BB600A896030A69B86A000000000000000000000000000000000000000025443005" />
     </face>
@@ -2179,7 +2179,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_reconquista_skirmisher" name="{=}Infantería Morisca" race="light_bot">
+  <NPCCharacter id="crpg_dtv_reconquista_skirmisher" name="{=}Infantería Morisca" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="25" weight="0.234" build="0.1222" key="0036400FC0A013CE573B666315CA8A993A7C38765A2D4D32194B974BD1577A750152461305D2B8A10000000000000000000000007AFC20C4000000003EAC9084" />
     </face>
@@ -2241,7 +2241,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_reconquista_explorer" name="{=}Explorador Morisco" race="light_bot">
+  <NPCCharacter id="crpg_dtv_reconquista_explorer" name="{=}Explorador Morisco" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="25" weight="0.025" build="0.0353" key="003C980E405814567835B96B98979855767B2344A7777B3891ED848C2297E87A01600613067B83960000000000000000000000007AFC20C40000000034C460C4" />
     </face>
@@ -2306,7 +2306,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_reconquista_champion" name="{=}Campeone Cristiano" race="light_bot">
+  <NPCCharacter id="crpg_dtv_reconquista_champion" name="{=}Campeone Cristiano" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="25" weight="0.2" build="0.99" key="0010D408C02C12C329ABB82C3675332785A77A636634168999A678266788EB58016A2613066867620000000000000000000000007AFC20C40000000046D42085" />
     </face>
@@ -2357,7 +2357,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_reconquista_lieutenant" name="{=}Maestro de armas" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_reconquista_lieutenant" name="{=}Maestro de armas" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="25.64" weight="0.5" build="0.9" key="0008640F00B422CD958019710020144486C9868FB85F2678EFE4974B75F00006018776130811B1110000000000000000000000007CFC20C4000000007D0420C4" />
     </face>
@@ -2391,7 +2391,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_reconquista_lieutenant_alvor" name="{=}Álvor Fáñoz" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_reconquista_lieutenant_alvor" name="{=}Álvor Fáñoz" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="25.64" weight="0.5" build="0.9" key="0008640F00B422CD958019710020144486C9868FB85F2678EFE4974B75F00006018776130811B1110000000000000000000000007CFC20C4000000007D0420C4" />
     </face>
@@ -2429,7 +2429,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_reconquista_knight" name="{=}Caballero Cristiano" race="light_bot">
+  <NPCCharacter id="crpg_dtv_reconquista_knight" name="{=}Caballero Cristiano" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="25" weight="0.0185" build="0.69" key="000D9C0540CC068635AA78CCB99267967D7738538CE9B8A7A7A2977ACDD99EC8015E06130597A3930000000000000000000000007AFC20C40000000076AC2085" />
     </face>
@@ -2491,7 +2491,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_reconquista_washerwoman" name="{=}Lavandera Enfadada" is_female="true" race="light_bot">
+  <NPCCharacter id="crpg_dtv_reconquista_washerwoman" name="{=}Lavandera Enfadada" is_female="true" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="25.64" weight="0.0432" build="0" key="002B640F13B4200D958016716120144F86C9868FB85FF678EFE4974B75F00006015016130511B1110000000000000000000000007AFC20C4000000007CAC20C4" />
     </face>
@@ -2543,7 +2543,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_reconquista_guard" name="{=}Guardia Equipaje" race="light_bot">
+  <NPCCharacter id="crpg_dtv_reconquista_guard" name="{=}Guardia Equipaje" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="128" weight="0.9938" build="1" key="0023A80AC0A00940C7A833B9B5A549BE749529267DD48842868D367E75FFBC450F4FF6FF048A23250000000000000000000000006EFC4084000000006E7C4084" />
     </face>
@@ -2595,7 +2595,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_reconquista_lieutenant_jimena" name="{=}Doña Xixona" is_female="true" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_reconquista_lieutenant_jimena" name="{=}Doña Xixona" is_female="true" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="25.64" weight="0.0247" build="0" key="0000640F13B4200D958019710020144486C9868FB85F2678EFE4974B75F00006014006130411B1110000000000000000000000007CFC20C4000000007C7C20C4" />
     </face>
@@ -2633,7 +2633,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_reconquista_boss" name="{=}Er Sid Crampeador" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_reconquista_boss" name="{=}Er Sid Crampeador" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="64.04" weight="0.2" build="0.99" key="00109C0D805823821AA6B78958569A62937AB563E8877864CA55B449A555473806677668065579960000000000000000000000007AFC20C4000000003CC40004" />
     </face>
@@ -2671,7 +2671,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_aserai_warrior" name="{=}Aserai Warrior" race="light_bot">
+  <NPCCharacter id="crpg_dtv_aserai_warrior" name="{=}Aserai Warrior" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.09" weight="0.4838" build="0.5235" key="0039A40D9AFC34459764A699BA9A5686EFEE8CAA785539E878597B887BAFFDAE0098760309D886830000000000000000000000000000000000000000393C9042" />
     </face>
@@ -2732,7 +2732,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_aserai_archer" name="{=}Aserai Archer" race="light_bot">
+  <NPCCharacter id="crpg_dtv_aserai_archer" name="{=}Aserai Archer" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.09" weight="0.2981" build="0.2759" key="0029680D80E411859864823D7585A656EFEE596B4C55366E78597B887BAFFDAE0094460309D886830000000000000000000000000000000000000000393C2042" />
     </face>
@@ -2778,7 +2778,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_aserai_camelry" name="{=}Aserai Camelry" race="light_bot">
+  <NPCCharacter id="crpg_dtv_aserai_camelry" name="{=}Aserai Camelry" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.09" weight="0.2981" build="0.2759" key="0029680D80E411859864823D7585A656EFEE596B4C55366E78597B887BAFFDAE0094460309D886830000000000000000000000000000000000000000393C2042" />
     </face>
@@ -2840,7 +2840,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_aserai_lieutenant" name="{=}Aserai Veteran" race="light_bot">
+  <NPCCharacter id="crpg_dtv_aserai_lieutenant" name="{=}Aserai Veteran" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.03" weight="0.2981" build="0.2759" key="0029680D80E411859864823D7585A656EFEE596B4C55366E78597B887BAFFDAE0094460309D886830000000000000000000000000000000000000000393C2042" />
     </face>
@@ -2883,7 +2883,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_aserai_boss" name="{=}SalArnDin" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_aserai_boss" name="{=}SalArnDin" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="25" weight="0.5" build="0.5" key="0010940A4E441513FFFEFE0F2FFCED2C3010FF1FF00FF1EED133F6E0EFEFFFFF01B776130B0FBBEF0000000000000000000000000000000000000000217C20C2" />
     </face>
@@ -2921,7 +2921,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_legion_veles" name="{=}Veles" race="light_bot">
+  <NPCCharacter id="crpg_dtv_legion_veles" name="{=}Veles" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.5" build="0.5" key="001BD00B80B4369A36B498DAD9839667585D48646AC8D59AE96CAA4D4A836593016776130697843300000000000000000000000000000000000000007EC41144" />
     </face>
@@ -2967,7 +2967,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_legion_archer" name="{=}Sagittarius" race="light_bot">
+  <NPCCharacter id="crpg_dtv_legion_archer" name="{=}Sagittarius" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="001BC00B80B42019C9C76759A368462888AA58B2A8993777D7B6E277B74A403D016776130675E89A00000000000000000000000000000000000000007EC46044" />
     </face>
@@ -3012,7 +3012,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_legion_soldier" name="{=}Legionary" race="light_bot">
+  <NPCCharacter id="crpg_dtv_legion_soldier" name="{=}Legionary" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="001B6C0D80E4004F9B7858A78395A75B4CC89566CD4C4663547728689BD869C604977646096CB77500000000000000000000000000000000000000003D2C4102" />
     </face>
@@ -3056,7 +3056,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_legion_centurion" name="{=}Centurion" race="light_bot">
+  <NPCCharacter id="crpg_dtv_legion_centurion" name="{=}Centurion" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="001B6C0D80E4004F9B7858A78395A75B4CC89566CD4C4663547728689BD869C604977646096CB77500000000000000000000000000000000000000003D2C4102" />
     </face>
@@ -3093,7 +3093,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_legion_cavalry" name="{=}Auxilliary Cavalry" race="light_bot">
+  <NPCCharacter id="crpg_dtv_legion_cavalry" name="{=}Auxilliary Cavalry" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="001B6C0D80E4004F9B7858A78395A75B4CC89566CD4C4663547728689BD869C604977646096CB77500000000000000000000000000000000000000003D2C4102" />
     </face>
@@ -3140,7 +3140,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_legion_lieutenant" name="{=}Praetorian" race="light_bot">
+  <NPCCharacter id="crpg_dtv_legion_lieutenant" name="{=}Praetorian" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.03" weight="0.5988" build="0.5046" key="001B6C0D80E4004F9B7858A78395A75B4CC89566CD4C4663547728689BD869C604977646096CB77500000000000000000000000000000000000000003D2C4102" />
     </face>
@@ -3184,7 +3184,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_legion_boss" name="{=}Septimius" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_legion_boss" name="{=}Septimius" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="001B6C0D80E4004F9B7858A78395A75B4CC89566CD4C4663547728689BD869C604977646096CB77500000000000000000000000000000000000000003D2C4102" />
     </face>
@@ -3222,7 +3222,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_highland_warrior" name="{=}Highland Warrior" race="light_bot">
+  <NPCCharacter id="crpg_dtv_highland_warrior" name="{=}Highland Warrior" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="69" weight="0.3333" build="0" key="00027C04005809D3344C9644AC8C5C73667A728BB978AC2A47C443AA7763B88C07877678087472A900000000000000000000000000000000000000006D047104" />
     </face>
@@ -3264,7 +3264,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_highland_ranger" name="{=}Highland Ranger" race="light_bot">
+  <NPCCharacter id="crpg_dtv_highland_ranger" name="{=}Highland Ranger" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="000D6C04C02C265B4A7A4174B21C1246B246A2A687972135D55E7B5B529637870177761307EA8445000000000000000000000000000000000000000008FC3144" />
     </face>
@@ -3310,7 +3310,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_highland_soldier" name="{=}Highland Soldier" race="light_bot">
+  <NPCCharacter id="crpg_dtv_highland_soldier" name="{=}Highland Soldier" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="0013300540E4370C6BB37B698926473335528AAB9AD7B3AA39E9A69E24B7728D017776130799AA74000000000000000000000000000000000000000016E49144" />
     </face>
@@ -3354,7 +3354,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_highland_lieutenant" name="{=}Chosen Highlander" race="light_bot">
+  <NPCCharacter id="crpg_dtv_highland_lieutenant" name="{=}Chosen Highlander" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="30.03" weight="0.3333" build="0" key="0013300540E4370C6BB37B698926473335528AAB9AD7B3AA39E9A69E24B7728D017776130799AA74000000000000000000000000000000000000000016E49144" />
     </face>
@@ -3397,7 +3397,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_highland_boss" name="{=}Connor Macleod" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_highland_boss" name="{=}Connor Macleod" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="0013300540E4370C6BB37B698926473335528AAB9AD7B3AA39E9A69E24B7728D017776130799AA74000000000000000000000000000000000000000016E49144" />
     </face>
@@ -3431,7 +3431,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_varangian_recruit" name="{=}Varangian Recruit" race="light_bot">
+  <NPCCharacter id="crpg_dtv_varangian_recruit" name="{=}Varangian Recruit" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.14" weight="0.6944" build="0.6528" key="000514000000378D65B64EBB54D9C98AA35E52988958297874414A498C83368600BAA6030BA7B7A500000000000000000000000000000000000000002D7C0006" />
     </face>
@@ -3474,7 +3474,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_varangian_longbowman" name="{=}Varangian Longbowman" race="light_bot">
+  <NPCCharacter id="crpg_dtv_varangian_longbowman" name="{=}Varangian Longbowman" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.14" weight="0.625" build="0.6144" key="0005480D9214139B9BB94674B867C6A69D599B9A625759B9E8A659A887B8C93200A996030A7734D400000000000000000000000000000000000000002D5490C5" />
     </face>
@@ -3520,7 +3520,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_varangian_guard" name="{=}Varangian Guard" race="light_bot">
+  <NPCCharacter id="crpg_dtv_varangian_guard" name="{=}Varangian Guard" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.14" weight="0.518" build="0.4181" key="0005B8098F2C2445B5D51913A4B87897C899D3E5AA588985C722285C44E5998500B686030B9D69AA0000000000000000000000000000000000000000057C3106" />
     </face>
@@ -3564,7 +3564,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_varangian_cavalry" name="{=}Varangian Horseman" race="light_bot">
+  <NPCCharacter id="crpg_dtv_varangian_cavalry" name="{=}Varangian Horseman" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.14" weight="0.518" build="0.4181" key="0005B8098F2C2445B5D51913A4B87897C899D3E5AA588985C722285C44E5998500B686030B9D69AA0000000000000000000000000000000000000000057C3106" />
     </face>
@@ -3612,7 +3612,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_varangian_lieutenant" name="{=}Varangian Berserker" race="light_bot">
+  <NPCCharacter id="crpg_dtv_varangian_lieutenant" name="{=}Varangian Berserker" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.14" weight="0.4833" build="0.6799" key="0010B809972C2786B5D51913A4B87897C899D3E5AA588985C722285C44E5998500AA76030A9D69AA000000000000000000000000000000000000000013543102" />
     </face>
@@ -3654,7 +3654,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_varangian_boss" name="{=}Akolouthos" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_varangian_boss" name="{=}Akolouthos" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="22.14" weight="0.3364" build="0.6559" key="000A6C0E502C29C0B5D51913A4B87897C899D3E5AA588985C722285C44E5998500FA56030F9D69AA000000000000000000000000000000000000000007F47104" />
     </face>
@@ -3689,7 +3689,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_khuzait_soldier" name="{=}Khuzait Footsoldier" race="light_bot">
+  <NPCCharacter id="crpg_dtv_khuzait_soldier" name="{=}Khuzait Footsoldier" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="25" weight="0.5" build="0.5" key="0029980D802C201188544C4B173B887936C3AD57957148D57A43385BB754C5B501777613078DE55A0000000000000000000000003EFC10C40000000006E41145" />
     </face>
@@ -3738,7 +3738,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_khuzait_horseman" name="{=}Khuzait Horseman" race="light_bot">
+  <NPCCharacter id="crpg_dtv_khuzait_horseman" name="{=}Khuzait Horseman" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="52.18" weight="0.5" build="0.5" key="002EB80FC0441507973D576434A667C6B769A5A468B3983C277C464A9667486304977646095726B80000000000000000000000003EFC10C4000000003B249045" />
     </face>
@@ -3800,7 +3800,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_khuzait_lieutenant" name="{=}Khan's Guard" race="light_bot">
+  <NPCCharacter id="crpg_dtv_khuzait_lieutenant" name="{=}Khan's Guard" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="30.03" weight="0.5" build="0.5" key="002EB80FC0441507973D576434A667C6B769A5A468B3983C277C464A9667486304977646095726B80000000000000000000000003EFC10C4000000003B249045" />
     </face>
@@ -3848,7 +3848,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_khuzait_boss" name="{=}The Khan" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_khuzait_boss" name="{=}The Khan" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="128" weight="0.5" build="0.5" key="0031840D802C3811482ABA9AC97353648A7451B876B48B8462396659D7B989CA0FB776FF0BD567460000000000000000000000003EFC10C4000000007F7C60C4" />
     </face>
@@ -3887,7 +3887,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_dwarven_engineer" name="{=}Dwarven Engineer" race="dwarf_bot">
+  <NPCCharacter id="crpg_dtv_dwarven_engineer" name="{=}Dwarven Engineer" race="dwarf_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.5" build="0.5" key="000A000FC0FC3A144EFFEFE0FFEFFFFF0F9C54564930CA46AABBBBAEBBAABCCE0147761304FCCBBA0000000000000000000000000000000000000000027C8004" />
     </face>
@@ -3953,7 +3953,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_dwarven_axelord" name="{=}Legendary Axedwarf" race="dwarf_bot">
+  <NPCCharacter id="crpg_dtv_dwarven_axelord" name="{=}Legendary Axedwarf" race="dwarf_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.5" build="0.5" key="000A000FC0FC3A144EFFEFE0FFEFFFFF0F9C54564930CA46AABBBBAEBBAABCCE0147761304FCCBBA0000000000000000000000000000000000000000027C8004" />
     </face>
@@ -3995,7 +3995,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_dwarven_hammerlord" name="{=}Legendary Hammerdwarf" race="dwarf_bot">
+  <NPCCharacter id="crpg_dtv_dwarven_hammerlord" name="{=}Legendary Hammerdwarf" race="dwarf_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.5" build="0.5" key="000A000FC0FC3A144EFFEFE0FFEFFFFF0F9C54564930CA46AABBBBAEBBAABCCE0147761304FCCBBA0000000000000000000000000000000000000000027C8004" />
     </face>
@@ -4037,7 +4037,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_dwarven_lieutenant" name="{=}Dwarven Brewmaster" race="dwarf_bot">
+  <NPCCharacter id="crpg_dtv_dwarven_lieutenant" name="{=}Dwarven Brewmaster" race="dwarf_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="30.03" weight="0.5" build="0.5" key="000A000FC0FC3A144EFFEFE0FFEFFFFF0F9C54564930CA46AABBBBAEBBAABCCE0147761304FCCBBA0000000000000000000000000000000000000000027C8004" />
     </face>
@@ -4079,7 +4079,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_dwarven_boss" name="{=}Urist" race="dwarf_bot">
+  <NPCCharacter id="crpg_dtv_dwarven_boss" name="{=}Urist" race="dwarf_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.5" build="0.5" key="000A000FC0FC3A144EFFEFE0FFEFFFFF0F9C54564930CA46AABBBBAEBBAABCCE0147761304FCCBBA0000000000000000000000000000000000000000027C8004" />
     </face>
@@ -4115,7 +4115,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_greyorder_shielder" name="{=}Grey Order Shielder" race="light_bot">
+  <NPCCharacter id="crpg_dtv_greyorder_shielder" name="{=}Grey Order Shielder" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="30" weight="0.4" build="0.4" key="0020C80FDA00061B0776678E53648686588CA83378A87F2099667D788BC3324503977635096699853444400000000000000000003EFC3002000000004F2C3004" />
     </face>
@@ -4159,7 +4159,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_greyorder_kuyak_two_handed" name="{=}Grey Order Kuyak Hero" race="light_bot">
+  <NPCCharacter id="crpg_dtv_greyorder_kuyak_two_handed" name="{=}Grey Order Kuyak Hero" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="30" weight="0.1" build="0.1" key="0020C80FDA00061B0776678E53648686588CA83378A87F2099667D788BC3324503777635076699853444400000000000000000003EFC3002000000004EDC3002" />
     </face>
@@ -4193,7 +4193,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_greyorder_balanced_infantry" name="{=}Grey Order Infantry" race="light_bot">
+  <NPCCharacter id="crpg_dtv_greyorder_balanced_infantry" name="{=}Grey Order Infantry" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="30" weight="0.5" build="0.5" key="0020C80FDA00061B0776678E53648686588CA83378A87F2099667D788BC3324503777635076699853444400000000000000000003EFC3002000000004EDC3002" />
     </face>
@@ -4235,7 +4235,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_greyorder_heavy_two_handed" name="{=}Grey Order Heavy Infantry" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_greyorder_heavy_two_handed" name="{=}Grey Order Heavy Infantry" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="30" weight="0.8" build="0.8" key="0020C80FDA00061B0776678E53648686588CA83378A87F2099667D788BC3324503B776350B6699853444400000000000000000003EFC3002000000001D7C3006" />
     </face>
@@ -4277,7 +4277,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_greyorder_heavy_polearm" name="{=}Grey Order Heavy Infantry" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_greyorder_heavy_polearm" name="{=}Grey Order Heavy Infantry" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="30" weight="0.8" build="0.8" key="0020C80FDA00061B0776678E53648686588CA83378A87F2099667D788BC3324503B776350B6699853444400000000000000000003EFC3002000000001D7C3006" />
     </face>
@@ -4319,7 +4319,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_greyorder_lieutenant_varadin" name="{=}Varadin The Grey" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_greyorder_lieutenant_varadin" name="{=}Varadin The Grey" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="30" weight="0.4" build="0.9" key="0020C80FDA00061B0776678E53648686588CA83378A87F2099667D788BC3324503B776350B6699853444400000000000000000003EFC3002000000001D7C3006" />
     </face>
@@ -4353,7 +4353,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_greyorder_lieutenant_knitler" name="{=}Knitler The Grey" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_greyorder_lieutenant_knitler" name="{=}Knitler The Grey" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="30" weight="0.4" build="0.9" key="0020C80FDA00061B0776678E53648686588CA83378A87F2099667D788BC3324503B776350B6699853444400000000000000000003EFC3002000000001D7C3006" />
     </face>
@@ -4387,7 +4387,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_greyorder_lieutenant_harpag" name="{=}Harpag The Grey" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_greyorder_lieutenant_harpag" name="{=}Harpag The Grey" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="65" weight="0.7" build="0.7" key="0020C80FDA00061B0776678E53648686588CA83378A87F2099667D788BC3324503B776350B6699853444400000000000000000003EFC3002000000001D7C3006" />
     </face>
@@ -4422,7 +4422,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_greyorder_lieutenant_pawiu" name="{=}Pawiu The Grey" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_greyorder_lieutenant_pawiu" name="{=}Pawiu The Grey" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="30" weight="0.4" build="0.9" key="0020C80FDA00061B0776678E53648686588CA83378A87F2099667D788BC3324503B776350B6699853444400000000000000000003EFC3002000000001D7C3006" />
     </face>
@@ -4456,7 +4456,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_greyorder_boss_hetman" name="{=}Hetman The Grey" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_greyorder_boss_hetman" name="{=}Hetman The Grey" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="30" weight="0.4" build="0.9" key="0020C80FDA00061B0776678E53648686588CA83378A87F2099667D788BC3324503B776350B6699853444400000000000000000003EFC3002000000001D7C3006" />
     </face>
@@ -4491,7 +4491,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_greyorder_boss_tamra" name="{=}Tamra The Grey" is_female="true" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_greyorder_boss_tamra" name="{=}Tamra The Grey" is_female="true" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="33" weight="0.1" build="0.1" key="00026C0F1300200298868A3266629726C05B7489548A1717769ACB537CAE17790270062407547366000000000000000000000000000000000000000066FC2003" />
     </face>
@@ -4525,7 +4525,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_tincan_soldier" name="{=}Tincan" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_tincan_soldier" name="{=}Tincan" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.5" build="0.5" key="0015DC008070040F7995296A66AC7A488E743843A9A6871A5ADDC44BC559596701B776130BBD58E300000000000000000000000002FC800400000000317C3144" />
     </face>
@@ -4576,7 +4576,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_tincan_archer" name="{=}Tincan" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_tincan_archer" name="{=}Tincan" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.5" build="0.5" key="0015DC008070040F7995296A66AC7A488E743843A9A6871A5ADDC44BC559596701B776130BBD58E300000000000000000000000002FC800400000000317C3144" />
     </face>
@@ -4622,7 +4622,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_tincan_cavalry" name="{=}Heavy Cavalry" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_tincan_cavalry" name="{=}Heavy Cavalry" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="23" weight="0.5" build="0.5" key="0015DC008070040F7995296A66AC7A488E743843A9A6871A5ADDC44BC559596701B776130BBD58E300000000000000000000000002FC800400000000317C3144" />
     </face>
@@ -4660,7 +4660,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_tincan_lieutenant" name="{=}Oathsworn Tincan" race="light_bot">
+  <NPCCharacter id="crpg_dtv_tincan_lieutenant" name="{=}Oathsworn Tincan" race="light_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="30.03" weight="0.5" build="0.5" key="002EB80FC0441507973D576434A667C6B769A5A468B3983C277C464A9667486304977646095726B80000000000000000000000003EFC10C4000000003B249045" />
     </face>
@@ -4702,7 +4702,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_tincan_boss" name="{=}The Grumbler" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_tincan_boss" name="{=}The Grumbler" race="heavy_bot" voice="male_02">
     <face>
       <BodyProperties version="4" age="69.11" weight="0.9745" build="0.0347" key="00000C008058314C0F71F00FF0E1FFE0E000E0FF38FF00FE700F11F070F11F0E0741F67804F0E10000000000000000000000000078FC40C600000000787C40C6" />
     </face>

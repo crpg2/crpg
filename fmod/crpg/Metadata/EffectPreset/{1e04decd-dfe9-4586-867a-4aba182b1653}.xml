@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{1e04decd-dfe9-4586-867a-4aba182b1653}">
+		<property name="name">
+			<value>Campaign Footstep</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{ea22495d-634d-4eee-be9c-772a4fb147b6}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{ea22495d-634d-4eee-be9c-772a4fb147b6}">
+		<property name="distanceRolloffType">
+			<value>3</value>
+		</property>
+		<property name="minimumDistance">
+			<value>1.75</value>
+		</property>
+		<property name="maximumDistance">
+			<value>50</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="soundSize">
+			<value>0.5</value>
+		</property>
+		<property name="minimumExtent">
+			<value>15</value>
+		</property>
+	</object>
+</objects>

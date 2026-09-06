@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerReturn" id="{3fbccf65-00f4-4254-991c-ad218bdbdda5}">
+		<property name="volume">
+			<value>-80</value>
+		</property>
+		<property name="name">
+			<value>Underwater</value>
+		</property>
+		<relationship name="masters">
+			<destination>{0527aad2-0268-409f-86d7-9a2cb115ad33}</destination>
+		</relationship>
+		<relationship name="effectChain">
+			<destination>{b346ffa7-a499-4e36-b234-f36227399ad6}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{08688867-7ec6-44c1-981c-f887b51ef9aa}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{018bb1d5-ab4b-45c0-a167-2699455c7207}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{b346ffa7-a499-4e36-b234-f36227399ad6}">
+		<relationship name="effects">
+			<destination>{5f7a13f2-d4c3-47d9-ade2-2432699b80d4}</destination>
+			<destination>{8381b97b-9c7f-46ed-b5e5-7906faed77c1}</destination>
+			<destination>{79b422b6-d8e8-4f7a-a345-159359a3e7fa}</destination>
+			<destination>{13ec4e18-a51e-4c98-9d2a-8351e92d72db}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{08688867-7ec6-44c1-981c-f887b51ef9aa}" />
+	<object class="ThreeEQEffect" id="{5f7a13f2-d4c3-47d9-ade2-2432699b80d4}">
+		<property name="lowGain">
+			<value>-18</value>
+		</property>
+		<property name="midGain">
+			<value>-21</value>
+		</property>
+		<property name="highGain">
+			<value>-80</value>
+		</property>
+		<property name="lowCrossover">
+			<value>100</value>
+		</property>
+		<property name="highCrossover">
+			<value>1000</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{8381b97b-9c7f-46ed-b5e5-7906faed77c1}">
+		<property name="earlyDelay">
+			<value>7</value>
+		</property>
+		<property name="lateDelay">
+			<value>11</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>10</value>
+		</property>
+		<property name="highCut">
+			<value>500</value>
+		</property>
+		<property name="earlyLateMix">
+			<value>92</value>
+		</property>
+		<property name="wetLevel">
+			<value>6</value>
+		</property>
+		<property name="dryLevel">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="CompressorEffect" id="{79b422b6-d8e8-4f7a-a345-159359a3e7fa}">
+		<property name="threshold">
+			<value>-29</value>
+		</property>
+		<property name="ratio">
+			<value>3</value>
+		</property>
+		<property name="gain">
+			<value>9</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{13ec4e18-a51e-4c98-9d2a-8351e92d72db}" />
+</objects>

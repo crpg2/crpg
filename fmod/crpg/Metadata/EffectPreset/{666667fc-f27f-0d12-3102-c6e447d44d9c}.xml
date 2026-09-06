@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{666667fc-f27f-0d12-3102-c6e447d44d9c}">
+		<property name="name">
+			<value>Human Sneak</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{5900a805-fd5b-4fd1-b0d2-c7134b489493}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{5900a805-fd5b-4fd1-b0d2-c7134b489493}">
+		<property name="distanceRolloffType">
+			<value>3</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="occlusionEnabled">
+			<value>false</value>
+		</property>
+		<property name="dopplerMultiplier">
+			<value>0</value>
+		</property>
+		<property name="userLFELevel">
+			<value>-80</value>
+		</property>
+		<property name="stereoToSurroundUserPanMode">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

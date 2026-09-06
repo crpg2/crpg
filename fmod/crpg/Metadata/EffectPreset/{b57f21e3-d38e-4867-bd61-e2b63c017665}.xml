@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{b57f21e3-d38e-4867-bd61-e2b63c017665}">
+		<property name="name">
+			<value>Quad Ambient Rotator</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{f0772e55-707e-46c8-a129-4ac43dd57c8e}</destination>
+		</relationship>
+	</object>
+	<object class="PannerEffect" id="{f0772e55-707e-46c8-a129-4ac43dd57c8e}">
+		<property name="surroundPanExtent">
+			<value>230</value>
+		</property>
+		<property name="overridingOutputFormat">
+			<value>3</value>
+		</property>
+		<relationship name="automators">
+			<destination>{d3f029f1-6a0a-45c2-a907-eb924d60cb08}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{d3f029f1-6a0a-45c2-a907-eb924d60cb08}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>surroundPanDirection</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{ed402b0d-8c63-4d3e-bb0c-3f542967662d}</destination>
+			<destination>{c18697c2-e8c0-4b6b-ab93-10149da658d1}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{ed402b0d-8c63-4d3e-bb0c-3f542967662d}">
+		<relationship name="parameter">
+			<destination>{d00c43b9-5b9b-42e2-9fc3-5da6f331e8d7}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{1c0568c2-689e-4ccb-9791-f72e6d4ba504}</destination>
+			<destination>{d55b8e0e-8197-4612-bfc6-916b691bc766}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{c18697c2-e8c0-4b6b-ab93-10149da658d1}">
+		<relationship name="parameter">
+			<destination>{ffb4ebf4-9793-4b28-85a9-2ec1189c856f}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{e27736c8-34b8-4af0-a346-f626c29fd304}</destination>
+			<destination>{9030d628-012a-47d1-aedc-8253b8d516ea}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{1c0568c2-689e-4ccb-9791-f72e6d4ba504}">
+		<property name="position">
+			<value>-180</value>
+		</property>
+		<property name="value">
+			<value>-180</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{d55b8e0e-8197-4612-bfc6-916b691bc766}">
+		<property name="position">
+			<value>180</value>
+		</property>
+		<property name="value">
+			<value>180</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{e27736c8-34b8-4af0-a346-f626c29fd304}">
+		<property name="position">
+			<value>180</value>
+		</property>
+		<property name="value">
+			<value>180</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{9030d628-012a-47d1-aedc-8253b8d516ea}">
+		<property name="position">
+			<value>-180</value>
+		</property>
+		<property name="value">
+			<value>-180</value>
+		</property>
+	</object>
+</objects>

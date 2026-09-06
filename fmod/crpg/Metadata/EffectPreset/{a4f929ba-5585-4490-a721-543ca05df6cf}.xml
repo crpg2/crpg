@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{a4f929ba-5585-4490-a721-543ca05df6cf}">
+		<property name="name">
+			<value>Spatializer</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{e9c2c12e-b310-4cfe-a810-2fc986592471}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{e9c2c12e-b310-4cfe-a810-2fc986592471}">
+		<property name="distanceRolloffType">
+			<value>2</value>
+		</property>
+	</object>
+</objects>

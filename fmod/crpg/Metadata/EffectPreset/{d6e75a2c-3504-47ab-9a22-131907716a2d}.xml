@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{d6e75a2c-3504-47ab-9a22-131907716a2d}">
+		<property name="name">
+			<value>Ambient Arena</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{64141ddd-9834-4a65-bcaf-55c8c3f02c73}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{64141ddd-9834-4a65-bcaf-55c8c3f02c73}">
+		<property name="distanceRolloffType">
+			<value>2</value>
+		</property>
+		<property name="minimumDistance">
+			<value>5</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>3</value>
+		</property>
+		<relationship name="automators">
+			<destination>{2a869cbc-fdd7-443f-b7c7-767b92a12c67}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{2a869cbc-fdd7-443f-b7c7-767b92a12c67}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>minimumExtent</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{0432eaad-836e-401a-bb8a-a7deb7748c0a}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{0432eaad-836e-401a-bb8a-a7deb7748c0a}">
+		<relationship name="parameter">
+			<destination>{a46e11dc-c9a3-4a85-8441-69ce89b24504}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{312edaec-8473-4cac-938a-8ba5bb549b02}</destination>
+			<destination>{3ab09b04-281b-4aa2-b0da-e4d4fbbf0a52}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{312edaec-8473-4cac-938a-8ba5bb549b02}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>60</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{3ab09b04-281b-4aa2-b0da-e4d4fbbf0a52}">
+		<property name="position">
+			<value>20</value>
+		</property>
+		<property name="value">
+			<value>360</value>
+		</property>
+	</object>
+</objects>

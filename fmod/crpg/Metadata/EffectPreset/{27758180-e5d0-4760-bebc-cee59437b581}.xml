@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{27758180-e5d0-4760-bebc-cee59437b581}">
+		<property name="name">
+			<value>Vibration Gallops</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{c00b82f5-e4ea-4b35-8b0d-c12871d2acda}</destination>
+		</relationship>
+	</object>
+	<object class="MixerSend" id="{c00b82f5-e4ea-4b35-8b0d-c12871d2acda}">
+		<property name="level">
+			<value>0</value>
+		</property>
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="automators">
+			<destination>{c4807301-5048-4f91-80fb-4c3957d25586}</destination>
+		</relationship>
+		<relationship name="mixerReturn">
+			<destination>{2aebf491-01b6-4b92-a4af-e22ffb56b07e}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{c4807301-5048-4f91-80fb-4c3957d25586}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>level</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{320cce05-d30a-4f65-b524-1850c3238a85}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{320cce05-d30a-4f65-b524-1850c3238a85}">
+		<relationship name="parameter">
+			<destination>{f096d7a3-0fbe-4b70-b3b3-5f7a82f9993b}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{723d4c03-a587-4862-9c8f-5dc7554dcc53}</destination>
+			<destination>{156193d5-e399-446c-accb-9d86c415591c}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{723d4c03-a587-4862-9c8f-5dc7554dcc53}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{156193d5-e399-446c-accb-9d86c415591c}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

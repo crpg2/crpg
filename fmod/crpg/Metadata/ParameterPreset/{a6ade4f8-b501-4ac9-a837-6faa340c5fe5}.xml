@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{a6ade4f8-b501-4ac9-a837-6faa340c5fe5}">
+		<property name="name">
+			<value>StormIntensity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{04c414b0-d7e4-4866-be1f-d794c042b103}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{04c414b0-d7e4-4866-be1f-d794c042b103}">
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

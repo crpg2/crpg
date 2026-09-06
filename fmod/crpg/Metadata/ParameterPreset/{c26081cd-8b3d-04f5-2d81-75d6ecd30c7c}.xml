@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{c26081cd-8b3d-04f5-2d81-75d6ecd30c7c}">
+		<property name="name">
+			<value>Force</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8264476d-03b7-47f2-9a22-b66c1e58cfdd}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8264476d-03b7-47f2-9a22-b66c1e58cfdd}">
+		<property name="isHeld">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0.56999999999999995</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

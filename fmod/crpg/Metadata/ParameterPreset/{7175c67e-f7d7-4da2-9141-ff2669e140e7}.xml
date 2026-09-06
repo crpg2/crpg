@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{7175c67e-f7d7-4da2-9141-ff2669e140e7}">
+		<property name="name">
+			<value>Campaign Ship Damage</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d60fe805-0805-441b-9acd-91c8d99215d5}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d60fe805-0805-441b-9acd-91c8d99215d5}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

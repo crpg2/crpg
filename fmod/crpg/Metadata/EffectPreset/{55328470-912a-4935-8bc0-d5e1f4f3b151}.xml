@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{55328470-912a-4935-8bc0-d5e1f4f3b151}">
+		<property name="name">
+			<value>Vibration Combat Low</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{e44e0191-f9e7-4b13-b2a7-64f0abdfa7b9}</destination>
+		</relationship>
+	</object>
+	<object class="MixerSend" id="{e44e0191-f9e7-4b13-b2a7-64f0abdfa7b9}">
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="automators">
+			<destination>{4f4d86e1-0d37-4a8a-b1ca-847cd83ac7b2}</destination>
+		</relationship>
+		<relationship name="mixerReturn">
+			<destination>{8473f28e-31c3-4855-b1be-56d4e1006c55}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{4f4d86e1-0d37-4a8a-b1ca-847cd83ac7b2}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>level</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{1809770e-757f-46bc-84bf-e4326fb80d6a}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{1809770e-757f-46bc-84bf-e4326fb80d6a}">
+		<relationship name="parameter">
+			<destination>{f096d7a3-0fbe-4b70-b3b3-5f7a82f9993b}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{20ad4c42-c632-486a-a777-dc10ea3a43d5}</destination>
+			<destination>{650b51b4-f002-4d7a-bcbc-b7584595a2a9}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{20ad4c42-c632-486a-a777-dc10ea3a43d5}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{650b51b4-f002-4d7a-bcbc-b7584595a2a9}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>-9</value>
+		</property>
+	</object>
+</objects>

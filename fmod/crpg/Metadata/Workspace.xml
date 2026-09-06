@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Workspace" id="{e69c3264-df90-441b-9dce-8b2f16a7fbdc}">
+		<property name="builtBanksOutputDirectory">
+			<value>E:/MB3/MB3Source/mb3_2/FMODProject/MB3Sound.fspro\..\..\WOTS\Modules\NavalDLC\Sounds</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{5be898cb-8569-49d8-9fb9-8dfff6905d48}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{013dc018-a072-4eec-a125-c50573d2c7e7}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{7556c034-3ca3-48e4-90c8-43d82096a832}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{7c3e7012-b3a4-4663-8366-14fc7d7178e3}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{b6479c9e-7ccd-4767-8111-a7d2a8925708}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{bc2f2d66-95cb-4a2a-a6b5-c608e1cf95e8}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{8a725a51-ca53-4dbf-9dec-e9016c79f6a3}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{c13beddf-4ca8-446b-96a5-d2f5cfa78fd4}</destination>
+		</relationship>
+	</object>
+</objects>

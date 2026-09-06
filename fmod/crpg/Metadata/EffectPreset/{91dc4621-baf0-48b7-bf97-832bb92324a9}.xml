@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{91dc4621-baf0-48b7-bf97-832bb92324a9}">
+		<property name="name">
+			<value>Horse Gallop Gain</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{b72bd676-735c-43bf-a046-2c7511d45f09}</destination>
+		</relationship>
+	</object>
+	<object class="GainEffect" id="{b72bd676-735c-43bf-a046-2c7511d45f09}">
+		<relationship name="automators">
+			<destination>{b6eff143-4c17-48ff-ac45-825cd5687aeb}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{b6eff143-4c17-48ff-ac45-825cd5687aeb}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>gain</value>
+		</property>
+	</object>
+</objects>

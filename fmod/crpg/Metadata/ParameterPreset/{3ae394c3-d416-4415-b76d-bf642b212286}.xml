@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{3ae394c3-d416-4415-b76d-bf642b212286}">
+		<property name="name">
+			<value>agent_state</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ccabf56a-7bb1-4a24-bfde-bf76b31aa2d2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ccabf56a-7bb1-4a24-bfde-bf76b31aa2d2}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>5</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>nothing</value>
+			<value>neutral</value>
+			<value>cautious</value>
+			<value>super_cautious</value>
+			<value>alarmed</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

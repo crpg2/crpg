@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="UiMixerView" id="{fabbe36c-cd00-48e1-a88c-7ffd7ff08d4b}">
+		<property name="name">
+			<value>Distances</value>
+		</property>
+		<relationship name="assignedStrips">
+			<destination>{a48a1101-c3c2-4eef-8e64-4146bf7395ee}</destination>
+			<destination>{2ea2f835-d01e-4bda-9c14-ce0c139b16cd}</destination>
+			<destination>{e9d4d576-f3d0-4a2a-aef2-92f23ad9fba3}</destination>
+			<destination>{9f4d488a-469e-4d00-8bdd-b818b7ebfef5}</destination>
+			<destination>{e723b5c2-ebea-4012-9738-096a99d8c48e}</destination>
+			<destination>{1555237f-9d37-4829-bf98-e303da88f1ae}</destination>
+			<destination>{74ee7440-95ae-493c-ac3f-06686d248ce5}</destination>
+			<destination>{c5701deb-9b25-4f62-aff7-6198ab3fa382}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{bc2f2d66-95cb-4a2a-a6b5-c608e1cf95e8}</destination>
+		</relationship>
+	</object>
+</objects>

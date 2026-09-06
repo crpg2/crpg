@@ -20,11 +20,18 @@ internal class ChatCommandsComponent : GameHandler
 {
     public const char CommandPrefix = '!';
     private readonly List<QueuedMessageInfo> _queuedServerMessages;
+    private readonly List<Action> _queuedActions;
     private ChatCommand[] _commands = null!;
 
     public ChatCommandsComponent()
     {
         _queuedServerMessages = new List<QueuedMessageInfo>();
+        _queuedActions = new List<Action>();
+    }
+
+    public void QueueAction(Action action)
+    {
+        _queuedActions.Add(action);
     }
 
     public void InitChatCommands(ICrpgClient crpgClient)
@@ -48,6 +55,7 @@ internal class ChatCommandsComponent : GameHandler
                 new OrderCommand(this),
                 new HelpCommand(this),
                 new FriendlyFireInfoCommand(this),
+                new FartCommand(this),
         };
 #else
         _commands = Array.Empty<ChatCommand>();
@@ -133,6 +141,16 @@ internal class ChatCommandsComponent : GameHandler
             {
                 _queuedServerMessages.RemoveAt(i);
             }
+        }
+
+        if (_queuedActions.Count > 0)
+        {
+            foreach (Action action in _queuedActions)
+            {
+                action();
+            }
+
+            _queuedActions.Clear();
         }
     }
 #endif
