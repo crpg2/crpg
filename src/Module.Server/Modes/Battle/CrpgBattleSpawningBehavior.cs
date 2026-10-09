@@ -1,6 +1,7 @@
 ﻿using Crpg.Module.Common;
 using Crpg.Module.Notifications;
 using TaleWorlds.Core;
+using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.PlayerServices;
 
@@ -14,6 +15,10 @@ internal class CrpgBattleSpawningBehavior : CrpgSpawningBehaviorBase
     private MissionTimer? _spawnTimer;
     private MissionTimer? _cavalrySpawnDelayTimer;
     private bool _botsSpawned;
+#if CRPG_SERVER
+    private CrpgTeamInventoryServer? _teamInventory;
+    private CrpgCharacterLoadoutBehaviorServer? _userLoadout;
+#endif
     public CrpgBattleSpawningBehavior(CrpgConstants constants, MultiplayerRoundController roundController, MultiplayerGameType currentGameType)
         : base(constants)
     {
@@ -27,6 +32,10 @@ internal class CrpgBattleSpawningBehavior : CrpgSpawningBehaviorBase
         base.Initialize(spawnComponent);
         _roundController.OnPreparationEnded += RequestStartSpawnSession;
         _roundController.OnRoundEnding += RequestStopSpawnSession;
+#if CRPG_SERVER
+        _teamInventory = Mission.Current.GetMissionBehavior<CrpgTeamInventoryServer>();
+        _userLoadout = Mission.Current.GetMissionBehavior<CrpgCharacterLoadoutBehaviorServer>();
+#endif
     }
 
     public override void Clear()
@@ -76,6 +85,22 @@ internal class CrpgBattleSpawningBehavior : CrpgSpawningBehaviorBase
         return _roundController.IsRoundInProgress;
     }
 
+    protected override Equipment GetCharacterEquipment(NetworkCommunicator networkPeer, CrpgPeer crpgPeer)
+    {
+#if CRPG_SERVER
+        if (_teamInventory?.IsEnabled == true)
+        {
+            return _teamInventory.GetPendingEquipment(networkPeer);
+        }
+
+        if (_userLoadout?.IsEnabled == true)
+        {
+            return _userLoadout.GetPeerEquipment(networkPeer);
+        }
+#endif
+        return base.GetCharacterEquipment(networkPeer, crpgPeer);
+    }
+
     protected override bool IsPlayerAllowedToSpawn(NetworkCommunicator networkPeer)
     {
         var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
@@ -86,6 +111,43 @@ internal class CrpgBattleSpawningBehavior : CrpgSpawningBehaviorBase
         {
             return false;
         }
+
+#if CRPG_SERVER
+        if (_teamInventory?.IsEnabled == true)
+        {
+            if (_teamInventory.ReadyToSpawn.Contains(networkPeer))
+            {
+                var equipment = _teamInventory.GetPendingEquipment(networkPeer);
+                if (!DoesEquipmentContainWeapon(equipment))
+                {
+                    _teamInventory.UnsetReadyToSpawnShowMenu(networkPeer, new TextObject("{=KC9dx231}You must have a melee or throwing weapon equipped to spawn.").ToString());
+                    return false;
+                }
+
+                return !IsCavalryDelayBlocking(networkPeer, equipment);
+            }
+
+            _teamInventory.EnsureForceMenuSent(networkPeer, new TextObject("{=KC9dx230}Select your equipment and click ready").ToString(), (int)TimeSinceSpawnEnabled);
+            return false;
+        }
+
+        if (_userLoadout?.IsEnabled == true)
+        {
+            if (_userLoadout.ReadyToSpawn.Contains(networkPeer))
+            {
+                var equipment = _userLoadout.GetPeerEquipment(networkPeer);
+                if (!DoesEquipmentContainWeapon(equipment))
+                {
+                    _userLoadout.UnsetReadyToSpawnShowMenu(networkPeer, new TextObject("{=KC9dx231}You must have a melee or throwing weapon equipped to spawn.").ToString());
+                    return false;
+                }
+
+                return !IsCavalryDelayBlocking(networkPeer, equipment);
+            }
+
+            return false; // not ready to spawn
+        }
+#endif
 
         var characterEquipment = CrpgCharacterBuilder.CreateCharacterEquipment(crpgPeer.User.Character.EquippedItems);
         if (!DoesEquipmentContainWeapon(characterEquipment)) // Disallow spawning without weapons.
@@ -106,34 +168,47 @@ internal class CrpgBattleSpawningBehavior : CrpgSpawningBehaviorBase
             return false;
         }
 
-        bool hasMount = characterEquipment[EquipmentIndex.Horse].Item != null;
-        // Disallow spawning cavalry before the cav spawn delay ended.
-        if (hasMount && _cavalrySpawnDelayTimer != null && !_cavalrySpawnDelayTimer.Check())
-        {
-            if (_notifiedPlayersAboutSpawnRestriction.Add(networkPeer.VirtualPlayer.Id))
-            {
-                GameNetwork.BeginModuleEventAsServer(networkPeer);
-                GameNetwork.WriteMessage(new CrpgNotificationId
-                {
-                    Type = CrpgNotificationType.Notification,
-                    TextId = "str_notification",
-                    TextVariation = "cavalry_spawn_delay",
-                    SoundEvent = string.Empty,
-                    Variables = { ["SECONDS"] = ((int)_cavalrySpawnDelayTimer.GetTimerDuration()).ToString() },
-                });
-                GameNetwork.EndModuleEventAsServer();
-            }
-
-            return false;
-        }
-
-        return true;
+        return !IsCavalryDelayBlocking(networkPeer, characterEquipment);
     }
 
     protected override void OnPeerSpawned(Agent agent)
     {
         base.OnPeerSpawned(agent);
         agent.MissionPeer.SpawnCountThisRound += 1;
+#if CRPG_SERVER
+        if (_userLoadout?.IsEnabled == true)
+        {
+            var peer = agent.MissionPeer?.GetNetworkPeer();
+            if (peer != null)
+            {
+                _userLoadout.ReadyToSpawn.Add(peer);
+            }
+        }
+#endif
+    }
+
+    private bool IsCavalryDelayBlocking(NetworkCommunicator networkPeer, Equipment equipment)
+    {
+        if (equipment[EquipmentIndex.Horse].Item == null || _cavalrySpawnDelayTimer == null || _cavalrySpawnDelayTimer.Check())
+        {
+            return false;
+        }
+
+        if (_notifiedPlayersAboutSpawnRestriction.Add(networkPeer.VirtualPlayer.Id))
+        {
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+            GameNetwork.WriteMessage(new CrpgNotificationId
+            {
+                Type = CrpgNotificationType.Notification,
+                TextId = "str_notification",
+                TextVariation = "cavalry_spawn_delay",
+                SoundEvent = string.Empty,
+                Variables = { ["SECONDS"] = ((int)_cavalrySpawnDelayTimer.GetTimerDuration()).ToString() },
+            });
+            GameNetwork.EndModuleEventAsServer();
+        }
+
+        return true;
     }
 
     /// <summary>
