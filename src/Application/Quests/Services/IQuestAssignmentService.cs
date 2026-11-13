@@ -30,6 +30,7 @@ public interface IQuestAssignmentService
     /// Reroll selected quest.
     /// </summary>
     /// <param name="userQuest">Old user quest.</param>
+    /// <param name="assignedQuestDefinitionIds">All daily quests definitions assigned to user now.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
-    Task<UserQuest> ReplaceDailyUserQuestAsync(UserQuest userQuest, CancellationToken cancellationToken = default);
+    Task<UserQuest> ReplaceDailyUserQuestAsync(UserQuest userQuest, HashSet<int> assignedQuestDefinitionIds, CancellationToken cancellationToken = default);
 }

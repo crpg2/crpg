@@ -413,7 +413,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     props.ReloadSpeed *= ImpactOfStrReqOnCrossbows(agent, 0.15f, primaryItem);
 
                     // slow on reload (kicks in a bit late tho)
-                    props.BipedalRangedReloadSpeedMultiplier = 0.1f;
+                    props.BipedalRangedReloadSpeedMultiplier = 0.190f;
                 }
 
                 // Bows
@@ -550,6 +550,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     1.0f);
 
                 props.WeaponInaccuracy *= encumbranceMultiplier;
+                props.WeaponInaccuracy = MathF.Clamp(props.WeaponInaccuracy, 0f, 1f);
 
                 // Reload & draw speed penalty: linearly drops from 1.0 at 20 to 0.25 at 30
                 float reloadThrustMultiplier = totalEncumbrance <= 20f

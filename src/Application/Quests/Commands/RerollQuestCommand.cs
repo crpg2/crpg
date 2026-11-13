@@ -35,12 +35,13 @@ public record RerollQuestCommand : IMediatorRequest
             CancellationToken cancellationToken)
         {
             int price = constants.QuestRerollDailyQuestPrice;
-            var userQuest = await db.UserQuests
+            var userDailyQuests = await db.UserQuests
                 .Include(uq => uq.QuestDefinition)
                 .Include(uq => uq.User!)
-                .FirstOrDefaultAsync(
-                    uq => uq.Id == req.UserQuestId && uq.UserId == req.UserId &&
-                          uq.QuestDefinition!.Type == QuestType.Daily, cancellationToken);
+                .Where(uq => uq.UserId == req.UserId && uq.QuestDefinition!.Type == QuestType.Daily)
+                .ToListAsync(cancellationToken);
+
+            var userQuest = userDailyQuests.FirstOrDefault(uq => uq.Id == req.UserQuestId);
 
             if (userQuest == null)
             {
@@ -68,9 +69,11 @@ public record RerollQuestCommand : IMediatorRequest
                 return new(CommonErrors.NotEnoughGold(price, user.Gold));
             }
 
+            var assignedQuestDefinitionIds = userDailyQuests.Select(uq => uq.QuestDefinitionId).ToHashSet();
+
             user.Gold -= price;
 
-            var newUserQuest = await questAssignmentService.ReplaceDailyUserQuestAsync(userQuest, cancellationToken);
+            var newUserQuest = await questAssignmentService.ReplaceDailyUserQuestAsync(userQuest, assignedQuestDefinitionIds,  cancellationToken);
 
             db.ActivityLogs.Add(activityLogService.CreateQuestRerolledLog(
                 req.UserId, userQuest.Id, newUserQuest.Id, price));
