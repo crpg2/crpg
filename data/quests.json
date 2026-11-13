@@ -4,12 +4,12 @@
     "id": 1,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{}],
+    "eventFiltersJson": [ {} ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1500,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
   {
@@ -17,12 +17,12 @@
     "id": 2,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"OneHandedSword"}],
+    "eventFiltersJson": [ { "WeaponClass": "OneHandedSword" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 750,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
   {
@@ -30,12 +30,12 @@
     "id": 3,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"OneHandedAxe"}],
+    "eventFiltersJson": [ { "WeaponClass": "OneHandedAxe" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 750,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
   {
@@ -43,12 +43,12 @@
     "id": 4,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"TwoHandedSword"}],
+    "eventFiltersJson": [ { "WeaponClass": "TwoHandedSword" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 750,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
   {
@@ -56,12 +56,15 @@
     "id": 5,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"OneHandedPolearm"},{"WeaponClass":"TwoHandedPolearm"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "OneHandedPolearm" },
+      { "WeaponClass": "TwoHandedPolearm" }
+    ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1000,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
   {
@@ -69,12 +72,12 @@
     "id": 6,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"Bow"}],
+    "eventFiltersJson": [ { "WeaponClass": "Bow" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1250,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
   {
@@ -82,12 +85,12 @@
     "id": 7,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"Crossbow"}],
+    "eventFiltersJson": [ { "WeaponClass": "Crossbow" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 1250,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
   {
@@ -95,12 +98,12 @@
     "id": 8,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"BodyPart":"Head"}],
+    "eventFiltersJson": [ { "BodyPart": "Head" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 500,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
   {
@@ -108,12 +111,12 @@
     "id": 9,
     "type": "Daily",
     "eventType": "Kill",
-    "eventFiltersJson": [{}],
+    "eventFiltersJson": [ {} ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 20,
-    "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardGold": 750,
+    "rewardExperience": 75000,
     "isActive": true
   },
   {
@@ -121,12 +124,17 @@
     "id": 10,
     "type": "Daily",
     "eventType": "Kill",
-    "eventFiltersJson": [{"BodyPart":"Head","HitType":"Ranged"}],
+    "eventFiltersJson": [
+      {
+        "BodyPart": "Head",
+        "HitType": "Ranged"
+      }
+    ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 5,
-    "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardGold": 750,
+    "rewardExperience": 75000,
     "isActive": true
   },
   {
@@ -134,12 +142,12 @@
     "id": 11,
     "type": "Daily",
     "eventType": "Kill",
-    "eventFiltersJson": [{"HitType":"Ranged"}],
+    "eventFiltersJson": [ { "HitType": "Ranged" } ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 15,
-    "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardGold": 750,
+    "rewardExperience": 75000,
     "isActive": true
   },
   {
@@ -147,12 +155,12 @@
     "id": 12,
     "type": "Daily",
     "eventType": "Kill",
-    "eventFiltersJson": [{"HitType":"Melee"}],
+    "eventFiltersJson": [ { "HitType": "Melee" } ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 10,
-    "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardGold": 750,
+    "rewardExperience": 75000,
     "isActive": true
   },
   {
@@ -160,12 +168,15 @@
     "id": 13,
     "type": "Daily",
     "eventType": "Block",
-    "eventFiltersJson": [{"WeaponClass":"SmallShield"},{"WeaponClass":"LargeShield"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "SmallShield" },
+      { "WeaponClass": "LargeShield" }
+    ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 80,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
   {
@@ -173,12 +184,12 @@
     "id": 15,
     "type": "Daily",
     "eventType": "Block",
-    "eventFiltersJson": [{}],
+    "eventFiltersJson": [ {} ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 200,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
   {
@@ -186,12 +197,16 @@
     "id": 16,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"ThrowingAxe"},{"WeaponClass":"ThrowingKnife"},{"WeaponClass":"Javelin"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "ThrowingAxe" },
+      { "WeaponClass": "ThrowingKnife" },
+      { "WeaponClass": "Javelin" }
+    ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 500,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
   {
@@ -199,12 +214,15 @@
     "id": 17,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"Mace"},{"WeaponClass":"TwoHandedMace"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "Mace" },
+      { "WeaponClass": "TwoHandedMace" }
+    ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 750,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
   {
@@ -212,12 +230,12 @@
     "id": 18,
     "type": "Daily",
     "eventType": "Hit",
-    "eventFiltersJson": [{"BodyPart":"Legs"}],
+    "eventFiltersJson": [ { "BodyPart": "Legs" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 500,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
   {
@@ -225,12 +243,15 @@
     "id": 19,
     "type": "Daily",
     "eventType": "Kill",
-    "eventFiltersJson": [{"WeaponClass":"OneHandedSword"},{"WeaponClass":"TwoHandedSword"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "OneHandedSword" },
+      { "WeaponClass": "TwoHandedSword" }
+    ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 10,
-    "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardGold": 750,
+    "rewardExperience": 75000,
     "isActive": true
   },
   {
@@ -238,25 +259,26 @@
     "id": 20,
     "type": "Daily",
     "eventType": "Block",
-    "eventFiltersJson": [{"HitType":"Ranged"}],
+    "eventFiltersJson": [ { "HitType": "Ranged" } ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 30,
     "rewardGold": 500,
-    "rewardExperience": 25000,
+    "rewardExperience": 50000,
     "isActive": true
   },
+
   {
     /* Weekly Damage Master */
     "id": 21,
     "type": "Weekly",
     "eventType": "Hit",
-    "eventFiltersJson": [{}],
+    "eventFiltersJson": [ {} ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 5000,
     "rewardGold": 5000,
-    "rewardExperience": 150000,
+    "rewardExperience": 250000,
     "isActive": true
   },
   {
@@ -264,12 +286,12 @@
     "id": 22,
     "type": "Weekly",
     "eventType": "Kill",
-    "eventFiltersJson": [{}],
+    "eventFiltersJson": [ {} ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 100,
     "rewardGold": 5000,
-    "rewardExperience": 150000,
+    "rewardExperience": 500000,
     "isActive": true
   },
   {
@@ -277,12 +299,17 @@
     "id": 23,
     "type": "Weekly",
     "eventType": "Kill",
-    "eventFiltersJson": [{"BodyPart":"Head","HitType":"Ranged"}],
+    "eventFiltersJson": [
+      {
+        "BodyPart": "Head",
+        "HitType": "Ranged"
+      }
+    ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 25,
     "rewardGold": 5000,
-    "rewardExperience": 150000,
+    "rewardExperience": 250000,
     "isActive": true
   },
   {
@@ -290,12 +317,17 @@
     "id": 24,
     "type": "Weekly",
     "eventType": "Kill",
-    "eventFiltersJson": [{"WeaponClass":"TwoHandedSword"},{"WeaponClass":"TwoHandedAxe"},{"WeaponClass":"TwoHandedMace"},{"WeaponClass":"TwoHandedPolearm"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "TwoHandedSword" },
+      { "WeaponClass": "TwoHandedAxe" },
+      { "WeaponClass": "TwoHandedMace" },
+      { "WeaponClass": "TwoHandedPolearm" }
+    ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 50,
     "rewardGold": 5000,
-    "rewardExperience": 150000,
+    "rewardExperience": 500000,
     "isActive": true
   },
   {
@@ -303,12 +335,12 @@
     "id": 25,
     "type": "Weekly",
     "eventType": "Hit",
-    "eventFiltersJson": [{"WeaponClass":"Musket"}],
+    "eventFiltersJson": [ { "WeaponClass": "Musket" } ],
     "aggregationType": "Sum",
     "aggregationField": "Damage",
     "requiredValue": 5000,
     "rewardGold": 5000,
-    "rewardExperience": 150000,
+    "rewardExperience": 500000,
     "isActive": true
   },
   {
@@ -316,12 +348,145 @@
     "id": 26,
     "type": "Weekly",
     "eventType": "Block",
-    "eventFiltersJson": [{"WeaponClass":"SmallShield"},{"WeaponClass":"LargeShield"}],
+    "eventFiltersJson": [
+      { "WeaponClass": "SmallShield" },
+      { "WeaponClass": "LargeShield" }
+    ],
     "aggregationType": "Count",
     "aggregationField": null,
     "requiredValue": 500,
     "rewardGold": 5000,
-    "rewardExperience": 150000,
+    "rewardExperience": 500000,
+    "isActive": true
+  },
+  {
+    /* Damage to mounts */
+    "id": 27,
+    "type": "Daily",
+    "eventType": "Hit",
+    "eventFiltersJson": [ { "TargetType": "Mount" } ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 1000,
+    "rewardGold": 500,
+    "rewardExperience": 50000,
+    "isActive": true
+  },
+  {
+    /* Damage with 2H axe */
+    "id": 28,
+    "type": "Daily",
+    "eventType": "Hit",
+    "eventFiltersJson": [ { "WeaponClass": "TwoHandedAxe" } ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 750,
+    "rewardGold": 500,
+    "rewardExperience": 50000,
+    "isActive": true
+  },
+  {
+    /* Damage with musket */
+    "id": 29,
+    "type": "Daily",
+    "eventType": "Hit",
+    "eventFiltersJson": [ { "WeaponClass": "Musket" } ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 1250,
+    "rewardGold": 500,
+    "rewardExperience": 50000,
+    "isActive": true
+  },
+  {
+    /* Damage with cut damage type */
+    "id": 30,
+    "type": "Daily",
+    "eventType": "Hit",
+    "eventFiltersJson": [ { "DamageType": "Cut" } ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 1000,
+    "rewardGold": 500,
+    "rewardExperience": 50000,
+    "isActive": true
+  },
+  {
+    /* Damage with pierce damage type */
+    "id": 31,
+    "type": "Daily",
+    "eventType": "Hit",
+    "eventFiltersJson": [ { "DamageType": "Pierce" } ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 1000,
+    "rewardGold": 500,
+    "rewardExperience": 50000,
+    "isActive": true
+  },
+  {
+    /* Damage with blunt damage type */
+    "id": 32,
+    "type": "Daily",
+    "eventType": "Hit",
+    "eventFiltersJson": [ { "DamageType": "Blunt" } ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 1000,
+    "rewardGold": 500,
+    "rewardExperience": 50000,
+    "isActive": true
+  },
+  {
+    /* Weekly 'Tis but a scratch */
+    "id": 33,
+    "type": "Weekly",
+    "eventType": "Hit",
+    "eventFiltersJson": [
+      { "BodyPart": "Legs" },
+      { "BodyPart": "ArmLeft" },
+      { "BodyPart": "ArmRight" }
+    ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 4000,
+    "rewardGold": 5000,
+    "rewardExperience": 500000,
+    "isActive": true
+  },
+  {
+    /* Weekly Stick them with the pointy end */
+    "id": 34,
+    "type": "Weekly",
+    "eventType": "Hit",
+    "eventFiltersJson": [
+      {
+        "WeaponClass": "OneHandedSword",
+        "DamageType": "Pierce"
+      }
+    ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 3000,
+    "rewardGold": 5000,
+    "rewardExperience": 500000,
+    "isActive": true
+  },
+  {
+    /* Weekly Pincushions */
+    "id": 35,
+    "type": "Weekly",
+    "eventType": "Hit",
+    "eventFiltersJson": [
+      { "WeaponClass": "ThrowingAxe" },
+      { "WeaponClass": "ThrowingKnife" },
+      { "WeaponClass": "Javelin" }
+    ],
+    "aggregationType": "Sum",
+    "aggregationField": "Damage",
+    "requiredValue": 5000,
+    "rewardGold": 5000,
+    "rewardExperience": 500000,
     "isActive": true
   }
 ]
