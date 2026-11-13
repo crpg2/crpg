@@ -25,6 +25,7 @@
     <ContentWithTargetPath Include="..\Module.Server\SubModule.xml" Link="SubModule.xml" TargetPath="..\..\SubModule.xml" CopyToOutputDirectory="Always" />
     <ContentWithTargetPath Include="..\Module.Server\ModuleData\**\*" TargetPath="..\..\ModuleData\%(RecursiveDir)\%(FileName)%(Extension)" CopyToOutputDirectory="Always" />
     <ContentWithTargetPath Include="ModuleData\**\*;GUI\**\*.xml" TargetPath="..\..\%(Identity)" CopyToOutputDirectory="Always" />
+    <ContentWithTargetPath Include="..\Module.Server\Sounds\**\*" TargetPath="..\..\Sounds\%(RecursiveDir)\%(FileName)%(Extension)" CopyToOutputDirectory="Always" />
     <Compile Include="..\Module.Server\**\*$(DefaultLanguageSourceExtension)" />
     <Compile Remove="..\Module.Server\$(BaseIntermediateOutputPath)\**;..\Module.Server\$(BaseOutputPath)\**" />
     <Compile Remove="..\Module.Server\Rating\**" />

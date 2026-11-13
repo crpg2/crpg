@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{43f94972-9990-4684-9d8c-087f7d24a656}">
+		<property name="name">
+			<value>Ambient Battle Gain</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{993efc4e-f944-47a0-8e0c-43f071b5a1ea}</destination>
+		</relationship>
+	</object>
+	<object class="GainEffect" id="{993efc4e-f944-47a0-8e0c-43f071b5a1ea}">
+		<relationship name="automators">
+			<destination>{944188d5-9e3d-42d6-bbba-c93339be24af}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{944188d5-9e3d-42d6-bbba-c93339be24af}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>gain</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{94296fdb-dd0d-4d3d-8caf-81f1271e0095}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{94296fdb-dd0d-4d3d-8caf-81f1271e0095}">
+		<relationship name="parameter">
+			<destination>{7f046840-4c79-4386-9345-b81eae9d52e2}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{3b180c63-bb25-4485-86c7-cc7c1bcf8bb3}</destination>
+			<destination>{9dbdda72-cbc9-480a-a933-92876d744d73}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{3b180c63-bb25-4485-86c7-cc7c1bcf8bb3}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<property name="curveShape">
+			<value>0.240070507</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{9dbdda72-cbc9-480a-a933-92876d744d73}">
+		<property name="position">
+			<value>500</value>
+		</property>
+		<property name="value">
+			<value>-24</value>
+		</property>
+	</object>
+</objects>

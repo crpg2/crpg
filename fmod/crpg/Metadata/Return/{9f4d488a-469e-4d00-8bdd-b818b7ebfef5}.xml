@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerReturn" id="{9f4d488a-469e-4d00-8bdd-b818b7ebfef5}">
+		<property name="name">
+			<value>CombatClean</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{3ef459bf-42d8-486c-acad-7ee3ee9b791e}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{61f2e918-f913-4c57-95d2-6961a53d773c}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{35334875-9f0a-4a24-bd35-b9bbcec4e893}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{3ef459bf-42d8-486c-acad-7ee3ee9b791e}">
+		<relationship name="effects">
+			<destination>{115ccc39-3b41-43c2-913c-8fae725478fe}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{61f2e918-f913-4c57-95d2-6961a53d773c}">
+		<property name="surroundPanDirection">
+			<value>-1.9368068</value>
+		</property>
+		<property name="overridingOutputFormat">
+			<value>2</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{115ccc39-3b41-43c2-913c-8fae725478fe}" />
+</objects>

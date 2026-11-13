@@ -8,6 +8,7 @@ using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.Dtv;
+using Crpg.Module.GUI.VoiceCommands;
 using Crpg.Module.GUI.Spectator;
 using Crpg.Module.GUI.Warmup;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
@@ -57,7 +58,6 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMultiplayerFactionBanVoteUIHandler(),
             ViewCreator.CreateMissionAgentStatusUIHandler(mission),
             ViewCreator.CreateMissionMainAgentEquipmentController(mission), // Pick/drop items.
-            ViewCreator.CreateMissionMainAgentCheerBarkControllerView(mission),
             crpgEscapeMenu,
             new CrpgAgentLabelView(),
             MultiplayerViewCreator.CreateMultiplayerTeamSelectUIHandler(),
@@ -72,6 +72,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
             new WarmupHudUiHandler(),
             new DtvHudUiHandler(),
             new AmmoQuiverChangeUiHandler(),
+            new CrpgVoiceCommandsUiHandler(),
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),

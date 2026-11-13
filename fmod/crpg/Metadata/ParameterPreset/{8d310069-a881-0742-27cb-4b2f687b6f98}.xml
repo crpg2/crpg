@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{8d310069-a881-0742-27cb-4b2f687b6f98}">
+		<property name="name">
+			<value>Loop</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{cd35c6c9-200b-4445-9068-88959af0ac39}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{cd35c6c9-200b-4445-9068-88959af0ac39}">
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

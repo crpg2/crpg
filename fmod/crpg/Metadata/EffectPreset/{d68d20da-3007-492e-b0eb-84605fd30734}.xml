@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{d68d20da-3007-492e-b0eb-84605fd30734}">
+		<property name="name">
+			<value>Naval Combat Hooks</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{e48059e5-db8c-48d6-addc-417bc0bd7a7f}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{e48059e5-db8c-48d6-addc-417bc0bd7a7f}">
+		<property name="distanceRolloffType">
+			<value>3</value>
+		</property>
+		<relationship name="automators">
+			<destination>{93b36b3c-da78-4399-a0e0-20438e8c0ea4}</destination>
+			<destination>{96fb7a4c-1372-475f-a7d1-3287edee7479}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{93b36b3c-da78-4399-a0e0-20438e8c0ea4}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>panBlend</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{59fd266b-f736-42d0-954e-f75998ab506c}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{96fb7a4c-1372-475f-a7d1-3287edee7479}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>userStereoAxis</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{f81f720a-72c2-4582-8d2e-b71d2bf6ee16}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{59fd266b-f736-42d0-954e-f75998ab506c}">
+		<relationship name="parameter">
+			<destination>{f096d7a3-0fbe-4b70-b3b3-5f7a82f9993b}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{b583fe12-9399-4a0d-9b4c-f7152b76f314}</destination>
+			<destination>{86eea348-2ab4-460e-aaf6-348cfc276cbb}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{f81f720a-72c2-4582-8d2e-b71d2bf6ee16}">
+		<relationship name="parameter">
+			<destination>{d00c43b9-5b9b-42e2-9fc3-5da6f331e8d7}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{4f3a77d6-cfea-4243-8889-e404afff309a}</destination>
+			<destination>{d0c0ae91-c087-475e-8dd2-001a43d295ab}</destination>
+			<destination>{e82325d6-b4f7-4782-85de-6e32bd51d546}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{b583fe12-9399-4a0d-9b4c-f7152b76f314}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{86eea348-2ab4-460e-aaf6-348cfc276cbb}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>0.904999971</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{4f3a77d6-cfea-4243-8889-e404afff309a}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{d0c0ae91-c087-475e-8dd2-001a43d295ab}">
+		<property name="position">
+			<value>-180</value>
+		</property>
+		<property name="value">
+			<value>-180</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{e82325d6-b4f7-4782-85de-6e32bd51d546}">
+		<property name="position">
+			<value>180</value>
+		</property>
+		<property name="value">
+			<value>180</value>
+		</property>
+	</object>
+</objects>

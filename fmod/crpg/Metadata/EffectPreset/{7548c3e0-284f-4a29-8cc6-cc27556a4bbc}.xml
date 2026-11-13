@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{7548c3e0-284f-4a29-8cc6-cc27556a4bbc}">
+		<property name="name">
+			<value>Combat Low Spatializer</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{c2e33da9-0d74-4c63-a757-2cb979c6e697}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{c2e33da9-0d74-4c63-a757-2cb979c6e697}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0.75</value>
+		</property>
+		<property name="maximumDistance">
+			<value>50</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
+</objects>

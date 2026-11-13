@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{996fe977-97cb-4987-9599-112fd2dad594}">
+		<property name="name">
+			<value>WakeRate</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{5ab9546f-c35d-4bbe-af74-73db69116c3f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{5ab9546f-c35d-4bbe-af74-73db69116c3f}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

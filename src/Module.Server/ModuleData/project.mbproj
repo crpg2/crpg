@@ -14,4 +14,8 @@
   <file id="soln_physics_materials" name="ModuleData/physics_materials.xml" type="physics_material" />
   <file id="soln_action_sets" name="ModuleData/action_sets.xml" type="action_set" />
   <file id="soln_action_types" name="ModuleData/action_types.xml" type="action_type" />
+  <file id="soln_sound_files"          name="ModuleData/soundfiles.xml"            type="sound_files" />
+  <file id="soln_sound_event_data"     name="ModuleData/sound_event_data.gen.xml"  type="sound_event_data" />
+  <file id="soln_sound_parameter_data" name="ModuleData/sound_params.gen.xml"      type="sound_parameter_data" />
+  <file id="soln_voice_definitions"    name="ModuleData/voice_definitions.xml"     type="voice_definitions" />
 </base>

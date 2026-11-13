@@ -6,6 +6,7 @@ using Crpg.Module.Rewards;
 #else
 using Crpg.Module.GUI;
 using Crpg.Module.GUI.AmmoQuiverChange;
+using Crpg.Module.GUI.VoiceCommands;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
@@ -50,7 +51,6 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMissionKillNotificationUIHandler(),
             ViewCreator.CreateMissionAgentStatusUIHandler(mission),
             ViewCreator.CreateMissionMainAgentEquipmentController(mission),
-            ViewCreator.CreateMissionMainAgentCheerBarkControllerView(mission),
             crpgEscapeMenu,
             MultiplayerViewCreator.CreateMultiplayerEndOfBattleUIHandler(),
             MultiplayerViewCreator.CreateMissionScoreBoardUIHandler(mission, true),
@@ -61,6 +61,7 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
             ViewCreator.CreateMissionBoundaryCrossingView(),
             new AmmoQuiverChangeUiHandler(),
+            new CrpgVoiceCommandsUiHandler(),
             new MissionBoundaryWallView(),
             new MissionItemContourControllerView(),
             new MissionAgentContourControllerView(),

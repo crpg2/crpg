@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{4a78e195-bf20-418e-bb45-1d7750cc2d78}">
+		<property name="name">
+			<value>Alert Nod Spatializer</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{0c7f28cc-dd5b-44c1-a248-523a173c4dfa}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{0c7f28cc-dd5b-44c1-a248-523a173c4dfa}">
+		<property name="distanceRolloffType">
+			<value>2</value>
+		</property>
+	</object>
+</objects>

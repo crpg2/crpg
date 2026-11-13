@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{E892A460-203B-40E9-9C39-F741B2316DAF}">
+		<property name="assetPath">
+			<value>voice/defend/female/vc_1_defend_catapultF.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.3058956916</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b6479c9e-7ccd-4767-8111-a7d2a8925708}</destination>
+		</relationship>
+	</object>
+</objects>

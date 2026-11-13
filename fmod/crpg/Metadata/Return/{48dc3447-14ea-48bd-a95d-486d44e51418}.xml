@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerReturn" id="{48dc3447-14ea-48bd-a95d-486d44e51418}">
+		<property name="name">
+			<value>Siege</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{4c7cef17-fb70-4ebd-9ee6-46160dfe8207}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{6fb381b1-05b1-4c11-b80b-b838fea1350c}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{a6e77f16-3040-4a88-863c-5493ae8cfab5}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{4c7cef17-fb70-4ebd-9ee6-46160dfe8207}">
+		<relationship name="effects">
+			<destination>{5cd44b7e-0f55-45dd-b368-6eebfa7d777b}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{6fb381b1-05b1-4c11-b80b-b838fea1350c}" />
+	<object class="MixerBusFader" id="{5cd44b7e-0f55-45dd-b368-6eebfa7d777b}" />
+</objects>

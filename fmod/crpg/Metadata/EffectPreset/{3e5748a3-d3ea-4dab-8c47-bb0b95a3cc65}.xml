@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{3e5748a3-d3ea-4dab-8c47-bb0b95a3cc65}">
+		<property name="name">
+			<value>Vibration Notifications</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{38c20284-ede8-4778-9621-957c9f3e85b2}</destination>
+		</relationship>
+	</object>
+	<object class="MixerSend" id="{38c20284-ede8-4778-9621-957c9f3e85b2}">
+		<property name="level">
+			<value>0</value>
+		</property>
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{dc70f548-5f42-4df5-a782-5da66bf2d894}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,9 +1,11 @@
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.Common.KeyBinder.Models;
+using Crpg.Module.GUI.VoiceCommands;
 using TaleWorlds.Core;
 using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.InputSystem;
+using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 
@@ -12,6 +14,7 @@ namespace Crpg.Module.GUI.AmmoQuiverChange;
 internal class AmmoQuiverChangeUiHandler : MissionView, IUseKeyBinder
 {
     private static readonly string KeyCategoryId = KeyBinder.Categories.CrpgGeneral.CategoryId;
+    private static readonly Random Rng = new();
     private AmmoQuiverChangeVm _dataSource;
     private AmmoQuiverChangeBehaviorClient? _weaponChangeBehavior;
     private GauntletLayer? _gauntletLayer;

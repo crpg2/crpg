@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{0556ff95-6d22-4777-a843-8ec2960c003c}">
+		<property name="name">
+			<value>Animals Big</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{8fbb4bdf-10e2-43c1-93b0-6445a21040cb}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{8fbb4bdf-10e2-43c1-93b0-6445a21040cb}">
+		<property name="distanceRolloffType">
+			<value>3</value>
+		</property>
+		<property name="minimumDistance">
+			<value>1.25</value>
+		</property>
+		<property name="maximumDistance">
+			<value>30</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
+</objects>

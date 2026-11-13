@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{ef7901f1-49f6-4bbb-bb7c-24d423a0c346}">
+		<property name="name">
+			<value>ShipScrapingStatus</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{186805c1-39c5-439c-8952-2f2efa5420dc}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{186805c1-39c5-439c-8952-2f2efa5420dc}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>NotScraping</value>
+			<value>Scraping</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

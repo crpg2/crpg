@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{F540BFB4-1908-45FC-A4CB-DB7F86D11A6B}">
+		<property name="assetPath">
+			<value>voice/formation/male/vc_1_formation_stand_closer.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.5102721088</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b6479c9e-7ccd-4767-8111-a7d2a8925708}</destination>
+		</relationship>
+	</object>
+</objects>

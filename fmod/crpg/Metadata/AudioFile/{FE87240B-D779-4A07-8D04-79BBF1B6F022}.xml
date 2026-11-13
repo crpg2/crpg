@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{FE87240B-D779-4A07-8D04-79BBF1B6F022}">
+		<property name="assetPath">
+			<value>voice/defend/female/vc_1_defend_siege_towerF2.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.6203854875</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b6479c9e-7ccd-4767-8111-a7d2a8925708}</destination>
+		</relationship>
+	</object>
+</objects>

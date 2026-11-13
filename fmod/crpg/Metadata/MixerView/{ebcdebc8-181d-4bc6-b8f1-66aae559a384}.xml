@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="UiMixerView" id="{ebcdebc8-181d-4bc6-b8f1-66aae559a384}">
+		<property name="name">
+			<value>Reverb</value>
+		</property>
+		<relationship name="assignedStrips">
+			<destination>{e100e6e6-2cf4-4992-8d52-bb215a4e91d9}</destination>
+			<destination>{b62a19e5-451c-46a6-84be-7aa46ad3c4ed}</destination>
+			<destination>{1a8e0400-3ad5-4710-b783-8ea7d4295404}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{bc2f2d66-95cb-4a2a-a6b5-c608e1cf95e8}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{d07c5f8b-8daf-02ad-049c-7960de23f3ad}">
+		<property name="name">
+			<value>Voice Long Spatializer</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{ef1a9072-828b-406e-854c-7897d2bf2aa2}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{ef1a9072-828b-406e-854c-7897d2bf2aa2}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+		<property name="maximumDistance">
+			<value>450</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>1</value>
+		</property>
+		<property name="minimumExtent">
+			<value>10</value>
+		</property>
+		<property name="dopplerMultiplier">
+			<value>0</value>
+		</property>
+		<property name="userLFELevel">
+			<value>-80</value>
+		</property>
+		<property name="stereoToSurroundUserPanMode">
+			<value>0</value>
+		</property>
+		<relationship name="automators">
+			<destination>{35dbae9e-0a6c-48eb-8b25-efe3ad923dac}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{35dbae9e-0a6c-48eb-8b25-efe3ad923dac}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>minimumExtent</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{7dba9600-5f14-48f2-9ecd-23de04844c1a}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{7dba9600-5f14-48f2-9ecd-23de04844c1a}">
+		<relationship name="parameter">
+			<destination>{e47d056c-67ef-4cb2-aef0-933107bae5cd}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{3b5d0d78-aefb-4d62-92ea-a06026709561}</destination>
+			<destination>{6b110187-0cf8-4e6e-af1e-4e2fe2e890d4}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{3b5d0d78-aefb-4d62-92ea-a06026709561}">
+		<property name="position">
+			<value>0.40355125100887812</value>
+		</property>
+		<property name="value">
+			<value>10</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{6b110187-0cf8-4e6e-af1e-4e2fe2e890d4}">
+		<property name="position">
+			<value>99.677158999192898</value>
+		</property>
+		<property name="value">
+			<value>60</value>
+		</property>
+	</object>
+</objects>

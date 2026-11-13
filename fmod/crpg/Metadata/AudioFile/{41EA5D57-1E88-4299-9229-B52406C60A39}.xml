@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{41EA5D57-1E88-4299-9229-B52406C60A39}">
+		<property name="assetPath">
+			<value>voice/incoming/male/vc_1_incoming_base1.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.0607482993</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b6479c9e-7ccd-4767-8111-a7d2a8925708}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerReturn" id="{e9d4d576-f3d0-4a2a-aef2-92f23ad9fba3}">
+		<property name="name">
+			<value>CombatDistant</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{4c06d415-95e6-42fc-88c3-9e989c24f021}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{8be30a66-8abe-4aa3-9cb1-6fd563748bf6}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{35334875-9f0a-4a24-bd35-b9bbcec4e893}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{4c06d415-95e6-42fc-88c3-9e989c24f021}">
+		<relationship name="effects">
+			<destination>{9a8a3ea7-9fa6-428e-8de9-04aea7798088}</destination>
+			<destination>{ccda5b68-a0ca-43e4-9574-663305548d22}</destination>
+			<destination>{afca512d-cb55-4a37-97c3-ce6de1d298f6}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{8be30a66-8abe-4aa3-9cb1-6fd563748bf6}" />
+	<object class="ThreeEQEffect" id="{9a8a3ea7-9fa6-428e-8de9-04aea7798088}">
+		<property name="lowGain">
+			<value>-9</value>
+		</property>
+		<property name="highGain">
+			<value>-24</value>
+		</property>
+		<property name="lowCrossover">
+			<value>200</value>
+		</property>
+		<property name="highCrossover">
+			<value>1200</value>
+		</property>
+	</object>
+	<object class="DelayEffect" id="{ccda5b68-a0ca-43e4-9574-663305548d22}">
+		<property name="delay">
+			<value>265</value>
+		</property>
+		<property name="feedback">
+			<value>19</value>
+		</property>
+		<property name="level">
+			<value>-18</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{afca512d-cb55-4a37-97c3-ce6de1d298f6}" />
+</objects>

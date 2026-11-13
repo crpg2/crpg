@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{38ba0e0c-8f27-45ae-ad83-d4f3b1e5321f}">
+		<property name="name">
+			<value>MissionCulture</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{4f1241ae-8a6a-4524-99c6-570e1a401728}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{4f1241ae-8a6a-4524-99c6-570e1a401728}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>11</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>None</value>
+			<value>Aserai</value>
+			<value>Battania</value>
+			<value>Empire</value>
+			<value>Khuzait</value>
+			<value>Sturgia</value>
+			<value>Vlandia</value>
+			<value>Nord</value>
+			<value>Reserved A</value>
+			<value>Reserved B</value>
+			<value>Outlaw</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

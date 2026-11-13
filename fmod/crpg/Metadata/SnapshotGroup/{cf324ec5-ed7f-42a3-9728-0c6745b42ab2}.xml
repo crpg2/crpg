@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="SnapshotGroup" id="{cf324ec5-ed7f-42a3-9728-0c6745b42ab2}">
+		<property name="name">
+			<value>Duckers</value>
+		</property>
+		<relationship name="items">
+			<destination>{3792cd16-ab54-4fc6-a504-fdf3ff81d390}</destination>
+			<destination>{f233ba80-0498-41f0-a039-ef71447b1a76}</destination>
+			<destination>{68ba9607-814b-4cc4-a8a4-1c973b8cc208}</destination>
+			<destination>{0ba95cdb-2eba-478c-b24f-aaac27087537}</destination>
+			<destination>{29a748b6-9593-49e0-8d54-9ed951fbf24d}</destination>
+			<destination>{ae02bacc-ce90-445a-9f03-82b9e249022d}</destination>
+		</relationship>
+	</object>
+</objects>

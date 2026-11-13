@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{17f45fa5-9cd2-4a40-9b20-4ebf22a06995}">
+		<property name="name">
+			<value>isPlayer Send Foley</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{ffc97af4-661a-4a3e-8760-e6a79dc5932c}</destination>
+		</relationship>
+	</object>
+	<object class="MixerSend" id="{ffc97af4-661a-4a3e-8760-e6a79dc5932c}">
+		<property name="inputFormat">
+			<value>0</value>
+		</property>
+		<relationship name="automators">
+			<destination>{d6c46689-26a5-4520-96dd-dae6fb3a2744}</destination>
+		</relationship>
+		<relationship name="mixerReturn">
+			<destination>{7c5f1ef6-f166-4241-82e9-67769e284e1d}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{d6c46689-26a5-4520-96dd-dae6fb3a2744}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>level</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{d3920e74-c1aa-4acc-b70c-d56cb4525bb1}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{d3920e74-c1aa-4acc-b70c-d56cb4525bb1}">
+		<relationship name="parameter">
+			<destination>{f096d7a3-0fbe-4b70-b3b3-5f7a82f9993b}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{6ec55999-5b28-4d4c-94cf-ddb0cad208a1}</destination>
+			<destination>{5a3c0985-90e5-40d4-8b94-09a909a2ccad}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{6ec55999-5b28-4d4c-94cf-ddb0cad208a1}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{5a3c0985-90e5-40d4-8b94-09a909a2ccad}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>-10</value>
+		</property>
+	</object>
+</objects>

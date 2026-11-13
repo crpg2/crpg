@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{08871a76-a993-44b3-93c2-de498ec132a0}">
+		<property name="name">
+			<value>Vibration Combat High</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{6a6e188a-73c6-447b-997f-f21af419157f}</destination>
+		</relationship>
+	</object>
+	<object class="MixerSend" id="{6a6e188a-73c6-447b-997f-f21af419157f}">
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="automators">
+			<destination>{ddf283b9-7255-47be-9a19-544f7c6e4156}</destination>
+		</relationship>
+		<relationship name="mixerReturn">
+			<destination>{8473f28e-31c3-4855-b1be-56d4e1006c55}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{ddf283b9-7255-47be-9a19-544f7c6e4156}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>level</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{494727b1-f4b1-4963-83b7-723fad86d6d9}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{494727b1-f4b1-4963-83b7-723fad86d6d9}">
+		<relationship name="parameter">
+			<destination>{f096d7a3-0fbe-4b70-b3b3-5f7a82f9993b}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{c3906e6a-f2af-4104-b58a-598743931cd3}</destination>
+			<destination>{3445a014-c29c-4241-9544-b357c3fc5c65}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{c3906e6a-f2af-4104-b58a-598743931cd3}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{3445a014-c29c-4241-9544-b357c3fc5c65}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

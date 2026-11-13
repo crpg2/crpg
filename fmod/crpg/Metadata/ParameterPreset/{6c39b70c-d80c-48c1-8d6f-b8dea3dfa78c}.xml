@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{6c39b70c-d80c-48c1-8d6f-b8dea3dfa78c}">
+		<property name="name">
+			<value>mpMusicSwitcher</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e43ee67d-a969-45fd-bc53-5be95e4f6586}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e43ee67d-a969-45fd-bc53-5be95e4f6586}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

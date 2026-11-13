@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{44984191-61d5-4677-8f50-125299817640}">
+		<property name="name">
+			<value>Voice Tiny Spatializer</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{5bfe0567-f9b7-45bd-bb47-235fc3bec399}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{5bfe0567-f9b7-45bd-bb47-235fc3bec399}">
+		<property name="distanceRolloffType">
+			<value>3</value>
+		</property>
+		<property name="minimumDistance">
+			<value>1.25</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
+</objects>

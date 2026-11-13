@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="UiMixerView" id="{f55ab4e2-1fff-4301-a8b5-7dc91888c980}">
+		<property name="name">
+			<value>Vibration</value>
+		</property>
+		<relationship name="assignedStrips">
+			<destination>{8c0df6cd-bac8-440e-be19-e2cf26a6c8fd}</destination>
+			<destination>{8473f28e-31c3-4855-b1be-56d4e1006c55}</destination>
+			<destination>{2aebf491-01b6-4b92-a4af-e22ffb56b07e}</destination>
+			<destination>{dc70f548-5f42-4df5-a782-5da66bf2d894}</destination>
+			<destination>{48dc3447-14ea-48bd-a95d-486d44e51418}</destination>
+			<destination>{db215073-a5d4-43e6-9081-1de09e18c69e}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{bc2f2d66-95cb-4a2a-a6b5-c608e1cf95e8}</destination>
+		</relationship>
+	</object>
+</objects>

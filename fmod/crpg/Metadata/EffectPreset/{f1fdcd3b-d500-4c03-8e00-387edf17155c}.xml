@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{f1fdcd3b-d500-4c03-8e00-387edf17155c}">
+		<property name="name">
+			<value>Ambient Small</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a698f4c4-571a-071c-2a6d-4895e42c387d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{86ed4e78-5822-4137-95d4-5d307133742a}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{86ed4e78-5822-4137-95d4-5d307133742a}">
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>1</value>
+		</property>
+		<property name="minimumExtent">
+			<value>15</value>
+		</property>
+	</object>
+</objects>

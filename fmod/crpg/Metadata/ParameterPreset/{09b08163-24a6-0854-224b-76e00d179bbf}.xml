@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{09b08163-24a6-0854-224b-76e00d179bbf}">
+		<property name="name">
+			<value>Depth</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{49b447c3-ac2c-4b53-95e8-b55aff9c581e}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{49b447c3-ac2c-4b53-95e8-b55aff9c581e}">
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

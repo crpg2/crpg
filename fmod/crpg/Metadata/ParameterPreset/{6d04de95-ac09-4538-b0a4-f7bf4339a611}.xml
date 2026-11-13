@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{6d04de95-ac09-4538-b0a4-f7bf4339a611}">
+		<property name="name">
+			<value>BodydragMaterial</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d9c3354b-9ac2-4102-b18f-43c9fadd5933}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d9c3354b-9ac2-4102-b18f-43c9fadd5933}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>9</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

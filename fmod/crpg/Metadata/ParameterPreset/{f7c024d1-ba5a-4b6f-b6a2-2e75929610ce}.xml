@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{f7c024d1-ba5a-4b6f-b6a2-2e75929610ce}">
+		<property name="name">
+			<value>Armor Type</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{7ecb1c8a-6ab2-4875-8c7a-73a2e5f151b5}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{7ecb1c8a-6ab2-4875-8c7a-73a2e5f151b5}">
+		<property name="maximum">
+			<value>0.5</value>
+		</property>
+		<property name="isHeld">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

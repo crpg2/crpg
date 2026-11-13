@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{f02b6de1-4720-4116-b43e-568cac6b13fc}">
+		<property name="name">
+			<value>SailRotation</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ae27e90d-d9f3-0e30-2a2b-897e5466a717}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{103e080b-b9b3-4c02-919f-ee27c5eab2ac}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{103e080b-b9b3-4c02-919f-ee27c5eab2ac}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.79999995231628418</value>
+		</property>
+	</object>
+</objects>

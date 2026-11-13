@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{6a0950d8-8dd6-4ff2-86c1-94492f6beae4}">
+		<property name="volume">
+			<value>-7</value>
+		</property>
+		<property name="name">
+			<value>voiceover</value>
+		</property>
+		<relationship name="masters">
+			<destination>{4cafb8ad-4a19-4cea-a6fe-6db0abbcd3d7}</destination>
+		</relationship>
+		<relationship name="effectChain">
+			<destination>{0ffb995e-7359-4aea-be7e-054561091993}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{87f57dbc-bfe7-4dc6-9b1a-0d7df5f5aa15}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{018bb1d5-ab4b-45c0-a167-2699455c7207}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{0ffb995e-7359-4aea-be7e-054561091993}">
+		<relationship name="effects">
+			<destination>{0bd9438d-30be-4bcf-84ad-880590b355a0}</destination>
+			<destination>{6d5cf5b2-7035-44a3-94d0-ade5af73e0b7}</destination>
+			<destination>{0b3c565f-31bf-4ec5-8c99-ac7863f5a5d8}</destination>
+			<destination>{970ad69c-dd2e-4ebc-8a76-fd0cf00599de}</destination>
+			<destination>{10d05ca3-d647-462e-99c6-f5c0de4bc4bc}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{87f57dbc-bfe7-4dc6-9b1a-0d7df5f5aa15}" />
+	<object class="MixerBusFader" id="{0bd9438d-30be-4bcf-84ad-880590b355a0}" />
+	<object class="CompressorEffect" id="{6d5cf5b2-7035-44a3-94d0-ade5af73e0b7}">
+		<property name="threshold">
+			<value>-18</value>
+		</property>
+	</object>
+	<object class="DelayEffect" id="{0b3c565f-31bf-4ec5-8c99-ac7863f5a5d8}">
+		<property name="delay">
+			<value>113</value>
+		</property>
+		<property name="feedback">
+			<value>10</value>
+		</property>
+		<property name="level">
+			<value>-30</value>
+		</property>
+	</object>
+	<object class="MixerSend" id="{970ad69c-dd2e-4ebc-8a76-fd0cf00599de}">
+		<property name="level">
+			<value>0</value>
+		</property>
+		<property name="inputFormat">
+			<value>0</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{e100e6e6-2cf4-4992-8d52-bb215a4e91d9}</destination>
+		</relationship>
+	</object>
+	<object class="Sidechain" id="{10d05ca3-d647-462e-99c6-f5c0de4bc4bc}">
+		<property name="level">
+			<value>10</value>
+		</property>
+	</object>
+</objects>

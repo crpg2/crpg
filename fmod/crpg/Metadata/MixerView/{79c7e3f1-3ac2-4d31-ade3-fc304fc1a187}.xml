@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="UiMixerView" id="{79c7e3f1-3ac2-4d31-ade3-fc304fc1a187}">
+		<property name="name">
+			<value>VCAs</value>
+		</property>
+		<relationship name="assignedStrips">
+			<destination>{eeb339b1-2e77-4eea-a76b-2a3b696429c6}</destination>
+			<destination>{520a26f5-fb6a-44e9-b3d0-5fd3baba3428}</destination>
+			<destination>{0527aad2-0268-409f-86d7-9a2cb115ad33}</destination>
+			<destination>{49b6d345-8dc5-449c-96ee-c5d4a7e5a29f}</destination>
+			<destination>{1a8e0400-3ad5-4710-b783-8ea7d4295404}</destination>
+			<destination>{e100e6e6-2cf4-4992-8d52-bb215a4e91d9}</destination>
+			<destination>{018bb1d5-ab4b-45c0-a167-2699455c7207}</destination>
+			<destination>{f436edaf-978e-4fe0-86d3-07cc11d9248d}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{bc2f2d66-95cb-4a2a-a6b5-c608e1cf95e8}</destination>
+		</relationship>
+	</object>
+</objects>
