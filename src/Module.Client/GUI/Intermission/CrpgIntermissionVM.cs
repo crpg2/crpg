@@ -648,7 +648,7 @@ public class CrpgIntermissionVM : ViewModel
                 {
                     if (AvailableCultures.FirstOrDefault(c => c.CultureCode == cultureItem.Id) == null)
                     {
-                        AvailableCultures.Add(new MPIntermissionCultureItemVM(cultureItem.Id, OnPlayerVotedForCulture));
+                        AvailableCultures.Add(new MPIntermissionCultureItemVM(cultureItem.Id, true, OnPlayerVotedForCulture));
                     }
 
                     int voteCount2 = cultureItem.VoteCount;
