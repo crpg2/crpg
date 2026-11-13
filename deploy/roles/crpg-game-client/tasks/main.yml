@@ -133,9 +133,9 @@
   delegate_to: localhost
   become: false
 
-- name: Tar GUI, ModuleSounds, bin, ModuleData, and SubModule.xml
+- name: Tar GUI, ModuleSounds, Sounds, bin, ModuleData, and SubModule.xml
   command:
-    cmd: "tar -cf /tmp/rest.tar -C '{{ crpg_game_client_local_path }}/Modules/cRPG' GUI ModuleSounds bin ModuleData SubModule.xml"
+    cmd: "tar -cf /tmp/rest.tar -C '{{ crpg_game_client_local_path }}/Modules/cRPG' GUI ModuleSounds Sounds bin ModuleData SubModule.xml"
   when: crpg_rest_changed
   delegate_to: localhost
   become: false
