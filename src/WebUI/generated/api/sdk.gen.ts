@@ -2,8 +2,8 @@
 
 import type { Client, Composable, Options as Options2, TDataShape } from './client';
 import { client } from './client.gen';
-import { getActivityLogsResponseTransformer, getBattlesByBattleIdItemsResponseTransformer, getBattlesByBattleIdMercenaryApplicationsResponseTransformer, getBattlesByBattleIdResponseTransformer, getBattlesResponseTransformer, getClansByClanIdArmoryResponseTransformer, getGamesTournamentUsersResponseTransformer, getGamesUsersResponseTransformer, getItemsResponseTransformer, getItemsUpgradesByBaseIdResponseTransformer, getMarketplaceListingsHistoryResponseTransformer, getMarketplaceListingsResponseTransformer, getPartiesByPartyIdItemsResponseTransformer, getPartiesSelfItemsResponseTransformer, getPartiesSelfUpdateResponseTransformer, getPatchNotesResponseTransformer, getRestrictionsResponseTransformer, getSettlementsBySettlementIdItemsResponseTransformer, getSettlementsBySettlementIdShopItemsResponseTransformer, getUsersByIdRestrictionsResponseTransformer, getUsersByUserIdResponseTransformer, getUsersResponseTransformer, getUsersSearchResponseTransformer, getUsersSelfCharactersByIdEarningStatisticsResponseTransformer, getUsersSelfCharactersByIdItemsResponseTransformer, getUsersSelfCharactersByIdLimitationsResponseTransformer, getUsersSelfItemPresetsResponseTransformer, getUsersSelfItemsResponseTransformer, getUsersSelfNotificationsResponseTransformer, getUsersSelfQuestsResponseTransformer, getUsersSelfRestrictionResponseTransformer, postBattlesByBattleIdMercenaryApplicationsResponseTransformer, postGamesRestrictionsResponseTransformer, postMarketplaceListingsResponseTransformer, postPartiesResponseTransformer, postPartiesSelfItemsResponseTransformer, postUsersSelfItemPresetsResponseTransformer, postUsersSelfItemsResponseTransformer, putBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponseTransformer, putGamesUsersResponseTransformer, putPartiesSelfOrdersResponseTransformer, putPartiesSelfTransferOffersByTransferOfferIdResponseTransformer, putSettlementsBySettlementIdItemsResponseTransformer, putUsersByUserIdNoteResponseTransformer, putUsersSelfCharactersByIdItemsResponseTransformer, putUsersSelfItemsByIdReforgeResponseTransformer, putUsersSelfItemsByIdRepairResponseTransformer, putUsersSelfItemsByIdUpgradeResponseTransformer, putUsersSelfNotificationsByIdResponseTransformer, putUsersSelfQuestsByIdClaimResponseTransformer } from './transformers.gen';
-import type { DeleteBattlesByBattleIdFighterApplicationsData, DeleteBattlesByBattleIdFighterApplicationsResponse, DeleteBattlesByBattleIdFightersByFighterIdData, DeleteBattlesByBattleIdFightersByFighterIdResponse, DeleteBattlesByBattleIdMercenaryApplicationsData, DeleteBattlesByBattleIdMercenaryApplicationsResponse, DeleteBattlesByBattleIdParticipantsByParticipantIdData, DeleteBattlesByBattleIdParticipantsByParticipantIdResponse, DeleteClansByClanIdArmoryByUserItemIdData, DeleteClansByClanIdArmoryByUserItemIdResponse, DeleteClansByClanIdMembersByUserIdData, DeleteClansByClanIdMembersByUserIdResponse, DeleteMarketplaceListingsByListingIdData, DeleteTerrainsByIdData, DeleteUsersSelfCharactersByIdData, DeleteUsersSelfCharactersByIdResponse, DeleteUsersSelfData, DeleteUsersSelfItemPresetsByIdData, DeleteUsersSelfItemsByIdData, DeleteUsersSelfItemsByIdResponse, DeleteUsersSelfNotificationsByIdData, DeleteUsersSelfNotificationsByIdResponse, DeleteUsersSelfNotificationsDeleteAllData, DeleteUsersSelfNotificationsDeleteAllResponse, DeleteUsersSelfResponse, GetActivityLogsData, GetActivityLogsResponse, GetBattlesByBattleIdData, GetBattlesByBattleIdFighterApplicationsData, GetBattlesByBattleIdFighterApplicationsResponse, GetBattlesByBattleIdFightersData, GetBattlesByBattleIdFightersResponse, GetBattlesByBattleIdItemsData, GetBattlesByBattleIdItemsResponse, GetBattlesByBattleIdMercenaryApplicationsData, GetBattlesByBattleIdMercenaryApplicationsResponse, GetBattlesByBattleIdParticipantsData, GetBattlesByBattleIdParticipantsResponse, GetBattlesByBattleIdResponse, GetBattlesData, GetBattlesResponse, GetClansByClanIdArmoryData, GetClansByClanIdArmoryResponse, GetClansByClanIdInvitationsData, GetClansByClanIdInvitationsResponse, GetClansByIdData, GetClansByIdMembersData, GetClansByIdMembersResponse, GetClansByIdResponse, GetClansData, GetClansResponse, GetConnectAuthorizeData, GetConnectCallbackEpicGamesData, GetConnectCallbackMicrosoftData, GetConnectLogoutData, GetGamesClansByIdData, GetGamesClansByIdResponse, GetGameServerStatisticsData, GetGameServerStatisticsResponse, GetGamesTournamentUsersData, GetGamesTournamentUsersResponse, GetGamesUsersData, GetGamesUsersResponse, GetItemsData, GetItemsResponse, GetItemsUpgradesByBaseIdData, GetItemsUpgradesByBaseIdResponse, GetLeaderboardLeaderboardData, GetLeaderboardLeaderboardResponse, GetMarketplaceListingsData, GetMarketplaceListingsHistoryData, GetMarketplaceListingsHistoryResponse, GetMarketplaceListingsResponse, GetPartiesByPartyIdItemsData, GetPartiesByPartyIdItemsResponse, GetPartiesSelfItemsData, GetPartiesSelfItemsResponse, GetPartiesSelfUpdateData, GetPartiesSelfUpdateResponse, GetPatchNotesData, GetPatchNotesResponse, GetRestrictionsData, GetRestrictionsResponse, GetSettingsData, GetSettingsResponse, GetSettlementsBySettlementIdData, GetSettlementsBySettlementIdItemsData, GetSettlementsBySettlementIdItemsResponse, GetSettlementsBySettlementIdResponse, GetSettlementsBySettlementIdShopItemsData, GetSettlementsBySettlementIdShopItemsResponse, GetSettlementsData, GetSettlementsResponse, GetTerrainsData, GetTerrainsResponse, GetUsersByIdRestrictionsData, GetUsersByIdRestrictionsResponse, GetUsersByUserIdCharactersData, GetUsersByUserIdCharactersResponse, GetUsersByUserIdData, GetUsersByUserIdResponse, GetUsersData, GetUsersResponse, GetUsersRewardRecentData, GetUsersSearchData, GetUsersSearchResponse, GetUsersSelfCharactersByIdCharacteristicsData, GetUsersSelfCharactersByIdCharacteristicsResponse, GetUsersSelfCharactersByIdData, GetUsersSelfCharactersByIdEarningStatisticsData, GetUsersSelfCharactersByIdEarningStatisticsResponse, GetUsersSelfCharactersByIdItemsData, GetUsersSelfCharactersByIdItemsResponse, GetUsersSelfCharactersByIdLimitationsData, GetUsersSelfCharactersByIdLimitationsResponse, GetUsersSelfCharactersByIdResponse, GetUsersSelfCharactersByIdStatisticsData, GetUsersSelfCharactersByIdStatisticsResponse, GetUsersSelfCharactersData, GetUsersSelfCharactersResponse, GetUsersSelfClanData, GetUsersSelfClanResponse, GetUsersSelfData, GetUsersSelfItemPresetsData, GetUsersSelfItemPresetsResponse, GetUsersSelfItemsData, GetUsersSelfItemsResponse, GetUsersSelfNotificationsData, GetUsersSelfNotificationsResponse, GetUsersSelfQuestsData, GetUsersSelfQuestsResponse, GetUsersSelfResponse, GetUsersSelfRestrictionData, GetUsersSelfRestrictionResponse, PatchSettingsData, PatchSettingsResponse, PostBattlesByBattleIdFightersData, PostBattlesByBattleIdFightersResponse, PostBattlesByBattleIdMercenaryApplicationsData, PostBattlesByBattleIdMercenaryApplicationsResponse, PostClansByClanIdArmoryData, PostClansByClanIdArmoryResponse, PostClansByClanIdInvitationsData, PostClansByClanIdInvitationsResponse, PostClansData, PostClansResponse, PostConnectAuthorizeData, PostConnectTokenData, PostGamesActivityLogsData, PostGamesGameEventsData, PostGamesRestrictionsData, PostGamesRestrictionsResponse, PostItemsByIdRefundData, PostMarketplaceListingsByListingIdAcceptData, PostMarketplaceListingsData, PostMarketplaceListingsResponse, PostPartiesData, PostPartiesResponse, PostPartiesSelfItemsData, PostPartiesSelfItemsResponse, PostRestrictionsData, PostRestrictionsResponse, PostTerrainsData, PostTerrainsResponse, PostUsersSelfItemPresetsData, PostUsersSelfItemPresetsResponse, PostUsersSelfItemsData, PostUsersSelfItemsResponse, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseData, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseData, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse, PutBattlesByBattleIdSideBriefingData, PutBattlesByBattleIdSideBriefingResponse, PutClansByClanIdArmoryByUserItemIdBorrowData, PutClansByClanIdArmoryByUserItemIdBorrowResponse, PutClansByClanIdArmoryByUserItemIdReturnData, PutClansByClanIdData, PutClansByClanIdInvitationsByInvitationIdResponseData, PutClansByClanIdInvitationsByInvitationIdResponseResponse, PutClansByClanIdMembersByUserIdData, PutClansByClanIdMembersByUserIdResponse, PutClansByClanIdResponse, PutGamesUsersData, PutGamesUsersResponse, PutItemsByBaseIdEnableData, PutItemsByBaseIdEnableResponse, PutPartiesSelfOrdersData, PutPartiesSelfOrdersResponse, PutPartiesSelfTransferOffersByTransferOfferIdData, PutPartiesSelfTransferOffersByTransferOfferIdResponse, PutSettlementsBySettlementIdData, PutSettlementsBySettlementIdItemsData, PutSettlementsBySettlementIdItemsResponse, PutSettlementsBySettlementIdResponse, PutTerrainsByIdData, PutTerrainsByIdResponse, PutUsersByIdRewardsData, PutUsersByIdRewardsResponse, PutUsersByUserIdCharactersByCharacterIdRewardsData, PutUsersByUserIdCharactersByCharacterIdRewardsResponse, PutUsersByUserIdCharactersByIdRetireData, PutUsersByUserIdCharactersByIdRetireResponse, PutUsersByUserIdNoteData, PutUsersByUserIdNoteResponse, PutUsersCharactersCompetitiveRatingsData, PutUsersCharactersRespecializeData, PutUsersSelfCharactersByIdActiveData, PutUsersSelfCharactersByIdActiveResponse, PutUsersSelfCharactersByIdCharacteristicsConvertData, PutUsersSelfCharactersByIdCharacteristicsConvertResponse, PutUsersSelfCharactersByIdCharacteristicsData, PutUsersSelfCharactersByIdCharacteristicsResponse, PutUsersSelfCharactersByIdData, PutUsersSelfCharactersByIdItemsData, PutUsersSelfCharactersByIdItemsResponse, PutUsersSelfCharactersByIdRespecializeData, PutUsersSelfCharactersByIdRespecializeResponse, PutUsersSelfCharactersByIdResponse, PutUsersSelfCharactersByIdRetireData, PutUsersSelfCharactersByIdRetireResponse, PutUsersSelfCharactersByIdTournamentData, PutUsersSelfCharactersByIdTournamentResponse, PutUsersSelfData, PutUsersSelfItemsByIdReforgeData, PutUsersSelfItemsByIdReforgeResponse, PutUsersSelfItemsByIdRepairData, PutUsersSelfItemsByIdRepairResponse, PutUsersSelfItemsByIdUpgradeData, PutUsersSelfItemsByIdUpgradeResponse, PutUsersSelfNotificationsByIdData, PutUsersSelfNotificationsByIdResponse, PutUsersSelfNotificationsReadAllData, PutUsersSelfNotificationsReadAllResponse, PutUsersSelfQuestsByIdClaimData, PutUsersSelfQuestsByIdClaimResponse, PutUsersSelfQuestsByIdRerollData, PutUsersSelfResponse } from './types.gen';
+import { getActivityLogsResponseTransformer, getBattlesByBattleIdItemsResponseTransformer, getBattlesByBattleIdMercenaryApplicationsResponseTransformer, getBattlesByBattleIdResponseTransformer, getBattlesResponseTransformer, getClansByClanIdArmoryResponseTransformer, getGamesThemeEventsActiveResponseTransformer, getGamesTournamentUsersResponseTransformer, getGamesUsersResponseTransformer, getItemsResponseTransformer, getItemsUpgradesByBaseIdResponseTransformer, getMarketplaceListingsHistoryResponseTransformer, getMarketplaceListingsResponseTransformer, getPartiesByPartyIdItemsResponseTransformer, getPartiesSelfItemsResponseTransformer, getPartiesSelfUpdateResponseTransformer, getPatchNotesResponseTransformer, getRestrictionsResponseTransformer, getSettlementsBySettlementIdItemsResponseTransformer, getSettlementsBySettlementIdShopItemsResponseTransformer, getThemesEventsActiveResponseTransformer, getThemesEventsResponseTransformer, getUsersByIdRestrictionsResponseTransformer, getUsersByUserIdResponseTransformer, getUsersResponseTransformer, getUsersSearchResponseTransformer, getUsersSelfCharactersByIdEarningStatisticsResponseTransformer, getUsersSelfCharactersByIdItemsResponseTransformer, getUsersSelfCharactersByIdLimitationsResponseTransformer, getUsersSelfItemPresetsResponseTransformer, getUsersSelfItemsResponseTransformer, getUsersSelfNotificationsResponseTransformer, getUsersSelfQuestsResponseTransformer, getUsersSelfRestrictionResponseTransformer, postBattlesByBattleIdMercenaryApplicationsResponseTransformer, postGamesRestrictionsResponseTransformer, postMarketplaceListingsResponseTransformer, postPartiesResponseTransformer, postPartiesSelfItemsResponseTransformer, postThemesEventsResponseTransformer, postUsersSelfItemPresetsResponseTransformer, postUsersSelfItemsResponseTransformer, putBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponseTransformer, putGamesUsersResponseTransformer, putItemsByBaseIdThemesResponseTransformer, putPartiesSelfOrdersResponseTransformer, putPartiesSelfTransferOffersByTransferOfferIdResponseTransformer, putSettlementsBySettlementIdItemsResponseTransformer, putThemesEventsResponseTransformer, putUsersByUserIdNoteResponseTransformer, putUsersSelfCharactersByIdItemsResponseTransformer, putUsersSelfItemsByIdReforgeResponseTransformer, putUsersSelfItemsByIdRepairResponseTransformer, putUsersSelfItemsByIdUpgradeResponseTransformer, putUsersSelfNotificationsByIdResponseTransformer, putUsersSelfQuestsByIdClaimResponseTransformer } from './transformers.gen';
+import type { DeleteBattlesByBattleIdFighterApplicationsData, DeleteBattlesByBattleIdFighterApplicationsResponse, DeleteBattlesByBattleIdFightersByFighterIdData, DeleteBattlesByBattleIdFightersByFighterIdResponse, DeleteBattlesByBattleIdMercenaryApplicationsData, DeleteBattlesByBattleIdMercenaryApplicationsResponse, DeleteBattlesByBattleIdParticipantsByParticipantIdData, DeleteBattlesByBattleIdParticipantsByParticipantIdResponse, DeleteClansByClanIdArmoryByUserItemIdData, DeleteClansByClanIdArmoryByUserItemIdResponse, DeleteClansByClanIdMembersByUserIdData, DeleteClansByClanIdMembersByUserIdResponse, DeleteItemsThemesData, DeleteItemsThemesResponse, DeleteMarketplaceListingsByListingIdData, DeleteTerrainsByIdData, DeleteThemesByIdData, DeleteThemesEventsByIdData, DeleteUsersSelfCharactersByIdData, DeleteUsersSelfCharactersByIdResponse, DeleteUsersSelfData, DeleteUsersSelfItemPresetsByIdData, DeleteUsersSelfItemsByIdData, DeleteUsersSelfItemsByIdResponse, DeleteUsersSelfNotificationsByIdData, DeleteUsersSelfNotificationsByIdResponse, DeleteUsersSelfNotificationsDeleteAllData, DeleteUsersSelfNotificationsDeleteAllResponse, DeleteUsersSelfResponse, GetActivityLogsData, GetActivityLogsResponse, GetBattlesByBattleIdData, GetBattlesByBattleIdFighterApplicationsData, GetBattlesByBattleIdFighterApplicationsResponse, GetBattlesByBattleIdFightersData, GetBattlesByBattleIdFightersResponse, GetBattlesByBattleIdItemsData, GetBattlesByBattleIdItemsResponse, GetBattlesByBattleIdMercenaryApplicationsData, GetBattlesByBattleIdMercenaryApplicationsResponse, GetBattlesByBattleIdParticipantsData, GetBattlesByBattleIdParticipantsResponse, GetBattlesByBattleIdResponse, GetBattlesData, GetBattlesResponse, GetClansByClanIdArmoryData, GetClansByClanIdArmoryResponse, GetClansByClanIdInvitationsData, GetClansByClanIdInvitationsResponse, GetClansByIdData, GetClansByIdMembersData, GetClansByIdMembersResponse, GetClansByIdResponse, GetClansData, GetClansResponse, GetConnectAuthorizeData, GetConnectCallbackEpicGamesData, GetConnectCallbackMicrosoftData, GetConnectLogoutData, GetGamesClansByIdData, GetGamesClansByIdResponse, GetGameServerStatisticsData, GetGameServerStatisticsResponse, GetGamesThemeEventsActiveData, GetGamesThemeEventsActiveResponse, GetGamesTournamentUsersData, GetGamesTournamentUsersResponse, GetGamesUsersData, GetGamesUsersResponse, GetItemsData, GetItemsResponse, GetItemsUpgradesByBaseIdData, GetItemsUpgradesByBaseIdResponse, GetLeaderboardLeaderboardData, GetLeaderboardLeaderboardResponse, GetMarketplaceListingsData, GetMarketplaceListingsHistoryData, GetMarketplaceListingsHistoryResponse, GetMarketplaceListingsResponse, GetPartiesByPartyIdItemsData, GetPartiesByPartyIdItemsResponse, GetPartiesSelfItemsData, GetPartiesSelfItemsResponse, GetPartiesSelfUpdateData, GetPartiesSelfUpdateResponse, GetPatchNotesData, GetPatchNotesResponse, GetRestrictionsData, GetRestrictionsResponse, GetSettingsData, GetSettingsResponse, GetSettlementsBySettlementIdData, GetSettlementsBySettlementIdItemsData, GetSettlementsBySettlementIdItemsResponse, GetSettlementsBySettlementIdResponse, GetSettlementsBySettlementIdShopItemsData, GetSettlementsBySettlementIdShopItemsResponse, GetSettlementsData, GetSettlementsResponse, GetTerrainsData, GetTerrainsResponse, GetThemesData, GetThemesEventsActiveData, GetThemesEventsActiveResponse, GetThemesEventsData, GetThemesEventsResponse, GetThemesResponse, GetUsersByIdRestrictionsData, GetUsersByIdRestrictionsResponse, GetUsersByUserIdCharactersData, GetUsersByUserIdCharactersResponse, GetUsersByUserIdData, GetUsersByUserIdResponse, GetUsersData, GetUsersResponse, GetUsersRewardRecentData, GetUsersSearchData, GetUsersSearchResponse, GetUsersSelfCharactersByIdCharacteristicsData, GetUsersSelfCharactersByIdCharacteristicsResponse, GetUsersSelfCharactersByIdData, GetUsersSelfCharactersByIdEarningStatisticsData, GetUsersSelfCharactersByIdEarningStatisticsResponse, GetUsersSelfCharactersByIdItemsData, GetUsersSelfCharactersByIdItemsResponse, GetUsersSelfCharactersByIdLimitationsData, GetUsersSelfCharactersByIdLimitationsResponse, GetUsersSelfCharactersByIdResponse, GetUsersSelfCharactersByIdStatisticsData, GetUsersSelfCharactersByIdStatisticsResponse, GetUsersSelfCharactersData, GetUsersSelfCharactersResponse, GetUsersSelfClanData, GetUsersSelfClanResponse, GetUsersSelfData, GetUsersSelfItemPresetsData, GetUsersSelfItemPresetsResponse, GetUsersSelfItemsData, GetUsersSelfItemsResponse, GetUsersSelfNotificationsData, GetUsersSelfNotificationsResponse, GetUsersSelfQuestsData, GetUsersSelfQuestsResponse, GetUsersSelfResponse, GetUsersSelfRestrictionData, GetUsersSelfRestrictionResponse, PatchSettingsData, PatchSettingsResponse, PostBattlesByBattleIdFightersData, PostBattlesByBattleIdFightersResponse, PostBattlesByBattleIdMercenaryApplicationsData, PostBattlesByBattleIdMercenaryApplicationsResponse, PostClansByClanIdArmoryData, PostClansByClanIdArmoryResponse, PostClansByClanIdInvitationsData, PostClansByClanIdInvitationsResponse, PostClansData, PostClansResponse, PostConnectAuthorizeData, PostConnectTokenData, PostGamesActivityLogsData, PostGamesGameEventsData, PostGamesRestrictionsData, PostGamesRestrictionsResponse, PostItemsByIdRefundData, PostMarketplaceListingsByListingIdAcceptData, PostMarketplaceListingsData, PostMarketplaceListingsResponse, PostPartiesData, PostPartiesResponse, PostPartiesSelfItemsData, PostPartiesSelfItemsResponse, PostRestrictionsData, PostRestrictionsResponse, PostTerrainsData, PostTerrainsResponse, PostThemesData, PostThemesEventsData, PostThemesEventsResponse, PostThemesResponse, PostUsersSelfItemPresetsData, PostUsersSelfItemPresetsResponse, PostUsersSelfItemsData, PostUsersSelfItemsResponse, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseData, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseData, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse, PutBattlesByBattleIdSideBriefingData, PutBattlesByBattleIdSideBriefingResponse, PutClansByClanIdArmoryByUserItemIdBorrowData, PutClansByClanIdArmoryByUserItemIdBorrowResponse, PutClansByClanIdArmoryByUserItemIdReturnData, PutClansByClanIdData, PutClansByClanIdInvitationsByInvitationIdResponseData, PutClansByClanIdInvitationsByInvitationIdResponseResponse, PutClansByClanIdMembersByUserIdData, PutClansByClanIdMembersByUserIdResponse, PutClansByClanIdResponse, PutGamesUsersData, PutGamesUsersResponse, PutItemsByBaseIdEnableData, PutItemsByBaseIdEnableResponse, PutItemsByBaseIdThemesData, PutItemsByBaseIdThemesResponse, PutItemsThemesData, PutItemsThemesResponse, PutPartiesSelfOrdersData, PutPartiesSelfOrdersResponse, PutPartiesSelfTransferOffersByTransferOfferIdData, PutPartiesSelfTransferOffersByTransferOfferIdResponse, PutSettlementsBySettlementIdData, PutSettlementsBySettlementIdItemsData, PutSettlementsBySettlementIdItemsResponse, PutSettlementsBySettlementIdResponse, PutTerrainsByIdData, PutTerrainsByIdResponse, PutThemesData, PutThemesEventsData, PutThemesEventsResponse, PutThemesResponse, PutUsersByIdRewardsData, PutUsersByIdRewardsResponse, PutUsersByUserIdCharactersByCharacterIdRewardsData, PutUsersByUserIdCharactersByCharacterIdRewardsResponse, PutUsersByUserIdCharactersByIdRetireData, PutUsersByUserIdCharactersByIdRetireResponse, PutUsersByUserIdNoteData, PutUsersByUserIdNoteResponse, PutUsersCharactersCompetitiveRatingsData, PutUsersCharactersRespecializeData, PutUsersSelfCharactersByIdActiveData, PutUsersSelfCharactersByIdActiveResponse, PutUsersSelfCharactersByIdCharacteristicsConvertData, PutUsersSelfCharactersByIdCharacteristicsConvertResponse, PutUsersSelfCharactersByIdCharacteristicsData, PutUsersSelfCharactersByIdCharacteristicsResponse, PutUsersSelfCharactersByIdData, PutUsersSelfCharactersByIdItemsData, PutUsersSelfCharactersByIdItemsResponse, PutUsersSelfCharactersByIdRespecializeData, PutUsersSelfCharactersByIdRespecializeResponse, PutUsersSelfCharactersByIdResponse, PutUsersSelfCharactersByIdRetireData, PutUsersSelfCharactersByIdRetireResponse, PutUsersSelfCharactersByIdTournamentData, PutUsersSelfCharactersByIdTournamentResponse, PutUsersSelfData, PutUsersSelfItemsByIdReforgeData, PutUsersSelfItemsByIdReforgeResponse, PutUsersSelfItemsByIdRepairData, PutUsersSelfItemsByIdRepairResponse, PutUsersSelfItemsByIdUpgradeData, PutUsersSelfItemsByIdUpgradeResponse, PutUsersSelfNotificationsByIdData, PutUsersSelfNotificationsByIdResponse, PutUsersSelfNotificationsReadAllData, PutUsersSelfNotificationsReadAllResponse, PutUsersSelfQuestsByIdClaimData, PutUsersSelfQuestsByIdClaimResponse, PutUsersSelfQuestsByIdRerollData, PutUsersSelfResponse } from './types.gen';
 
 export type Options<TComposable extends Composable = '$fetch', TData extends TDataShape = TDataShape, ResT = unknown, DefaultT = undefined> = Options2<TComposable, TData, ResT, DefaultT> & {
     /**
@@ -486,6 +486,16 @@ export const postGamesRestrictions = <TComposable extends Composable = '$fetch',
 });
 
 /**
+ * Gets all active theme events.
+ */
+export const getGamesThemeEventsActive = <TComposable extends Composable = '$fetch', DefaultT extends GetGamesThemeEventsActiveResponse = GetGamesThemeEventsActiveResponse>(options: Options<TComposable, GetGamesThemeEventsActiveData, GetGamesThemeEventsActiveResponse, DefaultT>) => (options.client ?? client).get<TComposable, GetGamesThemeEventsActiveResponse | DefaultT, unknown, DefaultT>({
+    responseTransformer: getGamesThemeEventsActiveResponseTransformer,
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Games/theme-events/active',
+    ...options
+});
+
+/**
  * Gets all enabled items of rank 0.
  */
 export const getItems = <TComposable extends Composable = '$fetch', DefaultT extends GetItemsResponse = GetItemsResponse>(options: Options<TComposable, GetItemsData, GetItemsResponse, DefaultT>) => (options.client ?? client).get<TComposable, GetItemsResponse | DefaultT, unknown, DefaultT>({
@@ -521,6 +531,48 @@ export const putItemsByBaseIdEnable = <TComposable extends Composable = '$fetch'
 export const postItemsByIdRefund = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PostItemsByIdRefundData, unknown, DefaultT>) => (options.client ?? client).post<TComposable, unknown | DefaultT, unknown, DefaultT>({
     security: [{ scheme: 'bearer', type: 'http' }],
     url: '/Items/{id}/refund',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Replaces the themes assigned to an item family (every rank variant sharing the BaseId).
+ */
+export const putItemsByBaseIdThemes = <TComposable extends Composable = '$fetch', DefaultT extends PutItemsByBaseIdThemesResponse = PutItemsByBaseIdThemesResponse>(options: Options<TComposable, PutItemsByBaseIdThemesData, PutItemsByBaseIdThemesResponse, DefaultT>) => (options.client ?? client).put<TComposable, PutItemsByBaseIdThemesResponse | DefaultT, unknown, DefaultT>({
+    responseTransformer: putItemsByBaseIdThemesResponseTransformer,
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Items/{baseId}/themes',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Removes a set of themes from several item families at once (each BaseId covers all its rank variants),
+ * preserving any other themes they have.
+ */
+export const deleteItemsThemes = <TComposable extends Composable = '$fetch', DefaultT extends DeleteItemsThemesResponse = DeleteItemsThemesResponse>(options: Options<TComposable, DeleteItemsThemesData, DeleteItemsThemesResponse, DefaultT>) => (options.client ?? client).delete<TComposable, DeleteItemsThemesResponse | DefaultT, unknown, DefaultT>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Items/themes',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Adds a set of themes to several item families at once (each BaseId covers all its rank variants),
+ * preserving themes they already have.
+ */
+export const putItemsThemes = <TComposable extends Composable = '$fetch', DefaultT extends PutItemsThemesResponse = PutItemsThemesResponse>(options: Options<TComposable, PutItemsThemesData, PutItemsThemesResponse, DefaultT>) => (options.client ?? client).put<TComposable, PutItemsThemesResponse | DefaultT, unknown, DefaultT>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Items/themes',
     ...options,
     headers: {
         'Content-Type': 'application/json',
@@ -821,6 +873,107 @@ export const putTerrainsById = <TComposable extends Composable = '$fetch', Defau
         'Content-Type': 'application/json',
         ...options.headers
     }
+});
+
+/**
+ * Gets all themes.
+ */
+export const getThemes = <TComposable extends Composable = '$fetch', DefaultT extends GetThemesResponse = GetThemesResponse>(options: Options<TComposable, GetThemesData, GetThemesResponse, DefaultT>) => (options.client ?? client).get<TComposable, GetThemesResponse | DefaultT, unknown, DefaultT>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Themes',
+    ...options
+});
+
+/**
+ * Creates a new theme.
+ */
+export const postThemes = <TComposable extends Composable = '$fetch', DefaultT extends PostThemesResponse = PostThemesResponse>(options: Options<TComposable, PostThemesData, PostThemesResponse, DefaultT>) => (options.client ?? client).post<TComposable, PostThemesResponse | DefaultT, unknown, DefaultT>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Themes',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Updates a theme.
+ */
+export const putThemes = <TComposable extends Composable = '$fetch', DefaultT extends PutThemesResponse = PutThemesResponse>(options: Options<TComposable, PutThemesData, PutThemesResponse, DefaultT>) => (options.client ?? client).put<TComposable, PutThemesResponse | DefaultT, unknown, DefaultT>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Themes',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Deletes a theme in a cascade, also removing all theme event based on that theme, and untags all items tagged with it.
+ */
+export const deleteThemesById = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, DeleteThemesByIdData, unknown, DefaultT>) => (options.client ?? client).delete<TComposable, unknown | DefaultT, unknown, DefaultT>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Themes/{id}',
+    ...options
+});
+
+/**
+ * Gets all theme events.
+ */
+export const getThemesEvents = <TComposable extends Composable = '$fetch', DefaultT extends GetThemesEventsResponse = GetThemesEventsResponse>(options: Options<TComposable, GetThemesEventsData, GetThemesEventsResponse, DefaultT>) => (options.client ?? client).get<TComposable, GetThemesEventsResponse | DefaultT, unknown, DefaultT>({
+    responseTransformer: getThemesEventsResponseTransformer,
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Themes/events',
+    ...options
+});
+
+/**
+ * Creates a new theme event.
+ */
+export const postThemesEvents = <TComposable extends Composable = '$fetch', DefaultT extends PostThemesEventsResponse = PostThemesEventsResponse>(options: Options<TComposable, PostThemesEventsData, PostThemesEventsResponse, DefaultT>) => (options.client ?? client).post<TComposable, PostThemesEventsResponse | DefaultT, unknown, DefaultT>({
+    responseTransformer: postThemesEventsResponseTransformer,
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Themes/events',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Updates a theme event.
+ */
+export const putThemesEvents = <TComposable extends Composable = '$fetch', DefaultT extends PutThemesEventsResponse = PutThemesEventsResponse>(options: Options<TComposable, PutThemesEventsData, PutThemesEventsResponse, DefaultT>) => (options.client ?? client).put<TComposable, PutThemesEventsResponse | DefaultT, unknown, DefaultT>({
+    responseTransformer: putThemesEventsResponseTransformer,
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Themes/events',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Gets all active theme events.
+ */
+export const getThemesEventsActive = <TComposable extends Composable = '$fetch', DefaultT extends GetThemesEventsActiveResponse = GetThemesEventsActiveResponse>(options: Options<TComposable, GetThemesEventsActiveData, GetThemesEventsActiveResponse, DefaultT>) => (options.client ?? client).get<TComposable, GetThemesEventsActiveResponse | DefaultT, unknown, DefaultT>({
+    responseTransformer: getThemesEventsActiveResponseTransformer,
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Themes/events/active',
+    ...options
+});
+
+/**
+ * Deletes a theme event.
+ */
+export const deleteThemesEventsById = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, DeleteThemesEventsByIdData, unknown, DefaultT>) => (options.client ?? client).delete<TComposable, unknown | DefaultT, unknown, DefaultT>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/Themes/events/{id}',
+    ...options
 });
 
 /**

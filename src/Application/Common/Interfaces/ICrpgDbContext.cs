@@ -13,6 +13,7 @@ using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Settings;
 using Crpg.Domain.Entities.Settlements;
 using Crpg.Domain.Entities.Terrains;
+using Crpg.Domain.Entities.Themes;
 using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -60,6 +61,8 @@ public interface ICrpgDbContext
     DbSet<QuestDefinition> QuestDefinitions { get; set; }
     DbSet<UserQuest> UserQuests { get; set; }
     DbSet<WeeklyQuestAssignment> WeeklyQuestAssignments { get; set; }
+    DbSet<Theme> Themes { get; set; }
+    DbSet<ThemeEvent> ThemeEvents { get; set; }
 
     EntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);

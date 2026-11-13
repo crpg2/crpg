@@ -9,17 +9,20 @@ import {
   getPaginationRowModel,
 } from '@tanstack/vue-table'
 
-import type { ItemFlat, ItemType, WeaponClass } from '~/models/item'
+import type { ItemFlat, ItemTheme, ItemType, WeaponClass } from '~/models/item'
 import type { AggregationOptions } from '~/services/item-search-service/aggregations'
 
 import {
   AppCoin,
   ItemParam,
   ItemTableMedia,
+  ItemThemeEditModal,
+  ItemThemePills,
   ShopGridItemBuyBtn,
   UButton,
   UCheckbox,
   UContainer,
+  UIcon,
   UiGridColumnHeader,
   UiGridColumnHeaderSelectFilter,
   UiInputClear,
@@ -47,6 +50,8 @@ import {
   getWeaponClassesByItemType,
   humanizeBucket,
 } from '~/services/item-service'
+import { isAdmin as isUserAdmin } from '~/services/role-service'
+import { addThemesToItems, getThemes, removeThemesFromItems, setItemThemes } from '~/services/theme-service'
 import { buyUserItem } from '~/services/user-service'
 
 definePageMeta({
@@ -68,7 +73,9 @@ const {
   state: items,
   isLoading: loadingItems,
   // TODO: weaponUsage next iteration
-} = useAsyncState(async () => createItemIndex(await getItems()), [], { shallow: false })
+  // Admins bypass the items HTTP cache so their theme edits show up immediately on refresh; regular users keep
+  // the cached fast path.
+} = useAsyncState(async () => createItemIndex(await getItems({ fresh: isUserAdmin(user.value) })), [], { shallow: false })
 
 usePageLoading(loadingItems)
 
@@ -198,6 +205,80 @@ watch(isCompareMode, () => {
 const compareItems = computed(() => isCompareMode.value && table.value?.tableApi
   ? getCompareItemsResult(table.value.tableApi.getFilteredRowModel().rows.map(row => row.original), currentAggregations.value)
   : null)
+
+// Admin-only item theme tagging.
+const toast = useToast()
+const isAdmin = computed(() => isUserAdmin(user.value))
+
+const { state: allThemes, execute: loadThemes } = useAsyncState(() => getThemes(), [], {
+  immediate: false,
+  resetOnExecute: false,
+})
+
+onMounted(() => {
+  if (isAdmin.value) {
+    loadThemes()
+  }
+})
+
+// Selection is restricted to top-level rows, whose row id is their index into `items` (TanStack default).
+// Deriving from `rowSelection` rather than `table.tableApi` keeps this off the table ref's type-inference graph.
+const selectedItems = computed<ItemFlat[]>(() =>
+  Object.keys(rowSelection.value)
+    .map(id => items.value[Number(id)])
+    .filter((item): item is ItemFlat => Boolean(item)),
+)
+
+const themeModalOpen = ref(false)
+const themeModalMode = ref<'set' | 'add' | 'remove'>('set')
+const themeEditTarget = ref<ItemFlat | null>(null)
+const themeModalInitialIds = computed(() => themeEditTarget.value?.themes.map(theme => theme.id) ?? [])
+
+function openSetThemes(item: ItemFlat) {
+  themeModalMode.value = 'set'
+  themeEditTarget.value = item
+  themeModalOpen.value = true
+}
+
+function openBulkThemes(mode: 'add' | 'remove') {
+  themeModalMode.value = mode
+  themeEditTarget.value = null
+  themeModalOpen.value = true
+}
+
+const { execute: submitThemes, isLoading: savingThemes } = useAsyncCallback(async (themeIds: number[]) => {
+  const chosen: ItemTheme[] = allThemes.value.filter(theme => themeIds.includes(theme.id))
+
+  if (themeModalMode.value === 'set' && themeEditTarget.value) {
+    const updated = await setItemThemes(themeEditTarget.value.baseId, themeIds)
+    themeEditTarget.value.themes = (updated.themes ?? []).map(theme => ({ id: theme.id, name: theme.name }))
+    toast.add({ title: t('theme.tag.notify.set'), close: false, color: 'success' })
+  }
+  else if (themeModalMode.value === 'add') {
+    const items = selectedItems.value
+    await addThemesToItems(items.map(item => item.baseId), themeIds)
+    for (const item of items) {
+      for (const theme of chosen) {
+        if (!item.themes.some(t => t.id === theme.id)) {
+          item.themes.push(theme)
+        }
+      }
+    }
+    toast.add({ title: t('theme.tag.notify.added'), close: false, color: 'success' })
+    resetSelection()
+  }
+  else if (themeModalMode.value === 'remove') {
+    const items = selectedItems.value
+    await removeThemesFromItems(items.map(item => item.baseId), themeIds)
+    for (const item of items) {
+      item.themes = item.themes.filter(theme => !themeIds.includes(theme.id))
+    }
+    toast.add({ title: t('theme.tag.notify.removed'), close: false, color: 'success' })
+    resetSelection()
+  }
+
+  themeModalOpen.value = false
+})
 
 const compareUpgrades = computed(() => {
   const expandedRows = table.value?.tableApi.getState().expanded
@@ -329,6 +410,35 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
 
 const [loadingItemUpgrades, toggleLoadingItemUpgrades] = useToggle()
 
+const adminThemeColumn: TableColumn<ItemFlat> = {
+  id: 'themes',
+  meta: {
+    class: {
+      th: 'px-0 w-[44px]',
+      td: 'px-0 w-[44px]',
+    },
+  },
+  header: () => h('div', { class: 'w-[44px] flex justify-center' }, [
+    h(UTooltip, { text: t('theme.tag.column') }, {
+      default: () => h(UIcon, { name: 'crpg:theme', class: 'size-5 text-muted' }),
+    }),
+  ]),
+  cell: ({ row }) => row.depth !== 0
+    ? null
+    : h('div', { class: 'w-[44px] flex justify-center' }, [
+        h(UTooltip, { text: t('theme.tag.edit.tooltip') }, {
+          default: () => h(UButton, {
+            'icon': 'crpg:theme',
+            'color': 'neutral',
+            'variant': 'ghost',
+            'size': 'sm',
+            'aria-label': t('theme.tag.edit.tooltip'),
+            'onClick': () => openSetThemes(row.original),
+          }),
+        }),
+      ]),
+}
+
 const columns = computed<TableColumn<ItemFlat>[]>(() => {
   return [
     {
@@ -453,9 +563,14 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
             : []),
         ])
       },
-      cell: ({ row }) => h(ItemTableMedia, { item: row.original, showTier: true }),
+      cell: ({ row }) => h(ItemTableMedia, { item: row.original, showTier: true, themes: row.original.themes }, {
+        'name-caption': () => row.original.themes?.length
+          ? h(ItemThemePills, { themes: row.original.themes, max: 1 })
+          : null,
+      }),
     },
     ...objectEntries(currentAggregations.value).map(([key, options]) => createTableColumn(key, options!)),
+    ...(isAdmin.value ? [adminThemeColumn] : []),
   ]
 })
 </script>
@@ -532,17 +647,49 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
           :total="table?.tableApi.getFilteredRowModel().rows.length ?? 0"
           @update:page="(page) => table?.tableApi.setPageIndex(page - 1)"
         >
-          <UButton
-            v-if="Object.keys(rowSelection).length >= 2"
-            size="xl"
-            variant="subtle"
-            :icon="isCompareMode ? 'crpg:close' : undefined"
-            data-aq-shop-handler="toggle-compare"
-            :label="$t('shop.compare.title')"
-            @click="() => { toggleCompareMode() }"
-          />
+          <div class="flex items-center gap-2">
+            <UButton
+              v-if="Object.keys(rowSelection).length >= 2"
+              size="xl"
+              variant="subtle"
+              :icon="isCompareMode ? 'crpg:close' : undefined"
+              data-aq-shop-handler="toggle-compare"
+              :label="$t('shop.compare.title')"
+              @click="() => { toggleCompareMode() }"
+            />
+
+            <template v-if="isAdmin && selectedItems.length">
+              <UButton
+                size="xl"
+                variant="subtle"
+                icon="crpg:theme"
+                :label="$t('theme.tag.bulk.add.action')"
+                @click="openBulkThemes('add')"
+              />
+              <UButton
+                size="xl"
+                color="error"
+                variant="subtle"
+                icon="crpg:theme"
+                :label="$t('theme.tag.bulk.remove.action')"
+                @click="openBulkThemes('remove')"
+              />
+            </template>
+          </div>
         </UiGridPagination>
       </template>
     </UCard>
+
+    <ItemThemeEditModal
+      v-if="isAdmin"
+      v-model:open="themeModalOpen"
+      :mode="themeModalMode"
+      :themes="allThemes"
+      :initial-theme-ids="themeModalInitialIds"
+      :target-label="themeEditTarget?.name ?? ''"
+      :count="selectedItems.length"
+      :loading="savingThemes"
+      @submit="submitThemes"
+    />
   </UContainer>
 </template>

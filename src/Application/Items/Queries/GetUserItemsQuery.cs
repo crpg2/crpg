@@ -21,6 +21,7 @@ public record GetUserItemsQuery : IMediatorRequest<IList<UserItemViewModel>>
             var userItems = await _db.UserItems
                 .AsSplitQuery()
                 .Include(ui => ui.Item)
+                    .ThenInclude(i => i!.Themes)
                 .Include(ui => ui.ClanArmoryItem)
                     .ThenInclude(cai => cai!.Lender)
                         .ThenInclude(cm => cm!.User)
