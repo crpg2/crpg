@@ -17,6 +17,7 @@ using TaleWorlds.MountAndBlade.View.MissionViews;
 using TaleWorlds.MountAndBlade.View.MissionViews.Order;
 #endif
 using Crpg.Module.Common;
+using Crpg.Module.Common.VoiceCommands;
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Common.Commander;
 using Crpg.Module.Common.FriendlyFireReport;
@@ -185,6 +186,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new WelcomeMessageBehavior(warmupComponent),
 
 #if CRPG_SERVER
+                    new CrpgVoiceCommandsBehaviorServer(),
                     roundController,
                     new CrpgBattleServer(battleClient, _gameType, rewardServer),
                     rewardServer,

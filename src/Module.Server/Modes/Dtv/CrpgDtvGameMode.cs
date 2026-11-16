@@ -16,6 +16,7 @@ using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 #endif
 using Crpg.Module.Common;
+using Crpg.Module.Common.VoiceCommands;
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Common.Commander;
 using Crpg.Module.Common.FriendlyFireReport;
@@ -143,6 +144,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 notificationsComponent,
                 new WelcomeMessageBehavior(warmupComponent),
 #if CRPG_SERVER
+                new CrpgVoiceCommandsBehaviorServer(),
                 new CrpgDtvServer(rewardServer),
                 rewardServer,
                 // SpawnFrameBehaviour: where to spawn, SpawningBehaviour: when to spawn

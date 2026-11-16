@@ -12,6 +12,7 @@ using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 #endif
 using Crpg.Module.Common;
+using Crpg.Module.Common.VoiceCommands;
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Modes.Warmup;
 using Crpg.Module.Notifications;
@@ -124,6 +125,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
                 new MissionLobbyEquipmentNetworkComponent(),
 
 #if CRPG_SERVER
+                new CrpgVoiceCommandsBehaviorServer(),
                 new CrpgSiegeServer(siegeClient, scoreboardComponent, rewardServer),
                 new CrpgUserManagerServer(crpgClient, _constants, CrpgGameMode.CRPGConquest),
                 new KickInactiveBehavior(inactiveTimeLimit: 90, warmupComponent),

@@ -1,3 +1,4 @@
+using Crpg.Module.Common.VoiceCommands;
 using TaleWorlds.Core;
 using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.InputSystem;
@@ -155,9 +156,10 @@ internal class CrpgVoiceCommandsUiHandler : MissionView
                 // GauntletChatLogView also triggers on T/Y release via SceneLayer.Input.
                 // Our gauntlet layer still holds focus on this tick so the scene layer is
                 // blocked. Delay releasing focus by one tick to keep it blocked through here.
-                mainAgent.MakeVoice(
-                    new SkinVoiceManager.SkinVoiceType(item.VoiceName!),
-                    SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
+                CrpgVoiceCommand voiceCommand = item.VoiceCommand ?? throw new InvalidOperationException("Voice command leaf has no command.");
+                GameNetwork.BeginModuleEventAsClient();
+                GameNetwork.WriteMessage(new VoiceCommandRequested { CommandId = (int)voiceCommand });
+                GameNetwork.EndModuleEventAsClient();
                 _menuStack.Clear();
                 _dataSource.HideMenu();
                 _timeSinceMenuInput = 0f;

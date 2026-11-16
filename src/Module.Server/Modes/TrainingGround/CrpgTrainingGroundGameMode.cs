@@ -4,6 +4,7 @@ using Crpg.Module.Api.Models;
 using Crpg.Module.Common.ChatCommands;
 #endif
 using Crpg.Module.Common;
+using Crpg.Module.Common.VoiceCommands;
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Notifications;
 using Crpg.Module.Rewards;
@@ -114,6 +115,7 @@ internal class CrpgTrainingGroundGameMode : MissionBasedMultiplayerGameMode
                     new CrpgScoreboardComponent(new CrpgTrainingGroundScoreboardData()), // score board
                     new MultiplayerPreloadHelper(),
 #if CRPG_SERVER
+                    new CrpgVoiceCommandsBehaviorServer(),
                     duelServer,
                     rewardServer,
                     // SpawnFrameBehaviour: where to spawn, SpawningBehaviour: when to spawn
