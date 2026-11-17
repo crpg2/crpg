@@ -16,6 +16,7 @@ using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 #endif
 using Crpg.Module.Common;
+using Crpg.Module.Common.VoiceCommands;
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Common.Commander;
 using Crpg.Module.Common.FriendlyFireReport;
@@ -142,6 +143,7 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
                 new MissionLobbyEquipmentNetworkComponent(),
 
 #if CRPG_SERVER
+                new CrpgVoiceCommandsBehaviorServer(),
                 conquestServer,
                 rewardServer,
                 new SpawnComponent(new SiegeSpawnFrameBehavior(), spawnBehavior),

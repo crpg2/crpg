@@ -12,6 +12,7 @@ using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 #endif
 using Crpg.Module.Common;
+using Crpg.Module.Common.VoiceCommands;
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Notifications;
 using TaleWorlds.Core;
@@ -112,6 +113,7 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
                     new CrpgScoreboardComponent(new CrpgDuelScoreboardData()), // score board
                     new MultiplayerPreloadHelper(),
 #if CRPG_SERVER
+                    new CrpgVoiceCommandsBehaviorServer(),
                     duelServer,
                     // SpawnFrameBehaviour: where to spawn, SpawningBehaviour: when to spawn
                     new SpawnComponent(new DuelSpawnFrameBehavior(), new CrpgDuelSpawningBehavior(_constants, duelServer)),
