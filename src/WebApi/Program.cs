@@ -46,6 +46,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
     .AddMemoryCache()
+    .AddOutputCache()
     .AddSdk(builder.Configuration, appEnv)
     .AddPersistence(builder.Configuration, appEnv)
     .AddApplication(builder.Configuration, appEnv)
@@ -186,6 +187,7 @@ app
     .UseCors()
     .UseAuthentication()
     .UseAuthorization()
+    .UseOutputCache()
     .UseEndpoints(endpoints =>
     {
         endpoints.MapHealthChecks("/health");

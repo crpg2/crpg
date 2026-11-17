@@ -12,6 +12,7 @@ using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Settlements;
 using Crpg.Domain.Entities.Terrains;
+using Crpg.Domain.Entities.Themes;
 using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
@@ -61,7 +62,8 @@ public class CrpgDbContextFactory : IDesignTimeDbContextFactory<CrpgDbContext>
                         .MapEnum<NotificationType>()
                         .MapEnum<QuestAggregationType>()
                         .MapEnum<QuestType>()
-                        .MapEnum<TerrainType>())
+                        .MapEnum<TerrainType>()
+                        .MapEnum<ThemeEquipmentSlot>())
             .UseSnakeCaseNamingConvention()
             .Options;
         return new CrpgDbContext(options);

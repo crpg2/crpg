@@ -2,10 +2,10 @@ using Crpg.Application.Common.Exceptions;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Domain.Common;
 using Crpg.Domain.Entities.ActivityLogs;
-using Crpg.Domain.Entities.GameEvents;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
+using Crpg.Domain.Entities.GameEvents;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
 using Crpg.Domain.Entities.Marketplace;
@@ -16,6 +16,7 @@ using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Settings;
 using Crpg.Domain.Entities.Settlements;
 using Crpg.Domain.Entities.Terrains;
+using Crpg.Domain.Entities.Themes;
 using Crpg.Domain.Entities.Users;
 using Crpg.Sdk.Abstractions;
 using Microsoft.EntityFrameworkCore;
@@ -78,6 +79,8 @@ public class CrpgDbContext : DbContext, ICrpgDbContext
     public DbSet<QuestDefinition> QuestDefinitions { get; set; } = default!;
     public DbSet<UserQuest> UserQuests { get; set; } = default!;
     public DbSet<WeeklyQuestAssignment> WeeklyQuestAssignments { get; set; } = default!;
+    public DbSet<Theme> Themes { get; set; } = default!;
+    public DbSet<ThemeEvent> ThemeEvents { get; set; } = default!;
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {

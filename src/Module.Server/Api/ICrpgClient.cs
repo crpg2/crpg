@@ -3,6 +3,7 @@ using Crpg.Module.Api.Models.ActivityLogs;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.GameEvents;
 using Crpg.Module.Api.Models.Restrictions;
+using Crpg.Module.Api.Models.Themes;
 using Crpg.Module.Api.Models.Users;
 
 namespace Crpg.Module.Api;
@@ -26,4 +27,6 @@ internal interface ICrpgClient : IDisposable
         CancellationToken cancellationToken = default);
 
     Task CreateGameEventsAsync(CrpgGameEventsCreateRequest req, CancellationToken cancellationToken = default);
+
+    Task<CrpgResult<List<ThemeEvent>>> GetActiveThemeEventsAsync(CancellationToken cancellationToken = default);
 }

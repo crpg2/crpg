@@ -1,4 +1,5 @@
 using Crpg.Domain.Common;
+using Crpg.Domain.Entities.Themes;
 
 namespace Crpg.Domain.Entities.Items;
 
@@ -55,6 +56,8 @@ public class Item : AuditableEntity, ICloneable
     public ItemWeaponComponent? TertiaryWeapon { get; set; }
 
     public List<UserItem> UserItems { get; set; } = new();
+
+    public List<Theme> Themes { get; set; } = new();
 
     public IEnumerable<ItemWeaponComponent> GetWeapons()
     {

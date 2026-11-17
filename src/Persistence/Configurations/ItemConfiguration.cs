@@ -13,6 +13,7 @@ public class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.OwnsOne(i => i.PrimaryWeapon!, b => ConfigureItemWeaponComponent(b, "primary_"));
         builder.OwnsOne(i => i.SecondaryWeapon!, b => ConfigureItemWeaponComponent(b, "secondary_"));
         builder.OwnsOne(i => i.TertiaryWeapon!, b => ConfigureItemWeaponComponent(b, "tertiary_"));
+        builder.HasMany(i => i.Themes).WithMany();
     }
 
     private static void ConfigureItemArmorComponent(OwnedNavigationBuilder<Item, ItemArmorComponent> builder)

@@ -7,11 +7,14 @@ using Crpg.Application.Games.Commands;
 using Crpg.Application.Games.Models;
 using Crpg.Application.Restrictions.Commands;
 using Crpg.Application.Restrictions.Models;
+using Crpg.Application.Themes.Models;
+using Crpg.Application.Themes.Queries;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 
 namespace Crpg.WebApi.Controllers;
 
@@ -91,4 +94,12 @@ public class GamesController : BaseController
     {
         return ResultToActionAsync(Mediator.Send(req));
     }
+
+    /// <summary>
+    ///  Gets all active theme events.
+    /// </summary>
+    /// <response code="200">Ok.</response>
+    [HttpGet("theme-events/active")]
+    [OutputCache(Tags = [ActiveThemeEventsCacheTag], Duration = 60)]
+    public Task<ActionResult<Result<IList<ThemeEventViewModel>>>> GetActiveThemeEvents() => ResultToActionAsync(Mediator.Send(new GetActiveThemeEventsQuery()));
 }

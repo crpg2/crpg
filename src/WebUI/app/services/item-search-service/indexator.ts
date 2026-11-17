@@ -324,7 +324,7 @@ const itemToFlat = <
     ...weaponProps.itemUsage.filter(iu => VISIBLE_ITEM_USAGE_SET.has(iu)),
   ])
 
-  const { id, type, baseId, culture, name, createdAt, price, rank, requirement, tier } = wrapper.item
+  const { id, type, baseId, culture, name, createdAt, price, rank, requirement, tier, themes } = wrapper.item
 
   const resolvedType = mapItemType(type)
   return {
@@ -333,6 +333,7 @@ const itemToFlat = <
     baseId,
     culture,
     flags,
+    themes: themes ?? [],
     modId: generateModId(wrapper.item, resolvedType, weaponProps.weaponClass ?? undefined),
     name,
     isNew: createdAt.getTime() > newItemDateThreshold,
